@@ -2,10 +2,16 @@
 pub(crate) fn de_source_code_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SourceCodeType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,33 +20,50 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "CommitDiff" => {
-                            builder = builder.set_commit_diff(
-                                crate::protocol_serde::shape_commit_diff_source_code_type::de_commit_diff_source_code_type(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "CommitDiff" => {
+                                builder = builder.set_commit_diff(
+                                    crate::protocol_serde::shape_commit_diff_source_code_type::de_commit_diff_source_code_type(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "RepositoryHead" => {
+                                builder = builder.set_repository_head(
+                                    crate::protocol_serde::shape_repository_head_source_code_type::de_repository_head_source_code_type(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "BranchDiff" => {
+                                builder = builder.set_branch_diff(
+                                    crate::protocol_serde::shape_branch_diff_source_code_type::de_branch_diff_source_code_type(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "S3BucketRepository" => {
+                                builder = builder.set_s3_bucket_repository(
+                                    crate::protocol_serde::shape_s3_bucket_repository::de_s3_bucket_repository(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "RequestMetadata" => {
+                                builder = builder.set_request_metadata(crate::protocol_serde::shape_request_metadata::de_request_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "RepositoryHead" => {
-                            builder = builder.set_repository_head(
-                                crate::protocol_serde::shape_repository_head_source_code_type::de_repository_head_source_code_type(tokens, _value)?,
-                            );
-                        }
-                        "BranchDiff" => {
-                            builder = builder.set_branch_diff(
-                                crate::protocol_serde::shape_branch_diff_source_code_type::de_branch_diff_source_code_type(tokens, _value)?,
-                            );
-                        }
-                        "S3BucketRepository" => {
-                            builder = builder.set_s3_bucket_repository(crate::protocol_serde::shape_s3_bucket_repository::de_s3_bucket_repository(
-                                tokens, _value,
-                            )?);
-                        }
-                        "RequestMetadata" => {
-                            builder =
-                                builder.set_request_metadata(crate::protocol_serde::shape_request_metadata::de_request_metadata(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

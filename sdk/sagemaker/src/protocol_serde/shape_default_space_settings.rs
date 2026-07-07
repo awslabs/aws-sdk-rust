@@ -63,10 +63,16 @@ pub fn ser_default_space_settings(
 pub(crate) fn de_default_space_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DefaultSpaceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -84,37 +90,44 @@ where
                             );
                         }
                         "SecurityGroups" => {
-                            builder =
-                                builder.set_security_groups(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens, _value)?);
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JupyterServerAppSettings" => {
                             builder = builder.set_jupyter_server_app_settings(
-                                crate::protocol_serde::shape_jupyter_server_app_settings::de_jupyter_server_app_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_jupyter_server_app_settings::de_jupyter_server_app_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "KernelGatewayAppSettings" => {
                             builder = builder.set_kernel_gateway_app_settings(
-                                crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "JupyterLabAppSettings" => {
                             builder = builder.set_jupyter_lab_app_settings(
-                                crate::protocol_serde::shape_jupyter_lab_app_settings::de_jupyter_lab_app_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_jupyter_lab_app_settings::de_jupyter_lab_app_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "SpaceStorageSettings" => {
                             builder = builder.set_space_storage_settings(
-                                crate::protocol_serde::shape_default_space_storage_settings::de_default_space_storage_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_default_space_storage_settings::de_default_space_storage_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CustomPosixUserConfig" => {
                             builder = builder.set_custom_posix_user_config(
-                                crate::protocol_serde::shape_custom_posix_user_config::de_custom_posix_user_config(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_posix_user_config::de_custom_posix_user_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "CustomFileSystemConfigs" => {
                             builder = builder.set_custom_file_system_configs(
-                                crate::protocol_serde::shape_custom_file_system_configs::de_custom_file_system_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_file_system_configs::de_custom_file_system_configs(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

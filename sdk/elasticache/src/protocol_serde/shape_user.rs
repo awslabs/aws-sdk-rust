@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_user(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::User, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::User::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -88,7 +92,7 @@ pub fn de_user(
             s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#User$UserGroupIds */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_user_group_id_list::de_user_group_id_list(&mut tag)
+                        crate::protocol_serde::shape_user_group_id_list::de_user_group_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_user(
             s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache#User$Authentication */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_authentication::de_authentication(&mut tag)
+                        crate::protocol_serde::shape_authentication::de_authentication(&mut tag, depth + 1)
                         ?
                     )
                 ;

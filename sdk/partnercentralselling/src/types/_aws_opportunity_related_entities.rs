@@ -8,6 +8,10 @@ pub struct AwsOpportunityRelatedEntities {
     pub aws_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the partner solutions related to the opportunity. These solutions represent the partner's offerings that are being positioned as part of the overall AWS opportunity.</p>
     pub solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The AWS Marketplace solution ARNs associated with this opportunity.</p>
+    pub aws_marketplace_solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The AWS Marketplace product ARNs associated with this opportunity.</p>
+    pub aws_marketplace_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsOpportunityRelatedEntities {
     /// <p>Specifies the AWS products associated with the opportunity. This field helps track the specific products that are part of the proposed solution.</p>
@@ -21,6 +25,18 @@ impl AwsOpportunityRelatedEntities {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solutions.is_none()`.
     pub fn solutions(&self) -> &[::std::string::String] {
         self.solutions.as_deref().unwrap_or_default()
+    }
+    /// <p>The AWS Marketplace solution ARNs associated with this opportunity.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_marketplace_solutions.is_none()`.
+    pub fn aws_marketplace_solutions(&self) -> &[::std::string::String] {
+        self.aws_marketplace_solutions.as_deref().unwrap_or_default()
+    }
+    /// <p>The AWS Marketplace product ARNs associated with this opportunity.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_marketplace_products.is_none()`.
+    pub fn aws_marketplace_products(&self) -> &[::std::string::String] {
+        self.aws_marketplace_products.as_deref().unwrap_or_default()
     }
 }
 impl AwsOpportunityRelatedEntities {
@@ -36,6 +52,8 @@ impl AwsOpportunityRelatedEntities {
 pub struct AwsOpportunityRelatedEntitiesBuilder {
     pub(crate) aws_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_marketplace_solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_marketplace_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsOpportunityRelatedEntitiesBuilder {
     /// Appends an item to `aws_products`.
@@ -78,11 +96,53 @@ impl AwsOpportunityRelatedEntitiesBuilder {
     pub fn get_solutions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.solutions
     }
+    /// Appends an item to `aws_marketplace_solutions`.
+    ///
+    /// To override the contents of this collection use [`set_aws_marketplace_solutions`](Self::set_aws_marketplace_solutions).
+    ///
+    /// <p>The AWS Marketplace solution ARNs associated with this opportunity.</p>
+    pub fn aws_marketplace_solutions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aws_marketplace_solutions.unwrap_or_default();
+        v.push(input.into());
+        self.aws_marketplace_solutions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The AWS Marketplace solution ARNs associated with this opportunity.</p>
+    pub fn set_aws_marketplace_solutions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aws_marketplace_solutions = input;
+        self
+    }
+    /// <p>The AWS Marketplace solution ARNs associated with this opportunity.</p>
+    pub fn get_aws_marketplace_solutions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_marketplace_solutions
+    }
+    /// Appends an item to `aws_marketplace_products`.
+    ///
+    /// To override the contents of this collection use [`set_aws_marketplace_products`](Self::set_aws_marketplace_products).
+    ///
+    /// <p>The AWS Marketplace product ARNs associated with this opportunity.</p>
+    pub fn aws_marketplace_products(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aws_marketplace_products.unwrap_or_default();
+        v.push(input.into());
+        self.aws_marketplace_products = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The AWS Marketplace product ARNs associated with this opportunity.</p>
+    pub fn set_aws_marketplace_products(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aws_marketplace_products = input;
+        self
+    }
+    /// <p>The AWS Marketplace product ARNs associated with this opportunity.</p>
+    pub fn get_aws_marketplace_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_marketplace_products
+    }
     /// Consumes the builder and constructs a [`AwsOpportunityRelatedEntities`](crate::types::AwsOpportunityRelatedEntities).
     pub fn build(self) -> crate::types::AwsOpportunityRelatedEntities {
         crate::types::AwsOpportunityRelatedEntities {
             aws_products: self.aws_products,
             solutions: self.solutions,
+            aws_marketplace_solutions: self.aws_marketplace_solutions,
+            aws_marketplace_products: self.aws_marketplace_products,
         }
     }
 }

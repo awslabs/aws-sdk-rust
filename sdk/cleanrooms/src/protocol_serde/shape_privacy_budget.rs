@@ -2,10 +2,16 @@
 pub(crate) fn de_privacy_budget<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PrivacyBudget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,13 +37,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "differentialPrivacy" => Some(crate::types::PrivacyBudget::DifferentialPrivacy(
-                            crate::protocol_serde::shape_differential_privacy_privacy_budget::de_differential_privacy_privacy_budget(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'differentialPrivacy' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_differential_privacy_privacy_budget::de_differential_privacy_privacy_budget(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'differentialPrivacy' cannot be null")
+                            })?,
                         )),
                         "accessBudget" => Some(crate::types::PrivacyBudget::AccessBudget(
-                            crate::protocol_serde::shape_access_budget::de_access_budget(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_access_budget::de_access_budget(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'accessBudget' cannot be null")
                             })?,
                         )),

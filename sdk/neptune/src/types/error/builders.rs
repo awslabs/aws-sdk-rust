@@ -57,6 +57,8 @@ pub use crate::types::error::_invalid_subnet::InvalidSubnetBuilder;
 
 pub use crate::types::error::_invalid_vpc_network_state_fault::InvalidVpcNetworkStateFaultBuilder;
 
+pub use crate::types::error::_network_type_not_supported_fault::NetworkTypeNotSupportedFaultBuilder;
+
 pub use crate::types::error::_storage_quota_exceeded_fault::StorageQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_db_cluster_endpoint_already_exists_fault::DbClusterEndpointAlreadyExistsFaultBuilder;

@@ -106,6 +106,8 @@ pub(crate) fn de_describe_execution(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -119,7 +121,11 @@ pub(crate) fn de_describe_execution(
                     );
                 }
                 "executionDetails" => {
-                    builder = builder.set_execution_details(crate::protocol_serde::shape_execution_details::de_execution_details(tokens, _value)?);
+                    builder = builder.set_execution_details(crate::protocol_serde::shape_execution_details::de_execution_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "executionEndTime" => {
                     builder = builder.set_execution_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -142,7 +148,11 @@ pub(crate) fn de_describe_execution(
                     );
                 }
                 "executionResult" => {
-                    builder = builder.set_execution_result(crate::protocol_serde::shape_execution_result::de_execution_result(tokens, _value)?);
+                    builder = builder.set_execution_result(crate::protocol_serde::shape_execution_result::de_execution_result(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "executionStartTime" => {
                     builder = builder.set_execution_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -151,13 +161,21 @@ pub(crate) fn de_describe_execution(
                     )?);
                 }
                 "executionStatus" => {
-                    builder = builder.set_execution_status(crate::protocol_serde::shape_execution_status::de_execution_status(tokens, _value)?);
+                    builder = builder.set_execution_status(crate::protocol_serde::shape_execution_status::de_execution_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "resolveTo" => {
-                    builder = builder.set_resolve_to(crate::protocol_serde::shape_resolve_to::de_resolve_to(tokens, _value)?);
+                    builder = builder.set_resolve_to(crate::protocol_serde::shape_resolve_to::de_resolve_to(tokens, _value, depth + 1)?);
                 }
                 "targetResource" => {
-                    builder = builder.set_target_resource(crate::protocol_serde::shape_target_resource::de_target_resource(tokens, _value)?);
+                    builder = builder.set_target_resource(crate::protocol_serde::shape_target_resource::de_target_resource(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "targetResourceVersion" => {
                     builder = builder.set_target_resource_version(

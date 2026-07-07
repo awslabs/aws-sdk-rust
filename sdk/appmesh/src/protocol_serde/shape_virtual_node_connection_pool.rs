@@ -40,10 +40,16 @@ pub fn ser_virtual_node_connection_pool(
 pub(crate) fn de_virtual_node_connection_pool<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VirtualNodeConnectionPool>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -69,20 +75,36 @@ where
                     }
                     variant = match key.as_ref() {
                         "tcp" => Some(crate::types::VirtualNodeConnectionPool::Tcp(
-                            crate::protocol_serde::shape_virtual_node_tcp_connection_pool::de_virtual_node_tcp_connection_pool(tokens, _value)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tcp' cannot be null"))?,
+                            crate::protocol_serde::shape_virtual_node_tcp_connection_pool::de_virtual_node_tcp_connection_pool(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tcp' cannot be null"))?,
                         )),
                         "http" => Some(crate::types::VirtualNodeConnectionPool::Http(
-                            crate::protocol_serde::shape_virtual_node_http_connection_pool::de_virtual_node_http_connection_pool(tokens, _value)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?,
+                            crate::protocol_serde::shape_virtual_node_http_connection_pool::de_virtual_node_http_connection_pool(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?,
                         )),
                         "http2" => Some(crate::types::VirtualNodeConnectionPool::Http2(
-                            crate::protocol_serde::shape_virtual_node_http2_connection_pool::de_virtual_node_http2_connection_pool(tokens, _value)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http2' cannot be null"))?,
+                            crate::protocol_serde::shape_virtual_node_http2_connection_pool::de_virtual_node_http2_connection_pool(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http2' cannot be null"))?,
                         )),
                         "grpc" => Some(crate::types::VirtualNodeConnectionPool::Grpc(
-                            crate::protocol_serde::shape_virtual_node_grpc_connection_pool::de_virtual_node_grpc_connection_pool(tokens, _value)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'grpc' cannot be null"))?,
+                            crate::protocol_serde::shape_virtual_node_grpc_connection_pool::de_virtual_node_grpc_connection_pool(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'grpc' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

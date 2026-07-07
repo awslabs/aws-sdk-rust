@@ -24,10 +24,16 @@ pub fn ser_processing_output_config(
 pub(crate) fn de_processing_output_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProcessingOutputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape_processing_outputs::de_processing_outputs(tokens, _value)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_processing_outputs::de_processing_outputs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "KmsKeyId" => {
                             builder = builder.set_kms_key_id(

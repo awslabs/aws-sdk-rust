@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_multi_region_access_points_async_response(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MultiRegionAccessPointsAsyncResponse, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MultiRegionAccessPointsAsyncResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_multi_region_access_points_async_response(
             s if s.matches("Regions") /* Regions com.amazonaws.s3control#MultiRegionAccessPointsAsyncResponse$Regions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_multi_region_access_point_regional_response_list::de_multi_region_access_point_regional_response_list(&mut tag)
+                        crate::protocol_serde::shape_multi_region_access_point_regional_response_list::de_multi_region_access_point_regional_response_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

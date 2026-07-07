@@ -33,10 +33,16 @@ pub fn ser_batch_restrictions(
 pub(crate) fn de_batch_restrictions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BatchRestrictions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -55,11 +61,15 @@ where
                         }
                         "computeTypesAllowed" => {
                             builder = builder.set_compute_types_allowed(
-                                crate::protocol_serde::shape_compute_types_allowed::de_compute_types_allowed(tokens, _value)?,
+                                crate::protocol_serde::shape_compute_types_allowed::de_compute_types_allowed(tokens, _value, depth + 1)?,
                             );
                         }
                         "fleetsAllowed" => {
-                            builder = builder.set_fleets_allowed(crate::protocol_serde::shape_fleets_allowed::de_fleets_allowed(tokens, _value)?);
+                            builder = builder.set_fleets_allowed(crate::protocol_serde::shape_fleets_allowed::de_fleets_allowed(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

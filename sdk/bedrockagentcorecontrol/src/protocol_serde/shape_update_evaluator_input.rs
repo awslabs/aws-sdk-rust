@@ -15,8 +15,11 @@ pub fn ser_update_evaluator_input_input(
         crate::protocol_serde::shape_evaluator_config::ser_evaluator_config(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.level {
-        object.key("level").string(var_5.as_str());
+    if let Some(var_5) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.level {
+        object.key("level").string(var_6.as_str());
     }
     Ok(())
 }

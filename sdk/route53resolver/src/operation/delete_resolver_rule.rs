@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteR
 #[derive(Debug)]
 struct DeleteResolverRuleResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteResolverRuleResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -276,6 +277,8 @@ pub enum DeleteResolverRuleError {
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>One or more parameters in this request are not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource that you tried to update or delete is currently in use.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The specified resource doesn't exist.</p>
@@ -317,6 +320,7 @@ impl DeleteResolverRuleError {
         match self {
             Self::InternalServiceErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -330,6 +334,10 @@ impl DeleteResolverRuleError {
     /// Returns `true` if the error kind is `DeleteResolverRuleError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteResolverRuleError::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(self, Self::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteResolverRuleError::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
@@ -349,6 +357,7 @@ impl ::std::error::Error for DeleteResolverRuleError {
         match self {
             Self::InternalServiceErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceInUseException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -361,6 +370,7 @@ impl ::std::fmt::Display for DeleteResolverRuleError {
         match self {
             Self::InternalServiceErrorException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ResourceInUseException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -387,6 +397,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteResolve
         match self {
             Self::InternalServiceErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

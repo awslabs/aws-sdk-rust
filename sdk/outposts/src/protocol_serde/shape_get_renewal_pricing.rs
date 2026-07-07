@@ -108,13 +108,19 @@ pub(crate) fn de_get_renewal_pricing(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "PricingOptions" => {
-                    builder = builder.set_pricing_options(crate::protocol_serde::shape_pricing_option_list::de_pricing_option_list(tokens, _value)?);
+                    builder = builder.set_pricing_options(crate::protocol_serde::shape_pricing_option_list::de_pricing_option_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "PricingResult" => {
                     builder = builder.set_pricing_result(

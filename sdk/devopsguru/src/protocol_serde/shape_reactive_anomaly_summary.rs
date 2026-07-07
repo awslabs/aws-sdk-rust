@@ -2,10 +2,16 @@
 pub(crate) fn de_reactive_anomaly_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReactiveAnomalySummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,17 +43,22 @@ where
                             );
                         }
                         "AnomalyTimeRange" => {
-                            builder = builder
-                                .set_anomaly_time_range(crate::protocol_serde::shape_anomaly_time_range::de_anomaly_time_range(tokens, _value)?);
+                            builder = builder.set_anomaly_time_range(crate::protocol_serde::shape_anomaly_time_range::de_anomaly_time_range(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AnomalyReportedTimeRange" => {
                             builder = builder.set_anomaly_reported_time_range(
-                                crate::protocol_serde::shape_anomaly_reported_time_range::de_anomaly_reported_time_range(tokens, _value)?,
+                                crate::protocol_serde::shape_anomaly_reported_time_range::de_anomaly_reported_time_range(tokens, _value, depth + 1)?,
                             );
                         }
                         "SourceDetails" => {
                             builder = builder.set_source_details(crate::protocol_serde::shape_anomaly_source_details::de_anomaly_source_details(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "AssociatedInsightId" => {
@@ -58,8 +69,11 @@ where
                             );
                         }
                         "ResourceCollection" => {
-                            builder = builder
-                                .set_resource_collection(crate::protocol_serde::shape_resource_collection::de_resource_collection(tokens, _value)?);
+                            builder = builder.set_resource_collection(crate::protocol_serde::shape_resource_collection::de_resource_collection(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Type" => {
                             builder = builder.set_type(
@@ -90,8 +104,11 @@ where
                             );
                         }
                         "AnomalyResources" => {
-                            builder =
-                                builder.set_anomaly_resources(crate::protocol_serde::shape_anomaly_resources::de_anomaly_resources(tokens, _value)?);
+                            builder = builder.set_anomaly_resources(crate::protocol_serde::shape_anomaly_resources::de_anomaly_resources(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

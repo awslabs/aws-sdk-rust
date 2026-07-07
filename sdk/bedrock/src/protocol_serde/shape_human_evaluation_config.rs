@@ -39,10 +39,16 @@ pub fn ser_human_evaluation_config(
 pub(crate) fn de_human_evaluation_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HumanEvaluationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,17 +60,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "humanWorkflowConfig" => {
                             builder = builder.set_human_workflow_config(
-                                crate::protocol_serde::shape_human_workflow_config::de_human_workflow_config(tokens, _value)?,
+                                crate::protocol_serde::shape_human_workflow_config::de_human_workflow_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "customMetrics" => {
                             builder = builder.set_custom_metrics(
-                                crate::protocol_serde::shape_human_evaluation_custom_metrics::de_human_evaluation_custom_metrics(tokens, _value)?,
+                                crate::protocol_serde::shape_human_evaluation_custom_metrics::de_human_evaluation_custom_metrics(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "datasetMetricConfigs" => {
                             builder = builder.set_dataset_metric_configs(
-                                crate::protocol_serde::shape_evaluation_dataset_metric_configs::de_evaluation_dataset_metric_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_evaluation_dataset_metric_configs::de_evaluation_dataset_metric_configs(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

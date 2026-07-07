@@ -7,6 +7,10 @@ pub struct UpdateWhatsAppMessageTemplateInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The numeric ID of the template assigned by Meta.</p>
     pub meta_template_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub template_name: ::std::option::Option<::std::string::String>,
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub template_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The format specification for parameters in the template, this can be either 'named' or 'positional'.</p>
     pub parameter_format: ::std::option::Option<::std::string::String>,
     /// <p>The new category for the template (for example, UTILITY or MARKETING).</p>
@@ -24,6 +28,14 @@ impl UpdateWhatsAppMessageTemplateInput {
     /// <p>The numeric ID of the template assigned by Meta.</p>
     pub fn meta_template_id(&self) -> ::std::option::Option<&str> {
         self.meta_template_id.as_deref()
+    }
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn template_language_code(&self) -> ::std::option::Option<&str> {
+        self.template_language_code.as_deref()
     }
     /// <p>The format specification for parameters in the template, this can be either 'named' or 'positional'.</p>
     pub fn parameter_format(&self) -> ::std::option::Option<&str> {
@@ -55,6 +67,8 @@ impl UpdateWhatsAppMessageTemplateInput {
 pub struct UpdateWhatsAppMessageTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) meta_template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) template_language_code: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_format: ::std::option::Option<::std::string::String>,
     pub(crate) template_category: ::std::option::Option<::std::string::String>,
     pub(crate) template_components: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -77,7 +91,6 @@ impl UpdateWhatsAppMessageTemplateInputBuilder {
         &self.id
     }
     /// <p>The numeric ID of the template assigned by Meta.</p>
-    /// This field is required.
     pub fn meta_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meta_template_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +103,34 @@ impl UpdateWhatsAppMessageTemplateInputBuilder {
     /// <p>The numeric ID of the template assigned by Meta.</p>
     pub fn get_meta_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.meta_template_id
+    }
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_name = input;
+        self
+    }
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn template_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_language_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn set_template_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_language_code = input;
+        self
+    }
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn get_template_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_language_code
     }
     /// <p>The format specification for parameters in the template, this can be either 'named' or 'positional'.</p>
     pub fn parameter_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +198,8 @@ impl UpdateWhatsAppMessageTemplateInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateInput {
             id: self.id,
             meta_template_id: self.meta_template_id,
+            template_name: self.template_name,
+            template_language_code: self.template_language_code,
             parameter_format: self.parameter_format,
             template_category: self.template_category,
             template_components: self.template_components,

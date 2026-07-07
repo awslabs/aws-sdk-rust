@@ -25,10 +25,16 @@ pub fn ser_data_view_destination_type_params(
 pub(crate) fn de_data_view_destination_type_params<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataViewDestinationTypeParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,7 +60,11 @@ where
                         }
                         "s3DestinationExportFileFormatOptions" => {
                             builder = builder.set_s3_destination_export_file_format_options(
-                                crate::protocol_serde::shape_s3_destination_format_options::de_s3_destination_format_options(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_destination_format_options::de_s3_destination_format_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

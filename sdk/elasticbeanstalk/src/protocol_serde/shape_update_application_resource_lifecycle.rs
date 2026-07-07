@@ -78,6 +78,8 @@ pub fn de_update_application_resource_lifecycle(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("UpdateApplicationResourceLifecycleResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected UpdateApplicationResourceLifecycleResponse got {start_el:?}"
@@ -108,7 +110,7 @@ pub fn de_update_application_resource_lifecycle(
             s if s.matches("ResourceLifecycleConfig") /* ResourceLifecycleConfig com.amazonaws.elasticbeanstalk.synthetic#UpdateApplicationResourceLifecycleOutput$ResourceLifecycleConfig */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_application_resource_lifecycle_config::de_application_resource_lifecycle_config(&mut tag)
+                        crate::protocol_serde::shape_application_resource_lifecycle_config::de_application_resource_lifecycle_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

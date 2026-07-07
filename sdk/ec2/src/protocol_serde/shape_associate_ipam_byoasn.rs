@@ -47,6 +47,8 @@ pub fn de_associate_ipam_byoasn(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AssociateIpamByoasnResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AssociateIpamByoasnResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_associate_ipam_byoasn(
             s if s.matches("asnAssociation") /* AsnAssociation com.amazonaws.ec2.synthetic#AssociateIpamByoasnOutput$AsnAssociation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_asn_association::de_asn_association(&mut tag)
+                        crate::protocol_serde::shape_asn_association::de_asn_association(&mut tag, depth + 1)
                         ?
                     )
                 ;

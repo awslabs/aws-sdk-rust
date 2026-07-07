@@ -4,8 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CmafEncryptionSettings {
-    /// Enable Clear Lead DRM to reduce video startup latency by leaving the first segment unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. When enabled, the first output segment remains fully unencrypted, and encryption begins at the start of the second segment. The HLS manifest will omit #EXT-X-KEY tags during the clear segment and insert the first #EXT-X-KEY immediately before the first encrypted fragment. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec. Choose Enabled to activate Clear Lead DRM optimization. Choose Disabled to use standard encryption where all segments are encrypted from the beginning.
-    pub clear_lead: ::std::option::Option<crate::types::HlsClearLead>,
+    /// Reduce video startup latency by leaving initial segments unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. Specify the number of initial segments to leave unencrypted. Omit this field to disable Clear Lead. The HLS manifest will omit #EXT-X-KEY tags during clear segments and insert the first #EXT-X-KEY immediately before the first encrypted segment. Because encryption is applied at the fragment level, the actual duration of unencrypted content may be slightly longer than expected if the segment length is not evenly divisible by the fragment length. In such cases, encryption begins at the next fragment boundary after the specified clear lead segments, rather than at the exact segment boundary. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec.
+    pub clear_lead_segments: ::std::option::Option<i32>,
     /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
     pub constant_initialization_vector: ::std::option::Option<::std::string::String>,
     /// Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample or AES_CTR.
@@ -20,9 +20,9 @@ pub struct CmafEncryptionSettings {
     pub r#type: ::std::option::Option<crate::types::CmafKeyProviderType>,
 }
 impl CmafEncryptionSettings {
-    /// Enable Clear Lead DRM to reduce video startup latency by leaving the first segment unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. When enabled, the first output segment remains fully unencrypted, and encryption begins at the start of the second segment. The HLS manifest will omit #EXT-X-KEY tags during the clear segment and insert the first #EXT-X-KEY immediately before the first encrypted fragment. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec. Choose Enabled to activate Clear Lead DRM optimization. Choose Disabled to use standard encryption where all segments are encrypted from the beginning.
-    pub fn clear_lead(&self) -> ::std::option::Option<&crate::types::HlsClearLead> {
-        self.clear_lead.as_ref()
+    /// Reduce video startup latency by leaving initial segments unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. Specify the number of initial segments to leave unencrypted. Omit this field to disable Clear Lead. The HLS manifest will omit #EXT-X-KEY tags during clear segments and insert the first #EXT-X-KEY immediately before the first encrypted segment. Because encryption is applied at the fragment level, the actual duration of unencrypted content may be slightly longer than expected if the segment length is not evenly divisible by the fragment length. In such cases, encryption begins at the next fragment boundary after the specified clear lead segments, rather than at the exact segment boundary. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec.
+    pub fn clear_lead_segments(&self) -> ::std::option::Option<i32> {
+        self.clear_lead_segments
     }
     /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
     pub fn constant_initialization_vector(&self) -> ::std::option::Option<&str> {
@@ -60,7 +60,7 @@ impl CmafEncryptionSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CmafEncryptionSettingsBuilder {
-    pub(crate) clear_lead: ::std::option::Option<crate::types::HlsClearLead>,
+    pub(crate) clear_lead_segments: ::std::option::Option<i32>,
     pub(crate) constant_initialization_vector: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_method: ::std::option::Option<crate::types::CmafEncryptionType>,
     pub(crate) initialization_vector_in_manifest: ::std::option::Option<crate::types::CmafInitializationVectorInManifest>,
@@ -69,19 +69,19 @@ pub struct CmafEncryptionSettingsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CmafKeyProviderType>,
 }
 impl CmafEncryptionSettingsBuilder {
-    /// Enable Clear Lead DRM to reduce video startup latency by leaving the first segment unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. When enabled, the first output segment remains fully unencrypted, and encryption begins at the start of the second segment. The HLS manifest will omit #EXT-X-KEY tags during the clear segment and insert the first #EXT-X-KEY immediately before the first encrypted fragment. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec. Choose Enabled to activate Clear Lead DRM optimization. Choose Disabled to use standard encryption where all segments are encrypted from the beginning.
-    pub fn clear_lead(mut self, input: crate::types::HlsClearLead) -> Self {
-        self.clear_lead = ::std::option::Option::Some(input);
+    /// Reduce video startup latency by leaving initial segments unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. Specify the number of initial segments to leave unencrypted. Omit this field to disable Clear Lead. The HLS manifest will omit #EXT-X-KEY tags during clear segments and insert the first #EXT-X-KEY immediately before the first encrypted segment. Because encryption is applied at the fragment level, the actual duration of unencrypted content may be slightly longer than expected if the segment length is not evenly divisible by the fragment length. In such cases, encryption begins at the next fragment boundary after the specified clear lead segments, rather than at the exact segment boundary. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec.
+    pub fn clear_lead_segments(mut self, input: i32) -> Self {
+        self.clear_lead_segments = ::std::option::Option::Some(input);
         self
     }
-    /// Enable Clear Lead DRM to reduce video startup latency by leaving the first segment unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. When enabled, the first output segment remains fully unencrypted, and encryption begins at the start of the second segment. The HLS manifest will omit #EXT-X-KEY tags during the clear segment and insert the first #EXT-X-KEY immediately before the first encrypted fragment. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec. Choose Enabled to activate Clear Lead DRM optimization. Choose Disabled to use standard encryption where all segments are encrypted from the beginning.
-    pub fn set_clear_lead(mut self, input: ::std::option::Option<crate::types::HlsClearLead>) -> Self {
-        self.clear_lead = input;
+    /// Reduce video startup latency by leaving initial segments unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. Specify the number of initial segments to leave unencrypted. Omit this field to disable Clear Lead. The HLS manifest will omit #EXT-X-KEY tags during clear segments and insert the first #EXT-X-KEY immediately before the first encrypted segment. Because encryption is applied at the fragment level, the actual duration of unencrypted content may be slightly longer than expected if the segment length is not evenly divisible by the fragment length. In such cases, encryption begins at the next fragment boundary after the specified clear lead segments, rather than at the exact segment boundary. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec.
+    pub fn set_clear_lead_segments(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.clear_lead_segments = input;
         self
     }
-    /// Enable Clear Lead DRM to reduce video startup latency by leaving the first segment unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. When enabled, the first output segment remains fully unencrypted, and encryption begins at the start of the second segment. The HLS manifest will omit #EXT-X-KEY tags during the clear segment and insert the first #EXT-X-KEY immediately before the first encrypted fragment. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec. Choose Enabled to activate Clear Lead DRM optimization. Choose Disabled to use standard encryption where all segments are encrypted from the beginning.
-    pub fn get_clear_lead(&self) -> &::std::option::Option<crate::types::HlsClearLead> {
-        &self.clear_lead
+    /// Reduce video startup latency by leaving initial segments unencrypted while DRM license retrieval occurs in parallel. This optimization allows immediate playback startup while maintaining content protection for the remainder of the stream. Specify the number of initial segments to leave unencrypted. Omit this field to disable Clear Lead. The HLS manifest will omit #EXT-X-KEY tags during clear segments and insert the first #EXT-X-KEY immediately before the first encrypted segment. Because encryption is applied at the fragment level, the actual duration of unencrypted content may be slightly longer than expected if the segment length is not evenly divisible by the fragment length. In such cases, encryption begins at the next fragment boundary after the specified clear lead segments, rather than at the exact segment boundary. This feature is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec.
+    pub fn get_clear_lead_segments(&self) -> &::std::option::Option<i32> {
+        &self.clear_lead_segments
     }
     /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
     pub fn constant_initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,7 +170,7 @@ impl CmafEncryptionSettingsBuilder {
     /// Consumes the builder and constructs a [`CmafEncryptionSettings`](crate::types::CmafEncryptionSettings).
     pub fn build(self) -> crate::types::CmafEncryptionSettings {
         crate::types::CmafEncryptionSettings {
-            clear_lead: self.clear_lead,
+            clear_lead_segments: self.clear_lead_segments,
             constant_initialization_vector: self.constant_initialization_vector,
             encryption_method: self.encryption_method,
             initialization_vector_in_manifest: self.initialization_vector_in_manifest,

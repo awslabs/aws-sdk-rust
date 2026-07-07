@@ -329,6 +329,8 @@ mod create_inference_experiment;
 
 mod create_inference_recommendations_job;
 
+mod create_job;
+
 mod create_labeling_job;
 
 mod create_mlflow_app;
@@ -492,6 +494,8 @@ mod delete_inference_component;
 
 mod delete_inference_experiment;
 
+mod delete_job;
+
 mod delete_mlflow_app;
 
 mod delete_mlflow_tracking_server;
@@ -625,6 +629,10 @@ mod describe_inference_component;
 mod describe_inference_experiment;
 
 mod describe_inference_recommendations_job;
+
+mod describe_job;
+
+mod describe_job_schema_version;
 
 mod describe_labeling_job;
 
@@ -804,6 +812,10 @@ mod list_inference_recommendations_job_steps;
 
 mod list_inference_recommendations_jobs;
 
+mod list_job_schema_versions;
+
+mod list_jobs;
+
 mod list_labeling_jobs;
 
 mod list_labeling_jobs_for_workteam;
@@ -947,6 +959,8 @@ mod stop_hyper_parameter_tuning_job;
 mod stop_inference_experiment;
 
 mod stop_inference_recommendations_job;
+
+mod stop_job;
 
 mod stop_labeling_job;
 

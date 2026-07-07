@@ -202,6 +202,10 @@ mod complete_attached_file_upload;
 
 mod create_agent_status;
 
+mod create_attached_file;
+
+mod create_auth_code;
+
 mod create_contact;
 
 mod create_contact_flow;
@@ -351,6 +355,8 @@ mod delete_rule;
 
 mod delete_security_profile;
 
+mod delete_session;
+
 mod delete_task_template;
 
 mod delete_test_case;
@@ -494,6 +500,8 @@ mod get_current_metric_data;
 mod get_current_user_data;
 
 mod get_effective_hours_of_operations;
+
+mod get_evaluation_form_validation;
 
 mod get_federation_token;
 
@@ -723,9 +731,13 @@ mod send_chat_integration_event;
 
 mod send_outbound_email;
 
+mod send_outbound_web_notification;
+
 mod start_attached_file_upload;
 
 mod start_chat_contact;
+
+mod start_contact_conversational_analytics_job;
 
 mod start_contact_evaluation;
 
@@ -736,6 +748,8 @@ mod start_contact_recording;
 mod start_contact_streaming;
 
 mod start_email_contact;
+
+mod start_evaluation_form_validation;
 
 mod start_outbound_chat_contact;
 

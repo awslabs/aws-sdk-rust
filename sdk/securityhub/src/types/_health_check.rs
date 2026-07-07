@@ -10,6 +10,8 @@ pub struct HealthCheck {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>ISO 8601 UTC timestamp for the time check the health status of the connectorV2.</p>
     pub last_checked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of health issues associated with the connector, including error codes and messages.</p>
+    pub issues: ::std::option::Option<::std::vec::Vec<crate::types::HealthIssue>>,
 }
 impl HealthCheck {
     /// <p>The status of the connectorV2.</p>
@@ -23,6 +25,12 @@ impl HealthCheck {
     /// <p>ISO 8601 UTC timestamp for the time check the health status of the connectorV2.</p>
     pub fn last_checked_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_checked_at.as_ref()
+    }
+    /// <p>A list of health issues associated with the connector, including error codes and messages.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues.is_none()`.
+    pub fn issues(&self) -> &[crate::types::HealthIssue] {
+        self.issues.as_deref().unwrap_or_default()
     }
 }
 impl HealthCheck {
@@ -39,6 +47,7 @@ pub struct HealthCheckBuilder {
     pub(crate) connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) last_checked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::HealthIssue>>,
 }
 impl HealthCheckBuilder {
     /// <p>The status of the connectorV2.</p>
@@ -85,12 +94,33 @@ impl HealthCheckBuilder {
     pub fn get_last_checked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_checked_at
     }
+    /// Appends an item to `issues`.
+    ///
+    /// To override the contents of this collection use [`set_issues`](Self::set_issues).
+    ///
+    /// <p>A list of health issues associated with the connector, including error codes and messages.</p>
+    pub fn issues(mut self, input: crate::types::HealthIssue) -> Self {
+        let mut v = self.issues.unwrap_or_default();
+        v.push(input);
+        self.issues = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of health issues associated with the connector, including error codes and messages.</p>
+    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthIssue>>) -> Self {
+        self.issues = input;
+        self
+    }
+    /// <p>A list of health issues associated with the connector, including error codes and messages.</p>
+    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthIssue>> {
+        &self.issues
+    }
     /// Consumes the builder and constructs a [`HealthCheck`](crate::types::HealthCheck).
     pub fn build(self) -> crate::types::HealthCheck {
         crate::types::HealthCheck {
             connector_status: self.connector_status,
             message: self.message,
             last_checked_at: self.last_checked_at,
+            issues: self.issues,
         }
     }
 }

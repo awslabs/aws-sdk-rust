@@ -156,6 +156,8 @@ pub(crate) fn de_list_data_source_sync_jobs(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -163,7 +165,11 @@ pub(crate) fn de_list_data_source_sync_jobs(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "History" => {
                     builder = builder.set_history(
-                        crate::protocol_serde::shape_data_source_sync_job_history_list::de_data_source_sync_job_history_list(tokens, _value)?,
+                        crate::protocol_serde::shape_data_source_sync_job_history_list::de_data_source_sync_job_history_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "NextToken" => {

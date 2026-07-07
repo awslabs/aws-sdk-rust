@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartResourceStateUpdateInput {
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version to update. The image must be in one of these terminal states: <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, <code>FAILED</code>, or <code>CANCELLED</code>. Images with <code>FAILED</code> or <code>CANCELLED</code> status can transition only to <code>DELETED</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the lifecycle action to take for this request.</p>
+    /// <p>Specifies the lifecycle action to take for this request. For AMI-based images, valid values are <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code>. For container-based images, only <code>DELETED</code> is supported.</p>
     pub state: ::std::option::Option<crate::types::ResourceState>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>A list of image resources to update state for.</p>
+    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
     pub include_resources: ::std::option::Option<crate::types::ResourceStateUpdateIncludeResources>,
     /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
     pub exclusion_rules: ::std::option::Option<crate::types::ResourceStateUpdateExclusionRules>,
-    /// <p>The timestamp that indicates when resources are updated by a lifecycle action.</p>
+    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
     pub update_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceStateUpdateInput {
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version to update. The image must be in one of these terminal states: <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, <code>FAILED</code>, or <code>CANCELLED</code>. Images with <code>FAILED</code> or <code>CANCELLED</code> status can transition only to <code>DELETED</code>.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Indicates the lifecycle action to take for this request.</p>
+    /// <p>Specifies the lifecycle action to take for this request. For AMI-based images, valid values are <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code>. For container-based images, only <code>DELETED</code> is supported.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ResourceState> {
         self.state.as_ref()
     }
@@ -31,7 +31,7 @@ impl StartResourceStateUpdateInput {
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>A list of image resources to update state for.</p>
+    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
     pub fn include_resources(&self) -> ::std::option::Option<&crate::types::ResourceStateUpdateIncludeResources> {
         self.include_resources.as_ref()
     }
@@ -39,7 +39,7 @@ impl StartResourceStateUpdateInput {
     pub fn exclusion_rules(&self) -> ::std::option::Option<&crate::types::ResourceStateUpdateExclusionRules> {
         self.exclusion_rules.as_ref()
     }
-    /// <p>The timestamp that indicates when resources are updated by a lifecycle action.</p>
+    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
     pub fn update_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_at.as_ref()
     }
@@ -68,33 +68,33 @@ pub struct StartResourceStateUpdateInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceStateUpdateInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version to update. The image must be in one of these terminal states: <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, <code>FAILED</code>, or <code>CANCELLED</code>. Images with <code>FAILED</code> or <code>CANCELLED</code> status can transition only to <code>DELETED</code>.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version to update. The image must be in one of these terminal states: <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, <code>FAILED</code>, or <code>CANCELLED</code>. Images with <code>FAILED</code> or <code>CANCELLED</code> status can transition only to <code>DELETED</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version to update. The image must be in one of these terminal states: <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, <code>FAILED</code>, or <code>CANCELLED</code>. Images with <code>FAILED</code> or <code>CANCELLED</code> status can transition only to <code>DELETED</code>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>Indicates the lifecycle action to take for this request.</p>
+    /// <p>Specifies the lifecycle action to take for this request. For AMI-based images, valid values are <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code>. For container-based images, only <code>DELETED</code> is supported.</p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::ResourceState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the lifecycle action to take for this request.</p>
+    /// <p>Specifies the lifecycle action to take for this request. For AMI-based images, valid values are <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code>. For container-based images, only <code>DELETED</code> is supported.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ResourceState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Indicates the lifecycle action to take for this request.</p>
+    /// <p>Specifies the lifecycle action to take for this request. For AMI-based images, valid values are <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code>. For container-based images, only <code>DELETED</code> is supported.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ResourceState> {
         &self.state
     }
@@ -112,17 +112,17 @@ impl StartResourceStateUpdateInputBuilder {
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
-    /// <p>A list of image resources to update state for.</p>
+    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
     pub fn include_resources(mut self, input: crate::types::ResourceStateUpdateIncludeResources) -> Self {
         self.include_resources = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of image resources to update state for.</p>
+    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
     pub fn set_include_resources(mut self, input: ::std::option::Option<crate::types::ResourceStateUpdateIncludeResources>) -> Self {
         self.include_resources = input;
         self
     }
-    /// <p>A list of image resources to update state for.</p>
+    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
     pub fn get_include_resources(&self) -> &::std::option::Option<crate::types::ResourceStateUpdateIncludeResources> {
         &self.include_resources
     }
@@ -140,17 +140,17 @@ impl StartResourceStateUpdateInputBuilder {
     pub fn get_exclusion_rules(&self) -> &::std::option::Option<crate::types::ResourceStateUpdateExclusionRules> {
         &self.exclusion_rules
     }
-    /// <p>The timestamp that indicates when resources are updated by a lifecycle action.</p>
+    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
     pub fn update_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp that indicates when resources are updated by a lifecycle action.</p>
+    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
     pub fn set_update_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_at = input;
         self
     }
-    /// <p>The timestamp that indicates when resources are updated by a lifecycle action.</p>
+    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
     pub fn get_update_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_at
     }

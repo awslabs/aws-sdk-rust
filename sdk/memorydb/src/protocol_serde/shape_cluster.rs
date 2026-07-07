@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Cluster>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,9 @@ where
                         }
                         "PendingUpdates" => {
                             builder = builder.set_pending_updates(crate::protocol_serde::shape_cluster_pending_updates::de_cluster_pending_updates(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "MultiRegionClusterName" => {
@@ -56,7 +64,7 @@ where
                             );
                         }
                         "Shards" => {
-                            builder = builder.set_shards(crate::protocol_serde::shape_shard_list::de_shard_list(tokens, _value)?);
+                            builder = builder.set_shards(crate::protocol_serde::shape_shard_list::de_shard_list(tokens, _value, depth + 1)?);
                         }
                         "AvailabilityMode" => {
                             builder = builder.set_availability_mode(
@@ -66,7 +74,7 @@ where
                             );
                         }
                         "ClusterEndpoint" => {
-                            builder = builder.set_cluster_endpoint(crate::protocol_serde::shape_endpoint::de_endpoint(tokens, _value)?);
+                            builder = builder.set_cluster_endpoint(crate::protocol_serde::shape_endpoint::de_endpoint(tokens, _value, depth + 1)?);
                         }
                         "NodeType" => {
                             builder = builder.set_node_type(
@@ -112,7 +120,11 @@ where
                         }
                         "SecurityGroups" => {
                             builder = builder.set_security_groups(
-                                crate::protocol_serde::shape_security_group_membership_list::de_security_group_membership_list(tokens, _value)?,
+                                crate::protocol_serde::shape_security_group_membership_list::de_security_group_membership_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SubnetGroupName" => {

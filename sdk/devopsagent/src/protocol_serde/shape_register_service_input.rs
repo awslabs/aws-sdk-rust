@@ -3,30 +3,36 @@ pub fn ser_register_service_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_service::RegisterServiceInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_1.as_str());
+    if let Some(var_1) = &input.exchange_url_private_connection_name {
+        object.key("exchangeUrlPrivateConnectionName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.private_connection_name {
-        object.key("privateConnectionName").string(var_3.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.service_details {
+    if let Some(var_4) = &input.private_connection_name {
+        object.key("privateConnectionName").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.service_details {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("serviceDetails").start_object();
-        crate::protocol_serde::shape_service_details::ser_service_details(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("serviceDetails").start_object();
+        crate::protocol_serde::shape_service_details::ser_service_details(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_7) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
+    }
+    if let Some(var_11) = &input.target_url_private_connection_name {
+        object.key("targetUrlPrivateConnectionName").string(var_11.as_str());
     }
     Ok(())
 }

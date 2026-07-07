@@ -23,5 +23,7 @@ pub fn de_ownership_controls(inp: &[u8]) -> std::result::Result<crate::types::Ow
             "invalid root, expected OwnershipControls got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_ownership_controls::de_ownership_controls(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_ownership_controls::de_ownership_controls(&mut decoder, depth + 1)
 }

@@ -41,6 +41,8 @@ pub struct UpdateReplicationConfigurationInput {
     pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     /// <p>Update replication configuration store snapshot on local zone.</p>
     pub store_snapshot_on_local_zone: ::std::option::Option<bool>,
+    /// <p>Update replication configuration storage configuration.</p>
+    pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
 impl UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
@@ -123,6 +125,10 @@ impl UpdateReplicationConfigurationInput {
     pub fn store_snapshot_on_local_zone(&self) -> ::std::option::Option<bool> {
         self.store_snapshot_on_local_zone
     }
+    /// <p>Update replication configuration storage configuration.</p>
+    pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
+        self.storage_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -146,6 +152,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
         formatter.field("account_id", &self.account_id);
         formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
+        formatter.field("storage_configuration", &self.storage_configuration);
         formatter.finish()
     }
 }
@@ -179,6 +186,7 @@ pub struct UpdateReplicationConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     pub(crate) store_snapshot_on_local_zone: ::std::option::Option<bool>,
+    pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
 impl UpdateReplicationConfigurationInputBuilder {
     /// <p>Update replication configuration Source Server ID request.</p>
@@ -479,6 +487,20 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
         &self.store_snapshot_on_local_zone
     }
+    /// <p>Update replication configuration storage configuration.</p>
+    pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
+        self.storage_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update replication configuration storage configuration.</p>
+    pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
+        self.storage_configuration = input;
+        self
+    }
+    /// <p>Update replication configuration storage configuration.</p>
+    pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
+        &self.storage_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
     pub fn build(
         self,
@@ -506,6 +528,7 @@ impl UpdateReplicationConfigurationInputBuilder {
             account_id: self.account_id,
             internet_protocol: self.internet_protocol,
             store_snapshot_on_local_zone: self.store_snapshot_on_local_zone,
+            storage_configuration: self.storage_configuration,
         })
     }
 }
@@ -531,6 +554,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInputBuilder {
         formatter.field("account_id", &self.account_id);
         formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
+        formatter.field("storage_configuration", &self.storage_configuration);
         formatter.finish()
     }
 }

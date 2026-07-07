@@ -139,16 +139,22 @@ pub(crate) fn de_describe_ad_assessment(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Assessment" => {
-                    builder = builder.set_assessment(crate::protocol_serde::shape_assessment::de_assessment(tokens, _value)?);
+                    builder = builder.set_assessment(crate::protocol_serde::shape_assessment::de_assessment(tokens, _value, depth + 1)?);
                 }
                 "AssessmentReports" => {
-                    builder = builder.set_assessment_reports(crate::protocol_serde::shape_assessment_reports::de_assessment_reports(tokens, _value)?);
+                    builder = builder.set_assessment_reports(crate::protocol_serde::shape_assessment_reports::de_assessment_reports(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

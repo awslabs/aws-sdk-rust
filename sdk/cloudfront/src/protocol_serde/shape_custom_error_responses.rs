@@ -25,7 +25,11 @@ pub fn ser_custom_error_responses(
 #[allow(clippy::needless_question_mark)]
 pub fn de_custom_error_responses(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CustomErrorResponses, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CustomErrorResponses::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_custom_error_responses(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CustomErrorResponses$Items */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_custom_error_response_list::de_custom_error_response_list(&mut tag)
+                        crate::protocol_serde::shape_custom_error_response_list::de_custom_error_response_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

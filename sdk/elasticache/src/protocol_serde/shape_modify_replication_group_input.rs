@@ -188,6 +188,11 @@ pub fn ser_modify_replication_group_input_input_input(
     if let Some(var_75) = &input.cluster_mode {
         scope_74.string(var_75.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_76 = writer.prefix("Durability");
+    if let Some(var_77) = &input.durability {
+        scope_76.string(var_77.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

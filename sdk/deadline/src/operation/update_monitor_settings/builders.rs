@@ -127,17 +127,17 @@ impl UpdateMonitorSettingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
     ///
-    /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
     pub fn settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.settings(k.into(), v.into());
         self
     }
-    /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
-    /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
     pub fn get_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_settings()
     }

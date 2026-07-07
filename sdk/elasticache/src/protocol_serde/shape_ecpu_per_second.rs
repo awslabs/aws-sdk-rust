@@ -26,7 +26,11 @@ pub fn ser_ecpu_per_second(
 #[allow(clippy::needless_question_mark)]
 pub fn de_ecpu_per_second(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EcpuPerSecond, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EcpuPerSecond::builder();
     while let Some(mut tag) = decoder.next_tag() {

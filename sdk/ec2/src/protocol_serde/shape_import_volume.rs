@@ -40,6 +40,8 @@ pub fn de_import_volume(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ImportVolumeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ImportVolumeResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_import_volume(
             s if s.matches("conversionTask") /* ConversionTask com.amazonaws.ec2.synthetic#ImportVolumeOutput$ConversionTask */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_conversion_task::de_conversion_task(&mut tag)
+                        crate::protocol_serde::shape_conversion_task::de_conversion_task(&mut tag, depth + 1)
                         ?
                     )
                 ;

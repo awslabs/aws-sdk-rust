@@ -3,6 +3,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
+
 pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
@@ -20,6 +22,8 @@ mod _resource_not_found_exception;
 mod _rest_api_client_exception;
 
 mod _rest_api_server_exception;
+
+mod _service_unavailable_exception;
 
 mod _validation_exception;
 

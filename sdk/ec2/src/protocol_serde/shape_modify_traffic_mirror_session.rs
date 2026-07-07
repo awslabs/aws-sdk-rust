@@ -51,6 +51,8 @@ pub fn de_modify_traffic_mirror_session(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyTrafficMirrorSessionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyTrafficMirrorSessionResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_modify_traffic_mirror_session(
             s if s.matches("trafficMirrorSession") /* TrafficMirrorSession com.amazonaws.ec2.synthetic#ModifyTrafficMirrorSessionOutput$TrafficMirrorSession */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_traffic_mirror_session::de_traffic_mirror_session(&mut tag)
+                        crate::protocol_serde::shape_traffic_mirror_session::de_traffic_mirror_session(&mut tag, depth + 1)
                         ?
                     )
                 ;

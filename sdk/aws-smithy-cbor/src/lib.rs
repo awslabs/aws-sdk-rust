@@ -13,5 +13,8 @@ pub mod data;
 pub mod decode;
 pub mod encode;
 
+pub mod codec;
+pub mod protocol;
+
 pub use decode::Decoder;
 pub use encode::Encoder;

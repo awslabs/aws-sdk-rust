@@ -102,10 +102,16 @@ pub fn ser_aws_amazon_mq_broker_details(
 pub(crate) fn de_aws_amazon_mq_broker_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsAmazonMqBrokerDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -149,7 +155,7 @@ where
                         }
                         "EncryptionOptions" => {
                             builder = builder.set_encryption_options(
-                                    crate::protocol_serde::shape_aws_amazon_mq_broker_encryption_options_details::de_aws_amazon_mq_broker_encryption_options_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_amazon_mq_broker_encryption_options_details::de_aws_amazon_mq_broker_encryption_options_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "EngineType" => {
@@ -182,24 +188,29 @@ where
                         }
                         "LdapServerMetadata" => {
                             builder = builder.set_ldap_server_metadata(
-                                    crate::protocol_serde::shape_aws_amazon_mq_broker_ldap_server_metadata_details::de_aws_amazon_mq_broker_ldap_server_metadata_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_amazon_mq_broker_ldap_server_metadata_details::de_aws_amazon_mq_broker_ldap_server_metadata_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "Logs" => {
                             builder = builder.set_logs(
-                                crate::protocol_serde::shape_aws_amazon_mq_broker_logs_details::de_aws_amazon_mq_broker_logs_details(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_amazon_mq_broker_logs_details::de_aws_amazon_mq_broker_logs_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MaintenanceWindowStartTime" => {
                             builder = builder.set_maintenance_window_start_time(
-                                    crate::protocol_serde::shape_aws_amazon_mq_broker_maintenance_window_start_time_details::de_aws_amazon_mq_broker_maintenance_window_start_time_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_amazon_mq_broker_maintenance_window_start_time_details::de_aws_amazon_mq_broker_maintenance_window_start_time_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "PubliclyAccessible" => {
                             builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "SecurityGroups" => {
-                            builder = builder.set_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "StorageType" => {
                             builder = builder.set_storage_type(
@@ -209,11 +220,15 @@ where
                             );
                         }
                         "SubnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "Users" => {
                             builder = builder.set_users(
-                                crate::protocol_serde::shape_aws_amazon_mq_broker_users_list::de_aws_amazon_mq_broker_users_list(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_amazon_mq_broker_users_list::de_aws_amazon_mq_broker_users_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

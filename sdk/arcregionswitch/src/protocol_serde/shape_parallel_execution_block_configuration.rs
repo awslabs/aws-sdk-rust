@@ -19,14 +19,22 @@ pub fn ser_parallel_execution_block_configuration(
 
 pub(crate) fn de_parallel_execution_block_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ParallelExecutionBlockConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::ParallelExecutionBlockConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::ParallelExecutionBlockConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "steps" => builder.set_steps(Some(crate::protocol_serde::shape_steps::de_steps(decoder)?)),
+            "steps" => builder.set_steps(Some(crate::protocol_serde::shape_steps::de_steps(decoder, depth + 1)?)),
             _ => {
                 decoder.skip()?;
                 builder
@@ -45,13 +53,13 @@ pub(crate) fn de_parallel_execution_block_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

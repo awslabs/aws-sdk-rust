@@ -14,6 +14,27 @@ pub(crate) fn batch_get_record_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_write_record_output_output_correct_errors(
+    mut builder: crate::operation::batch_write_record::builders::BatchWriteRecordOutputBuilder,
+) -> crate::operation::batch_write_record::builders::BatchWriteRecordOutputBuilder {
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    if builder.unprocessed_entries.is_none() {
+        builder.unprocessed_entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_records_output_output_correct_errors(
+    mut builder: crate::operation::list_records::builders::ListRecordsOutputBuilder,
+) -> crate::operation::list_records::builders::ListRecordsOutputBuilder {
+    if builder.record_identifiers.is_none() {
+        builder.record_identifiers = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_record_error_correct_errors(
     mut builder: crate::types::builders::BatchGetRecordErrorBuilder,
 ) -> crate::types::builders::BatchGetRecordErrorBuilder {
@@ -59,9 +80,49 @@ pub(crate) fn batch_get_record_result_detail_correct_errors(
     builder
 }
 
+pub(crate) fn batch_write_record_entry_correct_errors(
+    mut builder: crate::types::builders::BatchWriteRecordEntryBuilder,
+) -> crate::types::builders::BatchWriteRecordEntryBuilder {
+    if builder.feature_group_name.is_none() {
+        builder.feature_group_name = Some(Default::default())
+    }
+    if builder.record.is_none() {
+        builder.record = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_write_record_error_correct_errors(
+    mut builder: crate::types::builders::BatchWriteRecordErrorBuilder,
+) -> crate::types::builders::BatchWriteRecordErrorBuilder {
+    if builder.entry.is_none() {
+        builder.entry = {
+            let builder = crate::types::builders::BatchWriteRecordEntryBuilder::default();
+            Some(crate::serde_util::batch_write_record_entry_correct_errors(builder).build())
+        }
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = Some(Default::default())
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn feature_value_correct_errors(mut builder: crate::types::builders::FeatureValueBuilder) -> crate::types::builders::FeatureValueBuilder {
     if builder.feature_name.is_none() {
         builder.feature_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ttl_duration_correct_errors(mut builder: crate::types::builders::TtlDurationBuilder) -> crate::types::builders::TtlDurationBuilder {
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::TtlDurationUnit>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

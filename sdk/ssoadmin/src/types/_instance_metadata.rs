@@ -18,6 +18,10 @@ pub struct InstanceMetadata {
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance creation fails, this field contains information about the cause, which may include issues with KMS key configuration or insufficient permissions.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub primary_region: ::std::option::Option<::std::string::String>,
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    pub regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>>,
 }
 impl InstanceMetadata {
     /// <p>The ARN of the Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -48,6 +52,16 @@ impl InstanceMetadata {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[crate::types::RegionMetadata] {
+        self.regions.as_deref().unwrap_or_default()
+    }
 }
 impl InstanceMetadata {
     /// Creates a new builder-style object to manufacture [`InstanceMetadata`](crate::types::InstanceMetadata).
@@ -67,6 +81,8 @@ pub struct InstanceMetadataBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::InstanceStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) primary_region: ::std::option::Option<::std::string::String>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>>,
 }
 impl InstanceMetadataBuilder {
     /// <p>The ARN of the Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -167,6 +183,40 @@ impl InstanceMetadataBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.primary_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.primary_region = input;
+        self
+    }
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_region
+    }
+    /// Appends an item to `regions`.
+    ///
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+    ///
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    pub fn regions(mut self, input: crate::types::RegionMetadata) -> Self {
+        let mut v = self.regions.unwrap_or_default();
+        v.push(input);
+        self.regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>>) -> Self {
+        self.regions = input;
+        self
+    }
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>> {
+        &self.regions
+    }
     /// Consumes the builder and constructs a [`InstanceMetadata`](crate::types::InstanceMetadata).
     pub fn build(self) -> crate::types::InstanceMetadata {
         crate::types::InstanceMetadata {
@@ -177,6 +227,8 @@ impl InstanceMetadataBuilder {
             created_date: self.created_date,
             status: self.status,
             status_reason: self.status_reason,
+            primary_region: self.primary_region,
+            regions: self.regions,
         }
     }
 }

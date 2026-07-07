@@ -13,6 +13,7 @@
 /// # let knowledgebasetype = unimplemented!();
 /// match knowledgebasetype {
 ///     KnowledgeBaseType::Kendra => { /* ... */ },
+///     KnowledgeBaseType::Managed => { /* ... */ },
 ///     KnowledgeBaseType::Sql => { /* ... */ },
 ///     KnowledgeBaseType::Vector => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -37,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The type of a knowledge base.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -45,6 +46,8 @@
 pub enum KnowledgeBaseType {
     #[allow(missing_docs)] // documentation missing in model
     Kendra,
+    #[allow(missing_docs)] // documentation missing in model
+    Managed,
     #[allow(missing_docs)] // documentation missing in model
     Sql,
     #[allow(missing_docs)] // documentation missing in model
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for KnowledgeBaseType {
     fn from(s: &str) -> Self {
         match s {
             "KENDRA" => KnowledgeBaseType::Kendra,
+            "MANAGED" => KnowledgeBaseType::Managed,
             "SQL" => KnowledgeBaseType::Sql,
             "VECTOR" => KnowledgeBaseType::Vector,
             other => KnowledgeBaseType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl KnowledgeBaseType {
     pub fn as_str(&self) -> &str {
         match self {
             KnowledgeBaseType::Kendra => "KENDRA",
+            KnowledgeBaseType::Managed => "MANAGED",
             KnowledgeBaseType::Sql => "SQL",
             KnowledgeBaseType::Vector => "VECTOR",
             KnowledgeBaseType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl KnowledgeBaseType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KENDRA", "SQL", "VECTOR"]
+        &["KENDRA", "MANAGED", "SQL", "VECTOR"]
     }
 }
 impl ::std::convert::AsRef<str> for KnowledgeBaseType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for KnowledgeBaseType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             KnowledgeBaseType::Kendra => write!(f, "KENDRA"),
+            KnowledgeBaseType::Managed => write!(f, "MANAGED"),
             KnowledgeBaseType::Sql => write!(f, "SQL"),
             KnowledgeBaseType::Vector => write!(f, "VECTOR"),
             KnowledgeBaseType::Unknown(value) => write!(f, "{value}"),

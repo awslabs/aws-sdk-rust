@@ -157,6 +157,8 @@ pub(crate) fn de_create_bot_version(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -185,7 +187,11 @@ pub(crate) fn de_create_bot_version(
                 }
                 "botVersionLocaleSpecification" => {
                     builder = builder.set_bot_version_locale_specification(
-                        crate::protocol_serde::shape_bot_version_locale_specification::de_bot_version_locale_specification(tokens, _value)?,
+                        crate::protocol_serde::shape_bot_version_locale_specification::de_bot_version_locale_specification(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "creationDateTime" => {

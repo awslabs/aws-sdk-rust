@@ -57,10 +57,16 @@ pub fn ser_package_filter(
 pub(crate) fn de_package_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PackageFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -71,29 +77,37 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "name" => {
-                            builder = builder.set_name(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value)?);
+                            builder = builder.set_name(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value, depth + 1)?);
                         }
                         "version" => {
-                            builder = builder.set_version(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value)?);
+                            builder = builder.set_version(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value, depth + 1)?);
                         }
                         "epoch" => {
-                            builder = builder.set_epoch(crate::protocol_serde::shape_number_filter::de_number_filter(tokens, _value)?);
+                            builder = builder.set_epoch(crate::protocol_serde::shape_number_filter::de_number_filter(tokens, _value, depth + 1)?);
                         }
                         "release" => {
-                            builder = builder.set_release(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value)?);
+                            builder = builder.set_release(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value, depth + 1)?);
                         }
                         "architecture" => {
-                            builder = builder.set_architecture(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value)?);
+                            builder =
+                                builder.set_architecture(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value, depth + 1)?);
                         }
                         "sourceLayerHash" => {
-                            builder = builder.set_source_layer_hash(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value)?);
+                            builder = builder.set_source_layer_hash(crate::protocol_serde::shape_string_filter::de_string_filter(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "sourceLambdaLayerArn" => {
-                            builder =
-                                builder.set_source_lambda_layer_arn(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value)?);
+                            builder = builder.set_source_lambda_layer_arn(crate::protocol_serde::shape_string_filter::de_string_filter(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "filePath" => {
-                            builder = builder.set_file_path(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value)?);
+                            builder = builder.set_file_path(crate::protocol_serde::shape_string_filter::de_string_filter(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -13,17 +13,29 @@
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
 ///     ComparisonOperator::NumericEquals => { /* ... */ },
+///     ComparisonOperator::NumericEqualsIfExists => { /* ... */ },
 ///     ComparisonOperator::NumericGreaterThan => { /* ... */ },
 ///     ComparisonOperator::NumericGreaterThanEquals => { /* ... */ },
+///     ComparisonOperator::NumericGreaterThanEqualsIfExists => { /* ... */ },
+///     ComparisonOperator::NumericGreaterThanIfExists => { /* ... */ },
 ///     ComparisonOperator::NumericLessThan => { /* ... */ },
 ///     ComparisonOperator::NumericLessThanEquals => { /* ... */ },
+///     ComparisonOperator::NumericLessThanEqualsIfExists => { /* ... */ },
+///     ComparisonOperator::NumericLessThanIfExists => { /* ... */ },
 ///     ComparisonOperator::NumericNotEquals => { /* ... */ },
+///     ComparisonOperator::NumericNotEqualsIfExists => { /* ... */ },
 ///     ComparisonOperator::StringEquals => { /* ... */ },
+///     ComparisonOperator::StringEqualsIfExists => { /* ... */ },
 ///     ComparisonOperator::StringEqualsIgnoreCase => { /* ... */ },
+///     ComparisonOperator::StringEqualsIgnoreCaseIfExists => { /* ... */ },
 ///     ComparisonOperator::StringLike => { /* ... */ },
+///     ComparisonOperator::StringLikeIfExists => { /* ... */ },
 ///     ComparisonOperator::StringNotEquals => { /* ... */ },
+///     ComparisonOperator::StringNotEqualsIfExists => { /* ... */ },
 ///     ComparisonOperator::StringNotEqualsIgnoreCase => { /* ... */ },
+///     ComparisonOperator::StringNotEqualsIgnoreCaseIfExists => { /* ... */ },
 ///     ComparisonOperator::StringNotLike => { /* ... */ },
+///     ComparisonOperator::StringNotLikeIfExists => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,27 +67,51 @@ pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     NumericEquals,
     #[allow(missing_docs)] // documentation missing in model
+    NumericEqualsIfExists,
+    #[allow(missing_docs)] // documentation missing in model
     NumericGreaterThan,
     #[allow(missing_docs)] // documentation missing in model
     NumericGreaterThanEquals,
+    #[allow(missing_docs)] // documentation missing in model
+    NumericGreaterThanEqualsIfExists,
+    #[allow(missing_docs)] // documentation missing in model
+    NumericGreaterThanIfExists,
     #[allow(missing_docs)] // documentation missing in model
     NumericLessThan,
     #[allow(missing_docs)] // documentation missing in model
     NumericLessThanEquals,
     #[allow(missing_docs)] // documentation missing in model
+    NumericLessThanEqualsIfExists,
+    #[allow(missing_docs)] // documentation missing in model
+    NumericLessThanIfExists,
+    #[allow(missing_docs)] // documentation missing in model
     NumericNotEquals,
+    #[allow(missing_docs)] // documentation missing in model
+    NumericNotEqualsIfExists,
     #[allow(missing_docs)] // documentation missing in model
     StringEquals,
     #[allow(missing_docs)] // documentation missing in model
+    StringEqualsIfExists,
+    #[allow(missing_docs)] // documentation missing in model
     StringEqualsIgnoreCase,
+    #[allow(missing_docs)] // documentation missing in model
+    StringEqualsIgnoreCaseIfExists,
     #[allow(missing_docs)] // documentation missing in model
     StringLike,
     #[allow(missing_docs)] // documentation missing in model
+    StringLikeIfExists,
+    #[allow(missing_docs)] // documentation missing in model
     StringNotEquals,
+    #[allow(missing_docs)] // documentation missing in model
+    StringNotEqualsIfExists,
     #[allow(missing_docs)] // documentation missing in model
     StringNotEqualsIgnoreCase,
     #[allow(missing_docs)] // documentation missing in model
+    StringNotEqualsIgnoreCaseIfExists,
+    #[allow(missing_docs)] // documentation missing in model
     StringNotLike,
+    #[allow(missing_docs)] // documentation missing in model
+    StringNotLikeIfExists,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -84,17 +120,29 @@ impl ::std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
         match s {
             "NumericEquals" => ComparisonOperator::NumericEquals,
+            "NumericEqualsIfExists" => ComparisonOperator::NumericEqualsIfExists,
             "NumericGreaterThan" => ComparisonOperator::NumericGreaterThan,
             "NumericGreaterThanEquals" => ComparisonOperator::NumericGreaterThanEquals,
+            "NumericGreaterThanEqualsIfExists" => ComparisonOperator::NumericGreaterThanEqualsIfExists,
+            "NumericGreaterThanIfExists" => ComparisonOperator::NumericGreaterThanIfExists,
             "NumericLessThan" => ComparisonOperator::NumericLessThan,
             "NumericLessThanEquals" => ComparisonOperator::NumericLessThanEquals,
+            "NumericLessThanEqualsIfExists" => ComparisonOperator::NumericLessThanEqualsIfExists,
+            "NumericLessThanIfExists" => ComparisonOperator::NumericLessThanIfExists,
             "NumericNotEquals" => ComparisonOperator::NumericNotEquals,
+            "NumericNotEqualsIfExists" => ComparisonOperator::NumericNotEqualsIfExists,
             "StringEquals" => ComparisonOperator::StringEquals,
+            "StringEqualsIfExists" => ComparisonOperator::StringEqualsIfExists,
             "StringEqualsIgnoreCase" => ComparisonOperator::StringEqualsIgnoreCase,
+            "StringEqualsIgnoreCaseIfExists" => ComparisonOperator::StringEqualsIgnoreCaseIfExists,
             "StringLike" => ComparisonOperator::StringLike,
+            "StringLikeIfExists" => ComparisonOperator::StringLikeIfExists,
             "StringNotEquals" => ComparisonOperator::StringNotEquals,
+            "StringNotEqualsIfExists" => ComparisonOperator::StringNotEqualsIfExists,
             "StringNotEqualsIgnoreCase" => ComparisonOperator::StringNotEqualsIgnoreCase,
+            "StringNotEqualsIgnoreCaseIfExists" => ComparisonOperator::StringNotEqualsIgnoreCaseIfExists,
             "StringNotLike" => ComparisonOperator::StringNotLike,
+            "StringNotLikeIfExists" => ComparisonOperator::StringNotLikeIfExists,
             other => ComparisonOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -111,17 +159,29 @@ impl ComparisonOperator {
     pub fn as_str(&self) -> &str {
         match self {
             ComparisonOperator::NumericEquals => "NumericEquals",
+            ComparisonOperator::NumericEqualsIfExists => "NumericEqualsIfExists",
             ComparisonOperator::NumericGreaterThan => "NumericGreaterThan",
             ComparisonOperator::NumericGreaterThanEquals => "NumericGreaterThanEquals",
+            ComparisonOperator::NumericGreaterThanEqualsIfExists => "NumericGreaterThanEqualsIfExists",
+            ComparisonOperator::NumericGreaterThanIfExists => "NumericGreaterThanIfExists",
             ComparisonOperator::NumericLessThan => "NumericLessThan",
             ComparisonOperator::NumericLessThanEquals => "NumericLessThanEquals",
+            ComparisonOperator::NumericLessThanEqualsIfExists => "NumericLessThanEqualsIfExists",
+            ComparisonOperator::NumericLessThanIfExists => "NumericLessThanIfExists",
             ComparisonOperator::NumericNotEquals => "NumericNotEquals",
+            ComparisonOperator::NumericNotEqualsIfExists => "NumericNotEqualsIfExists",
             ComparisonOperator::StringEquals => "StringEquals",
+            ComparisonOperator::StringEqualsIfExists => "StringEqualsIfExists",
             ComparisonOperator::StringEqualsIgnoreCase => "StringEqualsIgnoreCase",
+            ComparisonOperator::StringEqualsIgnoreCaseIfExists => "StringEqualsIgnoreCaseIfExists",
             ComparisonOperator::StringLike => "StringLike",
+            ComparisonOperator::StringLikeIfExists => "StringLikeIfExists",
             ComparisonOperator::StringNotEquals => "StringNotEquals",
+            ComparisonOperator::StringNotEqualsIfExists => "StringNotEqualsIfExists",
             ComparisonOperator::StringNotEqualsIgnoreCase => "StringNotEqualsIgnoreCase",
+            ComparisonOperator::StringNotEqualsIgnoreCaseIfExists => "StringNotEqualsIgnoreCaseIfExists",
             ComparisonOperator::StringNotLike => "StringNotLike",
+            ComparisonOperator::StringNotLikeIfExists => "StringNotLikeIfExists",
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
@@ -129,17 +189,29 @@ impl ComparisonOperator {
     pub const fn values() -> &'static [&'static str] {
         &[
             "NumericEquals",
+            "NumericEqualsIfExists",
             "NumericGreaterThan",
             "NumericGreaterThanEquals",
+            "NumericGreaterThanEqualsIfExists",
+            "NumericGreaterThanIfExists",
             "NumericLessThan",
             "NumericLessThanEquals",
+            "NumericLessThanEqualsIfExists",
+            "NumericLessThanIfExists",
             "NumericNotEquals",
+            "NumericNotEqualsIfExists",
             "StringEquals",
+            "StringEqualsIfExists",
             "StringEqualsIgnoreCase",
+            "StringEqualsIgnoreCaseIfExists",
             "StringLike",
+            "StringLikeIfExists",
             "StringNotEquals",
+            "StringNotEqualsIfExists",
             "StringNotEqualsIgnoreCase",
+            "StringNotEqualsIgnoreCaseIfExists",
             "StringNotLike",
+            "StringNotLikeIfExists",
         ]
     }
 }
@@ -164,17 +236,29 @@ impl ::std::fmt::Display for ComparisonOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComparisonOperator::NumericEquals => write!(f, "NumericEquals"),
+            ComparisonOperator::NumericEqualsIfExists => write!(f, "NumericEqualsIfExists"),
             ComparisonOperator::NumericGreaterThan => write!(f, "NumericGreaterThan"),
             ComparisonOperator::NumericGreaterThanEquals => write!(f, "NumericGreaterThanEquals"),
+            ComparisonOperator::NumericGreaterThanEqualsIfExists => write!(f, "NumericGreaterThanEqualsIfExists"),
+            ComparisonOperator::NumericGreaterThanIfExists => write!(f, "NumericGreaterThanIfExists"),
             ComparisonOperator::NumericLessThan => write!(f, "NumericLessThan"),
             ComparisonOperator::NumericLessThanEquals => write!(f, "NumericLessThanEquals"),
+            ComparisonOperator::NumericLessThanEqualsIfExists => write!(f, "NumericLessThanEqualsIfExists"),
+            ComparisonOperator::NumericLessThanIfExists => write!(f, "NumericLessThanIfExists"),
             ComparisonOperator::NumericNotEquals => write!(f, "NumericNotEquals"),
+            ComparisonOperator::NumericNotEqualsIfExists => write!(f, "NumericNotEqualsIfExists"),
             ComparisonOperator::StringEquals => write!(f, "StringEquals"),
+            ComparisonOperator::StringEqualsIfExists => write!(f, "StringEqualsIfExists"),
             ComparisonOperator::StringEqualsIgnoreCase => write!(f, "StringEqualsIgnoreCase"),
+            ComparisonOperator::StringEqualsIgnoreCaseIfExists => write!(f, "StringEqualsIgnoreCaseIfExists"),
             ComparisonOperator::StringLike => write!(f, "StringLike"),
+            ComparisonOperator::StringLikeIfExists => write!(f, "StringLikeIfExists"),
             ComparisonOperator::StringNotEquals => write!(f, "StringNotEquals"),
+            ComparisonOperator::StringNotEqualsIfExists => write!(f, "StringNotEqualsIfExists"),
             ComparisonOperator::StringNotEqualsIgnoreCase => write!(f, "StringNotEqualsIgnoreCase"),
+            ComparisonOperator::StringNotEqualsIgnoreCaseIfExists => write!(f, "StringNotEqualsIgnoreCaseIfExists"),
             ComparisonOperator::StringNotLike => write!(f, "StringNotLike"),
+            ComparisonOperator::StringNotLikeIfExists => write!(f, "StringNotLikeIfExists"),
             ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }

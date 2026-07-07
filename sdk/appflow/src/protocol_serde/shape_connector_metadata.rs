@@ -2,10 +2,16 @@
 pub(crate) fn de_connector_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConnectorMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,82 +22,142 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Amplitude" => {
-                            builder = builder.set_amplitude(crate::protocol_serde::shape_amplitude_metadata::de_amplitude_metadata(tokens, _value)?);
+                            builder = builder.set_amplitude(crate::protocol_serde::shape_amplitude_metadata::de_amplitude_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Datadog" => {
-                            builder = builder.set_datadog(crate::protocol_serde::shape_datadog_metadata::de_datadog_metadata(tokens, _value)?);
+                            builder = builder.set_datadog(crate::protocol_serde::shape_datadog_metadata::de_datadog_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Dynatrace" => {
-                            builder = builder.set_dynatrace(crate::protocol_serde::shape_dynatrace_metadata::de_dynatrace_metadata(tokens, _value)?);
+                            builder = builder.set_dynatrace(crate::protocol_serde::shape_dynatrace_metadata::de_dynatrace_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "GoogleAnalytics" => {
                             builder = builder.set_google_analytics(
-                                crate::protocol_serde::shape_google_analytics_metadata::de_google_analytics_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_google_analytics_metadata::de_google_analytics_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         "InforNexus" => {
                             builder = builder.set_infor_nexus(crate::protocol_serde::shape_infor_nexus_metadata::de_infor_nexus_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Marketo" => {
-                            builder = builder.set_marketo(crate::protocol_serde::shape_marketo_metadata::de_marketo_metadata(tokens, _value)?);
+                            builder = builder.set_marketo(crate::protocol_serde::shape_marketo_metadata::de_marketo_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Redshift" => {
-                            builder = builder.set_redshift(crate::protocol_serde::shape_redshift_metadata::de_redshift_metadata(tokens, _value)?);
+                            builder = builder.set_redshift(crate::protocol_serde::shape_redshift_metadata::de_redshift_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3" => {
-                            builder = builder.set_s3(crate::protocol_serde::shape_s3_metadata::de_s3_metadata(tokens, _value)?);
+                            builder = builder.set_s3(crate::protocol_serde::shape_s3_metadata::de_s3_metadata(tokens, _value, depth + 1)?);
                         }
                         "Salesforce" => {
-                            builder =
-                                builder.set_salesforce(crate::protocol_serde::shape_salesforce_metadata::de_salesforce_metadata(tokens, _value)?);
+                            builder = builder.set_salesforce(crate::protocol_serde::shape_salesforce_metadata::de_salesforce_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ServiceNow" => {
                             builder = builder.set_service_now(crate::protocol_serde::shape_service_now_metadata::de_service_now_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Singular" => {
-                            builder = builder.set_singular(crate::protocol_serde::shape_singular_metadata::de_singular_metadata(tokens, _value)?);
+                            builder = builder.set_singular(crate::protocol_serde::shape_singular_metadata::de_singular_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Slack" => {
-                            builder = builder.set_slack(crate::protocol_serde::shape_slack_metadata::de_slack_metadata(tokens, _value)?);
+                            builder = builder.set_slack(crate::protocol_serde::shape_slack_metadata::de_slack_metadata(tokens, _value, depth + 1)?);
                         }
                         "Snowflake" => {
-                            builder = builder.set_snowflake(crate::protocol_serde::shape_snowflake_metadata::de_snowflake_metadata(tokens, _value)?);
+                            builder = builder.set_snowflake(crate::protocol_serde::shape_snowflake_metadata::de_snowflake_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Trendmicro" => {
-                            builder =
-                                builder.set_trendmicro(crate::protocol_serde::shape_trendmicro_metadata::de_trendmicro_metadata(tokens, _value)?);
+                            builder = builder.set_trendmicro(crate::protocol_serde::shape_trendmicro_metadata::de_trendmicro_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Veeva" => {
-                            builder = builder.set_veeva(crate::protocol_serde::shape_veeva_metadata::de_veeva_metadata(tokens, _value)?);
+                            builder = builder.set_veeva(crate::protocol_serde::shape_veeva_metadata::de_veeva_metadata(tokens, _value, depth + 1)?);
                         }
                         "Zendesk" => {
-                            builder = builder.set_zendesk(crate::protocol_serde::shape_zendesk_metadata::de_zendesk_metadata(tokens, _value)?);
+                            builder = builder.set_zendesk(crate::protocol_serde::shape_zendesk_metadata::de_zendesk_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EventBridge" => {
                             builder = builder.set_event_bridge(crate::protocol_serde::shape_event_bridge_metadata::de_event_bridge_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Upsolver" => {
-                            builder = builder.set_upsolver(crate::protocol_serde::shape_upsolver_metadata::de_upsolver_metadata(tokens, _value)?);
+                            builder = builder.set_upsolver(crate::protocol_serde::shape_upsolver_metadata::de_upsolver_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CustomerProfiles" => {
                             builder = builder.set_customer_profiles(
-                                crate::protocol_serde::shape_customer_profiles_metadata::de_customer_profiles_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_customer_profiles_metadata::de_customer_profiles_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         "Honeycode" => {
-                            builder = builder.set_honeycode(crate::protocol_serde::shape_honeycode_metadata::de_honeycode_metadata(tokens, _value)?);
+                            builder = builder.set_honeycode(crate::protocol_serde::shape_honeycode_metadata::de_honeycode_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SAPOData" => {
-                            builder = builder.set_sapo_data(crate::protocol_serde::shape_sapo_data_metadata::de_sapo_data_metadata(tokens, _value)?);
+                            builder = builder.set_sapo_data(crate::protocol_serde::shape_sapo_data_metadata::de_sapo_data_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Pardot" => {
-                            builder = builder.set_pardot(crate::protocol_serde::shape_pardot_metadata::de_pardot_metadata(tokens, _value)?);
+                            builder = builder.set_pardot(crate::protocol_serde::shape_pardot_metadata::de_pardot_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

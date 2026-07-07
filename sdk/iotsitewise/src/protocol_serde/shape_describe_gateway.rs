@@ -104,6 +104,8 @@ pub(crate) fn de_describe_gateway(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -124,7 +126,7 @@ pub(crate) fn de_describe_gateway(
                 }
                 "gatewayCapabilitySummaries" => {
                     builder = builder.set_gateway_capability_summaries(
-                        crate::protocol_serde::shape_gateway_capability_summaries::de_gateway_capability_summaries(tokens, _value)?,
+                        crate::protocol_serde::shape_gateway_capability_summaries::de_gateway_capability_summaries(tokens, _value, depth + 1)?,
                     );
                 }
                 "gatewayId" => {
@@ -142,7 +144,11 @@ pub(crate) fn de_describe_gateway(
                     );
                 }
                 "gatewayPlatform" => {
-                    builder = builder.set_gateway_platform(crate::protocol_serde::shape_gateway_platform::de_gateway_platform(tokens, _value)?);
+                    builder = builder.set_gateway_platform(crate::protocol_serde::shape_gateway_platform::de_gateway_platform(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "gatewayVersion" => {
                     builder = builder.set_gateway_version(

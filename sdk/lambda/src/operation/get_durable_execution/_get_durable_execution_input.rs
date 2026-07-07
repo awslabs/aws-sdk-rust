@@ -5,11 +5,17 @@
 pub struct GetDurableExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the durable execution.</p>
     pub durable_execution_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to include execution data such as input payload, result, and error information in the response. Set to <code>false</code> for a more compact response that includes only execution metadata. The default value is set to <code>true</code>.</p>
+    pub include_execution_data: ::std::option::Option<bool>,
 }
 impl GetDurableExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the durable execution.</p>
     pub fn durable_execution_arn(&self) -> ::std::option::Option<&str> {
         self.durable_execution_arn.as_deref()
+    }
+    /// <p>Specifies whether to include execution data such as input payload, result, and error information in the response. Set to <code>false</code> for a more compact response that includes only execution metadata. The default value is set to <code>true</code>.</p>
+    pub fn include_execution_data(&self) -> ::std::option::Option<bool> {
+        self.include_execution_data
     }
 }
 impl GetDurableExecutionInput {
@@ -24,6 +30,7 @@ impl GetDurableExecutionInput {
 #[non_exhaustive]
 pub struct GetDurableExecutionInputBuilder {
     pub(crate) durable_execution_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) include_execution_data: ::std::option::Option<bool>,
 }
 impl GetDurableExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the durable execution.</p>
@@ -41,6 +48,20 @@ impl GetDurableExecutionInputBuilder {
     pub fn get_durable_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.durable_execution_arn
     }
+    /// <p>Specifies whether to include execution data such as input payload, result, and error information in the response. Set to <code>false</code> for a more compact response that includes only execution metadata. The default value is set to <code>true</code>.</p>
+    pub fn include_execution_data(mut self, input: bool) -> Self {
+        self.include_execution_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include execution data such as input payload, result, and error information in the response. Set to <code>false</code> for a more compact response that includes only execution metadata. The default value is set to <code>true</code>.</p>
+    pub fn set_include_execution_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_execution_data = input;
+        self
+    }
+    /// <p>Specifies whether to include execution data such as input payload, result, and error information in the response. Set to <code>false</code> for a more compact response that includes only execution metadata. The default value is set to <code>true</code>.</p>
+    pub fn get_include_execution_data(&self) -> &::std::option::Option<bool> {
+        &self.include_execution_data
+    }
     /// Consumes the builder and constructs a [`GetDurableExecutionInput`](crate::operation::get_durable_execution::GetDurableExecutionInput).
     pub fn build(
         self,
@@ -48,6 +69,7 @@ impl GetDurableExecutionInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::get_durable_execution::GetDurableExecutionInput {
             durable_execution_arn: self.durable_execution_arn,
+            include_execution_data: self.include_execution_data,
         })
     }
 }

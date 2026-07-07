@@ -171,7 +171,13 @@ mod delete_billing_view;
 
 mod disassociate_source_views;
 
+mod get_billing_preferences;
+
 mod get_billing_view;
+
+mod get_credit_allocation_history;
+
+mod get_credits;
 
 mod get_resource_policy;
 
@@ -181,8 +187,12 @@ mod list_source_views_for_billing_view;
 
 mod list_tags_for_resource;
 
+mod redeem_credits;
+
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_billing_preferences;
 
 mod update_billing_view;

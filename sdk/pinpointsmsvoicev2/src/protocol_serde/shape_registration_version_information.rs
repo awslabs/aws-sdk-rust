@@ -2,10 +2,16 @@
 pub(crate) fn de_registration_version_information<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RegistrationVersionInformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -32,13 +38,15 @@ where
                         "RegistrationVersionStatusHistory" => {
                             builder = builder.set_registration_version_status_history(
                                 crate::protocol_serde::shape_registration_version_status_history::de_registration_version_status_history(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "DeniedReasons" => {
                             builder = builder.set_denied_reasons(
-                                    crate::protocol_serde::shape_registration_denied_reason_information_list::de_registration_denied_reason_information_list(tokens, _value)?
+                                    crate::protocol_serde::shape_registration_denied_reason_information_list::de_registration_denied_reason_information_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Feedback" => {

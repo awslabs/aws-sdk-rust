@@ -9,8 +9,14 @@ pub fn ser_update_cluster_version_input_input(
     if let Some(var_2) = &input.force {
         object.key("force").boolean(*var_2);
     }
-    if let Some(var_3) = &input.version {
-        object.key("version").string(var_3.as_str());
+    if let Some(var_3) = &input.rollback_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("rollbackConfig").start_object();
+        crate::protocol_serde::shape_rollback_config::ser_rollback_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.version {
+        object.key("version").string(var_5.as_str());
     }
     Ok(())
 }

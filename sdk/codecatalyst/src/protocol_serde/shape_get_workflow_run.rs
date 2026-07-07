@@ -135,71 +135,75 @@ pub(crate) fn de_get_workflow_run(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "endTime" => {
-                    builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "endTime" => {
+                        builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "id" => {
+                        builder = builder.set_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "lastUpdatedTime" => {
+                        builder = builder.set_last_updated_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "projectName" => {
+                        builder = builder.set_project_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "spaceName" => {
+                        builder = builder.set_space_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "startTime" => {
+                        builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "status" => {
+                        builder = builder.set_status(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::WorkflowRunStatus::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "statusReasons" => {
+                        builder = builder.set_status_reasons(
+                            crate::protocol_serde::shape_workflow_run_status_reasons::de_workflow_run_status_reasons(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "workflowId" => {
+                        builder = builder.set_workflow_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "id" => {
-                    builder = builder.set_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "lastUpdatedTime" => {
-                    builder = builder.set_last_updated_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "projectName" => {
-                    builder = builder.set_project_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "spaceName" => {
-                    builder = builder.set_space_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "startTime" => {
-                    builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::WorkflowRunStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "statusReasons" => {
-                    builder = builder.set_status_reasons(crate::protocol_serde::shape_workflow_run_status_reasons::de_workflow_run_status_reasons(
-                        tokens, _value,
-                    )?);
-                }
-                "workflowId" => {
-                    builder = builder.set_workflow_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

@@ -8,6 +8,8 @@ pub struct VpcOptions {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of security group IDs associated with the VPC endpoints for the domain. If you do not provide a security group ID, OpenSearch Service uses the default security group for the VPC.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Controls whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub egress_enabled: ::std::option::Option<bool>,
 }
 impl VpcOptions {
     /// <p>A list of subnet IDs associated with the VPC endpoints for the domain. If your domain uses multiple Availability Zones, you need to provide two subnet IDs, one per zone. Otherwise, provide only one.</p>
@@ -21,6 +23,10 @@ impl VpcOptions {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Controls whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub fn egress_enabled(&self) -> ::std::option::Option<bool> {
+        self.egress_enabled
     }
 }
 impl VpcOptions {
@@ -36,6 +42,7 @@ impl VpcOptions {
 pub struct VpcOptionsBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) egress_enabled: ::std::option::Option<bool>,
 }
 impl VpcOptionsBuilder {
     /// Appends an item to `subnet_ids`.
@@ -78,11 +85,26 @@ impl VpcOptionsBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Controls whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub fn egress_enabled(mut self, input: bool) -> Self {
+        self.egress_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub fn set_egress_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.egress_enabled = input;
+        self
+    }
+    /// <p>Controls whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub fn get_egress_enabled(&self) -> &::std::option::Option<bool> {
+        &self.egress_enabled
+    }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     pub fn build(self) -> crate::types::VpcOptions {
         crate::types::VpcOptions {
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
+            egress_enabled: self.egress_enabled,
         }
     }
 }

@@ -38,7 +38,7 @@ impl crate::operation::search_game_sessions::builders::SearchGameSessionsInputBu
 /// <p>To set search and sort criteria, create a filter expression using the following game session attributes. For game session search examples, see the Examples section of this topic.</p>
 /// <ul>
 /// <li>
-/// <p><b>gameSessionId</b> -- A unique identifier for the game session. You can use either a <code>GameSessionId</code> or <code>GameSessionArn</code> value.</p></li>
+/// <p><b>gameSessionId</b> -- An identifier for the game session that is unique across all regions. You must use the full ARN value.</p></li>
 /// <li>
 /// <p><b>gameSessionName</b> -- Name assigned to a game session. Game session names do not need to be unique to a game session.</p></li>
 /// <li>

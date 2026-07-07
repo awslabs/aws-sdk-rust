@@ -30,6 +30,8 @@ pub struct ResaleAuthorizationFilters {
     pub offer_extended_status: ::std::option::Option<crate::types::ResaleAuthorizationOfferExtendedStatusFilter>,
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization.</p>
     pub last_modified_date: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilter>,
+    /// <p>Allows filtering on the <code>ResellerRole</code> of a ResaleAuthorization.</p>
+    pub reseller_role: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleFilter>,
 }
 impl ResaleAuthorizationFilters {
     /// <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
@@ -84,6 +86,10 @@ impl ResaleAuthorizationFilters {
     pub fn last_modified_date(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationLastModifiedDateFilter> {
         self.last_modified_date.as_ref()
     }
+    /// <p>Allows filtering on the <code>ResellerRole</code> of a ResaleAuthorization.</p>
+    pub fn reseller_role(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationResellerRoleFilter> {
+        self.reseller_role.as_ref()
+    }
 }
 impl ResaleAuthorizationFilters {
     /// Creates a new builder-style object to manufacture [`ResaleAuthorizationFilters`](crate::types::ResaleAuthorizationFilters).
@@ -109,6 +115,7 @@ pub struct ResaleAuthorizationFiltersBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ResaleAuthorizationStatusFilter>,
     pub(crate) offer_extended_status: ::std::option::Option<crate::types::ResaleAuthorizationOfferExtendedStatusFilter>,
     pub(crate) last_modified_date: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilter>,
+    pub(crate) reseller_role: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleFilter>,
 }
 impl ResaleAuthorizationFiltersBuilder {
     /// <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
@@ -293,6 +300,20 @@ impl ResaleAuthorizationFiltersBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilter> {
         &self.last_modified_date
     }
+    /// <p>Allows filtering on the <code>ResellerRole</code> of a ResaleAuthorization.</p>
+    pub fn reseller_role(mut self, input: crate::types::ResaleAuthorizationResellerRoleFilter) -> Self {
+        self.reseller_role = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows filtering on the <code>ResellerRole</code> of a ResaleAuthorization.</p>
+    pub fn set_reseller_role(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleFilter>) -> Self {
+        self.reseller_role = input;
+        self
+    }
+    /// <p>Allows filtering on the <code>ResellerRole</code> of a ResaleAuthorization.</p>
+    pub fn get_reseller_role(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationResellerRoleFilter> {
+        &self.reseller_role
+    }
     /// Consumes the builder and constructs a [`ResaleAuthorizationFilters`](crate::types::ResaleAuthorizationFilters).
     pub fn build(self) -> crate::types::ResaleAuthorizationFilters {
         crate::types::ResaleAuthorizationFilters {
@@ -309,6 +330,7 @@ impl ResaleAuthorizationFiltersBuilder {
             status: self.status,
             offer_extended_status: self.offer_extended_status,
             last_modified_date: self.last_modified_date,
+            reseller_role: self.reseller_role,
         }
     }
 }

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_instance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbInstance, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbInstance::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_db_instance(
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.docdb#DBInstance$Endpoint */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -114,7 +118,7 @@ pub fn de_db_instance(
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.docdb#DBInstance$VpcSecurityGroups */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -137,7 +141,7 @@ pub fn de_db_instance(
             s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.docdb#DBInstance$DBSubnetGroup */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_db_subnet_group::de_db_subnet_group(&mut tag)
+                        crate::protocol_serde::shape_db_subnet_group::de_db_subnet_group(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -160,7 +164,7 @@ pub fn de_db_instance(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.docdb#DBInstance$PendingModifiedValues */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag)
+                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -227,7 +231,7 @@ pub fn de_db_instance(
             s if s.matches("StatusInfos") /* StatusInfos com.amazonaws.docdb#DBInstance$StatusInfos */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_db_instance_status_info_list::de_db_instance_status_info_list(&mut tag)
+                        crate::protocol_serde::shape_db_instance_status_info_list::de_db_instance_status_info_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -347,7 +351,7 @@ pub fn de_db_instance(
             s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.docdb#DBInstance$EnabledCloudwatchLogsExports */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -357,7 +361,7 @@ pub fn de_db_instance(
             s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.docdb#DBInstance$CertificateDetails */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
+                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

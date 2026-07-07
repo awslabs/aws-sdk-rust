@@ -81,6 +81,8 @@ pub(crate) fn de_describe_optimization_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -140,13 +142,15 @@ pub(crate) fn de_describe_optimization_job(
                 }
                 "ModelSource" => {
                     builder = builder.set_model_source(
-                        crate::protocol_serde::shape_optimization_job_model_source::de_optimization_job_model_source(tokens, _value)?,
+                        crate::protocol_serde::shape_optimization_job_model_source::de_optimization_job_model_source(tokens, _value, depth + 1)?,
                     );
                 }
                 "OptimizationEnvironment" => {
                     builder = builder.set_optimization_environment(
                         crate::protocol_serde::shape_optimization_job_environment_variables::de_optimization_job_environment_variables(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -169,17 +173,22 @@ pub(crate) fn de_describe_optimization_job(
                 }
                 "OptimizationConfigs" => {
                     builder = builder.set_optimization_configs(crate::protocol_serde::shape_optimization_configs::de_optimization_configs(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "OutputConfig" => {
                     builder = builder.set_output_config(
-                        crate::protocol_serde::shape_optimization_job_output_config::de_optimization_job_output_config(tokens, _value)?,
+                        crate::protocol_serde::shape_optimization_job_output_config::de_optimization_job_output_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "OptimizationOutput" => {
-                    builder =
-                        builder.set_optimization_output(crate::protocol_serde::shape_optimization_output::de_optimization_output(tokens, _value)?);
+                    builder = builder.set_optimization_output(crate::protocol_serde::shape_optimization_output::de_optimization_output(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -189,11 +198,17 @@ pub(crate) fn de_describe_optimization_job(
                     );
                 }
                 "StoppingCondition" => {
-                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens, _value)?);
+                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "VpcConfig" => {
                     builder = builder.set_vpc_config(crate::protocol_serde::shape_optimization_vpc_config::de_optimization_vpc_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

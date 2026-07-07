@@ -227,6 +227,35 @@ impl From<crate::operation::associate_identity_provider_config::AssociateIdentit
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_update::CancelUpdateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_update::CancelUpdateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_update::CancelUpdateError> for Error {
+    fn from(err: crate::operation::cancel_update::CancelUpdateError) -> Self {
+        match err {
+            crate::operation::cancel_update::CancelUpdateError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::cancel_update::CancelUpdateError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_update::CancelUpdateError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::cancel_update::CancelUpdateError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::cancel_update::CancelUpdateError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::cancel_update::CancelUpdateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_update::CancelUpdateError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::cancel_update::CancelUpdateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_update::CancelUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_entry::CreateAccessEntryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

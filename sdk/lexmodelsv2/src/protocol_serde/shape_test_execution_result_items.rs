@@ -2,10 +2,16 @@
 pub(crate) fn de_test_execution_result_items<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TestExecutionResultItems>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,29 +24,39 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "overallTestResults" => {
                                 builder = builder.set_overall_test_results(
-                                    crate::protocol_serde::shape_overall_test_results::de_overall_test_results(tokens, _value)?,
+                                    crate::protocol_serde::shape_overall_test_results::de_overall_test_results(tokens, _value, depth + 1)?,
                                 );
                             }
                             "conversationLevelTestResults" => {
                                 builder = builder.set_conversation_level_test_results(
-                                    crate::protocol_serde::shape_conversation_level_test_results::de_conversation_level_test_results(tokens, _value)?,
+                                    crate::protocol_serde::shape_conversation_level_test_results::de_conversation_level_test_results(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "intentClassificationTestResults" => {
                                 builder = builder.set_intent_classification_test_results(
                                     crate::protocol_serde::shape_intent_classification_test_results::de_intent_classification_test_results(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "intentLevelSlotResolutionTestResults" => {
                                 builder = builder.set_intent_level_slot_resolution_test_results(
-                                    crate::protocol_serde::shape_intent_level_slot_resolution_test_results::de_intent_level_slot_resolution_test_results(tokens, _value)?
+                                    crate::protocol_serde::shape_intent_level_slot_resolution_test_results::de_intent_level_slot_resolution_test_results(tokens, _value, depth + 1)?
                                 );
                             }
                             "utteranceLevelTestResults" => {
                                 builder = builder.set_utterance_level_test_results(
-                                    crate::protocol_serde::shape_utterance_level_test_results::de_utterance_level_test_results(tokens, _value)?,
+                                    crate::protocol_serde::shape_utterance_level_test_results::de_utterance_level_test_results(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -75,7 +75,11 @@ pub fn ser_index_field(
 #[allow(clippy::needless_question_mark)]
 pub fn de_index_field(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IndexField, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IndexField::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -110,7 +114,7 @@ pub fn de_index_field(
             s if s.matches("IntOptions") /* IntOptions com.amazonaws.cloudsearch#IndexField$IntOptions */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_int_options::de_int_options(&mut tag)
+                        crate::protocol_serde::shape_int_options::de_int_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -120,7 +124,7 @@ pub fn de_index_field(
             s if s.matches("DoubleOptions") /* DoubleOptions com.amazonaws.cloudsearch#IndexField$DoubleOptions */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_double_options::de_double_options(&mut tag)
+                        crate::protocol_serde::shape_double_options::de_double_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -130,7 +134,7 @@ pub fn de_index_field(
             s if s.matches("LiteralOptions") /* LiteralOptions com.amazonaws.cloudsearch#IndexField$LiteralOptions */ =>  {
                 let var_29 =
                     Some(
-                        crate::protocol_serde::shape_literal_options::de_literal_options(&mut tag)
+                        crate::protocol_serde::shape_literal_options::de_literal_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -140,7 +144,7 @@ pub fn de_index_field(
             s if s.matches("TextOptions") /* TextOptions com.amazonaws.cloudsearch#IndexField$TextOptions */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_text_options::de_text_options(&mut tag)
+                        crate::protocol_serde::shape_text_options::de_text_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -150,7 +154,7 @@ pub fn de_index_field(
             s if s.matches("DateOptions") /* DateOptions com.amazonaws.cloudsearch#IndexField$DateOptions */ =>  {
                 let var_31 =
                     Some(
-                        crate::protocol_serde::shape_date_options::de_date_options(&mut tag)
+                        crate::protocol_serde::shape_date_options::de_date_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -160,7 +164,7 @@ pub fn de_index_field(
             s if s.matches("LatLonOptions") /* LatLonOptions com.amazonaws.cloudsearch#IndexField$LatLonOptions */ =>  {
                 let var_32 =
                     Some(
-                        crate::protocol_serde::shape_lat_lon_options::de_lat_lon_options(&mut tag)
+                        crate::protocol_serde::shape_lat_lon_options::de_lat_lon_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -170,7 +174,7 @@ pub fn de_index_field(
             s if s.matches("IntArrayOptions") /* IntArrayOptions com.amazonaws.cloudsearch#IndexField$IntArrayOptions */ =>  {
                 let var_33 =
                     Some(
-                        crate::protocol_serde::shape_int_array_options::de_int_array_options(&mut tag)
+                        crate::protocol_serde::shape_int_array_options::de_int_array_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -180,7 +184,7 @@ pub fn de_index_field(
             s if s.matches("DoubleArrayOptions") /* DoubleArrayOptions com.amazonaws.cloudsearch#IndexField$DoubleArrayOptions */ =>  {
                 let var_34 =
                     Some(
-                        crate::protocol_serde::shape_double_array_options::de_double_array_options(&mut tag)
+                        crate::protocol_serde::shape_double_array_options::de_double_array_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -190,7 +194,7 @@ pub fn de_index_field(
             s if s.matches("LiteralArrayOptions") /* LiteralArrayOptions com.amazonaws.cloudsearch#IndexField$LiteralArrayOptions */ =>  {
                 let var_35 =
                     Some(
-                        crate::protocol_serde::shape_literal_array_options::de_literal_array_options(&mut tag)
+                        crate::protocol_serde::shape_literal_array_options::de_literal_array_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -200,7 +204,7 @@ pub fn de_index_field(
             s if s.matches("TextArrayOptions") /* TextArrayOptions com.amazonaws.cloudsearch#IndexField$TextArrayOptions */ =>  {
                 let var_36 =
                     Some(
-                        crate::protocol_serde::shape_text_array_options::de_text_array_options(&mut tag)
+                        crate::protocol_serde::shape_text_array_options::de_text_array_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -210,7 +214,7 @@ pub fn de_index_field(
             s if s.matches("DateArrayOptions") /* DateArrayOptions com.amazonaws.cloudsearch#IndexField$DateArrayOptions */ =>  {
                 let var_37 =
                     Some(
-                        crate::protocol_serde::shape_date_array_options::de_date_array_options(&mut tag)
+                        crate::protocol_serde::shape_date_array_options::de_date_array_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

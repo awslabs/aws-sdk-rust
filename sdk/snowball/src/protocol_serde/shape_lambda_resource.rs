@@ -22,11 +22,19 @@ pub fn ser_lambda_resource(
 
 pub(crate) fn de_lambda_resource(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LambdaResource, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::LambdaResourceBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::LambdaResourceBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "LambdaArn" => {
@@ -34,7 +42,7 @@ pub(crate) fn de_lambda_resource(
             }
             "EventTriggers" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_event_triggers(Some(
-                    crate::protocol_serde::shape_event_trigger_definition_list::de_event_trigger_definition_list(decoder)?,
+                    crate::protocol_serde::shape_event_trigger_definition_list::de_event_trigger_definition_list(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -55,13 +63,13 @@ pub(crate) fn de_lambda_resource(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

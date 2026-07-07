@@ -53,5 +53,18 @@ pub fn ser_image_criterion_request(
     if let Some(var_19) = &input.creation_date_condition {
         crate::protocol_serde::shape_creation_date_condition_request::ser_creation_date_condition_request(scope_18, var_19)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("ImageWatermark");
+    if let Some(var_21) = &input.image_watermarks {
+        if !var_21.is_empty() {
+            let mut list_23 = scope_20.start_list(true, Some("item"));
+            for item_22 in var_21 {
+                #[allow(unused_mut)]
+                let mut entry_24 = list_23.entry();
+                crate::protocol_serde::shape_image_watermark_filter_request::ser_image_watermark_filter_request(entry_24, item_22)?;
+            }
+            list_23.finish();
+        }
+    }
     Ok(())
 }

@@ -205,6 +205,194 @@
                 },
                 "smithy.api#documentation": "Provide APIs to create and manage Amazon Connect Campaigns.",
                 "smithy.api#title": "AmazonConnectCampaignServiceV2",
+                "smithy.rules#endpointBdd": {
+                    "version": "1.1",
+                    "parameters": {
+                        "Region": {
+                            "builtIn": "AWS::Region",
+                            "required": false,
+                            "documentation": "The AWS region used to dispatch the request.",
+                            "type": "string"
+                        },
+                        "UseDualStack": {
+                            "builtIn": "AWS::UseDualStack",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+                            "type": "boolean"
+                        },
+                        "UseFIPS": {
+                            "builtIn": "AWS::UseFIPS",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+                            "type": "boolean"
+                        },
+                        "Endpoint": {
+                            "builtIn": "SDK::Endpoint",
+                            "required": false,
+                            "documentation": "Override the endpoint used to send this request",
+                            "type": "string"
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "aws.partition",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ],
+                            "assign": "PartitionResult"
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseFIPS"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseDualStack"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsDualStack"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsFIPS"
+                                    ]
+                                },
+                                true
+                            ]
+                        }
+                    ],
+                    "results": [
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": {
+                                    "ref": "Endpoint"
+                                },
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://connect-campaigns-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://connect-campaigns-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS is enabled but this partition does not support FIPS",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://connect-campaigns.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "DualStack is enabled but this partition does not support DualStack",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://connect-campaigns.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
+                        }
+                    ],
+                    "root": 2,
+                    "nodeCount": 13,
+                    "nodes": "/////wAAAAH/////AAAAAAAAAAwAAAADAAAAAQAAAAQF9eELAAAAAgAAAAUF9eELAAAAAwAAAAgAAAAGAAAABAAAAAcF9eEKAAAABQX14QgF9eEJAAAABAAAAAoAAAAJAAAABgX14QYF9eEHAAAABQAAAAsF9eEFAAAABgX14QQF9eEFAAAAAwX14QEAAAANAAAABAX14QIF9eED"
+                },
                 "smithy.rules#endpointRuleSet": {
                     "version": "1.0",
                     "parameters": {
@@ -905,6 +1093,16 @@
                 }
             }
         },
+        "com.amazonaws.connectcampaignsv2#BrowserId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#documentation": "Browser Id for web notification event trigger",
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 36
+                }
+            }
+        },
         "com.amazonaws.connectcampaignsv2#Campaign": {
             "type": "structure",
             "members": {
@@ -1136,6 +1334,17 @@
                     "min": 0.01,
                     "max": 1
                 }
+            }
+        },
+        "com.amazonaws.connectcampaignsv2#ChannelContext": {
+            "type": "structure",
+            "members": {
+                "webNotificationContext": {
+                    "target": "com.amazonaws.connectcampaignsv2#WebNotificationContext"
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Additional metadata related to the event trigger context"
             }
         },
         "com.amazonaws.connectcampaignsv2#ChannelSubtype": {
@@ -2322,6 +2531,20 @@
                 "smithy.api#documentation": "Event trigger of the campaign"
             }
         },
+        "com.amazonaws.connectcampaignsv2#EventTriggerContext": {
+            "type": "structure",
+            "members": {
+                "sourceEvent": {
+                    "target": "com.amazonaws.connectcampaignsv2#SourceEvent"
+                },
+                "channelContext": {
+                    "target": "com.amazonaws.connectcampaignsv2#ChannelContext"
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Event trigger context data"
+            }
+        },
         "com.amazonaws.connectcampaignsv2#EventType": {
             "type": "string",
             "traits": {
@@ -2346,6 +2569,10 @@
                     {
                         "value": "Campaign-WhatsApp",
                         "name": "CAMPAIGN_WHATS_APP"
+                    },
+                    {
+                        "value": "Campaign-WebNotification",
+                        "name": "CAMPAIGN_WEB_NOTIFICATION"
                     }
                 ]
             }
@@ -3403,6 +3630,9 @@
                 },
                 "localTimeZoneDetection": {
                     "target": "com.amazonaws.connectcampaignsv2#LocalTimeZoneDetection"
+                },
+                "localTimeZoneDetectionScope": {
+                    "target": "com.amazonaws.connectcampaignsv2#LocalTimeZoneDetectionScope"
                 }
             },
             "traits": {
@@ -3417,6 +3647,22 @@
             "traits": {
                 "smithy.api#documentation": "Local TimeZone Detection method list",
                 "smithy.api#uniqueItems": {}
+            }
+        },
+        "com.amazonaws.connectcampaignsv2#LocalTimeZoneDetectionScope": {
+            "type": "string",
+            "traits": {
+                "smithy.api#documentation": "Local TimeZone Detection scope.",
+                "smithy.api#enum": [
+                    {
+                        "value": "PRIMARY_ONLY",
+                        "name": "PRIMARY_ONLY"
+                    },
+                    {
+                        "value": "ALL_AVAILABLE",
+                        "name": "ALL_AVAILABLE"
+                    }
+                ]
             }
         },
         "com.amazonaws.connectcampaignsv2#LocalTimeZoneDetectionType": {
@@ -3642,6 +3888,9 @@
                 },
                 "expirationTime": {
                     "target": "com.amazonaws.connectcampaignsv2#TimeStamp"
+                },
+                "eventTriggerContext": {
+                    "target": "com.amazonaws.connectcampaignsv2#EventTriggerContext"
                 }
             },
             "traits": {
@@ -4233,6 +4482,16 @@
                 "smithy.api#httpError": 402
             }
         },
+        "com.amazonaws.connectcampaignsv2#SessionId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#documentation": "Session Id for web notification event trigger",
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 36
+                }
+            }
+        },
         "com.amazonaws.connectcampaignsv2#SmsChannelSubtypeConfig": {
             "type": "structure",
             "members": {
@@ -4325,6 +4584,15 @@
             },
             "traits": {
                 "smithy.api#documentation": "Source of the campaign"
+            }
+        },
+        "com.amazonaws.connectcampaignsv2#SourceEvent": {
+            "type": "string",
+            "traits": {
+                "smithy.api#documentation": "Source event object for event triggers",
+                "smithy.api#length": {
+                    "min": 1
+                }
             }
         },
         "com.amazonaws.connectcampaignsv2#SourcePhoneNumber": {
@@ -5452,6 +5720,20 @@
                 "smithy.api#documentation": "The input fails to satisfy the constraints specified by an AWS service.",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.connectcampaignsv2#WebNotificationContext": {
+            "type": "structure",
+            "members": {
+                "sessionId": {
+                    "target": "com.amazonaws.connectcampaignsv2#SessionId"
+                },
+                "browserId": {
+                    "target": "com.amazonaws.connectcampaignsv2#BrowserId"
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Context metadata for the web notification type channel"
             }
         },
         "com.amazonaws.connectcampaignsv2#WhatsAppChannelSubtypeConfig": {

@@ -17,6 +17,20 @@ pub fn de_get_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::operation::get_configuration::GetConfigurationError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::get_configuration::GetConfigurationError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -73,6 +87,20 @@ pub fn de_get_configuration_http_error(
             };
             tmp
         }),
+        "ValidationException" => crate::operation::get_configuration::GetConfigurationError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?
+            };
+            tmp
+        }),
         _ => crate::operation::get_configuration::GetConfigurationError::generic(generic),
     })
 }
@@ -93,6 +121,16 @@ pub fn de_get_configuration_http_response(
     })
 }
 
+pub fn ser_get_configuration_input(
+    input: &crate::operation::get_configuration::GetConfigurationInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_get_configuration_input::ser_get_configuration_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
+
 pub(crate) fn de_get_configuration(
     _value: &[u8],
     mut builder: crate::operation::get_configuration::builders::GetConfigurationOutputBuilder,
@@ -102,6 +140,8 @@ pub(crate) fn de_get_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -109,12 +149,16 @@ pub(crate) fn de_get_configuration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ec2Configuration" => {
                     builder = builder.set_ec2_configuration(crate::protocol_serde::shape_ec2_configuration_state::de_ec2_configuration_state(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ecrConfiguration" => {
                     builder = builder.set_ecr_configuration(crate::protocol_serde::shape_ecr_configuration_state::de_ecr_configuration_state(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

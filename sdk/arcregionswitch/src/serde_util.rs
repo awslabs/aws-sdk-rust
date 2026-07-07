@@ -62,18 +62,18 @@ pub(crate) fn get_plan_execution_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn internal_server_exception_correct_errors(
-    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
-) -> crate::types::error::builders::InternalServerExceptionBuilder {
+pub(crate) fn illegal_argument_exception_correct_errors(
+    mut builder: crate::types::error::builders::IllegalArgumentExceptionBuilder,
+) -> crate::types::error::builders::IllegalArgumentExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
     builder
 }
 
-pub(crate) fn illegal_argument_exception_correct_errors(
-    mut builder: crate::types::error::builders::IllegalArgumentExceptionBuilder,
-) -> crate::types::error::builders::IllegalArgumentExceptionBuilder {
+pub(crate) fn internal_server_exception_correct_errors(
+    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
+) -> crate::types::error::builders::InternalServerExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -264,6 +264,33 @@ pub(crate) fn arc_routing_control_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn aurora_provisioned_scaling_configuration_correct_errors(
+    mut builder: crate::types::builders::AuroraProvisionedScalingConfigurationBuilder,
+) -> crate::types::builders::AuroraProvisionedScalingConfigurationBuilder {
+    if builder.global_cluster_identifier.is_none() {
+        builder.global_cluster_identifier = Some(Default::default())
+    }
+    if builder.region_database_cluster_arns.is_none() {
+        builder.region_database_cluster_arns = Some(Default::default())
+    }
+    if builder.instance_arns.is_none() {
+        builder.instance_arns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn aurora_serverless_scaling_configuration_correct_errors(
+    mut builder: crate::types::builders::AuroraServerlessScalingConfigurationBuilder,
+) -> crate::types::builders::AuroraServerlessScalingConfigurationBuilder {
+    if builder.global_cluster_identifier.is_none() {
+        builder.global_cluster_identifier = Some(Default::default())
+    }
+    if builder.region_database_cluster_arns.is_none() {
+        builder.region_database_cluster_arns = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_action_lambda_configuration_correct_errors(
     mut builder: crate::types::builders::CustomActionLambdaConfigurationBuilder,
 ) -> crate::types::builders::CustomActionLambdaConfigurationBuilder {
@@ -344,6 +371,33 @@ pub(crate) fn global_aurora_configuration_correct_errors(
     }
     if builder.database_cluster_arns.is_none() {
         builder.database_cluster_arns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lambda_event_source_mapping_configuration_correct_errors(
+    mut builder: crate::types::builders::LambdaEventSourceMappingConfigurationBuilder,
+) -> crate::types::builders::LambdaEventSourceMappingConfigurationBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::EventSourceMappingAction>().ok()
+    }
+    if builder.region_event_source_mappings.is_none() {
+        builder.region_event_source_mappings = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn neptune_global_database_configuration_correct_errors(
+    mut builder: crate::types::builders::NeptuneGlobalDatabaseConfigurationBuilder,
+) -> crate::types::builders::NeptuneGlobalDatabaseConfigurationBuilder {
+    if builder.behavior.is_none() {
+        builder.behavior = "no value was set".parse::<crate::types::NeptuneDefaultBehavior>().ok()
+    }
+    if builder.global_cluster_identifier.is_none() {
+        builder.global_cluster_identifier = Some(Default::default())
+    }
+    if builder.region_database_cluster_arns.is_none() {
+        builder.region_database_cluster_arns = Some(Default::default())
     }
     builder
 }
@@ -438,6 +492,15 @@ pub(crate) fn kubernetes_resource_type_correct_errors(
 pub(crate) fn eks_cluster_correct_errors(mut builder: crate::types::builders::EksClusterBuilder) -> crate::types::builders::EksClusterBuilder {
     if builder.cluster_arn.is_none() {
         builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_source_mapping_correct_errors(
+    mut builder: crate::types::builders::EventSourceMappingBuilder,
+) -> crate::types::builders::EventSourceMappingBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

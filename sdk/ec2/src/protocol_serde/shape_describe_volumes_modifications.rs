@@ -49,6 +49,8 @@ pub fn de_describe_volumes_modifications(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVolumesModificationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVolumesModificationsResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_describe_volumes_modifications(
             s if s.matches("volumeModificationSet") /* VolumesModifications com.amazonaws.ec2.synthetic#DescribeVolumesModificationsOutput$VolumesModifications */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_volume_modification_list::de_volume_modification_list(&mut tag)
+                        crate::protocol_serde::shape_volume_modification_list::de_volume_modification_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

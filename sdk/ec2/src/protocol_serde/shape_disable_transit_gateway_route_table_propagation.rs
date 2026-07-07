@@ -52,6 +52,8 @@ pub fn de_disable_transit_gateway_route_table_propagation(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DisableTransitGatewayRouteTablePropagationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisableTransitGatewayRouteTablePropagationResponse got {start_el:?}"
@@ -62,7 +64,7 @@ pub fn de_disable_transit_gateway_route_table_propagation(
             s if s.matches("propagation") /* Propagation com.amazonaws.ec2.synthetic#DisableTransitGatewayRouteTablePropagationOutput$Propagation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_propagation::de_transit_gateway_propagation(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_propagation::de_transit_gateway_propagation(&mut tag, depth + 1)
                         ?
                     )
                 ;

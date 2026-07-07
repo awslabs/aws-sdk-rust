@@ -2,10 +2,16 @@
 pub(crate) fn de_job_log_event_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobLogEventData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,12 +51,15 @@ where
                         }
                         "conversionProperties" => {
                             builder = builder.set_conversion_properties(
-                                crate::protocol_serde::shape_conversion_properties::de_conversion_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_conversion_properties::de_conversion_properties(tokens, _value, depth + 1)?,
                             );
                         }
                         "eventResourceData" => {
-                            builder = builder
-                                .set_event_resource_data(crate::protocol_serde::shape_event_resource_data::de_event_resource_data(tokens, _value)?);
+                            builder = builder.set_event_resource_data(crate::protocol_serde::shape_event_resource_data::de_event_resource_data(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "attemptCount" => {
                             builder = builder.set_attempt_count(

@@ -51,6 +51,8 @@ pub fn de_describe_store_image_tasks(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeStoreImageTasksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeStoreImageTasksResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_store_image_tasks(
             s if s.matches("storeImageTaskResultSet") /* StoreImageTaskResults com.amazonaws.ec2.synthetic#DescribeStoreImageTasksOutput$StoreImageTaskResults */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_store_image_task_result_set::de_store_image_task_result_set(&mut tag)
+                        crate::protocol_serde::shape_store_image_task_result_set::de_store_image_task_result_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

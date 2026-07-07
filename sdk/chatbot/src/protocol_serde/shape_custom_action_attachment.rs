@@ -37,10 +37,16 @@ pub fn ser_custom_action_attachment(
 pub(crate) fn de_custom_action_attachment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomActionAttachment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -67,14 +73,18 @@ where
                         "Criteria" => {
                             builder = builder.set_criteria(
                                 crate::protocol_serde::shape_custom_action_attachment_criteria_list::de_custom_action_attachment_criteria_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Variables" => {
                             builder = builder.set_variables(
                                 crate::protocol_serde::shape_custom_action_attachment_variables::de_custom_action_attachment_variables(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

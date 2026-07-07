@@ -72,6 +72,8 @@ pub fn de_get_account_authorization_details(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetAccountAuthorizationDetailsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetAccountAuthorizationDetailsResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_get_account_authorization_details(
             s if s.matches("UserDetailList") /* UserDetailList com.amazonaws.iam.synthetic#GetAccountAuthorizationDetailsOutput$UserDetailList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_user_detail_list_type::de_user_detail_list_type(&mut tag)
+                        crate::protocol_serde::shape_user_detail_list_type::de_user_detail_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -99,7 +101,7 @@ pub fn de_get_account_authorization_details(
             s if s.matches("GroupDetailList") /* GroupDetailList com.amazonaws.iam.synthetic#GetAccountAuthorizationDetailsOutput$GroupDetailList */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_group_detail_list_type::de_group_detail_list_type(&mut tag)
+                        crate::protocol_serde::shape_group_detail_list_type::de_group_detail_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -109,7 +111,7 @@ pub fn de_get_account_authorization_details(
             s if s.matches("RoleDetailList") /* RoleDetailList com.amazonaws.iam.synthetic#GetAccountAuthorizationDetailsOutput$RoleDetailList */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_role_detail_list_type::de_role_detail_list_type(&mut tag)
+                        crate::protocol_serde::shape_role_detail_list_type::de_role_detail_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -119,7 +121,7 @@ pub fn de_get_account_authorization_details(
             s if s.matches("Policies") /* Policies com.amazonaws.iam.synthetic#GetAccountAuthorizationDetailsOutput$Policies */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_managed_policy_detail_list_type::de_managed_policy_detail_list_type(&mut tag)
+                        crate::protocol_serde::shape_managed_policy_detail_list_type::de_managed_policy_detail_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

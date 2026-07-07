@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_anycast_ip_list(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AnycastIpList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AnycastIpList::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -76,7 +80,7 @@ pub fn de_anycast_ip_list(
             s if s.matches("IpamConfig") /* IpamConfig com.amazonaws.cloudfront#AnycastIpList$IpamConfig */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_ipam_config::de_ipam_config(&mut tag)
+                        crate::protocol_serde::shape_ipam_config::de_ipam_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +90,7 @@ pub fn de_anycast_ip_list(
             s if s.matches("AnycastIps") /* AnycastIps com.amazonaws.cloudfront#AnycastIpList$AnycastIps */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_anycast_ips::de_anycast_ips(&mut tag)
+                        crate::protocol_serde::shape_anycast_ips::de_anycast_ips(&mut tag, depth + 1)
                         ?
                     )
                 ;

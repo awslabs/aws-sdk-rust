@@ -128,6 +128,8 @@ pub(crate) fn de_start_export_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -141,7 +143,7 @@ pub(crate) fn de_start_export_task(
                     );
                 }
                 "exportFilter" => {
-                    builder = builder.set_export_filter(crate::protocol_serde::shape_export_filter::de_export_filter(tokens, _value)?);
+                    builder = builder.set_export_filter(crate::protocol_serde::shape_export_filter::de_export_filter(tokens, _value, depth + 1)?);
                 }
                 "format" => {
                     builder = builder.set_format(

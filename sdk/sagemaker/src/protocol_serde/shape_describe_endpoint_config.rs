@@ -54,6 +54,8 @@ pub(crate) fn de_describe_endpoint_config(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -75,12 +77,17 @@ pub(crate) fn de_describe_endpoint_config(
                 }
                 "ProductionVariants" => {
                     builder = builder.set_production_variants(crate::protocol_serde::shape_production_variant_list::de_production_variant_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "DataCaptureConfig" => {
-                    builder =
-                        builder.set_data_capture_config(crate::protocol_serde::shape_data_capture_config::de_data_capture_config(tokens, _value)?);
+                    builder = builder.set_data_capture_config(crate::protocol_serde::shape_data_capture_config::de_data_capture_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "KmsKeyId" => {
                     builder = builder.set_kms_key_id(
@@ -97,15 +104,21 @@ pub(crate) fn de_describe_endpoint_config(
                 }
                 "AsyncInferenceConfig" => {
                     builder = builder.set_async_inference_config(crate::protocol_serde::shape_async_inference_config::de_async_inference_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ExplainerConfig" => {
-                    builder = builder.set_explainer_config(crate::protocol_serde::shape_explainer_config::de_explainer_config(tokens, _value)?);
+                    builder = builder.set_explainer_config(crate::protocol_serde::shape_explainer_config::de_explainer_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ShadowProductionVariants" => {
                     builder = builder.set_shadow_production_variants(
-                        crate::protocol_serde::shape_production_variant_list::de_production_variant_list(tokens, _value)?,
+                        crate::protocol_serde::shape_production_variant_list::de_production_variant_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "ExecutionRoleArn" => {
@@ -116,13 +129,13 @@ pub(crate) fn de_describe_endpoint_config(
                     );
                 }
                 "VpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                 }
                 "EnableNetworkIsolation" => {
                     builder = builder.set_enable_network_isolation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "MetricsConfig" => {
-                    builder = builder.set_metrics_config(crate::protocol_serde::shape_metrics_config::de_metrics_config(tokens, _value)?);
+                    builder = builder.set_metrics_config(crate::protocol_serde::shape_metrics_config::de_metrics_config(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

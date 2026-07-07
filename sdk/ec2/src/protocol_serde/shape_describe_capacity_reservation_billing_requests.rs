@@ -52,6 +52,8 @@ pub fn de_describe_capacity_reservation_billing_requests(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeCapacityReservationBillingRequestsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeCapacityReservationBillingRequestsResponse got {start_el:?}"
@@ -75,7 +77,7 @@ pub fn de_describe_capacity_reservation_billing_requests(
             s if s.matches("capacityReservationBillingRequestSet") /* CapacityReservationBillingRequests com.amazonaws.ec2.synthetic#DescribeCapacityReservationBillingRequestsOutput$CapacityReservationBillingRequests */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_billing_request_set::de_capacity_reservation_billing_request_set(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_billing_request_set::de_capacity_reservation_billing_request_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

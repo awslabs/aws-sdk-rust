@@ -48,10 +48,16 @@ pub fn ser_document_classifier_input_data_config(
 pub(crate) fn de_document_classifier_input_data_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DocumentClassifierInputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -91,7 +97,7 @@ where
                         }
                         "AugmentedManifests" => {
                             builder = builder.set_augmented_manifests(
-                                    crate::protocol_serde::shape_document_classifier_augmented_manifests_list::de_document_classifier_augmented_manifests_list(tokens, _value)?
+                                    crate::protocol_serde::shape_document_classifier_augmented_manifests_list::de_document_classifier_augmented_manifests_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "DocumentType" => {
@@ -106,12 +112,16 @@ where
                         }
                         "Documents" => {
                             builder = builder.set_documents(
-                                crate::protocol_serde::shape_document_classifier_documents::de_document_classifier_documents(tokens, _value)?,
+                                crate::protocol_serde::shape_document_classifier_documents::de_document_classifier_documents(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DocumentReaderConfig" => {
                             builder = builder.set_document_reader_config(
-                                crate::protocol_serde::shape_document_reader_config::de_document_reader_config(tokens, _value)?,
+                                crate::protocol_serde::shape_document_reader_config::de_document_reader_config(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

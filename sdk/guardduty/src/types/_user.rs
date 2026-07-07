@@ -12,7 +12,7 @@ pub struct User {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The credentials of the user ID.</p>
     pub credential_uid: ::std::option::Option<::std::string::String>,
-    /// <p>Contains information about the Amazon Web Services account.</p>
+    /// <p>Contains information about the Amazon Web Services account within which the activity took place. This is not necessarily the account that owns the user identity.</p>
     pub account: ::std::option::Option<crate::types::Account>,
 }
 impl User {
@@ -32,7 +32,7 @@ impl User {
     pub fn credential_uid(&self) -> ::std::option::Option<&str> {
         self.credential_uid.as_deref()
     }
-    /// <p>Contains information about the Amazon Web Services account.</p>
+    /// <p>Contains information about the Amazon Web Services account within which the activity took place. This is not necessarily the account that owns the user identity.</p>
     pub fn account(&self) -> ::std::option::Option<&crate::types::Account> {
         self.account.as_ref()
     }
@@ -114,17 +114,17 @@ impl UserBuilder {
     pub fn get_credential_uid(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_uid
     }
-    /// <p>Contains information about the Amazon Web Services account.</p>
+    /// <p>Contains information about the Amazon Web Services account within which the activity took place. This is not necessarily the account that owns the user identity.</p>
     pub fn account(mut self, input: crate::types::Account) -> Self {
         self.account = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the Amazon Web Services account.</p>
+    /// <p>Contains information about the Amazon Web Services account within which the activity took place. This is not necessarily the account that owns the user identity.</p>
     pub fn set_account(mut self, input: ::std::option::Option<crate::types::Account>) -> Self {
         self.account = input;
         self
     }
-    /// <p>Contains information about the Amazon Web Services account.</p>
+    /// <p>Contains information about the Amazon Web Services account within which the activity took place. This is not necessarily the account that owns the user identity.</p>
     pub fn get_account(&self) -> &::std::option::Option<crate::types::Account> {
         &self.account
     }

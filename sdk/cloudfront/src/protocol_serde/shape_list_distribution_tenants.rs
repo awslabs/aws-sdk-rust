@@ -121,6 +121,8 @@ pub fn de_list_distribution_tenants(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListDistributionTenantsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListDistributionTenantsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -131,7 +133,7 @@ pub fn de_list_distribution_tenants(
             s if s.matches("DistributionTenantList") /* DistributionTenantList com.amazonaws.cloudfront.synthetic#ListDistributionTenantsOutput$DistributionTenantList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_distribution_tenant_list::de_distribution_tenant_list(&mut tag)
+                        crate::protocol_serde::shape_distribution_tenant_list::de_distribution_tenant_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

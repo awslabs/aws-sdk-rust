@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_host(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Host, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Host::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -37,7 +41,7 @@ pub fn de_host(
             s if s.matches("availableCapacity") /* AvailableCapacity com.amazonaws.ec2#Host$AvailableCapacity */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_available_capacity::de_available_capacity(&mut tag)
+                        crate::protocol_serde::shape_available_capacity::de_available_capacity(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +77,7 @@ pub fn de_host(
             s if s.matches("hostProperties") /* HostProperties com.amazonaws.ec2#Host$HostProperties */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_host_properties::de_host_properties(&mut tag)
+                        crate::protocol_serde::shape_host_properties::de_host_properties(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -96,7 +100,7 @@ pub fn de_host(
             s if s.matches("instances") /* Instances com.amazonaws.ec2#Host$Instances */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_host_instance_list::de_host_instance_list(&mut tag)
+                        crate::protocol_serde::shape_host_instance_list::de_host_instance_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -148,7 +152,7 @@ pub fn de_host(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Host$Tags */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -262,6 +266,16 @@ pub fn de_host(
                     )
                 ;
                 builder = builder.set_asset_id(var_20);
+            }
+            ,
+            s if s.matches("cpuOptions") /* CpuOptions com.amazonaws.ec2#Host$CpuOptions */ =>  {
+                let var_21 =
+                    Some(
+                        crate::protocol_serde::shape_host_cpu_options::de_host_cpu_options(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_cpu_options(var_21);
             }
             ,
             _ => {}

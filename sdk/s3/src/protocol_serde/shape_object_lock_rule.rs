@@ -16,7 +16,11 @@ pub fn ser_object_lock_rule(
 #[allow(clippy::needless_question_mark)]
 pub fn de_object_lock_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ObjectLockRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ObjectLockRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_object_lock_rule(
             s if s.matches("DefaultRetention") /* DefaultRetention com.amazonaws.s3#ObjectLockRule$DefaultRetention */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_default_retention::de_default_retention(&mut tag)
+                        crate::protocol_serde::shape_default_retention::de_default_retention(&mut tag, depth + 1)
                         ?
                     )
                 ;

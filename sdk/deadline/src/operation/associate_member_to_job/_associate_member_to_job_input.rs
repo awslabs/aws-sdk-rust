@@ -18,6 +18,8 @@ pub struct AssociateMemberToJobInput {
     pub membership_level: ::std::option::Option<crate::types::MembershipLevel>,
     /// <p>The member's principal ID to associate with the job.</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    pub identity_center_region: ::std::option::Option<::std::string::String>,
 }
 impl AssociateMemberToJobInput {
     /// <p>The farm ID of the job to associate with the member.</p>
@@ -48,6 +50,10 @@ impl AssociateMemberToJobInput {
     pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
+    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    pub fn identity_center_region(&self) -> ::std::option::Option<&str> {
+        self.identity_center_region.as_deref()
+    }
 }
 impl AssociateMemberToJobInput {
     /// Creates a new builder-style object to manufacture [`AssociateMemberToJobInput`](crate::operation::associate_member_to_job::AssociateMemberToJobInput).
@@ -67,6 +73,7 @@ pub struct AssociateMemberToJobInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_level: ::std::option::Option<crate::types::MembershipLevel>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_region: ::std::option::Option<::std::string::String>,
 }
 impl AssociateMemberToJobInputBuilder {
     /// <p>The farm ID of the job to associate with the member.</p>
@@ -174,6 +181,20 @@ impl AssociateMemberToJobInputBuilder {
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_id
     }
+    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_region = input;
+        self
+    }
+    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_region
+    }
     /// Consumes the builder and constructs a [`AssociateMemberToJobInput`](crate::operation::associate_member_to_job::AssociateMemberToJobInput).
     pub fn build(
         self,
@@ -187,6 +208,7 @@ impl AssociateMemberToJobInputBuilder {
             identity_store_id: self.identity_store_id,
             membership_level: self.membership_level,
             principal_id: self.principal_id,
+            identity_center_region: self.identity_center_region,
         })
     }
 }

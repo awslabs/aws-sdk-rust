@@ -101,6 +101,8 @@ pub fn de_list_mfa_device_tags(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListMFADeviceTagsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListMFADeviceTagsResponse got {start_el:?}"
@@ -118,7 +120,7 @@ pub fn de_list_mfa_device_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam.synthetic#ListMFADeviceTagsOutput$Tags */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

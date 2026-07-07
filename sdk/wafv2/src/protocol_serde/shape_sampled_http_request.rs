@@ -2,10 +2,16 @@
 pub(crate) fn de_sampled_http_request<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SampledHttpRequest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Request" => {
-                            builder = builder.set_request(crate::protocol_serde::shape_http_request::de_http_request(tokens, _value)?);
+                            builder = builder.set_request(crate::protocol_serde::shape_http_request::de_http_request(tokens, _value, depth + 1)?);
                         }
                         "Weight" => {
                             builder = builder.set_weight(
@@ -46,8 +52,11 @@ where
                             );
                         }
                         "RequestHeadersInserted" => {
-                            builder =
-                                builder.set_request_headers_inserted(crate::protocol_serde::shape_http_headers::de_http_headers(tokens, _value)?);
+                            builder = builder.set_request_headers_inserted(crate::protocol_serde::shape_http_headers::de_http_headers(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ResponseCodeSent" => {
                             builder = builder.set_response_code_sent(
@@ -57,15 +66,21 @@ where
                             );
                         }
                         "Labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape_labels::de_labels(tokens, _value)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_labels::de_labels(tokens, _value, depth + 1)?);
                         }
                         "CaptchaResponse" => {
-                            builder =
-                                builder.set_captcha_response(crate::protocol_serde::shape_captcha_response::de_captcha_response(tokens, _value)?);
+                            builder = builder.set_captcha_response(crate::protocol_serde::shape_captcha_response::de_captcha_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ChallengeResponse" => {
-                            builder = builder
-                                .set_challenge_response(crate::protocol_serde::shape_challenge_response::de_challenge_response(tokens, _value)?);
+                            builder = builder.set_challenge_response(crate::protocol_serde::shape_challenge_response::de_challenge_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OverriddenAction" => {
                             builder = builder.set_overridden_action(

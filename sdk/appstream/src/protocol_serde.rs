@@ -417,6 +417,10 @@ pub(crate) mod shape_access_endpoint;
 
 pub(crate) mod shape_admin_app_license_usage_list;
 
+pub(crate) mod shape_agent_access_config;
+
+pub(crate) mod shape_agent_access_config_for_update;
+
 pub(crate) mod shape_app_block;
 
 pub(crate) mod shape_app_block_builder;
@@ -531,6 +535,8 @@ pub(crate) mod shape_access_endpoint_list;
 
 pub(crate) mod shape_admin_app_license_usage_record;
 
+pub(crate) mod shape_agent_access_setting;
+
 pub(crate) mod shape_app_block_builder_state_change_reason;
 
 pub(crate) mod shape_application_settings_response;
@@ -584,6 +590,8 @@ pub(crate) mod shape_user;
 pub(crate) mod shape_user_setting_list;
 
 pub(crate) mod shape_user_stack_association_error;
+
+pub(crate) mod shape_agent_access_setting_list;
 
 pub(crate) mod shape_error_details;
 

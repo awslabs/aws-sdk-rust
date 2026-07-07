@@ -2,10 +2,16 @@
 pub(crate) fn de_backup_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BackupJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,7 +71,11 @@ where
                             );
                         }
                         "RecoveryPointLifecycle" => {
-                            builder = builder.set_recovery_point_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value)?);
+                            builder = builder.set_recovery_point_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EncryptionKeyArn" => {
                             builder = builder.set_encryption_key_arn(
@@ -133,7 +143,9 @@ where
                         }
                         "CreatedBy" => {
                             builder = builder.set_created_by(crate::protocol_serde::shape_recovery_point_creator::de_recovery_point_creator(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ExpectedCompletionDate" => {
@@ -163,7 +175,11 @@ where
                             );
                         }
                         "BackupOptions" => {
-                            builder = builder.set_backup_options(crate::protocol_serde::shape_backup_options::de_backup_options(tokens, _value)?);
+                            builder = builder.set_backup_options(crate::protocol_serde::shape_backup_options::de_backup_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BackupType" => {
                             builder = builder.set_backup_type(

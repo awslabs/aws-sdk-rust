@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resharding_status(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReshardingStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReshardingStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_resharding_status(
             s if s.matches("SlotMigration") /* SlotMigration com.amazonaws.elasticache#ReshardingStatus$SlotMigration */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_slot_migration::de_slot_migration(&mut tag)
+                        crate::protocol_serde::shape_slot_migration::de_slot_migration(&mut tag, depth + 1)
                         ?
                     )
                 ;

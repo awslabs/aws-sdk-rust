@@ -33,10 +33,16 @@ pub fn ser_geospatial_circle_symbol_style(
 pub(crate) fn de_geospatial_circle_symbol_style<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GeospatialCircleSymbolStyle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,25 +51,37 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "FillColor" => {
-                            builder = builder.set_fill_color(crate::protocol_serde::shape_geospatial_color::de_geospatial_color(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "FillColor" => {
+                                builder = builder.set_fill_color(crate::protocol_serde::shape_geospatial_color::de_geospatial_color(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "StrokeColor" => {
+                                builder = builder.set_stroke_color(crate::protocol_serde::shape_geospatial_color::de_geospatial_color(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "StrokeWidth" => {
+                                builder = builder.set_stroke_width(crate::protocol_serde::shape_geospatial_line_width::de_geospatial_line_width(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CircleRadius" => {
+                                builder = builder.set_circle_radius(
+                                    crate::protocol_serde::shape_geospatial_circle_radius::de_geospatial_circle_radius(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "StrokeColor" => {
-                            builder = builder.set_stroke_color(crate::protocol_serde::shape_geospatial_color::de_geospatial_color(tokens, _value)?);
-                        }
-                        "StrokeWidth" => {
-                            builder = builder.set_stroke_width(crate::protocol_serde::shape_geospatial_line_width::de_geospatial_line_width(
-                                tokens, _value,
-                            )?);
-                        }
-                        "CircleRadius" => {
-                            builder = builder.set_circle_radius(crate::protocol_serde::shape_geospatial_circle_radius::de_geospatial_circle_radius(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

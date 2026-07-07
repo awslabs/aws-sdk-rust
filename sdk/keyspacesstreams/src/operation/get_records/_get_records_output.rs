@@ -7,6 +7,8 @@ pub struct GetRecordsOutput {
     pub change_records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     /// <p>The next position in the shard from which to start sequentially reading data records. If null, the shard has been closed and the requested iterator will not return any more data.</p>
     pub next_shard_iterator: ::std::option::Option<::std::string::String>,
+    /// <p>Provides information about the current iterator at the time GetRecords request was processed by Keyspaces.</p>
+    pub iterator_description: ::std::option::Option<crate::types::IteratorDescription>,
     _request_id: Option<String>,
 }
 impl GetRecordsOutput {
@@ -19,6 +21,10 @@ impl GetRecordsOutput {
     /// <p>The next position in the shard from which to start sequentially reading data records. If null, the shard has been closed and the requested iterator will not return any more data.</p>
     pub fn next_shard_iterator(&self) -> ::std::option::Option<&str> {
         self.next_shard_iterator.as_deref()
+    }
+    /// <p>Provides information about the current iterator at the time GetRecords request was processed by Keyspaces.</p>
+    pub fn iterator_description(&self) -> ::std::option::Option<&crate::types::IteratorDescription> {
+        self.iterator_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecordsOutput {
@@ -39,6 +45,7 @@ impl GetRecordsOutput {
 pub struct GetRecordsOutputBuilder {
     pub(crate) change_records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     pub(crate) next_shard_iterator: ::std::option::Option<::std::string::String>,
+    pub(crate) iterator_description: ::std::option::Option<crate::types::IteratorDescription>,
     _request_id: Option<String>,
 }
 impl GetRecordsOutputBuilder {
@@ -76,6 +83,20 @@ impl GetRecordsOutputBuilder {
     pub fn get_next_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_shard_iterator
     }
+    /// <p>Provides information about the current iterator at the time GetRecords request was processed by Keyspaces.</p>
+    pub fn iterator_description(mut self, input: crate::types::IteratorDescription) -> Self {
+        self.iterator_description = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides information about the current iterator at the time GetRecords request was processed by Keyspaces.</p>
+    pub fn set_iterator_description(mut self, input: ::std::option::Option<crate::types::IteratorDescription>) -> Self {
+        self.iterator_description = input;
+        self
+    }
+    /// <p>Provides information about the current iterator at the time GetRecords request was processed by Keyspaces.</p>
+    pub fn get_iterator_description(&self) -> &::std::option::Option<crate::types::IteratorDescription> {
+        &self.iterator_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -90,6 +111,7 @@ impl GetRecordsOutputBuilder {
         crate::operation::get_records::GetRecordsOutput {
             change_records: self.change_records,
             next_shard_iterator: self.next_shard_iterator,
+            iterator_description: self.iterator_description,
             _request_id: self._request_id,
         }
     }

@@ -27,10 +27,16 @@ pub fn ser_custom_metric_definition(
 pub(crate) fn de_custom_metric_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomMetricDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -55,7 +61,8 @@ where
                             );
                         }
                         "ratingScale" => {
-                            builder = builder.set_rating_scale(crate::protocol_serde::shape_rating_scale::de_rating_scale(tokens, _value)?);
+                            builder =
+                                builder.set_rating_scale(crate::protocol_serde::shape_rating_scale::de_rating_scale(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

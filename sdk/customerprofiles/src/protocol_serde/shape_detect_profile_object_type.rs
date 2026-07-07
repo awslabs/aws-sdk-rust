@@ -141,6 +141,8 @@ pub(crate) fn de_detect_profile_object_type(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -148,7 +150,7 @@ pub(crate) fn de_detect_profile_object_type(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DetectedProfileObjectTypes" => {
                     builder = builder.set_detected_profile_object_types(
-                        crate::protocol_serde::shape_detected_profile_object_types::de_detected_profile_object_types(tokens, _value)?,
+                        crate::protocol_serde::shape_detected_profile_object_types::de_detected_profile_object_types(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

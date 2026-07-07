@@ -3,6 +3,8 @@ pub use crate::types::_logging_config::LoggingConfigBuilder;
 
 pub use crate::types::_rollback_configuration::RollbackConfigurationBuilder;
 
+pub use crate::types::_deployment_config::DeploymentConfigBuilder;
+
 pub use crate::types::_template_configuration::TemplateConfigurationBuilder;
 
 pub use crate::types::_deployment_targets::DeploymentTargetsBuilder;

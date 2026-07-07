@@ -147,6 +147,8 @@ pub(crate) fn de_get_table_auto_scaling_settings(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -175,13 +177,15 @@ pub(crate) fn de_get_table_auto_scaling_settings(
                 }
                 "autoScalingSpecification" => {
                     builder = builder.set_auto_scaling_specification(
-                        crate::protocol_serde::shape_auto_scaling_specification::de_auto_scaling_specification(tokens, _value)?,
+                        crate::protocol_serde::shape_auto_scaling_specification::de_auto_scaling_specification(tokens, _value, depth + 1)?,
                     );
                 }
                 "replicaSpecifications" => {
                     builder = builder.set_replica_specifications(
                         crate::protocol_serde::shape_replica_auto_scaling_specification_list::de_replica_auto_scaling_specification_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_changeset_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ChangesetSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,10 +50,12 @@ where
                             );
                         }
                         "sourceParams" => {
-                            builder = builder.set_source_params(crate::protocol_serde::shape_source_params::de_source_params(tokens, _value)?);
+                            builder =
+                                builder.set_source_params(crate::protocol_serde::shape_source_params::de_source_params(tokens, _value, depth + 1)?);
                         }
                         "formatParams" => {
-                            builder = builder.set_format_params(crate::protocol_serde::shape_format_params::de_format_params(tokens, _value)?);
+                            builder =
+                                builder.set_format_params(crate::protocol_serde::shape_format_params::de_format_params(tokens, _value, depth + 1)?);
                         }
                         "createTime" => {
                             builder = builder.set_create_time(
@@ -65,7 +73,9 @@ where
                         }
                         "errorInfo" => {
                             builder = builder.set_error_info(crate::protocol_serde::shape_changeset_error_info::de_changeset_error_info(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "activeUntilTimestamp" => {

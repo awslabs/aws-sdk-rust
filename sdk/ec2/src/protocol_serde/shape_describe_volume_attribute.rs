@@ -51,6 +51,8 @@ pub fn de_describe_volume_attribute(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVolumeAttributeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVolumeAttributeResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_volume_attribute(
             s if s.matches("autoEnableIO") /* AutoEnableIO com.amazonaws.ec2.synthetic#DescribeVolumeAttributeOutput$AutoEnableIO */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -71,7 +73,7 @@ pub fn de_describe_volume_attribute(
             s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2.synthetic#DescribeVolumeAttributeOutput$ProductCodes */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
+                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

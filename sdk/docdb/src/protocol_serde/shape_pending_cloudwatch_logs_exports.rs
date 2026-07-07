@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_pending_cloudwatch_logs_exports(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PendingCloudwatchLogsExports, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PendingCloudwatchLogsExports::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_pending_cloudwatch_logs_exports(
             s if s.matches("LogTypesToEnable") /* LogTypesToEnable com.amazonaws.docdb#PendingCloudwatchLogsExports$LogTypesToEnable */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_pending_cloudwatch_logs_exports(
             s if s.matches("LogTypesToDisable") /* LogTypesToDisable com.amazonaws.docdb#PendingCloudwatchLogsExports$LogTypesToDisable */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

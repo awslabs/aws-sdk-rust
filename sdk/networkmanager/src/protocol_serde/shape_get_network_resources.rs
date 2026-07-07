@@ -136,6 +136,8 @@ pub(crate) fn de_get_network_resources(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -143,7 +145,9 @@ pub(crate) fn de_get_network_resources(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "NetworkResources" => {
                     builder = builder.set_network_resources(crate::protocol_serde::shape_network_resource_list::de_network_resource_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NextToken" => {

@@ -2,10 +2,16 @@
 pub(crate) fn de_media_stream_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MediaStreamOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "destinationConfigurations" => {
                             builder = builder.set_destination_configurations(
-                                crate::protocol_serde::shape_list_of_destination_configuration::de_list_of_destination_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_destination_configuration::de_list_of_destination_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "encodingName" => {
@@ -28,8 +38,11 @@ where
                             );
                         }
                         "encodingParameters" => {
-                            builder = builder
-                                .set_encoding_parameters(crate::protocol_serde::shape_encoding_parameters::de_encoding_parameters(tokens, _value)?);
+                            builder = builder.set_encoding_parameters(crate::protocol_serde::shape_encoding_parameters::de_encoding_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "mediaStreamName" => {
                             builder = builder.set_media_stream_name(

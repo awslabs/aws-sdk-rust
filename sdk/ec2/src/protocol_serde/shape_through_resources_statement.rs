@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_through_resources_statement(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ThroughResourcesStatement, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ThroughResourcesStatement::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_through_resources_statement(
             s if s.matches("resourceStatement") /* ResourceStatement com.amazonaws.ec2#ThroughResourcesStatement$ResourceStatement */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_resource_statement::de_resource_statement(&mut tag)
+                        crate::protocol_serde::shape_resource_statement::de_resource_statement(&mut tag, depth + 1)
                         ?
                     )
                 ;

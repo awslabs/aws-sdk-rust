@@ -54,6 +54,8 @@ pub struct CreateCanaryInput {
     /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
     /// </note>
     pub browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub add_replica_locations: ::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>>,
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
@@ -143,6 +145,12 @@ impl CreateCanaryInput {
     pub fn browser_configs(&self) -> &[crate::types::BrowserConfig] {
         self.browser_configs.as_deref().unwrap_or_default()
     }
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_replica_locations.is_none()`.
+    pub fn add_replica_locations(&self) -> &[crate::types::AddReplicaLocationInput] {
+        self.add_replica_locations.as_deref().unwrap_or_default()
+    }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     /// <p>To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value <code>lambda-function</code>.</p>
@@ -178,6 +186,7 @@ pub struct CreateCanaryInputBuilder {
     pub(crate) resources_to_replicate_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToTag>>,
     pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
     pub(crate) browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
+    pub(crate) add_replica_locations: ::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
 }
@@ -457,6 +466,26 @@ impl CreateCanaryInputBuilder {
     pub fn get_browser_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>> {
         &self.browser_configs
     }
+    /// Appends an item to `add_replica_locations`.
+    ///
+    /// To override the contents of this collection use [`set_add_replica_locations`](Self::set_add_replica_locations).
+    ///
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn add_replica_locations(mut self, input: crate::types::AddReplicaLocationInput) -> Self {
+        let mut v = self.add_replica_locations.unwrap_or_default();
+        v.push(input);
+        self.add_replica_locations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn set_add_replica_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>>) -> Self {
+        self.add_replica_locations = input;
+        self
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn get_add_replica_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>> {
+        &self.add_replica_locations
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -515,6 +544,7 @@ impl CreateCanaryInputBuilder {
             resources_to_replicate_tags: self.resources_to_replicate_tags,
             provisioned_resource_cleanup: self.provisioned_resource_cleanup,
             browser_configs: self.browser_configs,
+            add_replica_locations: self.add_replica_locations,
             tags: self.tags,
             artifact_config: self.artifact_config,
         })

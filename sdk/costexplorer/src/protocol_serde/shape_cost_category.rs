@@ -2,10 +2,16 @@
 pub(crate) fn de_cost_category<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CostCategory>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,20 +58,26 @@ where
                         }
                         "Rules" => {
                             builder = builder.set_rules(crate::protocol_serde::shape_cost_category_rules_list::de_cost_category_rules_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SplitChargeRules" => {
                             builder = builder.set_split_charge_rules(
                                 crate::protocol_serde::shape_cost_category_split_charge_rules_list::de_cost_category_split_charge_rules_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ProcessingStatus" => {
                             builder = builder.set_processing_status(
                                 crate::protocol_serde::shape_cost_category_processing_status_list::de_cost_category_processing_status_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -2,10 +2,16 @@
 pub(crate) fn de_organization_recommendation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OrganizationRecommendation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,9 +58,12 @@ where
                                 );
                             }
                             "pillars" => {
-                                builder = builder.set_pillars(
-                                    crate::protocol_serde::shape_recommendation_pillar_list::de_recommendation_pillar_list(tokens, _value)?,
-                                );
+                                builder =
+                                    builder.set_pillars(crate::protocol_serde::shape_recommendation_pillar_list::de_recommendation_pillar_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?);
                             }
                             "source" => {
                                 builder = builder.set_source(
@@ -65,7 +74,11 @@ where
                             }
                             "awsServices" => {
                                 builder = builder.set_aws_services(
-                                    crate::protocol_serde::shape_recommendation_aws_service_list::de_recommendation_aws_service_list(tokens, _value)?,
+                                    crate::protocol_serde::shape_recommendation_aws_service_list::de_recommendation_aws_service_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "name" => {
@@ -78,13 +91,15 @@ where
                             "resourcesAggregates" => {
                                 builder = builder.set_resources_aggregates(
                                     crate::protocol_serde::shape_recommendation_resources_aggregates::de_recommendation_resources_aggregates(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "pillarSpecificAggregates" => {
                                 builder = builder.set_pillar_specific_aggregates(
-                                    crate::protocol_serde::shape_recommendation_pillar_specific_aggregates::de_recommendation_pillar_specific_aggregates(tokens, _value)?
+                                    crate::protocol_serde::shape_recommendation_pillar_specific_aggregates::de_recommendation_pillar_specific_aggregates(tokens, _value, depth + 1)?
                                 );
                             }
                             "createdAt" => {

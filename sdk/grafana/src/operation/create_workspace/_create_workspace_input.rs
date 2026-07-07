@@ -48,6 +48,8 @@ pub struct CreateWorkspaceInput {
     /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub grafana_version: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The ID or ARN of the Key Management Service key to use for encrypting workspace data.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -139,6 +141,10 @@ impl CreateWorkspaceInput {
     pub fn grafana_version(&self) -> ::std::option::Option<&str> {
         self.grafana_version.as_deref()
     }
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
     /// <p>The ID or ARN of the Key Management Service key to use for encrypting workspace data.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -164,6 +170,7 @@ impl ::std::fmt::Debug for CreateWorkspaceInput {
         formatter.field("configuration", &self.configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("grafana_version", &self.grafana_version);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
@@ -196,6 +203,7 @@ pub struct CreateWorkspaceInputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     pub(crate) grafana_version: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkspaceInputBuilder {
@@ -505,6 +513,20 @@ impl CreateWorkspaceInputBuilder {
     pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_version
     }
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// <p>The ID or ARN of the Key Management Service key to use for encrypting workspace data.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -541,6 +563,7 @@ impl CreateWorkspaceInputBuilder {
             configuration: self.configuration,
             network_access_control: self.network_access_control,
             grafana_version: self.grafana_version,
+            ip_address_type: self.ip_address_type,
             kms_key_id: self.kms_key_id,
         })
     }
@@ -565,6 +588,7 @@ impl ::std::fmt::Debug for CreateWorkspaceInputBuilder {
         formatter.field("configuration", &self.configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("grafana_version", &self.grafana_version);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }

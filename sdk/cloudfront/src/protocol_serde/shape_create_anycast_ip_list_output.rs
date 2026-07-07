@@ -27,5 +27,7 @@ pub fn de_anycast_ip_list(inp: &[u8]) -> std::result::Result<crate::types::Anyca
             "invalid root, expected AnycastIpList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_anycast_ip_list::de_anycast_ip_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_anycast_ip_list::de_anycast_ip_list(&mut decoder, depth + 1)
 }

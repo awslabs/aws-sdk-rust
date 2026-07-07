@@ -6,7 +6,7 @@
 pub struct CreateOutput {
     /// <p>A name for the output.</p>
     pub name: ::std::string::String,
-    /// <p>A typed property for an output in a feed. It is used in the CreateFeed and AssociateFeed actions. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The status to assign to the output.</p>
     pub status: crate::types::OutputStatus,
@@ -19,7 +19,7 @@ impl CreateOutput {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>A typed property for an output in a feed. It is used in the CreateFeed and AssociateFeed actions. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
@@ -64,18 +64,18 @@ impl CreateOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A typed property for an output in a feed. It is used in the CreateFeed and AssociateFeed actions. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A typed property for an output in a feed. It is used in the CreateFeed and AssociateFeed actions. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
-    /// <p>A typed property for an output in a feed. It is used in the CreateFeed and AssociateFeed actions. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
         &self.output_config
     }

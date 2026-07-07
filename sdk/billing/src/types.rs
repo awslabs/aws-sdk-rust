@@ -7,6 +7,8 @@ pub use crate::types::_billing_view_element::BillingViewElement;
 
 pub use crate::types::_active_time_range::ActiveTimeRange;
 
+pub use crate::types::_billing_feature::BillingFeature;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_dimension_values::DimensionValues;
@@ -19,23 +21,63 @@ pub use crate::types::_time_range::TimeRange;
 
 pub use crate::types::_resource_tag::ResourceTag;
 
+pub use crate::types::_billing_feature_filter::BillingFeatureFilter;
+
+pub use crate::types::_billing_preference_summary::BillingPreferenceSummary;
+
 pub use crate::types::_billing_view_type::BillingViewType;
 
 pub use crate::types::_billing_view_health_status::BillingViewHealthStatus;
+
+pub use crate::types::_credit_allocation_history_entry::CreditAllocationHistoryEntry;
+
+pub use crate::types::_credit_data::CreditData;
 
 pub use crate::types::_string_search::StringSearch;
 
 pub use crate::types::_billing_view_list_element::BillingViewListElement;
 
+pub use crate::types::_billing_preference_for_key::BillingPreferenceForKey;
+
 pub use crate::types::_dimension::Dimension;
 
+pub use crate::types::_billing_feature_filter_name::BillingFeatureFilterName;
+
+pub use crate::types::_preference_value::PreferenceValue;
+
+pub use crate::types::_billing_period::BillingPeriod;
+
 pub use crate::types::_billing_view_status::BillingViewStatus;
+
+pub use crate::types::_amount::Amount;
+
+pub use crate::types::_application_type::ApplicationType;
+
+pub use crate::types::_credit_sharing_type::CreditSharingType;
+
+pub use crate::types::_credit_status::CreditStatus;
 
 pub use crate::types::_search_option::SearchOption;
 
 pub use crate::types::_billing_view_status_reason::BillingViewStatusReason;
 
 mod _active_time_range;
+
+mod _amount;
+
+mod _application_type;
+
+mod _billing_feature;
+
+mod _billing_feature_filter;
+
+mod _billing_feature_filter_name;
+
+mod _billing_period;
+
+mod _billing_preference_for_key;
+
+mod _billing_preference_summary;
 
 mod _billing_view_element;
 
@@ -51,11 +93,21 @@ mod _billing_view_type;
 
 mod _cost_category_values;
 
+mod _credit_allocation_history_entry;
+
+mod _credit_data;
+
+mod _credit_sharing_type;
+
+mod _credit_status;
+
 mod _dimension;
 
 mod _dimension_values;
 
 mod _expression;
+
+mod _preference_value;
 
 mod _resource_tag;
 

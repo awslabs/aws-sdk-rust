@@ -2,10 +2,16 @@
 pub(crate) fn de_model_package<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ModelPackage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,18 +71,24 @@ where
                         }
                         "InferenceSpecification" => {
                             builder = builder.set_inference_specification(
-                                crate::protocol_serde::shape_inference_specification::de_inference_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_inference_specification::de_inference_specification(tokens, _value, depth + 1)?,
                             );
                         }
                         "SourceAlgorithmSpecification" => {
                             builder = builder.set_source_algorithm_specification(
-                                crate::protocol_serde::shape_source_algorithm_specification::de_source_algorithm_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_source_algorithm_specification::de_source_algorithm_specification(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ValidationSpecification" => {
                             builder = builder.set_validation_specification(
                                 crate::protocol_serde::shape_model_package_validation_specification::de_model_package_validation_specification(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -89,7 +101,11 @@ where
                         }
                         "ModelPackageStatusDetails" => {
                             builder = builder.set_model_package_status_details(
-                                crate::protocol_serde::shape_model_package_status_details::de_model_package_status_details(tokens, _value)?,
+                                crate::protocol_serde::shape_model_package_status_details::de_model_package_status_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CertifyForMarketplace" => {
@@ -103,14 +119,18 @@ where
                             );
                         }
                         "CreatedBy" => {
-                            builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                            builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                         }
                         "MetadataProperties" => {
-                            builder = builder
-                                .set_metadata_properties(crate::protocol_serde::shape_metadata_properties::de_metadata_properties(tokens, _value)?);
+                            builder = builder.set_metadata_properties(crate::protocol_serde::shape_metadata_properties::de_metadata_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ModelMetrics" => {
-                            builder = builder.set_model_metrics(crate::protocol_serde::shape_model_metrics::de_model_metrics(tokens, _value)?);
+                            builder =
+                                builder.set_model_metrics(crate::protocol_serde::shape_model_metrics::de_model_metrics(tokens, _value, depth + 1)?);
                         }
                         "LastModifiedTime" => {
                             builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -119,7 +139,8 @@ where
                             )?);
                         }
                         "LastModifiedBy" => {
-                            builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                            builder =
+                                builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                         }
                         "ApprovalDescription" => {
                             builder = builder.set_approval_description(
@@ -152,7 +173,9 @@ where
                         "AdditionalInferenceSpecifications" => {
                             builder = builder.set_additional_inference_specifications(
                                 crate::protocol_serde::shape_additional_inference_specifications::de_additional_inference_specifications(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -165,29 +188,38 @@ where
                         }
                         "SecurityConfig" => {
                             builder = builder.set_security_config(
-                                crate::protocol_serde::shape_model_package_security_config::de_model_package_security_config(tokens, _value)?,
+                                crate::protocol_serde::shape_model_package_security_config::de_model_package_security_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ModelCard" => {
                             builder = builder.set_model_card(crate::protocol_serde::shape_model_package_model_card::de_model_package_model_card(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ModelLifeCycle" => {
-                            builder =
-                                builder.set_model_life_cycle(crate::protocol_serde::shape_model_life_cycle::de_model_life_cycle(tokens, _value)?);
+                            builder = builder.set_model_life_cycle(crate::protocol_serde::shape_model_life_cycle::de_model_life_cycle(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "CustomerMetadataProperties" => {
                             builder = builder.set_customer_metadata_properties(
-                                crate::protocol_serde::shape_customer_metadata_map::de_customer_metadata_map(tokens, _value)?,
+                                crate::protocol_serde::shape_customer_metadata_map::de_customer_metadata_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "DriftCheckBaselines" => {
                             builder = builder.set_drift_check_baselines(
-                                crate::protocol_serde::shape_drift_check_baselines::de_drift_check_baselines(tokens, _value)?,
+                                crate::protocol_serde::shape_drift_check_baselines::de_drift_check_baselines(tokens, _value, depth + 1)?,
                             );
                         }
                         "SkipModelValidation" => {

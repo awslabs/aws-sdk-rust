@@ -241,6 +241,8 @@ pub(crate) fn de_list_object_parents(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -255,12 +257,20 @@ pub(crate) fn de_list_object_parents(
                 }
                 "ParentLinks" => {
                     builder = builder.set_parent_links(
-                        crate::protocol_serde::shape_object_identifier_and_link_name_list::de_object_identifier_and_link_name_list(tokens, _value)?,
+                        crate::protocol_serde::shape_object_identifier_and_link_name_list::de_object_identifier_and_link_name_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Parents" => {
                     builder = builder.set_parents(
-                        crate::protocol_serde::shape_object_identifier_to_link_name_map::de_object_identifier_to_link_name_map(tokens, _value)?,
+                        crate::protocol_serde::shape_object_identifier_to_link_name_map::de_object_identifier_to_link_name_map(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

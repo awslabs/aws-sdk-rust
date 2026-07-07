@@ -2,10 +2,16 @@
 pub(crate) fn de_guardrail_word_policy_assessment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GuardrailWordPolicyAssessment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,12 +23,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "customWords" => {
                             builder = builder.set_custom_words(
-                                crate::protocol_serde::shape_guardrail_custom_word_list::de_guardrail_custom_word_list(tokens, _value)?,
+                                crate::protocol_serde::shape_guardrail_custom_word_list::de_guardrail_custom_word_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "managedWordLists" => {
                             builder = builder.set_managed_word_lists(
-                                crate::protocol_serde::shape_guardrail_managed_word_list::de_guardrail_managed_word_list(tokens, _value)?,
+                                crate::protocol_serde::shape_guardrail_managed_word_list::de_guardrail_managed_word_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

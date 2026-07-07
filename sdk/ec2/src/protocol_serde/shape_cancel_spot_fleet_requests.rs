@@ -51,6 +51,8 @@ pub fn de_cancel_spot_fleet_requests(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CancelSpotFleetRequestsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CancelSpotFleetRequestsResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_cancel_spot_fleet_requests(
             s if s.matches("successfulFleetRequestSet") /* SuccessfulFleetRequests com.amazonaws.ec2.synthetic#CancelSpotFleetRequestsOutput$SuccessfulFleetRequests */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cancel_spot_fleet_requests_success_set::de_cancel_spot_fleet_requests_success_set(&mut tag)
+                        crate::protocol_serde::shape_cancel_spot_fleet_requests_success_set::de_cancel_spot_fleet_requests_success_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -71,7 +73,7 @@ pub fn de_cancel_spot_fleet_requests(
             s if s.matches("unsuccessfulFleetRequestSet") /* UnsuccessfulFleetRequests com.amazonaws.ec2.synthetic#CancelSpotFleetRequestsOutput$UnsuccessfulFleetRequests */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_cancel_spot_fleet_requests_error_set::de_cancel_spot_fleet_requests_error_set(&mut tag)
+                        crate::protocol_serde::shape_cancel_spot_fleet_requests_error_set::de_cancel_spot_fleet_requests_error_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

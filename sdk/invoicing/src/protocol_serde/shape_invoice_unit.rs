@@ -2,10 +2,16 @@
 pub(crate) fn de_invoice_unit<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InvoiceUnit>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,7 +54,11 @@ where
                                 builder.set_tax_inheritance_disabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Rule" => {
-                            builder = builder.set_rule(crate::protocol_serde::shape_invoice_unit_rule::de_invoice_unit_rule(tokens, _value)?);
+                            builder = builder.set_rule(crate::protocol_serde::shape_invoice_unit_rule::de_invoice_unit_rule(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LastModified" => {
                             builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

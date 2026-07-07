@@ -78,6 +78,8 @@ pub fn de_get_object_tagging(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("Tagging") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected Tagging but got {start_el:?}. This is likely a bug in the SDK."
@@ -88,7 +90,7 @@ pub fn de_get_object_tagging(
             s if s.matches("TagSet") /* TagSet com.amazonaws.s3.synthetic#GetObjectTaggingOutput$TagSet */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_set::de_tag_set(&mut tag)
+                        crate::protocol_serde::shape_tag_set::de_tag_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

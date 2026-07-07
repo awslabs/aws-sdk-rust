@@ -2,10 +2,16 @@
 pub(crate) fn de_evaluation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Evaluation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,12 +29,20 @@ where
                         }
                         "approvalRulesSatisfied" => {
                             builder = builder.set_approval_rules_satisfied(
-                                crate::protocol_serde::shape_approval_rules_satisfied_list::de_approval_rules_satisfied_list(tokens, _value)?,
+                                crate::protocol_serde::shape_approval_rules_satisfied_list::de_approval_rules_satisfied_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "approvalRulesNotSatisfied" => {
                             builder = builder.set_approval_rules_not_satisfied(
-                                crate::protocol_serde::shape_approval_rules_not_satisfied_list::de_approval_rules_not_satisfied_list(tokens, _value)?,
+                                crate::protocol_serde::shape_approval_rules_not_satisfied_list::de_approval_rules_not_satisfied_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

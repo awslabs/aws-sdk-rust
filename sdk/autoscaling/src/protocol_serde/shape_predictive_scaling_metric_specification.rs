@@ -50,7 +50,11 @@ pub fn ser_predictive_scaling_metric_specification(
 #[allow(clippy::needless_question_mark)]
 pub fn de_predictive_scaling_metric_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PredictiveScalingMetricSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PredictiveScalingMetricSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -73,7 +77,7 @@ pub fn de_predictive_scaling_metric_specification(
             s if s.matches("PredefinedMetricPairSpecification") /* PredefinedMetricPairSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedMetricPairSpecification */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_predefined_metric_pair::de_predictive_scaling_predefined_metric_pair(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_predefined_metric_pair::de_predictive_scaling_predefined_metric_pair(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -83,7 +87,7 @@ pub fn de_predictive_scaling_metric_specification(
             s if s.matches("PredefinedScalingMetricSpecification") /* PredefinedScalingMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedScalingMetricSpecification */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_predefined_scaling_metric::de_predictive_scaling_predefined_scaling_metric(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_predefined_scaling_metric::de_predictive_scaling_predefined_scaling_metric(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -93,7 +97,7 @@ pub fn de_predictive_scaling_metric_specification(
             s if s.matches("PredefinedLoadMetricSpecification") /* PredefinedLoadMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedLoadMetricSpecification */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_predefined_load_metric::de_predictive_scaling_predefined_load_metric(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_predefined_load_metric::de_predictive_scaling_predefined_load_metric(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -103,7 +107,7 @@ pub fn de_predictive_scaling_metric_specification(
             s if s.matches("CustomizedScalingMetricSpecification") /* CustomizedScalingMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$CustomizedScalingMetricSpecification */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_customized_scaling_metric::de_predictive_scaling_customized_scaling_metric(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_customized_scaling_metric::de_predictive_scaling_customized_scaling_metric(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -113,7 +117,7 @@ pub fn de_predictive_scaling_metric_specification(
             s if s.matches("CustomizedLoadMetricSpecification") /* CustomizedLoadMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$CustomizedLoadMetricSpecification */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_customized_load_metric::de_predictive_scaling_customized_load_metric(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_customized_load_metric::de_predictive_scaling_customized_load_metric(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -123,7 +127,7 @@ pub fn de_predictive_scaling_metric_specification(
             s if s.matches("CustomizedCapacityMetricSpecification") /* CustomizedCapacityMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$CustomizedCapacityMetricSpecification */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_customized_capacity_metric::de_predictive_scaling_customized_capacity_metric(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_customized_capacity_metric::de_predictive_scaling_customized_capacity_metric(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -15,6 +15,8 @@ pub struct ClusterSummary {
     /// <p>A list of Amazon Resource Names (ARNs) of the training plans associated with this cluster.</p>
     /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
     pub training_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The aggregate status of the image version across the cluster's instance groups.</p>
+    pub image_version_status: ::std::option::Option<crate::types::ClusterImageVersionStatus>,
 }
 impl ClusterSummary {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
@@ -40,6 +42,10 @@ impl ClusterSummary {
     pub fn training_plan_arns(&self) -> &[::std::string::String] {
         self.training_plan_arns.as_deref().unwrap_or_default()
     }
+    /// <p>The aggregate status of the image version across the cluster's instance groups.</p>
+    pub fn image_version_status(&self) -> ::std::option::Option<&crate::types::ClusterImageVersionStatus> {
+        self.image_version_status.as_ref()
+    }
 }
 impl ClusterSummary {
     /// Creates a new builder-style object to manufacture [`ClusterSummary`](crate::types::ClusterSummary).
@@ -57,6 +63,7 @@ pub struct ClusterSummaryBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) cluster_status: ::std::option::Option<crate::types::ClusterStatus>,
     pub(crate) training_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) image_version_status: ::std::option::Option<crate::types::ClusterImageVersionStatus>,
 }
 impl ClusterSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
@@ -142,6 +149,20 @@ impl ClusterSummaryBuilder {
     pub fn get_training_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.training_plan_arns
     }
+    /// <p>The aggregate status of the image version across the cluster's instance groups.</p>
+    pub fn image_version_status(mut self, input: crate::types::ClusterImageVersionStatus) -> Self {
+        self.image_version_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The aggregate status of the image version across the cluster's instance groups.</p>
+    pub fn set_image_version_status(mut self, input: ::std::option::Option<crate::types::ClusterImageVersionStatus>) -> Self {
+        self.image_version_status = input;
+        self
+    }
+    /// <p>The aggregate status of the image version across the cluster's instance groups.</p>
+    pub fn get_image_version_status(&self) -> &::std::option::Option<crate::types::ClusterImageVersionStatus> {
+        &self.image_version_status
+    }
     /// Consumes the builder and constructs a [`ClusterSummary`](crate::types::ClusterSummary).
     pub fn build(self) -> crate::types::ClusterSummary {
         crate::types::ClusterSummary {
@@ -150,6 +171,7 @@ impl ClusterSummaryBuilder {
             creation_time: self.creation_time,
             cluster_status: self.cluster_status,
             training_plan_arns: self.training_plan_arns,
+            image_version_status: self.image_version_status,
         }
     }
 }

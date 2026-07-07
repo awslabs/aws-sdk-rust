@@ -122,6 +122,8 @@ pub(crate) fn de_get_agent_runtime(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -136,7 +138,9 @@ pub(crate) fn de_get_agent_runtime(
                 }
                 "agentRuntimeArtifact" => {
                     builder = builder.set_agent_runtime_artifact(crate::protocol_serde::shape_agent_runtime_artifact::de_agent_runtime_artifact(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "agentRuntimeId" => {
@@ -162,7 +166,7 @@ pub(crate) fn de_get_agent_runtime(
                 }
                 "authorizerConfiguration" => {
                     builder = builder.set_authorizer_configuration(
-                        crate::protocol_serde::shape_authorizer_configuration::de_authorizer_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_authorizer_configuration::de_authorizer_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "createdAt" => {
@@ -180,7 +184,7 @@ pub(crate) fn de_get_agent_runtime(
                 }
                 "environmentVariables" => {
                     builder = builder.set_environment_variables(
-                        crate::protocol_serde::shape_environment_variables_map::de_environment_variables_map(tokens, _value)?,
+                        crate::protocol_serde::shape_environment_variables_map::de_environment_variables_map(tokens, _value, depth + 1)?,
                     );
                 }
                 "failureReason" => {
@@ -192,7 +196,7 @@ pub(crate) fn de_get_agent_runtime(
                 }
                 "filesystemConfigurations" => {
                     builder = builder.set_filesystem_configurations(
-                        crate::protocol_serde::shape_filesystem_configurations::de_filesystem_configurations(tokens, _value)?,
+                        crate::protocol_serde::shape_filesystem_configurations::de_filesystem_configurations(tokens, _value, depth + 1)?,
                     );
                 }
                 "lastUpdatedAt" => {
@@ -203,27 +207,33 @@ pub(crate) fn de_get_agent_runtime(
                 }
                 "lifecycleConfiguration" => {
                     builder = builder.set_lifecycle_configuration(crate::protocol_serde::shape_lifecycle_configuration::de_lifecycle_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "metadataConfiguration" => {
                     builder = builder.set_metadata_configuration(
-                        crate::protocol_serde::shape_runtime_metadata_configuration::de_runtime_metadata_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_runtime_metadata_configuration::de_runtime_metadata_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "networkConfiguration" => {
                     builder = builder.set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "protocolConfiguration" => {
                     builder = builder.set_protocol_configuration(crate::protocol_serde::shape_protocol_configuration::de_protocol_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "requestHeaderConfiguration" => {
                     builder = builder.set_request_header_configuration(
-                        crate::protocol_serde::shape_request_header_configuration::de_request_header_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_request_header_configuration::de_request_header_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "roleArn" => {
@@ -242,7 +252,7 @@ pub(crate) fn de_get_agent_runtime(
                 }
                 "workloadIdentityDetails" => {
                     builder = builder.set_workload_identity_details(
-                        crate::protocol_serde::shape_workload_identity_details::de_workload_identity_details(tokens, _value)?,
+                        crate::protocol_serde::shape_workload_identity_details::de_workload_identity_details(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

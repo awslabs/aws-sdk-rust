@@ -67,6 +67,8 @@ pub fn de_list_storage_lens_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListStorageLensConfigurationResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListStorageLensConfigurationResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -80,7 +82,7 @@ pub fn de_list_storage_lens_configurations(
                         Result::<::std::vec::Vec::<crate::types::ListStorageLensConfigurationEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.storage_lens_configuration_list.take().unwrap_or_default();
                             list_4.push(
-                                crate::protocol_serde::shape_list_storage_lens_configuration_entry::de_list_storage_lens_configuration_entry(&mut tag)
+                                crate::protocol_serde::shape_list_storage_lens_configuration_entry::de_list_storage_lens_configuration_entry(&mut tag, depth + 1)
                                 ?
                             );
                             list_4

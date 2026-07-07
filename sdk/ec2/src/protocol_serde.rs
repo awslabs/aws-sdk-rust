@@ -171,6 +171,10 @@ pub(crate) mod shape_attach_classic_link_vpc;
 
 pub(crate) mod shape_attach_classic_link_vpc_input;
 
+pub(crate) mod shape_attach_image_watermark;
+
+pub(crate) mod shape_attach_image_watermark_input;
+
 pub(crate) mod shape_attach_internet_gateway;
 
 pub(crate) mod shape_attach_internet_gateway_input;
@@ -280,6 +284,10 @@ pub(crate) mod shape_create_capacity_reservation;
 pub(crate) mod shape_create_capacity_reservation_by_splitting;
 
 pub(crate) mod shape_create_capacity_reservation_by_splitting_input;
+
+pub(crate) mod shape_create_capacity_reservation_cancellation_quote;
+
+pub(crate) mod shape_create_capacity_reservation_cancellation_quote_input;
 
 pub(crate) mod shape_create_capacity_reservation_fleet;
 
@@ -1095,6 +1103,10 @@ pub(crate) mod shape_describe_account_attributes;
 
 pub(crate) mod shape_describe_account_attributes_input;
 
+pub(crate) mod shape_describe_account_vpc_encryption_control;
+
+pub(crate) mod shape_describe_account_vpc_encryption_control_input;
+
 pub(crate) mod shape_describe_address_transfers;
 
 pub(crate) mod shape_describe_address_transfers_input;
@@ -1154,6 +1166,10 @@ pub(crate) mod shape_describe_capacity_manager_data_exports_input;
 pub(crate) mod shape_describe_capacity_reservation_billing_requests;
 
 pub(crate) mod shape_describe_capacity_reservation_billing_requests_input;
+
+pub(crate) mod shape_describe_capacity_reservation_cancellation_quotes;
+
+pub(crate) mod shape_describe_capacity_reservation_cancellation_quotes_input;
 
 pub(crate) mod shape_describe_capacity_reservation_fleets;
 
@@ -1382,6 +1398,10 @@ pub(crate) mod shape_describe_ipam_external_resource_verification_tokens_input;
 pub(crate) mod shape_describe_ipam_policies;
 
 pub(crate) mod shape_describe_ipam_policies_input;
+
+pub(crate) mod shape_describe_ipam_pool_allocations;
+
+pub(crate) mod shape_describe_ipam_pool_allocations_input;
 
 pub(crate) mod shape_describe_ipam_pools;
 
@@ -1834,6 +1854,10 @@ pub(crate) mod shape_describe_vpn_gateways_input;
 pub(crate) mod shape_detach_classic_link_vpc;
 
 pub(crate) mod shape_detach_classic_link_vpc_input;
+
+pub(crate) mod shape_detach_image_watermark;
+
+pub(crate) mod shape_detach_image_watermark_input;
 
 pub(crate) mod shape_detach_internet_gateway;
 
@@ -2443,6 +2467,10 @@ pub(crate) mod shape_lock_snapshot;
 
 pub(crate) mod shape_lock_snapshot_input;
 
+pub(crate) mod shape_modify_account_vpc_encryption_control;
+
+pub(crate) mod shape_modify_account_vpc_encryption_control_input;
+
 pub(crate) mod shape_modify_address_attribute;
 
 pub(crate) mod shape_modify_address_attribute_input;
@@ -2552,6 +2580,10 @@ pub(crate) mod shape_modify_ipam_policy_allocation_rules;
 pub(crate) mod shape_modify_ipam_policy_allocation_rules_input;
 
 pub(crate) mod shape_modify_ipam_pool;
+
+pub(crate) mod shape_modify_ipam_pool_allocation;
+
+pub(crate) mod shape_modify_ipam_pool_allocation_input;
 
 pub(crate) mod shape_modify_ipam_pool_input;
 
@@ -2718,6 +2750,10 @@ pub(crate) mod shape_modify_vpc_endpoint_connection_notification;
 pub(crate) mod shape_modify_vpc_endpoint_connection_notification_input;
 
 pub(crate) mod shape_modify_vpc_endpoint_input;
+
+pub(crate) mod shape_modify_vpc_endpoint_payer_responsibility;
+
+pub(crate) mod shape_modify_vpc_endpoint_payer_responsibility_input;
 
 pub(crate) mod shape_modify_vpc_endpoint_service_configuration;
 
@@ -3181,6 +3217,8 @@ pub(crate) mod shape_fleet_launch_template_config_request;
 
 pub(crate) mod shape_hibernation_options_request;
 
+pub(crate) mod shape_host_cpu_options_request;
+
 pub(crate) mod shape_iam_instance_profile_specification;
 
 pub(crate) mod shape_icmp_type_code;
@@ -3353,6 +3391,8 @@ pub(crate) mod shape_subnet_configuration;
 
 pub(crate) mod shape_tag;
 
+pub(crate) mod shape_tag_field_specification_request;
+
 pub(crate) mod shape_tag_specification;
 
 pub(crate) mod shape_target_capacity_specification_request;
@@ -3384,6 +3424,8 @@ pub(crate) mod shape_accelerator_total_memory_mib_request;
 pub(crate) mod shape_access_scope_analysis_finding_list;
 
 pub(crate) mod shape_account_attribute_list;
+
+pub(crate) mod shape_account_vpc_encryption_control;
 
 pub(crate) mod shape_active_instance_set;
 
@@ -3460,6 +3502,10 @@ pub(crate) mod shape_capacity_manager_monitored_tag_key_list;
 pub(crate) mod shape_capacity_reservation;
 
 pub(crate) mod shape_capacity_reservation_billing_request_set;
+
+pub(crate) mod shape_capacity_reservation_cancellation_quote;
+
+pub(crate) mod shape_capacity_reservation_cancellation_quote_response_set;
 
 pub(crate) mod shape_capacity_reservation_fleet_cancellation_state_set;
 
@@ -3662,6 +3708,8 @@ pub(crate) mod shape_image_usage_report_entry_list;
 pub(crate) mod shape_image_usage_report_list;
 
 pub(crate) mod shape_image_usage_resource_type_option_request;
+
+pub(crate) mod shape_image_watermark_filter_request;
 
 pub(crate) mod shape_import_image_license_specification_list_response;
 
@@ -3966,6 +4014,8 @@ pub(crate) mod shape_operator_response;
 pub(crate) mod shape_outpost_lag_set;
 
 pub(crate) mod shape_path_statement_request;
+
+pub(crate) mod shape_payer_responsibility_set;
 
 pub(crate) mod shape_peering_connection_options;
 
@@ -4405,6 +4455,8 @@ pub(crate) mod shape_access_scope_path_list;
 
 pub(crate) mod shape_account_attribute;
 
+pub(crate) mod shape_account_vpc_encryption_control_exclusions;
+
 pub(crate) mod shape_active_instance;
 
 pub(crate) mod shape_added_principal;
@@ -4441,6 +4493,8 @@ pub(crate) mod shape_cancel_spot_fleet_requests_error_item;
 
 pub(crate) mod shape_cancel_spot_fleet_requests_success_item;
 
+pub(crate) mod shape_cancellation_terms_set;
+
 pub(crate) mod shape_cancelled_spot_instance_request;
 
 pub(crate) mod shape_capacity_allocations;
@@ -4464,6 +4518,8 @@ pub(crate) mod shape_capacity_manager_monitored_tag_key;
 pub(crate) mod shape_capacity_reservation_billing_request;
 
 pub(crate) mod shape_capacity_reservation_commitment_info;
+
+pub(crate) mod shape_capacity_reservation_configuration;
 
 pub(crate) mod shape_capacity_reservation_fleet;
 
@@ -4773,6 +4829,8 @@ pub(crate) mod shape_path_component_list;
 
 pub(crate) mod shape_path_filter;
 
+pub(crate) mod shape_payer_responsibility_entry;
+
 pub(crate) mod shape_peering_attachment_status;
 
 pub(crate) mod shape_peering_tgw_info;
@@ -5077,6 +5135,8 @@ pub(crate) mod shape_cancel_capacity_reservation_fleet_error;
 
 pub(crate) mod shape_cancel_spot_fleet_requests_error;
 
+pub(crate) mod shape_cancellation_terms;
+
 pub(crate) mod shape_capacity_allocation;
 
 pub(crate) mod shape_capacity_manager_tag_dimension_set;
@@ -5179,6 +5239,8 @@ pub(crate) mod shape_gpu_info;
 
 pub(crate) mod shape_hibernation_options;
 
+pub(crate) mod shape_host_cpu_options;
+
 pub(crate) mod shape_host_instance_list;
 
 pub(crate) mod shape_host_properties;
@@ -5190,6 +5252,10 @@ pub(crate) mod shape_image_name_list;
 pub(crate) mod shape_image_provider_list;
 
 pub(crate) mod shape_image_usage_resource_type_list;
+
+pub(crate) mod shape_image_watermark_filter_response_list;
+
+pub(crate) mod shape_image_watermark_list;
 
 pub(crate) mod shape_import_instance_volume_detail_set;
 
@@ -5405,6 +5471,8 @@ pub(crate) mod shape_subnet_ip_prefixes;
 
 pub(crate) mod shape_supported_region_detail;
 
+pub(crate) mod shape_tag_field_specification_list_response;
+
 pub(crate) mod shape_target_capacity_specification;
 
 pub(crate) mod shape_target_configuration;
@@ -5573,6 +5641,10 @@ pub(crate) mod shape_host_instance;
 
 pub(crate) mod shape_image_usage_resource_type;
 
+pub(crate) mod shape_image_watermark;
+
+pub(crate) mod shape_image_watermark_filter_response;
+
 pub(crate) mod shape_import_instance_volume_detail_item;
 
 pub(crate) mod shape_inference_device_info_list;
@@ -5666,6 +5738,8 @@ pub(crate) mod shape_stale_ip_permission;
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_supported_additional_processor_feature_list;
+
+pub(crate) mod shape_tag_field_specification_response;
 
 pub(crate) mod shape_tag_specification_list;
 
@@ -5794,6 +5868,8 @@ pub(crate) mod shape_protocol_int_list;
 pub(crate) mod shape_resource_statement;
 
 pub(crate) mod shape_secondary_interface_private_ip_address_specification;
+
+pub(crate) mod shape_tag_key_list;
 
 pub(crate) mod shape_through_resources_statement;
 

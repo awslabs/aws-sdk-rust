@@ -61,10 +61,16 @@ pub fn ser_rule_declaration(
 pub(crate) fn de_rule_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -82,19 +88,25 @@ where
                             );
                         }
                         "ruleTypeId" => {
-                            builder = builder.set_rule_type_id(crate::protocol_serde::shape_rule_type_id::de_rule_type_id(tokens, _value)?);
+                            builder =
+                                builder.set_rule_type_id(crate::protocol_serde::shape_rule_type_id::de_rule_type_id(tokens, _value, depth + 1)?);
                         }
                         "configuration" => {
                             builder = builder.set_configuration(crate::protocol_serde::shape_rule_configuration_map::de_rule_configuration_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "commands" => {
-                            builder = builder.set_commands(crate::protocol_serde::shape_command_list::de_command_list(tokens, _value)?);
+                            builder = builder.set_commands(crate::protocol_serde::shape_command_list::de_command_list(tokens, _value, depth + 1)?);
                         }
                         "inputArtifacts" => {
-                            builder = builder
-                                .set_input_artifacts(crate::protocol_serde::shape_input_artifact_list::de_input_artifact_list(tokens, _value)?);
+                            builder = builder.set_input_artifacts(crate::protocol_serde::shape_input_artifact_list::de_input_artifact_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "roleArn" => {
                             builder = builder.set_role_arn(

@@ -2,10 +2,16 @@
 pub(crate) fn de_dataset_detail_org_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DatasetDetailOrgAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,19 +37,19 @@ where
                     }
                     variant = match key.as_ref() {
                         "vsam" => Some(crate::types::DatasetDetailOrgAttributes::Vsam(
-                            crate::protocol_serde::shape_vsam_detail_attributes::de_vsam_detail_attributes(tokens, _value)?
+                            crate::protocol_serde::shape_vsam_detail_attributes::de_vsam_detail_attributes(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vsam' cannot be null"))?,
                         )),
                         "gdg" => Some(crate::types::DatasetDetailOrgAttributes::Gdg(
-                            crate::protocol_serde::shape_gdg_detail_attributes::de_gdg_detail_attributes(tokens, _value)?
+                            crate::protocol_serde::shape_gdg_detail_attributes::de_gdg_detail_attributes(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'gdg' cannot be null"))?,
                         )),
                         "po" => Some(crate::types::DatasetDetailOrgAttributes::Po(
-                            crate::protocol_serde::shape_po_detail_attributes::de_po_detail_attributes(tokens, _value)?
+                            crate::protocol_serde::shape_po_detail_attributes::de_po_detail_attributes(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'po' cannot be null"))?,
                         )),
                         "ps" => Some(crate::types::DatasetDetailOrgAttributes::Ps(
-                            crate::protocol_serde::shape_ps_detail_attributes::de_ps_detail_attributes(tokens, _value)?
+                            crate::protocol_serde::shape_ps_detail_attributes::de_ps_detail_attributes(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ps' cannot be null"))?,
                         )),
                         _ => {

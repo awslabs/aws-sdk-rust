@@ -76,6 +76,26 @@ pub fn de_describe_managed_login_branding_by_client_http_error(
                 tmp
             })
         }
+        "OperationNotEnabledException" => {
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::OperationNotEnabledException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::OperationNotEnabledExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_operation_not_enabled_exception::de_operation_not_enabled_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => {
             crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::ResourceNotFoundException({
                 #[allow(unused_mut)]
@@ -165,6 +185,8 @@ pub(crate) fn de_describe_managed_login_branding_by_client(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -172,7 +194,7 @@ pub(crate) fn de_describe_managed_login_branding_by_client(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ManagedLoginBranding" => {
                     builder = builder.set_managed_login_branding(
-                        crate::protocol_serde::shape_managed_login_branding_type::de_managed_login_branding_type(tokens, _value)?,
+                        crate::protocol_serde::shape_managed_login_branding_type::de_managed_login_branding_type(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

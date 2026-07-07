@@ -13,6 +13,8 @@ pub struct RetrieveInput {
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub user_context: ::std::option::Option<crate::types::UserContext>,
 }
 impl RetrieveInput {
     /// <p>The unique identifier of the knowledge base to query.</p>
@@ -35,6 +37,10 @@ impl RetrieveInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn user_context(&self) -> ::std::option::Option<&crate::types::UserContext> {
+        self.user_context.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RetrieveInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for RetrieveInput {
         formatter.field("retrieval_configuration", &self.retrieval_configuration);
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("next_token", &self.next_token);
+        formatter.field("user_context", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -63,6 +70,7 @@ pub struct RetrieveInputBuilder {
     pub(crate) retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) user_context: ::std::option::Option<crate::types::UserContext>,
 }
 impl RetrieveInputBuilder {
     /// <p>The unique identifier of the knowledge base to query.</p>
@@ -137,6 +145,20 @@ impl RetrieveInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
+        self.user_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.user_context = input;
+        self
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.user_context
+    }
     /// Consumes the builder and constructs a [`RetrieveInput`](crate::operation::retrieve::RetrieveInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::retrieve::RetrieveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::retrieve::RetrieveInput {
@@ -145,6 +167,7 @@ impl RetrieveInputBuilder {
             retrieval_configuration: self.retrieval_configuration,
             guardrail_configuration: self.guardrail_configuration,
             next_token: self.next_token,
+            user_context: self.user_context,
         })
     }
 }
@@ -156,6 +179,7 @@ impl ::std::fmt::Debug for RetrieveInputBuilder {
         formatter.field("retrieval_configuration", &self.retrieval_configuration);
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("next_token", &self.next_token);
+        formatter.field("user_context", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

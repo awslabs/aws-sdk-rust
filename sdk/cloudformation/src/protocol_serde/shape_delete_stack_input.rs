@@ -36,6 +36,11 @@ pub fn ser_delete_stack_input_input_input(
     if let Some(var_13) = &input.deletion_mode {
         scope_12.string(var_13.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("DeploymentConfig");
+    if let Some(var_15) = &input.deployment_config {
+        crate::protocol_serde::shape_deployment_config::ser_deployment_config(scope_14, var_15)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

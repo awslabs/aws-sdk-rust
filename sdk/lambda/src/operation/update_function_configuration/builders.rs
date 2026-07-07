@@ -470,17 +470,17 @@ impl UpdateFunctionConfigurationFluentBuilder {
     pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
         self.inner.get_capacity_provider_config()
     }
-    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    /// <p>Configuration settings for <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable functions</a>, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
     pub fn durable_config(mut self, input: crate::types::DurableConfig) -> Self {
         self.inner = self.inner.durable_config(input);
         self
     }
-    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    /// <p>Configuration settings for <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable functions</a>, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
     pub fn set_durable_config(mut self, input: ::std::option::Option<crate::types::DurableConfig>) -> Self {
         self.inner = self.inner.set_durable_config(input);
         self
     }
-    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    /// <p>Configuration settings for <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable functions</a>, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
     pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
         self.inner.get_durable_config()
     }

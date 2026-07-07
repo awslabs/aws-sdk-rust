@@ -20,8 +20,12 @@ pub struct CollectionGroupDetail {
     pub created_date: ::std::option::Option<i64>,
     /// <p>The capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
     pub capacity_limits: ::std::option::Option<crate::types::CollectionGroupCapacityLimits>,
+    /// <p>Current search and indexing capacity for the collection group.</p>
+    pub current_capacity: ::std::option::Option<crate::types::CurrentCapacity>,
     /// <p>The number of collections associated with the collection group.</p>
     pub number_of_collections: ::std::option::Option<i32>,
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub generation: ::std::option::Option<crate::types::ServerlessGeneration>,
 }
 impl CollectionGroupDetail {
     /// <p>The unique identifier of the collection group.</p>
@@ -58,9 +62,17 @@ impl CollectionGroupDetail {
     pub fn capacity_limits(&self) -> ::std::option::Option<&crate::types::CollectionGroupCapacityLimits> {
         self.capacity_limits.as_ref()
     }
+    /// <p>Current search and indexing capacity for the collection group.</p>
+    pub fn current_capacity(&self) -> ::std::option::Option<&crate::types::CurrentCapacity> {
+        self.current_capacity.as_ref()
+    }
     /// <p>The number of collections associated with the collection group.</p>
     pub fn number_of_collections(&self) -> ::std::option::Option<i32> {
         self.number_of_collections
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub fn generation(&self) -> ::std::option::Option<&crate::types::ServerlessGeneration> {
+        self.generation.as_ref()
     }
 }
 impl CollectionGroupDetail {
@@ -82,7 +94,9 @@ pub struct CollectionGroupDetailBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) capacity_limits: ::std::option::Option<crate::types::CollectionGroupCapacityLimits>,
+    pub(crate) current_capacity: ::std::option::Option<crate::types::CurrentCapacity>,
     pub(crate) number_of_collections: ::std::option::Option<i32>,
+    pub(crate) generation: ::std::option::Option<crate::types::ServerlessGeneration>,
 }
 impl CollectionGroupDetailBuilder {
     /// <p>The unique identifier of the collection group.</p>
@@ -203,6 +217,20 @@ impl CollectionGroupDetailBuilder {
     pub fn get_capacity_limits(&self) -> &::std::option::Option<crate::types::CollectionGroupCapacityLimits> {
         &self.capacity_limits
     }
+    /// <p>Current search and indexing capacity for the collection group.</p>
+    pub fn current_capacity(mut self, input: crate::types::CurrentCapacity) -> Self {
+        self.current_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Current search and indexing capacity for the collection group.</p>
+    pub fn set_current_capacity(mut self, input: ::std::option::Option<crate::types::CurrentCapacity>) -> Self {
+        self.current_capacity = input;
+        self
+    }
+    /// <p>Current search and indexing capacity for the collection group.</p>
+    pub fn get_current_capacity(&self) -> &::std::option::Option<crate::types::CurrentCapacity> {
+        &self.current_capacity
+    }
     /// <p>The number of collections associated with the collection group.</p>
     pub fn number_of_collections(mut self, input: i32) -> Self {
         self.number_of_collections = ::std::option::Option::Some(input);
@@ -217,6 +245,20 @@ impl CollectionGroupDetailBuilder {
     pub fn get_number_of_collections(&self) -> &::std::option::Option<i32> {
         &self.number_of_collections
     }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub fn generation(mut self, input: crate::types::ServerlessGeneration) -> Self {
+        self.generation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub fn set_generation(mut self, input: ::std::option::Option<crate::types::ServerlessGeneration>) -> Self {
+        self.generation = input;
+        self
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub fn get_generation(&self) -> &::std::option::Option<crate::types::ServerlessGeneration> {
+        &self.generation
+    }
     /// Consumes the builder and constructs a [`CollectionGroupDetail`](crate::types::CollectionGroupDetail).
     pub fn build(self) -> crate::types::CollectionGroupDetail {
         crate::types::CollectionGroupDetail {
@@ -228,7 +270,9 @@ impl CollectionGroupDetailBuilder {
             tags: self.tags,
             created_date: self.created_date,
             capacity_limits: self.capacity_limits,
+            current_capacity: self.current_capacity,
             number_of_collections: self.number_of_collections,
+            generation: self.generation,
         }
     }
 }

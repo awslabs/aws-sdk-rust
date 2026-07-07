@@ -5,7 +5,7 @@
 pub struct GetPatchBaselineForPatchGroupInput {
     /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
     pub patch_group: ::std::option::Option<::std::string::String>,
-    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline. The default value is <code>WINDOWS</code>.</p>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
 }
 impl GetPatchBaselineForPatchGroupInput {
@@ -13,7 +13,7 @@ impl GetPatchBaselineForPatchGroupInput {
     pub fn patch_group(&self) -> ::std::option::Option<&str> {
         self.patch_group.as_deref()
     }
-    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline. The default value is <code>WINDOWS</code>.</p>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
@@ -48,17 +48,17 @@ impl GetPatchBaselineForPatchGroupInputBuilder {
     pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.patch_group
     }
-    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline. The default value is <code>WINDOWS</code>.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline. The default value is <code>WINDOWS</code>.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
-    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline. The default value is <code>WINDOWS</code>.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system
     }

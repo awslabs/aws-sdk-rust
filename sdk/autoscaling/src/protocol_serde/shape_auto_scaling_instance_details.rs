@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_auto_scaling_instance_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AutoScalingInstanceDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AutoScalingInstanceDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -114,7 +118,7 @@ pub fn de_auto_scaling_instance_details(
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchTemplate */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag)
+                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;

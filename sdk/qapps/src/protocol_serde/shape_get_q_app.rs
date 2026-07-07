@@ -157,6 +157,8 @@ pub(crate) fn de_get_q_app(
 ) -> ::std::result::Result<crate::operation::get_q_app::builders::GetQAppOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -170,7 +172,7 @@ pub(crate) fn de_get_q_app(
                     );
                 }
                 "appDefinition" => {
-                    builder = builder.set_app_definition(crate::protocol_serde::shape_app_definition::de_app_definition(tokens, _value)?);
+                    builder = builder.set_app_definition(crate::protocol_serde::shape_app_definition::de_app_definition(tokens, _value, depth + 1)?);
                 }
                 "appId" => {
                     builder = builder.set_app_id(
@@ -215,7 +217,7 @@ pub(crate) fn de_get_q_app(
                 }
                 "requiredCapabilities" => {
                     builder = builder.set_required_capabilities(
-                        crate::protocol_serde::shape_app_required_capabilities::de_app_required_capabilities(tokens, _value)?,
+                        crate::protocol_serde::shape_app_required_capabilities::de_app_required_capabilities(tokens, _value, depth + 1)?,
                     );
                 }
                 "status" => {

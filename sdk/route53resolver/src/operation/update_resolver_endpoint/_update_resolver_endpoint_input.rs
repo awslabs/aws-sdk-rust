@@ -51,6 +51,12 @@ pub struct UpdateResolverEndpointInput {
     /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint target name server metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
     /// </note>
     pub target_name_server_metrics_enabled: ::std::option::Option<bool>,
+    /// <p>Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When set to <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address. This enables IPv6-only clients that send queries through the inbound endpoint to reach IPv4-only services. DNS64 works with NAT64 to provide complete IPv6-to-IPv4 translation.</p>
+    pub dns64_enabled: ::std::option::Option<bool>,
+    /// <p>Specifies whether IPv6 internet access is enabled for the outbound Resolver endpoint. When set to <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p><important>
+    /// <p>When you enable IPv6 internet access, use network controls like security groups, NACLs, or egress-only internet gateways to protect the endpoint ENIs from unsolicited ingress traffic. Be aware that some network controls can affect DNS query throughput due to connection tracking. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/userguide/security-group-connection-tracking.html">Amazon EC2 security group connection tracking</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html">Resolver endpoint scaling</a>.</p>
+    /// </important>
+    pub ipv6_internet_access_enabled: ::std::option::Option<bool>,
 }
 impl UpdateResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
@@ -119,6 +125,16 @@ impl UpdateResolverEndpointInput {
     pub fn target_name_server_metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.target_name_server_metrics_enabled
     }
+    /// <p>Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When set to <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address. This enables IPv6-only clients that send queries through the inbound endpoint to reach IPv4-only services. DNS64 works with NAT64 to provide complete IPv6-to-IPv4 translation.</p>
+    pub fn dns64_enabled(&self) -> ::std::option::Option<bool> {
+        self.dns64_enabled
+    }
+    /// <p>Specifies whether IPv6 internet access is enabled for the outbound Resolver endpoint. When set to <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p><important>
+    /// <p>When you enable IPv6 internet access, use network controls like security groups, NACLs, or egress-only internet gateways to protect the endpoint ENIs from unsolicited ingress traffic. Be aware that some network controls can affect DNS query throughput due to connection tracking. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/userguide/security-group-connection-tracking.html">Amazon EC2 security group connection tracking</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html">Resolver endpoint scaling</a>.</p>
+    /// </important>
+    pub fn ipv6_internet_access_enabled(&self) -> ::std::option::Option<bool> {
+        self.ipv6_internet_access_enabled
+    }
 }
 impl UpdateResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
@@ -138,6 +154,8 @@ pub struct UpdateResolverEndpointInputBuilder {
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     pub(crate) rni_enhanced_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) target_name_server_metrics_enabled: ::std::option::Option<bool>,
+    pub(crate) dns64_enabled: ::std::option::Option<bool>,
+    pub(crate) ipv6_internet_access_enabled: ::std::option::Option<bool>,
 }
 impl UpdateResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
@@ -353,6 +371,40 @@ impl UpdateResolverEndpointInputBuilder {
     pub fn get_target_name_server_metrics_enabled(&self) -> &::std::option::Option<bool> {
         &self.target_name_server_metrics_enabled
     }
+    /// <p>Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When set to <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address. This enables IPv6-only clients that send queries through the inbound endpoint to reach IPv4-only services. DNS64 works with NAT64 to provide complete IPv6-to-IPv4 translation.</p>
+    pub fn dns64_enabled(mut self, input: bool) -> Self {
+        self.dns64_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When set to <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address. This enables IPv6-only clients that send queries through the inbound endpoint to reach IPv4-only services. DNS64 works with NAT64 to provide complete IPv6-to-IPv4 translation.</p>
+    pub fn set_dns64_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dns64_enabled = input;
+        self
+    }
+    /// <p>Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When set to <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address. This enables IPv6-only clients that send queries through the inbound endpoint to reach IPv4-only services. DNS64 works with NAT64 to provide complete IPv6-to-IPv4 translation.</p>
+    pub fn get_dns64_enabled(&self) -> &::std::option::Option<bool> {
+        &self.dns64_enabled
+    }
+    /// <p>Specifies whether IPv6 internet access is enabled for the outbound Resolver endpoint. When set to <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p><important>
+    /// <p>When you enable IPv6 internet access, use network controls like security groups, NACLs, or egress-only internet gateways to protect the endpoint ENIs from unsolicited ingress traffic. Be aware that some network controls can affect DNS query throughput due to connection tracking. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/userguide/security-group-connection-tracking.html">Amazon EC2 security group connection tracking</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html">Resolver endpoint scaling</a>.</p>
+    /// </important>
+    pub fn ipv6_internet_access_enabled(mut self, input: bool) -> Self {
+        self.ipv6_internet_access_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether IPv6 internet access is enabled for the outbound Resolver endpoint. When set to <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p><important>
+    /// <p>When you enable IPv6 internet access, use network controls like security groups, NACLs, or egress-only internet gateways to protect the endpoint ENIs from unsolicited ingress traffic. Be aware that some network controls can affect DNS query throughput due to connection tracking. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/userguide/security-group-connection-tracking.html">Amazon EC2 security group connection tracking</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html">Resolver endpoint scaling</a>.</p>
+    /// </important>
+    pub fn set_ipv6_internet_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.ipv6_internet_access_enabled = input;
+        self
+    }
+    /// <p>Specifies whether IPv6 internet access is enabled for the outbound Resolver endpoint. When set to <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p><important>
+    /// <p>When you enable IPv6 internet access, use network controls like security groups, NACLs, or egress-only internet gateways to protect the endpoint ENIs from unsolicited ingress traffic. Be aware that some network controls can affect DNS query throughput due to connection tracking. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/userguide/security-group-connection-tracking.html">Amazon EC2 security group connection tracking</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html">Resolver endpoint scaling</a>.</p>
+    /// </important>
+    pub fn get_ipv6_internet_access_enabled(&self) -> &::std::option::Option<bool> {
+        &self.ipv6_internet_access_enabled
+    }
     /// Consumes the builder and constructs a [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
     pub fn build(
         self,
@@ -368,6 +420,8 @@ impl UpdateResolverEndpointInputBuilder {
             protocols: self.protocols,
             rni_enhanced_metrics_enabled: self.rni_enhanced_metrics_enabled,
             target_name_server_metrics_enabled: self.target_name_server_metrics_enabled,
+            dns64_enabled: self.dns64_enabled,
+            ipv6_internet_access_enabled: self.ipv6_internet_access_enabled,
         })
     }
 }

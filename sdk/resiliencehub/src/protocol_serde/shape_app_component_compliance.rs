@@ -2,10 +2,16 @@
 pub(crate) fn de_app_component_compliance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AppComponentCompliance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cost" => {
-                            builder = builder.set_cost(crate::protocol_serde::shape_cost::de_cost(tokens, _value)?);
+                            builder = builder.set_cost(crate::protocol_serde::shape_cost::de_cost(tokens, _value, depth + 1)?);
                         }
                         "appComponentName" => {
                             builder = builder.set_app_component_name(
@@ -27,7 +33,9 @@ where
                         }
                         "compliance" => {
                             builder = builder.set_compliance(crate::protocol_serde::shape_assessment_compliance::de_assessment_compliance(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "message" => {
@@ -45,8 +53,11 @@ where
                             );
                         }
                         "resiliencyScore" => {
-                            builder =
-                                builder.set_resiliency_score(crate::protocol_serde::shape_resiliency_score::de_resiliency_score(tokens, _value)?);
+                            builder = builder.set_resiliency_score(crate::protocol_serde::shape_resiliency_score::de_resiliency_score(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

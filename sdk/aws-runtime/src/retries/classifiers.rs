@@ -246,4 +246,25 @@ mod test {
             )
         );
     }
+
+    #[test]
+    fn test_invalid_retry_after_header_is_ignored() {
+        let policy = AwsErrorCodeClassifier::<ErrorMetadata>::new();
+        let err = ErrorMetadata::builder().code("SlowDown").build();
+        let res = http_1x::Response::builder()
+            .header("x-amz-retry-after", "invalid")
+            .body("retry later")
+            .unwrap()
+            .map(SdkBody::from);
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
+        ctx.set_response(res.try_into().unwrap());
+        ctx.set_output_or_error(Err(OrchestratorError::operation(Error::erase(err))));
+
+        // Invalid header ignored — retryable_error() has retry_after: None,
+        // so the retry strategy will fall back to exponential backoff.
+        assert_eq!(
+            policy.classify_retry(&ctx),
+            RetryAction::retryable_error(ErrorKind::ThrottlingError)
+        );
+    }
 }

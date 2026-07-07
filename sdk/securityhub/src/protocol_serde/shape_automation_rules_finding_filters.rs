@@ -459,16 +459,58 @@ pub fn ser_automation_rules_finding_filters(
         }
         array_150.finish();
     }
+    if let Some(var_153) = &input.resource_provider {
+        let mut array_154 = object.key("ResourceProvider").start_array();
+        for item_155 in var_153 {
+            {
+                #[allow(unused_mut)]
+                let mut object_156 = array_154.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_156, item_155)?;
+                object_156.finish();
+            }
+        }
+        array_154.finish();
+    }
+    if let Some(var_157) = &input.resource_owner_account_id {
+        let mut array_158 = object.key("ResourceOwnerAccountId").start_array();
+        for item_159 in var_157 {
+            {
+                #[allow(unused_mut)]
+                let mut object_160 = array_158.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_160, item_159)?;
+                object_160.finish();
+            }
+        }
+        array_158.finish();
+    }
+    if let Some(var_161) = &input.resource_owner_org_id {
+        let mut array_162 = object.key("ResourceOwnerOrgId").start_array();
+        for item_163 in var_161 {
+            {
+                #[allow(unused_mut)]
+                let mut object_164 = array_162.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_164, item_163)?;
+                object_164.finish();
+            }
+        }
+        array_162.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_automation_rules_finding_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomationRulesFindingFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -477,157 +519,286 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ProductArn" => {
-                            builder =
-                                builder.set_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ProductArn" => {
+                                builder = builder.set_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "AwsAccountId" => {
+                                builder = builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Id" => {
+                                builder = builder.set_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "GeneratorId" => {
+                                builder = builder.set_generator_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Type" => {
+                                builder = builder.set_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "FirstObservedAt" => {
+                                builder = builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "LastObservedAt" => {
+                                builder = builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CreatedAt" => {
+                                builder = builder.set_created_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "UpdatedAt" => {
+                                builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Confidence" => {
+                                builder = builder.set_confidence(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Criticality" => {
+                                builder = builder.set_criticality(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Title" => {
+                                builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Description" => {
+                                builder = builder.set_description(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SourceUrl" => {
+                                builder = builder.set_source_url(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ProductName" => {
+                                builder = builder.set_product_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CompanyName" => {
+                                builder = builder.set_company_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SeverityLabel" => {
+                                builder = builder.set_severity_label(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceType" => {
+                                builder = builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceId" => {
+                                builder = builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourcePartition" => {
+                                builder = builder.set_resource_partition(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceRegion" => {
+                                builder = builder.set_resource_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceTags" => {
+                                builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceDetailsOther" => {
+                                builder = builder.set_resource_details_other(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ComplianceStatus" => {
+                                builder = builder.set_compliance_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ComplianceSecurityControlId" => {
+                                builder = builder.set_compliance_security_control_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ComplianceAssociatedStandardsId" => {
+                                builder = builder.set_compliance_associated_standards_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "VerificationState" => {
+                                builder = builder.set_verification_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "WorkflowStatus" => {
+                                builder = builder.set_workflow_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RecordState" => {
+                                builder = builder.set_record_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RelatedFindingsProductArn" => {
+                                builder = builder.set_related_findings_product_arn(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "RelatedFindingsId" => {
+                                builder = builder.set_related_findings_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NoteText" => {
+                                builder = builder.set_note_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NoteUpdatedAt" => {
+                                builder = builder.set_note_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NoteUpdatedBy" => {
+                                builder = builder.set_note_updated_by(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "UserDefinedFields" => {
+                                builder = builder.set_user_defined_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceApplicationArn" => {
+                                builder = builder.set_resource_application_arn(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceApplicationName" => {
+                                builder = builder.set_resource_application_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "AwsAccountName" => {
+                                builder = builder.set_aws_account_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceProvider" => {
+                                builder = builder.set_resource_provider(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceOwnerAccountId" => {
+                                builder = builder.set_resource_owner_account_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceOwnerOrgId" => {
+                                builder = builder.set_resource_owner_org_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "AwsAccountId" => {
-                            builder =
-                                builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Id" => {
-                            builder = builder.set_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "GeneratorId" => {
-                            builder =
-                                builder.set_generator_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Type" => {
-                            builder = builder.set_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "FirstObservedAt" => {
-                            builder =
-                                builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "LastObservedAt" => {
-                            builder =
-                                builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "CreatedAt" => {
-                            builder = builder.set_created_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "UpdatedAt" => {
-                            builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "Confidence" => {
-                            builder = builder.set_confidence(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "Criticality" => {
-                            builder =
-                                builder.set_criticality(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "Title" => {
-                            builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Description" => {
-                            builder =
-                                builder.set_description(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "SourceUrl" => {
-                            builder = builder.set_source_url(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ProductName" => {
-                            builder =
-                                builder.set_product_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "CompanyName" => {
-                            builder =
-                                builder.set_company_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "SeverityLabel" => {
-                            builder =
-                                builder.set_severity_label(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceType" => {
-                            builder =
-                                builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceId" => {
-                            builder =
-                                builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourcePartition" => {
-                            builder = builder
-                                .set_resource_partition(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceRegion" => {
-                            builder =
-                                builder.set_resource_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceTags" => {
-                            builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
-                        }
-                        "ResourceDetailsOther" => {
-                            builder =
-                                builder.set_resource_details_other(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
-                        }
-                        "ComplianceStatus" => {
-                            builder = builder
-                                .set_compliance_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ComplianceSecurityControlId" => {
-                            builder = builder.set_compliance_security_control_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ComplianceAssociatedStandardsId" => {
-                            builder = builder.set_compliance_associated_standards_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "VerificationState" => {
-                            builder = builder
-                                .set_verification_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "WorkflowStatus" => {
-                            builder =
-                                builder.set_workflow_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "RecordState" => {
-                            builder =
-                                builder.set_record_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "RelatedFindingsProductArn" => {
-                            builder = builder.set_related_findings_product_arn(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "RelatedFindingsId" => {
-                            builder = builder
-                                .set_related_findings_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NoteText" => {
-                            builder = builder.set_note_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NoteUpdatedAt" => {
-                            builder =
-                                builder.set_note_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "NoteUpdatedBy" => {
-                            builder =
-                                builder.set_note_updated_by(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "UserDefinedFields" => {
-                            builder =
-                                builder.set_user_defined_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
-                        }
-                        "ResourceApplicationArn" => {
-                            builder = builder.set_resource_application_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ResourceApplicationName" => {
-                            builder = builder.set_resource_application_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "AwsAccountName" => {
-                            builder =
-                                builder.set_aws_account_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

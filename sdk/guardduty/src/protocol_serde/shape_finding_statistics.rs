@@ -2,10 +2,16 @@
 pub(crate) fn de_finding_statistics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FindingStatistics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,28 +22,44 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "countBySeverity" => {
-                            builder =
-                                builder.set_count_by_severity(crate::protocol_serde::shape_count_by_severity::de_count_by_severity(tokens, _value)?);
+                            builder = builder.set_count_by_severity(crate::protocol_serde::shape_count_by_severity::de_count_by_severity(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "groupedByAccount" => {
-                            builder = builder
-                                .set_grouped_by_account(crate::protocol_serde::shape_grouped_by_account::de_grouped_by_account(tokens, _value)?);
+                            builder = builder.set_grouped_by_account(crate::protocol_serde::shape_grouped_by_account::de_grouped_by_account(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "groupedByDate" => {
-                            builder = builder.set_grouped_by_date(crate::protocol_serde::shape_grouped_by_date::de_grouped_by_date(tokens, _value)?);
+                            builder = builder.set_grouped_by_date(crate::protocol_serde::shape_grouped_by_date::de_grouped_by_date(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "groupedByFindingType" => {
                             builder = builder.set_grouped_by_finding_type(
-                                crate::protocol_serde::shape_grouped_by_finding_type::de_grouped_by_finding_type(tokens, _value)?,
+                                crate::protocol_serde::shape_grouped_by_finding_type::de_grouped_by_finding_type(tokens, _value, depth + 1)?,
                             );
                         }
                         "groupedByResource" => {
-                            builder = builder
-                                .set_grouped_by_resource(crate::protocol_serde::shape_grouped_by_resource::de_grouped_by_resource(tokens, _value)?);
+                            builder = builder.set_grouped_by_resource(crate::protocol_serde::shape_grouped_by_resource::de_grouped_by_resource(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "groupedBySeverity" => {
-                            builder = builder
-                                .set_grouped_by_severity(crate::protocol_serde::shape_grouped_by_severity::de_grouped_by_severity(tokens, _value)?);
+                            builder = builder.set_grouped_by_severity(crate::protocol_serde::shape_grouped_by_severity::de_grouped_by_severity(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

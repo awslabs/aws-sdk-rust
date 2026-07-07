@@ -53,6 +53,8 @@ pub fn de_modify_vpc_block_public_access_exclusion(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyVpcBlockPublicAccessExclusionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyVpcBlockPublicAccessExclusionResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_modify_vpc_block_public_access_exclusion(
             s if s.matches("vpcBlockPublicAccessExclusion") /* VpcBlockPublicAccessExclusion com.amazonaws.ec2.synthetic#ModifyVpcBlockPublicAccessExclusionOutput$VpcBlockPublicAccessExclusion */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc_block_public_access_exclusion::de_vpc_block_public_access_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_block_public_access_exclusion::de_vpc_block_public_access_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;

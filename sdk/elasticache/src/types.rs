@@ -27,6 +27,8 @@ pub use crate::types::_transit_encryption_mode::TransitEncryptionMode;
 
 pub use crate::types::_cluster_mode::ClusterMode;
 
+pub use crate::types::_durability::Durability;
+
 pub use crate::types::_cache_usage_limits::CacheUsageLimits;
 
 pub use crate::types::_serverless_cache::ServerlessCache;
@@ -65,7 +67,11 @@ pub use crate::types::_multi_az_status::MultiAzStatus;
 
 pub use crate::types::_endpoint::Endpoint;
 
+pub use crate::types::_storage_encryption_type::StorageEncryptionType;
+
 pub use crate::types::_data_tiering_status::DataTieringStatus;
+
+pub use crate::types::_effective_durability::EffectiveDurability;
 
 pub use crate::types::_serverless_cache_configuration::ServerlessCacheConfiguration;
 
@@ -257,9 +263,13 @@ mod _destination_details;
 
 mod _destination_type;
 
+mod _durability;
+
 mod _ec2_security_group;
 
 mod _ecpu_per_second;
+
+mod _effective_durability;
 
 mod _endpoint;
 
@@ -370,6 +380,8 @@ mod _slot_migration;
 mod _snapshot;
 
 mod _source_type;
+
+mod _storage_encryption_type;
 
 mod _subnet;
 

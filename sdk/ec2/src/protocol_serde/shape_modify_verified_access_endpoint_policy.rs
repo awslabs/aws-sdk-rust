@@ -51,6 +51,8 @@ pub fn de_modify_verified_access_endpoint_policy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyVerifiedAccessEndpointPolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyVerifiedAccessEndpointPolicyResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_modify_verified_access_endpoint_policy(
             s if s.matches("sseSpecification") /* SseSpecification com.amazonaws.ec2.synthetic#ModifyVerifiedAccessEndpointPolicyOutput$SseSpecification */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag)
+                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

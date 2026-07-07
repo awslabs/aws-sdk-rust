@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_cluster_endpoint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbClusterEndpoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbClusterEndpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -101,7 +105,7 @@ pub fn de_db_cluster_endpoint(
             s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.neptune#DBClusterEndpoint$StaticMembers */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -111,7 +115,7 @@ pub fn de_db_cluster_endpoint(
             s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.neptune#DBClusterEndpoint$ExcludedMembers */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

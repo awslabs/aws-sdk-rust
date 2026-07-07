@@ -10,6 +10,10 @@ pub struct LaunchedInstance {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Launched instance first boot.</p>
     pub first_boot: ::std::option::Option<crate::types::FirstBoot>,
+    /// <p>Launched instance last known checks.</p>
+    pub last_known_checks: ::std::option::Option<::std::vec::Vec<crate::types::LastKnownCheck>>,
+    /// <p>Launched instance last known FSx checks status.</p>
+    pub last_known_fsx_checks_status: ::std::option::Option<crate::types::LastKnownCheckStatus>,
 }
 impl LaunchedInstance {
     /// <p>Launched instance EC2 ID.</p>
@@ -23,6 +27,16 @@ impl LaunchedInstance {
     /// <p>Launched instance first boot.</p>
     pub fn first_boot(&self) -> ::std::option::Option<&crate::types::FirstBoot> {
         self.first_boot.as_ref()
+    }
+    /// <p>Launched instance last known checks.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_known_checks.is_none()`.
+    pub fn last_known_checks(&self) -> &[crate::types::LastKnownCheck] {
+        self.last_known_checks.as_deref().unwrap_or_default()
+    }
+    /// <p>Launched instance last known FSx checks status.</p>
+    pub fn last_known_fsx_checks_status(&self) -> ::std::option::Option<&crate::types::LastKnownCheckStatus> {
+        self.last_known_fsx_checks_status.as_ref()
     }
 }
 impl LaunchedInstance {
@@ -39,6 +53,8 @@ pub struct LaunchedInstanceBuilder {
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) first_boot: ::std::option::Option<crate::types::FirstBoot>,
+    pub(crate) last_known_checks: ::std::option::Option<::std::vec::Vec<crate::types::LastKnownCheck>>,
+    pub(crate) last_known_fsx_checks_status: ::std::option::Option<crate::types::LastKnownCheckStatus>,
 }
 impl LaunchedInstanceBuilder {
     /// <p>Launched instance EC2 ID.</p>
@@ -83,12 +99,48 @@ impl LaunchedInstanceBuilder {
     pub fn get_first_boot(&self) -> &::std::option::Option<crate::types::FirstBoot> {
         &self.first_boot
     }
+    /// Appends an item to `last_known_checks`.
+    ///
+    /// To override the contents of this collection use [`set_last_known_checks`](Self::set_last_known_checks).
+    ///
+    /// <p>Launched instance last known checks.</p>
+    pub fn last_known_checks(mut self, input: crate::types::LastKnownCheck) -> Self {
+        let mut v = self.last_known_checks.unwrap_or_default();
+        v.push(input);
+        self.last_known_checks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Launched instance last known checks.</p>
+    pub fn set_last_known_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LastKnownCheck>>) -> Self {
+        self.last_known_checks = input;
+        self
+    }
+    /// <p>Launched instance last known checks.</p>
+    pub fn get_last_known_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LastKnownCheck>> {
+        &self.last_known_checks
+    }
+    /// <p>Launched instance last known FSx checks status.</p>
+    pub fn last_known_fsx_checks_status(mut self, input: crate::types::LastKnownCheckStatus) -> Self {
+        self.last_known_fsx_checks_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Launched instance last known FSx checks status.</p>
+    pub fn set_last_known_fsx_checks_status(mut self, input: ::std::option::Option<crate::types::LastKnownCheckStatus>) -> Self {
+        self.last_known_fsx_checks_status = input;
+        self
+    }
+    /// <p>Launched instance last known FSx checks status.</p>
+    pub fn get_last_known_fsx_checks_status(&self) -> &::std::option::Option<crate::types::LastKnownCheckStatus> {
+        &self.last_known_fsx_checks_status
+    }
     /// Consumes the builder and constructs a [`LaunchedInstance`](crate::types::LaunchedInstance).
     pub fn build(self) -> crate::types::LaunchedInstance {
         crate::types::LaunchedInstance {
             ec2_instance_id: self.ec2_instance_id,
             job_id: self.job_id,
             first_boot: self.first_boot,
+            last_known_checks: self.last_known_checks,
+            last_known_fsx_checks_status: self.last_known_fsx_checks_status,
         }
     }
 }

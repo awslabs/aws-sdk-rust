@@ -27,10 +27,16 @@ pub fn ser_form_style(
 pub(crate) fn de_form_style<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FormStyle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -41,15 +47,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "horizontalGap" => {
-                            builder =
-                                builder.set_horizontal_gap(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens, _value)?);
+                            builder = builder.set_horizontal_gap(crate::protocol_serde::shape_form_style_config::de_form_style_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "verticalGap" => {
-                            builder = builder.set_vertical_gap(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens, _value)?);
+                            builder = builder.set_vertical_gap(crate::protocol_serde::shape_form_style_config::de_form_style_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "outerPadding" => {
-                            builder =
-                                builder.set_outer_padding(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens, _value)?);
+                            builder = builder.set_outer_padding(crate::protocol_serde::shape_form_style_config::de_form_style_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

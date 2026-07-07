@@ -56,7 +56,11 @@ pub fn ser_launch_template_overrides(
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_overrides(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LaunchTemplateOverrides, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchTemplateOverrides::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -147,7 +151,7 @@ pub fn de_launch_template_overrides(
             s if s.matches("instanceRequirements") /* InstanceRequirements com.amazonaws.ec2#LaunchTemplateOverrides$InstanceRequirements */ =>  {
                 let var_23 =
                     Some(
-                        crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag)
+                        crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag, depth + 1)
                         ?
                     )
                 ;

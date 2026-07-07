@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_refactor_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackRefactorAction, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackRefactorAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -104,7 +108,7 @@ pub fn de_stack_refactor_action(
             s if s.matches("TagResources") /* TagResources com.amazonaws.cloudformation#StackRefactorAction$TagResources */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_stack_refactor_tag_resources::de_stack_refactor_tag_resources(&mut tag)
+                        crate::protocol_serde::shape_stack_refactor_tag_resources::de_stack_refactor_tag_resources(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -114,7 +118,7 @@ pub fn de_stack_refactor_action(
             s if s.matches("UntagResources") /* UntagResources com.amazonaws.cloudformation#StackRefactorAction$UntagResources */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_stack_refactor_untag_resources::de_stack_refactor_untag_resources(&mut tag)
+                        crate::protocol_serde::shape_stack_refactor_untag_resources::de_stack_refactor_untag_resources(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -124,7 +128,7 @@ pub fn de_stack_refactor_action(
             s if s.matches("ResourceMapping") /* ResourceMapping com.amazonaws.cloudformation#StackRefactorAction$ResourceMapping */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_resource_mapping::de_resource_mapping(&mut tag)
+                        crate::protocol_serde::shape_resource_mapping::de_resource_mapping(&mut tag, depth + 1)
                         ?
                     )
                 ;

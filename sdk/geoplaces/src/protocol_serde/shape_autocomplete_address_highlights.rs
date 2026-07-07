@@ -2,10 +2,16 @@
 pub(crate) fn de_autocomplete_address_highlights<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutocompleteAddressHighlights>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,50 +22,74 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Label" => {
-                            builder = builder.set_label(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder = builder.set_label(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         "Country" => {
-                            builder = builder.set_country(crate::protocol_serde::shape_country_highlights::de_country_highlights(tokens, _value)?);
+                            builder = builder.set_country(crate::protocol_serde::shape_country_highlights::de_country_highlights(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Region" => {
-                            builder = builder.set_region(crate::protocol_serde::shape_region_highlights::de_region_highlights(tokens, _value)?);
+                            builder = builder.set_region(crate::protocol_serde::shape_region_highlights::de_region_highlights(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SubRegion" => {
                             builder = builder.set_sub_region(crate::protocol_serde::shape_sub_region_highlights::de_sub_region_highlights(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Locality" => {
-                            builder = builder.set_locality(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder =
+                                builder.set_locality(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         "District" => {
-                            builder = builder.set_district(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder =
+                                builder.set_district(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         "SubDistrict" => {
-                            builder = builder.set_sub_district(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder =
+                                builder.set_sub_district(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         "Street" => {
-                            builder = builder.set_street(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder = builder.set_street(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         "Block" => {
-                            builder = builder.set_block(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder = builder.set_block(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         "SubBlock" => {
-                            builder = builder.set_sub_block(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder =
+                                builder.set_sub_block(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         "Intersection" => {
                             builder = builder.set_intersection(
-                                crate::protocol_serde::shape_intersection_highlights_list::de_intersection_highlights_list(tokens, _value)?,
+                                crate::protocol_serde::shape_intersection_highlights_list::de_intersection_highlights_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "PostalCode" => {
-                            builder = builder.set_postal_code(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder =
+                                builder.set_postal_code(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         "AddressNumber" => {
-                            builder = builder.set_address_number(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder = builder.set_address_number(crate::protocol_serde::shape_highlight_list::de_highlight_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Building" => {
-                            builder = builder.set_building(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                            builder =
+                                builder.set_building(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

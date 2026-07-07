@@ -2,10 +2,16 @@
 pub(crate) fn de_data_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,23 +37,22 @@ where
                     }
                     variant = match key.as_ref() {
                         "contentReference" => Some(crate::types::DataReference::ContentReference(
-                            crate::protocol_serde::shape_content_reference::de_content_reference(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_content_reference::de_content_reference(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contentReference' cannot be null")
                             })?,
                         )),
                         "generativeReference" => Some(crate::types::DataReference::GenerativeReference(
-                            crate::protocol_serde::shape_generative_reference::de_generative_reference(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'generativeReference' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_generative_reference::de_generative_reference(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'generativeReference' cannot be null"),
+                            )?,
                         )),
                         "suggestedMessageReference" => Some(crate::types::DataReference::SuggestedMessageReference(
-                            crate::protocol_serde::shape_suggested_message_reference::de_suggested_message_reference(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_suggested_message_reference::de_suggested_message_reference(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'suggestedMessageReference' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

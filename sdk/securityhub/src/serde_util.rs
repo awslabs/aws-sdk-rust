@@ -62,6 +62,18 @@ pub(crate) fn create_action_target_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_connector_output_output_correct_errors(
+    mut builder: crate::operation::create_connector::builders::CreateConnectorOutputBuilder,
+) -> crate::operation::create_connector::builders::CreateConnectorOutputBuilder {
+    if builder.connector_arn.is_none() {
+        builder.connector_arn = Some(Default::default())
+    }
+    if builder.connector_id.is_none() {
+        builder.connector_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_connector_v2_output_output_correct_errors(
     mut builder: crate::operation::create_connector_v2::builders::CreateConnectorV2OutputBuilder,
 ) -> crate::operation::create_connector_v2::builders::CreateConnectorV2OutputBuilder {
@@ -133,6 +145,33 @@ pub(crate) fn describe_products_v2_output_output_correct_errors(
 ) -> crate::operation::describe_products_v2::builders::DescribeProductsV2OutputBuilder {
     if builder.products_v2.is_none() {
         builder.products_v2 = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_connector_output_output_correct_errors(
+    mut builder: crate::operation::get_connector::builders::GetConnectorOutputBuilder,
+) -> crate::operation::get_connector::builders::GetConnectorOutputBuilder {
+    if builder.connector_id.is_none() {
+        builder.connector_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.health.is_none() {
+        builder.health = {
+            let builder = crate::types::builders::CspmHealthCheckBuilder::default();
+            Some(crate::serde_util::cspm_health_check_correct_errors(builder).build())
+        }
+    }
+    if builder.provider_detail.is_none() {
+        builder.provider_detail = Some(crate::types::CspmProviderDetail::Unknown)
     }
     builder
 }
@@ -248,6 +287,15 @@ pub(crate) fn get_security_control_definition_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_connectors_output_output_correct_errors(
+    mut builder: crate::operation::list_connectors::builders::ListConnectorsOutputBuilder,
+) -> crate::operation::list_connectors::builders::ListConnectorsOutputBuilder {
+    if builder.connectors.is_none() {
+        builder.connectors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_connectors_v2_output_output_correct_errors(
     mut builder: crate::operation::list_connectors_v2::builders::ListConnectorsV2OutputBuilder,
 ) -> crate::operation::list_connectors_v2::builders::ListConnectorsV2OutputBuilder {
@@ -280,6 +328,18 @@ pub(crate) fn register_connector_v2_output_output_correct_errors(
 ) -> crate::operation::register_connector_v2::builders::RegisterConnectorV2OutputBuilder {
     if builder.connector_id.is_none() {
         builder.connector_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cspm_health_check_correct_errors(
+    mut builder: crate::types::builders::CspmHealthCheckBuilder,
+) -> crate::types::builders::CspmHealthCheckBuilder {
+    if builder.connector_status.is_none() {
+        builder.connector_status = "no value was set".parse::<crate::types::CspmConnectorStatus>().ok()
+    }
+    if builder.last_checked_at.is_none() {
+        builder.last_checked_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -403,6 +463,22 @@ pub(crate) fn aws_security_finding_identifier_correct_errors(
     builder
 }
 
+pub(crate) fn azure_detail_correct_errors(mut builder: crate::types::builders::AzureDetailBuilder) -> crate::types::builders::AzureDetailBuilder {
+    if builder.aws_config_connector_arn.is_none() {
+        builder.aws_config_connector_arn = Some(Default::default())
+    }
+    if builder.scope_configuration.is_none() {
+        builder.scope_configuration = {
+            let builder = crate::types::builders::AzureScopeConfigurationBuilder::default();
+            Some(crate::serde_util::azure_scope_configuration_correct_errors(builder).build())
+        }
+    }
+    if builder.azure_regions.is_none() {
+        builder.azure_regions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_update_findings_unprocessed_finding_correct_errors(
     mut builder: crate::types::builders::BatchUpdateFindingsUnprocessedFindingBuilder,
 ) -> crate::types::builders::BatchUpdateFindingsUnprocessedFindingBuilder {
@@ -494,6 +570,9 @@ pub(crate) fn resource_result_correct_errors(
     }
     if builder.region.is_none() {
         builder.region = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
     }
     if builder.resource_detail_capture_time_dt.is_none() {
         builder.resource_detail_capture_time_dt = Some(Default::default())
@@ -665,6 +744,25 @@ pub(crate) fn unprocessed_standards_control_association_update_correct_errors(
     }
     if builder.error_code.is_none() {
         builder.error_code = "no value was set".parse::<crate::types::UnprocessedErrorCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn azure_scope_configuration_correct_errors(
+    mut builder: crate::types::builders::AzureScopeConfigurationBuilder,
+) -> crate::types::builders::AzureScopeConfigurationBuilder {
+    if builder.scope_type.is_none() {
+        builder.scope_type = "no value was set".parse::<crate::types::ScopeType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn health_issue_correct_errors(mut builder: crate::types::builders::HealthIssueBuilder) -> crate::types::builders::HealthIssueBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::HealthIssueCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

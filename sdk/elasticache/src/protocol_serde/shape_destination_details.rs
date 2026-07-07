@@ -20,7 +20,11 @@ pub fn ser_destination_details(
 #[allow(clippy::needless_question_mark)]
 pub fn de_destination_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DestinationDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DestinationDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -28,7 +32,7 @@ pub fn de_destination_details(
             s if s.matches("CloudWatchLogsDetails") /* CloudWatchLogsDetails com.amazonaws.elasticache#DestinationDetails$CloudWatchLogsDetails */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_cloud_watch_logs_destination_details::de_cloud_watch_logs_destination_details(&mut tag)
+                        crate::protocol_serde::shape_cloud_watch_logs_destination_details::de_cloud_watch_logs_destination_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -38,7 +42,7 @@ pub fn de_destination_details(
             s if s.matches("KinesisFirehoseDetails") /* KinesisFirehoseDetails com.amazonaws.elasticache#DestinationDetails$KinesisFirehoseDetails */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_kinesis_firehose_destination_details::de_kinesis_firehose_destination_details(&mut tag)
+                        crate::protocol_serde::shape_kinesis_firehose_destination_details::de_kinesis_firehose_destination_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

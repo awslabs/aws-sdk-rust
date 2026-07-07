@@ -138,16 +138,20 @@ pub(crate) fn de_list_allowed_node_type_updates(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ScaleUpNodeTypes" => {
-                    builder = builder.set_scale_up_node_types(crate::protocol_serde::shape_node_type_list::de_node_type_list(tokens, _value)?);
+                    builder =
+                        builder.set_scale_up_node_types(crate::protocol_serde::shape_node_type_list::de_node_type_list(tokens, _value, depth + 1)?);
                 }
                 "ScaleDownNodeTypes" => {
-                    builder = builder.set_scale_down_node_types(crate::protocol_serde::shape_node_type_list::de_node_type_list(tokens, _value)?);
+                    builder =
+                        builder.set_scale_down_node_types(crate::protocol_serde::shape_node_type_list::de_node_type_list(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

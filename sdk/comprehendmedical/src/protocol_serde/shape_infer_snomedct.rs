@@ -148,15 +148,19 @@ pub(crate) fn de_infer_snomedct(
     value: &[u8],
     mut builder: crate::operation::infer_snomedct::builders::InferSnomedctOutputBuilder,
 ) -> ::std::result::Result<crate::operation::infer_snomedct::builders::InferSnomedctOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::infer_snomedct::builders::InferSnomedctOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::infer_snomedct::builders::InferSnomedctOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder =
             match decoder.str()?.as_ref() {
-                "Entities" => builder.set_entities(Some(crate::protocol_serde::shape_snomedct_entity_list::de_snomedct_entity_list(decoder)?)),
+                "Entities" => builder.set_entities(Some(crate::protocol_serde::shape_snomedct_entity_list::de_snomedct_entity_list(
+                    decoder,
+                    depth + 1,
+                )?)),
                 "PaginationToken" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_pagination_token(Some(decoder.string()?)))
                 })?,
@@ -164,10 +168,15 @@ pub(crate) fn de_infer_snomedct(
                     Ok(builder.set_model_version(Some(decoder.string()?)))
                 })?,
                 "SNOMEDCTDetails" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_snomedct_details(Some(crate::protocol_serde::shape_snomedct_details::de_snomedct_details(decoder)?)))
+                    Ok(
+                        builder.set_snomedct_details(Some(crate::protocol_serde::shape_snomedct_details::de_snomedct_details(
+                            decoder,
+                            depth + 1,
+                        )?)),
+                    )
                 })?,
                 "Characters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_characters(Some(crate::protocol_serde::shape_characters::de_characters(decoder)?)))
+                    Ok(builder.set_characters(Some(crate::protocol_serde::shape_characters::de_characters(decoder, depth + 1)?)))
                 })?,
                 _ => {
                     decoder.skip()?;
@@ -178,6 +187,8 @@ pub(crate) fn de_infer_snomedct(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -187,13 +198,13 @@ pub(crate) fn de_infer_snomedct(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

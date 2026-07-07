@@ -2,10 +2,16 @@
 pub(crate) fn de_text_translation_job_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TextTranslationJobProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,7 @@ where
                             );
                         }
                         "JobDetails" => {
-                            builder = builder.set_job_details(crate::protocol_serde::shape_job_details::de_job_details(tokens, _value)?);
+                            builder = builder.set_job_details(crate::protocol_serde::shape_job_details::de_job_details(tokens, _value, depth + 1)?);
                         }
                         "SourceLanguageCode" => {
                             builder = builder.set_source_language_code(
@@ -48,16 +54,26 @@ where
                         }
                         "TargetLanguageCodes" => {
                             builder = builder.set_target_language_codes(
-                                crate::protocol_serde::shape_target_language_code_string_list::de_target_language_code_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_target_language_code_string_list::de_target_language_code_string_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TerminologyNames" => {
-                            builder = builder
-                                .set_terminology_names(crate::protocol_serde::shape_resource_name_list::de_resource_name_list(tokens, _value)?);
+                            builder = builder.set_terminology_names(crate::protocol_serde::shape_resource_name_list::de_resource_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ParallelDataNames" => {
-                            builder = builder
-                                .set_parallel_data_names(crate::protocol_serde::shape_resource_name_list::de_resource_name_list(tokens, _value)?);
+                            builder = builder.set_parallel_data_names(crate::protocol_serde::shape_resource_name_list::de_resource_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Message" => {
                             builder = builder.set_message(
@@ -79,12 +95,18 @@ where
                             )?);
                         }
                         "InputDataConfig" => {
-                            builder =
-                                builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens, _value)?);
+                            builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OutputDataConfig" => {
-                            builder = builder
-                                .set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens, _value)?);
+                            builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DataAccessRoleArn" => {
                             builder = builder.set_data_access_role_arn(
@@ -95,7 +117,9 @@ where
                         }
                         "Settings" => {
                             builder = builder.set_settings(crate::protocol_serde::shape_translation_settings::de_translation_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

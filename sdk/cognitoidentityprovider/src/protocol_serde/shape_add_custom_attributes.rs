@@ -65,6 +65,22 @@ pub fn de_add_custom_attributes_http_error(
             }
             tmp
         }),
+        "OperationNotEnabledException" => crate::operation::add_custom_attributes::AddCustomAttributesError::OperationNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotEnabledExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_not_enabled_exception::de_operation_not_enabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::add_custom_attributes::AddCustomAttributesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::add_custom_attributes::AddCustomAttributesError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

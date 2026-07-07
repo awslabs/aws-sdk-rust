@@ -36,10 +36,16 @@ pub fn ser_input_attachment(
 pub(crate) fn de_input_attachment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InputAttachment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "automaticInputFailoverSettings" => {
                             builder = builder.set_automatic_input_failover_settings(
-                                crate::protocol_serde::shape_automatic_input_failover_settings::de_automatic_input_failover_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_automatic_input_failover_settings::de_automatic_input_failover_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "inputAttachmentName" => {
@@ -69,11 +79,18 @@ where
                             );
                         }
                         "inputSettings" => {
-                            builder = builder.set_input_settings(crate::protocol_serde::shape_input_settings::de_input_settings(tokens, _value)?);
+                            builder = builder.set_input_settings(crate::protocol_serde::shape_input_settings::de_input_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "logicalInterfaceNames" => {
-                            builder =
-                                builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

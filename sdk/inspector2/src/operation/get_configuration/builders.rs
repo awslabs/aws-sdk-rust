@@ -22,7 +22,7 @@ impl crate::operation::get_configuration::builders::GetConfigurationInputBuilder
 }
 /// Fluent builder constructing a request to `GetConfiguration`.
 ///
-/// <p>Retrieves setting configurations for Inspector scans.</p>
+/// <p>Retrieves setting configurations for Amazon Inspector scans. If you specify an <code>accountId</code>, this operation returns the scan configuration for that member account. You must be the delegated administrator for the specified member account. If you do not specify an <code>accountId</code>, this operation returns your own scan configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -107,5 +107,19 @@ impl GetConfigurationFluentBuilder {
     pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.account_id(input.into());
+        self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_account_id(input);
+        self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

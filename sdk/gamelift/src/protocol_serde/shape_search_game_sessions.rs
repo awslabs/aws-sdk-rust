@@ -154,17 +154,23 @@ pub(crate) fn de_search_game_sessions(
     crate::operation::search_game_sessions::builders::SearchGameSessionsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::search_game_sessions::builders::SearchGameSessionsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::search_game_sessions::builders::SearchGameSessionsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "GameSessions" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_game_sessions(Some(crate::protocol_serde::shape_game_session_list::de_game_session_list(decoder)?)))
+                Ok(
+                    builder.set_game_sessions(Some(crate::protocol_serde::shape_game_session_list::de_game_session_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "NextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
@@ -178,6 +184,8 @@ pub(crate) fn de_search_game_sessions(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -187,13 +195,13 @@ pub(crate) fn de_search_game_sessions(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

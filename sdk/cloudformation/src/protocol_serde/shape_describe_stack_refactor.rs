@@ -75,6 +75,8 @@ pub fn de_describe_stack_refactor(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeStackRefactorResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeStackRefactorResponse got {start_el:?}"
@@ -118,7 +120,7 @@ pub fn de_describe_stack_refactor(
             s if s.matches("StackIds") /* StackIds com.amazonaws.cloudformation.synthetic#DescribeStackRefactorOutput$StackIds */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_stack_ids::de_stack_ids(&mut tag)
+                        crate::protocol_serde::shape_stack_ids::de_stack_ids(&mut tag, depth + 1)
                         ?
                     )
                 ;

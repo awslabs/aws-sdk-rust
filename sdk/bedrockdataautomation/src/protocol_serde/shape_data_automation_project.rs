@@ -2,10 +2,16 @@
 pub(crate) fn de_data_automation_project<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataAutomationProject>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,23 +70,29 @@ where
                         }
                         "standardOutputConfiguration" => {
                             builder = builder.set_standard_output_configuration(
-                                crate::protocol_serde::shape_standard_output_configuration::de_standard_output_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_standard_output_configuration::de_standard_output_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "customOutputConfiguration" => {
                             builder = builder.set_custom_output_configuration(
-                                crate::protocol_serde::shape_custom_output_configuration::de_custom_output_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_output_configuration::de_custom_output_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "overrideConfiguration" => {
                             builder = builder.set_override_configuration(
-                                crate::protocol_serde::shape_override_configuration::de_override_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_override_configuration::de_override_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "dataAutomationLibraryConfiguration" => {
                             builder = builder.set_data_automation_library_configuration(
                                 crate::protocol_serde::shape_data_automation_library_configuration::de_data_automation_library_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -100,7 +112,7 @@ where
                         }
                         "kmsEncryptionContext" => {
                             builder = builder.set_kms_encryption_context(
-                                crate::protocol_serde::shape_kms_encryption_context::de_kms_encryption_context(tokens, _value)?,
+                                crate::protocol_serde::shape_kms_encryption_context::de_kms_encryption_context(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

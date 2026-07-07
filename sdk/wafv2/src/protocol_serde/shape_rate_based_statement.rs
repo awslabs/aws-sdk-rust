@@ -48,10 +48,16 @@ pub fn ser_rate_based_statement(
 pub(crate) fn de_rate_based_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RateBasedStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -86,16 +92,24 @@ where
                             );
                         }
                         "ScopeDownStatement" => {
-                            builder =
-                                builder.set_scope_down_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value)?.map(Box::new));
+                            builder = builder.set_scope_down_statement(
+                                crate::protocol_serde::shape_statement::de_statement(tokens, _value, depth + 1)?.map(Box::new),
+                            );
                         }
                         "ForwardedIPConfig" => {
-                            builder = builder
-                                .set_forwarded_ip_config(crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(tokens, _value)?);
+                            builder = builder.set_forwarded_ip_config(crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CustomKeys" => {
                             builder = builder.set_custom_keys(
-                                crate::protocol_serde::shape_rate_based_statement_custom_keys::de_rate_based_statement_custom_keys(tokens, _value)?,
+                                crate::protocol_serde::shape_rate_based_statement_custom_keys::de_rate_based_statement_custom_keys(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

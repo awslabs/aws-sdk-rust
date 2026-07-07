@@ -52,7 +52,11 @@ pub fn ser_storage_lens_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StorageLensConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -73,7 +77,7 @@ pub fn de_storage_lens_configuration(
             s if s.matches("AccountLevel") /* AccountLevel com.amazonaws.s3control#StorageLensConfiguration$AccountLevel */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_account_level::de_account_level(&mut tag)
+                        crate::protocol_serde::shape_account_level::de_account_level(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -83,7 +87,7 @@ pub fn de_storage_lens_configuration(
             s if s.matches("Include") /* Include com.amazonaws.s3control#StorageLensConfiguration$Include */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_include::de_include(&mut tag)
+                        crate::protocol_serde::shape_include::de_include(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -93,7 +97,7 @@ pub fn de_storage_lens_configuration(
             s if s.matches("Exclude") /* Exclude com.amazonaws.s3control#StorageLensConfiguration$Exclude */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_exclude::de_exclude(&mut tag)
+                        crate::protocol_serde::shape_exclude::de_exclude(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -103,7 +107,7 @@ pub fn de_storage_lens_configuration(
             s if s.matches("DataExport") /* DataExport com.amazonaws.s3control#StorageLensConfiguration$DataExport */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_data_export::de_storage_lens_data_export(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_data_export::de_storage_lens_data_export(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -113,7 +117,7 @@ pub fn de_storage_lens_configuration(
             s if s.matches("ExpandedPrefixesDataExport") /* ExpandedPrefixesDataExport com.amazonaws.s3control#StorageLensConfiguration$ExpandedPrefixesDataExport */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_expanded_prefixes_data_export::de_storage_lens_expanded_prefixes_data_export(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_expanded_prefixes_data_export::de_storage_lens_expanded_prefixes_data_export(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -138,7 +142,7 @@ pub fn de_storage_lens_configuration(
             s if s.matches("AwsOrg") /* AwsOrg com.amazonaws.s3control#StorageLensConfiguration$AwsOrg */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_aws_org::de_storage_lens_aws_org(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_aws_org::de_storage_lens_aws_org(&mut tag, depth + 1)
                         ?
                     )
                 ;

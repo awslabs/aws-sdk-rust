@@ -10,6 +10,8 @@ pub struct AvailabilityZoneDistribution {
     /// <p><code>balanced-only</code> - If launches fail in an Availability Zone, Auto Scaling will continue to attempt to launch in the unhealthy zone to preserve a balanced distribution.</p></li>
     /// <li>
     /// <p><code>balanced-best-effort</code> - If launches fail in an Availability Zone, Auto Scaling will attempt to launch in another healthy Availability Zone instead.</p></li>
+    /// <li>
+    /// <p><code>reservations-then-balanced</code> - Auto Scaling will first attempt to launch into your Capacity Reservations, and then balance any remaining capacity across the healthy Availability Zones.</p></li>
     /// </ul>
     pub capacity_distribution_strategy: ::std::option::Option<crate::types::CapacityDistributionStrategy>,
 }
@@ -20,6 +22,8 @@ impl AvailabilityZoneDistribution {
     /// <p><code>balanced-only</code> - If launches fail in an Availability Zone, Auto Scaling will continue to attempt to launch in the unhealthy zone to preserve a balanced distribution.</p></li>
     /// <li>
     /// <p><code>balanced-best-effort</code> - If launches fail in an Availability Zone, Auto Scaling will attempt to launch in another healthy Availability Zone instead.</p></li>
+    /// <li>
+    /// <p><code>reservations-then-balanced</code> - Auto Scaling will first attempt to launch into your Capacity Reservations, and then balance any remaining capacity across the healthy Availability Zones.</p></li>
     /// </ul>
     pub fn capacity_distribution_strategy(&self) -> ::std::option::Option<&crate::types::CapacityDistributionStrategy> {
         self.capacity_distribution_strategy.as_ref()
@@ -45,6 +49,8 @@ impl AvailabilityZoneDistributionBuilder {
     /// <p><code>balanced-only</code> - If launches fail in an Availability Zone, Auto Scaling will continue to attempt to launch in the unhealthy zone to preserve a balanced distribution.</p></li>
     /// <li>
     /// <p><code>balanced-best-effort</code> - If launches fail in an Availability Zone, Auto Scaling will attempt to launch in another healthy Availability Zone instead.</p></li>
+    /// <li>
+    /// <p><code>reservations-then-balanced</code> - Auto Scaling will first attempt to launch into your Capacity Reservations, and then balance any remaining capacity across the healthy Availability Zones.</p></li>
     /// </ul>
     pub fn capacity_distribution_strategy(mut self, input: crate::types::CapacityDistributionStrategy) -> Self {
         self.capacity_distribution_strategy = ::std::option::Option::Some(input);
@@ -56,6 +62,8 @@ impl AvailabilityZoneDistributionBuilder {
     /// <p><code>balanced-only</code> - If launches fail in an Availability Zone, Auto Scaling will continue to attempt to launch in the unhealthy zone to preserve a balanced distribution.</p></li>
     /// <li>
     /// <p><code>balanced-best-effort</code> - If launches fail in an Availability Zone, Auto Scaling will attempt to launch in another healthy Availability Zone instead.</p></li>
+    /// <li>
+    /// <p><code>reservations-then-balanced</code> - Auto Scaling will first attempt to launch into your Capacity Reservations, and then balance any remaining capacity across the healthy Availability Zones.</p></li>
     /// </ul>
     pub fn set_capacity_distribution_strategy(mut self, input: ::std::option::Option<crate::types::CapacityDistributionStrategy>) -> Self {
         self.capacity_distribution_strategy = input;
@@ -67,6 +75,8 @@ impl AvailabilityZoneDistributionBuilder {
     /// <p><code>balanced-only</code> - If launches fail in an Availability Zone, Auto Scaling will continue to attempt to launch in the unhealthy zone to preserve a balanced distribution.</p></li>
     /// <li>
     /// <p><code>balanced-best-effort</code> - If launches fail in an Availability Zone, Auto Scaling will attempt to launch in another healthy Availability Zone instead.</p></li>
+    /// <li>
+    /// <p><code>reservations-then-balanced</code> - Auto Scaling will first attempt to launch into your Capacity Reservations, and then balance any remaining capacity across the healthy Availability Zones.</p></li>
     /// </ul>
     pub fn get_capacity_distribution_strategy(&self) -> &::std::option::Option<crate::types::CapacityDistributionStrategy> {
         &self.capacity_distribution_strategy

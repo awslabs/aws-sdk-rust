@@ -40,6 +40,8 @@ pub fn de_create_fleet(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateFleetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateFleetResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_create_fleet(
             s if s.matches("errorSet") /* Errors com.amazonaws.ec2.synthetic#CreateFleetOutput$Errors */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_create_fleet_errors_set::de_create_fleet_errors_set(&mut tag)
+                        crate::protocol_serde::shape_create_fleet_errors_set::de_create_fleet_errors_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +75,7 @@ pub fn de_create_fleet(
             s if s.matches("fleetInstanceSet") /* Instances com.amazonaws.ec2.synthetic#CreateFleetOutput$Instances */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_create_fleet_instances_set::de_create_fleet_instances_set(&mut tag)
+                        crate::protocol_serde::shape_create_fleet_instances_set::de_create_fleet_instances_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

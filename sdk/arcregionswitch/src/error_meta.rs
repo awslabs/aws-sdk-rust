@@ -382,6 +382,9 @@ impl From<crate::operation::list_route53_health_checks::ListRoute53HealthChecksE
             crate::operation::list_route53_health_checks::ListRoute53HealthChecksError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_route53_health_checks::ListRoute53HealthChecksError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
             crate::operation::list_route53_health_checks::ListRoute53HealthChecksError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

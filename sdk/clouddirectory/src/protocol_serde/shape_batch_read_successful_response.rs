@@ -2,10 +2,16 @@
 pub(crate) fn de_batch_read_successful_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BatchReadSuccessfulResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,90 +25,114 @@ where
                             "ListObjectAttributes" => {
                                 builder = builder.set_list_object_attributes(
                                     crate::protocol_serde::shape_batch_list_object_attributes_response::de_batch_list_object_attributes_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "ListObjectChildren" => {
                                 builder = builder.set_list_object_children(
                                     crate::protocol_serde::shape_batch_list_object_children_response::de_batch_list_object_children_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "GetObjectInformation" => {
                                 builder = builder.set_get_object_information(
                                     crate::protocol_serde::shape_batch_get_object_information_response::de_batch_get_object_information_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "GetObjectAttributes" => {
                                 builder = builder.set_get_object_attributes(
                                     crate::protocol_serde::shape_batch_get_object_attributes_response::de_batch_get_object_attributes_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "ListAttachedIndices" => {
                                 builder = builder.set_list_attached_indices(
                                     crate::protocol_serde::shape_batch_list_attached_indices_response::de_batch_list_attached_indices_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "ListObjectParentPaths" => {
                                 builder = builder.set_list_object_parent_paths(
                                     crate::protocol_serde::shape_batch_list_object_parent_paths_response::de_batch_list_object_parent_paths_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "ListObjectPolicies" => {
                                 builder = builder.set_list_object_policies(
                                     crate::protocol_serde::shape_batch_list_object_policies_response::de_batch_list_object_policies_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "ListPolicyAttachments" => {
                                 builder = builder.set_list_policy_attachments(
                                     crate::protocol_serde::shape_batch_list_policy_attachments_response::de_batch_list_policy_attachments_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "LookupPolicy" => {
                                 builder = builder.set_lookup_policy(
-                                    crate::protocol_serde::shape_batch_lookup_policy_response::de_batch_lookup_policy_response(tokens, _value)?,
+                                    crate::protocol_serde::shape_batch_lookup_policy_response::de_batch_lookup_policy_response(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "ListIndex" => {
                                 builder = builder.set_list_index(
-                                    crate::protocol_serde::shape_batch_list_index_response::de_batch_list_index_response(tokens, _value)?,
+                                    crate::protocol_serde::shape_batch_list_index_response::de_batch_list_index_response(tokens, _value, depth + 1)?,
                                 );
                             }
                             "ListOutgoingTypedLinks" => {
                                 builder = builder.set_list_outgoing_typed_links(
-                                    crate::protocol_serde::shape_batch_list_outgoing_typed_links_response::de_batch_list_outgoing_typed_links_response(tokens, _value)?
+                                    crate::protocol_serde::shape_batch_list_outgoing_typed_links_response::de_batch_list_outgoing_typed_links_response(tokens, _value, depth + 1)?
                                 );
                             }
                             "ListIncomingTypedLinks" => {
                                 builder = builder.set_list_incoming_typed_links(
-                                    crate::protocol_serde::shape_batch_list_incoming_typed_links_response::de_batch_list_incoming_typed_links_response(tokens, _value)?
+                                    crate::protocol_serde::shape_batch_list_incoming_typed_links_response::de_batch_list_incoming_typed_links_response(tokens, _value, depth + 1)?
                                 );
                             }
                             "GetLinkAttributes" => {
                                 builder = builder.set_get_link_attributes(
                                     crate::protocol_serde::shape_batch_get_link_attributes_response::de_batch_get_link_attributes_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "ListObjectParents" => {
                                 builder = builder.set_list_object_parents(
                                     crate::protocol_serde::shape_batch_list_object_parents_response::de_batch_list_object_parents_response(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }

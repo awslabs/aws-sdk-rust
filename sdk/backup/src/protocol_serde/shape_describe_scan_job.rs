@@ -115,6 +115,8 @@ pub(crate) fn de_describe_scan_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -147,8 +149,24 @@ pub(crate) fn de_describe_scan_job(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "ContinuousScanEndTime" => {
+                    builder = builder.set_continuous_scan_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "ContinuousScanStartTime" => {
+                    builder = builder.set_continuous_scan_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_scan_job_creator::de_scan_job_creator(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_scan_job_creator::de_scan_job_creator(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CreationDate" => {
                     builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -227,7 +245,11 @@ pub(crate) fn de_describe_scan_job(
                     );
                 }
                 "ScanResult" => {
-                    builder = builder.set_scan_result(crate::protocol_serde::shape_scan_result_info::de_scan_result_info(tokens, _value)?);
+                    builder = builder.set_scan_result(crate::protocol_serde::shape_scan_result_info::de_scan_result_info(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ScannerRoleArn" => {
                     builder = builder.set_scanner_role_arn(

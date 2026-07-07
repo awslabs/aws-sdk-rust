@@ -281,4 +281,18 @@ impl CreateMLInputChannelFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.</p>
+    pub fn payer_configuration(mut self, input: crate::types::PayerConfiguration) -> Self {
+        self.inner = self.inner.payer_configuration(input);
+        self
+    }
+    /// <p>The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.</p>
+    pub fn set_payer_configuration(mut self, input: ::std::option::Option<crate::types::PayerConfiguration>) -> Self {
+        self.inner = self.inner.set_payer_configuration(input);
+        self
+    }
+    /// <p>The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.</p>
+    pub fn get_payer_configuration(&self) -> &::std::option::Option<crate::types::PayerConfiguration> {
+        self.inner.get_payer_configuration()
+    }
 }

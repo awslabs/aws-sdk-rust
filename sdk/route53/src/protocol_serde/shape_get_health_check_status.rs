@@ -89,6 +89,8 @@ pub fn de_get_health_check_status(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetHealthCheckStatusResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetHealthCheckStatusResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -99,7 +101,7 @@ pub fn de_get_health_check_status(
             s if s.matches("HealthCheckObservations") /* HealthCheckObservations com.amazonaws.route53.synthetic#GetHealthCheckStatusOutput$HealthCheckObservations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_health_check_observations::de_health_check_observations(&mut tag)
+                        crate::protocol_serde::shape_health_check_observations::de_health_check_observations(&mut tag, depth + 1)
                         ?
                     )
                 ;

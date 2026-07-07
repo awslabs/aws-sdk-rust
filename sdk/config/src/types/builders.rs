@@ -23,6 +23,8 @@ pub use crate::types::_compliance_summary::ComplianceSummaryBuilder;
 
 pub use crate::types::_conformance_pack_evaluation_filters::ConformancePackEvaluationFiltersBuilder;
 
+pub use crate::types::_connector::ConnectorBuilder;
+
 pub use crate::types::_status_detail_filters::StatusDetailFiltersBuilder;
 
 pub use crate::types::_organization_resource_detailed_status_filters::OrganizationResourceDetailedStatusFiltersBuilder;
@@ -53,6 +55,8 @@ pub use crate::types::_configuration_aggregator::ConfigurationAggregatorBuilder;
 
 pub use crate::types::_template_ssm_document_details::TemplateSsmDocumentDetailsBuilder;
 
+pub use crate::types::_connector_configuration::ConnectorConfigurationBuilder;
+
 pub use crate::types::_delivery_channel::DeliveryChannelBuilder;
 
 pub use crate::types::_external_evaluation::ExternalEvaluationBuilder;
@@ -64,6 +68,8 @@ pub use crate::types::_organization_custom_rule_metadata::OrganizationCustomRule
 pub use crate::types::_organization_custom_policy_rule_metadata::OrganizationCustomPolicyRuleMetadataBuilder;
 
 pub use crate::types::_retention_configuration::RetentionConfigurationBuilder;
+
+pub use crate::types::_scope_configuration::ScopeConfigurationBuilder;
 
 pub use crate::types::_query_info::QueryInfoBuilder;
 
@@ -147,6 +153,10 @@ pub use crate::types::_configuration_recorder_summary::ConfigurationRecorderSumm
 
 pub use crate::types::_conformance_pack_compliance_score::ConformancePackComplianceScoreBuilder;
 
+pub use crate::types::_connector_filter::ConnectorFilterBuilder;
+
+pub use crate::types::_connector_summary::ConnectorSummaryBuilder;
+
 pub use crate::types::_resource_identifier::ResourceIdentifierBuilder;
 
 pub use crate::types::_time_window::TimeWindowBuilder;
@@ -168,6 +178,8 @@ pub use crate::types::_aggregator_filter_resource_type::AggregatorFilterResource
 pub use crate::types::_aggregator_filter_service_principal::AggregatorFilterServicePrincipalBuilder;
 
 pub use crate::types::_conformance_pack_input_parameter::ConformancePackInputParameterBuilder;
+
+pub use crate::types::_azure_connector_configuration::AzureConnectorConfigurationBuilder;
 
 pub use crate::types::_config_snapshot_delivery_properties::ConfigSnapshotDeliveryPropertiesBuilder;
 

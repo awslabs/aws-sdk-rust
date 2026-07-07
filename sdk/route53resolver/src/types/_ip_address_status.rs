@@ -19,6 +19,7 @@
 ///     IpAddressStatus::Deleting => { /* ... */ },
 ///     IpAddressStatus::Detaching => { /* ... */ },
 ///     IpAddressStatus::FailedCreation => { /* ... */ },
+///     IpAddressStatus::FailedCreationInsufficientEc2CapacityInOutpost => { /* ... */ },
 ///     IpAddressStatus::FailedResourceGone => { /* ... */ },
 ///     IpAddressStatus::Isolated => { /* ... */ },
 ///     IpAddressStatus::RemapAttaching => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum IpAddressStatus {
     #[allow(missing_docs)] // documentation missing in model
     FailedCreation,
     #[allow(missing_docs)] // documentation missing in model
+    FailedCreationInsufficientEc2CapacityInOutpost,
+    #[allow(missing_docs)] // documentation missing in model
     FailedResourceGone,
     #[allow(missing_docs)] // documentation missing in model
     Isolated,
@@ -93,6 +96,7 @@ impl ::std::convert::From<&str> for IpAddressStatus {
             "DELETING" => IpAddressStatus::Deleting,
             "DETACHING" => IpAddressStatus::Detaching,
             "FAILED_CREATION" => IpAddressStatus::FailedCreation,
+            "FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST" => IpAddressStatus::FailedCreationInsufficientEc2CapacityInOutpost,
             "FAILED_RESOURCE_GONE" => IpAddressStatus::FailedResourceGone,
             "ISOLATED" => IpAddressStatus::Isolated,
             "REMAP_ATTACHING" => IpAddressStatus::RemapAttaching,
@@ -121,6 +125,7 @@ impl IpAddressStatus {
             IpAddressStatus::Deleting => "DELETING",
             IpAddressStatus::Detaching => "DETACHING",
             IpAddressStatus::FailedCreation => "FAILED_CREATION",
+            IpAddressStatus::FailedCreationInsufficientEc2CapacityInOutpost => "FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST",
             IpAddressStatus::FailedResourceGone => "FAILED_RESOURCE_GONE",
             IpAddressStatus::Isolated => "ISOLATED",
             IpAddressStatus::RemapAttaching => "REMAP_ATTACHING",
@@ -140,6 +145,7 @@ impl IpAddressStatus {
             "DELETING",
             "DETACHING",
             "FAILED_CREATION",
+            "FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST",
             "FAILED_RESOURCE_GONE",
             "ISOLATED",
             "REMAP_ATTACHING",
@@ -176,6 +182,7 @@ impl ::std::fmt::Display for IpAddressStatus {
             IpAddressStatus::Deleting => write!(f, "DELETING"),
             IpAddressStatus::Detaching => write!(f, "DETACHING"),
             IpAddressStatus::FailedCreation => write!(f, "FAILED_CREATION"),
+            IpAddressStatus::FailedCreationInsufficientEc2CapacityInOutpost => write!(f, "FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST"),
             IpAddressStatus::FailedResourceGone => write!(f, "FAILED_RESOURCE_GONE"),
             IpAddressStatus::Isolated => write!(f, "ISOLATED"),
             IpAddressStatus::RemapAttaching => write!(f, "REMAP_ATTACHING"),

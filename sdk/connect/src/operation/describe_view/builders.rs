@@ -22,12 +22,12 @@ impl crate::operation::describe_view::builders::DescribeViewInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeView`.
 ///
-/// <p>Retrieves the view for the specified Amazon Connect instance and view identifier.</p>
+/// <p>Retrieves the view for the specified Connect Customer instance and view identifier.</p>
 /// <p>The view identifier can be supplied as a ViewId or ARN.</p>
 /// <p><code>$SAVED</code> needs to be supplied if a view is unpublished.</p>
 /// <p>The view identifier can contain an optional qualifier, for example, <code><view-id>
 /// :$SAVED
-/// </view-id></code>, which is either an actual version number or an Amazon Connect managed qualifier <code>$SAVED | $LATEST</code>. If it is not supplied, then <code>$LATEST</code> is assumed for customer managed views and an error is returned if there is no published content available. Version 1 is assumed for Amazon Web Services managed views.</p>
+/// </view-id></code>, which is either an actual version number or an Connect Customer managed qualifier <code>$SAVED | $LATEST</code>. If it is not supplied, then <code>$LATEST</code> is assumed for customer managed views and an error is returned if there is no published content available. Version 1 is assumed for Amazon Web Services managed views.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeViewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +113,17 @@ impl DescribeViewFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

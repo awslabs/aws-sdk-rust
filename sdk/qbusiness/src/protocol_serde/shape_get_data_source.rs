@@ -116,6 +116,8 @@ pub(crate) fn de_get_data_source(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -167,11 +169,15 @@ pub(crate) fn de_get_data_source(
                 }
                 "documentEnrichmentConfiguration" => {
                     builder = builder.set_document_enrichment_configuration(
-                        crate::protocol_serde::shape_document_enrichment_configuration::de_document_enrichment_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_document_enrichment_configuration::de_document_enrichment_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens, _value)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens, _value, depth + 1)?);
                 }
                 "indexId" => {
                     builder = builder.set_index_id(
@@ -182,7 +188,7 @@ pub(crate) fn de_get_data_source(
                 }
                 "mediaExtractionConfiguration" => {
                     builder = builder.set_media_extraction_configuration(
-                        crate::protocol_serde::shape_media_extraction_configuration::de_media_extraction_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_media_extraction_configuration::de_media_extraction_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "roleArn" => {
@@ -221,7 +227,7 @@ pub(crate) fn de_get_data_source(
                 }
                 "vpcConfiguration" => {
                     builder = builder.set_vpc_configuration(
-                        crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

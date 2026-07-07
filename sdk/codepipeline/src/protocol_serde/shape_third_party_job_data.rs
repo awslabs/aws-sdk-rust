@@ -2,10 +2,16 @@
 pub(crate) fn de_third_party_job_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ThirdPartyJobData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,26 +22,40 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "actionTypeId" => {
-                            builder = builder.set_action_type_id(crate::protocol_serde::shape_action_type_id::de_action_type_id(tokens, _value)?);
+                            builder = builder.set_action_type_id(crate::protocol_serde::shape_action_type_id::de_action_type_id(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "actionConfiguration" => {
                             builder = builder.set_action_configuration(crate::protocol_serde::shape_action_configuration::de_action_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "pipelineContext" => {
-                            builder =
-                                builder.set_pipeline_context(crate::protocol_serde::shape_pipeline_context::de_pipeline_context(tokens, _value)?);
+                            builder = builder.set_pipeline_context(crate::protocol_serde::shape_pipeline_context::de_pipeline_context(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "inputArtifacts" => {
-                            builder = builder.set_input_artifacts(crate::protocol_serde::shape_artifact_list::de_artifact_list(tokens, _value)?);
+                            builder =
+                                builder.set_input_artifacts(crate::protocol_serde::shape_artifact_list::de_artifact_list(tokens, _value, depth + 1)?);
                         }
                         "outputArtifacts" => {
-                            builder = builder.set_output_artifacts(crate::protocol_serde::shape_artifact_list::de_artifact_list(tokens, _value)?);
+                            builder = builder.set_output_artifacts(crate::protocol_serde::shape_artifact_list::de_artifact_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "artifactCredentials" => {
                             builder = builder.set_artifact_credentials(
-                                crate::protocol_serde::shape_aws_session_credentials::de_aws_session_credentials(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_session_credentials::de_aws_session_credentials(tokens, _value, depth + 1)?,
                             );
                         }
                         "continuationToken" => {
@@ -46,7 +66,11 @@ where
                             );
                         }
                         "encryptionKey" => {
-                            builder = builder.set_encryption_key(crate::protocol_serde::shape_encryption_key::de_encryption_key(tokens, _value)?);
+                            builder = builder.set_encryption_key(crate::protocol_serde::shape_encryption_key::de_encryption_key(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

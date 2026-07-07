@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_backend_server_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::BackendServerDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::BackendServerDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -25,7 +29,7 @@ pub fn de_backend_server_description(
             s if s.matches("PolicyNames") /* PolicyNames com.amazonaws.elasticloadbalancing#BackendServerDescription$PolicyNames */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_policy_names::de_policy_names(&mut tag)
+                        crate::protocol_serde::shape_policy_names::de_policy_names(&mut tag, depth + 1)
                         ?
                     )
                 ;

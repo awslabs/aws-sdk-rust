@@ -136,6 +136,8 @@ pub fn de_list_allowed_node_type_modifications(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListAllowedNodeTypeModificationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListAllowedNodeTypeModificationsResponse got {start_el:?}"
@@ -153,7 +155,7 @@ pub fn de_list_allowed_node_type_modifications(
             s if s.matches("ScaleUpModifications") /* ScaleUpModifications com.amazonaws.elasticache.synthetic#ListAllowedNodeTypeModificationsOutput$ScaleUpModifications */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_node_type_list::de_node_type_list(&mut tag)
+                        crate::protocol_serde::shape_node_type_list::de_node_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -163,7 +165,7 @@ pub fn de_list_allowed_node_type_modifications(
             s if s.matches("ScaleDownModifications") /* ScaleDownModifications com.amazonaws.elasticache.synthetic#ListAllowedNodeTypeModificationsOutput$ScaleDownModifications */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_node_type_list::de_node_type_list(&mut tag)
+                        crate::protocol_serde::shape_node_type_list::de_node_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

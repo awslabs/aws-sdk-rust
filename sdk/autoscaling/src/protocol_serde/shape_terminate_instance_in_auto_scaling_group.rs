@@ -98,6 +98,8 @@ pub fn de_terminate_instance_in_auto_scaling_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("TerminateInstanceInAutoScalingGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected TerminateInstanceInAutoScalingGroupResponse got {start_el:?}"
@@ -115,7 +117,7 @@ pub fn de_terminate_instance_in_auto_scaling_group(
             s if s.matches("Activity") /* Activity com.amazonaws.autoscaling.synthetic#TerminateInstanceInAutoScalingGroupOutput$Activity */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_activity::de_activity(&mut tag)
+                        crate::protocol_serde::shape_activity::de_activity(&mut tag, depth + 1)
                         ?
                     )
                 ;

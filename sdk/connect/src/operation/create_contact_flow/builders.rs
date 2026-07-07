@@ -22,8 +22,8 @@ impl crate::operation::create_contact_flow::builders::CreateContactFlowInputBuil
 }
 /// Fluent builder constructing a request to `CreateContactFlow`.
 ///
-/// <p>Creates a flow for the specified Amazon Connect instance.</p>
-/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
+/// <p>Creates a flow for the specified Connect Customer instance.</p>
+/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect Customer Flow language</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContactFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl CreateContactFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
@@ -137,17 +137,17 @@ impl CreateContactFlowFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn r#type(mut self, input: crate::types::ContactFlowType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactFlowType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactFlowType> {
         self.inner.get_type()
     }
@@ -165,19 +165,19 @@ impl CreateContactFlowFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Connect Customer Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Connect Customer Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Connect Customer Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()

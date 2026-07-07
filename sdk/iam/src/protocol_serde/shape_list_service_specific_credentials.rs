@@ -92,6 +92,8 @@ pub fn de_list_service_specific_credentials(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListServiceSpecificCredentialsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListServiceSpecificCredentialsResponse got {start_el:?}"
@@ -109,7 +111,7 @@ pub fn de_list_service_specific_credentials(
             s if s.matches("ServiceSpecificCredentials") /* ServiceSpecificCredentials com.amazonaws.iam.synthetic#ListServiceSpecificCredentialsOutput$ServiceSpecificCredentials */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_service_specific_credentials_list_type::de_service_specific_credentials_list_type(&mut tag)
+                        crate::protocol_serde::shape_service_specific_credentials_list_type::de_service_specific_credentials_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

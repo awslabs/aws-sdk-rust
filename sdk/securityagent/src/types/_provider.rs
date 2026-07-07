@@ -12,7 +12,10 @@
 /// ```text
 /// # let provider = unimplemented!();
 /// match provider {
+///     Provider::Bitbucket => { /* ... */ },
+///     Provider::Confluence => { /* ... */ },
 ///     Provider::Github => { /* ... */ },
+///     Provider::Gitlab => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -35,14 +38,20 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Third-party provider type
+/// <p>Third-party provider type.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Provider {
     #[allow(missing_docs)] // documentation missing in model
+    Bitbucket,
+    #[allow(missing_docs)] // documentation missing in model
+    Confluence,
+    #[allow(missing_docs)] // documentation missing in model
     Github,
+    #[allow(missing_docs)] // documentation missing in model
+    Gitlab,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,7 +59,10 @@ pub enum Provider {
 impl ::std::convert::From<&str> for Provider {
     fn from(s: &str) -> Self {
         match s {
+            "BITBUCKET" => Provider::Bitbucket,
+            "CONFLUENCE" => Provider::Confluence,
             "GITHUB" => Provider::Github,
+            "GITLAB" => Provider::Gitlab,
             other => Provider::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,13 +78,16 @@ impl Provider {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Provider::Bitbucket => "BITBUCKET",
+            Provider::Confluence => "CONFLUENCE",
             Provider::Github => "GITHUB",
+            Provider::Gitlab => "GITLAB",
             Provider::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GITHUB"]
+        &["BITBUCKET", "CONFLUENCE", "GITHUB", "GITLAB"]
     }
 }
 impl ::std::convert::AsRef<str> for Provider {
@@ -95,7 +110,10 @@ impl Provider {
 impl ::std::fmt::Display for Provider {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Provider::Bitbucket => write!(f, "BITBUCKET"),
+            Provider::Confluence => write!(f, "CONFLUENCE"),
             Provider::Github => write!(f, "GITHUB"),
+            Provider::Gitlab => write!(f, "GITLAB"),
             Provider::Unknown(value) => write!(f, "{value}"),
         }
     }

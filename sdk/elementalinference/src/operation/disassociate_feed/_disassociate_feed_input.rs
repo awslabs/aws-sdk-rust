@@ -5,9 +5,10 @@
 pub struct DisassociateFeedInput {
     /// <p>The ID of the feed where you want to release the resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the resource currently associated with the feed'.</p>
+    /// <p>The name of the resource currently associated with the feed.</p>
     pub associated_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>Set to true if you want to do a dry run of the disassociate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions. If the dry run fails, the action returns a 4xx error code.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DisassociateFeedInput {
@@ -15,11 +16,12 @@ impl DisassociateFeedInput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the resource currently associated with the feed'.</p>
+    /// <p>The name of the resource currently associated with the feed.</p>
     pub fn associated_resource_name(&self) -> ::std::option::Option<&str> {
         self.associated_resource_name.as_deref()
     }
     /// <p>Set to true if you want to do a dry run of the disassociate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions. If the dry run fails, the action returns a 4xx error code.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -55,32 +57,35 @@ impl DisassociateFeedInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The name of the resource currently associated with the feed'.</p>
+    /// <p>The name of the resource currently associated with the feed.</p>
     /// This field is required.
     pub fn associated_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource currently associated with the feed'.</p>
+    /// <p>The name of the resource currently associated with the feed.</p>
     pub fn set_associated_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_resource_name = input;
         self
     }
-    /// <p>The name of the resource currently associated with the feed'.</p>
+    /// <p>The name of the resource currently associated with the feed.</p>
     pub fn get_associated_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_resource_name
     }
     /// <p>Set to true if you want to do a dry run of the disassociate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions. If the dry run fails, the action returns a 4xx error code.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to true if you want to do a dry run of the disassociate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions. If the dry run fails, the action returns a 4xx error code.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
     /// <p>Set to true if you want to do a dry run of the disassociate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions. If the dry run fails, the action returns a 4xx error code.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }

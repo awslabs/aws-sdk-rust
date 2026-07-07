@@ -6,11 +6,19 @@
 pub struct SemanticModelConfiguration {
     /// <p>A map of semantic tables that define the analytical structure.</p>
     pub table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SemanticTable>>,
+    /// <p>The dataset-level semantic metadata, including a description and custom instructions.</p>
+    pub semantic_metadata: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSemanticMetadata>>,
 }
 impl SemanticModelConfiguration {
     /// <p>A map of semantic tables that define the analytical structure.</p>
     pub fn table_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SemanticTable>> {
         self.table_map.as_ref()
+    }
+    /// <p>The dataset-level semantic metadata, including a description and custom instructions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.semantic_metadata.is_none()`.
+    pub fn semantic_metadata(&self) -> &[crate::types::DataSetSemanticMetadata] {
+        self.semantic_metadata.as_deref().unwrap_or_default()
     }
 }
 impl SemanticModelConfiguration {
@@ -25,6 +33,7 @@ impl SemanticModelConfiguration {
 #[non_exhaustive]
 pub struct SemanticModelConfigurationBuilder {
     pub(crate) table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SemanticTable>>,
+    pub(crate) semantic_metadata: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSemanticMetadata>>,
 }
 impl SemanticModelConfigurationBuilder {
     /// Adds a key-value pair to `table_map`.
@@ -50,8 +59,31 @@ impl SemanticModelConfigurationBuilder {
     pub fn get_table_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SemanticTable>> {
         &self.table_map
     }
+    /// Appends an item to `semantic_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_semantic_metadata`](Self::set_semantic_metadata).
+    ///
+    /// <p>The dataset-level semantic metadata, including a description and custom instructions.</p>
+    pub fn semantic_metadata(mut self, input: crate::types::DataSetSemanticMetadata) -> Self {
+        let mut v = self.semantic_metadata.unwrap_or_default();
+        v.push(input);
+        self.semantic_metadata = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The dataset-level semantic metadata, including a description and custom instructions.</p>
+    pub fn set_semantic_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSemanticMetadata>>) -> Self {
+        self.semantic_metadata = input;
+        self
+    }
+    /// <p>The dataset-level semantic metadata, including a description and custom instructions.</p>
+    pub fn get_semantic_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSemanticMetadata>> {
+        &self.semantic_metadata
+    }
     /// Consumes the builder and constructs a [`SemanticModelConfiguration`](crate::types::SemanticModelConfiguration).
     pub fn build(self) -> crate::types::SemanticModelConfiguration {
-        crate::types::SemanticModelConfiguration { table_map: self.table_map }
+        crate::types::SemanticModelConfiguration {
+            table_map: self.table_map,
+            semantic_metadata: self.semantic_metadata,
+        }
     }
 }

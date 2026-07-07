@@ -10,10 +10,39 @@ pub mod classifiers;
 pub mod strategy;
 
 mod client_rate_limiter;
-mod token_bucket;
+pub(crate) mod token_bucket;
 
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::fmt;
+use std::sync::{Arc, Mutex};
+use std::time::Duration;
+
+// Shared slot for the retry strategy to communicate a backoff delay to the
+// orchestrator when returning `ShouldAttempt::No`.
+//
+// Used for long-polling operations: when the token bucket is empty, the
+// strategy writes the backoff here and returns `No`. The orchestrator
+// sleeps for the delay before returning to the caller, preventing request
+// amplification in polling loops.
+//
+// Uses `Arc<Mutex>` interior mutability so the strategy can write through
+// `&ConfigBag` (immutable). The orchestrator seeds this before the retry
+// loop and reads it after the loop exits on `No`.
+#[derive(Clone, Debug, Default)]
+pub(crate) struct LongPollingBackoff(Arc<Mutex<Option<Duration>>>);
+
+impl LongPollingBackoff {
+    pub(crate) fn set(&self, delay: Duration) {
+        *self.0.lock().expect("lock is acquired") = Some(delay);
+    }
+    pub(crate) fn take(&self) -> Option<Duration> {
+        self.0.lock().expect("lock is acquired").take()
+    }
+}
+
+impl Storable for LongPollingBackoff {
+    type Storer = StoreReplace<Self>;
+}
 
 pub use client_rate_limiter::{
     ClientRateLimiter, ClientRateLimiterBuilder, ClientRateLimiterPartition,

@@ -5,12 +5,24 @@
 pub struct CreateApplicationOutput {
     /// <p>Specifies the ARN of the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub identity_store_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
     /// <p>Specifies the ARN of the application.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
+    }
+    /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn identity_store_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_store_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateApplicationOutput {
@@ -30,6 +42,8 @@ impl CreateApplicationOutput {
 #[non_exhaustive]
 pub struct CreateApplicationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutputBuilder {
@@ -47,6 +61,34 @@ impl CreateApplicationOutputBuilder {
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
+    /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_arn = input;
+        self
+    }
+    /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn identity_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn set_identity_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_arn = input;
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn get_identity_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +102,8 @@ impl CreateApplicationOutputBuilder {
     pub fn build(self) -> crate::operation::create_application::CreateApplicationOutput {
         crate::operation::create_application::CreateApplicationOutput {
             application_arn: self.application_arn,
+            instance_arn: self.instance_arn,
+            identity_store_arn: self.identity_store_arn,
             _request_id: self._request_id,
         }
     }

@@ -25,5 +25,7 @@ pub fn de_public_access_block_configuration(
             "invalid root, expected PublicAccessBlockConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut decoder, depth + 1)
 }

@@ -152,6 +152,8 @@ pub(crate) fn de_get_identity_pool_roles(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -165,10 +167,14 @@ pub(crate) fn de_get_identity_pool_roles(
                     );
                 }
                 "Roles" => {
-                    builder = builder.set_roles(crate::protocol_serde::shape_roles_map::de_roles_map(tokens, _value)?);
+                    builder = builder.set_roles(crate::protocol_serde::shape_roles_map::de_roles_map(tokens, _value, depth + 1)?);
                 }
                 "RoleMappings" => {
-                    builder = builder.set_role_mappings(crate::protocol_serde::shape_role_mapping_map::de_role_mapping_map(tokens, _value)?);
+                    builder = builder.set_role_mappings(crate::protocol_serde::shape_role_mapping_map::de_role_mapping_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

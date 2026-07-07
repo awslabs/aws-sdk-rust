@@ -136,4 +136,18 @@ impl DeleteHarnessFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>Whether to delete the managed memory on harness deletion. Default: true. If false, the memory is disassociated and becomes a regular customer-owned resource.</p>
+    pub fn delete_managed_memory(mut self, input: bool) -> Self {
+        self.inner = self.inner.delete_managed_memory(input);
+        self
+    }
+    /// <p>Whether to delete the managed memory on harness deletion. Default: true. If false, the memory is disassociated and becomes a regular customer-owned resource.</p>
+    pub fn set_delete_managed_memory(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_managed_memory(input);
+        self
+    }
+    /// <p>Whether to delete the managed memory on harness deletion. Default: true. If false, the memory is disassociated and becomes a regular customer-owned resource.</p>
+    pub fn get_delete_managed_memory(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_managed_memory()
+    }
 }

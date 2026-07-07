@@ -28,10 +28,16 @@ pub fn ser_knowledge_base_config(
 pub(crate) fn de_knowledge_base_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,17 +63,21 @@ where
                     }
                     variant = match key.as_ref() {
                         "retrieveConfig" => Some(crate::types::KnowledgeBaseConfig::RetrieveConfig(
-                            crate::protocol_serde::shape_retrieve_config::de_retrieve_config(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_retrieve_config::de_retrieve_config(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'retrieveConfig' cannot be null")
                             })?,
                         )),
                         "retrieveAndGenerateConfig" => Some(crate::types::KnowledgeBaseConfig::RetrieveAndGenerateConfig(
-                            crate::protocol_serde::shape_retrieve_and_generate_configuration::de_retrieve_and_generate_configuration(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'retrieveAndGenerateConfig' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_retrieve_and_generate_configuration::de_retrieve_and_generate_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'retrieveAndGenerateConfig' cannot be null",
+                                )
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -33,10 +33,16 @@ pub fn ser_workspace_theme_palette(
 pub(crate) fn de_workspace_theme_palette<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkspaceThemePalette>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -47,16 +53,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Header" => {
-                            builder = builder.set_header(crate::protocol_serde::shape_palette_header::de_palette_header(tokens, _value)?);
+                            builder = builder.set_header(crate::protocol_serde::shape_palette_header::de_palette_header(tokens, _value, depth + 1)?);
                         }
                         "Navigation" => {
-                            builder = builder.set_navigation(crate::protocol_serde::shape_palette_navigation::de_palette_navigation(tokens, _value)?);
+                            builder = builder.set_navigation(crate::protocol_serde::shape_palette_navigation::de_palette_navigation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Canvas" => {
-                            builder = builder.set_canvas(crate::protocol_serde::shape_palette_canvas::de_palette_canvas(tokens, _value)?);
+                            builder = builder.set_canvas(crate::protocol_serde::shape_palette_canvas::de_palette_canvas(tokens, _value, depth + 1)?);
                         }
                         "Primary" => {
-                            builder = builder.set_primary(crate::protocol_serde::shape_palette_primary::de_palette_primary(tokens, _value)?);
+                            builder = builder.set_primary(crate::protocol_serde::shape_palette_primary::de_palette_primary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

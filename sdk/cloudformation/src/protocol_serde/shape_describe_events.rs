@@ -40,6 +40,8 @@ pub fn de_describe_events(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeEventsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeEventsResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_describe_events(
             s if s.matches("OperationEvents") /* OperationEvents com.amazonaws.cloudformation.synthetic#DescribeEventsOutput$OperationEvents */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_operation_events::de_operation_events(&mut tag)
+                        crate::protocol_serde::shape_operation_events::de_operation_events(&mut tag, depth + 1)
                         ?
                     )
                 ;

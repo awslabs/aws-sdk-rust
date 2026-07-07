@@ -157,10 +157,11 @@ pub(crate) fn de_list_container_group_definition_versions(
     crate::operation::list_container_group_definition_versions::builders::ListContainerGroupDefinitionVersionsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_container_group_definition_versions::builders::ListContainerGroupDefinitionVersionsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_container_group_definition_versions::builders::ListContainerGroupDefinitionVersionsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -168,7 +169,7 @@ pub(crate) fn de_list_container_group_definition_versions(
         builder = match decoder.str()?.as_ref() {
             "ContainerGroupDefinitions" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_container_group_definitions(Some(
-                    crate::protocol_serde::shape_container_group_definition_list::de_container_group_definition_list(decoder)?,
+                    crate::protocol_serde::shape_container_group_definition_list::de_container_group_definition_list(decoder, depth + 1)?,
                 )))
             })?,
             "NextToken" => {
@@ -183,6 +184,8 @@ pub(crate) fn de_list_container_group_definition_versions(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -192,13 +195,13 @@ pub(crate) fn de_list_container_group_definition_versions(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

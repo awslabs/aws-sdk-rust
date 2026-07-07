@@ -205,6 +205,8 @@ pub(crate) mod shape_route_driver_schedule_interval;
 
 pub(crate) mod shape_route_emission_type;
 
+pub(crate) mod shape_route_intermodal_options;
+
 pub(crate) mod shape_route_matching_options;
 
 pub(crate) mod shape_route_matrix_avoidance_area;
@@ -232,6 +234,8 @@ pub(crate) mod shape_route_response_notice;
 pub(crate) mod shape_route_scooter_options;
 
 pub(crate) mod shape_route_side_of_street_options;
+
+pub(crate) mod shape_route_transit_options;
 
 pub(crate) mod shape_route_truck_options;
 
@@ -281,6 +285,16 @@ pub(crate) mod shape_road_snap_trailer_options;
 
 pub(crate) mod shape_route_avoidance_area_geometry;
 
+pub(crate) mod shape_route_intermodal_pedestrian_options;
+
+pub(crate) mod shape_route_intermodal_rental_options;
+
+pub(crate) mod shape_route_intermodal_taxi_options;
+
+pub(crate) mod shape_route_intermodal_transit_options;
+
+pub(crate) mod shape_route_intermodal_vehicle_options;
+
 pub(crate) mod shape_route_leg_list;
 
 pub(crate) mod shape_route_major_road_label_list;
@@ -302,6 +316,8 @@ pub(crate) mod shape_route_matrix_vehicle_license_plate;
 pub(crate) mod shape_route_summary;
 
 pub(crate) mod shape_route_trailer_options;
+
+pub(crate) mod shape_route_transit_pedestrian_options;
 
 pub(crate) mod shape_route_vehicle_license_plate;
 
@@ -349,9 +365,17 @@ pub(crate) mod shape_route_number;
 
 pub(crate) mod shape_route_pedestrian_leg_details;
 
+pub(crate) mod shape_route_rental_leg_details;
+
+pub(crate) mod shape_route_taxi_leg_details;
+
 pub(crate) mod shape_route_toll_price_summary;
 
+pub(crate) mod shape_route_transit_leg_details;
+
 pub(crate) mod shape_route_vehicle_leg_details;
+
+pub(crate) mod shape_route_attribution_list;
 
 pub(crate) mod shape_route_ferry_after_travel_step_list;
 
@@ -371,6 +395,8 @@ pub(crate) mod shape_route_ferry_travel_step_list;
 
 pub(crate) mod shape_route_pass_through_waypoint_list;
 
+pub(crate) mod shape_route_pedestrian_after_travel_step_list;
+
 pub(crate) mod shape_route_pedestrian_arrival;
 
 pub(crate) mod shape_route_pedestrian_departure;
@@ -383,11 +409,73 @@ pub(crate) mod shape_route_pedestrian_summary;
 
 pub(crate) mod shape_route_pedestrian_travel_step_list;
 
+pub(crate) mod shape_route_rental_after_travel_step_list;
+
+pub(crate) mod shape_route_rental_agency;
+
+pub(crate) mod shape_route_rental_arrival;
+
+pub(crate) mod shape_route_rental_before_travel_step_list;
+
+pub(crate) mod shape_route_rental_departure;
+
+pub(crate) mod shape_route_rental_summary;
+
+pub(crate) mod shape_route_rental_transport_mode_details;
+
+pub(crate) mod shape_route_rental_travel_step_list;
+
+pub(crate) mod shape_route_taxi_after_travel_step_list;
+
+pub(crate) mod shape_route_taxi_agency;
+
+pub(crate) mod shape_route_taxi_arrival;
+
+pub(crate) mod shape_route_taxi_before_travel_step_list;
+
+pub(crate) mod shape_route_taxi_departure;
+
+pub(crate) mod shape_route_taxi_notice_list;
+
+pub(crate) mod shape_route_taxi_summary;
+
+pub(crate) mod shape_route_taxi_transport_mode_details;
+
+pub(crate) mod shape_route_taxi_travel_step_list;
+
 pub(crate) mod shape_route_toll_list;
 
 pub(crate) mod shape_route_toll_price_value_range;
 
 pub(crate) mod shape_route_toll_system_list;
+
+pub(crate) mod shape_route_transit_after_travel_step_list;
+
+pub(crate) mod shape_route_transit_agency;
+
+pub(crate) mod shape_route_transit_arrival;
+
+pub(crate) mod shape_route_transit_before_travel_step_list;
+
+pub(crate) mod shape_route_transit_departure;
+
+pub(crate) mod shape_route_transit_incident_list;
+
+pub(crate) mod shape_route_transit_intermediate_stop_list;
+
+pub(crate) mod shape_route_transit_next_departure_list;
+
+pub(crate) mod shape_route_transit_notice_list;
+
+pub(crate) mod shape_route_transit_span_list;
+
+pub(crate) mod shape_route_transit_summary;
+
+pub(crate) mod shape_route_transit_transport_mode_details;
+
+pub(crate) mod shape_route_transit_travel_step_list;
+
+pub(crate) mod shape_route_vehicle_after_travel_step_list;
 
 pub(crate) mod shape_route_vehicle_arrival;
 
@@ -403,9 +491,15 @@ pub(crate) mod shape_route_vehicle_summary;
 
 pub(crate) mod shape_route_vehicle_travel_step_list;
 
+pub(crate) mod shape_route_web_link_list;
+
 pub(crate) mod shape_route_zone_list;
 
 pub(crate) mod shape_truck_road_type_list;
+
+pub(crate) mod shape_route_accessibility_availability_details;
+
+pub(crate) mod shape_route_attribution;
 
 pub(crate) mod shape_route_ferry_after_travel_step;
 
@@ -425,6 +519,8 @@ pub(crate) mod shape_route_ferry_travel_step;
 
 pub(crate) mod shape_route_pass_through_waypoint;
 
+pub(crate) mod shape_route_pedestrian_after_travel_step;
+
 pub(crate) mod shape_route_pedestrian_notice;
 
 pub(crate) mod shape_route_pedestrian_overview_summary;
@@ -437,9 +533,59 @@ pub(crate) mod shape_route_pedestrian_travel_only_summary;
 
 pub(crate) mod shape_route_pedestrian_travel_step;
 
+pub(crate) mod shape_route_rental_after_travel_step;
+
+pub(crate) mod shape_route_rental_before_travel_step;
+
+pub(crate) mod shape_route_rental_overview_summary;
+
+pub(crate) mod shape_route_rental_place;
+
+pub(crate) mod shape_route_rental_travel_only_summary;
+
+pub(crate) mod shape_route_rental_travel_step;
+
+pub(crate) mod shape_route_taxi_after_travel_step;
+
+pub(crate) mod shape_route_taxi_before_travel_step;
+
+pub(crate) mod shape_route_taxi_notice;
+
+pub(crate) mod shape_route_taxi_overview_summary;
+
+pub(crate) mod shape_route_taxi_place;
+
+pub(crate) mod shape_route_taxi_travel_only_summary;
+
+pub(crate) mod shape_route_taxi_travel_step;
+
 pub(crate) mod shape_route_toll;
 
 pub(crate) mod shape_route_toll_system;
+
+pub(crate) mod shape_route_transit_after_travel_step;
+
+pub(crate) mod shape_route_transit_before_travel_step;
+
+pub(crate) mod shape_route_transit_incident;
+
+pub(crate) mod shape_route_transit_intermediate_stop;
+
+pub(crate) mod shape_route_transit_next_departure;
+
+pub(crate) mod shape_route_transit_notice;
+
+pub(crate) mod shape_route_transit_overview_summary;
+
+pub(crate) mod shape_route_transit_place;
+
+pub(crate) mod shape_route_transit_span;
+
+pub(crate) mod shape_route_transit_travel_only_summary;
+
+pub(crate) mod shape_route_transit_travel_step;
+
+pub(crate) mod shape_route_vehicle_after_travel_step;
 
 pub(crate) mod shape_route_vehicle_incident;
 
@@ -455,6 +601,8 @@ pub(crate) mod shape_route_vehicle_travel_only_summary;
 
 pub(crate) mod shape_route_vehicle_travel_step;
 
+pub(crate) mod shape_route_web_link;
+
 pub(crate) mod shape_route_zone;
 
 pub(crate) mod shape_index_list;
@@ -462,6 +610,10 @@ pub(crate) mod shape_index_list;
 pub(crate) mod shape_localized_string_list;
 
 pub(crate) mod shape_position23;
+
+pub(crate) mod shape_route_access_point_details;
+
+pub(crate) mod shape_route_charge_step_details;
 
 pub(crate) mod shape_route_continue_highway_step_details;
 
@@ -503,9 +655,13 @@ pub(crate) mod shape_route_span_speed_limit_details;
 
 pub(crate) mod shape_route_span_truck_access_attribute_list;
 
+pub(crate) mod shape_route_station_details;
+
 pub(crate) mod shape_route_toll_payment_site_list;
 
 pub(crate) mod shape_route_toll_rate_list;
+
+pub(crate) mod shape_route_transit_intermediate_stop_attribute_list;
 
 pub(crate) mod shape_route_turn_step_details;
 

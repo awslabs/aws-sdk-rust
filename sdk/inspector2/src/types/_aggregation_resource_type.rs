@@ -16,6 +16,9 @@
 ///     AggregationResourceType::AwsEcrContainerImage => { /* ... */ },
 ///     AggregationResourceType::AwsLambdaFunction => { /* ... */ },
 ///     AggregationResourceType::CodeRepository => { /* ... */ },
+///     AggregationResourceType::MicrosoftComputeVirtualMachines => { /* ... */ },
+///     AggregationResourceType::MicrosoftContainerRegistryRegistryContainerImage => { /* ... */ },
+///     AggregationResourceType::MicrosoftWebSites => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +55,12 @@ pub enum AggregationResourceType {
     AwsLambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
     CodeRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftComputeVirtualMachines,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftContainerRegistryRegistryContainerImage,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftWebSites,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +72,9 @@ impl ::std::convert::From<&str> for AggregationResourceType {
             "AWS_ECR_CONTAINER_IMAGE" => AggregationResourceType::AwsEcrContainerImage,
             "AWS_LAMBDA_FUNCTION" => AggregationResourceType::AwsLambdaFunction,
             "CODE_REPOSITORY" => AggregationResourceType::CodeRepository,
+            "Microsoft.Compute/virtualMachines" => AggregationResourceType::MicrosoftComputeVirtualMachines,
+            "Microsoft.ContainerRegistry/registry/containerImage" => AggregationResourceType::MicrosoftContainerRegistryRegistryContainerImage,
+            "Microsoft.Web/sites" => AggregationResourceType::MicrosoftWebSites,
             other => AggregationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +94,23 @@ impl AggregationResourceType {
             AggregationResourceType::AwsEcrContainerImage => "AWS_ECR_CONTAINER_IMAGE",
             AggregationResourceType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
             AggregationResourceType::CodeRepository => "CODE_REPOSITORY",
+            AggregationResourceType::MicrosoftComputeVirtualMachines => "Microsoft.Compute/virtualMachines",
+            AggregationResourceType::MicrosoftContainerRegistryRegistryContainerImage => "Microsoft.ContainerRegistry/registry/containerImage",
+            AggregationResourceType::MicrosoftWebSites => "Microsoft.Web/sites",
             AggregationResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_EC2_INSTANCE", "AWS_ECR_CONTAINER_IMAGE", "AWS_LAMBDA_FUNCTION", "CODE_REPOSITORY"]
+        &[
+            "AWS_EC2_INSTANCE",
+            "AWS_ECR_CONTAINER_IMAGE",
+            "AWS_LAMBDA_FUNCTION",
+            "CODE_REPOSITORY",
+            "Microsoft.Compute/virtualMachines",
+            "Microsoft.ContainerRegistry/registry/containerImage",
+            "Microsoft.Web/sites",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AggregationResourceType {
@@ -114,6 +137,11 @@ impl ::std::fmt::Display for AggregationResourceType {
             AggregationResourceType::AwsEcrContainerImage => write!(f, "AWS_ECR_CONTAINER_IMAGE"),
             AggregationResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
             AggregationResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
+            AggregationResourceType::MicrosoftComputeVirtualMachines => write!(f, "Microsoft.Compute/virtualMachines"),
+            AggregationResourceType::MicrosoftContainerRegistryRegistryContainerImage => {
+                write!(f, "Microsoft.ContainerRegistry/registry/containerImage")
+            }
+            AggregationResourceType::MicrosoftWebSites => write!(f, "Microsoft.Web/sites"),
             AggregationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

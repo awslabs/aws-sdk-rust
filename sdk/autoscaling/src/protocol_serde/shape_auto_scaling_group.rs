@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_auto_scaling_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AutoScalingGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AutoScalingGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#AutoScalingGroup$LaunchTemplate */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag)
+                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -59,7 +63,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("MixedInstancesPolicy") /* MixedInstancesPolicy com.amazonaws.autoscaling#AutoScalingGroup$MixedInstancesPolicy */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_mixed_instances_policy::de_mixed_instances_policy(&mut tag)
+                        crate::protocol_serde::shape_mixed_instances_policy::de_mixed_instances_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -144,7 +148,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZones */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag)
+                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -154,7 +158,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("AvailabilityZoneIds") /* AvailabilityZoneIds com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneIds */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -164,7 +168,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("LoadBalancerNames") /* LoadBalancerNames com.amazonaws.autoscaling#AutoScalingGroup$LoadBalancerNames */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_load_balancer_names::de_load_balancer_names(&mut tag)
+                        crate::protocol_serde::shape_load_balancer_names::de_load_balancer_names(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -174,7 +178,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("TargetGroupARNs") /* TargetGroupARNs com.amazonaws.autoscaling#AutoScalingGroup$TargetGroupARNs */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_target_group_arns::de_target_group_arns(&mut tag)
+                        crate::protocol_serde::shape_target_group_arns::de_target_group_arns(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -212,7 +216,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("Instances") /* Instances com.amazonaws.autoscaling#AutoScalingGroup$Instances */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_instances::de_instances(&mut tag)
+                        crate::protocol_serde::shape_instances::de_instances(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -236,7 +240,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("SuspendedProcesses") /* SuspendedProcesses com.amazonaws.autoscaling#AutoScalingGroup$SuspendedProcesses */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_suspended_processes::de_suspended_processes(&mut tag)
+                        crate::protocol_serde::shape_suspended_processes::de_suspended_processes(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -272,7 +276,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("EnabledMetrics") /* EnabledMetrics com.amazonaws.autoscaling#AutoScalingGroup$EnabledMetrics */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_enabled_metrics::de_enabled_metrics(&mut tag)
+                        crate::protocol_serde::shape_enabled_metrics::de_enabled_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -295,7 +299,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("Tags") /* Tags com.amazonaws.autoscaling#AutoScalingGroup$Tags */ =>  {
                 let var_24 =
                     Some(
-                        crate::protocol_serde::shape_tag_description_list::de_tag_description_list(&mut tag)
+                        crate::protocol_serde::shape_tag_description_list::de_tag_description_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -305,7 +309,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("TerminationPolicies") /* TerminationPolicies com.amazonaws.autoscaling#AutoScalingGroup$TerminationPolicies */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_termination_policies::de_termination_policies(&mut tag)
+                        crate::protocol_serde::shape_termination_policies::de_termination_policies(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -373,7 +377,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("WarmPoolConfiguration") /* WarmPoolConfiguration com.amazonaws.autoscaling#AutoScalingGroup$WarmPoolConfiguration */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_warm_pool_configuration::de_warm_pool_configuration(&mut tag)
+                        crate::protocol_serde::shape_warm_pool_configuration::de_warm_pool_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -439,7 +443,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("TrafficSources") /* TrafficSources com.amazonaws.autoscaling#AutoScalingGroup$TrafficSources */ =>  {
                 let var_35 =
                     Some(
-                        crate::protocol_serde::shape_traffic_sources::de_traffic_sources(&mut tag)
+                        crate::protocol_serde::shape_traffic_sources::de_traffic_sources(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -449,7 +453,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("InstanceMaintenancePolicy") /* InstanceMaintenancePolicy com.amazonaws.autoscaling#AutoScalingGroup$InstanceMaintenancePolicy */ =>  {
                 let var_36 =
                     Some(
-                        crate::protocol_serde::shape_instance_maintenance_policy::de_instance_maintenance_policy(&mut tag)
+                        crate::protocol_serde::shape_instance_maintenance_policy::de_instance_maintenance_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -473,7 +477,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("AvailabilityZoneDistribution") /* AvailabilityZoneDistribution com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneDistribution */ =>  {
                 let var_38 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_distribution::de_availability_zone_distribution(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_distribution::de_availability_zone_distribution(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -483,7 +487,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("AvailabilityZoneImpairmentPolicy") /* AvailabilityZoneImpairmentPolicy com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneImpairmentPolicy */ =>  {
                 let var_39 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_impairment_policy::de_availability_zone_impairment_policy(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_impairment_policy::de_availability_zone_impairment_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -493,7 +497,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("CapacityReservationSpecification") /* CapacityReservationSpecification com.amazonaws.autoscaling#AutoScalingGroup$CapacityReservationSpecification */ =>  {
                 let var_40 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_specification::de_capacity_reservation_specification(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_specification::de_capacity_reservation_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -503,7 +507,7 @@ pub fn de_auto_scaling_group(
             s if s.matches("InstanceLifecyclePolicy") /* InstanceLifecyclePolicy com.amazonaws.autoscaling#AutoScalingGroup$InstanceLifecyclePolicy */ =>  {
                 let var_41 =
                     Some(
-                        crate::protocol_serde::shape_instance_lifecycle_policy::de_instance_lifecycle_policy(&mut tag)
+                        crate::protocol_serde::shape_instance_lifecycle_policy::de_instance_lifecycle_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

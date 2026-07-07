@@ -2,10 +2,16 @@
 pub(crate) fn de_workflow_execution_started_event_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkflowExecutionStartedEventAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,7 @@ where
                             );
                         }
                         "taskList" => {
-                            builder = builder.set_task_list(crate::protocol_serde::shape_task_list::de_task_list(tokens, _value)?);
+                            builder = builder.set_task_list(crate::protocol_serde::shape_task_list::de_task_list(tokens, _value, depth + 1)?);
                         }
                         "taskPriority" => {
                             builder = builder.set_task_priority(
@@ -54,10 +60,11 @@ where
                             );
                         }
                         "workflowType" => {
-                            builder = builder.set_workflow_type(crate::protocol_serde::shape_workflow_type::de_workflow_type(tokens, _value)?);
+                            builder =
+                                builder.set_workflow_type(crate::protocol_serde::shape_workflow_type::de_workflow_type(tokens, _value, depth + 1)?);
                         }
                         "tagList" => {
-                            builder = builder.set_tag_list(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tag_list(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "continuedExecutionRunId" => {
                             builder = builder.set_continued_execution_run_id(
@@ -68,7 +75,9 @@ where
                         }
                         "parentWorkflowExecution" => {
                             builder = builder.set_parent_workflow_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "parentInitiatedEventId" => {

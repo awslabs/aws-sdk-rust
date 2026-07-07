@@ -136,10 +136,11 @@ pub(crate) fn de_get_metric_stream(
     value: &[u8],
     mut builder: crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
@@ -149,6 +150,7 @@ pub(crate) fn de_get_metric_stream(
                 Ok(
                     builder.set_include_filters(Some(crate::protocol_serde::shape_metric_stream_filters::de_metric_stream_filters(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -156,6 +158,7 @@ pub(crate) fn de_get_metric_stream(
                 Ok(
                     builder.set_exclude_filters(Some(crate::protocol_serde::shape_metric_stream_filters::de_metric_stream_filters(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -177,7 +180,10 @@ pub(crate) fn de_get_metric_stream(
             })?,
             "StatisticsConfigurations" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_statistics_configurations(Some(
-                    crate::protocol_serde::shape_metric_stream_statistics_configurations::de_metric_stream_statistics_configurations(decoder)?,
+                    crate::protocol_serde::shape_metric_stream_statistics_configurations::de_metric_stream_statistics_configurations(
+                        decoder,
+                        depth + 1,
+                    )?,
                 )))
             })?,
             "IncludeLinkedAccountsMetrics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -192,6 +198,8 @@ pub(crate) fn de_get_metric_stream(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -201,13 +209,13 @@ pub(crate) fn de_get_metric_stream(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

@@ -137,6 +137,8 @@ pub(crate) fn de_delete_gateway(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -157,7 +159,7 @@ pub(crate) fn de_delete_gateway(
                     );
                 }
                 "statusReasons" => {
-                    builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons::de_status_reasons(tokens, _value)?);
+                    builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons::de_status_reasons(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

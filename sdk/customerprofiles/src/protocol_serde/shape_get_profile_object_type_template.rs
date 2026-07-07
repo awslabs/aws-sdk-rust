@@ -132,6 +132,8 @@ pub(crate) fn de_get_profile_object_type_template(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -141,10 +143,10 @@ pub(crate) fn de_get_profile_object_type_template(
                     builder = builder.set_allow_profile_creation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Fields" => {
-                    builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
+                    builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                 }
                 "Keys" => {
-                    builder = builder.set_keys(crate::protocol_serde::shape_key_map::de_key_map(tokens, _value)?);
+                    builder = builder.set_keys(crate::protocol_serde::shape_key_map::de_key_map(tokens, _value, depth + 1)?);
                 }
                 "SourceLastUpdatedTimestampFormat" => {
                     builder = builder.set_source_last_updated_timestamp_format(

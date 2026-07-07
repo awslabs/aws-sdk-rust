@@ -69,6 +69,8 @@ pub fn de_get_storage_lens_configuration_tagging(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetStorageLensConfigurationTaggingResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetStorageLensConfigurationTaggingResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -79,7 +81,7 @@ pub fn de_get_storage_lens_configuration_tagging(
             s if s.matches("Tags") /* Tags com.amazonaws.s3control.synthetic#GetStorageLensConfigurationTaggingOutput$Tags */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_tags::de_storage_lens_tags(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_tags::de_storage_lens_tags(&mut tag, depth + 1)
                         ?
                     )
                 ;

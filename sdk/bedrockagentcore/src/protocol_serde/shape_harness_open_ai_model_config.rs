@@ -27,5 +27,11 @@ pub fn ser_harness_open_ai_model_config(
             ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.api_format {
+        object.key("apiFormat").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.additional_params {
+        object.key("additionalParams").document(var_5);
+    }
     Ok(())
 }

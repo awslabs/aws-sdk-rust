@@ -2,10 +2,16 @@
 pub(crate) fn de_async_invoke_output_data_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AsyncInvokeOutputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,8 +37,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3OutputDataConfig" => Some(crate::types::AsyncInvokeOutputDataConfig::S3OutputDataConfig(
-                            crate::protocol_serde::shape_async_invoke_s3_output_data_config::de_async_invoke_s3_output_data_config(tokens, _value)?
-                                .ok_or_else(|| {
+                            crate::protocol_serde::shape_async_invoke_s3_output_data_config::de_async_invoke_s3_output_data_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3OutputDataConfig' cannot be null")
                             })?,
                         )),

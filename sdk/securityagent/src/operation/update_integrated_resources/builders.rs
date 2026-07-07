@@ -22,7 +22,7 @@ impl crate::operation::update_integrated_resources::builders::UpdateIntegratedRe
 }
 /// Fluent builder constructing a request to `UpdateIntegratedResources`.
 ///
-/// Updates the integrated resources for an agent space
+/// <p>Updates the integrated resources for an agent space, including their capabilities.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIntegratedResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateIntegratedResourcesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_integration_id()
     }
@@ -141,17 +141,17 @@ impl UpdateIntegratedResourcesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// List of integrated resources to update
+    /// <p>The list of integrated resource items to update.</p>
     pub fn items(mut self, input: crate::types::IntegratedResourceInputItem) -> Self {
         self.inner = self.inner.items(input);
         self
     }
-    /// List of integrated resources to update
+    /// <p>The list of integrated resource items to update.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedResourceInputItem>>) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }
-    /// List of integrated resources to update
+    /// <p>The list of integrated resource items to update.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegratedResourceInputItem>> {
         self.inner.get_items()
     }

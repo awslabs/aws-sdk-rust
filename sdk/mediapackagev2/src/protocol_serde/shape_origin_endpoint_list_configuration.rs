@@ -2,10 +2,16 @@
 pub(crate) fn de_origin_endpoint_list_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OriginEndpointListConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -70,27 +76,49 @@ where
                             )?);
                         }
                         "HlsManifests" => {
-                            builder =
-                                builder.set_hls_manifests(crate::protocol_serde::shape_list_hls_manifests::de_list_hls_manifests(tokens, _value)?);
+                            builder = builder.set_hls_manifests(crate::protocol_serde::shape_list_hls_manifests::de_list_hls_manifests(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LowLatencyHlsManifests" => {
                             builder = builder.set_low_latency_hls_manifests(
-                                crate::protocol_serde::shape_list_low_latency_hls_manifests::de_list_low_latency_hls_manifests(tokens, _value)?,
+                                crate::protocol_serde::shape_list_low_latency_hls_manifests::de_list_low_latency_hls_manifests(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DashManifests" => {
-                            builder =
-                                builder.set_dash_manifests(crate::protocol_serde::shape_list_dash_manifests::de_list_dash_manifests(tokens, _value)?);
+                            builder = builder.set_dash_manifests(crate::protocol_serde::shape_list_dash_manifests::de_list_dash_manifests(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MssManifests" => {
-                            builder =
-                                builder.set_mss_manifests(crate::protocol_serde::shape_list_mss_manifests::de_list_mss_manifests(tokens, _value)?);
+                            builder = builder.set_mss_manifests(crate::protocol_serde::shape_list_mss_manifests::de_list_mss_manifests(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ForceEndpointErrorConfiguration" => {
                             builder = builder.set_force_endpoint_error_configuration(
                                 crate::protocol_serde::shape_force_endpoint_error_configuration::de_force_endpoint_error_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
+                            );
+                        }
+                        "UriSeparator" => {
+                            builder = builder.set_uri_separator(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UriSeparator::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

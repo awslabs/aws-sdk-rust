@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_global_cluster(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::GlobalCluster, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::GlobalCluster::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -131,7 +135,7 @@ pub fn de_global_cluster(
             s if s.matches("GlobalClusterMembers") /* GlobalClusterMembers com.amazonaws.neptune#GlobalCluster$GlobalClusterMembers */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_global_cluster_member_list::de_global_cluster_member_list(&mut tag)
+                        crate::protocol_serde::shape_global_cluster_member_list::de_global_cluster_member_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -141,7 +145,7 @@ pub fn de_global_cluster(
             s if s.matches("FailoverState") /* FailoverState com.amazonaws.neptune#GlobalCluster$FailoverState */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_failover_state::de_failover_state(&mut tag)
+                        crate::protocol_serde::shape_failover_state::de_failover_state(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -151,7 +155,7 @@ pub fn de_global_cluster(
             s if s.matches("TagList") /* TagList com.amazonaws.neptune#GlobalCluster$TagList */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

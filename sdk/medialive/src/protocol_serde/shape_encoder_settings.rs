@@ -117,10 +117,16 @@ pub fn ser_encoder_settings(
 pub(crate) fn de_encoder_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EncoderSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -132,64 +138,90 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptions" => {
                             builder = builder.set_audio_descriptions(
-                                crate::protocol_serde::shape_list_of_audio_description::de_list_of_audio_description(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_audio_description::de_list_of_audio_description(tokens, _value, depth + 1)?,
                             );
                         }
                         "availBlanking" => {
-                            builder = builder.set_avail_blanking(crate::protocol_serde::shape_avail_blanking::de_avail_blanking(tokens, _value)?);
+                            builder = builder.set_avail_blanking(crate::protocol_serde::shape_avail_blanking::de_avail_blanking(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "availConfiguration" => {
-                            builder = builder
-                                .set_avail_configuration(crate::protocol_serde::shape_avail_configuration::de_avail_configuration(tokens, _value)?);
+                            builder = builder.set_avail_configuration(crate::protocol_serde::shape_avail_configuration::de_avail_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "blackoutSlate" => {
-                            builder = builder.set_blackout_slate(crate::protocol_serde::shape_blackout_slate::de_blackout_slate(tokens, _value)?);
+                            builder = builder.set_blackout_slate(crate::protocol_serde::shape_blackout_slate::de_blackout_slate(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "captionDescriptions" => {
                             builder = builder.set_caption_descriptions(
-                                crate::protocol_serde::shape_list_of_caption_description::de_list_of_caption_description(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_caption_description::de_list_of_caption_description(tokens, _value, depth + 1)?,
                             );
                         }
                         "featureActivations" => {
-                            builder = builder
-                                .set_feature_activations(crate::protocol_serde::shape_feature_activations::de_feature_activations(tokens, _value)?);
+                            builder = builder.set_feature_activations(crate::protocol_serde::shape_feature_activations::de_feature_activations(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "globalConfiguration" => {
                             builder = builder.set_global_configuration(crate::protocol_serde::shape_global_configuration::de_global_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "motionGraphicsConfiguration" => {
                             builder = builder.set_motion_graphics_configuration(
-                                crate::protocol_serde::shape_motion_graphics_configuration::de_motion_graphics_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_motion_graphics_configuration::de_motion_graphics_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "nielsenConfiguration" => {
                             builder = builder.set_nielsen_configuration(
-                                crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "outputGroups" => {
                             builder = builder.set_output_groups(crate::protocol_serde::shape_list_of_output_group::de_list_of_output_group(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "timecodeConfig" => {
-                            builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens, _value)?);
+                            builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "videoDescriptions" => {
                             builder = builder.set_video_descriptions(
-                                crate::protocol_serde::shape_list_of_video_description::de_list_of_video_description(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_video_description::de_list_of_video_description(tokens, _value, depth + 1)?,
                             );
                         }
                         "thumbnailConfiguration" => {
                             builder = builder.set_thumbnail_configuration(
-                                crate::protocol_serde::shape_thumbnail_configuration::de_thumbnail_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_thumbnail_configuration::de_thumbnail_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "colorCorrectionSettings" => {
                             builder = builder.set_color_correction_settings(
-                                crate::protocol_serde::shape_color_correction_settings::de_color_correction_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_color_correction_settings::de_color_correction_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,6 +2,7 @@
 pub(crate) fn de_batch_update_recommendation_status_successful_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -9,6 +10,11 @@ pub(crate) fn de_batch_update_recommendation_status_successful_entry<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -34,7 +40,11 @@ where
                         }
                         "item" => {
                             builder = builder.set_item(
-                                crate::protocol_serde::shape_update_recommendation_status_item::de_update_recommendation_status_item(tokens, _value)?,
+                                crate::protocol_serde::shape_update_recommendation_status_item::de_update_recommendation_status_item(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "excluded" => {

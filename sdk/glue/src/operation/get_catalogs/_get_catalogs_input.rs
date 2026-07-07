@@ -14,6 +14,8 @@ pub struct GetCatalogsInput {
     /// <p>Whether to list the default catalog in the account and region in the response. Defaults to <code>false</code>. When <code>true</code> and <code>ParentCatalogId = NULL | Amazon Web Services Account ID</code>, all catalogs and the default catalog are enumerated in the response.</p>
     /// <p>When the <code>ParentCatalogId</code> is not equal to null, and this attribute is passed as <code>false</code> or <code>true</code>, an <code>InvalidInputException</code> is thrown.</p>
     pub include_root: ::std::option::Option<bool>,
+    /// <p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>
+    pub has_databases: ::std::option::Option<bool>,
 }
 impl GetCatalogsInput {
     /// <p>The ID of the parent catalog in which the catalog resides. If none is provided, the Amazon Web Services Account Number is used by default.</p>
@@ -37,6 +39,10 @@ impl GetCatalogsInput {
     pub fn include_root(&self) -> ::std::option::Option<bool> {
         self.include_root
     }
+    /// <p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>
+    pub fn has_databases(&self) -> ::std::option::Option<bool> {
+        self.has_databases
+    }
 }
 impl GetCatalogsInput {
     /// Creates a new builder-style object to manufacture [`GetCatalogsInput`](crate::operation::get_catalogs::GetCatalogsInput).
@@ -54,6 +60,7 @@ pub struct GetCatalogsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) recursive: ::std::option::Option<bool>,
     pub(crate) include_root: ::std::option::Option<bool>,
+    pub(crate) has_databases: ::std::option::Option<bool>,
 }
 impl GetCatalogsInputBuilder {
     /// <p>The ID of the parent catalog in which the catalog resides. If none is provided, the Amazon Web Services Account Number is used by default.</p>
@@ -129,6 +136,20 @@ impl GetCatalogsInputBuilder {
     pub fn get_include_root(&self) -> &::std::option::Option<bool> {
         &self.include_root
     }
+    /// <p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>
+    pub fn has_databases(mut self, input: bool) -> Self {
+        self.has_databases = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>
+    pub fn set_has_databases(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.has_databases = input;
+        self
+    }
+    /// <p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>
+    pub fn get_has_databases(&self) -> &::std::option::Option<bool> {
+        &self.has_databases
+    }
     /// Consumes the builder and constructs a [`GetCatalogsInput`](crate::operation::get_catalogs::GetCatalogsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_catalogs::GetCatalogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_catalogs::GetCatalogsInput {
@@ -137,6 +158,7 @@ impl GetCatalogsInputBuilder {
             max_results: self.max_results,
             recursive: self.recursive,
             include_root: self.include_root,
+            has_databases: self.has_databases,
         })
     }
 }

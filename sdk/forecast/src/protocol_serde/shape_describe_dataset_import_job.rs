@@ -96,6 +96,8 @@ pub(crate) fn de_describe_dataset_import_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -147,7 +149,7 @@ pub(crate) fn de_describe_dataset_import_job(
                     );
                 }
                 "DataSource" => {
-                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
+                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value, depth + 1)?);
                 }
                 "EstimatedTimeRemainingInMinutes" => {
                     builder = builder.set_estimated_time_remaining_in_minutes(
@@ -157,7 +159,11 @@ pub(crate) fn de_describe_dataset_import_job(
                     );
                 }
                 "FieldStatistics" => {
-                    builder = builder.set_field_statistics(crate::protocol_serde::shape_field_statistics::de_field_statistics(tokens, _value)?);
+                    builder = builder.set_field_statistics(crate::protocol_serde::shape_field_statistics::de_field_statistics(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "DataSize" => {
                     builder =

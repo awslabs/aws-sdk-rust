@@ -106,6 +106,8 @@ pub fn de_list_attached_group_policies(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListAttachedGroupPoliciesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListAttachedGroupPoliciesResponse got {start_el:?}"
@@ -123,7 +125,7 @@ pub fn de_list_attached_group_policies(
             s if s.matches("AttachedPolicies") /* AttachedPolicies com.amazonaws.iam.synthetic#ListAttachedGroupPoliciesOutput$AttachedPolicies */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_attached_policies_list_type::de_attached_policies_list_type(&mut tag)
+                        crate::protocol_serde::shape_attached_policies_list_type::de_attached_policies_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

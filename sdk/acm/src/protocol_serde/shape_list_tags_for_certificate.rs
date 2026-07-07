@@ -54,6 +54,21 @@ pub fn de_list_tags_for_certificate_http_error(
             }
             tmp
         }),
+        "ValidationException" => crate::operation::list_tags_for_certificate::ListTagsForCertificateError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_certificate::ListTagsForCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::list_tags_for_certificate::ListTagsForCertificateError::generic(generic),
     })
 }
@@ -96,13 +111,15 @@ pub(crate) fn de_list_tags_for_certificate(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

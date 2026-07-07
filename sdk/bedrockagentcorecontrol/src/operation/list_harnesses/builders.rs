@@ -22,7 +22,7 @@ impl crate::operation::list_harnesses::builders::ListHarnessesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListHarnesses`.
 ///
-/// <p>Operation to list Harnesses.</p>
+/// <p>Operation to list harnesses.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHarnessesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -123,6 +123,12 @@ pub struct AutomationRulesFindingFilters {
     /// <p>The name of the Amazon Web Services account in which a finding was generated.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub aws_account_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub resource_provider: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The unique identifier of the account that owns the resource that the finding applies to, for example, Azure Subscription Id or Amazon Web Services Account Id</p>
+    pub resource_owner_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The unique identifier of the organization that owns the resource that the finding applies to, for example, Azure Tenant Id</p>
+    pub resource_owner_org_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AutomationRulesFindingFilters {
     /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub CSPM.</p>
@@ -396,6 +402,24 @@ impl AutomationRulesFindingFilters {
     pub fn aws_account_name(&self) -> &[crate::types::StringFilter] {
         self.aws_account_name.as_deref().unwrap_or_default()
     }
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_provider.is_none()`.
+    pub fn resource_provider(&self) -> &[crate::types::StringFilter] {
+        self.resource_provider.as_deref().unwrap_or_default()
+    }
+    /// <p>The unique identifier of the account that owns the resource that the finding applies to, for example, Azure Subscription Id or Amazon Web Services Account Id</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_owner_account_id.is_none()`.
+    pub fn resource_owner_account_id(&self) -> &[crate::types::StringFilter] {
+        self.resource_owner_account_id.as_deref().unwrap_or_default()
+    }
+    /// <p>The unique identifier of the organization that owns the resource that the finding applies to, for example, Azure Tenant Id</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_owner_org_id.is_none()`.
+    pub fn resource_owner_org_id(&self) -> &[crate::types::StringFilter] {
+        self.resource_owner_org_id.as_deref().unwrap_or_default()
+    }
 }
 impl AutomationRulesFindingFilters {
     /// Creates a new builder-style object to manufacture [`AutomationRulesFindingFilters`](crate::types::AutomationRulesFindingFilters).
@@ -446,6 +470,9 @@ pub struct AutomationRulesFindingFiltersBuilder {
     pub(crate) resource_application_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_application_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) aws_account_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_provider: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_owner_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_owner_org_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AutomationRulesFindingFiltersBuilder {
     /// Appends an item to `product_arn`.
@@ -1337,6 +1364,66 @@ impl AutomationRulesFindingFiltersBuilder {
     pub fn get_aws_account_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.aws_account_name
     }
+    /// Appends an item to `resource_provider`.
+    ///
+    /// To override the contents of this collection use [`set_resource_provider`](Self::set_resource_provider).
+    ///
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub fn resource_provider(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.resource_provider.unwrap_or_default();
+        v.push(input);
+        self.resource_provider = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub fn set_resource_provider(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.resource_provider = input;
+        self
+    }
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub fn get_resource_provider(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_provider
+    }
+    /// Appends an item to `resource_owner_account_id`.
+    ///
+    /// To override the contents of this collection use [`set_resource_owner_account_id`](Self::set_resource_owner_account_id).
+    ///
+    /// <p>The unique identifier of the account that owns the resource that the finding applies to, for example, Azure Subscription Id or Amazon Web Services Account Id</p>
+    pub fn resource_owner_account_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.resource_owner_account_id.unwrap_or_default();
+        v.push(input);
+        self.resource_owner_account_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The unique identifier of the account that owns the resource that the finding applies to, for example, Azure Subscription Id or Amazon Web Services Account Id</p>
+    pub fn set_resource_owner_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.resource_owner_account_id = input;
+        self
+    }
+    /// <p>The unique identifier of the account that owns the resource that the finding applies to, for example, Azure Subscription Id or Amazon Web Services Account Id</p>
+    pub fn get_resource_owner_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_owner_account_id
+    }
+    /// Appends an item to `resource_owner_org_id`.
+    ///
+    /// To override the contents of this collection use [`set_resource_owner_org_id`](Self::set_resource_owner_org_id).
+    ///
+    /// <p>The unique identifier of the organization that owns the resource that the finding applies to, for example, Azure Tenant Id</p>
+    pub fn resource_owner_org_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.resource_owner_org_id.unwrap_or_default();
+        v.push(input);
+        self.resource_owner_org_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The unique identifier of the organization that owns the resource that the finding applies to, for example, Azure Tenant Id</p>
+    pub fn set_resource_owner_org_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.resource_owner_org_id = input;
+        self
+    }
+    /// <p>The unique identifier of the organization that owns the resource that the finding applies to, for example, Azure Tenant Id</p>
+    pub fn get_resource_owner_org_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_owner_org_id
+    }
     /// Consumes the builder and constructs a [`AutomationRulesFindingFilters`](crate::types::AutomationRulesFindingFilters).
     pub fn build(self) -> crate::types::AutomationRulesFindingFilters {
         crate::types::AutomationRulesFindingFilters {
@@ -1378,6 +1465,9 @@ impl AutomationRulesFindingFiltersBuilder {
             resource_application_arn: self.resource_application_arn,
             resource_application_name: self.resource_application_name,
             aws_account_name: self.aws_account_name,
+            resource_provider: self.resource_provider,
+            resource_owner_account_id: self.resource_owner_account_id,
+            resource_owner_org_id: self.resource_owner_org_id,
         }
     }
 }

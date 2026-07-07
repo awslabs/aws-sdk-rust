@@ -92,6 +92,15 @@ pub(crate) fn create_stream_group_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn stream_session_access_not_ready_exception_correct_errors(
+    mut builder: crate::types::error::builders::StreamSessionAccessNotReadyExceptionBuilder,
+) -> crate::types::error::builders::StreamSessionAccessNotReadyExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_application_output_output_correct_errors(
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> crate::operation::get_application::builders::GetApplicationOutputBuilder {

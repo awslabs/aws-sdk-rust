@@ -22,6 +22,8 @@ pub struct CanaryRun {
     pub dry_run_config: ::std::option::Option<crate::types::CanaryDryRunConfigOutput>,
     /// <p>The browser type associated with this canary run.</p>
     pub browser_type: ::std::option::Option<crate::types::BrowserType>,
+    /// <p>The Amazon Web Services Region where this canary run was executed.</p>
+    pub location: ::std::option::Option<::std::string::String>,
 }
 impl CanaryRun {
     /// <p>A unique ID that identifies this canary run.</p>
@@ -60,6 +62,10 @@ impl CanaryRun {
     pub fn browser_type(&self) -> ::std::option::Option<&crate::types::BrowserType> {
         self.browser_type.as_ref()
     }
+    /// <p>The Amazon Web Services Region where this canary run was executed.</p>
+    pub fn location(&self) -> ::std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl CanaryRun {
     /// Creates a new builder-style object to manufacture [`CanaryRun`](crate::types::CanaryRun).
@@ -81,6 +87,7 @@ pub struct CanaryRunBuilder {
     pub(crate) artifact_s3_location: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run_config: ::std::option::Option<crate::types::CanaryDryRunConfigOutput>,
     pub(crate) browser_type: ::std::option::Option<crate::types::BrowserType>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
 }
 impl CanaryRunBuilder {
     /// <p>A unique ID that identifies this canary run.</p>
@@ -209,6 +216,20 @@ impl CanaryRunBuilder {
     pub fn get_browser_type(&self) -> &::std::option::Option<crate::types::BrowserType> {
         &self.browser_type
     }
+    /// <p>The Amazon Web Services Region where this canary run was executed.</p>
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this canary run was executed.</p>
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.location = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this canary run was executed.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// Consumes the builder and constructs a [`CanaryRun`](crate::types::CanaryRun).
     pub fn build(self) -> crate::types::CanaryRun {
         crate::types::CanaryRun {
@@ -221,6 +242,7 @@ impl CanaryRunBuilder {
             artifact_s3_location: self.artifact_s3_location,
             dry_run_config: self.dry_run_config,
             browser_type: self.browser_type,
+            location: self.location,
         }
     }
 }

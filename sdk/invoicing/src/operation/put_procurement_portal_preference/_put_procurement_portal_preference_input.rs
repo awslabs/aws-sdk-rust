@@ -21,6 +21,8 @@ pub struct PutProcurementPortalPreferenceInput {
     pub purchase_order_retrieval_enabled: ::std::option::Option<bool>,
     /// <p>Updated list of contact information for portal administrators and technical contacts.</p>
     pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutProcurementPortalPreferenceInput {
     /// <p>The Amazon Resource Name (ARN) of the procurement portal preference to update.</p>
@@ -61,6 +63,10 @@ impl PutProcurementPortalPreferenceInput {
     pub fn contacts(&self) -> &[crate::types::Contact] {
         self.contacts.as_deref().unwrap_or_default()
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl ::std::fmt::Debug for PutProcurementPortalPreferenceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -74,6 +80,7 @@ impl ::std::fmt::Debug for PutProcurementPortalPreferenceInput {
         formatter.field("einvoice_delivery_preference", &self.einvoice_delivery_preference);
         formatter.field("purchase_order_retrieval_enabled", &self.purchase_order_retrieval_enabled);
         formatter.field("contacts", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }
@@ -97,6 +104,7 @@ pub struct PutProcurementPortalPreferenceInputBuilder {
     pub(crate) einvoice_delivery_preference: ::std::option::Option<crate::types::EinvoiceDeliveryPreference>,
     pub(crate) purchase_order_retrieval_enabled: ::std::option::Option<bool>,
     pub(crate) contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutProcurementPortalPreferenceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the procurement portal preference to update.</p>
@@ -234,6 +242,20 @@ impl PutProcurementPortalPreferenceInputBuilder {
     pub fn get_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Contact>> {
         &self.contacts
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`PutProcurementPortalPreferenceInput`](crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceInput).
     pub fn build(
         self,
@@ -251,6 +273,7 @@ impl PutProcurementPortalPreferenceInputBuilder {
             einvoice_delivery_preference: self.einvoice_delivery_preference,
             purchase_order_retrieval_enabled: self.purchase_order_retrieval_enabled,
             contacts: self.contacts,
+            client_token: self.client_token,
         })
     }
 }
@@ -266,6 +289,7 @@ impl ::std::fmt::Debug for PutProcurementPortalPreferenceInputBuilder {
         formatter.field("einvoice_delivery_preference", &self.einvoice_delivery_preference);
         formatter.field("purchase_order_retrieval_enabled", &self.purchase_order_retrieval_enabled);
         formatter.field("contacts", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }

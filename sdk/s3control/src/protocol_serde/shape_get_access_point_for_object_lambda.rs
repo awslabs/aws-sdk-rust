@@ -67,6 +67,8 @@ pub fn de_get_access_point_for_object_lambda(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetAccessPointForObjectLambdaResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetAccessPointForObjectLambdaResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -77,7 +79,7 @@ pub fn de_get_access_point_for_object_lambda(
             s if s.matches("PublicAccessBlockConfiguration") /* PublicAccessBlockConfiguration com.amazonaws.s3control.synthetic#GetAccessPointForObjectLambdaOutput$PublicAccessBlockConfiguration */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut tag)
+                        crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -101,7 +103,7 @@ pub fn de_get_access_point_for_object_lambda(
             s if s.matches("Alias") /* Alias com.amazonaws.s3control.synthetic#GetAccessPointForObjectLambdaOutput$Alias */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag, depth + 1)
                         ?
                     )
                 ;

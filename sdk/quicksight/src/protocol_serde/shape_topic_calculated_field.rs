@@ -96,10 +96,16 @@ pub fn ser_topic_calculated_field(
 pub(crate) fn de_topic_calculated_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TopicCalculatedField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -131,7 +137,8 @@ where
                             );
                         }
                         "CalculatedFieldSynonyms" => {
-                            builder = builder.set_calculated_field_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens, _value)?);
+                            builder =
+                                builder.set_calculated_field_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens, _value, depth + 1)?);
                         }
                         "IsIncludedInTopic" => {
                             builder = builder.set_is_included_in_topic(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -154,8 +161,11 @@ where
                             );
                         }
                         "DefaultFormatting" => {
-                            builder = builder
-                                .set_default_formatting(crate::protocol_serde::shape_default_formatting::de_default_formatting(tokens, _value)?);
+                            builder = builder.set_default_formatting(crate::protocol_serde::shape_default_formatting::de_default_formatting(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Aggregation" => {
                             builder = builder.set_aggregation(
@@ -165,20 +175,32 @@ where
                             );
                         }
                         "ComparativeOrder" => {
-                            builder =
-                                builder.set_comparative_order(crate::protocol_serde::shape_comparative_order::de_comparative_order(tokens, _value)?);
+                            builder = builder.set_comparative_order(crate::protocol_serde::shape_comparative_order::de_comparative_order(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SemanticType" => {
-                            builder = builder.set_semantic_type(crate::protocol_serde::shape_semantic_type::de_semantic_type(tokens, _value)?);
+                            builder =
+                                builder.set_semantic_type(crate::protocol_serde::shape_semantic_type::de_semantic_type(tokens, _value, depth + 1)?);
                         }
                         "AllowedAggregations" => {
                             builder = builder.set_allowed_aggregations(
-                                crate::protocol_serde::shape_author_specified_aggregations::de_author_specified_aggregations(tokens, _value)?,
+                                crate::protocol_serde::shape_author_specified_aggregations::de_author_specified_aggregations(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "NotAllowedAggregations" => {
                             builder = builder.set_not_allowed_aggregations(
-                                crate::protocol_serde::shape_author_specified_aggregations::de_author_specified_aggregations(tokens, _value)?,
+                                crate::protocol_serde::shape_author_specified_aggregations::de_author_specified_aggregations(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "NeverAggregateInFilter" => {
@@ -186,8 +208,11 @@ where
                                 builder.set_never_aggregate_in_filter(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "CellValueSynonyms" => {
-                            builder = builder
-                                .set_cell_value_synonyms(crate::protocol_serde::shape_cell_value_synonyms::de_cell_value_synonyms(tokens, _value)?);
+                            builder = builder.set_cell_value_synonyms(crate::protocol_serde::shape_cell_value_synonyms::de_cell_value_synonyms(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "NonAdditive" => {
                             builder = builder.set_non_additive(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

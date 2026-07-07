@@ -2,10 +2,16 @@
 pub(crate) fn de_describe_linked_channel_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribeLinkedChannelSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,13 +24,19 @@ where
                         "followerChannelSettings" => {
                             builder = builder.set_follower_channel_settings(
                                 crate::protocol_serde::shape_describe_follower_channel_settings::de_describe_follower_channel_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "primaryChannelSettings" => {
                             builder = builder.set_primary_channel_settings(
-                                crate::protocol_serde::shape_describe_primary_channel_settings::de_describe_primary_channel_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_describe_primary_channel_settings::de_describe_primary_channel_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

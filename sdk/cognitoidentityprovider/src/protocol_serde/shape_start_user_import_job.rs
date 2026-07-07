@@ -65,6 +65,22 @@ pub fn de_start_user_import_job_http_error(
             }
             tmp
         }),
+        "OperationNotEnabledException" => crate::operation::start_user_import_job::StartUserImportJobError::OperationNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotEnabledExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_not_enabled_exception::de_operation_not_enabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::start_user_import_job::StartUserImportJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "PreconditionNotMetException" => crate::operation::start_user_import_job::StartUserImportJobError::PreconditionNotMetException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -153,6 +169,8 @@ pub(crate) fn de_start_user_import_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -160,7 +178,9 @@ pub(crate) fn de_start_user_import_job(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "UserImportJob" => {
                     builder = builder.set_user_import_job(crate::protocol_serde::shape_user_import_job_type::de_user_import_job_type(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

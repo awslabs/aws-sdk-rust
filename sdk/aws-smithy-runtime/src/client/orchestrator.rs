@@ -5,6 +5,7 @@
 
 use crate::client::interceptors::Interceptors;
 use crate::client::orchestrator::http::{log_response_body, read_body};
+use crate::client::retries::LongPollingBackoff;
 use crate::client::timeout::{MaybeTimeout, MaybeTimeoutConfig, TimeoutKind};
 use crate::client::{
     http::body::minimum_throughput::MaybeUploadThroughputCheckFuture,
@@ -30,6 +31,7 @@ use aws_smithy_runtime_api::client::ser_de::{
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::byte_stream::ByteStream;
 use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::retry::{MergeRetryConfig, RetryConfig};
 use aws_smithy_types::timeout::{MergeTimeoutConfig, TimeoutConfig};
 use endpoints::apply_endpoint;
 use std::mem;
@@ -206,6 +208,13 @@ fn apply_configuration(
     );
     cfg.interceptor_state().store_put(resolved_timeout_config);
 
+    let resolved_retry_config = cfg.load::<MergeRetryConfig>();
+    debug!(
+        "retry settings for this operation: {:?}",
+        resolved_retry_config
+    );
+    cfg.interceptor_state().store_put(resolved_retry_config);
+
     components.validate_final_config(cfg)?;
     Ok(components)
 }
@@ -258,33 +267,47 @@ async fn try_op(
         modify_before_retry_loop(ctx, runtime_components, cfg);
     });
 
-    // If we got a retry strategy from the bag, ask it what to do.
-    // Otherwise, assume we should attempt the initial request.
-    let should_attempt = runtime_components
-        .retry_strategy()
-        .should_attempt_initial_request(runtime_components, cfg);
-    match should_attempt {
-        // Yes, let's make a request
-        Ok(ShouldAttempt::Yes) => debug!("retry strategy has OKed initial request"),
-        // No, this request shouldn't be sent
-        Ok(ShouldAttempt::No) => {
-            let err: BoxError = "the retry strategy indicates that an initial request shouldn't be made, but it didn't specify why".into();
-            halt!([ctx] => OrchestratorError::other(err));
-        }
-        // No, we shouldn't make a request because...
-        Err(err) => halt!([ctx] => OrchestratorError::other(err)),
-        Ok(ShouldAttempt::YesAfterDelay(delay)) => {
-            let sleep_impl = halt_on_err!([ctx] => runtime_components.sleep_impl().ok_or_else(|| OrchestratorError::other(
-                "the retry strategy requested a delay before sending the initial request, but no 'async sleep' implementation was set"
-            )));
-            debug!("retry strategy has OKed initial request after a {delay:?} delay");
-            sleep_impl.sleep(delay).await;
+    // Loop to acquire a send token from the adaptive rate limiter.
+    // When capacity is insufficient, the strategy returns YesAfterDelay.
+    // After sleeping, we re-check because other tasks may have consumed
+    // tokens during our sleep.
+    let retry_strategy = runtime_components.retry_strategy();
+    loop {
+        let should_attempt = retry_strategy.should_attempt_initial_request(runtime_components, cfg);
+        match should_attempt {
+            Ok(ShouldAttempt::Yes) => {
+                debug!("retry strategy has OKed initial request");
+                break;
+            }
+            Ok(ShouldAttempt::No) => {
+                let err: BoxError = "the retry strategy indicates that an initial request shouldn't be made, but it didn't specify why".into();
+                halt!([ctx] => OrchestratorError::other(err));
+            }
+            Err(err) => halt!([ctx] => OrchestratorError::other(err)),
+            Ok(ShouldAttempt::YesAfterDelay(delay)) => {
+                let sleep_impl = halt_on_err!([ctx] => runtime_components.sleep_impl().ok_or_else(|| OrchestratorError::other(
+                    "the retry strategy requested a delay before sending the initial request, but no 'async sleep' implementation was set"
+                )));
+                debug!("retry strategy has OKed initial request after a {delay:?} delay");
+                sleep_impl.sleep(delay).await;
+                continue;
+            }
         }
     }
 
     // Save a request checkpoint before we make the request. This will allow us to "rewind"
     // the request in the case of retry attempts.
     ctx.save_checkpoint();
+    // For long-polling operations, seed a shared slot so the retry strategy can
+    // communicate a backoff delay when the token bucket is empty.
+    if cfg
+        .load::<RetryConfig>()
+        .and_then(|rc| rc.retry_spec())
+        .is_some_and(|s| s.long_polling())
+    {
+        cfg.interceptor_state()
+            .store_put(LongPollingBackoff::default());
+    }
     let mut retry_delay = None;
     for i in 1u32.. {
         // Break from the loop if we can't rewind the request's state. This will always succeed the
@@ -334,6 +357,15 @@ async fn try_op(
             // No, this request shouldn't be retried
             ShouldAttempt::No => {
                 debug!("a retry is either unnecessary or not possible, exiting attempt loop");
+                if let Some(delay) = cfg.load::<LongPollingBackoff>().and_then(|h| h.take()) {
+                    if let Some(sleep_impl) = runtime_components.sleep_impl() {
+                        // This sleep is inside the operation timeout, so it gets cancelled
+                        // if one is set. Without an operation timeout, the delay is bounded
+                        // by `max_backoff` (enforced upstream in `calculate_backoff`).
+                        debug!("backing off {delay:?} before returning (no retry quota available)");
+                        sleep_impl.sleep(delay).await;
+                    }
+                }
                 break;
             }
             ShouldAttempt::YesAfterDelay(delay) => {
@@ -435,7 +467,7 @@ async fn try_attempt(
             .expect("a request deserializer must be in the config bag");
         let maybe_deserialized = {
             let _span = debug_span!("deserialize_streaming").entered();
-            response_deserializer.deserialize_streaming(response)
+            response_deserializer.deserialize_streaming_with_config(response, cfg)
         };
         match maybe_deserialized {
             Some(output_or_error) => output_or_error,
@@ -446,7 +478,7 @@ async fn try_attempt(
                 .and_then(|_| {
                     let _span = debug_span!("deserialize_nonstreaming").entered();
                     log_response_body(response, cfg);
-                    response_deserializer.deserialize_nonstreaming(response)
+                    response_deserializer.deserialize_nonstreaming_with_config(response, cfg)
                 }),
         }
     }

@@ -22,6 +22,9 @@ pub mod create_association;
 /// Types for the `CreateAssociationBatch` operation.
 pub mod create_association_batch;
 
+/// Types for the `CreateCloudConnector` operation.
+pub mod create_cloud_connector;
+
 /// Types for the `CreateDocument` operation.
 pub mod create_document;
 
@@ -45,6 +48,9 @@ pub mod delete_activation;
 
 /// Types for the `DeleteAssociation` operation.
 pub mod delete_association;
+
+/// Types for the `DeleteCloudConnector` operation.
+pub mod delete_cloud_connector;
 
 /// Types for the `DeleteDocument` operation.
 pub mod delete_document;
@@ -199,6 +205,9 @@ pub mod get_automation_execution;
 /// Types for the `GetCalendarState` operation.
 pub mod get_calendar_state;
 
+/// Types for the `GetCloudConnector` operation.
+pub mod get_cloud_connector;
+
 /// Types for the `GetCommandInvocation` operation.
 pub mod get_command_invocation;
 
@@ -279,6 +288,9 @@ pub mod list_association_versions;
 
 /// Types for the `ListAssociations` operation.
 pub mod list_associations;
+
+/// Types for the `ListCloudConnectors` operation.
+pub mod list_cloud_connectors;
 
 /// Types for the `ListCommandInvocations` operation.
 pub mod list_command_invocations;
@@ -403,6 +415,9 @@ pub mod update_association;
 /// Types for the `UpdateAssociationStatus` operation.
 pub mod update_association_status;
 
+/// Types for the `UpdateCloudConnector` operation.
+pub mod update_cloud_connector;
+
 /// Types for the `UpdateDocument` operation.
 pub mod update_document;
 
@@ -438,3 +453,6 @@ pub mod update_resource_data_sync;
 
 /// Types for the `UpdateServiceSetting` operation.
 pub mod update_service_setting;
+
+/// Types for the `ValidateCloudConnector` operation.
+pub mod validate_cloud_connector;

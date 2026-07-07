@@ -91,6 +91,8 @@ pub fn de_describe_stack_set_operation(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeStackSetOperationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeStackSetOperationResponse got {start_el:?}"
@@ -108,7 +110,7 @@ pub fn de_describe_stack_set_operation(
             s if s.matches("StackSetOperation") /* StackSetOperation com.amazonaws.cloudformation.synthetic#DescribeStackSetOperationOutput$StackSetOperation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_operation::de_stack_set_operation(&mut tag)
+                        crate::protocol_serde::shape_stack_set_operation::de_stack_set_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;

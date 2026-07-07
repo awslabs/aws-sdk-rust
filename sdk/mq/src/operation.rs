@@ -40,6 +40,9 @@ pub mod describe_configuration;
 /// Types for the `DescribeConfigurationRevision` operation.
 pub mod describe_configuration_revision;
 
+/// Types for the `DescribeSharedResources` operation.
+pub mod describe_shared_resources;
+
 /// Types for the `DescribeUser` operation.
 pub mod describe_user;
 

@@ -33,6 +33,8 @@ pub use crate::types::_cis_scan_results_aggregated_by_target_resource_filter_cri
 
 pub use crate::types::_list_cis_scans_filter_criteria::ListCisScansFilterCriteriaBuilder;
 
+pub use crate::types::_connector_filter_criteria::ConnectorFilterCriteriaBuilder;
+
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteriaBuilder;
 
 pub use crate::types::_sort_criteria::SortCriteriaBuilder;
@@ -48,6 +50,10 @@ pub use crate::types::_update_cis_targets::UpdateCisTargetsBuilder;
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
 
 pub use crate::types::_ec2_configuration::Ec2ConfigurationBuilder;
+
+pub use crate::types::_update_configuration_inheritance::UpdateConfigurationInheritanceBuilder;
+
+pub use crate::types::_connector_scan_configuration::ConnectorScanConfigurationBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
@@ -95,6 +101,8 @@ pub use crate::types::_periodic_scan_configuration::PeriodicScanConfigurationBui
 
 pub use crate::types::_continuous_integration_scan_configuration::ContinuousIntegrationScanConfigurationBuilder;
 
+pub use crate::types::_azure_provider_detail_create::AzureProviderDetailCreateBuilder;
+
 pub use crate::types::_account::AccountBuilder;
 
 pub use crate::types::_cis_scan_result_details::CisScanResultDetailsBuilder;
@@ -104,6 +112,8 @@ pub use crate::types::_cluster_information::ClusterInformationBuilder;
 pub use crate::types::_ecr_rescan_duration_state::EcrRescanDurationStateBuilder;
 
 pub use crate::types::_ec2_scan_mode_state::Ec2ScanModeStateBuilder;
+
+pub use crate::types::_vm_scanner_state::VmScannerStateBuilder;
 
 pub use crate::types::_permission::PermissionBuilder;
 
@@ -120,6 +130,10 @@ pub use crate::types::_code_security_integration_summary::CodeSecurityIntegratio
 pub use crate::types::_code_security_scan_configuration_association_summary::CodeSecurityScanConfigurationAssociationSummaryBuilder;
 
 pub use crate::types::_code_security_scan_configuration_summary::CodeSecurityScanConfigurationSummaryBuilder;
+
+pub use crate::types::_connector::ConnectorBuilder;
+
+pub use crate::types::_connector_scan_configuration_item::ConnectorScanConfigurationItemBuilder;
 
 pub use crate::types::_covered_resource::CoveredResourceBuilder;
 
@@ -155,6 +169,12 @@ pub use crate::types::_lambda_function_aggregation::LambdaFunctionAggregationBui
 
 pub use crate::types::_code_repository_aggregation::CodeRepositoryAggregationBuilder;
 
+pub use crate::types::_vm_instance_aggregation::VmInstanceAggregationBuilder;
+
+pub use crate::types::_container_image_aggregation::ContainerImageAggregationBuilder;
+
+pub use crate::types::_serverless_function_aggregation::ServerlessFunctionAggregationBuilder;
+
 pub use crate::types::_finding::FindingBuilder;
 
 pub use crate::types::_usage_total::UsageTotalBuilder;
@@ -171,6 +191,10 @@ pub use crate::types::_update_git_lab_self_managed_integration_detail::UpdateGit
 
 pub use crate::types::_update_git_hub_integration_detail::UpdateGitHubIntegrationDetailBuilder;
 
+pub use crate::types::_azure_provider_detail_update::AzureProviderDetailUpdateBuilder;
+
+pub use crate::types::_connector_container_image_scan_configuration::ConnectorContainerImageScanConfigurationBuilder;
+
 pub use crate::types::_state::StateBuilder;
 
 pub use crate::types::_resource_state::ResourceStateBuilder;
@@ -182,6 +206,8 @@ pub use crate::types::_cisa_data::CisaDataBuilder;
 pub use crate::types::_exploit_observed::ExploitObservedBuilder;
 
 pub use crate::types::_time::TimeBuilder;
+
+pub use crate::types::_azure_scope_configuration_input::AzureScopeConfigurationInputBuilder;
 
 pub use crate::types::_date_filter::DateFilterBuilder;
 
@@ -221,6 +247,18 @@ pub use crate::types::_cis_scan_status_filter::CisScanStatusFilterBuilder;
 
 pub use crate::types::_cis_date_filter::CisDateFilterBuilder;
 
+pub use crate::types::_connector_arn_filter::ConnectorArnFilterBuilder;
+
+pub use crate::types::_aws_config_connector_arn_filter::AwsConfigConnectorArnFilterBuilder;
+
+pub use crate::types::_connector_type_filter::ConnectorTypeFilterBuilder;
+
+pub use crate::types::_provider_filter::ProviderFilterBuilder;
+
+pub use crate::types::_connector_health::ConnectorHealthBuilder;
+
+pub use crate::types::_azure_scope_configuration::AzureScopeConfigurationBuilder;
+
 pub use crate::types::_coverage_string_filter::CoverageStringFilterBuilder;
 
 pub use crate::types::_coverage_map_filter::CoverageMapFilterBuilder;
@@ -257,6 +295,12 @@ pub use crate::types::_lambda_function_aggregation_response::LambdaFunctionAggre
 
 pub use crate::types::_code_repository_aggregation_response::CodeRepositoryAggregationResponseBuilder;
 
+pub use crate::types::_vm_instance_aggregation_response::VmInstanceAggregationResponseBuilder;
+
+pub use crate::types::_container_image_aggregation_response::ContainerImageAggregationResponseBuilder;
+
+pub use crate::types::_serverless_function_aggregation_response::ServerlessFunctionAggregationResponseBuilder;
+
 pub use crate::types::_remediation::RemediationBuilder;
 
 pub use crate::types::_inspector_score_details::InspectorScoreDetailsBuilder;
@@ -289,7 +333,11 @@ pub use crate::types::_evidence::EvidenceBuilder;
 
 pub use crate::types::_free_trial_info::FreeTrialInfoBuilder;
 
+pub use crate::types::_scope_configuration_input::ScopeConfigurationInputBuilder;
+
 pub use crate::types::_cluster_details::ClusterDetailsBuilder;
+
+pub use crate::types::_scope_configuration::ScopeConfigurationBuilder;
 
 pub use crate::types::_ecr_repository_metadata::EcrRepositoryMetadataBuilder;
 
@@ -300,6 +348,16 @@ pub use crate::types::_ec2_metadata::Ec2MetadataBuilder;
 pub use crate::types::_lambda_function_metadata::LambdaFunctionMetadataBuilder;
 
 pub use crate::types::_code_repository_metadata::CodeRepositoryMetadataBuilder;
+
+pub use crate::types::_vm_instance_metadata::VmInstanceMetadataBuilder;
+
+pub use crate::types::_container_image_metadata::ContainerImageMetadataBuilder;
+
+pub use crate::types::_container_repository_metadata::ContainerRepositoryMetadataBuilder;
+
+pub use crate::types::_container_registry_metadata::ContainerRegistryMetadataBuilder;
+
+pub use crate::types::_serverless_function_metadata::ServerlessFunctionMetadataBuilder;
 
 pub use crate::types::_severity_counts::SeverityCountsBuilder;
 
@@ -338,6 +396,12 @@ pub use crate::types::_aws_ecr_container_image_details::AwsEcrContainerImageDeta
 pub use crate::types::_aws_lambda_function_details::AwsLambdaFunctionDetailsBuilder;
 
 pub use crate::types::_code_repository_details::CodeRepositoryDetailsBuilder;
+
+pub use crate::types::_vm::VmBuilder;
+
+pub use crate::types::_image::ImageBuilder;
+
+pub use crate::types::_serverless_function::ServerlessFunctionBuilder;
 
 pub use crate::types::_cvss_score_adjustment::CvssScoreAdjustmentBuilder;
 

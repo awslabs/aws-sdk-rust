@@ -75,10 +75,16 @@ pub fn ser_aws_cloud_front_distribution_details(
 pub(crate) fn de_aws_cloud_front_distribution_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsCloudFrontDistributionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -90,12 +96,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CacheBehaviors" => {
                             builder = builder.set_cache_behaviors(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_cache_behaviors::de_aws_cloud_front_distribution_cache_behaviors(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_cache_behaviors::de_aws_cloud_front_distribution_cache_behaviors(tokens, _value, depth + 1)?
                                 );
                         }
                         "DefaultCacheBehavior" => {
                             builder = builder.set_default_cache_behavior(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_default_cache_behavior::de_aws_cloud_front_distribution_default_cache_behavior(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_default_cache_behavior::de_aws_cloud_front_distribution_default_cache_behavior(tokens, _value, depth + 1)?
                                 );
                         }
                         "DefaultRootObject" => {
@@ -129,25 +135,29 @@ where
                         "Logging" => {
                             builder = builder.set_logging(
                                 crate::protocol_serde::shape_aws_cloud_front_distribution_logging::de_aws_cloud_front_distribution_logging(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Origins" => {
                             builder = builder.set_origins(
                                 crate::protocol_serde::shape_aws_cloud_front_distribution_origins::de_aws_cloud_front_distribution_origins(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "OriginGroups" => {
                             builder = builder.set_origin_groups(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_origin_groups::de_aws_cloud_front_distribution_origin_groups(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_origin_groups::de_aws_cloud_front_distribution_origin_groups(tokens, _value, depth + 1)?
                                 );
                         }
                         "ViewerCertificate" => {
                             builder = builder.set_viewer_certificate(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_viewer_certificate::de_aws_cloud_front_distribution_viewer_certificate(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_viewer_certificate::de_aws_cloud_front_distribution_viewer_certificate(tokens, _value, depth + 1)?
                                 );
                         }
                         "Status" => {

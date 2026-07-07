@@ -26,22 +26,30 @@ pub fn ser_s3_resource(
 
 pub(crate) fn de_s3_resource(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::S3Resource, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::S3ResourceBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::S3ResourceBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "BucketArn" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_bucket_arn(Some(decoder.string()?))))?
             }
             "KeyRange" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_key_range(Some(crate::protocol_serde::shape_key_range::de_key_range(decoder)?)))
+                Ok(builder.set_key_range(Some(crate::protocol_serde::shape_key_range::de_key_range(decoder, depth + 1)?)))
             })?,
             "TargetOnDeviceServices" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_target_on_device_services(Some(
-                    crate::protocol_serde::shape_target_on_device_service_list::de_target_on_device_service_list(decoder)?,
+                    crate::protocol_serde::shape_target_on_device_service_list::de_target_on_device_service_list(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -62,13 +70,13 @@ pub(crate) fn de_s3_resource(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

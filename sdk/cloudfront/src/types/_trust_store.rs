@@ -18,6 +18,8 @@ pub struct TrustStore {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The trust store's reason.</p>
     pub reason: ::std::option::Option<::std::string::String>,
+    /// <p>A Boolean that determines whether the trust store uses the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub use_client_certificate_ocsp_endpoint: ::std::option::Option<bool>,
 }
 impl TrustStore {
     /// <p>The trust store's ID.</p>
@@ -48,6 +50,10 @@ impl TrustStore {
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
+    /// <p>A Boolean that determines whether the trust store uses the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn use_client_certificate_ocsp_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_client_certificate_ocsp_endpoint
+    }
 }
 impl TrustStore {
     /// Creates a new builder-style object to manufacture [`TrustStore`](crate::types::TrustStore).
@@ -67,6 +73,7 @@ pub struct TrustStoreBuilder {
     pub(crate) number_of_ca_certificates: ::std::option::Option<i32>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) use_client_certificate_ocsp_endpoint: ::std::option::Option<bool>,
 }
 impl TrustStoreBuilder {
     /// <p>The trust store's ID.</p>
@@ -167,6 +174,20 @@ impl TrustStoreBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
+    /// <p>A Boolean that determines whether the trust store uses the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn use_client_certificate_ocsp_endpoint(mut self, input: bool) -> Self {
+        self.use_client_certificate_ocsp_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean that determines whether the trust store uses the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn set_use_client_certificate_ocsp_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_client_certificate_ocsp_endpoint = input;
+        self
+    }
+    /// <p>A Boolean that determines whether the trust store uses the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn get_use_client_certificate_ocsp_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.use_client_certificate_ocsp_endpoint
+    }
     /// Consumes the builder and constructs a [`TrustStore`](crate::types::TrustStore).
     pub fn build(self) -> crate::types::TrustStore {
         crate::types::TrustStore {
@@ -177,6 +198,7 @@ impl TrustStoreBuilder {
             number_of_ca_certificates: self.number_of_ca_certificates,
             last_modified_time: self.last_modified_time,
             reason: self.reason,
+            use_client_certificate_ocsp_endpoint: self.use_client_certificate_ocsp_endpoint,
         }
     }
 }

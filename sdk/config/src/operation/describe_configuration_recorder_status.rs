@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
 #[derive(Debug)]
 struct DescribeConfigurationRecorderStatusResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeConfigurationRecorderStatusResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -304,6 +305,13 @@ pub enum DescribeConfigurationRecorderStatusError {
     /// <p>One or more of the specified resource types are already associated or disassociated with the configuration recorder.</p></li>
     /// <li>
     /// <p>For service-linked configuration recorders, the configuration recorder does not record one or more of the specified resource types.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You have provided both <code>Arn</code> and <code>ServicePrincipal</code>. Only one of <code>Arn</code> or <code>ServicePrincipal</code> can be specified.</p></li>
+    /// <li>
+    /// <p>You have provided a service principal for service-linked configuration recorder that is not valid.</p></li>
     /// </ul>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

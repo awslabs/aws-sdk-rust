@@ -151,6 +151,8 @@ pub(crate) fn de_list_third_party_firewall_firewall_policies(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -159,7 +161,9 @@ pub(crate) fn de_list_third_party_firewall_firewall_policies(
                 "ThirdPartyFirewallFirewallPolicies" => {
                     builder = builder.set_third_party_firewall_firewall_policies(
                         crate::protocol_serde::shape_third_party_firewall_firewall_policies::de_third_party_firewall_firewall_policies(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

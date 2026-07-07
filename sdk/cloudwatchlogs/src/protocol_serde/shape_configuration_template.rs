@@ -2,10 +2,16 @@
 pub(crate) fn de_configuration_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigurationTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,15 +51,22 @@ where
                         }
                         "defaultDeliveryConfigValues" => {
                             builder = builder.set_default_delivery_config_values(
-                                    crate::protocol_serde::shape_configuration_template_delivery_config_values::de_configuration_template_delivery_config_values(tokens, _value)?
+                                    crate::protocol_serde::shape_configuration_template_delivery_config_values::de_configuration_template_delivery_config_values(tokens, _value, depth + 1)?
                                 );
                         }
                         "allowedFields" => {
-                            builder = builder.set_allowed_fields(crate::protocol_serde::shape_allowed_fields::de_allowed_fields(tokens, _value)?);
+                            builder = builder.set_allowed_fields(crate::protocol_serde::shape_allowed_fields::de_allowed_fields(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "allowedOutputFormats" => {
-                            builder =
-                                builder.set_allowed_output_formats(crate::protocol_serde::shape_output_formats::de_output_formats(tokens, _value)?);
+                            builder = builder.set_allowed_output_formats(crate::protocol_serde::shape_output_formats::de_output_formats(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "allowedActionForAllowVendedLogsDeliveryForResource" => {
                             builder = builder.set_allowed_action_for_allow_vended_logs_delivery_for_resource(
@@ -64,12 +77,29 @@ where
                         }
                         "allowedFieldDelimiters" => {
                             builder = builder.set_allowed_field_delimiters(
-                                crate::protocol_serde::shape_allowed_field_delimiters::de_allowed_field_delimiters(tokens, _value)?,
+                                crate::protocol_serde::shape_allowed_field_delimiters::de_allowed_field_delimiters(tokens, _value, depth + 1)?,
                             );
                         }
                         "allowedSuffixPathFields" => {
-                            builder =
-                                builder.set_allowed_suffix_path_fields(crate::protocol_serde::shape_record_fields::de_record_fields(tokens, _value)?);
+                            builder = builder.set_allowed_suffix_path_fields(crate::protocol_serde::shape_record_fields::de_record_fields(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "deliverySourceConfiguration" => {
+                            builder = builder.set_delivery_source_configuration(
+                                crate::protocol_serde::shape_delivery_source_configuration_schemas::de_delivery_source_configuration_schemas(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "s3TablesIntegration" => {
+                            builder = builder.set_s3_tables_integration(
+                                crate::protocol_serde::shape_s3_tables_integration::de_s3_tables_integration(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

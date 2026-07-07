@@ -54,10 +54,16 @@ pub fn ser_domain_settings(
 pub(crate) fn de_domain_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DomainSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,13 +75,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SecurityGroupIds" => {
                             builder = builder.set_security_group_ids(
-                                crate::protocol_serde::shape_domain_security_group_ids::de_domain_security_group_ids(tokens, _value)?,
+                                crate::protocol_serde::shape_domain_security_group_ids::de_domain_security_group_ids(tokens, _value, depth + 1)?,
                             );
                         }
                         "RStudioServerProDomainSettings" => {
                             builder = builder.set_r_studio_server_pro_domain_settings(
                                 crate::protocol_serde::shape_r_studio_server_pro_domain_settings::de_r_studio_server_pro_domain_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -89,20 +97,29 @@ where
                         "TrustedIdentityPropagationSettings" => {
                             builder = builder.set_trusted_identity_propagation_settings(
                                 crate::protocol_serde::shape_trusted_identity_propagation_settings::de_trusted_identity_propagation_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "DockerSettings" => {
-                            builder = builder.set_docker_settings(crate::protocol_serde::shape_docker_settings::de_docker_settings(tokens, _value)?);
+                            builder = builder.set_docker_settings(crate::protocol_serde::shape_docker_settings::de_docker_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AmazonQSettings" => {
-                            builder =
-                                builder.set_amazon_q_settings(crate::protocol_serde::shape_amazon_q_settings::de_amazon_q_settings(tokens, _value)?);
+                            builder = builder.set_amazon_q_settings(crate::protocol_serde::shape_amazon_q_settings::de_amazon_q_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "UnifiedStudioSettings" => {
                             builder = builder.set_unified_studio_settings(
-                                crate::protocol_serde::shape_unified_studio_settings::de_unified_studio_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_unified_studio_settings::de_unified_studio_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "IpAddressType" => {

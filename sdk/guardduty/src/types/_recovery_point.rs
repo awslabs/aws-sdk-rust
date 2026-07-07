@@ -6,11 +6,17 @@
 pub struct RecoveryPoint {
     /// <p>The name of the Amazon Web Services Backup vault that contains the name of the recovery point to be scanned.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
+    /// <p>Contains information about the time range within the continuous backup in Amazon Web Services Backup to scan.</p>
+    pub continuous_scan_details: ::std::option::Option<crate::types::ContinuousScanDetails>,
 }
 impl RecoveryPoint {
     /// <p>The name of the Amazon Web Services Backup vault that contains the name of the recovery point to be scanned.</p>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
+    }
+    /// <p>Contains information about the time range within the continuous backup in Amazon Web Services Backup to scan.</p>
+    pub fn continuous_scan_details(&self) -> ::std::option::Option<&crate::types::ContinuousScanDetails> {
+        self.continuous_scan_details.as_ref()
     }
 }
 impl RecoveryPoint {
@@ -25,6 +31,7 @@ impl RecoveryPoint {
 #[non_exhaustive]
 pub struct RecoveryPointBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
+    pub(crate) continuous_scan_details: ::std::option::Option<crate::types::ContinuousScanDetails>,
 }
 impl RecoveryPointBuilder {
     /// <p>The name of the Amazon Web Services Backup vault that contains the name of the recovery point to be scanned.</p>
@@ -42,10 +49,25 @@ impl RecoveryPointBuilder {
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
+    /// <p>Contains information about the time range within the continuous backup in Amazon Web Services Backup to scan.</p>
+    pub fn continuous_scan_details(mut self, input: crate::types::ContinuousScanDetails) -> Self {
+        self.continuous_scan_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the time range within the continuous backup in Amazon Web Services Backup to scan.</p>
+    pub fn set_continuous_scan_details(mut self, input: ::std::option::Option<crate::types::ContinuousScanDetails>) -> Self {
+        self.continuous_scan_details = input;
+        self
+    }
+    /// <p>Contains information about the time range within the continuous backup in Amazon Web Services Backup to scan.</p>
+    pub fn get_continuous_scan_details(&self) -> &::std::option::Option<crate::types::ContinuousScanDetails> {
+        &self.continuous_scan_details
+    }
     /// Consumes the builder and constructs a [`RecoveryPoint`](crate::types::RecoveryPoint).
     pub fn build(self) -> crate::types::RecoveryPoint {
         crate::types::RecoveryPoint {
             backup_vault_name: self.backup_vault_name,
+            continuous_scan_details: self.continuous_scan_details,
         }
     }
 }

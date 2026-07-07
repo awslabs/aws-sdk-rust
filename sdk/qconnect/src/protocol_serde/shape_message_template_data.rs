@@ -2,10 +2,16 @@
 pub(crate) fn de_message_template_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MessageTemplateData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -85,7 +91,11 @@ where
                         }
                         "content" => {
                             builder = builder.set_content(
-                                crate::protocol_serde::shape_message_template_content_provider::de_message_template_content_provider(tokens, _value)?,
+                                crate::protocol_serde::shape_message_template_content_provider::de_message_template_content_provider(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "description" => {
@@ -104,23 +114,25 @@ where
                         }
                         "sourceConfigurationSummary" => {
                             builder = builder.set_source_configuration_summary(
-                                    crate::protocol_serde::shape_message_template_source_configuration_summary::de_message_template_source_configuration_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_message_template_source_configuration_summary::de_message_template_source_configuration_summary(tokens, _value, depth + 1)?
                                 );
                         }
                         "groupingConfiguration" => {
                             builder = builder.set_grouping_configuration(
-                                crate::protocol_serde::shape_grouping_configuration::de_grouping_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_grouping_configuration::de_grouping_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "defaultAttributes" => {
                             builder = builder.set_default_attributes(
-                                crate::protocol_serde::shape_message_template_attributes::de_message_template_attributes(tokens, _value)?,
+                                crate::protocol_serde::shape_message_template_attributes::de_message_template_attributes(tokens, _value, depth + 1)?,
                             );
                         }
                         "attributeTypes" => {
                             builder = builder.set_attribute_types(
                                 crate::protocol_serde::shape_message_template_attribute_type_list::de_message_template_attribute_type_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -132,7 +144,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

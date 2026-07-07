@@ -69,6 +69,13 @@ pub(crate) fn reflens_list_access_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_actions_output_output_next_token(
+    input: &crate::operation::list_actions::ListActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = &input.next_token;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_asset_model_composite_models_output_output_next_token(
     input: &crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -304,6 +311,13 @@ pub(crate) fn lens_list_access_policies_output_output_access_policy_summaries(
     input: crate::operation::list_access_policies::ListAccessPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>> {
     let input = input.access_policy_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_actions_output_output_action_summaries(
+    input: crate::operation::list_actions::ListActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+    let input = input.action_summaries;
     ::std::option::Option::Some(input)
 }
 

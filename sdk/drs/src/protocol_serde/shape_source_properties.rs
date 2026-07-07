@@ -2,10 +2,16 @@
 pub(crate) fn de_source_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SourceProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,52 +20,57 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "lastUpdatedDateTime" => {
-                            builder = builder.set_last_updated_date_time(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "lastUpdatedDateTime" => {
+                                builder = builder.set_last_updated_date_time(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "recommendedInstanceType" => {
+                                builder = builder.set_recommended_instance_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "identificationHints" => {
+                                builder = builder.set_identification_hints(
+                                    crate::protocol_serde::shape_identification_hints::de_identification_hints(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "networkInterfaces" => {
+                                builder = builder.set_network_interfaces(crate::protocol_serde::shape_network_interfaces::de_network_interfaces(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "disks" => {
+                                builder = builder.set_disks(crate::protocol_serde::shape_disks::de_disks(tokens, _value, depth + 1)?);
+                            }
+                            "cpus" => {
+                                builder = builder.set_cpus(crate::protocol_serde::shape_cpus::de_cpus(tokens, _value, depth + 1)?);
+                            }
+                            "ramBytes" => {
+                                builder = builder.set_ram_bytes(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "os" => {
+                                builder = builder.set_os(crate::protocol_serde::shape_os::de_os(tokens, _value, depth + 1)?);
+                            }
+                            "supportsNitroInstances" => {
+                                builder =
+                                    builder.set_supports_nitro_instances(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "recommendedInstanceType" => {
-                            builder = builder.set_recommended_instance_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "identificationHints" => {
-                            builder = builder.set_identification_hints(crate::protocol_serde::shape_identification_hints::de_identification_hints(
-                                tokens, _value,
-                            )?);
-                        }
-                        "networkInterfaces" => {
-                            builder = builder
-                                .set_network_interfaces(crate::protocol_serde::shape_network_interfaces::de_network_interfaces(tokens, _value)?);
-                        }
-                        "disks" => {
-                            builder = builder.set_disks(crate::protocol_serde::shape_disks::de_disks(tokens, _value)?);
-                        }
-                        "cpus" => {
-                            builder = builder.set_cpus(crate::protocol_serde::shape_cpus::de_cpus(tokens, _value)?);
-                        }
-                        "ramBytes" => {
-                            builder = builder.set_ram_bytes(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "os" => {
-                            builder = builder.set_os(crate::protocol_serde::shape_os::de_os(tokens, _value)?);
-                        }
-                        "supportsNitroInstances" => {
-                            builder =
-                                builder.set_supports_nitro_instances(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

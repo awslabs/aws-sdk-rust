@@ -41,9 +41,9 @@ pub use crate::types::_knowledge_base::KnowledgeBaseBuilder;
 
 pub use crate::types::_agent_version::AgentVersionBuilder;
 
-pub use crate::types::_flow_validation::FlowValidationBuilder;
-
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
+
+pub use crate::types::_flow_validation::FlowValidationBuilder;
 
 pub use crate::types::_flow_alias_concurrency_configuration::FlowAliasConcurrencyConfigurationBuilder;
 
@@ -60,6 +60,8 @@ pub use crate::types::_agent_summary::AgentSummaryBuilder;
 pub use crate::types::_agent_alias_routing_configuration_list_item::AgentAliasRoutingConfigurationListItemBuilder;
 
 pub use crate::types::_agent_alias_summary::AgentAliasSummaryBuilder;
+
+pub use crate::types::_managed_knowledge_base_connector_configuration::ManagedKnowledgeBaseConnectorConfigurationBuilder;
 
 pub use crate::types::_s3_data_source_configuration::S3DataSourceConfigurationBuilder;
 
@@ -96,6 +98,8 @@ pub use crate::types::_knowledge_base_document_detail::KnowledgeBaseDocumentDeta
 pub use crate::types::_knowledge_base_document::KnowledgeBaseDocumentBuilder;
 
 pub use crate::types::_vector_knowledge_base_configuration::VectorKnowledgeBaseConfigurationBuilder;
+
+pub use crate::types::_managed_knowledge_base_configuration::ManagedKnowledgeBaseConfigurationBuilder;
 
 pub use crate::types::_kendra_knowledge_base_configuration::KendraKnowledgeBaseConfigurationBuilder;
 
@@ -142,6 +146,10 @@ pub use crate::types::_function::FunctionBuilder;
 pub use crate::types::_prompt_configuration::PromptConfigurationBuilder;
 
 pub use crate::types::_agent_alias_history_event::AgentAliasHistoryEventBuilder;
+
+pub use crate::types::_deletion_protection_configuration::DeletionProtectionConfigurationBuilder;
+
+pub use crate::types::_media_extraction_configuration::MediaExtractionConfigurationBuilder;
 
 pub use crate::types::_web_source_configuration::WebSourceConfigurationBuilder;
 
@@ -269,6 +277,12 @@ pub use crate::types::_invalid_loop_boundary_flow_validation_details::InvalidLoo
 
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
+pub use crate::types::_image_extraction_configuration::ImageExtractionConfigurationBuilder;
+
+pub use crate::types::_audio_extraction_configuration::AudioExtractionConfigurationBuilder;
+
+pub use crate::types::_video_extraction_configuration::VideoExtractionConfigurationBuilder;
+
 pub use crate::types::_url_configuration::UrlConfigurationBuilder;
 
 pub use crate::types::_web_crawler_limits::WebCrawlerLimitsBuilder;
@@ -352,6 +366,8 @@ pub use crate::types::_hierarchical_chunking_level_configuration::HierarchicalCh
 pub use crate::types::_transformation_function::TransformationFunctionBuilder;
 
 pub use crate::types::_metadata_attribute::MetadataAttributeBuilder;
+
+pub use crate::types::_document_access_control_entry::DocumentAccessControlEntryBuilder;
 
 pub use crate::types::_inline_content::InlineContentBuilder;
 

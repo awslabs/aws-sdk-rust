@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourceTagsOutput {
-    /// <p>A list of tags used in the Amazon Connect instance.</p>
+    /// <p>A list of tags used in the Connect Customer instance.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchResourceTagsOutput {
-    /// <p>A list of tags used in the Amazon Connect instance.</p>
+    /// <p>A list of tags used in the Connect Customer instance.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::TagSet] {
@@ -46,19 +46,19 @@ impl SearchResourceTagsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags used in the Amazon Connect instance.</p>
+    /// <p>A list of tags used in the Connect Customer instance.</p>
     pub fn tags(mut self, input: crate::types::TagSet) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags used in the Amazon Connect instance.</p>
+    /// <p>A list of tags used in the Connect Customer instance.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags used in the Amazon Connect instance.</p>
+    /// <p>A list of tags used in the Connect Customer instance.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSet>> {
         &self.tags
     }

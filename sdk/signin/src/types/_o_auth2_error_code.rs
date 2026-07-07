@@ -13,8 +13,11 @@
 /// # let oauth2errorcode = unimplemented!();
 /// match oauth2errorcode {
 ///     OAuth2ErrorCode::AuthcodeExpired => { /* ... */ },
+///     OAuth2ErrorCode::Conflict => { /* ... */ },
 ///     OAuth2ErrorCode::InsufficientPermissions => { /* ... */ },
 ///     OAuth2ErrorCode::InvalidRequest => { /* ... */ },
+///     OAuth2ErrorCode::ResourceNotFound => { /* ... */ },
+///     OAuth2ErrorCode::ServiceQuotaExceeded => { /* ... */ },
 ///     OAuth2ErrorCode::TokenExpired => { /* ... */ },
 ///     OAuth2ErrorCode::UserCredentialsChanged => { /* ... */ },
 ///     OAuth2ErrorCode::ServerError => { /* ... */ },
@@ -51,10 +54,16 @@
 pub enum OAuth2ErrorCode {
     /// Authorization code has expired
     AuthcodeExpired,
+    /// Request conflicts with current state of the resource
+    Conflict,
     /// Insufficient permissions to perform this operation
     InsufficientPermissions,
     /// The request is missing a required parameter, includes an invalid parameter value, or is otherwise malformed
     InvalidRequest,
+    /// Requested resource was not found
+    ResourceNotFound,
+    /// Request would cause a service quota to be exceeded
+    ServiceQuotaExceeded,
     /// Token has expired and needs to be refreshed
     TokenExpired,
     /// User credentials have been changed
@@ -69,8 +78,11 @@ impl ::std::convert::From<&str> for OAuth2ErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "AUTHCODE_EXPIRED" => OAuth2ErrorCode::AuthcodeExpired,
+            "CONFLICT" => OAuth2ErrorCode::Conflict,
             "INSUFFICIENT_PERMISSIONS" => OAuth2ErrorCode::InsufficientPermissions,
             "INVALID_REQUEST" => OAuth2ErrorCode::InvalidRequest,
+            "RESOURCE_NOT_FOUND" => OAuth2ErrorCode::ResourceNotFound,
+            "SERVICE_QUOTA_EXCEEDED" => OAuth2ErrorCode::ServiceQuotaExceeded,
             "TOKEN_EXPIRED" => OAuth2ErrorCode::TokenExpired,
             "USER_CREDENTIALS_CHANGED" => OAuth2ErrorCode::UserCredentialsChanged,
             "server_error" => OAuth2ErrorCode::ServerError,
@@ -90,8 +102,11 @@ impl OAuth2ErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             OAuth2ErrorCode::AuthcodeExpired => "AUTHCODE_EXPIRED",
+            OAuth2ErrorCode::Conflict => "CONFLICT",
             OAuth2ErrorCode::InsufficientPermissions => "INSUFFICIENT_PERMISSIONS",
             OAuth2ErrorCode::InvalidRequest => "INVALID_REQUEST",
+            OAuth2ErrorCode::ResourceNotFound => "RESOURCE_NOT_FOUND",
+            OAuth2ErrorCode::ServiceQuotaExceeded => "SERVICE_QUOTA_EXCEEDED",
             OAuth2ErrorCode::TokenExpired => "TOKEN_EXPIRED",
             OAuth2ErrorCode::UserCredentialsChanged => "USER_CREDENTIALS_CHANGED",
             OAuth2ErrorCode::ServerError => "server_error",
@@ -102,8 +117,11 @@ impl OAuth2ErrorCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AUTHCODE_EXPIRED",
+            "CONFLICT",
             "INSUFFICIENT_PERMISSIONS",
             "INVALID_REQUEST",
+            "RESOURCE_NOT_FOUND",
+            "SERVICE_QUOTA_EXCEEDED",
             "TOKEN_EXPIRED",
             "USER_CREDENTIALS_CHANGED",
             "server_error",
@@ -131,8 +149,11 @@ impl ::std::fmt::Display for OAuth2ErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OAuth2ErrorCode::AuthcodeExpired => write!(f, "AUTHCODE_EXPIRED"),
+            OAuth2ErrorCode::Conflict => write!(f, "CONFLICT"),
             OAuth2ErrorCode::InsufficientPermissions => write!(f, "INSUFFICIENT_PERMISSIONS"),
             OAuth2ErrorCode::InvalidRequest => write!(f, "INVALID_REQUEST"),
+            OAuth2ErrorCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            OAuth2ErrorCode::ServiceQuotaExceeded => write!(f, "SERVICE_QUOTA_EXCEEDED"),
             OAuth2ErrorCode::TokenExpired => write!(f, "TOKEN_EXPIRED"),
             OAuth2ErrorCode::UserCredentialsChanged => write!(f, "USER_CREDENTIALS_CHANGED"),
             OAuth2ErrorCode::ServerError => write!(f, "server_error"),

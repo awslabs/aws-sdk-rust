@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFeedOutput {
-    /// <p>The ID of the feed where you deleted the associated resource.</p>
+    /// <p>The ARN of the feed.</p>
     pub arn: ::std::string::String,
-    /// <p>The ARN of the resource that you deleted.</p>
+    /// <p>The ID of the feed.</p>
     pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DisassociateFeedOutput {
-    /// <p>The ID of the feed where you deleted the associated resource.</p>
+    /// <p>The ARN of the feed.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The ARN of the resource that you deleted.</p>
+    /// <p>The ID of the feed.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -42,33 +42,33 @@ pub struct DisassociateFeedOutputBuilder {
     _request_id: Option<String>,
 }
 impl DisassociateFeedOutputBuilder {
-    /// <p>The ID of the feed where you deleted the associated resource.</p>
+    /// <p>The ARN of the feed.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the feed where you deleted the associated resource.</p>
+    /// <p>The ARN of the feed.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ID of the feed where you deleted the associated resource.</p>
+    /// <p>The ARN of the feed.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of the resource that you deleted.</p>
+    /// <p>The ID of the feed.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource that you deleted.</p>
+    /// <p>The ID of the feed.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ARN of the resource that you deleted.</p>
+    /// <p>The ID of the feed.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

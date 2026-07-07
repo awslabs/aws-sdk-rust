@@ -38,11 +38,19 @@ pub fn ser_document_db_configuration(
 
 pub(crate) fn de_document_db_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DocumentDbConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::DocumentDbConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::DocumentDbConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "timeoutMinutes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -59,12 +67,13 @@ pub(crate) fn de_document_db_configuration(
                 Ok(
                     builder.set_ungraceful(Some(crate::protocol_serde::shape_document_db_ungraceful::de_document_db_ungraceful(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
             "globalClusterIdentifier" => builder.set_global_cluster_identifier(Some(decoder.string()?)),
             "databaseClusterArns" => builder.set_database_cluster_arns(Some(
-                crate::protocol_serde::shape_document_db_cluster_arns::de_document_db_cluster_arns(decoder)?,
+                crate::protocol_serde::shape_document_db_cluster_arns::de_document_db_cluster_arns(decoder, depth + 1)?,
             )),
             _ => {
                 decoder.skip()?;
@@ -84,13 +93,13 @@ pub(crate) fn de_document_db_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

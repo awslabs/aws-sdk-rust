@@ -49,6 +49,8 @@ pub fn de_provision_ipam_pool_cidr(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ProvisionIpamPoolCidrResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ProvisionIpamPoolCidrResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_provision_ipam_pool_cidr(
             s if s.matches("ipamPoolCidr") /* IpamPoolCidr com.amazonaws.ec2.synthetic#ProvisionIpamPoolCidrOutput$IpamPoolCidr */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipam_pool_cidr::de_ipam_pool_cidr(&mut tag)
+                        crate::protocol_serde::shape_ipam_pool_cidr::de_ipam_pool_cidr(&mut tag, depth + 1)
                         ?
                     )
                 ;

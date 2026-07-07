@@ -3,20 +3,29 @@ pub fn ser_send_message_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_message::SendMessageInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.content {
-        object.key("content").string(var_1.as_str());
+    if let Some(var_1) = &input.asset_ids {
+        let mut array_2 = object.key("assetIds").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().string(item_3.as_str());
+            }
+        }
+        array_2.finish();
     }
-    if let Some(var_2) = &input.context {
+    if let Some(var_4) = &input.content {
+        object.key("content").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.context {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("context").start_object();
-        crate::protocol_serde::shape_send_message_context::ser_send_message_context(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_6 = object.key("context").start_object();
+        crate::protocol_serde::shape_send_message_context::ser_send_message_context(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_4) = &input.execution_id {
-        object.key("executionId").string(var_4.as_str());
+    if let Some(var_7) = &input.execution_id {
+        object.key("executionId").string(var_7.as_str());
     }
-    if let Some(var_5) = &input.user_id {
-        object.key("userId").string(var_5.as_str());
+    if let Some(var_8) = &input.user_id {
+        object.key("userId").string(var_8.as_str());
     }
     Ok(())
 }

@@ -3,44 +3,44 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationOutput {
-    /// Application ID
+    /// <p>The unique identifier of the application.</p>
     pub application_id: ::std::string::String,
-    /// Domain where the application is available
+    /// <p>The domain associated with the application.</p>
     pub domain: ::std::string::String,
-    /// Name of the application, automatically assigned by the service
+    /// <p>The name of the application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// IAM Identity Center configuration for the application
+    /// <p>The IAM Identity Center configuration for the application.</p>
     pub idc_configuration: ::std::option::Option<crate::types::IdCConfiguration>,
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the application.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key used to encrypt data for the application.</p>
     pub default_kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
-    /// Application ID
+    /// <p>The unique identifier of the application.</p>
     pub fn application_id(&self) -> &str {
         use std::ops::Deref;
         self.application_id.deref()
     }
-    /// Domain where the application is available
+    /// <p>The domain associated with the application.</p>
     pub fn domain(&self) -> &str {
         use std::ops::Deref;
         self.domain.deref()
     }
-    /// Name of the application, automatically assigned by the service
+    /// <p>The name of the application.</p>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// IAM Identity Center configuration for the application
+    /// <p>The IAM Identity Center configuration for the application.</p>
     pub fn idc_configuration(&self) -> ::std::option::Option<&crate::types::IdCConfiguration> {
         self.idc_configuration.as_ref()
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the application.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key used to encrypt data for the application.</p>
     pub fn default_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.default_kms_key_id.as_deref()
     }
@@ -70,89 +70,89 @@ pub struct GetApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
-    /// Application ID
+    /// <p>The unique identifier of the application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// Domain where the application is available
+    /// <p>The domain associated with the application.</p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// Domain where the application is available
+    /// <p>The domain associated with the application.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// Domain where the application is available
+    /// <p>The domain associated with the application.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// Name of the application, automatically assigned by the service
+    /// <p>The name of the application.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name of the application, automatically assigned by the service
+    /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// Name of the application, automatically assigned by the service
+    /// <p>The name of the application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// IAM Identity Center configuration for the application
+    /// <p>The IAM Identity Center configuration for the application.</p>
     pub fn idc_configuration(mut self, input: crate::types::IdCConfiguration) -> Self {
         self.idc_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// IAM Identity Center configuration for the application
+    /// <p>The IAM Identity Center configuration for the application.</p>
     pub fn set_idc_configuration(mut self, input: ::std::option::Option<crate::types::IdCConfiguration>) -> Self {
         self.idc_configuration = input;
         self
     }
-    /// IAM Identity Center configuration for the application
+    /// <p>The IAM Identity Center configuration for the application.</p>
     pub fn get_idc_configuration(&self) -> &::std::option::Option<crate::types::IdCConfiguration> {
         &self.idc_configuration
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the application.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the application.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the application.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key used to encrypt data for the application.</p>
     pub fn default_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key used to encrypt data for the application.</p>
     pub fn set_default_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_kms_key_id = input;
         self
     }
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key used to encrypt data for the application.</p>
     pub fn get_default_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_kms_key_id
     }

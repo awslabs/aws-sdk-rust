@@ -75,6 +75,9 @@ pub mod delete_bucket_website;
 /// Types for the `DeleteObject` operation.
 pub mod delete_object;
 
+/// Types for the `DeleteObjectAnnotation` operation.
+pub mod delete_object_annotation;
+
 /// Types for the `DeleteObjectTagging` operation.
 pub mod delete_object_tagging;
 
@@ -159,6 +162,9 @@ pub mod get_object;
 /// Types for the `GetObjectAcl` operation.
 pub mod get_object_acl;
 
+/// Types for the `GetObjectAnnotation` operation.
+pub mod get_object_annotation;
+
 /// Types for the `GetObjectAttributes` operation.
 pub mod get_object_attributes;
 
@@ -206,6 +212,9 @@ pub mod list_directory_buckets;
 
 /// Types for the `ListMultipartUploads` operation.
 pub mod list_multipart_uploads;
+
+/// Types for the `ListObjectAnnotations` operation.
+pub mod list_object_annotations;
 
 /// Types for the `ListObjectVersions` operation.
 pub mod list_object_versions;
@@ -282,6 +291,9 @@ pub mod put_object;
 /// Types for the `PutObjectAcl` operation.
 pub mod put_object_acl;
 
+/// Types for the `PutObjectAnnotation` operation.
+pub mod put_object_annotation;
+
 /// Types for the `PutObjectLegalHold` operation.
 pub mod put_object_legal_hold;
 
@@ -305,6 +317,9 @@ pub mod restore_object;
 
 /// Types for the `SelectObjectContent` operation.
 pub mod select_object_content;
+
+/// Types for the `UpdateBucketMetadataAnnotationTableConfiguration` operation.
+pub mod update_bucket_metadata_annotation_table_configuration;
 
 /// Types for the `UpdateBucketMetadataInventoryTableConfiguration` operation.
 pub mod update_bucket_metadata_inventory_table_configuration;

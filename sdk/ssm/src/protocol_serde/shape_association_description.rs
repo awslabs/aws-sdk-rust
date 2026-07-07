@@ -2,10 +2,16 @@
 pub(crate) fn de_association_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AssociationDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,11 +55,17 @@ where
                             )?);
                         }
                         "Status" => {
-                            builder = builder.set_status(crate::protocol_serde::shape_association_status::de_association_status(tokens, _value)?);
+                            builder = builder.set_status(crate::protocol_serde::shape_association_status::de_association_status(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Overview" => {
                             builder = builder.set_overview(crate::protocol_serde::shape_association_overview::de_association_overview(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DocumentVersion" => {
@@ -71,7 +83,7 @@ where
                             );
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens, _value)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens, _value, depth + 1)?);
                         }
                         "AssociationId" => {
                             builder = builder.set_association_id(
@@ -81,7 +93,7 @@ where
                             );
                         }
                         "Targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value, depth + 1)?);
                         }
                         "ScheduleExpression" => {
                             builder = builder.set_schedule_expression(
@@ -93,7 +105,9 @@ where
                         "OutputLocation" => {
                             builder = builder.set_output_location(
                                 crate::protocol_serde::shape_instance_association_output_location::de_instance_association_output_location(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -150,12 +164,15 @@ where
                         }
                         "CalendarNames" => {
                             builder = builder.set_calendar_names(
-                                crate::protocol_serde::shape_calendar_name_or_arn_list::de_calendar_name_or_arn_list(tokens, _value)?,
+                                crate::protocol_serde::shape_calendar_name_or_arn_list::de_calendar_name_or_arn_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "TargetLocations" => {
-                            builder =
-                                builder.set_target_locations(crate::protocol_serde::shape_target_locations::de_target_locations(tokens, _value)?);
+                            builder = builder.set_target_locations(crate::protocol_serde::shape_target_locations::de_target_locations(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ScheduleOffset" => {
                             builder = builder.set_schedule_offset(
@@ -172,15 +189,22 @@ where
                             );
                         }
                         "TargetMaps" => {
-                            builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens, _value)?);
+                            builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens, _value, depth + 1)?);
                         }
                         "AlarmConfiguration" => {
-                            builder = builder
-                                .set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value)?);
+                            builder = builder.set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TriggeredAlarms" => {
                             builder = builder.set_triggered_alarms(
-                                crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(tokens, _value)?,
+                                crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AssociationDispatchAssumeRole" => {

@@ -3,8 +3,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
-pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
-
 pub use crate::types::error::_illegal_argument_exception::IllegalArgumentExceptionBuilder;
+
+pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
 pub use crate::types::error::_illegal_state_exception::IllegalStateExceptionBuilder;

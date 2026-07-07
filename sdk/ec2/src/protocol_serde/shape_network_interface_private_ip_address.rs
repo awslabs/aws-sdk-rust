@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_interface_private_ip_address(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NetworkInterfacePrivateIpAddress, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkInterfacePrivateIpAddress::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_network_interface_private_ip_address(
             s if s.matches("association") /* Association com.amazonaws.ec2#NetworkInterfacePrivateIpAddress$Association */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_network_interface_association::de_network_interface_association(&mut tag)
+                        crate::protocol_serde::shape_network_interface_association::de_network_interface_association(&mut tag, depth + 1)
                         ?
                     )
                 ;

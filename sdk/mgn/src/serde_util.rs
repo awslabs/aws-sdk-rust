@@ -81,6 +81,15 @@ pub(crate) fn job_correct_errors(mut builder: crate::types::builders::JobBuilder
     builder
 }
 
+pub(crate) fn storage_configuration_correct_errors(
+    mut builder: crate::types::builders::StorageConfigurationBuilder,
+) -> crate::types::builders::StorageConfigurationBuilder {
+    if builder.storage_type.is_none() {
+        builder.storage_type = "no value was set".parse::<crate::types::StorageType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn target_network_correct_errors(
     mut builder: crate::types::builders::TargetNetworkBuilder,
 ) -> crate::types::builders::TargetNetworkBuilder {
@@ -98,6 +107,18 @@ pub(crate) fn target_s3_configuration_correct_errors(
     }
     if builder.s3_bucket_owner.is_none() {
         builder.s3_bucket_owner = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn fsx_ontap_configuration_correct_errors(
+    mut builder: crate::types::builders::FsxOntapConfigurationBuilder,
+) -> crate::types::builders::FsxOntapConfigurationBuilder {
+    if builder.storage_virtual_machine_id.is_none() {
+        builder.storage_virtual_machine_id = Some(Default::default())
+    }
+    if builder.credentials_secret_arn.is_none() {
+        builder.credentials_secret_arn = Some(Default::default())
     }
     builder
 }

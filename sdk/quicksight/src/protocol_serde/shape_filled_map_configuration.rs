@@ -51,10 +51,16 @@ pub fn ser_filled_map_configuration(
 pub(crate) fn de_filled_map_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FilledMapConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,33 +72,47 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
                             builder = builder.set_field_wells(crate::protocol_serde::shape_filled_map_field_wells::de_filled_map_field_wells(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SortConfiguration" => {
                             builder = builder.set_sort_configuration(
-                                crate::protocol_serde::shape_filled_map_sort_configuration::de_filled_map_sort_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_filled_map_sort_configuration::de_filled_map_sort_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Legend" => {
-                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens, _value)?);
+                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens, _value, depth + 1)?);
                         }
                         "Tooltip" => {
-                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "WindowOptions" => {
                             builder = builder.set_window_options(
-                                crate::protocol_serde::shape_geospatial_window_options::de_geospatial_window_options(tokens, _value)?,
+                                crate::protocol_serde::shape_geospatial_window_options::de_geospatial_window_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "MapStyleOptions" => {
                             builder = builder.set_map_style_options(
-                                crate::protocol_serde::shape_geospatial_map_style_options::de_geospatial_map_style_options(tokens, _value)?,
+                                crate::protocol_serde::shape_geospatial_map_style_options::de_geospatial_map_style_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

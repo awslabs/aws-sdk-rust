@@ -87,7 +87,6 @@ pub struct AddressBuilder {
 }
 impl AddressBuilder {
     /// <p>The first line of the address.</p>
-    /// This field is required.
     pub fn address_line1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_line1 = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +149,6 @@ impl AddressBuilder {
         &self.district_or_county
     }
     /// <p>The city that the address is in.</p>
-    /// This field is required.
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.city = ::std::option::Option::Some(input.into());
         self
@@ -213,27 +211,15 @@ impl AddressBuilder {
     }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     /// This method will fail if any of the following fields are not set:
-    /// - [`address_line1`](crate::types::builders::AddressBuilder::address_line1)
-    /// - [`city`](crate::types::builders::AddressBuilder::city)
     /// - [`postal_code`](crate::types::builders::AddressBuilder::postal_code)
     /// - [`country_code`](crate::types::builders::AddressBuilder::country_code)
     pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Address {
-            address_line1: self.address_line1.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "address_line1",
-                    "address_line1 was not specified but it is required when building Address",
-                )
-            })?,
+            address_line1: self.address_line1.unwrap_or_else(|| "Unknown".to_owned()),
             address_line2: self.address_line2,
             address_line3: self.address_line3,
             district_or_county: self.district_or_county,
-            city: self.city.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "city",
-                    "city was not specified but it is required when building Address",
-                )
-            })?,
+            city: self.city.unwrap_or_else(|| "Unknown".to_owned()),
             state_or_region: self.state_or_region,
             postal_code: self.postal_code.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

@@ -7,15 +7,23 @@ pub use crate::types::_link_attributes::LinkAttributesBuilder;
 
 pub use crate::types::_link_log_settings::LinkLogSettingsBuilder;
 
+pub use crate::types::_rule_condition::RuleConditionBuilder;
+
 pub use crate::types::_auto_scaling_groups_configuration::AutoScalingGroupsConfigurationBuilder;
 
 pub use crate::types::_eks_endpoints_configuration::EksEndpointsConfigurationBuilder;
+
+pub use crate::types::_certificate_association_summary::CertificateAssociationSummaryBuilder;
 
 pub use crate::types::_list_links_response_structure::ListLinksResponseStructureBuilder;
 
 pub use crate::types::_link_application_log_configuration::LinkApplicationLogConfigurationBuilder;
 
 pub use crate::types::_module_configuration::ModuleConfigurationBuilder;
+
+pub use crate::types::_link_routing_rule_summary::LinkRoutingRuleSummaryBuilder;
+
+pub use crate::types::_query_string_key_value_pair::QueryStringKeyValuePairBuilder;
 
 pub use crate::types::_health_check_config::HealthCheckConfigBuilder;
 

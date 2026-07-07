@@ -2,10 +2,16 @@
 pub(crate) fn de_glossary_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GlossaryItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,7 +65,7 @@ where
                         }
                         "usageRestrictions" => {
                             builder = builder.set_usage_restrictions(
-                                crate::protocol_serde::shape_glossary_usage_restrictions::de_glossary_usage_restrictions(tokens, _value)?,
+                                crate::protocol_serde::shape_glossary_usage_restrictions::de_glossary_usage_restrictions(tokens, _value, depth + 1)?,
                             );
                         }
                         "createdAt" => {
@@ -91,7 +97,9 @@ where
                         "additionalAttributes" => {
                             builder = builder.set_additional_attributes(
                                 crate::protocol_serde::shape_glossary_item_additional_attributes::de_glossary_item_additional_attributes(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -70,6 +70,8 @@ pub fn de_get_bucket_notification_configuration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("NotificationConfiguration") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected NotificationConfiguration but got {start_el:?}. This is likely a bug in the SDK."
@@ -83,7 +85,7 @@ pub fn de_get_bucket_notification_configuration(
                         Result::<::std::vec::Vec::<crate::types::LambdaFunctionConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.lambda_function_configurations.take().unwrap_or_default();
                             list_4.push(
-                                crate::protocol_serde::shape_lambda_function_configuration::de_lambda_function_configuration(&mut tag)
+                                crate::protocol_serde::shape_lambda_function_configuration::de_lambda_function_configuration(&mut tag, depth + 1)
                                 ?
                             );
                             list_4
@@ -100,7 +102,7 @@ pub fn de_get_bucket_notification_configuration(
                         Result::<::std::vec::Vec::<crate::types::TopicConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_6 = builder.topic_configurations.take().unwrap_or_default();
                             list_6.push(
-                                crate::protocol_serde::shape_topic_configuration::de_topic_configuration(&mut tag)
+                                crate::protocol_serde::shape_topic_configuration::de_topic_configuration(&mut tag, depth + 1)
                                 ?
                             );
                             list_6
@@ -117,7 +119,7 @@ pub fn de_get_bucket_notification_configuration(
                         Result::<::std::vec::Vec::<crate::types::QueueConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_8 = builder.queue_configurations.take().unwrap_or_default();
                             list_8.push(
-                                crate::protocol_serde::shape_queue_configuration::de_queue_configuration(&mut tag)
+                                crate::protocol_serde::shape_queue_configuration::de_queue_configuration(&mut tag, depth + 1)
                                 ?
                             );
                             list_8
@@ -131,7 +133,7 @@ pub fn de_get_bucket_notification_configuration(
             s if s.matches("EventBridgeConfiguration") /* EventBridgeConfiguration com.amazonaws.s3.synthetic#GetBucketNotificationConfigurationOutput$EventBridgeConfiguration */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_event_bridge_configuration::de_event_bridge_configuration(&mut tag)
+                        crate::protocol_serde::shape_event_bridge_configuration::de_event_bridge_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

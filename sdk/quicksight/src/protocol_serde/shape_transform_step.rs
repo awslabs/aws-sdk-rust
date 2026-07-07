@@ -75,10 +75,16 @@ pub fn ser_transform_step(
 pub(crate) fn de_transform_step<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TransformStep>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -90,45 +96,71 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ImportTableStep" => {
                             builder = builder.set_import_table_step(crate::protocol_serde::shape_import_table_operation::de_import_table_operation(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ProjectStep" => {
-                            builder = builder.set_project_step(crate::protocol_serde::shape_project_operation::de_project_operation(tokens, _value)?);
+                            builder = builder.set_project_step(crate::protocol_serde::shape_project_operation::de_project_operation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "FiltersStep" => {
-                            builder = builder.set_filters_step(crate::protocol_serde::shape_filters_operation::de_filters_operation(tokens, _value)?);
+                            builder = builder.set_filters_step(crate::protocol_serde::shape_filters_operation::de_filters_operation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CreateColumnsStep" => {
                             builder = builder.set_create_columns_step(
-                                crate::protocol_serde::shape_create_columns_operation::de_create_columns_operation(tokens, _value)?,
+                                crate::protocol_serde::shape_create_columns_operation::de_create_columns_operation(tokens, _value, depth + 1)?,
                             );
                         }
                         "RenameColumnsStep" => {
                             builder = builder.set_rename_columns_step(
-                                crate::protocol_serde::shape_rename_columns_operation::de_rename_columns_operation(tokens, _value)?,
+                                crate::protocol_serde::shape_rename_columns_operation::de_rename_columns_operation(tokens, _value, depth + 1)?,
                             );
                         }
                         "CastColumnTypesStep" => {
                             builder = builder.set_cast_column_types_step(
-                                crate::protocol_serde::shape_cast_column_types_operation::de_cast_column_types_operation(tokens, _value)?,
+                                crate::protocol_serde::shape_cast_column_types_operation::de_cast_column_types_operation(tokens, _value, depth + 1)?,
                             );
                         }
                         "JoinStep" => {
-                            builder = builder.set_join_step(crate::protocol_serde::shape_join_operation::de_join_operation(tokens, _value)?);
+                            builder =
+                                builder.set_join_step(crate::protocol_serde::shape_join_operation::de_join_operation(tokens, _value, depth + 1)?);
                         }
                         "AggregateStep" => {
-                            builder =
-                                builder.set_aggregate_step(crate::protocol_serde::shape_aggregate_operation::de_aggregate_operation(tokens, _value)?);
+                            builder = builder.set_aggregate_step(crate::protocol_serde::shape_aggregate_operation::de_aggregate_operation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PivotStep" => {
-                            builder = builder.set_pivot_step(crate::protocol_serde::shape_pivot_operation::de_pivot_operation(tokens, _value)?);
+                            builder = builder.set_pivot_step(crate::protocol_serde::shape_pivot_operation::de_pivot_operation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "UnpivotStep" => {
-                            builder = builder.set_unpivot_step(crate::protocol_serde::shape_unpivot_operation::de_unpivot_operation(tokens, _value)?);
+                            builder = builder.set_unpivot_step(crate::protocol_serde::shape_unpivot_operation::de_unpivot_operation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AppendStep" => {
-                            builder = builder.set_append_step(crate::protocol_serde::shape_append_operation::de_append_operation(tokens, _value)?);
+                            builder = builder.set_append_step(crate::protocol_serde::shape_append_operation::de_append_operation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

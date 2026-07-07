@@ -146,6 +146,8 @@ pub(crate) fn de_list_access_control_configurations(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -161,7 +163,9 @@ pub(crate) fn de_list_access_control_configurations(
                 "AccessControlConfigurations" => {
                     builder = builder.set_access_control_configurations(
                         crate::protocol_serde::shape_access_control_configuration_summary_list::de_access_control_configuration_summary_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

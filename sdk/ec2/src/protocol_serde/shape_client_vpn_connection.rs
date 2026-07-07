@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_client_vpn_connection(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ClientVpnConnection, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ClientVpnConnection::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -166,7 +170,7 @@ pub fn de_client_vpn_connection(
             s if s.matches("status") /* Status com.amazonaws.ec2#ClientVpnConnection$Status */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_connection_status::de_client_vpn_connection_status(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_connection_status::de_client_vpn_connection_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -189,7 +193,7 @@ pub fn de_client_vpn_connection(
             s if s.matches("postureComplianceStatusSet") /* PostureComplianceStatuses com.amazonaws.ec2#ClientVpnConnection$PostureComplianceStatuses */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

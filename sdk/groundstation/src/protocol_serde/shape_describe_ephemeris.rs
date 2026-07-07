@@ -93,77 +93,83 @@ pub(crate) fn de_describe_ephemeris(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "creationTime" => {
-                    builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "creationTime" => {
+                        builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "enabled" => {
+                        builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    }
+                    "ephemerisId" => {
+                        builder = builder.set_ephemeris_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "errorReasons" => {
+                        builder = builder.set_error_reasons(
+                            crate::protocol_serde::shape_ephemeris_error_reason_list::de_ephemeris_error_reason_list(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "invalidReason" => {
+                        builder = builder.set_invalid_reason(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::EphemerisInvalidReason::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "name" => {
+                        builder = builder.set_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "priority" => {
+                        builder = builder.set_priority(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                .map(i32::try_from)
+                                .transpose()?,
+                        );
+                    }
+                    "satelliteId" => {
+                        builder = builder.set_satellite_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "status" => {
+                        builder = builder.set_status(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::EphemerisStatus::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "suppliedData" => {
+                        builder = builder.set_supplied_data(crate::protocol_serde::shape_ephemeris_type_description::de_ephemeris_type_description(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "tags" => {
+                        builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "enabled" => {
-                    builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                "ephemerisId" => {
-                    builder = builder.set_ephemeris_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "errorReasons" => {
-                    builder = builder.set_error_reasons(crate::protocol_serde::shape_ephemeris_error_reason_list::de_ephemeris_error_reason_list(
-                        tokens, _value,
-                    )?);
-                }
-                "invalidReason" => {
-                    builder = builder.set_invalid_reason(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::EphemerisInvalidReason::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "name" => {
-                    builder = builder.set_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "priority" => {
-                    builder = builder.set_priority(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
-                "satelliteId" => {
-                    builder = builder.set_satellite_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::EphemerisStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "suppliedData" => {
-                    builder = builder.set_supplied_data(crate::protocol_serde::shape_ephemeris_type_description::de_ephemeris_type_description(
-                        tokens, _value,
-                    )?);
-                }
-                "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

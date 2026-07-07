@@ -74,6 +74,8 @@ pub(crate) fn de_get_account(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -84,7 +86,11 @@ pub(crate) fn de_get_account(
                         builder.set_dedicated_ip_auto_warmup_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Details" => {
-                    builder = builder.set_details(crate::protocol_serde::shape_account_details::de_account_details(tokens, _value)?);
+                    builder = builder.set_details(crate::protocol_serde::shape_account_details::de_account_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "EnforcementStatus" => {
                     builder = builder.set_enforcement_status(
@@ -97,18 +103,20 @@ pub(crate) fn de_get_account(
                     builder = builder.set_production_access_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "SendQuota" => {
-                    builder = builder.set_send_quota(crate::protocol_serde::shape_send_quota::de_send_quota(tokens, _value)?);
+                    builder = builder.set_send_quota(crate::protocol_serde::shape_send_quota::de_send_quota(tokens, _value, depth + 1)?);
                 }
                 "SendingEnabled" => {
                     builder = builder.set_sending_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "SuppressionAttributes" => {
                     builder = builder.set_suppression_attributes(crate::protocol_serde::shape_suppression_attributes::de_suppression_attributes(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "VdmAttributes" => {
-                    builder = builder.set_vdm_attributes(crate::protocol_serde::shape_vdm_attributes::de_vdm_attributes(tokens, _value)?);
+                    builder = builder.set_vdm_attributes(crate::protocol_serde::shape_vdm_attributes::de_vdm_attributes(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

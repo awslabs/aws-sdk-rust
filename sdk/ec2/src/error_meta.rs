@@ -1053,6 +1053,27 @@ impl From<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_image_watermark::AttachImageWatermarkError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_image_watermark::AttachImageWatermarkError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::attach_image_watermark::AttachImageWatermarkError> for Error {
+    fn from(err: crate::operation::attach_image_watermark::AttachImageWatermarkError) -> Self {
+        match err {
+            crate::operation::attach_image_watermark::AttachImageWatermarkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_internet_gateway::AttachInternetGatewayError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1749,6 +1770,40 @@ impl From<crate::operation::create_capacity_reservation_by_splitting::CreateCapa
     fn from(err: crate::operation::create_capacity_reservation_by_splitting::CreateCapacityReservationBySplittingError) -> Self {
         match err {
             crate::operation::create_capacity_reservation_by_splitting::CreateCapacityReservationBySplittingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_capacity_reservation_cancellation_quote::CreateCapacityReservationCancellationQuoteError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_capacity_reservation_cancellation_quote::CreateCapacityReservationCancellationQuoteError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_capacity_reservation_cancellation_quote::CreateCapacityReservationCancellationQuoteError> for Error {
+    fn from(err: crate::operation::create_capacity_reservation_cancellation_quote::CreateCapacityReservationCancellationQuoteError) -> Self {
+        match err {
+            crate::operation::create_capacity_reservation_cancellation_quote::CreateCapacityReservationCancellationQuoteError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -7058,6 +7113,40 @@ impl From<crate::operation::describe_account_attributes::DescribeAccountAttribut
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_account_vpc_encryption_control::DescribeAccountVpcEncryptionControlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_account_vpc_encryption_control::DescribeAccountVpcEncryptionControlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_account_vpc_encryption_control::DescribeAccountVpcEncryptionControlError> for Error {
+    fn from(err: crate::operation::describe_account_vpc_encryption_control::DescribeAccountVpcEncryptionControlError) -> Self {
+        match err {
+            crate::operation::describe_account_vpc_encryption_control::DescribeAccountVpcEncryptionControlError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7467,6 +7556,40 @@ impl From<crate::operation::describe_capacity_reservation_billing_requests::Desc
             crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_reservation_cancellation_quotes::DescribeCapacityReservationCancellationQuotesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_reservation_cancellation_quotes::DescribeCapacityReservationCancellationQuotesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_capacity_reservation_cancellation_quotes::DescribeCapacityReservationCancellationQuotesError> for Error {
+    fn from(err: crate::operation::describe_capacity_reservation_cancellation_quotes::DescribeCapacityReservationCancellationQuotesError) -> Self {
+        match err {
+            crate::operation::describe_capacity_reservation_cancellation_quotes::DescribeCapacityReservationCancellationQuotesError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }
@@ -8959,6 +9082,34 @@ impl From<crate::operation::describe_ipam_policies::DescribeIpamPoliciesError> f
     fn from(err: crate::operation::describe_ipam_policies::DescribeIpamPoliciesError) -> Self {
         match err {
             crate::operation::describe_ipam_policies::DescribeIpamPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError> for Error {
+    fn from(err: crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError) -> Self {
+        match err {
+            crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -12106,6 +12257,27 @@ impl From<crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcError> 
     fn from(err: crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcError) -> Self {
         match err {
             crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_image_watermark::DetachImageWatermarkError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_image_watermark::DetachImageWatermarkError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::detach_image_watermark::DetachImageWatermarkError> for Error {
+    fn from(err: crate::operation::detach_image_watermark::DetachImageWatermarkError) -> Self {
+        match err {
+            crate::operation::detach_image_watermark::DetachImageWatermarkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -16378,6 +16550,40 @@ impl From<crate::operation::lock_snapshot::LockSnapshotError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_account_vpc_encryption_control::ModifyAccountVpcEncryptionControlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_account_vpc_encryption_control::ModifyAccountVpcEncryptionControlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_account_vpc_encryption_control::ModifyAccountVpcEncryptionControlError> for Error {
+    fn from(err: crate::operation::modify_account_vpc_encryption_control::ModifyAccountVpcEncryptionControlError) -> Self {
+        match err {
+            crate::operation::modify_account_vpc_encryption_control::ModifyAccountVpcEncryptionControlError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_address_attribute::ModifyAddressAttributeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -17116,6 +17322,30 @@ impl From<crate::operation::modify_ipam_pool::ModifyIpamPoolError> for Error {
     fn from(err: crate::operation::modify_ipam_pool::ModifyIpamPoolError) -> Self {
         match err {
             crate::operation::modify_ipam_pool::ModifyIpamPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError> for Error {
+    fn from(err: crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError) -> Self {
+        match err {
+            crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -18239,6 +18469,40 @@ impl From<crate::operation::modify_vpc_endpoint_connection_notification::ModifyV
     fn from(err: crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError) -> Self {
         match err {
             crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_vpc_endpoint_payer_responsibility::ModifyVpcEndpointPayerResponsibilityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_vpc_endpoint_payer_responsibility::ModifyVpcEndpointPayerResponsibilityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_vpc_endpoint_payer_responsibility::ModifyVpcEndpointPayerResponsibilityError> for Error {
+    fn from(err: crate::operation::modify_vpc_endpoint_payer_responsibility::ModifyVpcEndpointPayerResponsibilityError) -> Self {
+        match err {
+            crate::operation::modify_vpc_endpoint_payer_responsibility::ModifyVpcEndpointPayerResponsibilityError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

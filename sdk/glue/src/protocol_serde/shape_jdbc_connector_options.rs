@@ -55,10 +55,16 @@ pub fn ser_jdbc_connector_options(
 pub(crate) fn de_jdbc_connector_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JdbcConnectorOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -67,61 +73,67 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "FilterPredicate" => {
-                            builder = builder.set_filter_predicate(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "FilterPredicate" => {
+                                builder = builder.set_filter_predicate(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "PartitionColumn" => {
+                                builder = builder.set_partition_column(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "LowerBound" => {
+                                builder = builder.set_lower_bound(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "UpperBound" => {
+                                builder = builder.set_upper_bound(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "NumPartitions" => {
+                                builder = builder.set_num_partitions(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "JobBookmarkKeys" => {
+                                builder = builder.set_job_bookmark_keys(
+                                    crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "JobBookmarkKeysSortOrder" => {
+                                builder = builder.set_job_bookmark_keys_sort_order(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "DataTypeMapping" => {
+                                builder = builder.set_data_type_mapping(
+                                    crate::protocol_serde::shape_jdbc_data_type_mapping::de_jdbc_data_type_mapping(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "PartitionColumn" => {
-                            builder = builder.set_partition_column(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "LowerBound" => {
-                            builder = builder.set_lower_bound(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "UpperBound" => {
-                            builder = builder.set_upper_bound(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "NumPartitions" => {
-                            builder = builder.set_num_partitions(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "JobBookmarkKeys" => {
-                            builder = builder.set_job_bookmark_keys(
-                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
-                            );
-                        }
-                        "JobBookmarkKeysSortOrder" => {
-                            builder = builder.set_job_bookmark_keys_sort_order(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "DataTypeMapping" => {
-                            builder = builder.set_data_type_mapping(crate::protocol_serde::shape_jdbc_data_type_mapping::de_jdbc_data_type_mapping(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

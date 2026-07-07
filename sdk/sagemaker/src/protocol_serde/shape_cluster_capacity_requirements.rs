@@ -21,10 +21,16 @@ pub fn ser_cluster_capacity_requirements(
 pub(crate) fn de_cluster_capacity_requirements<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterCapacityRequirements>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -33,19 +39,23 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Spot" => {
-                            builder = builder.set_spot(crate::protocol_serde::shape_cluster_spot_options::de_cluster_spot_options(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Spot" => {
+                                builder = builder.set_spot(crate::protocol_serde::shape_cluster_spot_options::de_cluster_spot_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "OnDemand" => {
+                                builder = builder.set_on_demand(
+                                    crate::protocol_serde::shape_cluster_on_demand_options::de_cluster_on_demand_options(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "OnDemand" => {
-                            builder = builder.set_on_demand(crate::protocol_serde::shape_cluster_on_demand_options::de_cluster_on_demand_options(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

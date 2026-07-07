@@ -2,10 +2,16 @@
 pub(crate) fn de_account_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AccountDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -25,18 +31,23 @@ where
                         "taxRegistration" => {
                             builder = builder.set_tax_registration(
                                 crate::protocol_serde::shape_tax_registration_with_jurisdiction::de_tax_registration_with_jurisdiction(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "taxInheritanceDetails" => {
                             builder = builder.set_tax_inheritance_details(
-                                crate::protocol_serde::shape_tax_inheritance_details::de_tax_inheritance_details(tokens, _value)?,
+                                crate::protocol_serde::shape_tax_inheritance_details::de_tax_inheritance_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "accountMetaData" => {
-                            builder =
-                                builder.set_account_meta_data(crate::protocol_serde::shape_account_meta_data::de_account_meta_data(tokens, _value)?);
+                            builder = builder.set_account_meta_data(crate::protocol_serde::shape_account_meta_data::de_account_meta_data(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

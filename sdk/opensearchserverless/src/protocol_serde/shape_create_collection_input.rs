@@ -42,8 +42,11 @@ pub fn ser_create_collection_input_input(
         crate::protocol_serde::shape_encryption_config::ser_encryption_config(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.client_token {
-        object.key("clientToken").string(var_14.as_str());
+    if let Some(var_14) = &input.deletion_protection {
+        object.key("deletionProtection").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.client_token {
+        object.key("clientToken").string(var_15.as_str());
     }
     Ok(())
 }

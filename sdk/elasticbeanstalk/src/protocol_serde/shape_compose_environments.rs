@@ -89,6 +89,8 @@ pub fn de_compose_environments(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ComposeEnvironmentsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ComposeEnvironmentsResponse got {start_el:?}"
@@ -106,7 +108,7 @@ pub fn de_compose_environments(
             s if s.matches("Environments") /* Environments com.amazonaws.elasticbeanstalk.synthetic#ComposeEnvironmentsOutput$Environments */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_environment_descriptions_list::de_environment_descriptions_list(&mut tag)
+                        crate::protocol_serde::shape_environment_descriptions_list::de_environment_descriptions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

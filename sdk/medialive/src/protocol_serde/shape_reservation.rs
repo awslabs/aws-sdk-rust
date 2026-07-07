@@ -2,10 +2,16 @@
 pub(crate) fn de_reservation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Reservation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -98,8 +104,11 @@ where
                             );
                         }
                         "renewalSettings" => {
-                            builder =
-                                builder.set_renewal_settings(crate::protocol_serde::shape_renewal_settings::de_renewal_settings(tokens, _value)?);
+                            builder = builder.set_renewal_settings(crate::protocol_serde::shape_renewal_settings::de_renewal_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "reservationId" => {
                             builder = builder.set_reservation_id(
@@ -111,7 +120,9 @@ where
                         "resourceSpecification" => {
                             builder = builder.set_resource_specification(
                                 crate::protocol_serde::shape_reservation_resource_specification::de_reservation_resource_specification(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -130,7 +141,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "usagePrice" => {
                             builder = builder.set_usage_price(

@@ -22,7 +22,9 @@ pub struct DockerServer {
     /// <p>Security groups configured for Docker servers should allow ingress network traffic from the VPC configured in the project. They should allow ingress on port 9876.</p>
     /// </note>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A DockerServerStatus object to use for this docker server.</p>
+    /// <p>A DockerServerStatus object to use for this docker server.</p><note>
+    /// <p>Note that <code>status</code> is only an output and cannot be passed in as an input.</p>
+    /// </note>
     pub status: ::std::option::Option<crate::types::DockerServerStatus>,
 }
 impl DockerServer {
@@ -50,7 +52,9 @@ impl DockerServer {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>A DockerServerStatus object to use for this docker server.</p>
+    /// <p>A DockerServerStatus object to use for this docker server.</p><note>
+    /// <p>Note that <code>status</code> is only an output and cannot be passed in as an input.</p>
+    /// </note>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DockerServerStatus> {
         self.status.as_ref()
     }
@@ -148,17 +152,23 @@ impl DockerServerBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
-    /// <p>A DockerServerStatus object to use for this docker server.</p>
+    /// <p>A DockerServerStatus object to use for this docker server.</p><note>
+    /// <p>Note that <code>status</code> is only an output and cannot be passed in as an input.</p>
+    /// </note>
     pub fn status(mut self, input: crate::types::DockerServerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A DockerServerStatus object to use for this docker server.</p>
+    /// <p>A DockerServerStatus object to use for this docker server.</p><note>
+    /// <p>Note that <code>status</code> is only an output and cannot be passed in as an input.</p>
+    /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DockerServerStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>A DockerServerStatus object to use for this docker server.</p>
+    /// <p>A DockerServerStatus object to use for this docker server.</p><note>
+    /// <p>Note that <code>status</code> is only an output and cannot be passed in as an input.</p>
+    /// </note>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DockerServerStatus> {
         &self.status
     }

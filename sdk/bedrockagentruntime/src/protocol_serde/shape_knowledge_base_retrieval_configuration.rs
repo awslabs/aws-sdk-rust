@@ -12,5 +12,11 @@ pub fn ser_knowledge_base_retrieval_configuration(
         )?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.managed_search_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("managedSearchConfiguration").start_object();
+        crate::protocol_serde::shape_managed_search_configuration::ser_managed_search_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

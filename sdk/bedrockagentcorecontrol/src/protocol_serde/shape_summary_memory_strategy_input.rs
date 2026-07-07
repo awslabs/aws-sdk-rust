@@ -27,5 +27,11 @@ pub fn ser_summary_memory_strategy_input(
         }
         array_6.finish();
     }
+    if let Some(var_8) = &input.memory_record_schema {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("memoryRecordSchema").start_object();
+        crate::protocol_serde::shape_memory_record_schema::ser_memory_record_schema(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

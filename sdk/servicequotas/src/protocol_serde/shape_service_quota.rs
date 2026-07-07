@@ -2,10 +2,16 @@
 pub(crate) fn de_service_quota<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceQuota>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,13 +74,14 @@ where
                             builder = builder.set_global_quota(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "UsageMetric" => {
-                            builder = builder.set_usage_metric(crate::protocol_serde::shape_metric_info::de_metric_info(tokens, _value)?);
+                            builder = builder.set_usage_metric(crate::protocol_serde::shape_metric_info::de_metric_info(tokens, _value, depth + 1)?);
                         }
                         "Period" => {
-                            builder = builder.set_period(crate::protocol_serde::shape_quota_period::de_quota_period(tokens, _value)?);
+                            builder = builder.set_period(crate::protocol_serde::shape_quota_period::de_quota_period(tokens, _value, depth + 1)?);
                         }
                         "ErrorReason" => {
-                            builder = builder.set_error_reason(crate::protocol_serde::shape_error_reason::de_error_reason(tokens, _value)?);
+                            builder =
+                                builder.set_error_reason(crate::protocol_serde::shape_error_reason::de_error_reason(tokens, _value, depth + 1)?);
                         }
                         "QuotaAppliedAtLevel" => {
                             builder = builder.set_quota_applied_at_level(
@@ -84,8 +91,11 @@ where
                             );
                         }
                         "QuotaContext" => {
-                            builder =
-                                builder.set_quota_context(crate::protocol_serde::shape_quota_context_info::de_quota_context_info(tokens, _value)?);
+                            builder = builder.set_quota_context(crate::protocol_serde::shape_quota_context_info::de_quota_context_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Description" => {
                             builder = builder.set_description(

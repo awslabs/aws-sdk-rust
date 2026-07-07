@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-signin = "1.9.0"
+//! aws-sdk-signin = "1.14.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -103,6 +103,24 @@ pub use error_meta::Error;
 pub use config::Config;
 
 /// Client for calling AWS Sign-In Service.
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DeleteConsoleAuthorizationConfiguration`](crate::operation::delete_console_authorization_configuration) operation has
+/// a [`Client::delete_console_authorization_configuration`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `send()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.delete_console_authorization_configuration()
+///     .target_id("example")
+///     .send()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 pub mod client;
 
 /// Configuration for AWS Sign-In Service.
@@ -125,6 +143,10 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
+
 mod observability_feature;
 
 pub(crate) mod protocol_serde;
@@ -134,6 +156,8 @@ mod sdk_feature_tracker;
 mod serialization_settings;
 
 mod endpoint_lib;
+
+mod lens;
 
 mod serde_util;
 

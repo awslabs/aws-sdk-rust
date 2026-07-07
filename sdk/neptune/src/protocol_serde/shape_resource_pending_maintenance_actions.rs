@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_pending_maintenance_actions(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourcePendingMaintenanceActions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourcePendingMaintenanceActions::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_resource_pending_maintenance_actions(
             s if s.matches("PendingMaintenanceActionDetails") /* PendingMaintenanceActionDetails com.amazonaws.neptune#ResourcePendingMaintenanceActions$PendingMaintenanceActionDetails */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_pending_maintenance_action_details::de_pending_maintenance_action_details(&mut tag)
+                        crate::protocol_serde::shape_pending_maintenance_action_details::de_pending_maintenance_action_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

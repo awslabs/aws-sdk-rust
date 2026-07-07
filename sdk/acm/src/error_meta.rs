@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>One or more of request parameters specified is not valid.</p>
     InvalidArgsException(crate::types::error::InvalidArgsException),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
@@ -27,6 +29,8 @@ pub enum Error {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>A service quota has been exceeded.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>A specified tag did not comply with an existing tag policy and was rejected.</p>
     TagPolicyException(crate::types::error::TagPolicyException),
     /// <p>The request was denied because it exceeded a quota.</p>
@@ -49,6 +53,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidArgsException(inner) => inner.fmt(f),
             Error::InvalidArnException(inner) => inner.fmt(f),
             Error::InvalidDomainValidationOptionsException(inner) => inner.fmt(f),
@@ -59,6 +64,7 @@ impl ::std::fmt::Display for Error {
             Error::RequestInProgressException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::TagPolicyException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
@@ -86,6 +92,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidArgsException(inner) => inner.meta(),
             Self::InvalidArnException(inner) => inner.meta(),
             Self::InvalidDomainValidationOptionsException(inner) => inner.meta(),
@@ -96,6 +103,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::RequestInProgressException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::TagPolicyException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
@@ -134,7 +142,248 @@ impl From<crate::operation::add_tags_to_certificate::AddTagsToCertificateError> 
             crate::operation::add_tags_to_certificate::AddTagsToCertificateError::TagPolicyException(inner) => Error::TagPolicyException(inner),
             crate::operation::add_tags_to_certificate::AddTagsToCertificateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::add_tags_to_certificate::AddTagsToCertificateError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::add_tags_to_certificate::AddTagsToCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::add_tags_to_certificate::AddTagsToCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError> for Error {
+    fn from(err: crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError) -> Self {
+        match err {
+            crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_acme_endpoint::CreateAcmeEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_acme_endpoint::CreateAcmeEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_acme_endpoint::CreateAcmeEndpointError> for Error {
+    fn from(err: crate::operation::create_acme_endpoint::CreateAcmeEndpointError) -> Self {
+        match err {
+            crate::operation::create_acme_endpoint::CreateAcmeEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_acme_endpoint::CreateAcmeEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_acme_endpoint::CreateAcmeEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_acme_endpoint::CreateAcmeEndpointError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_acme_endpoint::CreateAcmeEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_acme_endpoint::CreateAcmeEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_acme_endpoint::CreateAcmeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError> for Error {
+    fn from(err: crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError) -> Self {
+        match err {
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError> for Error {
+    fn from(err: crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError) -> Self {
+        match err {
+            crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_acme_domain_validation::DeleteAcmeDomainValidationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError> for Error {
+    fn from(err: crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError) -> Self {
+        match err {
+            crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_acme_endpoint::DeleteAcmeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError> for Error {
+    fn from(err: crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError) -> Self {
+        match err {
+            crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_acme_external_account_binding::DeleteAcmeExternalAccountBindingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -161,7 +410,160 @@ impl From<crate::operation::delete_certificate::DeleteCertificateError> for Erro
             crate::operation::delete_certificate::DeleteCertificateError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_certificate::DeleteCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_certificate::DeleteCertificateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_certificate::DeleteCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_certificate::DeleteCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_acme_account::DescribeAcmeAccountError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_acme_account::DescribeAcmeAccountError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_acme_account::DescribeAcmeAccountError> for Error {
+    fn from(err: crate::operation::describe_acme_account::DescribeAcmeAccountError) -> Self {
+        match err {
+            crate::operation::describe_acme_account::DescribeAcmeAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_acme_account::DescribeAcmeAccountError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_acme_account::DescribeAcmeAccountError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_acme_account::DescribeAcmeAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_acme_account::DescribeAcmeAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_acme_account::DescribeAcmeAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError> for Error {
+    fn from(err: crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError) -> Self {
+        match err {
+            crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_acme_domain_validation::DescribeAcmeDomainValidationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError> for Error {
+    fn from(err: crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError) -> Self {
+        match err {
+            crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_acme_endpoint::DescribeAcmeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError> for Error {
+    fn from(err: crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError) -> Self {
+        match err {
+            crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -186,6 +588,7 @@ impl From<crate::operation::describe_certificate::DescribeCertificateError> for 
             crate::operation::describe_certificate::DescribeCertificateError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::describe_certificate::DescribeCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_certificate::DescribeCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -213,6 +616,7 @@ impl From<crate::operation::export_certificate::ExportCertificateError> for Erro
             }
             crate::operation::export_certificate::ExportCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::export_certificate::ExportCertificateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_certificate::ExportCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::export_certificate::ExportCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -247,6 +651,43 @@ impl From<crate::operation::get_account_configuration::GetAccountConfigurationEr
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError> for Error {
+    fn from(err: crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError) -> Self {
+        match err {
+            crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_acme_external_account_binding_credentials::GetAcmeExternalAccountBindingCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_certificate::GetCertificateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -267,6 +708,7 @@ impl From<crate::operation::get_certificate::GetCertificateError> for Error {
             crate::operation::get_certificate::GetCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
             crate::operation::get_certificate::GetCertificateError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
             crate::operation::get_certificate::GetCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_certificate::GetCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_certificate::GetCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -296,7 +738,145 @@ impl From<crate::operation::import_certificate::ImportCertificateError> for Erro
             crate::operation::import_certificate::ImportCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::import_certificate::ImportCertificateError::TagPolicyException(inner) => Error::TagPolicyException(inner),
             crate::operation::import_certificate::ImportCertificateError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::import_certificate::ImportCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::import_certificate::ImportCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_acme_accounts::ListAcmeAccountsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_acme_accounts::ListAcmeAccountsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_acme_accounts::ListAcmeAccountsError> for Error {
+    fn from(err: crate::operation::list_acme_accounts::ListAcmeAccountsError) -> Self {
+        match err {
+            crate::operation::list_acme_accounts::ListAcmeAccountsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_acme_accounts::ListAcmeAccountsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_acme_accounts::ListAcmeAccountsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_acme_accounts::ListAcmeAccountsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_acme_accounts::ListAcmeAccountsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_acme_accounts::ListAcmeAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError> for Error {
+    fn from(err: crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError) -> Self {
+        match err {
+            crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_acme_domain_validations::ListAcmeDomainValidationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_acme_endpoints::ListAcmeEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_acme_endpoints::ListAcmeEndpointsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_acme_endpoints::ListAcmeEndpointsError> for Error {
+    fn from(err: crate::operation::list_acme_endpoints::ListAcmeEndpointsError) -> Self {
+        match err {
+            crate::operation::list_acme_endpoints::ListAcmeEndpointsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_acme_endpoints::ListAcmeEndpointsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_acme_endpoints::ListAcmeEndpointsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_acme_endpoints::ListAcmeEndpointsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_acme_endpoints::ListAcmeEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError> for Error {
+    fn from(err: crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError) -> Self {
+        match err {
+            crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -347,7 +927,33 @@ impl From<crate::operation::list_tags_for_certificate::ListTagsForCertificateErr
             crate::operation::list_tags_for_certificate::ListTagsForCertificateError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::list_tags_for_certificate::ListTagsForCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_certificate::ListTagsForCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -423,6 +1029,9 @@ impl From<crate::operation::remove_tags_from_certificate::RemoveTagsFromCertific
             crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -447,6 +1056,7 @@ impl From<crate::operation::renew_certificate::RenewCertificateError> for Error 
             crate::operation::renew_certificate::RenewCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
             crate::operation::renew_certificate::RenewCertificateError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
             crate::operation::renew_certificate::RenewCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::renew_certificate::RenewCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::renew_certificate::RenewCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -512,7 +1122,89 @@ impl From<crate::operation::resend_validation_email::ResendValidationEmailError>
             crate::operation::resend_validation_email::ResendValidationEmailError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::resend_validation_email::ResendValidationEmailError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::resend_validation_email::ResendValidationEmailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_acme_account::RevokeAcmeAccountError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_acme_account::RevokeAcmeAccountError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::revoke_acme_account::RevokeAcmeAccountError> for Error {
+    fn from(err: crate::operation::revoke_acme_account::RevokeAcmeAccountError) -> Self {
+        match err {
+            crate::operation::revoke_acme_account::RevokeAcmeAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::revoke_acme_account::RevokeAcmeAccountError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::revoke_acme_account::RevokeAcmeAccountError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::revoke_acme_account::RevokeAcmeAccountError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::revoke_acme_account::RevokeAcmeAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::revoke_acme_account::RevokeAcmeAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::revoke_acme_account::RevokeAcmeAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError> for Error {
+    fn from(err: crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError) -> Self {
+        match err {
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::revoke_acme_external_account_binding::RevokeAcmeExternalAccountBindingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -539,6 +1231,7 @@ impl From<crate::operation::revoke_certificate::RevokeCertificateError> for Erro
             crate::operation::revoke_certificate::RevokeCertificateError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::revoke_certificate::RevokeCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::revoke_certificate::RevokeCertificateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::revoke_certificate::RevokeCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -564,6 +1257,124 @@ impl From<crate::operation::search_certificates::SearchCertificatesError> for Er
             crate::operation::search_certificates::SearchCertificatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::search_certificates::SearchCertificatesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::search_certificates::SearchCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError> for Error {
+    fn from(err: crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError) -> Self {
+        match err {
+            crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_acme_domain_validation::UpdateAcmeDomainValidationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_acme_endpoint::UpdateAcmeEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_acme_endpoint::UpdateAcmeEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_acme_endpoint::UpdateAcmeEndpointError> for Error {
+    fn from(err: crate::operation::update_acme_endpoint::UpdateAcmeEndpointError) -> Self {
+        match err {
+            crate::operation::update_acme_endpoint::UpdateAcmeEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_acme_endpoint::UpdateAcmeEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_acme_endpoint::UpdateAcmeEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_acme_endpoint::UpdateAcmeEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_acme_endpoint::UpdateAcmeEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_acme_endpoint::UpdateAcmeEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_acme_endpoint::UpdateAcmeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -599,6 +1410,9 @@ impl From<crate::operation::update_certificate_options::UpdateCertificateOptions
             crate::operation::update_certificate_options::UpdateCertificateOptionsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_certificate_options::UpdateCertificateOptionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_certificate_options::UpdateCertificateOptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -620,6 +1434,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
             Error::InvalidArgsException(inner) => inner.source(),
             Error::InvalidArnException(inner) => inner.source(),
             Error::InvalidDomainValidationOptionsException(inner) => inner.source(),
@@ -630,6 +1445,7 @@ impl ::std::error::Error for Error {
             Error::RequestInProgressException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::TagPolicyException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
@@ -643,6 +1459,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
             Self::InvalidArgsException(e) => e.request_id(),
             Self::InvalidArnException(e) => e.request_id(),
             Self::InvalidDomainValidationOptionsException(e) => e.request_id(),
@@ -653,6 +1470,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::RequestInProgressException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::TagPolicyException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),

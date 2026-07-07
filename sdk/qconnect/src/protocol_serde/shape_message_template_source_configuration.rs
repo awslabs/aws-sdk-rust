@@ -25,10 +25,16 @@ pub fn ser_message_template_source_configuration(
 pub(crate) fn de_message_template_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MessageTemplateSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -55,7 +61,7 @@ where
                     variant = match key.as_ref() {
                             "whatsApp" => {
                                 Some(crate::types::MessageTemplateSourceConfiguration::WhatsApp(
-                                    crate::protocol_serde::shape_whats_app_message_template_source_configuration::de_whats_app_message_template_source_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_whats_app_message_template_source_configuration::de_whats_app_message_template_source_configuration(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'whatsApp' cannot be null"))?
                                 ))
                             }

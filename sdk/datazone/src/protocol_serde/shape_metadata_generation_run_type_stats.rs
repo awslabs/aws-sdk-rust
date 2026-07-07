@@ -2,6 +2,7 @@
 pub(crate) fn de_metadata_generation_run_type_stats<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<::std::vec::Vec<crate::types::MetadataGenerationRunTypeStat>>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -9,6 +10,11 @@ pub(crate) fn de_metadata_generation_run_type_stats<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartArray { .. }) => {
@@ -20,8 +26,11 @@ where
                         break;
                     }
                     _ => {
-                        let value =
-                            crate::protocol_serde::shape_metadata_generation_run_type_stat::de_metadata_generation_run_type_stat(tokens, _value)?;
+                        let value = crate::protocol_serde::shape_metadata_generation_run_type_stat::de_metadata_generation_run_type_stat(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?;
                         if let Some(value) = value {
                             items.push(value);
                         } else {

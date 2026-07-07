@@ -124,10 +124,11 @@ pub(crate) fn de_list_entities_detection_v2_jobs(
     crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -137,6 +138,7 @@ pub(crate) fn de_list_entities_detection_v2_jobs(
                 Ok(builder.set_comprehend_medical_async_job_properties_list(Some(
                     crate::protocol_serde::shape_comprehend_medical_async_job_properties_list::de_comprehend_medical_async_job_properties_list(
                         decoder,
+                        depth + 1,
                     )?,
                 )))
             })?,
@@ -152,6 +154,8 @@ pub(crate) fn de_list_entities_detection_v2_jobs(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -161,13 +165,13 @@ pub(crate) fn de_list_entities_detection_v2_jobs(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

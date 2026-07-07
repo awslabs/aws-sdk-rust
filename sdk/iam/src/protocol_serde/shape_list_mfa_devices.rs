@@ -80,6 +80,8 @@ pub fn de_list_mfa_devices(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListMFADevicesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListMFADevicesResponse got {start_el:?}"
@@ -97,7 +99,7 @@ pub fn de_list_mfa_devices(
             s if s.matches("MFADevices") /* MFADevices com.amazonaws.iam.synthetic#ListMFADevicesOutput$MFADevices */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_mfa_device_list_type::de_mfa_device_list_type(&mut tag)
+                        crate::protocol_serde::shape_mfa_device_list_type::de_mfa_device_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

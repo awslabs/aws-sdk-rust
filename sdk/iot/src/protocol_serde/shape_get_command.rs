@@ -104,6 +104,8 @@ pub(crate) fn de_get_command(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -154,7 +156,9 @@ pub(crate) fn de_get_command(
                 }
                 "mandatoryParameters" => {
                     builder = builder.set_mandatory_parameters(crate::protocol_serde::shape_command_parameter_list::de_command_parameter_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "namespace" => {
@@ -165,7 +169,11 @@ pub(crate) fn de_get_command(
                     );
                 }
                 "payload" => {
-                    builder = builder.set_payload(crate::protocol_serde::shape_command_payload::de_command_payload(tokens, _value)?);
+                    builder = builder.set_payload(crate::protocol_serde::shape_command_payload::de_command_payload(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "payloadTemplate" => {
                     builder = builder.set_payload_template(
@@ -179,7 +187,9 @@ pub(crate) fn de_get_command(
                 }
                 "preprocessor" => {
                     builder = builder.set_preprocessor(crate::protocol_serde::shape_command_preprocessor::de_command_preprocessor(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "roleArn" => {

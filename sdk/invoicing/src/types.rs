@@ -47,6 +47,8 @@ pub use crate::types::_date_interval::DateInterval;
 
 pub use crate::types::_billing_period::BillingPeriod;
 
+pub use crate::types::_receiver_role::ReceiverRole;
+
 pub use crate::types::_invoice_summary::InvoiceSummary;
 
 pub use crate::types::_invoice_unit::InvoiceUnit;
@@ -65,11 +67,23 @@ pub use crate::types::_supplemental_document::SupplementalDocument;
 
 pub use crate::types::_entity::Entity;
 
+pub use crate::types::_invoice_frequency::InvoiceFrequency;
+
+pub use crate::types::_bill_type::BillType;
+
 pub use crate::types::_invoice_type::InvoiceType;
+
+pub use crate::types::_einvoice_delivery_status::EinvoiceDeliveryStatus;
+
+pub use crate::types::_tax_authority_status::TaxAuthorityStatus;
 
 pub use crate::types::_invoice_currency_amount::InvoiceCurrencyAmount;
 
 pub use crate::types::_purchase_order_data_source_type::PurchaseOrderDataSourceType;
+
+pub use crate::types::_supplemental_document_type::SupplementalDocumentType;
+
+pub use crate::types::_billing_entity::BillingEntity;
 
 pub use crate::types::_amount_breakdown::AmountBreakdown;
 
@@ -88,6 +102,10 @@ pub use crate::types::_taxes_breakdown_amount::TaxesBreakdownAmount;
 pub use crate::types::_fees_breakdown_amount::FeesBreakdownAmount;
 
 mod _amount_breakdown;
+
+mod _bill_type;
+
+mod _billing_entity;
 
 mod _billing_period;
 
@@ -111,6 +129,8 @@ mod _einvoice_delivery_document_type;
 
 mod _einvoice_delivery_preference;
 
+mod _einvoice_delivery_status;
+
 mod _entity;
 
 mod _fees_breakdown;
@@ -120,6 +140,8 @@ mod _fees_breakdown_amount;
 mod _filters;
 
 mod _invoice_currency_amount;
+
+mod _invoice_frequency;
 
 mod _invoice_pdf;
 
@@ -157,11 +179,17 @@ mod _purchase_order_data_source_type;
 
 mod _receiver_address;
 
+mod _receiver_role;
+
 mod _resource_tag;
 
 mod _supplemental_document;
 
+mod _supplemental_document_type;
+
 mod _supplier_domain;
+
+mod _tax_authority_status;
 
 mod _taxes_breakdown;
 

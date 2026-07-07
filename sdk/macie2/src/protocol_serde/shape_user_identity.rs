@@ -2,10 +2,16 @@
 pub(crate) fn de_user_identity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UserIdentity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,22 +22,31 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "assumedRole" => {
-                            builder = builder.set_assumed_role(crate::protocol_serde::shape_assumed_role::de_assumed_role(tokens, _value)?);
+                            builder =
+                                builder.set_assumed_role(crate::protocol_serde::shape_assumed_role::de_assumed_role(tokens, _value, depth + 1)?);
                         }
                         "awsAccount" => {
-                            builder = builder.set_aws_account(crate::protocol_serde::shape_aws_account::de_aws_account(tokens, _value)?);
+                            builder = builder.set_aws_account(crate::protocol_serde::shape_aws_account::de_aws_account(tokens, _value, depth + 1)?);
                         }
                         "awsService" => {
-                            builder = builder.set_aws_service(crate::protocol_serde::shape_aws_service::de_aws_service(tokens, _value)?);
+                            builder = builder.set_aws_service(crate::protocol_serde::shape_aws_service::de_aws_service(tokens, _value, depth + 1)?);
                         }
                         "federatedUser" => {
-                            builder = builder.set_federated_user(crate::protocol_serde::shape_federated_user::de_federated_user(tokens, _value)?);
+                            builder = builder.set_federated_user(crate::protocol_serde::shape_federated_user::de_federated_user(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "iamUser" => {
-                            builder = builder.set_iam_user(crate::protocol_serde::shape_iam_user::de_iam_user(tokens, _value)?);
+                            builder = builder.set_iam_user(crate::protocol_serde::shape_iam_user::de_iam_user(tokens, _value, depth + 1)?);
                         }
                         "root" => {
-                            builder = builder.set_root(crate::protocol_serde::shape_user_identity_root::de_user_identity_root(tokens, _value)?);
+                            builder = builder.set_root(crate::protocol_serde::shape_user_identity_root::de_user_identity_root(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "type" => {
                             builder = builder.set_type(

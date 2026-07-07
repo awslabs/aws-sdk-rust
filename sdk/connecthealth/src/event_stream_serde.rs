@@ -48,6 +48,11 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for MedicalScribeInputStre
                 crate::protocol_serde::shape_medical_scribe_input_stream::ser_audio_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
             }
+            Self::Input::BinaryAudioEvent(inner) =>  {
+                headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("binaryAudioEvent".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/octet-stream".into())));
+                inner.audio_chunk.into_inner()
+            }
             Self::Input::SessionControlEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("sessionControlEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));

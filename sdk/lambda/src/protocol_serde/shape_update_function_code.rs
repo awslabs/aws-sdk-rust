@@ -236,17 +236,23 @@ pub(crate) fn de_update_function_code(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Architectures" => {
-                    builder = builder.set_architectures(crate::protocol_serde::shape_architectures_list::de_architectures_list(tokens, _value)?);
+                    builder = builder.set_architectures(crate::protocol_serde::shape_architectures_list::de_architectures_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CapacityProviderConfig" => {
                     builder = builder.set_capacity_provider_config(
-                        crate::protocol_serde::shape_capacity_provider_config::de_capacity_provider_config(tokens, _value)?,
+                        crate::protocol_serde::shape_capacity_provider_config::de_capacity_provider_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "CodeSha256" => {
@@ -271,7 +277,11 @@ pub(crate) fn de_update_function_code(
                     );
                 }
                 "DeadLetterConfig" => {
-                    builder = builder.set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(tokens, _value)?);
+                    builder = builder.set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -281,19 +291,27 @@ pub(crate) fn de_update_function_code(
                     );
                 }
                 "DurableConfig" => {
-                    builder = builder.set_durable_config(crate::protocol_serde::shape_durable_config::de_durable_config(tokens, _value)?);
+                    builder = builder.set_durable_config(crate::protocol_serde::shape_durable_config::de_durable_config(tokens, _value, depth + 1)?);
                 }
                 "Environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_environment_response::de_environment_response(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "EphemeralStorage" => {
-                    builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens, _value)?);
+                    builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FileSystemConfigs" => {
                     builder = builder.set_file_system_configs(crate::protocol_serde::shape_file_system_config_list::de_file_system_config_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "FunctionArn" => {
@@ -319,7 +337,9 @@ pub(crate) fn de_update_function_code(
                 }
                 "ImageConfigResponse" => {
                     builder = builder.set_image_config_response(crate::protocol_serde::shape_image_config_response::de_image_config_response(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "KMSKeyArn" => {
@@ -359,11 +379,13 @@ pub(crate) fn de_update_function_code(
                 }
                 "Layers" => {
                     builder = builder.set_layers(crate::protocol_serde::shape_layers_reference_list::de_layers_reference_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "LoggingConfig" => {
-                    builder = builder.set_logging_config(crate::protocol_serde::shape_logging_config::de_logging_config(tokens, _value)?);
+                    builder = builder.set_logging_config(crate::protocol_serde::shape_logging_config::de_logging_config(tokens, _value, depth + 1)?);
                 }
                 "MasterArn" => {
                     builder = builder.set_master_arn(
@@ -409,7 +431,9 @@ pub(crate) fn de_update_function_code(
                 }
                 "RuntimeVersionConfig" => {
                     builder = builder.set_runtime_version_config(crate::protocol_serde::shape_runtime_version_config::de_runtime_version_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "SigningJobArn" => {
@@ -427,7 +451,11 @@ pub(crate) fn de_update_function_code(
                     );
                 }
                 "SnapStart" => {
-                    builder = builder.set_snap_start(crate::protocol_serde::shape_snap_start_response::de_snap_start_response(tokens, _value)?);
+                    builder = builder.set_snap_start(crate::protocol_serde::shape_snap_start_response::de_snap_start_response(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "State" => {
                     builder = builder.set_state(
@@ -451,7 +479,7 @@ pub(crate) fn de_update_function_code(
                     );
                 }
                 "TenancyConfig" => {
-                    builder = builder.set_tenancy_config(crate::protocol_serde::shape_tenancy_config::de_tenancy_config(tokens, _value)?);
+                    builder = builder.set_tenancy_config(crate::protocol_serde::shape_tenancy_config::de_tenancy_config(tokens, _value, depth + 1)?);
                 }
                 "Timeout" => {
                     builder = builder.set_timeout(
@@ -462,7 +490,9 @@ pub(crate) fn de_update_function_code(
                 }
                 "TracingConfig" => {
                     builder = builder.set_tracing_config(crate::protocol_serde::shape_tracing_config_response::de_tracing_config_response(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Version" => {
@@ -473,7 +503,11 @@ pub(crate) fn de_update_function_code(
                     );
                 }
                 "VpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(tokens, _value)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

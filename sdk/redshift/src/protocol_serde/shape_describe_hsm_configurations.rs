@@ -96,6 +96,8 @@ pub fn de_describe_hsm_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeHsmConfigurationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeHsmConfigurationsResponse got {start_el:?}"
@@ -126,7 +128,7 @@ pub fn de_describe_hsm_configurations(
             s if s.matches("HsmConfigurations") /* HsmConfigurations com.amazonaws.redshift.synthetic#DescribeHsmConfigurationsOutput$HsmConfigurations */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_hsm_configuration_list::de_hsm_configuration_list(&mut tag)
+                        crate::protocol_serde::shape_hsm_configuration_list::de_hsm_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

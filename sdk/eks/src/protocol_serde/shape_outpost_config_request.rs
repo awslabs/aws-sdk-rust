@@ -21,5 +21,14 @@ pub fn ser_outpost_config_request(
         crate::protocol_serde::shape_control_plane_placement_request::ser_control_plane_placement_request(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.etcd_instance_type {
+        object.key("etcdInstanceType").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.etcd_placement {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("etcdPlacement").start_object();
+        crate::protocol_serde::shape_etcd_placement_request::ser_etcd_placement_request(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

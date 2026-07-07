@@ -67,6 +67,8 @@ pub struct MetricAlarm {
     pub evaluation_state: ::std::option::Option<crate::types::EvaluationState>,
     /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
     pub state_transitioned_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The evaluation window that the alarm uses to select the range of metric data that it evaluates. This is either a sliding window or a wall clock window. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm evaluation windows</a> in the <i>CloudWatch User Guide</i>.</p>
+    pub evaluation_window: ::std::option::Option<crate::types::EvaluationWindow>,
     /// <p>The evaluation criteria for the alarm.</p>
     pub evaluation_criteria: ::std::option::Option<crate::types::EvaluationCriteria>,
     /// <p>The frequency, in seconds, at which the alarm is evaluated.</p>
@@ -204,6 +206,10 @@ impl MetricAlarm {
     pub fn state_transitioned_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.state_transitioned_timestamp.as_ref()
     }
+    /// <p>The evaluation window that the alarm uses to select the range of metric data that it evaluates. This is either a sliding window or a wall clock window. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm evaluation windows</a> in the <i>CloudWatch User Guide</i>.</p>
+    pub fn evaluation_window(&self) -> ::std::option::Option<&crate::types::EvaluationWindow> {
+        self.evaluation_window.as_ref()
+    }
     /// <p>The evaluation criteria for the alarm.</p>
     pub fn evaluation_criteria(&self) -> ::std::option::Option<&crate::types::EvaluationCriteria> {
         self.evaluation_criteria.as_ref()
@@ -253,6 +259,7 @@ pub struct MetricAlarmBuilder {
     pub(crate) threshold_metric_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_state: ::std::option::Option<crate::types::EvaluationState>,
     pub(crate) state_transitioned_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) evaluation_window: ::std::option::Option<crate::types::EvaluationWindow>,
     pub(crate) evaluation_criteria: ::std::option::Option<crate::types::EvaluationCriteria>,
     pub(crate) evaluation_interval: ::std::option::Option<i32>,
 }
@@ -708,6 +715,20 @@ impl MetricAlarmBuilder {
     pub fn get_state_transitioned_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.state_transitioned_timestamp
     }
+    /// <p>The evaluation window that the alarm uses to select the range of metric data that it evaluates. This is either a sliding window or a wall clock window. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm evaluation windows</a> in the <i>CloudWatch User Guide</i>.</p>
+    pub fn evaluation_window(mut self, input: crate::types::EvaluationWindow) -> Self {
+        self.evaluation_window = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The evaluation window that the alarm uses to select the range of metric data that it evaluates. This is either a sliding window or a wall clock window. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm evaluation windows</a> in the <i>CloudWatch User Guide</i>.</p>
+    pub fn set_evaluation_window(mut self, input: ::std::option::Option<crate::types::EvaluationWindow>) -> Self {
+        self.evaluation_window = input;
+        self
+    }
+    /// <p>The evaluation window that the alarm uses to select the range of metric data that it evaluates. This is either a sliding window or a wall clock window. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm evaluation windows</a> in the <i>CloudWatch User Guide</i>.</p>
+    pub fn get_evaluation_window(&self) -> &::std::option::Option<crate::types::EvaluationWindow> {
+        &self.evaluation_window
+    }
     /// <p>The evaluation criteria for the alarm.</p>
     pub fn evaluation_criteria(mut self, input: crate::types::EvaluationCriteria) -> Self {
         self.evaluation_criteria = ::std::option::Option::Some(input);
@@ -768,6 +789,7 @@ impl MetricAlarmBuilder {
             threshold_metric_id: self.threshold_metric_id,
             evaluation_state: self.evaluation_state,
             state_transitioned_timestamp: self.state_transitioned_timestamp,
+            evaluation_window: self.evaluation_window,
             evaluation_criteria: self.evaluation_criteria,
             evaluation_interval: self.evaluation_interval,
         }

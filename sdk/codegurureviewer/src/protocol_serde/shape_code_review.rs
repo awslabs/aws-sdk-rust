@@ -2,10 +2,16 @@
 pub(crate) fn de_code_review<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CodeReview>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -91,8 +97,11 @@ where
                             );
                         }
                         "SourceCodeType" => {
-                            builder =
-                                builder.set_source_code_type(crate::protocol_serde::shape_source_code_type::de_source_code_type(tokens, _value)?);
+                            builder = builder.set_source_code_type(crate::protocol_serde::shape_source_code_type::de_source_code_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AssociationArn" => {
                             builder = builder.set_association_arn(
@@ -102,10 +111,14 @@ where
                             );
                         }
                         "Metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens, _value)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens, _value, depth + 1)?);
                         }
                         "AnalysisTypes" => {
-                            builder = builder.set_analysis_types(crate::protocol_serde::shape_analysis_types::de_analysis_types(tokens, _value)?);
+                            builder = builder.set_analysis_types(crate::protocol_serde::shape_analysis_types::de_analysis_types(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ConfigFileState" => {
                             builder = builder.set_config_file_state(

@@ -225,6 +225,20 @@ impl UpdateScheduledQueryFluentBuilder {
     pub fn get_start_time_offset(&self) -> &::std::option::Option<i64> {
         self.inner.get_start_time_offset()
     }
+    /// <p>The updated time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn end_time_offset(mut self, input: i64) -> Self {
+        self.inner = self.inner.end_time_offset(input);
+        self
+    }
+    /// <p>The updated time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn set_end_time_offset(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_end_time_offset(input);
+        self
+    }
+    /// <p>The updated time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn get_end_time_offset(&self) -> &::std::option::Option<i64> {
+        self.inner.get_end_time_offset()
+    }
     /// <p>The updated configuration for where to deliver query results.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.inner = self.inner.destination_configuration(input);

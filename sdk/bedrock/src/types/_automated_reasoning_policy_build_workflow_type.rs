@@ -16,7 +16,9 @@
 ///     AutomatedReasoningPolicyBuildWorkflowType::GeneratePolicyScenarios => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildWorkflowType::IngestContent => { /* ... */ },
+///     AutomatedReasoningPolicyBuildWorkflowType::IterativelyRefinePolicy => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy => { /* ... */ },
+///     AutomatedReasoningPolicyBuildWorkflowType::ResolvePolicyAmbiguities => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,7 +56,11 @@ pub enum AutomatedReasoningPolicyBuildWorkflowType {
     #[allow(missing_docs)] // documentation missing in model
     IngestContent,
     #[allow(missing_docs)] // documentation missing in model
+    IterativelyRefinePolicy,
+    #[allow(missing_docs)] // documentation missing in model
     RefinePolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    ResolvePolicyAmbiguities,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -66,7 +72,9 @@ impl ::std::convert::From<&str> for AutomatedReasoningPolicyBuildWorkflowType {
             "GENERATE_POLICY_SCENARIOS" => AutomatedReasoningPolicyBuildWorkflowType::GeneratePolicyScenarios,
             "IMPORT_POLICY" => AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy,
             "INGEST_CONTENT" => AutomatedReasoningPolicyBuildWorkflowType::IngestContent,
+            "ITERATIVELY_REFINE_POLICY" => AutomatedReasoningPolicyBuildWorkflowType::IterativelyRefinePolicy,
             "REFINE_POLICY" => AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy,
+            "RESOLVE_POLICY_AMBIGUITIES" => AutomatedReasoningPolicyBuildWorkflowType::ResolvePolicyAmbiguities,
             other => {
                 AutomatedReasoningPolicyBuildWorkflowType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
             }
@@ -88,7 +96,9 @@ impl AutomatedReasoningPolicyBuildWorkflowType {
             AutomatedReasoningPolicyBuildWorkflowType::GeneratePolicyScenarios => "GENERATE_POLICY_SCENARIOS",
             AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy => "IMPORT_POLICY",
             AutomatedReasoningPolicyBuildWorkflowType::IngestContent => "INGEST_CONTENT",
+            AutomatedReasoningPolicyBuildWorkflowType::IterativelyRefinePolicy => "ITERATIVELY_REFINE_POLICY",
             AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy => "REFINE_POLICY",
+            AutomatedReasoningPolicyBuildWorkflowType::ResolvePolicyAmbiguities => "RESOLVE_POLICY_AMBIGUITIES",
             AutomatedReasoningPolicyBuildWorkflowType::Unknown(value) => value.as_str(),
         }
     }
@@ -99,7 +109,9 @@ impl AutomatedReasoningPolicyBuildWorkflowType {
             "GENERATE_POLICY_SCENARIOS",
             "IMPORT_POLICY",
             "INGEST_CONTENT",
+            "ITERATIVELY_REFINE_POLICY",
             "REFINE_POLICY",
+            "RESOLVE_POLICY_AMBIGUITIES",
         ]
     }
 }
@@ -127,7 +139,9 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyBuildWorkflowType {
             AutomatedReasoningPolicyBuildWorkflowType::GeneratePolicyScenarios => write!(f, "GENERATE_POLICY_SCENARIOS"),
             AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy => write!(f, "IMPORT_POLICY"),
             AutomatedReasoningPolicyBuildWorkflowType::IngestContent => write!(f, "INGEST_CONTENT"),
+            AutomatedReasoningPolicyBuildWorkflowType::IterativelyRefinePolicy => write!(f, "ITERATIVELY_REFINE_POLICY"),
             AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy => write!(f, "REFINE_POLICY"),
+            AutomatedReasoningPolicyBuildWorkflowType::ResolvePolicyAmbiguities => write!(f, "RESOLVE_POLICY_AMBIGUITIES"),
             AutomatedReasoningPolicyBuildWorkflowType::Unknown(value) => write!(f, "{value}"),
         }
     }

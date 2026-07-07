@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PushDom
 #[derive(Debug)]
 struct PushDomainResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PushDomainResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -267,6 +268,8 @@ pub enum PushDomainError {
     InvalidInput(crate::types::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::types::error::OperationLimitExceeded),
+    /// <p>The top-level domain is currently undergoing maintenance and the request cannot be processed. Try again later.</p>
+    TldInMaintenance(crate::types::error::TldInMaintenance),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::types::error::UnsupportedTld),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -304,6 +307,7 @@ impl PushDomainError {
         match self {
             Self::InvalidInput(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TldInMaintenance(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedTld(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -316,6 +320,10 @@ impl PushDomainError {
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(self, Self::OperationLimitExceeded(_))
     }
+    /// Returns `true` if the error kind is `PushDomainError::TldInMaintenance`.
+    pub fn is_tld_in_maintenance(&self) -> bool {
+        matches!(self, Self::TldInMaintenance(_))
+    }
     /// Returns `true` if the error kind is `PushDomainError::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(self, Self::UnsupportedTld(_))
@@ -326,6 +334,7 @@ impl ::std::error::Error for PushDomainError {
         match self {
             Self::InvalidInput(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
+            Self::TldInMaintenance(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedTld(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -336,6 +345,7 @@ impl ::std::fmt::Display for PushDomainError {
         match self {
             Self::InvalidInput(_inner) => _inner.fmt(f),
             Self::OperationLimitExceeded(_inner) => _inner.fmt(f),
+            Self::TldInMaintenance(_inner) => _inner.fmt(f),
             Self::UnsupportedTld(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -360,6 +370,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PushDomainErr
         match self {
             Self::InvalidInput(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TldInMaintenance(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedTld(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

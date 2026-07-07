@@ -9,5 +9,7 @@ pub fn de_details(inp: &[u8]) -> std::result::Result<crate::types::Stats, ::aws_
             "invalid root, expected Stats got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_stats::de_stats(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_stats::de_stats(&mut decoder, depth + 1)
 }

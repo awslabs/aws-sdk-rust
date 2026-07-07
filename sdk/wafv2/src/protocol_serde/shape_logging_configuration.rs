@@ -2,10 +2,16 @@
 pub(crate) fn de_logging_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LoggingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,18 +30,26 @@ where
                         }
                         "LogDestinationConfigs" => {
                             builder = builder.set_log_destination_configs(
-                                crate::protocol_serde::shape_log_destination_configs::de_log_destination_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_log_destination_configs::de_log_destination_configs(tokens, _value, depth + 1)?,
                             );
                         }
                         "RedactedFields" => {
-                            builder = builder.set_redacted_fields(crate::protocol_serde::shape_redacted_fields::de_redacted_fields(tokens, _value)?);
+                            builder = builder.set_redacted_fields(crate::protocol_serde::shape_redacted_fields::de_redacted_fields(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ManagedByFirewallManager" => {
                             builder =
                                 builder.set_managed_by_firewall_manager(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "LoggingFilter" => {
-                            builder = builder.set_logging_filter(crate::protocol_serde::shape_logging_filter::de_logging_filter(tokens, _value)?);
+                            builder = builder.set_logging_filter(crate::protocol_serde::shape_logging_filter::de_logging_filter(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LogType" => {
                             builder = builder.set_log_type(

@@ -2,10 +2,16 @@
 pub(crate) fn de_place<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Place>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,8 @@ where
                             );
                         }
                         "Geometry" => {
-                            builder = builder.set_geometry(crate::protocol_serde::shape_place_geometry::de_place_geometry(tokens, _value)?);
+                            builder =
+                                builder.set_geometry(crate::protocol_serde::shape_place_geometry::de_place_geometry(tokens, _value, depth + 1)?);
                         }
                         "AddressNumber" => {
                             builder = builder.set_address_number(
@@ -85,7 +92,7 @@ where
                             builder = builder.set_interpolated(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "TimeZone" => {
-                            builder = builder.set_time_zone(crate::protocol_serde::shape_time_zone::de_time_zone(tokens, _value)?);
+                            builder = builder.set_time_zone(crate::protocol_serde::shape_time_zone::de_time_zone(tokens, _value, depth + 1)?);
                         }
                         "UnitType" => {
                             builder = builder.set_unit_type(
@@ -102,12 +109,19 @@ where
                             );
                         }
                         "Categories" => {
-                            builder =
-                                builder.set_categories(crate::protocol_serde::shape_place_category_list::de_place_category_list(tokens, _value)?);
+                            builder = builder.set_categories(crate::protocol_serde::shape_place_category_list::de_place_category_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SupplementalCategories" => {
                             builder = builder.set_supplemental_categories(
-                                crate::protocol_serde::shape_place_supplemental_category_list::de_place_supplemental_category_list(tokens, _value)?,
+                                crate::protocol_serde::shape_place_supplemental_category_list::de_place_supplemental_category_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SubMunicipality" => {

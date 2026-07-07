@@ -68,6 +68,10 @@ pub struct ClusterInstanceGroupSpecification {
     /// </ul>
     /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input. Note that if you don't specify an instance group in your <code>UpdateClusterSoftware</code> request, then all of the instance groups are patched with the specified image.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for automatic OS security patching. If present, the system automatically applies PATCH AMI updates to this instance group.</p>
+    pub auto_patch_config: ::std::option::Option<crate::types::ClusterAutoPatchConfig>,
+    /// <p>The version of the HyperPod-managed AMI to use for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code> (for example, <code>1.2.3</code>). If omitted, the latest available version is used.</p>
+    pub image_release_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
     pub kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfig>,
     /// <p>Specifies the Slurm configuration for the instance group.</p>
@@ -174,6 +178,14 @@ impl ClusterInstanceGroupSpecification {
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
+    /// <p>The configuration for automatic OS security patching. If present, the system automatically applies PATCH AMI updates to this instance group.</p>
+    pub fn auto_patch_config(&self) -> ::std::option::Option<&crate::types::ClusterAutoPatchConfig> {
+        self.auto_patch_config.as_ref()
+    }
+    /// <p>The version of the HyperPod-managed AMI to use for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code> (for example, <code>1.2.3</code>). If omitted, the latest available version is used.</p>
+    pub fn image_release_version(&self) -> ::std::option::Option<&str> {
+        self.image_release_version.as_deref()
+    }
     /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
     pub fn kubernetes_config(&self) -> ::std::option::Option<&crate::types::ClusterKubernetesConfig> {
         self.kubernetes_config.as_ref()
@@ -216,6 +228,8 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_patch_config: ::std::option::Option<crate::types::ClusterAutoPatchConfig>,
+    pub(crate) image_release_version: ::std::option::Option<::std::string::String>,
     pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfig>,
     pub(crate) slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfig>,
     pub(crate) capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
@@ -541,6 +555,34 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
+    /// <p>The configuration for automatic OS security patching. If present, the system automatically applies PATCH AMI updates to this instance group.</p>
+    pub fn auto_patch_config(mut self, input: crate::types::ClusterAutoPatchConfig) -> Self {
+        self.auto_patch_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for automatic OS security patching. If present, the system automatically applies PATCH AMI updates to this instance group.</p>
+    pub fn set_auto_patch_config(mut self, input: ::std::option::Option<crate::types::ClusterAutoPatchConfig>) -> Self {
+        self.auto_patch_config = input;
+        self
+    }
+    /// <p>The configuration for automatic OS security patching. If present, the system automatically applies PATCH AMI updates to this instance group.</p>
+    pub fn get_auto_patch_config(&self) -> &::std::option::Option<crate::types::ClusterAutoPatchConfig> {
+        &self.auto_patch_config
+    }
+    /// <p>The version of the HyperPod-managed AMI to use for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code> (for example, <code>1.2.3</code>). If omitted, the latest available version is used.</p>
+    pub fn image_release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_release_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the HyperPod-managed AMI to use for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code> (for example, <code>1.2.3</code>). If omitted, the latest available version is used.</p>
+    pub fn set_image_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_release_version = input;
+        self
+    }
+    /// <p>The version of the HyperPod-managed AMI to use for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code> (for example, <code>1.2.3</code>). If omitted, the latest available version is used.</p>
+    pub fn get_image_release_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_release_version
+    }
     /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
     pub fn kubernetes_config(mut self, input: crate::types::ClusterKubernetesConfig) -> Self {
         self.kubernetes_config = ::std::option::Option::Some(input);
@@ -614,6 +656,8 @@ impl ClusterInstanceGroupSpecificationBuilder {
             override_vpc_config: self.override_vpc_config,
             scheduled_update_config: self.scheduled_update_config,
             image_id: self.image_id,
+            auto_patch_config: self.auto_patch_config,
+            image_release_version: self.image_release_version,
             kubernetes_config: self.kubernetes_config,
             slurm_config: self.slurm_config,
             capacity_requirements: self.capacity_requirements,

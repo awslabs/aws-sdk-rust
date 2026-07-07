@@ -14,6 +14,7 @@
 /// match sagemakerresourcename {
 ///     SageMakerResourceName::Endpoint => { /* ... */ },
 ///     SageMakerResourceName::HyperpodCluster => { /* ... */ },
+///     SageMakerResourceName::StudioApps => { /* ... */ },
 ///     SageMakerResourceName::TrainingJob => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum SageMakerResourceName {
     #[allow(missing_docs)] // documentation missing in model
     HyperpodCluster,
     #[allow(missing_docs)] // documentation missing in model
+    StudioApps,
+    #[allow(missing_docs)] // documentation missing in model
     TrainingJob,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for SageMakerResourceName {
         match s {
             "endpoint" => SageMakerResourceName::Endpoint,
             "hyperpod-cluster" => SageMakerResourceName::HyperpodCluster,
+            "studio-apps" => SageMakerResourceName::StudioApps,
             "training-job" => SageMakerResourceName::TrainingJob,
             other => SageMakerResourceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl SageMakerResourceName {
         match self {
             SageMakerResourceName::Endpoint => "endpoint",
             SageMakerResourceName::HyperpodCluster => "hyperpod-cluster",
+            SageMakerResourceName::StudioApps => "studio-apps",
             SageMakerResourceName::TrainingJob => "training-job",
             SageMakerResourceName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["endpoint", "hyperpod-cluster", "training-job"]
+        &["endpoint", "hyperpod-cluster", "studio-apps", "training-job"]
     }
 }
 impl ::std::convert::AsRef<str> for SageMakerResourceName {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for SageMakerResourceName {
         match self {
             SageMakerResourceName::Endpoint => write!(f, "endpoint"),
             SageMakerResourceName::HyperpodCluster => write!(f, "hyperpod-cluster"),
+            SageMakerResourceName::StudioApps => write!(f, "studio-apps"),
             SageMakerResourceName::TrainingJob => write!(f, "training-job"),
             SageMakerResourceName::Unknown(value) => write!(f, "{value}"),
         }

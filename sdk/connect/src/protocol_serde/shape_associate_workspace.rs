@@ -167,6 +167,8 @@ pub(crate) fn de_associate_workspace(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -174,13 +176,19 @@ pub(crate) fn de_associate_workspace(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "FailedList" => {
                     builder = builder.set_failed_list(
-                        crate::protocol_serde::shape_failed_batch_association_summary_list::de_failed_batch_association_summary_list(tokens, _value)?,
+                        crate::protocol_serde::shape_failed_batch_association_summary_list::de_failed_batch_association_summary_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "SuccessfulList" => {
                     builder = builder.set_successful_list(
                         crate::protocol_serde::shape_successful_batch_association_summary_list::de_successful_batch_association_summary_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

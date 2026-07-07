@@ -30,14 +30,14 @@ pub fn ser_title_aggregation(
     if let Some(var_9) = &input.resource_type {
         object.key("resourceType").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.sort_order {
-        object.key("sortOrder").string(var_10.as_str());
+    if let Some(var_10) = &input.finding_type {
+        object.key("findingType").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.sort_by {
-        object.key("sortBy").string(var_11.as_str());
+    if let Some(var_11) = &input.sort_order {
+        object.key("sortOrder").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.finding_type {
-        object.key("findingType").string(var_12.as_str());
+    if let Some(var_12) = &input.sort_by {
+        object.key("sortBy").string(var_12.as_str());
     }
     Ok(())
 }

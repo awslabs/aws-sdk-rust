@@ -88,6 +88,8 @@ pub(crate) fn de_delete_connection(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -201,7 +203,7 @@ pub(crate) fn de_delete_connection(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                 }
                 "providerName" => {
                     builder = builder.set_provider_name(
@@ -228,7 +230,18 @@ pub(crate) fn de_delete_connection(
                     );
                 }
                 "macSecKeys" => {
-                    builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(tokens, _value)?);
+                    builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
+                "rateLimiterStatus" => {
+                    builder = builder.set_rate_limiter_status(crate::protocol_serde::shape_rate_limiter_status::de_rate_limiter_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "partnerInterconnectMacSecCapable" => {
                     builder =

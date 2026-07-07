@@ -9,7 +9,7 @@ pub struct UpdateConnectClientAddInInput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the client add-in.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectClientAddInInput {
@@ -25,7 +25,7 @@ impl UpdateConnectClientAddInInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -91,17 +91,17 @@ impl UpdateConnectClientAddInInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

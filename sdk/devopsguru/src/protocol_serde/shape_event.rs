@@ -2,10 +2,16 @@
 pub(crate) fn de_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Event>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,8 +22,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ResourceCollection" => {
-                            builder = builder
-                                .set_resource_collection(crate::protocol_serde::shape_resource_collection::de_resource_collection(tokens, _value)?);
+                            builder = builder.set_resource_collection(crate::protocol_serde::shape_resource_collection::de_resource_collection(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Id" => {
                             builder = builder.set_id(
@@ -61,7 +70,11 @@ where
                             );
                         }
                         "Resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_event_resources::de_event_resources(tokens, _value)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_event_resources::de_event_resources(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

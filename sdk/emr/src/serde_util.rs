@@ -29,6 +29,51 @@ pub(crate) fn get_block_public_access_configuration_output_output_correct_errors
     builder
 }
 
+pub(crate) fn get_session_output_output_correct_errors(
+    mut builder: crate::operation::get_session::builders::GetSessionOutputBuilder,
+) -> crate::operation::get_session::builders::GetSessionOutputBuilder {
+    if builder.session.is_none() {
+        builder.session = {
+            let builder = crate::types::builders::SessionBuilder::default();
+            Some(crate::serde_util::session_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_session_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::get_session_endpoint::builders::GetSessionEndpointOutputBuilder,
+) -> crate::operation::get_session_endpoint::builders::GetSessionEndpointOutputBuilder {
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_session_output_output_correct_errors(
+    mut builder: crate::operation::start_session::builders::StartSessionOutputBuilder,
+) -> crate::operation::start_session::builders::StartSessionOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn terminate_session_output_output_correct_errors(
+    mut builder: crate::operation::terminate_session::builders::TerminateSessionOutputBuilder,
+) -> crate::operation::terminate_session::builders::TerminateSessionOutputBuilder {
+    if builder.cluster_id.is_none() {
+        builder.cluster_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::SessionState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn block_public_access_configuration_correct_errors(
     mut builder: crate::types::builders::BlockPublicAccessConfigurationBuilder,
 ) -> crate::types::builders::BlockPublicAccessConfigurationBuilder {
@@ -46,6 +91,22 @@ pub(crate) fn block_public_access_configuration_metadata_correct_errors(
     }
     if builder.created_by_arn.is_none() {
         builder.created_by_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn session_correct_errors(mut builder: crate::types::builders::SessionBuilder) -> crate::types::builders::SessionBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.cluster_id.is_none() {
+        builder.cluster_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::SessionState>().ok()
     }
     builder
 }

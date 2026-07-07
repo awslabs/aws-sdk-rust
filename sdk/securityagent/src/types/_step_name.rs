@@ -16,6 +16,7 @@
 ///     StepName::Pentest => { /* ... */ },
 ///     StepName::Preflight => { /* ... */ },
 ///     StepName::StaticAnalysis => { /* ... */ },
+///     StepName::Validation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -38,20 +39,22 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Pentest job step names
+/// <p>Pentest job step names.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StepName {
-    /// Cleanup of infrastructure and resources created by the agent
+    /// <p>Cleanup of infrastructure and resources created by the agent.</p>
     Finalizing,
-    /// Active pentest step
+    /// <p>Active pentest step.</p>
     Pentest,
-    /// Pre-flight validation and setup step
+    /// <p>Pre-flight validation and setup step.</p>
     Preflight,
-    /// Static code and network scan analysis step
+    /// <p>Static code and network scan analysis step.</p>
     StaticAnalysis,
+    /// <p>Simulated validation step that dynamically confirms vulnerability exploitability.</p>
+    Validation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for StepName {
             "PENTEST" => StepName::Pentest,
             "PREFLIGHT" => StepName::Preflight,
             "STATIC_ANALYSIS" => StepName::StaticAnalysis,
+            "VALIDATION" => StepName::Validation,
             other => StepName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl StepName {
             StepName::Pentest => "PENTEST",
             StepName::Preflight => "PREFLIGHT",
             StepName::StaticAnalysis => "STATIC_ANALYSIS",
+            StepName::Validation => "VALIDATION",
             StepName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FINALIZING", "PENTEST", "PREFLIGHT", "STATIC_ANALYSIS"]
+        &["FINALIZING", "PENTEST", "PREFLIGHT", "STATIC_ANALYSIS", "VALIDATION"]
     }
 }
 impl ::std::convert::AsRef<str> for StepName {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for StepName {
             StepName::Pentest => write!(f, "PENTEST"),
             StepName::Preflight => write!(f, "PREFLIGHT"),
             StepName::StaticAnalysis => write!(f, "STATIC_ANALYSIS"),
+            StepName::Validation => write!(f, "VALIDATION"),
             StepName::Unknown(value) => write!(f, "{value}"),
         }
     }

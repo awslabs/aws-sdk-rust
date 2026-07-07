@@ -2,10 +2,16 @@
 pub(crate) fn de_deployment_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DeploymentTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,17 +29,22 @@ where
                             );
                         }
                         "instanceTarget" => {
-                            builder = builder.set_instance_target(crate::protocol_serde::shape_instance_target::de_instance_target(tokens, _value)?);
+                            builder = builder.set_instance_target(crate::protocol_serde::shape_instance_target::de_instance_target(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lambdaTarget" => {
-                            builder = builder.set_lambda_target(crate::protocol_serde::shape_lambda_target::de_lambda_target(tokens, _value)?);
+                            builder =
+                                builder.set_lambda_target(crate::protocol_serde::shape_lambda_target::de_lambda_target(tokens, _value, depth + 1)?);
                         }
                         "ecsTarget" => {
-                            builder = builder.set_ecs_target(crate::protocol_serde::shape_ecs_target::de_ecs_target(tokens, _value)?);
+                            builder = builder.set_ecs_target(crate::protocol_serde::shape_ecs_target::de_ecs_target(tokens, _value, depth + 1)?);
                         }
                         "cloudFormationTarget" => {
                             builder = builder.set_cloud_formation_target(
-                                crate::protocol_serde::shape_cloud_formation_target::de_cloud_formation_target(tokens, _value)?,
+                                crate::protocol_serde::shape_cloud_formation_target::de_cloud_formation_target(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

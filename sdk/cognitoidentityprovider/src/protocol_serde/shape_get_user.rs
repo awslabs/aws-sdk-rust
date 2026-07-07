@@ -77,6 +77,22 @@ pub fn de_get_user_http_error(
             }
             tmp
         }),
+        "OperationNotEnabledException" => crate::operation::get_user::GetUserError::OperationNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotEnabledExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_not_enabled_exception::de_operation_not_enabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_user::GetUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "PasswordResetRequiredException" => crate::operation::get_user::GetUserError::PasswordResetRequiredException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -193,6 +209,8 @@ pub(crate) fn de_get_user(
 ) -> ::std::result::Result<crate::operation::get_user::builders::GetUserOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -206,11 +224,17 @@ pub(crate) fn de_get_user(
                     );
                 }
                 "UserAttributes" => {
-                    builder = builder.set_user_attributes(crate::protocol_serde::shape_attribute_list_type::de_attribute_list_type(tokens, _value)?);
+                    builder = builder.set_user_attributes(crate::protocol_serde::shape_attribute_list_type::de_attribute_list_type(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "MFAOptions" => {
                     builder = builder.set_mfa_options(crate::protocol_serde::shape_mfa_option_list_type::de_mfa_option_list_type(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "PreferredMfaSetting" => {
@@ -222,7 +246,7 @@ pub(crate) fn de_get_user(
                 }
                 "UserMFASettingList" => {
                     builder = builder.set_user_mfa_setting_list(
-                        crate::protocol_serde::shape_user_mfa_setting_list_type::de_user_mfa_setting_list_type(tokens, _value)?,
+                        crate::protocol_serde::shape_user_mfa_setting_list_type::de_user_mfa_setting_list_type(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

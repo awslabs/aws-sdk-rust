@@ -73,6 +73,18 @@ pub use crate::types::_memory_db_reserved_instances::MemoryDbReservedInstances;
 
 pub use crate::types::_nat_gateway::NatGateway;
 
+pub use crate::types::_dynamo_db_table::DynamoDbTable;
+
+pub use crate::types::_elasti_cache_cluster::ElastiCacheCluster;
+
+pub use crate::types::_memory_db_cluster::MemoryDbCluster;
+
+pub use crate::types::_document_db_cluster::DocumentDbCluster;
+
+pub use crate::types::_work_spaces::WorkSpaces;
+
+pub use crate::types::_sage_maker_endpoint::SageMakerEndpoint;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_order::Order;
@@ -179,9 +191,13 @@ mod _compute_savings_plans_configuration;
 
 mod _db_instance_configuration;
 
+mod _document_db_cluster;
+
 mod _dynamo_db_reserved_capacity;
 
 mod _dynamo_db_reserved_capacity_configuration;
+
+mod _dynamo_db_table;
 
 mod _ebs_volume;
 
@@ -211,6 +227,8 @@ mod _ecs_service_configuration;
 
 mod _efficiency_metrics_by_group;
 
+mod _elasti_cache_cluster;
+
 mod _elasti_cache_reserved_instances;
 
 mod _elasti_cache_reserved_instances_configuration;
@@ -232,6 +250,8 @@ mod _lambda_function;
 mod _lambda_function_configuration;
 
 mod _member_account_discount_visibility;
+
+mod _memory_db_cluster;
 
 mod _memory_db_reserved_instances;
 
@@ -289,6 +309,8 @@ mod _resource_pricing;
 
 mod _resource_type;
 
+mod _sage_maker_endpoint;
+
 mod _sage_maker_savings_plans;
 
 mod _sage_maker_savings_plans_configuration;
@@ -318,6 +340,8 @@ mod _usage;
 mod _validation_exception_detail;
 
 mod _validation_exception_reason;
+
+mod _work_spaces;
 
 /// Builders
 pub mod builders;

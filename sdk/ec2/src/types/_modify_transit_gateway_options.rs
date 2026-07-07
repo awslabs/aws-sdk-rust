@@ -37,6 +37,10 @@ pub struct ModifyTransitGatewayOptions {
     /// <p>Direct Connect Gateway</p></li>
     /// <li>
     /// <p>Connect</p></li>
+    /// <li>
+    /// <p>VPN Concentrator</p></li>
+    /// <li>
+    /// <p>Client VPN</p></li>
     /// </ul>
     /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub amazon_side_asn: ::std::option::Option<i64>,
@@ -101,6 +105,10 @@ impl ModifyTransitGatewayOptions {
     /// <p>Direct Connect Gateway</p></li>
     /// <li>
     /// <p>Connect</p></li>
+    /// <li>
+    /// <p>VPN Concentrator</p></li>
+    /// <li>
+    /// <p>Client VPN</p></li>
     /// </ul>
     /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub fn amazon_side_asn(&self) -> ::std::option::Option<i64> {
@@ -308,6 +316,10 @@ impl ModifyTransitGatewayOptionsBuilder {
     /// <p>Direct Connect Gateway</p></li>
     /// <li>
     /// <p>Connect</p></li>
+    /// <li>
+    /// <p>VPN Concentrator</p></li>
+    /// <li>
+    /// <p>Client VPN</p></li>
     /// </ul>
     /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -325,6 +337,10 @@ impl ModifyTransitGatewayOptionsBuilder {
     /// <p>Direct Connect Gateway</p></li>
     /// <li>
     /// <p>Connect</p></li>
+    /// <li>
+    /// <p>VPN Concentrator</p></li>
+    /// <li>
+    /// <p>Client VPN</p></li>
     /// </ul>
     /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
@@ -342,6 +358,10 @@ impl ModifyTransitGatewayOptionsBuilder {
     /// <p>Direct Connect Gateway</p></li>
     /// <li>
     /// <p>Connect</p></li>
+    /// <li>
+    /// <p>VPN Concentrator</p></li>
+    /// <li>
+    /// <p>Client VPN</p></li>
     /// </ul>
     /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {

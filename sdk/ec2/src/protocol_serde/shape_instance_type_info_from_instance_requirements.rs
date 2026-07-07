@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_type_info_from_instance_requirements(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceTypeInfoFromInstanceRequirements, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceTypeInfoFromInstanceRequirements::builder();
     while let Some(mut tag) = decoder.next_tag() {

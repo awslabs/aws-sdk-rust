@@ -76,6 +76,8 @@ pub fn de_describe_adjustment_types(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeAdjustmentTypesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeAdjustmentTypesResponse got {start_el:?}"
@@ -93,7 +95,7 @@ pub fn de_describe_adjustment_types(
             s if s.matches("AdjustmentTypes") /* AdjustmentTypes com.amazonaws.autoscaling.synthetic#DescribeAdjustmentTypesOutput$AdjustmentTypes */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_adjustment_types::de_adjustment_types(&mut tag)
+                        crate::protocol_serde::shape_adjustment_types::de_adjustment_types(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAgentSpace`](crate::operation::delete_agent_space::builders::DeleteAgentSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::delete_agent_space::builders::DeleteAgentSpaceFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::delete_agent_space::builders::DeleteAgentSpaceFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier of the AgentSpace<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::delete_agent_space::builders::DeleteAgentSpaceFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::delete_agent_space::builders::DeleteAgentSpaceFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
     /// - On success, responds with [`DeleteAgentSpaceOutput`](crate::operation::delete_agent_space::DeleteAgentSpaceOutput)
     /// - On failure, responds with [`SdkError<DeleteAgentSpaceError>`](crate::operation::delete_agent_space::DeleteAgentSpaceError)
     pub fn delete_agent_space(&self) -> crate::operation::delete_agent_space::builders::DeleteAgentSpaceFluentBuilder {

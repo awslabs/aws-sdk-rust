@@ -14,7 +14,7 @@ pub struct RouteFerrySpan {
     pub duration: i64,
     /// <p>Offset in the leg geometry corresponding to the start of this span.</p>
     pub geometry_offset: ::std::option::Option<i32>,
-    /// <p>Provides an array of names of the ferry span in available languages.</p>
+    /// <p>Names of the ferry span in available languages.</p>
     pub names: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedString>>,
     /// <p>2-3 letter Region code corresponding to the Span. This is either a province or a state.</p>
     pub region: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl RouteFerrySpan {
     pub fn geometry_offset(&self) -> ::std::option::Option<i32> {
         self.geometry_offset
     }
-    /// <p>Provides an array of names of the ferry span in available languages.</p>
+    /// <p>Names of the ferry span in available languages.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
     pub fn names(&self) -> &[crate::types::LocalizedString] {
@@ -146,19 +146,19 @@ impl RouteFerrySpanBuilder {
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
     ///
-    /// <p>Provides an array of names of the ferry span in available languages.</p>
+    /// <p>Names of the ferry span in available languages.</p>
     pub fn names(mut self, input: crate::types::LocalizedString) -> Self {
         let mut v = self.names.unwrap_or_default();
         v.push(input);
         self.names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides an array of names of the ferry span in available languages.</p>
+    /// <p>Names of the ferry span in available languages.</p>
     pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedString>>) -> Self {
         self.names = input;
         self
     }
-    /// <p>Provides an array of names of the ferry span in available languages.</p>
+    /// <p>Names of the ferry span in available languages.</p>
     pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalizedString>> {
         &self.names
     }

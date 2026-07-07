@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LeadContext {
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis such as lead readiness scoring to help partners assess the lead quality.</p>
+    pub insights: ::std::option::Option<crate::types::LeadInsights>,
     /// <p>Indicates the current qualification status of the lead, such as whether it has been qualified, disqualified, or is still under evaluation. This helps track the lead's progression through the qualification process.</p>
     pub qualification_status: ::std::string::String,
     /// <p>Contains detailed information about the customer associated with the lead, including company information, contact details, and other relevant customer data.</p>
@@ -12,6 +14,10 @@ pub struct LeadContext {
     pub interactions: ::std::vec::Vec<crate::types::LeadInteraction>,
 }
 impl LeadContext {
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis such as lead readiness scoring to help partners assess the lead quality.</p>
+    pub fn insights(&self) -> ::std::option::Option<&crate::types::LeadInsights> {
+        self.insights.as_ref()
+    }
     /// <p>Indicates the current qualification status of the lead, such as whether it has been qualified, disqualified, or is still under evaluation. This helps track the lead's progression through the qualification process.</p>
     pub fn qualification_status(&self) -> &str {
         use std::ops::Deref;
@@ -38,11 +44,26 @@ impl LeadContext {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct LeadContextBuilder {
+    pub(crate) insights: ::std::option::Option<crate::types::LeadInsights>,
     pub(crate) qualification_status: ::std::option::Option<::std::string::String>,
     pub(crate) customer: ::std::option::Option<crate::types::LeadCustomer>,
     pub(crate) interactions: ::std::option::Option<::std::vec::Vec<crate::types::LeadInteraction>>,
 }
 impl LeadContextBuilder {
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis such as lead readiness scoring to help partners assess the lead quality.</p>
+    pub fn insights(mut self, input: crate::types::LeadInsights) -> Self {
+        self.insights = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis such as lead readiness scoring to help partners assess the lead quality.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<crate::types::LeadInsights>) -> Self {
+        self.insights = input;
+        self
+    }
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis such as lead readiness scoring to help partners assess the lead quality.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<crate::types::LeadInsights> {
+        &self.insights
+    }
     /// <p>Indicates the current qualification status of the lead, such as whether it has been qualified, disqualified, or is still under evaluation. This helps track the lead's progression through the qualification process.</p>
     pub fn qualification_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_status = ::std::option::Option::Some(input.into());
@@ -97,6 +118,7 @@ impl LeadContextBuilder {
     /// - [`interactions`](crate::types::builders::LeadContextBuilder::interactions)
     pub fn build(self) -> ::std::result::Result<crate::types::LeadContext, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LeadContext {
+            insights: self.insights,
             qualification_status: self.qualification_status.unwrap_or_else(|| "Unqualified".to_owned()),
             customer: self.customer,
             interactions: self.interactions.ok_or_else(|| {

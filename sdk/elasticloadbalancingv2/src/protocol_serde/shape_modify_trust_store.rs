@@ -98,6 +98,8 @@ pub fn de_modify_trust_store(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyTrustStoreResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyTrustStoreResponse got {start_el:?}"
@@ -115,7 +117,7 @@ pub fn de_modify_trust_store(
             s if s.matches("TrustStores") /* TrustStores com.amazonaws.elasticloadbalancingv2.synthetic#ModifyTrustStoreOutput$TrustStores */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_trust_stores::de_trust_stores(&mut tag)
+                        crate::protocol_serde::shape_trust_stores::de_trust_stores(&mut tag, depth + 1)
                         ?
                     )
                 ;

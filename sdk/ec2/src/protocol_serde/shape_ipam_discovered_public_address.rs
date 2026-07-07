@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ipam_discovered_public_address(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IpamDiscoveredPublicAddress, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IpamDiscoveredPublicAddress::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -208,7 +212,7 @@ pub fn de_ipam_discovered_public_address(
             s if s.matches("tags") /* Tags com.amazonaws.ec2#IpamDiscoveredPublicAddress$Tags */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_ipam_public_address_tags::de_ipam_public_address_tags(&mut tag)
+                        crate::protocol_serde::shape_ipam_public_address_tags::de_ipam_public_address_tags(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -231,7 +235,7 @@ pub fn de_ipam_discovered_public_address(
             s if s.matches("securityGroupSet") /* SecurityGroups com.amazonaws.ec2#IpamDiscoveredPublicAddress$SecurityGroups */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_ipam_public_address_security_group_list::de_ipam_public_address_security_group_list(&mut tag)
+                        crate::protocol_serde::shape_ipam_public_address_security_group_list::de_ipam_public_address_security_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

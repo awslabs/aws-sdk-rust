@@ -87,6 +87,8 @@ pub fn de_describe_cluster_tracks(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeClusterTracksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeClusterTracksResponse got {start_el:?}"
@@ -104,7 +106,7 @@ pub fn de_describe_cluster_tracks(
             s if s.matches("MaintenanceTracks") /* MaintenanceTracks com.amazonaws.redshift.synthetic#DescribeClusterTracksOutput$MaintenanceTracks */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_track_list::de_track_list(&mut tag)
+                        crate::protocol_serde::shape_track_list::de_track_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

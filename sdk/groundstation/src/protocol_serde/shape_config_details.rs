@@ -2,10 +2,16 @@
 pub(crate) fn de_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,23 +37,22 @@ where
                     }
                     variant = match key.as_ref() {
                         "endpointDetails" => Some(crate::types::ConfigDetails::EndpointDetails(
-                            crate::protocol_serde::shape_endpoint_details::de_endpoint_details(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_endpoint_details::de_endpoint_details(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'endpointDetails' cannot be null")
                             })?,
                         )),
                         "antennaDemodDecodeDetails" => Some(crate::types::ConfigDetails::AntennaDemodDecodeDetails(
-                            crate::protocol_serde::shape_antenna_demod_decode_details::de_antenna_demod_decode_details(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_antenna_demod_decode_details::de_antenna_demod_decode_details(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'antennaDemodDecodeDetails' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "s3RecordingDetails" => Some(crate::types::ConfigDetails::S3RecordingDetails(
-                            crate::protocol_serde::shape_s3_recording_details::de_s3_recording_details(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3RecordingDetails' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_s3_recording_details::de_s3_recording_details(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3RecordingDetails' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

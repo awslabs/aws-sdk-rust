@@ -30,10 +30,16 @@ pub fn ser_data_format_conversion_configuration(
 pub(crate) fn de_data_format_conversion_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataFormatConversionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,17 +51,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SchemaConfiguration" => {
                             builder = builder.set_schema_configuration(crate::protocol_serde::shape_schema_configuration::de_schema_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InputFormatConfiguration" => {
                             builder = builder.set_input_format_configuration(
-                                crate::protocol_serde::shape_input_format_configuration::de_input_format_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_input_format_configuration::de_input_format_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "OutputFormatConfiguration" => {
                             builder = builder.set_output_format_configuration(
-                                crate::protocol_serde::shape_output_format_configuration::de_output_format_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_output_format_configuration::de_output_format_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "Enabled" => {

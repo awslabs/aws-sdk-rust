@@ -51,6 +51,8 @@ pub fn de_describe_principal_id_format(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribePrincipalIdFormatResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribePrincipalIdFormatResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_principal_id_format(
             s if s.matches("principalSet") /* Principals com.amazonaws.ec2.synthetic#DescribePrincipalIdFormatOutput$Principals */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_principal_id_format_list::de_principal_id_format_list(&mut tag)
+                        crate::protocol_serde::shape_principal_id_format_list::de_principal_id_format_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

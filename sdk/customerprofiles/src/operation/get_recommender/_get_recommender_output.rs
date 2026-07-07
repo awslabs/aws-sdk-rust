@@ -23,6 +23,8 @@ pub struct GetRecommenderOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the most recent update performed on the recommender, including status and timestamp.</p>
     pub latest_recommender_update: ::std::option::Option<crate::types::RecommenderUpdate>,
+    /// <p>The name of the recommender version currently serving recommendations. Omitted when no active recommender version is set.</p>
+    pub active_recommender_version_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of metrics that provide information about the recommender's training performance and accuracy.</p>
     pub training_metrics: ::std::option::Option<::std::vec::Vec<crate::types::TrainingMetrics>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -71,6 +73,10 @@ impl GetRecommenderOutput {
     pub fn latest_recommender_update(&self) -> ::std::option::Option<&crate::types::RecommenderUpdate> {
         self.latest_recommender_update.as_ref()
     }
+    /// <p>The name of the recommender version currently serving recommendations. Omitted when no active recommender version is set.</p>
+    pub fn active_recommender_version_name(&self) -> ::std::option::Option<&str> {
+        self.active_recommender_version_name.as_deref()
+    }
     /// <p>A set of metrics that provide information about the recommender's training performance and accuracy.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.training_metrics.is_none()`.
@@ -95,6 +101,7 @@ impl ::std::fmt::Debug for GetRecommenderOutput {
         formatter.field("created_at", &self.created_at);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("latest_recommender_update", &self.latest_recommender_update);
+        formatter.field("active_recommender_version_name", &self.active_recommender_version_name);
         formatter.field("training_metrics", &self.training_metrics);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
@@ -127,6 +134,7 @@ pub struct GetRecommenderOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) latest_recommender_update: ::std::option::Option<crate::types::RecommenderUpdate>,
+    pub(crate) active_recommender_version_name: ::std::option::Option<::std::string::String>,
     pub(crate) training_metrics: ::std::option::Option<::std::vec::Vec<crate::types::TrainingMetrics>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -274,6 +282,20 @@ impl GetRecommenderOutputBuilder {
     pub fn get_latest_recommender_update(&self) -> &::std::option::Option<crate::types::RecommenderUpdate> {
         &self.latest_recommender_update
     }
+    /// <p>The name of the recommender version currently serving recommendations. Omitted when no active recommender version is set.</p>
+    pub fn active_recommender_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.active_recommender_version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender version currently serving recommendations. Omitted when no active recommender version is set.</p>
+    pub fn set_active_recommender_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.active_recommender_version_name = input;
+        self
+    }
+    /// <p>The name of the recommender version currently serving recommendations. Omitted when no active recommender version is set.</p>
+    pub fn get_active_recommender_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_recommender_version_name
+    }
     /// Appends an item to `training_metrics`.
     ///
     /// To override the contents of this collection use [`set_training_metrics`](Self::set_training_metrics).
@@ -351,6 +373,7 @@ impl GetRecommenderOutputBuilder {
             created_at: self.created_at,
             failure_reason: self.failure_reason,
             latest_recommender_update: self.latest_recommender_update,
+            active_recommender_version_name: self.active_recommender_version_name,
             training_metrics: self.training_metrics,
             tags: self.tags,
             _request_id: self._request_id,
@@ -370,6 +393,7 @@ impl ::std::fmt::Debug for GetRecommenderOutputBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("latest_recommender_update", &self.latest_recommender_update);
+        formatter.field("active_recommender_version_name", &self.active_recommender_version_name);
         formatter.field("training_metrics", &self.training_metrics);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);

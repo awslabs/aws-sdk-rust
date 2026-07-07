@@ -2,10 +2,16 @@
 pub(crate) fn de_benefit_allocation_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BenefitAllocationSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -72,8 +78,11 @@ where
                             );
                         }
                         "FulfillmentTypes" => {
-                            builder =
-                                builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(tokens, _value)?);
+                            builder = builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CreatedAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -88,7 +97,11 @@ where
                             )?);
                         }
                         "ApplicableBenefitIds" => {
-                            builder = builder.set_applicable_benefit_ids(crate::protocol_serde::shape_benefit_ids::de_benefit_ids(tokens, _value)?);
+                            builder = builder.set_applicable_benefit_ids(crate::protocol_serde::shape_benefit_ids::de_benefit_ids(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

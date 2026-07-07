@@ -2,10 +2,16 @@
 pub(crate) fn de_metric_result_v2<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MetricResultV2>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,14 +22,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimensions_v2_map::de_dimensions_v2_map(tokens, _value)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimensions_v2_map::de_dimensions_v2_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MetricInterval" => {
-                            builder = builder.set_metric_interval(crate::protocol_serde::shape_metric_interval::de_metric_interval(tokens, _value)?);
+                            builder = builder.set_metric_interval(crate::protocol_serde::shape_metric_interval::de_metric_interval(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Collections" => {
                             builder = builder.set_collections(
-                                crate::protocol_serde::shape_metric_data_collections_v2::de_metric_data_collections_v2(tokens, _value)?,
+                                crate::protocol_serde::shape_metric_data_collections_v2::de_metric_data_collections_v2(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

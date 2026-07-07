@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_platform_application(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PlatformApplication, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PlatformApplication::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_platform_application(
             s if s.matches("Attributes") /* Attributes com.amazonaws.sns#PlatformApplication$Attributes */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_map_string_to_string::de_map_string_to_string(&mut tag)
+                        crate::protocol_serde::shape_map_string_to_string::de_map_string_to_string(&mut tag, depth + 1)
                         ?
                     )
                 ;

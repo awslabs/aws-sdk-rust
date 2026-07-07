@@ -81,10 +81,16 @@ pub fn ser_waterfall_chart_configuration(
 pub(crate) fn de_waterfall_chart_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WaterfallChartConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -96,61 +102,72 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
                             builder = builder.set_field_wells(
-                                crate::protocol_serde::shape_waterfall_chart_field_wells::de_waterfall_chart_field_wells(tokens, _value)?,
+                                crate::protocol_serde::shape_waterfall_chart_field_wells::de_waterfall_chart_field_wells(tokens, _value, depth + 1)?,
                             );
                         }
                         "SortConfiguration" => {
                             builder = builder.set_sort_configuration(
                                 crate::protocol_serde::shape_waterfall_chart_sort_configuration::de_waterfall_chart_sort_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "WaterfallChartOptions" => {
                             builder = builder.set_waterfall_chart_options(
-                                crate::protocol_serde::shape_waterfall_chart_options::de_waterfall_chart_options(tokens, _value)?,
+                                crate::protocol_serde::shape_waterfall_chart_options::de_waterfall_chart_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "CategoryAxisLabelOptions" => {
                             builder = builder.set_category_axis_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "CategoryAxisDisplayOptions" => {
                             builder = builder.set_category_axis_display_options(
-                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens, _value)?,
+                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "PrimaryYAxisLabelOptions" => {
                             builder = builder.set_primary_y_axis_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "PrimaryYAxisDisplayOptions" => {
                             builder = builder.set_primary_y_axis_display_options(
-                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens, _value)?,
+                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "Legend" => {
-                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens, _value)?);
+                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens, _value, depth + 1)?);
                         }
                         "DataLabels" => {
-                            builder =
-                                builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens, _value)?);
+                            builder = builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "VisualPalette" => {
-                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens, _value)?);
+                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ColorConfiguration" => {
                             builder = builder.set_color_configuration(
                                 crate::protocol_serde::shape_waterfall_chart_color_configuration::de_waterfall_chart_color_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

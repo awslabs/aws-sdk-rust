@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_inventory_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InventoryConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InventoryConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_inventory_configuration(
             s if s.matches("Destination") /* Destination com.amazonaws.s3#InventoryConfiguration$Destination */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_inventory_destination::de_inventory_destination(&mut tag)
+                        crate::protocol_serde::shape_inventory_destination::de_inventory_destination(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -35,7 +39,7 @@ pub fn de_inventory_configuration(
             s if s.matches("Filter") /* Filter com.amazonaws.s3#InventoryConfiguration$Filter */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_inventory_filter::de_inventory_filter(&mut tag)
+                        crate::protocol_serde::shape_inventory_filter::de_inventory_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_inventory_configuration(
             s if s.matches("OptionalFields") /* OptionalFields com.amazonaws.s3#InventoryConfiguration$OptionalFields */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_inventory_optional_fields::de_inventory_optional_fields(&mut tag)
+                        crate::protocol_serde::shape_inventory_optional_fields::de_inventory_optional_fields(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_inventory_configuration(
             s if s.matches("Schedule") /* Schedule com.amazonaws.s3#InventoryConfiguration$Schedule */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_inventory_schedule::de_inventory_schedule(&mut tag)
+                        crate::protocol_serde::shape_inventory_schedule::de_inventory_schedule(&mut tag, depth + 1)
                         ?
                     )
                 ;

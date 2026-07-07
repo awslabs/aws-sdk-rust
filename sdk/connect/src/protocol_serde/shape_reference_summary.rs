@@ -2,10 +2,16 @@
 pub(crate) fn de_reference_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReferenceSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,52 +37,58 @@ where
                     }
                     variant = match key.as_ref() {
                         "Url" => Some(crate::types::ReferenceSummary::Url(
-                            crate::protocol_serde::shape_url_reference::de_url_reference(tokens, _value)?
+                            crate::protocol_serde::shape_url_reference::de_url_reference(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Url' cannot be null"))?,
                         )),
                         "Attachment" => Some(crate::types::ReferenceSummary::Attachment(
-                            crate::protocol_serde::shape_attachment_reference::de_attachment_reference(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Attachment' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_attachment_reference::de_attachment_reference(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Attachment' cannot be null"),
+                            )?,
                         )),
                         "EmailMessage" => Some(crate::types::ReferenceSummary::EmailMessage(
-                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EmailMessage' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EmailMessage' cannot be null"),
+                            )?,
                         )),
                         "EmailMessageRedacted" => Some(crate::types::ReferenceSummary::EmailMessageRedacted(
-                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EmailMessageRedacted' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EmailMessageRedacted' cannot be null"),
+                            )?,
                         )),
                         "EmailMessagePlainText" => Some(crate::types::ReferenceSummary::EmailMessagePlainText(
-                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EmailMessagePlainText' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens, _value, depth + 1)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'EmailMessagePlainText' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         "EmailMessagePlainTextRedacted" => Some(crate::types::ReferenceSummary::EmailMessagePlainTextRedacted(
-                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'EmailMessagePlainTextRedacted' cannot be null",
-                                )
-                            })?,
+                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens, _value, depth + 1)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'EmailMessagePlainTextRedacted' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         "String" => Some(crate::types::ReferenceSummary::String(
-                            crate::protocol_serde::shape_string_reference::de_string_reference(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_string_reference::de_string_reference(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'String' cannot be null")
                             })?,
                         )),
                         "Number" => Some(crate::types::ReferenceSummary::Number(
-                            crate::protocol_serde::shape_number_reference::de_number_reference(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_number_reference::de_number_reference(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Number' cannot be null")
                             })?,
                         )),
                         "Date" => Some(crate::types::ReferenceSummary::Date(
-                            crate::protocol_serde::shape_date_reference::de_date_reference(tokens, _value)?
+                            crate::protocol_serde::shape_date_reference::de_date_reference(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Date' cannot be null"))?,
                         )),
                         "Email" => Some(crate::types::ReferenceSummary::Email(
-                            crate::protocol_serde::shape_email_reference::de_email_reference(tokens, _value)?
+                            crate::protocol_serde::shape_email_reference::de_email_reference(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Email' cannot be null"))?,
                         )),
                         _ => {

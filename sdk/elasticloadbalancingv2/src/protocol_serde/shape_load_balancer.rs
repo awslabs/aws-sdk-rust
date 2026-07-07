@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_load_balancer(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LoadBalancer, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LoadBalancer::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -103,7 +107,7 @@ pub fn de_load_balancer(
             s if s.matches("State") /* State com.amazonaws.elasticloadbalancingv2#LoadBalancer$State */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_load_balancer_state::de_load_balancer_state(&mut tag)
+                        crate::protocol_serde::shape_load_balancer_state::de_load_balancer_state(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -127,7 +131,7 @@ pub fn de_load_balancer(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.elasticloadbalancingv2#LoadBalancer$AvailabilityZones */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag)
+                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -137,7 +141,7 @@ pub fn de_load_balancer(
             s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.elasticloadbalancingv2#LoadBalancer$SecurityGroups */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_security_groups::de_security_groups(&mut tag)
+                        crate::protocol_serde::shape_security_groups::de_security_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -201,7 +205,7 @@ pub fn de_load_balancer(
             s if s.matches("IpamPools") /* IpamPools com.amazonaws.elasticloadbalancingv2#LoadBalancer$IpamPools */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_ipam_pools::de_ipam_pools(&mut tag)
+                        crate::protocol_serde::shape_ipam_pools::de_ipam_pools(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -115,6 +115,8 @@ pub(crate) fn de_get_collaboration_ml_input_channel(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -129,7 +131,7 @@ pub(crate) fn de_get_collaboration_ml_input_channel(
                 }
                 "configuredModelAlgorithmAssociations" => {
                     builder = builder.set_configured_model_algorithm_associations(
-                            crate::protocol_serde::shape_configured_model_algorithm_association_arn_list::de_configured_model_algorithm_association_arn_list(tokens, _value)?
+                            crate::protocol_serde::shape_configured_model_algorithm_association_arn_list::de_configured_model_algorithm_association_arn_list(tokens, _value, depth + 1)?
                         );
                 }
                 "createTime" => {
@@ -180,8 +182,19 @@ pub(crate) fn de_get_collaboration_ml_input_channel(
                             .transpose()?,
                     );
                 }
+                "payerConfiguration" => {
+                    builder = builder.set_payer_configuration(crate::protocol_serde::shape_payer_configuration::de_payer_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "privacyBudgets" => {
-                    builder = builder.set_privacy_budgets(crate::protocol_serde::shape_privacy_budgets::de_privacy_budgets(tokens, _value)?);
+                    builder = builder.set_privacy_budgets(crate::protocol_serde::shape_privacy_budgets::de_privacy_budgets(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "retentionInDays" => {
                     builder = builder.set_retention_in_days(
@@ -198,11 +211,11 @@ pub(crate) fn de_get_collaboration_ml_input_channel(
                     );
                 }
                 "statusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value, depth + 1)?);
                 }
                 "syntheticDataConfiguration" => {
                     builder = builder.set_synthetic_data_configuration(
-                        crate::protocol_serde::shape_synthetic_data_configuration::de_synthetic_data_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_synthetic_data_configuration::de_synthetic_data_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "updateTime" => {

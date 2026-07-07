@@ -49,6 +49,8 @@ pub fn de_list_available_solution_stacks(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListAvailableSolutionStacksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListAvailableSolutionStacksResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_list_available_solution_stacks(
             s if s.matches("SolutionStacks") /* SolutionStacks com.amazonaws.elasticbeanstalk.synthetic#ListAvailableSolutionStacksOutput$SolutionStacks */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_available_solution_stack_names_list::de_available_solution_stack_names_list(&mut tag)
+                        crate::protocol_serde::shape_available_solution_stack_names_list::de_available_solution_stack_names_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -76,7 +78,7 @@ pub fn de_list_available_solution_stacks(
             s if s.matches("SolutionStackDetails") /* SolutionStackDetails com.amazonaws.elasticbeanstalk.synthetic#ListAvailableSolutionStacksOutput$SolutionStackDetails */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_available_solution_stack_details_list::de_available_solution_stack_details_list(&mut tag)
+                        crate::protocol_serde::shape_available_solution_stack_details_list::de_available_solution_stack_details_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

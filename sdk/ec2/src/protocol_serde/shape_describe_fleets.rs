@@ -40,6 +40,8 @@ pub fn de_describe_fleets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeFleetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeFleetsResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_describe_fleets(
             s if s.matches("fleetSet") /* Fleets com.amazonaws.ec2.synthetic#DescribeFleetsOutput$Fleets */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_fleet_set::de_fleet_set(&mut tag)
+                        crate::protocol_serde::shape_fleet_set::de_fleet_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

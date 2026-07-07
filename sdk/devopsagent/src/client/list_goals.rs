@@ -4,14 +4,14 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier for the agent space<br>
-    ///   - [`status(GoalStatus)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::status) / [`set_status(Option<GoalStatus>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_status):<br>required: **false**<br>Filter goals by goal status<br>
-    ///   - [`goal_type(GoalType)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::goal_type) / [`set_goal_type(Option<GoalType>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_goal_type):<br>required: **false**<br>Filter goals by goal type<br>
-    ///   - [`limit(i32)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_limit):<br>required: **false**<br>Maximum number of goals to return<br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_next_token):<br>required: **false**<br>Pagination token for the next set of results<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier for the agent space</p><br>
+    ///   - [`status(GoalStatus)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::status) / [`set_status(Option<GoalStatus>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_status):<br>required: **false**<br><p>Filter goals by goal status</p><br>
+    ///   - [`goal_type(GoalType)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::goal_type) / [`set_goal_type(Option<GoalType>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_goal_type):<br>required: **false**<br><p>Filter goals by goal type</p><br>
+    ///   - [`limit(i32)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_limit):<br>required: **false**<br><p>Maximum number of goals to return</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_goals::builders::ListGoalsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token for the next set of results</p><br>
     /// - On success, responds with [`ListGoalsOutput`](crate::operation::list_goals::ListGoalsOutput) with field(s):
-    ///   - [`goals(Vec::<Goal>)`](crate::operation::list_goals::ListGoalsOutput::goals): List of goals matching the criteria
-    ///   - [`next_token(Option<String>)`](crate::operation::list_goals::ListGoalsOutput::next_token): Pagination token for the next set of results
+    ///   - [`goals(Vec::<Goal>)`](crate::operation::list_goals::ListGoalsOutput::goals): <p>List of goals matching the criteria</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_goals::ListGoalsOutput::next_token): <p>Pagination token for the next set of results</p>
     /// - On failure, responds with [`SdkError<ListGoalsError>`](crate::operation::list_goals::ListGoalsError)
     pub fn list_goals(&self) -> crate::operation::list_goals::builders::ListGoalsFluentBuilder {
         crate::operation::list_goals::builders::ListGoalsFluentBuilder::new(self.handle.clone())

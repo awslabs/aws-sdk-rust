@@ -79,6 +79,16 @@ pub(crate) fn reflens_list_catalog_items_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_orderable_instance_types_output_output_next_token(
+    input: &crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_orders_output_output_next_token(
     input: &crate::operation::list_orders::ListOrdersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -91,6 +101,16 @@ pub(crate) fn reflens_list_orders_output_output_next_token(
 
 pub(crate) fn reflens_list_outposts_output_output_next_token(
     input: &crate::operation::list_outposts::ListOutpostsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_quotes_output_output_next_token(
+    input: &crate::operation::list_quotes::ListQuotesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -165,6 +185,13 @@ pub(crate) fn lens_list_catalog_items_output_output_catalog_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_orderable_instance_types_output_output_instance_types(
+    input: crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DetailedInstanceTypeItem>> {
+    let input = input.instance_types?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_orders_output_output_orders(
     input: crate::operation::list_orders::ListOrdersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OrderSummary>> {
@@ -176,6 +203,13 @@ pub(crate) fn lens_list_outposts_output_output_outposts(
     input: crate::operation::list_outposts::ListOutpostsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Outpost>> {
     let input = input.outposts?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_quotes_output_output_quotes(
+    input: crate::operation::list_quotes::ListQuotesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QuoteSummary>> {
+    let input = input.quotes?;
     ::std::option::Option::Some(input)
 }
 

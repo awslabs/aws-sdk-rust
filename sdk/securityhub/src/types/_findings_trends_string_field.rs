@@ -22,6 +22,10 @@
 ///     FindingsTrendsStringField::FindingStatus => { /* ... */ },
 ///     FindingsTrendsStringField::FindingType => { /* ... */ },
 ///     FindingsTrendsStringField::Region => { /* ... */ },
+///     FindingsTrendsStringField::ResourceCloudProviders => { /* ... */ },
+///     FindingsTrendsStringField::ResourceOwnerIds => { /* ... */ },
+///     FindingsTrendsStringField::ResourceOwnerOrganizationIds => { /* ... */ },
+///     FindingsTrendsStringField::ResourceRegions => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -70,6 +74,14 @@ pub enum FindingsTrendsStringField {
     FindingType,
     #[allow(missing_docs)] // documentation missing in model
     Region,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceCloudProviders,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceOwnerIds,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceOwnerOrganizationIds,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceRegions,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -87,6 +99,10 @@ impl ::std::convert::From<&str> for FindingsTrendsStringField {
             "finding_status" => FindingsTrendsStringField::FindingStatus,
             "finding_types" => FindingsTrendsStringField::FindingType,
             "region" => FindingsTrendsStringField::Region,
+            "resource_cloud_providers" => FindingsTrendsStringField::ResourceCloudProviders,
+            "resource_owner_ids" => FindingsTrendsStringField::ResourceOwnerIds,
+            "resource_owner_organization_ids" => FindingsTrendsStringField::ResourceOwnerOrganizationIds,
+            "resource_regions" => FindingsTrendsStringField::ResourceRegions,
             other => FindingsTrendsStringField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -112,6 +128,10 @@ impl FindingsTrendsStringField {
             FindingsTrendsStringField::FindingStatus => "finding_status",
             FindingsTrendsStringField::FindingType => "finding_types",
             FindingsTrendsStringField::Region => "region",
+            FindingsTrendsStringField::ResourceCloudProviders => "resource_cloud_providers",
+            FindingsTrendsStringField::ResourceOwnerIds => "resource_owner_ids",
+            FindingsTrendsStringField::ResourceOwnerOrganizationIds => "resource_owner_organization_ids",
+            FindingsTrendsStringField::ResourceRegions => "resource_regions",
             FindingsTrendsStringField::Unknown(value) => value.as_str(),
         }
     }
@@ -128,6 +148,10 @@ impl FindingsTrendsStringField {
             "finding_status",
             "finding_types",
             "region",
+            "resource_cloud_providers",
+            "resource_owner_ids",
+            "resource_owner_organization_ids",
+            "resource_regions",
         ]
     }
 }
@@ -161,6 +185,10 @@ impl ::std::fmt::Display for FindingsTrendsStringField {
             FindingsTrendsStringField::FindingStatus => write!(f, "finding_status"),
             FindingsTrendsStringField::FindingType => write!(f, "finding_types"),
             FindingsTrendsStringField::Region => write!(f, "region"),
+            FindingsTrendsStringField::ResourceCloudProviders => write!(f, "resource_cloud_providers"),
+            FindingsTrendsStringField::ResourceOwnerIds => write!(f, "resource_owner_ids"),
+            FindingsTrendsStringField::ResourceOwnerOrganizationIds => write!(f, "resource_owner_organization_ids"),
+            FindingsTrendsStringField::ResourceRegions => write!(f, "resource_regions"),
             FindingsTrendsStringField::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -230,4 +230,23 @@ impl ListSolutionsFluentBuilder {
     pub fn get_category(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_category()
     }
+    ///
+    /// Appends an item to `AwsMarketplaceSolutionArn`.
+    ///
+    /// To override the contents of this collection use [`set_aws_marketplace_solution_arn`](Self::set_aws_marketplace_solution_arn).
+    ///
+    /// <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.</p>
+    pub fn aws_marketplace_solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.aws_marketplace_solution_arn(input.into());
+        self
+    }
+    /// <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.</p>
+    pub fn set_aws_marketplace_solution_arn(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_aws_marketplace_solution_arn(input);
+        self
+    }
+    /// <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.</p>
+    pub fn get_aws_marketplace_solution_arn(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_aws_marketplace_solution_arn()
+    }
 }

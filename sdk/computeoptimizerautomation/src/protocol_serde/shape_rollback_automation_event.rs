@@ -232,10 +232,11 @@ pub(crate) fn de_rollback_automation_event(
     crate::operation::rollback_automation_event::builders::RollbackAutomationEventOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::rollback_automation_event::builders::RollbackAutomationEventOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::rollback_automation_event::builders::RollbackAutomationEventOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -256,6 +257,8 @@ pub(crate) fn de_rollback_automation_event(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -265,13 +268,13 @@ pub(crate) fn de_rollback_automation_event(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

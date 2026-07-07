@@ -24,10 +24,12 @@ pub struct DashIsoGroupSettings {
     pub fragment_length: ::std::option::Option<i32>,
     /// Supports HbbTV specification as indicated
     pub hbbtv_compliance: ::std::option::Option<crate::types::DashIsoHbbtvCompliance>,
-    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. Choose Advanced to customize thumbnail and tile settings for a single trick play variant. Choose Variants to specify multiple trick play variants, each with its own thumbnail and tile settings. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub image_based_trick_play: ::std::option::Option<crate::types::DashIsoImageBasedTrickPlay>,
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
     pub image_based_trick_play_settings: ::std::option::Option<crate::types::DashIsoImageBasedTrickPlaySettings>,
+    /// Specify multiple image-based trick play variants. Each entry creates a separate set of JPEG tile images with its own resolution, tile layout, and cadence settings. Set imageBasedTrickPlay to VARIANTS when using this setting.
+    pub image_based_trick_play_variants: ::std::option::Option<::std::vec::Vec<crate::types::DashIsoImageBasedTrickPlayVariant>>,
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
     pub min_buffer_time: ::std::option::Option<i32>,
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
@@ -92,13 +94,19 @@ impl DashIsoGroupSettings {
     pub fn hbbtv_compliance(&self) -> ::std::option::Option<&crate::types::DashIsoHbbtvCompliance> {
         self.hbbtv_compliance.as_ref()
     }
-    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. Choose Advanced to customize thumbnail and tile settings for a single trick play variant. Choose Variants to specify multiple trick play variants, each with its own thumbnail and tile settings. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub fn image_based_trick_play(&self) -> ::std::option::Option<&crate::types::DashIsoImageBasedTrickPlay> {
         self.image_based_trick_play.as_ref()
     }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
     pub fn image_based_trick_play_settings(&self) -> ::std::option::Option<&crate::types::DashIsoImageBasedTrickPlaySettings> {
         self.image_based_trick_play_settings.as_ref()
+    }
+    /// Specify multiple image-based trick play variants. Each entry creates a separate set of JPEG tile images with its own resolution, tile layout, and cadence settings. Set imageBasedTrickPlay to VARIANTS when using this setting.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_based_trick_play_variants.is_none()`.
+    pub fn image_based_trick_play_variants(&self) -> &[crate::types::DashIsoImageBasedTrickPlayVariant] {
+        self.image_based_trick_play_variants.as_deref().unwrap_or_default()
     }
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
     pub fn min_buffer_time(&self) -> ::std::option::Option<i32> {
@@ -164,6 +172,7 @@ pub struct DashIsoGroupSettingsBuilder {
     pub(crate) hbbtv_compliance: ::std::option::Option<crate::types::DashIsoHbbtvCompliance>,
     pub(crate) image_based_trick_play: ::std::option::Option<crate::types::DashIsoImageBasedTrickPlay>,
     pub(crate) image_based_trick_play_settings: ::std::option::Option<crate::types::DashIsoImageBasedTrickPlaySettings>,
+    pub(crate) image_based_trick_play_variants: ::std::option::Option<::std::vec::Vec<crate::types::DashIsoImageBasedTrickPlayVariant>>,
     pub(crate) min_buffer_time: ::std::option::Option<i32>,
     pub(crate) min_final_segment_length: ::std::option::Option<f64>,
     pub(crate) mpd_manifest_bandwidth_type: ::std::option::Option<crate::types::DashIsoMpdManifestBandwidthType>,
@@ -325,17 +334,17 @@ impl DashIsoGroupSettingsBuilder {
     pub fn get_hbbtv_compliance(&self) -> &::std::option::Option<crate::types::DashIsoHbbtvCompliance> {
         &self.hbbtv_compliance
     }
-    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. Choose Advanced to customize thumbnail and tile settings for a single trick play variant. Choose Variants to specify multiple trick play variants, each with its own thumbnail and tile settings. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub fn image_based_trick_play(mut self, input: crate::types::DashIsoImageBasedTrickPlay) -> Self {
         self.image_based_trick_play = ::std::option::Option::Some(input);
         self
     }
-    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. Choose Advanced to customize thumbnail and tile settings for a single trick play variant. Choose Variants to specify multiple trick play variants, each with its own thumbnail and tile settings. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub fn set_image_based_trick_play(mut self, input: ::std::option::Option<crate::types::DashIsoImageBasedTrickPlay>) -> Self {
         self.image_based_trick_play = input;
         self
     }
-    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. Choose Advanced to customize thumbnail and tile settings for a single trick play variant. Choose Variants to specify multiple trick play variants, each with its own thumbnail and tile settings. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub fn get_image_based_trick_play(&self) -> &::std::option::Option<crate::types::DashIsoImageBasedTrickPlay> {
         &self.image_based_trick_play
     }
@@ -352,6 +361,29 @@ impl DashIsoGroupSettingsBuilder {
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
     pub fn get_image_based_trick_play_settings(&self) -> &::std::option::Option<crate::types::DashIsoImageBasedTrickPlaySettings> {
         &self.image_based_trick_play_settings
+    }
+    /// Appends an item to `image_based_trick_play_variants`.
+    ///
+    /// To override the contents of this collection use [`set_image_based_trick_play_variants`](Self::set_image_based_trick_play_variants).
+    ///
+    /// Specify multiple image-based trick play variants. Each entry creates a separate set of JPEG tile images with its own resolution, tile layout, and cadence settings. Set imageBasedTrickPlay to VARIANTS when using this setting.
+    pub fn image_based_trick_play_variants(mut self, input: crate::types::DashIsoImageBasedTrickPlayVariant) -> Self {
+        let mut v = self.image_based_trick_play_variants.unwrap_or_default();
+        v.push(input);
+        self.image_based_trick_play_variants = ::std::option::Option::Some(v);
+        self
+    }
+    /// Specify multiple image-based trick play variants. Each entry creates a separate set of JPEG tile images with its own resolution, tile layout, and cadence settings. Set imageBasedTrickPlay to VARIANTS when using this setting.
+    pub fn set_image_based_trick_play_variants(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DashIsoImageBasedTrickPlayVariant>>,
+    ) -> Self {
+        self.image_based_trick_play_variants = input;
+        self
+    }
+    /// Specify multiple image-based trick play variants. Each entry creates a separate set of JPEG tile images with its own resolution, tile layout, and cadence settings. Set imageBasedTrickPlay to VARIANTS when using this setting.
+    pub fn get_image_based_trick_play_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashIsoImageBasedTrickPlayVariant>> {
+        &self.image_based_trick_play_variants
     }
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
     pub fn min_buffer_time(mut self, input: i32) -> Self {
@@ -511,6 +543,7 @@ impl DashIsoGroupSettingsBuilder {
             hbbtv_compliance: self.hbbtv_compliance,
             image_based_trick_play: self.image_based_trick_play,
             image_based_trick_play_settings: self.image_based_trick_play_settings,
+            image_based_trick_play_variants: self.image_based_trick_play_variants,
             min_buffer_time: self.min_buffer_time,
             min_final_segment_length: self.min_final_segment_length,
             mpd_manifest_bandwidth_type: self.mpd_manifest_bandwidth_type,

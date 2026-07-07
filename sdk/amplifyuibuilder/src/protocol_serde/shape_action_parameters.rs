@@ -67,10 +67,16 @@ pub fn ser_action_parameters(
 pub(crate) fn de_action_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ActionParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -81,19 +87,39 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "type" => {
-                            builder = builder.set_type(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?);
+                            builder = builder.set_type(crate::protocol_serde::shape_component_property::de_component_property(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "url" => {
-                            builder = builder.set_url(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?);
+                            builder = builder.set_url(crate::protocol_serde::shape_component_property::de_component_property(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "anchor" => {
-                            builder = builder.set_anchor(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?);
+                            builder = builder.set_anchor(crate::protocol_serde::shape_component_property::de_component_property(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "target" => {
-                            builder = builder.set_target(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?);
+                            builder = builder.set_target(crate::protocol_serde::shape_component_property::de_component_property(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "global" => {
-                            builder = builder.set_global(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?);
+                            builder = builder.set_global(crate::protocol_serde::shape_component_property::de_component_property(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "model" => {
                             builder = builder.set_model(
@@ -103,17 +129,25 @@ where
                             );
                         }
                         "id" => {
-                            builder = builder.set_id(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?);
+                            builder = builder.set_id(crate::protocol_serde::shape_component_property::de_component_property(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "fields" => {
                             builder = builder.set_fields(crate::protocol_serde::shape_component_properties::de_component_properties(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "state" => {
                             builder = builder.set_state(
                                 crate::protocol_serde::shape_mutation_action_set_state_parameter::de_mutation_action_set_state_parameter(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

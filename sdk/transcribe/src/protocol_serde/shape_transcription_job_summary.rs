@@ -2,10 +2,16 @@
 pub(crate) fn de_transcription_job_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TranscriptionJobSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,11 +75,18 @@ where
                             );
                         }
                         "ContentRedaction" => {
-                            builder =
-                                builder.set_content_redaction(crate::protocol_serde::shape_content_redaction::de_content_redaction(tokens, _value)?);
+                            builder = builder.set_content_redaction(crate::protocol_serde::shape_content_redaction::de_content_redaction(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ModelSettings" => {
-                            builder = builder.set_model_settings(crate::protocol_serde::shape_model_settings::de_model_settings(tokens, _value)?);
+                            builder = builder.set_model_settings(crate::protocol_serde::shape_model_settings::de_model_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IdentifyLanguage" => {
                             builder = builder.set_identify_language(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -88,12 +101,18 @@ where
                             );
                         }
                         "LanguageCodes" => {
-                            builder =
-                                builder.set_language_codes(crate::protocol_serde::shape_language_code_list::de_language_code_list(tokens, _value)?);
+                            builder = builder.set_language_codes(crate::protocol_serde::shape_language_code_list::de_language_code_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ToxicityDetection" => {
-                            builder = builder
-                                .set_toxicity_detection(crate::protocol_serde::shape_toxicity_detection::de_toxicity_detection(tokens, _value)?);
+                            builder = builder.set_toxicity_detection(crate::protocol_serde::shape_toxicity_detection::de_toxicity_detection(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

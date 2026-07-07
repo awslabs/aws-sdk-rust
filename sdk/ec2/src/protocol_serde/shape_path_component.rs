@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_path_component(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PathComponent, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PathComponent::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -25,7 +29,7 @@ pub fn de_path_component(
             s if s.matches("aclRule") /* AclRule com.amazonaws.ec2#PathComponent$AclRule */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_analysis_acl_rule::de_analysis_acl_rule(&mut tag)
+                        crate::protocol_serde::shape_analysis_acl_rule::de_analysis_acl_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -35,7 +39,7 @@ pub fn de_path_component(
             s if s.matches("attachedTo") /* AttachedTo com.amazonaws.ec2#PathComponent$AttachedTo */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -45,7 +49,7 @@ pub fn de_path_component(
             s if s.matches("component") /* Component com.amazonaws.ec2#PathComponent$Component */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -55,7 +59,7 @@ pub fn de_path_component(
             s if s.matches("destinationVpc") /* DestinationVpc com.amazonaws.ec2#PathComponent$DestinationVpc */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -65,7 +69,7 @@ pub fn de_path_component(
             s if s.matches("outboundHeader") /* OutboundHeader com.amazonaws.ec2#PathComponent$OutboundHeader */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_analysis_packet_header::de_analysis_packet_header(&mut tag)
+                        crate::protocol_serde::shape_analysis_packet_header::de_analysis_packet_header(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -75,7 +79,7 @@ pub fn de_path_component(
             s if s.matches("inboundHeader") /* InboundHeader com.amazonaws.ec2#PathComponent$InboundHeader */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_analysis_packet_header::de_analysis_packet_header(&mut tag)
+                        crate::protocol_serde::shape_analysis_packet_header::de_analysis_packet_header(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_path_component(
             s if s.matches("routeTableRoute") /* RouteTableRoute com.amazonaws.ec2#PathComponent$RouteTableRoute */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_analysis_route_table_route::de_analysis_route_table_route(&mut tag)
+                        crate::protocol_serde::shape_analysis_route_table_route::de_analysis_route_table_route(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -95,7 +99,7 @@ pub fn de_path_component(
             s if s.matches("securityGroupRule") /* SecurityGroupRule com.amazonaws.ec2#PathComponent$SecurityGroupRule */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_analysis_security_group_rule::de_analysis_security_group_rule(&mut tag)
+                        crate::protocol_serde::shape_analysis_security_group_rule::de_analysis_security_group_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -105,7 +109,7 @@ pub fn de_path_component(
             s if s.matches("sourceVpc") /* SourceVpc com.amazonaws.ec2#PathComponent$SourceVpc */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -115,7 +119,7 @@ pub fn de_path_component(
             s if s.matches("subnet") /* Subnet com.amazonaws.ec2#PathComponent$Subnet */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -125,7 +129,7 @@ pub fn de_path_component(
             s if s.matches("vpc") /* Vpc com.amazonaws.ec2#PathComponent$Vpc */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -135,7 +139,7 @@ pub fn de_path_component(
             s if s.matches("additionalDetailSet") /* AdditionalDetails com.amazonaws.ec2#PathComponent$AdditionalDetails */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_additional_detail_list::de_additional_detail_list(&mut tag)
+                        crate::protocol_serde::shape_additional_detail_list::de_additional_detail_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -145,7 +149,7 @@ pub fn de_path_component(
             s if s.matches("transitGateway") /* TransitGateway com.amazonaws.ec2#PathComponent$TransitGateway */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -155,7 +159,7 @@ pub fn de_path_component(
             s if s.matches("transitGatewayRouteTableRoute") /* TransitGatewayRouteTableRoute com.amazonaws.ec2#PathComponent$TransitGatewayRouteTableRoute */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_route_table_route::de_transit_gateway_route_table_route(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_route_table_route::de_transit_gateway_route_table_route(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -165,7 +169,7 @@ pub fn de_path_component(
             s if s.matches("explanationSet") /* Explanations com.amazonaws.ec2#PathComponent$Explanations */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_explanation_list::de_explanation_list(&mut tag)
+                        crate::protocol_serde::shape_explanation_list::de_explanation_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -175,7 +179,7 @@ pub fn de_path_component(
             s if s.matches("elasticLoadBalancerListener") /* ElasticLoadBalancerListener com.amazonaws.ec2#PathComponent$ElasticLoadBalancerListener */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -185,7 +189,7 @@ pub fn de_path_component(
             s if s.matches("firewallStatelessRule") /* FirewallStatelessRule com.amazonaws.ec2#PathComponent$FirewallStatelessRule */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_firewall_stateless_rule::de_firewall_stateless_rule(&mut tag)
+                        crate::protocol_serde::shape_firewall_stateless_rule::de_firewall_stateless_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -195,7 +199,7 @@ pub fn de_path_component(
             s if s.matches("firewallStatefulRule") /* FirewallStatefulRule com.amazonaws.ec2#PathComponent$FirewallStatefulRule */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_firewall_stateful_rule::de_firewall_stateful_rule(&mut tag)
+                        crate::protocol_serde::shape_firewall_stateful_rule::de_firewall_stateful_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;

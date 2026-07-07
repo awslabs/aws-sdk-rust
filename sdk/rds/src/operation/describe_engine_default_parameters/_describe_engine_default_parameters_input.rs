@@ -28,6 +28,8 @@ pub struct DescribeEngineDefaultParametersInput {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb10.2</code></p></li>
@@ -141,6 +143,8 @@ impl DescribeEngineDefaultParametersInput {
     /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
@@ -282,6 +286,8 @@ impl DescribeEngineDefaultParametersInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb10.2</code></p></li>
@@ -389,6 +395,8 @@ impl DescribeEngineDefaultParametersInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb10.2</code></p></li>
@@ -494,6 +502,8 @@ impl DescribeEngineDefaultParametersInputBuilder {
     /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>

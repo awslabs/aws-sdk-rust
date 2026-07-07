@@ -49,6 +49,8 @@ pub fn de_modify_managed_resource_visibility(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyManagedResourceVisibilityResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyManagedResourceVisibilityResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_modify_managed_resource_visibility(
             s if s.matches("visibility") /* Visibility com.amazonaws.ec2.synthetic#ModifyManagedResourceVisibilityOutput$Visibility */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_managed_resource_visibility_settings::de_managed_resource_visibility_settings(&mut tag)
+                        crate::protocol_serde::shape_managed_resource_visibility_settings::de_managed_resource_visibility_settings(&mut tag, depth + 1)
                         ?
                     )
                 ;

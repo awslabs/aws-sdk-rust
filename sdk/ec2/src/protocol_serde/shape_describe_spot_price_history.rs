@@ -51,6 +51,8 @@ pub fn de_describe_spot_price_history(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSpotPriceHistoryResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSpotPriceHistoryResponse got {start_el:?}"
@@ -74,7 +76,7 @@ pub fn de_describe_spot_price_history(
             s if s.matches("spotPriceHistorySet") /* SpotPriceHistory com.amazonaws.ec2.synthetic#DescribeSpotPriceHistoryOutput$SpotPriceHistory */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_spot_price_history_list::de_spot_price_history_list(&mut tag)
+                        crate::protocol_serde::shape_spot_price_history_list::de_spot_price_history_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

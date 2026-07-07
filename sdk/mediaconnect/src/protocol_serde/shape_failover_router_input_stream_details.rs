@@ -2,10 +2,16 @@
 pub(crate) fn de_failover_router_input_stream_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FailoverRouterInputStreamDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,12 +23,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sourceIndexZeroStreamDetails" => {
                             builder = builder.set_source_index_zero_stream_details(
-                                    crate::protocol_serde::shape_failover_router_input_indexed_stream_details::de_failover_router_input_indexed_stream_details(tokens, _value)?
+                                    crate::protocol_serde::shape_failover_router_input_indexed_stream_details::de_failover_router_input_indexed_stream_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "sourceIndexOneStreamDetails" => {
                             builder = builder.set_source_index_one_stream_details(
-                                    crate::protocol_serde::shape_failover_router_input_indexed_stream_details::de_failover_router_input_indexed_stream_details(tokens, _value)?
+                                    crate::protocol_serde::shape_failover_router_input_indexed_stream_details::de_failover_router_input_indexed_stream_details(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

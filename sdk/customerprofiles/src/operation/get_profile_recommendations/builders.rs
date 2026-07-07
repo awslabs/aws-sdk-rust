@@ -257,4 +257,18 @@ impl GetProfileRecommendationsFluentBuilder {
     pub fn get_metadata_config(&self) -> &::std::option::Option<crate::types::MetadataConfig> {
         self.inner.get_metadata_config()
     }
+    /// <p>Runtime diversity configuration for this request. Enables diversity-aware recommendations and optionally supplies values for placeholder-based diversity caps configured on the recommender.</p>
+    pub fn diversity_config(mut self, input: crate::types::RecommendationDiversityConfig) -> Self {
+        self.inner = self.inner.diversity_config(input);
+        self
+    }
+    /// <p>Runtime diversity configuration for this request. Enables diversity-aware recommendations and optionally supplies values for placeholder-based diversity caps configured on the recommender.</p>
+    pub fn set_diversity_config(mut self, input: ::std::option::Option<crate::types::RecommendationDiversityConfig>) -> Self {
+        self.inner = self.inner.set_diversity_config(input);
+        self
+    }
+    /// <p>Runtime diversity configuration for this request. Enables diversity-aware recommendations and optionally supplies values for placeholder-based diversity caps configured on the recommender.</p>
+    pub fn get_diversity_config(&self) -> &::std::option::Option<crate::types::RecommendationDiversityConfig> {
+        self.inner.get_diversity_config()
+    }
 }

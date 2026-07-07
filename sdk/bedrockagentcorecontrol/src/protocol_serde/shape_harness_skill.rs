@@ -7,6 +7,24 @@ pub fn ser_harness_skill(
         crate::types::HarnessSkill::Path(inner) => {
             object_26.key("path").string(inner.as_str());
         }
+        crate::types::HarnessSkill::S3(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_26.key("s3").start_object();
+            crate::protocol_serde::shape_harness_skill_s3_source::ser_harness_skill_s3_source(&mut object_1, inner)?;
+            object_1.finish();
+        }
+        crate::types::HarnessSkill::Git(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_26.key("git").start_object();
+            crate::protocol_serde::shape_harness_skill_git_source::ser_harness_skill_git_source(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::HarnessSkill::AwsSkills(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_26.key("awsSkills").start_object();
+            crate::protocol_serde::shape_harness_skill_aws_skills_source::ser_harness_skill_aws_skills_source(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::HarnessSkill::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("HarnessSkill")),
     }
     Ok(())
@@ -15,10 +33,16 @@ pub fn ser_harness_skill(
 pub(crate) fn de_harness_skill<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HarnessSkill>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -48,6 +72,22 @@ where
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'path' cannot be null"))?,
+                        )),
+                        "s3" => Some(crate::types::HarnessSkill::S3(
+                            crate::protocol_serde::shape_harness_skill_s3_source::de_harness_skill_s3_source(tokens, _value, depth + 1)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
+                        )),
+                        "git" => Some(crate::types::HarnessSkill::Git(
+                            crate::protocol_serde::shape_harness_skill_git_source::de_harness_skill_git_source(tokens, _value, depth + 1)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'git' cannot be null"))?,
+                        )),
+                        "awsSkills" => Some(crate::types::HarnessSkill::AwsSkills(
+                            crate::protocol_serde::shape_harness_skill_aws_skills_source::de_harness_skill_aws_skills_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsSkills' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

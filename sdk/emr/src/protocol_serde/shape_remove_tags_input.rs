@@ -15,5 +15,8 @@ pub fn ser_remove_tags_input_input(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.cluster_id {
+        object.key("ClusterId").string(var_5.as_str());
+    }
     Ok(())
 }

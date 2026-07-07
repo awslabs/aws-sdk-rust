@@ -42,7 +42,11 @@ pub fn ser_deployment_targets(
 #[allow(clippy::needless_question_mark)]
 pub fn de_deployment_targets(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DeploymentTargets, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DeploymentTargets::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -50,7 +54,7 @@ pub fn de_deployment_targets(
             s if s.matches("Accounts") /* Accounts com.amazonaws.cloudformation#DeploymentTargets$Accounts */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_account_list::de_account_list(&mut tag)
+                        crate::protocol_serde::shape_account_list::de_account_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +77,7 @@ pub fn de_deployment_targets(
             s if s.matches("OrganizationalUnitIds") /* OrganizationalUnitIds com.amazonaws.cloudformation#DeploymentTargets$OrganizationalUnitIds */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_organizational_unit_id_list::de_organizational_unit_id_list(&mut tag)
+                        crate::protocol_serde::shape_organizational_unit_id_list::de_organizational_unit_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

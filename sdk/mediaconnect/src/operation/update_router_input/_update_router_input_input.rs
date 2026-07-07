@@ -19,6 +19,8 @@ pub struct UpdateRouterInputInput {
     pub transit_encryption: ::std::option::Option<crate::types::RouterInputTransitEncryption>,
     /// <p>The updated maintenance configuration settings for the router input, including any changes to preferred maintenance windows and schedules.</p>
     pub maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub content_quality_analysis_configuration: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
 }
 impl UpdateRouterInputInput {
     /// <p>The Amazon Resource Name (ARN) of the router input that you want to update.</p>
@@ -53,6 +55,10 @@ impl UpdateRouterInputInput {
     pub fn maintenance_configuration(&self) -> ::std::option::Option<&crate::types::MaintenanceConfiguration> {
         self.maintenance_configuration.as_ref()
     }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn content_quality_analysis_configuration(&self) -> ::std::option::Option<&crate::types::RouterContentQualityAnalysisConfiguration> {
+        self.content_quality_analysis_configuration.as_ref()
+    }
 }
 impl UpdateRouterInputInput {
     /// Creates a new builder-style object to manufacture [`UpdateRouterInputInput`](crate::operation::update_router_input::UpdateRouterInputInput).
@@ -73,6 +79,7 @@ pub struct UpdateRouterInputInputBuilder {
     pub(crate) tier: ::std::option::Option<crate::types::RouterInputTier>,
     pub(crate) transit_encryption: ::std::option::Option<crate::types::RouterInputTransitEncryption>,
     pub(crate) maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
+    pub(crate) content_quality_analysis_configuration: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
 }
 impl UpdateRouterInputInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the router input that you want to update.</p>
@@ -188,6 +195,23 @@ impl UpdateRouterInputInputBuilder {
     pub fn get_maintenance_configuration(&self) -> &::std::option::Option<crate::types::MaintenanceConfiguration> {
         &self.maintenance_configuration
     }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn content_quality_analysis_configuration(mut self, input: crate::types::RouterContentQualityAnalysisConfiguration) -> Self {
+        self.content_quality_analysis_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn set_content_quality_analysis_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
+    ) -> Self {
+        self.content_quality_analysis_configuration = input;
+        self
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn get_content_quality_analysis_configuration(&self) -> &::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration> {
+        &self.content_quality_analysis_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateRouterInputInput`](crate::operation::update_router_input::UpdateRouterInputInput).
     pub fn build(
         self,
@@ -201,6 +225,7 @@ impl UpdateRouterInputInputBuilder {
             tier: self.tier,
             transit_encryption: self.transit_encryption,
             maintenance_configuration: self.maintenance_configuration,
+            content_quality_analysis_configuration: self.content_quality_analysis_configuration,
         })
     }
 }

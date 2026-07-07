@@ -87,13 +87,15 @@ pub(crate) fn de_list_entity_events(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ChangeEvents" => {
-                    builder = builder.set_change_events(crate::protocol_serde::shape_change_events::de_change_events(tokens, _value)?);
+                    builder = builder.set_change_events(crate::protocol_serde::shape_change_events::de_change_events(tokens, _value, depth + 1)?);
                 }
                 "EndTime" => {
                     builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

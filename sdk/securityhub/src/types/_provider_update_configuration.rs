@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProviderUpdateConfiguration {
+    /// <p>The parameters required to update the configuration for a Microsoft Azure CSPM integration.</p>
+    Azure(crate::types::AzureUpdateConfiguration),
     /// <p>The parameters required to update the configuration for a Jira Cloud integration.</p>
     JiraCloud(crate::types::JiraCloudUpdateConfiguration),
     /// <p>The parameters required to update the configuration for a ServiceNow integration.</p>
@@ -19,6 +21,19 @@ pub enum ProviderUpdateConfiguration {
     Unknown,
 }
 impl ProviderUpdateConfiguration {
+    /// Tries to convert the enum instance into [`Azure`](crate::types::ProviderUpdateConfiguration::Azure), extracting the inner [`AzureUpdateConfiguration`](crate::types::AzureUpdateConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_azure(&self) -> ::std::result::Result<&crate::types::AzureUpdateConfiguration, &Self> {
+        if let ProviderUpdateConfiguration::Azure(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Azure`](crate::types::ProviderUpdateConfiguration::Azure).
+    pub fn is_azure(&self) -> bool {
+        self.as_azure().is_ok()
+    }
     /// Tries to convert the enum instance into [`JiraCloud`](crate::types::ProviderUpdateConfiguration::JiraCloud), extracting the inner [`JiraCloudUpdateConfiguration`](crate::types::JiraCloudUpdateConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_jira_cloud(&self) -> ::std::result::Result<&crate::types::JiraCloudUpdateConfiguration, &Self> {

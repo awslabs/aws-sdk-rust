@@ -97,6 +97,8 @@ pub(crate) fn de_describe_workflow_execution(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -104,17 +106,23 @@ pub(crate) fn de_describe_workflow_execution(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "executionInfo" => {
                     builder = builder.set_execution_info(crate::protocol_serde::shape_workflow_execution_info::de_workflow_execution_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "executionConfiguration" => {
                     builder = builder.set_execution_configuration(
-                        crate::protocol_serde::shape_workflow_execution_configuration::de_workflow_execution_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_workflow_execution_configuration::de_workflow_execution_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "openCounts" => {
                     builder = builder.set_open_counts(
-                        crate::protocol_serde::shape_workflow_execution_open_counts::de_workflow_execution_open_counts(tokens, _value)?,
+                        crate::protocol_serde::shape_workflow_execution_open_counts::de_workflow_execution_open_counts(tokens, _value, depth + 1)?,
                     );
                 }
                 "latestActivityTaskTimestamp" => {

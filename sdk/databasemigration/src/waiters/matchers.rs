@@ -93,6 +93,639 @@ pub(crate) fn match_describe_endpoints_3de7d2cf38cf7be74(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"SUCCESS","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_extension_pack_associations_6268be19bb3c45d7d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput,
+        &crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "SUCCESS";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"FAILED","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_extension_pack_associations_dee355b6d23c355e3(
+    _result: ::std::result::Result<
+        &crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput,
+        &crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "FAILED";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"SUCCESS","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_metadata_model_assessments_6268be19bb3c45d7d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_assessments::DescribeMetadataModelAssessmentsOutput,
+        &crate::operation::describe_metadata_model_assessments::DescribeMetadataModelAssessmentsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_assessments::DescribeMetadataModelAssessmentsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "SUCCESS";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"FAILED","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_metadata_model_assessments_dee355b6d23c355e3(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_assessments::DescribeMetadataModelAssessmentsOutput,
+        &crate::operation::describe_metadata_model_assessments::DescribeMetadataModelAssessmentsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_assessments::DescribeMetadataModelAssessmentsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "FAILED";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"CANCELED","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_metadata_model_conversions_abe953e6fa890a7bc(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput,
+        &crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "CANCELED";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"FAILED","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_metadata_model_conversions_dee355b6d23c355e3(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput,
+        &crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "FAILED";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"SUCCESS","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_metadata_model_conversions_6268be19bb3c45d7d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput,
+        &crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "SUCCESS";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"SUCCESS","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_metadata_model_creations_6268be19bb3c45d7d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsOutput,
+        &crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "SUCCESS";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"FAILED","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_metadata_model_creations_dee355b6d23c355e3(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsOutput,
+        &crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "FAILED";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"CANCELED","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_metadata_model_creations_abe953e6fa890a7bc(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsOutput,
+        &crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "CANCELED";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"SUCCESS","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_metadata_model_exports_as_script_6268be19bb3c45d7d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_exports_as_script::DescribeMetadataModelExportsAsScriptOutput,
+        &crate::operation::describe_metadata_model_exports_as_script::DescribeMetadataModelExportsAsScriptError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_exports_as_script::DescribeMetadataModelExportsAsScriptOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "SUCCESS";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"FAILED","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_metadata_model_exports_as_script_dee355b6d23c355e3(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_exports_as_script::DescribeMetadataModelExportsAsScriptOutput,
+        &crate::operation::describe_metadata_model_exports_as_script::DescribeMetadataModelExportsAsScriptError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_exports_as_script::DescribeMetadataModelExportsAsScriptOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "FAILED";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"SUCCESS","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_metadata_model_exports_to_target_6268be19bb3c45d7d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetOutput,
+        &crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "SUCCESS";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"FAILED","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_metadata_model_exports_to_target_dee355b6d23c355e3(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetOutput,
+        &crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "FAILED";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"SUCCESS","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_metadata_model_imports_6268be19bb3c45d7d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput,
+        &crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "SUCCESS";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Requests[].Status","expected":"FAILED","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_metadata_model_imports_dee355b6d23c355e3(
+    _result: ::std::result::Result<
+        &crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput,
+        &crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.requests.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SchemaConversionRequest) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "FAILED";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"ReplicationInstances[].ReplicationInstanceStatus","expected":"available","comparator":"allStringEquals"}}
 pub(crate) fn match_describe_replication_instances_20a54ff083e35d6a3(
     _result: ::std::result::Result<

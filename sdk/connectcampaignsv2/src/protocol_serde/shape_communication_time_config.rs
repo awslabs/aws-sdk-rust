@@ -39,10 +39,16 @@ pub fn ser_communication_time_config(
 pub(crate) fn de_communication_time_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CommunicationTimeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,20 +60,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "localTimeZoneConfig" => {
                             builder = builder.set_local_time_zone_config(
-                                crate::protocol_serde::shape_local_time_zone_config::de_local_time_zone_config(tokens, _value)?,
+                                crate::protocol_serde::shape_local_time_zone_config::de_local_time_zone_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "telephony" => {
-                            builder = builder.set_telephony(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value)?);
+                            builder = builder.set_telephony(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value, depth + 1)?);
                         }
                         "sms" => {
-                            builder = builder.set_sms(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value)?);
+                            builder = builder.set_sms(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value, depth + 1)?);
                         }
                         "email" => {
-                            builder = builder.set_email(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value)?);
+                            builder = builder.set_email(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value, depth + 1)?);
                         }
                         "whatsApp" => {
-                            builder = builder.set_whats_app(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value)?);
+                            builder = builder.set_whats_app(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

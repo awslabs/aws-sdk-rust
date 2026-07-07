@@ -259,6 +259,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Log specific configuration for centralization destination log groups.</p>"
                     }
+                },
+                "DestinationMetricsConfiguration": {
+                    "target": "com.amazonaws.observabilityadmin#DestinationMetricsConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Metric specific configuration for centralization destination metrics.</p>"
+                    }
                 }
             },
             "traits": {
@@ -285,6 +291,12 @@
                     "target": "com.amazonaws.observabilityadmin#SourceLogsConfiguration",
                     "traits": {
                         "smithy.api#documentation": "<p>Log specific configuration for centralization source log groups.</p>"
+                    }
+                },
+                "SourceMetricsConfiguration": {
+                    "target": "com.amazonaws.observabilityadmin#SourceMetricsConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Metric specific configuration for centralization source metrics.</p>"
                     }
                 }
             },
@@ -665,6 +677,7 @@
                     "requiredActions": [
                         "iam:PassRole",
                         "logs:PutPipelineRule",
+                        "cloudwatch:PutPipelineRule",
                         "observabilityadmin:TagResource",
                         "observabilityadmin:ListTagsForResource",
                         "observabilityadmin:GetTelemetryPipeline"
@@ -1042,6 +1055,7 @@
                 "aws.iam#iamAction": {
                     "requiredActions": [
                         "logs:DeletePipelineRule",
+                        "cloudwatch:DeletePipelineRule",
                         "observabilityadmin:GetTelemetryPipeline"
                     ]
                 },
@@ -1195,6 +1209,20 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Configuration for centralization destination log groups, including encryption and backup settings.</p>"
+            }
+        },
+        "com.amazonaws.observabilityadmin#DestinationMetricsConfiguration": {
+            "type": "structure",
+            "members": {
+                "BackupConfiguration": {
+                    "target": "com.amazonaws.observabilityadmin#MetricsBackupConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Configuration defining the backup region for the metrics backup destination.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Configuration for centralization destination metrics, including backup settings.</p>"
             }
         },
         "com.amazonaws.observabilityadmin#DestinationType": {
@@ -3061,6 +3089,12 @@
                     "traits": {
                         "smithy.api#enumValue": "CONNECTION_LOGS"
                     }
+                },
+                "S3_SERVER_ACCESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "S3_SERVER_ACCESS_LOGS"
+                    }
                 }
             }
         },
@@ -3145,6 +3179,76 @@
                     "min": 1,
                     "max": 2000
                 }
+            }
+        },
+        "com.amazonaws.observabilityadmin#MetricsBackupConfiguration": {
+            "type": "structure",
+            "members": {
+                "Region": {
+                    "target": "com.amazonaws.observabilityadmin#Region",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Metrics specific backup destination region within the primary destination account to which metrics data should be centralized.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Configuration for backing up centralized metrics data to a secondary region.</p>"
+            }
+        },
+        "com.amazonaws.observabilityadmin#MetricsFilterString": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 2000
+                }
+            }
+        },
+        "com.amazonaws.observabilityadmin#MskEnhancedMonitoringLevel": {
+            "type": "enum",
+            "members": {
+                "DEFAULT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DEFAULT"
+                    }
+                },
+                "PER_BROKER": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PER_BROKER"
+                    }
+                },
+                "PER_TOPIC_PER_BROKER": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PER_TOPIC_PER_BROKER"
+                    }
+                },
+                "PER_TOPIC_PER_PARTITION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PER_TOPIC_PER_PARTITION"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Enumeration of supported enhanced monitoring levels for Amazon MSK clusters: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. </p>"
+            }
+        },
+        "com.amazonaws.observabilityadmin#MskMonitoringParameters": {
+            "type": "structure",
+            "members": {
+                "EnhancedMonitoring": {
+                    "target": "com.amazonaws.observabilityadmin#MskEnhancedMonitoringLevel",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The level of enhanced monitoring for the MSK cluster. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Configuration parameters for Amazon MSK cluster monitoring, including enhanced monitoring level settings. </p>"
             }
         },
         "com.amazonaws.observabilityadmin#NextToken": {
@@ -3278,6 +3382,194 @@
                 "aws.protocols#restJson1": {},
                 "smithy.api#documentation": "<p> You can use Amazon CloudWatch Observability Admin to discover and understand the state of telemetry configuration in CloudWatch for your Amazon Web Services Organization or account. This simplifies the process of auditing your telemetry collection configurations across multiple resource types within your Amazon Web Services Organization or account. By providing a consolidated view, it allows you to easily review and manage telemetry settings, helping you ensure proper monitoring and data collection across your Amazon Web Services environment. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html\">Auditing CloudWatch telemetry conﬁgurations</a> in the CloudWatch User Guide.</p> <p>For information on the permissions you need to use this API, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html\">Identity and access management for Amazon CloudWatch</a> in the CloudWatch User Guide.</p>",
                 "smithy.api#title": "CloudWatch Observability Admin Service",
+                "smithy.rules#endpointBdd": {
+                    "version": "1.1",
+                    "parameters": {
+                        "Region": {
+                            "builtIn": "AWS::Region",
+                            "required": false,
+                            "documentation": "The AWS region used to dispatch the request.",
+                            "type": "string"
+                        },
+                        "UseDualStack": {
+                            "builtIn": "AWS::UseDualStack",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+                            "type": "boolean"
+                        },
+                        "UseFIPS": {
+                            "builtIn": "AWS::UseFIPS",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+                            "type": "boolean"
+                        },
+                        "Endpoint": {
+                            "builtIn": "SDK::Endpoint",
+                            "required": false,
+                            "documentation": "Override the endpoint used to send this request",
+                            "type": "string"
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "aws.partition",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ],
+                            "assign": "PartitionResult"
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseFIPS"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseDualStack"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsDualStack"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsFIPS"
+                                    ]
+                                },
+                                true
+                            ]
+                        }
+                    ],
+                    "results": [
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": {
+                                    "ref": "Endpoint"
+                                },
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://observabilityadmin-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://observabilityadmin-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS is enabled but this partition does not support FIPS",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://observabilityadmin.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "DualStack is enabled but this partition does not support DualStack",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://observabilityadmin.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
+                        }
+                    ],
+                    "root": 2,
+                    "nodeCount": 13,
+                    "nodes": "/////wAAAAH/////AAAAAAAAAAwAAAADAAAAAQAAAAQF9eELAAAAAgAAAAUF9eELAAAAAwAAAAgAAAAGAAAABAAAAAcF9eEKAAAABQX14QgF9eEJAAAABAAAAAoAAAAJAAAABgX14QYF9eEHAAAABQAAAAsF9eEFAAAABgX14QQF9eEFAAAAAwX14QEAAAANAAAABAX14QIF9eED"
+                },
                 "smithy.rules#endpointRuleSet": {
                     "version": "1.0",
                     "parameters": {
@@ -4225,6 +4517,12 @@
                         "smithy.api#enumValue": "AWS::BedrockAgentCore::Memory"
                     }
                 },
+                "AWS_BEDROCK_AGENTCORE_WORKLOAD_IDENTITY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AWS::BedrockAgentCore::WorkloadIdentity"
+                    }
+                },
                 "AWS_SECURITY_HUB": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -4241,6 +4539,24 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "AWS::SecurityHub::HubV2"
+                    }
+                },
+                "AWS_OTEL_ENRICHMENT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AWS::CloudWatch::OTelEnrichment"
+                    }
+                },
+                "AWS_MSK_CLUSTER": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AWS::MSK::Cluster"
+                    }
+                },
+                "AWS_S3_BUCKET": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AWS::S3::Bucket"
                     }
                 }
             }
@@ -4370,6 +4686,25 @@
                 "smithy.api#httpError": 402
             }
         },
+        "com.amazonaws.observabilityadmin#SignalType": {
+            "type": "enum",
+            "members": {
+                "LOG": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Log signal type. The pipeline processes log records.</p>",
+                        "smithy.api#enumValue": "LOG"
+                    }
+                },
+                "METRIC": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Metric signal type. The pipeline processes metric records.</p>",
+                        "smithy.api#enumValue": "METRIC"
+                    }
+                }
+            }
+        },
         "com.amazonaws.observabilityadmin#SingleHeader": {
             "type": "structure",
             "members": {
@@ -4444,6 +4779,20 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Configuration for selecting and handling source log groups for centralization.</p>"
+            }
+        },
+        "com.amazonaws.observabilityadmin#SourceMetricsConfiguration": {
+            "type": "structure",
+            "members": {
+                "MetricsSelectionCriteria": {
+                    "target": "com.amazonaws.observabilityadmin#MetricsFilterString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The filter expression that selects which source metrics to centralize. Currently, only <code>*</code> (all metrics) is supported. Other values return a validation error.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Configuration for selecting source metrics for centralization.</p>"
             }
         },
         "com.amazonaws.observabilityadmin#Sources": {
@@ -4988,6 +5337,12 @@
                     "target": "com.amazonaws.observabilityadmin#LogDeliveryParameters",
                     "traits": {
                         "smithy.api#documentation": "<p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>"
+                    }
+                },
+                "MskMonitoringParameters": {
+                    "target": "com.amazonaws.observabilityadmin#MskMonitoringParameters",
+                    "traits": {
+                        "smithy.api#documentation": "<p> Configuration parameters specific to MSK monitoring when MSK is the resource type. </p>"
                     }
                 }
             },
@@ -5544,6 +5899,13 @@
                         "smithy.api#documentation": "<p>The pipeline configuration to test with the provided sample records.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "SignalType": {
+                    "target": "com.amazonaws.observabilityadmin#SignalType",
+                    "traits": {
+                        "smithy.api#default": "LOG",
+                        "smithy.api#documentation": "<p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>"
+                    }
                 }
             },
             "traits": {
@@ -5735,6 +6097,7 @@
                         "iam:PassRole",
                         "logs:DeletePipelineRule",
                         "logs:PutPipelineRule",
+                        "cloudwatch:PutPipelineRule",
                         "observabilityadmin:GetTelemetryPipeline",
                         "observabilityadmin:ListTagsForResource",
                         "observabilityadmin:TagResource",

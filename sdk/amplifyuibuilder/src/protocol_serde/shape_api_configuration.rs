@@ -34,10 +34,16 @@ pub fn ser_api_configuration(
 pub(crate) fn de_api_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ApiConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -63,19 +69,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "graphQLConfig" => Some(crate::types::ApiConfiguration::GraphQlConfig(
-                            crate::protocol_serde::shape_graph_ql_render_config::de_graph_ql_render_config(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'graphQLConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_graph_ql_render_config::de_graph_ql_render_config(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'graphQLConfig' cannot be null"),
+                            )?,
                         )),
                         "dataStoreConfig" => Some(crate::types::ApiConfiguration::DataStoreConfig(
-                            crate::protocol_serde::shape_data_store_render_config::de_data_store_render_config(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dataStoreConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_data_store_render_config::de_data_store_render_config(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dataStoreConfig' cannot be null")
+                                })?,
                         )),
                         "noApiConfig" => Some(crate::types::ApiConfiguration::NoApiConfig(
-                            crate::protocol_serde::shape_no_api_render_config::de_no_api_render_config(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noApiConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_no_api_render_config::de_no_api_render_config(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noApiConfig' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

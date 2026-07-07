@@ -93,6 +93,24 @@ pub fn de_run_statement_http_error(
             }
             tmp
         }),
+        "OperationNotSupportedException" => crate::operation::run_statement::RunStatementError::OperationNotSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotSupportedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_operation_not_supported_exception::de_operation_not_supported_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::run_statement::RunStatementError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "OperationTimeoutException" => crate::operation::run_statement::RunStatementError::OperationTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -118,6 +136,21 @@ pub fn de_run_statement_http_error(
                     output,
                 )
                 .map_err(crate::operation::run_statement::RunStatementError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "SessionBusyException" => crate::operation::run_statement::RunStatementError::SessionBusyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SessionBusyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_session_busy_exception::de_session_busy_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::run_statement::RunStatementError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -180,6 +213,8 @@ pub(crate) fn de_run_statement(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {

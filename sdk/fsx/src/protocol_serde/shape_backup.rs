@@ -2,10 +2,16 @@
 pub(crate) fn de_backup<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Backup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,9 @@ where
                         }
                         "FailureDetails" => {
                             builder = builder.set_failure_details(crate::protocol_serde::shape_backup_failure_details::de_backup_failure_details(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Type" => {
@@ -69,15 +77,17 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "FileSystem" => {
-                            builder = builder.set_file_system(crate::protocol_serde::shape_file_system::de_file_system(tokens, _value)?);
+                            builder = builder.set_file_system(crate::protocol_serde::shape_file_system::de_file_system(tokens, _value, depth + 1)?);
                         }
                         "DirectoryInformation" => {
                             builder = builder.set_directory_information(
                                 crate::protocol_serde::shape_active_directory_backup_attributes::de_active_directory_backup_attributes(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -110,7 +120,7 @@ where
                             );
                         }
                         "Volume" => {
-                            builder = builder.set_volume(crate::protocol_serde::shape_volume::de_volume(tokens, _value)?);
+                            builder = builder.set_volume(crate::protocol_serde::shape_volume::de_volume(tokens, _value, depth + 1)?);
                         }
                         "SizeInBytes" => {
                             builder = builder.set_size_in_bytes(

@@ -98,6 +98,8 @@ pub fn de_switchover_blue_green_deployment(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("SwitchoverBlueGreenDeploymentResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected SwitchoverBlueGreenDeploymentResponse got {start_el:?}"
@@ -115,7 +117,7 @@ pub fn de_switchover_blue_green_deployment(
             s if s.matches("BlueGreenDeployment") /* BlueGreenDeployment com.amazonaws.rds.synthetic#SwitchoverBlueGreenDeploymentOutput$BlueGreenDeployment */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_blue_green_deployment::de_blue_green_deployment(&mut tag)
+                        crate::protocol_serde::shape_blue_green_deployment::de_blue_green_deployment(&mut tag, depth + 1)
                         ?
                     )
                 ;

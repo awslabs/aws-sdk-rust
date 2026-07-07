@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateViewMetadataInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
     pub view_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct UpdateViewMetadataInput {
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateViewMetadataInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -57,18 +57,18 @@ pub struct UpdateViewMetadataInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateViewMetadataInputBuilder {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }

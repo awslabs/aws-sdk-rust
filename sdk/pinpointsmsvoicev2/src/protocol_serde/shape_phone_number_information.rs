@@ -2,10 +2,16 @@
 pub(crate) fn de_phone_number_information<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PhoneNumberInformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,7 +65,7 @@ where
                         }
                         "NumberCapabilities" => {
                             builder = builder.set_number_capabilities(
-                                crate::protocol_serde::shape_number_capability_list::de_number_capability_list(tokens, _value)?,
+                                crate::protocol_serde::shape_number_capability_list::de_number_capability_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "NumberType" => {

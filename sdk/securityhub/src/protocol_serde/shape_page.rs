@@ -27,10 +27,16 @@ pub fn ser_page(
 pub(crate) fn de_page<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Page>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,10 +54,10 @@ where
                             );
                         }
                         "LineRange" => {
-                            builder = builder.set_line_range(crate::protocol_serde::shape_range::de_range(tokens, _value)?);
+                            builder = builder.set_line_range(crate::protocol_serde::shape_range::de_range(tokens, _value, depth + 1)?);
                         }
                         "OffsetRange" => {
-                            builder = builder.set_offset_range(crate::protocol_serde::shape_range::de_range(tokens, _value)?);
+                            builder = builder.set_offset_range(crate::protocol_serde::shape_range::de_range(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

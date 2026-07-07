@@ -42,5 +42,8 @@ pub fn ser_update_express_gateway_service_input_input(
         crate::protocol_serde::shape_express_gateway_scaling_target::ser_express_gateway_scaling_target(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.task_definition_arn {
+        object.key("taskDefinitionArn").string(var_13.as_str());
+    }
     Ok(())
 }

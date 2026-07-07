@@ -2,10 +2,16 @@
 pub(crate) fn de_connection_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConnectionSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "configurations" => {
-                            builder = builder.set_configurations(crate::protocol_serde::shape_configurations::de_configurations(tokens, _value)?);
+                            builder = builder.set_configurations(crate::protocol_serde::shape_configurations::de_configurations(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "connectionId" => {
                             builder = builder.set_connection_id(
@@ -54,8 +64,11 @@ where
                             );
                         }
                         "physicalEndpoints" => {
-                            builder = builder
-                                .set_physical_endpoints(crate::protocol_serde::shape_physical_endpoints::de_physical_endpoints(tokens, _value)?);
+                            builder = builder.set_physical_endpoints(crate::protocol_serde::shape_physical_endpoints::de_physical_endpoints(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "projectId" => {
                             builder = builder.set_project_id(
@@ -66,7 +79,11 @@ where
                         }
                         "props" => {
                             builder = builder.set_props(
-                                crate::protocol_serde::shape_connection_properties_output::de_connection_properties_output(tokens, _value)?,
+                                crate::protocol_serde::shape_connection_properties_output::de_connection_properties_output(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "type" => {

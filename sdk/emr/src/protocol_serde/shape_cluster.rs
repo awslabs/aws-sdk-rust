@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Cluster>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,11 +36,11 @@ where
                             );
                         }
                         "Status" => {
-                            builder = builder.set_status(crate::protocol_serde::shape_cluster_status::de_cluster_status(tokens, _value)?);
+                            builder = builder.set_status(crate::protocol_serde::shape_cluster_status::de_cluster_status(tokens, _value, depth + 1)?);
                         }
                         "Ec2InstanceAttributes" => {
                             builder = builder.set_ec2_instance_attributes(
-                                crate::protocol_serde::shape_ec2_instance_attributes::de_ec2_instance_attributes(tokens, _value)?,
+                                crate::protocol_serde::shape_ec2_instance_attributes::de_ec2_instance_attributes(tokens, _value, depth + 1)?,
                             );
                         }
                         "InstanceCollectionType" => {
@@ -93,10 +99,14 @@ where
                             builder = builder.set_visible_to_all_users(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Applications" => {
-                            builder = builder.set_applications(crate::protocol_serde::shape_application_list::de_application_list(tokens, _value)?);
+                            builder = builder.set_applications(crate::protocol_serde::shape_application_list::de_application_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "ServiceRole" => {
                             builder = builder.set_service_role(
@@ -120,8 +130,11 @@ where
                             );
                         }
                         "Configurations" => {
-                            builder =
-                                builder.set_configurations(crate::protocol_serde::shape_configuration_list::de_configuration_list(tokens, _value)?);
+                            builder = builder.set_configurations(crate::protocol_serde::shape_configuration_list::de_configuration_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SecurityConfiguration" => {
                             builder = builder.set_security_configuration(
@@ -166,8 +179,11 @@ where
                             );
                         }
                         "KerberosAttributes" => {
-                            builder = builder
-                                .set_kerberos_attributes(crate::protocol_serde::shape_kerberos_attributes::de_kerberos_attributes(tokens, _value)?);
+                            builder = builder.set_kerberos_attributes(crate::protocol_serde::shape_kerberos_attributes::de_kerberos_attributes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ClusterArn" => {
                             builder = builder.set_cluster_arn(
@@ -192,7 +208,7 @@ where
                         }
                         "PlacementGroups" => {
                             builder = builder.set_placement_groups(
-                                crate::protocol_serde::shape_placement_group_config_list::de_placement_group_config_list(tokens, _value)?,
+                                crate::protocol_serde::shape_placement_group_config_list::de_placement_group_config_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "OSReleaseLabel" => {
@@ -221,8 +237,11 @@ where
                         }
                         "MonitoringConfiguration" => {
                             builder = builder.set_monitoring_configuration(
-                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "SessionEnabled" => {
+                            builder = builder.set_session_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

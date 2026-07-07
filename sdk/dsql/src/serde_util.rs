@@ -104,6 +104,33 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_stream_output_output_correct_errors(
+    mut builder: crate::operation::create_stream::builders::CreateStreamOutputBuilder,
+) -> crate::operation::create_stream::builders::CreateStreamOutputBuilder {
+    if builder.cluster_identifier.is_none() {
+        builder.cluster_identifier = Some(Default::default())
+    }
+    if builder.stream_identifier.is_none() {
+        builder.stream_identifier = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::StreamStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.ordering.is_none() {
+        builder.ordering = "no value was set".parse::<crate::types::StreamOrdering>().ok()
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::StreamFormat>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_cluster_output_output_correct_errors(
     mut builder: crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder,
 ) -> crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder {
@@ -127,6 +154,27 @@ pub(crate) fn delete_cluster_policy_output_output_correct_errors(
 ) -> crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyOutputBuilder {
     if builder.policy_version.is_none() {
         builder.policy_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_stream_output_output_correct_errors(
+    mut builder: crate::operation::delete_stream::builders::DeleteStreamOutputBuilder,
+) -> crate::operation::delete_stream::builders::DeleteStreamOutputBuilder {
+    if builder.cluster_identifier.is_none() {
+        builder.cluster_identifier = Some(Default::default())
+    }
+    if builder.stream_identifier.is_none() {
+        builder.stream_identifier = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::StreamStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -164,6 +212,33 @@ pub(crate) fn get_cluster_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_stream_output_output_correct_errors(
+    mut builder: crate::operation::get_stream::builders::GetStreamOutputBuilder,
+) -> crate::operation::get_stream::builders::GetStreamOutputBuilder {
+    if builder.cluster_identifier.is_none() {
+        builder.cluster_identifier = Some(Default::default())
+    }
+    if builder.stream_identifier.is_none() {
+        builder.stream_identifier = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::StreamStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.ordering.is_none() {
+        builder.ordering = "no value was set".parse::<crate::types::StreamOrdering>().ok()
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::StreamFormat>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_vpc_endpoint_service_name_output_output_correct_errors(
     mut builder: crate::operation::get_vpc_endpoint_service_name::builders::GetVpcEndpointServiceNameOutputBuilder,
 ) -> crate::operation::get_vpc_endpoint_service_name::builders::GetVpcEndpointServiceNameOutputBuilder {
@@ -178,6 +253,15 @@ pub(crate) fn list_clusters_output_output_correct_errors(
 ) -> crate::operation::list_clusters::builders::ListClustersOutputBuilder {
     if builder.clusters.is_none() {
         builder.clusters = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_streams_output_output_correct_errors(
+    mut builder: crate::operation::list_streams::builders::ListStreamsOutputBuilder,
+) -> crate::operation::list_streams::builders::ListStreamsOutputBuilder {
+    if builder.streams.is_none() {
+        builder.streams = Some(Default::default())
     }
     builder
 }
@@ -221,6 +305,16 @@ pub(crate) fn encryption_details_correct_errors(
     builder
 }
 
+pub(crate) fn status_reason_correct_errors(mut builder: crate::types::builders::StatusReasonBuilder) -> crate::types::builders::StatusReasonBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::StreamFailureErrorCode>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn cluster_summary_correct_errors(
     mut builder: crate::types::builders::ClusterSummaryBuilder,
 ) -> crate::types::builders::ClusterSummaryBuilder {
@@ -229,6 +323,39 @@ pub(crate) fn cluster_summary_correct_errors(
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn kinesis_target_definition_correct_errors(
+    mut builder: crate::types::builders::KinesisTargetDefinitionBuilder,
+) -> crate::types::builders::KinesisTargetDefinitionBuilder {
+    if builder.stream_arn.is_none() {
+        builder.stream_arn = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn stream_summary_correct_errors(
+    mut builder: crate::types::builders::StreamSummaryBuilder,
+) -> crate::types::builders::StreamSummaryBuilder {
+    if builder.cluster_identifier.is_none() {
+        builder.cluster_identifier = Some(Default::default())
+    }
+    if builder.stream_identifier.is_none() {
+        builder.stream_identifier = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::StreamStatus>().ok()
     }
     builder
 }

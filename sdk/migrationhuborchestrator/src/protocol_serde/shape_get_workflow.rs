@@ -114,6 +114,8 @@ pub(crate) fn de_get_workflow(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -213,7 +215,7 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value, depth + 1)?);
                 }
                 "templateId" => {
                     builder = builder.set_template_id(
@@ -223,7 +225,7 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "tools" => {
-                    builder = builder.set_tools(crate::protocol_serde::shape_tools_list::de_tools_list(tokens, _value)?);
+                    builder = builder.set_tools(crate::protocol_serde::shape_tools_list::de_tools_list(tokens, _value, depth + 1)?);
                 }
                 "totalSteps" => {
                     builder = builder.set_total_steps(
@@ -241,7 +243,9 @@ pub(crate) fn de_get_workflow(
                 }
                 "workflowInputs" => {
                     builder = builder.set_workflow_inputs(crate::protocol_serde::shape_step_input_parameters::de_step_input_parameters(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

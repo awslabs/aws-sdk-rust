@@ -176,6 +176,8 @@ pub fn de_assume_role_with_web_identity(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AssumeRoleWithWebIdentityResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AssumeRoleWithWebIdentityResponse got {start_el:?}"
@@ -193,7 +195,7 @@ pub fn de_assume_role_with_web_identity(
             s if s.matches("Credentials") /* Credentials com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$Credentials */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_credentials::de_credentials(&mut tag)
+                        crate::protocol_serde::shape_credentials::de_credentials(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -216,7 +218,7 @@ pub fn de_assume_role_with_web_identity(
             s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$AssumedRoleUser */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_assumed_role_user::de_assumed_role_user(&mut tag)
+                        crate::protocol_serde::shape_assumed_role_user::de_assumed_role_user(&mut tag, depth + 1)
                         ?
                     )
                 ;

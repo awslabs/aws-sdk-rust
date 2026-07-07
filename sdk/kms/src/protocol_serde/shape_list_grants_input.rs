@@ -21,5 +21,8 @@ pub fn ser_list_grants_input_input(
     if let Some(var_5) = &input.grantee_principal {
         object.key("GranteePrincipal").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.grantee_service_principal {
+        object.key("GranteeServicePrincipal").string(var_6.as_str());
+    }
     Ok(())
 }

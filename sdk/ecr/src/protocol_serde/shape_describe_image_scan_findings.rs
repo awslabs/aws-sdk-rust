@@ -161,6 +161,8 @@ pub(crate) fn de_describe_image_scan_findings(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -181,14 +183,25 @@ pub(crate) fn de_describe_image_scan_findings(
                     );
                 }
                 "imageId" => {
-                    builder = builder.set_image_id(crate::protocol_serde::shape_image_identifier::de_image_identifier(tokens, _value)?);
+                    builder = builder.set_image_id(crate::protocol_serde::shape_image_identifier::de_image_identifier(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "imageScanStatus" => {
-                    builder = builder.set_image_scan_status(crate::protocol_serde::shape_image_scan_status::de_image_scan_status(tokens, _value)?);
+                    builder = builder.set_image_scan_status(crate::protocol_serde::shape_image_scan_status::de_image_scan_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "imageScanFindings" => {
-                    builder =
-                        builder.set_image_scan_findings(crate::protocol_serde::shape_image_scan_findings::de_image_scan_findings(tokens, _value)?);
+                    builder = builder.set_image_scan_findings(crate::protocol_serde::shape_image_scan_findings::de_image_scan_findings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

@@ -185,10 +185,11 @@ pub(crate) fn de_get_automation_event(
     crate::operation::get_automation_event::builders::GetAutomationEventOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_automation_event::builders::GetAutomationEventOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_automation_event::builders::GetAutomationEventOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -238,7 +239,7 @@ pub(crate) fn de_get_automation_event(
             })?,
             "estimatedMonthlySavings" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_estimated_monthly_savings(Some(
-                    crate::protocol_serde::shape_estimated_monthly_savings::de_estimated_monthly_savings(decoder)?,
+                    crate::protocol_serde::shape_estimated_monthly_savings::de_estimated_monthly_savings(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -250,6 +251,8 @@ pub(crate) fn de_get_automation_event(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -259,13 +262,13 @@ pub(crate) fn de_get_automation_event(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

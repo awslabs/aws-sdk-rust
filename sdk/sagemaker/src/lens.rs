@@ -409,6 +409,26 @@ pub(crate) fn reflens_list_inference_recommendations_jobs_output_output_next_tok
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_job_schema_versions_output_output_next_token(
+    input: &crate::operation::list_job_schema_versions::ListJobSchemaVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_jobs_output_output_next_token(
+    input: &crate::operation::list_jobs::ListJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_labeling_jobs_output_output_next_token(
     input: &crate::operation::list_labeling_jobs::ListLabelingJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1173,6 +1193,20 @@ pub(crate) fn lens_list_inference_recommendations_jobs_output_output_inference_r
     input: crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJob>> {
     let input = input.inference_recommendations_jobs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_job_schema_versions_output_output_job_config_schemas(
+    input: crate::operation::list_job_schema_versions::ListJobSchemaVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::JobConfigSchemaVersionSummary>> {
+    let input = input.job_config_schemas?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_jobs_output_output_job_summaries(
+    input: crate::operation::list_jobs::ListJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
+    let input = input.job_summaries?;
     ::std::option::Option::Some(input)
 }
 

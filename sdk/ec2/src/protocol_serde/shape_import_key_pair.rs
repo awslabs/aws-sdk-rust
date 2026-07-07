@@ -40,6 +40,8 @@ pub fn de_import_key_pair(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ImportKeyPairResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ImportKeyPairResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_import_key_pair(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#ImportKeyPairOutput$Tags */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

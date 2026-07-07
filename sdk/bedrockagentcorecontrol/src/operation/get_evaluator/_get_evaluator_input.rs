@@ -5,11 +5,17 @@
 pub struct GetEvaluatorInput {
     /// <p>The unique identifier of the evaluator to retrieve. Can be a built-in evaluator ID (e.g., Builtin.Helpfulness) or a custom evaluator ID.</p>
     pub evaluator_id: ::std::option::Option<::std::string::String>,
+    /// <p>Controls which data is returned in the response. <code>ALL_DATA</code> (default) returns the full evaluator including decrypted instructions and rating scale. For evaluators encrypted with a customer managed KMS key, this requires <code>kms:Decrypt</code> permission on the key. <code>METADATA_ONLY</code> returns evaluator metadata and model configuration without instructions or rating scale, and does not require any KMS permissions.</p>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetEvaluatorInput {
     /// <p>The unique identifier of the evaluator to retrieve. Can be a built-in evaluator ID (e.g., Builtin.Helpfulness) or a custom evaluator ID.</p>
     pub fn evaluator_id(&self) -> ::std::option::Option<&str> {
         self.evaluator_id.as_deref()
+    }
+    /// <p>Controls which data is returned in the response. <code>ALL_DATA</code> (default) returns the full evaluator including decrypted instructions and rating scale. For evaluators encrypted with a customer managed KMS key, this requires <code>kms:Decrypt</code> permission on the key. <code>METADATA_ONLY</code> returns evaluator metadata and model configuration without instructions or rating scale, and does not require any KMS permissions.</p>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
     }
 }
 impl GetEvaluatorInput {
@@ -24,6 +30,7 @@ impl GetEvaluatorInput {
 #[non_exhaustive]
 pub struct GetEvaluatorInputBuilder {
     pub(crate) evaluator_id: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetEvaluatorInputBuilder {
     /// <p>The unique identifier of the evaluator to retrieve. Can be a built-in evaluator ID (e.g., Builtin.Helpfulness) or a custom evaluator ID.</p>
@@ -41,12 +48,27 @@ impl GetEvaluatorInputBuilder {
     pub fn get_evaluator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluator_id
     }
+    /// <p>Controls which data is returned in the response. <code>ALL_DATA</code> (default) returns the full evaluator including decrypted instructions and rating scale. For evaluators encrypted with a customer managed KMS key, this requires <code>kms:Decrypt</code> permission on the key. <code>METADATA_ONLY</code> returns evaluator metadata and model configuration without instructions or rating scale, and does not require any KMS permissions.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls which data is returned in the response. <code>ALL_DATA</code> (default) returns the full evaluator including decrypted instructions and rating scale. For evaluators encrypted with a customer managed KMS key, this requires <code>kms:Decrypt</code> permission on the key. <code>METADATA_ONLY</code> returns evaluator metadata and model configuration without instructions or rating scale, and does not require any KMS permissions.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>Controls which data is returned in the response. <code>ALL_DATA</code> (default) returns the full evaluator including decrypted instructions and rating scale. For evaluators encrypted with a customer managed KMS key, this requires <code>kms:Decrypt</code> permission on the key. <code>METADATA_ONLY</code> returns evaluator metadata and model configuration without instructions or rating scale, and does not require any KMS permissions.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`GetEvaluatorInput`](crate::operation::get_evaluator::GetEvaluatorInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_evaluator::GetEvaluatorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_evaluator::GetEvaluatorInput {
             evaluator_id: self.evaluator_id,
+            included_data: self.included_data,
         })
     }
 }

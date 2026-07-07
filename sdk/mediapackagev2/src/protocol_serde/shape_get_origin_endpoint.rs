@@ -125,6 +125,8 @@ pub(crate) fn de_get_origin_endpoint(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -165,7 +167,11 @@ pub(crate) fn de_get_origin_endpoint(
                     )?);
                 }
                 "DashManifests" => {
-                    builder = builder.set_dash_manifests(crate::protocol_serde::shape_get_dash_manifests::de_get_dash_manifests(tokens, _value)?);
+                    builder = builder.set_dash_manifests(crate::protocol_serde::shape_get_dash_manifests::de_get_dash_manifests(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -183,15 +189,23 @@ pub(crate) fn de_get_origin_endpoint(
                 }
                 "ForceEndpointErrorConfiguration" => {
                     builder = builder.set_force_endpoint_error_configuration(
-                        crate::protocol_serde::shape_force_endpoint_error_configuration::de_force_endpoint_error_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_force_endpoint_error_configuration::de_force_endpoint_error_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "HlsManifests" => {
-                    builder = builder.set_hls_manifests(crate::protocol_serde::shape_get_hls_manifests::de_get_hls_manifests(tokens, _value)?);
+                    builder = builder.set_hls_manifests(crate::protocol_serde::shape_get_hls_manifests::de_get_hls_manifests(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "LowLatencyHlsManifests" => {
                     builder = builder.set_low_latency_hls_manifests(
-                        crate::protocol_serde::shape_get_low_latency_hls_manifests::de_get_low_latency_hls_manifests(tokens, _value)?,
+                        crate::protocol_serde::shape_get_low_latency_hls_manifests::de_get_low_latency_hls_manifests(tokens, _value, depth + 1)?,
                     );
                 }
                 "ModifiedAt" => {
@@ -201,7 +215,11 @@ pub(crate) fn de_get_origin_endpoint(
                     )?);
                 }
                 "MssManifests" => {
-                    builder = builder.set_mss_manifests(crate::protocol_serde::shape_get_mss_manifests::de_get_mss_manifests(tokens, _value)?);
+                    builder = builder.set_mss_manifests(crate::protocol_serde::shape_get_mss_manifests::de_get_mss_manifests(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "OriginEndpointName" => {
                     builder = builder.set_origin_endpoint_name(
@@ -217,7 +235,7 @@ pub(crate) fn de_get_origin_endpoint(
                     )?);
                 }
                 "Segment" => {
-                    builder = builder.set_segment(crate::protocol_serde::shape_segment::de_segment(tokens, _value)?);
+                    builder = builder.set_segment(crate::protocol_serde::shape_segment::de_segment(tokens, _value, depth + 1)?);
                 }
                 "StartoverWindowSeconds" => {
                     builder = builder.set_startover_window_seconds(
@@ -227,7 +245,14 @@ pub(crate) fn de_get_origin_endpoint(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
+                }
+                "UriSeparator" => {
+                    builder = builder.set_uri_separator(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::UriSeparator::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -60,10 +60,16 @@ pub fn ser_environment_configuration(
 pub(crate) fn de_environment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EnvironmentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -110,18 +116,21 @@ where
                         }
                         "configurationParameters" => {
                             builder = builder.set_configuration_parameters(
-                                    crate::protocol_serde::shape_environment_configuration_parameters_details::de_environment_configuration_parameters_details(tokens, _value)?
+                                    crate::protocol_serde::shape_environment_configuration_parameters_details::de_environment_configuration_parameters_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "awsAccount" => {
-                            builder = builder.set_aws_account(crate::protocol_serde::shape_aws_account::de_aws_account(tokens, _value)?);
+                            builder = builder.set_aws_account(crate::protocol_serde::shape_aws_account::de_aws_account(tokens, _value, depth + 1)?);
                         }
                         "accountPools" => {
-                            builder =
-                                builder.set_account_pools(crate::protocol_serde::shape_account_pool_list::de_account_pool_list(tokens, _value)?);
+                            builder = builder.set_account_pools(crate::protocol_serde::shape_account_pool_list::de_account_pool_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "awsRegion" => {
-                            builder = builder.set_aws_region(crate::protocol_serde::shape_region::de_region(tokens, _value)?);
+                            builder = builder.set_aws_region(crate::protocol_serde::shape_region::de_region(tokens, _value, depth + 1)?);
                         }
                         "deploymentOrder" => {
                             builder = builder.set_deployment_order(

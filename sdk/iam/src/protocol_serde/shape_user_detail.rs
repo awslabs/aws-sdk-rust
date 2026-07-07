@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_user_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::UserDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::UserDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -76,7 +80,7 @@ pub fn de_user_detail(
             s if s.matches("UserPolicyList") /* UserPolicyList com.amazonaws.iam#UserDetail$UserPolicyList */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_policy_detail_list_type::de_policy_detail_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_detail_list_type::de_policy_detail_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +90,7 @@ pub fn de_user_detail(
             s if s.matches("GroupList") /* GroupList com.amazonaws.iam#UserDetail$GroupList */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_group_name_list_type::de_group_name_list_type(&mut tag)
+                        crate::protocol_serde::shape_group_name_list_type::de_group_name_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -96,7 +100,7 @@ pub fn de_user_detail(
             s if s.matches("AttachedManagedPolicies") /* AttachedManagedPolicies com.amazonaws.iam#UserDetail$AttachedManagedPolicies */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_attached_policies_list_type::de_attached_policies_list_type(&mut tag)
+                        crate::protocol_serde::shape_attached_policies_list_type::de_attached_policies_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -106,7 +110,7 @@ pub fn de_user_detail(
             s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#UserDetail$PermissionsBoundary */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_attached_permissions_boundary::de_attached_permissions_boundary(&mut tag)
+                        crate::protocol_serde::shape_attached_permissions_boundary::de_attached_permissions_boundary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -116,7 +120,7 @@ pub fn de_user_detail(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#UserDetail$Tags */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

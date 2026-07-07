@@ -18,6 +18,8 @@ pub struct ParameterSliderControl {
     pub minimum_value: f64,
     /// <p>The number of increments that the slider bar is divided into.</p>
     pub step_size: f64,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterSliderControl {
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
@@ -51,6 +53,10 @@ impl ParameterSliderControl {
     pub fn step_size(&self) -> f64 {
         self.step_size
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl ParameterSliderControl {
     /// Creates a new builder-style object to manufacture [`ParameterSliderControl`](crate::types::ParameterSliderControl).
@@ -70,6 +76,7 @@ pub struct ParameterSliderControlBuilder {
     pub(crate) maximum_value: ::std::option::Option<f64>,
     pub(crate) minimum_value: ::std::option::Option<f64>,
     pub(crate) step_size: ::std::option::Option<f64>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterSliderControlBuilder {
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
@@ -88,7 +95,6 @@ impl ParameterSliderControlBuilder {
         &self.parameter_control_id
     }
     /// <p>The title of the <code>ParameterSliderControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -176,10 +182,23 @@ impl ParameterSliderControlBuilder {
     pub fn get_step_size(&self) -> &::std::option::Option<f64> {
         &self.step_size
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`ParameterSliderControl`](crate::types::ParameterSliderControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_control_id`](crate::types::builders::ParameterSliderControlBuilder::parameter_control_id)
-    /// - [`title`](crate::types::builders::ParameterSliderControlBuilder::title)
     /// - [`source_parameter_name`](crate::types::builders::ParameterSliderControlBuilder::source_parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterSliderControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterSliderControl {
@@ -189,12 +208,7 @@ impl ParameterSliderControlBuilder {
                     "parameter_control_id was not specified but it is required when building ParameterSliderControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ParameterSliderControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_parameter_name: self.source_parameter_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_parameter_name",
@@ -205,6 +219,7 @@ impl ParameterSliderControlBuilder {
             maximum_value: self.maximum_value.unwrap_or_default(),
             minimum_value: self.minimum_value.unwrap_or_default(),
             step_size: self.step_size.unwrap_or_default(),
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

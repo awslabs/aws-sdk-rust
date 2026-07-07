@@ -129,6 +129,8 @@ pub(crate) fn de_get_segment_definition(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -169,10 +171,10 @@ pub(crate) fn de_get_segment_definition(
                     );
                 }
                 "SegmentGroups" => {
-                    builder = builder.set_segment_groups(crate::protocol_serde::shape_segment_group::de_segment_group(tokens, _value)?);
+                    builder = builder.set_segment_groups(crate::protocol_serde::shape_segment_group::de_segment_group(tokens, _value, depth + 1)?);
                 }
                 "SegmentSort" => {
-                    builder = builder.set_segment_sort(crate::protocol_serde::shape_segment_sort::de_segment_sort(tokens, _value)?);
+                    builder = builder.set_segment_sort(crate::protocol_serde::shape_segment_sort::de_segment_sort(tokens, _value, depth + 1)?);
                 }
                 "SegmentSqlQuery" => {
                     builder = builder.set_segment_sql_query(
@@ -189,7 +191,7 @@ pub(crate) fn de_get_segment_definition(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

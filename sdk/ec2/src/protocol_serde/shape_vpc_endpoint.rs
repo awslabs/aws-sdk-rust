@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc_endpoint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VpcEndpoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VpcEndpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -90,7 +94,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("routeTableIdSet") /* RouteTableIds com.amazonaws.ec2#VpcEndpoint$RouteTableIds */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -100,7 +104,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("subnetIdSet") /* SubnetIds com.amazonaws.ec2#VpcEndpoint$SubnetIds */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -110,7 +114,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("groupSet") /* Groups com.amazonaws.ec2#VpcEndpoint$Groups */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_group_identifier_set::de_group_identifier_set(&mut tag)
+                        crate::protocol_serde::shape_group_identifier_set::de_group_identifier_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -134,7 +138,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("dnsOptions") /* DnsOptions com.amazonaws.ec2#VpcEndpoint$DnsOptions */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_dns_options::de_dns_options(&mut tag)
+                        crate::protocol_serde::shape_dns_options::de_dns_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -174,7 +178,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("networkInterfaceIdSet") /* NetworkInterfaceIds com.amazonaws.ec2#VpcEndpoint$NetworkInterfaceIds */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -184,7 +188,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("dnsEntrySet") /* DnsEntries com.amazonaws.ec2#VpcEndpoint$DnsEntries */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_dns_entry_set::de_dns_entry_set(&mut tag)
+                        crate::protocol_serde::shape_dns_entry_set::de_dns_entry_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -208,7 +212,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VpcEndpoint$Tags */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -231,7 +235,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("lastError") /* LastError com.amazonaws.ec2#VpcEndpoint$LastError */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_last_error::de_last_error(&mut tag)
+                        crate::protocol_serde::shape_last_error::de_last_error(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -241,7 +245,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("ipv4PrefixSet") /* Ipv4Prefixes com.amazonaws.ec2#VpcEndpoint$Ipv4Prefixes */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_subnet_ip_prefixes_list::de_subnet_ip_prefixes_list(&mut tag)
+                        crate::protocol_serde::shape_subnet_ip_prefixes_list::de_subnet_ip_prefixes_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -251,7 +255,7 @@ pub fn de_vpc_endpoint(
             s if s.matches("ipv6PrefixSet") /* Ipv6Prefixes com.amazonaws.ec2#VpcEndpoint$Ipv6Prefixes */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_subnet_ip_prefixes_list::de_subnet_ip_prefixes_list(&mut tag)
+                        crate::protocol_serde::shape_subnet_ip_prefixes_list::de_subnet_ip_prefixes_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -308,6 +312,16 @@ pub fn de_vpc_endpoint(
                     )
                 ;
                 builder = builder.set_service_region(var_25);
+            }
+            ,
+            s if s.matches("payerResponsibilitySet") /* PayerResponsibilities com.amazonaws.ec2#VpcEndpoint$PayerResponsibilities */ =>  {
+                let var_26 =
+                    Some(
+                        crate::protocol_serde::shape_payer_responsibility_set::de_payer_responsibility_set(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_payer_responsibilities(var_26);
             }
             ,
             _ => {}

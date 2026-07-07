@@ -123,6 +123,7 @@ pub fn ser_aws_ec2_vpn_connection_options_tunnel_options_details(
 pub(crate) fn de_aws_ec2_vpn_connection_options_tunnel_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -130,6 +131,11 @@ pub(crate) fn de_aws_ec2_vpn_connection_options_tunnel_options_details<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -148,7 +154,9 @@ where
                         }
                         "IkeVersions" => {
                             builder = builder.set_ike_versions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "OutsideIpAddress" => {
@@ -159,17 +167,20 @@ where
                             );
                         }
                         "Phase1DhGroupNumbers" => {
-                            builder =
-                                builder.set_phase1_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?);
+                            builder = builder.set_phase1_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Phase1EncryptionAlgorithms" => {
                             builder = builder.set_phase1_encryption_algorithms(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Phase1IntegrityAlgorithms" => {
                             builder = builder.set_phase1_integrity_algorithms(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Phase1LifetimeSeconds" => {
@@ -180,17 +191,20 @@ where
                             );
                         }
                         "Phase2DhGroupNumbers" => {
-                            builder =
-                                builder.set_phase2_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?);
+                            builder = builder.set_phase2_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Phase2EncryptionAlgorithms" => {
                             builder = builder.set_phase2_encryption_algorithms(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Phase2IntegrityAlgorithms" => {
                             builder = builder.set_phase2_integrity_algorithms(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Phase2LifetimeSeconds" => {

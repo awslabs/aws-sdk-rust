@@ -90,6 +90,8 @@ pub fn de_describe_load_balancers(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeLoadBalancersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeLoadBalancersResponse got {start_el:?}"
@@ -107,7 +109,7 @@ pub fn de_describe_load_balancers(
             s if s.matches("LoadBalancerDescriptions") /* LoadBalancerDescriptions com.amazonaws.elasticloadbalancing.synthetic#DescribeLoadBalancersOutput$LoadBalancerDescriptions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_load_balancer_descriptions::de_load_balancer_descriptions(&mut tag)
+                        crate::protocol_serde::shape_load_balancer_descriptions::de_load_balancer_descriptions(&mut tag, depth + 1)
                         ?
                     )
                 ;

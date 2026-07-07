@@ -49,6 +49,8 @@ pub fn de_describe_fast_snapshot_restores(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeFastSnapshotRestoresResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeFastSnapshotRestoresResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_fast_snapshot_restores(
             s if s.matches("fastSnapshotRestoreSet") /* FastSnapshotRestores com.amazonaws.ec2.synthetic#DescribeFastSnapshotRestoresOutput$FastSnapshotRestores */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_describe_fast_snapshot_restore_success_set::de_describe_fast_snapshot_restore_success_set(&mut tag)
+                        crate::protocol_serde::shape_describe_fast_snapshot_restore_success_set::de_describe_fast_snapshot_restore_success_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

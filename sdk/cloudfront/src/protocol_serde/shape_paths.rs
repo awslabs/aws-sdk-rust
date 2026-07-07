@@ -25,7 +25,11 @@ pub fn ser_paths(
 #[allow(clippy::needless_question_mark)]
 pub fn de_paths(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Paths, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Paths::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_paths(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#Paths$Items */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_path_list::de_path_list(&mut tag)
+                        crate::protocol_serde::shape_path_list::de_path_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

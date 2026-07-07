@@ -2,10 +2,16 @@
 pub(crate) fn de_meta_library_template_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MetaLibraryTemplateDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,8 +57,11 @@ where
                             );
                         }
                         "templateIndustry" => {
-                            builder =
-                                builder.set_template_industry(crate::protocol_serde::shape_meta_industries::de_meta_industries(tokens, _value)?);
+                            builder = builder.set_template_industry(crate::protocol_serde::shape_meta_industries::de_meta_industries(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "templateHeader" => {
                             builder = builder.set_template_header(
@@ -70,7 +79,11 @@ where
                         }
                         "templateButtons" => {
                             builder = builder.set_template_buttons(
-                                crate::protocol_serde::shape_meta_library_template_button_list::de_meta_library_template_button_list(tokens, _value)?,
+                                crate::protocol_serde::shape_meta_library_template_button_list::de_meta_library_template_button_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "templateId" => {
@@ -82,7 +95,11 @@ where
                         }
                         "templateBodyExampleParams" => {
                             builder = builder.set_template_body_example_params(
-                                crate::protocol_serde::shape_meta_template_body_example_params::de_meta_template_body_example_params(tokens, _value)?,
+                                crate::protocol_serde::shape_meta_template_body_example_params::de_meta_template_body_example_params(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

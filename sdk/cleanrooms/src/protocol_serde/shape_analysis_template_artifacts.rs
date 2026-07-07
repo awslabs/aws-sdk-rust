@@ -30,10 +30,16 @@ pub fn ser_analysis_template_artifacts(
 pub(crate) fn de_analysis_template_artifacts<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AnalysisTemplateArtifacts>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,12 +51,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "entryPoint" => {
                             builder = builder.set_entry_point(
-                                crate::protocol_serde::shape_analysis_template_artifact::de_analysis_template_artifact(tokens, _value)?,
+                                crate::protocol_serde::shape_analysis_template_artifact::de_analysis_template_artifact(tokens, _value, depth + 1)?,
                             );
                         }
                         "additionalArtifacts" => {
                             builder = builder.set_additional_artifacts(
-                                crate::protocol_serde::shape_analysis_template_artifact_list::de_analysis_template_artifact_list(tokens, _value)?,
+                                crate::protocol_serde::shape_analysis_template_artifact_list::de_analysis_template_artifact_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "roleArn" => {

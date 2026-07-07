@@ -126,6 +126,8 @@ pub(crate) fn de_describe_connection_type(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,41 +148,66 @@ pub(crate) fn de_describe_connection_type(
                     );
                 }
                 "Capabilities" => {
-                    builder = builder.set_capabilities(crate::protocol_serde::shape_capabilities::de_capabilities(tokens, _value)?);
+                    builder = builder.set_capabilities(crate::protocol_serde::shape_capabilities::de_capabilities(tokens, _value, depth + 1)?);
                 }
                 "ConnectionProperties" => {
-                    builder = builder.set_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
+                    builder =
+                        builder.set_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value, depth + 1)?);
                 }
                 "ConnectionOptions" => {
-                    builder = builder.set_connection_options(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
+                    builder =
+                        builder.set_connection_options(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value, depth + 1)?);
                 }
                 "AuthenticationConfiguration" => {
-                    builder = builder
-                        .set_authentication_configuration(crate::protocol_serde::shape_auth_configuration::de_auth_configuration(tokens, _value)?);
+                    builder = builder.set_authentication_configuration(crate::protocol_serde::shape_auth_configuration::de_auth_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ComputeEnvironmentConfigurations" => {
                     builder = builder.set_compute_environment_configurations(
-                        crate::protocol_serde::shape_compute_environment_configuration_map::de_compute_environment_configuration_map(tokens, _value)?,
+                        crate::protocol_serde::shape_compute_environment_configuration_map::de_compute_environment_configuration_map(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "PhysicalConnectionRequirements" => {
-                    builder =
-                        builder.set_physical_connection_requirements(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
+                    builder = builder.set_physical_connection_requirements(crate::protocol_serde::shape_properties_map::de_properties_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "AthenaConnectionProperties" => {
-                    builder =
-                        builder.set_athena_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
+                    builder = builder.set_athena_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "PythonConnectionProperties" => {
-                    builder =
-                        builder.set_python_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
+                    builder = builder.set_python_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "SparkConnectionProperties" => {
-                    builder =
-                        builder.set_spark_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
+                    builder = builder.set_spark_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "RestConfiguration" => {
-                    builder = builder.set_rest_configuration(crate::protocol_serde::shape_rest_configuration::de_rest_configuration(tokens, _value)?);
+                    builder = builder.set_rest_configuration(crate::protocol_serde::shape_rest_configuration::de_rest_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

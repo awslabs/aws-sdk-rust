@@ -2,10 +2,16 @@
 pub(crate) fn de_component<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Component>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,8 +50,11 @@ where
                             );
                         }
                         "ChildComponents" => {
-                            builder =
-                                builder.set_child_components(crate::protocol_serde::shape_component_id_list::de_component_id_list(tokens, _value)?);
+                            builder = builder.set_child_components(crate::protocol_serde::shape_component_id_list::de_component_id_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ApplicationId" => {
                             builder = builder.set_application_id(
@@ -97,16 +106,24 @@ where
                             );
                         }
                         "Resilience" => {
-                            builder = builder.set_resilience(crate::protocol_serde::shape_resilience::de_resilience(tokens, _value)?);
+                            builder = builder.set_resilience(crate::protocol_serde::shape_resilience::de_resilience(tokens, _value, depth + 1)?);
                         }
                         "AssociatedHost" => {
-                            builder = builder.set_associated_host(crate::protocol_serde::shape_associated_host::de_associated_host(tokens, _value)?);
+                            builder = builder.set_associated_host(crate::protocol_serde::shape_associated_host::de_associated_host(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Databases" => {
-                            builder = builder.set_databases(crate::protocol_serde::shape_database_id_list::de_database_id_list(tokens, _value)?);
+                            builder = builder.set_databases(crate::protocol_serde::shape_database_id_list::de_database_id_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Hosts" => {
-                            builder = builder.set_hosts(crate::protocol_serde::shape_host_list::de_host_list(tokens, _value)?);
+                            builder = builder.set_hosts(crate::protocol_serde::shape_host_list::de_host_list(tokens, _value, depth + 1)?);
                         }
                         "PrimaryHost" => {
                             builder = builder.set_primary_host(
@@ -116,8 +133,11 @@ where
                             );
                         }
                         "DatabaseConnection" => {
-                            builder = builder
-                                .set_database_connection(crate::protocol_serde::shape_database_connection::de_database_connection(tokens, _value)?);
+                            builder = builder.set_database_connection(crate::protocol_serde::shape_database_connection::de_database_connection(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LastUpdated" => {
                             builder = builder.set_last_updated(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -20,5 +20,7 @@ pub fn de_function_summary(inp: &[u8]) -> std::result::Result<crate::types::Func
             "invalid root, expected FunctionSummary got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_function_summary::de_function_summary(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_function_summary::de_function_summary(&mut decoder, depth + 1)
 }

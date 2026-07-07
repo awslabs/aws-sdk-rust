@@ -7,6 +7,8 @@ pub struct DescribeSecurityHubV2Output {
     pub hub_v2_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the service was enabled in the account.</p>
     pub subscribed_at: ::std::option::Option<::std::string::String>,
+    /// <p>A map of opt-in features and their current status and metadata for the account in the current Region.</p>
+    pub features: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeSecurityHubV2Output {
@@ -17,6 +19,10 @@ impl DescribeSecurityHubV2Output {
     /// <p>The date and time when the service was enabled in the account.</p>
     pub fn subscribed_at(&self) -> ::std::option::Option<&str> {
         self.subscribed_at.as_deref()
+    }
+    /// <p>A map of opt-in features and their current status and metadata for the account in the current Region.</p>
+    pub fn features(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FeatureDetail>> {
+        self.features.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSecurityHubV2Output {
@@ -37,6 +43,7 @@ impl DescribeSecurityHubV2Output {
 pub struct DescribeSecurityHubV2OutputBuilder {
     pub(crate) hub_v2_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subscribed_at: ::std::option::Option<::std::string::String>,
+    pub(crate) features: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeSecurityHubV2OutputBuilder {
@@ -68,6 +75,29 @@ impl DescribeSecurityHubV2OutputBuilder {
     pub fn get_subscribed_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscribed_at
     }
+    /// Adds a key-value pair to `features`.
+    ///
+    /// To override the contents of this collection use [`set_features`](Self::set_features).
+    ///
+    /// <p>A map of opt-in features and their current status and metadata for the account in the current Region.</p>
+    pub fn features(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FeatureDetail) -> Self {
+        let mut hash_map = self.features.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.features = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of opt-in features and their current status and metadata for the account in the current Region.</p>
+    pub fn set_features(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureDetail>>,
+    ) -> Self {
+        self.features = input;
+        self
+    }
+    /// <p>A map of opt-in features and their current status and metadata for the account in the current Region.</p>
+    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureDetail>> {
+        &self.features
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +112,7 @@ impl DescribeSecurityHubV2OutputBuilder {
         crate::operation::describe_security_hub_v2::DescribeSecurityHubV2Output {
             hub_v2_arn: self.hub_v2_arn,
             subscribed_at: self.subscribed_at,
+            features: self.features,
             _request_id: self._request_id,
         }
     }

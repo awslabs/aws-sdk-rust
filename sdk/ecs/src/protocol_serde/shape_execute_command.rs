@@ -147,6 +147,8 @@ pub(crate) fn de_execute_command(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -177,7 +179,7 @@ pub(crate) fn de_execute_command(
                     builder = builder.set_interactive(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "session" => {
-                    builder = builder.set_session(crate::protocol_serde::shape_session::de_session(tokens, _value)?);
+                    builder = builder.set_session(crate::protocol_serde::shape_session::de_session(tokens, _value, depth + 1)?);
                 }
                 "taskArn" => {
                     builder = builder.set_task_arn(

@@ -124,10 +124,11 @@ pub(crate) fn de_describe_rx_norm_inference_job(
     crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -135,7 +136,10 @@ pub(crate) fn de_describe_rx_norm_inference_job(
         builder = match decoder.str()?.as_ref() {
             "ComprehendMedicalAsyncJobProperties" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_comprehend_medical_async_job_properties(Some(
-                    crate::protocol_serde::shape_comprehend_medical_async_job_properties::de_comprehend_medical_async_job_properties(decoder)?,
+                    crate::protocol_serde::shape_comprehend_medical_async_job_properties::de_comprehend_medical_async_job_properties(
+                        decoder,
+                        depth + 1,
+                    )?,
                 )))
             })?,
             _ => {
@@ -147,6 +151,8 @@ pub(crate) fn de_describe_rx_norm_inference_job(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -156,13 +162,13 @@ pub(crate) fn de_describe_rx_norm_inference_job(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

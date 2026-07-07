@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_endpoint_authorization(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EndpointAuthorization, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EndpointAuthorization::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -105,7 +109,7 @@ pub fn de_endpoint_authorization(
             s if s.matches("AllowedVPCs") /* AllowedVPCs com.amazonaws.redshift#EndpointAuthorization$AllowedVPCs */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_vpc_identifier_list::de_vpc_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_identifier_list::de_vpc_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

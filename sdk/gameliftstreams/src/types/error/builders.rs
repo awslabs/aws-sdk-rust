@@ -11,4 +11,6 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
+pub use crate::types::error::_stream_session_access_not_ready_exception::StreamSessionAccessNotReadyExceptionBuilder;
+
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

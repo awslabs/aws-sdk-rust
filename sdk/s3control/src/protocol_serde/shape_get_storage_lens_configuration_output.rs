@@ -25,5 +25,7 @@ pub fn de_storage_lens_configuration(
             "invalid root, expected StorageLensConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_storage_lens_configuration::de_storage_lens_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_storage_lens_configuration::de_storage_lens_configuration(&mut decoder, depth + 1)
 }

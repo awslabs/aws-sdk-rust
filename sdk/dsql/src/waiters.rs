@@ -6,6 +6,12 @@ pub mod cluster_active;
 /// Supporting types for the `cluster_not_exists` waiter.
 pub mod cluster_not_exists;
 
+/// Supporting types for the `stream_active` waiter.
+pub mod stream_active;
+
+/// Supporting types for the `stream_not_exists` waiter.
+pub mod stream_not_exists;
+
 #[allow(clippy::needless_lifetimes)]
 #[allow(clippy::let_and_return)]
 pub(crate) mod matchers;

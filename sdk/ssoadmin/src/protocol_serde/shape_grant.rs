@@ -2,10 +2,16 @@
 pub(crate) fn de_grant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Grant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,24 +37,25 @@ where
                     }
                     variant = match key.as_ref() {
                         "AuthorizationCode" => Some(crate::types::Grant::AuthorizationCode(
-                            crate::protocol_serde::shape_authorization_code_grant::de_authorization_code_grant(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AuthorizationCode' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_authorization_code_grant::de_authorization_code_grant(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AuthorizationCode' cannot be null")
+                                })?,
                         )),
                         "JwtBearer" => Some(crate::types::Grant::JwtBearer(
-                            crate::protocol_serde::shape_jwt_bearer_grant::de_jwt_bearer_grant(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_jwt_bearer_grant::de_jwt_bearer_grant(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'JwtBearer' cannot be null")
                             })?,
                         )),
                         "RefreshToken" => Some(crate::types::Grant::RefreshToken(
-                            crate::protocol_serde::shape_refresh_token_grant::de_refresh_token_grant(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RefreshToken' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_refresh_token_grant::de_refresh_token_grant(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RefreshToken' cannot be null"),
+                            )?,
                         )),
                         "TokenExchange" => Some(crate::types::Grant::TokenExchange(
-                            crate::protocol_serde::shape_token_exchange_grant::de_token_exchange_grant(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TokenExchange' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_token_exchange_grant::de_token_exchange_grant(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TokenExchange' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

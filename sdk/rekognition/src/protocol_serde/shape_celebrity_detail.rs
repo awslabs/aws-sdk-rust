@@ -2,10 +2,16 @@
 pub(crate) fn de_celebrity_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CelebrityDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Urls" => {
-                            builder = builder.set_urls(crate::protocol_serde::shape_urls::de_urls(tokens, _value)?);
+                            builder = builder.set_urls(crate::protocol_serde::shape_urls::de_urls(tokens, _value, depth + 1)?);
                         }
                         "Name" => {
                             builder = builder.set_name(
@@ -38,13 +44,15 @@ where
                             );
                         }
                         "BoundingBox" => {
-                            builder = builder.set_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value)?);
+                            builder =
+                                builder.set_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value, depth + 1)?);
                         }
                         "Face" => {
-                            builder = builder.set_face(crate::protocol_serde::shape_face_detail::de_face_detail(tokens, _value)?);
+                            builder = builder.set_face(crate::protocol_serde::shape_face_detail::de_face_detail(tokens, _value, depth + 1)?);
                         }
                         "KnownGender" => {
-                            builder = builder.set_known_gender(crate::protocol_serde::shape_known_gender::de_known_gender(tokens, _value)?);
+                            builder =
+                                builder.set_known_gender(crate::protocol_serde::shape_known_gender::de_known_gender(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

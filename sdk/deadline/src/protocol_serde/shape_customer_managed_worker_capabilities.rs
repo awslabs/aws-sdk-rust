@@ -72,10 +72,16 @@ pub fn ser_customer_managed_worker_capabilities(
 pub(crate) fn de_customer_managed_worker_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomerManagedWorkerCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -86,24 +92,37 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "vCpuCount" => {
-                            builder = builder.set_v_cpu_count(crate::protocol_serde::shape_v_cpu_count_range::de_v_cpu_count_range(tokens, _value)?);
+                            builder = builder.set_v_cpu_count(crate::protocol_serde::shape_v_cpu_count_range::de_v_cpu_count_range(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "memoryMiB" => {
-                            builder = builder.set_memory_mib(crate::protocol_serde::shape_memory_mib_range::de_memory_mib_range(tokens, _value)?);
+                            builder = builder.set_memory_mib(crate::protocol_serde::shape_memory_mib_range::de_memory_mib_range(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "acceleratorTypes" => {
-                            builder =
-                                builder.set_accelerator_types(crate::protocol_serde::shape_accelerator_types::de_accelerator_types(tokens, _value)?);
+                            builder = builder.set_accelerator_types(crate::protocol_serde::shape_accelerator_types::de_accelerator_types(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "acceleratorCount" => {
                             builder = builder.set_accelerator_count(
-                                crate::protocol_serde::shape_accelerator_count_range::de_accelerator_count_range(tokens, _value)?,
+                                crate::protocol_serde::shape_accelerator_count_range::de_accelerator_count_range(tokens, _value, depth + 1)?,
                             );
                         }
                         "acceleratorTotalMemoryMiB" => {
                             builder = builder.set_accelerator_total_memory_mib(
                                 crate::protocol_serde::shape_accelerator_total_memory_mib_range::de_accelerator_total_memory_mib_range(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -126,13 +145,19 @@ where
                         }
                         "customAmounts" => {
                             builder = builder.set_custom_amounts(
-                                crate::protocol_serde::shape_custom_fleet_amount_capabilities::de_custom_fleet_amount_capabilities(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_fleet_amount_capabilities::de_custom_fleet_amount_capabilities(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "customAttributes" => {
                             builder = builder.set_custom_attributes(
                                 crate::protocol_serde::shape_custom_fleet_attribute_capabilities::de_custom_fleet_attribute_capabilities(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

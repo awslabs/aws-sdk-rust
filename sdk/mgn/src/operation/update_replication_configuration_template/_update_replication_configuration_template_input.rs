@@ -37,6 +37,8 @@ pub struct UpdateReplicationConfigurationTemplateInput {
     pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     /// <p>Update replication configuration template store snapshot on local zone request.</p>
     pub store_snapshot_on_local_zone: ::std::option::Option<bool>,
+    /// <p>Update replication configuration template storage configuration request.</p>
+    pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
 impl UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template template ID request.</p>
@@ -109,6 +111,10 @@ impl UpdateReplicationConfigurationTemplateInput {
     pub fn store_snapshot_on_local_zone(&self) -> ::std::option::Option<bool> {
         self.store_snapshot_on_local_zone
     }
+    /// <p>Update replication configuration template storage configuration request.</p>
+    pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
+        self.storage_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -130,6 +136,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
+        formatter.field("storage_configuration", &self.storage_configuration);
         formatter.finish()
     }
 }
@@ -161,6 +168,7 @@ pub struct UpdateReplicationConfigurationTemplateInputBuilder {
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
     pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     pub(crate) store_snapshot_on_local_zone: ::std::option::Option<bool>,
+    pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
 impl UpdateReplicationConfigurationTemplateInputBuilder {
     /// <p>Update replication configuration template template ID request.</p>
@@ -424,6 +432,20 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
     pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
         &self.store_snapshot_on_local_zone
     }
+    /// <p>Update replication configuration template storage configuration request.</p>
+    pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
+        self.storage_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update replication configuration template storage configuration request.</p>
+    pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
+        self.storage_configuration = input;
+        self
+    }
+    /// <p>Update replication configuration template storage configuration request.</p>
+    pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
+        &self.storage_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationTemplateInput`](crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput).
     pub fn build(
         self,
@@ -450,6 +472,7 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
                 use_fips_endpoint: self.use_fips_endpoint,
                 internet_protocol: self.internet_protocol,
                 store_snapshot_on_local_zone: self.store_snapshot_on_local_zone,
+                storage_configuration: self.storage_configuration,
             },
         )
     }
@@ -474,6 +497,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInputBuilder {
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
+        formatter.field("storage_configuration", &self.storage_configuration);
         formatter.finish()
     }
 }

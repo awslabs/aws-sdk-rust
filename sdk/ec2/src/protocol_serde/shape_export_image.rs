@@ -40,6 +40,8 @@ pub fn de_export_image(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ExportImageResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ExportImageResponse got {start_el:?}"
@@ -129,7 +131,7 @@ pub fn de_export_image(
             s if s.matches("s3ExportLocation") /* S3ExportLocation com.amazonaws.ec2.synthetic#ExportImageOutput$S3ExportLocation */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_export_task_s3_location::de_export_task_s3_location(&mut tag)
+                        crate::protocol_serde::shape_export_task_s3_location::de_export_task_s3_location(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -165,7 +167,7 @@ pub fn de_export_image(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#ExportImageOutput$Tags */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

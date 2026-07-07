@@ -26,6 +26,10 @@ pub struct GetDurableExecutionOutput {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The trace headers associated with the durable execution.</p>
     pub trace_header: ::std::option::Option<crate::types::TraceHeader>,
+    /// <p>Indicates whether execution data is included in this response. Returns <code>false</code> when <code>IncludeExecutionData</code> is set to <code>false</code> in the request.</p>
+    pub execution_data_included: ::std::option::Option<bool>,
+    /// <p>Configuration settings for the durable execution, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
     _request_id: Option<String>,
 }
 impl GetDurableExecutionOutput {
@@ -76,6 +80,14 @@ impl GetDurableExecutionOutput {
     pub fn trace_header(&self) -> ::std::option::Option<&crate::types::TraceHeader> {
         self.trace_header.as_ref()
     }
+    /// <p>Indicates whether execution data is included in this response. Returns <code>false</code> when <code>IncludeExecutionData</code> is set to <code>false</code> in the request.</p>
+    pub fn execution_data_included(&self) -> ::std::option::Option<bool> {
+        self.execution_data_included
+    }
+    /// <p>Configuration settings for the durable execution, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
+        self.durable_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetDurableExecutionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -91,6 +103,8 @@ impl ::std::fmt::Debug for GetDurableExecutionOutput {
         formatter.field("end_timestamp", &self.end_timestamp);
         formatter.field("version", &self.version);
         formatter.field("trace_header", &self.trace_header);
+        formatter.field("execution_data_included", &self.execution_data_included);
+        formatter.field("durable_config", &self.durable_config);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -122,6 +136,8 @@ pub struct GetDurableExecutionOutputBuilder {
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) trace_header: ::std::option::Option<crate::types::TraceHeader>,
+    pub(crate) execution_data_included: ::std::option::Option<bool>,
+    pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
     _request_id: Option<String>,
 }
 impl GetDurableExecutionOutputBuilder {
@@ -284,6 +300,34 @@ impl GetDurableExecutionOutputBuilder {
     pub fn get_trace_header(&self) -> &::std::option::Option<crate::types::TraceHeader> {
         &self.trace_header
     }
+    /// <p>Indicates whether execution data is included in this response. Returns <code>false</code> when <code>IncludeExecutionData</code> is set to <code>false</code> in the request.</p>
+    pub fn execution_data_included(mut self, input: bool) -> Self {
+        self.execution_data_included = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether execution data is included in this response. Returns <code>false</code> when <code>IncludeExecutionData</code> is set to <code>false</code> in the request.</p>
+    pub fn set_execution_data_included(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.execution_data_included = input;
+        self
+    }
+    /// <p>Indicates whether execution data is included in this response. Returns <code>false</code> when <code>IncludeExecutionData</code> is set to <code>false</code> in the request.</p>
+    pub fn get_execution_data_included(&self) -> &::std::option::Option<bool> {
+        &self.execution_data_included
+    }
+    /// <p>Configuration settings for the durable execution, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub fn durable_config(mut self, input: crate::types::DurableConfig) -> Self {
+        self.durable_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for the durable execution, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub fn set_durable_config(mut self, input: ::std::option::Option<crate::types::DurableConfig>) -> Self {
+        self.durable_config = input;
+        self
+    }
+    /// <p>Configuration settings for the durable execution, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
+        &self.durable_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -341,6 +385,8 @@ impl GetDurableExecutionOutputBuilder {
             end_timestamp: self.end_timestamp,
             version: self.version,
             trace_header: self.trace_header,
+            execution_data_included: self.execution_data_included,
+            durable_config: self.durable_config,
             _request_id: self._request_id,
         })
     }
@@ -359,6 +405,8 @@ impl ::std::fmt::Debug for GetDurableExecutionOutputBuilder {
         formatter.field("end_timestamp", &self.end_timestamp);
         formatter.field("version", &self.version);
         formatter.field("trace_header", &self.trace_header);
+        formatter.field("execution_data_included", &self.execution_data_included);
+        formatter.field("durable_config", &self.durable_config);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

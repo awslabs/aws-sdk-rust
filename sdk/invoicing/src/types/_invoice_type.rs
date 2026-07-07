@@ -14,6 +14,7 @@
 /// match invoicetype {
 ///     InvoiceType::CreditMemo => { /* ... */ },
 ///     InvoiceType::Invoice => { /* ... */ },
+///     InvoiceType::PaymentReceipt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum InvoiceType {
     CreditMemo,
     #[allow(missing_docs)] // documentation missing in model
     Invoice,
+    #[allow(missing_docs)] // documentation missing in model
+    PaymentReceipt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for InvoiceType {
         match s {
             "CREDIT_MEMO" => InvoiceType::CreditMemo,
             "INVOICE" => InvoiceType::Invoice,
+            "PAYMENT_RECEIPT" => InvoiceType::PaymentReceipt,
             other => InvoiceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl InvoiceType {
         match self {
             InvoiceType::CreditMemo => "CREDIT_MEMO",
             InvoiceType::Invoice => "INVOICE",
+            InvoiceType::PaymentReceipt => "PAYMENT_RECEIPT",
             InvoiceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREDIT_MEMO", "INVOICE"]
+        &["CREDIT_MEMO", "INVOICE", "PAYMENT_RECEIPT"]
     }
 }
 impl ::std::convert::AsRef<str> for InvoiceType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for InvoiceType {
         match self {
             InvoiceType::CreditMemo => write!(f, "CREDIT_MEMO"),
             InvoiceType::Invoice => write!(f, "INVOICE"),
+            InvoiceType::PaymentReceipt => write!(f, "PAYMENT_RECEIPT"),
             InvoiceType::Unknown(value) => write!(f, "{value}"),
         }
     }

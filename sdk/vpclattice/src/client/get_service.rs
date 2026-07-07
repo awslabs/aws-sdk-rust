@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`certificate_arn(Option<String>)`](crate::operation::get_service::GetServiceOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate.</p>
     ///   - [`status(Option<ServiceStatus>)`](crate::operation::get_service::GetServiceOutput::status): <p>The status of the service.</p>
     ///   - [`auth_type(Option<AuthType>)`](crate::operation::get_service::GetServiceOutput::auth_type): <p>The type of IAM policy.</p>
+    ///   - [`idle_timeout_seconds(Option<i32>)`](crate::operation::get_service::GetServiceOutput::idle_timeout_seconds): <p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>
     ///   - [`failure_code(Option<String>)`](crate::operation::get_service::GetServiceOutput::failure_code): <p>The failure code.</p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_service::GetServiceOutput::failure_message): <p>The failure message.</p>
     /// - On failure, responds with [`SdkError<GetServiceError>`](crate::operation::get_service::GetServiceError)

@@ -24,6 +24,7 @@ impl crate::operation::get_slot_type::builders::GetSlotTypeInputBuilder {
 ///
 /// <p>Returns information about a specific version of a slot type. In addition to specifying the slot type name, you must specify the slot type version.</p>
 /// <p>This operation requires permissions for the <code>lex:GetSlotType</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSlotTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

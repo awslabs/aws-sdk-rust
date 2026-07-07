@@ -16,6 +16,9 @@ pub mod count_tokens;
 /// Types for the `GetAsyncInvoke` operation.
 pub mod get_async_invoke;
 
+/// Types for the `InvokeGuardrailChecks` operation.
+pub mod invoke_guardrail_checks;
+
 /// Types for the `InvokeModel` operation.
 pub mod invoke_model;
 

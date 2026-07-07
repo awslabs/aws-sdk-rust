@@ -83,6 +83,8 @@ pub(crate) mod shape_delete_protect_configuration_rule_set_number_override;
 
 pub(crate) mod shape_delete_rcs_agent;
 
+pub(crate) mod shape_delete_rcs_message_spend_limit_override;
+
 pub(crate) mod shape_delete_registration;
 
 pub(crate) mod shape_delete_registration_attachment;
@@ -191,6 +193,8 @@ pub(crate) mod shape_send_notify_text_message;
 
 pub(crate) mod shape_send_notify_voice_message;
 
+pub(crate) mod shape_send_rcs_message;
+
 pub(crate) mod shape_send_text_message;
 
 pub(crate) mod shape_send_voice_message;
@@ -206,6 +210,8 @@ pub(crate) mod shape_set_default_sender_id;
 pub(crate) mod shape_set_media_message_spend_limit_override;
 
 pub(crate) mod shape_set_notify_message_spend_limit_override;
+
+pub(crate) mod shape_set_rcs_message_spend_limit_override;
 
 pub(crate) mod shape_set_text_message_spend_limit_override;
 
@@ -409,6 +415,8 @@ pub(crate) mod shape_send_notify_text_message_input;
 
 pub(crate) mod shape_send_notify_voice_message_input;
 
+pub(crate) mod shape_send_rcs_message_input;
+
 pub(crate) mod shape_send_text_message_input;
 
 pub(crate) mod shape_send_voice_message_input;
@@ -426,6 +434,8 @@ pub(crate) mod shape_set_default_sender_id_input;
 pub(crate) mod shape_set_media_message_spend_limit_override_input;
 
 pub(crate) mod shape_set_notify_message_spend_limit_override_input;
+
+pub(crate) mod shape_set_rcs_message_spend_limit_override_input;
 
 pub(crate) mod shape_set_text_message_spend_limit_override_input;
 
@@ -535,6 +545,12 @@ pub(crate) mod shape_rcs_agent_filter;
 
 pub(crate) mod shape_rcs_agent_information_list;
 
+pub(crate) mod shape_rcs_event_type_list;
+
+pub(crate) mod shape_rcs_fallback_configuration;
+
+pub(crate) mod shape_rcs_message_content;
+
 pub(crate) mod shape_registration_association_filter;
 
 pub(crate) mod shape_registration_association_metadata_list;
@@ -621,6 +637,10 @@ pub(crate) mod shape_protect_configuration_rule_set_number_override;
 
 pub(crate) mod shape_rcs_agent_information;
 
+pub(crate) mod shape_rcs_content;
+
+pub(crate) mod shape_rcs_suggested_action;
+
 pub(crate) mod shape_registration_association_metadata;
 
 pub(crate) mod shape_registration_attachments_information;
@@ -653,6 +673,26 @@ pub(crate) mod shape_notify_tier_list;
 
 pub(crate) mod shape_notify_use_case_list;
 
+pub(crate) mod shape_rcs_carousel;
+
+pub(crate) mod shape_rcs_create_calendar_event_action;
+
+pub(crate) mod shape_rcs_dial_phone_action;
+
+pub(crate) mod shape_rcs_file_message;
+
+pub(crate) mod shape_rcs_open_url_action;
+
+pub(crate) mod shape_rcs_reply_action;
+
+pub(crate) mod shape_rcs_request_location_action;
+
+pub(crate) mod shape_rcs_show_location_action;
+
+pub(crate) mod shape_rcs_standalone_card;
+
+pub(crate) mod shape_rcs_text_message;
+
 pub(crate) mod shape_registration_denied_reason_information_list;
 
 pub(crate) mod shape_registration_field_display_hints;
@@ -675,6 +715,10 @@ pub(crate) mod shape_voice_id_list;
 
 pub(crate) mod shape_carrier_status_information;
 
+pub(crate) mod shape_rcs_card_content;
+
+pub(crate) mod shape_rcs_carousel_card_content;
+
 pub(crate) mod shape_registration_denied_reason_information;
 
 pub(crate) mod shape_select_option_descriptions_list;
@@ -684,5 +728,9 @@ pub(crate) mod shape_string_list;
 pub(crate) mod shape_supported_association;
 
 pub(crate) mod shape_template_variable_metadata;
+
+pub(crate) mod shape_rcs_card_media;
+
+pub(crate) mod shape_rcs_carousel_card_media;
 
 pub(crate) mod shape_select_option_description;

@@ -53,6 +53,8 @@ pub fn de_create_vpc_endpoint_connection_notification(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateVpcEndpointConnectionNotificationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateVpcEndpointConnectionNotificationResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_create_vpc_endpoint_connection_notification(
             s if s.matches("connectionNotification") /* ConnectionNotification com.amazonaws.ec2.synthetic#CreateVpcEndpointConnectionNotificationOutput$ConnectionNotification */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_connection_notification::de_connection_notification(&mut tag)
+                        crate::protocol_serde::shape_connection_notification::de_connection_notification(&mut tag, depth + 1)
                         ?
                     )
                 ;

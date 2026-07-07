@@ -14,6 +14,7 @@
 /// match capacitydistributionstrategy {
 ///     CapacityDistributionStrategy::BalancedBestEffort => { /* ... */ },
 ///     CapacityDistributionStrategy::BalancedOnly => { /* ... */ },
+///     CapacityDistributionStrategy::ReservationsThenBalanced => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum CapacityDistributionStrategy {
     BalancedBestEffort,
     #[allow(missing_docs)] // documentation missing in model
     BalancedOnly,
+    #[allow(missing_docs)] // documentation missing in model
+    ReservationsThenBalanced,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for CapacityDistributionStrategy {
         match s {
             "balanced-best-effort" => CapacityDistributionStrategy::BalancedBestEffort,
             "balanced-only" => CapacityDistributionStrategy::BalancedOnly,
+            "reservations-then-balanced" => CapacityDistributionStrategy::ReservationsThenBalanced,
             other => CapacityDistributionStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl CapacityDistributionStrategy {
         match self {
             CapacityDistributionStrategy::BalancedBestEffort => "balanced-best-effort",
             CapacityDistributionStrategy::BalancedOnly => "balanced-only",
+            CapacityDistributionStrategy::ReservationsThenBalanced => "reservations-then-balanced",
             CapacityDistributionStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["balanced-best-effort", "balanced-only"]
+        &["balanced-best-effort", "balanced-only", "reservations-then-balanced"]
     }
 }
 impl ::std::convert::AsRef<str> for CapacityDistributionStrategy {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for CapacityDistributionStrategy {
         match self {
             CapacityDistributionStrategy::BalancedBestEffort => write!(f, "balanced-best-effort"),
             CapacityDistributionStrategy::BalancedOnly => write!(f, "balanced-only"),
+            CapacityDistributionStrategy::ReservationsThenBalanced => write!(f, "reservations-then-balanced"),
             CapacityDistributionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }

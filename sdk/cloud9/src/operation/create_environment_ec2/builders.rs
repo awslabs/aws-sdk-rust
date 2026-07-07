@@ -194,22 +194,14 @@ impl CreateEnvironmentEC2FluentBuilder {
     /// <p><b>AMI aliases </b></p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li>
     /// <p>Amazon Linux 2023 (recommended): <code>amazonlinux-2023-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
     /// <li>
     /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// <p><b>SSM paths</b></p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li>
     /// <p>Amazon Linux 2023 (recommended): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
     /// <li>
     /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
@@ -225,22 +217,14 @@ impl CreateEnvironmentEC2FluentBuilder {
     /// <p><b>AMI aliases </b></p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li>
     /// <p>Amazon Linux 2023 (recommended): <code>amazonlinux-2023-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
     /// <li>
     /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// <p><b>SSM paths</b></p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li>
     /// <p>Amazon Linux 2023 (recommended): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
     /// <li>
     /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
@@ -256,22 +240,14 @@ impl CreateEnvironmentEC2FluentBuilder {
     /// <p><b>AMI aliases </b></p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li>
     /// <p>Amazon Linux 2023 (recommended): <code>amazonlinux-2023-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
     /// <li>
     /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// <p><b>SSM paths</b></p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li>
     /// <p>Amazon Linux 2023 (recommended): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
     /// <li>
     /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
     /// </ul>

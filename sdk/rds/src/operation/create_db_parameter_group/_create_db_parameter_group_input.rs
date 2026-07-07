@@ -33,6 +33,8 @@ pub struct CreateDbParameterGroupInput {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mysql</code></p></li>
@@ -92,6 +94,8 @@ impl CreateDbParameterGroupInput {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
@@ -210,6 +214,8 @@ impl CreateDbParameterGroupInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mysql</code></p></li>
@@ -253,6 +259,8 @@ impl CreateDbParameterGroupInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mysql</code></p></li>
@@ -294,6 +302,8 @@ impl CreateDbParameterGroupInputBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>

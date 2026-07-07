@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_reserved_instances_listing(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReservedInstancesListing, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedInstancesListing::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -37,7 +41,7 @@ pub fn de_reserved_instances_listing(
             s if s.matches("instanceCounts") /* InstanceCounts com.amazonaws.ec2#ReservedInstancesListing$InstanceCounts */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_instance_count_list::de_instance_count_list(&mut tag)
+                        crate::protocol_serde::shape_instance_count_list::de_instance_count_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -47,7 +51,7 @@ pub fn de_reserved_instances_listing(
             s if s.matches("priceSchedules") /* PriceSchedules com.amazonaws.ec2#ReservedInstancesListing$PriceSchedules */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_price_schedule_list::de_price_schedule_list(&mut tag)
+                        crate::protocol_serde::shape_price_schedule_list::de_price_schedule_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -110,7 +114,7 @@ pub fn de_reserved_instances_listing(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ReservedInstancesListing$Tags */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

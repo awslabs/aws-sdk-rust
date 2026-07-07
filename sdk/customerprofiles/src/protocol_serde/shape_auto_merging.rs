@@ -2,10 +2,16 @@
 pub(crate) fn de_auto_merging<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutoMerging>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,11 +25,15 @@ where
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Consolidation" => {
-                            builder = builder.set_consolidation(crate::protocol_serde::shape_consolidation::de_consolidation(tokens, _value)?);
+                            builder =
+                                builder.set_consolidation(crate::protocol_serde::shape_consolidation::de_consolidation(tokens, _value, depth + 1)?);
                         }
                         "ConflictResolution" => {
-                            builder = builder
-                                .set_conflict_resolution(crate::protocol_serde::shape_conflict_resolution::de_conflict_resolution(tokens, _value)?);
+                            builder = builder.set_conflict_resolution(crate::protocol_serde::shape_conflict_resolution::de_conflict_resolution(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MinAllowedConfidenceScoreForMerging" => {
                             builder = builder.set_min_allowed_confidence_score_for_merging(

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePrivateConnection`](crate::operation::delete_private_connection::builders::DeletePrivateConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_private_connection::builders::DeletePrivateConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_private_connection::builders::DeletePrivateConnectionFluentBuilder::set_name):<br>required: **true**<br>The name of the Private Connection.<br>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_private_connection::builders::DeletePrivateConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_private_connection::builders::DeletePrivateConnectionFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Private Connection.</p><br>
     /// - On success, responds with [`DeletePrivateConnectionOutput`](crate::operation::delete_private_connection::DeletePrivateConnectionOutput) with field(s):
-    ///   - [`name(String)`](crate::operation::delete_private_connection::DeletePrivateConnectionOutput::name): The name of the Private Connection.
-    ///   - [`status(PrivateConnectionStatus)`](crate::operation::delete_private_connection::DeletePrivateConnectionOutput::status): The status of the Private Connection.
+    ///   - [`name(String)`](crate::operation::delete_private_connection::DeletePrivateConnectionOutput::name): <p>The name of the Private Connection.</p>
+    ///   - [`status(PrivateConnectionStatus)`](crate::operation::delete_private_connection::DeletePrivateConnectionOutput::status): <p>The status of the Private Connection.</p>
     /// - On failure, responds with [`SdkError<DeletePrivateConnectionError>`](crate::operation::delete_private_connection::DeletePrivateConnectionError)
     pub fn delete_private_connection(&self) -> crate::operation::delete_private_connection::builders::DeletePrivateConnectionFluentBuilder {
         crate::operation::delete_private_connection::builders::DeletePrivateConnectionFluentBuilder::new(self.handle.clone())

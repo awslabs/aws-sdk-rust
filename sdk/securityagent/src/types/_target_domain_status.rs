@@ -38,19 +38,19 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Verification status of a target domain
+/// <p>Verification status of a target domain.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TargetDomainStatus {
-    /// Domain verification failed
+    /// <p>Domain verification failed.</p>
     Failed,
-    /// Domain verification is pending
+    /// <p>Domain verification is pending.</p>
     Pending,
-    /// Domain is unreachable for verification
+    /// <p>Domain is unreachable for verification.</p>
     Unreachable,
-    /// Domain ownership has been verified
+    /// <p>Domain ownership has been verified.</p>
     Verified,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

@@ -2,10 +2,16 @@
 pub(crate) fn de_recording_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecordingGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,17 +29,23 @@ where
                                 builder.set_include_global_resource_types(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "resourceTypes" => {
-                            builder =
-                                builder.set_resource_types(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens, _value)?);
+                            builder = builder.set_resource_types(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "exclusionByResourceTypes" => {
                             builder = builder.set_exclusion_by_resource_types(
-                                crate::protocol_serde::shape_exclusion_by_resource_types::de_exclusion_by_resource_types(tokens, _value)?,
+                                crate::protocol_serde::shape_exclusion_by_resource_types::de_exclusion_by_resource_types(tokens, _value, depth + 1)?,
                             );
                         }
                         "recordingStrategy" => {
-                            builder = builder
-                                .set_recording_strategy(crate::protocol_serde::shape_recording_strategy::de_recording_strategy(tokens, _value)?);
+                            builder = builder.set_recording_strategy(crate::protocol_serde::shape_recording_strategy::de_recording_strategy(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

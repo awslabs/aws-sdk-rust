@@ -109,6 +109,8 @@ pub(crate) fn de_get_next_message(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -119,11 +121,15 @@ pub(crate) fn de_get_next_message(
                 }
                 "conversationSessionData" => {
                     builder = builder.set_conversation_session_data(
-                        crate::protocol_serde::shape_runtime_session_data_list::de_runtime_session_data_list(tokens, _value)?,
+                        crate::protocol_serde::shape_runtime_session_data_list::de_runtime_session_data_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "conversationState" => {
-                    builder = builder.set_conversation_state(crate::protocol_serde::shape_conversation_state::de_conversation_state(tokens, _value)?);
+                    builder = builder.set_conversation_state(crate::protocol_serde::shape_conversation_state::de_conversation_state(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "nextMessageToken" => {
                     builder = builder.set_next_message_token(
@@ -140,7 +146,7 @@ pub(crate) fn de_get_next_message(
                     );
                 }
                 "response" => {
-                    builder = builder.set_response(crate::protocol_serde::shape_message_output::de_message_output(tokens, _value)?);
+                    builder = builder.set_response(crate::protocol_serde::shape_message_output::de_message_output(tokens, _value, depth + 1)?);
                 }
                 "type" => {
                     builder = builder.set_type(

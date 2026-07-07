@@ -21,10 +21,16 @@ pub fn ser_bedrock_foundation_model_configuration(
 pub(crate) fn de_bedrock_foundation_model_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BedrockFoundationModelConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,7 +48,11 @@ where
                             );
                         }
                         "parsingPrompt" => {
-                            builder = builder.set_parsing_prompt(crate::protocol_serde::shape_parsing_prompt::de_parsing_prompt(tokens, _value)?);
+                            builder = builder.set_parsing_prompt(crate::protocol_serde::shape_parsing_prompt::de_parsing_prompt(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "parsingModality" => {
                             builder = builder.set_parsing_modality(

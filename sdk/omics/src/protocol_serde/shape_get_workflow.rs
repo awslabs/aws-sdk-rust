@@ -159,6 +159,8 @@ pub(crate) fn de_get_workflow(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -180,7 +182,9 @@ pub(crate) fn de_get_workflow(
                 }
                 "containerRegistryMap" => {
                     builder = builder.set_container_registry_map(crate::protocol_serde::shape_container_registry_map::de_container_registry_map(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "creationTime" => {
@@ -198,7 +202,7 @@ pub(crate) fn de_get_workflow(
                 }
                 "definitionRepositoryDetails" => {
                     builder = builder.set_definition_repository_details(
-                        crate::protocol_serde::shape_definition_repository_details::de_definition_repository_details(tokens, _value)?,
+                        crate::protocol_serde::shape_definition_repository_details::de_definition_repository_details(tokens, _value, depth + 1)?,
                     );
                 }
                 "description" => {
@@ -237,7 +241,11 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "metadata" => {
-                    builder = builder.set_metadata(crate::protocol_serde::shape_workflow_metadata::de_workflow_metadata(tokens, _value)?);
+                    builder = builder.set_metadata(crate::protocol_serde::shape_workflow_metadata::de_workflow_metadata(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -248,8 +256,24 @@ pub(crate) fn de_get_workflow(
                 }
                 "parameterTemplate" => {
                     builder = builder.set_parameter_template(
-                        crate::protocol_serde::shape_workflow_parameter_template::de_workflow_parameter_template(tokens, _value)?,
+                        crate::protocol_serde::shape_workflow_parameter_template::de_workflow_parameter_template(tokens, _value, depth + 1)?,
                     );
+                }
+                "profileParameterTemplates" => {
+                    builder = builder.set_profile_parameter_templates(
+                        crate::protocol_serde::shape_workflow_profile_parameter_templates::de_workflow_profile_parameter_templates(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
+                    );
+                }
+                "profiles" => {
+                    builder = builder.set_profiles(crate::protocol_serde::shape_workflow_profile_list::de_workflow_profile_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "readme" => {
                     builder = builder.set_readme(
@@ -294,7 +318,7 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "type" => {
                     builder = builder.set_type(

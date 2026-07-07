@@ -33,6 +33,8 @@ pub struct CreateGatewayTargetOutput {
     pub private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
     /// <p>OAuth2 authorization data for the created gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>
     pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
+    /// <p>The protocol type of the created gateway target.</p>
+    pub protocol_type: ::std::option::Option<crate::types::TargetProtocolType>,
     _request_id: Option<String>,
 }
 impl CreateGatewayTargetOutput {
@@ -104,6 +106,10 @@ impl CreateGatewayTargetOutput {
     pub fn authorization_data(&self) -> ::std::option::Option<&crate::types::AuthorizationData> {
         self.authorization_data.as_ref()
     }
+    /// <p>The protocol type of the created gateway target.</p>
+    pub fn protocol_type(&self) -> ::std::option::Option<&crate::types::TargetProtocolType> {
+        self.protocol_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateGatewayTargetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -123,6 +129,7 @@ impl ::std::fmt::Debug for CreateGatewayTargetOutput {
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.field("authorization_data", &self.authorization_data);
+        formatter.field("protocol_type", &self.protocol_type);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -158,6 +165,7 @@ pub struct CreateGatewayTargetOutputBuilder {
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
     pub(crate) authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
+    pub(crate) protocol_type: ::std::option::Option<crate::types::TargetProtocolType>,
     _request_id: Option<String>,
 }
 impl CreateGatewayTargetOutputBuilder {
@@ -402,6 +410,20 @@ impl CreateGatewayTargetOutputBuilder {
     pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
         &self.authorization_data
     }
+    /// <p>The protocol type of the created gateway target.</p>
+    pub fn protocol_type(mut self, input: crate::types::TargetProtocolType) -> Self {
+        self.protocol_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The protocol type of the created gateway target.</p>
+    pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::TargetProtocolType>) -> Self {
+        self.protocol_type = input;
+        self
+    }
+    /// <p>The protocol type of the created gateway target.</p>
+    pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::TargetProtocolType> {
+        &self.protocol_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -475,6 +497,7 @@ impl CreateGatewayTargetOutputBuilder {
             private_endpoint: self.private_endpoint,
             private_endpoint_managed_resources: self.private_endpoint_managed_resources,
             authorization_data: self.authorization_data,
+            protocol_type: self.protocol_type,
             _request_id: self._request_id,
         })
     }
@@ -497,6 +520,7 @@ impl ::std::fmt::Debug for CreateGatewayTargetOutputBuilder {
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.field("authorization_data", &self.authorization_data);
+        formatter.field("protocol_type", &self.protocol_type);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

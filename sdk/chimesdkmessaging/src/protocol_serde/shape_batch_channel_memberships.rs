@@ -2,10 +2,16 @@
 pub(crate) fn de_batch_channel_memberships<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BatchChannelMemberships>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InvitedBy" => {
-                            builder = builder.set_invited_by(crate::protocol_serde::shape_identity::de_identity(tokens, _value)?);
+                            builder = builder.set_invited_by(crate::protocol_serde::shape_identity::de_identity(tokens, _value, depth + 1)?);
                         }
                         "Type" => {
                             builder = builder.set_type(
@@ -26,7 +32,7 @@ where
                             );
                         }
                         "Members" => {
-                            builder = builder.set_members(crate::protocol_serde::shape_members::de_members(tokens, _value)?);
+                            builder = builder.set_members(crate::protocol_serde::shape_members::de_members(tokens, _value, depth + 1)?);
                         }
                         "ChannelArn" => {
                             builder = builder.set_channel_arn(

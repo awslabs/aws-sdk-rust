@@ -25,5 +25,7 @@ pub fn de_object_lock_configuration(
             "invalid root, expected ObjectLockConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_object_lock_configuration::de_object_lock_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_object_lock_configuration::de_object_lock_configuration(&mut decoder, depth + 1)
 }

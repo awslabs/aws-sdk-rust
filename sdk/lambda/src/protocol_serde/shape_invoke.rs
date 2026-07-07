@@ -17,6 +17,60 @@ pub fn de_invoke_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CodeArtifactUserDeletedException" => crate::operation::invoke::InvokeError::CodeArtifactUserDeletedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CodeArtifactUserDeletedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_code_artifact_user_deleted_exception::de_code_artifact_user_deleted_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CodeArtifactUserFailedException" => crate::operation::invoke::InvokeError::CodeArtifactUserFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CodeArtifactUserFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_code_artifact_user_failed_exception::de_code_artifact_user_failed_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CodeArtifactUserPendingException" => crate::operation::invoke::InvokeError::CodeArtifactUserPendingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CodeArtifactUserPendingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_code_artifact_user_pending_exception::de_code_artifact_user_pending_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DurableExecutionAlreadyStartedException" => crate::operation::invoke::InvokeError::DurableExecutionAlreadyStartedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -145,6 +199,21 @@ pub fn de_invoke_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::EniLimitReachedExceptionBuilder::default();
                 output = crate::protocol_serde::shape_eni_limit_reached_exception::de_eni_limit_reached_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ENINotReadyException" => crate::operation::invoke::InvokeError::EniNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EniNotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_eni_not_ready_exception::de_eni_not_ready_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke::InvokeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -304,6 +373,21 @@ pub fn de_invoke_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ModeNotSupportedException" => crate::operation::invoke::InvokeError::ModeNotSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ModeNotSupportedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_mode_not_supported_exception::de_mode_not_supported_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke::InvokeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -488,6 +572,24 @@ pub fn de_invoke_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::invoke::InvokeError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "SnapStartException" => crate::operation::invoke::InvokeError::SnapStartException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -519,6 +621,22 @@ pub fn de_invoke_http_error(
             }
             tmp
         }),
+        "SnapStartRegenerationFailureException" => {
+            crate::operation::invoke::InvokeError::SnapStartRegenerationFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SnapStartRegenerationFailureExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_snap_start_regeneration_failure_exception::de_snap_start_regeneration_failure_exception_json_err(_response_body, output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "SnapStartTimeoutException" => crate::operation::invoke::InvokeError::SnapStartTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {

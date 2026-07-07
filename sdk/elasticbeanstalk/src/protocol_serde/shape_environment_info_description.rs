@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_environment_info_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EnvironmentInfoDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EnvironmentInfoDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {

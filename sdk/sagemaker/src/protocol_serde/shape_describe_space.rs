@@ -71,6 +71,8 @@ pub(crate) fn de_describe_space(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -131,14 +133,20 @@ pub(crate) fn de_describe_space(
                     );
                 }
                 "SpaceSettings" => {
-                    builder = builder.set_space_settings(crate::protocol_serde::shape_space_settings::de_space_settings(tokens, _value)?);
+                    builder = builder.set_space_settings(crate::protocol_serde::shape_space_settings::de_space_settings(tokens, _value, depth + 1)?);
                 }
                 "OwnershipSettings" => {
-                    builder = builder.set_ownership_settings(crate::protocol_serde::shape_ownership_settings::de_ownership_settings(tokens, _value)?);
+                    builder = builder.set_ownership_settings(crate::protocol_serde::shape_ownership_settings::de_ownership_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "SpaceSharingSettings" => {
                     builder = builder.set_space_sharing_settings(crate::protocol_serde::shape_space_sharing_settings::de_space_sharing_settings(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "SpaceDisplayName" => {

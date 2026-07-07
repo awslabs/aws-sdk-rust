@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_capacity_reservation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CapacityReservation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CapacityReservation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -260,7 +264,7 @@ pub fn de_capacity_reservation(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#CapacityReservation$Tags */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -309,7 +313,7 @@ pub fn de_capacity_reservation(
             s if s.matches("capacityAllocationSet") /* CapacityAllocations com.amazonaws.ec2#CapacityReservation$CapacityAllocations */ =>  {
                 let var_23 =
                     Some(
-                        crate::protocol_serde::shape_capacity_allocations::de_capacity_allocations(&mut tag)
+                        crate::protocol_serde::shape_capacity_allocations::de_capacity_allocations(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -346,7 +350,7 @@ pub fn de_capacity_reservation(
             s if s.matches("commitmentInfo") /* CommitmentInfo com.amazonaws.ec2#CapacityReservation$CommitmentInfo */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_commitment_info::de_capacity_reservation_commitment_info(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_commitment_info::de_capacity_reservation_commitment_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -398,7 +402,7 @@ pub fn de_capacity_reservation(
             s if s.matches("interruptibleCapacityAllocation") /* InterruptibleCapacityAllocation com.amazonaws.ec2#CapacityReservation$InterruptibleCapacityAllocation */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_interruptible_capacity_allocation::de_interruptible_capacity_allocation(&mut tag)
+                        crate::protocol_serde::shape_interruptible_capacity_allocation::de_interruptible_capacity_allocation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -408,7 +412,7 @@ pub fn de_capacity_reservation(
             s if s.matches("interruptionInfo") /* InterruptionInfo com.amazonaws.ec2#CapacityReservation$InterruptionInfo */ =>  {
                 let var_31 =
                     Some(
-                        crate::protocol_serde::shape_interruption_info::de_interruption_info(&mut tag)
+                        crate::protocol_serde::shape_interruption_info::de_interruption_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

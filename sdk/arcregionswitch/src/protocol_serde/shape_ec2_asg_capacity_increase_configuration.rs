@@ -32,19 +32,27 @@ pub fn ser_ec2_asg_capacity_increase_configuration(
 
 pub(crate) fn de_ec2_asg_capacity_increase_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Ec2AsgCapacityIncreaseConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::Ec2AsgCapacityIncreaseConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::Ec2AsgCapacityIncreaseConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "timeoutMinutes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_timeout_minutes(Some(decoder.integer()?)))
             })?,
-            "asgs" => builder.set_asgs(Some(crate::protocol_serde::shape_asg_list::de_asg_list(decoder)?)),
+            "asgs" => builder.set_asgs(Some(crate::protocol_serde::shape_asg_list::de_asg_list(decoder, depth + 1)?)),
             "ungraceful" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_ungraceful(Some(crate::protocol_serde::shape_ec2_ungraceful::de_ec2_ungraceful(decoder)?)))
+                Ok(builder.set_ungraceful(Some(crate::protocol_serde::shape_ec2_ungraceful::de_ec2_ungraceful(decoder, depth + 1)?)))
             })?,
             "targetPercent" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_target_percent(Some(decoder.integer()?)))
@@ -74,13 +82,13 @@ pub(crate) fn de_ec2_asg_capacity_increase_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

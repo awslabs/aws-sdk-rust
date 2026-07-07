@@ -44,7 +44,11 @@ pub fn ser_streaming_distribution_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_streaming_distribution_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StreamingDistributionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StreamingDistributionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -65,7 +69,7 @@ pub fn de_streaming_distribution_config(
             s if s.matches("S3Origin") /* S3Origin com.amazonaws.cloudfront#StreamingDistributionConfig$S3Origin */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_s3_origin::de_s3_origin(&mut tag)
+                        crate::protocol_serde::shape_s3_origin::de_s3_origin(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -75,7 +79,7 @@ pub fn de_streaming_distribution_config(
             s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#StreamingDistributionConfig$Aliases */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_aliases::de_aliases(&mut tag)
+                        crate::protocol_serde::shape_aliases::de_aliases(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_streaming_distribution_config(
             s if s.matches("Logging") /* Logging com.amazonaws.cloudfront#StreamingDistributionConfig$Logging */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_streaming_logging_config::de_streaming_logging_config(&mut tag)
+                        crate::protocol_serde::shape_streaming_logging_config::de_streaming_logging_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +112,7 @@ pub fn de_streaming_distribution_config(
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#StreamingDistributionConfig$TrustedSigners */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag)
+                        crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag, depth + 1)
                         ?
                     )
                 ;

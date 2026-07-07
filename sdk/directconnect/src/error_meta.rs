@@ -9,6 +9,8 @@ pub enum Error {
     DirectConnectServerException(crate::types::error::DirectConnectServerException),
     /// <p>A tag key was specified more than once.</p>
     DuplicateTagKeysException(crate::types::error::DuplicateTagKeysException),
+    /// <p>The rate limiter limit has been exceeded for the connection. You cannot add more rate limiters to virtual interfaces on this connection.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -26,6 +28,7 @@ impl ::std::fmt::Display for Error {
             Error::DirectConnectClientException(inner) => inner.fmt(f),
             Error::DirectConnectServerException(inner) => inner.fmt(f),
             Error::DuplicateTagKeysException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -51,6 +54,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DirectConnectClientException(inner) => inner.meta(),
             Self::DirectConnectServerException(inner) => inner.meta(),
             Self::DuplicateTagKeysException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -201,6 +205,9 @@ impl From<crate::operation::allocate_private_virtual_interface::AllocatePrivateV
             crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError::DuplicateTagKeysException(inner) => {
                 Error::DuplicateTagKeysException(inner)
             }
+            crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
@@ -244,6 +251,9 @@ impl From<crate::operation::allocate_public_virtual_interface::AllocatePublicVir
             }
             crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError::DuplicateTagKeysException(inner) => {
                 Error::DuplicateTagKeysException(inner)
+            }
+            crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
@@ -289,6 +299,9 @@ impl From<crate::operation::allocate_transit_virtual_interface::AllocateTransitV
             crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceError::DuplicateTagKeysException(inner) => {
                 Error::DuplicateTagKeysException(inner)
             }
+            crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
@@ -321,6 +334,9 @@ impl From<crate::operation::associate_connection_with_lag::AssociateConnectionWi
             }
             crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError::DirectConnectServerException(inner) => {
                 Error::DirectConnectServerException(inner)
+            }
+            crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -827,6 +843,9 @@ impl From<crate::operation::create_private_virtual_interface::CreatePrivateVirtu
             crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError::DuplicateTagKeysException(inner) => {
                 Error::DuplicateTagKeysException(inner)
             }
+            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
@@ -866,6 +885,9 @@ impl From<crate::operation::create_public_virtual_interface::CreatePublicVirtual
             }
             crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceError::DuplicateTagKeysException(inner) => {
                 Error::DuplicateTagKeysException(inner)
+            }
+            crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
@@ -907,6 +929,9 @@ impl From<crate::operation::create_transit_virtual_interface::CreateTransitVirtu
             }
             crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError::DuplicateTagKeysException(inner) => {
                 Error::DuplicateTagKeysException(inner)
+            }
+            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
@@ -2058,6 +2083,7 @@ impl ::std::error::Error for Error {
             Error::DirectConnectClientException(inner) => inner.source(),
             Error::DirectConnectServerException(inner) => inner.source(),
             Error::DuplicateTagKeysException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2069,6 +2095,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DirectConnectClientException(e) => e.request_id(),
             Self::DirectConnectServerException(e) => e.request_id(),
             Self::DuplicateTagKeysException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

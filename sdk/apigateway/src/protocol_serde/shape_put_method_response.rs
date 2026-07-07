@@ -162,30 +162,36 @@ pub(crate) fn de_put_method_response(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "responseModels" => {
-                    builder = builder.set_response_models(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                        tokens, _value,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "responseModels" => {
+                        builder = builder.set_response_models(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "responseParameters" => {
+                        builder = builder.set_response_parameters(
+                            crate::protocol_serde::shape_map_of_string_to_boolean::de_map_of_string_to_boolean(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "statusCode" => {
+                        builder = builder.set_status_code(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "responseParameters" => {
-                    builder = builder.set_response_parameters(crate::protocol_serde::shape_map_of_string_to_boolean::de_map_of_string_to_boolean(
-                        tokens, _value,
-                    )?);
-                }
-                "statusCode" => {
-                    builder = builder.set_status_code(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

@@ -49,6 +49,8 @@ pub fn de_create_egress_only_internet_gateway(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateEgressOnlyInternetGatewayResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateEgressOnlyInternetGatewayResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_create_egress_only_internet_gateway(
             s if s.matches("egressOnlyInternetGateway") /* EgressOnlyInternetGateway com.amazonaws.ec2.synthetic#CreateEgressOnlyInternetGatewayOutput$EgressOnlyInternetGateway */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_egress_only_internet_gateway::de_egress_only_internet_gateway(&mut tag)
+                        crate::protocol_serde::shape_egress_only_internet_gateway::de_egress_only_internet_gateway(&mut tag, depth + 1)
                         ?
                     )
                 ;

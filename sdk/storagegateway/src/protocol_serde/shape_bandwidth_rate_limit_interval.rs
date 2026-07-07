@@ -57,10 +57,16 @@ pub fn ser_bandwidth_rate_limit_interval(
 pub(crate) fn de_bandwidth_rate_limit_interval<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BandwidthRateLimitInterval>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -99,7 +105,8 @@ where
                             );
                         }
                         "DaysOfWeek" => {
-                            builder = builder.set_days_of_week(crate::protocol_serde::shape_days_of_week::de_days_of_week(tokens, _value)?);
+                            builder =
+                                builder.set_days_of_week(crate::protocol_serde::shape_days_of_week::de_days_of_week(tokens, _value, depth + 1)?);
                         }
                         "AverageUploadRateLimitInBitsPerSec" => {
                             builder = builder.set_average_upload_rate_limit_in_bits_per_sec(

@@ -15,7 +15,7 @@ pub struct ListDurableExecutionsByFunctionInput {
     pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter executions that started before this timestamp (ISO 8601 format).</p>
     pub started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Set to true to return results in reverse chronological order (newest first). Default is false.</p>
+    /// <p>Set to true to return results in chronological order (oldest first). Default is false.</p>
     pub reverse_order: ::std::option::Option<bool>,
     /// <p>Pagination token from a previous request to continue retrieving results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
@@ -49,7 +49,7 @@ impl ListDurableExecutionsByFunctionInput {
     pub fn started_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_before.as_ref()
     }
-    /// <p>Set to true to return results in reverse chronological order (newest first). Default is false.</p>
+    /// <p>Set to true to return results in chronological order (oldest first). Default is false.</p>
     pub fn reverse_order(&self) -> ::std::option::Option<bool> {
         self.reverse_order
     }
@@ -175,17 +175,17 @@ impl ListDurableExecutionsByFunctionInputBuilder {
     pub fn get_started_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_before
     }
-    /// <p>Set to true to return results in reverse chronological order (newest first). Default is false.</p>
+    /// <p>Set to true to return results in chronological order (oldest first). Default is false.</p>
     pub fn reverse_order(mut self, input: bool) -> Self {
         self.reverse_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to true to return results in reverse chronological order (newest first). Default is false.</p>
+    /// <p>Set to true to return results in chronological order (oldest first). Default is false.</p>
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reverse_order = input;
         self
     }
-    /// <p>Set to true to return results in reverse chronological order (newest first). Default is false.</p>
+    /// <p>Set to true to return results in chronological order (oldest first). Default is false.</p>
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
         &self.reverse_order
     }

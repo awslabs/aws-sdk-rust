@@ -27,10 +27,16 @@ pub fn ser_virtual_gateway_listener_tls(
 pub(crate) fn de_virtual_gateway_listener_tls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayListenerTls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,12 +56,12 @@ where
                             }
                             "validation" => {
                                 builder = builder.set_validation(
-                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_validation_context::de_virtual_gateway_listener_tls_validation_context(tokens, _value)?
+                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_validation_context::de_virtual_gateway_listener_tls_validation_context(tokens, _value, depth + 1)?
                                 );
                             }
                             "certificate" => {
                                 builder = builder.set_certificate(
-                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_certificate::de_virtual_gateway_listener_tls_certificate(tokens, _value)?
+                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_certificate::de_virtual_gateway_listener_tls_certificate(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

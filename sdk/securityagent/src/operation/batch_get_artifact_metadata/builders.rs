@@ -22,7 +22,7 @@ impl crate::operation::batch_get_artifact_metadata::builders::BatchGetArtifactMe
 }
 /// Fluent builder constructing a request to `BatchGetArtifactMetadata`.
 ///
-/// Retrieve the list of artifact metadata for the given agent space
+/// <p>Retrieves metadata for one or more artifacts in an agent space.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetArtifactMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl BatchGetArtifactMetadataFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifacts.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifacts.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifacts.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
@@ -127,17 +127,17 @@ impl BatchGetArtifactMetadataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_artifact_ids`](Self::set_artifact_ids).
     ///
-    /// List of artifact identifiers
+    /// <p>The list of artifact identifiers to retrieve metadata for.</p>
     pub fn artifact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.artifact_ids(input.into());
         self
     }
-    /// List of artifact identifiers
+    /// <p>The list of artifact identifiers to retrieve metadata for.</p>
     pub fn set_artifact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_artifact_ids(input);
         self
     }
-    /// List of artifact identifiers
+    /// <p>The list of artifact identifiers to retrieve metadata for.</p>
     pub fn get_artifact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_artifact_ids()
     }

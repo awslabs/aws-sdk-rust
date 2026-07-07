@@ -12,6 +12,12 @@ pub struct ResourceDetails {
     pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     /// <p>Contains details about a code repository resource associated with a finding.</p>
     pub code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
+    /// <p>An object that contains details about a VM instance involved in the finding.</p>
+    pub vm: ::std::option::Option<crate::types::Vm>,
+    /// <p>An object that contains details about a container image involved in the finding.</p>
+    pub image: ::std::option::Option<crate::types::Image>,
+    /// <p>An object that contains details about a serverless function involved in the finding.</p>
+    pub serverless_function: ::std::option::Option<crate::types::ServerlessFunction>,
 }
 impl ResourceDetails {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
@@ -30,6 +36,18 @@ impl ResourceDetails {
     pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepositoryDetails> {
         self.code_repository.as_ref()
     }
+    /// <p>An object that contains details about a VM instance involved in the finding.</p>
+    pub fn vm(&self) -> ::std::option::Option<&crate::types::Vm> {
+        self.vm.as_ref()
+    }
+    /// <p>An object that contains details about a container image involved in the finding.</p>
+    pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
+        self.image.as_ref()
+    }
+    /// <p>An object that contains details about a serverless function involved in the finding.</p>
+    pub fn serverless_function(&self) -> ::std::option::Option<&crate::types::ServerlessFunction> {
+        self.serverless_function.as_ref()
+    }
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::types::ResourceDetails).
@@ -46,6 +64,9 @@ pub struct ResourceDetailsBuilder {
     pub(crate) aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     pub(crate) aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
+    pub(crate) vm: ::std::option::Option<crate::types::Vm>,
+    pub(crate) image: ::std::option::Option<crate::types::Image>,
+    pub(crate) serverless_function: ::std::option::Option<crate::types::ServerlessFunction>,
 }
 impl ResourceDetailsBuilder {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
@@ -104,6 +125,48 @@ impl ResourceDetailsBuilder {
     pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepositoryDetails> {
         &self.code_repository
     }
+    /// <p>An object that contains details about a VM instance involved in the finding.</p>
+    pub fn vm(mut self, input: crate::types::Vm) -> Self {
+        self.vm = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details about a VM instance involved in the finding.</p>
+    pub fn set_vm(mut self, input: ::std::option::Option<crate::types::Vm>) -> Self {
+        self.vm = input;
+        self
+    }
+    /// <p>An object that contains details about a VM instance involved in the finding.</p>
+    pub fn get_vm(&self) -> &::std::option::Option<crate::types::Vm> {
+        &self.vm
+    }
+    /// <p>An object that contains details about a container image involved in the finding.</p>
+    pub fn image(mut self, input: crate::types::Image) -> Self {
+        self.image = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details about a container image involved in the finding.</p>
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
+        self.image = input;
+        self
+    }
+    /// <p>An object that contains details about a container image involved in the finding.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.image
+    }
+    /// <p>An object that contains details about a serverless function involved in the finding.</p>
+    pub fn serverless_function(mut self, input: crate::types::ServerlessFunction) -> Self {
+        self.serverless_function = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details about a serverless function involved in the finding.</p>
+    pub fn set_serverless_function(mut self, input: ::std::option::Option<crate::types::ServerlessFunction>) -> Self {
+        self.serverless_function = input;
+        self
+    }
+    /// <p>An object that contains details about a serverless function involved in the finding.</p>
+    pub fn get_serverless_function(&self) -> &::std::option::Option<crate::types::ServerlessFunction> {
+        &self.serverless_function
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
@@ -111,6 +174,9 @@ impl ResourceDetailsBuilder {
             aws_ecr_container_image: self.aws_ecr_container_image,
             aws_lambda_function: self.aws_lambda_function,
             code_repository: self.code_repository,
+            vm: self.vm,
+            image: self.image,
+            serverless_function: self.serverless_function,
         }
     }
 }

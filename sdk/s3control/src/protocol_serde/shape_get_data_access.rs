@@ -58,6 +58,8 @@ pub fn de_get_data_access(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetDataAccessResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetDataAccessResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -81,7 +83,7 @@ pub fn de_get_data_access(
             s if s.matches("Grantee") /* Grantee com.amazonaws.s3control.synthetic#GetDataAccessOutput$Grantee */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag)
+                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -91,7 +93,7 @@ pub fn de_get_data_access(
             s if s.matches("Credentials") /* Credentials com.amazonaws.s3control.synthetic#GetDataAccessOutput$Credentials */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_credentials::de_credentials(&mut tag)
+                        crate::protocol_serde::shape_credentials::de_credentials(&mut tag, depth + 1)
                         ?
                     )
                 ;

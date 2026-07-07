@@ -207,6 +207,21 @@ pub(crate) fn topic_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn annotation_entry_correct_errors(
+    mut builder: crate::types::builders::AnnotationEntryBuilder,
+) -> crate::types::builders::AnnotationEntryBuilder {
+    if builder.annotation_name.is_none() {
+        builder.annotation_name = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.size.is_none() {
+        builder.size = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_bucket_metadata_configuration_result_correct_errors(
     mut builder: crate::types::builders::GetBucketMetadataConfigurationResultBuilder,
 ) -> crate::types::builders::GetBucketMetadataConfigurationResultBuilder {
@@ -414,6 +429,15 @@ pub(crate) fn analytics_export_destination_correct_errors(
             let builder = crate::types::builders::AnalyticsS3BucketDestinationBuilder::default();
             crate::serde_util::analytics_s3_bucket_destination_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn annotation_table_configuration_result_correct_errors(
+    mut builder: crate::types::builders::AnnotationTableConfigurationResultBuilder,
+) -> crate::types::builders::AnnotationTableConfigurationResultBuilder {
+    if builder.configuration_state.is_none() {
+        builder.configuration_state = "no value was set".parse::<crate::types::AnnotationConfigurationState>().ok()
     }
     builder
 }

@@ -66,10 +66,16 @@ pub fn ser_firewall_policy_details(
 pub(crate) fn de_firewall_policy_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FirewallPolicyDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -81,27 +87,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StatefulRuleGroupReferences" => {
                             builder = builder.set_stateful_rule_group_references(
-                                    crate::protocol_serde::shape_firewall_policy_stateful_rule_group_references_list::de_firewall_policy_stateful_rule_group_references_list(tokens, _value)?
+                                    crate::protocol_serde::shape_firewall_policy_stateful_rule_group_references_list::de_firewall_policy_stateful_rule_group_references_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "StatelessCustomActions" => {
                             builder = builder.set_stateless_custom_actions(
-                                    crate::protocol_serde::shape_firewall_policy_stateless_custom_actions_list::de_firewall_policy_stateless_custom_actions_list(tokens, _value)?
+                                    crate::protocol_serde::shape_firewall_policy_stateless_custom_actions_list::de_firewall_policy_stateless_custom_actions_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "StatelessDefaultActions" => {
                             builder = builder.set_stateless_default_actions(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "StatelessFragmentDefaultActions" => {
                             builder = builder.set_stateless_fragment_default_actions(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "StatelessRuleGroupReferences" => {
                             builder = builder.set_stateless_rule_group_references(
-                                    crate::protocol_serde::shape_firewall_policy_stateless_rule_group_references_list::de_firewall_policy_stateless_rule_group_references_list(tokens, _value)?
+                                    crate::protocol_serde::shape_firewall_policy_stateless_rule_group_references_list::de_firewall_policy_stateless_rule_group_references_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

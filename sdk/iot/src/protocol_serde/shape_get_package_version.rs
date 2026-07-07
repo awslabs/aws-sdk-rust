@@ -108,6 +108,8 @@ pub(crate) fn de_get_package_version(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -115,11 +117,17 @@ pub(crate) fn de_get_package_version(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "artifact" => {
                     builder = builder.set_artifact(crate::protocol_serde::shape_package_version_artifact::de_package_version_artifact(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "attributes" => {
-                    builder = builder.set_attributes(crate::protocol_serde::shape_resource_attributes::de_resource_attributes(tokens, _value)?);
+                    builder = builder.set_attributes(crate::protocol_serde::shape_resource_attributes::de_resource_attributes(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "creationDate" => {
                     builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -169,7 +177,7 @@ pub(crate) fn de_get_package_version(
                     );
                 }
                 "sbom" => {
-                    builder = builder.set_sbom(crate::protocol_serde::shape_sbom::de_sbom(tokens, _value)?);
+                    builder = builder.set_sbom(crate::protocol_serde::shape_sbom::de_sbom(tokens, _value, depth + 1)?);
                 }
                 "sbomValidationStatus" => {
                     builder = builder.set_sbom_validation_status(

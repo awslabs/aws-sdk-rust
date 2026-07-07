@@ -289,6 +289,8 @@ mod list_message_templates;
 
 mod list_messages;
 
+mod list_models;
+
 mod list_quick_responses;
 
 mod list_spans;

@@ -25,9 +25,9 @@ pub use crate::types::_instance_type_esx_versions_info::InstanceTypeEsxVersionsI
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
-pub use crate::types::_license_info::LicenseInfoBuilder;
-
 pub use crate::types::_initial_vlan_info::InitialVlanInfoBuilder;
+
+pub use crate::types::_license_info::LicenseInfoBuilder;
 
 pub use crate::types::_vm_entitlement::VmEntitlementBuilder;
 

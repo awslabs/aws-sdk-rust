@@ -21,10 +21,16 @@ pub fn ser_axis_scale(
 pub(crate) fn de_axis_scale<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AxisScale>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,11 +41,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Linear" => {
-                            builder = builder.set_linear(crate::protocol_serde::shape_axis_linear_scale::de_axis_linear_scale(tokens, _value)?);
+                            builder = builder.set_linear(crate::protocol_serde::shape_axis_linear_scale::de_axis_linear_scale(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Logarithmic" => {
                             builder = builder.set_logarithmic(crate::protocol_serde::shape_axis_logarithmic_scale::de_axis_logarithmic_scale(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

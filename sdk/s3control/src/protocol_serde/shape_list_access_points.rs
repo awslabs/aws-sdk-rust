@@ -58,6 +58,8 @@ pub fn de_list_access_points(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListAccessPointsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListAccessPointsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -81,7 +83,7 @@ pub fn de_list_access_points(
             s if s.matches("AccessPointList") /* AccessPointList com.amazonaws.s3control.synthetic#ListAccessPointsOutput$AccessPointList */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_access_point_list::de_access_point_list(&mut tag)
+                        crate::protocol_serde::shape_access_point_list::de_access_point_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

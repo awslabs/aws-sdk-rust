@@ -142,5 +142,17 @@ pub fn ser_create_user_pool_input_input(
     if let Some(var_47) = &input.user_pool_tier {
         object.key("UserPoolTier").string(var_47.as_str());
     }
+    if let Some(var_48) = &input.key_configuration {
+        #[allow(unused_mut)]
+        let mut object_49 = object.key("KeyConfiguration").start_object();
+        crate::protocol_serde::shape_key_configuration_type::ser_key_configuration_type(&mut object_49, var_48)?;
+        object_49.finish();
+    }
+    if let Some(var_50) = &input.issuer_configuration {
+        #[allow(unused_mut)]
+        let mut object_51 = object.key("IssuerConfiguration").start_object();
+        crate::protocol_serde::shape_issuer_configuration_type::ser_issuer_configuration_type(&mut object_51, var_50)?;
+        object_51.finish();
+    }
     Ok(())
 }

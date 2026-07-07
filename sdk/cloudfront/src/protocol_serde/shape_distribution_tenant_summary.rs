@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_distribution_tenant_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DistributionTenantSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DistributionTenantSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_distribution_tenant_summary(
             s if s.matches("Domains") /* Domains com.amazonaws.cloudfront#DistributionTenantSummary$Domains */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_domain_result_list::de_domain_result_list(&mut tag)
+                        crate::protocol_serde::shape_domain_result_list::de_domain_result_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_distribution_tenant_summary(
             s if s.matches("Customizations") /* Customizations com.amazonaws.cloudfront#DistributionTenantSummary$Customizations */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_customizations::de_customizations(&mut tag)
+                        crate::protocol_serde::shape_customizations::de_customizations(&mut tag, depth + 1)
                         ?
                     )
                 ;

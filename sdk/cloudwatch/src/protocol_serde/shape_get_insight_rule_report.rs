@@ -112,10 +112,11 @@ pub(crate) fn de_get_insight_rule_report(
     crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -123,7 +124,7 @@ pub(crate) fn de_get_insight_rule_report(
         builder = match decoder.str()?.as_ref() {
             "KeyLabels" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_key_labels(Some(
-                    crate::protocol_serde::shape_insight_rule_contributor_key_labels::de_insight_rule_contributor_key_labels(decoder)?,
+                    crate::protocol_serde::shape_insight_rule_contributor_key_labels::de_insight_rule_contributor_key_labels(decoder, depth + 1)?,
                 )))
             })?,
             "AggregationStatistic" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -137,12 +138,12 @@ pub(crate) fn de_get_insight_rule_report(
             })?,
             "Contributors" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_contributors(Some(
-                    crate::protocol_serde::shape_insight_rule_contributors::de_insight_rule_contributors(decoder)?,
+                    crate::protocol_serde::shape_insight_rule_contributors::de_insight_rule_contributors(decoder, depth + 1)?,
                 )))
             })?,
             "MetricDatapoints" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_metric_datapoints(Some(
-                    crate::protocol_serde::shape_insight_rule_metric_datapoints::de_insight_rule_metric_datapoints(decoder)?,
+                    crate::protocol_serde::shape_insight_rule_metric_datapoints::de_insight_rule_metric_datapoints(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -154,6 +155,8 @@ pub(crate) fn de_get_insight_rule_report(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -163,13 +166,13 @@ pub(crate) fn de_get_insight_rule_report(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

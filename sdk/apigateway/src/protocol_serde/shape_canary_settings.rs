@@ -2,10 +2,16 @@
 pub(crate) fn de_canary_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CanarySettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -29,7 +35,7 @@ where
                         }
                         "stageVariableOverrides" => {
                             builder = builder.set_stage_variable_overrides(
-                                crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens, _value)?,
+                                crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens, _value, depth + 1)?,
                             );
                         }
                         "useStageCache" => {

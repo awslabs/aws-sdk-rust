@@ -2,10 +2,16 @@
 pub(crate) fn de_network_acl_entry_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NetworkAclEntrySet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,16 +22,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FirstEntries" => {
-                            builder =
-                                builder.set_first_entries(crate::protocol_serde::shape_network_acl_entries::de_network_acl_entries(tokens, _value)?);
+                            builder = builder.set_first_entries(crate::protocol_serde::shape_network_acl_entries::de_network_acl_entries(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ForceRemediateForFirstEntries" => {
                             builder = builder
                                 .set_force_remediate_for_first_entries(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "LastEntries" => {
-                            builder =
-                                builder.set_last_entries(crate::protocol_serde::shape_network_acl_entries::de_network_acl_entries(tokens, _value)?);
+                            builder = builder.set_last_entries(crate::protocol_serde::shape_network_acl_entries::de_network_acl_entries(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ForceRemediateForLastEntries" => {
                             builder = builder

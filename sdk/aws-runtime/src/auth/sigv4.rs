@@ -263,7 +263,8 @@ impl Sign for SigV4Signer {
         #[cfg(feature = "event-stream")]
         {
             use crate::auth::sigv4::SigV4MessageSigner;
-            use aws_smithy_eventstream::frame::DeferredSignerSender;
+            use aws_smithy_eventstream::frame::SignMessage;
+            use aws_smithy_types::event_stream::DeferredSignerSender;
 
             if let Some(signer_sender) = config_bag.load::<DeferredSignerSender>() {
                 let time_source = runtime_components.time_source().unwrap_or_default();
@@ -282,7 +283,7 @@ impl Sign for SigV4Signer {
                         name,
                         time_source,
                         (),
-                    )) as _)
+                    )) as Box<dyn SignMessage + Send + Sync>)
                     .expect("failed to send deferred signer");
             }
         }

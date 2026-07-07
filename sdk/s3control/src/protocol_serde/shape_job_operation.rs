@@ -54,7 +54,11 @@ pub fn ser_job_operation(
 #[allow(clippy::needless_question_mark)]
 pub fn de_job_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::JobOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::JobOperation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_job_operation(
             s if s.matches("LambdaInvoke") /* LambdaInvoke com.amazonaws.s3control#JobOperation$LambdaInvoke */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_lambda_invoke_operation::de_lambda_invoke_operation(&mut tag)
+                        crate::protocol_serde::shape_lambda_invoke_operation::de_lambda_invoke_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_job_operation(
             s if s.matches("S3PutObjectCopy") /* S3PutObjectCopy com.amazonaws.s3control#JobOperation$S3PutObjectCopy */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_s3_copy_object_operation::de_s3_copy_object_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_copy_object_operation::de_s3_copy_object_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_job_operation(
             s if s.matches("S3PutObjectAcl") /* S3PutObjectAcl com.amazonaws.s3control#JobOperation$S3PutObjectAcl */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_s3_set_object_acl_operation::de_s3_set_object_acl_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_set_object_acl_operation::de_s3_set_object_acl_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -92,7 +96,7 @@ pub fn de_job_operation(
             s if s.matches("S3PutObjectTagging") /* S3PutObjectTagging com.amazonaws.s3control#JobOperation$S3PutObjectTagging */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_s3_set_object_tagging_operation::de_s3_set_object_tagging_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_set_object_tagging_operation::de_s3_set_object_tagging_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -102,7 +106,7 @@ pub fn de_job_operation(
             s if s.matches("S3DeleteObjectTagging") /* S3DeleteObjectTagging com.amazonaws.s3control#JobOperation$S3DeleteObjectTagging */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_s3_delete_object_tagging_operation::de_s3_delete_object_tagging_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_delete_object_tagging_operation::de_s3_delete_object_tagging_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -112,7 +116,7 @@ pub fn de_job_operation(
             s if s.matches("S3InitiateRestoreObject") /* S3InitiateRestoreObject com.amazonaws.s3control#JobOperation$S3InitiateRestoreObject */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_s3_initiate_restore_object_operation::de_s3_initiate_restore_object_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_initiate_restore_object_operation::de_s3_initiate_restore_object_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -122,7 +126,7 @@ pub fn de_job_operation(
             s if s.matches("S3PutObjectLegalHold") /* S3PutObjectLegalHold com.amazonaws.s3control#JobOperation$S3PutObjectLegalHold */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_s3_set_object_legal_hold_operation::de_s3_set_object_legal_hold_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_set_object_legal_hold_operation::de_s3_set_object_legal_hold_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -132,7 +136,7 @@ pub fn de_job_operation(
             s if s.matches("S3PutObjectRetention") /* S3PutObjectRetention com.amazonaws.s3control#JobOperation$S3PutObjectRetention */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_s3_set_object_retention_operation::de_s3_set_object_retention_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_set_object_retention_operation::de_s3_set_object_retention_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -142,7 +146,7 @@ pub fn de_job_operation(
             s if s.matches("S3ReplicateObject") /* S3ReplicateObject com.amazonaws.s3control#JobOperation$S3ReplicateObject */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_s3_replicate_object_operation::de_s3_replicate_object_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_replicate_object_operation::de_s3_replicate_object_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -152,7 +156,7 @@ pub fn de_job_operation(
             s if s.matches("S3ComputeObjectChecksum") /* S3ComputeObjectChecksum com.amazonaws.s3control#JobOperation$S3ComputeObjectChecksum */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_s3_compute_object_checksum_operation::de_s3_compute_object_checksum_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_compute_object_checksum_operation::de_s3_compute_object_checksum_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -162,7 +166,7 @@ pub fn de_job_operation(
             s if s.matches("S3UpdateObjectEncryption") /* S3UpdateObjectEncryption com.amazonaws.s3control#JobOperation$S3UpdateObjectEncryption */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_s3_update_object_encryption_operation::de_s3_update_object_encryption_operation(&mut tag)
+                        crate::protocol_serde::shape_s3_update_object_encryption_operation::de_s3_update_object_encryption_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;

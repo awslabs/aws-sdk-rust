@@ -27,7 +27,7 @@ pub struct DataSourceConfiguration {
     pub google_drive_configuration: ::std::option::Option<crate::types::GoogleDriveConfiguration>,
     /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
     pub web_crawler_configuration: ::std::option::Option<crate::types::WebCrawlerConfiguration>,
-    /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
+    /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
     pub work_docs_configuration: ::std::option::Option<crate::types::WorkDocsConfiguration>,
     /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p><note>
     /// <p>Amazon Kendra now supports an upgraded Amazon FSx Windows connector.</p>
@@ -106,7 +106,7 @@ impl DataSourceConfiguration {
     pub fn web_crawler_configuration(&self) -> ::std::option::Option<&crate::types::WebCrawlerConfiguration> {
         self.web_crawler_configuration.as_ref()
     }
-    /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
+    /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
     pub fn work_docs_configuration(&self) -> ::std::option::Option<&crate::types::WorkDocsConfiguration> {
         self.work_docs_configuration.as_ref()
     }
@@ -333,17 +333,17 @@ impl DataSourceConfigurationBuilder {
     pub fn get_web_crawler_configuration(&self) -> &::std::option::Option<crate::types::WebCrawlerConfiguration> {
         &self.web_crawler_configuration
     }
-    /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
+    /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
     pub fn work_docs_configuration(mut self, input: crate::types::WorkDocsConfiguration) -> Self {
         self.work_docs_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
+    /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
     pub fn set_work_docs_configuration(mut self, input: ::std::option::Option<crate::types::WorkDocsConfiguration>) -> Self {
         self.work_docs_configuration = input;
         self
     }
-    /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
+    /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
     pub fn get_work_docs_configuration(&self) -> &::std::option::Option<crate::types::WorkDocsConfiguration> {
         &self.work_docs_configuration
     }

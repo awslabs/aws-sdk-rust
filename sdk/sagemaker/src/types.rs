@@ -65,6 +65,8 @@ pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfig;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfig;
 
+pub use crate::types::_cluster_restricted_instance_groups_config::ClusterRestrictedInstanceGroupsConfig;
+
 pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
@@ -122,6 +124,8 @@ pub use crate::types::_domain_settings::DomainSettings;
 pub use crate::types::_app_network_access_type::AppNetworkAccessType;
 
 pub use crate::types::_app_security_group_management::AppSecurityGroupManagement;
+
+pub use crate::types::_home_efs_file_system_creation::HomeEfsFileSystemCreation;
 
 pub use crate::types::_tag_propagation::TagPropagation;
 
@@ -193,6 +197,8 @@ pub use crate::types::_recommendation_job_stopping_conditions::RecommendationJob
 
 pub use crate::types::_recommendation_job_output_config::RecommendationJobOutputConfig;
 
+pub use crate::types::_job_category::JobCategory;
+
 pub use crate::types::_labeling_job_input_config::LabelingJobInputConfig;
 
 pub use crate::types::_labeling_job_output_config::LabelingJobOutputConfig;
@@ -250,6 +256,10 @@ pub use crate::types::_model_package_security_config::ModelPackageSecurityConfig
 pub use crate::types::_model_package_model_card::ModelPackageModelCard;
 
 pub use crate::types::_model_life_cycle::ModelLifeCycle;
+
+pub use crate::types::_managed_storage_type::ManagedStorageType;
+
+pub use crate::types::_managed_configuration::ManagedConfiguration;
 
 pub use crate::types::_model_quality_baseline_config::ModelQualityBaselineConfig;
 
@@ -407,6 +417,8 @@ pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributes;
 
 pub use crate::types::_cluster_status::ClusterStatus;
 
+pub use crate::types::_cluster_restricted_instance_groups_config_output::ClusterRestrictedInstanceGroupsConfigOutput;
+
 pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutput;
 
 pub use crate::types::_cluster_event_detail::ClusterEventDetail;
@@ -489,6 +501,10 @@ pub use crate::types::_endpoint_metadata::EndpointMetadata;
 
 pub use crate::types::_recommendation_job_status::RecommendationJobStatus;
 
+pub use crate::types::_job_status::JobStatus;
+
+pub use crate::types::_job_secondary_status::JobSecondaryStatus;
+
 pub use crate::types::_labeling_job_status::LabelingJobStatus;
 
 pub use crate::types::_label_counters::LabelCounters;
@@ -506,6 +522,8 @@ pub use crate::types::_tracking_server_maintenance_status::TrackingServerMainten
 pub use crate::types::_is_tracking_server_active::IsTrackingServerActive;
 
 pub use crate::types::_deployment_recommendation::DeploymentRecommendation;
+
+pub use crate::types::_included_data::IncludedData;
 
 pub use crate::types::_model_card_processing_status::ModelCardProcessingStatus;
 
@@ -839,6 +857,8 @@ pub use crate::types::_batch_replace_cluster_node_logical_ids_error::BatchReplac
 
 pub use crate::types::_ai_benchmark_endpoint::AiBenchmarkEndpoint;
 
+pub use crate::types::_ai_mlflow_config::AiMlflowConfig;
+
 pub use crate::types::_ai_model_source_s3::AiModelSourceS3;
 
 pub use crate::types::_ai_recommendation_inference_framework::AiRecommendationInferenceFramework;
@@ -882,6 +902,8 @@ pub use crate::types::_emr_serverless_compute_config::EmrServerlessComputeConfig
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
 
 pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecification;
+
+pub use crate::types::_cluster_shared_environment_config::ClusterSharedEnvironmentConfig;
 
 pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfig;
 
@@ -1025,6 +1047,8 @@ pub use crate::types::_hyper_parameter_tuning_job_warm_start_type::HyperParamete
 
 pub use crate::types::_autotune_mode::AutotuneMode;
 
+pub use crate::types::_production_variant_instance_type::ProductionVariantInstanceType;
+
 pub use crate::types::_inference_component_container_specification::InferenceComponentContainerSpecification;
 
 pub use crate::types::_inference_component_startup_parameters::InferenceComponentStartupParameters;
@@ -1066,6 +1090,8 @@ pub use crate::types::_container_mode::ContainerMode;
 pub use crate::types::_model_data_source::ModelDataSource;
 
 pub use crate::types::_multi_model_config::MultiModelConfig;
+
+pub use crate::types::_container_metrics_config::ContainerMetricsConfig;
 
 pub use crate::types::_inference_execution_mode::InferenceExecutionMode;
 
@@ -1185,9 +1211,13 @@ pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetai
 
 pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetails;
 
+pub use crate::types::_cluster_shared_environment_config_details::ClusterSharedEnvironmentConfigDetails;
+
 pub use crate::types::_cluster_auto_scaling_status::ClusterAutoScalingStatus;
 
 pub use crate::types::_event_details::EventDetails;
+
+pub use crate::types::_cluster_event_level::ClusterEventLevel;
 
 pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetails;
 
@@ -1196,6 +1226,8 @@ pub use crate::types::_cluster_instance_type::ClusterInstanceType;
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
 
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacement;
+
+pub use crate::types::_cluster_image_version_status::ClusterImageVersionStatus;
 
 pub use crate::types::_ultra_server_info::UltraServerInfo;
 
@@ -1236,6 +1268,8 @@ pub use crate::types::_model_variant_config_summary::ModelVariantConfigSummary;
 pub use crate::types::_inference_recommendation::InferenceRecommendation;
 
 pub use crate::types::_endpoint_performance::EndpointPerformance;
+
+pub use crate::types::_job_secondary_status_transition::JobSecondaryStatusTransition;
 
 pub use crate::types::_recommendation_status::RecommendationStatus;
 
@@ -1348,6 +1382,10 @@ pub use crate::types::_inference_experiment_summary::InferenceExperimentSummary;
 pub use crate::types::_inference_recommendations_job::InferenceRecommendationsJob;
 
 pub use crate::types::_inference_recommendations_job_step::InferenceRecommendationsJobStep;
+
+pub use crate::types::_job_summary::JobSummary;
+
+pub use crate::types::_job_config_schema_version_summary::JobConfigSchemaVersionSummary;
 
 pub use crate::types::_labeling_job_summary::LabelingJobSummary;
 
@@ -1491,8 +1529,6 @@ pub use crate::types::_additional_s3_data_source_data_type::AdditionalS3DataSour
 
 pub use crate::types::_model_package_container_definition::ModelPackageContainerDefinition;
 
-pub use crate::types::_production_variant_instance_type::ProductionVariantInstanceType;
-
 pub use crate::types::_algorithm_validation_profile::AlgorithmValidationProfile;
 
 pub use crate::types::_kernel_spec::KernelSpec;
@@ -1515,6 +1551,8 @@ pub use crate::types::_cluster_instance_requirements::ClusterInstanceRequirement
 
 pub use crate::types::_scheduled_update_config::ScheduledUpdateConfig;
 
+pub use crate::types::_cluster_auto_patch_config::ClusterAutoPatchConfig;
+
 pub use crate::types::_cluster_kubernetes_config::ClusterKubernetesConfig;
 
 pub use crate::types::_cluster_slurm_config::ClusterSlurmConfig;
@@ -1524,6 +1562,10 @@ pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirement
 pub use crate::types::_cluster_network_interface::ClusterNetworkInterface;
 
 pub use crate::types::_environment_config::EnvironmentConfig;
+
+pub use crate::types::_cluster_f_sx_lustre_deletion_policy::ClusterFSxLustreDeletionPolicy;
+
+pub use crate::types::_f_sx_lustre_config::FSxLustreConfig;
 
 pub use crate::types::_cluster_slurm_config_strategy::ClusterSlurmConfigStrategy;
 
@@ -1576,6 +1618,8 @@ pub use crate::types::_emr_settings::EmrSettings;
 pub use crate::types::_default_ebs_storage_settings::DefaultEbsStorageSettings;
 
 pub use crate::types::_custom_file_system_config::CustomFileSystemConfig;
+
+pub use crate::types::_execution_role_session_name_mode::ExecutionRoleSessionNameMode;
 
 pub use crate::types::_device_selection_config::DeviceSelectionConfig;
 
@@ -1751,6 +1795,8 @@ pub use crate::types::_cluster_instance_requirement_details::ClusterInstanceRequ
 
 pub use crate::types::_instance_group_status::InstanceGroupStatus;
 
+pub use crate::types::_cluster_auto_patch_config_details::ClusterAutoPatchConfigDetails;
+
 pub use crate::types::_cluster_kubernetes_config_details::ClusterKubernetesConfigDetails;
 
 pub use crate::types::_software_update_status::SoftwareUpdateStatus;
@@ -1772,6 +1818,8 @@ pub use crate::types::_production_variant_capacity_reservation_summary::Producti
 pub use crate::types::_pending_production_variant_summary::PendingProductionVariantSummary;
 
 pub use crate::types::_deployed_image::DeployedImage;
+
+pub use crate::types::_inference_component_placement_status::InferenceComponentPlacementStatus;
 
 pub use crate::types::_inference_component_capacity_size::InferenceComponentCapacitySize;
 
@@ -1863,6 +1911,8 @@ pub use crate::types::_model_card::ModelCard;
 
 pub use crate::types::_model_dashboard_model::ModelDashboardModel;
 
+pub use crate::types::_job::Job;
+
 pub use crate::types::_capacity_size_config::CapacitySizeConfig;
 
 pub use crate::types::_alarm_details::AlarmDetails;
@@ -1901,13 +1951,15 @@ pub use crate::types::_holiday_config_attributes::HolidayConfigAttributes;
 
 pub use crate::types::_deep_health_check_type::DeepHealthCheckType;
 
+pub use crate::types::_cluster_patching_strategy::ClusterPatchingStrategy;
+
+pub use crate::types::_cluster_patch_schedule::ClusterPatchSchedule;
+
 pub use crate::types::_cluster_slurm_node_type::ClusterSlurmNodeType;
 
 pub use crate::types::_cluster_spot_options::ClusterSpotOptions;
 
 pub use crate::types::_cluster_on_demand_options::ClusterOnDemandOptions;
-
-pub use crate::types::_f_sx_lustre_config::FSxLustreConfig;
 
 pub use crate::types::_accelerator_partition_config::AcceleratorPartitionConfig;
 
@@ -1946,6 +1998,8 @@ pub use crate::types::_traffic_routing_config_type::TrafficRoutingConfigType;
 pub use crate::types::_capacity_size_type::CapacitySizeType;
 
 pub use crate::types::_alarm::Alarm;
+
+pub use crate::types::_instance_pool::InstancePool;
 
 pub use crate::types::_managed_instance_scaling_status::ManagedInstanceScalingStatus;
 
@@ -1992,6 +2046,8 @@ pub use crate::types::_s3_model_data_type::S3ModelDataType;
 pub use crate::types::_model_compression_type::ModelCompressionType;
 
 pub use crate::types::_inference_hub_access_config::InferenceHubAccessConfig;
+
+pub use crate::types::_metrics_endpoint::MetricsEndpoint;
 
 pub use crate::types::_monitoring_input::MonitoringInput;
 
@@ -2047,6 +2103,8 @@ pub use crate::types::_metric_datum::MetricDatum;
 
 pub use crate::types::_cluster_instance_type_detail::ClusterInstanceTypeDetail;
 
+pub use crate::types::_cluster_patch_schedule_details::ClusterPatchScheduleDetails;
+
 pub use crate::types::_active_cluster_operation_name::ActiveClusterOperationName;
 
 pub use crate::types::_cluster_metadata::ClusterMetadata;
@@ -2066,6 +2124,8 @@ pub use crate::types::_cluster_fsx_open_zfs_config::ClusterFsxOpenZfsConfig;
 pub use crate::types::_cluster_kubernetes_taint::ClusterKubernetesTaint;
 
 pub use crate::types::_stage_status::StageStatus;
+
+pub use crate::types::_instance_pool_summary::InstancePoolSummary;
 
 pub use crate::types::_production_variant_status::ProductionVariantStatus;
 
@@ -2126,6 +2186,8 @@ pub use crate::types::_bedrock_model_import_metadata::BedrockModelImportMetadata
 pub use crate::types::_inference_component_metadata::InferenceComponentMetadata;
 
 pub use crate::types::_lineage_metadata::LineageMetadata;
+
+pub use crate::types::_job_step_metadata::JobStepMetadata;
 
 pub use crate::types::_operator::Operator;
 
@@ -2245,6 +2307,8 @@ pub use crate::types::_categorical_parameter::CategoricalParameter;
 
 pub use crate::types::_capacity_reservation_type::CapacityReservationType;
 
+pub use crate::types::_instance_requirements_eni_configuration::InstanceRequirementsEniConfiguration;
+
 pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecification;
 
 pub use crate::types::_customized_metric_specification::CustomizedMetricSpecification;
@@ -2306,6 +2370,8 @@ mod _ai_capacity_reservation_preference;
 mod _ai_cloud_watch_logs;
 
 mod _ai_dataset_config;
+
+mod _ai_mlflow_config;
 
 mod _ai_model_source;
 
@@ -2661,6 +2727,10 @@ mod _clarify_text_granularity;
 
 mod _clarify_text_language;
 
+mod _cluster_auto_patch_config;
+
+mod _cluster_auto_patch_config_details;
+
 mod _cluster_auto_scaler_type;
 
 mod _cluster_auto_scaling_config;
@@ -2681,13 +2751,19 @@ mod _cluster_ebs_volume_config;
 
 mod _cluster_event_detail;
 
+mod _cluster_event_level;
+
 mod _cluster_event_resource_type;
 
 mod _cluster_event_summary;
 
+mod _cluster_f_sx_lustre_deletion_policy;
+
 mod _cluster_fsx_lustre_config;
 
 mod _cluster_fsx_open_zfs_config;
+
+mod _cluster_image_version_status;
 
 mod _cluster_instance_group_details;
 
@@ -2745,11 +2821,25 @@ mod _cluster_orchestrator_eks_config;
 
 mod _cluster_orchestrator_slurm_config;
 
+mod _cluster_patch_schedule;
+
+mod _cluster_patch_schedule_details;
+
+mod _cluster_patching_strategy;
+
 mod _cluster_restricted_instance_group_details;
 
 mod _cluster_restricted_instance_group_specification;
 
+mod _cluster_restricted_instance_groups_config;
+
+mod _cluster_restricted_instance_groups_config_output;
+
 mod _cluster_scheduler_config_summary;
+
+mod _cluster_shared_environment_config;
+
+mod _cluster_shared_environment_config_details;
 
 mod _cluster_slurm_config;
 
@@ -2814,6 +2904,8 @@ mod _condition_step_metadata;
 mod _container_config;
 
 mod _container_definition;
+
+mod _container_metrics_config;
 
 mod _container_mode;
 
@@ -3041,6 +3133,8 @@ mod _event_sort_by;
 
 mod _execution_role_identity_config;
 
+mod _execution_role_session_name_mode;
+
 mod _execution_status;
 
 mod _experiment;
@@ -3124,6 +3218,8 @@ mod _git_config_for_update;
 mod _hidden_sage_maker_image;
 
 mod _holiday_config_attributes;
+
+mod _home_efs_file_system_creation;
 
 mod _hub_access_config;
 
@@ -3235,6 +3331,8 @@ mod _image_version_sort_order;
 
 mod _image_version_status;
 
+mod _included_data;
+
 mod _inference_component_availability_zone_balance;
 
 mod _inference_component_capacity_size;
@@ -3254,6 +3352,8 @@ mod _inference_component_data_cache_config_summary;
 mod _inference_component_deployment_config;
 
 mod _inference_component_metadata;
+
+mod _inference_component_placement_status;
 
 mod _inference_component_placement_strategy;
 
@@ -3327,6 +3427,12 @@ mod _instance_metadata_service_configuration;
 
 mod _instance_placement_config;
 
+mod _instance_pool;
+
+mod _instance_pool_summary;
+
+mod _instance_requirements_eni_configuration;
+
 mod _instance_type;
 
 mod _integer_parameter_range;
@@ -3336,6 +3442,22 @@ mod _integer_parameter_range_specification;
 mod _ip_address_type;
 
 mod _is_tracking_server_active;
+
+mod _job;
+
+mod _job_category;
+
+mod _job_config_schema_version_summary;
+
+mod _job_secondary_status;
+
+mod _job_secondary_status_transition;
+
+mod _job_status;
+
+mod _job_step_metadata;
+
+mod _job_summary;
 
 mod _job_type;
 
@@ -3427,9 +3549,13 @@ mod _m_lflow_configuration;
 
 mod _maintenance_status;
 
+mod _managed_configuration;
+
 mod _managed_instance_scaling_scale_in_strategy;
 
 mod _managed_instance_scaling_status;
+
+mod _managed_storage_type;
 
 mod _member_definition;
 
@@ -3446,6 +3572,8 @@ mod _metric_set_source;
 mod _metric_specification;
 
 mod _metrics_config;
+
+mod _metrics_endpoint;
 
 mod _metrics_source;
 

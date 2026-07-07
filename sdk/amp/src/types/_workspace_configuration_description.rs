@@ -10,6 +10,10 @@ pub struct WorkspaceConfigurationDescription {
     pub limits_per_label_set: ::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>>,
     /// <p>This field displays how many days that metrics are retained in the workspace.</p>
     pub retention_period_in_days: ::std::option::Option<i32>,
+    /// <p>This field displays the out of order time window in seconds for accepting out of order samples.</p>
+    pub out_of_order_time_window_in_seconds: ::std::option::Option<i32>,
+    /// <p>This field displays the duration in seconds that rule evaluation queries are offset into the past.</p>
+    pub rule_query_offset_in_seconds: ::std::option::Option<i32>,
 }
 impl WorkspaceConfigurationDescription {
     /// <p>This structure displays the current status of the workspace configuration, and might also contain a reason for that status.</p>
@@ -26,6 +30,14 @@ impl WorkspaceConfigurationDescription {
     pub fn retention_period_in_days(&self) -> ::std::option::Option<i32> {
         self.retention_period_in_days
     }
+    /// <p>This field displays the out of order time window in seconds for accepting out of order samples.</p>
+    pub fn out_of_order_time_window_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.out_of_order_time_window_in_seconds
+    }
+    /// <p>This field displays the duration in seconds that rule evaluation queries are offset into the past.</p>
+    pub fn rule_query_offset_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.rule_query_offset_in_seconds
+    }
 }
 impl WorkspaceConfigurationDescription {
     /// Creates a new builder-style object to manufacture [`WorkspaceConfigurationDescription`](crate::types::WorkspaceConfigurationDescription).
@@ -41,6 +53,8 @@ pub struct WorkspaceConfigurationDescriptionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WorkspaceConfigurationStatus>,
     pub(crate) limits_per_label_set: ::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>>,
     pub(crate) retention_period_in_days: ::std::option::Option<i32>,
+    pub(crate) out_of_order_time_window_in_seconds: ::std::option::Option<i32>,
+    pub(crate) rule_query_offset_in_seconds: ::std::option::Option<i32>,
 }
 impl WorkspaceConfigurationDescriptionBuilder {
     /// <p>This structure displays the current status of the workspace configuration, and might also contain a reason for that status.</p>
@@ -92,12 +106,42 @@ impl WorkspaceConfigurationDescriptionBuilder {
     pub fn get_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         &self.retention_period_in_days
     }
+    /// <p>This field displays the out of order time window in seconds for accepting out of order samples.</p>
+    pub fn out_of_order_time_window_in_seconds(mut self, input: i32) -> Self {
+        self.out_of_order_time_window_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This field displays the out of order time window in seconds for accepting out of order samples.</p>
+    pub fn set_out_of_order_time_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.out_of_order_time_window_in_seconds = input;
+        self
+    }
+    /// <p>This field displays the out of order time window in seconds for accepting out of order samples.</p>
+    pub fn get_out_of_order_time_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.out_of_order_time_window_in_seconds
+    }
+    /// <p>This field displays the duration in seconds that rule evaluation queries are offset into the past.</p>
+    pub fn rule_query_offset_in_seconds(mut self, input: i32) -> Self {
+        self.rule_query_offset_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This field displays the duration in seconds that rule evaluation queries are offset into the past.</p>
+    pub fn set_rule_query_offset_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.rule_query_offset_in_seconds = input;
+        self
+    }
+    /// <p>This field displays the duration in seconds that rule evaluation queries are offset into the past.</p>
+    pub fn get_rule_query_offset_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.rule_query_offset_in_seconds
+    }
     /// Consumes the builder and constructs a [`WorkspaceConfigurationDescription`](crate::types::WorkspaceConfigurationDescription).
     pub fn build(self) -> crate::types::WorkspaceConfigurationDescription {
         crate::types::WorkspaceConfigurationDescription {
             status: self.status,
             limits_per_label_set: self.limits_per_label_set,
             retention_period_in_days: self.retention_period_in_days,
+            out_of_order_time_window_in_seconds: self.out_of_order_time_window_in_seconds,
+            rule_query_offset_in_seconds: self.rule_query_offset_in_seconds,
         }
     }
 }

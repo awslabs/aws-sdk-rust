@@ -2,10 +2,16 @@
 pub(crate) fn de_protected_job_output_configuration_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProtectedJobOutputConfigurationOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,13 +38,13 @@ where
                     variant = match key.as_ref() {
                             "s3" => {
                                 Some(crate::types::ProtectedJobOutputConfigurationOutput::S3(
-                                    crate::protocol_serde::shape_protected_job_s3_output_configuration_output::de_protected_job_s3_output_configuration_output(tokens, _value)?
+                                    crate::protocol_serde::shape_protected_job_s3_output_configuration_output::de_protected_job_s3_output_configuration_output(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?
                                 ))
                             }
                             "member" => {
                                 Some(crate::types::ProtectedJobOutputConfigurationOutput::Member(
-                                    crate::protocol_serde::shape_protected_job_member_output_configuration_output::de_protected_job_member_output_configuration_output(tokens, _value)?
+                                    crate::protocol_serde::shape_protected_job_member_output_configuration_output::de_protected_job_member_output_configuration_output(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null"))?
                                 ))
                             }

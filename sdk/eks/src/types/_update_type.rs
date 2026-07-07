@@ -17,7 +17,9 @@
 ///     UpdateType::AssociateEncryptionConfig => { /* ... */ },
 ///     UpdateType::AssociateIdentityProviderConfig => { /* ... */ },
 ///     UpdateType::AutoModeUpdate => { /* ... */ },
+///     UpdateType::CapabilityUpdate => { /* ... */ },
 ///     UpdateType::ConfigUpdate => { /* ... */ },
+///     UpdateType::ControlPlaneEgressUpdate => { /* ... */ },
 ///     UpdateType::ControlPlaneScalingConfigUpdate => { /* ... */ },
 ///     UpdateType::DeletionProtectionUpdate => { /* ... */ },
 ///     UpdateType::DisassociateIdentityProviderConfig => { /* ... */ },
@@ -26,6 +28,7 @@
 ///     UpdateType::RemoteNetworkConfigUpdate => { /* ... */ },
 ///     UpdateType::UpgradePolicyUpdate => { /* ... */ },
 ///     UpdateType::VendedLogsUpdate => { /* ... */ },
+///     UpdateType::VersionRollback => { /* ... */ },
 ///     UpdateType::VersionUpdate => { /* ... */ },
 ///     UpdateType::VpcConfigUpdate => { /* ... */ },
 ///     UpdateType::ZonalShiftConfigUpdate => { /* ... */ },
@@ -68,7 +71,11 @@ pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     AutoModeUpdate,
     #[allow(missing_docs)] // documentation missing in model
+    CapabilityUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigUpdate,
+    #[allow(missing_docs)] // documentation missing in model
+    ControlPlaneEgressUpdate,
     #[allow(missing_docs)] // documentation missing in model
     ControlPlaneScalingConfigUpdate,
     #[allow(missing_docs)] // documentation missing in model
@@ -85,6 +92,8 @@ pub enum UpdateType {
     UpgradePolicyUpdate,
     #[allow(missing_docs)] // documentation missing in model
     VendedLogsUpdate,
+    #[allow(missing_docs)] // documentation missing in model
+    VersionRollback,
     #[allow(missing_docs)] // documentation missing in model
     VersionUpdate,
     #[allow(missing_docs)] // documentation missing in model
@@ -103,7 +112,9 @@ impl ::std::convert::From<&str> for UpdateType {
             "AssociateEncryptionConfig" => UpdateType::AssociateEncryptionConfig,
             "AssociateIdentityProviderConfig" => UpdateType::AssociateIdentityProviderConfig,
             "AutoModeUpdate" => UpdateType::AutoModeUpdate,
+            "CapabilityUpdate" => UpdateType::CapabilityUpdate,
             "ConfigUpdate" => UpdateType::ConfigUpdate,
+            "ControlPlaneEgressUpdate" => UpdateType::ControlPlaneEgressUpdate,
             "ControlPlaneScalingConfigUpdate" => UpdateType::ControlPlaneScalingConfigUpdate,
             "DeletionProtectionUpdate" => UpdateType::DeletionProtectionUpdate,
             "DisassociateIdentityProviderConfig" => UpdateType::DisassociateIdentityProviderConfig,
@@ -112,6 +123,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "RemoteNetworkConfigUpdate" => UpdateType::RemoteNetworkConfigUpdate,
             "UpgradePolicyUpdate" => UpdateType::UpgradePolicyUpdate,
             "VendedLogsUpdate" => UpdateType::VendedLogsUpdate,
+            "VersionRollback" => UpdateType::VersionRollback,
             "VersionUpdate" => UpdateType::VersionUpdate,
             "VpcConfigUpdate" => UpdateType::VpcConfigUpdate,
             "ZonalShiftConfigUpdate" => UpdateType::ZonalShiftConfigUpdate,
@@ -135,7 +147,9 @@ impl UpdateType {
             UpdateType::AssociateEncryptionConfig => "AssociateEncryptionConfig",
             UpdateType::AssociateIdentityProviderConfig => "AssociateIdentityProviderConfig",
             UpdateType::AutoModeUpdate => "AutoModeUpdate",
+            UpdateType::CapabilityUpdate => "CapabilityUpdate",
             UpdateType::ConfigUpdate => "ConfigUpdate",
+            UpdateType::ControlPlaneEgressUpdate => "ControlPlaneEgressUpdate",
             UpdateType::ControlPlaneScalingConfigUpdate => "ControlPlaneScalingConfigUpdate",
             UpdateType::DeletionProtectionUpdate => "DeletionProtectionUpdate",
             UpdateType::DisassociateIdentityProviderConfig => "DisassociateIdentityProviderConfig",
@@ -144,6 +158,7 @@ impl UpdateType {
             UpdateType::RemoteNetworkConfigUpdate => "RemoteNetworkConfigUpdate",
             UpdateType::UpgradePolicyUpdate => "UpgradePolicyUpdate",
             UpdateType::VendedLogsUpdate => "VendedLogsUpdate",
+            UpdateType::VersionRollback => "VersionRollback",
             UpdateType::VersionUpdate => "VersionUpdate",
             UpdateType::VpcConfigUpdate => "VpcConfigUpdate",
             UpdateType::ZonalShiftConfigUpdate => "ZonalShiftConfigUpdate",
@@ -158,7 +173,9 @@ impl UpdateType {
             "AssociateEncryptionConfig",
             "AssociateIdentityProviderConfig",
             "AutoModeUpdate",
+            "CapabilityUpdate",
             "ConfigUpdate",
+            "ControlPlaneEgressUpdate",
             "ControlPlaneScalingConfigUpdate",
             "DeletionProtectionUpdate",
             "DisassociateIdentityProviderConfig",
@@ -167,6 +184,7 @@ impl UpdateType {
             "RemoteNetworkConfigUpdate",
             "UpgradePolicyUpdate",
             "VendedLogsUpdate",
+            "VersionRollback",
             "VersionUpdate",
             "VpcConfigUpdate",
             "ZonalShiftConfigUpdate",
@@ -198,7 +216,9 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::AssociateEncryptionConfig => write!(f, "AssociateEncryptionConfig"),
             UpdateType::AssociateIdentityProviderConfig => write!(f, "AssociateIdentityProviderConfig"),
             UpdateType::AutoModeUpdate => write!(f, "AutoModeUpdate"),
+            UpdateType::CapabilityUpdate => write!(f, "CapabilityUpdate"),
             UpdateType::ConfigUpdate => write!(f, "ConfigUpdate"),
+            UpdateType::ControlPlaneEgressUpdate => write!(f, "ControlPlaneEgressUpdate"),
             UpdateType::ControlPlaneScalingConfigUpdate => write!(f, "ControlPlaneScalingConfigUpdate"),
             UpdateType::DeletionProtectionUpdate => write!(f, "DeletionProtectionUpdate"),
             UpdateType::DisassociateIdentityProviderConfig => write!(f, "DisassociateIdentityProviderConfig"),
@@ -207,6 +227,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::RemoteNetworkConfigUpdate => write!(f, "RemoteNetworkConfigUpdate"),
             UpdateType::UpgradePolicyUpdate => write!(f, "UpgradePolicyUpdate"),
             UpdateType::VendedLogsUpdate => write!(f, "VendedLogsUpdate"),
+            UpdateType::VersionRollback => write!(f, "VersionRollback"),
             UpdateType::VersionUpdate => write!(f, "VersionUpdate"),
             UpdateType::VpcConfigUpdate => write!(f, "VpcConfigUpdate"),
             UpdateType::ZonalShiftConfigUpdate => write!(f, "ZonalShiftConfigUpdate"),

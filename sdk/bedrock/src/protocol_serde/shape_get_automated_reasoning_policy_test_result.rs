@@ -152,6 +152,8 @@ pub(crate) fn de_get_automated_reasoning_policy_test_result(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -160,7 +162,9 @@ pub(crate) fn de_get_automated_reasoning_policy_test_result(
                 "testResult" => {
                     builder = builder.set_test_result(
                         crate::protocol_serde::shape_automated_reasoning_policy_test_result::de_automated_reasoning_policy_test_result(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

@@ -152,6 +152,8 @@ pub(crate) fn de_update_bot(
 ) -> ::std::result::Result<crate::operation::update_bot::builders::UpdateBotOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -165,7 +167,7 @@ pub(crate) fn de_update_bot(
                     );
                 }
                 "botMembers" => {
-                    builder = builder.set_bot_members(crate::protocol_serde::shape_bot_members::de_bot_members(tokens, _value)?);
+                    builder = builder.set_bot_members(crate::protocol_serde::shape_bot_members::de_bot_members(tokens, _value, depth + 1)?);
                 }
                 "botName" => {
                     builder = builder.set_bot_name(
@@ -195,7 +197,7 @@ pub(crate) fn de_update_bot(
                     )?);
                 }
                 "dataPrivacy" => {
-                    builder = builder.set_data_privacy(crate::protocol_serde::shape_data_privacy::de_data_privacy(tokens, _value)?);
+                    builder = builder.set_data_privacy(crate::protocol_serde::shape_data_privacy::de_data_privacy(tokens, _value, depth + 1)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -205,7 +207,11 @@ pub(crate) fn de_update_bot(
                     );
                 }
                 "errorLogSettings" => {
-                    builder = builder.set_error_log_settings(crate::protocol_serde::shape_error_log_settings::de_error_log_settings(tokens, _value)?);
+                    builder = builder.set_error_log_settings(crate::protocol_serde::shape_error_log_settings::de_error_log_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "idleSessionTTLInSeconds" => {
                     builder = builder.set_idle_session_ttl_in_seconds(

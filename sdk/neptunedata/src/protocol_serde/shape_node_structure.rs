@@ -2,10 +2,16 @@
 pub(crate) fn de_node_structure<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NodeStructure>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,11 +29,15 @@ where
                             );
                         }
                         "nodeProperties" => {
-                            builder = builder.set_node_properties(crate::protocol_serde::shape_node_properties::de_node_properties(tokens, _value)?);
+                            builder = builder.set_node_properties(crate::protocol_serde::shape_node_properties::de_node_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "distinctOutgoingEdgeLabels" => {
                             builder = builder.set_distinct_outgoing_edge_labels(
-                                crate::protocol_serde::shape_outgoing_edge_labels::de_outgoing_edge_labels(tokens, _value)?,
+                                crate::protocol_serde::shape_outgoing_edge_labels::de_outgoing_edge_labels(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Vpc, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Vpc::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -37,7 +41,7 @@ pub fn de_vpc(
             s if s.matches("ipv6CidrBlockAssociationSet") /* Ipv6CidrBlockAssociationSet com.amazonaws.ec2#Vpc$Ipv6CidrBlockAssociationSet */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_vpc_ipv6_cidr_block_association_set::de_vpc_ipv6_cidr_block_association_set(&mut tag)
+                        crate::protocol_serde::shape_vpc_ipv6_cidr_block_association_set::de_vpc_ipv6_cidr_block_association_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -47,7 +51,7 @@ pub fn de_vpc(
             s if s.matches("cidrBlockAssociationSet") /* CidrBlockAssociationSet com.amazonaws.ec2#Vpc$CidrBlockAssociationSet */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_vpc_cidr_block_association_set::de_vpc_cidr_block_association_set(&mut tag)
+                        crate::protocol_serde::shape_vpc_cidr_block_association_set::de_vpc_cidr_block_association_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_vpc(
             s if s.matches("encryptionControl") /* EncryptionControl com.amazonaws.ec2#Vpc$EncryptionControl */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control::de_vpc_encryption_control(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control::de_vpc_encryption_control(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_vpc(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Vpc$Tags */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -92,7 +96,7 @@ pub fn de_vpc(
             s if s.matches("blockPublicAccessStates") /* BlockPublicAccessStates com.amazonaws.ec2#Vpc$BlockPublicAccessStates */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_block_public_access_states::de_block_public_access_states(&mut tag)
+                        crate::protocol_serde::shape_block_public_access_states::de_block_public_access_states(&mut tag, depth + 1)
                         ?
                     )
                 ;

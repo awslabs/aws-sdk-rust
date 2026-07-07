@@ -2,10 +2,16 @@
 pub(crate) fn de_analysis<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Analysis>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,18 @@ where
                             );
                         }
                         "Errors" => {
-                            builder = builder.set_errors(crate::protocol_serde::shape_analysis_error_list::de_analysis_error_list(tokens, _value)?);
+                            builder = builder.set_errors(crate::protocol_serde::shape_analysis_error_list::de_analysis_error_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DataSetArns" => {
-                            builder =
-                                builder.set_data_set_arns(crate::protocol_serde::shape_data_set_arns_list::de_data_set_arns_list(tokens, _value)?);
+                            builder = builder.set_data_set_arns(crate::protocol_serde::shape_data_set_arns_list::de_data_set_arns_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ThemeArn" => {
                             builder = builder.set_theme_arn(
@@ -70,7 +83,7 @@ where
                             )?);
                         }
                         "Sheets" => {
-                            builder = builder.set_sheets(crate::protocol_serde::shape_sheet_list::de_sheet_list(tokens, _value)?);
+                            builder = builder.set_sheets(crate::protocol_serde::shape_sheet_list::de_sheet_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

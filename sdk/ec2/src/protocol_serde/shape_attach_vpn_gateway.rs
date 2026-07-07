@@ -40,6 +40,8 @@ pub fn de_attach_vpn_gateway(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AttachVpnGatewayResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AttachVpnGatewayResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_attach_vpn_gateway(
             s if s.matches("attachment") /* VpcAttachment com.amazonaws.ec2.synthetic#AttachVpnGatewayOutput$VpcAttachment */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc_attachment::de_vpc_attachment(&mut tag)
+                        crate::protocol_serde::shape_vpc_attachment::de_vpc_attachment(&mut tag, depth + 1)
                         ?
                     )
                 ;

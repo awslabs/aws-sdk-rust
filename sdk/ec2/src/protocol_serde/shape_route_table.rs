@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_route_table(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RouteTable, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RouteTable::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_route_table(
             s if s.matches("associationSet") /* Associations com.amazonaws.ec2#RouteTable$Associations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_route_table_association_list::de_route_table_association_list(&mut tag)
+                        crate::protocol_serde::shape_route_table_association_list::de_route_table_association_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_route_table(
             s if s.matches("propagatingVgwSet") /* PropagatingVgws com.amazonaws.ec2#RouteTable$PropagatingVgws */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_propagating_vgw_list::de_propagating_vgw_list(&mut tag)
+                        crate::protocol_serde::shape_propagating_vgw_list::de_propagating_vgw_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_route_table(
             s if s.matches("routeSet") /* Routes com.amazonaws.ec2#RouteTable$Routes */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_route_list::de_route_list(&mut tag)
+                        crate::protocol_serde::shape_route_list::de_route_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_route_table(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#RouteTable$Tags */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

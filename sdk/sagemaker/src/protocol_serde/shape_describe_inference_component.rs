@@ -56,6 +56,8 @@ pub(crate) fn de_describe_inference_component(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -106,14 +108,23 @@ pub(crate) fn de_describe_inference_component(
                 "Specification" => {
                     builder = builder.set_specification(
                         crate::protocol_serde::shape_inference_component_specification_summary::de_inference_component_specification_summary(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
+                }
+                "Specifications" => {
+                    builder = builder.set_specifications(
+                            crate::protocol_serde::shape_inference_component_specification_summary_list::de_inference_component_specification_summary_list(tokens, _value, depth + 1)?
+                        );
                 }
                 "RuntimeConfig" => {
                     builder = builder.set_runtime_config(
                         crate::protocol_serde::shape_inference_component_runtime_config_summary::de_inference_component_runtime_config_summary(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -138,7 +149,11 @@ pub(crate) fn de_describe_inference_component(
                 }
                 "LastDeploymentConfig" => {
                     builder = builder.set_last_deployment_config(
-                        crate::protocol_serde::shape_inference_component_deployment_config::de_inference_component_deployment_config(tokens, _value)?,
+                        crate::protocol_serde::shape_inference_component_deployment_config::de_inference_component_deployment_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

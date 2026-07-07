@@ -105,28 +105,36 @@ pub(crate) fn de_get_assessment(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "assessmentTargets" => {
-                    builder = builder.set_assessment_targets(crate::protocol_serde::shape_assessment_targets::de_assessment_targets(tokens, _value)?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "assessmentTargets" => {
+                        builder = builder.set_assessment_targets(crate::protocol_serde::shape_assessment_targets::de_assessment_targets(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "dataCollectionDetails" => {
+                        builder = builder.set_data_collection_details(
+                            crate::protocol_serde::shape_data_collection_details::de_data_collection_details(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "id" => {
+                        builder = builder.set_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "dataCollectionDetails" => {
-                    builder = builder.set_data_collection_details(crate::protocol_serde::shape_data_collection_details::de_data_collection_details(
-                        tokens, _value,
-                    )?);
-                }
-                "id" => {
-                    builder = builder.set_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

@@ -194,6 +194,8 @@ pub fn de_get_reserved_node_exchange_configuration_options(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetReservedNodeExchangeConfigurationOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetReservedNodeExchangeConfigurationOptionsResponse got {start_el:?}"
@@ -224,7 +226,7 @@ pub fn de_get_reserved_node_exchange_configuration_options(
             s if s.matches("ReservedNodeConfigurationOptionList") /* ReservedNodeConfigurationOptionList com.amazonaws.redshift.synthetic#GetReservedNodeExchangeConfigurationOptionsOutput$ReservedNodeConfigurationOptionList */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_reserved_node_configuration_option_list::de_reserved_node_configuration_option_list(&mut tag)
+                        crate::protocol_serde::shape_reserved_node_configuration_option_list::de_reserved_node_configuration_option_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

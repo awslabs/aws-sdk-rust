@@ -7,6 +7,8 @@ pub struct UpdateInferenceComponentInput {
     pub inference_component_name: ::std::option::Option<::std::string::String>,
     /// <p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>
     pub specification: ::std::option::Option<crate::types::InferenceComponentSpecification>,
+    /// <p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to specify different model or resource configurations for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>
+    pub specifications: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecification>>,
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub runtime_config: ::std::option::Option<crate::types::InferenceComponentRuntimeConfig>,
     /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
@@ -20,6 +22,12 @@ impl UpdateInferenceComponentInput {
     /// <p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>
     pub fn specification(&self) -> ::std::option::Option<&crate::types::InferenceComponentSpecification> {
         self.specification.as_ref()
+    }
+    /// <p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to specify different model or resource configurations for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.specifications.is_none()`.
+    pub fn specifications(&self) -> &[crate::types::InferenceComponentSpecification] {
+        self.specifications.as_deref().unwrap_or_default()
     }
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub fn runtime_config(&self) -> ::std::option::Option<&crate::types::InferenceComponentRuntimeConfig> {
@@ -43,6 +51,7 @@ impl UpdateInferenceComponentInput {
 pub struct UpdateInferenceComponentInputBuilder {
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) specification: ::std::option::Option<crate::types::InferenceComponentSpecification>,
+    pub(crate) specifications: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecification>>,
     pub(crate) runtime_config: ::std::option::Option<crate::types::InferenceComponentRuntimeConfig>,
     pub(crate) deployment_config: ::std::option::Option<crate::types::InferenceComponentDeploymentConfig>,
 }
@@ -75,6 +84,26 @@ impl UpdateInferenceComponentInputBuilder {
     /// <p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>
     pub fn get_specification(&self) -> &::std::option::Option<crate::types::InferenceComponentSpecification> {
         &self.specification
+    }
+    /// Appends an item to `specifications`.
+    ///
+    /// To override the contents of this collection use [`set_specifications`](Self::set_specifications).
+    ///
+    /// <p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to specify different model or resource configurations for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>
+    pub fn specifications(mut self, input: crate::types::InferenceComponentSpecification) -> Self {
+        let mut v = self.specifications.unwrap_or_default();
+        v.push(input);
+        self.specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to specify different model or resource configurations for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>
+    pub fn set_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecification>>) -> Self {
+        self.specifications = input;
+        self
+    }
+    /// <p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to specify different model or resource configurations for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>
+    pub fn get_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecification>> {
+        &self.specifications
     }
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub fn runtime_config(mut self, input: crate::types::InferenceComponentRuntimeConfig) -> Self {
@@ -114,6 +143,7 @@ impl UpdateInferenceComponentInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_inference_component::UpdateInferenceComponentInput {
             inference_component_name: self.inference_component_name,
             specification: self.specification,
+            specifications: self.specifications,
             runtime_config: self.runtime_config,
             deployment_config: self.deployment_config,
         })

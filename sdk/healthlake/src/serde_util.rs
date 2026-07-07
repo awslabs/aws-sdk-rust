@@ -122,6 +122,18 @@ pub(crate) fn start_fhir_import_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_fhir_datastore_output_output_correct_errors(
+    mut builder: crate::operation::update_fhir_datastore::builders::UpdateFhirDatastoreOutputBuilder,
+) -> crate::operation::update_fhir_datastore::builders::UpdateFhirDatastoreOutputBuilder {
+    if builder.datastore_properties.is_none() {
+        builder.datastore_properties = {
+            let builder = crate::types::builders::DatastorePropertiesBuilder::default();
+            crate::serde_util::datastore_properties_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn datastore_properties_correct_errors(
     mut builder: crate::types::builders::DatastorePropertiesBuilder,
 ) -> crate::types::builders::DatastorePropertiesBuilder {

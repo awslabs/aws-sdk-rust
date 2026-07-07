@@ -2,10 +2,16 @@
 pub(crate) fn de_fleet<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Fleet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,7 +55,7 @@ where
                             )?);
                         }
                         "status" => {
-                            builder = builder.set_status(crate::protocol_serde::shape_fleet_status::de_fleet_status(tokens, _value)?);
+                            builder = builder.set_status(crate::protocol_serde::shape_fleet_status::de_fleet_status(tokens, _value, depth + 1)?);
                         }
                         "baseCapacity" => {
                             builder = builder.set_base_capacity(
@@ -74,12 +80,16 @@ where
                         }
                         "computeConfiguration" => {
                             builder = builder.set_compute_configuration(
-                                crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "scalingConfiguration" => {
                             builder = builder.set_scaling_configuration(
-                                crate::protocol_serde::shape_scaling_configuration_output::de_scaling_configuration_output(tokens, _value)?,
+                                crate::protocol_serde::shape_scaling_configuration_output::de_scaling_configuration_output(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "overflowBehavior" => {
@@ -90,11 +100,14 @@ where
                             );
                         }
                         "vpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "proxyConfiguration" => {
-                            builder = builder
-                                .set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens, _value)?);
+                            builder = builder.set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "imageId" => {
                             builder = builder.set_image_id(
@@ -111,7 +124,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

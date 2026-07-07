@@ -2,10 +2,16 @@
 pub(crate) fn de_firewall<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Firewall>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,11 @@ where
                             );
                         }
                         "SubnetMappings" => {
-                            builder = builder.set_subnet_mappings(crate::protocol_serde::shape_subnet_mappings::de_subnet_mappings(tokens, _value)?);
+                            builder = builder.set_subnet_mappings(crate::protocol_serde::shape_subnet_mappings::de_subnet_mappings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DeleteProtection" => {
                             builder = builder.set_delete_protection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -72,11 +82,11 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "EncryptionConfiguration" => {
                             builder = builder.set_encryption_configuration(
-                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "NumberOfAssociations" => {
@@ -88,7 +98,7 @@ where
                         }
                         "EnabledAnalysisTypes" => {
                             builder = builder.set_enabled_analysis_types(
-                                crate::protocol_serde::shape_enabled_analysis_types::de_enabled_analysis_types(tokens, _value)?,
+                                crate::protocol_serde::shape_enabled_analysis_types::de_enabled_analysis_types(tokens, _value, depth + 1)?,
                             );
                         }
                         "TransitGatewayId" => {
@@ -107,7 +117,7 @@ where
                         }
                         "AvailabilityZoneMappings" => {
                             builder = builder.set_availability_zone_mappings(
-                                crate::protocol_serde::shape_availability_zone_mappings::de_availability_zone_mappings(tokens, _value)?,
+                                crate::protocol_serde::shape_availability_zone_mappings::de_availability_zone_mappings(tokens, _value, depth + 1)?,
                             );
                         }
                         "AvailabilityZoneChangeProtection" => {

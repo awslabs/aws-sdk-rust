@@ -92,17 +92,23 @@ pub(crate) fn de_batch_get_named_query(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "NamedQueries" => {
-                    builder = builder.set_named_queries(crate::protocol_serde::shape_named_query_list::de_named_query_list(tokens, _value)?);
+                    builder = builder.set_named_queries(crate::protocol_serde::shape_named_query_list::de_named_query_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "UnprocessedNamedQueryIds" => {
                     builder = builder.set_unprocessed_named_query_ids(
-                        crate::protocol_serde::shape_unprocessed_named_query_id_list::de_unprocessed_named_query_id_list(tokens, _value)?,
+                        crate::protocol_serde::shape_unprocessed_named_query_id_list::de_unprocessed_named_query_id_list(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

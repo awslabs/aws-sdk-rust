@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_create_fleet_error(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CreateFleetError, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CreateFleetError::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_create_fleet_error(
             s if s.matches("launchTemplateAndOverrides") /* LaunchTemplateAndOverrides com.amazonaws.ec2#CreateFleetError$LaunchTemplateAndOverrides */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_and_overrides_response::de_launch_template_and_overrides_response(&mut tag)
+                        crate::protocol_serde::shape_launch_template_and_overrides_response::de_launch_template_and_overrides_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

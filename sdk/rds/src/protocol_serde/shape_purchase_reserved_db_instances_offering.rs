@@ -107,6 +107,8 @@ pub fn de_purchase_reserved_db_instances_offering(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("PurchaseReservedDBInstancesOfferingResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected PurchaseReservedDBInstancesOfferingResponse got {start_el:?}"
@@ -124,7 +126,7 @@ pub fn de_purchase_reserved_db_instances_offering(
             s if s.matches("ReservedDBInstance") /* ReservedDBInstance com.amazonaws.rds.synthetic#PurchaseReservedDBInstancesOfferingOutput$ReservedDBInstance */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_reserved_db_instance::de_reserved_db_instance(&mut tag)
+                        crate::protocol_serde::shape_reserved_db_instance::de_reserved_db_instance(&mut tag, depth + 1)
                         ?
                     )
                 ;

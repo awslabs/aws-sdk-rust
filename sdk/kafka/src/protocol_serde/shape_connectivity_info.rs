@@ -24,10 +24,16 @@ pub fn ser_connectivity_info(
 pub(crate) fn de_connectivity_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConnectivityInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,11 +44,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "publicAccess" => {
-                            builder = builder.set_public_access(crate::protocol_serde::shape_public_access::de_public_access(tokens, _value)?);
+                            builder =
+                                builder.set_public_access(crate::protocol_serde::shape_public_access::de_public_access(tokens, _value, depth + 1)?);
                         }
                         "vpcConnectivity" => {
-                            builder =
-                                builder.set_vpc_connectivity(crate::protocol_serde::shape_vpc_connectivity::de_vpc_connectivity(tokens, _value)?);
+                            builder = builder.set_vpc_connectivity(crate::protocol_serde::shape_vpc_connectivity::de_vpc_connectivity(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "networkType" => {
                             builder = builder.set_network_type(

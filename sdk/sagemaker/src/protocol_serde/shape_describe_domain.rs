@@ -71,6 +71,8 @@ pub(crate) fn de_describe_domain(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -159,10 +161,15 @@ pub(crate) fn de_describe_domain(
                     );
                 }
                 "DefaultUserSettings" => {
-                    builder = builder.set_default_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens, _value)?);
+                    builder =
+                        builder.set_default_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens, _value, depth + 1)?);
                 }
                 "DomainSettings" => {
-                    builder = builder.set_domain_settings(crate::protocol_serde::shape_domain_settings::de_domain_settings(tokens, _value)?);
+                    builder = builder.set_domain_settings(crate::protocol_serde::shape_domain_settings::de_domain_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "AppNetworkAccessType" => {
                     builder = builder.set_app_network_access_type(
@@ -179,7 +186,7 @@ pub(crate) fn de_describe_domain(
                     );
                 }
                 "SubnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnets::de_subnets(tokens, _value)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnets::de_subnets(tokens, _value, depth + 1)?);
                 }
                 "Url" => {
                     builder = builder.set_url(
@@ -209,6 +216,13 @@ pub(crate) fn de_describe_domain(
                             .transpose()?,
                     );
                 }
+                "HomeEfsFileSystemCreation" => {
+                    builder = builder.set_home_efs_file_system_creation(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::HomeEfsFileSystemCreation::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "TagPropagation" => {
                     builder = builder.set_tag_propagation(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -218,7 +232,9 @@ pub(crate) fn de_describe_domain(
                 }
                 "DefaultSpaceSettings" => {
                     builder = builder.set_default_space_settings(crate::protocol_serde::shape_default_space_settings::de_default_space_settings(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

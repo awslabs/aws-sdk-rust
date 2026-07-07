@@ -34,10 +34,16 @@ pub fn ser_direct_query_data_source_type(
 pub(crate) fn de_direct_query_data_source_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DirectQueryDataSourceType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -64,7 +70,9 @@ where
                     variant = match key.as_ref() {
                         "CloudWatchLog" => Some(crate::types::DirectQueryDataSourceType::CloudWatchLog(
                             crate::protocol_serde::shape_cloud_watch_direct_query_data_source::de_cloud_watch_direct_query_data_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CloudWatchLog' cannot be null")
@@ -72,17 +80,23 @@ where
                         )),
                         "SecurityLake" => Some(crate::types::DirectQueryDataSourceType::SecurityLake(
                             crate::protocol_serde::shape_security_lake_direct_query_data_source::de_security_lake_direct_query_data_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SecurityLake' cannot be null")
                             })?,
                         )),
                         "Prometheus" => Some(crate::types::DirectQueryDataSourceType::Prometheus(
-                            crate::protocol_serde::shape_prometheus_direct_query_data_source::de_prometheus_direct_query_data_source(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Prometheus' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_prometheus_direct_query_data_source::de_prometheus_direct_query_data_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Prometheus' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

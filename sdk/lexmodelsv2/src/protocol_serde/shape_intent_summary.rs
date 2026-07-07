@@ -2,10 +2,16 @@
 pub(crate) fn de_intent_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::IntentSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,12 +57,17 @@ where
                             );
                         }
                         "inputContexts" => {
-                            builder =
-                                builder.set_input_contexts(crate::protocol_serde::shape_input_contexts_list::de_input_contexts_list(tokens, _value)?);
+                            builder = builder.set_input_contexts(crate::protocol_serde::shape_input_contexts_list::de_input_contexts_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "outputContexts" => {
                             builder = builder.set_output_contexts(crate::protocol_serde::shape_output_contexts_list::de_output_contexts_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "lastUpdatedDateTime" => {

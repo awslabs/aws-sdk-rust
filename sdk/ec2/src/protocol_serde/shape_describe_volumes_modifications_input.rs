@@ -49,6 +49,11 @@ pub fn ser_describe_volumes_modifications_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("IncludeManagedResources");
+    if let Some(var_18) = &input.include_managed_resources {
+        scope_17.boolean(*var_18);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

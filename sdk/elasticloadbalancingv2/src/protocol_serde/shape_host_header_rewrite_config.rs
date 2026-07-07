@@ -21,7 +21,11 @@ pub fn ser_host_header_rewrite_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_host_header_rewrite_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::HostHeaderRewriteConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::HostHeaderRewriteConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -29,7 +33,7 @@ pub fn de_host_header_rewrite_config(
             s if s.matches("Rewrites") /* Rewrites com.amazonaws.elasticloadbalancingv2#HostHeaderRewriteConfig$Rewrites */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_rewrite_config_list::de_rewrite_config_list(&mut tag)
+                        crate::protocol_serde::shape_rewrite_config_list::de_rewrite_config_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

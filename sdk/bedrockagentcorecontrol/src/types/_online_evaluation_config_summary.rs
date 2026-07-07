@@ -22,6 +22,10 @@ pub struct OnlineEvaluationConfigSummary {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The reason for failure if the online evaluation configuration execution failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The list of insight types configured for this evaluation.</p>
+    pub insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
 }
 impl OnlineEvaluationConfigSummary {
     /// <p>The Amazon Resource Name (ARN) of the online evaluation configuration.</p>
@@ -63,6 +67,16 @@ impl OnlineEvaluationConfigSummary {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The list of insight types configured for this evaluation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights.is_none()`.
+    pub fn insights(&self) -> &[crate::types::Insight] {
+        self.insights.as_deref().unwrap_or_default()
+    }
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub fn clustering_config(&self) -> ::std::option::Option<&crate::types::ClusteringConfig> {
+        self.clustering_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for OnlineEvaluationConfigSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -76,6 +90,8 @@ impl ::std::fmt::Debug for OnlineEvaluationConfigSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("insights", &self.insights);
+        formatter.field("clustering_config", &self.clustering_config);
         formatter.finish()
     }
 }
@@ -99,6 +115,8 @@ pub struct OnlineEvaluationConfigSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
+    pub(crate) clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
 }
 impl OnlineEvaluationConfigSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the online evaluation configuration.</p>
@@ -234,6 +252,40 @@ impl OnlineEvaluationConfigSummaryBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
+    /// Appends an item to `insights`.
+    ///
+    /// To override the contents of this collection use [`set_insights`](Self::set_insights).
+    ///
+    /// <p>The list of insight types configured for this evaluation.</p>
+    pub fn insights(mut self, input: crate::types::Insight) -> Self {
+        let mut v = self.insights.unwrap_or_default();
+        v.push(input);
+        self.insights = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of insight types configured for this evaluation.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>) -> Self {
+        self.insights = input;
+        self
+    }
+    /// <p>The list of insight types configured for this evaluation.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
+        &self.insights
+    }
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub fn clustering_config(mut self, input: crate::types::ClusteringConfig) -> Self {
+        self.clustering_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub fn set_clustering_config(mut self, input: ::std::option::Option<crate::types::ClusteringConfig>) -> Self {
+        self.clustering_config = input;
+        self
+    }
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub fn get_clustering_config(&self) -> &::std::option::Option<crate::types::ClusteringConfig> {
+        &self.clustering_config
+    }
     /// Consumes the builder and constructs a [`OnlineEvaluationConfigSummary`](crate::types::OnlineEvaluationConfigSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`online_evaluation_config_arn`](crate::types::builders::OnlineEvaluationConfigSummaryBuilder::online_evaluation_config_arn)
@@ -289,6 +341,8 @@ impl OnlineEvaluationConfigSummaryBuilder {
                 )
             })?,
             failure_reason: self.failure_reason,
+            insights: self.insights,
+            clustering_config: self.clustering_config,
         })
     }
 }
@@ -304,6 +358,8 @@ impl ::std::fmt::Debug for OnlineEvaluationConfigSummaryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("insights", &self.insights);
+        formatter.field("clustering_config", &self.clustering_config);
         formatter.finish()
     }
 }

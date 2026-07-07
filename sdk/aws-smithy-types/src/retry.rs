@@ -5,7 +5,8 @@
 
 //! This module defines types that describe when to retry given a response.
 
-use crate::config_bag::{Storable, StoreReplace};
+use crate::config_bag::value::Value;
+use crate::config_bag::{ItemIter, Storable, Store, StoreReplace};
 use std::fmt;
 use std::str::FromStr;
 use std::time::Duration;
@@ -276,6 +277,7 @@ impl RetryConfigBuilder {
                 .unwrap_or(ReconnectMode::ReconnectOnTransientError),
             max_backoff: self.max_backoff.unwrap_or_else(|| Duration::from_secs(20)),
             use_static_exponential_base: false,
+            retry_spec: None,
         }
     }
 }
@@ -290,6 +292,7 @@ pub struct RetryConfig {
     max_backoff: Duration,
     reconnect_mode: ReconnectMode,
     use_static_exponential_base: bool,
+    retry_spec: Option<RetrySpec>,
 }
 
 impl Storable for RetryConfig {
@@ -316,6 +319,107 @@ impl Storable for ReconnectMode {
     type Storer = StoreReplace<ReconnectMode>;
 }
 
+/// Version tag for [`RetrySpec`], enabling zero-cost comparisons without
+/// exposing the internal representation.
+///
+/// New versions must be appended at the end — `PartialOrd` is derived from
+/// declaration order. If a version needs to be interleaved between
+/// existing variants (e.g., adding `V2_1_1` after `V2_2` already exists),
+/// replace the derived `Ord`/`PartialOrd` with a manual implementation
+/// that maps each variant to an explicit rank.
+#[doc(hidden)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
+#[non_exhaustive]
+pub enum RetrySpecVersion {
+    /// Retry Behavior 2.0 (legacy).
+    V2_0,
+    /// Retry Behavior 2.1.
+    V2_1,
+}
+
+/// Version-gated retry parameters derived from `BehaviorVersion`.
+///
+/// `RetrySpec` exists because `BehaviorVersion` lives in
+/// `aws-smithy-runtime-api` while `RetryConfig` lives in `aws-smithy-types`.
+/// `RetryConfig` cannot depend on `BehaviorVersion` directly without
+/// creating a circular crate dependency. Inferring the spec version from
+/// the presence or absence of individual fields would be fragile and
+/// error-prone.
+///
+/// Instead, `BehaviorVersion` is converted into a `RetrySpec` and stored
+/// alongside `RetryConfig` in the config bag. The retry strategy reads
+/// `RetrySpec` to determine version-gated behavior (backoff timing, token
+/// costs, `x-amz-retry-after` bounds) without ever depending on
+/// `BehaviorVersion`.
+///
+/// [`BehaviorVersion`]: crate::config_bag::Storable
+#[doc(hidden)]
+#[derive(Clone, Debug, PartialEq)]
+#[non_exhaustive]
+pub struct RetrySpec {
+    version: RetrySpecVersion,
+    non_throttling_initial_backoff: Duration,
+    long_polling: Option<bool>,
+}
+
+impl RetrySpec {
+    /// The version corresponding to Retry Behavior 2.0 (legacy).
+    pub const V2_0: RetrySpecVersion = RetrySpecVersion::V2_0;
+    /// The version corresponding to Retry Behavior 2.1.
+    pub const V2_1: RetrySpecVersion = RetrySpecVersion::V2_1;
+
+    /// Returns true if this spec's version is at least the given version.
+    pub fn is_at_least(&self, version: RetrySpecVersion) -> bool {
+        self.version >= version
+    }
+
+    /// Create a `RetrySpec` corresponding to Retry Behavior 2.0 (legacy).
+    pub fn v2_0() -> Self {
+        Self {
+            version: Self::V2_0,
+            non_throttling_initial_backoff: Duration::from_secs(1),
+            long_polling: None,
+        }
+    }
+
+    /// Create a `RetrySpec` corresponding to Retry Behavior 2.1.
+    pub fn v2_1() -> Self {
+        Self {
+            version: Self::V2_1,
+            non_throttling_initial_backoff: Duration::from_millis(50),
+            long_polling: None,
+        }
+    }
+
+    /// Set the base backoff for non-throttling errors.
+    pub fn with_non_throttling_initial_backoff(mut self, duration: Duration) -> Self {
+        self.non_throttling_initial_backoff = duration;
+        self
+    }
+
+    /// Get the base backoff for non-throttling errors.
+    pub fn non_throttling_initial_backoff(&self) -> Duration {
+        self.non_throttling_initial_backoff
+    }
+
+    /// Set whether this is a long-polling operation.
+    pub fn with_long_polling(mut self, long_polling: bool) -> Self {
+        self.long_polling = Some(long_polling);
+        self
+    }
+
+    /// Returns whether this is a long-polling operation.
+    pub fn long_polling(&self) -> bool {
+        self.long_polling.unwrap_or(false)
+    }
+
+    fn take_defaults_from(&mut self, other: &RetrySpec) {
+        if self.long_polling.is_none() {
+            self.long_polling = other.long_polling;
+        }
+    }
+}
+
 impl RetryConfig {
     /// Creates a default `RetryConfig` with `RetryMode::Standard` and max attempts of three.
     pub fn standard() -> Self {
@@ -326,6 +430,7 @@ impl RetryConfig {
             reconnect_mode: ReconnectMode::ReconnectOnTransientError,
             max_backoff: Duration::from_secs(20),
             use_static_exponential_base: false,
+            retry_spec: None,
         }
     }
 
@@ -338,6 +443,7 @@ impl RetryConfig {
             reconnect_mode: ReconnectMode::ReconnectOnTransientError,
             max_backoff: Duration::from_secs(20),
             use_static_exponential_base: false,
+            retry_spec: None,
         }
     }
 
@@ -450,6 +556,63 @@ impl RetryConfig {
     pub fn use_static_exponential_base(&self) -> bool {
         self.use_static_exponential_base
     }
+
+    /// Set the SDK-internal retry spec.
+    #[doc(hidden)]
+    pub fn with_retry_spec(mut self, retry_spec: RetrySpec) -> Self {
+        self.retry_spec = Some(retry_spec);
+        self
+    }
+
+    /// Returns the SDK-internal retry spec, if set.
+    #[doc(hidden)]
+    pub fn retry_spec(&self) -> Option<&RetrySpec> {
+        self.retry_spec.as_ref()
+    }
+
+    fn take_defaults_from(&mut self, other: &RetryConfig) {
+        if self.retry_spec.is_none() {
+            self.retry_spec = other.retry_spec.clone();
+        } else if let (Some(mine), Some(theirs)) = (self.retry_spec.as_mut(), &other.retry_spec) {
+            mine.take_defaults_from(theirs);
+        }
+    }
+}
+
+/// Merges [`RetryConfig`] from multiple layers in the config bag.
+///
+/// This follows the same pattern as [`MergeTimeoutConfig`](crate::timeout::MergeTimeoutConfig):
+/// the highest-priority `RetryConfig` wins, but unset fields (like `retry_spec`) are
+/// filled in from lower-priority layers via `RetryConfig::take_defaults_from`.
+#[doc(hidden)]
+#[derive(Debug)]
+pub struct MergeRetryConfig;
+
+impl Storable for MergeRetryConfig {
+    type Storer = MergeRetryConfig;
+}
+
+impl Store for MergeRetryConfig {
+    type ReturnedType<'a> = RetryConfig;
+    type StoredType = <StoreReplace<RetryConfig> as Store>::StoredType;
+
+    fn merge_iter(iter: ItemIter<'_, Self>) -> Self::ReturnedType<'_> {
+        let mut result: Option<RetryConfig> = None;
+        for rc in iter {
+            match (result.as_mut(), rc) {
+                (Some(result), Value::Set(rc)) => {
+                    result.take_defaults_from(rc);
+                }
+                (None, Value::Set(rc)) => {
+                    result = Some(rc.clone());
+                }
+                (_, Value::ExplicitlyUnset(_)) => {
+                    result = Some(RetryConfig::disabled());
+                }
+            }
+        }
+        result.unwrap_or_else(RetryConfig::disabled)
+    }
 }
 
 #[cfg(test)]
@@ -533,5 +696,53 @@ mod tests {
         assert_eq!(RetryMode::from_str("aws").ok(), None);
         assert_eq!(RetryMode::from_str("s t a n d a r d").ok(), None);
         assert_eq!(RetryMode::from_str("a d a p t i v e").ok(), None);
+    }
+
+    #[test]
+    fn merge_retry_config_preserves_retry_spec_from_lower_layer() {
+        use crate::config_bag::{ConfigBag, Layer};
+        use crate::retry::{MergeRetryConfig, RetryConfig, RetrySpec};
+
+        let mut lower = Layer::new("sdk_defaults");
+        lower.store_put(RetryConfig::standard().with_retry_spec(RetrySpec::v2_1()));
+        let mut upper = Layer::new("customer");
+        upper.store_put(RetryConfig::standard().with_max_attempts(5));
+        let bag = ConfigBag::of_layers(vec![lower, upper]);
+
+        let merged = bag.load::<MergeRetryConfig>();
+        assert_eq!(merged.max_attempts(), 5);
+        assert_eq!(merged.retry_spec(), Some(&RetrySpec::v2_1()));
+    }
+
+    #[test]
+    fn merge_retry_config_customer_explicit_retry_spec_wins() {
+        use crate::config_bag::{ConfigBag, Layer};
+        use crate::retry::{MergeRetryConfig, RetryConfig, RetrySpec};
+
+        let mut lower = Layer::new("sdk_defaults");
+        lower.store_put(RetryConfig::standard().with_retry_spec(RetrySpec::v2_1()));
+        let mut upper = Layer::new("customer");
+        upper.store_put(RetryConfig::standard().with_retry_spec(RetrySpec::v2_0()));
+        let bag = ConfigBag::of_layers(vec![lower, upper]);
+
+        let merged = bag.load::<MergeRetryConfig>();
+        assert_eq!(merged.retry_spec(), Some(&RetrySpec::v2_0()));
+    }
+
+    #[test]
+    fn merge_retry_config_long_polling_from_operation_layer() {
+        use crate::config_bag::{ConfigBag, Layer};
+        use crate::retry::{MergeRetryConfig, RetryConfig, RetrySpec};
+
+        let mut lower = Layer::new("sdk_defaults");
+        lower.store_put(RetryConfig::standard().with_retry_spec(RetrySpec::v2_1()));
+        let mut upper = Layer::new("operation");
+        upper.store_put(
+            RetryConfig::standard().with_retry_spec(RetrySpec::v2_1().with_long_polling(true)),
+        );
+        let bag = ConfigBag::of_layers(vec![lower, upper]);
+
+        let merged = bag.load::<MergeRetryConfig>();
+        assert!(merged.retry_spec().unwrap().long_polling());
     }
 }

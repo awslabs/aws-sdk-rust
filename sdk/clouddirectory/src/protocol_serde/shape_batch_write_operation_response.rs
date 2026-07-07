@@ -2,10 +2,16 @@
 pub(crate) fn de_batch_write_operation_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BatchWriteOperationResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,84 +23,132 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CreateObject" => {
                             builder = builder.set_create_object(
-                                crate::protocol_serde::shape_batch_create_object_response::de_batch_create_object_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_create_object_response::de_batch_create_object_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AttachObject" => {
                             builder = builder.set_attach_object(
-                                crate::protocol_serde::shape_batch_attach_object_response::de_batch_attach_object_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_attach_object_response::de_batch_attach_object_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DetachObject" => {
                             builder = builder.set_detach_object(
-                                crate::protocol_serde::shape_batch_detach_object_response::de_batch_detach_object_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_detach_object_response::de_batch_detach_object_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "UpdateObjectAttributes" => {
                             builder = builder.set_update_object_attributes(
                                 crate::protocol_serde::shape_batch_update_object_attributes_response::de_batch_update_object_attributes_response(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "DeleteObject" => {
                             builder = builder.set_delete_object(
-                                crate::protocol_serde::shape_batch_delete_object_response::de_batch_delete_object_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_delete_object_response::de_batch_delete_object_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AddFacetToObject" => {
                             builder = builder.set_add_facet_to_object(
                                 crate::protocol_serde::shape_batch_add_facet_to_object_response::de_batch_add_facet_to_object_response(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "RemoveFacetFromObject" => {
                             builder = builder.set_remove_facet_from_object(
                                 crate::protocol_serde::shape_batch_remove_facet_from_object_response::de_batch_remove_facet_from_object_response(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "AttachPolicy" => {
                             builder = builder.set_attach_policy(
-                                crate::protocol_serde::shape_batch_attach_policy_response::de_batch_attach_policy_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_attach_policy_response::de_batch_attach_policy_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DetachPolicy" => {
                             builder = builder.set_detach_policy(
-                                crate::protocol_serde::shape_batch_detach_policy_response::de_batch_detach_policy_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_detach_policy_response::de_batch_detach_policy_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CreateIndex" => {
                             builder = builder.set_create_index(
-                                crate::protocol_serde::shape_batch_create_index_response::de_batch_create_index_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_create_index_response::de_batch_create_index_response(tokens, _value, depth + 1)?,
                             );
                         }
                         "AttachToIndex" => {
                             builder = builder.set_attach_to_index(
-                                crate::protocol_serde::shape_batch_attach_to_index_response::de_batch_attach_to_index_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_attach_to_index_response::de_batch_attach_to_index_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DetachFromIndex" => {
                             builder = builder.set_detach_from_index(
-                                crate::protocol_serde::shape_batch_detach_from_index_response::de_batch_detach_from_index_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_detach_from_index_response::de_batch_detach_from_index_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AttachTypedLink" => {
                             builder = builder.set_attach_typed_link(
-                                crate::protocol_serde::shape_batch_attach_typed_link_response::de_batch_attach_typed_link_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_attach_typed_link_response::de_batch_attach_typed_link_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DetachTypedLink" => {
                             builder = builder.set_detach_typed_link(
-                                crate::protocol_serde::shape_batch_detach_typed_link_response::de_batch_detach_typed_link_response(tokens, _value)?,
+                                crate::protocol_serde::shape_batch_detach_typed_link_response::de_batch_detach_typed_link_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "UpdateLinkAttributes" => {
                             builder = builder.set_update_link_attributes(
                                 crate::protocol_serde::shape_batch_update_link_attributes_response::de_batch_update_link_attributes_response(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

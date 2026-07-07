@@ -16,7 +16,11 @@ pub fn ser_replica_modifications(
 #[allow(clippy::needless_question_mark)]
 pub fn de_replica_modifications(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReplicaModifications, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReplicaModifications::builder();
     while let Some(mut tag) = decoder.next_tag() {

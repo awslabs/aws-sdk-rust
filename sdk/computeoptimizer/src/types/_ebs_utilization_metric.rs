@@ -20,6 +20,12 @@ pub struct EbsUtilizationMetric {
     /// <li>
     /// <p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p>
     /// <p>Unit: Bytes</p></li>
+    /// <li>
+    /// <p><code>VolumeIOPSExceeded</code> - Indicates whether the volume's provisioned IOPS performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned IOPS were exceeded; a value of <code>0</code> means they were not.</p>
+    /// <p>Unit: None</p></li>
+    /// <li>
+    /// <p><code>VolumeThroughputExceeded</code> - Indicates whether the volume's provisioned throughput performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned throughput was exceeded; a value of <code>0</code> means it was not.</p>
+    /// <p>Unit: None</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::EbsMetricName>,
     /// <p>The statistic of the utilization metric.</p>
@@ -45,6 +51,12 @@ impl EbsUtilizationMetric {
     /// <li>
     /// <p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p>
     /// <p>Unit: Bytes</p></li>
+    /// <li>
+    /// <p><code>VolumeIOPSExceeded</code> - Indicates whether the volume's provisioned IOPS performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned IOPS were exceeded; a value of <code>0</code> means they were not.</p>
+    /// <p>Unit: None</p></li>
+    /// <li>
+    /// <p><code>VolumeThroughputExceeded</code> - Indicates whether the volume's provisioned throughput performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned throughput was exceeded; a value of <code>0</code> means it was not.</p>
+    /// <p>Unit: None</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::EbsMetricName> {
         self.name.as_ref()
@@ -91,6 +103,12 @@ impl EbsUtilizationMetricBuilder {
     /// <li>
     /// <p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p>
     /// <p>Unit: Bytes</p></li>
+    /// <li>
+    /// <p><code>VolumeIOPSExceeded</code> - Indicates whether the volume's provisioned IOPS performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned IOPS were exceeded; a value of <code>0</code> means they were not.</p>
+    /// <p>Unit: None</p></li>
+    /// <li>
+    /// <p><code>VolumeThroughputExceeded</code> - Indicates whether the volume's provisioned throughput performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned throughput was exceeded; a value of <code>0</code> means it was not.</p>
+    /// <p>Unit: None</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::EbsMetricName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -111,6 +129,12 @@ impl EbsUtilizationMetricBuilder {
     /// <li>
     /// <p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p>
     /// <p>Unit: Bytes</p></li>
+    /// <li>
+    /// <p><code>VolumeIOPSExceeded</code> - Indicates whether the volume's provisioned IOPS performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned IOPS were exceeded; a value of <code>0</code> means they were not.</p>
+    /// <p>Unit: None</p></li>
+    /// <li>
+    /// <p><code>VolumeThroughputExceeded</code> - Indicates whether the volume's provisioned throughput performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned throughput was exceeded; a value of <code>0</code> means it was not.</p>
+    /// <p>Unit: None</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::EbsMetricName>) -> Self {
         self.name = input;
@@ -131,6 +155,12 @@ impl EbsUtilizationMetricBuilder {
     /// <li>
     /// <p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p>
     /// <p>Unit: Bytes</p></li>
+    /// <li>
+    /// <p><code>VolumeIOPSExceeded</code> - Indicates whether the volume's provisioned IOPS performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned IOPS were exceeded; a value of <code>0</code> means they were not.</p>
+    /// <p>Unit: None</p></li>
+    /// <li>
+    /// <p><code>VolumeThroughputExceeded</code> - Indicates whether the volume's provisioned throughput performance was exceeded in a specified period of time. A value of <code>1</code> means the provisioned throughput was exceeded; a value of <code>0</code> means it was not.</p>
+    /// <p>Unit: None</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::EbsMetricName> {
         &self.name

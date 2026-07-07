@@ -28,10 +28,16 @@ pub fn ser_evaluation_config(
 pub(crate) fn de_evaluation_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,12 +63,13 @@ where
                     }
                     variant = match key.as_ref() {
                         "automated" => Some(crate::types::EvaluationConfig::Automated(
-                            crate::protocol_serde::shape_automated_evaluation_config::de_automated_evaluation_config(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'automated' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_automated_evaluation_config::de_automated_evaluation_config(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'automated' cannot be null")
+                                })?,
                         )),
                         "human" => Some(crate::types::EvaluationConfig::Human(
-                            crate::protocol_serde::shape_human_evaluation_config::de_human_evaluation_config(tokens, _value)?
+                            crate::protocol_serde::shape_human_evaluation_config::de_human_evaluation_config(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'human' cannot be null"))?,
                         )),
                         _ => {

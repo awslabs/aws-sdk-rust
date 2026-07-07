@@ -76,6 +76,8 @@ pub(crate) fn de_get_route_response(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -89,10 +91,14 @@ pub(crate) fn de_get_route_response(
                     );
                 }
                 "responseModels" => {
-                    builder = builder.set_response_models(crate::protocol_serde::shape_route_models::de_route_models(tokens, _value)?);
+                    builder = builder.set_response_models(crate::protocol_serde::shape_route_models::de_route_models(tokens, _value, depth + 1)?);
                 }
                 "responseParameters" => {
-                    builder = builder.set_response_parameters(crate::protocol_serde::shape_route_parameters::de_route_parameters(tokens, _value)?);
+                    builder = builder.set_response_parameters(crate::protocol_serde::shape_route_parameters::de_route_parameters(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "routeResponseId" => {
                     builder = builder.set_route_response_id(

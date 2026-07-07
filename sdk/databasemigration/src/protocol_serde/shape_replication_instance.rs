@@ -2,10 +2,16 @@
 pub(crate) fn de_replication_instance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReplicationInstance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,7 +58,9 @@ where
                         "VpcSecurityGroups" => {
                             builder = builder.set_vpc_security_groups(
                                 crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -65,7 +73,7 @@ where
                         }
                         "ReplicationSubnetGroup" => {
                             builder = builder.set_replication_subnet_group(
-                                crate::protocol_serde::shape_replication_subnet_group::de_replication_subnet_group(tokens, _value)?,
+                                crate::protocol_serde::shape_replication_subnet_group::de_replication_subnet_group(tokens, _value, depth + 1)?,
                             );
                         }
                         "PreferredMaintenanceWindow" => {
@@ -78,7 +86,9 @@ where
                         "PendingModifiedValues" => {
                             builder = builder.set_pending_modified_values(
                                 crate::protocol_serde::shape_replication_pending_modified_values::de_replication_pending_modified_values(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -126,18 +136,20 @@ where
                         }
                         "ReplicationInstancePublicIpAddresses" => {
                             builder = builder.set_replication_instance_public_ip_addresses(
-                                    crate::protocol_serde::shape_replication_instance_public_ip_address_list::de_replication_instance_public_ip_address_list(tokens, _value)?
+                                    crate::protocol_serde::shape_replication_instance_public_ip_address_list::de_replication_instance_public_ip_address_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "ReplicationInstancePrivateIpAddresses" => {
                             builder = builder.set_replication_instance_private_ip_addresses(
-                                    crate::protocol_serde::shape_replication_instance_private_ip_address_list::de_replication_instance_private_ip_address_list(tokens, _value)?
+                                    crate::protocol_serde::shape_replication_instance_private_ip_address_list::de_replication_instance_private_ip_address_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "ReplicationInstanceIpv6Addresses" => {
                             builder = builder.set_replication_instance_ipv6_addresses(
                                 crate::protocol_serde::shape_replication_instance_ipv6_address_list::de_replication_instance_ipv6_address_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -173,7 +185,11 @@ where
                         }
                         "KerberosAuthenticationSettings" => {
                             builder = builder.set_kerberos_authentication_settings(
-                                crate::protocol_serde::shape_kerberos_authentication_settings::de_kerberos_authentication_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_kerberos_authentication_settings::de_kerberos_authentication_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

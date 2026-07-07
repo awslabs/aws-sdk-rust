@@ -137,6 +137,8 @@ pub(crate) fn de_describe_dashboard_snapshot_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -191,7 +193,9 @@ pub(crate) fn de_describe_dashboard_snapshot_job(
                 }
                 "SnapshotConfiguration" => {
                     builder = builder.set_snapshot_configuration(crate::protocol_serde::shape_snapshot_configuration::de_snapshot_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "SnapshotJobId" => {
@@ -210,7 +214,11 @@ pub(crate) fn de_describe_dashboard_snapshot_job(
                 }
                 "UserConfiguration" => {
                     builder = builder.set_user_configuration(
-                        crate::protocol_serde::shape_snapshot_user_configuration_redacted::de_snapshot_user_configuration_redacted(tokens, _value)?,
+                        crate::protocol_serde::shape_snapshot_user_configuration_redacted::de_snapshot_user_configuration_redacted(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

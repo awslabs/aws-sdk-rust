@@ -24,7 +24,9 @@ impl crate::operation::update_game_server_group::builders::UpdateGameServerGroup
 ///
 /// <p><b>This API works with the following fleet types:</b> EC2 (FleetIQ)</p>
 /// <p>Updates Amazon GameLift Servers FleetIQ-specific properties for a game server group. Many Auto Scaling group properties are updated on the Auto Scaling group directly, including the launch template, Auto Scaling policies, and maximum/minimum/desired instance counts.</p>
-/// <p>To update the game server group, specify the game server group ID and provide the updated values. Before applying the updates, the new values are validated to ensure that Amazon GameLift Servers FleetIQ can continue to perform instance balancing activity. If successful, a <code>GameServerGroup</code> object is returned.</p>
+/// <p>To update the game server group, specify the game server group ID and provide the updated values. Before applying the updates, the new values are validated to ensure that Amazon GameLift Servers FleetIQ can continue to perform instance balancing activity. If successful, a <code>GameServerGroup</code> object is returned.</p><note>
+/// <p>Target tracking Auto Scaling policies on the Auto Scaling group cannot be updated through the Amazon Web Services Management Console. Instead, use the Amazon Elastic Compute Cloud Auto Scaling <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutScalingPolicy.html"> <code>PutScalingPolicy</code> </a> API action to update these policies.</p>
+/// </note>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift Servers FleetIQ Guide</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -2,10 +2,16 @@
 pub(crate) fn de_chime_webhook_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ChimeWebhookConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,8 +43,11 @@ where
                             );
                         }
                         "SnsTopicArns" => {
-                            builder =
-                                builder.set_sns_topic_arns(crate::protocol_serde::shape_sns_topic_arn_list::de_sns_topic_arn_list(tokens, _value)?);
+                            builder = builder.set_sns_topic_arns(crate::protocol_serde::shape_sns_topic_arn_list::de_sns_topic_arn_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ConfigurationName" => {
                             builder = builder.set_configuration_name(
@@ -55,7 +64,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "State" => {
                             builder = builder.set_state(

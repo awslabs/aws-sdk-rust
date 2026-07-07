@@ -28,19 +28,31 @@ pub fn ser_metric_stream_statistics_configuration(
 
 pub(crate) fn de_metric_stream_statistics_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MetricStreamStatisticsConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::MetricStreamStatisticsConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::MetricStreamStatisticsConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "IncludeMetrics" => builder.set_include_metrics(Some(
-                crate::protocol_serde::shape_metric_stream_statistics_include_metrics::de_metric_stream_statistics_include_metrics(decoder)?,
+                crate::protocol_serde::shape_metric_stream_statistics_include_metrics::de_metric_stream_statistics_include_metrics(
+                    decoder,
+                    depth + 1,
+                )?,
             )),
             "AdditionalStatistics" => builder.set_additional_statistics(Some(
                 crate::protocol_serde::shape_metric_stream_statistics_additional_statistics::de_metric_stream_statistics_additional_statistics(
                     decoder,
+                    depth + 1,
                 )?,
             )),
             _ => {
@@ -61,13 +73,13 @@ pub(crate) fn de_metric_stream_statistics_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

@@ -159,6 +159,8 @@ pub(crate) fn de_get_run_task(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -202,7 +204,7 @@ pub(crate) fn de_get_run_task(
                     );
                 }
                 "imageDetails" => {
-                    builder = builder.set_image_details(crate::protocol_serde::shape_image_details::de_image_details(tokens, _value)?);
+                    builder = builder.set_image_details(crate::protocol_serde::shape_image_details::de_image_details(tokens, _value, depth + 1)?);
                 }
                 "instanceType" => {
                     builder = builder.set_instance_type(

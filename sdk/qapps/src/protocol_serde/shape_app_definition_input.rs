@@ -24,10 +24,16 @@ pub fn ser_app_definition_input(
 pub(crate) fn de_app_definition_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AppDefinitionInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cards" => {
-                            builder = builder.set_cards(crate::protocol_serde::shape_card_list::de_card_list(tokens, _value)?);
+                            builder = builder.set_cards(crate::protocol_serde::shape_card_list::de_card_list(tokens, _value, depth + 1)?);
                         }
                         "initialPrompt" => {
                             builder = builder.set_initial_prompt(

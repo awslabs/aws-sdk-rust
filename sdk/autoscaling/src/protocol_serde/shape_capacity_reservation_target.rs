@@ -32,7 +32,11 @@ pub fn ser_capacity_reservation_target(
 #[allow(clippy::needless_question_mark)]
 pub fn de_capacity_reservation_target(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CapacityReservationTarget, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CapacityReservationTarget::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -40,7 +44,7 @@ pub fn de_capacity_reservation_target(
             s if s.matches("CapacityReservationIds") /* CapacityReservationIds com.amazonaws.autoscaling#CapacityReservationTarget$CapacityReservationIds */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_ids::de_capacity_reservation_ids(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_ids::de_capacity_reservation_ids(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -50,7 +54,7 @@ pub fn de_capacity_reservation_target(
             s if s.matches("CapacityReservationResourceGroupArns") /* CapacityReservationResourceGroupArns com.amazonaws.autoscaling#CapacityReservationTarget$CapacityReservationResourceGroupArns */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_resource_group_arns::de_capacity_reservation_resource_group_arns(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_resource_group_arns::de_capacity_reservation_resource_group_arns(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_remote_access_session<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RemoteAccessSession>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,7 +75,7 @@ where
                             )?);
                         }
                         "device" => {
-                            builder = builder.set_device(crate::protocol_serde::shape_device::de_device(tokens, _value)?);
+                            builder = builder.set_device(crate::protocol_serde::shape_device::de_device(tokens, _value, depth + 1)?);
                         }
                         "instanceArn" => {
                             builder = builder.set_instance_arn(
@@ -86,7 +92,11 @@ where
                             );
                         }
                         "deviceMinutes" => {
-                            builder = builder.set_device_minutes(crate::protocol_serde::shape_device_minutes::de_device_minutes(tokens, _value)?);
+                            builder = builder.set_device_minutes(crate::protocol_serde::shape_device_minutes::de_device_minutes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "endpoint" => {
                             builder = builder.set_endpoint(
@@ -113,10 +123,11 @@ where
                             builder = builder.set_skip_app_resign(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "vpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "deviceProxy" => {
-                            builder = builder.set_device_proxy(crate::protocol_serde::shape_device_proxy::de_device_proxy(tokens, _value)?);
+                            builder =
+                                builder.set_device_proxy(crate::protocol_serde::shape_device_proxy::de_device_proxy(tokens, _value, depth + 1)?);
                         }
                         "appUpload" => {
                             builder = builder.set_app_upload(
@@ -127,7 +138,9 @@ where
                         }
                         "endpoints" => {
                             builder = builder.set_endpoints(crate::protocol_serde::shape_remote_access_endpoints::de_remote_access_endpoints(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

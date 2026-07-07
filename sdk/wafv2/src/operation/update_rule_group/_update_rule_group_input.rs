@@ -28,6 +28,8 @@ pub struct UpdateRuleGroupInput {
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
+    /// <p>The monetization configuration for the rule group. Provide this when any rule in the rule group uses the <code>Monetize</code> action.</p>
+    pub monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl UpdateRuleGroupInput {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -75,6 +77,10 @@ impl UpdateRuleGroupInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
         self.custom_response_bodies.as_ref()
     }
+    /// <p>The monetization configuration for the rule group. Provide this when any rule in the rule group uses the <code>Monetize</code> action.</p>
+    pub fn monetization_config(&self) -> ::std::option::Option<&crate::types::MonetizationConfig> {
+        self.monetization_config.as_ref()
+    }
 }
 impl UpdateRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
@@ -95,6 +101,7 @@ pub struct UpdateRuleGroupInputBuilder {
     pub(crate) visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
     pub(crate) custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
+    pub(crate) monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl UpdateRuleGroupInputBuilder {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -258,6 +265,20 @@ impl UpdateRuleGroupInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
         &self.custom_response_bodies
     }
+    /// <p>The monetization configuration for the rule group. Provide this when any rule in the rule group uses the <code>Monetize</code> action.</p>
+    pub fn monetization_config(mut self, input: crate::types::MonetizationConfig) -> Self {
+        self.monetization_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The monetization configuration for the rule group. Provide this when any rule in the rule group uses the <code>Monetize</code> action.</p>
+    pub fn set_monetization_config(mut self, input: ::std::option::Option<crate::types::MonetizationConfig>) -> Self {
+        self.monetization_config = input;
+        self
+    }
+    /// <p>The monetization configuration for the rule group. Provide this when any rule in the rule group uses the <code>Monetize</code> action.</p>
+    pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
+        &self.monetization_config
+    }
     /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
     pub fn build(
         self,
@@ -271,6 +292,7 @@ impl UpdateRuleGroupInputBuilder {
             visibility_config: self.visibility_config,
             lock_token: self.lock_token,
             custom_response_bodies: self.custom_response_bodies,
+            monetization_config: self.monetization_config,
         })
     }
 }

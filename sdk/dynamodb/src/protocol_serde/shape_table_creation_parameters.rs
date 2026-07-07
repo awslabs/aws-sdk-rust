@@ -69,10 +69,16 @@ pub fn ser_table_creation_parameters(
 pub(crate) fn de_table_creation_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TableCreationParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -91,11 +97,11 @@ where
                         }
                         "AttributeDefinitions" => {
                             builder = builder.set_attribute_definitions(
-                                crate::protocol_serde::shape_attribute_definitions::de_attribute_definitions(tokens, _value)?,
+                                crate::protocol_serde::shape_attribute_definitions::de_attribute_definitions(tokens, _value, depth + 1)?,
                             );
                         }
                         "KeySchema" => {
-                            builder = builder.set_key_schema(crate::protocol_serde::shape_key_schema::de_key_schema(tokens, _value)?);
+                            builder = builder.set_key_schema(crate::protocol_serde::shape_key_schema::de_key_schema(tokens, _value, depth + 1)?);
                         }
                         "BillingMode" => {
                             builder = builder.set_billing_mode(
@@ -106,21 +112,26 @@ where
                         }
                         "ProvisionedThroughput" => {
                             builder = builder.set_provisioned_throughput(
-                                crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens, _value)?,
+                                crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens, _value, depth + 1)?,
                             );
                         }
                         "OnDemandThroughput" => {
                             builder = builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SSESpecification" => {
-                            builder =
-                                builder.set_sse_specification(crate::protocol_serde::shape_sse_specification::de_sse_specification(tokens, _value)?);
+                            builder = builder.set_sse_specification(crate::protocol_serde::shape_sse_specification::de_sse_specification(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "GlobalSecondaryIndexes" => {
                             builder = builder.set_global_secondary_indexes(
-                                crate::protocol_serde::shape_global_secondary_index_list::de_global_secondary_index_list(tokens, _value)?,
+                                crate::protocol_serde::shape_global_secondary_index_list::de_global_secondary_index_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

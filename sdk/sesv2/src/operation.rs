@@ -289,6 +289,9 @@ pub mod put_email_identity_mail_from_attributes;
 /// Types for the `PutSuppressedDestination` operation.
 pub mod put_suppressed_destination;
 
+/// Types for the `PutTenantSuppressionAttributes` operation.
+pub mod put_tenant_suppression_attributes;
+
 /// Types for the `SendBulkEmail` operation.
 pub mod send_bulk_email;
 

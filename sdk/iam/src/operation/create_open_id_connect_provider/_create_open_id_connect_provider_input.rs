@@ -14,7 +14,9 @@ pub struct CreateOpenIdConnectProviderInput {
     /// <p>This parameter is optional. If it is not included, IAM will retrieve and use the top intermediate certificate authority (CA) thumbprint of the OpenID Connect identity provider server certificate.</p>
     /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>
     /// <p>For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code></p>
-    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p>
+    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p><note>
+    /// <p>If your OIDC provider's discovery endpoint and JWKS endpoint (<code>jwks_uri</code>) use different certificates or hosts, include the thumbprints for both endpoints in this list.</p>
+    /// </note>
     pub thumbprint_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p><note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
@@ -39,7 +41,9 @@ impl CreateOpenIdConnectProviderInput {
     /// <p>This parameter is optional. If it is not included, IAM will retrieve and use the top intermediate certificate authority (CA) thumbprint of the OpenID Connect identity provider server certificate.</p>
     /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>
     /// <p>For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code></p>
-    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p>
+    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p><note>
+    /// <p>If your OIDC provider's discovery endpoint and JWKS endpoint (<code>jwks_uri</code>) use different certificates or hosts, include the thumbprints for both endpoints in this list.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thumbprint_list.is_none()`.
     pub fn thumbprint_list(&self) -> &[::std::string::String] {
@@ -123,7 +127,9 @@ impl CreateOpenIdConnectProviderInputBuilder {
     /// <p>This parameter is optional. If it is not included, IAM will retrieve and use the top intermediate certificate authority (CA) thumbprint of the OpenID Connect identity provider server certificate.</p>
     /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>
     /// <p>For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code></p>
-    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p>
+    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p><note>
+    /// <p>If your OIDC provider's discovery endpoint and JWKS endpoint (<code>jwks_uri</code>) use different certificates or hosts, include the thumbprints for both endpoints in this list.</p>
+    /// </note>
     pub fn thumbprint_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thumbprint_list.unwrap_or_default();
         v.push(input.into());
@@ -134,7 +140,9 @@ impl CreateOpenIdConnectProviderInputBuilder {
     /// <p>This parameter is optional. If it is not included, IAM will retrieve and use the top intermediate certificate authority (CA) thumbprint of the OpenID Connect identity provider server certificate.</p>
     /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>
     /// <p>For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code></p>
-    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p>
+    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p><note>
+    /// <p>If your OIDC provider's discovery endpoint and JWKS endpoint (<code>jwks_uri</code>) use different certificates or hosts, include the thumbprints for both endpoints in this list.</p>
+    /// </note>
     pub fn set_thumbprint_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.thumbprint_list = input;
         self
@@ -143,7 +151,9 @@ impl CreateOpenIdConnectProviderInputBuilder {
     /// <p>This parameter is optional. If it is not included, IAM will retrieve and use the top intermediate certificate authority (CA) thumbprint of the OpenID Connect identity provider server certificate.</p>
     /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>
     /// <p>For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code></p>
-    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p>
+    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p><note>
+    /// <p>If your OIDC provider's discovery endpoint and JWKS endpoint (<code>jwks_uri</code>) use different certificates or hosts, include the thumbprints for both endpoints in this list.</p>
+    /// </note>
     pub fn get_thumbprint_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.thumbprint_list
     }

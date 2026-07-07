@@ -2,10 +2,16 @@
 pub(crate) fn de_property_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PropertyResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,11 +23,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "definition" => {
                             builder = builder.set_definition(
-                                crate::protocol_serde::shape_property_definition_response::de_property_definition_response(tokens, _value)?,
+                                crate::protocol_serde::shape_property_definition_response::de_property_definition_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_data_value::de_data_value(tokens, _value)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_data_value::de_data_value(tokens, _value, depth + 1)?);
                         }
                         "areAllPropertyValuesReturned" => {
                             builder = builder

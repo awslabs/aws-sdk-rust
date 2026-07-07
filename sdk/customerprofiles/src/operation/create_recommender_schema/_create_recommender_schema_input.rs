@@ -7,7 +7,7 @@ pub struct CreateRecommenderSchemaInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the recommender schema. The name must be unique within the domain.</p>
     pub recommender_schema_name: ::std::option::Option<::std::string::String>,
-    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. Currently only the <code>_webAnalytics</code> key is supported.</p>
+    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported.</p>
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::RecommenderSchemaField>>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -21,7 +21,7 @@ impl CreateRecommenderSchemaInput {
     pub fn recommender_schema_name(&self) -> ::std::option::Option<&str> {
         self.recommender_schema_name.as_deref()
     }
-    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. Currently only the <code>_webAnalytics</code> key is supported.</p>
+    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported.</p>
     pub fn fields(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::RecommenderSchemaField>>> {
@@ -84,14 +84,14 @@ impl CreateRecommenderSchemaInputBuilder {
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
-    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. Currently only the <code>_webAnalytics</code> key is supported.</p>
+    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported.</p>
     pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::RecommenderSchemaField>) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.fields = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. Currently only the <code>_webAnalytics</code> key is supported.</p>
+    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported.</p>
     pub fn set_fields(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::RecommenderSchemaField>>>,
@@ -99,7 +99,7 @@ impl CreateRecommenderSchemaInputBuilder {
         self.fields = input;
         self
     }
-    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. Currently only the <code>_webAnalytics</code> key is supported.</p>
+    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported.</p>
     pub fn get_fields(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::RecommenderSchemaField>>> {

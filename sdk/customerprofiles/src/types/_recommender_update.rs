@@ -14,6 +14,8 @@ pub struct RecommenderUpdate {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the update operation failed, provides the reason for the failure.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the recommender version associated with this update operation.</p>
+    pub recommender_version_name: ::std::option::Option<::std::string::String>,
 }
 impl RecommenderUpdate {
     /// <p>The updated configuration settings applied to the recommender during this update.</p>
@@ -36,6 +38,10 @@ impl RecommenderUpdate {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The name of the recommender version associated with this update operation.</p>
+    pub fn recommender_version_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_version_name.as_deref()
+    }
 }
 impl RecommenderUpdate {
     /// Creates a new builder-style object to manufacture [`RecommenderUpdate`](crate::types::RecommenderUpdate).
@@ -53,6 +59,7 @@ pub struct RecommenderUpdateBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) recommender_version_name: ::std::option::Option<::std::string::String>,
 }
 impl RecommenderUpdateBuilder {
     /// <p>The updated configuration settings applied to the recommender during this update.</p>
@@ -125,6 +132,20 @@ impl RecommenderUpdateBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
+    /// <p>The name of the recommender version associated with this update operation.</p>
+    pub fn recommender_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender version associated with this update operation.</p>
+    pub fn set_recommender_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_version_name = input;
+        self
+    }
+    /// <p>The name of the recommender version associated with this update operation.</p>
+    pub fn get_recommender_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_version_name
+    }
     /// Consumes the builder and constructs a [`RecommenderUpdate`](crate::types::RecommenderUpdate).
     pub fn build(self) -> crate::types::RecommenderUpdate {
         crate::types::RecommenderUpdate {
@@ -133,6 +154,7 @@ impl RecommenderUpdateBuilder {
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
             failure_reason: self.failure_reason,
+            recommender_version_name: self.recommender_version_name,
         }
     }
 }

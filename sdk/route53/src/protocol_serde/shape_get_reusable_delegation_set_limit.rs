@@ -87,6 +87,8 @@ pub fn de_get_reusable_delegation_set_limit(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetReusableDelegationSetLimitResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetReusableDelegationSetLimitResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -97,7 +99,7 @@ pub fn de_get_reusable_delegation_set_limit(
             s if s.matches("Limit") /* Limit com.amazonaws.route53.synthetic#GetReusableDelegationSetLimitOutput$Limit */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_reusable_delegation_set_limit::de_reusable_delegation_set_limit(&mut tag)
+                        crate::protocol_serde::shape_reusable_delegation_set_limit::de_reusable_delegation_set_limit(&mut tag, depth + 1)
                         ?
                     )
                 ;

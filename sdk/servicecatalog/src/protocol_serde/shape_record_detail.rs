@@ -2,10 +2,16 @@
 pub(crate) fn de_record_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecordDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -91,10 +97,11 @@ where
                             );
                         }
                         "RecordErrors" => {
-                            builder = builder.set_record_errors(crate::protocol_serde::shape_record_errors::de_record_errors(tokens, _value)?);
+                            builder =
+                                builder.set_record_errors(crate::protocol_serde::shape_record_errors::de_record_errors(tokens, _value, depth + 1)?);
                         }
                         "RecordTags" => {
-                            builder = builder.set_record_tags(crate::protocol_serde::shape_record_tags::de_record_tags(tokens, _value)?);
+                            builder = builder.set_record_tags(crate::protocol_serde::shape_record_tags::de_record_tags(tokens, _value, depth + 1)?);
                         }
                         "LaunchRoleArn" => {
                             builder = builder.set_launch_role_arn(

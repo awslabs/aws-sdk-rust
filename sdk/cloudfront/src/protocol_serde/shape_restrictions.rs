@@ -16,7 +16,11 @@ pub fn ser_restrictions(
 #[allow(clippy::needless_question_mark)]
 pub fn de_restrictions(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Restrictions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Restrictions::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_restrictions(
             s if s.matches("GeoRestriction") /* GeoRestriction com.amazonaws.cloudfront#Restrictions$GeoRestriction */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_geo_restriction::de_geo_restriction(&mut tag)
+                        crate::protocol_serde::shape_geo_restriction::de_geo_restriction(&mut tag, depth + 1)
                         ?
                     )
                 ;

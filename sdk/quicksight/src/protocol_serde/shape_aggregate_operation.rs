@@ -39,10 +39,16 @@ pub fn ser_aggregate_operation(
 pub(crate) fn de_aggregate_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AggregateOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,16 +67,22 @@ where
                         }
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "GroupByColumnNames" => {
                             builder = builder.set_group_by_column_names(
-                                crate::protocol_serde::shape_group_by_column_name_list::de_group_by_column_name_list(tokens, _value)?,
+                                crate::protocol_serde::shape_group_by_column_name_list::de_group_by_column_name_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Aggregations" => {
-                            builder = builder.set_aggregations(crate::protocol_serde::shape_aggregation_list::de_aggregation_list(tokens, _value)?);
+                            builder = builder.set_aggregations(crate::protocol_serde::shape_aggregation_list::de_aggregation_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

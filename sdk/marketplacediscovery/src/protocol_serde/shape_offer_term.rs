@@ -2,10 +2,16 @@
 pub(crate) fn de_offer_term<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OfferTerm>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,71 +37,77 @@ where
                     }
                     variant = match key.as_ref() {
                         "byolPricingTerm" => Some(crate::types::OfferTerm::ByolPricingTerm(
-                            crate::protocol_serde::shape_byol_pricing_term::de_byol_pricing_term(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_byol_pricing_term::de_byol_pricing_term(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'byolPricingTerm' cannot be null")
                             })?,
                         )),
                         "configurableUpfrontPricingTerm" => Some(crate::types::OfferTerm::ConfigurableUpfrontPricingTerm(
-                            crate::protocol_serde::shape_configurable_upfront_pricing_term::de_configurable_upfront_pricing_term(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'configurableUpfrontPricingTerm' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_configurable_upfront_pricing_term::de_configurable_upfront_pricing_term(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'configurableUpfrontPricingTerm' cannot be null",
+                                )
+                            })?,
                         )),
                         "fixedUpfrontPricingTerm" => Some(crate::types::OfferTerm::FixedUpfrontPricingTerm(
-                            crate::protocol_serde::shape_fixed_upfront_pricing_term::de_fixed_upfront_pricing_term(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_fixed_upfront_pricing_term::de_fixed_upfront_pricing_term(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'fixedUpfrontPricingTerm' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "freeTrialPricingTerm" => Some(crate::types::OfferTerm::FreeTrialPricingTerm(
-                            crate::protocol_serde::shape_free_trial_pricing_term::de_free_trial_pricing_term(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'freeTrialPricingTerm' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_free_trial_pricing_term::de_free_trial_pricing_term(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'freeTrialPricingTerm' cannot be null"),
+                            )?,
                         )),
                         "legalTerm" => Some(crate::types::OfferTerm::LegalTerm(
-                            crate::protocol_serde::shape_legal_term::de_legal_term(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_legal_term::de_legal_term(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'legalTerm' cannot be null")
                             })?,
                         )),
                         "paymentScheduleTerm" => Some(crate::types::OfferTerm::PaymentScheduleTerm(
-                            crate::protocol_serde::shape_payment_schedule_term::de_payment_schedule_term(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'paymentScheduleTerm' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_payment_schedule_term::de_payment_schedule_term(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'paymentScheduleTerm' cannot be null"),
+                            )?,
                         )),
                         "recurringPaymentTerm" => Some(crate::types::OfferTerm::RecurringPaymentTerm(
-                            crate::protocol_serde::shape_recurring_payment_term::de_recurring_payment_term(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'recurringPaymentTerm' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_recurring_payment_term::de_recurring_payment_term(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'recurringPaymentTerm' cannot be null"),
+                            )?,
                         )),
                         "renewalTerm" => Some(crate::types::OfferTerm::RenewalTerm(
-                            crate::protocol_serde::shape_renewal_term::de_renewal_term(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_renewal_term::de_renewal_term(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'renewalTerm' cannot be null")
                             })?,
                         )),
                         "supportTerm" => Some(crate::types::OfferTerm::SupportTerm(
-                            crate::protocol_serde::shape_support_term::de_support_term(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_support_term::de_support_term(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'supportTerm' cannot be null")
                             })?,
                         )),
                         "usageBasedPricingTerm" => Some(crate::types::OfferTerm::UsageBasedPricingTerm(
-                            crate::protocol_serde::shape_usage_based_pricing_term::de_usage_based_pricing_term(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'usageBasedPricingTerm' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_usage_based_pricing_term::de_usage_based_pricing_term(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'usageBasedPricingTerm' cannot be null",
+                                    )
+                                })?,
                         )),
                         "validityTerm" => Some(crate::types::OfferTerm::ValidityTerm(
-                            crate::protocol_serde::shape_validity_term::de_validity_term(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_validity_term::de_validity_term(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'validityTerm' cannot be null")
                             })?,
                         )),
                         "variablePaymentTerm" => Some(crate::types::OfferTerm::VariablePaymentTerm(
-                            crate::protocol_serde::shape_variable_payment_term::de_variable_payment_term(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'variablePaymentTerm' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_variable_payment_term::de_variable_payment_term(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'variablePaymentTerm' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

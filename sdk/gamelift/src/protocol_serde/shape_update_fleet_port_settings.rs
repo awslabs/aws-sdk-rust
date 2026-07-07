@@ -171,10 +171,11 @@ pub(crate) fn de_update_fleet_port_settings(
     crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -195,6 +196,8 @@ pub(crate) fn de_update_fleet_port_settings(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -204,13 +207,13 @@ pub(crate) fn de_update_fleet_port_settings(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

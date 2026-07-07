@@ -118,5 +118,8 @@ pub fn ser_add_output_request(
         crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_32, var_31)?;
         object_32.finish();
     }
+    if let Some(var_33) = &input.ndi_output_timecode_source {
+        object.key("ndiOutputTimecodeSource").string(var_33.as_str());
+    }
     Ok(())
 }

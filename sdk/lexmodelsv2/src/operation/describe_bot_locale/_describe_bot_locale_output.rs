@@ -19,6 +19,8 @@ pub struct DescribeBotLocaleOutput {
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     /// <p>The unified speech settings configured for the bot locale.</p>
     pub unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    /// <p>The audio filler settings configured for the bot locale.</p>
+    pub audio_filler_settings: ::std::option::Option<crate::types::AudioFillerSettings>,
     /// <p>The speech-to-text settings configured for the bot locale.</p>
     pub speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     /// <p>The number of intents defined for the locale.</p>
@@ -77,6 +79,10 @@ impl DescribeBotLocaleOutput {
     /// <p>The unified speech settings configured for the bot locale.</p>
     pub fn unified_speech_settings(&self) -> ::std::option::Option<&crate::types::UnifiedSpeechSettings> {
         self.unified_speech_settings.as_ref()
+    }
+    /// <p>The audio filler settings configured for the bot locale.</p>
+    pub fn audio_filler_settings(&self) -> ::std::option::Option<&crate::types::AudioFillerSettings> {
+        self.audio_filler_settings.as_ref()
     }
     /// <p>The speech-to-text settings configured for the bot locale.</p>
     pub fn speech_recognition_settings(&self) -> ::std::option::Option<&crate::types::SpeechRecognitionSettings> {
@@ -157,6 +163,7 @@ pub struct DescribeBotLocaleOutputBuilder {
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     pub(crate) unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    pub(crate) audio_filler_settings: ::std::option::Option<crate::types::AudioFillerSettings>,
     pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) intents_count: ::std::option::Option<i32>,
     pub(crate) slot_types_count: ::std::option::Option<i32>,
@@ -283,6 +290,20 @@ impl DescribeBotLocaleOutputBuilder {
     /// <p>The unified speech settings configured for the bot locale.</p>
     pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
         &self.unified_speech_settings
+    }
+    /// <p>The audio filler settings configured for the bot locale.</p>
+    pub fn audio_filler_settings(mut self, input: crate::types::AudioFillerSettings) -> Self {
+        self.audio_filler_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The audio filler settings configured for the bot locale.</p>
+    pub fn set_audio_filler_settings(mut self, input: ::std::option::Option<crate::types::AudioFillerSettings>) -> Self {
+        self.audio_filler_settings = input;
+        self
+    }
+    /// <p>The audio filler settings configured for the bot locale.</p>
+    pub fn get_audio_filler_settings(&self) -> &::std::option::Option<crate::types::AudioFillerSettings> {
+        &self.audio_filler_settings
     }
     /// <p>The speech-to-text settings configured for the bot locale.</p>
     pub fn speech_recognition_settings(mut self, input: crate::types::SpeechRecognitionSettings) -> Self {
@@ -490,6 +511,7 @@ impl DescribeBotLocaleOutputBuilder {
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
             unified_speech_settings: self.unified_speech_settings,
+            audio_filler_settings: self.audio_filler_settings,
             speech_recognition_settings: self.speech_recognition_settings,
             intents_count: self.intents_count,
             slot_types_count: self.slot_types_count,

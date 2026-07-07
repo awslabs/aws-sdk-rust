@@ -2,10 +2,16 @@
 pub(crate) fn de_source_connection_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SourceConnectionDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,11 +30,15 @@ where
                         }
                         "ConnectionParameters" => {
                             builder = builder.set_connection_parameters(
-                                crate::protocol_serde::shape_source_connection_parameters::de_source_connection_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_source_connection_parameters::de_source_connection_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "LastSync" => {
-                            builder = builder.set_last_sync(crate::protocol_serde::shape_last_sync::de_last_sync(tokens, _value)?);
+                            builder = builder.set_last_sync(crate::protocol_serde::shape_last_sync::de_last_sync(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -101,13 +101,19 @@ pub(crate) fn de_create_proxy_rules(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProxyRuleGroup" => {
-                    builder = builder.set_proxy_rule_group(crate::protocol_serde::shape_proxy_rule_group::de_proxy_rule_group(tokens, _value)?);
+                    builder = builder.set_proxy_rule_group(crate::protocol_serde::shape_proxy_rule_group::de_proxy_rule_group(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "UpdateToken" => {
                     builder = builder.set_update_token(

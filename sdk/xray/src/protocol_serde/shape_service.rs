@@ -2,10 +2,16 @@
 pub(crate) fn de_service<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Service>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,7 @@ where
                             );
                         }
                         "Names" => {
-                            builder = builder.set_names(crate::protocol_serde::shape_service_names::de_service_names(tokens, _value)?);
+                            builder = builder.set_names(crate::protocol_serde::shape_service_names::de_service_names(tokens, _value, depth + 1)?);
                         }
                         "Root" => {
                             builder = builder.set_root(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -69,17 +75,22 @@ where
                             )?);
                         }
                         "Edges" => {
-                            builder = builder.set_edges(crate::protocol_serde::shape_edge_list::de_edge_list(tokens, _value)?);
+                            builder = builder.set_edges(crate::protocol_serde::shape_edge_list::de_edge_list(tokens, _value, depth + 1)?);
                         }
                         "SummaryStatistics" => {
-                            builder = builder
-                                .set_summary_statistics(crate::protocol_serde::shape_service_statistics::de_service_statistics(tokens, _value)?);
+                            builder = builder.set_summary_statistics(crate::protocol_serde::shape_service_statistics::de_service_statistics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DurationHistogram" => {
-                            builder = builder.set_duration_histogram(crate::protocol_serde::shape_histogram::de_histogram(tokens, _value)?);
+                            builder =
+                                builder.set_duration_histogram(crate::protocol_serde::shape_histogram::de_histogram(tokens, _value, depth + 1)?);
                         }
                         "ResponseTimeHistogram" => {
-                            builder = builder.set_response_time_histogram(crate::protocol_serde::shape_histogram::de_histogram(tokens, _value)?);
+                            builder =
+                                builder.set_response_time_histogram(crate::protocol_serde::shape_histogram::de_histogram(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

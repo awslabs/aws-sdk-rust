@@ -49,6 +49,11 @@ pub fn ser_describe_instance_types_input_input_input(
     if let Some(var_16) = &input.next_token {
         scope_15.string(var_16);
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("IncludeUnsupportedInRegion");
+    if let Some(var_18) = &input.include_unsupported_in_region {
+        scope_17.boolean(*var_18);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

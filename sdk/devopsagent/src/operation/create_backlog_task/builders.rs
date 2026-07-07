@@ -22,7 +22,7 @@ impl crate::operation::create_backlog_task::builders::CreateBacklogTaskInputBuil
 }
 /// Fluent builder constructing a request to `CreateBacklogTask`.
 ///
-/// Creates a new backlog task in the specified agent space
+/// <p>Creates a new backlog task in the specified agent space</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBacklogTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,101 +108,101 @@ impl CreateBacklogTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier for the agent space where the task will be created
+    /// <p>The unique identifier for the agent space where the task will be created</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space where the task will be created
+    /// <p>The unique identifier for the agent space where the task will be created</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space where the task will be created
+    /// <p>The unique identifier for the agent space where the task will be created</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Optional reference information for the task
+    /// <p>Optional reference information for the task</p>
     pub fn reference(mut self, input: crate::types::ReferenceInput) -> Self {
         self.inner = self.inner.reference(input);
         self
     }
-    /// Optional reference information for the task
+    /// <p>Optional reference information for the task</p>
     pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceInput>) -> Self {
         self.inner = self.inner.set_reference(input);
         self
     }
-    /// Optional reference information for the task
+    /// <p>Optional reference information for the task</p>
     pub fn get_reference(&self) -> &::std::option::Option<crate::types::ReferenceInput> {
         self.inner.get_reference()
     }
-    /// The type of task being created
+    /// <p>The type of task being created</p>
     pub fn task_type(mut self, input: crate::types::TaskType) -> Self {
         self.inner = self.inner.task_type(input);
         self
     }
-    /// The type of task being created
+    /// <p>The type of task being created</p>
     pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::TaskType>) -> Self {
         self.inner = self.inner.set_task_type(input);
         self
     }
-    /// The type of task being created
+    /// <p>The type of task being created</p>
     pub fn get_task_type(&self) -> &::std::option::Option<crate::types::TaskType> {
         self.inner.get_task_type()
     }
-    /// The title of the backlog task
+    /// <p>The title of the backlog task</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
         self
     }
-    /// The title of the backlog task
+    /// <p>The title of the backlog task</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
     }
-    /// The title of the backlog task
+    /// <p>The title of the backlog task</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_title()
     }
-    /// Optional detailed description of the task
+    /// <p>Optional detailed description of the task</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Optional detailed description of the task
+    /// <p>Optional detailed description of the task</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Optional detailed description of the task
+    /// <p>Optional detailed description of the task</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// The priority level of the task
+    /// <p>The priority level of the task</p>
     pub fn priority(mut self, input: crate::types::Priority) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// The priority level of the task
+    /// <p>The priority level of the task</p>
     pub fn set_priority(mut self, input: ::std::option::Option<crate::types::Priority>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
-    /// The priority level of the task
+    /// <p>The priority level of the task</p>
     pub fn get_priority(&self) -> &::std::option::Option<crate::types::Priority> {
         self.inner.get_priority()
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

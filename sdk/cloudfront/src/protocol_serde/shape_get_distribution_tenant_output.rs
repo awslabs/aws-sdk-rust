@@ -28,5 +28,7 @@ pub fn de_distribution_tenant(inp: &[u8]) -> std::result::Result<crate::types::D
             "invalid root, expected DistributionTenant got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_distribution_tenant::de_distribution_tenant(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_distribution_tenant::de_distribution_tenant(&mut decoder, depth + 1)
 }

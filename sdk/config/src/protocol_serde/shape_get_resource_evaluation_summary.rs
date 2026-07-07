@@ -80,6 +80,8 @@ pub(crate) fn de_get_resource_evaluation_summary(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -100,7 +102,11 @@ pub(crate) fn de_get_resource_evaluation_summary(
                     );
                 }
                 "EvaluationStatus" => {
-                    builder = builder.set_evaluation_status(crate::protocol_serde::shape_evaluation_status::de_evaluation_status(tokens, _value)?);
+                    builder = builder.set_evaluation_status(crate::protocol_serde::shape_evaluation_status::de_evaluation_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "EvaluationStartTimestamp" => {
                     builder = builder.set_evaluation_start_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -116,10 +122,18 @@ pub(crate) fn de_get_resource_evaluation_summary(
                     );
                 }
                 "EvaluationContext" => {
-                    builder = builder.set_evaluation_context(crate::protocol_serde::shape_evaluation_context::de_evaluation_context(tokens, _value)?);
+                    builder = builder.set_evaluation_context(crate::protocol_serde::shape_evaluation_context::de_evaluation_context(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ResourceDetails" => {
-                    builder = builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens, _value)?);
+                    builder = builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -33,16 +33,28 @@ pub fn ser_rule_action(
         crate::protocol_serde::shape_challenge_action::ser_challenge_action(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.monetize {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("Monetize").start_object();
+        crate::protocol_serde::shape_monetize_action::ser_monetize_action(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_rule_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,19 +65,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Block" => {
-                            builder = builder.set_block(crate::protocol_serde::shape_block_action::de_block_action(tokens, _value)?);
+                            builder = builder.set_block(crate::protocol_serde::shape_block_action::de_block_action(tokens, _value, depth + 1)?);
                         }
                         "Allow" => {
-                            builder = builder.set_allow(crate::protocol_serde::shape_allow_action::de_allow_action(tokens, _value)?);
+                            builder = builder.set_allow(crate::protocol_serde::shape_allow_action::de_allow_action(tokens, _value, depth + 1)?);
                         }
                         "Count" => {
-                            builder = builder.set_count(crate::protocol_serde::shape_count_action::de_count_action(tokens, _value)?);
+                            builder = builder.set_count(crate::protocol_serde::shape_count_action::de_count_action(tokens, _value, depth + 1)?);
                         }
                         "Captcha" => {
-                            builder = builder.set_captcha(crate::protocol_serde::shape_captcha_action::de_captcha_action(tokens, _value)?);
+                            builder = builder.set_captcha(crate::protocol_serde::shape_captcha_action::de_captcha_action(tokens, _value, depth + 1)?);
                         }
                         "Challenge" => {
-                            builder = builder.set_challenge(crate::protocol_serde::shape_challenge_action::de_challenge_action(tokens, _value)?);
+                            builder = builder.set_challenge(crate::protocol_serde::shape_challenge_action::de_challenge_action(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "Monetize" => {
+                            builder = builder.set_monetize(crate::protocol_serde::shape_monetize_action::de_monetize_action(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

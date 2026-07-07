@@ -2,10 +2,16 @@
 pub(crate) fn de_collection_group_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CollectionGroupDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "createdDate" => {
                             builder = builder.set_created_date(
@@ -62,13 +68,31 @@ where
                         }
                         "capacityLimits" => {
                             builder = builder.set_capacity_limits(
-                                crate::protocol_serde::shape_collection_group_capacity_limits::de_collection_group_capacity_limits(tokens, _value)?,
+                                crate::protocol_serde::shape_collection_group_capacity_limits::de_collection_group_capacity_limits(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
+                        }
+                        "currentCapacity" => {
+                            builder = builder.set_current_capacity(crate::protocol_serde::shape_current_capacity::de_current_capacity(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "numberOfCollections" => {
                             builder = builder.set_number_of_collections(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "generation" => {
+                            builder = builder.set_generation(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ServerlessGeneration::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

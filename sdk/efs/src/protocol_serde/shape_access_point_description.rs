@@ -2,10 +2,16 @@
 pub(crate) fn de_access_point_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AccessPointDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "AccessPointId" => {
                             builder = builder.set_access_point_id(
@@ -54,10 +60,14 @@ where
                             );
                         }
                         "PosixUser" => {
-                            builder = builder.set_posix_user(crate::protocol_serde::shape_posix_user::de_posix_user(tokens, _value)?);
+                            builder = builder.set_posix_user(crate::protocol_serde::shape_posix_user::de_posix_user(tokens, _value, depth + 1)?);
                         }
                         "RootDirectory" => {
-                            builder = builder.set_root_directory(crate::protocol_serde::shape_root_directory::de_root_directory(tokens, _value)?);
+                            builder = builder.set_root_directory(crate::protocol_serde::shape_root_directory::de_root_directory(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OwnerId" => {
                             builder = builder.set_owner_id(

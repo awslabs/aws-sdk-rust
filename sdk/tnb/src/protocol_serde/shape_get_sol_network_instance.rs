@@ -124,6 +124,8 @@ pub(crate) fn de_get_sol_network_instance(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,11 +146,19 @@ pub(crate) fn de_get_sol_network_instance(
                     );
                 }
                 "lcmOpInfo" => {
-                    builder = builder.set_lcm_op_info(crate::protocol_serde::shape_lcm_operation_info::de_lcm_operation_info(tokens, _value)?);
+                    builder = builder.set_lcm_op_info(crate::protocol_serde::shape_lcm_operation_info::de_lcm_operation_info(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "metadata" => {
                     builder = builder.set_metadata(
-                        crate::protocol_serde::shape_get_sol_network_instance_metadata::de_get_sol_network_instance_metadata(tokens, _value)?,
+                        crate::protocol_serde::shape_get_sol_network_instance_metadata::de_get_sol_network_instance_metadata(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "nsInstanceDescription" => {
@@ -187,7 +197,7 @@ pub(crate) fn de_get_sol_network_instance(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

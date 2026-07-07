@@ -10,6 +10,24 @@ pub fn ser_integrated_resource(
             crate::protocol_serde::shape_git_hub_repository_resource::ser_git_hub_repository_resource(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::IntegratedResource::GitlabRepository(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_2.key("gitlabRepository").start_object();
+            crate::protocol_serde::shape_git_lab_repository_resource::ser_git_lab_repository_resource(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::IntegratedResource::BitbucketRepository(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("bitbucketRepository").start_object();
+            crate::protocol_serde::shape_bitbucket_repository_resource::ser_bitbucket_repository_resource(&mut object_3, inner)?;
+            object_3.finish();
+        }
+        crate::types::IntegratedResource::ConfluenceDocument(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_2.key("confluenceDocument").start_object();
+            crate::protocol_serde::shape_confluence_document_resource::ser_confluence_document_resource(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::IntegratedResource::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "IntegratedResource",

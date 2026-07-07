@@ -609,6 +609,104 @@ impl From<crate::operation::create_id_namespace_association::CreateIdNamespaceAs
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_intermediate_table::CreateIntermediateTableError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_intermediate_table::CreateIntermediateTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_intermediate_table::CreateIntermediateTableError> for Error {
+    fn from(err: crate::operation::create_intermediate_table::CreateIntermediateTableError) -> Self {
+        match err {
+            crate::operation::create_intermediate_table::CreateIntermediateTableError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_intermediate_table::CreateIntermediateTableError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_intermediate_table::CreateIntermediateTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_intermediate_table::CreateIntermediateTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_intermediate_table::CreateIntermediateTableError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_intermediate_table::CreateIntermediateTableError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_intermediate_table::CreateIntermediateTableError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_intermediate_table::CreateIntermediateTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError> for Error {
+    fn from(err: crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError) -> Self {
+        match err {
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_intermediate_table_analysis_rule::CreateIntermediateTableAnalysisRuleError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_membership::CreateMembershipError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1034,6 +1132,98 @@ impl From<crate::operation::delete_id_namespace_association::DeleteIdNamespaceAs
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_intermediate_table::DeleteIntermediateTableError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_intermediate_table::DeleteIntermediateTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_intermediate_table::DeleteIntermediateTableError> for Error {
+    fn from(err: crate::operation::delete_intermediate_table::DeleteIntermediateTableError) -> Self {
+        match err {
+            crate::operation::delete_intermediate_table::DeleteIntermediateTableError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_intermediate_table::DeleteIntermediateTableError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_intermediate_table::DeleteIntermediateTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_intermediate_table::DeleteIntermediateTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_intermediate_table::DeleteIntermediateTableError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_intermediate_table::DeleteIntermediateTableError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_intermediate_table::DeleteIntermediateTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError> for Error {
+    fn from(err: crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError) -> Self {
+        match err {
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_intermediate_table_analysis_rule::DeleteIntermediateTableAnalysisRuleError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_member::DeleteMemberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1128,6 +1318,48 @@ impl From<crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetT
                 Error::ValidationException(inner)
             }
             crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disallow_intermediate_table::DisallowIntermediateTableError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disallow_intermediate_table::DisallowIntermediateTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disallow_intermediate_table::DisallowIntermediateTableError> for Error {
+    fn from(err: crate::operation::disallow_intermediate_table::DisallowIntermediateTableError) -> Self {
+        match err {
+            crate::operation::disallow_intermediate_table::DisallowIntermediateTableError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disallow_intermediate_table::DisallowIntermediateTableError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disallow_intermediate_table::DisallowIntermediateTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disallow_intermediate_table::DisallowIntermediateTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disallow_intermediate_table::DisallowIntermediateTableError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disallow_intermediate_table::DisallowIntermediateTableError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disallow_intermediate_table::DisallowIntermediateTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1685,6 +1917,85 @@ impl From<crate::operation::get_id_namespace_association::GetIdNamespaceAssociat
                 Error::ValidationException(inner)
             }
             crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_intermediate_table::GetIntermediateTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_intermediate_table::GetIntermediateTableError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_intermediate_table::GetIntermediateTableError> for Error {
+    fn from(err: crate::operation::get_intermediate_table::GetIntermediateTableError) -> Self {
+        match err {
+            crate::operation::get_intermediate_table::GetIntermediateTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_intermediate_table::GetIntermediateTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_intermediate_table::GetIntermediateTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_intermediate_table::GetIntermediateTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_intermediate_table::GetIntermediateTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_intermediate_table::GetIntermediateTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError> for Error {
+    fn from(err: crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError) -> Self {
+        match err {
+            crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_intermediate_table_analysis_rule::GetIntermediateTableAnalysisRuleError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2368,6 +2679,84 @@ impl From<crate::operation::list_id_namespace_associations::ListIdNamespaceAssoc
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_intermediate_tables::ListIntermediateTablesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_intermediate_tables::ListIntermediateTablesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_intermediate_tables::ListIntermediateTablesError> for Error {
+    fn from(err: crate::operation::list_intermediate_tables::ListIntermediateTablesError) -> Self {
+        match err {
+            crate::operation::list_intermediate_tables::ListIntermediateTablesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_intermediate_tables::ListIntermediateTablesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_intermediate_tables::ListIntermediateTablesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_intermediate_tables::ListIntermediateTablesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_intermediate_tables::ListIntermediateTablesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_intermediate_tables::ListIntermediateTablesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError> for Error {
+    fn from(err: crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError) -> Self {
+        match err {
+            crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_members::ListMembersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2631,6 +3020,51 @@ impl From<crate::operation::populate_id_mapping_table::PopulateIdMappingTableErr
             crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::populate_intermediate_table::PopulateIntermediateTableError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::populate_intermediate_table::PopulateIntermediateTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::populate_intermediate_table::PopulateIntermediateTableError> for Error {
+    fn from(err: crate::operation::populate_intermediate_table::PopulateIntermediateTableError) -> Self {
+        match err {
+            crate::operation::populate_intermediate_table::PopulateIntermediateTableError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::populate_intermediate_table::PopulateIntermediateTableError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::populate_intermediate_table::PopulateIntermediateTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::populate_intermediate_table::PopulateIntermediateTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::populate_intermediate_table::PopulateIntermediateTableError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::populate_intermediate_table::PopulateIntermediateTableError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::populate_intermediate_table::PopulateIntermediateTableError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::populate_intermediate_table::PopulateIntermediateTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3170,6 +3604,97 @@ impl From<crate::operation::update_id_namespace_association::UpdateIdNamespaceAs
                 Error::ValidationException(inner)
             }
             crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_intermediate_table::UpdateIntermediateTableError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_intermediate_table::UpdateIntermediateTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_intermediate_table::UpdateIntermediateTableError> for Error {
+    fn from(err: crate::operation::update_intermediate_table::UpdateIntermediateTableError) -> Self {
+        match err {
+            crate::operation::update_intermediate_table::UpdateIntermediateTableError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_intermediate_table::UpdateIntermediateTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_intermediate_table::UpdateIntermediateTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_intermediate_table::UpdateIntermediateTableError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_intermediate_table::UpdateIntermediateTableError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_intermediate_table::UpdateIntermediateTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError> for Error {
+    fn from(err: crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError) -> Self {
+        match err {
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_intermediate_table_analysis_rule::UpdateIntermediateTableAnalysisRuleError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

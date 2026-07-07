@@ -145,9 +145,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RevokeT
 #[derive(Debug)]
 struct RevokeTokenResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RevokeTokenResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -267,6 +268,8 @@ pub enum RevokeTokenError {
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>This exception is thrown when an operation is not available in the current region or for the current user pool configuration. This can occur when attempting to perform operations that are not supported in secondary replica regions.</p>
+    OperationNotEnabledException(crate::types::error::OperationNotEnabledException),
     /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>Exception that is thrown when the request isn't authorized. This can happen due to an invalid access token in the request.</p>
@@ -311,6 +314,7 @@ impl RevokeTokenError {
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -329,6 +333,10 @@ impl RevokeTokenError {
     /// Returns `true` if the error kind is `RevokeTokenError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `RevokeTokenError::OperationNotEnabledException`.
+    pub fn is_operation_not_enabled_exception(&self) -> bool {
+        matches!(self, Self::OperationNotEnabledException(_))
     }
     /// Returns `true` if the error kind is `RevokeTokenError::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -353,6 +361,7 @@ impl ::std::error::Error for RevokeTokenError {
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
@@ -367,6 +376,7 @@ impl ::std::fmt::Display for RevokeTokenError {
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::OperationNotEnabledException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::UnauthorizedException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
@@ -395,6 +405,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RevokeTokenEr
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

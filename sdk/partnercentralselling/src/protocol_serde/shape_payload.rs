@@ -2,10 +2,16 @@
 pub(crate) fn de_payload<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Payload>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,17 +37,19 @@ where
                     }
                     variant = match key.as_ref() {
                         "OpportunityInvitation" => Some(crate::types::Payload::OpportunityInvitation(
-                            crate::protocol_serde::shape_opportunity_invitation_payload::de_opportunity_invitation_payload(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'OpportunityInvitation' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_opportunity_invitation_payload::de_opportunity_invitation_payload(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OpportunityInvitation' cannot be null")
+                            })?,
                         )),
                         "LeadInvitation" => Some(crate::types::Payload::LeadInvitation(
-                            crate::protocol_serde::shape_lead_invitation_payload::de_lead_invitation_payload(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'LeadInvitation' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_lead_invitation_payload::de_lead_invitation_payload(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'LeadInvitation' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

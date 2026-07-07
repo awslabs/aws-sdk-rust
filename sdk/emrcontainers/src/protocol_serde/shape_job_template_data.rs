@@ -50,10 +50,16 @@ pub fn ser_job_template_data(
 pub(crate) fn de_job_template_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobTemplateData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -80,22 +86,26 @@ where
                         "configurationOverrides" => {
                             builder = builder.set_configuration_overrides(
                                 crate::protocol_serde::shape_parametric_configuration_overrides::de_parametric_configuration_overrides(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "jobDriver" => {
-                            builder = builder.set_job_driver(crate::protocol_serde::shape_job_driver::de_job_driver(tokens, _value)?);
+                            builder = builder.set_job_driver(crate::protocol_serde::shape_job_driver::de_job_driver(tokens, _value, depth + 1)?);
                         }
                         "parameterConfiguration" => {
                             builder = builder.set_parameter_configuration(
                                 crate::protocol_serde::shape_template_parameter_configuration_map::de_template_parameter_configuration_map(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "jobTags" => {
-                            builder = builder.set_job_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_job_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

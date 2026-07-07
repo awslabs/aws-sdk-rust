@@ -146,6 +146,8 @@ pub(crate) fn de_create_application_version(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -167,12 +169,15 @@ pub(crate) fn de_create_application_version(
                 }
                 "parameterDefinitions" => {
                     builder = builder.set_parameter_definitions(
-                        crate::protocol_serde::shape_list_of_parameter_definition::de_list_of_parameter_definition(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_parameter_definition::de_list_of_parameter_definition(tokens, _value, depth + 1)?,
                     );
                 }
                 "requiredCapabilities" => {
-                    builder =
-                        builder.set_required_capabilities(crate::protocol_serde::shape_list_of_capability::de_list_of_capability(tokens, _value)?);
+                    builder = builder.set_required_capabilities(crate::protocol_serde::shape_list_of_capability::de_list_of_capability(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "resourcesSupported" => {
                     builder = builder.set_resources_supported(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -66,6 +66,8 @@ pub fn de_describe_tags(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeTagsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTagsResponse got {start_el:?}"
@@ -83,7 +85,7 @@ pub fn de_describe_tags(
             s if s.matches("TagDescriptions") /* TagDescriptions com.amazonaws.elasticloadbalancing.synthetic#DescribeTagsOutput$TagDescriptions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_tag_descriptions::de_tag_descriptions(&mut tag)
+                        crate::protocol_serde::shape_tag_descriptions::de_tag_descriptions(&mut tag, depth + 1)
                         ?
                     )
                 ;

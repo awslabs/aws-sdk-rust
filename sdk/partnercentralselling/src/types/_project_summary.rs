@@ -23,6 +23,8 @@ pub struct ProjectSummary {
     pub delivery_models: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryModel>>,
     /// <p>Provides a summary of the expected customer spend for the project, offering a high-level view of the potential financial impact.</p>
     pub expected_customer_spend: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>>,
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub expected_contract_duration: ::std::option::Option<crate::types::ExpectedContractDuration>,
 }
 impl ProjectSummary {
     /// <p>Specifies your solution or service's deployment or consumption model in the <code>Opportunity</code>'s context. You can select multiple options.</p>
@@ -52,6 +54,10 @@ impl ProjectSummary {
     pub fn expected_customer_spend(&self) -> &[crate::types::ExpectedCustomerSpend] {
         self.expected_customer_spend.as_deref().unwrap_or_default()
     }
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub fn expected_contract_duration(&self) -> ::std::option::Option<&crate::types::ExpectedContractDuration> {
+        self.expected_contract_duration.as_ref()
+    }
 }
 impl ProjectSummary {
     /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::types::ProjectSummary).
@@ -66,6 +72,7 @@ impl ProjectSummary {
 pub struct ProjectSummaryBuilder {
     pub(crate) delivery_models: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryModel>>,
     pub(crate) expected_customer_spend: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>>,
+    pub(crate) expected_contract_duration: ::std::option::Option<crate::types::ExpectedContractDuration>,
 }
 impl ProjectSummaryBuilder {
     /// Appends an item to `delivery_models`.
@@ -153,11 +160,26 @@ impl ProjectSummaryBuilder {
     pub fn get_expected_customer_spend(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>> {
         &self.expected_customer_spend
     }
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub fn expected_contract_duration(mut self, input: crate::types::ExpectedContractDuration) -> Self {
+        self.expected_contract_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub fn set_expected_contract_duration(mut self, input: ::std::option::Option<crate::types::ExpectedContractDuration>) -> Self {
+        self.expected_contract_duration = input;
+        self
+    }
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub fn get_expected_contract_duration(&self) -> &::std::option::Option<crate::types::ExpectedContractDuration> {
+        &self.expected_contract_duration
+    }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {
         crate::types::ProjectSummary {
             delivery_models: self.delivery_models,
             expected_customer_spend: self.expected_customer_spend,
+            expected_contract_duration: self.expected_contract_duration,
         }
     }
 }

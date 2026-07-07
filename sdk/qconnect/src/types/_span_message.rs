@@ -10,7 +10,7 @@ pub struct SpanMessage {
     pub participant: crate::types::Participant,
     /// <p>Message timestamp</p>
     pub timestamp: ::aws_smithy_types::DateTime,
-    /// <p>Message content values (text, tool use, tool result)</p>
+    /// <p>Message content values (text, tool use, tool result, reasoning)</p>
     pub values: ::std::vec::Vec<crate::types::SpanMessageValue>,
 }
 impl SpanMessage {
@@ -27,7 +27,7 @@ impl SpanMessage {
     pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.timestamp
     }
-    /// <p>Message content values (text, tool use, tool result)</p>
+    /// <p>Message content values (text, tool use, tool result, reasoning)</p>
     pub fn values(&self) -> &[crate::types::SpanMessageValue] {
         use std::ops::Deref;
         self.values.deref()
@@ -99,19 +99,19 @@ impl SpanMessageBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>Message content values (text, tool use, tool result)</p>
+    /// <p>Message content values (text, tool use, tool result, reasoning)</p>
     pub fn values(mut self, input: crate::types::SpanMessageValue) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Message content values (text, tool use, tool result)</p>
+    /// <p>Message content values (text, tool use, tool result, reasoning)</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpanMessageValue>>) -> Self {
         self.values = input;
         self
     }
-    /// <p>Message content values (text, tool use, tool result)</p>
+    /// <p>Message content values (text, tool use, tool result, reasoning)</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpanMessageValue>> {
         &self.values
     }

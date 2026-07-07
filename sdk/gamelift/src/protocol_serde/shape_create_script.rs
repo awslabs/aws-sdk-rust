@@ -127,15 +127,16 @@ pub(crate) fn de_create_script(
     value: &[u8],
     mut builder: crate::operation::create_script::builders::CreateScriptOutputBuilder,
 ) -> ::std::result::Result<crate::operation::create_script::builders::CreateScriptOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::create_script::builders::CreateScriptOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::create_script::builders::CreateScriptOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
             "Script" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_script(Some(crate::protocol_serde::shape_script::de_script(decoder)?)))
+                Ok(builder.set_script(Some(crate::protocol_serde::shape_script::de_script(decoder, depth + 1)?)))
             })?,
             _ => {
                 decoder.skip()?;
@@ -146,6 +147,8 @@ pub(crate) fn de_create_script(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -155,13 +158,13 @@ pub(crate) fn de_create_script(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

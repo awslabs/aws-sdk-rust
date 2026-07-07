@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Policy, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Policy::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -161,7 +165,7 @@ pub fn de_policy(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#Policy$Tags */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

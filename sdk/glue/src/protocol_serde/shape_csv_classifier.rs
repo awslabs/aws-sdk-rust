@@ -2,10 +2,16 @@
 pub(crate) fn de_csv_classifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CsvClassifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,7 +69,7 @@ where
                             );
                         }
                         "Header" => {
-                            builder = builder.set_header(crate::protocol_serde::shape_csv_header::de_csv_header(tokens, _value)?);
+                            builder = builder.set_header(crate::protocol_serde::shape_csv_header::de_csv_header(tokens, _value, depth + 1)?);
                         }
                         "DisableValueTrimming" => {
                             builder = builder.set_disable_value_trimming(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -76,8 +82,11 @@ where
                                 builder.set_custom_datatype_configured(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "CustomDatatypes" => {
-                            builder =
-                                builder.set_custom_datatypes(crate::protocol_serde::shape_custom_datatypes::de_custom_datatypes(tokens, _value)?);
+                            builder = builder.set_custom_datatypes(crate::protocol_serde::shape_custom_datatypes::de_custom_datatypes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Serde" => {
                             builder = builder.set_serde(

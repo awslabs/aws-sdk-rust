@@ -13,6 +13,7 @@
 /// # let category = unimplemented!();
 /// match category {
 ///     Category::Misconfiguration => { /* ... */ },
+///     Category::RollbackReadiness => { /* ... */ },
 ///     Category::UpgradeReadiness => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum Category {
     #[allow(missing_docs)] // documentation missing in model
     Misconfiguration,
     #[allow(missing_docs)] // documentation missing in model
+    RollbackReadiness,
+    #[allow(missing_docs)] // documentation missing in model
     UpgradeReadiness,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for Category {
     fn from(s: &str) -> Self {
         match s {
             "MISCONFIGURATION" => Category::Misconfiguration,
+            "ROLLBACK_READINESS" => Category::RollbackReadiness,
             "UPGRADE_READINESS" => Category::UpgradeReadiness,
             other => Category::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl Category {
     pub fn as_str(&self) -> &str {
         match self {
             Category::Misconfiguration => "MISCONFIGURATION",
+            Category::RollbackReadiness => "ROLLBACK_READINESS",
             Category::UpgradeReadiness => "UPGRADE_READINESS",
             Category::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MISCONFIGURATION", "UPGRADE_READINESS"]
+        &["MISCONFIGURATION", "ROLLBACK_READINESS", "UPGRADE_READINESS"]
     }
 }
 impl ::std::convert::AsRef<str> for Category {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for Category {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Category::Misconfiguration => write!(f, "MISCONFIGURATION"),
+            Category::RollbackReadiness => write!(f, "ROLLBACK_READINESS"),
             Category::UpgradeReadiness => write!(f, "UPGRADE_READINESS"),
             Category::Unknown(value) => write!(f, "{value}"),
         }

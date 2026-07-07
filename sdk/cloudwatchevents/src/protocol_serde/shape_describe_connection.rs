@@ -92,6 +92,8 @@ pub(crate) fn de_describe_connection(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -148,7 +150,11 @@ pub(crate) fn de_describe_connection(
                 }
                 "AuthParameters" => {
                     builder = builder.set_auth_parameters(
-                        crate::protocol_serde::shape_connection_auth_response_parameters::de_connection_auth_response_parameters(tokens, _value)?,
+                        crate::protocol_serde::shape_connection_auth_response_parameters::de_connection_auth_response_parameters(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "CreationTime" => {

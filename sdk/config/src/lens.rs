@@ -349,6 +349,16 @@ pub(crate) fn reflens_list_conformance_pack_compliance_scores_output_output_next
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_connectors_output_output_next_token(
+    input: &crate::operation::list_connectors::ListConnectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_discovered_resources_output_output_next_token(
     input: &crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -595,6 +605,13 @@ pub(crate) fn lens_list_configuration_recorders_output_output_configuration_reco
     input: crate::operation::list_configuration_recorders::ListConfigurationRecordersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorderSummary>> {
     let input = input.configuration_recorder_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_connectors_output_output_connector_summaries(
+    input: crate::operation::list_connectors::ListConnectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectorSummary>> {
+    let input = input.connector_summaries;
     ::std::option::Option::Some(input)
 }
 

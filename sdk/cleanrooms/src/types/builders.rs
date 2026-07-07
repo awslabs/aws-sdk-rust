@@ -47,6 +47,10 @@ pub use crate::types::_id_mapping_config::IdMappingConfigBuilder;
 
 pub use crate::types::_id_namespace_association::IdNamespaceAssociationBuilder;
 
+pub use crate::types::_intermediate_table::IntermediateTableBuilder;
+
+pub use crate::types::_intermediate_table_analysis_rule::IntermediateTableAnalysisRuleBuilder;
+
 pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfigurationBuilder;
 
 pub use crate::types::_membership_protected_job_result_configuration::MembershipProtectedJobResultConfigurationBuilder;
@@ -54,6 +58,8 @@ pub use crate::types::_membership_protected_job_result_configuration::Membership
 pub use crate::types::_membership_payment_configuration::MembershipPaymentConfigurationBuilder;
 
 pub use crate::types::_membership::MembershipBuilder;
+
+pub use crate::types::_update_membership_payment_configuration::UpdateMembershipPaymentConfigurationBuilder;
 
 pub use crate::types::_protected_job::ProtectedJobBuilder;
 
@@ -135,6 +141,20 @@ pub use crate::types::_id_mapping_table_input_reference_properties::IdMappingTab
 
 pub use crate::types::_id_namespace_association_summary::IdNamespaceAssociationSummaryBuilder;
 
+pub use crate::types::_intermediate_table_summary::IntermediateTableSummaryBuilder;
+
+pub use crate::types::_population_analysis_sql_parameters::PopulationAnalysisSqlParametersBuilder;
+
+pub use crate::types::_intermediate_table_active_version::IntermediateTableActiveVersionBuilder;
+
+pub use crate::types::_intermediate_table_schema::IntermediateTableSchemaBuilder;
+
+pub use crate::types::_intermediate_table_column::IntermediateTableColumnBuilder;
+
+pub use crate::types::_intermediate_table_version_summary::IntermediateTableVersionSummaryBuilder;
+
+pub use crate::types::_worker_compute_configuration::WorkerComputeConfigurationBuilder;
+
 pub use crate::types::_membership_summary::MembershipSummaryBuilder;
 
 pub use crate::types::_membership_query_compute_payment_config::MembershipQueryComputePaymentConfigBuilder;
@@ -170,8 +190,6 @@ pub use crate::types::_differential_privacy_preview_parameters_input::Differenti
 pub use crate::types::_differential_privacy_privacy_impact::DifferentialPrivacyPrivacyImpactBuilder;
 
 pub use crate::types::_protected_job_worker_compute_configuration::ProtectedJobWorkerComputeConfigurationBuilder;
-
-pub use crate::types::_worker_compute_configuration::WorkerComputeConfigurationBuilder;
 
 pub use crate::types::_privacy_budget_template_summary::PrivacyBudgetTemplateSummaryBuilder;
 
@@ -211,7 +229,13 @@ pub use crate::types::_schema_status_detail::SchemaStatusDetailBuilder;
 
 pub use crate::types::_id_mapping_table_schema_type_properties::IdMappingTableSchemaTypePropertiesBuilder;
 
+pub use crate::types::_intermediate_table_schema_type_properties::IntermediateTableSchemaTypePropertiesBuilder;
+
+pub use crate::types::_configured_table_association_schema_type_properties::ConfiguredTableAssociationSchemaTypePropertiesBuilder;
+
 pub use crate::types::_id_namespace_association_input_reference_properties_summary::IdNamespaceAssociationInputReferencePropertiesSummaryBuilder;
+
+pub use crate::types::_child_resource::ChildResourceBuilder;
 
 pub use crate::types::_configured_table_association_analysis_rule_list::ConfiguredTableAssociationAnalysisRuleListBuilder;
 
@@ -224,6 +248,12 @@ pub use crate::types::_analysis_rule_list::AnalysisRuleListBuilder;
 pub use crate::types::_analysis_rule_aggregation::AnalysisRuleAggregationBuilder;
 
 pub use crate::types::_analysis_rule_custom::AnalysisRuleCustomBuilder;
+
+pub use crate::types::_intermediate_table_dependency::IntermediateTableDependencyBuilder;
+
+pub use crate::types::_intermediate_table_inherited_constraints::IntermediateTableInheritedConstraintsBuilder;
+
+pub use crate::types::_intermediate_table_analysis_rule_custom::IntermediateTableAnalysisRuleCustomBuilder;
 
 pub use crate::types::_protected_query_s3_output_configuration::ProtectedQueryS3OutputConfigurationBuilder;
 
@@ -238,6 +268,8 @@ pub use crate::types::_membership_synthetic_data_generation_payment_config::Memb
 pub use crate::types::_billed_job_resource_utilization::BilledJobResourceUtilizationBuilder;
 
 pub use crate::types::_billed_resource_utilization::BilledResourceUtilizationBuilder;
+
+pub use crate::types::_intermediate_table_output_configuration::IntermediateTableOutputConfigurationBuilder;
 
 pub use crate::types::_protected_job_member_output_configuration_input::ProtectedJobMemberOutputConfigurationInputBuilder;
 
@@ -268,6 +300,14 @@ pub use crate::types::_access_budget::AccessBudgetBuilder;
 pub use crate::types::_differential_privacy_configuration::DifferentialPrivacyConfigurationBuilder;
 
 pub use crate::types::_id_mapping_table_input_source::IdMappingTableInputSourceBuilder;
+
+pub use crate::types::_inherited_additional_analyses::InheritedAdditionalAnalysesBuilder;
+
+pub use crate::types::_inherited_allowed_additional_analyses::InheritedAllowedAdditionalAnalysesBuilder;
+
+pub use crate::types::_inherited_allowed_result_receivers::InheritedAllowedResultReceiversBuilder;
+
+pub use crate::types::_inherited_disallowed_output_columns::InheritedDisallowedOutputColumnsBuilder;
 
 pub use crate::types::_protected_job_s3_output_configuration_output::ProtectedJobS3OutputConfigurationOutputBuilder;
 
@@ -310,6 +350,14 @@ pub use crate::types::_differential_privacy_privacy_budget_aggregation::Differen
 pub use crate::types::_access_budget_details::AccessBudgetDetailsBuilder;
 
 pub use crate::types::_differential_privacy_column::DifferentialPrivacyColumnBuilder;
+
+pub use crate::types::_inherited_additional_analyses_source::InheritedAdditionalAnalysesSourceBuilder;
+
+pub use crate::types::_inherited_allowed_additional_analyses_source::InheritedAllowedAdditionalAnalysesSourceBuilder;
+
+pub use crate::types::_inherited_allowed_result_receivers_source::InheritedAllowedResultReceiversSourceBuilder;
+
+pub use crate::types::_column_lineage_entry::ColumnLineageEntryBuilder;
 
 pub use crate::types::_protected_job_direct_analysis_configuration_details::ProtectedJobDirectAnalysisConfigurationDetailsBuilder;
 

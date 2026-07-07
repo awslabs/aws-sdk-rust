@@ -127,6 +127,11 @@ pub fn ser_restore_db_cluster_from_snapshot_input_input_input(
     if let Some(var_50) = &input.storage_type {
         scope_49.string(var_50);
     }
+    #[allow(unused_mut)]
+    let mut scope_51 = writer.prefix("NetworkType");
+    if let Some(var_52) = &input.network_type {
+        scope_51.string(var_52);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

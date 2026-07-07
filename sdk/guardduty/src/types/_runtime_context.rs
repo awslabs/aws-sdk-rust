@@ -54,6 +54,12 @@ pub struct RuntimeContext {
     pub command_line_example: ::std::option::Option<::std::string::String>,
     /// <p>The suspicious file path for which the threat intelligence details were found.</p>
     pub threat_file_path: ::std::option::Option<::std::string::String>,
+    /// <p>Represents the type of file operation that triggered the finding, such as Write, Delete, Rename, Link, or Symlink.</p>
+    pub file_operation: ::std::option::Option<::std::string::String>,
+    /// <p>The path of the sensitive file that was modified. Modification includes write, delete, rename, link, or symlink operations. This field is indexed for filtering.</p>
+    pub file_path: ::std::option::Option<::std::string::String>,
+    /// <p>All file paths modified by the same process that triggered the finding, up to a maximum of 25 paths.</p>
+    pub related_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuntimeContext {
     /// <p>Information about the process that modified the current process. This is available for multiple finding types.</p>
@@ -160,6 +166,20 @@ impl RuntimeContext {
     pub fn threat_file_path(&self) -> ::std::option::Option<&str> {
         self.threat_file_path.as_deref()
     }
+    /// <p>Represents the type of file operation that triggered the finding, such as Write, Delete, Rename, Link, or Symlink.</p>
+    pub fn file_operation(&self) -> ::std::option::Option<&str> {
+        self.file_operation.as_deref()
+    }
+    /// <p>The path of the sensitive file that was modified. Modification includes write, delete, rename, link, or symlink operations. This field is indexed for filtering.</p>
+    pub fn file_path(&self) -> ::std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
+    /// <p>All file paths modified by the same process that triggered the finding, up to a maximum of 25 paths.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_file_paths.is_none()`.
+    pub fn related_file_paths(&self) -> &[::std::string::String] {
+        self.related_file_paths.as_deref().unwrap_or_default()
+    }
 }
 impl RuntimeContext {
     /// Creates a new builder-style object to manufacture [`RuntimeContext`](crate::types::RuntimeContext).
@@ -197,6 +217,9 @@ pub struct RuntimeContextBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) command_line_example: ::std::option::Option<::std::string::String>,
     pub(crate) threat_file_path: ::std::option::Option<::std::string::String>,
+    pub(crate) file_operation: ::std::option::Option<::std::string::String>,
+    pub(crate) file_path: ::std::option::Option<::std::string::String>,
+    pub(crate) related_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuntimeContextBuilder {
     /// <p>Information about the process that modified the current process. This is available for multiple finding types.</p>
@@ -561,6 +584,54 @@ impl RuntimeContextBuilder {
     pub fn get_threat_file_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.threat_file_path
     }
+    /// <p>Represents the type of file operation that triggered the finding, such as Write, Delete, Rename, Link, or Symlink.</p>
+    pub fn file_operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_operation = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Represents the type of file operation that triggered the finding, such as Write, Delete, Rename, Link, or Symlink.</p>
+    pub fn set_file_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.file_operation = input;
+        self
+    }
+    /// <p>Represents the type of file operation that triggered the finding, such as Write, Delete, Rename, Link, or Symlink.</p>
+    pub fn get_file_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_operation
+    }
+    /// <p>The path of the sensitive file that was modified. Modification includes write, delete, rename, link, or symlink operations. This field is indexed for filtering.</p>
+    pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path of the sensitive file that was modified. Modification includes write, delete, rename, link, or symlink operations. This field is indexed for filtering.</p>
+    pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.file_path = input;
+        self
+    }
+    /// <p>The path of the sensitive file that was modified. Modification includes write, delete, rename, link, or symlink operations. This field is indexed for filtering.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
+    }
+    /// Appends an item to `related_file_paths`.
+    ///
+    /// To override the contents of this collection use [`set_related_file_paths`](Self::set_related_file_paths).
+    ///
+    /// <p>All file paths modified by the same process that triggered the finding, up to a maximum of 25 paths.</p>
+    pub fn related_file_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.related_file_paths.unwrap_or_default();
+        v.push(input.into());
+        self.related_file_paths = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>All file paths modified by the same process that triggered the finding, up to a maximum of 25 paths.</p>
+    pub fn set_related_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.related_file_paths = input;
+        self
+    }
+    /// <p>All file paths modified by the same process that triggered the finding, up to a maximum of 25 paths.</p>
+    pub fn get_related_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.related_file_paths
+    }
     /// Consumes the builder and constructs a [`RuntimeContext`](crate::types::RuntimeContext).
     pub fn build(self) -> crate::types::RuntimeContext {
         crate::types::RuntimeContext {
@@ -589,6 +660,9 @@ impl RuntimeContextBuilder {
             service_name: self.service_name,
             command_line_example: self.command_line_example,
             threat_file_path: self.threat_file_path,
+            file_operation: self.file_operation,
+            file_path: self.file_path,
+            related_file_paths: self.related_file_paths,
         }
     }
 }

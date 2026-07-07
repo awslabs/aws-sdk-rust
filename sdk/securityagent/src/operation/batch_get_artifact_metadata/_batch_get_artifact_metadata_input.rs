@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetArtifactMetadataInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifacts.</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
-    /// List of artifact identifiers
+    /// <p>The list of artifact identifiers to retrieve metadata for.</p>
     pub artifact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetArtifactMetadataInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifacts.</p>
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
     }
-    /// List of artifact identifiers
+    /// <p>The list of artifact identifiers to retrieve metadata for.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.artifact_ids.is_none()`.
     pub fn artifact_ids(&self) -> &[::std::string::String] {
@@ -35,18 +35,18 @@ pub struct BatchGetArtifactMetadataInputBuilder {
     pub(crate) artifact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetArtifactMetadataInputBuilder {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifacts.</p>
     /// This field is required.
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_space_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifacts.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_space_id = input;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifacts.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
@@ -54,19 +54,19 @@ impl BatchGetArtifactMetadataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_artifact_ids`](Self::set_artifact_ids).
     ///
-    /// List of artifact identifiers
+    /// <p>The list of artifact identifiers to retrieve metadata for.</p>
     pub fn artifact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.artifact_ids.unwrap_or_default();
         v.push(input.into());
         self.artifact_ids = ::std::option::Option::Some(v);
         self
     }
-    /// List of artifact identifiers
+    /// <p>The list of artifact identifiers to retrieve metadata for.</p>
     pub fn set_artifact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.artifact_ids = input;
         self
     }
-    /// List of artifact identifiers
+    /// <p>The list of artifact identifiers to retrieve metadata for.</p>
     pub fn get_artifact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.artifact_ids
     }

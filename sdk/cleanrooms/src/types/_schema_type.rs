@@ -13,6 +13,7 @@
 /// # let schematype = unimplemented!();
 /// match schematype {
 ///     SchemaType::IdMappingTable => { /* ... */ },
+///     SchemaType::IntermediateTable => { /* ... */ },
 ///     SchemaType::Table => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum SchemaType {
     #[allow(missing_docs)] // documentation missing in model
     IdMappingTable,
     #[allow(missing_docs)] // documentation missing in model
+    IntermediateTable,
+    #[allow(missing_docs)] // documentation missing in model
     Table,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for SchemaType {
     fn from(s: &str) -> Self {
         match s {
             "ID_MAPPING_TABLE" => SchemaType::IdMappingTable,
+            "INTERMEDIATE_TABLE" => SchemaType::IntermediateTable,
             "TABLE" => SchemaType::Table,
             other => SchemaType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl SchemaType {
     pub fn as_str(&self) -> &str {
         match self {
             SchemaType::IdMappingTable => "ID_MAPPING_TABLE",
+            SchemaType::IntermediateTable => "INTERMEDIATE_TABLE",
             SchemaType::Table => "TABLE",
             SchemaType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ID_MAPPING_TABLE", "TABLE"]
+        &["ID_MAPPING_TABLE", "INTERMEDIATE_TABLE", "TABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for SchemaType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for SchemaType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SchemaType::IdMappingTable => write!(f, "ID_MAPPING_TABLE"),
+            SchemaType::IntermediateTable => write!(f, "INTERMEDIATE_TABLE"),
             SchemaType::Table => write!(f, "TABLE"),
             SchemaType::Unknown(value) => write!(f, "{value}"),
         }

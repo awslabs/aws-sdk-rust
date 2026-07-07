@@ -93,6 +93,8 @@ pub fn de_create_db_proxy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateDBProxyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateDBProxyResponse got {start_el:?}"
@@ -110,7 +112,7 @@ pub fn de_create_db_proxy(
             s if s.matches("DBProxy") /* DBProxy com.amazonaws.rds.synthetic#CreateDBProxyOutput$DBProxy */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_proxy::de_db_proxy(&mut tag)
+                        crate::protocol_serde::shape_db_proxy::de_db_proxy(&mut tag, depth + 1)
                         ?
                     )
                 ;

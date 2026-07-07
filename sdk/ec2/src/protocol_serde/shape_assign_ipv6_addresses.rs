@@ -47,6 +47,8 @@ pub fn de_assign_ipv6_addresses(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AssignIpv6AddressesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AssignIpv6AddressesResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_assign_ipv6_addresses(
             s if s.matches("assignedIpv6Addresses") /* AssignedIpv6Addresses com.amazonaws.ec2.synthetic#AssignIpv6AddressesOutput$AssignedIpv6Addresses */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(&mut tag)
+                        crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -67,7 +69,7 @@ pub fn de_assign_ipv6_addresses(
             s if s.matches("assignedIpv6PrefixSet") /* AssignedIpv6Prefixes com.amazonaws.ec2.synthetic#AssignIpv6AddressesOutput$AssignedIpv6Prefixes */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_ip_prefix_list::de_ip_prefix_list(&mut tag)
+                        crate::protocol_serde::shape_ip_prefix_list::de_ip_prefix_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

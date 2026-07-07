@@ -45,16 +45,28 @@ pub fn ser_filter_list_control(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.control_title_format_text {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("ControlTitleFormatText").start_object();
+        crate::protocol_serde::shape_control_title_format_text::ser_control_title_format_text(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_filter_list_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FilterListControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -87,7 +99,11 @@ where
                         }
                         "DisplayOptions" => {
                             builder = builder.set_display_options(
-                                crate::protocol_serde::shape_list_control_display_options::de_list_control_display_options(tokens, _value)?,
+                                crate::protocol_serde::shape_list_control_display_options::de_list_control_display_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Type" => {
@@ -99,17 +115,30 @@ where
                         }
                         "SelectableValues" => {
                             builder = builder.set_selectable_values(
-                                crate::protocol_serde::shape_filter_selectable_values::de_filter_selectable_values(tokens, _value)?,
+                                crate::protocol_serde::shape_filter_selectable_values::de_filter_selectable_values(tokens, _value, depth + 1)?,
                             );
                         }
                         "CascadingControlConfiguration" => {
                             builder = builder.set_cascading_control_configuration(
-                                crate::protocol_serde::shape_cascading_control_configuration::de_cascading_control_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_cascading_control_configuration::de_cascading_control_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ControlSortConfigurations" => {
                             builder = builder.set_control_sort_configurations(
-                                crate::protocol_serde::shape_control_sort_configuration_list::de_control_sort_configuration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_control_sort_configuration_list::de_control_sort_configuration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "ControlTitleFormatText" => {
+                            builder = builder.set_control_title_format_text(
+                                crate::protocol_serde::shape_control_title_format_text::de_control_title_format_text(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

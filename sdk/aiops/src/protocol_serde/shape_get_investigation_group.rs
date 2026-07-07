@@ -157,6 +157,8 @@ pub(crate) fn de_get_investigation_group(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -171,7 +173,7 @@ pub(crate) fn de_get_investigation_group(
                 }
                 "chatbotNotificationChannel" => {
                     builder = builder.set_chatbot_notification_channel(
-                        crate::protocol_serde::shape_chatbot_notification_channel::de_chatbot_notification_channel(tokens, _value)?,
+                        crate::protocol_serde::shape_chatbot_notification_channel::de_chatbot_notification_channel(tokens, _value, depth + 1)?,
                     );
                 }
                 "createdAt" => {
@@ -190,12 +192,12 @@ pub(crate) fn de_get_investigation_group(
                 }
                 "crossAccountConfigurations" => {
                     builder = builder.set_cross_account_configurations(
-                        crate::protocol_serde::shape_cross_account_configurations::de_cross_account_configurations(tokens, _value)?,
+                        crate::protocol_serde::shape_cross_account_configurations::de_cross_account_configurations(tokens, _value, depth + 1)?,
                     );
                 }
                 "encryptionConfiguration" => {
                     builder = builder.set_encryption_configuration(
-                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "isCloudTrailEventHistoryEnabled" => {
@@ -238,7 +240,11 @@ pub(crate) fn de_get_investigation_group(
                     );
                 }
                 "tagKeyBoundaries" => {
-                    builder = builder.set_tag_key_boundaries(crate::protocol_serde::shape_tag_key_boundaries::de_tag_key_boundaries(tokens, _value)?);
+                    builder = builder.set_tag_key_boundaries(crate::protocol_serde::shape_tag_key_boundaries::de_tag_key_boundaries(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -20,7 +20,11 @@ pub fn ser_cache_usage_limits(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_usage_limits(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CacheUsageLimits, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CacheUsageLimits::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -28,7 +32,7 @@ pub fn de_cache_usage_limits(
             s if s.matches("DataStorage") /* DataStorage com.amazonaws.elasticache#CacheUsageLimits$DataStorage */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_data_storage::de_data_storage(&mut tag)
+                        crate::protocol_serde::shape_data_storage::de_data_storage(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -38,7 +42,7 @@ pub fn de_cache_usage_limits(
             s if s.matches("ECPUPerSecond") /* ECPUPerSecond com.amazonaws.elasticache#CacheUsageLimits$ECPUPerSecond */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_ecpu_per_second::de_ecpu_per_second(&mut tag)
+                        crate::protocol_serde::shape_ecpu_per_second::de_ecpu_per_second(&mut tag, depth + 1)
                         ?
                     )
                 ;

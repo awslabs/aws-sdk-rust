@@ -30,7 +30,11 @@ pub fn ser_storage_lens_group_level_selection_criteria(
 #[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_group_level_selection_criteria(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StorageLensGroupLevelSelectionCriteria, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensGroupLevelSelectionCriteria::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -38,7 +42,7 @@ pub fn de_storage_lens_group_level_selection_criteria(
             s if s.matches("Include") /* Include com.amazonaws.s3control#StorageLensGroupLevelSelectionCriteria$Include */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_group_level_include::de_storage_lens_group_level_include(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_group_level_include::de_storage_lens_group_level_include(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -48,7 +52,7 @@ pub fn de_storage_lens_group_level_selection_criteria(
             s if s.matches("Exclude") /* Exclude com.amazonaws.s3control#StorageLensGroupLevelSelectionCriteria$Exclude */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_group_level_exclude::de_storage_lens_group_level_exclude(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_group_level_exclude::de_storage_lens_group_level_exclude(&mut tag, depth + 1)
                         ?
                     )
                 ;

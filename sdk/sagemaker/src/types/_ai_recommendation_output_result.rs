@@ -8,6 +8,8 @@ pub struct AiRecommendationOutputResult {
     pub s3_output_location: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the model package group where deployment-ready model packages are registered.</p>
     pub model_package_group_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub mlflow_config: ::std::option::Option<crate::types::AiMlflowConfig>,
 }
 impl AiRecommendationOutputResult {
     /// <p>The Amazon S3 URI where the recommendation job writes its output results.</p>
@@ -17,6 +19,10 @@ impl AiRecommendationOutputResult {
     /// <p>The name or Amazon Resource Name (ARN) of the model package group where deployment-ready model packages are registered.</p>
     pub fn model_package_group_identifier(&self) -> ::std::option::Option<&str> {
         self.model_package_group_identifier.as_deref()
+    }
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub fn mlflow_config(&self) -> ::std::option::Option<&crate::types::AiMlflowConfig> {
+        self.mlflow_config.as_ref()
     }
 }
 impl AiRecommendationOutputResult {
@@ -32,6 +38,7 @@ impl AiRecommendationOutputResult {
 pub struct AiRecommendationOutputResultBuilder {
     pub(crate) s3_output_location: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) mlflow_config: ::std::option::Option<crate::types::AiMlflowConfig>,
 }
 impl AiRecommendationOutputResultBuilder {
     /// <p>The Amazon S3 URI where the recommendation job writes its output results.</p>
@@ -63,11 +70,26 @@ impl AiRecommendationOutputResultBuilder {
     pub fn get_model_package_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_group_identifier
     }
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub fn mlflow_config(mut self, input: crate::types::AiMlflowConfig) -> Self {
+        self.mlflow_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub fn set_mlflow_config(mut self, input: ::std::option::Option<crate::types::AiMlflowConfig>) -> Self {
+        self.mlflow_config = input;
+        self
+    }
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub fn get_mlflow_config(&self) -> &::std::option::Option<crate::types::AiMlflowConfig> {
+        &self.mlflow_config
+    }
     /// Consumes the builder and constructs a [`AiRecommendationOutputResult`](crate::types::AiRecommendationOutputResult).
     pub fn build(self) -> crate::types::AiRecommendationOutputResult {
         crate::types::AiRecommendationOutputResult {
             s3_output_location: self.s3_output_location,
             model_package_group_identifier: self.model_package_group_identifier,
+            mlflow_config: self.mlflow_config,
         }
     }
 }

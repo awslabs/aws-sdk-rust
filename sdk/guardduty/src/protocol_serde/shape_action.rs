@@ -2,10 +2,16 @@
 pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,47 +29,62 @@ where
                             );
                         }
                         "awsApiCallAction" => {
-                            builder = builder
-                                .set_aws_api_call_action(crate::protocol_serde::shape_aws_api_call_action::de_aws_api_call_action(tokens, _value)?);
+                            builder = builder.set_aws_api_call_action(crate::protocol_serde::shape_aws_api_call_action::de_aws_api_call_action(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dnsRequestAction" => {
-                            builder = builder
-                                .set_dns_request_action(crate::protocol_serde::shape_dns_request_action::de_dns_request_action(tokens, _value)?);
+                            builder = builder.set_dns_request_action(crate::protocol_serde::shape_dns_request_action::de_dns_request_action(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "networkConnectionAction" => {
                             builder = builder.set_network_connection_action(
-                                crate::protocol_serde::shape_network_connection_action::de_network_connection_action(tokens, _value)?,
+                                crate::protocol_serde::shape_network_connection_action::de_network_connection_action(tokens, _value, depth + 1)?,
                             );
                         }
                         "portProbeAction" => {
-                            builder =
-                                builder.set_port_probe_action(crate::protocol_serde::shape_port_probe_action::de_port_probe_action(tokens, _value)?);
+                            builder = builder.set_port_probe_action(crate::protocol_serde::shape_port_probe_action::de_port_probe_action(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "kubernetesApiCallAction" => {
                             builder = builder.set_kubernetes_api_call_action(
-                                crate::protocol_serde::shape_kubernetes_api_call_action::de_kubernetes_api_call_action(tokens, _value)?,
+                                crate::protocol_serde::shape_kubernetes_api_call_action::de_kubernetes_api_call_action(tokens, _value, depth + 1)?,
                             );
                         }
                         "kubernetesPermissionCheckedDetails" => {
                             builder = builder.set_kubernetes_permission_checked_details(
                                 crate::protocol_serde::shape_kubernetes_permission_checked_details::de_kubernetes_permission_checked_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "kubernetesRoleBindingDetails" => {
                             builder = builder.set_kubernetes_role_binding_details(
-                                crate::protocol_serde::shape_kubernetes_role_binding_details::de_kubernetes_role_binding_details(tokens, _value)?,
+                                crate::protocol_serde::shape_kubernetes_role_binding_details::de_kubernetes_role_binding_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "kubernetesRoleDetails" => {
                             builder = builder.set_kubernetes_role_details(
-                                crate::protocol_serde::shape_kubernetes_role_details::de_kubernetes_role_details(tokens, _value)?,
+                                crate::protocol_serde::shape_kubernetes_role_details::de_kubernetes_role_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "rdsLoginAttemptAction" => {
                             builder = builder.set_rds_login_attempt_action(
-                                crate::protocol_serde::shape_rds_login_attempt_action::de_rds_login_attempt_action(tokens, _value)?,
+                                crate::protocol_serde::shape_rds_login_attempt_action::de_rds_login_attempt_action(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -55,6 +55,8 @@ pub enum Error {
     ManagedLoginBrandingExistsException(crate::types::error::ManagedLoginBrandingExistsException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
+    /// <p>This exception is thrown when an operation is not available in the current region or for the current user pool configuration. This can occur when attempting to perform operations that are not supported in secondary replica regions.</p>
+    OperationNotEnabledException(crate::types::error::OperationNotEnabledException),
     /// <p>The message returned when a user's new password matches a previous password and doesn't comply with the password-history policy.</p>
     PasswordHistoryPolicyViolationException(crate::types::error::PasswordHistoryPolicyViolationException),
     /// <p>This exception is thrown when a password reset is required.</p>
@@ -67,6 +69,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the specified scope doesn't exist.</p>
     ScopeDoesNotExistException(crate::types::error::ScopeDoesNotExistException),
+    /// <p>The request exceeded your account's service quota. To increase your limit, use or submit a Service Quotas increase request.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>This exception is thrown when the software token time-based one-time password (TOTP) multi-factor authentication (MFA) isn't activated for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::types::error::SoftwareTokenMfaNotFoundException),
     /// <p>Terms document names must be unique to the app client. This exception is thrown when you attempt to create terms documents with a duplicate <code>TermsName</code>.</p>
@@ -155,12 +159,14 @@ impl ::std::fmt::Display for Error {
             Error::MfaMethodNotFoundException(inner) => inner.fmt(f),
             Error::ManagedLoginBrandingExistsException(inner) => inner.fmt(f),
             Error::NotAuthorizedException(inner) => inner.fmt(f),
+            Error::OperationNotEnabledException(inner) => inner.fmt(f),
             Error::PasswordHistoryPolicyViolationException(inner) => inner.fmt(f),
             Error::PasswordResetRequiredException(inner) => inner.fmt(f),
             Error::PreconditionNotMetException(inner) => inner.fmt(f),
             Error::RefreshTokenReuseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ScopeDoesNotExistException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::SoftwareTokenMfaNotFoundException(inner) => inner.fmt(f),
             Error::TermsExistsException(inner) => inner.fmt(f),
             Error::TierChangeNotAllowedException(inner) => inner.fmt(f),
@@ -233,12 +239,14 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::MfaMethodNotFoundException(inner) => inner.meta(),
             Self::ManagedLoginBrandingExistsException(inner) => inner.meta(),
             Self::NotAuthorizedException(inner) => inner.meta(),
+            Self::OperationNotEnabledException(inner) => inner.meta(),
             Self::PasswordHistoryPolicyViolationException(inner) => inner.meta(),
             Self::PasswordResetRequiredException(inner) => inner.meta(),
             Self::PreconditionNotMetException(inner) => inner.meta(),
             Self::RefreshTokenReuseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ScopeDoesNotExistException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::SoftwareTokenMfaNotFoundException(inner) => inner.meta(),
             Self::TermsExistsException(inner) => inner.meta(),
             Self::TierChangeNotAllowedException(inner) => inner.meta(),
@@ -290,6 +298,9 @@ impl From<crate::operation::add_custom_attributes::AddCustomAttributesError> for
                 Error::InvalidParameterException(inner)
             }
             crate::operation::add_custom_attributes::AddCustomAttributesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::add_custom_attributes::AddCustomAttributesError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::add_custom_attributes::AddCustomAttributesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -371,6 +382,9 @@ impl From<crate::operation::admin_add_user_to_group::AdminAddUserToGroupError> f
             crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_add_user_to_group::AdminAddUserToGroupError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -408,6 +422,9 @@ impl From<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError> for 
             }
             crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -461,6 +478,9 @@ impl From<crate::operation::admin_create_user::AdminCreateUserError> for Error {
                 Error::InvalidSmsRoleTrustRelationshipException(inner)
             }
             crate::operation::admin_create_user::AdminCreateUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_create_user::AdminCreateUserError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_create_user::AdminCreateUserError::PreconditionNotMetException(inner) => {
                 Error::PreconditionNotMetException(inner)
             }
@@ -499,6 +519,9 @@ impl From<crate::operation::admin_delete_user::AdminDeleteUserError> for Error {
             crate::operation::admin_delete_user::AdminDeleteUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::admin_delete_user::AdminDeleteUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::admin_delete_user::AdminDeleteUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_delete_user::AdminDeleteUserError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_delete_user::AdminDeleteUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::admin_delete_user::AdminDeleteUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::admin_delete_user::AdminDeleteUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
@@ -534,6 +557,9 @@ impl From<crate::operation::admin_delete_user_attributes::AdminDeleteUserAttribu
             }
             crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -584,6 +610,9 @@ impl From<crate::operation::admin_disable_provider_for_user::AdminDisableProvide
             crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -617,6 +646,9 @@ impl From<crate::operation::admin_disable_user::AdminDisableUserError> for Error
             crate::operation::admin_disable_user::AdminDisableUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::admin_disable_user::AdminDisableUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::admin_disable_user::AdminDisableUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_disable_user::AdminDisableUserError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_disable_user::AdminDisableUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::admin_disable_user::AdminDisableUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::admin_disable_user::AdminDisableUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
@@ -644,6 +676,9 @@ impl From<crate::operation::admin_enable_user::AdminEnableUserError> for Error {
             crate::operation::admin_enable_user::AdminEnableUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::admin_enable_user::AdminEnableUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::admin_enable_user::AdminEnableUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_enable_user::AdminEnableUserError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_enable_user::AdminEnableUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::admin_enable_user::AdminEnableUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::admin_enable_user::AdminEnableUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
@@ -676,6 +711,9 @@ impl From<crate::operation::admin_forget_device::AdminForgetDeviceError> for Err
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::admin_forget_device::AdminForgetDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_forget_device::AdminForgetDeviceError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_forget_device::AdminForgetDeviceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -708,6 +746,9 @@ impl From<crate::operation::admin_get_device::AdminGetDeviceError> for Error {
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::admin_get_device::AdminGetDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_get_device::AdminGetDeviceError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_get_device::AdminGetDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::admin_get_device::AdminGetDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::admin_get_device::AdminGetDeviceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -734,6 +775,7 @@ impl From<crate::operation::admin_get_user::AdminGetUserError> for Error {
             crate::operation::admin_get_user::AdminGetUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::admin_get_user::AdminGetUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::admin_get_user::AdminGetUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_get_user::AdminGetUserError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::admin_get_user::AdminGetUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::admin_get_user::AdminGetUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::admin_get_user::AdminGetUserError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
@@ -781,6 +823,9 @@ impl From<crate::operation::admin_initiate_auth::AdminInitiateAuthError> for Err
                 Error::MfaMethodNotFoundException(inner)
             }
             crate::operation::admin_initiate_auth::AdminInitiateAuthError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_initiate_auth::AdminInitiateAuthError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -840,6 +885,9 @@ impl From<crate::operation::admin_link_provider_for_user::AdminLinkProviderForUs
             crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -876,6 +924,9 @@ impl From<crate::operation::admin_list_devices::AdminListDevicesError> for Error
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::admin_list_devices::AdminListDevicesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::admin_list_devices::AdminListDevicesError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_list_devices::AdminListDevicesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::admin_list_devices::AdminListDevicesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::admin_list_devices::AdminListDevicesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -910,6 +961,9 @@ impl From<crate::operation::admin_list_groups_for_user::AdminListGroupsForUserEr
             }
             crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -952,6 +1006,9 @@ impl From<crate::operation::admin_list_user_auth_events::AdminListUserAuthEvents
             }
             crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -997,6 +1054,9 @@ impl From<crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGro
             }
             crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1054,6 +1114,9 @@ impl From<crate::operation::admin_reset_user_password::AdminResetUserPasswordErr
             }
             crate::operation::admin_reset_user_password::AdminResetUserPasswordError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::admin_reset_user_password::AdminResetUserPasswordError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1137,6 +1200,9 @@ impl From<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthC
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::PasswordHistoryPolicyViolationException(inner) => {
                 Error::PasswordHistoryPolicyViolationException(inner)
             }
@@ -1197,6 +1263,9 @@ impl From<crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPrefer
             crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -1244,6 +1313,9 @@ impl From<crate::operation::admin_set_user_password::AdminSetUserPasswordError> 
             crate::operation::admin_set_user_password::AdminSetUserPasswordError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_set_user_password::AdminSetUserPasswordError::PasswordHistoryPolicyViolationException(inner) => {
                 Error::PasswordHistoryPolicyViolationException(inner)
             }
@@ -1286,6 +1358,9 @@ impl From<crate::operation::admin_set_user_settings::AdminSetUserSettingsError> 
             crate::operation::admin_set_user_settings::AdminSetUserSettingsError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_set_user_settings::AdminSetUserSettingsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1326,6 +1401,9 @@ impl From<crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEve
             }
             crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1374,6 +1452,9 @@ impl From<crate::operation::admin_update_device_status::AdminUpdateDeviceStatusE
             }
             crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1432,6 +1513,9 @@ impl From<crate::operation::admin_update_user_attributes::AdminUpdateUserAttribu
             crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1480,6 +1564,9 @@ impl From<crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutEr
             crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1525,6 +1612,9 @@ impl From<crate::operation::associate_software_token::AssociateSoftwareTokenErro
             crate::operation::associate_software_token::AssociateSoftwareTokenError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::associate_software_token::AssociateSoftwareTokenError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::associate_software_token::AssociateSoftwareTokenError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1558,6 +1648,7 @@ impl From<crate::operation::change_password::ChangePasswordError> for Error {
             crate::operation::change_password::ChangePasswordError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
             crate::operation::change_password::ChangePasswordError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::change_password::ChangePasswordError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::change_password::ChangePasswordError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::change_password::ChangePasswordError::PasswordHistoryPolicyViolationException(inner) => {
                 Error::PasswordHistoryPolicyViolationException(inner)
             }
@@ -1610,6 +1701,9 @@ impl From<crate::operation::complete_web_authn_registration::CompleteWebAuthnReg
             }
             crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
@@ -1668,6 +1762,7 @@ impl From<crate::operation::confirm_device::ConfirmDeviceError> for Error {
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::confirm_device::ConfirmDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::confirm_device::ConfirmDeviceError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::confirm_device::ConfirmDeviceError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -1721,6 +1816,9 @@ impl From<crate::operation::confirm_forgot_password::ConfirmForgotPasswordError>
             }
             crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::PasswordHistoryPolicyViolationException(inner) => {
                 Error::PasswordHistoryPolicyViolationException(inner)
@@ -1778,6 +1876,7 @@ impl From<crate::operation::confirm_sign_up::ConfirmSignUpError> for Error {
             crate::operation::confirm_sign_up::ConfirmSignUpError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::confirm_sign_up::ConfirmSignUpError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::confirm_sign_up::ConfirmSignUpError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::confirm_sign_up::ConfirmSignUpError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::confirm_sign_up::ConfirmSignUpError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::confirm_sign_up::ConfirmSignUpError::TooManyFailedAttemptsException(inner) => {
                 Error::TooManyFailedAttemptsException(inner)
@@ -1814,6 +1913,7 @@ impl From<crate::operation::create_group::CreateGroupError> for Error {
             crate::operation::create_group::CreateGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_group::CreateGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_group::CreateGroupError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_group::CreateGroupError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::create_group::CreateGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_group::CreateGroupError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_group::CreateGroupError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1902,6 +2002,9 @@ impl From<crate::operation::create_managed_login_branding::CreateManagedLoginBra
             crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1941,6 +2044,9 @@ impl From<crate::operation::create_resource_server::CreateResourceServerError> f
             crate::operation::create_resource_server::CreateResourceServerError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::create_resource_server::CreateResourceServerError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::create_resource_server::CreateResourceServerError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1973,6 +2079,7 @@ impl From<crate::operation::create_terms::CreateTermsError> for Error {
             crate::operation::create_terms::CreateTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_terms::CreateTermsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_terms::CreateTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_terms::CreateTermsError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::create_terms::CreateTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_terms::CreateTermsError::TermsExistsException(inner) => Error::TermsExistsException(inner),
             crate::operation::create_terms::CreateTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -2003,6 +2110,9 @@ impl From<crate::operation::create_user_import_job::CreateUserImportJobError> fo
             }
             crate::operation::create_user_import_job::CreateUserImportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_user_import_job::CreateUserImportJobError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_user_import_job::CreateUserImportJobError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::create_user_import_job::CreateUserImportJobError::PreconditionNotMetException(inner) => {
                 Error::PreconditionNotMetException(inner)
             }
@@ -2095,6 +2205,9 @@ impl From<crate::operation::create_user_pool_client::CreateUserPoolClientError> 
             crate::operation::create_user_pool_client::CreateUserPoolClientError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::create_user_pool_client::CreateUserPoolClientError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2145,10 +2258,63 @@ impl From<crate::operation::create_user_pool_domain::CreateUserPoolDomainError> 
             crate::operation::create_user_pool_domain::CreateUserPoolDomainError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::create_user_pool_domain::CreateUserPoolDomainError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::create_user_pool_domain::CreateUserPoolDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user_pool_replica::CreateUserPoolReplicaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user_pool_replica::CreateUserPoolReplicaError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_user_pool_replica::CreateUserPoolReplicaError> for Error {
+    fn from(err: crate::operation::create_user_pool_replica::CreateUserPoolReplicaError) -> Self {
+        match err {
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::UserPoolTaggingException(inner) => {
+                Error::UserPoolTaggingException(inner)
+            }
+            crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2172,6 +2338,7 @@ impl From<crate::operation::delete_group::DeleteGroupError> for Error {
             crate::operation::delete_group::DeleteGroupError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::delete_group::DeleteGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::delete_group::DeleteGroupError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_group::DeleteGroupError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::delete_group::DeleteGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_group::DeleteGroupError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_group::DeleteGroupError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2254,6 +2421,9 @@ impl From<crate::operation::delete_managed_login_branding::DeleteManagedLoginBra
             crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2290,6 +2460,9 @@ impl From<crate::operation::delete_resource_server::DeleteResourceServerError> f
             crate::operation::delete_resource_server::DeleteResourceServerError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::delete_resource_server::DeleteResourceServerError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::delete_resource_server::DeleteResourceServerError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2321,6 +2494,7 @@ impl From<crate::operation::delete_terms::DeleteTermsError> for Error {
             crate::operation::delete_terms::DeleteTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::delete_terms::DeleteTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::delete_terms::DeleteTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_terms::DeleteTermsError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::delete_terms::DeleteTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_terms::DeleteTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_terms::DeleteTermsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2348,6 +2522,7 @@ impl From<crate::operation::delete_user::DeleteUserError> for Error {
             crate::operation::delete_user::DeleteUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::delete_user::DeleteUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::delete_user::DeleteUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_user::DeleteUserError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::delete_user::DeleteUserError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
             crate::operation::delete_user::DeleteUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_user::DeleteUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -2383,6 +2558,9 @@ impl From<crate::operation::delete_user_attributes::DeleteUserAttributesError> f
             }
             crate::operation::delete_user_attributes::DeleteUserAttributesError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_user_attributes::DeleteUserAttributesError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::delete_user_attributes::DeleteUserAttributesError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
@@ -2421,6 +2599,9 @@ impl From<crate::operation::delete_user_pool::DeleteUserPoolError> for Error {
             crate::operation::delete_user_pool::DeleteUserPoolError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::delete_user_pool::DeleteUserPoolError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::delete_user_pool::DeleteUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_user_pool::DeleteUserPoolError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::delete_user_pool::DeleteUserPoolError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_user_pool::DeleteUserPoolError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_user_pool::DeleteUserPoolError::UserImportInProgressException(inner) => {
@@ -2460,6 +2641,9 @@ impl From<crate::operation::delete_user_pool_client::DeleteUserPoolClientError> 
             }
             crate::operation::delete_user_pool_client::DeleteUserPoolClientError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_user_pool_client::DeleteUserPoolClientError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::delete_user_pool_client::DeleteUserPoolClientError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -2541,10 +2725,54 @@ impl From<crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError> 
             crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError> for Error {
+    fn from(err: crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError) -> Self {
+        match err {
+            crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_user_pool_replica::DeleteUserPoolReplicaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2582,6 +2810,9 @@ impl From<crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentia
             }
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
@@ -2668,6 +2899,9 @@ impl From<crate::operation::describe_managed_login_branding::DescribeManagedLogi
             crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2715,6 +2949,9 @@ impl From<crate::operation::describe_managed_login_branding_by_client::DescribeM
             crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::OperationNotEnabledException(
+                inner,
+            ) => Error::OperationNotEnabledException(inner),
             crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
@@ -2755,6 +2992,9 @@ impl From<crate::operation::describe_resource_server::DescribeResourceServerErro
             crate::operation::describe_resource_server::DescribeResourceServerError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::describe_resource_server::DescribeResourceServerError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::describe_resource_server::DescribeResourceServerError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2794,6 +3034,9 @@ impl From<crate::operation::describe_risk_configuration::DescribeRiskConfigurati
             crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2827,6 +3070,7 @@ impl From<crate::operation::describe_terms::DescribeTermsError> for Error {
             crate::operation::describe_terms::DescribeTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::describe_terms::DescribeTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::describe_terms::DescribeTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_terms::DescribeTermsError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::describe_terms::DescribeTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_terms::DescribeTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_terms::DescribeTermsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2861,6 +3105,9 @@ impl From<crate::operation::describe_user_import_job::DescribeUserImportJobError
             crate::operation::describe_user_import_job::DescribeUserImportJobError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::describe_user_import_job::DescribeUserImportJobError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::describe_user_import_job::DescribeUserImportJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2891,6 +3138,9 @@ impl From<crate::operation::describe_user_pool::DescribeUserPoolError> for Error
             crate::operation::describe_user_pool::DescribeUserPoolError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::describe_user_pool::DescribeUserPoolError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::describe_user_pool::DescribeUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_user_pool::DescribeUserPoolError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::describe_user_pool::DescribeUserPoolError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_user_pool::DescribeUserPoolError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_user_pool::DescribeUserPoolError::UserPoolTaggingException(inner) => Error::UserPoolTaggingException(inner),
@@ -2926,6 +3176,9 @@ impl From<crate::operation::describe_user_pool_client::DescribeUserPoolClientErr
             }
             crate::operation::describe_user_pool_client::DescribeUserPoolClientError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::describe_user_pool_client::DescribeUserPoolClientError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -2966,6 +3219,9 @@ impl From<crate::operation::describe_user_pool_domain::DescribeUserPoolDomainErr
             crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2997,6 +3253,7 @@ impl From<crate::operation::forget_device::ForgetDeviceError> for Error {
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::forget_device::ForgetDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::forget_device::ForgetDeviceError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::forget_device::ForgetDeviceError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
             crate::operation::forget_device::ForgetDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::forget_device::ForgetDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -3041,6 +3298,7 @@ impl From<crate::operation::forgot_password::ForgotPasswordError> for Error {
             }
             crate::operation::forgot_password::ForgotPasswordError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::forgot_password::ForgotPasswordError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::forgot_password::ForgotPasswordError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::forgot_password::ForgotPasswordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::forgot_password::ForgotPasswordError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::forgot_password::ForgotPasswordError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
@@ -3072,6 +3330,7 @@ impl From<crate::operation::get_csv_header::GetCSVHeaderError> for Error {
             crate::operation::get_csv_header::GetCSVHeaderError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::get_csv_header::GetCSVHeaderError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_csv_header::GetCSVHeaderError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_csv_header::GetCSVHeaderError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::get_csv_header::GetCSVHeaderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_csv_header::GetCSVHeaderError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_csv_header::GetCSVHeaderError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3102,6 +3361,7 @@ impl From<crate::operation::get_device::GetDeviceError> for Error {
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::get_device::GetDeviceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_device::GetDeviceError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::get_device::GetDeviceError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
             crate::operation::get_device::GetDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_device::GetDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -3131,6 +3391,7 @@ impl From<crate::operation::get_group::GetGroupError> for Error {
             crate::operation::get_group::GetGroupError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::get_group::GetGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_group::GetGroupError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_group::GetGroupError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::get_group::GetGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_group::GetGroupError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_group::GetGroupError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3227,6 +3488,38 @@ impl From<crate::operation::get_log_delivery_configuration::GetLogDeliveryConfig
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_provisioned_limit::GetProvisionedLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_provisioned_limit::GetProvisionedLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_provisioned_limit::GetProvisionedLimitError> for Error {
+    fn from(err: crate::operation::get_provisioned_limit::GetProvisionedLimitError) -> Self {
+        match err {
+            crate::operation::get_provisioned_limit::GetProvisionedLimitError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_provisioned_limit::GetProvisionedLimitError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_provisioned_limit::GetProvisionedLimitError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_provisioned_limit::GetProvisionedLimitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_provisioned_limit::GetProvisionedLimitError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_provisioned_limit::GetProvisionedLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_signing_certificate::GetSigningCertificateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3251,6 +3544,9 @@ impl From<crate::operation::get_signing_certificate::GetSigningCertificateError>
             }
             crate::operation::get_signing_certificate::GetSigningCertificateError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_signing_certificate::GetSigningCertificateError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::get_signing_certificate::GetSigningCertificateError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -3293,6 +3589,9 @@ impl From<crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshT
             }
             crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::RefreshTokenReuseException(inner) => {
                 Error::RefreshTokenReuseException(inner)
@@ -3338,6 +3637,9 @@ impl From<crate::operation::get_ui_customization::GetUICustomizationError> for E
                 Error::InvalidParameterException(inner)
             }
             crate::operation::get_ui_customization::GetUICustomizationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_ui_customization::GetUICustomizationError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::get_ui_customization::GetUICustomizationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -3369,6 +3671,7 @@ impl From<crate::operation::get_user::GetUserError> for Error {
             crate::operation::get_user::GetUserError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::get_user::GetUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_user::GetUserError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_user::GetUserError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::get_user::GetUserError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
             crate::operation::get_user::GetUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_user::GetUserError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -3416,6 +3719,7 @@ impl From<crate::operation::get_user_attribute_verification_code::GetUserAttribu
             crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::InvalidSmsRoleTrustRelationshipException(inner) => Error::InvalidSmsRoleTrustRelationshipException(inner),
             crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
             crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -3450,6 +3754,9 @@ impl From<crate::operation::get_user_auth_factors::GetUserAuthFactorsError> for 
                 Error::InvalidParameterException(inner)
             }
             crate::operation::get_user_auth_factors::GetUserAuthFactorsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::get_user_auth_factors::GetUserAuthFactorsError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -3526,6 +3833,7 @@ impl From<crate::operation::global_sign_out::GlobalSignOutError> for Error {
             crate::operation::global_sign_out::GlobalSignOutError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::global_sign_out::GlobalSignOutError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::global_sign_out::GlobalSignOutError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::global_sign_out::GlobalSignOutError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::global_sign_out::GlobalSignOutError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -3570,6 +3878,7 @@ impl From<crate::operation::initiate_auth::InitiateAuthError> for Error {
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::initiate_auth::InitiateAuthError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::initiate_auth::InitiateAuthError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
             crate::operation::initiate_auth::InitiateAuthError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::initiate_auth::InitiateAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -3606,6 +3915,7 @@ impl From<crate::operation::list_devices::ListDevicesError> for Error {
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::list_devices::ListDevicesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_devices::ListDevicesError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::list_devices::ListDevicesError::PasswordResetRequiredException(inner) => Error::PasswordResetRequiredException(inner),
             crate::operation::list_devices::ListDevicesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_devices::ListDevicesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -3635,6 +3945,7 @@ impl From<crate::operation::list_groups::ListGroupsError> for Error {
             crate::operation::list_groups::ListGroupsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::list_groups::ListGroupsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_groups::ListGroupsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_groups::ListGroupsError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::list_groups::ListGroupsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_groups::ListGroupsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_groups::ListGroupsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3701,6 +4012,9 @@ impl From<crate::operation::list_resource_servers::ListResourceServersError> for
                 Error::InvalidParameterException(inner)
             }
             crate::operation::list_resource_servers::ListResourceServersError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_resource_servers::ListResourceServersError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::list_resource_servers::ListResourceServersError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -3733,6 +4047,9 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::InvalidParameterException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -3763,6 +4080,7 @@ impl From<crate::operation::list_terms::ListTermsError> for Error {
             crate::operation::list_terms::ListTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::list_terms::ListTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_terms::ListTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_terms::ListTermsError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::list_terms::ListTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_terms::ListTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_terms::ListTermsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3791,6 +4109,9 @@ impl From<crate::operation::list_user_import_jobs::ListUserImportJobsError> for 
                 Error::InvalidParameterException(inner)
             }
             crate::operation::list_user_import_jobs::ListUserImportJobsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_user_import_jobs::ListUserImportJobsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::list_user_import_jobs::ListUserImportJobsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -3823,6 +4144,9 @@ impl From<crate::operation::list_user_pool_clients::ListUserPoolClientsError> fo
                 Error::InvalidParameterException(inner)
             }
             crate::operation::list_user_pool_clients::ListUserPoolClientsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_user_pool_clients::ListUserPoolClientsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::list_user_pool_clients::ListUserPoolClientsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -3872,6 +4196,47 @@ impl From<crate::operation::list_user_pool_client_secrets::ListUserPoolClientSec
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_pool_replicas::ListUserPoolReplicasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_pool_replicas::ListUserPoolReplicasError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_user_pool_replicas::ListUserPoolReplicasError> for Error {
+    fn from(err: crate::operation::list_user_pool_replicas::ListUserPoolReplicasError) -> Self {
+        match err {
+            crate::operation::list_user_pool_replicas::ListUserPoolReplicasError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::list_user_pool_replicas::ListUserPoolReplicasError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_user_pool_replicas::ListUserPoolReplicasError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_user_pool_replicas::ListUserPoolReplicasError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::list_user_pool_replicas::ListUserPoolReplicasError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_user_pool_replicas::ListUserPoolReplicasError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_user_pool_replicas::ListUserPoolReplicasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_pools::ListUserPoolsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3917,6 +4282,7 @@ impl From<crate::operation::list_users::ListUsersError> for Error {
             crate::operation::list_users::ListUsersError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::list_users::ListUsersError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_users::ListUsersError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_users::ListUsersError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::list_users::ListUsersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_users::ListUsersError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_users::ListUsersError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3943,6 +4309,9 @@ impl From<crate::operation::list_users_in_group::ListUsersInGroupError> for Erro
             crate::operation::list_users_in_group::ListUsersInGroupError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::list_users_in_group::ListUsersInGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_users_in_group::ListUsersInGroupError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_users_in_group::ListUsersInGroupError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::list_users_in_group::ListUsersInGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_users_in_group::ListUsersInGroupError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_users_in_group::ListUsersInGroupError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3981,6 +4350,9 @@ impl From<crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsE
             }
             crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
@@ -4038,6 +4410,9 @@ impl From<crate::operation::resend_confirmation_code::ResendConfirmationCodeErro
             }
             crate::operation::resend_confirmation_code::ResendConfirmationCodeError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::resend_confirmation_code::ResendConfirmationCodeError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -4118,6 +4493,9 @@ impl From<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeErr
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::PasswordHistoryPolicyViolationException(inner) => {
                 Error::PasswordHistoryPolicyViolationException(inner)
             }
@@ -4169,6 +4547,7 @@ impl From<crate::operation::revoke_token::RevokeTokenError> for Error {
             crate::operation::revoke_token::RevokeTokenError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::revoke_token::RevokeTokenError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::revoke_token::RevokeTokenError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::revoke_token::RevokeTokenError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::revoke_token::RevokeTokenError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::revoke_token::RevokeTokenError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::revoke_token::RevokeTokenError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
@@ -4255,6 +4634,9 @@ impl From<crate::operation::set_risk_configuration::SetRiskConfigurationError> f
             crate::operation::set_risk_configuration::SetRiskConfigurationError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::set_risk_configuration::SetRiskConfigurationError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::set_risk_configuration::SetRiskConfigurationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -4290,6 +4672,9 @@ impl From<crate::operation::set_ui_customization::SetUICustomizationError> for E
                 Error::InvalidParameterException(inner)
             }
             crate::operation::set_ui_customization::SetUICustomizationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_ui_customization::SetUICustomizationError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::set_ui_customization::SetUICustomizationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -4328,6 +4713,9 @@ impl From<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError> 
             }
             crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
@@ -4383,6 +4771,9 @@ impl From<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError>
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -4414,6 +4805,9 @@ impl From<crate::operation::set_user_settings::SetUserSettingsError> for Error {
             crate::operation::set_user_settings::SetUserSettingsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::set_user_settings::SetUserSettingsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::set_user_settings::SetUserSettingsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_user_settings::SetUserSettingsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::set_user_settings::SetUserSettingsError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -4456,6 +4850,7 @@ impl From<crate::operation::sign_up::SignUpError> for Error {
             }
             crate::operation::sign_up::SignUpError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::sign_up::SignUpError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::sign_up::SignUpError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::sign_up::SignUpError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::sign_up::SignUpError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::sign_up::SignUpError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
@@ -4487,6 +4882,9 @@ impl From<crate::operation::start_user_import_job::StartUserImportJobError> for 
                 Error::InvalidParameterException(inner)
             }
             crate::operation::start_user_import_job::StartUserImportJobError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::start_user_import_job::StartUserImportJobError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::start_user_import_job::StartUserImportJobError::PreconditionNotMetException(inner) => {
                 Error::PreconditionNotMetException(inner)
             }
@@ -4535,6 +4933,9 @@ impl From<crate::operation::start_web_authn_registration::StartWebAuthnRegistrat
             crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -4573,6 +4974,9 @@ impl From<crate::operation::stop_user_import_job::StopUserImportJobError> for Er
                 Error::InvalidParameterException(inner)
             }
             crate::operation::stop_user_import_job::StopUserImportJobError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::stop_user_import_job::StopUserImportJobError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::stop_user_import_job::StopUserImportJobError::PreconditionNotMetException(inner) => {
                 Error::PreconditionNotMetException(inner)
             }
@@ -4604,6 +5008,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::tag_resource::TagResourceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::tag_resource::TagResourceError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4630,6 +5035,7 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::untag_resource::UntagResourceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::untag_resource::UntagResourceError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4664,6 +5070,9 @@ impl From<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackE
             }
             crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -4707,6 +5116,9 @@ impl From<crate::operation::update_device_status::UpdateDeviceStatusError> for E
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::update_device_status::UpdateDeviceStatusError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_device_status::UpdateDeviceStatusError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::update_device_status::UpdateDeviceStatusError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -4744,6 +5156,7 @@ impl From<crate::operation::update_group::UpdateGroupError> for Error {
             crate::operation::update_group::UpdateGroupError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::update_group::UpdateGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_group::UpdateGroupError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_group::UpdateGroupError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::update_group::UpdateGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_group::UpdateGroupError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_group::UpdateGroupError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4826,6 +5239,9 @@ impl From<crate::operation::update_managed_login_branding::UpdateManagedLoginBra
             crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -4833,6 +5249,47 @@ impl From<crate::operation::update_managed_login_branding::UpdateManagedLoginBra
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_provisioned_limit::UpdateProvisionedLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_provisioned_limit::UpdateProvisionedLimitError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_provisioned_limit::UpdateProvisionedLimitError> for Error {
+    fn from(err: crate::operation::update_provisioned_limit::UpdateProvisionedLimitError) -> Self {
+        match err {
+            crate::operation::update_provisioned_limit::UpdateProvisionedLimitError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::update_provisioned_limit::UpdateProvisionedLimitError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_provisioned_limit::UpdateProvisionedLimitError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::update_provisioned_limit::UpdateProvisionedLimitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_provisioned_limit::UpdateProvisionedLimitError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_provisioned_limit::UpdateProvisionedLimitError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_provisioned_limit::UpdateProvisionedLimitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4861,6 +5318,9 @@ impl From<crate::operation::update_resource_server::UpdateResourceServerError> f
             }
             crate::operation::update_resource_server::UpdateResourceServerError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::update_resource_server::UpdateResourceServerError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::update_resource_server::UpdateResourceServerError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -4893,6 +5353,7 @@ impl From<crate::operation::update_terms::UpdateTermsError> for Error {
             crate::operation::update_terms::UpdateTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::update_terms::UpdateTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_terms::UpdateTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_terms::UpdateTermsError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
             crate::operation::update_terms::UpdateTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_terms::UpdateTermsError::TermsExistsException(inner) => Error::TermsExistsException(inner),
             crate::operation::update_terms::UpdateTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -4944,6 +5405,9 @@ impl From<crate::operation::update_user_attributes::UpdateUserAttributesError> f
             }
             crate::operation::update_user_attributes::UpdateUserAttributesError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::update_user_attributes::UpdateUserAttributesError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
             }
             crate::operation::update_user_attributes::UpdateUserAttributesError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
@@ -5003,6 +5467,9 @@ impl From<crate::operation::update_user_pool::UpdateUserPoolError> for Error {
                 Error::InvalidSmsRoleTrustRelationshipException(inner)
             }
             crate::operation::update_user_pool::UpdateUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::update_user_pool::UpdateUserPoolError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_user_pool::UpdateUserPoolError::TierChangeNotAllowedException(inner) => {
                 Error::TierChangeNotAllowedException(inner)
@@ -5053,6 +5520,9 @@ impl From<crate::operation::update_user_pool_client::UpdateUserPoolClientError> 
             crate::operation::update_user_pool_client::UpdateUserPoolClientError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::update_user_pool_client::UpdateUserPoolClientError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -5100,6 +5570,9 @@ impl From<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError> 
             crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -5107,6 +5580,47 @@ impl From<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError> 
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError> for Error {
+    fn from(err: crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError) -> Self {
+        match err {
+            crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_user_pool_replica::UpdateUserPoolReplicaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5140,6 +5654,9 @@ impl From<crate::operation::verify_software_token::VerifySoftwareTokenError> for
                 Error::InvalidUserPoolConfigurationException(inner)
             }
             crate::operation::verify_software_token::VerifySoftwareTokenError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::verify_software_token::VerifySoftwareTokenError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::verify_software_token::VerifySoftwareTokenError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -5187,6 +5704,9 @@ impl From<crate::operation::verify_user_attribute::VerifyUserAttributeError> for
             }
             crate::operation::verify_user_attribute::VerifyUserAttributeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::verify_user_attribute::VerifyUserAttributeError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::verify_user_attribute::VerifyUserAttributeError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
             crate::operation::verify_user_attribute::VerifyUserAttributeError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -5233,12 +5753,14 @@ impl ::std::error::Error for Error {
             Error::MfaMethodNotFoundException(inner) => inner.source(),
             Error::ManagedLoginBrandingExistsException(inner) => inner.source(),
             Error::NotAuthorizedException(inner) => inner.source(),
+            Error::OperationNotEnabledException(inner) => inner.source(),
             Error::PasswordHistoryPolicyViolationException(inner) => inner.source(),
             Error::PasswordResetRequiredException(inner) => inner.source(),
             Error::PreconditionNotMetException(inner) => inner.source(),
             Error::RefreshTokenReuseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ScopeDoesNotExistException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::SoftwareTokenMfaNotFoundException(inner) => inner.source(),
             Error::TermsExistsException(inner) => inner.source(),
             Error::TierChangeNotAllowedException(inner) => inner.source(),
@@ -5297,12 +5819,14 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::MfaMethodNotFoundException(e) => e.request_id(),
             Self::ManagedLoginBrandingExistsException(e) => e.request_id(),
             Self::NotAuthorizedException(e) => e.request_id(),
+            Self::OperationNotEnabledException(e) => e.request_id(),
             Self::PasswordHistoryPolicyViolationException(e) => e.request_id(),
             Self::PasswordResetRequiredException(e) => e.request_id(),
             Self::PreconditionNotMetException(e) => e.request_id(),
             Self::RefreshTokenReuseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ScopeDoesNotExistException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::SoftwareTokenMfaNotFoundException(e) => e.request_id(),
             Self::TermsExistsException(e) => e.request_id(),
             Self::TierChangeNotAllowedException(e) => e.request_id(),

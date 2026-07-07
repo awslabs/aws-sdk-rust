@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NetworkInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -68,7 +72,7 @@ pub fn de_network_info(
             s if s.matches("networkCards") /* NetworkCards com.amazonaws.ec2#NetworkInfo$NetworkCards */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_network_card_info_list::de_network_card_info_list(&mut tag)
+                        crate::protocol_serde::shape_network_card_info_list::de_network_card_info_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -152,7 +156,7 @@ pub fn de_network_info(
             s if s.matches("efaInfo") /* EfaInfo com.amazonaws.ec2#NetworkInfo$EfaInfo */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_efa_info::de_efa_info(&mut tag)
+                        crate::protocol_serde::shape_efa_info::de_efa_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -192,7 +196,7 @@ pub fn de_network_info(
             s if s.matches("bandwidthWeightings") /* BandwidthWeightings com.amazonaws.ec2#NetworkInfo$BandwidthWeightings */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_bandwidth_weighting_type_list::de_bandwidth_weighting_type_list(&mut tag)
+                        crate::protocol_serde::shape_bandwidth_weighting_type_list::de_bandwidth_weighting_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -216,7 +220,7 @@ pub fn de_network_info(
             s if s.matches("connectionTrackingConfiguration") /* ConnectionTrackingConfiguration com.amazonaws.ec2#NetworkInfo$ConnectionTrackingConfiguration */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_default_connection_tracking_configuration::de_default_connection_tracking_configuration(&mut tag)
+                        crate::protocol_serde::shape_default_connection_tracking_configuration::de_default_connection_tracking_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

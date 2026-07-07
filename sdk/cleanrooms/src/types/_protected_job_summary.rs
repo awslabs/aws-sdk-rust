@@ -16,6 +16,8 @@ pub struct ProtectedJobSummary {
     pub status: crate::types::ProtectedJobStatus,
     /// <p>The receiver configurations for the protected job.</p>
     pub receiver_configurations: ::std::vec::Vec<crate::types::ProtectedJobReceiverConfiguration>,
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub job_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedJobSummary {
     /// <p>The ID of the protected job.</p>
@@ -46,6 +48,10 @@ impl ProtectedJobSummary {
         use std::ops::Deref;
         self.receiver_configurations.deref()
     }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn job_compute_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.job_compute_payer_account_id.as_deref()
+    }
 }
 impl ProtectedJobSummary {
     /// Creates a new builder-style object to manufacture [`ProtectedJobSummary`](crate::types::ProtectedJobSummary).
@@ -64,6 +70,7 @@ pub struct ProtectedJobSummaryBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ProtectedJobStatus>,
     pub(crate) receiver_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedJobReceiverConfiguration>>,
+    pub(crate) job_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedJobSummaryBuilder {
     /// <p>The ID of the protected job.</p>
@@ -164,6 +171,20 @@ impl ProtectedJobSummaryBuilder {
     pub fn get_receiver_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedJobReceiverConfiguration>> {
         &self.receiver_configurations
     }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn job_compute_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_compute_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn set_job_compute_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_compute_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn get_job_compute_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_compute_payer_account_id
+    }
     /// Consumes the builder and constructs a [`ProtectedJobSummary`](crate::types::ProtectedJobSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ProtectedJobSummaryBuilder::id)
@@ -204,6 +225,7 @@ impl ProtectedJobSummaryBuilder {
                 )
             })?,
             receiver_configurations: self.receiver_configurations.unwrap_or_default(),
+            job_compute_payer_account_id: self.job_compute_payer_account_id,
         })
     }
 }

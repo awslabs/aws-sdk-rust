@@ -43,6 +43,8 @@ pub struct SearchRecord {
     pub model_card: ::std::option::Option<crate::types::ModelCard>,
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
     pub model: ::std::option::Option<crate::types::ModelDashboardModel>,
+    /// <p>The properties of a job.</p>
+    pub job: ::std::option::Option<crate::types::Job>,
 }
 impl SearchRecord {
     /// <p>The properties of a training job.</p>
@@ -116,6 +118,10 @@ impl SearchRecord {
     pub fn model(&self) -> ::std::option::Option<&crate::types::ModelDashboardModel> {
         self.model.as_ref()
     }
+    /// <p>The properties of a job.</p>
+    pub fn job(&self) -> ::std::option::Option<&crate::types::Job> {
+        self.job.as_ref()
+    }
 }
 impl SearchRecord {
     /// Creates a new builder-style object to manufacture [`SearchRecord`](crate::types::SearchRecord).
@@ -144,6 +150,7 @@ pub struct SearchRecordBuilder {
     pub(crate) hyper_parameter_tuning_job: ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
     pub(crate) model_card: ::std::option::Option<crate::types::ModelCard>,
     pub(crate) model: ::std::option::Option<crate::types::ModelDashboardModel>,
+    pub(crate) job: ::std::option::Option<crate::types::Job>,
 }
 impl SearchRecordBuilder {
     /// <p>The properties of a training job.</p>
@@ -391,6 +398,20 @@ impl SearchRecordBuilder {
     pub fn get_model(&self) -> &::std::option::Option<crate::types::ModelDashboardModel> {
         &self.model
     }
+    /// <p>The properties of a job.</p>
+    pub fn job(mut self, input: crate::types::Job) -> Self {
+        self.job = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The properties of a job.</p>
+    pub fn set_job(mut self, input: ::std::option::Option<crate::types::Job>) -> Self {
+        self.job = input;
+        self
+    }
+    /// <p>The properties of a job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::Job> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`SearchRecord`](crate::types::SearchRecord).
     pub fn build(self) -> crate::types::SearchRecord {
         crate::types::SearchRecord {
@@ -410,6 +431,7 @@ impl SearchRecordBuilder {
             hyper_parameter_tuning_job: self.hyper_parameter_tuning_job,
             model_card: self.model_card,
             model: self.model,
+            job: self.job,
         }
     }
 }

@@ -116,6 +116,8 @@ pub(crate) fn de_get_key_last_usage(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -129,7 +131,11 @@ pub(crate) fn de_get_key_last_usage(
                     );
                 }
                 "KeyLastUsage" => {
-                    builder = builder.set_key_last_usage(crate::protocol_serde::shape_key_last_usage_data::de_key_last_usage_data(tokens, _value)?);
+                    builder = builder.set_key_last_usage(crate::protocol_serde::shape_key_last_usage_data::de_key_last_usage_data(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "TrackingStartDate" => {
                     builder = builder.set_tracking_start_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

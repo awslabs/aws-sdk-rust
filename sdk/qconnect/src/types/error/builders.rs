@@ -13,9 +13,9 @@ pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
-pub use crate::types::error::_request_timeout_exception::RequestTimeoutExceptionBuilder;
-
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
+pub use crate::types::error::_request_timeout_exception::RequestTimeoutExceptionBuilder;
 
 pub use crate::types::error::_dependency_failed_exception::DependencyFailedExceptionBuilder;
 

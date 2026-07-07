@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_bundle_task(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::BundleTask, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::BundleTask::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -78,7 +82,7 @@ pub fn de_bundle_task(
             s if s.matches("storage") /* Storage com.amazonaws.ec2#BundleTask$Storage */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_storage::de_storage(&mut tag)
+                        crate::protocol_serde::shape_storage::de_storage(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -101,7 +105,7 @@ pub fn de_bundle_task(
             s if s.matches("error") /* BundleTaskError com.amazonaws.ec2#BundleTask$BundleTaskError */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_bundle_task_error::de_bundle_task_error(&mut tag)
+                        crate::protocol_serde::shape_bundle_task_error::de_bundle_task_error(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -24,7 +24,7 @@ pub struct CanaryCodeInput {
     /// <p>This field is required when you don't specify <code>BlueprintTypes</code> and is not allowed when you specify <code>BlueprintTypes</code>.</p>
     pub handler: ::std::string::String,
     /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
-    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the <code>Handler</code> field cannot be specified since the blueprint provides a pre-defined entry point.</p>
     /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
     pub blueprint_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of dependencies that should be used for running this canary. Specify the dependencies as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
@@ -55,7 +55,7 @@ impl CanaryCodeInput {
         self.handler.deref()
     }
     /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
-    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the <code>Handler</code> field cannot be specified since the blueprint provides a pre-defined entry point.</p>
     /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprint_types.is_none()`.
@@ -170,7 +170,7 @@ impl CanaryCodeInputBuilder {
     /// To override the contents of this collection use [`set_blueprint_types`](Self::set_blueprint_types).
     ///
     /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
-    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the <code>Handler</code> field cannot be specified since the blueprint provides a pre-defined entry point.</p>
     /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
     pub fn blueprint_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blueprint_types.unwrap_or_default();
@@ -179,14 +179,14 @@ impl CanaryCodeInputBuilder {
         self
     }
     /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
-    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the <code>Handler</code> field cannot be specified since the blueprint provides a pre-defined entry point.</p>
     /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
     pub fn set_blueprint_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.blueprint_types = input;
         self
     }
     /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
-    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the <code>Handler</code> field cannot be specified since the blueprint provides a pre-defined entry point.</p>
     /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
     pub fn get_blueprint_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.blueprint_types

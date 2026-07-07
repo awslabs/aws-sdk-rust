@@ -2,10 +2,16 @@
 pub(crate) fn de_scheduled_query_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScheduledQueryDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,17 +69,19 @@ where
                         }
                         "ScheduleConfiguration" => {
                             builder = builder.set_schedule_configuration(
-                                crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "NotificationConfiguration" => {
                             builder = builder.set_notification_configuration(
-                                crate::protocol_serde::shape_notification_configuration::de_notification_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_notification_configuration::de_notification_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "TargetConfiguration" => {
                             builder = builder.set_target_configuration(crate::protocol_serde::shape_target_configuration::de_target_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ScheduledQueryExecutionRoleArn" => {
@@ -92,17 +100,21 @@ where
                         }
                         "ErrorReportConfiguration" => {
                             builder = builder.set_error_report_configuration(
-                                crate::protocol_serde::shape_error_report_configuration::de_error_report_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_error_report_configuration::de_error_report_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "LastRunSummary" => {
                             builder = builder.set_last_run_summary(
-                                crate::protocol_serde::shape_scheduled_query_run_summary::de_scheduled_query_run_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_scheduled_query_run_summary::de_scheduled_query_run_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "RecentlyFailedRuns" => {
                             builder = builder.set_recently_failed_runs(
-                                crate::protocol_serde::shape_scheduled_query_run_summary_list::de_scheduled_query_run_summary_list(tokens, _value)?,
+                                crate::protocol_serde::shape_scheduled_query_run_summary_list::de_scheduled_query_run_summary_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

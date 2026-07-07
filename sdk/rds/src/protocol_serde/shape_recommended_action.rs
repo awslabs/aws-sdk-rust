@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_recommended_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RecommendedAction, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RecommendedAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_recommended_action(
             s if s.matches("Parameters") /* Parameters com.amazonaws.rds#RecommendedAction$Parameters */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_recommended_action_parameter_list::de_recommended_action_parameter_list(&mut tag)
+                        crate::protocol_serde::shape_recommended_action_parameter_list::de_recommended_action_parameter_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_recommended_action(
             s if s.matches("ApplyModes") /* ApplyModes com.amazonaws.rds#RecommendedAction$ApplyModes */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -95,7 +99,7 @@ pub fn de_recommended_action(
             s if s.matches("IssueDetails") /* IssueDetails com.amazonaws.rds#RecommendedAction$IssueDetails */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_issue_details::de_issue_details(&mut tag)
+                        crate::protocol_serde::shape_issue_details::de_issue_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -105,7 +109,7 @@ pub fn de_recommended_action(
             s if s.matches("ContextAttributes") /* ContextAttributes com.amazonaws.rds#RecommendedAction$ContextAttributes */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_context_attribute_list::de_context_attribute_list(&mut tag)
+                        crate::protocol_serde::shape_context_attribute_list::de_context_attribute_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

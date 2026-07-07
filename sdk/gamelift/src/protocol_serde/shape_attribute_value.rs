@@ -34,23 +34,31 @@ pub fn ser_attribute_value(
 
 pub(crate) fn de_attribute_value(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AttributeValue, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::AttributeValueBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::AttributeValueBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "S" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_s(Some(decoder.string()?))))?,
             "N" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_n(Some(decoder.double()?))))?,
             "SL" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_sl(Some(
-                    crate::protocol_serde::shape_player_attribute_string_list::de_player_attribute_string_list(decoder)?,
+                    crate::protocol_serde::shape_player_attribute_string_list::de_player_attribute_string_list(decoder, depth + 1)?,
                 )))
             })?,
             "SDM" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_sdm(Some(
-                    crate::protocol_serde::shape_player_attribute_string_double_map::de_player_attribute_string_double_map(decoder)?,
+                    crate::protocol_serde::shape_player_attribute_string_double_map::de_player_attribute_string_double_map(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -71,13 +79,13 @@ pub(crate) fn de_attribute_value(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

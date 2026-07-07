@@ -4,7 +4,9 @@ pub(crate) fn de_journey_response_payload(
 ) -> ::std::result::Result<crate::types::JourneyResponse, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::protocol_serde::shape_journey_response::de_journey_response(tokens, _value)?
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    let result = crate::protocol_serde::shape_journey_response::de_journey_response(tokens, _value, depth + 1)?
         .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -17,10 +19,16 @@ pub(crate) fn de_journey_response_payload(
 pub(crate) fn de_journey_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JourneyResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +39,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Activities" => {
-                            builder = builder.set_activities(crate::protocol_serde::shape_map_of_activity::de_map_of_activity(tokens, _value)?);
+                            builder = builder.set_activities(crate::protocol_serde::shape_map_of_activity::de_map_of_activity(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ApplicationId" => {
                             builder = builder.set_application_id(
@@ -62,7 +74,7 @@ where
                             );
                         }
                         "Limits" => {
-                            builder = builder.set_limits(crate::protocol_serde::shape_journey_limits::de_journey_limits(tokens, _value)?);
+                            builder = builder.set_limits(crate::protocol_serde::shape_journey_limits::de_journey_limits(tokens, _value, depth + 1)?);
                         }
                         "LocalTime" => {
                             builder = builder.set_local_time(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -75,7 +87,7 @@ where
                             );
                         }
                         "QuietTime" => {
-                            builder = builder.set_quiet_time(crate::protocol_serde::shape_quiet_time::de_quiet_time(tokens, _value)?);
+                            builder = builder.set_quiet_time(crate::protocol_serde::shape_quiet_time::de_quiet_time(tokens, _value, depth + 1)?);
                         }
                         "RefreshFrequency" => {
                             builder = builder.set_refresh_frequency(
@@ -85,7 +97,11 @@ where
                             );
                         }
                         "Schedule" => {
-                            builder = builder.set_schedule(crate::protocol_serde::shape_journey_schedule::de_journey_schedule(tokens, _value)?);
+                            builder = builder.set_schedule(crate::protocol_serde::shape_journey_schedule::de_journey_schedule(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StartActivity" => {
                             builder = builder.set_start_activity(
@@ -95,7 +111,11 @@ where
                             );
                         }
                         "StartCondition" => {
-                            builder = builder.set_start_condition(crate::protocol_serde::shape_start_condition::de_start_condition(tokens, _value)?);
+                            builder = builder.set_start_condition(crate::protocol_serde::shape_start_condition::de_start_condition(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "State" => {
                             builder = builder.set_state(
@@ -105,7 +125,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                         }
                         "WaitForQuietTime" => {
                             builder = builder.set_wait_for_quiet_time(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -116,21 +136,21 @@ where
                         }
                         "JourneyChannelSettings" => {
                             builder = builder.set_journey_channel_settings(
-                                crate::protocol_serde::shape_journey_channel_settings::de_journey_channel_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_journey_channel_settings::de_journey_channel_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "SendingSchedule" => {
                             builder = builder.set_sending_schedule(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "OpenHours" => {
-                            builder = builder.set_open_hours(crate::protocol_serde::shape_open_hours::de_open_hours(tokens, _value)?);
+                            builder = builder.set_open_hours(crate::protocol_serde::shape_open_hours::de_open_hours(tokens, _value, depth + 1)?);
                         }
                         "ClosedDays" => {
-                            builder = builder.set_closed_days(crate::protocol_serde::shape_closed_days::de_closed_days(tokens, _value)?);
+                            builder = builder.set_closed_days(crate::protocol_serde::shape_closed_days::de_closed_days(tokens, _value, depth + 1)?);
                         }
                         "TimezoneEstimationMethods" => {
                             builder = builder.set_timezone_estimation_methods(
-                                    crate::protocol_serde::shape_list_of_timezone_estimation_methods_element::de_list_of_timezone_estimation_methods_element(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_timezone_estimation_methods_element::de_list_of_timezone_estimation_methods_element(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

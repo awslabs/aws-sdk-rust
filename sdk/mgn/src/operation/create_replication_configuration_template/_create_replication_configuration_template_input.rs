@@ -35,6 +35,8 @@ pub struct CreateReplicationConfigurationTemplateInput {
     pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     /// <p>Request to store snapshot on local zone during Replication Settings template creation.</p>
     pub store_snapshot_on_local_zone: ::std::option::Option<bool>,
+    /// <p>Request to configure storage during Replication Settings template creation.</p>
+    pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
 impl CreateReplicationConfigurationTemplateInput {
     /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
@@ -103,6 +105,10 @@ impl CreateReplicationConfigurationTemplateInput {
     pub fn store_snapshot_on_local_zone(&self) -> ::std::option::Option<bool> {
         self.store_snapshot_on_local_zone
     }
+    /// <p>Request to configure storage during Replication Settings template creation.</p>
+    pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
+        self.storage_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -123,6 +129,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
+        formatter.field("storage_configuration", &self.storage_configuration);
         formatter.finish()
     }
 }
@@ -153,6 +160,7 @@ pub struct CreateReplicationConfigurationTemplateInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     pub(crate) store_snapshot_on_local_zone: ::std::option::Option<bool>,
+    pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
 impl CreateReplicationConfigurationTemplateInputBuilder {
     /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
@@ -416,6 +424,20 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
     pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
         &self.store_snapshot_on_local_zone
     }
+    /// <p>Request to configure storage during Replication Settings template creation.</p>
+    pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
+        self.storage_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Request to configure storage during Replication Settings template creation.</p>
+    pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
+        self.storage_configuration = input;
+        self
+    }
+    /// <p>Request to configure storage during Replication Settings template creation.</p>
+    pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
+        &self.storage_configuration
+    }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationTemplateInput`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput).
     pub fn build(
         self,
@@ -441,6 +463,7 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
                 tags: self.tags,
                 internet_protocol: self.internet_protocol,
                 store_snapshot_on_local_zone: self.store_snapshot_on_local_zone,
+                storage_configuration: self.storage_configuration,
             },
         )
     }
@@ -464,6 +487,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInputBuilder {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
+        formatter.field("storage_configuration", &self.storage_configuration);
         formatter.finish()
     }
 }

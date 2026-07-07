@@ -128,6 +128,8 @@ pub(crate) fn de_import_client_branding(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -135,32 +137,52 @@ pub(crate) fn de_import_client_branding(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DeviceTypeWindows" => {
                     builder = builder.set_device_type_windows(
-                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(tokens, _value)?,
+                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "DeviceTypeOsx" => {
                     builder = builder.set_device_type_osx(
-                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(tokens, _value)?,
+                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "DeviceTypeAndroid" => {
                     builder = builder.set_device_type_android(
-                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(tokens, _value)?,
+                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "DeviceTypeIos" => {
                     builder = builder.set_device_type_ios(
-                        crate::protocol_serde::shape_ios_client_branding_attributes::de_ios_client_branding_attributes(tokens, _value)?,
+                        crate::protocol_serde::shape_ios_client_branding_attributes::de_ios_client_branding_attributes(tokens, _value, depth + 1)?,
                     );
                 }
                 "DeviceTypeLinux" => {
                     builder = builder.set_device_type_linux(
-                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(tokens, _value)?,
+                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "DeviceTypeWeb" => {
                     builder = builder.set_device_type_web(
-                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(tokens, _value)?,
+                        crate::protocol_serde::shape_default_client_branding_attributes::de_default_client_branding_attributes(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

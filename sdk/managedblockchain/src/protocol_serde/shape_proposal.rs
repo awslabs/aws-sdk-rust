@@ -2,10 +2,16 @@
 pub(crate) fn de_proposal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Proposal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,11 @@ where
                             );
                         }
                         "Actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_proposal_actions::de_proposal_actions(tokens, _value)?);
+                            builder = builder.set_actions(crate::protocol_serde::shape_proposal_actions::de_proposal_actions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ProposedByMemberId" => {
                             builder = builder.set_proposed_by_member_id(
@@ -94,7 +104,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_output_tag_map::de_output_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_output_tag_map::de_output_tag_map(tokens, _value, depth + 1)?);
                         }
                         "Arn" => {
                             builder = builder.set_arn(

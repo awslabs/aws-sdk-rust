@@ -47,6 +47,10 @@
 //!
 //! In this reference guide, the documentation for each API has an Errors section that includes a brief discussion about HTTP status codes. We recommend looking there as part of your investigation when you get an error.
 //!
+//! _Regional availability_
+//!
+//! The Amazon Web Services Wickr API is available in several Amazon Web Services Regions and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is currently available, see [Amazon Web Services Wickr endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/wickr.html) in the _Amazon Web Services General Reference Guide_.
+//!
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -59,7 +63,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-wickr = "1.8.0"
+//! aws-sdk-wickr = "1.13.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

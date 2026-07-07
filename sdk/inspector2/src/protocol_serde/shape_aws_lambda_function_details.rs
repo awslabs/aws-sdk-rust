@@ -2,10 +2,16 @@
 pub(crate) fn de_aws_lambda_function_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsLambdaFunctionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,10 +57,14 @@ where
                             );
                         }
                         "layers" => {
-                            builder = builder.set_layers(crate::protocol_serde::shape_layer_list::de_layer_list(tokens, _value)?);
+                            builder = builder.set_layers(crate::protocol_serde::shape_layer_list::de_layer_list(tokens, _value, depth + 1)?);
                         }
                         "vpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_lambda_vpc_config::de_lambda_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_lambda_vpc_config::de_lambda_vpc_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "packageType" => {
                             builder = builder.set_package_type(
@@ -64,8 +74,11 @@ where
                             );
                         }
                         "architectures" => {
-                            builder =
-                                builder.set_architectures(crate::protocol_serde::shape_architecture_list::de_architecture_list(tokens, _value)?);
+                            builder = builder.set_architectures(crate::protocol_serde::shape_architecture_list::de_architecture_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lastModifiedAt" => {
                             builder = builder.set_last_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -151,6 +151,8 @@ pub use crate::types::_schema_version_number::SchemaVersionNumberBuilder;
 
 pub use crate::types::_security_configuration::SecurityConfigurationBuilder;
 
+pub use crate::types::_session_endpoint::SessionEndpointBuilder;
+
 pub use crate::types::_statement::StatementBuilder;
 
 pub use crate::types::_table::TableBuilder;
@@ -185,6 +187,8 @@ pub use crate::types::_connection_properties_configuration::ConnectionProperties
 
 pub use crate::types::_connector_authentication_configuration::ConnectorAuthenticationConfigurationBuilder;
 
+pub use crate::types::_search_sort::SearchSortBuilder;
+
 pub use crate::types::_test_connection_input::TestConnectionInputBuilder;
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequestBuilder;
@@ -216,6 +220,10 @@ pub use crate::types::_table_version_error::TableVersionErrorBuilder;
 pub use crate::types::_custom_entity_type::CustomEntityTypeBuilder;
 
 pub use crate::types::_data_quality_result::DataQualityResultBuilder;
+
+pub use crate::types::_iterable_form_item::IterableFormItemBuilder;
+
+pub use crate::types::_item_error::ItemErrorBuilder;
 
 pub use crate::types::_batch_get_table_optimizer_entry::BatchGetTableOptimizerEntryBuilder;
 
@@ -303,6 +311,12 @@ pub use crate::types::_integration_filter::IntegrationFilterBuilder;
 
 pub use crate::types::_integration::IntegrationBuilder;
 
+pub use crate::types::_asset_form_entry::AssetFormEntryBuilder;
+
+pub use crate::types::_iterable_form_entry::IterableFormEntryBuilder;
+
+pub use crate::types::_asset_type_form_reference::AssetTypeFormReferenceBuilder;
+
 pub use crate::types::_last_active_definition::LastActiveDefinitionBuilder;
 
 pub use crate::types::_catalog_properties_output::CatalogPropertiesOutputBuilder;
@@ -371,6 +385,8 @@ pub use crate::types::_federated_table::FederatedTableBuilder;
 
 pub use crate::types::_view_definition::ViewDefinitionBuilder;
 
+pub use crate::types::_iceberg_table_metadata::IcebergTableMetadataBuilder;
+
 pub use crate::types::_table_status::TableStatusBuilder;
 
 pub use crate::types::_table_optimizer_run::TableOptimizerRunBuilder;
@@ -386,6 +402,8 @@ pub use crate::types::_blueprint_details::BlueprintDetailsBuilder;
 pub use crate::types::_workflow_run_statistics::WorkflowRunStatisticsBuilder;
 
 pub use crate::types::_starting_event_batch_condition::StartingEventBatchConditionBuilder;
+
+pub use crate::types::_asset_type_item::AssetTypeItemBuilder;
 
 pub use crate::types::_connection_type_brief::ConnectionTypeBriefBuilder;
 
@@ -407,9 +425,17 @@ pub use crate::types::_statistic_summary::StatisticSummaryBuilder;
 
 pub use crate::types::_entity::EntityBuilder;
 
+pub use crate::types::_form_type_item::FormTypeItemBuilder;
+
+pub use crate::types::_glossary_item::GlossaryItemBuilder;
+
+pub use crate::types::_glossary_term_item::GlossaryTermItemBuilder;
+
 pub use crate::types::_integration_resource_property_filter::IntegrationResourcePropertyFilterBuilder;
 
 pub use crate::types::_integration_resource_property::IntegrationResourcePropertyBuilder;
+
+pub use crate::types::_iterable_form_list_item::IterableFormListItemBuilder;
 
 pub use crate::types::_registry_list_item::RegistryListItemBuilder;
 
@@ -428,6 +454,12 @@ pub use crate::types::_connector_o_auth2_properties::ConnectorOAuth2PropertiesBu
 pub use crate::types::_basic_authentication_properties::BasicAuthenticationPropertiesBuilder;
 
 pub use crate::types::_custom_authentication_properties::CustomAuthenticationPropertiesBuilder;
+
+pub use crate::types::_search_attribute_filter::SearchAttributeFilterBuilder;
+
+pub use crate::types::_search_map_filter::SearchMapFilterBuilder;
+
+pub use crate::types::_search_result_item::SearchResultItemBuilder;
 
 pub use crate::types::_property_predicate::PropertyPredicateBuilder;
 

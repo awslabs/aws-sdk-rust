@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_origin_access_control_list(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OriginAccessControlList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginAccessControlList::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -81,7 +85,7 @@ pub fn de_origin_access_control_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginAccessControlList$Items */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_origin_access_control_summary_list::de_origin_access_control_summary_list(&mut tag)
+                        crate::protocol_serde::shape_origin_access_control_summary_list::de_origin_access_control_summary_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

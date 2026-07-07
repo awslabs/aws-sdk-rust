@@ -31,11 +31,15 @@ pub(crate) mod shape_create_order;
 
 pub(crate) mod shape_create_outpost;
 
+pub(crate) mod shape_create_quote;
+
 pub(crate) mod shape_create_renewal;
 
 pub(crate) mod shape_create_site;
 
 pub(crate) mod shape_delete_outpost;
+
+pub(crate) mod shape_delete_quote;
 
 pub(crate) mod shape_delete_site;
 
@@ -55,6 +59,8 @@ pub(crate) mod shape_get_outpost_instance_types;
 
 pub(crate) mod shape_get_outpost_supported_instance_types;
 
+pub(crate) mod shape_get_quote;
+
 pub(crate) mod shape_get_renewal_pricing;
 
 pub(crate) mod shape_get_site;
@@ -71,9 +77,13 @@ pub(crate) mod shape_list_capacity_tasks;
 
 pub(crate) mod shape_list_catalog_items;
 
+pub(crate) mod shape_list_orderable_instance_types;
+
 pub(crate) mod shape_list_orders;
 
 pub(crate) mod shape_list_outposts;
+
+pub(crate) mod shape_list_quotes;
 
 pub(crate) mod shape_list_sites;
 
@@ -90,6 +100,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_outpost;
+
+pub(crate) mod shape_update_quote;
 
 pub(crate) mod shape_update_site;
 
@@ -113,6 +125,8 @@ pub(crate) mod shape_create_order_input;
 
 pub(crate) mod shape_create_outpost_input;
 
+pub(crate) mod shape_create_quote_input;
+
 pub(crate) mod shape_create_renewal_input;
 
 pub(crate) mod shape_create_site_input;
@@ -132,6 +146,8 @@ pub(crate) mod shape_start_outpost_decommission_input;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_outpost_input;
+
+pub(crate) mod shape_update_quote_input;
 
 pub(crate) mod shape_update_site_address_input;
 
@@ -161,6 +177,8 @@ pub(crate) mod shape_catalog_item_list_definition;
 
 pub(crate) mod shape_connection_details;
 
+pub(crate) mod shape_detailed_instance_type_list_definition;
+
 pub(crate) mod shape_instance_type_capacity;
 
 pub(crate) mod shape_instance_type_list_definition;
@@ -178,6 +196,14 @@ pub(crate) mod shape_outpost;
 pub(crate) mod shape_outpost_list_definition;
 
 pub(crate) mod shape_pricing_option_list;
+
+pub(crate) mod shape_quote;
+
+pub(crate) mod shape_quote_capacity;
+
+pub(crate) mod shape_quote_constraint;
+
+pub(crate) mod shape_quote_summary_list_definition;
 
 pub(crate) mod shape_rack_physical_properties;
 
@@ -205,6 +231,8 @@ pub(crate) mod shape_capacity_task_summary;
 
 pub(crate) mod shape_cidr_list;
 
+pub(crate) mod shape_detailed_instance_type_item;
+
 pub(crate) mod shape_ec2_capacity_list_definition;
 
 pub(crate) mod shape_instance_id_list;
@@ -215,7 +243,21 @@ pub(crate) mod shape_line_item_list_definition;
 
 pub(crate) mod shape_order_summary;
 
+pub(crate) mod shape_ordering_requirement_list;
+
+pub(crate) mod shape_payment_option_list;
+
+pub(crate) mod shape_payment_term_list;
+
 pub(crate) mod shape_pricing_option;
+
+pub(crate) mod shape_quote_capacity_list;
+
+pub(crate) mod shape_quote_constraint_list;
+
+pub(crate) mod shape_quote_option_list;
+
+pub(crate) mod shape_quote_summary;
 
 pub(crate) mod shape_subscription;
 
@@ -229,19 +271,31 @@ pub(crate) mod shape_compute_attributes;
 
 pub(crate) mod shape_ec2_capacity;
 
+pub(crate) mod shape_form_factor_config_list;
+
 pub(crate) mod shape_line_item;
 
 pub(crate) mod shape_line_item_status_counts;
 
 pub(crate) mod shape_order_id_list;
 
+pub(crate) mod shape_ordering_requirement;
+
+pub(crate) mod shape_quote_option;
+
 pub(crate) mod shape_subscription_pricing_details;
 
 pub(crate) mod shape_asset_instance_capacity_list;
 
+pub(crate) mod shape_capacity_summary;
+
+pub(crate) mod shape_form_factor_config;
+
 pub(crate) mod shape_instance_families;
 
 pub(crate) mod shape_line_item_asset_information_list;
+
+pub(crate) mod shape_quote_specification_list;
 
 pub(crate) mod shape_shipment_information;
 
@@ -249,4 +303,10 @@ pub(crate) mod shape_asset_instance_type_capacity;
 
 pub(crate) mod shape_line_item_asset_information;
 
+pub(crate) mod shape_quote_specification;
+
 pub(crate) mod shape_mac_address_list;
+
+pub(crate) mod shape_rack_specification_details;
+
+pub(crate) mod shape_server_specification_details;

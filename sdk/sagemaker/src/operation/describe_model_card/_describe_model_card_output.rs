@@ -9,7 +9,21 @@ pub struct DescribeModelCardOutput {
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card.</p>
     pub model_card_version: ::std::option::Option<i32>,
-    /// <p>The content of the model card.</p>
+    /// <p>The content of the model card. Content is provided as a string in the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a>.</p>
+    /// <p>When you set <code>IncludedData</code> to <code>MetadataOnly</code> in the request, SageMaker returns a sanitized version of <code>Content</code> that includes only the following JSON paths, when present in the model card:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>model_overview.model_id</code></p></li>
+    /// <li>
+    /// <p><code>model_overview.model_name</code></p></li>
+    /// <li>
+    /// <p><code>intended_uses.risk_rating</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_group_name</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_arn</code></p></li>
+    /// </ul>
+    /// <p>All other fields are removed from <code>Content</code> when <code>IncludedData</code> is <code>MetadataOnly</code>, including model description, training details, evaluation details, business details, and additional information. To retrieve the complete <code>Content</code>, set <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -64,7 +78,21 @@ impl DescribeModelCardOutput {
     pub fn model_card_version(&self) -> ::std::option::Option<i32> {
         self.model_card_version
     }
-    /// <p>The content of the model card.</p>
+    /// <p>The content of the model card. Content is provided as a string in the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a>.</p>
+    /// <p>When you set <code>IncludedData</code> to <code>MetadataOnly</code> in the request, SageMaker returns a sanitized version of <code>Content</code> that includes only the following JSON paths, when present in the model card:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>model_overview.model_id</code></p></li>
+    /// <li>
+    /// <p><code>model_overview.model_name</code></p></li>
+    /// <li>
+    /// <p><code>intended_uses.risk_rating</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_group_name</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_arn</code></p></li>
+    /// </ul>
+    /// <p>All other fields are removed from <code>Content</code> when <code>IncludedData</code> is <code>MetadataOnly</code>, including model description, training details, evaluation details, business details, and additional information. To retrieve the complete <code>Content</code>, set <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -214,18 +242,60 @@ impl DescribeModelCardOutputBuilder {
     pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
         &self.model_card_version
     }
-    /// <p>The content of the model card.</p>
+    /// <p>The content of the model card. Content is provided as a string in the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a>.</p>
+    /// <p>When you set <code>IncludedData</code> to <code>MetadataOnly</code> in the request, SageMaker returns a sanitized version of <code>Content</code> that includes only the following JSON paths, when present in the model card:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>model_overview.model_id</code></p></li>
+    /// <li>
+    /// <p><code>model_overview.model_name</code></p></li>
+    /// <li>
+    /// <p><code>intended_uses.risk_rating</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_group_name</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_arn</code></p></li>
+    /// </ul>
+    /// <p>All other fields are removed from <code>Content</code> when <code>IncludedData</code> is <code>MetadataOnly</code>, including model description, training details, evaluation details, business details, and additional information. To retrieve the complete <code>Content</code>, set <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content of the model card.</p>
+    /// <p>The content of the model card. Content is provided as a string in the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a>.</p>
+    /// <p>When you set <code>IncludedData</code> to <code>MetadataOnly</code> in the request, SageMaker returns a sanitized version of <code>Content</code> that includes only the following JSON paths, when present in the model card:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>model_overview.model_id</code></p></li>
+    /// <li>
+    /// <p><code>model_overview.model_name</code></p></li>
+    /// <li>
+    /// <p><code>intended_uses.risk_rating</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_group_name</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_arn</code></p></li>
+    /// </ul>
+    /// <p>All other fields are removed from <code>Content</code> when <code>IncludedData</code> is <code>MetadataOnly</code>, including model description, training details, evaluation details, business details, and additional information. To retrieve the complete <code>Content</code>, set <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The content of the model card.</p>
+    /// <p>The content of the model card. Content is provided as a string in the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a>.</p>
+    /// <p>When you set <code>IncludedData</code> to <code>MetadataOnly</code> in the request, SageMaker returns a sanitized version of <code>Content</code> that includes only the following JSON paths, when present in the model card:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>model_overview.model_id</code></p></li>
+    /// <li>
+    /// <p><code>model_overview.model_name</code></p></li>
+    /// <li>
+    /// <p><code>intended_uses.risk_rating</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_group_name</code></p></li>
+    /// <li>
+    /// <p><code>model_package_details.model_package_arn</code></p></li>
+    /// </ul>
+    /// <p>All other fields are removed from <code>Content</code> when <code>IncludedData</code> is <code>MetadataOnly</code>, including model description, training details, evaluation details, business details, and additional information. To retrieve the complete <code>Content</code>, set <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }

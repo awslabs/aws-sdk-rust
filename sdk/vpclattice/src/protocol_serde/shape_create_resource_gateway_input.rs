@@ -18,36 +18,39 @@ pub fn ser_create_resource_gateway_input_input(
     if let Some(var_4) = &input.name {
         object.key("name").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.security_group_ids {
-        let mut array_6 = object.key("securityGroupIds").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.resource_config_dns_resolution {
+        object.key("resourceConfigDnsResolution").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.security_group_ids {
+        let mut array_7 = object.key("securityGroupIds").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.subnet_ids {
-        let mut array_9 = object.key("subnetIds").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.subnet_ids {
+        let mut array_10 = object.key("subnetIds").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_15) = &input.vpc_identifier {
-        object.key("vpcIdentifier").string(var_15.as_str());
+    if let Some(var_16) = &input.vpc_identifier {
+        object.key("vpcIdentifier").string(var_16.as_str());
     }
     Ok(())
 }

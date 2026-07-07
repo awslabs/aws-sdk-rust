@@ -91,6 +91,8 @@ pub enum Error {
     SchedulerRunningException(crate::types::error::SchedulerRunningException),
     /// <p>The specified scheduler is transitioning.</p>
     SchedulerTransitioningException(crate::types::error::SchedulerTransitioningException),
+    /// <p>The session is currently busy processing another request and cannot accept new operations.</p>
+    SessionBusyException(crate::types::error::SessionBusyException),
     /// <p>The target resource could not be found.</p>
     TargetResourceNotFound(crate::types::error::TargetResourceNotFound),
     /// <p>The throttling threshhold was exceeded.</p>
@@ -155,6 +157,7 @@ impl ::std::fmt::Display for Error {
             Error::SchedulerNotRunningException(inner) => inner.fmt(f),
             Error::SchedulerRunningException(inner) => inner.fmt(f),
             Error::SchedulerTransitioningException(inner) => inner.fmt(f),
+            Error::SessionBusyException(inner) => inner.fmt(f),
             Error::TargetResourceNotFound(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -224,11 +227,51 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::SchedulerNotRunningException(inner) => inner.meta(),
             Self::SchedulerRunningException(inner) => inner.meta(),
             Self::SchedulerTransitioningException(inner) => inner.meta(),
+            Self::SessionBusyException(inner) => inner.meta(),
             Self::TargetResourceNotFound(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::VersionMismatchException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_glossary_terms::AssociateGlossaryTermsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_glossary_terms::AssociateGlossaryTermsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_glossary_terms::AssociateGlossaryTermsError> for Error {
+    fn from(err: crate::operation::associate_glossary_terms::AssociateGlossaryTermsError) -> Self {
+        match err {
+            crate::operation::associate_glossary_terms::AssociateGlossaryTermsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_glossary_terms::AssociateGlossaryTermsError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::associate_glossary_terms::AssociateGlossaryTermsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::associate_glossary_terms::AssociateGlossaryTermsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::associate_glossary_terms::AssociateGlossaryTermsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::associate_glossary_terms::AssociateGlossaryTermsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_glossary_terms::AssociateGlossaryTermsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -540,6 +583,42 @@ impl From<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError> 
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError> for Error {
+    fn from(err: crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError) -> Self {
+        match err {
+            crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_iterable_forms::BatchGetIterableFormsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1304,6 +1383,67 @@ impl From<crate::operation::create_dev_endpoint::CreateDevEndpointError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_glossary::CreateGlossaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_glossary::CreateGlossaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_glossary::CreateGlossaryError> for Error {
+    fn from(err: crate::operation::create_glossary::CreateGlossaryError) -> Self {
+        match err {
+            crate::operation::create_glossary::CreateGlossaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_glossary::CreateGlossaryError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::create_glossary::CreateGlossaryError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_glossary::CreateGlossaryError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_glossary::CreateGlossaryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_glossary::CreateGlossaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_glossary::CreateGlossaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_glossary_term::CreateGlossaryTermError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_glossary_term::CreateGlossaryTermError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_glossary_term::CreateGlossaryTermError> for Error {
+    fn from(err: crate::operation::create_glossary_term::CreateGlossaryTermError) -> Self {
+        match err {
+            crate::operation::create_glossary_term::CreateGlossaryTermError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_glossary_term::CreateGlossaryTermError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::create_glossary_term::CreateGlossaryTermError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_glossary_term::CreateGlossaryTermError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::create_glossary_term::CreateGlossaryTermError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_glossary_term::CreateGlossaryTermError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_glossary_term::CreateGlossaryTermError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_glossary_term::CreateGlossaryTermError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1778,6 +1918,9 @@ impl From<crate::operation::create_session::CreateSessionError> for Error {
             }
             crate::operation::create_session::CreateSessionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::create_session::CreateSessionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_session::CreateSessionError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
             crate::operation::create_session::CreateSessionError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::create_session::CreateSessionError::ResourceNumberLimitExceededException(inner) => {
                 Error::ResourceNumberLimitExceededException(inner)
@@ -2000,6 +2143,89 @@ impl From<crate::operation::create_workflow::CreateWorkflowError> for Error {
                 Error::ResourceNumberLimitExceededException(inner)
             }
             crate::operation::create_workflow::CreateWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset::DeleteAssetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset::DeleteAssetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_asset::DeleteAssetError> for Error {
+    fn from(err: crate::operation::delete_asset::DeleteAssetError) -> Self {
+        match err {
+            crate::operation::delete_asset::DeleteAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_asset::DeleteAssetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_asset::DeleteAssetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_asset::DeleteAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset_type::DeleteAssetTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset_type::DeleteAssetTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_asset_type::DeleteAssetTypeError> for Error {
+    fn from(err: crate::operation::delete_asset_type::DeleteAssetTypeError) -> Self {
+        match err {
+            crate::operation::delete_asset_type::DeleteAssetTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_asset_type::DeleteAssetTypeError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_asset_type::DeleteAssetTypeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_asset_type::DeleteAssetTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_asset_type::DeleteAssetTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_asset_type::DeleteAssetTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_attachment::DeleteAttachmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_attachment::DeleteAttachmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_attachment::DeleteAttachmentError> for Error {
+    fn from(err: crate::operation::delete_attachment::DeleteAttachmentError) -> Self {
+        match err {
+            crate::operation::delete_attachment::DeleteAttachmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_attachment::DeleteAttachmentError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_attachment::DeleteAttachmentError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::delete_attachment::DeleteAttachmentError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_attachment::DeleteAttachmentError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_attachment::DeleteAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_attachment::DeleteAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2434,6 +2660,94 @@ impl From<crate::operation::delete_dev_endpoint::DeleteDevEndpointError> for Err
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::delete_dev_endpoint::DeleteDevEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_form_type::DeleteFormTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_form_type::DeleteFormTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_form_type::DeleteFormTypeError> for Error {
+    fn from(err: crate::operation::delete_form_type::DeleteFormTypeError) -> Self {
+        match err {
+            crate::operation::delete_form_type::DeleteFormTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_form_type::DeleteFormTypeError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_form_type::DeleteFormTypeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_form_type::DeleteFormTypeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_form_type::DeleteFormTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_form_type::DeleteFormTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_form_type::DeleteFormTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_glossary::DeleteGlossaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_glossary::DeleteGlossaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_glossary::DeleteGlossaryError> for Error {
+    fn from(err: crate::operation::delete_glossary::DeleteGlossaryError) -> Self {
+        match err {
+            crate::operation::delete_glossary::DeleteGlossaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_glossary::DeleteGlossaryError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_glossary::DeleteGlossaryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_glossary::DeleteGlossaryError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_glossary::DeleteGlossaryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_glossary::DeleteGlossaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_glossary::DeleteGlossaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_glossary_term::DeleteGlossaryTermError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_glossary_term::DeleteGlossaryTermError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_glossary_term::DeleteGlossaryTermError> for Error {
+    fn from(err: crate::operation::delete_glossary_term::DeleteGlossaryTermError) -> Self {
+        match err {
+            crate::operation::delete_glossary_term::DeleteGlossaryTermError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_glossary_term::DeleteGlossaryTermError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_glossary_term::DeleteGlossaryTermError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_glossary_term::DeleteGlossaryTermError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_glossary_term::DeleteGlossaryTermError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_glossary_term::DeleteGlossaryTermError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3271,6 +3585,100 @@ impl From<crate::operation::describe_integrations::DescribeIntegrationsError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError> for Error {
+    fn from(err: crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError) -> Self {
+        match err {
+            crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset::GetAssetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset::GetAssetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_asset::GetAssetError> for Error {
+    fn from(err: crate::operation::get_asset::GetAssetError) -> Self {
+        match err {
+            crate::operation::get_asset::GetAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_asset::GetAssetError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_asset::GetAssetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_asset::GetAssetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_asset::GetAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_asset::GetAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset_type::GetAssetTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset_type::GetAssetTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_asset_type::GetAssetTypeError> for Error {
+    fn from(err: crate::operation::get_asset_type::GetAssetTypeError) -> Self {
+        match err {
+            crate::operation::get_asset_type::GetAssetTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_asset_type::GetAssetTypeError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_asset_type::GetAssetTypeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_asset_type::GetAssetTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_asset_type::GetAssetTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_asset_type::GetAssetTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_blueprint::GetBlueprintError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3828,6 +4236,34 @@ impl From<crate::operation::get_custom_entity_type::GetCustomEntityTypeError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dashboard_url::GetDashboardUrlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dashboard_url::GetDashboardUrlError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_dashboard_url::GetDashboardUrlError> for Error {
+    fn from(err: crate::operation::get_dashboard_url::GetDashboardUrlError) -> Self {
+        match err {
+            crate::operation::get_dashboard_url::GetDashboardUrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_dashboard_url::GetDashboardUrlError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_dashboard_url::GetDashboardUrlError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_dashboard_url::GetDashboardUrlError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_dashboard_url::GetDashboardUrlError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::get_dashboard_url::GetDashboardUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_database::GetDatabaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4257,6 +4693,82 @@ impl From<crate::operation::get_entity_records::GetEntityRecordsError> for Error
             crate::operation::get_entity_records::GetEntityRecordsError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::get_entity_records::GetEntityRecordsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_entity_records::GetEntityRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_form_type::GetFormTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_form_type::GetFormTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_form_type::GetFormTypeError> for Error {
+    fn from(err: crate::operation::get_form_type::GetFormTypeError) -> Self {
+        match err {
+            crate::operation::get_form_type::GetFormTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_form_type::GetFormTypeError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_form_type::GetFormTypeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_form_type::GetFormTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_form_type::GetFormTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_form_type::GetFormTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_glossary::GetGlossaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_glossary::GetGlossaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_glossary::GetGlossaryError> for Error {
+    fn from(err: crate::operation::get_glossary::GetGlossaryError) -> Self {
+        match err {
+            crate::operation::get_glossary::GetGlossaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_glossary::GetGlossaryError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_glossary::GetGlossaryError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_glossary::GetGlossaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_glossary::GetGlossaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_glossary_term::GetGlossaryTermError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_glossary_term::GetGlossaryTermError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_glossary_term::GetGlossaryTermError> for Error {
+    fn from(err: crate::operation::get_glossary_term::GetGlossaryTermError) -> Self {
+        match err {
+            crate::operation::get_glossary_term::GetGlossaryTermError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_glossary_term::GetGlossaryTermError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_glossary_term::GetGlossaryTermError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_glossary_term::GetGlossaryTermError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_glossary_term::GetGlossaryTermError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5131,6 +5643,42 @@ impl From<crate::operation::get_session::GetSessionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_endpoint::GetSessionEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_endpoint::GetSessionEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_session_endpoint::GetSessionEndpointError> for Error {
+    fn from(err: crate::operation::get_session_endpoint::GetSessionEndpointError) -> Self {
+        match err {
+            crate::operation::get_session_endpoint::GetSessionEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_session_endpoint::GetSessionEndpointError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_session_endpoint::GetSessionEndpointError::IllegalSessionStateException(inner) => {
+                Error::IllegalSessionStateException(inner)
+            }
+            crate::operation::get_session_endpoint::GetSessionEndpointError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_session_endpoint::GetSessionEndpointError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_session_endpoint::GetSessionEndpointError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::get_session_endpoint::GetSessionEndpointError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_session_endpoint::GetSessionEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_statement::GetStatementError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5774,6 +6322,31 @@ impl From<crate::operation::import_catalog_to_glue::ImportCatalogToGlueError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_types::ListAssetTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_types::ListAssetTypesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_asset_types::ListAssetTypesError> for Error {
+    fn from(err: crate::operation::list_asset_types::ListAssetTypesError) -> Self {
+        match err {
+            crate::operation::list_asset_types::ListAssetTypesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_blueprints::ListBlueprintsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6213,6 +6786,81 @@ impl From<crate::operation::list_entities::ListEntitiesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_form_types::ListFormTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_form_types::ListFormTypesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_form_types::ListFormTypesError> for Error {
+    fn from(err: crate::operation::list_form_types::ListFormTypesError) -> Self {
+        match err {
+            crate::operation::list_form_types::ListFormTypesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_form_types::ListFormTypesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_form_types::ListFormTypesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_form_types::ListFormTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_form_types::ListFormTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_glossaries::ListGlossariesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_glossaries::ListGlossariesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_glossaries::ListGlossariesError> for Error {
+    fn from(err: crate::operation::list_glossaries::ListGlossariesError) -> Self {
+        match err {
+            crate::operation::list_glossaries::ListGlossariesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_glossaries::ListGlossariesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_glossaries::ListGlossariesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_glossaries::ListGlossariesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_glossaries::ListGlossariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_glossary_terms::ListGlossaryTermsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_glossary_terms::ListGlossaryTermsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_glossary_terms::ListGlossaryTermsError> for Error {
+    fn from(err: crate::operation::list_glossary_terms::ListGlossaryTermsError) -> Self {
+        match err {
+            crate::operation::list_glossary_terms::ListGlossaryTermsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_glossary_terms::ListGlossaryTermsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_glossary_terms::ListGlossaryTermsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_glossary_terms::ListGlossaryTermsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_glossary_terms::ListGlossaryTermsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -6265,6 +6913,32 @@ impl From<crate::operation::list_integration_resource_properties::ListIntegratio
             crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_iterable_forms::ListIterableFormsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_iterable_forms::ListIterableFormsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_iterable_forms::ListIterableFormsError> for Error {
+    fn from(err: crate::operation::list_iterable_forms::ListIterableFormsError) -> Self {
+        match err {
+            crate::operation::list_iterable_forms::ListIterableFormsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_iterable_forms::ListIterableFormsError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::list_iterable_forms::ListIterableFormsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_iterable_forms::ListIterableFormsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_iterable_forms::ListIterableFormsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_iterable_forms::ListIterableFormsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6641,6 +7315,90 @@ impl From<crate::operation::modify_integration::ModifyIntegrationError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_asset::PutAssetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_asset::PutAssetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_asset::PutAssetError> for Error {
+    fn from(err: crate::operation::put_asset::PutAssetError) -> Self {
+        match err {
+            crate::operation::put_asset::PutAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_asset::PutAssetError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::put_asset::PutAssetError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::put_asset::PutAssetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::put_asset::PutAssetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_asset::PutAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_asset::PutAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_asset_type::PutAssetTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_asset_type::PutAssetTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_asset_type::PutAssetTypeError> for Error {
+    fn from(err: crate::operation::put_asset_type::PutAssetTypeError) -> Self {
+        match err {
+            crate::operation::put_asset_type::PutAssetTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_asset_type::PutAssetTypeError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::put_asset_type::PutAssetTypeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::put_asset_type::PutAssetTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_asset_type::PutAssetTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_asset_type::PutAssetTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_attachment::PutAttachmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_attachment::PutAttachmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_attachment::PutAttachmentError> for Error {
+    fn from(err: crate::operation::put_attachment::PutAttachmentError) -> Self {
+        match err {
+            crate::operation::put_attachment::PutAttachmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_attachment::PutAttachmentError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::put_attachment::PutAttachmentError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::put_attachment::PutAttachmentError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::put_attachment::PutAttachmentError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_attachment::PutAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_attachment::PutAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -6722,6 +7480,34 @@ impl From<crate::operation::put_data_quality_profile_annotation::PutDataQualityP
                 Error::InvalidInputException(inner)
             }
             crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_form_type::PutFormTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_form_type::PutFormTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_form_type::PutFormTypeError> for Error {
+    fn from(err: crate::operation::put_form_type::PutFormTypeError) -> Self {
+        match err {
+            crate::operation::put_form_type::PutFormTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_form_type::PutFormTypeError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::put_form_type::PutFormTypeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::put_form_type::PutFormTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_form_type::PutFormTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_form_type::PutFormTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7069,12 +7855,39 @@ impl From<crate::operation::run_statement::RunStatementError> for Error {
             crate::operation::run_statement::RunStatementError::IllegalSessionStateException(inner) => Error::IllegalSessionStateException(inner),
             crate::operation::run_statement::RunStatementError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::run_statement::RunStatementError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::run_statement::RunStatementError::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
             crate::operation::run_statement::RunStatementError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::run_statement::RunStatementError::ResourceNumberLimitExceededException(inner) => {
                 Error::ResourceNumberLimitExceededException(inner)
             }
+            crate::operation::run_statement::RunStatementError::SessionBusyException(inner) => Error::SessionBusyException(inner),
             crate::operation::run_statement::RunStatementError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::run_statement::RunStatementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_assets::SearchAssetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_assets::SearchAssetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_assets::SearchAssetsError> for Error {
+    fn from(err: crate::operation::search_assets::SearchAssetsError) -> Self {
+        match err {
+            crate::operation::search_assets::SearchAssetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_assets::SearchAssetsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::search_assets::SearchAssetsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::search_assets::SearchAssetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_assets::SearchAssetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8006,6 +8819,33 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset::UpdateAssetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset::UpdateAssetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_asset::UpdateAssetError> for Error {
+    fn from(err: crate::operation::update_asset::UpdateAssetError) -> Self {
+        match err {
+            crate::operation::update_asset::UpdateAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_asset::UpdateAssetError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_asset::UpdateAssetError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_asset::UpdateAssetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_asset::UpdateAssetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_asset::UpdateAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_asset::UpdateAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_blueprint::UpdateBlueprintError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8431,6 +9271,68 @@ impl From<crate::operation::update_dev_endpoint::UpdateDevEndpointError> for Err
             }
             crate::operation::update_dev_endpoint::UpdateDevEndpointError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_dev_endpoint::UpdateDevEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_glossary::UpdateGlossaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_glossary::UpdateGlossaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_glossary::UpdateGlossaryError> for Error {
+    fn from(err: crate::operation::update_glossary::UpdateGlossaryError) -> Self {
+        match err {
+            crate::operation::update_glossary::UpdateGlossaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_glossary::UpdateGlossaryError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::update_glossary::UpdateGlossaryError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_glossary::UpdateGlossaryError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_glossary::UpdateGlossaryError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_glossary::UpdateGlossaryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_glossary::UpdateGlossaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_glossary::UpdateGlossaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_glossary_term::UpdateGlossaryTermError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_glossary_term::UpdateGlossaryTermError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_glossary_term::UpdateGlossaryTermError> for Error {
+    fn from(err: crate::operation::update_glossary_term::UpdateGlossaryTermError) -> Self {
+        match err {
+            crate::operation::update_glossary_term::UpdateGlossaryTermError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_glossary_term::UpdateGlossaryTermError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::update_glossary_term::UpdateGlossaryTermError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_glossary_term::UpdateGlossaryTermError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_glossary_term::UpdateGlossaryTermError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_glossary_term::UpdateGlossaryTermError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_glossary_term::UpdateGlossaryTermError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_glossary_term::UpdateGlossaryTermError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -9053,6 +9955,7 @@ impl ::std::error::Error for Error {
             Error::SchedulerNotRunningException(inner) => inner.source(),
             Error::SchedulerRunningException(inner) => inner.source(),
             Error::SchedulerTransitioningException(inner) => inner.source(),
+            Error::SessionBusyException(inner) => inner.source(),
             Error::TargetResourceNotFound(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
@@ -9108,6 +10011,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::SchedulerNotRunningException(e) => e.request_id(),
             Self::SchedulerRunningException(e) => e.request_id(),
             Self::SchedulerTransitioningException(e) => e.request_id(),
+            Self::SessionBusyException(e) => e.request_id(),
             Self::TargetResourceNotFound(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),

@@ -75,10 +75,16 @@ pub fn ser_aws_ec2_vpc_endpoint_service_details(
 pub(crate) fn de_aws_ec2_vpc_endpoint_service_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsEc2VpcEndpointServiceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -93,12 +99,14 @@ where
                         }
                         "AvailabilityZones" => {
                             builder = builder.set_availability_zones(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "BaseEndpointDnsNames" => {
                             builder = builder.set_base_endpoint_dns_names(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "ManagesVpcEndpoints" => {
@@ -106,12 +114,12 @@ where
                         }
                         "GatewayLoadBalancerArns" => {
                             builder = builder.set_gateway_load_balancer_arns(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "NetworkLoadBalancerArns" => {
                             builder = builder.set_network_load_balancer_arns(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "PrivateDnsName" => {
@@ -144,7 +152,7 @@ where
                         }
                         "ServiceType" => {
                             builder = builder.set_service_type(
-                                    crate::protocol_serde::shape_aws_ec2_vpc_endpoint_service_service_type_list::de_aws_ec2_vpc_endpoint_service_service_type_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_ec2_vpc_endpoint_service_service_type_list::de_aws_ec2_vpc_endpoint_service_service_type_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

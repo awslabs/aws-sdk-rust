@@ -2,10 +2,16 @@
 pub(crate) fn de_input_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InputDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,9 @@ where
                         }
                         "vpc" => {
                             builder = builder.set_vpc(crate::protocol_serde::shape_input_destination_vpc::de_input_destination_vpc(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "network" => {
@@ -50,7 +58,11 @@ where
                         }
                         "networkRoutes" => {
                             builder = builder.set_network_routes(
-                                crate::protocol_serde::shape_list_of_input_destination_route::de_list_of_input_destination_route(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_input_destination_route::de_list_of_input_destination_route(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

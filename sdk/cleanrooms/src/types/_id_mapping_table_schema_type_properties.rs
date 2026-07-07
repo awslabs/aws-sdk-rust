@@ -6,12 +6,18 @@
 pub struct IdMappingTableSchemaTypeProperties {
     /// <p>Defines which ID namespace associations are used to create the ID mapping table.</p>
     pub id_mapping_table_input_source: ::std::vec::Vec<crate::types::IdMappingTableInputSource>,
+    /// <p>The unique identifier of the ID mapping table.</p>
+    pub id_mapping_table_id: ::std::option::Option<::std::string::String>,
 }
 impl IdMappingTableSchemaTypeProperties {
     /// <p>Defines which ID namespace associations are used to create the ID mapping table.</p>
     pub fn id_mapping_table_input_source(&self) -> &[crate::types::IdMappingTableInputSource] {
         use std::ops::Deref;
         self.id_mapping_table_input_source.deref()
+    }
+    /// <p>The unique identifier of the ID mapping table.</p>
+    pub fn id_mapping_table_id(&self) -> ::std::option::Option<&str> {
+        self.id_mapping_table_id.as_deref()
     }
 }
 impl IdMappingTableSchemaTypeProperties {
@@ -26,6 +32,7 @@ impl IdMappingTableSchemaTypeProperties {
 #[non_exhaustive]
 pub struct IdMappingTableSchemaTypePropertiesBuilder {
     pub(crate) id_mapping_table_input_source: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingTableInputSource>>,
+    pub(crate) id_mapping_table_id: ::std::option::Option<::std::string::String>,
 }
 impl IdMappingTableSchemaTypePropertiesBuilder {
     /// Appends an item to `id_mapping_table_input_source`.
@@ -51,6 +58,20 @@ impl IdMappingTableSchemaTypePropertiesBuilder {
     pub fn get_id_mapping_table_input_source(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingTableInputSource>> {
         &self.id_mapping_table_input_source
     }
+    /// <p>The unique identifier of the ID mapping table.</p>
+    pub fn id_mapping_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id_mapping_table_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the ID mapping table.</p>
+    pub fn set_id_mapping_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id_mapping_table_id = input;
+        self
+    }
+    /// <p>The unique identifier of the ID mapping table.</p>
+    pub fn get_id_mapping_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id_mapping_table_id
+    }
     /// Consumes the builder and constructs a [`IdMappingTableSchemaTypeProperties`](crate::types::IdMappingTableSchemaTypeProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`id_mapping_table_input_source`](crate::types::builders::IdMappingTableSchemaTypePropertiesBuilder::id_mapping_table_input_source)
@@ -62,6 +83,7 @@ impl IdMappingTableSchemaTypePropertiesBuilder {
                     "id_mapping_table_input_source was not specified but it is required when building IdMappingTableSchemaTypeProperties",
                 )
             })?,
+            id_mapping_table_id: self.id_mapping_table_id,
         })
     }
 }

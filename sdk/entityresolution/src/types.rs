@@ -111,6 +111,8 @@ pub use crate::types::_customer_profiles_integration_config::CustomerProfilesInt
 
 pub use crate::types::_match_purpose::MatchPurpose;
 
+pub use crate::types::_matching_config::MatchingConfig;
+
 pub use crate::types::_schema_attribute_type::SchemaAttributeType;
 
 pub use crate::types::_provider_schema_attribute::ProviderSchemaAttribute;
@@ -196,6 +198,8 @@ mod _match_group;
 mod _match_purpose;
 
 mod _matched_record;
+
+mod _matching_config;
 
 mod _matching_workflow_summary;
 

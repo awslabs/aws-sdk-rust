@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackSet, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSet::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -76,7 +80,7 @@ pub fn de_stack_set(
             s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation#StackSet$Parameters */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_parameters::de_parameters(&mut tag)
+                        crate::protocol_serde::shape_parameters::de_parameters(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +90,7 @@ pub fn de_stack_set(
             s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation#StackSet$Capabilities */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag)
+                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -96,7 +100,7 @@ pub fn de_stack_set(
             s if s.matches("Tags") /* Tags com.amazonaws.cloudformation#StackSet$Tags */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_tags::de_tags(&mut tag)
+                        crate::protocol_serde::shape_tags::de_tags(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -145,7 +149,7 @@ pub fn de_stack_set(
             s if s.matches("StackSetDriftDetectionDetails") /* StackSetDriftDetectionDetails com.amazonaws.cloudformation#StackSet$StackSetDriftDetectionDetails */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_drift_detection_details::de_stack_set_drift_detection_details(&mut tag)
+                        crate::protocol_serde::shape_stack_set_drift_detection_details::de_stack_set_drift_detection_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -155,7 +159,7 @@ pub fn de_stack_set(
             s if s.matches("AutoDeployment") /* AutoDeployment com.amazonaws.cloudformation#StackSet$AutoDeployment */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_auto_deployment::de_auto_deployment(&mut tag)
+                        crate::protocol_serde::shape_auto_deployment::de_auto_deployment(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -179,7 +183,7 @@ pub fn de_stack_set(
             s if s.matches("OrganizationalUnitIds") /* OrganizationalUnitIds com.amazonaws.cloudformation#StackSet$OrganizationalUnitIds */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_organizational_unit_id_list::de_organizational_unit_id_list(&mut tag)
+                        crate::protocol_serde::shape_organizational_unit_id_list::de_organizational_unit_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -189,7 +193,7 @@ pub fn de_stack_set(
             s if s.matches("ManagedExecution") /* ManagedExecution com.amazonaws.cloudformation#StackSet$ManagedExecution */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_managed_execution::de_managed_execution(&mut tag)
+                        crate::protocol_serde::shape_managed_execution::de_managed_execution(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -199,7 +203,7 @@ pub fn de_stack_set(
             s if s.matches("Regions") /* Regions com.amazonaws.cloudformation#StackSet$Regions */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_region_list::de_region_list(&mut tag)
+                        crate::protocol_serde::shape_region_list::de_region_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

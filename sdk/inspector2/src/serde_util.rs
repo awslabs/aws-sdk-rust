@@ -134,6 +134,15 @@ pub(crate) fn create_code_security_scan_configuration_output_output_correct_erro
     builder
 }
 
+pub(crate) fn create_connector_output_output_correct_errors(
+    mut builder: crate::operation::create_connector::builders::CreateConnectorOutputBuilder,
+) -> crate::operation::create_connector::builders::CreateConnectorOutputBuilder {
+    if builder.connector_arn.is_none() {
+        builder.connector_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn bad_request_exception_correct_errors(
     mut builder: crate::types::error::builders::BadRequestExceptionBuilder,
 ) -> crate::types::error::builders::BadRequestExceptionBuilder {
@@ -265,6 +274,24 @@ pub(crate) fn list_account_permissions_output_output_correct_errors(
 ) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder {
     if builder.permissions.is_none() {
         builder.permissions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_connector_scan_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_connector_scan_configurations::builders::ListConnectorScanConfigurationsOutputBuilder,
+) -> crate::operation::list_connector_scan_configurations::builders::ListConnectorScanConfigurationsOutputBuilder {
+    if builder.scan_configurations.is_none() {
+        builder.scan_configurations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_connectors_output_output_correct_errors(
+    mut builder: crate::operation::list_connectors::builders::ListConnectorsOutputBuilder,
+) -> crate::operation::list_connectors::builders::ListConnectorsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -526,6 +553,40 @@ pub(crate) fn code_snippet_error_correct_errors(
     builder
 }
 
+pub(crate) fn connector_correct_errors(mut builder: crate::types::builders::ConnectorBuilder) -> crate::types::builders::ConnectorBuilder {
+    if builder.connector_arn.is_none() {
+        builder.connector_arn = Some(Default::default())
+    }
+    if builder.provider.is_none() {
+        builder.provider = "no value was set".parse::<crate::types::ConnectorCloudProvider>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn connector_scan_configuration_item_correct_errors(
+    mut builder: crate::types::builders::ConnectorScanConfigurationItemBuilder,
+) -> crate::types::builders::ConnectorScanConfigurationItemBuilder {
+    if builder.aws_config_connector_arn.is_none() {
+        builder.aws_config_connector_arn = Some(Default::default())
+    }
+    if builder.connector_arns.is_none() {
+        builder.connector_arns = Some(Default::default())
+    }
+    if builder.scan_configuration.is_none() {
+        builder.scan_configuration = {
+            let builder = crate::types::builders::ConnectorScanConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn continuous_integration_scan_configuration_correct_errors(
     mut builder: crate::types::builders::ContinuousIntegrationScanConfigurationBuilder,
 ) -> crate::types::builders::ContinuousIntegrationScanConfigurationBuilder {
@@ -772,6 +833,27 @@ pub(crate) fn code_vulnerability_details_correct_errors(
     builder
 }
 
+pub(crate) fn connector_health_correct_errors(
+    mut builder: crate::types::builders::ConnectorHealthBuilder,
+) -> crate::types::builders::ConnectorHealthBuilder {
+    if builder.connector_status.is_none() {
+        builder.connector_status = "no value was set".parse::<crate::types::ConnectorHealthStatus>().ok()
+    }
+    if builder.last_checked_at.is_none() {
+        builder.last_checked_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn container_image_aggregation_response_correct_errors(
+    mut builder: crate::types::builders::ContainerImageAggregationResponseBuilder,
+) -> crate::types::builders::ContainerImageAggregationResponseBuilder {
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ec2_instance_aggregation_response_correct_errors(
     mut builder: crate::types::builders::Ec2InstanceAggregationResponseBuilder,
 ) -> crate::types::builders::Ec2InstanceAggregationResponseBuilder {
@@ -951,6 +1033,15 @@ pub(crate) fn scan_status_correct_errors(mut builder: crate::types::builders::Sc
     builder
 }
 
+pub(crate) fn serverless_function_aggregation_response_correct_errors(
+    mut builder: crate::types::builders::ServerlessFunctionAggregationResponseBuilder,
+) -> crate::types::builders::ServerlessFunctionAggregationResponseBuilder {
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn state_correct_errors(mut builder: crate::types::builders::StateBuilder) -> crate::types::builders::StateBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::Status>().ok()
@@ -979,6 +1070,15 @@ pub(crate) fn title_aggregation_response_correct_errors(
 ) -> crate::types::builders::TitleAggregationResponseBuilder {
     if builder.title.is_none() {
         builder.title = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vm_instance_aggregation_response_correct_errors(
+    mut builder: crate::types::builders::VmInstanceAggregationResponseBuilder,
+) -> crate::types::builders::VmInstanceAggregationResponseBuilder {
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
     }
     builder
 }
@@ -1115,6 +1215,15 @@ pub(crate) fn resource_correct_errors(mut builder: crate::types::builders::Resou
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn scope_configuration_correct_errors(
+    mut builder: crate::types::builders::ScopeConfigurationBuilder,
+) -> crate::types::builders::ScopeConfigurationBuilder {
+    if builder.scope_type.is_none() {
+        builder.scope_type = "no value was set".parse::<crate::types::ScopeType>().ok()
     }
     builder
 }

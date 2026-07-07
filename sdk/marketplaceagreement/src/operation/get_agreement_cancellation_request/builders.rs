@@ -22,9 +22,7 @@ impl crate::operation::get_agreement_cancellation_request::builders::GetAgreemen
 }
 /// Fluent builder constructing a request to `GetAgreementCancellationRequest`.
 ///
-/// <p>Retrieves detailed information about a specific agreement cancellation request. Both sellers (proposers) and buyers (acceptors) can use this operation to view cancellation requests associated with their agreements.</p><note>
-/// <p>The calling identity must be either the acceptor or proposer of the agreement. A <code>ResourceNotFoundException</code> is returned if the cancellation request does not exist.</p>
-/// </note>
+/// <p>Retrieves detailed information about a specific agreement cancellation request. Both sellers (proposers) and buyers (acceptors) can use this operation to view cancellation requests associated with their agreements.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgreementCancellationRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

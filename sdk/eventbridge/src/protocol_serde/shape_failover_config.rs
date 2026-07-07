@@ -2,10 +2,16 @@
 pub(crate) fn de_failover_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FailoverConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,10 +22,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Primary" => {
-                            builder = builder.set_primary(crate::protocol_serde::shape_primary::de_primary(tokens, _value)?);
+                            builder = builder.set_primary(crate::protocol_serde::shape_primary::de_primary(tokens, _value, depth + 1)?);
                         }
                         "Secondary" => {
-                            builder = builder.set_secondary(crate::protocol_serde::shape_secondary::de_secondary(tokens, _value)?);
+                            builder = builder.set_secondary(crate::protocol_serde::shape_secondary::de_secondary(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

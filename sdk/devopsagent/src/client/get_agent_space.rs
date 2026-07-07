@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAgentSpace`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier of the AgentSpace<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
     /// - On success, responds with [`GetAgentSpaceOutput`](crate::operation::get_agent_space::GetAgentSpaceOutput) with field(s):
-    ///   - [`agent_space(Option<AgentSpace>)`](crate::operation::get_agent_space::GetAgentSpaceOutput::agent_space): Represents a complete AgentSpace with all its properties, timestamps, encryption settings, and unique identifier.
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_agent_space::GetAgentSpaceOutput::tags): Tags associated with the AgentSpace.
+    ///   - [`agent_space(Option<AgentSpace>)`](crate::operation::get_agent_space::GetAgentSpaceOutput::agent_space): <p>Represents a complete AgentSpace with all its properties, timestamps, encryption settings, and unique identifier.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_agent_space::GetAgentSpaceOutput::tags): <p>Tags associated with the AgentSpace.</p>
     /// - On failure, responds with [`SdkError<GetAgentSpaceError>`](crate::operation::get_agent_space::GetAgentSpaceError)
     pub fn get_agent_space(&self) -> crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder {
         crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::new(self.handle.clone())

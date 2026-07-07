@@ -115,6 +115,9 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateAdConfiguration` operation.
+pub mod update_ad_configuration;
+
 /// Types for the `UpdateChannel` operation.
 pub mod update_channel;
 

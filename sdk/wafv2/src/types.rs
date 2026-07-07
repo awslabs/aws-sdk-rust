@@ -11,6 +11,8 @@ pub use crate::types::_regex_pattern_set_summary::RegexPatternSetSummary;
 
 pub use crate::types::_visibility_config::VisibilityConfig;
 
+pub use crate::types::_monetization_config::MonetizationConfig;
+
 pub use crate::types::_rule_group_summary::RuleGroupSummary;
 
 pub use crate::types::_default_action::DefaultAction;
@@ -47,13 +49,31 @@ pub use crate::types::_rate_based_statement_managed_keys_ip_set::RateBasedStatem
 
 pub use crate::types::_regex_pattern_set::RegexPatternSet;
 
-pub use crate::types::_rule_group::RuleGroup;
+pub use crate::types::_ranking_statistic_type::RankingStatisticType;
 
 pub use crate::types::_time_window::TimeWindow;
+
+pub use crate::types::_currency::Currency;
+
+pub use crate::types::_group_by_type::GroupByType;
+
+pub use crate::types::_ranking_sort_by::RankingSortBy;
+
+pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_revenue_breakdown::RevenueBreakdown;
+
+pub use crate::types::_time_series_statistic_type::TimeSeriesStatisticType;
+
+pub use crate::types::_interval_type::IntervalType;
+
+pub use crate::types::_rule_group::RuleGroup;
 
 pub use crate::types::_web_acl::WebAcl;
 
 pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_settlement_sort_by::SettlementSortBy;
 
 pub use crate::types::_tag_info_for_resource::TagInfoForResource;
 
@@ -66,6 +86,10 @@ pub use crate::types::_tag::Tag;
 pub use crate::types::_regex::Regex;
 
 pub use crate::types::_custom_response_body::CustomResponseBody;
+
+pub use crate::types::_crypto_config::CryptoConfig;
+
+pub use crate::types::_currency_mode::CurrencyMode;
 
 pub use crate::types::_block_action::BlockAction;
 
@@ -83,6 +107,14 @@ pub use crate::types::_label_summary::LabelSummary;
 
 pub use crate::types::_logging_filter::LoggingFilter;
 
+pub use crate::types::_monetization_filter::MonetizationFilter;
+
+pub use crate::types::_source_statistics::SourceStatistics;
+
+pub use crate::types::_revenue_path_statistics::RevenuePathStatistics;
+
+pub use crate::types::_data_point_entry::DataPointEntry;
+
 pub use crate::types::_sampled_http_request::SampledHttpRequest;
 
 pub use crate::types::_path_statistics::PathStatistics;
@@ -96,6 +128,8 @@ pub use crate::types::_managed_rule_group_version::ManagedRuleGroupVersion;
 pub use crate::types::_managed_rule_set_summary::ManagedRuleSetSummary;
 
 pub use crate::types::_release_summary::ReleaseSummary;
+
+pub use crate::types::_settlement_record::SettlementRecord;
 
 pub use crate::types::_version_to_publish::VersionToPublish;
 
@@ -135,6 +169,8 @@ pub use crate::types::_filter_source::FilterSource;
 
 pub use crate::types::_firewall_manager_rule_group::FirewallManagerRuleGroup;
 
+pub use crate::types::_settlement_status::SettlementStatus;
+
 pub use crate::types::_byte_match_statement::ByteMatchStatement;
 
 pub use crate::types::_sqli_match_statement::SqliMatchStatement;
@@ -173,9 +209,13 @@ pub use crate::types::_captcha_action::CaptchaAction;
 
 pub use crate::types::_challenge_action::ChallengeAction;
 
+pub use crate::types::_monetize_action::MonetizeAction;
+
 pub use crate::types::_none_action::NoneAction;
 
 pub use crate::types::_label::Label;
+
+pub use crate::types::_payment_network::PaymentNetwork;
 
 pub use crate::types::_field_to_protect::FieldToProtect;
 
@@ -235,6 +275,8 @@ pub use crate::types::_rate_based_statement_aggregate_key_type::RateBasedStateme
 
 pub use crate::types::_label_match_scope::LabelMatchScope;
 
+pub use crate::types::_blockchain_chain::BlockchainChain;
+
 pub use crate::types::_custom_http_header::CustomHttpHeader;
 
 pub use crate::types::_field_to_protect_type::FieldToProtectType;
@@ -270,6 +312,8 @@ pub use crate::types::_forwarded_ip_position::ForwardedIpPosition;
 pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKey;
 
 pub use crate::types::_managed_rule_group_config::ManagedRuleGroupConfig;
+
+pub use crate::types::_price::Price;
 
 pub use crate::types::_all::All;
 
@@ -314,6 +358,8 @@ pub use crate::types::_aws_managed_rules_atp_rule_set::AwsManagedRulesAtpRuleSet
 pub use crate::types::_aws_managed_rules_acfp_rule_set::AwsManagedRulesAcfpRuleSet;
 
 pub use crate::types::_aws_managed_rules_anti_d_do_s_rule_set::AwsManagedRulesAntiDDoSRuleSet;
+
+pub use crate::types::_crypto_currency::CryptoCurrency;
 
 pub use crate::types::_action_condition::ActionCondition;
 
@@ -387,6 +433,8 @@ mod _aws_managed_rules_bot_control_rule_set;
 
 mod _block_action;
 
+mod _blockchain_chain;
+
 mod _body;
 
 mod _body_parsing_fallback_behavior;
@@ -423,6 +471,14 @@ mod _count_action;
 
 mod _country_code;
 
+mod _crypto_config;
+
+mod _crypto_currency;
+
+mod _currency;
+
+mod _currency_mode;
+
 mod _custom_http_header;
 
 mod _custom_request_handling;
@@ -430,6 +486,8 @@ mod _custom_request_handling;
 mod _custom_response;
 
 mod _custom_response_body;
+
+mod _data_point_entry;
 
 mod _data_protection;
 
@@ -473,6 +531,8 @@ mod _forwarded_ip_position;
 
 mod _geo_match_statement;
 
+mod _group_by_type;
+
 mod _header_match_pattern;
 
 mod _header_order;
@@ -486,6 +546,8 @@ mod _http_request;
 mod _immunity_time_property;
 
 mod _inspection_level;
+
+mod _interval_type;
 
 mod _ip_address_version;
 
@@ -549,6 +611,12 @@ mod _method;
 
 mod _mobile_sdk_release;
 
+mod _monetization_config;
+
+mod _monetization_filter;
+
+mod _monetize_action;
+
 mod _none_action;
 
 mod _not_statement;
@@ -569,13 +637,21 @@ mod _path_statistics;
 
 mod _payload_type;
 
+mod _payment_network;
+
 mod _phone_number_field;
 
 mod _platform;
 
 mod _positional_constraint;
 
+mod _price;
+
 mod _query_string;
+
+mod _ranking_sort_by;
+
+mod _ranking_statistic_type;
 
 mod _rate_based_statement;
 
@@ -641,6 +717,10 @@ mod _response_inspection_json;
 
 mod _response_inspection_status_code;
 
+mod _revenue_breakdown;
+
+mod _revenue_path_statistics;
+
 mod _rule;
 
 mod _rule_action;
@@ -663,6 +743,12 @@ mod _sensitivity_level;
 
 mod _sensitivity_to_act;
 
+mod _settlement_record;
+
+mod _settlement_sort_by;
+
+mod _settlement_status;
+
 mod _single_header;
 
 mod _single_query_argument;
@@ -670,6 +756,10 @@ mod _single_query_argument;
 mod _size_constraint_statement;
 
 mod _size_inspection_limit;
+
+mod _sort_order;
+
+mod _source_statistics;
 
 mod _sqli_match_statement;
 
@@ -682,6 +772,8 @@ mod _tag_info_for_resource;
 mod _text_transformation;
 
 mod _text_transformation_type;
+
+mod _time_series_statistic_type;
 
 mod _time_window;
 

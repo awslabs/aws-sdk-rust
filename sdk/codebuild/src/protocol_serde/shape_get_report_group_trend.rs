@@ -92,6 +92,8 @@ pub(crate) fn de_get_report_group_trend(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -99,12 +101,18 @@ pub(crate) fn de_get_report_group_trend(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "stats" => {
                     builder = builder.set_stats(crate::protocol_serde::shape_report_group_trend_stats::de_report_group_trend_stats(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "rawData" => {
                     builder = builder.set_raw_data(
-                        crate::protocol_serde::shape_report_group_trend_raw_data_list::de_report_group_trend_raw_data_list(tokens, _value)?,
+                        crate::protocol_serde::shape_report_group_trend_raw_data_list::de_report_group_trend_raw_data_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -5,8 +5,12 @@
 pub struct InvokeHarnessInput {
     /// <p>The ARN of the harness to invoke.</p>
     pub harness_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+    pub qualifier: ::std::option::Option<::std::string::String>,
     /// <p>The session ID for the invocation. Use the same session ID across requests to continue a conversation.</p>
     pub runtime_session_id: ::std::option::Option<::std::string::String>,
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub runtime_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The messages to send to the agent.</p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::HarnessMessage>>,
     /// <p>The model configuration to use for this invocation. If specified, overrides the harness default.</p>
@@ -33,9 +37,17 @@ impl InvokeHarnessInput {
     pub fn harness_arn(&self) -> ::std::option::Option<&str> {
         self.harness_arn.as_deref()
     }
+    /// <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
     /// <p>The session ID for the invocation. Use the same session ID across requests to continue a conversation.</p>
     pub fn runtime_session_id(&self) -> ::std::option::Option<&str> {
         self.runtime_session_id.as_deref()
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn runtime_user_id(&self) -> ::std::option::Option<&str> {
+        self.runtime_user_id.as_deref()
     }
     /// <p>The messages to send to the agent.</p>
     ///
@@ -100,7 +112,9 @@ impl InvokeHarnessInput {
 #[non_exhaustive]
 pub struct InvokeHarnessInputBuilder {
     pub(crate) harness_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime_user_id: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::HarnessMessage>>,
     pub(crate) model: ::std::option::Option<crate::types::HarnessModelConfiguration>,
     pub(crate) system_prompt: ::std::option::Option<::std::vec::Vec<crate::types::HarnessSystemContentBlock>>,
@@ -128,6 +142,20 @@ impl InvokeHarnessInputBuilder {
     pub fn get_harness_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.harness_arn
     }
+    /// <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+    pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.qualifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+    pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.qualifier = input;
+        self
+    }
+    /// <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+    pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualifier
+    }
     /// <p>The session ID for the invocation. Use the same session ID across requests to continue a conversation.</p>
     /// This field is required.
     pub fn runtime_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +170,20 @@ impl InvokeHarnessInputBuilder {
     /// <p>The session ID for the invocation. Use the same session ID across requests to continue a conversation.</p>
     pub fn get_runtime_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime_session_id
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn runtime_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.runtime_user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn set_runtime_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.runtime_user_id = input;
+        self
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn get_runtime_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime_user_id
     }
     /// Appends an item to `messages`.
     ///
@@ -319,7 +361,9 @@ impl InvokeHarnessInputBuilder {
     ) -> ::std::result::Result<crate::operation::invoke_harness::InvokeHarnessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_harness::InvokeHarnessInput {
             harness_arn: self.harness_arn,
+            qualifier: self.qualifier,
             runtime_session_id: self.runtime_session_id,
+            runtime_user_id: self.runtime_user_id,
             messages: self.messages,
             model: self.model,
             system_prompt: self.system_prompt,

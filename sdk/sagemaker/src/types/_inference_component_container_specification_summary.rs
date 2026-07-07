@@ -11,6 +11,8 @@ pub struct InferenceComponentContainerSpecificationSummary {
     pub artifact_url: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The container metrics scraping configuration for this inference component, including the metrics endpoint path and publishing frequency.</p>
+    pub container_metrics_config: ::std::option::Option<crate::types::ContainerMetricsConfig>,
 }
 impl InferenceComponentContainerSpecificationSummary {
     /// <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.</p>
@@ -25,6 +27,10 @@ impl InferenceComponentContainerSpecificationSummary {
     /// <p>The environment variables to set in the Docker container.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
+    }
+    /// <p>The container metrics scraping configuration for this inference component, including the metrics endpoint path and publishing frequency.</p>
+    pub fn container_metrics_config(&self) -> ::std::option::Option<&crate::types::ContainerMetricsConfig> {
+        self.container_metrics_config.as_ref()
     }
 }
 impl InferenceComponentContainerSpecificationSummary {
@@ -41,6 +47,7 @@ pub struct InferenceComponentContainerSpecificationSummaryBuilder {
     pub(crate) deployed_image: ::std::option::Option<crate::types::DeployedImage>,
     pub(crate) artifact_url: ::std::option::Option<::std::string::String>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) container_metrics_config: ::std::option::Option<crate::types::ContainerMetricsConfig>,
 }
 impl InferenceComponentContainerSpecificationSummaryBuilder {
     /// <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.</p>
@@ -97,12 +104,27 @@ impl InferenceComponentContainerSpecificationSummaryBuilder {
     pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
+    /// <p>The container metrics scraping configuration for this inference component, including the metrics endpoint path and publishing frequency.</p>
+    pub fn container_metrics_config(mut self, input: crate::types::ContainerMetricsConfig) -> Self {
+        self.container_metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The container metrics scraping configuration for this inference component, including the metrics endpoint path and publishing frequency.</p>
+    pub fn set_container_metrics_config(mut self, input: ::std::option::Option<crate::types::ContainerMetricsConfig>) -> Self {
+        self.container_metrics_config = input;
+        self
+    }
+    /// <p>The container metrics scraping configuration for this inference component, including the metrics endpoint path and publishing frequency.</p>
+    pub fn get_container_metrics_config(&self) -> &::std::option::Option<crate::types::ContainerMetricsConfig> {
+        &self.container_metrics_config
+    }
     /// Consumes the builder and constructs a [`InferenceComponentContainerSpecificationSummary`](crate::types::InferenceComponentContainerSpecificationSummary).
     pub fn build(self) -> crate::types::InferenceComponentContainerSpecificationSummary {
         crate::types::InferenceComponentContainerSpecificationSummary {
             deployed_image: self.deployed_image,
             artifact_url: self.artifact_url,
             environment: self.environment,
+            container_metrics_config: self.container_metrics_config,
         }
     }
 }

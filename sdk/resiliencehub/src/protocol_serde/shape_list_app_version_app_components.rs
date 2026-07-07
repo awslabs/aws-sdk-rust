@@ -157,6 +157,8 @@ pub(crate) fn de_list_app_version_app_components(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -170,7 +172,11 @@ pub(crate) fn de_list_app_version_app_components(
                     );
                 }
                 "appComponents" => {
-                    builder = builder.set_app_components(crate::protocol_serde::shape_app_component_list::de_app_component_list(tokens, _value)?);
+                    builder = builder.set_app_components(crate::protocol_serde::shape_app_component_list::de_app_component_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "appVersion" => {
                     builder = builder.set_app_version(

@@ -234,6 +234,20 @@ impl UpdateGatewayFluentBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }
+    /// <p>The updated custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn custom_transform_configuration(mut self, input: crate::types::CustomTransformConfiguration) -> Self {
+        self.inner = self.inner.custom_transform_configuration(input);
+        self
+    }
+    /// <p>The updated custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn set_custom_transform_configuration(mut self, input: ::std::option::Option<crate::types::CustomTransformConfiguration>) -> Self {
+        self.inner = self.inner.set_custom_transform_configuration(input);
+        self
+    }
+    /// <p>The updated custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn get_custom_transform_configuration(&self) -> &::std::option::Option<crate::types::CustomTransformConfiguration> {
+        self.inner.get_custom_transform_configuration()
+    }
     ///
     /// Appends an item to `interceptorConfigurations`.
     ///
@@ -301,5 +315,19 @@ impl UpdateGatewayFluentBuilder {
     /// </ul>
     pub fn get_exception_level(&self) -> &::std::option::Option<crate::types::ExceptionLevel> {
         self.inner.get_exception_level()
+    }
+    /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn waf_configuration(mut self, input: crate::types::WafConfiguration) -> Self {
+        self.inner = self.inner.waf_configuration(input);
+        self
+    }
+    /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn set_waf_configuration(mut self, input: ::std::option::Option<crate::types::WafConfiguration>) -> Self {
+        self.inner = self.inner.set_waf_configuration(input);
+        self
+    }
+    /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn get_waf_configuration(&self) -> &::std::option::Option<crate::types::WafConfiguration> {
+        self.inner.get_waf_configuration()
     }
 }

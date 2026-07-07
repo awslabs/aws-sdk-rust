@@ -6,38 +6,56 @@ pub fn ser_update_online_evaluation_config_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.data_source_config {
+    if let Some(var_2) = &input.clustering_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("dataSourceConfig").start_object();
-        crate::protocol_serde::shape_data_source_config::ser_data_source_config(&mut object_3, var_2)?;
+        let mut object_3 = object.key("clusteringConfig").start_object();
+        crate::protocol_serde::shape_clustering_config::ser_clustering_config(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_4) = &input.data_source_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("dataSourceConfig").start_object();
+        crate::protocol_serde::shape_data_source_config::ser_data_source_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.evaluation_execution_role_arn {
-        object.key("evaluationExecutionRoleArn").string(var_5.as_str());
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.evaluators {
-        let mut array_7 = object.key("evaluators").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.evaluation_execution_role_arn {
+        object.key("evaluationExecutionRoleArn").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.evaluators {
+        let mut array_9 = object.key("evaluators").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_evaluator_reference::ser_evaluator_reference(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_evaluator_reference::ser_evaluator_reference(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.execution_status {
-        object.key("executionStatus").string(var_10.as_str());
+    if let Some(var_12) = &input.execution_status {
+        object.key("executionStatus").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.rule {
+    if let Some(var_13) = &input.insights {
+        let mut array_14 = object.key("insights").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_insight::ser_insight(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_17) = &input.rule {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("rule").start_object();
-        crate::protocol_serde::shape_rule::ser_rule(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_18 = object.key("rule").start_object();
+        crate::protocol_serde::shape_rule::ser_rule(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }

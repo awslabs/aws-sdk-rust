@@ -157,86 +157,94 @@ pub(crate) fn de_create_slot_type(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "botId" => {
-                    builder = builder.set_bot_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "botId" => {
+                        builder = builder.set_bot_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "botVersion" => {
+                        builder = builder.set_bot_version(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "compositeSlotTypeSetting" => {
+                        builder = builder.set_composite_slot_type_setting(
+                            crate::protocol_serde::shape_composite_slot_type_setting::de_composite_slot_type_setting(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "creationDateTime" => {
+                        builder = builder.set_creation_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "description" => {
+                        builder = builder.set_description(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "externalSourceSetting" => {
+                        builder = builder.set_external_source_setting(
+                            crate::protocol_serde::shape_external_source_setting::de_external_source_setting(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "localeId" => {
+                        builder = builder.set_locale_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "parentSlotTypeSignature" => {
+                        builder = builder.set_parent_slot_type_signature(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "slotTypeId" => {
+                        builder = builder.set_slot_type_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "slotTypeName" => {
+                        builder = builder.set_slot_type_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "slotTypeValues" => {
+                        builder = builder.set_slot_type_values(crate::protocol_serde::shape_slot_type_values::de_slot_type_values(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "valueSelectionSetting" => {
+                        builder = builder.set_value_selection_setting(
+                            crate::protocol_serde::shape_slot_value_selection_setting::de_slot_value_selection_setting(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "botVersion" => {
-                    builder = builder.set_bot_version(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "compositeSlotTypeSetting" => {
-                    builder = builder.set_composite_slot_type_setting(
-                        crate::protocol_serde::shape_composite_slot_type_setting::de_composite_slot_type_setting(tokens, _value)?,
-                    );
-                }
-                "creationDateTime" => {
-                    builder = builder.set_creation_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "description" => {
-                    builder = builder.set_description(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "externalSourceSetting" => {
-                    builder = builder.set_external_source_setting(crate::protocol_serde::shape_external_source_setting::de_external_source_setting(
-                        tokens, _value,
-                    )?);
-                }
-                "localeId" => {
-                    builder = builder.set_locale_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "parentSlotTypeSignature" => {
-                    builder = builder.set_parent_slot_type_signature(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "slotTypeId" => {
-                    builder = builder.set_slot_type_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "slotTypeName" => {
-                    builder = builder.set_slot_type_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "slotTypeValues" => {
-                    builder = builder.set_slot_type_values(crate::protocol_serde::shape_slot_type_values::de_slot_type_values(tokens, _value)?);
-                }
-                "valueSelectionSetting" => {
-                    builder = builder.set_value_selection_setting(
-                        crate::protocol_serde::shape_slot_value_selection_setting::de_slot_value_selection_setting(tokens, _value)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

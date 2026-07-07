@@ -22,7 +22,7 @@ impl crate::operation::describe_instance_types::builders::DescribeInstanceTypesI
 }
 /// Fluent builder constructing a request to `DescribeInstanceTypes`.
 ///
-/// <p>Describes the specified instance types. By default, all instance types for the current Region are described. Alternatively, you can filter the results.</p>
+/// <p>Describes the specified instance types. By default, all instance types for the current Region are described. Alternatively, you can filter the results. To include instance types that are not supported in the current Region, set <code>IncludeUnsupportedInRegion</code> to <code>true</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -535,5 +535,19 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    /// <p>If <code>true</code>, the response includes instance types that are not supported in the current Region, in addition to the supported types. Default: <code>false</code>.</p>
+    pub fn include_unsupported_in_region(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_unsupported_in_region(input);
+        self
+    }
+    /// <p>If <code>true</code>, the response includes instance types that are not supported in the current Region, in addition to the supported types. Default: <code>false</code>.</p>
+    pub fn set_include_unsupported_in_region(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_unsupported_in_region(input);
+        self
+    }
+    /// <p>If <code>true</code>, the response includes instance types that are not supported in the current Region, in addition to the supported types. Default: <code>false</code>.</p>
+    pub fn get_include_unsupported_in_region(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_unsupported_in_region()
     }
 }

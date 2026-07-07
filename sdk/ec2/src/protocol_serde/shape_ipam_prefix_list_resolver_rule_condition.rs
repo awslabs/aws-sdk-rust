@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ipam_prefix_list_resolver_rule_condition(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IpamPrefixListResolverRuleCondition, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IpamPrefixListResolverRuleCondition::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -76,7 +80,7 @@ pub fn de_ipam_prefix_list_resolver_rule_condition(
             s if s.matches("resourceTag") /* ResourceTag com.amazonaws.ec2#IpamPrefixListResolverRuleCondition$ResourceTag */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_ipam_resource_tag::de_ipam_resource_tag(&mut tag)
+                        crate::protocol_serde::shape_ipam_resource_tag::de_ipam_resource_tag(&mut tag, depth + 1)
                         ?
                     )
                 ;

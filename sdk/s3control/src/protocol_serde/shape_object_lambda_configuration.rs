@@ -41,7 +41,11 @@ pub fn ser_object_lambda_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_object_lambda_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ObjectLambdaConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ObjectLambdaConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -77,7 +81,7 @@ pub fn de_object_lambda_configuration(
             s if s.matches("AllowedFeatures") /* AllowedFeatures com.amazonaws.s3control#ObjectLambdaConfiguration$AllowedFeatures */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_allowed_features_list::de_object_lambda_allowed_features_list(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_allowed_features_list::de_object_lambda_allowed_features_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -87,7 +91,7 @@ pub fn de_object_lambda_configuration(
             s if s.matches("TransformationConfigurations") /* TransformationConfigurations com.amazonaws.s3control#ObjectLambdaConfiguration$TransformationConfigurations */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_transformation_configurations_list::de_object_lambda_transformation_configurations_list(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_transformation_configurations_list::de_object_lambda_transformation_configurations_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

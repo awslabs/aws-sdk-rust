@@ -123,6 +123,8 @@ pub(crate) fn de_get_service_profile(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,7 +146,11 @@ pub(crate) fn de_get_service_profile(
                 }
                 "LoRaWAN" => {
                     builder = builder.set_lo_ra_wan(
-                        crate::protocol_serde::shape_lo_ra_wan_get_service_profile_info::de_lo_ra_wan_get_service_profile_info(tokens, _value)?,
+                        crate::protocol_serde::shape_lo_ra_wan_get_service_profile_info::de_lo_ra_wan_get_service_profile_info(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Name" => {

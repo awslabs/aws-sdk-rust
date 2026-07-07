@@ -28,11 +28,19 @@ pub fn ser_rds_create_cross_region_replica_configuration(
 
 pub(crate) fn de_rds_create_cross_region_replica_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RdsCreateCrossRegionReplicaConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::RdsCreateCrossRegionReplicaConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::RdsCreateCrossRegionReplicaConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
@@ -46,7 +54,7 @@ pub(crate) fn de_rds_create_cross_region_replica_configuration(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_external_id(Some(decoder.string()?))))?
             }
             "dbInstanceArnMap" => builder.set_db_instance_arn_map(Some(
-                crate::protocol_serde::shape_rds_db_instance_arn_map::de_rds_db_instance_arn_map(decoder)?,
+                crate::protocol_serde::shape_rds_db_instance_arn_map::de_rds_db_instance_arn_map(decoder, depth + 1)?,
             )),
             _ => {
                 decoder.skip()?;
@@ -66,13 +74,13 @@ pub(crate) fn de_rds_create_cross_region_replica_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

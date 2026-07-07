@@ -2,10 +2,16 @@
 pub(crate) fn de_blueprint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Blueprint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -78,12 +84,16 @@ where
                         }
                         "kmsEncryptionContext" => {
                             builder = builder.set_kms_encryption_context(
-                                crate::protocol_serde::shape_kms_encryption_context::de_kms_encryption_context(tokens, _value)?,
+                                crate::protocol_serde::shape_kms_encryption_context::de_kms_encryption_context(tokens, _value, depth + 1)?,
                             );
                         }
                         "optimizationSamples" => {
                             builder = builder.set_optimization_samples(
-                                crate::protocol_serde::shape_blueprint_optimization_samples::de_blueprint_optimization_samples(tokens, _value)?,
+                                crate::protocol_serde::shape_blueprint_optimization_samples::de_blueprint_optimization_samples(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "optimizationTime" => {

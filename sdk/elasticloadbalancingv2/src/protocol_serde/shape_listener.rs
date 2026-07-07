@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_listener(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Listener, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Listener::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -65,7 +69,7 @@ pub fn de_listener(
             s if s.matches("Certificates") /* Certificates com.amazonaws.elasticloadbalancingv2#Listener$Certificates */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_certificate_list::de_certificate_list(&mut tag)
+                        crate::protocol_serde::shape_certificate_list::de_certificate_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -88,7 +92,7 @@ pub fn de_listener(
             s if s.matches("DefaultActions") /* DefaultActions com.amazonaws.elasticloadbalancingv2#Listener$DefaultActions */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_actions::de_actions(&mut tag)
+                        crate::protocol_serde::shape_actions::de_actions(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_listener(
             s if s.matches("AlpnPolicy") /* AlpnPolicy com.amazonaws.elasticloadbalancingv2#Listener$AlpnPolicy */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_alpn_policy_name::de_alpn_policy_name(&mut tag)
+                        crate::protocol_serde::shape_alpn_policy_name::de_alpn_policy_name(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +112,7 @@ pub fn de_listener(
             s if s.matches("MutualAuthentication") /* MutualAuthentication com.amazonaws.elasticloadbalancingv2#Listener$MutualAuthentication */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_mutual_authentication_attributes::de_mutual_authentication_attributes(&mut tag)
+                        crate::protocol_serde::shape_mutual_authentication_attributes::de_mutual_authentication_attributes(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -66,6 +66,8 @@ pub struct CreateModelPackageInput {
     pub model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
     /// <p>A structure describing the current state of the model in its life cycle.</p>
     pub model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
+    /// <p>The storage type of the model package.</p>
+    pub managed_storage_type: ::std::option::Option<crate::types::ManagedStorageType>,
 }
 impl CreateModelPackageInput {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -183,6 +185,10 @@ impl CreateModelPackageInput {
     pub fn model_life_cycle(&self) -> ::std::option::Option<&crate::types::ModelLifeCycle> {
         self.model_life_cycle.as_ref()
     }
+    /// <p>The storage type of the model package.</p>
+    pub fn managed_storage_type(&self) -> ::std::option::Option<&crate::types::ManagedStorageType> {
+        self.managed_storage_type.as_ref()
+    }
 }
 impl CreateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
@@ -219,6 +225,7 @@ pub struct CreateModelPackageInputBuilder {
     pub(crate) security_config: ::std::option::Option<crate::types::ModelPackageSecurityConfig>,
     pub(crate) model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
     pub(crate) model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
+    pub(crate) managed_storage_type: ::std::option::Option<crate::types::ManagedStorageType>,
 }
 impl CreateModelPackageInputBuilder {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -634,6 +641,20 @@ impl CreateModelPackageInputBuilder {
     pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
         &self.model_life_cycle
     }
+    /// <p>The storage type of the model package.</p>
+    pub fn managed_storage_type(mut self, input: crate::types::ManagedStorageType) -> Self {
+        self.managed_storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage type of the model package.</p>
+    pub fn set_managed_storage_type(mut self, input: ::std::option::Option<crate::types::ManagedStorageType>) -> Self {
+        self.managed_storage_type = input;
+        self
+    }
+    /// <p>The storage type of the model package.</p>
+    pub fn get_managed_storage_type(&self) -> &::std::option::Option<crate::types::ManagedStorageType> {
+        &self.managed_storage_type
+    }
     /// Consumes the builder and constructs a [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
     pub fn build(
         self,
@@ -664,6 +685,7 @@ impl CreateModelPackageInputBuilder {
             security_config: self.security_config,
             model_card: self.model_card,
             model_life_cycle: self.model_life_cycle,
+            managed_storage_type: self.managed_storage_type,
         })
     }
 }

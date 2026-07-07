@@ -271,6 +271,8 @@ pub use crate::types::_automatic_input_failover_settings::AutomaticInputFailover
 
 pub use crate::types::_input_settings::InputSettingsBuilder;
 
+pub use crate::types::_audio_feed_input::AudioFeedInputBuilder;
+
 pub use crate::types::_interface_mapping_create_request::InterfaceMappingCreateRequestBuilder;
 
 pub use crate::types::_interface_mapping::InterfaceMappingBuilder;
@@ -362,6 +364,8 @@ pub use crate::types::_srt_caller_decryption_request::SrtCallerDecryptionRequest
 pub use crate::types::_smpte2110_receiver_group_sdp_settings::Smpte2110ReceiverGroupSdpSettingsBuilder;
 
 pub use crate::types::_media_resource_neighbor::MediaResourceNeighborBuilder;
+
+pub use crate::types::_media_connect_router_output_connection::MediaConnectRouterOutputConnectionBuilder;
 
 pub use crate::types::_input_destination_route::InputDestinationRouteBuilder;
 
@@ -643,6 +647,8 @@ pub use crate::types::_scte27_source_settings::Scte27SourceSettingsBuilder;
 
 pub use crate::types::_teletext_source_settings::TeletextSourceSettingsBuilder;
 
+pub use crate::types::_smart_subtitle_source_settings::SmartSubtitleSourceSettingsBuilder;
+
 pub use crate::types::_scte35_descriptor_settings::Scte35DescriptorSettingsBuilder;
 
 pub use crate::types::_input_channel_level::InputChannelLevelBuilder;
@@ -685,6 +691,8 @@ pub use crate::types::_standard_hls_settings::StandardHlsSettingsBuilder;
 
 pub use crate::types::_multiplex_m2ts_settings::MultiplexM2tsSettingsBuilder;
 
+pub use crate::types::_audio_pid::AudioPidBuilder;
+
 pub use crate::types::_audio_track::AudioTrackBuilder;
 
 pub use crate::types::_scte35_delivery_restrictions::Scte35DeliveryRestrictionsBuilder;
@@ -696,3 +704,5 @@ pub use crate::types::_dvb_sdt_settings::DvbSdtSettingsBuilder;
 pub use crate::types::_dvb_tdt_settings::DvbTdtSettingsBuilder;
 
 pub use crate::types::_m3u8_settings::M3u8SettingsBuilder;
+
+pub use crate::types::_audio_pre_mixer_settings::AudioPreMixerSettingsBuilder;

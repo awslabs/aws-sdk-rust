@@ -124,43 +124,55 @@ pub(crate) fn de_batch_get_frame_metric_data(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "endTime" => {
-                    builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "endTime" => {
+                        builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "endTimes" => {
+                        builder = builder.set_end_times(crate::protocol_serde::shape_list_of_timestamps::de_list_of_timestamps(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "frameMetricData" => {
+                        builder = builder.set_frame_metric_data(crate::protocol_serde::shape_frame_metric_data::de_frame_metric_data(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "resolution" => {
+                        builder = builder.set_resolution(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::AggregationPeriod::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "startTime" => {
+                        builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "unprocessedEndTimes" => {
+                        builder = builder.set_unprocessed_end_times(
+                            crate::protocol_serde::shape_unprocessed_end_time_map::de_unprocessed_end_time_map(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "endTimes" => {
-                    builder = builder.set_end_times(crate::protocol_serde::shape_list_of_timestamps::de_list_of_timestamps(tokens, _value)?);
-                }
-                "frameMetricData" => {
-                    builder = builder.set_frame_metric_data(crate::protocol_serde::shape_frame_metric_data::de_frame_metric_data(tokens, _value)?);
-                }
-                "resolution" => {
-                    builder = builder.set_resolution(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::AggregationPeriod::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "startTime" => {
-                    builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "unprocessedEndTimes" => {
-                    builder = builder.set_unprocessed_end_times(crate::protocol_serde::shape_unprocessed_end_time_map::de_unprocessed_end_time_map(
-                        tokens, _value,
-                    )?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

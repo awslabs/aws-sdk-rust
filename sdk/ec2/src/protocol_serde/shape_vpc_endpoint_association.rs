@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc_endpoint_association(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VpcEndpointAssociation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VpcEndpointAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -101,7 +105,7 @@ pub fn de_vpc_endpoint_association(
             s if s.matches("dnsEntry") /* DnsEntry com.amazonaws.ec2#VpcEndpointAssociation$DnsEntry */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_dns_entry::de_dns_entry(&mut tag)
+                        crate::protocol_serde::shape_dns_entry::de_dns_entry(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -111,7 +115,7 @@ pub fn de_vpc_endpoint_association(
             s if s.matches("privateDnsEntry") /* PrivateDnsEntry com.amazonaws.ec2#VpcEndpointAssociation$PrivateDnsEntry */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_dns_entry::de_dns_entry(&mut tag)
+                        crate::protocol_serde::shape_dns_entry::de_dns_entry(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -147,7 +151,7 @@ pub fn de_vpc_endpoint_association(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VpcEndpointAssociation$Tags */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -30,7 +30,7 @@ pub struct CertificateSummary {
     pub export_option: ::std::option::Option<crate::types::CertificateExport>,
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
     pub in_use: ::std::option::Option<bool>,
-    /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
+    /// <p>Indicates whether the certificate has been exported.</p>
     pub exported: ::std::option::Option<bool>,
     /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported private certificates can be renewed with the <code>RenewCertificate</code> command.</p>
     pub renewal_eligibility: ::std::option::Option<crate::types::RenewalEligibility>,
@@ -48,6 +48,8 @@ pub struct CertificateSummary {
     pub revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
     pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
+    /// <p>The origin of the certificate's key pair.</p>
+    pub certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
 }
 impl CertificateSummary {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
@@ -104,7 +106,7 @@ impl CertificateSummary {
     pub fn in_use(&self) -> ::std::option::Option<bool> {
         self.in_use
     }
-    /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
+    /// <p>Indicates whether the certificate has been exported.</p>
     pub fn exported(&self) -> ::std::option::Option<bool> {
         self.exported
     }
@@ -140,6 +142,10 @@ impl CertificateSummary {
     pub fn managed_by(&self) -> ::std::option::Option<&crate::types::CertificateManagedBy> {
         self.managed_by.as_ref()
     }
+    /// <p>The origin of the certificate's key pair.</p>
+    pub fn certificate_key_pair_origin(&self) -> ::std::option::Option<&crate::types::CertificateKeyPairOrigin> {
+        self.certificate_key_pair_origin.as_ref()
+    }
 }
 impl CertificateSummary {
     /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::types::CertificateSummary).
@@ -172,6 +178,7 @@ pub struct CertificateSummaryBuilder {
     pub(crate) imported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
+    pub(crate) certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
 }
 impl CertificateSummaryBuilder {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
@@ -358,17 +365,17 @@ impl CertificateSummaryBuilder {
     pub fn get_in_use(&self) -> &::std::option::Option<bool> {
         &self.in_use
     }
-    /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
+    /// <p>Indicates whether the certificate has been exported.</p>
     pub fn exported(mut self, input: bool) -> Self {
         self.exported = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
+    /// <p>Indicates whether the certificate has been exported.</p>
     pub fn set_exported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exported = input;
         self
     }
-    /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
+    /// <p>Indicates whether the certificate has been exported.</p>
     pub fn get_exported(&self) -> &::std::option::Option<bool> {
         &self.exported
     }
@@ -484,6 +491,20 @@ impl CertificateSummaryBuilder {
     pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::CertificateManagedBy> {
         &self.managed_by
     }
+    /// <p>The origin of the certificate's key pair.</p>
+    pub fn certificate_key_pair_origin(mut self, input: crate::types::CertificateKeyPairOrigin) -> Self {
+        self.certificate_key_pair_origin = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The origin of the certificate's key pair.</p>
+    pub fn set_certificate_key_pair_origin(mut self, input: ::std::option::Option<crate::types::CertificateKeyPairOrigin>) -> Self {
+        self.certificate_key_pair_origin = input;
+        self
+    }
+    /// <p>The origin of the certificate's key pair.</p>
+    pub fn get_certificate_key_pair_origin(&self) -> &::std::option::Option<crate::types::CertificateKeyPairOrigin> {
+        &self.certificate_key_pair_origin
+    }
     /// Consumes the builder and constructs a [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn build(self) -> crate::types::CertificateSummary {
         crate::types::CertificateSummary {
@@ -507,6 +528,7 @@ impl CertificateSummaryBuilder {
             imported_at: self.imported_at,
             revoked_at: self.revoked_at,
             managed_by: self.managed_by,
+            certificate_key_pair_origin: self.certificate_key_pair_origin,
         }
     }
 }

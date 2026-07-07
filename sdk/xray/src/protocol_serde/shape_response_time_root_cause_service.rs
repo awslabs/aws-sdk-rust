@@ -2,10 +2,16 @@
 pub(crate) fn de_response_time_root_cause_service<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResponseTimeRootCauseService>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,7 @@ where
                             );
                         }
                         "Names" => {
-                            builder = builder.set_names(crate::protocol_serde::shape_service_names::de_service_names(tokens, _value)?);
+                            builder = builder.set_names(crate::protocol_serde::shape_service_names::de_service_names(tokens, _value, depth + 1)?);
                         }
                         "Type" => {
                             builder = builder.set_type(
@@ -42,7 +48,9 @@ where
                         "EntityPath" => {
                             builder = builder.set_entity_path(
                                 crate::protocol_serde::shape_response_time_root_cause_entity_path::de_response_time_root_cause_entity_path(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

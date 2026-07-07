@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_subnet(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Subnet, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Subnet::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -94,7 +98,7 @@ pub fn de_subnet(
             s if s.matches("ipv6CidrBlockAssociationSet") /* Ipv6CidrBlockAssociationSet com.amazonaws.ec2#Subnet$Ipv6CidrBlockAssociationSet */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_subnet_ipv6_cidr_block_association_set::de_subnet_ipv6_cidr_block_association_set(&mut tag)
+                        crate::protocol_serde::shape_subnet_ipv6_cidr_block_association_set::de_subnet_ipv6_cidr_block_association_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -104,7 +108,7 @@ pub fn de_subnet(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Subnet$Tags */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -170,7 +174,7 @@ pub fn de_subnet(
             s if s.matches("privateDnsNameOptionsOnLaunch") /* PrivateDnsNameOptionsOnLaunch com.amazonaws.ec2#Subnet$PrivateDnsNameOptionsOnLaunch */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_private_dns_name_options_on_launch::de_private_dns_name_options_on_launch(&mut tag)
+                        crate::protocol_serde::shape_private_dns_name_options_on_launch::de_private_dns_name_options_on_launch(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -180,7 +184,7 @@ pub fn de_subnet(
             s if s.matches("blockPublicAccessStates") /* BlockPublicAccessStates com.amazonaws.ec2#Subnet$BlockPublicAccessStates */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_block_public_access_states::de_block_public_access_states(&mut tag)
+                        crate::protocol_serde::shape_block_public_access_states::de_block_public_access_states(&mut tag, depth + 1)
                         ?
                     )
                 ;

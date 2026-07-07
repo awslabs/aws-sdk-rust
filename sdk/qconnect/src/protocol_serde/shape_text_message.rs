@@ -30,10 +30,16 @@ pub fn ser_text_message(
 pub(crate) fn de_text_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TextMessage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,11 +57,11 @@ where
                             );
                         }
                         "citations" => {
-                            builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens, _value)?);
+                            builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens, _value, depth + 1)?);
                         }
                         "aiGuardrailAssessment" => {
                             builder = builder.set_ai_guardrail_assessment(
-                                crate::protocol_serde::shape_ai_guardrail_assessment::de_ai_guardrail_assessment(tokens, _value)?,
+                                crate::protocol_serde::shape_ai_guardrail_assessment::de_ai_guardrail_assessment(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

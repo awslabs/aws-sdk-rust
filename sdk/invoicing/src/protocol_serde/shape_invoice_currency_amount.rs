@@ -2,10 +2,16 @@
 pub(crate) fn de_invoice_currency_amount<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InvoiceCurrencyAmount>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,12 +43,15 @@ where
                             );
                         }
                         "AmountBreakdown" => {
-                            builder =
-                                builder.set_amount_breakdown(crate::protocol_serde::shape_amount_breakdown::de_amount_breakdown(tokens, _value)?);
+                            builder = builder.set_amount_breakdown(crate::protocol_serde::shape_amount_breakdown::de_amount_breakdown(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CurrencyExchangeDetails" => {
                             builder = builder.set_currency_exchange_details(
-                                crate::protocol_serde::shape_currency_exchange_details::de_currency_exchange_details(tokens, _value)?,
+                                crate::protocol_serde::shape_currency_exchange_details::de_currency_exchange_details(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

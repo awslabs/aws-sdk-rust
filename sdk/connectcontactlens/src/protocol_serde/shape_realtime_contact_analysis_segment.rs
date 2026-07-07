@@ -2,10 +2,16 @@
 pub(crate) fn de_realtime_contact_analysis_segment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RealtimeContactAnalysisSegment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,20 +20,22 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Transcript" => {
-                            builder = builder.set_transcript(crate::protocol_serde::shape_transcript::de_transcript(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Transcript" => {
+                                builder = builder.set_transcript(crate::protocol_serde::shape_transcript::de_transcript(tokens, _value, depth + 1)?);
+                            }
+                            "Categories" => {
+                                builder = builder.set_categories(crate::protocol_serde::shape_categories::de_categories(tokens, _value, depth + 1)?);
+                            }
+                            "PostContactSummary" => {
+                                builder = builder.set_post_contact_summary(
+                                    crate::protocol_serde::shape_post_contact_summary::de_post_contact_summary(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Categories" => {
-                            builder = builder.set_categories(crate::protocol_serde::shape_categories::de_categories(tokens, _value)?);
-                        }
-                        "PostContactSummary" => {
-                            builder = builder.set_post_contact_summary(crate::protocol_serde::shape_post_contact_summary::de_post_contact_summary(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

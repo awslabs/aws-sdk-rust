@@ -25,15 +25,28 @@ pub fn ser_runtime_configuration(
 
 pub(crate) fn de_runtime_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RuntimeConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::RuntimeConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::RuntimeConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ServerProcesses" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_server_processes(Some(crate::protocol_serde::shape_server_process_list::de_server_process_list(decoder)?)))
+                Ok(
+                    builder.set_server_processes(Some(crate::protocol_serde::shape_server_process_list::de_server_process_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "MaxConcurrentGameSessionActivations" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_max_concurrent_game_session_activations(Some(decoder.integer()?)))
@@ -59,13 +72,13 @@ pub(crate) fn de_runtime_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

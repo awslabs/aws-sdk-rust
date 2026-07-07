@@ -16,9 +16,9 @@ pub struct BillingAdjustmentSummary {
     pub status: crate::types::BillingAdjustmentStatus,
     /// <p>The unique identifier of the agreement associated with this billing adjustment request.</p>
     pub agreement_id: ::std::string::String,
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The type of agreement.</p>
     pub agreement_type: ::std::string::String,
@@ -55,11 +55,11 @@ impl BillingAdjustmentSummary {
         use std::ops::Deref;
         self.agreement_id.deref()
     }
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
@@ -187,33 +187,33 @@ impl BillingAdjustmentSummaryBuilder {
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_id
     }
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

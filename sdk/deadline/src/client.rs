@@ -333,6 +333,8 @@ mod delete_queue_limit_association;
 
 mod delete_storage_profile;
 
+mod delete_volume;
+
 mod delete_worker;
 
 mod disassociate_member_from_farm;
@@ -380,6 +382,8 @@ mod get_storage_profile;
 mod get_storage_profile_for_queue;
 
 mod get_task;
+
+mod get_volume;
 
 mod get_worker;
 
@@ -438,6 +442,8 @@ mod list_storage_profiles_for_queue;
 mod list_tags_for_resource;
 
 mod list_tasks;
+
+mod list_volumes;
 
 mod list_workers;
 

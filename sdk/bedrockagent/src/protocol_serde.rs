@@ -69,6 +69,8 @@ pub(crate) mod shape_delete_knowledge_base_documents;
 
 pub(crate) mod shape_delete_prompt;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_disassociate_agent_collaborator;
 
 pub(crate) mod shape_disassociate_agent_knowledge_base;
@@ -100,6 +102,8 @@ pub(crate) mod shape_get_knowledge_base;
 pub(crate) mod shape_get_knowledge_base_documents;
 
 pub(crate) mod shape_get_prompt;
+
+pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_ingest_knowledge_base_documents;
 
@@ -136,6 +140,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_prepare_agent;
 
 pub(crate) mod shape_prepare_flow;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_start_ingestion_job;
 
@@ -230,6 +236,8 @@ pub(crate) mod shape_list_ingestion_jobs_input;
 pub(crate) mod shape_list_knowledge_base_documents_input;
 
 pub(crate) mod shape_list_knowledge_bases_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -429,6 +437,10 @@ pub(crate) mod shape_knowledge_base_document_detail;
 
 pub(crate) mod shape_knowledge_base_summary;
 
+pub(crate) mod shape_managed_knowledge_base_configuration;
+
+pub(crate) mod shape_managed_knowledge_base_connector_configuration;
+
 pub(crate) mod shape_mongo_db_atlas_configuration;
 
 pub(crate) mod shape_neptune_analytics_configuration;
@@ -501,6 +513,10 @@ pub(crate) mod shape_custom_content;
 
 pub(crate) mod shape_custom_s3_location;
 
+pub(crate) mod shape_deletion_protection_configuration;
+
+pub(crate) mod shape_document_access_control_entry;
+
 pub(crate) mod shape_embedding_model_configuration;
 
 pub(crate) mod shape_enabled_memory_types;
@@ -524,6 +540,8 @@ pub(crate) mod shape_hierarchical_chunking_configuration;
 pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_intermediate_storage;
+
+pub(crate) mod shape_media_extraction_configuration;
 
 pub(crate) mod shape_metadata_attribute;
 
@@ -577,6 +595,8 @@ pub(crate) mod shape_web_source_configuration;
 
 pub(crate) mod shape_agent_flow_node_configuration;
 
+pub(crate) mod shape_audio_extraction_configuration;
+
 pub(crate) mod shape_bedrock_embedding_model_configuration;
 
 pub(crate) mod shape_cache_point_block;
@@ -604,6 +624,8 @@ pub(crate) mod shape_flow_node_inputs;
 pub(crate) mod shape_flow_node_outputs;
 
 pub(crate) mod shape_hierarchical_chunking_level_configuration;
+
+pub(crate) mod shape_image_extraction_configuration;
 
 pub(crate) mod shape_incompatible_connection_data_type_flow_validation_details;
 
@@ -720,6 +742,8 @@ pub(crate) mod shape_unsatisfied_connection_conditions_flow_validation_details;
 pub(crate) mod shape_unspecified_flow_validation_details;
 
 pub(crate) mod shape_url_configuration;
+
+pub(crate) mod shape_video_extraction_configuration;
 
 pub(crate) mod shape_web_crawler_limits;
 

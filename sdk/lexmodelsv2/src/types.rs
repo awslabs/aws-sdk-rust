@@ -19,6 +19,8 @@ pub use crate::types::_voice_settings::VoiceSettings;
 
 pub use crate::types::_unified_speech_settings::UnifiedSpeechSettings;
 
+pub use crate::types::_audio_filler_settings::AudioFillerSettings;
+
 pub use crate::types::_speech_recognition_settings::SpeechRecognitionSettings;
 
 pub use crate::types::_generative_ai_settings::GenerativeAiSettings;
@@ -168,6 +170,8 @@ pub use crate::types::_bot_alias_locale_settings::BotAliasLocaleSettings;
 pub use crate::types::_voice_engine::VoiceEngine;
 
 pub use crate::types::_speech_foundation_model::SpeechFoundationModel;
+
+pub use crate::types::_audio_filler_type::AudioFillerType;
 
 pub use crate::types::_speech_model_preference::SpeechModelPreference;
 
@@ -888,6 +892,10 @@ mod _associated_transcript_filter;
 mod _associated_transcript_filter_name;
 
 mod _audio_and_dtmf_input_specification;
+
+mod _audio_filler_settings;
+
+mod _audio_filler_type;
 
 mod _audio_log_destination;
 

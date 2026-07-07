@@ -2,10 +2,16 @@
 pub(crate) fn de_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Policy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,11 @@ where
                         }
                         "SecurityServicePolicyData" => {
                             builder = builder.set_security_service_policy_data(
-                                crate::protocol_serde::shape_security_service_policy_data::de_security_service_policy_data(tokens, _value)?,
+                                crate::protocol_serde::shape_security_service_policy_data::de_security_service_policy_data(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ResourceType" => {
@@ -49,11 +59,15 @@ where
                             );
                         }
                         "ResourceTypeList" => {
-                            builder = builder
-                                .set_resource_type_list(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens, _value)?);
+                            builder = builder.set_resource_type_list(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ResourceTags" => {
-                            builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens, _value)?);
+                            builder =
+                                builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens, _value, depth + 1)?);
                         }
                         "ExcludeResourceTags" => {
                             builder = builder.set_exclude_resource_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -67,17 +81,24 @@ where
                         }
                         "IncludeMap" => {
                             builder = builder.set_include_map(crate::protocol_serde::shape_customer_policy_scope_map::de_customer_policy_scope_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ExcludeMap" => {
                             builder = builder.set_exclude_map(crate::protocol_serde::shape_customer_policy_scope_map::de_customer_policy_scope_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ResourceSetIds" => {
-                            builder =
-                                builder.set_resource_set_ids(crate::protocol_serde::shape_resource_set_ids::de_resource_set_ids(tokens, _value)?);
+                            builder = builder.set_resource_set_ids(crate::protocol_serde::shape_resource_set_ids::de_resource_set_ids(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PolicyDescription" => {
                             builder = builder.set_policy_description(

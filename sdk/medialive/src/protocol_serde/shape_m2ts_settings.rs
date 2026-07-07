@@ -198,10 +198,16 @@ pub fn ser_m2ts_settings(
 pub(crate) fn de_m2ts_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::M2tsSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -289,12 +295,18 @@ where
                             );
                         }
                         "dvbNitSettings" => {
-                            builder =
-                                builder.set_dvb_nit_settings(crate::protocol_serde::shape_dvb_nit_settings::de_dvb_nit_settings(tokens, _value)?);
+                            builder = builder.set_dvb_nit_settings(crate::protocol_serde::shape_dvb_nit_settings::de_dvb_nit_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dvbSdtSettings" => {
-                            builder =
-                                builder.set_dvb_sdt_settings(crate::protocol_serde::shape_dvb_sdt_settings::de_dvb_sdt_settings(tokens, _value)?);
+                            builder = builder.set_dvb_sdt_settings(crate::protocol_serde::shape_dvb_sdt_settings::de_dvb_sdt_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dvbSubPids" => {
                             builder = builder.set_dvb_sub_pids(
@@ -304,8 +316,11 @@ where
                             );
                         }
                         "dvbTdtSettings" => {
-                            builder =
-                                builder.set_dvb_tdt_settings(crate::protocol_serde::shape_dvb_tdt_settings::de_dvb_tdt_settings(tokens, _value)?);
+                            builder = builder.set_dvb_tdt_settings(crate::protocol_serde::shape_dvb_tdt_settings::de_dvb_tdt_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dvbTeletextPid" => {
                             builder = builder.set_dvb_teletext_pid(

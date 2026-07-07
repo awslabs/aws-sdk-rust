@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Restore
 #[derive(Debug)]
 struct RestoreDBClusterToPointInTimeResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RestoreDBClusterToPointInTimeResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -303,6 +304,8 @@ pub enum RestoreDBClusterToPointInTimeError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>Error accessing KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
+    /// <p>The specified <i>NetworkType</i> is not supported for the DB cluster, DB subnet group, or orderable DB instance option.</p>
+    NetworkTypeNotSupportedFault(crate::types::error::NetworkTypeNotSupportedFault),
     /// <p>The designated option group could not be found.</p>
     OptionGroupNotFoundFault(crate::types::error::OptionGroupNotFoundFault),
     /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
@@ -355,6 +358,7 @@ impl RestoreDBClusterToPointInTimeError {
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NetworkTypeNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OptionGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -420,6 +424,10 @@ impl RestoreDBClusterToPointInTimeError {
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(self, Self::KmsKeyNotAccessibleFault(_))
     }
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::NetworkTypeNotSupportedFault`.
+    pub fn is_network_type_not_supported_fault(&self) -> bool {
+        matches!(self, Self::NetworkTypeNotSupportedFault(_))
+    }
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(self, Self::OptionGroupNotFoundFault(_))
@@ -447,6 +455,7 @@ impl ::std::error::Error for RestoreDBClusterToPointInTimeError {
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::NetworkTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::OptionGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -471,6 +480,7 @@ impl ::std::fmt::Display for RestoreDBClusterToPointInTimeError {
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            Self::NetworkTypeNotSupportedFault(_inner) => _inner.fmt(f),
             Self::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -509,6 +519,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBClus
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NetworkTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OptionGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

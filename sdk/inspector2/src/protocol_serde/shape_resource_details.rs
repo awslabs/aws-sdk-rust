@@ -2,10 +2,16 @@
 pub(crate) fn de_resource_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResourceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,22 +23,41 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "awsEc2Instance" => {
                             builder = builder.set_aws_ec2_instance(
-                                crate::protocol_serde::shape_aws_ec2_instance_details::de_aws_ec2_instance_details(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_ec2_instance_details::de_aws_ec2_instance_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "awsEcrContainerImage" => {
                             builder = builder.set_aws_ecr_container_image(
-                                crate::protocol_serde::shape_aws_ecr_container_image_details::de_aws_ecr_container_image_details(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_ecr_container_image_details::de_aws_ecr_container_image_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "awsLambdaFunction" => {
                             builder = builder.set_aws_lambda_function(
-                                crate::protocol_serde::shape_aws_lambda_function_details::de_aws_lambda_function_details(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_lambda_function_details::de_aws_lambda_function_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "codeRepository" => {
                             builder = builder.set_code_repository(crate::protocol_serde::shape_code_repository_details::de_code_repository_details(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "vm" => {
+                            builder = builder.set_vm(crate::protocol_serde::shape_vm::de_vm(tokens, _value, depth + 1)?);
+                        }
+                        "image" => {
+                            builder = builder.set_image(crate::protocol_serde::shape_image::de_image(tokens, _value, depth + 1)?);
+                        }
+                        "serverlessFunction" => {
+                            builder = builder.set_serverless_function(crate::protocol_serde::shape_serverless_function::de_serverless_function(
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

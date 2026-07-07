@@ -14,7 +14,9 @@
 /// match crallocationstrategy {
 ///     CrAllocationStrategy::BestFit => { /* ... */ },
 ///     CrAllocationStrategy::BestFitProgressive => { /* ... */ },
+///     CrAllocationStrategy::BestFitProgressiveOrdered => { /* ... */ },
 ///     CrAllocationStrategy::SpotCapacityOptimized => { /* ... */ },
+///     CrAllocationStrategy::SpotCapacityOptimizedPrioritized => { /* ... */ },
 ///     CrAllocationStrategy::SpotPriceCapacityOptimized => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -49,7 +51,11 @@ pub enum CrAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     BestFitProgressive,
     #[allow(missing_docs)] // documentation missing in model
+    BestFitProgressiveOrdered,
+    #[allow(missing_docs)] // documentation missing in model
     SpotCapacityOptimized,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotCapacityOptimizedPrioritized,
     #[allow(missing_docs)] // documentation missing in model
     SpotPriceCapacityOptimized,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -61,7 +67,9 @@ impl ::std::convert::From<&str> for CrAllocationStrategy {
         match s {
             "BEST_FIT" => CrAllocationStrategy::BestFit,
             "BEST_FIT_PROGRESSIVE" => CrAllocationStrategy::BestFitProgressive,
+            "BEST_FIT_PROGRESSIVE_ORDERED" => CrAllocationStrategy::BestFitProgressiveOrdered,
             "SPOT_CAPACITY_OPTIMIZED" => CrAllocationStrategy::SpotCapacityOptimized,
+            "SPOT_CAPACITY_OPTIMIZED_PRIORITIZED" => CrAllocationStrategy::SpotCapacityOptimizedPrioritized,
             "SPOT_PRICE_CAPACITY_OPTIMIZED" => CrAllocationStrategy::SpotPriceCapacityOptimized,
             other => CrAllocationStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -80,7 +88,9 @@ impl CrAllocationStrategy {
         match self {
             CrAllocationStrategy::BestFit => "BEST_FIT",
             CrAllocationStrategy::BestFitProgressive => "BEST_FIT_PROGRESSIVE",
+            CrAllocationStrategy::BestFitProgressiveOrdered => "BEST_FIT_PROGRESSIVE_ORDERED",
             CrAllocationStrategy::SpotCapacityOptimized => "SPOT_CAPACITY_OPTIMIZED",
+            CrAllocationStrategy::SpotCapacityOptimizedPrioritized => "SPOT_CAPACITY_OPTIMIZED_PRIORITIZED",
             CrAllocationStrategy::SpotPriceCapacityOptimized => "SPOT_PRICE_CAPACITY_OPTIMIZED",
             CrAllocationStrategy::Unknown(value) => value.as_str(),
         }
@@ -90,7 +100,9 @@ impl CrAllocationStrategy {
         &[
             "BEST_FIT",
             "BEST_FIT_PROGRESSIVE",
+            "BEST_FIT_PROGRESSIVE_ORDERED",
             "SPOT_CAPACITY_OPTIMIZED",
+            "SPOT_CAPACITY_OPTIMIZED_PRIORITIZED",
             "SPOT_PRICE_CAPACITY_OPTIMIZED",
         ]
     }
@@ -117,7 +129,9 @@ impl ::std::fmt::Display for CrAllocationStrategy {
         match self {
             CrAllocationStrategy::BestFit => write!(f, "BEST_FIT"),
             CrAllocationStrategy::BestFitProgressive => write!(f, "BEST_FIT_PROGRESSIVE"),
+            CrAllocationStrategy::BestFitProgressiveOrdered => write!(f, "BEST_FIT_PROGRESSIVE_ORDERED"),
             CrAllocationStrategy::SpotCapacityOptimized => write!(f, "SPOT_CAPACITY_OPTIMIZED"),
+            CrAllocationStrategy::SpotCapacityOptimizedPrioritized => write!(f, "SPOT_CAPACITY_OPTIMIZED_PRIORITIZED"),
             CrAllocationStrategy::SpotPriceCapacityOptimized => write!(f, "SPOT_PRICE_CAPACITY_OPTIMIZED"),
             CrAllocationStrategy::Unknown(value) => write!(f, "{value}"),
         }

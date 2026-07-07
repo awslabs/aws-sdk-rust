@@ -296,6 +296,8 @@ pub struct CreateDbInstanceInput {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -541,7 +543,7 @@ pub struct CreateDbInstanceInput {
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
-    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included | bring-your-own-media</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
     /// <li>
@@ -1155,6 +1157,8 @@ impl CreateDbInstanceInput {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -1434,7 +1438,7 @@ impl CreateDbInstanceInput {
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
-    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included | bring-your-own-media</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
     /// <li>
@@ -2864,6 +2868,8 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -2922,6 +2928,8 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -2978,6 +2986,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p><code>custom-sqlserver-dev</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
@@ -3762,7 +3772,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
-    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included | bring-your-own-media</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
     /// <li>
@@ -3786,7 +3796,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
-    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included | bring-your-own-media</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
     /// <li>
@@ -3810,7 +3820,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
-    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included | bring-your-own-media</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
     /// <li>

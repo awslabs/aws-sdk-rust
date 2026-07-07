@@ -81,10 +81,16 @@ pub fn ser_aws_elastic_beanstalk_environment_details(
 pub(crate) fn de_aws_elastic_beanstalk_environment_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsElasticBeanstalkEnvironmentDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -152,7 +158,7 @@ where
                         }
                         "EnvironmentLinks" => {
                             builder = builder.set_environment_links(
-                                    crate::protocol_serde::shape_aws_elastic_beanstalk_environment_environment_links::de_aws_elastic_beanstalk_environment_environment_links(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elastic_beanstalk_environment_environment_links::de_aws_elastic_beanstalk_environment_environment_links(tokens, _value, depth + 1)?
                                 );
                         }
                         "EnvironmentName" => {
@@ -164,7 +170,7 @@ where
                         }
                         "OptionSettings" => {
                             builder = builder.set_option_settings(
-                                    crate::protocol_serde::shape_aws_elastic_beanstalk_environment_option_settings::de_aws_elastic_beanstalk_environment_option_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elastic_beanstalk_environment_option_settings::de_aws_elastic_beanstalk_environment_option_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "PlatformArn" => {
@@ -191,7 +197,9 @@ where
                         "Tier" => {
                             builder = builder.set_tier(
                                 crate::protocol_serde::shape_aws_elastic_beanstalk_environment_tier::de_aws_elastic_beanstalk_environment_tier(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

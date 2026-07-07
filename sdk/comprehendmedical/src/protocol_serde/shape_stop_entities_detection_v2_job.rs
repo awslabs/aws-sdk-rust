@@ -109,10 +109,11 @@ pub(crate) fn de_stop_entities_detection_v2_job(
     crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -128,6 +129,8 @@ pub(crate) fn de_stop_entities_detection_v2_job(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -137,13 +140,13 @@ pub(crate) fn de_stop_entities_detection_v2_job(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

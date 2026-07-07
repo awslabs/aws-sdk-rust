@@ -7,6 +7,15 @@ pub mod accept_marketplace_registration;
 /// Types for the `AssociateIamRoleToResource` operation.
 pub mod associate_iam_role_to_resource;
 
+/// Types for the `CreateAutonomousDatabase` operation.
+pub mod create_autonomous_database;
+
+/// Types for the `CreateAutonomousDatabaseBackup` operation.
+pub mod create_autonomous_database_backup;
+
+/// Types for the `CreateAutonomousDatabaseWallet` operation.
+pub mod create_autonomous_database_wallet;
+
 /// Types for the `CreateCloudAutonomousVmCluster` operation.
 pub mod create_cloud_autonomous_vm_cluster;
 
@@ -21,6 +30,12 @@ pub mod create_odb_network;
 
 /// Types for the `CreateOdbPeeringConnection` operation.
 pub mod create_odb_peering_connection;
+
+/// Types for the `DeleteAutonomousDatabase` operation.
+pub mod delete_autonomous_database;
+
+/// Types for the `DeleteAutonomousDatabaseBackup` operation.
+pub mod delete_autonomous_database_backup;
 
 /// Types for the `DeleteCloudAutonomousVmCluster` operation.
 pub mod delete_cloud_autonomous_vm_cluster;
@@ -39,6 +54,18 @@ pub mod delete_odb_peering_connection;
 
 /// Types for the `DisassociateIamRoleFromResource` operation.
 pub mod disassociate_iam_role_from_resource;
+
+/// Types for the `FailoverAutonomousDatabase` operation.
+pub mod failover_autonomous_database;
+
+/// Types for the `GetAutonomousDatabase` operation.
+pub mod get_autonomous_database;
+
+/// Types for the `GetAutonomousDatabaseBackup` operation.
+pub mod get_autonomous_database_backup;
+
+/// Types for the `GetAutonomousDatabaseWalletDetails` operation.
+pub mod get_autonomous_database_wallet_details;
 
 /// Types for the `GetCloudAutonomousVmCluster` operation.
 pub mod get_cloud_autonomous_vm_cluster;
@@ -69,6 +96,24 @@ pub mod get_odb_peering_connection;
 
 /// Types for the `InitializeService` operation.
 pub mod initialize_service;
+
+/// Types for the `ListAutonomousDatabaseBackups` operation.
+pub mod list_autonomous_database_backups;
+
+/// Types for the `ListAutonomousDatabaseCharacterSets` operation.
+pub mod list_autonomous_database_character_sets;
+
+/// Types for the `ListAutonomousDatabaseClones` operation.
+pub mod list_autonomous_database_clones;
+
+/// Types for the `ListAutonomousDatabasePeers` operation.
+pub mod list_autonomous_database_peers;
+
+/// Types for the `ListAutonomousDatabaseVersions` operation.
+pub mod list_autonomous_database_versions;
+
+/// Types for the `ListAutonomousDatabases` operation.
+pub mod list_autonomous_databases;
 
 /// Types for the `ListAutonomousVirtualMachines` operation.
 pub mod list_autonomous_virtual_machines;
@@ -106,20 +151,44 @@ pub mod list_system_versions;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `RebootAutonomousDatabase` operation.
+pub mod reboot_autonomous_database;
+
 /// Types for the `RebootDbNode` operation.
 pub mod reboot_db_node;
+
+/// Types for the `RestoreAutonomousDatabase` operation.
+pub mod restore_autonomous_database;
+
+/// Types for the `ShrinkAutonomousDatabase` operation.
+pub mod shrink_autonomous_database;
+
+/// Types for the `StartAutonomousDatabase` operation.
+pub mod start_autonomous_database;
 
 /// Types for the `StartDbNode` operation.
 pub mod start_db_node;
 
+/// Types for the `StopAutonomousDatabase` operation.
+pub mod stop_autonomous_database;
+
 /// Types for the `StopDbNode` operation.
 pub mod stop_db_node;
+
+/// Types for the `SwitchoverAutonomousDatabase` operation.
+pub mod switchover_autonomous_database;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAutonomousDatabase` operation.
+pub mod update_autonomous_database;
+
+/// Types for the `UpdateAutonomousDatabaseBackup` operation.
+pub mod update_autonomous_database_backup;
 
 /// Types for the `UpdateCloudExadataInfrastructure` operation.
 pub mod update_cloud_exadata_infrastructure;

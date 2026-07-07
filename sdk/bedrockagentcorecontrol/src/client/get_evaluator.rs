@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`evaluator_id(impl Into<String>)`](crate::operation::get_evaluator::builders::GetEvaluatorFluentBuilder::evaluator_id) / [`set_evaluator_id(Option<String>)`](crate::operation::get_evaluator::builders::GetEvaluatorFluentBuilder::set_evaluator_id):<br>required: **true**<br><p>The unique identifier of the evaluator to retrieve. Can be a built-in evaluator ID (e.g., Builtin.Helpfulness) or a custom evaluator ID.</p><br>
+    ///   - [`included_data(IncludedData)`](crate::operation::get_evaluator::builders::GetEvaluatorFluentBuilder::included_data) / [`set_included_data(Option<IncludedData>)`](crate::operation::get_evaluator::builders::GetEvaluatorFluentBuilder::set_included_data):<br>required: **false**<br><p>Controls which data is returned in the response. <code>ALL_DATA</code> (default) returns the full evaluator including decrypted instructions and rating scale. For evaluators encrypted with a customer managed KMS key, this requires <code>kms:Decrypt</code> permission on the key. <code>METADATA_ONLY</code> returns evaluator metadata and model configuration without instructions or rating scale, and does not require any KMS permissions.</p><br>
     /// - On success, responds with [`GetEvaluatorOutput`](crate::operation::get_evaluator::GetEvaluatorOutput) with field(s):
     ///   - [`evaluator_arn(String)`](crate::operation::get_evaluator::GetEvaluatorOutput::evaluator_arn): <p>The Amazon Resource Name (ARN) of the evaluator.</p>
     ///   - [`evaluator_id(String)`](crate::operation::get_evaluator::GetEvaluatorOutput::evaluator_id): <p>The unique identifier of the evaluator.</p>
@@ -15,6 +16,7 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_evaluator::GetEvaluatorOutput::created_at): <p>The timestamp when the evaluator was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_evaluator::GetEvaluatorOutput::updated_at): <p>The timestamp when the evaluator was last updated.</p>
     ///   - [`locked_for_modification(Option<bool>)`](crate::operation::get_evaluator::GetEvaluatorOutput::locked_for_modification): <p>Whether the evaluator is locked for modification due to being referenced by active online evaluation configurations.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_evaluator::GetEvaluatorOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the evaluator's sensitive data. This field is only present for evaluators encrypted with a customer managed key.</p>
     /// - On failure, responds with [`SdkError<GetEvaluatorError>`](crate::operation::get_evaluator::GetEvaluatorError)
     pub fn get_evaluator(&self) -> crate::operation::get_evaluator::builders::GetEvaluatorFluentBuilder {
         crate::operation::get_evaluator::builders::GetEvaluatorFluentBuilder::new(self.handle.clone())

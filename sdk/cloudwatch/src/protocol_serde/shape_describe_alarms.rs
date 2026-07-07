@@ -67,18 +67,27 @@ pub(crate) fn de_describe_alarms(
     value: &[u8],
     mut builder: crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
             "CompositeAlarms" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_composite_alarms(Some(crate::protocol_serde::shape_composite_alarms::de_composite_alarms(decoder)?)))
+                Ok(
+                    builder.set_composite_alarms(Some(crate::protocol_serde::shape_composite_alarms::de_composite_alarms(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "MetricAlarms" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_metric_alarms(Some(crate::protocol_serde::shape_metric_alarms::de_metric_alarms(decoder)?)))
+                Ok(builder.set_metric_alarms(Some(crate::protocol_serde::shape_metric_alarms::de_metric_alarms(decoder, depth + 1)?)))
+            })?,
+            "LogAlarms" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_log_alarms(Some(crate::protocol_serde::shape_log_alarms::de_log_alarms(decoder, depth + 1)?)))
             })?,
             "NextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
@@ -92,6 +101,8 @@ pub(crate) fn de_describe_alarms(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -101,13 +112,13 @@ pub(crate) fn de_describe_alarms(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

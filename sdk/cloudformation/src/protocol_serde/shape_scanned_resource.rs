@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_scanned_resource(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ScannedResource, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ScannedResource::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_scanned_resource(
             s if s.matches("ResourceIdentifier") /* ResourceIdentifier com.amazonaws.cloudformation#ScannedResource$ResourceIdentifier */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_jazz_resource_identifier_properties::de_jazz_resource_identifier_properties(&mut tag)
+                        crate::protocol_serde::shape_jazz_resource_identifier_properties::de_jazz_resource_identifier_properties(&mut tag, depth + 1)
                         ?
                     )
                 ;

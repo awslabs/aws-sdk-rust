@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationSearchMetadata {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub contact_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the person who evaluated the contact.</p>
     pub evaluator_arn: ::std::string::String,
@@ -36,9 +36,15 @@ pub struct EvaluationSearchMetadata {
     pub contact_participant_role: ::std::option::Option<crate::types::ContactParticipantRole>,
     /// <p>Identifier for a contact participant in the evaluation.</p>
     pub contact_participant_id: ::std::option::Option<::std::string::String>,
+    /// <p>The points earned for the evaluation.</p>
+    pub earned_points: ::std::option::Option<i32>,
+    /// <p>The maximum base points possible for the evaluation.</p>
+    pub max_base_point: ::std::option::Option<i32>,
+    /// <p>The performance category for the evaluation score.</p>
+    pub performance_category: ::std::option::Option<crate::types::PerformanceCategoryName>,
 }
 impl EvaluationSearchMetadata {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn contact_id(&self) -> &str {
         use std::ops::Deref;
         self.contact_id.deref()
@@ -104,6 +110,18 @@ impl EvaluationSearchMetadata {
     pub fn contact_participant_id(&self) -> ::std::option::Option<&str> {
         self.contact_participant_id.as_deref()
     }
+    /// <p>The points earned for the evaluation.</p>
+    pub fn earned_points(&self) -> ::std::option::Option<i32> {
+        self.earned_points
+    }
+    /// <p>The maximum base points possible for the evaluation.</p>
+    pub fn max_base_point(&self) -> ::std::option::Option<i32> {
+        self.max_base_point
+    }
+    /// <p>The performance category for the evaluation score.</p>
+    pub fn performance_category(&self) -> ::std::option::Option<&crate::types::PerformanceCategoryName> {
+        self.performance_category.as_ref()
+    }
 }
 impl EvaluationSearchMetadata {
     /// Creates a new builder-style object to manufacture [`EvaluationSearchMetadata`](crate::types::EvaluationSearchMetadata).
@@ -132,20 +150,23 @@ pub struct EvaluationSearchMetadataBuilder {
     pub(crate) review_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_participant_role: ::std::option::Option<crate::types::ContactParticipantRole>,
     pub(crate) contact_participant_id: ::std::option::Option<::std::string::String>,
+    pub(crate) earned_points: ::std::option::Option<i32>,
+    pub(crate) max_base_point: ::std::option::Option<i32>,
+    pub(crate) performance_category: ::std::option::Option<crate::types::PerformanceCategoryName>,
 }
 impl EvaluationSearchMetadataBuilder {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
@@ -360,6 +381,48 @@ impl EvaluationSearchMetadataBuilder {
     pub fn get_contact_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_participant_id
     }
+    /// <p>The points earned for the evaluation.</p>
+    pub fn earned_points(mut self, input: i32) -> Self {
+        self.earned_points = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The points earned for the evaluation.</p>
+    pub fn set_earned_points(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.earned_points = input;
+        self
+    }
+    /// <p>The points earned for the evaluation.</p>
+    pub fn get_earned_points(&self) -> &::std::option::Option<i32> {
+        &self.earned_points
+    }
+    /// <p>The maximum base points possible for the evaluation.</p>
+    pub fn max_base_point(mut self, input: i32) -> Self {
+        self.max_base_point = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum base points possible for the evaluation.</p>
+    pub fn set_max_base_point(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_base_point = input;
+        self
+    }
+    /// <p>The maximum base points possible for the evaluation.</p>
+    pub fn get_max_base_point(&self) -> &::std::option::Option<i32> {
+        &self.max_base_point
+    }
+    /// <p>The performance category for the evaluation score.</p>
+    pub fn performance_category(mut self, input: crate::types::PerformanceCategoryName) -> Self {
+        self.performance_category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The performance category for the evaluation score.</p>
+    pub fn set_performance_category(mut self, input: ::std::option::Option<crate::types::PerformanceCategoryName>) -> Self {
+        self.performance_category = input;
+        self
+    }
+    /// <p>The performance category for the evaluation score.</p>
+    pub fn get_performance_category(&self) -> &::std::option::Option<crate::types::PerformanceCategoryName> {
+        &self.performance_category
+    }
     /// Consumes the builder and constructs a [`EvaluationSearchMetadata`](crate::types::EvaluationSearchMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_id`](crate::types::builders::EvaluationSearchMetadataBuilder::contact_id)
@@ -392,6 +455,9 @@ impl EvaluationSearchMetadataBuilder {
             review_id: self.review_id,
             contact_participant_role: self.contact_participant_role,
             contact_participant_id: self.contact_participant_id,
+            earned_points: self.earned_points,
+            max_base_point: self.max_base_point,
+            performance_category: self.performance_category,
         })
     }
 }

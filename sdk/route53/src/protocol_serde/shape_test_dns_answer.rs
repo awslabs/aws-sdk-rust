@@ -80,6 +80,8 @@ pub fn de_test_dns_answer(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("TestDNSAnswerResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected TestDNSAnswerResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -116,7 +118,7 @@ pub fn de_test_dns_answer(
             s if s.matches("RecordData") /* RecordData com.amazonaws.route53.synthetic#TestDNSAnswerOutput$RecordData */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_record_data::de_record_data(&mut tag)
+                        crate::protocol_serde::shape_record_data::de_record_data(&mut tag, depth + 1)
                         ?
                     )
                 ;

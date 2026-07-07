@@ -89,45 +89,48 @@ pub(crate) fn de_describe_organization_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "autoEnable" => {
-                    builder = builder.set_auto_enable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                "autoEnableOrganizationMembers" => {
-                    builder = builder.set_auto_enable_organization_members(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::AutoEnableMembers::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "dataSources" => {
-                    builder = builder.set_data_sources(
-                            crate::protocol_serde::shape_organization_data_source_configurations_result::de_organization_data_source_configurations_result(tokens, _value)?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "autoEnable" => {
+                        builder = builder.set_auto_enable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    }
+                    "autoEnableOrganizationMembers" => {
+                        builder = builder.set_auto_enable_organization_members(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::AutoEnableMembers::from(u.as_ref())))
+                                .transpose()?,
                         );
+                    }
+                    "dataSources" => {
+                        builder = builder.set_data_sources(
+                            crate::protocol_serde::shape_organization_data_source_configurations_result::de_organization_data_source_configurations_result(tokens, _value, depth + 1)?
+                        );
+                    }
+                    "features" => {
+                        builder = builder.set_features(
+                            crate::protocol_serde::shape_organization_features_configurations_results::de_organization_features_configurations_results(tokens, _value, depth + 1)?
+                        );
+                    }
+                    "memberAccountLimitReached" => {
+                        builder =
+                            builder.set_member_account_limit_reached(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    }
+                    "nextToken" => {
+                        builder = builder.set_next_token(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "features" => {
-                    builder = builder.set_features(
-                        crate::protocol_serde::shape_organization_features_configurations_results::de_organization_features_configurations_results(
-                            tokens, _value,
-                        )?,
-                    );
-                }
-                "memberAccountLimitReached" => {
-                    builder = builder.set_member_account_limit_reached(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                "nextToken" => {
-                    builder = builder.set_next_token(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_channels_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_functions_output_output_next_token(
+    input: &crate::operation::list_functions::ListFunctionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_live_sources_output_output_next_token(
     input: &crate::operation::list_live_sources::ListLiveSourcesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -96,6 +106,13 @@ pub(crate) fn lens_list_alerts_output_output_items(
 pub(crate) fn lens_list_channels_output_output_items(
     input: crate::operation::list_channels::ListChannelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_functions_output_output_items(
+    input: crate::operation::list_functions::ListFunctionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Function>> {
     let input = input.items?;
     ::std::option::Option::Some(input)
 }

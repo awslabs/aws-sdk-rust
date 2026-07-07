@@ -2,10 +2,16 @@
 pub(crate) fn de_topic_reviewed_answer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TopicReviewedAnswer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,13 +50,15 @@ where
                             );
                         }
                         "Mir" => {
-                            builder = builder.set_mir(crate::protocol_serde::shape_topic_ir::de_topic_ir(tokens, _value)?);
+                            builder = builder.set_mir(crate::protocol_serde::shape_topic_ir::de_topic_ir(tokens, _value, depth + 1)?);
                         }
                         "PrimaryVisual" => {
-                            builder = builder.set_primary_visual(crate::protocol_serde::shape_topic_visual::de_topic_visual(tokens, _value)?);
+                            builder =
+                                builder.set_primary_visual(crate::protocol_serde::shape_topic_visual::de_topic_visual(tokens, _value, depth + 1)?);
                         }
                         "Template" => {
-                            builder = builder.set_template(crate::protocol_serde::shape_topic_template::de_topic_template(tokens, _value)?);
+                            builder =
+                                builder.set_template(crate::protocol_serde::shape_topic_template::de_topic_template(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

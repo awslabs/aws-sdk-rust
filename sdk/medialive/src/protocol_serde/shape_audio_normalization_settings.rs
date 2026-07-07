@@ -15,16 +15,31 @@ pub fn ser_audio_normalization_settings(
             ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.peak_calculation {
+        object.key("peakCalculation").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.peak_limiter_threshold {
+        object.key("peakLimiterThreshold").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_5).into()),
+        );
+    }
     Ok(())
 }
 
 pub(crate) fn de_audio_normalization_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AudioNormalizationSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,6 +68,21 @@ where
                         }
                         "targetLkfs" => {
                             builder = builder.set_target_lkfs(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "peakCalculation" => {
+                            builder = builder.set_peak_calculation(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::AudioNormalizationPeakCalculation::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "peakLimiterThreshold" => {
+                            builder = builder.set_peak_limiter_threshold(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
                         }

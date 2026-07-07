@@ -3,6 +3,10 @@ pub use crate::types::_transit_gateway_attachment_status::TransitGatewayAttachme
 
 pub use crate::types::_proxy_configuration::ProxyConfiguration;
 
+pub use crate::types::_container_monitoring_type::ContainerMonitoringType;
+
+pub use crate::types::_container_association_status::ContainerAssociationStatus;
+
 pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
 pub use crate::types::_firewall::Firewall;
@@ -79,6 +83,8 @@ pub use crate::types::_availability_zone_mapping::AvailabilityZoneMapping;
 
 pub use crate::types::_proxy_rule_group_attachment::ProxyRuleGroupAttachment;
 
+pub use crate::types::_container_monitoring_configuration::ContainerMonitoringConfiguration;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_encryption_type::EncryptionType;
@@ -122,6 +128,8 @@ pub use crate::types::_rule_order::RuleOrder;
 pub use crate::types::_analysis_type_report_result::AnalysisTypeReportResult;
 
 pub use crate::types::_analysis_report::AnalysisReport;
+
+pub use crate::types::_container_association_summary::ContainerAssociationSummary;
 
 pub use crate::types::_firewall_policy_metadata::FirewallPolicyMetadata;
 
@@ -196,6 +204,8 @@ pub use crate::types::_hits::Hits;
 pub use crate::types::_unique_sources::UniqueSources;
 
 pub use crate::types::_address::Address;
+
+pub use crate::types::_container_attribute::ContainerAttribute;
 
 pub use crate::types::_attachment::Attachment;
 
@@ -292,6 +302,16 @@ mod _check_certificate_revocation_status_actions;
 mod _cidr_summary;
 
 mod _configuration_sync_state;
+
+mod _container_association_status;
+
+mod _container_association_summary;
+
+mod _container_attribute;
+
+mod _container_monitoring_configuration;
+
+mod _container_monitoring_type;
 
 mod _create_proxy_rule;
 

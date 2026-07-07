@@ -49,6 +49,8 @@ pub fn de_disassociate_ipam_resource_discovery(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DisassociateIpamResourceDiscoveryResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisassociateIpamResourceDiscoveryResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_disassociate_ipam_resource_discovery(
             s if s.matches("ipamResourceDiscoveryAssociation") /* IpamResourceDiscoveryAssociation com.amazonaws.ec2.synthetic#DisassociateIpamResourceDiscoveryOutput$IpamResourceDiscoveryAssociation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipam_resource_discovery_association::de_ipam_resource_discovery_association(&mut tag)
+                        crate::protocol_serde::shape_ipam_resource_discovery_association::de_ipam_resource_discovery_association(&mut tag, depth + 1)
                         ?
                     )
                 ;

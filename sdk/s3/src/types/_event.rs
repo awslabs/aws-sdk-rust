@@ -18,6 +18,9 @@
 ///     Event::S3LifecycleExpirationDeleteMarkerCreated => { /* ... */ },
 ///     Event::S3LifecycleTransition => { /* ... */ },
 ///     Event::S3ObjectAclPut => { /* ... */ },
+///     Event::S3ObjectAnnotation => { /* ... */ },
+///     Event::S3ObjectAnnotationDelete => { /* ... */ },
+///     Event::S3ObjectAnnotationPut => { /* ... */ },
 ///     Event::S3ObjectCreated => { /* ... */ },
 ///     Event::S3ObjectCreatedCompleteMultipartUpload => { /* ... */ },
 ///     Event::S3ObjectCreatedCopy => { /* ... */ },
@@ -80,6 +83,12 @@ pub enum Event {
     #[allow(missing_docs)] // documentation missing in model
     S3ObjectAclPut,
     #[allow(missing_docs)] // documentation missing in model
+    S3ObjectAnnotation,
+    #[allow(missing_docs)] // documentation missing in model
+    S3ObjectAnnotationDelete,
+    #[allow(missing_docs)] // documentation missing in model
+    S3ObjectAnnotationPut,
+    #[allow(missing_docs)] // documentation missing in model
     S3ObjectCreated,
     #[allow(missing_docs)] // documentation missing in model
     S3ObjectCreatedCompleteMultipartUpload,
@@ -134,6 +143,9 @@ impl ::std::convert::From<&str> for Event {
             "s3:LifecycleExpiration:DeleteMarkerCreated" => Event::S3LifecycleExpirationDeleteMarkerCreated,
             "s3:LifecycleTransition" => Event::S3LifecycleTransition,
             "s3:ObjectAcl:Put" => Event::S3ObjectAclPut,
+            "s3:ObjectAnnotation:*" => Event::S3ObjectAnnotation,
+            "s3:ObjectAnnotation:Delete" => Event::S3ObjectAnnotationDelete,
+            "s3:ObjectAnnotation:Put" => Event::S3ObjectAnnotationPut,
             "s3:ObjectCreated:*" => Event::S3ObjectCreated,
             "s3:ObjectCreated:CompleteMultipartUpload" => Event::S3ObjectCreatedCompleteMultipartUpload,
             "s3:ObjectCreated:Copy" => Event::S3ObjectCreatedCopy,
@@ -176,6 +188,9 @@ impl Event {
             Event::S3LifecycleExpirationDeleteMarkerCreated => "s3:LifecycleExpiration:DeleteMarkerCreated",
             Event::S3LifecycleTransition => "s3:LifecycleTransition",
             Event::S3ObjectAclPut => "s3:ObjectAcl:Put",
+            Event::S3ObjectAnnotation => "s3:ObjectAnnotation:*",
+            Event::S3ObjectAnnotationDelete => "s3:ObjectAnnotation:Delete",
+            Event::S3ObjectAnnotationPut => "s3:ObjectAnnotation:Put",
             Event::S3ObjectCreated => "s3:ObjectCreated:*",
             Event::S3ObjectCreatedCompleteMultipartUpload => "s3:ObjectCreated:CompleteMultipartUpload",
             Event::S3ObjectCreatedCopy => "s3:ObjectCreated:Copy",
@@ -209,6 +224,9 @@ impl Event {
             "s3:LifecycleExpiration:DeleteMarkerCreated",
             "s3:LifecycleTransition",
             "s3:ObjectAcl:Put",
+            "s3:ObjectAnnotation:*",
+            "s3:ObjectAnnotation:Delete",
+            "s3:ObjectAnnotation:Put",
             "s3:ObjectCreated:*",
             "s3:ObjectCreated:CompleteMultipartUpload",
             "s3:ObjectCreated:Copy",
@@ -259,6 +277,9 @@ impl ::std::fmt::Display for Event {
             Event::S3LifecycleExpirationDeleteMarkerCreated => write!(f, "s3:LifecycleExpiration:DeleteMarkerCreated"),
             Event::S3LifecycleTransition => write!(f, "s3:LifecycleTransition"),
             Event::S3ObjectAclPut => write!(f, "s3:ObjectAcl:Put"),
+            Event::S3ObjectAnnotation => write!(f, "s3:ObjectAnnotation:*"),
+            Event::S3ObjectAnnotationDelete => write!(f, "s3:ObjectAnnotation:Delete"),
+            Event::S3ObjectAnnotationPut => write!(f, "s3:ObjectAnnotation:Put"),
             Event::S3ObjectCreated => write!(f, "s3:ObjectCreated:*"),
             Event::S3ObjectCreatedCompleteMultipartUpload => write!(f, "s3:ObjectCreated:CompleteMultipartUpload"),
             Event::S3ObjectCreatedCopy => write!(f, "s3:ObjectCreated:Copy"),

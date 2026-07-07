@@ -197,6 +197,8 @@ pub(crate) fn de_create_service_network_vpc_association(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -217,7 +219,7 @@ pub(crate) fn de_create_service_network_vpc_association(
                     );
                 }
                 "dnsOptions" => {
-                    builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens, _value)?);
+                    builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens, _value, depth + 1)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -230,8 +232,11 @@ pub(crate) fn de_create_service_network_vpc_association(
                     builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "securityGroupIds" => {
-                    builder =
-                        builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens, _value)?);
+                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

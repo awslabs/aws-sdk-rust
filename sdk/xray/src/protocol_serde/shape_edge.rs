@@ -2,10 +2,16 @@
 pub(crate) fn de_edge<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Edge>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,14 +41,18 @@ where
                             )?);
                         }
                         "SummaryStatistics" => {
-                            builder =
-                                builder.set_summary_statistics(crate::protocol_serde::shape_edge_statistics::de_edge_statistics(tokens, _value)?);
+                            builder = builder.set_summary_statistics(crate::protocol_serde::shape_edge_statistics::de_edge_statistics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ResponseTimeHistogram" => {
-                            builder = builder.set_response_time_histogram(crate::protocol_serde::shape_histogram::de_histogram(tokens, _value)?);
+                            builder =
+                                builder.set_response_time_histogram(crate::protocol_serde::shape_histogram::de_histogram(tokens, _value, depth + 1)?);
                         }
                         "Aliases" => {
-                            builder = builder.set_aliases(crate::protocol_serde::shape_alias_list::de_alias_list(tokens, _value)?);
+                            builder = builder.set_aliases(crate::protocol_serde::shape_alias_list::de_alias_list(tokens, _value, depth + 1)?);
                         }
                         "EdgeType" => {
                             builder = builder.set_edge_type(
@@ -52,7 +62,11 @@ where
                             );
                         }
                         "ReceivedEventAgeHistogram" => {
-                            builder = builder.set_received_event_age_histogram(crate::protocol_serde::shape_histogram::de_histogram(tokens, _value)?);
+                            builder = builder.set_received_event_age_histogram(crate::protocol_serde::shape_histogram::de_histogram(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

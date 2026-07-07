@@ -109,6 +109,16 @@ pub(crate) fn reflens_get_insights_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_recommended_policy_v2_output_output_next_token(
+    input: &crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_resources_trends_v2_output_output_next_token(
     input: &crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -303,6 +313,13 @@ pub(crate) fn lens_get_insights_output_output_insights(
     input: crate::operation::get_insights::GetInsightsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
     let input = input.insights?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_recommended_policy_v2_output_output_recommendation_steps(
+    input: crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommendationStep>> {
+    let input = input.recommendation_steps?;
     ::std::option::Option::Some(input)
 }
 

@@ -49,6 +49,8 @@ pub fn de_describe_route_servers(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeRouteServersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeRouteServersResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_route_servers(
             s if s.matches("routeServerSet") /* RouteServers com.amazonaws.ec2.synthetic#DescribeRouteServersOutput$RouteServers */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_route_servers_list::de_route_servers_list(&mut tag)
+                        crate::protocol_serde::shape_route_servers_list::de_route_servers_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -22,7 +22,7 @@ impl crate::operation::query_vectors::builders::QueryVectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `QueryVectors`.
 ///
-/// <p>Performs an approximate nearest neighbor search query in a vector index using a query vector. By default, it returns the keys of approximate nearest neighbors. You can optionally include the computed distance (between the query vector and each vector in the response), the vector data, and metadata of each vector in the response.</p>
+/// <p>Performs an approximate nearest neighbor search query in a vector index using a query vector. By default, it returns the keys of approximate nearest neighbors. You can optionally include the computed distance (between the query vector and each vector in the response) and metadata of each vector in the response.</p>
 /// <p>To specify the vector index, you can either use both the vector bucket name and the vector index name, or use the vector index Amazon Resource Name (ARN).</p>
 /// <dl>
 /// <dt>
@@ -32,9 +32,9 @@ impl crate::operation::query_vectors::builders::QueryVectorsInputBuilder {
 /// <p>You must have the <code>s3vectors:QueryVectors</code> permission to use this operation. Additional permissions are required based on the request parameters you specify:</p>
 /// <ul>
 /// <li>
-/// <p>With only <code>s3vectors:QueryVectors</code> permission, you can retrieve vector keys of approximate nearest neighbors and computed distances between these vectors. This permission is sufficient only when you don't set any metadata filters and don't request vector data or metadata (by keeping the <code>returnMetadata</code> parameter set to <code>false</code> or not specified).</p></li>
+/// <p>With only <code>s3vectors:QueryVectors</code> permission, you can retrieve vector keys of approximate nearest neighbors and computed distances between these vectors. This permission is sufficient only when you don't set any metadata filters and don't request metadata (by keeping the <code>returnMetadata</code> parameter set to <code>false</code> or not specified).</p></li>
 /// <li>
-/// <p>If you specify a metadata filter or set <code>returnMetadata</code> to true, you must have both <code>s3vectors:QueryVectors</code> and <code>s3vectors:GetVectors</code> permissions. The request fails with a <code>403 Forbidden error</code> if you request metadata filtering, vector data, or metadata without the <code>s3vectors:GetVectors</code> permission.</p></li>
+/// <p>If you specify a metadata filter or set <code>returnMetadata</code> to true, you must have both <code>s3vectors:QueryVectors</code> and <code>s3vectors:GetVectors</code> permissions. The request fails with a <code>403 Forbidden error</code> if you request metadata filtering or metadata without the <code>s3vectors:GetVectors</code> permission.</p></li>
 /// </ul>
 /// </dd>
 /// </dl>
@@ -122,6 +122,12 @@ impl QueryVectorsFluentBuilder {
     pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
+    }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::query_vectors::paginator::QueryVectorsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::query_vectors::paginator::QueryVectorsPaginator {
+        crate::operation::query_vectors::paginator::QueryVectorsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the vector bucket that contains the vector index.</p>
     pub fn vector_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -234,5 +240,19 @@ impl QueryVectorsFluentBuilder {
     /// <p>Indicates whether to include the computed distance in the response. The default value is <code>false</code>.</p>
     pub fn get_return_distance(&self) -> &::std::option::Option<bool> {
         self.inner.get_return_distance()
+    }
+    /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -40,10 +40,16 @@ pub fn ser_plugin_auth_configuration(
 pub(crate) fn de_plugin_auth_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PluginAuthConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -69,13 +75,18 @@ where
                     }
                     variant = match key.as_ref() {
                         "basicAuthConfiguration" => Some(crate::types::PluginAuthConfiguration::BasicAuthConfiguration(
-                            crate::protocol_serde::shape_basic_auth_configuration::de_basic_auth_configuration(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'basicAuthConfiguration' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_basic_auth_configuration::de_basic_auth_configuration(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'basicAuthConfiguration' cannot be null",
+                                    )
+                                })?,
                         )),
                         "oAuth2ClientCredentialConfiguration" => Some(crate::types::PluginAuthConfiguration::OAuth2ClientCredentialConfiguration(
                             crate::protocol_serde::shape_o_auth2_client_credential_configuration::de_o_auth2_client_credential_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -84,14 +95,14 @@ where
                             })?,
                         )),
                         "noAuthConfiguration" => Some(crate::types::PluginAuthConfiguration::NoAuthConfiguration(
-                            crate::protocol_serde::shape_no_auth_configuration::de_no_auth_configuration(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noAuthConfiguration' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_no_auth_configuration::de_no_auth_configuration(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noAuthConfiguration' cannot be null"),
+                            )?,
                         )),
                         "idcAuthConfiguration" => Some(crate::types::PluginAuthConfiguration::IdcAuthConfiguration(
-                            crate::protocol_serde::shape_idc_auth_configuration::de_idc_auth_configuration(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'idcAuthConfiguration' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_idc_auth_configuration::de_idc_auth_configuration(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'idcAuthConfiguration' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

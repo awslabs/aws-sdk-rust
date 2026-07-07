@@ -21,6 +21,8 @@ pub use crate::types::_retry_config_input::RetryConfigInputBuilder;
 
 pub use crate::types::_browser_config::BrowserConfigBuilder;
 
+pub use crate::types::_add_replica_location_input::AddReplicaLocationInputBuilder;
+
 pub use crate::types::_s3_encryption_config::S3EncryptionConfigBuilder;
 
 pub use crate::types::_canary_code_output::CanaryCodeOutputBuilder;
@@ -36,6 +38,8 @@ pub use crate::types::_canary_timeline::CanaryTimelineBuilder;
 pub use crate::types::_vpc_config_output::VpcConfigOutputBuilder;
 
 pub use crate::types::_visual_reference_output::VisualReferenceOutputBuilder;
+
+pub use crate::types::_multi_location_config::MultiLocationConfigBuilder;
 
 pub use crate::types::_artifact_config_output::ArtifactConfigOutputBuilder;
 
@@ -60,3 +64,7 @@ pub use crate::types::_canary_run_timeline::CanaryRunTimelineBuilder;
 pub use crate::types::_canary_dry_run_config_output::CanaryDryRunConfigOutputBuilder;
 
 pub use crate::types::_base_screenshot::BaseScreenshotBuilder;
+
+pub use crate::types::_replica::ReplicaBuilder;
+
+pub use crate::types::_replication_status::ReplicationStatusBuilder;

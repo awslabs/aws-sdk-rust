@@ -2,10 +2,16 @@
 pub(crate) fn de_merge_hunk<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MergeHunk>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,13 +25,25 @@ where
                             builder = builder.set_is_conflict(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_merge_hunk_detail::de_merge_hunk_detail(tokens, _value)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_merge_hunk_detail::de_merge_hunk_detail(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "destination" => {
-                            builder = builder.set_destination(crate::protocol_serde::shape_merge_hunk_detail::de_merge_hunk_detail(tokens, _value)?);
+                            builder = builder.set_destination(crate::protocol_serde::shape_merge_hunk_detail::de_merge_hunk_detail(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "base" => {
-                            builder = builder.set_base(crate::protocol_serde::shape_merge_hunk_detail::de_merge_hunk_detail(tokens, _value)?);
+                            builder = builder.set_base(crate::protocol_serde::shape_merge_hunk_detail::de_merge_hunk_detail(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

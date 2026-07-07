@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateChat`](crate::operation::create_chat::builders::CreateChatFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::set_agent_space_id):<br>required: **true**<br>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)<br>
-    ///   - [`user_id(impl Into<String>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::set_user_id):<br>required: **false**<br>The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.<br>
-    ///   - [`user_type(UserType)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::user_type) / [`set_user_type(Option<UserType>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::set_user_type):<br>required: **false**<br>The authentication type of the user<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p><br>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::set_user_id):<br>required: **false**<br><p>The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p><br>
+    ///   - [`user_type(UserType)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::user_type) / [`set_user_type(Option<UserType>)`](crate::operation::create_chat::builders::CreateChatFluentBuilder::set_user_type):<br>required: **false**<br><p>The authentication type of the user</p><br>
     /// - On success, responds with [`CreateChatOutput`](crate::operation::create_chat::CreateChatOutput) with field(s):
-    ///   - [`execution_id(String)`](crate::operation::create_chat::CreateChatOutput::execution_id): The unique identifier for the created execution
-    ///   - [`created_at(DateTime)`](crate::operation::create_chat::CreateChatOutput::created_at): Timestamp when the chat was created
+    ///   - [`execution_id(String)`](crate::operation::create_chat::CreateChatOutput::execution_id): <p>The unique identifier for the created execution</p>
+    ///   - [`created_at(DateTime)`](crate::operation::create_chat::CreateChatOutput::created_at): <p>Timestamp when the chat was created</p>
     /// - On failure, responds with [`SdkError<CreateChatError>`](crate::operation::create_chat::CreateChatError)
     pub fn create_chat(&self) -> crate::operation::create_chat::builders::CreateChatFluentBuilder {
         crate::operation::create_chat::builders::CreateChatFluentBuilder::new(self.handle.clone())

@@ -14,6 +14,7 @@
 /// match resourcetypefortagging {
 ///     ResourceTypeForTagging::Association => { /* ... */ },
 ///     ResourceTypeForTagging::Automation => { /* ... */ },
+///     ResourceTypeForTagging::CloudConnector => { /* ... */ },
 ///     ResourceTypeForTagging::Document => { /* ... */ },
 ///     ResourceTypeForTagging::MaintenanceWindow => { /* ... */ },
 ///     ResourceTypeForTagging::ManagedInstance => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum ResourceTypeForTagging {
     #[allow(missing_docs)] // documentation missing in model
     Automation,
     #[allow(missing_docs)] // documentation missing in model
+    CloudConnector,
+    #[allow(missing_docs)] // documentation missing in model
     Document,
     #[allow(missing_docs)] // documentation missing in model
     MaintenanceWindow,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for ResourceTypeForTagging {
         match s {
             "Association" => ResourceTypeForTagging::Association,
             "Automation" => ResourceTypeForTagging::Automation,
+            "CloudConnector" => ResourceTypeForTagging::CloudConnector,
             "Document" => ResourceTypeForTagging::Document,
             "MaintenanceWindow" => ResourceTypeForTagging::MaintenanceWindow,
             "ManagedInstance" => ResourceTypeForTagging::ManagedInstance,
@@ -100,6 +104,7 @@ impl ResourceTypeForTagging {
         match self {
             ResourceTypeForTagging::Association => "Association",
             ResourceTypeForTagging::Automation => "Automation",
+            ResourceTypeForTagging::CloudConnector => "CloudConnector",
             ResourceTypeForTagging::Document => "Document",
             ResourceTypeForTagging::MaintenanceWindow => "MaintenanceWindow",
             ResourceTypeForTagging::ManagedInstance => "ManagedInstance",
@@ -115,6 +120,7 @@ impl ResourceTypeForTagging {
         &[
             "Association",
             "Automation",
+            "CloudConnector",
             "Document",
             "MaintenanceWindow",
             "ManagedInstance",
@@ -147,6 +153,7 @@ impl ::std::fmt::Display for ResourceTypeForTagging {
         match self {
             ResourceTypeForTagging::Association => write!(f, "Association"),
             ResourceTypeForTagging::Automation => write!(f, "Automation"),
+            ResourceTypeForTagging::CloudConnector => write!(f, "CloudConnector"),
             ResourceTypeForTagging::Document => write!(f, "Document"),
             ResourceTypeForTagging::MaintenanceWindow => write!(f, "MaintenanceWindow"),
             ResourceTypeForTagging::ManagedInstance => write!(f, "ManagedInstance"),

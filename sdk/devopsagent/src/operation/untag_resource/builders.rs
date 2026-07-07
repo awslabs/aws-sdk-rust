@@ -22,7 +22,7 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// Removes tags from the specified AWS DevOps Agent resource.
+/// <p>Removes tags from the specified AWS DevOps Agent resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the resource to untag.
+    /// <p>The ARN of the resource to untag.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// The ARN of the resource to untag.
+    /// <p>The ARN of the resource to untag.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// The ARN of the resource to untag.
+    /// <p>The ARN of the resource to untag.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -127,17 +127,17 @@ impl UntagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// Tag keys to remove.
+    /// <p>Tag keys to remove.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
-    /// Tag keys to remove.
+    /// <p>Tag keys to remove.</p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
-    /// Tag keys to remove.
+    /// <p>Tag keys to remove.</p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_keys()
     }

@@ -10,6 +10,8 @@ pub struct CentralizationRuleDestination {
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>Log specific configuration for centralization destination log groups.</p>
     pub destination_logs_configuration: ::std::option::Option<crate::types::DestinationLogsConfiguration>,
+    /// <p>Metric specific configuration for centralization destination metrics.</p>
+    pub destination_metrics_configuration: ::std::option::Option<crate::types::DestinationMetricsConfiguration>,
 }
 impl CentralizationRuleDestination {
     /// <p>The primary destination region to which telemetry data should be centralized.</p>
@@ -24,6 +26,10 @@ impl CentralizationRuleDestination {
     /// <p>Log specific configuration for centralization destination log groups.</p>
     pub fn destination_logs_configuration(&self) -> ::std::option::Option<&crate::types::DestinationLogsConfiguration> {
         self.destination_logs_configuration.as_ref()
+    }
+    /// <p>Metric specific configuration for centralization destination metrics.</p>
+    pub fn destination_metrics_configuration(&self) -> ::std::option::Option<&crate::types::DestinationMetricsConfiguration> {
+        self.destination_metrics_configuration.as_ref()
     }
 }
 impl CentralizationRuleDestination {
@@ -40,6 +46,7 @@ pub struct CentralizationRuleDestinationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) destination_logs_configuration: ::std::option::Option<crate::types::DestinationLogsConfiguration>,
+    pub(crate) destination_metrics_configuration: ::std::option::Option<crate::types::DestinationMetricsConfiguration>,
 }
 impl CentralizationRuleDestinationBuilder {
     /// <p>The primary destination region to which telemetry data should be centralized.</p>
@@ -85,6 +92,20 @@ impl CentralizationRuleDestinationBuilder {
     pub fn get_destination_logs_configuration(&self) -> &::std::option::Option<crate::types::DestinationLogsConfiguration> {
         &self.destination_logs_configuration
     }
+    /// <p>Metric specific configuration for centralization destination metrics.</p>
+    pub fn destination_metrics_configuration(mut self, input: crate::types::DestinationMetricsConfiguration) -> Self {
+        self.destination_metrics_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Metric specific configuration for centralization destination metrics.</p>
+    pub fn set_destination_metrics_configuration(mut self, input: ::std::option::Option<crate::types::DestinationMetricsConfiguration>) -> Self {
+        self.destination_metrics_configuration = input;
+        self
+    }
+    /// <p>Metric specific configuration for centralization destination metrics.</p>
+    pub fn get_destination_metrics_configuration(&self) -> &::std::option::Option<crate::types::DestinationMetricsConfiguration> {
+        &self.destination_metrics_configuration
+    }
     /// Consumes the builder and constructs a [`CentralizationRuleDestination`](crate::types::CentralizationRuleDestination).
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::CentralizationRuleDestinationBuilder::region)
@@ -98,6 +119,7 @@ impl CentralizationRuleDestinationBuilder {
             })?,
             account: self.account,
             destination_logs_configuration: self.destination_logs_configuration,
+            destination_metrics_configuration: self.destination_metrics_configuration,
         })
     }
 }

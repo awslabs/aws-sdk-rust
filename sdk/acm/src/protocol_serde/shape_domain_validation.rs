@@ -2,10 +2,16 @@
 pub(crate) fn de_domain_validation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DomainValidation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,9 @@ where
                         }
                         "ValidationEmails" => {
                             builder = builder.set_validation_emails(crate::protocol_serde::shape_validation_email_list::de_validation_email_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ValidationDomain" => {
@@ -42,10 +50,15 @@ where
                             );
                         }
                         "ResourceRecord" => {
-                            builder = builder.set_resource_record(crate::protocol_serde::shape_resource_record::de_resource_record(tokens, _value)?);
+                            builder = builder.set_resource_record(crate::protocol_serde::shape_resource_record::de_resource_record(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "HttpRedirect" => {
-                            builder = builder.set_http_redirect(crate::protocol_serde::shape_http_redirect::de_http_redirect(tokens, _value)?);
+                            builder =
+                                builder.set_http_redirect(crate::protocol_serde::shape_http_redirect::de_http_redirect(tokens, _value, depth + 1)?);
                         }
                         "ValidationMethod" => {
                             builder = builder.set_validation_method(

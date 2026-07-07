@@ -22,7 +22,7 @@ impl crate::operation::list_goals::builders::ListGoalsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListGoals`.
 ///
-/// Lists goals in the specified agent space with optional filtering
+/// <p>Lists goals in the specified agent space with optional filtering</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGoalsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl ListGoalsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_goals::paginator::ListGoalsPaginator {
         crate::operation::list_goals::paginator::ListGoalsPaginator::new(self.handle, self.inner)
     }
-    /// The unique identifier for the agent space
+    /// <p>The unique identifier for the agent space</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space
+    /// <p>The unique identifier for the agent space</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space
+    /// <p>The unique identifier for the agent space</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Filter goals by goal status
+    /// <p>Filter goals by goal status</p>
     pub fn status(mut self, input: crate::types::GoalStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// Filter goals by goal status
+    /// <p>Filter goals by goal status</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GoalStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// Filter goals by goal status
+    /// <p>Filter goals by goal status</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GoalStatus> {
         self.inner.get_status()
     }
-    /// Filter goals by goal type
+    /// <p>Filter goals by goal type</p>
     pub fn goal_type(mut self, input: crate::types::GoalType) -> Self {
         self.inner = self.inner.goal_type(input);
         self
     }
-    /// Filter goals by goal type
+    /// <p>Filter goals by goal type</p>
     pub fn set_goal_type(mut self, input: ::std::option::Option<crate::types::GoalType>) -> Self {
         self.inner = self.inner.set_goal_type(input);
         self
     }
-    /// Filter goals by goal type
+    /// <p>Filter goals by goal type</p>
     pub fn get_goal_type(&self) -> &::std::option::Option<crate::types::GoalType> {
         self.inner.get_goal_type()
     }
-    /// Maximum number of goals to return
+    /// <p>Maximum number of goals to return</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// Maximum number of goals to return
+    /// <p>Maximum number of goals to return</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// Maximum number of goals to return
+    /// <p>Maximum number of goals to return</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
-    /// Pagination token for the next set of results
+    /// <p>Pagination token for the next set of results</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Pagination token for the next set of results
+    /// <p>Pagination token for the next set of results</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Pagination token for the next set of results
+    /// <p>Pagination token for the next set of results</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

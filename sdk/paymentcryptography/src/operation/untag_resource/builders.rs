@@ -25,7 +25,7 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 /// <p>Deletes a tag from an Amazon Web Services Payment Cryptography key.</p><note>
 /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
 /// </note>
-/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Cross-account use:</b> This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based policies</a>.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>

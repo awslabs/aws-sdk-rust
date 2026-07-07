@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_image_usage_resource_type(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ImageUsageResourceType, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ImageUsageResourceType::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_image_usage_resource_type(
             s if s.matches("resourceTypeOptionSet") /* ResourceTypeOptions com.amazonaws.ec2#ImageUsageResourceType$ResourceTypeOptions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_image_usage_resource_type_option_list::de_image_usage_resource_type_option_list(&mut tag)
+                        crate::protocol_serde::shape_image_usage_resource_type_option_list::de_image_usage_resource_type_option_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

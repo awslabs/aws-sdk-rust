@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_tenant_database(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TenantDatabase, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TenantDatabase::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -156,7 +160,7 @@ pub fn de_tenant_database(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.rds#TenantDatabase$PendingModifiedValues */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_tenant_database_pending_modified_values::de_tenant_database_pending_modified_values(&mut tag)
+                        crate::protocol_serde::shape_tenant_database_pending_modified_values::de_tenant_database_pending_modified_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -166,7 +170,7 @@ pub fn de_tenant_database(
             s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.rds#TenantDatabase$MasterUserSecret */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_master_user_secret::de_master_user_secret(&mut tag)
+                        crate::protocol_serde::shape_master_user_secret::de_master_user_secret(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -176,7 +180,7 @@ pub fn de_tenant_database(
             s if s.matches("TagList") /* TagList com.amazonaws.rds#TenantDatabase$TagList */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

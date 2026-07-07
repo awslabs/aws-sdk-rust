@@ -86,6 +86,33 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::create_autonomous_database::builders::CreateAutonomousDatabaseOutputBuilder,
+) -> crate::operation::create_autonomous_database::builders::CreateAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_autonomous_database_backup_output_output_correct_errors(
+    mut builder: crate::operation::create_autonomous_database_backup::builders::CreateAutonomousDatabaseBackupOutputBuilder,
+) -> crate::operation::create_autonomous_database_backup::builders::CreateAutonomousDatabaseBackupOutputBuilder {
+    if builder.autonomous_database_backup_id.is_none() {
+        builder.autonomous_database_backup_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_autonomous_database_wallet_output_output_correct_errors(
+    mut builder: crate::operation::create_autonomous_database_wallet::builders::CreateAutonomousDatabaseWalletOutputBuilder,
+) -> crate::operation::create_autonomous_database_wallet::builders::CreateAutonomousDatabaseWalletOutputBuilder {
+    if builder.autonomous_database_wallet_file.is_none() {
+        builder.autonomous_database_wallet_file = Some(::aws_smithy_types::Blob::new(""))
+    }
+    builder
+}
+
 pub(crate) fn create_cloud_autonomous_vm_cluster_output_output_correct_errors(
     mut builder: crate::operation::create_cloud_autonomous_vm_cluster::builders::CreateCloudAutonomousVmClusterOutputBuilder,
 ) -> crate::operation::create_cloud_autonomous_vm_cluster::builders::CreateCloudAutonomousVmClusterOutputBuilder {
@@ -127,6 +154,93 @@ pub(crate) fn create_odb_peering_connection_output_output_correct_errors(
 ) -> crate::operation::create_odb_peering_connection::builders::CreateOdbPeeringConnectionOutputBuilder {
     if builder.odb_peering_connection_id.is_none() {
         builder.odb_peering_connection_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn failover_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::failover_autonomous_database::builders::FailoverAutonomousDatabaseOutputBuilder,
+) -> crate::operation::failover_autonomous_database::builders::FailoverAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::get_autonomous_database::builders::GetAutonomousDatabaseOutputBuilder,
+) -> crate::operation::get_autonomous_database::builders::GetAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database.is_none() {
+        builder.autonomous_database = {
+            let builder = crate::types::builders::AutonomousDatabaseBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_autonomous_database_wallet_details_output_output_correct_errors(
+    mut builder: crate::operation::get_autonomous_database_wallet_details::builders::GetAutonomousDatabaseWalletDetailsOutputBuilder,
+) -> crate::operation::get_autonomous_database_wallet_details::builders::GetAutonomousDatabaseWalletDetailsOutputBuilder {
+    if builder.autonomous_database_wallet_details.is_none() {
+        builder.autonomous_database_wallet_details = {
+            let builder = crate::types::builders::AutonomousDatabaseWalletDetailsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn list_autonomous_database_backups_output_output_correct_errors(
+    mut builder: crate::operation::list_autonomous_database_backups::builders::ListAutonomousDatabaseBackupsOutputBuilder,
+) -> crate::operation::list_autonomous_database_backups::builders::ListAutonomousDatabaseBackupsOutputBuilder {
+    if builder.autonomous_database_backups.is_none() {
+        builder.autonomous_database_backups = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_autonomous_database_character_sets_output_output_correct_errors(
+    mut builder: crate::operation::list_autonomous_database_character_sets::builders::ListAutonomousDatabaseCharacterSetsOutputBuilder,
+) -> crate::operation::list_autonomous_database_character_sets::builders::ListAutonomousDatabaseCharacterSetsOutputBuilder {
+    if builder.autonomous_database_character_sets.is_none() {
+        builder.autonomous_database_character_sets = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_autonomous_database_clones_output_output_correct_errors(
+    mut builder: crate::operation::list_autonomous_database_clones::builders::ListAutonomousDatabaseClonesOutputBuilder,
+) -> crate::operation::list_autonomous_database_clones::builders::ListAutonomousDatabaseClonesOutputBuilder {
+    if builder.autonomous_database_clones.is_none() {
+        builder.autonomous_database_clones = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_autonomous_database_peers_output_output_correct_errors(
+    mut builder: crate::operation::list_autonomous_database_peers::builders::ListAutonomousDatabasePeersOutputBuilder,
+) -> crate::operation::list_autonomous_database_peers::builders::ListAutonomousDatabasePeersOutputBuilder {
+    if builder.autonomous_database_peers.is_none() {
+        builder.autonomous_database_peers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_autonomous_database_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_autonomous_database_versions::builders::ListAutonomousDatabaseVersionsOutputBuilder,
+) -> crate::operation::list_autonomous_database_versions::builders::ListAutonomousDatabaseVersionsOutputBuilder {
+    if builder.autonomous_database_versions.is_none() {
+        builder.autonomous_database_versions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_autonomous_databases_output_output_correct_errors(
+    mut builder: crate::operation::list_autonomous_databases::builders::ListAutonomousDatabasesOutputBuilder,
+) -> crate::operation::list_autonomous_databases::builders::ListAutonomousDatabasesOutputBuilder {
+    if builder.autonomous_databases.is_none() {
+        builder.autonomous_databases = Some(Default::default())
     }
     builder
 }
@@ -230,11 +344,47 @@ pub(crate) fn list_system_versions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn reboot_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::reboot_autonomous_database::builders::RebootAutonomousDatabaseOutputBuilder,
+) -> crate::operation::reboot_autonomous_database::builders::RebootAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn reboot_db_node_output_output_correct_errors(
     mut builder: crate::operation::reboot_db_node::builders::RebootDbNodeOutputBuilder,
 ) -> crate::operation::reboot_db_node::builders::RebootDbNodeOutputBuilder {
     if builder.db_node_id.is_none() {
         builder.db_node_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn restore_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::restore_autonomous_database::builders::RestoreAutonomousDatabaseOutputBuilder,
+) -> crate::operation::restore_autonomous_database::builders::RestoreAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn shrink_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::shrink_autonomous_database::builders::ShrinkAutonomousDatabaseOutputBuilder,
+) -> crate::operation::shrink_autonomous_database::builders::ShrinkAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::start_autonomous_database::builders::StartAutonomousDatabaseOutputBuilder,
+) -> crate::operation::start_autonomous_database::builders::StartAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
     }
     builder
 }
@@ -248,11 +398,47 @@ pub(crate) fn start_db_node_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn stop_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::stop_autonomous_database::builders::StopAutonomousDatabaseOutputBuilder,
+) -> crate::operation::stop_autonomous_database::builders::StopAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn stop_db_node_output_output_correct_errors(
     mut builder: crate::operation::stop_db_node::builders::StopDbNodeOutputBuilder,
 ) -> crate::operation::stop_db_node::builders::StopDbNodeOutputBuilder {
     if builder.db_node_id.is_none() {
         builder.db_node_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn switchover_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::switchover_autonomous_database::builders::SwitchoverAutonomousDatabaseOutputBuilder,
+) -> crate::operation::switchover_autonomous_database::builders::SwitchoverAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_autonomous_database_output_output_correct_errors(
+    mut builder: crate::operation::update_autonomous_database::builders::UpdateAutonomousDatabaseOutputBuilder,
+) -> crate::operation::update_autonomous_database::builders::UpdateAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_autonomous_database_backup_output_output_correct_errors(
+    mut builder: crate::operation::update_autonomous_database_backup::builders::UpdateAutonomousDatabaseBackupOutputBuilder,
+) -> crate::operation::update_autonomous_database_backup::builders::UpdateAutonomousDatabaseBackupOutputBuilder {
+    if builder.autonomous_database_backup_id.is_none() {
+        builder.autonomous_database_backup_id = Some(Default::default())
     }
     builder
 }
@@ -380,6 +566,48 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn scheduled_operation_details_correct_errors(
+    mut builder: crate::types::builders::ScheduledOperationDetailsBuilder,
+) -> crate::types::builders::ScheduledOperationDetailsBuilder {
+    if builder.day_of_week.is_none() {
+        builder.day_of_week = {
+            let builder = crate::types::builders::DayOfWeekBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn oci_encryption_key_configuration_correct_errors(
+    mut builder: crate::types::builders::OciEncryptionKeyConfigurationBuilder,
+) -> crate::types::builders::OciEncryptionKeyConfigurationBuilder {
+    if builder.kms_key_id.is_none() {
+        builder.kms_key_id = Some(Default::default())
+    }
+    if builder.vault_id.is_none() {
+        builder.vault_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn okv_encryption_key_configuration_correct_errors(
+    mut builder: crate::types::builders::OkvEncryptionKeyConfigurationBuilder,
+) -> crate::types::builders::OkvEncryptionKeyConfigurationBuilder {
+    if builder.certificate_directory_name.is_none() {
+        builder.certificate_directory_name = Some(Default::default())
+    }
+    if builder.directory_name.is_none() {
+        builder.directory_name = Some(Default::default())
+    }
+    if builder.okv_kms_key.is_none() {
+        builder.okv_kms_key = Some(Default::default())
+    }
+    if builder.okv_uri.is_none() {
+        builder.okv_uri = Some(Default::default())
     }
     builder
 }

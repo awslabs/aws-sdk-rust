@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_instance_secondary_interface_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LaunchTemplateInstanceSecondaryInterfaceSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchTemplateInstanceSecondaryInterfaceSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -40,7 +44,7 @@ pub fn de_launch_template_instance_secondary_interface_specification(
             s if s.matches("privateIpAddressesSet") /* PrivateIpAddresses com.amazonaws.ec2#LaunchTemplateInstanceSecondaryInterfaceSpecification$PrivateIpAddresses */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_secondary_interface_private_ip_address_specification_list::de_secondary_interface_private_ip_address_specification_list(&mut tag)
+                        crate::protocol_serde::shape_secondary_interface_private_ip_address_specification_list::de_secondary_interface_private_ip_address_specification_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

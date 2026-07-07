@@ -84,6 +84,8 @@ pub struct PipelineExecutionStepMetadata {
     pub inference_component: ::std::option::Option<crate::types::InferenceComponentMetadata>,
     /// <p>The metadata of the lineage used in pipeline execution step.</p>
     pub lineage: ::std::option::Option<crate::types::LineageMetadata>,
+    /// <p>The metadata for a SageMaker job used in a pipeline execution step.</p>
+    pub job: ::std::option::Option<crate::types::JobStepMetadata>,
 }
 impl PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -210,6 +212,10 @@ impl PipelineExecutionStepMetadata {
     pub fn lineage(&self) -> ::std::option::Option<&crate::types::LineageMetadata> {
         self.lineage.as_ref()
     }
+    /// <p>The metadata for a SageMaker job used in a pipeline execution step.</p>
+    pub fn job(&self) -> ::std::option::Option<&crate::types::JobStepMetadata> {
+        self.job.as_ref()
+    }
 }
 impl PipelineExecutionStepMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
@@ -244,6 +250,7 @@ pub struct PipelineExecutionStepMetadataBuilder {
     pub(crate) bedrock_model_import: ::std::option::Option<crate::types::BedrockModelImportMetadata>,
     pub(crate) inference_component: ::std::option::Option<crate::types::InferenceComponentMetadata>,
     pub(crate) lineage: ::std::option::Option<crate::types::LineageMetadata>,
+    pub(crate) job: ::std::option::Option<crate::types::JobStepMetadata>,
 }
 impl PipelineExecutionStepMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -665,6 +672,20 @@ impl PipelineExecutionStepMetadataBuilder {
     pub fn get_lineage(&self) -> &::std::option::Option<crate::types::LineageMetadata> {
         &self.lineage
     }
+    /// <p>The metadata for a SageMaker job used in a pipeline execution step.</p>
+    pub fn job(mut self, input: crate::types::JobStepMetadata) -> Self {
+        self.job = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata for a SageMaker job used in a pipeline execution step.</p>
+    pub fn set_job(mut self, input: ::std::option::Option<crate::types::JobStepMetadata>) -> Self {
+        self.job = input;
+        self
+    }
+    /// <p>The metadata for a SageMaker job used in a pipeline execution step.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::JobStepMetadata> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
     pub fn build(self) -> crate::types::PipelineExecutionStepMetadata {
         crate::types::PipelineExecutionStepMetadata {
@@ -690,6 +711,7 @@ impl PipelineExecutionStepMetadataBuilder {
             bedrock_model_import: self.bedrock_model_import,
             inference_component: self.inference_component,
             lineage: self.lineage,
+            job: self.job,
         }
     }
 }

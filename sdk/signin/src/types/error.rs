@@ -7,9 +7,21 @@ pub use crate::types::error::_too_many_requests_error::TooManyRequestsError;
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 mod _access_denied_exception;
 
+mod _conflict_exception;
+
 mod _internal_server_exception;
+
+mod _resource_not_found_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _too_many_requests_error;
 

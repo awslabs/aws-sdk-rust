@@ -174,6 +174,8 @@ mod create_automation_rule_v2;
 
 mod create_configuration_policy;
 
+mod create_connector;
+
 mod create_connector_v2;
 
 mod create_finding_aggregator;
@@ -221,6 +223,8 @@ mod delete_automation_rule_v2;
 
 mod delete_configuration_policy;
 
+mod delete_connector;
+
 mod delete_connector_v2;
 
 mod delete_finding_aggregator;
@@ -253,6 +257,8 @@ mod disable_organization_admin_account;
 
 mod disable_security_hub;
 
+mod disable_security_hub_feature_v2;
+
 mod disable_security_hub_v2;
 
 mod disassociate_from_administrator_account;
@@ -267,7 +273,11 @@ mod enable_organization_admin_account;
 
 mod enable_security_hub;
 
+mod enable_security_hub_feature_v2;
+
 mod enable_security_hub_v2;
+
+mod generate_recommended_policy_v2;
 
 mod get_administrator_account;
 
@@ -278,6 +288,8 @@ mod get_automation_rule_v2;
 mod get_configuration_policy;
 
 mod get_configuration_policy_association;
+
+mod get_connector;
 
 mod get_connector_v2;
 
@@ -305,6 +317,8 @@ mod get_master_account;
 
 mod get_members;
 
+mod get_recommended_policy_v2;
+
 mod get_resources_statistics_v2;
 
 mod get_resources_trends_v2;
@@ -324,6 +338,8 @@ mod list_automation_rules_v2;
 mod list_configuration_policies;
 
 mod list_configuration_policy_associations;
+
+mod list_connectors;
 
 mod list_connectors_v2;
 
@@ -360,6 +376,8 @@ mod update_aggregator_v2;
 mod update_automation_rule_v2;
 
 mod update_configuration_policy;
+
+mod update_connector;
 
 mod update_connector_v2;
 

@@ -42,10 +42,16 @@ pub fn ser_target_tracking_scaling_policy_configuration(
 pub(crate) fn de_target_tracking_scaling_policy_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TargetTrackingScalingPolicyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -62,12 +68,20 @@ where
                         }
                         "PredefinedMetricSpecification" => {
                             builder = builder.set_predefined_metric_specification(
-                                crate::protocol_serde::shape_predefined_metric_specification::de_predefined_metric_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_predefined_metric_specification::de_predefined_metric_specification(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CustomizedMetricSpecification" => {
                             builder = builder.set_customized_metric_specification(
-                                crate::protocol_serde::shape_customized_metric_specification::de_customized_metric_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_customized_metric_specification::de_customized_metric_specification(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ScaleOutCooldown" => {

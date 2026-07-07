@@ -51,6 +51,8 @@ pub fn de_create_traffic_mirror_target(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateTrafficMirrorTargetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateTrafficMirrorTargetResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_create_traffic_mirror_target(
             s if s.matches("trafficMirrorTarget") /* TrafficMirrorTarget com.amazonaws.ec2.synthetic#CreateTrafficMirrorTargetOutput$TrafficMirrorTarget */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_traffic_mirror_target::de_traffic_mirror_target(&mut tag)
+                        crate::protocol_serde::shape_traffic_mirror_target::de_traffic_mirror_target(&mut tag, depth + 1)
                         ?
                     )
                 ;

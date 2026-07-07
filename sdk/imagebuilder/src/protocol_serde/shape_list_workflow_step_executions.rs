@@ -180,6 +180,8 @@ pub(crate) fn de_list_workflow_step_executions(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -214,8 +216,9 @@ pub(crate) fn de_list_workflow_step_executions(
                     );
                 }
                 "steps" => {
-                    builder = builder
-                        .set_steps(crate::protocol_serde::shape_workflow_step_executions_list::de_workflow_step_executions_list(tokens, _value)?);
+                    builder = builder.set_steps(
+                        crate::protocol_serde::shape_workflow_step_executions_list::de_workflow_step_executions_list(tokens, _value, depth + 1)?,
+                    );
                 }
                 "workflowBuildVersionArn" => {
                     builder = builder.set_workflow_build_version_arn(

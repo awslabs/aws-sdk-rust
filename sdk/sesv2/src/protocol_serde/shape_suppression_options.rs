@@ -12,11 +12,14 @@ pub fn ser_suppression_options(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.validation_options {
+    if let Some(var_4) = &input.suppression_scope {
+        object.key("SuppressionScope").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.validation_options {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ValidationOptions").start_object();
-        crate::protocol_serde::shape_suppression_validation_options::ser_suppression_validation_options(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("ValidationOptions").start_object();
+        crate::protocol_serde::shape_suppression_validation_options::ser_suppression_validation_options(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -24,10 +27,16 @@ pub fn ser_suppression_options(
 pub(crate) fn de_suppression_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SuppressionOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,12 +48,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SuppressedReasons" => {
                             builder = builder.set_suppressed_reasons(
-                                crate::protocol_serde::shape_suppression_list_reasons::de_suppression_list_reasons(tokens, _value)?,
+                                crate::protocol_serde::shape_suppression_list_reasons::de_suppression_list_reasons(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "SuppressionScope" => {
+                            builder = builder.set_suppression_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SuppressionListScope::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "ValidationOptions" => {
                             builder = builder.set_validation_options(
-                                crate::protocol_serde::shape_suppression_validation_options::de_suppression_validation_options(tokens, _value)?,
+                                crate::protocol_serde::shape_suppression_validation_options::de_suppression_validation_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

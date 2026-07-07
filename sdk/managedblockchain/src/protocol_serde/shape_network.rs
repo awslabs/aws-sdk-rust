@@ -2,10 +2,16 @@
 pub(crate) fn de_network<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Network>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,7 +58,11 @@ where
                         }
                         "FrameworkAttributes" => {
                             builder = builder.set_framework_attributes(
-                                crate::protocol_serde::shape_network_framework_attributes::de_network_framework_attributes(tokens, _value)?,
+                                crate::protocol_serde::shape_network_framework_attributes::de_network_framework_attributes(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "VpcEndpointServiceName" => {
@@ -63,7 +73,8 @@ where
                             );
                         }
                         "VotingPolicy" => {
-                            builder = builder.set_voting_policy(crate::protocol_serde::shape_voting_policy::de_voting_policy(tokens, _value)?);
+                            builder =
+                                builder.set_voting_policy(crate::protocol_serde::shape_voting_policy::de_voting_policy(tokens, _value, depth + 1)?);
                         }
                         "Status" => {
                             builder = builder.set_status(
@@ -79,7 +90,7 @@ where
                             )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_output_tag_map::de_output_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_output_tag_map::de_output_tag_map(tokens, _value, depth + 1)?);
                         }
                         "Arn" => {
                             builder = builder.set_arn(

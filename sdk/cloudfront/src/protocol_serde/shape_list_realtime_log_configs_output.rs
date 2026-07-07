@@ -23,5 +23,7 @@ pub fn de_realtime_log_configs(inp: &[u8]) -> std::result::Result<crate::types::
             "invalid root, expected RealtimeLogConfigs got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_realtime_log_configs::de_realtime_log_configs(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_realtime_log_configs::de_realtime_log_configs(&mut decoder, depth + 1)
 }

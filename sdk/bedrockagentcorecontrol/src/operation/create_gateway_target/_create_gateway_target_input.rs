@@ -107,7 +107,6 @@ impl CreateGatewayTargetInputBuilder {
         &self.gateway_identifier
     }
     /// <p>The name of the gateway target. The name must be unique within the gateway.</p>
-    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

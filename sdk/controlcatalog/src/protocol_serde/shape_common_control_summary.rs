@@ -2,10 +2,16 @@
 pub(crate) fn de_common_control_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CommonControlSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,12 +44,18 @@ where
                         }
                         "Domain" => {
                             builder = builder.set_domain(crate::protocol_serde::shape_associated_domain_summary::de_associated_domain_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Objective" => {
                             builder = builder.set_objective(
-                                crate::protocol_serde::shape_associated_objective_summary::de_associated_objective_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_associated_objective_summary::de_associated_objective_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CreateTime" => {

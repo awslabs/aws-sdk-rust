@@ -95,6 +95,8 @@ pub fn de_describe_custom_domain_associations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeCustomDomainAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeCustomDomainAssociationsResponse got {start_el:?}"
@@ -125,7 +127,7 @@ pub fn de_describe_custom_domain_associations(
             s if s.matches("Associations") /* Associations com.amazonaws.redshift.synthetic#DescribeCustomDomainAssociationsOutput$Associations */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_association_list::de_association_list(&mut tag)
+                        crate::protocol_serde::shape_association_list::de_association_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

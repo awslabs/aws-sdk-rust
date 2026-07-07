@@ -148,6 +148,8 @@ pub(crate) fn de_cancel_metadata_transfer_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -169,12 +171,13 @@ pub(crate) fn de_cancel_metadata_transfer_job(
                 }
                 "progress" => {
                     builder = builder.set_progress(
-                        crate::protocol_serde::shape_metadata_transfer_job_progress::de_metadata_transfer_job_progress(tokens, _value)?,
+                        crate::protocol_serde::shape_metadata_transfer_job_progress::de_metadata_transfer_job_progress(tokens, _value, depth + 1)?,
                     );
                 }
                 "status" => {
-                    builder = builder
-                        .set_status(crate::protocol_serde::shape_metadata_transfer_job_status::de_metadata_transfer_job_status(tokens, _value)?);
+                    builder = builder.set_status(
+                        crate::protocol_serde::shape_metadata_transfer_job_status::de_metadata_transfer_job_status(tokens, _value, depth + 1)?,
+                    );
                 }
                 "updateDateTime" => {
                     builder = builder.set_update_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

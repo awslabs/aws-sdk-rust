@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_managed_policy_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ManagedPolicyDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ManagedPolicyDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -161,7 +165,7 @@ pub fn de_managed_policy_detail(
             s if s.matches("PolicyVersionList") /* PolicyVersionList com.amazonaws.iam#ManagedPolicyDetail$PolicyVersionList */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_policy_document_version_list_type::de_policy_document_version_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_document_version_list_type::de_policy_document_version_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

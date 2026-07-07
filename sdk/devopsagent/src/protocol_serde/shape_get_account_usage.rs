@@ -178,26 +178,40 @@ pub(crate) fn de_get_account_usage(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "monthlyAccountEvaluationHours" => {
-                    builder =
-                        builder.set_monthly_account_evaluation_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(tokens, _value)?);
+                    builder = builder.set_monthly_account_evaluation_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "monthlyAccountInvestigationHours" => {
-                    builder =
-                        builder.set_monthly_account_investigation_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(tokens, _value)?);
+                    builder = builder.set_monthly_account_investigation_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "monthlyAccountOnDemandHours" => {
-                    builder =
-                        builder.set_monthly_account_on_demand_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(tokens, _value)?);
+                    builder = builder.set_monthly_account_on_demand_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "monthlyAccountSystemLearningHours" => {
-                    builder = builder
-                        .set_monthly_account_system_learning_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(tokens, _value)?);
+                    builder = builder.set_monthly_account_system_learning_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "usagePeriodEndTime" => {
                     builder = builder.set_usage_period_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

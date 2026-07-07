@@ -66,10 +66,16 @@ pub fn ser_time_series_forecasting_job_config(
 pub(crate) fn de_time_series_forecasting_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TimeSeriesForecastingJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -88,7 +94,11 @@ where
                         }
                         "CompletionCriteria" => {
                             builder = builder.set_completion_criteria(
-                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens, _value)?,
+                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ForecastFrequency" => {
@@ -106,24 +116,34 @@ where
                             );
                         }
                         "ForecastQuantiles" => {
-                            builder = builder
-                                .set_forecast_quantiles(crate::protocol_serde::shape_forecast_quantiles::de_forecast_quantiles(tokens, _value)?);
+                            builder = builder.set_forecast_quantiles(crate::protocol_serde::shape_forecast_quantiles::de_forecast_quantiles(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Transformations" => {
                             builder = builder.set_transformations(
-                                crate::protocol_serde::shape_time_series_transformations::de_time_series_transformations(tokens, _value)?,
+                                crate::protocol_serde::shape_time_series_transformations::de_time_series_transformations(tokens, _value, depth + 1)?,
                             );
                         }
                         "TimeSeriesConfig" => {
-                            builder = builder
-                                .set_time_series_config(crate::protocol_serde::shape_time_series_config::de_time_series_config(tokens, _value)?);
+                            builder = builder.set_time_series_config(crate::protocol_serde::shape_time_series_config::de_time_series_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "HolidayConfig" => {
-                            builder = builder.set_holiday_config(crate::protocol_serde::shape_holiday_config::de_holiday_config(tokens, _value)?);
+                            builder = builder.set_holiday_config(crate::protocol_serde::shape_holiday_config::de_holiday_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CandidateGenerationConfig" => {
                             builder = builder.set_candidate_generation_config(
-                                crate::protocol_serde::shape_candidate_generation_config::de_candidate_generation_config(tokens, _value)?,
+                                crate::protocol_serde::shape_candidate_generation_config::de_candidate_generation_config(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Environment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -125,8 +131,11 @@ where
                             );
                         }
                         "provisioningRepository" => {
-                            builder = builder
-                                .set_provisioning_repository(crate::protocol_serde::shape_repository_branch::de_repository_branch(tokens, _value)?);
+                            builder = builder.set_provisioning_repository(crate::protocol_serde::shape_repository_branch::de_repository_branch(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "componentRoleArn" => {
                             builder = builder.set_component_role_arn(

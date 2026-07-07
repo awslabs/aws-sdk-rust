@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_platform_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PlatformDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PlatformDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -182,7 +186,7 @@ pub fn de_platform_description(
             s if s.matches("ProgrammingLanguages") /* ProgrammingLanguages com.amazonaws.elasticbeanstalk#PlatformDescription$ProgrammingLanguages */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_platform_programming_languages::de_platform_programming_languages(&mut tag)
+                        crate::protocol_serde::shape_platform_programming_languages::de_platform_programming_languages(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -192,7 +196,7 @@ pub fn de_platform_description(
             s if s.matches("Frameworks") /* Frameworks com.amazonaws.elasticbeanstalk#PlatformDescription$Frameworks */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_platform_frameworks::de_platform_frameworks(&mut tag)
+                        crate::protocol_serde::shape_platform_frameworks::de_platform_frameworks(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -202,7 +206,7 @@ pub fn de_platform_description(
             s if s.matches("CustomAmiList") /* CustomAmiList com.amazonaws.elasticbeanstalk#PlatformDescription$CustomAmiList */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_custom_ami_list::de_custom_ami_list(&mut tag)
+                        crate::protocol_serde::shape_custom_ami_list::de_custom_ami_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -212,7 +216,7 @@ pub fn de_platform_description(
             s if s.matches("SupportedTierList") /* SupportedTierList com.amazonaws.elasticbeanstalk#PlatformDescription$SupportedTierList */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_supported_tier_list::de_supported_tier_list(&mut tag)
+                        crate::protocol_serde::shape_supported_tier_list::de_supported_tier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -222,7 +226,7 @@ pub fn de_platform_description(
             s if s.matches("SupportedAddonList") /* SupportedAddonList com.amazonaws.elasticbeanstalk#PlatformDescription$SupportedAddonList */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_supported_addon_list::de_supported_addon_list(&mut tag)
+                        crate::protocol_serde::shape_supported_addon_list::de_supported_addon_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

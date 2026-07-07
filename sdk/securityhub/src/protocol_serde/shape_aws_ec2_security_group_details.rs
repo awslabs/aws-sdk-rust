@@ -45,10 +45,16 @@ pub fn ser_aws_ec2_security_group_details(
 pub(crate) fn de_aws_ec2_security_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsEc2SecurityGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -89,12 +95,12 @@ where
                             }
                             "IpPermissions" => {
                                 builder = builder.set_ip_permissions(
-                                    crate::protocol_serde::shape_aws_ec2_security_group_ip_permission_list::de_aws_ec2_security_group_ip_permission_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_ec2_security_group_ip_permission_list::de_aws_ec2_security_group_ip_permission_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "IpPermissionsEgress" => {
                                 builder = builder.set_ip_permissions_egress(
-                                    crate::protocol_serde::shape_aws_ec2_security_group_ip_permission_list::de_aws_ec2_security_group_ip_permission_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_ec2_security_group_ip_permission_list::de_aws_ec2_security_group_ip_permission_list(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

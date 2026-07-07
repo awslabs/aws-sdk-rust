@@ -2,10 +2,16 @@
 pub(crate) fn de_device<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Device>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,8 @@ where
                             );
                         }
                         "AWSLocation" => {
-                            builder = builder.set_aws_location(crate::protocol_serde::shape_aws_location::de_aws_location(tokens, _value)?);
+                            builder =
+                                builder.set_aws_location(crate::protocol_serde::shape_aws_location::de_aws_location(tokens, _value, depth + 1)?);
                         }
                         "Description" => {
                             builder = builder.set_description(
@@ -75,7 +82,7 @@ where
                             );
                         }
                         "Location" => {
-                            builder = builder.set_location(crate::protocol_serde::shape_location::de_location(tokens, _value)?);
+                            builder = builder.set_location(crate::protocol_serde::shape_location::de_location(tokens, _value, depth + 1)?);
                         }
                         "SiteId" => {
                             builder = builder.set_site_id(
@@ -98,7 +105,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

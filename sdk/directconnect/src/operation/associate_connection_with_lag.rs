@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
 #[derive(Debug)]
 struct AssociateConnectionWithLagResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AssociateConnectionWithLagResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -277,6 +278,8 @@ pub enum AssociateConnectionWithLagError {
     DirectConnectClientException(crate::types::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::types::error::DirectConnectServerException),
+    /// <p>The rate limiter limit has been exceeded for the connection. You cannot add more rate limiters to virtual interfaces on this connection.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -312,6 +315,7 @@ impl AssociateConnectionWithLagError {
         match self {
             Self::DirectConnectClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DirectConnectServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -323,12 +327,17 @@ impl AssociateConnectionWithLagError {
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(self, Self::DirectConnectServerException(_))
     }
+    /// Returns `true` if the error kind is `AssociateConnectionWithLagError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
 }
 impl ::std::error::Error for AssociateConnectionWithLagError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::DirectConnectClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::DirectConnectServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -338,6 +347,7 @@ impl ::std::fmt::Display for AssociateConnectionWithLagError {
         match self {
             Self::DirectConnectClientException(_inner) => _inner.fmt(f),
             Self::DirectConnectServerException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -361,6 +371,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AssociateConn
         match self {
             Self::DirectConnectClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DirectConnectServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

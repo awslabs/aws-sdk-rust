@@ -2,10 +2,16 @@
 pub(crate) fn de_guardrail_assessment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GuardrailAssessment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,44 +23,58 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "topicPolicy" => {
                             builder = builder.set_topic_policy(
-                                crate::protocol_serde::shape_guardrail_topic_policy_assessment::de_guardrail_topic_policy_assessment(tokens, _value)?,
+                                crate::protocol_serde::shape_guardrail_topic_policy_assessment::de_guardrail_topic_policy_assessment(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "contentPolicy" => {
                             builder = builder.set_content_policy(
                                 crate::protocol_serde::shape_guardrail_content_policy_assessment::de_guardrail_content_policy_assessment(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "wordPolicy" => {
                             builder = builder.set_word_policy(
-                                crate::protocol_serde::shape_guardrail_word_policy_assessment::de_guardrail_word_policy_assessment(tokens, _value)?,
+                                crate::protocol_serde::shape_guardrail_word_policy_assessment::de_guardrail_word_policy_assessment(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "sensitiveInformationPolicy" => {
                             builder = builder.set_sensitive_information_policy(
-                                    crate::protocol_serde::shape_guardrail_sensitive_information_policy_assessment::de_guardrail_sensitive_information_policy_assessment(tokens, _value)?
+                                    crate::protocol_serde::shape_guardrail_sensitive_information_policy_assessment::de_guardrail_sensitive_information_policy_assessment(tokens, _value, depth + 1)?
                                 );
                         }
                         "contextualGroundingPolicy" => {
                             builder = builder.set_contextual_grounding_policy(
-                                    crate::protocol_serde::shape_guardrail_contextual_grounding_policy_assessment::de_guardrail_contextual_grounding_policy_assessment(tokens, _value)?
+                                    crate::protocol_serde::shape_guardrail_contextual_grounding_policy_assessment::de_guardrail_contextual_grounding_policy_assessment(tokens, _value, depth + 1)?
                                 );
                         }
                         "automatedReasoningPolicy" => {
                             builder = builder.set_automated_reasoning_policy(
-                                    crate::protocol_serde::shape_guardrail_automated_reasoning_policy_assessment::de_guardrail_automated_reasoning_policy_assessment(tokens, _value)?
+                                    crate::protocol_serde::shape_guardrail_automated_reasoning_policy_assessment::de_guardrail_automated_reasoning_policy_assessment(tokens, _value, depth + 1)?
                                 );
                         }
                         "invocationMetrics" => {
                             builder = builder.set_invocation_metrics(
-                                crate::protocol_serde::shape_guardrail_invocation_metrics::de_guardrail_invocation_metrics(tokens, _value)?,
+                                crate::protocol_serde::shape_guardrail_invocation_metrics::de_guardrail_invocation_metrics(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "appliedGuardrailDetails" => {
                             builder = builder.set_applied_guardrail_details(
-                                crate::protocol_serde::shape_applied_guardrail_details::de_applied_guardrail_details(tokens, _value)?,
+                                crate::protocol_serde::shape_applied_guardrail_details::de_applied_guardrail_details(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

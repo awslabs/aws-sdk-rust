@@ -6,11 +6,17 @@
 pub struct Ec2ConfigurationState {
     /// <p>An object that contains details about the state of the Amazon EC2 scan mode.</p>
     pub scan_mode_state: ::std::option::Option<crate::types::Ec2ScanModeState>,
+    /// <p>An object that contains details about the state of the Amazon Inspector VM scanner.</p>
+    pub vm_scanner_state: ::std::option::Option<crate::types::VmScannerState>,
 }
 impl Ec2ConfigurationState {
     /// <p>An object that contains details about the state of the Amazon EC2 scan mode.</p>
     pub fn scan_mode_state(&self) -> ::std::option::Option<&crate::types::Ec2ScanModeState> {
         self.scan_mode_state.as_ref()
+    }
+    /// <p>An object that contains details about the state of the Amazon Inspector VM scanner.</p>
+    pub fn vm_scanner_state(&self) -> ::std::option::Option<&crate::types::VmScannerState> {
+        self.vm_scanner_state.as_ref()
     }
 }
 impl Ec2ConfigurationState {
@@ -25,6 +31,7 @@ impl Ec2ConfigurationState {
 #[non_exhaustive]
 pub struct Ec2ConfigurationStateBuilder {
     pub(crate) scan_mode_state: ::std::option::Option<crate::types::Ec2ScanModeState>,
+    pub(crate) vm_scanner_state: ::std::option::Option<crate::types::VmScannerState>,
 }
 impl Ec2ConfigurationStateBuilder {
     /// <p>An object that contains details about the state of the Amazon EC2 scan mode.</p>
@@ -41,10 +48,25 @@ impl Ec2ConfigurationStateBuilder {
     pub fn get_scan_mode_state(&self) -> &::std::option::Option<crate::types::Ec2ScanModeState> {
         &self.scan_mode_state
     }
+    /// <p>An object that contains details about the state of the Amazon Inspector VM scanner.</p>
+    pub fn vm_scanner_state(mut self, input: crate::types::VmScannerState) -> Self {
+        self.vm_scanner_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details about the state of the Amazon Inspector VM scanner.</p>
+    pub fn set_vm_scanner_state(mut self, input: ::std::option::Option<crate::types::VmScannerState>) -> Self {
+        self.vm_scanner_state = input;
+        self
+    }
+    /// <p>An object that contains details about the state of the Amazon Inspector VM scanner.</p>
+    pub fn get_vm_scanner_state(&self) -> &::std::option::Option<crate::types::VmScannerState> {
+        &self.vm_scanner_state
+    }
     /// Consumes the builder and constructs a [`Ec2ConfigurationState`](crate::types::Ec2ConfigurationState).
     pub fn build(self) -> crate::types::Ec2ConfigurationState {
         crate::types::Ec2ConfigurationState {
             scan_mode_state: self.scan_mode_state,
+            vm_scanner_state: self.vm_scanner_state,
         }
     }
 }

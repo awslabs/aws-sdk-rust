@@ -27,10 +27,16 @@ pub fn ser_data_set_date_range_filter_condition(
 pub(crate) fn de_data_set_date_range_filter_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSetDateRangeFilterCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,12 +48,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RangeMinimum" => {
                             builder = builder.set_range_minimum(
-                                crate::protocol_serde::shape_data_set_date_filter_value::de_data_set_date_filter_value(tokens, _value)?,
+                                crate::protocol_serde::shape_data_set_date_filter_value::de_data_set_date_filter_value(tokens, _value, depth + 1)?,
                             );
                         }
                         "RangeMaximum" => {
                             builder = builder.set_range_maximum(
-                                crate::protocol_serde::shape_data_set_date_filter_value::de_data_set_date_filter_value(tokens, _value)?,
+                                crate::protocol_serde::shape_data_set_date_filter_value::de_data_set_date_filter_value(tokens, _value, depth + 1)?,
                             );
                         }
                         "IncludeMinimum" => {

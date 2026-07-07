@@ -21,16 +21,31 @@ pub fn ser_scope(
     if let Some(var_6) = &input.compliance_resource_id {
         object.key("ComplianceResourceId").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.service_principals {
+        let mut array_8 = object.key("ServicePrincipals").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_scope<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Scope>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,7 +57,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ComplianceResourceTypes" => {
                             builder = builder.set_compliance_resource_types(
-                                crate::protocol_serde::shape_compliance_resource_types::de_compliance_resource_types(tokens, _value)?,
+                                crate::protocol_serde::shape_compliance_resource_types::de_compliance_resource_types(tokens, _value, depth + 1)?,
                             );
                         }
                         "TagKey" => {
@@ -65,6 +80,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "ServicePrincipals" => {
+                            builder = builder.set_service_principals(crate::protocol_serde::shape_service_principals::de_service_principals(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

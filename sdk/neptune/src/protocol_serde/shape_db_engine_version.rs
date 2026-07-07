@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_engine_version(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbEngineVersion, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbEngineVersion::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_db_engine_version(
             s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.neptune#DBEngineVersion$DefaultCharacterSet */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_character_set::de_character_set(&mut tag)
+                        crate::protocol_serde::shape_character_set::de_character_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_db_engine_version(
             s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.neptune#DBEngineVersion$SupportedCharacterSets */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
+                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -95,7 +99,7 @@ pub fn de_db_engine_version(
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.neptune#DBEngineVersion$ValidUpgradeTarget */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag)
+                        crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -105,7 +109,7 @@ pub fn de_db_engine_version(
             s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.neptune#DBEngineVersion$SupportedTimezones */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_supported_timezones_list::de_supported_timezones_list(&mut tag)
+                        crate::protocol_serde::shape_supported_timezones_list::de_supported_timezones_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -115,7 +119,7 @@ pub fn de_db_engine_version(
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.neptune#DBEngineVersion$ExportableLogTypes */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

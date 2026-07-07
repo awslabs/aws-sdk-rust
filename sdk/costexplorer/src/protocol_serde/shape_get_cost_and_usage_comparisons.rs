@@ -148,6 +148,8 @@ pub(crate) fn de_get_cost_and_usage_comparisons(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -155,12 +157,15 @@ pub(crate) fn de_get_cost_and_usage_comparisons(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CostAndUsageComparisons" => {
                     builder = builder.set_cost_and_usage_comparisons(
-                        crate::protocol_serde::shape_cost_and_usage_comparisons::de_cost_and_usage_comparisons(tokens, _value)?,
+                        crate::protocol_serde::shape_cost_and_usage_comparisons::de_cost_and_usage_comparisons(tokens, _value, depth + 1)?,
                     );
                 }
                 "TotalCostAndUsage" => {
-                    builder =
-                        builder.set_total_cost_and_usage(crate::protocol_serde::shape_comparison_metrics::de_comparison_metrics(tokens, _value)?);
+                    builder = builder.set_total_cost_and_usage(crate::protocol_serde::shape_comparison_metrics::de_comparison_metrics(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "NextPageToken" => {
                     builder = builder.set_next_page_token(

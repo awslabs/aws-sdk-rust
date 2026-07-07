@@ -59,48 +59,58 @@ pub fn ser_put_playback_configuration_input_input(
         crate::protocol_serde::shape_dash_configuration_for_put::ser_dash_configuration_for_put(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.insertion_mode {
-        object.key("InsertionMode").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.live_pre_roll_configuration {
+    if let Some(var_21) = &input.function_mapping {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("LivePreRollConfiguration").start_object();
-        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_23, var_22)?;
-        object_23.finish();
-    }
-    if let Some(var_24) = &input.manifest_processing_rules {
-        #[allow(unused_mut)]
-        let mut object_25 = object.key("ManifestProcessingRules").start_object();
-        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_25, var_24)?;
-        object_25.finish();
-    }
-    if let Some(var_26) = &input.name {
-        object.key("Name").string(var_26.as_str());
-    }
-    if let Some(var_27) = &input.personalization_threshold_seconds {
-        object.key("PersonalizationThresholdSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_27).into()),
-        );
-    }
-    if let Some(var_28) = &input.slate_ad_url {
-        object.key("SlateAdUrl").string(var_28.as_str());
-    }
-    if let Some(var_29) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_30 = object.key("tags").start_object();
-        for (key_31, value_32) in var_29 {
+        let mut object_22 = object.key("FunctionMapping").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_30.key(key_31.as_str()).string(value_32.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_30.finish();
+        object_22.finish();
     }
-    if let Some(var_33) = &input.transcode_profile_name {
-        object.key("TranscodeProfileName").string(var_33.as_str());
+    if let Some(var_25) = &input.insertion_mode {
+        object.key("InsertionMode").string(var_25.as_str());
     }
-    if let Some(var_34) = &input.video_content_source_url {
-        object.key("VideoContentSourceUrl").string(var_34.as_str());
+    if let Some(var_26) = &input.live_pre_roll_configuration {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("LivePreRollConfiguration").start_object();
+        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_27, var_26)?;
+        object_27.finish();
+    }
+    if let Some(var_28) = &input.manifest_processing_rules {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("ManifestProcessingRules").start_object();
+        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_29, var_28)?;
+        object_29.finish();
+    }
+    if let Some(var_30) = &input.name {
+        object.key("Name").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.personalization_threshold_seconds {
+        object.key("PersonalizationThresholdSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
+        );
+    }
+    if let Some(var_32) = &input.slate_ad_url {
+        object.key("SlateAdUrl").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("tags").start_object();
+        for (key_35, value_36) in var_33 {
+            {
+                object_34.key(key_35.as_str()).string(value_36.as_str());
+            }
+        }
+        object_34.finish();
+    }
+    if let Some(var_37) = &input.transcode_profile_name {
+        object.key("TranscodeProfileName").string(var_37.as_str());
+    }
+    if let Some(var_38) = &input.video_content_source_url {
+        object.key("VideoContentSourceUrl").string(var_38.as_str());
     }
     Ok(())
 }

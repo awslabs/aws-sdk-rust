@@ -80,5 +80,8 @@ pub fn ser_create_session_input_input(
     if let Some(var_23) = &input.request_origin {
         object.key("RequestOrigin").string(var_23.as_str());
     }
+    if let Some(var_24) = &input.session_type {
+        object.key("SessionType").string(var_24.as_str());
+    }
     Ok(())
 }

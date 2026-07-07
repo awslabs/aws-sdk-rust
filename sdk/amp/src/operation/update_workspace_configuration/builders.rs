@@ -170,4 +170,32 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
     pub fn get_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         self.inner.get_retention_period_in_days()
     }
+    /// <p>Specifies the time window in seconds for accepting out of order samples. Out of order samples older than this window are rejected.</p>
+    pub fn out_of_order_time_window_in_seconds(mut self, input: i32) -> Self {
+        self.inner = self.inner.out_of_order_time_window_in_seconds(input);
+        self
+    }
+    /// <p>Specifies the time window in seconds for accepting out of order samples. Out of order samples older than this window are rejected.</p>
+    pub fn set_out_of_order_time_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_out_of_order_time_window_in_seconds(input);
+        self
+    }
+    /// <p>Specifies the time window in seconds for accepting out of order samples. Out of order samples older than this window are rejected.</p>
+    pub fn get_out_of_order_time_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_out_of_order_time_window_in_seconds()
+    }
+    /// <p>Specifies the duration in seconds to offset rule evaluation queries into the past. This allows ingested samples to be available before rule evaluation.</p>
+    pub fn rule_query_offset_in_seconds(mut self, input: i32) -> Self {
+        self.inner = self.inner.rule_query_offset_in_seconds(input);
+        self
+    }
+    /// <p>Specifies the duration in seconds to offset rule evaluation queries into the past. This allows ingested samples to be available before rule evaluation.</p>
+    pub fn set_rule_query_offset_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_rule_query_offset_in_seconds(input);
+        self
+    }
+    /// <p>Specifies the duration in seconds to offset rule evaluation queries into the past. This allows ingested samples to be available before rule evaluation.</p>
+    pub fn get_rule_query_offset_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_rule_query_offset_in_seconds()
+    }
 }

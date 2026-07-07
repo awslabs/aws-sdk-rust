@@ -19,13 +19,17 @@ pub fn ser_s3_access_grants_scope_union(
 
 pub fn de_s3_access_grants_scope_union(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::S3AccessGrantsScopeUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     let mut base: Option<crate::types::S3AccessGrantsScopeUnion> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReadWriteAccess") /* ReadWriteAccess com.amazonaws.redshift#S3AccessGrantsScopeUnion$ReadWriteAccess */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_read_write_access::de_read_write_access(&mut tag)
+                    crate::protocol_serde::shape_read_write_access::de_read_write_access(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::S3AccessGrantsScopeUnion::ReadWriteAccess(tmp));

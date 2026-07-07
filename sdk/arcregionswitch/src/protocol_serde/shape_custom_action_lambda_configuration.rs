@@ -32,21 +32,34 @@ pub fn ser_custom_action_lambda_configuration(
 
 pub(crate) fn de_custom_action_lambda_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CustomActionLambdaConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::CustomActionLambdaConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::CustomActionLambdaConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "timeoutMinutes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_timeout_minutes(Some(decoder.integer()?)))
             })?,
-            "lambdas" => builder.set_lambdas(Some(crate::protocol_serde::shape_lambda_list::de_lambda_list(decoder)?)),
+            "lambdas" => builder.set_lambdas(Some(crate::protocol_serde::shape_lambda_list::de_lambda_list(decoder, depth + 1)?)),
             "retryIntervalMinutes" => builder.set_retry_interval_minutes(Some(decoder.float()?)),
             "regionToRun" => builder.set_region_to_run(Some(decoder.string().map(|s| crate::types::RegionToRunIn::from(s.as_ref()))?)),
             "ungraceful" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_ungraceful(Some(crate::protocol_serde::shape_lambda_ungraceful::de_lambda_ungraceful(decoder)?)))
+                Ok(
+                    builder.set_ungraceful(Some(crate::protocol_serde::shape_lambda_ungraceful::de_lambda_ungraceful(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             _ => {
                 decoder.skip()?;
@@ -66,13 +79,13 @@ pub(crate) fn de_custom_action_lambda_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

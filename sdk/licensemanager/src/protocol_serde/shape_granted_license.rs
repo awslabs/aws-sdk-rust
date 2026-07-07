@@ -2,10 +2,16 @@
 pub(crate) fn de_granted_license<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GrantedLicense>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,7 @@ where
                             );
                         }
                         "Issuer" => {
-                            builder = builder.set_issuer(crate::protocol_serde::shape_issuer_details::de_issuer_details(tokens, _value)?);
+                            builder = builder.set_issuer(crate::protocol_serde::shape_issuer_details::de_issuer_details(tokens, _value, depth + 1)?);
                         }
                         "HomeRegion" => {
                             builder = builder.set_home_region(
@@ -61,7 +67,8 @@ where
                             );
                         }
                         "Validity" => {
-                            builder = builder.set_validity(crate::protocol_serde::shape_datetime_range::de_datetime_range(tokens, _value)?);
+                            builder =
+                                builder.set_validity(crate::protocol_serde::shape_datetime_range::de_datetime_range(tokens, _value, depth + 1)?);
                         }
                         "Beneficiary" => {
                             builder = builder.set_beneficiary(
@@ -71,15 +78,23 @@ where
                             );
                         }
                         "Entitlements" => {
-                            builder = builder.set_entitlements(crate::protocol_serde::shape_entitlement_list::de_entitlement_list(tokens, _value)?);
+                            builder = builder.set_entitlements(crate::protocol_serde::shape_entitlement_list::de_entitlement_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ConsumptionConfiguration" => {
                             builder = builder.set_consumption_configuration(
-                                crate::protocol_serde::shape_consumption_configuration::de_consumption_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_consumption_configuration::de_consumption_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "LicenseMetadata" => {
-                            builder = builder.set_license_metadata(crate::protocol_serde::shape_metadata_list::de_metadata_list(tokens, _value)?);
+                            builder = builder.set_license_metadata(crate::protocol_serde::shape_metadata_list::de_metadata_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CreateTime" => {
                             builder = builder.set_create_time(
@@ -96,8 +111,11 @@ where
                             );
                         }
                         "ReceivedMetadata" => {
-                            builder =
-                                builder.set_received_metadata(crate::protocol_serde::shape_received_metadata::de_received_metadata(tokens, _value)?);
+                            builder = builder.set_received_metadata(crate::protocol_serde::shape_received_metadata::de_received_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

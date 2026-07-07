@@ -3,17 +3,26 @@ pub fn ser_update_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_configuration::UpdateConfigurationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.ec2_configuration {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("ec2Configuration").start_object();
-        crate::protocol_serde::shape_ec2_configuration::ser_ec2_configuration(&mut object_2, var_1)?;
-        object_2.finish();
+    if let Some(var_1) = &input.account_id {
+        object.key("accountId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.ecr_configuration {
+    if let Some(var_2) = &input.ec2_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ecrConfiguration").start_object();
-        crate::protocol_serde::shape_ecr_configuration::ser_ecr_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("ec2Configuration").start_object();
+        crate::protocol_serde::shape_ec2_configuration::ser_ec2_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.ecr_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ecrConfiguration").start_object();
+        crate::protocol_serde::shape_ecr_configuration::ser_ecr_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.update_configuration_inheritance {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("updateConfigurationInheritance").start_object();
+        crate::protocol_serde::shape_update_configuration_inheritance::ser_update_configuration_inheritance(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

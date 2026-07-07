@@ -15,7 +15,11 @@ pub fn ser_tracking_options(
 #[allow(clippy::needless_question_mark)]
 pub fn de_tracking_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TrackingOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TrackingOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {

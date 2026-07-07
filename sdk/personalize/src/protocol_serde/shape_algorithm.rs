@@ -2,10 +2,16 @@
 pub(crate) fn de_algorithm<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Algorithm>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,20 +36,34 @@ where
                             );
                         }
                         "algorithmImage" => {
-                            builder = builder.set_algorithm_image(crate::protocol_serde::shape_algorithm_image::de_algorithm_image(tokens, _value)?);
+                            builder = builder.set_algorithm_image(crate::protocol_serde::shape_algorithm_image::de_algorithm_image(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "defaultHyperParameters" => {
-                            builder = builder
-                                .set_default_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
+                            builder = builder.set_default_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "defaultHyperParameterRanges" => {
                             builder = builder.set_default_hyper_parameter_ranges(
-                                crate::protocol_serde::shape_default_hyper_parameter_ranges::de_default_hyper_parameter_ranges(tokens, _value)?,
+                                crate::protocol_serde::shape_default_hyper_parameter_ranges::de_default_hyper_parameter_ranges(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "defaultResourceConfig" => {
-                            builder = builder
-                                .set_default_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens, _value)?);
+                            builder = builder.set_default_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "trainingInputMode" => {
                             builder = builder.set_training_input_mode(

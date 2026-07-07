@@ -77,6 +77,8 @@ pub use crate::types::_namespace_provider_properties::NamespaceProviderPropertie
 
 pub use crate::types::_customer_profiles_integration_config::CustomerProfilesIntegrationConfigBuilder;
 
+pub use crate::types::_matching_config::MatchingConfigBuilder;
+
 pub use crate::types::_provider_schema_attribute::ProviderSchemaAttributeBuilder;
 
 pub use crate::types::_rule::RuleBuilder;

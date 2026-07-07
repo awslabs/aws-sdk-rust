@@ -45,10 +45,16 @@ pub fn ser_aws_iam_group_details(
 pub(crate) fn de_aws_iam_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsIamGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,7 +67,9 @@ where
                         "AttachedManagedPolicies" => {
                             builder = builder.set_attached_managed_policies(
                                 crate::protocol_serde::shape_aws_iam_attached_managed_policy_list::de_aws_iam_attached_managed_policy_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -88,7 +96,7 @@ where
                         }
                         "GroupPolicyList" => {
                             builder = builder.set_group_policy_list(
-                                crate::protocol_serde::shape_aws_iam_group_policy_list::de_aws_iam_group_policy_list(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_iam_group_policy_list::de_aws_iam_group_policy_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Path" => {

@@ -116,22 +116,26 @@ pub(crate) fn de_get_snapshots(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SnapShotTimeFilter" => {
-                    builder = builder.set_snap_shot_time_filter(crate::protocol_serde::shape_time_range::de_time_range(tokens, _value)?);
+                    builder = builder.set_snap_shot_time_filter(crate::protocol_serde::shape_time_range::de_time_range(tokens, _value, depth + 1)?);
                 }
                 "SnapshotsDataHeader" => {
                     builder = builder.set_snapshots_data_header(
-                        crate::protocol_serde::shape_snapshots_data_header_fields::de_snapshots_data_header_fields(tokens, _value)?,
+                        crate::protocol_serde::shape_snapshots_data_header_fields::de_snapshots_data_header_fields(tokens, _value, depth + 1)?,
                     );
                 }
                 "SnapshotsData" => {
                     builder = builder.set_snapshots_data(crate::protocol_serde::shape_snapshots_data_records::de_snapshots_data_records(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NextToken" => {

@@ -2,10 +2,16 @@
 pub(crate) fn de_routing_classifier_trace<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RoutingClassifierTrace>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,23 +37,25 @@ where
                     }
                     variant = match key.as_ref() {
                         "invocationInput" => Some(crate::types::RoutingClassifierTrace::InvocationInput(
-                            crate::protocol_serde::shape_invocation_input::de_invocation_input(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_invocation_input::de_invocation_input(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'invocationInput' cannot be null")
                             })?,
                         )),
                         "observation" => Some(crate::types::RoutingClassifierTrace::Observation(
-                            crate::protocol_serde::shape_observation::de_observation(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_observation::de_observation(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'observation' cannot be null")
                             })?,
                         )),
                         "modelInvocationInput" => Some(crate::types::RoutingClassifierTrace::ModelInvocationInput(
-                            crate::protocol_serde::shape_model_invocation_input::de_model_invocation_input(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'modelInvocationInput' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_model_invocation_input::de_model_invocation_input(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'modelInvocationInput' cannot be null"),
+                            )?,
                         )),
                         "modelInvocationOutput" => Some(crate::types::RoutingClassifierTrace::ModelInvocationOutput(
                             crate::protocol_serde::shape_routing_classifier_model_invocation_output::de_routing_classifier_model_invocation_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'modelInvocationOutput' cannot be null")

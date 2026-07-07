@@ -2,10 +2,16 @@
 pub(crate) fn de_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Result>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,9 @@ where
                         }
                         "analysisStatus" => {
                             builder = builder.set_analysis_status(crate::protocol_serde::shape_analysis_status_union::de_analysis_status_union(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "statusMessage" => {
@@ -36,7 +44,11 @@ where
                         }
                         "antipatternReportResultList" => {
                             builder = builder.set_antipattern_report_result_list(
-                                crate::protocol_serde::shape_antipattern_report_result_list::de_antipattern_report_result_list(tokens, _value)?,
+                                crate::protocol_serde::shape_antipattern_report_result_list::de_antipattern_report_result_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_datastore_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DatastoreProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,20 +70,47 @@ where
                             );
                         }
                         "SseConfiguration" => {
-                            builder =
-                                builder.set_sse_configuration(crate::protocol_serde::shape_sse_configuration::de_sse_configuration(tokens, _value)?);
+                            builder = builder.set_sse_configuration(crate::protocol_serde::shape_sse_configuration::de_sse_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PreloadDataConfig" => {
-                            builder = builder
-                                .set_preload_data_config(crate::protocol_serde::shape_preload_data_config::de_preload_data_config(tokens, _value)?);
+                            builder = builder.set_preload_data_config(crate::protocol_serde::shape_preload_data_config::de_preload_data_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IdentityProviderConfiguration" => {
                             builder = builder.set_identity_provider_configuration(
-                                crate::protocol_serde::shape_identity_provider_configuration::de_identity_provider_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_identity_provider_configuration::de_identity_provider_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ErrorCause" => {
-                            builder = builder.set_error_cause(crate::protocol_serde::shape_error_cause::de_error_cause(tokens, _value)?);
+                            builder = builder.set_error_cause(crate::protocol_serde::shape_error_cause::de_error_cause(tokens, _value, depth + 1)?);
+                        }
+                        "NlpConfiguration" => {
+                            builder = builder.set_nlp_configuration(crate::protocol_serde::shape_nlp_configuration::de_nlp_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "AnalyticsConfiguration" => {
+                            builder = builder.set_analytics_configuration(
+                                crate::protocol_serde::shape_analytics_configuration::de_analytics_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "ProfileConfiguration" => {
+                            builder = builder.set_profile_configuration(
+                                crate::protocol_serde::shape_profile_configuration::de_profile_configuration(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

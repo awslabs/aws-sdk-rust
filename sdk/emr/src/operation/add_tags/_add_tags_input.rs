@@ -8,6 +8,8 @@ pub struct AddTagsInput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being tagged is a session-scoped resource.</p>
+    pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl AddTagsInput {
     /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
@@ -19,6 +21,10 @@ impl AddTagsInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being tagged is a session-scoped resource.</p>
+    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+        self.cluster_id.as_deref()
     }
 }
 impl AddTagsInput {
@@ -34,6 +40,7 @@ impl AddTagsInput {
 pub struct AddTagsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl AddTagsInputBuilder {
     /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
@@ -71,11 +78,26 @@ impl AddTagsInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being tagged is a session-scoped resource.</p>
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being tagged is a session-scoped resource.</p>
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster_id = input;
+        self
+    }
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being tagged is a session-scoped resource.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::add_tags::AddTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_tags::AddTagsInput {
             resource_id: self.resource_id,
             tags: self.tags,
+            cluster_id: self.cluster_id,
         })
     }
 }

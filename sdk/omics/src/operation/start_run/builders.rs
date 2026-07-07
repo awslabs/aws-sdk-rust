@@ -422,6 +422,20 @@ impl StartRunFluentBuilder {
     pub fn get_networking_mode(&self) -> &::std::option::Option<crate::types::NetworkingMode> {
         self.inner.get_networking_mode()
     }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn scratch_storage_mode(mut self, input: crate::types::ScratchStorageMode) -> Self {
+        self.inner = self.inner.scratch_storage_mode(input);
+        self
+    }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn set_scratch_storage_mode(mut self, input: ::std::option::Option<crate::types::ScratchStorageMode>) -> Self {
+        self.inner = self.inner.set_scratch_storage_mode(input);
+        self
+    }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn get_scratch_storage_mode(&self) -> &::std::option::Option<crate::types::ScratchStorageMode> {
+        self.inner.get_scratch_storage_mode()
+    }
     /// <p>Optional configuration name to use for the workflow run.</p>
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_name(input.into());
@@ -435,5 +449,19 @@ impl StartRunFluentBuilder {
     /// <p>Optional configuration name to use for the workflow run.</p>
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_name()
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.inner = self.inner.engine_settings(input);
+        self
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.inner = self.inner.set_engine_settings(input);
+        self
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        self.inner.get_engine_settings()
     }
 }

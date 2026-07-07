@@ -158,6 +158,8 @@ pub(crate) fn de_submit_registration_version(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -193,7 +195,11 @@ pub(crate) fn de_submit_registration_version(
                 }
                 "RegistrationVersionStatusHistory" => {
                     builder = builder.set_registration_version_status_history(
-                        crate::protocol_serde::shape_registration_version_status_history::de_registration_version_status_history(tokens, _value)?,
+                        crate::protocol_serde::shape_registration_version_status_history::de_registration_version_status_history(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "AwsReview" => {

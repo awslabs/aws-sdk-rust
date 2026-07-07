@@ -138,6 +138,8 @@ impl Client {
 
 mod batch_create_topic_reviewed_answer;
 
+mod batch_delete_knowledge_base;
+
 mod batch_delete_topic_reviewed_answer;
 
 mod cancel_ingestion;
@@ -147,6 +149,8 @@ mod create_account_customization;
 mod create_account_subscription;
 
 mod create_action_connector;
+
+mod create_agent;
 
 mod create_analysis;
 
@@ -159,6 +163,8 @@ mod create_dashboard;
 mod create_data_set;
 
 mod create_data_source;
+
+mod create_flow;
 
 mod create_folder;
 
@@ -174,9 +180,13 @@ mod create_ingestion;
 
 mod create_namespace;
 
+mod create_o_auth_client_application;
+
 mod create_refresh_schedule;
 
 mod create_role_membership;
+
+mod create_space;
 
 mod create_template;
 
@@ -227,6 +237,8 @@ mod delete_account_subscription;
 
 mod delete_action_connector;
 
+mod delete_agent;
+
 mod delete_analysis;
 
 mod delete_brand;
@@ -245,6 +257,8 @@ mod delete_data_source;
 
 mod delete_default_q_business_application;
 
+mod delete_flow;
+
 mod delete_folder;
 
 mod delete_folder_membership;
@@ -257,13 +271,19 @@ mod delete_iam_policy_assignment;
 
 mod delete_identity_propagation_config;
 
+mod delete_knowledge_base;
+
 mod delete_namespace;
+
+mod delete_o_auth_client_application;
 
 mod delete_refresh_schedule;
 
 mod delete_role_custom_permission;
 
 mod delete_role_membership;
+
+mod delete_space;
 
 mod delete_template;
 
@@ -296,6 +316,10 @@ mod describe_account_subscription;
 mod describe_action_connector;
 
 mod describe_action_connector_permissions;
+
+mod describe_agent;
+
+mod describe_agent_permissions;
 
 mod describe_analysis;
 
@@ -341,6 +365,8 @@ mod describe_data_source_permissions;
 
 mod describe_default_q_business_application;
 
+mod describe_flow;
+
 mod describe_folder;
 
 mod describe_folder_permissions;
@@ -359,7 +385,13 @@ mod describe_ip_restriction;
 
 mod describe_key_registration;
 
+mod describe_knowledge_base;
+
+mod describe_knowledge_base_permissions;
+
 mod describe_namespace;
+
+mod describe_o_auth_client_application;
 
 mod describe_q_personalization_configuration;
 
@@ -370,6 +402,10 @@ mod describe_refresh_schedule;
 mod describe_role_custom_permission;
 
 mod describe_self_upgrade_configuration;
+
+mod describe_space;
+
+mod describe_space_permissions;
 
 mod describe_template;
 
@@ -415,6 +451,8 @@ mod get_session_embed_url;
 
 mod list_action_connectors;
 
+mod list_agents;
+
 mod list_analyses;
 
 mod list_asset_bundle_export_jobs;
@@ -453,13 +491,21 @@ mod list_identity_propagation_configs;
 
 mod list_ingestions;
 
+mod list_knowledge_bases;
+
 mod list_namespaces;
+
+mod list_o_auth_client_applications;
 
 mod list_refresh_schedules;
 
 mod list_role_memberships;
 
 mod list_self_upgrades;
+
+mod list_space_resources;
+
+mod list_spaces;
 
 mod list_tags_for_resource;
 
@@ -485,6 +531,8 @@ mod list_user_groups;
 
 mod list_users;
 
+mod list_users_index_capacity;
+
 mod list_vpc_connections;
 
 mod predict_qa_results;
@@ -496,6 +544,8 @@ mod register_user;
 mod restore_analysis;
 
 mod search_action_connectors;
+
+mod search_agents;
 
 mod search_analyses;
 
@@ -510,6 +560,10 @@ mod search_flows;
 mod search_folders;
 
 mod search_groups;
+
+mod search_knowledge_bases;
+
+mod search_spaces;
 
 mod search_topics;
 
@@ -536,6 +590,10 @@ mod update_account_settings;
 mod update_action_connector;
 
 mod update_action_connector_permissions;
+
+mod update_agent;
+
+mod update_agent_permissions;
 
 mod update_analysis;
 
@@ -571,6 +629,8 @@ mod update_data_source_permissions;
 
 mod update_default_q_business_application;
 
+mod update_flow;
+
 mod update_flow_permissions;
 
 mod update_folder;
@@ -587,6 +647,10 @@ mod update_ip_restriction;
 
 mod update_key_registration;
 
+mod update_knowledge_base_permissions;
+
+mod update_o_auth_client_application;
+
 mod update_public_sharing_settings;
 
 mod update_q_personalization_configuration;
@@ -600,6 +664,12 @@ mod update_role_custom_permission;
 mod update_self_upgrade;
 
 mod update_self_upgrade_configuration;
+
+mod update_space;
+
+mod update_space_permissions;
+
+mod update_space_resources;
 
 mod update_spice_capacity_configuration;
 

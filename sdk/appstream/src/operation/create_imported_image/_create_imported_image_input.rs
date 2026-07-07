@@ -5,8 +5,10 @@
 pub struct CreateImportedImageInput {
     /// <p>A unique name for the imported image. The name must be between 1 and 100 characters and can contain letters, numbers, underscores, periods, and hyphens.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.</p>
+    /// <p>The ID of the EC2 AMI to import.</p>
     pub source_ami_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Workspaces Image to import.</p>
+    pub workspace_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that allows WorkSpaces Applications to access your AMI. The role must have permissions to modify image attributes and describe images, with a trust relationship allowing appstream.amazonaws.com to assume the role.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the imported image. The description must match approved regex patterns and can be up to 256 characters.</p>
@@ -29,9 +31,13 @@ impl CreateImportedImageInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.</p>
+    /// <p>The ID of the EC2 AMI to import.</p>
     pub fn source_ami_id(&self) -> ::std::option::Option<&str> {
         self.source_ami_id.as_deref()
+    }
+    /// <p>The ID of the Workspaces Image to import.</p>
+    pub fn workspace_image_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_image_id.as_deref()
     }
     /// <p>The ARN of the IAM role that allows WorkSpaces Applications to access your AMI. The role must have permissions to modify image attributes and describe images, with a trust relationship allowing appstream.amazonaws.com to assume the role.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
@@ -81,6 +87,7 @@ impl CreateImportedImageInput {
 pub struct CreateImportedImageInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source_ami_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -106,23 +113,35 @@ impl CreateImportedImageInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.</p>
-    /// This field is required.
+    /// <p>The ID of the EC2 AMI to import.</p>
     pub fn source_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_ami_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.</p>
+    /// <p>The ID of the EC2 AMI to import.</p>
     pub fn set_source_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_ami_id = input;
         self
     }
-    /// <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.</p>
+    /// <p>The ID of the EC2 AMI to import.</p>
     pub fn get_source_ami_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_ami_id
     }
+    /// <p>The ID of the Workspaces Image to import.</p>
+    pub fn workspace_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Workspaces Image to import.</p>
+    pub fn set_workspace_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_image_id = input;
+        self
+    }
+    /// <p>The ID of the Workspaces Image to import.</p>
+    pub fn get_workspace_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_image_id
+    }
     /// <p>The ARN of the IAM role that allows WorkSpaces Applications to access your AMI. The role must have permissions to modify image attributes and describe images, with a trust relationship allowing appstream.amazonaws.com to assume the role.</p>
-    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -254,6 +273,7 @@ impl CreateImportedImageInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_imported_image::CreateImportedImageInput {
             name: self.name,
             source_ami_id: self.source_ami_id,
+            workspace_image_id: self.workspace_image_id,
             iam_role_arn: self.iam_role_arn,
             description: self.description,
             display_name: self.display_name,

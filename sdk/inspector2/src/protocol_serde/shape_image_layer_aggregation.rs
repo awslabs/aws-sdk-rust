@@ -39,11 +39,71 @@ pub fn ser_image_layer_aggregation(
         }
         array_10.finish();
     }
-    if let Some(var_13) = &input.sort_order {
-        object.key("sortOrder").string(var_13.as_str());
+    if let Some(var_13) = &input.cloud_providers {
+        let mut array_14 = object.key("cloudProviders").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
     }
-    if let Some(var_14) = &input.sort_by {
-        object.key("sortBy").string(var_14.as_str());
+    if let Some(var_17) = &input.cloud_account_ids {
+        let mut array_18 = object.key("cloudAccountIds").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_20, item_19)?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
+    }
+    if let Some(var_21) = &input.cloud_org_ids {
+        let mut array_22 = object.key("cloudOrgIds").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
+    }
+    if let Some(var_25) = &input.cloud_regions {
+        let mut array_26 = object.key("cloudRegions").start_array();
+        for item_27 in var_25 {
+            {
+                #[allow(unused_mut)]
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_28, item_27)?;
+                object_28.finish();
+            }
+        }
+        array_26.finish();
+    }
+    if let Some(var_29) = &input.cloud_partitions {
+        let mut array_30 = object.key("cloudPartitions").start_array();
+        for item_31 in var_29 {
+            {
+                #[allow(unused_mut)]
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_32, item_31)?;
+                object_32.finish();
+            }
+        }
+        array_30.finish();
+    }
+    if let Some(var_33) = &input.sort_order {
+        object.key("sortOrder").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.sort_by {
+        object.key("sortBy").string(var_34.as_str());
     }
     Ok(())
 }

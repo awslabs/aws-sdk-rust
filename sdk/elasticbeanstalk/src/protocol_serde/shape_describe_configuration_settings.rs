@@ -74,6 +74,8 @@ pub fn de_describe_configuration_settings(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeConfigurationSettingsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeConfigurationSettingsResponse got {start_el:?}"
@@ -91,7 +93,7 @@ pub fn de_describe_configuration_settings(
             s if s.matches("ConfigurationSettings") /* ConfigurationSettings com.amazonaws.elasticbeanstalk.synthetic#DescribeConfigurationSettingsOutput$ConfigurationSettings */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_configuration_settings_description_list::de_configuration_settings_description_list(&mut tag)
+                        crate::protocol_serde::shape_configuration_settings_description_list::de_configuration_settings_description_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

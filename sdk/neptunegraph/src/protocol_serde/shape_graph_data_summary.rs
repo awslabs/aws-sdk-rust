@@ -2,10 +2,16 @@
 pub(crate) fn de_graph_data_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GraphDataSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,10 +50,10 @@ where
                             );
                         }
                         "nodeLabels" => {
-                            builder = builder.set_node_labels(crate::protocol_serde::shape_node_labels::de_node_labels(tokens, _value)?);
+                            builder = builder.set_node_labels(crate::protocol_serde::shape_node_labels::de_node_labels(tokens, _value, depth + 1)?);
                         }
                         "edgeLabels" => {
-                            builder = builder.set_edge_labels(crate::protocol_serde::shape_edge_labels::de_edge_labels(tokens, _value)?);
+                            builder = builder.set_edge_labels(crate::protocol_serde::shape_edge_labels::de_edge_labels(tokens, _value, depth + 1)?);
                         }
                         "numNodeProperties" => {
                             builder = builder.set_num_node_properties(
@@ -65,12 +71,16 @@ where
                         }
                         "nodeProperties" => {
                             builder = builder.set_node_properties(crate::protocol_serde::shape_long_valued_map_list::de_long_valued_map_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "edgeProperties" => {
                             builder = builder.set_edge_properties(crate::protocol_serde::shape_long_valued_map_list::de_long_valued_map_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "totalNodePropertyValues" => {
@@ -88,10 +98,18 @@ where
                             );
                         }
                         "nodeStructures" => {
-                            builder = builder.set_node_structures(crate::protocol_serde::shape_node_structures::de_node_structures(tokens, _value)?);
+                            builder = builder.set_node_structures(crate::protocol_serde::shape_node_structures::de_node_structures(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "edgeStructures" => {
-                            builder = builder.set_edge_structures(crate::protocol_serde::shape_edge_structures::de_edge_structures(tokens, _value)?);
+                            builder = builder.set_edge_structures(crate::protocol_serde::shape_edge_structures::de_edge_structures(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

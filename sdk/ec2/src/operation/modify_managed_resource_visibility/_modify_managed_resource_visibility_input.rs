@@ -48,6 +48,7 @@ impl ModifyManagedResourceVisibilityInputBuilder {
         &self.dry_run
     }
     /// <p>The default visibility setting for managed resources. Valid values: <code>hidden</code> | <code>visible</code>.</p>
+    /// This field is required.
     pub fn default_visibility(mut self, input: crate::types::ManagedResourceDefaultVisibility) -> Self {
         self.default_visibility = ::std::option::Option::Some(input);
         self

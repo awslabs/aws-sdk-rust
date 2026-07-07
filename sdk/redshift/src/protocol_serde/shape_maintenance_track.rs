@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_maintenance_track(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MaintenanceTrack, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MaintenanceTrack::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_maintenance_track(
             s if s.matches("UpdateTargets") /* UpdateTargets com.amazonaws.redshift#MaintenanceTrack$UpdateTargets */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_eligible_tracks_to_update_list::de_eligible_tracks_to_update_list(&mut tag)
+                        crate::protocol_serde::shape_eligible_tracks_to_update_list::de_eligible_tracks_to_update_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

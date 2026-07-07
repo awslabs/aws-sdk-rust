@@ -249,6 +249,22 @@ pub fn de_respond_to_auth_challenge_http_error(
             }
             tmp
         }),
+        "OperationNotEnabledException" => crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::OperationNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotEnabledExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_not_enabled_exception::de_operation_not_enabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "PasswordHistoryPolicyViolationException" => {
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::PasswordHistoryPolicyViolationException({
                 #[allow(unused_mut)]
@@ -440,37 +456,41 @@ pub(crate) fn de_respond_to_auth_challenge(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ChallengeName" => {
-                    builder = builder.set_challenge_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ChallengeNameType::from(u.as_ref())))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ChallengeName" => {
+                        builder = builder.set_challenge_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::ChallengeNameType::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "Session" => {
+                        builder = builder.set_session(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ChallengeParameters" => {
+                        builder = builder.set_challenge_parameters(
+                            crate::protocol_serde::shape_challenge_parameters_type::de_challenge_parameters_type(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "AuthenticationResult" => {
+                        builder = builder.set_authentication_result(
+                            crate::protocol_serde::shape_authentication_result_type::de_authentication_result_type(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "Session" => {
-                    builder = builder.set_session(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ChallengeParameters" => {
-                    builder = builder.set_challenge_parameters(crate::protocol_serde::shape_challenge_parameters_type::de_challenge_parameters_type(
-                        tokens, _value,
-                    )?);
-                }
-                "AuthenticationResult" => {
-                    builder = builder.set_authentication_result(
-                        crate::protocol_serde::shape_authentication_result_type::de_authentication_result_type(tokens, _value)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

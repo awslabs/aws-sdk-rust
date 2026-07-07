@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_get_object_attributes_parts(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::GetObjectAttributesParts, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::GetObjectAttributesParts::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -84,7 +88,7 @@ pub fn de_get_object_attributes_parts(
                         Result::<::std::vec::Vec::<crate::types::ObjectPart>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.parts.take().unwrap_or_default();
                             list_7.push(
-                                crate::protocol_serde::shape_object_part::de_object_part(&mut tag)
+                                crate::protocol_serde::shape_object_part::de_object_part(&mut tag, depth + 1)
                                 ?
                             );
                             list_7

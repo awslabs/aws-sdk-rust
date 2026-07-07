@@ -24,6 +24,8 @@ pub struct PlacementGroup {
     pub linked_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The service provider that manages the Placement Group.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
+    /// <p>The ID of the parent placement group.</p>
+    pub parent_group_id: ::std::option::Option<::std::string::String>,
 }
 impl PlacementGroup {
     /// <p>The name of the placement group.</p>
@@ -68,6 +70,10 @@ impl PlacementGroup {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
+    /// <p>The ID of the parent placement group.</p>
+    pub fn parent_group_id(&self) -> ::std::option::Option<&str> {
+        self.parent_group_id.as_deref()
+    }
 }
 impl PlacementGroup {
     /// Creates a new builder-style object to manufacture [`PlacementGroup`](crate::types::PlacementGroup).
@@ -90,6 +96,7 @@ pub struct PlacementGroupBuilder {
     pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
     pub(crate) linked_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
+    pub(crate) parent_group_id: ::std::option::Option<::std::string::String>,
 }
 impl PlacementGroupBuilder {
     /// <p>The name of the placement group.</p>
@@ -238,6 +245,20 @@ impl PlacementGroupBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }
+    /// <p>The ID of the parent placement group.</p>
+    pub fn parent_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the parent placement group.</p>
+    pub fn set_parent_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_group_id = input;
+        self
+    }
+    /// <p>The ID of the parent placement group.</p>
+    pub fn get_parent_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_group_id
+    }
     /// Consumes the builder and constructs a [`PlacementGroup`](crate::types::PlacementGroup).
     pub fn build(self) -> crate::types::PlacementGroup {
         crate::types::PlacementGroup {
@@ -251,6 +272,7 @@ impl PlacementGroupBuilder {
             spread_level: self.spread_level,
             linked_group_id: self.linked_group_id,
             operator: self.operator,
+            parent_group_id: self.parent_group_id,
         }
     }
 }

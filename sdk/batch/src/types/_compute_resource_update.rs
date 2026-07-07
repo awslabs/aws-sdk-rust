@@ -9,7 +9,7 @@ pub struct ComputeResourceUpdate {
     /// </note>
     pub minv_cpus: ::std::option::Option<i32>,
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p><note>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     /// </note>
     pub maxv_cpus: ::std::option::Option<i32>,
     /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p><note>
@@ -42,6 +42,17 @@ pub struct ComputeResourceUpdate {
     /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
+    /// BEST_FIT_PROGRESSIVE_ORDERED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy only for customers who want to control which instance types are preferred during scaling.</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list. When an instance family is specified, sizes within that family are expanded using <code>BEST_FIT_PROGRESSIVE</code> logic—preferring sizes that best fit the jobs, with larger sizes as fallback. Instance types that cannot meet the resource requirements of the jobs are skipped. This strategy is only available for On-Demand Instance (<code>EC2</code>) compute resources.</p>
+    /// <p>If an instance family and an explicit instance type from that family both appear in <code>instanceTypes</code>, the explicit type takes its listed position and is excluded from the family expansion. For example, in <code>\["m7a.4xlarge", "m7a", "m6a"\]</code>, <code>m7a.4xlarge</code> is always placed first and is excluded from the <code>m7a</code> family expansion.</p>
+    /// </dd>
+    /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
@@ -53,8 +64,18 @@ pub struct ComputeResourceUpdate {
     /// <dd>
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_CAPACITY_OPTIMIZED_PRIORITIZED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy for customers who want to influence instance type selection during scaling. This strategy optimizes for <b>capacity first</b>, and honors instance type priorities on a best-effort basis (priorities are honored when they do not significantly reduce available Spot capacity).</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list, but <b>optimizes for capacity first</b>. The customer-defined priority is honored on a best-effort basis. When Spot Instance capacity pools are similarly available, priority order is respected. When capacity is constrained, Batch selects from the most available pools regardless of priority to minimize the likelihood of Spot Instance interruptions. This strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub allocation_strategy: ::std::option::Option<crate::types::CrUpdateAllocationStrategy>,
     /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>).</p>
     /// <p>Batch can select the instance type for you if you choose one of the following:</p>
@@ -142,7 +163,7 @@ impl ComputeResourceUpdate {
         self.minv_cpus
     }
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p><note>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     /// </note>
     pub fn maxv_cpus(&self) -> ::std::option::Option<i32> {
         self.maxv_cpus
@@ -187,6 +208,17 @@ impl ComputeResourceUpdate {
     /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
+    /// BEST_FIT_PROGRESSIVE_ORDERED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy only for customers who want to control which instance types are preferred during scaling.</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list. When an instance family is specified, sizes within that family are expanded using <code>BEST_FIT_PROGRESSIVE</code> logic—preferring sizes that best fit the jobs, with larger sizes as fallback. Instance types that cannot meet the resource requirements of the jobs are skipped. This strategy is only available for On-Demand Instance (<code>EC2</code>) compute resources.</p>
+    /// <p>If an instance family and an explicit instance type from that family both appear in <code>instanceTypes</code>, the explicit type takes its listed position and is excluded from the family expansion. For example, in <code>\["m7a.4xlarge", "m7a", "m6a"\]</code>, <code>m7a.4xlarge</code> is always placed first and is excluded from the <code>m7a</code> family expansion.</p>
+    /// </dd>
+    /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
@@ -198,8 +230,18 @@ impl ComputeResourceUpdate {
     /// <dd>
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_CAPACITY_OPTIMIZED_PRIORITIZED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy for customers who want to influence instance type selection during scaling. This strategy optimizes for <b>capacity first</b>, and honors instance type priorities on a best-effort basis (priorities are honored when they do not significantly reduce available Spot capacity).</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list, but <b>optimizes for capacity first</b>. The customer-defined priority is honored on a best-effort basis. When Spot Instance capacity pools are similarly available, priority order is respected. When capacity is constrained, Batch selects from the most available pools regardless of priority to minimize the likelihood of Spot Instance interruptions. This strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::CrUpdateAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
@@ -361,21 +403,21 @@ impl ComputeResourceUpdateBuilder {
         &self.minv_cpus
     }
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p><note>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     /// </note>
     pub fn maxv_cpus(mut self, input: i32) -> Self {
         self.maxv_cpus = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p><note>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     /// </note>
     pub fn set_maxv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maxv_cpus = input;
         self
     }
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p><note>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     /// </note>
     pub fn get_maxv_cpus(&self) -> &::std::option::Option<i32> {
         &self.maxv_cpus
@@ -482,6 +524,17 @@ impl ComputeResourceUpdateBuilder {
     /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
+    /// BEST_FIT_PROGRESSIVE_ORDERED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy only for customers who want to control which instance types are preferred during scaling.</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list. When an instance family is specified, sizes within that family are expanded using <code>BEST_FIT_PROGRESSIVE</code> logic—preferring sizes that best fit the jobs, with larger sizes as fallback. Instance types that cannot meet the resource requirements of the jobs are skipped. This strategy is only available for On-Demand Instance (<code>EC2</code>) compute resources.</p>
+    /// <p>If an instance family and an explicit instance type from that family both appear in <code>instanceTypes</code>, the explicit type takes its listed position and is excluded from the family expansion. For example, in <code>\["m7a.4xlarge", "m7a", "m6a"\]</code>, <code>m7a.4xlarge</code> is always placed first and is excluded from the <code>m7a</code> family expansion.</p>
+    /// </dd>
+    /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
@@ -493,8 +546,18 @@ impl ComputeResourceUpdateBuilder {
     /// <dd>
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_CAPACITY_OPTIMIZED_PRIORITIZED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy for customers who want to influence instance type selection during scaling. This strategy optimizes for <b>capacity first</b>, and honors instance type priorities on a best-effort basis (priorities are honored when they do not significantly reduce available Spot capacity).</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list, but <b>optimizes for capacity first</b>. The customer-defined priority is honored on a best-effort basis. When Spot Instance capacity pools are similarly available, priority order is respected. When capacity is constrained, Batch selects from the most available pools regardless of priority to minimize the likelihood of Spot Instance interruptions. This strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn allocation_strategy(mut self, input: crate::types::CrUpdateAllocationStrategy) -> Self {
         self.allocation_strategy = ::std::option::Option::Some(input);
         self
@@ -511,6 +574,17 @@ impl ComputeResourceUpdateBuilder {
     /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
+    /// BEST_FIT_PROGRESSIVE_ORDERED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy only for customers who want to control which instance types are preferred during scaling.</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list. When an instance family is specified, sizes within that family are expanded using <code>BEST_FIT_PROGRESSIVE</code> logic—preferring sizes that best fit the jobs, with larger sizes as fallback. Instance types that cannot meet the resource requirements of the jobs are skipped. This strategy is only available for On-Demand Instance (<code>EC2</code>) compute resources.</p>
+    /// <p>If an instance family and an explicit instance type from that family both appear in <code>instanceTypes</code>, the explicit type takes its listed position and is excluded from the family expansion. For example, in <code>\["m7a.4xlarge", "m7a", "m6a"\]</code>, <code>m7a.4xlarge</code> is always placed first and is excluded from the <code>m7a</code> family expansion.</p>
+    /// </dd>
+    /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
@@ -522,8 +596,18 @@ impl ComputeResourceUpdateBuilder {
     /// <dd>
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_CAPACITY_OPTIMIZED_PRIORITIZED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy for customers who want to influence instance type selection during scaling. This strategy optimizes for <b>capacity first</b>, and honors instance type priorities on a best-effort basis (priorities are honored when they do not significantly reduce available Spot capacity).</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list, but <b>optimizes for capacity first</b>. The customer-defined priority is honored on a best-effort basis. When Spot Instance capacity pools are similarly available, priority order is respected. When capacity is constrained, Batch selects from the most available pools regardless of priority to minimize the likelihood of Spot Instance interruptions. This strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::CrUpdateAllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
@@ -540,6 +624,17 @@ impl ComputeResourceUpdateBuilder {
     /// <p>Batch selects additional instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types with lower cost vCPUs. If additional instances of the previously selected instance types aren't available, Batch selects new instance types.</p>
     /// </dd>
     /// <dt>
+    /// BEST_FIT_PROGRESSIVE_ORDERED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy only for customers who want to control which instance types are preferred during scaling.</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list. When an instance family is specified, sizes within that family are expanded using <code>BEST_FIT_PROGRESSIVE</code> logic—preferring sizes that best fit the jobs, with larger sizes as fallback. Instance types that cannot meet the resource requirements of the jobs are skipped. This strategy is only available for On-Demand Instance (<code>EC2</code>) compute resources.</p>
+    /// <p>If an instance family and an explicit instance type from that family both appear in <code>instanceTypes</code>, the explicit type takes its listed position and is excluded from the family expansion. For example, in <code>\["m7a.4xlarge", "m7a", "m6a"\]</code>, <code>m7a.4xlarge</code> is always placed first and is excluded from the <code>m7a</code> family expansion.</p>
+    /// </dd>
+    /// <dt>
     /// SPOT_CAPACITY_OPTIMIZED
     /// </dt>
     /// <dd>
@@ -551,8 +646,18 @@ impl ComputeResourceUpdateBuilder {
     /// <dd>
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_CAPACITY_OPTIMIZED_PRIORITIZED
+    /// </dt>
+    /// <dd>
+    /// <important>
+    /// <p>This is an advanced allocation strategy for customers who want to influence instance type selection during scaling. This strategy optimizes for <b>capacity first</b>, and honors instance type priorities on a best-effort basis (priorities are honored when they do not significantly reduce available Spot capacity).</p>
+    /// <p>Placing large instance types at the top of the list may result in <b>over-provisioning</b> for small jobs. Placing small instance types at the top may cause the compute environment to reach Amazon EC2 instance count limits before reaching <code>maxvCpus</code>.</p>
+    /// </important>
+    /// <p>Batch selects instance types in the order they appear in the <code>instanceTypes</code> list, but <b>optimizes for capacity first</b>. The customer-defined priority is honored on a best-effort basis. When Spot Instance capacity pools are similarly available, priority order is respected. When capacity is constrained, Batch selects from the most available pools regardless of priority to minimize the likelihood of Spot Instance interruptions. This strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With any allocation strategy except <code>BEST_FIT</code> using On-Demand (<code>EC2</code>) compute resources, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::CrUpdateAllocationStrategy> {
         &self.allocation_strategy
     }

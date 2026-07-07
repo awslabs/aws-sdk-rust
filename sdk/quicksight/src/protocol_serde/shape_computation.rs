@@ -69,10 +69,16 @@ pub fn ser_computation(
 pub(crate) fn de_computation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Computation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -84,52 +90,76 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TopBottomRanked" => {
                             builder = builder.set_top_bottom_ranked(
-                                crate::protocol_serde::shape_top_bottom_ranked_computation::de_top_bottom_ranked_computation(tokens, _value)?,
+                                crate::protocol_serde::shape_top_bottom_ranked_computation::de_top_bottom_ranked_computation(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TopBottomMovers" => {
                             builder = builder.set_top_bottom_movers(
-                                crate::protocol_serde::shape_top_bottom_movers_computation::de_top_bottom_movers_computation(tokens, _value)?,
+                                crate::protocol_serde::shape_top_bottom_movers_computation::de_top_bottom_movers_computation(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TotalAggregation" => {
                             builder = builder.set_total_aggregation(
-                                crate::protocol_serde::shape_total_aggregation_computation::de_total_aggregation_computation(tokens, _value)?,
+                                crate::protocol_serde::shape_total_aggregation_computation::de_total_aggregation_computation(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MaximumMinimum" => {
                             builder = builder.set_maximum_minimum(
-                                crate::protocol_serde::shape_maximum_minimum_computation::de_maximum_minimum_computation(tokens, _value)?,
+                                crate::protocol_serde::shape_maximum_minimum_computation::de_maximum_minimum_computation(tokens, _value, depth + 1)?,
                             );
                         }
                         "MetricComparison" => {
                             builder = builder.set_metric_comparison(
-                                crate::protocol_serde::shape_metric_comparison_computation::de_metric_comparison_computation(tokens, _value)?,
+                                crate::protocol_serde::shape_metric_comparison_computation::de_metric_comparison_computation(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "PeriodOverPeriod" => {
                             builder = builder.set_period_over_period(
-                                crate::protocol_serde::shape_period_over_period_computation::de_period_over_period_computation(tokens, _value)?,
+                                crate::protocol_serde::shape_period_over_period_computation::de_period_over_period_computation(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "PeriodToDate" => {
                             builder = builder.set_period_to_date(
-                                crate::protocol_serde::shape_period_to_date_computation::de_period_to_date_computation(tokens, _value)?,
+                                crate::protocol_serde::shape_period_to_date_computation::de_period_to_date_computation(tokens, _value, depth + 1)?,
                             );
                         }
                         "GrowthRate" => {
                             builder = builder.set_growth_rate(crate::protocol_serde::shape_growth_rate_computation::de_growth_rate_computation(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "UniqueValues" => {
                             builder = builder.set_unique_values(
-                                crate::protocol_serde::shape_unique_values_computation::de_unique_values_computation(tokens, _value)?,
+                                crate::protocol_serde::shape_unique_values_computation::de_unique_values_computation(tokens, _value, depth + 1)?,
                             );
                         }
                         "Forecast" => {
                             builder = builder.set_forecast(crate::protocol_serde::shape_forecast_computation::de_forecast_computation(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

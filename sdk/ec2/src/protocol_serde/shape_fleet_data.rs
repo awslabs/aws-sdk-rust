@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_fleet_data(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FleetData, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FleetData::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -122,7 +126,7 @@ pub fn de_fleet_data(
             s if s.matches("launchTemplateConfigs") /* LaunchTemplateConfigs com.amazonaws.ec2#FleetData$LaunchTemplateConfigs */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_fleet_launch_template_config_list::de_fleet_launch_template_config_list(&mut tag)
+                        crate::protocol_serde::shape_fleet_launch_template_config_list::de_fleet_launch_template_config_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -132,7 +136,7 @@ pub fn de_fleet_data(
             s if s.matches("targetCapacitySpecification") /* TargetCapacitySpecification com.amazonaws.ec2#FleetData$TargetCapacitySpecification */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_target_capacity_specification::de_target_capacity_specification(&mut tag)
+                        crate::protocol_serde::shape_target_capacity_specification::de_target_capacity_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -214,7 +218,7 @@ pub fn de_fleet_data(
             s if s.matches("spotOptions") /* SpotOptions com.amazonaws.ec2#FleetData$SpotOptions */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_spot_options::de_spot_options(&mut tag)
+                        crate::protocol_serde::shape_spot_options::de_spot_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -224,7 +228,7 @@ pub fn de_fleet_data(
             s if s.matches("onDemandOptions") /* OnDemandOptions com.amazonaws.ec2#FleetData$OnDemandOptions */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_on_demand_options::de_on_demand_options(&mut tag)
+                        crate::protocol_serde::shape_on_demand_options::de_on_demand_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -234,7 +238,7 @@ pub fn de_fleet_data(
             s if s.matches("reservedCapacityOptions") /* ReservedCapacityOptions com.amazonaws.ec2#FleetData$ReservedCapacityOptions */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_reserved_capacity_options::de_reserved_capacity_options(&mut tag)
+                        crate::protocol_serde::shape_reserved_capacity_options::de_reserved_capacity_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -244,7 +248,7 @@ pub fn de_fleet_data(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#FleetData$Tags */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -254,7 +258,7 @@ pub fn de_fleet_data(
             s if s.matches("errorSet") /* Errors com.amazonaws.ec2#FleetData$Errors */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_describe_fleets_error_set::de_describe_fleets_error_set(&mut tag)
+                        crate::protocol_serde::shape_describe_fleets_error_set::de_describe_fleets_error_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -264,7 +268,7 @@ pub fn de_fleet_data(
             s if s.matches("fleetInstanceSet") /* Instances com.amazonaws.ec2#FleetData$Instances */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_describe_fleets_instances_set::de_describe_fleets_instances_set(&mut tag)
+                        crate::protocol_serde::shape_describe_fleets_instances_set::de_describe_fleets_instances_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

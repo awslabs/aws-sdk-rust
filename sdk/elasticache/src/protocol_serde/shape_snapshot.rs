@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_snapshot(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Snapshot, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Snapshot::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -334,7 +338,7 @@ pub fn de_snapshot(
             s if s.matches("NodeSnapshots") /* NodeSnapshots com.amazonaws.elasticache#Snapshot$NodeSnapshots */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_node_snapshot_list::de_node_snapshot_list(&mut tag)
+                        crate::protocol_serde::shape_node_snapshot_list::de_node_snapshot_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -379,6 +383,20 @@ pub fn de_snapshot(
                     )
                 ;
                 builder = builder.set_data_tiering(var_28);
+            }
+            ,
+            s if s.matches("Durability") /* Durability com.amazonaws.elasticache#Snapshot$Durability */ =>  {
+                let var_29 =
+                    Some(
+                        Result::<crate::types::Durability, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Durability::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_durability(var_29);
             }
             ,
             _ => {}

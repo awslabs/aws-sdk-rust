@@ -2,10 +2,16 @@
 pub(crate) fn de_agreement_view_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AgreementViewSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,14 +54,17 @@ where
                             );
                         }
                         "acceptor" => {
-                            builder = builder.set_acceptor(crate::protocol_serde::shape_acceptor::de_acceptor(tokens, _value)?);
+                            builder = builder.set_acceptor(crate::protocol_serde::shape_acceptor::de_acceptor(tokens, _value, depth + 1)?);
                         }
                         "proposer" => {
-                            builder = builder.set_proposer(crate::protocol_serde::shape_proposer::de_proposer(tokens, _value)?);
+                            builder = builder.set_proposer(crate::protocol_serde::shape_proposer::de_proposer(tokens, _value, depth + 1)?);
                         }
                         "proposalSummary" => {
-                            builder =
-                                builder.set_proposal_summary(crate::protocol_serde::shape_proposal_summary::de_proposal_summary(tokens, _value)?);
+                            builder = builder.set_proposal_summary(crate::protocol_serde::shape_proposal_summary::de_proposal_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "status" => {
                             builder = builder.set_status(
@@ -63,6 +72,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AgreementStatus::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "entitlements" => {
+                            builder = builder.set_entitlements(crate::protocol_serde::shape_entitlement_list::de_entitlement_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

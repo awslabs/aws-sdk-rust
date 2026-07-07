@@ -94,10 +94,7 @@ pub struct Connector {
 impl Connector {
     /// Builder for an HTTP connector.
     pub fn builder() -> ConnectorBuilder {
-        ConnectorBuilder {
-            enable_tcp_nodelay: true,
-            ..Default::default()
-        }
+        ConnectorBuilder::default()
     }
 }
 
@@ -108,7 +105,7 @@ impl HttpConnector for Connector {
 }
 
 /// Builder for [`Connector`].
-#[derive(Default, Debug, Clone)]
+#[derive(Debug, Clone)]
 pub struct ConnectorBuilder<Tls = TlsUnset> {
     connector_settings: Option<HttpConnectorSettings>,
     sleep_impl: Option<SharedAsyncSleep>,
@@ -119,6 +116,26 @@ pub struct ConnectorBuilder<Tls = TlsUnset> {
     proxy_config: Option<proxy::ProxyConfig>,
     #[allow(unused)]
     tls: Tls,
+}
+
+impl<Tls: Default> Default for ConnectorBuilder<Tls> {
+    fn default() -> Self {
+        Self {
+            connector_settings: None,
+            sleep_impl: None,
+            client_builder: None,
+            pool_idle_timeout: None,
+            // Curated default: TCP_NODELAY on. Without it, Nagle's algorithm
+            // can hold a small write while earlier data is unacknowledged. On
+            // request shapes emitted as multiple sub-MSS writes, this can add
+            // an ACK wait, often RTT plus delayed-ACK time. Opt out with
+            // `enable_tcp_nodelay(false)`.
+            enable_tcp_nodelay: true,
+            interface: None,
+            proxy_config: None,
+            tls: Tls::default(),
+        }
+    }
 }
 
 /// Initial builder state, `TlsProvider` choice required
@@ -788,11 +805,7 @@ cfg_tls! {
         {
             match &self.tls.provider {
                 // TODO(hyper1) - fix cfg_rustls! to allow matching on patterns so we can re-use it and not duplicate these cfg matches everywhere
-                #[cfg(any(
-                    feature = "rustls-aws-lc",
-                    feature = "rustls-aws-lc-fips",
-                    feature = "rustls-ring"
-                ))]
+                #[cfg(feature = "__rustls")]
                 tls::Provider::Rustls(crypto_mode) => {
                     let proxy_config = self.proxy_config.clone()
                         .unwrap_or_else(proxy::ProxyConfig::disabled);

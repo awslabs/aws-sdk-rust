@@ -251,4 +251,42 @@ impl GetResourceOauth2TokenFluentBuilder {
     pub fn get_custom_state(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_state()
     }
+    ///
+    /// Appends an item to `resources`.
+    ///
+    /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+    ///
+    /// <p>The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.</p>
+    pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resources(input.into());
+        self
+    }
+    /// <p>The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.</p>
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_resources(input);
+        self
+    }
+    /// <p>The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resources()
+    }
+    ///
+    /// Appends an item to `audiences`.
+    ///
+    /// To override the contents of this collection use [`set_audiences`](Self::set_audiences).
+    ///
+    /// <p>The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.</p>
+    pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.audiences(input.into());
+        self
+    }
+    /// <p>The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.</p>
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_audiences(input);
+        self
+    }
+    /// <p>The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.</p>
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_audiences()
+    }
 }

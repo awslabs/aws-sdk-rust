@@ -237,6 +237,8 @@ mod list_hosted_zone_associations;
 
 mod list_managed_firewall_domain_lists;
 
+mod list_shared_dns_views;
+
 mod list_tags_for_resource;
 
 mod tag_resource;

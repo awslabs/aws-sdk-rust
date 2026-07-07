@@ -39,7 +39,11 @@ pub fn ser_key_name_constraint(
 #[allow(clippy::needless_question_mark)]
 pub fn de_key_name_constraint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::KeyNameConstraint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::KeyNameConstraint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -47,7 +51,7 @@ pub fn de_key_name_constraint(
             s if s.matches("MatchAnyPrefix") /* MatchAnyPrefix com.amazonaws.s3control#KeyNameConstraint$MatchAnyPrefix */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_non_empty_max_length1024_string_list::de_non_empty_max_length1024_string_list(&mut tag)
+                        crate::protocol_serde::shape_non_empty_max_length1024_string_list::de_non_empty_max_length1024_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -57,7 +61,7 @@ pub fn de_key_name_constraint(
             s if s.matches("MatchAnySuffix") /* MatchAnySuffix com.amazonaws.s3control#KeyNameConstraint$MatchAnySuffix */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_non_empty_max_length1024_string_list::de_non_empty_max_length1024_string_list(&mut tag)
+                        crate::protocol_serde::shape_non_empty_max_length1024_string_list::de_non_empty_max_length1024_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -67,7 +71,7 @@ pub fn de_key_name_constraint(
             s if s.matches("MatchAnySubstring") /* MatchAnySubstring com.amazonaws.s3control#KeyNameConstraint$MatchAnySubstring */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_non_empty_max_length1024_string_list::de_non_empty_max_length1024_string_list(&mut tag)
+                        crate::protocol_serde::shape_non_empty_max_length1024_string_list::de_non_empty_max_length1024_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

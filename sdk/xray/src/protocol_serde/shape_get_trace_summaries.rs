@@ -88,6 +88,8 @@ pub(crate) fn de_get_trace_summaries(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -107,7 +109,11 @@ pub(crate) fn de_get_trace_summaries(
                     );
                 }
                 "TraceSummaries" => {
-                    builder = builder.set_trace_summaries(crate::protocol_serde::shape_trace_summary_list::de_trace_summary_list(tokens, _value)?);
+                    builder = builder.set_trace_summaries(crate::protocol_serde::shape_trace_summary_list::de_trace_summary_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "TracesProcessedCount" => {
                     builder = builder.set_traces_processed_count(

@@ -5,8 +5,14 @@
 pub enum Error {
     /// Error thrown for access denied scenarios with flexible HTTP status mapping Runtime HTTP Status Code Mapping: - HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED - HTTP 403 (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS The specific HTTP status code is determined at runtime based on the error enum value. Consumers should use the error field to determine the specific access denial reason.
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// Error thrown when request conflicts with current state HTTP Status Code: 409 Conflict Used when the request conflicts with the current state of the resource
+    ConflictException(crate::types::error::ConflictException),
     /// Error thrown when an internal server error occurs HTTP Status Code: 500 Internal Server Error Used for unexpected server-side errors that prevent request processing.
     InternalServerException(crate::types::error::InternalServerException),
+    /// Error thrown when requested resource is not found HTTP Status Code: 404 Not Found Used when the specified resource does not exist
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// Error thrown when service quota is exceeded HTTP Status Code: 402 Payment Required (used as quota exceeded indicator) Used when the request would cause a service quota to be exceeded
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// Error thrown when rate limit is exceeded HTTP Status Code: 429 Too Many Requests Possible OAuth2ErrorCode values: - INVALID_REQUEST: Rate limiting, too many requests, abuse prevention Possible causes: - Too many token requests from the same client - Rate limiting based on client_id or IP address - Abuse prevention mechanisms triggered - Service protection against excessive token generation
     TooManyRequestsError(crate::types::error::TooManyRequestsError),
     /// Error thrown when request validation fails HTTP Status Code: 400 Bad Request Used for request validation errors such as malformed parameters, missing required fields, or invalid parameter values.
@@ -24,7 +30,10 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsError(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -49,7 +58,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::TooManyRequestsError(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -81,11 +93,337 @@ impl From<crate::operation::create_o_auth2_token::CreateOAuth2TokenError> for Er
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError> for Error {
+    fn from(err: crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError::TooManyRequestsError(
+                inner,
+            ) => Error::TooManyRequestsError(inner),
+            crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::delete_console_authorization_configuration::DeleteConsoleAuthorizationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError> for Error {
+    fn from(err: crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError) -> Self {
+        match err {
+            crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError::TooManyRequestsError(inner) => {
+                Error::TooManyRequestsError(inner)
+            }
+            crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_resource_permission_statement::DeleteResourcePermissionStatementError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError> for Error {
+    fn from(err: crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError) -> Self {
+        match err {
+            crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError::TooManyRequestsError(inner) => {
+                Error::TooManyRequestsError(inner)
+            }
+            crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_console_authorization_configuration::GetConsoleAuthorizationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError> for Error {
+    fn from(err: crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError) -> Self {
+        match err {
+            crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError::TooManyRequestsError(inner) => {
+                Error::TooManyRequestsError(inner)
+            }
+            crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError> for Error {
+    fn from(err: crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError) -> Self {
+        match err {
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError::TooManyRequestsError(inner) => {
+                Error::TooManyRequestsError(inner)
+            }
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_console_authorization_configuration::PutConsoleAuthorizationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError> for Error {
+    fn from(err: crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError) -> Self {
+        match err {
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError::TooManyRequestsError(inner) => {
+                Error::TooManyRequestsError(inner)
+            }
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_resource_permission_statement::PutResourcePermissionStatementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::TooManyRequestsError(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -96,7 +434,10 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::TooManyRequestsError(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

@@ -197,4 +197,50 @@ impl GetTableFluentBuilder {
     pub fn get_include_status_details(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_status_details()
     }
+    ///
+    /// Appends an item to `AttributesToGet`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Returns the Hive-style table definition only.</p></li>
+    /// <li>
+    /// <p><code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p></li>
+    /// <li>
+    /// <p><code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p></li>
+    /// </ul>
+    pub fn attributes_to_get(mut self, input: crate::types::TableAttributes) -> Self {
+        self.inner = self.inner.attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Returns the Hive-style table definition only.</p></li>
+    /// <li>
+    /// <p><code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p></li>
+    /// <li>
+    /// <p><code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p></li>
+    /// </ul>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>) -> Self {
+        self.inner = self.inner.set_attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Returns the Hive-style table definition only.</p></li>
+    /// <li>
+    /// <p><code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p></li>
+    /// <li>
+    /// <p><code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p></li>
+    /// </ul>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>> {
+        self.inner.get_attributes_to_get()
+    }
 }

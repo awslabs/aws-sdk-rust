@@ -27,5 +27,11 @@ pub fn ser_retrieve_and_generate_stream_input_input(
     if let Some(var_7) = &input.session_id {
         object.key("sessionId").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.user_context {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("userContext").start_object();
+        crate::protocol_serde::shape_user_context::ser_user_context(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

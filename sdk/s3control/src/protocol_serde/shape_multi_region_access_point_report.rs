@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_multi_region_access_point_report(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MultiRegionAccessPointReport, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MultiRegionAccessPointReport::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -50,7 +54,7 @@ pub fn de_multi_region_access_point_report(
             s if s.matches("PublicAccessBlock") /* PublicAccessBlock com.amazonaws.s3control#MultiRegionAccessPointReport$PublicAccessBlock */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut tag)
+                        crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -74,7 +78,7 @@ pub fn de_multi_region_access_point_report(
             s if s.matches("Regions") /* Regions com.amazonaws.s3control#MultiRegionAccessPointReport$Regions */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_region_report_list::de_region_report_list(&mut tag)
+                        crate::protocol_serde::shape_region_report_list::de_region_report_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

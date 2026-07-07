@@ -210,6 +210,8 @@ pub fn de_register_db_proxy_targets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RegisterDBProxyTargetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RegisterDBProxyTargetsResponse got {start_el:?}"
@@ -227,7 +229,7 @@ pub fn de_register_db_proxy_targets(
             s if s.matches("DBProxyTargets") /* DBProxyTargets com.amazonaws.rds.synthetic#RegisterDBProxyTargetsOutput$DBProxyTargets */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_target_list::de_target_list(&mut tag)
+                        crate::protocol_serde::shape_target_list::de_target_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

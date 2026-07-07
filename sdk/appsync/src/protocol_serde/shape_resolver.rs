@@ -2,10 +2,16 @@
 pub(crate) fn de_resolver<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Resolver>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,13 +71,21 @@ where
                             );
                         }
                         "pipelineConfig" => {
-                            builder = builder.set_pipeline_config(crate::protocol_serde::shape_pipeline_config::de_pipeline_config(tokens, _value)?);
+                            builder = builder.set_pipeline_config(crate::protocol_serde::shape_pipeline_config::de_pipeline_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "syncConfig" => {
-                            builder = builder.set_sync_config(crate::protocol_serde::shape_sync_config::de_sync_config(tokens, _value)?);
+                            builder = builder.set_sync_config(crate::protocol_serde::shape_sync_config::de_sync_config(tokens, _value, depth + 1)?);
                         }
                         "cachingConfig" => {
-                            builder = builder.set_caching_config(crate::protocol_serde::shape_caching_config::de_caching_config(tokens, _value)?);
+                            builder = builder.set_caching_config(crate::protocol_serde::shape_caching_config::de_caching_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "maxBatchSize" => {
                             builder = builder.set_max_batch_size(
@@ -81,7 +95,11 @@ where
                             );
                         }
                         "runtime" => {
-                            builder = builder.set_runtime(crate::protocol_serde::shape_app_sync_runtime::de_app_sync_runtime(tokens, _value)?);
+                            builder = builder.set_runtime(crate::protocol_serde::shape_app_sync_runtime::de_app_sync_runtime(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "code" => {
                             builder = builder.set_code(

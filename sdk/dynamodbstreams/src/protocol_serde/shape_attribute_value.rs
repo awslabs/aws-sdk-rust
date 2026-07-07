@@ -2,10 +2,16 @@
 pub(crate) fn de_attribute_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AttributeValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -47,23 +53,23 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'B' cannot be null"))?,
                         )),
                         "SS" => Some(crate::types::AttributeValue::Ss(
-                            crate::protocol_serde::shape_string_set_attribute_value::de_string_set_attribute_value(tokens, _value)?
+                            crate::protocol_serde::shape_string_set_attribute_value::de_string_set_attribute_value(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SS' cannot be null"))?,
                         )),
                         "NS" => Some(crate::types::AttributeValue::Ns(
-                            crate::protocol_serde::shape_number_set_attribute_value::de_number_set_attribute_value(tokens, _value)?
+                            crate::protocol_serde::shape_number_set_attribute_value::de_number_set_attribute_value(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NS' cannot be null"))?,
                         )),
                         "BS" => Some(crate::types::AttributeValue::Bs(
-                            crate::protocol_serde::shape_binary_set_attribute_value::de_binary_set_attribute_value(tokens, _value)?
+                            crate::protocol_serde::shape_binary_set_attribute_value::de_binary_set_attribute_value(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BS' cannot be null"))?,
                         )),
                         "M" => Some(crate::types::AttributeValue::M(
-                            crate::protocol_serde::shape_map_attribute_value::de_map_attribute_value(tokens, _value)?
+                            crate::protocol_serde::shape_map_attribute_value::de_map_attribute_value(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'M' cannot be null"))?,
                         )),
                         "L" => Some(crate::types::AttributeValue::L(
-                            crate::protocol_serde::shape_list_attribute_value::de_list_attribute_value(tokens, _value)?
+                            crate::protocol_serde::shape_list_attribute_value::de_list_attribute_value(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'L' cannot be null"))?,
                         )),
                         "NULL" => Some(crate::types::AttributeValue::Null(

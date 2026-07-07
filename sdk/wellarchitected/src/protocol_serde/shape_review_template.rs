@@ -2,10 +2,16 @@
 pub(crate) fn de_review_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReviewTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,9 @@ where
                         }
                         "Lenses" => {
                             builder = builder.set_lenses(crate::protocol_serde::shape_review_template_lenses::de_review_template_lenses(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Notes" => {
@@ -35,7 +43,11 @@ where
                             );
                         }
                         "QuestionCounts" => {
-                            builder = builder.set_question_counts(crate::protocol_serde::shape_question_counts::de_question_counts(tokens, _value)?);
+                            builder = builder.set_question_counts(crate::protocol_serde::shape_question_counts::de_question_counts(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Owner" => {
                             builder = builder.set_owner(
@@ -65,7 +77,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "UpdateStatus" => {
                             builder = builder.set_update_status(

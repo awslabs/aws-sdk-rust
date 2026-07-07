@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_blue_green_deployment(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::BlueGreenDeployment, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::BlueGreenDeployment::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_blue_green_deployment(
             s if s.matches("SwitchoverDetails") /* SwitchoverDetails com.amazonaws.rds#BlueGreenDeployment$SwitchoverDetails */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_switchover_detail_list::de_switchover_detail_list(&mut tag)
+                        crate::protocol_serde::shape_switchover_detail_list::de_switchover_detail_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_blue_green_deployment(
             s if s.matches("Tasks") /* Tasks com.amazonaws.rds#BlueGreenDeployment$Tasks */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_blue_green_deployment_task_list::de_blue_green_deployment_task_list(&mut tag)
+                        crate::protocol_serde::shape_blue_green_deployment_task_list::de_blue_green_deployment_task_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -136,7 +140,7 @@ pub fn de_blue_green_deployment(
             s if s.matches("TagList") /* TagList com.amazonaws.rds#BlueGreenDeployment$TagList */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

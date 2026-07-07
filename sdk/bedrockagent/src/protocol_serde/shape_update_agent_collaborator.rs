@@ -176,13 +176,19 @@ pub(crate) fn de_update_agent_collaborator(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "agentCollaborator" => {
-                    builder = builder.set_agent_collaborator(crate::protocol_serde::shape_agent_collaborator::de_agent_collaborator(tokens, _value)?);
+                    builder = builder.set_agent_collaborator(crate::protocol_serde::shape_agent_collaborator::de_agent_collaborator(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

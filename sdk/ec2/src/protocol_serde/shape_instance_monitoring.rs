@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_monitoring(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceMonitoring, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceMonitoring::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_instance_monitoring(
             s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#InstanceMonitoring$Monitoring */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_monitoring::de_monitoring(&mut tag)
+                        crate::protocol_serde::shape_monitoring::de_monitoring(&mut tag, depth + 1)
                         ?
                     )
                 ;

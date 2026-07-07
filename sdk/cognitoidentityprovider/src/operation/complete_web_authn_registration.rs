@@ -145,9 +145,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Complet
 #[derive(Debug)]
 struct CompleteWebAuthnRegistrationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CompleteWebAuthnRegistrationResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -273,6 +274,8 @@ pub enum CompleteWebAuthnRegistrationError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
+    /// <p>This exception is thrown when an operation is not available in the current region or for the current user pool configuration. This can occur when attempting to perform operations that are not supported in secondary replica regions.</p>
+    OperationNotEnabledException(crate::types::error::OperationNotEnabledException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::types::error::PasswordResetRequiredException),
     /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
@@ -327,6 +330,7 @@ impl CompleteWebAuthnRegistrationError {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotAuthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PasswordResetRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WebAuthnChallengeNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -357,6 +361,10 @@ impl CompleteWebAuthnRegistrationError {
     /// Returns `true` if the error kind is `CompleteWebAuthnRegistrationError::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(self, Self::NotAuthorizedException(_))
+    }
+    /// Returns `true` if the error kind is `CompleteWebAuthnRegistrationError::OperationNotEnabledException`.
+    pub fn is_operation_not_enabled_exception(&self) -> bool {
+        matches!(self, Self::OperationNotEnabledException(_))
     }
     /// Returns `true` if the error kind is `CompleteWebAuthnRegistrationError::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
@@ -399,6 +407,7 @@ impl ::std::error::Error for CompleteWebAuthnRegistrationError {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotAuthorizedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::PasswordResetRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::WebAuthnChallengeNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -419,6 +428,7 @@ impl ::std::fmt::Display for CompleteWebAuthnRegistrationError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NotAuthorizedException(_inner) => _inner.fmt(f),
+            Self::OperationNotEnabledException(_inner) => _inner.fmt(f),
             Self::PasswordResetRequiredException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::WebAuthnChallengeNotFoundException(_inner) => _inner.fmt(f),
@@ -453,6 +463,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CompleteWebAu
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotAuthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PasswordResetRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WebAuthnChallengeNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

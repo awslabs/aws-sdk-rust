@@ -39,5 +39,11 @@ pub fn ser_update_resolver_endpoint_input_input(
     if let Some(var_12) = &input.target_name_server_metrics_enabled {
         object.key("TargetNameServerMetricsEnabled").boolean(*var_12);
     }
+    if let Some(var_13) = &input.dns64_enabled {
+        object.key("Dns64Enabled").boolean(*var_13);
+    }
+    if let Some(var_14) = &input.ipv6_internet_access_enabled {
+        object.key("Ipv6InternetAccessEnabled").boolean(*var_14);
+    }
     Ok(())
 }

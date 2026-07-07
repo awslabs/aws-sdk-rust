@@ -2,10 +2,16 @@
 pub(crate) fn de_described_connector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribedConnector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,9 @@ where
                         }
                         "As2Config" => {
                             builder = builder.set_as2_config(crate::protocol_serde::shape_as2_connector_config::de_as2_connector_config(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "AccessRole" => {
@@ -56,17 +64,21 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "SftpConfig" => {
                             builder = builder.set_sftp_config(crate::protocol_serde::shape_sftp_connector_config::de_sftp_connector_config(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ServiceManagedEgressIpAddresses" => {
                             builder = builder.set_service_managed_egress_ip_addresses(
                                 crate::protocol_serde::shape_service_managed_egress_ip_addresses::de_service_managed_egress_ip_addresses(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -79,7 +91,11 @@ where
                         }
                         "EgressConfig" => {
                             builder = builder.set_egress_config(
-                                crate::protocol_serde::shape_described_connector_egress_config::de_described_connector_egress_config(tokens, _value)?,
+                                crate::protocol_serde::shape_described_connector_egress_config::de_described_connector_egress_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "EgressType" => {

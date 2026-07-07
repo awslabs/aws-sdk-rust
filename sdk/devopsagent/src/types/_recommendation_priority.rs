@@ -37,17 +37,17 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Priority level of a recommendation
+/// <p>Priority level of a recommendation</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecommendationPriority {
-    /// High priority recommendation requiring immediate attention
+    /// <p>High priority recommendation requiring immediate attention</p>
     High,
-    /// Low priority recommendation that can be addressed later
+    /// <p>Low priority recommendation that can be addressed later</p>
     Low,
-    /// Medium priority recommendation for normal processing
+    /// <p>Medium priority recommendation for normal processing</p>
     Medium,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

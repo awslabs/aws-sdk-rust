@@ -2,10 +2,16 @@
 pub(crate) fn de_fields_for_reranking<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<::std::vec::Vec<crate::types::FieldForReranking>>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartArray { .. }) => {
@@ -17,7 +23,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::protocol_serde::shape_field_for_reranking::de_field_for_reranking(tokens, _value)?;
+                        let value = crate::protocol_serde::shape_field_for_reranking::de_field_for_reranking(tokens, _value, depth + 1)?;
                         if let Some(value) = value {
                             items.push(value);
                         } else {

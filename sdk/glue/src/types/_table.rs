@@ -69,6 +69,8 @@ pub struct Table {
     pub is_multi_dialect_view: ::std::option::Option<bool>,
     /// <p>Indicates a table is a <code>MaterializedView</code>.</p>
     pub is_materialized_view: ::std::option::Option<bool>,
+    /// <p>The latest Apache Iceberg table metadata for the table, including format version, schemas, partition specifications, and sort orders. This field is populated for Iceberg tables and reflects the current state of the table's Iceberg metadata.</p>
+    pub iceberg_table_metadata: ::std::option::Option<crate::types::IcebergTableMetadata>,
     /// <p>Indicates the the state of an asynchronous change to a table.</p>
     pub status: ::std::option::Option<crate::types::TableStatus>,
 }
@@ -189,6 +191,10 @@ impl Table {
     pub fn is_materialized_view(&self) -> ::std::option::Option<bool> {
         self.is_materialized_view
     }
+    /// <p>The latest Apache Iceberg table metadata for the table, including format version, schemas, partition specifications, and sort orders. This field is populated for Iceberg tables and reflects the current state of the table's Iceberg metadata.</p>
+    pub fn iceberg_table_metadata(&self) -> ::std::option::Option<&crate::types::IcebergTableMetadata> {
+        self.iceberg_table_metadata.as_ref()
+    }
     /// <p>Indicates the the state of an asynchronous change to a table.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
         self.status.as_ref()
@@ -229,6 +235,7 @@ pub struct TableBuilder {
     pub(crate) view_definition: ::std::option::Option<crate::types::ViewDefinition>,
     pub(crate) is_multi_dialect_view: ::std::option::Option<bool>,
     pub(crate) is_materialized_view: ::std::option::Option<bool>,
+    pub(crate) iceberg_table_metadata: ::std::option::Option<crate::types::IcebergTableMetadata>,
     pub(crate) status: ::std::option::Option<crate::types::TableStatus>,
 }
 impl TableBuilder {
@@ -632,6 +639,20 @@ impl TableBuilder {
     pub fn get_is_materialized_view(&self) -> &::std::option::Option<bool> {
         &self.is_materialized_view
     }
+    /// <p>The latest Apache Iceberg table metadata for the table, including format version, schemas, partition specifications, and sort orders. This field is populated for Iceberg tables and reflects the current state of the table's Iceberg metadata.</p>
+    pub fn iceberg_table_metadata(mut self, input: crate::types::IcebergTableMetadata) -> Self {
+        self.iceberg_table_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The latest Apache Iceberg table metadata for the table, including format version, schemas, partition specifications, and sort orders. This field is populated for Iceberg tables and reflects the current state of the table's Iceberg metadata.</p>
+    pub fn set_iceberg_table_metadata(mut self, input: ::std::option::Option<crate::types::IcebergTableMetadata>) -> Self {
+        self.iceberg_table_metadata = input;
+        self
+    }
+    /// <p>The latest Apache Iceberg table metadata for the table, including format version, schemas, partition specifications, and sort orders. This field is populated for Iceberg tables and reflects the current state of the table's Iceberg metadata.</p>
+    pub fn get_iceberg_table_metadata(&self) -> &::std::option::Option<crate::types::IcebergTableMetadata> {
+        &self.iceberg_table_metadata
+    }
     /// <p>Indicates the the state of an asynchronous change to a table.</p>
     pub fn status(mut self, input: crate::types::TableStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -680,6 +701,7 @@ impl TableBuilder {
             view_definition: self.view_definition,
             is_multi_dialect_view: self.is_multi_dialect_view,
             is_materialized_view: self.is_materialized_view,
+            iceberg_table_metadata: self.iceberg_table_metadata,
             status: self.status,
         })
     }

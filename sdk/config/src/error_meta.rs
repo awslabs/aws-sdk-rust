@@ -4,7 +4,12 @@
 #[derive(::std::fmt::Debug)]
 pub enum Error {
     /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>, you cannot create a service-linked recorder because a service-linked recorder already exists for the specified service.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>, you cannot create a service-linked recorder because the specified service principal does not support multiple configuration recorders and one already exists.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>, another in-progress operation is currently referencing the same connector or service principal. Please try again later.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>, you cannot create a connector because a connector already exists for the specified connector configuration.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>, you cannot delete the service-linked recorder because it is currently in use by the linked Amazon Web Services service.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>, another in-progress operation is currently referencing the same connector. Please try again later.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html">DeleteConnector</a>, another in-progress operation is currently referencing the connector. Please try again later.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html">DeleteDeliveryChannel</a>, you cannot delete the specified delivery channel because the customer managed configuration recorder is running. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html">StopConfigurationRecorder</a> operation to stop the customer managed configuration recorder.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>, one of the following errors:</p>
     /// <ul>
@@ -38,6 +43,8 @@ pub enum Error {
     /// </ul></li>
     /// <li>
     /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>, a service-linked configuration recorder cannot be created because you do not have the following permissions: IAM <code>CreateServiceLinkedRole</code>.</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>, a connector cannot be created because you do not have the following permissions: IAM <code>CreateServiceLinkedRole</code>.</p></li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
     /// <p>The configuration recorder name is not valid. The prefix "<code>AWSConfigurationRecorderFor</code>" is reserved for service-linked configuration recorders.</p>
@@ -96,6 +103,8 @@ pub enum Error {
     MaxNumberOfConfigurationRecordersExceededException(crate::types::error::MaxNumberOfConfigurationRecordersExceededException),
     /// <p>You have reached the limit of the number of conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
     MaxNumberOfConformancePacksExceededException(crate::types::error::MaxNumberOfConformancePacksExceededException),
+    /// <p>You have reached the limit of the number of connectors in your account.</p>
+    MaxNumberOfConnectorsExceededException(crate::types::error::MaxNumberOfConnectorsExceededException),
     /// <p>You have reached the limit of the number of delivery channels you can create.</p>
     MaxNumberOfDeliveryChannelsExceededException(crate::types::error::MaxNumberOfDeliveryChannelsExceededException),
     /// <p>You have reached the limit of the number of organization Config rules you can create. For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
@@ -215,6 +224,13 @@ pub enum Error {
     /// <li>
     /// <p>For service-linked configuration recorders, the configuration recorder does not record one or more of the specified resource types.</p></li>
     /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You have provided both <code>Arn</code> and <code>ServicePrincipal</code>. Only one of <code>Arn</code> or <code>ServicePrincipal</code> can be specified.</p></li>
+    /// <li>
+    /// <p>You have provided a service principal for service-linked configuration recorder that is not valid.</p></li>
+    /// </ul>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -252,6 +268,7 @@ impl ::std::fmt::Display for Error {
             Error::MaxNumberOfConfigRulesExceededException(inner) => inner.fmt(f),
             Error::MaxNumberOfConfigurationRecordersExceededException(inner) => inner.fmt(f),
             Error::MaxNumberOfConformancePacksExceededException(inner) => inner.fmt(f),
+            Error::MaxNumberOfConnectorsExceededException(inner) => inner.fmt(f),
             Error::MaxNumberOfDeliveryChannelsExceededException(inner) => inner.fmt(f),
             Error::MaxNumberOfOrganizationConfigRulesExceededException(inner) => inner.fmt(f),
             Error::MaxNumberOfOrganizationConformancePacksExceededException(inner) => inner.fmt(f),
@@ -329,6 +346,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::MaxNumberOfConfigRulesExceededException(inner) => inner.meta(),
             Self::MaxNumberOfConfigurationRecordersExceededException(inner) => inner.meta(),
             Self::MaxNumberOfConformancePacksExceededException(inner) => inner.meta(),
+            Self::MaxNumberOfConnectorsExceededException(inner) => inner.meta(),
             Self::MaxNumberOfDeliveryChannelsExceededException(inner) => inner.meta(),
             Self::MaxNumberOfOrganizationConfigRulesExceededException(inner) => inner.meta(),
             Self::MaxNumberOfOrganizationConformancePacksExceededException(inner) => inner.meta(),
@@ -604,6 +622,29 @@ impl From<crate::operation::delete_conformance_pack::DeleteConformancePackError>
                 Error::ResourceInUseException(inner)
             }
             crate::operation::delete_conformance_pack::DeleteConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connector::DeleteConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connector::DeleteConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_connector::DeleteConnectorError> for Error {
+    fn from(err: crate::operation::delete_connector::DeleteConnectorError) -> Self {
+        match err {
+            crate::operation::delete_connector::DeleteConnectorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2361,6 +2402,29 @@ impl From<crate::operation::get_conformance_pack_compliance_summary::GetConforma
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connector::GetConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connector::GetConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connector::GetConnectorError> for Error {
+    fn from(err: crate::operation::get_connector::GetConnectorError) -> Self {
+        match err {
+            crate::operation::get_connector::GetConnectorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_connector::GetConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_connector::GetConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_rule_policy::GetCustomRulePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2742,6 +2806,28 @@ impl From<crate::operation::list_conformance_pack_compliance_scores::ListConform
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connectors::ListConnectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connectors::ListConnectorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_connectors::ListConnectorsError> for Error {
+    fn from(err: crate::operation::list_connectors::ListConnectorsError) -> Self {
+        match err {
+            crate::operation::list_connectors::ListConnectorsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_connectors::ListConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError, R>>
     for Error
 where
@@ -3041,6 +3127,35 @@ impl From<crate::operation::put_conformance_pack::PutConformancePackError> for E
             }
             crate::operation::put_conformance_pack::PutConformancePackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::put_conformance_pack::PutConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_connector::PutConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_connector::PutConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_connector::PutConnectorError> for Error {
+    fn from(err: crate::operation::put_connector::PutConnectorError) -> Self {
+        match err {
+            crate::operation::put_connector::PutConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_connector::PutConnectorError::InsufficientPermissionsException(inner) => {
+                Error::InsufficientPermissionsException(inner)
+            }
+            crate::operation::put_connector::PutConnectorError::MaxNumberOfConnectorsExceededException(inner) => {
+                Error::MaxNumberOfConnectorsExceededException(inner)
+            }
+            crate::operation::put_connector::PutConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_connector::PutConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3419,6 +3534,43 @@ impl From<crate::operation::put_stored_query::PutStoredQueryError> for Error {
 }
 impl<R>
     From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderError> for Error {
+    fn from(
+        err: crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderError,
+    ) -> Self {
+        match err {
+            crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError, R>,
     > for Error
 where
@@ -3722,6 +3874,7 @@ impl ::std::error::Error for Error {
             Error::MaxNumberOfConfigRulesExceededException(inner) => inner.source(),
             Error::MaxNumberOfConfigurationRecordersExceededException(inner) => inner.source(),
             Error::MaxNumberOfConformancePacksExceededException(inner) => inner.source(),
+            Error::MaxNumberOfConnectorsExceededException(inner) => inner.source(),
             Error::MaxNumberOfDeliveryChannelsExceededException(inner) => inner.source(),
             Error::MaxNumberOfOrganizationConfigRulesExceededException(inner) => inner.source(),
             Error::MaxNumberOfOrganizationConformancePacksExceededException(inner) => inner.source(),
@@ -3785,6 +3938,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::MaxNumberOfConfigRulesExceededException(e) => e.request_id(),
             Self::MaxNumberOfConfigurationRecordersExceededException(e) => e.request_id(),
             Self::MaxNumberOfConformancePacksExceededException(e) => e.request_id(),
+            Self::MaxNumberOfConnectorsExceededException(e) => e.request_id(),
             Self::MaxNumberOfDeliveryChannelsExceededException(e) => e.request_id(),
             Self::MaxNumberOfOrganizationConfigRulesExceededException(e) => e.request_id(),
             Self::MaxNumberOfOrganizationConformancePacksExceededException(e) => e.request_id(),

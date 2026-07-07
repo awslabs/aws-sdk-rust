@@ -544,6 +544,26 @@ pub fn de_invoke_with_response_stream_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => {
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "SnapStartException" => crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SnapStartException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -575,6 +595,22 @@ pub fn de_invoke_with_response_stream_http_error(
             }
             tmp
         }),
+        "SnapStartRegenerationFailureException" => {
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SnapStartRegenerationFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SnapStartRegenerationFailureExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_snap_start_regeneration_failure_exception::de_snap_start_regeneration_failure_exception_json_err(_response_body, output).map_err(crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "SnapStartTimeoutException" => crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SnapStartTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {

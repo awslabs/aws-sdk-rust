@@ -2,10 +2,16 @@
 pub(crate) fn de_describe_proxy_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribeProxyResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,12 +71,15 @@ where
                             );
                         }
                         "ListenerProperties" => {
-                            builder = builder
-                                .set_listener_properties(crate::protocol_serde::shape_listener_properties::de_listener_properties(tokens, _value)?);
+                            builder = builder.set_listener_properties(crate::protocol_serde::shape_listener_properties::de_listener_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TlsInterceptProperties" => {
                             builder = builder.set_tls_intercept_properties(
-                                crate::protocol_serde::shape_tls_intercept_properties::de_tls_intercept_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_tls_intercept_properties::de_tls_intercept_properties(tokens, _value, depth + 1)?,
                             );
                         }
                         "VpcEndpointServiceName" => {
@@ -120,7 +129,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

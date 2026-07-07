@@ -2,10 +2,16 @@
 pub(crate) fn de_environment_blueprint_configuration_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EnvironmentBlueprintConfigurationItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,13 +57,20 @@ where
                             );
                         }
                         "enabledRegions" => {
-                            builder = builder
-                                .set_enabled_regions(crate::protocol_serde::shape_enabled_region_list::de_enabled_region_list(tokens, _value)?);
+                            builder = builder.set_enabled_regions(crate::protocol_serde::shape_enabled_region_list::de_enabled_region_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "regionalParameters" => {
                             builder = builder.set_regional_parameters(
-                                crate::protocol_serde::shape_regional_parameter_map::de_regional_parameter_map(tokens, _value)?,
+                                crate::protocol_serde::shape_regional_parameter_map::de_regional_parameter_map(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "allowUserProvidedConfigurations" => {
+                            builder = builder
+                                .set_allow_user_provided_configurations(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -71,9 +84,18 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "resourceConfigurations" => {
+                            builder = builder.set_resource_configurations(
+                                crate::protocol_serde::shape_resource_configurations::de_resource_configurations(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "provisioningConfigurations" => {
                             builder = builder.set_provisioning_configurations(
-                                crate::protocol_serde::shape_provisioning_configuration_list::de_provisioning_configuration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_provisioning_configuration_list::de_provisioning_configuration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

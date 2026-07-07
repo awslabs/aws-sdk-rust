@@ -104,6 +104,18 @@ pub(crate) fn get_identity_provider_by_identifier_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_provisioned_limit_output_output_correct_errors(
+    mut builder: crate::operation::get_provisioned_limit::builders::GetProvisionedLimitOutputBuilder,
+) -> crate::operation::get_provisioned_limit::builders::GetProvisionedLimitOutputBuilder {
+    if builder.limit.is_none() {
+        builder.limit = {
+            let builder = crate::types::builders::LimitTypeBuilder::default();
+            Some(crate::serde_util::limit_type_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_ui_customization_output_output_correct_errors(
     mut builder: crate::operation::get_ui_customization::builders::GetUiCustomizationOutputBuilder,
 ) -> crate::operation::get_ui_customization::builders::GetUiCustomizationOutputBuilder {
@@ -230,6 +242,18 @@ pub(crate) fn update_identity_provider_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_provisioned_limit_output_output_correct_errors(
+    mut builder: crate::operation::update_provisioned_limit::builders::UpdateProvisionedLimitOutputBuilder,
+) -> crate::operation::update_provisioned_limit::builders::UpdateProvisionedLimitOutputBuilder {
+    if builder.limit.is_none() {
+        builder.limit = {
+            let builder = crate::types::builders::LimitTypeBuilder::default();
+            Some(crate::serde_util::limit_type_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_resource_server_output_output_correct_errors(
     mut builder: crate::operation::update_resource_server::builders::UpdateResourceServerOutputBuilder,
 ) -> crate::operation::update_resource_server::builders::UpdateResourceServerOutputBuilder {
@@ -238,6 +262,22 @@ pub(crate) fn update_resource_server_output_output_correct_errors(
             let builder = crate::types::builders::ResourceServerTypeBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn limit_type_correct_errors(mut builder: crate::types::builders::LimitTypeBuilder) -> crate::types::builders::LimitTypeBuilder {
+    if builder.limit_definition.is_none() {
+        builder.limit_definition = {
+            let builder = crate::types::builders::LimitDefinitionTypeBuilder::default();
+            crate::serde_util::limit_definition_type_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.provisioned_limit_value.is_none() {
+        builder.provisioned_limit_value = Some(Default::default())
+    }
+    if builder.free_limit_value.is_none() {
+        builder.free_limit_value = Some(Default::default())
     }
     builder
 }
@@ -285,6 +325,18 @@ pub(crate) fn terms_type_correct_errors(mut builder: crate::types::builders::Ter
     builder
 }
 
+pub(crate) fn limit_definition_type_correct_errors(
+    mut builder: crate::types::builders::LimitDefinitionTypeBuilder,
+) -> crate::types::builders::LimitDefinitionTypeBuilder {
+    if builder.limit_class.is_none() {
+        builder.limit_class = "no value was set".parse::<crate::types::LimitClass>().ok()
+    }
+    if builder.attributes.is_none() {
+        builder.attributes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn account_takeover_risk_configuration_type_correct_errors(
     mut builder: crate::types::builders::AccountTakeoverRiskConfigurationTypeBuilder,
 ) -> crate::types::builders::AccountTakeoverRiskConfigurationTypeBuilder {
@@ -325,6 +377,16 @@ pub(crate) fn custom_domain_config_type_correct_errors(
 ) -> crate::types::builders::CustomDomainConfigTypeBuilder {
     if builder.certificate_arn.is_none() {
         builder.certificate_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn failover_type_correct_errors(mut builder: crate::types::builders::FailoverTypeBuilder) -> crate::types::builders::FailoverTypeBuilder {
+    if builder.secondary_region.is_none() {
+        builder.secondary_region = Some(Default::default())
+    }
+    if builder.primary_route53_health_check_id.is_none() {
+        builder.primary_route53_health_check_id = Some(Default::default())
     }
     builder
 }

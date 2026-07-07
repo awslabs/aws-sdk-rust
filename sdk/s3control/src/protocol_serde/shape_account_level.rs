@@ -40,7 +40,11 @@ pub fn ser_account_level(
 #[allow(clippy::needless_question_mark)]
 pub fn de_account_level(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AccountLevel, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AccountLevel::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_account_level(
             s if s.matches("ActivityMetrics") /* ActivityMetrics com.amazonaws.s3control#AccountLevel$ActivityMetrics */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_activity_metrics::de_activity_metrics(&mut tag)
+                        crate::protocol_serde::shape_activity_metrics::de_activity_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -58,7 +62,7 @@ pub fn de_account_level(
             s if s.matches("BucketLevel") /* BucketLevel com.amazonaws.s3control#AccountLevel$BucketLevel */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_bucket_level::de_bucket_level(&mut tag)
+                        crate::protocol_serde::shape_bucket_level::de_bucket_level(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -68,7 +72,7 @@ pub fn de_account_level(
             s if s.matches("AdvancedCostOptimizationMetrics") /* AdvancedCostOptimizationMetrics com.amazonaws.s3control#AccountLevel$AdvancedCostOptimizationMetrics */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_advanced_cost_optimization_metrics::de_advanced_cost_optimization_metrics(&mut tag)
+                        crate::protocol_serde::shape_advanced_cost_optimization_metrics::de_advanced_cost_optimization_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -78,7 +82,7 @@ pub fn de_account_level(
             s if s.matches("AdvancedDataProtectionMetrics") /* AdvancedDataProtectionMetrics com.amazonaws.s3control#AccountLevel$AdvancedDataProtectionMetrics */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_advanced_data_protection_metrics::de_advanced_data_protection_metrics(&mut tag)
+                        crate::protocol_serde::shape_advanced_data_protection_metrics::de_advanced_data_protection_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -88,7 +92,7 @@ pub fn de_account_level(
             s if s.matches("DetailedStatusCodesMetrics") /* DetailedStatusCodesMetrics com.amazonaws.s3control#AccountLevel$DetailedStatusCodesMetrics */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_detailed_status_codes_metrics::de_detailed_status_codes_metrics(&mut tag)
+                        crate::protocol_serde::shape_detailed_status_codes_metrics::de_detailed_status_codes_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_account_level(
             s if s.matches("AdvancedPerformanceMetrics") /* AdvancedPerformanceMetrics com.amazonaws.s3control#AccountLevel$AdvancedPerformanceMetrics */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_advanced_performance_metrics::de_advanced_performance_metrics(&mut tag)
+                        crate::protocol_serde::shape_advanced_performance_metrics::de_advanced_performance_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +112,7 @@ pub fn de_account_level(
             s if s.matches("StorageLensGroupLevel") /* StorageLensGroupLevel com.amazonaws.s3control#AccountLevel$StorageLensGroupLevel */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_group_level::de_storage_lens_group_level(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_group_level::de_storage_lens_group_level(&mut tag, depth + 1)
                         ?
                     )
                 ;

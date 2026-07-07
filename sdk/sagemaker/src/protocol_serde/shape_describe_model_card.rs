@@ -73,6 +73,8 @@ pub(crate) fn de_describe_model_card(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -115,7 +117,9 @@ pub(crate) fn de_describe_model_card(
                 }
                 "SecurityConfig" => {
                     builder = builder.set_security_config(crate::protocol_serde::shape_model_card_security_config::de_model_card_security_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "CreationTime" => {
@@ -125,7 +129,7 @@ pub(crate) fn de_describe_model_card(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -134,7 +138,7 @@ pub(crate) fn de_describe_model_card(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "ModelCardProcessingStatus" => {
                     builder = builder.set_model_card_processing_status(

@@ -47,6 +47,8 @@ pub fn de_list_stack_resources(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListStackResourcesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListStackResourcesResponse got {start_el:?}"
@@ -64,7 +66,7 @@ pub fn de_list_stack_resources(
             s if s.matches("StackResourceSummaries") /* StackResourceSummaries com.amazonaws.cloudformation.synthetic#ListStackResourcesOutput$StackResourceSummaries */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stack_resource_summaries::de_stack_resource_summaries(&mut tag)
+                        crate::protocol_serde::shape_stack_resource_summaries::de_stack_resource_summaries(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -23,6 +23,8 @@ pub use crate::types::_aws_service_access_status::AwsServiceAccessStatus;
 
 pub use crate::types::_region_status::RegionStatus;
 
+pub use crate::types::_service_linked_recorder_info::ServiceLinkedRecorderInfo;
+
 pub use crate::types::_member_index::MemberIndex;
 
 pub use crate::types::_resource::Resource;
@@ -38,6 +40,8 @@ pub use crate::types::_included_property::IncludedProperty;
 pub use crate::types::_index_status::IndexStatus;
 
 pub use crate::types::_view_status::ViewStatus;
+
+pub use crate::types::_recorder_type::RecorderType;
 
 pub use crate::types::_operation_status::OperationStatus;
 
@@ -69,6 +73,8 @@ mod _operation_status;
 
 mod _org_configuration;
 
+mod _recorder_type;
+
 mod _region_status;
 
 mod _resource;
@@ -78,6 +84,8 @@ mod _resource_count;
 mod _resource_property;
 
 mod _search_filter;
+
+mod _service_linked_recorder_info;
 
 mod _service_view;
 

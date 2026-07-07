@@ -72,6 +72,8 @@ pub fn de_get_predictive_scaling_forecast(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetPredictiveScalingForecastResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetPredictiveScalingForecastResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_get_predictive_scaling_forecast(
             s if s.matches("LoadForecast") /* LoadForecast com.amazonaws.autoscaling.synthetic#GetPredictiveScalingForecastOutput$LoadForecast */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_load_forecasts::de_load_forecasts(&mut tag)
+                        crate::protocol_serde::shape_load_forecasts::de_load_forecasts(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -99,7 +101,7 @@ pub fn de_get_predictive_scaling_forecast(
             s if s.matches("CapacityForecast") /* CapacityForecast com.amazonaws.autoscaling.synthetic#GetPredictiveScalingForecastOutput$CapacityForecast */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_capacity_forecast::de_capacity_forecast(&mut tag)
+                        crate::protocol_serde::shape_capacity_forecast::de_capacity_forecast(&mut tag, depth + 1)
                         ?
                     )
                 ;

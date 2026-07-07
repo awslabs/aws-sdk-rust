@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`connector_id(Option<String>)`](crate::operation::create_connector_v2::CreateConnectorV2Output::connector_id): <p>The UUID of the connectorV2 to identify connectorV2 resource.</p>
     ///   - [`auth_url(Option<String>)`](crate::operation::create_connector_v2::CreateConnectorV2Output::auth_url): <p>The Url provide to customers for OAuth auth code flow.</p>
     ///   - [`connector_status(Option<ConnectorStatus>)`](crate::operation::create_connector_v2::CreateConnectorV2Output::connector_status): <p>The current status of the connectorV2.</p>
+    ///   - [`enablement_status(Option<EnablementStatus>)`](crate::operation::create_connector_v2::CreateConnectorV2Output::enablement_status): <p>The enablement status of the connector after creation.</p>
     /// - On failure, responds with [`SdkError<CreateConnectorV2Error>`](crate::operation::create_connector_v2::CreateConnectorV2Error)
     pub fn create_connector_v2(&self) -> crate::operation::create_connector_v2::builders::CreateConnectorV2FluentBuilder {
         crate::operation::create_connector_v2::builders::CreateConnectorV2FluentBuilder::new(self.handle.clone())

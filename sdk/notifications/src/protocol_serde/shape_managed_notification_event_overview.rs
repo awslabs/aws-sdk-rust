@@ -2,10 +2,16 @@
 pub(crate) fn de_managed_notification_event_overview<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedNotificationEventOverview>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,9 @@ where
                         "notificationEvent" => {
                             builder = builder.set_notification_event(
                                 crate::protocol_serde::shape_managed_notification_event_summary::de_managed_notification_event_summary(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -64,12 +72,19 @@ where
                             );
                         }
                         "aggregationSummary" => {
-                            builder = builder
-                                .set_aggregation_summary(crate::protocol_serde::shape_aggregation_summary::de_aggregation_summary(tokens, _value)?);
+                            builder = builder.set_aggregation_summary(crate::protocol_serde::shape_aggregation_summary::de_aggregation_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "aggregatedNotificationRegions" => {
                             builder = builder.set_aggregated_notification_regions(
-                                crate::protocol_serde::shape_aggregated_notification_regions::de_aggregated_notification_regions(tokens, _value)?,
+                                crate::protocol_serde::shape_aggregated_notification_regions::de_aggregated_notification_regions(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

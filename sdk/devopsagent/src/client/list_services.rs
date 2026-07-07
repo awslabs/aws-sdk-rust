@@ -4,12 +4,12 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_services::builders::ListServicesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_services::builders::ListServicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_max_results):<br>required: **false**<br>Maximum number of results to return in a single call.<br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_next_token):<br>required: **false**<br>Token for the next page of results.<br>
-    ///   - [`filter_service_type(Service)`](crate::operation::list_services::builders::ListServicesFluentBuilder::filter_service_type) / [`set_filter_service_type(Option<Service>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_filter_service_type):<br>required: **false**<br>Optional filter to list only services of a specific type.<br>
+    ///   - [`max_results(i32)`](crate::operation::list_services::builders::ListServicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a single call.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_next_token):<br>required: **false**<br><p>Token for the next page of results.</p><br>
+    ///   - [`filter_service_type(Service)`](crate::operation::list_services::builders::ListServicesFluentBuilder::filter_service_type) / [`set_filter_service_type(Option<Service>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_filter_service_type):<br>required: **false**<br><p>Optional filter to list only services of a specific type.</p><br>
     /// - On success, responds with [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): Token to retrieve the next page of results, if there are more results.
-    ///   - [`services(Vec::<RegisteredService>)`](crate::operation::list_services::ListServicesOutput::services): List of registered services.
+    ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>Token to retrieve the next page of results, if there are more results.</p>
+    ///   - [`services(Vec::<RegisteredService>)`](crate::operation::list_services::ListServicesOutput::services): <p>List of registered services.</p>
     /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
     pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
         crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())

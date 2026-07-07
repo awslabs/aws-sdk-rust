@@ -209,8 +209,28 @@ pub(crate) fn reflens_list_ingestions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_knowledge_bases_output_output_next_token(
+    input: &crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_namespaces_output_output_next_token(
     input: &crate::operation::list_namespaces::ListNamespacesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_o_auth_client_applications_output_output_next_token(
+    input: &crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -399,6 +419,16 @@ pub(crate) fn reflens_search_groups_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_knowledge_bases_output_output_next_token(
+    input: &crate::operation::search_knowledge_bases::SearchKnowledgeBasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_topics_output_output_next_token(
     input: &crate::operation::search_topics::SearchTopicsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -556,10 +586,24 @@ pub(crate) fn lens_list_ingestions_output_output_ingestions(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_knowledge_bases_output_output_knowledge_base_summaries(
+    input: crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
+    let input = input.knowledge_base_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_namespaces_output_output_namespaces(
     input: crate::operation::list_namespaces::ListNamespacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NamespaceInfoV2>> {
     let input = input.namespaces?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_o_auth_client_applications_output_output_o_auth_client_applications(
+    input: crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OAuthClientApplicationSummary>> {
+    let input = input.o_auth_client_applications?;
     ::std::option::Option::Some(input)
 }
 
@@ -672,6 +716,13 @@ pub(crate) fn lens_search_groups_output_output_group_list(
     input: crate::operation::search_groups::SearchGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Group>> {
     let input = input.group_list?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_knowledge_bases_output_output_knowledge_base_summaries(
+    input: crate::operation::search_knowledge_bases::SearchKnowledgeBasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
+    let input = input.knowledge_base_summaries;
     ::std::option::Option::Some(input)
 }
 

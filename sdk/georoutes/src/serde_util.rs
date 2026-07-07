@@ -397,6 +397,9 @@ pub(crate) fn route_number_correct_errors(mut builder: crate::types::builders::R
 pub(crate) fn route_pedestrian_leg_details_correct_errors(
     mut builder: crate::types::builders::RoutePedestrianLegDetailsBuilder,
 ) -> crate::types::builders::RoutePedestrianLegDetailsBuilder {
+    if builder.after_travel_steps.is_none() {
+        builder.after_travel_steps = Some(Default::default())
+    }
     if builder.arrival.is_none() {
         builder.arrival = {
             let builder = crate::types::builders::RoutePedestrianArrivalBuilder::default();
@@ -424,6 +427,101 @@ pub(crate) fn route_pedestrian_leg_details_correct_errors(
     builder
 }
 
+pub(crate) fn route_rental_leg_details_correct_errors(
+    mut builder: crate::types::builders::RouteRentalLegDetailsBuilder,
+) -> crate::types::builders::RouteRentalLegDetailsBuilder {
+    if builder.after_travel_steps.is_none() {
+        builder.after_travel_steps = Some(Default::default())
+    }
+    if builder.agency.is_none() {
+        builder.agency = {
+            let builder = crate::types::builders::RouteRentalAgencyBuilder::default();
+            crate::serde_util::route_rental_agency_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.arrival.is_none() {
+        builder.arrival = {
+            let builder = crate::types::builders::RouteRentalArrivalBuilder::default();
+            Some(crate::serde_util::route_rental_arrival_correct_errors(builder).build())
+        }
+    }
+    if builder.attributions.is_none() {
+        builder.attributions = Some(Default::default())
+    }
+    if builder.before_travel_steps.is_none() {
+        builder.before_travel_steps = Some(Default::default())
+    }
+    if builder.booking_web_links.is_none() {
+        builder.booking_web_links = Some(Default::default())
+    }
+    if builder.departure.is_none() {
+        builder.departure = {
+            let builder = crate::types::builders::RouteRentalDepartureBuilder::default();
+            Some(crate::serde_util::route_rental_departure_correct_errors(builder).build())
+        }
+    }
+    if builder.transport.is_none() {
+        builder.transport = {
+            let builder = crate::types::builders::RouteRentalTransportModeDetailsBuilder::default();
+            crate::serde_util::route_rental_transport_mode_details_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.travel_steps.is_none() {
+        builder.travel_steps = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_leg_details_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiLegDetailsBuilder,
+) -> crate::types::builders::RouteTaxiLegDetailsBuilder {
+    if builder.after_travel_steps.is_none() {
+        builder.after_travel_steps = Some(Default::default())
+    }
+    if builder.agency.is_none() {
+        builder.agency = {
+            let builder = crate::types::builders::RouteTaxiAgencyBuilder::default();
+            crate::serde_util::route_taxi_agency_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.arrival.is_none() {
+        builder.arrival = {
+            let builder = crate::types::builders::RouteTaxiArrivalBuilder::default();
+            Some(crate::serde_util::route_taxi_arrival_correct_errors(builder).build())
+        }
+    }
+    if builder.attributions.is_none() {
+        builder.attributions = Some(Default::default())
+    }
+    if builder.before_travel_steps.is_none() {
+        builder.before_travel_steps = Some(Default::default())
+    }
+    if builder.booking_web_links.is_none() {
+        builder.booking_web_links = Some(Default::default())
+    }
+    if builder.departure.is_none() {
+        builder.departure = {
+            let builder = crate::types::builders::RouteTaxiDepartureBuilder::default();
+            Some(crate::serde_util::route_taxi_departure_correct_errors(builder).build())
+        }
+    }
+    if builder.notices.is_none() {
+        builder.notices = Some(Default::default())
+    }
+    if builder.transport.is_none() {
+        builder.transport = {
+            let builder = crate::types::builders::RouteTaxiTransportModeDetailsBuilder::default();
+            crate::serde_util::route_taxi_transport_mode_details_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.travel_steps.is_none() {
+        builder.travel_steps = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn route_toll_price_summary_correct_errors(
     mut builder: crate::types::builders::RouteTollPriceSummaryBuilder,
 ) -> crate::types::builders::RouteTollPriceSummaryBuilder {
@@ -442,9 +540,71 @@ pub(crate) fn route_toll_price_summary_correct_errors(
     builder
 }
 
+pub(crate) fn route_transit_leg_details_correct_errors(
+    mut builder: crate::types::builders::RouteTransitLegDetailsBuilder,
+) -> crate::types::builders::RouteTransitLegDetailsBuilder {
+    if builder.after_travel_steps.is_none() {
+        builder.after_travel_steps = Some(Default::default())
+    }
+    if builder.arrival.is_none() {
+        builder.arrival = {
+            let builder = crate::types::builders::RouteTransitArrivalBuilder::default();
+            Some(crate::serde_util::route_transit_arrival_correct_errors(builder).build())
+        }
+    }
+    if builder.attributions.is_none() {
+        builder.attributions = Some(Default::default())
+    }
+    if builder.before_travel_steps.is_none() {
+        builder.before_travel_steps = Some(Default::default())
+    }
+    if builder.booking_web_links.is_none() {
+        builder.booking_web_links = Some(Default::default())
+    }
+    if builder.departure.is_none() {
+        builder.departure = {
+            let builder = crate::types::builders::RouteTransitDepartureBuilder::default();
+            Some(crate::serde_util::route_transit_departure_correct_errors(builder).build())
+        }
+    }
+    if builder.incidents.is_none() {
+        builder.incidents = Some(Default::default())
+    }
+    if builder.intermediate_stops.is_none() {
+        builder.intermediate_stops = Some(Default::default())
+    }
+    if builder.next_departures.is_none() {
+        builder.next_departures = Some(Default::default())
+    }
+    if builder.notices.is_none() {
+        builder.notices = Some(Default::default())
+    }
+    if builder.pass_through_waypoints.is_none() {
+        builder.pass_through_waypoints = Some(Default::default())
+    }
+    if builder.spans.is_none() {
+        builder.spans = Some(Default::default())
+    }
+    if builder.transport.is_none() {
+        builder.transport = {
+            let builder = crate::types::builders::RouteTransitTransportModeDetailsBuilder::default();
+            crate::serde_util::route_transit_transport_mode_details_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.travel_steps.is_none() {
+        builder.travel_steps = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn route_vehicle_leg_details_correct_errors(
     mut builder: crate::types::builders::RouteVehicleLegDetailsBuilder,
 ) -> crate::types::builders::RouteVehicleLegDetailsBuilder {
+    if builder.after_travel_steps.is_none() {
+        builder.after_travel_steps = Some(Default::default())
+    }
     if builder.arrival.is_none() {
         builder.arrival = {
             let builder = crate::types::builders::RouteVehicleArrivalBuilder::default();
@@ -535,6 +695,90 @@ pub(crate) fn route_pedestrian_departure_correct_errors(
     builder
 }
 
+pub(crate) fn route_rental_agency_correct_errors(
+    mut builder: crate::types::builders::RouteRentalAgencyBuilder,
+) -> crate::types::builders::RouteRentalAgencyBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_rental_arrival_correct_errors(
+    mut builder: crate::types::builders::RouteRentalArrivalBuilder,
+) -> crate::types::builders::RouteRentalArrivalBuilder {
+    if builder.place.is_none() {
+        builder.place = {
+            let builder = crate::types::builders::RouteRentalPlaceBuilder::default();
+            crate::serde_util::route_rental_place_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn route_rental_departure_correct_errors(
+    mut builder: crate::types::builders::RouteRentalDepartureBuilder,
+) -> crate::types::builders::RouteRentalDepartureBuilder {
+    if builder.place.is_none() {
+        builder.place = {
+            let builder = crate::types::builders::RouteRentalPlaceBuilder::default();
+            crate::serde_util::route_rental_place_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn route_rental_transport_mode_details_correct_errors(
+    mut builder: crate::types::builders::RouteRentalTransportModeDetailsBuilder,
+) -> crate::types::builders::RouteRentalTransportModeDetailsBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::RouteRentalMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_agency_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiAgencyBuilder,
+) -> crate::types::builders::RouteTaxiAgencyBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_arrival_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiArrivalBuilder,
+) -> crate::types::builders::RouteTaxiArrivalBuilder {
+    if builder.place.is_none() {
+        builder.place = {
+            let builder = crate::types::builders::RouteTaxiPlaceBuilder::default();
+            crate::serde_util::route_taxi_place_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_departure_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiDepartureBuilder,
+) -> crate::types::builders::RouteTaxiDepartureBuilder {
+    if builder.place.is_none() {
+        builder.place = {
+            let builder = crate::types::builders::RouteTaxiPlaceBuilder::default();
+            crate::serde_util::route_taxi_place_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_transport_mode_details_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiTransportModeDetailsBuilder,
+) -> crate::types::builders::RouteTaxiTransportModeDetailsBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::RouteTaxiMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn route_toll_price_value_range_correct_errors(
     mut builder: crate::types::builders::RouteTollPriceValueRangeBuilder,
 ) -> crate::types::builders::RouteTollPriceValueRangeBuilder {
@@ -543,6 +787,48 @@ pub(crate) fn route_toll_price_value_range_correct_errors(
     }
     if builder.max.is_none() {
         builder.max = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_transit_agency_correct_errors(
+    mut builder: crate::types::builders::RouteTransitAgencyBuilder,
+) -> crate::types::builders::RouteTransitAgencyBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_transit_arrival_correct_errors(
+    mut builder: crate::types::builders::RouteTransitArrivalBuilder,
+) -> crate::types::builders::RouteTransitArrivalBuilder {
+    if builder.place.is_none() {
+        builder.place = {
+            let builder = crate::types::builders::RouteTransitPlaceBuilder::default();
+            crate::serde_util::route_transit_place_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn route_transit_departure_correct_errors(
+    mut builder: crate::types::builders::RouteTransitDepartureBuilder,
+) -> crate::types::builders::RouteTransitDepartureBuilder {
+    if builder.place.is_none() {
+        builder.place = {
+            let builder = crate::types::builders::RouteTransitPlaceBuilder::default();
+            crate::serde_util::route_transit_place_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn route_transit_transport_mode_details_correct_errors(
+    mut builder: crate::types::builders::RouteTransitTransportModeDetailsBuilder,
+) -> crate::types::builders::RouteTransitTransportModeDetailsBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::RouteTransitMode>().ok()
     }
     builder
 }
@@ -566,6 +852,18 @@ pub(crate) fn route_vehicle_departure_correct_errors(
         builder.place = {
             let builder = crate::types::builders::RouteVehiclePlaceBuilder::default();
             crate::serde_util::route_vehicle_place_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn route_attribution_correct_errors(
+    mut builder: crate::types::builders::RouteAttributionBuilder,
+) -> crate::types::builders::RouteAttributionBuilder {
+    if builder.web_link.is_none() {
+        builder.web_link = {
+            let builder = crate::types::builders::RouteWebLinkBuilder::default();
+            crate::serde_util::route_web_link_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -658,6 +956,18 @@ pub(crate) fn route_pass_through_waypoint_correct_errors(
     builder
 }
 
+pub(crate) fn route_pedestrian_after_travel_step_correct_errors(
+    mut builder: crate::types::builders::RoutePedestrianAfterTravelStepBuilder,
+) -> crate::types::builders::RoutePedestrianAfterTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RoutePedestrianAfterTravelStepType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn route_pedestrian_notice_correct_errors(
     mut builder: crate::types::builders::RoutePedestrianNoticeBuilder,
 ) -> crate::types::builders::RoutePedestrianNoticeBuilder {
@@ -709,6 +1019,147 @@ pub(crate) fn route_pedestrian_travel_step_correct_errors(
     builder
 }
 
+pub(crate) fn route_rental_after_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteRentalAfterTravelStepBuilder,
+) -> crate::types::builders::RouteRentalAfterTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteRentalAfterTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_rental_before_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteRentalBeforeTravelStepBuilder,
+) -> crate::types::builders::RouteRentalBeforeTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteRentalBeforeTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_rental_overview_summary_correct_errors(
+    mut builder: crate::types::builders::RouteRentalOverviewSummaryBuilder,
+) -> crate::types::builders::RouteRentalOverviewSummaryBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.distance.is_none() {
+        builder.distance = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_rental_place_correct_errors(
+    mut builder: crate::types::builders::RouteRentalPlaceBuilder,
+) -> crate::types::builders::RouteRentalPlaceBuilder {
+    if builder.position.is_none() {
+        builder.position = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_rental_travel_only_summary_correct_errors(
+    mut builder: crate::types::builders::RouteRentalTravelOnlySummaryBuilder,
+) -> crate::types::builders::RouteRentalTravelOnlySummaryBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_rental_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteRentalTravelStepBuilder,
+) -> crate::types::builders::RouteRentalTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteRentalTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_after_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiAfterTravelStepBuilder,
+) -> crate::types::builders::RouteTaxiAfterTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteTaxiAfterTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_before_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiBeforeTravelStepBuilder,
+) -> crate::types::builders::RouteTaxiBeforeTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteTaxiBeforeTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_notice_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiNoticeBuilder,
+) -> crate::types::builders::RouteTaxiNoticeBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::RouteTaxiNoticeCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_overview_summary_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiOverviewSummaryBuilder,
+) -> crate::types::builders::RouteTaxiOverviewSummaryBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.distance.is_none() {
+        builder.distance = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_place_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiPlaceBuilder,
+) -> crate::types::builders::RouteTaxiPlaceBuilder {
+    if builder.position.is_none() {
+        builder.position = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_travel_only_summary_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiTravelOnlySummaryBuilder,
+) -> crate::types::builders::RouteTaxiTravelOnlySummaryBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_taxi_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteTaxiTravelStepBuilder,
+) -> crate::types::builders::RouteTaxiTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteTaxiTravelStepType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn route_toll_correct_errors(mut builder: crate::types::builders::RouteTollBuilder) -> crate::types::builders::RouteTollBuilder {
     if builder.payment_sites.is_none() {
         builder.payment_sites = Some(Default::default())
@@ -718,6 +1169,129 @@ pub(crate) fn route_toll_correct_errors(mut builder: crate::types::builders::Rou
     }
     if builder.systems.is_none() {
         builder.systems = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_transit_after_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteTransitAfterTravelStepBuilder,
+) -> crate::types::builders::RouteTransitAfterTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteTransitAfterTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_transit_before_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteTransitBeforeTravelStepBuilder,
+) -> crate::types::builders::RouteTransitBeforeTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteTransitBeforeTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_transit_incident_correct_errors(
+    mut builder: crate::types::builders::RouteTransitIncidentBuilder,
+) -> crate::types::builders::RouteTransitIncidentBuilder {
+    if builder.effect.is_none() {
+        builder.effect = "no value was set".parse::<crate::types::RouteTransitIncidentEffect>().ok()
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteTransitIncidentType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_transit_intermediate_stop_correct_errors(
+    mut builder: crate::types::builders::RouteTransitIntermediateStopBuilder,
+) -> crate::types::builders::RouteTransitIntermediateStopBuilder {
+    if builder.departure.is_none() {
+        builder.departure = {
+            let builder = crate::types::builders::RouteTransitDepartureBuilder::default();
+            Some(crate::serde_util::route_transit_departure_correct_errors(builder).build())
+        }
+    }
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_transit_next_departure_correct_errors(
+    mut builder: crate::types::builders::RouteTransitNextDepartureBuilder,
+) -> crate::types::builders::RouteTransitNextDepartureBuilder {
+    if builder.time.is_none() {
+        builder.time = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_transit_notice_correct_errors(
+    mut builder: crate::types::builders::RouteTransitNoticeBuilder,
+) -> crate::types::builders::RouteTransitNoticeBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::RouteTransitNoticeCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_transit_overview_summary_correct_errors(
+    mut builder: crate::types::builders::RouteTransitOverviewSummaryBuilder,
+) -> crate::types::builders::RouteTransitOverviewSummaryBuilder {
+    if builder.distance.is_none() {
+        builder.distance = Some(Default::default())
+    }
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_transit_place_correct_errors(
+    mut builder: crate::types::builders::RouteTransitPlaceBuilder,
+) -> crate::types::builders::RouteTransitPlaceBuilder {
+    if builder.position.is_none() {
+        builder.position = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_transit_travel_only_summary_correct_errors(
+    mut builder: crate::types::builders::RouteTransitTravelOnlySummaryBuilder,
+) -> crate::types::builders::RouteTransitTravelOnlySummaryBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn route_transit_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteTransitTravelStepBuilder,
+) -> crate::types::builders::RouteTransitTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteTransitTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_vehicle_after_travel_step_correct_errors(
+    mut builder: crate::types::builders::RouteVehicleAfterTravelStepBuilder,
+) -> crate::types::builders::RouteVehicleAfterTravelStepBuilder {
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RouteVehicleAfterTravelStepType>().ok()
     }
     builder
 }
@@ -772,6 +1346,13 @@ pub(crate) fn route_vehicle_travel_step_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::RouteVehicleTravelStepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn route_web_link_correct_errors(mut builder: crate::types::builders::RouteWebLinkBuilder) -> crate::types::builders::RouteWebLinkBuilder {
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
     }
     builder
 }

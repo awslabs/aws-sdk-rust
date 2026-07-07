@@ -186,6 +186,8 @@ pub(crate) fn de_describe_dashboard_definition(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -200,16 +202,19 @@ pub(crate) fn de_describe_dashboard_definition(
                 }
                 "DashboardPublishOptions" => {
                     builder = builder.set_dashboard_publish_options(
-                        crate::protocol_serde::shape_dashboard_publish_options::de_dashboard_publish_options(tokens, _value)?,
+                        crate::protocol_serde::shape_dashboard_publish_options::de_dashboard_publish_options(tokens, _value, depth + 1)?,
                     );
                 }
                 "Definition" => {
-                    builder = builder
-                        .set_definition(crate::protocol_serde::shape_dashboard_version_definition::de_dashboard_version_definition(tokens, _value)?);
+                    builder = builder.set_definition(
+                        crate::protocol_serde::shape_dashboard_version_definition::de_dashboard_version_definition(tokens, _value, depth + 1)?,
+                    );
                 }
                 "Errors" => {
                     builder = builder.set_errors(crate::protocol_serde::shape_dashboard_error_list::de_dashboard_error_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Name" => {

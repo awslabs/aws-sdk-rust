@@ -51,6 +51,8 @@ pub fn de_cancel_spot_instance_requests(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CancelSpotInstanceRequestsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CancelSpotInstanceRequestsResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_cancel_spot_instance_requests(
             s if s.matches("spotInstanceRequestSet") /* CancelledSpotInstanceRequests com.amazonaws.ec2.synthetic#CancelSpotInstanceRequestsOutput$CancelledSpotInstanceRequests */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cancelled_spot_instance_request_list::de_cancelled_spot_instance_request_list(&mut tag)
+                        crate::protocol_serde::shape_cancelled_spot_instance_request_list::de_cancelled_spot_instance_request_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

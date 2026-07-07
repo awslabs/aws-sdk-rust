@@ -30,6 +30,8 @@ pub struct RunListItem {
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The name of the workflow version.</p>
     pub workflow_version_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workflow.</p>
+    pub workflow_name: ::std::option::Option<::std::string::String>,
 }
 impl RunListItem {
     /// <p>The run's ARN.</p>
@@ -84,6 +86,10 @@ impl RunListItem {
     pub fn workflow_version_name(&self) -> ::std::option::Option<&str> {
         self.workflow_version_name.as_deref()
     }
+    /// <p>The name of the workflow.</p>
+    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+        self.workflow_name.as_deref()
+    }
 }
 impl RunListItem {
     /// Creates a new builder-style object to manufacture [`RunListItem`](crate::types::RunListItem).
@@ -109,6 +115,7 @@ pub struct RunListItemBuilder {
     pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) workflow_version_name: ::std::option::Option<::std::string::String>,
+    pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
 }
 impl RunListItemBuilder {
     /// <p>The run's ARN.</p>
@@ -293,6 +300,20 @@ impl RunListItemBuilder {
     pub fn get_workflow_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_version_name
     }
+    /// <p>The name of the workflow.</p>
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workflow.</p>
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workflow_name = input;
+        self
+    }
+    /// <p>The name of the workflow.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// Consumes the builder and constructs a [`RunListItem`](crate::types::RunListItem).
     pub fn build(self) -> crate::types::RunListItem {
         crate::types::RunListItem {
@@ -309,6 +330,7 @@ impl RunListItemBuilder {
             stop_time: self.stop_time,
             storage_type: self.storage_type,
             workflow_version_name: self.workflow_version_name,
+            workflow_name: self.workflow_name,
         }
     }
 }

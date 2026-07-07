@@ -121,6 +121,8 @@ pub(crate) fn de_get_template(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -150,7 +152,9 @@ pub(crate) fn de_get_template(
                 }
                 "layoutConfiguration" => {
                     builder = builder.set_layout_configuration(crate::protocol_serde::shape_layout_configuration::de_layout_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "name" => {
@@ -161,11 +165,17 @@ pub(crate) fn de_get_template(
                     );
                 }
                 "requiredFields" => {
-                    builder = builder.set_required_fields(crate::protocol_serde::shape_required_field_list::de_required_field_list(tokens, _value)?);
+                    builder = builder.set_required_fields(crate::protocol_serde::shape_required_field_list::de_required_field_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "rules" => {
                     builder = builder.set_rules(crate::protocol_serde::shape_template_case_rule_list::de_template_case_rule_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {
@@ -177,11 +187,15 @@ pub(crate) fn de_get_template(
                 }
                 "tagPropagationConfigurations" => {
                     builder = builder.set_tag_propagation_configurations(
-                        crate::protocol_serde::shape_tag_propagation_configuration_list::de_tag_propagation_configuration_list(tokens, _value)?,
+                        crate::protocol_serde::shape_tag_propagation_configuration_list::de_tag_propagation_configuration_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "templateArn" => {
                     builder = builder.set_template_arn(

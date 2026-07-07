@@ -42,7 +42,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-applicationsignals = "1.79.0"
+//! aws-sdk-applicationsignals = "1.84.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -159,14 +159,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateServiceLevelObjective`](crate::operation::create_service_level_objective) operation has
-/// a [`Client::create_service_level_objective`], function which returns a builder for that operation.
+/// For example, the [`CreateInstrumentationConfiguration`](crate::operation::create_instrumentation_configuration) operation has
+/// a [`Client::create_instrumentation_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_service_level_objective()
-///     .name("example")
+/// let result = client.create_instrumentation_configuration()
+///     .instrumentation_type("example")
 ///     .send()
 ///     .await;
 /// ```

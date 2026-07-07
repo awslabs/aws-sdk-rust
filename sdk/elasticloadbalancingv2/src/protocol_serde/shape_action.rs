@@ -58,7 +58,11 @@ pub fn ser_action(
 #[allow(clippy::needless_question_mark)]
 pub fn de_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Action, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Action::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -93,7 +97,7 @@ pub fn de_action(
             s if s.matches("AuthenticateOidcConfig") /* AuthenticateOidcConfig com.amazonaws.elasticloadbalancingv2#Action$AuthenticateOidcConfig */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_authenticate_oidc_action_config::de_authenticate_oidc_action_config(&mut tag)
+                        crate::protocol_serde::shape_authenticate_oidc_action_config::de_authenticate_oidc_action_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -103,7 +107,7 @@ pub fn de_action(
             s if s.matches("AuthenticateCognitoConfig") /* AuthenticateCognitoConfig com.amazonaws.elasticloadbalancingv2#Action$AuthenticateCognitoConfig */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_authenticate_cognito_action_config::de_authenticate_cognito_action_config(&mut tag)
+                        crate::protocol_serde::shape_authenticate_cognito_action_config::de_authenticate_cognito_action_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -128,7 +132,7 @@ pub fn de_action(
             s if s.matches("RedirectConfig") /* RedirectConfig com.amazonaws.elasticloadbalancingv2#Action$RedirectConfig */ =>  {
                 let var_24 =
                     Some(
-                        crate::protocol_serde::shape_redirect_action_config::de_redirect_action_config(&mut tag)
+                        crate::protocol_serde::shape_redirect_action_config::de_redirect_action_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -138,7 +142,7 @@ pub fn de_action(
             s if s.matches("FixedResponseConfig") /* FixedResponseConfig com.amazonaws.elasticloadbalancingv2#Action$FixedResponseConfig */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_fixed_response_action_config::de_fixed_response_action_config(&mut tag)
+                        crate::protocol_serde::shape_fixed_response_action_config::de_fixed_response_action_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -148,7 +152,7 @@ pub fn de_action(
             s if s.matches("ForwardConfig") /* ForwardConfig com.amazonaws.elasticloadbalancingv2#Action$ForwardConfig */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_forward_action_config::de_forward_action_config(&mut tag)
+                        crate::protocol_serde::shape_forward_action_config::de_forward_action_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -158,7 +162,7 @@ pub fn de_action(
             s if s.matches("JwtValidationConfig") /* JwtValidationConfig com.amazonaws.elasticloadbalancingv2#Action$JwtValidationConfig */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_jwt_validation_action_config::de_jwt_validation_action_config(&mut tag)
+                        crate::protocol_serde::shape_jwt_validation_action_config::de_jwt_validation_action_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -131,6 +131,8 @@ pub(crate) fn de_get_direct_query_data_source(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -159,7 +161,7 @@ pub(crate) fn de_get_direct_query_data_source(
                 }
                 "DataSourceType" => {
                     builder = builder.set_data_source_type(
-                        crate::protocol_serde::shape_direct_query_data_source_type::de_direct_query_data_source_type(tokens, _value)?,
+                        crate::protocol_serde::shape_direct_query_data_source_type::de_direct_query_data_source_type(tokens, _value, depth + 1)?,
                     );
                 }
                 "Description" => {
@@ -171,7 +173,11 @@ pub(crate) fn de_get_direct_query_data_source(
                 }
                 "OpenSearchArns" => {
                     builder = builder.set_open_search_arns(
-                        crate::protocol_serde::shape_direct_query_open_search_arn_list::de_direct_query_open_search_arn_list(tokens, _value)?,
+                        crate::protocol_serde::shape_direct_query_open_search_arn_list::de_direct_query_open_search_arn_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

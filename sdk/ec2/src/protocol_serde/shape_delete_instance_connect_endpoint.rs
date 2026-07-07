@@ -49,6 +49,8 @@ pub fn de_delete_instance_connect_endpoint(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteInstanceConnectEndpointResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteInstanceConnectEndpointResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_delete_instance_connect_endpoint(
             s if s.matches("instanceConnectEndpoint") /* InstanceConnectEndpoint com.amazonaws.ec2.synthetic#DeleteInstanceConnectEndpointOutput$InstanceConnectEndpoint */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ec2_instance_connect_endpoint::de_ec2_instance_connect_endpoint(&mut tag)
+                        crate::protocol_serde::shape_ec2_instance_connect_endpoint::de_ec2_instance_connect_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;

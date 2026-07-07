@@ -155,6 +155,8 @@ pub(crate) fn de_get_query_statistics(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,12 +164,17 @@ pub(crate) fn de_get_query_statistics(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ExecutionStatistics" => {
                     builder = builder.set_execution_statistics(crate::protocol_serde::shape_execution_statistics::de_execution_statistics(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "PlanningStatistics" => {
-                    builder =
-                        builder.set_planning_statistics(crate::protocol_serde::shape_planning_statistics::de_planning_statistics(tokens, _value)?);
+                    builder = builder.set_planning_statistics(crate::protocol_serde::shape_planning_statistics::de_planning_statistics(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "QuerySubmissionTime" => {
                     builder = builder.set_query_submission_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

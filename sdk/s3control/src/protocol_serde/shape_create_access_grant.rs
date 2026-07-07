@@ -75,6 +75,8 @@ pub fn de_create_access_grant(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("CreateAccessGrantResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected CreateAccessGrantResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -85,7 +87,7 @@ pub fn de_create_access_grant(
             s if s.matches("Grantee") /* Grantee com.amazonaws.s3control.synthetic#CreateAccessGrantOutput$Grantee */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag)
+                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +110,7 @@ pub fn de_create_access_grant(
             s if s.matches("AccessGrantsLocationConfiguration") /* AccessGrantsLocationConfiguration com.amazonaws.s3control.synthetic#CreateAccessGrantOutput$AccessGrantsLocationConfiguration */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_access_grants_location_configuration::de_access_grants_location_configuration(&mut tag)
+                        crate::protocol_serde::shape_access_grants_location_configuration::de_access_grants_location_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -14,6 +14,8 @@ pub struct MemoryRecordUpdateInput {
     pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The updated ID of the memory strategy that defines how this memory record is grouped.</p>
     pub memory_strategy_id: ::std::option::Option<::std::string::String>,
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
 impl MemoryRecordUpdateInput {
     /// <p>The unique ID of the memory record to be updated.</p>
@@ -39,6 +41,10 @@ impl MemoryRecordUpdateInput {
     pub fn memory_strategy_id(&self) -> ::std::option::Option<&str> {
         self.memory_strategy_id.as_deref()
     }
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
+        self.metadata.as_ref()
+    }
 }
 impl MemoryRecordUpdateInput {
     /// Creates a new builder-style object to manufacture [`MemoryRecordUpdateInput`](crate::types::MemoryRecordUpdateInput).
@@ -56,6 +62,7 @@ pub struct MemoryRecordUpdateInputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::MemoryContent>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) memory_strategy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
 impl MemoryRecordUpdateInputBuilder {
     /// <p>The unique ID of the memory record to be updated.</p>
@@ -136,6 +143,31 @@ impl MemoryRecordUpdateInputBuilder {
     pub fn get_memory_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_strategy_id
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MemoryRecordMetadataValue) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub fn set_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`MemoryRecordUpdateInput`](crate::types::MemoryRecordUpdateInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`memory_record_id`](crate::types::builders::MemoryRecordUpdateInputBuilder::memory_record_id)
@@ -157,6 +189,7 @@ impl MemoryRecordUpdateInputBuilder {
             content: self.content,
             namespaces: self.namespaces,
             memory_strategy_id: self.memory_strategy_id,
+            metadata: self.metadata,
         })
     }
 }

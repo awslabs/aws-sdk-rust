@@ -48,10 +48,16 @@ pub fn ser_s3_data_source(
 pub(crate) fn de_s3_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::S3DataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,46 +66,58 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "S3DataType" => {
-                            builder = builder.set_s3_data_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::S3DataType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "S3DataType" => {
+                                builder = builder.set_s3_data_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::S3DataType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "S3Uri" => {
+                                builder = builder.set_s3_uri(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "S3DataDistributionType" => {
+                                builder = builder.set_s3_data_distribution_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::S3DataDistribution::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "AttributeNames" => {
+                                builder = builder.set_attribute_names(crate::protocol_serde::shape_attribute_names::de_attribute_names(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "InstanceGroupNames" => {
+                                builder = builder.set_instance_group_names(
+                                    crate::protocol_serde::shape_instance_group_names::de_instance_group_names(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ModelAccessConfig" => {
+                                builder = builder.set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "HubAccessConfig" => {
+                                builder = builder.set_hub_access_config(crate::protocol_serde::shape_hub_access_config::de_hub_access_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "S3Uri" => {
-                            builder = builder.set_s3_uri(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "S3DataDistributionType" => {
-                            builder = builder.set_s3_data_distribution_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::S3DataDistribution::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "AttributeNames" => {
-                            builder = builder.set_attribute_names(crate::protocol_serde::shape_attribute_names::de_attribute_names(tokens, _value)?);
-                        }
-                        "InstanceGroupNames" => {
-                            builder = builder.set_instance_group_names(crate::protocol_serde::shape_instance_group_names::de_instance_group_names(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ModelAccessConfig" => {
-                            builder = builder
-                                .set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens, _value)?);
-                        }
-                        "HubAccessConfig" => {
-                            builder =
-                                builder.set_hub_access_config(crate::protocol_serde::shape_hub_access_config::de_hub_access_config(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

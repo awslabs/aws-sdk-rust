@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_invalidation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Invalidation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Invalidation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -50,7 +54,7 @@ pub fn de_invalidation(
             s if s.matches("InvalidationBatch") /* InvalidationBatch com.amazonaws.cloudfront#Invalidation$InvalidationBatch */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_invalidation_batch::de_invalidation_batch(&mut tag)
+                        crate::protocol_serde::shape_invalidation_batch::de_invalidation_batch(&mut tag, depth + 1)
                         ?
                     )
                 ;

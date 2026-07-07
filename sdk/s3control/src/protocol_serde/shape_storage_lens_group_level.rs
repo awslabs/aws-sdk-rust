@@ -19,7 +19,11 @@ pub fn ser_storage_lens_group_level(
 #[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_group_level(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StorageLensGroupLevel, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensGroupLevel::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -27,7 +31,7 @@ pub fn de_storage_lens_group_level(
             s if s.matches("SelectionCriteria") /* SelectionCriteria com.amazonaws.s3control#StorageLensGroupLevel$SelectionCriteria */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_group_level_selection_criteria::de_storage_lens_group_level_selection_criteria(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_group_level_selection_criteria::de_storage_lens_group_level_selection_criteria(&mut tag, depth + 1)
                         ?
                     )
                 ;

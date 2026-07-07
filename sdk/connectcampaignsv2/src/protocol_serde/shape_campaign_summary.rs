@@ -2,10 +2,16 @@
 pub(crate) fn de_campaign_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CampaignSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,9 @@ where
                         }
                         "channelSubtypes" => {
                             builder = builder.set_channel_subtypes(crate::protocol_serde::shape_channel_subtype_list::de_channel_subtype_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "type" => {
@@ -56,11 +64,14 @@ where
                             );
                         }
                         "schedule" => {
-                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
+                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value, depth + 1)?);
                         }
                         "entryLimitsConfig" => {
-                            builder = builder
-                                .set_entry_limits_config(crate::protocol_serde::shape_entry_limits_config::de_entry_limits_config(tokens, _value)?);
+                            builder = builder.set_entry_limits_config(crate::protocol_serde::shape_entry_limits_config::de_entry_limits_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "connectCampaignFlowArn" => {
                             builder = builder.set_connect_campaign_flow_arn(

@@ -49,6 +49,8 @@ pub(crate) mod shape_describe_configuration;
 
 pub(crate) mod shape_describe_configuration_revision;
 
+pub(crate) mod shape_describe_shared_resources;
+
 pub(crate) mod shape_describe_user;
 
 pub(crate) mod shape_list_brokers;
@@ -135,7 +137,11 @@ pub(crate) mod shape_list_of_configuration;
 
 pub(crate) mod shape_list_of_configuration_revision;
 
+pub(crate) mod shape_list_of_resource_share_error;
+
 pub(crate) mod shape_list_of_sanitization_warning;
+
+pub(crate) mod shape_list_of_shared_resource;
 
 pub(crate) mod shape_list_of_string;
 
@@ -171,7 +177,11 @@ pub(crate) mod shape_list_of_configuration_id;
 
 pub(crate) mod shape_pending_logs;
 
+pub(crate) mod shape_resource_share_error;
+
 pub(crate) mod shape_sanitization_warning;
+
+pub(crate) mod shape_shared_resource;
 
 pub(crate) mod shape_user_summary;
 
@@ -180,6 +190,8 @@ pub(crate) mod shape_list_of_availability_zone;
 pub(crate) mod shape_list_of_deployment_mode;
 
 pub(crate) mod shape_list_of_engine_version;
+
+pub(crate) mod shape_shared_resource_error;
 
 pub(crate) mod shape_availability_zone;
 

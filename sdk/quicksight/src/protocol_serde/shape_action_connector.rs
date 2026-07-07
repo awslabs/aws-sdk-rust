@@ -2,10 +2,16 @@
 pub(crate) fn de_action_connector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ActionConnector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,7 +70,9 @@ where
                         }
                         "Error" => {
                             builder = builder.set_error(crate::protocol_serde::shape_action_connector_error::de_action_connector_error(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Description" => {
@@ -75,11 +83,18 @@ where
                             );
                         }
                         "AuthenticationConfig" => {
-                            builder = builder
-                                .set_authentication_config(crate::protocol_serde::shape_read_auth_config::de_read_auth_config(tokens, _value)?);
+                            builder = builder.set_authentication_config(crate::protocol_serde::shape_read_auth_config::de_read_auth_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EnabledActions" => {
-                            builder = builder.set_enabled_actions(crate::protocol_serde::shape_action_id_list::de_action_id_list(tokens, _value)?);
+                            builder = builder.set_enabled_actions(crate::protocol_serde::shape_action_id_list::de_action_id_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "VpcConnectionArn" => {
                             builder = builder.set_vpc_connection_arn(

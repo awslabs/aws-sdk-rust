@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster_instance_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterInstanceGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,18 +59,24 @@ where
                         "InstanceRequirements" => {
                             builder = builder.set_instance_requirements(
                                 crate::protocol_serde::shape_cluster_instance_requirement_details::de_cluster_instance_requirement_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "InstanceTypeDetails" => {
                             builder = builder.set_instance_type_details(
-                                crate::protocol_serde::shape_cluster_instance_type_details::de_cluster_instance_type_details(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_instance_type_details::de_cluster_instance_type_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "LifeCycleConfig" => {
                             builder = builder.set_life_cycle_config(
-                                crate::protocol_serde::shape_cluster_life_cycle_config::de_cluster_life_cycle_config(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_life_cycle_config::de_cluster_life_cycle_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "ExecutionRole" => {
@@ -83,12 +95,16 @@ where
                         }
                         "InstanceStorageConfigs" => {
                             builder = builder.set_instance_storage_configs(
-                                crate::protocol_serde::shape_cluster_instance_storage_configs::de_cluster_instance_storage_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_instance_storage_configs::de_cluster_instance_storage_configs(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "OnStartDeepHealthChecks" => {
                             builder = builder.set_on_start_deep_health_checks(
-                                crate::protocol_serde::shape_on_start_deep_health_checks::de_on_start_deep_health_checks(tokens, _value)?,
+                                crate::protocol_serde::shape_on_start_deep_health_checks::de_on_start_deep_health_checks(tokens, _value, depth + 1)?,
                             );
                         }
                         "Status" => {
@@ -113,11 +129,21 @@ where
                             );
                         }
                         "OverrideVpcConfig" => {
-                            builder = builder.set_override_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder =
+                                builder.set_override_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "ScheduledUpdateConfig" => {
                             builder = builder.set_scheduled_update_config(
-                                crate::protocol_serde::shape_scheduled_update_config::de_scheduled_update_config(tokens, _value)?,
+                                crate::protocol_serde::shape_scheduled_update_config::de_scheduled_update_config(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "AutoPatchConfig" => {
+                            builder = builder.set_auto_patch_config(
+                                crate::protocol_serde::shape_cluster_auto_patch_config_details::de_cluster_auto_patch_config_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CurrentImageId" => {
@@ -134,18 +160,50 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CurrentImageReleaseVersion" => {
+                            builder = builder.set_current_image_release_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DesiredImageReleaseVersion" => {
+                            builder = builder.set_desired_image_release_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ImageVersionStatus" => {
+                            builder = builder.set_image_version_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ClusterImageVersionStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "ActiveOperations" => {
-                            builder =
-                                builder.set_active_operations(crate::protocol_serde::shape_active_operations::de_active_operations(tokens, _value)?);
+                            builder = builder.set_active_operations(crate::protocol_serde::shape_active_operations::de_active_operations(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "KubernetesConfig" => {
                             builder = builder.set_kubernetes_config(
-                                crate::protocol_serde::shape_cluster_kubernetes_config_details::de_cluster_kubernetes_config_details(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_kubernetes_config_details::de_cluster_kubernetes_config_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CapacityRequirements" => {
                             builder = builder.set_capacity_requirements(
-                                crate::protocol_serde::shape_cluster_capacity_requirements::de_cluster_capacity_requirements(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_capacity_requirements::de_cluster_capacity_requirements(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TargetStateCount" => {
@@ -164,17 +222,25 @@ where
                         }
                         "ActiveSoftwareUpdateConfig" => {
                             builder = builder.set_active_software_update_config(
-                                crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "SlurmConfig" => {
                             builder = builder.set_slurm_config(
-                                crate::protocol_serde::shape_cluster_slurm_config_details::de_cluster_slurm_config_details(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_slurm_config_details::de_cluster_slurm_config_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "NetworkInterface" => {
                             builder = builder.set_network_interface(
-                                crate::protocol_serde::shape_cluster_network_interface_details::de_cluster_network_interface_details(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_network_interface_details::de_cluster_network_interface_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

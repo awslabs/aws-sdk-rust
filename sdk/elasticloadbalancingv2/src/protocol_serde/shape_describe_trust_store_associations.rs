@@ -77,6 +77,8 @@ pub fn de_describe_trust_store_associations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeTrustStoreAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTrustStoreAssociationsResponse got {start_el:?}"
@@ -94,7 +96,7 @@ pub fn de_describe_trust_store_associations(
             s if s.matches("TrustStoreAssociations") /* TrustStoreAssociations com.amazonaws.elasticloadbalancingv2.synthetic#DescribeTrustStoreAssociationsOutput$TrustStoreAssociations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_trust_store_associations::de_trust_store_associations(&mut tag)
+                        crate::protocol_serde::shape_trust_store_associations::de_trust_store_associations(&mut tag, depth + 1)
                         ?
                     )
                 ;

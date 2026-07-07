@@ -238,6 +238,8 @@ pub(crate) fn de_checkout_borrow_license(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -259,7 +261,9 @@ pub(crate) fn de_checkout_borrow_license(
                 }
                 "EntitlementsAllowed" => {
                     builder = builder.set_entitlements_allowed(crate::protocol_serde::shape_entitlement_data_list::de_entitlement_data_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NodeId" => {
@@ -291,7 +295,7 @@ pub(crate) fn de_checkout_borrow_license(
                     );
                 }
                 "CheckoutMetadata" => {
-                    builder = builder.set_checkout_metadata(crate::protocol_serde::shape_metadata_list::de_metadata_list(tokens, _value)?);
+                    builder = builder.set_checkout_metadata(crate::protocol_serde::shape_metadata_list::de_metadata_list(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

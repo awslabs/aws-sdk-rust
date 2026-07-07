@@ -106,6 +106,8 @@ pub fn de_describe_user_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeUserGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeUserGroupsResponse got {start_el:?}"
@@ -123,7 +125,7 @@ pub fn de_describe_user_groups(
             s if s.matches("UserGroups") /* UserGroups com.amazonaws.elasticache.synthetic#DescribeUserGroupsOutput$UserGroups */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_user_group_list::de_user_group_list(&mut tag)
+                        crate::protocol_serde::shape_user_group_list::de_user_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

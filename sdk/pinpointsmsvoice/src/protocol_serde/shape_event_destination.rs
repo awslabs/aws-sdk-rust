@@ -2,10 +2,16 @@
 pub(crate) fn de_event_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EventDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CloudWatchLogsDestination" => {
                             builder = builder.set_cloud_watch_logs_destination(
-                                crate::protocol_serde::shape_cloud_watch_logs_destination::de_cloud_watch_logs_destination(tokens, _value)?,
+                                crate::protocol_serde::shape_cloud_watch_logs_destination::de_cloud_watch_logs_destination(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Enabled" => {
@@ -25,11 +35,19 @@ where
                         }
                         "KinesisFirehoseDestination" => {
                             builder = builder.set_kinesis_firehose_destination(
-                                crate::protocol_serde::shape_kinesis_firehose_destination::de_kinesis_firehose_destination(tokens, _value)?,
+                                crate::protocol_serde::shape_kinesis_firehose_destination::de_kinesis_firehose_destination(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MatchingEventTypes" => {
-                            builder = builder.set_matching_event_types(crate::protocol_serde::shape_event_types::de_event_types(tokens, _value)?);
+                            builder = builder.set_matching_event_types(crate::protocol_serde::shape_event_types::de_event_types(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Name" => {
                             builder = builder.set_name(
@@ -39,7 +57,11 @@ where
                             );
                         }
                         "SnsDestination" => {
-                            builder = builder.set_sns_destination(crate::protocol_serde::shape_sns_destination::de_sns_destination(tokens, _value)?);
+                            builder = builder.set_sns_destination(crate::protocol_serde::shape_sns_destination::de_sns_destination(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

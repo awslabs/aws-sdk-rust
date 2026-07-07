@@ -423,6 +423,8 @@ pub use crate::types::_input_settings::InputSettings;
 
 pub use crate::types::_linked_channel_type::LinkedChannelType;
 
+pub use crate::types::_audio_feed_input::AudioFeedInput;
+
 pub use crate::types::_interface_mapping_create_request::InterfaceMappingCreateRequest;
 
 pub use crate::types::_interface_mapping::InterfaceMapping;
@@ -555,6 +557,8 @@ pub use crate::types::_smpte2110_receiver_group_sdp_settings::Smpte2110ReceiverG
 
 pub use crate::types::_media_resource_neighbor::MediaResourceNeighbor;
 
+pub use crate::types::_media_connect_router_output_connection::MediaConnectRouterOutputConnection;
+
 pub use crate::types::_input_destination_route::InputDestinationRoute;
 
 pub use crate::types::_srt_caller_decryption::SrtCallerDecryption;
@@ -612,6 +616,8 @@ pub use crate::types::_media_connect_router_output_encryption_type::MediaConnect
 pub use crate::types::_audio_normalization_algorithm::AudioNormalizationAlgorithm;
 
 pub use crate::types::_audio_normalization_algorithm_control::AudioNormalizationAlgorithmControl;
+
+pub use crate::types::_audio_normalization_peak_calculation::AudioNormalizationPeakCalculation;
 
 pub use crate::types::_nielsen_watermarks_settings::NielsenWatermarksSettings;
 
@@ -1207,6 +1213,8 @@ pub use crate::types::_scte27_source_settings::Scte27SourceSettings;
 
 pub use crate::types::_teletext_source_settings::TeletextSourceSettings;
 
+pub use crate::types::_smart_subtitle_source_settings::SmartSubtitleSourceSettings;
+
 pub use crate::types::_last_frame_clipping_behavior::LastFrameClippingBehavior;
 
 pub use crate::types::_pipeline_id::PipelineId;
@@ -1273,6 +1281,8 @@ pub use crate::types::_scte27_ocr_language::Scte27OcrLanguage;
 
 pub use crate::types::_caption_rectangle::CaptionRectangle;
 
+pub use crate::types::_caption_synchronization_mode::CaptionSynchronizationMode;
+
 pub use crate::types::_scte35_segmentation_descriptor::Scte35SegmentationDescriptor;
 
 pub use crate::types::_m2ts_settings::M2tsSettings;
@@ -1294,6 +1304,8 @@ pub use crate::types::_hls_default::HlsDefault;
 pub use crate::types::_multiplex_m2ts_settings::MultiplexM2tsSettings;
 
 pub use crate::types::_fec_output_include_fec::FecOutputIncludeFec;
+
+pub use crate::types::_audio_pid::AudioPid;
 
 pub use crate::types::_audio_track::AudioTrack;
 
@@ -1356,6 +1368,8 @@ pub use crate::types::_fmp4_nielsen_id3_behavior::Fmp4NielsenId3Behavior;
 pub use crate::types::_fmp4_timed_metadata_behavior::Fmp4TimedMetadataBehavior;
 
 pub use crate::types::_m3u8_settings::M3u8Settings;
+
+pub use crate::types::_audio_pre_mixer_settings::AudioPreMixerSettings;
 
 pub use crate::types::_scte35_archive_allowed_flag::Scte35ArchiveAllowedFlag;
 
@@ -1449,6 +1463,8 @@ mod _audio_description_language_code_control;
 
 mod _audio_dolby_e_decode;
 
+mod _audio_feed_input;
+
 mod _audio_hls_rendition_selection;
 
 mod _audio_language_selection;
@@ -1459,6 +1475,8 @@ mod _audio_normalization_algorithm;
 
 mod _audio_normalization_algorithm_control;
 
+mod _audio_normalization_peak_calculation;
+
 mod _audio_normalization_settings;
 
 mod _audio_only_hls_segment_type;
@@ -1467,7 +1485,11 @@ mod _audio_only_hls_settings;
 
 mod _audio_only_hls_track_type;
 
+mod _audio_pid;
+
 mod _audio_pid_selection;
+
+mod _audio_pre_mixer_settings;
 
 mod _audio_selector;
 
@@ -1568,6 +1590,8 @@ mod _caption_rectangle;
 mod _caption_selector;
 
 mod _caption_selector_settings;
+
+mod _caption_synchronization_mode;
 
 mod _cdi_input_resolution;
 
@@ -2249,6 +2273,8 @@ mod _media_connect_router_container_settings;
 
 mod _media_connect_router_group_settings;
 
+mod _media_connect_router_output_connection;
+
 mod _media_connect_router_output_connection_map;
 
 mod _media_connect_router_output_destination_settings;
@@ -2594,6 +2620,8 @@ mod _signal_map_monitor_deployment_status;
 mod _signal_map_status;
 
 mod _signal_map_summary;
+
+mod _smart_subtitle_source_settings;
 
 mod _smooth_group_audio_only_timecode_control;
 

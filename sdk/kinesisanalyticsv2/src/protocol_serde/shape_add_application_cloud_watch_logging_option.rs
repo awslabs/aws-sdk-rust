@@ -167,6 +167,8 @@ pub(crate) fn de_add_application_cloud_watch_logging_option(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -189,7 +191,9 @@ pub(crate) fn de_add_application_cloud_watch_logging_option(
                 "CloudWatchLoggingOptionDescriptions" => {
                     builder = builder.set_cloud_watch_logging_option_descriptions(
                         crate::protocol_serde::shape_cloud_watch_logging_option_descriptions::de_cloud_watch_logging_option_descriptions(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

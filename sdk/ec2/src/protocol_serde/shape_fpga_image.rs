@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_fpga_image(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FpgaImage, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FpgaImage::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_fpga_image(
             s if s.matches("pciId") /* PciId com.amazonaws.ec2#FpgaImage$PciId */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_pci_id::de_pci_id(&mut tag)
+                        crate::protocol_serde::shape_pci_id::de_pci_id(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_fpga_image(
             s if s.matches("state") /* State com.amazonaws.ec2#FpgaImage$State */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_fpga_image_state::de_fpga_image_state(&mut tag)
+                        crate::protocol_serde::shape_fpga_image_state::de_fpga_image_state(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -149,7 +153,7 @@ pub fn de_fpga_image(
             s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2#FpgaImage$ProductCodes */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
+                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -159,7 +163,7 @@ pub fn de_fpga_image(
             s if s.matches("tags") /* Tags com.amazonaws.ec2#FpgaImage$Tags */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -199,7 +203,7 @@ pub fn de_fpga_image(
             s if s.matches("instanceTypes") /* InstanceTypes com.amazonaws.ec2#FpgaImage$InstanceTypes */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_instance_types_list::de_instance_types_list(&mut tag)
+                        crate::protocol_serde::shape_instance_types_list::de_instance_types_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

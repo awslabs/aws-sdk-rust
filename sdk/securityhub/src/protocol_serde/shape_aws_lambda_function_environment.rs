@@ -25,10 +25,16 @@ pub fn ser_aws_lambda_function_environment(
 pub(crate) fn de_aws_lambda_function_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsLambdaFunctionEnvironment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,12 +45,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Variables" => {
-                            builder = builder.set_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
+                            builder = builder.set_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                         }
                         "Error" => {
                             builder = builder.set_error(
                                 crate::protocol_serde::shape_aws_lambda_function_environment_error::de_aws_lambda_function_environment_error(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -9,8 +9,10 @@ pub struct UpdateClusterVersionInput {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking or rollback-blocking readiness checks when updating a cluster.</p>
     pub force: ::std::option::Option<bool>,
+    /// <p>The rollback configuration for the cluster version rollback.</p>
+    pub rollback_config: ::std::option::Option<crate::types::RollbackConfig>,
 }
 impl UpdateClusterVersionInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -25,9 +27,13 @@ impl UpdateClusterVersionInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking or rollback-blocking readiness checks when updating a cluster.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
+    }
+    /// <p>The rollback configuration for the cluster version rollback.</p>
+    pub fn rollback_config(&self) -> ::std::option::Option<&crate::types::RollbackConfig> {
+        self.rollback_config.as_ref()
     }
 }
 impl UpdateClusterVersionInput {
@@ -45,6 +51,7 @@ pub struct UpdateClusterVersionInputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
+    pub(crate) rollback_config: ::std::option::Option<crate::types::RollbackConfig>,
 }
 impl UpdateClusterVersionInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -91,19 +98,33 @@ impl UpdateClusterVersionInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
-    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking or rollback-blocking readiness checks when updating a cluster.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking or rollback-blocking readiness checks when updating a cluster.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
-    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking or rollback-blocking readiness checks when updating a cluster.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
+    }
+    /// <p>The rollback configuration for the cluster version rollback.</p>
+    pub fn rollback_config(mut self, input: crate::types::RollbackConfig) -> Self {
+        self.rollback_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The rollback configuration for the cluster version rollback.</p>
+    pub fn set_rollback_config(mut self, input: ::std::option::Option<crate::types::RollbackConfig>) -> Self {
+        self.rollback_config = input;
+        self
+    }
+    /// <p>The rollback configuration for the cluster version rollback.</p>
+    pub fn get_rollback_config(&self) -> &::std::option::Option<crate::types::RollbackConfig> {
+        &self.rollback_config
     }
     /// Consumes the builder and constructs a [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
     pub fn build(
@@ -115,6 +136,7 @@ impl UpdateClusterVersionInputBuilder {
             version: self.version,
             client_request_token: self.client_request_token,
             force: self.force,
+            rollback_config: self.rollback_config,
         })
     }
 }

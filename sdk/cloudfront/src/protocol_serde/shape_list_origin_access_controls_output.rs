@@ -25,5 +25,7 @@ pub fn de_origin_access_control_list(
             "invalid root, expected OriginAccessControlList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_origin_access_control_list::de_origin_access_control_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_origin_access_control_list::de_origin_access_control_list(&mut decoder, depth + 1)
 }

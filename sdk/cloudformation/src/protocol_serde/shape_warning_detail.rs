@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_warning_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::WarningDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::WarningDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_warning_detail(
             s if s.matches("Properties") /* Properties com.amazonaws.cloudformation#WarningDetail$Properties */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_warning_properties::de_warning_properties(&mut tag)
+                        crate::protocol_serde::shape_warning_properties::de_warning_properties(&mut tag, depth + 1)
                         ?
                     )
                 ;

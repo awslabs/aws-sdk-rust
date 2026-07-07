@@ -26,6 +26,7 @@ impl crate::operation::get_bot_versions::builders::GetBotVersionsInputBuilder {
 /// <p>The <code>GetBotVersions</code> operation returns a <code>BotMetadata</code> object for each version of a bot. For example, if a bot has three numbered versions, the <code>GetBotVersions</code> operation returns four <code>BotMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version.</p>
 /// <p>The <code>GetBotVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p>
 /// <p>This operation requires permissions for the <code>lex:GetBotVersions</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBotVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

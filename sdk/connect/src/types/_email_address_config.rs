@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailAddressConfig {
-    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Amazon Connect instance and will be used to route incoming email contacts to the specified queue.</p>
+    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Connect Customer instance and will be used to route incoming email contacts to the specified queue.</p>
     pub email_address_id: ::std::string::String,
 }
 impl EmailAddressConfig {
-    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Amazon Connect instance and will be used to route incoming email contacts to the specified queue.</p>
+    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Connect Customer instance and will be used to route incoming email contacts to the specified queue.</p>
     pub fn email_address_id(&self) -> &str {
         use std::ops::Deref;
         self.email_address_id.deref()
@@ -28,18 +28,18 @@ pub struct EmailAddressConfigBuilder {
     pub(crate) email_address_id: ::std::option::Option<::std::string::String>,
 }
 impl EmailAddressConfigBuilder {
-    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Amazon Connect instance and will be used to route incoming email contacts to the specified queue.</p>
+    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Connect Customer instance and will be used to route incoming email contacts to the specified queue.</p>
     /// This field is required.
     pub fn email_address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Amazon Connect instance and will be used to route incoming email contacts to the specified queue.</p>
+    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Connect Customer instance and will be used to route incoming email contacts to the specified queue.</p>
     pub fn set_email_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address_id = input;
         self
     }
-    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Amazon Connect instance and will be used to route incoming email contacts to the specified queue.</p>
+    /// <p>The identifier of the email address that should be associated with the queue. This email address must already exist in the Connect Customer instance and will be used to route incoming email contacts to the specified queue.</p>
     pub fn get_email_address_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address_id
     }

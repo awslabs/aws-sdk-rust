@@ -108,6 +108,8 @@ pub(crate) fn de_get_usage(
 ) -> ::std::result::Result<crate::operation::get_usage::builders::GetUsageOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -121,7 +123,11 @@ pub(crate) fn de_get_usage(
                     );
                 }
                 "values" => {
-                    builder = builder.set_items(crate::protocol_serde::shape_map_of_key_usages::de_map_of_key_usages(tokens, _value)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_map_of_key_usages::de_map_of_key_usages(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "position" => {
                     builder = builder.set_position(

@@ -2,10 +2,16 @@
 pub(crate) fn de_analysis_rule_id_mapping_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AnalysisRuleIdMappingTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,24 +20,26 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "joinColumns" => {
-                            builder = builder.set_join_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "joinColumns" => {
+                                builder = builder.set_join_columns(
+                                    crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "queryConstraints" => {
+                                builder = builder.set_query_constraints(
+                                    crate::protocol_serde::shape_query_constraint_list::de_query_constraint_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "dimensionColumns" => {
+                                builder = builder.set_dimension_columns(
+                                    crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "queryConstraints" => {
-                            builder = builder.set_query_constraints(crate::protocol_serde::shape_query_constraint_list::de_query_constraint_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "dimensionColumns" => {
-                            builder = builder.set_dimension_columns(
-                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

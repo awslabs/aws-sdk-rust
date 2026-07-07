@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_resource_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackResourceSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackResourceSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -90,7 +94,7 @@ pub fn de_stack_resource_summary(
             s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#StackResourceSummary$DriftInformation */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_stack_resource_drift_information_summary::de_stack_resource_drift_information_summary(&mut tag)
+                        crate::protocol_serde::shape_stack_resource_drift_information_summary::de_stack_resource_drift_information_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -100,7 +104,7 @@ pub fn de_stack_resource_summary(
             s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#StackResourceSummary$ModuleInfo */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_module_info::de_module_info(&mut tag)
+                        crate::protocol_serde::shape_module_info::de_module_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

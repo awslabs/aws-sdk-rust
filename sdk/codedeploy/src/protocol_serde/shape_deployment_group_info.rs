@@ -2,10 +2,16 @@
 pub(crate) fn de_deployment_group_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DeploymentGroupInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,17 +50,22 @@ where
                             );
                         }
                         "ec2TagFilters" => {
-                            builder = builder
-                                .set_ec2_tag_filters(crate::protocol_serde::shape_ec2_tag_filter_list::de_ec2_tag_filter_list(tokens, _value)?);
+                            builder = builder.set_ec2_tag_filters(crate::protocol_serde::shape_ec2_tag_filter_list::de_ec2_tag_filter_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "onPremisesInstanceTagFilters" => {
                             builder = builder.set_on_premises_instance_tag_filters(crate::protocol_serde::shape_tag_filter_list::de_tag_filter_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "autoScalingGroups" => {
                             builder = builder.set_auto_scaling_groups(
-                                crate::protocol_serde::shape_auto_scaling_group_list::de_auto_scaling_group_list(tokens, _value)?,
+                                crate::protocol_serde::shape_auto_scaling_group_list::de_auto_scaling_group_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "serviceRoleArn" => {
@@ -65,26 +76,37 @@ where
                             );
                         }
                         "targetRevision" => {
-                            builder =
-                                builder.set_target_revision(crate::protocol_serde::shape_revision_location::de_revision_location(tokens, _value)?);
+                            builder = builder.set_target_revision(crate::protocol_serde::shape_revision_location::de_revision_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "triggerConfigurations" => {
                             builder = builder.set_trigger_configurations(crate::protocol_serde::shape_trigger_config_list::de_trigger_config_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "alarmConfiguration" => {
-                            builder = builder
-                                .set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value)?);
+                            builder = builder.set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "autoRollbackConfiguration" => {
                             builder = builder.set_auto_rollback_configuration(
-                                crate::protocol_serde::shape_auto_rollback_configuration::de_auto_rollback_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_auto_rollback_configuration::de_auto_rollback_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "deploymentStyle" => {
-                            builder =
-                                builder.set_deployment_style(crate::protocol_serde::shape_deployment_style::de_deployment_style(tokens, _value)?);
+                            builder = builder.set_deployment_style(crate::protocol_serde::shape_deployment_style::de_deployment_style(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "outdatedInstancesStrategy" => {
                             builder = builder.set_outdated_instances_strategy(
@@ -96,30 +118,38 @@ where
                         "blueGreenDeploymentConfiguration" => {
                             builder = builder.set_blue_green_deployment_configuration(
                                 crate::protocol_serde::shape_blue_green_deployment_configuration::de_blue_green_deployment_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "loadBalancerInfo" => {
-                            builder = builder
-                                .set_load_balancer_info(crate::protocol_serde::shape_load_balancer_info::de_load_balancer_info(tokens, _value)?);
+                            builder = builder.set_load_balancer_info(crate::protocol_serde::shape_load_balancer_info::de_load_balancer_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lastSuccessfulDeployment" => {
                             builder = builder.set_last_successful_deployment(
-                                crate::protocol_serde::shape_last_deployment_info::de_last_deployment_info(tokens, _value)?,
+                                crate::protocol_serde::shape_last_deployment_info::de_last_deployment_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "lastAttemptedDeployment" => {
                             builder = builder.set_last_attempted_deployment(
-                                crate::protocol_serde::shape_last_deployment_info::de_last_deployment_info(tokens, _value)?,
+                                crate::protocol_serde::shape_last_deployment_info::de_last_deployment_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "ec2TagSet" => {
-                            builder = builder.set_ec2_tag_set(crate::protocol_serde::shape_ec2_tag_set::de_ec2_tag_set(tokens, _value)?);
+                            builder = builder.set_ec2_tag_set(crate::protocol_serde::shape_ec2_tag_set::de_ec2_tag_set(tokens, _value, depth + 1)?);
                         }
                         "onPremisesTagSet" => {
-                            builder = builder
-                                .set_on_premises_tag_set(crate::protocol_serde::shape_on_premises_tag_set::de_on_premises_tag_set(tokens, _value)?);
+                            builder = builder.set_on_premises_tag_set(crate::protocol_serde::shape_on_premises_tag_set::de_on_premises_tag_set(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "computePlatform" => {
                             builder = builder.set_compute_platform(
@@ -129,7 +159,11 @@ where
                             );
                         }
                         "ecsServices" => {
-                            builder = builder.set_ecs_services(crate::protocol_serde::shape_ecs_service_list::de_ecs_service_list(tokens, _value)?);
+                            builder = builder.set_ecs_services(crate::protocol_serde::shape_ecs_service_list::de_ecs_service_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "terminationHookEnabled" => {
                             builder =

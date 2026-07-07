@@ -50,15 +50,16 @@ pub struct ReplicationGroup {
     /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code></p>
     pub transit_encryption_enabled: ::std::option::Option<bool>,
-    /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>A flag that enables encryption at-rest on the cluster when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created.</p>
+    /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The outpost ARNs of the replication group's member clusters.</p>
     pub member_clusters_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates the type of encryption for data stored at rest in the replication group. The value is <code>none</code> if at-rest encryption is not enabled, <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>The ARN (Amazon Resource Name) of the replication group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user group associated to the replication group.</p>
@@ -81,6 +82,10 @@ pub struct ReplicationGroup {
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
     /// <p>The engine used in a replication group. The options are valkey, memcached or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub durability: ::std::option::Option<crate::types::Durability>,
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
+    pub effective_durability: ::std::option::Option<crate::types::EffectiveDurability>,
 }
 impl ReplicationGroup {
     /// <p>The identifier for the replication group.</p>
@@ -169,10 +174,9 @@ impl ReplicationGroup {
     pub fn transit_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.transit_encryption_enabled
     }
-    /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>A flag that enables encryption at-rest on the cluster when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created.</p>
+    /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn at_rest_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.at_rest_encryption_enabled
     }
@@ -185,6 +189,10 @@ impl ReplicationGroup {
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
+    }
+    /// <p>Indicates the type of encryption for data stored at rest in the replication group. The value is <code>none</code> if at-rest encryption is not enabled, <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
     }
     /// <p>The ARN (Amazon Resource Name) of the replication group.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -234,6 +242,14 @@ impl ReplicationGroup {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn durability(&self) -> ::std::option::Option<&crate::types::Durability> {
+        self.durability.as_ref()
+    }
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
+    pub fn effective_durability(&self) -> ::std::option::Option<&crate::types::EffectiveDurability> {
+        self.effective_durability.as_ref()
+    }
 }
 impl ReplicationGroup {
     /// Creates a new builder-style object to manufacture [`ReplicationGroup`](crate::types::ReplicationGroup).
@@ -267,6 +283,7 @@ pub struct ReplicationGroupBuilder {
     pub(crate) at_rest_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) member_clusters_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
@@ -278,6 +295,8 @@ pub struct ReplicationGroupBuilder {
     pub(crate) transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     pub(crate) cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) durability: ::std::option::Option<crate::types::Durability>,
+    pub(crate) effective_durability: ::std::option::Option<crate::types::EffectiveDurability>,
 }
 impl ReplicationGroupBuilder {
     /// <p>The identifier for the replication group.</p>
@@ -574,26 +593,23 @@ impl ReplicationGroupBuilder {
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.transit_encryption_enabled
     }
-    /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>A flag that enables encryption at-rest on the cluster when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created.</p>
+    /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.at_rest_encryption_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>A flag that enables encryption at-rest on the cluster when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created.</p>
+    /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.at_rest_encryption_enabled = input;
         self
     }
-    /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>A flag that enables encryption at-rest on the cluster when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created.</p>
+    /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.at_rest_encryption_enabled
     }
@@ -630,6 +646,20 @@ impl ReplicationGroupBuilder {
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
+    }
+    /// <p>Indicates the type of encryption for data stored at rest in the replication group. The value is <code>none</code> if at-rest encryption is not enabled, <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the type of encryption for data stored at rest in the replication group. The value is <code>none</code> if at-rest encryption is not enabled, <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>Indicates the type of encryption for data stored at rest in the replication group. The value is <code>none</code> if at-rest encryption is not enabled, <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
     }
     /// <p>The ARN (Amazon Resource Name) of the replication group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -797,6 +827,34 @@ impl ReplicationGroupBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn durability(mut self, input: crate::types::Durability) -> Self {
+        self.durability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn set_durability(mut self, input: ::std::option::Option<crate::types::Durability>) -> Self {
+        self.durability = input;
+        self
+    }
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn get_durability(&self) -> &::std::option::Option<crate::types::Durability> {
+        &self.durability
+    }
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
+    pub fn effective_durability(mut self, input: crate::types::EffectiveDurability) -> Self {
+        self.effective_durability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
+    pub fn set_effective_durability(mut self, input: ::std::option::Option<crate::types::EffectiveDurability>) -> Self {
+        self.effective_durability = input;
+        self
+    }
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
+    pub fn get_effective_durability(&self) -> &::std::option::Option<crate::types::EffectiveDurability> {
+        &self.effective_durability
+    }
     /// Consumes the builder and constructs a [`ReplicationGroup`](crate::types::ReplicationGroup).
     pub fn build(self) -> crate::types::ReplicationGroup {
         crate::types::ReplicationGroup {
@@ -821,6 +879,7 @@ impl ReplicationGroupBuilder {
             at_rest_encryption_enabled: self.at_rest_encryption_enabled,
             member_clusters_outpost_arns: self.member_clusters_outpost_arns,
             kms_key_id: self.kms_key_id,
+            storage_encryption_type: self.storage_encryption_type,
             arn: self.arn,
             user_group_ids: self.user_group_ids,
             log_delivery_configurations: self.log_delivery_configurations,
@@ -832,6 +891,8 @@ impl ReplicationGroupBuilder {
             transit_encryption_mode: self.transit_encryption_mode,
             cluster_mode: self.cluster_mode,
             engine: self.engine,
+            durability: self.durability,
+            effective_durability: self.effective_durability,
         }
     }
 }

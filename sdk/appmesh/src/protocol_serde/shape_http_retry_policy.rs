@@ -39,10 +39,16 @@ pub fn ser_http_retry_policy(
 pub(crate) fn de_http_retry_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HttpRetryPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,7 +59,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "perRetryTimeout" => {
-                            builder = builder.set_per_retry_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_per_retry_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "maxRetries" => {
                             builder = builder.set_max_retries(
@@ -64,12 +70,14 @@ where
                         }
                         "httpRetryEvents" => {
                             builder = builder.set_http_retry_events(
-                                crate::protocol_serde::shape_http_retry_policy_events::de_http_retry_policy_events(tokens, _value)?,
+                                crate::protocol_serde::shape_http_retry_policy_events::de_http_retry_policy_events(tokens, _value, depth + 1)?,
                             );
                         }
                         "tcpRetryEvents" => {
                             builder = builder.set_tcp_retry_events(crate::protocol_serde::shape_tcp_retry_policy_events::de_tcp_retry_policy_events(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

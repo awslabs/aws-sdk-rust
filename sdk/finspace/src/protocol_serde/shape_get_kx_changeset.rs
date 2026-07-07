@@ -121,6 +121,8 @@ pub(crate) fn de_get_kx_changeset(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -133,7 +135,11 @@ pub(crate) fn de_get_kx_changeset(
                     )?);
                 }
                 "changeRequests" => {
-                    builder = builder.set_change_requests(crate::protocol_serde::shape_change_requests::de_change_requests(tokens, _value)?);
+                    builder = builder.set_change_requests(crate::protocol_serde::shape_change_requests::de_change_requests(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "changesetId" => {
                     builder = builder.set_changeset_id(
@@ -163,7 +169,7 @@ pub(crate) fn de_get_kx_changeset(
                     );
                 }
                 "errorInfo" => {
-                    builder = builder.set_error_info(crate::protocol_serde::shape_error_info::de_error_info(tokens, _value)?);
+                    builder = builder.set_error_info(crate::protocol_serde::shape_error_info::de_error_info(tokens, _value, depth + 1)?);
                 }
                 "lastModifiedTimestamp" => {
                     builder = builder.set_last_modified_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_key_group_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::KeyGroupSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::KeyGroupSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_key_group_summary(
             s if s.matches("KeyGroup") /* KeyGroup com.amazonaws.cloudfront#KeyGroupSummary$KeyGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_key_group::de_key_group(&mut tag)
+                        crate::protocol_serde::shape_key_group::de_key_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

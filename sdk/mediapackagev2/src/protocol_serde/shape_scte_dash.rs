@@ -6,16 +6,25 @@ pub fn ser_scte_dash(
     if let Some(var_1) = &input.ad_marker_dash {
         object.key("AdMarkerDash").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.scte_in_manifests {
+        object.key("ScteInManifests").string(var_2.as_str());
+    }
     Ok(())
 }
 
 pub(crate) fn de_scte_dash<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScteDash>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -29,6 +38,13 @@ where
                             builder = builder.set_ad_marker_dash(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AdMarkerDash::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ScteInManifests" => {
+                            builder = builder.set_scte_in_manifests(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScteInManifests::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

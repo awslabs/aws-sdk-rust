@@ -23,7 +23,7 @@ impl crate::operation::get_attachment::builders::GetAttachmentInputBuilder {
 /// Fluent builder constructing a request to `GetAttachment`.
 ///
 /// <p>Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active contacts.</p>
-/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a>.</p><note>
+/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect Customer Chat security best practices</a>.</p><note>
 /// <ul>
 /// <li>
 /// <p>The participant role <code>CUSTOM_BOT</code> is not permitted to access attachments customers may upload. An <code>AccessDeniedException</code> can indicate that the participant may be a CUSTOM_BOT, and it doesn't have access to attachments.</p></li>

@@ -19,6 +19,10 @@ pub use crate::types::_code_security_scan_configuration::CodeSecurityScanConfigu
 
 pub use crate::types::_scope_settings::ScopeSettings;
 
+pub use crate::types::_connector_cloud_provider::ConnectorCloudProvider;
+
+pub use crate::types::_provider_detail_create::ProviderDetailCreate;
+
 pub use crate::types::_filter_action::FilterAction;
 
 pub use crate::types::_filter_criteria::FilterCriteria;
@@ -87,6 +91,8 @@ pub use crate::types::_list_cis_scans_detail_level::ListCisScansDetailLevel;
 
 pub use crate::types::_list_cis_scans_sort_by::ListCisScansSortBy;
 
+pub use crate::types::_connector_filter_criteria::ConnectorFilterCriteria;
+
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteria;
 
 pub use crate::types::_group_key::GroupKey;
@@ -110,6 +116,12 @@ pub use crate::types::_update_integration_details::UpdateIntegrationDetails;
 pub use crate::types::_ecr_configuration::EcrConfiguration;
 
 pub use crate::types::_ec2_configuration::Ec2Configuration;
+
+pub use crate::types::_update_configuration_inheritance::UpdateConfigurationInheritance;
+
+pub use crate::types::_provider_detail_update::ProviderDetailUpdate;
+
+pub use crate::types::_connector_scan_configuration::ConnectorScanConfiguration;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
@@ -159,6 +171,8 @@ pub use crate::types::_continuous_integration_scan_configuration::ContinuousInte
 
 pub use crate::types::_project_selection_scope::ProjectSelectionScope;
 
+pub use crate::types::_azure_provider_detail_create::AzureProviderDetailCreate;
+
 pub use crate::types::_resource_scan_type::ResourceScanType;
 
 pub use crate::types::_account::Account;
@@ -170,6 +184,8 @@ pub use crate::types::_cluster_information::ClusterInformation;
 pub use crate::types::_ecr_rescan_duration_state::EcrRescanDurationState;
 
 pub use crate::types::_ec2_scan_mode_state::Ec2ScanModeState;
+
+pub use crate::types::_vm_scanner_state::VmScannerState;
 
 pub use crate::types::_relationship_status::RelationshipStatus;
 
@@ -188,6 +204,10 @@ pub use crate::types::_code_security_integration_summary::CodeSecurityIntegratio
 pub use crate::types::_code_security_scan_configuration_association_summary::CodeSecurityScanConfigurationAssociationSummary;
 
 pub use crate::types::_code_security_scan_configuration_summary::CodeSecurityScanConfigurationSummary;
+
+pub use crate::types::_connector::Connector;
+
+pub use crate::types::_connector_scan_configuration_item::ConnectorScanConfigurationItem;
 
 pub use crate::types::_covered_resource::CoveredResource;
 
@@ -223,6 +243,12 @@ pub use crate::types::_lambda_function_aggregation::LambdaFunctionAggregation;
 
 pub use crate::types::_code_repository_aggregation::CodeRepositoryAggregation;
 
+pub use crate::types::_vm_instance_aggregation::VmInstanceAggregation;
+
+pub use crate::types::_container_image_aggregation::ContainerImageAggregation;
+
+pub use crate::types::_serverless_function_aggregation::ServerlessFunctionAggregation;
+
 pub use crate::types::_aggregation_response::AggregationResponse;
 
 pub use crate::types::_sort_field::SortField;
@@ -255,6 +281,12 @@ pub use crate::types::_ecr_pull_date_rescan_mode::EcrPullDateRescanMode;
 
 pub use crate::types::_ec2_scan_mode::Ec2ScanMode;
 
+pub use crate::types::_inheritance_mode::InheritanceMode;
+
+pub use crate::types::_azure_provider_detail_update::AzureProviderDetailUpdate;
+
+pub use crate::types::_connector_container_image_scan_configuration::ConnectorContainerImageScanConfiguration;
+
 pub use crate::types::_association_result_status_code::AssociationResultStatusCode;
 
 pub use crate::types::_state::State;
@@ -285,6 +317,8 @@ pub use crate::types::_periodic_scan_frequency::PeriodicScanFrequency;
 
 pub use crate::types::_rule_set_category::RuleSetCategory;
 
+pub use crate::types::_azure_scope_configuration_input::AzureScopeConfigurationInput;
+
 pub use crate::types::_date_filter::DateFilter;
 
 pub use crate::types::_number_filter::NumberFilter;
@@ -310,6 +344,8 @@ pub use crate::types::_cis_finding_status::CisFindingStatus;
 pub use crate::types::_ecr_rescan_duration_status::EcrRescanDurationStatus;
 
 pub use crate::types::_ec2_scan_mode_status::Ec2ScanModeStatus;
+
+pub use crate::types::_vm_scanner_status::VmScannerStatus;
 
 pub use crate::types::_operation::Operation;
 
@@ -337,6 +373,20 @@ pub use crate::types::_cis_date_filter::CisDateFilter;
 
 pub use crate::types::_cis_scan_status::CisScanStatus;
 
+pub use crate::types::_connector_arn_filter::ConnectorArnFilter;
+
+pub use crate::types::_aws_config_connector_arn_filter::AwsConfigConnectorArnFilter;
+
+pub use crate::types::_connector_type_filter::ConnectorTypeFilter;
+
+pub use crate::types::_provider_filter::ProviderFilter;
+
+pub use crate::types::_enablement_status::EnablementStatus;
+
+pub use crate::types::_connector_health::ConnectorHealth;
+
+pub use crate::types::_azure_scope_configuration::AzureScopeConfiguration;
+
 pub use crate::types::_coverage_string_filter::CoverageStringFilter;
 
 pub use crate::types::_coverage_map_filter::CoverageMapFilter;
@@ -352,6 +402,8 @@ pub use crate::types::_scan_status::ScanStatus;
 pub use crate::types::_resource_scan_metadata::ResourceScanMetadata;
 
 pub use crate::types::_scan_mode::ScanMode;
+
+pub use crate::types::_provider::Provider;
 
 pub use crate::types::_delegated_admin_status::DelegatedAdminStatus;
 
@@ -385,6 +437,12 @@ pub use crate::types::_lambda_function_sort_by::LambdaFunctionSortBy;
 
 pub use crate::types::_code_repository_sort_by::CodeRepositorySortBy;
 
+pub use crate::types::_vm_instance_sort_by::VmInstanceSortBy;
+
+pub use crate::types::_container_image_sort_by::ContainerImageSortBy;
+
+pub use crate::types::_serverless_function_sort_by::ServerlessFunctionSortBy;
+
 pub use crate::types::_account_aggregation_response::AccountAggregationResponse;
 
 pub use crate::types::_ami_aggregation_response::AmiAggregationResponse;
@@ -408,6 +466,12 @@ pub use crate::types::_lambda_layer_aggregation_response::LambdaLayerAggregation
 pub use crate::types::_lambda_function_aggregation_response::LambdaFunctionAggregationResponse;
 
 pub use crate::types::_code_repository_aggregation_response::CodeRepositoryAggregationResponse;
+
+pub use crate::types::_vm_instance_aggregation_response::VmInstanceAggregationResponse;
+
+pub use crate::types::_container_image_aggregation_response::ContainerImageAggregationResponse;
+
+pub use crate::types::_serverless_function_aggregation_response::ServerlessFunctionAggregationResponse;
 
 pub use crate::types::_finding_type::FindingType;
 
@@ -447,6 +511,10 @@ pub use crate::types::_epss::Epss;
 
 pub use crate::types::_cis_rule_status::CisRuleStatus;
 
+pub use crate::types::_container_image_rescan_duration::ContainerImageRescanDuration;
+
+pub use crate::types::_container_image_pull_date_rescan_duration::ContainerImagePullDateRescanDuration;
+
 pub use crate::types::_code_line::CodeLine;
 
 pub use crate::types::_suggested_fix::SuggestedFix;
@@ -456,6 +524,8 @@ pub use crate::types::_evidence::Evidence;
 pub use crate::types::_free_trial_info::FreeTrialInfo;
 
 pub use crate::types::_continuous_integration_scan_event::ContinuousIntegrationScanEvent;
+
+pub use crate::types::_scope_configuration_input::ScopeConfigurationInput;
 
 pub use crate::types::_map_comparison::MapComparison;
 
@@ -481,6 +551,20 @@ pub use crate::types::_cis_target_status_comparison::CisTargetStatusComparison;
 
 pub use crate::types::_cis_scan_status_comparison::CisScanStatusComparison;
 
+pub use crate::types::_connector_arn_comparison::ConnectorArnComparison;
+
+pub use crate::types::_aws_config_connector_arn_comparison::AwsConfigConnectorArnComparison;
+
+pub use crate::types::_connector_type_comparison::ConnectorTypeComparison;
+
+pub use crate::types::_connector_type::ConnectorType;
+
+pub use crate::types::_provider_comparison::ProviderComparison;
+
+pub use crate::types::_connector_health_status::ConnectorHealthStatus;
+
+pub use crate::types::_scope_configuration::ScopeConfiguration;
+
 pub use crate::types::_coverage_string_comparison::CoverageStringComparison;
 
 pub use crate::types::_coverage_map_comparison::CoverageMapComparison;
@@ -498,6 +582,16 @@ pub use crate::types::_ec2_metadata::Ec2Metadata;
 pub use crate::types::_lambda_function_metadata::LambdaFunctionMetadata;
 
 pub use crate::types::_code_repository_metadata::CodeRepositoryMetadata;
+
+pub use crate::types::_vm_instance_metadata::VmInstanceMetadata;
+
+pub use crate::types::_container_image_metadata::ContainerImageMetadata;
+
+pub use crate::types::_container_repository_metadata::ContainerRepositoryMetadata;
+
+pub use crate::types::_container_registry_metadata::ContainerRegistryMetadata;
+
+pub use crate::types::_serverless_function_metadata::ServerlessFunctionMetadata;
 
 pub use crate::types::_severity_counts::SeverityCounts;
 
@@ -521,7 +615,13 @@ pub use crate::types::_free_trial_type::FreeTrialType;
 
 pub use crate::types::_free_trial_status::FreeTrialStatus;
 
+pub use crate::types::_cloud_provider::CloudProvider;
+
+pub use crate::types::_scope_type::ScopeType;
+
 pub use crate::types::_cluster_metadata::ClusterMetadata;
+
+pub use crate::types::_scope_state::ScopeState;
 
 pub use crate::types::_ecr_scan_frequency::EcrScanFrequency;
 
@@ -532,6 +632,8 @@ pub use crate::types::_runtime::Runtime;
 pub use crate::types::_project_code_security_scan_configuration::ProjectCodeSecurityScanConfiguration;
 
 pub use crate::types::_code_repository_on_demand_scan::CodeRepositoryOnDemandScan;
+
+pub use crate::types::_vm_platform::VmPlatform;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
@@ -554,6 +656,12 @@ pub use crate::types::_aws_ecr_container_image_details::AwsEcrContainerImageDeta
 pub use crate::types::_aws_lambda_function_details::AwsLambdaFunctionDetails;
 
 pub use crate::types::_code_repository_details::CodeRepositoryDetails;
+
+pub use crate::types::_vm::Vm;
+
+pub use crate::types::_image::Image;
+
+pub use crate::types::_serverless_function::ServerlessFunction;
 
 pub use crate::types::_cvss_score_adjustment::CvssScoreAdjustment;
 
@@ -611,6 +719,10 @@ mod _atig_data;
 
 mod _auto_enable;
 
+mod _aws_config_connector_arn_comparison;
+
+mod _aws_config_connector_arn_filter;
+
 mod _aws_ec2_instance_details;
 
 mod _aws_ecr_container_aggregation;
@@ -628,6 +740,14 @@ mod _aws_eks_metadata_details;
 mod _aws_eks_workload_info;
 
 mod _aws_lambda_function_details;
+
+mod _azure_provider_detail_create;
+
+mod _azure_provider_detail_update;
+
+mod _azure_scope_configuration;
+
+mod _azure_scope_configuration_input;
 
 mod _cis_check_aggregation;
 
@@ -709,6 +829,8 @@ mod _cis_targets;
 
 mod _cisa_data;
 
+mod _cloud_provider;
+
 mod _cluster_details;
 
 mod _cluster_for_image_filter_criteria;
@@ -758,6 +880,48 @@ mod _code_vulnerability_details;
 mod _compute_platform;
 
 mod _configuration_level;
+
+mod _connector;
+
+mod _connector_arn_comparison;
+
+mod _connector_arn_filter;
+
+mod _connector_cloud_provider;
+
+mod _connector_container_image_scan_configuration;
+
+mod _connector_filter_criteria;
+
+mod _connector_health;
+
+mod _connector_health_status;
+
+mod _connector_scan_configuration;
+
+mod _connector_scan_configuration_item;
+
+mod _connector_type;
+
+mod _connector_type_comparison;
+
+mod _connector_type_filter;
+
+mod _container_image_aggregation;
+
+mod _container_image_aggregation_response;
+
+mod _container_image_metadata;
+
+mod _container_image_pull_date_rescan_duration;
+
+mod _container_image_rescan_duration;
+
+mod _container_image_sort_by;
+
+mod _container_registry_metadata;
+
+mod _container_repository_metadata;
 
 mod _continuous_integration_scan_configuration;
 
@@ -861,6 +1025,8 @@ mod _ecr_rescan_duration_status;
 
 mod _ecr_scan_frequency;
 
+mod _enablement_status;
+
 mod _epss;
 
 mod _epss_details;
@@ -923,11 +1089,15 @@ mod _free_trial_type;
 
 mod _group_key;
 
+mod _image;
+
 mod _image_layer_aggregation;
 
 mod _image_layer_aggregation_response;
 
 mod _image_layer_sort_by;
+
+mod _inheritance_mode;
 
 mod _inspector_score_details;
 
@@ -1015,6 +1185,16 @@ mod _project_periodic_scan_configuration;
 
 mod _project_selection_scope;
 
+mod _provider;
+
+mod _provider_comparison;
+
+mod _provider_detail_create;
+
+mod _provider_detail_update;
+
+mod _provider_filter;
+
 mod _recommendation;
 
 mod _relationship_status;
@@ -1073,9 +1253,27 @@ mod _scan_type;
 
 mod _schedule;
 
+mod _scope_configuration;
+
+mod _scope_configuration_input;
+
 mod _scope_settings;
 
+mod _scope_state;
+
+mod _scope_type;
+
 mod _search_vulnerabilities_filter_criteria;
+
+mod _serverless_function;
+
+mod _serverless_function_aggregation;
+
+mod _serverless_function_aggregation_response;
+
+mod _serverless_function_metadata;
+
+mod _serverless_function_sort_by;
 
 mod _service;
 
@@ -1127,6 +1325,8 @@ mod _title_sort_by;
 
 mod _update_cis_targets;
 
+mod _update_configuration_inheritance;
+
 mod _update_git_hub_integration_detail;
 
 mod _update_git_lab_self_managed_integration_detail;
@@ -1142,6 +1342,22 @@ mod _usage_type;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _vm;
+
+mod _vm_instance_aggregation;
+
+mod _vm_instance_aggregation_response;
+
+mod _vm_instance_metadata;
+
+mod _vm_instance_sort_by;
+
+mod _vm_platform;
+
+mod _vm_scanner_state;
+
+mod _vm_scanner_status;
 
 mod _vulnerability;
 

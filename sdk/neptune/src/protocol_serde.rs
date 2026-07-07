@@ -411,6 +411,8 @@ pub(crate) mod shape_invalid_vpc_network_state_fault;
 
 pub(crate) mod shape_kms_key_not_accessible_fault;
 
+pub(crate) mod shape_network_type_not_supported_fault;
+
 pub(crate) mod shape_option_group_not_found_fault;
 
 pub(crate) mod shape_parameter;

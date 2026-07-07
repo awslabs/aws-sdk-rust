@@ -78,5 +78,7 @@ pub fn de_copy_part_result(inp: &[u8]) -> std::result::Result<crate::types::Copy
             "invalid root, expected CopyPartResult got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_copy_part_result::de_copy_part_result(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_copy_part_result::de_copy_part_result(&mut decoder, depth + 1)
 }

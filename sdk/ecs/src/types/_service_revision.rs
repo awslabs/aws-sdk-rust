@@ -46,6 +46,8 @@ pub struct ServiceRevision {
     pub resolved_configuration: ::std::option::Option<crate::types::ResolvedConfiguration>,
     /// <p>The resources created and managed by Amazon ECS when you create an Express service for Amazon ECS.</p>
     pub ecs_managed_resources: ::std::option::Option<crate::types::EcsManagedResources>,
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub monitoring: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ServiceRevision {
     /// <p>The ARN of the service revision.</p>
@@ -141,6 +143,10 @@ impl ServiceRevision {
     pub fn ecs_managed_resources(&self) -> ::std::option::Option<&crate::types::EcsManagedResources> {
         self.ecs_managed_resources.as_ref()
     }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring.as_ref()
+    }
 }
 impl ServiceRevision {
     /// Creates a new builder-style object to manufacture [`ServiceRevision`](crate::types::ServiceRevision).
@@ -173,6 +179,7 @@ pub struct ServiceRevisionBuilder {
     pub(crate) vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
     pub(crate) resolved_configuration: ::std::option::Option<crate::types::ResolvedConfiguration>,
     pub(crate) ecs_managed_resources: ::std::option::Option<crate::types::EcsManagedResources>,
+    pub(crate) monitoring: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ServiceRevisionBuilder {
     /// <p>The ARN of the service revision.</p>
@@ -497,6 +504,20 @@ impl ServiceRevisionBuilder {
     pub fn get_ecs_managed_resources(&self) -> &::std::option::Option<crate::types::EcsManagedResources> {
         &self.ecs_managed_resources
     }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn monitoring(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring = input;
+        self
+    }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring
+    }
     /// Consumes the builder and constructs a [`ServiceRevision`](crate::types::ServiceRevision).
     pub fn build(self) -> crate::types::ServiceRevision {
         crate::types::ServiceRevision {
@@ -520,6 +541,7 @@ impl ServiceRevisionBuilder {
             vpc_lattice_configurations: self.vpc_lattice_configurations,
             resolved_configuration: self.resolved_configuration,
             ecs_managed_resources: self.ecs_managed_resources,
+            monitoring: self.monitoring,
         }
     }
 }

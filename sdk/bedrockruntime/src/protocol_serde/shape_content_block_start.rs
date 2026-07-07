@@ -2,10 +2,16 @@
 pub(crate) fn de_content_block_start<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ContentBlockStart>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,17 +37,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "toolUse" => Some(crate::types::ContentBlockStart::ToolUse(
-                            crate::protocol_serde::shape_tool_use_block_start::de_tool_use_block_start(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolUse' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_tool_use_block_start::de_tool_use_block_start(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolUse' cannot be null"),
+                            )?,
                         )),
                         "toolResult" => Some(crate::types::ContentBlockStart::ToolResult(
-                            crate::protocol_serde::shape_tool_result_block_start::de_tool_result_block_start(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_tool_result_block_start::de_tool_result_block_start(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null"),
+                            )?,
                         )),
                         "image" => Some(crate::types::ContentBlockStart::Image(
-                            crate::protocol_serde::shape_image_block_start::de_image_block_start(tokens, _value)?
+                            crate::protocol_serde::shape_image_block_start::de_image_block_start(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
                         )),
                         _ => {

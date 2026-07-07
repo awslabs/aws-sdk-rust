@@ -138,6 +138,8 @@ pub fn de_define_suggester(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DefineSuggesterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DefineSuggesterResponse got {start_el:?}"
@@ -155,7 +157,7 @@ pub fn de_define_suggester(
             s if s.matches("Suggester") /* Suggester com.amazonaws.cloudsearch.synthetic#DefineSuggesterOutput$Suggester */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_suggester_status::de_suggester_status(&mut tag)
+                        crate::protocol_serde::shape_suggester_status::de_suggester_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

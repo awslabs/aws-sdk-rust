@@ -32,5 +32,7 @@ pub fn de_field_level_encryption_profile(
             "invalid root, expected FieldLevelEncryptionProfile got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_field_level_encryption_profile::de_field_level_encryption_profile(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_field_level_encryption_profile::de_field_level_encryption_profile(&mut decoder, depth + 1)
 }

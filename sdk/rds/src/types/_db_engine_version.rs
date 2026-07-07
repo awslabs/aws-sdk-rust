@@ -14,7 +14,7 @@ pub struct DbEngineVersion {
     pub database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
     pub database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    /// <p>The database installation files (ISO and EXE) that were uploaded to Amazon S3 and used to import the database engine version to Amazon RDS. Returned for RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>) created from customer-supplied installation media.</p>
     pub database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
@@ -28,11 +28,11 @@ pub struct DbEngineVersion {
     pub db_engine_version_description: ::std::option::Option<::std::string::String>,
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub default_character_set: ::std::option::Option<crate::types::CharacterSet>,
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    /// <p>The reason that the custom engine version creation failed with an <code>incompatible-installation-media</code> status. Applicable to RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>).</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 image</p>
     pub image: ::std::option::Option<crate::types::CustomDbEngineVersionAmi>,
-    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    /// <p>The source of the installation media for this engine version. A value of <code>Customer Provided</code> indicates that the engine version was created from customer-supplied installation media using <code>CreateCustomDBEngineVersion</code>. Applicable to RDS Custom for SQL Server and to RDS for SQL Server engine versions (<code>sqlserver-ee</code> and <code>sqlserver-se</code> with the <code>bring-your-own-media</code> license model, and <code>sqlserver-dev-ee</code>).</p>
     pub db_engine_media_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -109,7 +109,7 @@ impl DbEngineVersion {
     pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.database_installation_files_s3_prefix.as_deref()
     }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    /// <p>The database installation files (ISO and EXE) that were uploaded to Amazon S3 and used to import the database engine version to Amazon RDS. Returned for RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>) created from customer-supplied installation media.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_installation_files.is_none()`.
     pub fn database_installation_files(&self) -> &[::std::string::String] {
@@ -139,7 +139,7 @@ impl DbEngineVersion {
     pub fn default_character_set(&self) -> ::std::option::Option<&crate::types::CharacterSet> {
         self.default_character_set.as_ref()
     }
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    /// <p>The reason that the custom engine version creation failed with an <code>incompatible-installation-media</code> status. Applicable to RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>).</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
@@ -147,7 +147,7 @@ impl DbEngineVersion {
     pub fn image(&self) -> ::std::option::Option<&crate::types::CustomDbEngineVersionAmi> {
         self.image.as_ref()
     }
-    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    /// <p>The source of the installation media for this engine version. A value of <code>Customer Provided</code> indicates that the engine version was created from customer-supplied installation media using <code>CreateCustomDBEngineVersion</code>. Applicable to RDS Custom for SQL Server and to RDS for SQL Server engine versions (<code>sqlserver-ee</code> and <code>sqlserver-se</code> with the <code>bring-your-own-media</code> license model, and <code>sqlserver-dev-ee</code>).</p>
     pub fn db_engine_media_type(&self) -> ::std::option::Option<&str> {
         self.db_engine_media_type.as_deref()
     }
@@ -391,19 +391,19 @@ impl DbEngineVersionBuilder {
     ///
     /// To override the contents of this collection use [`set_database_installation_files`](Self::set_database_installation_files).
     ///
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    /// <p>The database installation files (ISO and EXE) that were uploaded to Amazon S3 and used to import the database engine version to Amazon RDS. Returned for RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>) created from customer-supplied installation media.</p>
     pub fn database_installation_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.database_installation_files.unwrap_or_default();
         v.push(input.into());
         self.database_installation_files = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    /// <p>The database installation files (ISO and EXE) that were uploaded to Amazon S3 and used to import the database engine version to Amazon RDS. Returned for RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>) created from customer-supplied installation media.</p>
     pub fn set_database_installation_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.database_installation_files = input;
         self
     }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    /// <p>The database installation files (ISO and EXE) that were uploaded to Amazon S3 and used to import the database engine version to Amazon RDS. Returned for RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>) created from customer-supplied installation media.</p>
     pub fn get_database_installation_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.database_installation_files
     }
@@ -491,17 +491,17 @@ impl DbEngineVersionBuilder {
     pub fn get_default_character_set(&self) -> &::std::option::Option<crate::types::CharacterSet> {
         &self.default_character_set
     }
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    /// <p>The reason that the custom engine version creation failed with an <code>incompatible-installation-media</code> status. Applicable to RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>).</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    /// <p>The reason that the custom engine version creation failed with an <code>incompatible-installation-media</code> status. Applicable to RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>).</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    /// <p>The reason that the custom engine version creation failed with an <code>incompatible-installation-media</code> status. Applicable to RDS for SQL Server engine versions (<code>sqlserver-ee</code>, <code>sqlserver-se</code>, and <code>sqlserver-dev-ee</code>).</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
@@ -519,17 +519,17 @@ impl DbEngineVersionBuilder {
     pub fn get_image(&self) -> &::std::option::Option<crate::types::CustomDbEngineVersionAmi> {
         &self.image
     }
-    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    /// <p>The source of the installation media for this engine version. A value of <code>Customer Provided</code> indicates that the engine version was created from customer-supplied installation media using <code>CreateCustomDBEngineVersion</code>. Applicable to RDS Custom for SQL Server and to RDS for SQL Server engine versions (<code>sqlserver-ee</code> and <code>sqlserver-se</code> with the <code>bring-your-own-media</code> license model, and <code>sqlserver-dev-ee</code>).</p>
     pub fn db_engine_media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_engine_media_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    /// <p>The source of the installation media for this engine version. A value of <code>Customer Provided</code> indicates that the engine version was created from customer-supplied installation media using <code>CreateCustomDBEngineVersion</code>. Applicable to RDS Custom for SQL Server and to RDS for SQL Server engine versions (<code>sqlserver-ee</code> and <code>sqlserver-se</code> with the <code>bring-your-own-media</code> license model, and <code>sqlserver-dev-ee</code>).</p>
     pub fn set_db_engine_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_engine_media_type = input;
         self
     }
-    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    /// <p>The source of the installation media for this engine version. A value of <code>Customer Provided</code> indicates that the engine version was created from customer-supplied installation media using <code>CreateCustomDBEngineVersion</code>. Applicable to RDS Custom for SQL Server and to RDS for SQL Server engine versions (<code>sqlserver-ee</code> and <code>sqlserver-se</code> with the <code>bring-your-own-media</code> license model, and <code>sqlserver-dev-ee</code>).</p>
     pub fn get_db_engine_media_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_engine_media_type
     }

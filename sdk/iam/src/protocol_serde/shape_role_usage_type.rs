@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_role_usage_type(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RoleUsageType, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RoleUsageType::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_role_usage_type(
             s if s.matches("Resources") /* Resources com.amazonaws.iam#RoleUsageType$Resources */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_arn_list_type::de_arn_list_type(&mut tag)
+                        crate::protocol_serde::shape_arn_list_type::de_arn_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

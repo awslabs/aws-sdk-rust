@@ -2,10 +2,16 @@
 pub(crate) fn de_run_configuration_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RunConfigurationDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,12 +23,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ApplicationRestoreConfigurationDescription" => {
                             builder = builder.set_application_restore_configuration_description(
-                                crate::protocol_serde::shape_application_restore_configuration::de_application_restore_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_application_restore_configuration::de_application_restore_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "FlinkRunConfigurationDescription" => {
                             builder = builder.set_flink_run_configuration_description(
-                                crate::protocol_serde::shape_flink_run_configuration::de_flink_run_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_flink_run_configuration::de_flink_run_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

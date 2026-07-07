@@ -6,6 +6,8 @@ pub(crate) fn de_internal_server_error_exception_json_err(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -23,6 +25,11 @@ pub(crate) fn de_internal_server_error_exception_json_err(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                    );
+                }
+                "resourceShareErrors" => {
+                    builder = builder.set_resource_share_errors(
+                        crate::protocol_serde::shape_list_of_resource_share_error::de_list_of_resource_share_error(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

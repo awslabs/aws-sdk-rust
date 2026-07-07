@@ -33,7 +33,7 @@ pub struct Environment {
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>Reports impaired functionality that stems from issues internal to the environment, such as impaired reachability.</p>
     pub environment_status: ::std::option::Option<crate::types::CheckResult>,
-    /// <p>A check on the environment to identify instance health and VMware VCF licensing issues.</p>
+    /// <p>A check on the environment to identify connector health.</p>
     pub checks: ::std::option::Option<::std::vec::Vec<crate::types::Check>>,
     /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX uplink VLAN for connectivity to the NSX overlay network.</p>
     pub connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
@@ -109,7 +109,7 @@ impl Environment {
     pub fn environment_status(&self) -> ::std::option::Option<&crate::types::CheckResult> {
         self.environment_status.as_ref()
     }
-    /// <p>A check on the environment to identify instance health and VMware VCF licensing issues.</p>
+    /// <p>A check on the environment to identify connector health.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checks.is_none()`.
     pub fn checks(&self) -> &[crate::types::Check] {
@@ -383,19 +383,19 @@ impl EnvironmentBuilder {
     ///
     /// To override the contents of this collection use [`set_checks`](Self::set_checks).
     ///
-    /// <p>A check on the environment to identify instance health and VMware VCF licensing issues.</p>
+    /// <p>A check on the environment to identify connector health.</p>
     pub fn checks(mut self, input: crate::types::Check) -> Self {
         let mut v = self.checks.unwrap_or_default();
         v.push(input);
         self.checks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A check on the environment to identify instance health and VMware VCF licensing issues.</p>
+    /// <p>A check on the environment to identify connector health.</p>
     pub fn set_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Check>>) -> Self {
         self.checks = input;
         self
     }
-    /// <p>A check on the environment to identify instance health and VMware VCF licensing issues.</p>
+    /// <p>A check on the environment to identify connector health.</p>
     pub fn get_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Check>> {
         &self.checks
     }

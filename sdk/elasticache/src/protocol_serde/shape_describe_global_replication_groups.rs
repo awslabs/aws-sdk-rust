@@ -119,6 +119,8 @@ pub fn de_describe_global_replication_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeGlobalReplicationGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeGlobalReplicationGroupsResponse got {start_el:?}"
@@ -149,7 +151,7 @@ pub fn de_describe_global_replication_groups(
             s if s.matches("GlobalReplicationGroups") /* GlobalReplicationGroups com.amazonaws.elasticache.synthetic#DescribeGlobalReplicationGroupsOutput$GlobalReplicationGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_global_replication_group_list::de_global_replication_group_list(&mut tag)
+                        crate::protocol_serde::shape_global_replication_group_list::de_global_replication_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

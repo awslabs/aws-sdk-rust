@@ -16,6 +16,8 @@ pub struct Update {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
+    /// <p>The latest cancellation information for the update. This field is present only if any cancellation is attempted for the update.</p>
+    pub cancellation: ::std::option::Option<crate::types::Cancellation>,
 }
 impl Update {
     /// <p>A UUID that is used to track the update.</p>
@@ -46,6 +48,10 @@ impl Update {
     pub fn errors(&self) -> &[crate::types::ErrorDetail] {
         self.errors.as_deref().unwrap_or_default()
     }
+    /// <p>The latest cancellation information for the update. This field is present only if any cancellation is attempted for the update.</p>
+    pub fn cancellation(&self) -> ::std::option::Option<&crate::types::Cancellation> {
+        self.cancellation.as_ref()
+    }
 }
 impl Update {
     /// Creates a new builder-style object to manufacture [`Update`](crate::types::Update).
@@ -64,6 +70,7 @@ pub struct UpdateBuilder {
     pub(crate) params: ::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
+    pub(crate) cancellation: ::std::option::Option<crate::types::Cancellation>,
 }
 impl UpdateBuilder {
     /// <p>A UUID that is used to track the update.</p>
@@ -162,6 +169,20 @@ impl UpdateBuilder {
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
         &self.errors
     }
+    /// <p>The latest cancellation information for the update. This field is present only if any cancellation is attempted for the update.</p>
+    pub fn cancellation(mut self, input: crate::types::Cancellation) -> Self {
+        self.cancellation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The latest cancellation information for the update. This field is present only if any cancellation is attempted for the update.</p>
+    pub fn set_cancellation(mut self, input: ::std::option::Option<crate::types::Cancellation>) -> Self {
+        self.cancellation = input;
+        self
+    }
+    /// <p>The latest cancellation information for the update. This field is present only if any cancellation is attempted for the update.</p>
+    pub fn get_cancellation(&self) -> &::std::option::Option<crate::types::Cancellation> {
+        &self.cancellation
+    }
     /// Consumes the builder and constructs a [`Update`](crate::types::Update).
     pub fn build(self) -> crate::types::Update {
         crate::types::Update {
@@ -171,6 +192,7 @@ impl UpdateBuilder {
             params: self.params,
             created_at: self.created_at,
             errors: self.errors,
+            cancellation: self.cancellation,
         }
     }
 }

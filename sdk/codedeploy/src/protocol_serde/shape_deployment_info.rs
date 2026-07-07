@@ -2,10 +2,16 @@
 pub(crate) fn de_deployment_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DeploymentInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,18 @@ where
                             );
                         }
                         "previousRevision" => {
-                            builder =
-                                builder.set_previous_revision(crate::protocol_serde::shape_revision_location::de_revision_location(tokens, _value)?);
+                            builder = builder.set_previous_revision(crate::protocol_serde::shape_revision_location::de_revision_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "revision" => {
-                            builder = builder.set_revision(crate::protocol_serde::shape_revision_location::de_revision_location(tokens, _value)?);
+                            builder = builder.set_revision(crate::protocol_serde::shape_revision_location::de_revision_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "status" => {
                             builder = builder.set_status(
@@ -58,8 +71,11 @@ where
                             );
                         }
                         "errorInformation" => {
-                            builder =
-                                builder.set_error_information(crate::protocol_serde::shape_error_information::de_error_information(tokens, _value)?);
+                            builder = builder.set_error_information(crate::protocol_serde::shape_error_information::de_error_information(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "createTime" => {
                             builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -80,8 +96,11 @@ where
                             )?);
                         }
                         "deploymentOverview" => {
-                            builder = builder
-                                .set_deployment_overview(crate::protocol_serde::shape_deployment_overview::de_deployment_overview(tokens, _value)?);
+                            builder = builder.set_deployment_overview(crate::protocol_serde::shape_deployment_overview::de_deployment_overview(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "description" => {
                             builder = builder.set_description(
@@ -103,7 +122,7 @@ where
                         }
                         "autoRollbackConfiguration" => {
                             builder = builder.set_auto_rollback_configuration(
-                                crate::protocol_serde::shape_auto_rollback_configuration::de_auto_rollback_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_auto_rollback_configuration::de_auto_rollback_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "updateOutdatedInstancesOnly" => {
@@ -111,15 +130,22 @@ where
                                 .set_update_outdated_instances_only(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "rollbackInfo" => {
-                            builder = builder.set_rollback_info(crate::protocol_serde::shape_rollback_info::de_rollback_info(tokens, _value)?);
+                            builder =
+                                builder.set_rollback_info(crate::protocol_serde::shape_rollback_info::de_rollback_info(tokens, _value, depth + 1)?);
                         }
                         "deploymentStyle" => {
-                            builder =
-                                builder.set_deployment_style(crate::protocol_serde::shape_deployment_style::de_deployment_style(tokens, _value)?);
+                            builder = builder.set_deployment_style(crate::protocol_serde::shape_deployment_style::de_deployment_style(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "targetInstances" => {
-                            builder =
-                                builder.set_target_instances(crate::protocol_serde::shape_target_instances::de_target_instances(tokens, _value)?);
+                            builder = builder.set_target_instances(crate::protocol_serde::shape_target_instances::de_target_instances(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "instanceTerminationWaitTimeStarted" => {
                             builder = builder.set_instance_termination_wait_time_started(::aws_smithy_json::deserialize::token::expect_bool_or_null(
@@ -129,13 +155,18 @@ where
                         "blueGreenDeploymentConfiguration" => {
                             builder = builder.set_blue_green_deployment_configuration(
                                 crate::protocol_serde::shape_blue_green_deployment_configuration::de_blue_green_deployment_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "loadBalancerInfo" => {
-                            builder = builder
-                                .set_load_balancer_info(crate::protocol_serde::shape_load_balancer_info::de_load_balancer_info(tokens, _value)?);
+                            builder = builder.set_load_balancer_info(crate::protocol_serde::shape_load_balancer_info::de_load_balancer_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "additionalDeploymentStatusInfo" => {
                             builder = builder.set_additional_deployment_status_info(
@@ -153,7 +184,11 @@ where
                         }
                         "deploymentStatusMessages" => {
                             builder = builder.set_deployment_status_messages(
-                                crate::protocol_serde::shape_deployment_status_message_list::de_deployment_status_message_list(tokens, _value)?,
+                                crate::protocol_serde::shape_deployment_status_message_list::de_deployment_status_message_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "computePlatform" => {
@@ -171,12 +206,15 @@ where
                             );
                         }
                         "relatedDeployments" => {
-                            builder = builder
-                                .set_related_deployments(crate::protocol_serde::shape_related_deployments::de_related_deployments(tokens, _value)?);
+                            builder = builder.set_related_deployments(crate::protocol_serde::shape_related_deployments::de_related_deployments(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "overrideAlarmConfiguration" => {
                             builder = builder.set_override_alarm_configuration(
-                                crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

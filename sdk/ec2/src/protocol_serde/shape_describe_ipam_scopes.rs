@@ -47,6 +47,8 @@ pub fn de_describe_ipam_scopes(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeIpamScopesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeIpamScopesResponse got {start_el:?}"
@@ -70,7 +72,7 @@ pub fn de_describe_ipam_scopes(
             s if s.matches("ipamScopeSet") /* IpamScopes com.amazonaws.ec2.synthetic#DescribeIpamScopesOutput$IpamScopes */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_ipam_scope_set::de_ipam_scope_set(&mut tag)
+                        crate::protocol_serde::shape_ipam_scope_set::de_ipam_scope_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

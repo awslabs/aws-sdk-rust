@@ -172,6 +172,8 @@ pub fn de_get_reserved_node_exchange_offerings(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetReservedNodeExchangeOfferingsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetReservedNodeExchangeOfferingsResponse got {start_el:?}"
@@ -202,7 +204,7 @@ pub fn de_get_reserved_node_exchange_offerings(
             s if s.matches("ReservedNodeOfferings") /* ReservedNodeOfferings com.amazonaws.redshift.synthetic#GetReservedNodeExchangeOfferingsOutput$ReservedNodeOfferings */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_reserved_node_offering_list::de_reserved_node_offering_list(&mut tag)
+                        crate::protocol_serde::shape_reserved_node_offering_list::de_reserved_node_offering_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

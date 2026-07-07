@@ -21,10 +21,16 @@ pub fn ser_target_action(
 pub(crate) fn de_target_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TargetAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -52,7 +58,7 @@ where
                         variant = match key.as_ref() {
                             "createSnapshot" => {
                                 Some(crate::types::TargetAction::CreateSnapshot(
-                                    crate::protocol_serde::shape_create_snapshot_schedule_action_parameters::de_create_snapshot_schedule_action_parameters(tokens, _value)?
+                                    crate::protocol_serde::shape_create_snapshot_schedule_action_parameters::de_create_snapshot_schedule_action_parameters(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createSnapshot' cannot be null"))?
                                 ))
                             }

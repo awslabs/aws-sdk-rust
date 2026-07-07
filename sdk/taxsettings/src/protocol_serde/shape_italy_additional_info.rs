@@ -15,16 +15,25 @@ pub fn ser_italy_additional_info(
     if let Some(var_4) = &input.tax_code {
         object.key("taxCode").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.customer_type {
+        object.key("customerType").string(var_5.as_str());
+    }
     Ok(())
 }
 
 pub(crate) fn de_italy_additional_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ItalyAdditionalInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,6 +68,13 @@ where
                             builder = builder.set_tax_code(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "customerType" => {
+                            builder = builder.set_customer_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CustomerType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

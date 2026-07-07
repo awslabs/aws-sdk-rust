@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_placement_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PlacementGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PlacementGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -79,7 +83,7 @@ pub fn de_placement_group(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#PlacementGroup$Tags */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -129,11 +133,24 @@ pub fn de_placement_group(
             s if s.matches("operator") /* Operator com.amazonaws.ec2#PlacementGroup$Operator */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
                 builder = builder.set_operator(var_10);
+            }
+            ,
+            s if s.matches("parentGroupId") /* ParentGroupId com.amazonaws.ec2#PlacementGroup$ParentGroupId */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_parent_group_id(var_11);
             }
             ,
             _ => {}

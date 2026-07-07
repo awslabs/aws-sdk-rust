@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_streaming_distribution(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StreamingDistribution, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StreamingDistribution::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -76,7 +80,7 @@ pub fn de_streaming_distribution(
             s if s.matches("ActiveTrustedSigners") /* ActiveTrustedSigners com.amazonaws.cloudfront#StreamingDistribution$ActiveTrustedSigners */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_active_trusted_signers::de_active_trusted_signers(&mut tag)
+                        crate::protocol_serde::shape_active_trusted_signers::de_active_trusted_signers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +90,7 @@ pub fn de_streaming_distribution(
             s if s.matches("StreamingDistributionConfig") /* StreamingDistributionConfig com.amazonaws.cloudfront#StreamingDistribution$StreamingDistributionConfig */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_streaming_distribution_config::de_streaming_distribution_config(&mut tag)
+                        crate::protocol_serde::shape_streaming_distribution_config::de_streaming_distribution_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

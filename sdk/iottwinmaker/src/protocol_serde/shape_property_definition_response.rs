@@ -2,10 +2,16 @@
 pub(crate) fn de_property_definition_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PropertyDefinitionResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dataType" => {
-                            builder = builder.set_data_type(crate::protocol_serde::shape_data_type::de_data_type(tokens, _value)?);
+                            builder = builder.set_data_type(crate::protocol_serde::shape_data_type::de_data_type(tokens, _value, depth + 1)?);
                         }
                         "isTimeSeries" => {
                             builder = builder.set_is_time_series(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -40,10 +46,11 @@ where
                             builder = builder.set_is_inherited(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "defaultValue" => {
-                            builder = builder.set_default_value(crate::protocol_serde::shape_data_value::de_data_value(tokens, _value)?);
+                            builder = builder.set_default_value(crate::protocol_serde::shape_data_value::de_data_value(tokens, _value, depth + 1)?);
                         }
                         "configuration" => {
-                            builder = builder.set_configuration(crate::protocol_serde::shape_configuration::de_configuration(tokens, _value)?);
+                            builder =
+                                builder.set_configuration(crate::protocol_serde::shape_configuration::de_configuration(tokens, _value, depth + 1)?);
                         }
                         "displayName" => {
                             builder = builder.set_display_name(

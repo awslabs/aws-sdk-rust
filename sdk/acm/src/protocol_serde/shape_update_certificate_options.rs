@@ -84,6 +84,21 @@ pub fn de_update_certificate_options_http_error(
             }
             tmp
         }),
+        "ValidationException" => crate::operation::update_certificate_options::UpdateCertificateOptionsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_certificate_options::UpdateCertificateOptionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::update_certificate_options::UpdateCertificateOptionsError::generic(generic),
     })
 }

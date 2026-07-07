@@ -12,6 +12,10 @@ pub struct Scope {
     pub tag_value: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the only Amazon Web Services resource that you want to trigger an evaluation for the rule. If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.</p>
     pub compliance_resource_id: ::std::option::Option<::std::string::String>,
+    /// <p>The service principals of the Amazon Web Services services for the rule.</p><note>
+    /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
+    /// </note>
+    pub service_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Scope {
     /// <p>The resource types of only those Amazon Web Services resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>
@@ -32,6 +36,14 @@ impl Scope {
     pub fn compliance_resource_id(&self) -> ::std::option::Option<&str> {
         self.compliance_resource_id.as_deref()
     }
+    /// <p>The service principals of the Amazon Web Services services for the rule.</p><note>
+    /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_principals.is_none()`.
+    pub fn service_principals(&self) -> &[::std::string::String] {
+        self.service_principals.as_deref().unwrap_or_default()
+    }
 }
 impl Scope {
     /// Creates a new builder-style object to manufacture [`Scope`](crate::types::Scope).
@@ -48,6 +60,7 @@ pub struct ScopeBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) tag_value: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScopeBuilder {
     /// Appends an item to `compliance_resource_types`.
@@ -112,6 +125,32 @@ impl ScopeBuilder {
     pub fn get_compliance_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.compliance_resource_id
     }
+    /// Appends an item to `service_principals`.
+    ///
+    /// To override the contents of this collection use [`set_service_principals`](Self::set_service_principals).
+    ///
+    /// <p>The service principals of the Amazon Web Services services for the rule.</p><note>
+    /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
+    /// </note>
+    pub fn service_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.service_principals.unwrap_or_default();
+        v.push(input.into());
+        self.service_principals = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The service principals of the Amazon Web Services services for the rule.</p><note>
+    /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
+    /// </note>
+    pub fn set_service_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.service_principals = input;
+        self
+    }
+    /// <p>The service principals of the Amazon Web Services services for the rule.</p><note>
+    /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
+    /// </note>
+    pub fn get_service_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_principals
+    }
     /// Consumes the builder and constructs a [`Scope`](crate::types::Scope).
     pub fn build(self) -> crate::types::Scope {
         crate::types::Scope {
@@ -119,6 +158,7 @@ impl ScopeBuilder {
             tag_key: self.tag_key,
             tag_value: self.tag_value,
             compliance_resource_id: self.compliance_resource_id,
+            service_principals: self.service_principals,
         }
     }
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_leg<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Leg>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,10 +22,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StartPosition" => {
-                            builder = builder.set_start_position(crate::protocol_serde::shape_position::de_position(tokens, _value)?);
+                            builder = builder.set_start_position(crate::protocol_serde::shape_position::de_position(tokens, _value, depth + 1)?);
                         }
                         "EndPosition" => {
-                            builder = builder.set_end_position(crate::protocol_serde::shape_position::de_position(tokens, _value)?);
+                            builder = builder.set_end_position(crate::protocol_serde::shape_position::de_position(tokens, _value, depth + 1)?);
                         }
                         "Distance" => {
                             builder = builder
@@ -31,10 +37,10 @@ where
                             );
                         }
                         "Geometry" => {
-                            builder = builder.set_geometry(crate::protocol_serde::shape_leg_geometry::de_leg_geometry(tokens, _value)?);
+                            builder = builder.set_geometry(crate::protocol_serde::shape_leg_geometry::de_leg_geometry(tokens, _value, depth + 1)?);
                         }
                         "Steps" => {
-                            builder = builder.set_steps(crate::protocol_serde::shape_step_list::de_step_list(tokens, _value)?);
+                            builder = builder.set_steps(crate::protocol_serde::shape_step_list::de_step_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

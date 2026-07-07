@@ -2,10 +2,16 @@
 pub(crate) fn de_evaluation_result_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationResultContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,7 @@ where
                             );
                         }
                         "context" => {
-                            builder = builder.set_context(crate::protocol_serde::shape_context::de_context(tokens, _value)?);
+                            builder = builder.set_context(crate::protocol_serde::shape_context::de_context(tokens, _value, depth + 1)?);
                         }
                         "value" => {
                             builder = builder
@@ -58,7 +64,7 @@ where
                             );
                         }
                         "tokenUsage" => {
-                            builder = builder.set_token_usage(crate::protocol_serde::shape_token_usage::de_token_usage(tokens, _value)?);
+                            builder = builder.set_token_usage(crate::protocol_serde::shape_token_usage::de_token_usage(tokens, _value, depth + 1)?);
                         }
                         "errorMessage" => {
                             builder = builder.set_error_message(
@@ -76,7 +82,11 @@ where
                         }
                         "ignoredReferenceInputFields" => {
                             builder = builder.set_ignored_reference_input_fields(
-                                crate::protocol_serde::shape_ignored_reference_input_fields::de_ignored_reference_input_fields(tokens, _value)?,
+                                crate::protocol_serde::shape_ignored_reference_input_fields::de_ignored_reference_input_fields(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

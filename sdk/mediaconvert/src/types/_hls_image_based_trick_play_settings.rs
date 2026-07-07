@@ -12,7 +12,7 @@ pub struct HlsImageBasedTrickPlaySettings {
     pub thumbnail_interval: ::std::option::Option<f64>,
     /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub thumbnail_width: ::std::option::Option<i32>,
-    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    /// Number of thumbnails in each column of a tile image. Set a value between 1 and 2048.
     pub tile_height: ::std::option::Option<i32>,
     /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub tile_width: ::std::option::Option<i32>,
@@ -34,7 +34,7 @@ impl HlsImageBasedTrickPlaySettings {
     pub fn thumbnail_width(&self) -> ::std::option::Option<i32> {
         self.thumbnail_width
     }
-    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    /// Number of thumbnails in each column of a tile image. Set a value between 1 and 2048.
     pub fn tile_height(&self) -> ::std::option::Option<i32> {
         self.tile_height
     }
@@ -118,17 +118,17 @@ impl HlsImageBasedTrickPlaySettingsBuilder {
     pub fn get_thumbnail_width(&self) -> &::std::option::Option<i32> {
         &self.thumbnail_width
     }
-    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    /// Number of thumbnails in each column of a tile image. Set a value between 1 and 2048.
     pub fn tile_height(mut self, input: i32) -> Self {
         self.tile_height = ::std::option::Option::Some(input);
         self
     }
-    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    /// Number of thumbnails in each column of a tile image. Set a value between 1 and 2048.
     pub fn set_tile_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tile_height = input;
         self
     }
-    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    /// Number of thumbnails in each column of a tile image. Set a value between 1 and 2048.
     pub fn get_tile_height(&self) -> &::std::option::Option<i32> {
         &self.tile_height
     }

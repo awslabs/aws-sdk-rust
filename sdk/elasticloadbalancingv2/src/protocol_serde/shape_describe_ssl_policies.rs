@@ -71,6 +71,8 @@ pub fn de_describe_ssl_policies(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSSLPoliciesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSSLPoliciesResponse got {start_el:?}"
@@ -88,7 +90,7 @@ pub fn de_describe_ssl_policies(
             s if s.matches("SslPolicies") /* SslPolicies com.amazonaws.elasticloadbalancingv2.synthetic#DescribeSSLPoliciesOutput$SslPolicies */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ssl_policies::de_ssl_policies(&mut tag)
+                        crate::protocol_serde::shape_ssl_policies::de_ssl_policies(&mut tag, depth + 1)
                         ?
                     )
                 ;

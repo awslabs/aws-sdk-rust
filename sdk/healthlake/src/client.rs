@@ -232,3 +232,5 @@ mod start_fhir_import_job;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_fhir_datastore;

@@ -77,6 +77,8 @@ pub fn de_describe_configuration_set(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeConfigurationSetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeConfigurationSetResponse got {start_el:?}"
@@ -94,7 +96,7 @@ pub fn de_describe_configuration_set(
             s if s.matches("ConfigurationSet") /* ConfigurationSet com.amazonaws.ses.synthetic#DescribeConfigurationSetOutput$ConfigurationSet */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_configuration_set::de_configuration_set(&mut tag)
+                        crate::protocol_serde::shape_configuration_set::de_configuration_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -104,7 +106,7 @@ pub fn de_describe_configuration_set(
             s if s.matches("EventDestinations") /* EventDestinations com.amazonaws.ses.synthetic#DescribeConfigurationSetOutput$EventDestinations */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_event_destinations::de_event_destinations(&mut tag)
+                        crate::protocol_serde::shape_event_destinations::de_event_destinations(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -114,7 +116,7 @@ pub fn de_describe_configuration_set(
             s if s.matches("TrackingOptions") /* TrackingOptions com.amazonaws.ses.synthetic#DescribeConfigurationSetOutput$TrackingOptions */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_tracking_options::de_tracking_options(&mut tag)
+                        crate::protocol_serde::shape_tracking_options::de_tracking_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -124,7 +126,7 @@ pub fn de_describe_configuration_set(
             s if s.matches("DeliveryOptions") /* DeliveryOptions com.amazonaws.ses.synthetic#DescribeConfigurationSetOutput$DeliveryOptions */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_delivery_options::de_delivery_options(&mut tag)
+                        crate::protocol_serde::shape_delivery_options::de_delivery_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -134,7 +136,7 @@ pub fn de_describe_configuration_set(
             s if s.matches("ReputationOptions") /* ReputationOptions com.amazonaws.ses.synthetic#DescribeConfigurationSetOutput$ReputationOptions */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_reputation_options::de_reputation_options(&mut tag)
+                        crate::protocol_serde::shape_reputation_options::de_reputation_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -133,6 +133,8 @@ pub(crate) fn de_prepare_query(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,11 +148,17 @@ pub(crate) fn de_prepare_query(
                     );
                 }
                 "Columns" => {
-                    builder = builder.set_columns(crate::protocol_serde::shape_select_column_list::de_select_column_list(tokens, _value)?);
+                    builder = builder.set_columns(crate::protocol_serde::shape_select_column_list::de_select_column_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Parameters" => {
                     builder = builder.set_parameters(crate::protocol_serde::shape_parameter_mapping_list::de_parameter_mapping_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

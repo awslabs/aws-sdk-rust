@@ -170,13 +170,29 @@ pub(crate) fn de_get_api_key_credential_provider(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "apiKeySecretArn" => {
-                    builder = builder.set_api_key_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value)?);
+                    builder = builder.set_api_key_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value, depth + 1)?);
+                }
+                "apiKeySecretJsonKey" => {
+                    builder = builder.set_api_key_secret_json_key(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "apiKeySecretSource" => {
+                    builder = builder.set_api_key_secret_source(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SecretSourceType::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 "createdTime" => {
                     builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

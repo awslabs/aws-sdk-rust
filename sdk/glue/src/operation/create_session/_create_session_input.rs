@@ -46,6 +46,8 @@ pub struct CreateSessionInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The origin of the request.</p>
     pub request_origin: ::std::option::Option<::std::string::String>,
+    /// <p>The type of session to create.</p>
+    pub session_type: ::std::option::Option<crate::types::SessionType>,
 }
 impl CreateSessionInput {
     /// <p>The ID of the session request.</p>
@@ -120,6 +122,10 @@ impl CreateSessionInput {
     pub fn request_origin(&self) -> ::std::option::Option<&str> {
         self.request_origin.as_deref()
     }
+    /// <p>The type of session to create.</p>
+    pub fn session_type(&self) -> ::std::option::Option<&crate::types::SessionType> {
+        self.session_type.as_ref()
+    }
 }
 impl CreateSessionInput {
     /// Creates a new builder-style object to manufacture [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
@@ -147,6 +153,7 @@ pub struct CreateSessionInputBuilder {
     pub(crate) glue_version: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) request_origin: ::std::option::Option<::std::string::String>,
+    pub(crate) session_type: ::std::option::Option<crate::types::SessionType>,
 }
 impl CreateSessionInputBuilder {
     /// <p>The ID of the session request.</p>
@@ -417,6 +424,20 @@ impl CreateSessionInputBuilder {
     pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_origin
     }
+    /// <p>The type of session to create.</p>
+    pub fn session_type(mut self, input: crate::types::SessionType) -> Self {
+        self.session_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of session to create.</p>
+    pub fn set_session_type(mut self, input: ::std::option::Option<crate::types::SessionType>) -> Self {
+        self.session_type = input;
+        self
+    }
+    /// <p>The type of session to create.</p>
+    pub fn get_session_type(&self) -> &::std::option::Option<crate::types::SessionType> {
+        &self.session_type
+    }
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(
         self,
@@ -437,6 +458,7 @@ impl CreateSessionInputBuilder {
             glue_version: self.glue_version,
             tags: self.tags,
             request_origin: self.request_origin,
+            session_type: self.session_type,
         })
     }
 }

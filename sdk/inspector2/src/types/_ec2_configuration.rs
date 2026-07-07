@@ -6,11 +6,17 @@
 pub struct Ec2Configuration {
     /// <p>The scan method that is applied to the instance.</p>
     pub scan_mode: crate::types::Ec2ScanMode,
+    /// <p>Whether to activate Amazon Inspector VM scanner for Amazon EC2 scanning.</p>
+    pub activate_vm_scanner: ::std::option::Option<bool>,
 }
 impl Ec2Configuration {
     /// <p>The scan method that is applied to the instance.</p>
     pub fn scan_mode(&self) -> &crate::types::Ec2ScanMode {
         &self.scan_mode
+    }
+    /// <p>Whether to activate Amazon Inspector VM scanner for Amazon EC2 scanning.</p>
+    pub fn activate_vm_scanner(&self) -> ::std::option::Option<bool> {
+        self.activate_vm_scanner
     }
 }
 impl Ec2Configuration {
@@ -25,6 +31,7 @@ impl Ec2Configuration {
 #[non_exhaustive]
 pub struct Ec2ConfigurationBuilder {
     pub(crate) scan_mode: ::std::option::Option<crate::types::Ec2ScanMode>,
+    pub(crate) activate_vm_scanner: ::std::option::Option<bool>,
 }
 impl Ec2ConfigurationBuilder {
     /// <p>The scan method that is applied to the instance.</p>
@@ -42,6 +49,20 @@ impl Ec2ConfigurationBuilder {
     pub fn get_scan_mode(&self) -> &::std::option::Option<crate::types::Ec2ScanMode> {
         &self.scan_mode
     }
+    /// <p>Whether to activate Amazon Inspector VM scanner for Amazon EC2 scanning.</p>
+    pub fn activate_vm_scanner(mut self, input: bool) -> Self {
+        self.activate_vm_scanner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to activate Amazon Inspector VM scanner for Amazon EC2 scanning.</p>
+    pub fn set_activate_vm_scanner(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.activate_vm_scanner = input;
+        self
+    }
+    /// <p>Whether to activate Amazon Inspector VM scanner for Amazon EC2 scanning.</p>
+    pub fn get_activate_vm_scanner(&self) -> &::std::option::Option<bool> {
+        &self.activate_vm_scanner
+    }
     /// Consumes the builder and constructs a [`Ec2Configuration`](crate::types::Ec2Configuration).
     /// This method will fail if any of the following fields are not set:
     /// - [`scan_mode`](crate::types::builders::Ec2ConfigurationBuilder::scan_mode)
@@ -53,6 +74,7 @@ impl Ec2ConfigurationBuilder {
                     "scan_mode was not specified but it is required when building Ec2Configuration",
                 )
             })?,
+            activate_vm_scanner: self.activate_vm_scanner,
         })
     }
 }

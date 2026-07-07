@@ -18,10 +18,16 @@ pub fn ser_avail_blanking(
 pub(crate) fn de_avail_blanking<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AvailBlanking>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -32,8 +38,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "availBlankingImage" => {
-                            builder =
-                                builder.set_avail_blanking_image(crate::protocol_serde::shape_input_location::de_input_location(tokens, _value)?);
+                            builder = builder.set_avail_blanking_image(crate::protocol_serde::shape_input_location::de_input_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "state" => {
                             builder = builder.set_state(

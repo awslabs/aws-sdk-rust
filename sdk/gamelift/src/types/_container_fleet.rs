@@ -21,6 +21,7 @@ pub struct ContainerFleet {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to the fleet's per-instance container group. The ARN value also identifies the specific container group definition version in use.</p>
     pub per_instance_container_group_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The set of port numbers to open on each instance in a container fleet. Connection ports are used by inbound traffic to connect with processes that are running in containers on the fleet.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub instance_connection_port_range: ::std::option::Option<crate::types::ConnectionPortRange>,
     /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet.</p>
     pub instance_inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
@@ -115,6 +116,7 @@ impl ContainerFleet {
         self.per_instance_container_group_definition_arn.as_deref()
     }
     /// <p>The set of port numbers to open on each instance in a container fleet. Connection ports are used by inbound traffic to connect with processes that are running in containers on the fleet.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_connection_port_range(&self) -> ::std::option::Option<&crate::types::ConnectionPortRange> {
         self.instance_connection_port_range.as_ref()
     }
@@ -356,16 +358,19 @@ impl ContainerFleetBuilder {
         &self.per_instance_container_group_definition_arn
     }
     /// <p>The set of port numbers to open on each instance in a container fleet. Connection ports are used by inbound traffic to connect with processes that are running in containers on the fleet.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_connection_port_range(mut self, input: crate::types::ConnectionPortRange) -> Self {
         self.instance_connection_port_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The set of port numbers to open on each instance in a container fleet. Connection ports are used by inbound traffic to connect with processes that are running in containers on the fleet.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn set_instance_connection_port_range(mut self, input: ::std::option::Option<crate::types::ConnectionPortRange>) -> Self {
         self.instance_connection_port_range = input;
         self
     }
     /// <p>The set of port numbers to open on each instance in a container fleet. Connection ports are used by inbound traffic to connect with processes that are running in containers on the fleet.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn get_instance_connection_port_range(&self) -> &::std::option::Option<crate::types::ConnectionPortRange> {
         &self.instance_connection_port_range
     }

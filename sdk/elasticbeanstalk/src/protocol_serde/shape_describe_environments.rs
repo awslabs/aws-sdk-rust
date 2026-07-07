@@ -47,6 +47,8 @@ pub fn de_describe_environments(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeEnvironmentsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeEnvironmentsResponse got {start_el:?}"
@@ -64,7 +66,7 @@ pub fn de_describe_environments(
             s if s.matches("Environments") /* Environments com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentsOutput$Environments */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_environment_descriptions_list::de_environment_descriptions_list(&mut tag)
+                        crate::protocol_serde::shape_environment_descriptions_list::de_environment_descriptions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

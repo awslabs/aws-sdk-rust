@@ -158,6 +158,8 @@ pub(crate) fn de_get_s3_table_integration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -185,7 +187,7 @@ pub(crate) fn de_get_s3_table_integration(
                     );
                 }
                 "Encryption" => {
-                    builder = builder.set_encryption(crate::protocol_serde::shape_encryption::de_encryption(tokens, _value)?);
+                    builder = builder.set_encryption(crate::protocol_serde::shape_encryption::de_encryption(tokens, _value, depth + 1)?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(

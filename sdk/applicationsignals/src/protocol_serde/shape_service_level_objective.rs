@@ -2,10 +2,16 @@
 pub(crate) fn de_service_level_objective<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceLevelObjective>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,13 +56,17 @@ where
                         }
                         "Sli" => {
                             builder = builder.set_sli(crate::protocol_serde::shape_service_level_indicator::de_service_level_indicator(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "RequestBasedSli" => {
                             builder = builder.set_request_based_sli(
                                 crate::protocol_serde::shape_request_based_service_level_indicator::de_request_based_service_level_indicator(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -68,11 +78,11 @@ where
                             );
                         }
                         "Goal" => {
-                            builder = builder.set_goal(crate::protocol_serde::shape_goal::de_goal(tokens, _value)?);
+                            builder = builder.set_goal(crate::protocol_serde::shape_goal::de_goal(tokens, _value, depth + 1)?);
                         }
                         "BurnRateConfigurations" => {
                             builder = builder.set_burn_rate_configurations(
-                                crate::protocol_serde::shape_burn_rate_configurations::de_burn_rate_configurations(tokens, _value)?,
+                                crate::protocol_serde::shape_burn_rate_configurations::de_burn_rate_configurations(tokens, _value, depth + 1)?,
                             );
                         }
                         "MetricSourceType" => {

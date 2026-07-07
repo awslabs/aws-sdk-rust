@@ -27,10 +27,16 @@ pub fn ser_tuning_job_completion_criteria(
 pub(crate) fn de_tuning_job_completion_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TuningJobCompletionCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,24 +45,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "TargetObjectiveMetricValue" => {
-                            builder = builder.set_target_objective_metric_value(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "TargetObjectiveMetricValue" => {
+                                builder = builder.set_target_objective_metric_value(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
+                                );
+                            }
+                            "BestObjectiveNotImproving" => {
+                                builder = builder.set_best_objective_not_improving(
+                                    crate::protocol_serde::shape_best_objective_not_improving::de_best_objective_not_improving(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ConvergenceDetected" => {
+                                builder = builder.set_convergence_detected(
+                                    crate::protocol_serde::shape_convergence_detected::de_convergence_detected(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "BestObjectiveNotImproving" => {
-                            builder = builder.set_best_objective_not_improving(
-                                crate::protocol_serde::shape_best_objective_not_improving::de_best_objective_not_improving(tokens, _value)?,
-                            );
-                        }
-                        "ConvergenceDetected" => {
-                            builder = builder.set_convergence_detected(crate::protocol_serde::shape_convergence_detected::de_convergence_detected(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

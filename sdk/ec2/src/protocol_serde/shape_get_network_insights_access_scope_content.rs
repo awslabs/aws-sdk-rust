@@ -53,6 +53,8 @@ pub fn de_get_network_insights_access_scope_content(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetNetworkInsightsAccessScopeContentResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetNetworkInsightsAccessScopeContentResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_get_network_insights_access_scope_content(
             s if s.matches("networkInsightsAccessScopeContent") /* NetworkInsightsAccessScopeContent com.amazonaws.ec2.synthetic#GetNetworkInsightsAccessScopeContentOutput$NetworkInsightsAccessScopeContent */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_network_insights_access_scope_content::de_network_insights_access_scope_content(&mut tag)
+                        crate::protocol_serde::shape_network_insights_access_scope_content::de_network_insights_access_scope_content(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -146,9 +146,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteA
 #[derive(Debug)]
 struct DeleteAliasResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteAliasResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -285,6 +286,8 @@ pub enum DeleteAliasError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
@@ -324,6 +327,7 @@ impl DeleteAliasError {
         match self {
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -336,6 +340,10 @@ impl DeleteAliasError {
     /// Returns `true` if the error kind is `DeleteAliasError::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(self, Self::ResourceConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteAliasError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteAliasError::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
@@ -351,6 +359,7 @@ impl ::std::error::Error for DeleteAliasError {
         match self {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -362,6 +371,7 @@ impl ::std::fmt::Display for DeleteAliasError {
         match self {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -387,6 +397,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteAliasEr
         match self {
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

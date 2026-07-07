@@ -81,21 +81,29 @@ pub(crate) fn de_batch_get_command_executions(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "commandExecutions" => {
-                    builder = builder.set_command_executions(crate::protocol_serde::shape_command_executions::de_command_executions(tokens, _value)?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "commandExecutions" => {
+                        builder = builder.set_command_executions(crate::protocol_serde::shape_command_executions::de_command_executions(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "commandExecutionsNotFound" => {
+                        builder = builder.set_command_executions_not_found(
+                            crate::protocol_serde::shape_command_execution_ids::de_command_execution_ids(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "commandExecutionsNotFound" => {
-                    builder = builder.set_command_executions_not_found(crate::protocol_serde::shape_command_execution_ids::de_command_execution_ids(
-                        tokens, _value,
-                    )?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

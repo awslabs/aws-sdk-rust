@@ -161,6 +161,8 @@ pub(crate) fn de_create_transformer(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -215,7 +217,7 @@ pub(crate) fn de_create_transformer(
                     );
                 }
                 "ediType" => {
-                    builder = builder.set_edi_type(crate::protocol_serde::shape_edi_type::de_edi_type(tokens, _value)?);
+                    builder = builder.set_edi_type(crate::protocol_serde::shape_edi_type::de_edi_type(tokens, _value, depth + 1)?);
                 }
                 "sampleDocument" => {
                     builder = builder.set_sample_document(
@@ -225,16 +227,28 @@ pub(crate) fn de_create_transformer(
                     );
                 }
                 "inputConversion" => {
-                    builder = builder.set_input_conversion(crate::protocol_serde::shape_input_conversion::de_input_conversion(tokens, _value)?);
+                    builder = builder.set_input_conversion(crate::protocol_serde::shape_input_conversion::de_input_conversion(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "mapping" => {
-                    builder = builder.set_mapping(crate::protocol_serde::shape_mapping::de_mapping(tokens, _value)?);
+                    builder = builder.set_mapping(crate::protocol_serde::shape_mapping::de_mapping(tokens, _value, depth + 1)?);
                 }
                 "outputConversion" => {
-                    builder = builder.set_output_conversion(crate::protocol_serde::shape_output_conversion::de_output_conversion(tokens, _value)?);
+                    builder = builder.set_output_conversion(crate::protocol_serde::shape_output_conversion::de_output_conversion(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "sampleDocuments" => {
-                    builder = builder.set_sample_documents(crate::protocol_serde::shape_sample_documents::de_sample_documents(tokens, _value)?);
+                    builder = builder.set_sample_documents(crate::protocol_serde::shape_sample_documents::de_sample_documents(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

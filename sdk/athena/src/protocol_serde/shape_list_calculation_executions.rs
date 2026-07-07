@@ -111,6 +111,8 @@ pub(crate) fn de_list_calculation_executions(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -124,7 +126,11 @@ pub(crate) fn de_list_calculation_executions(
                     );
                 }
                 "Calculations" => {
-                    builder = builder.set_calculations(crate::protocol_serde::shape_calculations_list::de_calculations_list(tokens, _value)?);
+                    builder = builder.set_calculations(crate::protocol_serde::shape_calculations_list::de_calculations_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

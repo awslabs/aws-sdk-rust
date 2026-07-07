@@ -2,10 +2,16 @@
 pub(crate) fn de_integration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Integration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,12 +65,14 @@ where
                         }
                         "AdditionalEncryptionContext" => {
                             builder = builder.set_additional_encryption_context(
-                                    crate::protocol_serde::shape_integration_additional_encryption_context_map::de_integration_additional_encryption_context_map(tokens, _value)?
+                                    crate::protocol_serde::shape_integration_additional_encryption_context_map::de_integration_additional_encryption_context_map(tokens, _value, depth + 1)?
                                 );
                         }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_integration_tags_list::de_integration_tags_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Status" => {
@@ -81,12 +89,17 @@ where
                             )?);
                         }
                         "IntegrationConfig" => {
-                            builder = builder
-                                .set_integration_config(crate::protocol_serde::shape_integration_config::de_integration_config(tokens, _value)?);
+                            builder = builder.set_integration_config(crate::protocol_serde::shape_integration_config::de_integration_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Errors" => {
                             builder = builder.set_errors(crate::protocol_serde::shape_integration_error_list::de_integration_error_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DataFilter" => {

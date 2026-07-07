@@ -39,21 +39,21 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Priority levels for tasks, from highest to lowest urgency
+/// <p>Priority levels for tasks, from highest to lowest urgency</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Priority {
-    /// Highest priority
+    /// <p>Highest priority</p>
     Critical,
-    /// High priority
+    /// <p>High priority</p>
     High,
-    /// Low priority
+    /// <p>Low priority</p>
     Low,
-    /// Medium priority
+    /// <p>Medium priority</p>
     Medium,
-    /// Minimal priority
+    /// <p>Minimal priority</p>
     Minimal,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

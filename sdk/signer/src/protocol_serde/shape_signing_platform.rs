@@ -2,10 +2,16 @@
 pub(crate) fn de_signing_platform<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SigningPlatform>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,12 +58,14 @@ where
                         }
                         "signingConfiguration" => {
                             builder = builder.set_signing_configuration(
-                                crate::protocol_serde::shape_signing_configuration::de_signing_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_signing_configuration::de_signing_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "signingImageFormat" => {
                             builder = builder.set_signing_image_format(crate::protocol_serde::shape_signing_image_format::de_signing_image_format(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "maxSizeInMB" => {

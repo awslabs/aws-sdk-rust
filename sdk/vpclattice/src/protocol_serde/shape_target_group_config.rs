@@ -2,10 +2,16 @@
 pub(crate) fn de_target_group_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TargetGroupConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,8 +57,11 @@ where
                             );
                         }
                         "healthCheck" => {
-                            builder =
-                                builder.set_health_check(crate::protocol_serde::shape_health_check_config::de_health_check_config(tokens, _value)?);
+                            builder = builder.set_health_check(crate::protocol_serde::shape_health_check_config::de_health_check_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lambdaEventStructureVersion" => {
                             builder = builder.set_lambda_event_structure_version(

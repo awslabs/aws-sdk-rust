@@ -7,7 +7,7 @@ pub struct ListInvoiceSummariesInput {
     pub selector: ::std::option::Option<crate::types::InvoiceSummariesSelector>,
     /// <p>Filters you can use to customize your invoice summary.</p>
     pub filter: ::std::option::Option<crate::types::InvoiceSummariesFilter>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of invoice summaries a paginated response can contain.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -21,7 +21,7 @@ impl ListInvoiceSummariesInput {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::InvoiceSummariesFilter> {
         self.filter.as_ref()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -76,17 +76,17 @@ impl ListInvoiceSummariesInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::InvoiceSummariesFilter> {
         &self.filter
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -87,6 +87,8 @@ pub fn de_list_multipart_uploads(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListMultipartUploadsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListMultipartUploadsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -100,7 +102,7 @@ pub fn de_list_multipart_uploads(
                         Result::<::std::vec::Vec::<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_6 = builder.common_prefixes.take().unwrap_or_default();
                             list_6.push(
-                                crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
+                                crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag, depth + 1)
                                 ?
                             );
                             list_6
@@ -156,7 +158,7 @@ pub fn de_list_multipart_uploads(
                         Result::<::std::vec::Vec::<crate::types::MultipartUpload>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_11 = builder.uploads.take().unwrap_or_default();
                             list_11.push(
-                                crate::protocol_serde::shape_multipart_upload::de_multipart_upload(&mut tag)
+                                crate::protocol_serde::shape_multipart_upload::de_multipart_upload(&mut tag, depth + 1)
                                 ?
                             );
                             list_11

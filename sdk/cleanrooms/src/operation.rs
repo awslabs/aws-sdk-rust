@@ -40,6 +40,12 @@ pub mod create_id_mapping_table;
 /// Types for the `CreateIdNamespaceAssociation` operation.
 pub mod create_id_namespace_association;
 
+/// Types for the `CreateIntermediateTable` operation.
+pub mod create_intermediate_table;
+
+/// Types for the `CreateIntermediateTableAnalysisRule` operation.
+pub mod create_intermediate_table_analysis_rule;
+
 /// Types for the `CreateMembership` operation.
 pub mod create_membership;
 
@@ -73,6 +79,12 @@ pub mod delete_id_mapping_table;
 /// Types for the `DeleteIdNamespaceAssociation` operation.
 pub mod delete_id_namespace_association;
 
+/// Types for the `DeleteIntermediateTable` operation.
+pub mod delete_intermediate_table;
+
+/// Types for the `DeleteIntermediateTableAnalysisRule` operation.
+pub mod delete_intermediate_table_analysis_rule;
+
 /// Types for the `DeleteMember` operation.
 pub mod delete_member;
 
@@ -81,6 +93,9 @@ pub mod delete_membership;
 
 /// Types for the `DeletePrivacyBudgetTemplate` operation.
 pub mod delete_privacy_budget_template;
+
+/// Types for the `DisallowIntermediateTable` operation.
+pub mod disallow_intermediate_table;
 
 /// Types for the `GetAnalysisTemplate` operation.
 pub mod get_analysis_template;
@@ -123,6 +138,12 @@ pub mod get_id_mapping_table;
 
 /// Types for the `GetIdNamespaceAssociation` operation.
 pub mod get_id_namespace_association;
+
+/// Types for the `GetIntermediateTable` operation.
+pub mod get_intermediate_table;
+
+/// Types for the `GetIntermediateTableAnalysisRule` operation.
+pub mod get_intermediate_table_analysis_rule;
 
 /// Types for the `GetMembership` operation.
 pub mod get_membership;
@@ -181,6 +202,12 @@ pub mod list_id_mapping_tables;
 /// Types for the `ListIdNamespaceAssociations` operation.
 pub mod list_id_namespace_associations;
 
+/// Types for the `ListIntermediateTableVersions` operation.
+pub mod list_intermediate_table_versions;
+
+/// Types for the `ListIntermediateTables` operation.
+pub mod list_intermediate_tables;
+
 /// Types for the `ListMembers` operation.
 pub mod list_members;
 
@@ -207,6 +234,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `PopulateIdMappingTable` operation.
 pub mod populate_id_mapping_table;
+
+/// Types for the `PopulateIntermediateTable` operation.
+pub mod populate_intermediate_table;
 
 /// Types for the `PreviewPrivacyImpact` operation.
 pub mod preview_privacy_impact;
@@ -252,6 +282,12 @@ pub mod update_id_mapping_table;
 
 /// Types for the `UpdateIdNamespaceAssociation` operation.
 pub mod update_id_namespace_association;
+
+/// Types for the `UpdateIntermediateTable` operation.
+pub mod update_intermediate_table;
+
+/// Types for the `UpdateIntermediateTableAnalysisRule` operation.
+pub mod update_intermediate_table_analysis_rule;
 
 /// Types for the `UpdateMembership` operation.
 pub mod update_membership;

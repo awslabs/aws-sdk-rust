@@ -65,6 +65,8 @@ pub fn de_get_account_summary(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetAccountSummaryResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetAccountSummaryResponse got {start_el:?}"
@@ -82,7 +84,7 @@ pub fn de_get_account_summary(
             s if s.matches("SummaryMap") /* SummaryMap com.amazonaws.iam.synthetic#GetAccountSummaryOutput$SummaryMap */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_summary_map_type::de_summary_map_type(&mut tag)
+                        crate::protocol_serde::shape_summary_map_type::de_summary_map_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

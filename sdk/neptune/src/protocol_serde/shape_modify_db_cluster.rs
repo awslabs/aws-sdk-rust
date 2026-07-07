@@ -179,6 +179,24 @@ pub fn de_modify_db_cluster_http_error(
             }
             tmp
         }),
+        "NetworkTypeNotSupported" => crate::operation::modify_db_cluster::ModifyDBClusterError::NetworkTypeNotSupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NetworkTypeNotSupportedFaultBuilder::default();
+                output = crate::protocol_serde::shape_network_type_not_supported_fault::de_network_type_not_supported_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "StorageQuotaExceeded" => crate::operation::modify_db_cluster::ModifyDBClusterError::StorageQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -243,6 +261,8 @@ pub fn de_modify_db_cluster(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyDBClusterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyDBClusterResponse got {start_el:?}"
@@ -260,7 +280,7 @@ pub fn de_modify_db_cluster(
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#ModifyDBClusterOutput$DBCluster */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_cluster::de_db_cluster(&mut tag)
+                        crate::protocol_serde::shape_db_cluster::de_db_cluster(&mut tag, depth + 1)
                         ?
                     )
                 ;

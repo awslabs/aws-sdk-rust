@@ -94,6 +94,8 @@ pub fn de_reset_cluster_parameter_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ResetClusterParameterGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ResetClusterParameterGroupResponse got {start_el:?}"

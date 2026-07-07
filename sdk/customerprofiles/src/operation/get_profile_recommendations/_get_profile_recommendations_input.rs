@@ -21,6 +21,8 @@ pub struct GetProfileRecommendationsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
     pub metadata_config: ::std::option::Option<crate::types::MetadataConfig>,
+    /// <p>Runtime diversity configuration for this request. Enables diversity-aware recommendations and optionally supplies values for placeholder-based diversity caps configured on the recommender.</p>
+    pub diversity_config: ::std::option::Option<crate::types::RecommendationDiversityConfig>,
 }
 impl GetProfileRecommendationsInput {
     /// <p>The unique name of the domain.</p>
@@ -65,6 +67,10 @@ impl GetProfileRecommendationsInput {
     pub fn metadata_config(&self) -> ::std::option::Option<&crate::types::MetadataConfig> {
         self.metadata_config.as_ref()
     }
+    /// <p>Runtime diversity configuration for this request. Enables diversity-aware recommendations and optionally supplies values for placeholder-based diversity caps configured on the recommender.</p>
+    pub fn diversity_config(&self) -> ::std::option::Option<&crate::types::RecommendationDiversityConfig> {
+        self.diversity_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetProfileRecommendationsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -78,6 +84,7 @@ impl ::std::fmt::Debug for GetProfileRecommendationsInput {
         formatter.field("candidate_ids", &self.candidate_ids);
         formatter.field("max_results", &self.max_results);
         formatter.field("metadata_config", &self.metadata_config);
+        formatter.field("diversity_config", &self.diversity_config);
         formatter.finish()
     }
 }
@@ -101,6 +108,7 @@ pub struct GetProfileRecommendationsInputBuilder {
     pub(crate) candidate_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) metadata_config: ::std::option::Option<crate::types::MetadataConfig>,
+    pub(crate) diversity_config: ::std::option::Option<crate::types::RecommendationDiversityConfig>,
 }
 impl GetProfileRecommendationsInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -259,6 +267,20 @@ impl GetProfileRecommendationsInputBuilder {
     pub fn get_metadata_config(&self) -> &::std::option::Option<crate::types::MetadataConfig> {
         &self.metadata_config
     }
+    /// <p>Runtime diversity configuration for this request. Enables diversity-aware recommendations and optionally supplies values for placeholder-based diversity caps configured on the recommender.</p>
+    pub fn diversity_config(mut self, input: crate::types::RecommendationDiversityConfig) -> Self {
+        self.diversity_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Runtime diversity configuration for this request. Enables diversity-aware recommendations and optionally supplies values for placeholder-based diversity caps configured on the recommender.</p>
+    pub fn set_diversity_config(mut self, input: ::std::option::Option<crate::types::RecommendationDiversityConfig>) -> Self {
+        self.diversity_config = input;
+        self
+    }
+    /// <p>Runtime diversity configuration for this request. Enables diversity-aware recommendations and optionally supplies values for placeholder-based diversity caps configured on the recommender.</p>
+    pub fn get_diversity_config(&self) -> &::std::option::Option<crate::types::RecommendationDiversityConfig> {
+        &self.diversity_config
+    }
     /// Consumes the builder and constructs a [`GetProfileRecommendationsInput`](crate::operation::get_profile_recommendations::GetProfileRecommendationsInput).
     pub fn build(
         self,
@@ -276,6 +298,7 @@ impl GetProfileRecommendationsInputBuilder {
             candidate_ids: self.candidate_ids,
             max_results: self.max_results,
             metadata_config: self.metadata_config,
+            diversity_config: self.diversity_config,
         })
     }
 }
@@ -291,6 +314,7 @@ impl ::std::fmt::Debug for GetProfileRecommendationsInputBuilder {
         formatter.field("candidate_ids", &self.candidate_ids);
         formatter.field("max_results", &self.max_results);
         formatter.field("metadata_config", &self.metadata_config);
+        formatter.field("diversity_config", &self.diversity_config);
         formatter.finish()
     }
 }

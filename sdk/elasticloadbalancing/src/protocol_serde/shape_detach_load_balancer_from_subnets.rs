@@ -98,6 +98,8 @@ pub fn de_detach_load_balancer_from_subnets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DetachLoadBalancerFromSubnetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DetachLoadBalancerFromSubnetsResponse got {start_el:?}"
@@ -115,7 +117,7 @@ pub fn de_detach_load_balancer_from_subnets(
             s if s.matches("Subnets") /* Subnets com.amazonaws.elasticloadbalancing.synthetic#DetachLoadBalancerFromSubnetsOutput$Subnets */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_subnets::de_subnets(&mut tag)
+                        crate::protocol_serde::shape_subnets::de_subnets(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -40,6 +40,8 @@ pub fn de_bundle_instance(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("BundleInstanceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected BundleInstanceResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_bundle_instance(
             s if s.matches("bundleInstanceTask") /* BundleTask com.amazonaws.ec2.synthetic#BundleInstanceOutput$BundleTask */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_bundle_task::de_bundle_task(&mut tag)
+                        crate::protocol_serde::shape_bundle_task::de_bundle_task(&mut tag, depth + 1)
                         ?
                     )
                 ;

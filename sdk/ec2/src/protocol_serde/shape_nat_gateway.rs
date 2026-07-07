@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_nat_gateway(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NatGateway, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NatGateway::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -64,7 +68,7 @@ pub fn de_nat_gateway(
             s if s.matches("natGatewayAddressSet") /* NatGatewayAddresses com.amazonaws.ec2#NatGateway$NatGatewayAddresses */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_nat_gateway_address_list::de_nat_gateway_address_list(&mut tag)
+                        crate::protocol_serde::shape_nat_gateway_address_list::de_nat_gateway_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -87,7 +91,7 @@ pub fn de_nat_gateway(
             s if s.matches("provisionedBandwidth") /* ProvisionedBandwidth com.amazonaws.ec2#NatGateway$ProvisionedBandwidth */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_provisioned_bandwidth::de_provisioned_bandwidth(&mut tag)
+                        crate::protocol_serde::shape_provisioned_bandwidth::de_provisioned_bandwidth(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -137,7 +141,7 @@ pub fn de_nat_gateway(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#NatGateway$Tags */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -203,7 +207,7 @@ pub fn de_nat_gateway(
             s if s.matches("attachedApplianceSet") /* AttachedAppliances com.amazonaws.ec2#NatGateway$AttachedAppliances */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_nat_gateway_attached_appliance_list::de_nat_gateway_attached_appliance_list(&mut tag)
+                        crate::protocol_serde::shape_nat_gateway_attached_appliance_list::de_nat_gateway_attached_appliance_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

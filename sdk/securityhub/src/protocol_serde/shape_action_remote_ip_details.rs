@@ -36,10 +36,16 @@ pub fn ser_action_remote_ip_details(
 pub(crate) fn de_action_remote_ip_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ActionRemoteIpDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,17 +64,20 @@ where
                         }
                         "Organization" => {
                             builder = builder.set_organization(crate::protocol_serde::shape_ip_organization_details::de_ip_organization_details(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Country" => {
-                            builder = builder.set_country(crate::protocol_serde::shape_country::de_country(tokens, _value)?);
+                            builder = builder.set_country(crate::protocol_serde::shape_country::de_country(tokens, _value, depth + 1)?);
                         }
                         "City" => {
-                            builder = builder.set_city(crate::protocol_serde::shape_city::de_city(tokens, _value)?);
+                            builder = builder.set_city(crate::protocol_serde::shape_city::de_city(tokens, _value, depth + 1)?);
                         }
                         "GeoLocation" => {
-                            builder = builder.set_geo_location(crate::protocol_serde::shape_geo_location::de_geo_location(tokens, _value)?);
+                            builder =
+                                builder.set_geo_location(crate::protocol_serde::shape_geo_location::de_geo_location(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

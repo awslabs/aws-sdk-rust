@@ -78,10 +78,16 @@ pub fn ser_scaling_instruction(
 pub(crate) fn de_scaling_instruction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScalingInstruction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -128,20 +134,28 @@ where
                         }
                         "TargetTrackingConfigurations" => {
                             builder = builder.set_target_tracking_configurations(
-                                crate::protocol_serde::shape_target_tracking_configurations::de_target_tracking_configurations(tokens, _value)?,
+                                crate::protocol_serde::shape_target_tracking_configurations::de_target_tracking_configurations(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "PredefinedLoadMetricSpecification" => {
                             builder = builder.set_predefined_load_metric_specification(
                                 crate::protocol_serde::shape_predefined_load_metric_specification::de_predefined_load_metric_specification(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "CustomizedLoadMetricSpecification" => {
                             builder = builder.set_customized_load_metric_specification(
                                 crate::protocol_serde::shape_customized_load_metric_specification::de_customized_load_metric_specification(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

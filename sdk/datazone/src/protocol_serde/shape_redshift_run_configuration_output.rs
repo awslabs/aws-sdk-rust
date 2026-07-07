@@ -2,10 +2,16 @@
 pub(crate) fn de_redshift_run_configuration_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RedshiftRunConfigurationOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,17 +44,28 @@ where
                         }
                         "relationalFilterConfigurations" => {
                             builder = builder.set_relational_filter_configurations(
-                                crate::protocol_serde::shape_relational_filter_configurations::de_relational_filter_configurations(tokens, _value)?,
+                                crate::protocol_serde::shape_relational_filter_configurations::de_relational_filter_configurations(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "redshiftCredentialConfiguration" => {
                             builder = builder.set_redshift_credential_configuration(
-                                crate::protocol_serde::shape_redshift_credential_configuration::de_redshift_credential_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_redshift_credential_configuration::de_redshift_credential_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "redshiftStorage" => {
-                            builder =
-                                builder.set_redshift_storage(crate::protocol_serde::shape_redshift_storage::de_redshift_storage(tokens, _value)?);
+                            builder = builder.set_redshift_storage(crate::protocol_serde::shape_redshift_storage::de_redshift_storage(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

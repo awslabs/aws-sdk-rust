@@ -2,10 +2,16 @@
 pub(crate) fn de_user_pool_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UserPoolType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,9 @@ where
                         }
                         "Policies" => {
                             builder = builder.set_policies(crate::protocol_serde::shape_user_pool_policy_type::de_user_pool_policy_type(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DeletionProtection" => {
@@ -42,8 +50,11 @@ where
                             );
                         }
                         "LambdaConfig" => {
-                            builder =
-                                builder.set_lambda_config(crate::protocol_serde::shape_lambda_config_type::de_lambda_config_type(tokens, _value)?);
+                            builder = builder.set_lambda_config(crate::protocol_serde::shape_lambda_config_type::de_lambda_config_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Status" => {
                             builder = builder.set_status(
@@ -66,22 +77,30 @@ where
                         }
                         "SchemaAttributes" => {
                             builder = builder.set_schema_attributes(
-                                crate::protocol_serde::shape_schema_attributes_list_type::de_schema_attributes_list_type(tokens, _value)?,
+                                crate::protocol_serde::shape_schema_attributes_list_type::de_schema_attributes_list_type(tokens, _value, depth + 1)?,
                             );
                         }
                         "AutoVerifiedAttributes" => {
                             builder = builder.set_auto_verified_attributes(
-                                crate::protocol_serde::shape_verified_attributes_list_type::de_verified_attributes_list_type(tokens, _value)?,
+                                crate::protocol_serde::shape_verified_attributes_list_type::de_verified_attributes_list_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AliasAttributes" => {
                             builder = builder.set_alias_attributes(
-                                crate::protocol_serde::shape_alias_attributes_list_type::de_alias_attributes_list_type(tokens, _value)?,
+                                crate::protocol_serde::shape_alias_attributes_list_type::de_alias_attributes_list_type(tokens, _value, depth + 1)?,
                             );
                         }
                         "UsernameAttributes" => {
                             builder = builder.set_username_attributes(
-                                crate::protocol_serde::shape_username_attributes_list_type::de_username_attributes_list_type(tokens, _value)?,
+                                crate::protocol_serde::shape_username_attributes_list_type::de_username_attributes_list_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SmsVerificationMessage" => {
@@ -108,7 +127,9 @@ where
                         "VerificationMessageTemplate" => {
                             builder = builder.set_verification_message_template(
                                 crate::protocol_serde::shape_verification_message_template_type::de_verification_message_template_type(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -122,7 +143,9 @@ where
                         "UserAttributeUpdateSettings" => {
                             builder = builder.set_user_attribute_update_settings(
                                 crate::protocol_serde::shape_user_attribute_update_settings_type::de_user_attribute_update_settings_type(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -135,7 +158,7 @@ where
                         }
                         "DeviceConfiguration" => {
                             builder = builder.set_device_configuration(
-                                crate::protocol_serde::shape_device_configuration_type::de_device_configuration_type(tokens, _value)?,
+                                crate::protocol_serde::shape_device_configuration_type::de_device_configuration_type(tokens, _value, depth + 1)?,
                             );
                         }
                         "EstimatedNumberOfUsers" => {
@@ -147,17 +170,22 @@ where
                         }
                         "EmailConfiguration" => {
                             builder = builder.set_email_configuration(
-                                crate::protocol_serde::shape_email_configuration_type::de_email_configuration_type(tokens, _value)?,
+                                crate::protocol_serde::shape_email_configuration_type::de_email_configuration_type(tokens, _value, depth + 1)?,
                             );
                         }
                         "SmsConfiguration" => {
                             builder = builder.set_sms_configuration(crate::protocol_serde::shape_sms_configuration_type::de_sms_configuration_type(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "UserPoolTags" => {
-                            builder =
-                                builder.set_user_pool_tags(crate::protocol_serde::shape_user_pool_tags_type::de_user_pool_tags_type(tokens, _value)?);
+                            builder = builder.set_user_pool_tags(crate::protocol_serde::shape_user_pool_tags_type::de_user_pool_tags_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SmsConfigurationFailure" => {
                             builder = builder.set_sms_configuration_failure(
@@ -189,17 +217,23 @@ where
                         }
                         "AdminCreateUserConfig" => {
                             builder = builder.set_admin_create_user_config(
-                                crate::protocol_serde::shape_admin_create_user_config_type::de_admin_create_user_config_type(tokens, _value)?,
+                                crate::protocol_serde::shape_admin_create_user_config_type::de_admin_create_user_config_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "UserPoolAddOns" => {
                             builder = builder.set_user_pool_add_ons(crate::protocol_serde::shape_user_pool_add_ons_type::de_user_pool_add_ons_type(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "UsernameConfiguration" => {
                             builder = builder.set_username_configuration(
-                                crate::protocol_serde::shape_username_configuration_type::de_username_configuration_type(tokens, _value)?,
+                                crate::protocol_serde::shape_username_configuration_type::de_username_configuration_type(tokens, _value, depth + 1)?,
                             );
                         }
                         "Arn" => {
@@ -211,7 +245,11 @@ where
                         }
                         "AccountRecoverySetting" => {
                             builder = builder.set_account_recovery_setting(
-                                crate::protocol_serde::shape_account_recovery_setting_type::de_account_recovery_setting_type(tokens, _value)?,
+                                crate::protocol_serde::shape_account_recovery_setting_type::de_account_recovery_setting_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "UserPoolTier" => {
@@ -219,6 +257,18 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::UserPoolTierType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "KeyConfiguration" => {
+                            builder = builder.set_key_configuration(crate::protocol_serde::shape_key_configuration_type::de_key_configuration_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "IssuerConfiguration" => {
+                            builder = builder.set_issuer_configuration(
+                                crate::protocol_serde::shape_issuer_configuration_type::de_issuer_configuration_type(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

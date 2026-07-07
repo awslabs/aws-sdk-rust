@@ -2,10 +2,16 @@
 pub(crate) fn de_media_pipeline<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MediaPipeline>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,27 +23,35 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MediaCapturePipeline" => {
                             builder = builder.set_media_capture_pipeline(
-                                crate::protocol_serde::shape_media_capture_pipeline::de_media_capture_pipeline(tokens, _value)?,
+                                crate::protocol_serde::shape_media_capture_pipeline::de_media_capture_pipeline(tokens, _value, depth + 1)?,
                             );
                         }
                         "MediaLiveConnectorPipeline" => {
                             builder = builder.set_media_live_connector_pipeline(
-                                crate::protocol_serde::shape_media_live_connector_pipeline::de_media_live_connector_pipeline(tokens, _value)?,
+                                crate::protocol_serde::shape_media_live_connector_pipeline::de_media_live_connector_pipeline(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MediaConcatenationPipeline" => {
                             builder = builder.set_media_concatenation_pipeline(
-                                crate::protocol_serde::shape_media_concatenation_pipeline::de_media_concatenation_pipeline(tokens, _value)?,
+                                crate::protocol_serde::shape_media_concatenation_pipeline::de_media_concatenation_pipeline(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MediaInsightsPipeline" => {
                             builder = builder.set_media_insights_pipeline(
-                                crate::protocol_serde::shape_media_insights_pipeline::de_media_insights_pipeline(tokens, _value)?,
+                                crate::protocol_serde::shape_media_insights_pipeline::de_media_insights_pipeline(tokens, _value, depth + 1)?,
                             );
                         }
                         "MediaStreamPipeline" => {
                             builder = builder.set_media_stream_pipeline(
-                                crate::protocol_serde::shape_media_stream_pipeline::de_media_stream_pipeline(tokens, _value)?,
+                                crate::protocol_serde::shape_media_stream_pipeline::de_media_stream_pipeline(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

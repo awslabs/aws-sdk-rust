@@ -2,10 +2,16 @@
 pub(crate) fn de_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Finding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,7 @@ where
                             );
                         }
                         "remediation" => {
-                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value)?);
+                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value, depth + 1)?);
                         }
                         "severity" => {
                             builder = builder.set_severity(
@@ -86,7 +92,7 @@ where
                             );
                         }
                         "resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value, depth + 1)?);
                         }
                         "inspectorScore" => {
                             builder = builder.set_inspector_score(
@@ -95,17 +101,25 @@ where
                         }
                         "inspectorScoreDetails" => {
                             builder = builder.set_inspector_score_details(
-                                crate::protocol_serde::shape_inspector_score_details::de_inspector_score_details(tokens, _value)?,
+                                crate::protocol_serde::shape_inspector_score_details::de_inspector_score_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "networkReachabilityDetails" => {
                             builder = builder.set_network_reachability_details(
-                                crate::protocol_serde::shape_network_reachability_details::de_network_reachability_details(tokens, _value)?,
+                                crate::protocol_serde::shape_network_reachability_details::de_network_reachability_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "packageVulnerabilityDetails" => {
                             builder = builder.set_package_vulnerability_details(
-                                crate::protocol_serde::shape_package_vulnerability_details::de_package_vulnerability_details(tokens, _value)?,
+                                crate::protocol_serde::shape_package_vulnerability_details::de_package_vulnerability_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "fixAvailable" => {
@@ -124,16 +138,16 @@ where
                         }
                         "exploitabilityDetails" => {
                             builder = builder.set_exploitability_details(
-                                crate::protocol_serde::shape_exploitability_details::de_exploitability_details(tokens, _value)?,
+                                crate::protocol_serde::shape_exploitability_details::de_exploitability_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "codeVulnerabilityDetails" => {
                             builder = builder.set_code_vulnerability_details(
-                                crate::protocol_serde::shape_code_vulnerability_details::de_code_vulnerability_details(tokens, _value)?,
+                                crate::protocol_serde::shape_code_vulnerability_details::de_code_vulnerability_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "epss" => {
-                            builder = builder.set_epss(crate::protocol_serde::shape_epss_details::de_epss_details(tokens, _value)?);
+                            builder = builder.set_epss(crate::protocol_serde::shape_epss_details::de_epss_details(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

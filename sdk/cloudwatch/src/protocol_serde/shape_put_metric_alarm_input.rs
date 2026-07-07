@@ -106,12 +106,16 @@ pub fn ser_put_metric_alarm_input_input(
     if let Some(var_28) = &input.threshold_metric_id {
         encoder.str("ThresholdMetricId").str(var_28.as_str());
     }
-    if let Some(var_29) = &input.evaluation_criteria {
-        encoder.str("EvaluationCriteria");
-        crate::protocol_serde::shape_evaluation_criteria::ser_evaluation_criteria(encoder, var_29)?;
+    if let Some(var_29) = &input.evaluation_window {
+        encoder.str("EvaluationWindow");
+        crate::protocol_serde::shape_evaluation_window::ser_evaluation_window(encoder, var_29)?;
     }
-    if let Some(var_30) = &input.evaluation_interval {
-        encoder.str("EvaluationInterval").integer(*var_30);
+    if let Some(var_30) = &input.evaluation_criteria {
+        encoder.str("EvaluationCriteria");
+        crate::protocol_serde::shape_evaluation_criteria::ser_evaluation_criteria(encoder, var_30)?;
+    }
+    if let Some(var_31) = &input.evaluation_interval {
+        encoder.str("EvaluationInterval").integer(*var_31);
     }
     encoder.end();
     Ok(())

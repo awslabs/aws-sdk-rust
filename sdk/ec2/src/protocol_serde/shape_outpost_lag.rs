@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_outpost_lag(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OutpostLag, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OutpostLag::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_outpost_lag(
             s if s.matches("localGatewayVirtualInterfaceIdSet") /* LocalGatewayVirtualInterfaceIds com.amazonaws.ec2#OutpostLag$LocalGatewayVirtualInterfaceIds */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_local_gateway_virtual_interface_id_set::de_local_gateway_virtual_interface_id_set(&mut tag)
+                        crate::protocol_serde::shape_local_gateway_virtual_interface_id_set::de_local_gateway_virtual_interface_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_outpost_lag(
             s if s.matches("serviceLinkVirtualInterfaceIdSet") /* ServiceLinkVirtualInterfaceIds com.amazonaws.ec2#OutpostLag$ServiceLinkVirtualInterfaceIds */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_service_link_virtual_interface_id_set::de_service_link_virtual_interface_id_set(&mut tag)
+                        crate::protocol_serde::shape_service_link_virtual_interface_id_set::de_service_link_virtual_interface_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_outpost_lag(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#OutpostLag$Tags */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -49,6 +49,8 @@ pub fn de_get_default_credit_specification(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetDefaultCreditSpecificationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetDefaultCreditSpecificationResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_get_default_credit_specification(
             s if s.matches("instanceFamilyCreditSpecification") /* InstanceFamilyCreditSpecification com.amazonaws.ec2.synthetic#GetDefaultCreditSpecificationOutput$InstanceFamilyCreditSpecification */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_family_credit_specification::de_instance_family_credit_specification(&mut tag)
+                        crate::protocol_serde::shape_instance_family_credit_specification::de_instance_family_credit_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;

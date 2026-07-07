@@ -2,10 +2,16 @@
 pub(crate) fn de_open_search_integration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OpenSearchIntegrationDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,42 +23,62 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dataSource" => {
                             builder = builder.set_data_source(crate::protocol_serde::shape_open_search_data_source::de_open_search_data_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "application" => {
                             builder = builder.set_application(crate::protocol_serde::shape_open_search_application::de_open_search_application(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "collection" => {
                             builder = builder.set_collection(crate::protocol_serde::shape_open_search_collection::de_open_search_collection(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "workspace" => {
                             builder = builder.set_workspace(crate::protocol_serde::shape_open_search_workspace::de_open_search_workspace(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "encryptionPolicy" => {
                             builder = builder.set_encryption_policy(
-                                crate::protocol_serde::shape_open_search_encryption_policy::de_open_search_encryption_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_open_search_encryption_policy::de_open_search_encryption_policy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "networkPolicy" => {
                             builder = builder.set_network_policy(
-                                crate::protocol_serde::shape_open_search_network_policy::de_open_search_network_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_open_search_network_policy::de_open_search_network_policy(tokens, _value, depth + 1)?,
                             );
                         }
                         "accessPolicy" => {
                             builder = builder.set_access_policy(
-                                crate::protocol_serde::shape_open_search_data_access_policy::de_open_search_data_access_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_open_search_data_access_policy::de_open_search_data_access_policy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "lifecyclePolicy" => {
                             builder = builder.set_lifecycle_policy(
-                                crate::protocol_serde::shape_open_search_lifecycle_policy::de_open_search_lifecycle_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_open_search_lifecycle_policy::de_open_search_lifecycle_policy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

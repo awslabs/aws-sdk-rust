@@ -109,6 +109,8 @@ pub(crate) fn de_describe_trusted_advisor_check_refresh_statuses(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -117,7 +119,9 @@ pub(crate) fn de_describe_trusted_advisor_check_refresh_statuses(
                 "statuses" => {
                     builder = builder.set_statuses(
                         crate::protocol_serde::shape_trusted_advisor_check_refresh_status_list::de_trusted_advisor_check_refresh_status_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

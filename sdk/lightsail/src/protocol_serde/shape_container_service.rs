@@ -2,10 +2,16 @@
 pub(crate) fn de_container_service<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ContainerService>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,7 +42,11 @@ where
                             )?);
                         }
                         "location" => {
-                            builder = builder.set_location(crate::protocol_serde::shape_resource_location::de_resource_location(tokens, _value)?);
+                            builder = builder.set_location(crate::protocol_serde::shape_resource_location::de_resource_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceType" => {
                             builder = builder.set_resource_type(
@@ -46,7 +56,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "power" => {
                             builder = builder.set_power(
@@ -71,7 +81,11 @@ where
                         }
                         "stateDetail" => {
                             builder = builder.set_state_detail(
-                                crate::protocol_serde::shape_container_service_state_detail::de_container_service_state_detail(tokens, _value)?,
+                                crate::protocol_serde::shape_container_service_state_detail::de_container_service_state_detail(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "scale" => {
@@ -83,12 +97,20 @@ where
                         }
                         "currentDeployment" => {
                             builder = builder.set_current_deployment(
-                                crate::protocol_serde::shape_container_service_deployment::de_container_service_deployment(tokens, _value)?,
+                                crate::protocol_serde::shape_container_service_deployment::de_container_service_deployment(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "nextDeployment" => {
                             builder = builder.set_next_deployment(
-                                crate::protocol_serde::shape_container_service_deployment::de_container_service_deployment(tokens, _value)?,
+                                crate::protocol_serde::shape_container_service_deployment::de_container_service_deployment(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "isDisabled" => {
@@ -110,7 +132,11 @@ where
                         }
                         "publicDomainNames" => {
                             builder = builder.set_public_domain_names(
-                                crate::protocol_serde::shape_container_service_public_domains::de_container_service_public_domains(tokens, _value)?,
+                                crate::protocol_serde::shape_container_service_public_domains::de_container_service_public_domains(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "url" => {
@@ -122,7 +148,7 @@ where
                         }
                         "privateRegistryAccess" => {
                             builder = builder.set_private_registry_access(
-                                crate::protocol_serde::shape_private_registry_access::de_private_registry_access(tokens, _value)?,
+                                crate::protocol_serde::shape_private_registry_access::de_private_registry_access(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

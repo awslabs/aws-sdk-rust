@@ -58,7 +58,7 @@ pub struct DeploymentConfiguration {
     /// <p>The time period when both blue and green service revisions are running simultaneously after the production traffic has shifted.</p>
     /// <p>You must provide this parameter when you use the <code>BLUE_GREEN</code> deployment strategy.</p>
     pub bake_time_in_minutes: ::std::option::Option<i32>,
-    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle.</p>
+    /// <p>An array of deployment lifecycle hook objects to run custom logic or pause the deployment at specific stages of the deployment lifecycle.</p>
     pub lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>>,
     /// <p>Configuration for linear deployment strategy. Only valid when the deployment strategy is <code>LINEAR</code>. This configuration enables progressive traffic shifting in equal percentage increments with configurable bake times between each step.</p>
     pub linear_configuration: ::std::option::Option<crate::types::LinearConfiguration>,
@@ -132,7 +132,7 @@ impl DeploymentConfiguration {
     pub fn bake_time_in_minutes(&self) -> ::std::option::Option<i32> {
         self.bake_time_in_minutes
     }
-    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle.</p>
+    /// <p>An array of deployment lifecycle hook objects to run custom logic or pause the deployment at specific stages of the deployment lifecycle.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_hooks.is_none()`.
     pub fn lifecycle_hooks(&self) -> &[crate::types::DeploymentLifecycleHook] {
@@ -383,19 +383,19 @@ impl DeploymentConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_lifecycle_hooks`](Self::set_lifecycle_hooks).
     ///
-    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle.</p>
+    /// <p>An array of deployment lifecycle hook objects to run custom logic or pause the deployment at specific stages of the deployment lifecycle.</p>
     pub fn lifecycle_hooks(mut self, input: crate::types::DeploymentLifecycleHook) -> Self {
         let mut v = self.lifecycle_hooks.unwrap_or_default();
         v.push(input);
         self.lifecycle_hooks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle.</p>
+    /// <p>An array of deployment lifecycle hook objects to run custom logic or pause the deployment at specific stages of the deployment lifecycle.</p>
     pub fn set_lifecycle_hooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>>) -> Self {
         self.lifecycle_hooks = input;
         self
     }
-    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle.</p>
+    /// <p>An array of deployment lifecycle hook objects to run custom logic or pause the deployment at specific stages of the deployment lifecycle.</p>
     pub fn get_lifecycle_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>> {
         &self.lifecycle_hooks
     }

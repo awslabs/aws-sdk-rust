@@ -8,6 +8,8 @@ pub struct ImageConfiguration {
     pub image_uri: ::std::string::String,
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
     pub resolved_image_digest: ::std::option::Option<::std::string::String>,
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub application_level_digest_resolution: ::std::option::Option<bool>,
 }
 impl ImageConfiguration {
     /// <p>The image URI.</p>
@@ -18,6 +20,10 @@ impl ImageConfiguration {
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
     pub fn resolved_image_digest(&self) -> ::std::option::Option<&str> {
         self.resolved_image_digest.as_deref()
+    }
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub fn application_level_digest_resolution(&self) -> ::std::option::Option<bool> {
+        self.application_level_digest_resolution
     }
 }
 impl ImageConfiguration {
@@ -33,6 +39,7 @@ impl ImageConfiguration {
 pub struct ImageConfigurationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) resolved_image_digest: ::std::option::Option<::std::string::String>,
+    pub(crate) application_level_digest_resolution: ::std::option::Option<bool>,
 }
 impl ImageConfigurationBuilder {
     /// <p>The image URI.</p>
@@ -64,6 +71,20 @@ impl ImageConfigurationBuilder {
     pub fn get_resolved_image_digest(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolved_image_digest
     }
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub fn application_level_digest_resolution(mut self, input: bool) -> Self {
+        self.application_level_digest_resolution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub fn set_application_level_digest_resolution(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.application_level_digest_resolution = input;
+        self
+    }
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub fn get_application_level_digest_resolution(&self) -> &::std::option::Option<bool> {
+        &self.application_level_digest_resolution
+    }
     /// Consumes the builder and constructs a [`ImageConfiguration`](crate::types::ImageConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`image_uri`](crate::types::builders::ImageConfigurationBuilder::image_uri)
@@ -76,6 +97,7 @@ impl ImageConfigurationBuilder {
                 )
             })?,
             resolved_image_digest: self.resolved_image_digest,
+            application_level_digest_resolution: self.application_level_digest_resolution,
         })
     }
 }

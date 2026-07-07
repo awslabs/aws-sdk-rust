@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_inbound_integration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InboundIntegration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InboundIntegration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -63,7 +67,7 @@ pub fn de_inbound_integration(
             s if s.matches("Errors") /* Errors com.amazonaws.redshift#InboundIntegration$Errors */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_integration_error_list::de_integration_error_list(&mut tag)
+                        crate::protocol_serde::shape_integration_error_list::de_integration_error_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -16,7 +16,11 @@ pub fn ser_s3_set_object_acl_operation(
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_set_object_acl_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::S3SetObjectAclOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::S3SetObjectAclOperation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_s3_set_object_acl_operation(
             s if s.matches("AccessControlPolicy") /* AccessControlPolicy com.amazonaws.s3control#S3SetObjectAclOperation$AccessControlPolicy */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_s3_access_control_policy::de_s3_access_control_policy(&mut tag)
+                        crate::protocol_serde::shape_s3_access_control_policy::de_s3_access_control_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

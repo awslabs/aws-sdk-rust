@@ -143,6 +143,8 @@ pub(crate) fn de_describe_ca_certificate(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -150,12 +152,15 @@ pub(crate) fn de_describe_ca_certificate(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "certificateDescription" => {
                     builder = builder.set_certificate_description(
-                        crate::protocol_serde::shape_ca_certificate_description::de_ca_certificate_description(tokens, _value)?,
+                        crate::protocol_serde::shape_ca_certificate_description::de_ca_certificate_description(tokens, _value, depth + 1)?,
                     );
                 }
                 "registrationConfig" => {
-                    builder =
-                        builder.set_registration_config(crate::protocol_serde::shape_registration_config::de_registration_config(tokens, _value)?);
+                    builder = builder.set_registration_config(crate::protocol_serde::shape_registration_config::de_registration_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

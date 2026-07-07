@@ -36,5 +36,8 @@ pub fn ser_vpc_config_request(
         }
         array_10.finish();
     }
+    if let Some(var_12) = &input.control_plane_egress_mode {
+        object.key("controlPlaneEgressMode").string(var_12.as_str());
+    }
     Ok(())
 }

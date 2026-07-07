@@ -46,10 +46,16 @@ pub fn ser_aws_api_call_action(
 pub(crate) fn de_aws_api_call_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsApiCallAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -82,18 +88,21 @@ where
                         }
                         "RemoteIpDetails" => {
                             builder = builder.set_remote_ip_details(
-                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens, _value)?,
+                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "DomainDetails" => {
                             builder = builder.set_domain_details(
                                 crate::protocol_serde::shape_aws_api_call_action_domain_details::de_aws_api_call_action_domain_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "AffectedResources" => {
-                            builder = builder.set_affected_resources(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
+                            builder =
+                                builder.set_affected_resources(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                         }
                         "FirstSeen" => {
                             builder = builder.set_first_seen(

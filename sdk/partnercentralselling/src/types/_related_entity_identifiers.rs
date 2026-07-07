@@ -16,6 +16,10 @@ pub struct RelatedEntityIdentifiers {
     /// <p>Enables the association of specific Amazon Web Services products with the <code>Opportunity</code>. Partners can indicate the relevant Amazon Web Services products for the <code>Opportunity</code>'s solution and align with the customer's needs. Returns multiple values separated by commas. For example, <code>"AWSProducts" : \["AmazonRedshift", "AWSAppFabric", "AWSCleanRooms"\]</code>.</p>
     /// <p>Use the file with the list of Amazon Web Services products hosted on GitHub: <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json"> Amazon Web Services products</a>.</p>
     pub aws_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies the AWS Marketplace solutions to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a solution listing in AWS Marketplace.</p>
+    pub aws_marketplace_solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies the AWS Marketplace products to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a product listing in AWS Marketplace.</p>
+    pub aws_marketplace_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RelatedEntityIdentifiers {
     /// <p>Takes one value per opportunity. Each value is an Amazon Resource Name (ARN), in this format: <code>"offers": \["arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/Offer/offer-sampleOffer32"\]</code>.</p>
@@ -46,6 +50,18 @@ impl RelatedEntityIdentifiers {
     pub fn aws_products(&self) -> &[::std::string::String] {
         self.aws_products.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the AWS Marketplace solutions to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a solution listing in AWS Marketplace.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_marketplace_solutions.is_none()`.
+    pub fn aws_marketplace_solutions(&self) -> &[::std::string::String] {
+        self.aws_marketplace_solutions.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies the AWS Marketplace products to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a product listing in AWS Marketplace.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_marketplace_products.is_none()`.
+    pub fn aws_marketplace_products(&self) -> &[::std::string::String] {
+        self.aws_marketplace_products.as_deref().unwrap_or_default()
+    }
 }
 impl RelatedEntityIdentifiers {
     /// Creates a new builder-style object to manufacture [`RelatedEntityIdentifiers`](crate::types::RelatedEntityIdentifiers).
@@ -62,6 +78,8 @@ pub struct RelatedEntityIdentifiersBuilder {
     pub(crate) aws_marketplace_offer_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aws_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_marketplace_solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_marketplace_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RelatedEntityIdentifiersBuilder {
     /// Appends an item to `aws_marketplace_offers`.
@@ -156,6 +174,46 @@ impl RelatedEntityIdentifiersBuilder {
     pub fn get_aws_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aws_products
     }
+    /// Appends an item to `aws_marketplace_solutions`.
+    ///
+    /// To override the contents of this collection use [`set_aws_marketplace_solutions`](Self::set_aws_marketplace_solutions).
+    ///
+    /// <p>Specifies the AWS Marketplace solutions to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a solution listing in AWS Marketplace.</p>
+    pub fn aws_marketplace_solutions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aws_marketplace_solutions.unwrap_or_default();
+        v.push(input.into());
+        self.aws_marketplace_solutions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the AWS Marketplace solutions to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a solution listing in AWS Marketplace.</p>
+    pub fn set_aws_marketplace_solutions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aws_marketplace_solutions = input;
+        self
+    }
+    /// <p>Specifies the AWS Marketplace solutions to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a solution listing in AWS Marketplace.</p>
+    pub fn get_aws_marketplace_solutions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_marketplace_solutions
+    }
+    /// Appends an item to `aws_marketplace_products`.
+    ///
+    /// To override the contents of this collection use [`set_aws_marketplace_products`](Self::set_aws_marketplace_products).
+    ///
+    /// <p>Specifies the AWS Marketplace products to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a product listing in AWS Marketplace.</p>
+    pub fn aws_marketplace_products(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aws_marketplace_products.unwrap_or_default();
+        v.push(input.into());
+        self.aws_marketplace_products = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the AWS Marketplace products to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a product listing in AWS Marketplace.</p>
+    pub fn set_aws_marketplace_products(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aws_marketplace_products = input;
+        self
+    }
+    /// <p>Specifies the AWS Marketplace products to associate with the <code>Opportunity</code>. Each value is an Amazon Resource Name (ARN) that identifies a product listing in AWS Marketplace.</p>
+    pub fn get_aws_marketplace_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_marketplace_products
+    }
     /// Consumes the builder and constructs a [`RelatedEntityIdentifiers`](crate::types::RelatedEntityIdentifiers).
     pub fn build(self) -> crate::types::RelatedEntityIdentifiers {
         crate::types::RelatedEntityIdentifiers {
@@ -163,6 +221,8 @@ impl RelatedEntityIdentifiersBuilder {
             aws_marketplace_offer_sets: self.aws_marketplace_offer_sets,
             solutions: self.solutions,
             aws_products: self.aws_products,
+            aws_marketplace_solutions: self.aws_marketplace_solutions,
+            aws_marketplace_products: self.aws_marketplace_products,
         }
     }
 }

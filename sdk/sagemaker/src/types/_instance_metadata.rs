@@ -8,6 +8,8 @@ pub struct InstanceMetadata {
     pub customer_eni: ::std::option::Option<::std::string::String>,
     /// <p>Information about additional Elastic Network Interfaces (ENIs) associated with the instance.</p>
     pub additional_enis: ::std::option::Option<crate::types::AdditionalEnis>,
+    /// <p>The ENI configurations for the instance types in the instance requirements, grouped by network interface category (for example, ENI-only or EFA with ENIs). At most one configuration per category.</p>
+    pub instance_requirements_eni_configurations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRequirementsEniConfiguration>>,
     /// <p>Information about the Capacity Reservation used by the instance.</p>
     pub capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     /// <p>An error message describing why the instance creation or update failed, if applicable.</p>
@@ -25,6 +27,12 @@ impl InstanceMetadata {
     /// <p>Information about additional Elastic Network Interfaces (ENIs) associated with the instance.</p>
     pub fn additional_enis(&self) -> ::std::option::Option<&crate::types::AdditionalEnis> {
         self.additional_enis.as_ref()
+    }
+    /// <p>The ENI configurations for the instance types in the instance requirements, grouped by network interface category (for example, ENI-only or EFA with ENIs). At most one configuration per category.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_requirements_eni_configurations.is_none()`.
+    pub fn instance_requirements_eni_configurations(&self) -> &[crate::types::InstanceRequirementsEniConfiguration] {
+        self.instance_requirements_eni_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Information about the Capacity Reservation used by the instance.</p>
     pub fn capacity_reservation(&self) -> ::std::option::Option<&crate::types::CapacityReservation> {
@@ -56,6 +64,7 @@ impl InstanceMetadata {
 pub struct InstanceMetadataBuilder {
     pub(crate) customer_eni: ::std::option::Option<::std::string::String>,
     pub(crate) additional_enis: ::std::option::Option<crate::types::AdditionalEnis>,
+    pub(crate) instance_requirements_eni_configurations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRequirementsEniConfiguration>>,
     pub(crate) capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) lcs_execution_state: ::std::option::Option<::std::string::String>,
@@ -89,6 +98,31 @@ impl InstanceMetadataBuilder {
     /// <p>Information about additional Elastic Network Interfaces (ENIs) associated with the instance.</p>
     pub fn get_additional_enis(&self) -> &::std::option::Option<crate::types::AdditionalEnis> {
         &self.additional_enis
+    }
+    /// Appends an item to `instance_requirements_eni_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_instance_requirements_eni_configurations`](Self::set_instance_requirements_eni_configurations).
+    ///
+    /// <p>The ENI configurations for the instance types in the instance requirements, grouped by network interface category (for example, ENI-only or EFA with ENIs). At most one configuration per category.</p>
+    pub fn instance_requirements_eni_configurations(mut self, input: crate::types::InstanceRequirementsEniConfiguration) -> Self {
+        let mut v = self.instance_requirements_eni_configurations.unwrap_or_default();
+        v.push(input);
+        self.instance_requirements_eni_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The ENI configurations for the instance types in the instance requirements, grouped by network interface category (for example, ENI-only or EFA with ENIs). At most one configuration per category.</p>
+    pub fn set_instance_requirements_eni_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRequirementsEniConfiguration>>,
+    ) -> Self {
+        self.instance_requirements_eni_configurations = input;
+        self
+    }
+    /// <p>The ENI configurations for the instance types in the instance requirements, grouped by network interface category (for example, ENI-only or EFA with ENIs). At most one configuration per category.</p>
+    pub fn get_instance_requirements_eni_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceRequirementsEniConfiguration>> {
+        &self.instance_requirements_eni_configurations
     }
     /// <p>Information about the Capacity Reservation used by the instance.</p>
     pub fn capacity_reservation(mut self, input: crate::types::CapacityReservation) -> Self {
@@ -151,6 +185,7 @@ impl InstanceMetadataBuilder {
         crate::types::InstanceMetadata {
             customer_eni: self.customer_eni,
             additional_enis: self.additional_enis,
+            instance_requirements_eni_configurations: self.instance_requirements_eni_configurations,
             capacity_reservation: self.capacity_reservation,
             failure_message: self.failure_message,
             lcs_execution_state: self.lcs_execution_state,

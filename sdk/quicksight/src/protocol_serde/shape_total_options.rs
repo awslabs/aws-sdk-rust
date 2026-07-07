@@ -39,10 +39,16 @@ pub fn ser_total_options(
 pub(crate) fn de_total_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TotalOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -81,12 +87,19 @@ where
                             );
                         }
                         "TotalCellStyle" => {
-                            builder =
-                                builder.set_total_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
+                            builder = builder.set_total_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TotalAggregationOptions" => {
                             builder = builder.set_total_aggregation_options(
-                                crate::protocol_serde::shape_total_aggregation_option_list::de_total_aggregation_option_list(tokens, _value)?,
+                                crate::protocol_serde::shape_total_aggregation_option_list::de_total_aggregation_option_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

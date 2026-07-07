@@ -197,4 +197,51 @@ impl GetIdentityContextFluentBuilder {
     pub fn get_session_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_session_expires_at()
     }
+    /// <p>The region in which the context is to be used. Use this parameter to obtain an identity context for cross-region use.</p>
+    /// <p>The specified region must meet the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The region must be in the same Amazon Web Services partition as the region you are calling from. Cross-partition requests are not supported. For example, you cannot specify a region in the <code>aws-cn</code> partition when calling from a region in the <code>aws</code> partition.</p></li>
+    /// <li>
+    /// <p>It must be a valid Amazon QuickSight supported region.</p></li>
+    /// <li>
+    /// <p>The calling customer account must be enabled in the specified context region.</p></li>
+    /// <li>
+    /// <p>This parameter is not supported when calling from an opt-in region.</p></li>
+    /// </ul>
+    pub fn context_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.context_region(input.into());
+        self
+    }
+    /// <p>The region in which the context is to be used. Use this parameter to obtain an identity context for cross-region use.</p>
+    /// <p>The specified region must meet the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The region must be in the same Amazon Web Services partition as the region you are calling from. Cross-partition requests are not supported. For example, you cannot specify a region in the <code>aws-cn</code> partition when calling from a region in the <code>aws</code> partition.</p></li>
+    /// <li>
+    /// <p>It must be a valid Amazon QuickSight supported region.</p></li>
+    /// <li>
+    /// <p>The calling customer account must be enabled in the specified context region.</p></li>
+    /// <li>
+    /// <p>This parameter is not supported when calling from an opt-in region.</p></li>
+    /// </ul>
+    pub fn set_context_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_context_region(input);
+        self
+    }
+    /// <p>The region in which the context is to be used. Use this parameter to obtain an identity context for cross-region use.</p>
+    /// <p>The specified region must meet the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The region must be in the same Amazon Web Services partition as the region you are calling from. Cross-partition requests are not supported. For example, you cannot specify a region in the <code>aws-cn</code> partition when calling from a region in the <code>aws</code> partition.</p></li>
+    /// <li>
+    /// <p>It must be a valid Amazon QuickSight supported region.</p></li>
+    /// <li>
+    /// <p>The calling customer account must be enabled in the specified context region.</p></li>
+    /// <li>
+    /// <p>This parameter is not supported when calling from an opt-in region.</p></li>
+    /// </ul>
+    pub fn get_context_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context_region()
+    }
 }

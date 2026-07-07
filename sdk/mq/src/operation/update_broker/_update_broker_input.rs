@@ -26,6 +26,8 @@ pub struct UpdateBrokerInput {
     pub logs: ::std::option::Option<crate::types::Logs>,
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
+    /// <p>The list of resource shares to update on the broker</p>
+    pub resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
@@ -72,6 +74,12 @@ impl UpdateBrokerInput {
     pub fn maintenance_window_start_time(&self) -> ::std::option::Option<&crate::types::WeeklyStartTime> {
         self.maintenance_window_start_time.as_ref()
     }
+    /// <p>The list of resource shares to update on the broker</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_arns.is_none()`.
+    pub fn resource_share_arns(&self) -> &[::std::string::String] {
+        self.resource_share_arns.as_deref().unwrap_or_default()
+    }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
@@ -103,6 +111,7 @@ pub struct UpdateBrokerInputBuilder {
     pub(crate) ldap_server_metadata: ::std::option::Option<crate::types::LdapServerMetadataInput>,
     pub(crate) logs: ::std::option::Option<crate::types::Logs>,
     pub(crate) maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
+    pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
 }
@@ -246,6 +255,26 @@ impl UpdateBrokerInputBuilder {
     pub fn get_maintenance_window_start_time(&self) -> &::std::option::Option<crate::types::WeeklyStartTime> {
         &self.maintenance_window_start_time
     }
+    /// Appends an item to `resource_share_arns`.
+    ///
+    /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
+    ///
+    /// <p>The list of resource shares to update on the broker</p>
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.resource_share_arns.unwrap_or_default();
+        v.push(input.into());
+        self.resource_share_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of resource shares to update on the broker</p>
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.resource_share_arns = input;
+        self
+    }
+    /// <p>The list of resource shares to update on the broker</p>
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_share_arns
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -294,6 +323,7 @@ impl UpdateBrokerInputBuilder {
             ldap_server_metadata: self.ldap_server_metadata,
             logs: self.logs,
             maintenance_window_start_time: self.maintenance_window_start_time,
+            resource_share_arns: self.resource_share_arns,
             security_groups: self.security_groups,
             data_replication_mode: self.data_replication_mode,
         })

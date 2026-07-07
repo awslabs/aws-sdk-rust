@@ -51,6 +51,8 @@ pub fn de_list_directory_buckets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3.synthetic#ListDirectoryBucketsOutput$ContinuationToken */ =>  {
@@ -69,7 +71,7 @@ pub fn de_list_directory_buckets(
             s if s.matches("Buckets") /* Buckets com.amazonaws.s3.synthetic#ListDirectoryBucketsOutput$Buckets */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_buckets::de_buckets(&mut tag)
+                        crate::protocol_serde::shape_buckets::de_buckets(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -69,10 +69,16 @@ pub fn ser_closed_days(
 pub(crate) fn de_closed_days<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClosedDays>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -84,27 +90,37 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EMAIL" => {
                             builder = builder.set_email(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SMS" => {
                             builder = builder.set_sms(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "PUSH" => {
                             builder = builder.set_push(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "VOICE" => {
                             builder = builder.set_voice(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "CUSTOM" => {
                             builder = builder.set_custom(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

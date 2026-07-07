@@ -127,6 +127,8 @@ pub fn de_list_traffic_policy_instances_by_hosted_zone(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListTrafficPolicyInstancesByHostedZoneResponse") {
         return Err(
                                 ::aws_smithy_xml::decode::XmlDecodeError::custom(
@@ -152,7 +154,7 @@ pub fn de_list_traffic_policy_instances_by_hosted_zone(
             s if s.matches("TrafficPolicyInstances") /* TrafficPolicyInstances com.amazonaws.route53.synthetic#ListTrafficPolicyInstancesByHostedZoneOutput$TrafficPolicyInstances */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_traffic_policy_instances::de_traffic_policy_instances(&mut tag)
+                        crate::protocol_serde::shape_traffic_policy_instances::de_traffic_policy_instances(&mut tag, depth + 1)
                         ?
                     )
                 ;

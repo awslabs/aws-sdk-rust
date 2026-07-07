@@ -338,17 +338,38 @@ impl OptimizeWaypointsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_waypoints`](Self::set_waypoints).
     ///
-    /// <p>List of waypoints between the <code>Origin</code> and <code>Destination</code>.</p>
+    /// <p>List of waypoints between the Origin and Destination, in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>The maximum number of waypoints allowed per request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 waypoints per request</p></li>
+    /// <li>
+    /// <p>Maximum 20 waypoints when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>, <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>, <code>Before</code>)</p></li>
+    /// </ul>
     pub fn waypoints(mut self, input: crate::types::WaypointOptimizationWaypoint) -> Self {
         self.inner = self.inner.waypoints(input);
         self
     }
-    /// <p>List of waypoints between the <code>Origin</code> and <code>Destination</code>.</p>
+    /// <p>List of waypoints between the Origin and Destination, in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>The maximum number of waypoints allowed per request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 waypoints per request</p></li>
+    /// <li>
+    /// <p>Maximum 20 waypoints when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>, <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>, <code>Before</code>)</p></li>
+    /// </ul>
     pub fn set_waypoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationWaypoint>>) -> Self {
         self.inner = self.inner.set_waypoints(input);
         self
     }
-    /// <p>List of waypoints between the <code>Origin</code> and <code>Destination</code>.</p>
+    /// <p>List of waypoints between the Origin and Destination, in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>The maximum number of waypoints allowed per request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 waypoints per request</p></li>
+    /// <li>
+    /// <p>Maximum 20 waypoints when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>, <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>, <code>Before</code>)</p></li>
+    /// </ul>
     pub fn get_waypoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationWaypoint>> {
         self.inner.get_waypoints()
     }

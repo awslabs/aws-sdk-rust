@@ -31,6 +31,12 @@ pub struct AcmCertificateMetadata {
     pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
     /// <p>Specifies the domain validation method.</p>
     pub validation_method: ::std::option::Option<crate::types::ValidationMethod>,
+    /// <p>The origin of the certificate's key pair.</p>
+    pub certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
+    /// <p>The ARN of the ACME endpoint used to issue the certificate.</p>
+    pub acme_endpoint_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ACME account identifier associated with the certificate.</p>
+    pub acme_account_id: ::std::option::Option<::std::string::String>,
 }
 impl AcmCertificateMetadata {
     /// <p>The time at which the certificate was requested.</p>
@@ -86,6 +92,18 @@ impl AcmCertificateMetadata {
     pub fn validation_method(&self) -> ::std::option::Option<&crate::types::ValidationMethod> {
         self.validation_method.as_ref()
     }
+    /// <p>The origin of the certificate's key pair.</p>
+    pub fn certificate_key_pair_origin(&self) -> ::std::option::Option<&crate::types::CertificateKeyPairOrigin> {
+        self.certificate_key_pair_origin.as_ref()
+    }
+    /// <p>The ARN of the ACME endpoint used to issue the certificate.</p>
+    pub fn acme_endpoint_arn(&self) -> ::std::option::Option<&str> {
+        self.acme_endpoint_arn.as_deref()
+    }
+    /// <p>The ACME account identifier associated with the certificate.</p>
+    pub fn acme_account_id(&self) -> ::std::option::Option<&str> {
+        self.acme_account_id.as_deref()
+    }
 }
 impl AcmCertificateMetadata {
     /// Creates a new builder-style object to manufacture [`AcmCertificateMetadata`](crate::types::AcmCertificateMetadata).
@@ -111,6 +129,9 @@ pub struct AcmCertificateMetadataBuilder {
     pub(crate) export_option: ::std::option::Option<crate::types::CertificateExport>,
     pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
     pub(crate) validation_method: ::std::option::Option<crate::types::ValidationMethod>,
+    pub(crate) certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
+    pub(crate) acme_endpoint_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) acme_account_id: ::std::option::Option<::std::string::String>,
 }
 impl AcmCertificateMetadataBuilder {
     /// <p>The time at which the certificate was requested.</p>
@@ -298,6 +319,48 @@ impl AcmCertificateMetadataBuilder {
     pub fn get_validation_method(&self) -> &::std::option::Option<crate::types::ValidationMethod> {
         &self.validation_method
     }
+    /// <p>The origin of the certificate's key pair.</p>
+    pub fn certificate_key_pair_origin(mut self, input: crate::types::CertificateKeyPairOrigin) -> Self {
+        self.certificate_key_pair_origin = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The origin of the certificate's key pair.</p>
+    pub fn set_certificate_key_pair_origin(mut self, input: ::std::option::Option<crate::types::CertificateKeyPairOrigin>) -> Self {
+        self.certificate_key_pair_origin = input;
+        self
+    }
+    /// <p>The origin of the certificate's key pair.</p>
+    pub fn get_certificate_key_pair_origin(&self) -> &::std::option::Option<crate::types::CertificateKeyPairOrigin> {
+        &self.certificate_key_pair_origin
+    }
+    /// <p>The ARN of the ACME endpoint used to issue the certificate.</p>
+    pub fn acme_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.acme_endpoint_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the ACME endpoint used to issue the certificate.</p>
+    pub fn set_acme_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.acme_endpoint_arn = input;
+        self
+    }
+    /// <p>The ARN of the ACME endpoint used to issue the certificate.</p>
+    pub fn get_acme_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acme_endpoint_arn
+    }
+    /// <p>The ACME account identifier associated with the certificate.</p>
+    pub fn acme_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.acme_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ACME account identifier associated with the certificate.</p>
+    pub fn set_acme_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.acme_account_id = input;
+        self
+    }
+    /// <p>The ACME account identifier associated with the certificate.</p>
+    pub fn get_acme_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acme_account_id
+    }
     /// Consumes the builder and constructs a [`AcmCertificateMetadata`](crate::types::AcmCertificateMetadata).
     pub fn build(self) -> crate::types::AcmCertificateMetadata {
         crate::types::AcmCertificateMetadata {
@@ -314,6 +377,9 @@ impl AcmCertificateMetadataBuilder {
             export_option: self.export_option,
             managed_by: self.managed_by,
             validation_method: self.validation_method,
+            certificate_key_pair_origin: self.certificate_key_pair_origin,
+            acme_endpoint_arn: self.acme_endpoint_arn,
+            acme_account_id: self.acme_account_id,
         }
     }
 }

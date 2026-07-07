@@ -2,10 +2,16 @@
 pub(crate) fn de_listing_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ListingSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,11 @@ where
                             );
                         }
                         "publisher" => {
-                            builder = builder.set_publisher(crate::protocol_serde::shape_seller_information::de_seller_information(tokens, _value)?);
+                            builder = builder.set_publisher(crate::protocol_serde::shape_seller_information::de_seller_information(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "catalog" => {
                             builder = builder.set_catalog(
@@ -54,31 +64,52 @@ where
                             );
                         }
                         "categories" => {
-                            builder = builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value)?);
+                            builder =
+                                builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value, depth + 1)?);
                         }
                         "fulfillmentOptionSummaries" => {
                             builder = builder.set_fulfillment_option_summaries(
-                                crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(tokens, _value)?,
+                                crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "badges" => {
-                            builder = builder.set_badges(crate::protocol_serde::shape_listing_badge_list::de_listing_badge_list(tokens, _value)?);
+                            builder = builder.set_badges(crate::protocol_serde::shape_listing_badge_list::de_listing_badge_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "reviewSummary" => {
-                            builder = builder.set_review_summary(crate::protocol_serde::shape_review_summary::de_review_summary(tokens, _value)?);
+                            builder = builder.set_review_summary(crate::protocol_serde::shape_review_summary::de_review_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "pricingModels" => {
-                            builder =
-                                builder.set_pricing_models(crate::protocol_serde::shape_pricing_model_list::de_pricing_model_list(tokens, _value)?);
+                            builder = builder.set_pricing_models(crate::protocol_serde::shape_pricing_model_list::de_pricing_model_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "pricingUnits" => {
-                            builder =
-                                builder.set_pricing_units(crate::protocol_serde::shape_pricing_unit_list::de_pricing_unit_list(tokens, _value)?);
+                            builder = builder.set_pricing_units(crate::protocol_serde::shape_pricing_unit_list::de_pricing_unit_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "associatedEntities" => {
                             builder = builder.set_associated_entities(
                                 crate::protocol_serde::shape_listing_summary_associated_entity_list::de_listing_summary_associated_entity_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

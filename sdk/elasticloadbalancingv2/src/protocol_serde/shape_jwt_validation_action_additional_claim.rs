@@ -31,7 +31,11 @@ pub fn ser_jwt_validation_action_additional_claim(
 #[allow(clippy::needless_question_mark)]
 pub fn de_jwt_validation_action_additional_claim(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::JwtValidationActionAdditionalClaim, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::JwtValidationActionAdditionalClaim::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -66,7 +70,7 @@ pub fn de_jwt_validation_action_additional_claim(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#JwtValidationActionAdditionalClaim$Values */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_jwt_validation_action_additional_claim_values::de_jwt_validation_action_additional_claim_values(&mut tag)
+                        crate::protocol_serde::shape_jwt_validation_action_additional_claim_values::de_jwt_validation_action_additional_claim_values(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -24,7 +24,11 @@ pub fn ser_function_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_function_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FunctionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FunctionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -59,7 +63,7 @@ pub fn de_function_config(
             s if s.matches("KeyValueStoreAssociations") /* KeyValueStoreAssociations com.amazonaws.cloudfront#FunctionConfig$KeyValueStoreAssociations */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_key_value_store_associations::de_key_value_store_associations(&mut tag)
+                        crate::protocol_serde::shape_key_value_store_associations::de_key_value_store_associations(&mut tag, depth + 1)
                         ?
                     )
                 ;

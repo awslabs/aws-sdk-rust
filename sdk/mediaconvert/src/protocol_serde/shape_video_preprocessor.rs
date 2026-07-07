@@ -21,35 +21,41 @@ pub fn ser_video_preprocessor(
         crate::protocol_serde::shape_dolby_vision::ser_dolby_vision(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.hdr10_plus {
+    if let Some(var_7) = &input.duration_control {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("hdr10Plus").start_object();
-        crate::protocol_serde::shape_hdr10_plus::ser_hdr10_plus(&mut object_8, var_7)?;
+        let mut object_8 = object.key("durationControl").start_object();
+        crate::protocol_serde::shape_duration_control::ser_duration_control(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.image_inserter {
+    if let Some(var_9) = &input.hdr10_plus {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("imageInserter").start_object();
-        crate::protocol_serde::shape_image_inserter::ser_image_inserter(&mut object_10, var_9)?;
+        let mut object_10 = object.key("hdr10Plus").start_object();
+        crate::protocol_serde::shape_hdr10_plus::ser_hdr10_plus(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.noise_reducer {
+    if let Some(var_11) = &input.image_inserter {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("noiseReducer").start_object();
-        crate::protocol_serde::shape_noise_reducer::ser_noise_reducer(&mut object_12, var_11)?;
+        let mut object_12 = object.key("imageInserter").start_object();
+        crate::protocol_serde::shape_image_inserter::ser_image_inserter(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.partner_watermarking {
+    if let Some(var_13) = &input.noise_reducer {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("partnerWatermarking").start_object();
-        crate::protocol_serde::shape_partner_watermarking::ser_partner_watermarking(&mut object_14, var_13)?;
+        let mut object_14 = object.key("noiseReducer").start_object();
+        crate::protocol_serde::shape_noise_reducer::ser_noise_reducer(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.timecode_burnin {
+    if let Some(var_15) = &input.partner_watermarking {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("timecodeBurnin").start_object();
-        crate::protocol_serde::shape_timecode_burnin::ser_timecode_burnin(&mut object_16, var_15)?;
+        let mut object_16 = object.key("partnerWatermarking").start_object();
+        crate::protocol_serde::shape_partner_watermarking::ser_partner_watermarking(&mut object_16, var_15)?;
         object_16.finish();
+    }
+    if let Some(var_17) = &input.timecode_burnin {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("timecodeBurnin").start_object();
+        crate::protocol_serde::shape_timecode_burnin::ser_timecode_burnin(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }
@@ -57,10 +63,16 @@ pub fn ser_video_preprocessor(
 pub(crate) fn de_video_preprocessor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VideoPreprocessor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -71,30 +83,54 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "colorCorrector" => {
-                            builder = builder.set_color_corrector(crate::protocol_serde::shape_color_corrector::de_color_corrector(tokens, _value)?);
+                            builder = builder.set_color_corrector(crate::protocol_serde::shape_color_corrector::de_color_corrector(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "deinterlacer" => {
-                            builder = builder.set_deinterlacer(crate::protocol_serde::shape_deinterlacer::de_deinterlacer(tokens, _value)?);
+                            builder =
+                                builder.set_deinterlacer(crate::protocol_serde::shape_deinterlacer::de_deinterlacer(tokens, _value, depth + 1)?);
                         }
                         "dolbyVision" => {
-                            builder = builder.set_dolby_vision(crate::protocol_serde::shape_dolby_vision::de_dolby_vision(tokens, _value)?);
+                            builder =
+                                builder.set_dolby_vision(crate::protocol_serde::shape_dolby_vision::de_dolby_vision(tokens, _value, depth + 1)?);
+                        }
+                        "durationControl" => {
+                            builder = builder.set_duration_control(crate::protocol_serde::shape_duration_control::de_duration_control(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "hdr10Plus" => {
-                            builder = builder.set_hdr10_plus(crate::protocol_serde::shape_hdr10_plus::de_hdr10_plus(tokens, _value)?);
+                            builder = builder.set_hdr10_plus(crate::protocol_serde::shape_hdr10_plus::de_hdr10_plus(tokens, _value, depth + 1)?);
                         }
                         "imageInserter" => {
-                            builder = builder.set_image_inserter(crate::protocol_serde::shape_image_inserter::de_image_inserter(tokens, _value)?);
+                            builder = builder.set_image_inserter(crate::protocol_serde::shape_image_inserter::de_image_inserter(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "noiseReducer" => {
-                            builder = builder.set_noise_reducer(crate::protocol_serde::shape_noise_reducer::de_noise_reducer(tokens, _value)?);
+                            builder =
+                                builder.set_noise_reducer(crate::protocol_serde::shape_noise_reducer::de_noise_reducer(tokens, _value, depth + 1)?);
                         }
                         "partnerWatermarking" => {
                             builder = builder.set_partner_watermarking(crate::protocol_serde::shape_partner_watermarking::de_partner_watermarking(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "timecodeBurnin" => {
-                            builder = builder.set_timecode_burnin(crate::protocol_serde::shape_timecode_burnin::de_timecode_burnin(tokens, _value)?);
+                            builder = builder.set_timecode_burnin(crate::protocol_serde::shape_timecode_burnin::de_timecode_burnin(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

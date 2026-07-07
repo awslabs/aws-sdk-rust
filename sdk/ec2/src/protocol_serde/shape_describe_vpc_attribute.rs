@@ -49,6 +49,8 @@ pub fn de_describe_vpc_attribute(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVpcAttributeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVpcAttributeResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_vpc_attribute(
             s if s.matches("enableDnsHostnames") /* EnableDnsHostnames com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableDnsHostnames */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_describe_vpc_attribute(
             s if s.matches("enableDnsSupport") /* EnableDnsSupport com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableDnsSupport */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -79,7 +81,7 @@ pub fn de_describe_vpc_attribute(
             s if s.matches("enableNetworkAddressUsageMetrics") /* EnableNetworkAddressUsageMetrics com.amazonaws.ec2.synthetic#DescribeVpcAttributeOutput$EnableNetworkAddressUsageMetrics */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag, depth + 1)
                         ?
                     )
                 ;

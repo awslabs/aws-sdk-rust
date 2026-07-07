@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsInput {
-    /// <p>The name or unique stack ID for which you want to retrieve events.</p>
+    /// <p>The name or unique stack ID for which you want to retrieve events. If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the change set for which you want to retrieve events.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeEventsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventsInput {
-    /// <p>The name or unique stack ID for which you want to retrieve events.</p>
+    /// <p>The name or unique stack ID for which you want to retrieve events. If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
@@ -54,17 +54,17 @@ pub struct DescribeEventsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventsInputBuilder {
-    /// <p>The name or unique stack ID for which you want to retrieve events.</p>
+    /// <p>The name or unique stack ID for which you want to retrieve events. If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or unique stack ID for which you want to retrieve events.</p>
+    /// <p>The name or unique stack ID for which you want to retrieve events. If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
     }
-    /// <p>The name or unique stack ID for which you want to retrieve events.</p>
+    /// <p>The name or unique stack ID for which you want to retrieve events. If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }

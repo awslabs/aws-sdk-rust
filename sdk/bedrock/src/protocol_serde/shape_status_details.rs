@@ -2,10 +2,16 @@
 pub(crate) fn de_status_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StatusDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,17 +22,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "validationDetails" => {
-                            builder = builder
-                                .set_validation_details(crate::protocol_serde::shape_validation_details::de_validation_details(tokens, _value)?);
+                            builder = builder.set_validation_details(crate::protocol_serde::shape_validation_details::de_validation_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dataProcessingDetails" => {
                             builder = builder.set_data_processing_details(
-                                crate::protocol_serde::shape_data_processing_details::de_data_processing_details(tokens, _value)?,
+                                crate::protocol_serde::shape_data_processing_details::de_data_processing_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "trainingDetails" => {
-                            builder =
-                                builder.set_training_details(crate::protocol_serde::shape_training_details::de_training_details(tokens, _value)?);
+                            builder = builder.set_training_details(crate::protocol_serde::shape_training_details::de_training_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

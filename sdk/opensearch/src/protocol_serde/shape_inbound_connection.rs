@@ -2,10 +2,16 @@
 pub(crate) fn de_inbound_connection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InboundConnection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,12 +23,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LocalDomainInfo" => {
                             builder = builder.set_local_domain_info(
-                                crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens, _value)?,
+                                crate::protocol_serde::shape_domain_information_container::de_domain_information_container(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "RemoteDomainInfo" => {
                             builder = builder.set_remote_domain_info(
-                                crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens, _value)?,
+                                crate::protocol_serde::shape_domain_information_container::de_domain_information_container(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ConnectionId" => {
@@ -34,7 +48,7 @@ where
                         }
                         "ConnectionStatus" => {
                             builder = builder.set_connection_status(
-                                crate::protocol_serde::shape_inbound_connection_status::de_inbound_connection_status(tokens, _value)?,
+                                crate::protocol_serde::shape_inbound_connection_status::de_inbound_connection_status(tokens, _value, depth + 1)?,
                             );
                         }
                         "ConnectionMode" => {

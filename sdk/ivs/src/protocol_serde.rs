@@ -99,6 +99,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_ad_configuration;
+
 pub(crate) mod shape_update_channel;
 
 pub(crate) mod shape_update_playback_restriction_policy;
@@ -208,6 +210,8 @@ pub(crate) mod shape_stream_unavailable;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_ad_configuration_input;
 
 pub(crate) mod shape_update_channel_input;
 

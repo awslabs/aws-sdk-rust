@@ -157,6 +157,8 @@ pub fn de_revoke_cache_security_group_ingress(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RevokeCacheSecurityGroupIngressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RevokeCacheSecurityGroupIngressResponse got {start_el:?}"
@@ -174,7 +176,7 @@ pub fn de_revoke_cache_security_group_ingress(
             s if s.matches("CacheSecurityGroup") /* CacheSecurityGroup com.amazonaws.elasticache.synthetic#RevokeCacheSecurityGroupIngressOutput$CacheSecurityGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cache_security_group::de_cache_security_group(&mut tag)
+                        crate::protocol_serde::shape_cache_security_group::de_cache_security_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

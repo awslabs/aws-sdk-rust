@@ -161,6 +161,8 @@ pub(crate) fn de_get_face_liveness_session_results(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -185,13 +187,13 @@ pub(crate) fn de_get_face_liveness_session_results(
                         .set_confidence(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
                 }
                 "ReferenceImage" => {
-                    builder = builder.set_reference_image(crate::protocol_serde::shape_audit_image::de_audit_image(tokens, _value)?);
+                    builder = builder.set_reference_image(crate::protocol_serde::shape_audit_image::de_audit_image(tokens, _value, depth + 1)?);
                 }
                 "AuditImages" => {
-                    builder = builder.set_audit_images(crate::protocol_serde::shape_audit_images::de_audit_images(tokens, _value)?);
+                    builder = builder.set_audit_images(crate::protocol_serde::shape_audit_images::de_audit_images(tokens, _value, depth + 1)?);
                 }
                 "Challenge" => {
-                    builder = builder.set_challenge(crate::protocol_serde::shape_challenge::de_challenge(tokens, _value)?);
+                    builder = builder.set_challenge(crate::protocol_serde::shape_challenge::de_challenge(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

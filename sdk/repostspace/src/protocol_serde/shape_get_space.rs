@@ -125,6 +125,8 @@ pub(crate) fn de_get_space(
 ) -> ::std::result::Result<crate::operation::get_space::builders::GetSpaceOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -192,7 +194,7 @@ pub(crate) fn de_get_space(
                     );
                 }
                 "groupAdmins" => {
-                    builder = builder.set_group_admins(crate::protocol_serde::shape_group_admins::de_group_admins(tokens, _value)?);
+                    builder = builder.set_group_admins(crate::protocol_serde::shape_group_admins::de_group_admins(tokens, _value, depth + 1)?);
                 }
                 "identityStoreId" => {
                     builder = builder.set_identity_store_id(
@@ -216,7 +218,7 @@ pub(crate) fn de_get_space(
                     );
                 }
                 "roles" => {
-                    builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens, _value)?);
+                    builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens, _value, depth + 1)?);
                 }
                 "spaceId" => {
                     builder = builder.set_space_id(
@@ -241,7 +243,7 @@ pub(crate) fn de_get_space(
                 }
                 "supportedEmailDomains" => {
                     builder = builder.set_supported_email_domains(
-                        crate::protocol_serde::shape_supported_email_domains_status::de_supported_email_domains_status(tokens, _value)?,
+                        crate::protocol_serde::shape_supported_email_domains_status::de_supported_email_domains_status(tokens, _value, depth + 1)?,
                     );
                 }
                 "tier" => {
@@ -252,7 +254,7 @@ pub(crate) fn de_get_space(
                     );
                 }
                 "userAdmins" => {
-                    builder = builder.set_user_admins(crate::protocol_serde::shape_user_admins::de_user_admins(tokens, _value)?);
+                    builder = builder.set_user_admins(crate::protocol_serde::shape_user_admins::de_user_admins(tokens, _value, depth + 1)?);
                 }
                 "userCount" => {
                     builder = builder.set_user_count(

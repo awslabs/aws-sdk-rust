@@ -10,6 +10,8 @@ pub struct ExpressGatewayServiceConfiguration {
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task role for the service revision.</p>
     pub task_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the task definition used by this service revision. This is present for all Express services and reflects the task definition in use, whether managed by Amazon ECS or provided by the customer.</p>
+    pub task_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CPU allocation for tasks in this service revision.</p>
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The memory allocation for tasks in this service revision.</p>
@@ -39,6 +41,10 @@ impl ExpressGatewayServiceConfiguration {
     /// <p>The ARN of the task role for the service revision.</p>
     pub fn task_role_arn(&self) -> ::std::option::Option<&str> {
         self.task_role_arn.as_deref()
+    }
+    /// <p>The ARN of the task definition used by this service revision. This is present for all Express services and reflects the task definition in use, whether managed by Amazon ECS or provided by the customer.</p>
+    pub fn task_definition_arn(&self) -> ::std::option::Option<&str> {
+        self.task_definition_arn.as_deref()
     }
     /// <p>The CPU allocation for tasks in this service revision.</p>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
@@ -89,6 +95,7 @@ pub struct ExpressGatewayServiceConfigurationBuilder {
     pub(crate) service_revision_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::ExpressGatewayServiceNetworkConfiguration>,
@@ -140,6 +147,20 @@ impl ExpressGatewayServiceConfigurationBuilder {
     /// <p>The ARN of the task role for the service revision.</p>
     pub fn get_task_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_role_arn
+    }
+    /// <p>The ARN of the task definition used by this service revision. This is present for all Express services and reflects the task definition in use, whether managed by Amazon ECS or provided by the customer.</p>
+    pub fn task_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_definition_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the task definition used by this service revision. This is present for all Express services and reflects the task definition in use, whether managed by Amazon ECS or provided by the customer.</p>
+    pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task_definition_arn = input;
+        self
+    }
+    /// <p>The ARN of the task definition used by this service revision. This is present for all Express services and reflects the task definition in use, whether managed by Amazon ECS or provided by the customer.</p>
+    pub fn get_task_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition_arn
     }
     /// <p>The CPU allocation for tasks in this service revision.</p>
     pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -265,6 +286,7 @@ impl ExpressGatewayServiceConfigurationBuilder {
             service_revision_arn: self.service_revision_arn,
             execution_role_arn: self.execution_role_arn,
             task_role_arn: self.task_role_arn,
+            task_definition_arn: self.task_definition_arn,
             cpu: self.cpu,
             memory: self.memory,
             network_configuration: self.network_configuration,

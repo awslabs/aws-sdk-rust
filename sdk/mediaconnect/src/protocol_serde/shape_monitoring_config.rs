@@ -39,10 +39,16 @@ pub fn ser_monitoring_config(
 pub(crate) fn de_monitoring_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MonitoringConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,7 +67,11 @@ where
                         }
                         "audioMonitoringSettings" => {
                             builder = builder.set_audio_monitoring_settings(
-                                crate::protocol_serde::shape_list_of_audio_monitoring_setting::de_list_of_audio_monitoring_setting(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_audio_monitoring_setting::de_list_of_audio_monitoring_setting(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "contentQualityAnalysisState" => {
@@ -73,7 +83,11 @@ where
                         }
                         "videoMonitoringSettings" => {
                             builder = builder.set_video_monitoring_settings(
-                                crate::protocol_serde::shape_list_of_video_monitoring_setting::de_list_of_video_monitoring_setting(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_video_monitoring_setting::de_list_of_video_monitoring_setting(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

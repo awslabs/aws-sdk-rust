@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_change_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceChangeDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceChangeDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_resource_change_detail(
             s if s.matches("Target") /* Target com.amazonaws.cloudformation#ResourceChangeDetail$Target */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_resource_target_definition::de_resource_target_definition(&mut tag)
+                        crate::protocol_serde::shape_resource_target_definition::de_resource_target_definition(&mut tag, depth + 1)
                         ?
                     )
                 ;

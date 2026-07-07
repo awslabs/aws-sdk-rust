@@ -98,6 +98,8 @@ pub(crate) fn de_describe_provisioning_parameters(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -105,35 +107,51 @@ pub(crate) fn de_describe_provisioning_parameters(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProvisioningArtifactParameters" => {
                     builder = builder.set_provisioning_artifact_parameters(
-                        crate::protocol_serde::shape_provisioning_artifact_parameters::de_provisioning_artifact_parameters(tokens, _value)?,
+                        crate::protocol_serde::shape_provisioning_artifact_parameters::de_provisioning_artifact_parameters(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "ConstraintSummaries" => {
                     builder = builder.set_constraint_summaries(crate::protocol_serde::shape_constraint_summaries::de_constraint_summaries(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "UsageInstructions" => {
-                    builder = builder.set_usage_instructions(crate::protocol_serde::shape_usage_instructions::de_usage_instructions(tokens, _value)?);
+                    builder = builder.set_usage_instructions(crate::protocol_serde::shape_usage_instructions::de_usage_instructions(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "TagOptions" => {
                     builder = builder.set_tag_options(crate::protocol_serde::shape_tag_option_summaries::de_tag_option_summaries(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ProvisioningArtifactPreferences" => {
                     builder = builder.set_provisioning_artifact_preferences(
-                        crate::protocol_serde::shape_provisioning_artifact_preferences::de_provisioning_artifact_preferences(tokens, _value)?,
+                        crate::protocol_serde::shape_provisioning_artifact_preferences::de_provisioning_artifact_preferences(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "ProvisioningArtifactOutputs" => {
                     builder = builder.set_provisioning_artifact_outputs(
-                        crate::protocol_serde::shape_provisioning_artifact_outputs::de_provisioning_artifact_outputs(tokens, _value)?,
+                        crate::protocol_serde::shape_provisioning_artifact_outputs::de_provisioning_artifact_outputs(tokens, _value, depth + 1)?,
                     );
                 }
                 "ProvisioningArtifactOutputKeys" => {
                     builder = builder.set_provisioning_artifact_output_keys(
-                        crate::protocol_serde::shape_provisioning_artifact_outputs::de_provisioning_artifact_outputs(tokens, _value)?,
+                        crate::protocol_serde::shape_provisioning_artifact_outputs::de_provisioning_artifact_outputs(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

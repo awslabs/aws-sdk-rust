@@ -40,6 +40,8 @@ pub fn de_describe_images(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeImagesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeImagesResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_describe_images(
             s if s.matches("imagesSet") /* Images com.amazonaws.ec2.synthetic#DescribeImagesOutput$Images */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_image_list::de_image_list(&mut tag)
+                        crate::protocol_serde::shape_image_list::de_image_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

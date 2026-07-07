@@ -20,7 +20,11 @@ pub fn ser_object_lock_retention(
 #[allow(clippy::needless_question_mark)]
 pub fn de_object_lock_retention(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ObjectLockRetention, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ObjectLockRetention::builder();
     while let Some(mut tag) = decoder.next_tag() {

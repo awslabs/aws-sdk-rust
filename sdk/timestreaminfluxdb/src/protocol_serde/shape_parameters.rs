@@ -2,10 +2,16 @@
 pub(crate) fn de_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Parameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,20 +37,25 @@ where
                     }
                     variant = match key.as_ref() {
                         "InfluxDBv2" => Some(crate::types::Parameters::InfluxDBv2(
-                            crate::protocol_serde::shape_influx_dbv2_parameters::de_influx_dbv2_parameters(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv2' cannot be null")
-                            })?,
-                        )),
-                        "InfluxDBv3Core" => Some(crate::types::Parameters::InfluxDBv3Core(
-                            crate::protocol_serde::shape_influx_dbv3_core_parameters::de_influx_dbv3_core_parameters(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv3Core' cannot be null"),
+                            crate::protocol_serde::shape_influx_dbv2_parameters::de_influx_dbv2_parameters(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv2' cannot be null"),
                             )?,
                         )),
-                        "InfluxDBv3Enterprise" => Some(crate::types::Parameters::InfluxDBv3Enterprise(
-                            crate::protocol_serde::shape_influx_dbv3_enterprise_parameters::de_influx_dbv3_enterprise_parameters(tokens, _value)?
+                        "InfluxDBv3Core" => Some(crate::types::Parameters::InfluxDBv3Core(
+                            crate::protocol_serde::shape_influx_dbv3_core_parameters::de_influx_dbv3_core_parameters(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv3Enterprise' cannot be null")
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv3Core' cannot be null")
                                 })?,
+                        )),
+                        "InfluxDBv3Enterprise" => Some(crate::types::Parameters::InfluxDBv3Enterprise(
+                            crate::protocol_serde::shape_influx_dbv3_enterprise_parameters::de_influx_dbv3_enterprise_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv3Enterprise' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -106,10 +106,11 @@ pub(crate) fn de_describe_return_shipping_label(
     crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -133,6 +134,8 @@ pub(crate) fn de_describe_return_shipping_label(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -142,13 +145,13 @@ pub(crate) fn de_describe_return_shipping_label(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

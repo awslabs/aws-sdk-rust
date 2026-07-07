@@ -148,10 +148,16 @@ pub fn ser_profile_attributes(
 pub(crate) fn de_profile_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProfileAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -162,88 +168,156 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AccountNumber" => {
-                            builder =
-                                builder.set_account_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_account_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AdditionalInformation" => {
                             builder = builder.set_additional_information(
                                 crate::protocol_serde::shape_extra_length_value_profile_dimension::de_extra_length_value_profile_dimension(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "FirstName" => {
-                            builder = builder.set_first_name(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_first_name(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LastName" => {
-                            builder = builder.set_last_name(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_last_name(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MiddleName" => {
-                            builder = builder.set_middle_name(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_middle_name(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "GenderString" => {
-                            builder =
-                                builder.set_gender_string(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_gender_string(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PartyTypeString" => {
-                            builder =
-                                builder.set_party_type_string(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_party_type_string(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BirthDate" => {
-                            builder = builder.set_birth_date(crate::protocol_serde::shape_date_dimension::de_date_dimension(tokens, _value)?);
+                            builder =
+                                builder.set_birth_date(crate::protocol_serde::shape_date_dimension::de_date_dimension(tokens, _value, depth + 1)?);
                         }
                         "PhoneNumber" => {
-                            builder = builder.set_phone_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_phone_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BusinessName" => {
-                            builder =
-                                builder.set_business_name(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_business_name(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BusinessPhoneNumber" => {
-                            builder = builder
-                                .set_business_phone_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_business_phone_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "HomePhoneNumber" => {
-                            builder =
-                                builder.set_home_phone_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_home_phone_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MobilePhoneNumber" => {
-                            builder = builder
-                                .set_mobile_phone_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_mobile_phone_number(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EmailAddress" => {
-                            builder =
-                                builder.set_email_address(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_email_address(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PersonalEmailAddress" => {
-                            builder = builder
-                                .set_personal_email_address(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_personal_email_address(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BusinessEmailAddress" => {
-                            builder = builder
-                                .set_business_email_address(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(tokens, _value)?);
+                            builder = builder.set_business_email_address(crate::protocol_serde::shape_profile_dimension::de_profile_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Address" => {
-                            builder = builder.set_address(crate::protocol_serde::shape_address_dimension::de_address_dimension(tokens, _value)?);
+                            builder = builder.set_address(crate::protocol_serde::shape_address_dimension::de_address_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ShippingAddress" => {
-                            builder =
-                                builder.set_shipping_address(crate::protocol_serde::shape_address_dimension::de_address_dimension(tokens, _value)?);
+                            builder = builder.set_shipping_address(crate::protocol_serde::shape_address_dimension::de_address_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MailingAddress" => {
-                            builder =
-                                builder.set_mailing_address(crate::protocol_serde::shape_address_dimension::de_address_dimension(tokens, _value)?);
+                            builder = builder.set_mailing_address(crate::protocol_serde::shape_address_dimension::de_address_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BillingAddress" => {
-                            builder =
-                                builder.set_billing_address(crate::protocol_serde::shape_address_dimension::de_address_dimension(tokens, _value)?);
+                            builder = builder.set_billing_address(crate::protocol_serde::shape_address_dimension::de_address_dimension(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_custom_attributes::de_custom_attributes(tokens, _value)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_custom_attributes::de_custom_attributes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ProfileType" => {
                             builder = builder.set_profile_type(crate::protocol_serde::shape_profile_type_dimension::de_profile_type_dimension(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

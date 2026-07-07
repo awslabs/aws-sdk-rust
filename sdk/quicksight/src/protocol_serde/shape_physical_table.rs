@@ -28,6 +28,12 @@ pub fn ser_physical_table(
             crate::protocol_serde::shape_saa_s_table::ser_saa_s_table(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::PhysicalTable::FileSource(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_43.key("FileSource").start_object();
+            crate::protocol_serde::shape_file_source::ser_file_source(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::PhysicalTable::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("PhysicalTable"))
         }
@@ -38,10 +44,16 @@ pub fn ser_physical_table(
 pub(crate) fn de_physical_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PhysicalTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -67,23 +79,28 @@ where
                     }
                     variant = match key.as_ref() {
                         "RelationalTable" => Some(crate::types::PhysicalTable::RelationalTable(
-                            crate::protocol_serde::shape_relational_table::de_relational_table(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_relational_table::de_relational_table(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RelationalTable' cannot be null")
                             })?,
                         )),
                         "CustomSql" => Some(crate::types::PhysicalTable::CustomSql(
-                            crate::protocol_serde::shape_custom_sql::de_custom_sql(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_custom_sql::de_custom_sql(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CustomSql' cannot be null")
                             })?,
                         )),
                         "S3Source" => Some(crate::types::PhysicalTable::S3Source(
-                            crate::protocol_serde::shape_s3_source::de_s3_source(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_source::de_s3_source(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3Source' cannot be null")
                             })?,
                         )),
                         "SaaSTable" => Some(crate::types::PhysicalTable::SaaSTable(
-                            crate::protocol_serde::shape_saa_s_table::de_saa_s_table(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_saa_s_table::de_saa_s_table(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SaaSTable' cannot be null")
+                            })?,
+                        )),
+                        "FileSource" => Some(crate::types::PhysicalTable::FileSource(
+                            crate::protocol_serde::shape_file_source::de_file_source(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'FileSource' cannot be null")
                             })?,
                         )),
                         _ => {

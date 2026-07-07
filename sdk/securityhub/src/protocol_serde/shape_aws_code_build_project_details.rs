@@ -75,10 +75,16 @@ pub fn ser_aws_code_build_project_details(
 pub(crate) fn de_aws_code_build_project_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsCodeBuildProjectDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -98,14 +104,18 @@ where
                         "Artifacts" => {
                             builder = builder.set_artifacts(
                                 crate::protocol_serde::shape_aws_code_build_project_artifacts_list::de_aws_code_build_project_artifacts_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Environment" => {
                             builder = builder.set_environment(
                                 crate::protocol_serde::shape_aws_code_build_project_environment::de_aws_code_build_project_environment(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -118,7 +128,11 @@ where
                         }
                         "Source" => {
                             builder = builder.set_source(
-                                crate::protocol_serde::shape_aws_code_build_project_source::de_aws_code_build_project_source(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_code_build_project_source::de_aws_code_build_project_source(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ServiceRole" => {
@@ -130,18 +144,24 @@ where
                         }
                         "LogsConfig" => {
                             builder = builder.set_logs_config(
-                                    crate::protocol_serde::shape_aws_code_build_project_logs_config_details::de_aws_code_build_project_logs_config_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_code_build_project_logs_config_details::de_aws_code_build_project_logs_config_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "VpcConfig" => {
                             builder = builder.set_vpc_config(
-                                crate::protocol_serde::shape_aws_code_build_project_vpc_config::de_aws_code_build_project_vpc_config(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_code_build_project_vpc_config::de_aws_code_build_project_vpc_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SecondaryArtifacts" => {
                             builder = builder.set_secondary_artifacts(
                                 crate::protocol_serde::shape_aws_code_build_project_artifacts_list::de_aws_code_build_project_artifacts_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

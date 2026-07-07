@@ -129,6 +129,26 @@ pub(crate) fn reflens_list_id_namespace_associations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_intermediate_table_versions_output_output_next_token(
+    input: &crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_intermediate_tables_output_output_next_token(
+    input: &crate::operation::list_intermediate_tables::ListIntermediateTablesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_members_output_output_next_token(
     input: &crate::operation::list_members::ListMembersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -287,6 +307,20 @@ pub(crate) fn lens_list_id_namespace_associations_output_output_id_namespace_ass
     input: crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceAssociationSummary>> {
     let input = input.id_namespace_association_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_intermediate_table_versions_output_output_intermediate_table_version_summaries(
+    input: crate::operation::list_intermediate_table_versions::ListIntermediateTableVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IntermediateTableVersionSummary>> {
+    let input = input.intermediate_table_version_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_intermediate_tables_output_output_intermediate_table_summaries(
+    input: crate::operation::list_intermediate_tables::ListIntermediateTablesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IntermediateTableSummary>> {
+    let input = input.intermediate_table_summaries;
     ::std::option::Option::Some(input)
 }
 

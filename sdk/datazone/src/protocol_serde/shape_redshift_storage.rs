@@ -28,10 +28,16 @@ pub fn ser_redshift_storage(
 pub(crate) fn de_redshift_storage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RedshiftStorage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,18 +63,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "redshiftClusterSource" => Some(crate::types::RedshiftStorage::RedshiftClusterSource(
-                            crate::protocol_serde::shape_redshift_cluster_storage::de_redshift_cluster_storage(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'redshiftClusterSource' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_redshift_cluster_storage::de_redshift_cluster_storage(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'redshiftClusterSource' cannot be null",
+                                    )
+                                })?,
                         )),
                         "redshiftServerlessSource" => Some(crate::types::RedshiftStorage::RedshiftServerlessSource(
-                            crate::protocol_serde::shape_redshift_serverless_storage::de_redshift_serverless_storage(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_redshift_serverless_storage::de_redshift_serverless_storage(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'redshiftServerlessSource' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

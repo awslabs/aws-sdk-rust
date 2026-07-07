@@ -85,15 +85,21 @@ pub(crate) fn de_list_dashboards(
     value: &[u8],
     mut builder: crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
             "DashboardEntries" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_dashboard_entries(Some(crate::protocol_serde::shape_dashboard_entries::de_dashboard_entries(decoder)?)))
+                Ok(
+                    builder.set_dashboard_entries(Some(crate::protocol_serde::shape_dashboard_entries::de_dashboard_entries(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "NextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
@@ -107,6 +113,8 @@ pub(crate) fn de_list_dashboards(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -116,13 +124,13 @@ pub(crate) fn de_list_dashboards(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

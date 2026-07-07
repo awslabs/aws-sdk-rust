@@ -2,10 +2,16 @@
 pub(crate) fn de_aws_vpc_security_group_violation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsVpcSecurityGroupViolation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,12 +36,18 @@ where
                             );
                         }
                         "PartialMatches" => {
-                            builder = builder.set_partial_matches(crate::protocol_serde::shape_partial_matches::de_partial_matches(tokens, _value)?);
+                            builder = builder.set_partial_matches(crate::protocol_serde::shape_partial_matches::de_partial_matches(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PossibleSecurityGroupRemediationActions" => {
                             builder = builder.set_possible_security_group_remediation_actions(
                                 crate::protocol_serde::shape_security_group_remediation_actions::de_security_group_remediation_actions(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

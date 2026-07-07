@@ -20,7 +20,11 @@ pub fn ser_matcher(
 #[allow(clippy::needless_question_mark)]
 pub fn de_matcher(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Matcher, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Matcher::builder();
     while let Some(mut tag) = decoder.next_tag() {

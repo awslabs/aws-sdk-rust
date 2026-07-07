@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_failed_capacity_reservation_fleet_cancellation_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FailedCapacityReservationFleetCancellationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FailedCapacityReservationFleetCancellationResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_failed_capacity_reservation_fleet_cancellation_result(
             s if s.matches("cancelCapacityReservationFleetError") /* CancelCapacityReservationFleetError com.amazonaws.ec2#FailedCapacityReservationFleetCancellationResult$CancelCapacityReservationFleetError */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_cancel_capacity_reservation_fleet_error::de_cancel_capacity_reservation_fleet_error(&mut tag)
+                        crate::protocol_serde::shape_cancel_capacity_reservation_fleet_error::de_cancel_capacity_reservation_fleet_error(&mut tag, depth + 1)
                         ?
                     )
                 ;

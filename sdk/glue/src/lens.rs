@@ -229,6 +229,16 @@ pub(crate) fn reflens_get_workflow_runs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_asset_types_output_output_next_token(
+    input: &crate::operation::list_asset_types::ListAssetTypesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_blueprints_output_output_next_token(
     input: &crate::operation::list_blueprints::ListBlueprintsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -331,6 +341,46 @@ pub(crate) fn reflens_list_dev_endpoints_output_output_next_token(
 
 pub(crate) fn reflens_list_entities_output_output_next_token(
     input: &crate::operation::list_entities::ListEntitiesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_form_types_output_output_next_token(
+    input: &crate::operation::list_form_types::ListFormTypesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_glossaries_output_output_next_token(
+    input: &crate::operation::list_glossaries::ListGlossariesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_glossary_terms_output_output_next_token(
+    input: &crate::operation::list_glossary_terms::ListGlossaryTermsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_iterable_forms_output_output_next_token(
+    input: &crate::operation::list_iterable_forms::ListIterableFormsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -449,6 +499,16 @@ pub(crate) fn reflens_list_workflows_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_assets_output_output_next_token(
+    input: &crate::operation::search_assets::SearchAssetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_tables_output_output_next_token(
     input: &crate::operation::search_tables::SearchTablesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -515,6 +575,13 @@ pub(crate) fn lens_get_workflow_runs_output_output_runs(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_asset_types_output_output_items(
+    input: crate::operation::list_asset_types::ListAssetTypesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetTypeItem>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_blueprints_output_output_blueprints(
     input: crate::operation::list_blueprints::ListBlueprintsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -533,6 +600,34 @@ pub(crate) fn lens_list_entities_output_output_entities(
     input: crate::operation::list_entities::ListEntitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
     let input = input.entities?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_form_types_output_output_items(
+    input: crate::operation::list_form_types::ListFormTypesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FormTypeItem>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_glossaries_output_output_items(
+    input: crate::operation::list_glossaries::ListGlossariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GlossaryItem>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_glossary_terms_output_output_items(
+    input: crate::operation::list_glossary_terms::ListGlossaryTermsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GlossaryTermItem>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_iterable_forms_output_output_items(
+    input: crate::operation::list_iterable_forms::ListIterableFormsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IterableFormListItem>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -596,5 +691,12 @@ pub(crate) fn lens_list_workflows_output_output_workflows(
     input: crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.workflows?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_assets_output_output_items(
+    input: crate::operation::search_assets::SearchAssetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SearchResultItem>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

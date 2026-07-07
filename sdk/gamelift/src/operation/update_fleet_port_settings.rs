@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateF
 #[derive(Debug)]
 struct UpdateFleetPortSettingsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateFleetPortSettingsResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -280,7 +281,7 @@ pub enum UpdateFleetPortSettingsError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The requested resources was not found. The resource was either not created yet or deleted.</p>
+    /// <p>The requested resource was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),

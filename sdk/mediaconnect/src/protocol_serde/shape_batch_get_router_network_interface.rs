@@ -140,6 +140,8 @@ pub(crate) fn de_batch_get_router_network_interface(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -148,12 +150,12 @@ pub(crate) fn de_batch_get_router_network_interface(
                 match key.to_unescaped()?.as_ref() {
                     "errors" => {
                         builder = builder.set_errors(
-                            crate::protocol_serde::shape_batch_get_router_network_interface_error_list::de_batch_get_router_network_interface_error_list(tokens, _value)?
+                            crate::protocol_serde::shape_batch_get_router_network_interface_error_list::de_batch_get_router_network_interface_error_list(tokens, _value, depth + 1)?
                         );
                     }
                     "routerNetworkInterfaces" => {
                         builder = builder.set_router_network_interfaces(
-                            crate::protocol_serde::shape_router_network_interface_list::de_router_network_interface_list(tokens, _value)?,
+                            crate::protocol_serde::shape_router_network_interface_list::de_router_network_interface_list(tokens, _value, depth + 1)?,
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Block>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,13 @@ where
                             );
                         }
                         "Geometry" => {
-                            builder = builder.set_geometry(crate::protocol_serde::shape_geometry::de_geometry(tokens, _value)?);
+                            builder = builder.set_geometry(crate::protocol_serde::shape_geometry::de_geometry(tokens, _value, depth + 1)?);
                         }
                         "Relationships" => {
                             builder = builder.set_relationships(crate::protocol_serde::shape_list_of_relationships::de_list_of_relationships(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

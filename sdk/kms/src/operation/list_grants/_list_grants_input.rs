@@ -22,7 +22,11 @@ pub struct ListGrantsInput {
     /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the grant.</p>
     pub grant_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
     pub grantee_principal: ::std::option::Option<::std::string::String>,
+    /// <p>Returns only grants where the specified Amazon Web Services service principal is the grantee service principal for the grant. This filter is only usable by callers in a service principal.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
+    pub grantee_service_principal: ::std::option::Option<::std::string::String>,
 }
 impl ListGrantsInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
@@ -52,8 +56,14 @@ impl ListGrantsInput {
         self.grant_id.as_deref()
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
     pub fn grantee_principal(&self) -> ::std::option::Option<&str> {
         self.grantee_principal.as_deref()
+    }
+    /// <p>Returns only grants where the specified Amazon Web Services service principal is the grantee service principal for the grant. This filter is only usable by callers in a service principal.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
+    pub fn grantee_service_principal(&self) -> ::std::option::Option<&str> {
+        self.grantee_service_principal.as_deref()
     }
 }
 impl ListGrantsInput {
@@ -72,6 +82,7 @@ pub struct ListGrantsInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) grant_id: ::std::option::Option<::std::string::String>,
     pub(crate) grantee_principal: ::std::option::Option<::std::string::String>,
+    pub(crate) grantee_service_principal: ::std::option::Option<::std::string::String>,
 }
 impl ListGrantsInputBuilder {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
@@ -162,18 +173,38 @@ impl ListGrantsInputBuilder {
         &self.grant_id
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
     pub fn grantee_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
     pub fn set_grantee_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee_principal = input;
         self
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
     pub fn get_grantee_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.grantee_principal
+    }
+    /// <p>Returns only grants where the specified Amazon Web Services service principal is the grantee service principal for the grant. This filter is only usable by callers in a service principal.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
+    pub fn grantee_service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grantee_service_principal = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Returns only grants where the specified Amazon Web Services service principal is the grantee service principal for the grant. This filter is only usable by callers in a service principal.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
+    pub fn set_grantee_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.grantee_service_principal = input;
+        self
+    }
+    /// <p>Returns only grants where the specified Amazon Web Services service principal is the grantee service principal for the grant. This filter is only usable by callers in a service principal.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
+    pub fn get_grantee_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantee_service_principal
     }
     /// Consumes the builder and constructs a [`ListGrantsInput`](crate::operation::list_grants::ListGrantsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_grants::ListGrantsInput, ::aws_smithy_types::error::operation::BuildError> {
@@ -183,6 +214,7 @@ impl ListGrantsInputBuilder {
             key_id: self.key_id,
             grant_id: self.grant_id,
             grantee_principal: self.grantee_principal,
+            grantee_service_principal: self.grantee_service_principal,
         })
     }
 }

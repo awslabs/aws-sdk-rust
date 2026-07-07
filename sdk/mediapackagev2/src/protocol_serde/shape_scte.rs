@@ -2,10 +2,16 @@
 pub(crate) fn de_scte<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Scte>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ScteFilter" => {
-                            builder = builder.set_scte_filter(crate::protocol_serde::shape_scte_filter_list::de_scte_filter_list(tokens, _value)?);
+                            builder = builder.set_scte_filter(crate::protocol_serde::shape_scte_filter_list::de_scte_filter_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ScteInSegments" => {
                             builder = builder.set_scte_in_segments(
@@ -24,6 +34,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ScteInSegments::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "CustomAdTypes" => {
+                            builder = builder.set_custom_ad_types(crate::protocol_serde::shape_custom_ad_type_list::de_custom_ad_type_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -57,6 +74,15 @@ pub fn ser_scte(
     }
     if let Some(var_4) = &input.scte_in_segments {
         object.key("ScteInSegments").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.custom_ad_types {
+        let mut array_6 = object.key("CustomAdTypes").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
     }
     Ok(())
 }

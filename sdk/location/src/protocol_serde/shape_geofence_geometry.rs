@@ -2,10 +2,16 @@
 pub(crate) fn de_geofence_geometry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GeofenceGeometry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,17 +22,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Polygon" => {
-                            builder = builder.set_polygon(crate::protocol_serde::shape_linear_rings::de_linear_rings(tokens, _value)?);
+                            builder = builder.set_polygon(crate::protocol_serde::shape_linear_rings::de_linear_rings(tokens, _value, depth + 1)?);
                         }
                         "Circle" => {
-                            builder = builder.set_circle(crate::protocol_serde::shape_circle::de_circle(tokens, _value)?);
+                            builder = builder.set_circle(crate::protocol_serde::shape_circle::de_circle(tokens, _value, depth + 1)?);
                         }
                         "Geobuf" => {
                             builder = builder.set_geobuf(::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?);
                         }
                         "MultiPolygon" => {
-                            builder =
-                                builder.set_multi_polygon(crate::protocol_serde::shape_multi_linear_rings::de_multi_linear_rings(tokens, _value)?);
+                            builder = builder.set_multi_polygon(crate::protocol_serde::shape_multi_linear_rings::de_multi_linear_rings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

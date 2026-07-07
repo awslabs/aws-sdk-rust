@@ -272,6 +272,8 @@ pub fn de_decrease_replica_count(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DecreaseReplicaCountResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DecreaseReplicaCountResponse got {start_el:?}"
@@ -289,7 +291,7 @@ pub fn de_decrease_replica_count(
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#DecreaseReplicaCountOutput$ReplicationGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_replication_group::de_replication_group(&mut tag)
+                        crate::protocol_serde::shape_replication_group::de_replication_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

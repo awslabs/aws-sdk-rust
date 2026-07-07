@@ -8,6 +8,8 @@ pub(crate) fn de_agents_already_running_assessment_exception_json_err(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -22,7 +24,11 @@ pub(crate) fn de_agents_already_running_assessment_exception_json_err(
                 }
                 "agents" => {
                     builder = builder.set_agents(
-                        crate::protocol_serde::shape_agent_already_running_assessment_list::de_agent_already_running_assessment_list(tokens, _value)?,
+                        crate::protocol_serde::shape_agent_already_running_assessment_list::de_agent_already_running_assessment_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "agentsTruncated" => {

@@ -2,10 +2,16 @@
 pub(crate) fn de_flow_trace<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FlowTrace>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,32 +37,38 @@ where
                     }
                     variant = match key.as_ref() {
                         "nodeInputTrace" => Some(crate::types::FlowTrace::NodeInputTrace(
-                            crate::protocol_serde::shape_flow_trace_node_input_event::de_flow_trace_node_input_event(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeInputTrace' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_flow_trace_node_input_event::de_flow_trace_node_input_event(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeInputTrace' cannot be null")
+                                })?,
                         )),
                         "nodeOutputTrace" => Some(crate::types::FlowTrace::NodeOutputTrace(
-                            crate::protocol_serde::shape_flow_trace_node_output_event::de_flow_trace_node_output_event(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeOutputTrace' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_flow_trace_node_output_event::de_flow_trace_node_output_event(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeOutputTrace' cannot be null")
+                                })?,
                         )),
                         "conditionNodeResultTrace" => Some(crate::types::FlowTrace::ConditionNodeResultTrace(
                             crate::protocol_serde::shape_flow_trace_condition_node_result_event::de_flow_trace_condition_node_result_event(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'conditionNodeResultTrace' cannot be null")
                             })?,
                         )),
                         "nodeActionTrace" => Some(crate::types::FlowTrace::NodeActionTrace(
-                            crate::protocol_serde::shape_flow_trace_node_action_event::de_flow_trace_node_action_event(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeActionTrace' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_flow_trace_node_action_event::de_flow_trace_node_action_event(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeActionTrace' cannot be null")
+                                })?,
                         )),
                         "nodeDependencyTrace" => Some(crate::types::FlowTrace::NodeDependencyTrace(
-                            crate::protocol_serde::shape_flow_trace_dependency_event::de_flow_trace_dependency_event(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeDependencyTrace' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_flow_trace_dependency_event::de_flow_trace_dependency_event(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeDependencyTrace' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

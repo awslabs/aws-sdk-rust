@@ -21,10 +21,16 @@ pub fn ser_uplink_connection_details(
 pub(crate) fn de_uplink_connection_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UplinkConnectionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -33,19 +39,21 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ingressAddressAndPort" => {
-                            builder = builder.set_ingress_address_and_port(crate::protocol_serde::shape_connection_details::de_connection_details(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ingressAddressAndPort" => {
+                                builder = builder.set_ingress_address_and_port(
+                                    crate::protocol_serde::shape_connection_details::de_connection_details(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "agentIpAndPortAddress" => {
+                                builder = builder.set_agent_ip_and_port_address(
+                                    crate::protocol_serde::shape_ranged_connection_details::de_ranged_connection_details(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "agentIpAndPortAddress" => {
-                            builder = builder.set_agent_ip_and_port_address(
-                                crate::protocol_serde::shape_ranged_connection_details::de_ranged_connection_details(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

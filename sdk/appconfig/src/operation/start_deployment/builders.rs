@@ -22,7 +22,9 @@ impl crate::operation::start_deployment::builders::StartDeploymentInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDeployment`.
 ///
-/// <p>Starts a deployment.</p>
+/// <p>Starts a deployment.</p><note>
+/// <p>AppConfig Agent supports deploying feature flag or free-form configuration data to specific segments or individual users during a gradual rollout. Entity-based gradual deployments ensure that once a user or segment receives a configuration version, they continue to receive that same version throughout the deployment period, regardless of which compute resource serves their requests. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html#appconfig-entity-based-gradual-deployments">Using AppConfig Agent for user-based or entity-based gradual deployments</a></p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -252,5 +254,19 @@ impl StartDeploymentFluentBuilder {
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_dynamic_extension_parameters()
+    }
+    /// <p>The number of the latest deployment. Use this value to ensure that the deployment starts from the expected state and to prevent conflicting updates.</p>
+    pub fn latest_deployment_number(mut self, input: i32) -> Self {
+        self.inner = self.inner.latest_deployment_number(input);
+        self
+    }
+    /// <p>The number of the latest deployment. Use this value to ensure that the deployment starts from the expected state and to prevent conflicting updates.</p>
+    pub fn set_latest_deployment_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_latest_deployment_number(input);
+        self
+    }
+    /// <p>The number of the latest deployment. Use this value to ensure that the deployment starts from the expected state and to prevent conflicting updates.</p>
+    pub fn get_latest_deployment_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_latest_deployment_number()
     }
 }

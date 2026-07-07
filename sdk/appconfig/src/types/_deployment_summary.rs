@@ -6,6 +6,8 @@
 pub struct DeploymentSummary {
     /// <p>The sequence number of the deployment.</p>
     pub deployment_number: i32,
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub configuration_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration.</p>
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the configuration.</p>
@@ -28,11 +30,17 @@ pub struct DeploymentSummary {
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
+    /// <p>The type of deployment.</p>
+    pub r#type: ::std::option::Option<crate::types::DeploymentType>,
 }
 impl DeploymentSummary {
     /// <p>The sequence number of the deployment.</p>
     pub fn deployment_number(&self) -> i32 {
         self.deployment_number
+    }
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub fn configuration_profile_id(&self) -> ::std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
     }
     /// <p>The name of the configuration.</p>
     pub fn configuration_name(&self) -> ::std::option::Option<&str> {
@@ -78,6 +86,10 @@ impl DeploymentSummary {
     pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
+    /// <p>The type of deployment.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
+        self.r#type.as_ref()
+    }
 }
 impl DeploymentSummary {
     /// Creates a new builder-style object to manufacture [`DeploymentSummary`](crate::types::DeploymentSummary).
@@ -91,6 +103,7 @@ impl DeploymentSummary {
 #[non_exhaustive]
 pub struct DeploymentSummaryBuilder {
     pub(crate) deployment_number: ::std::option::Option<i32>,
+    pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_version: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_duration_in_minutes: ::std::option::Option<i32>,
@@ -102,6 +115,7 @@ pub struct DeploymentSummaryBuilder {
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DeploymentType>,
 }
 impl DeploymentSummaryBuilder {
     /// <p>The sequence number of the deployment.</p>
@@ -117,6 +131,20 @@ impl DeploymentSummaryBuilder {
     /// <p>The sequence number of the deployment.</p>
     pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
         &self.deployment_number
+    }
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.configuration_profile_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_profile_id = input;
+        self
+    }
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
     }
     /// <p>The name of the configuration.</p>
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -272,10 +300,25 @@ impl DeploymentSummaryBuilder {
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_label
     }
+    /// <p>The type of deployment.</p>
+    pub fn r#type(mut self, input: crate::types::DeploymentType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of deployment.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of deployment.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`DeploymentSummary`](crate::types::DeploymentSummary).
     pub fn build(self) -> crate::types::DeploymentSummary {
         crate::types::DeploymentSummary {
             deployment_number: self.deployment_number.unwrap_or_default(),
+            configuration_profile_id: self.configuration_profile_id,
             configuration_name: self.configuration_name,
             configuration_version: self.configuration_version,
             deployment_duration_in_minutes: self.deployment_duration_in_minutes.unwrap_or_default(),
@@ -287,6 +330,7 @@ impl DeploymentSummaryBuilder {
             started_at: self.started_at,
             completed_at: self.completed_at,
             version_label: self.version_label,
+            r#type: self.r#type,
         }
     }
 }

@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_continue_service_deployment;
+
 pub(crate) mod shape_create_capacity_provider;
 
 pub(crate) mod shape_create_cluster;
@@ -202,6 +204,8 @@ pub(crate) mod shape_cluster_contains_tasks_exception;
 pub(crate) mod shape_cluster_not_found_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_continue_service_deployment_input;
 
 pub(crate) mod shape_create_capacity_provider_input;
 
@@ -475,6 +479,8 @@ pub(crate) mod shape_load_balancer;
 
 pub(crate) mod shape_managed_agent_state_change;
 
+pub(crate) mod shape_monitoring_configuration;
+
 pub(crate) mod shape_network_binding;
 
 pub(crate) mod shape_network_configuration;
@@ -669,6 +675,8 @@ pub(crate) mod shape_managed_scaling;
 
 pub(crate) mod shape_managed_storage_configuration;
 
+pub(crate) mod shape_metric_configuration;
+
 pub(crate) mod shape_mount_point;
 
 pub(crate) mod shape_placement_constraints;
@@ -751,7 +759,11 @@ pub(crate) mod shape_daemon_rollback;
 
 pub(crate) mod shape_deployment;
 
+pub(crate) mod shape_deployment_lifecycle_hook_detail_list;
+
 pub(crate) mod shape_deployment_lifecycle_hook_list;
+
+pub(crate) mod shape_deployment_lifecycle_hook_timeout_configuration;
 
 pub(crate) mod shape_device;
 
@@ -807,6 +819,8 @@ pub(crate) mod shape_service_volume_configurations;
 
 pub(crate) mod shape_task_managed_ebs_volume_termination_policy;
 
+pub(crate) mod shape_threshold_configuration;
+
 pub(crate) mod shape_timeout_configuration;
 
 pub(crate) mod shape_tmpfs;
@@ -830,6 +844,8 @@ pub(crate) mod shape_daemon_capacity_provider_list;
 pub(crate) mod shape_daemon_container_image;
 
 pub(crate) mod shape_daemon_deployment_capacity_provider_list;
+
+pub(crate) mod shape_deployment_lifecycle_hook_detail;
 
 pub(crate) mod shape_docker_labels_map;
 
@@ -861,6 +877,8 @@ pub(crate) mod shape_memory_gib_per_v_cpu_request;
 
 pub(crate) mod shape_memory_mib_request;
 
+pub(crate) mod shape_metric_configuration_list;
+
 pub(crate) mod shape_mount_point_list;
 
 pub(crate) mod shape_network_bandwidth_gbps_request;
@@ -870,6 +888,8 @@ pub(crate) mod shape_network_bindings;
 pub(crate) mod shape_network_interface_count_request;
 
 pub(crate) mod shape_network_interfaces;
+
+pub(crate) mod shape_neuron_device_ids;
 
 pub(crate) mod shape_port_mapping_list;
 
@@ -966,6 +986,8 @@ pub(crate) mod shape_managed_listener_rule;
 pub(crate) mod shape_managed_load_balancer;
 
 pub(crate) mod shape_managed_target_groups;
+
+pub(crate) mod shape_metric_names_list;
 
 pub(crate) mod shape_service_connect_client_alias_list;
 

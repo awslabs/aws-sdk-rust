@@ -128,6 +128,8 @@ pub(crate) fn de_get_backup_vault_notifications(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -141,8 +143,11 @@ pub(crate) fn de_get_backup_vault_notifications(
                     );
                 }
                 "BackupVaultEvents" => {
-                    builder =
-                        builder.set_backup_vault_events(crate::protocol_serde::shape_backup_vault_events::de_backup_vault_events(tokens, _value)?);
+                    builder = builder.set_backup_vault_events(crate::protocol_serde::shape_backup_vault_events::de_backup_vault_events(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "BackupVaultName" => {
                     builder = builder.set_backup_vault_name(

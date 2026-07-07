@@ -38,6 +38,7 @@ pub fn ser_aws_ecs_task_definition_volumes_docker_volume_configuration_details(
 pub(crate) fn de_aws_ecs_task_definition_volumes_docker_volume_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -45,6 +46,11 @@ pub(crate) fn de_aws_ecs_task_definition_volumes_docker_volume_configuration_det
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,10 +71,10 @@ where
                             );
                         }
                         "DriverOpts" => {
-                            builder = builder.set_driver_opts(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
+                            builder = builder.set_driver_opts(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                         }
                         "Labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                         }
                         "Scope" => {
                             builder = builder.set_scope(

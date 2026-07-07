@@ -2,10 +2,16 @@
 pub(crate) fn de_recommended_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecommendedAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,10 +57,10 @@ where
                             );
                         }
                         "context" => {
-                            builder = builder.set_context(crate::protocol_serde::shape_context::de_context(tokens, _value)?);
+                            builder = builder.set_context(crate::protocol_serde::shape_context::de_context(tokens, _value, depth + 1)?);
                         }
                         "nextSteps" => {
-                            builder = builder.set_next_steps(crate::protocol_serde::shape_next_steps::de_next_steps(tokens, _value)?);
+                            builder = builder.set_next_steps(crate::protocol_serde::shape_next_steps::de_next_steps(tokens, _value, depth + 1)?);
                         }
                         "lastUpdatedTimeStamp" => {
                             builder = builder.set_last_updated_time_stamp(

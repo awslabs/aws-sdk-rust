@@ -168,6 +168,8 @@ pub(crate) fn de_update_event_source_mapping(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -176,7 +178,9 @@ pub(crate) fn de_update_event_source_mapping(
                 "AmazonManagedKafkaEventSourceConfig" => {
                     builder = builder.set_amazon_managed_kafka_event_source_config(
                         crate::protocol_serde::shape_amazon_managed_kafka_event_source_config::de_amazon_managed_kafka_event_source_config(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -191,11 +195,15 @@ pub(crate) fn de_update_event_source_mapping(
                     builder = builder.set_bisect_batch_on_function_error(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "DestinationConfig" => {
-                    builder = builder.set_destination_config(crate::protocol_serde::shape_destination_config::de_destination_config(tokens, _value)?);
+                    builder = builder.set_destination_config(crate::protocol_serde::shape_destination_config::de_destination_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "DocumentDBEventSourceConfig" => {
                     builder = builder.set_document_db_event_source_config(
-                        crate::protocol_serde::shape_document_db_event_source_config::de_document_db_event_source_config(tokens, _value)?,
+                        crate::protocol_serde::shape_document_db_event_source_config::de_document_db_event_source_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "EventSourceArn" => {
@@ -213,11 +221,17 @@ pub(crate) fn de_update_event_source_mapping(
                     );
                 }
                 "FilterCriteria" => {
-                    builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens, _value)?);
+                    builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FilterCriteriaError" => {
                     builder = builder.set_filter_criteria_error(crate::protocol_serde::shape_filter_criteria_error::de_filter_criteria_error(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "FunctionArn" => {
@@ -229,7 +243,7 @@ pub(crate) fn de_update_event_source_mapping(
                 }
                 "FunctionResponseTypes" => {
                     builder = builder.set_function_response_types(
-                        crate::protocol_serde::shape_function_response_type_list::de_function_response_type_list(tokens, _value)?,
+                        crate::protocol_serde::shape_function_response_type_list::de_function_response_type_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "KMSKeyArn" => {
@@ -254,7 +268,11 @@ pub(crate) fn de_update_event_source_mapping(
                 }
                 "LoggingConfig" => {
                     builder = builder.set_logging_config(
-                        crate::protocol_serde::shape_event_source_mapping_logging_config::de_event_source_mapping_logging_config(tokens, _value)?,
+                        crate::protocol_serde::shape_event_source_mapping_logging_config::de_event_source_mapping_logging_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "MaximumBatchingWindowInSeconds" => {
@@ -280,7 +298,11 @@ pub(crate) fn de_update_event_source_mapping(
                 }
                 "MetricsConfig" => {
                     builder = builder.set_metrics_config(
-                        crate::protocol_serde::shape_event_source_mapping_metrics_config::de_event_source_mapping_metrics_config(tokens, _value)?,
+                        crate::protocol_serde::shape_event_source_mapping_metrics_config::de_event_source_mapping_metrics_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "ParallelizationFactor" => {
@@ -292,30 +314,32 @@ pub(crate) fn de_update_event_source_mapping(
                 }
                 "ProvisionedPollerConfig" => {
                     builder = builder.set_provisioned_poller_config(
-                        crate::protocol_serde::shape_provisioned_poller_config::de_provisioned_poller_config(tokens, _value)?,
+                        crate::protocol_serde::shape_provisioned_poller_config::de_provisioned_poller_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "Queues" => {
-                    builder = builder.set_queues(crate::protocol_serde::shape_queues::de_queues(tokens, _value)?);
+                    builder = builder.set_queues(crate::protocol_serde::shape_queues::de_queues(tokens, _value, depth + 1)?);
                 }
                 "ScalingConfig" => {
-                    builder = builder.set_scaling_config(crate::protocol_serde::shape_scaling_config::de_scaling_config(tokens, _value)?);
+                    builder = builder.set_scaling_config(crate::protocol_serde::shape_scaling_config::de_scaling_config(tokens, _value, depth + 1)?);
                 }
                 "SelfManagedEventSource" => {
                     builder = builder.set_self_managed_event_source(
-                        crate::protocol_serde::shape_self_managed_event_source::de_self_managed_event_source(tokens, _value)?,
+                        crate::protocol_serde::shape_self_managed_event_source::de_self_managed_event_source(tokens, _value, depth + 1)?,
                     );
                 }
                 "SelfManagedKafkaEventSourceConfig" => {
                     builder = builder.set_self_managed_kafka_event_source_config(
                         crate::protocol_serde::shape_self_managed_kafka_event_source_config::de_self_managed_kafka_event_source_config(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
                 "SourceAccessConfigurations" => {
                     builder = builder.set_source_access_configurations(
-                        crate::protocol_serde::shape_source_access_configurations::de_source_access_configurations(tokens, _value)?,
+                        crate::protocol_serde::shape_source_access_configurations::de_source_access_configurations(tokens, _value, depth + 1)?,
                     );
                 }
                 "StartingPosition" => {
@@ -346,7 +370,7 @@ pub(crate) fn de_update_event_source_mapping(
                     );
                 }
                 "Topics" => {
-                    builder = builder.set_topics(crate::protocol_serde::shape_topics::de_topics(tokens, _value)?);
+                    builder = builder.set_topics(crate::protocol_serde::shape_topics::de_topics(tokens, _value, depth + 1)?);
                 }
                 "TumblingWindowInSeconds" => {
                     builder = builder.set_tumbling_window_in_seconds(

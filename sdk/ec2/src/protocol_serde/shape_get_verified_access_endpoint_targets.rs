@@ -49,6 +49,8 @@ pub fn de_get_verified_access_endpoint_targets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetVerifiedAccessEndpointTargetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetVerifiedAccessEndpointTargetsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_get_verified_access_endpoint_targets(
             s if s.matches("verifiedAccessEndpointTargetSet") /* VerifiedAccessEndpointTargets com.amazonaws.ec2.synthetic#GetVerifiedAccessEndpointTargetsOutput$VerifiedAccessEndpointTargets */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint_target_list::de_verified_access_endpoint_target_list(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint_target_list::de_verified_access_endpoint_target_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

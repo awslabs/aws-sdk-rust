@@ -153,13 +153,19 @@ pub(crate) fn de_update_calculated_attribute_definition(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AttributeDetails" => {
-                    builder = builder.set_attribute_details(crate::protocol_serde::shape_attribute_details::de_attribute_details(tokens, _value)?);
+                    builder = builder.set_attribute_details(crate::protocol_serde::shape_attribute_details::de_attribute_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CalculatedAttributeName" => {
                     builder = builder.set_calculated_attribute_name(
@@ -169,7 +175,7 @@ pub(crate) fn de_update_calculated_attribute_definition(
                     );
                 }
                 "Conditions" => {
-                    builder = builder.set_conditions(crate::protocol_serde::shape_conditions::de_conditions(tokens, _value)?);
+                    builder = builder.set_conditions(crate::protocol_serde::shape_conditions::de_conditions(tokens, _value, depth + 1)?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -198,7 +204,7 @@ pub(crate) fn de_update_calculated_attribute_definition(
                     )?);
                 }
                 "Readiness" => {
-                    builder = builder.set_readiness(crate::protocol_serde::shape_readiness::de_readiness(tokens, _value)?);
+                    builder = builder.set_readiness(crate::protocol_serde::shape_readiness::de_readiness(tokens, _value, depth + 1)?);
                 }
                 "Statistic" => {
                     builder = builder.set_statistic(
@@ -215,7 +221,7 @@ pub(crate) fn de_update_calculated_attribute_definition(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "UseHistoricalData" => {
                     builder = builder.set_use_historical_data(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

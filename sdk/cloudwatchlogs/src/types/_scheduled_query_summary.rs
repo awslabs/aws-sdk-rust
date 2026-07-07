@@ -10,6 +10,8 @@ pub struct ScheduledQuerySummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the scheduled query.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub schedule_type: ::std::option::Option<crate::types::ScheduleType>,
     /// <p>The timestamp when the scheduled query was last executed.</p>
     pub last_triggered_time: ::std::option::Option<i64>,
     /// <p>The status of the most recent execution.</p>
@@ -37,6 +39,10 @@ impl ScheduledQuerySummary {
     /// <p>The current state of the scheduled query.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
+    }
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub fn schedule_type(&self) -> ::std::option::Option<&crate::types::ScheduleType> {
+        self.schedule_type.as_ref()
     }
     /// <p>The timestamp when the scheduled query was last executed.</p>
     pub fn last_triggered_time(&self) -> ::std::option::Option<i64> {
@@ -81,6 +87,7 @@ pub struct ScheduledQuerySummaryBuilder {
     pub(crate) scheduled_query_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ScheduledQueryState>,
+    pub(crate) schedule_type: ::std::option::Option<crate::types::ScheduleType>,
     pub(crate) last_triggered_time: ::std::option::Option<i64>,
     pub(crate) last_execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
@@ -131,6 +138,20 @@ impl ScheduledQuerySummaryBuilder {
     /// <p>The current state of the scheduled query.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
+    }
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub fn schedule_type(mut self, input: crate::types::ScheduleType) -> Self {
+        self.schedule_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub fn set_schedule_type(mut self, input: ::std::option::Option<crate::types::ScheduleType>) -> Self {
+        self.schedule_type = input;
+        self
+    }
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub fn get_schedule_type(&self) -> &::std::option::Option<crate::types::ScheduleType> {
+        &self.schedule_type
     }
     /// <p>The timestamp when the scheduled query was last executed.</p>
     pub fn last_triggered_time(mut self, input: i64) -> Self {
@@ -236,6 +257,7 @@ impl ScheduledQuerySummaryBuilder {
             scheduled_query_arn: self.scheduled_query_arn,
             name: self.name,
             state: self.state,
+            schedule_type: self.schedule_type,
             last_triggered_time: self.last_triggered_time,
             last_execution_status: self.last_execution_status,
             schedule_expression: self.schedule_expression,

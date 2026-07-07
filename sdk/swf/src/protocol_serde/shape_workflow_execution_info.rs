@@ -2,10 +2,16 @@
 pub(crate) fn de_workflow_execution_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkflowExecutionInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,10 +22,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "execution" => {
-                            builder = builder.set_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(tokens, _value)?);
+                            builder = builder.set_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "workflowType" => {
-                            builder = builder.set_workflow_type(crate::protocol_serde::shape_workflow_type::de_workflow_type(tokens, _value)?);
+                            builder =
+                                builder.set_workflow_type(crate::protocol_serde::shape_workflow_type::de_workflow_type(tokens, _value, depth + 1)?);
                         }
                         "startTimestamp" => {
                             builder = builder.set_start_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -48,10 +59,14 @@ where
                             );
                         }
                         "parent" => {
-                            builder = builder.set_parent(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(tokens, _value)?);
+                            builder = builder.set_parent(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "tagList" => {
-                            builder = builder.set_tag_list(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tag_list(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "cancelRequested" => {
                             builder = builder.set_cancel_requested(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

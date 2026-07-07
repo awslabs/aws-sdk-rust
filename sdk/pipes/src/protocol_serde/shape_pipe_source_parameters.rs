@@ -63,10 +63,16 @@ pub fn ser_pipe_source_parameters(
 pub(crate) fn de_pipe_source_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipeSourceParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -75,57 +81,73 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "FilterCriteria" => {
-                            builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens, _value)?);
-                        }
-                        "KinesisStreamParameters" => {
-                            builder = builder.set_kinesis_stream_parameters(
-                                crate::protocol_serde::shape_pipe_source_kinesis_stream_parameters::de_pipe_source_kinesis_stream_parameters(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "DynamoDBStreamParameters" => {
-                            builder = builder.set_dynamo_db_stream_parameters(
-                                crate::protocol_serde::shape_pipe_source_dynamo_db_stream_parameters::de_pipe_source_dynamo_db_stream_parameters(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "SqsQueueParameters" => {
-                            builder = builder.set_sqs_queue_parameters(
-                                crate::protocol_serde::shape_pipe_source_sqs_queue_parameters::de_pipe_source_sqs_queue_parameters(tokens, _value)?,
-                            );
-                        }
-                        "ActiveMQBrokerParameters" => {
-                            builder = builder.set_active_mq_broker_parameters(
-                                crate::protocol_serde::shape_pipe_source_active_mq_broker_parameters::de_pipe_source_active_mq_broker_parameters(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "RabbitMQBrokerParameters" => {
-                            builder = builder.set_rabbit_mq_broker_parameters(
-                                crate::protocol_serde::shape_pipe_source_rabbit_mq_broker_parameters::de_pipe_source_rabbit_mq_broker_parameters(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "ManagedStreamingKafkaParameters" => {
-                            builder = builder.set_managed_streaming_kafka_parameters(
-                                    crate::protocol_serde::shape_pipe_source_managed_streaming_kafka_parameters::de_pipe_source_managed_streaming_kafka_parameters(tokens, _value)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "FilterCriteria" => {
+                                builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "KinesisStreamParameters" => {
+                                builder = builder.set_kinesis_stream_parameters(
+                                    crate::protocol_serde::shape_pipe_source_kinesis_stream_parameters::de_pipe_source_kinesis_stream_parameters(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
+                            }
+                            "DynamoDBStreamParameters" => {
+                                builder = builder.set_dynamo_db_stream_parameters(
+                                    crate::protocol_serde::shape_pipe_source_dynamo_db_stream_parameters::de_pipe_source_dynamo_db_stream_parameters(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "SqsQueueParameters" => {
+                                builder = builder.set_sqs_queue_parameters(
+                                    crate::protocol_serde::shape_pipe_source_sqs_queue_parameters::de_pipe_source_sqs_queue_parameters(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ActiveMQBrokerParameters" => {
+                                builder = builder.set_active_mq_broker_parameters(
+                                    crate::protocol_serde::shape_pipe_source_active_mq_broker_parameters::de_pipe_source_active_mq_broker_parameters(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "RabbitMQBrokerParameters" => {
+                                builder = builder.set_rabbit_mq_broker_parameters(
+                                    crate::protocol_serde::shape_pipe_source_rabbit_mq_broker_parameters::de_pipe_source_rabbit_mq_broker_parameters(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ManagedStreamingKafkaParameters" => {
+                                builder = builder.set_managed_streaming_kafka_parameters(
+                                    crate::protocol_serde::shape_pipe_source_managed_streaming_kafka_parameters::de_pipe_source_managed_streaming_kafka_parameters(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "SelfManagedKafkaParameters" => {
+                                builder = builder.set_self_managed_kafka_parameters(
+                                    crate::protocol_serde::shape_pipe_source_self_managed_kafka_parameters::de_pipe_source_self_managed_kafka_parameters(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "SelfManagedKafkaParameters" => {
-                            builder = builder.set_self_managed_kafka_parameters(
-                                crate::protocol_serde::shape_pipe_source_self_managed_kafka_parameters::de_pipe_source_self_managed_kafka_parameters(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

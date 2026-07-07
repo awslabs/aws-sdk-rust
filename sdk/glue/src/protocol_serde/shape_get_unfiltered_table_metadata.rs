@@ -192,16 +192,22 @@ pub(crate) fn de_get_unfiltered_table_metadata(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Table" => {
-                    builder = builder.set_table(crate::protocol_serde::shape_table::de_table(tokens, _value)?);
+                    builder = builder.set_table(crate::protocol_serde::shape_table::de_table(tokens, _value, depth + 1)?);
                 }
                 "AuthorizedColumns" => {
-                    builder = builder.set_authorized_columns(crate::protocol_serde::shape_name_string_list::de_name_string_list(tokens, _value)?);
+                    builder = builder.set_authorized_columns(crate::protocol_serde::shape_name_string_list::de_name_string_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "IsRegisteredWithLakeFormation" => {
                     builder =
@@ -209,7 +215,9 @@ pub(crate) fn de_get_unfiltered_table_metadata(
                 }
                 "CellFilters" => {
                     builder = builder.set_cell_filters(crate::protocol_serde::shape_column_row_filter_list::de_column_row_filter_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "QueryAuthorizationId" => {
@@ -236,7 +244,11 @@ pub(crate) fn de_get_unfiltered_table_metadata(
                     builder = builder.set_is_protected(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Permissions" => {
-                    builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens, _value)?);
+                    builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "RowFilter" => {
                     builder = builder.set_row_filter(

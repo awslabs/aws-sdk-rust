@@ -169,14 +169,27 @@ pub(crate) fn de_associate_whats_app_business_account(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "linkedWhatsAppBusinessAccountId" => {
+                    builder = builder.set_linked_whats_app_business_account_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "signupCallbackResult" => {
                     builder = builder.set_signup_callback_result(
-                        crate::protocol_serde::shape_whats_app_signup_callback_result::de_whats_app_signup_callback_result(tokens, _value)?,
+                        crate::protocol_serde::shape_whats_app_signup_callback_result::de_whats_app_signup_callback_result(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "statusCode" => {

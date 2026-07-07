@@ -173,17 +173,27 @@ pub(crate) fn de_update_data_source(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "assetFormsOutput" => {
-                    builder = builder.set_asset_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(tokens, _value)?);
+                    builder = builder.set_asset_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "configuration" => {
                     builder = builder.set_configuration(
-                        crate::protocol_serde::shape_data_source_configuration_output::de_data_source_configuration_output(tokens, _value)?,
+                        crate::protocol_serde::shape_data_source_configuration_output::de_data_source_configuration_output(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "connectionId" => {
@@ -229,7 +239,9 @@ pub(crate) fn de_update_data_source(
                 }
                 "errorMessage" => {
                     builder = builder.set_error_message(crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "id" => {
@@ -247,7 +259,7 @@ pub(crate) fn de_update_data_source(
                 }
                 "lastRunErrorMessage" => {
                     builder = builder.set_last_run_error_message(
-                        crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(tokens, _value)?,
+                        crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(tokens, _value, depth + 1)?,
                     );
                 }
                 "lastRunStatus" => {
@@ -276,7 +288,7 @@ pub(crate) fn de_update_data_source(
                 }
                 "recommendation" => {
                     builder = builder.set_recommendation(
-                        crate::protocol_serde::shape_recommendation_configuration::de_recommendation_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_recommendation_configuration::de_recommendation_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "retainPermissionsOnRevokeFailure" => {
@@ -285,12 +297,16 @@ pub(crate) fn de_update_data_source(
                 }
                 "schedule" => {
                     builder = builder.set_schedule(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "selfGrantStatus" => {
                     builder = builder.set_self_grant_status(crate::protocol_serde::shape_self_grant_status_output::de_self_grant_status_output(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {

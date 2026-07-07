@@ -51,6 +51,8 @@ pub fn de_describe_import_image_tasks(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeImportImageTasksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeImportImageTasksResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_import_image_tasks(
             s if s.matches("importImageTaskSet") /* ImportImageTasks com.amazonaws.ec2.synthetic#DescribeImportImageTasksOutput$ImportImageTasks */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_import_image_task_list::de_import_image_task_list(&mut tag)
+                        crate::protocol_serde::shape_import_image_task_list::de_import_image_task_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

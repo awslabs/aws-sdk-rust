@@ -134,6 +134,8 @@ pub(crate) fn de_get_global_resolver(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -188,10 +190,10 @@ pub(crate) fn de_get_global_resolver(
                     );
                 }
                 "ipv4Addresses" => {
-                    builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_addresses::de_ipv4_addresses(tokens, _value)?);
+                    builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_addresses::de_ipv4_addresses(tokens, _value, depth + 1)?);
                 }
                 "ipv6Addresses" => {
-                    builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_addresses::de_ipv6_addresses(tokens, _value)?);
+                    builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_addresses::de_ipv6_addresses(tokens, _value, depth + 1)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -208,7 +210,7 @@ pub(crate) fn de_get_global_resolver(
                     );
                 }
                 "regions" => {
-                    builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);
+                    builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value, depth + 1)?);
                 }
                 "status" => {
                     builder = builder.set_status(

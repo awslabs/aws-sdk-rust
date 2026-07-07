@@ -22,7 +22,8 @@ impl crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleInputBu
 }
 /// Fluent builder constructing a request to `DeleteFirewallRule`.
 ///
-/// <p>Deletes the specified firewall rule.</p>
+/// <p>Deletes the specified firewall rule. Identify the rule using either <code>FirewallDomainListId</code> (for domain-list and DNS Firewall Advanced rules) or <code>FirewallThreatProtectionId</code> (for partner-managed and DNS Firewall Advanced rules) — together with <code>FirewallRuleGroupId</code>.</p>
+/// <p><code>DeleteFirewallRule</code> is the only operation that succeeds against a rule whose <code>Status</code> is <code>CREATION_FAILED</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -179,7 +180,7 @@ impl DeleteFirewallRuleFluentBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qtype(input.into());
@@ -214,7 +215,7 @@ impl DeleteFirewallRuleFluentBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qtype(input);
@@ -249,7 +250,7 @@ impl DeleteFirewallRuleFluentBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qtype()

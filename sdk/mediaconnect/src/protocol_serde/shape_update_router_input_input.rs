@@ -9,32 +9,41 @@ pub fn ser_update_router_input_input_input(
         crate::protocol_serde::shape_router_input_configuration::ser_router_input_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.maintenance_configuration {
+    if let Some(var_3) = &input.content_quality_analysis_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("maintenanceConfiguration").start_object();
-        crate::protocol_serde::shape_maintenance_configuration::ser_maintenance_configuration(&mut object_4, var_3)?;
+        let mut object_4 = object.key("contentQualityAnalysisConfiguration").start_object();
+        crate::protocol_serde::shape_router_content_quality_analysis_configuration::ser_router_content_quality_analysis_configuration(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.maximum_bitrate {
+    if let Some(var_5) = &input.maintenance_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("maintenanceConfiguration").start_object();
+        crate::protocol_serde::shape_maintenance_configuration::ser_maintenance_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.maximum_bitrate {
         object.key("maximumBitrate").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.routing_scope {
-        object.key("routingScope").string(var_7.as_str());
+    if let Some(var_9) = &input.routing_scope {
+        object.key("routingScope").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.tier {
-        object.key("tier").string(var_8.as_str());
+    if let Some(var_10) = &input.tier {
+        object.key("tier").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.transit_encryption {
+    if let Some(var_11) = &input.transit_encryption {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("transitEncryption").start_object();
-        crate::protocol_serde::shape_router_input_transit_encryption::ser_router_input_transit_encryption(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_12 = object.key("transitEncryption").start_object();
+        crate::protocol_serde::shape_router_input_transit_encryption::ser_router_input_transit_encryption(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

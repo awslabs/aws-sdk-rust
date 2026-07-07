@@ -141,12 +141,12 @@ impl CreateRecommenderSchemaFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
-    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. Currently only the <code>_webAnalytics</code> key is supported.</p>
+    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported.</p>
     pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::RecommenderSchemaField>) -> Self {
         self.inner = self.inner.fields(k.into(), v);
         self
     }
-    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. Currently only the <code>_webAnalytics</code> key is supported.</p>
+    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported.</p>
     pub fn set_fields(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::RecommenderSchemaField>>>,
@@ -154,7 +154,7 @@ impl CreateRecommenderSchemaFluentBuilder {
         self.inner = self.inner.set_fields(input);
         self
     }
-    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. Currently only the <code>_webAnalytics</code> key is supported.</p>
+    /// <p>A map of dataset type to column definitions that specifies which data columns to include in the schema. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported.</p>
     pub fn get_fields(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::RecommenderSchemaField>>> {

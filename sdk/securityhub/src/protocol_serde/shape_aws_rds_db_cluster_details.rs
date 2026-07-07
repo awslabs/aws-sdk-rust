@@ -207,10 +207,16 @@ pub fn ser_aws_rds_db_cluster_details(
 pub(crate) fn de_aws_rds_db_cluster_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbClusterDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -228,7 +234,8 @@ where
                             );
                         }
                         "AvailabilityZones" => {
-                            builder = builder.set_availability_zones(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_availability_zones(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "BackupRetentionPeriod" => {
                             builder = builder.set_backup_retention_period(
@@ -266,7 +273,8 @@ where
                             );
                         }
                         "CustomEndpoints" => {
-                            builder = builder.set_custom_endpoints(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_custom_endpoints(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "MultiAz" => {
                             builder = builder.set_multi_az(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -314,12 +322,18 @@ where
                             );
                         }
                         "ReadReplicaIdentifiers" => {
-                            builder = builder.set_read_replica_identifiers(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_read_replica_identifiers(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "VpcSecurityGroups" => {
                             builder = builder.set_vpc_security_groups(
                                 crate::protocol_serde::shape_aws_rds_db_instance_vpc_security_groups::de_aws_rds_db_instance_vpc_security_groups(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -350,7 +364,9 @@ where
                         "AssociatedRoles" => {
                             builder = builder.set_associated_roles(
                                 crate::protocol_serde::shape_aws_rds_db_cluster_associated_roles::de_aws_rds_db_cluster_associated_roles(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -362,8 +378,11 @@ where
                             );
                         }
                         "EnabledCloudWatchLogsExports" => {
-                            builder = builder
-                                .set_enabled_cloud_watch_logs_exports(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_enabled_cloud_watch_logs_exports(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EngineMode" => {
                             builder = builder.set_engine_mode(
@@ -393,7 +412,11 @@ where
                         }
                         "DomainMemberships" => {
                             builder = builder.set_domain_memberships(
-                                crate::protocol_serde::shape_aws_rds_db_domain_memberships::de_aws_rds_db_domain_memberships(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_rds_db_domain_memberships::de_aws_rds_db_domain_memberships(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DbClusterParameterGroup" => {
@@ -412,7 +435,7 @@ where
                         }
                         "DbClusterOptionGroupMemberships" => {
                             builder = builder.set_db_cluster_option_group_memberships(
-                                    crate::protocol_serde::shape_aws_rds_db_cluster_option_group_memberships::de_aws_rds_db_cluster_option_group_memberships(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_rds_db_cluster_option_group_memberships::de_aws_rds_db_cluster_option_group_memberships(tokens, _value, depth + 1)?
                                 );
                         }
                         "DbClusterIdentifier" => {
@@ -424,7 +447,7 @@ where
                         }
                         "DbClusterMembers" => {
                             builder = builder.set_db_cluster_members(
-                                crate::protocol_serde::shape_aws_rds_db_cluster_members::de_aws_rds_db_cluster_members(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_rds_db_cluster_members::de_aws_rds_db_cluster_members(tokens, _value, depth + 1)?,
                             );
                         }
                         "IamDatabaseAuthenticationEnabled" => {

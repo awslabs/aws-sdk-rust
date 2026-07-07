@@ -2,10 +2,16 @@
 pub(crate) fn de_model_invocation_job_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ModelInvocationJobSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -85,19 +91,23 @@ where
                         "inputDataConfig" => {
                             builder = builder.set_input_data_config(
                                 crate::protocol_serde::shape_model_invocation_job_input_data_config::de_model_invocation_job_input_data_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "outputDataConfig" => {
                             builder = builder.set_output_data_config(
                                 crate::protocol_serde::shape_model_invocation_job_output_data_config::de_model_invocation_job_output_data_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "vpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "timeoutDurationInHours" => {
                             builder = builder.set_timeout_duration_in_hours(

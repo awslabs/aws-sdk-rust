@@ -120,6 +120,8 @@ pub fn de_check_if_phone_number_is_opted_out(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CheckIfPhoneNumberIsOptedOutResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CheckIfPhoneNumberIsOptedOutResponse got {start_el:?}"

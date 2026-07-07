@@ -21,10 +21,16 @@ pub fn ser_control_sort_configuration(
 pub(crate) fn de_control_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ControlSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,12 +42,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SelectableValuesSort" => {
                             builder = builder.set_selectable_values_sort(
-                                crate::protocol_serde::shape_selectable_values_sort::de_selectable_values_sort(tokens, _value)?,
+                                crate::protocol_serde::shape_selectable_values_sort::de_selectable_values_sort(tokens, _value, depth + 1)?,
                             );
                         }
                         "ControlColumnSort" => {
                             builder = builder.set_control_column_sort(
-                                crate::protocol_serde::shape_aggregation_sort_configuration::de_aggregation_sort_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_aggregation_sort_configuration::de_aggregation_sort_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

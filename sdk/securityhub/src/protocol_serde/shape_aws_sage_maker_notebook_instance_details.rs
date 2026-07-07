@@ -93,10 +93,16 @@ pub fn ser_aws_sage_maker_notebook_instance_details(
 pub(crate) fn de_aws_sage_maker_notebook_instance_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsSageMakerNotebookInstanceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -105,141 +111,145 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AcceleratorTypes" => {
-                            builder = builder.set_accelerator_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "AdditionalCodeRepositories" => {
-                            builder = builder.set_additional_code_repositories(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
-                            );
-                        }
-                        "DefaultCodeRepository" => {
-                            builder = builder.set_default_code_repository(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "DirectInternetAccess" => {
-                            builder = builder.set_direct_internet_access(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "FailureReason" => {
-                            builder = builder.set_failure_reason(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "InstanceMetadataServiceConfiguration" => {
-                            builder = builder.set_instance_metadata_service_configuration(
-                                    crate::protocol_serde::shape_aws_sage_maker_notebook_instance_metadata_service_configuration_details::de_aws_sage_maker_notebook_instance_metadata_service_configuration_details(tokens, _value)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AcceleratorTypes" => {
+                                builder = builder.set_accelerator_types(
+                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
                                 );
+                            }
+                            "AdditionalCodeRepositories" => {
+                                builder = builder.set_additional_code_repositories(
+                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "DefaultCodeRepository" => {
+                                builder = builder.set_default_code_repository(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "DirectInternetAccess" => {
+                                builder = builder.set_direct_internet_access(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "FailureReason" => {
+                                builder = builder.set_failure_reason(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "InstanceMetadataServiceConfiguration" => {
+                                builder = builder.set_instance_metadata_service_configuration(
+                                    crate::protocol_serde::shape_aws_sage_maker_notebook_instance_metadata_service_configuration_details::de_aws_sage_maker_notebook_instance_metadata_service_configuration_details(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "InstanceType" => {
+                                builder = builder.set_instance_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "KmsKeyId" => {
+                                builder = builder.set_kms_key_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NetworkInterfaceId" => {
+                                builder = builder.set_network_interface_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NotebookInstanceArn" => {
+                                builder = builder.set_notebook_instance_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NotebookInstanceLifecycleConfigName" => {
+                                builder = builder.set_notebook_instance_lifecycle_config_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NotebookInstanceName" => {
+                                builder = builder.set_notebook_instance_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NotebookInstanceStatus" => {
+                                builder = builder.set_notebook_instance_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "PlatformIdentifier" => {
+                                builder = builder.set_platform_identifier(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RoleArn" => {
+                                builder = builder.set_role_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RootAccess" => {
+                                builder = builder.set_root_access(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SecurityGroups" => {
+                                builder = builder.set_security_groups(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SubnetId" => {
+                                builder = builder.set_subnet_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Url" => {
+                                builder = builder.set_url(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "VolumeSizeInGB" => {
+                                builder = builder.set_volume_size_in_gb(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "InstanceType" => {
-                            builder = builder.set_instance_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "KmsKeyId" => {
-                            builder = builder.set_kms_key_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NetworkInterfaceId" => {
-                            builder = builder.set_network_interface_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NotebookInstanceArn" => {
-                            builder = builder.set_notebook_instance_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NotebookInstanceLifecycleConfigName" => {
-                            builder = builder.set_notebook_instance_lifecycle_config_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NotebookInstanceName" => {
-                            builder = builder.set_notebook_instance_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NotebookInstanceStatus" => {
-                            builder = builder.set_notebook_instance_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "PlatformIdentifier" => {
-                            builder = builder.set_platform_identifier(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "RoleArn" => {
-                            builder = builder.set_role_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "RootAccess" => {
-                            builder = builder.set_root_access(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SecurityGroups" => {
-                            builder = builder.set_security_groups(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "SubnetId" => {
-                            builder = builder.set_subnet_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Url" => {
-                            builder = builder.set_url(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "VolumeSizeInGB" => {
-                            builder = builder.set_volume_size_in_gb(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

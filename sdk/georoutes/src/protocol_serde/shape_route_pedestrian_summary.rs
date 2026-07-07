@@ -2,10 +2,16 @@
 pub(crate) fn de_route_pedestrian_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RoutePedestrianSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,13 +23,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Overview" => {
                             builder = builder.set_overview(
-                                crate::protocol_serde::shape_route_pedestrian_overview_summary::de_route_pedestrian_overview_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_route_pedestrian_overview_summary::de_route_pedestrian_overview_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TravelOnly" => {
                             builder = builder.set_travel_only(
                                 crate::protocol_serde::shape_route_pedestrian_travel_only_summary::de_route_pedestrian_travel_only_summary(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

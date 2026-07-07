@@ -5,6 +5,8 @@ pub(crate) fn de_access_denied_exception_json_err(
 ) -> ::std::result::Result<crate::types::error::builders::AccessDeniedExceptionBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -21,6 +23,13 @@ pub(crate) fn de_access_denied_exception_json_err(
                     builder = builder.set_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "reason" => {
+                    builder = builder.set_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::AccessDeniedExceptionReason::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_server_certificate(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ServerCertificate, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ServerCertificate::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_server_certificate(
             s if s.matches("ServerCertificateMetadata") /* ServerCertificateMetadata com.amazonaws.iam#ServerCertificate$ServerCertificateMetadata */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_server_certificate_metadata::de_server_certificate_metadata(&mut tag)
+                        crate::protocol_serde::shape_server_certificate_metadata::de_server_certificate_metadata(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_server_certificate(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ServerCertificate$Tags */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -29,7 +29,11 @@ pub fn ser_trusted_signers(
 #[allow(clippy::needless_question_mark)]
 pub fn de_trusted_signers(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TrustedSigners, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TrustedSigners::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -67,7 +71,7 @@ pub fn de_trusted_signers(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#TrustedSigners$Items */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_aws_account_number_list::de_aws_account_number_list(&mut tag)
+                        crate::protocol_serde::shape_aws_account_number_list::de_aws_account_number_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

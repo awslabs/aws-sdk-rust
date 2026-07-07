@@ -127,6 +127,8 @@ pub(crate) fn de_get_synchronization_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -134,12 +136,14 @@ pub(crate) fn de_get_synchronization_configuration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "expirationDataRules" => {
                     builder = builder.set_expiration_data_rules(
-                        crate::protocol_serde::shape_expiration_data_rule_list::de_expiration_data_rule_list(tokens, _value)?,
+                        crate::protocol_serde::shape_expiration_data_rule_list::de_expiration_data_rule_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "importDataRules" => {
                     builder = builder.set_import_data_rules(crate::protocol_serde::shape_import_data_rule_list::de_import_data_rule_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "latestVersionNumber" => {

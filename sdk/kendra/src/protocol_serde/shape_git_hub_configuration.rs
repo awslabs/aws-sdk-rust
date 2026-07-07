@@ -201,10 +201,16 @@ pub fn ser_git_hub_configuration(
 pub(crate) fn de_git_hub_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GitHubConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -215,12 +221,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SaaSConfiguration" => {
-                            builder = builder
-                                .set_saa_s_configuration(crate::protocol_serde::shape_saa_s_configuration::de_saa_s_configuration(tokens, _value)?);
+                            builder = builder.set_saa_s_configuration(crate::protocol_serde::shape_saa_s_configuration::de_saa_s_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OnPremiseConfiguration" => {
                             builder = builder.set_on_premise_configuration(
-                                crate::protocol_serde::shape_on_premise_configuration::de_on_premise_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_on_premise_configuration::de_on_premise_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "Type" => {
@@ -242,95 +251,140 @@ where
                         }
                         "GitHubDocumentCrawlProperties" => {
                             builder = builder.set_git_hub_document_crawl_properties(
-                                crate::protocol_serde::shape_git_hub_document_crawl_properties::de_git_hub_document_crawl_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_git_hub_document_crawl_properties::de_git_hub_document_crawl_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "RepositoryFilter" => {
-                            builder =
-                                builder.set_repository_filter(crate::protocol_serde::shape_repository_names::de_repository_names(tokens, _value)?);
+                            builder = builder.set_repository_filter(crate::protocol_serde::shape_repository_names::de_repository_names(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InclusionFolderNamePatterns" => {
-                            builder =
-                                builder.set_inclusion_folder_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_inclusion_folder_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InclusionFileTypePatterns" => {
-                            builder =
-                                builder.set_inclusion_file_type_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_inclusion_file_type_patterns(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InclusionFileNamePatterns" => {
-                            builder =
-                                builder.set_inclusion_file_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_inclusion_file_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExclusionFolderNamePatterns" => {
-                            builder =
-                                builder.set_exclusion_folder_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_exclusion_folder_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExclusionFileTypePatterns" => {
-                            builder =
-                                builder.set_exclusion_file_type_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_exclusion_file_type_patterns(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExclusionFileNamePatterns" => {
-                            builder =
-                                builder.set_exclusion_file_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_exclusion_file_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "VpcConfiguration" => {
                             builder = builder.set_vpc_configuration(
-                                crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "GitHubRepositoryConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_repository_configuration_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "GitHubCommitConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_commit_configuration_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "GitHubIssueDocumentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_issue_document_configuration_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "GitHubIssueCommentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_issue_comment_configuration_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "GitHubIssueAttachmentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_issue_attachment_configuration_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "GitHubPullRequestCommentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_pull_request_comment_configuration_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "GitHubPullRequestDocumentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_pull_request_document_configuration_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "GitHubPullRequestDocumentAttachmentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_pull_request_document_attachment_configuration_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

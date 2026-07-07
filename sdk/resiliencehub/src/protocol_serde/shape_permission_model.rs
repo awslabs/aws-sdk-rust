@@ -24,10 +24,16 @@ pub fn ser_permission_model(
 pub(crate) fn de_permission_model<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PermissionModel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,8 +58,11 @@ where
                             );
                         }
                         "crossAccountRoleArns" => {
-                            builder = builder
-                                .set_cross_account_role_arns(crate::protocol_serde::shape_iam_role_arn_list::de_iam_role_arn_list(tokens, _value)?);
+                            builder = builder.set_cross_account_role_arns(crate::protocol_serde::shape_iam_role_arn_list::de_iam_role_arn_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

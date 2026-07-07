@@ -47,7 +47,11 @@ pub fn ser_storage_lens_group_and_operator(
 #[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_group_and_operator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StorageLensGroupAndOperator, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensGroupAndOperator::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -55,7 +59,7 @@ pub fn de_storage_lens_group_and_operator(
             s if s.matches("MatchAnyPrefix") /* MatchAnyPrefix com.amazonaws.s3control#StorageLensGroupAndOperator$MatchAnyPrefix */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_match_any_prefix::de_match_any_prefix(&mut tag)
+                        crate::protocol_serde::shape_match_any_prefix::de_match_any_prefix(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -65,7 +69,7 @@ pub fn de_storage_lens_group_and_operator(
             s if s.matches("MatchAnySuffix") /* MatchAnySuffix com.amazonaws.s3control#StorageLensGroupAndOperator$MatchAnySuffix */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_match_any_suffix::de_match_any_suffix(&mut tag)
+                        crate::protocol_serde::shape_match_any_suffix::de_match_any_suffix(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -75,7 +79,7 @@ pub fn de_storage_lens_group_and_operator(
             s if s.matches("MatchAnyTag") /* MatchAnyTag com.amazonaws.s3control#StorageLensGroupAndOperator$MatchAnyTag */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_match_any_tag::de_match_any_tag(&mut tag)
+                        crate::protocol_serde::shape_match_any_tag::de_match_any_tag(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_storage_lens_group_and_operator(
             s if s.matches("MatchObjectAge") /* MatchObjectAge com.amazonaws.s3control#StorageLensGroupAndOperator$MatchObjectAge */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_match_object_age::de_match_object_age(&mut tag)
+                        crate::protocol_serde::shape_match_object_age::de_match_object_age(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -95,7 +99,7 @@ pub fn de_storage_lens_group_and_operator(
             s if s.matches("MatchObjectSize") /* MatchObjectSize com.amazonaws.s3control#StorageLensGroupAndOperator$MatchObjectSize */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_match_object_size::de_match_object_size(&mut tag)
+                        crate::protocol_serde::shape_match_object_size::de_match_object_size(&mut tag, depth + 1)
                         ?
                     )
                 ;

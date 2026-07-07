@@ -28,5 +28,7 @@ pub fn de_cache_policy_config(inp: &[u8]) -> std::result::Result<crate::types::C
             "invalid root, expected CachePolicyConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_cache_policy_config::de_cache_policy_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_cache_policy_config::de_cache_policy_config(&mut decoder, depth + 1)
 }

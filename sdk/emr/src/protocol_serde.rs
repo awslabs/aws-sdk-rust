@@ -75,6 +75,10 @@ pub(crate) mod shape_get_on_cluster_app_ui_presigned_url;
 
 pub(crate) mod shape_get_persistent_app_ui_presigned_url;
 
+pub(crate) mod shape_get_session;
+
+pub(crate) mod shape_get_session_endpoint;
+
 pub(crate) mod shape_get_studio_session_mapping;
 
 pub(crate) mod shape_list_bootstrap_actions;
@@ -92,6 +96,8 @@ pub(crate) mod shape_list_notebook_executions;
 pub(crate) mod shape_list_release_labels;
 
 pub(crate) mod shape_list_security_configurations;
+
+pub(crate) mod shape_list_sessions;
 
 pub(crate) mod shape_list_steps;
 
@@ -135,9 +141,13 @@ pub(crate) mod shape_set_visible_to_all_users;
 
 pub(crate) mod shape_start_notebook_execution;
 
+pub(crate) mod shape_start_session;
+
 pub(crate) mod shape_stop_notebook_execution;
 
 pub(crate) mod shape_terminate_job_flows;
+
+pub(crate) mod shape_terminate_session;
 
 pub(crate) mod shape_update_studio;
 
@@ -201,6 +211,10 @@ pub(crate) mod shape_get_on_cluster_app_ui_presigned_url_input;
 
 pub(crate) mod shape_get_persistent_app_ui_presigned_url_input;
 
+pub(crate) mod shape_get_session_endpoint_input;
+
+pub(crate) mod shape_get_session_input;
+
 pub(crate) mod shape_get_studio_session_mapping_input;
 
 pub(crate) mod shape_internal_server_error;
@@ -224,6 +238,8 @@ pub(crate) mod shape_list_notebook_executions_input;
 pub(crate) mod shape_list_release_labels_input;
 
 pub(crate) mod shape_list_security_configurations_input;
+
+pub(crate) mod shape_list_sessions_input;
 
 pub(crate) mod shape_list_steps_input;
 
@@ -267,9 +283,13 @@ pub(crate) mod shape_set_visible_to_all_users_input;
 
 pub(crate) mod shape_start_notebook_execution_input;
 
+pub(crate) mod shape_start_session_input;
+
 pub(crate) mod shape_stop_notebook_execution_input;
 
 pub(crate) mod shape_terminate_job_flows_input;
+
+pub(crate) mod shape_terminate_session_input;
 
 pub(crate) mod shape_update_studio_input;
 
@@ -349,9 +369,15 @@ pub(crate) mod shape_release_label_filter;
 
 pub(crate) mod shape_security_configuration_list;
 
+pub(crate) mod shape_session;
+
+pub(crate) mod shape_session_list;
+
 pub(crate) mod shape_session_mapping_detail;
 
 pub(crate) mod shape_session_mapping_summary_list;
+
+pub(crate) mod shape_session_monitoring_configuration;
 
 pub(crate) mod shape_simplified_application_list;
 
@@ -380,6 +406,8 @@ pub(crate) mod shape_application_list;
 pub(crate) mod shape_auto_scaling_policy_status;
 
 pub(crate) mod shape_cancel_steps_info;
+
+pub(crate) mod shape_certificate_authority;
 
 pub(crate) mod shape_cloud_watch_log_configuration;
 
@@ -447,7 +475,13 @@ pub(crate) mod shape_script_bootstrap_action_config;
 
 pub(crate) mod shape_security_configuration_summary;
 
+pub(crate) mod shape_session_cloud_watch_logging_configuration;
+
+pub(crate) mod shape_session_managed_logging_configuration;
+
 pub(crate) mod shape_session_mapping_summary;
+
+pub(crate) mod shape_session_s3_logging_configuration;
 
 pub(crate) mod shape_shrink_policy;
 

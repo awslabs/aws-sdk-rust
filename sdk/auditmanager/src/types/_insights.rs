@@ -16,11 +16,11 @@
 pub struct Insights {
     /// <p>The number of active assessments in Audit Manager.</p>
     pub active_assessments_count: ::std::option::Option<i32>,
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
     pub noncompliant_evidence_count: ::std::option::Option<i32>,
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
     pub compliant_evidence_count: ::std::option::Option<i32>,
-    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub CSPM or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
     /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
     /// </note>
     pub inconclusive_evidence_count: ::std::option::Option<i32>,
@@ -36,15 +36,15 @@ impl Insights {
     pub fn active_assessments_count(&self) -> ::std::option::Option<i32> {
         self.active_assessments_count
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
     pub fn noncompliant_evidence_count(&self) -> ::std::option::Option<i32> {
         self.noncompliant_evidence_count
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
     pub fn compliant_evidence_count(&self) -> ::std::option::Option<i32> {
         self.compliant_evidence_count
     }
-    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub CSPM or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
     /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
     /// </note>
     pub fn inconclusive_evidence_count(&self) -> ::std::option::Option<i32> {
@@ -97,49 +97,49 @@ impl InsightsBuilder {
     pub fn get_active_assessments_count(&self) -> &::std::option::Option<i32> {
         &self.active_assessments_count
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
     pub fn noncompliant_evidence_count(mut self, input: i32) -> Self {
         self.noncompliant_evidence_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
     pub fn set_noncompliant_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.noncompliant_evidence_count = input;
         self
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling.</p>
     pub fn get_noncompliant_evidence_count(&self) -> &::std::option::Option<i32> {
         &self.noncompliant_evidence_count
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
     pub fn compliant_evidence_count(mut self, input: i32) -> Self {
         self.compliant_evidence_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
     pub fn set_compliant_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_evidence_count = input;
         self
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub CSPM with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.</p>
     pub fn get_compliant_evidence_count(&self) -> &::std::option::Option<i32> {
         &self.compliant_evidence_count
     }
-    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub CSPM or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
     /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
     /// </note>
     pub fn inconclusive_evidence_count(mut self, input: i32) -> Self {
         self.inconclusive_evidence_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub CSPM or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
     /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
     /// </note>
     pub fn set_inconclusive_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inconclusive_evidence_count = input;
         self
     }
-    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub CSPM or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).</p><note>
     /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
     /// </note>
     pub fn get_inconclusive_evidence_count(&self) -> &::std::option::Option<i32> {

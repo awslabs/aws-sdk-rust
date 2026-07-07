@@ -126,6 +126,8 @@ pub(crate) fn de_get_fleet(
 ) -> ::std::result::Result<crate::operation::get_fleet::builders::GetFleetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -139,10 +141,18 @@ pub(crate) fn de_get_fleet(
                     );
                 }
                 "capabilities" => {
-                    builder = builder.set_capabilities(crate::protocol_serde::shape_fleet_capabilities::de_fleet_capabilities(tokens, _value)?);
+                    builder = builder.set_capabilities(crate::protocol_serde::shape_fleet_capabilities::de_fleet_capabilities(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "configuration" => {
-                    builder = builder.set_configuration(crate::protocol_serde::shape_fleet_configuration::de_fleet_configuration(tokens, _value)?);
+                    builder = builder.set_configuration(crate::protocol_serde::shape_fleet_configuration::de_fleet_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -186,7 +196,11 @@ pub(crate) fn de_get_fleet(
                     );
                 }
                 "hostConfiguration" => {
-                    builder = builder.set_host_configuration(crate::protocol_serde::shape_host_configuration::de_host_configuration(tokens, _value)?);
+                    builder = builder.set_host_configuration(crate::protocol_serde::shape_host_configuration::de_host_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "maxWorkerCount" => {
                     builder = builder.set_max_worker_count(

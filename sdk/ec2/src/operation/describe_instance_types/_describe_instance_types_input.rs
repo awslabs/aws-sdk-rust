@@ -127,6 +127,8 @@ pub struct DescribeInstanceTypesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, the response includes instance types that are not supported in the current Region, in addition to the supported types. Default: <code>false</code>.</p>
+    pub include_unsupported_in_region: ::std::option::Option<bool>,
 }
 impl DescribeInstanceTypesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -267,6 +269,10 @@ impl DescribeInstanceTypesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>If <code>true</code>, the response includes instance types that are not supported in the current Region, in addition to the supported types. Default: <code>false</code>.</p>
+    pub fn include_unsupported_in_region(&self) -> ::std::option::Option<bool> {
+        self.include_unsupported_in_region
+    }
 }
 impl DescribeInstanceTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceTypesInput`](crate::operation::describe_instance_types::DescribeInstanceTypesInput).
@@ -284,6 +290,7 @@ pub struct DescribeInstanceTypesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_unsupported_in_region: ::std::option::Option<bool>,
 }
 impl DescribeInstanceTypesInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -710,6 +717,20 @@ impl DescribeInstanceTypesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>If <code>true</code>, the response includes instance types that are not supported in the current Region, in addition to the supported types. Default: <code>false</code>.</p>
+    pub fn include_unsupported_in_region(mut self, input: bool) -> Self {
+        self.include_unsupported_in_region = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, the response includes instance types that are not supported in the current Region, in addition to the supported types. Default: <code>false</code>.</p>
+    pub fn set_include_unsupported_in_region(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_unsupported_in_region = input;
+        self
+    }
+    /// <p>If <code>true</code>, the response includes instance types that are not supported in the current Region, in addition to the supported types. Default: <code>false</code>.</p>
+    pub fn get_include_unsupported_in_region(&self) -> &::std::option::Option<bool> {
+        &self.include_unsupported_in_region
+    }
     /// Consumes the builder and constructs a [`DescribeInstanceTypesInput`](crate::operation::describe_instance_types::DescribeInstanceTypesInput).
     pub fn build(
         self,
@@ -721,6 +742,7 @@ impl DescribeInstanceTypesInputBuilder {
             filters: self.filters,
             max_results: self.max_results,
             next_token: self.next_token,
+            include_unsupported_in_region: self.include_unsupported_in_region,
         })
     }
 }

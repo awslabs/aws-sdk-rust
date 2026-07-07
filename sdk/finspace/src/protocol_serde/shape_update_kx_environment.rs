@@ -152,6 +152,8 @@ pub(crate) fn de_update_kx_environment(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -159,7 +161,9 @@ pub(crate) fn de_update_kx_environment(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "availabilityZoneIds" => {
                     builder = builder.set_availability_zone_ids(crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "awsAccountId" => {
@@ -177,7 +181,7 @@ pub(crate) fn de_update_kx_environment(
                 }
                 "customDNSConfiguration" => {
                     builder = builder.set_custom_dns_configuration(
-                        crate::protocol_serde::shape_custom_dns_configuration::de_custom_dns_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_custom_dns_configuration::de_custom_dns_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "dedicatedServiceAccountId" => {
@@ -252,7 +256,7 @@ pub(crate) fn de_update_kx_environment(
                 }
                 "transitGatewayConfiguration" => {
                     builder = builder.set_transit_gateway_configuration(
-                        crate::protocol_serde::shape_transit_gateway_configuration::de_transit_gateway_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_transit_gateway_configuration::de_transit_gateway_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "updateTimestamp" => {

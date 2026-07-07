@@ -179,7 +179,11 @@ pub fn ser_spot_fleet_request_config_data(
 #[allow(clippy::needless_question_mark)]
 pub fn de_spot_fleet_request_config_data(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SpotFleetRequestConfigData, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SpotFleetRequestConfigData::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -215,7 +219,7 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("spotMaintenanceStrategies") /* SpotMaintenanceStrategies com.amazonaws.ec2#SpotFleetRequestConfigData$SpotMaintenanceStrategies */ =>  {
                 let var_64 =
                     Some(
-                        crate::protocol_serde::shape_spot_maintenance_strategies::de_spot_maintenance_strategies(&mut tag)
+                        crate::protocol_serde::shape_spot_maintenance_strategies::de_spot_maintenance_strategies(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -295,7 +299,7 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("launchSpecifications") /* LaunchSpecifications com.amazonaws.ec2#SpotFleetRequestConfigData$LaunchSpecifications */ =>  {
                 let var_70 =
                     Some(
-                        crate::protocol_serde::shape_launch_specs_list::de_launch_specs_list(&mut tag)
+                        crate::protocol_serde::shape_launch_specs_list::de_launch_specs_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -305,7 +309,7 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("launchTemplateConfigs") /* LaunchTemplateConfigs com.amazonaws.ec2#SpotFleetRequestConfigData$LaunchTemplateConfigs */ =>  {
                 let var_71 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_config_list::de_launch_template_config_list(&mut tag)
+                        crate::protocol_serde::shape_launch_template_config_list::de_launch_template_config_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -470,7 +474,7 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("loadBalancersConfig") /* LoadBalancersConfig com.amazonaws.ec2#SpotFleetRequestConfigData$LoadBalancersConfig */ =>  {
                 let var_83 =
                     Some(
-                        crate::protocol_serde::shape_load_balancers_config::de_load_balancers_config(&mut tag)
+                        crate::protocol_serde::shape_load_balancers_config::de_load_balancers_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -522,7 +526,7 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("TagSpecification") /* TagSpecifications com.amazonaws.ec2#SpotFleetRequestConfigData$TagSpecifications */ =>  {
                 let var_87 =
                     Some(
-                        crate::protocol_serde::shape_tag_specification_list::de_tag_specification_list(&mut tag)
+                        crate::protocol_serde::shape_tag_specification_list::de_tag_specification_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

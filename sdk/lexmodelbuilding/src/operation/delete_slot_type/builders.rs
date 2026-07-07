@@ -27,6 +27,7 @@ impl crate::operation::delete_slot_type::builders::DeleteSlotTypeInputBuilder {
 /// <p>If you get the <code>ResourceInUseException</code> exception, the exception provides an example reference that shows the intent where the slot type is referenced. To remove the reference to the slot type, either update the intent or delete it. If you get the same exception when you attempt to delete the slot type again, repeat until the slot type has no references and the <code>DeleteSlotType</code> call is successful.</p>
 /// </note>
 /// <p>This operation requires permission for the <code>lex:DeleteSlotType</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSlotTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

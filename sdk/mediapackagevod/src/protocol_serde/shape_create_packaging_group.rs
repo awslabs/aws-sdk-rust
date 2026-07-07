@@ -155,6 +155,8 @@ pub(crate) fn de_create_packaging_group(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -168,7 +170,7 @@ pub(crate) fn de_create_packaging_group(
                     );
                 }
                 "authorization" => {
-                    builder = builder.set_authorization(crate::protocol_serde::shape_authorization::de_authorization(tokens, _value)?);
+                    builder = builder.set_authorization(crate::protocol_serde::shape_authorization::de_authorization(tokens, _value, depth + 1)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(
@@ -185,7 +187,11 @@ pub(crate) fn de_create_packaging_group(
                     );
                 }
                 "egressAccessLogs" => {
-                    builder = builder.set_egress_access_logs(crate::protocol_serde::shape_egress_access_logs::de_egress_access_logs(tokens, _value)?);
+                    builder = builder.set_egress_access_logs(crate::protocol_serde::shape_egress_access_logs::de_egress_access_logs(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -195,7 +201,7 @@ pub(crate) fn de_create_packaging_group(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

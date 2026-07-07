@@ -8,10 +8,22 @@ pub struct ResourceResult {
     pub resource_guid: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account that owns the resource.</p>
+    /// <p>The Amazon Web Services account that recorded the resource data in Security Hub.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Region where the resource is located.</p>
+    /// <p>The name of the Amazon Web Services account that's associated with the resource.</p>
+    pub account_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services Region that recorded the resource data in Security Hub.</p>
     pub region: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud provider where the resource exists. Valid values are <code>AWS</code> and <code>Azure</code>. This field is always included.</p>
+    pub resource_provider: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the cloud account that owns the resource. For Amazon Web Services resources, this is the Amazon Web Services account ID. For Azure resources, this is the Azure subscription ID.</p>
+    pub resource_owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the cloud organization that owns the resource. For Amazon Web Services resources, this is the Organizations ID. For Azure resources, this is the Azure tenant ID.</p>
+    pub resource_owner_org_id: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud partition where the resource exists. For Amazon Web Services, valid values include <code>aws</code>, <code>aws-cn</code>, and <code>aws-us-gov</code>. This field isn't returned for cloud providers that don't use partitions.</p>
+    pub resource_cloud_partition: ::std::option::Option<::std::string::String>,
+    /// <p>The native cloud region where the resource is located. For Amazon Web Services, this is an Amazon Web Services Region (for example, <code>us-east-1</code>). For Azure resources, this is the Azure region (for example, <code>westus2</code>). This field is always included.</p>
+    pub resource_region: ::std::option::Option<::std::string::String>,
     /// <p>The grouping where the resource belongs.</p>
     pub resource_category: ::std::option::Option<crate::types::ResourceCategory>,
     /// <p>The type of resource.</p>
@@ -38,13 +50,37 @@ impl ResourceResult {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The Amazon Web Services account that owns the resource.</p>
+    /// <p>The Amazon Web Services account that recorded the resource data in Security Hub.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The Amazon Web Services Region where the resource is located.</p>
+    /// <p>The name of the Amazon Web Services account that's associated with the resource.</p>
+    pub fn account_name(&self) -> ::std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>The Amazon Web Services Region that recorded the resource data in Security Hub.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
+    }
+    /// <p>The cloud provider where the resource exists. Valid values are <code>AWS</code> and <code>Azure</code>. This field is always included.</p>
+    pub fn resource_provider(&self) -> ::std::option::Option<&str> {
+        self.resource_provider.as_deref()
+    }
+    /// <p>The identifier of the cloud account that owns the resource. For Amazon Web Services resources, this is the Amazon Web Services account ID. For Azure resources, this is the Azure subscription ID.</p>
+    pub fn resource_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.resource_owner_account_id.as_deref()
+    }
+    /// <p>The identifier of the cloud organization that owns the resource. For Amazon Web Services resources, this is the Organizations ID. For Azure resources, this is the Azure tenant ID.</p>
+    pub fn resource_owner_org_id(&self) -> ::std::option::Option<&str> {
+        self.resource_owner_org_id.as_deref()
+    }
+    /// <p>The cloud partition where the resource exists. For Amazon Web Services, valid values include <code>aws</code>, <code>aws-cn</code>, and <code>aws-us-gov</code>. This field isn't returned for cloud providers that don't use partitions.</p>
+    pub fn resource_cloud_partition(&self) -> ::std::option::Option<&str> {
+        self.resource_cloud_partition.as_deref()
+    }
+    /// <p>The native cloud region where the resource is located. For Amazon Web Services, this is an Amazon Web Services Region (for example, <code>us-east-1</code>). For Azure resources, this is the Azure region (for example, <code>westus2</code>). This field is always included.</p>
+    pub fn resource_region(&self) -> ::std::option::Option<&str> {
+        self.resource_region.as_deref()
     }
     /// <p>The grouping where the resource belongs.</p>
     pub fn resource_category(&self) -> ::std::option::Option<&crate::types::ResourceCategory> {
@@ -97,7 +133,13 @@ pub struct ResourceResultBuilder {
     pub(crate) resource_guid: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_provider: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owner_org_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_cloud_partition: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_region: ::std::option::Option<::std::string::String>,
     pub(crate) resource_category: ::std::option::Option<crate::types::ResourceCategory>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
@@ -137,35 +179,119 @@ impl ResourceResultBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p>The Amazon Web Services account that owns the resource.</p>
+    /// <p>The Amazon Web Services account that recorded the resource data in Security Hub.</p>
     /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account that owns the resource.</p>
+    /// <p>The Amazon Web Services account that recorded the resource data in Security Hub.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account that owns the resource.</p>
+    /// <p>The Amazon Web Services account that recorded the resource data in Security Hub.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The Amazon Web Services Region where the resource is located.</p>
+    /// <p>The name of the Amazon Web Services account that's associated with the resource.</p>
+    pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Amazon Web Services account that's associated with the resource.</p>
+    pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_name = input;
+        self
+    }
+    /// <p>The name of the Amazon Web Services account that's associated with the resource.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
+    }
+    /// <p>The Amazon Web Services Region that recorded the resource data in Security Hub.</p>
     /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region where the resource is located.</p>
+    /// <p>The Amazon Web Services Region that recorded the resource data in Security Hub.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The Amazon Web Services Region where the resource is located.</p>
+    /// <p>The Amazon Web Services Region that recorded the resource data in Security Hub.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
+    }
+    /// <p>The cloud provider where the resource exists. Valid values are <code>AWS</code> and <code>Azure</code>. This field is always included.</p>
+    pub fn resource_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_provider = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud provider where the resource exists. Valid values are <code>AWS</code> and <code>Azure</code>. This field is always included.</p>
+    pub fn set_resource_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_provider = input;
+        self
+    }
+    /// <p>The cloud provider where the resource exists. Valid values are <code>AWS</code> and <code>Azure</code>. This field is always included.</p>
+    pub fn get_resource_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_provider
+    }
+    /// <p>The identifier of the cloud account that owns the resource. For Amazon Web Services resources, this is the Amazon Web Services account ID. For Azure resources, this is the Azure subscription ID.</p>
+    pub fn resource_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the cloud account that owns the resource. For Amazon Web Services resources, this is the Amazon Web Services account ID. For Azure resources, this is the Azure subscription ID.</p>
+    pub fn set_resource_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_owner_account_id = input;
+        self
+    }
+    /// <p>The identifier of the cloud account that owns the resource. For Amazon Web Services resources, this is the Amazon Web Services account ID. For Azure resources, this is the Azure subscription ID.</p>
+    pub fn get_resource_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_account_id
+    }
+    /// <p>The identifier of the cloud organization that owns the resource. For Amazon Web Services resources, this is the Organizations ID. For Azure resources, this is the Azure tenant ID.</p>
+    pub fn resource_owner_org_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_owner_org_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the cloud organization that owns the resource. For Amazon Web Services resources, this is the Organizations ID. For Azure resources, this is the Azure tenant ID.</p>
+    pub fn set_resource_owner_org_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_owner_org_id = input;
+        self
+    }
+    /// <p>The identifier of the cloud organization that owns the resource. For Amazon Web Services resources, this is the Organizations ID. For Azure resources, this is the Azure tenant ID.</p>
+    pub fn get_resource_owner_org_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_org_id
+    }
+    /// <p>The cloud partition where the resource exists. For Amazon Web Services, valid values include <code>aws</code>, <code>aws-cn</code>, and <code>aws-us-gov</code>. This field isn't returned for cloud providers that don't use partitions.</p>
+    pub fn resource_cloud_partition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_cloud_partition = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud partition where the resource exists. For Amazon Web Services, valid values include <code>aws</code>, <code>aws-cn</code>, and <code>aws-us-gov</code>. This field isn't returned for cloud providers that don't use partitions.</p>
+    pub fn set_resource_cloud_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_cloud_partition = input;
+        self
+    }
+    /// <p>The cloud partition where the resource exists. For Amazon Web Services, valid values include <code>aws</code>, <code>aws-cn</code>, and <code>aws-us-gov</code>. This field isn't returned for cloud providers that don't use partitions.</p>
+    pub fn get_resource_cloud_partition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_cloud_partition
+    }
+    /// <p>The native cloud region where the resource is located. For Amazon Web Services, this is an Amazon Web Services Region (for example, <code>us-east-1</code>). For Azure resources, this is the Azure region (for example, <code>westus2</code>). This field is always included.</p>
+    pub fn resource_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The native cloud region where the resource is located. For Amazon Web Services, this is an Amazon Web Services Region (for example, <code>us-east-1</code>). For Azure resources, this is the Azure region (for example, <code>westus2</code>). This field is always included.</p>
+    pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_region = input;
+        self
+    }
+    /// <p>The native cloud region where the resource is located. For Amazon Web Services, this is an Amazon Web Services Region (for example, <code>us-east-1</code>). For Azure resources, this is the Azure region (for example, <code>westus2</code>). This field is always included.</p>
+    pub fn get_resource_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_region
     }
     /// <p>The grouping where the resource belongs.</p>
     pub fn resource_category(mut self, input: crate::types::ResourceCategory) -> Self {
@@ -182,6 +308,7 @@ impl ResourceResultBuilder {
         &self.resource_category
     }
     /// <p>The type of resource.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -299,7 +426,13 @@ impl ResourceResultBuilder {
             resource_guid: self.resource_guid,
             resource_id: self.resource_id,
             account_id: self.account_id,
+            account_name: self.account_name,
             region: self.region,
+            resource_provider: self.resource_provider,
+            resource_owner_account_id: self.resource_owner_account_id,
+            resource_owner_org_id: self.resource_owner_org_id,
+            resource_cloud_partition: self.resource_cloud_partition,
+            resource_region: self.resource_region,
             resource_category: self.resource_category,
             resource_type: self.resource_type,
             resource_name: self.resource_name,

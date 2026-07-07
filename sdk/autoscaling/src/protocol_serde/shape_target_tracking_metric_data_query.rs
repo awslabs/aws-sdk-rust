@@ -43,7 +43,11 @@ pub fn ser_target_tracking_metric_data_query(
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_tracking_metric_data_query(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TargetTrackingMetricDataQuery, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetTrackingMetricDataQuery::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -77,7 +81,7 @@ pub fn de_target_tracking_metric_data_query(
             s if s.matches("MetricStat") /* MetricStat com.amazonaws.autoscaling#TargetTrackingMetricDataQuery$MetricStat */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_target_tracking_metric_stat::de_target_tracking_metric_stat(&mut tag)
+                        crate::protocol_serde::shape_target_tracking_metric_stat::de_target_tracking_metric_stat(&mut tag, depth + 1)
                         ?
                     )
                 ;

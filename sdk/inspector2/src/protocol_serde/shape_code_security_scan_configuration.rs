@@ -30,10 +30,16 @@ pub fn ser_code_security_scan_configuration(
 pub(crate) fn de_code_security_scan_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CodeSecurityScanConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,19 +51,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "periodicScanConfiguration" => {
                             builder = builder.set_periodic_scan_configuration(
-                                crate::protocol_serde::shape_periodic_scan_configuration::de_periodic_scan_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_periodic_scan_configuration::de_periodic_scan_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "continuousIntegrationScanConfiguration" => {
                             builder = builder.set_continuous_integration_scan_configuration(
                                 crate::protocol_serde::shape_continuous_integration_scan_configuration::de_continuous_integration_scan_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ruleSetCategories" => {
-                            builder = builder
-                                .set_rule_set_categories(crate::protocol_serde::shape_rule_set_categories::de_rule_set_categories(tokens, _value)?);
+                            builder = builder.set_rule_set_categories(crate::protocol_serde::shape_rule_set_categories::de_rule_set_categories(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

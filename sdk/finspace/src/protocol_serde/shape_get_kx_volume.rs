@@ -149,6 +149,8 @@ pub(crate) fn de_get_kx_volume(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -156,12 +158,16 @@ pub(crate) fn de_get_kx_volume(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "attachedClusters" => {
                     builder = builder.set_attached_clusters(crate::protocol_serde::shape_kx_attached_clusters::de_kx_attached_clusters(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "availabilityZoneIds" => {
                     builder = builder.set_availability_zone_ids(crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "azMode" => {
@@ -199,7 +205,9 @@ pub(crate) fn de_get_kx_volume(
                 }
                 "nas1Configuration" => {
                     builder = builder.set_nas1_configuration(crate::protocol_serde::shape_kx_nas1_configuration::de_kx_nas1_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {

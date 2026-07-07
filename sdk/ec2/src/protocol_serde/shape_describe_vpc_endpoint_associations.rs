@@ -49,6 +49,8 @@ pub fn de_describe_vpc_endpoint_associations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVpcEndpointAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVpcEndpointAssociationsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_vpc_endpoint_associations(
             s if s.matches("vpcEndpointAssociationSet") /* VpcEndpointAssociations com.amazonaws.ec2.synthetic#DescribeVpcEndpointAssociationsOutput$VpcEndpointAssociations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc_endpoint_association_set::de_vpc_endpoint_association_set(&mut tag)
+                        crate::protocol_serde::shape_vpc_endpoint_association_set::de_vpc_endpoint_association_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

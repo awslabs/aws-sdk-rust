@@ -159,6 +159,8 @@ pub(crate) fn de_get_rate_based_statement_managed_keys(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -167,14 +169,18 @@ pub(crate) fn de_get_rate_based_statement_managed_keys(
                 "ManagedKeysIPV4" => {
                     builder = builder.set_managed_keys_ipv4(
                         crate::protocol_serde::shape_rate_based_statement_managed_keys_ip_set::de_rate_based_statement_managed_keys_ip_set(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
                 "ManagedKeysIPV6" => {
                     builder = builder.set_managed_keys_ipv6(
                         crate::protocol_serde::shape_rate_based_statement_managed_keys_ip_set::de_rate_based_statement_managed_keys_ip_set(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

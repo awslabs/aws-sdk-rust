@@ -15,6 +15,7 @@
 ///     SourceType::AwsEc2Instance => { /* ... */ },
 ///     SourceType::AwsIotThing => { /* ... */ },
 ///     SourceType::AwsSsmManagedinstance => { /* ... */ },
+///     SourceType::AzureInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum SourceType {
     AwsIotThing,
     #[allow(missing_docs)] // documentation missing in model
     AwsSsmManagedinstance,
+    #[allow(missing_docs)] // documentation missing in model
+    AzureInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for SourceType {
             "AWS::EC2::Instance" => SourceType::AwsEc2Instance,
             "AWS::IoT::Thing" => SourceType::AwsIotThing,
             "AWS::SSM::ManagedInstance" => SourceType::AwsSsmManagedinstance,
+            "Microsoft.Compute/virtualMachines" => SourceType::AzureInstance,
             other => SourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,18 @@ impl SourceType {
             SourceType::AwsEc2Instance => "AWS::EC2::Instance",
             SourceType::AwsIotThing => "AWS::IoT::Thing",
             SourceType::AwsSsmManagedinstance => "AWS::SSM::ManagedInstance",
+            SourceType::AzureInstance => "Microsoft.Compute/virtualMachines",
             SourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS::EC2::Instance", "AWS::IoT::Thing", "AWS::SSM::ManagedInstance"]
+        &[
+            "AWS::EC2::Instance",
+            "AWS::IoT::Thing",
+            "AWS::SSM::ManagedInstance",
+            "Microsoft.Compute/virtualMachines",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SourceType {
@@ -108,6 +118,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::AwsEc2Instance => write!(f, "AWS::EC2::Instance"),
             SourceType::AwsIotThing => write!(f, "AWS::IoT::Thing"),
             SourceType::AwsSsmManagedinstance => write!(f, "AWS::SSM::ManagedInstance"),
+            SourceType::AzureInstance => write!(f, "Microsoft.Compute/virtualMachines"),
             SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -26,6 +26,12 @@ pub struct DatastoreProperties {
     pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
     /// <p>The error cause for the current data store operation.</p>
     pub error_cause: ::std::option::Option<crate::types::ErrorCause>,
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub nlp_configuration: ::std::option::Option<crate::types::NlpConfiguration>,
+    /// <p>The analytics configuration for the data store.</p>
+    pub analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
+    /// <p>The profile configuration for the data store.</p>
+    pub profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
 }
 impl DatastoreProperties {
     /// <p>The data store identifier.</p>
@@ -75,6 +81,18 @@ impl DatastoreProperties {
     pub fn error_cause(&self) -> ::std::option::Option<&crate::types::ErrorCause> {
         self.error_cause.as_ref()
     }
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub fn nlp_configuration(&self) -> ::std::option::Option<&crate::types::NlpConfiguration> {
+        self.nlp_configuration.as_ref()
+    }
+    /// <p>The analytics configuration for the data store.</p>
+    pub fn analytics_configuration(&self) -> ::std::option::Option<&crate::types::AnalyticsConfiguration> {
+        self.analytics_configuration.as_ref()
+    }
+    /// <p>The profile configuration for the data store.</p>
+    pub fn profile_configuration(&self) -> ::std::option::Option<&crate::types::ProfileConfiguration> {
+        self.profile_configuration.as_ref()
+    }
 }
 impl DatastoreProperties {
     /// Creates a new builder-style object to manufacture [`DatastoreProperties`](crate::types::DatastoreProperties).
@@ -98,6 +116,9 @@ pub struct DatastorePropertiesBuilder {
     pub(crate) preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
     pub(crate) error_cause: ::std::option::Option<crate::types::ErrorCause>,
+    pub(crate) nlp_configuration: ::std::option::Option<crate::types::NlpConfiguration>,
+    pub(crate) analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
+    pub(crate) profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
 }
 impl DatastorePropertiesBuilder {
     /// <p>The data store identifier.</p>
@@ -259,6 +280,48 @@ impl DatastorePropertiesBuilder {
     pub fn get_error_cause(&self) -> &::std::option::Option<crate::types::ErrorCause> {
         &self.error_cause
     }
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub fn nlp_configuration(mut self, input: crate::types::NlpConfiguration) -> Self {
+        self.nlp_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub fn set_nlp_configuration(mut self, input: ::std::option::Option<crate::types::NlpConfiguration>) -> Self {
+        self.nlp_configuration = input;
+        self
+    }
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub fn get_nlp_configuration(&self) -> &::std::option::Option<crate::types::NlpConfiguration> {
+        &self.nlp_configuration
+    }
+    /// <p>The analytics configuration for the data store.</p>
+    pub fn analytics_configuration(mut self, input: crate::types::AnalyticsConfiguration) -> Self {
+        self.analytics_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The analytics configuration for the data store.</p>
+    pub fn set_analytics_configuration(mut self, input: ::std::option::Option<crate::types::AnalyticsConfiguration>) -> Self {
+        self.analytics_configuration = input;
+        self
+    }
+    /// <p>The analytics configuration for the data store.</p>
+    pub fn get_analytics_configuration(&self) -> &::std::option::Option<crate::types::AnalyticsConfiguration> {
+        &self.analytics_configuration
+    }
+    /// <p>The profile configuration for the data store.</p>
+    pub fn profile_configuration(mut self, input: crate::types::ProfileConfiguration) -> Self {
+        self.profile_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The profile configuration for the data store.</p>
+    pub fn set_profile_configuration(mut self, input: ::std::option::Option<crate::types::ProfileConfiguration>) -> Self {
+        self.profile_configuration = input;
+        self
+    }
+    /// <p>The profile configuration for the data store.</p>
+    pub fn get_profile_configuration(&self) -> &::std::option::Option<crate::types::ProfileConfiguration> {
+        &self.profile_configuration
+    }
     /// Consumes the builder and constructs a [`DatastoreProperties`](crate::types::DatastoreProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`datastore_id`](crate::types::builders::DatastorePropertiesBuilder::datastore_id)
@@ -304,6 +367,9 @@ impl DatastorePropertiesBuilder {
             preload_data_config: self.preload_data_config,
             identity_provider_configuration: self.identity_provider_configuration,
             error_cause: self.error_cause,
+            nlp_configuration: self.nlp_configuration,
+            analytics_configuration: self.analytics_configuration,
+            profile_configuration: self.profile_configuration,
         })
     }
 }

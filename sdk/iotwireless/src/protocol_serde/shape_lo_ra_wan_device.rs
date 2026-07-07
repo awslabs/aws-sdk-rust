@@ -48,10 +48,16 @@ pub fn ser_lo_ra_wan_device(
 pub(crate) fn de_lo_ra_wan_device<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LoRaWanDevice>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -83,19 +89,19 @@ where
                             );
                         }
                         "OtaaV1_1" => {
-                            builder = builder.set_otaa_v1_1(crate::protocol_serde::shape_otaa_v1_1::de_otaa_v1_1(tokens, _value)?);
+                            builder = builder.set_otaa_v1_1(crate::protocol_serde::shape_otaa_v1_1::de_otaa_v1_1(tokens, _value, depth + 1)?);
                         }
                         "OtaaV1_0_x" => {
-                            builder = builder.set_otaa_v1_0_x(crate::protocol_serde::shape_otaa_v1_0_x::de_otaa_v1_0_x(tokens, _value)?);
+                            builder = builder.set_otaa_v1_0_x(crate::protocol_serde::shape_otaa_v1_0_x::de_otaa_v1_0_x(tokens, _value, depth + 1)?);
                         }
                         "AbpV1_1" => {
-                            builder = builder.set_abp_v1_1(crate::protocol_serde::shape_abp_v1_1::de_abp_v1_1(tokens, _value)?);
+                            builder = builder.set_abp_v1_1(crate::protocol_serde::shape_abp_v1_1::de_abp_v1_1(tokens, _value, depth + 1)?);
                         }
                         "AbpV1_0_x" => {
-                            builder = builder.set_abp_v1_0_x(crate::protocol_serde::shape_abp_v1_0_x::de_abp_v1_0_x(tokens, _value)?);
+                            builder = builder.set_abp_v1_0_x(crate::protocol_serde::shape_abp_v1_0_x::de_abp_v1_0_x(tokens, _value, depth + 1)?);
                         }
                         "FPorts" => {
-                            builder = builder.set_f_ports(crate::protocol_serde::shape_f_ports::de_f_ports(tokens, _value)?);
+                            builder = builder.set_f_ports(crate::protocol_serde::shape_f_ports::de_f_ports(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

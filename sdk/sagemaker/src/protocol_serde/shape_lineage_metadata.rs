@@ -2,10 +2,16 @@
 pub(crate) fn de_lineage_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LineageMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,17 +22,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ActionArns" => {
-                            builder = builder.set_action_arns(crate::protocol_serde::shape_map_string2048::de_map_string2048(tokens, _value)?);
+                            builder =
+                                builder.set_action_arns(crate::protocol_serde::shape_map_string2048::de_map_string2048(tokens, _value, depth + 1)?);
                         }
                         "ArtifactArns" => {
-                            builder = builder.set_artifact_arns(crate::protocol_serde::shape_map_string2048::de_map_string2048(tokens, _value)?);
+                            builder =
+                                builder.set_artifact_arns(crate::protocol_serde::shape_map_string2048::de_map_string2048(tokens, _value, depth + 1)?);
                         }
                         "ContextArns" => {
-                            builder = builder.set_context_arns(crate::protocol_serde::shape_map_string2048::de_map_string2048(tokens, _value)?);
+                            builder =
+                                builder.set_context_arns(crate::protocol_serde::shape_map_string2048::de_map_string2048(tokens, _value, depth + 1)?);
                         }
                         "Associations" => {
                             builder = builder.set_associations(crate::protocol_serde::shape_association_info_list::de_association_info_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

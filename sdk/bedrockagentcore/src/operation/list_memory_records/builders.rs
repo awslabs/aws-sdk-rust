@@ -129,31 +129,31 @@ impl ListMemoryRecordsFluentBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }
-    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
+    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix. Either <code>namespace</code> or <code>namespacePath</code> is required.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
+    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix. Either <code>namespace</code> or <code>namespacePath</code> is required.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
+    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix. Either <code>namespace</code> or <code>namespacePath</code> is required.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
-    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy. Either <code>namespace</code> or <code>namespacePath</code> is required.</p>
     pub fn namespace_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_path(input.into());
         self
     }
-    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy. Either <code>namespace</code> or <code>namespacePath</code> is required.</p>
     pub fn set_namespace_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_path(input);
         self
     }
-    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy. Either <code>namespace</code> or <code>namespacePath</code> is required.</p>
     pub fn get_namespace_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace_path()
     }
@@ -198,5 +198,24 @@ impl ListMemoryRecordsFluentBuilder {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    ///
+    /// Appends an item to `metadataFilters`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_filters`](Self::set_metadata_filters).
+    ///
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn metadata_filters(mut self, input: crate::types::MemoryMetadataFilterExpression) -> Self {
+        self.inner = self.inner.metadata_filters(input);
+        self
+    }
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn set_metadata_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>>) -> Self {
+        self.inner = self.inner.set_metadata_filters(input);
+        self
+    }
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn get_metadata_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>> {
+        self.inner.get_metadata_filters()
     }
 }

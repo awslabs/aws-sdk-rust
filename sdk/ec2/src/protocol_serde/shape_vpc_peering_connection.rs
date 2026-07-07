@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc_peering_connection(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VpcPeeringConnection, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VpcPeeringConnection::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_vpc_peering_connection(
             s if s.matches("accepterVpcInfo") /* AccepterVpcInfo com.amazonaws.ec2#VpcPeeringConnection$AccepterVpcInfo */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc_peering_connection_vpc_info::de_vpc_peering_connection_vpc_info(&mut tag)
+                        crate::protocol_serde::shape_vpc_peering_connection_vpc_info::de_vpc_peering_connection_vpc_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -34,7 +38,7 @@ pub fn de_vpc_peering_connection(
             s if s.matches("requesterVpcInfo") /* RequesterVpcInfo com.amazonaws.ec2#VpcPeeringConnection$RequesterVpcInfo */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_vpc_peering_connection_vpc_info::de_vpc_peering_connection_vpc_info(&mut tag)
+                        crate::protocol_serde::shape_vpc_peering_connection_vpc_info::de_vpc_peering_connection_vpc_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -44,7 +48,7 @@ pub fn de_vpc_peering_connection(
             s if s.matches("status") /* Status com.amazonaws.ec2#VpcPeeringConnection$Status */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_vpc_peering_connection_state_reason::de_vpc_peering_connection_state_reason(&mut tag)
+                        crate::protocol_serde::shape_vpc_peering_connection_state_reason::de_vpc_peering_connection_state_reason(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -54,7 +58,7 @@ pub fn de_vpc_peering_connection(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VpcPeeringConnection$Tags */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

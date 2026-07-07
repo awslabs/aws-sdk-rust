@@ -2,10 +2,16 @@
 pub(crate) fn de_assessment_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AssessmentMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,17 +58,21 @@ where
                         }
                         "assessmentReportsDestination" => {
                             builder = builder.set_assessment_reports_destination(
-                                crate::protocol_serde::shape_assessment_reports_destination::de_assessment_reports_destination(tokens, _value)?,
+                                crate::protocol_serde::shape_assessment_reports_destination::de_assessment_reports_destination(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "scope" => {
-                            builder = builder.set_scope(crate::protocol_serde::shape_scope::de_scope(tokens, _value)?);
+                            builder = builder.set_scope(crate::protocol_serde::shape_scope::de_scope(tokens, _value, depth + 1)?);
                         }
                         "roles" => {
-                            builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens, _value)?);
+                            builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens, _value, depth + 1)?);
                         }
                         "delegations" => {
-                            builder = builder.set_delegations(crate::protocol_serde::shape_delegations::de_delegations(tokens, _value)?);
+                            builder = builder.set_delegations(crate::protocol_serde::shape_delegations::de_delegations(tokens, _value, depth + 1)?);
                         }
                         "creationTime" => {
                             builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

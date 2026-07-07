@@ -9,6 +9,8 @@ pub struct ListScheduledQueriesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
+    /// <p>Filter scheduled queries by schedule type. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified, scheduled queries of all schedule types are returned.</p>
+    pub schedule_type: ::std::option::Option<crate::types::ScheduleType>,
 }
 impl ListScheduledQueriesInput {
     /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
@@ -22,6 +24,10 @@ impl ListScheduledQueriesInput {
     /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
+    }
+    /// <p>Filter scheduled queries by schedule type. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified, scheduled queries of all schedule types are returned.</p>
+    pub fn schedule_type(&self) -> ::std::option::Option<&crate::types::ScheduleType> {
+        self.schedule_type.as_ref()
     }
 }
 impl ListScheduledQueriesInput {
@@ -38,6 +44,7 @@ pub struct ListScheduledQueriesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ScheduledQueryState>,
+    pub(crate) schedule_type: ::std::option::Option<crate::types::ScheduleType>,
 }
 impl ListScheduledQueriesInputBuilder {
     /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
@@ -82,6 +89,20 @@ impl ListScheduledQueriesInputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }
+    /// <p>Filter scheduled queries by schedule type. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified, scheduled queries of all schedule types are returned.</p>
+    pub fn schedule_type(mut self, input: crate::types::ScheduleType) -> Self {
+        self.schedule_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter scheduled queries by schedule type. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified, scheduled queries of all schedule types are returned.</p>
+    pub fn set_schedule_type(mut self, input: ::std::option::Option<crate::types::ScheduleType>) -> Self {
+        self.schedule_type = input;
+        self
+    }
+    /// <p>Filter scheduled queries by schedule type. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified, scheduled queries of all schedule types are returned.</p>
+    pub fn get_schedule_type(&self) -> &::std::option::Option<crate::types::ScheduleType> {
+        &self.schedule_type
+    }
     /// Consumes the builder and constructs a [`ListScheduledQueriesInput`](crate::operation::list_scheduled_queries::ListScheduledQueriesInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl ListScheduledQueriesInputBuilder {
             max_results: self.max_results,
             next_token: self.next_token,
             state: self.state,
+            schedule_type: self.schedule_type,
         })
     }
 }

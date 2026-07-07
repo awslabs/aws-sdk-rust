@@ -2,10 +2,16 @@
 pub(crate) fn de_resource_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResourceResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,8 +42,50 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AccountName" => {
+                            builder = builder.set_account_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Region" => {
                             builder = builder.set_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResourceProvider" => {
+                            builder = builder.set_resource_provider(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResourceOwnerAccountId" => {
+                            builder = builder.set_resource_owner_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResourceOwnerOrgId" => {
+                            builder = builder.set_resource_owner_org_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResourceCloudPartition" => {
+                            builder = builder.set_resource_cloud_partition(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResourceRegion" => {
+                            builder = builder.set_resource_region(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -80,12 +128,19 @@ where
                         }
                         "FindingsSummary" => {
                             builder = builder.set_findings_summary(
-                                crate::protocol_serde::shape_resource_findings_summary_list::de_resource_findings_summary_list(tokens, _value)?,
+                                crate::protocol_serde::shape_resource_findings_summary_list::de_resource_findings_summary_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ResourceTags" => {
-                            builder =
-                                builder.set_resource_tags(crate::protocol_serde::shape_resource_tag_list::de_resource_tag_list(tokens, _value)?);
+                            builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tag_list::de_resource_tag_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ResourceConfig" => {
                             builder = builder.set_resource_config(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));

@@ -396,6 +396,15 @@ pub(crate) fn availability_zone_mapping_correct_errors(
     builder
 }
 
+pub(crate) fn container_monitoring_configuration_correct_errors(
+    mut builder: crate::types::builders::ContainerMonitoringConfigurationBuilder,
+) -> crate::types::builders::ContainerMonitoringConfigurationBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn subnet_mapping_correct_errors(
     mut builder: crate::types::builders::SubnetMappingBuilder,
 ) -> crate::types::builders::SubnetMappingBuilder {
@@ -491,6 +500,18 @@ pub(crate) fn stateless_rules_and_custom_actions_correct_errors(
 ) -> crate::types::builders::StatelessRulesAndCustomActionsBuilder {
     if builder.stateless_rules.is_none() {
         builder.stateless_rules = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_attribute_correct_errors(
+    mut builder: crate::types::builders::ContainerAttributeBuilder,
+) -> crate::types::builders::ContainerAttributeBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

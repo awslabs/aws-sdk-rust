@@ -24,7 +24,11 @@ pub fn ser_server_side_encryption_rule(
 #[allow(clippy::needless_question_mark)]
 pub fn de_server_side_encryption_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ServerSideEncryptionRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ServerSideEncryptionRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -32,7 +36,7 @@ pub fn de_server_side_encryption_rule(
             s if s.matches("ApplyServerSideEncryptionByDefault") /* ApplyServerSideEncryptionByDefault com.amazonaws.s3#ServerSideEncryptionRule$ApplyServerSideEncryptionByDefault */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_server_side_encryption_by_default::de_server_side_encryption_by_default(&mut tag)
+                        crate::protocol_serde::shape_server_side_encryption_by_default::de_server_side_encryption_by_default(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -57,7 +61,7 @@ pub fn de_server_side_encryption_rule(
             s if s.matches("BlockedEncryptionTypes") /* BlockedEncryptionTypes com.amazonaws.s3#ServerSideEncryptionRule$BlockedEncryptionTypes */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_blocked_encryption_types::de_blocked_encryption_types(&mut tag)
+                        crate::protocol_serde::shape_blocked_encryption_types::de_blocked_encryption_types(&mut tag, depth + 1)
                         ?
                     )
                 ;

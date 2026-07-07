@@ -95,10 +95,11 @@ pub(crate) fn de_get_plan_evaluation_status(
     crate::operation::get_plan_evaluation_status::builders::GetPlanEvaluationStatusOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_plan_evaluation_status::builders::GetPlanEvaluationStatusOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_plan_evaluation_status::builders::GetPlanEvaluationStatusOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -118,7 +119,7 @@ pub(crate) fn de_get_plan_evaluation_status(
                 Ok(builder.set_evaluation_state(Some(decoder.string().map(|s| crate::types::EvaluationStatus::from(s.as_ref()))?)))
             })?,
             "warnings" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_warnings(Some(crate::protocol_serde::shape_plan_warnings::de_plan_warnings(decoder)?)))
+                Ok(builder.set_warnings(Some(crate::protocol_serde::shape_plan_warnings::de_plan_warnings(decoder, depth + 1)?)))
             })?,
             "nextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
@@ -132,6 +133,8 @@ pub(crate) fn de_get_plan_evaluation_status(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -141,13 +144,13 @@ pub(crate) fn de_get_plan_evaluation_status(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

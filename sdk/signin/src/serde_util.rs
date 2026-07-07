@@ -59,6 +59,117 @@ pub(crate) fn create_o_auth2_token_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::OAuth2ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_console_authorization_configuration_output_output_correct_errors(
+    mut builder: crate::operation::delete_console_authorization_configuration::builders::DeleteConsoleAuthorizationConfigurationOutputBuilder,
+) -> crate::operation::delete_console_authorization_configuration::builders::DeleteConsoleAuthorizationConfigurationOutputBuilder {
+    if builder.target_id.is_none() {
+        builder.target_id = Some(Default::default())
+    }
+    if builder.scope.is_none() {
+        builder.scope = Some(Default::default())
+    }
+    if builder.console_authorization_enabled.is_none() {
+        builder.console_authorization_enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_console_authorization_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_console_authorization_configuration::builders::GetConsoleAuthorizationConfigurationOutputBuilder,
+) -> crate::operation::get_console_authorization_configuration::builders::GetConsoleAuthorizationConfigurationOutputBuilder {
+    if builder.target_id.is_none() {
+        builder.target_id = Some(Default::default())
+    }
+    if builder.scope.is_none() {
+        builder.scope = Some(Default::default())
+    }
+    if builder.console_authorization_enabled.is_none() {
+        builder.console_authorization_enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder,
+) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    if builder.signin_resource_based_policy.is_none() {
+        builder.signin_resource_based_policy = {
+            let builder = crate::types::builders::SigninResourceBasedPolicyBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn list_resource_permission_statements_output_output_correct_errors(
+    mut builder: crate::operation::list_resource_permission_statements::builders::ListResourcePermissionStatementsOutputBuilder,
+) -> crate::operation::list_resource_permission_statements::builders::ListResourcePermissionStatementsOutputBuilder {
+    if builder.permission_statements.is_none() {
+        builder.permission_statements = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::OAuth2ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_console_authorization_configuration_output_output_correct_errors(
+    mut builder: crate::operation::put_console_authorization_configuration::builders::PutConsoleAuthorizationConfigurationOutputBuilder,
+) -> crate::operation::put_console_authorization_configuration::builders::PutConsoleAuthorizationConfigurationOutputBuilder {
+    if builder.target_id.is_none() {
+        builder.target_id = Some(Default::default())
+    }
+    if builder.scope.is_none() {
+        builder.scope = Some(Default::default())
+    }
+    if builder.console_authorization_enabled.is_none() {
+        builder.console_authorization_enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::OAuth2ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_resource_permission_statement_output_output_correct_errors(
+    mut builder: crate::operation::put_resource_permission_statement::builders::PutResourcePermissionStatementOutputBuilder,
+) -> crate::operation::put_resource_permission_statement::builders::PutResourcePermissionStatementOutputBuilder {
+    if builder.statement_id.is_none() {
+        builder.statement_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_o_auth2_token_response_body_correct_errors(
     mut builder: crate::types::builders::CreateOAuth2TokenResponseBodyBuilder,
 ) -> crate::types::builders::CreateOAuth2TokenResponseBodyBuilder {
@@ -89,6 +200,15 @@ pub(crate) fn access_token_correct_errors(mut builder: crate::types::builders::A
     }
     if builder.session_token.is_none() {
         builder.session_token = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn permission_statement_summary_correct_errors(
+    mut builder: crate::types::builders::PermissionStatementSummaryBuilder,
+) -> crate::types::builders::PermissionStatementSummaryBuilder {
+    if builder.sid.is_none() {
+        builder.sid = Some(Default::default())
     }
     builder
 }

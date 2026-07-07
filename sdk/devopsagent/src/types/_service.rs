@@ -23,8 +23,11 @@
 ///     Service::McpServerDatadog => { /* ... */ },
 ///     Service::McpServerGrafana => { /* ... */ },
 ///     Service::McpServerNewrelic => { /* ... */ },
+///     Service::McpServerSigv4 => { /* ... */ },
 ///     Service::McpServerSplunk => { /* ... */ },
 ///     Service::Pagerduty => { /* ... */ },
+///     Service::RemoteAgent => { /* ... */ },
+///     Service::RemoteAgentSigv4 => { /* ... */ },
 ///     Service::Servicenow => { /* ... */ },
 ///     Service::Slack => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,7 +52,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Enumeration of all supported service types, combining OAuth 3-legged, client credentials, and simple token authentication methods.
+/// <p>Enumeration of all supported service types, combining OAuth 3-legged, client credentials, and simple token authentication methods.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -59,7 +62,7 @@ pub enum Service {
     Azure,
     #[allow(missing_docs)] // documentation missing in model
     AzureDevops,
-    /// Azure Service with AWS Outbound Identity Federation.
+    /// <p>Azure Service with AWS Outbound Identity Federation.</p>
     AzureIdentity,
     #[allow(missing_docs)] // documentation missing in model
     Dynatrace,
@@ -69,18 +72,24 @@ pub enum Service {
     Github,
     #[allow(missing_docs)] // documentation missing in model
     Gitlab,
-    /// Model Context Protocol server.
+    /// <p>Model Context Protocol server.</p>
     McpServer,
-    /// Datadog MCP server.
+    /// <p>Datadog MCP server.</p>
     McpServerDatadog,
-    /// Grafana MCP server.
+    /// <p>Grafana MCP server.</p>
     McpServerGrafana,
-    /// NewRelic MCP server.
+    /// <p>NewRelic MCP server.</p>
     McpServerNewrelic,
-    /// Splunk MCP server.
+    /// <p>SigV4-authenticated MCP server.</p>
+    McpServerSigv4,
+    /// <p>Splunk MCP server.</p>
     McpServerSplunk,
     #[allow(missing_docs)] // documentation missing in model
     Pagerduty,
+    /// <p>Remote A2A agent with token-based authentication (API key or OAuth).</p>
+    RemoteAgent,
+    /// <p>Remote A2A agent with SigV4 authentication.</p>
+    RemoteAgentSigv4,
     #[allow(missing_docs)] // documentation missing in model
     Servicenow,
     #[allow(missing_docs)] // documentation missing in model
@@ -103,8 +112,11 @@ impl ::std::convert::From<&str> for Service {
             "mcpserverdatadog" => Service::McpServerDatadog,
             "mcpservergrafana" => Service::McpServerGrafana,
             "mcpservernewrelic" => Service::McpServerNewrelic,
+            "mcpserversigv4" => Service::McpServerSigv4,
             "mcpserversplunk" => Service::McpServerSplunk,
             "pagerduty" => Service::Pagerduty,
+            "remoteagent" => Service::RemoteAgent,
+            "remoteagentsigv4" => Service::RemoteAgentSigv4,
             "servicenow" => Service::Servicenow,
             "slack" => Service::Slack,
             other => Service::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -133,8 +145,11 @@ impl Service {
             Service::McpServerDatadog => "mcpserverdatadog",
             Service::McpServerGrafana => "mcpservergrafana",
             Service::McpServerNewrelic => "mcpservernewrelic",
+            Service::McpServerSigv4 => "mcpserversigv4",
             Service::McpServerSplunk => "mcpserversplunk",
             Service::Pagerduty => "pagerduty",
+            Service::RemoteAgent => "remoteagent",
+            Service::RemoteAgentSigv4 => "remoteagentsigv4",
             Service::Servicenow => "servicenow",
             Service::Slack => "slack",
             Service::Unknown(value) => value.as_str(),
@@ -154,8 +169,11 @@ impl Service {
             "mcpserverdatadog",
             "mcpservergrafana",
             "mcpservernewrelic",
+            "mcpserversigv4",
             "mcpserversplunk",
             "pagerduty",
+            "remoteagent",
+            "remoteagentsigv4",
             "servicenow",
             "slack",
         ]
@@ -192,8 +210,11 @@ impl ::std::fmt::Display for Service {
             Service::McpServerDatadog => write!(f, "mcpserverdatadog"),
             Service::McpServerGrafana => write!(f, "mcpservergrafana"),
             Service::McpServerNewrelic => write!(f, "mcpservernewrelic"),
+            Service::McpServerSigv4 => write!(f, "mcpserversigv4"),
             Service::McpServerSplunk => write!(f, "mcpserversplunk"),
             Service::Pagerduty => write!(f, "pagerduty"),
+            Service::RemoteAgent => write!(f, "remoteagent"),
+            Service::RemoteAgentSigv4 => write!(f, "remoteagentsigv4"),
             Service::Servicenow => write!(f, "servicenow"),
             Service::Slack => write!(f, "slack"),
             Service::Unknown(value) => write!(f, "{value}"),

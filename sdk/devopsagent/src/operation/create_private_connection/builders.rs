@@ -22,7 +22,7 @@ impl crate::operation::create_private_connection::builders::CreatePrivateConnect
 }
 /// Fluent builder constructing a request to `CreatePrivateConnection`.
 ///
-/// Creates a Private Connection to a target resource.
+/// <p>Creates a Private Connection to a target resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePrivateConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreatePrivateConnectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique name for this Private Connection within the account.
+    /// <p>Unique name for this Private Connection within the account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// Unique name for this Private Connection within the account.
+    /// <p>Unique name for this Private Connection within the account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// Unique name for this Private Connection within the account.
+    /// <p>Unique name for this Private Connection within the account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// Private Connection mode configuration.
+    /// <p>Private Connection mode configuration.</p>
     pub fn mode(mut self, input: crate::types::PrivateConnectionMode) -> Self {
         self.inner = self.inner.mode(input);
         self
     }
-    /// Private Connection mode configuration.
+    /// <p>Private Connection mode configuration.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PrivateConnectionMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
-    /// Private Connection mode configuration.
+    /// <p>Private Connection mode configuration.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::PrivateConnectionMode> {
         self.inner.get_mode()
     }
@@ -141,17 +141,17 @@ impl CreatePrivateConnectionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags to add to the Private Connection at creation time.
+    /// <p>Tags to add to the Private Connection at creation time.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Tags to add to the Private Connection at creation time.
+    /// <p>Tags to add to the Private Connection at creation time.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Tags to add to the Private Connection at creation time.
+    /// <p>Tags to add to the Private Connection at creation time.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

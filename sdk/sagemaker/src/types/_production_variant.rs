@@ -12,6 +12,11 @@ pub struct ProductionVariant {
     pub initial_instance_count: ::std::option::Option<i32>,
     /// <p>The ML compute instance type.</p>
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
+    /// <p>A list of instance pools for the production variant. Each instance pool specifies an instance type and its priority for provisioning. Use instance pools to configure heterogeneous endpoints that deploy models across multiple instance types.</p>
+    pub instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstancePool>>,
+    /// <p>The timeout value, in seconds, for provisioning instances for the production variant. When SageMaker encounters an insufficient capacity error while provisioning instances, it retries with the next instance pool (if configured) or waits until the timeout expires. This timeout applies only to capacity provisioning and does not include the time for model download or container startup.</p>
+    /// <p>Valid values: 300 to 3600.</p>
+    pub variant_instance_provision_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>Determines initial traffic distribution among all of the models that you specify in the endpoint configuration. The traffic to a production variant is determined by the ratio of the <code>VariantWeight</code> to the sum of all <code>VariantWeight</code> values across all ProductionVariants. If unspecified, it defaults to 1.0.</p>
     pub initial_variant_weight: ::std::option::Option<f32>,
     /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
@@ -127,6 +132,17 @@ impl ProductionVariant {
     /// <p>The ML compute instance type.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
+    }
+    /// <p>A list of instance pools for the production variant. Each instance pool specifies an instance type and its priority for provisioning. Use instance pools to configure heterogeneous endpoints that deploy models across multiple instance types.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_pools.is_none()`.
+    pub fn instance_pools(&self) -> &[crate::types::InstancePool] {
+        self.instance_pools.as_deref().unwrap_or_default()
+    }
+    /// <p>The timeout value, in seconds, for provisioning instances for the production variant. When SageMaker encounters an insufficient capacity error while provisioning instances, it retries with the next instance pool (if configured) or waits until the timeout expires. This timeout applies only to capacity provisioning and does not include the time for model download or container startup.</p>
+    /// <p>Valid values: 300 to 3600.</p>
+    pub fn variant_instance_provision_timeout_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.variant_instance_provision_timeout_in_seconds
     }
     /// <p>Determines initial traffic distribution among all of the models that you specify in the endpoint configuration. The traffic to a production variant is determined by the ratio of the <code>VariantWeight</code> to the sum of all <code>VariantWeight</code> values across all ProductionVariants. If unspecified, it defaults to 1.0.</p>
     pub fn initial_variant_weight(&self) -> ::std::option::Option<f32> {
@@ -266,6 +282,8 @@ pub struct ProductionVariantBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) initial_instance_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
+    pub(crate) instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstancePool>>,
+    pub(crate) variant_instance_provision_timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) initial_variant_weight: ::std::option::Option<f32>,
     pub(crate) accelerator_type: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
     pub(crate) core_dump_config: ::std::option::Option<crate::types::ProductionVariantCoreDumpConfig>,
@@ -336,6 +354,43 @@ impl ProductionVariantBuilder {
     /// <p>The ML compute instance type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
         &self.instance_type
+    }
+    /// Appends an item to `instance_pools`.
+    ///
+    /// To override the contents of this collection use [`set_instance_pools`](Self::set_instance_pools).
+    ///
+    /// <p>A list of instance pools for the production variant. Each instance pool specifies an instance type and its priority for provisioning. Use instance pools to configure heterogeneous endpoints that deploy models across multiple instance types.</p>
+    pub fn instance_pools(mut self, input: crate::types::InstancePool) -> Self {
+        let mut v = self.instance_pools.unwrap_or_default();
+        v.push(input);
+        self.instance_pools = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of instance pools for the production variant. Each instance pool specifies an instance type and its priority for provisioning. Use instance pools to configure heterogeneous endpoints that deploy models across multiple instance types.</p>
+    pub fn set_instance_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePool>>) -> Self {
+        self.instance_pools = input;
+        self
+    }
+    /// <p>A list of instance pools for the production variant. Each instance pool specifies an instance type and its priority for provisioning. Use instance pools to configure heterogeneous endpoints that deploy models across multiple instance types.</p>
+    pub fn get_instance_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePool>> {
+        &self.instance_pools
+    }
+    /// <p>The timeout value, in seconds, for provisioning instances for the production variant. When SageMaker encounters an insufficient capacity error while provisioning instances, it retries with the next instance pool (if configured) or waits until the timeout expires. This timeout applies only to capacity provisioning and does not include the time for model download or container startup.</p>
+    /// <p>Valid values: 300 to 3600.</p>
+    pub fn variant_instance_provision_timeout_in_seconds(mut self, input: i32) -> Self {
+        self.variant_instance_provision_timeout_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timeout value, in seconds, for provisioning instances for the production variant. When SageMaker encounters an insufficient capacity error while provisioning instances, it retries with the next instance pool (if configured) or waits until the timeout expires. This timeout applies only to capacity provisioning and does not include the time for model download or container startup.</p>
+    /// <p>Valid values: 300 to 3600.</p>
+    pub fn set_variant_instance_provision_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.variant_instance_provision_timeout_in_seconds = input;
+        self
+    }
+    /// <p>The timeout value, in seconds, for provisioning instances for the production variant. When SageMaker encounters an insufficient capacity error while provisioning instances, it retries with the next instance pool (if configured) or waits until the timeout expires. This timeout applies only to capacity provisioning and does not include the time for model download or container startup.</p>
+    /// <p>Valid values: 300 to 3600.</p>
+    pub fn get_variant_instance_provision_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.variant_instance_provision_timeout_in_seconds
     }
     /// <p>Determines initial traffic distribution among all of the models that you specify in the endpoint configuration. The traffic to a production variant is determined by the ratio of the <code>VariantWeight</code> to the sum of all <code>VariantWeight</code> values across all ProductionVariants. If unspecified, it defaults to 1.0.</p>
     pub fn initial_variant_weight(mut self, input: f32) -> Self {
@@ -734,6 +789,8 @@ impl ProductionVariantBuilder {
             model_name: self.model_name,
             initial_instance_count: self.initial_instance_count,
             instance_type: self.instance_type,
+            instance_pools: self.instance_pools,
+            variant_instance_provision_timeout_in_seconds: self.variant_instance_provision_timeout_in_seconds,
             initial_variant_weight: self.initial_variant_weight,
             accelerator_type: self.accelerator_type,
             core_dump_config: self.core_dump_config,

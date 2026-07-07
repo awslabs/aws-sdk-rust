@@ -77,6 +77,8 @@ pub fn de_describe_db_cluster_parameter_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDBClusterParameterGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDBClusterParameterGroupsResponse got {start_el:?}"
@@ -107,7 +109,7 @@ pub fn de_describe_db_cluster_parameter_groups(
             s if s.matches("DBClusterParameterGroups") /* DBClusterParameterGroups com.amazonaws.neptune.synthetic#DescribeDBClusterParameterGroupsOutput$DBClusterParameterGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_db_cluster_parameter_group_list::de_db_cluster_parameter_group_list(&mut tag)
+                        crate::protocol_serde::shape_db_cluster_parameter_group_list::de_db_cluster_parameter_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -79,6 +79,16 @@ pub(crate) fn reflens_list_security_configurations_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_sessions_output_output_next_token(
+    input: &crate::operation::list_sessions::ListSessionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_steps_output_output_marker(
     input: &crate::operation::list_steps::ListStepsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -165,6 +175,13 @@ pub(crate) fn lens_list_security_configurations_output_output_security_configura
     input: crate::operation::list_security_configurations::ListSecurityConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>> {
     let input = input.security_configurations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sessions_output_output_sessions(
+    input: crate::operation::list_sessions::ListSessionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Session>> {
+    let input = input.sessions?;
     ::std::option::Option::Some(input)
 }
 

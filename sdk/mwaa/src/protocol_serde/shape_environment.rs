@@ -2,10 +2,16 @@
 pub(crate) fn de_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Environment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -135,7 +141,11 @@ where
                         }
                         "AirflowConfigurationOptions" => {
                             builder = builder.set_airflow_configuration_options(
-                                crate::protocol_serde::shape_airflow_configuration_options::de_airflow_configuration_options(tokens, _value)?,
+                                crate::protocol_serde::shape_airflow_configuration_options::de_airflow_configuration_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "EnvironmentClass" => {
@@ -154,16 +164,16 @@ where
                         }
                         "NetworkConfiguration" => {
                             builder = builder.set_network_configuration(
-                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "LoggingConfiguration" => {
                             builder = builder.set_logging_configuration(
-                                crate::protocol_serde::shape_logging_configuration::de_logging_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_logging_configuration::de_logging_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "LastUpdate" => {
-                            builder = builder.set_last_update(crate::protocol_serde::shape_last_update::de_last_update(tokens, _value)?);
+                            builder = builder.set_last_update(crate::protocol_serde::shape_last_update::de_last_update(tokens, _value, depth + 1)?);
                         }
                         "WeeklyMaintenanceWindowStart" => {
                             builder = builder.set_weekly_maintenance_window_start(
@@ -173,7 +183,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "WebserverAccessMode" => {
                             builder = builder.set_webserver_access_mode(

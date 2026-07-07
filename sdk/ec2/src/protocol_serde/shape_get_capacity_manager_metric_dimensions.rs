@@ -51,6 +51,8 @@ pub fn de_get_capacity_manager_metric_dimensions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetCapacityManagerMetricDimensionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetCapacityManagerMetricDimensionsResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_get_capacity_manager_metric_dimensions(
             s if s.matches("metricDimensionResultSet") /* MetricDimensionResults com.amazonaws.ec2.synthetic#GetCapacityManagerMetricDimensionsOutput$MetricDimensionResults */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_metric_dimension_result_set::de_metric_dimension_result_set(&mut tag)
+                        crate::protocol_serde::shape_metric_dimension_result_set::de_metric_dimension_result_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

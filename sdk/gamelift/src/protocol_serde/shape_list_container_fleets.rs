@@ -121,17 +121,23 @@ pub(crate) fn de_list_container_fleets(
     crate::operation::list_container_fleets::builders::ListContainerFleetsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_container_fleets::builders::ListContainerFleetsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_container_fleets::builders::ListContainerFleetsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "ContainerFleets" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_container_fleets(Some(crate::protocol_serde::shape_container_fleet_list::de_container_fleet_list(decoder)?)))
+                Ok(
+                    builder.set_container_fleets(Some(crate::protocol_serde::shape_container_fleet_list::de_container_fleet_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "NextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
@@ -145,6 +151,8 @@ pub(crate) fn de_list_container_fleets(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -154,13 +162,13 @@ pub(crate) fn de_list_container_fleets(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

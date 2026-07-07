@@ -2,10 +2,16 @@
 pub(crate) fn de_outpost_config_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OutpostConfigResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "outpostArns" => {
-                            builder = builder.set_outpost_arns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_outpost_arns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "controlPlaneInstanceType" => {
                             builder = builder.set_control_plane_instance_type(
@@ -27,8 +33,26 @@ where
                         }
                         "controlPlanePlacement" => {
                             builder = builder.set_control_plane_placement(
-                                crate::protocol_serde::shape_control_plane_placement_response::de_control_plane_placement_response(tokens, _value)?,
+                                crate::protocol_serde::shape_control_plane_placement_response::de_control_plane_placement_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
+                        }
+                        "etcdInstanceType" => {
+                            builder = builder.set_etcd_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "etcdPlacement" => {
+                            builder = builder.set_etcd_placement(crate::protocol_serde::shape_etcd_placement_response::de_etcd_placement_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

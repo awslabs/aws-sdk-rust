@@ -42,10 +42,16 @@ pub fn ser_streaming_properties(
 pub(crate) fn de_streaming_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StreamingProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,15 +72,23 @@ where
                             );
                         }
                         "UserSettings" => {
-                            builder = builder.set_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens, _value)?);
+                            builder =
+                                builder.set_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens, _value, depth + 1)?);
                         }
                         "StorageConnectors" => {
-                            builder = builder
-                                .set_storage_connectors(crate::protocol_serde::shape_storage_connectors::de_storage_connectors(tokens, _value)?);
+                            builder = builder.set_storage_connectors(crate::protocol_serde::shape_storage_connectors::de_storage_connectors(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "GlobalAccelerator" => {
                             builder = builder.set_global_accelerator(
-                                crate::protocol_serde::shape_global_accelerator_for_directory::de_global_accelerator_for_directory(tokens, _value)?,
+                                crate::protocol_serde::shape_global_accelerator_for_directory::de_global_accelerator_for_directory(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

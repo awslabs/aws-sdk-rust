@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TransitGatewayOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -25,7 +29,7 @@ pub fn de_transit_gateway_options(
             s if s.matches("transitGatewayCidrBlocks") /* TransitGatewayCidrBlocks com.amazonaws.ec2#TransitGatewayOptions$TransitGatewayCidrBlocks */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -159,7 +163,7 @@ pub fn de_transit_gateway_options(
             s if s.matches("encryptionSupport") /* EncryptionSupport com.amazonaws.ec2#TransitGatewayOptions$EncryptionSupport */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_encryption_support::de_encryption_support(&mut tag)
+                        crate::protocol_serde::shape_encryption_support::de_encryption_support(&mut tag, depth + 1)
                         ?
                     )
                 ;

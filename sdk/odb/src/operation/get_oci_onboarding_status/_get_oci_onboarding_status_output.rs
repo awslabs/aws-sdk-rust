@@ -11,6 +11,14 @@ pub struct GetOciOnboardingStatusOutput {
     pub new_tenancy_activation_link: ::std::option::Option<::std::string::String>,
     /// <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding status response.</p>
     pub oci_identity_domain: ::std::option::Option<crate::types::OciIdentityDomain>,
+    /// <p>The list of Amazon Web Services Identity and Access Management (IAM) service roles used for Autonomous Database integration with Oracle Cloud Infrastructure (OCI).</p>
+    pub autonomous_database_oci_integration_iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::OciIamRole>>,
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) tenancy that is linked to your Amazon Web Services account.</p>
+    pub linked_oci_tenancy_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) compartment that is linked to your Amazon Web Services account.</p>
+    pub linked_oci_compartment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The list of errors that occurred during the subscription process for your Amazon Web Services account, if any.</p>
+    pub subscription_errors: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionError>>,
     _request_id: Option<String>,
 }
 impl GetOciOnboardingStatusOutput {
@@ -29,6 +37,26 @@ impl GetOciOnboardingStatusOutput {
     /// <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding status response.</p>
     pub fn oci_identity_domain(&self) -> ::std::option::Option<&crate::types::OciIdentityDomain> {
         self.oci_identity_domain.as_ref()
+    }
+    /// <p>The list of Amazon Web Services Identity and Access Management (IAM) service roles used for Autonomous Database integration with Oracle Cloud Infrastructure (OCI).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.autonomous_database_oci_integration_iam_roles.is_none()`.
+    pub fn autonomous_database_oci_integration_iam_roles(&self) -> &[crate::types::OciIamRole] {
+        self.autonomous_database_oci_integration_iam_roles.as_deref().unwrap_or_default()
+    }
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) tenancy that is linked to your Amazon Web Services account.</p>
+    pub fn linked_oci_tenancy_id(&self) -> ::std::option::Option<&str> {
+        self.linked_oci_tenancy_id.as_deref()
+    }
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) compartment that is linked to your Amazon Web Services account.</p>
+    pub fn linked_oci_compartment_id(&self) -> ::std::option::Option<&str> {
+        self.linked_oci_compartment_id.as_deref()
+    }
+    /// <p>The list of errors that occurred during the subscription process for your Amazon Web Services account, if any.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription_errors.is_none()`.
+    pub fn subscription_errors(&self) -> &[crate::types::SubscriptionError] {
+        self.subscription_errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOciOnboardingStatusOutput {
@@ -51,6 +79,10 @@ pub struct GetOciOnboardingStatusOutputBuilder {
     pub(crate) existing_tenancy_activation_link: ::std::option::Option<::std::string::String>,
     pub(crate) new_tenancy_activation_link: ::std::option::Option<::std::string::String>,
     pub(crate) oci_identity_domain: ::std::option::Option<crate::types::OciIdentityDomain>,
+    pub(crate) autonomous_database_oci_integration_iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::OciIamRole>>,
+    pub(crate) linked_oci_tenancy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) linked_oci_compartment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_errors: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionError>>,
     _request_id: Option<String>,
 }
 impl GetOciOnboardingStatusOutputBuilder {
@@ -110,6 +142,77 @@ impl GetOciOnboardingStatusOutputBuilder {
     pub fn get_oci_identity_domain(&self) -> &::std::option::Option<crate::types::OciIdentityDomain> {
         &self.oci_identity_domain
     }
+    /// Appends an item to `autonomous_database_oci_integration_iam_roles`.
+    ///
+    /// To override the contents of this collection use [`set_autonomous_database_oci_integration_iam_roles`](Self::set_autonomous_database_oci_integration_iam_roles).
+    ///
+    /// <p>The list of Amazon Web Services Identity and Access Management (IAM) service roles used for Autonomous Database integration with Oracle Cloud Infrastructure (OCI).</p>
+    pub fn autonomous_database_oci_integration_iam_roles(mut self, input: crate::types::OciIamRole) -> Self {
+        let mut v = self.autonomous_database_oci_integration_iam_roles.unwrap_or_default();
+        v.push(input);
+        self.autonomous_database_oci_integration_iam_roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Amazon Web Services Identity and Access Management (IAM) service roles used for Autonomous Database integration with Oracle Cloud Infrastructure (OCI).</p>
+    pub fn set_autonomous_database_oci_integration_iam_roles(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OciIamRole>>,
+    ) -> Self {
+        self.autonomous_database_oci_integration_iam_roles = input;
+        self
+    }
+    /// <p>The list of Amazon Web Services Identity and Access Management (IAM) service roles used for Autonomous Database integration with Oracle Cloud Infrastructure (OCI).</p>
+    pub fn get_autonomous_database_oci_integration_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OciIamRole>> {
+        &self.autonomous_database_oci_integration_iam_roles
+    }
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) tenancy that is linked to your Amazon Web Services account.</p>
+    pub fn linked_oci_tenancy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linked_oci_tenancy_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) tenancy that is linked to your Amazon Web Services account.</p>
+    pub fn set_linked_oci_tenancy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.linked_oci_tenancy_id = input;
+        self
+    }
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) tenancy that is linked to your Amazon Web Services account.</p>
+    pub fn get_linked_oci_tenancy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_oci_tenancy_id
+    }
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) compartment that is linked to your Amazon Web Services account.</p>
+    pub fn linked_oci_compartment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linked_oci_compartment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) compartment that is linked to your Amazon Web Services account.</p>
+    pub fn set_linked_oci_compartment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.linked_oci_compartment_id = input;
+        self
+    }
+    /// <p>The unique identifier of the Oracle Cloud Infrastructure (OCI) compartment that is linked to your Amazon Web Services account.</p>
+    pub fn get_linked_oci_compartment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_oci_compartment_id
+    }
+    /// Appends an item to `subscription_errors`.
+    ///
+    /// To override the contents of this collection use [`set_subscription_errors`](Self::set_subscription_errors).
+    ///
+    /// <p>The list of errors that occurred during the subscription process for your Amazon Web Services account, if any.</p>
+    pub fn subscription_errors(mut self, input: crate::types::SubscriptionError) -> Self {
+        let mut v = self.subscription_errors.unwrap_or_default();
+        v.push(input);
+        self.subscription_errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of errors that occurred during the subscription process for your Amazon Web Services account, if any.</p>
+    pub fn set_subscription_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionError>>) -> Self {
+        self.subscription_errors = input;
+        self
+    }
+    /// <p>The list of errors that occurred during the subscription process for your Amazon Web Services account, if any.</p>
+    pub fn get_subscription_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriptionError>> {
+        &self.subscription_errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +229,10 @@ impl GetOciOnboardingStatusOutputBuilder {
             existing_tenancy_activation_link: self.existing_tenancy_activation_link,
             new_tenancy_activation_link: self.new_tenancy_activation_link,
             oci_identity_domain: self.oci_identity_domain,
+            autonomous_database_oci_integration_iam_roles: self.autonomous_database_oci_integration_iam_roles,
+            linked_oci_tenancy_id: self.linked_oci_tenancy_id,
+            linked_oci_compartment_id: self.linked_oci_compartment_id,
+            subscription_errors: self.subscription_errors,
             _request_id: self._request_id,
         }
     }

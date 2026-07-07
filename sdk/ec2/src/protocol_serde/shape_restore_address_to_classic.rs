@@ -51,6 +51,8 @@ pub fn de_restore_address_to_classic(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RestoreAddressToClassicResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RestoreAddressToClassicResponse got {start_el:?}"

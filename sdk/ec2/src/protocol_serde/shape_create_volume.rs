@@ -40,6 +40,8 @@ pub fn de_create_volume(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateVolumeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateVolumeResponse got {start_el:?}"
@@ -104,7 +106,7 @@ pub fn de_create_volume(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#CreateVolumeOutput$Tags */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -187,7 +189,7 @@ pub fn de_create_volume(
             s if s.matches("operator") /* Operator com.amazonaws.ec2.synthetic#CreateVolumeOutput$Operator */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -294,7 +296,7 @@ pub fn de_create_volume(
             s if s.matches("attachmentSet") /* Attachments com.amazonaws.ec2.synthetic#CreateVolumeOutput$Attachments */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_volume_attachment_list::de_volume_attachment_list(&mut tag)
+                        crate::protocol_serde::shape_volume_attachment_list::de_volume_attachment_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

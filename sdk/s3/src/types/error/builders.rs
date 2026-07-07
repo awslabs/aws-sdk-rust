@@ -9,11 +9,15 @@ pub use crate::types::error::_bucket_already_owned_by_you::BucketAlreadyOwnedByY
 
 pub use crate::types::error::_no_such_bucket::NoSuchBucketBuilder;
 
-pub use crate::types::error::_invalid_object_state::InvalidObjectStateBuilder;
-
 pub use crate::types::error::_no_such_key::NoSuchKeyBuilder;
 
+pub use crate::types::error::_invalid_object_state::InvalidObjectStateBuilder;
+
+pub use crate::types::error::_no_such_annotation::NoSuchAnnotationBuilder;
+
 pub use crate::types::error::_not_found::NotFoundBuilder;
+
+pub use crate::types::error::_invalid_prefix::InvalidPrefixBuilder;
 
 pub use crate::types::error::_encryption_type_mismatch::EncryptionTypeMismatchBuilder;
 
@@ -22,6 +26,14 @@ pub use crate::types::error::_invalid_request::InvalidRequestBuilder;
 pub use crate::types::error::_invalid_write_offset::InvalidWriteOffsetBuilder;
 
 pub use crate::types::error::_too_many_parts::TooManyPartsBuilder;
+
+pub use crate::types::error::_annotation_limit_exceeded::AnnotationLimitExceededBuilder;
+
+pub use crate::types::error::_annotation_name_too_long::AnnotationNameTooLongBuilder;
+
+pub use crate::types::error::_invalid_annotation_name::InvalidAnnotationNameBuilder;
+
+pub use crate::types::error::_unsupported_media_type::UnsupportedMediaTypeBuilder;
 
 pub use crate::types::error::_idempotency_parameter_mismatch::IdempotencyParameterMismatchBuilder;
 

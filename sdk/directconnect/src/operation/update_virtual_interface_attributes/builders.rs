@@ -165,4 +165,18 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
     pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_virtual_interface_name()
     }
+    /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
+    pub fn rate_limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.rate_limit(input.into());
+        self
+    }
+    /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
+    pub fn set_rate_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_rate_limit(input);
+        self
+    }
+    /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
+    pub fn get_rate_limit(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rate_limit()
+    }
 }

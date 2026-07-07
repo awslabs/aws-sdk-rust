@@ -112,6 +112,9 @@ pub mod list_hosted_zone_associations;
 /// Types for the `ListManagedFirewallDomainLists` operation.
 pub mod list_managed_firewall_domain_lists;
 
+/// Types for the `ListSharedDNSViews` operation.
+pub mod list_shared_dns_views;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 

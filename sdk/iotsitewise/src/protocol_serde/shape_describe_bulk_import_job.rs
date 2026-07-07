@@ -110,6 +110,8 @@ pub(crate) fn de_describe_bulk_import_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -123,14 +125,20 @@ pub(crate) fn de_describe_bulk_import_job(
                 }
                 "errorReportLocation" => {
                     builder = builder.set_error_report_location(crate::protocol_serde::shape_error_report_location::de_error_report_location(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "files" => {
-                    builder = builder.set_files(crate::protocol_serde::shape_files::de_files(tokens, _value)?);
+                    builder = builder.set_files(crate::protocol_serde::shape_files::de_files(tokens, _value, depth + 1)?);
                 }
                 "jobConfiguration" => {
-                    builder = builder.set_job_configuration(crate::protocol_serde::shape_job_configuration::de_job_configuration(tokens, _value)?);
+                    builder = builder.set_job_configuration(crate::protocol_serde::shape_job_configuration::de_job_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "jobCreationDate" => {
                     builder = builder.set_job_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

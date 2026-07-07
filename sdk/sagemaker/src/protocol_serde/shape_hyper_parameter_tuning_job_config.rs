@@ -54,10 +54,16 @@ pub fn ser_hyper_parameter_tuning_job_config(
 pub(crate) fn de_hyper_parameter_tuning_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HyperParameterTuningJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -79,22 +85,31 @@ where
                         }
                         "StrategyConfig" => {
                             builder = builder.set_strategy_config(
-                                    crate::protocol_serde::shape_hyper_parameter_tuning_job_strategy_config::de_hyper_parameter_tuning_job_strategy_config(tokens, _value)?
+                                    crate::protocol_serde::shape_hyper_parameter_tuning_job_strategy_config::de_hyper_parameter_tuning_job_strategy_config(tokens, _value, depth + 1)?
                                 );
                         }
                         "HyperParameterTuningJobObjective" => {
                             builder = builder.set_hyper_parameter_tuning_job_objective(
                                 crate::protocol_serde::shape_hyper_parameter_tuning_job_objective::de_hyper_parameter_tuning_job_objective(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ResourceLimits" => {
-                            builder = builder.set_resource_limits(crate::protocol_serde::shape_resource_limits::de_resource_limits(tokens, _value)?);
+                            builder = builder.set_resource_limits(crate::protocol_serde::shape_resource_limits::de_resource_limits(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ParameterRanges" => {
-                            builder =
-                                builder.set_parameter_ranges(crate::protocol_serde::shape_parameter_ranges::de_parameter_ranges(tokens, _value)?);
+                            builder = builder.set_parameter_ranges(crate::protocol_serde::shape_parameter_ranges::de_parameter_ranges(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TrainingJobEarlyStoppingType" => {
                             builder = builder.set_training_job_early_stopping_type(
@@ -105,7 +120,11 @@ where
                         }
                         "TuningJobCompletionCriteria" => {
                             builder = builder.set_tuning_job_completion_criteria(
-                                crate::protocol_serde::shape_tuning_job_completion_criteria::de_tuning_job_completion_criteria(tokens, _value)?,
+                                crate::protocol_serde::shape_tuning_job_completion_criteria::de_tuning_job_completion_criteria(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "RandomSeed" => {

@@ -30,10 +30,16 @@ pub fn ser_esam_settings(
 pub(crate) fn de_esam_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EsamSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "manifestConfirmConditionNotification" => {
                             builder = builder.set_manifest_confirm_condition_notification(
-                                    crate::protocol_serde::shape_esam_manifest_confirm_condition_notification::de_esam_manifest_confirm_condition_notification(tokens, _value)?
+                                    crate::protocol_serde::shape_esam_manifest_confirm_condition_notification::de_esam_manifest_confirm_condition_notification(tokens, _value, depth + 1)?
                                 );
                         }
                         "responseSignalPreroll" => {
@@ -58,7 +64,9 @@ where
                         "signalProcessingNotification" => {
                             builder = builder.set_signal_processing_notification(
                                 crate::protocol_serde::shape_esam_signal_processing_notification::de_esam_signal_processing_notification(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

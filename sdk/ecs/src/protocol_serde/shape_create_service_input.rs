@@ -171,5 +171,11 @@ pub fn ser_create_service_input_input(
         }
         array_52.finish();
     }
+    if let Some(var_55) = &input.monitoring {
+        #[allow(unused_mut)]
+        let mut object_56 = object.key("monitoring").start_object();
+        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_56, var_55)?;
+        object_56.finish();
+    }
     Ok(())
 }

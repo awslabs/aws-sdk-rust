@@ -316,7 +316,7 @@ fn calculate_signing_params<'a>(
             (signature, string_to_sign)
         }
     };
-    tracing::trace!(canonical_request = %creq, string_to_sign = %string_to_sign, "calculated signing parameters");
+    tracing::trace!(canonical_request = %creq.redacted(), string_to_sign = %string_to_sign, "calculated signing parameters");
 
     let values = creq.values.into_query_params().expect("signing with query");
     let mut signing_params = vec![
@@ -370,7 +370,7 @@ fn calculate_signing_headers<'a>(
     let creq = CanonicalRequest::from(request, params)?;
     // Step 2: https://docs.aws.amazon.com/en_pv/general/latest/gr/sigv4-create-string-to-sign.html.
     let encoded_creq = v4::sha256_hex_string(creq.to_string().as_bytes());
-    tracing::trace!(canonical_request = %creq);
+    tracing::trace!(canonical_request = %creq.redacted());
     let mut headers = vec![];
 
     let signature = match params {

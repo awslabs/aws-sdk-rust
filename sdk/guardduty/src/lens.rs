@@ -69,6 +69,16 @@ pub(crate) fn reflens_list_findings_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_investigations_output_output_next_token(
+    input: &crate::operation::list_investigations::ListInvestigationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_invitations_output_output_next_token(
     input: &crate::operation::list_invitations::ListInvitationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -191,6 +201,13 @@ pub(crate) fn lens_list_findings_output_output_finding_ids(
     input: crate::operation::list_findings::ListFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.finding_ids?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_investigations_output_output_investigations(
+    input: crate::operation::list_investigations::ListInvestigationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InvestigationSummary>> {
+    let input = input.investigations?;
     ::std::option::Option::Some(input)
 }
 

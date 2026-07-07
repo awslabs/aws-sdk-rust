@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpn_connection(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VpnConnection, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VpnConnection::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -89,7 +93,7 @@ pub fn de_vpn_connection(
             s if s.matches("options") /* Options com.amazonaws.ec2#VpnConnection$Options */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_vpn_connection_options::de_vpn_connection_options(&mut tag)
+                        crate::protocol_serde::shape_vpn_connection_options::de_vpn_connection_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -99,7 +103,7 @@ pub fn de_vpn_connection(
             s if s.matches("routes") /* Routes com.amazonaws.ec2#VpnConnection$Routes */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_vpn_static_route_list::de_vpn_static_route_list(&mut tag)
+                        crate::protocol_serde::shape_vpn_static_route_list::de_vpn_static_route_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -109,7 +113,7 @@ pub fn de_vpn_connection(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VpnConnection$Tags */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -119,7 +123,7 @@ pub fn de_vpn_connection(
             s if s.matches("vgwTelemetry") /* VgwTelemetry com.amazonaws.ec2#VpnConnection$VgwTelemetry */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_vgw_telemetry_list::de_vgw_telemetry_list(&mut tag)
+                        crate::protocol_serde::shape_vgw_telemetry_list::de_vgw_telemetry_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -195,9 +195,8 @@ pub struct CreateReplicationGroupInput {
     /// <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>, an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>
     /// </important>
     pub transit_encryption_enabled: ::std::option::Option<bool>,
-    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>A flag that enables encryption at-rest on the replication group when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
@@ -221,6 +220,8 @@ pub struct CreateReplicationGroupInput {
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
     /// <p>The name of the snapshot used to create a replication group. Available for Valkey, Redis OSS only.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub durability: ::std::option::Option<crate::types::Durability>,
 }
 impl CreateReplicationGroupInput {
     /// <p>The replication group identifier. This parameter is stored as a lowercase string.</p>
@@ -484,9 +485,8 @@ impl CreateReplicationGroupInput {
     pub fn transit_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.transit_encryption_enabled
     }
-    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>A flag that enables encryption at-rest on the replication group when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn at_rest_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.at_rest_encryption_enabled
@@ -533,6 +533,10 @@ impl CreateReplicationGroupInput {
     /// <p>The name of the snapshot used to create a replication group. Available for Valkey, Redis OSS only.</p>
     pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.serverless_cache_snapshot_name.as_deref()
+    }
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn durability(&self) -> ::std::option::Option<&crate::types::Durability> {
+        self.durability.as_ref()
     }
 }
 impl CreateReplicationGroupInput {
@@ -585,6 +589,7 @@ pub struct CreateReplicationGroupInputBuilder {
     pub(crate) transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     pub(crate) cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
     pub(crate) serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
+    pub(crate) durability: ::std::option::Option<crate::types::Durability>,
 }
 impl CreateReplicationGroupInputBuilder {
     /// <p>The replication group identifier. This parameter is stored as a lowercase string.</p>
@@ -1430,25 +1435,22 @@ impl CreateReplicationGroupInputBuilder {
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.transit_encryption_enabled
     }
-    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>A flag that enables encryption at-rest on the replication group when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.at_rest_encryption_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>A flag that enables encryption at-rest on the replication group when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.at_rest_encryption_enabled = input;
         self
     }
-    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>A flag that enables encryption at-rest on the replication group when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.at_rest_encryption_enabled
@@ -1603,6 +1605,20 @@ impl CreateReplicationGroupInputBuilder {
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_snapshot_name
     }
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn durability(mut self, input: crate::types::Durability) -> Self {
+        self.durability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn set_durability(mut self, input: ::std::option::Option<crate::types::Durability>) -> Self {
+        self.durability = input;
+        self
+    }
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn get_durability(&self) -> &::std::option::Option<crate::types::Durability> {
+        &self.durability
+    }
     /// Consumes the builder and constructs a [`CreateReplicationGroupInput`](crate::operation::create_replication_group::CreateReplicationGroupInput).
     pub fn build(
         self,
@@ -1650,6 +1666,7 @@ impl CreateReplicationGroupInputBuilder {
             transit_encryption_mode: self.transit_encryption_mode,
             cluster_mode: self.cluster_mode,
             serverless_cache_snapshot_name: self.serverless_cache_snapshot_name,
+            durability: self.durability,
         })
     }
 }

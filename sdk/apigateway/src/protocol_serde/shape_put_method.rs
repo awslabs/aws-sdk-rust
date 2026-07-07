@@ -153,6 +153,8 @@ pub(crate) fn de_put_method(
 ) -> ::std::result::Result<crate::operation::put_method::builders::PutMethodOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,7 +164,8 @@ pub(crate) fn de_put_method(
                     builder = builder.set_api_key_required(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "authorizationScopes" => {
-                    builder = builder.set_authorization_scopes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder =
+                        builder.set_authorization_scopes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "authorizationType" => {
                     builder = builder.set_authorization_type(
@@ -186,11 +189,13 @@ pub(crate) fn de_put_method(
                     );
                 }
                 "methodIntegration" => {
-                    builder = builder.set_method_integration(crate::protocol_serde::shape_integration::de_integration(tokens, _value)?);
+                    builder = builder.set_method_integration(crate::protocol_serde::shape_integration::de_integration(tokens, _value, depth + 1)?);
                 }
                 "methodResponses" => {
                     builder = builder.set_method_responses(crate::protocol_serde::shape_map_of_method_response::de_map_of_method_response(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "operationName" => {
@@ -202,12 +207,16 @@ pub(crate) fn de_put_method(
                 }
                 "requestModels" => {
                     builder = builder.set_request_models(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "requestParameters" => {
                     builder = builder.set_request_parameters(crate::protocol_serde::shape_map_of_string_to_boolean::de_map_of_string_to_boolean(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "requestValidatorId" => {

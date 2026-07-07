@@ -7,4 +7,8 @@ pub use crate::types::_batch_get_record_result_detail::BatchGetRecordResultDetai
 
 pub use crate::types::_batch_get_record_error::BatchGetRecordErrorBuilder;
 
+pub use crate::types::_batch_write_record_entry::BatchWriteRecordEntryBuilder;
+
+pub use crate::types::_batch_write_record_error::BatchWriteRecordErrorBuilder;
+
 pub use crate::types::_feature_value::FeatureValueBuilder;

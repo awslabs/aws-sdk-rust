@@ -78,10 +78,16 @@ pub fn ser_aws_ecs_cluster_details(
 pub(crate) fn de_aws_ecs_cluster_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsEcsClusterDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -90,75 +96,81 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ClusterArn" => {
-                            builder = builder.set_cluster_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ActiveServicesCount" => {
-                            builder = builder.set_active_services_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "CapacityProviders" => {
-                            builder = builder.set_capacity_providers(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ClusterSettings" => {
-                            builder = builder.set_cluster_settings(
-                                crate::protocol_serde::shape_aws_ecs_cluster_cluster_settings_list::de_aws_ecs_cluster_cluster_settings_list(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "Configuration" => {
-                            builder = builder.set_configuration(
-                                crate::protocol_serde::shape_aws_ecs_cluster_configuration_details::de_aws_ecs_cluster_configuration_details(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "DefaultCapacityProviderStrategy" => {
-                            builder = builder.set_default_capacity_provider_strategy(
-                                    crate::protocol_serde::shape_aws_ecs_cluster_default_capacity_provider_strategy_list::de_aws_ecs_cluster_default_capacity_provider_strategy_list(tokens, _value)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ClusterArn" => {
+                                builder = builder.set_cluster_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
+                            }
+                            "ActiveServicesCount" => {
+                                builder = builder.set_active_services_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "CapacityProviders" => {
+                                builder = builder.set_capacity_providers(
+                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ClusterSettings" => {
+                                builder = builder.set_cluster_settings(
+                                    crate::protocol_serde::shape_aws_ecs_cluster_cluster_settings_list::de_aws_ecs_cluster_cluster_settings_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "Configuration" => {
+                                builder = builder.set_configuration(
+                                    crate::protocol_serde::shape_aws_ecs_cluster_configuration_details::de_aws_ecs_cluster_configuration_details(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "DefaultCapacityProviderStrategy" => {
+                                builder = builder.set_default_capacity_provider_strategy(
+                                    crate::protocol_serde::shape_aws_ecs_cluster_default_capacity_provider_strategy_list::de_aws_ecs_cluster_default_capacity_provider_strategy_list(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "ClusterName" => {
+                                builder = builder.set_cluster_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RegisteredContainerInstancesCount" => {
+                                builder = builder.set_registered_container_instances_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "RunningTasksCount" => {
+                                builder = builder.set_running_tasks_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "Status" => {
+                                builder = builder.set_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "ClusterName" => {
-                            builder = builder.set_cluster_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "RegisteredContainerInstancesCount" => {
-                            builder = builder.set_registered_container_instances_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "RunningTasksCount" => {
-                            builder = builder.set_running_tasks_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "Status" => {
-                            builder = builder.set_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

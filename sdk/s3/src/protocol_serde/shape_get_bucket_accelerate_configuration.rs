@@ -87,6 +87,8 @@ pub fn de_get_bucket_accelerate_configuration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("AccelerateConfiguration") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected AccelerateConfiguration but got {start_el:?}. This is likely a bug in the SDK."

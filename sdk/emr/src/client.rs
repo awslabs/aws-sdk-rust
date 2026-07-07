@@ -254,6 +254,10 @@ mod get_on_cluster_app_ui_presigned_url;
 
 mod get_persistent_app_ui_presigned_url;
 
+mod get_session;
+
+mod get_session_endpoint;
+
 mod get_studio_session_mapping;
 
 mod list_bootstrap_actions;
@@ -271,6 +275,8 @@ mod list_notebook_executions;
 mod list_release_labels;
 
 mod list_security_configurations;
+
+mod list_sessions;
 
 mod list_steps;
 
@@ -314,9 +320,13 @@ mod set_visible_to_all_users;
 
 mod start_notebook_execution;
 
+mod start_session;
+
 mod stop_notebook_execution;
 
 mod terminate_job_flows;
+
+mod terminate_session;
 
 mod update_studio;
 

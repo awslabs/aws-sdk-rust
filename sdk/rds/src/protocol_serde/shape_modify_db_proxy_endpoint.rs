@@ -130,6 +130,8 @@ pub fn de_modify_db_proxy_endpoint(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyDBProxyEndpointResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyDBProxyEndpointResponse got {start_el:?}"
@@ -147,7 +149,7 @@ pub fn de_modify_db_proxy_endpoint(
             s if s.matches("DBProxyEndpoint") /* DBProxyEndpoint com.amazonaws.rds.synthetic#ModifyDBProxyEndpointOutput$DBProxyEndpoint */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_proxy_endpoint::de_db_proxy_endpoint(&mut tag)
+                        crate::protocol_serde::shape_db_proxy_endpoint::de_db_proxy_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;

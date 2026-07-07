@@ -2,10 +2,16 @@
 pub(crate) fn de_custom_log_source_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomLogSourceResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,12 +37,18 @@ where
                         }
                         "provider" => {
                             builder = builder.set_provider(crate::protocol_serde::shape_custom_log_source_provider::de_custom_log_source_provider(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "attributes" => {
                             builder = builder.set_attributes(
-                                crate::protocol_serde::shape_custom_log_source_attributes::de_custom_log_source_attributes(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_log_source_attributes::de_custom_log_source_attributes(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

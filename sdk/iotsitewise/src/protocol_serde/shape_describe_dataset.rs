@@ -104,6 +104,8 @@ pub(crate) fn de_describe_dataset(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -150,10 +152,10 @@ pub(crate) fn de_describe_dataset(
                     );
                 }
                 "datasetSource" => {
-                    builder = builder.set_dataset_source(crate::protocol_serde::shape_dataset_source::de_dataset_source(tokens, _value)?);
+                    builder = builder.set_dataset_source(crate::protocol_serde::shape_dataset_source::de_dataset_source(tokens, _value, depth + 1)?);
                 }
                 "datasetStatus" => {
-                    builder = builder.set_dataset_status(crate::protocol_serde::shape_dataset_status::de_dataset_status(tokens, _value)?);
+                    builder = builder.set_dataset_status(crate::protocol_serde::shape_dataset_status::de_dataset_status(tokens, _value, depth + 1)?);
                 }
                 "datasetVersion" => {
                     builder = builder.set_dataset_version(

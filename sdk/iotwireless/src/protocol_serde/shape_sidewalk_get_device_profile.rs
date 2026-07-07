@@ -2,10 +2,16 @@
 pub(crate) fn de_sidewalk_get_device_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SidewalkGetDeviceProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -27,7 +33,11 @@ where
                         }
                         "DakCertificateMetadata" => {
                             builder = builder.set_dak_certificate_metadata(
-                                crate::protocol_serde::shape_dak_certificate_metadata_list::de_dak_certificate_metadata_list(tokens, _value)?,
+                                crate::protocol_serde::shape_dak_certificate_metadata_list::de_dak_certificate_metadata_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

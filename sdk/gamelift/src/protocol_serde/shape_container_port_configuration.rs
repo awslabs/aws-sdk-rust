@@ -19,15 +19,23 @@ pub fn ser_container_port_configuration(
 
 pub(crate) fn de_container_port_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ContainerPortConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::ContainerPortConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::ContainerPortConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ContainerPortRanges" => builder.set_container_port_ranges(Some(
-                crate::protocol_serde::shape_container_port_range_list::de_container_port_range_list(decoder)?,
+                crate::protocol_serde::shape_container_port_range_list::de_container_port_range_list(decoder, depth + 1)?,
             )),
             _ => {
                 decoder.skip()?;
@@ -47,13 +55,13 @@ pub(crate) fn de_container_port_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

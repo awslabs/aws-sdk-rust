@@ -39,10 +39,16 @@ pub fn ser_criterion(
 pub(crate) fn de_criterion<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Criterion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,13 +59,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eq" => {
-                            builder = builder.set_eq(crate::protocol_serde::shape_value_list::de_value_list(tokens, _value)?);
+                            builder = builder.set_eq(crate::protocol_serde::shape_value_list::de_value_list(tokens, _value, depth + 1)?);
                         }
                         "neq" => {
-                            builder = builder.set_neq(crate::protocol_serde::shape_value_list::de_value_list(tokens, _value)?);
+                            builder = builder.set_neq(crate::protocol_serde::shape_value_list::de_value_list(tokens, _value, depth + 1)?);
                         }
                         "contains" => {
-                            builder = builder.set_contains(crate::protocol_serde::shape_value_list::de_value_list(tokens, _value)?);
+                            builder = builder.set_contains(crate::protocol_serde::shape_value_list::de_value_list(tokens, _value, depth + 1)?);
                         }
                         "exists" => {
                             builder = builder.set_exists(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

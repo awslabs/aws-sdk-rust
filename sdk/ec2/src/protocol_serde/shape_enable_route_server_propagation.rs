@@ -49,6 +49,8 @@ pub fn de_enable_route_server_propagation(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("EnableRouteServerPropagationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected EnableRouteServerPropagationResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_enable_route_server_propagation(
             s if s.matches("routeServerPropagation") /* RouteServerPropagation com.amazonaws.ec2.synthetic#EnableRouteServerPropagationOutput$RouteServerPropagation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_route_server_propagation::de_route_server_propagation(&mut tag)
+                        crate::protocol_serde::shape_route_server_propagation::de_route_server_propagation(&mut tag, depth + 1)
                         ?
                     )
                 ;

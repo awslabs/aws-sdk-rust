@@ -2,10 +2,16 @@
 pub(crate) fn de_custom_extraction_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomExtractionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,30 +37,32 @@ where
                     }
                     variant = match key.as_ref() {
                         "semanticExtractionOverride" => Some(crate::types::CustomExtractionConfiguration::SemanticExtractionOverride(
-                            crate::protocol_serde::shape_semantic_extraction_override::de_semantic_extraction_override(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_semantic_extraction_override::de_semantic_extraction_override(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'semanticExtractionOverride' cannot be null",
                                     )
-                                },
-                            )?,
-                        )),
-                        "userPreferenceExtractionOverride" => Some(crate::types::CustomExtractionConfiguration::UserPreferenceExtractionOverride(
-                            crate::protocol_serde::shape_user_preference_extraction_override::de_user_preference_extraction_override(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'userPreferenceExtractionOverride' cannot be null",
-                                    )
                                 })?,
                         )),
+                        "userPreferenceExtractionOverride" => Some(crate::types::CustomExtractionConfiguration::UserPreferenceExtractionOverride(
+                            crate::protocol_serde::shape_user_preference_extraction_override::de_user_preference_extraction_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'userPreferenceExtractionOverride' cannot be null",
+                                )
+                            })?,
+                        )),
                         "episodicExtractionOverride" => Some(crate::types::CustomExtractionConfiguration::EpisodicExtractionOverride(
-                            crate::protocol_serde::shape_episodic_extraction_override::de_episodic_extraction_override(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_episodic_extraction_override::de_episodic_extraction_override(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'episodicExtractionOverride' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

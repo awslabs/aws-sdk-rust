@@ -28,10 +28,16 @@ pub fn ser_snowflake_table_schema(
 pub(crate) fn de_snowflake_table_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SnowflakeTableSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,7 +63,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "v1" => Some(crate::types::SnowflakeTableSchema::V1(
-                            crate::protocol_serde::shape_snowflake_table_schema_list::de_snowflake_table_schema_list(tokens, _value)?
+                            crate::protocol_serde::shape_snowflake_table_schema_list::de_snowflake_table_schema_list(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'v1' cannot be null"))?,
                         )),
                         _ => {

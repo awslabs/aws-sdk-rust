@@ -2,10 +2,16 @@
 pub(crate) fn de_related_item_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RelatedItemContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,30 +37,30 @@ where
                     }
                     variant = match key.as_ref() {
                         "contact" => Some(crate::types::RelatedItemContent::Contact(
-                            crate::protocol_serde::shape_contact_content::de_contact_content(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_contact_content::de_contact_content(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contact' cannot be null")
                             })?,
                         )),
                         "comment" => Some(crate::types::RelatedItemContent::Comment(
-                            crate::protocol_serde::shape_comment_content::de_comment_content(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_comment_content::de_comment_content(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'comment' cannot be null")
                             })?,
                         )),
                         "file" => Some(crate::types::RelatedItemContent::File(
-                            crate::protocol_serde::shape_file_content::de_file_content(tokens, _value)?
+                            crate::protocol_serde::shape_file_content::de_file_content(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?,
                         )),
                         "sla" => Some(crate::types::RelatedItemContent::Sla(
-                            crate::protocol_serde::shape_sla_content::de_sla_content(tokens, _value)?
+                            crate::protocol_serde::shape_sla_content::de_sla_content(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sla' cannot be null"))?,
                         )),
                         "connectCase" => Some(crate::types::RelatedItemContent::ConnectCase(
-                            crate::protocol_serde::shape_connect_case_content::de_connect_case_content(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'connectCase' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_connect_case_content::de_connect_case_content(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'connectCase' cannot be null"),
+                            )?,
                         )),
                         "custom" => Some(crate::types::RelatedItemContent::Custom(
-                            crate::protocol_serde::shape_custom_content::de_custom_content(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_custom_content::de_custom_content(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'custom' cannot be null")
                             })?,
                         )),

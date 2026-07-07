@@ -37,7 +37,11 @@ pub use crate::types::_telemetry_pipeline_status_reason::TelemetryPipelineStatus
 
 pub use crate::types::_source_logs_configuration::SourceLogsConfigurationBuilder;
 
+pub use crate::types::_source_metrics_configuration::SourceMetricsConfigurationBuilder;
+
 pub use crate::types::_destination_logs_configuration::DestinationLogsConfigurationBuilder;
+
+pub use crate::types::_destination_metrics_configuration::DestinationMetricsConfigurationBuilder;
 
 pub use crate::types::_vpc_flow_log_parameters::VpcFlowLogParametersBuilder;
 
@@ -49,6 +53,8 @@ pub use crate::types::_waf_logging_parameters::WafLoggingParametersBuilder;
 
 pub use crate::types::_log_delivery_parameters::LogDeliveryParametersBuilder;
 
+pub use crate::types::_msk_monitoring_parameters::MskMonitoringParametersBuilder;
+
 pub use crate::types::_pipeline_output_error::PipelineOutputErrorBuilder;
 
 pub use crate::types::_configuration_summary::ConfigurationSummaryBuilder;
@@ -58,6 +64,8 @@ pub use crate::types::_logs_encryption_configuration::LogsEncryptionConfiguratio
 pub use crate::types::_logs_backup_configuration::LogsBackupConfigurationBuilder;
 
 pub use crate::types::_log_group_name_configuration::LogGroupNameConfigurationBuilder;
+
+pub use crate::types::_metrics_backup_configuration::MetricsBackupConfigurationBuilder;
 
 pub use crate::types::_logging_filter::LoggingFilterBuilder;
 

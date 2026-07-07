@@ -141,10 +141,16 @@ pub fn ser_schedule_action_settings(
 pub(crate) fn de_schedule_action_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScheduleActionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -156,96 +162,106 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "hlsId3SegmentTaggingSettings" => {
                             builder = builder.set_hls_id3_segment_tagging_settings(
-                                    crate::protocol_serde::shape_hls_id3_segment_tagging_schedule_action_settings::de_hls_id3_segment_tagging_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_hls_id3_segment_tagging_schedule_action_settings::de_hls_id3_segment_tagging_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "hlsTimedMetadataSettings" => {
                             builder = builder.set_hls_timed_metadata_settings(
-                                    crate::protocol_serde::shape_hls_timed_metadata_schedule_action_settings::de_hls_timed_metadata_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_hls_timed_metadata_schedule_action_settings::de_hls_timed_metadata_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "inputPrepareSettings" => {
                             builder = builder.set_input_prepare_settings(
                                 crate::protocol_serde::shape_input_prepare_schedule_action_settings::de_input_prepare_schedule_action_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "inputSwitchSettings" => {
                             builder = builder.set_input_switch_settings(
                                 crate::protocol_serde::shape_input_switch_schedule_action_settings::de_input_switch_schedule_action_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "motionGraphicsImageActivateSettings" => {
                             builder = builder.set_motion_graphics_image_activate_settings(
-                                    crate::protocol_serde::shape_motion_graphics_activate_schedule_action_settings::de_motion_graphics_activate_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_motion_graphics_activate_schedule_action_settings::de_motion_graphics_activate_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "motionGraphicsImageDeactivateSettings" => {
                             builder = builder.set_motion_graphics_image_deactivate_settings(
-                                    crate::protocol_serde::shape_motion_graphics_deactivate_schedule_action_settings::de_motion_graphics_deactivate_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_motion_graphics_deactivate_schedule_action_settings::de_motion_graphics_deactivate_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "pauseStateSettings" => {
                             builder = builder.set_pause_state_settings(
                                 crate::protocol_serde::shape_pause_state_schedule_action_settings::de_pause_state_schedule_action_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "scte35InputSettings" => {
                             builder = builder.set_scte35_input_settings(
                                 crate::protocol_serde::shape_scte35_input_schedule_action_settings::de_scte35_input_schedule_action_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "scte35ReturnToNetworkSettings" => {
                             builder = builder.set_scte35_return_to_network_settings(
-                                    crate::protocol_serde::shape_scte35_return_to_network_schedule_action_settings::de_scte35_return_to_network_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_scte35_return_to_network_schedule_action_settings::de_scte35_return_to_network_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "scte35SpliceInsertSettings" => {
                             builder = builder.set_scte35_splice_insert_settings(
-                                    crate::protocol_serde::shape_scte35_splice_insert_schedule_action_settings::de_scte35_splice_insert_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_scte35_splice_insert_schedule_action_settings::de_scte35_splice_insert_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "scte35TimeSignalSettings" => {
                             builder = builder.set_scte35_time_signal_settings(
-                                    crate::protocol_serde::shape_scte35_time_signal_schedule_action_settings::de_scte35_time_signal_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_scte35_time_signal_schedule_action_settings::de_scte35_time_signal_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "staticImageActivateSettings" => {
                             builder = builder.set_static_image_activate_settings(
-                                    crate::protocol_serde::shape_static_image_activate_schedule_action_settings::de_static_image_activate_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_static_image_activate_schedule_action_settings::de_static_image_activate_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "staticImageDeactivateSettings" => {
                             builder = builder.set_static_image_deactivate_settings(
-                                    crate::protocol_serde::shape_static_image_deactivate_schedule_action_settings::de_static_image_deactivate_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_static_image_deactivate_schedule_action_settings::de_static_image_deactivate_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "staticImageOutputActivateSettings" => {
                             builder = builder.set_static_image_output_activate_settings(
-                                    crate::protocol_serde::shape_static_image_output_activate_schedule_action_settings::de_static_image_output_activate_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_static_image_output_activate_schedule_action_settings::de_static_image_output_activate_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "staticImageOutputDeactivateSettings" => {
                             builder = builder.set_static_image_output_deactivate_settings(
-                                    crate::protocol_serde::shape_static_image_output_deactivate_schedule_action_settings::de_static_image_output_deactivate_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_static_image_output_deactivate_schedule_action_settings::de_static_image_output_deactivate_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "id3SegmentTaggingSettings" => {
                             builder = builder.set_id3_segment_tagging_settings(
-                                    crate::protocol_serde::shape_id3_segment_tagging_schedule_action_settings::de_id3_segment_tagging_schedule_action_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_id3_segment_tagging_schedule_action_settings::de_id3_segment_tagging_schedule_action_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "timedMetadataSettings" => {
                             builder = builder.set_timed_metadata_settings(
                                 crate::protocol_serde::shape_timed_metadata_schedule_action_settings::de_timed_metadata_schedule_action_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

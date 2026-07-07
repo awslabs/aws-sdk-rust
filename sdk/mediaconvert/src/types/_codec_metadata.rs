@@ -12,6 +12,8 @@ pub struct CodecMetadata {
     pub coded_frame_rate: ::std::option::Option<crate::types::FrameRate>,
     /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
+    /// Content light level information (CTA-861.3). Describes the light level characteristics of the content.
+    pub content_light_level: ::std::option::Option<crate::types::ContentLightLevel>,
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub height: ::std::option::Option<i32>,
     /// The codec level or tier that specifies the maximum processing requirements and capabilities. Levels define constraints such as maximum bit rate, frame rate, and resolution.
@@ -20,6 +22,8 @@ pub struct CodecMetadata {
     pub matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
     /// The codec profile used to encode the video. Profiles define specific feature sets and capabilities within a codec standard. For example, H.264 profiles include Baseline, Main, and High, each supporting different encoding features and complexity levels.
     pub profile: ::std::option::Option<::std::string::String>,
+    /// The clockwise rotation angle of the video, in degrees, as specified in the codec bitstream via a Display Orientation SEI message (payload type 47 for both H.264 and H.265). This field is null when the video essence does not contain a Display Orientation SEI message or when the rotation is 0 degrees.
+    pub rotation: ::std::option::Option<i32>,
     /// The scanning method specified in the video essence, indicating whether the video uses progressive or interlaced scanning.
     pub scan_type: ::std::option::Option<::std::string::String>,
     /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
@@ -44,6 +48,10 @@ impl CodecMetadata {
     pub fn color_primaries(&self) -> ::std::option::Option<&crate::types::ColorPrimaries> {
         self.color_primaries.as_ref()
     }
+    /// Content light level information (CTA-861.3). Describes the light level characteristics of the content.
+    pub fn content_light_level(&self) -> ::std::option::Option<&crate::types::ContentLightLevel> {
+        self.content_light_level.as_ref()
+    }
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
@@ -59,6 +67,10 @@ impl CodecMetadata {
     /// The codec profile used to encode the video. Profiles define specific feature sets and capabilities within a codec standard. For example, H.264 profiles include Baseline, Main, and High, each supporting different encoding features and complexity levels.
     pub fn profile(&self) -> ::std::option::Option<&str> {
         self.profile.as_deref()
+    }
+    /// The clockwise rotation angle of the video, in degrees, as specified in the codec bitstream via a Display Orientation SEI message (payload type 47 for both H.264 and H.265). This field is null when the video essence does not contain a Display Orientation SEI message or when the rotation is 0 degrees.
+    pub fn rotation(&self) -> ::std::option::Option<i32> {
+        self.rotation
     }
     /// The scanning method specified in the video essence, indicating whether the video uses progressive or interlaced scanning.
     pub fn scan_type(&self) -> ::std::option::Option<&str> {
@@ -88,10 +100,12 @@ pub struct CodecMetadataBuilder {
     pub(crate) chroma_subsampling: ::std::option::Option<::std::string::String>,
     pub(crate) coded_frame_rate: ::std::option::Option<crate::types::FrameRate>,
     pub(crate) color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
+    pub(crate) content_light_level: ::std::option::Option<crate::types::ContentLightLevel>,
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) level: ::std::option::Option<::std::string::String>,
     pub(crate) matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
     pub(crate) profile: ::std::option::Option<::std::string::String>,
+    pub(crate) rotation: ::std::option::Option<i32>,
     pub(crate) scan_type: ::std::option::Option<::std::string::String>,
     pub(crate) transfer_characteristics: ::std::option::Option<crate::types::TransferCharacteristics>,
     pub(crate) width: ::std::option::Option<i32>,
@@ -153,6 +167,20 @@ impl CodecMetadataBuilder {
     pub fn get_color_primaries(&self) -> &::std::option::Option<crate::types::ColorPrimaries> {
         &self.color_primaries
     }
+    /// Content light level information (CTA-861.3). Describes the light level characteristics of the content.
+    pub fn content_light_level(mut self, input: crate::types::ContentLightLevel) -> Self {
+        self.content_light_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// Content light level information (CTA-861.3). Describes the light level characteristics of the content.
+    pub fn set_content_light_level(mut self, input: ::std::option::Option<crate::types::ContentLightLevel>) -> Self {
+        self.content_light_level = input;
+        self
+    }
+    /// Content light level information (CTA-861.3). Describes the light level characteristics of the content.
+    pub fn get_content_light_level(&self) -> &::std::option::Option<crate::types::ContentLightLevel> {
+        &self.content_light_level
+    }
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub fn height(mut self, input: i32) -> Self {
         self.height = ::std::option::Option::Some(input);
@@ -209,6 +237,20 @@ impl CodecMetadataBuilder {
     pub fn get_profile(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile
     }
+    /// The clockwise rotation angle of the video, in degrees, as specified in the codec bitstream via a Display Orientation SEI message (payload type 47 for both H.264 and H.265). This field is null when the video essence does not contain a Display Orientation SEI message or when the rotation is 0 degrees.
+    pub fn rotation(mut self, input: i32) -> Self {
+        self.rotation = ::std::option::Option::Some(input);
+        self
+    }
+    /// The clockwise rotation angle of the video, in degrees, as specified in the codec bitstream via a Display Orientation SEI message (payload type 47 for both H.264 and H.265). This field is null when the video essence does not contain a Display Orientation SEI message or when the rotation is 0 degrees.
+    pub fn set_rotation(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.rotation = input;
+        self
+    }
+    /// The clockwise rotation angle of the video, in degrees, as specified in the codec bitstream via a Display Orientation SEI message (payload type 47 for both H.264 and H.265). This field is null when the video essence does not contain a Display Orientation SEI message or when the rotation is 0 degrees.
+    pub fn get_rotation(&self) -> &::std::option::Option<i32> {
+        &self.rotation
+    }
     /// The scanning method specified in the video essence, indicating whether the video uses progressive or interlaced scanning.
     pub fn scan_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_type = ::std::option::Option::Some(input.into());
@@ -258,10 +300,12 @@ impl CodecMetadataBuilder {
             chroma_subsampling: self.chroma_subsampling,
             coded_frame_rate: self.coded_frame_rate,
             color_primaries: self.color_primaries,
+            content_light_level: self.content_light_level,
             height: self.height,
             level: self.level,
             matrix_coefficients: self.matrix_coefficients,
             profile: self.profile,
+            rotation: self.rotation,
             scan_type: self.scan_type,
             transfer_characteristics: self.transfer_characteristics,
             width: self.width,

@@ -2,10 +2,16 @@
 pub(crate) fn de_replication<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Replication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,12 +64,18 @@ where
                             );
                         }
                         "ProvisionData" => {
-                            builder = builder.set_provision_data(crate::protocol_serde::shape_provision_data::de_provision_data(tokens, _value)?);
+                            builder = builder.set_provision_data(crate::protocol_serde::shape_provision_data::de_provision_data(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PremigrationAssessmentStatuses" => {
                             builder = builder.set_premigration_assessment_statuses(
                                 crate::protocol_serde::shape_premigration_assessment_status_list::de_premigration_assessment_status_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -75,11 +87,15 @@ where
                             );
                         }
                         "FailureMessages" => {
-                            builder = builder.set_failure_messages(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_failure_messages(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "ReplicationStats" => {
-                            builder =
-                                builder.set_replication_stats(crate::protocol_serde::shape_replication_stats::de_replication_stats(tokens, _value)?);
+                            builder = builder.set_replication_stats(crate::protocol_serde::shape_replication_stats::de_replication_stats(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StartReplicationType" => {
                             builder = builder.set_start_replication_type(

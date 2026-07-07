@@ -33,6 +33,8 @@ pub(crate) mod shape_count_tokens;
 
 pub(crate) mod shape_get_async_invoke;
 
+pub(crate) mod shape_invoke_guardrail_checks;
+
 pub(crate) mod shape_invoke_model;
 
 pub(crate) mod shape_invoke_model_input;
@@ -70,6 +72,8 @@ pub(crate) mod shape_converse_stream_output;
 pub(crate) mod shape_count_tokens_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_invoke_guardrail_checks_input;
 
 pub(crate) mod shape_invoke_model_output;
 
@@ -118,6 +122,14 @@ pub(crate) mod shape_converse_output;
 pub(crate) mod shape_converse_trace;
 
 pub(crate) mod shape_guardrail_assessment_list;
+
+pub(crate) mod shape_guardrail_checks_config;
+
+pub(crate) mod shape_guardrail_checks_message;
+
+pub(crate) mod shape_guardrail_checks_results;
+
+pub(crate) mod shape_guardrail_checks_usage_results;
 
 pub(crate) mod shape_guardrail_configuration;
 
@@ -175,6 +187,26 @@ pub(crate) mod shape_converse_tokens_request;
 
 pub(crate) mod shape_guardrail_assessment;
 
+pub(crate) mod shape_guardrail_checks_content_block;
+
+pub(crate) mod shape_guardrail_checks_content_filter_config;
+
+pub(crate) mod shape_guardrail_checks_content_filter_result;
+
+pub(crate) mod shape_guardrail_checks_content_filter_usage;
+
+pub(crate) mod shape_guardrail_checks_prompt_attack_config;
+
+pub(crate) mod shape_guardrail_checks_prompt_attack_result;
+
+pub(crate) mod shape_guardrail_checks_prompt_attack_usage;
+
+pub(crate) mod shape_guardrail_checks_sensitive_information_config;
+
+pub(crate) mod shape_guardrail_checks_sensitive_information_result;
+
+pub(crate) mod shape_guardrail_checks_sensitive_information_usage;
+
 pub(crate) mod shape_guardrail_converse_content_block;
 
 pub(crate) mod shape_guardrail_image_block;
@@ -226,6 +258,18 @@ pub(crate) mod shape_guardrail_assessment_list_map;
 pub(crate) mod shape_guardrail_assessment_map;
 
 pub(crate) mod shape_guardrail_automated_reasoning_policy_assessment;
+
+pub(crate) mod shape_guardrail_checks_content_filter_category_config;
+
+pub(crate) mod shape_guardrail_checks_content_filter_result_list;
+
+pub(crate) mod shape_guardrail_checks_prompt_attack_category_config;
+
+pub(crate) mod shape_guardrail_checks_prompt_attack_result_list;
+
+pub(crate) mod shape_guardrail_checks_sensitive_information_entity_config;
+
+pub(crate) mod shape_guardrail_checks_sensitive_information_result_list;
 
 pub(crate) mod shape_guardrail_content_policy_assessment;
 
@@ -288,6 +332,12 @@ pub(crate) mod shape_document_source;
 pub(crate) mod shape_error_block;
 
 pub(crate) mod shape_guardrail_automated_reasoning_finding_list;
+
+pub(crate) mod shape_guardrail_checks_content_filter_result_entry;
+
+pub(crate) mod shape_guardrail_checks_prompt_attack_result_entry;
+
+pub(crate) mod shape_guardrail_checks_sensitive_information_result_entry;
 
 pub(crate) mod shape_guardrail_content_filter_list;
 

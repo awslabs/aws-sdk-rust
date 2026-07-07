@@ -2,10 +2,16 @@
 pub(crate) fn de_service_deployment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceDeployment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,12 +74,16 @@ where
                         }
                         "sourceServiceRevisions" => {
                             builder = builder.set_source_service_revisions(
-                                crate::protocol_serde::shape_service_revisions_summary_list::de_service_revisions_summary_list(tokens, _value)?,
+                                crate::protocol_serde::shape_service_revisions_summary_list::de_service_revisions_summary_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "targetServiceRevision" => {
                             builder = builder.set_target_service_revision(
-                                crate::protocol_serde::shape_service_revision_summary::de_service_revision_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_service_revision_summary::de_service_revision_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "status" => {
@@ -97,24 +107,37 @@ where
                                     .transpose()?,
                             );
                         }
+                        "lifecycleHookDetails" => {
+                            builder = builder.set_lifecycle_hook_details(
+                                crate::protocol_serde::shape_deployment_lifecycle_hook_detail_list::de_deployment_lifecycle_hook_detail_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "deploymentConfiguration" => {
                             builder = builder.set_deployment_configuration(
-                                crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "rollback" => {
-                            builder = builder.set_rollback(crate::protocol_serde::shape_rollback::de_rollback(tokens, _value)?);
+                            builder = builder.set_rollback(crate::protocol_serde::shape_rollback::de_rollback(tokens, _value, depth + 1)?);
                         }
                         "deploymentCircuitBreaker" => {
                             builder = builder.set_deployment_circuit_breaker(
                                 crate::protocol_serde::shape_service_deployment_circuit_breaker::de_service_deployment_circuit_breaker(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "alarms" => {
                             builder = builder.set_alarms(crate::protocol_serde::shape_service_deployment_alarms::de_service_deployment_alarms(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

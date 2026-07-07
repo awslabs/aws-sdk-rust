@@ -51,6 +51,8 @@ pub fn de_describe_snapshot_attribute(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSnapshotAttributeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSnapshotAttributeResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_snapshot_attribute(
             s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2.synthetic#DescribeSnapshotAttributeOutput$ProductCodes */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
+                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -84,7 +86,7 @@ pub fn de_describe_snapshot_attribute(
             s if s.matches("createVolumePermission") /* CreateVolumePermissions com.amazonaws.ec2.synthetic#DescribeSnapshotAttributeOutput$CreateVolumePermissions */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_create_volume_permission_list::de_create_volume_permission_list(&mut tag)
+                        crate::protocol_serde::shape_create_volume_permission_list::de_create_volume_permission_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

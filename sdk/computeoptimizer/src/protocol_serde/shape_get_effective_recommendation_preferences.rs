@@ -216,10 +216,11 @@ pub(crate) fn de_get_effective_recommendation_preferences(
     crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -232,7 +233,7 @@ pub(crate) fn de_get_effective_recommendation_preferences(
             })?,
             "externalMetricsPreference" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_external_metrics_preference(Some(
-                    crate::protocol_serde::shape_external_metrics_preference::de_external_metrics_preference(decoder)?,
+                    crate::protocol_serde::shape_external_metrics_preference::de_external_metrics_preference(decoder, depth + 1)?,
                 )))
             })?,
             "lookBackPeriod" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -242,12 +243,13 @@ pub(crate) fn de_get_effective_recommendation_preferences(
                 Ok(
                     builder.set_utilization_preferences(Some(crate::protocol_serde::shape_utilization_preferences::de_utilization_preferences(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
             "preferredResources" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_preferred_resources(Some(
-                    crate::protocol_serde::shape_effective_preferred_resources::de_effective_preferred_resources(decoder)?,
+                    crate::protocol_serde::shape_effective_preferred_resources::de_effective_preferred_resources(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -259,6 +261,8 @@ pub(crate) fn de_get_effective_recommendation_preferences(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -268,13 +272,13 @@ pub(crate) fn de_get_effective_recommendation_preferences(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

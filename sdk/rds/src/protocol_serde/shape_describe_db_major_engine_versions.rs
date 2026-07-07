@@ -49,6 +49,8 @@ pub fn de_describe_db_major_engine_versions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDBMajorEngineVersionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDBMajorEngineVersionsResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_describe_db_major_engine_versions(
             s if s.matches("DBMajorEngineVersions") /* DBMajorEngineVersions com.amazonaws.rds.synthetic#DescribeDBMajorEngineVersionsOutput$DBMajorEngineVersions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_major_engine_versions_list::de_db_major_engine_versions_list(&mut tag)
+                        crate::protocol_serde::shape_db_major_engine_versions_list::de_db_major_engine_versions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

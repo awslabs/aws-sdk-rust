@@ -52,10 +52,16 @@ pub fn ser_router_input_configuration(
 pub(crate) fn de_router_input_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouterInputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -82,31 +88,31 @@ where
                     variant = match key.as_ref() {
                             "standard" => {
                                 Some(crate::types::RouterInputConfiguration::Standard(
-                                    crate::protocol_serde::shape_standard_router_input_configuration::de_standard_router_input_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_standard_router_input_configuration::de_standard_router_input_configuration(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Standard' cannot be null"))?
                                 ))
                             }
                             "mediaLiveChannel" => {
                                 Some(crate::types::RouterInputConfiguration::MediaLiveChannel(
-                                    crate::protocol_serde::shape_media_live_channel_router_input_configuration::de_media_live_channel_router_input_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_media_live_channel_router_input_configuration::de_media_live_channel_router_input_configuration(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaLiveChannel' cannot be null"))?
                                 ))
                             }
                             "failover" => {
                                 Some(crate::types::RouterInputConfiguration::Failover(
-                                    crate::protocol_serde::shape_failover_router_input_configuration::de_failover_router_input_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_failover_router_input_configuration::de_failover_router_input_configuration(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Failover' cannot be null"))?
                                 ))
                             }
                             "mediaConnectFlow" => {
                                 Some(crate::types::RouterInputConfiguration::MediaConnectFlow(
-                                    crate::protocol_serde::shape_media_connect_flow_router_input_configuration::de_media_connect_flow_router_input_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_media_connect_flow_router_input_configuration::de_media_connect_flow_router_input_configuration(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaConnectFlow' cannot be null"))?
                                 ))
                             }
                             "merge" => {
                                 Some(crate::types::RouterInputConfiguration::Merge(
-                                    crate::protocol_serde::shape_merge_router_input_configuration::de_merge_router_input_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_merge_router_input_configuration::de_merge_router_input_configuration(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Merge' cannot be null"))?
                                 ))
                             }

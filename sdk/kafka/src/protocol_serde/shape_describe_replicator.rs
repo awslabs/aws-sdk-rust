@@ -159,6 +159,8 @@ pub(crate) fn de_describe_replicator(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -182,15 +184,23 @@ pub(crate) fn de_describe_replicator(
                 }
                 "kafkaClusters" => {
                     builder = builder.set_kafka_clusters(
-                        crate::protocol_serde::shape_list_of_kafka_cluster_description::de_list_of_kafka_cluster_description(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_kafka_cluster_description::de_list_of_kafka_cluster_description(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "logDelivery" => {
-                    builder = builder.set_log_delivery(crate::protocol_serde::shape_log_delivery::de_log_delivery(tokens, _value)?);
+                    builder = builder.set_log_delivery(crate::protocol_serde::shape_log_delivery::de_log_delivery(tokens, _value, depth + 1)?);
                 }
                 "replicationInfoList" => {
                     builder = builder.set_replication_info_list(
-                        crate::protocol_serde::shape_list_of_replication_info_description::de_list_of_replication_info_description(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_replication_info_description::de_list_of_replication_info_description(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "replicatorArn" => {
@@ -237,11 +247,13 @@ pub(crate) fn de_describe_replicator(
                 }
                 "stateInfo" => {
                     builder = builder.set_state_info(crate::protocol_serde::shape_replication_state_info::de_replication_state_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

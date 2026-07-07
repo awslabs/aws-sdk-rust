@@ -2,10 +2,16 @@
 pub(crate) fn de_collaboration_analysis_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CollaborationAnalysisTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -77,7 +83,11 @@ where
                             )?);
                         }
                         "schema" => {
-                            builder = builder.set_schema(crate::protocol_serde::shape_analysis_schema::de_analysis_schema(tokens, _value)?);
+                            builder = builder.set_schema(crate::protocol_serde::shape_analysis_schema::de_analysis_schema(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "format" => {
                             builder = builder.set_format(
@@ -87,31 +97,35 @@ where
                             );
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_analysis_source::de_analysis_source(tokens, _value)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_analysis_source::de_analysis_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "sourceMetadata" => {
                             builder = builder.set_source_metadata(
-                                crate::protocol_serde::shape_analysis_source_metadata::de_analysis_source_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_analysis_source_metadata::de_analysis_source_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         "analysisParameters" => {
                             builder = builder.set_analysis_parameters(
-                                crate::protocol_serde::shape_analysis_parameter_list::de_analysis_parameter_list(tokens, _value)?,
+                                crate::protocol_serde::shape_analysis_parameter_list::de_analysis_parameter_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "validations" => {
                             builder = builder.set_validations(
-                                    crate::protocol_serde::shape_analysis_template_validation_status_detail_list::de_analysis_template_validation_status_detail_list(tokens, _value)?
+                                    crate::protocol_serde::shape_analysis_template_validation_status_detail_list::de_analysis_template_validation_status_detail_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "errorMessageConfiguration" => {
                             builder = builder.set_error_message_configuration(
-                                crate::protocol_serde::shape_error_message_configuration::de_error_message_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_error_message_configuration::de_error_message_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "syntheticDataParameters" => {
                             builder = builder.set_synthetic_data_parameters(
-                                crate::protocol_serde::shape_synthetic_data_parameters::de_synthetic_data_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_synthetic_data_parameters::de_synthetic_data_parameters(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

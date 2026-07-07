@@ -2,10 +2,16 @@
 pub(crate) fn de_access_control_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AccessControlRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,22 +43,24 @@ where
                             );
                         }
                         "IpRanges" => {
-                            builder = builder.set_ip_ranges(crate::protocol_serde::shape_ip_range_list::de_ip_range_list(tokens, _value)?);
+                            builder = builder.set_ip_ranges(crate::protocol_serde::shape_ip_range_list::de_ip_range_list(tokens, _value, depth + 1)?);
                         }
                         "NotIpRanges" => {
-                            builder = builder.set_not_ip_ranges(crate::protocol_serde::shape_ip_range_list::de_ip_range_list(tokens, _value)?);
+                            builder =
+                                builder.set_not_ip_ranges(crate::protocol_serde::shape_ip_range_list::de_ip_range_list(tokens, _value, depth + 1)?);
                         }
                         "Actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_actions_list::de_actions_list(tokens, _value)?);
+                            builder = builder.set_actions(crate::protocol_serde::shape_actions_list::de_actions_list(tokens, _value, depth + 1)?);
                         }
                         "NotActions" => {
-                            builder = builder.set_not_actions(crate::protocol_serde::shape_actions_list::de_actions_list(tokens, _value)?);
+                            builder = builder.set_not_actions(crate::protocol_serde::shape_actions_list::de_actions_list(tokens, _value, depth + 1)?);
                         }
                         "UserIds" => {
-                            builder = builder.set_user_ids(crate::protocol_serde::shape_user_id_list::de_user_id_list(tokens, _value)?);
+                            builder = builder.set_user_ids(crate::protocol_serde::shape_user_id_list::de_user_id_list(tokens, _value, depth + 1)?);
                         }
                         "NotUserIds" => {
-                            builder = builder.set_not_user_ids(crate::protocol_serde::shape_user_id_list::de_user_id_list(tokens, _value)?);
+                            builder =
+                                builder.set_not_user_ids(crate::protocol_serde::shape_user_id_list::de_user_id_list(tokens, _value, depth + 1)?);
                         }
                         "DateCreated" => {
                             builder = builder.set_date_created(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -68,12 +76,12 @@ where
                         }
                         "ImpersonationRoleIds" => {
                             builder = builder.set_impersonation_role_ids(
-                                crate::protocol_serde::shape_impersonation_role_id_list::de_impersonation_role_id_list(tokens, _value)?,
+                                crate::protocol_serde::shape_impersonation_role_id_list::de_impersonation_role_id_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "NotImpersonationRoleIds" => {
                             builder = builder.set_not_impersonation_role_ids(
-                                crate::protocol_serde::shape_impersonation_role_id_list::de_impersonation_role_id_list(tokens, _value)?,
+                                crate::protocol_serde::shape_impersonation_role_id_list::de_impersonation_role_id_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

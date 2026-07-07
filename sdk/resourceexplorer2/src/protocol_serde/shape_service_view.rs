@@ -2,10 +2,16 @@
 pub(crate) fn de_service_view<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceView>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,11 +36,11 @@ where
                             );
                         }
                         "Filters" => {
-                            builder = builder.set_filters(crate::protocol_serde::shape_search_filter::de_search_filter(tokens, _value)?);
+                            builder = builder.set_filters(crate::protocol_serde::shape_search_filter::de_search_filter(tokens, _value, depth + 1)?);
                         }
                         "IncludedProperties" => {
                             builder = builder.set_included_properties(
-                                crate::protocol_serde::shape_included_property_list::de_included_property_list(tokens, _value)?,
+                                crate::protocol_serde::shape_included_property_list::de_included_property_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "StreamingAccessForService" => {
@@ -49,6 +55,15 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "ServiceLinkedRecorder" => {
+                            builder = builder.set_service_linked_recorder(
+                                crate::protocol_serde::shape_service_linked_recorder_info::de_service_linked_recorder_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

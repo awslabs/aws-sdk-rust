@@ -96,6 +96,8 @@ pub(crate) fn de_describe_location_fsx_ontap(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -122,11 +124,11 @@ pub(crate) fn de_describe_location_fsx_ontap(
                     );
                 }
                 "Protocol" => {
-                    builder = builder.set_protocol(crate::protocol_serde::shape_fsx_protocol::de_fsx_protocol(tokens, _value)?);
+                    builder = builder.set_protocol(crate::protocol_serde::shape_fsx_protocol::de_fsx_protocol(tokens, _value, depth + 1)?);
                 }
                 "SecurityGroupArns" => {
                     builder = builder.set_security_group_arns(
-                        crate::protocol_serde::shape_ec2_security_group_arn_list::de_ec2_security_group_arn_list(tokens, _value)?,
+                        crate::protocol_serde::shape_ec2_security_group_arn_list::de_ec2_security_group_arn_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "StorageVirtualMachineArn" => {

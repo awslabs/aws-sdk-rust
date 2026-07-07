@@ -25,7 +25,11 @@ pub fn ser_metric_stat(
 #[allow(clippy::needless_question_mark)]
 pub fn de_metric_stat(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MetricStat, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MetricStat::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -33,7 +37,7 @@ pub fn de_metric_stat(
             s if s.matches("Metric") /* Metric com.amazonaws.autoscaling#MetricStat$Metric */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_metric::de_metric(&mut tag)
+                        crate::protocol_serde::shape_metric::de_metric(&mut tag, depth + 1)
                         ?
                     )
                 ;

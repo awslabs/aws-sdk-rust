@@ -51,6 +51,8 @@ pub fn de_describe_security_group_rules(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSecurityGroupRulesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSecurityGroupRulesResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_security_group_rules(
             s if s.matches("securityGroupRuleSet") /* SecurityGroupRules com.amazonaws.ec2.synthetic#DescribeSecurityGroupRulesOutput$SecurityGroupRules */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_security_group_rule_list::de_security_group_rule_list(&mut tag)
+                        crate::protocol_serde::shape_security_group_rule_list::de_security_group_rule_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

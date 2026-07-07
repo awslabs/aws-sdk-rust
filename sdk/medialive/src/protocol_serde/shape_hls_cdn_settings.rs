@@ -39,10 +39,16 @@ pub fn ser_hls_cdn_settings(
 pub(crate) fn de_hls_cdn_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HlsCdnSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,25 +59,35 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "hlsAkamaiSettings" => {
-                            builder = builder
-                                .set_hls_akamai_settings(crate::protocol_serde::shape_hls_akamai_settings::de_hls_akamai_settings(tokens, _value)?);
+                            builder = builder.set_hls_akamai_settings(crate::protocol_serde::shape_hls_akamai_settings::de_hls_akamai_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "hlsBasicPutSettings" => {
                             builder = builder.set_hls_basic_put_settings(
-                                crate::protocol_serde::shape_hls_basic_put_settings::de_hls_basic_put_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_hls_basic_put_settings::de_hls_basic_put_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "hlsMediaStoreSettings" => {
                             builder = builder.set_hls_media_store_settings(
-                                crate::protocol_serde::shape_hls_media_store_settings::de_hls_media_store_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_hls_media_store_settings::de_hls_media_store_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "hlsS3Settings" => {
-                            builder = builder.set_hls_s3_settings(crate::protocol_serde::shape_hls_s3_settings::de_hls_s3_settings(tokens, _value)?);
+                            builder = builder.set_hls_s3_settings(crate::protocol_serde::shape_hls_s3_settings::de_hls_s3_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "hlsWebdavSettings" => {
-                            builder = builder
-                                .set_hls_webdav_settings(crate::protocol_serde::shape_hls_webdav_settings::de_hls_webdav_settings(tokens, _value)?);
+                            builder = builder.set_hls_webdav_settings(crate::protocol_serde::shape_hls_webdav_settings::de_hls_webdav_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

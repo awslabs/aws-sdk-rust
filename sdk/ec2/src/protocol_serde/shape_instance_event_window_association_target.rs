@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_event_window_association_target(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceEventWindowAssociationTarget, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceEventWindowAssociationTarget::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_instance_event_window_association_target(
             s if s.matches("instanceIdSet") /* InstanceIds com.amazonaws.ec2#InstanceEventWindowAssociationTarget$InstanceIds */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_id_list::de_instance_id_list(&mut tag)
+                        crate::protocol_serde::shape_instance_id_list::de_instance_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_instance_event_window_association_target(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#InstanceEventWindowAssociationTarget$Tags */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -30,7 +34,7 @@ pub fn de_instance_event_window_association_target(
             s if s.matches("dedicatedHostIdSet") /* DedicatedHostIds com.amazonaws.ec2#InstanceEventWindowAssociationTarget$DedicatedHostIds */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_dedicated_host_id_list::de_dedicated_host_id_list(&mut tag)
+                        crate::protocol_serde::shape_dedicated_host_id_list::de_dedicated_host_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

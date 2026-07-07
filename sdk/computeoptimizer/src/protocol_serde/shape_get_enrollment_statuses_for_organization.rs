@@ -179,10 +179,11 @@ pub(crate) fn de_get_enrollment_statuses_for_organization(
     crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -190,7 +191,7 @@ pub(crate) fn de_get_enrollment_statuses_for_organization(
         builder = match decoder.str()?.as_ref() {
             "accountEnrollmentStatuses" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_account_enrollment_statuses(Some(
-                    crate::protocol_serde::shape_account_enrollment_statuses::de_account_enrollment_statuses(decoder)?,
+                    crate::protocol_serde::shape_account_enrollment_statuses::de_account_enrollment_statuses(decoder, depth + 1)?,
                 )))
             })?,
             "nextToken" => {
@@ -205,6 +206,8 @@ pub(crate) fn de_get_enrollment_statuses_for_organization(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -214,13 +217,13 @@ pub(crate) fn de_get_enrollment_statuses_for_organization(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

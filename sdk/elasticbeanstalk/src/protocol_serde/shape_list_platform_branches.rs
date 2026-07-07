@@ -49,6 +49,8 @@ pub fn de_list_platform_branches(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListPlatformBranchesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListPlatformBranchesResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_list_platform_branches(
             s if s.matches("PlatformBranchSummaryList") /* PlatformBranchSummaryList com.amazonaws.elasticbeanstalk.synthetic#ListPlatformBranchesOutput$PlatformBranchSummaryList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_platform_branch_summary_list::de_platform_branch_summary_list(&mut tag)
+                        crate::protocol_serde::shape_platform_branch_summary_list::de_platform_branch_summary_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

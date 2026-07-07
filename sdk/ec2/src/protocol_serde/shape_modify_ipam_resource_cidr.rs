@@ -49,6 +49,8 @@ pub fn de_modify_ipam_resource_cidr(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyIpamResourceCidrResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyIpamResourceCidrResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_modify_ipam_resource_cidr(
             s if s.matches("ipamResourceCidr") /* IpamResourceCidr com.amazonaws.ec2.synthetic#ModifyIpamResourceCidrOutput$IpamResourceCidr */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipam_resource_cidr::de_ipam_resource_cidr(&mut tag)
+                        crate::protocol_serde::shape_ipam_resource_cidr::de_ipam_resource_cidr(&mut tag, depth + 1)
                         ?
                     )
                 ;

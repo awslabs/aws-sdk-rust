@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_secondary_interface(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SecondaryInterface, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SecondaryInterface::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_secondary_interface(
             s if s.matches("attachment") /* Attachment com.amazonaws.ec2#SecondaryInterface$Attachment */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_secondary_interface_attachment::de_secondary_interface_attachment(&mut tag)
+                        crate::protocol_serde::shape_secondary_interface_attachment::de_secondary_interface_attachment(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_secondary_interface(
             s if s.matches("privateIpv4AddressSet") /* PrivateIpv4Addresses com.amazonaws.ec2#SecondaryInterface$PrivateIpv4Addresses */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_secondary_interface_ipv4_address_list::de_secondary_interface_ipv4_address_list(&mut tag)
+                        crate::protocol_serde::shape_secondary_interface_ipv4_address_list::de_secondary_interface_ipv4_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -191,7 +195,7 @@ pub fn de_secondary_interface(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#SecondaryInterface$Tags */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

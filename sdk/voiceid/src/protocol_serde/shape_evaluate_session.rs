@@ -146,6 +146,8 @@ pub(crate) fn de_evaluate_session(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -181,12 +183,16 @@ pub(crate) fn de_evaluate_session(
                 }
                 "AuthenticationResult" => {
                     builder = builder.set_authentication_result(crate::protocol_serde::shape_authentication_result::de_authentication_result(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "FraudDetectionResult" => {
                     builder = builder.set_fraud_detection_result(crate::protocol_serde::shape_fraud_detection_result::de_fraud_detection_result(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

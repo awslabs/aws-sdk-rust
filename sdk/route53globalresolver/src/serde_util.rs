@@ -932,6 +932,15 @@ pub(crate) fn list_managed_firewall_domain_lists_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_shared_dns_views_output_output_correct_errors(
+    mut builder: crate::operation::list_shared_dns_views::builders::ListSharedDnsViewsOutputBuilder,
+) -> crate::operation::list_shared_dns_views::builders::ListSharedDnsViewsOutputBuilder {
+    if builder.dns_views.is_none() {
+        builder.dns_views = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_access_source_output_output_correct_errors(
     mut builder: crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder,
 ) -> crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder {
@@ -1405,6 +1414,48 @@ pub(crate) fn managed_firewall_domain_lists_item_correct_errors(
     }
     if builder.managed_list_type.is_none() {
         builder.managed_list_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn shared_dns_view_summary_correct_errors(
+    mut builder: crate::types::builders::SharedDnsViewSummaryBuilder,
+) -> crate::types::builders::SharedDnsViewSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.client_token.is_none() {
+        builder.client_token = Some(Default::default())
+    }
+    if builder.dnssec_validation.is_none() {
+        builder.dnssec_validation = "no value was set".parse::<crate::types::DnsSecValidationType>().ok()
+    }
+    if builder.edns_client_subnet.is_none() {
+        builder.edns_client_subnet = "no value was set".parse::<crate::types::EdnsClientSubnetType>().ok()
+    }
+    if builder.firewall_rules_fail_open.is_none() {
+        builder.firewall_rules_fail_open = "no value was set".parse::<crate::types::FirewallRulesFailOpenType>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.global_resolver_id.is_none() {
+        builder.global_resolver_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ProfileResourceStatus>().ok()
+    }
+    if builder.owner_account_id.is_none() {
+        builder.owner_account_id = Some(Default::default())
     }
     builder
 }

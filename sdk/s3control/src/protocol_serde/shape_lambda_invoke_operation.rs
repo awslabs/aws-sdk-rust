@@ -34,7 +34,11 @@ pub fn ser_lambda_invoke_operation(
 #[allow(clippy::needless_question_mark)]
 pub fn de_lambda_invoke_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LambdaInvokeOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LambdaInvokeOperation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -68,7 +72,7 @@ pub fn de_lambda_invoke_operation(
             s if s.matches("UserArguments") /* UserArguments com.amazonaws.s3control#LambdaInvokeOperation$UserArguments */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_user_arguments::de_user_arguments(&mut tag)
+                        crate::protocol_serde::shape_user_arguments::de_user_arguments(&mut tag, depth + 1)
                         ?
                     )
                 ;

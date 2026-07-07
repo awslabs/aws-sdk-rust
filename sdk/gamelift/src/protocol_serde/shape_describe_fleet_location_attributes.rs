@@ -145,10 +145,11 @@ pub(crate) fn de_describe_fleet_location_attributes(
     crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -164,6 +165,7 @@ pub(crate) fn de_describe_fleet_location_attributes(
                 Ok(
                     builder.set_location_attributes(Some(crate::protocol_serde::shape_location_attributes_list::de_location_attributes_list(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -179,6 +181,8 @@ pub(crate) fn de_describe_fleet_location_attributes(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -188,13 +192,13 @@ pub(crate) fn de_describe_fleet_location_attributes(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

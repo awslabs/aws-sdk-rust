@@ -146,6 +146,8 @@ mod associate_subnets;
 
 mod attach_rule_groups_to_proxy_configuration;
 
+mod create_container_association;
+
 mod create_firewall;
 
 mod create_firewall_policy;
@@ -191,6 +193,8 @@ mod create_vpc_endpoint_association;
 /// ```
 pub mod customize;
 
+mod delete_container_association;
+
 mod delete_firewall;
 
 mod delete_firewall_policy;
@@ -212,6 +216,8 @@ mod delete_rule_group;
 mod delete_tls_inspection_configuration;
 
 mod delete_vpc_endpoint_association;
+
+mod describe_container_association;
 
 mod describe_firewall;
 
@@ -253,6 +259,8 @@ mod get_analysis_report_results;
 
 mod list_analysis_reports;
 
+mod list_container_associations;
+
 mod list_firewall_policies;
 
 mod list_firewalls;
@@ -290,6 +298,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_availability_zone_change_protection;
+
+mod update_container_association;
 
 mod update_firewall_analysis_settings;
 

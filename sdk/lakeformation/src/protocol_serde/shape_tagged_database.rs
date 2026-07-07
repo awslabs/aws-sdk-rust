@@ -2,10 +2,16 @@
 pub(crate) fn de_tagged_database<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TaggedDatabase>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,10 +22,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Database" => {
-                            builder = builder.set_database(crate::protocol_serde::shape_database_resource::de_database_resource(tokens, _value)?);
+                            builder = builder.set_database(crate::protocol_serde::shape_database_resource::de_database_resource(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LFTags" => {
-                            builder = builder.set_lf_tags(crate::protocol_serde::shape_lf_tags_list::de_lf_tags_list(tokens, _value)?);
+                            builder = builder.set_lf_tags(crate::protocol_serde::shape_lf_tags_list::de_lf_tags_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

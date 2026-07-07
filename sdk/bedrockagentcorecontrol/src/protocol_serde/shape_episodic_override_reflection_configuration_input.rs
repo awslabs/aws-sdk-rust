@@ -27,5 +27,11 @@ pub fn ser_episodic_override_reflection_configuration_input(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.memory_record_schema {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("memoryRecordSchema").start_object();
+        crate::protocol_serde::shape_memory_record_schema::ser_memory_record_schema(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

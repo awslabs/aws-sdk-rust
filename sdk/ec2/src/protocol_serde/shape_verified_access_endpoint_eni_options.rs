@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_verified_access_endpoint_eni_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VerifiedAccessEndpointEniOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VerifiedAccessEndpointEniOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -52,7 +56,7 @@ pub fn de_verified_access_endpoint_eni_options(
             s if s.matches("portRangeSet") /* PortRanges com.amazonaws.ec2#VerifiedAccessEndpointEniOptions$PortRanges */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint_port_range_list::de_verified_access_endpoint_port_range_list(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint_port_range_list::de_verified_access_endpoint_port_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -133,6 +133,8 @@ pub fn de_list_organizations_features(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListOrganizationsFeaturesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListOrganizationsFeaturesResponse got {start_el:?}"
@@ -163,7 +165,7 @@ pub fn de_list_organizations_features(
             s if s.matches("EnabledFeatures") /* EnabledFeatures com.amazonaws.iam.synthetic#ListOrganizationsFeaturesOutput$EnabledFeatures */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_features_list_type::de_features_list_type(&mut tag)
+                        crate::protocol_serde::shape_features_list_type::de_features_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

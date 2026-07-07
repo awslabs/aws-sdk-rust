@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchResourcesInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    /// <p>WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
     pub query_text: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct SearchResourcesInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl SearchResourcesInput {
-    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    /// <p>WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(&self) -> ::std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -103,17 +103,17 @@ pub struct SearchResourcesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl SearchResourcesInputBuilder {
-    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    /// <p>WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    /// <p>WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    /// <p>WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_token
     }

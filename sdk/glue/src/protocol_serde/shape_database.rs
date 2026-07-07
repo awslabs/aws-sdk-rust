@@ -2,10 +2,16 @@
 pub(crate) fn de_database<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Database>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,8 @@ where
                             );
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens, _value)?);
+                            builder =
+                                builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens, _value, depth + 1)?);
                         }
                         "CreateTime" => {
                             builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -47,12 +54,15 @@ where
                         }
                         "CreateTableDefaultPermissions" => {
                             builder = builder.set_create_table_default_permissions(
-                                crate::protocol_serde::shape_principal_permissions_list::de_principal_permissions_list(tokens, _value)?,
+                                crate::protocol_serde::shape_principal_permissions_list::de_principal_permissions_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "TargetDatabase" => {
-                            builder = builder
-                                .set_target_database(crate::protocol_serde::shape_database_identifier::de_database_identifier(tokens, _value)?);
+                            builder = builder.set_target_database(crate::protocol_serde::shape_database_identifier::de_database_identifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CatalogId" => {
                             builder = builder.set_catalog_id(
@@ -62,8 +72,11 @@ where
                             );
                         }
                         "FederatedDatabase" => {
-                            builder = builder
-                                .set_federated_database(crate::protocol_serde::shape_federated_database::de_federated_database(tokens, _value)?);
+                            builder = builder.set_federated_database(crate::protocol_serde::shape_federated_database::de_federated_database(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

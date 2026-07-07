@@ -6,8 +6,17 @@ pub fn ser_update_api_key_credential_provider_input_input(
     if let Some(var_1) = &input.api_key {
         object.key("apiKey").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.api_key_secret_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("apiKeySecretConfig").start_object();
+        crate::protocol_serde::shape_secret_reference::ser_secret_reference(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.api_key_secret_source {
+        object.key("apiKeySecretSource").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
     }
     Ok(())
 }

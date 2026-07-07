@@ -2,10 +2,16 @@
 pub(crate) fn de_core_network_change_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CoreNetworkChangeValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,7 @@ where
                         }
                         "EdgeLocations" => {
                             builder = builder.set_edge_locations(
-                                crate::protocol_serde::shape_external_region_code_list::de_external_region_code_list(tokens, _value)?,
+                                crate::protocol_serde::shape_external_region_code_list::de_external_region_code_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Asn" => {
@@ -57,17 +63,23 @@ where
                         }
                         "InsideCidrBlocks" => {
                             builder = builder.set_inside_cidr_blocks(
-                                crate::protocol_serde::shape_constrained_string_list::de_constrained_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_constrained_string_list::de_constrained_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "SharedSegments" => {
                             builder = builder.set_shared_segments(crate::protocol_serde::shape_constrained_string_list::de_constrained_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ServiceInsertionActions" => {
                             builder = builder.set_service_insertion_actions(
-                                crate::protocol_serde::shape_service_insertion_action_list::de_service_insertion_action_list(tokens, _value)?,
+                                crate::protocol_serde::shape_service_insertion_action_list::de_service_insertion_action_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "VpnEcmpSupport" => {
@@ -96,7 +108,7 @@ where
                         }
                         "PeerEdgeLocations" => {
                             builder = builder.set_peer_edge_locations(
-                                crate::protocol_serde::shape_external_region_code_list::de_external_region_code_list(tokens, _value)?,
+                                crate::protocol_serde::shape_external_region_code_list::de_external_region_code_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "AttachmentId" => {
@@ -109,7 +121,9 @@ where
                         "RoutingPolicyAssociationDetails" => {
                             builder = builder.set_routing_policy_association_details(
                                 crate::protocol_serde::shape_routing_policy_association_details_list::de_routing_policy_association_details_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

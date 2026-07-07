@@ -10,6 +10,16 @@ pub struct InvoiceSummariesFilter {
     pub billing_period: ::std::option::Option<crate::types::BillingPeriod>,
     /// <p>The name of the entity that issues the Amazon Web Services invoice.</p>
     pub invoicing_entity: ::std::option::Option<::std::string::String>,
+    /// <p>The role of the invoice receiver to filter by.</p><note>
+    /// <p>When <code>ReceiverRole</code> is specified:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data is available starting <code>2025-06-01</code>. Queries for periods before <code>2025-06-01</code> return a validation error.</p></li>
+    /// <li>
+    /// <p><code>TimeInterval</code> supports a time interval of up to 5 years. Without <code>ReceiverRole</code>, <code>TimeInterval</code> is limited to one month.</p></li>
+    /// </ul>
+    /// </note>
+    pub receiver_role: ::std::option::Option<crate::types::ReceiverRole>,
 }
 impl InvoiceSummariesFilter {
     /// <p>The date range for invoice summary retrieval.</p>
@@ -23,6 +33,18 @@ impl InvoiceSummariesFilter {
     /// <p>The name of the entity that issues the Amazon Web Services invoice.</p>
     pub fn invoicing_entity(&self) -> ::std::option::Option<&str> {
         self.invoicing_entity.as_deref()
+    }
+    /// <p>The role of the invoice receiver to filter by.</p><note>
+    /// <p>When <code>ReceiverRole</code> is specified:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data is available starting <code>2025-06-01</code>. Queries for periods before <code>2025-06-01</code> return a validation error.</p></li>
+    /// <li>
+    /// <p><code>TimeInterval</code> supports a time interval of up to 5 years. Without <code>ReceiverRole</code>, <code>TimeInterval</code> is limited to one month.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn receiver_role(&self) -> ::std::option::Option<&crate::types::ReceiverRole> {
+        self.receiver_role.as_ref()
     }
 }
 impl InvoiceSummariesFilter {
@@ -39,6 +61,7 @@ pub struct InvoiceSummariesFilterBuilder {
     pub(crate) time_interval: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) billing_period: ::std::option::Option<crate::types::BillingPeriod>,
     pub(crate) invoicing_entity: ::std::option::Option<::std::string::String>,
+    pub(crate) receiver_role: ::std::option::Option<crate::types::ReceiverRole>,
 }
 impl InvoiceSummariesFilterBuilder {
     /// <p>The date range for invoice summary retrieval.</p>
@@ -83,12 +106,51 @@ impl InvoiceSummariesFilterBuilder {
     pub fn get_invoicing_entity(&self) -> &::std::option::Option<::std::string::String> {
         &self.invoicing_entity
     }
+    /// <p>The role of the invoice receiver to filter by.</p><note>
+    /// <p>When <code>ReceiverRole</code> is specified:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data is available starting <code>2025-06-01</code>. Queries for periods before <code>2025-06-01</code> return a validation error.</p></li>
+    /// <li>
+    /// <p><code>TimeInterval</code> supports a time interval of up to 5 years. Without <code>ReceiverRole</code>, <code>TimeInterval</code> is limited to one month.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn receiver_role(mut self, input: crate::types::ReceiverRole) -> Self {
+        self.receiver_role = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The role of the invoice receiver to filter by.</p><note>
+    /// <p>When <code>ReceiverRole</code> is specified:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data is available starting <code>2025-06-01</code>. Queries for periods before <code>2025-06-01</code> return a validation error.</p></li>
+    /// <li>
+    /// <p><code>TimeInterval</code> supports a time interval of up to 5 years. Without <code>ReceiverRole</code>, <code>TimeInterval</code> is limited to one month.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_receiver_role(mut self, input: ::std::option::Option<crate::types::ReceiverRole>) -> Self {
+        self.receiver_role = input;
+        self
+    }
+    /// <p>The role of the invoice receiver to filter by.</p><note>
+    /// <p>When <code>ReceiverRole</code> is specified:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data is available starting <code>2025-06-01</code>. Queries for periods before <code>2025-06-01</code> return a validation error.</p></li>
+    /// <li>
+    /// <p><code>TimeInterval</code> supports a time interval of up to 5 years. Without <code>ReceiverRole</code>, <code>TimeInterval</code> is limited to one month.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_receiver_role(&self) -> &::std::option::Option<crate::types::ReceiverRole> {
+        &self.receiver_role
+    }
     /// Consumes the builder and constructs a [`InvoiceSummariesFilter`](crate::types::InvoiceSummariesFilter).
     pub fn build(self) -> crate::types::InvoiceSummariesFilter {
         crate::types::InvoiceSummariesFilter {
             time_interval: self.time_interval,
             billing_period: self.billing_period,
             invoicing_entity: self.invoicing_entity,
+            receiver_role: self.receiver_role,
         }
     }
 }

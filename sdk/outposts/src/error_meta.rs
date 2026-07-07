@@ -170,6 +170,31 @@ impl From<crate::operation::create_outpost::CreateOutpostError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_quote::CreateQuoteError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_quote::CreateQuoteError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_quote::CreateQuoteError> for Error {
+    fn from(err: crate::operation::create_quote::CreateQuoteError) -> Self {
+        match err {
+            crate::operation::create_quote::CreateQuoteError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_quote::CreateQuoteError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_quote::CreateQuoteError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_quote::CreateQuoteError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_quote::CreateQuoteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_renewal::CreateRenewalError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -244,6 +269,31 @@ impl From<crate::operation::delete_outpost::DeleteOutpostError> for Error {
             crate::operation::delete_outpost::DeleteOutpostError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_outpost::DeleteOutpostError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_outpost::DeleteOutpostError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_quote::DeleteQuoteError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_quote::DeleteQuoteError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_quote::DeleteQuoteError> for Error {
+    fn from(err: crate::operation::delete_quote::DeleteQuoteError) -> Self {
+        match err {
+            crate::operation::delete_quote::DeleteQuoteError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_quote::DeleteQuoteError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_quote::DeleteQuoteError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_quote::DeleteQuoteError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_quote::DeleteQuoteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -514,6 +564,31 @@ impl From<crate::operation::get_outpost_supported_instance_types::GetOutpostSupp
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_quote::GetQuoteError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_quote::GetQuoteError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_quote::GetQuoteError> for Error {
+    fn from(err: crate::operation::get_quote::GetQuoteError) -> Self {
+        match err {
+            crate::operation::get_quote::GetQuoteError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_quote::GetQuoteError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_quote::GetQuoteError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_quote::GetQuoteError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_quote::GetQuoteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_renewal_pricing::GetRenewalPricingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -735,6 +810,42 @@ impl From<crate::operation::list_catalog_items::ListCatalogItemsError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError> for Error {
+    fn from(err: crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError) -> Self {
+        match err {
+            crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_orderable_instance_types::ListOrderableInstanceTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_orders::ListOrdersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -781,6 +892,29 @@ impl From<crate::operation::list_outposts::ListOutpostsError> for Error {
             crate::operation::list_outposts::ListOutpostsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_outposts::ListOutpostsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_outposts::ListOutpostsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_quotes::ListQuotesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_quotes::ListQuotesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_quotes::ListQuotesError> for Error {
+    fn from(err: crate::operation::list_quotes::ListQuotesError) -> Self {
+        match err {
+            crate::operation::list_quotes::ListQuotesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_quotes::ListQuotesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_quotes::ListQuotesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -991,6 +1125,31 @@ impl From<crate::operation::update_outpost::UpdateOutpostError> for Error {
             crate::operation::update_outpost::UpdateOutpostError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_outpost::UpdateOutpostError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_outpost::UpdateOutpostError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_quote::UpdateQuoteError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_quote::UpdateQuoteError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_quote::UpdateQuoteError> for Error {
+    fn from(err: crate::operation::update_quote::UpdateQuoteError) -> Self {
+        match err {
+            crate::operation::update_quote::UpdateQuoteError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_quote::UpdateQuoteError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_quote::UpdateQuoteError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_quote::UpdateQuoteError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_quote::UpdateQuoteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

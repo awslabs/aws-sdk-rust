@@ -2,10 +2,16 @@
 pub(crate) fn de_grant_list_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GrantListEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,11 +71,31 @@ where
                         }
                         "Operations" => {
                             builder = builder.set_operations(crate::protocol_serde::shape_grant_operation_list::de_grant_operation_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Constraints" => {
-                            builder = builder.set_constraints(crate::protocol_serde::shape_grant_constraints::de_grant_constraints(tokens, _value)?);
+                            builder = builder.set_constraints(crate::protocol_serde::shape_grant_constraints::de_grant_constraints(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "GranteeServicePrincipal" => {
+                            builder = builder.set_grantee_service_principal(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RetiringServicePrincipal" => {
+                            builder = builder.set_retiring_service_principal(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

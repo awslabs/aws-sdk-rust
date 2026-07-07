@@ -39,16 +39,28 @@ pub fn ser_filter_slider_control(
             ::aws_smithy_types::Number::Float((input.step_size).into()),
         );
     }
+    if let Some(var_4) = &input.control_title_format_text {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ControlTitleFormatText").start_object();
+        crate::protocol_serde::shape_control_title_format_text::ser_control_title_format_text(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_filter_slider_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FilterSliderControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -81,7 +93,11 @@ where
                         }
                         "DisplayOptions" => {
                             builder = builder.set_display_options(
-                                crate::protocol_serde::shape_slider_control_display_options::de_slider_control_display_options(tokens, _value)?,
+                                crate::protocol_serde::shape_slider_control_display_options::de_slider_control_display_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Type" => {
@@ -104,6 +120,11 @@ where
                         "StepSize" => {
                             builder = builder.set_step_size(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "ControlTitleFormatText" => {
+                            builder = builder.set_control_title_format_text(
+                                crate::protocol_serde::shape_control_title_format_text::de_control_title_format_text(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

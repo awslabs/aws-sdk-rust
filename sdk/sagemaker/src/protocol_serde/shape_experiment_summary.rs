@@ -2,10 +2,16 @@
 pub(crate) fn de_experiment_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ExperimentSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,8 +43,11 @@ where
                             );
                         }
                         "ExperimentSource" => {
-                            builder =
-                                builder.set_experiment_source(crate::protocol_serde::shape_experiment_source::de_experiment_source(tokens, _value)?);
+                            builder = builder.set_experiment_source(crate::protocol_serde::shape_experiment_source::de_experiment_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CreationTime" => {
                             builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

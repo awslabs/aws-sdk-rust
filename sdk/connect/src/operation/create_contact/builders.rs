@@ -120,17 +120,17 @@ impl CreateContactFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
@@ -148,17 +148,17 @@ impl CreateContactFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.related_contact_id(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_related_contact_id(input);
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_related_contact_id()
     }
@@ -167,19 +167,19 @@ impl CreateContactFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
@@ -354,7 +354,7 @@ impl CreateContactFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
     ///
-    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
     /// <p>This field can be used to set Segment Contact Expiry as a duration in minutes.</p><note>
     /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
@@ -363,7 +363,7 @@ impl CreateContactFluentBuilder {
         self.inner = self.inner.segment_attributes(k.into(), v);
         self
     }
-    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
     /// <p>This field can be used to set Segment Contact Expiry as a duration in minutes.</p><note>
     /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
@@ -375,7 +375,7 @@ impl CreateContactFluentBuilder {
         self.inner = self.inner.set_segment_attributes(input);
         self
     }
-    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
     /// <p>This field can be used to set Segment Contact Expiry as a duration in minutes.</p><note>
     /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
@@ -385,17 +385,17 @@ impl CreateContactFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.inner.get_segment_attributes()
     }
-    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Connect Customer Contact Lens with external voice systems</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn previous_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.previous_contact_id(input.into());
         self
     }
-    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Connect Customer Contact Lens with external voice systems</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn set_previous_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_previous_contact_id(input);
         self
     }
-    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Connect Customer Contact Lens with external voice systems</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_previous_contact_id()
     }

@@ -10,6 +10,8 @@ pub struct DescribeOptionGroupOptionsInput {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -52,6 +54,8 @@ impl DescribeOptionGroupOptionsInput {
     /// <ul>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
@@ -125,6 +129,8 @@ impl DescribeOptionGroupOptionsInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -160,6 +166,8 @@ impl DescribeOptionGroupOptionsInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -193,6 +201,8 @@ impl DescribeOptionGroupOptionsInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>

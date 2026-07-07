@@ -19,13 +19,17 @@ pub fn ser_lake_formation_scope_union(
 
 pub fn de_lake_formation_scope_union(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LakeFormationScopeUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     let mut base: Option<crate::types::LakeFormationScopeUnion> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LakeFormationQuery") /* LakeFormationQuery com.amazonaws.redshift#LakeFormationScopeUnion$LakeFormationQuery */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_lake_formation_query::de_lake_formation_query(&mut tag)
+                    crate::protocol_serde::shape_lake_formation_query::de_lake_formation_query(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::LakeFormationScopeUnion::LakeFormationQuery(tmp));

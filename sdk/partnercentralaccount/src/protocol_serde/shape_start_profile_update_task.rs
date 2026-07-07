@@ -80,6 +80,23 @@ pub fn de_start_profile_update_task_http_error(
             };
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_profile_update_task::StartProfileUpdateTaskError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_profile_update_task::StartProfileUpdateTaskError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -152,6 +169,8 @@ pub(crate) fn de_start_profile_update_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -186,7 +205,7 @@ pub(crate) fn de_start_profile_update_task(
                     );
                 }
                 "TaskDetails" => {
-                    builder = builder.set_task_details(crate::protocol_serde::shape_task_details::de_task_details(tokens, _value)?);
+                    builder = builder.set_task_details(crate::protocol_serde::shape_task_details::de_task_details(tokens, _value, depth + 1)?);
                 }
                 "StartedAt" => {
                     builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -208,7 +227,11 @@ pub(crate) fn de_start_profile_update_task(
                     )?);
                 }
                 "ErrorDetailList" => {
-                    builder = builder.set_error_detail_list(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens, _value)?);
+                    builder = builder.set_error_detail_list(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParsingConfiguration {
-    /// <p>The parsing strategy for the data source.</p>
+    /// <p>The parsing strategy for the data source. Only <code>SMART_PARSING</code> can be selected for managed knowledge bases. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-customize-ingestion.html">Customize ingestion for managed knowledge bases</a>.</p>
     pub parsing_strategy: crate::types::ParsingStrategy,
     /// <p>If you specify <code>BEDROCK_FOUNDATION_MODEL</code> as the parsing strategy for ingesting your data source, use this object to modify configurations for using a foundation model to parse documents.</p>
     pub bedrock_foundation_model_configuration: ::std::option::Option<crate::types::BedrockFoundationModelConfiguration>,
@@ -14,7 +14,7 @@ pub struct ParsingConfiguration {
     pub bedrock_data_automation_configuration: ::std::option::Option<crate::types::BedrockDataAutomationConfiguration>,
 }
 impl ParsingConfiguration {
-    /// <p>The parsing strategy for the data source.</p>
+    /// <p>The parsing strategy for the data source. Only <code>SMART_PARSING</code> can be selected for managed knowledge bases. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-customize-ingestion.html">Customize ingestion for managed knowledge bases</a>.</p>
     pub fn parsing_strategy(&self) -> &crate::types::ParsingStrategy {
         &self.parsing_strategy
     }
@@ -43,18 +43,18 @@ pub struct ParsingConfigurationBuilder {
     pub(crate) bedrock_data_automation_configuration: ::std::option::Option<crate::types::BedrockDataAutomationConfiguration>,
 }
 impl ParsingConfigurationBuilder {
-    /// <p>The parsing strategy for the data source.</p>
+    /// <p>The parsing strategy for the data source. Only <code>SMART_PARSING</code> can be selected for managed knowledge bases. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-customize-ingestion.html">Customize ingestion for managed knowledge bases</a>.</p>
     /// This field is required.
     pub fn parsing_strategy(mut self, input: crate::types::ParsingStrategy) -> Self {
         self.parsing_strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The parsing strategy for the data source.</p>
+    /// <p>The parsing strategy for the data source. Only <code>SMART_PARSING</code> can be selected for managed knowledge bases. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-customize-ingestion.html">Customize ingestion for managed knowledge bases</a>.</p>
     pub fn set_parsing_strategy(mut self, input: ::std::option::Option<crate::types::ParsingStrategy>) -> Self {
         self.parsing_strategy = input;
         self
     }
-    /// <p>The parsing strategy for the data source.</p>
+    /// <p>The parsing strategy for the data source. Only <code>SMART_PARSING</code> can be selected for managed knowledge bases. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-customize-ingestion.html">Customize ingestion for managed knowledge bases</a>.</p>
     pub fn get_parsing_strategy(&self) -> &::std::option::Option<crate::types::ParsingStrategy> {
         &self.parsing_strategy
     }

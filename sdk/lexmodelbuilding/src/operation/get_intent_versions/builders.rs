@@ -26,6 +26,7 @@ impl crate::operation::get_intent_versions::builders::GetIntentVersionsInputBuil
 /// <p>The <code>GetIntentVersions</code> operation returns an <code>IntentMetadata</code> object for each version of an intent. For example, if an intent has three numbered versions, the <code>GetIntentVersions</code> operation returns four <code>IntentMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version.</p>
 /// <p>The <code>GetIntentVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p>
 /// <p>This operation requires permissions for the <code>lex:GetIntentVersions</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIntentVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

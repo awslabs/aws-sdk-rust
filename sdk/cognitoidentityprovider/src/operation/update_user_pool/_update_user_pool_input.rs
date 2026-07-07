@@ -52,6 +52,10 @@ pub struct UpdateUserPoolInput {
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
     pub user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
+    /// <p>The key configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub key_configuration: ::std::option::Option<crate::types::KeyConfigurationType>,
+    /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub issuer_configuration: ::std::option::Option<crate::types::IssuerConfigurationType>,
 }
 impl UpdateUserPoolInput {
     /// <p>The ID of the user pool you want to update.</p>
@@ -146,6 +150,14 @@ impl UpdateUserPoolInput {
     pub fn user_pool_tier(&self) -> ::std::option::Option<&crate::types::UserPoolTierType> {
         self.user_pool_tier.as_ref()
     }
+    /// <p>The key configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn key_configuration(&self) -> ::std::option::Option<&crate::types::KeyConfigurationType> {
+        self.key_configuration.as_ref()
+    }
+    /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn issuer_configuration(&self) -> ::std::option::Option<&crate::types::IssuerConfigurationType> {
+        self.issuer_configuration.as_ref()
+    }
 }
 impl UpdateUserPoolInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
@@ -179,6 +191,8 @@ pub struct UpdateUserPoolInputBuilder {
     pub(crate) account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
+    pub(crate) key_configuration: ::std::option::Option<crate::types::KeyConfigurationType>,
+    pub(crate) issuer_configuration: ::std::option::Option<crate::types::IssuerConfigurationType>,
 }
 impl UpdateUserPoolInputBuilder {
     /// <p>The ID of the user pool you want to update.</p>
@@ -513,6 +527,34 @@ impl UpdateUserPoolInputBuilder {
     pub fn get_user_pool_tier(&self) -> &::std::option::Option<crate::types::UserPoolTierType> {
         &self.user_pool_tier
     }
+    /// <p>The key configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn key_configuration(mut self, input: crate::types::KeyConfigurationType) -> Self {
+        self.key_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The key configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn set_key_configuration(mut self, input: ::std::option::Option<crate::types::KeyConfigurationType>) -> Self {
+        self.key_configuration = input;
+        self
+    }
+    /// <p>The key configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn get_key_configuration(&self) -> &::std::option::Option<crate::types::KeyConfigurationType> {
+        &self.key_configuration
+    }
+    /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn issuer_configuration(mut self, input: crate::types::IssuerConfigurationType) -> Self {
+        self.issuer_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn set_issuer_configuration(mut self, input: ::std::option::Option<crate::types::IssuerConfigurationType>) -> Self {
+        self.issuer_configuration = input;
+        self
+    }
+    /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn get_issuer_configuration(&self) -> &::std::option::Option<crate::types::IssuerConfigurationType> {
+        &self.issuer_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
     pub fn build(
         self,
@@ -539,6 +581,8 @@ impl UpdateUserPoolInputBuilder {
             account_recovery_setting: self.account_recovery_setting,
             pool_name: self.pool_name,
             user_pool_tier: self.user_pool_tier,
+            key_configuration: self.key_configuration,
+            issuer_configuration: self.issuer_configuration,
         })
     }
 }

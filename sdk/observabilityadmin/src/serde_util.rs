@@ -114,6 +114,15 @@ pub(crate) fn logs_encryption_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn metrics_backup_configuration_correct_errors(
+    mut builder: crate::types::builders::MetricsBackupConfigurationBuilder,
+) -> crate::types::builders::MetricsBackupConfigurationBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn advanced_event_selector_correct_errors(
     mut builder: crate::types::builders::AdvancedEventSelectorBuilder,
 ) -> crate::types::builders::AdvancedEventSelectorBuilder {

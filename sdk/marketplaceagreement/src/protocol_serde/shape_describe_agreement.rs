@@ -133,6 +133,8 @@ pub(crate) fn de_describe_agreement(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,10 +148,10 @@ pub(crate) fn de_describe_agreement(
                     );
                 }
                 "acceptor" => {
-                    builder = builder.set_acceptor(crate::protocol_serde::shape_acceptor::de_acceptor(tokens, _value)?);
+                    builder = builder.set_acceptor(crate::protocol_serde::shape_acceptor::de_acceptor(tokens, _value, depth + 1)?);
                 }
                 "proposer" => {
-                    builder = builder.set_proposer(crate::protocol_serde::shape_proposer::de_proposer(tokens, _value)?);
+                    builder = builder.set_proposer(crate::protocol_serde::shape_proposer::de_proposer(tokens, _value, depth + 1)?);
                 }
                 "startTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -177,10 +179,18 @@ pub(crate) fn de_describe_agreement(
                     );
                 }
                 "estimatedCharges" => {
-                    builder = builder.set_estimated_charges(crate::protocol_serde::shape_estimated_charges::de_estimated_charges(tokens, _value)?);
+                    builder = builder.set_estimated_charges(crate::protocol_serde::shape_estimated_charges::de_estimated_charges(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "proposalSummary" => {
-                    builder = builder.set_proposal_summary(crate::protocol_serde::shape_proposal_summary::de_proposal_summary(tokens, _value)?);
+                    builder = builder.set_proposal_summary(crate::protocol_serde::shape_proposal_summary::de_proposal_summary(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

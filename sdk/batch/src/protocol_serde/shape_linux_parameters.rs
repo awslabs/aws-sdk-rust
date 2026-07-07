@@ -54,10 +54,16 @@ pub fn ser_linux_parameters(
 pub(crate) fn de_linux_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LinuxParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,7 +74,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "devices" => {
-                            builder = builder.set_devices(crate::protocol_serde::shape_devices_list::de_devices_list(tokens, _value)?);
+                            builder = builder.set_devices(crate::protocol_serde::shape_devices_list::de_devices_list(tokens, _value, depth + 1)?);
                         }
                         "initProcessEnabled" => {
                             builder = builder.set_init_process_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -81,7 +87,7 @@ where
                             );
                         }
                         "tmpfs" => {
-                            builder = builder.set_tmpfs(crate::protocol_serde::shape_tmpfs_list::de_tmpfs_list(tokens, _value)?);
+                            builder = builder.set_tmpfs(crate::protocol_serde::shape_tmpfs_list::de_tmpfs_list(tokens, _value, depth + 1)?);
                         }
                         "maxSwap" => {
                             builder = builder.set_max_swap(

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_instance_resource_drifts_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackInstanceResourceDriftsSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackInstanceResourceDriftsSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_stack_instance_resource_drifts_summary(
             s if s.matches("PhysicalResourceIdContext") /* PhysicalResourceIdContext com.amazonaws.cloudformation#StackInstanceResourceDriftsSummary$PhysicalResourceIdContext */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_physical_resource_id_context::de_physical_resource_id_context(&mut tag)
+                        crate::protocol_serde::shape_physical_resource_id_context::de_physical_resource_id_context(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_stack_instance_resource_drifts_summary(
             s if s.matches("PropertyDifferences") /* PropertyDifferences com.amazonaws.cloudformation#StackInstanceResourceDriftsSummary$PropertyDifferences */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_property_differences::de_property_differences(&mut tag)
+                        crate::protocol_serde::shape_property_differences::de_property_differences(&mut tag, depth + 1)
                         ?
                     )
                 ;

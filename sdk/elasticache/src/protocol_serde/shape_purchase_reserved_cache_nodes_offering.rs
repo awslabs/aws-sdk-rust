@@ -180,6 +180,8 @@ pub fn de_purchase_reserved_cache_nodes_offering(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("PurchaseReservedCacheNodesOfferingResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected PurchaseReservedCacheNodesOfferingResponse got {start_el:?}"
@@ -197,7 +199,7 @@ pub fn de_purchase_reserved_cache_nodes_offering(
             s if s.matches("ReservedCacheNode") /* ReservedCacheNode com.amazonaws.elasticache.synthetic#PurchaseReservedCacheNodesOfferingOutput$ReservedCacheNode */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_reserved_cache_node::de_reserved_cache_node(&mut tag)
+                        crate::protocol_serde::shape_reserved_cache_node::de_reserved_cache_node(&mut tag, depth + 1)
                         ?
                     )
                 ;

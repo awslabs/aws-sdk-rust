@@ -24,5 +24,11 @@ pub fn ser_retrieve_input_input(
         crate::protocol_serde::shape_knowledge_base_query::ser_knowledge_base_query(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.user_context {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("userContext").start_object();
+        crate::protocol_serde::shape_user_context::ser_user_context(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

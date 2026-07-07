@@ -21,7 +21,9 @@ pub struct CreateEnvironmentInput {
     pub environment_account_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The region of the account in which the environment is being created.</p>
     pub environment_account_region: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    /// <p>The ID of the blueprint with which the environment is being created.</p><note>
+    /// <p>This parameter is only valid for V1 domains. If provided for a V2 domain, the service returns a ValidationException.</p>
+    /// </note>
     pub environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The deployment order of the environment.</p>
     pub deployment_order: ::std::option::Option<i32>,
@@ -71,7 +73,9 @@ impl CreateEnvironmentInput {
     pub fn environment_account_region(&self) -> ::std::option::Option<&str> {
         self.environment_account_region.as_deref()
     }
-    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    /// <p>The ID of the blueprint with which the environment is being created.</p><note>
+    /// <p>This parameter is only valid for V1 domains. If provided for a V2 domain, the service returns a ValidationException.</p>
+    /// </note>
     pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<&str> {
         self.environment_blueprint_identifier.as_deref()
     }
@@ -274,17 +278,23 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_environment_account_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_account_region
     }
-    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    /// <p>The ID of the blueprint with which the environment is being created.</p><note>
+    /// <p>This parameter is only valid for V1 domains. If provided for a V2 domain, the service returns a ValidationException.</p>
+    /// </note>
     pub fn environment_blueprint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_blueprint_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    /// <p>The ID of the blueprint with which the environment is being created.</p><note>
+    /// <p>This parameter is only valid for V1 domains. If provided for a V2 domain, the service returns a ValidationException.</p>
+    /// </note>
     pub fn set_environment_blueprint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_blueprint_identifier = input;
         self
     }
-    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    /// <p>The ID of the blueprint with which the environment is being created.</p><note>
+    /// <p>This parameter is only valid for V1 domains. If provided for a V2 domain, the service returns a ValidationException.</p>
+    /// </note>
     pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_blueprint_identifier
     }

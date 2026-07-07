@@ -2,10 +2,16 @@
 pub(crate) fn de_data_quality_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataQualitySummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,32 +20,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "InsufficientSensorData" => {
-                            builder = builder.set_insufficient_sensor_data(
-                                crate::protocol_serde::shape_insufficient_sensor_data::de_insufficient_sensor_data(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "InsufficientSensorData" => {
+                                builder = builder.set_insufficient_sensor_data(
+                                    crate::protocol_serde::shape_insufficient_sensor_data::de_insufficient_sensor_data(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "MissingSensorData" => {
+                                builder = builder.set_missing_sensor_data(crate::protocol_serde::shape_missing_sensor_data::de_missing_sensor_data(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "InvalidSensorData" => {
+                                builder = builder.set_invalid_sensor_data(crate::protocol_serde::shape_invalid_sensor_data::de_invalid_sensor_data(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "UnsupportedTimestamps" => {
+                                builder = builder.set_unsupported_timestamps(
+                                    crate::protocol_serde::shape_unsupported_timestamps::de_unsupported_timestamps(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "DuplicateTimestamps" => {
+                                builder = builder.set_duplicate_timestamps(
+                                    crate::protocol_serde::shape_duplicate_timestamps::de_duplicate_timestamps(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "MissingSensorData" => {
-                            builder = builder
-                                .set_missing_sensor_data(crate::protocol_serde::shape_missing_sensor_data::de_missing_sensor_data(tokens, _value)?);
-                        }
-                        "InvalidSensorData" => {
-                            builder = builder
-                                .set_invalid_sensor_data(crate::protocol_serde::shape_invalid_sensor_data::de_invalid_sensor_data(tokens, _value)?);
-                        }
-                        "UnsupportedTimestamps" => {
-                            builder = builder.set_unsupported_timestamps(
-                                crate::protocol_serde::shape_unsupported_timestamps::de_unsupported_timestamps(tokens, _value)?,
-                            );
-                        }
-                        "DuplicateTimestamps" => {
-                            builder = builder.set_duplicate_timestamps(crate::protocol_serde::shape_duplicate_timestamps::de_duplicate_timestamps(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

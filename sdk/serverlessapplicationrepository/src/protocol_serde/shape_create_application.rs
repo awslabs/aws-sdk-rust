@@ -134,6 +134,8 @@ pub(crate) fn de_create_application(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -178,7 +180,7 @@ pub(crate) fn de_create_application(
                     builder = builder.set_is_verified_author(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "labels" => {
-                    builder = builder.set_labels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_labels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "licenseUrl" => {
                     builder = builder.set_license_url(
@@ -216,7 +218,7 @@ pub(crate) fn de_create_application(
                     );
                 }
                 "version" => {
-                    builder = builder.set_version(crate::protocol_serde::shape_version::de_version(tokens, _value)?);
+                    builder = builder.set_version(crate::protocol_serde::shape_version::de_version(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

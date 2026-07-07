@@ -2,10 +2,16 @@
 pub(crate) fn de_api<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Api>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -40,7 +46,7 @@ where
                             );
                         }
                         "corsConfiguration" => {
-                            builder = builder.set_cors_configuration(crate::protocol_serde::shape_cors::de_cors(tokens, _value)?);
+                            builder = builder.set_cors_configuration(crate::protocol_serde::shape_cors::de_cors(tokens, _value, depth + 1)?);
                         }
                         "createdDate" => {
                             builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -64,7 +70,8 @@ where
                                 builder.set_disable_execute_api_endpoint(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "importInfo" => {
-                            builder = builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder =
+                                builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                         }
                         "ipAddressType" => {
                             builder = builder.set_ip_address_type(
@@ -95,7 +102,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "version" => {
                             builder = builder.set_version(
@@ -105,7 +112,8 @@ where
                             );
                         }
                         "warnings" => {
-                            builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder =
+                                builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

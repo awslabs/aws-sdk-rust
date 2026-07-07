@@ -2,10 +2,16 @@
 pub(crate) fn de_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Type>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,15 +29,22 @@ where
                             );
                         }
                         "ArrayColumnInfo" => {
-                            builder = builder.set_array_column_info(crate::protocol_serde::shape_column_info::de_column_info(tokens, _value)?);
+                            builder =
+                                builder.set_array_column_info(crate::protocol_serde::shape_column_info::de_column_info(tokens, _value, depth + 1)?);
                         }
                         "TimeSeriesMeasureValueColumnInfo" => {
-                            builder = builder
-                                .set_time_series_measure_value_column_info(crate::protocol_serde::shape_column_info::de_column_info(tokens, _value)?);
+                            builder = builder.set_time_series_measure_value_column_info(crate::protocol_serde::shape_column_info::de_column_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RowColumnInfo" => {
-                            builder =
-                                builder.set_row_column_info(crate::protocol_serde::shape_column_info_list::de_column_info_list(tokens, _value)?);
+                            builder = builder.set_row_column_info(crate::protocol_serde::shape_column_info_list::de_column_info_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

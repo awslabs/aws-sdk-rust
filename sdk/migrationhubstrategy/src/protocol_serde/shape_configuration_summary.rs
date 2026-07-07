@@ -2,10 +2,16 @@
 pub(crate) fn de_configuration_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigurationSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,27 +23,40 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "vcenterBasedRemoteInfoList" => {
                             builder = builder.set_vcenter_based_remote_info_list(
-                                crate::protocol_serde::shape_vcenter_based_remote_info_list::de_vcenter_based_remote_info_list(tokens, _value)?,
+                                crate::protocol_serde::shape_vcenter_based_remote_info_list::de_vcenter_based_remote_info_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ipAddressBasedRemoteInfoList" => {
                             builder = builder.set_ip_address_based_remote_info_list(
-                                crate::protocol_serde::shape_ip_address_based_remote_info_list::de_ip_address_based_remote_info_list(tokens, _value)?,
+                                crate::protocol_serde::shape_ip_address_based_remote_info_list::de_ip_address_based_remote_info_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "versionControlInfoList" => {
                             builder = builder.set_version_control_info_list(
-                                crate::protocol_serde::shape_version_control_info_list::de_version_control_info_list(tokens, _value)?,
+                                crate::protocol_serde::shape_version_control_info_list::de_version_control_info_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "pipelineInfoList" => {
-                            builder = builder
-                                .set_pipeline_info_list(crate::protocol_serde::shape_pipeline_info_list::de_pipeline_info_list(tokens, _value)?);
+                            builder = builder.set_pipeline_info_list(crate::protocol_serde::shape_pipeline_info_list::de_pipeline_info_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "remoteSourceCodeAnalysisServerInfo" => {
                             builder = builder.set_remote_source_code_analysis_server_info(
                                 crate::protocol_serde::shape_remote_source_code_analysis_server_info::de_remote_source_code_analysis_server_info(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

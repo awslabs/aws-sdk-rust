@@ -44,6 +44,8 @@ pub struct Host {
     pub host_maintenance: ::std::option::Option<crate::types::HostMaintenance>,
     /// <p>The ID of the Outpost hardware asset on which the Dedicated Host is allocated.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
+    /// <p>The CPU options for the Dedicated Host, including AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>
+    pub cpu_options: ::std::option::Option<crate::types::HostCpuOptions>,
 }
 impl Host {
     /// <p>Whether auto-placement is on or off.</p>
@@ -130,6 +132,10 @@ impl Host {
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
+    /// <p>The CPU options for the Dedicated Host, including AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>
+    pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::HostCpuOptions> {
+        self.cpu_options.as_ref()
+    }
 }
 impl Host {
     /// Creates a new builder-style object to manufacture [`Host`](crate::types::Host).
@@ -162,6 +168,7 @@ pub struct HostBuilder {
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) host_maintenance: ::std::option::Option<crate::types::HostMaintenance>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cpu_options: ::std::option::Option<crate::types::HostCpuOptions>,
 }
 impl HostBuilder {
     /// <p>Whether auto-placement is on or off.</p>
@@ -456,6 +463,20 @@ impl HostBuilder {
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }
+    /// <p>The CPU options for the Dedicated Host, including AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>
+    pub fn cpu_options(mut self, input: crate::types::HostCpuOptions) -> Self {
+        self.cpu_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The CPU options for the Dedicated Host, including AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>
+    pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::HostCpuOptions>) -> Self {
+        self.cpu_options = input;
+        self
+    }
+    /// <p>The CPU options for the Dedicated Host, including AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>
+    pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::HostCpuOptions> {
+        &self.cpu_options
+    }
     /// Consumes the builder and constructs a [`Host`](crate::types::Host).
     pub fn build(self) -> crate::types::Host {
         crate::types::Host {
@@ -479,6 +500,7 @@ impl HostBuilder {
             outpost_arn: self.outpost_arn,
             host_maintenance: self.host_maintenance,
             asset_id: self.asset_id,
+            cpu_options: self.cpu_options,
         }
     }
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_ota_update_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OtaUpdateInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,19 +55,27 @@ where
                             );
                         }
                         "targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value, depth + 1)?);
                         }
                         "protocols" => {
-                            builder = builder.set_protocols(crate::protocol_serde::shape_protocols::de_protocols(tokens, _value)?);
+                            builder = builder.set_protocols(crate::protocol_serde::shape_protocols::de_protocols(tokens, _value, depth + 1)?);
                         }
                         "awsJobExecutionsRolloutConfig" => {
                             builder = builder.set_aws_job_executions_rollout_config(
-                                crate::protocol_serde::shape_aws_job_executions_rollout_config::de_aws_job_executions_rollout_config(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_job_executions_rollout_config::de_aws_job_executions_rollout_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "awsJobPresignedUrlConfig" => {
                             builder = builder.set_aws_job_presigned_url_config(
-                                crate::protocol_serde::shape_aws_job_presigned_url_config::de_aws_job_presigned_url_config(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_job_presigned_url_config::de_aws_job_presigned_url_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "targetSelection" => {
@@ -72,8 +86,11 @@ where
                             );
                         }
                         "otaUpdateFiles" => {
-                            builder =
-                                builder.set_ota_update_files(crate::protocol_serde::shape_ota_update_files::de_ota_update_files(tokens, _value)?);
+                            builder = builder.set_ota_update_files(crate::protocol_serde::shape_ota_update_files::de_ota_update_files(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "otaUpdateStatus" => {
                             builder = builder.set_ota_update_status(
@@ -97,11 +114,11 @@ where
                             );
                         }
                         "errorInfo" => {
-                            builder = builder.set_error_info(crate::protocol_serde::shape_error_info::de_error_info(tokens, _value)?);
+                            builder = builder.set_error_info(crate::protocol_serde::shape_error_info::de_error_info(tokens, _value, depth + 1)?);
                         }
                         "additionalParameters" => {
                             builder = builder.set_additional_parameters(
-                                crate::protocol_serde::shape_additional_parameter_map::de_additional_parameter_map(tokens, _value)?,
+                                crate::protocol_serde::shape_additional_parameter_map::de_additional_parameter_map(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_metadata_table_configuration_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MetadataTableConfigurationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MetadataTableConfigurationResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_metadata_table_configuration_result(
             s if s.matches("S3TablesDestinationResult") /* S3TablesDestinationResult com.amazonaws.s3#MetadataTableConfigurationResult$S3TablesDestinationResult */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_s3_tables_destination_result::de_s3_tables_destination_result(&mut tag)
+                        crate::protocol_serde::shape_s3_tables_destination_result::de_s3_tables_destination_result(&mut tag, depth + 1)
                         ?
                     )
                 ;

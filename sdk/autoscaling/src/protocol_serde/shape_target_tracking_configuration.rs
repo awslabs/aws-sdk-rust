@@ -33,7 +33,11 @@ pub fn ser_target_tracking_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_tracking_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TargetTrackingConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetTrackingConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -41,7 +45,7 @@ pub fn de_target_tracking_configuration(
             s if s.matches("PredefinedMetricSpecification") /* PredefinedMetricSpecification com.amazonaws.autoscaling#TargetTrackingConfiguration$PredefinedMetricSpecification */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_predefined_metric_specification::de_predefined_metric_specification(&mut tag)
+                        crate::protocol_serde::shape_predefined_metric_specification::de_predefined_metric_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -51,7 +55,7 @@ pub fn de_target_tracking_configuration(
             s if s.matches("CustomizedMetricSpecification") /* CustomizedMetricSpecification com.amazonaws.autoscaling#TargetTrackingConfiguration$CustomizedMetricSpecification */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_customized_metric_specification::de_customized_metric_specification(&mut tag)
+                        crate::protocol_serde::shape_customized_metric_specification::de_customized_metric_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;

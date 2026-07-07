@@ -32,7 +32,11 @@ pub fn ser_host_header_condition_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_host_header_condition_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::HostHeaderConditionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::HostHeaderConditionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -40,7 +44,7 @@ pub fn de_host_header_condition_config(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#HostHeaderConditionConfig$Values */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
+                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -50,7 +54,7 @@ pub fn de_host_header_condition_config(
             s if s.matches("RegexValues") /* RegexValues com.amazonaws.elasticloadbalancingv2#HostHeaderConditionConfig$RegexValues */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
+                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag, depth + 1)
                         ?
                     )
                 ;

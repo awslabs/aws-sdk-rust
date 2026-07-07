@@ -77,11 +77,15 @@ pub use crate::types::_update_capability_configuration::UpdateCapabilityConfigur
 
 pub use crate::types::_update_access_config_request::UpdateAccessConfigRequestBuilder;
 
+pub use crate::types::_rollback_config::RollbackConfigBuilder;
+
 pub use crate::types::_update_labels_payload::UpdateLabelsPayloadBuilder;
 
 pub use crate::types::_update_taints_payload::UpdateTaintsPayloadBuilder;
 
 pub use crate::types::_encryption_config::EncryptionConfigBuilder;
+
+pub use crate::types::_cancellation::CancellationBuilder;
 
 pub use crate::types::_addon_pod_identity_associations::AddonPodIdentityAssociationsBuilder;
 
@@ -100,6 +104,8 @@ pub use crate::types::_capability_health::CapabilityHealthBuilder;
 pub use crate::types::_elastic_load_balancing::ElasticLoadBalancingBuilder;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequestBuilder;
+
+pub use crate::types::_etcd_placement_request::EtcdPlacementRequestBuilder;
 
 pub use crate::types::_block_storage::BlockStorageBuilder;
 
@@ -182,6 +188,8 @@ pub use crate::types::_remote_pod_network::RemotePodNetworkBuilder;
 pub use crate::types::_oidc::OidcBuilder;
 
 pub use crate::types::_control_plane_placement_response::ControlPlanePlacementResponseBuilder;
+
+pub use crate::types::_etcd_placement_response::EtcdPlacementResponseBuilder;
 
 pub use crate::types::_license::LicenseBuilder;
 

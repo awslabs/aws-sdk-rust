@@ -173,6 +173,8 @@ impl CreateDBParameterGroupFluentBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mysql</code></p></li>
@@ -215,6 +217,8 @@ impl CreateDBParameterGroupFluentBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mysql</code></p></li>
@@ -256,6 +260,8 @@ impl CreateDBParameterGroupFluentBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>

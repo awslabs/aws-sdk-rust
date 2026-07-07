@@ -2,10 +2,16 @@
 pub(crate) fn de_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Profile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -135,22 +141,23 @@ where
                             );
                         }
                         "Address" => {
-                            builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
+                            builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens, _value, depth + 1)?);
                         }
                         "ShippingAddress" => {
-                            builder = builder.set_shipping_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
+                            builder = builder.set_shipping_address(crate::protocol_serde::shape_address::de_address(tokens, _value, depth + 1)?);
                         }
                         "MailingAddress" => {
-                            builder = builder.set_mailing_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
+                            builder = builder.set_mailing_address(crate::protocol_serde::shape_address::de_address(tokens, _value, depth + 1)?);
                         }
                         "BillingAddress" => {
-                            builder = builder.set_billing_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
+                            builder = builder.set_billing_address(crate::protocol_serde::shape_address::de_address(tokens, _value, depth + 1)?);
                         }
                         "Attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens, _value)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens, _value, depth + 1)?);
                         }
                         "FoundByItems" => {
-                            builder = builder.set_found_by_items(crate::protocol_serde::shape_found_by_list::de_found_by_list(tokens, _value)?);
+                            builder =
+                                builder.set_found_by_items(crate::protocol_serde::shape_found_by_list::de_found_by_list(tokens, _value, depth + 1)?);
                         }
                         "PartyTypeString" => {
                             builder = builder.set_party_type_string(
@@ -175,7 +182,7 @@ where
                         }
                         "EngagementPreferences" => {
                             builder = builder.set_engagement_preferences(
-                                crate::protocol_serde::shape_engagement_preferences::de_engagement_preferences(tokens, _value)?,
+                                crate::protocol_serde::shape_engagement_preferences::de_engagement_preferences(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

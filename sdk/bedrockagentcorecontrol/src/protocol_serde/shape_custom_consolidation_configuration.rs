@@ -2,10 +2,16 @@
 pub(crate) fn de_custom_consolidation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomConsolidationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,25 +37,35 @@ where
                     }
                     variant = match key.as_ref() {
                         "semanticConsolidationOverride" => Some(crate::types::CustomConsolidationConfiguration::SemanticConsolidationOverride(
-                            crate::protocol_serde::shape_semantic_consolidation_override::de_semantic_consolidation_override(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'semanticConsolidationOverride' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_semantic_consolidation_override::de_semantic_consolidation_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'semanticConsolidationOverride' cannot be null",
+                                )
+                            })?,
                         )),
                         "summaryConsolidationOverride" => Some(crate::types::CustomConsolidationConfiguration::SummaryConsolidationOverride(
-                            crate::protocol_serde::shape_summary_consolidation_override::de_summary_consolidation_override(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'summaryConsolidationOverride' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_summary_consolidation_override::de_summary_consolidation_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'summaryConsolidationOverride' cannot be null",
+                                )
+                            })?,
                         )),
                         "userPreferenceConsolidationOverride" => {
                             Some(crate::types::CustomConsolidationConfiguration::UserPreferenceConsolidationOverride(
                                 crate::protocol_serde::shape_user_preference_consolidation_override::de_user_preference_consolidation_override(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -59,12 +75,16 @@ where
                             ))
                         }
                         "episodicConsolidationOverride" => Some(crate::types::CustomConsolidationConfiguration::EpisodicConsolidationOverride(
-                            crate::protocol_serde::shape_episodic_consolidation_override::de_episodic_consolidation_override(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'episodicConsolidationOverride' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_episodic_consolidation_override::de_episodic_consolidation_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'episodicConsolidationOverride' cannot be null",
+                                )
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

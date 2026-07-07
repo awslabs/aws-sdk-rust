@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_delete_launch_template_versions_response_error_item(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DeleteLaunchTemplateVersionsResponseErrorItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -51,7 +55,7 @@ pub fn de_delete_launch_template_versions_response_error_item(
             s if s.matches("responseError") /* ResponseError com.amazonaws.ec2#DeleteLaunchTemplateVersionsResponseErrorItem$ResponseError */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_response_error::de_response_error(&mut tag)
+                        crate::protocol_serde::shape_response_error::de_response_error(&mut tag, depth + 1)
                         ?
                     )
                 ;

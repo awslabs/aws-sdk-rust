@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_cluster(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CacheCluster, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CacheCluster::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_cache_cluster(
             s if s.matches("ConfigurationEndpoint") /* ConfigurationEndpoint com.amazonaws.elasticache#CacheCluster$ConfigurationEndpoint */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -166,7 +170,7 @@ pub fn de_cache_cluster(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.elasticache#CacheCluster$PendingModifiedValues */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag)
+                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -176,7 +180,7 @@ pub fn de_cache_cluster(
             s if s.matches("NotificationConfiguration") /* NotificationConfiguration com.amazonaws.elasticache#CacheCluster$NotificationConfiguration */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_notification_configuration::de_notification_configuration(&mut tag)
+                        crate::protocol_serde::shape_notification_configuration::de_notification_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -186,7 +190,7 @@ pub fn de_cache_cluster(
             s if s.matches("CacheSecurityGroups") /* CacheSecurityGroups com.amazonaws.elasticache#CacheCluster$CacheSecurityGroups */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_cache_security_group_membership_list::de_cache_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_cache_security_group_membership_list::de_cache_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -196,7 +200,7 @@ pub fn de_cache_cluster(
             s if s.matches("CacheParameterGroup") /* CacheParameterGroup com.amazonaws.elasticache#CacheCluster$CacheParameterGroup */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_cache_parameter_group_status::de_cache_parameter_group_status(&mut tag)
+                        crate::protocol_serde::shape_cache_parameter_group_status::de_cache_parameter_group_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -219,7 +223,7 @@ pub fn de_cache_cluster(
             s if s.matches("CacheNodes") /* CacheNodes com.amazonaws.elasticache#CacheCluster$CacheNodes */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_cache_node_list::de_cache_node_list(&mut tag)
+                        crate::protocol_serde::shape_cache_node_list::de_cache_node_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -244,7 +248,7 @@ pub fn de_cache_cluster(
             s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.elasticache#CacheCluster$SecurityGroups */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_security_group_membership_list::de_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_security_group_membership_list::de_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -382,7 +386,7 @@ pub fn de_cache_cluster(
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#CacheCluster$LogDeliveryConfigurations */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_log_delivery_configuration_list::de_log_delivery_configuration_list(&mut tag)
+                        crate::protocol_serde::shape_log_delivery_configuration_list::de_log_delivery_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

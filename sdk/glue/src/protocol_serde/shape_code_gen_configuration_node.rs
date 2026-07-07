@@ -483,10 +483,16 @@ pub fn ser_code_gen_configuration_node(
 pub(crate) fn de_code_gen_configuration_node<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CodeGenConfigurationNode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -498,339 +504,431 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AthenaConnectorSource" => {
                             builder = builder.set_athena_connector_source(
-                                crate::protocol_serde::shape_athena_connector_source::de_athena_connector_source(tokens, _value)?,
+                                crate::protocol_serde::shape_athena_connector_source::de_athena_connector_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "JDBCConnectorSource" => {
                             builder = builder.set_jdbc_connector_source(
-                                crate::protocol_serde::shape_jdbc_connector_source::de_jdbc_connector_source(tokens, _value)?,
+                                crate::protocol_serde::shape_jdbc_connector_source::de_jdbc_connector_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "SparkConnectorSource" => {
                             builder = builder.set_spark_connector_source(
-                                crate::protocol_serde::shape_spark_connector_source::de_spark_connector_source(tokens, _value)?,
+                                crate::protocol_serde::shape_spark_connector_source::de_spark_connector_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "CatalogSource" => {
-                            builder = builder.set_catalog_source(crate::protocol_serde::shape_catalog_source::de_catalog_source(tokens, _value)?);
+                            builder = builder.set_catalog_source(crate::protocol_serde::shape_catalog_source::de_catalog_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RedshiftSource" => {
-                            builder = builder.set_redshift_source(crate::protocol_serde::shape_redshift_source::de_redshift_source(tokens, _value)?);
+                            builder = builder.set_redshift_source(crate::protocol_serde::shape_redshift_source::de_redshift_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3CatalogSource" => {
-                            builder =
-                                builder.set_s3_catalog_source(crate::protocol_serde::shape_s3_catalog_source::de_s3_catalog_source(tokens, _value)?);
+                            builder = builder.set_s3_catalog_source(crate::protocol_serde::shape_s3_catalog_source::de_s3_catalog_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3CsvSource" => {
-                            builder = builder.set_s3_csv_source(crate::protocol_serde::shape_s3_csv_source::de_s3_csv_source(tokens, _value)?);
+                            builder =
+                                builder.set_s3_csv_source(crate::protocol_serde::shape_s3_csv_source::de_s3_csv_source(tokens, _value, depth + 1)?);
                         }
                         "S3JsonSource" => {
-                            builder = builder.set_s3_json_source(crate::protocol_serde::shape_s3_json_source::de_s3_json_source(tokens, _value)?);
+                            builder = builder.set_s3_json_source(crate::protocol_serde::shape_s3_json_source::de_s3_json_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3ParquetSource" => {
-                            builder =
-                                builder.set_s3_parquet_source(crate::protocol_serde::shape_s3_parquet_source::de_s3_parquet_source(tokens, _value)?);
+                            builder = builder.set_s3_parquet_source(crate::protocol_serde::shape_s3_parquet_source::de_s3_parquet_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RelationalCatalogSource" => {
                             builder = builder.set_relational_catalog_source(
-                                crate::protocol_serde::shape_relational_catalog_source::de_relational_catalog_source(tokens, _value)?,
+                                crate::protocol_serde::shape_relational_catalog_source::de_relational_catalog_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "DynamoDBCatalogSource" => {
                             builder = builder.set_dynamo_db_catalog_source(
-                                crate::protocol_serde::shape_dynamo_db_catalog_source::de_dynamo_db_catalog_source(tokens, _value)?,
+                                crate::protocol_serde::shape_dynamo_db_catalog_source::de_dynamo_db_catalog_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "JDBCConnectorTarget" => {
                             builder = builder.set_jdbc_connector_target(
-                                crate::protocol_serde::shape_jdbc_connector_target::de_jdbc_connector_target(tokens, _value)?,
+                                crate::protocol_serde::shape_jdbc_connector_target::de_jdbc_connector_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "SparkConnectorTarget" => {
                             builder = builder.set_spark_connector_target(
-                                crate::protocol_serde::shape_spark_connector_target::de_spark_connector_target(tokens, _value)?,
+                                crate::protocol_serde::shape_spark_connector_target::de_spark_connector_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "CatalogTarget" => {
                             builder = builder.set_catalog_target(crate::protocol_serde::shape_basic_catalog_target::de_basic_catalog_target(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "RedshiftTarget" => {
-                            builder = builder.set_redshift_target(crate::protocol_serde::shape_redshift_target::de_redshift_target(tokens, _value)?);
+                            builder = builder.set_redshift_target(crate::protocol_serde::shape_redshift_target::de_redshift_target(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3CatalogTarget" => {
-                            builder =
-                                builder.set_s3_catalog_target(crate::protocol_serde::shape_s3_catalog_target::de_s3_catalog_target(tokens, _value)?);
+                            builder = builder.set_s3_catalog_target(crate::protocol_serde::shape_s3_catalog_target::de_s3_catalog_target(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3GlueParquetTarget" => {
                             builder = builder.set_s3_glue_parquet_target(
-                                crate::protocol_serde::shape_s3_glue_parquet_target::de_s3_glue_parquet_target(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_glue_parquet_target::de_s3_glue_parquet_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3DirectTarget" => {
-                            builder =
-                                builder.set_s3_direct_target(crate::protocol_serde::shape_s3_direct_target::de_s3_direct_target(tokens, _value)?);
+                            builder = builder.set_s3_direct_target(crate::protocol_serde::shape_s3_direct_target::de_s3_direct_target(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ApplyMapping" => {
-                            builder = builder.set_apply_mapping(crate::protocol_serde::shape_apply_mapping::de_apply_mapping(tokens, _value)?);
+                            builder =
+                                builder.set_apply_mapping(crate::protocol_serde::shape_apply_mapping::de_apply_mapping(tokens, _value, depth + 1)?);
                         }
                         "SelectFields" => {
-                            builder = builder.set_select_fields(crate::protocol_serde::shape_select_fields::de_select_fields(tokens, _value)?);
+                            builder =
+                                builder.set_select_fields(crate::protocol_serde::shape_select_fields::de_select_fields(tokens, _value, depth + 1)?);
                         }
                         "DropFields" => {
-                            builder = builder.set_drop_fields(crate::protocol_serde::shape_drop_fields::de_drop_fields(tokens, _value)?);
+                            builder = builder.set_drop_fields(crate::protocol_serde::shape_drop_fields::de_drop_fields(tokens, _value, depth + 1)?);
                         }
                         "RenameField" => {
-                            builder = builder.set_rename_field(crate::protocol_serde::shape_rename_field::de_rename_field(tokens, _value)?);
+                            builder =
+                                builder.set_rename_field(crate::protocol_serde::shape_rename_field::de_rename_field(tokens, _value, depth + 1)?);
                         }
                         "Spigot" => {
-                            builder = builder.set_spigot(crate::protocol_serde::shape_spigot::de_spigot(tokens, _value)?);
+                            builder = builder.set_spigot(crate::protocol_serde::shape_spigot::de_spigot(tokens, _value, depth + 1)?);
                         }
                         "Join" => {
-                            builder = builder.set_join(crate::protocol_serde::shape_join::de_join(tokens, _value)?);
+                            builder = builder.set_join(crate::protocol_serde::shape_join::de_join(tokens, _value, depth + 1)?);
                         }
                         "SplitFields" => {
-                            builder = builder.set_split_fields(crate::protocol_serde::shape_split_fields::de_split_fields(tokens, _value)?);
+                            builder =
+                                builder.set_split_fields(crate::protocol_serde::shape_split_fields::de_split_fields(tokens, _value, depth + 1)?);
                         }
                         "SelectFromCollection" => {
                             builder = builder.set_select_from_collection(
-                                crate::protocol_serde::shape_select_from_collection::de_select_from_collection(tokens, _value)?,
+                                crate::protocol_serde::shape_select_from_collection::de_select_from_collection(tokens, _value, depth + 1)?,
                             );
                         }
                         "FillMissingValues" => {
-                            builder = builder
-                                .set_fill_missing_values(crate::protocol_serde::shape_fill_missing_values::de_fill_missing_values(tokens, _value)?);
+                            builder = builder.set_fill_missing_values(crate::protocol_serde::shape_fill_missing_values::de_fill_missing_values(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Filter" => {
-                            builder = builder.set_filter(crate::protocol_serde::shape_filter::de_filter(tokens, _value)?);
+                            builder = builder.set_filter(crate::protocol_serde::shape_filter::de_filter(tokens, _value, depth + 1)?);
                         }
                         "CustomCode" => {
-                            builder = builder.set_custom_code(crate::protocol_serde::shape_custom_code::de_custom_code(tokens, _value)?);
+                            builder = builder.set_custom_code(crate::protocol_serde::shape_custom_code::de_custom_code(tokens, _value, depth + 1)?);
                         }
                         "SparkSQL" => {
-                            builder = builder.set_spark_sql(crate::protocol_serde::shape_spark_sql::de_spark_sql(tokens, _value)?);
+                            builder = builder.set_spark_sql(crate::protocol_serde::shape_spark_sql::de_spark_sql(tokens, _value, depth + 1)?);
                         }
                         "DirectKinesisSource" => {
                             builder = builder.set_direct_kinesis_source(
-                                crate::protocol_serde::shape_direct_kinesis_source::de_direct_kinesis_source(tokens, _value)?,
+                                crate::protocol_serde::shape_direct_kinesis_source::de_direct_kinesis_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "DirectKafkaSource" => {
-                            builder = builder
-                                .set_direct_kafka_source(crate::protocol_serde::shape_direct_kafka_source::de_direct_kafka_source(tokens, _value)?);
+                            builder = builder.set_direct_kafka_source(crate::protocol_serde::shape_direct_kafka_source::de_direct_kafka_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CatalogKinesisSource" => {
                             builder = builder.set_catalog_kinesis_source(
-                                crate::protocol_serde::shape_catalog_kinesis_source::de_catalog_kinesis_source(tokens, _value)?,
+                                crate::protocol_serde::shape_catalog_kinesis_source::de_catalog_kinesis_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "CatalogKafkaSource" => {
                             builder = builder.set_catalog_kafka_source(crate::protocol_serde::shape_catalog_kafka_source::de_catalog_kafka_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DropNullFields" => {
-                            builder =
-                                builder.set_drop_null_fields(crate::protocol_serde::shape_drop_null_fields::de_drop_null_fields(tokens, _value)?);
+                            builder = builder.set_drop_null_fields(crate::protocol_serde::shape_drop_null_fields::de_drop_null_fields(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Merge" => {
-                            builder = builder.set_merge(crate::protocol_serde::shape_merge::de_merge(tokens, _value)?);
+                            builder = builder.set_merge(crate::protocol_serde::shape_merge::de_merge(tokens, _value, depth + 1)?);
                         }
                         "Union" => {
-                            builder = builder.set_union(crate::protocol_serde::shape_union::de_union(tokens, _value)?);
+                            builder = builder.set_union(crate::protocol_serde::shape_union::de_union(tokens, _value, depth + 1)?);
                         }
                         "PIIDetection" => {
-                            builder = builder.set_pii_detection(crate::protocol_serde::shape_pii_detection::de_pii_detection(tokens, _value)?);
+                            builder =
+                                builder.set_pii_detection(crate::protocol_serde::shape_pii_detection::de_pii_detection(tokens, _value, depth + 1)?);
                         }
                         "Aggregate" => {
-                            builder = builder.set_aggregate(crate::protocol_serde::shape_aggregate::de_aggregate(tokens, _value)?);
+                            builder = builder.set_aggregate(crate::protocol_serde::shape_aggregate::de_aggregate(tokens, _value, depth + 1)?);
                         }
                         "DropDuplicates" => {
-                            builder = builder.set_drop_duplicates(crate::protocol_serde::shape_drop_duplicates::de_drop_duplicates(tokens, _value)?);
+                            builder = builder.set_drop_duplicates(crate::protocol_serde::shape_drop_duplicates::de_drop_duplicates(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "GovernedCatalogTarget" => {
                             builder = builder.set_governed_catalog_target(
-                                crate::protocol_serde::shape_governed_catalog_target::de_governed_catalog_target(tokens, _value)?,
+                                crate::protocol_serde::shape_governed_catalog_target::de_governed_catalog_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "GovernedCatalogSource" => {
                             builder = builder.set_governed_catalog_source(
-                                crate::protocol_serde::shape_governed_catalog_source::de_governed_catalog_source(tokens, _value)?,
+                                crate::protocol_serde::shape_governed_catalog_source::de_governed_catalog_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "MicrosoftSQLServerCatalogSource" => {
                             builder = builder.set_microsoft_sql_server_catalog_source(
                                 crate::protocol_serde::shape_microsoft_sql_server_catalog_source::de_microsoft_sql_server_catalog_source(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "MySQLCatalogSource" => {
                             builder = builder.set_my_sql_catalog_source(
-                                crate::protocol_serde::shape_my_sql_catalog_source::de_my_sql_catalog_source(tokens, _value)?,
+                                crate::protocol_serde::shape_my_sql_catalog_source::de_my_sql_catalog_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "OracleSQLCatalogSource" => {
                             builder = builder.set_oracle_sql_catalog_source(
-                                crate::protocol_serde::shape_oracle_sql_catalog_source::de_oracle_sql_catalog_source(tokens, _value)?,
+                                crate::protocol_serde::shape_oracle_sql_catalog_source::de_oracle_sql_catalog_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "PostgreSQLCatalogSource" => {
                             builder = builder.set_postgre_sql_catalog_source(
-                                crate::protocol_serde::shape_postgre_sql_catalog_source::de_postgre_sql_catalog_source(tokens, _value)?,
+                                crate::protocol_serde::shape_postgre_sql_catalog_source::de_postgre_sql_catalog_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "MicrosoftSQLServerCatalogTarget" => {
                             builder = builder.set_microsoft_sql_server_catalog_target(
                                 crate::protocol_serde::shape_microsoft_sql_server_catalog_target::de_microsoft_sql_server_catalog_target(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "MySQLCatalogTarget" => {
                             builder = builder.set_my_sql_catalog_target(
-                                crate::protocol_serde::shape_my_sql_catalog_target::de_my_sql_catalog_target(tokens, _value)?,
+                                crate::protocol_serde::shape_my_sql_catalog_target::de_my_sql_catalog_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "OracleSQLCatalogTarget" => {
                             builder = builder.set_oracle_sql_catalog_target(
-                                crate::protocol_serde::shape_oracle_sql_catalog_target::de_oracle_sql_catalog_target(tokens, _value)?,
+                                crate::protocol_serde::shape_oracle_sql_catalog_target::de_oracle_sql_catalog_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "PostgreSQLCatalogTarget" => {
                             builder = builder.set_postgre_sql_catalog_target(
-                                crate::protocol_serde::shape_postgre_sql_catalog_target::de_postgre_sql_catalog_target(tokens, _value)?,
+                                crate::protocol_serde::shape_postgre_sql_catalog_target::de_postgre_sql_catalog_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "Route" => {
-                            builder = builder.set_route(crate::protocol_serde::shape_route::de_route(tokens, _value)?);
+                            builder = builder.set_route(crate::protocol_serde::shape_route::de_route(tokens, _value, depth + 1)?);
                         }
                         "DynamicTransform" => {
-                            builder =
-                                builder.set_dynamic_transform(crate::protocol_serde::shape_dynamic_transform::de_dynamic_transform(tokens, _value)?);
+                            builder = builder.set_dynamic_transform(crate::protocol_serde::shape_dynamic_transform::de_dynamic_transform(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EvaluateDataQuality" => {
                             builder = builder.set_evaluate_data_quality(
-                                crate::protocol_serde::shape_evaluate_data_quality::de_evaluate_data_quality(tokens, _value)?,
+                                crate::protocol_serde::shape_evaluate_data_quality::de_evaluate_data_quality(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3CatalogHudiSource" => {
                             builder = builder.set_s3_catalog_hudi_source(
-                                crate::protocol_serde::shape_s3_catalog_hudi_source::de_s3_catalog_hudi_source(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_catalog_hudi_source::de_s3_catalog_hudi_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "CatalogHudiSource" => {
-                            builder = builder
-                                .set_catalog_hudi_source(crate::protocol_serde::shape_catalog_hudi_source::de_catalog_hudi_source(tokens, _value)?);
+                            builder = builder.set_catalog_hudi_source(crate::protocol_serde::shape_catalog_hudi_source::de_catalog_hudi_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3HudiSource" => {
-                            builder = builder.set_s3_hudi_source(crate::protocol_serde::shape_s3_hudi_source::de_s3_hudi_source(tokens, _value)?);
+                            builder = builder.set_s3_hudi_source(crate::protocol_serde::shape_s3_hudi_source::de_s3_hudi_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3HudiCatalogTarget" => {
                             builder = builder.set_s3_hudi_catalog_target(
-                                crate::protocol_serde::shape_s3_hudi_catalog_target::de_s3_hudi_catalog_target(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_hudi_catalog_target::de_s3_hudi_catalog_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3HudiDirectTarget" => {
                             builder = builder.set_s3_hudi_direct_target(
-                                crate::protocol_serde::shape_s3_hudi_direct_target::de_s3_hudi_direct_target(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_hudi_direct_target::de_s3_hudi_direct_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "DirectJDBCSource" => {
-                            builder = builder
-                                .set_direct_jdbc_source(crate::protocol_serde::shape_direct_jdbc_source::de_direct_jdbc_source(tokens, _value)?);
+                            builder = builder.set_direct_jdbc_source(crate::protocol_serde::shape_direct_jdbc_source::de_direct_jdbc_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3CatalogDeltaSource" => {
                             builder = builder.set_s3_catalog_delta_source(
-                                crate::protocol_serde::shape_s3_catalog_delta_source::de_s3_catalog_delta_source(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_catalog_delta_source::de_s3_catalog_delta_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "CatalogDeltaSource" => {
                             builder = builder.set_catalog_delta_source(crate::protocol_serde::shape_catalog_delta_source::de_catalog_delta_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "S3DeltaSource" => {
-                            builder = builder.set_s3_delta_source(crate::protocol_serde::shape_s3_delta_source::de_s3_delta_source(tokens, _value)?);
+                            builder = builder.set_s3_delta_source(crate::protocol_serde::shape_s3_delta_source::de_s3_delta_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3DeltaCatalogTarget" => {
                             builder = builder.set_s3_delta_catalog_target(
-                                crate::protocol_serde::shape_s3_delta_catalog_target::de_s3_delta_catalog_target(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_delta_catalog_target::de_s3_delta_catalog_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3DeltaDirectTarget" => {
                             builder = builder.set_s3_delta_direct_target(
-                                crate::protocol_serde::shape_s3_delta_direct_target::de_s3_delta_direct_target(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_delta_direct_target::de_s3_delta_direct_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "AmazonRedshiftSource" => {
                             builder = builder.set_amazon_redshift_source(
-                                crate::protocol_serde::shape_amazon_redshift_source::de_amazon_redshift_source(tokens, _value)?,
+                                crate::protocol_serde::shape_amazon_redshift_source::de_amazon_redshift_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "AmazonRedshiftTarget" => {
                             builder = builder.set_amazon_redshift_target(
-                                crate::protocol_serde::shape_amazon_redshift_target::de_amazon_redshift_target(tokens, _value)?,
+                                crate::protocol_serde::shape_amazon_redshift_target::de_amazon_redshift_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "EvaluateDataQualityMultiFrame" => {
                             builder = builder.set_evaluate_data_quality_multi_frame(
-                                crate::protocol_serde::shape_evaluate_data_quality_multi_frame::de_evaluate_data_quality_multi_frame(tokens, _value)?,
+                                crate::protocol_serde::shape_evaluate_data_quality_multi_frame::de_evaluate_data_quality_multi_frame(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Recipe" => {
-                            builder = builder.set_recipe(crate::protocol_serde::shape_recipe::de_recipe(tokens, _value)?);
+                            builder = builder.set_recipe(crate::protocol_serde::shape_recipe::de_recipe(tokens, _value, depth + 1)?);
                         }
                         "SnowflakeSource" => {
-                            builder =
-                                builder.set_snowflake_source(crate::protocol_serde::shape_snowflake_source::de_snowflake_source(tokens, _value)?);
+                            builder = builder.set_snowflake_source(crate::protocol_serde::shape_snowflake_source::de_snowflake_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SnowflakeTarget" => {
-                            builder =
-                                builder.set_snowflake_target(crate::protocol_serde::shape_snowflake_target::de_snowflake_target(tokens, _value)?);
+                            builder = builder.set_snowflake_target(crate::protocol_serde::shape_snowflake_target::de_snowflake_target(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ConnectorDataSource" => {
                             builder = builder.set_connector_data_source(
-                                crate::protocol_serde::shape_connector_data_source::de_connector_data_source(tokens, _value)?,
+                                crate::protocol_serde::shape_connector_data_source::de_connector_data_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "ConnectorDataTarget" => {
                             builder = builder.set_connector_data_target(
-                                crate::protocol_serde::shape_connector_data_target::de_connector_data_target(tokens, _value)?,
+                                crate::protocol_serde::shape_connector_data_target::de_connector_data_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3CatalogIcebergSource" => {
                             builder = builder.set_s3_catalog_iceberg_source(
-                                crate::protocol_serde::shape_s3_catalog_iceberg_source::de_s3_catalog_iceberg_source(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_catalog_iceberg_source::de_s3_catalog_iceberg_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "CatalogIcebergSource" => {
                             builder = builder.set_catalog_iceberg_source(
-                                crate::protocol_serde::shape_catalog_iceberg_source::de_catalog_iceberg_source(tokens, _value)?,
+                                crate::protocol_serde::shape_catalog_iceberg_source::de_catalog_iceberg_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3IcebergCatalogTarget" => {
                             builder = builder.set_s3_iceberg_catalog_target(
-                                crate::protocol_serde::shape_s3_iceberg_catalog_target::de_s3_iceberg_catalog_target(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_iceberg_catalog_target::de_s3_iceberg_catalog_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3IcebergDirectTarget" => {
                             builder = builder.set_s3_iceberg_direct_target(
-                                crate::protocol_serde::shape_s3_iceberg_direct_target::de_s3_iceberg_direct_target(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_iceberg_direct_target::de_s3_iceberg_direct_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3ExcelSource" => {
-                            builder = builder.set_s3_excel_source(crate::protocol_serde::shape_s3_excel_source::de_s3_excel_source(tokens, _value)?);
+                            builder = builder.set_s3_excel_source(crate::protocol_serde::shape_s3_excel_source::de_s3_excel_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3HyperDirectTarget" => {
                             builder = builder.set_s3_hyper_direct_target(
-                                crate::protocol_serde::shape_s3_hyper_direct_target::de_s3_hyper_direct_target(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_hyper_direct_target::de_s3_hyper_direct_target(tokens, _value, depth + 1)?,
                             );
                         }
                         "DynamoDBELTConnectorSource" => {
                             builder = builder.set_dynamo_dbelt_connector_source(
-                                crate::protocol_serde::shape_dynamo_dbelt_connector_source::de_dynamo_dbelt_connector_source(tokens, _value)?,
+                                crate::protocol_serde::shape_dynamo_dbelt_connector_source::de_dynamo_dbelt_connector_source(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

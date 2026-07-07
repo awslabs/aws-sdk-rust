@@ -2,10 +2,16 @@
 pub(crate) fn de_protected_query_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProtectedQueryOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,20 +37,28 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3" => Some(crate::types::ProtectedQueryOutput::S3(
-                            crate::protocol_serde::shape_protected_query_s3_output::de_protected_query_s3_output(tokens, _value)?
+                            crate::protocol_serde::shape_protected_query_s3_output::de_protected_query_s3_output(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
                         )),
                         "memberList" => Some(crate::types::ProtectedQueryOutput::MemberList(
-                            crate::protocol_serde::shape_protected_query_member_output_list::de_protected_query_member_output_list(tokens, _value)?
-                                .ok_or_else(|| {
+                            crate::protocol_serde::shape_protected_query_member_output_list::de_protected_query_member_output_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'memberList' cannot be null")
                             })?,
                         )),
                         "distribute" => Some(crate::types::ProtectedQueryOutput::Distribute(
-                            crate::protocol_serde::shape_protected_query_distribute_output::de_protected_query_distribute_output(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'distribute' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_protected_query_distribute_output::de_protected_query_distribute_output(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'distribute' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

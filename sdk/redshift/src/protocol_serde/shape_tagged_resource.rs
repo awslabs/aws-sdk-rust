@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_tagged_resource(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TaggedResource, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TaggedResource::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_tagged_resource(
             s if s.matches("Tag") /* Tag com.amazonaws.redshift#TaggedResource$Tag */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_tag::de_tag(&mut tag)
+                        crate::protocol_serde::shape_tag::de_tag(&mut tag, depth + 1)
                         ?
                     )
                 ;

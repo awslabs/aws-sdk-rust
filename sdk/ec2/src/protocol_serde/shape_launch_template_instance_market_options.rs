@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_instance_market_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LaunchTemplateInstanceMarketOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchTemplateInstanceMarketOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_launch_template_instance_market_options(
             s if s.matches("spotOptions") /* SpotOptions com.amazonaws.ec2#LaunchTemplateInstanceMarketOptions$SpotOptions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_spot_market_options::de_launch_template_spot_market_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_spot_market_options::de_launch_template_spot_market_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

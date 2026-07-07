@@ -2,10 +2,16 @@
 pub(crate) fn de_job_flow_instances_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobFlowInstancesDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,7 +58,7 @@ where
                         }
                         "InstanceGroups" => {
                             builder = builder.set_instance_groups(
-                                crate::protocol_serde::shape_instance_group_detail_list::de_instance_group_detail_list(tokens, _value)?,
+                                crate::protocol_serde::shape_instance_group_detail_list::de_instance_group_detail_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "NormalizedInstanceHours" => {
@@ -77,7 +83,8 @@ where
                             );
                         }
                         "Placement" => {
-                            builder = builder.set_placement(crate::protocol_serde::shape_placement_type::de_placement_type(tokens, _value)?);
+                            builder =
+                                builder.set_placement(crate::protocol_serde::shape_placement_type::de_placement_type(tokens, _value, depth + 1)?);
                         }
                         "KeepJobFlowAliveWhenNoSteps" => {
                             builder = builder

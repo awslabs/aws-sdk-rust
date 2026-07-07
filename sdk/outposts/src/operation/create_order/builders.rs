@@ -122,6 +122,34 @@ impl CreateOrderFluentBuilder {
     pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outpost_identifier()
     }
+    /// <p>The ID of the quote to use for the order.</p>
+    pub fn quote_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.quote_identifier(input.into());
+        self
+    }
+    /// <p>The ID of the quote to use for the order.</p>
+    pub fn set_quote_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_quote_identifier(input);
+        self
+    }
+    /// <p>The ID of the quote to use for the order.</p>
+    pub fn get_quote_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quote_identifier()
+    }
+    /// <p>The ID of the quote option to use for the order.</p>
+    pub fn quote_option_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.quote_option_identifier(input.into());
+        self
+    }
+    /// <p>The ID of the quote option to use for the order.</p>
+    pub fn set_quote_option_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_quote_option_identifier(input);
+        self
+    }
+    /// <p>The ID of the quote option to use for the order.</p>
+    pub fn get_quote_option_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quote_option_identifier()
+    }
     ///
     /// Appends an item to `LineItems`.
     ///

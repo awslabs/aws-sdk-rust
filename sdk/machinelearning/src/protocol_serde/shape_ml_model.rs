@@ -2,10 +2,16 @@
 pub(crate) fn de_ml_model<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MlModel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -71,12 +77,17 @@ where
                         }
                         "EndpointInfo" => {
                             builder = builder.set_endpoint_info(crate::protocol_serde::shape_realtime_endpoint_info::de_realtime_endpoint_info(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "TrainingParameters" => {
-                            builder = builder
-                                .set_training_parameters(crate::protocol_serde::shape_training_parameters::de_training_parameters(tokens, _value)?);
+                            builder = builder.set_training_parameters(crate::protocol_serde::shape_training_parameters::de_training_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InputDataLocationS3" => {
                             builder = builder.set_input_data_location_s3(

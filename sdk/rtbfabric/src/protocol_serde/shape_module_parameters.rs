@@ -34,10 +34,16 @@ pub fn ser_module_parameters(
 pub(crate) fn de_module_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ModuleParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -63,22 +69,28 @@ where
                     }
                     variant = match key.as_ref() {
                         "noBid" => Some(crate::types::ModuleParameters::NoBid(
-                            crate::protocol_serde::shape_no_bid_module_parameters::de_no_bid_module_parameters(tokens, _value)?
+                            crate::protocol_serde::shape_no_bid_module_parameters::de_no_bid_module_parameters(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noBid' cannot be null"))?,
                         )),
                         "openRtbAttribute" => Some(crate::types::ModuleParameters::OpenRtbAttribute(
                             crate::protocol_serde::shape_open_rtb_attribute_module_parameters::de_open_rtb_attribute_module_parameters(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'openRtbAttribute' cannot be null")
                             })?,
                         )),
                         "rateLimiter" => Some(crate::types::ModuleParameters::RateLimiter(
-                            crate::protocol_serde::shape_rate_limiter_module_parameters::de_rate_limiter_module_parameters(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rateLimiter' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_rate_limiter_module_parameters::de_rate_limiter_module_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rateLimiter' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

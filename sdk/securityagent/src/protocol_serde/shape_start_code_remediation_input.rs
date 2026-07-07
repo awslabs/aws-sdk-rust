@@ -6,17 +6,20 @@ pub fn ser_start_code_remediation_input_input(
     if let Some(var_1) = &input.agent_space_id {
         object.key("agentSpaceId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.finding_ids {
-        let mut array_3 = object.key("findingIds").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.code_review_job_id {
+        object.key("codeReviewJobId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.finding_ids {
+        let mut array_4 = object.key("findingIds").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.pentest_job_id {
-        object.key("pentestJobId").string(var_5.as_str());
+    if let Some(var_6) = &input.pentest_job_id {
+        object.key("pentestJobId").string(var_6.as_str());
     }
     Ok(())
 }

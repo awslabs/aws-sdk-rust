@@ -22,7 +22,7 @@ impl crate::operation::list_integrated_resources::builders::ListIntegratedResour
 }
 /// Fluent builder constructing a request to `ListIntegratedResources`.
 ///
-/// Lists the integrated resources for an agent space
+/// <p>Lists the integrated resources for an agent space, optionally filtered by integration or resource type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIntegratedResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl ListIntegratedResourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_integrated_resources::paginator::ListIntegratedResourcesPaginator {
         crate::operation::list_integrated_resources::paginator::ListIntegratedResourcesPaginator::new(self.handle, self.inner)
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to list integrated resources for.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to list integrated resources for.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to list integrated resources for.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Filter integrated resources by a specific integration
+    /// <p>The unique identifier of the integration to filter by.</p>
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
-    /// Filter integrated resources by a specific integration
+    /// <p>The unique identifier of the integration to filter by.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }
-    /// Filter integrated resources by a specific integration
+    /// <p>The unique identifier of the integration to filter by.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_integration_id()
     }
-    /// Filter integrated resources by resource type
+    /// <p>The type of resource to filter by.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
-    /// Filter integrated resources by resource type
+    /// <p>The type of resource to filter by.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// Filter integrated resources by resource type
+    /// <p>The type of resource to filter by.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         self.inner.get_resource_type()
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

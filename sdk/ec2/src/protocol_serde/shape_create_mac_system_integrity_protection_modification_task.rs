@@ -45,6 +45,8 @@ pub fn de_create_mac_system_integrity_protection_modification_task(inp: &[u8], m
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateMacSystemIntegrityProtectionModificationTaskResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateMacSystemIntegrityProtectionModificationTaskResponse got {start_el:?}"
@@ -55,7 +57,7 @@ pub fn de_create_mac_system_integrity_protection_modification_task(inp: &[u8], m
             s if s.matches("macModificationTask") /* MacModificationTask com.amazonaws.ec2.synthetic#CreateMacSystemIntegrityProtectionModificationTaskOutput$MacModificationTask */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_mac_modification_task::de_mac_modification_task(&mut tag)
+                        crate::protocol_serde::shape_mac_modification_task::de_mac_modification_task(&mut tag, depth + 1)
                         ?
                     )
                 ;

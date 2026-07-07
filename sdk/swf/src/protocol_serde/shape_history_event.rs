@@ -2,10 +2,16 @@
 pub(crate) fn de_history_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HistoryEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,290 +44,320 @@ where
                             }
                             "workflowExecutionStartedEventAttributes" => {
                                 builder = builder.set_workflow_execution_started_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_started_event_attributes::de_workflow_execution_started_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_started_event_attributes::de_workflow_execution_started_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "workflowExecutionCompletedEventAttributes" => {
                                 builder = builder.set_workflow_execution_completed_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_completed_event_attributes::de_workflow_execution_completed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_completed_event_attributes::de_workflow_execution_completed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "completeWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_complete_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_complete_workflow_execution_failed_event_attributes::de_complete_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_complete_workflow_execution_failed_event_attributes::de_complete_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "workflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_failed_event_attributes::de_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_failed_event_attributes::de_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "failWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_fail_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_fail_workflow_execution_failed_event_attributes::de_fail_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_fail_workflow_execution_failed_event_attributes::de_fail_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "workflowExecutionTimedOutEventAttributes" => {
                                 builder = builder.set_workflow_execution_timed_out_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_timed_out_event_attributes::de_workflow_execution_timed_out_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_timed_out_event_attributes::de_workflow_execution_timed_out_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "workflowExecutionCanceledEventAttributes" => {
                                 builder = builder.set_workflow_execution_canceled_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_canceled_event_attributes::de_workflow_execution_canceled_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_canceled_event_attributes::de_workflow_execution_canceled_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "cancelWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_cancel_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_cancel_workflow_execution_failed_event_attributes::de_cancel_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_cancel_workflow_execution_failed_event_attributes::de_cancel_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "workflowExecutionContinuedAsNewEventAttributes" => {
                                 builder = builder.set_workflow_execution_continued_as_new_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_continued_as_new_event_attributes::de_workflow_execution_continued_as_new_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_continued_as_new_event_attributes::de_workflow_execution_continued_as_new_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "continueAsNewWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_continue_as_new_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_continue_as_new_workflow_execution_failed_event_attributes::de_continue_as_new_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_continue_as_new_workflow_execution_failed_event_attributes::de_continue_as_new_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "workflowExecutionTerminatedEventAttributes" => {
                                 builder = builder.set_workflow_execution_terminated_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_terminated_event_attributes::de_workflow_execution_terminated_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_terminated_event_attributes::de_workflow_execution_terminated_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "workflowExecutionCancelRequestedEventAttributes" => {
                                 builder = builder.set_workflow_execution_cancel_requested_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_cancel_requested_event_attributes::de_workflow_execution_cancel_requested_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_cancel_requested_event_attributes::de_workflow_execution_cancel_requested_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "decisionTaskScheduledEventAttributes" => {
                                 builder = builder.set_decision_task_scheduled_event_attributes(
-                                    crate::protocol_serde::shape_decision_task_scheduled_event_attributes::de_decision_task_scheduled_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_decision_task_scheduled_event_attributes::de_decision_task_scheduled_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "decisionTaskStartedEventAttributes" => {
                                 builder = builder.set_decision_task_started_event_attributes(
                                     crate::protocol_serde::shape_decision_task_started_event_attributes::de_decision_task_started_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "decisionTaskCompletedEventAttributes" => {
                                 builder = builder.set_decision_task_completed_event_attributes(
-                                    crate::protocol_serde::shape_decision_task_completed_event_attributes::de_decision_task_completed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_decision_task_completed_event_attributes::de_decision_task_completed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "decisionTaskTimedOutEventAttributes" => {
                                 builder = builder.set_decision_task_timed_out_event_attributes(
-                                    crate::protocol_serde::shape_decision_task_timed_out_event_attributes::de_decision_task_timed_out_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_decision_task_timed_out_event_attributes::de_decision_task_timed_out_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "activityTaskScheduledEventAttributes" => {
                                 builder = builder.set_activity_task_scheduled_event_attributes(
-                                    crate::protocol_serde::shape_activity_task_scheduled_event_attributes::de_activity_task_scheduled_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_activity_task_scheduled_event_attributes::de_activity_task_scheduled_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "activityTaskStartedEventAttributes" => {
                                 builder = builder.set_activity_task_started_event_attributes(
                                     crate::protocol_serde::shape_activity_task_started_event_attributes::de_activity_task_started_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "activityTaskCompletedEventAttributes" => {
                                 builder = builder.set_activity_task_completed_event_attributes(
-                                    crate::protocol_serde::shape_activity_task_completed_event_attributes::de_activity_task_completed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_activity_task_completed_event_attributes::de_activity_task_completed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "activityTaskFailedEventAttributes" => {
                                 builder = builder.set_activity_task_failed_event_attributes(
                                     crate::protocol_serde::shape_activity_task_failed_event_attributes::de_activity_task_failed_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "activityTaskTimedOutEventAttributes" => {
                                 builder = builder.set_activity_task_timed_out_event_attributes(
-                                    crate::protocol_serde::shape_activity_task_timed_out_event_attributes::de_activity_task_timed_out_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_activity_task_timed_out_event_attributes::de_activity_task_timed_out_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "activityTaskCanceledEventAttributes" => {
                                 builder = builder.set_activity_task_canceled_event_attributes(
                                     crate::protocol_serde::shape_activity_task_canceled_event_attributes::de_activity_task_canceled_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "activityTaskCancelRequestedEventAttributes" => {
                                 builder = builder.set_activity_task_cancel_requested_event_attributes(
-                                    crate::protocol_serde::shape_activity_task_cancel_requested_event_attributes::de_activity_task_cancel_requested_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_activity_task_cancel_requested_event_attributes::de_activity_task_cancel_requested_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "workflowExecutionSignaledEventAttributes" => {
                                 builder = builder.set_workflow_execution_signaled_event_attributes(
-                                    crate::protocol_serde::shape_workflow_execution_signaled_event_attributes::de_workflow_execution_signaled_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_workflow_execution_signaled_event_attributes::de_workflow_execution_signaled_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "markerRecordedEventAttributes" => {
                                 builder = builder.set_marker_recorded_event_attributes(
                                     crate::protocol_serde::shape_marker_recorded_event_attributes::de_marker_recorded_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "recordMarkerFailedEventAttributes" => {
                                 builder = builder.set_record_marker_failed_event_attributes(
                                     crate::protocol_serde::shape_record_marker_failed_event_attributes::de_record_marker_failed_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "timerStartedEventAttributes" => {
                                 builder = builder.set_timer_started_event_attributes(
-                                    crate::protocol_serde::shape_timer_started_event_attributes::de_timer_started_event_attributes(tokens, _value)?,
+                                    crate::protocol_serde::shape_timer_started_event_attributes::de_timer_started_event_attributes(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "timerFiredEventAttributes" => {
                                 builder = builder.set_timer_fired_event_attributes(
-                                    crate::protocol_serde::shape_timer_fired_event_attributes::de_timer_fired_event_attributes(tokens, _value)?,
+                                    crate::protocol_serde::shape_timer_fired_event_attributes::de_timer_fired_event_attributes(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "timerCanceledEventAttributes" => {
                                 builder = builder.set_timer_canceled_event_attributes(
-                                    crate::protocol_serde::shape_timer_canceled_event_attributes::de_timer_canceled_event_attributes(tokens, _value)?,
+                                    crate::protocol_serde::shape_timer_canceled_event_attributes::de_timer_canceled_event_attributes(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "startChildWorkflowExecutionInitiatedEventAttributes" => {
                                 builder = builder.set_start_child_workflow_execution_initiated_event_attributes(
-                                    crate::protocol_serde::shape_start_child_workflow_execution_initiated_event_attributes::de_start_child_workflow_execution_initiated_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_start_child_workflow_execution_initiated_event_attributes::de_start_child_workflow_execution_initiated_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "childWorkflowExecutionStartedEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_started_event_attributes(
-                                    crate::protocol_serde::shape_child_workflow_execution_started_event_attributes::de_child_workflow_execution_started_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_child_workflow_execution_started_event_attributes::de_child_workflow_execution_started_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "childWorkflowExecutionCompletedEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_completed_event_attributes(
-                                    crate::protocol_serde::shape_child_workflow_execution_completed_event_attributes::de_child_workflow_execution_completed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_child_workflow_execution_completed_event_attributes::de_child_workflow_execution_completed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "childWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_child_workflow_execution_failed_event_attributes::de_child_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_child_workflow_execution_failed_event_attributes::de_child_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "childWorkflowExecutionTimedOutEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_timed_out_event_attributes(
-                                    crate::protocol_serde::shape_child_workflow_execution_timed_out_event_attributes::de_child_workflow_execution_timed_out_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_child_workflow_execution_timed_out_event_attributes::de_child_workflow_execution_timed_out_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "childWorkflowExecutionCanceledEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_canceled_event_attributes(
-                                    crate::protocol_serde::shape_child_workflow_execution_canceled_event_attributes::de_child_workflow_execution_canceled_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_child_workflow_execution_canceled_event_attributes::de_child_workflow_execution_canceled_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "childWorkflowExecutionTerminatedEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_terminated_event_attributes(
-                                    crate::protocol_serde::shape_child_workflow_execution_terminated_event_attributes::de_child_workflow_execution_terminated_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_child_workflow_execution_terminated_event_attributes::de_child_workflow_execution_terminated_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "signalExternalWorkflowExecutionInitiatedEventAttributes" => {
                                 builder = builder.set_signal_external_workflow_execution_initiated_event_attributes(
-                                    crate::protocol_serde::shape_signal_external_workflow_execution_initiated_event_attributes::de_signal_external_workflow_execution_initiated_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_signal_external_workflow_execution_initiated_event_attributes::de_signal_external_workflow_execution_initiated_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "externalWorkflowExecutionSignaledEventAttributes" => {
                                 builder = builder.set_external_workflow_execution_signaled_event_attributes(
-                                    crate::protocol_serde::shape_external_workflow_execution_signaled_event_attributes::de_external_workflow_execution_signaled_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_external_workflow_execution_signaled_event_attributes::de_external_workflow_execution_signaled_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "signalExternalWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_signal_external_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_signal_external_workflow_execution_failed_event_attributes::de_signal_external_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_signal_external_workflow_execution_failed_event_attributes::de_signal_external_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "externalWorkflowExecutionCancelRequestedEventAttributes" => {
                                 builder = builder.set_external_workflow_execution_cancel_requested_event_attributes(
-                                    crate::protocol_serde::shape_external_workflow_execution_cancel_requested_event_attributes::de_external_workflow_execution_cancel_requested_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_external_workflow_execution_cancel_requested_event_attributes::de_external_workflow_execution_cancel_requested_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "requestCancelExternalWorkflowExecutionInitiatedEventAttributes" => {
                                 builder = builder.set_request_cancel_external_workflow_execution_initiated_event_attributes(
-                                    crate::protocol_serde::shape_request_cancel_external_workflow_execution_initiated_event_attributes::de_request_cancel_external_workflow_execution_initiated_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_request_cancel_external_workflow_execution_initiated_event_attributes::de_request_cancel_external_workflow_execution_initiated_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "requestCancelExternalWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_request_cancel_external_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_request_cancel_external_workflow_execution_failed_event_attributes::de_request_cancel_external_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_request_cancel_external_workflow_execution_failed_event_attributes::de_request_cancel_external_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "scheduleActivityTaskFailedEventAttributes" => {
                                 builder = builder.set_schedule_activity_task_failed_event_attributes(
-                                    crate::protocol_serde::shape_schedule_activity_task_failed_event_attributes::de_schedule_activity_task_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_schedule_activity_task_failed_event_attributes::de_schedule_activity_task_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "requestCancelActivityTaskFailedEventAttributes" => {
                                 builder = builder.set_request_cancel_activity_task_failed_event_attributes(
-                                    crate::protocol_serde::shape_request_cancel_activity_task_failed_event_attributes::de_request_cancel_activity_task_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_request_cancel_activity_task_failed_event_attributes::de_request_cancel_activity_task_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "startTimerFailedEventAttributes" => {
                                 builder = builder.set_start_timer_failed_event_attributes(
                                     crate::protocol_serde::shape_start_timer_failed_event_attributes::de_start_timer_failed_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "cancelTimerFailedEventAttributes" => {
                                 builder = builder.set_cancel_timer_failed_event_attributes(
                                     crate::protocol_serde::shape_cancel_timer_failed_event_attributes::de_cancel_timer_failed_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "startChildWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_start_child_workflow_execution_failed_event_attributes(
-                                    crate::protocol_serde::shape_start_child_workflow_execution_failed_event_attributes::de_start_child_workflow_execution_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_start_child_workflow_execution_failed_event_attributes::de_start_child_workflow_execution_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "lambdaFunctionScheduledEventAttributes" => {
                                 builder = builder.set_lambda_function_scheduled_event_attributes(
-                                    crate::protocol_serde::shape_lambda_function_scheduled_event_attributes::de_lambda_function_scheduled_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_lambda_function_scheduled_event_attributes::de_lambda_function_scheduled_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "lambdaFunctionStartedEventAttributes" => {
                                 builder = builder.set_lambda_function_started_event_attributes(
-                                    crate::protocol_serde::shape_lambda_function_started_event_attributes::de_lambda_function_started_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_lambda_function_started_event_attributes::de_lambda_function_started_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "lambdaFunctionCompletedEventAttributes" => {
                                 builder = builder.set_lambda_function_completed_event_attributes(
-                                    crate::protocol_serde::shape_lambda_function_completed_event_attributes::de_lambda_function_completed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_lambda_function_completed_event_attributes::de_lambda_function_completed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "lambdaFunctionFailedEventAttributes" => {
                                 builder = builder.set_lambda_function_failed_event_attributes(
                                     crate::protocol_serde::shape_lambda_function_failed_event_attributes::de_lambda_function_failed_event_attributes(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "lambdaFunctionTimedOutEventAttributes" => {
                                 builder = builder.set_lambda_function_timed_out_event_attributes(
-                                    crate::protocol_serde::shape_lambda_function_timed_out_event_attributes::de_lambda_function_timed_out_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_lambda_function_timed_out_event_attributes::de_lambda_function_timed_out_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "scheduleLambdaFunctionFailedEventAttributes" => {
                                 builder = builder.set_schedule_lambda_function_failed_event_attributes(
-                                    crate::protocol_serde::shape_schedule_lambda_function_failed_event_attributes::de_schedule_lambda_function_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_schedule_lambda_function_failed_event_attributes::de_schedule_lambda_function_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             "startLambdaFunctionFailedEventAttributes" => {
                                 builder = builder.set_start_lambda_function_failed_event_attributes(
-                                    crate::protocol_serde::shape_start_lambda_function_failed_event_attributes::de_start_lambda_function_failed_event_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_start_lambda_function_failed_event_attributes::de_start_lambda_function_failed_event_attributes(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

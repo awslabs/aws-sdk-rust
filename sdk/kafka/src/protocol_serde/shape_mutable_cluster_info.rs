@@ -2,10 +2,16 @@
 pub(crate) fn de_mutable_cluster_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MutableClusterInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,12 +23,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "brokerEBSVolumeInfo" => {
                             builder = builder.set_broker_ebs_volume_info(
-                                crate::protocol_serde::shape_list_of_broker_ebs_volume_info::de_list_of_broker_ebs_volume_info(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_broker_ebs_volume_info::de_list_of_broker_ebs_volume_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "configurationInfo" => {
-                            builder = builder
-                                .set_configuration_info(crate::protocol_serde::shape_configuration_info::de_configuration_info(tokens, _value)?);
+                            builder = builder.set_configuration_info(crate::protocol_serde::shape_configuration_info::de_configuration_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "numberOfBrokerNodes" => {
                             builder = builder.set_number_of_broker_nodes(
@@ -39,7 +52,18 @@ where
                             );
                         }
                         "openMonitoring" => {
-                            builder = builder.set_open_monitoring(crate::protocol_serde::shape_open_monitoring::de_open_monitoring(tokens, _value)?);
+                            builder = builder.set_open_monitoring(crate::protocol_serde::shape_open_monitoring::de_open_monitoring(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "zookeeperAccess" => {
+                            builder = builder.set_zookeeper_access(crate::protocol_serde::shape_zookeeper_access::de_zookeeper_access(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "kafkaVersion" => {
                             builder = builder.set_kafka_version(
@@ -49,7 +73,8 @@ where
                             );
                         }
                         "loggingInfo" => {
-                            builder = builder.set_logging_info(crate::protocol_serde::shape_logging_info::de_logging_info(tokens, _value)?);
+                            builder =
+                                builder.set_logging_info(crate::protocol_serde::shape_logging_info::de_logging_info(tokens, _value, depth + 1)?);
                         }
                         "instanceType" => {
                             builder = builder.set_instance_type(
@@ -60,15 +85,22 @@ where
                         }
                         "clientAuthentication" => {
                             builder = builder.set_client_authentication(
-                                crate::protocol_serde::shape_client_authentication::de_client_authentication(tokens, _value)?,
+                                crate::protocol_serde::shape_client_authentication::de_client_authentication(tokens, _value, depth + 1)?,
                             );
                         }
                         "encryptionInfo" => {
-                            builder = builder.set_encryption_info(crate::protocol_serde::shape_encryption_info::de_encryption_info(tokens, _value)?);
+                            builder = builder.set_encryption_info(crate::protocol_serde::shape_encryption_info::de_encryption_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "connectivityInfo" => {
-                            builder =
-                                builder.set_connectivity_info(crate::protocol_serde::shape_connectivity_info::de_connectivity_info(tokens, _value)?);
+                            builder = builder.set_connectivity_info(crate::protocol_serde::shape_connectivity_info::de_connectivity_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "storageMode" => {
                             builder = builder.set_storage_mode(
@@ -79,11 +111,11 @@ where
                         }
                         "brokerCountUpdateInfo" => {
                             builder = builder.set_broker_count_update_info(
-                                crate::protocol_serde::shape_broker_count_update_info::de_broker_count_update_info(tokens, _value)?,
+                                crate::protocol_serde::shape_broker_count_update_info::de_broker_count_update_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "rebalancing" => {
-                            builder = builder.set_rebalancing(crate::protocol_serde::shape_rebalancing::de_rebalancing(tokens, _value)?);
+                            builder = builder.set_rebalancing(crate::protocol_serde::shape_rebalancing::de_rebalancing(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

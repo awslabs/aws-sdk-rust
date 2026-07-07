@@ -65,6 +65,8 @@ pub fn de_list_geo_locations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListGeoLocationsResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListGeoLocationsResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -101,7 +103,7 @@ pub fn de_list_geo_locations(
             s if s.matches("GeoLocationDetailsList") /* GeoLocationDetailsList com.amazonaws.route53.synthetic#ListGeoLocationsOutput$GeoLocationDetailsList */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_geo_location_details_list::de_geo_location_details_list(&mut tag)
+                        crate::protocol_serde::shape_geo_location_details_list::de_geo_location_details_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

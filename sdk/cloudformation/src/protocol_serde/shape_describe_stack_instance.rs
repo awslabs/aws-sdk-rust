@@ -90,6 +90,8 @@ pub fn de_describe_stack_instance(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeStackInstanceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeStackInstanceResponse got {start_el:?}"
@@ -107,7 +109,7 @@ pub fn de_describe_stack_instance(
             s if s.matches("StackInstance") /* StackInstance com.amazonaws.cloudformation.synthetic#DescribeStackInstanceOutput$StackInstance */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stack_instance::de_stack_instance(&mut tag)
+                        crate::protocol_serde::shape_stack_instance::de_stack_instance(&mut tag, depth + 1)
                         ?
                     )
                 ;

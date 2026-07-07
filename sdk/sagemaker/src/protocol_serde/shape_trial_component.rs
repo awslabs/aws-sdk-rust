@@ -2,10 +2,16 @@
 pub(crate) fn de_trial_component<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TrialComponent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,12 +44,16 @@ where
                         }
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_trial_component_source::de_trial_component_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_trial_component_status::de_trial_component_status(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "StartTime" => {
@@ -65,7 +75,7 @@ where
                             )?);
                         }
                         "CreatedBy" => {
-                            builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                            builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                         }
                         "LastModifiedTime" => {
                             builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -74,35 +84,49 @@ where
                             )?);
                         }
                         "LastModifiedBy" => {
-                            builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                            builder =
+                                builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                         }
                         "Parameters" => {
                             builder = builder.set_parameters(crate::protocol_serde::shape_trial_component_parameters::de_trial_component_parameters(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InputArtifacts" => {
                             builder = builder.set_input_artifacts(
-                                crate::protocol_serde::shape_trial_component_artifacts::de_trial_component_artifacts(tokens, _value)?,
+                                crate::protocol_serde::shape_trial_component_artifacts::de_trial_component_artifacts(tokens, _value, depth + 1)?,
                             );
                         }
                         "OutputArtifacts" => {
                             builder = builder.set_output_artifacts(
-                                crate::protocol_serde::shape_trial_component_artifacts::de_trial_component_artifacts(tokens, _value)?,
+                                crate::protocol_serde::shape_trial_component_artifacts::de_trial_component_artifacts(tokens, _value, depth + 1)?,
                             );
                         }
                         "Metrics" => {
                             builder = builder.set_metrics(
-                                crate::protocol_serde::shape_trial_component_metric_summaries::de_trial_component_metric_summaries(tokens, _value)?,
+                                crate::protocol_serde::shape_trial_component_metric_summaries::de_trial_component_metric_summaries(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MetadataProperties" => {
-                            builder = builder
-                                .set_metadata_properties(crate::protocol_serde::shape_metadata_properties::de_metadata_properties(tokens, _value)?);
+                            builder = builder.set_metadata_properties(crate::protocol_serde::shape_metadata_properties::de_metadata_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SourceDetail" => {
                             builder = builder.set_source_detail(
-                                crate::protocol_serde::shape_trial_component_source_detail::de_trial_component_source_detail(tokens, _value)?,
+                                crate::protocol_serde::shape_trial_component_source_detail::de_trial_component_source_detail(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "LineageGroupArn" => {
@@ -113,10 +137,10 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "Parents" => {
-                            builder = builder.set_parents(crate::protocol_serde::shape_parents::de_parents(tokens, _value)?);
+                            builder = builder.set_parents(crate::protocol_serde::shape_parents::de_parents(tokens, _value, depth + 1)?);
                         }
                         "RunName" => {
                             builder = builder.set_run_name(

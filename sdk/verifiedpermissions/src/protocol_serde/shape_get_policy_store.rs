@@ -128,6 +128,8 @@ pub(crate) fn de_get_policy_store(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -148,8 +150,11 @@ pub(crate) fn de_get_policy_store(
                     );
                 }
                 "validationSettings" => {
-                    builder =
-                        builder.set_validation_settings(crate::protocol_serde::shape_validation_settings::de_validation_settings(tokens, _value)?);
+                    builder = builder.set_validation_settings(crate::protocol_serde::shape_validation_settings::de_validation_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "createdDate" => {
                     builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -178,7 +183,11 @@ pub(crate) fn de_get_policy_store(
                     );
                 }
                 "encryptionState" => {
-                    builder = builder.set_encryption_state(crate::protocol_serde::shape_encryption_state::de_encryption_state(tokens, _value)?);
+                    builder = builder.set_encryption_state(crate::protocol_serde::shape_encryption_state::de_encryption_state(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "cedarVersion" => {
                     builder = builder.set_cedar_version(
@@ -188,7 +197,7 @@ pub(crate) fn de_get_policy_store(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

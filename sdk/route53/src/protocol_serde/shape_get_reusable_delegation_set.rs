@@ -106,6 +106,8 @@ pub fn de_get_reusable_delegation_set(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetReusableDelegationSetResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetReusableDelegationSetResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -116,7 +118,7 @@ pub fn de_get_reusable_delegation_set(
             s if s.matches("DelegationSet") /* DelegationSet com.amazonaws.route53.synthetic#GetReusableDelegationSetOutput$DelegationSet */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_delegation_set::de_delegation_set(&mut tag)
+                        crate::protocol_serde::shape_delegation_set::de_delegation_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

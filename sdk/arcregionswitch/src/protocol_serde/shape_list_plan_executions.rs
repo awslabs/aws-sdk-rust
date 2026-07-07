@@ -89,10 +89,11 @@ pub(crate) fn de_list_plan_executions(
     crate::operation::list_plan_executions::builders::ListPlanExecutionsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_plan_executions::builders::ListPlanExecutionsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_plan_executions::builders::ListPlanExecutionsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -100,7 +101,7 @@ pub(crate) fn de_list_plan_executions(
         builder = match decoder.str()?.as_ref() {
             "items" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_items(Some(
-                    crate::protocol_serde::shape_abbreviated_executions_list::de_abbreviated_executions_list(decoder)?,
+                    crate::protocol_serde::shape_abbreviated_executions_list::de_abbreviated_executions_list(decoder, depth + 1)?,
                 )))
             })?,
             "nextToken" => {
@@ -115,6 +116,8 @@ pub(crate) fn de_list_plan_executions(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -124,13 +127,13 @@ pub(crate) fn de_list_plan_executions(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

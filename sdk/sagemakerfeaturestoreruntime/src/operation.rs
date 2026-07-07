@@ -4,11 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchGetRecord` operation.
 pub mod batch_get_record;
 
+/// Types for the `BatchWriteRecord` operation.
+pub mod batch_write_record;
+
 /// Types for the `DeleteRecord` operation.
 pub mod delete_record;
 
 /// Types for the `GetRecord` operation.
 pub mod get_record;
+
+/// Types for the `ListRecords` operation.
+pub mod list_records;
 
 /// Types for the `PutRecord` operation.
 pub mod put_record;

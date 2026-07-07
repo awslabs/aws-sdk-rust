@@ -96,6 +96,8 @@ pub(crate) fn de_describe_what_if_forecast(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -157,16 +159,20 @@ pub(crate) fn de_describe_what_if_forecast(
                 }
                 "TimeSeriesTransformations" => {
                     builder = builder.set_time_series_transformations(
-                        crate::protocol_serde::shape_time_series_transformations::de_time_series_transformations(tokens, _value)?,
+                        crate::protocol_serde::shape_time_series_transformations::de_time_series_transformations(tokens, _value, depth + 1)?,
                     );
                 }
                 "TimeSeriesReplacementsDataSource" => {
                     builder = builder.set_time_series_replacements_data_source(
-                        crate::protocol_serde::shape_time_series_replacements_data_source::de_time_series_replacements_data_source(tokens, _value)?,
+                        crate::protocol_serde::shape_time_series_replacements_data_source::de_time_series_replacements_data_source(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "ForecastTypes" => {
-                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens, _value)?);
+                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

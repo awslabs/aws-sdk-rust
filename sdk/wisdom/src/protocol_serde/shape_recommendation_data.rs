@@ -2,10 +2,16 @@
 pub(crate) fn de_recommendation_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecommendationData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,7 @@ where
                             );
                         }
                         "document" => {
-                            builder = builder.set_document(crate::protocol_serde::shape_document::de_document(tokens, _value)?);
+                            builder = builder.set_document(crate::protocol_serde::shape_document::de_document(tokens, _value, depth + 1)?);
                         }
                         "relevanceScore" => {
                             builder = builder.set_relevance_score(

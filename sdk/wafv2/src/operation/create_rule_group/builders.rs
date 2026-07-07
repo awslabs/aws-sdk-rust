@@ -274,4 +274,18 @@ impl CreateRuleGroupFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
         self.inner.get_custom_response_bodies()
     }
+    /// <p>The monetization configuration for the rule group. Provide this when any rule in the rule group uses the <code>Monetize</code> action.</p>
+    pub fn monetization_config(mut self, input: crate::types::MonetizationConfig) -> Self {
+        self.inner = self.inner.monetization_config(input);
+        self
+    }
+    /// <p>The monetization configuration for the rule group. Provide this when any rule in the rule group uses the <code>Monetize</code> action.</p>
+    pub fn set_monetization_config(mut self, input: ::std::option::Option<crate::types::MonetizationConfig>) -> Self {
+        self.inner = self.inner.set_monetization_config(input);
+        self
+    }
+    /// <p>The monetization configuration for the rule group. Provide this when any rule in the rule group uses the <code>Monetize</code> action.</p>
+    pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
+        self.inner.get_monetization_config()
+    }
 }

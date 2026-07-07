@@ -27,10 +27,16 @@ pub fn ser_step_config(
 pub(crate) fn de_step_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StepConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,33 +45,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ActionOnFailure" => {
+                                builder = builder.set_action_on_failure(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ActionOnFailure::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "HadoopJarStep" => {
+                                builder = builder.set_hadoop_jar_step(
+                                    crate::protocol_serde::shape_hadoop_jar_step_config::de_hadoop_jar_step_config(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "StepMonitoringConfiguration" => {
+                                builder = builder.set_step_monitoring_configuration(
+                                    crate::protocol_serde::shape_step_monitoring_configuration::de_step_monitoring_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "ActionOnFailure" => {
-                            builder = builder.set_action_on_failure(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ActionOnFailure::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "HadoopJarStep" => {
-                            builder = builder.set_hadoop_jar_step(crate::protocol_serde::shape_hadoop_jar_step_config::de_hadoop_jar_step_config(
-                                tokens, _value,
-                            )?);
-                        }
-                        "StepMonitoringConfiguration" => {
-                            builder = builder.set_step_monitoring_configuration(
-                                crate::protocol_serde::shape_step_monitoring_configuration::de_step_monitoring_configuration(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

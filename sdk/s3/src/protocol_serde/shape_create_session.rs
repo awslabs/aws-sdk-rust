@@ -156,12 +156,14 @@ pub fn de_create_session(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Credentials") /* Credentials com.amazonaws.s3.synthetic#CreateSessionOutput$Credentials */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_session_credentials::de_session_credentials(&mut tag)
+                        crate::protocol_serde::shape_session_credentials::de_session_credentials(&mut tag, depth + 1)
                         ?
                     )
                 ;

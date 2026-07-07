@@ -2,10 +2,16 @@
 pub(crate) fn de_storage_virtual_machine<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StorageVirtualMachine>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,7 +24,9 @@ where
                         "ActiveDirectoryConfiguration" => {
                             builder = builder.set_active_directory_configuration(
                                 crate::protocol_serde::shape_svm_active_directory_configuration::de_svm_active_directory_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -29,7 +37,7 @@ where
                             )?);
                         }
                         "Endpoints" => {
-                            builder = builder.set_endpoints(crate::protocol_serde::shape_svm_endpoints::de_svm_endpoints(tokens, _value)?);
+                            builder = builder.set_endpoints(crate::protocol_serde::shape_svm_endpoints::de_svm_endpoints(tokens, _value, depth + 1)?);
                         }
                         "FileSystemId" => {
                             builder = builder.set_file_system_id(
@@ -81,11 +89,11 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "LifecycleTransitionReason" => {
                             builder = builder.set_lifecycle_transition_reason(
-                                crate::protocol_serde::shape_lifecycle_transition_reason::de_lifecycle_transition_reason(tokens, _value)?,
+                                crate::protocol_serde::shape_lifecycle_transition_reason::de_lifecycle_transition_reason(tokens, _value, depth + 1)?,
                             );
                         }
                         "RootVolumeSecurityStyle" => {

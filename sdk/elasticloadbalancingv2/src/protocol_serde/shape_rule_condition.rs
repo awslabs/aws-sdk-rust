@@ -67,7 +67,11 @@ pub fn ser_rule_condition(
 #[allow(clippy::needless_question_mark)]
 pub fn de_rule_condition(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RuleCondition, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RuleCondition::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -88,7 +92,7 @@ pub fn de_rule_condition(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#RuleCondition$Values */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
+                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_rule_condition(
             s if s.matches("HostHeaderConfig") /* HostHeaderConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HostHeaderConfig */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_host_header_condition_config::de_host_header_condition_config(&mut tag)
+                        crate::protocol_serde::shape_host_header_condition_config::de_host_header_condition_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +112,7 @@ pub fn de_rule_condition(
             s if s.matches("PathPatternConfig") /* PathPatternConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$PathPatternConfig */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_path_pattern_condition_config::de_path_pattern_condition_config(&mut tag)
+                        crate::protocol_serde::shape_path_pattern_condition_config::de_path_pattern_condition_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -118,7 +122,7 @@ pub fn de_rule_condition(
             s if s.matches("HttpHeaderConfig") /* HttpHeaderConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HttpHeaderConfig */ =>  {
                 let var_29 =
                     Some(
-                        crate::protocol_serde::shape_http_header_condition_config::de_http_header_condition_config(&mut tag)
+                        crate::protocol_serde::shape_http_header_condition_config::de_http_header_condition_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -128,7 +132,7 @@ pub fn de_rule_condition(
             s if s.matches("QueryStringConfig") /* QueryStringConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$QueryStringConfig */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_query_string_condition_config::de_query_string_condition_config(&mut tag)
+                        crate::protocol_serde::shape_query_string_condition_config::de_query_string_condition_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -138,7 +142,7 @@ pub fn de_rule_condition(
             s if s.matches("HttpRequestMethodConfig") /* HttpRequestMethodConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HttpRequestMethodConfig */ =>  {
                 let var_31 =
                     Some(
-                        crate::protocol_serde::shape_http_request_method_condition_config::de_http_request_method_condition_config(&mut tag)
+                        crate::protocol_serde::shape_http_request_method_condition_config::de_http_request_method_condition_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -148,7 +152,7 @@ pub fn de_rule_condition(
             s if s.matches("SourceIpConfig") /* SourceIpConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$SourceIpConfig */ =>  {
                 let var_32 =
                     Some(
-                        crate::protocol_serde::shape_source_ip_condition_config::de_source_ip_condition_config(&mut tag)
+                        crate::protocol_serde::shape_source_ip_condition_config::de_source_ip_condition_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -158,7 +162,7 @@ pub fn de_rule_condition(
             s if s.matches("RegexValues") /* RegexValues com.amazonaws.elasticloadbalancingv2#RuleCondition$RegexValues */ =>  {
                 let var_33 =
                     Some(
-                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
+                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_coverage_resource_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CoverageResourceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,17 +23,29 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eksClusterDetails" => {
                             builder = builder.set_eks_cluster_details(
-                                crate::protocol_serde::shape_coverage_eks_cluster_details::de_coverage_eks_cluster_details(tokens, _value)?,
+                                crate::protocol_serde::shape_coverage_eks_cluster_details::de_coverage_eks_cluster_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ecsClusterDetails" => {
                             builder = builder.set_ecs_cluster_details(
-                                crate::protocol_serde::shape_coverage_ecs_cluster_details::de_coverage_ecs_cluster_details(tokens, _value)?,
+                                crate::protocol_serde::shape_coverage_ecs_cluster_details::de_coverage_ecs_cluster_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ec2InstanceDetails" => {
                             builder = builder.set_ec2_instance_details(
-                                crate::protocol_serde::shape_coverage_ec2_instance_details::de_coverage_ec2_instance_details(tokens, _value)?,
+                                crate::protocol_serde::shape_coverage_ec2_instance_details::de_coverage_ec2_instance_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "resourceType" => {

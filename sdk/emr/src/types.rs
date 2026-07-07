@@ -37,6 +37,8 @@ pub use crate::types::_on_cluster_app_ui_type::OnClusterAppUiType;
 
 pub use crate::types::_persistent_app_ui_type::PersistentAppUiType;
 
+pub use crate::types::_session::Session;
+
 pub use crate::types::_session_mapping_detail::SessionMappingDetail;
 
 pub use crate::types::_instance_fleet_type::InstanceFleetType;
@@ -68,6 +70,10 @@ pub use crate::types::_notebook_s3_location_from_input::NotebookS3LocationFromIn
 pub use crate::types::_output_notebook_s3_location_from_input::OutputNotebookS3LocationFromInput;
 
 pub use crate::types::_output_notebook_format::OutputNotebookFormat;
+
+pub use crate::types::_session_monitoring_configuration::SessionMonitoringConfiguration;
+
+pub use crate::types::_session_state::SessionState;
 
 pub use crate::types::_instance_fleet_provisioning_specifications::InstanceFleetProvisioningSpecifications;
 
@@ -110,6 +116,8 @@ pub use crate::types::_username_password::UsernamePassword;
 pub use crate::types::_compute_limits::ComputeLimits;
 
 pub use crate::types::_scaling_strategy::ScalingStrategy;
+
+pub use crate::types::_certificate_authority::CertificateAuthority;
 
 pub use crate::types::_command::Command;
 
@@ -164,6 +172,12 @@ pub use crate::types::_cloud_watch_log_configuration::CloudWatchLogConfiguration
 pub use crate::types::_s3_logging_configuration::S3LoggingConfiguration;
 
 pub use crate::types::_execution_engine_type::ExecutionEngineType;
+
+pub use crate::types::_session_cloud_watch_logging_configuration::SessionCloudWatchLoggingConfiguration;
+
+pub use crate::types::_session_managed_logging_configuration::SessionManagedLoggingConfiguration;
+
+pub use crate::types::_session_s3_logging_configuration::SessionS3LoggingConfiguration;
 
 pub use crate::types::_instance_type_config::InstanceTypeConfig;
 
@@ -348,6 +362,8 @@ mod _bootstrap_action_detail;
 mod _cancel_steps_info;
 
 mod _cancel_steps_request_status;
+
+mod _certificate_authority;
 
 mod _cloud_watch_alarm_definition;
 
@@ -569,9 +585,21 @@ mod _script_bootstrap_action_config;
 
 mod _security_configuration_summary;
 
+mod _session;
+
+mod _session_cloud_watch_logging_configuration;
+
+mod _session_managed_logging_configuration;
+
 mod _session_mapping_detail;
 
 mod _session_mapping_summary;
+
+mod _session_monitoring_configuration;
+
+mod _session_s3_logging_configuration;
+
+mod _session_state;
 
 mod _shrink_policy;
 

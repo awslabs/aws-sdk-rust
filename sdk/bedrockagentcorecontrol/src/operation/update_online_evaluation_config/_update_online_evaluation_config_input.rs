@@ -15,6 +15,10 @@ pub struct UpdateOnlineEvaluationConfigInput {
     pub data_source_config: ::std::option::Option<crate::types::DataSourceConfig>,
     /// <p>The updated list of evaluators to apply during online evaluation.</p>
     pub evaluators: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>>,
+    /// <p>The updated list of insight types to run against agent sessions.</p>
+    pub insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
+    /// <p>The updated clustering configuration for periodic batch evaluation.</p>
+    pub clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
     /// <p>The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
     pub evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated execution status to enable or disable the online evaluation.</p>
@@ -47,6 +51,16 @@ impl UpdateOnlineEvaluationConfigInput {
     pub fn evaluators(&self) -> &[crate::types::EvaluatorReference] {
         self.evaluators.as_deref().unwrap_or_default()
     }
+    /// <p>The updated list of insight types to run against agent sessions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights.is_none()`.
+    pub fn insights(&self) -> &[crate::types::Insight] {
+        self.insights.as_deref().unwrap_or_default()
+    }
+    /// <p>The updated clustering configuration for periodic batch evaluation.</p>
+    pub fn clustering_config(&self) -> ::std::option::Option<&crate::types::ClusteringConfig> {
+        self.clustering_config.as_ref()
+    }
     /// <p>The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
     pub fn evaluation_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.evaluation_execution_role_arn.as_deref()
@@ -65,6 +79,8 @@ impl ::std::fmt::Debug for UpdateOnlineEvaluationConfigInput {
         formatter.field("rule", &self.rule);
         formatter.field("data_source_config", &self.data_source_config);
         formatter.field("evaluators", &self.evaluators);
+        formatter.field("insights", &self.insights);
+        formatter.field("clustering_config", &self.clustering_config);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("execution_status", &self.execution_status);
         formatter.finish()
@@ -87,6 +103,8 @@ pub struct UpdateOnlineEvaluationConfigInputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     pub(crate) data_source_config: ::std::option::Option<crate::types::DataSourceConfig>,
     pub(crate) evaluators: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>>,
+    pub(crate) insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
+    pub(crate) clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
     pub(crate) evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_status: ::std::option::Option<crate::types::OnlineEvaluationExecutionStatus>,
 }
@@ -182,6 +200,40 @@ impl UpdateOnlineEvaluationConfigInputBuilder {
     pub fn get_evaluators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>> {
         &self.evaluators
     }
+    /// Appends an item to `insights`.
+    ///
+    /// To override the contents of this collection use [`set_insights`](Self::set_insights).
+    ///
+    /// <p>The updated list of insight types to run against agent sessions.</p>
+    pub fn insights(mut self, input: crate::types::Insight) -> Self {
+        let mut v = self.insights.unwrap_or_default();
+        v.push(input);
+        self.insights = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The updated list of insight types to run against agent sessions.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>) -> Self {
+        self.insights = input;
+        self
+    }
+    /// <p>The updated list of insight types to run against agent sessions.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
+        &self.insights
+    }
+    /// <p>The updated clustering configuration for periodic batch evaluation.</p>
+    pub fn clustering_config(mut self, input: crate::types::ClusteringConfig) -> Self {
+        self.clustering_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated clustering configuration for periodic batch evaluation.</p>
+    pub fn set_clustering_config(mut self, input: ::std::option::Option<crate::types::ClusteringConfig>) -> Self {
+        self.clustering_config = input;
+        self
+    }
+    /// <p>The updated clustering configuration for periodic batch evaluation.</p>
+    pub fn get_clustering_config(&self) -> &::std::option::Option<crate::types::ClusteringConfig> {
+        &self.clustering_config
+    }
     /// <p>The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
     pub fn evaluation_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_execution_role_arn = ::std::option::Option::Some(input.into());
@@ -224,6 +276,8 @@ impl UpdateOnlineEvaluationConfigInputBuilder {
             rule: self.rule,
             data_source_config: self.data_source_config,
             evaluators: self.evaluators,
+            insights: self.insights,
+            clustering_config: self.clustering_config,
             evaluation_execution_role_arn: self.evaluation_execution_role_arn,
             execution_status: self.execution_status,
         })
@@ -238,6 +292,8 @@ impl ::std::fmt::Debug for UpdateOnlineEvaluationConfigInputBuilder {
         formatter.field("rule", &self.rule);
         formatter.field("data_source_config", &self.data_source_config);
         formatter.field("evaluators", &self.evaluators);
+        formatter.field("insights", &self.insights);
+        formatter.field("clustering_config", &self.clustering_config);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("execution_status", &self.execution_status);
         formatter.finish()

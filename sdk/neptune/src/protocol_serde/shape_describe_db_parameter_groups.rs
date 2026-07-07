@@ -81,6 +81,8 @@ pub fn de_describe_db_parameter_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDBParameterGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDBParameterGroupsResponse got {start_el:?}"
@@ -111,7 +113,7 @@ pub fn de_describe_db_parameter_groups(
             s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.neptune.synthetic#DescribeDBParameterGroupsOutput$DBParameterGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_db_parameter_group_list::de_db_parameter_group_list(&mut tag)
+                        crate::protocol_serde::shape_db_parameter_group_list::de_db_parameter_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

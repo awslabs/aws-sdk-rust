@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_metadata_configuration_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MetadataConfigurationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MetadataConfigurationResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_metadata_configuration_result(
             s if s.matches("DestinationResult") /* DestinationResult com.amazonaws.s3#MetadataConfigurationResult$DestinationResult */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_destination_result::de_destination_result(&mut tag)
+                        crate::protocol_serde::shape_destination_result::de_destination_result(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_metadata_configuration_result(
             s if s.matches("JournalTableConfigurationResult") /* JournalTableConfigurationResult com.amazonaws.s3#MetadataConfigurationResult$JournalTableConfigurationResult */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_journal_table_configuration_result::de_journal_table_configuration_result(&mut tag)
+                        crate::protocol_serde::shape_journal_table_configuration_result::de_journal_table_configuration_result(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -30,11 +34,21 @@ pub fn de_metadata_configuration_result(
             s if s.matches("InventoryTableConfigurationResult") /* InventoryTableConfigurationResult com.amazonaws.s3#MetadataConfigurationResult$InventoryTableConfigurationResult */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_inventory_table_configuration_result::de_inventory_table_configuration_result(&mut tag)
+                        crate::protocol_serde::shape_inventory_table_configuration_result::de_inventory_table_configuration_result(&mut tag, depth + 1)
                         ?
                     )
                 ;
                 builder = builder.set_inventory_table_configuration_result(var_3);
+            }
+            ,
+            s if s.matches("AnnotationTableConfigurationResult") /* AnnotationTableConfigurationResult com.amazonaws.s3#MetadataConfigurationResult$AnnotationTableConfigurationResult */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_annotation_table_configuration_result::de_annotation_table_configuration_result(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_annotation_table_configuration_result(var_4);
             }
             ,
             _ => {}

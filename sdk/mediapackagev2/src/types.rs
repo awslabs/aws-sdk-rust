@@ -25,6 +25,8 @@ pub use crate::types::_segment::Segment;
 
 pub use crate::types::_force_endpoint_error_configuration::ForceEndpointErrorConfiguration;
 
+pub use crate::types::_uri_separator::UriSeparator;
+
 pub use crate::types::_channel_group_list_configuration::ChannelGroupListConfiguration;
 
 pub use crate::types::_cdn_auth_configuration::CdnAuthConfiguration;
@@ -77,6 +79,8 @@ pub use crate::types::_start_tag::StartTag;
 
 pub use crate::types::_filter_configuration::FilterConfiguration;
 
+pub use crate::types::_uri_path_type::UriPathType;
+
 pub use crate::types::_dash_segment_template_format::DashSegmentTemplateFormat;
 
 pub use crate::types::_scte_dash::ScteDash;
@@ -91,7 +95,11 @@ pub use crate::types::_dash_dvb_settings::DashDvbSettings;
 
 pub use crate::types::_dash_compactness::DashCompactness;
 
+pub use crate::types::_dash_audio_timeline_pattern::DashAudioTimelinePattern;
+
 pub use crate::types::_dash_subtitle_configuration::DashSubtitleConfiguration;
+
+pub use crate::types::_dash_availability_start_time_configuration::DashAvailabilityStartTimeConfiguration;
 
 pub use crate::types::_mss_manifest_layout::MssManifestLayout;
 
@@ -107,6 +115,8 @@ pub use crate::types::_list_mss_manifest_configuration::ListMssManifestConfigura
 
 pub use crate::types::_scte_filter::ScteFilter;
 
+pub use crate::types::_custom_ad_type::CustomAdType;
+
 pub use crate::types::_ts_encryption_method::TsEncryptionMethod;
 
 pub use crate::types::_cmaf_encryption_method::CmafEncryptionMethod;
@@ -116,6 +126,8 @@ pub use crate::types::_ism_encryption_method::IsmEncryptionMethod;
 pub use crate::types::_encryption_contract_configuration::EncryptionContractConfiguration;
 
 pub use crate::types::_ad_marker_hls::AdMarkerHls;
+
+pub use crate::types::_scte_in_manifests::ScteInManifests;
 
 pub use crate::types::_dash_period_trigger::DashPeriodTrigger;
 
@@ -164,6 +176,12 @@ mod _create_hls_manifest_configuration;
 mod _create_low_latency_hls_manifest_configuration;
 
 mod _create_mss_manifest_configuration;
+
+mod _custom_ad_type;
+
+mod _dash_audio_timeline_pattern;
+
+mod _dash_availability_start_time_configuration;
 
 mod _dash_base_url;
 
@@ -271,6 +289,8 @@ mod _scte_filter;
 
 mod _scte_hls;
 
+mod _scte_in_manifests;
+
 mod _scte_in_segments;
 
 mod _segment;
@@ -280,6 +300,10 @@ mod _speke_key_provider;
 mod _start_tag;
 
 mod _ts_encryption_method;
+
+mod _uri_path_type;
+
+mod _uri_separator;
 
 mod _validation_exception_type;
 

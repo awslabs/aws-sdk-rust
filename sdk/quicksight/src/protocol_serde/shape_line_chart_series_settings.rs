@@ -27,10 +27,16 @@ pub fn ser_line_chart_series_settings(
 pub(crate) fn de_line_chart_series_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LineChartSeriesSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,16 +48,28 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LineStyleSettings" => {
                             builder = builder.set_line_style_settings(
-                                crate::protocol_serde::shape_line_chart_line_style_settings::de_line_chart_line_style_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_line_chart_line_style_settings::de_line_chart_line_style_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MarkerStyleSettings" => {
                             builder = builder.set_marker_style_settings(
-                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DecalSettings" => {
-                            builder = builder.set_decal_settings(crate::protocol_serde::shape_decal_settings::de_decal_settings(tokens, _value)?);
+                            builder = builder.set_decal_settings(crate::protocol_serde::shape_decal_settings::de_decal_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

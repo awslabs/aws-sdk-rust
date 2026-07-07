@@ -2,10 +2,16 @@
 pub(crate) fn de_branch<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Branch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "stage" => {
                             builder = builder.set_stage(
@@ -70,7 +76,7 @@ where
                         }
                         "environmentVariables" => {
                             builder = builder.set_environment_variables(
-                                crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens, _value)?,
+                                crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens, _value, depth + 1)?,
                             );
                         }
                         "enableAutoBuild" => {
@@ -80,7 +86,11 @@ where
                             builder = builder.set_enable_skew_protection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "customDomains" => {
-                            builder = builder.set_custom_domains(crate::protocol_serde::shape_custom_domains::de_custom_domains(tokens, _value)?);
+                            builder = builder.set_custom_domains(crate::protocol_serde::shape_custom_domains::de_custom_domains(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "framework" => {
                             builder = builder.set_framework(
@@ -139,7 +149,9 @@ where
                         }
                         "associatedResources" => {
                             builder = builder.set_associated_resources(crate::protocol_serde::shape_associated_resources::de_associated_resources(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "enablePullRequestPreview" => {
@@ -175,7 +187,7 @@ where
                             );
                         }
                         "backend" => {
-                            builder = builder.set_backend(crate::protocol_serde::shape_backend::de_backend(tokens, _value)?);
+                            builder = builder.set_backend(crate::protocol_serde::shape_backend::de_backend(tokens, _value, depth + 1)?);
                         }
                         "computeRoleArn" => {
                             builder = builder.set_compute_role_arn(

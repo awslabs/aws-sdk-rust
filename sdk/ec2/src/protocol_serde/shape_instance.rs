@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Instance, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Instance::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_instance(
             s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2#Instance$BlockDeviceMappings */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_instance_block_device_mapping_list::de_instance_block_device_mapping_list(&mut tag)
+                        crate::protocol_serde::shape_instance_block_device_mapping_list::de_instance_block_device_mapping_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -91,7 +95,7 @@ pub fn de_instance(
             s if s.matches("iamInstanceProfile") /* IamInstanceProfile com.amazonaws.ec2#Instance$IamInstanceProfile */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_iam_instance_profile::de_iam_instance_profile(&mut tag)
+                        crate::protocol_serde::shape_iam_instance_profile::de_iam_instance_profile(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -115,7 +119,7 @@ pub fn de_instance(
             s if s.matches("elasticGpuAssociationSet") /* ElasticGpuAssociations com.amazonaws.ec2#Instance$ElasticGpuAssociations */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_elastic_gpu_association_list::de_elastic_gpu_association_list(&mut tag)
+                        crate::protocol_serde::shape_elastic_gpu_association_list::de_elastic_gpu_association_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -125,7 +129,7 @@ pub fn de_instance(
             s if s.matches("elasticInferenceAcceleratorAssociationSet") /* ElasticInferenceAcceleratorAssociations com.amazonaws.ec2#Instance$ElasticInferenceAcceleratorAssociations */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_elastic_inference_accelerator_association_list::de_elastic_inference_accelerator_association_list(&mut tag)
+                        crate::protocol_serde::shape_elastic_inference_accelerator_association_list::de_elastic_inference_accelerator_association_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -135,7 +139,7 @@ pub fn de_instance(
             s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#Instance$NetworkInterfaces */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_instance_network_interface_list::de_instance_network_interface_list(&mut tag)
+                        crate::protocol_serde::shape_instance_network_interface_list::de_instance_network_interface_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -185,7 +189,7 @@ pub fn de_instance(
             s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#Instance$SecurityGroups */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -236,7 +240,7 @@ pub fn de_instance(
             s if s.matches("stateReason") /* StateReason com.amazonaws.ec2#Instance$StateReason */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_state_reason::de_state_reason(&mut tag)
+                        crate::protocol_serde::shape_state_reason::de_state_reason(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -246,7 +250,7 @@ pub fn de_instance(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Instance$Tags */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -270,7 +274,7 @@ pub fn de_instance(
             s if s.matches("cpuOptions") /* CpuOptions com.amazonaws.ec2#Instance$CpuOptions */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_cpu_options::de_cpu_options(&mut tag)
+                        crate::protocol_serde::shape_cpu_options::de_cpu_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -306,7 +310,7 @@ pub fn de_instance(
             s if s.matches("capacityReservationSpecification") /* CapacityReservationSpecification com.amazonaws.ec2#Instance$CapacityReservationSpecification */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_specification_response::de_capacity_reservation_specification_response(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_specification_response::de_capacity_reservation_specification_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -316,7 +320,7 @@ pub fn de_instance(
             s if s.matches("hibernationOptions") /* HibernationOptions com.amazonaws.ec2#Instance$HibernationOptions */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_hibernation_options::de_hibernation_options(&mut tag)
+                        crate::protocol_serde::shape_hibernation_options::de_hibernation_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -326,7 +330,7 @@ pub fn de_instance(
             s if s.matches("licenseSet") /* Licenses com.amazonaws.ec2#Instance$Licenses */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_license_list::de_license_list(&mut tag)
+                        crate::protocol_serde::shape_license_list::de_license_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -336,7 +340,7 @@ pub fn de_instance(
             s if s.matches("metadataOptions") /* MetadataOptions com.amazonaws.ec2#Instance$MetadataOptions */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_instance_metadata_options_response::de_instance_metadata_options_response(&mut tag)
+                        crate::protocol_serde::shape_instance_metadata_options_response::de_instance_metadata_options_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -346,7 +350,7 @@ pub fn de_instance(
             s if s.matches("enclaveOptions") /* EnclaveOptions com.amazonaws.ec2#Instance$EnclaveOptions */ =>  {
                 let var_29 =
                     Some(
-                        crate::protocol_serde::shape_enclave_options::de_enclave_options(&mut tag)
+                        crate::protocol_serde::shape_enclave_options::de_enclave_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -410,7 +414,7 @@ pub fn de_instance(
             s if s.matches("privateDnsNameOptions") /* PrivateDnsNameOptions com.amazonaws.ec2#Instance$PrivateDnsNameOptions */ =>  {
                 let var_34 =
                     Some(
-                        crate::protocol_serde::shape_private_dns_name_options_response::de_private_dns_name_options_response(&mut tag)
+                        crate::protocol_serde::shape_private_dns_name_options_response::de_private_dns_name_options_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -446,7 +450,7 @@ pub fn de_instance(
             s if s.matches("maintenanceOptions") /* MaintenanceOptions com.amazonaws.ec2#Instance$MaintenanceOptions */ =>  {
                 let var_37 =
                     Some(
-                        crate::protocol_serde::shape_instance_maintenance_options::de_instance_maintenance_options(&mut tag)
+                        crate::protocol_serde::shape_instance_maintenance_options::de_instance_maintenance_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -470,7 +474,7 @@ pub fn de_instance(
             s if s.matches("networkPerformanceOptions") /* NetworkPerformanceOptions com.amazonaws.ec2#Instance$NetworkPerformanceOptions */ =>  {
                 let var_39 =
                     Some(
-                        crate::protocol_serde::shape_instance_network_performance_options::de_instance_network_performance_options(&mut tag)
+                        crate::protocol_serde::shape_instance_network_performance_options::de_instance_network_performance_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -480,7 +484,7 @@ pub fn de_instance(
             s if s.matches("operator") /* Operator com.amazonaws.ec2#Instance$Operator */ =>  {
                 let var_40 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -490,7 +494,7 @@ pub fn de_instance(
             s if s.matches("secondaryInterfaceSet") /* SecondaryInterfaces com.amazonaws.ec2#Instance$SecondaryInterfaces */ =>  {
                 let var_41 =
                     Some(
-                        crate::protocol_serde::shape_instance_secondary_interface_list::de_instance_secondary_interface_list(&mut tag)
+                        crate::protocol_serde::shape_instance_secondary_interface_list::de_instance_secondary_interface_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -526,7 +530,7 @@ pub fn de_instance(
             s if s.matches("instanceState") /* State com.amazonaws.ec2#Instance$State */ =>  {
                 let var_44 =
                     Some(
-                        crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag)
+                        crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -603,7 +607,7 @@ pub fn de_instance(
             s if s.matches("productCodes") /* ProductCodes com.amazonaws.ec2#Instance$ProductCodes */ =>  {
                 let var_50 =
                     Some(
-                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag)
+                        crate::protocol_serde::shape_product_code_list::de_product_code_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -641,7 +645,7 @@ pub fn de_instance(
             s if s.matches("placement") /* Placement com.amazonaws.ec2#Instance$Placement */ =>  {
                 let var_53 =
                     Some(
-                        crate::protocol_serde::shape_placement::de_placement(&mut tag)
+                        crate::protocol_serde::shape_placement::de_placement(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -691,7 +695,7 @@ pub fn de_instance(
             s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#Instance$Monitoring */ =>  {
                 let var_57 =
                     Some(
-                        crate::protocol_serde::shape_monitoring::de_monitoring(&mut tag)
+                        crate::protocol_serde::shape_monitoring::de_monitoring(&mut tag, depth + 1)
                         ?
                     )
                 ;

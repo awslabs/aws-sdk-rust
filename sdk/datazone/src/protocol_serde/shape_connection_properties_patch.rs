@@ -40,23 +40,35 @@ pub fn ser_connection_properties_patch(
             crate::protocol_serde::shape_s3_properties_patch::ser_s3_properties_patch(&mut object_6, inner)?;
             object_6.finish();
         }
+        crate::types::ConnectionPropertiesPatch::SnowflakeProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_9.key("snowflakeProperties").start_object();
+            crate::protocol_serde::shape_snowflake_properties_patch::ser_snowflake_properties_patch(&mut object_7, inner)?;
+            object_7.finish();
+        }
         crate::types::ConnectionPropertiesPatch::AmazonQProperties(inner) => {
             #[allow(unused_mut)]
-            let mut object_7 = object_9.key("amazonQProperties").start_object();
-            crate::protocol_serde::shape_amazon_q_properties_patch::ser_amazon_q_properties_patch(&mut object_7, inner)?;
-            object_7.finish();
+            let mut object_8 = object_9.key("amazonQProperties").start_object();
+            crate::protocol_serde::shape_amazon_q_properties_patch::ser_amazon_q_properties_patch(&mut object_8, inner)?;
+            object_8.finish();
         }
         crate::types::ConnectionPropertiesPatch::MlflowProperties(inner) => {
             #[allow(unused_mut)]
-            let mut object_8 = object_9.key("mlflowProperties").start_object();
-            crate::protocol_serde::shape_mlflow_properties_patch::ser_mlflow_properties_patch(&mut object_8, inner)?;
-            object_8.finish();
+            let mut object_9 = object_9.key("mlflowProperties").start_object();
+            crate::protocol_serde::shape_mlflow_properties_patch::ser_mlflow_properties_patch(&mut object_9, inner)?;
+            object_9.finish();
         }
         crate::types::ConnectionPropertiesPatch::LakehouseProperties(inner) => {
             #[allow(unused_mut)]
-            let mut object_9 = object_9.key("lakehouseProperties").start_object();
-            crate::protocol_serde::shape_lakehouse_properties_patch::ser_lakehouse_properties_patch(&mut object_9, inner)?;
-            object_9.finish();
+            let mut object_10 = object_9.key("lakehouseProperties").start_object();
+            crate::protocol_serde::shape_lakehouse_properties_patch::ser_lakehouse_properties_patch(&mut object_10, inner)?;
+            object_10.finish();
+        }
+        crate::types::ConnectionPropertiesPatch::VpcProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_11 = object_9.key("vpcProperties").start_object();
+            crate::protocol_serde::shape_vpc_properties_patch::ser_vpc_properties_patch(&mut object_11, inner)?;
+            object_11.finish();
         }
         crate::types::ConnectionPropertiesPatch::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

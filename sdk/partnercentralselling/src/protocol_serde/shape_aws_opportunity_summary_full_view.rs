@@ -2,10 +2,16 @@
 pub(crate) fn de_aws_opportunity_summary_full_view<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsOpportunitySummaryFullView>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,17 +51,25 @@ where
                         }
                         "LifeCycle" => {
                             builder = builder.set_life_cycle(crate::protocol_serde::shape_aws_opportunity_life_cycle::de_aws_opportunity_life_cycle(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "OpportunityTeam" => {
                             builder = builder.set_opportunity_team(
-                                crate::protocol_serde::shape_aws_opportunity_team_members_list::de_aws_opportunity_team_members_list(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_opportunity_team_members_list::de_aws_opportunity_team_members_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Insights" => {
                             builder = builder.set_insights(crate::protocol_serde::shape_aws_opportunity_insights::de_aws_opportunity_insights(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InvolvementTypeChangeReason" => {
@@ -67,18 +81,33 @@ where
                         }
                         "RelatedEntityIds" => {
                             builder = builder.set_related_entity_ids(
-                                crate::protocol_serde::shape_aws_opportunity_related_entities::de_aws_opportunity_related_entities(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_opportunity_related_entities::de_aws_opportunity_related_entities(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Customer" => {
                             builder = builder.set_customer(crate::protocol_serde::shape_aws_opportunity_customer::de_aws_opportunity_customer(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Project" => {
                             builder = builder.set_project(crate::protocol_serde::shape_aws_opportunity_project::de_aws_opportunity_project(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
+                        }
+                        "CosellMotion" => {
+                            builder = builder.set_cosell_motion(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

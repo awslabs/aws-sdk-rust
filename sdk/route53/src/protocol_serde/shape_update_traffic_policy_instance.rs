@@ -152,6 +152,8 @@ pub fn de_update_traffic_policy_instance(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("UpdateTrafficPolicyInstanceResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected UpdateTrafficPolicyInstanceResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -162,7 +164,7 @@ pub fn de_update_traffic_policy_instance(
             s if s.matches("TrafficPolicyInstance") /* TrafficPolicyInstance com.amazonaws.route53.synthetic#UpdateTrafficPolicyInstanceOutput$TrafficPolicyInstance */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_traffic_policy_instance::de_traffic_policy_instance(&mut tag)
+                        crate::protocol_serde::shape_traffic_policy_instance::de_traffic_policy_instance(&mut tag, depth + 1)
                         ?
                     )
                 ;

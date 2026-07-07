@@ -278,6 +278,20 @@ impl CreateFunctionFluentBuilder {
     pub fn get_publish(&self) -> &::std::option::Option<bool> {
         self.inner.get_publish()
     }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
+        self.inner = self.inner.publish_to(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
+        self.inner = self.inner.set_publish_to(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
+        self.inner.get_publish_to()
+    }
     /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.inner = self.inner.vpc_config(input);
@@ -452,20 +466,6 @@ impl CreateFunctionFluentBuilder {
     pub fn get_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
         self.inner.get_file_system_configs()
     }
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
-    pub fn image_config(mut self, input: crate::types::ImageConfig) -> Self {
-        self.inner = self.inner.image_config(input);
-        self
-    }
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
-    pub fn set_image_config(mut self, input: ::std::option::Option<crate::types::ImageConfig>) -> Self {
-        self.inner = self.inner.set_image_config(input);
-        self
-    }
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
-    pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
-        self.inner.get_image_config()
-    }
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
     pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_signing_config_arn(input.into());
@@ -479,6 +479,20 @@ impl CreateFunctionFluentBuilder {
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code_signing_config_arn()
+    }
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
+    pub fn image_config(mut self, input: crate::types::ImageConfig) -> Self {
+        self.inner = self.inner.image_config(input);
+        self
+    }
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
+    pub fn set_image_config(mut self, input: ::std::option::Option<crate::types::ImageConfig>) -> Self {
+        self.inner = self.inner.set_image_config(input);
+        self
+    }
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
+    pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
+        self.inner.get_image_config()
     }
     ///
     /// Appends an item to `Architectures`.
@@ -541,6 +555,20 @@ impl CreateFunctionFluentBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         self.inner.get_logging_config()
     }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
+        self.inner = self.inner.tenancy_config(input);
+        self
+    }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn set_tenancy_config(mut self, input: ::std::option::Option<crate::types::TenancyConfig>) -> Self {
+        self.inner = self.inner.set_tenancy_config(input);
+        self
+    }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn get_tenancy_config(&self) -> &::std::option::Option<crate::types::TenancyConfig> {
+        self.inner.get_tenancy_config()
+    }
     /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
     pub fn capacity_provider_config(mut self, input: crate::types::CapacityProviderConfig) -> Self {
         self.inner = self.inner.capacity_provider_config(input);
@@ -555,20 +583,6 @@ impl CreateFunctionFluentBuilder {
     pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
         self.inner.get_capacity_provider_config()
     }
-    /// <p>Specifies where to publish the function version or configuration.</p>
-    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
-        self.inner = self.inner.publish_to(input);
-        self
-    }
-    /// <p>Specifies where to publish the function version or configuration.</p>
-    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
-        self.inner = self.inner.set_publish_to(input);
-        self
-    }
-    /// <p>Specifies where to publish the function version or configuration.</p>
-    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
-        self.inner.get_publish_to()
-    }
     /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
     pub fn durable_config(mut self, input: crate::types::DurableConfig) -> Self {
         self.inner = self.inner.durable_config(input);
@@ -582,19 +596,5 @@ impl CreateFunctionFluentBuilder {
     /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
     pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
         self.inner.get_durable_config()
-    }
-    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
-    pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
-        self.inner = self.inner.tenancy_config(input);
-        self
-    }
-    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
-    pub fn set_tenancy_config(mut self, input: ::std::option::Option<crate::types::TenancyConfig>) -> Self {
-        self.inner = self.inner.set_tenancy_config(input);
-        self
-    }
-    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
-    pub fn get_tenancy_config(&self) -> &::std::option::Option<crate::types::TenancyConfig> {
-        self.inner.get_tenancy_config()
     }
 }

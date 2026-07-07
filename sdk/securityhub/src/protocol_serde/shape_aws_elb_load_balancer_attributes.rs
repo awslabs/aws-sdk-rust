@@ -51,10 +51,16 @@ pub fn ser_aws_elb_load_balancer_attributes(
 pub(crate) fn de_aws_elb_load_balancer_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsElbLoadBalancerAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,28 +74,30 @@ where
                             "AccessLog" => {
                                 builder = builder.set_access_log(
                                     crate::protocol_serde::shape_aws_elb_load_balancer_access_log::de_aws_elb_load_balancer_access_log(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "ConnectionDraining" => {
                                 builder = builder.set_connection_draining(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_connection_draining::de_aws_elb_load_balancer_connection_draining(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_connection_draining::de_aws_elb_load_balancer_connection_draining(tokens, _value, depth + 1)?
                                 );
                             }
                             "ConnectionSettings" => {
                                 builder = builder.set_connection_settings(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_connection_settings::de_aws_elb_load_balancer_connection_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_connection_settings::de_aws_elb_load_balancer_connection_settings(tokens, _value, depth + 1)?
                                 );
                             }
                             "CrossZoneLoadBalancing" => {
                                 builder = builder.set_cross_zone_load_balancing(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_cross_zone_load_balancing::de_aws_elb_load_balancer_cross_zone_load_balancing(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_cross_zone_load_balancing::de_aws_elb_load_balancer_cross_zone_load_balancing(tokens, _value, depth + 1)?
                                 );
                             }
                             "AdditionalAttributes" => {
                                 builder = builder.set_additional_attributes(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_additional_attribute_list::de_aws_elb_load_balancer_additional_attribute_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_additional_attribute_list::de_aws_elb_load_balancer_additional_attribute_list(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

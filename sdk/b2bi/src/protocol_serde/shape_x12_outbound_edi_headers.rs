@@ -2,10 +2,16 @@
 pub(crate) fn de_x12_outbound_edi_headers<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::X12OutboundEdiHeaders>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,23 +23,35 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "interchangeControlHeaders" => {
                             builder = builder.set_interchange_control_headers(
-                                crate::protocol_serde::shape_x12_interchange_control_headers::de_x12_interchange_control_headers(tokens, _value)?,
+                                crate::protocol_serde::shape_x12_interchange_control_headers::de_x12_interchange_control_headers(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "functionalGroupHeaders" => {
                             builder = builder.set_functional_group_headers(
-                                crate::protocol_serde::shape_x12_functional_group_headers::de_x12_functional_group_headers(tokens, _value)?,
+                                crate::protocol_serde::shape_x12_functional_group_headers::de_x12_functional_group_headers(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "delimiters" => {
-                            builder = builder.set_delimiters(crate::protocol_serde::shape_x12_delimiters::de_x12_delimiters(tokens, _value)?);
+                            builder =
+                                builder.set_delimiters(crate::protocol_serde::shape_x12_delimiters::de_x12_delimiters(tokens, _value, depth + 1)?);
                         }
                         "validateEdi" => {
                             builder = builder.set_validate_edi(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "controlNumbers" => {
-                            builder = builder
-                                .set_control_numbers(crate::protocol_serde::shape_x12_control_numbers::de_x12_control_numbers(tokens, _value)?);
+                            builder = builder.set_control_numbers(crate::protocol_serde::shape_x12_control_numbers::de_x12_control_numbers(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "gs05TimeFormat" => {
                             builder = builder.set_gs05_time_format(

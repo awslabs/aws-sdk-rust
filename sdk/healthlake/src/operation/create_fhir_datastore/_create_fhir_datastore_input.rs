@@ -17,6 +17,12 @@ pub struct CreateFhirDatastoreInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The identity provider configuration to use for the data store.</p>
     pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    /// <p>The analytics configuration for the data store.</p>
+    pub analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub nlp_configuration: ::std::option::Option<crate::types::NlpConfiguration>,
+    /// <p>The profile configuration for the data store.</p>
+    pub profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
 }
 impl CreateFhirDatastoreInput {
     /// <p>The data store name (user-generated).</p>
@@ -49,6 +55,18 @@ impl CreateFhirDatastoreInput {
     pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
         self.identity_provider_configuration.as_ref()
     }
+    /// <p>The analytics configuration for the data store.</p>
+    pub fn analytics_configuration(&self) -> ::std::option::Option<&crate::types::AnalyticsConfiguration> {
+        self.analytics_configuration.as_ref()
+    }
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub fn nlp_configuration(&self) -> ::std::option::Option<&crate::types::NlpConfiguration> {
+        self.nlp_configuration.as_ref()
+    }
+    /// <p>The profile configuration for the data store.</p>
+    pub fn profile_configuration(&self) -> ::std::option::Option<&crate::types::ProfileConfiguration> {
+        self.profile_configuration.as_ref()
+    }
 }
 impl CreateFhirDatastoreInput {
     /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreInput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreInput).
@@ -68,6 +86,9 @@ pub struct CreateFhirDatastoreInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    pub(crate) analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
+    pub(crate) nlp_configuration: ::std::option::Option<crate::types::NlpConfiguration>,
+    pub(crate) profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
 }
 impl CreateFhirDatastoreInputBuilder {
     /// <p>The data store name (user-generated).</p>
@@ -175,6 +196,48 @@ impl CreateFhirDatastoreInputBuilder {
     pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         &self.identity_provider_configuration
     }
+    /// <p>The analytics configuration for the data store.</p>
+    pub fn analytics_configuration(mut self, input: crate::types::AnalyticsConfiguration) -> Self {
+        self.analytics_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The analytics configuration for the data store.</p>
+    pub fn set_analytics_configuration(mut self, input: ::std::option::Option<crate::types::AnalyticsConfiguration>) -> Self {
+        self.analytics_configuration = input;
+        self
+    }
+    /// <p>The analytics configuration for the data store.</p>
+    pub fn get_analytics_configuration(&self) -> &::std::option::Option<crate::types::AnalyticsConfiguration> {
+        &self.analytics_configuration
+    }
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub fn nlp_configuration(mut self, input: crate::types::NlpConfiguration) -> Self {
+        self.nlp_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub fn set_nlp_configuration(mut self, input: ::std::option::Option<crate::types::NlpConfiguration>) -> Self {
+        self.nlp_configuration = input;
+        self
+    }
+    /// <p>The natural language processing (NLP) configuration for the data store.</p>
+    pub fn get_nlp_configuration(&self) -> &::std::option::Option<crate::types::NlpConfiguration> {
+        &self.nlp_configuration
+    }
+    /// <p>The profile configuration for the data store.</p>
+    pub fn profile_configuration(mut self, input: crate::types::ProfileConfiguration) -> Self {
+        self.profile_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The profile configuration for the data store.</p>
+    pub fn set_profile_configuration(mut self, input: ::std::option::Option<crate::types::ProfileConfiguration>) -> Self {
+        self.profile_configuration = input;
+        self
+    }
+    /// <p>The profile configuration for the data store.</p>
+    pub fn get_profile_configuration(&self) -> &::std::option::Option<crate::types::ProfileConfiguration> {
+        &self.profile_configuration
+    }
     /// Consumes the builder and constructs a [`CreateFhirDatastoreInput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreInput).
     pub fn build(
         self,
@@ -188,6 +251,9 @@ impl CreateFhirDatastoreInputBuilder {
             client_token: self.client_token,
             tags: self.tags,
             identity_provider_configuration: self.identity_provider_configuration,
+            analytics_configuration: self.analytics_configuration,
+            nlp_configuration: self.nlp_configuration,
+            profile_configuration: self.profile_configuration,
         })
     }
 }

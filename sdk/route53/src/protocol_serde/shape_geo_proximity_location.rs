@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_geo_proximity_location(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::GeoProximityLocation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::GeoProximityLocation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_geo_proximity_location(
             s if s.matches("Coordinates") /* Coordinates com.amazonaws.route53#GeoProximityLocation$Coordinates */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_coordinates::de_coordinates(&mut tag)
+                        crate::protocol_serde::shape_coordinates::de_coordinates(&mut tag, depth + 1)
                         ?
                     )
                 ;

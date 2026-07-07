@@ -2,10 +2,16 @@
 pub(crate) fn de_stage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Stage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,8 +22,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "accessLogSettings" => {
-                            builder = builder
-                                .set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(tokens, _value)?);
+                            builder = builder.set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "apiGatewayManaged" => {
                             builder = builder.set_api_gateway_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -39,8 +48,11 @@ where
                             )?);
                         }
                         "defaultRouteSettings" => {
-                            builder =
-                                builder.set_default_route_settings(crate::protocol_serde::shape_route_settings::de_route_settings(tokens, _value)?);
+                            builder = builder.set_default_route_settings(crate::protocol_serde::shape_route_settings::de_route_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "deploymentId" => {
                             builder = builder.set_deployment_id(
@@ -70,8 +82,11 @@ where
                             )?);
                         }
                         "routeSettings" => {
-                            builder =
-                                builder.set_route_settings(crate::protocol_serde::shape_route_settings_map::de_route_settings_map(tokens, _value)?);
+                            builder = builder.set_route_settings(crate::protocol_serde::shape_route_settings_map::de_route_settings_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "stageName" => {
                             builder = builder.set_stage_name(
@@ -81,11 +96,14 @@ where
                             );
                         }
                         "stageVariables" => {
-                            builder = builder
-                                .set_stage_variables(crate::protocol_serde::shape_stage_variables_map::de_stage_variables_map(tokens, _value)?);
+                            builder = builder.set_stage_variables(crate::protocol_serde::shape_stage_variables_map::de_stage_variables_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

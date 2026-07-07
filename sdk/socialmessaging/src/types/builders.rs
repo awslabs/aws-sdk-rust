@@ -11,6 +11,14 @@ pub use crate::types::_meta_library_template::MetaLibraryTemplateBuilder;
 
 pub use crate::types::_s3_file::S3FileBuilder;
 
+pub use crate::types::_meta_flow_preview_info::MetaFlowPreviewInfoBuilder;
+
+pub use crate::types::_meta_flow_whats_app_business_account_info::MetaFlowWhatsAppBusinessAccountInfoBuilder;
+
+pub use crate::types::_meta_flow_application_info::MetaFlowApplicationInfoBuilder;
+
+pub use crate::types::_meta_flow_health_status::MetaFlowHealthStatusBuilder;
+
 pub use crate::types::_whats_app_phone_number_detail::WhatsAppPhoneNumberDetailBuilder;
 
 pub use crate::types::_s3_presigned_url::S3PresignedUrlBuilder;
@@ -22,6 +30,10 @@ pub use crate::types::_linked_whats_app_business_account_summary::LinkedWhatsApp
 pub use crate::types::_waba_setup_finalization::WabaSetupFinalizationBuilder;
 
 pub use crate::types::_library_template_body_inputs::LibraryTemplateBodyInputsBuilder;
+
+pub use crate::types::_meta_flow_asset::MetaFlowAssetBuilder;
+
+pub use crate::types::_meta_flow_summary::MetaFlowSummaryBuilder;
 
 pub use crate::types::_template_summary::TemplateSummaryBuilder;
 
@@ -36,5 +48,7 @@ pub use crate::types::_linked_whats_app_business_account_id_meta_data::LinkedWha
 pub use crate::types::_whats_app_phone_number_summary::WhatsAppPhoneNumberSummaryBuilder;
 
 pub use crate::types::_library_template_button_input::LibraryTemplateButtonInputBuilder;
+
+pub use crate::types::_meta_flow_health_entity::MetaFlowHealthEntityBuilder;
 
 pub use crate::types::_library_template_button_list::LibraryTemplateButtonListBuilder;

@@ -2,10 +2,16 @@
 pub(crate) fn de_workspaces_pool<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkspacesPool>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,11 @@ where
                             );
                         }
                         "CapacityStatus" => {
-                            builder = builder.set_capacity_status(crate::protocol_serde::shape_capacity_status::de_capacity_status(tokens, _value)?);
+                            builder = builder.set_capacity_status(crate::protocol_serde::shape_capacity_status::de_capacity_status(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PoolName" => {
                             builder = builder.set_pool_name(
@@ -75,17 +85,26 @@ where
                         }
                         "Errors" => {
                             builder = builder.set_errors(crate::protocol_serde::shape_workspaces_pool_errors::de_workspaces_pool_errors(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ApplicationSettings" => {
                             builder = builder.set_application_settings(
-                                crate::protocol_serde::shape_application_settings_response::de_application_settings_response(tokens, _value)?,
+                                crate::protocol_serde::shape_application_settings_response::de_application_settings_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TimeoutSettings" => {
-                            builder =
-                                builder.set_timeout_settings(crate::protocol_serde::shape_timeout_settings::de_timeout_settings(tokens, _value)?);
+                            builder = builder.set_timeout_settings(crate::protocol_serde::shape_timeout_settings::de_timeout_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RunningMode" => {
                             builder = builder.set_running_mode(

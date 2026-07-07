@@ -81,10 +81,16 @@ pub fn ser_rule_group_source_stateless_rule_match_attributes(
 pub(crate) fn de_rule_group_source_stateless_rule_match_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -96,32 +102,32 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DestinationPorts" => {
                             builder = builder.set_destination_ports(
-                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_destination_ports_list::de_rule_group_source_stateless_rule_match_attributes_destination_ports_list(tokens, _value)?
+                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_destination_ports_list::de_rule_group_source_stateless_rule_match_attributes_destination_ports_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Destinations" => {
                             builder = builder.set_destinations(
-                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_destinations_list::de_rule_group_source_stateless_rule_match_attributes_destinations_list(tokens, _value)?
+                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_destinations_list::de_rule_group_source_stateless_rule_match_attributes_destinations_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Protocols" => {
                             builder = builder.set_protocols(
-                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_protocols_list::de_rule_group_source_stateless_rule_match_attributes_protocols_list(tokens, _value)?
+                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_protocols_list::de_rule_group_source_stateless_rule_match_attributes_protocols_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "SourcePorts" => {
                             builder = builder.set_source_ports(
-                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_source_ports_list::de_rule_group_source_stateless_rule_match_attributes_source_ports_list(tokens, _value)?
+                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_source_ports_list::de_rule_group_source_stateless_rule_match_attributes_source_ports_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Sources" => {
                             builder = builder.set_sources(
-                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_sources_list::de_rule_group_source_stateless_rule_match_attributes_sources_list(tokens, _value)?
+                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_sources_list::de_rule_group_source_stateless_rule_match_attributes_sources_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "TcpFlags" => {
                             builder = builder.set_tcp_flags(
-                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_tcp_flags_list::de_rule_group_source_stateless_rule_match_attributes_tcp_flags_list(tokens, _value)?
+                                    crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_tcp_flags_list::de_rule_group_source_stateless_rule_match_attributes_tcp_flags_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

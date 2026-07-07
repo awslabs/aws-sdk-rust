@@ -2,10 +2,16 @@
 pub(crate) fn de_treatment_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TreatmentResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CustomDeliveryConfiguration" => {
                             builder = builder.set_custom_delivery_configuration(
-                                crate::protocol_serde::shape_custom_delivery_configuration::de_custom_delivery_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_delivery_configuration::de_custom_delivery_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Id" => {
@@ -29,11 +39,11 @@ where
                         }
                         "MessageConfiguration" => {
                             builder = builder.set_message_configuration(
-                                crate::protocol_serde::shape_message_configuration::de_message_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_message_configuration::de_message_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "Schedule" => {
-                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
+                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value, depth + 1)?);
                         }
                         "SizePercent" => {
                             builder = builder.set_size_percent(
@@ -43,11 +53,11 @@ where
                             );
                         }
                         "State" => {
-                            builder = builder.set_state(crate::protocol_serde::shape_campaign_state::de_campaign_state(tokens, _value)?);
+                            builder = builder.set_state(crate::protocol_serde::shape_campaign_state::de_campaign_state(tokens, _value, depth + 1)?);
                         }
                         "TemplateConfiguration" => {
                             builder = builder.set_template_configuration(
-                                crate::protocol_serde::shape_template_configuration::de_template_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_template_configuration::de_template_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "TreatmentDescription" => {

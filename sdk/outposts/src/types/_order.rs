@@ -6,6 +6,10 @@
 pub struct Order {
     /// <p>The ID of the Outpost in the order.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the quote associated with the order.</p>
+    pub quote_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the quote option associated with the order.</p>
+    pub quote_option_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the order.</p>
     pub order_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the order.</p>
@@ -43,6 +47,14 @@ impl Order {
     /// <p>The ID of the Outpost in the order.</p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
+    }
+    /// <p>The ID of the quote associated with the order.</p>
+    pub fn quote_identifier(&self) -> ::std::option::Option<&str> {
+        self.quote_identifier.as_deref()
+    }
+    /// <p>The ID of the quote option associated with the order.</p>
+    pub fn quote_option_identifier(&self) -> ::std::option::Option<&str> {
+        self.quote_option_identifier.as_deref()
     }
     /// <p>The ID of the order.</p>
     pub fn order_id(&self) -> ::std::option::Option<&str> {
@@ -107,6 +119,8 @@ impl Order {
 #[non_exhaustive]
 pub struct OrderBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
+    pub(crate) quote_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) quote_option_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OrderStatus>,
     pub(crate) line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItem>>,
@@ -130,6 +144,34 @@ impl OrderBuilder {
     /// <p>The ID of the Outpost in the order.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
+    }
+    /// <p>The ID of the quote associated with the order.</p>
+    pub fn quote_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quote_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the quote associated with the order.</p>
+    pub fn set_quote_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quote_identifier = input;
+        self
+    }
+    /// <p>The ID of the quote associated with the order.</p>
+    pub fn get_quote_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_identifier
+    }
+    /// <p>The ID of the quote option associated with the order.</p>
+    pub fn quote_option_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quote_option_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the quote option associated with the order.</p>
+    pub fn set_quote_option_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quote_option_identifier = input;
+        self
+    }
+    /// <p>The ID of the quote option associated with the order.</p>
+    pub fn get_quote_option_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_option_identifier
     }
     /// <p>The ID of the order.</p>
     pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -301,6 +343,8 @@ impl OrderBuilder {
     pub fn build(self) -> crate::types::Order {
         crate::types::Order {
             outpost_id: self.outpost_id,
+            quote_identifier: self.quote_identifier,
+            quote_option_identifier: self.quote_option_identifier,
             order_id: self.order_id,
             status: self.status,
             line_items: self.line_items,

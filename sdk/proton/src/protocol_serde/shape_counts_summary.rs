@@ -2,10 +2,16 @@
 pub(crate) fn de_counts_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CountsSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,37 +23,45 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "components" => {
                             builder = builder.set_components(crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "environments" => {
                             builder = builder.set_environments(crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "environmentTemplates" => {
                             builder = builder.set_environment_templates(
-                                crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "serviceInstances" => {
                             builder = builder.set_service_instances(
-                                crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "services" => {
                             builder = builder.set_services(crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "serviceTemplates" => {
                             builder = builder.set_service_templates(
-                                crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "pipelines" => {
                             builder = builder.set_pipelines(crate::protocol_serde::shape_resource_counts_summary::de_resource_counts_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

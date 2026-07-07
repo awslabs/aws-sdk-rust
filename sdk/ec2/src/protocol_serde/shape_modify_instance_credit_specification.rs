@@ -49,6 +49,8 @@ pub fn de_modify_instance_credit_specification(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyInstanceCreditSpecificationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyInstanceCreditSpecificationResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_modify_instance_credit_specification(
             s if s.matches("successfulInstanceCreditSpecificationSet") /* SuccessfulInstanceCreditSpecifications com.amazonaws.ec2.synthetic#ModifyInstanceCreditSpecificationOutput$SuccessfulInstanceCreditSpecifications */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_successful_instance_credit_specification_set::de_successful_instance_credit_specification_set(&mut tag)
+                        crate::protocol_serde::shape_successful_instance_credit_specification_set::de_successful_instance_credit_specification_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_modify_instance_credit_specification(
             s if s.matches("unsuccessfulInstanceCreditSpecificationSet") /* UnsuccessfulInstanceCreditSpecifications com.amazonaws.ec2.synthetic#ModifyInstanceCreditSpecificationOutput$UnsuccessfulInstanceCreditSpecifications */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_unsuccessful_instance_credit_specification_set::de_unsuccessful_instance_credit_specification_set(&mut tag)
+                        crate::protocol_serde::shape_unsuccessful_instance_credit_specification_set::de_unsuccessful_instance_credit_specification_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

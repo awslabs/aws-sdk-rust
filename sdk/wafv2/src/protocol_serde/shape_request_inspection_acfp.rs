@@ -54,10 +54,16 @@ pub fn ser_request_inspection_acfp(
 pub(crate) fn de_request_inspection_acfp<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RequestInspectionAcfp>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -75,20 +81,35 @@ where
                             );
                         }
                         "UsernameField" => {
-                            builder = builder.set_username_field(crate::protocol_serde::shape_username_field::de_username_field(tokens, _value)?);
+                            builder = builder.set_username_field(crate::protocol_serde::shape_username_field::de_username_field(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PasswordField" => {
-                            builder = builder.set_password_field(crate::protocol_serde::shape_password_field::de_password_field(tokens, _value)?);
+                            builder = builder.set_password_field(crate::protocol_serde::shape_password_field::de_password_field(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EmailField" => {
-                            builder = builder.set_email_field(crate::protocol_serde::shape_email_field::de_email_field(tokens, _value)?);
+                            builder = builder.set_email_field(crate::protocol_serde::shape_email_field::de_email_field(tokens, _value, depth + 1)?);
                         }
                         "PhoneNumberFields" => {
-                            builder = builder
-                                .set_phone_number_fields(crate::protocol_serde::shape_phone_number_fields::de_phone_number_fields(tokens, _value)?);
+                            builder = builder.set_phone_number_fields(crate::protocol_serde::shape_phone_number_fields::de_phone_number_fields(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AddressFields" => {
-                            builder = builder.set_address_fields(crate::protocol_serde::shape_address_fields::de_address_fields(tokens, _value)?);
+                            builder = builder.set_address_fields(crate::protocol_serde::shape_address_fields::de_address_fields(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

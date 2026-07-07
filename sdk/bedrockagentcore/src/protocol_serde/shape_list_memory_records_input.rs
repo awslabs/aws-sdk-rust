@@ -12,14 +12,26 @@ pub fn ser_list_memory_records_input_input(
     if let Some(var_2) = &input.memory_strategy_id {
         object.key("memoryStrategyId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.namespace {
-        object.key("namespace").string(var_3.as_str());
+    if let Some(var_3) = &input.metadata_filters {
+        let mut array_4 = object.key("metadataFilters").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_memory_metadata_filter_expression::ser_memory_metadata_filter_expression(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
     }
-    if let Some(var_4) = &input.namespace_path {
-        object.key("namespacePath").string(var_4.as_str());
+    if let Some(var_7) = &input.namespace {
+        object.key("namespace").string(var_7.as_str());
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_8) = &input.namespace_path {
+        object.key("namespacePath").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.next_token {
+        object.key("nextToken").string(var_9.as_str());
     }
     Ok(())
 }

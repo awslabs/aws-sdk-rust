@@ -116,6 +116,8 @@ pub(crate) fn de_get_ml_transform(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,15 +164,21 @@ pub(crate) fn de_get_ml_transform(
                     )?);
                 }
                 "InputRecordTables" => {
-                    builder = builder.set_input_record_tables(crate::protocol_serde::shape_glue_tables::de_glue_tables(tokens, _value)?);
+                    builder = builder.set_input_record_tables(crate::protocol_serde::shape_glue_tables::de_glue_tables(tokens, _value, depth + 1)?);
                 }
                 "Parameters" => {
                     builder = builder.set_parameters(crate::protocol_serde::shape_transform_parameters::de_transform_parameters(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "EvaluationMetrics" => {
-                    builder = builder.set_evaluation_metrics(crate::protocol_serde::shape_evaluation_metrics::de_evaluation_metrics(tokens, _value)?);
+                    builder = builder.set_evaluation_metrics(crate::protocol_serde::shape_evaluation_metrics::de_evaluation_metrics(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "LabelCount" => {
                     builder = builder.set_label_count(
@@ -180,7 +188,11 @@ pub(crate) fn de_get_ml_transform(
                     );
                 }
                 "Schema" => {
-                    builder = builder.set_schema(crate::protocol_serde::shape_transform_schema::de_transform_schema(tokens, _value)?);
+                    builder = builder.set_schema(crate::protocol_serde::shape_transform_schema::de_transform_schema(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Role" => {
                     builder = builder.set_role(
@@ -230,7 +242,9 @@ pub(crate) fn de_get_ml_transform(
                 }
                 "TransformEncryption" => {
                     builder = builder.set_transform_encryption(crate::protocol_serde::shape_transform_encryption::de_transform_encryption(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

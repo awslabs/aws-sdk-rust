@@ -12,6 +12,7 @@
 /// ```text
 /// # let authorizertype = unimplemented!();
 /// match authorizertype {
+///     AuthorizerType::AuthenticateOnly => { /* ... */ },
 ///     AuthorizerType::AwsIam => { /* ... */ },
 ///     AuthorizerType::CustomJwt => { /* ... */ },
 ///     AuthorizerType::None => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum AuthorizerType {
     #[allow(missing_docs)] // documentation missing in model
+    AuthenticateOnly,
+    #[allow(missing_docs)] // documentation missing in model
     AwsIam,
     #[allow(missing_docs)] // documentation missing in model
     CustomJwt,
@@ -56,6 +59,7 @@ pub enum AuthorizerType {
 impl ::std::convert::From<&str> for AuthorizerType {
     fn from(s: &str) -> Self {
         match s {
+            "AUTHENTICATE_ONLY" => AuthorizerType::AuthenticateOnly,
             "AWS_IAM" => AuthorizerType::AwsIam,
             "CUSTOM_JWT" => AuthorizerType::CustomJwt,
             "NONE" => AuthorizerType::None,
@@ -74,6 +78,7 @@ impl AuthorizerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AuthorizerType::AuthenticateOnly => "AUTHENTICATE_ONLY",
             AuthorizerType::AwsIam => "AWS_IAM",
             AuthorizerType::CustomJwt => "CUSTOM_JWT",
             AuthorizerType::None => "NONE",
@@ -82,7 +87,7 @@ impl AuthorizerType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_IAM", "CUSTOM_JWT", "NONE"]
+        &["AUTHENTICATE_ONLY", "AWS_IAM", "CUSTOM_JWT", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthorizerType {
@@ -105,6 +110,7 @@ impl AuthorizerType {
 impl ::std::fmt::Display for AuthorizerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AuthorizerType::AuthenticateOnly => write!(f, "AUTHENTICATE_ONLY"),
             AuthorizerType::AwsIam => write!(f, "AWS_IAM"),
             AuthorizerType::CustomJwt => write!(f, "CUSTOM_JWT"),
             AuthorizerType::None => write!(f, "NONE"),

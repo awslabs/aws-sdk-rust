@@ -25,6 +25,8 @@ pub struct CreateRouterInputInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique identifier for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub content_quality_analysis_configuration: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
 }
 impl CreateRouterInputInput {
     /// <p>The name of the router input.</p>
@@ -71,6 +73,10 @@ impl CreateRouterInputInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn content_quality_analysis_configuration(&self) -> ::std::option::Option<&crate::types::RouterContentQualityAnalysisConfiguration> {
+        self.content_quality_analysis_configuration.as_ref()
+    }
 }
 impl CreateRouterInputInput {
     /// Creates a new builder-style object to manufacture [`CreateRouterInputInput`](crate::operation::create_router_input::CreateRouterInputInput).
@@ -94,6 +100,7 @@ pub struct CreateRouterInputInputBuilder {
     pub(crate) maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) content_quality_analysis_configuration: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
 }
 impl CreateRouterInputInputBuilder {
     /// <p>The name of the router input.</p>
@@ -261,6 +268,23 @@ impl CreateRouterInputInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn content_quality_analysis_configuration(mut self, input: crate::types::RouterContentQualityAnalysisConfiguration) -> Self {
+        self.content_quality_analysis_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn set_content_quality_analysis_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
+    ) -> Self {
+        self.content_quality_analysis_configuration = input;
+        self
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn get_content_quality_analysis_configuration(&self) -> &::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration> {
+        &self.content_quality_analysis_configuration
+    }
     /// Consumes the builder and constructs a [`CreateRouterInputInput`](crate::operation::create_router_input::CreateRouterInputInput).
     pub fn build(
         self,
@@ -277,6 +301,7 @@ impl CreateRouterInputInputBuilder {
             maintenance_configuration: self.maintenance_configuration,
             tags: self.tags,
             client_token: self.client_token,
+            content_quality_analysis_configuration: self.content_quality_analysis_configuration,
         })
     }
 }

@@ -26,7 +26,7 @@ impl crate::operation::remove_key_replication_regions::builders::RemoveKeyReplic
 /// <p>When you remove Replication Regions, the key material is securely deleted from those regions and can no longer be used for cryptographic operations there. This operation is irreversible for the specified Amazon Web Services Regions. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p><important>
 /// <p>Ensure that no active cryptographic operations or applications depend on the key in the regions you're removing before performing this operation.</p>
 /// </important>
-/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Cross-account use:</b> This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based policies</a>.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>

@@ -147,6 +147,8 @@ pub(crate) fn de_put_sol_function_package_content(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,7 +164,9 @@ pub(crate) fn de_put_sol_function_package_content(
                 "metadata" => {
                     builder = builder.set_metadata(
                         crate::protocol_serde::shape_put_sol_function_package_content_metadata::de_put_sol_function_package_content_metadata(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

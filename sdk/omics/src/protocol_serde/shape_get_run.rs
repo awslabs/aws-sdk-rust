@@ -158,6 +158,8 @@ pub(crate) fn de_get_run(
 ) -> ::std::result::Result<crate::operation::get_run::builders::GetRunOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -200,7 +202,9 @@ pub(crate) fn de_get_run(
                 }
                 "configuration" => {
                     builder = builder.set_configuration(crate::protocol_serde::shape_configuration_details::de_configuration_details(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "creationTime" => {
@@ -222,6 +226,9 @@ pub(crate) fn de_get_run(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "engineSettings" => {
+                    builder = builder.set_engine_settings(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                 }
                 "engineVersion" => {
                     builder = builder.set_engine_version(
@@ -252,7 +259,11 @@ pub(crate) fn de_get_run(
                     );
                 }
                 "logLocation" => {
-                    builder = builder.set_log_location(crate::protocol_serde::shape_run_log_location::de_run_log_location(tokens, _value)?);
+                    builder = builder.set_log_location(crate::protocol_serde::shape_run_log_location::de_run_log_location(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -287,7 +298,9 @@ pub(crate) fn de_get_run(
                 }
                 "resourceDigests" => {
                     builder = builder.set_resource_digests(crate::protocol_serde::shape_run_resource_digests::de_run_resource_digests(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "retentionMode" => {
@@ -322,6 +335,13 @@ pub(crate) fn de_get_run(
                     builder = builder.set_run_output_uri(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "scratchStorageMode" => {
+                    builder = builder.set_scratch_storage_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ScratchStorageMode::from(u.as_ref())))
                             .transpose()?,
                     );
                 }
@@ -373,7 +393,7 @@ pub(crate) fn de_get_run(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "uuid" => {
                     builder = builder.set_uuid(
@@ -383,7 +403,11 @@ pub(crate) fn de_get_run(
                     );
                 }
                 "vpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(tokens, _value)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "workflowId" => {
                     builder = builder.set_workflow_id(

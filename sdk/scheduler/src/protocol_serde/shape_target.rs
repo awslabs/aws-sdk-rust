@@ -60,10 +60,16 @@ pub fn ser_target(
 pub(crate) fn de_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Target>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -88,11 +94,15 @@ where
                             );
                         }
                         "DeadLetterConfig" => {
-                            builder = builder
-                                .set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(tokens, _value)?);
+                            builder = builder.set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RetryPolicy" => {
-                            builder = builder.set_retry_policy(crate::protocol_serde::shape_retry_policy::de_retry_policy(tokens, _value)?);
+                            builder =
+                                builder.set_retry_policy(crate::protocol_serde::shape_retry_policy::de_retry_policy(tokens, _value, depth + 1)?);
                         }
                         "Input" => {
                             builder = builder.set_input(
@@ -102,24 +112,39 @@ where
                             );
                         }
                         "EcsParameters" => {
-                            builder = builder.set_ecs_parameters(crate::protocol_serde::shape_ecs_parameters::de_ecs_parameters(tokens, _value)?);
+                            builder = builder.set_ecs_parameters(crate::protocol_serde::shape_ecs_parameters::de_ecs_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EventBridgeParameters" => {
                             builder = builder.set_event_bridge_parameters(
-                                crate::protocol_serde::shape_event_bridge_parameters::de_event_bridge_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_event_bridge_parameters::de_event_bridge_parameters(tokens, _value, depth + 1)?,
                             );
                         }
                         "KinesisParameters" => {
-                            builder = builder
-                                .set_kinesis_parameters(crate::protocol_serde::shape_kinesis_parameters::de_kinesis_parameters(tokens, _value)?);
+                            builder = builder.set_kinesis_parameters(crate::protocol_serde::shape_kinesis_parameters::de_kinesis_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SageMakerPipelineParameters" => {
                             builder = builder.set_sage_maker_pipeline_parameters(
-                                crate::protocol_serde::shape_sage_maker_pipeline_parameters::de_sage_maker_pipeline_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_sage_maker_pipeline_parameters::de_sage_maker_pipeline_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SqsParameters" => {
-                            builder = builder.set_sqs_parameters(crate::protocol_serde::shape_sqs_parameters::de_sqs_parameters(tokens, _value)?);
+                            builder = builder.set_sqs_parameters(crate::protocol_serde::shape_sqs_parameters::de_sqs_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

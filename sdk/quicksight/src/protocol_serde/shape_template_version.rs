@@ -2,10 +2,16 @@
 pub(crate) fn de_template_version<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TemplateVersion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -22,7 +28,11 @@ where
                             )?);
                         }
                         "Errors" => {
-                            builder = builder.set_errors(crate::protocol_serde::shape_template_error_list::de_template_error_list(tokens, _value)?);
+                            builder = builder.set_errors(crate::protocol_serde::shape_template_error_list::de_template_error_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "VersionNumber" => {
                             builder = builder.set_version_number(
@@ -40,7 +50,7 @@ where
                         }
                         "DataSetConfigurations" => {
                             builder = builder.set_data_set_configurations(
-                                crate::protocol_serde::shape_data_set_configuration_list::de_data_set_configuration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_data_set_configuration_list::de_data_set_configuration_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Description" => {
@@ -65,7 +75,7 @@ where
                             );
                         }
                         "Sheets" => {
-                            builder = builder.set_sheets(crate::protocol_serde::shape_sheet_list::de_sheet_list(tokens, _value)?);
+                            builder = builder.set_sheets(crate::protocol_serde::shape_sheet_list::de_sheet_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

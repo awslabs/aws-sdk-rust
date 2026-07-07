@@ -2,10 +2,16 @@
 pub(crate) fn de_secret_list_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SecretListEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,13 +67,18 @@ where
                             );
                         }
                         "RotationRules" => {
-                            builder =
-                                builder.set_rotation_rules(crate::protocol_serde::shape_rotation_rules_type::de_rotation_rules_type(tokens, _value)?);
+                            builder = builder.set_rotation_rules(crate::protocol_serde::shape_rotation_rules_type::de_rotation_rules_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExternalSecretRotationMetadata" => {
                             builder = builder.set_external_secret_rotation_metadata(
                                 crate::protocol_serde::shape_external_secret_rotation_metadata_type::de_external_secret_rotation_metadata_type(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -109,12 +120,14 @@ where
                             )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list_type::de_tag_list_type(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list_type::de_tag_list_type(tokens, _value, depth + 1)?);
                         }
                         "SecretVersionsToStages" => {
                             builder = builder.set_secret_versions_to_stages(
                                 crate::protocol_serde::shape_secret_versions_to_stages_map_type::de_secret_versions_to_stages_map_type(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -118,6 +118,8 @@ pub(crate) fn de_get_upload_status(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -159,7 +161,7 @@ pub(crate) fn de_get_upload_status(
                     );
                 }
                 "failureReason" => {
-                    builder = builder.set_failure_reason(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                    builder = builder.set_failure_reason(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                 }
                 "createdDate" => {
                     builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

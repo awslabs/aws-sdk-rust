@@ -72,10 +72,16 @@ pub fn ser_dataset_metadata(
 pub(crate) fn de_dataset_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DatasetMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -107,23 +113,28 @@ where
                             );
                         }
                         "DataAggregation" => {
-                            builder =
-                                builder.set_data_aggregation(crate::protocol_serde::shape_data_aggregation::de_data_aggregation(tokens, _value)?);
+                            builder = builder.set_data_aggregation(crate::protocol_serde::shape_data_aggregation::de_data_aggregation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Filters" => {
-                            builder = builder.set_filters(crate::protocol_serde::shape_topic_filters::de_topic_filters(tokens, _value)?);
+                            builder = builder.set_filters(crate::protocol_serde::shape_topic_filters::de_topic_filters(tokens, _value, depth + 1)?);
                         }
                         "Columns" => {
-                            builder = builder.set_columns(crate::protocol_serde::shape_topic_columns::de_topic_columns(tokens, _value)?);
+                            builder = builder.set_columns(crate::protocol_serde::shape_topic_columns::de_topic_columns(tokens, _value, depth + 1)?);
                         }
                         "CalculatedFields" => {
                             builder = builder.set_calculated_fields(
-                                crate::protocol_serde::shape_topic_calculated_fields::de_topic_calculated_fields(tokens, _value)?,
+                                crate::protocol_serde::shape_topic_calculated_fields::de_topic_calculated_fields(tokens, _value, depth + 1)?,
                             );
                         }
                         "NamedEntities" => {
                             builder = builder.set_named_entities(crate::protocol_serde::shape_topic_named_entities::de_topic_named_entities(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -16,6 +16,10 @@ pub struct ConnectorSummary {
     pub provider_summary: ::std::option::Option<crate::types::ProviderSummary>,
     /// <p>ISO 8601 UTC timestamp for the time create the connectorV2.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The enablement status of the connector.</p>
+    pub enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub enablement_status_reason: ::std::option::Option<::std::string::String>,
 }
 impl ConnectorSummary {
     /// <p>The Amazon Resource Name (ARN) of the connectorV2.</p>
@@ -42,6 +46,14 @@ impl ConnectorSummary {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>The enablement status of the connector.</p>
+    pub fn enablement_status(&self) -> ::std::option::Option<&crate::types::EnablementStatus> {
+        self.enablement_status.as_ref()
+    }
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub fn enablement_status_reason(&self) -> ::std::option::Option<&str> {
+        self.enablement_status_reason.as_deref()
+    }
 }
 impl ConnectorSummary {
     /// Creates a new builder-style object to manufacture [`ConnectorSummary`](crate::types::ConnectorSummary).
@@ -60,6 +72,8 @@ pub struct ConnectorSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) provider_summary: ::std::option::Option<crate::types::ProviderSummary>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
+    pub(crate) enablement_status_reason: ::std::option::Option<::std::string::String>,
 }
 impl ConnectorSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the connectorV2.</p>
@@ -150,6 +164,34 @@ impl ConnectorSummaryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>The enablement status of the connector.</p>
+    pub fn enablement_status(mut self, input: crate::types::EnablementStatus) -> Self {
+        self.enablement_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enablement status of the connector.</p>
+    pub fn set_enablement_status(mut self, input: ::std::option::Option<crate::types::EnablementStatus>) -> Self {
+        self.enablement_status = input;
+        self
+    }
+    /// <p>The enablement status of the connector.</p>
+    pub fn get_enablement_status(&self) -> &::std::option::Option<crate::types::EnablementStatus> {
+        &self.enablement_status
+    }
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub fn enablement_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.enablement_status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub fn set_enablement_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.enablement_status_reason = input;
+        self
+    }
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub fn get_enablement_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.enablement_status_reason
+    }
     /// Consumes the builder and constructs a [`ConnectorSummary`](crate::types::ConnectorSummary).
     pub fn build(self) -> crate::types::ConnectorSummary {
         crate::types::ConnectorSummary {
@@ -159,6 +201,8 @@ impl ConnectorSummaryBuilder {
             description: self.description,
             provider_summary: self.provider_summary,
             created_at: self.created_at,
+            enablement_status: self.enablement_status,
+            enablement_status_reason: self.enablement_status_reason,
         }
     }
 }

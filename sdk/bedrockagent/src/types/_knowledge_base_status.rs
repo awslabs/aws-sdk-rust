@@ -17,6 +17,7 @@
 ///     KnowledgeBaseStatus::DeleteUnsuccessful => { /* ... */ },
 ///     KnowledgeBaseStatus::Deleting => { /* ... */ },
 ///     KnowledgeBaseStatus::Failed => { /* ... */ },
+///     KnowledgeBaseStatus::UpdateUnsuccessful => { /* ... */ },
 ///     KnowledgeBaseStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum KnowledgeBaseStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    UpdateUnsuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for KnowledgeBaseStatus {
             "DELETE_UNSUCCESSFUL" => KnowledgeBaseStatus::DeleteUnsuccessful,
             "DELETING" => KnowledgeBaseStatus::Deleting,
             "FAILED" => KnowledgeBaseStatus::Failed,
+            "UPDATE_UNSUCCESSFUL" => KnowledgeBaseStatus::UpdateUnsuccessful,
             "UPDATING" => KnowledgeBaseStatus::Updating,
             other => KnowledgeBaseStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -91,13 +95,22 @@ impl KnowledgeBaseStatus {
             KnowledgeBaseStatus::DeleteUnsuccessful => "DELETE_UNSUCCESSFUL",
             KnowledgeBaseStatus::Deleting => "DELETING",
             KnowledgeBaseStatus::Failed => "FAILED",
+            KnowledgeBaseStatus::UpdateUnsuccessful => "UPDATE_UNSUCCESSFUL",
             KnowledgeBaseStatus::Updating => "UPDATING",
             KnowledgeBaseStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETE_UNSUCCESSFUL", "DELETING", "FAILED", "UPDATING"]
+        &[
+            "ACTIVE",
+            "CREATING",
+            "DELETE_UNSUCCESSFUL",
+            "DELETING",
+            "FAILED",
+            "UPDATE_UNSUCCESSFUL",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for KnowledgeBaseStatus {
@@ -125,6 +138,7 @@ impl ::std::fmt::Display for KnowledgeBaseStatus {
             KnowledgeBaseStatus::DeleteUnsuccessful => write!(f, "DELETE_UNSUCCESSFUL"),
             KnowledgeBaseStatus::Deleting => write!(f, "DELETING"),
             KnowledgeBaseStatus::Failed => write!(f, "FAILED"),
+            KnowledgeBaseStatus::UpdateUnsuccessful => write!(f, "UPDATE_UNSUCCESSFUL"),
             KnowledgeBaseStatus::Updating => write!(f, "UPDATING"),
             KnowledgeBaseStatus::Unknown(value) => write!(f, "{value}"),
         }

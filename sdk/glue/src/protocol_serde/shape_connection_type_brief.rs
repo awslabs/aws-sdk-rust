@@ -2,10 +2,16 @@
 pub(crate) fn de_connection_type_brief<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConnectionTypeBrief>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,10 +50,12 @@ where
                             );
                         }
                         "Categories" => {
-                            builder = builder.set_categories(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder =
+                                builder.set_categories(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                         }
                         "Capabilities" => {
-                            builder = builder.set_capabilities(crate::protocol_serde::shape_capabilities::de_capabilities(tokens, _value)?);
+                            builder =
+                                builder.set_capabilities(crate::protocol_serde::shape_capabilities::de_capabilities(tokens, _value, depth + 1)?);
                         }
                         "LogoUrl" => {
                             builder = builder.set_logo_url(
@@ -58,7 +66,11 @@ where
                         }
                         "ConnectionTypeVariants" => {
                             builder = builder.set_connection_type_variants(
-                                crate::protocol_serde::shape_connection_type_variant_list::de_connection_type_variant_list(tokens, _value)?,
+                                crate::protocol_serde::shape_connection_type_variant_list::de_connection_type_variant_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

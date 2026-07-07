@@ -2,10 +2,16 @@
 pub(crate) fn de_recovery_instance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecoveryInstance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,23 +64,31 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                         }
                         "failback" => {
                             builder = builder.set_failback(crate::protocol_serde::shape_recovery_instance_failback::de_recovery_instance_failback(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "dataReplicationInfo" => {
                             builder = builder.set_data_replication_info(
                                 crate::protocol_serde::shape_recovery_instance_data_replication_info::de_recovery_instance_data_replication_info(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "recoveryInstanceProperties" => {
                             builder = builder.set_recovery_instance_properties(
-                                crate::protocol_serde::shape_recovery_instance_properties::de_recovery_instance_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_recovery_instance_properties::de_recovery_instance_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "pointInTimeSnapshotDateTime" => {

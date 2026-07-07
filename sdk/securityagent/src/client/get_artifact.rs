@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetArtifact`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder::set_agent_space_id):<br>required: **true**<br>Unique identifier of the agent space<br>
-    ///   - [`artifact_id(impl Into<String>)`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder::artifact_id) / [`set_artifact_id(Option<String>)`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder::set_artifact_id):<br>required: **true**<br>Unique identifier of the artifact<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the agent space that contains the artifact.</p><br>
+    ///   - [`artifact_id(impl Into<String>)`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder::artifact_id) / [`set_artifact_id(Option<String>)`](crate::operation::get_artifact::builders::GetArtifactFluentBuilder::set_artifact_id):<br>required: **true**<br><p>The unique identifier of the artifact to retrieve.</p><br>
     /// - On success, responds with [`GetArtifactOutput`](crate::operation::get_artifact::GetArtifactOutput) with field(s):
-    ///   - [`agent_space_id(String)`](crate::operation::get_artifact::GetArtifactOutput::agent_space_id): Unique identifier of the agent space
-    ///   - [`artifact_id(String)`](crate::operation::get_artifact::GetArtifactOutput::artifact_id): Unique identifier of the artifact
-    ///   - [`artifact(Option<Artifact>)`](crate::operation::get_artifact::GetArtifactOutput::artifact): Artifact details
-    ///   - [`file_name(String)`](crate::operation::get_artifact::GetArtifactOutput::file_name): Name of the artifact file
-    ///   - [`updated_at(DateTime)`](crate::operation::get_artifact::GetArtifactOutput::updated_at): Timestamp when the artifact was last updated
+    ///   - [`agent_space_id(String)`](crate::operation::get_artifact::GetArtifactOutput::agent_space_id): <p>The unique identifier of the agent space that contains the artifact.</p>
+    ///   - [`artifact_id(String)`](crate::operation::get_artifact::GetArtifactOutput::artifact_id): <p>The unique identifier of the artifact.</p>
+    ///   - [`artifact(Option<Artifact>)`](crate::operation::get_artifact::GetArtifactOutput::artifact): <p>The artifact content and type.</p>
+    ///   - [`file_name(String)`](crate::operation::get_artifact::GetArtifactOutput::file_name): <p>The file name of the artifact.</p>
+    ///   - [`updated_at(DateTime)`](crate::operation::get_artifact::GetArtifactOutput::updated_at): <p>The date and time the artifact was last updated, in UTC format.</p>
     /// - On failure, responds with [`SdkError<GetArtifactError>`](crate::operation::get_artifact::GetArtifactError)
     pub fn get_artifact(&self) -> crate::operation::get_artifact::builders::GetArtifactFluentBuilder {
         crate::operation::get_artifact::builders::GetArtifactFluentBuilder::new(self.handle.clone())

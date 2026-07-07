@@ -49,6 +49,8 @@ pub fn de_detach_verified_access_trust_provider(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DetachVerifiedAccessTrustProviderResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DetachVerifiedAccessTrustProviderResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_detach_verified_access_trust_provider(
             s if s.matches("verifiedAccessTrustProvider") /* VerifiedAccessTrustProvider com.amazonaws.ec2.synthetic#DetachVerifiedAccessTrustProviderOutput$VerifiedAccessTrustProvider */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_trust_provider::de_verified_access_trust_provider(&mut tag)
+                        crate::protocol_serde::shape_verified_access_trust_provider::de_verified_access_trust_provider(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_detach_verified_access_trust_provider(
             s if s.matches("verifiedAccessInstance") /* VerifiedAccessInstance com.amazonaws.ec2.synthetic#DetachVerifiedAccessTrustProviderOutput$VerifiedAccessInstance */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_instance::de_verified_access_instance(&mut tag)
+                        crate::protocol_serde::shape_verified_access_instance::de_verified_access_instance(&mut tag, depth + 1)
                         ?
                     )
                 ;

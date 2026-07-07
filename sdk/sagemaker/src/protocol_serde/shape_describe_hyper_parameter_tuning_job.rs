@@ -77,6 +77,8 @@ pub(crate) fn de_describe_hyper_parameter_tuning_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -99,20 +101,28 @@ pub(crate) fn de_describe_hyper_parameter_tuning_job(
                     }
                     "HyperParameterTuningJobConfig" => {
                         builder = builder.set_hyper_parameter_tuning_job_config(
-                            crate::protocol_serde::shape_hyper_parameter_tuning_job_config::de_hyper_parameter_tuning_job_config(tokens, _value)?,
+                            crate::protocol_serde::shape_hyper_parameter_tuning_job_config::de_hyper_parameter_tuning_job_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
                         );
                     }
                     "TrainingJobDefinition" => {
                         builder = builder.set_training_job_definition(
                             crate::protocol_serde::shape_hyper_parameter_training_job_definition::de_hyper_parameter_training_job_definition(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?,
                         );
                     }
                     "TrainingJobDefinitions" => {
                         builder = builder.set_training_job_definitions(
                             crate::protocol_serde::shape_hyper_parameter_training_job_definitions::de_hyper_parameter_training_job_definitions(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?,
                         );
                     }
@@ -143,35 +153,39 @@ pub(crate) fn de_describe_hyper_parameter_tuning_job(
                     }
                     "TrainingJobStatusCounters" => {
                         builder = builder.set_training_job_status_counters(
-                            crate::protocol_serde::shape_training_job_status_counters::de_training_job_status_counters(tokens, _value)?,
+                            crate::protocol_serde::shape_training_job_status_counters::de_training_job_status_counters(tokens, _value, depth + 1)?,
                         );
                     }
                     "ObjectiveStatusCounters" => {
                         builder = builder.set_objective_status_counters(
-                            crate::protocol_serde::shape_objective_status_counters::de_objective_status_counters(tokens, _value)?,
+                            crate::protocol_serde::shape_objective_status_counters::de_objective_status_counters(tokens, _value, depth + 1)?,
                         );
                     }
                     "BestTrainingJob" => {
                         builder = builder.set_best_training_job(
                             crate::protocol_serde::shape_hyper_parameter_training_job_summary::de_hyper_parameter_training_job_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?,
                         );
                     }
                     "OverallBestTrainingJob" => {
                         builder = builder.set_overall_best_training_job(
                             crate::protocol_serde::shape_hyper_parameter_training_job_summary::de_hyper_parameter_training_job_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?,
                         );
                     }
                     "WarmStartConfig" => {
                         builder = builder.set_warm_start_config(
-                            crate::protocol_serde::shape_hyper_parameter_tuning_job_warm_start_config::de_hyper_parameter_tuning_job_warm_start_config(tokens, _value)?
+                            crate::protocol_serde::shape_hyper_parameter_tuning_job_warm_start_config::de_hyper_parameter_tuning_job_warm_start_config(tokens, _value, depth + 1)?
                         );
                     }
                     "Autotune" => {
-                        builder = builder.set_autotune(crate::protocol_serde::shape_autotune::de_autotune(tokens, _value)?);
+                        builder = builder.set_autotune(crate::protocol_serde::shape_autotune::de_autotune(tokens, _value, depth + 1)?);
                     }
                     "FailureReason" => {
                         builder = builder.set_failure_reason(
@@ -182,12 +196,12 @@ pub(crate) fn de_describe_hyper_parameter_tuning_job(
                     }
                     "TuningJobCompletionDetails" => {
                         builder = builder.set_tuning_job_completion_details(
-                            crate::protocol_serde::shape_hyper_parameter_tuning_job_completion_details::de_hyper_parameter_tuning_job_completion_details(tokens, _value)?
+                            crate::protocol_serde::shape_hyper_parameter_tuning_job_completion_details::de_hyper_parameter_tuning_job_completion_details(tokens, _value, depth + 1)?
                         );
                     }
                     "ConsumedResources" => {
                         builder = builder.set_consumed_resources(
-                            crate::protocol_serde::shape_hyper_parameter_tuning_job_consumed_resources::de_hyper_parameter_tuning_job_consumed_resources(tokens, _value)?
+                            crate::protocol_serde::shape_hyper_parameter_tuning_job_consumed_resources::de_hyper_parameter_tuning_job_consumed_resources(tokens, _value, depth + 1)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

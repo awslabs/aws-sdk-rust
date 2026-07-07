@@ -29,6 +29,8 @@ pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInput;
 
 pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptions;
 
+pub use crate::types::_automated_snapshot_pause_request_options::AutomatedSnapshotPauseRequestOptions;
+
 pub use crate::types::_elasticsearch_domain_status::ElasticsearchDomainStatus;
 
 pub use crate::types::_domain_information::DomainInformation;
@@ -109,6 +111,8 @@ pub use crate::types::_auto_tune_options_output::AutoTuneOptionsOutput;
 
 pub use crate::types::_domain_processing_status_type::DomainProcessingStatusType;
 
+pub use crate::types::_automated_snapshot_pause_options::AutomatedSnapshotPauseOptions;
+
 pub use crate::types::_outbound_cross_cluster_search_connection_status_code::OutboundCrossClusterSearchConnectionStatusCode;
 
 pub use crate::types::_package_status::PackageStatus;
@@ -153,6 +157,8 @@ pub use crate::types::_auto_tune_options_status::AutoTuneOptionsStatus;
 
 pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatus;
 
+pub use crate::types::_automated_snapshot_pause_options_status::AutomatedSnapshotPauseOptionsStatus;
+
 pub use crate::types::_limits::Limits;
 
 pub use crate::types::_filter::Filter;
@@ -186,6 +192,8 @@ pub use crate::types::_saml_options_output::SamlOptionsOutput;
 pub use crate::types::_auto_tune_state::AutoTuneState;
 
 pub use crate::types::_modifying_properties::ModifyingProperties;
+
+pub use crate::types::_pause_state::PauseState;
 
 pub use crate::types::_auto_tune_type::AutoTuneType;
 
@@ -266,6 +274,12 @@ mod _auto_tune_state;
 mod _auto_tune_status;
 
 mod _auto_tune_type;
+
+mod _automated_snapshot_pause_options;
+
+mod _automated_snapshot_pause_options_status;
+
+mod _automated_snapshot_pause_request_options;
 
 mod _cancelled_change_property;
 
@@ -392,6 +406,8 @@ mod _package_status;
 mod _package_type;
 
 mod _package_version_history;
+
+mod _pause_state;
 
 mod _principal_type;
 

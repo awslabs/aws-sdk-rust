@@ -128,6 +128,8 @@ pub(crate) fn de_get_integration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -161,6 +163,13 @@ pub(crate) fn de_get_integration(
                             .transpose()?,
                     );
                 }
+                "privateConnectionName" => {
+                    builder = builder.set_private_connection_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "provider" => {
                     builder = builder.set_provider(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -172,6 +181,13 @@ pub(crate) fn de_get_integration(
                     builder = builder.set_provider_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::ProviderType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "targetUrl" => {
+                    builder = builder.set_target_url(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

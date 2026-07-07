@@ -215,6 +215,8 @@ pub(crate) fn de_get_service_quota_increase_request_from_template(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -223,7 +225,9 @@ pub(crate) fn de_get_service_quota_increase_request_from_template(
                 "ServiceQuotaIncreaseRequestInTemplate" => {
                     builder = builder.set_service_quota_increase_request_in_template(
                         crate::protocol_serde::shape_service_quota_increase_request_in_template::de_service_quota_increase_request_in_template(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

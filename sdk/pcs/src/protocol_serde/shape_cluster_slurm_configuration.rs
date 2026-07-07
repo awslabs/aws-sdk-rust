@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster_slurm_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterSlurmConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,30 +30,31 @@ where
                         }
                         "slurmCustomSettings" => {
                             builder = builder.set_slurm_custom_settings(
-                                crate::protocol_serde::shape_slurm_custom_settings::de_slurm_custom_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_slurm_custom_settings::de_slurm_custom_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "slurmdbdCustomSettings" => {
                             builder = builder.set_slurmdbd_custom_settings(
-                                crate::protocol_serde::shape_slurmdbd_custom_settings::de_slurmdbd_custom_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_slurmdbd_custom_settings::de_slurmdbd_custom_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "cgroupCustomSettings" => {
                             builder = builder.set_cgroup_custom_settings(
-                                crate::protocol_serde::shape_cgroup_custom_settings::de_cgroup_custom_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_cgroup_custom_settings::de_cgroup_custom_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "authKey" => {
-                            builder = builder.set_auth_key(crate::protocol_serde::shape_slurm_auth_key::de_slurm_auth_key(tokens, _value)?);
+                            builder =
+                                builder.set_auth_key(crate::protocol_serde::shape_slurm_auth_key::de_slurm_auth_key(tokens, _value, depth + 1)?);
                         }
                         "jwtAuth" => {
-                            builder = builder.set_jwt_auth(crate::protocol_serde::shape_jwt_auth::de_jwt_auth(tokens, _value)?);
+                            builder = builder.set_jwt_auth(crate::protocol_serde::shape_jwt_auth::de_jwt_auth(tokens, _value, depth + 1)?);
                         }
                         "accounting" => {
-                            builder = builder.set_accounting(crate::protocol_serde::shape_accounting::de_accounting(tokens, _value)?);
+                            builder = builder.set_accounting(crate::protocol_serde::shape_accounting::de_accounting(tokens, _value, depth + 1)?);
                         }
                         "slurmRest" => {
-                            builder = builder.set_slurm_rest(crate::protocol_serde::shape_slurm_rest::de_slurm_rest(tokens, _value)?);
+                            builder = builder.set_slurm_rest(crate::protocol_serde::shape_slurm_rest::de_slurm_rest(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

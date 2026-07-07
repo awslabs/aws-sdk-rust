@@ -69,6 +69,21 @@ pub fn de_add_permission_http_error(
             }
             tmp
         }),
+        "PublicPolicyException" => crate::operation::add_permission::AddPermissionError::PublicPolicyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PublicPolicyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_public_policy_exception::de_public_policy_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceConflictException" => crate::operation::add_permission::AddPermissionError::ResourceConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -173,6 +188,8 @@ pub(crate) fn de_add_permission(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {

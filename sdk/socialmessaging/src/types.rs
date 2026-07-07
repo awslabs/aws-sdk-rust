@@ -11,6 +11,14 @@ pub use crate::types::_meta_library_template::MetaLibraryTemplate;
 
 pub use crate::types::_s3_file::S3File;
 
+pub use crate::types::_meta_flow_preview_info::MetaFlowPreviewInfo;
+
+pub use crate::types::_meta_flow_whats_app_business_account_info::MetaFlowWhatsAppBusinessAccountInfo;
+
+pub use crate::types::_meta_flow_application_info::MetaFlowApplicationInfo;
+
+pub use crate::types::_meta_flow_health_status::MetaFlowHealthStatus;
+
 pub use crate::types::_whats_app_phone_number_detail::WhatsAppPhoneNumberDetail;
 
 pub use crate::types::_s3_presigned_url::S3PresignedUrl;
@@ -23,7 +31,13 @@ pub use crate::types::_waba_setup_finalization::WabaSetupFinalization;
 
 pub use crate::types::_registration_status::RegistrationStatus;
 
+pub use crate::types::_meta_flow_category::MetaFlowCategory;
+
 pub use crate::types::_library_template_body_inputs::LibraryTemplateBodyInputs;
+
+pub use crate::types::_meta_flow_asset::MetaFlowAsset;
+
+pub use crate::types::_meta_flow_summary::MetaFlowSummary;
 
 pub use crate::types::_template_summary::TemplateSummary;
 
@@ -39,6 +53,8 @@ pub use crate::types::_whats_app_phone_number_summary::WhatsAppPhoneNumberSummar
 
 pub use crate::types::_library_template_button_input::LibraryTemplateButtonInput;
 
+pub use crate::types::_meta_flow_health_entity::MetaFlowHealthEntity;
+
 pub use crate::types::_library_template_button_list::LibraryTemplateButtonList;
 
 mod _library_template_body_inputs;
@@ -52,6 +68,22 @@ mod _linked_whats_app_business_account;
 mod _linked_whats_app_business_account_id_meta_data;
 
 mod _linked_whats_app_business_account_summary;
+
+mod _meta_flow_application_info;
+
+mod _meta_flow_asset;
+
+mod _meta_flow_category;
+
+mod _meta_flow_health_entity;
+
+mod _meta_flow_health_status;
+
+mod _meta_flow_preview_info;
+
+mod _meta_flow_summary;
+
+mod _meta_flow_whats_app_business_account_info;
 
 mod _meta_library_template;
 

@@ -2,10 +2,16 @@
 pub(crate) fn de_guardrail_invocation_metrics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GuardrailInvocationMetrics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,11 +29,18 @@ where
                             );
                         }
                         "usage" => {
-                            builder = builder.set_usage(crate::protocol_serde::shape_guardrail_usage::de_guardrail_usage(tokens, _value)?);
+                            builder = builder.set_usage(crate::protocol_serde::shape_guardrail_usage::de_guardrail_usage(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "guardrailCoverage" => {
-                            builder = builder
-                                .set_guardrail_coverage(crate::protocol_serde::shape_guardrail_coverage::de_guardrail_coverage(tokens, _value)?);
+                            builder = builder.set_guardrail_coverage(crate::protocol_serde::shape_guardrail_coverage::de_guardrail_coverage(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

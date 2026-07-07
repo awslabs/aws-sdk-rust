@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_spot_instance_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SpotInstanceRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SpotInstanceRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -65,7 +69,7 @@ pub fn de_spot_instance_request(
             s if s.matches("fault") /* Fault com.amazonaws.ec2#SpotInstanceRequest$Fault */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_spot_instance_state_fault::de_spot_instance_state_fault(&mut tag)
+                        crate::protocol_serde::shape_spot_instance_state_fault::de_spot_instance_state_fault(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -101,7 +105,7 @@ pub fn de_spot_instance_request(
             s if s.matches("launchSpecification") /* LaunchSpecification com.amazonaws.ec2#SpotInstanceRequest$LaunchSpecification */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_launch_specification::de_launch_specification(&mut tag)
+                        crate::protocol_serde::shape_launch_specification::de_launch_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -191,7 +195,7 @@ pub fn de_spot_instance_request(
             s if s.matches("status") /* Status com.amazonaws.ec2#SpotInstanceRequest$Status */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_spot_instance_status::de_spot_instance_status(&mut tag)
+                        crate::protocol_serde::shape_spot_instance_status::de_spot_instance_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -201,7 +205,7 @@ pub fn de_spot_instance_request(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#SpotInstanceRequest$Tags */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -159,14 +159,19 @@ pub(crate) fn de_get_asset_contract(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "contractIdentifier" => {
-                    builder =
-                        builder.set_contract_identifier(crate::protocol_serde::shape_contract_identifier::de_contract_identifier(tokens, _value)?);
+                    builder = builder.set_contract_identifier(crate::protocol_serde::shape_contract_identifier::de_contract_identifier(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "deployerAddress" => {
                     builder = builder.set_deployer_address(
@@ -176,7 +181,11 @@ pub(crate) fn de_get_asset_contract(
                     );
                 }
                 "metadata" => {
-                    builder = builder.set_metadata(crate::protocol_serde::shape_contract_metadata::de_contract_metadata(tokens, _value)?);
+                    builder = builder.set_metadata(crate::protocol_serde::shape_contract_metadata::de_contract_metadata(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "tokenStandard" => {
                     builder = builder.set_token_standard(

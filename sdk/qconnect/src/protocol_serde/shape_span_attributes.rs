@@ -2,10 +2,16 @@
 pub(crate) fn de_span_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SpanAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -152,7 +158,7 @@ where
                         }
                         "responseFinishReasons" => {
                             builder = builder.set_response_finish_reasons(
-                                crate::protocol_serde::shape_span_finish_reason_list::de_span_finish_reason_list(tokens, _value)?,
+                                crate::protocol_serde::shape_span_finish_reason_list::de_span_finish_reason_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "usageInputTokens" => {
@@ -191,16 +197,22 @@ where
                             );
                         }
                         "inputMessages" => {
-                            builder =
-                                builder.set_input_messages(crate::protocol_serde::shape_span_message_list::de_span_message_list(tokens, _value)?);
+                            builder = builder.set_input_messages(crate::protocol_serde::shape_span_message_list::de_span_message_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "outputMessages" => {
-                            builder =
-                                builder.set_output_messages(crate::protocol_serde::shape_span_message_list::de_span_message_list(tokens, _value)?);
+                            builder = builder.set_output_messages(crate::protocol_serde::shape_span_message_list::de_span_message_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "systemInstructions" => {
                             builder = builder.set_system_instructions(
-                                crate::protocol_serde::shape_span_message_value_list::de_span_message_value_list(tokens, _value)?,
+                                crate::protocol_serde::shape_span_message_value_list::de_span_message_value_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "promptArn" => {
@@ -236,6 +248,22 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "timeToFirstTokenMs" => {
+                            builder = builder.set_time_to_first_token_ms(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "guardrailAssessments" => {
+                            builder = builder.set_guardrail_assessments(
+                                crate::protocol_serde::shape_span_guardrail_assessment_list::de_span_guardrail_assessment_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

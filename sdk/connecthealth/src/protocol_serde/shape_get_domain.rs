@@ -60,6 +60,8 @@ pub(crate) fn de_get_domain(
 ) -> ::std::result::Result<crate::operation::get_domain::builders::GetDomainOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -86,7 +88,11 @@ pub(crate) fn de_get_domain(
                     );
                 }
                 "encryptionContext" => {
-                    builder = builder.set_encryption_context(crate::protocol_serde::shape_encryption_context::de_encryption_context(tokens, _value)?);
+                    builder = builder.set_encryption_context(crate::protocol_serde::shape_encryption_context::de_encryption_context(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "kmsKeyArn" => {
                     builder = builder.set_kms_key_arn(
@@ -110,11 +116,13 @@ pub(crate) fn de_get_domain(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "webAppConfiguration" => {
                     builder = builder.set_web_app_configuration(crate::protocol_serde::shape_web_app_configuration::de_web_app_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "webAppUrl" => {

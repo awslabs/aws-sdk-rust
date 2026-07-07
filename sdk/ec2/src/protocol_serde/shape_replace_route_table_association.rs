@@ -49,6 +49,8 @@ pub fn de_replace_route_table_association(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ReplaceRouteTableAssociationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ReplaceRouteTableAssociationResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_replace_route_table_association(
             s if s.matches("associationState") /* AssociationState com.amazonaws.ec2.synthetic#ReplaceRouteTableAssociationOutput$AssociationState */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_route_table_association_state::de_route_table_association_state(&mut tag)
+                        crate::protocol_serde::shape_route_table_association_state::de_route_table_association_state(&mut tag, depth + 1)
                         ?
                     )
                 ;

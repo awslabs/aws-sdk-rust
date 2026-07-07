@@ -2,10 +2,16 @@
 pub(crate) fn de_managed_instances_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedInstancesProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,7 @@ where
                         }
                         "instanceLaunchTemplate" => {
                             builder = builder.set_instance_launch_template(
-                                crate::protocol_serde::shape_instance_launch_template::de_instance_launch_template(tokens, _value)?,
+                                crate::protocol_serde::shape_instance_launch_template::de_instance_launch_template(tokens, _value, depth + 1)?,
                             );
                         }
                         "propagateTags" => {
@@ -36,12 +42,12 @@ where
                         }
                         "infrastructureOptimization" => {
                             builder = builder.set_infrastructure_optimization(
-                                crate::protocol_serde::shape_infrastructure_optimization::de_infrastructure_optimization(tokens, _value)?,
+                                crate::protocol_serde::shape_infrastructure_optimization::de_infrastructure_optimization(tokens, _value, depth + 1)?,
                             );
                         }
                         "autoRepairConfiguration" => {
                             builder = builder.set_auto_repair_configuration(
-                                crate::protocol_serde::shape_auto_repair_configuration::de_auto_repair_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_auto_repair_configuration::de_auto_repair_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,5 +20,7 @@ pub fn de_cache_policy_list(inp: &[u8]) -> std::result::Result<crate::types::Cac
             "invalid root, expected CachePolicyList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_cache_policy_list::de_cache_policy_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_cache_policy_list::de_cache_policy_list(&mut decoder, depth + 1)
 }

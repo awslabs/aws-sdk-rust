@@ -2,7 +2,7 @@
 
 /// <p>A tool definition for a gateway target. This structure defines a tool that the target exposes through the Model Context Protocol.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ToolDefinition {
     /// <p>The name of the tool. This name identifies the tool in the Model Context Protocol.</p>
     pub name: ::std::string::String,
@@ -33,6 +33,16 @@ impl ToolDefinition {
         self.output_schema.as_ref()
     }
 }
+impl ::std::fmt::Debug for ToolDefinition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ToolDefinition");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_schema", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ToolDefinition {
     /// Creates a new builder-style object to manufacture [`ToolDefinition`](crate::types::ToolDefinition).
     pub fn builder() -> crate::types::builders::ToolDefinitionBuilder {
@@ -41,7 +51,7 @@ impl ToolDefinition {
 }
 
 /// A builder for [`ToolDefinition`](crate::types::ToolDefinition).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ToolDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -130,5 +140,15 @@ impl ToolDefinitionBuilder {
             input_schema: self.input_schema,
             output_schema: self.output_schema,
         })
+    }
+}
+impl ::std::fmt::Debug for ToolDefinitionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ToolDefinitionBuilder");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_schema", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_conditional_forwarder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConditionalForwarder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,10 +29,15 @@ where
                             );
                         }
                         "DnsIpAddrs" => {
-                            builder = builder.set_dns_ip_addrs(crate::protocol_serde::shape_dns_ip_addrs::de_dns_ip_addrs(tokens, _value)?);
+                            builder =
+                                builder.set_dns_ip_addrs(crate::protocol_serde::shape_dns_ip_addrs::de_dns_ip_addrs(tokens, _value, depth + 1)?);
                         }
                         "DnsIpv6Addrs" => {
-                            builder = builder.set_dns_ipv6_addrs(crate::protocol_serde::shape_dns_ipv6_addrs::de_dns_ipv6_addrs(tokens, _value)?);
+                            builder = builder.set_dns_ipv6_addrs(crate::protocol_serde::shape_dns_ipv6_addrs::de_dns_ipv6_addrs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ReplicationScope" => {
                             builder = builder.set_replication_scope(

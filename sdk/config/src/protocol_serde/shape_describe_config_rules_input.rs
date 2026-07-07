@@ -12,14 +12,14 @@ pub fn ser_describe_config_rules_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("NextToken").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.filters {
+    if let Some(var_4) = &input.filters {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Filters").start_object();
-        crate::protocol_serde::shape_describe_config_rules_filters::ser_describe_config_rules_filters(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("Filters").start_object();
+        crate::protocol_serde::shape_describe_config_rules_filters::ser_describe_config_rules_filters(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.next_token {
+        object.key("NextToken").string(var_6.as_str());
     }
     Ok(())
 }

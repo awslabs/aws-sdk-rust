@@ -20,7 +20,11 @@ pub fn ser_end_point(
 #[allow(clippy::needless_question_mark)]
 pub fn de_end_point(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EndPoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EndPoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -41,7 +45,7 @@ pub fn de_end_point(
             s if s.matches("KinesisStreamConfig") /* KinesisStreamConfig com.amazonaws.cloudfront#EndPoint$KinesisStreamConfig */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_kinesis_stream_config::de_kinesis_stream_config(&mut tag)
+                        crate::protocol_serde::shape_kinesis_stream_config::de_kinesis_stream_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

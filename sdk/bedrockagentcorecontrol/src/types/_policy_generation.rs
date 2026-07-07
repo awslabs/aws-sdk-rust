@@ -20,10 +20,10 @@ pub struct PolicyGeneration {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The current status of this policy generation request.</p>
     pub status: crate::types::PolicyGenerationStatus,
-    /// <p>Additional information about the generation status.</p>
-    pub status_reasons: ::std::vec::Vec<::std::string::String>,
     /// <p>Findings and insights from this policy generation process.</p>
     pub findings: ::std::option::Option<::std::string::String>,
+    /// <p>Additional information about the generation status.</p>
+    pub status_reasons: ::std::vec::Vec<::std::string::String>,
 }
 impl PolicyGeneration {
     /// <p>The identifier of the policy engine associated with this generation request.</p>
@@ -62,14 +62,14 @@ impl PolicyGeneration {
     pub fn status(&self) -> &crate::types::PolicyGenerationStatus {
         &self.status
     }
+    /// <p>Findings and insights from this policy generation process.</p>
+    pub fn findings(&self) -> ::std::option::Option<&str> {
+        self.findings.as_deref()
+    }
     /// <p>Additional information about the generation status.</p>
     pub fn status_reasons(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.status_reasons.deref()
-    }
-    /// <p>Findings and insights from this policy generation process.</p>
-    pub fn findings(&self) -> ::std::option::Option<&str> {
-        self.findings.as_deref()
     }
 }
 impl PolicyGeneration {
@@ -91,8 +91,8 @@ pub struct PolicyGenerationBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::PolicyGenerationStatus>,
-    pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) findings: ::std::option::Option<::std::string::String>,
+    pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PolicyGenerationBuilder {
     /// <p>The identifier of the policy engine associated with this generation request.</p>
@@ -215,6 +215,20 @@ impl PolicyGenerationBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PolicyGenerationStatus> {
         &self.status
     }
+    /// <p>Findings and insights from this policy generation process.</p>
+    pub fn findings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.findings = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Findings and insights from this policy generation process.</p>
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.findings = input;
+        self
+    }
+    /// <p>Findings and insights from this policy generation process.</p>
+    pub fn get_findings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.findings
+    }
     /// Appends an item to `status_reasons`.
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
@@ -234,20 +248,6 @@ impl PolicyGenerationBuilder {
     /// <p>Additional information about the generation status.</p>
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.status_reasons
-    }
-    /// <p>Findings and insights from this policy generation process.</p>
-    pub fn findings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.findings = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Findings and insights from this policy generation process.</p>
-    pub fn set_findings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.findings = input;
-        self
-    }
-    /// <p>Findings and insights from this policy generation process.</p>
-    pub fn get_findings(&self) -> &::std::option::Option<::std::string::String> {
-        &self.findings
     }
     /// Consumes the builder and constructs a [`PolicyGeneration`](crate::types::PolicyGeneration).
     /// This method will fail if any of the following fields are not set:
@@ -304,13 +304,13 @@ impl PolicyGenerationBuilder {
                     "status was not specified but it is required when building PolicyGeneration",
                 )
             })?,
+            findings: self.findings,
             status_reasons: self.status_reasons.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_reasons",
                     "status_reasons was not specified but it is required when building PolicyGeneration",
                 )
             })?,
-            findings: self.findings,
         })
     }
 }

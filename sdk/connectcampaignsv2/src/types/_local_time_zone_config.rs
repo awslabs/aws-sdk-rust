@@ -8,6 +8,8 @@ pub struct LocalTimeZoneConfig {
     pub default_time_zone: ::std::option::Option<::std::string::String>,
     /// Local TimeZone Detection method list
     pub local_time_zone_detection: ::std::option::Option<::std::vec::Vec<crate::types::LocalTimeZoneDetectionType>>,
+    /// Local TimeZone Detection scope.
+    pub local_time_zone_detection_scope: ::std::option::Option<crate::types::LocalTimeZoneDetectionScope>,
 }
 impl LocalTimeZoneConfig {
     /// Time Zone Id in the IANA format
@@ -19,6 +21,10 @@ impl LocalTimeZoneConfig {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_time_zone_detection.is_none()`.
     pub fn local_time_zone_detection(&self) -> &[crate::types::LocalTimeZoneDetectionType] {
         self.local_time_zone_detection.as_deref().unwrap_or_default()
+    }
+    /// Local TimeZone Detection scope.
+    pub fn local_time_zone_detection_scope(&self) -> ::std::option::Option<&crate::types::LocalTimeZoneDetectionScope> {
+        self.local_time_zone_detection_scope.as_ref()
     }
 }
 impl LocalTimeZoneConfig {
@@ -34,6 +40,7 @@ impl LocalTimeZoneConfig {
 pub struct LocalTimeZoneConfigBuilder {
     pub(crate) default_time_zone: ::std::option::Option<::std::string::String>,
     pub(crate) local_time_zone_detection: ::std::option::Option<::std::vec::Vec<crate::types::LocalTimeZoneDetectionType>>,
+    pub(crate) local_time_zone_detection_scope: ::std::option::Option<crate::types::LocalTimeZoneDetectionScope>,
 }
 impl LocalTimeZoneConfigBuilder {
     /// Time Zone Id in the IANA format
@@ -70,11 +77,26 @@ impl LocalTimeZoneConfigBuilder {
     pub fn get_local_time_zone_detection(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalTimeZoneDetectionType>> {
         &self.local_time_zone_detection
     }
+    /// Local TimeZone Detection scope.
+    pub fn local_time_zone_detection_scope(mut self, input: crate::types::LocalTimeZoneDetectionScope) -> Self {
+        self.local_time_zone_detection_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// Local TimeZone Detection scope.
+    pub fn set_local_time_zone_detection_scope(mut self, input: ::std::option::Option<crate::types::LocalTimeZoneDetectionScope>) -> Self {
+        self.local_time_zone_detection_scope = input;
+        self
+    }
+    /// Local TimeZone Detection scope.
+    pub fn get_local_time_zone_detection_scope(&self) -> &::std::option::Option<crate::types::LocalTimeZoneDetectionScope> {
+        &self.local_time_zone_detection_scope
+    }
     /// Consumes the builder and constructs a [`LocalTimeZoneConfig`](crate::types::LocalTimeZoneConfig).
     pub fn build(self) -> crate::types::LocalTimeZoneConfig {
         crate::types::LocalTimeZoneConfig {
             default_time_zone: self.default_time_zone,
             local_time_zone_detection: self.local_time_zone_detection,
+            local_time_zone_detection_scope: self.local_time_zone_detection_scope,
         }
     }
 }

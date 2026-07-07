@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListLay
 #[derive(Debug)]
 struct ListLayerVersionsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListLayerVersionsResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -209,24 +210,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLayerVer
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_2) = &_input.compatible_runtime {
+                if let ::std::option::Option::Some(inner_2) = &_input.compatible_architecture {
                     {
-                        query.push_kv("CompatibleRuntime", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
+                        query.push_kv("CompatibleArchitecture", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.marker {
+                if let ::std::option::Option::Some(inner_3) = &_input.compatible_runtime {
                     {
-                        query.push_kv("Marker", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("CompatibleRuntime", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.max_items {
+                if let ::std::option::Option::Some(inner_4) = &_input.marker {
                     {
-                        query.push_kv("MaxItems", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                        query.push_kv("Marker", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.compatible_architecture {
+                if let ::std::option::Option::Some(inner_5) = &_input.max_items {
                     {
-                        query.push_kv("CompatibleArchitecture", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
+                        query.push_kv("MaxItems", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

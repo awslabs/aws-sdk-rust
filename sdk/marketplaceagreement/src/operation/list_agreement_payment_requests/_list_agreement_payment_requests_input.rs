@@ -15,7 +15,7 @@ pub struct ListAgreementPaymentRequestsInput {
     pub status: ::std::option::Option<crate::types::PaymentRequestStatus>,
     /// <p>The maximum number of payment requests to return in a single response (1-50). Default is 50.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAgreementPaymentRequestsInput {
@@ -43,7 +43,7 @@ impl ListAgreementPaymentRequestsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -153,17 +153,17 @@ impl ListAgreementPaymentRequestsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

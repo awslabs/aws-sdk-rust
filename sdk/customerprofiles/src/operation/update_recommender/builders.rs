@@ -164,4 +164,18 @@ impl UpdateRecommenderFluentBuilder {
     pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
         self.inner.get_recommender_config()
     }
+    /// <p>The name of a specific recommender version to activate as part of this update (for example, to roll back to a previously trained version).</p>
+    pub fn recommender_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.recommender_version_name(input.into());
+        self
+    }
+    /// <p>The name of a specific recommender version to activate as part of this update (for example, to roll back to a previously trained version).</p>
+    pub fn set_recommender_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_recommender_version_name(input);
+        self
+    }
+    /// <p>The name of a specific recommender version to activate as part of this update (for example, to roll back to a previously trained version).</p>
+    pub fn get_recommender_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommender_version_name()
+    }
 }

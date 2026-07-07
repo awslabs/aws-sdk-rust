@@ -69,6 +69,8 @@ pub fn de_list_bucket_inventory_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListInventoryConfigurationsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListInventoryConfigurationsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -123,7 +125,7 @@ pub fn de_list_bucket_inventory_configurations(
                         Result::<::std::vec::Vec::<crate::types::InventoryConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.inventory_configuration_list.take().unwrap_or_default();
                             list_7.push(
-                                crate::protocol_serde::shape_inventory_configuration::de_inventory_configuration(&mut tag)
+                                crate::protocol_serde::shape_inventory_configuration::de_inventory_configuration(&mut tag, depth + 1)
                                 ?
                             );
                             list_7

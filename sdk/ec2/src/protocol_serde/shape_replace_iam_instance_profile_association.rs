@@ -53,6 +53,8 @@ pub fn de_replace_iam_instance_profile_association(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ReplaceIamInstanceProfileAssociationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ReplaceIamInstanceProfileAssociationResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_replace_iam_instance_profile_association(
             s if s.matches("iamInstanceProfileAssociation") /* IamInstanceProfileAssociation com.amazonaws.ec2.synthetic#ReplaceIamInstanceProfileAssociationOutput$IamInstanceProfileAssociation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_iam_instance_profile_association::de_iam_instance_profile_association(&mut tag)
+                        crate::protocol_serde::shape_iam_instance_profile_association::de_iam_instance_profile_association(&mut tag, depth + 1)
                         ?
                     )
                 ;

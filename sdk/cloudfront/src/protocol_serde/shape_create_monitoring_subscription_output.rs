@@ -23,5 +23,7 @@ pub fn de_monitoring_subscription(inp: &[u8]) -> std::result::Result<crate::type
             "invalid root, expected MonitoringSubscription got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_monitoring_subscription::de_monitoring_subscription(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_monitoring_subscription::de_monitoring_subscription(&mut decoder, depth + 1)
 }

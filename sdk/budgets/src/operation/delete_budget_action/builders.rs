@@ -123,16 +123,19 @@ impl DeleteBudgetActionFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
         self
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_budget_name()
     }

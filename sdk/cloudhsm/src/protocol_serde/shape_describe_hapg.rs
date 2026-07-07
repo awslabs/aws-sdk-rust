@@ -101,6 +101,8 @@ pub(crate) fn de_describe_hapg(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -121,13 +123,13 @@ pub(crate) fn de_describe_hapg(
                     );
                 }
                 "HsmsLastActionFailed" => {
-                    builder = builder.set_hsms_last_action_failed(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value)?);
+                    builder = builder.set_hsms_last_action_failed(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value, depth + 1)?);
                 }
                 "HsmsPendingDeletion" => {
-                    builder = builder.set_hsms_pending_deletion(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value)?);
+                    builder = builder.set_hsms_pending_deletion(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value, depth + 1)?);
                 }
                 "HsmsPendingRegistration" => {
-                    builder = builder.set_hsms_pending_registration(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value)?);
+                    builder = builder.set_hsms_pending_registration(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value, depth + 1)?);
                 }
                 "Label" => {
                     builder = builder.set_label(
@@ -145,7 +147,9 @@ pub(crate) fn de_describe_hapg(
                 }
                 "PartitionSerialList" => {
                     builder = builder.set_partition_serial_list(crate::protocol_serde::shape_partition_serial_list::de_partition_serial_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "State" => {

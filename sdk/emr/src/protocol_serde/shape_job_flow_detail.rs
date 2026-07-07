@@ -2,10 +2,16 @@
 pub(crate) fn de_job_flow_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobFlowDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,25 +58,39 @@ where
                         }
                         "ExecutionStatusDetail" => {
                             builder = builder.set_execution_status_detail(
-                                crate::protocol_serde::shape_job_flow_execution_status_detail::de_job_flow_execution_status_detail(tokens, _value)?,
+                                crate::protocol_serde::shape_job_flow_execution_status_detail::de_job_flow_execution_status_detail(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Instances" => {
                             builder = builder.set_instances(crate::protocol_serde::shape_job_flow_instances_detail::de_job_flow_instances_detail(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Steps" => {
-                            builder = builder.set_steps(crate::protocol_serde::shape_step_detail_list::de_step_detail_list(tokens, _value)?);
+                            builder = builder.set_steps(crate::protocol_serde::shape_step_detail_list::de_step_detail_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BootstrapActions" => {
                             builder = builder.set_bootstrap_actions(
-                                crate::protocol_serde::shape_bootstrap_action_detail_list::de_bootstrap_action_detail_list(tokens, _value)?,
+                                crate::protocol_serde::shape_bootstrap_action_detail_list::de_bootstrap_action_detail_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SupportedProducts" => {
                             builder = builder.set_supported_products(
-                                crate::protocol_serde::shape_supported_products_list::de_supported_products_list(tokens, _value)?,
+                                crate::protocol_serde::shape_supported_products_list::de_supported_products_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "VisibleToAllUsers" => {

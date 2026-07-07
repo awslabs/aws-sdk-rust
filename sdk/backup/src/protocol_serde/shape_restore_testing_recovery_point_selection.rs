@@ -45,10 +45,16 @@ pub fn ser_restore_testing_recovery_point_selection(
 pub(crate) fn de_restore_testing_recovery_point_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RestoreTestingRecoveryPointSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -70,14 +76,16 @@ where
                                 );
                             }
                             "ExcludeVaults" => {
-                                builder = builder.set_exclude_vaults(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                                builder =
+                                    builder.set_exclude_vaults(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                             }
                             "IncludeVaults" => {
-                                builder = builder.set_include_vaults(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                                builder =
+                                    builder.set_include_vaults(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                             }
                             "RecoveryPointTypes" => {
                                 builder = builder.set_recovery_point_types(
-                                    crate::protocol_serde::shape_restore_testing_recovery_point_type_list::de_restore_testing_recovery_point_type_list(tokens, _value)?
+                                    crate::protocol_serde::shape_restore_testing_recovery_point_type_list::de_restore_testing_recovery_point_type_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "SelectionWindowDays" => {

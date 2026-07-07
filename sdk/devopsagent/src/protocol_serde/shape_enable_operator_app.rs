@@ -207,6 +207,8 @@ pub(crate) fn de_enable_operator_app(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -221,18 +223,31 @@ pub(crate) fn de_enable_operator_app(
                 }
                 "iam" => {
                     builder = builder.set_iam(crate::protocol_serde::shape_iam_auth_configuration::de_iam_auth_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "idc" => {
                     builder = builder.set_idc(crate::protocol_serde::shape_idc_auth_configuration::de_idc_auth_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "idp" => {
                     builder = builder.set_idp(crate::protocol_serde::shape_idp_auth_configuration::de_idp_auth_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
+                }
+                "operatorAppUrl" => {
+                    builder = builder.set_operator_app_url(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

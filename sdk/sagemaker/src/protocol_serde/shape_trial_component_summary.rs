@@ -2,10 +2,16 @@
 pub(crate) fn de_trial_component_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TrialComponentSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,12 +44,14 @@ where
                         }
                         "TrialComponentSource" => {
                             builder = builder.set_trial_component_source(
-                                crate::protocol_serde::shape_trial_component_source::de_trial_component_source(tokens, _value)?,
+                                crate::protocol_serde::shape_trial_component_source::de_trial_component_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "Status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_trial_component_status::de_trial_component_status(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "StartTime" => {
@@ -65,7 +73,7 @@ where
                             )?);
                         }
                         "CreatedBy" => {
-                            builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                            builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                         }
                         "LastModifiedTime" => {
                             builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -74,7 +82,8 @@ where
                             )?);
                         }
                         "LastModifiedBy" => {
-                            builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                            builder =
+                                builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

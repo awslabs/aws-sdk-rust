@@ -21,6 +21,10 @@ pub struct GetResourceOauth2TokenInput {
     pub custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An opaque string that will be sent back to the callback URL provided in resourceOauth2ReturnUrl. This state should be used to protect the callback URL of your application against CSRF attacks by ensuring the response corresponds to the original request.</p>
     pub custom_state: ::std::option::Option<::std::string::String>,
+    /// <p>The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.</p>
+    pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.</p>
+    pub audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetResourceOauth2TokenInput {
     /// <p>The identity token of the workload from which you want to retrieve the OAuth2 token.</p>
@@ -61,6 +65,18 @@ impl GetResourceOauth2TokenInput {
     pub fn custom_state(&self) -> ::std::option::Option<&str> {
         self.custom_state.as_deref()
     }
+    /// <p>The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
+    }
+    /// <p>The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audiences.is_none()`.
+    pub fn audiences(&self) -> &[::std::string::String] {
+        self.audiences.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetResourceOauth2TokenInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -74,6 +90,8 @@ impl ::std::fmt::Debug for GetResourceOauth2TokenInput {
         formatter.field("force_authentication", &self.force_authentication);
         formatter.field("custom_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_state", &"*** Sensitive Data Redacted ***");
+        formatter.field("resources", &self.resources);
+        formatter.field("audiences", &self.audiences);
         formatter.finish()
     }
 }
@@ -97,6 +115,8 @@ pub struct GetResourceOauth2TokenInputBuilder {
     pub(crate) force_authentication: ::std::option::Option<bool>,
     pub(crate) custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) custom_state: ::std::option::Option<::std::string::String>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetResourceOauth2TokenInputBuilder {
     /// <p>The identity token of the workload from which you want to retrieve the OAuth2 token.</p>
@@ -247,6 +267,46 @@ impl GetResourceOauth2TokenInputBuilder {
     pub fn get_custom_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_state
     }
+    /// Appends an item to `resources`.
+    ///
+    /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+    ///
+    /// <p>The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.</p>
+    pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.resources.unwrap_or_default();
+        v.push(input.into());
+        self.resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.</p>
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.resources = input;
+        self
+    }
+    /// <p>The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
+    /// Appends an item to `audiences`.
+    ///
+    /// To override the contents of this collection use [`set_audiences`](Self::set_audiences).
+    ///
+    /// <p>The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.</p>
+    pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.audiences.unwrap_or_default();
+        v.push(input.into());
+        self.audiences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.</p>
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.audiences = input;
+        self
+    }
+    /// <p>The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.</p>
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.audiences
+    }
     /// Consumes the builder and constructs a [`GetResourceOauth2TokenInput`](crate::operation::get_resource_oauth2_token::GetResourceOauth2TokenInput).
     pub fn build(
         self,
@@ -264,6 +324,8 @@ impl GetResourceOauth2TokenInputBuilder {
             force_authentication: self.force_authentication,
             custom_parameters: self.custom_parameters,
             custom_state: self.custom_state,
+            resources: self.resources,
+            audiences: self.audiences,
         })
     }
 }
@@ -279,6 +341,8 @@ impl ::std::fmt::Debug for GetResourceOauth2TokenInputBuilder {
         formatter.field("force_authentication", &self.force_authentication);
         formatter.field("custom_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_state", &"*** Sensitive Data Redacted ***");
+        formatter.field("resources", &self.resources);
+        formatter.field("audiences", &self.audiences);
         formatter.finish()
     }
 }

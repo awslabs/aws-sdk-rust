@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_image_criterion(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ImageCriterion, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ImageCriterion::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_image_criterion(
             s if s.matches("imageProviderSet") /* ImageProviders com.amazonaws.ec2#ImageCriterion$ImageProviders */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_image_provider_list::de_image_provider_list(&mut tag)
+                        crate::protocol_serde::shape_image_provider_list::de_image_provider_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_image_criterion(
             s if s.matches("marketplaceProductCodeSet") /* MarketplaceProductCodes com.amazonaws.ec2#ImageCriterion$MarketplaceProductCodes */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_marketplace_product_code_list::de_marketplace_product_code_list(&mut tag)
+                        crate::protocol_serde::shape_marketplace_product_code_list::de_marketplace_product_code_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -30,7 +34,7 @@ pub fn de_image_criterion(
             s if s.matches("imageNameSet") /* ImageNames com.amazonaws.ec2#ImageCriterion$ImageNames */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_image_name_list::de_image_name_list(&mut tag)
+                        crate::protocol_serde::shape_image_name_list::de_image_name_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -40,7 +44,7 @@ pub fn de_image_criterion(
             s if s.matches("deprecationTimeCondition") /* DeprecationTimeCondition com.amazonaws.ec2#ImageCriterion$DeprecationTimeCondition */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_deprecation_time_condition::de_deprecation_time_condition(&mut tag)
+                        crate::protocol_serde::shape_deprecation_time_condition::de_deprecation_time_condition(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -50,11 +54,21 @@ pub fn de_image_criterion(
             s if s.matches("creationDateCondition") /* CreationDateCondition com.amazonaws.ec2#ImageCriterion$CreationDateCondition */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_creation_date_condition::de_creation_date_condition(&mut tag)
+                        crate::protocol_serde::shape_creation_date_condition::de_creation_date_condition(&mut tag, depth + 1)
                         ?
                     )
                 ;
                 builder = builder.set_creation_date_condition(var_5);
+            }
+            ,
+            s if s.matches("imageWatermarkSet") /* ImageWatermarks com.amazonaws.ec2#ImageCriterion$ImageWatermarks */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_image_watermark_filter_response_list::de_image_watermark_filter_response_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_image_watermarks(var_6);
             }
             ,
             _ => {}

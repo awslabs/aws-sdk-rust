@@ -116,6 +116,8 @@ pub(crate) fn de_get_ml_task_run(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -150,7 +152,11 @@ pub(crate) fn de_get_ml_task_run(
                     );
                 }
                 "Properties" => {
-                    builder = builder.set_properties(crate::protocol_serde::shape_task_run_properties::de_task_run_properties(tokens, _value)?);
+                    builder = builder.set_properties(crate::protocol_serde::shape_task_run_properties::de_task_run_properties(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ErrorString" => {
                     builder = builder.set_error_string(

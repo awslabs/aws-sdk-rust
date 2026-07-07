@@ -42,10 +42,16 @@ pub fn ser_database_configuration(
 pub(crate) fn de_database_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DatabaseConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,39 +60,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "DatabaseEngineType" => {
-                            builder = builder.set_database_engine_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DatabaseEngineType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "DatabaseEngineType" => {
+                                builder = builder.set_database_engine_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DatabaseEngineType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "ConnectionConfiguration" => {
+                                builder = builder.set_connection_configuration(
+                                    crate::protocol_serde::shape_connection_configuration::de_connection_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "VpcConfiguration" => {
+                                builder = builder.set_vpc_configuration(
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ColumnConfiguration" => {
+                                builder = builder.set_column_configuration(
+                                    crate::protocol_serde::shape_column_configuration::de_column_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "AclConfiguration" => {
+                                builder = builder.set_acl_configuration(crate::protocol_serde::shape_acl_configuration::de_acl_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SqlConfiguration" => {
+                                builder = builder.set_sql_configuration(crate::protocol_serde::shape_sql_configuration::de_sql_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "ConnectionConfiguration" => {
-                            builder = builder.set_connection_configuration(
-                                crate::protocol_serde::shape_connection_configuration::de_connection_configuration(tokens, _value)?,
-                            );
-                        }
-                        "VpcConfiguration" => {
-                            builder = builder.set_vpc_configuration(
-                                crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
-                            );
-                        }
-                        "ColumnConfiguration" => {
-                            builder = builder.set_column_configuration(crate::protocol_serde::shape_column_configuration::de_column_configuration(
-                                tokens, _value,
-                            )?);
-                        }
-                        "AclConfiguration" => {
-                            builder =
-                                builder.set_acl_configuration(crate::protocol_serde::shape_acl_configuration::de_acl_configuration(tokens, _value)?);
-                        }
-                        "SqlConfiguration" => {
-                            builder =
-                                builder.set_sql_configuration(crate::protocol_serde::shape_sql_configuration::de_sql_configuration(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

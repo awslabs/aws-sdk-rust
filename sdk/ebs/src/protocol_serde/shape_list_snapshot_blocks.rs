@@ -147,6 +147,8 @@ pub(crate) fn de_list_snapshot_blocks(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -160,7 +162,7 @@ pub(crate) fn de_list_snapshot_blocks(
                     );
                 }
                 "Blocks" => {
-                    builder = builder.set_blocks(crate::protocol_serde::shape_blocks::de_blocks(tokens, _value)?);
+                    builder = builder.set_blocks(crate::protocol_serde::shape_blocks::de_blocks(tokens, _value, depth + 1)?);
                 }
                 "ExpiryTime" => {
                     builder = builder.set_expiry_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -2,10 +2,16 @@
 pub(crate) fn de_stream_description_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StreamDescriptionSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,99 +20,104 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "StreamName" => {
-                            builder = builder.set_stream_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "StreamName" => {
+                                builder = builder.set_stream_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "StreamARN" => {
+                                builder = builder.set_stream_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "StreamId" => {
+                                builder = builder.set_stream_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "StreamStatus" => {
+                                builder = builder.set_stream_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::StreamStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "StreamModeDetails" => {
+                                builder = builder.set_stream_mode_details(crate::protocol_serde::shape_stream_mode_details::de_stream_mode_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RetentionPeriodHours" => {
+                                builder = builder.set_retention_period_hours(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "StreamCreationTimestamp" => {
+                                builder = builder.set_stream_creation_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "EnhancedMonitoring" => {
+                                builder = builder.set_enhanced_monitoring(
+                                    crate::protocol_serde::shape_enhanced_monitoring_list::de_enhanced_monitoring_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "EncryptionType" => {
+                                builder = builder.set_encryption_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "KeyId" => {
+                                builder = builder.set_key_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "OpenShardCount" => {
+                                builder = builder.set_open_shard_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "ConsumerCount" => {
+                                builder = builder.set_consumer_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "WarmThroughput" => {
+                                builder = builder.set_warm_throughput(
+                                    crate::protocol_serde::shape_warm_throughput_object::de_warm_throughput_object(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "MaxRecordSizeInKiB" => {
+                                builder = builder.set_max_record_size_in_kib(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "StreamARN" => {
-                            builder = builder.set_stream_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "StreamId" => {
-                            builder = builder.set_stream_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "StreamStatus" => {
-                            builder = builder.set_stream_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::StreamStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "StreamModeDetails" => {
-                            builder = builder
-                                .set_stream_mode_details(crate::protocol_serde::shape_stream_mode_details::de_stream_mode_details(tokens, _value)?);
-                        }
-                        "RetentionPeriodHours" => {
-                            builder = builder.set_retention_period_hours(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "StreamCreationTimestamp" => {
-                            builder = builder.set_stream_creation_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "EnhancedMonitoring" => {
-                            builder = builder.set_enhanced_monitoring(
-                                crate::protocol_serde::shape_enhanced_monitoring_list::de_enhanced_monitoring_list(tokens, _value)?,
-                            );
-                        }
-                        "EncryptionType" => {
-                            builder = builder.set_encryption_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "KeyId" => {
-                            builder = builder.set_key_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "OpenShardCount" => {
-                            builder = builder.set_open_shard_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "ConsumerCount" => {
-                            builder = builder.set_consumer_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "WarmThroughput" => {
-                            builder = builder.set_warm_throughput(crate::protocol_serde::shape_warm_throughput_object::de_warm_throughput_object(
-                                tokens, _value,
-                            )?);
-                        }
-                        "MaxRecordSizeInKiB" => {
-                            builder = builder.set_max_record_size_in_kib(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

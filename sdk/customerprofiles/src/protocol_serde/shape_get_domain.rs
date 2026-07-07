@@ -120,6 +120,8 @@ pub(crate) fn de_get_domain(
 ) -> ::std::result::Result<crate::operation::get_domain::builders::GetDomainOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -132,7 +134,11 @@ pub(crate) fn de_get_domain(
                     )?);
                 }
                 "DataStore" => {
-                    builder = builder.set_data_store(crate::protocol_serde::shape_data_store_response::de_data_store_response(tokens, _value)?);
+                    builder = builder.set_data_store(crate::protocol_serde::shape_data_store_response::de_data_store_response(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "DeadLetterQueueUrl" => {
                     builder = builder.set_dead_letter_queue_url(
@@ -169,18 +175,22 @@ pub(crate) fn de_get_domain(
                     )?);
                 }
                 "Matching" => {
-                    builder = builder.set_matching(crate::protocol_serde::shape_matching_response::de_matching_response(tokens, _value)?);
+                    builder = builder.set_matching(crate::protocol_serde::shape_matching_response::de_matching_response(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "RuleBasedMatching" => {
                     builder = builder.set_rule_based_matching(
-                        crate::protocol_serde::shape_rule_based_matching_response::de_rule_based_matching_response(tokens, _value)?,
+                        crate::protocol_serde::shape_rule_based_matching_response::de_rule_based_matching_response(tokens, _value, depth + 1)?,
                     );
                 }
                 "Stats" => {
-                    builder = builder.set_stats(crate::protocol_serde::shape_domain_stats::de_domain_stats(tokens, _value)?);
+                    builder = builder.set_stats(crate::protocol_serde::shape_domain_stats::de_domain_stats(tokens, _value, depth + 1)?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

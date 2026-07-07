@@ -19,6 +19,8 @@ pub use crate::types::_host_recovery::HostRecovery;
 
 pub use crate::types::_host_maintenance::HostMaintenance;
 
+pub use crate::types::_host_cpu_options_request::HostCpuOptionsRequest;
+
 pub use crate::types::_auto_placement::AutoPlacement;
 
 pub use crate::types::_ipam_pool_allocation::IpamPoolAllocation;
@@ -71,6 +73,8 @@ pub use crate::types::_storage::Storage;
 
 pub use crate::types::_bundle_task::BundleTask;
 
+pub use crate::types::_apply_cancellation_charges::ApplyCancellationCharges;
+
 pub use crate::types::_volume_type::VolumeType;
 
 pub use crate::types::_schedule::Schedule;
@@ -88,6 +92,8 @@ pub use crate::types::_instance_match_criteria::InstanceMatchCriteria;
 pub use crate::types::_capacity_reservation_delivery_preference::CapacityReservationDeliveryPreference;
 
 pub use crate::types::_capacity_reservation::CapacityReservation;
+
+pub use crate::types::_capacity_reservation_cancellation_quote::CapacityReservationCancellationQuote;
 
 pub use crate::types::_fleet_capacity_reservation_tenancy::FleetCapacityReservationTenancy;
 
@@ -449,6 +455,8 @@ pub use crate::types::_transit_gateway_multicast_deregistered_group_members::Tra
 
 pub use crate::types::_transit_gateway_multicast_deregistered_group_sources::TransitGatewayMulticastDeregisteredGroupSources;
 
+pub use crate::types::_account_vpc_encryption_control::AccountVpcEncryptionControl;
+
 pub use crate::types::_address_attribute_name::AddressAttributeName;
 
 pub use crate::types::_caller_role::CallerRole;
@@ -615,6 +623,10 @@ pub use crate::types::_lock_mode::LockMode;
 
 pub use crate::types::_lock_state::LockState;
 
+pub use crate::types::_account_vpc_encryption_control_mode::AccountVpcEncryptionControlMode;
+
+pub use crate::types::_vpc_encryption_control_exclusion_state_input::VpcEncryptionControlExclusionStateInput;
+
 pub use crate::types::_address_attribute::AddressAttribute;
 
 pub use crate::types::_modify_availability_zone_opt_in_status::ModifyAvailabilityZoneOptInStatus;
@@ -626,6 +638,8 @@ pub use crate::types::_operation_type::OperationType;
 pub use crate::types::_load_permission_modifications::LoadPermissionModifications;
 
 pub use crate::types::_launch_permission_modifications::LaunchPermissionModifications;
+
+pub use crate::types::_enclave_options_request::EnclaveOptionsRequest;
 
 pub use crate::types::_blob_attribute_value::BlobAttributeValue;
 
@@ -711,7 +725,9 @@ pub use crate::types::_internet_gateway_block_mode::InternetGatewayBlockMode;
 
 pub use crate::types::_vpc_encryption_control_mode::VpcEncryptionControlMode;
 
-pub use crate::types::_vpc_encryption_control_exclusion_state_input::VpcEncryptionControlExclusionStateInput;
+pub use crate::types::_payer_responsibility_type::PayerResponsibilityType;
+
+pub use crate::types::_payer_responsibility_scope::PayerResponsibilityScope;
 
 pub use crate::types::_payer_responsibility::PayerResponsibility;
 
@@ -720,6 +736,8 @@ pub use crate::types::_peering_connection_options_request::PeeringConnectionOpti
 pub use crate::types::_peering_connection_options::PeeringConnectionOptions;
 
 pub use crate::types::_vpc_tenancy::VpcTenancy;
+
+pub use crate::types::_vpn_tunnel_bandwidth::VpnTunnelBandwidth;
 
 pub use crate::types::_modify_vpn_tunnel_options_specification::ModifyVpnTunnelOptionsSpecification;
 
@@ -779,8 +797,6 @@ pub use crate::types::_hibernation_options_request::HibernationOptionsRequest;
 
 pub use crate::types::_instance_metadata_options_request::InstanceMetadataOptionsRequest;
 
-pub use crate::types::_enclave_options_request::EnclaveOptionsRequest;
-
 pub use crate::types::_private_dns_name_options_request::PrivateDnsNameOptionsRequest;
 
 pub use crate::types::_instance_maintenance_options_request::InstanceMaintenanceOptionsRequest;
@@ -820,6 +836,8 @@ pub use crate::types::_vpc_peering_connection_vpc_info::VpcPeeringConnectionVpcI
 pub use crate::types::_vpc_peering_connection_state_reason::VpcPeeringConnectionStateReason;
 
 pub use crate::types::_byoip_cidr_state::ByoipCidrState;
+
+pub use crate::types::_amd_sev_snp::AmdSevSnp;
 
 pub use crate::types::_ipam_pool_allocation_resource_type::IpamPoolAllocationResourceType;
 
@@ -905,6 +923,10 @@ pub use crate::types::_capacity_reservation_type::CapacityReservationType;
 
 pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfo;
 
+pub use crate::types::_capacity_reservation_cancellation_quote_state::CapacityReservationCancellationQuoteState;
+
+pub use crate::types::_capacity_reservation_configuration::CapacityReservationConfiguration;
+
 pub use crate::types::_reservation_fleet_instance_specification::ReservationFleetInstanceSpecification;
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservation;
@@ -952,6 +974,8 @@ pub use crate::types::_create_fleet_error::CreateFleetError;
 pub use crate::types::_create_fleet_instance::CreateFleetInstance;
 
 pub use crate::types::_destination_file_format::DestinationFileFormat;
+
+pub use crate::types::_tag_field_specification_request::TagFieldSpecificationRequest;
 
 pub use crate::types::_block_device_mapping::BlockDeviceMapping;
 
@@ -1221,8 +1245,6 @@ pub use crate::types::_private_dns_name_configuration::PrivateDnsNameConfigurati
 
 pub use crate::types::_tunnel_inside_ip_version::TunnelInsideIpVersion;
 
-pub use crate::types::_vpn_tunnel_bandwidth::VpnTunnelBandwidth;
-
 pub use crate::types::_gateway_association_state::GatewayAssociationState;
 
 pub use crate::types::_vpn_connection_options::VpnConnectionOptions;
@@ -1252,6 +1274,10 @@ pub use crate::types::_delete_snapshot_return_code::DeleteSnapshotReturnCode;
 pub use crate::types::_account_attribute_name::AccountAttributeName;
 
 pub use crate::types::_account_attribute::AccountAttribute;
+
+pub use crate::types::_account_vpc_encryption_control_state::AccountVpcEncryptionControlState;
+
+pub use crate::types::_account_vpc_encryption_control_exclusions::AccountVpcEncryptionControlExclusions;
 
 pub use crate::types::_filter::Filter;
 
@@ -1689,6 +1715,8 @@ pub use crate::types::_verified_access_logs::VerifiedAccessLogs;
 
 pub use crate::types::_volume_modification_state::VolumeModificationState;
 
+pub use crate::types::_payer_responsibility_entry::PayerResponsibilityEntry;
+
 pub use crate::types::_added_principal::AddedPrincipal;
 
 pub use crate::types::_vpn_tunnel_log_options_specification::VpnTunnelLogOptionsSpecification;
@@ -1781,6 +1809,8 @@ pub use crate::types::_cancel_spot_instance_request_state::CancelSpotInstanceReq
 
 pub use crate::types::_capacity_allocation::CapacityAllocation;
 
+pub use crate::types::_cancellation_terms::CancellationTerms;
+
 pub use crate::types::_client_vpn_authentication_type::ClientVpnAuthenticationType;
 
 pub use crate::types::_directory_service_authentication_request::DirectoryServiceAuthenticationRequest;
@@ -1806,6 +1836,8 @@ pub use crate::types::_fleet_launch_template_specification_request::FleetLaunchT
 pub use crate::types::_launch_template_and_overrides_response::LaunchTemplateAndOverridesResponse;
 
 pub use crate::types::_instance_lifecycle::InstanceLifecycle;
+
+pub use crate::types::_taggable_resource_type::TaggableResourceType;
 
 pub use crate::types::_ebs_block_device::EbsBlockDevice;
 
@@ -1923,6 +1955,8 @@ pub use crate::types::_ipam_pool_cidr_failure_code::IpamPoolCidrFailureCode;
 
 pub use crate::types::_snapshot_return_codes::SnapshotReturnCodes;
 
+pub use crate::types::_vpc_encryption_control_exclusion_state::VpcEncryptionControlExclusionState;
+
 pub use crate::types::_service_managed::ServiceManaged;
 
 pub use crate::types::_availability_zone_opt_in_status::AvailabilityZoneOptInStatus;
@@ -1998,6 +2032,8 @@ pub use crate::types::_host_properties::HostProperties;
 pub use crate::types::_allocation_state::AllocationState;
 
 pub use crate::types::_allows_multiple_instance_types::AllowsMultipleInstanceTypes;
+
+pub use crate::types::_host_cpu_options::HostCpuOptions;
 
 pub use crate::types::_permission_group::PermissionGroup;
 
@@ -2337,8 +2373,6 @@ pub use crate::types::_transit_gateway_attachment_bgp_configuration::TransitGate
 
 pub use crate::types::_verified_access_endpoint_port_range::VerifiedAccessEndpointPortRange;
 
-pub use crate::types::_vpc_encryption_control_exclusion_state::VpcEncryptionControlExclusionState;
-
 pub use crate::types::_service_type::ServiceType;
 
 pub use crate::types::_tunnel_option::TunnelOption;
@@ -2383,11 +2417,15 @@ pub use crate::types::_describe_fleet_error::DescribeFleetError;
 
 pub use crate::types::_describe_fleets_instances::DescribeFleetsInstances;
 
+pub use crate::types::_tag_field_specification_response::TagFieldSpecificationResponse;
+
 pub use crate::types::_fpga_image_state_code::FpgaImageStateCode;
 
 pub use crate::types::_host_instance::HostInstance;
 
 pub use crate::types::_resource_type_option::ResourceTypeOption;
+
+pub use crate::types::_image_watermark::ImageWatermark;
 
 pub use crate::types::_image_usage_resource_type::ImageUsageResourceType;
 
@@ -2457,6 +2495,8 @@ pub use crate::types::_enable_fast_snapshot_restore_state_error_item::EnableFast
 
 pub use crate::types::_verified_access_instance_open_vpn_client_configuration_route::VerifiedAccessInstanceOpenVpnClientConfigurationRoute;
 
+pub use crate::types::_image_watermark_filter_response::ImageWatermarkFilterResponse;
+
 pub use crate::types::_metric_point::MetricPoint;
 
 pub use crate::types::_filter_by_dimension::FilterByDimension;
@@ -2498,6 +2538,8 @@ pub use crate::types::_launch_template_overrides::LaunchTemplateOverrides;
 pub use crate::types::_verified_access_log_delivery_status::VerifiedAccessLogDeliveryStatus;
 
 pub use crate::types::_monitoring_state::MonitoringState;
+
+pub use crate::types::_image_watermark_filter_request::ImageWatermarkFilterRequest;
 
 pub use crate::types::_replacement_strategy::ReplacementStrategy;
 
@@ -2739,6 +2781,14 @@ mod _account_attribute_name;
 
 mod _account_attribute_value;
 
+mod _account_vpc_encryption_control;
+
+mod _account_vpc_encryption_control_exclusions;
+
+mod _account_vpc_encryption_control_mode;
+
+mod _account_vpc_encryption_control_state;
+
 mod _active_instance;
 
 mod _active_vpn_tunnel_status;
@@ -2785,6 +2835,8 @@ mod _allows_multiple_instance_types;
 
 mod _alternate_path_hint;
 
+mod _amd_sev_snp;
+
 mod _amd_sev_snp_specification;
 
 mod _analysis_acl_rule;
@@ -2804,6 +2856,8 @@ mod _analysis_security_group_rule;
 mod _analysis_status;
 
 mod _appliance_mode_support_value;
+
+mod _apply_cancellation_charges;
 
 mod _architecture_type;
 
@@ -2933,6 +2987,8 @@ mod _cancel_spot_fleet_requests_success_item;
 
 mod _cancel_spot_instance_request_state;
 
+mod _cancellation_terms;
+
 mod _cancelled_spot_instance_request;
 
 mod _capacity_allocation;
@@ -2977,7 +3033,13 @@ mod _capacity_reservation_billing_request;
 
 mod _capacity_reservation_billing_request_status;
 
+mod _capacity_reservation_cancellation_quote;
+
+mod _capacity_reservation_cancellation_quote_state;
+
 mod _capacity_reservation_commitment_info;
+
+mod _capacity_reservation_configuration;
 
 mod _capacity_reservation_delivery_preference;
 
@@ -3547,6 +3609,10 @@ mod _history_record_entry;
 
 mod _host;
 
+mod _host_cpu_options;
+
+mod _host_cpu_options_request;
+
 mod _host_instance;
 
 mod _host_maintenance;
@@ -3628,6 +3694,12 @@ mod _image_usage_resource_type_option;
 mod _image_usage_resource_type_option_request;
 
 mod _image_usage_resource_type_request;
+
+mod _image_watermark;
+
+mod _image_watermark_filter_request;
+
+mod _image_watermark_filter_response;
 
 mod _imds_support_values;
 
@@ -4421,6 +4493,12 @@ mod _path_statement_request;
 
 mod _payer_responsibility;
 
+mod _payer_responsibility_entry;
+
+mod _payer_responsibility_scope;
+
+mod _payer_responsibility_type;
+
 mod _payment_option;
 
 mod _pci_id;
@@ -4969,7 +5047,13 @@ mod _tag;
 
 mod _tag_description;
 
+mod _tag_field_specification_request;
+
+mod _tag_field_specification_response;
+
 mod _tag_specification;
+
+mod _taggable_resource_type;
 
 mod _target_capacity_specification;
 

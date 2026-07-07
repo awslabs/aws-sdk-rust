@@ -2,10 +2,16 @@
 pub(crate) fn de_resiliency_score<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResiliencyScore>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -21,13 +27,15 @@ where
                         }
                         "disruptionScore" => {
                             builder = builder.set_disruption_score(
-                                crate::protocol_serde::shape_disruption_resiliency_score::de_disruption_resiliency_score(tokens, _value)?,
+                                crate::protocol_serde::shape_disruption_resiliency_score::de_disruption_resiliency_score(tokens, _value, depth + 1)?,
                             );
                         }
                         "componentScore" => {
                             builder = builder.set_component_score(
                                 crate::protocol_serde::shape_scoring_component_resiliency_scores::de_scoring_component_resiliency_scores(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

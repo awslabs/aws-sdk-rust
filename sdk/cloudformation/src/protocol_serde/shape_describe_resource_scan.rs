@@ -75,6 +75,8 @@ pub fn de_describe_resource_scan(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeResourceScanResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeResourceScanResponse got {start_el:?}"
@@ -175,7 +177,7 @@ pub fn de_describe_resource_scan(
             s if s.matches("ResourceTypes") /* ResourceTypes com.amazonaws.cloudformation.synthetic#DescribeResourceScanOutput$ResourceTypes */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_resource_types::de_resource_types(&mut tag)
+                        crate::protocol_serde::shape_resource_types::de_resource_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -215,7 +217,7 @@ pub fn de_describe_resource_scan(
             s if s.matches("ScanFilters") /* ScanFilters com.amazonaws.cloudformation.synthetic#DescribeResourceScanOutput$ScanFilters */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_scan_filters::de_scan_filters(&mut tag)
+                        crate::protocol_serde::shape_scan_filters::de_scan_filters(&mut tag, depth + 1)
                         ?
                     )
                 ;

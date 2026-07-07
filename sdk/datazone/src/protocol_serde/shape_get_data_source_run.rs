@@ -165,6 +165,8 @@ pub(crate) fn de_get_data_source_run(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -199,7 +201,9 @@ pub(crate) fn de_get_data_source_run(
                 }
                 "errorMessage" => {
                     builder = builder.set_error_message(crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "id" => {
@@ -211,7 +215,7 @@ pub(crate) fn de_get_data_source_run(
                 }
                 "lineageSummary" => {
                     builder = builder.set_lineage_summary(
-                        crate::protocol_serde::shape_data_source_run_lineage_summary::de_data_source_run_lineage_summary(tokens, _value)?,
+                        crate::protocol_serde::shape_data_source_run_lineage_summary::de_data_source_run_lineage_summary(tokens, _value, depth + 1)?,
                     );
                 }
                 "projectId" => {
@@ -223,7 +227,7 @@ pub(crate) fn de_get_data_source_run(
                 }
                 "runStatisticsForAssets" => {
                     builder = builder.set_run_statistics_for_assets(
-                        crate::protocol_serde::shape_run_statistics_for_assets::de_run_statistics_for_assets(tokens, _value)?,
+                        crate::protocol_serde::shape_run_statistics_for_assets::de_run_statistics_for_assets(tokens, _value, depth + 1)?,
                     );
                 }
                 "startedAt" => {

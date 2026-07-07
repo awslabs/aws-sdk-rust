@@ -33,6 +33,8 @@ pub struct CreateGatewayOutput {
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub custom_transform_configuration: ::std::option::Option<crate::types::CustomTransformConfiguration>,
     /// <p>The list of interceptor configurations for the created gateway.</p>
     pub interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
     /// <p>The policy engine configuration for the created gateway.</p>
@@ -47,6 +49,10 @@ pub struct CreateGatewayOutput {
     /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
     /// </ul>
     pub exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services WAF web ACL associated with the gateway.</p>
+    pub web_acl_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services WAF configuration for the gateway.</p>
+    pub waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateGatewayOutput {
@@ -115,6 +121,10 @@ impl CreateGatewayOutput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn custom_transform_configuration(&self) -> ::std::option::Option<&crate::types::CustomTransformConfiguration> {
+        self.custom_transform_configuration.as_ref()
+    }
     /// <p>The list of interceptor configurations for the created gateway.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interceptor_configurations.is_none()`.
@@ -139,6 +149,14 @@ impl CreateGatewayOutput {
     pub fn exception_level(&self) -> ::std::option::Option<&crate::types::ExceptionLevel> {
         self.exception_level.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services WAF web ACL associated with the gateway.</p>
+    pub fn web_acl_arn(&self) -> ::std::option::Option<&str> {
+        self.web_acl_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn waf_configuration(&self) -> ::std::option::Option<&crate::types::WafConfiguration> {
+        self.waf_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateGatewayOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -150,7 +168,7 @@ impl ::std::fmt::Debug for CreateGatewayOutput {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status", &self.status);
         formatter.field("status_reasons", &self.status_reasons);
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("role_arn", &self.role_arn);
         formatter.field("protocol_type", &self.protocol_type);
@@ -158,10 +176,13 @@ impl ::std::fmt::Debug for CreateGatewayOutput {
         formatter.field("authorizer_type", &self.authorizer_type);
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("custom_transform_configuration", &self.custom_transform_configuration);
         formatter.field("interceptor_configurations", &self.interceptor_configurations);
         formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("exception_level", &self.exception_level);
+        formatter.field("web_acl_arn", &self.web_acl_arn);
+        formatter.field("waf_configuration", &self.waf_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -197,10 +218,13 @@ pub struct CreateGatewayOutputBuilder {
     pub(crate) authorizer_type: ::std::option::Option<crate::types::AuthorizerType>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_transform_configuration: ::std::option::Option<crate::types::CustomTransformConfiguration>,
     pub(crate) interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
     pub(crate) policy_engine_configuration: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>,
     pub(crate) workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
+    pub(crate) web_acl_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateGatewayOutputBuilder {
@@ -357,7 +381,6 @@ impl CreateGatewayOutputBuilder {
         &self.role_arn
     }
     /// <p>The protocol type of the gateway.</p>
-    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self
@@ -427,6 +450,20 @@ impl CreateGatewayOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
+    }
+    /// <p>The custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn custom_transform_configuration(mut self, input: crate::types::CustomTransformConfiguration) -> Self {
+        self.custom_transform_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn set_custom_transform_configuration(mut self, input: ::std::option::Option<crate::types::CustomTransformConfiguration>) -> Self {
+        self.custom_transform_configuration = input;
+        self
+    }
+    /// <p>The custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn get_custom_transform_configuration(&self) -> &::std::option::Option<crate::types::CustomTransformConfiguration> {
+        &self.custom_transform_configuration
     }
     /// Appends an item to `interceptor_configurations`.
     ///
@@ -511,6 +548,34 @@ impl CreateGatewayOutputBuilder {
     pub fn get_exception_level(&self) -> &::std::option::Option<crate::types::ExceptionLevel> {
         &self.exception_level
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services WAF web ACL associated with the gateway.</p>
+    pub fn web_acl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.web_acl_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services WAF web ACL associated with the gateway.</p>
+    pub fn set_web_acl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.web_acl_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services WAF web ACL associated with the gateway.</p>
+    pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_arn
+    }
+    /// <p>The Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn waf_configuration(mut self, input: crate::types::WafConfiguration) -> Self {
+        self.waf_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn set_waf_configuration(mut self, input: ::std::option::Option<crate::types::WafConfiguration>) -> Self {
+        self.waf_configuration = input;
+        self
+    }
+    /// <p>The Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn get_waf_configuration(&self) -> &::std::option::Option<crate::types::WafConfiguration> {
+        &self.waf_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -528,7 +593,6 @@ impl CreateGatewayOutputBuilder {
     /// - [`updated_at`](crate::operation::create_gateway::builders::CreateGatewayOutputBuilder::updated_at)
     /// - [`status`](crate::operation::create_gateway::builders::CreateGatewayOutputBuilder::status)
     /// - [`name`](crate::operation::create_gateway::builders::CreateGatewayOutputBuilder::name)
-    /// - [`protocol_type`](crate::operation::create_gateway::builders::CreateGatewayOutputBuilder::protocol_type)
     /// - [`authorizer_type`](crate::operation::create_gateway::builders::CreateGatewayOutputBuilder::authorizer_type)
     pub fn build(
         self,
@@ -574,12 +638,11 @@ impl CreateGatewayOutputBuilder {
             })?,
             description: self.description,
             role_arn: self.role_arn,
-            protocol_type: self.protocol_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol_type",
-                    "protocol_type was not specified but it is required when building CreateGatewayOutput",
-                )
-            })?,
+            protocol_type: self.protocol_type.unwrap_or(
+                "MCP"
+                    .parse::<crate::types::GatewayProtocolType>()
+                    .expect("static value validated to member"),
+            ),
             protocol_configuration: self.protocol_configuration,
             authorizer_type: self.authorizer_type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -589,10 +652,13 @@ impl CreateGatewayOutputBuilder {
             })?,
             authorizer_configuration: self.authorizer_configuration,
             kms_key_arn: self.kms_key_arn,
+            custom_transform_configuration: self.custom_transform_configuration,
             interceptor_configurations: self.interceptor_configurations,
             policy_engine_configuration: self.policy_engine_configuration,
             workload_identity_details: self.workload_identity_details,
             exception_level: self.exception_level,
+            web_acl_arn: self.web_acl_arn,
+            waf_configuration: self.waf_configuration,
             _request_id: self._request_id,
         })
     }
@@ -607,7 +673,7 @@ impl ::std::fmt::Debug for CreateGatewayOutputBuilder {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status", &self.status);
         formatter.field("status_reasons", &self.status_reasons);
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("role_arn", &self.role_arn);
         formatter.field("protocol_type", &self.protocol_type);
@@ -615,10 +681,13 @@ impl ::std::fmt::Debug for CreateGatewayOutputBuilder {
         formatter.field("authorizer_type", &self.authorizer_type);
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("custom_transform_configuration", &self.custom_transform_configuration);
         formatter.field("interceptor_configurations", &self.interceptor_configurations);
         formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("exception_level", &self.exception_level);
+        formatter.field("web_acl_arn", &self.web_acl_arn);
+        formatter.field("waf_configuration", &self.waf_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

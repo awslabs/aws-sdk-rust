@@ -49,13 +49,17 @@ pub fn ser_service_integrations_union(
 
 pub fn de_service_integrations_union(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ServiceIntegrationsUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     let mut base: Option<crate::types::ServiceIntegrationsUnion> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LakeFormation") /* LakeFormation com.amazonaws.redshift#ServiceIntegrationsUnion$LakeFormation */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_lake_formation_service_integrations::de_lake_formation_service_integrations(&mut tag)
+                    crate::protocol_serde::shape_lake_formation_service_integrations::de_lake_formation_service_integrations(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ServiceIntegrationsUnion::LakeFormation(tmp));
@@ -63,7 +67,7 @@ pub fn de_service_integrations_union(
             ,
             s if s.matches("S3AccessGrants") /* S3AccessGrants com.amazonaws.redshift#ServiceIntegrationsUnion$S3AccessGrants */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_s3_access_grants_service_integrations::de_s3_access_grants_service_integrations(&mut tag)
+                    crate::protocol_serde::shape_s3_access_grants_service_integrations::de_s3_access_grants_service_integrations(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ServiceIntegrationsUnion::S3AccessGrants(tmp));
@@ -71,7 +75,7 @@ pub fn de_service_integrations_union(
             ,
             s if s.matches("Redshift") /* Redshift com.amazonaws.redshift#ServiceIntegrationsUnion$Redshift */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_redshift_service_integrations::de_redshift_service_integrations(&mut tag)
+                    crate::protocol_serde::shape_redshift_service_integrations::de_redshift_service_integrations(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ServiceIntegrationsUnion::Redshift(tmp));

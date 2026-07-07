@@ -379,6 +379,25 @@ impl CreateCanaryFluentBuilder {
         self.inner.get_browser_configs()
     }
     ///
+    /// Appends an item to `AddReplicaLocations`.
+    ///
+    /// To override the contents of this collection use [`set_add_replica_locations`](Self::set_add_replica_locations).
+    ///
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn add_replica_locations(mut self, input: crate::types::AddReplicaLocationInput) -> Self {
+        self.inner = self.inner.add_replica_locations(input);
+        self
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn set_add_replica_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>>) -> Self {
+        self.inner = self.inner.set_add_replica_locations(input);
+        self
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn get_add_replica_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>> {
+        self.inner.get_add_replica_locations()
+    }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

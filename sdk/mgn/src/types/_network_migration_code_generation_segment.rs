@@ -20,6 +20,8 @@ pub struct NetworkMigrationCodeGenerationSegment {
     pub mapper_segment_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of artifacts generated for this segment.</p>
     pub artifacts: ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationCodeGenerationArtifact>>,
+    /// <p>A list of other segments that this segment depends on or references.</p>
+    pub referenced_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The timestamp when the segment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -58,6 +60,12 @@ impl NetworkMigrationCodeGenerationSegment {
     pub fn artifacts(&self) -> &[crate::types::NetworkMigrationCodeGenerationArtifact] {
         self.artifacts.as_deref().unwrap_or_default()
     }
+    /// <p>A list of other segments that this segment depends on or references.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.referenced_segments.is_none()`.
+    pub fn referenced_segments(&self) -> &[::std::string::String] {
+        self.referenced_segments.as_deref().unwrap_or_default()
+    }
     /// <p>The timestamp when the segment was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -82,6 +90,7 @@ pub struct NetworkMigrationCodeGenerationSegmentBuilder {
     pub(crate) logical_id: ::std::option::Option<::std::string::String>,
     pub(crate) mapper_segment_id: ::std::option::Option<::std::string::String>,
     pub(crate) artifacts: ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationCodeGenerationArtifact>>,
+    pub(crate) referenced_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NetworkMigrationCodeGenerationSegmentBuilder {
@@ -203,6 +212,26 @@ impl NetworkMigrationCodeGenerationSegmentBuilder {
     pub fn get_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationCodeGenerationArtifact>> {
         &self.artifacts
     }
+    /// Appends an item to `referenced_segments`.
+    ///
+    /// To override the contents of this collection use [`set_referenced_segments`](Self::set_referenced_segments).
+    ///
+    /// <p>A list of other segments that this segment depends on or references.</p>
+    pub fn referenced_segments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.referenced_segments.unwrap_or_default();
+        v.push(input.into());
+        self.referenced_segments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of other segments that this segment depends on or references.</p>
+    pub fn set_referenced_segments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.referenced_segments = input;
+        self
+    }
+    /// <p>A list of other segments that this segment depends on or references.</p>
+    pub fn get_referenced_segments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.referenced_segments
+    }
     /// <p>The timestamp when the segment was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -228,6 +257,7 @@ impl NetworkMigrationCodeGenerationSegmentBuilder {
             logical_id: self.logical_id,
             mapper_segment_id: self.mapper_segment_id,
             artifacts: self.artifacts,
+            referenced_segments: self.referenced_segments,
             created_at: self.created_at,
         }
     }

@@ -49,6 +49,8 @@ pub struct CreateWebAclInput {
     pub on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
     /// <p>Configures the ability for the WAF console to store and retrieve application attributes during the web ACL creation process. Application attributes help WAF give recommendations for protection packs.</p>
     pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl CreateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -135,6 +137,10 @@ impl CreateWebAclInput {
     pub fn application_config(&self) -> ::std::option::Option<&crate::types::ApplicationConfig> {
         self.application_config.as_ref()
     }
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub fn monetization_config(&self) -> ::std::option::Option<&crate::types::MonetizationConfig> {
+        self.monetization_config.as_ref()
+    }
 }
 impl CreateWebAclInput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclInput`](crate::operation::create_web_acl::CreateWebAclInput).
@@ -162,6 +168,7 @@ pub struct CreateWebAclInputBuilder {
     pub(crate) association_config: ::std::option::Option<crate::types::AssociationConfig>,
     pub(crate) on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
     pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
+    pub(crate) monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl CreateWebAclInputBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -455,6 +462,20 @@ impl CreateWebAclInputBuilder {
     pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
         &self.application_config
     }
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub fn monetization_config(mut self, input: crate::types::MonetizationConfig) -> Self {
+        self.monetization_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub fn set_monetization_config(mut self, input: ::std::option::Option<crate::types::MonetizationConfig>) -> Self {
+        self.monetization_config = input;
+        self
+    }
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
+        &self.monetization_config
+    }
     /// Consumes the builder and constructs a [`CreateWebAclInput`](crate::operation::create_web_acl::CreateWebAclInput).
     pub fn build(
         self,
@@ -475,6 +496,7 @@ impl CreateWebAclInputBuilder {
             association_config: self.association_config,
             on_source_d_do_s_protection_config: self.on_source_d_do_s_protection_config,
             application_config: self.application_config,
+            monetization_config: self.monetization_config,
         })
     }
 }

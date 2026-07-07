@@ -2,10 +2,16 @@
 pub(crate) fn de_account_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AccountSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,12 +30,14 @@ where
                         }
                         "unmeteredDevices" => {
                             builder = builder.set_unmetered_devices(crate::protocol_serde::shape_purchased_devices_map::de_purchased_devices_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "unmeteredRemoteAccessDevices" => {
                             builder = builder.set_unmetered_remote_access_devices(
-                                crate::protocol_serde::shape_purchased_devices_map::de_purchased_devices_map(tokens, _value)?,
+                                crate::protocol_serde::shape_purchased_devices_map::de_purchased_devices_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "maxJobTimeoutMinutes" => {
@@ -40,10 +48,11 @@ where
                             );
                         }
                         "trialMinutes" => {
-                            builder = builder.set_trial_minutes(crate::protocol_serde::shape_trial_minutes::de_trial_minutes(tokens, _value)?);
+                            builder =
+                                builder.set_trial_minutes(crate::protocol_serde::shape_trial_minutes::de_trial_minutes(tokens, _value, depth + 1)?);
                         }
                         "maxSlots" => {
-                            builder = builder.set_max_slots(crate::protocol_serde::shape_max_slot_map::de_max_slot_map(tokens, _value)?);
+                            builder = builder.set_max_slots(crate::protocol_serde::shape_max_slot_map::de_max_slot_map(tokens, _value, depth + 1)?);
                         }
                         "defaultJobTimeoutMinutes" => {
                             builder = builder.set_default_job_timeout_minutes(

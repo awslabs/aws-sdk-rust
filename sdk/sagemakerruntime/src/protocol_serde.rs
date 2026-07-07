@@ -27,6 +27,8 @@ pub(crate) mod shape_invoke_endpoint;
 
 pub(crate) mod shape_invoke_endpoint_async;
 
+pub(crate) mod shape_invoke_endpoint_async_input;
+
 pub(crate) mod shape_invoke_endpoint_input;
 
 pub(crate) mod shape_invoke_endpoint_with_response_stream;

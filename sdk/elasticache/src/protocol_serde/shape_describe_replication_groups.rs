@@ -120,6 +120,8 @@ pub fn de_describe_replication_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeReplicationGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeReplicationGroupsResponse got {start_el:?}"
@@ -150,7 +152,7 @@ pub fn de_describe_replication_groups(
             s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#DescribeReplicationGroupsOutput$ReplicationGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_replication_group_list::de_replication_group_list(&mut tag)
+                        crate::protocol_serde::shape_replication_group_list::de_replication_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -115,6 +115,8 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>Must specify a valid DB parameter group.</p></li>
     /// <li>
     /// <p>Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</p></li>
+    /// <li>
+    /// <p>The source DB parameter group must be in the same Amazon Region as the copy. Neptune does not support cross-Region copying of parameter groups.</p></li>
     /// </ul>
     pub fn source_db_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_parameter_group_identifier(input.into());
@@ -127,6 +129,8 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>Must specify a valid DB parameter group.</p></li>
     /// <li>
     /// <p>Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</p></li>
+    /// <li>
+    /// <p>The source DB parameter group must be in the same Amazon Region as the copy. Neptune does not support cross-Region copying of parameter groups.</p></li>
     /// </ul>
     pub fn set_source_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_parameter_group_identifier(input);
@@ -139,6 +143,8 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>Must specify a valid DB parameter group.</p></li>
     /// <li>
     /// <p>Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</p></li>
+    /// <li>
+    /// <p>The source DB parameter group must be in the same Amazon Region as the copy. Neptune does not support cross-Region copying of parameter groups.</p></li>
     /// </ul>
     pub fn get_source_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_parameter_group_identifier()

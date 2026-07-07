@@ -2,10 +2,16 @@
 pub(crate) fn de_configuration_recorder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigurationRecorder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,10 +43,18 @@ where
                             );
                         }
                         "recordingGroup" => {
-                            builder = builder.set_recording_group(crate::protocol_serde::shape_recording_group::de_recording_group(tokens, _value)?);
+                            builder = builder.set_recording_group(crate::protocol_serde::shape_recording_group::de_recording_group(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "recordingMode" => {
-                            builder = builder.set_recording_mode(crate::protocol_serde::shape_recording_mode::de_recording_mode(tokens, _value)?);
+                            builder = builder.set_recording_mode(crate::protocol_serde::shape_recording_mode::de_recording_mode(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "recordingScope" => {
                             builder = builder.set_recording_scope(
@@ -55,6 +69,20 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "connectorArn" => {
+                            builder = builder.set_connector_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "scopeConfiguration" => {
+                            builder = builder.set_scope_configuration(crate::protocol_serde::shape_scope_configuration::de_scope_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -103,6 +131,15 @@ pub fn ser_configuration_recorder(
     }
     if let Some(var_9) = &input.service_principal {
         object.key("servicePrincipal").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.connector_arn {
+        object.key("connectorArn").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.scope_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("scopeConfiguration").start_object();
+        crate::protocol_serde::shape_scope_configuration::ser_scope_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

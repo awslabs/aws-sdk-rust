@@ -72,6 +72,8 @@ pub fn de_list_type_registrations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListTypeRegistrationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListTypeRegistrationsResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_list_type_registrations(
             s if s.matches("RegistrationTokenList") /* RegistrationTokenList com.amazonaws.cloudformation.synthetic#ListTypeRegistrationsOutput$RegistrationTokenList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_registration_token_list::de_registration_token_list(&mut tag)
+                        crate::protocol_serde::shape_registration_token_list::de_registration_token_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

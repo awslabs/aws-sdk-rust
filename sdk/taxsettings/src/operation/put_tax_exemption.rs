@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutTaxE
 #[derive(Debug)]
 struct PutTaxExemptionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutTaxExemptionResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -260,11 +261,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutTaxExempti
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutTaxExemptionError {
-    /// <p>The access is denied for the Amazon Web ServicesSupport API.</p>
+    /// <p>The access is denied for the Amazon Web Services Support API.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Failed to upload the tax exemption document to Amazon Web ServicesSupport case.</p>
+    /// <p>Failed to upload the tax exemption document to Amazon Web Services Support case.</p>
     AttachmentUploadException(crate::types::error::AttachmentUploadException),
-    /// <p>You've exceeded the Amazon Web ServicesSupport case creation limit for your account.</p>
+    /// <p>You've exceeded the Amazon Web Services Support case creation limit for your account.</p>
     CaseCreationLimitExceededException(crate::types::error::CaseCreationLimitExceededException),
     /// <p>The exception thrown when an unexpected error occurs when processing a request.</p>
     InternalServerException(crate::types::error::InternalServerException),

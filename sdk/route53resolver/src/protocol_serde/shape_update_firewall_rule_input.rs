@@ -51,5 +51,11 @@ pub fn ser_update_firewall_rule_input_input(
     if let Some(var_14) = &input.confidence_threshold {
         object.key("ConfidenceThreshold").string(var_14.as_str());
     }
+    if let Some(var_15) = &input.firewall_rule_type {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("FirewallRuleType").start_object();
+        crate::protocol_serde::shape_firewall_rule_type::ser_firewall_rule_type(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

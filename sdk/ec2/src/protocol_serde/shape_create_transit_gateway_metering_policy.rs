@@ -51,6 +51,8 @@ pub fn de_create_transit_gateway_metering_policy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateTransitGatewayMeteringPolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateTransitGatewayMeteringPolicyResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_create_transit_gateway_metering_policy(
             s if s.matches("transitGatewayMeteringPolicy") /* TransitGatewayMeteringPolicy com.amazonaws.ec2.synthetic#CreateTransitGatewayMeteringPolicyOutput$TransitGatewayMeteringPolicy */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_metering_policy::de_transit_gateway_metering_policy(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_metering_policy::de_transit_gateway_metering_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

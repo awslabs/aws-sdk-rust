@@ -30,6 +30,7 @@ impl crate::operation::get_intents::builders::GetIntentsInputBuilder {
 /// <p>If you don't specify the <code>nameContains</code> field, returns information about the <code>$LATEST</code> version of all intents.</p></li>
 /// </ul>
 /// <p>The operation requires permission for the <code>lex:GetIntents</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIntentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

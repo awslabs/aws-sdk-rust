@@ -51,6 +51,8 @@ pub fn de_describe_db_recommendations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDBRecommendationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDBRecommendationsResponse got {start_el:?}"
@@ -68,7 +70,7 @@ pub fn de_describe_db_recommendations(
             s if s.matches("DBRecommendations") /* DBRecommendations com.amazonaws.rds.synthetic#DescribeDBRecommendationsOutput$DBRecommendations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_recommendation_list::de_db_recommendation_list(&mut tag)
+                        crate::protocol_serde::shape_db_recommendation_list::de_db_recommendation_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

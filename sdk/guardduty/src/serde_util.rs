@@ -8,6 +8,15 @@ pub(crate) fn create_filter_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_investigation_output_output_correct_errors(
+    mut builder: crate::operation::create_investigation::builders::CreateInvestigationOutputBuilder,
+) -> crate::operation::create_investigation::builders::CreateInvestigationOutputBuilder {
+    if builder.investigation_id.is_none() {
+        builder.investigation_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_ip_set_output_output_correct_errors(
     mut builder: crate::operation::create_ip_set::builders::CreateIpSetOutputBuilder,
 ) -> crate::operation::create_ip_set::builders::CreateIpSetOutputBuilder {
@@ -203,6 +212,18 @@ pub(crate) fn get_findings_statistics_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_investigation_output_output_correct_errors(
+    mut builder: crate::operation::get_investigation::builders::GetInvestigationOutputBuilder,
+) -> crate::operation::get_investigation::builders::GetInvestigationOutputBuilder {
+    if builder.investigation.is_none() {
+        builder.investigation = {
+            let builder = crate::types::builders::InvestigationBuilder::default();
+            Some(crate::serde_util::investigation_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_ip_set_output_output_correct_errors(
     mut builder: crate::operation::get_ip_set::builders::GetIpSetOutputBuilder,
 ) -> crate::operation::get_ip_set::builders::GetIpSetOutputBuilder {
@@ -356,6 +377,15 @@ pub(crate) fn list_findings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_investigations_output_output_correct_errors(
+    mut builder: crate::operation::list_investigations::builders::ListInvestigationsOutputBuilder,
+) -> crate::operation::list_investigations::builders::ListInvestigationsOutputBuilder {
+    if builder.investigations.is_none() {
+        builder.investigations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_ip_sets_output_output_correct_errors(
     mut builder: crate::operation::list_ip_sets::builders::ListIpSetsOutputBuilder,
 ) -> crate::operation::list_ip_sets::builders::ListIpSetsOutputBuilder {
@@ -446,6 +476,24 @@ pub(crate) fn update_member_detectors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn investigation_correct_errors(
+    mut builder: crate::types::builders::InvestigationBuilder,
+) -> crate::types::builders::InvestigationBuilder {
+    if builder.investigation_id.is_none() {
+        builder.investigation_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InvestigationStatus>().ok()
+    }
+    if builder.trigger_prompt.is_none() {
+        builder.trigger_prompt = Some(Default::default())
+    }
+    if builder.triggered_by.is_none() {
+        builder.triggered_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_source_configurations_result_correct_errors(
     mut builder: crate::types::builders::DataSourceConfigurationsResultBuilder,
 ) -> crate::types::builders::DataSourceConfigurationsResultBuilder {
@@ -484,6 +532,19 @@ pub(crate) fn organization_data_source_configurations_result_correct_errors(
             let builder = crate::types::builders::OrganizationS3LogsConfigurationResultBuilder::default();
             Some(crate::serde_util::organization_s3_logs_configuration_result_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn cloud_details_correct_errors(mut builder: crate::types::builders::CloudDetailsBuilder) -> crate::types::builders::CloudDetailsBuilder {
+    if builder.provider.is_none() {
+        builder.provider = "no value was set".parse::<crate::types::CloudProvider>().ok()
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.account.is_none() {
+        builder.account = Some(Default::default())
     }
     builder
 }
@@ -570,6 +631,21 @@ pub(crate) fn incremental_scan_details_correct_errors(
 ) -> crate::types::builders::IncrementalScanDetailsBuilder {
     if builder.baseline_resource_arn.is_none() {
         builder.baseline_resource_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn investigation_metadata_correct_errors(
+    mut builder: crate::types::builders::InvestigationMetadataBuilder,
+) -> crate::types::builders::InvestigationMetadataBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.product.is_none() {
+        builder.product = {
+            let builder = crate::types::builders::ProductBuilder::default();
+            Some(crate::serde_util::product_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -680,11 +756,27 @@ pub(crate) fn organization_kubernetes_audit_logs_configuration_result_correct_er
     builder
 }
 
+pub(crate) fn product_correct_errors(mut builder: crate::types::builders::ProductBuilder) -> crate::types::builders::ProductBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn scan_condition_correct_errors(
     mut builder: crate::types::builders::ScanConditionBuilder,
 ) -> crate::types::builders::ScanConditionBuilder {
     if builder.map_equals.is_none() {
         builder.map_equals = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn scan_configuration_continuous_scan_details_correct_errors(
+    mut builder: crate::types::builders::ScanConfigurationContinuousScanDetailsBuilder,
+) -> crate::types::builders::ScanConfigurationContinuousScanDetailsBuilder {
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

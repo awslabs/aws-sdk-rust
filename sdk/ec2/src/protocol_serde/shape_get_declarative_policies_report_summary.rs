@@ -51,6 +51,8 @@ pub fn de_get_declarative_policies_report_summary(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetDeclarativePoliciesReportSummaryResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetDeclarativePoliciesReportSummaryResponse got {start_el:?}"
@@ -171,7 +173,7 @@ pub fn de_get_declarative_policies_report_summary(
             s if s.matches("attributeSummarySet") /* AttributeSummaries com.amazonaws.ec2.synthetic#GetDeclarativePoliciesReportSummaryOutput$AttributeSummaries */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_attribute_summary_list::de_attribute_summary_list(&mut tag)
+                        crate::protocol_serde::shape_attribute_summary_list::de_attribute_summary_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

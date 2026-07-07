@@ -71,6 +71,7 @@ pub fn default_http_client_plugin_v2(
 ) -> Option<SharedRuntimePlugin> {
     let mut _default: Option<SharedHttpClient> = None;
 
+    #[allow(deprecated)]
     if behavior_version.is_at_least(BehaviorVersion::v2026_01_12()) {
         // the latest https stack takes precedence if the config flag
         // is enabled otherwise try to fall back to the legacy connector
@@ -140,6 +141,10 @@ pub fn default_retry_config_plugin(
                 .with_config_validator(SharedConfigValidator::base_client_config_fn(
                     validate_retry_config,
                 ))
+                // TODO(retry 2.1 on by default): revert TokenBucketProvider to the old
+                // approach: `new()` takes `init: impl FnOnce() -> TokenBucket`, eagerly
+                // calls `TOKEN_BUCKET.get_or_init(default_partition.clone(), init)`, stores
+                // the result directly (no OnceLock), and the hot path is just `.clone()`.
                 .with_interceptor(SharedInterceptor::permanent(TokenBucketProvider::new(
                     retry_partition.clone(),
                 )))
@@ -180,6 +185,7 @@ pub fn default_retry_config_plugin_v2(params: &DefaultPluginParams) -> Option<Sh
                 )))
         })
         .with_config(layer("default_retry_config", |layer| {
+            #[allow(deprecated)]
             let retry_config =
                 if is_aws_sdk && behavior_version.is_at_least(BehaviorVersion::v2026_01_12()) {
                     RetryConfig::standard()
@@ -244,6 +250,7 @@ pub fn default_timeout_config_plugin_v2(
             ))
         })
         .with_config(layer("default_timeout_config", |layer| {
+            #[allow(deprecated)]
             let timeout_config = if behavior_version.is_at_least(BehaviorVersion::v2026_01_12()) {
                 // All clients with BMV >= v2026_01_12: Set connect_timeout only
                 TimeoutConfig::builder()
@@ -504,6 +511,7 @@ mod tests {
     }
 
     #[test]
+    #[allow(deprecated)]
     fn test_retry_enabled_at_cutoff_version() {
         // v2026_01_12 is the cutoff - retries should be enabled from this version onwards
         let params = DefaultPluginParams::new()

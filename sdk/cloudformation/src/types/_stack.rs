@@ -34,6 +34,8 @@ pub struct Stack {
     /// <p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub disable_rollback: ::std::option::Option<bool>,
+    /// <p>The deployment configuration for the stack, including the deployment mode used for stack operations.</p>
+    pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
     pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The amount of time within which stack creation should complete.</p>
@@ -129,6 +131,10 @@ impl Stack {
     /// </ul>
     pub fn disable_rollback(&self) -> ::std::option::Option<bool> {
         self.disable_rollback
+    }
+    /// <p>The deployment configuration for the stack, including the deployment mode used for stack operations.</p>
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
+        self.deployment_config.as_ref()
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
     ///
@@ -230,6 +236,7 @@ pub struct StackBuilder {
     pub(crate) stack_status: ::std::option::Option<crate::types::StackStatus>,
     pub(crate) stack_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) disable_rollback: ::std::option::Option<bool>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
@@ -440,6 +447,20 @@ impl StackBuilder {
     /// </ul>
     pub fn get_disable_rollback(&self) -> &::std::option::Option<bool> {
         &self.disable_rollback
+    }
+    /// <p>The deployment configuration for the stack, including the deployment mode used for stack operations.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment configuration for the stack, including the deployment mode used for stack operations.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.deployment_config = input;
+        self
+    }
+    /// <p>The deployment configuration for the stack, including the deployment mode used for stack operations.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
     }
     /// Appends an item to `notification_arns`.
     ///
@@ -712,6 +733,7 @@ impl StackBuilder {
             stack_status: self.stack_status,
             stack_status_reason: self.stack_status_reason,
             disable_rollback: self.disable_rollback,
+            deployment_config: self.deployment_config,
             notification_arns: self.notification_arns,
             timeout_in_minutes: self.timeout_in_minutes,
             capabilities: self.capabilities,

@@ -33,10 +33,16 @@ pub fn ser_artifacts_configuration(
 pub(crate) fn de_artifacts_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ArtifactsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,22 +55,34 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Audio" => {
                                 builder = builder.set_audio(
-                                    crate::protocol_serde::shape_audio_artifacts_configuration::de_audio_artifacts_configuration(tokens, _value)?,
+                                    crate::protocol_serde::shape_audio_artifacts_configuration::de_audio_artifacts_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "Video" => {
                                 builder = builder.set_video(
-                                    crate::protocol_serde::shape_video_artifacts_configuration::de_video_artifacts_configuration(tokens, _value)?,
+                                    crate::protocol_serde::shape_video_artifacts_configuration::de_video_artifacts_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "Content" => {
                                 builder = builder.set_content(
-                                    crate::protocol_serde::shape_content_artifacts_configuration::de_content_artifacts_configuration(tokens, _value)?,
+                                    crate::protocol_serde::shape_content_artifacts_configuration::de_content_artifacts_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "CompositedVideo" => {
                                 builder = builder.set_composited_video(
-                                    crate::protocol_serde::shape_composited_video_artifacts_configuration::de_composited_video_artifacts_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_composited_video_artifacts_configuration::de_composited_video_artifacts_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

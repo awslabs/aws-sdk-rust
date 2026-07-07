@@ -25,7 +25,11 @@ pub fn ser_origin_group_members(
 #[allow(clippy::needless_question_mark)]
 pub fn de_origin_group_members(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OriginGroupMembers, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginGroupMembers::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_origin_group_members(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#OriginGroupMembers$Items */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_origin_group_member_list::de_origin_group_member_list(&mut tag)
+                        crate::protocol_serde::shape_origin_group_member_list::de_origin_group_member_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

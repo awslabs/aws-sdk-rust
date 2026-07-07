@@ -2,10 +2,16 @@
 pub(crate) fn de_certificate_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CertificateDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,8 +36,11 @@ where
                             );
                         }
                         "SubjectAlternativeNames" => {
-                            builder =
-                                builder.set_subject_alternative_names(crate::protocol_serde::shape_domain_list::de_domain_list(tokens, _value)?);
+                            builder = builder.set_subject_alternative_names(crate::protocol_serde::shape_domain_list::de_domain_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ManagedBy" => {
                             builder = builder.set_managed_by(
@@ -42,7 +51,7 @@ where
                         }
                         "DomainValidationOptions" => {
                             builder = builder.set_domain_validation_options(
-                                crate::protocol_serde::shape_domain_validation_list::de_domain_validation_list(tokens, _value)?,
+                                crate::protocol_serde::shape_domain_validation_list::de_domain_validation_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Serial" => {
@@ -131,7 +140,7 @@ where
                             );
                         }
                         "InUseBy" => {
-                            builder = builder.set_in_use_by(crate::protocol_serde::shape_in_use_list::de_in_use_list(tokens, _value)?);
+                            builder = builder.set_in_use_by(crate::protocol_serde::shape_in_use_list::de_in_use_list(tokens, _value, depth + 1)?);
                         }
                         "FailureReason" => {
                             builder = builder.set_failure_reason(
@@ -148,14 +157,19 @@ where
                             );
                         }
                         "RenewalSummary" => {
-                            builder = builder.set_renewal_summary(crate::protocol_serde::shape_renewal_summary::de_renewal_summary(tokens, _value)?);
+                            builder = builder.set_renewal_summary(crate::protocol_serde::shape_renewal_summary::de_renewal_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "KeyUsages" => {
-                            builder = builder.set_key_usages(crate::protocol_serde::shape_key_usage_list::de_key_usage_list(tokens, _value)?);
+                            builder =
+                                builder.set_key_usages(crate::protocol_serde::shape_key_usage_list::de_key_usage_list(tokens, _value, depth + 1)?);
                         }
                         "ExtendedKeyUsages" => {
                             builder = builder.set_extended_key_usages(
-                                crate::protocol_serde::shape_extended_key_usage_list::de_extended_key_usage_list(tokens, _value)?,
+                                crate::protocol_serde::shape_extended_key_usage_list::de_extended_key_usage_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "CertificateAuthorityArn" => {
@@ -173,7 +187,32 @@ where
                             );
                         }
                         "Options" => {
-                            builder = builder.set_options(crate::protocol_serde::shape_certificate_options::de_certificate_options(tokens, _value)?);
+                            builder = builder.set_options(crate::protocol_serde::shape_certificate_options::de_certificate_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "CertificateKeyPairOrigin" => {
+                            builder = builder.set_certificate_key_pair_origin(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CertificateKeyPairOrigin::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AcmeEndpointArn" => {
+                            builder = builder.set_acme_endpoint_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AcmeAccountId" => {
+                            builder = builder.set_acme_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

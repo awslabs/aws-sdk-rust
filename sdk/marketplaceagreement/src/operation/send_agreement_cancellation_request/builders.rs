@@ -122,17 +122,17 @@ impl SendAgreementCancellationRequestFluentBuilder {
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agreement_id()
     }
-    /// <p>The reason code for the cancellation request. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>REPLACING_AGREEMENT</code>, <code>TEST_AGREEMENT</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>PRODUCT_DISCONTINUED</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the cancellation request.</p>
     pub fn reason_code(mut self, input: crate::types::AgreementCancellationRequestReasonCode) -> Self {
         self.inner = self.inner.reason_code(input);
         self
     }
-    /// <p>The reason code for the cancellation request. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>REPLACING_AGREEMENT</code>, <code>TEST_AGREEMENT</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>PRODUCT_DISCONTINUED</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the cancellation request.</p>
     pub fn set_reason_code(mut self, input: ::std::option::Option<crate::types::AgreementCancellationRequestReasonCode>) -> Self {
         self.inner = self.inner.set_reason_code(input);
         self
     }
-    /// <p>The reason code for the cancellation request. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>REPLACING_AGREEMENT</code>, <code>TEST_AGREEMENT</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>PRODUCT_DISCONTINUED</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the cancellation request.</p>
     pub fn get_reason_code(&self) -> &::std::option::Option<crate::types::AgreementCancellationRequestReasonCode> {
         self.inner.get_reason_code()
     }

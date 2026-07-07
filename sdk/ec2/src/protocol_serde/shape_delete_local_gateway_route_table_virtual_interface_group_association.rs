@@ -27,6 +27,8 @@ pub fn de_delete_local_gateway_route_table_virtual_interface_group_association(i
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse got {start_el:?}"
@@ -37,7 +39,7 @@ pub fn de_delete_local_gateway_route_table_virtual_interface_group_association(i
             s if s.matches("localGatewayRouteTableVirtualInterfaceGroupAssociation") /* LocalGatewayRouteTableVirtualInterfaceGroupAssociation com.amazonaws.ec2.synthetic#DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput$LocalGatewayRouteTableVirtualInterfaceGroupAssociation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_local_gateway_route_table_virtual_interface_group_association::de_local_gateway_route_table_virtual_interface_group_association(&mut tag)
+                        crate::protocol_serde::shape_local_gateway_route_table_virtual_interface_group_association::de_local_gateway_route_table_virtual_interface_group_association(&mut tag, depth + 1)
                         ?
                     )
                 ;

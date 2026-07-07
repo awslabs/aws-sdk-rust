@@ -2,10 +2,16 @@
 pub(crate) fn de_component<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Component>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,15 +71,26 @@ where
                             );
                         }
                         "supportedOsVersions" => {
-                            builder =
-                                builder.set_supported_os_versions(crate::protocol_serde::shape_os_version_list::de_os_version_list(tokens, _value)?);
+                            builder = builder.set_supported_os_versions(crate::protocol_serde::shape_os_version_list::de_os_version_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "state" => {
-                            builder = builder.set_state(crate::protocol_serde::shape_component_state::de_component_state(tokens, _value)?);
+                            builder = builder.set_state(crate::protocol_serde::shape_component_state::de_component_state(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "parameters" => {
                             builder = builder.set_parameters(
-                                crate::protocol_serde::shape_component_parameter_detail_list::de_component_parameter_detail_list(tokens, _value)?,
+                                crate::protocol_serde::shape_component_parameter_detail_list::de_component_parameter_detail_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "owner" => {
@@ -108,7 +125,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "publisher" => {
                             builder = builder.set_publisher(
@@ -121,8 +138,11 @@ where
                             builder = builder.set_obfuscate(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "productCodes" => {
-                            builder =
-                                builder.set_product_codes(crate::protocol_serde::shape_product_code_list::de_product_code_list(tokens, _value)?);
+                            builder = builder.set_product_codes(crate::protocol_serde::shape_product_code_list::de_product_code_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

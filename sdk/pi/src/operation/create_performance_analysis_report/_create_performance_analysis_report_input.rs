@@ -107,7 +107,6 @@ impl CreatePerformanceAnalysisReportInputBuilder {
         &self.start_time
     }
     /// <p>The end time defined for the analysis report.</p>
-    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

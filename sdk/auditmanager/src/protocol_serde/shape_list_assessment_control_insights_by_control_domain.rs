@@ -116,6 +116,8 @@ pub(crate) fn de_list_assessment_control_insights_by_control_domain(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -124,7 +126,9 @@ pub(crate) fn de_list_assessment_control_insights_by_control_domain(
                 "controlInsightsByAssessment" => {
                     builder = builder.set_control_insights_by_assessment(
                         crate::protocol_serde::shape_control_insights_metadata_by_assessment::de_control_insights_metadata_by_assessment(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceComponentSpecificationSummary {
+    /// <p>The ML compute instance type associated with this inference component specification.</p>
+    pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Details about the container that provides the runtime environment for the model that is deployed with the inference component.</p>
@@ -20,6 +22,10 @@ pub struct InferenceComponentSpecificationSummary {
     pub scheduling_config: ::std::option::Option<crate::types::InferenceComponentSchedulingConfig>,
 }
 impl InferenceComponentSpecificationSummary {
+    /// <p>The ML compute instance type associated with this inference component specification.</p>
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
+        self.instance_type.as_ref()
+    }
     /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
@@ -60,6 +66,7 @@ impl InferenceComponentSpecificationSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct InferenceComponentSpecificationSummaryBuilder {
+    pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) container: ::std::option::Option<crate::types::InferenceComponentContainerSpecificationSummary>,
     pub(crate) startup_parameters: ::std::option::Option<crate::types::InferenceComponentStartupParameters>,
@@ -69,6 +76,20 @@ pub struct InferenceComponentSpecificationSummaryBuilder {
     pub(crate) scheduling_config: ::std::option::Option<crate::types::InferenceComponentSchedulingConfig>,
 }
 impl InferenceComponentSpecificationSummaryBuilder {
+    /// <p>The ML compute instance type associated with this inference component specification.</p>
+    pub fn instance_type(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
+        self.instance_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ML compute instance type associated with this inference component specification.</p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProductionVariantInstanceType>) -> Self {
+        self.instance_type = input;
+        self
+    }
+    /// <p>The ML compute instance type associated with this inference component specification.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
+        &self.instance_type
+    }
     /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -173,6 +194,7 @@ impl InferenceComponentSpecificationSummaryBuilder {
     /// Consumes the builder and constructs a [`InferenceComponentSpecificationSummary`](crate::types::InferenceComponentSpecificationSummary).
     pub fn build(self) -> crate::types::InferenceComponentSpecificationSummary {
         crate::types::InferenceComponentSpecificationSummary {
+            instance_type: self.instance_type,
             model_name: self.model_name,
             container: self.container,
             startup_parameters: self.startup_parameters,

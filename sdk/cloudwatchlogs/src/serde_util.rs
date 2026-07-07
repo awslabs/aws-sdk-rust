@@ -228,6 +228,23 @@ pub(crate) fn upper_case_string_correct_errors(
     builder
 }
 
+pub(crate) fn delivery_source_configuration_schema_correct_errors(
+    mut builder: crate::types::builders::DeliverySourceConfigurationSchemaBuilder,
+) -> crate::types::builders::DeliverySourceConfigurationSchemaBuilder {
+    if builder.key_name.is_none() {
+        builder.key_name = Some(Default::default())
+    }
+    if builder.value_type.is_none() {
+        builder.value_type = "no value was set"
+            .parse::<crate::types::DeliverySourceConfigurationSchemaValueType>()
+            .ok()
+    }
+    if builder.default_value.is_none() {
+        builder.default_value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn metric_transformation_correct_errors(
     mut builder: crate::types::builders::MetricTransformationBuilder,
 ) -> crate::types::builders::MetricTransformationBuilder {

@@ -40,6 +40,66 @@ pub fn de_get_durable_execution_history_http_error(
                 tmp
             })
         }
+        "KMSAccessDeniedException" => crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::KmsAccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsAccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSDisabledException" => crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::KmsDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsDisabledExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInvalidStateException" => crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSNotFoundException" => crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::KmsNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -126,13 +186,15 @@ pub(crate) fn de_get_durable_execution_history(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Events" => {
-                    builder = builder.set_events(crate::protocol_serde::shape_events::de_events(tokens, _value)?);
+                    builder = builder.set_events(crate::protocol_serde::shape_events::de_events(tokens, _value, depth + 1)?);
                 }
                 "NextMarker" => {
                     builder = builder.set_next_marker(

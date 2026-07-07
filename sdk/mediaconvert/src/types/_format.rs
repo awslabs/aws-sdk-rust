@@ -14,7 +14,9 @@
 /// match format {
 ///     Format::Avi => { /* ... */ },
 ///     Format::Matroska => { /* ... */ },
+///     Format::Mp3 => { /* ... */ },
 ///     Format::Mp4 => { /* ... */ },
+///     Format::Mpegps => { /* ... */ },
 ///     Format::Mpegts => { /* ... */ },
 ///     Format::Mxf => { /* ... */ },
 ///     Format::Quicktime => { /* ... */ },
@@ -53,7 +55,11 @@ pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Matroska,
     #[allow(missing_docs)] // documentation missing in model
+    Mp3,
+    #[allow(missing_docs)] // documentation missing in model
     Mp4,
+    #[allow(missing_docs)] // documentation missing in model
+    Mpegps,
     #[allow(missing_docs)] // documentation missing in model
     Mpegts,
     #[allow(missing_docs)] // documentation missing in model
@@ -73,7 +79,9 @@ impl ::std::convert::From<&str> for Format {
         match s {
             "avi" => Format::Avi,
             "matroska" => Format::Matroska,
+            "mp3" => Format::Mp3,
             "mp4" => Format::Mp4,
+            "mpegps" => Format::Mpegps,
             "mpegts" => Format::Mpegts,
             "mxf" => Format::Mxf,
             "quicktime" => Format::Quicktime,
@@ -96,7 +104,9 @@ impl Format {
         match self {
             Format::Avi => "avi",
             Format::Matroska => "matroska",
+            Format::Mp3 => "mp3",
             Format::Mp4 => "mp4",
+            Format::Mpegps => "mpegps",
             Format::Mpegts => "mpegts",
             Format::Mxf => "mxf",
             Format::Quicktime => "quicktime",
@@ -107,7 +117,7 @@ impl Format {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["avi", "matroska", "mp4", "mpegts", "mxf", "quicktime", "wave", "webm"]
+        &["avi", "matroska", "mp3", "mp4", "mpegps", "mpegts", "mxf", "quicktime", "wave", "webm"]
     }
 }
 impl ::std::convert::AsRef<str> for Format {
@@ -132,7 +142,9 @@ impl ::std::fmt::Display for Format {
         match self {
             Format::Avi => write!(f, "avi"),
             Format::Matroska => write!(f, "matroska"),
+            Format::Mp3 => write!(f, "mp3"),
             Format::Mp4 => write!(f, "mp4"),
+            Format::Mpegps => write!(f, "mpegps"),
             Format::Mpegts => write!(f, "mpegts"),
             Format::Mxf => write!(f, "mxf"),
             Format::Quicktime => write!(f, "quicktime"),

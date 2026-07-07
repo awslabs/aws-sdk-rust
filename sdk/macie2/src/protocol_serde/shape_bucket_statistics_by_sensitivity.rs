@@ -2,10 +2,16 @@
 pub(crate) fn de_bucket_statistics_by_sensitivity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BucketStatisticsBySensitivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,29 +20,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "classificationError" => {
-                            builder = builder.set_classification_error(
-                                crate::protocol_serde::shape_sensitivity_aggregations::de_sensitivity_aggregations(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "classificationError" => {
+                                builder = builder.set_classification_error(
+                                    crate::protocol_serde::shape_sensitivity_aggregations::de_sensitivity_aggregations(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "notClassified" => {
+                                builder = builder.set_not_classified(
+                                    crate::protocol_serde::shape_sensitivity_aggregations::de_sensitivity_aggregations(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "notSensitive" => {
+                                builder = builder.set_not_sensitive(
+                                    crate::protocol_serde::shape_sensitivity_aggregations::de_sensitivity_aggregations(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "sensitive" => {
+                                builder = builder.set_sensitive(crate::protocol_serde::shape_sensitivity_aggregations::de_sensitivity_aggregations(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "notClassified" => {
-                            builder = builder.set_not_classified(crate::protocol_serde::shape_sensitivity_aggregations::de_sensitivity_aggregations(
-                                tokens, _value,
-                            )?);
-                        }
-                        "notSensitive" => {
-                            builder = builder.set_not_sensitive(crate::protocol_serde::shape_sensitivity_aggregations::de_sensitivity_aggregations(
-                                tokens, _value,
-                            )?);
-                        }
-                        "sensitive" => {
-                            builder = builder.set_sensitive(crate::protocol_serde::shape_sensitivity_aggregations::de_sensitivity_aggregations(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

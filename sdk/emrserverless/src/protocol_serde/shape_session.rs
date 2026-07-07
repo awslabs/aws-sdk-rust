@@ -2,10 +2,16 @@
 pub(crate) fn de_session<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Session>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -110,12 +116,16 @@ where
                         }
                         "configurationOverrides" => {
                             builder = builder.set_configuration_overrides(
-                                crate::protocol_serde::shape_session_configuration_overrides::de_session_configuration_overrides(tokens, _value)?,
+                                crate::protocol_serde::shape_session_configuration_overrides::de_session_configuration_overrides(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "networkConfiguration" => {
                             builder = builder.set_network_configuration(
-                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "idleTimeoutMinutes" => {
@@ -126,16 +136,16 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "totalResourceUtilization" => {
                             builder = builder.set_total_resource_utilization(
-                                crate::protocol_serde::shape_total_resource_utilization::de_total_resource_utilization(tokens, _value)?,
+                                crate::protocol_serde::shape_total_resource_utilization::de_total_resource_utilization(tokens, _value, depth + 1)?,
                             );
                         }
                         "billedResourceUtilization" => {
                             builder = builder.set_billed_resource_utilization(
-                                crate::protocol_serde::shape_resource_utilization::de_resource_utilization(tokens, _value)?,
+                                crate::protocol_serde::shape_resource_utilization::de_resource_utilization(tokens, _value, depth + 1)?,
                             );
                         }
                         "totalExecutionDurationSeconds" => {

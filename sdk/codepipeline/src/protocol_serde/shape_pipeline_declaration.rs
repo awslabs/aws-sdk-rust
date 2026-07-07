@@ -2,10 +2,16 @@
 pub(crate) fn de_pipeline_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipelineDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,15 +36,26 @@ where
                             );
                         }
                         "artifactStore" => {
-                            builder = builder.set_artifact_store(crate::protocol_serde::shape_artifact_store::de_artifact_store(tokens, _value)?);
+                            builder = builder.set_artifact_store(crate::protocol_serde::shape_artifact_store::de_artifact_store(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "artifactStores" => {
-                            builder =
-                                builder.set_artifact_stores(crate::protocol_serde::shape_artifact_store_map::de_artifact_store_map(tokens, _value)?);
+                            builder = builder.set_artifact_stores(crate::protocol_serde::shape_artifact_store_map::de_artifact_store_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "stages" => {
                             builder = builder.set_stages(
-                                crate::protocol_serde::shape_pipeline_stage_declaration_list::de_pipeline_stage_declaration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_pipeline_stage_declaration_list::de_pipeline_stage_declaration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "version" => {
@@ -65,13 +82,19 @@ where
                         "variables" => {
                             builder = builder.set_variables(
                                 crate::protocol_serde::shape_pipeline_variable_declaration_list::de_pipeline_variable_declaration_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "triggers" => {
                             builder = builder.set_triggers(
-                                crate::protocol_serde::shape_pipeline_trigger_declaration_list::de_pipeline_trigger_declaration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_pipeline_trigger_declaration_list::de_pipeline_trigger_declaration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

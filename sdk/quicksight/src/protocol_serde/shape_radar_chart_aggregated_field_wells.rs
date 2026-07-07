@@ -45,10 +45,16 @@ pub fn ser_radar_chart_aggregated_field_wells(
 pub(crate) fn de_radar_chart_aggregated_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RadarChartAggregatedFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,17 +66,29 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Category" => {
                             builder = builder.set_category(
-                                crate::protocol_serde::shape_radar_chart_category_field_list::de_radar_chart_category_field_list(tokens, _value)?,
+                                crate::protocol_serde::shape_radar_chart_category_field_list::de_radar_chart_category_field_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Color" => {
                             builder = builder.set_color(
-                                crate::protocol_serde::shape_radar_chart_color_field_list::de_radar_chart_color_field_list(tokens, _value)?,
+                                crate::protocol_serde::shape_radar_chart_color_field_list::de_radar_chart_color_field_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Values" => {
                             builder = builder.set_values(
-                                crate::protocol_serde::shape_radar_chart_values_field_list::de_radar_chart_values_field_list(tokens, _value)?,
+                                crate::protocol_serde::shape_radar_chart_values_field_list::de_radar_chart_values_field_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -6,7 +6,7 @@
 pub struct HarnessAgentCoreGatewayConfig {
     /// <p>The ARN of the desired AgentCore Gateway.</p>
     pub gateway_arn: ::std::string::String,
-    /// <p>How Loopy authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
+    /// <p>How harness authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
     pub outbound_auth: ::std::option::Option<crate::types::HarnessGatewayOutboundAuth>,
 }
 impl HarnessAgentCoreGatewayConfig {
@@ -15,7 +15,7 @@ impl HarnessAgentCoreGatewayConfig {
         use std::ops::Deref;
         self.gateway_arn.deref()
     }
-    /// <p>How Loopy authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
+    /// <p>How harness authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
     pub fn outbound_auth(&self) -> ::std::option::Option<&crate::types::HarnessGatewayOutboundAuth> {
         self.outbound_auth.as_ref()
     }
@@ -50,17 +50,17 @@ impl HarnessAgentCoreGatewayConfigBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
-    /// <p>How Loopy authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
+    /// <p>How harness authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
     pub fn outbound_auth(mut self, input: crate::types::HarnessGatewayOutboundAuth) -> Self {
         self.outbound_auth = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How Loopy authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
+    /// <p>How harness authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
     pub fn set_outbound_auth(mut self, input: ::std::option::Option<crate::types::HarnessGatewayOutboundAuth>) -> Self {
         self.outbound_auth = input;
         self
     }
-    /// <p>How Loopy authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
+    /// <p>How harness authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.</p>
     pub fn get_outbound_auth(&self) -> &::std::option::Option<crate::types::HarnessGatewayOutboundAuth> {
         &self.outbound_auth
     }

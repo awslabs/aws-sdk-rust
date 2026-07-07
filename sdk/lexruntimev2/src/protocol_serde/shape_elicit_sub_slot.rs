@@ -2,10 +2,16 @@
 pub(crate) fn de_elicit_sub_slot<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ElicitSubSlot>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,7 @@ where
                         }
                         "subSlotToElicit" => {
                             builder = builder.set_sub_slot_to_elicit(
-                                crate::protocol_serde::shape_elicit_sub_slot::de_elicit_sub_slot(tokens, _value)?.map(Box::new),
+                                crate::protocol_serde::shape_elicit_sub_slot::de_elicit_sub_slot(tokens, _value, depth + 1)?.map(Box::new),
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

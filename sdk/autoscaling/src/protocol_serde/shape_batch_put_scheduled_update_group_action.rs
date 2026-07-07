@@ -106,6 +106,8 @@ pub fn de_batch_put_scheduled_update_group_action(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("BatchPutScheduledUpdateGroupActionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected BatchPutScheduledUpdateGroupActionResponse got {start_el:?}"
@@ -123,7 +125,7 @@ pub fn de_batch_put_scheduled_update_group_action(
             s if s.matches("FailedScheduledUpdateGroupActions") /* FailedScheduledUpdateGroupActions com.amazonaws.autoscaling.synthetic#BatchPutScheduledUpdateGroupActionOutput$FailedScheduledUpdateGroupActions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_failed_scheduled_update_group_action_requests::de_failed_scheduled_update_group_action_requests(&mut tag)
+                        crate::protocol_serde::shape_failed_scheduled_update_group_action_requests::de_failed_scheduled_update_group_action_requests(&mut tag, depth + 1)
                         ?
                     )
                 ;

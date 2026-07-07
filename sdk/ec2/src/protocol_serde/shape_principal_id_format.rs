@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_principal_id_format(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PrincipalIdFormat, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PrincipalIdFormat::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_principal_id_format(
             s if s.matches("statusSet") /* Statuses com.amazonaws.ec2#PrincipalIdFormat$Statuses */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_id_format_list::de_id_format_list(&mut tag)
+                        crate::protocol_serde::shape_id_format_list::de_id_format_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

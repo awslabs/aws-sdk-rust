@@ -79,6 +79,8 @@ pub fn de_get_ssh_public_key(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetSSHPublicKeyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetSSHPublicKeyResponse got {start_el:?}"
@@ -96,7 +98,7 @@ pub fn de_get_ssh_public_key(
             s if s.matches("SSHPublicKey") /* SSHPublicKey com.amazonaws.iam.synthetic#GetSSHPublicKeyOutput$SSHPublicKey */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ssh_public_key::de_ssh_public_key(&mut tag)
+                        crate::protocol_serde::shape_ssh_public_key::de_ssh_public_key(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -63,6 +63,8 @@ pub struct Lag {
     pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
+    pub rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
 }
 impl Lag {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps..</p>
@@ -172,6 +174,10 @@ impl Lag {
     pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
         self.mac_sec_keys.as_deref().unwrap_or_default()
     }
+    /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
+    pub fn rate_limiter_status(&self) -> ::std::option::Option<&crate::types::RateLimiterStatus> {
+        self.rate_limiter_status.as_ref()
+    }
 }
 impl Lag {
     /// Creates a new builder-style object to manufacture [`Lag`](crate::types::Lag).
@@ -205,6 +211,7 @@ pub struct LagBuilder {
     pub(crate) mac_sec_capable: ::std::option::Option<bool>,
     pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
     pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    pub(crate) rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
 }
 impl LagBuilder {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps..</p>
@@ -570,6 +577,20 @@ impl LagBuilder {
     pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
+    /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
+    pub fn rate_limiter_status(mut self, input: crate::types::RateLimiterStatus) -> Self {
+        self.rate_limiter_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
+    pub fn set_rate_limiter_status(mut self, input: ::std::option::Option<crate::types::RateLimiterStatus>) -> Self {
+        self.rate_limiter_status = input;
+        self
+    }
+    /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
+    pub fn get_rate_limiter_status(&self) -> &::std::option::Option<crate::types::RateLimiterStatus> {
+        &self.rate_limiter_status
+    }
     /// Consumes the builder and constructs a [`Lag`](crate::types::Lag).
     pub fn build(self) -> crate::types::Lag {
         crate::types::Lag {
@@ -594,6 +615,7 @@ impl LagBuilder {
             mac_sec_capable: self.mac_sec_capable,
             encryption_mode: self.encryption_mode,
             mac_sec_keys: self.mac_sec_keys,
+            rate_limiter_status: self.rate_limiter_status,
         }
     }
 }

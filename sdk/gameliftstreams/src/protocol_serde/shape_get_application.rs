@@ -118,6 +118,8 @@ pub(crate) fn de_get_application(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -131,7 +133,7 @@ pub(crate) fn de_get_application(
                     );
                 }
                 "ApplicationLogPaths" => {
-                    builder = builder.set_application_log_paths(crate::protocol_serde::shape_file_paths::de_file_paths(tokens, _value)?);
+                    builder = builder.set_application_log_paths(crate::protocol_serde::shape_file_paths::de_file_paths(tokens, _value, depth + 1)?);
                 }
                 "ApplicationSourceUri" => {
                     builder = builder.set_application_source_uri(
@@ -148,7 +150,7 @@ pub(crate) fn de_get_application(
                     );
                 }
                 "AssociatedStreamGroups" => {
-                    builder = builder.set_associated_stream_groups(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
+                    builder = builder.set_associated_stream_groups(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value, depth + 1)?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -185,12 +187,17 @@ pub(crate) fn de_get_application(
                 }
                 "ReplicationStatuses" => {
                     builder = builder.set_replication_statuses(crate::protocol_serde::shape_replication_statuses::de_replication_statuses(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "RuntimeEnvironment" => {
-                    builder =
-                        builder.set_runtime_environment(crate::protocol_serde::shape_runtime_environment::de_runtime_environment(tokens, _value)?);
+                    builder = builder.set_runtime_environment(crate::protocol_serde::shape_runtime_environment::de_runtime_environment(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Status" => {
                     builder = builder.set_status(

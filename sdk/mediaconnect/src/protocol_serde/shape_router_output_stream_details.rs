@@ -2,10 +2,16 @@
 pub(crate) fn de_router_output_stream_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouterOutputStreamDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,19 +38,19 @@ where
                     variant = match key.as_ref() {
                             "standard" => {
                                 Some(crate::types::RouterOutputStreamDetails::Standard(
-                                    crate::protocol_serde::shape_standard_router_output_stream_details::de_standard_router_output_stream_details(tokens, _value)?
+                                    crate::protocol_serde::shape_standard_router_output_stream_details::de_standard_router_output_stream_details(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Standard' cannot be null"))?
                                 ))
                             }
                             "mediaConnectFlow" => {
                                 Some(crate::types::RouterOutputStreamDetails::MediaConnectFlow(
-                                    crate::protocol_serde::shape_media_connect_flow_router_output_stream_details::de_media_connect_flow_router_output_stream_details(tokens, _value)?
+                                    crate::protocol_serde::shape_media_connect_flow_router_output_stream_details::de_media_connect_flow_router_output_stream_details(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaConnectFlow' cannot be null"))?
                                 ))
                             }
                             "mediaLiveInput" => {
                                 Some(crate::types::RouterOutputStreamDetails::MediaLiveInput(
-                                    crate::protocol_serde::shape_media_live_input_router_output_stream_details::de_media_live_input_router_output_stream_details(tokens, _value)?
+                                    crate::protocol_serde::shape_media_live_input_router_output_stream_details::de_media_live_input_router_output_stream_details(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaLiveInput' cannot be null"))?
                                 ))
                             }

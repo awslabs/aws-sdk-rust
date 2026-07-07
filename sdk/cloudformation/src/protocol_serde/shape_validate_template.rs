@@ -40,6 +40,8 @@ pub fn de_validate_template(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ValidateTemplateResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ValidateTemplateResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_validate_template(
             s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation.synthetic#ValidateTemplateOutput$Parameters */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_template_parameters::de_template_parameters(&mut tag)
+                        crate::protocol_serde::shape_template_parameters::de_template_parameters(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -80,7 +82,7 @@ pub fn de_validate_template(
             s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation.synthetic#ValidateTemplateOutput$Capabilities */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag)
+                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -103,7 +105,7 @@ pub fn de_validate_template(
             s if s.matches("DeclaredTransforms") /* DeclaredTransforms com.amazonaws.cloudformation.synthetic#ValidateTemplateOutput$DeclaredTransforms */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_transforms_list::de_transforms_list(&mut tag)
+                        crate::protocol_serde::shape_transforms_list::de_transforms_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

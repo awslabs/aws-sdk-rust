@@ -2,10 +2,16 @@
 pub(crate) fn de_glossary_term_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GlossaryTermItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,99 +20,105 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "domainId" => {
-                                builder = builder.set_domain_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "glossaryId" => {
-                                builder = builder.set_glossary_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "id" => {
-                                builder = builder.set_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "shortDescription" => {
-                                builder = builder.set_short_description(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "usageRestrictions" => {
-                                builder = builder.set_usage_restrictions(
-                                    crate::protocol_serde::shape_glossary_usage_restrictions::de_glossary_usage_restrictions(tokens, _value)?,
-                                );
-                            }
-                            "longDescription" => {
-                                builder = builder.set_long_description(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "termRelations" => {
-                                builder = builder.set_term_relations(crate::protocol_serde::shape_term_relations::de_term_relations(tokens, _value)?);
-                            }
-                            "status" => {
-                                builder = builder.set_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| crate::types::GlossaryTermStatus::from(u.as_ref())))
-                                        .transpose()?,
-                                );
-                            }
-                            "createdAt" => {
-                                builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                    tokens.next(),
-                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
-                                )?);
-                            }
-                            "createdBy" => {
-                                builder = builder.set_created_by(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "updatedAt" => {
-                                builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                    tokens.next(),
-                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
-                                )?);
-                            }
-                            "updatedBy" => {
-                                builder = builder.set_updated_by(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "additionalAttributes" => {
-                                builder = builder.set_additional_attributes(
-                                    crate::protocol_serde::shape_glossary_term_item_additional_attributes::de_glossary_term_item_additional_attributes(tokens, _value)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "domainId" => {
+                            builder = builder.set_domain_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
-                    }
+                        "glossaryId" => {
+                            builder = builder.set_glossary_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "id" => {
+                            builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "shortDescription" => {
+                            builder = builder.set_short_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "usageRestrictions" => {
+                            builder = builder.set_usage_restrictions(
+                                crate::protocol_serde::shape_glossary_usage_restrictions::de_glossary_usage_restrictions(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "longDescription" => {
+                            builder = builder.set_long_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "termRelations" => {
+                            builder = builder.set_term_relations(crate::protocol_serde::shape_term_relations::de_term_relations(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::GlossaryTermStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "createdAt" => {
+                            builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "createdBy" => {
+                            builder = builder.set_created_by(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "updatedAt" => {
+                            builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "updatedBy" => {
+                            builder = builder.set_updated_by(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "additionalAttributes" => {
+                            builder = builder.set_additional_attributes(
+                                crate::protocol_serde::shape_glossary_term_item_additional_attributes::de_glossary_term_item_additional_attributes(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

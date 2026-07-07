@@ -2,10 +2,16 @@
 pub(crate) fn de_task<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Task>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,10 +22,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "attachments" => {
-                            builder = builder.set_attachments(crate::protocol_serde::shape_attachments::de_attachments(tokens, _value)?);
+                            builder = builder.set_attachments(crate::protocol_serde::shape_attachments::de_attachments(tokens, _value, depth + 1)?);
                         }
                         "attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens, _value)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens, _value, depth + 1)?);
                         }
                         "availabilityZone" => {
                             builder = builder.set_availability_zone(
@@ -63,7 +69,7 @@ where
                             );
                         }
                         "containers" => {
-                            builder = builder.set_containers(crate::protocol_serde::shape_containers::de_containers(tokens, _value)?);
+                            builder = builder.set_containers(crate::protocol_serde::shape_containers::de_containers(tokens, _value, depth + 1)?);
                         }
                         "cpu" => {
                             builder = builder.set_cpu(
@@ -110,7 +116,7 @@ where
                         }
                         "inferenceAccelerators" => {
                             builder = builder.set_inference_accelerators(
-                                crate::protocol_serde::shape_inference_accelerators::de_inference_accelerators(tokens, _value)?,
+                                crate::protocol_serde::shape_inference_accelerators::de_inference_accelerators(tokens, _value, depth + 1)?,
                             );
                         }
                         "lastStatus" => {
@@ -135,7 +141,7 @@ where
                             );
                         }
                         "overrides" => {
-                            builder = builder.set_overrides(crate::protocol_serde::shape_task_override::de_task_override(tokens, _value)?);
+                            builder = builder.set_overrides(crate::protocol_serde::shape_task_override::de_task_override(tokens, _value, depth + 1)?);
                         }
                         "platformVersion" => {
                             builder = builder.set_platform_version(
@@ -203,7 +209,7 @@ where
                             )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "taskArn" => {
                             builder = builder.set_task_arn(
@@ -227,12 +233,15 @@ where
                             );
                         }
                         "ephemeralStorage" => {
-                            builder =
-                                builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens, _value)?);
+                            builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "fargateEphemeralStorage" => {
                             builder = builder.set_fargate_ephemeral_storage(
-                                crate::protocol_serde::shape_task_ephemeral_storage::de_task_ephemeral_storage(tokens, _value)?,
+                                crate::protocol_serde::shape_task_ephemeral_storage::de_task_ephemeral_storage(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

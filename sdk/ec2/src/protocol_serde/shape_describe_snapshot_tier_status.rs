@@ -51,6 +51,8 @@ pub fn de_describe_snapshot_tier_status(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSnapshotTierStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSnapshotTierStatusResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_snapshot_tier_status(
             s if s.matches("snapshotTierStatusSet") /* SnapshotTierStatuses com.amazonaws.ec2.synthetic#DescribeSnapshotTierStatusOutput$SnapshotTierStatuses */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_tier_status_set::de_snapshot_tier_status_set(&mut tag)
+                        crate::protocol_serde::shape_snapshot_tier_status_set::de_snapshot_tier_status_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

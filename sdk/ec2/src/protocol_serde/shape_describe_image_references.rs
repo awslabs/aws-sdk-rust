@@ -51,6 +51,8 @@ pub fn de_describe_image_references(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeImageReferencesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeImageReferencesResponse got {start_el:?}"
@@ -74,7 +76,7 @@ pub fn de_describe_image_references(
             s if s.matches("imageReferenceSet") /* ImageReferences com.amazonaws.ec2.synthetic#DescribeImageReferencesOutput$ImageReferences */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_image_reference_list::de_image_reference_list(&mut tag)
+                        crate::protocol_serde::shape_image_reference_list::de_image_reference_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -225,6 +225,20 @@ impl CreateCollectionFluentBuilder {
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
         self.inner.get_encryption_config()
     }
+    /// <p>Indicates whether to enable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.inner = self.inner.deletion_protection(input);
+        self
+    }
+    /// <p>Indicates whether to enable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.inner = self.inner.set_deletion_protection(input);
+        self
+    }
+    /// <p>Indicates whether to enable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        self.inner.get_deletion_protection()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

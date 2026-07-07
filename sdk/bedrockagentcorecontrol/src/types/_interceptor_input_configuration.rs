@@ -6,11 +6,17 @@
 pub struct InterceptorInputConfiguration {
     /// <p>Indicates whether to pass request headers as input into the interceptor. When set to true, request headers will be passed.</p>
     pub pass_request_headers: bool,
+    /// <p>The filter that determines which parts of the request or response payload are passed as input to the interceptor.</p>
+    pub payload_filter: ::std::option::Option<crate::types::InterceptorPayloadFilter>,
 }
 impl InterceptorInputConfiguration {
     /// <p>Indicates whether to pass request headers as input into the interceptor. When set to true, request headers will be passed.</p>
     pub fn pass_request_headers(&self) -> bool {
         self.pass_request_headers
+    }
+    /// <p>The filter that determines which parts of the request or response payload are passed as input to the interceptor.</p>
+    pub fn payload_filter(&self) -> ::std::option::Option<&crate::types::InterceptorPayloadFilter> {
+        self.payload_filter.as_ref()
     }
 }
 impl InterceptorInputConfiguration {
@@ -25,6 +31,7 @@ impl InterceptorInputConfiguration {
 #[non_exhaustive]
 pub struct InterceptorInputConfigurationBuilder {
     pub(crate) pass_request_headers: ::std::option::Option<bool>,
+    pub(crate) payload_filter: ::std::option::Option<crate::types::InterceptorPayloadFilter>,
 }
 impl InterceptorInputConfigurationBuilder {
     /// <p>Indicates whether to pass request headers as input into the interceptor. When set to true, request headers will be passed.</p>
@@ -42,6 +49,20 @@ impl InterceptorInputConfigurationBuilder {
     pub fn get_pass_request_headers(&self) -> &::std::option::Option<bool> {
         &self.pass_request_headers
     }
+    /// <p>The filter that determines which parts of the request or response payload are passed as input to the interceptor.</p>
+    pub fn payload_filter(mut self, input: crate::types::InterceptorPayloadFilter) -> Self {
+        self.payload_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filter that determines which parts of the request or response payload are passed as input to the interceptor.</p>
+    pub fn set_payload_filter(mut self, input: ::std::option::Option<crate::types::InterceptorPayloadFilter>) -> Self {
+        self.payload_filter = input;
+        self
+    }
+    /// <p>The filter that determines which parts of the request or response payload are passed as input to the interceptor.</p>
+    pub fn get_payload_filter(&self) -> &::std::option::Option<crate::types::InterceptorPayloadFilter> {
+        &self.payload_filter
+    }
     /// Consumes the builder and constructs a [`InterceptorInputConfiguration`](crate::types::InterceptorInputConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`pass_request_headers`](crate::types::builders::InterceptorInputConfigurationBuilder::pass_request_headers)
@@ -53,6 +74,7 @@ impl InterceptorInputConfigurationBuilder {
                     "pass_request_headers was not specified but it is required when building InterceptorInputConfiguration",
                 )
             })?,
+            payload_filter: self.payload_filter,
         })
     }
 }

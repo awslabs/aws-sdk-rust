@@ -14,6 +14,8 @@ pub struct MutableClusterInfo {
     pub enhanced_monitoring: ::std::option::Option<crate::types::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
     pub open_monitoring: ::std::option::Option<crate::types::OpenMonitoring>,
+    /// <p>Access control settings for zookeeper</p>
+    pub zookeeper_access: ::std::option::Option<crate::types::ZookeeperAccess>,
     /// <p>The Apache Kafka version.</p>
     pub kafka_version: ::std::option::Option<::std::string::String>,
     /// <p>You can configure your MSK cluster to send broker logs to different destination types. This is a container for the configuration details related to broker logs.</p>
@@ -55,6 +57,10 @@ impl MutableClusterInfo {
     /// <p>The settings for open monitoring.</p>
     pub fn open_monitoring(&self) -> ::std::option::Option<&crate::types::OpenMonitoring> {
         self.open_monitoring.as_ref()
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn zookeeper_access(&self) -> ::std::option::Option<&crate::types::ZookeeperAccess> {
+        self.zookeeper_access.as_ref()
     }
     /// <p>The Apache Kafka version.</p>
     pub fn kafka_version(&self) -> ::std::option::Option<&str> {
@@ -109,6 +115,7 @@ pub struct MutableClusterInfoBuilder {
     pub(crate) number_of_broker_nodes: ::std::option::Option<i32>,
     pub(crate) enhanced_monitoring: ::std::option::Option<crate::types::EnhancedMonitoring>,
     pub(crate) open_monitoring: ::std::option::Option<crate::types::OpenMonitoring>,
+    pub(crate) zookeeper_access: ::std::option::Option<crate::types::ZookeeperAccess>,
     pub(crate) kafka_version: ::std::option::Option<::std::string::String>,
     pub(crate) logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
@@ -195,6 +202,20 @@ impl MutableClusterInfoBuilder {
     /// <p>The settings for open monitoring.</p>
     pub fn get_open_monitoring(&self) -> &::std::option::Option<crate::types::OpenMonitoring> {
         &self.open_monitoring
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn zookeeper_access(mut self, input: crate::types::ZookeeperAccess) -> Self {
+        self.zookeeper_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn set_zookeeper_access(mut self, input: ::std::option::Option<crate::types::ZookeeperAccess>) -> Self {
+        self.zookeeper_access = input;
+        self
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn get_zookeeper_access(&self) -> &::std::option::Option<crate::types::ZookeeperAccess> {
+        &self.zookeeper_access
     }
     /// <p>The Apache Kafka version.</p>
     pub fn kafka_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -330,6 +351,7 @@ impl MutableClusterInfoBuilder {
             number_of_broker_nodes: self.number_of_broker_nodes,
             enhanced_monitoring: self.enhanced_monitoring,
             open_monitoring: self.open_monitoring,
+            zookeeper_access: self.zookeeper_access,
             kafka_version: self.kafka_version,
             logging_info: self.logging_info,
             instance_type: self.instance_type,

@@ -162,6 +162,8 @@ pub(crate) fn de_update_sequence_store(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -217,16 +219,18 @@ pub(crate) fn de_update_sequence_store(
                 }
                 "propagatedSetLevelTags" => {
                     builder = builder.set_propagated_set_level_tags(
-                        crate::protocol_serde::shape_propagated_set_level_tags::de_propagated_set_level_tags(tokens, _value)?,
+                        crate::protocol_serde::shape_propagated_set_level_tags::de_propagated_set_level_tags(tokens, _value, depth + 1)?,
                     );
                 }
                 "s3Access" => {
                     builder = builder.set_s3_access(crate::protocol_serde::shape_sequence_store_s3_access::de_sequence_store_s3_access(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "sseConfig" => {
-                    builder = builder.set_sse_config(crate::protocol_serde::shape_sse_config::de_sse_config(tokens, _value)?);
+                    builder = builder.set_sse_config(crate::protocol_serde::shape_sse_config::de_sse_config(tokens, _value, depth + 1)?);
                 }
                 "status" => {
                     builder = builder.set_status(

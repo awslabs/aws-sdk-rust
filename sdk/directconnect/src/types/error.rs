@@ -7,11 +7,15 @@ pub use crate::types::error::_duplicate_tag_keys_exception::DuplicateTagKeysExce
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 mod _direct_connect_client_exception;
 
 mod _direct_connect_server_exception;
 
 mod _duplicate_tag_keys_exception;
+
+mod _limit_exceeded_exception;
 
 mod _too_many_tags_exception;
 

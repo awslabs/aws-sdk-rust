@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ipam_pool(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IpamPool, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IpamPool::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -272,7 +276,7 @@ pub fn de_ipam_pool(
             s if s.matches("allocationResourceTagSet") /* AllocationResourceTags com.amazonaws.ec2#IpamPool$AllocationResourceTags */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_ipam_resource_tag_list::de_ipam_resource_tag_list(&mut tag)
+                        crate::protocol_serde::shape_ipam_resource_tag_list::de_ipam_resource_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -282,7 +286,7 @@ pub fn de_ipam_pool(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#IpamPool$Tags */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -320,7 +324,7 @@ pub fn de_ipam_pool(
             s if s.matches("sourceResource") /* SourceResource com.amazonaws.ec2#IpamPool$SourceResource */ =>  {
                 let var_24 =
                     Some(
-                        crate::protocol_serde::shape_ipam_pool_source_resource::de_ipam_pool_source_resource(&mut tag)
+                        crate::protocol_serde::shape_ipam_pool_source_resource::de_ipam_pool_source_resource(&mut tag, depth + 1)
                         ?
                     )
                 ;

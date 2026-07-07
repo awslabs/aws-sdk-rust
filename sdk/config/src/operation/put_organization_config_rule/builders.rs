@@ -196,4 +196,23 @@ impl PutOrganizationConfigRuleFluentBuilder {
     pub fn get_organization_custom_policy_rule_metadata(&self) -> &::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadata> {
         self.inner.get_organization_custom_policy_rule_metadata()
     }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags for the organization Config rule. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>The tags for the organization Config rule. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The tags for the organization Config rule. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_current_instance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CurrentInstance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,77 +20,86 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ResourceId" => {
-                            builder = builder.set_resource_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ResourceId" => {
+                                builder = builder.set_resource_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "InstanceName" => {
+                                builder = builder.set_instance_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Tags" => {
+                                builder = builder.set_tags(crate::protocol_serde::shape_tag_values_list::de_tag_values_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceDetails" => {
+                                builder = builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceUtilization" => {
+                                builder = builder.set_resource_utilization(
+                                    crate::protocol_serde::shape_resource_utilization::de_resource_utilization(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ReservationCoveredHoursInLookbackPeriod" => {
+                                builder = builder.set_reservation_covered_hours_in_lookback_period(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SavingsPlansCoveredHoursInLookbackPeriod" => {
+                                builder = builder.set_savings_plans_covered_hours_in_lookback_period(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "OnDemandHoursInLookbackPeriod" => {
+                                builder = builder.set_on_demand_hours_in_lookback_period(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "TotalRunningHoursInLookbackPeriod" => {
+                                builder = builder.set_total_running_hours_in_lookback_period(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "MonthlyCost" => {
+                                builder = builder.set_monthly_cost(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "CurrencyCode" => {
+                                builder = builder.set_currency_code(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "InstanceName" => {
-                            builder = builder.set_instance_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_values_list::de_tag_values_list(tokens, _value)?);
-                        }
-                        "ResourceDetails" => {
-                            builder =
-                                builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens, _value)?);
-                        }
-                        "ResourceUtilization" => {
-                            builder = builder.set_resource_utilization(crate::protocol_serde::shape_resource_utilization::de_resource_utilization(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ReservationCoveredHoursInLookbackPeriod" => {
-                            builder = builder.set_reservation_covered_hours_in_lookback_period(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SavingsPlansCoveredHoursInLookbackPeriod" => {
-                            builder = builder.set_savings_plans_covered_hours_in_lookback_period(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "OnDemandHoursInLookbackPeriod" => {
-                            builder = builder.set_on_demand_hours_in_lookback_period(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "TotalRunningHoursInLookbackPeriod" => {
-                            builder = builder.set_total_running_hours_in_lookback_period(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "MonthlyCost" => {
-                            builder = builder.set_monthly_cost(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "CurrencyCode" => {
-                            builder = builder.set_currency_code(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

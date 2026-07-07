@@ -181,6 +181,8 @@ pub(crate) fn de_batch_lookup_user_uname(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -188,7 +190,11 @@ pub(crate) fn de_batch_lookup_user_uname(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "failed" => {
                     builder = builder.set_failed(
-                        crate::protocol_serde::shape_batch_uname_error_response_items::de_batch_uname_error_response_items(tokens, _value)?,
+                        crate::protocol_serde::shape_batch_uname_error_response_items::de_batch_uname_error_response_items(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "message" => {
@@ -200,7 +206,11 @@ pub(crate) fn de_batch_lookup_user_uname(
                 }
                 "successful" => {
                     builder = builder.set_successful(
-                        crate::protocol_serde::shape_batch_uname_success_response_items::de_batch_uname_success_response_items(tokens, _value)?,
+                        crate::protocol_serde::shape_batch_uname_success_response_items::de_batch_uname_success_response_items(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

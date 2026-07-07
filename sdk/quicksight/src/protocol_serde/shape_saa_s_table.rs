@@ -36,10 +36,16 @@ pub fn ser_saa_s_table(
 pub(crate) fn de_saa_s_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SaaSTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,12 +64,17 @@ where
                         }
                         "TablePath" => {
                             builder = builder.set_table_path(crate::protocol_serde::shape_table_path_element_list::de_table_path_element_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InputColumns" => {
-                            builder =
-                                builder.set_input_columns(crate::protocol_serde::shape_input_column_list::de_input_column_list(tokens, _value)?);
+                            builder = builder.set_input_columns(crate::protocol_serde::shape_input_column_list::de_input_column_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

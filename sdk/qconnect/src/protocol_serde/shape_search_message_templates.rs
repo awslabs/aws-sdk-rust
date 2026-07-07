@@ -143,6 +143,8 @@ pub(crate) fn de_search_message_templates(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -157,7 +159,11 @@ pub(crate) fn de_search_message_templates(
                 }
                 "results" => {
                     builder = builder.set_results(
-                        crate::protocol_serde::shape_message_template_search_results_list::de_message_template_search_results_list(tokens, _value)?,
+                        crate::protocol_serde::shape_message_template_search_results_list::de_message_template_search_results_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

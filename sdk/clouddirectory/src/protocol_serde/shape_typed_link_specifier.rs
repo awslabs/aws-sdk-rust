@@ -2,10 +2,16 @@
 pub(crate) fn de_typed_link_specifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TypedLinkSpecifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,20 +23,34 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TypedLinkFacet" => {
                             builder = builder.set_typed_link_facet(
-                                crate::protocol_serde::shape_typed_link_schema_and_facet_name::de_typed_link_schema_and_facet_name(tokens, _value)?,
+                                crate::protocol_serde::shape_typed_link_schema_and_facet_name::de_typed_link_schema_and_facet_name(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SourceObjectReference" => {
-                            builder = builder
-                                .set_source_object_reference(crate::protocol_serde::shape_object_reference::de_object_reference(tokens, _value)?);
+                            builder = builder.set_source_object_reference(crate::protocol_serde::shape_object_reference::de_object_reference(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TargetObjectReference" => {
-                            builder = builder
-                                .set_target_object_reference(crate::protocol_serde::shape_object_reference::de_object_reference(tokens, _value)?);
+                            builder = builder.set_target_object_reference(crate::protocol_serde::shape_object_reference::de_object_reference(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IdentityAttributeValues" => {
                             builder = builder.set_identity_attribute_values(
-                                crate::protocol_serde::shape_attribute_name_and_value_list::de_attribute_name_and_value_list(tokens, _value)?,
+                                crate::protocol_serde::shape_attribute_name_and_value_list::de_attribute_name_and_value_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

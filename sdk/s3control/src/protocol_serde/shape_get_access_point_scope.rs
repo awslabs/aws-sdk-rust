@@ -65,6 +65,8 @@ pub fn de_get_access_point_scope(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetAccessPointScopeResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetAccessPointScopeResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -75,7 +77,7 @@ pub fn de_get_access_point_scope(
             s if s.matches("Scope") /* Scope com.amazonaws.s3control.synthetic#GetAccessPointScopeOutput$Scope */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_scope::de_scope(&mut tag)
+                        crate::protocol_serde::shape_scope::de_scope(&mut tag, depth + 1)
                         ?
                     )
                 ;

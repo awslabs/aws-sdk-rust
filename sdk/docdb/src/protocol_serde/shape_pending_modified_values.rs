@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_pending_modified_values(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PendingModifiedValues, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PendingModifiedValues::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -189,7 +193,7 @@ pub fn de_pending_modified_values(
             s if s.matches("PendingCloudwatchLogsExports") /* PendingCloudwatchLogsExports com.amazonaws.docdb#PendingModifiedValues$PendingCloudwatchLogsExports */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_pending_cloudwatch_logs_exports::de_pending_cloudwatch_logs_exports(&mut tag)
+                        crate::protocol_serde::shape_pending_cloudwatch_logs_exports::de_pending_cloudwatch_logs_exports(&mut tag, depth + 1)
                         ?
                     )
                 ;

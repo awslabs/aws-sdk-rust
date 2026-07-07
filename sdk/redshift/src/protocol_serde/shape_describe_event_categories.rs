@@ -51,6 +51,8 @@ pub fn de_describe_event_categories(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeEventCategoriesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeEventCategoriesResponse got {start_el:?}"
@@ -68,7 +70,7 @@ pub fn de_describe_event_categories(
             s if s.matches("EventCategoriesMapList") /* EventCategoriesMapList com.amazonaws.redshift.synthetic#DescribeEventCategoriesOutput$EventCategoriesMapList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_event_categories_map_list::de_event_categories_map_list(&mut tag)
+                        crate::protocol_serde::shape_event_categories_map_list::de_event_categories_map_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

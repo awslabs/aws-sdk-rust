@@ -81,6 +81,8 @@ pub fn de_describe_generated_template(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeGeneratedTemplateResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeGeneratedTemplateResponse got {start_el:?}"
@@ -124,7 +126,7 @@ pub fn de_describe_generated_template(
             s if s.matches("Resources") /* Resources com.amazonaws.cloudformation.synthetic#DescribeGeneratedTemplateOutput$Resources */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_resource_details::de_resource_details(&mut tag)
+                        crate::protocol_serde::shape_resource_details::de_resource_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -189,7 +191,7 @@ pub fn de_describe_generated_template(
             s if s.matches("Progress") /* Progress com.amazonaws.cloudformation.synthetic#DescribeGeneratedTemplateOutput$Progress */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_template_progress::de_template_progress(&mut tag)
+                        crate::protocol_serde::shape_template_progress::de_template_progress(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -212,7 +214,7 @@ pub fn de_describe_generated_template(
             s if s.matches("TemplateConfiguration") /* TemplateConfiguration com.amazonaws.cloudformation.synthetic#DescribeGeneratedTemplateOutput$TemplateConfiguration */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_template_configuration::de_template_configuration(&mut tag)
+                        crate::protocol_serde::shape_template_configuration::de_template_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

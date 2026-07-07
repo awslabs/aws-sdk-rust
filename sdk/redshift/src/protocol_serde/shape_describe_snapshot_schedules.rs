@@ -51,6 +51,8 @@ pub fn de_describe_snapshot_schedules(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSnapshotSchedulesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSnapshotSchedulesResponse got {start_el:?}"
@@ -68,7 +70,7 @@ pub fn de_describe_snapshot_schedules(
             s if s.matches("SnapshotSchedules") /* SnapshotSchedules com.amazonaws.redshift.synthetic#DescribeSnapshotSchedulesOutput$SnapshotSchedules */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_schedule_list::de_snapshot_schedule_list(&mut tag)
+                        crate::protocol_serde::shape_snapshot_schedule_list::de_snapshot_schedule_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

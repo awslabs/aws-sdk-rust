@@ -96,6 +96,8 @@ pub(crate) fn de_get_logging_options(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -103,7 +105,11 @@ pub(crate) fn de_get_logging_options(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "cloudWatchLogDelivery" => {
                     builder = builder.set_cloud_watch_log_delivery(
-                        crate::protocol_serde::shape_cloud_watch_log_delivery_options::de_cloud_watch_log_delivery_options(tokens, _value)?,
+                        crate::protocol_serde::shape_cloud_watch_log_delivery_options::de_cloud_watch_log_delivery_options(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -189,6 +189,30 @@ pub(crate) fn create_id_namespace_association_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_intermediate_table_output_output_correct_errors(
+    mut builder: crate::operation::create_intermediate_table::builders::CreateIntermediateTableOutputBuilder,
+) -> crate::operation::create_intermediate_table::builders::CreateIntermediateTableOutputBuilder {
+    if builder.intermediate_table.is_none() {
+        builder.intermediate_table = {
+            let builder = crate::types::builders::IntermediateTableBuilder::default();
+            crate::serde_util::intermediate_table_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn create_intermediate_table_analysis_rule_output_output_correct_errors(
+    mut builder: crate::operation::create_intermediate_table_analysis_rule::builders::CreateIntermediateTableAnalysisRuleOutputBuilder,
+) -> crate::operation::create_intermediate_table_analysis_rule::builders::CreateIntermediateTableAnalysisRuleOutputBuilder {
+    if builder.analysis_rule.is_none() {
+        builder.analysis_rule = {
+            let builder = crate::types::builders::IntermediateTableAnalysisRuleBuilder::default();
+            crate::serde_util::intermediate_table_analysis_rule_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_membership_output_output_correct_errors(
     mut builder: crate::operation::create_membership::builders::CreateMembershipOutputBuilder,
 ) -> crate::operation::create_membership::builders::CreateMembershipOutputBuilder {
@@ -389,6 +413,30 @@ pub(crate) fn get_id_namespace_association_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_intermediate_table_output_output_correct_errors(
+    mut builder: crate::operation::get_intermediate_table::builders::GetIntermediateTableOutputBuilder,
+) -> crate::operation::get_intermediate_table::builders::GetIntermediateTableOutputBuilder {
+    if builder.intermediate_table.is_none() {
+        builder.intermediate_table = {
+            let builder = crate::types::builders::IntermediateTableBuilder::default();
+            crate::serde_util::intermediate_table_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_intermediate_table_analysis_rule_output_output_correct_errors(
+    mut builder: crate::operation::get_intermediate_table_analysis_rule::builders::GetIntermediateTableAnalysisRuleOutputBuilder,
+) -> crate::operation::get_intermediate_table_analysis_rule::builders::GetIntermediateTableAnalysisRuleOutputBuilder {
+    if builder.analysis_rule.is_none() {
+        builder.analysis_rule = {
+            let builder = crate::types::builders::IntermediateTableAnalysisRuleBuilder::default();
+            crate::serde_util::intermediate_table_analysis_rule_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_membership_output_output_correct_errors(
     mut builder: crate::operation::get_membership::builders::GetMembershipOutputBuilder,
 ) -> crate::operation::get_membership::builders::GetMembershipOutputBuilder {
@@ -576,6 +624,24 @@ pub(crate) fn list_id_namespace_associations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_intermediate_table_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_intermediate_table_versions::builders::ListIntermediateTableVersionsOutputBuilder,
+) -> crate::operation::list_intermediate_table_versions::builders::ListIntermediateTableVersionsOutputBuilder {
+    if builder.intermediate_table_version_summaries.is_none() {
+        builder.intermediate_table_version_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_intermediate_tables_output_output_correct_errors(
+    mut builder: crate::operation::list_intermediate_tables::builders::ListIntermediateTablesOutputBuilder,
+) -> crate::operation::list_intermediate_tables::builders::ListIntermediateTablesOutputBuilder {
+    if builder.intermediate_table_summaries.is_none() {
+        builder.intermediate_table_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_members_output_output_correct_errors(
     mut builder: crate::operation::list_members::builders::ListMembersOutputBuilder,
 ) -> crate::operation::list_members::builders::ListMembersOutputBuilder {
@@ -653,6 +719,21 @@ pub(crate) fn populate_id_mapping_table_output_output_correct_errors(
 ) -> crate::operation::populate_id_mapping_table::builders::PopulateIdMappingTableOutputBuilder {
     if builder.id_mapping_job_id.is_none() {
         builder.id_mapping_job_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn populate_intermediate_table_output_output_correct_errors(
+    mut builder: crate::operation::populate_intermediate_table::builders::PopulateIntermediateTableOutputBuilder,
+) -> crate::operation::populate_intermediate_table::builders::PopulateIntermediateTableOutputBuilder {
+    if builder.analysis_id.is_none() {
+        builder.analysis_id = Some(Default::default())
+    }
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::PopulateIntermediateTableAnalysisType>().ok()
+    }
+    if builder.version_id.is_none() {
+        builder.version_id = Some(Default::default())
     }
     builder
 }
@@ -809,6 +890,30 @@ pub(crate) fn update_id_namespace_association_output_output_correct_errors(
         builder.id_namespace_association = {
             let builder = crate::types::builders::IdNamespaceAssociationBuilder::default();
             crate::serde_util::id_namespace_association_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_intermediate_table_output_output_correct_errors(
+    mut builder: crate::operation::update_intermediate_table::builders::UpdateIntermediateTableOutputBuilder,
+) -> crate::operation::update_intermediate_table::builders::UpdateIntermediateTableOutputBuilder {
+    if builder.intermediate_table.is_none() {
+        builder.intermediate_table = {
+            let builder = crate::types::builders::IntermediateTableBuilder::default();
+            crate::serde_util::intermediate_table_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_intermediate_table_analysis_rule_output_output_correct_errors(
+    mut builder: crate::operation::update_intermediate_table_analysis_rule::builders::UpdateIntermediateTableAnalysisRuleOutputBuilder,
+) -> crate::operation::update_intermediate_table_analysis_rule::builders::UpdateIntermediateTableAnalysisRuleOutputBuilder {
+    if builder.analysis_rule.is_none() {
+        builder.analysis_rule = {
+            let builder = crate::types::builders::IntermediateTableAnalysisRuleBuilder::default();
+            crate::serde_util::intermediate_table_analysis_rule_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -1222,6 +1327,69 @@ pub(crate) fn id_namespace_association_correct_errors(
                 .build()
                 .ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn intermediate_table_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableBuilder,
+) -> crate::types::builders::IntermediateTableBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntermediateTableStatus>().ok()
+    }
+    if builder.population_analysis_configuration.is_none() {
+        builder.population_analysis_configuration = Some(crate::types::PopulationAnalysisConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn intermediate_table_analysis_rule_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableAnalysisRuleBuilder,
+) -> crate::types::builders::IntermediateTableAnalysisRuleBuilder {
+    if builder.intermediate_table_identifier.is_none() {
+        builder.intermediate_table_identifier = Some(Default::default())
+    }
+    if builder.intermediate_table_arn.is_none() {
+        builder.intermediate_table_arn = Some(Default::default())
+    }
+    if builder.analysis_rule_policy.is_none() {
+        builder.analysis_rule_policy = Some(crate::types::IntermediateTableAnalysisRulePolicy::Unknown)
+    }
+    if builder.analysis_rule_type.is_none() {
+        builder.analysis_rule_type = "no value was set".parse::<crate::types::IntermediateTableAnalysisRuleType>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -2173,6 +2341,96 @@ pub(crate) fn id_namespace_association_summary_correct_errors(
     builder
 }
 
+pub(crate) fn intermediate_table_active_version_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableActiveVersionBuilder,
+) -> crate::types::builders::IntermediateTableActiveVersionBuilder {
+    if builder.version_id.is_none() {
+        builder.version_id = Some(Default::default())
+    }
+    if builder.analysis_id.is_none() {
+        builder.analysis_id = Some(Default::default())
+    }
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::PopulateIntermediateTableAnalysisType>().ok()
+    }
+    if builder.inherited_constraints.is_none() {
+        builder.inherited_constraints = {
+            let builder = crate::types::builders::IntermediateTableInheritedConstraintsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn intermediate_table_schema_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableSchemaBuilder,
+) -> crate::types::builders::IntermediateTableSchemaBuilder {
+    if builder.columns.is_none() {
+        builder.columns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn intermediate_table_summary_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableSummaryBuilder,
+) -> crate::types::builders::IntermediateTableSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntermediateTableStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn intermediate_table_version_summary_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableVersionSummaryBuilder,
+) -> crate::types::builders::IntermediateTableVersionSummaryBuilder {
+    if builder.version_id.is_none() {
+        builder.version_id = Some(Default::default())
+    }
+    if builder.table_id.is_none() {
+        builder.table_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.analysis_id.is_none() {
+        builder.analysis_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntermediateTableVersionStatus>().ok()
+    }
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::PopulateIntermediateTableAnalysisType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn member_summary_correct_errors(
     mut builder: crate::types::builders::MemberSummaryBuilder,
 ) -> crate::types::builders::MemberSummaryBuilder {
@@ -2636,12 +2894,36 @@ pub(crate) fn change_correct_errors(mut builder: crate::types::builders::ChangeB
     builder
 }
 
+pub(crate) fn child_resource_correct_errors(
+    mut builder: crate::types::builders::ChildResourceBuilder,
+) -> crate::types::builders::ChildResourceBuilder {
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::ChildResourceType>().ok()
+    }
+    if builder.resource_name.is_none() {
+        builder.resource_name = Some(Default::default())
+    }
+    if builder.owner_account_id.is_none() {
+        builder.owner_account_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn column_correct_errors(mut builder: crate::types::builders::ColumnBuilder) -> crate::types::builders::ColumnBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
     if builder.r#type.is_none() {
         builder.r#type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn configured_table_association_schema_type_properties_correct_errors(
+    mut builder: crate::types::builders::ConfiguredTableAssociationSchemaTypePropertiesBuilder,
+) -> crate::types::builders::ConfiguredTableAssociationSchemaTypePropertiesBuilder {
+    if builder.configured_table_association_id.is_none() {
+        builder.configured_table_association_id = Some(Default::default())
     }
     builder
 }
@@ -2684,6 +2966,51 @@ pub(crate) fn id_namespace_association_input_reference_properties_summary_correc
 ) -> crate::types::builders::IdNamespaceAssociationInputReferencePropertiesSummaryBuilder {
     if builder.id_namespace_type.is_none() {
         builder.id_namespace_type = "no value was set".parse::<crate::types::IdNamespaceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn intermediate_table_dependency_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableDependencyBuilder,
+) -> crate::types::builders::IntermediateTableDependencyBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::BaseTableDependencyType>().ok()
+    }
+    if builder.parent_type.is_none() {
+        builder.parent_type = "no value was set".parse::<crate::types::BaseTableParentType>().ok()
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn intermediate_table_output_configuration_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableOutputConfigurationBuilder,
+) -> crate::types::builders::IntermediateTableOutputConfigurationBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn intermediate_table_schema_type_properties_correct_errors(
+    mut builder: crate::types::builders::IntermediateTableSchemaTypePropertiesBuilder,
+) -> crate::types::builders::IntermediateTableSchemaTypePropertiesBuilder {
+    if builder.intermediate_table_id.is_none() {
+        builder.intermediate_table_id = Some(Default::default())
     }
     builder
 }
@@ -2952,6 +3279,54 @@ pub(crate) fn id_mapping_table_input_source_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::IdNamespaceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn inherited_additional_analyses_correct_errors(
+    mut builder: crate::types::builders::InheritedAdditionalAnalysesBuilder,
+) -> crate::types::builders::InheritedAdditionalAnalysesBuilder {
+    if builder.value.is_none() {
+        builder.value = "no value was set".parse::<crate::types::AdditionalAnalyses>().ok()
+    }
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inherited_allowed_additional_analyses_correct_errors(
+    mut builder: crate::types::builders::InheritedAllowedAdditionalAnalysesBuilder,
+) -> crate::types::builders::InheritedAllowedAdditionalAnalysesBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inherited_allowed_result_receivers_correct_errors(
+    mut builder: crate::types::builders::InheritedAllowedResultReceiversBuilder,
+) -> crate::types::builders::InheritedAllowedResultReceiversBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inherited_disallowed_output_columns_correct_errors(
+    mut builder: crate::types::builders::InheritedDisallowedOutputColumnsBuilder,
+) -> crate::types::builders::InheritedDisallowedOutputColumnsBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.column_lineage.is_none() {
+        builder.column_lineage = Some(Default::default())
     }
     builder
 }
@@ -3248,6 +3623,30 @@ pub(crate) fn aggregation_constraint_correct_errors(
     builder
 }
 
+pub(crate) fn column_lineage_entry_correct_errors(
+    mut builder: crate::types::builders::ColumnLineageEntryBuilder,
+) -> crate::types::builders::ColumnLineageEntryBuilder {
+    if builder.column.is_none() {
+        builder.column = Some(Default::default())
+    }
+    if builder.source_column.is_none() {
+        builder.source_column = Some(Default::default())
+    }
+    if builder.source_name.is_none() {
+        builder.source_name = Some(Default::default())
+    }
+    if builder.source_id.is_none() {
+        builder.source_id = Some(Default::default())
+    }
+    if builder.source_type.is_none() {
+        builder.source_type = "no value was set".parse::<crate::types::BaseTableDependencyType>().ok()
+    }
+    if builder.source_account_id.is_none() {
+        builder.source_account_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn differential_privacy_privacy_budget_aggregation_correct_errors(
     mut builder: crate::types::builders::DifferentialPrivacyPrivacyBudgetAggregationBuilder,
 ) -> crate::types::builders::DifferentialPrivacyPrivacyBudgetAggregationBuilder {
@@ -3259,6 +3658,69 @@ pub(crate) fn differential_privacy_privacy_budget_aggregation_correct_errors(
     }
     if builder.remaining_count.is_none() {
         builder.remaining_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inherited_additional_analyses_source_correct_errors(
+    mut builder: crate::types::builders::InheritedAdditionalAnalysesSourceBuilder,
+) -> crate::types::builders::InheritedAdditionalAnalysesSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::BaseTableDependencyType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = "no value was set".parse::<crate::types::AdditionalAnalyses>().ok()
+    }
+    if builder.source_account_id.is_none() {
+        builder.source_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inherited_allowed_additional_analyses_source_correct_errors(
+    mut builder: crate::types::builders::InheritedAllowedAdditionalAnalysesSourceBuilder,
+) -> crate::types::builders::InheritedAllowedAdditionalAnalysesSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::BaseTableDependencyType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.source_account_id.is_none() {
+        builder.source_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inherited_allowed_result_receivers_source_correct_errors(
+    mut builder: crate::types::builders::InheritedAllowedResultReceiversSourceBuilder,
+) -> crate::types::builders::InheritedAllowedResultReceiversSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::BaseTableDependencyType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.source_account_id.is_none() {
+        builder.source_account_id = Some(Default::default())
     }
     builder
 }

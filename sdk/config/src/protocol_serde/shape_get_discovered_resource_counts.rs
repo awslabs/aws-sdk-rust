@@ -110,6 +110,8 @@ pub(crate) fn de_get_discovered_resource_counts(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -123,7 +125,11 @@ pub(crate) fn de_get_discovered_resource_counts(
                     );
                 }
                 "resourceCounts" => {
-                    builder = builder.set_resource_counts(crate::protocol_serde::shape_resource_counts::de_resource_counts(tokens, _value)?);
+                    builder = builder.set_resource_counts(crate::protocol_serde::shape_resource_counts::de_resource_counts(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

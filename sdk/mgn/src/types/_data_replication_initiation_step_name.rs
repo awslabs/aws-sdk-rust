@@ -21,6 +21,7 @@
 ///     DataReplicationInitiationStepName::DownloadReplicationSoftware => { /* ... */ },
 ///     DataReplicationInitiationStepName::LaunchReplicationServer => { /* ... */ },
 ///     DataReplicationInitiationStepName::PairReplicationServerWithAgent => { /* ... */ },
+///     DataReplicationInitiationStepName::SetupFsxProxy => { /* ... */ },
 ///     DataReplicationInitiationStepName::StartDataTransfer => { /* ... */ },
 ///     DataReplicationInitiationStepName::Wait => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -70,6 +71,8 @@ pub enum DataReplicationInitiationStepName {
     #[allow(missing_docs)] // documentation missing in model
     PairReplicationServerWithAgent,
     #[allow(missing_docs)] // documentation missing in model
+    SetupFsxProxy,
+    #[allow(missing_docs)] // documentation missing in model
     StartDataTransfer,
     #[allow(missing_docs)] // documentation missing in model
     Wait,
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for DataReplicationInitiationStepName {
             "DOWNLOAD_REPLICATION_SOFTWARE" => DataReplicationInitiationStepName::DownloadReplicationSoftware,
             "LAUNCH_REPLICATION_SERVER" => DataReplicationInitiationStepName::LaunchReplicationServer,
             "PAIR_REPLICATION_SERVER_WITH_AGENT" => DataReplicationInitiationStepName::PairReplicationServerWithAgent,
+            "SETUP_FSX_PROXY" => DataReplicationInitiationStepName::SetupFsxProxy,
             "START_DATA_TRANSFER" => DataReplicationInitiationStepName::StartDataTransfer,
             "WAIT" => DataReplicationInitiationStepName::Wait,
             other => DataReplicationInitiationStepName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -115,6 +119,7 @@ impl DataReplicationInitiationStepName {
             DataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
             DataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
             DataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
+            DataReplicationInitiationStepName::SetupFsxProxy => "SETUP_FSX_PROXY",
             DataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
             DataReplicationInitiationStepName::Wait => "WAIT",
             DataReplicationInitiationStepName::Unknown(value) => value.as_str(),
@@ -132,6 +137,7 @@ impl DataReplicationInitiationStepName {
             "DOWNLOAD_REPLICATION_SOFTWARE",
             "LAUNCH_REPLICATION_SERVER",
             "PAIR_REPLICATION_SERVER_WITH_AGENT",
+            "SETUP_FSX_PROXY",
             "START_DATA_TRANSFER",
             "WAIT",
         ]
@@ -166,6 +172,7 @@ impl ::std::fmt::Display for DataReplicationInitiationStepName {
             DataReplicationInitiationStepName::DownloadReplicationSoftware => write!(f, "DOWNLOAD_REPLICATION_SOFTWARE"),
             DataReplicationInitiationStepName::LaunchReplicationServer => write!(f, "LAUNCH_REPLICATION_SERVER"),
             DataReplicationInitiationStepName::PairReplicationServerWithAgent => write!(f, "PAIR_REPLICATION_SERVER_WITH_AGENT"),
+            DataReplicationInitiationStepName::SetupFsxProxy => write!(f, "SETUP_FSX_PROXY"),
             DataReplicationInitiationStepName::StartDataTransfer => write!(f, "START_DATA_TRANSFER"),
             DataReplicationInitiationStepName::Wait => write!(f, "WAIT"),
             DataReplicationInitiationStepName::Unknown(value) => write!(f, "{value}"),

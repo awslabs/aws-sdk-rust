@@ -167,6 +167,8 @@ pub fn de_create_cache_subnet_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateCacheSubnetGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateCacheSubnetGroupResponse got {start_el:?}"
@@ -184,7 +186,7 @@ pub fn de_create_cache_subnet_group(
             s if s.matches("CacheSubnetGroup") /* CacheSubnetGroup com.amazonaws.elasticache.synthetic#CreateCacheSubnetGroupOutput$CacheSubnetGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cache_subnet_group::de_cache_subnet_group(&mut tag)
+                        crate::protocol_serde::shape_cache_subnet_group::de_cache_subnet_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -40,6 +40,8 @@ pub fn de_import_snapshot(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ImportSnapshotResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ImportSnapshotResponse got {start_el:?}"
@@ -76,7 +78,7 @@ pub fn de_import_snapshot(
             s if s.matches("snapshotTaskDetail") /* SnapshotTaskDetail com.amazonaws.ec2.synthetic#ImportSnapshotOutput$SnapshotTaskDetail */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_task_detail::de_snapshot_task_detail(&mut tag)
+                        crate::protocol_serde::shape_snapshot_task_detail::de_snapshot_task_detail(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +88,7 @@ pub fn de_import_snapshot(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#ImportSnapshotOutput$Tags */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

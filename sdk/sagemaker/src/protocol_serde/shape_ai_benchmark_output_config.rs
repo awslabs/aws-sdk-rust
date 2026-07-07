@@ -6,5 +6,11 @@ pub fn ser_ai_benchmark_output_config(
     if let Some(var_1) = &input.s3_output_location {
         object.key("S3OutputLocation").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.mlflow_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("MlflowConfig").start_object();
+        crate::protocol_serde::shape_ai_mlflow_config::ser_ai_mlflow_config(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

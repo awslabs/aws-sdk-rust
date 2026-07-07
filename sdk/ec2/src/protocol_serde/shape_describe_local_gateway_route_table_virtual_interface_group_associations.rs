@@ -27,6 +27,8 @@ pub fn de_describe_local_gateway_route_table_virtual_interface_group_association
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse got {start_el:?}"
@@ -37,7 +39,7 @@ pub fn de_describe_local_gateway_route_table_virtual_interface_group_association
             s if s.matches("localGatewayRouteTableVirtualInterfaceGroupAssociationSet") /* LocalGatewayRouteTableVirtualInterfaceGroupAssociations com.amazonaws.ec2.synthetic#DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput$LocalGatewayRouteTableVirtualInterfaceGroupAssociations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_local_gateway_route_table_virtual_interface_group_association_set::de_local_gateway_route_table_virtual_interface_group_association_set(&mut tag)
+                        crate::protocol_serde::shape_local_gateway_route_table_virtual_interface_group_association_set::de_local_gateway_route_table_virtual_interface_group_association_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -30,10 +30,16 @@ pub fn ser_text_prompt_template_configuration(
 pub(crate) fn de_text_prompt_template_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TextPromptTemplateConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,11 +57,15 @@ where
                             );
                         }
                         "cachePoint" => {
-                            builder = builder.set_cache_point(crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens, _value)?);
+                            builder = builder.set_cache_point(crate::protocol_serde::shape_cache_point_block::de_cache_point_block(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "inputVariables" => {
                             builder = builder.set_input_variables(
-                                crate::protocol_serde::shape_prompt_input_variables_list::de_prompt_input_variables_list(tokens, _value)?,
+                                crate::protocol_serde::shape_prompt_input_variables_list::de_prompt_input_variables_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

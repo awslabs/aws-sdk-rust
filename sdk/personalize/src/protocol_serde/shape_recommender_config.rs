@@ -34,10 +34,16 @@ pub fn ser_recommender_config(
 pub(crate) fn de_recommender_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecommenderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,8 +54,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "itemExplorationConfig" => {
-                            builder = builder
-                                .set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
+                            builder = builder.set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "minRecommendationRequestsPerSecond" => {
                             builder = builder.set_min_recommendation_requests_per_second(
@@ -60,7 +69,9 @@ where
                         }
                         "trainingDataConfig" => {
                             builder = builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "enableMetadataWithRecommendations" => {

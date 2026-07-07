@@ -148,6 +148,8 @@ pub(crate) fn de_describe_domain_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -168,11 +170,15 @@ pub(crate) fn de_describe_domain_configuration(
                     );
                 }
                 "authorizerConfig" => {
-                    builder = builder.set_authorizer_config(crate::protocol_serde::shape_authorizer_config::de_authorizer_config(tokens, _value)?);
+                    builder = builder.set_authorizer_config(crate::protocol_serde::shape_authorizer_config::de_authorizer_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "clientCertificateConfig" => {
                     builder = builder.set_client_certificate_config(
-                        crate::protocol_serde::shape_client_certificate_config::de_client_certificate_config(tokens, _value)?,
+                        crate::protocol_serde::shape_client_certificate_config::de_client_certificate_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "domainConfigurationArn" => {
@@ -218,12 +224,15 @@ pub(crate) fn de_describe_domain_configuration(
                 }
                 "serverCertificateConfig" => {
                     builder = builder.set_server_certificate_config(
-                        crate::protocol_serde::shape_server_certificate_config::de_server_certificate_config(tokens, _value)?,
+                        crate::protocol_serde::shape_server_certificate_config::de_server_certificate_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "serverCertificates" => {
-                    builder =
-                        builder.set_server_certificates(crate::protocol_serde::shape_server_certificates::de_server_certificates(tokens, _value)?);
+                    builder = builder.set_server_certificates(crate::protocol_serde::shape_server_certificates::de_server_certificates(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "serviceType" => {
                     builder = builder.set_service_type(
@@ -233,7 +242,7 @@ pub(crate) fn de_describe_domain_configuration(
                     );
                 }
                 "tlsConfig" => {
-                    builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens, _value)?);
+                    builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -96,6 +96,8 @@ pub fn de_describe_instances_health(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeInstancesHealthResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeInstancesHealthResponse got {start_el:?}"
@@ -113,7 +115,7 @@ pub fn de_describe_instances_health(
             s if s.matches("InstanceHealthList") /* InstanceHealthList com.amazonaws.elasticbeanstalk.synthetic#DescribeInstancesHealthOutput$InstanceHealthList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_health_list::de_instance_health_list(&mut tag)
+                        crate::protocol_serde::shape_instance_health_list::de_instance_health_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

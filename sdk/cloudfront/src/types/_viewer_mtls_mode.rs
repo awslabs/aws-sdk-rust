@@ -13,6 +13,7 @@
 /// # let viewermtlsmode = unimplemented!();
 /// match viewermtlsmode {
 ///     ViewerMtlsMode::Optional => { /* ... */ },
+///     ViewerMtlsMode::Passthrough => { /* ... */ },
 ///     ViewerMtlsMode::Required => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum ViewerMtlsMode {
     #[allow(missing_docs)] // documentation missing in model
     Optional,
     #[allow(missing_docs)] // documentation missing in model
+    Passthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Required,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ViewerMtlsMode {
     fn from(s: &str) -> Self {
         match s {
             "optional" => ViewerMtlsMode::Optional,
+            "passthrough" => ViewerMtlsMode::Passthrough,
             "required" => ViewerMtlsMode::Required,
             other => ViewerMtlsMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl ViewerMtlsMode {
     pub fn as_str(&self) -> &str {
         match self {
             ViewerMtlsMode::Optional => "optional",
+            ViewerMtlsMode::Passthrough => "passthrough",
             ViewerMtlsMode::Required => "required",
             ViewerMtlsMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["optional", "required"]
+        &["optional", "passthrough", "required"]
     }
 }
 impl ::std::convert::AsRef<str> for ViewerMtlsMode {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ViewerMtlsMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ViewerMtlsMode::Optional => write!(f, "optional"),
+            ViewerMtlsMode::Passthrough => write!(f, "passthrough"),
             ViewerMtlsMode::Required => write!(f, "required"),
             ViewerMtlsMode::Unknown(value) => write!(f, "{value}"),
         }

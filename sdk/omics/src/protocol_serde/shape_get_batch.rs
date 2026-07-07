@@ -127,6 +127,8 @@ pub(crate) fn de_get_batch(
 ) -> ::std::result::Result<crate::operation::get_batch::builders::GetBatchOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,8 +148,11 @@ pub(crate) fn de_get_batch(
                     )?);
                 }
                 "defaultRunSetting" => {
-                    builder =
-                        builder.set_default_run_setting(crate::protocol_serde::shape_default_run_setting::de_default_run_setting(tokens, _value)?);
+                    builder = builder.set_default_run_setting(crate::protocol_serde::shape_default_run_setting::de_default_run_setting(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "failedTime" => {
                     builder = builder.set_failed_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -183,7 +188,7 @@ pub(crate) fn de_get_batch(
                     )?);
                 }
                 "runSummary" => {
-                    builder = builder.set_run_summary(crate::protocol_serde::shape_run_summary::de_run_summary(tokens, _value)?);
+                    builder = builder.set_run_summary(crate::protocol_serde::shape_run_summary::de_run_summary(tokens, _value, depth + 1)?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -193,7 +198,11 @@ pub(crate) fn de_get_batch(
                     );
                 }
                 "submissionSummary" => {
-                    builder = builder.set_submission_summary(crate::protocol_serde::shape_submission_summary::de_submission_summary(tokens, _value)?);
+                    builder = builder.set_submission_summary(crate::protocol_serde::shape_submission_summary::de_submission_summary(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "submittedTime" => {
                     builder = builder.set_submitted_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -202,7 +211,7 @@ pub(crate) fn de_get_batch(
                     )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "totalRuns" => {
                     builder = builder.set_total_runs(

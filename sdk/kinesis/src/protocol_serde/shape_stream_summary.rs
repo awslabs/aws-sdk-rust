@@ -2,10 +2,16 @@
 pub(crate) fn de_stream_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StreamSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,8 +43,11 @@ where
                             );
                         }
                         "StreamModeDetails" => {
-                            builder = builder
-                                .set_stream_mode_details(crate::protocol_serde::shape_stream_mode_details::de_stream_mode_details(tokens, _value)?);
+                            builder = builder.set_stream_mode_details(crate::protocol_serde::shape_stream_mode_details::de_stream_mode_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StreamCreationTimestamp" => {
                             builder = builder.set_stream_creation_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

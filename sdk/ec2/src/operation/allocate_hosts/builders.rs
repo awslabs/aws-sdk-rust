@@ -243,6 +243,20 @@ impl AllocateHostsFluentBuilder {
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone_id()
     }
+    /// <p>The CPU configuration options to apply to the Dedicated Host.</p>
+    pub fn cpu_options(mut self, input: crate::types::HostCpuOptionsRequest) -> Self {
+        self.inner = self.inner.cpu_options(input);
+        self
+    }
+    /// <p>The CPU configuration options to apply to the Dedicated Host.</p>
+    pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::HostCpuOptionsRequest>) -> Self {
+        self.inner = self.inner.set_cpu_options(input);
+        self
+    }
+    /// <p>The CPU configuration options to apply to the Dedicated Host.</p>
+    pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::HostCpuOptionsRequest> {
+        self.inner.get_cpu_options()
+    }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>off</code></p>
     pub fn auto_placement(mut self, input: crate::types::AutoPlacement) -> Self {

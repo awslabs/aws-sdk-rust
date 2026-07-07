@@ -29,6 +29,8 @@ pub(crate) mod shape_batch_get_calculated_attribute_for_profile;
 
 pub(crate) mod shape_batch_get_profile;
 
+pub(crate) mod shape_batch_put_profile_object;
+
 pub(crate) mod shape_create_calculated_attribute_definition;
 
 pub(crate) mod shape_create_domain;
@@ -253,6 +255,8 @@ pub(crate) mod shape_batch_get_calculated_attribute_for_profile_input;
 
 pub(crate) mod shape_batch_get_profile_input;
 
+pub(crate) mod shape_batch_put_profile_object_input;
+
 pub(crate) mod shape_create_calculated_attribute_definition_input;
 
 pub(crate) mod shape_create_domain_input;
@@ -354,6 +358,12 @@ pub(crate) mod shape_auto_merging;
 pub(crate) mod shape_batch_get_calculated_attribute_for_profile_error_list;
 
 pub(crate) mod shape_batch_get_profile_error_list;
+
+pub(crate) mod shape_batch_put_profile_object_error_list;
+
+pub(crate) mod shape_batch_put_profile_object_request_item;
+
+pub(crate) mod shape_batch_put_profile_object_response_list;
 
 pub(crate) mod shape_calculated_attribute_definitions_list;
 
@@ -465,6 +475,8 @@ pub(crate) mod shape_profiles;
 
 pub(crate) mod shape_readiness;
 
+pub(crate) mod shape_recommendation_diversity_config;
+
 pub(crate) mod shape_recommendations;
 
 pub(crate) mod shape_recommender_config;
@@ -537,11 +549,17 @@ pub(crate) mod shape_batch_get_calculated_attribute_for_profile_error;
 
 pub(crate) mod shape_batch_get_profile_error;
 
+pub(crate) mod shape_batch_put_profile_object_error_item;
+
+pub(crate) mod shape_batch_put_profile_object_response_item;
+
 pub(crate) mod shape_calculated_attribute_value;
 
 pub(crate) mod shape_contact_preference;
 
 pub(crate) mod shape_detected_profile_object_type;
+
+pub(crate) mod shape_diversity_config;
 
 pub(crate) mod shape_domain_object_types_list_item;
 
@@ -670,6 +688,10 @@ pub(crate) mod shape_connector_operator;
 pub(crate) mod shape_destination_summary;
 
 pub(crate) mod shape_dimension;
+
+pub(crate) mod shape_diversity_column;
+
+pub(crate) mod shape_diversity_columns_list;
 
 pub(crate) mod shape_email_list;
 

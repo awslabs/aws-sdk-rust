@@ -42,6 +42,8 @@ pub fn de_list_buckets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListAllMyBucketsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListAllMyBucketsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -52,7 +54,7 @@ pub fn de_list_buckets(
             s if s.matches("Owner") /* Owner com.amazonaws.s3.synthetic#ListBucketsOutput$Owner */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_owner::de_owner(&mut tag)
+                        crate::protocol_serde::shape_owner::de_owner(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -88,7 +90,7 @@ pub fn de_list_buckets(
             s if s.matches("Buckets") /* Buckets com.amazonaws.s3.synthetic#ListBucketsOutput$Buckets */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_buckets::de_buckets(&mut tag)
+                        crate::protocol_serde::shape_buckets::de_buckets(&mut tag, depth + 1)
                         ?
                     )
                 ;

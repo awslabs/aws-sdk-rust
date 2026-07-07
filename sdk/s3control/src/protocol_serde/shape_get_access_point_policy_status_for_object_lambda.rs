@@ -70,6 +70,8 @@ pub fn de_get_access_point_policy_status_for_object_lambda(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetAccessPointPolicyStatusForObjectLambdaResult") {
         return Err(
                                 ::aws_smithy_xml::decode::XmlDecodeError::custom(
@@ -82,7 +84,7 @@ pub fn de_get_access_point_policy_status_for_object_lambda(
             s if s.matches("PolicyStatus") /* PolicyStatus com.amazonaws.s3control.synthetic#GetAccessPointPolicyStatusForObjectLambdaOutput$PolicyStatus */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_policy_status::de_policy_status(&mut tag)
+                        crate::protocol_serde::shape_policy_status::de_policy_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

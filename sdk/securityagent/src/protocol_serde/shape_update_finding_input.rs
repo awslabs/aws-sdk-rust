@@ -6,14 +6,35 @@ pub fn ser_update_finding_input_input(
     if let Some(var_1) = &input.agent_space_id {
         object.key("agentSpaceId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.finding_id {
-        object.key("findingId").string(var_2.as_str());
+    if let Some(var_2) = &input.attack_script {
+        object.key("attackScript").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.risk_level {
-        object.key("riskLevel").string(var_3.as_str());
+    if let Some(var_3) = &input.customer_note {
+        object.key("customerNote").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.status {
-        object.key("status").string(var_4.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("description").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.finding_id {
+        object.key("findingId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.reasoning {
+        object.key("reasoning").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.risk_level {
+        object.key("riskLevel").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.risk_score {
+        object.key("riskScore").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.risk_type {
+        object.key("riskType").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.status {
+        object.key("status").string(var_11.as_str());
     }
     Ok(())
 }

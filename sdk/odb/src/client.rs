@@ -140,6 +140,12 @@ mod accept_marketplace_registration;
 
 mod associate_iam_role_to_resource;
 
+mod create_autonomous_database;
+
+mod create_autonomous_database_backup;
+
+mod create_autonomous_database_wallet;
+
 mod create_cloud_autonomous_vm_cluster;
 
 mod create_cloud_exadata_infrastructure;
@@ -177,6 +183,10 @@ mod create_odb_peering_connection;
 /// ```
 pub mod customize;
 
+mod delete_autonomous_database;
+
+mod delete_autonomous_database_backup;
+
 mod delete_cloud_autonomous_vm_cluster;
 
 mod delete_cloud_exadata_infrastructure;
@@ -188,6 +198,14 @@ mod delete_odb_network;
 mod delete_odb_peering_connection;
 
 mod disassociate_iam_role_from_resource;
+
+mod failover_autonomous_database;
+
+mod get_autonomous_database;
+
+mod get_autonomous_database_backup;
+
+mod get_autonomous_database_wallet_details;
 
 mod get_cloud_autonomous_vm_cluster;
 
@@ -208,6 +226,18 @@ mod get_odb_network;
 mod get_odb_peering_connection;
 
 mod initialize_service;
+
+mod list_autonomous_database_backups;
+
+mod list_autonomous_database_character_sets;
+
+mod list_autonomous_database_clones;
+
+mod list_autonomous_database_peers;
+
+mod list_autonomous_database_versions;
+
+mod list_autonomous_databases;
 
 mod list_autonomous_virtual_machines;
 
@@ -233,15 +263,31 @@ mod list_system_versions;
 
 mod list_tags_for_resource;
 
+mod reboot_autonomous_database;
+
 mod reboot_db_node;
+
+mod restore_autonomous_database;
+
+mod shrink_autonomous_database;
+
+mod start_autonomous_database;
 
 mod start_db_node;
 
+mod stop_autonomous_database;
+
 mod stop_db_node;
+
+mod switchover_autonomous_database;
 
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_autonomous_database;
+
+mod update_autonomous_database_backup;
 
 mod update_cloud_exadata_infrastructure;
 

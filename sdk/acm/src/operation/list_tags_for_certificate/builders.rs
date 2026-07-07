@@ -22,7 +22,9 @@ impl crate::operation::list_tags_for_certificate::builders::ListTagsForCertifica
 }
 /// Fluent builder constructing a request to `ListTagsForCertificate`.
 ///
-/// <p>Lists the tags that have been applied to the ACM certificate. Use the certificate's Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate, use the <code>AddTagsToCertificate</code> action. To delete a tag, use the <code>RemoveTagsFromCertificate</code> action.</p>
+/// <p>Lists the tags that have been applied to the ACM certificate. Use the certificate's Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate, use the <code>AddTagsToCertificate</code> action. To delete a tag, use the <code>RemoveTagsFromCertificate</code> action.</p><note>
+/// <p>This action applies only to the <code>certificate</code> resource type. For all other ACM resource types, use <code>ListTagsForResource</code> instead.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

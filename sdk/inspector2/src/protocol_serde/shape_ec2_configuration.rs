@@ -6,5 +6,8 @@ pub fn ser_ec2_configuration(
     {
         object.key("scanMode").string(input.scan_mode.as_str());
     }
+    if let Some(var_1) = &input.activate_vm_scanner {
+        object.key("activateVMScanner").boolean(*var_1);
+    }
     Ok(())
 }

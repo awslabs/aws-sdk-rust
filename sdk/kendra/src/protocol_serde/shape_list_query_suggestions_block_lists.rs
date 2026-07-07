@@ -144,6 +144,8 @@ pub(crate) fn de_list_query_suggestions_block_lists(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -152,7 +154,9 @@ pub(crate) fn de_list_query_suggestions_block_lists(
                 "BlockListSummaryItems" => {
                     builder = builder.set_block_list_summary_items(
                         crate::protocol_serde::shape_query_suggestions_block_list_summary_items::de_query_suggestions_block_list_summary_items(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

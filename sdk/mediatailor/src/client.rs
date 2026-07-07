@@ -183,6 +183,8 @@ mod delete_channel;
 
 mod delete_channel_policy;
 
+mod delete_function;
+
 mod delete_live_source;
 
 mod delete_playback_configuration;
@@ -209,6 +211,8 @@ mod get_channel_policy;
 
 mod get_channel_schedule;
 
+mod get_function;
+
 mod get_playback_configuration;
 
 mod get_prefetch_schedule;
@@ -216,6 +220,8 @@ mod get_prefetch_schedule;
 mod list_alerts;
 
 mod list_channels;
+
+mod list_functions;
 
 mod list_live_sources;
 
@@ -230,6 +236,8 @@ mod list_tags_for_resource;
 mod list_vod_sources;
 
 mod put_channel_policy;
+
+mod put_function;
 
 mod put_playback_configuration;
 

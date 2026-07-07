@@ -72,6 +72,8 @@ pub fn de_describe_configuration_options(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeConfigurationOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeConfigurationOptionsResponse got {start_el:?}"
@@ -115,7 +117,7 @@ pub fn de_describe_configuration_options(
             s if s.matches("Options") /* Options com.amazonaws.elasticbeanstalk.synthetic#DescribeConfigurationOptionsOutput$Options */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_configuration_option_descriptions_list::de_configuration_option_descriptions_list(&mut tag)
+                        crate::protocol_serde::shape_configuration_option_descriptions_list::de_configuration_option_descriptions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

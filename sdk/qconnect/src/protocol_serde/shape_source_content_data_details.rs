@@ -2,10 +2,16 @@
 pub(crate) fn de_source_content_data_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SourceContentDataDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,13 +36,15 @@ where
                             );
                         }
                         "textData" => {
-                            builder = builder.set_text_data(crate::protocol_serde::shape_text_data::de_text_data(tokens, _value)?);
+                            builder = builder.set_text_data(crate::protocol_serde::shape_text_data::de_text_data(tokens, _value, depth + 1)?);
                         }
                         "rankingData" => {
-                            builder = builder.set_ranking_data(crate::protocol_serde::shape_ranking_data::de_ranking_data(tokens, _value)?);
+                            builder =
+                                builder.set_ranking_data(crate::protocol_serde::shape_ranking_data::de_ranking_data(tokens, _value, depth + 1)?);
                         }
                         "citationSpan" => {
-                            builder = builder.set_citation_span(crate::protocol_serde::shape_citation_span::de_citation_span(tokens, _value)?);
+                            builder =
+                                builder.set_citation_span(crate::protocol_serde::shape_citation_span::de_citation_span(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

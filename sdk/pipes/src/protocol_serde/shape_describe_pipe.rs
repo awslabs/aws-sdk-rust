@@ -114,6 +114,8 @@ pub(crate) fn de_describe_pipe(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -165,7 +167,7 @@ pub(crate) fn de_describe_pipe(
                 }
                 "EnrichmentParameters" => {
                     builder = builder.set_enrichment_parameters(
-                        crate::protocol_serde::shape_pipe_enrichment_parameters::de_pipe_enrichment_parameters(tokens, _value)?,
+                        crate::protocol_serde::shape_pipe_enrichment_parameters::de_pipe_enrichment_parameters(tokens, _value, depth + 1)?,
                     );
                 }
                 "KmsKeyIdentifier" => {
@@ -183,7 +185,9 @@ pub(crate) fn de_describe_pipe(
                 }
                 "LogConfiguration" => {
                     builder = builder.set_log_configuration(crate::protocol_serde::shape_pipe_log_configuration::de_pipe_log_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Name" => {
@@ -209,7 +213,9 @@ pub(crate) fn de_describe_pipe(
                 }
                 "SourceParameters" => {
                     builder = builder.set_source_parameters(crate::protocol_serde::shape_pipe_source_parameters::de_pipe_source_parameters(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "StateReason" => {
@@ -220,7 +226,7 @@ pub(crate) fn de_describe_pipe(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "Target" => {
                     builder = builder.set_target(
@@ -231,7 +237,9 @@ pub(crate) fn de_describe_pipe(
                 }
                 "TargetParameters" => {
                     builder = builder.set_target_parameters(crate::protocol_serde::shape_pipe_target_parameters::de_pipe_target_parameters(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

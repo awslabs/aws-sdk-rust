@@ -84,10 +84,16 @@ pub fn ser_s3_excel_source(
 pub(crate) fn de_s3_excel_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::S3ExcelSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -106,7 +112,11 @@ where
                         }
                         "Paths" => {
                             builder = builder.set_paths(
-                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CompressionType" => {
@@ -118,7 +128,11 @@ where
                         }
                         "Exclusions" => {
                             builder = builder.set_exclusions(
-                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "GroupSize" => {
@@ -155,7 +169,9 @@ where
                         "AdditionalOptions" => {
                             builder = builder.set_additional_options(
                                 crate::protocol_serde::shape_s3_direct_source_additional_options::de_s3_direct_source_additional_options(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -174,7 +190,8 @@ where
                             );
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
+                            builder =
+                                builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

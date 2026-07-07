@@ -320,6 +320,20 @@ impl CreateDomainFluentBuilder {
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         self.inner.get_app_security_group_management()
     }
+    /// <p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>
+    pub fn home_efs_file_system_creation(mut self, input: crate::types::HomeEfsFileSystemCreation) -> Self {
+        self.inner = self.inner.home_efs_file_system_creation(input);
+        self
+    }
+    /// <p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>
+    pub fn set_home_efs_file_system_creation(mut self, input: ::std::option::Option<crate::types::HomeEfsFileSystemCreation>) -> Self {
+        self.inner = self.inner.set_home_efs_file_system_creation(input);
+        self
+    }
+    /// <p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>
+    pub fn get_home_efs_file_system_creation(&self) -> &::std::option::Option<crate::types::HomeEfsFileSystemCreation> {
+        self.inner.get_home_efs_file_system_creation()
+    }
     /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
     pub fn tag_propagation(mut self, input: crate::types::TagPropagation) -> Self {
         self.inner = self.inner.tag_propagation(input);

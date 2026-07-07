@@ -47,6 +47,34 @@ pub use crate::types::_metadata_generation_run_type::MetadataGenerationRunType;
 
 pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTarget;
 
+pub use crate::types::_notebook_status::NotebookStatus;
+
+pub use crate::types::_environment_config::EnvironmentConfig;
+
+pub use crate::types::_notebook_error::NotebookError;
+
+pub use crate::types::_file_format::FileFormat;
+
+pub use crate::types::_notebook_export_status::NotebookExportStatus;
+
+pub use crate::types::_notebook_export_error::NotebookExportError;
+
+pub use crate::types::_output_location::OutputLocation;
+
+pub use crate::types::_notebook_run_status::NotebookRunStatus;
+
+pub use crate::types::_compute_config::ComputeConfig;
+
+pub use crate::types::_network_config::NetworkConfig;
+
+pub use crate::types::_timeout_config::TimeoutConfig;
+
+pub use crate::types::_storage_config::StorageConfig;
+
+pub use crate::types::_trigger_source::TriggerSource;
+
+pub use crate::types::_notebook_run_error::NotebookRunError;
+
 pub use crate::types::_rule_type::RuleType;
 
 pub use crate::types::_rule_target_type::RuleTargetType;
@@ -145,6 +173,8 @@ pub use crate::types::_user_profile_status::UserProfileStatus;
 
 pub use crate::types::_user_profile_details::UserProfileDetails;
 
+pub use crate::types::_lineage_event_processing_status::LineageEventProcessingStatus;
+
 pub use crate::types::_time_series_entity_type::TimeSeriesEntityType;
 
 pub use crate::types::_connection_credentials::ConnectionCredentials;
@@ -162,8 +192,6 @@ pub use crate::types::_job_run_details::JobRunDetails;
 pub use crate::types::_job_run_status::JobRunStatus;
 
 pub use crate::types::_job_run_error::JobRunError;
-
-pub use crate::types::_lineage_event_processing_status::LineageEventProcessingStatus;
 
 pub use crate::types::_time_series_data_point_form_output::TimeSeriesDataPointFormOutput;
 
@@ -200,6 +228,8 @@ pub use crate::types::_group_search_type::GroupSearchType;
 pub use crate::types::_types_search_scope::TypesSearchScope;
 
 pub use crate::types::_user_search_type::UserSearchType;
+
+pub use crate::types::_source_location::SourceLocation;
 
 pub use crate::types::_connection_properties_patch::ConnectionPropertiesPatch;
 
@@ -238,6 +268,16 @@ pub use crate::types::_asset_listing::AssetListing;
 pub use crate::types::_data_product_listing::DataProductListing;
 
 pub use crate::types::_metadata_generation_target_type::MetadataGenerationTargetType;
+
+pub use crate::types::_cell_information::CellInformation;
+
+pub use crate::types::_package_config::PackageConfig;
+
+pub use crate::types::_s3_destination::S3Destination;
+
+pub use crate::types::_network_access_type::NetworkAccessType;
+
+pub use crate::types::_trigger_source_type::TriggerSourceType;
 
 pub use crate::types::_domain_unit_target::DomainUnitTarget;
 
@@ -343,6 +383,8 @@ pub use crate::types::_spark_glue_properties_input::SparkGluePropertiesInput;
 
 pub use crate::types::_s3_properties_input::S3PropertiesInput;
 
+pub use crate::types::_snowflake_properties_input::SnowflakePropertiesInput;
+
 pub use crate::types::_amazon_q_properties_input::AmazonQPropertiesInput;
 
 pub use crate::types::_mlflow_properties_input::MlflowPropertiesInput;
@@ -352,6 +394,8 @@ pub use crate::types::_workflows_mwaa_properties_input::WorkflowsMwaaPropertiesI
 pub use crate::types::_workflows_serverless_properties_input::WorkflowsServerlessPropertiesInput;
 
 pub use crate::types::_lakehouse_properties_input::LakehousePropertiesInput;
+
+pub use crate::types::_vpc_properties_input::VpcPropertiesInput;
 
 pub use crate::types::_physical_endpoint::PhysicalEndpoint;
 
@@ -371,6 +415,8 @@ pub use crate::types::_spark_glue_properties_output::SparkGluePropertiesOutput;
 
 pub use crate::types::_s3_properties_output::S3PropertiesOutput;
 
+pub use crate::types::_snowflake_properties_output::SnowflakePropertiesOutput;
+
 pub use crate::types::_amazon_q_properties_output::AmazonQPropertiesOutput;
 
 pub use crate::types::_mlflow_properties_output::MlflowPropertiesOutput;
@@ -380,6 +426,8 @@ pub use crate::types::_workflows_mwaa_properties_output::WorkflowsMwaaProperties
 pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerlessPropertiesOutput;
 
 pub use crate::types::_lakehouse_properties_output::LakehousePropertiesOutput;
+
+pub use crate::types::_vpc_properties_output::VpcPropertiesOutput;
 
 pub use crate::types::_environment_parameter::EnvironmentParameter;
 
@@ -525,17 +573,23 @@ pub use crate::types::_spark_emr_properties_patch::SparkEmrPropertiesPatch;
 
 pub use crate::types::_s3_properties_patch::S3PropertiesPatch;
 
+pub use crate::types::_snowflake_properties_patch::SnowflakePropertiesPatch;
+
 pub use crate::types::_amazon_q_properties_patch::AmazonQPropertiesPatch;
 
 pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatch;
 
 pub use crate::types::_lakehouse_properties_patch::LakehousePropertiesPatch;
 
+pub use crate::types::_vpc_properties_patch::VpcPropertiesPatch;
+
 pub use crate::types::_data_product_item_type::DataProductItemType;
 
 pub use crate::types::_domain_unit_user_properties::DomainUnitUserProperties;
 
 pub use crate::types::_domain_unit_group_properties::DomainUnitGroupProperties;
+
+pub use crate::types::_package_manager::PackageManager;
 
 pub use crate::types::_rule_scope_selection_mode::RuleScopeSelectionMode;
 
@@ -567,13 +621,21 @@ pub use crate::types::_domain_unit_summary::DomainUnitSummary;
 
 pub use crate::types::_environment_blueprint_configuration_item::EnvironmentBlueprintConfigurationItem;
 
+pub use crate::types::_put_resource_configuration::PutResourceConfiguration;
+
 pub use crate::types::_provisioning_configuration::ProvisioningConfiguration;
+
+pub use crate::types::_resource_configuration::ResourceConfiguration;
 
 pub use crate::types::_import::Import;
 
 pub use crate::types::_metadata_generation_run_item::MetadataGenerationRunItem;
 
 pub use crate::types::_metadata_generation_run_type_stat::MetadataGenerationRunTypeStat;
+
+pub use crate::types::_notebook_summary::NotebookSummary;
+
+pub use crate::types::_notebook_run_summary::NotebookRunSummary;
 
 pub use crate::types::_rule_summary::RuleSummary;
 
@@ -605,6 +667,12 @@ pub use crate::types::_redshift_lineage_sync_configuration_input::RedshiftLineag
 
 pub use crate::types::_spark_glue_args::SparkGlueArgs;
 
+pub use crate::types::_connectivity_properties::ConnectivityProperties;
+
+pub use crate::types::_identity_mapping::IdentityMapping;
+
+pub use crate::types::_lineage_sync_input::LineageSyncInput;
+
 pub use crate::types::_glue_connection::GlueConnection;
 
 pub use crate::types::_protocol::Protocol;
@@ -620,6 +688,8 @@ pub use crate::types::_username_password::UsernamePassword;
 pub use crate::types::_governance_type::GovernanceType;
 
 pub use crate::types::_managed_endpoint_credentials::ManagedEndpointCredentials;
+
+pub use crate::types::_lineage_sync_output::LineageSyncOutput;
 
 pub use crate::types::_configurable_action_type_authorization::ConfigurableActionTypeAuthorization;
 
@@ -686,6 +756,8 @@ pub use crate::types::_form_type_data::FormTypeData;
 pub use crate::types::_lineage_node_type_item::LineageNodeTypeItem;
 
 pub use crate::types::_glue_connection_patch::GlueConnectionPatch;
+
+pub use crate::types::_connectivity_properties_patch::ConnectivityPropertiesPatch;
 
 pub use crate::types::_detailed_glossary_term::DetailedGlossaryTerm;
 
@@ -929,11 +1001,15 @@ mod _batch_put_attribute_output;
 
 mod _business_name_generation_configuration;
 
+mod _cell_information;
+
 mod _change_action;
 
 mod _cloud_formation_properties;
 
 mod _column_filter_configuration;
+
+mod _compute_config;
 
 mod _compute_environments;
 
@@ -962,6 +1038,10 @@ mod _connection_status;
 mod _connection_summary;
 
 mod _connection_type;
+
+mod _connectivity_properties;
+
+mod _connectivity_properties_patch;
 
 mod _create_asset_type_policy_grant_detail;
 
@@ -1077,6 +1157,8 @@ mod _environment_blueprint_configuration_item;
 
 mod _environment_blueprint_summary;
 
+mod _environment_config;
+
 mod _environment_configuration;
 
 mod _environment_configuration_parameter;
@@ -1104,6 +1186,8 @@ mod _equal_to_expression;
 mod _event_summary;
 
 mod _failure_cause;
+
+mod _file_format;
 
 mod _filter;
 
@@ -1205,6 +1289,8 @@ mod _iam_properties_patch;
 
 mod _iam_user_profile_details;
 
+mod _identity_mapping;
+
 mod _import;
 
 mod _in_expression;
@@ -1260,6 +1346,10 @@ mod _lineage_node_type_item;
 mod _lineage_run_details;
 
 mod _lineage_sql_query_run_details;
+
+mod _lineage_sync_input;
+
+mod _lineage_sync_output;
 
 mod _lineage_sync_schedule;
 
@@ -1317,11 +1407,31 @@ mod _model;
 
 mod _name_identifier;
 
+mod _network_access_type;
+
+mod _network_config;
+
 mod _not_equal_to_expression;
 
 mod _not_in_expression;
 
 mod _not_like_expression;
+
+mod _notebook_error;
+
+mod _notebook_export_error;
+
+mod _notebook_export_status;
+
+mod _notebook_run_error;
+
+mod _notebook_run_status;
+
+mod _notebook_run_summary;
+
+mod _notebook_status;
+
+mod _notebook_summary;
 
 mod _notification_output;
 
@@ -1343,6 +1453,8 @@ mod _open_lineage_run_event_summary;
 
 mod _open_lineage_run_state;
 
+mod _output_location;
+
 mod _overall_deployment_status;
 
 mod _override_domain_unit_owners_policy_grant_detail;
@@ -1360,6 +1472,10 @@ mod _owner_properties_output;
 mod _owner_user_properties;
 
 mod _owner_user_properties_output;
+
+mod _package_config;
+
+mod _package_manager;
 
 mod _permissions;
 
@@ -1400,6 +1516,8 @@ mod _protocol;
 mod _provisioning_configuration;
 
 mod _provisioning_properties;
+
+mod _put_resource_configuration;
 
 mod _recommendation_configuration;
 
@@ -1451,6 +1569,8 @@ mod _resolution_strategy;
 
 mod _resource;
 
+mod _resource_configuration;
+
 mod _resource_tag;
 
 mod _resource_tag_parameter;
@@ -1482,6 +1602,8 @@ mod _rule_target_type;
 mod _rule_type;
 
 mod _run_statistics_for_assets;
+
+mod _s3_destination;
 
 mod _s3_permission;
 
@@ -1517,6 +1639,12 @@ mod _self_grant_status_output;
 
 mod _single_sign_on;
 
+mod _snowflake_properties_input;
+
+mod _snowflake_properties_output;
+
+mod _snowflake_properties_patch;
+
 mod _sort_field_account_pool;
 
 mod _sort_field_connection;
@@ -1526,6 +1654,8 @@ mod _sort_field_project;
 mod _sort_key;
 
 mod _sort_order;
+
+mod _source_location;
 
 mod _spark_emr_properties_input;
 
@@ -1542,6 +1672,8 @@ mod _spark_glue_properties_output;
 mod _sso_user_profile_details;
 
 mod _status;
+
+mod _storage_config;
 
 mod _subscribed_asset;
 
@@ -1611,9 +1743,15 @@ mod _time_series_data_point_summary_form_output;
 
 mod _time_series_entity_type;
 
+mod _timeout_config;
+
 mod _timezone;
 
 mod _topic;
+
+mod _trigger_source;
+
+mod _trigger_source_type;
 
 mod _types_search_scope;
 
@@ -1642,6 +1780,12 @@ mod _user_search_type;
 mod _user_type;
 
 mod _username_password;
+
+mod _vpc_properties_input;
+
+mod _vpc_properties_output;
+
+mod _vpc_properties_patch;
 
 mod _workflows_mwaa_properties_input;
 

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_data_response(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DataResponse, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DataResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -91,7 +95,7 @@ pub fn de_data_response(
             s if s.matches("metricPointSet") /* MetricPoints com.amazonaws.ec2#DataResponse$MetricPoints */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_metric_points::de_metric_points(&mut tag)
+                        crate::protocol_serde::shape_metric_points::de_metric_points(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_table_optimizer_run<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TableOptimizerRun>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,7 +41,7 @@ where
                             )?);
                         }
                         "metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_run_metrics::de_run_metrics(tokens, _value)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_run_metrics::de_run_metrics(tokens, _value, depth + 1)?);
                         }
                         "error" => {
                             builder = builder.set_error(
@@ -45,8 +51,11 @@ where
                             );
                         }
                         "compactionMetrics" => {
-                            builder = builder
-                                .set_compaction_metrics(crate::protocol_serde::shape_compaction_metrics::de_compaction_metrics(tokens, _value)?);
+                            builder = builder.set_compaction_metrics(crate::protocol_serde::shape_compaction_metrics::de_compaction_metrics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "compactionStrategy" => {
                             builder = builder.set_compaction_strategy(
@@ -56,12 +65,19 @@ where
                             );
                         }
                         "retentionMetrics" => {
-                            builder =
-                                builder.set_retention_metrics(crate::protocol_serde::shape_retention_metrics::de_retention_metrics(tokens, _value)?);
+                            builder = builder.set_retention_metrics(crate::protocol_serde::shape_retention_metrics::de_retention_metrics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "orphanFileDeletionMetrics" => {
                             builder = builder.set_orphan_file_deletion_metrics(
-                                crate::protocol_serde::shape_orphan_file_deletion_metrics::de_orphan_file_deletion_metrics(tokens, _value)?,
+                                crate::protocol_serde::shape_orphan_file_deletion_metrics::de_orphan_file_deletion_metrics(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

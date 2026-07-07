@@ -168,24 +168,32 @@ pub(crate) fn de_recognize_text(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "interpretations" => {
-                    builder = builder.set_interpretations(crate::protocol_serde::shape_interpretations::de_interpretations(tokens, _value)?);
+                    builder = builder.set_interpretations(crate::protocol_serde::shape_interpretations::de_interpretations(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "messages" => {
-                    builder = builder.set_messages(crate::protocol_serde::shape_messages::de_messages(tokens, _value)?);
+                    builder = builder.set_messages(crate::protocol_serde::shape_messages::de_messages(tokens, _value, depth + 1)?);
                 }
                 "recognizedBotMember" => {
                     builder = builder.set_recognized_bot_member(crate::protocol_serde::shape_recognized_bot_member::de_recognized_bot_member(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "requestAttributes" => {
-                    builder = builder.set_request_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
+                    builder = builder.set_request_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value, depth + 1)?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(
@@ -195,7 +203,7 @@ pub(crate) fn de_recognize_text(
                     );
                 }
                 "sessionState" => {
-                    builder = builder.set_session_state(crate::protocol_serde::shape_session_state::de_session_state(tokens, _value)?);
+                    builder = builder.set_session_state(crate::protocol_serde::shape_session_state::de_session_state(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

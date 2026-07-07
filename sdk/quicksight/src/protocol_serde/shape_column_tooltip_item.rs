@@ -30,10 +30,16 @@ pub fn ser_column_tooltip_item(
 pub(crate) fn de_column_tooltip_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ColumnTooltipItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Label" => {
                             builder = builder.set_label(
@@ -62,7 +72,9 @@ where
                         }
                         "Aggregation" => {
                             builder = builder.set_aggregation(crate::protocol_serde::shape_aggregation_function::de_aggregation_function(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "TooltipTarget" => {

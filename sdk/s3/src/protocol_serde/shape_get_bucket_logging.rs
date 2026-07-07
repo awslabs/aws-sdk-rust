@@ -60,6 +60,8 @@ pub fn de_get_bucket_logging(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("BucketLoggingStatus") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected BucketLoggingStatus but got {start_el:?}. This is likely a bug in the SDK."
@@ -70,7 +72,7 @@ pub fn de_get_bucket_logging(
             s if s.matches("LoggingEnabled") /* LoggingEnabled com.amazonaws.s3.synthetic#GetBucketLoggingOutput$LoggingEnabled */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_logging_enabled::de_logging_enabled(&mut tag)
+                        crate::protocol_serde::shape_logging_enabled::de_logging_enabled(&mut tag, depth + 1)
                         ?
                     )
                 ;

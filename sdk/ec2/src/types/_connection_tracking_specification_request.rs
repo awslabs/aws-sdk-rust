@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionTrackingSpecificationRequest {
-    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
+    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 350 seconds for Nitro v6 instance types (excluding P6e-GB200); 432000 seconds for all other instance types (including P6e-GB200). Recommended: Less than 432000 seconds.</p>
     pub tcp_established_timeout: ::std::option::Option<i32>,
     /// <p>Timeout (in seconds) for idle UDP flows classified as streams which have seen more than one request-response transaction. Min: 60 seconds. Max: 180 seconds (3 minutes). Default: 180 seconds.</p>
     pub udp_stream_timeout: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct ConnectionTrackingSpecificationRequest {
     pub udp_timeout: ::std::option::Option<i32>,
 }
 impl ConnectionTrackingSpecificationRequest {
-    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
+    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 350 seconds for Nitro v6 instance types (excluding P6e-GB200); 432000 seconds for all other instance types (including P6e-GB200). Recommended: Less than 432000 seconds.</p>
     pub fn tcp_established_timeout(&self) -> ::std::option::Option<i32> {
         self.tcp_established_timeout
     }
@@ -41,17 +41,17 @@ pub struct ConnectionTrackingSpecificationRequestBuilder {
     pub(crate) udp_timeout: ::std::option::Option<i32>,
 }
 impl ConnectionTrackingSpecificationRequestBuilder {
-    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
+    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 350 seconds for Nitro v6 instance types (excluding P6e-GB200); 432000 seconds for all other instance types (including P6e-GB200). Recommended: Less than 432000 seconds.</p>
     pub fn tcp_established_timeout(mut self, input: i32) -> Self {
         self.tcp_established_timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
+    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 350 seconds for Nitro v6 instance types (excluding P6e-GB200); 432000 seconds for all other instance types (including P6e-GB200). Recommended: Less than 432000 seconds.</p>
     pub fn set_tcp_established_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tcp_established_timeout = input;
         self
     }
-    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
+    /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 350 seconds for Nitro v6 instance types (excluding P6e-GB200); 432000 seconds for all other instance types (including P6e-GB200). Recommended: Less than 432000 seconds.</p>
     pub fn get_tcp_established_timeout(&self) -> &::std::option::Option<i32> {
         &self.tcp_established_timeout
     }

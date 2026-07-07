@@ -6,6 +6,8 @@ pub(crate) fn de_property_validation_exception_json_err(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -21,7 +23,9 @@ pub(crate) fn de_property_validation_exception_json_err(
                 "PropertyList" => {
                     builder = builder.set_property_list(
                         crate::protocol_serde::shape_property_validation_exception_property_list::de_property_validation_exception_property_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

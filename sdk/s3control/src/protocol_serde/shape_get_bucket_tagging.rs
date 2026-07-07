@@ -60,6 +60,8 @@ pub fn de_get_bucket_tagging(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetBucketTaggingResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetBucketTaggingResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -70,7 +72,7 @@ pub fn de_get_bucket_tagging(
             s if s.matches("TagSet") /* TagSet com.amazonaws.s3control.synthetic#GetBucketTaggingOutput$TagSet */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_s3_tag_set::de_s3_tag_set(&mut tag)
+                        crate::protocol_serde::shape_s3_tag_set::de_s3_tag_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

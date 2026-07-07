@@ -28,7 +28,11 @@ pub fn ser_forwarded_values(
 #[allow(clippy::needless_question_mark)]
 pub fn de_forwarded_values(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ForwardedValues, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ForwardedValues::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -51,7 +55,7 @@ pub fn de_forwarded_values(
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#ForwardedValues$Cookies */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_cookie_preference::de_cookie_preference(&mut tag)
+                        crate::protocol_serde::shape_cookie_preference::de_cookie_preference(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -61,7 +65,7 @@ pub fn de_forwarded_values(
             s if s.matches("Headers") /* Headers com.amazonaws.cloudfront#ForwardedValues$Headers */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_headers::de_headers(&mut tag)
+                        crate::protocol_serde::shape_headers::de_headers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -71,7 +75,7 @@ pub fn de_forwarded_values(
             s if s.matches("QueryStringCacheKeys") /* QueryStringCacheKeys com.amazonaws.cloudfront#ForwardedValues$QueryStringCacheKeys */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_query_string_cache_keys::de_query_string_cache_keys(&mut tag)
+                        crate::protocol_serde::shape_query_string_cache_keys::de_query_string_cache_keys(&mut tag, depth + 1)
                         ?
                     )
                 ;

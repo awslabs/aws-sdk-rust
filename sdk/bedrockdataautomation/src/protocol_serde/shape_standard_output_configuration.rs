@@ -33,10 +33,16 @@ pub fn ser_standard_output_configuration(
 pub(crate) fn de_standard_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StandardOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,28 +55,36 @@ where
                         "document" => {
                             builder = builder.set_document(
                                 crate::protocol_serde::shape_document_standard_output_configuration::de_document_standard_output_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "image" => {
                             builder = builder.set_image(
                                 crate::protocol_serde::shape_image_standard_output_configuration::de_image_standard_output_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "video" => {
                             builder = builder.set_video(
                                 crate::protocol_serde::shape_video_standard_output_configuration::de_video_standard_output_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "audio" => {
                             builder = builder.set_audio(
                                 crate::protocol_serde::shape_audio_standard_output_configuration::de_audio_standard_output_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

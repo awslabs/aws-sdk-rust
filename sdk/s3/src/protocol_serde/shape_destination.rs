@@ -40,7 +40,11 @@ pub fn ser_destination(
 #[allow(clippy::needless_question_mark)]
 pub fn de_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Destination::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -88,7 +92,7 @@ pub fn de_destination(
             s if s.matches("AccessControlTranslation") /* AccessControlTranslation com.amazonaws.s3#Destination$AccessControlTranslation */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_access_control_translation::de_access_control_translation(&mut tag)
+                        crate::protocol_serde::shape_access_control_translation::de_access_control_translation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_destination(
             s if s.matches("EncryptionConfiguration") /* EncryptionConfiguration com.amazonaws.s3#Destination$EncryptionConfiguration */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(&mut tag)
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +112,7 @@ pub fn de_destination(
             s if s.matches("ReplicationTime") /* ReplicationTime com.amazonaws.s3#Destination$ReplicationTime */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_replication_time::de_replication_time(&mut tag)
+                        crate::protocol_serde::shape_replication_time::de_replication_time(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -118,7 +122,7 @@ pub fn de_destination(
             s if s.matches("Metrics") /* Metrics com.amazonaws.s3#Destination$Metrics */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_metrics::de_metrics(&mut tag)
+                        crate::protocol_serde::shape_metrics::de_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;

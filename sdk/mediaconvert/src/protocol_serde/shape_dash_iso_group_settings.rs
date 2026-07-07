@@ -60,44 +60,59 @@ pub fn ser_dash_iso_group_settings(
         crate::protocol_serde::shape_dash_iso_image_based_trick_play_settings::ser_dash_iso_image_based_trick_play_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.min_buffer_time {
+    if let Some(var_19) = &input.image_based_trick_play_variants {
+        let mut array_20 = object.key("imageBasedTrickPlayVariants").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_dash_iso_image_based_trick_play_variant::ser_dash_iso_image_based_trick_play_variant(
+                    &mut object_22,
+                    item_21,
+                )?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_23) = &input.min_buffer_time {
         object.key("minBufferTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_20) = &input.min_final_segment_length {
+    if let Some(var_24) = &input.min_final_segment_length {
         object.key("minFinalSegmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_20).into()),
+            ::aws_smithy_types::Number::Float((*var_24).into()),
         );
     }
-    if let Some(var_21) = &input.mpd_manifest_bandwidth_type {
-        object.key("mpdManifestBandwidthType").string(var_21.as_str());
+    if let Some(var_25) = &input.mpd_manifest_bandwidth_type {
+        object.key("mpdManifestBandwidthType").string(var_25.as_str());
     }
-    if let Some(var_22) = &input.mpd_profile {
-        object.key("mpdProfile").string(var_22.as_str());
+    if let Some(var_26) = &input.mpd_profile {
+        object.key("mpdProfile").string(var_26.as_str());
     }
-    if let Some(var_23) = &input.pts_offset_handling_for_b_frames {
-        object.key("ptsOffsetHandlingForBFrames").string(var_23.as_str());
+    if let Some(var_27) = &input.pts_offset_handling_for_b_frames {
+        object.key("ptsOffsetHandlingForBFrames").string(var_27.as_str());
     }
-    if let Some(var_24) = &input.segment_control {
-        object.key("segmentControl").string(var_24.as_str());
+    if let Some(var_28) = &input.segment_control {
+        object.key("segmentControl").string(var_28.as_str());
     }
-    if let Some(var_25) = &input.segment_length {
+    if let Some(var_29) = &input.segment_length {
         object.key("segmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_26) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_26.as_str());
+    if let Some(var_30) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_30.as_str());
     }
-    if let Some(var_27) = &input.video_composition_offsets {
-        object.key("videoCompositionOffsets").string(var_27.as_str());
+    if let Some(var_31) = &input.video_composition_offsets {
+        object.key("videoCompositionOffsets").string(var_31.as_str());
     }
-    if let Some(var_28) = &input.write_segment_timeline_in_representation {
-        object.key("writeSegmentTimelineInRepresentation").string(var_28.as_str());
+    if let Some(var_32) = &input.write_segment_timeline_in_representation {
+        object.key("writeSegmentTimelineInRepresentation").string(var_32.as_str());
     }
     Ok(())
 }
@@ -105,10 +120,16 @@ pub fn ser_dash_iso_group_settings(
 pub(crate) fn de_dash_iso_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DashIsoGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -117,164 +138,177 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "additionalManifests" => {
-                            builder = builder.set_additional_manifests(
-                                crate::protocol_serde::shape_list_of_dash_additional_manifest::de_list_of_dash_additional_manifest(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "additionalManifests" => {
+                                builder = builder.set_additional_manifests(
+                                    crate::protocol_serde::shape_list_of_dash_additional_manifest::de_list_of_dash_additional_manifest(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "audioChannelConfigSchemeIdUri" => {
+                                builder = builder.set_audio_channel_config_scheme_id_uri(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::DashIsoGroupAudioChannelConfigSchemeIdUri::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            "baseUrl" => {
+                                builder = builder.set_base_url(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "dashIFrameTrickPlayNameModifier" => {
+                                builder = builder.set_dash_i_frame_trick_play_name_modifier(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "dashManifestStyle" => {
+                                builder = builder.set_dash_manifest_style(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashManifestStyle::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "destination" => {
+                                builder = builder.set_destination(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "destinationSettings" => {
+                                builder = builder.set_destination_settings(
+                                    crate::protocol_serde::shape_destination_settings::de_destination_settings(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "encryption" => {
+                                builder = builder.set_encryption(
+                                    crate::protocol_serde::shape_dash_iso_encryption_settings::de_dash_iso_encryption_settings(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "fragmentLength" => {
+                                builder = builder.set_fragment_length(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "hbbtvCompliance" => {
+                                builder = builder.set_hbbtv_compliance(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoHbbtvCompliance::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "imageBasedTrickPlay" => {
+                                builder = builder.set_image_based_trick_play(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoImageBasedTrickPlay::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "imageBasedTrickPlaySettings" => {
+                                builder = builder.set_image_based_trick_play_settings(
+                                    crate::protocol_serde::shape_dash_iso_image_based_trick_play_settings::de_dash_iso_image_based_trick_play_settings(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "imageBasedTrickPlayVariants" => {
+                                builder = builder.set_image_based_trick_play_variants(
+                                    crate::protocol_serde::shape_list_of_dash_iso_image_based_trick_play_variant::de_list_of_dash_iso_image_based_trick_play_variant(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "minBufferTime" => {
+                                builder = builder.set_min_buffer_time(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "minFinalSegmentLength" => {
+                                builder = builder.set_min_final_segment_length(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                                );
+                            }
+                            "mpdManifestBandwidthType" => {
+                                builder = builder.set_mpd_manifest_bandwidth_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoMpdManifestBandwidthType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "mpdProfile" => {
+                                builder = builder.set_mpd_profile(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoMpdProfile::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "ptsOffsetHandlingForBFrames" => {
+                                builder = builder.set_pts_offset_handling_for_b_frames(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::DashIsoPtsOffsetHandlingForBFrames::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            "segmentControl" => {
+                                builder = builder.set_segment_control(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoSegmentControl::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "segmentLength" => {
+                                builder = builder.set_segment_length(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "segmentLengthControl" => {
+                                builder = builder.set_segment_length_control(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoSegmentLengthControl::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "videoCompositionOffsets" => {
+                                builder = builder.set_video_composition_offsets(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoVideoCompositionOffsets::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "writeSegmentTimelineInRepresentation" => {
+                                builder = builder.set_write_segment_timeline_in_representation(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::DashIsoWriteSegmentTimelineInRepresentation::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "audioChannelConfigSchemeIdUri" => {
-                            builder = builder.set_audio_channel_config_scheme_id_uri(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::DashIsoGroupAudioChannelConfigSchemeIdUri::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        "baseUrl" => {
-                            builder = builder.set_base_url(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "dashIFrameTrickPlayNameModifier" => {
-                            builder = builder.set_dash_i_frame_trick_play_name_modifier(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "dashManifestStyle" => {
-                            builder = builder.set_dash_manifest_style(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashManifestStyle::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "destination" => {
-                            builder = builder.set_destination(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "destinationSettings" => {
-                            builder = builder.set_destination_settings(crate::protocol_serde::shape_destination_settings::de_destination_settings(
-                                tokens, _value,
-                            )?);
-                        }
-                        "encryption" => {
-                            builder = builder.set_encryption(
-                                crate::protocol_serde::shape_dash_iso_encryption_settings::de_dash_iso_encryption_settings(tokens, _value)?,
-                            );
-                        }
-                        "fragmentLength" => {
-                            builder = builder.set_fragment_length(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "hbbtvCompliance" => {
-                            builder = builder.set_hbbtv_compliance(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoHbbtvCompliance::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "imageBasedTrickPlay" => {
-                            builder = builder.set_image_based_trick_play(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoImageBasedTrickPlay::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "imageBasedTrickPlaySettings" => {
-                            builder = builder.set_image_based_trick_play_settings(
-                                crate::protocol_serde::shape_dash_iso_image_based_trick_play_settings::de_dash_iso_image_based_trick_play_settings(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "minBufferTime" => {
-                            builder = builder.set_min_buffer_time(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "minFinalSegmentLength" => {
-                            builder = builder.set_min_final_segment_length(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
-                            );
-                        }
-                        "mpdManifestBandwidthType" => {
-                            builder = builder.set_mpd_manifest_bandwidth_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoMpdManifestBandwidthType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "mpdProfile" => {
-                            builder = builder.set_mpd_profile(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoMpdProfile::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "ptsOffsetHandlingForBFrames" => {
-                            builder = builder.set_pts_offset_handling_for_b_frames(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::DashIsoPtsOffsetHandlingForBFrames::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        "segmentControl" => {
-                            builder = builder.set_segment_control(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoSegmentControl::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "segmentLength" => {
-                            builder = builder.set_segment_length(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "segmentLengthControl" => {
-                            builder = builder.set_segment_length_control(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoSegmentLengthControl::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "videoCompositionOffsets" => {
-                            builder = builder.set_video_composition_offsets(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashIsoVideoCompositionOffsets::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "writeSegmentTimelineInRepresentation" => {
-                            builder = builder.set_write_segment_timeline_in_representation(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::DashIsoWriteSegmentTimelineInRepresentation::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

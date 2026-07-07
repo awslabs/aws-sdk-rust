@@ -272,6 +272,8 @@ pub(crate) fn de_get_folder(
 ) -> ::std::result::Result<crate::operation::get_folder::builders::GetFolderOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -299,16 +301,24 @@ pub(crate) fn de_get_folder(
                     );
                 }
                 "subFolders" => {
-                    builder = builder.set_sub_folders(crate::protocol_serde::shape_folder_list::de_folder_list(tokens, _value)?);
+                    builder = builder.set_sub_folders(crate::protocol_serde::shape_folder_list::de_folder_list(tokens, _value, depth + 1)?);
                 }
                 "files" => {
-                    builder = builder.set_files(crate::protocol_serde::shape_file_list::de_file_list(tokens, _value)?);
+                    builder = builder.set_files(crate::protocol_serde::shape_file_list::de_file_list(tokens, _value, depth + 1)?);
                 }
                 "symbolicLinks" => {
-                    builder = builder.set_symbolic_links(crate::protocol_serde::shape_symbolic_link_list::de_symbolic_link_list(tokens, _value)?);
+                    builder = builder.set_symbolic_links(crate::protocol_serde::shape_symbolic_link_list::de_symbolic_link_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "subModules" => {
-                    builder = builder.set_sub_modules(crate::protocol_serde::shape_sub_module_list::de_sub_module_list(tokens, _value)?);
+                    builder = builder.set_sub_modules(crate::protocol_serde::shape_sub_module_list::de_sub_module_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

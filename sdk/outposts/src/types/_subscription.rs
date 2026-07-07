@@ -34,6 +34,8 @@ pub struct Subscription {
     pub begin_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date your subscription ends.</p>
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The currency of the subscription price. Currently only <code>USD</code> is supported.</p>
+    pub currency: ::std::option::Option<crate::types::CurrencyCode>,
     /// <p>The amount you are billed each month in the subscription period.</p>
     pub monthly_recurring_price: ::std::option::Option<f64>,
     /// <p>The amount billed when the subscription is created. This is a one-time charge.</p>
@@ -84,6 +86,10 @@ impl Subscription {
     pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
+    /// <p>The currency of the subscription price. Currently only <code>USD</code> is supported.</p>
+    pub fn currency(&self) -> ::std::option::Option<&crate::types::CurrencyCode> {
+        self.currency.as_ref()
+    }
     /// <p>The amount you are billed each month in the subscription period.</p>
     pub fn monthly_recurring_price(&self) -> ::std::option::Option<f64> {
         self.monthly_recurring_price
@@ -110,6 +116,7 @@ pub struct SubscriptionBuilder {
     pub(crate) order_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) begin_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) currency: ::std::option::Option<crate::types::CurrencyCode>,
     pub(crate) monthly_recurring_price: ::std::option::Option<f64>,
     pub(crate) upfront_price: ::std::option::Option<f64>,
 }
@@ -258,6 +265,20 @@ impl SubscriptionBuilder {
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date
     }
+    /// <p>The currency of the subscription price. Currently only <code>USD</code> is supported.</p>
+    pub fn currency(mut self, input: crate::types::CurrencyCode) -> Self {
+        self.currency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The currency of the subscription price. Currently only <code>USD</code> is supported.</p>
+    pub fn set_currency(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
+        self.currency = input;
+        self
+    }
+    /// <p>The currency of the subscription price. Currently only <code>USD</code> is supported.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
+        &self.currency
+    }
     /// <p>The amount you are billed each month in the subscription period.</p>
     pub fn monthly_recurring_price(mut self, input: f64) -> Self {
         self.monthly_recurring_price = ::std::option::Option::Some(input);
@@ -295,6 +316,7 @@ impl SubscriptionBuilder {
             order_ids: self.order_ids,
             begin_date: self.begin_date,
             end_date: self.end_date,
+            currency: self.currency,
             monthly_recurring_price: self.monthly_recurring_price,
             upfront_price: self.upfront_price,
         }

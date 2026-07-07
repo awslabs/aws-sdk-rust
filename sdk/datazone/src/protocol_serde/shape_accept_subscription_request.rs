@@ -185,6 +185,8 @@ pub(crate) fn de_accept_subscription_request(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -232,7 +234,7 @@ pub(crate) fn de_accept_subscription_request(
                     );
                 }
                 "metadataForms" => {
-                    builder = builder.set_metadata_forms(crate::protocol_serde::shape_metadata_forms::de_metadata_forms(tokens, _value)?);
+                    builder = builder.set_metadata_forms(crate::protocol_serde::shape_metadata_forms::de_metadata_forms(tokens, _value, depth + 1)?);
                 }
                 "requestReason" => {
                     builder = builder.set_request_reason(
@@ -256,12 +258,17 @@ pub(crate) fn de_accept_subscription_request(
                     );
                 }
                 "subscribedListings" => {
-                    builder =
-                        builder.set_subscribed_listings(crate::protocol_serde::shape_subscribed_listings::de_subscribed_listings(tokens, _value)?);
+                    builder = builder.set_subscribed_listings(crate::protocol_serde::shape_subscribed_listings::de_subscribed_listings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "subscribedPrincipals" => {
                     builder = builder.set_subscribed_principals(crate::protocol_serde::shape_subscribed_principals::de_subscribed_principals(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "updatedAt" => {

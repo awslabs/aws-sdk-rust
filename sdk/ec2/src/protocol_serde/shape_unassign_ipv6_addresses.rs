@@ -49,6 +49,8 @@ pub fn de_unassign_ipv6_addresses(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("UnassignIpv6AddressesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected UnassignIpv6AddressesResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_unassign_ipv6_addresses(
             s if s.matches("unassignedIpv6Addresses") /* UnassignedIpv6Addresses com.amazonaws.ec2.synthetic#UnassignIpv6AddressesOutput$UnassignedIpv6Addresses */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(&mut tag)
+                        crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +84,7 @@ pub fn de_unassign_ipv6_addresses(
             s if s.matches("unassignedIpv6PrefixSet") /* UnassignedIpv6Prefixes com.amazonaws.ec2.synthetic#UnassignIpv6AddressesOutput$UnassignedIpv6Prefixes */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_ip_prefix_list::de_ip_prefix_list(&mut tag)
+                        crate::protocol_serde::shape_ip_prefix_list::de_ip_prefix_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

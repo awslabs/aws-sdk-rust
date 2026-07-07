@@ -20,13 +20,17 @@ pub fn ser_job_manifest_generator(
 
 pub fn de_job_manifest_generator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::JobManifestGenerator, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     let mut base: Option<crate::types::JobManifestGenerator> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3JobManifestGenerator") /* S3JobManifestGenerator com.amazonaws.s3control#JobManifestGenerator$S3JobManifestGenerator */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_s3_job_manifest_generator::de_s3_job_manifest_generator(&mut tag)
+                    crate::protocol_serde::shape_s3_job_manifest_generator::de_s3_job_manifest_generator(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::JobManifestGenerator::S3JobManifestGenerator(tmp));

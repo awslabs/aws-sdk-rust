@@ -65,11 +65,32 @@ pub(crate) fn delete_integration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_asset_output_output_correct_errors(
+    mut builder: crate::operation::get_asset::builders::GetAssetOutputBuilder,
+) -> crate::operation::get_asset::builders::GetAssetOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.asset_type_id.is_none() {
+        builder.asset_type_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_catalogs_output_output_correct_errors(
     mut builder: crate::operation::get_catalogs::builders::GetCatalogsOutputBuilder,
 ) -> crate::operation::get_catalogs::builders::GetCatalogsOutputBuilder {
     if builder.catalog_list.is_none() {
         builder.catalog_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_dashboard_url_output_output_correct_errors(
+    mut builder: crate::operation::get_dashboard_url::builders::GetDashboardUrlOutputBuilder,
+) -> crate::operation::get_dashboard_url::builders::GetDashboardUrlOutputBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
     }
     builder
 }
@@ -101,11 +122,32 @@ pub(crate) fn get_ml_transforms_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_session_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::get_session_endpoint::builders::GetSessionEndpointOutputBuilder,
+) -> crate::operation::get_session_endpoint::builders::GetSessionEndpointOutputBuilder {
+    if builder.spark_connect.is_none() {
+        builder.spark_connect = {
+            let builder = crate::types::builders::SessionEndpointBuilder::default();
+            crate::serde_util::session_endpoint_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_data_quality_results_output_output_correct_errors(
     mut builder: crate::operation::list_data_quality_results::builders::ListDataQualityResultsOutputBuilder,
 ) -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsOutputBuilder {
     if builder.results.is_none() {
         builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_form_types_output_output_correct_errors(
+    mut builder: crate::operation::list_form_types::builders::ListFormTypesOutputBuilder,
+) -> crate::operation::list_form_types::builders::ListFormTypesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -139,6 +181,42 @@ pub(crate) fn modify_integration_output_output_correct_errors(
     }
     if builder.create_time.is_none() {
         builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn put_asset_output_output_correct_errors(
+    mut builder: crate::operation::put_asset::builders::PutAssetOutputBuilder,
+) -> crate::operation::put_asset::builders::PutAssetOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_asset_output_output_correct_errors(
+    mut builder: crate::operation::update_asset::builders::UpdateAssetOutputBuilder,
+) -> crate::operation::update_asset::builders::UpdateAssetOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn session_endpoint_correct_errors(
+    mut builder: crate::types::builders::SessionEndpointBuilder,
+) -> crate::types::builders::SessionEndpointBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    if builder.auth_token.is_none() {
+        builder.auth_token = Some(Default::default())
+    }
+    if builder.auth_token_expiration_time.is_none() {
+        builder.auth_token_expiration_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -215,6 +293,15 @@ pub(crate) fn transform_parameters_correct_errors(
 ) -> crate::types::builders::TransformParametersBuilder {
     if builder.transform_type.is_none() {
         builder.transform_type = "no value was set".parse::<crate::types::TransformType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn asset_type_form_reference_correct_errors(
+    mut builder: crate::types::builders::AssetTypeFormReferenceBuilder,
+) -> crate::types::builders::AssetTypeFormReferenceBuilder {
+    if builder.form_type_identifier.is_none() {
+        builder.form_type_identifier = Some(Default::default())
     }
     builder
 }
@@ -1076,6 +1163,36 @@ pub(crate) fn governed_catalog_target_correct_errors(
     }
     if builder.database.is_none() {
         builder.database = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn iceberg_partition_spec_correct_errors(
+    mut builder: crate::types::builders::IcebergPartitionSpecBuilder,
+) -> crate::types::builders::IcebergPartitionSpecBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn iceberg_schema_correct_errors(
+    mut builder: crate::types::builders::IcebergSchemaBuilder,
+) -> crate::types::builders::IcebergSchemaBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn iceberg_sort_order_correct_errors(
+    mut builder: crate::types::builders::IcebergSortOrderBuilder,
+) -> crate::types::builders::IcebergSortOrderBuilder {
+    if builder.order_id.is_none() {
+        builder.order_id = Some(Default::default())
+    }
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
     }
     builder
 }
@@ -2010,6 +2127,57 @@ pub(crate) fn group_filters_correct_errors(mut builder: crate::types::builders::
     }
     if builder.logical_operator.is_none() {
         builder.logical_operator = "no value was set".parse::<crate::types::FilterLogicalOperator>().ok()
+    }
+    builder
+}
+
+pub(crate) fn iceberg_partition_field_correct_errors(
+    mut builder: crate::types::builders::IcebergPartitionFieldBuilder,
+) -> crate::types::builders::IcebergPartitionFieldBuilder {
+    if builder.source_id.is_none() {
+        builder.source_id = Some(Default::default())
+    }
+    if builder.transform.is_none() {
+        builder.transform = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn iceberg_sort_field_correct_errors(
+    mut builder: crate::types::builders::IcebergSortFieldBuilder,
+) -> crate::types::builders::IcebergSortFieldBuilder {
+    if builder.source_id.is_none() {
+        builder.source_id = Some(Default::default())
+    }
+    if builder.transform.is_none() {
+        builder.transform = Some(Default::default())
+    }
+    if builder.direction.is_none() {
+        builder.direction = "no value was set".parse::<crate::types::IcebergSortDirection>().ok()
+    }
+    if builder.null_order.is_none() {
+        builder.null_order = "no value was set".parse::<crate::types::IcebergNullOrder>().ok()
+    }
+    builder
+}
+
+pub(crate) fn iceberg_struct_field_correct_errors(
+    mut builder: crate::types::builders::IcebergStructFieldBuilder,
+) -> crate::types::builders::IcebergStructFieldBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    if builder.required.is_none() {
+        builder.required = Some(Default::default())
     }
     builder
 }

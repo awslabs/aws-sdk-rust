@@ -192,6 +192,8 @@ pub fn de_associate_vpc_with_hosted_zone(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("AssociateVPCWithHostedZoneResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected AssociateVPCWithHostedZoneResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -202,7 +204,7 @@ pub fn de_associate_vpc_with_hosted_zone(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53.synthetic#AssociateVPCWithHostedZoneOutput$ChangeInfo */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_change_info::de_change_info(&mut tag)
+                        crate::protocol_serde::shape_change_info::de_change_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

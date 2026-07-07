@@ -2,10 +2,16 @@
 pub(crate) fn de_source_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SourceDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,22 +23,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DirectPutSourceDescription" => {
                             builder = builder.set_direct_put_source_description(
-                                crate::protocol_serde::shape_direct_put_source_description::de_direct_put_source_description(tokens, _value)?,
+                                crate::protocol_serde::shape_direct_put_source_description::de_direct_put_source_description(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "KinesisStreamSourceDescription" => {
                             builder = builder.set_kinesis_stream_source_description(
-                                crate::protocol_serde::shape_kinesis_stream_source_description::de_kinesis_stream_source_description(tokens, _value)?,
+                                crate::protocol_serde::shape_kinesis_stream_source_description::de_kinesis_stream_source_description(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MSKSourceDescription" => {
                             builder = builder.set_msk_source_description(
-                                crate::protocol_serde::shape_msk_source_description::de_msk_source_description(tokens, _value)?,
+                                crate::protocol_serde::shape_msk_source_description::de_msk_source_description(tokens, _value, depth + 1)?,
                             );
                         }
                         "DatabaseSourceDescription" => {
                             builder = builder.set_database_source_description(
-                                crate::protocol_serde::shape_database_source_description::de_database_source_description(tokens, _value)?,
+                                crate::protocol_serde::shape_database_source_description::de_database_source_description(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

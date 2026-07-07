@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_additional_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AdditionalDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AdditionalDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_additional_detail(
             s if s.matches("component") /* Component com.amazonaws.ec2#AdditionalDetail$Component */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_additional_detail(
             s if s.matches("vpcEndpointService") /* VpcEndpointService com.amazonaws.ec2#AdditionalDetail$VpcEndpointService */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_additional_detail(
             s if s.matches("ruleOptionSet") /* RuleOptions com.amazonaws.ec2#AdditionalDetail$RuleOptions */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_rule_option_list::de_rule_option_list(&mut tag)
+                        crate::protocol_serde::shape_rule_option_list::de_rule_option_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_additional_detail(
             s if s.matches("ruleGroupTypePairSet") /* RuleGroupTypePairs com.amazonaws.ec2#AdditionalDetail$RuleGroupTypePairs */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_rule_group_type_pair_list::de_rule_group_type_pair_list(&mut tag)
+                        crate::protocol_serde::shape_rule_group_type_pair_list::de_rule_group_type_pair_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -63,7 +67,7 @@ pub fn de_additional_detail(
             s if s.matches("ruleGroupRuleOptionsPairSet") /* RuleGroupRuleOptionsPairs com.amazonaws.ec2#AdditionalDetail$RuleGroupRuleOptionsPairs */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_rule_group_rule_options_pair_list::de_rule_group_rule_options_pair_list(&mut tag)
+                        crate::protocol_serde::shape_rule_group_rule_options_pair_list::de_rule_group_rule_options_pair_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +90,7 @@ pub fn de_additional_detail(
             s if s.matches("loadBalancerSet") /* LoadBalancers com.amazonaws.ec2#AdditionalDetail$LoadBalancers */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_analysis_component_list::de_analysis_component_list(&mut tag)
+                        crate::protocol_serde::shape_analysis_component_list::de_analysis_component_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

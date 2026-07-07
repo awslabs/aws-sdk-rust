@@ -128,17 +128,17 @@ impl DescribeEventsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_events::paginator::DescribeEventsPaginator {
         crate::operation::describe_events::paginator::DescribeEventsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name or unique stack ID for which you want to retrieve events.</p>
+    /// <p>The name or unique stack ID for which you want to retrieve events. If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
         self
     }
-    /// <p>The name or unique stack ID for which you want to retrieve events.</p>
+    /// <p>The name or unique stack ID for which you want to retrieve events. If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
     }
-    /// <p>The name or unique stack ID for which you want to retrieve events.</p>
+    /// <p>The name or unique stack ID for which you want to retrieve events. If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }

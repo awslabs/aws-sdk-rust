@@ -22,6 +22,8 @@ pub struct ServerlessCache {
     pub cache_usage_limits: ::std::option::Option<crate::types::CacheUsageLimits>,
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt data at rest in the serverless cache.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates the type of encryption for data stored at rest in the serverless cache. Serverless caches are always encrypted at rest. The value is <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>The IDs of the EC2 security groups associated with the serverless cache.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
@@ -77,6 +79,10 @@ impl ServerlessCache {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt data at rest in the serverless cache.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
+    }
+    /// <p>Indicates the type of encryption for data stored at rest in the serverless cache. Serverless caches are always encrypted at rest. The value is <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
     }
     /// <p>The IDs of the EC2 security groups associated with the serverless cache.</p>
     ///
@@ -139,6 +145,7 @@ pub struct ServerlessCacheBuilder {
     pub(crate) full_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) cache_usage_limits: ::std::option::Option<crate::types::CacheUsageLimits>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
     pub(crate) reader_endpoint: ::std::option::Option<crate::types::Endpoint>,
@@ -275,6 +282,20 @@ impl ServerlessCacheBuilder {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt data at rest in the serverless cache.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
+    }
+    /// <p>Indicates the type of encryption for data stored at rest in the serverless cache. Serverless caches are always encrypted at rest. The value is <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the type of encryption for data stored at rest in the serverless cache. Serverless caches are always encrypted at rest. The value is <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>Indicates the type of encryption for data stored at rest in the serverless cache. Serverless caches are always encrypted at rest. The value is <code>sse-elasticache</code> if an ElastiCache service-managed key is used, or <code>sse-kms</code> if a customer-managed KMS key is used.</p>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -426,6 +447,7 @@ impl ServerlessCacheBuilder {
             full_engine_version: self.full_engine_version,
             cache_usage_limits: self.cache_usage_limits,
             kms_key_id: self.kms_key_id,
+            storage_encryption_type: self.storage_encryption_type,
             security_group_ids: self.security_group_ids,
             endpoint: self.endpoint,
             reader_endpoint: self.reader_endpoint,

@@ -2,10 +2,16 @@
 pub(crate) fn de_domain_price<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DomainPrice>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,37 +20,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RegistrationPrice" => {
+                                builder = builder.set_registration_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "TransferPrice" => {
+                                builder = builder.set_transfer_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RenewalPrice" => {
+                                builder = builder.set_renewal_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ChangeOwnershipPrice" => {
+                                builder = builder.set_change_ownership_price(
+                                    crate::protocol_serde::shape_price_with_currency::de_price_with_currency(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "RestorationPrice" => {
+                                builder = builder.set_restoration_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "RegistrationPrice" => {
-                            builder = builder
-                                .set_registration_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(tokens, _value)?);
-                        }
-                        "TransferPrice" => {
-                            builder =
-                                builder.set_transfer_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(tokens, _value)?);
-                        }
-                        "RenewalPrice" => {
-                            builder =
-                                builder.set_renewal_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(tokens, _value)?);
-                        }
-                        "ChangeOwnershipPrice" => {
-                            builder = builder.set_change_ownership_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(
-                                tokens, _value,
-                            )?);
-                        }
-                        "RestorationPrice" => {
-                            builder = builder
-                                .set_restoration_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

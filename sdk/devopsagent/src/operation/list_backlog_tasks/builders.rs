@@ -22,7 +22,7 @@ impl crate::operation::list_backlog_tasks::builders::ListBacklogTasksInputBuilde
 }
 /// Fluent builder constructing a request to `ListBacklogTasks`.
 ///
-/// Lists backlog tasks in the specified agent space with optional filtering and sorting
+/// <p>Lists backlog tasks in the specified agent space with optional filtering and sorting</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBacklogTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,87 +114,87 @@ impl ListBacklogTasksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_backlog_tasks::paginator::ListBacklogTasksPaginator {
         crate::operation::list_backlog_tasks::paginator::ListBacklogTasksPaginator::new(self.handle, self.inner)
     }
-    /// The unique identifier for the agent space containing the tasks
+    /// <p>The unique identifier for the agent space containing the tasks</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space containing the tasks
+    /// <p>The unique identifier for the agent space containing the tasks</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space containing the tasks
+    /// <p>The unique identifier for the agent space containing the tasks</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Filter criteria to apply when listing tasks Filtering restrictions: - Each filter field list is limited to a single value - Filtering by Priority and Status at the same time when not filtering by Type is not permitted - Timestamp filters (createdAfter, createdBefore) can be combined with other filters when not sorting by priority
+    /// <p>Filter criteria to apply when listing tasks Filtering restrictions: - Each filter field list is limited to a single value - Filtering by Priority and Status at the same time when not filtering by Type is not permitted - Timestamp filters (createdAfter, createdBefore) can be combined with other filters when not sorting by priority</p>
     pub fn filter(mut self, input: crate::types::TaskFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// Filter criteria to apply when listing tasks Filtering restrictions: - Each filter field list is limited to a single value - Filtering by Priority and Status at the same time when not filtering by Type is not permitted - Timestamp filters (createdAfter, createdBefore) can be combined with other filters when not sorting by priority
+    /// <p>Filter criteria to apply when listing tasks Filtering restrictions: - Each filter field list is limited to a single value - Filtering by Priority and Status at the same time when not filtering by Type is not permitted - Timestamp filters (createdAfter, createdBefore) can be combined with other filters when not sorting by priority</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TaskFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// Filter criteria to apply when listing tasks Filtering restrictions: - Each filter field list is limited to a single value - Filtering by Priority and Status at the same time when not filtering by Type is not permitted - Timestamp filters (createdAfter, createdBefore) can be combined with other filters when not sorting by priority
+    /// <p>Filter criteria to apply when listing tasks Filtering restrictions: - Each filter field list is limited to a single value - Filtering by Priority and Status at the same time when not filtering by Type is not permitted - Timestamp filters (createdAfter, createdBefore) can be combined with other filters when not sorting by priority</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::TaskFilter> {
         self.inner.get_filter()
     }
-    /// Maximum number of tasks to return in a single response (1-1000, default: 100)
+    /// <p>Maximum number of tasks to return in a single response (1-1000, default: 100)</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// Maximum number of tasks to return in a single response (1-1000, default: 100)
+    /// <p>Maximum number of tasks to return in a single response (1-1000, default: 100)</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// Maximum number of tasks to return in a single response (1-1000, default: 100)
+    /// <p>Maximum number of tasks to return in a single response (1-1000, default: 100)</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Field to sort by Sorting restrictions: - Only sorting on createdAt is supported when using priority or status filters alone. - Sorting by priority is not supported when using Timestamp filters (createdAfter, createdBefore)
+    /// <p>Field to sort by Sorting restrictions: - Only sorting on createdAt is supported when using priority or status filters alone. - Sorting by priority is not supported when using Timestamp filters (createdAfter, createdBefore)</p>
     pub fn sort_field(mut self, input: crate::types::TaskSortField) -> Self {
         self.inner = self.inner.sort_field(input);
         self
     }
-    /// Field to sort by Sorting restrictions: - Only sorting on createdAt is supported when using priority or status filters alone. - Sorting by priority is not supported when using Timestamp filters (createdAfter, createdBefore)
+    /// <p>Field to sort by Sorting restrictions: - Only sorting on createdAt is supported when using priority or status filters alone. - Sorting by priority is not supported when using Timestamp filters (createdAfter, createdBefore)</p>
     pub fn set_sort_field(mut self, input: ::std::option::Option<crate::types::TaskSortField>) -> Self {
         self.inner = self.inner.set_sort_field(input);
         self
     }
-    /// Field to sort by Sorting restrictions: - Only sorting on createdAt is supported when using priority or status filters alone. - Sorting by priority is not supported when using Timestamp filters (createdAfter, createdBefore)
+    /// <p>Field to sort by Sorting restrictions: - Only sorting on createdAt is supported when using priority or status filters alone. - Sorting by priority is not supported when using Timestamp filters (createdAfter, createdBefore)</p>
     pub fn get_sort_field(&self) -> &::std::option::Option<crate::types::TaskSortField> {
         self.inner.get_sort_field()
     }
-    /// Sort order for the tasks based on sortField (default: DESC)
+    /// <p>Sort order for the tasks based on sortField (default: DESC)</p>
     pub fn order(mut self, input: crate::types::TaskSortOrder) -> Self {
         self.inner = self.inner.order(input);
         self
     }
-    /// Sort order for the tasks based on sortField (default: DESC)
+    /// <p>Sort order for the tasks based on sortField (default: DESC)</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::TaskSortOrder>) -> Self {
         self.inner = self.inner.set_order(input);
         self
     }
-    /// Sort order for the tasks based on sortField (default: DESC)
+    /// <p>Sort order for the tasks based on sortField (default: DESC)</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::TaskSortOrder> {
         self.inner.get_order()
     }

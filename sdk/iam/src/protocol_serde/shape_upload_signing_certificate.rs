@@ -187,6 +187,8 @@ pub fn de_upload_signing_certificate(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("UploadSigningCertificateResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected UploadSigningCertificateResponse got {start_el:?}"
@@ -204,7 +206,7 @@ pub fn de_upload_signing_certificate(
             s if s.matches("Certificate") /* Certificate com.amazonaws.iam.synthetic#UploadSigningCertificateOutput$Certificate */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_signing_certificate::de_signing_certificate(&mut tag)
+                        crate::protocol_serde::shape_signing_certificate::de_signing_certificate(&mut tag, depth + 1)
                         ?
                     )
                 ;

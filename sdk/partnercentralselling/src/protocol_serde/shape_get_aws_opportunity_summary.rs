@@ -142,6 +142,8 @@ pub(crate) fn de_get_aws_opportunity_summary(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -177,17 +179,25 @@ pub(crate) fn de_get_aws_opportunity_summary(
                 }
                 "LifeCycle" => {
                     builder = builder.set_life_cycle(crate::protocol_serde::shape_aws_opportunity_life_cycle::de_aws_opportunity_life_cycle(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "OpportunityTeam" => {
                     builder = builder.set_opportunity_team(
-                        crate::protocol_serde::shape_aws_opportunity_team_members_list::de_aws_opportunity_team_members_list(tokens, _value)?,
+                        crate::protocol_serde::shape_aws_opportunity_team_members_list::de_aws_opportunity_team_members_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Insights" => {
                     builder = builder.set_insights(crate::protocol_serde::shape_aws_opportunity_insights::de_aws_opportunity_insights(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "InvolvementTypeChangeReason" => {
@@ -199,18 +209,33 @@ pub(crate) fn de_get_aws_opportunity_summary(
                 }
                 "RelatedEntityIds" => {
                     builder = builder.set_related_entity_ids(
-                        crate::protocol_serde::shape_aws_opportunity_related_entities::de_aws_opportunity_related_entities(tokens, _value)?,
+                        crate::protocol_serde::shape_aws_opportunity_related_entities::de_aws_opportunity_related_entities(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Customer" => {
                     builder = builder.set_customer(crate::protocol_serde::shape_aws_opportunity_customer::de_aws_opportunity_customer(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Project" => {
                     builder = builder.set_project(crate::protocol_serde::shape_aws_opportunity_project::de_aws_opportunity_project(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
+                }
+                "CosellMotion" => {
+                    builder = builder.set_cosell_motion(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "Catalog" => {
                     builder = builder.set_catalog(

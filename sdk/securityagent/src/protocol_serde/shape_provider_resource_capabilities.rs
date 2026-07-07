@@ -10,6 +10,24 @@ pub fn ser_provider_resource_capabilities(
             crate::protocol_serde::shape_git_hub_resource_capabilities::ser_git_hub_resource_capabilities(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ProviderResourceCapabilities::Gitlab(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_4.key("gitlab").start_object();
+            crate::protocol_serde::shape_git_lab_resource_capabilities::ser_git_lab_resource_capabilities(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::ProviderResourceCapabilities::Bitbucket(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("bitbucket").start_object();
+            crate::protocol_serde::shape_bitbucket_resource_capabilities::ser_bitbucket_resource_capabilities(&mut object_3, inner)?;
+            object_3.finish();
+        }
+        crate::types::ProviderResourceCapabilities::Confluence(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_4.key("confluence").start_object();
+            crate::protocol_serde::shape_confluence_resource_capabilities::ser_confluence_resource_capabilities(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::ProviderResourceCapabilities::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ProviderResourceCapabilities",
@@ -22,10 +40,16 @@ pub fn ser_provider_resource_capabilities(
 pub(crate) fn de_provider_resource_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProviderResourceCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -51,10 +75,34 @@ where
                     }
                     variant = match key.as_ref() {
                         "github" => Some(crate::types::ProviderResourceCapabilities::Github(
-                            crate::protocol_serde::shape_git_hub_resource_capabilities::de_git_hub_resource_capabilities(tokens, _value)?
+                            crate::protocol_serde::shape_git_hub_resource_capabilities::de_git_hub_resource_capabilities(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'github' cannot be null")
                                 })?,
+                        )),
+                        "gitlab" => Some(crate::types::ProviderResourceCapabilities::Gitlab(
+                            crate::protocol_serde::shape_git_lab_resource_capabilities::de_git_lab_resource_capabilities(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'gitlab' cannot be null")
+                                })?,
+                        )),
+                        "bitbucket" => Some(crate::types::ProviderResourceCapabilities::Bitbucket(
+                            crate::protocol_serde::shape_bitbucket_resource_capabilities::de_bitbucket_resource_capabilities(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'bitbucket' cannot be null"))?,
+                        )),
+                        "confluence" => Some(crate::types::ProviderResourceCapabilities::Confluence(
+                            crate::protocol_serde::shape_confluence_resource_capabilities::de_confluence_resource_capabilities(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'confluence' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

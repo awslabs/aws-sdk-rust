@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`version(impl Into<String>)`](crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder::set_version):<br>required: **true**<br><p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p><br>
     /// - On success, responds with [`DeleteSlotTypeVersionOutput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteSlotTypeVersionError>`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn delete_slot_type_version(&self) -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder {
         crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder::new(self.handle.clone())
     }

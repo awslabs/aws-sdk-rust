@@ -9,5 +9,11 @@ pub fn ser_update_service_input_input(
     if let Some(var_2) = &input.certificate_arn {
         object.key("certificateArn").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.idle_timeout_seconds {
+        object.key("idleTimeoutSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }

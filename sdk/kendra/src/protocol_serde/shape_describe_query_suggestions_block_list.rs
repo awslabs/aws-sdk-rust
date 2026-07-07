@@ -151,6 +151,8 @@ pub(crate) fn de_describe_query_suggestions_block_list(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -211,7 +213,7 @@ pub(crate) fn de_describe_query_suggestions_block_list(
                     )?);
                 }
                 "SourceS3Path" => {
-                    builder = builder.set_source_s3_path(crate::protocol_serde::shape_s3_path::de_s3_path(tokens, _value)?);
+                    builder = builder.set_source_s3_path(crate::protocol_serde::shape_s3_path::de_s3_path(tokens, _value, depth + 1)?);
                 }
                 "ItemCount" => {
                     builder = builder.set_item_count(

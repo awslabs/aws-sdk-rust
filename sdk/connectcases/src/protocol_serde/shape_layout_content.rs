@@ -20,10 +20,16 @@ pub fn ser_layout_content(
 pub(crate) fn de_layout_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LayoutContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -49,7 +55,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "basic" => Some(crate::types::LayoutContent::Basic(
-                            crate::protocol_serde::shape_basic_layout::de_basic_layout(tokens, _value)?
+                            crate::protocol_serde::shape_basic_layout::de_basic_layout(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'basic' cannot be null"))?,
                         )),
                         _ => {

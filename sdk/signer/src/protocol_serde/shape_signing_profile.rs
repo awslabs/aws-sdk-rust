@@ -2,10 +2,16 @@
 pub(crate) fn de_signing_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SigningProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,12 +43,15 @@ where
                             );
                         }
                         "signingMaterial" => {
-                            builder =
-                                builder.set_signing_material(crate::protocol_serde::shape_signing_material::de_signing_material(tokens, _value)?);
+                            builder = builder.set_signing_material(crate::protocol_serde::shape_signing_material::de_signing_material(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "signatureValidityPeriod" => {
                             builder = builder.set_signature_validity_period(
-                                crate::protocol_serde::shape_signature_validity_period::de_signature_validity_period(tokens, _value)?,
+                                crate::protocol_serde::shape_signature_validity_period::de_signature_validity_period(tokens, _value, depth + 1)?,
                             );
                         }
                         "platformId" => {
@@ -60,8 +69,11 @@ where
                             );
                         }
                         "signingParameters" => {
-                            builder = builder
-                                .set_signing_parameters(crate::protocol_serde::shape_signing_parameters::de_signing_parameters(tokens, _value)?);
+                            builder = builder.set_signing_parameters(crate::protocol_serde::shape_signing_parameters::de_signing_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "status" => {
                             builder = builder.set_status(
@@ -78,7 +90,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

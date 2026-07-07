@@ -153,6 +153,8 @@ pub(crate) fn de_update_registry_record(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -179,7 +181,7 @@ pub(crate) fn de_update_registry_record(
                     );
                 }
                 "descriptors" => {
-                    builder = builder.set_descriptors(crate::protocol_serde::shape_descriptors::de_descriptors(tokens, _value)?);
+                    builder = builder.set_descriptors(crate::protocol_serde::shape_descriptors::de_descriptors(tokens, _value, depth + 1)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -232,7 +234,7 @@ pub(crate) fn de_update_registry_record(
                 }
                 "synchronizationConfiguration" => {
                     builder = builder.set_synchronization_configuration(
-                        crate::protocol_serde::shape_synchronization_configuration::de_synchronization_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_synchronization_configuration::de_synchronization_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "synchronizationType" => {

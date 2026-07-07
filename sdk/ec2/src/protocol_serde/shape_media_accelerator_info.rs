@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_media_accelerator_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MediaAcceleratorInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MediaAcceleratorInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_media_accelerator_info(
             s if s.matches("accelerators") /* Accelerators com.amazonaws.ec2#MediaAcceleratorInfo$Accelerators */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_media_device_info_list::de_media_device_info_list(&mut tag)
+                        crate::protocol_serde::shape_media_device_info_list::de_media_device_info_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

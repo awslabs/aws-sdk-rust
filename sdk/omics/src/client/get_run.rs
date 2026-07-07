@@ -44,8 +44,10 @@ impl super::Client {
     ///   - [`workflow_version_name(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_version_name): <p>The workflow version name.</p>
     ///   - [`workflow_uuid(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_uuid): <p>The universally unique identifier (UUID) value for the workflow.</p>
     ///   - [`networking_mode(Option<NetworkingMode>)`](crate::operation::get_run::GetRunOutput::networking_mode): <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
+    ///   - [`scratch_storage_mode(Option<ScratchStorageMode>)`](crate::operation::get_run::GetRunOutput::scratch_storage_mode): <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If absent, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
     ///   - [`configuration(Option<ConfigurationDetails>)`](crate::operation::get_run::GetRunOutput::configuration): <p>Configuration details for the workflow run.</p>
     ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::operation::get_run::GetRunOutput::vpc_config): <p>VPC configuration for the workflow run.</p>
+    ///   - [`engine_settings(Option<Document>)`](crate::operation::get_run::GetRunOutput::engine_settings): <p>The engine-specific settings for the workflow run.</p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)
     pub fn get_run(&self) -> crate::operation::get_run::builders::GetRunFluentBuilder {
         crate::operation::get_run::builders::GetRunFluentBuilder::new(self.handle.clone())

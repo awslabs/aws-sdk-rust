@@ -66,10 +66,16 @@ pub fn ser_lambda_config_type(
 pub(crate) fn de_lambda_config_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LambdaConfigType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -152,20 +158,24 @@ where
                             }
                             "PreTokenGenerationConfig" => {
                                 builder = builder.set_pre_token_generation_config(
-                                    crate::protocol_serde::shape_pre_token_generation_version_config_type::de_pre_token_generation_version_config_type(tokens, _value)?
+                                    crate::protocol_serde::shape_pre_token_generation_version_config_type::de_pre_token_generation_version_config_type(tokens, _value, depth + 1)?
                                 );
                             }
                             "CustomSMSSender" => {
                                 builder = builder.set_custom_sms_sender(
                                     crate::protocol_serde::shape_custom_sms_lambda_version_config_type::de_custom_sms_lambda_version_config_type(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "CustomEmailSender" => {
                                 builder = builder.set_custom_email_sender(
                                     crate::protocol_serde::shape_custom_email_lambda_version_config_type::de_custom_email_lambda_version_config_type(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
@@ -178,7 +188,11 @@ where
                             }
                             "InboundFederation" => {
                                 builder = builder.set_inbound_federation(
-                                    crate::protocol_serde::shape_inbound_federation_lambda_type::de_inbound_federation_lambda_type(tokens, _value)?,
+                                    crate::protocol_serde::shape_inbound_federation_lambda_type::de_inbound_federation_lambda_type(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

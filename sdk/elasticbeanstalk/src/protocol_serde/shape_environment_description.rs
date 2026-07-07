@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_environment_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EnvironmentDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EnvironmentDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -225,7 +229,7 @@ pub fn de_environment_description(
             s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk#EnvironmentDescription$Resources */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_environment_resources_description::de_environment_resources_description(&mut tag)
+                        crate::protocol_serde::shape_environment_resources_description::de_environment_resources_description(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -235,7 +239,7 @@ pub fn de_environment_description(
             s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk#EnvironmentDescription$Tier */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_environment_tier::de_environment_tier(&mut tag)
+                        crate::protocol_serde::shape_environment_tier::de_environment_tier(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -245,7 +249,7 @@ pub fn de_environment_description(
             s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk#EnvironmentDescription$EnvironmentLinks */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_environment_links::de_environment_links(&mut tag)
+                        crate::protocol_serde::shape_environment_links::de_environment_links(&mut tag, depth + 1)
                         ?
                     )
                 ;

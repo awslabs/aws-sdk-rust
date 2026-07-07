@@ -162,9 +162,36 @@ pub(crate) fn sanitization_warning_correct_errors(
     builder
 }
 
+pub(crate) fn shared_resource_correct_errors(
+    mut builder: crate::types::builders::SharedResourceBuilder,
+) -> crate::types::builders::SharedResourceBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SharedResourceStatus>().ok()
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SharedResourceType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn user_summary_correct_errors(mut builder: crate::types::builders::UserSummaryBuilder) -> crate::types::builders::UserSummaryBuilder {
     if builder.username.is_none() {
         builder.username = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn shared_resource_error_correct_errors(
+    mut builder: crate::types::builders::SharedResourceErrorBuilder,
+) -> crate::types::builders::SharedResourceErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::SharedResourceErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

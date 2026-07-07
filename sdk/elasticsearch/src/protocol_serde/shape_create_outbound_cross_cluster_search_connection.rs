@@ -135,6 +135,8 @@ pub(crate) fn de_create_outbound_cross_cluster_search_connection(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -149,7 +151,7 @@ pub(crate) fn de_create_outbound_cross_cluster_search_connection(
                 }
                 "ConnectionStatus" => {
                     builder = builder.set_connection_status(
-                            crate::protocol_serde::shape_outbound_cross_cluster_search_connection_status::de_outbound_cross_cluster_search_connection_status(tokens, _value)?
+                            crate::protocol_serde::shape_outbound_cross_cluster_search_connection_status::de_outbound_cross_cluster_search_connection_status(tokens, _value, depth + 1)?
                         );
                 }
                 "CrossClusterSearchConnectionId" => {
@@ -160,11 +162,18 @@ pub(crate) fn de_create_outbound_cross_cluster_search_connection(
                     );
                 }
                 "DestinationDomainInfo" => {
-                    builder =
-                        builder.set_destination_domain_info(crate::protocol_serde::shape_domain_information::de_domain_information(tokens, _value)?);
+                    builder = builder.set_destination_domain_info(crate::protocol_serde::shape_domain_information::de_domain_information(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "SourceDomainInfo" => {
-                    builder = builder.set_source_domain_info(crate::protocol_serde::shape_domain_information::de_domain_information(tokens, _value)?);
+                    builder = builder.set_source_domain_info(crate::protocol_serde::shape_domain_information::de_domain_information(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

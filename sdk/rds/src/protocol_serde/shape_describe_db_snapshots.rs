@@ -70,6 +70,8 @@ pub fn de_describe_db_snapshots(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDBSnapshotsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDBSnapshotsResponse got {start_el:?}"
@@ -100,7 +102,7 @@ pub fn de_describe_db_snapshots(
             s if s.matches("DBSnapshots") /* DBSnapshots com.amazonaws.rds.synthetic#DescribeDBSnapshotsOutput$DBSnapshots */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_db_snapshot_list::de_db_snapshot_list(&mut tag)
+                        crate::protocol_serde::shape_db_snapshot_list::de_db_snapshot_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

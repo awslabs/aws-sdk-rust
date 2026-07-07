@@ -2,10 +2,16 @@
 pub(crate) fn de_participant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Participant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,17 +37,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "PartnerProfile" => Some(crate::types::Participant::PartnerProfile(
-                            crate::protocol_serde::shape_partner_profile_summary::de_partner_profile_summary(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PartnerProfile' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_partner_profile_summary::de_partner_profile_summary(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PartnerProfile' cannot be null"),
+                            )?,
                         )),
                         "SellerProfile" => Some(crate::types::Participant::SellerProfile(
-                            crate::protocol_serde::shape_seller_profile_summary::de_seller_profile_summary(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SellerProfile' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_seller_profile_summary::de_seller_profile_summary(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SellerProfile' cannot be null"),
+                            )?,
                         )),
                         "Account" => Some(crate::types::Participant::Account(
-                            crate::protocol_serde::shape_account_summary::de_account_summary(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_account_summary::de_account_summary(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Account' cannot be null")
                             })?,
                         )),

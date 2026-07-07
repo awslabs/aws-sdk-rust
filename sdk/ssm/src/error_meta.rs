@@ -33,6 +33,8 @@ pub enum Error {
     AutomationStepNotFoundException(crate::types::error::AutomationStepNotFoundException),
     /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types.</p>
     ComplianceTypeCountLimitExceededException(crate::types::error::ComplianceTypeCountLimitExceededException),
+    /// <p>An error occurred because of a conflict with a concurrent request or the current state of the resource. Retry your request.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
     CustomSchemaCountLimitExceededException(crate::types::error::CustomSchemaCountLimitExceededException),
     /// <p>The specified document already exists.</p>
@@ -326,6 +328,7 @@ impl ::std::fmt::Display for Error {
             Error::AutomationExecutionNotFoundException(inner) => inner.fmt(f),
             Error::AutomationStepNotFoundException(inner) => inner.fmt(f),
             Error::ComplianceTypeCountLimitExceededException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::CustomSchemaCountLimitExceededException(inner) => inner.fmt(f),
             Error::DocumentAlreadyExists(inner) => inner.fmt(f),
             Error::DocumentLimitExceeded(inner) => inner.fmt(f),
@@ -486,6 +489,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AutomationExecutionNotFoundException(inner) => inner.meta(),
             Self::AutomationStepNotFoundException(inner) => inner.meta(),
             Self::ComplianceTypeCountLimitExceededException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::CustomSchemaCountLimitExceededException(inner) => inner.meta(),
             Self::DocumentAlreadyExists(inner) => inner.meta(),
             Self::DocumentLimitExceeded(inner) => inner.meta(),
@@ -849,6 +853,32 @@ impl From<crate::operation::create_association_batch::CreateAssociationBatchErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cloud_connector::CreateCloudConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cloud_connector::CreateCloudConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_cloud_connector::CreateCloudConnectorError> for Error {
+    fn from(err: crate::operation::create_cloud_connector::CreateCloudConnectorError) -> Self {
+        match err {
+            crate::operation::create_cloud_connector::CreateCloudConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_cloud_connector::CreateCloudConnectorError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_cloud_connector::CreateCloudConnectorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_cloud_connector::CreateCloudConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_document::CreateDocumentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1087,6 +1117,32 @@ impl From<crate::operation::delete_association::DeleteAssociationError> for Erro
             crate::operation::delete_association::DeleteAssociationError::InvalidInstanceId(inner) => Error::InvalidInstanceId(inner),
             crate::operation::delete_association::DeleteAssociationError::TooManyUpdates(inner) => Error::TooManyUpdates(inner),
             crate::operation::delete_association::DeleteAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cloud_connector::DeleteCloudConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cloud_connector::DeleteCloudConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cloud_connector::DeleteCloudConnectorError> for Error {
+    fn from(err: crate::operation::delete_cloud_connector::DeleteCloudConnectorError) -> Self {
+        match err {
+            crate::operation::delete_cloud_connector::DeleteCloudConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_cloud_connector::DeleteCloudConnectorError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_cloud_connector::DeleteCloudConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_cloud_connector::DeleteCloudConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2754,6 +2810,31 @@ impl From<crate::operation::get_calendar_state::GetCalendarStateError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cloud_connector::GetCloudConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cloud_connector::GetCloudConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cloud_connector::GetCloudConnectorError> for Error {
+    fn from(err: crate::operation::get_cloud_connector::GetCloudConnectorError) -> Self {
+        match err {
+            crate::operation::get_cloud_connector::GetCloudConnectorError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_cloud_connector::GetCloudConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_cloud_connector::GetCloudConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_command_invocation::GetCommandInvocationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3507,6 +3588,28 @@ impl From<crate::operation::list_association_versions::ListAssociationVersionsEr
             }
             crate::operation::list_association_versions::ListAssociationVersionsError::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
             crate::operation::list_association_versions::ListAssociationVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cloud_connectors::ListCloudConnectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cloud_connectors::ListCloudConnectorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cloud_connectors::ListCloudConnectorsError> for Error {
+    fn from(err: crate::operation::list_cloud_connectors::ListCloudConnectorsError) -> Self {
+        match err {
+            crate::operation::list_cloud_connectors::ListCloudConnectorsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_cloud_connectors::ListCloudConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4851,6 +4954,32 @@ impl From<crate::operation::update_association_status::UpdateAssociationStatusEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cloud_connector::UpdateCloudConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cloud_connector::UpdateCloudConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cloud_connector::UpdateCloudConnectorError> for Error {
+    fn from(err: crate::operation::update_cloud_connector::UpdateCloudConnectorError) -> Self {
+        match err {
+            crate::operation::update_cloud_connector::UpdateCloudConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_cloud_connector::UpdateCloudConnectorError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_cloud_connector::UpdateCloudConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_cloud_connector::UpdateCloudConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_document::UpdateDocumentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5234,6 +5363,33 @@ impl From<crate::operation::update_service_setting::UpdateServiceSettingError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::validate_cloud_connector::ValidateCloudConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::validate_cloud_connector::ValidateCloudConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::validate_cloud_connector::ValidateCloudConnectorError> for Error {
+    fn from(err: crate::operation::validate_cloud_connector::ValidateCloudConnectorError) -> Self {
+        match err {
+            crate::operation::validate_cloud_connector::ValidateCloudConnectorError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::validate_cloud_connector::ValidateCloudConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::validate_cloud_connector::ValidateCloudConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
 where
     O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
@@ -5264,6 +5420,7 @@ impl ::std::error::Error for Error {
             Error::AutomationExecutionNotFoundException(inner) => inner.source(),
             Error::AutomationStepNotFoundException(inner) => inner.source(),
             Error::ComplianceTypeCountLimitExceededException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::CustomSchemaCountLimitExceededException(inner) => inner.source(),
             Error::DocumentAlreadyExists(inner) => inner.source(),
             Error::DocumentLimitExceeded(inner) => inner.source(),
@@ -5410,6 +5567,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AutomationExecutionNotFoundException(e) => e.request_id(),
             Self::AutomationStepNotFoundException(e) => e.request_id(),
             Self::ComplianceTypeCountLimitExceededException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::CustomSchemaCountLimitExceededException(e) => e.request_id(),
             Self::DocumentAlreadyExists(e) => e.request_id(),
             Self::DocumentLimitExceeded(e) => e.request_id(),

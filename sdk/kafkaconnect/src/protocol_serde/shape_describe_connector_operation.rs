@@ -165,6 +165,8 @@ pub(crate) fn de_describe_connector_operation(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -211,28 +213,38 @@ pub(crate) fn de_describe_connector_operation(
                     )?);
                 }
                 "errorInfo" => {
-                    builder = builder.set_error_info(crate::protocol_serde::shape_state_description::de_state_description(tokens, _value)?);
+                    builder = builder.set_error_info(crate::protocol_serde::shape_state_description::de_state_description(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "operationSteps" => {
                     builder = builder.set_operation_steps(
-                        crate::protocol_serde::shape_list_of_connector_operation_step::de_list_of_connector_operation_step(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_connector_operation_step::de_list_of_connector_operation_step(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "originConnectorConfiguration" => {
                     builder = builder.set_origin_connector_configuration(
-                        crate::protocol_serde::shape_connector_configuration::de_connector_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_connector_configuration::de_connector_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "originWorkerSetting" => {
-                    builder = builder.set_origin_worker_setting(crate::protocol_serde::shape_worker_setting::de_worker_setting(tokens, _value)?);
+                    builder =
+                        builder.set_origin_worker_setting(crate::protocol_serde::shape_worker_setting::de_worker_setting(tokens, _value, depth + 1)?);
                 }
                 "targetConnectorConfiguration" => {
                     builder = builder.set_target_connector_configuration(
-                        crate::protocol_serde::shape_connector_configuration::de_connector_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_connector_configuration::de_connector_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "targetWorkerSetting" => {
-                    builder = builder.set_target_worker_setting(crate::protocol_serde::shape_worker_setting::de_worker_setting(tokens, _value)?);
+                    builder =
+                        builder.set_target_worker_setting(crate::protocol_serde::shape_worker_setting::de_worker_setting(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

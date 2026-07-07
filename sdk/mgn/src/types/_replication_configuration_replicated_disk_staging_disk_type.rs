@@ -13,6 +13,7 @@
 /// # let replicationconfigurationreplicateddiskstagingdisktype = unimplemented!();
 /// match replicationconfigurationreplicateddiskstagingdisktype {
 ///     ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => { /* ... */ },
+///     ReplicationConfigurationReplicatedDiskStagingDiskType::FsxOntap => { /* ... */ },
 ///     ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => { /* ... */ },
 ///     ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3 => { /* ... */ },
 ///     ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
     #[allow(missing_docs)] // documentation missing in model
+    FsxOntap,
+    #[allow(missing_docs)] // documentation missing in model
     Gp2,
     #[allow(missing_docs)] // documentation missing in model
     Gp3,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagin
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => ReplicationConfigurationReplicatedDiskStagingDiskType::Auto,
+            "FSX_ONTAP" => ReplicationConfigurationReplicatedDiskStagingDiskType::FsxOntap,
             "GP2" => ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2,
             "GP3" => ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3,
             "IO1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Io1,
@@ -97,6 +101,7 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => "AUTO",
+            ReplicationConfigurationReplicatedDiskStagingDiskType::FsxOntap => "FSX_ONTAP",
             ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => "GP2",
             ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3 => "GP3",
             ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => "IO1",
@@ -109,7 +114,7 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "GP2", "GP3", "IO1", "IO2", "SC1", "ST1", "STANDARD"]
+        &["AUTO", "FSX_ONTAP", "GP2", "GP3", "IO1", "IO2", "SC1", "ST1", "STANDARD"]
     }
 }
 impl ::std::convert::AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
@@ -133,6 +138,7 @@ impl ::std::fmt::Display for ReplicationConfigurationReplicatedDiskStagingDiskTy
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => write!(f, "AUTO"),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::FsxOntap => write!(f, "FSX_ONTAP"),
             ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => write!(f, "GP2"),
             ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3 => write!(f, "GP3"),
             ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => write!(f, "IO1"),

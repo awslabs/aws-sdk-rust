@@ -14,6 +14,10 @@
 /// match groupkey {
 ///     GroupKey::AccountId => { /* ... */ },
 ///     GroupKey::EcrRepositoryName => { /* ... */ },
+///     GroupKey::Provider => { /* ... */ },
+///     GroupKey::ProviderAccountId => { /* ... */ },
+///     GroupKey::ProviderOrgId => { /* ... */ },
+///     GroupKey::ProviderRegion => { /* ... */ },
 ///     GroupKey::ResourceType => { /* ... */ },
 ///     GroupKey::ScanStatusCode => { /* ... */ },
 ///     GroupKey::ScanStatusReason => { /* ... */ },
@@ -50,6 +54,14 @@ pub enum GroupKey {
     #[allow(missing_docs)] // documentation missing in model
     EcrRepositoryName,
     #[allow(missing_docs)] // documentation missing in model
+    Provider,
+    #[allow(missing_docs)] // documentation missing in model
+    ProviderAccountId,
+    #[allow(missing_docs)] // documentation missing in model
+    ProviderOrgId,
+    #[allow(missing_docs)] // documentation missing in model
+    ProviderRegion,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     #[allow(missing_docs)] // documentation missing in model
     ScanStatusCode,
@@ -64,6 +76,10 @@ impl ::std::convert::From<&str> for GroupKey {
         match s {
             "ACCOUNT_ID" => GroupKey::AccountId,
             "ECR_REPOSITORY_NAME" => GroupKey::EcrRepositoryName,
+            "PROVIDER" => GroupKey::Provider,
+            "PROVIDER_ACCOUNT_ID" => GroupKey::ProviderAccountId,
+            "PROVIDER_ORG_ID" => GroupKey::ProviderOrgId,
+            "PROVIDER_REGION" => GroupKey::ProviderRegion,
             "RESOURCE_TYPE" => GroupKey::ResourceType,
             "SCAN_STATUS_CODE" => GroupKey::ScanStatusCode,
             "SCAN_STATUS_REASON" => GroupKey::ScanStatusReason,
@@ -84,6 +100,10 @@ impl GroupKey {
         match self {
             GroupKey::AccountId => "ACCOUNT_ID",
             GroupKey::EcrRepositoryName => "ECR_REPOSITORY_NAME",
+            GroupKey::Provider => "PROVIDER",
+            GroupKey::ProviderAccountId => "PROVIDER_ACCOUNT_ID",
+            GroupKey::ProviderOrgId => "PROVIDER_ORG_ID",
+            GroupKey::ProviderRegion => "PROVIDER_REGION",
             GroupKey::ResourceType => "RESOURCE_TYPE",
             GroupKey::ScanStatusCode => "SCAN_STATUS_CODE",
             GroupKey::ScanStatusReason => "SCAN_STATUS_REASON",
@@ -95,6 +115,10 @@ impl GroupKey {
         &[
             "ACCOUNT_ID",
             "ECR_REPOSITORY_NAME",
+            "PROVIDER",
+            "PROVIDER_ACCOUNT_ID",
+            "PROVIDER_ORG_ID",
+            "PROVIDER_REGION",
             "RESOURCE_TYPE",
             "SCAN_STATUS_CODE",
             "SCAN_STATUS_REASON",
@@ -123,6 +147,10 @@ impl ::std::fmt::Display for GroupKey {
         match self {
             GroupKey::AccountId => write!(f, "ACCOUNT_ID"),
             GroupKey::EcrRepositoryName => write!(f, "ECR_REPOSITORY_NAME"),
+            GroupKey::Provider => write!(f, "PROVIDER"),
+            GroupKey::ProviderAccountId => write!(f, "PROVIDER_ACCOUNT_ID"),
+            GroupKey::ProviderOrgId => write!(f, "PROVIDER_ORG_ID"),
+            GroupKey::ProviderRegion => write!(f, "PROVIDER_REGION"),
             GroupKey::ResourceType => write!(f, "RESOURCE_TYPE"),
             GroupKey::ScanStatusCode => write!(f, "SCAN_STATUS_CODE"),
             GroupKey::ScanStatusReason => write!(f, "SCAN_STATUS_REASON"),

@@ -2,10 +2,16 @@
 pub(crate) fn de_management_preference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagementPreference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,19 +37,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "awsManagedResources" => Some(crate::types::ManagementPreference::AwsManagedResources(
-                            crate::protocol_serde::shape_aws_managed_resources::de_aws_managed_resources(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsManagedResources' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_aws_managed_resources::de_aws_managed_resources(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsManagedResources' cannot be null"),
+                            )?,
                         )),
                         "selfManageResources" => Some(crate::types::ManagementPreference::SelfManageResources(
-                            crate::protocol_serde::shape_self_manage_resources::de_self_manage_resources(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'selfManageResources' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_self_manage_resources::de_self_manage_resources(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'selfManageResources' cannot be null"),
+                            )?,
                         )),
                         "noPreference" => Some(crate::types::ManagementPreference::NoPreference(
-                            crate::protocol_serde::shape_no_management_preference::de_no_management_preference(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noPreference' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_no_management_preference::de_no_management_preference(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noPreference' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

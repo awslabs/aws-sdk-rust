@@ -10,8 +10,10 @@ pub struct ResponseOutputItem {
     pub hls_playlist_settings: ::std::option::Option<crate::types::HlsPlaylistSettings>,
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
     pub manifest_name: ::std::string::String,
-    /// <p>The URL used for playback by content players.</p>
+    /// <p>The URL that your player uses for playback.</p>
     pub playback_url: ::std::string::String,
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses for playback.</p>
+    pub dual_stack_playback_url: ::std::option::Option<::std::string::String>,
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
     pub source_group: ::std::string::String,
 }
@@ -29,10 +31,14 @@ impl ResponseOutputItem {
         use std::ops::Deref;
         self.manifest_name.deref()
     }
-    /// <p>The URL used for playback by content players.</p>
+    /// <p>The URL that your player uses for playback.</p>
     pub fn playback_url(&self) -> &str {
         use std::ops::Deref;
         self.playback_url.deref()
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses for playback.</p>
+    pub fn dual_stack_playback_url(&self) -> ::std::option::Option<&str> {
+        self.dual_stack_playback_url.as_deref()
     }
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
     pub fn source_group(&self) -> &str {
@@ -55,6 +61,7 @@ pub struct ResponseOutputItemBuilder {
     pub(crate) hls_playlist_settings: ::std::option::Option<crate::types::HlsPlaylistSettings>,
     pub(crate) manifest_name: ::std::option::Option<::std::string::String>,
     pub(crate) playback_url: ::std::option::Option<::std::string::String>,
+    pub(crate) dual_stack_playback_url: ::std::option::Option<::std::string::String>,
     pub(crate) source_group: ::std::option::Option<::std::string::String>,
 }
 impl ResponseOutputItemBuilder {
@@ -101,20 +108,34 @@ impl ResponseOutputItemBuilder {
     pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.manifest_name
     }
-    /// <p>The URL used for playback by content players.</p>
+    /// <p>The URL that your player uses for playback.</p>
     /// This field is required.
     pub fn playback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL used for playback by content players.</p>
+    /// <p>The URL that your player uses for playback.</p>
     pub fn set_playback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_url = input;
         self
     }
-    /// <p>The URL used for playback by content players.</p>
+    /// <p>The URL that your player uses for playback.</p>
     pub fn get_playback_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_url
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses for playback.</p>
+    pub fn dual_stack_playback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dual_stack_playback_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses for playback.</p>
+    pub fn set_dual_stack_playback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dual_stack_playback_url = input;
+        self
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses for playback.</p>
+    pub fn get_dual_stack_playback_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dual_stack_playback_url
     }
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
     /// This field is required.
@@ -152,6 +173,7 @@ impl ResponseOutputItemBuilder {
                     "playback_url was not specified but it is required when building ResponseOutputItem",
                 )
             })?,
+            dual_stack_playback_url: self.dual_stack_playback_url,
             source_group: self.source_group.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_group",

@@ -2,10 +2,16 @@
 pub(crate) fn de_query_insights_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::QueryInsightsResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,61 +20,63 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "QuerySpatialCoverage" => {
-                            builder = builder.set_query_spatial_coverage(
-                                crate::protocol_serde::shape_query_spatial_coverage::de_query_spatial_coverage(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "QuerySpatialCoverage" => {
+                                builder = builder.set_query_spatial_coverage(
+                                    crate::protocol_serde::shape_query_spatial_coverage::de_query_spatial_coverage(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "QueryTemporalRange" => {
+                                builder = builder.set_query_temporal_range(
+                                    crate::protocol_serde::shape_query_temporal_range::de_query_temporal_range(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "QueryTableCount" => {
+                                builder = builder.set_query_table_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "OutputRows" => {
+                                builder = builder.set_output_rows(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "OutputBytes" => {
+                                builder = builder.set_output_bytes(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "UnloadPartitionCount" => {
+                                builder = builder.set_unload_partition_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "UnloadWrittenRows" => {
+                                builder = builder.set_unload_written_rows(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "UnloadWrittenBytes" => {
+                                builder = builder.set_unload_written_bytes(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "QueryTemporalRange" => {
-                            builder = builder.set_query_temporal_range(crate::protocol_serde::shape_query_temporal_range::de_query_temporal_range(
-                                tokens, _value,
-                            )?);
-                        }
-                        "QueryTableCount" => {
-                            builder = builder.set_query_table_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "OutputRows" => {
-                            builder = builder.set_output_rows(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "OutputBytes" => {
-                            builder = builder.set_output_bytes(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "UnloadPartitionCount" => {
-                            builder = builder.set_unload_partition_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "UnloadWrittenRows" => {
-                            builder = builder.set_unload_written_rows(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "UnloadWrittenBytes" => {
-                            builder = builder.set_unload_written_bytes(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

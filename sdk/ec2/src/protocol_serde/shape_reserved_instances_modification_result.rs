@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_reserved_instances_modification_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReservedInstancesModificationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedInstancesModificationResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_reserved_instances_modification_result(
             s if s.matches("targetConfiguration") /* TargetConfiguration com.amazonaws.ec2#ReservedInstancesModificationResult$TargetConfiguration */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_reserved_instances_configuration::de_reserved_instances_configuration(&mut tag)
+                        crate::protocol_serde::shape_reserved_instances_configuration::de_reserved_instances_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

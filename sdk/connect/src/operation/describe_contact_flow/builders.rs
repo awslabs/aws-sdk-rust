@@ -23,7 +23,7 @@ impl crate::operation::describe_contact_flow::builders::DescribeContactFlowInput
 /// Fluent builder constructing a request to `DescribeContactFlow`.
 ///
 /// <p>Describes the specified flow.</p>
-/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
+/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect Customer Flow language</a>.</p>
 /// <p>Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is published, <code>$SAVED</code> needs to be supplied to view saved content that has not been published.</p>
 /// <p>Use <code>arn:aws:.../contact-flow/{id}:{version}</code> to retrieve the content of a specific flow version.</p>
 /// <p>In the response, <b>Status</b> indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. <code>SAVED</code> does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code></p>
@@ -112,17 +112,17 @@ impl DescribeContactFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

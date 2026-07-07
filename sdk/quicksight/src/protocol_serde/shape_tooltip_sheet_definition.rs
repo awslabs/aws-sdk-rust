@@ -63,10 +63,16 @@ pub fn ser_tooltip_sheet_definition(
 pub(crate) fn de_tooltip_sheet_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TooltipSheetDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -92,21 +98,25 @@ where
                         }
                         "Visuals" => {
                             builder = builder.set_visuals(crate::protocol_serde::shape_tooltip_sheet_visual_list::de_tooltip_sheet_visual_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "TextBoxes" => {
                             builder = builder.set_text_boxes(
-                                crate::protocol_serde::shape_tooltip_sheet_text_box_list::de_tooltip_sheet_text_box_list(tokens, _value)?,
+                                crate::protocol_serde::shape_tooltip_sheet_text_box_list::de_tooltip_sheet_text_box_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Images" => {
                             builder = builder.set_images(crate::protocol_serde::shape_tooltip_sheet_image_list::de_tooltip_sheet_image_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Layouts" => {
-                            builder = builder.set_layouts(crate::protocol_serde::shape_layout_list::de_layout_list(tokens, _value)?);
+                            builder = builder.set_layouts(crate::protocol_serde::shape_layout_list::de_layout_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

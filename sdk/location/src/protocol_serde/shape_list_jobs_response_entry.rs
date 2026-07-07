@@ -2,10 +2,16 @@
 pub(crate) fn de_list_jobs_response_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ListJobsResponseEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,8 +29,11 @@ where
                             );
                         }
                         "ActionOptions" => {
-                            builder =
-                                builder.set_action_options(crate::protocol_serde::shape_job_action_options::de_job_action_options(tokens, _value)?);
+                            builder = builder.set_action_options(crate::protocol_serde::shape_job_action_options::de_job_action_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CreatedAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -46,11 +55,14 @@ where
                             )?);
                         }
                         "Error" => {
-                            builder = builder.set_error(crate::protocol_serde::shape_job_error::de_job_error(tokens, _value)?);
+                            builder = builder.set_error(crate::protocol_serde::shape_job_error::de_job_error(tokens, _value, depth + 1)?);
                         }
                         "InputOptions" => {
-                            builder =
-                                builder.set_input_options(crate::protocol_serde::shape_job_input_options::de_job_input_options(tokens, _value)?);
+                            builder = builder.set_input_options(crate::protocol_serde::shape_job_input_options::de_job_input_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JobId" => {
                             builder = builder.set_job_id(
@@ -74,8 +86,11 @@ where
                             );
                         }
                         "OutputOptions" => {
-                            builder =
-                                builder.set_output_options(crate::protocol_serde::shape_job_output_options::de_job_output_options(tokens, _value)?);
+                            builder = builder.set_output_options(crate::protocol_serde::shape_job_output_options::de_job_output_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Status" => {
                             builder = builder.set_status(

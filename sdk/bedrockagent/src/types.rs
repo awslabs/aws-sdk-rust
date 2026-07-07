@@ -55,6 +55,8 @@ pub use crate::types::_data_source_status::DataSourceStatus;
 
 pub use crate::types::_flow_status::FlowStatus;
 
+pub use crate::types::_included_data::IncludedData;
+
 pub use crate::types::_ingestion_job::IngestionJob;
 
 pub use crate::types::_ingestion_job_sort_by::IngestionJobSortBy;
@@ -73,9 +75,9 @@ pub use crate::types::_knowledge_base_status::KnowledgeBaseStatus;
 
 pub use crate::types::_agent_version::AgentVersion;
 
-pub use crate::types::_flow_validation::FlowValidation;
-
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
+
+pub use crate::types::_flow_validation::FlowValidation;
 
 pub use crate::types::_flow_alias_concurrency_configuration::FlowAliasConcurrencyConfiguration;
 
@@ -98,6 +100,8 @@ pub use crate::types::_agent_alias_routing_configuration_list_item::AgentAliasRo
 pub use crate::types::_agent_alias_summary::AgentAliasSummary;
 
 pub use crate::types::_data_source_type::DataSourceType;
+
+pub use crate::types::_managed_knowledge_base_connector_configuration::ManagedKnowledgeBaseConnectorConfiguration;
 
 pub use crate::types::_s3_data_source_configuration::S3DataSourceConfiguration;
 
@@ -142,6 +146,8 @@ pub use crate::types::_knowledge_base_document::KnowledgeBaseDocument;
 pub use crate::types::_knowledge_base_type::KnowledgeBaseType;
 
 pub use crate::types::_vector_knowledge_base_configuration::VectorKnowledgeBaseConfiguration;
+
+pub use crate::types::_managed_knowledge_base_configuration::ManagedKnowledgeBaseConfiguration;
 
 pub use crate::types::_kendra_knowledge_base_configuration::KendraKnowledgeBaseConfiguration;
 
@@ -201,6 +207,10 @@ pub use crate::types::_memory_type::MemoryType;
 
 pub use crate::types::_agent_alias_history_event::AgentAliasHistoryEvent;
 
+pub use crate::types::_deletion_protection_configuration::DeletionProtectionConfiguration;
+
+pub use crate::types::_media_extraction_configuration::MediaExtractionConfiguration;
+
 pub use crate::types::_web_source_configuration::WebSourceConfiguration;
 
 pub use crate::types::_web_crawler_configuration::WebCrawlerConfiguration;
@@ -256,6 +266,8 @@ pub use crate::types::_document_content::DocumentContent;
 pub use crate::types::_embedding_model_configuration::EmbeddingModelConfiguration;
 
 pub use crate::types::_supplemental_data_storage_configuration::SupplementalDataStorageConfiguration;
+
+pub use crate::types::_embedding_model_type::EmbeddingModelType;
 
 pub use crate::types::_query_engine_type::QueryEngineType;
 
@@ -367,6 +379,14 @@ pub use crate::types::_prompt_state::PromptState;
 
 pub use crate::types::_inference_configuration::InferenceConfiguration;
 
+pub use crate::types::_enabled_or_disabled_state::EnabledOrDisabledState;
+
+pub use crate::types::_image_extraction_configuration::ImageExtractionConfiguration;
+
+pub use crate::types::_audio_extraction_configuration::AudioExtractionConfiguration;
+
+pub use crate::types::_video_extraction_configuration::VideoExtractionConfiguration;
+
 pub use crate::types::_url_configuration::UrlConfiguration;
 
 pub use crate::types::_web_crawler_limits::WebCrawlerLimits;
@@ -477,6 +497,8 @@ pub use crate::types::_enrichment_strategy_method::EnrichmentStrategyMethod;
 
 pub use crate::types::_metadata_attribute::MetadataAttribute;
 
+pub use crate::types::_document_access_control_entry::DocumentAccessControlEntry;
+
 pub use crate::types::_custom_source_type::CustomSourceType;
 
 pub use crate::types::_inline_content::InlineContent;
@@ -524,6 +546,10 @@ pub use crate::types::_seed_url::SeedUrl;
 pub use crate::types::_transformation_lambda_configuration::TransformationLambdaConfiguration;
 
 pub use crate::types::_metadata_attribute_value::MetadataAttributeValue;
+
+pub use crate::types::_access_control_principal_type::AccessControlPrincipalType;
+
+pub use crate::types::_access_control_access::AccessControlAccess;
 
 pub use crate::types::_inline_content_type::InlineContentType;
 
@@ -619,6 +645,10 @@ pub use crate::types::_tool_input_schema::ToolInputSchema;
 
 pub use crate::types::_field_for_reranking::FieldForReranking;
 
+mod _access_control_access;
+
+mod _access_control_principal_type;
+
 mod _action_group_executor;
 
 mod _action_group_signature;
@@ -670,6 +700,8 @@ mod _any_tool_choice;
 mod _api_schema;
 
 mod _audio_configuration;
+
+mod _audio_extraction_configuration;
 
 mod _audio_segmentation_configuration;
 
@@ -757,6 +789,10 @@ mod _data_source_summary;
 
 mod _data_source_type;
 
+mod _deletion_protection_configuration;
+
+mod _document_access_control_entry;
+
 mod _document_content;
 
 mod _document_identifier;
@@ -772,6 +808,10 @@ mod _duplicate_connections_flow_validation_details;
 mod _embedding_data_type;
 
 mod _embedding_model_configuration;
+
+mod _embedding_model_type;
+
+mod _enabled_or_disabled_state;
 
 mod _enrichment_strategy_configuration;
 
@@ -839,7 +879,11 @@ mod _hierarchical_chunking_configuration;
 
 mod _hierarchical_chunking_level_configuration;
 
+mod _image_extraction_configuration;
+
 mod _include_exclude;
+
+mod _included_data;
 
 mod _incompatible_connection_data_type_flow_validation_details;
 
@@ -920,6 +964,12 @@ mod _loop_input_flow_node_configuration;
 mod _malformed_condition_expression_flow_validation_details;
 
 mod _malformed_node_input_expression_flow_validation_details;
+
+mod _managed_knowledge_base_configuration;
+
+mod _managed_knowledge_base_connector_configuration;
+
+mod _media_extraction_configuration;
 
 mod _memory_configuration;
 
@@ -1226,6 +1276,8 @@ mod _vector_search_reranking_configuration;
 mod _vector_search_reranking_configuration_type;
 
 mod _video_configuration;
+
+mod _video_extraction_configuration;
 
 mod _video_segmentation_configuration;
 

@@ -20,6 +20,8 @@ pub struct CapacityProvider {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the capacity provider was last modified.</p>
     pub last_modified: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration for tag propagation to managed resources launched by the capacity provider.</p>
+    pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
 }
 impl CapacityProvider {
     /// <p>The Amazon Resource Name (ARN) of the capacity provider.</p>
@@ -55,6 +57,10 @@ impl CapacityProvider {
     pub fn last_modified(&self) -> ::std::option::Option<&str> {
         self.last_modified.as_deref()
     }
+    /// <p>Configuration for tag propagation to managed resources launched by the capacity provider.</p>
+    pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
+        self.propagate_tags.as_ref()
+    }
 }
 impl CapacityProvider {
     /// Creates a new builder-style object to manufacture [`CapacityProvider`](crate::types::CapacityProvider).
@@ -75,6 +81,7 @@ pub struct CapacityProviderBuilder {
     pub(crate) capacity_provider_scaling_config: ::std::option::Option<crate::types::CapacityProviderScalingConfig>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::std::string::String>,
+    pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
 }
 impl CapacityProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the capacity provider.</p>
@@ -193,6 +200,20 @@ impl CapacityProviderBuilder {
     pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified
     }
+    /// <p>Configuration for tag propagation to managed resources launched by the capacity provider.</p>
+    pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
+        self.propagate_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for tag propagation to managed resources launched by the capacity provider.</p>
+    pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
+        self.propagate_tags = input;
+        self
+    }
+    /// <p>Configuration for tag propagation to managed resources launched by the capacity provider.</p>
+    pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
+        &self.propagate_tags
+    }
     /// Consumes the builder and constructs a [`CapacityProvider`](crate::types::CapacityProvider).
     /// This method will fail if any of the following fields are not set:
     /// - [`capacity_provider_arn`](crate::types::builders::CapacityProviderBuilder::capacity_provider_arn)
@@ -217,6 +238,7 @@ impl CapacityProviderBuilder {
             capacity_provider_scaling_config: self.capacity_provider_scaling_config,
             kms_key_arn: self.kms_key_arn,
             last_modified: self.last_modified,
+            propagate_tags: self.propagate_tags,
         })
     }
 }

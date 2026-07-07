@@ -14,6 +14,7 @@
 /// match datasourcetype {
 ///     DataSourceType::Confluence => { /* ... */ },
 ///     DataSourceType::Custom => { /* ... */ },
+///     DataSourceType::ManagedKnowledgeBaseConnector => { /* ... */ },
 ///     DataSourceType::RedshiftMetadata => { /* ... */ },
 ///     DataSourceType::S3 => { /* ... */ },
 ///     DataSourceType::Salesforce => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    ManagedKnowledgeBaseConnector,
+    #[allow(missing_docs)] // documentation missing in model
     RedshiftMetadata,
     #[allow(missing_docs)] // documentation missing in model
     S3,
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for DataSourceType {
         match s {
             "CONFLUENCE" => DataSourceType::Confluence,
             "CUSTOM" => DataSourceType::Custom,
+            "MANAGED_KNOWLEDGE_BASE_CONNECTOR" => DataSourceType::ManagedKnowledgeBaseConnector,
             "REDSHIFT_METADATA" => DataSourceType::RedshiftMetadata,
             "S3" => DataSourceType::S3,
             "SALESFORCE" => DataSourceType::Salesforce,
@@ -92,6 +96,7 @@ impl DataSourceType {
         match self {
             DataSourceType::Confluence => "CONFLUENCE",
             DataSourceType::Custom => "CUSTOM",
+            DataSourceType::ManagedKnowledgeBaseConnector => "MANAGED_KNOWLEDGE_BASE_CONNECTOR",
             DataSourceType::RedshiftMetadata => "REDSHIFT_METADATA",
             DataSourceType::S3 => "S3",
             DataSourceType::Salesforce => "SALESFORCE",
@@ -102,7 +107,16 @@ impl DataSourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFLUENCE", "CUSTOM", "REDSHIFT_METADATA", "S3", "SALESFORCE", "SHAREPOINT", "WEB"]
+        &[
+            "CONFLUENCE",
+            "CUSTOM",
+            "MANAGED_KNOWLEDGE_BASE_CONNECTOR",
+            "REDSHIFT_METADATA",
+            "S3",
+            "SALESFORCE",
+            "SHAREPOINT",
+            "WEB",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for DataSourceType {
@@ -127,6 +141,7 @@ impl ::std::fmt::Display for DataSourceType {
         match self {
             DataSourceType::Confluence => write!(f, "CONFLUENCE"),
             DataSourceType::Custom => write!(f, "CUSTOM"),
+            DataSourceType::ManagedKnowledgeBaseConnector => write!(f, "MANAGED_KNOWLEDGE_BASE_CONNECTOR"),
             DataSourceType::RedshiftMetadata => write!(f, "REDSHIFT_METADATA"),
             DataSourceType::S3 => write!(f, "S3"),
             DataSourceType::Salesforce => write!(f, "SALESFORCE"),

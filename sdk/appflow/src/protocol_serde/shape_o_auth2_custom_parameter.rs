@@ -2,10 +2,16 @@
 pub(crate) fn de_o_auth2_custom_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OAuth2CustomParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,11 @@ where
                         }
                         "connectorSuppliedValues" => {
                             builder = builder.set_connector_supplied_values(
-                                crate::protocol_serde::shape_connector_supplied_value_list::de_connector_supplied_value_list(tokens, _value)?,
+                                crate::protocol_serde::shape_connector_supplied_value_list::de_connector_supplied_value_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "type" => {

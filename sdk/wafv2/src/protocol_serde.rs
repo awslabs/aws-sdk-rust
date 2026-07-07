@@ -79,6 +79,12 @@ pub(crate) mod shape_get_rate_based_statement_managed_keys;
 
 pub(crate) mod shape_get_regex_pattern_set;
 
+pub(crate) mod shape_get_revenue_statistics;
+
+pub(crate) mod shape_get_revenue_statistics_summary;
+
+pub(crate) mod shape_get_revenue_statistics_time_series;
+
 pub(crate) mod shape_get_rule_group;
 
 pub(crate) mod shape_get_sampled_requests;
@@ -108,6 +114,8 @@ pub(crate) mod shape_list_regex_pattern_sets;
 pub(crate) mod shape_list_resources_for_web_acl;
 
 pub(crate) mod shape_list_rule_groups;
+
+pub(crate) mod shape_list_settlement_records;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -197,6 +205,12 @@ pub(crate) mod shape_get_rate_based_statement_managed_keys_input;
 
 pub(crate) mod shape_get_regex_pattern_set_input;
 
+pub(crate) mod shape_get_revenue_statistics_input;
+
+pub(crate) mod shape_get_revenue_statistics_summary_input;
+
+pub(crate) mod shape_get_revenue_statistics_time_series_input;
+
 pub(crate) mod shape_get_rule_group_input;
 
 pub(crate) mod shape_get_sampled_requests_input;
@@ -226,6 +240,8 @@ pub(crate) mod shape_list_regex_pattern_sets_input;
 pub(crate) mod shape_list_resources_for_web_acl_input;
 
 pub(crate) mod shape_list_rule_groups_input;
+
+pub(crate) mod shape_list_settlement_records_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -303,6 +319,8 @@ pub(crate) mod shape_challenge_config;
 
 pub(crate) mod shape_custom_response_body;
 
+pub(crate) mod shape_data_points_list;
+
 pub(crate) mod shape_data_protection_config;
 
 pub(crate) mod shape_default_action;
@@ -333,6 +351,10 @@ pub(crate) mod shape_managed_rule_set_summaries;
 
 pub(crate) mod shape_mobile_sdk_release;
 
+pub(crate) mod shape_monetization_config;
+
+pub(crate) mod shape_monetization_filter;
+
 pub(crate) mod shape_on_source_d_do_s_protection_config;
 
 pub(crate) mod shape_path_statistics_list;
@@ -351,6 +373,10 @@ pub(crate) mod shape_release_summaries;
 
 pub(crate) mod shape_resource_arns;
 
+pub(crate) mod shape_revenue_breakdown;
+
+pub(crate) mod shape_revenue_path_statistics_list;
+
 pub(crate) mod shape_rule;
 
 pub(crate) mod shape_rule_group;
@@ -362,6 +388,10 @@ pub(crate) mod shape_rule_group_summary;
 pub(crate) mod shape_rule_summaries;
 
 pub(crate) mod shape_sampled_http_requests;
+
+pub(crate) mod shape_settlement_record_list;
+
+pub(crate) mod shape_source_statistics_list;
 
 pub(crate) mod shape_tag;
 
@@ -389,7 +419,11 @@ pub(crate) mod shape_application_attribute;
 
 pub(crate) mod shape_block_action;
 
+pub(crate) mod shape_crypto_config;
+
 pub(crate) mod shape_custom_response_bodies;
+
+pub(crate) mod shape_data_point_entry;
 
 pub(crate) mod shape_data_protection;
 
@@ -433,6 +467,8 @@ pub(crate) mod shape_release_summary;
 
 pub(crate) mod shape_request_body_associated_resource_type_config;
 
+pub(crate) mod shape_revenue_path_statistics;
+
 pub(crate) mod shape_rule_action;
 
 pub(crate) mod shape_rule_summary;
@@ -440,6 +476,10 @@ pub(crate) mod shape_rule_summary;
 pub(crate) mod shape_rules;
 
 pub(crate) mod shape_sampled_http_request;
+
+pub(crate) mod shape_settlement_record;
+
+pub(crate) mod shape_source_statistics;
 
 pub(crate) mod shape_statement;
 
@@ -515,11 +555,15 @@ pub(crate) mod shape_managed_rule_set_version;
 
 pub(crate) mod shape_method;
 
+pub(crate) mod shape_monetize_action;
+
 pub(crate) mod shape_none_action;
 
 pub(crate) mod shape_not_statement;
 
 pub(crate) mod shape_or_statement;
+
+pub(crate) mod shape_payment_network;
 
 pub(crate) mod shape_query_string;
 
@@ -570,6 +614,10 @@ pub(crate) mod shape_ip_set_forwarded_ip_config;
 pub(crate) mod shape_json_match_pattern;
 
 pub(crate) mod shape_managed_rule_group_config;
+
+pub(crate) mod shape_payment_networks;
+
+pub(crate) mod shape_price;
 
 pub(crate) mod shape_rate_based_statement_custom_key;
 
@@ -642,6 +690,8 @@ pub(crate) mod shape_header_names;
 pub(crate) mod shape_json_pointer_paths;
 
 pub(crate) mod shape_managed_rule_group_configs;
+
+pub(crate) mod shape_prices;
 
 pub(crate) mod shape_rate_based_statement_custom_keys;
 

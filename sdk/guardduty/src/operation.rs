@@ -16,6 +16,9 @@ pub mod create_detector;
 /// Types for the `CreateFilter` operation.
 pub mod create_filter;
 
+/// Types for the `CreateInvestigation` operation.
+pub mod create_investigation;
+
 /// Types for the `CreateIPSet` operation.
 pub mod create_ip_set;
 
@@ -115,6 +118,9 @@ pub mod get_findings;
 /// Types for the `GetFindingsStatistics` operation.
 pub mod get_findings_statistics;
 
+/// Types for the `GetInvestigation` operation.
+pub mod get_investigation;
+
 /// Types for the `GetInvitationsCount` operation.
 pub mod get_invitations_count;
 
@@ -171,6 +177,9 @@ pub mod list_filters;
 
 /// Types for the `ListFindings` operation.
 pub mod list_findings;
+
+/// Types for the `ListInvestigations` operation.
+pub mod list_investigations;
 
 /// Types for the `ListInvitations` operation.
 pub mod list_invitations;

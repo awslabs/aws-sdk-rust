@@ -160,4 +160,18 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_app_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppConfig>> {
         self.inner.get_app_configs()
     }
+    /// <p>Configuration settings for integrating IAM Identity Center with the OpenSearch application.</p>
+    pub fn iam_identity_center_options(mut self, input: crate::types::IamIdentityCenterOptionsInput) -> Self {
+        self.inner = self.inner.iam_identity_center_options(input);
+        self
+    }
+    /// <p>Configuration settings for integrating IAM Identity Center with the OpenSearch application.</p>
+    pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::IamIdentityCenterOptionsInput>) -> Self {
+        self.inner = self.inner.set_iam_identity_center_options(input);
+        self
+    }
+    /// <p>Configuration settings for integrating IAM Identity Center with the OpenSearch application.</p>
+    pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::IamIdentityCenterOptionsInput> {
+        self.inner.get_iam_identity_center_options()
+    }
 }

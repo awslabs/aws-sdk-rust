@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_single_instance_health(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SingleInstanceHealth, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SingleInstanceHealth::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_single_instance_health(
             s if s.matches("Causes") /* Causes com.amazonaws.elasticbeanstalk#SingleInstanceHealth$Causes */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_causes::de_causes(&mut tag)
+                        crate::protocol_serde::shape_causes::de_causes(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +77,7 @@ pub fn de_single_instance_health(
             s if s.matches("ApplicationMetrics") /* ApplicationMetrics com.amazonaws.elasticbeanstalk#SingleInstanceHealth$ApplicationMetrics */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_application_metrics::de_application_metrics(&mut tag)
+                        crate::protocol_serde::shape_application_metrics::de_application_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -83,7 +87,7 @@ pub fn de_single_instance_health(
             s if s.matches("System") /* System com.amazonaws.elasticbeanstalk#SingleInstanceHealth$System */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_system_status::de_system_status(&mut tag)
+                        crate::protocol_serde::shape_system_status::de_system_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -93,7 +97,7 @@ pub fn de_single_instance_health(
             s if s.matches("Deployment") /* Deployment com.amazonaws.elasticbeanstalk#SingleInstanceHealth$Deployment */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_deployment::de_deployment(&mut tag)
+                        crate::protocol_serde::shape_deployment::de_deployment(&mut tag, depth + 1)
                         ?
                     )
                 ;

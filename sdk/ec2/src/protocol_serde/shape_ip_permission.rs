@@ -83,7 +83,11 @@ pub fn ser_ip_permission(
 #[allow(clippy::needless_question_mark)]
 pub fn de_ip_permission(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IpPermission, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IpPermission::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -134,7 +138,7 @@ pub fn de_ip_permission(
             s if s.matches("groups") /* UserIdGroupPairs com.amazonaws.ec2#IpPermission$UserIdGroupPairs */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_user_id_group_pair_list::de_user_id_group_pair_list(&mut tag)
+                        crate::protocol_serde::shape_user_id_group_pair_list::de_user_id_group_pair_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -144,7 +148,7 @@ pub fn de_ip_permission(
             s if s.matches("ipRanges") /* IpRanges com.amazonaws.ec2#IpPermission$IpRanges */ =>  {
                 let var_31 =
                     Some(
-                        crate::protocol_serde::shape_ip_range_list::de_ip_range_list(&mut tag)
+                        crate::protocol_serde::shape_ip_range_list::de_ip_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -154,7 +158,7 @@ pub fn de_ip_permission(
             s if s.matches("ipv6Ranges") /* Ipv6Ranges com.amazonaws.ec2#IpPermission$Ipv6Ranges */ =>  {
                 let var_32 =
                     Some(
-                        crate::protocol_serde::shape_ipv6_range_list::de_ipv6_range_list(&mut tag)
+                        crate::protocol_serde::shape_ipv6_range_list::de_ipv6_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -164,7 +168,7 @@ pub fn de_ip_permission(
             s if s.matches("prefixListIds") /* PrefixListIds com.amazonaws.ec2#IpPermission$PrefixListIds */ =>  {
                 let var_33 =
                     Some(
-                        crate::protocol_serde::shape_prefix_list_id_list::de_prefix_list_id_list(&mut tag)
+                        crate::protocol_serde::shape_prefix_list_id_list::de_prefix_list_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

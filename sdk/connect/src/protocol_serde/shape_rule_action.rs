@@ -66,10 +66,16 @@ pub fn ser_rule_action(
 pub(crate) fn de_rule_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -89,51 +95,73 @@ where
                             }
                             "TaskAction" => {
                                 builder = builder.set_task_action(crate::protocol_serde::shape_task_action_definition::de_task_action_definition(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?);
                             }
                             "EventBridgeAction" => {
                                 builder = builder.set_event_bridge_action(
-                                    crate::protocol_serde::shape_event_bridge_action_definition::de_event_bridge_action_definition(tokens, _value)?,
+                                    crate::protocol_serde::shape_event_bridge_action_definition::de_event_bridge_action_definition(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "AssignContactCategoryAction" => {
                                 builder = builder.set_assign_contact_category_action(
-                                    crate::protocol_serde::shape_assign_contact_category_action_definition::de_assign_contact_category_action_definition(tokens, _value)?
+                                    crate::protocol_serde::shape_assign_contact_category_action_definition::de_assign_contact_category_action_definition(tokens, _value, depth + 1)?
                                 );
                             }
                             "SendNotificationAction" => {
                                 builder = builder.set_send_notification_action(
                                     crate::protocol_serde::shape_send_notification_action_definition::de_send_notification_action_definition(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "CreateCaseAction" => {
                                 builder = builder.set_create_case_action(
-                                    crate::protocol_serde::shape_create_case_action_definition::de_create_case_action_definition(tokens, _value)?,
+                                    crate::protocol_serde::shape_create_case_action_definition::de_create_case_action_definition(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "UpdateCaseAction" => {
                                 builder = builder.set_update_case_action(
-                                    crate::protocol_serde::shape_update_case_action_definition::de_update_case_action_definition(tokens, _value)?,
+                                    crate::protocol_serde::shape_update_case_action_definition::de_update_case_action_definition(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "AssignSlaAction" => {
                                 builder = builder.set_assign_sla_action(
-                                    crate::protocol_serde::shape_assign_sla_action_definition::de_assign_sla_action_definition(tokens, _value)?,
+                                    crate::protocol_serde::shape_assign_sla_action_definition::de_assign_sla_action_definition(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "EndAssociatedTasksAction" => {
                                 builder = builder.set_end_associated_tasks_action(
                                     crate::protocol_serde::shape_end_associated_tasks_action_definition::de_end_associated_tasks_action_definition(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "SubmitAutoEvaluationAction" => {
                                 builder = builder.set_submit_auto_evaluation_action(
-                                    crate::protocol_serde::shape_submit_auto_evaluation_action_definition::de_submit_auto_evaluation_action_definition(tokens, _value)?
+                                    crate::protocol_serde::shape_submit_auto_evaluation_action_definition::de_submit_auto_evaluation_action_definition(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

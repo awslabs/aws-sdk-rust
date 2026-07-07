@@ -21,16 +21,28 @@ pub fn ser_centralization_rule_source(
         crate::protocol_serde::shape_source_logs_configuration::ser_source_logs_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.source_metrics_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("SourceMetricsConfiguration").start_object();
+        crate::protocol_serde::shape_source_metrics_configuration::ser_source_metrics_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_centralization_rule_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CentralizationRuleSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -41,7 +53,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Regions" => {
-                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);
+                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value, depth + 1)?);
                         }
                         "Scope" => {
                             builder = builder.set_scope(
@@ -52,7 +64,16 @@ where
                         }
                         "SourceLogsConfiguration" => {
                             builder = builder.set_source_logs_configuration(
-                                crate::protocol_serde::shape_source_logs_configuration::de_source_logs_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_source_logs_configuration::de_source_logs_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "SourceMetricsConfiguration" => {
+                            builder = builder.set_source_metrics_configuration(
+                                crate::protocol_serde::shape_source_metrics_configuration::de_source_metrics_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

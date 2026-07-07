@@ -6,6 +6,8 @@
 pub struct LegalTerm {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifer for the term.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>List of references to legal resources proposed to the buyers. An example is the EULA.</p>
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::DocumentItem>>,
 }
@@ -13,6 +15,10 @@ impl LegalTerm {
     /// <p>Category of the term being updated.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
+    }
+    /// <p>The unique identifer for the term.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>List of references to legal resources proposed to the buyers. An example is the EULA.</p>
     ///
@@ -33,6 +39,7 @@ impl LegalTerm {
 #[non_exhaustive]
 pub struct LegalTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) documents: ::std::option::Option<::std::vec::Vec<crate::types::DocumentItem>>,
 }
 impl LegalTermBuilder {
@@ -49,6 +56,20 @@ impl LegalTermBuilder {
     /// <p>Category of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
+    }
+    /// <p>The unique identifer for the term.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifer for the term.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The unique identifer for the term.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Appends an item to `documents`.
     ///
@@ -74,6 +95,7 @@ impl LegalTermBuilder {
     pub fn build(self) -> crate::types::LegalTerm {
         crate::types::LegalTerm {
             r#type: self.r#type,
+            id: self.id,
             documents: self.documents,
         }
     }

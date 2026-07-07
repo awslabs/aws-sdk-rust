@@ -81,10 +81,16 @@ pub fn ser_maintenance_window(
 pub(crate) fn de_maintenance_window<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MaintenanceWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -102,10 +108,12 @@ where
                             );
                         }
                         "daysOfWeek" => {
-                            builder = builder.set_days_of_week(crate::protocol_serde::shape_days_of_week::de_days_of_week(tokens, _value)?);
+                            builder =
+                                builder.set_days_of_week(crate::protocol_serde::shape_days_of_week::de_days_of_week(tokens, _value, depth + 1)?);
                         }
                         "hoursOfDay" => {
-                            builder = builder.set_hours_of_day(crate::protocol_serde::shape_hours_of_day::de_hours_of_day(tokens, _value)?);
+                            builder =
+                                builder.set_hours_of_day(crate::protocol_serde::shape_hours_of_day::de_hours_of_day(tokens, _value, depth + 1)?);
                         }
                         "isCustomActionTimeoutEnabled" => {
                             builder = builder
@@ -119,7 +127,7 @@ where
                             );
                         }
                         "months" => {
-                            builder = builder.set_months(crate::protocol_serde::shape_months::de_months(tokens, _value)?);
+                            builder = builder.set_months(crate::protocol_serde::shape_months::de_months(tokens, _value, depth + 1)?);
                         }
                         "patchingMode" => {
                             builder = builder.set_patching_mode(
@@ -139,7 +147,11 @@ where
                             builder = builder.set_skip_ru(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "weeksOfMonth" => {
-                            builder = builder.set_weeks_of_month(crate::protocol_serde::shape_weeks_of_month::de_weeks_of_month(tokens, _value)?);
+                            builder = builder.set_weeks_of_month(crate::protocol_serde::shape_weeks_of_month::de_weeks_of_month(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

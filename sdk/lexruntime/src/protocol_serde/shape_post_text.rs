@@ -178,6 +178,8 @@ pub(crate) fn de_post_text(
 ) -> ::std::result::Result<crate::operation::post_text::builders::PostTextOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -185,11 +187,13 @@ pub(crate) fn de_post_text(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "activeContexts" => {
                     builder = builder.set_active_contexts(crate::protocol_serde::shape_active_contexts_list::de_active_contexts_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "alternativeIntents" => {
-                    builder = builder.set_alternative_intents(crate::protocol_serde::shape_intent_list::de_intent_list(tokens, _value)?);
+                    builder = builder.set_alternative_intents(crate::protocol_serde::shape_intent_list::de_intent_list(tokens, _value, depth + 1)?);
                 }
                 "botVersion" => {
                     builder = builder.set_bot_version(
@@ -227,17 +231,24 @@ pub(crate) fn de_post_text(
                     );
                 }
                 "nluIntentConfidence" => {
-                    builder =
-                        builder.set_nlu_intent_confidence(crate::protocol_serde::shape_intent_confidence::de_intent_confidence(tokens, _value)?);
+                    builder = builder.set_nlu_intent_confidence(crate::protocol_serde::shape_intent_confidence::de_intent_confidence(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "responseCard" => {
-                    builder = builder.set_response_card(crate::protocol_serde::shape_response_card::de_response_card(tokens, _value)?);
+                    builder = builder.set_response_card(crate::protocol_serde::shape_response_card::de_response_card(tokens, _value, depth + 1)?);
                 }
                 "sentimentResponse" => {
-                    builder = builder.set_sentiment_response(crate::protocol_serde::shape_sentiment_response::de_sentiment_response(tokens, _value)?);
+                    builder = builder.set_sentiment_response(crate::protocol_serde::shape_sentiment_response::de_sentiment_response(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "sessionAttributes" => {
-                    builder = builder.set_session_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
+                    builder = builder.set_session_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value, depth + 1)?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(
@@ -254,7 +265,7 @@ pub(crate) fn de_post_text(
                     );
                 }
                 "slots" => {
-                    builder = builder.set_slots(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
+                    builder = builder.set_slots(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

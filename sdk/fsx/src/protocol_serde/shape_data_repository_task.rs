@@ -2,10 +2,16 @@
 pub(crate) fn de_data_repository_task<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataRepositoryTask>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -62,7 +68,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "FileSystemId" => {
                             builder = builder.set_file_system_id(
@@ -73,23 +79,33 @@ where
                         }
                         "Paths" => {
                             builder = builder.set_paths(crate::protocol_serde::shape_data_repository_task_paths::de_data_repository_task_paths(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "FailureDetails" => {
                             builder = builder.set_failure_details(
                                 crate::protocol_serde::shape_data_repository_task_failure_details::de_data_repository_task_failure_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_data_repository_task_status::de_data_repository_task_status(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Report" => {
-                            builder = builder.set_report(crate::protocol_serde::shape_completion_report::de_completion_report(tokens, _value)?);
+                            builder = builder.set_report(crate::protocol_serde::shape_completion_report::de_completion_report(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CapacityToRelease" => {
                             builder = builder.set_capacity_to_release(
@@ -107,7 +123,7 @@ where
                         }
                         "ReleaseConfiguration" => {
                             builder = builder.set_release_configuration(
-                                crate::protocol_serde::shape_release_configuration::de_release_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_release_configuration::de_release_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

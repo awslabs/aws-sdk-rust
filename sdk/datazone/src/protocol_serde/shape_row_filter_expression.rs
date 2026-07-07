@@ -2,10 +2,16 @@
 pub(crate) fn de_row_filter_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RowFilterExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,63 +37,71 @@ where
                     }
                     variant = match key.as_ref() {
                         "equalTo" => Some(crate::types::RowFilterExpression::EqualTo(
-                            crate::protocol_serde::shape_equal_to_expression::de_equal_to_expression(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'equalTo' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_equal_to_expression::de_equal_to_expression(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'equalTo' cannot be null"),
+                            )?,
                         )),
                         "notEqualTo" => Some(crate::types::RowFilterExpression::NotEqualTo(
-                            crate::protocol_serde::shape_not_equal_to_expression::de_not_equal_to_expression(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notEqualTo' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_not_equal_to_expression::de_not_equal_to_expression(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notEqualTo' cannot be null"),
+                            )?,
                         )),
                         "greaterThan" => Some(crate::types::RowFilterExpression::GreaterThan(
-                            crate::protocol_serde::shape_greater_than_expression::de_greater_than_expression(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'greaterThan' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_greater_than_expression::de_greater_than_expression(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'greaterThan' cannot be null"),
+                            )?,
                         )),
                         "lessThan" => Some(crate::types::RowFilterExpression::LessThan(
-                            crate::protocol_serde::shape_less_than_expression::de_less_than_expression(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lessThan' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_less_than_expression::de_less_than_expression(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lessThan' cannot be null"),
+                            )?,
                         )),
                         "greaterThanOrEqualTo" => Some(crate::types::RowFilterExpression::GreaterThanOrEqualTo(
-                            crate::protocol_serde::shape_greater_than_or_equal_to_expression::de_greater_than_or_equal_to_expression(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'greaterThanOrEqualTo' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_greater_than_or_equal_to_expression::de_greater_than_or_equal_to_expression(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'greaterThanOrEqualTo' cannot be null")
+                            })?,
                         )),
                         "lessThanOrEqualTo" => Some(crate::types::RowFilterExpression::LessThanOrEqualTo(
-                            crate::protocol_serde::shape_less_than_or_equal_to_expression::de_less_than_or_equal_to_expression(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lessThanOrEqualTo' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_less_than_or_equal_to_expression::de_less_than_or_equal_to_expression(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lessThanOrEqualTo' cannot be null")
+                            })?,
                         )),
                         "isNull" => Some(crate::types::RowFilterExpression::IsNull(
-                            crate::protocol_serde::shape_is_null_expression::de_is_null_expression(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_is_null_expression::de_is_null_expression(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'isNull' cannot be null")
                             })?,
                         )),
                         "isNotNull" => Some(crate::types::RowFilterExpression::IsNotNull(
-                            crate::protocol_serde::shape_is_not_null_expression::de_is_not_null_expression(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'isNotNull' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_is_not_null_expression::de_is_not_null_expression(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'isNotNull' cannot be null"),
+                            )?,
                         )),
                         "in" => Some(crate::types::RowFilterExpression::In(
-                            crate::protocol_serde::shape_in_expression::de_in_expression(tokens, _value)?
+                            crate::protocol_serde::shape_in_expression::de_in_expression(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'in' cannot be null"))?,
                         )),
                         "notIn" => Some(crate::types::RowFilterExpression::NotIn(
-                            crate::protocol_serde::shape_not_in_expression::de_not_in_expression(tokens, _value)?
+                            crate::protocol_serde::shape_not_in_expression::de_not_in_expression(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notIn' cannot be null"))?,
                         )),
                         "like" => Some(crate::types::RowFilterExpression::Like(
-                            crate::protocol_serde::shape_like_expression::de_like_expression(tokens, _value)?
+                            crate::protocol_serde::shape_like_expression::de_like_expression(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'like' cannot be null"))?,
                         )),
                         "notLike" => Some(crate::types::RowFilterExpression::NotLike(
-                            crate::protocol_serde::shape_not_like_expression::de_not_like_expression(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notLike' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_not_like_expression::de_not_like_expression(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notLike' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

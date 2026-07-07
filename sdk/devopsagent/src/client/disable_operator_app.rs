@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableOperatorApp`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier of the AgentSpace<br>
-    ///   - [`auth_flow(AuthFlow)`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder::auth_flow) / [`set_auth_flow(Option<AuthFlow>)`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder::set_auth_flow):<br>required: **false**<br>The authentication flow configured for the operator App. e.g. idc<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
+    ///   - [`auth_flow(AuthFlow)`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder::auth_flow) / [`set_auth_flow(Option<AuthFlow>)`](crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder::set_auth_flow):<br>required: **false**<br><p>The authentication flow configured for the operator App. e.g. idc</p><br>
     /// - On success, responds with [`DisableOperatorAppOutput`](crate::operation::disable_operator_app::DisableOperatorAppOutput)
     /// - On failure, responds with [`SdkError<DisableOperatorAppError>`](crate::operation::disable_operator_app::DisableOperatorAppError)
     pub fn disable_operator_app(&self) -> crate::operation::disable_operator_app::builders::DisableOperatorAppFluentBuilder {

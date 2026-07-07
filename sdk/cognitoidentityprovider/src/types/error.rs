@@ -5,6 +5,8 @@ pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExcep
 
 pub use crate::types::error::_not_authorized_exception::NotAuthorizedException;
 
+pub use crate::types::error::_operation_not_enabled_exception::OperationNotEnabledException;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
 pub use crate::types::error::_too_many_requests_exception::TooManyRequestsException;
@@ -111,6 +113,8 @@ pub use crate::types::error::_unsupported_token_type_exception::UnsupportedToken
 
 pub use crate::types::error::_web_authn_configuration_missing_exception::WebAuthnConfigurationMissingException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 pub use crate::types::error::_enable_software_token_mfa_exception::EnableSoftwareTokenMfaException;
 
 mod _access_denied_exception;
@@ -165,6 +169,8 @@ mod _mfa_method_not_found_exception;
 
 mod _not_authorized_exception;
 
+mod _operation_not_enabled_exception;
+
 mod _password_history_policy_violation_exception;
 
 mod _password_reset_required_exception;
@@ -176,6 +182,8 @@ mod _refresh_token_reuse_exception;
 mod _resource_not_found_exception;
 
 mod _scope_does_not_exist_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _software_token_mfa_not_found_exception;
 

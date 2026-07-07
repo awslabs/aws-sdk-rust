@@ -20,33 +20,36 @@ pub fn ser_create_event_input_input(
             .key("eventTimestamp")
             .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.metadata {
+    if let Some(var_6) = &input.extraction_mode {
+        object.key("extractionMode").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.metadata {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("metadata").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("metadata").start_object();
+        for (key_9, value_10) in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_metadata_value::ser_metadata_value(&mut object_10, value_9)?;
-                object_10.finish();
+                let mut object_11 = object_8.key(key_9.as_str()).start_object();
+                crate::protocol_serde::shape_metadata_value::ser_metadata_value(&mut object_11, value_10)?;
+                object_11.finish();
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_11) = &input.payload {
-        let mut array_12 = object.key("payload").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.payload {
+        let mut array_13 = object.key("payload").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_payload_type::ser_payload_type(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_payload_type::ser_payload_type(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.session_id {
-        object.key("sessionId").string(var_15.as_str());
+    if let Some(var_16) = &input.session_id {
+        object.key("sessionId").string(var_16.as_str());
     }
     Ok(())
 }

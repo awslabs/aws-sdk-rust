@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_environment_resource_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EnvironmentResourceDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EnvironmentResourceDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_environment_resource_description(
             s if s.matches("AutoScalingGroups") /* AutoScalingGroups com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$AutoScalingGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_auto_scaling_group_list::de_auto_scaling_group_list(&mut tag)
+                        crate::protocol_serde::shape_auto_scaling_group_list::de_auto_scaling_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_environment_resource_description(
             s if s.matches("Instances") /* Instances com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Instances */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_instance_list::de_instance_list(&mut tag)
+                        crate::protocol_serde::shape_instance_list::de_instance_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_environment_resource_description(
             s if s.matches("LaunchConfigurations") /* LaunchConfigurations com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LaunchConfigurations */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_launch_configuration_list::de_launch_configuration_list(&mut tag)
+                        crate::protocol_serde::shape_launch_configuration_list::de_launch_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_environment_resource_description(
             s if s.matches("LaunchTemplates") /* LaunchTemplates com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LaunchTemplates */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_list::de_launch_template_list(&mut tag)
+                        crate::protocol_serde::shape_launch_template_list::de_launch_template_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -63,7 +67,7 @@ pub fn de_environment_resource_description(
             s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LoadBalancers */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_load_balancer_list::de_load_balancer_list(&mut tag)
+                        crate::protocol_serde::shape_load_balancer_list::de_load_balancer_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +77,7 @@ pub fn de_environment_resource_description(
             s if s.matches("Triggers") /* Triggers com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Triggers */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_trigger_list::de_trigger_list(&mut tag)
+                        crate::protocol_serde::shape_trigger_list::de_trigger_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -83,7 +87,7 @@ pub fn de_environment_resource_description(
             s if s.matches("Queues") /* Queues com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Queues */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_queue_list::de_queue_list(&mut tag)
+                        crate::protocol_serde::shape_queue_list::de_queue_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -770,6 +770,52 @@ impl From<crate::operation::get_persistent_app_ui_presigned_url::GetPersistentAp
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session::GetSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session::GetSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_session::GetSessionError> for Error {
+    fn from(err: crate::operation::get_session::GetSessionError) -> Self {
+        match err {
+            crate::operation::get_session::GetSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_session::GetSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_endpoint::GetSessionEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_endpoint::GetSessionEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_session_endpoint::GetSessionEndpointError> for Error {
+    fn from(err: crate::operation::get_session_endpoint::GetSessionEndpointError) -> Self {
+        match err {
+            crate::operation::get_session_endpoint::GetSessionEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_session_endpoint::GetSessionEndpointError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_session_endpoint::GetSessionEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_studio_session_mapping::GetStudioSessionMappingError, R>>
     for Error
 where
@@ -996,6 +1042,29 @@ impl From<crate::operation::list_security_configurations::ListSecurityConfigurat
                 Error::InvalidRequestException(inner)
             }
             crate::operation::list_security_configurations::ListSecurityConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sessions::ListSessionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sessions::ListSessionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sessions::ListSessionsError> for Error {
+    fn from(err: crate::operation::list_sessions::ListSessionsError) -> Self {
+        match err {
+            crate::operation::list_sessions::ListSessionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_sessions::ListSessionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_sessions::ListSessionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1555,6 +1624,29 @@ impl From<crate::operation::start_notebook_execution::StartNotebookExecutionErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_session::StartSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_session::StartSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_session::StartSessionError> for Error {
+    fn from(err: crate::operation::start_session::StartSessionError) -> Self {
+        match err {
+            crate::operation::start_session::StartSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_session::StartSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_session::StartSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_notebook_execution::StopNotebookExecutionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1601,6 +1693,29 @@ impl From<crate::operation::terminate_job_flows::TerminateJobFlowsError> for Err
         match err {
             crate::operation::terminate_job_flows::TerminateJobFlowsError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::terminate_job_flows::TerminateJobFlowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_session::TerminateSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_session::TerminateSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::terminate_session::TerminateSessionError> for Error {
+    fn from(err: crate::operation::terminate_session::TerminateSessionError) -> Self {
+        match err {
+            crate::operation::terminate_session::TerminateSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::terminate_session::TerminateSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::terminate_session::TerminateSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -49,6 +49,8 @@ pub fn de_disable_address_transfer(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DisableAddressTransferResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisableAddressTransferResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_disable_address_transfer(
             s if s.matches("addressTransfer") /* AddressTransfer com.amazonaws.ec2.synthetic#DisableAddressTransferOutput$AddressTransfer */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_address_transfer::de_address_transfer(&mut tag)
+                        crate::protocol_serde::shape_address_transfer::de_address_transfer(&mut tag, depth + 1)
                         ?
                     )
                 ;

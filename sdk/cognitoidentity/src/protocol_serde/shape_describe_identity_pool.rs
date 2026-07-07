@@ -139,6 +139,8 @@ pub(crate) fn de_describe_identity_pool(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -166,8 +168,11 @@ pub(crate) fn de_describe_identity_pool(
                     builder = builder.set_allow_classic_flow(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "SupportedLoginProviders" => {
-                    builder = builder
-                        .set_supported_login_providers(crate::protocol_serde::shape_identity_providers::de_identity_providers(tokens, _value)?);
+                    builder = builder.set_supported_login_providers(crate::protocol_serde::shape_identity_providers::de_identity_providers(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "DeveloperProviderName" => {
                     builder = builder.set_developer_provider_name(
@@ -177,20 +182,29 @@ pub(crate) fn de_describe_identity_pool(
                     );
                 }
                 "OpenIdConnectProviderARNs" => {
-                    builder = builder
-                        .set_open_id_connect_provider_arns(crate::protocol_serde::shape_oidc_provider_list::de_oidc_provider_list(tokens, _value)?);
+                    builder = builder.set_open_id_connect_provider_arns(crate::protocol_serde::shape_oidc_provider_list::de_oidc_provider_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CognitoIdentityProviders" => {
                     builder = builder.set_cognito_identity_providers(
-                        crate::protocol_serde::shape_cognito_identity_provider_list::de_cognito_identity_provider_list(tokens, _value)?,
+                        crate::protocol_serde::shape_cognito_identity_provider_list::de_cognito_identity_provider_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "SamlProviderARNs" => {
-                    builder = builder.set_saml_provider_arns(crate::protocol_serde::shape_saml_provider_list::de_saml_provider_list(tokens, _value)?);
+                    builder = builder.set_saml_provider_arns(crate::protocol_serde::shape_saml_provider_list::de_saml_provider_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "IdentityPoolTags" => {
                     builder = builder.set_identity_pool_tags(crate::protocol_serde::shape_identity_pool_tags_type::de_identity_pool_tags_type(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

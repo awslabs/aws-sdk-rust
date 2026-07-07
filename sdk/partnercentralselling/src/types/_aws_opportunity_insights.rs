@@ -10,6 +10,10 @@ pub struct AwsOpportunityInsights {
     pub engagement_score: ::std::option::Option<crate::types::EngagementScore>,
     /// <p>Source-separated spend insights that provide independent analysis for AWS recommendations and partner estimates.</p>
     pub aws_products_spend_insights_by_source: ::std::option::Option<crate::types::AwsProductsSpendInsightsBySource>,
+    /// <p>Opportunity quality assessment. Null if not yet scored.</p>
+    pub opportunity_quality: ::std::option::Option<crate::types::OpportunityQuality>,
+    /// <p>List of recommendations from various agent-driven sources.</p>
+    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
 }
 impl AwsOpportunityInsights {
     /// <p>Provides recommendations from AWS on the next best actions to take in order to move the opportunity forward and increase the likelihood of success.</p>
@@ -23,6 +27,16 @@ impl AwsOpportunityInsights {
     /// <p>Source-separated spend insights that provide independent analysis for AWS recommendations and partner estimates.</p>
     pub fn aws_products_spend_insights_by_source(&self) -> ::std::option::Option<&crate::types::AwsProductsSpendInsightsBySource> {
         self.aws_products_spend_insights_by_source.as_ref()
+    }
+    /// <p>Opportunity quality assessment. Null if not yet scored.</p>
+    pub fn opportunity_quality(&self) -> ::std::option::Option<&crate::types::OpportunityQuality> {
+        self.opportunity_quality.as_ref()
+    }
+    /// <p>List of recommendations from various agent-driven sources.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
+    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
+        self.recommendations.as_deref().unwrap_or_default()
     }
 }
 impl AwsOpportunityInsights {
@@ -39,6 +53,8 @@ pub struct AwsOpportunityInsightsBuilder {
     pub(crate) next_best_actions: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_score: ::std::option::Option<crate::types::EngagementScore>,
     pub(crate) aws_products_spend_insights_by_source: ::std::option::Option<crate::types::AwsProductsSpendInsightsBySource>,
+    pub(crate) opportunity_quality: ::std::option::Option<crate::types::OpportunityQuality>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
 }
 impl AwsOpportunityInsightsBuilder {
     /// <p>Provides recommendations from AWS on the next best actions to take in order to move the opportunity forward and increase the likelihood of success.</p>
@@ -83,12 +99,48 @@ impl AwsOpportunityInsightsBuilder {
     pub fn get_aws_products_spend_insights_by_source(&self) -> &::std::option::Option<crate::types::AwsProductsSpendInsightsBySource> {
         &self.aws_products_spend_insights_by_source
     }
+    /// <p>Opportunity quality assessment. Null if not yet scored.</p>
+    pub fn opportunity_quality(mut self, input: crate::types::OpportunityQuality) -> Self {
+        self.opportunity_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Opportunity quality assessment. Null if not yet scored.</p>
+    pub fn set_opportunity_quality(mut self, input: ::std::option::Option<crate::types::OpportunityQuality>) -> Self {
+        self.opportunity_quality = input;
+        self
+    }
+    /// <p>Opportunity quality assessment. Null if not yet scored.</p>
+    pub fn get_opportunity_quality(&self) -> &::std::option::Option<crate::types::OpportunityQuality> {
+        &self.opportunity_quality
+    }
+    /// Appends an item to `recommendations`.
+    ///
+    /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
+    ///
+    /// <p>List of recommendations from various agent-driven sources.</p>
+    pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
+        let mut v = self.recommendations.unwrap_or_default();
+        v.push(input);
+        self.recommendations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of recommendations from various agent-driven sources.</p>
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
+        self.recommendations = input;
+        self
+    }
+    /// <p>List of recommendations from various agent-driven sources.</p>
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+        &self.recommendations
+    }
     /// Consumes the builder and constructs a [`AwsOpportunityInsights`](crate::types::AwsOpportunityInsights).
     pub fn build(self) -> crate::types::AwsOpportunityInsights {
         crate::types::AwsOpportunityInsights {
             next_best_actions: self.next_best_actions,
             engagement_score: self.engagement_score,
             aws_products_spend_insights_by_source: self.aws_products_spend_insights_by_source,
+            opportunity_quality: self.opportunity_quality,
+            recommendations: self.recommendations,
         }
     }
 }

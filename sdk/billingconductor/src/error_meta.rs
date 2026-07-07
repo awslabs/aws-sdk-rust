@@ -1021,6 +1021,7 @@ impl From<crate::operation::update_custom_line_item::UpdateCustomLineItemError> 
     fn from(err: crate::operation::update_custom_line_item::UpdateCustomLineItemError) -> Self {
         match err {
             crate::operation::update_custom_line_item::UpdateCustomLineItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_custom_line_item::UpdateCustomLineItemError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_custom_line_item::UpdateCustomLineItemError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

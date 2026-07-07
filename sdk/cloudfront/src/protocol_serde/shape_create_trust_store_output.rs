@@ -27,5 +27,7 @@ pub fn de_trust_store(inp: &[u8]) -> std::result::Result<crate::types::TrustStor
             "invalid root, expected TrustStore got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_trust_store::de_trust_store(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_trust_store::de_trust_store(&mut decoder, depth + 1)
 }

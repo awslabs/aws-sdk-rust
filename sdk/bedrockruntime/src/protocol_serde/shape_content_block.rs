@@ -81,10 +81,16 @@ pub fn ser_content_block(
 pub(crate) fn de_content_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ContentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -116,57 +122,61 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "image" => Some(crate::types::ContentBlock::Image(
-                            crate::protocol_serde::shape_image_block::de_image_block(tokens, _value)?
+                            crate::protocol_serde::shape_image_block::de_image_block(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
                         )),
                         "document" => Some(crate::types::ContentBlock::Document(
-                            crate::protocol_serde::shape_document_block::de_document_block(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_document_block::de_document_block(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'document' cannot be null")
                             })?,
                         )),
                         "video" => Some(crate::types::ContentBlock::Video(
-                            crate::protocol_serde::shape_video_block::de_video_block(tokens, _value)?
+                            crate::protocol_serde::shape_video_block::de_video_block(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'video' cannot be null"))?,
                         )),
                         "audio" => Some(crate::types::ContentBlock::Audio(
-                            crate::protocol_serde::shape_audio_block::de_audio_block(tokens, _value)?
+                            crate::protocol_serde::shape_audio_block::de_audio_block(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'audio' cannot be null"))?,
                         )),
                         "toolUse" => Some(crate::types::ContentBlock::ToolUse(
-                            crate::protocol_serde::shape_tool_use_block::de_tool_use_block(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_tool_use_block::de_tool_use_block(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolUse' cannot be null")
                             })?,
                         )),
                         "toolResult" => Some(crate::types::ContentBlock::ToolResult(
-                            crate::protocol_serde::shape_tool_result_block::de_tool_result_block(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_tool_result_block::de_tool_result_block(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null")
                             })?,
                         )),
                         "guardContent" => Some(crate::types::ContentBlock::GuardContent(
-                            crate::protocol_serde::shape_guardrail_converse_content_block::de_guardrail_converse_content_block(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'guardContent' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_guardrail_converse_content_block::de_guardrail_converse_content_block(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'guardContent' cannot be null")
+                            })?,
                         )),
                         "cachePoint" => Some(crate::types::ContentBlock::CachePoint(
-                            crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cachePoint' cannot be null")
                             })?,
                         )),
                         "reasoningContent" => Some(crate::types::ContentBlock::ReasoningContent(
-                            crate::protocol_serde::shape_reasoning_content_block::de_reasoning_content_block(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoningContent' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_reasoning_content_block::de_reasoning_content_block(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoningContent' cannot be null"),
+                            )?,
                         )),
                         "citationsContent" => Some(crate::types::ContentBlock::CitationsContent(
-                            crate::protocol_serde::shape_citations_content_block::de_citations_content_block(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'citationsContent' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_citations_content_block::de_citations_content_block(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'citationsContent' cannot be null"),
+                            )?,
                         )),
                         "searchResult" => Some(crate::types::ContentBlock::SearchResult(
-                            crate::protocol_serde::shape_search_result_block::de_search_result_block(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResult' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_search_result_block::de_search_result_block(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResult' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

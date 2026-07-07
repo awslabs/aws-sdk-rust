@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_multi_region_access_point_regional_response(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MultiRegionAccessPointRegionalResponse, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MultiRegionAccessPointRegionalResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {

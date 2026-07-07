@@ -114,6 +114,8 @@ pub(crate) fn de_list_detect_mitigation_actions_executions(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -122,7 +124,9 @@ pub(crate) fn de_list_detect_mitigation_actions_executions(
                 "actionsExecutions" => {
                     builder = builder.set_actions_executions(
                         crate::protocol_serde::shape_detect_mitigation_action_execution_list::de_detect_mitigation_action_execution_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

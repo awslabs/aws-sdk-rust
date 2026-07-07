@@ -151,6 +151,8 @@ pub fn de_change_resource_record_sets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ChangeResourceRecordSetsResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ChangeResourceRecordSetsResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -161,7 +163,7 @@ pub fn de_change_resource_record_sets(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53.synthetic#ChangeResourceRecordSetsOutput$ChangeInfo */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_change_info::de_change_info(&mut tag)
+                        crate::protocol_serde::shape_change_info::de_change_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

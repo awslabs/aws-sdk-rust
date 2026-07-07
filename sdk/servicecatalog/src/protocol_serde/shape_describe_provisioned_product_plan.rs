@@ -98,6 +98,8 @@ pub(crate) fn de_describe_provisioned_product_plan(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -105,11 +107,19 @@ pub(crate) fn de_describe_provisioned_product_plan(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProvisionedProductPlanDetails" => {
                     builder = builder.set_provisioned_product_plan_details(
-                        crate::protocol_serde::shape_provisioned_product_plan_details::de_provisioned_product_plan_details(tokens, _value)?,
+                        crate::protocol_serde::shape_provisioned_product_plan_details::de_provisioned_product_plan_details(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "ResourceChanges" => {
-                    builder = builder.set_resource_changes(crate::protocol_serde::shape_resource_changes::de_resource_changes(tokens, _value)?);
+                    builder = builder.set_resource_changes(crate::protocol_serde::shape_resource_changes::de_resource_changes(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "NextPageToken" => {
                     builder = builder.set_next_page_token(

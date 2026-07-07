@@ -49,6 +49,8 @@ pub fn de_describe_engine_default_parameters(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeEngineDefaultParametersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeEngineDefaultParametersResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_describe_engine_default_parameters(
             s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.neptune.synthetic#DescribeEngineDefaultParametersOutput$EngineDefaults */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_engine_defaults::de_engine_defaults(&mut tag)
+                        crate::protocol_serde::shape_engine_defaults::de_engine_defaults(&mut tag, depth + 1)
                         ?
                     )
                 ;

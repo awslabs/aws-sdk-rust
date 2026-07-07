@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_capacity_manager_dimension(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CapacityManagerDimension, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CapacityManagerDimension::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -251,7 +255,7 @@ pub fn de_capacity_manager_dimension(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#CapacityManagerDimension$Tags */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_capacity_manager_tag_dimension_set::de_capacity_manager_tag_dimension_set(&mut tag)
+                        crate::protocol_serde::shape_capacity_manager_tag_dimension_set::de_capacity_manager_tag_dimension_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

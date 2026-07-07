@@ -4,7 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`connector_id(impl Into<String>)`](crate::operation::delete_connector_v2::builders::DeleteConnectorV2FluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::delete_connector_v2::builders::DeleteConnectorV2FluentBuilder::set_connector_id):<br>required: **true**<br><p>The UUID of the connectorV2 to identify connectorV2 resource.</p><br>
-    /// - On success, responds with [`DeleteConnectorV2Output`](crate::operation::delete_connector_v2::DeleteConnectorV2Output)
+    /// - On success, responds with [`DeleteConnectorV2Output`](crate::operation::delete_connector_v2::DeleteConnectorV2Output) with field(s):
+    ///   - [`enablement_status(Option<EnablementStatus>)`](crate::operation::delete_connector_v2::DeleteConnectorV2Output::enablement_status): <p>The enablement status of the connector after deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectorV2Error>`](crate::operation::delete_connector_v2::DeleteConnectorV2Error)
     pub fn delete_connector_v2(&self) -> crate::operation::delete_connector_v2::builders::DeleteConnectorV2FluentBuilder {
         crate::operation::delete_connector_v2::builders::DeleteConnectorV2FluentBuilder::new(self.handle.clone())

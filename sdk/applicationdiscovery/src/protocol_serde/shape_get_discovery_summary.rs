@@ -139,6 +139,8 @@ pub(crate) fn de_get_discovery_summary(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -173,21 +175,31 @@ pub(crate) fn de_get_discovery_summary(
                     );
                 }
                 "agentSummary" => {
-                    builder = builder.set_agent_summary(crate::protocol_serde::shape_customer_agent_info::de_customer_agent_info(tokens, _value)?);
+                    builder = builder.set_agent_summary(crate::protocol_serde::shape_customer_agent_info::de_customer_agent_info(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "connectorSummary" => {
                     builder = builder.set_connector_summary(crate::protocol_serde::shape_customer_connector_info::de_customer_connector_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "meCollectorSummary" => {
                     builder = builder.set_me_collector_summary(
-                        crate::protocol_serde::shape_customer_me_collector_info::de_customer_me_collector_info(tokens, _value)?,
+                        crate::protocol_serde::shape_customer_me_collector_info::de_customer_me_collector_info(tokens, _value, depth + 1)?,
                     );
                 }
                 "agentlessCollectorSummary" => {
                     builder = builder.set_agentless_collector_summary(
-                        crate::protocol_serde::shape_customer_agentless_collector_info::de_customer_agentless_collector_info(tokens, _value)?,
+                        crate::protocol_serde::shape_customer_agentless_collector_info::de_customer_agentless_collector_info(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

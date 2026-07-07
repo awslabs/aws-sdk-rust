@@ -2,10 +2,16 @@
 pub(crate) fn de_destination_port_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DestinationPortMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,63 +20,68 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AcceleratorArn" => {
-                            builder = builder.set_accelerator_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AcceleratorArn" => {
+                                builder = builder.set_accelerator_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "AcceleratorSocketAddresses" => {
+                                builder = builder.set_accelerator_socket_addresses(
+                                    crate::protocol_serde::shape_socket_addresses::de_socket_addresses(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "EndpointGroupArn" => {
+                                builder = builder.set_endpoint_group_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "EndpointId" => {
+                                builder = builder.set_endpoint_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "EndpointGroupRegion" => {
+                                builder = builder.set_endpoint_group_region(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "DestinationSocketAddress" => {
+                                builder = builder.set_destination_socket_address(crate::protocol_serde::shape_socket_address::de_socket_address(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "IpAddressType" => {
+                                builder = builder.set_ip_address_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "DestinationTrafficState" => {
+                                builder = builder.set_destination_traffic_state(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::CustomRoutingDestinationTrafficState::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "AcceleratorSocketAddresses" => {
-                            builder = builder.set_accelerator_socket_addresses(crate::protocol_serde::shape_socket_addresses::de_socket_addresses(
-                                tokens, _value,
-                            )?);
-                        }
-                        "EndpointGroupArn" => {
-                            builder = builder.set_endpoint_group_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "EndpointId" => {
-                            builder = builder.set_endpoint_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "EndpointGroupRegion" => {
-                            builder = builder.set_endpoint_group_region(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "DestinationSocketAddress" => {
-                            builder = builder
-                                .set_destination_socket_address(crate::protocol_serde::shape_socket_address::de_socket_address(tokens, _value)?);
-                        }
-                        "IpAddressType" => {
-                            builder = builder.set_ip_address_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "DestinationTrafficState" => {
-                            builder = builder.set_destination_traffic_state(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::CustomRoutingDestinationTrafficState::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -22,7 +22,7 @@ impl crate::operation::delete_connect_client_add_in::builders::DeleteConnectClie
 }
 /// Fluent builder constructing a request to `DeleteConnectClientAddIn`.
 ///
-/// <p>Deletes a client-add-in for Amazon Connect that is configured within a directory.</p>
+/// <p>Deletes a client-add-in for Connect Customer that is configured within a directory.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConnectClientAddInFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

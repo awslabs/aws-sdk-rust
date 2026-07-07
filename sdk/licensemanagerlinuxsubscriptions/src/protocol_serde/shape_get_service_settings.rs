@@ -97,13 +97,15 @@ pub(crate) fn de_get_service_settings(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "HomeRegions" => {
-                    builder = builder.set_home_regions(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                    builder = builder.set_home_regions(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                 }
                 "LinuxSubscriptionsDiscovery" => {
                     builder = builder.set_linux_subscriptions_discovery(
@@ -115,7 +117,9 @@ pub(crate) fn de_get_service_settings(
                 "LinuxSubscriptionsDiscoverySettings" => {
                     builder = builder.set_linux_subscriptions_discovery_settings(
                         crate::protocol_serde::shape_linux_subscriptions_discovery_settings::de_linux_subscriptions_discovery_settings(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -127,7 +131,7 @@ pub(crate) fn de_get_service_settings(
                     );
                 }
                 "StatusMessage" => {
-                    builder = builder.set_status_message(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
+                    builder = builder.set_status_message(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

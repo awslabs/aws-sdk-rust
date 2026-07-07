@@ -212,6 +212,8 @@ pub(crate) fn de_request_service_quota_increase(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -219,7 +221,7 @@ pub(crate) fn de_request_service_quota_increase(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RequestedQuota" => {
                     builder = builder.set_requested_quota(
-                        crate::protocol_serde::shape_requested_service_quota_change::de_requested_service_quota_change(tokens, _value)?,
+                        crate::protocol_serde::shape_requested_service_quota_change::de_requested_service_quota_change(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

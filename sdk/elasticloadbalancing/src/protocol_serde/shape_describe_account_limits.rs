@@ -49,6 +49,8 @@ pub fn de_describe_account_limits(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeAccountLimitsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeAccountLimitsResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_describe_account_limits(
             s if s.matches("Limits") /* Limits com.amazonaws.elasticloadbalancing.synthetic#DescribeAccountLimitsOutput$Limits */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_limits::de_limits(&mut tag)
+                        crate::protocol_serde::shape_limits::de_limits(&mut tag, depth + 1)
                         ?
                     )
                 ;

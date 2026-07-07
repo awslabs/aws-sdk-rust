@@ -106,6 +106,8 @@ pub fn de_list_vpc_association_authorizations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListVPCAssociationAuthorizationsResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListVPCAssociationAuthorizationsResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -116,7 +118,7 @@ pub fn de_list_vpc_association_authorizations(
             s if s.matches("VPCs") /* VPCs com.amazonaws.route53.synthetic#ListVPCAssociationAuthorizationsOutput$VPCs */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpcs::de_vpcs(&mut tag)
+                        crate::protocol_serde::shape_vpcs::de_vpcs(&mut tag, depth + 1)
                         ?
                     )
                 ;

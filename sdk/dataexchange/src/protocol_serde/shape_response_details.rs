@@ -2,10 +2,16 @@
 pub(crate) fn de_response_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResponseDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,53 +23,59 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ExportAssetToSignedUrl" => {
                             builder = builder.set_export_asset_to_signed_url(
-                                    crate::protocol_serde::shape_export_asset_to_signed_url_response_details::de_export_asset_to_signed_url_response_details(tokens, _value)?
+                                    crate::protocol_serde::shape_export_asset_to_signed_url_response_details::de_export_asset_to_signed_url_response_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "ExportAssetsToS3" => {
                             builder = builder.set_export_assets_to_s3(
                                 crate::protocol_serde::shape_export_assets_to_s3_response_details::de_export_assets_to_s3_response_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ExportRevisionsToS3" => {
                             builder = builder.set_export_revisions_to_s3(
                                 crate::protocol_serde::shape_export_revisions_to_s3_response_details::de_export_revisions_to_s3_response_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ImportAssetFromSignedUrl" => {
                             builder = builder.set_import_asset_from_signed_url(
-                                    crate::protocol_serde::shape_import_asset_from_signed_url_response_details::de_import_asset_from_signed_url_response_details(tokens, _value)?
+                                    crate::protocol_serde::shape_import_asset_from_signed_url_response_details::de_import_asset_from_signed_url_response_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "ImportAssetsFromS3" => {
                             builder = builder.set_import_assets_from_s3(
                                 crate::protocol_serde::shape_import_assets_from_s3_response_details::de_import_assets_from_s3_response_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ImportAssetsFromRedshiftDataShares" => {
                             builder = builder.set_import_assets_from_redshift_data_shares(
-                                    crate::protocol_serde::shape_import_assets_from_redshift_data_shares_response_details::de_import_assets_from_redshift_data_shares_response_details(tokens, _value)?
+                                    crate::protocol_serde::shape_import_assets_from_redshift_data_shares_response_details::de_import_assets_from_redshift_data_shares_response_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "ImportAssetFromApiGatewayApi" => {
                             builder = builder.set_import_asset_from_api_gateway_api(
-                                    crate::protocol_serde::shape_import_asset_from_api_gateway_api_response_details::de_import_asset_from_api_gateway_api_response_details(tokens, _value)?
+                                    crate::protocol_serde::shape_import_asset_from_api_gateway_api_response_details::de_import_asset_from_api_gateway_api_response_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "CreateS3DataAccessFromS3Bucket" => {
                             builder = builder.set_create_s3_data_access_from_s3_bucket(
-                                    crate::protocol_serde::shape_create_s3_data_access_from_s3_bucket_response_details::de_create_s3_data_access_from_s3_bucket_response_details(tokens, _value)?
+                                    crate::protocol_serde::shape_create_s3_data_access_from_s3_bucket_response_details::de_create_s3_data_access_from_s3_bucket_response_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "ImportAssetsFromLakeFormationTagPolicy" => {
                             builder = builder.set_import_assets_from_lake_formation_tag_policy(
-                                    crate::protocol_serde::shape_import_assets_from_lake_formation_tag_policy_response_details::de_import_assets_from_lake_formation_tag_policy_response_details(tokens, _value)?
+                                    crate::protocol_serde::shape_import_assets_from_lake_formation_tag_policy_response_details::de_import_assets_from_lake_formation_tag_policy_response_details(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -22,7 +22,7 @@ impl crate::operation::update_association::builders::UpdateAssociationInputBuild
 }
 /// Fluent builder constructing a request to `UpdateAssociation`.
 ///
-/// Partially updates the configuration of an existing service association for an AgentSpace. Present fields are fully replaced; absent fields are left unchanged. Returns 200 OK on success.
+/// <p>Partially updates the configuration of an existing service association for an AgentSpace. Present fields are fully replaced; absent fields are left unchanged. Returns 200 OK on success.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,46 +108,70 @@ impl UpdateAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The unique identifier of the given association.
+    /// <p>The unique identifier of the given association.</p>
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
-    /// The unique identifier of the given association.
+    /// <p>The unique identifier of the given association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
-    /// The unique identifier of the given association.
+    /// <p>The unique identifier of the given association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_association_id()
     }
-    /// The configuration that directs how AgentSpace interacts with the given service. The entire configuration is replaced on update.
+    /// <p>The configuration that directs how AgentSpace interacts with the given service. The entire configuration is replaced on update.</p>
     pub fn configuration(mut self, input: crate::types::ServiceConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// The configuration that directs how AgentSpace interacts with the given service. The entire configuration is replaced on update.
+    /// <p>The configuration that directs how AgentSpace interacts with the given service. The entire configuration is replaced on update.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ServiceConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// The configuration that directs how AgentSpace interacts with the given service. The entire configuration is replaced on update.
+    /// <p>The configuration that directs how AgentSpace interacts with the given service. The entire configuration is replaced on update.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ServiceConfiguration> {
         self.inner.get_configuration()
+    }
+    ///
+    /// Adds a key-value pair to `capabilities`.
+    ///
+    /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+    ///
+    /// <p>Enabled capabilities for this association.</p>
+    pub fn capabilities(mut self, k: crate::types::CapabilityType, v: crate::types::CapabilityConfiguration) -> Self {
+        self.inner = self.inner.capabilities(k, v);
+        self
+    }
+    /// <p>Enabled capabilities for this association.</p>
+    pub fn set_capabilities(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::CapabilityType, crate::types::CapabilityConfiguration>>,
+    ) -> Self {
+        self.inner = self.inner.set_capabilities(input);
+        self
+    }
+    /// <p>Enabled capabilities for this association.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::CapabilityType, crate::types::CapabilityConfiguration>> {
+        self.inner.get_capabilities()
     }
 }

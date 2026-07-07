@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMonitorSettings`](crate::operation::get_monitor_settings::builders::GetMonitorSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monitor_id(impl Into<String>)`](crate::operation::get_monitor_settings::builders::GetMonitorSettingsFluentBuilder::monitor_id) / [`set_monitor_id(Option<String>)`](crate::operation::get_monitor_settings::builders::GetMonitorSettingsFluentBuilder::set_monitor_id):<br>required: **true**<br><p>The unique identifier of the monitor. This ID is returned by the <code>CreateMonitor</code> operation, and is included in the response to the <code>GetMonitor</code> operation.</p><br>
+    ///   - [`monitor_id(impl Into<String>)`](crate::operation::get_monitor_settings::builders::GetMonitorSettingsFluentBuilder::monitor_id) / [`set_monitor_id(Option<String>)`](crate::operation::get_monitor_settings::builders::GetMonitorSettingsFluentBuilder::set_monitor_id):<br>required: **true**<br><p>The unique identifier of the monitor. This ID is returned by the <code>CreateMonitor</code> operation, and is included in the response to the <code>ListMonitors</code> operation.</p><br>
     /// - On success, responds with [`GetMonitorSettingsOutput`](crate::operation::get_monitor_settings::GetMonitorSettingsOutput) with field(s):
-    ///   - [`settings(HashMap::<String, String>)`](crate::operation::get_monitor_settings::GetMonitorSettingsOutput::settings): Monitor settings as key-value pairs.
+    ///   - [`settings(HashMap::<String, String>)`](crate::operation::get_monitor_settings::GetMonitorSettingsOutput::settings): <p>The monitor settings as key-value pairs.</p>
     /// - On failure, responds with [`SdkError<GetMonitorSettingsError>`](crate::operation::get_monitor_settings::GetMonitorSettingsError)
     pub fn get_monitor_settings(&self) -> crate::operation::get_monitor_settings::builders::GetMonitorSettingsFluentBuilder {
         crate::operation::get_monitor_settings::builders::GetMonitorSettingsFluentBuilder::new(self.handle.clone())

@@ -2,10 +2,16 @@
 pub(crate) fn de_processing_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProcessingJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,12 +22,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ProcessingInputs" => {
-                            builder =
-                                builder.set_processing_inputs(crate::protocol_serde::shape_processing_inputs::de_processing_inputs(tokens, _value)?);
+                            builder = builder.set_processing_inputs(crate::protocol_serde::shape_processing_inputs::de_processing_inputs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ProcessingOutputConfig" => {
                             builder = builder.set_processing_output_config(
-                                crate::protocol_serde::shape_processing_output_config::de_processing_output_config(tokens, _value)?,
+                                crate::protocol_serde::shape_processing_output_config::de_processing_output_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "ProcessingJobName" => {
@@ -33,25 +42,38 @@ where
                         }
                         "ProcessingResources" => {
                             builder = builder.set_processing_resources(crate::protocol_serde::shape_processing_resources::de_processing_resources(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "StoppingCondition" => {
                             builder = builder.set_stopping_condition(
-                                crate::protocol_serde::shape_processing_stopping_condition::de_processing_stopping_condition(tokens, _value)?,
+                                crate::protocol_serde::shape_processing_stopping_condition::de_processing_stopping_condition(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AppSpecification" => {
-                            builder =
-                                builder.set_app_specification(crate::protocol_serde::shape_app_specification::de_app_specification(tokens, _value)?);
+                            builder = builder.set_app_specification(crate::protocol_serde::shape_app_specification::de_app_specification(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_processing_environment_map::de_processing_environment_map(tokens, _value)?,
+                                crate::protocol_serde::shape_processing_environment_map::de_processing_environment_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "NetworkConfig" => {
-                            builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(tokens, _value)?);
+                            builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RoleArn" => {
                             builder = builder.set_role_arn(
@@ -61,8 +83,11 @@ where
                             );
                         }
                         "ExperimentConfig" => {
-                            builder =
-                                builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(tokens, _value)?);
+                            builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ProcessingJobArn" => {
                             builder = builder.set_processing_job_arn(
@@ -138,7 +163,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

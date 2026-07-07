@@ -44,6 +44,8 @@ pub struct ConfigRule {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
     pub evaluation_modes: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
+    /// <p>Indicates whether you can get <code>Evaluation</code>s for the Config rule. You can get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>EXTERNAL</code>. You cannot get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>INTERNAL</code>.</p>
+    pub rule_evaluation_visibility: ::std::option::Option<crate::types::RuleEvaluationVisibility>,
 }
 impl ConfigRule {
     /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
@@ -105,6 +107,10 @@ impl ConfigRule {
     pub fn evaluation_modes(&self) -> &[crate::types::EvaluationModeConfiguration] {
         self.evaluation_modes.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether you can get <code>Evaluation</code>s for the Config rule. You can get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>EXTERNAL</code>. You cannot get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>INTERNAL</code>.</p>
+    pub fn rule_evaluation_visibility(&self) -> ::std::option::Option<&crate::types::RuleEvaluationVisibility> {
+        self.rule_evaluation_visibility.as_ref()
+    }
 }
 impl ConfigRule {
     /// Creates a new builder-style object to manufacture [`ConfigRule`](crate::types::ConfigRule).
@@ -128,6 +134,7 @@ pub struct ConfigRuleBuilder {
     pub(crate) config_rule_state: ::std::option::Option<crate::types::ConfigRuleState>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_modes: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
+    pub(crate) rule_evaluation_visibility: ::std::option::Option<crate::types::RuleEvaluationVisibility>,
 }
 impl ConfigRuleBuilder {
     /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
@@ -330,6 +337,20 @@ impl ConfigRuleBuilder {
     pub fn get_evaluation_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>> {
         &self.evaluation_modes
     }
+    /// <p>Indicates whether you can get <code>Evaluation</code>s for the Config rule. You can get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>EXTERNAL</code>. You cannot get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>INTERNAL</code>.</p>
+    pub fn rule_evaluation_visibility(mut self, input: crate::types::RuleEvaluationVisibility) -> Self {
+        self.rule_evaluation_visibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether you can get <code>Evaluation</code>s for the Config rule. You can get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>EXTERNAL</code>. You cannot get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>INTERNAL</code>.</p>
+    pub fn set_rule_evaluation_visibility(mut self, input: ::std::option::Option<crate::types::RuleEvaluationVisibility>) -> Self {
+        self.rule_evaluation_visibility = input;
+        self
+    }
+    /// <p>Indicates whether you can get <code>Evaluation</code>s for the Config rule. You can get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>EXTERNAL</code>. You cannot get <code>Evaluation</code>s for the Amazon Web Services Config rule if this value is <code>INTERNAL</code>.</p>
+    pub fn get_rule_evaluation_visibility(&self) -> &::std::option::Option<crate::types::RuleEvaluationVisibility> {
+        &self.rule_evaluation_visibility
+    }
     /// Consumes the builder and constructs a [`ConfigRule`](crate::types::ConfigRule).
     pub fn build(self) -> crate::types::ConfigRule {
         crate::types::ConfigRule {
@@ -344,6 +365,7 @@ impl ConfigRuleBuilder {
             config_rule_state: self.config_rule_state,
             created_by: self.created_by,
             evaluation_modes: self.evaluation_modes,
+            rule_evaluation_visibility: self.rule_evaluation_visibility,
         }
     }
 }

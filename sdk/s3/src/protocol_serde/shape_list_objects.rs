@@ -117,6 +117,8 @@ pub fn de_list_objects(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListBucketResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListBucketResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -130,7 +132,7 @@ pub fn de_list_objects(
                         Result::<::std::vec::Vec::<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_9 = builder.common_prefixes.take().unwrap_or_default();
                             list_9.push(
-                                crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
+                                crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag, depth + 1)
                                 ?
                             );
                             list_9
@@ -147,7 +149,7 @@ pub fn de_list_objects(
                         Result::<::std::vec::Vec::<crate::types::Object>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_11 = builder.contents.take().unwrap_or_default();
                             list_11.push(
-                                crate::protocol_serde::shape_object::de_object(&mut tag)
+                                crate::protocol_serde::shape_object::de_object(&mut tag, depth + 1)
                                 ?
                             );
                             list_11

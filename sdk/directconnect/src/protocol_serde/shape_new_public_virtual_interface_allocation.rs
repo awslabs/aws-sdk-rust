@@ -60,5 +60,8 @@ pub fn ser_new_public_virtual_interface_allocation(
         }
         array_11.finish();
     }
+    if let Some(var_14) = &input.rate_limit {
+        object.key("rateLimit").string(var_14.as_str());
+    }
     Ok(())
 }

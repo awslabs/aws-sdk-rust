@@ -2,10 +2,16 @@
 pub(crate) fn de_lens_review<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LensReview>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,13 +58,15 @@ where
                         }
                         "PillarReviewSummaries" => {
                             builder = builder.set_pillar_review_summaries(
-                                crate::protocol_serde::shape_pillar_review_summaries::de_pillar_review_summaries(tokens, _value)?,
+                                crate::protocol_serde::shape_pillar_review_summaries::de_pillar_review_summaries(tokens, _value, depth + 1)?,
                             );
                         }
                         "JiraConfiguration" => {
                             builder = builder.set_jira_configuration(
                                 crate::protocol_serde::shape_jira_selected_question_configuration::de_jira_selected_question_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -76,7 +84,7 @@ where
                             );
                         }
                         "RiskCounts" => {
-                            builder = builder.set_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens, _value)?);
+                            builder = builder.set_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens, _value, depth + 1)?);
                         }
                         "NextToken" => {
                             builder = builder.set_next_token(
@@ -86,10 +94,18 @@ where
                             );
                         }
                         "Profiles" => {
-                            builder = builder.set_profiles(crate::protocol_serde::shape_workload_profiles::de_workload_profiles(tokens, _value)?);
+                            builder = builder.set_profiles(crate::protocol_serde::shape_workload_profiles::de_workload_profiles(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PrioritizedRiskCounts" => {
-                            builder = builder.set_prioritized_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens, _value)?);
+                            builder = builder.set_prioritized_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

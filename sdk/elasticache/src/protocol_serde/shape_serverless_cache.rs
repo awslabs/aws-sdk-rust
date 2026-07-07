@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_serverless_cache(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ServerlessCache, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ServerlessCache::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -102,7 +106,7 @@ pub fn de_serverless_cache(
             s if s.matches("CacheUsageLimits") /* CacheUsageLimits com.amazonaws.elasticache#ServerlessCache$CacheUsageLimits */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_cache_usage_limits::de_cache_usage_limits(&mut tag)
+                        crate::protocol_serde::shape_cache_usage_limits::de_cache_usage_limits(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -122,50 +126,51 @@ pub fn de_serverless_cache(
                 builder = builder.set_kms_key_id(var_9);
             }
             ,
-            s if s.matches("SecurityGroupIds") /* SecurityGroupIds com.amazonaws.elasticache#ServerlessCache$SecurityGroupIds */ =>  {
+            s if s.matches("StorageEncryptionType") /* StorageEncryptionType com.amazonaws.elasticache#ServerlessCache$StorageEncryptionType */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_security_group_ids_list::de_security_group_ids_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_security_group_ids(var_10);
-            }
-            ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.elasticache#ServerlessCache$Endpoint */ =>  {
-                let var_11 =
-                    Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_endpoint(var_11);
-            }
-            ,
-            s if s.matches("ReaderEndpoint") /* ReaderEndpoint com.amazonaws.elasticache#ServerlessCache$ReaderEndpoint */ =>  {
-                let var_12 =
-                    Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_reader_endpoint(var_12);
-            }
-            ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#ServerlessCache$ARN */ =>  {
-                let var_13 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                        Result::<crate::types::StorageEncryptionType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StorageEncryptionType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
                         )
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_13);
+                builder = builder.set_storage_encryption_type(var_10);
             }
             ,
-            s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache#ServerlessCache$UserGroupId */ =>  {
+            s if s.matches("SecurityGroupIds") /* SecurityGroupIds com.amazonaws.elasticache#ServerlessCache$SecurityGroupIds */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_security_group_ids_list::de_security_group_ids_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_security_group_ids(var_11);
+            }
+            ,
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.elasticache#ServerlessCache$Endpoint */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_12);
+            }
+            ,
+            s if s.matches("ReaderEndpoint") /* ReaderEndpoint com.amazonaws.elasticache#ServerlessCache$ReaderEndpoint */ =>  {
+                let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_reader_endpoint(var_13);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#ServerlessCache$ARN */ =>  {
                 let var_14 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -175,21 +180,34 @@ pub fn de_serverless_cache(
                         ?
                     )
                 ;
-                builder = builder.set_user_group_id(var_14);
+                builder = builder.set_arn(var_14);
             }
             ,
-            s if s.matches("SubnetIds") /* SubnetIds com.amazonaws.elasticache#ServerlessCache$SubnetIds */ =>  {
+            s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache#ServerlessCache$UserGroupId */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_subnet_ids_list::de_subnet_ids_list(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_subnet_ids(var_15);
+                builder = builder.set_user_group_id(var_15);
+            }
+            ,
+            s if s.matches("SubnetIds") /* SubnetIds com.amazonaws.elasticache#ServerlessCache$SubnetIds */ =>  {
+                let var_16 =
+                    Some(
+                        crate::protocol_serde::shape_subnet_ids_list::de_subnet_ids_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_subnet_ids(var_16);
             }
             ,
             s if s.matches("SnapshotRetentionLimit") /* SnapshotRetentionLimit com.amazonaws.elasticache#ServerlessCache$SnapshotRetentionLimit */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -200,11 +218,11 @@ pub fn de_serverless_cache(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_retention_limit(var_16);
+                builder = builder.set_snapshot_retention_limit(var_17);
             }
             ,
             s if s.matches("DailySnapshotTime") /* DailySnapshotTime com.amazonaws.elasticache#ServerlessCache$DailySnapshotTime */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -213,11 +231,11 @@ pub fn de_serverless_cache(
                         ?
                     )
                 ;
-                builder = builder.set_daily_snapshot_time(var_17);
+                builder = builder.set_daily_snapshot_time(var_18);
             }
             ,
             s if s.matches("NetworkType") /* NetworkType com.amazonaws.elasticache#ServerlessCache$NetworkType */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         Result::<crate::types::NetworkType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::NetworkType::from(
@@ -227,7 +245,7 @@ pub fn de_serverless_cache(
                         ?
                     )
                 ;
-                builder = builder.set_network_type(var_18);
+                builder = builder.set_network_type(var_19);
             }
             ,
             _ => {}

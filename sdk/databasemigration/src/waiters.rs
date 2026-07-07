@@ -3,6 +3,33 @@
 /// Supporting types for the `endpoint_deleted` waiter.
 pub mod endpoint_deleted;
 
+/// Supporting types for the `extension_pack_associated` waiter.
+pub mod extension_pack_associated;
+
+/// Supporting types for the `metadata_model_assessed` waiter.
+pub mod metadata_model_assessed;
+
+/// Supporting types for the `metadata_model_conversion_cancelled` waiter.
+pub mod metadata_model_conversion_cancelled;
+
+/// Supporting types for the `metadata_model_converted` waiter.
+pub mod metadata_model_converted;
+
+/// Supporting types for the `metadata_model_created` waiter.
+pub mod metadata_model_created;
+
+/// Supporting types for the `metadata_model_creation_cancelled` waiter.
+pub mod metadata_model_creation_cancelled;
+
+/// Supporting types for the `metadata_model_exported_as_script` waiter.
+pub mod metadata_model_exported_as_script;
+
+/// Supporting types for the `metadata_model_exported_to_target` waiter.
+pub mod metadata_model_exported_to_target;
+
+/// Supporting types for the `metadata_model_imported` waiter.
+pub mod metadata_model_imported;
+
 /// Supporting types for the `replication_instance_available` waiter.
 pub mod replication_instance_available;
 

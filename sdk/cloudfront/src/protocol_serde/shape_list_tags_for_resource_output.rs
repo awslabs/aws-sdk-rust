@@ -20,5 +20,7 @@ pub fn de_tags(inp: &[u8]) -> std::result::Result<crate::types::Tags, ::aws_smit
             "invalid root, expected Tags got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_tags::de_tags(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_tags::de_tags(&mut decoder, depth + 1)
 }

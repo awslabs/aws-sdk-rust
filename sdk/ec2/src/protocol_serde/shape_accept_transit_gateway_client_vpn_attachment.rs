@@ -53,6 +53,8 @@ pub fn de_accept_transit_gateway_client_vpn_attachment(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AcceptTransitGatewayClientVpnAttachmentResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AcceptTransitGatewayClientVpnAttachmentResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_accept_transit_gateway_client_vpn_attachment(
             s if s.matches("transitGatewayClientVpnAttachment") /* TransitGatewayClientVpnAttachment com.amazonaws.ec2.synthetic#AcceptTransitGatewayClientVpnAttachmentOutput$TransitGatewayClientVpnAttachment */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_client_vpn_attachment::de_transit_gateway_client_vpn_attachment(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_client_vpn_attachment::de_transit_gateway_client_vpn_attachment(&mut tag, depth + 1)
                         ?
                     )
                 ;

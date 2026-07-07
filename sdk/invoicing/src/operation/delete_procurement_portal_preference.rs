@@ -76,7 +76,15 @@ impl DeleteProcurementPortalPreference {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-
+        runtime_plugins = runtime_plugins.with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+            |token_provider, input| {
+                let input: &mut crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceInput =
+                    input.downcast_mut().expect("correct type");
+                if input.client_token.is_none() {
+                    input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                }
+            },
+        ));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -155,9 +163,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteP
 #[derive(Debug)]
 struct DeleteProcurementPortalPreferenceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteProcurementPortalPreferenceResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();

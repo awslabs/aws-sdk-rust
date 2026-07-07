@@ -140,6 +140,8 @@ pub fn de_create_virtual_mfa_device(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateVirtualMFADeviceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateVirtualMFADeviceResponse got {start_el:?}"
@@ -157,7 +159,7 @@ pub fn de_create_virtual_mfa_device(
             s if s.matches("VirtualMFADevice") /* VirtualMFADevice com.amazonaws.iam.synthetic#CreateVirtualMFADeviceOutput$VirtualMFADevice */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_virtual_mfa_device::de_virtual_mfa_device(&mut tag)
+                        crate::protocol_serde::shape_virtual_mfa_device::de_virtual_mfa_device(&mut tag, depth + 1)
                         ?
                     )
                 ;

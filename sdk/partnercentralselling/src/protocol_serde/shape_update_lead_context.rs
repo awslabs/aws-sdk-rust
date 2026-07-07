@@ -18,5 +18,11 @@ pub fn ser_update_lead_context(
         crate::protocol_serde::shape_lead_interaction::ser_lead_interaction(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.insights {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Insights").start_object();
+        crate::protocol_serde::shape_lead_insights::ser_lead_insights(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

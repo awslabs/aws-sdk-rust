@@ -2,10 +2,16 @@
 pub(crate) fn de_advanced_security_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AdvancedSecurityOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,16 +29,26 @@ where
                                 .set_internal_user_database_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "SAMLOptions" => {
-                            builder =
-                                builder.set_saml_options(crate::protocol_serde::shape_saml_options_output::de_saml_options_output(tokens, _value)?);
+                            builder = builder.set_saml_options(crate::protocol_serde::shape_saml_options_output::de_saml_options_output(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JWTOptions" => {
-                            builder =
-                                builder.set_jwt_options(crate::protocol_serde::shape_jwt_options_output::de_jwt_options_output(tokens, _value)?);
+                            builder = builder.set_jwt_options(crate::protocol_serde::shape_jwt_options_output::de_jwt_options_output(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IAMFederationOptions" => {
                             builder = builder.set_iam_federation_options(
-                                crate::protocol_serde::shape_iam_federation_options_output::de_iam_federation_options_output(tokens, _value)?,
+                                crate::protocol_serde::shape_iam_federation_options_output::de_iam_federation_options_output(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AnonymousAuthDisableDate" => {

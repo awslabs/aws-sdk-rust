@@ -2,10 +2,16 @@
 pub(crate) fn de_playback_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PlaybackConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,28 +29,44 @@ where
                             );
                         }
                         "AvailSuppression" => {
-                            builder =
-                                builder.set_avail_suppression(crate::protocol_serde::shape_avail_suppression::de_avail_suppression(tokens, _value)?);
+                            builder = builder.set_avail_suppression(crate::protocol_serde::shape_avail_suppression::de_avail_suppression(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Bumper" => {
-                            builder = builder.set_bumper(crate::protocol_serde::shape_bumper::de_bumper(tokens, _value)?);
+                            builder = builder.set_bumper(crate::protocol_serde::shape_bumper::de_bumper(tokens, _value, depth + 1)?);
                         }
                         "CdnConfiguration" => {
-                            builder =
-                                builder.set_cdn_configuration(crate::protocol_serde::shape_cdn_configuration::de_cdn_configuration(tokens, _value)?);
+                            builder = builder.set_cdn_configuration(crate::protocol_serde::shape_cdn_configuration::de_cdn_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ConfigurationAliases" => {
                             builder = builder.set_configuration_aliases(
-                                crate::protocol_serde::shape_configuration_aliases_response::de_configuration_aliases_response(tokens, _value)?,
+                                crate::protocol_serde::shape_configuration_aliases_response::de_configuration_aliases_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DashConfiguration" => {
-                            builder = builder
-                                .set_dash_configuration(crate::protocol_serde::shape_dash_configuration::de_dash_configuration(tokens, _value)?);
+                            builder = builder.set_dash_configuration(crate::protocol_serde::shape_dash_configuration::de_dash_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "HlsConfiguration" => {
-                            builder =
-                                builder.set_hls_configuration(crate::protocol_serde::shape_hls_configuration::de_hls_configuration(tokens, _value)?);
+                            builder = builder.set_hls_configuration(crate::protocol_serde::shape_hls_configuration::de_hls_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InsertionMode" => {
                             builder = builder.set_insertion_mode(
@@ -55,16 +77,19 @@ where
                         }
                         "LivePreRollConfiguration" => {
                             builder = builder.set_live_pre_roll_configuration(
-                                crate::protocol_serde::shape_live_pre_roll_configuration::de_live_pre_roll_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_live_pre_roll_configuration::de_live_pre_roll_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "LogConfiguration" => {
-                            builder =
-                                builder.set_log_configuration(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens, _value)?);
+                            builder = builder.set_log_configuration(crate::protocol_serde::shape_log_configuration::de_log_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ManifestProcessingRules" => {
                             builder = builder.set_manifest_processing_rules(
-                                crate::protocol_serde::shape_manifest_processing_rules::de_manifest_processing_rules(tokens, _value)?,
+                                crate::protocol_serde::shape_manifest_processing_rules::de_manifest_processing_rules(tokens, _value, depth + 1)?,
                             );
                         }
                         "Name" => {
@@ -95,8 +120,22 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DualStackPlaybackEndpointPrefix" => {
+                            builder = builder.set_dual_stack_playback_endpoint_prefix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "SessionInitializationEndpointPrefix" => {
                             builder = builder.set_session_initialization_endpoint_prefix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DualStackSessionInitializationEndpointPrefix" => {
+                            builder = builder.set_dual_stack_session_initialization_endpoint_prefix(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -110,7 +149,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                         }
                         "TranscodeProfileName" => {
                             builder = builder.set_transcode_profile_name(
@@ -128,13 +167,28 @@ where
                         }
                         "AdConditioningConfiguration" => {
                             builder = builder.set_ad_conditioning_configuration(
-                                crate::protocol_serde::shape_ad_conditioning_configuration::de_ad_conditioning_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_ad_conditioning_configuration::de_ad_conditioning_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AdDecisionServerConfiguration" => {
                             builder = builder.set_ad_decision_server_configuration(
-                                crate::protocol_serde::shape_ad_decision_server_configuration::de_ad_decision_server_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_ad_decision_server_configuration::de_ad_decision_server_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
+                        }
+                        "FunctionMapping" => {
+                            builder = builder.set_function_mapping(crate::protocol_serde::shape_function_mapping::de_function_mapping(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

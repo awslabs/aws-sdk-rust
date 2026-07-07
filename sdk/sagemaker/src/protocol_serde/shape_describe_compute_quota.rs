@@ -77,6 +77,8 @@ pub(crate) fn de_describe_compute_quota(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -140,12 +142,16 @@ pub(crate) fn de_describe_compute_quota(
                 }
                 "ComputeQuotaConfig" => {
                     builder = builder.set_compute_quota_config(crate::protocol_serde::shape_compute_quota_config::de_compute_quota_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ComputeQuotaTarget" => {
                     builder = builder.set_compute_quota_target(crate::protocol_serde::shape_compute_quota_target::de_compute_quota_target(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ActivationState" => {
@@ -162,7 +168,7 @@ pub(crate) fn de_describe_compute_quota(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -171,7 +177,7 @@ pub(crate) fn de_describe_compute_quota(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

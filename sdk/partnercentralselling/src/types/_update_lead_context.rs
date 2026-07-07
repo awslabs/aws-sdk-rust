@@ -10,6 +10,8 @@ pub struct UpdateLeadContext {
     pub customer: ::std::option::Option<crate::types::LeadCustomer>,
     /// <p>Updated interaction details for the lead context.</p>
     pub interaction: ::std::option::Option<crate::types::LeadInteraction>,
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis to help partners assess the lead quality and readiness.</p>
+    pub insights: ::std::option::Option<crate::types::LeadInsights>,
 }
 impl UpdateLeadContext {
     /// <p>The updated qualification status of the lead.</p>
@@ -24,6 +26,10 @@ impl UpdateLeadContext {
     /// <p>Updated interaction details for the lead context.</p>
     pub fn interaction(&self) -> ::std::option::Option<&crate::types::LeadInteraction> {
         self.interaction.as_ref()
+    }
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis to help partners assess the lead quality and readiness.</p>
+    pub fn insights(&self) -> ::std::option::Option<&crate::types::LeadInsights> {
+        self.insights.as_ref()
     }
 }
 impl UpdateLeadContext {
@@ -40,6 +46,7 @@ pub struct UpdateLeadContextBuilder {
     pub(crate) qualification_status: ::std::option::Option<::std::string::String>,
     pub(crate) customer: ::std::option::Option<crate::types::LeadCustomer>,
     pub(crate) interaction: ::std::option::Option<crate::types::LeadInteraction>,
+    pub(crate) insights: ::std::option::Option<crate::types::LeadInsights>,
 }
 impl UpdateLeadContextBuilder {
     /// <p>The updated qualification status of the lead.</p>
@@ -85,12 +92,27 @@ impl UpdateLeadContextBuilder {
     pub fn get_interaction(&self) -> &::std::option::Option<crate::types::LeadInteraction> {
         &self.interaction
     }
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis to help partners assess the lead quality and readiness.</p>
+    pub fn insights(mut self, input: crate::types::LeadInsights) -> Self {
+        self.insights = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis to help partners assess the lead quality and readiness.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<crate::types::LeadInsights>) -> Self {
+        self.insights = input;
+        self
+    }
+    /// <p>Insights that AI generates and associates with the lead. These insights provide automated analysis to help partners assess the lead quality and readiness.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<crate::types::LeadInsights> {
+        &self.insights
+    }
     /// Consumes the builder and constructs a [`UpdateLeadContext`](crate::types::UpdateLeadContext).
     pub fn build(self) -> crate::types::UpdateLeadContext {
         crate::types::UpdateLeadContext {
             qualification_status: self.qualification_status.unwrap_or_else(|| "Unqualified".to_owned()),
             customer: self.customer,
             interaction: self.interaction,
+            insights: self.insights,
         }
     }
 }

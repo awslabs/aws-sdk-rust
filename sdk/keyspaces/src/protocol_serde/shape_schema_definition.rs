@@ -57,10 +57,16 @@ pub fn ser_schema_definition(
 pub(crate) fn de_schema_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SchemaDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -72,20 +78,31 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allColumns" => {
                             builder = builder.set_all_columns(crate::protocol_serde::shape_column_definition_list::de_column_definition_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "partitionKeys" => {
-                            builder =
-                                builder.set_partition_keys(crate::protocol_serde::shape_partition_key_list::de_partition_key_list(tokens, _value)?);
+                            builder = builder.set_partition_keys(crate::protocol_serde::shape_partition_key_list::de_partition_key_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "clusteringKeys" => {
-                            builder = builder
-                                .set_clustering_keys(crate::protocol_serde::shape_clustering_key_list::de_clustering_key_list(tokens, _value)?);
+                            builder = builder.set_clustering_keys(crate::protocol_serde::shape_clustering_key_list::de_clustering_key_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "staticColumns" => {
-                            builder =
-                                builder.set_static_columns(crate::protocol_serde::shape_static_column_list::de_static_column_list(tokens, _value)?);
+                            builder = builder.set_static_columns(crate::protocol_serde::shape_static_column_list::de_static_column_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

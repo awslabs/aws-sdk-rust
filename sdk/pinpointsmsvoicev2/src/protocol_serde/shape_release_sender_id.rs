@@ -148,6 +148,8 @@ pub(crate) fn de_release_sender_id(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -175,7 +177,11 @@ pub(crate) fn de_release_sender_id(
                     );
                 }
                 "MessageTypes" => {
-                    builder = builder.set_message_types(crate::protocol_serde::shape_message_type_list::de_message_type_list(tokens, _value)?);
+                    builder = builder.set_message_types(crate::protocol_serde::shape_message_type_list::de_message_type_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "MonthlyLeasingPrice" => {
                     builder = builder.set_monthly_leasing_price(

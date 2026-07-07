@@ -5,12 +5,18 @@
 pub struct UpdateAccountSettingsOutput {
     /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile or an environment if AppConfig has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile or from the environment during the specified interval. The default interval for <code>ProtectionPeriodInMinutes</code> is 60.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtectionSettings>,
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub vended_metrics: ::std::option::Option<crate::types::VendedMetricsSettings>,
     _request_id: Option<String>,
 }
 impl UpdateAccountSettingsOutput {
     /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile or an environment if AppConfig has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile or from the environment during the specified interval. The default interval for <code>ProtectionPeriodInMinutes</code> is 60.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtectionSettings> {
         self.deletion_protection.as_ref()
+    }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn vended_metrics(&self) -> ::std::option::Option<&crate::types::VendedMetricsSettings> {
+        self.vended_metrics.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAccountSettingsOutput {
@@ -30,6 +36,7 @@ impl UpdateAccountSettingsOutput {
 #[non_exhaustive]
 pub struct UpdateAccountSettingsOutputBuilder {
     pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtectionSettings>,
+    pub(crate) vended_metrics: ::std::option::Option<crate::types::VendedMetricsSettings>,
     _request_id: Option<String>,
 }
 impl UpdateAccountSettingsOutputBuilder {
@@ -47,6 +54,20 @@ impl UpdateAccountSettingsOutputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtectionSettings> {
         &self.deletion_protection
     }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn vended_metrics(mut self, input: crate::types::VendedMetricsSettings) -> Self {
+        self.vended_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn set_vended_metrics(mut self, input: ::std::option::Option<crate::types::VendedMetricsSettings>) -> Self {
+        self.vended_metrics = input;
+        self
+    }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn get_vended_metrics(&self) -> &::std::option::Option<crate::types::VendedMetricsSettings> {
+        &self.vended_metrics
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl UpdateAccountSettingsOutputBuilder {
     pub fn build(self) -> crate::operation::update_account_settings::UpdateAccountSettingsOutput {
         crate::operation::update_account_settings::UpdateAccountSettingsOutput {
             deletion_protection: self.deletion_protection,
+            vended_metrics: self.vended_metrics,
             _request_id: self._request_id,
         }
     }

@@ -6,35 +6,44 @@ pub fn ser_data_source_configuration(
     {
         object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_1) = &input.s3_configuration {
+    if let Some(var_1) = &input.managed_knowledge_base_connector_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("s3Configuration").start_object();
-        crate::protocol_serde::shape_s3_data_source_configuration::ser_s3_data_source_configuration(&mut object_2, var_1)?;
+        let mut object_2 = object.key("managedKnowledgeBaseConnectorConfiguration").start_object();
+        crate::protocol_serde::shape_managed_knowledge_base_connector_configuration::ser_managed_knowledge_base_connector_configuration(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.web_configuration {
+    if let Some(var_3) = &input.s3_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("webConfiguration").start_object();
-        crate::protocol_serde::shape_web_data_source_configuration::ser_web_data_source_configuration(&mut object_4, var_3)?;
+        let mut object_4 = object.key("s3Configuration").start_object();
+        crate::protocol_serde::shape_s3_data_source_configuration::ser_s3_data_source_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.confluence_configuration {
+    if let Some(var_5) = &input.web_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("confluenceConfiguration").start_object();
-        crate::protocol_serde::shape_confluence_data_source_configuration::ser_confluence_data_source_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("webConfiguration").start_object();
+        crate::protocol_serde::shape_web_data_source_configuration::ser_web_data_source_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.salesforce_configuration {
+    if let Some(var_7) = &input.confluence_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("salesforceConfiguration").start_object();
-        crate::protocol_serde::shape_salesforce_data_source_configuration::ser_salesforce_data_source_configuration(&mut object_8, var_7)?;
+        let mut object_8 = object.key("confluenceConfiguration").start_object();
+        crate::protocol_serde::shape_confluence_data_source_configuration::ser_confluence_data_source_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.share_point_configuration {
+    if let Some(var_9) = &input.salesforce_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("sharePointConfiguration").start_object();
-        crate::protocol_serde::shape_share_point_data_source_configuration::ser_share_point_data_source_configuration(&mut object_10, var_9)?;
+        let mut object_10 = object.key("salesforceConfiguration").start_object();
+        crate::protocol_serde::shape_salesforce_data_source_configuration::ser_salesforce_data_source_configuration(&mut object_10, var_9)?;
         object_10.finish();
+    }
+    if let Some(var_11) = &input.share_point_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("sharePointConfiguration").start_object();
+        crate::protocol_serde::shape_share_point_data_source_configuration::ser_share_point_data_source_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }
@@ -42,10 +51,16 @@ pub fn ser_data_source_configuration(
 pub(crate) fn de_data_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -62,34 +77,53 @@ where
                                     .transpose()?,
                             );
                         }
+                        "managedKnowledgeBaseConnectorConfiguration" => {
+                            builder = builder.set_managed_knowledge_base_connector_configuration(
+                                    crate::protocol_serde::shape_managed_knowledge_base_connector_configuration::de_managed_knowledge_base_connector_configuration(tokens, _value, depth + 1)?
+                                );
+                        }
                         "s3Configuration" => {
                             builder = builder.set_s3_configuration(
-                                crate::protocol_serde::shape_s3_data_source_configuration::de_s3_data_source_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_data_source_configuration::de_s3_data_source_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "webConfiguration" => {
                             builder = builder.set_web_configuration(
-                                crate::protocol_serde::shape_web_data_source_configuration::de_web_data_source_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_web_data_source_configuration::de_web_data_source_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "confluenceConfiguration" => {
                             builder = builder.set_confluence_configuration(
                                 crate::protocol_serde::shape_confluence_data_source_configuration::de_confluence_data_source_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "salesforceConfiguration" => {
                             builder = builder.set_salesforce_configuration(
                                 crate::protocol_serde::shape_salesforce_data_source_configuration::de_salesforce_data_source_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "sharePointConfiguration" => {
                             builder = builder.set_share_point_configuration(
                                 crate::protocol_serde::shape_share_point_data_source_configuration::de_share_point_data_source_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

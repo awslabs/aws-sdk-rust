@@ -17,7 +17,7 @@ pub struct CreateDbClusterInput {
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p><i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i></p>
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    /// <p>Not supported by Neptune.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -121,6 +121,15 @@ pub struct CreateDbClusterInput {
     /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
     /// </ul>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
@@ -147,7 +156,7 @@ impl CreateDbClusterInput {
     pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    /// <p>Not supported by Neptune.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -305,6 +314,17 @@ impl CreateDbClusterInput {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl CreateDbClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
@@ -345,6 +365,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -427,17 +448,17 @@ impl CreateDbClusterInputBuilder {
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
         &self.copy_tags_to_snapshot
     }
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    /// <p>Not supported by Neptune.</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    /// <p>Not supported by Neptune.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    /// <p>Not supported by Neptune.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
@@ -951,6 +972,41 @@ impl CreateDbClusterInputBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
@@ -984,6 +1040,7 @@ impl CreateDbClusterInputBuilder {
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             global_cluster_identifier: self.global_cluster_identifier,
             storage_type: self.storage_type,
+            network_type: self.network_type,
         })
     }
 }

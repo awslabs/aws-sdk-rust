@@ -24,10 +24,16 @@ pub fn ser_sapo_data_source_properties(
 pub(crate) fn de_sapo_data_source_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SapoDataSourceProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -46,12 +52,16 @@ where
                         }
                         "parallelismConfig" => {
                             builder = builder.set_parallelism_config(
-                                crate::protocol_serde::shape_sapo_data_parallelism_config::de_sapo_data_parallelism_config(tokens, _value)?,
+                                crate::protocol_serde::shape_sapo_data_parallelism_config::de_sapo_data_parallelism_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "paginationConfig" => {
                             builder = builder.set_pagination_config(
-                                crate::protocol_serde::shape_sapo_data_pagination_config::de_sapo_data_pagination_config(tokens, _value)?,
+                                crate::protocol_serde::shape_sapo_data_pagination_config::de_sapo_data_pagination_config(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

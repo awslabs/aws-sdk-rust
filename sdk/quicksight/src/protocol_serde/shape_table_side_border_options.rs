@@ -45,10 +45,16 @@ pub fn ser_table_side_border_options(
 pub(crate) fn de_table_side_border_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TableSideBorderOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,32 +66,44 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InnerVertical" => {
                             builder = builder.set_inner_vertical(crate::protocol_serde::shape_table_border_options::de_table_border_options(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InnerHorizontal" => {
                             builder = builder.set_inner_horizontal(crate::protocol_serde::shape_table_border_options::de_table_border_options(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Left" => {
                             builder = builder.set_left(crate::protocol_serde::shape_table_border_options::de_table_border_options(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Right" => {
                             builder = builder.set_right(crate::protocol_serde::shape_table_border_options::de_table_border_options(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Top" => {
                             builder = builder.set_top(crate::protocol_serde::shape_table_border_options::de_table_border_options(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Bottom" => {
                             builder = builder.set_bottom(crate::protocol_serde::shape_table_border_options::de_table_border_options(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

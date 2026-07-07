@@ -163,13 +163,15 @@ pub(crate) fn de_update_application(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "appConfigs" => {
-                    builder = builder.set_app_configs(crate::protocol_serde::shape_app_configs::de_app_configs(tokens, _value)?);
+                    builder = builder.set_app_configs(crate::protocol_serde::shape_app_configs::de_app_configs(tokens, _value, depth + 1)?);
                 }
                 "arn" => {
                     builder = builder.set_arn(
@@ -185,11 +187,11 @@ pub(crate) fn de_update_application(
                     )?);
                 }
                 "dataSources" => {
-                    builder = builder.set_data_sources(crate::protocol_serde::shape_data_sources::de_data_sources(tokens, _value)?);
+                    builder = builder.set_data_sources(crate::protocol_serde::shape_data_sources::de_data_sources(tokens, _value, depth + 1)?);
                 }
                 "iamIdentityCenterOptions" => {
                     builder = builder.set_iam_identity_center_options(
-                        crate::protocol_serde::shape_iam_identity_center_options::de_iam_identity_center_options(tokens, _value)?,
+                        crate::protocol_serde::shape_iam_identity_center_options::de_iam_identity_center_options(tokens, _value, depth + 1)?,
                     );
                 }
                 "id" => {

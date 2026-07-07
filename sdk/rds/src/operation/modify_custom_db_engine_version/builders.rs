@@ -130,11 +130,19 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-sqlserver-se</code></p></li>
     /// <li>
-    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <p><code>custom-sqlserver-web</code></p></li>
     /// <li>
     /// <p><code>custom-sqlserver-dev</code></p></li>
     /// </ul>
-    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
+    /// <p>RDS for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>sqlserver-ee</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
+    /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
@@ -158,11 +166,19 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-sqlserver-se</code></p></li>
     /// <li>
-    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <p><code>custom-sqlserver-web</code></p></li>
     /// <li>
     /// <p><code>custom-sqlserver-dev</code></p></li>
     /// </ul>
-    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
+    /// <p>RDS for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>sqlserver-ee</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
+    /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
@@ -186,11 +202,19 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-sqlserver-se</code></p></li>
     /// <li>
-    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <p><code>custom-sqlserver-web</code></p></li>
     /// <li>
     /// <p><code>custom-sqlserver-dev</code></p></li>
     /// </ul>
-    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
+    /// <p>RDS for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>sqlserver-ee</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
+    /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

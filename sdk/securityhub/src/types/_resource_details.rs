@@ -213,6 +213,8 @@ pub struct ResourceDetails {
     pub aws_ec2_client_vpn_endpoint: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>,
     /// <p>Details about an external code repository with which you can connect your Amazon Web Services resources. The connection is established through Amazon Inspector.</p>
     pub code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
+    /// <p>Details about an Azure resource that is related to a finding.</p>
+    pub azure_resource: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
@@ -621,6 +623,10 @@ impl ResourceDetails {
     pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepositoryDetails> {
         self.code_repository.as_ref()
     }
+    /// <p>Details about an Azure resource that is related to a finding.</p>
+    pub fn azure_resource(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.azure_resource.as_ref()
+    }
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::types::ResourceDetails).
@@ -733,6 +739,7 @@ pub struct ResourceDetailsBuilder {
     pub(crate) aws_s3_access_point: ::std::option::Option<crate::types::AwsS3AccessPointDetails>,
     pub(crate) aws_ec2_client_vpn_endpoint: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>,
     pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
+    pub(crate) azure_resource: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl ResourceDetailsBuilder {
     /// <p>Details for an autoscaling group.</p>
@@ -2177,6 +2184,20 @@ impl ResourceDetailsBuilder {
     pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepositoryDetails> {
         &self.code_repository
     }
+    /// <p>Details about an Azure resource that is related to a finding.</p>
+    pub fn azure_resource(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.azure_resource = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about an Azure resource that is related to a finding.</p>
+    pub fn set_azure_resource(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.azure_resource = input;
+        self
+    }
+    /// <p>Details about an Azure resource that is related to a finding.</p>
+    pub fn get_azure_resource(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.azure_resource
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
@@ -2280,6 +2301,7 @@ impl ResourceDetailsBuilder {
             aws_s3_access_point: self.aws_s3_access_point,
             aws_ec2_client_vpn_endpoint: self.aws_ec2_client_vpn_endpoint,
             code_repository: self.code_repository,
+            azure_resource: self.azure_resource,
         }
     }
 }

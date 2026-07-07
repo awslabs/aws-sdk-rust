@@ -2,10 +2,16 @@
 pub(crate) fn de_import<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Import>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,15 @@ where
                             );
                         }
                         "importStatistics" => {
-                            builder =
-                                builder.set_import_statistics(crate::protocol_serde::shape_import_statistics::de_import_statistics(tokens, _value)?);
+                            builder = builder.set_import_statistics(crate::protocol_serde::shape_import_statistics::de_import_statistics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "importFilter" => {
-                            builder = builder.set_import_filter(crate::protocol_serde::shape_import_filter::de_import_filter(tokens, _value)?);
+                            builder =
+                                builder.set_import_filter(crate::protocol_serde::shape_import_filter::de_import_filter(tokens, _value, depth + 1)?);
                         }
                         "creationTime" => {
                             builder = builder.set_creation_time(

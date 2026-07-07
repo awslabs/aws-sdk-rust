@@ -110,37 +110,41 @@ pub(crate) fn de_get_ml_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "createTime" => {
-                    builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "createTime" => {
+                        builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "defaultOutputLocation" => {
+                        builder = builder.set_default_output_location(
+                            crate::protocol_serde::shape_ml_output_configuration::de_ml_output_configuration(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "membershipIdentifier" => {
+                        builder = builder.set_membership_identifier(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "updateTime" => {
+                        builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "defaultOutputLocation" => {
-                    builder = builder.set_default_output_location(crate::protocol_serde::shape_ml_output_configuration::de_ml_output_configuration(
-                        tokens, _value,
-                    )?);
-                }
-                "membershipIdentifier" => {
-                    builder = builder.set_membership_identifier(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "updateTime" => {
-                    builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

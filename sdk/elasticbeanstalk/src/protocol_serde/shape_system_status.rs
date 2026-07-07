@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_system_status(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SystemStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SystemStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_system_status(
             s if s.matches("CPUUtilization") /* CPUUtilization com.amazonaws.elasticbeanstalk#SystemStatus$CPUUtilization */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cpu_utilization::de_cpu_utilization(&mut tag)
+                        crate::protocol_serde::shape_cpu_utilization::de_cpu_utilization(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_system_status(
             s if s.matches("LoadAverage") /* LoadAverage com.amazonaws.elasticbeanstalk#SystemStatus$LoadAverage */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_load_average::de_load_average(&mut tag)
+                        crate::protocol_serde::shape_load_average::de_load_average(&mut tag, depth + 1)
                         ?
                     )
                 ;

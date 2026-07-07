@@ -91,10 +91,11 @@ pub(crate) fn de_list_alarm_mute_rules(
     crate::operation::list_alarm_mute_rules::builders::ListAlarmMuteRulesOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_alarm_mute_rules::builders::ListAlarmMuteRulesOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_alarm_mute_rules::builders::ListAlarmMuteRulesOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -102,7 +103,7 @@ pub(crate) fn de_list_alarm_mute_rules(
         builder = match decoder.str()?.as_ref() {
             "AlarmMuteRuleSummaries" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_alarm_mute_rule_summaries(Some(
-                    crate::protocol_serde::shape_alarm_mute_rule_summaries::de_alarm_mute_rule_summaries(decoder)?,
+                    crate::protocol_serde::shape_alarm_mute_rule_summaries::de_alarm_mute_rule_summaries(decoder, depth + 1)?,
                 )))
             })?,
             "NextToken" => {
@@ -117,6 +118,8 @@ pub(crate) fn de_list_alarm_mute_rules(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -126,13 +129,13 @@ pub(crate) fn de_list_alarm_mute_rules(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

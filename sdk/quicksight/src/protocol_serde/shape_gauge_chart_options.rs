@@ -36,10 +36,16 @@ pub fn ser_gauge_chart_options(
 pub(crate) fn de_gauge_chart_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GaugeChartOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,20 +64,28 @@ where
                         }
                         "Comparison" => {
                             builder = builder.set_comparison(crate::protocol_serde::shape_comparison_configuration::de_comparison_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ArcAxis" => {
                             builder = builder.set_arc_axis(crate::protocol_serde::shape_arc_axis_configuration::de_arc_axis_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Arc" => {
-                            builder = builder.set_arc(crate::protocol_serde::shape_arc_configuration::de_arc_configuration(tokens, _value)?);
+                            builder = builder.set_arc(crate::protocol_serde::shape_arc_configuration::de_arc_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PrimaryValueFontConfiguration" => {
                             builder = builder.set_primary_value_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

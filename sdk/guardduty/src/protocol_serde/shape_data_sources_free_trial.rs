@@ -2,10 +2,16 @@
 pub(crate) fn de_data_sources_free_trial<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSourcesFreeTrial>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,41 +20,53 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "cloudTrail" => {
-                            builder = builder.set_cloud_trail(crate::protocol_serde::shape_data_source_free_trial::de_data_source_free_trial(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "cloudTrail" => {
+                                builder = builder.set_cloud_trail(crate::protocol_serde::shape_data_source_free_trial::de_data_source_free_trial(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "dnsLogs" => {
+                                builder = builder.set_dns_logs(crate::protocol_serde::shape_data_source_free_trial::de_data_source_free_trial(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "flowLogs" => {
+                                builder = builder.set_flow_logs(crate::protocol_serde::shape_data_source_free_trial::de_data_source_free_trial(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "s3Logs" => {
+                                builder = builder.set_s3_logs(crate::protocol_serde::shape_data_source_free_trial::de_data_source_free_trial(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "kubernetes" => {
+                                builder = builder.set_kubernetes(
+                                    crate::protocol_serde::shape_kubernetes_data_source_free_trial::de_kubernetes_data_source_free_trial(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "malwareProtection" => {
+                                builder = builder.set_malware_protection(
+                                    crate::protocol_serde::shape_malware_protection_data_source_free_trial::de_malware_protection_data_source_free_trial(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "dnsLogs" => {
-                            builder = builder.set_dns_logs(crate::protocol_serde::shape_data_source_free_trial::de_data_source_free_trial(
-                                tokens, _value,
-                            )?);
-                        }
-                        "flowLogs" => {
-                            builder = builder.set_flow_logs(crate::protocol_serde::shape_data_source_free_trial::de_data_source_free_trial(
-                                tokens, _value,
-                            )?);
-                        }
-                        "s3Logs" => {
-                            builder = builder.set_s3_logs(crate::protocol_serde::shape_data_source_free_trial::de_data_source_free_trial(
-                                tokens, _value,
-                            )?);
-                        }
-                        "kubernetes" => {
-                            builder = builder.set_kubernetes(
-                                crate::protocol_serde::shape_kubernetes_data_source_free_trial::de_kubernetes_data_source_free_trial(tokens, _value)?,
-                            );
-                        }
-                        "malwareProtection" => {
-                            builder = builder.set_malware_protection(
-                                crate::protocol_serde::shape_malware_protection_data_source_free_trial::de_malware_protection_data_source_free_trial(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -25,6 +25,7 @@ impl super::Client {
     ///   - [`logs_status(Option<LogsStatus>)`](crate::operation::get_trained_model::GetTrainedModelOutput::logs_status): <p>The logs status for the trained model.</p>
     ///   - [`logs_status_details(Option<String>)`](crate::operation::get_trained_model::GetTrainedModelOutput::logs_status_details): <p>Details about the logs status for the trained model.</p>
     ///   - [`training_container_image_digest(Option<String>)`](crate::operation::get_trained_model::GetTrainedModelOutput::training_container_image_digest): <p>Information about the training image container.</p>
+    ///   - [`ml_model_training_payer_account_id(Option<String>)`](crate::operation::get_trained_model::GetTrainedModelOutput::ml_model_training_payer_account_id): <p>The account ID of the member that is responsible for paying for model training costs.</p>
     ///   - [`create_time(DateTime)`](crate::operation::get_trained_model::GetTrainedModelOutput::create_time): <p>The time at which the trained model was created.</p>
     ///   - [`update_time(DateTime)`](crate::operation::get_trained_model::GetTrainedModelOutput::update_time): <p>The most recent time at which the trained model was updated.</p>
     ///   - [`hyperparameters(Option<HashMap::<String, String>>)`](crate::operation::get_trained_model::GetTrainedModelOutput::hyperparameters): <p>The hyperparameters that were used to create the trained model.</p>

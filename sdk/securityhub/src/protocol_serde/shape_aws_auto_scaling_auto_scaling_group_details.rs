@@ -60,10 +60,16 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_details(
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -81,7 +87,8 @@ where
                             );
                         }
                         "LoadBalancerNames" => {
-                            builder = builder.set_load_balancer_names(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_load_balancer_names(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "HealthCheckType" => {
                             builder = builder.set_health_check_type(
@@ -106,17 +113,17 @@ where
                         }
                         "MixedInstancesPolicy" => {
                             builder = builder.set_mixed_instances_policy(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "AvailabilityZones" => {
                             builder = builder.set_availability_zones(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_availability_zones_list::de_aws_auto_scaling_auto_scaling_group_availability_zones_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_availability_zones_list::de_aws_auto_scaling_auto_scaling_group_availability_zones_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "LaunchTemplate" => {
                             builder = builder.set_launch_template(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::de_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::de_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification(tokens, _value, depth + 1)?
                                 );
                         }
                         "CapacityRebalance" => {

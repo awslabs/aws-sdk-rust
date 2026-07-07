@@ -2,10 +2,16 @@
 pub(crate) fn de_instance_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InstanceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,31 +23,42 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EC2InstanceDetails" => {
                             builder = builder.set_ec2_instance_details(crate::protocol_serde::shape_ec2_instance_details::de_ec2_instance_details(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "RDSInstanceDetails" => {
                             builder = builder.set_rds_instance_details(crate::protocol_serde::shape_rds_instance_details::de_rds_instance_details(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "RedshiftInstanceDetails" => {
                             builder = builder.set_redshift_instance_details(
-                                crate::protocol_serde::shape_redshift_instance_details::de_redshift_instance_details(tokens, _value)?,
+                                crate::protocol_serde::shape_redshift_instance_details::de_redshift_instance_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "ElastiCacheInstanceDetails" => {
                             builder = builder.set_elasti_cache_instance_details(
-                                crate::protocol_serde::shape_elasti_cache_instance_details::de_elasti_cache_instance_details(tokens, _value)?,
+                                crate::protocol_serde::shape_elasti_cache_instance_details::de_elasti_cache_instance_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ESInstanceDetails" => {
-                            builder = builder
-                                .set_es_instance_details(crate::protocol_serde::shape_es_instance_details::de_es_instance_details(tokens, _value)?);
+                            builder = builder.set_es_instance_details(crate::protocol_serde::shape_es_instance_details::de_es_instance_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MemoryDBInstanceDetails" => {
                             builder = builder.set_memory_db_instance_details(
-                                crate::protocol_serde::shape_memory_db_instance_details::de_memory_db_instance_details(tokens, _value)?,
+                                crate::protocol_serde::shape_memory_db_instance_details::de_memory_db_instance_details(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

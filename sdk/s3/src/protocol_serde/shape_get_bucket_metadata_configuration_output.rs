@@ -25,5 +25,7 @@ pub fn de_get_bucket_metadata_configuration_result(
             "invalid root, expected GetBucketMetadataConfigurationResult got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_get_bucket_metadata_configuration_result::de_get_bucket_metadata_configuration_result(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_get_bucket_metadata_configuration_result::de_get_bucket_metadata_configuration_result(&mut decoder, depth + 1)
 }

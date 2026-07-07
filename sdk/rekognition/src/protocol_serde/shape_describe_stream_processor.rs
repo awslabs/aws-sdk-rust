@@ -157,6 +157,8 @@ pub(crate) fn de_describe_stream_processor(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -204,12 +206,16 @@ pub(crate) fn de_describe_stream_processor(
                 }
                 "Input" => {
                     builder = builder.set_input(crate::protocol_serde::shape_stream_processor_input::de_stream_processor_input(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Output" => {
                     builder = builder.set_output(crate::protocol_serde::shape_stream_processor_output::de_stream_processor_output(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "RoleArn" => {
@@ -221,12 +227,18 @@ pub(crate) fn de_describe_stream_processor(
                 }
                 "Settings" => {
                     builder = builder.set_settings(crate::protocol_serde::shape_stream_processor_settings::de_stream_processor_settings(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NotificationChannel" => {
                     builder = builder.set_notification_channel(
-                        crate::protocol_serde::shape_stream_processor_notification_channel::de_stream_processor_notification_channel(tokens, _value)?,
+                        crate::protocol_serde::shape_stream_processor_notification_channel::de_stream_processor_notification_channel(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "KmsKeyId" => {
@@ -237,13 +249,18 @@ pub(crate) fn de_describe_stream_processor(
                     );
                 }
                 "RegionsOfInterest" => {
-                    builder =
-                        builder.set_regions_of_interest(crate::protocol_serde::shape_regions_of_interest::de_regions_of_interest(tokens, _value)?);
+                    builder = builder.set_regions_of_interest(crate::protocol_serde::shape_regions_of_interest::de_regions_of_interest(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "DataSharingPreference" => {
                     builder = builder.set_data_sharing_preference(
                         crate::protocol_serde::shape_stream_processor_data_sharing_preference::de_stream_processor_data_sharing_preference(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

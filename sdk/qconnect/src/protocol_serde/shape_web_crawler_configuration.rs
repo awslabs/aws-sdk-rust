@@ -42,10 +42,16 @@ pub fn ser_web_crawler_configuration(
 pub(crate) fn de_web_crawler_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WebCrawlerConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -56,20 +62,32 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "urlConfiguration" => {
-                            builder =
-                                builder.set_url_configuration(crate::protocol_serde::shape_url_configuration::de_url_configuration(tokens, _value)?);
+                            builder = builder.set_url_configuration(crate::protocol_serde::shape_url_configuration::de_url_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "crawlerLimits" => {
-                            builder =
-                                builder.set_crawler_limits(crate::protocol_serde::shape_web_crawler_limits::de_web_crawler_limits(tokens, _value)?);
+                            builder = builder.set_crawler_limits(crate::protocol_serde::shape_web_crawler_limits::de_web_crawler_limits(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "inclusionFilters" => {
-                            builder =
-                                builder.set_inclusion_filters(crate::protocol_serde::shape_url_filter_list::de_url_filter_list(tokens, _value)?);
+                            builder = builder.set_inclusion_filters(crate::protocol_serde::shape_url_filter_list::de_url_filter_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "exclusionFilters" => {
-                            builder =
-                                builder.set_exclusion_filters(crate::protocol_serde::shape_url_filter_list::de_url_filter_list(tokens, _value)?);
+                            builder = builder.set_exclusion_filters(crate::protocol_serde::shape_url_filter_list::de_url_filter_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "scope" => {
                             builder = builder.set_scope(

@@ -39,10 +39,16 @@ pub fn ser_analysis_rule_list(
 pub(crate) fn de_analysis_rule_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AnalysisRuleList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,31 +57,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "joinColumns" => {
-                            builder = builder.set_join_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "joinColumns" => {
+                                builder = builder.set_join_columns(
+                                    crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "allowedJoinOperators" => {
+                                builder = builder.set_allowed_join_operators(
+                                    crate::protocol_serde::shape_join_operators_list::de_join_operators_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "listColumns" => {
+                                builder = builder.set_list_columns(
+                                    crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "additionalAnalyses" => {
+                                builder = builder.set_additional_analyses(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::AdditionalAnalyses::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "allowedJoinOperators" => {
-                            builder = builder.set_allowed_join_operators(crate::protocol_serde::shape_join_operators_list::de_join_operators_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "listColumns" => {
-                            builder = builder.set_list_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "additionalAnalyses" => {
-                            builder = builder.set_additional_analyses(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AdditionalAnalyses::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

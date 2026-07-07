@@ -131,6 +131,8 @@ pub(crate) fn de_get_ota_task_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -157,7 +159,7 @@ pub(crate) fn de_get_ota_task_configuration(
                     );
                 }
                 "PushConfig" => {
-                    builder = builder.set_push_config(crate::protocol_serde::shape_push_config::de_push_config(tokens, _value)?);
+                    builder = builder.set_push_config(crate::protocol_serde::shape_push_config::de_push_config(tokens, _value, depth + 1)?);
                 }
                 "TaskConfigurationId" => {
                     builder = builder.set_task_configuration_id(

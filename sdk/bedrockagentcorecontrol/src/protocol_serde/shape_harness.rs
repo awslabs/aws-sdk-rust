@@ -2,10 +2,16 @@
 pub(crate) fn de_harness<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Harness>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -43,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "harnessVersion" => {
+                            builder = builder.set_harness_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "executionRoleArn" => {
                             builder = builder.set_execution_role_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -64,53 +77,75 @@ where
                         }
                         "model" => {
                             builder = builder.set_model(crate::protocol_serde::shape_harness_model_configuration::de_harness_model_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "systemPrompt" => {
                             builder = builder.set_system_prompt(crate::protocol_serde::shape_harness_system_prompt::de_harness_system_prompt(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "tools" => {
-                            builder = builder.set_tools(crate::protocol_serde::shape_harness_tools::de_harness_tools(tokens, _value)?);
+                            builder = builder.set_tools(crate::protocol_serde::shape_harness_tools::de_harness_tools(tokens, _value, depth + 1)?);
                         }
                         "skills" => {
-                            builder = builder.set_skills(crate::protocol_serde::shape_harness_skills::de_harness_skills(tokens, _value)?);
+                            builder = builder.set_skills(crate::protocol_serde::shape_harness_skills::de_harness_skills(tokens, _value, depth + 1)?);
                         }
                         "allowedTools" => {
                             builder = builder.set_allowed_tools(crate::protocol_serde::shape_harness_allowed_tools::de_harness_allowed_tools(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "truncation" => {
                             builder = builder.set_truncation(
-                                crate::protocol_serde::shape_harness_truncation_configuration::de_harness_truncation_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_harness_truncation_configuration::de_harness_truncation_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_harness_environment_provider::de_harness_environment_provider(tokens, _value)?,
+                                crate::protocol_serde::shape_harness_environment_provider::de_harness_environment_provider(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "environmentArtifact" => {
                             builder = builder.set_environment_artifact(
-                                crate::protocol_serde::shape_harness_environment_artifact::de_harness_environment_artifact(tokens, _value)?,
+                                crate::protocol_serde::shape_harness_environment_artifact::de_harness_environment_artifact(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "environmentVariables" => {
                             builder = builder.set_environment_variables(
-                                crate::protocol_serde::shape_environment_variables_map::de_environment_variables_map(tokens, _value)?,
+                                crate::protocol_serde::shape_environment_variables_map::de_environment_variables_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "authorizerConfiguration" => {
                             builder = builder.set_authorizer_configuration(
-                                crate::protocol_serde::shape_authorizer_configuration::de_authorizer_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_authorizer_configuration::de_authorizer_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "memory" => {
                             builder = builder.set_memory(
-                                crate::protocol_serde::shape_harness_memory_configuration::de_harness_memory_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_harness_memory_configuration::de_harness_memory_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "maxIterations" => {

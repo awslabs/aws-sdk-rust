@@ -6,6 +6,8 @@
 pub struct ComputeScalingPolicy {
     /// <p>The minimum time (in minutes) that Batch keeps instances running in the compute environment after their jobs complete. For each instance, the delay period begins when the last job finishes. If no new jobs are placed on the instance during this delay, Batch terminates the instance once the delay expires.</p>
     /// <p>Valid Range: Minimum value of 20. Maximum value of 10080. Use 0 to unset and disable the scale down delay.</p><note>
+    /// <p>Idle instances retained during the scale-down delay period are billable at standard EC2 pricing.</p>
+    /// </note> <note>
     /// <p>The scale down delay does not apply to:</p>
     /// <ul>
     /// <li>
@@ -21,6 +23,8 @@ pub struct ComputeScalingPolicy {
 impl ComputeScalingPolicy {
     /// <p>The minimum time (in minutes) that Batch keeps instances running in the compute environment after their jobs complete. For each instance, the delay period begins when the last job finishes. If no new jobs are placed on the instance during this delay, Batch terminates the instance once the delay expires.</p>
     /// <p>Valid Range: Minimum value of 20. Maximum value of 10080. Use 0 to unset and disable the scale down delay.</p><note>
+    /// <p>Idle instances retained during the scale-down delay period are billable at standard EC2 pricing.</p>
+    /// </note> <note>
     /// <p>The scale down delay does not apply to:</p>
     /// <ul>
     /// <li>
@@ -51,6 +55,8 @@ pub struct ComputeScalingPolicyBuilder {
 impl ComputeScalingPolicyBuilder {
     /// <p>The minimum time (in minutes) that Batch keeps instances running in the compute environment after their jobs complete. For each instance, the delay period begins when the last job finishes. If no new jobs are placed on the instance during this delay, Batch terminates the instance once the delay expires.</p>
     /// <p>Valid Range: Minimum value of 20. Maximum value of 10080. Use 0 to unset and disable the scale down delay.</p><note>
+    /// <p>Idle instances retained during the scale-down delay period are billable at standard EC2 pricing.</p>
+    /// </note> <note>
     /// <p>The scale down delay does not apply to:</p>
     /// <ul>
     /// <li>
@@ -67,6 +73,8 @@ impl ComputeScalingPolicyBuilder {
     }
     /// <p>The minimum time (in minutes) that Batch keeps instances running in the compute environment after their jobs complete. For each instance, the delay period begins when the last job finishes. If no new jobs are placed on the instance during this delay, Batch terminates the instance once the delay expires.</p>
     /// <p>Valid Range: Minimum value of 20. Maximum value of 10080. Use 0 to unset and disable the scale down delay.</p><note>
+    /// <p>Idle instances retained during the scale-down delay period are billable at standard EC2 pricing.</p>
+    /// </note> <note>
     /// <p>The scale down delay does not apply to:</p>
     /// <ul>
     /// <li>
@@ -83,6 +91,8 @@ impl ComputeScalingPolicyBuilder {
     }
     /// <p>The minimum time (in minutes) that Batch keeps instances running in the compute environment after their jobs complete. For each instance, the delay period begins when the last job finishes. If no new jobs are placed on the instance during this delay, Batch terminates the instance once the delay expires.</p>
     /// <p>Valid Range: Minimum value of 20. Maximum value of 10080. Use 0 to unset and disable the scale down delay.</p><note>
+    /// <p>Idle instances retained during the scale-down delay period are billable at standard EC2 pricing.</p>
+    /// </note> <note>
     /// <p>The scale down delay does not apply to:</p>
     /// <ul>
     /// <li>

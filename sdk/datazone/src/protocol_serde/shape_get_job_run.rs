@@ -127,6 +127,8 @@ pub(crate) fn de_get_job_run(
 ) -> ::std::result::Result<crate::operation::get_job_run::builders::GetJobRunOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,7 +148,11 @@ pub(crate) fn de_get_job_run(
                     );
                 }
                 "details" => {
-                    builder = builder.set_details(crate::protocol_serde::shape_job_run_details::de_job_run_details(tokens, _value)?);
+                    builder = builder.set_details(crate::protocol_serde::shape_job_run_details::de_job_run_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "domainId" => {
                     builder = builder.set_domain_id(
@@ -162,7 +168,7 @@ pub(crate) fn de_get_job_run(
                     )?);
                 }
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_job_run_error::de_job_run_error(tokens, _value)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_job_run_error::de_job_run_error(tokens, _value, depth + 1)?);
                 }
                 "id" => {
                     builder = builder.set_id(

@@ -116,6 +116,8 @@ pub(crate) fn de_list_managed_job_templates(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -123,7 +125,11 @@ pub(crate) fn de_list_managed_job_templates(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "managedJobTemplates" => {
                     builder = builder.set_managed_job_templates(
-                        crate::protocol_serde::shape_managed_job_templates_summary_list::de_managed_job_templates_summary_list(tokens, _value)?,
+                        crate::protocol_serde::shape_managed_job_templates_summary_list::de_managed_job_templates_summary_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "nextToken" => {

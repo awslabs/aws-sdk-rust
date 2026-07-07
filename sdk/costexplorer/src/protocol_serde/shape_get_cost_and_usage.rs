@@ -164,6 +164,8 @@ pub(crate) fn de_get_cost_and_usage(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -177,14 +179,26 @@ pub(crate) fn de_get_cost_and_usage(
                     );
                 }
                 "GroupDefinitions" => {
-                    builder = builder.set_group_definitions(crate::protocol_serde::shape_group_definitions::de_group_definitions(tokens, _value)?);
+                    builder = builder.set_group_definitions(crate::protocol_serde::shape_group_definitions::de_group_definitions(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ResultsByTime" => {
-                    builder = builder.set_results_by_time(crate::protocol_serde::shape_results_by_time::de_results_by_time(tokens, _value)?);
+                    builder = builder.set_results_by_time(crate::protocol_serde::shape_results_by_time::de_results_by_time(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "DimensionValueAttributes" => {
                     builder = builder.set_dimension_value_attributes(
-                        crate::protocol_serde::shape_dimension_values_with_attributes_list::de_dimension_values_with_attributes_list(tokens, _value)?,
+                        crate::protocol_serde::shape_dimension_values_with_attributes_list::de_dimension_values_with_attributes_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

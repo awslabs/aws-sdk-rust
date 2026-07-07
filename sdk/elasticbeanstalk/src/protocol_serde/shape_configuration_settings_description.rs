@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_configuration_settings_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ConfigurationSettingsDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ConfigurationSettingsDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -130,7 +134,7 @@ pub fn de_configuration_settings_description(
             s if s.matches("OptionSettings") /* OptionSettings com.amazonaws.elasticbeanstalk#ConfigurationSettingsDescription$OptionSettings */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_configuration_option_settings_list::de_configuration_option_settings_list(&mut tag)
+                        crate::protocol_serde::shape_configuration_option_settings_list::de_configuration_option_settings_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

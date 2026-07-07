@@ -15,6 +15,10 @@
 ///     ResourcesTrendsStringField::AccountId => { /* ... */ },
 ///     ResourcesTrendsStringField::Region => { /* ... */ },
 ///     ResourcesTrendsStringField::ResourceCategory => { /* ... */ },
+///     ResourcesTrendsStringField::ResourceCloudProvider => { /* ... */ },
+///     ResourcesTrendsStringField::ResourceOwnerId => { /* ... */ },
+///     ResourcesTrendsStringField::ResourceOwnerOrganizationId => { /* ... */ },
+///     ResourcesTrendsStringField::ResourceRegion => { /* ... */ },
 ///     ResourcesTrendsStringField::ResourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +55,14 @@ pub enum ResourcesTrendsStringField {
     #[allow(missing_docs)] // documentation missing in model
     ResourceCategory,
     #[allow(missing_docs)] // documentation missing in model
+    ResourceCloudProvider,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceOwnerId,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceOwnerOrganizationId,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceRegion,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +74,10 @@ impl ::std::convert::From<&str> for ResourcesTrendsStringField {
             "account_id" => ResourcesTrendsStringField::AccountId,
             "region" => ResourcesTrendsStringField::Region,
             "resource_category" => ResourcesTrendsStringField::ResourceCategory,
+            "resource_cloud_provider" => ResourcesTrendsStringField::ResourceCloudProvider,
+            "resource_owner_id" => ResourcesTrendsStringField::ResourceOwnerId,
+            "resource_owner_organization_id" => ResourcesTrendsStringField::ResourceOwnerOrganizationId,
+            "resource_region" => ResourcesTrendsStringField::ResourceRegion,
             "resource_type" => ResourcesTrendsStringField::ResourceType,
             other => ResourcesTrendsStringField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +97,26 @@ impl ResourcesTrendsStringField {
             ResourcesTrendsStringField::AccountId => "account_id",
             ResourcesTrendsStringField::Region => "region",
             ResourcesTrendsStringField::ResourceCategory => "resource_category",
+            ResourcesTrendsStringField::ResourceCloudProvider => "resource_cloud_provider",
+            ResourcesTrendsStringField::ResourceOwnerId => "resource_owner_id",
+            ResourcesTrendsStringField::ResourceOwnerOrganizationId => "resource_owner_organization_id",
+            ResourcesTrendsStringField::ResourceRegion => "resource_region",
             ResourcesTrendsStringField::ResourceType => "resource_type",
             ResourcesTrendsStringField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["account_id", "region", "resource_category", "resource_type"]
+        &[
+            "account_id",
+            "region",
+            "resource_category",
+            "resource_cloud_provider",
+            "resource_owner_id",
+            "resource_owner_organization_id",
+            "resource_region",
+            "resource_type",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourcesTrendsStringField {
@@ -113,6 +142,10 @@ impl ::std::fmt::Display for ResourcesTrendsStringField {
             ResourcesTrendsStringField::AccountId => write!(f, "account_id"),
             ResourcesTrendsStringField::Region => write!(f, "region"),
             ResourcesTrendsStringField::ResourceCategory => write!(f, "resource_category"),
+            ResourcesTrendsStringField::ResourceCloudProvider => write!(f, "resource_cloud_provider"),
+            ResourcesTrendsStringField::ResourceOwnerId => write!(f, "resource_owner_id"),
+            ResourcesTrendsStringField::ResourceOwnerOrganizationId => write!(f, "resource_owner_organization_id"),
+            ResourcesTrendsStringField::ResourceRegion => write!(f, "resource_region"),
             ResourcesTrendsStringField::ResourceType => write!(f, "resource_type"),
             ResourcesTrendsStringField::Unknown(value) => write!(f, "{value}"),
         }

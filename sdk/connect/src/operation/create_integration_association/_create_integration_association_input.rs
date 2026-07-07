@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationAssociationInput {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of information to be ingested.</p>
     pub integration_type: ::std::option::Option<crate::types::IntegrationType>,
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
-    /// <p>When integrating with Amazon Web Services End User Messaging, the Amazon Connect and Amazon Web Services End User Messaging instances must be in the same account.</p>
+    /// <p>When integrating with Amazon Web Services End User Messaging, the Connect Customer and Amazon Web Services End User Messaging instances must be in the same account.</p>
     /// </note>
     pub integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
@@ -21,7 +21,7 @@ pub struct CreateIntegrationAssociationInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIntegrationAssociationInput {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -30,7 +30,7 @@ impl CreateIntegrationAssociationInput {
         self.integration_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
-    /// <p>When integrating with Amazon Web Services End User Messaging, the Amazon Connect and Amazon Web Services End User Messaging instances must be in the same account.</p>
+    /// <p>When integrating with Amazon Web Services End User Messaging, the Connect Customer and Amazon Web Services End User Messaging instances must be in the same account.</p>
     /// </note>
     pub fn integration_arn(&self) -> ::std::option::Option<&str> {
         self.integration_arn.as_deref()
@@ -72,18 +72,18 @@ pub struct CreateIntegrationAssociationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIntegrationAssociationInputBuilder {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
@@ -103,7 +103,7 @@ impl CreateIntegrationAssociationInputBuilder {
         &self.integration_type
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
-    /// <p>When integrating with Amazon Web Services End User Messaging, the Amazon Connect and Amazon Web Services End User Messaging instances must be in the same account.</p>
+    /// <p>When integrating with Amazon Web Services End User Messaging, the Connect Customer and Amazon Web Services End User Messaging instances must be in the same account.</p>
     /// </note>
     /// This field is required.
     pub fn integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,14 +111,14 @@ impl CreateIntegrationAssociationInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
-    /// <p>When integrating with Amazon Web Services End User Messaging, the Amazon Connect and Amazon Web Services End User Messaging instances must be in the same account.</p>
+    /// <p>When integrating with Amazon Web Services End User Messaging, the Connect Customer and Amazon Web Services End User Messaging instances must be in the same account.</p>
     /// </note>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
-    /// <p>When integrating with Amazon Web Services End User Messaging, the Amazon Connect and Amazon Web Services End User Messaging instances must be in the same account.</p>
+    /// <p>When integrating with Amazon Web Services End User Messaging, the Connect Customer and Amazon Web Services End User Messaging instances must be in the same account.</p>
     /// </note>
     pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_arn

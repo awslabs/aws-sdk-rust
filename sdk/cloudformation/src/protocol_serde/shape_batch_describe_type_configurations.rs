@@ -92,6 +92,8 @@ pub fn de_batch_describe_type_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("BatchDescribeTypeConfigurationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected BatchDescribeTypeConfigurationsResponse got {start_el:?}"
@@ -109,7 +111,7 @@ pub fn de_batch_describe_type_configurations(
             s if s.matches("Errors") /* Errors com.amazonaws.cloudformation.synthetic#BatchDescribeTypeConfigurationsOutput$Errors */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_batch_describe_type_configurations_errors::de_batch_describe_type_configurations_errors(&mut tag)
+                        crate::protocol_serde::shape_batch_describe_type_configurations_errors::de_batch_describe_type_configurations_errors(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -119,7 +121,7 @@ pub fn de_batch_describe_type_configurations(
             s if s.matches("UnprocessedTypeConfigurations") /* UnprocessedTypeConfigurations com.amazonaws.cloudformation.synthetic#BatchDescribeTypeConfigurationsOutput$UnprocessedTypeConfigurations */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_unprocessed_type_configurations::de_unprocessed_type_configurations(&mut tag)
+                        crate::protocol_serde::shape_unprocessed_type_configurations::de_unprocessed_type_configurations(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -129,7 +131,7 @@ pub fn de_batch_describe_type_configurations(
             s if s.matches("TypeConfigurations") /* TypeConfigurations com.amazonaws.cloudformation.synthetic#BatchDescribeTypeConfigurationsOutput$TypeConfigurations */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_type_configuration_details_list::de_type_configuration_details_list(&mut tag)
+                        crate::protocol_serde::shape_type_configuration_details_list::de_type_configuration_details_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

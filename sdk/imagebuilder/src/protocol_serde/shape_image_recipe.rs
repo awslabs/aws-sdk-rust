@@ -2,10 +2,16 @@
 pub(crate) fn de_image_recipe<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ImageRecipe>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,7 +72,11 @@ where
                         }
                         "components" => {
                             builder = builder.set_components(
-                                crate::protocol_serde::shape_component_configuration_list::de_component_configuration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_component_configuration_list::de_component_configuration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "parentImage" => {
@@ -78,7 +88,11 @@ where
                         }
                         "blockDeviceMappings" => {
                             builder = builder.set_block_device_mappings(
-                                crate::protocol_serde::shape_instance_block_device_mappings::de_instance_block_device_mappings(tokens, _value)?,
+                                crate::protocol_serde::shape_instance_block_device_mappings::de_instance_block_device_mappings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "dateCreated" => {
@@ -89,7 +103,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "workingDirectory" => {
                             builder = builder.set_working_directory(
@@ -100,11 +114,22 @@ where
                         }
                         "additionalInstanceConfiguration" => {
                             builder = builder.set_additional_instance_configuration(
-                                crate::protocol_serde::shape_additional_instance_configuration::de_additional_instance_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_additional_instance_configuration::de_additional_instance_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "amiTags" => {
-                            builder = builder.set_ami_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_ami_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
+                        }
+                        "amiWatermarks" => {
+                            builder = builder.set_ami_watermarks(crate::protocol_serde::shape_ami_watermarks_list::de_ami_watermarks_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

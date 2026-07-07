@@ -16,7 +16,11 @@ pub fn ser_s3_set_object_legal_hold_operation(
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_set_object_legal_hold_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::S3SetObjectLegalHoldOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::S3SetObjectLegalHoldOperation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_s3_set_object_legal_hold_operation(
             s if s.matches("LegalHold") /* LegalHold com.amazonaws.s3control#S3SetObjectLegalHoldOperation$LegalHold */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_s3_object_lock_legal_hold::de_s3_object_lock_legal_hold(&mut tag)
+                        crate::protocol_serde::shape_s3_object_lock_legal_hold::de_s3_object_lock_legal_hold(&mut tag, depth + 1)
                         ?
                     )
                 ;

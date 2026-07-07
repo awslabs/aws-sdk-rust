@@ -2,10 +2,16 @@
 pub(crate) fn de_result_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResultItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,12 +37,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "S3ResultItem" => Some(crate::types::ResultItem::S3ResultItem(
-                            crate::protocol_serde::shape_s3_result_item::de_s3_result_item(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_result_item::de_s3_result_item(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3ResultItem' cannot be null")
                             })?,
                         )),
                         "EBSResultItem" => Some(crate::types::ResultItem::EbsResultItem(
-                            crate::protocol_serde::shape_ebs_result_item::de_ebs_result_item(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ebs_result_item::de_ebs_result_item(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EBSResultItem' cannot be null")
                             })?,
                         )),

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_import_image_task(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ImportImageTask, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ImportImageTask::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -142,7 +146,7 @@ pub fn de_import_image_task(
             s if s.matches("snapshotDetailSet") /* SnapshotDetails com.amazonaws.ec2#ImportImageTask$SnapshotDetails */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_detail_list::de_snapshot_detail_list(&mut tag)
+                        crate::protocol_serde::shape_snapshot_detail_list::de_snapshot_detail_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -178,7 +182,7 @@ pub fn de_import_image_task(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ImportImageTask$Tags */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -188,7 +192,7 @@ pub fn de_import_image_task(
             s if s.matches("licenseSpecifications") /* LicenseSpecifications com.amazonaws.ec2#ImportImageTask$LicenseSpecifications */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_import_image_license_specification_list_response::de_import_image_license_specification_list_response(&mut tag)
+                        crate::protocol_serde::shape_import_image_license_specification_list_response::de_import_image_license_specification_list_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

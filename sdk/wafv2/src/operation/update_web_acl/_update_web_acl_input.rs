@@ -58,6 +58,8 @@ pub struct UpdateWebAclInput {
     /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
     /// </ul>
     pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl UpdateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -153,6 +155,10 @@ impl UpdateWebAclInput {
     pub fn application_config(&self) -> ::std::option::Option<&crate::types::ApplicationConfig> {
         self.application_config.as_ref()
     }
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub fn monetization_config(&self) -> ::std::option::Option<&crate::types::MonetizationConfig> {
+        self.monetization_config.as_ref()
+    }
 }
 impl UpdateWebAclInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
@@ -181,6 +187,7 @@ pub struct UpdateWebAclInputBuilder {
     pub(crate) association_config: ::std::option::Option<crate::types::AssociationConfig>,
     pub(crate) on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
     pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
+    pub(crate) monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl UpdateWebAclInputBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -505,6 +512,20 @@ impl UpdateWebAclInputBuilder {
     pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
         &self.application_config
     }
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub fn monetization_config(mut self, input: crate::types::MonetizationConfig) -> Self {
+        self.monetization_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub fn set_monetization_config(mut self, input: ::std::option::Option<crate::types::MonetizationConfig>) -> Self {
+        self.monetization_config = input;
+        self
+    }
+    /// <p>The monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the <code>Monetize</code> action.</p>
+    pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
+        &self.monetization_config
+    }
     /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
     pub fn build(
         self,
@@ -526,6 +547,7 @@ impl UpdateWebAclInputBuilder {
             association_config: self.association_config,
             on_source_d_do_s_protection_config: self.on_source_d_do_s_protection_config,
             application_config: self.application_config,
+            monetization_config: self.monetization_config,
         })
     }
 }

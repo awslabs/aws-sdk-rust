@@ -2,10 +2,16 @@
 pub(crate) fn de_authentication_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AuthenticationDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,15 +23,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "providers" => {
                             builder = builder.set_providers(crate::protocol_serde::shape_authentication_providers::de_authentication_providers(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "saml" => {
-                            builder = builder.set_saml(crate::protocol_serde::shape_saml_authentication::de_saml_authentication(tokens, _value)?);
+                            builder = builder.set_saml(crate::protocol_serde::shape_saml_authentication::de_saml_authentication(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "awsSso" => {
                             builder = builder.set_aws_sso(crate::protocol_serde::shape_aws_sso_authentication::de_aws_sso_authentication(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

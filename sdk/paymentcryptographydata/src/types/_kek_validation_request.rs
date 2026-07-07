@@ -6,11 +6,17 @@
 pub struct KekValidationRequest {
     /// <p>The key derivation algorithm to use for generating a KEK validation request.</p>
     pub derive_key_algorithm: crate::types::SymmetricKeyAlgorithm,
+    /// <p>The maximum length of the random key to generate for a KEK validation request.</p>
+    pub random_key_max_length: ::std::option::Option<crate::types::RandomKeyMaxLength>,
 }
 impl KekValidationRequest {
     /// <p>The key derivation algorithm to use for generating a KEK validation request.</p>
     pub fn derive_key_algorithm(&self) -> &crate::types::SymmetricKeyAlgorithm {
         &self.derive_key_algorithm
+    }
+    /// <p>The maximum length of the random key to generate for a KEK validation request.</p>
+    pub fn random_key_max_length(&self) -> ::std::option::Option<&crate::types::RandomKeyMaxLength> {
+        self.random_key_max_length.as_ref()
     }
 }
 impl KekValidationRequest {
@@ -25,6 +31,7 @@ impl KekValidationRequest {
 #[non_exhaustive]
 pub struct KekValidationRequestBuilder {
     pub(crate) derive_key_algorithm: ::std::option::Option<crate::types::SymmetricKeyAlgorithm>,
+    pub(crate) random_key_max_length: ::std::option::Option<crate::types::RandomKeyMaxLength>,
 }
 impl KekValidationRequestBuilder {
     /// <p>The key derivation algorithm to use for generating a KEK validation request.</p>
@@ -42,6 +49,20 @@ impl KekValidationRequestBuilder {
     pub fn get_derive_key_algorithm(&self) -> &::std::option::Option<crate::types::SymmetricKeyAlgorithm> {
         &self.derive_key_algorithm
     }
+    /// <p>The maximum length of the random key to generate for a KEK validation request.</p>
+    pub fn random_key_max_length(mut self, input: crate::types::RandomKeyMaxLength) -> Self {
+        self.random_key_max_length = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum length of the random key to generate for a KEK validation request.</p>
+    pub fn set_random_key_max_length(mut self, input: ::std::option::Option<crate::types::RandomKeyMaxLength>) -> Self {
+        self.random_key_max_length = input;
+        self
+    }
+    /// <p>The maximum length of the random key to generate for a KEK validation request.</p>
+    pub fn get_random_key_max_length(&self) -> &::std::option::Option<crate::types::RandomKeyMaxLength> {
+        &self.random_key_max_length
+    }
     /// Consumes the builder and constructs a [`KekValidationRequest`](crate::types::KekValidationRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`derive_key_algorithm`](crate::types::builders::KekValidationRequestBuilder::derive_key_algorithm)
@@ -53,6 +74,7 @@ impl KekValidationRequestBuilder {
                     "derive_key_algorithm was not specified but it is required when building KekValidationRequest",
                 )
             })?,
+            random_key_max_length: self.random_key_max_length,
         })
     }
 }

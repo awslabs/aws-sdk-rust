@@ -53,6 +53,8 @@ pub fn de_reject_transit_gateway_peering_attachment(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RejectTransitGatewayPeeringAttachmentResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RejectTransitGatewayPeeringAttachmentResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_reject_transit_gateway_peering_attachment(
             s if s.matches("transitGatewayPeeringAttachment") /* TransitGatewayPeeringAttachment com.amazonaws.ec2.synthetic#RejectTransitGatewayPeeringAttachmentOutput$TransitGatewayPeeringAttachment */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_peering_attachment::de_transit_gateway_peering_attachment(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_peering_attachment::de_transit_gateway_peering_attachment(&mut tag, depth + 1)
                         ?
                     )
                 ;

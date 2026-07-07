@@ -56,25 +56,31 @@ pub(crate) fn de_batch_describe_model_package(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ModelPackageSummaries" => {
-                    builder = builder.set_model_package_summaries(crate::protocol_serde::shape_model_package_summaries::de_model_package_summaries(
-                        tokens, _value,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ModelPackageSummaries" => {
+                        builder = builder.set_model_package_summaries(
+                            crate::protocol_serde::shape_model_package_summaries::de_model_package_summaries(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "BatchDescribeModelPackageErrorMap" => {
+                        builder = builder.set_batch_describe_model_package_error_map(
+                            crate::protocol_serde::shape_batch_describe_model_package_error_map::de_batch_describe_model_package_error_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "BatchDescribeModelPackageErrorMap" => {
-                    builder = builder.set_batch_describe_model_package_error_map(
-                        crate::protocol_serde::shape_batch_describe_model_package_error_map::de_batch_describe_model_package_error_map(
-                            tokens, _value,
-                        )?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

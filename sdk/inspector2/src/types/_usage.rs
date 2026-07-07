@@ -12,6 +12,8 @@ pub struct Usage {
     pub estimated_monthly_cost: f64,
     /// <p>The currency type used when calculating usage data.</p>
     pub currency: ::std::option::Option<crate::types::Currency>,
+    /// <p>The cloud provider associated with the usage information.</p>
+    pub cloud_provider: ::std::option::Option<crate::types::CloudProvider>,
 }
 impl Usage {
     /// <p>The type scan.</p>
@@ -30,6 +32,10 @@ impl Usage {
     pub fn currency(&self) -> ::std::option::Option<&crate::types::Currency> {
         self.currency.as_ref()
     }
+    /// <p>The cloud provider associated with the usage information.</p>
+    pub fn cloud_provider(&self) -> ::std::option::Option<&crate::types::CloudProvider> {
+        self.cloud_provider.as_ref()
+    }
 }
 impl Usage {
     /// Creates a new builder-style object to manufacture [`Usage`](crate::types::Usage).
@@ -46,6 +52,7 @@ pub struct UsageBuilder {
     pub(crate) total: ::std::option::Option<f64>,
     pub(crate) estimated_monthly_cost: ::std::option::Option<f64>,
     pub(crate) currency: ::std::option::Option<crate::types::Currency>,
+    pub(crate) cloud_provider: ::std::option::Option<crate::types::CloudProvider>,
 }
 impl UsageBuilder {
     /// <p>The type scan.</p>
@@ -104,6 +111,20 @@ impl UsageBuilder {
     pub fn get_currency(&self) -> &::std::option::Option<crate::types::Currency> {
         &self.currency
     }
+    /// <p>The cloud provider associated with the usage information.</p>
+    pub fn cloud_provider(mut self, input: crate::types::CloudProvider) -> Self {
+        self.cloud_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cloud provider associated with the usage information.</p>
+    pub fn set_cloud_provider(mut self, input: ::std::option::Option<crate::types::CloudProvider>) -> Self {
+        self.cloud_provider = input;
+        self
+    }
+    /// <p>The cloud provider associated with the usage information.</p>
+    pub fn get_cloud_provider(&self) -> &::std::option::Option<crate::types::CloudProvider> {
+        &self.cloud_provider
+    }
     /// Consumes the builder and constructs a [`Usage`](crate::types::Usage).
     pub fn build(self) -> crate::types::Usage {
         crate::types::Usage {
@@ -111,6 +132,7 @@ impl UsageBuilder {
             total: self.total.unwrap_or_default(),
             estimated_monthly_cost: self.estimated_monthly_cost.unwrap_or_default(),
             currency: self.currency,
+            cloud_provider: self.cloud_provider,
         }
     }
 }

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_proxy_target(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbProxyTarget, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbProxyTarget::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -105,7 +109,7 @@ pub fn de_db_proxy_target(
             s if s.matches("TargetHealth") /* TargetHealth com.amazonaws.rds#DBProxyTarget$TargetHealth */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_target_health::de_target_health(&mut tag)
+                        crate::protocol_serde::shape_target_health::de_target_health(&mut tag, depth + 1)
                         ?
                     )
                 ;

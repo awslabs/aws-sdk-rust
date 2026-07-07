@@ -2,10 +2,16 @@
 pub(crate) fn de_user<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::User>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,11 +43,18 @@ where
                             );
                         }
                         "IdentityInfo" => {
-                            builder =
-                                builder.set_identity_info(crate::protocol_serde::shape_user_identity_info::de_user_identity_info(tokens, _value)?);
+                            builder = builder.set_identity_info(crate::protocol_serde::shape_user_identity_info::de_user_identity_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PhoneConfig" => {
-                            builder = builder.set_phone_config(crate::protocol_serde::shape_user_phone_config::de_user_phone_config(tokens, _value)?);
+                            builder = builder.set_phone_config(crate::protocol_serde::shape_user_phone_config::de_user_phone_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DirectoryUserId" => {
                             builder = builder.set_directory_user_id(
@@ -52,7 +65,9 @@ where
                         }
                         "SecurityProfileIds" => {
                             builder = builder.set_security_profile_ids(crate::protocol_serde::shape_security_profile_ids::de_security_profile_ids(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "RoutingProfileId" => {
@@ -70,30 +85,39 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "AutoAcceptConfigs" => {
-                            builder = builder
-                                .set_auto_accept_configs(crate::protocol_serde::shape_auto_accept_configs::de_auto_accept_configs(tokens, _value)?);
+                            builder = builder.set_auto_accept_configs(crate::protocol_serde::shape_auto_accept_configs::de_auto_accept_configs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AfterContactWorkConfigs" => {
                             builder = builder.set_after_contact_work_configs(
-                                crate::protocol_serde::shape_after_contact_work_configs::de_after_contact_work_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_after_contact_work_configs::de_after_contact_work_configs(tokens, _value, depth + 1)?,
                             );
                         }
                         "PhoneNumberConfigs" => {
                             builder = builder.set_phone_number_configs(crate::protocol_serde::shape_phone_number_configs::de_phone_number_configs(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "PersistentConnectionConfigs" => {
                             builder = builder.set_persistent_connection_configs(
-                                crate::protocol_serde::shape_persistent_connection_configs::de_persistent_connection_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_persistent_connection_configs::de_persistent_connection_configs(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "VoiceEnhancementConfigs" => {
                             builder = builder.set_voice_enhancement_configs(
-                                crate::protocol_serde::shape_voice_enhancement_configs::de_voice_enhancement_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_voice_enhancement_configs::de_voice_enhancement_configs(tokens, _value, depth + 1)?,
                             );
                         }
                         "LastModifiedTime" => {

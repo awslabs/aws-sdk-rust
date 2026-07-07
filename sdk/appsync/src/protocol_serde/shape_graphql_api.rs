@@ -2,10 +2,16 @@
 pub(crate) fn de_graphql_api<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GraphqlApi>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,15 +43,18 @@ where
                             );
                         }
                         "logConfig" => {
-                            builder = builder.set_log_config(crate::protocol_serde::shape_log_config::de_log_config(tokens, _value)?);
+                            builder = builder.set_log_config(crate::protocol_serde::shape_log_config::de_log_config(tokens, _value, depth + 1)?);
                         }
                         "userPoolConfig" => {
-                            builder =
-                                builder.set_user_pool_config(crate::protocol_serde::shape_user_pool_config::de_user_pool_config(tokens, _value)?);
+                            builder = builder.set_user_pool_config(crate::protocol_serde::shape_user_pool_config::de_user_pool_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "openIDConnectConfig" => {
                             builder = builder.set_open_id_connect_config(
-                                crate::protocol_serde::shape_open_id_connect_config::de_open_id_connect_config(tokens, _value)?,
+                                crate::protocol_serde::shape_open_id_connect_config::de_open_id_connect_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "arn" => {
@@ -57,16 +66,20 @@ where
                         }
                         "uris" => {
                             builder = builder.set_uris(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "additionalAuthenticationProviders" => {
                             builder = builder.set_additional_authentication_providers(
                                 crate::protocol_serde::shape_additional_authentication_providers::de_additional_authentication_providers(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -82,12 +95,14 @@ where
                         }
                         "lambdaAuthorizerConfig" => {
                             builder = builder.set_lambda_authorizer_config(
-                                crate::protocol_serde::shape_lambda_authorizer_config::de_lambda_authorizer_config(tokens, _value)?,
+                                crate::protocol_serde::shape_lambda_authorizer_config::de_lambda_authorizer_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "dns" => {
                             builder = builder.set_dns(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "visibility" => {
@@ -148,7 +163,7 @@ where
                         }
                         "enhancedMetricsConfig" => {
                             builder = builder.set_enhanced_metrics_config(
-                                crate::protocol_serde::shape_enhanced_metrics_config::de_enhanced_metrics_config(tokens, _value)?,
+                                crate::protocol_serde::shape_enhanced_metrics_config::de_enhanced_metrics_config(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

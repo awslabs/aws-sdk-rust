@@ -7,6 +7,8 @@ pub struct GetPromptInput {
     pub prompt_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub prompt_version: ::std::option::Option<::std::string::String>,
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetPromptInput {
     /// <p>The unique identifier of the prompt.</p>
@@ -16,6 +18,10 @@ impl GetPromptInput {
     /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub fn prompt_version(&self) -> ::std::option::Option<&str> {
         self.prompt_version.as_deref()
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
     }
 }
 impl GetPromptInput {
@@ -31,6 +37,7 @@ impl GetPromptInput {
 pub struct GetPromptInputBuilder {
     pub(crate) prompt_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_version: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetPromptInputBuilder {
     /// <p>The unique identifier of the prompt.</p>
@@ -62,11 +69,26 @@ impl GetPromptInputBuilder {
     pub fn get_prompt_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt_version
     }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`GetPromptInput`](crate::operation::get_prompt::GetPromptInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_prompt::GetPromptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_prompt::GetPromptInput {
             prompt_identifier: self.prompt_identifier,
             prompt_version: self.prompt_version,
+            included_data: self.included_data,
         })
     }
 }

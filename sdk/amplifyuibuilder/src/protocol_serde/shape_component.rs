@@ -4,7 +4,9 @@ pub(crate) fn de_component_payload(
 ) -> ::std::result::Result<crate::types::Component, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::protocol_serde::shape_component::de_component(tokens, _value)?
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    let result = crate::protocol_serde::shape_component::de_component(tokens, _value, depth + 1)?
         .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -17,10 +19,16 @@ pub(crate) fn de_component_payload(
 pub(crate) fn de_component<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Component>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -74,29 +82,48 @@ where
                         }
                         "properties" => {
                             builder = builder.set_properties(crate::protocol_serde::shape_component_properties::de_component_properties(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "children" => {
                             builder = builder.set_children(crate::protocol_serde::shape_component_child_list::de_component_child_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "variants" => {
-                            builder = builder.set_variants(crate::protocol_serde::shape_component_variants::de_component_variants(tokens, _value)?);
+                            builder = builder.set_variants(crate::protocol_serde::shape_component_variants::de_component_variants(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "overrides" => {
-                            builder =
-                                builder.set_overrides(crate::protocol_serde::shape_component_overrides::de_component_overrides(tokens, _value)?);
+                            builder = builder.set_overrides(crate::protocol_serde::shape_component_overrides::de_component_overrides(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "bindingProperties" => {
                             builder = builder.set_binding_properties(
-                                crate::protocol_serde::shape_component_binding_properties::de_component_binding_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_component_binding_properties::de_component_binding_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "collectionProperties" => {
                             builder = builder.set_collection_properties(
-                                crate::protocol_serde::shape_component_collection_properties::de_component_collection_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_component_collection_properties::de_component_collection_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "createdAt" => {
@@ -112,10 +139,14 @@ where
                             )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "events" => {
-                            builder = builder.set_events(crate::protocol_serde::shape_component_events::de_component_events(tokens, _value)?);
+                            builder = builder.set_events(crate::protocol_serde::shape_component_events::de_component_events(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "schemaVersion" => {
                             builder = builder.set_schema_version(

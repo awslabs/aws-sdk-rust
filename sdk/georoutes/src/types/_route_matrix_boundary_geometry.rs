@@ -4,31 +4,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixBoundaryGeometry {
-    /// <p>Provides the circle that was used while calculating the route.</p>
+    /// <p><code>AutoCircle</code> requests the route matrix service to define a <code>Circle</code> boundary that best attempts to include most waypoints (<code>Origins</code> and <code>Destinations</code>) using the <code>AutoCircle</code> settings. Any waypoints outside of the auto-defined <code>Circle</code> boundary will be considered out of the routing boundary, which results in a route matrix entry error.</p>
+    /// <p><code>AutoCircle</code> is only used in the request to configure a <code>Circle</code> for the route calculation. The derived <code>Circle</code> will also be provided in the response.</p>
     pub auto_circle: ::std::option::Option<crate::types::RouteMatrixAutoCircle>,
-    /// <p>Geometry defined as a circle. When request routing boundary was set as <code>AutoCircle</code>, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
+    /// <p>Geometry defined as a circle. The circle defines the routing boundary area. Any waypoints outside the circle will result in a route matrix entry error.</p>
+    /// <p>You can specify a <code>Circle</code> directly in the request, or it will be auto-derived when <code>AutoCircle</code> is used. When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     pub circle: ::std::option::Option<crate::types::Circle>,
     /// <p>Geometry defined as a bounding box. The first pair represents the X and Y coordinates (longitude and latitude,) of the southwest corner of the bounding box; the second pair represents the X and Y coordinates (longitude and latitude) of the northeast corner.</p>
+    /// <p>Diagonal distance of the bounding box must be less than or equal to 400,000 meters.</p>
     pub bounding_box: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p>Geometry defined as a polygon with only one linear ring.</p>
+    /// <p>Geometry defined as a polygon with only one linear ring. A linear ring is a closed sequence of four or more coordinates. The first and last coordinates are the same, forming a closed boundary. Each coordinate is a position in \[longitude, latitude\] format.</p>
+    /// <p>The structure is an array of linear rings (only 1 allowed). Each linear ring is an array of coordinates (minimum 4), and each coordinate is an array of two doubles \[longitude, latitude\].</p>
+    /// <p>Maximum distance between any two vertices must be less than or equal to 400,000 meters.</p>
     pub polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
 }
 impl RouteMatrixBoundaryGeometry {
-    /// <p>Provides the circle that was used while calculating the route.</p>
+    /// <p><code>AutoCircle</code> requests the route matrix service to define a <code>Circle</code> boundary that best attempts to include most waypoints (<code>Origins</code> and <code>Destinations</code>) using the <code>AutoCircle</code> settings. Any waypoints outside of the auto-defined <code>Circle</code> boundary will be considered out of the routing boundary, which results in a route matrix entry error.</p>
+    /// <p><code>AutoCircle</code> is only used in the request to configure a <code>Circle</code> for the route calculation. The derived <code>Circle</code> will also be provided in the response.</p>
     pub fn auto_circle(&self) -> ::std::option::Option<&crate::types::RouteMatrixAutoCircle> {
         self.auto_circle.as_ref()
     }
-    /// <p>Geometry defined as a circle. When request routing boundary was set as <code>AutoCircle</code>, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
+    /// <p>Geometry defined as a circle. The circle defines the routing boundary area. Any waypoints outside the circle will result in a route matrix entry error.</p>
+    /// <p>You can specify a <code>Circle</code> directly in the request, or it will be auto-derived when <code>AutoCircle</code> is used. When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     pub fn circle(&self) -> ::std::option::Option<&crate::types::Circle> {
         self.circle.as_ref()
     }
     /// <p>Geometry defined as a bounding box. The first pair represents the X and Y coordinates (longitude and latitude,) of the southwest corner of the bounding box; the second pair represents the X and Y coordinates (longitude and latitude) of the northeast corner.</p>
+    /// <p>Diagonal distance of the bounding box must be less than or equal to 400,000 meters.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bounding_box.is_none()`.
     pub fn bounding_box(&self) -> &[f64] {
         self.bounding_box.as_deref().unwrap_or_default()
     }
-    /// <p>Geometry defined as a polygon with only one linear ring.</p>
+    /// <p>Geometry defined as a polygon with only one linear ring. A linear ring is a closed sequence of four or more coordinates. The first and last coordinates are the same, forming a closed boundary. Each coordinate is a position in \[longitude, latitude\] format.</p>
+    /// <p>The structure is an array of linear rings (only 1 allowed). Each linear ring is an array of coordinates (minimum 4), and each coordinate is an array of two doubles \[longitude, latitude\].</p>
+    /// <p>Maximum distance between any two vertices must be less than or equal to 400,000 meters.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
     pub fn polygon(&self) -> &[::std::vec::Vec<::std::vec::Vec<f64>>] {
@@ -62,31 +72,37 @@ pub struct RouteMatrixBoundaryGeometryBuilder {
     pub(crate) polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
 }
 impl RouteMatrixBoundaryGeometryBuilder {
-    /// <p>Provides the circle that was used while calculating the route.</p>
+    /// <p><code>AutoCircle</code> requests the route matrix service to define a <code>Circle</code> boundary that best attempts to include most waypoints (<code>Origins</code> and <code>Destinations</code>) using the <code>AutoCircle</code> settings. Any waypoints outside of the auto-defined <code>Circle</code> boundary will be considered out of the routing boundary, which results in a route matrix entry error.</p>
+    /// <p><code>AutoCircle</code> is only used in the request to configure a <code>Circle</code> for the route calculation. The derived <code>Circle</code> will also be provided in the response.</p>
     pub fn auto_circle(mut self, input: crate::types::RouteMatrixAutoCircle) -> Self {
         self.auto_circle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the circle that was used while calculating the route.</p>
+    /// <p><code>AutoCircle</code> requests the route matrix service to define a <code>Circle</code> boundary that best attempts to include most waypoints (<code>Origins</code> and <code>Destinations</code>) using the <code>AutoCircle</code> settings. Any waypoints outside of the auto-defined <code>Circle</code> boundary will be considered out of the routing boundary, which results in a route matrix entry error.</p>
+    /// <p><code>AutoCircle</code> is only used in the request to configure a <code>Circle</code> for the route calculation. The derived <code>Circle</code> will also be provided in the response.</p>
     pub fn set_auto_circle(mut self, input: ::std::option::Option<crate::types::RouteMatrixAutoCircle>) -> Self {
         self.auto_circle = input;
         self
     }
-    /// <p>Provides the circle that was used while calculating the route.</p>
+    /// <p><code>AutoCircle</code> requests the route matrix service to define a <code>Circle</code> boundary that best attempts to include most waypoints (<code>Origins</code> and <code>Destinations</code>) using the <code>AutoCircle</code> settings. Any waypoints outside of the auto-defined <code>Circle</code> boundary will be considered out of the routing boundary, which results in a route matrix entry error.</p>
+    /// <p><code>AutoCircle</code> is only used in the request to configure a <code>Circle</code> for the route calculation. The derived <code>Circle</code> will also be provided in the response.</p>
     pub fn get_auto_circle(&self) -> &::std::option::Option<crate::types::RouteMatrixAutoCircle> {
         &self.auto_circle
     }
-    /// <p>Geometry defined as a circle. When request routing boundary was set as <code>AutoCircle</code>, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
+    /// <p>Geometry defined as a circle. The circle defines the routing boundary area. Any waypoints outside the circle will result in a route matrix entry error.</p>
+    /// <p>You can specify a <code>Circle</code> directly in the request, or it will be auto-derived when <code>AutoCircle</code> is used. When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     pub fn circle(mut self, input: crate::types::Circle) -> Self {
         self.circle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Geometry defined as a circle. When request routing boundary was set as <code>AutoCircle</code>, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
+    /// <p>Geometry defined as a circle. The circle defines the routing boundary area. Any waypoints outside the circle will result in a route matrix entry error.</p>
+    /// <p>You can specify a <code>Circle</code> directly in the request, or it will be auto-derived when <code>AutoCircle</code> is used. When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     pub fn set_circle(mut self, input: ::std::option::Option<crate::types::Circle>) -> Self {
         self.circle = input;
         self
     }
-    /// <p>Geometry defined as a circle. When request routing boundary was set as <code>AutoCircle</code>, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
+    /// <p>Geometry defined as a circle. The circle defines the routing boundary area. Any waypoints outside the circle will result in a route matrix entry error.</p>
+    /// <p>You can specify a <code>Circle</code> directly in the request, or it will be auto-derived when <code>AutoCircle</code> is used. When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     pub fn get_circle(&self) -> &::std::option::Option<crate::types::Circle> {
         &self.circle
     }
@@ -95,6 +111,7 @@ impl RouteMatrixBoundaryGeometryBuilder {
     /// To override the contents of this collection use [`set_bounding_box`](Self::set_bounding_box).
     ///
     /// <p>Geometry defined as a bounding box. The first pair represents the X and Y coordinates (longitude and latitude,) of the southwest corner of the bounding box; the second pair represents the X and Y coordinates (longitude and latitude) of the northeast corner.</p>
+    /// <p>Diagonal distance of the bounding box must be less than or equal to 400,000 meters.</p>
     pub fn bounding_box(mut self, input: f64) -> Self {
         let mut v = self.bounding_box.unwrap_or_default();
         v.push(input);
@@ -102,11 +119,13 @@ impl RouteMatrixBoundaryGeometryBuilder {
         self
     }
     /// <p>Geometry defined as a bounding box. The first pair represents the X and Y coordinates (longitude and latitude,) of the southwest corner of the bounding box; the second pair represents the X and Y coordinates (longitude and latitude) of the northeast corner.</p>
+    /// <p>Diagonal distance of the bounding box must be less than or equal to 400,000 meters.</p>
     pub fn set_bounding_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.bounding_box = input;
         self
     }
     /// <p>Geometry defined as a bounding box. The first pair represents the X and Y coordinates (longitude and latitude,) of the southwest corner of the bounding box; the second pair represents the X and Y coordinates (longitude and latitude) of the northeast corner.</p>
+    /// <p>Diagonal distance of the bounding box must be less than or equal to 400,000 meters.</p>
     pub fn get_bounding_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.bounding_box
     }
@@ -114,19 +133,25 @@ impl RouteMatrixBoundaryGeometryBuilder {
     ///
     /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
     ///
-    /// <p>Geometry defined as a polygon with only one linear ring.</p>
+    /// <p>Geometry defined as a polygon with only one linear ring. A linear ring is a closed sequence of four or more coordinates. The first and last coordinates are the same, forming a closed boundary. Each coordinate is a position in \[longitude, latitude\] format.</p>
+    /// <p>The structure is an array of linear rings (only 1 allowed). Each linear ring is an array of coordinates (minimum 4), and each coordinate is an array of two doubles \[longitude, latitude\].</p>
+    /// <p>Maximum distance between any two vertices must be less than or equal to 400,000 meters.</p>
     pub fn polygon(mut self, input: ::std::vec::Vec<::std::vec::Vec<f64>>) -> Self {
         let mut v = self.polygon.unwrap_or_default();
         v.push(input);
         self.polygon = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Geometry defined as a polygon with only one linear ring.</p>
+    /// <p>Geometry defined as a polygon with only one linear ring. A linear ring is a closed sequence of four or more coordinates. The first and last coordinates are the same, forming a closed boundary. Each coordinate is a position in \[longitude, latitude\] format.</p>
+    /// <p>The structure is an array of linear rings (only 1 allowed). Each linear ring is an array of coordinates (minimum 4), and each coordinate is an array of two doubles \[longitude, latitude\].</p>
+    /// <p>Maximum distance between any two vertices must be less than or equal to 400,000 meters.</p>
     pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>) -> Self {
         self.polygon = input;
         self
     }
-    /// <p>Geometry defined as a polygon with only one linear ring.</p>
+    /// <p>Geometry defined as a polygon with only one linear ring. A linear ring is a closed sequence of four or more coordinates. The first and last coordinates are the same, forming a closed boundary. Each coordinate is a position in \[longitude, latitude\] format.</p>
+    /// <p>The structure is an array of linear rings (only 1 allowed). Each linear ring is an array of coordinates (minimum 4), and each coordinate is an array of two doubles \[longitude, latitude\].</p>
+    /// <p>Maximum distance between any two vertices must be less than or equal to 400,000 meters.</p>
     pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
         &self.polygon
     }

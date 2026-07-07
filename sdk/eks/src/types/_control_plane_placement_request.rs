@@ -6,11 +6,17 @@
 pub struct ControlPlanePlacementRequest {
     /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
+    /// <p>Optional parameter to specify the placement group spread level for control plane instances. If not provided, Amazon EKS will deploy control plane instances without a placement group.</p>
+    pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
 }
 impl ControlPlanePlacementRequest {
     /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
+    }
+    /// <p>Optional parameter to specify the placement group spread level for control plane instances. If not provided, Amazon EKS will deploy control plane instances without a placement group.</p>
+    pub fn spread_level(&self) -> ::std::option::Option<&crate::types::SpreadLevel> {
+        self.spread_level.as_ref()
     }
 }
 impl ControlPlanePlacementRequest {
@@ -25,6 +31,7 @@ impl ControlPlanePlacementRequest {
 #[non_exhaustive]
 pub struct ControlPlanePlacementRequestBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
 }
 impl ControlPlanePlacementRequestBuilder {
     /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.</p>
@@ -41,8 +48,25 @@ impl ControlPlanePlacementRequestBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
+    /// <p>Optional parameter to specify the placement group spread level for control plane instances. If not provided, Amazon EKS will deploy control plane instances without a placement group.</p>
+    pub fn spread_level(mut self, input: crate::types::SpreadLevel) -> Self {
+        self.spread_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional parameter to specify the placement group spread level for control plane instances. If not provided, Amazon EKS will deploy control plane instances without a placement group.</p>
+    pub fn set_spread_level(mut self, input: ::std::option::Option<crate::types::SpreadLevel>) -> Self {
+        self.spread_level = input;
+        self
+    }
+    /// <p>Optional parameter to specify the placement group spread level for control plane instances. If not provided, Amazon EKS will deploy control plane instances without a placement group.</p>
+    pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
+        &self.spread_level
+    }
     /// Consumes the builder and constructs a [`ControlPlanePlacementRequest`](crate::types::ControlPlanePlacementRequest).
     pub fn build(self) -> crate::types::ControlPlanePlacementRequest {
-        crate::types::ControlPlanePlacementRequest { group_name: self.group_name }
+        crate::types::ControlPlanePlacementRequest {
+            group_name: self.group_name,
+            spread_level: self.spread_level,
+        }
     }
 }

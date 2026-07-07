@@ -2,10 +2,16 @@
 pub(crate) fn de_get_sol_network_operation_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GetSolNetworkOperationMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,35 +20,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "updateNsMetadata" => {
-                            builder = builder
-                                .set_update_ns_metadata(crate::protocol_serde::shape_update_ns_metadata::de_update_ns_metadata(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "updateNsMetadata" => {
+                                builder = builder.set_update_ns_metadata(crate::protocol_serde::shape_update_ns_metadata::de_update_ns_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "modifyVnfInfoMetadata" => {
+                                builder = builder.set_modify_vnf_info_metadata(
+                                    crate::protocol_serde::shape_modify_vnf_info_metadata::de_modify_vnf_info_metadata(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "instantiateMetadata" => {
+                                builder = builder.set_instantiate_metadata(
+                                    crate::protocol_serde::shape_instantiate_metadata::de_instantiate_metadata(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "createdAt" => {
+                                builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                                )?);
+                            }
+                            "lastModified" => {
+                                builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "modifyVnfInfoMetadata" => {
-                            builder = builder.set_modify_vnf_info_metadata(
-                                crate::protocol_serde::shape_modify_vnf_info_metadata::de_modify_vnf_info_metadata(tokens, _value)?,
-                            );
-                        }
-                        "instantiateMetadata" => {
-                            builder = builder.set_instantiate_metadata(crate::protocol_serde::shape_instantiate_metadata::de_instantiate_metadata(
-                                tokens, _value,
-                            )?);
-                        }
-                        "createdAt" => {
-                            builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?);
-                        }
-                        "lastModified" => {
-                            builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

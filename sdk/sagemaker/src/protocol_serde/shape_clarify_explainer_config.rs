@@ -24,10 +24,16 @@ pub fn ser_clarify_explainer_config(
 pub(crate) fn de_clarify_explainer_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClarifyExplainerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -46,12 +52,15 @@ where
                         }
                         "InferenceConfig" => {
                             builder = builder.set_inference_config(
-                                crate::protocol_serde::shape_clarify_inference_config::de_clarify_inference_config(tokens, _value)?,
+                                crate::protocol_serde::shape_clarify_inference_config::de_clarify_inference_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "ShapConfig" => {
-                            builder =
-                                builder.set_shap_config(crate::protocol_serde::shape_clarify_shap_config::de_clarify_shap_config(tokens, _value)?);
+                            builder = builder.set_shap_config(crate::protocol_serde::shape_clarify_shap_config::de_clarify_shap_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

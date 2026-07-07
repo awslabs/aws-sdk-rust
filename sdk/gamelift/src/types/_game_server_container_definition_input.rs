@@ -29,6 +29,8 @@ pub struct GameServerContainerDefinitionInput {
     pub port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     /// <p>The Amazon GameLift Servers server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
     pub server_sdk_version: ::std::option::Option<::std::string::String>,
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
 }
 impl GameServerContainerDefinitionInput {
     /// <p>A string that uniquely identifies the container definition within a container group.</p>
@@ -75,6 +77,10 @@ impl GameServerContainerDefinitionInput {
     pub fn server_sdk_version(&self) -> ::std::option::Option<&str> {
         self.server_sdk_version.as_deref()
     }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn linux_capabilities(&self) -> ::std::option::Option<&crate::types::LinuxCapabilities> {
+        self.linux_capabilities.as_ref()
+    }
 }
 impl GameServerContainerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GameServerContainerDefinitionInput`](crate::types::GameServerContainerDefinitionInput).
@@ -94,6 +100,7 @@ pub struct GameServerContainerDefinitionInputBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     pub(crate) server_sdk_version: ::std::option::Option<::std::string::String>,
+    pub(crate) linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
 }
 impl GameServerContainerDefinitionInputBuilder {
     /// <p>A string that uniquely identifies the container definition within a container group.</p>
@@ -246,6 +253,20 @@ impl GameServerContainerDefinitionInputBuilder {
     pub fn get_server_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_sdk_version
     }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn linux_capabilities(mut self, input: crate::types::LinuxCapabilities) -> Self {
+        self.linux_capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn set_linux_capabilities(mut self, input: ::std::option::Option<crate::types::LinuxCapabilities>) -> Self {
+        self.linux_capabilities = input;
+        self
+    }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn get_linux_capabilities(&self) -> &::std::option::Option<crate::types::LinuxCapabilities> {
+        &self.linux_capabilities
+    }
     /// Consumes the builder and constructs a [`GameServerContainerDefinitionInput`](crate::types::GameServerContainerDefinitionInput).
     pub fn build(self) -> crate::types::GameServerContainerDefinitionInput {
         crate::types::GameServerContainerDefinitionInput {
@@ -256,6 +277,7 @@ impl GameServerContainerDefinitionInputBuilder {
             image_uri: self.image_uri,
             port_configuration: self.port_configuration,
             server_sdk_version: self.server_sdk_version,
+            linux_capabilities: self.linux_capabilities,
         }
     }
 }

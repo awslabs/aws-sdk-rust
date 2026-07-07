@@ -22,16 +22,24 @@ pub fn ser_anomaly_detector_configuration(
 
 pub(crate) fn de_anomaly_detector_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AnomalyDetectorConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::AnomalyDetectorConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::AnomalyDetectorConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ExcludedTimeRanges" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_excluded_time_ranges(Some(
-                    crate::protocol_serde::shape_anomaly_detector_excluded_time_ranges::de_anomaly_detector_excluded_time_ranges(decoder)?,
+                    crate::protocol_serde::shape_anomaly_detector_excluded_time_ranges::de_anomaly_detector_excluded_time_ranges(decoder, depth + 1)?,
                 )))
             })?,
             "MetricTimezone" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -55,13 +63,13 @@ pub(crate) fn de_anomaly_detector_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

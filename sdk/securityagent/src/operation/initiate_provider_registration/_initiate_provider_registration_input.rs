@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateProviderRegistrationInput {
-    /// Provider to register with
+    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
     pub provider: ::std::option::Option<crate::types::Provider>,
 }
 impl InitiateProviderRegistrationInput {
-    /// Provider to register with
+    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
         self.provider.as_ref()
     }
@@ -26,18 +26,18 @@ pub struct InitiateProviderRegistrationInputBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::Provider>,
 }
 impl InitiateProviderRegistrationInputBuilder {
-    /// Provider to register with
+    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
     /// This field is required.
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// Provider to register with
+    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// Provider to register with
+    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }

@@ -20,7 +20,11 @@ pub fn ser_suggester(
 #[allow(clippy::needless_question_mark)]
 pub fn de_suggester(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Suggester, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Suggester::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -41,7 +45,7 @@ pub fn de_suggester(
             s if s.matches("DocumentSuggesterOptions") /* DocumentSuggesterOptions com.amazonaws.cloudsearch#Suggester$DocumentSuggesterOptions */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_document_suggester_options::de_document_suggester_options(&mut tag)
+                        crate::protocol_serde::shape_document_suggester_options::de_document_suggester_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

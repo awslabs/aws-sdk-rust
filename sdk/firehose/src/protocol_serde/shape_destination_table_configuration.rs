@@ -33,10 +33,16 @@ pub fn ser_destination_table_configuration(
 pub(crate) fn de_destination_table_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DestinationTableConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -62,11 +68,15 @@ where
                         }
                         "UniqueKeys" => {
                             builder = builder.set_unique_keys(
-                                    crate::protocol_serde::shape_list_of_non_empty_strings_without_whitespace::de_list_of_non_empty_strings_without_whitespace(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_non_empty_strings_without_whitespace::de_list_of_non_empty_strings_without_whitespace(tokens, _value, depth + 1)?
                                 );
                         }
                         "PartitionSpec" => {
-                            builder = builder.set_partition_spec(crate::protocol_serde::shape_partition_spec::de_partition_spec(tokens, _value)?);
+                            builder = builder.set_partition_spec(crate::protocol_serde::shape_partition_spec::de_partition_spec(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3ErrorOutputPrefix" => {
                             builder = builder.set_s3_error_output_prefix(

@@ -295,6 +295,45 @@ impl From<crate::operation::attach_rule_groups_to_proxy_configuration::AttachRul
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_container_association::CreateContainerAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_container_association::CreateContainerAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_container_association::CreateContainerAssociationError> for Error {
+    fn from(err: crate::operation::create_container_association::CreateContainerAssociationError) -> Self {
+        match err {
+            crate::operation::create_container_association::CreateContainerAssociationError::InsufficientCapacityException(inner) => {
+                Error::InsufficientCapacityException(inner)
+            }
+            crate::operation::create_container_association::CreateContainerAssociationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::create_container_association::CreateContainerAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_container_association::CreateContainerAssociationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_container_association::CreateContainerAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_container_association::CreateContainerAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_firewall::CreateFirewallError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -598,6 +637,45 @@ impl From<crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAs
                 Error::ThrottlingException(inner)
             }
             crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_container_association::DeleteContainerAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_container_association::DeleteContainerAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_container_association::DeleteContainerAssociationError> for Error {
+    fn from(err: crate::operation::delete_container_association::DeleteContainerAssociationError) -> Self {
+        match err {
+            crate::operation::delete_container_association::DeleteContainerAssociationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::delete_container_association::DeleteContainerAssociationError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::delete_container_association::DeleteContainerAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_container_association::DeleteContainerAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_container_association::DeleteContainerAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_container_association::DeleteContainerAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -967,6 +1045,46 @@ impl From<crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAs
                 Error::ThrottlingException(inner)
             }
             crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_container_association::DescribeContainerAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_container_association::DescribeContainerAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_container_association::DescribeContainerAssociationError> for Error {
+    fn from(err: crate::operation::describe_container_association::DescribeContainerAssociationError) -> Self {
+        match err {
+            crate::operation::describe_container_association::DescribeContainerAssociationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_container_association::DescribeContainerAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_container_association::DescribeContainerAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_container_association::DescribeContainerAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_container_association::DescribeContainerAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1661,6 +1779,39 @@ impl From<crate::operation::list_analysis_reports::ListAnalysisReportsError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_container_associations::ListContainerAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_container_associations::ListContainerAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_container_associations::ListContainerAssociationsError> for Error {
+    fn from(err: crate::operation::list_container_associations::ListContainerAssociationsError) -> Self {
+        match err {
+            crate::operation::list_container_associations::ListContainerAssociationsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::list_container_associations::ListContainerAssociationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_container_associations::ListContainerAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_container_associations::ListContainerAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_policies::ListFirewallPoliciesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2224,6 +2375,45 @@ impl From<crate::operation::update_availability_zone_change_protection::UpdateAv
             crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::ResourceOwnerCheckException(inner) => Error::ResourceOwnerCheckException(inner),
             crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_container_association::UpdateContainerAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_container_association::UpdateContainerAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_container_association::UpdateContainerAssociationError> for Error {
+    fn from(err: crate::operation::update_container_association::UpdateContainerAssociationError) -> Self {
+        match err {
+            crate::operation::update_container_association::UpdateContainerAssociationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_container_association::UpdateContainerAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_container_association::UpdateContainerAssociationError::InvalidTokenException(inner) => {
+                Error::InvalidTokenException(inner)
+            }
+            crate::operation::update_container_association::UpdateContainerAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_container_association::UpdateContainerAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_container_association::UpdateContainerAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

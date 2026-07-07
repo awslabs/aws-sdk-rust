@@ -73,6 +73,8 @@ pub fn de_terminate_environment(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("TerminateEnvironmentResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected TerminateEnvironmentResponse got {start_el:?}"
@@ -305,7 +307,7 @@ pub fn de_terminate_environment(
             s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$Resources */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_environment_resources_description::de_environment_resources_description(&mut tag)
+                        crate::protocol_serde::shape_environment_resources_description::de_environment_resources_description(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -315,7 +317,7 @@ pub fn de_terminate_environment(
             s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$Tier */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_environment_tier::de_environment_tier(&mut tag)
+                        crate::protocol_serde::shape_environment_tier::de_environment_tier(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -325,7 +327,7 @@ pub fn de_terminate_environment(
             s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$EnvironmentLinks */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_environment_links::de_environment_links(&mut tag)
+                        crate::protocol_serde::shape_environment_links::de_environment_links(&mut tag, depth + 1)
                         ?
                     )
                 ;

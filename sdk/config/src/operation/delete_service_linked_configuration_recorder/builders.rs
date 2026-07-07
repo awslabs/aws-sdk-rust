@@ -116,18 +116,32 @@ impl DeleteServiceLinkedConfigurationRecorderFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.</p>
+    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete. This field is only supported for Amazon Web Services service principals. For third-party service-linked configuration recorders, use <code>Arn</code> instead.</p>
     pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_principal(input.into());
         self
     }
-    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.</p>
+    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete. This field is only supported for Amazon Web Services service principals. For third-party service-linked configuration recorders, use <code>Arn</code> instead.</p>
     pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
     }
-    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.</p>
+    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete. This field is only supported for Amazon Web Services service principals. For third-party service-linked configuration recorders, use <code>Arn</code> instead.</p>
     pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_principal()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder that you want to delete. For third-party service-linked configuration recorders, you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code> or <code>ServicePrincipal</code>.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder that you want to delete. For third-party service-linked configuration recorders, you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code> or <code>ServicePrincipal</code>.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder that you want to delete. For third-party service-linked configuration recorders, you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code> or <code>ServicePrincipal</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

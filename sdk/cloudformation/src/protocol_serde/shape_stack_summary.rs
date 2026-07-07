@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -144,7 +148,7 @@ pub fn de_stack_summary(
             s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#StackSummary$DriftInformation */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_stack_drift_information_summary::de_stack_drift_information_summary(&mut tag)
+                        crate::protocol_serde::shape_stack_drift_information_summary::de_stack_drift_information_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -154,7 +158,7 @@ pub fn de_stack_summary(
             s if s.matches("LastOperations") /* LastOperations com.amazonaws.cloudformation#StackSummary$LastOperations */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_last_operations::de_last_operations(&mut tag)
+                        crate::protocol_serde::shape_last_operations::de_last_operations(&mut tag, depth + 1)
                         ?
                     )
                 ;

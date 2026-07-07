@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_family_credit_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceFamilyCreditSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceFamilyCreditSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -13,6 +13,9 @@ pub struct ScteHls {
     /// <p>DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and program transition events in TS and CMAF manifests. If you use DATERANGE, you must set a programDateTimeIntervalSeconds value of 1 or higher. To learn more about DATERANGE, see <a href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35 Ad Marker EXT-X-DATERANGE</a>.</p></li>
     /// </ul>
     pub ad_marker_hls: ::std::option::Option<crate::types::AdMarkerHls>,
+    /// <p>Controls which SCTE-35 events appear in HLS manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub scte_in_manifests: ::std::option::Option<crate::types::ScteInManifests>,
 }
 impl ScteHls {
     /// <p>Ad markers indicate when ads should be inserted during playback. If you include ad markers in the content stream in your upstream encoders, then you need to inform MediaPackage what to do with the ad markers in the output. Choose what you want MediaPackage to do with the ad markers.</p>
@@ -25,6 +28,11 @@ impl ScteHls {
     /// </ul>
     pub fn ad_marker_hls(&self) -> ::std::option::Option<&crate::types::AdMarkerHls> {
         self.ad_marker_hls.as_ref()
+    }
+    /// <p>Controls which SCTE-35 events appear in HLS manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub fn scte_in_manifests(&self) -> ::std::option::Option<&crate::types::ScteInManifests> {
+        self.scte_in_manifests.as_ref()
     }
 }
 impl ScteHls {
@@ -39,6 +47,7 @@ impl ScteHls {
 #[non_exhaustive]
 pub struct ScteHlsBuilder {
     pub(crate) ad_marker_hls: ::std::option::Option<crate::types::AdMarkerHls>,
+    pub(crate) scte_in_manifests: ::std::option::Option<crate::types::ScteInManifests>,
 }
 impl ScteHlsBuilder {
     /// <p>Ad markers indicate when ads should be inserted during playback. If you include ad markers in the content stream in your upstream encoders, then you need to inform MediaPackage what to do with the ad markers in the output. Choose what you want MediaPackage to do with the ad markers.</p>
@@ -76,10 +85,28 @@ impl ScteHlsBuilder {
     pub fn get_ad_marker_hls(&self) -> &::std::option::Option<crate::types::AdMarkerHls> {
         &self.ad_marker_hls
     }
+    /// <p>Controls which SCTE-35 events appear in HLS manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub fn scte_in_manifests(mut self, input: crate::types::ScteInManifests) -> Self {
+        self.scte_in_manifests = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls which SCTE-35 events appear in HLS manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub fn set_scte_in_manifests(mut self, input: ::std::option::Option<crate::types::ScteInManifests>) -> Self {
+        self.scte_in_manifests = input;
+        self
+    }
+    /// <p>Controls which SCTE-35 events appear in HLS manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub fn get_scte_in_manifests(&self) -> &::std::option::Option<crate::types::ScteInManifests> {
+        &self.scte_in_manifests
+    }
     /// Consumes the builder and constructs a [`ScteHls`](crate::types::ScteHls).
     pub fn build(self) -> crate::types::ScteHls {
         crate::types::ScteHls {
             ad_marker_hls: self.ad_marker_hls,
+            scte_in_manifests: self.scte_in_manifests,
         }
     }
 }

@@ -33,7 +33,11 @@ pub fn ser_lifecycle_rule_and_operator(
 #[allow(clippy::needless_question_mark)]
 pub fn de_lifecycle_rule_and_operator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LifecycleRuleAndOperator, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LifecycleRuleAndOperator::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -54,7 +58,7 @@ pub fn de_lifecycle_rule_and_operator(
             s if s.matches("Tags") /* Tags com.amazonaws.s3control#LifecycleRuleAndOperator$Tags */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_s3_tag_set::de_s3_tag_set(&mut tag)
+                        crate::protocol_serde::shape_s3_tag_set::de_s3_tag_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

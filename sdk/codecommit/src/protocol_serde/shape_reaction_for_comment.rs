@@ -2,10 +2,16 @@
 pub(crate) fn de_reaction_for_comment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReactionForComment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,12 +23,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "reaction" => {
                             builder = builder.set_reaction(crate::protocol_serde::shape_reaction_value_formats::de_reaction_value_formats(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "reactionUsers" => {
-                            builder =
-                                builder.set_reaction_users(crate::protocol_serde::shape_reaction_users_list::de_reaction_users_list(tokens, _value)?);
+                            builder = builder.set_reaction_users(crate::protocol_serde::shape_reaction_users_list::de_reaction_users_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "reactionsFromDeletedUsersCount" => {
                             builder = builder.set_reactions_from_deleted_users_count(

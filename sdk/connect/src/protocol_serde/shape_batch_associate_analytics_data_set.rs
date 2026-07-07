@@ -147,6 +147,8 @@ pub(crate) fn de_batch_associate_analytics_data_set(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -154,11 +156,15 @@ pub(crate) fn de_batch_associate_analytics_data_set(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Created" => {
                     builder = builder.set_created(
-                        crate::protocol_serde::shape_analytics_data_association_results::de_analytics_data_association_results(tokens, _value)?,
+                        crate::protocol_serde::shape_analytics_data_association_results::de_analytics_data_association_results(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_error_results::de_error_results(tokens, _value)?);
+                    builder = builder.set_errors(crate::protocol_serde::shape_error_results::de_error_results(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

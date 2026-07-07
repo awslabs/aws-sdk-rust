@@ -22,7 +22,7 @@ impl crate::operation::get_thing_connectivity_data::builders::GetThingConnectivi
 }
 /// Fluent builder constructing a request to `GetThingConnectivityData`.
 ///
-/// <p>Retrieves the live connectivity status per device.</p>
+/// <p>Retrieves the live connectivity status per device. If a device has never connected to IoT Core or was disconnected for more than 1 hour before fleet indexing's <code>thingConnectivityIndexingMode</code> was enabled, the response will have the <code>connected</code> field set to <code>false</code> with no additional session details.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetThingConnectivityDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,5 +121,19 @@ impl GetThingConnectivityDataFluentBuilder {
     /// <p>The name of your IoT thing.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_thing_name()
+    }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn include_socket_information(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_socket_information(input);
+        self
+    }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn set_include_socket_information(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_socket_information(input);
+        self
+    }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn get_include_socket_information(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_socket_information()
     }
 }

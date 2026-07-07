@@ -24,6 +24,7 @@ impl crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersion
 ///
 /// <p>Deletes a specific version of a slot type. To delete all versions of a slot type, use the <code>DeleteSlotType</code> operation.</p>
 /// <p>This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSlotTypeVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

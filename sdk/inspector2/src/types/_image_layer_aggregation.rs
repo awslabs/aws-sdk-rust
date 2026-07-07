@@ -10,6 +10,38 @@ pub struct ImageLayerAggregation {
     pub resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The hashes associated with the layers.</p>
     pub layer_hashes: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The cloud providers to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The cloud account IDs to aggregate findings for.</p>
+    pub cloud_account_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The cloud organization IDs to aggregate findings for.</p>
+    pub cloud_org_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The cloud regions to aggregate findings for. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub cloud_regions: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The cloud partitions to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub cloud_partitions: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The order to sort results by.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
@@ -34,6 +66,58 @@ impl ImageLayerAggregation {
     pub fn layer_hashes(&self) -> &[crate::types::StringFilter] {
         self.layer_hashes.as_deref().unwrap_or_default()
     }
+    /// <p>The cloud providers to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_providers.is_none()`.
+    pub fn cloud_providers(&self) -> &[crate::types::StringFilter] {
+        self.cloud_providers.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud account IDs to aggregate findings for.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_account_ids.is_none()`.
+    pub fn cloud_account_ids(&self) -> &[crate::types::StringFilter] {
+        self.cloud_account_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud organization IDs to aggregate findings for.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_org_ids.is_none()`.
+    pub fn cloud_org_ids(&self) -> &[crate::types::StringFilter] {
+        self.cloud_org_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud regions to aggregate findings for. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_regions.is_none()`.
+    pub fn cloud_regions(&self) -> &[crate::types::StringFilter] {
+        self.cloud_regions.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud partitions to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_partitions.is_none()`.
+    pub fn cloud_partitions(&self) -> &[crate::types::StringFilter] {
+        self.cloud_partitions.as_deref().unwrap_or_default()
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
@@ -57,6 +141,11 @@ pub struct ImageLayerAggregationBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) layer_hashes: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_account_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_org_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_regions: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_partitions: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ImageLayerSortBy>,
 }
@@ -121,6 +210,172 @@ impl ImageLayerAggregationBuilder {
     pub fn get_layer_hashes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.layer_hashes
     }
+    /// Appends an item to `cloud_providers`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_providers`](Self::set_cloud_providers).
+    ///
+    /// <p>The cloud providers to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub fn cloud_providers(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_providers.unwrap_or_default();
+        v.push(input);
+        self.cloud_providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud providers to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub fn set_cloud_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_providers = input;
+        self
+    }
+    /// <p>The cloud providers to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub fn get_cloud_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_providers
+    }
+    /// Appends an item to `cloud_account_ids`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_account_ids`](Self::set_cloud_account_ids).
+    ///
+    /// <p>The cloud account IDs to aggregate findings for.</p>
+    pub fn cloud_account_ids(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_account_ids.unwrap_or_default();
+        v.push(input);
+        self.cloud_account_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud account IDs to aggregate findings for.</p>
+    pub fn set_cloud_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_account_ids = input;
+        self
+    }
+    /// <p>The cloud account IDs to aggregate findings for.</p>
+    pub fn get_cloud_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_account_ids
+    }
+    /// Appends an item to `cloud_org_ids`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_org_ids`](Self::set_cloud_org_ids).
+    ///
+    /// <p>The cloud organization IDs to aggregate findings for.</p>
+    pub fn cloud_org_ids(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_org_ids.unwrap_or_default();
+        v.push(input);
+        self.cloud_org_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud organization IDs to aggregate findings for.</p>
+    pub fn set_cloud_org_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_org_ids = input;
+        self
+    }
+    /// <p>The cloud organization IDs to aggregate findings for.</p>
+    pub fn get_cloud_org_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_org_ids
+    }
+    /// Appends an item to `cloud_regions`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_regions`](Self::set_cloud_regions).
+    ///
+    /// <p>The cloud regions to aggregate findings for. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub fn cloud_regions(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_regions.unwrap_or_default();
+        v.push(input);
+        self.cloud_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud regions to aggregate findings for. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub fn set_cloud_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_regions = input;
+        self
+    }
+    /// <p>The cloud regions to aggregate findings for. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub fn get_cloud_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_regions
+    }
+    /// Appends an item to `cloud_partitions`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_partitions`](Self::set_cloud_partitions).
+    ///
+    /// <p>The cloud partitions to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub fn cloud_partitions(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_partitions.unwrap_or_default();
+        v.push(input);
+        self.cloud_partitions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud partitions to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub fn set_cloud_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_partitions = input;
+        self
+    }
+    /// <p>The cloud partitions to aggregate findings for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub fn get_cloud_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_partitions
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -155,6 +410,11 @@ impl ImageLayerAggregationBuilder {
             repositories: self.repositories,
             resource_ids: self.resource_ids,
             layer_hashes: self.layer_hashes,
+            cloud_providers: self.cloud_providers,
+            cloud_account_ids: self.cloud_account_ids,
+            cloud_org_ids: self.cloud_org_ids,
+            cloud_regions: self.cloud_regions,
+            cloud_partitions: self.cloud_partitions,
             sort_order: self.sort_order,
             sort_by: self.sort_by,
         }

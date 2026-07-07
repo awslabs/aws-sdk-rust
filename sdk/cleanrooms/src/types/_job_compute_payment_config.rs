@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobComputePaymentConfig {
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for query and job compute costs (<code>TRUE</code>) or has not configured the collaboration member to pay for query and job compute costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for query and job compute costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
+    /// <p>One or more members can be configured as payer candidates for query and job compute costs.</p>
     /// <p>An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can run queries and jobs.</p>
     pub is_responsible: bool,
 }
 impl JobComputePaymentConfig {
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for query and job compute costs (<code>TRUE</code>) or has not configured the collaboration member to pay for query and job compute costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for query and job compute costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
+    /// <p>One or more members can be configured as payer candidates for query and job compute costs.</p>
     /// <p>An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can run queries and jobs.</p>
     pub fn is_responsible(&self) -> bool {
         self.is_responsible
@@ -32,7 +32,7 @@ pub struct JobComputePaymentConfigBuilder {
 }
 impl JobComputePaymentConfigBuilder {
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for query and job compute costs (<code>TRUE</code>) or has not configured the collaboration member to pay for query and job compute costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for query and job compute costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
+    /// <p>One or more members can be configured as payer candidates for query and job compute costs.</p>
     /// <p>An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can run queries and jobs.</p>
     /// This field is required.
     pub fn is_responsible(mut self, input: bool) -> Self {
@@ -40,14 +40,14 @@ impl JobComputePaymentConfigBuilder {
         self
     }
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for query and job compute costs (<code>TRUE</code>) or has not configured the collaboration member to pay for query and job compute costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for query and job compute costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
+    /// <p>One or more members can be configured as payer candidates for query and job compute costs.</p>
     /// <p>An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can run queries and jobs.</p>
     pub fn set_is_responsible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_responsible = input;
         self
     }
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for query and job compute costs (<code>TRUE</code>) or has not configured the collaboration member to pay for query and job compute costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for query and job compute costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
+    /// <p>One or more members can be configured as payer candidates for query and job compute costs.</p>
     /// <p>An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can run queries and jobs.</p>
     pub fn get_is_responsible(&self) -> &::std::option::Option<bool> {
         &self.is_responsible

@@ -2,10 +2,16 @@
 pub(crate) fn de_job_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,7 +71,11 @@ where
                             );
                         }
                         "attempts" => {
-                            builder = builder.set_attempts(crate::protocol_serde::shape_attempt_details::de_attempt_details(tokens, _value)?);
+                            builder = builder.set_attempts(crate::protocol_serde::shape_attempt_details::de_attempt_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "statusReason" => {
                             builder = builder.set_status_reason(
@@ -82,7 +92,11 @@ where
                             );
                         }
                         "retryStrategy" => {
-                            builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(tokens, _value)?);
+                            builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "startedAt" => {
                             builder = builder.set_started_at(
@@ -99,8 +113,11 @@ where
                             );
                         }
                         "dependsOn" => {
-                            builder =
-                                builder.set_depends_on(crate::protocol_serde::shape_job_dependency_list::de_job_dependency_list(tokens, _value)?);
+                            builder = builder.set_depends_on(crate::protocol_serde::shape_job_dependency_list::de_job_dependency_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "jobDefinition" => {
                             builder = builder.set_job_definition(
@@ -110,48 +127,71 @@ where
                             );
                         }
                         "parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens, _value)?);
+                            builder =
+                                builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens, _value, depth + 1)?);
                         }
                         "container" => {
-                            builder = builder.set_container(crate::protocol_serde::shape_container_detail::de_container_detail(tokens, _value)?);
+                            builder = builder.set_container(crate::protocol_serde::shape_container_detail::de_container_detail(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "nodeDetails" => {
-                            builder = builder.set_node_details(crate::protocol_serde::shape_node_details::de_node_details(tokens, _value)?);
+                            builder =
+                                builder.set_node_details(crate::protocol_serde::shape_node_details::de_node_details(tokens, _value, depth + 1)?);
                         }
                         "nodeProperties" => {
-                            builder = builder.set_node_properties(crate::protocol_serde::shape_node_properties::de_node_properties(tokens, _value)?);
+                            builder = builder.set_node_properties(crate::protocol_serde::shape_node_properties::de_node_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "arrayProperties" => {
                             builder = builder.set_array_properties(crate::protocol_serde::shape_array_properties_detail::de_array_properties_detail(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "timeout" => {
-                            builder = builder.set_timeout(crate::protocol_serde::shape_job_timeout::de_job_timeout(tokens, _value)?);
+                            builder = builder.set_timeout(crate::protocol_serde::shape_job_timeout::de_job_timeout(tokens, _value, depth + 1)?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "propagateTags" => {
                             builder = builder.set_propagate_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "platformCapabilities" => {
                             builder = builder.set_platform_capabilities(
-                                crate::protocol_serde::shape_platform_capability_list::de_platform_capability_list(tokens, _value)?,
+                                crate::protocol_serde::shape_platform_capability_list::de_platform_capability_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "eksProperties" => {
                             builder = builder.set_eks_properties(crate::protocol_serde::shape_eks_properties_detail::de_eks_properties_detail(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "eksAttempts" => {
-                            builder =
-                                builder.set_eks_attempts(crate::protocol_serde::shape_eks_attempt_details::de_eks_attempt_details(tokens, _value)?);
+                            builder = builder.set_eks_attempts(crate::protocol_serde::shape_eks_attempt_details::de_eks_attempt_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ecsProperties" => {
                             builder = builder.set_ecs_properties(crate::protocol_serde::shape_ecs_properties_detail::de_ecs_properties_detail(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "isCancelled" => {
@@ -162,7 +202,11 @@ where
                         }
                         "consumableResourceProperties" => {
                             builder = builder.set_consumable_resource_properties(
-                                crate::protocol_serde::shape_consumable_resource_properties::de_consumable_resource_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_consumable_resource_properties::de_consumable_resource_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

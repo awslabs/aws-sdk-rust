@@ -218,6 +218,33 @@ pub(crate) fn advanced_security_options_status_correct_errors(
     builder
 }
 
+pub(crate) fn automated_snapshot_pause_options_correct_errors(
+    mut builder: crate::types::builders::AutomatedSnapshotPauseOptionsBuilder,
+) -> crate::types::builders::AutomatedSnapshotPauseOptionsBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_snapshot_pause_options_status_correct_errors(
+    mut builder: crate::types::builders::AutomatedSnapshotPauseOptionsStatusBuilder,
+) -> crate::types::builders::AutomatedSnapshotPauseOptionsStatusBuilder {
+    if builder.options.is_none() {
+        builder.options = {
+            let builder = crate::types::builders::AutomatedSnapshotPauseOptionsBuilder::default();
+            crate::serde_util::automated_snapshot_pause_options_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::OptionStatusBuilder::default();
+            crate::serde_util::option_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn cognito_options_status_correct_errors(
     mut builder: crate::types::builders::CognitoOptionsStatusBuilder,
 ) -> crate::types::builders::CognitoOptionsStatusBuilder {

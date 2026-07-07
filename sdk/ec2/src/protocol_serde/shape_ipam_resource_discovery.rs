@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ipam_resource_discovery(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IpamResourceDiscovery, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IpamResourceDiscovery::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_ipam_resource_discovery(
             s if s.matches("operatingRegionSet") /* OperatingRegions com.amazonaws.ec2#IpamResourceDiscovery$OperatingRegions */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_ipam_operating_region_set::de_ipam_operating_region_set(&mut tag)
+                        crate::protocol_serde::shape_ipam_operating_region_set::de_ipam_operating_region_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -114,7 +118,7 @@ pub fn de_ipam_resource_discovery(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#IpamResourceDiscovery$Tags */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -124,7 +128,7 @@ pub fn de_ipam_resource_discovery(
             s if s.matches("organizationalUnitExclusionSet") /* OrganizationalUnitExclusions com.amazonaws.ec2#IpamResourceDiscovery$OrganizationalUnitExclusions */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_ipam_organizational_unit_exclusion_set::de_ipam_organizational_unit_exclusion_set(&mut tag)
+                        crate::protocol_serde::shape_ipam_organizational_unit_exclusion_set::de_ipam_organizational_unit_exclusion_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

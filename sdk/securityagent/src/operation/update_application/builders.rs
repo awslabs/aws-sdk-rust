@@ -22,7 +22,7 @@ impl crate::operation::update_application::builders::UpdateApplicationInputBuild
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// Updates application configuration
+/// <p>Updates the configuration of an existing application, including the IAM role and default KMS key.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to update.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to update.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to update.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The updated Amazon Resource Name (ARN) of the IAM role for the application.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The updated Amazon Resource Name (ARN) of the IAM role for the application.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The updated Amazon Resource Name (ARN) of the IAM role for the application.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+    /// <p>The updated identifier of the default AWS KMS key for the application.</p>
     pub fn default_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_kms_key_id(input.into());
         self
     }
-    /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+    /// <p>The updated identifier of the default AWS KMS key for the application.</p>
     pub fn set_default_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_kms_key_id(input);
         self
     }
-    /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+    /// <p>The updated identifier of the default AWS KMS key for the application.</p>
     pub fn get_default_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_kms_key_id()
     }

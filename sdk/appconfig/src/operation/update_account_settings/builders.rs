@@ -122,4 +122,18 @@ impl UpdateAccountSettingsFluentBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtectionSettings> {
         self.inner.get_deletion_protection()
     }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn vended_metrics(mut self, input: crate::types::VendedMetricsSettings) -> Self {
+        self.inner = self.inner.vended_metrics(input);
+        self
+    }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn set_vended_metrics(mut self, input: ::std::option::Option<crate::types::VendedMetricsSettings>) -> Self {
+        self.inner = self.inner.set_vended_metrics(input);
+        self
+    }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn get_vended_metrics(&self) -> &::std::option::Option<crate::types::VendedMetricsSettings> {
+        self.inner.get_vended_metrics()
+    }
 }

@@ -152,6 +152,8 @@ pub(crate) fn de_describe_node(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -165,7 +167,11 @@ pub(crate) fn de_describe_node(
                     );
                 }
                 "channelPlacementGroups" => {
-                    builder = builder.set_channel_placement_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_channel_placement_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "clusterId" => {
                     builder = builder.set_cluster_id(
@@ -204,7 +210,7 @@ pub(crate) fn de_describe_node(
                 }
                 "nodeInterfaceMappings" => {
                     builder = builder.set_node_interface_mappings(
-                        crate::protocol_serde::shape_list_of_node_interface_mapping::de_list_of_node_interface_mapping(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_node_interface_mapping::de_list_of_node_interface_mapping(tokens, _value, depth + 1)?,
                     );
                 }
                 "role" => {
@@ -215,8 +221,11 @@ pub(crate) fn de_describe_node(
                     );
                 }
                 "sdiSourceMappings" => {
-                    builder =
-                        builder.set_sdi_source_mappings(crate::protocol_serde::shape_sdi_source_mappings::de_sdi_source_mappings(tokens, _value)?);
+                    builder = builder.set_sdi_source_mappings(crate::protocol_serde::shape_sdi_source_mappings::de_sdi_source_mappings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "state" => {
                     builder = builder.set_state(

@@ -15,8 +15,8 @@ impl super::Client {
     ///   - [`charge_id(Option<String>)`](crate::operation::get_agreement_payment_request::GetAgreementPaymentRequestOutput::charge_id): <p>The unique identifier of the charge created after the payment request is approved. This field is only present for approved payment requests and follows the pattern <code>ch-\[a-zA-Z0-9\]+</code>.</p>
     ///   - [`charge_amount(Option<String>)`](crate::operation::get_agreement_payment_request::GetAgreementPaymentRequestOutput::charge_amount): <p>The amount charged or to be charged to the buyer.</p>
     ///   - [`currency_code(Option<String>)`](crate::operation::get_agreement_payment_request::GetAgreementPaymentRequestOutput::currency_code): <p>The currency code for the charge amount.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_agreement_payment_request::GetAgreementPaymentRequestOutput::created_at): <p>The date and time when the payment request was created, in ISO 8601 format.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_agreement_payment_request::GetAgreementPaymentRequestOutput::updated_at): <p>The date and time when the payment request was last updated, in ISO 8601 format.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_agreement_payment_request::GetAgreementPaymentRequestOutput::created_at): <p>The date and time when the payment request was created.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_agreement_payment_request::GetAgreementPaymentRequestOutput::updated_at): <p>The date and time when the payment request was last updated.</p>
     /// - On failure, responds with [`SdkError<GetAgreementPaymentRequestError>`](crate::operation::get_agreement_payment_request::GetAgreementPaymentRequestError)
     pub fn get_agreement_payment_request(
         &self,

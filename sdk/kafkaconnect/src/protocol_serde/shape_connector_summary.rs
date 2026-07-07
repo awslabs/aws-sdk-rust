@@ -2,10 +2,16 @@
 pub(crate) fn de_connector_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConnectorSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "capacity" => {
                             builder = builder.set_capacity(crate::protocol_serde::shape_capacity_description::de_capacity_description(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "connectorArn" => {
@@ -63,17 +71,17 @@ where
                         }
                         "kafkaCluster" => {
                             builder = builder.set_kafka_cluster(
-                                crate::protocol_serde::shape_kafka_cluster_description::de_kafka_cluster_description(tokens, _value)?,
+                                crate::protocol_serde::shape_kafka_cluster_description::de_kafka_cluster_description(tokens, _value, depth + 1)?,
                             );
                         }
                         "kafkaClusterClientAuthentication" => {
                             builder = builder.set_kafka_cluster_client_authentication(
-                                    crate::protocol_serde::shape_kafka_cluster_client_authentication_description::de_kafka_cluster_client_authentication_description(tokens, _value)?
+                                    crate::protocol_serde::shape_kafka_cluster_client_authentication_description::de_kafka_cluster_client_authentication_description(tokens, _value, depth + 1)?
                                 );
                         }
                         "kafkaClusterEncryptionInTransit" => {
                             builder = builder.set_kafka_cluster_encryption_in_transit(
-                                    crate::protocol_serde::shape_kafka_cluster_encryption_in_transit_description::de_kafka_cluster_encryption_in_transit_description(tokens, _value)?
+                                    crate::protocol_serde::shape_kafka_cluster_encryption_in_transit_description::de_kafka_cluster_encryption_in_transit_description(tokens, _value, depth + 1)?
                                 );
                         }
                         "kafkaConnectVersion" => {
@@ -85,7 +93,9 @@ where
                         }
                         "logDelivery" => {
                             builder = builder.set_log_delivery(crate::protocol_serde::shape_log_delivery_description::de_log_delivery_description(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "networkType" => {
@@ -97,7 +107,9 @@ where
                         }
                         "plugins" => {
                             builder = builder.set_plugins(crate::protocol_serde::shape_list_of_plugin_description::de_list_of_plugin_description(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "serviceExecutionRoleArn" => {
@@ -109,7 +121,11 @@ where
                         }
                         "workerConfiguration" => {
                             builder = builder.set_worker_configuration(
-                                crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(tokens, _value)?,
+                                crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

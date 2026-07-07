@@ -69,6 +69,8 @@ pub fn de_list_access_grants_instances(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListAccessGrantsInstancesResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListAccessGrantsInstancesResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -92,7 +94,7 @@ pub fn de_list_access_grants_instances(
             s if s.matches("AccessGrantsInstancesList") /* AccessGrantsInstancesList com.amazonaws.s3control.synthetic#ListAccessGrantsInstancesOutput$AccessGrantsInstancesList */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_access_grants_instances_list::de_access_grants_instances_list(&mut tag)
+                        crate::protocol_serde::shape_access_grants_instances_list::de_access_grants_instances_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

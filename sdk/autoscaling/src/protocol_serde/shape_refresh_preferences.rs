@@ -89,7 +89,11 @@ pub fn ser_refresh_preferences(
 #[allow(clippy::needless_question_mark)]
 pub fn de_refresh_preferences(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RefreshPreferences, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RefreshPreferences::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -127,7 +131,7 @@ pub fn de_refresh_preferences(
             s if s.matches("CheckpointPercentages") /* CheckpointPercentages com.amazonaws.autoscaling#RefreshPreferences$CheckpointPercentages */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_checkpoint_percentages::de_checkpoint_percentages(&mut tag)
+                        crate::protocol_serde::shape_checkpoint_percentages::de_checkpoint_percentages(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -210,7 +214,7 @@ pub fn de_refresh_preferences(
             s if s.matches("AlarmSpecification") /* AlarmSpecification com.amazonaws.autoscaling#RefreshPreferences$AlarmSpecification */ =>  {
                 let var_34 =
                     Some(
-                        crate::protocol_serde::shape_alarm_specification::de_alarm_specification(&mut tag)
+                        crate::protocol_serde::shape_alarm_specification::de_alarm_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;

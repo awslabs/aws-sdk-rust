@@ -106,10 +106,11 @@ pub(crate) fn de_describe_matchmaking(
     crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -119,6 +120,7 @@ pub(crate) fn de_describe_matchmaking(
                 Ok(
                     builder.set_ticket_list(Some(crate::protocol_serde::shape_matchmaking_ticket_list::de_matchmaking_ticket_list(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -131,6 +133,8 @@ pub(crate) fn de_describe_matchmaking(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -140,13 +144,13 @@ pub(crate) fn de_describe_matchmaking(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

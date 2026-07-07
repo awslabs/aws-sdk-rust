@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput) with field(s):
     ///   - [`change_records(Option<Vec::<Record>>)`](crate::operation::get_records::GetRecordsOutput::change_records): <p>An array of change data records retrieved from the specified shard. Each record represents a single data modification (insert, update, or delete) to a row in the Amazon Keyspaces table. Records include the primary key columns and information about what data was modified.</p>
     ///   - [`next_shard_iterator(Option<String>)`](crate::operation::get_records::GetRecordsOutput::next_shard_iterator): <p>The next position in the shard from which to start sequentially reading data records. If null, the shard has been closed and the requested iterator will not return any more data.</p>
+    ///   - [`iterator_description(Option<IteratorDescription>)`](crate::operation::get_records::GetRecordsOutput::iterator_description): <p>Provides information about the current iterator at the time GetRecords request was processed by Keyspaces.</p>
     /// - On failure, responds with [`SdkError<GetRecordsError>`](crate::operation::get_records::GetRecordsError)
     pub fn get_records(&self) -> crate::operation::get_records::builders::GetRecordsFluentBuilder {
         crate::operation::get_records::builders::GetRecordsFluentBuilder::new(self.handle.clone())

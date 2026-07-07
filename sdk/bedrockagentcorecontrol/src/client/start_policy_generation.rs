@@ -17,8 +17,8 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::start_policy_generation::StartPolicyGenerationOutput::created_at): <p>The timestamp when the policy generation request was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::start_policy_generation::StartPolicyGenerationOutput::updated_at): <p>The timestamp when the policy generation was last updated.</p>
     ///   - [`status(PolicyGenerationStatus)`](crate::operation::start_policy_generation::StartPolicyGenerationOutput::status): <p>The initial status of the policy generation request.</p>
-    ///   - [`status_reasons(Vec::<String>)`](crate::operation::start_policy_generation::StartPolicyGenerationOutput::status_reasons): <p>Additional information about the generation status.</p>
     ///   - [`findings(Option<String>)`](crate::operation::start_policy_generation::StartPolicyGenerationOutput::findings): <p>Initial findings from the policy generation process.</p>
+    ///   - [`status_reasons(Vec::<String>)`](crate::operation::start_policy_generation::StartPolicyGenerationOutput::status_reasons): <p>Additional information about the generation status.</p>
     /// - On failure, responds with [`SdkError<StartPolicyGenerationError>`](crate::operation::start_policy_generation::StartPolicyGenerationError)
     pub fn start_policy_generation(&self) -> crate::operation::start_policy_generation::builders::StartPolicyGenerationFluentBuilder {
         crate::operation::start_policy_generation::builders::StartPolicyGenerationFluentBuilder::new(self.handle.clone())

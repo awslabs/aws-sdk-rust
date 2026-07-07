@@ -19,6 +19,8 @@ pub struct CreateEventInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The key-value metadata to attach to the event.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+    /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
+    pub extraction_mode: ::std::option::Option<crate::types::ExtractionMode>,
 }
 impl CreateEventInput {
     /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
@@ -55,6 +57,10 @@ impl CreateEventInput {
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.metadata.as_ref()
     }
+    /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
+    pub fn extraction_mode(&self) -> ::std::option::Option<&crate::types::ExtractionMode> {
+        self.extraction_mode.as_ref()
+    }
 }
 impl CreateEventInput {
     /// Creates a new builder-style object to manufacture [`CreateEventInput`](crate::operation::create_event::CreateEventInput).
@@ -75,6 +81,7 @@ pub struct CreateEventInputBuilder {
     pub(crate) branch: ::std::option::Option<crate::types::Branch>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+    pub(crate) extraction_mode: ::std::option::Option<crate::types::ExtractionMode>,
 }
 impl CreateEventInputBuilder {
     /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
@@ -207,6 +214,20 @@ impl CreateEventInputBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         &self.metadata
     }
+    /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
+    pub fn extraction_mode(mut self, input: crate::types::ExtractionMode) -> Self {
+        self.extraction_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
+    pub fn set_extraction_mode(mut self, input: ::std::option::Option<crate::types::ExtractionMode>) -> Self {
+        self.extraction_mode = input;
+        self
+    }
+    /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
+    pub fn get_extraction_mode(&self) -> &::std::option::Option<crate::types::ExtractionMode> {
+        &self.extraction_mode
+    }
     /// Consumes the builder and constructs a [`CreateEventInput`](crate::operation::create_event::CreateEventInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_event::CreateEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_event::CreateEventInput {
@@ -218,6 +239,7 @@ impl CreateEventInputBuilder {
             branch: self.branch,
             client_token: self.client_token,
             metadata: self.metadata,
+            extraction_mode: self.extraction_mode,
         })
     }
 }

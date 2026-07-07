@@ -2,10 +2,16 @@
 pub(crate) fn de_s3_destination_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::S3DestinationDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,11 @@ where
                             );
                         }
                         "BufferingHints" => {
-                            builder = builder.set_buffering_hints(crate::protocol_serde::shape_buffering_hints::de_buffering_hints(tokens, _value)?);
+                            builder = builder.set_buffering_hints(crate::protocol_serde::shape_buffering_hints::de_buffering_hints(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CompressionFormat" => {
                             builder = builder.set_compression_format(
@@ -55,12 +65,12 @@ where
                         }
                         "EncryptionConfiguration" => {
                             builder = builder.set_encryption_configuration(
-                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "CloudWatchLoggingOptions" => {
                             builder = builder.set_cloud_watch_logging_options(
-                                crate::protocol_serde::shape_cloud_watch_logging_options::de_cloud_watch_logging_options(tokens, _value)?,
+                                crate::protocol_serde::shape_cloud_watch_logging_options::de_cloud_watch_logging_options(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

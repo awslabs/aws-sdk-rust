@@ -127,6 +127,8 @@ pub(crate) fn de_calculate_route_matrix(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -140,11 +142,13 @@ pub(crate) fn de_calculate_route_matrix(
                     );
                 }
                 "RouteMatrix" => {
-                    builder = builder.set_route_matrix(crate::protocol_serde::shape_route_matrix::de_route_matrix(tokens, _value)?);
+                    builder = builder.set_route_matrix(crate::protocol_serde::shape_route_matrix::de_route_matrix(tokens, _value, depth + 1)?);
                 }
                 "RoutingBoundary" => {
                     builder = builder.set_routing_boundary(crate::protocol_serde::shape_route_matrix_boundary::de_route_matrix_boundary(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

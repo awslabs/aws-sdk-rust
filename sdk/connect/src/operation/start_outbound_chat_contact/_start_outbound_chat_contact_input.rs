@@ -7,9 +7,9 @@ pub struct StartOutboundChatContactInput {
     pub source_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>Information about the endpoint.</p>
     pub destination_endpoint: ::std::option::Option<crate::types::Endpoint>,
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.</p>
     /// <ul>
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
@@ -17,9 +17,9 @@ pub struct StartOutboundChatContactInput {
     /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <ul>
     /// <li>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>123ec456-a007-89c0-1234-xxxxxxxxxxxx</b></p></li>
@@ -33,7 +33,7 @@ pub struct StartOutboundChatContactInput {
     pub initial_system_message: ::std::option::Option<crate::types::ChatMessage>,
     /// <p>Information about template message configuration.</p>
     pub initial_templated_system_message: ::std::option::Option<crate::types::TemplatedMessageConfig>,
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The supported chat message content types. Supported types are:</p>
     /// <ul>
@@ -68,11 +68,11 @@ impl StartOutboundChatContactInput {
     pub fn destination_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.destination_endpoint.as_ref()
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.</p>
     /// <ul>
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
@@ -84,11 +84,11 @@ impl StartOutboundChatContactInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.segment_attributes.as_ref()
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
-    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <ul>
     /// <li>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>123ec456-a007-89c0-1234-xxxxxxxxxxxx</b></p></li>
@@ -112,7 +112,7 @@ impl StartOutboundChatContactInput {
     pub fn initial_templated_system_message(&self) -> ::std::option::Option<&crate::types::TemplatedMessageConfig> {
         self.initial_templated_system_message.as_ref()
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.</p>
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
@@ -202,18 +202,18 @@ impl StartOutboundChatContactInputBuilder {
     pub fn get_destination_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.destination_endpoint
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
@@ -221,7 +221,7 @@ impl StartOutboundChatContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
     ///
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.</p>
     /// <ul>
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
@@ -234,7 +234,7 @@ impl StartOutboundChatContactInputBuilder {
         self.segment_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.</p>
     /// <ul>
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
@@ -248,7 +248,7 @@ impl StartOutboundChatContactInputBuilder {
         self.segment_attributes = input;
         self
     }
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.</p>
     /// <ul>
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
@@ -264,23 +264,23 @@ impl StartOutboundChatContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
-    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <ul>
     /// <li>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>123ec456-a007-89c0-1234-xxxxxxxxxxxx</b></p></li>
@@ -290,7 +290,7 @@ impl StartOutboundChatContactInputBuilder {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <ul>
     /// <li>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>123ec456-a007-89c0-1234-xxxxxxxxxxxx</b></p></li>
@@ -299,7 +299,7 @@ impl StartOutboundChatContactInputBuilder {
         self.contact_flow_id = input;
         self
     }
-    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <ul>
     /// <li>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>123ec456-a007-89c0-1234-xxxxxxxxxxxx</b></p></li>
@@ -363,17 +363,17 @@ impl StartOutboundChatContactInputBuilder {
     pub fn get_initial_templated_system_message(&self) -> &::std::option::Option<crate::types::TemplatedMessageConfig> {
         &self.initial_templated_system_message
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_contact_id = input;
         self
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_contact_id
     }

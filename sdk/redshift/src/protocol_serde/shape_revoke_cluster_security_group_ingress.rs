@@ -111,6 +111,8 @@ pub fn de_revoke_cluster_security_group_ingress(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RevokeClusterSecurityGroupIngressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RevokeClusterSecurityGroupIngressResponse got {start_el:?}"
@@ -128,7 +130,7 @@ pub fn de_revoke_cluster_security_group_ingress(
             s if s.matches("ClusterSecurityGroup") /* ClusterSecurityGroup com.amazonaws.redshift.synthetic#RevokeClusterSecurityGroupIngressOutput$ClusterSecurityGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cluster_security_group::de_cluster_security_group(&mut tag)
+                        crate::protocol_serde::shape_cluster_security_group::de_cluster_security_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

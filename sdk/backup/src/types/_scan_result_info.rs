@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanResultInfo {
     /// <p>The status of the scan results.</p>
-    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code>.</p>
+    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code> | <code>UNKNOWN</code>.</p>
     pub scan_result_status: crate::types::ScanResultStatus,
 }
 impl ScanResultInfo {
     /// <p>The status of the scan results.</p>
-    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code>.</p>
+    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code> | <code>UNKNOWN</code>.</p>
     pub fn scan_result_status(&self) -> &crate::types::ScanResultStatus {
         &self.scan_result_status
     }
@@ -30,20 +30,20 @@ pub struct ScanResultInfoBuilder {
 }
 impl ScanResultInfoBuilder {
     /// <p>The status of the scan results.</p>
-    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code>.</p>
+    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code> | <code>UNKNOWN</code>.</p>
     /// This field is required.
     pub fn scan_result_status(mut self, input: crate::types::ScanResultStatus) -> Self {
         self.scan_result_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the scan results.</p>
-    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code>.</p>
+    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code> | <code>UNKNOWN</code>.</p>
     pub fn set_scan_result_status(mut self, input: ::std::option::Option<crate::types::ScanResultStatus>) -> Self {
         self.scan_result_status = input;
         self
     }
     /// <p>The status of the scan results.</p>
-    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code>.</p>
+    /// <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code> | <code>UNKNOWN</code>.</p>
     pub fn get_scan_result_status(&self) -> &::std::option::Option<crate::types::ScanResultStatus> {
         &self.scan_result_status
     }

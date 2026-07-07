@@ -68,6 +68,27 @@ pub fn de_create_imported_image_http_error(
             }
             tmp
         }),
+        "InvalidParameterCombinationException" => {
+            crate::operation::create_imported_image::CreateImportedImageError::InvalidParameterCombinationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_imported_image::CreateImportedImageError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidRoleException" => crate::operation::create_imported_image::CreateImportedImageError::InvalidRoleException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -191,13 +212,15 @@ pub(crate) fn de_create_imported_image(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Image" => {
-                    builder = builder.set_image(crate::protocol_serde::shape_image::de_image(tokens, _value)?);
+                    builder = builder.set_image(crate::protocol_serde::shape_image::de_image(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

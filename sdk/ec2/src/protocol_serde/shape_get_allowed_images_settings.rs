@@ -51,6 +51,8 @@ pub fn de_get_allowed_images_settings(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetAllowedImagesSettingsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetAllowedImagesSettingsResponse got {start_el:?}"
@@ -74,7 +76,7 @@ pub fn de_get_allowed_images_settings(
             s if s.matches("imageCriterionSet") /* ImageCriteria com.amazonaws.ec2.synthetic#GetAllowedImagesSettingsOutput$ImageCriteria */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_image_criterion_list::de_image_criterion_list(&mut tag)
+                        crate::protocol_serde::shape_image_criterion_list::de_image_criterion_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

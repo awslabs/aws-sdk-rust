@@ -2,10 +2,16 @@
 pub(crate) fn de_target_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TargetConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,8 +37,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "mcp" => Some(crate::types::TargetConfiguration::Mcp(
-                            crate::protocol_serde::shape_mcp_target_configuration::de_mcp_target_configuration(tokens, _value)?
+                            crate::protocol_serde::shape_mcp_target_configuration::de_mcp_target_configuration(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcp' cannot be null"))?,
+                        )),
+                        "http" => Some(crate::types::TargetConfiguration::Http(
+                            crate::protocol_serde::shape_http_target_configuration::de_http_target_configuration(tokens, _value, depth + 1)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?,
+                        )),
+                        "inference" => Some(crate::types::TargetConfiguration::Inference(
+                            crate::protocol_serde::shape_inference_target_configuration::de_inference_target_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'inference' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
@@ -71,6 +89,18 @@ pub fn ser_target_configuration(
             let mut object_1 = object_13.key("mcp").start_object();
             crate::protocol_serde::shape_mcp_target_configuration::ser_mcp_target_configuration(&mut object_1, inner)?;
             object_1.finish();
+        }
+        crate::types::TargetConfiguration::Http(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_13.key("http").start_object();
+            crate::protocol_serde::shape_http_target_configuration::ser_http_target_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::TargetConfiguration::Inference(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_13.key("inference").start_object();
+            crate::protocol_serde::shape_inference_target_configuration::ser_inference_target_configuration(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::TargetConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

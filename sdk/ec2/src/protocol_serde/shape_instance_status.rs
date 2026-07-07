@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_status(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_instance_status(
             s if s.matches("operator") /* Operator com.amazonaws.ec2#InstanceStatus$Operator */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -59,7 +63,7 @@ pub fn de_instance_status(
             s if s.matches("eventsSet") /* Events com.amazonaws.ec2#InstanceStatus$Events */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_instance_status_event_list::de_instance_status_event_list(&mut tag)
+                        crate::protocol_serde::shape_instance_status_event_list::de_instance_status_event_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_instance_status(
             s if s.matches("instanceState") /* InstanceState com.amazonaws.ec2#InstanceStatus$InstanceState */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag)
+                        crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -92,7 +96,7 @@ pub fn de_instance_status(
             s if s.matches("instanceStatus") /* InstanceStatus com.amazonaws.ec2#InstanceStatus$InstanceStatus */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_instance_status_summary::de_instance_status_summary(&mut tag)
+                        crate::protocol_serde::shape_instance_status_summary::de_instance_status_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -102,7 +106,7 @@ pub fn de_instance_status(
             s if s.matches("systemStatus") /* SystemStatus com.amazonaws.ec2#InstanceStatus$SystemStatus */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_instance_status_summary::de_instance_status_summary(&mut tag)
+                        crate::protocol_serde::shape_instance_status_summary::de_instance_status_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -112,7 +116,7 @@ pub fn de_instance_status(
             s if s.matches("attachedEbsStatus") /* AttachedEbsStatus com.amazonaws.ec2#InstanceStatus$AttachedEbsStatus */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_ebs_status_summary::de_ebs_status_summary(&mut tag)
+                        crate::protocol_serde::shape_ebs_status_summary::de_ebs_status_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;

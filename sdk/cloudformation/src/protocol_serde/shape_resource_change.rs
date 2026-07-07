@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_change(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceChange, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceChange::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -91,7 +95,7 @@ pub fn de_resource_change(
             s if s.matches("Scope") /* Scope com.amazonaws.cloudformation#ResourceChange$Scope */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_scope::de_scope(&mut tag)
+                        crate::protocol_serde::shape_scope::de_scope(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -115,7 +119,7 @@ pub fn de_resource_change(
             s if s.matches("ResourceDriftIgnoredAttributes") /* ResourceDriftIgnoredAttributes com.amazonaws.cloudformation#ResourceChange$ResourceDriftIgnoredAttributes */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_resource_drift_ignored_attributes::de_resource_drift_ignored_attributes(&mut tag)
+                        crate::protocol_serde::shape_resource_drift_ignored_attributes::de_resource_drift_ignored_attributes(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -125,7 +129,7 @@ pub fn de_resource_change(
             s if s.matches("Details") /* Details com.amazonaws.cloudformation#ResourceChange$Details */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_resource_change_details::de_resource_change_details(&mut tag)
+                        crate::protocol_serde::shape_resource_change_details::de_resource_change_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -148,7 +152,7 @@ pub fn de_resource_change(
             s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#ResourceChange$ModuleInfo */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_module_info::de_module_info(&mut tag)
+                        crate::protocol_serde::shape_module_info::de_module_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

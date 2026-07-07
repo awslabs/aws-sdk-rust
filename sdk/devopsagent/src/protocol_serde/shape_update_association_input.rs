@@ -3,11 +3,24 @@ pub fn ser_update_association_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_association::UpdateAssociationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.configuration {
+    if let Some(var_1) = &input.capabilities {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("configuration").start_object();
-        crate::protocol_serde::shape_service_configuration::ser_service_configuration(&mut object_2, var_1)?;
+        let mut object_2 = object.key("capabilities").start_object();
+        for (key_3, value_4) in var_1 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_capability_configuration::ser_capability_configuration(&mut object_5, value_4)?;
+                object_5.finish();
+            }
+        }
         object_2.finish();
+    }
+    if let Some(var_6) = &input.configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("configuration").start_object();
+        crate::protocol_serde::shape_service_configuration::ser_service_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

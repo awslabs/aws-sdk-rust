@@ -78,6 +78,8 @@ pub fn de_get_hosted_zone(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetHostedZoneResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetHostedZoneResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -88,7 +90,7 @@ pub fn de_get_hosted_zone(
             s if s.matches("HostedZone") /* HostedZone com.amazonaws.route53.synthetic#GetHostedZoneOutput$HostedZone */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_hosted_zone::de_hosted_zone(&mut tag)
+                        crate::protocol_serde::shape_hosted_zone::de_hosted_zone(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +100,7 @@ pub fn de_get_hosted_zone(
             s if s.matches("VPCs") /* VPCs com.amazonaws.route53.synthetic#GetHostedZoneOutput$VPCs */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_vpcs::de_vpcs(&mut tag)
+                        crate::protocol_serde::shape_vpcs::de_vpcs(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +110,7 @@ pub fn de_get_hosted_zone(
             s if s.matches("DelegationSet") /* DelegationSet com.amazonaws.route53.synthetic#GetHostedZoneOutput$DelegationSet */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_delegation_set::de_delegation_set(&mut tag)
+                        crate::protocol_serde::shape_delegation_set::de_delegation_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

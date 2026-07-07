@@ -31,6 +31,20 @@ pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
 
 pub(crate) mod shape_create_o_auth2_token_input;
 
+pub(crate) mod shape_delete_console_authorization_configuration;
+
+pub(crate) mod shape_delete_resource_permission_statement;
+
+pub(crate) mod shape_get_console_authorization_configuration;
+
+pub(crate) mod shape_get_resource_policy;
+
+pub(crate) mod shape_list_resource_permission_statements;
+
+pub(crate) mod shape_put_console_authorization_configuration;
+
+pub(crate) mod shape_put_resource_permission_statement;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -41,9 +55,27 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_o_auth2_token_output;
 
+pub(crate) mod shape_delete_console_authorization_configuration_input;
+
+pub(crate) mod shape_delete_resource_permission_statement_input;
+
+pub(crate) mod shape_get_console_authorization_configuration_input;
+
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_resource_permission_statements_input;
+
+pub(crate) mod shape_put_console_authorization_configuration_input;
+
+pub(crate) mod shape_put_resource_permission_statement_input;
+
+pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_too_many_requests_error;
 
@@ -53,4 +85,24 @@ pub(crate) mod shape_create_o_auth2_token_request_body;
 
 pub(crate) mod shape_create_o_auth2_token_response_body;
 
+pub(crate) mod shape_permission_statement_summaries;
+
+pub(crate) mod shape_signin_resource_based_policy;
+
+pub(crate) mod shape_permission_statement_summary;
+
+pub(crate) mod shape_policy_statements;
+
 pub(crate) mod shape_access_token;
+
+pub(crate) mod shape_condition_block;
+
+pub(crate) mod shape_policy_statement;
+
+pub(crate) mod shape_condition;
+
+pub(crate) mod shape_policy_actions;
+
+pub(crate) mod shape_principal;
+
+pub(crate) mod shape_condition_values;

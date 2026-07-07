@@ -54,10 +54,16 @@ pub fn ser_recommendation_job_container_config(
 pub(crate) fn de_recommendation_job_container_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecommendationJobContainerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -97,7 +103,11 @@ where
                         }
                         "PayloadConfig" => {
                             builder = builder.set_payload_config(
-                                crate::protocol_serde::shape_recommendation_job_payload_config::de_recommendation_job_payload_config(tokens, _value)?,
+                                crate::protocol_serde::shape_recommendation_job_payload_config::de_recommendation_job_payload_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "NearestModelName" => {
@@ -109,7 +119,7 @@ where
                         }
                         "SupportedInstanceTypes" => {
                             builder = builder.set_supported_instance_types(
-                                    crate::protocol_serde::shape_recommendation_job_supported_instance_types::de_recommendation_job_supported_instance_types(tokens, _value)?
+                                    crate::protocol_serde::shape_recommendation_job_supported_instance_types::de_recommendation_job_supported_instance_types(tokens, _value, depth + 1)?
                                 );
                         }
                         "SupportedEndpointType" => {
@@ -131,7 +141,7 @@ where
                         }
                         "SupportedResponseMIMETypes" => {
                             builder = builder.set_supported_response_mime_types(
-                                    crate::protocol_serde::shape_recommendation_job_supported_response_mime_types::de_recommendation_job_supported_response_mime_types(tokens, _value)?
+                                    crate::protocol_serde::shape_recommendation_job_supported_response_mime_types::de_recommendation_job_supported_response_mime_types(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

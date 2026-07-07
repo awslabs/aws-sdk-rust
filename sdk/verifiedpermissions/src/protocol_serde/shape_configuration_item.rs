@@ -2,10 +2,16 @@
 pub(crate) fn de_configuration_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigurationItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,7 +38,9 @@ where
                     variant = match key.as_ref() {
                         "cognitoUserPoolConfiguration" => Some(crate::types::ConfigurationItem::CognitoUserPoolConfiguration(
                             crate::protocol_serde::shape_cognito_user_pool_configuration_item::de_cognito_user_pool_configuration_item(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -41,8 +49,12 @@ where
                             })?,
                         )),
                         "openIdConnectConfiguration" => Some(crate::types::ConfigurationItem::OpenIdConnectConfiguration(
-                            crate::protocol_serde::shape_open_id_connect_configuration_item::de_open_id_connect_configuration_item(tokens, _value)?
-                                .ok_or_else(|| {
+                            crate::protocol_serde::shape_open_id_connect_configuration_item::de_open_id_connect_configuration_item(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                     "value for 'openIdConnectConfiguration' cannot be null",
                                 )

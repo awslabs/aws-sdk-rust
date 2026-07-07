@@ -160,6 +160,8 @@ pub fn de_copy_snapshot(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CopySnapshotResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CopySnapshotResponse got {start_el:?}"
@@ -177,7 +179,7 @@ pub fn de_copy_snapshot(
             s if s.matches("Snapshot") /* Snapshot com.amazonaws.elasticache.synthetic#CopySnapshotOutput$Snapshot */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_snapshot::de_snapshot(&mut tag)
+                        crate::protocol_serde::shape_snapshot::de_snapshot(&mut tag, depth + 1)
                         ?
                     )
                 ;

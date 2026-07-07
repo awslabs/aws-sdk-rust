@@ -150,4 +150,46 @@ impl UpdateSourceServerFluentBuilder {
     pub fn get_connector_action(&self) -> &::std::option::Option<crate::types::SourceServerConnectorAction> {
         self.inner.get_connector_action()
     }
+    /// <p>Update Source Server request user provided ID.</p>
+    pub fn user_provided_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.user_provided_id(input.into());
+        self
+    }
+    /// <p>Update Source Server request user provided ID.</p>
+    pub fn set_user_provided_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_user_provided_id(input);
+        self
+    }
+    /// <p>Update Source Server request user provided ID.</p>
+    pub fn get_user_provided_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_provided_id()
+    }
+    /// <p>Update Source Server request FQDN for action framework.</p>
+    pub fn fqdn_for_action_framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.fqdn_for_action_framework(input.into());
+        self
+    }
+    /// <p>Update Source Server request FQDN for action framework.</p>
+    pub fn set_fqdn_for_action_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_fqdn_for_action_framework(input);
+        self
+    }
+    /// <p>Update Source Server request FQDN for action framework.</p>
+    pub fn get_fqdn_for_action_framework(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fqdn_for_action_framework()
+    }
+    /// <p>Update Source Server request platform operating system.</p>
+    pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.platform(input.into());
+        self
+    }
+    /// <p>Update Source Server request platform operating system.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_platform(input);
+        self
+    }
+    /// <p>Update Source Server request platform operating system.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform()
+    }
 }

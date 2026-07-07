@@ -30,10 +30,16 @@ pub fn ser_compute_quota_config(
 pub(crate) fn de_compute_quota_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComputeQuotaConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -46,13 +52,15 @@ where
                         "ComputeQuotaResources" => {
                             builder = builder.set_compute_quota_resources(
                                 crate::protocol_serde::shape_compute_quota_resource_config_list::de_compute_quota_resource_config_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ResourceSharingConfig" => {
                             builder = builder.set_resource_sharing_config(
-                                crate::protocol_serde::shape_resource_sharing_config::de_resource_sharing_config(tokens, _value)?,
+                                crate::protocol_serde::shape_resource_sharing_config::de_resource_sharing_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "PreemptTeamTasks" => {

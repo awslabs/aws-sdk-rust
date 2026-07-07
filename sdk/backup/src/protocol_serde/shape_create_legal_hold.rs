@@ -123,6 +123,8 @@ pub(crate) fn de_create_legal_hold(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -157,7 +159,7 @@ pub(crate) fn de_create_legal_hold(
                 }
                 "RecoveryPointSelection" => {
                     builder = builder.set_recovery_point_selection(
-                        crate::protocol_serde::shape_recovery_point_selection::de_recovery_point_selection(tokens, _value)?,
+                        crate::protocol_serde::shape_recovery_point_selection::de_recovery_point_selection(tokens, _value, depth + 1)?,
                     );
                 }
                 "Status" => {

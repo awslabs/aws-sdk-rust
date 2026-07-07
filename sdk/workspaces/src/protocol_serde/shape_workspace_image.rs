@@ -2,10 +2,16 @@
 pub(crate) fn de_workspace_image<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkspaceImage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,8 +43,11 @@ where
                             );
                         }
                         "OperatingSystem" => {
-                            builder =
-                                builder.set_operating_system(crate::protocol_serde::shape_operating_system::de_operating_system(tokens, _value)?);
+                            builder = builder.set_operating_system(crate::protocol_serde::shape_operating_system::de_operating_system(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "State" => {
                             builder = builder.set_state(
@@ -82,11 +91,14 @@ where
                             );
                         }
                         "Updates" => {
-                            builder = builder.set_updates(crate::protocol_serde::shape_update_result::de_update_result(tokens, _value)?);
+                            builder = builder.set_updates(crate::protocol_serde::shape_update_result::de_update_result(tokens, _value, depth + 1)?);
                         }
                         "ErrorDetails" => {
-                            builder =
-                                builder.set_error_details(crate::protocol_serde::shape_error_details_list::de_error_details_list(tokens, _value)?);
+                            builder = builder.set_error_details(crate::protocol_serde::shape_error_details_list::de_error_details_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

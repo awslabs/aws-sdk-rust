@@ -91,6 +91,8 @@ pub fn de_describe_auto_scaling_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeAutoScalingGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeAutoScalingGroupsResponse got {start_el:?}"
@@ -108,7 +110,7 @@ pub fn de_describe_auto_scaling_groups(
             s if s.matches("AutoScalingGroups") /* AutoScalingGroups com.amazonaws.autoscaling.synthetic#DescribeAutoScalingGroupsOutput$AutoScalingGroups */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_auto_scaling_groups::de_auto_scaling_groups(&mut tag)
+                        crate::protocol_serde::shape_auto_scaling_groups::de_auto_scaling_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;

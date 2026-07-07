@@ -25,7 +25,7 @@ impl super::Client {
     ///   - [`clip_range(Option<ClipRange>)`](crate::operation::create_program::CreateProgramOutput::clip_range): <p>The clip range configuration settings.</p>
     ///   - [`duration_millis(Option<i64>)`](crate::operation::create_program::CreateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     ///   - [`audience_media(Option<Vec::<AudienceMedia>>)`](crate::operation::create_program::CreateProgramOutput::audience_media): <p>The list of AudienceMedia defined in program.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::create_program::CreateProgramOutput::tags): <p>The tags to assign to the program. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::create_program::CreateProgramOutput::tags): <p>The tags assigned to the program. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<CreateProgramError>`](crate::operation::create_program::CreateProgramError)
     pub fn create_program(&self) -> crate::operation::create_program::builders::CreateProgramFluentBuilder {
         crate::operation::create_program::builders::CreateProgramFluentBuilder::new(self.handle.clone())

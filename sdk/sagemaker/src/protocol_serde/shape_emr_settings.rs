@@ -27,10 +27,16 @@ pub fn ser_emr_settings(
 pub(crate) fn de_emr_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EmrSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -41,12 +47,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AssumableRoleArns" => {
-                            builder = builder
-                                .set_assumable_role_arns(crate::protocol_serde::shape_assumable_role_arns::de_assumable_role_arns(tokens, _value)?);
+                            builder = builder.set_assumable_role_arns(crate::protocol_serde::shape_assumable_role_arns::de_assumable_role_arns(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExecutionRoleArns" => {
-                            builder = builder
-                                .set_execution_role_arns(crate::protocol_serde::shape_execution_role_arns::de_execution_role_arns(tokens, _value)?);
+                            builder = builder.set_execution_role_arns(crate::protocol_serde::shape_execution_role_arns::de_execution_role_arns(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

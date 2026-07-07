@@ -2,10 +2,16 @@
 pub(crate) fn de_identity_provider_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::IdentityProviderType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,57 +20,61 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "UserPoolId" => {
-                            builder = builder.set_user_pool_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "UserPoolId" => {
+                                builder = builder.set_user_pool_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ProviderName" => {
+                                builder = builder.set_provider_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ProviderType" => {
+                                builder = builder.set_provider_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::IdentityProviderTypeType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "ProviderDetails" => {
+                                builder = builder.set_provider_details(crate::protocol_serde::shape_provider_details_type::de_provider_details_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "AttributeMapping" => {
+                                builder = builder.set_attribute_mapping(
+                                    crate::protocol_serde::shape_attribute_mapping_type::de_attribute_mapping_type(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "IdpIdentifiers" => {
+                                builder = builder.set_idp_identifiers(
+                                    crate::protocol_serde::shape_idp_identifiers_list_type::de_idp_identifiers_list_type(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "LastModifiedDate" => {
+                                builder = builder.set_last_modified_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "CreationDate" => {
+                                builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "ProviderName" => {
-                            builder = builder.set_provider_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ProviderType" => {
-                            builder = builder.set_provider_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::IdentityProviderTypeType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "ProviderDetails" => {
-                            builder = builder.set_provider_details(crate::protocol_serde::shape_provider_details_type::de_provider_details_type(
-                                tokens, _value,
-                            )?);
-                        }
-                        "AttributeMapping" => {
-                            builder = builder.set_attribute_mapping(crate::protocol_serde::shape_attribute_mapping_type::de_attribute_mapping_type(
-                                tokens, _value,
-                            )?);
-                        }
-                        "IdpIdentifiers" => {
-                            builder = builder.set_idp_identifiers(
-                                crate::protocol_serde::shape_idp_identifiers_list_type::de_idp_identifiers_list_type(tokens, _value)?,
-                            );
-                        }
-                        "LastModifiedDate" => {
-                            builder = builder.set_last_modified_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "CreationDate" => {
-                            builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

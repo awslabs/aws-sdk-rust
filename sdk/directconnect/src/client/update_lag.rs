@@ -29,6 +29,7 @@ impl super::Client {
     ///   - [`mac_sec_capable(Option<bool>)`](crate::operation::update_lag::UpdateLagOutput::mac_sec_capable): <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     ///   - [`encryption_mode(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::encryption_mode): <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     ///   - [`mac_sec_keys(Option<Vec::<MacSecKey>>)`](crate::operation::update_lag::UpdateLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+    ///   - [`rate_limiter_status(Option<RateLimiterStatus>)`](crate::operation::update_lag::UpdateLagOutput::rate_limiter_status): <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
     /// - On failure, responds with [`SdkError<UpdateLagError>`](crate::operation::update_lag::UpdateLagError)
     pub fn update_lag(&self) -> crate::operation::update_lag::builders::UpdateLagFluentBuilder {
         crate::operation::update_lag::builders::UpdateLagFluentBuilder::new(self.handle.clone())

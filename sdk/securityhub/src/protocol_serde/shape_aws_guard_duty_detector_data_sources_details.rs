@@ -48,10 +48,16 @@ pub fn ser_aws_guard_duty_detector_data_sources_details(
 pub(crate) fn de_aws_guard_duty_detector_data_sources_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,32 +69,32 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CloudTrail" => {
                             builder = builder.set_cloud_trail(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_cloud_trail_details::de_aws_guard_duty_detector_data_sources_cloud_trail_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_cloud_trail_details::de_aws_guard_duty_detector_data_sources_cloud_trail_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "DnsLogs" => {
                             builder = builder.set_dns_logs(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_dns_logs_details::de_aws_guard_duty_detector_data_sources_dns_logs_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_dns_logs_details::de_aws_guard_duty_detector_data_sources_dns_logs_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "FlowLogs" => {
                             builder = builder.set_flow_logs(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_flow_logs_details::de_aws_guard_duty_detector_data_sources_flow_logs_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_flow_logs_details::de_aws_guard_duty_detector_data_sources_flow_logs_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "Kubernetes" => {
                             builder = builder.set_kubernetes(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_kubernetes_details::de_aws_guard_duty_detector_data_sources_kubernetes_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_kubernetes_details::de_aws_guard_duty_detector_data_sources_kubernetes_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "MalwareProtection" => {
                             builder = builder.set_malware_protection(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_malware_protection_details::de_aws_guard_duty_detector_data_sources_malware_protection_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_malware_protection_details::de_aws_guard_duty_detector_data_sources_malware_protection_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "S3Logs" => {
                             builder = builder.set_s3_logs(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_s3_logs_details::de_aws_guard_duty_detector_data_sources_s3_logs_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_s3_logs_details::de_aws_guard_duty_detector_data_sources_s3_logs_details(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

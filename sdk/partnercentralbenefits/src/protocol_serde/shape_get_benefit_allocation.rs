@@ -132,6 +132,8 @@ pub(crate) fn de_get_benefit_allocation(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -208,12 +210,18 @@ pub(crate) fn de_get_benefit_allocation(
                     );
                 }
                 "ApplicableBenefitIds" => {
-                    builder =
-                        builder.set_applicable_benefit_ids(crate::protocol_serde::shape_benefit_identifiers::de_benefit_identifiers(tokens, _value)?);
+                    builder = builder.set_applicable_benefit_ids(crate::protocol_serde::shape_benefit_identifiers::de_benefit_identifiers(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FulfillmentDetail" => {
-                    builder =
-                        builder.set_fulfillment_detail(crate::protocol_serde::shape_fulfillment_details::de_fulfillment_details(tokens, _value)?);
+                    builder = builder.set_fulfillment_detail(crate::protocol_serde::shape_fulfillment_details::de_fulfillment_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::set_next_token):<br>required: **false**<br>Token for pagination<br>
-    ///   - [`max_results(i32)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::set_max_results):<br>required: **false**<br>Maximum number of agent spaces to return<br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListAgentSpacesOutput`](crate::operation::list_agent_spaces::ListAgentSpacesOutput) with field(s):
-    ///   - [`agent_space_summaries(Option<Vec::<AgentSpaceSummary>>)`](crate::operation::list_agent_spaces::ListAgentSpacesOutput::agent_space_summaries): List of agent space summaries
-    ///   - [`next_token(Option<String>)`](crate::operation::list_agent_spaces::ListAgentSpacesOutput::next_token): Token for next page of results
+    ///   - [`agent_space_summaries(Option<Vec::<AgentSpaceSummary>>)`](crate::operation::list_agent_spaces::ListAgentSpacesOutput::agent_space_summaries): <p>The list of agent space summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_agent_spaces::ListAgentSpacesOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     /// - On failure, responds with [`SdkError<ListAgentSpacesError>`](crate::operation::list_agent_spaces::ListAgentSpacesError)
     pub fn list_agent_spaces(&self) -> crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder {
         crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::new(self.handle.clone())

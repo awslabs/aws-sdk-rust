@@ -2,10 +2,16 @@
 pub(crate) fn de_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Policy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,16 +37,6 @@ where
                         }
                         "policyEngineId" => {
                             builder = builder.set_policy_engine_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "definition" => {
-                            builder = builder.set_definition(crate::protocol_serde::shape_policy_definition::de_policy_definition(tokens, _value)?);
-                        }
-                        "description" => {
-                            builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -72,9 +68,32 @@ where
                                     .transpose()?,
                             );
                         }
+                        "enforcementMode" => {
+                            builder = builder.set_enforcement_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EnforcementMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "definition" => {
+                            builder = builder.set_definition(crate::protocol_serde::shape_policy_definition::de_policy_definition(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "description" => {
+                            builder = builder.set_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "statusReasons" => {
                             builder = builder.set_status_reasons(crate::protocol_serde::shape_policy_status_reasons::de_policy_status_reasons(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

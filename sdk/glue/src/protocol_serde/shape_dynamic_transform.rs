@@ -57,10 +57,16 @@ pub fn ser_dynamic_transform(
 pub(crate) fn de_dynamic_transform<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DynamicTransform>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -85,11 +91,15 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value, depth + 1)?);
                         }
                         "Parameters" => {
                             builder = builder.set_parameters(
-                                crate::protocol_serde::shape_transform_config_parameter_list::de_transform_config_parameter_list(tokens, _value)?,
+                                crate::protocol_serde::shape_transform_config_parameter_list::de_transform_config_parameter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "FunctionName" => {
@@ -114,7 +124,8 @@ where
                             );
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
+                            builder =
+                                builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

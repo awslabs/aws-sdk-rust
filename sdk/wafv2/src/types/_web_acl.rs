@@ -69,6 +69,8 @@ pub struct WebAcl {
     pub on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
     /// <p>Returns a list of <code>ApplicationAttribute</code>s.</p>
     pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    pub monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -191,6 +193,10 @@ impl WebAcl {
     pub fn application_config(&self) -> ::std::option::Option<&crate::types::ApplicationConfig> {
         self.application_config.as_ref()
     }
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    pub fn monetization_config(&self) -> ::std::option::Option<&crate::types::MonetizationConfig> {
+        self.monetization_config.as_ref()
+    }
 }
 impl WebAcl {
     /// Creates a new builder-style object to manufacture [`WebAcl`](crate::types::WebAcl).
@@ -224,6 +230,7 @@ pub struct WebAclBuilder {
     pub(crate) retrofitted_by_firewall_manager: ::std::option::Option<bool>,
     pub(crate) on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
     pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
+    pub(crate) monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl WebAclBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -635,6 +642,20 @@ impl WebAclBuilder {
     pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
         &self.application_config
     }
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    pub fn monetization_config(mut self, input: crate::types::MonetizationConfig) -> Self {
+        self.monetization_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    pub fn set_monetization_config(mut self, input: ::std::option::Option<crate::types::MonetizationConfig>) -> Self {
+        self.monetization_config = input;
+        self
+    }
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
+        &self.monetization_config
+    }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WebAclBuilder::name)
@@ -675,6 +696,7 @@ impl WebAclBuilder {
             retrofitted_by_firewall_manager: self.retrofitted_by_firewall_manager.unwrap_or_default(),
             on_source_d_do_s_protection_config: self.on_source_d_do_s_protection_config,
             application_config: self.application_config,
+            monetization_config: self.monetization_config,
         })
     }
 }

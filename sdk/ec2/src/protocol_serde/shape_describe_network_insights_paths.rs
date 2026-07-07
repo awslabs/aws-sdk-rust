@@ -49,6 +49,8 @@ pub fn de_describe_network_insights_paths(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeNetworkInsightsPathsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeNetworkInsightsPathsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_network_insights_paths(
             s if s.matches("networkInsightsPathSet") /* NetworkInsightsPaths com.amazonaws.ec2.synthetic#DescribeNetworkInsightsPathsOutput$NetworkInsightsPaths */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_network_insights_path_list::de_network_insights_path_list(&mut tag)
+                        crate::protocol_serde::shape_network_insights_path_list::de_network_insights_path_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

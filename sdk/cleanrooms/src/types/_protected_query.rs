@@ -28,6 +28,8 @@ pub struct ProtectedQuery {
     pub differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyParameters>,
     /// <p>The compute configuration for the protected query.</p>
     pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub query_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQuery {
     /// <p>The identifier for a protected query instance.</p>
@@ -81,6 +83,10 @@ impl ProtectedQuery {
     pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
         self.compute_configuration.as_ref()
     }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn query_compute_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.query_compute_payer_account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ProtectedQuery {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -97,6 +103,7 @@ impl ::std::fmt::Debug for ProtectedQuery {
         formatter.field("error", &self.error);
         formatter.field("differential_privacy", &self.differential_privacy);
         formatter.field("compute_configuration", &self.compute_configuration);
+        formatter.field("query_compute_payer_account_id", &self.query_compute_payer_account_id);
         formatter.finish()
     }
 }
@@ -123,6 +130,7 @@ pub struct ProtectedQueryBuilder {
     pub(crate) error: ::std::option::Option<crate::types::ProtectedQueryError>,
     pub(crate) differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyParameters>,
     pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
+    pub(crate) query_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQueryBuilder {
     /// <p>The identifier for a protected query instance.</p>
@@ -298,6 +306,20 @@ impl ProtectedQueryBuilder {
     pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
         &self.compute_configuration
     }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn query_compute_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_compute_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn set_query_compute_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.query_compute_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn get_query_compute_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_compute_payer_account_id
+    }
     /// Consumes the builder and constructs a [`ProtectedQuery`](crate::types::ProtectedQuery).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ProtectedQueryBuilder::id)
@@ -344,6 +366,7 @@ impl ProtectedQueryBuilder {
             error: self.error,
             differential_privacy: self.differential_privacy,
             compute_configuration: self.compute_configuration,
+            query_compute_payer_account_id: self.query_compute_payer_account_id,
         })
     }
 }
@@ -362,6 +385,7 @@ impl ::std::fmt::Debug for ProtectedQueryBuilder {
         formatter.field("error", &self.error);
         formatter.field("differential_privacy", &self.differential_privacy);
         formatter.field("compute_configuration", &self.compute_configuration);
+        formatter.field("query_compute_payer_account_id", &self.query_compute_payer_account_id);
         formatter.finish()
     }
 }

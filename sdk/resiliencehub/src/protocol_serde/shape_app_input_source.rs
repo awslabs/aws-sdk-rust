@@ -2,10 +2,16 @@
 pub(crate) fn de_app_input_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AppInputSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,8 +43,11 @@ where
                             );
                         }
                         "terraformSource" => {
-                            builder =
-                                builder.set_terraform_source(crate::protocol_serde::shape_terraform_source::de_terraform_source(tokens, _value)?);
+                            builder = builder.set_terraform_source(crate::protocol_serde::shape_terraform_source::de_terraform_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceCount" => {
                             builder = builder.set_resource_count(
@@ -49,7 +58,11 @@ where
                         }
                         "eksSourceClusterNamespace" => {
                             builder = builder.set_eks_source_cluster_namespace(
-                                crate::protocol_serde::shape_eks_source_cluster_namespace::de_eks_source_cluster_namespace(tokens, _value)?,
+                                crate::protocol_serde::shape_eks_source_cluster_namespace::de_eks_source_cluster_namespace(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

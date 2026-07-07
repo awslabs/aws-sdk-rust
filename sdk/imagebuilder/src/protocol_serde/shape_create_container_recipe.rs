@@ -246,6 +246,8 @@ pub(crate) fn de_create_container_recipe(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -267,7 +269,7 @@ pub(crate) fn de_create_container_recipe(
                 }
                 "latestVersionReferences" => {
                     builder = builder.set_latest_version_references(
-                        crate::protocol_serde::shape_latest_version_references::de_latest_version_references(tokens, _value)?,
+                        crate::protocol_serde::shape_latest_version_references::de_latest_version_references(tokens, _value, depth + 1)?,
                     );
                 }
                 "requestId" => {

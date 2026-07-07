@@ -139,6 +139,9 @@ pub mod create_inference_experiment;
 /// Types for the `CreateInferenceRecommendationsJob` operation.
 pub mod create_inference_recommendations_job;
 
+/// Types for the `CreateJob` operation.
+pub mod create_job;
+
 /// Types for the `CreateLabelingJob` operation.
 pub mod create_labeling_job;
 
@@ -343,6 +346,9 @@ pub mod delete_inference_component;
 /// Types for the `DeleteInferenceExperiment` operation.
 pub mod delete_inference_experiment;
 
+/// Types for the `DeleteJob` operation.
+pub mod delete_job;
+
 /// Types for the `DeleteMlflowApp` operation.
 pub mod delete_mlflow_app;
 
@@ -543,6 +549,12 @@ pub mod describe_inference_experiment;
 
 /// Types for the `DescribeInferenceRecommendationsJob` operation.
 pub mod describe_inference_recommendations_job;
+
+/// Types for the `DescribeJob` operation.
+pub mod describe_job;
+
+/// Types for the `DescribeJobSchemaVersion` operation.
+pub mod describe_job_schema_version;
 
 /// Types for the `DescribeLabelingJob` operation.
 pub mod describe_labeling_job;
@@ -811,6 +823,12 @@ pub mod list_inference_recommendations_job_steps;
 /// Types for the `ListInferenceRecommendationsJobs` operation.
 pub mod list_inference_recommendations_jobs;
 
+/// Types for the `ListJobSchemaVersions` operation.
+pub mod list_job_schema_versions;
+
+/// Types for the `ListJobs` operation.
+pub mod list_jobs;
+
 /// Types for the `ListLabelingJobs` operation.
 pub mod list_labeling_jobs;
 
@@ -1026,6 +1044,9 @@ pub mod stop_inference_experiment;
 
 /// Types for the `StopInferenceRecommendationsJob` operation.
 pub mod stop_inference_recommendations_job;
+
+/// Types for the `StopJob` operation.
+pub mod stop_job;
 
 /// Types for the `StopLabelingJob` operation.
 pub mod stop_labeling_job;

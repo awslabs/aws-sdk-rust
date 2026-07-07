@@ -28,10 +28,16 @@ pub fn ser_collection_scheme(
 pub(crate) fn de_collection_scheme<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CollectionScheme>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,21 +63,24 @@ where
                     }
                     variant = match key.as_ref() {
                         "timeBasedCollectionScheme" => Some(crate::types::CollectionScheme::TimeBasedCollectionScheme(
-                            crate::protocol_serde::shape_time_based_collection_scheme::de_time_based_collection_scheme(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_time_based_collection_scheme::de_time_based_collection_scheme(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'timeBasedCollectionScheme' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "conditionBasedCollectionScheme" => Some(crate::types::CollectionScheme::ConditionBasedCollectionScheme(
-                            crate::protocol_serde::shape_condition_based_collection_scheme::de_condition_based_collection_scheme(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'conditionBasedCollectionScheme' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_condition_based_collection_scheme::de_condition_based_collection_scheme(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'conditionBasedCollectionScheme' cannot be null",
+                                )
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

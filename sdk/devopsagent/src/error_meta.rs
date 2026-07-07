@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// Access to the requested resource is denied due to insufficient permissions.
+    /// <p>Access to the requested resource is denied due to insufficient permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// The request conflicts with the current state of the resource.
+    /// <p>The request conflicts with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// This exception is thrown when the content size exceeds the allowed limit.
+    /// <p>This exception is thrown when the content size exceeds the allowed limit.</p>
     ContentSizeExceededException(crate::types::error::ContentSizeExceededException),
-    /// Calls to the customer Identity Center have failed
+    /// <p>Calls to the customer Identity Center have failed</p>
     IdentityCenterServiceException(crate::types::error::IdentityCenterServiceException),
-    /// This exception is thrown when an unexpected error occurs in the processing of a request.
+    /// <p>This exception is thrown when an unexpected error occurs in the processing of a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// One or more parameters provided in the request are invalid.
+    /// <p>One or more parameters provided in the request are invalid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// The requested resource could not be found.
+    /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// The request would exceed the service quota limit.
+    /// <p>The request would exceed the service quota limit.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// The request was throttled due to too many requests. Please slow down and try again.
+    /// <p>The request was throttled due to too many requests. Please slow down and try again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// A standard error for input validation failures. This should be thrown by services when a member of the input structure falls outside of the modeled or documented constraints.
+    /// <p>The input fails to satisfy the constraints specified by the service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -148,6 +148,70 @@ impl From<crate::operation::create_agent_space::CreateAgentSpaceError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset::CreateAssetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset::CreateAssetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_asset::CreateAssetError> for Error {
+    fn from(err: crate::operation::create_asset::CreateAssetError) -> Self {
+        match err {
+            crate::operation::create_asset::CreateAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_asset::CreateAssetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_asset::CreateAssetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_asset::CreateAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_asset::CreateAssetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_asset::CreateAssetError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::create_asset::CreateAssetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_asset::CreateAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_asset::CreateAssetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_asset::CreateAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset_file::CreateAssetFileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset_file::CreateAssetFileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_asset_file::CreateAssetFileError> for Error {
+    fn from(err: crate::operation::create_asset_file::CreateAssetFileError) -> Self {
+        match err {
+            crate::operation::create_asset_file::CreateAssetFileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_asset_file::CreateAssetFileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_asset_file::CreateAssetFileError::ContentSizeExceededException(inner) => {
+                Error::ContentSizeExceededException(inner)
+            }
+            crate::operation::create_asset_file::CreateAssetFileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_asset_file::CreateAssetFileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_asset_file::CreateAssetFileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_asset_file::CreateAssetFileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_asset_file::CreateAssetFileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_asset_file::CreateAssetFileError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_asset_file::CreateAssetFileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_backlog_task::CreateBacklogTaskError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -265,6 +329,36 @@ impl From<crate::operation::create_private_connection::CreatePrivateConnectionEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trigger::CreateTriggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trigger::CreateTriggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_trigger::CreateTriggerError> for Error {
+    fn from(err: crate::operation::create_trigger::CreateTriggerError) -> Self {
+        match err {
+            crate::operation::create_trigger::CreateTriggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_trigger::CreateTriggerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_trigger::CreateTriggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_trigger::CreateTriggerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_trigger::CreateTriggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_trigger::CreateTriggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_trigger::CreateTriggerError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::create_trigger::CreateTriggerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_trigger::CreateTriggerError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_trigger::CreateTriggerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_agent_space::DeleteAgentSpaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -296,6 +390,70 @@ impl From<crate::operation::delete_agent_space::DeleteAgentSpaceError> for Error
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::delete_agent_space::DeleteAgentSpaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset::DeleteAssetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset::DeleteAssetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_asset::DeleteAssetError> for Error {
+    fn from(err: crate::operation::delete_asset::DeleteAssetError) -> Self {
+        match err {
+            crate::operation::delete_asset::DeleteAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_asset::DeleteAssetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::delete_asset::DeleteAssetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_asset::DeleteAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset_file::DeleteAssetFileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset_file::DeleteAssetFileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_asset_file::DeleteAssetFileError> for Error {
+    fn from(err: crate::operation::delete_asset_file::DeleteAssetFileError) -> Self {
+        match err {
+            crate::operation::delete_asset_file::DeleteAssetFileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_asset_file::DeleteAssetFileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_asset_file::DeleteAssetFileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_asset_file::DeleteAssetFileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_asset_file::DeleteAssetFileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_asset_file::DeleteAssetFileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_asset_file::DeleteAssetFileError::ContentSizeExceededException(inner) => {
+                Error::ContentSizeExceededException(inner)
+            }
+            crate::operation::delete_asset_file::DeleteAssetFileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_asset_file::DeleteAssetFileError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_asset_file::DeleteAssetFileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -345,6 +503,36 @@ impl From<crate::operation::delete_private_connection::DeletePrivateConnectionEr
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::delete_private_connection::DeletePrivateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trigger::DeleteTriggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trigger::DeleteTriggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_trigger::DeleteTriggerError> for Error {
+    fn from(err: crate::operation::delete_trigger::DeleteTriggerError) -> Self {
+        match err {
+            crate::operation::delete_trigger::DeleteTriggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_trigger::DeleteTriggerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -619,6 +807,100 @@ impl From<crate::operation::get_agent_space::GetAgentSpaceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset::GetAssetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset::GetAssetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_asset::GetAssetError> for Error {
+    fn from(err: crate::operation::get_asset::GetAssetError) -> Self {
+        match err {
+            crate::operation::get_asset::GetAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_asset::GetAssetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_asset::GetAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_asset::GetAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_asset::GetAssetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_asset::GetAssetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_asset::GetAssetError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::get_asset::GetAssetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_asset::GetAssetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_asset::GetAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset_content::GetAssetContentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset_content::GetAssetContentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_asset_content::GetAssetContentError> for Error {
+    fn from(err: crate::operation::get_asset_content::GetAssetContentError) -> Self {
+        match err {
+            crate::operation::get_asset_content::GetAssetContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_asset_content::GetAssetContentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_asset_content::GetAssetContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_asset_content::GetAssetContentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_asset_content::GetAssetContentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_asset_content::GetAssetContentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_asset_content::GetAssetContentError::ContentSizeExceededException(inner) => {
+                Error::ContentSizeExceededException(inner)
+            }
+            crate::operation::get_asset_content::GetAssetContentError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_asset_content::GetAssetContentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_asset_content::GetAssetContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset_file::GetAssetFileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset_file::GetAssetFileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_asset_file::GetAssetFileError> for Error {
+    fn from(err: crate::operation::get_asset_file::GetAssetFileError) -> Self {
+        match err {
+            crate::operation::get_asset_file::GetAssetFileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_asset_file::GetAssetFileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_association::GetAssociationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -783,6 +1065,36 @@ impl From<crate::operation::get_service::GetServiceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trigger::GetTriggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trigger::GetTriggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trigger::GetTriggerError> for Error {
+    fn from(err: crate::operation::get_trigger::GetTriggerError) -> Self {
+        match err {
+            crate::operation::get_trigger::GetTriggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_trigger::GetTriggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_trigger::GetTriggerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_trigger::GetTriggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_trigger::GetTriggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_trigger::GetTriggerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_trigger::GetTriggerError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::get_trigger::GetTriggerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_trigger::GetTriggerError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_trigger::GetTriggerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agent_spaces::ListAgentSpacesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -814,6 +1126,142 @@ impl From<crate::operation::list_agent_spaces::ListAgentSpacesError> for Error {
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::list_agent_spaces::ListAgentSpacesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_files::ListAssetFilesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_files::ListAssetFilesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_asset_files::ListAssetFilesError> for Error {
+    fn from(err: crate::operation::list_asset_files::ListAssetFilesError) -> Self {
+        match err {
+            crate::operation::list_asset_files::ListAssetFilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_files::ListAssetFilesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_asset_files::ListAssetFilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_asset_files::ListAssetFilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_files::ListAssetFilesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_asset_files::ListAssetFilesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_asset_files::ListAssetFilesError::ContentSizeExceededException(inner) => {
+                Error::ContentSizeExceededException(inner)
+            }
+            crate::operation::list_asset_files::ListAssetFilesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_asset_files::ListAssetFilesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_asset_files::ListAssetFilesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assets::ListAssetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assets::ListAssetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_assets::ListAssetsError> for Error {
+    fn from(err: crate::operation::list_assets::ListAssetsError) -> Self {
+        match err {
+            crate::operation::list_assets::ListAssetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_assets::ListAssetsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_assets::ListAssetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_assets::ListAssetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_assets::ListAssetsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_assets::ListAssetsError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::list_assets::ListAssetsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_assets::ListAssetsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_assets::ListAssetsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_assets::ListAssetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_types::ListAssetTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_types::ListAssetTypesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_asset_types::ListAssetTypesError> for Error {
+    fn from(err: crate::operation::list_asset_types::ListAssetTypesError) -> Self {
+        match err {
+            crate::operation::list_asset_types::ListAssetTypesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::ContentSizeExceededException(inner) => {
+                Error::ContentSizeExceededException(inner)
+            }
+            crate::operation::list_asset_types::ListAssetTypesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_asset_types::ListAssetTypesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_asset_types::ListAssetTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_versions::ListAssetVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_versions::ListAssetVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_asset_versions::ListAssetVersionsError> for Error {
+    fn from(err: crate::operation::list_asset_versions::ListAssetVersionsError) -> Self {
+        match err {
+            crate::operation::list_asset_versions::ListAssetVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_versions::ListAssetVersionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_asset_versions::ListAssetVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_asset_versions::ListAssetVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_versions::ListAssetVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_asset_versions::ListAssetVersionsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_asset_versions::ListAssetVersionsError::ContentSizeExceededException(inner) => {
+                Error::ContentSizeExceededException(inner)
+            }
+            crate::operation::list_asset_versions::ListAssetVersionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_asset_versions::ListAssetVersionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_asset_versions::ListAssetVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1207,6 +1655,36 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_triggers::ListTriggersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_triggers::ListTriggersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_triggers::ListTriggersError> for Error {
+    fn from(err: crate::operation::list_triggers::ListTriggersError) -> Self {
+        match err {
+            crate::operation::list_triggers::ListTriggersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_triggers::ListTriggersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_triggers::ListTriggersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_triggers::ListTriggersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_triggers::ListTriggersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_triggers::ListTriggersError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_triggers::ListTriggersError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::list_triggers::ListTriggersError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_triggers::ListTriggersError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_triggers::ListTriggersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_webhooks::ListWebhooksError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1392,6 +1870,70 @@ impl From<crate::operation::update_agent_space::UpdateAgentSpaceError> for Error
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_agent_space::UpdateAgentSpaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset::UpdateAssetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset::UpdateAssetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_asset::UpdateAssetError> for Error {
+    fn from(err: crate::operation::update_asset::UpdateAssetError) -> Self {
+        match err {
+            crate::operation::update_asset::UpdateAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_asset::UpdateAssetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_asset::UpdateAssetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_asset::UpdateAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_asset::UpdateAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_asset::UpdateAssetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_asset::UpdateAssetError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::update_asset::UpdateAssetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_asset::UpdateAssetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_asset::UpdateAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset_file::UpdateAssetFileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset_file::UpdateAssetFileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_asset_file::UpdateAssetFileError> for Error {
+    fn from(err: crate::operation::update_asset_file::UpdateAssetFileError) -> Self {
+        match err {
+            crate::operation::update_asset_file::UpdateAssetFileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_asset_file::UpdateAssetFileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_asset_file::UpdateAssetFileError::ContentSizeExceededException(inner) => {
+                Error::ContentSizeExceededException(inner)
+            }
+            crate::operation::update_asset_file::UpdateAssetFileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_asset_file::UpdateAssetFileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_asset_file::UpdateAssetFileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_asset_file::UpdateAssetFileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_asset_file::UpdateAssetFileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_asset_file::UpdateAssetFileError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_asset_file::UpdateAssetFileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1646,6 +2188,36 @@ impl From<crate::operation::update_recommendation::UpdateRecommendationError> fo
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_recommendation::UpdateRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_trigger::UpdateTriggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_trigger::UpdateTriggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_trigger::UpdateTriggerError> for Error {
+    fn from(err: crate::operation::update_trigger::UpdateTriggerError) -> Self {
+        match err {
+            crate::operation::update_trigger::UpdateTriggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_trigger::UpdateTriggerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

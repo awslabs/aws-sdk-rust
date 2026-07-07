@@ -205,6 +205,8 @@ pub fn de_create_hosted_zone(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("CreateHostedZoneResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected CreateHostedZoneResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -215,7 +217,7 @@ pub fn de_create_hosted_zone(
             s if s.matches("HostedZone") /* HostedZone com.amazonaws.route53.synthetic#CreateHostedZoneOutput$HostedZone */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_hosted_zone::de_hosted_zone(&mut tag)
+                        crate::protocol_serde::shape_hosted_zone::de_hosted_zone(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -225,7 +227,7 @@ pub fn de_create_hosted_zone(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53.synthetic#CreateHostedZoneOutput$ChangeInfo */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_change_info::de_change_info(&mut tag)
+                        crate::protocol_serde::shape_change_info::de_change_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -235,7 +237,7 @@ pub fn de_create_hosted_zone(
             s if s.matches("DelegationSet") /* DelegationSet com.amazonaws.route53.synthetic#CreateHostedZoneOutput$DelegationSet */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_delegation_set::de_delegation_set(&mut tag)
+                        crate::protocol_serde::shape_delegation_set::de_delegation_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -245,7 +247,7 @@ pub fn de_create_hosted_zone(
             s if s.matches("VPC") /* VPC com.amazonaws.route53.synthetic#CreateHostedZoneOutput$VPC */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_vpc::de_vpc(&mut tag)
+                        crate::protocol_serde::shape_vpc::de_vpc(&mut tag, depth + 1)
                         ?
                     )
                 ;

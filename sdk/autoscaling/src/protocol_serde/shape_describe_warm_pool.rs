@@ -93,6 +93,8 @@ pub fn de_describe_warm_pool(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeWarmPoolResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeWarmPoolResponse got {start_el:?}"
@@ -110,7 +112,7 @@ pub fn de_describe_warm_pool(
             s if s.matches("WarmPoolConfiguration") /* WarmPoolConfiguration com.amazonaws.autoscaling.synthetic#DescribeWarmPoolOutput$WarmPoolConfiguration */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_warm_pool_configuration::de_warm_pool_configuration(&mut tag)
+                        crate::protocol_serde::shape_warm_pool_configuration::de_warm_pool_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -120,7 +122,7 @@ pub fn de_describe_warm_pool(
             s if s.matches("Instances") /* Instances com.amazonaws.autoscaling.synthetic#DescribeWarmPoolOutput$Instances */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_instances::de_instances(&mut tag)
+                        crate::protocol_serde::shape_instances::de_instances(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_cors<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Cors>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,18 +25,26 @@ where
                             builder = builder.set_allow_credentials(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "AllowHeaders" => {
-                            builder = builder.set_allow_headers(crate::protocol_serde::shape_headers_list::de_headers_list(tokens, _value)?);
+                            builder =
+                                builder.set_allow_headers(crate::protocol_serde::shape_headers_list::de_headers_list(tokens, _value, depth + 1)?);
                         }
                         "AllowMethods" => {
-                            builder =
-                                builder.set_allow_methods(crate::protocol_serde::shape_allow_methods_list::de_allow_methods_list(tokens, _value)?);
+                            builder = builder.set_allow_methods(crate::protocol_serde::shape_allow_methods_list::de_allow_methods_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AllowOrigins" => {
-                            builder =
-                                builder.set_allow_origins(crate::protocol_serde::shape_allow_origins_list::de_allow_origins_list(tokens, _value)?);
+                            builder = builder.set_allow_origins(crate::protocol_serde::shape_allow_origins_list::de_allow_origins_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExposeHeaders" => {
-                            builder = builder.set_expose_headers(crate::protocol_serde::shape_headers_list::de_headers_list(tokens, _value)?);
+                            builder =
+                                builder.set_expose_headers(crate::protocol_serde::shape_headers_list::de_headers_list(tokens, _value, depth + 1)?);
                         }
                         "MaxAge" => {
                             builder = builder.set_max_age(

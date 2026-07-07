@@ -203,17 +203,17 @@ impl ListDurableExecutionsByFunctionFluentBuilder {
     pub fn get_started_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_started_before()
     }
-    /// <p>Set to true to return results in reverse chronological order (newest first). Default is false.</p>
+    /// <p>Set to true to return results in chronological order (oldest first). Default is false.</p>
     pub fn reverse_order(mut self, input: bool) -> Self {
         self.inner = self.inner.reverse_order(input);
         self
     }
-    /// <p>Set to true to return results in reverse chronological order (newest first). Default is false.</p>
+    /// <p>Set to true to return results in chronological order (oldest first). Default is false.</p>
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reverse_order(input);
         self
     }
-    /// <p>Set to true to return results in reverse chronological order (newest first). Default is false.</p>
+    /// <p>Set to true to return results in chronological order (oldest first). Default is false.</p>
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
         self.inner.get_reverse_order()
     }

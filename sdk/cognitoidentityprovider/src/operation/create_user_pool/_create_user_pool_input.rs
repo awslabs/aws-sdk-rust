@@ -61,6 +61,10 @@ pub struct CreateUserPoolInput {
     pub account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
     /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
     pub user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
+    /// <p>The key configuration for the user pool. Specifies the key type and KMS key ARN for encryption.</p>
+    pub key_configuration: ::std::option::Option<crate::types::KeyConfigurationType>,
+    /// <p>The issuer configuration for the user pool. Specifies the issuer type for token generation.</p>
+    pub issuer_configuration: ::std::option::Option<crate::types::IssuerConfigurationType>,
 }
 impl CreateUserPoolInput {
     /// <p>A friendly name for your user pool.</p>
@@ -176,6 +180,14 @@ impl CreateUserPoolInput {
     pub fn user_pool_tier(&self) -> ::std::option::Option<&crate::types::UserPoolTierType> {
         self.user_pool_tier.as_ref()
     }
+    /// <p>The key configuration for the user pool. Specifies the key type and KMS key ARN for encryption.</p>
+    pub fn key_configuration(&self) -> ::std::option::Option<&crate::types::KeyConfigurationType> {
+        self.key_configuration.as_ref()
+    }
+    /// <p>The issuer configuration for the user pool. Specifies the issuer type for token generation.</p>
+    pub fn issuer_configuration(&self) -> ::std::option::Option<&crate::types::IssuerConfigurationType> {
+        self.issuer_configuration.as_ref()
+    }
 }
 impl CreateUserPoolInput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolInput`](crate::operation::create_user_pool::CreateUserPoolInput).
@@ -212,6 +224,8 @@ pub struct CreateUserPoolInputBuilder {
     pub(crate) username_configuration: ::std::option::Option<crate::types::UsernameConfigurationType>,
     pub(crate) account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
     pub(crate) user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
+    pub(crate) key_configuration: ::std::option::Option<crate::types::KeyConfigurationType>,
+    pub(crate) issuer_configuration: ::std::option::Option<crate::types::IssuerConfigurationType>,
 }
 impl CreateUserPoolInputBuilder {
     /// <p>A friendly name for your user pool.</p>
@@ -615,6 +629,34 @@ impl CreateUserPoolInputBuilder {
     pub fn get_user_pool_tier(&self) -> &::std::option::Option<crate::types::UserPoolTierType> {
         &self.user_pool_tier
     }
+    /// <p>The key configuration for the user pool. Specifies the key type and KMS key ARN for encryption.</p>
+    pub fn key_configuration(mut self, input: crate::types::KeyConfigurationType) -> Self {
+        self.key_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The key configuration for the user pool. Specifies the key type and KMS key ARN for encryption.</p>
+    pub fn set_key_configuration(mut self, input: ::std::option::Option<crate::types::KeyConfigurationType>) -> Self {
+        self.key_configuration = input;
+        self
+    }
+    /// <p>The key configuration for the user pool. Specifies the key type and KMS key ARN for encryption.</p>
+    pub fn get_key_configuration(&self) -> &::std::option::Option<crate::types::KeyConfigurationType> {
+        &self.key_configuration
+    }
+    /// <p>The issuer configuration for the user pool. Specifies the issuer type for token generation.</p>
+    pub fn issuer_configuration(mut self, input: crate::types::IssuerConfigurationType) -> Self {
+        self.issuer_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The issuer configuration for the user pool. Specifies the issuer type for token generation.</p>
+    pub fn set_issuer_configuration(mut self, input: ::std::option::Option<crate::types::IssuerConfigurationType>) -> Self {
+        self.issuer_configuration = input;
+        self
+    }
+    /// <p>The issuer configuration for the user pool. Specifies the issuer type for token generation.</p>
+    pub fn get_issuer_configuration(&self) -> &::std::option::Option<crate::types::IssuerConfigurationType> {
+        &self.issuer_configuration
+    }
     /// Consumes the builder and constructs a [`CreateUserPoolInput`](crate::operation::create_user_pool::CreateUserPoolInput).
     pub fn build(
         self,
@@ -644,6 +686,8 @@ impl CreateUserPoolInputBuilder {
             username_configuration: self.username_configuration,
             account_recovery_setting: self.account_recovery_setting,
             user_pool_tier: self.user_pool_tier,
+            key_configuration: self.key_configuration,
+            issuer_configuration: self.issuer_configuration,
         })
     }
 }

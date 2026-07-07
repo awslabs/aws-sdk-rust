@@ -87,6 +87,8 @@ pub fn de_simulate_custom_policy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("SimulateCustomPolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected SimulateCustomPolicyResponse got {start_el:?}"
@@ -104,7 +106,7 @@ pub fn de_simulate_custom_policy(
             s if s.matches("EvaluationResults") /* EvaluationResults com.amazonaws.iam.synthetic#SimulateCustomPolicyOutput$EvaluationResults */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_evaluation_results_list_type::de_evaluation_results_list_type(&mut tag)
+                        crate::protocol_serde::shape_evaluation_results_list_type::de_evaluation_results_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

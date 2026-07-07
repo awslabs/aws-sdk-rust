@@ -2,10 +2,16 @@
 pub(crate) fn de_automated_reasoning_policy_build_result_assets<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningPolicyBuildResultAssets>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,49 +38,49 @@ where
                     variant = match key.as_ref() {
                             "policyDefinition" => {
                                 Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::PolicyDefinition(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition::de_automated_reasoning_policy_definition(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition::de_automated_reasoning_policy_definition(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'policyDefinition' cannot be null"))?
                                 ))
                             }
                             "qualityReport" => {
                                 Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::QualityReport(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_quality_report::de_automated_reasoning_policy_definition_quality_report(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_quality_report::de_automated_reasoning_policy_definition_quality_report(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'qualityReport' cannot be null"))?
                                 ))
                             }
                             "buildLog" => {
                                 Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::BuildLog(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_build_log::de_automated_reasoning_policy_build_log(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_build_log::de_automated_reasoning_policy_build_log(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'buildLog' cannot be null"))?
                                 ))
                             }
                             "generatedTestCases" => {
                                 Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::GeneratedTestCases(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_generated_test_cases::de_automated_reasoning_policy_generated_test_cases(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_generated_test_cases::de_automated_reasoning_policy_generated_test_cases(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'generatedTestCases' cannot be null"))?
                                 ))
                             }
                             "policyScenarios" => {
                                 Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::PolicyScenarios(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_scenarios::de_automated_reasoning_policy_scenarios(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_scenarios::de_automated_reasoning_policy_scenarios(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'policyScenarios' cannot be null"))?
                                 ))
                             }
                             "assetManifest" => {
                                 Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::AssetManifest(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_build_result_asset_manifest::de_automated_reasoning_policy_build_result_asset_manifest(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_build_result_asset_manifest::de_automated_reasoning_policy_build_result_asset_manifest(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'assetManifest' cannot be null"))?
                                 ))
                             }
                             "document" => {
                                 Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::Document(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_source_document::de_automated_reasoning_policy_source_document(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_source_document::de_automated_reasoning_policy_source_document(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'document' cannot be null"))?
                                 ))
                             }
                             "fidelityReport" => {
                                 Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::FidelityReport(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_fidelity_report::de_automated_reasoning_policy_fidelity_report(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_fidelity_report::de_automated_reasoning_policy_fidelity_report(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fidelityReport' cannot be null"))?
                                 ))
                             }

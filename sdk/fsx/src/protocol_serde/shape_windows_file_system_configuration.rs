@@ -2,10 +2,16 @@
 pub(crate) fn de_windows_file_system_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WindowsFileSystemConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -25,7 +31,9 @@ where
                         "SelfManagedActiveDirectoryConfiguration" => {
                             builder = builder.set_self_managed_active_directory_configuration(
                                 crate::protocol_serde::shape_self_managed_active_directory_attributes::de_self_managed_active_directory_attributes(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -67,7 +75,9 @@ where
                         "MaintenanceOperationsInProgress" => {
                             builder = builder.set_maintenance_operations_in_progress(
                                 crate::protocol_serde::shape_file_system_maintenance_operations::de_file_system_maintenance_operations(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -96,16 +106,20 @@ where
                             builder = builder.set_copy_tags_to_backups(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Aliases" => {
-                            builder = builder.set_aliases(crate::protocol_serde::shape_aliases::de_aliases(tokens, _value)?);
+                            builder = builder.set_aliases(crate::protocol_serde::shape_aliases::de_aliases(tokens, _value, depth + 1)?);
                         }
                         "AuditLogConfiguration" => {
                             builder = builder.set_audit_log_configuration(
-                                crate::protocol_serde::shape_windows_audit_log_configuration::de_windows_audit_log_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_windows_audit_log_configuration::de_windows_audit_log_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DiskIopsConfiguration" => {
                             builder = builder.set_disk_iops_configuration(
-                                crate::protocol_serde::shape_disk_iops_configuration::de_disk_iops_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_disk_iops_configuration::de_disk_iops_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "PreferredFileServerIpv6" => {
@@ -117,7 +131,7 @@ where
                         }
                         "FsrmConfiguration" => {
                             builder = builder.set_fsrm_configuration(
-                                crate::protocol_serde::shape_windows_fsrm_configuration::de_windows_fsrm_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_windows_fsrm_configuration::de_windows_fsrm_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -15,6 +15,8 @@ pub struct UpdateMembershipInput {
     pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
     /// <p>The default job result configuration.</p>
     pub default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
+    /// <p>The payment configuration to update for the membership.</p>
+    pub membership_payment_configuration: ::std::option::Option<crate::types::UpdateMembershipPaymentConfiguration>,
 }
 impl UpdateMembershipInput {
     /// <p>The unique identifier of the membership.</p>
@@ -39,6 +41,10 @@ impl UpdateMembershipInput {
     pub fn default_job_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedJobResultConfiguration> {
         self.default_job_result_configuration.as_ref()
     }
+    /// <p>The payment configuration to update for the membership.</p>
+    pub fn membership_payment_configuration(&self) -> ::std::option::Option<&crate::types::UpdateMembershipPaymentConfiguration> {
+        self.membership_payment_configuration.as_ref()
+    }
 }
 impl UpdateMembershipInput {
     /// Creates a new builder-style object to manufacture [`UpdateMembershipInput`](crate::operation::update_membership::UpdateMembershipInput).
@@ -56,6 +62,7 @@ pub struct UpdateMembershipInputBuilder {
     pub(crate) job_log_status: ::std::option::Option<crate::types::MembershipJobLogStatus>,
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
     pub(crate) default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
+    pub(crate) membership_payment_configuration: ::std::option::Option<crate::types::UpdateMembershipPaymentConfiguration>,
 }
 impl UpdateMembershipInputBuilder {
     /// <p>The unique identifier of the membership.</p>
@@ -141,6 +148,20 @@ impl UpdateMembershipInputBuilder {
     pub fn get_default_job_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration> {
         &self.default_job_result_configuration
     }
+    /// <p>The payment configuration to update for the membership.</p>
+    pub fn membership_payment_configuration(mut self, input: crate::types::UpdateMembershipPaymentConfiguration) -> Self {
+        self.membership_payment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payment configuration to update for the membership.</p>
+    pub fn set_membership_payment_configuration(mut self, input: ::std::option::Option<crate::types::UpdateMembershipPaymentConfiguration>) -> Self {
+        self.membership_payment_configuration = input;
+        self
+    }
+    /// <p>The payment configuration to update for the membership.</p>
+    pub fn get_membership_payment_configuration(&self) -> &::std::option::Option<crate::types::UpdateMembershipPaymentConfiguration> {
+        &self.membership_payment_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateMembershipInput`](crate::operation::update_membership::UpdateMembershipInput).
     pub fn build(
         self,
@@ -151,6 +172,7 @@ impl UpdateMembershipInputBuilder {
             job_log_status: self.job_log_status,
             default_result_configuration: self.default_result_configuration,
             default_job_result_configuration: self.default_job_result_configuration,
+            membership_payment_configuration: self.membership_payment_configuration,
         })
     }
 }

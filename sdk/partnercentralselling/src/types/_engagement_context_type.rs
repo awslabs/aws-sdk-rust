@@ -14,6 +14,7 @@
 /// match engagementcontexttype {
 ///     EngagementContextType::CustomerProject => { /* ... */ },
 ///     EngagementContextType::Lead => { /* ... */ },
+///     EngagementContextType::ProspectingResult => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum EngagementContextType {
     CustomerProject,
     #[allow(missing_docs)] // documentation missing in model
     Lead,
+    #[allow(missing_docs)] // documentation missing in model
+    ProspectingResult,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for EngagementContextType {
         match s {
             "CustomerProject" => EngagementContextType::CustomerProject,
             "Lead" => EngagementContextType::Lead,
+            "ProspectingResult" => EngagementContextType::ProspectingResult,
             other => EngagementContextType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl EngagementContextType {
         match self {
             EngagementContextType::CustomerProject => "CustomerProject",
             EngagementContextType::Lead => "Lead",
+            EngagementContextType::ProspectingResult => "ProspectingResult",
             EngagementContextType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CustomerProject", "Lead"]
+        &["CustomerProject", "Lead", "ProspectingResult"]
     }
 }
 impl ::std::convert::AsRef<str> for EngagementContextType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for EngagementContextType {
         match self {
             EngagementContextType::CustomerProject => write!(f, "CustomerProject"),
             EngagementContextType::Lead => write!(f, "Lead"),
+            EngagementContextType::ProspectingResult => write!(f, "ProspectingResult"),
             EngagementContextType::Unknown(value) => write!(f, "{value}"),
         }
     }

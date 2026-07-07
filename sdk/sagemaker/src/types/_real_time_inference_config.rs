@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeInferenceConfig {
     /// <p>The instance type the model is deployed to.</p>
-    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
     pub instance_count: ::std::option::Option<i32>,
 }
 impl RealTimeInferenceConfig {
     /// <p>The instance type the model is deployed to.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
@@ -30,23 +30,23 @@ impl RealTimeInferenceConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct RealTimeInferenceConfigBuilder {
-    pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
 }
 impl RealTimeInferenceConfigBuilder {
     /// <p>The instance type the model is deployed to.</p>
     /// This field is required.
-    pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
+    pub fn instance_type(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance type the model is deployed to.</p>
-    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProductionVariantInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The instance type the model is deployed to.</p>
-    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
         &self.instance_type
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>

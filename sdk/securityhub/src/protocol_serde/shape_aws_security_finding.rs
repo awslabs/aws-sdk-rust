@@ -269,10 +269,16 @@ pub fn ser_aws_security_finding(
 pub(crate) fn de_aws_security_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsSecurityFinding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -339,7 +345,7 @@ where
                             );
                         }
                         "Types" => {
-                            builder = builder.set_types(crate::protocol_serde::shape_type_list::de_type_list(tokens, _value)?);
+                            builder = builder.set_types(crate::protocol_serde::shape_type_list::de_type_list(tokens, _value, depth + 1)?);
                         }
                         "FirstObservedAt" => {
                             builder = builder.set_first_observed_at(
@@ -370,7 +376,7 @@ where
                             );
                         }
                         "Severity" => {
-                            builder = builder.set_severity(crate::protocol_serde::shape_severity::de_severity(tokens, _value)?);
+                            builder = builder.set_severity(crate::protocol_serde::shape_severity::de_severity(tokens, _value, depth + 1)?);
                         }
                         "Confidence" => {
                             builder = builder.set_confidence(
@@ -401,7 +407,7 @@ where
                             );
                         }
                         "Remediation" => {
-                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value)?);
+                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value, depth + 1)?);
                         }
                         "SourceUrl" => {
                             builder = builder.set_source_url(
@@ -411,36 +417,45 @@ where
                             );
                         }
                         "ProductFields" => {
-                            builder = builder.set_product_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
+                            builder = builder.set_product_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                         }
                         "UserDefinedFields" => {
-                            builder = builder.set_user_defined_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
+                            builder =
+                                builder.set_user_defined_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                         }
                         "Malware" => {
-                            builder = builder.set_malware(crate::protocol_serde::shape_malware_list::de_malware_list(tokens, _value)?);
+                            builder = builder.set_malware(crate::protocol_serde::shape_malware_list::de_malware_list(tokens, _value, depth + 1)?);
                         }
                         "Network" => {
-                            builder = builder.set_network(crate::protocol_serde::shape_network::de_network(tokens, _value)?);
+                            builder = builder.set_network(crate::protocol_serde::shape_network::de_network(tokens, _value, depth + 1)?);
                         }
                         "NetworkPath" => {
-                            builder = builder.set_network_path(crate::protocol_serde::shape_network_path_list::de_network_path_list(tokens, _value)?);
+                            builder = builder.set_network_path(crate::protocol_serde::shape_network_path_list::de_network_path_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Process" => {
-                            builder = builder.set_process(crate::protocol_serde::shape_process_details::de_process_details(tokens, _value)?);
+                            builder = builder.set_process(crate::protocol_serde::shape_process_details::de_process_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Threats" => {
-                            builder = builder.set_threats(crate::protocol_serde::shape_threat_list::de_threat_list(tokens, _value)?);
+                            builder = builder.set_threats(crate::protocol_serde::shape_threat_list::de_threat_list(tokens, _value, depth + 1)?);
                         }
                         "ThreatIntelIndicators" => {
                             builder = builder.set_threat_intel_indicators(
-                                crate::protocol_serde::shape_threat_intel_indicator_list::de_threat_intel_indicator_list(tokens, _value)?,
+                                crate::protocol_serde::shape_threat_intel_indicator_list::de_threat_intel_indicator_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value, depth + 1)?);
                         }
                         "Compliance" => {
-                            builder = builder.set_compliance(crate::protocol_serde::shape_compliance::de_compliance(tokens, _value)?);
+                            builder = builder.set_compliance(crate::protocol_serde::shape_compliance::de_compliance(tokens, _value, depth + 1)?);
                         }
                         "VerificationState" => {
                             builder = builder.set_verification_state(
@@ -457,7 +472,7 @@ where
                             );
                         }
                         "Workflow" => {
-                            builder = builder.set_workflow(crate::protocol_serde::shape_workflow::de_workflow(tokens, _value)?);
+                            builder = builder.set_workflow(crate::protocol_serde::shape_workflow::de_workflow(tokens, _value, depth + 1)?);
                         }
                         "RecordState" => {
                             builder = builder.set_record_state(
@@ -468,33 +483,42 @@ where
                         }
                         "RelatedFindings" => {
                             builder = builder.set_related_findings(crate::protocol_serde::shape_related_finding_list::de_related_finding_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Note" => {
-                            builder = builder.set_note(crate::protocol_serde::shape_note::de_note(tokens, _value)?);
+                            builder = builder.set_note(crate::protocol_serde::shape_note::de_note(tokens, _value, depth + 1)?);
                         }
                         "Vulnerabilities" => {
-                            builder =
-                                builder.set_vulnerabilities(crate::protocol_serde::shape_vulnerability_list::de_vulnerability_list(tokens, _value)?);
+                            builder = builder.set_vulnerabilities(crate::protocol_serde::shape_vulnerability_list::de_vulnerability_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PatchSummary" => {
-                            builder = builder.set_patch_summary(crate::protocol_serde::shape_patch_summary::de_patch_summary(tokens, _value)?);
+                            builder =
+                                builder.set_patch_summary(crate::protocol_serde::shape_patch_summary::de_patch_summary(tokens, _value, depth + 1)?);
                         }
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens, _value)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens, _value, depth + 1)?);
                         }
                         "FindingProviderFields" => {
                             builder = builder.set_finding_provider_fields(
-                                crate::protocol_serde::shape_finding_provider_fields::de_finding_provider_fields(tokens, _value)?,
+                                crate::protocol_serde::shape_finding_provider_fields::de_finding_provider_fields(tokens, _value, depth + 1)?,
                             );
                         }
                         "Sample" => {
                             builder = builder.set_sample(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "GeneratorDetails" => {
-                            builder =
-                                builder.set_generator_details(crate::protocol_serde::shape_generator_details::de_generator_details(tokens, _value)?);
+                            builder = builder.set_generator_details(crate::protocol_serde::shape_generator_details::de_generator_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ProcessedAt" => {
                             builder = builder.set_processed_at(
@@ -511,7 +535,7 @@ where
                             );
                         }
                         "Detection" => {
-                            builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens, _value)?);
+                            builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

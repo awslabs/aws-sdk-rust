@@ -21,10 +21,16 @@ pub fn ser_slider_control_display_options(
 pub(crate) fn de_slider_control_display_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SliderControlDisplayOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,12 +41,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TitleOptions" => {
-                            builder = builder.set_title_options(crate::protocol_serde::shape_label_options::de_label_options(tokens, _value)?);
+                            builder =
+                                builder.set_title_options(crate::protocol_serde::shape_label_options::de_label_options(tokens, _value, depth + 1)?);
                         }
                         "InfoIconLabelOptions" => {
                             builder = builder.set_info_icon_label_options(
                                 crate::protocol_serde::shape_sheet_control_info_icon_label_options::de_sheet_control_info_icon_label_options(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

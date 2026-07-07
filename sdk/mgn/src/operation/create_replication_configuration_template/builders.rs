@@ -361,4 +361,18 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
         self.inner.get_store_snapshot_on_local_zone()
     }
+    /// <p>Request to configure storage during Replication Settings template creation.</p>
+    pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
+        self.inner = self.inner.storage_configuration(input);
+        self
+    }
+    /// <p>Request to configure storage during Replication Settings template creation.</p>
+    pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
+        self.inner = self.inner.set_storage_configuration(input);
+        self
+    }
+    /// <p>Request to configure storage during Replication Settings template creation.</p>
+    pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
+        self.inner.get_storage_configuration()
+    }
 }

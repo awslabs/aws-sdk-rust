@@ -2,10 +2,16 @@
 pub(crate) fn de_audit_mitigation_actions_task_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AuditMitigationActionsTaskTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,11 +29,15 @@ where
                             );
                         }
                         "findingIds" => {
-                            builder = builder.set_finding_ids(crate::protocol_serde::shape_finding_ids::de_finding_ids(tokens, _value)?);
+                            builder = builder.set_finding_ids(crate::protocol_serde::shape_finding_ids::de_finding_ids(tokens, _value, depth + 1)?);
                         }
                         "auditCheckToReasonCodeFilter" => {
                             builder = builder.set_audit_check_to_reason_code_filter(
-                                crate::protocol_serde::shape_audit_check_to_reason_code_filter::de_audit_check_to_reason_code_filter(tokens, _value)?,
+                                crate::protocol_serde::shape_audit_check_to_reason_code_filter::de_audit_check_to_reason_code_filter(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

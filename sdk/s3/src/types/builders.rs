@@ -91,6 +91,8 @@ pub use crate::types::_output_serialization::OutputSerializationBuilder;
 
 pub use crate::types::_scan_range::ScanRangeBuilder;
 
+pub use crate::types::_annotation_table_configuration_updates::AnnotationTableConfigurationUpdatesBuilder;
+
 pub use crate::types::_inventory_table_configuration_updates::InventoryTableConfigurationUpdatesBuilder;
 
 pub use crate::types::_journal_table_configuration_updates::JournalTableConfigurationUpdatesBuilder;
@@ -104,6 +106,8 @@ pub use crate::types::_bucket_info::BucketInfoBuilder;
 pub use crate::types::_journal_table_configuration::JournalTableConfigurationBuilder;
 
 pub use crate::types::_inventory_table_configuration::InventoryTableConfigurationBuilder;
+
+pub use crate::types::_annotation_table_configuration::AnnotationTableConfigurationBuilder;
 
 pub use crate::types::_s3_tables_destination::S3TablesDestinationBuilder;
 
@@ -152,6 +156,8 @@ pub use crate::types::_bucket::BucketBuilder;
 pub use crate::types::_multipart_upload::MultipartUploadBuilder;
 
 pub use crate::types::_common_prefix::CommonPrefixBuilder;
+
+pub use crate::types::_annotation_entry::AnnotationEntryBuilder;
 
 pub use crate::types::_object::ObjectBuilder;
 
@@ -230,6 +236,8 @@ pub use crate::types::_destination_result::DestinationResultBuilder;
 pub use crate::types::_journal_table_configuration_result::JournalTableConfigurationResultBuilder;
 
 pub use crate::types::_inventory_table_configuration_result::InventoryTableConfigurationResultBuilder;
+
+pub use crate::types::_annotation_table_configuration_result::AnnotationTableConfigurationResultBuilder;
 
 pub use crate::types::_s3_tables_destination_result::S3TablesDestinationResultBuilder;
 

@@ -39,10 +39,16 @@ pub fn ser_in_app_message_content(
 pub(crate) fn de_in_app_message_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InAppMessageContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,12 +67,16 @@ where
                         }
                         "BodyConfig" => {
                             builder = builder.set_body_config(
-                                crate::protocol_serde::shape_in_app_message_body_config::de_in_app_message_body_config(tokens, _value)?,
+                                crate::protocol_serde::shape_in_app_message_body_config::de_in_app_message_body_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "HeaderConfig" => {
                             builder = builder.set_header_config(
-                                crate::protocol_serde::shape_in_app_message_header_config::de_in_app_message_header_config(tokens, _value)?,
+                                crate::protocol_serde::shape_in_app_message_header_config::de_in_app_message_header_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ImageUrl" => {
@@ -78,12 +88,16 @@ where
                         }
                         "PrimaryBtn" => {
                             builder = builder.set_primary_btn(crate::protocol_serde::shape_in_app_message_button::de_in_app_message_button(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SecondaryBtn" => {
                             builder = builder.set_secondary_btn(crate::protocol_serde::shape_in_app_message_button::de_in_app_message_button(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

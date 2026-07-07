@@ -67,10 +67,16 @@ pub fn ser_parameter_value(
 pub(crate) fn de_parameter_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ParameterValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -104,7 +110,7 @@ where
                                 })?,
                         )),
                         "IntegerList" => Some(crate::types::ParameterValue::IntegerList(
-                            crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IntegerList' cannot be null")
                             })?,
                         )),
@@ -124,7 +130,7 @@ where
                                 })?,
                         )),
                         "StringList" => Some(crate::types::ParameterValue::StringList(
-                            crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringList' cannot be null")
                             })?,
                         )),
@@ -140,7 +146,7 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Enum' cannot be null"))?,
                         )),
                         "EnumList" => Some(crate::types::ParameterValue::EnumList(
-                            crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EnumList' cannot be null")
                             })?,
                         )),

@@ -238,13 +238,19 @@ pub(crate) fn de_detect_moderation_labels(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ModerationLabels" => {
-                    builder = builder.set_moderation_labels(crate::protocol_serde::shape_moderation_labels::de_moderation_labels(tokens, _value)?);
+                    builder = builder.set_moderation_labels(crate::protocol_serde::shape_moderation_labels::de_moderation_labels(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ModerationModelVersion" => {
                     builder = builder.set_moderation_model_version(
@@ -255,7 +261,7 @@ pub(crate) fn de_detect_moderation_labels(
                 }
                 "HumanLoopActivationOutput" => {
                     builder = builder.set_human_loop_activation_output(
-                        crate::protocol_serde::shape_human_loop_activation_output::de_human_loop_activation_output(tokens, _value)?,
+                        crate::protocol_serde::shape_human_loop_activation_output::de_human_loop_activation_output(tokens, _value, depth + 1)?,
                     );
                 }
                 "ProjectVersion" => {
@@ -266,7 +272,7 @@ pub(crate) fn de_detect_moderation_labels(
                     );
                 }
                 "ContentTypes" => {
-                    builder = builder.set_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens, _value)?);
+                    builder = builder.set_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

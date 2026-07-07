@@ -14,6 +14,12 @@ pub struct RouteVehiclePlace {
     pub side_of_street: ::std::option::Option<crate::types::RouteSideOfStreet>,
     /// <p>Index of the waypoint in the request.</p>
     pub waypoint_index: ::std::option::Option<i32>,
+    /// <p>Details of the access point.</p>
+    pub access_point_details: ::std::option::Option<crate::types::RouteAccessPointDetails>,
+    /// <p>Details about the station.</p>
+    pub station_details: ::std::option::Option<crate::types::RouteStationDetails>,
+    /// <p>The type of the place.</p>
+    pub r#type: ::std::option::Option<crate::types::RouteVehiclePlaceType>,
 }
 impl RouteVehiclePlace {
     /// <p>The name of the place.</p>
@@ -39,6 +45,18 @@ impl RouteVehiclePlace {
     pub fn waypoint_index(&self) -> ::std::option::Option<i32> {
         self.waypoint_index
     }
+    /// <p>Details of the access point.</p>
+    pub fn access_point_details(&self) -> ::std::option::Option<&crate::types::RouteAccessPointDetails> {
+        self.access_point_details.as_ref()
+    }
+    /// <p>Details about the station.</p>
+    pub fn station_details(&self) -> ::std::option::Option<&crate::types::RouteStationDetails> {
+        self.station_details.as_ref()
+    }
+    /// <p>The type of the place.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RouteVehiclePlaceType> {
+        self.r#type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RouteVehiclePlace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -48,6 +66,9 @@ impl ::std::fmt::Debug for RouteVehiclePlace {
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("side_of_street", &"*** Sensitive Data Redacted ***");
         formatter.field("waypoint_index", &"*** Sensitive Data Redacted ***");
+        formatter.field("access_point_details", &self.access_point_details);
+        formatter.field("station_details", &self.station_details);
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -67,6 +88,9 @@ pub struct RouteVehiclePlaceBuilder {
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) side_of_street: ::std::option::Option<crate::types::RouteSideOfStreet>,
     pub(crate) waypoint_index: ::std::option::Option<i32>,
+    pub(crate) access_point_details: ::std::option::Option<crate::types::RouteAccessPointDetails>,
+    pub(crate) station_details: ::std::option::Option<crate::types::RouteStationDetails>,
+    pub(crate) r#type: ::std::option::Option<crate::types::RouteVehiclePlaceType>,
 }
 impl RouteVehiclePlaceBuilder {
     /// <p>The name of the place.</p>
@@ -151,6 +175,48 @@ impl RouteVehiclePlaceBuilder {
     pub fn get_waypoint_index(&self) -> &::std::option::Option<i32> {
         &self.waypoint_index
     }
+    /// <p>Details of the access point.</p>
+    pub fn access_point_details(mut self, input: crate::types::RouteAccessPointDetails) -> Self {
+        self.access_point_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details of the access point.</p>
+    pub fn set_access_point_details(mut self, input: ::std::option::Option<crate::types::RouteAccessPointDetails>) -> Self {
+        self.access_point_details = input;
+        self
+    }
+    /// <p>Details of the access point.</p>
+    pub fn get_access_point_details(&self) -> &::std::option::Option<crate::types::RouteAccessPointDetails> {
+        &self.access_point_details
+    }
+    /// <p>Details about the station.</p>
+    pub fn station_details(mut self, input: crate::types::RouteStationDetails) -> Self {
+        self.station_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the station.</p>
+    pub fn set_station_details(mut self, input: ::std::option::Option<crate::types::RouteStationDetails>) -> Self {
+        self.station_details = input;
+        self
+    }
+    /// <p>Details about the station.</p>
+    pub fn get_station_details(&self) -> &::std::option::Option<crate::types::RouteStationDetails> {
+        &self.station_details
+    }
+    /// <p>The type of the place.</p>
+    pub fn r#type(mut self, input: crate::types::RouteVehiclePlaceType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the place.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RouteVehiclePlaceType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the place.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RouteVehiclePlaceType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`RouteVehiclePlace`](crate::types::RouteVehiclePlace).
     /// This method will fail if any of the following fields are not set:
     /// - [`position`](crate::types::builders::RouteVehiclePlaceBuilder::position)
@@ -166,6 +232,9 @@ impl RouteVehiclePlaceBuilder {
             })?,
             side_of_street: self.side_of_street,
             waypoint_index: self.waypoint_index,
+            access_point_details: self.access_point_details,
+            station_details: self.station_details,
+            r#type: self.r#type,
         })
     }
 }
@@ -177,6 +246,9 @@ impl ::std::fmt::Debug for RouteVehiclePlaceBuilder {
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("side_of_street", &"*** Sensitive Data Redacted ***");
         formatter.field("waypoint_index", &"*** Sensitive Data Redacted ***");
+        formatter.field("access_point_details", &self.access_point_details);
+        formatter.field("station_details", &self.station_details);
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

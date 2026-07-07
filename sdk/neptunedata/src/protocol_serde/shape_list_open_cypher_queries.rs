@@ -352,6 +352,8 @@ pub(crate) fn de_list_open_cypher_queries(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -365,7 +367,11 @@ pub(crate) fn de_list_open_cypher_queries(
                     );
                 }
                 "queries" => {
-                    builder = builder.set_queries(crate::protocol_serde::shape_open_cypher_queries::de_open_cypher_queries(tokens, _value)?);
+                    builder = builder.set_queries(crate::protocol_serde::shape_open_cypher_queries::de_open_cypher_queries(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "runningQueryCount" => {
                     builder = builder.set_running_query_count(

@@ -14,6 +14,8 @@ pub struct EvaluationFormNumericQuestionOption {
     pub automatic_fail: bool,
     /// <p>A configuration for automatic fail.</p>
     pub automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
+    /// <p>The points configuration for point-based scoring.</p>
+    pub points_configuration: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>,
 }
 impl EvaluationFormNumericQuestionOption {
     /// <p>The minimum answer value of the range option.</p>
@@ -36,6 +38,10 @@ impl EvaluationFormNumericQuestionOption {
     pub fn automatic_fail_configuration(&self) -> ::std::option::Option<&crate::types::AutomaticFailConfiguration> {
         self.automatic_fail_configuration.as_ref()
     }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn points_configuration(&self) -> ::std::option::Option<&crate::types::QuestionOptionPointsConfiguration> {
+        self.points_configuration.as_ref()
+    }
 }
 impl EvaluationFormNumericQuestionOption {
     /// Creates a new builder-style object to manufacture [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
@@ -53,6 +59,7 @@ pub struct EvaluationFormNumericQuestionOptionBuilder {
     pub(crate) score: ::std::option::Option<i32>,
     pub(crate) automatic_fail: ::std::option::Option<bool>,
     pub(crate) automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
+    pub(crate) points_configuration: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>,
 }
 impl EvaluationFormNumericQuestionOptionBuilder {
     /// <p>The minimum answer value of the range option.</p>
@@ -127,6 +134,20 @@ impl EvaluationFormNumericQuestionOptionBuilder {
     pub fn get_automatic_fail_configuration(&self) -> &::std::option::Option<crate::types::AutomaticFailConfiguration> {
         &self.automatic_fail_configuration
     }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn points_configuration(mut self, input: crate::types::QuestionOptionPointsConfiguration) -> Self {
+        self.points_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn set_points_configuration(mut self, input: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>) -> Self {
+        self.points_configuration = input;
+        self
+    }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn get_points_configuration(&self) -> &::std::option::Option<crate::types::QuestionOptionPointsConfiguration> {
+        &self.points_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
     pub fn build(self) -> crate::types::EvaluationFormNumericQuestionOption {
         crate::types::EvaluationFormNumericQuestionOption {
@@ -135,6 +156,7 @@ impl EvaluationFormNumericQuestionOptionBuilder {
             score: self.score.unwrap_or_default(),
             automatic_fail: self.automatic_fail.unwrap_or_default(),
             automatic_fail_configuration: self.automatic_fail_configuration,
+            points_configuration: self.points_configuration,
         }
     }
 }

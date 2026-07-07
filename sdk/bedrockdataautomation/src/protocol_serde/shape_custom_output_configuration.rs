@@ -15,16 +15,28 @@ pub fn ser_custom_output_configuration(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.document {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("document").start_object();
+        crate::protocol_serde::shape_document_custom_output_configuration::ser_document_custom_output_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_custom_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,7 +47,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "blueprints" => {
-                            builder = builder.set_blueprints(crate::protocol_serde::shape_blueprint_items::de_blueprint_items(tokens, _value)?);
+                            builder = builder.set_blueprints(crate::protocol_serde::shape_blueprint_items::de_blueprint_items(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "document" => {
+                            builder = builder.set_document(
+                                crate::protocol_serde::shape_document_custom_output_configuration::de_document_custom_output_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

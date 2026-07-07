@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateS
 #[derive(Debug)]
 struct UpdateScheduledQueryResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateScheduledQueryResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -275,6 +276,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateSchedul
 pub enum UpdateScheduledQueryError {
     /// <p>You don't have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An internal server error occurred while processing the request. This exception is returned when the service encounters an unexpected condition that prevents it from fulfilling the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
@@ -317,6 +320,7 @@ impl UpdateScheduledQueryError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -327,6 +331,10 @@ impl UpdateScheduledQueryError {
     /// Returns `true` if the error kind is `UpdateScheduledQueryError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateScheduledQueryError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateScheduledQueryError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -349,6 +357,7 @@ impl ::std::error::Error for UpdateScheduledQueryError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -361,6 +370,7 @@ impl ::std::fmt::Display for UpdateScheduledQueryError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -387,6 +397,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateSchedul
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

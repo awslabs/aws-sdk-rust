@@ -60,5 +60,8 @@ pub fn ser_create_express_gateway_service_input_input(
         }
         array_16.finish();
     }
+    if let Some(var_19) = &input.task_definition_arn {
+        object.key("taskDefinitionArn").string(var_19.as_str());
+    }
     Ok(())
 }

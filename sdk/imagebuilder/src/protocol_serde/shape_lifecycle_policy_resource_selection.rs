@@ -34,10 +34,16 @@ pub fn ser_lifecycle_policy_resource_selection(
 pub(crate) fn de_lifecycle_policy_resource_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LifecyclePolicyResourceSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,11 +55,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "recipes" => {
                             builder = builder.set_recipes(
-                                    crate::protocol_serde::shape_lifecycle_policy_resource_selection_recipes::de_lifecycle_policy_resource_selection_recipes(tokens, _value)?
+                                    crate::protocol_serde::shape_lifecycle_policy_resource_selection_recipes::de_lifecycle_policy_resource_selection_recipes(tokens, _value, depth + 1)?
                                 );
                         }
                         "tagMap" => {
-                            builder = builder.set_tag_map(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tag_map(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

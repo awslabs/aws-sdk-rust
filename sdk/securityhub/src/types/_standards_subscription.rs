@@ -34,6 +34,8 @@ pub struct StandardsSubscription {
     pub standards_controls_updatable: ::std::option::Option<crate::types::StandardsControlsUpdatable>,
     /// <p>The reason for the current status.</p>
     pub standards_status_reason: ::std::option::Option<crate::types::StandardsStatusReason>,
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    pub provider: ::std::option::Option<crate::types::StandardsProvider>,
 }
 impl StandardsSubscription {
     /// <p>The ARN of the resource that represents your subscription to the standard.</p>
@@ -78,6 +80,10 @@ impl StandardsSubscription {
     pub fn standards_status_reason(&self) -> ::std::option::Option<&crate::types::StandardsStatusReason> {
         self.standards_status_reason.as_ref()
     }
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::StandardsProvider> {
+        self.provider.as_ref()
+    }
 }
 impl StandardsSubscription {
     /// Creates a new builder-style object to manufacture [`StandardsSubscription`](crate::types::StandardsSubscription).
@@ -96,6 +102,7 @@ pub struct StandardsSubscriptionBuilder {
     pub(crate) standards_status: ::std::option::Option<crate::types::StandardsStatus>,
     pub(crate) standards_controls_updatable: ::std::option::Option<crate::types::StandardsControlsUpdatable>,
     pub(crate) standards_status_reason: ::std::option::Option<crate::types::StandardsStatusReason>,
+    pub(crate) provider: ::std::option::Option<crate::types::StandardsProvider>,
 }
 impl StandardsSubscriptionBuilder {
     /// <p>The ARN of the resource that represents your subscription to the standard.</p>
@@ -252,6 +259,20 @@ impl StandardsSubscriptionBuilder {
     pub fn get_standards_status_reason(&self) -> &::std::option::Option<crate::types::StandardsStatusReason> {
         &self.standards_status_reason
     }
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    pub fn provider(mut self, input: crate::types::StandardsProvider) -> Self {
+        self.provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::StandardsProvider>) -> Self {
+        self.provider = input;
+        self
+    }
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::StandardsProvider> {
+        &self.provider
+    }
     /// Consumes the builder and constructs a [`StandardsSubscription`](crate::types::StandardsSubscription).
     pub fn build(self) -> crate::types::StandardsSubscription {
         crate::types::StandardsSubscription {
@@ -261,6 +282,7 @@ impl StandardsSubscriptionBuilder {
             standards_status: self.standards_status,
             standards_controls_updatable: self.standards_controls_updatable,
             standards_status_reason: self.standards_status_reason,
+            provider: self.provider,
         }
     }
 }

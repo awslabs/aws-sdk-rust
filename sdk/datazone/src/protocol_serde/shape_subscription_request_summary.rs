@@ -2,10 +2,16 @@
 pub(crate) fn de_subscription_request_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SubscriptionRequestSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -71,12 +77,15 @@ where
                         }
                         "subscribedPrincipals" => {
                             builder = builder.set_subscribed_principals(
-                                crate::protocol_serde::shape_subscribed_principals::de_subscribed_principals(tokens, _value)?,
+                                crate::protocol_serde::shape_subscribed_principals::de_subscribed_principals(tokens, _value, depth + 1)?,
                             );
                         }
                         "subscribedListings" => {
-                            builder = builder
-                                .set_subscribed_listings(crate::protocol_serde::shape_subscribed_listings::de_subscribed_listings(tokens, _value)?);
+                            builder = builder.set_subscribed_listings(crate::protocol_serde::shape_subscribed_listings::de_subscribed_listings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "reviewerId" => {
                             builder = builder.set_reviewer_id(
@@ -101,7 +110,7 @@ where
                         }
                         "metadataFormsSummary" => {
                             builder = builder.set_metadata_forms_summary(
-                                crate::protocol_serde::shape_metadata_forms_summary::de_metadata_forms_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_metadata_forms_summary::de_metadata_forms_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

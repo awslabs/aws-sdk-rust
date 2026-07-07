@@ -503,8 +503,12 @@ impl Builder {
                 } else {
                     Err(OrchestratorError::operation(InnerImdsError::BadStatus))
                 }
-            })
-            .build();
+            });
+        let operation = if let Some(bv) = config.behavior_version() {
+            operation.behavior_version(bv).build()
+        } else {
+            operation.build()
+        };
         Client { operation }
     }
 }
@@ -667,7 +671,6 @@ pub(crate) mod test {
     use std::collections::HashMap;
     use std::error::Error;
     use std::io;
-    use std::time::SystemTime;
     use std::time::{Duration, UNIX_EPOCH};
     use tracing_test::traced_test;
 
@@ -1118,6 +1121,7 @@ pub(crate) mod test {
     #[cfg(feature = "default-https-client")]
     async fn one_second_connect_timeout() {
         use crate::imds::client::ImdsError;
+        use std::time::SystemTime;
         let client = Client::builder()
             // 240.* can never be resolved
             .endpoint("http://240.0.0.0")
@@ -1149,15 +1153,22 @@ pub(crate) mod test {
         );
     }
 
-    /// Retry classifier properly retries timeouts when configured to (meaning it takes ~30s to fail)
-    #[tokio::test]
-    async fn retry_connect_timeouts() {
+    async fn retry_connect_timeouts_for_bv(
+        behavior_version: aws_smithy_runtime_api::client::behavior_version::BehaviorVersion,
+        min_elapsed: Duration,
+        max_elapsed: Duration,
+    ) {
+        use std::time::SystemTime;
         let http_client = StaticReplayClient::new(vec![]);
         let imds_client = super::Client::builder()
             .retry_classifier(SharedRetryClassifier::new(
                 ImdsResponseRetryClassifier::default().with_retry_connect_timeouts(true),
             ))
-            .configure(&ProviderConfig::no_configuration().with_http_client(http_client.clone()))
+            .configure(
+                &ProviderConfig::no_configuration()
+                    .with_http_client(http_client.clone())
+                    .with_behavior_version(Some(behavior_version)),
+            )
             .operation_timeout(Duration::from_secs(1))
             .endpoint("http://240.0.0.0")
             .expect("valid uri")
@@ -1168,19 +1179,38 @@ pub(crate) mod test {
             .get("/latest/metadata")
             .await
             .expect_err("240.0.0.0 will never resolve");
-        let time_elapsed: Duration = now.elapsed().unwrap();
+        let time_elapsed = now.elapsed().unwrap();
 
         assert!(
-            time_elapsed > Duration::from_secs(1),
-            "time_elapsed should be greater than 1s but was {:?}",
-            time_elapsed
+            time_elapsed > min_elapsed,
+            "time_elapsed should be greater than {min_elapsed:?} but was {time_elapsed:?}",
         );
-
         assert!(
-            time_elapsed < Duration::from_secs(2),
-            "time_elapsed should be less than 2s but was {:?}",
-            time_elapsed
+            time_elapsed < max_elapsed,
+            "time_elapsed should be less than {max_elapsed:?} but was {time_elapsed:?}",
         );
+    }
+
+    /// Retry classifier properly retries timeouts when configured to
+    #[tokio::test]
+    async fn retry_connect_timeouts() {
+        use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
+        // Legacy: 1s backoff, total > 1s
+        #[allow(deprecated)]
+        retry_connect_timeouts_for_bv(
+            BehaviorVersion::v2024_03_28(),
+            Duration::from_secs(1),
+            Duration::from_secs(2),
+        )
+        .await;
+
+        // Latest: 50ms backoff, total > 500ms (dominated by operation_timeout)
+        retry_connect_timeouts_for_bv(
+            BehaviorVersion::latest(),
+            Duration::from_millis(500),
+            Duration::from_secs(2),
+        )
+        .await;
     }
 
     #[derive(Debug, Deserialize)]

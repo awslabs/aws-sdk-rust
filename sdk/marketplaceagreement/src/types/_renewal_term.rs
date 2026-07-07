@@ -6,6 +6,8 @@
 pub struct RenewalTerm {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the term.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub configuration: ::std::option::Option<crate::types::RenewalTermConfiguration>,
 }
@@ -13,6 +15,10 @@ impl RenewalTerm {
     /// <p>Category of the term being updated.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::RenewalTermConfiguration> {
@@ -31,6 +37,7 @@ impl RenewalTerm {
 #[non_exhaustive]
 pub struct RenewalTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::RenewalTermConfiguration>,
 }
 impl RenewalTermBuilder {
@@ -47,6 +54,20 @@ impl RenewalTermBuilder {
     /// <p>Category of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub fn configuration(mut self, input: crate::types::RenewalTermConfiguration) -> Self {
@@ -66,6 +87,7 @@ impl RenewalTermBuilder {
     pub fn build(self) -> crate::types::RenewalTerm {
         crate::types::RenewalTerm {
             r#type: self.r#type,
+            id: self.id,
             configuration: self.configuration,
         }
     }

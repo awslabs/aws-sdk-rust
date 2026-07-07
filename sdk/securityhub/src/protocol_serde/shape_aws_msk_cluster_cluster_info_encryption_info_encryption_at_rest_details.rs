@@ -12,6 +12,7 @@ pub fn ser_aws_msk_cluster_cluster_info_encryption_info_encryption_at_rest_detai
 pub(crate) fn de_aws_msk_cluster_cluster_info_encryption_info_encryption_at_rest_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -19,6 +20,11 @@ pub(crate) fn de_aws_msk_cluster_cluster_info_encryption_info_encryption_at_rest
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {

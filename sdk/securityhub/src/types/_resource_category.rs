@@ -17,6 +17,7 @@
 ///     ResourceCategory::Compute => { /* ... */ },
 ///     ResourceCategory::Database => { /* ... */ },
 ///     ResourceCategory::Identity => { /* ... */ },
+///     ResourceCategory::Messaging => { /* ... */ },
 ///     ResourceCategory::Network => { /* ... */ },
 ///     ResourceCategory::Other => { /* ... */ },
 ///     ResourceCategory::Storage => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum ResourceCategory {
     #[allow(missing_docs)] // documentation missing in model
     Identity,
     #[allow(missing_docs)] // documentation missing in model
+    Messaging,
+    #[allow(missing_docs)] // documentation missing in model
     Network,
     #[allow(missing_docs)] // documentation missing in model
     Other,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for ResourceCategory {
             "Compute" => ResourceCategory::Compute,
             "Database" => ResourceCategory::Database,
             "Identity" => ResourceCategory::Identity,
+            "Messaging" => ResourceCategory::Messaging,
             "Network" => ResourceCategory::Network,
             "Other" => ResourceCategory::Other,
             "Storage" => ResourceCategory::Storage,
@@ -99,6 +103,7 @@ impl ResourceCategory {
             ResourceCategory::Compute => "Compute",
             ResourceCategory::Database => "Database",
             ResourceCategory::Identity => "Identity",
+            ResourceCategory::Messaging => "Messaging",
             ResourceCategory::Network => "Network",
             ResourceCategory::Other => "Other",
             ResourceCategory::Storage => "Storage",
@@ -107,7 +112,17 @@ impl ResourceCategory {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AI/ML", "Code", "Compute", "Database", "Identity", "Network", "Other", "Storage"]
+        &[
+            "AI/ML",
+            "Code",
+            "Compute",
+            "Database",
+            "Identity",
+            "Messaging",
+            "Network",
+            "Other",
+            "Storage",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceCategory {
@@ -135,6 +150,7 @@ impl ::std::fmt::Display for ResourceCategory {
             ResourceCategory::Compute => write!(f, "Compute"),
             ResourceCategory::Database => write!(f, "Database"),
             ResourceCategory::Identity => write!(f, "Identity"),
+            ResourceCategory::Messaging => write!(f, "Messaging"),
             ResourceCategory::Network => write!(f, "Network"),
             ResourceCategory::Other => write!(f, "Other"),
             ResourceCategory::Storage => write!(f, "Storage"),

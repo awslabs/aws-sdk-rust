@@ -150,9 +150,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetFlow
 #[derive(Debug)]
 struct GetFlowVersionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetFlowVersionResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -222,6 +223,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetFlowVersi
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::get_flow_version::GetFlowVersionInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_3) = &_input.included_data {
+                    {
+                        query.push_kv("includedData", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_flow_version::GetFlowVersionInput,
@@ -229,6 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetFlowVersi
             ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;

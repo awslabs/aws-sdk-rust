@@ -39,9 +39,13 @@ pub(crate) mod shape_create_analyzer;
 
 pub(crate) mod shape_create_archive_rule;
 
+pub(crate) mod shape_create_service_linked_analyzer;
+
 pub(crate) mod shape_delete_analyzer;
 
 pub(crate) mod shape_delete_archive_rule;
+
+pub(crate) mod shape_delete_service_linked_analyzer;
 
 pub(crate) mod shape_generate_finding_recommendation;
 
@@ -122,6 +126,8 @@ pub(crate) mod shape_create_access_preview_input;
 pub(crate) mod shape_create_analyzer_input;
 
 pub(crate) mod shape_create_archive_rule_input;
+
+pub(crate) mod shape_create_service_linked_analyzer_input;
 
 pub(crate) mod shape_get_findings_statistics_input;
 

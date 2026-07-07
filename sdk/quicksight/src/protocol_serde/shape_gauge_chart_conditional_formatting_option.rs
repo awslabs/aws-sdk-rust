@@ -24,10 +24,16 @@ pub fn ser_gauge_chart_conditional_formatting_option(
 pub(crate) fn de_gauge_chart_conditional_formatting_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GaugeChartConditionalFormattingOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,13 +45,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PrimaryValue" => {
                             builder = builder.set_primary_value(
-                                    crate::protocol_serde::shape_gauge_chart_primary_value_conditional_formatting::de_gauge_chart_primary_value_conditional_formatting(tokens, _value)?
+                                    crate::protocol_serde::shape_gauge_chart_primary_value_conditional_formatting::de_gauge_chart_primary_value_conditional_formatting(tokens, _value, depth + 1)?
                                 );
                         }
                         "Arc" => {
                             builder = builder.set_arc(
                                 crate::protocol_serde::shape_gauge_chart_arc_conditional_formatting::de_gauge_chart_arc_conditional_formatting(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

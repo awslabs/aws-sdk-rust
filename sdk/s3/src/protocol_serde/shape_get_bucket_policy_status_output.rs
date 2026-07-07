@@ -20,5 +20,7 @@ pub fn de_policy_status(inp: &[u8]) -> std::result::Result<crate::types::PolicyS
             "invalid root, expected PolicyStatus got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_policy_status::de_policy_status(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_policy_status::de_policy_status(&mut decoder, depth + 1)
 }

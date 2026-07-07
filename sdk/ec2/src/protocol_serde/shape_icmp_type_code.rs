@@ -26,7 +26,11 @@ pub fn ser_icmp_type_code(
 #[allow(clippy::needless_question_mark)]
 pub fn de_icmp_type_code(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IcmpTypeCode, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IcmpTypeCode::builder();
     while let Some(mut tag) = decoder.next_tag() {

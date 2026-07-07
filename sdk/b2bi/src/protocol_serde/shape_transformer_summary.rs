@@ -2,10 +2,16 @@
 pub(crate) fn de_transformer_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TransformerSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,7 +69,7 @@ where
                             );
                         }
                         "ediType" => {
-                            builder = builder.set_edi_type(crate::protocol_serde::shape_edi_type::de_edi_type(tokens, _value)?);
+                            builder = builder.set_edi_type(crate::protocol_serde::shape_edi_type::de_edi_type(tokens, _value, depth + 1)?);
                         }
                         "sampleDocument" => {
                             builder = builder.set_sample_document(
@@ -73,19 +79,28 @@ where
                             );
                         }
                         "inputConversion" => {
-                            builder =
-                                builder.set_input_conversion(crate::protocol_serde::shape_input_conversion::de_input_conversion(tokens, _value)?);
+                            builder = builder.set_input_conversion(crate::protocol_serde::shape_input_conversion::de_input_conversion(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "mapping" => {
-                            builder = builder.set_mapping(crate::protocol_serde::shape_mapping::de_mapping(tokens, _value)?);
+                            builder = builder.set_mapping(crate::protocol_serde::shape_mapping::de_mapping(tokens, _value, depth + 1)?);
                         }
                         "outputConversion" => {
-                            builder =
-                                builder.set_output_conversion(crate::protocol_serde::shape_output_conversion::de_output_conversion(tokens, _value)?);
+                            builder = builder.set_output_conversion(crate::protocol_serde::shape_output_conversion::de_output_conversion(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "sampleDocuments" => {
-                            builder =
-                                builder.set_sample_documents(crate::protocol_serde::shape_sample_documents::de_sample_documents(tokens, _value)?);
+                            builder = builder.set_sample_documents(crate::protocol_serde::shape_sample_documents::de_sample_documents(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

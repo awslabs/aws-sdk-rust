@@ -166,6 +166,8 @@ pub(crate) fn de_describe_multiplex_program(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -180,20 +182,24 @@ pub(crate) fn de_describe_multiplex_program(
                 }
                 "multiplexProgramSettings" => {
                     builder = builder.set_multiplex_program_settings(
-                        crate::protocol_serde::shape_multiplex_program_settings::de_multiplex_program_settings(tokens, _value)?,
+                        crate::protocol_serde::shape_multiplex_program_settings::de_multiplex_program_settings(tokens, _value, depth + 1)?,
                     );
                 }
                 "packetIdentifiersMap" => {
                     builder = builder.set_packet_identifiers_map(
                         crate::protocol_serde::shape_multiplex_program_packet_identifiers_map::de_multiplex_program_packet_identifiers_map(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
                 "pipelineDetails" => {
                     builder = builder.set_pipeline_details(
                         crate::protocol_serde::shape_list_of_multiplex_program_pipeline_detail::de_list_of_multiplex_program_pipeline_detail(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

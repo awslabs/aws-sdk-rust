@@ -2,10 +2,16 @@
 pub(crate) fn de_subscription_target_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SubscriptionTargetSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,11 @@ where
                         }
                         "authorizedPrincipals" => {
                             builder = builder.set_authorized_principals(
-                                crate::protocol_serde::shape_authorized_principal_identifiers::de_authorized_principal_identifiers(tokens, _value)?,
+                                crate::protocol_serde::shape_authorized_principal_identifiers::de_authorized_principal_identifiers(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "domainId" => {
@@ -97,12 +107,12 @@ where
                         }
                         "applicableAssetTypes" => {
                             builder = builder.set_applicable_asset_types(
-                                crate::protocol_serde::shape_applicable_asset_types::de_applicable_asset_types(tokens, _value)?,
+                                crate::protocol_serde::shape_applicable_asset_types::de_applicable_asset_types(tokens, _value, depth + 1)?,
                             );
                         }
                         "subscriptionTargetConfig" => {
                             builder = builder.set_subscription_target_config(
-                                crate::protocol_serde::shape_subscription_target_forms::de_subscription_target_forms(tokens, _value)?,
+                                crate::protocol_serde::shape_subscription_target_forms::de_subscription_target_forms(tokens, _value, depth + 1)?,
                             );
                         }
                         "provider" => {

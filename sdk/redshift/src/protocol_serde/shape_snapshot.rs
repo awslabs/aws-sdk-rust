@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_snapshot(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Snapshot, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Snapshot::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -254,7 +258,7 @@ pub fn de_snapshot(
             s if s.matches("AccountsWithRestoreAccess") /* AccountsWithRestoreAccess com.amazonaws.redshift#Snapshot$AccountsWithRestoreAccess */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_accounts_with_restore_access_list::de_accounts_with_restore_access_list(&mut tag)
+                        crate::protocol_serde::shape_accounts_with_restore_access_list::de_accounts_with_restore_access_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -380,7 +384,7 @@ pub fn de_snapshot(
             s if s.matches("Tags") /* Tags com.amazonaws.redshift#Snapshot$Tags */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -390,7 +394,7 @@ pub fn de_snapshot(
             s if s.matches("RestorableNodeTypes") /* RestorableNodeTypes com.amazonaws.redshift#Snapshot$RestorableNodeTypes */ =>  {
                 let var_29 =
                     Some(
-                        crate::protocol_serde::shape_restorable_node_type_list::de_restorable_node_type_list(&mut tag)
+                        crate::protocol_serde::shape_restorable_node_type_list::de_restorable_node_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

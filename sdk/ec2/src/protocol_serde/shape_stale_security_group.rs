@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stale_security_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StaleSecurityGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StaleSecurityGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_stale_security_group(
             s if s.matches("staleIpPermissions") /* StaleIpPermissions com.amazonaws.ec2#StaleSecurityGroup$StaleIpPermissions */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_stale_ip_permission_set::de_stale_ip_permission_set(&mut tag)
+                        crate::protocol_serde::shape_stale_ip_permission_set::de_stale_ip_permission_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -59,7 +63,7 @@ pub fn de_stale_security_group(
             s if s.matches("staleIpPermissionsEgress") /* StaleIpPermissionsEgress com.amazonaws.ec2#StaleSecurityGroup$StaleIpPermissionsEgress */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_stale_ip_permission_set::de_stale_ip_permission_set(&mut tag)
+                        crate::protocol_serde::shape_stale_ip_permission_set::de_stale_ip_permission_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

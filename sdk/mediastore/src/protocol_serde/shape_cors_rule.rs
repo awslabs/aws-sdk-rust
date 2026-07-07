@@ -51,10 +51,16 @@ pub fn ser_cors_rule(
 pub(crate) fn de_cors_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CorsRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,13 +71,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AllowedOrigins" => {
-                            builder = builder.set_allowed_origins(crate::protocol_serde::shape_allowed_origins::de_allowed_origins(tokens, _value)?);
+                            builder = builder.set_allowed_origins(crate::protocol_serde::shape_allowed_origins::de_allowed_origins(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AllowedMethods" => {
-                            builder = builder.set_allowed_methods(crate::protocol_serde::shape_allowed_methods::de_allowed_methods(tokens, _value)?);
+                            builder = builder.set_allowed_methods(crate::protocol_serde::shape_allowed_methods::de_allowed_methods(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AllowedHeaders" => {
-                            builder = builder.set_allowed_headers(crate::protocol_serde::shape_allowed_headers::de_allowed_headers(tokens, _value)?);
+                            builder = builder.set_allowed_headers(crate::protocol_serde::shape_allowed_headers::de_allowed_headers(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MaxAgeSeconds" => {
                             builder = builder.set_max_age_seconds(
@@ -81,7 +99,11 @@ where
                             );
                         }
                         "ExposeHeaders" => {
-                            builder = builder.set_expose_headers(crate::protocol_serde::shape_expose_headers::de_expose_headers(tokens, _value)?);
+                            builder = builder.set_expose_headers(crate::protocol_serde::shape_expose_headers::de_expose_headers(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

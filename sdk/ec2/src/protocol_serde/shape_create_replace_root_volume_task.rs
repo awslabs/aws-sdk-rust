@@ -49,6 +49,8 @@ pub fn de_create_replace_root_volume_task(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateReplaceRootVolumeTaskResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateReplaceRootVolumeTaskResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_create_replace_root_volume_task(
             s if s.matches("replaceRootVolumeTask") /* ReplaceRootVolumeTask com.amazonaws.ec2.synthetic#CreateReplaceRootVolumeTaskOutput$ReplaceRootVolumeTask */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_replace_root_volume_task::de_replace_root_volume_task(&mut tag)
+                        crate::protocol_serde::shape_replace_root_volume_task::de_replace_root_volume_task(&mut tag, depth + 1)
                         ?
                     )
                 ;

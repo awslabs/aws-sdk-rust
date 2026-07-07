@@ -2,10 +2,16 @@
 pub(crate) fn de_rotation_shift<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RotationShift>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ContactIds" => {
                             builder = builder.set_contact_ids(crate::protocol_serde::shape_ssm_contacts_arn_list::de_ssm_contacts_arn_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "StartTime" => {
@@ -40,7 +48,8 @@ where
                             );
                         }
                         "ShiftDetails" => {
-                            builder = builder.set_shift_details(crate::protocol_serde::shape_shift_details::de_shift_details(tokens, _value)?);
+                            builder =
+                                builder.set_shift_details(crate::protocol_serde::shape_shift_details::de_shift_details(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

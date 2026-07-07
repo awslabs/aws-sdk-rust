@@ -76,6 +76,8 @@ pub fn de_list_stack_set_operations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListStackSetOperationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListStackSetOperationsResponse got {start_el:?}"
@@ -93,7 +95,7 @@ pub fn de_list_stack_set_operations(
             s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation.synthetic#ListStackSetOperationsOutput$Summaries */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_operation_summaries::de_stack_set_operation_summaries(&mut tag)
+                        crate::protocol_serde::shape_stack_set_operation_summaries::de_stack_set_operation_summaries(&mut tag, depth + 1)
                         ?
                     )
                 ;

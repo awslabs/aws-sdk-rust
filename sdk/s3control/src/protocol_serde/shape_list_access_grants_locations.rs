@@ -69,6 +69,8 @@ pub fn de_list_access_grants_locations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListAccessGrantsLocationsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListAccessGrantsLocationsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -92,7 +94,7 @@ pub fn de_list_access_grants_locations(
             s if s.matches("AccessGrantsLocationsList") /* AccessGrantsLocationsList com.amazonaws.s3control.synthetic#ListAccessGrantsLocationsOutput$AccessGrantsLocationsList */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_access_grants_locations_list::de_access_grants_locations_list(&mut tag)
+                        crate::protocol_serde::shape_access_grants_locations_list::de_access_grants_locations_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

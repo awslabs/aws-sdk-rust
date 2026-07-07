@@ -24,7 +24,11 @@ pub fn ser_trust_store_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_trust_store_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TrustStoreConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TrustStoreConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

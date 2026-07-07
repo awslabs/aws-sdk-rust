@@ -124,6 +124,20 @@ impl ModifyInstanceAttributeFluentBuilder {
     pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_source_dest_check()
     }
+    /// <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon Web Services Nitro Enclaves User Guide</a>.</p>
+    pub fn enclave_options(mut self, input: crate::types::EnclaveOptionsRequest) -> Self {
+        self.inner = self.inner.enclave_options(input);
+        self
+    }
+    /// <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon Web Services Nitro Enclaves User Guide</a>.</p>
+    pub fn set_enclave_options(mut self, input: ::std::option::Option<crate::types::EnclaveOptionsRequest>) -> Self {
+        self.inner = self.inner.set_enclave_options(input);
+        self
+    }
+    /// <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon Web Services Nitro Enclaves User Guide</a>.</p>
+    pub fn get_enclave_options(&self) -> &::std::option::Option<crate::types::EnclaveOptionsRequest> {
+        self.inner.get_enclave_options()
+    }
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
     pub fn disable_api_stop(mut self, input: crate::types::AttributeBooleanValue) -> Self {

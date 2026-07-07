@@ -175,4 +175,18 @@ impl RetrieveFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
+        self.inner = self.inner.user_context(input);
+        self
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.inner = self.inner.set_user_context(input);
+        self
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
+        self.inner.get_user_context()
+    }
 }

@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,31 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a connector reaches the ENABLED state, whether after CreateConnector or UpdateConnector. Caller MUST filter ListConnectors by the specific connector ARN so the matchers apply only to the target connector. Success when all returned items have enablementStatus == ENABLED. Failure when any item is in FAILED_TO_ENABLE or FAILED_TO_UPDATE.
+    fn wait_until_connector_enabled(&self) -> crate::waiters::connector_enabled::ConnectorEnabledFluentBuilder;
+    /// Wait until a connector is no longer returned by ListConnectors. Caller MUST filter ListConnectors by the specific connector ARN; success is reached when the filtered result returns zero items. Failure when the deletion terminally fails (FAILED_TO_DELETE).
+    fn wait_until_connector_deleted(&self) -> crate::waiters::connector_deleted::ConnectorDeletedFluentBuilder;
+    /// Wait until a connector reaches the CONNECTED health status, typically after CreateConnector or UpdateConnector + ConnectorEnabled. Caller MUST filter ListConnectors by the specific connector ARN so the matchers apply only to the target connector. Success when all returned items have health.connectorStatus == CONNECTED. Failure when any item is in health.connectorStatus == FAILED_TO_CONNECT or enablementStatus == FAILED_TO_ENABLE.
+    fn wait_until_connector_connected(&self) -> crate::waiters::connector_connected::ConnectorConnectedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_connector_enabled(&self) -> crate::waiters::connector_enabled::ConnectorEnabledFluentBuilder {
+        crate::waiters::connector_enabled::ConnectorEnabledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_connector_deleted(&self) -> crate::waiters::connector_deleted::ConnectorDeletedFluentBuilder {
+        crate::waiters::connector_deleted::ConnectorDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_connector_connected(&self) -> crate::waiters::connector_connected::ConnectorConnectedFluentBuilder {
+        crate::waiters::connector_connected::ConnectorConnectedFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -164,6 +203,8 @@ mod create_code_security_integration;
 
 mod create_code_security_scan_configuration;
 
+mod create_connector;
+
 mod create_filter;
 
 mod create_findings_report;
@@ -202,6 +243,8 @@ mod delete_cis_scan_configuration;
 mod delete_code_security_integration;
 
 mod delete_code_security_scan_configuration;
+
+mod delete_connector;
 
 mod delete_filter;
 
@@ -259,6 +302,10 @@ mod list_code_security_scan_configuration_associations;
 
 mod list_code_security_scan_configurations;
 
+mod list_connector_scan_configurations;
+
+mod list_connectors;
+
 mod list_coverage;
 
 mod list_coverage_statistics;
@@ -302,6 +349,10 @@ mod update_code_security_integration;
 mod update_code_security_scan_configuration;
 
 mod update_configuration;
+
+mod update_connector;
+
+mod update_connector_scan_configuration;
 
 mod update_ec2_deep_inspection_configuration;
 

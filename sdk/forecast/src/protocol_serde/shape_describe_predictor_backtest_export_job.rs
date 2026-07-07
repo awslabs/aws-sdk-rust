@@ -102,6 +102,8 @@ pub(crate) fn de_describe_predictor_backtest_export_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -129,7 +131,11 @@ pub(crate) fn de_describe_predictor_backtest_export_job(
                     );
                 }
                 "Destination" => {
-                    builder = builder.set_destination(crate::protocol_serde::shape_data_destination::de_data_destination(tokens, _value)?);
+                    builder = builder.set_destination(crate::protocol_serde::shape_data_destination::de_data_destination(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Message" => {
                     builder = builder.set_message(

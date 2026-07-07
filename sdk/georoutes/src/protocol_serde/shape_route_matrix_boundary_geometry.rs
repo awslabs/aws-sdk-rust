@@ -2,10 +2,16 @@
 pub(crate) fn de_route_matrix_boundary_geometry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouteMatrixBoundaryGeometry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,23 +20,26 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AutoCircle" => {
-                            builder = builder.set_auto_circle(crate::protocol_serde::shape_route_matrix_auto_circle::de_route_matrix_auto_circle(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AutoCircle" => {
+                                builder = builder.set_auto_circle(
+                                    crate::protocol_serde::shape_route_matrix_auto_circle::de_route_matrix_auto_circle(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Circle" => {
+                                builder = builder.set_circle(crate::protocol_serde::shape_circle::de_circle(tokens, _value, depth + 1)?);
+                            }
+                            "BoundingBox" => {
+                                builder =
+                                    builder.set_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value, depth + 1)?);
+                            }
+                            "Polygon" => {
+                                builder = builder.set_polygon(crate::protocol_serde::shape_linear_rings::de_linear_rings(tokens, _value, depth + 1)?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Circle" => {
-                            builder = builder.set_circle(crate::protocol_serde::shape_circle::de_circle(tokens, _value)?);
-                        }
-                        "BoundingBox" => {
-                            builder = builder.set_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value)?);
-                        }
-                        "Polygon" => {
-                            builder = builder.set_polygon(crate::protocol_serde::shape_linear_rings::de_linear_rings(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

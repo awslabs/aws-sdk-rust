@@ -25,6 +25,7 @@ impl super::Client {
     ///   - [`input_contexts(Option<Vec::<InputContext>>)`](crate::operation::get_intent::GetIntentOutput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
     ///   - [`output_contexts(Option<Vec::<OutputContext>>)`](crate::operation::get_intent::GetIntentOutput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
     /// - On failure, responds with [`SdkError<GetIntentError>`](crate::operation::get_intent::GetIntentError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn get_intent(&self) -> crate::operation::get_intent::builders::GetIntentFluentBuilder {
         crate::operation::get_intent::builders::GetIntentFluentBuilder::new(self.handle.clone())
     }

@@ -32,5 +32,7 @@ pub fn de_origin_request_policy_config(
             "invalid root, expected OriginRequestPolicyConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_origin_request_policy_config::de_origin_request_policy_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_origin_request_policy_config::de_origin_request_policy_config(&mut decoder, depth + 1)
 }

@@ -14,6 +14,8 @@ pub struct RuleAction {
     pub captcha: ::std::option::Option<crate::types::CaptchaAction>,
     /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
     pub challenge: ::std::option::Option<crate::types::ChallengeAction>,
+    /// <p>Instructs WAF to return an HTTP 402 Payment Required response with a price manifest. The requesting client can complete payment and resubmit the request to gain access. This is a terminating action-requests that do not complete payment are blocked. This action is available only for web ACLs associated with Amazon CloudFront distributions and requires a <code>MonetizationConfig</code> on the web ACL.</p>
+    pub monetize: ::std::option::Option<crate::types::MonetizeAction>,
 }
 impl RuleAction {
     /// <p>Instructs WAF to block the web request.</p>
@@ -36,6 +38,10 @@ impl RuleAction {
     pub fn challenge(&self) -> ::std::option::Option<&crate::types::ChallengeAction> {
         self.challenge.as_ref()
     }
+    /// <p>Instructs WAF to return an HTTP 402 Payment Required response with a price manifest. The requesting client can complete payment and resubmit the request to gain access. This is a terminating action-requests that do not complete payment are blocked. This action is available only for web ACLs associated with Amazon CloudFront distributions and requires a <code>MonetizationConfig</code> on the web ACL.</p>
+    pub fn monetize(&self) -> ::std::option::Option<&crate::types::MonetizeAction> {
+        self.monetize.as_ref()
+    }
 }
 impl RuleAction {
     /// Creates a new builder-style object to manufacture [`RuleAction`](crate::types::RuleAction).
@@ -53,6 +59,7 @@ pub struct RuleActionBuilder {
     pub(crate) count: ::std::option::Option<crate::types::CountAction>,
     pub(crate) captcha: ::std::option::Option<crate::types::CaptchaAction>,
     pub(crate) challenge: ::std::option::Option<crate::types::ChallengeAction>,
+    pub(crate) monetize: ::std::option::Option<crate::types::MonetizeAction>,
 }
 impl RuleActionBuilder {
     /// <p>Instructs WAF to block the web request.</p>
@@ -125,6 +132,20 @@ impl RuleActionBuilder {
     pub fn get_challenge(&self) -> &::std::option::Option<crate::types::ChallengeAction> {
         &self.challenge
     }
+    /// <p>Instructs WAF to return an HTTP 402 Payment Required response with a price manifest. The requesting client can complete payment and resubmit the request to gain access. This is a terminating action-requests that do not complete payment are blocked. This action is available only for web ACLs associated with Amazon CloudFront distributions and requires a <code>MonetizationConfig</code> on the web ACL.</p>
+    pub fn monetize(mut self, input: crate::types::MonetizeAction) -> Self {
+        self.monetize = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Instructs WAF to return an HTTP 402 Payment Required response with a price manifest. The requesting client can complete payment and resubmit the request to gain access. This is a terminating action-requests that do not complete payment are blocked. This action is available only for web ACLs associated with Amazon CloudFront distributions and requires a <code>MonetizationConfig</code> on the web ACL.</p>
+    pub fn set_monetize(mut self, input: ::std::option::Option<crate::types::MonetizeAction>) -> Self {
+        self.monetize = input;
+        self
+    }
+    /// <p>Instructs WAF to return an HTTP 402 Payment Required response with a price manifest. The requesting client can complete payment and resubmit the request to gain access. This is a terminating action-requests that do not complete payment are blocked. This action is available only for web ACLs associated with Amazon CloudFront distributions and requires a <code>MonetizationConfig</code> on the web ACL.</p>
+    pub fn get_monetize(&self) -> &::std::option::Option<crate::types::MonetizeAction> {
+        &self.monetize
+    }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
     pub fn build(self) -> crate::types::RuleAction {
         crate::types::RuleAction {
@@ -133,6 +154,7 @@ impl RuleActionBuilder {
             count: self.count,
             captcha: self.captcha,
             challenge: self.challenge,
+            monetize: self.monetize,
         }
     }
 }

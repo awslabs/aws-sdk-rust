@@ -49,6 +49,8 @@ pub fn de_cancel_capacity_reservation_fleets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CancelCapacityReservationFleetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CancelCapacityReservationFleetsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_cancel_capacity_reservation_fleets(
             s if s.matches("successfulFleetCancellationSet") /* SuccessfulFleetCancellations com.amazonaws.ec2.synthetic#CancelCapacityReservationFleetsOutput$SuccessfulFleetCancellations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_fleet_cancellation_state_set::de_capacity_reservation_fleet_cancellation_state_set(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_fleet_cancellation_state_set::de_capacity_reservation_fleet_cancellation_state_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_cancel_capacity_reservation_fleets(
             s if s.matches("failedFleetCancellationSet") /* FailedFleetCancellations com.amazonaws.ec2.synthetic#CancelCapacityReservationFleetsOutput$FailedFleetCancellations */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_failed_capacity_reservation_fleet_cancellation_result_set::de_failed_capacity_reservation_fleet_cancellation_result_set(&mut tag)
+                        crate::protocol_serde::shape_failed_capacity_reservation_fleet_cancellation_result_set::de_failed_capacity_reservation_fleet_cancellation_result_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

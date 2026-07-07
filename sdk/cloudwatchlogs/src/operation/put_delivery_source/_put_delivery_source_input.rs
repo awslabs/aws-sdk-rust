@@ -13,7 +13,7 @@ pub struct PutDeliverySourceInput {
     /// <li>
     /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
@@ -24,6 +24,8 @@ pub struct PutDeliverySourceInput {
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
@@ -37,6 +39,8 @@ pub struct PutDeliverySourceInput {
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
@@ -47,11 +51,13 @@ pub struct PutDeliverySourceInput {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p></li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
@@ -67,6 +73,8 @@ pub struct PutDeliverySourceInput {
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub delivery_source_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutDeliverySourceInput {
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
@@ -83,7 +91,7 @@ impl PutDeliverySourceInput {
     /// <li>
     /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
@@ -94,6 +102,8 @@ impl PutDeliverySourceInput {
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
@@ -107,6 +117,8 @@ impl PutDeliverySourceInput {
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
@@ -117,11 +129,13 @@ impl PutDeliverySourceInput {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p></li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
@@ -141,6 +155,10 @@ impl PutDeliverySourceInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn delivery_source_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.delivery_source_configuration.as_ref()
+    }
 }
 impl PutDeliverySourceInput {
     /// Creates a new builder-style object to manufacture [`PutDeliverySourceInput`](crate::operation::put_delivery_source::PutDeliverySourceInput).
@@ -157,6 +175,7 @@ pub struct PutDeliverySourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_type: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) delivery_source_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutDeliverySourceInputBuilder {
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
@@ -197,7 +216,7 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
@@ -208,6 +227,8 @@ impl PutDeliverySourceInputBuilder {
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
@@ -221,6 +242,8 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
@@ -231,11 +254,13 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p></li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
@@ -257,7 +282,7 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
@@ -268,6 +293,8 @@ impl PutDeliverySourceInputBuilder {
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
@@ -281,6 +308,8 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
@@ -291,11 +320,13 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p></li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
@@ -316,7 +347,7 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
@@ -327,6 +358,8 @@ impl PutDeliverySourceInputBuilder {
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
@@ -340,6 +373,8 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
@@ -350,11 +385,13 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p></li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
@@ -392,6 +429,35 @@ impl PutDeliverySourceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `delivery_source_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_delivery_source_configuration`](Self::set_delivery_source_configuration).
+    ///
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn delivery_source_configuration(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.delivery_source_configuration.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.delivery_source_configuration = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn set_delivery_source_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.delivery_source_configuration = input;
+        self
+    }
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn get_delivery_source_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.delivery_source_configuration
+    }
     /// Consumes the builder and constructs a [`PutDeliverySourceInput`](crate::operation::put_delivery_source::PutDeliverySourceInput).
     pub fn build(
         self,
@@ -401,6 +467,7 @@ impl PutDeliverySourceInputBuilder {
             resource_arn: self.resource_arn,
             log_type: self.log_type,
             tags: self.tags,
+            delivery_source_configuration: self.delivery_source_configuration,
         })
     }
 }

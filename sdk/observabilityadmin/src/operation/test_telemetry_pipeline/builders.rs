@@ -141,4 +141,18 @@ impl TestTelemetryPipelineFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::TelemetryPipelineConfiguration> {
         self.inner.get_configuration()
     }
+    /// <p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>
+    pub fn signal_type(mut self, input: crate::types::SignalType) -> Self {
+        self.inner = self.inner.signal_type(input);
+        self
+    }
+    /// <p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>
+    pub fn set_signal_type(mut self, input: ::std::option::Option<crate::types::SignalType>) -> Self {
+        self.inner = self.inner.set_signal_type(input);
+        self
+    }
+    /// <p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>
+    pub fn get_signal_type(&self) -> &::std::option::Option<crate::types::SignalType> {
+        self.inner.get_signal_type()
+    }
 }

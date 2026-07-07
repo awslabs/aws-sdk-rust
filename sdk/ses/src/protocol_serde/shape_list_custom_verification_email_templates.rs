@@ -53,6 +53,8 @@ pub fn de_list_custom_verification_email_templates(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListCustomVerificationEmailTemplatesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListCustomVerificationEmailTemplatesResponse got {start_el:?}"
@@ -70,7 +72,7 @@ pub fn de_list_custom_verification_email_templates(
             s if s.matches("CustomVerificationEmailTemplates") /* CustomVerificationEmailTemplates com.amazonaws.ses.synthetic#ListCustomVerificationEmailTemplatesOutput$CustomVerificationEmailTemplates */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_custom_verification_email_templates::de_custom_verification_email_templates(&mut tag)
+                        crate::protocol_serde::shape_custom_verification_email_templates::de_custom_verification_email_templates(&mut tag, depth + 1)
                         ?
                     )
                 ;

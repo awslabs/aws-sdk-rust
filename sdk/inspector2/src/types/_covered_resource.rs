@@ -20,6 +20,16 @@ pub struct CoveredResource {
     pub last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The scan method that is applied to the instance.</p>
     pub scan_mode: ::std::option::Option<crate::types::ScanMode>,
+    /// <p>The cloud provider of the covered resource.</p>
+    pub provider: ::std::option::Option<crate::types::Provider>,
+    /// <p>The cloud provider account ID of the covered resource.</p>
+    pub provider_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud provider organization ID of the covered resource.</p>
+    pub provider_org_id: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud provider region of the covered resource.</p>
+    pub provider_region: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud provider partition of the covered resource.</p>
+    pub provider_partition: ::std::option::Option<::std::string::String>,
 }
 impl CoveredResource {
     /// <p>The type of the covered resource.</p>
@@ -56,6 +66,26 @@ impl CoveredResource {
     pub fn scan_mode(&self) -> ::std::option::Option<&crate::types::ScanMode> {
         self.scan_mode.as_ref()
     }
+    /// <p>The cloud provider of the covered resource.</p>
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
+        self.provider.as_ref()
+    }
+    /// <p>The cloud provider account ID of the covered resource.</p>
+    pub fn provider_account_id(&self) -> ::std::option::Option<&str> {
+        self.provider_account_id.as_deref()
+    }
+    /// <p>The cloud provider organization ID of the covered resource.</p>
+    pub fn provider_org_id(&self) -> ::std::option::Option<&str> {
+        self.provider_org_id.as_deref()
+    }
+    /// <p>The cloud provider region of the covered resource.</p>
+    pub fn provider_region(&self) -> ::std::option::Option<&str> {
+        self.provider_region.as_deref()
+    }
+    /// <p>The cloud provider partition of the covered resource.</p>
+    pub fn provider_partition(&self) -> ::std::option::Option<&str> {
+        self.provider_partition.as_deref()
+    }
 }
 impl CoveredResource {
     /// Creates a new builder-style object to manufacture [`CoveredResource`](crate::types::CoveredResource).
@@ -76,6 +106,11 @@ pub struct CoveredResourceBuilder {
     pub(crate) resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
     pub(crate) last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) scan_mode: ::std::option::Option<crate::types::ScanMode>,
+    pub(crate) provider: ::std::option::Option<crate::types::Provider>,
+    pub(crate) provider_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_org_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_region: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_partition: ::std::option::Option<::std::string::String>,
 }
 impl CoveredResourceBuilder {
     /// <p>The type of the covered resource.</p>
@@ -194,6 +229,76 @@ impl CoveredResourceBuilder {
     pub fn get_scan_mode(&self) -> &::std::option::Option<crate::types::ScanMode> {
         &self.scan_mode
     }
+    /// <p>The cloud provider of the covered resource.</p>
+    pub fn provider(mut self, input: crate::types::Provider) -> Self {
+        self.provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cloud provider of the covered resource.</p>
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
+        self.provider = input;
+        self
+    }
+    /// <p>The cloud provider of the covered resource.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
+        &self.provider
+    }
+    /// <p>The cloud provider account ID of the covered resource.</p>
+    pub fn provider_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud provider account ID of the covered resource.</p>
+    pub fn set_provider_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_account_id = input;
+        self
+    }
+    /// <p>The cloud provider account ID of the covered resource.</p>
+    pub fn get_provider_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_account_id
+    }
+    /// <p>The cloud provider organization ID of the covered resource.</p>
+    pub fn provider_org_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider_org_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud provider organization ID of the covered resource.</p>
+    pub fn set_provider_org_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_org_id = input;
+        self
+    }
+    /// <p>The cloud provider organization ID of the covered resource.</p>
+    pub fn get_provider_org_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_org_id
+    }
+    /// <p>The cloud provider region of the covered resource.</p>
+    pub fn provider_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud provider region of the covered resource.</p>
+    pub fn set_provider_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_region = input;
+        self
+    }
+    /// <p>The cloud provider region of the covered resource.</p>
+    pub fn get_provider_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_region
+    }
+    /// <p>The cloud provider partition of the covered resource.</p>
+    pub fn provider_partition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider_partition = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud provider partition of the covered resource.</p>
+    pub fn set_provider_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_partition = input;
+        self
+    }
+    /// <p>The cloud provider partition of the covered resource.</p>
+    pub fn get_provider_partition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_partition
+    }
     /// Consumes the builder and constructs a [`CoveredResource`](crate::types::CoveredResource).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::CoveredResourceBuilder::resource_type)
@@ -230,6 +335,11 @@ impl CoveredResourceBuilder {
             resource_metadata: self.resource_metadata,
             last_scanned_at: self.last_scanned_at,
             scan_mode: self.scan_mode,
+            provider: self.provider,
+            provider_account_id: self.provider_account_id,
+            provider_org_id: self.provider_org_id,
+            provider_region: self.provider_region,
+            provider_partition: self.provider_partition,
         })
     }
 }

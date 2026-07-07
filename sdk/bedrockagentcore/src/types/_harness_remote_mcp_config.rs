@@ -6,7 +6,7 @@
 pub struct HarnessRemoteMcpConfig {
     /// <p>URL of the MCP endpoint.</p>
     pub url: ::std::string::String,
-    /// Map of key/value pairs for HTTP headers.
+    /// <p>Custom headers to include when connecting to the remote MCP server.</p>
     pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl HarnessRemoteMcpConfig {
@@ -15,7 +15,7 @@ impl HarnessRemoteMcpConfig {
         use std::ops::Deref;
         self.url.deref()
     }
-    /// Map of key/value pairs for HTTP headers.
+    /// <p>Custom headers to include when connecting to the remote MCP server.</p>
     pub fn headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers.as_ref()
     }
@@ -62,19 +62,19 @@ impl HarnessRemoteMcpConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
     ///
-    /// Map of key/value pairs for HTTP headers.
+    /// <p>Custom headers to include when connecting to the remote MCP server.</p>
     pub fn headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.headers.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.headers = ::std::option::Option::Some(hash_map);
         self
     }
-    /// Map of key/value pairs for HTTP headers.
+    /// <p>Custom headers to include when connecting to the remote MCP server.</p>
     pub fn set_headers(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.headers = input;
         self
     }
-    /// Map of key/value pairs for HTTP headers.
+    /// <p>Custom headers to include when connecting to the remote MCP server.</p>
     pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers
     }

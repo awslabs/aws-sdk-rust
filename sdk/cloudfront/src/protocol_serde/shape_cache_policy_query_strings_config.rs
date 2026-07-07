@@ -20,7 +20,11 @@ pub fn ser_cache_policy_query_strings_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_policy_query_strings_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CachePolicyQueryStringsConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CachePolicyQueryStringsConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -42,7 +46,7 @@ pub fn de_cache_policy_query_strings_config(
             s if s.matches("QueryStrings") /* QueryStrings com.amazonaws.cloudfront#CachePolicyQueryStringsConfig$QueryStrings */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_query_string_names::de_query_string_names(&mut tag)
+                        crate::protocol_serde::shape_query_string_names::de_query_string_names(&mut tag, depth + 1)
                         ?
                     )
                 ;

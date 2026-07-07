@@ -813,6 +813,9 @@ impl From<crate::operation::create_imported_image::CreateImportedImageError> for
             crate::operation::create_imported_image::CreateImportedImageError::InvalidAccountStatusException(inner) => {
                 Error::InvalidAccountStatusException(inner)
             }
+            crate::operation::create_imported_image::CreateImportedImageError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
             crate::operation::create_imported_image::CreateImportedImageError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
             crate::operation::create_imported_image::CreateImportedImageError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_imported_image::CreateImportedImageError::OperationNotPermittedException(inner) => {

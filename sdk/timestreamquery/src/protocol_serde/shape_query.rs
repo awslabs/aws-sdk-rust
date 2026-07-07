@@ -159,41 +159,49 @@ pub(crate) fn de_query(
 ) -> ::std::result::Result<crate::operation::query::builders::QueryOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "QueryId" => {
-                    builder = builder.set_query_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "QueryId" => {
+                        builder = builder.set_query_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "Rows" => {
+                        builder = builder.set_rows(crate::protocol_serde::shape_row_list::de_row_list(tokens, _value, depth + 1)?);
+                    }
+                    "ColumnInfo" => {
+                        builder = builder.set_column_info(crate::protocol_serde::shape_column_info_list::de_column_info_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "QueryStatus" => {
+                        builder = builder.set_query_status(crate::protocol_serde::shape_query_status::de_query_status(tokens, _value, depth + 1)?);
+                    }
+                    "QueryInsightsResponse" => {
+                        builder = builder.set_query_insights_response(
+                            crate::protocol_serde::shape_query_insights_response::de_query_insights_response(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "NextToken" => {
-                    builder = builder.set_next_token(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "Rows" => {
-                    builder = builder.set_rows(crate::protocol_serde::shape_row_list::de_row_list(tokens, _value)?);
-                }
-                "ColumnInfo" => {
-                    builder = builder.set_column_info(crate::protocol_serde::shape_column_info_list::de_column_info_list(tokens, _value)?);
-                }
-                "QueryStatus" => {
-                    builder = builder.set_query_status(crate::protocol_serde::shape_query_status::de_query_status(tokens, _value)?);
-                }
-                "QueryInsightsResponse" => {
-                    builder = builder.set_query_insights_response(crate::protocol_serde::shape_query_insights_response::de_query_insights_response(
-                        tokens, _value,
-                    )?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

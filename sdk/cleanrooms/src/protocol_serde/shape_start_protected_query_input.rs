@@ -9,20 +9,23 @@ pub fn ser_start_protected_query_input_input(
         crate::protocol_serde::shape_compute_configuration::ser_compute_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.result_configuration {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("resultConfiguration").start_object();
-        crate::protocol_serde::shape_protected_query_result_configuration::ser_protected_query_result_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+    if let Some(var_3) = &input.query_compute_payer_account_id {
+        object.key("queryComputePayerAccountId").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.sql_parameters {
+    if let Some(var_4) = &input.result_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("sqlParameters").start_object();
-        crate::protocol_serde::shape_protected_query_sql_parameters::ser_protected_query_sql_parameters(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("resultConfiguration").start_object();
+        crate::protocol_serde::shape_protected_query_result_configuration::ser_protected_query_result_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.r#type {
-        object.key("type").string(var_7.as_str());
+    if let Some(var_6) = &input.sql_parameters {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("sqlParameters").start_object();
+        crate::protocol_serde::shape_protected_query_sql_parameters::ser_protected_query_sql_parameters(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.r#type {
+        object.key("type").string(var_8.as_str());
     }
     Ok(())
 }

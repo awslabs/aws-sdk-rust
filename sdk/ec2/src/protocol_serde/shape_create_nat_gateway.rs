@@ -40,6 +40,8 @@ pub fn de_create_nat_gateway(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateNatGatewayResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateNatGatewayResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_create_nat_gateway(
             s if s.matches("natGateway") /* NatGateway com.amazonaws.ec2.synthetic#CreateNatGatewayOutput$NatGateway */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_nat_gateway::de_nat_gateway(&mut tag)
+                        crate::protocol_serde::shape_nat_gateway::de_nat_gateway(&mut tag, depth + 1)
                         ?
                     )
                 ;

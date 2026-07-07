@@ -63,6 +63,8 @@ pub fn de_list_types(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListTypesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListTypesResponse got {start_el:?}"
@@ -80,7 +82,7 @@ pub fn de_list_types(
             s if s.matches("TypeSummaries") /* TypeSummaries com.amazonaws.cloudformation.synthetic#ListTypesOutput$TypeSummaries */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_type_summaries::de_type_summaries(&mut tag)
+                        crate::protocol_serde::shape_type_summaries::de_type_summaries(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_client_vpn_endpoint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ClientVpnEndpoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ClientVpnEndpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("status") /* Status com.amazonaws.ec2#ClientVpnEndpoint$Status */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_endpoint_status::de_client_vpn_endpoint_status(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_endpoint_status::de_client_vpn_endpoint_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("dnsServer") /* DnsServers com.amazonaws.ec2#ClientVpnEndpoint$DnsServers */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -166,7 +170,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("associatedTargetNetwork") /* AssociatedTargetNetworks com.amazonaws.ec2#ClientVpnEndpoint$AssociatedTargetNetworks */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_associated_target_network_set::de_associated_target_network_set(&mut tag)
+                        crate::protocol_serde::shape_associated_target_network_set::de_associated_target_network_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -189,7 +193,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("authenticationOptions") /* AuthenticationOptions com.amazonaws.ec2#ClientVpnEndpoint$AuthenticationOptions */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_authentication_list::de_client_vpn_authentication_list(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_authentication_list::de_client_vpn_authentication_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -199,7 +203,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("connectionLogOptions") /* ConnectionLogOptions com.amazonaws.ec2#ClientVpnEndpoint$ConnectionLogOptions */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_connection_log_response_options::de_connection_log_response_options(&mut tag)
+                        crate::protocol_serde::shape_connection_log_response_options::de_connection_log_response_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -209,7 +213,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ClientVpnEndpoint$Tags */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -219,7 +223,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("securityGroupIdSet") /* SecurityGroupIds com.amazonaws.ec2#ClientVpnEndpoint$SecurityGroupIds */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_security_group_id_set::de_client_vpn_security_group_id_set(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_security_group_id_set::de_client_vpn_security_group_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -255,7 +259,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("clientConnectOptions") /* ClientConnectOptions com.amazonaws.ec2#ClientVpnEndpoint$ClientConnectOptions */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_client_connect_response_options::de_client_connect_response_options(&mut tag)
+                        crate::protocol_serde::shape_client_connect_response_options::de_client_connect_response_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -280,7 +284,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("clientLoginBannerOptions") /* ClientLoginBannerOptions com.amazonaws.ec2#ClientVpnEndpoint$ClientLoginBannerOptions */ =>  {
                 let var_23 =
                     Some(
-                        crate::protocol_serde::shape_client_login_banner_response_options::de_client_login_banner_response_options(&mut tag)
+                        crate::protocol_serde::shape_client_login_banner_response_options::de_client_login_banner_response_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -290,7 +294,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("clientRouteEnforcementOptions") /* ClientRouteEnforcementOptions com.amazonaws.ec2#ClientVpnEndpoint$ClientRouteEnforcementOptions */ =>  {
                 let var_24 =
                     Some(
-                        crate::protocol_serde::shape_client_route_enforcement_response_options::de_client_route_enforcement_response_options(&mut tag)
+                        crate::protocol_serde::shape_client_route_enforcement_response_options::de_client_route_enforcement_response_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -343,7 +347,7 @@ pub fn de_client_vpn_endpoint(
             s if s.matches("transitGatewayConfiguration") /* TransitGatewayConfiguration com.amazonaws.ec2#ClientVpnEndpoint$TransitGatewayConfiguration */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_configuration_describe_endpoint_structure::de_transit_gateway_configuration_describe_endpoint_structure(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_configuration_describe_endpoint_structure::de_transit_gateway_configuration_describe_endpoint_structure(&mut tag, depth + 1)
                         ?
                     )
                 ;

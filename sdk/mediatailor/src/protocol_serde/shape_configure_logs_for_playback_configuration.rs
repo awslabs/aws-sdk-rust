@@ -61,23 +61,32 @@ pub(crate) fn de_configure_logs_for_playback_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdsInteractionLog" => {
-                    builder =
-                        builder.set_ads_interaction_log(crate::protocol_serde::shape_ads_interaction_log::de_ads_interaction_log(tokens, _value)?);
+                    builder = builder.set_ads_interaction_log(crate::protocol_serde::shape_ads_interaction_log::de_ads_interaction_log(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "EnabledLoggingStrategies" => {
                     builder = builder.set_enabled_logging_strategies(
-                        crate::protocol_serde::shape_list_of_logging_strategies::de_list_of_logging_strategies(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_logging_strategies::de_list_of_logging_strategies(tokens, _value, depth + 1)?,
                     );
                 }
                 "ManifestServiceInteractionLog" => {
                     builder = builder.set_manifest_service_interaction_log(
-                        crate::protocol_serde::shape_manifest_service_interaction_log::de_manifest_service_interaction_log(tokens, _value)?,
+                        crate::protocol_serde::shape_manifest_service_interaction_log::de_manifest_service_interaction_log(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "PercentEnabled" => {

@@ -23,9 +23,10 @@ impl crate::operation::list_grants::builders::ListGrantsInputBuilder {
 /// Fluent builder constructing a request to `ListGrants`.
 ///
 /// <p>Gets a list of all grants for the specified KMS key.</p>
-/// <p>You must specify the KMS key in all requests. You can filter the grant list by grant ID or grantee principal.</p>
+/// <p>You must specify the KMS key in all requests. You can filter the grant list by grant ID, grantee principal, or grantee service principal.</p>
 /// <p>For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples of creating grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_CreateGrant_section.html">Use CreateGrant with an Amazon Web Services SDK or CLI</a>.</p><note>
-/// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
+/// <p>When a grant is created with the <code>GranteePrincipal</code> field, the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, if the grantee principal is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might correspond to several different grantee principals, such as an IAM user, IAM role, or Amazon Web Services account.</p>
+/// <p>When a grant is created with the <code>GranteeServicePrincipal</code> field, the <code>ListGrants</code> response always includes a <code>GranteeServicePrincipal</code> that indicates the grantee is actually an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>.</p>
 /// </note>
 /// <p><b>Cross-account use</b>: Yes. To perform this operation on a KMS key in a different Amazon Web Services account, specify the key ARN in the value of the <code>KeyId</code> parameter.</p>
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListGrants</a> (key policy)</p>
@@ -219,17 +220,37 @@ impl ListGrantsFluentBuilder {
         self.inner.get_grant_id()
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
     pub fn grantee_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grantee_principal(input.into());
         self
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
     pub fn set_grantee_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grantee_principal(input);
         self
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
     pub fn get_grantee_principal(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grantee_principal()
+    }
+    /// <p>Returns only grants where the specified Amazon Web Services service principal is the grantee service principal for the grant. This filter is only usable by callers in a service principal.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
+    pub fn grantee_service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.grantee_service_principal(input.into());
+        self
+    }
+    /// <p>Returns only grants where the specified Amazon Web Services service principal is the grantee service principal for the grant. This filter is only usable by callers in a service principal.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
+    pub fn set_grantee_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_grantee_service_principal(input);
+        self
+    }
+    /// <p>Returns only grants where the specified Amazon Web Services service principal is the grantee service principal for the grant. This filter is only usable by callers in a service principal.</p>
+    /// <p>You can specify either <code>GranteePrincipal</code> or <code>GranteeServicePrincipal</code>, but not both.</p>
+    pub fn get_grantee_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grantee_service_principal()
     }
 }

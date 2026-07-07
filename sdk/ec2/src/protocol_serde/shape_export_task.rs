@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_export_task(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ExportTask, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ExportTask::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_export_task(
             s if s.matches("exportToS3") /* ExportToS3Task com.amazonaws.ec2#ExportTask$ExportToS3Task */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_export_to_s3_task::de_export_to_s3_task(&mut tag)
+                        crate::protocol_serde::shape_export_to_s3_task::de_export_to_s3_task(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_export_task(
             s if s.matches("instanceExport") /* InstanceExportDetails com.amazonaws.ec2#ExportTask$InstanceExportDetails */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_instance_export_details::de_instance_export_details(&mut tag)
+                        crate::protocol_serde::shape_instance_export_details::de_instance_export_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -83,7 +87,7 @@ pub fn de_export_task(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ExportTask$Tags */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

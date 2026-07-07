@@ -49,6 +49,8 @@ pub fn de_move_byoip_cidr_to_ipam(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("MoveByoipCidrToIpamResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected MoveByoipCidrToIpamResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_move_byoip_cidr_to_ipam(
             s if s.matches("byoipCidr") /* ByoipCidr com.amazonaws.ec2.synthetic#MoveByoipCidrToIpamOutput$ByoipCidr */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_byoip_cidr::de_byoip_cidr(&mut tag)
+                        crate::protocol_serde::shape_byoip_cidr::de_byoip_cidr(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -30,16 +30,37 @@ pub fn ser_evaluation_form_section(
             ::aws_smithy_types::Number::Float((input.weight).into()),
         );
     }
+    if input.is_excluded_from_scoring {
+        object.key("IsExcludedFromScoring").boolean(input.is_excluded_from_scoring);
+    }
+    if let Some(var_5) = &input.score_thresholds {
+        let mut array_6 = object.key("ScoreThresholds").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_evaluation_form_score_threshold::ser_evaluation_form_score_threshold(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_evaluation_form_section<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormSection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -72,12 +93,27 @@ where
                         }
                         "Items" => {
                             builder = builder.set_items(crate::protocol_serde::shape_evaluation_form_items_list::de_evaluation_form_items_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Weight" => {
                             builder = builder
                                 .set_weight(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
+                        }
+                        "IsExcludedFromScoring" => {
+                            builder =
+                                builder.set_is_excluded_from_scoring(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "ScoreThresholds" => {
+                            builder = builder.set_score_thresholds(
+                                crate::protocol_serde::shape_evaluation_form_score_threshold_list::de_evaluation_form_score_threshold_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

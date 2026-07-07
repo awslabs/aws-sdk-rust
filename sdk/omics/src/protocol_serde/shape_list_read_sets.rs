@@ -142,6 +142,8 @@ pub(crate) fn de_list_read_sets(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -155,7 +157,7 @@ pub(crate) fn de_list_read_sets(
                     );
                 }
                 "readSets" => {
-                    builder = builder.set_read_sets(crate::protocol_serde::shape_read_set_list::de_read_set_list(tokens, _value)?);
+                    builder = builder.set_read_sets(crate::protocol_serde::shape_read_set_list::de_read_set_list(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

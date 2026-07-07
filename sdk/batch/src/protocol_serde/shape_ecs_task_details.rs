@@ -2,10 +2,16 @@
 pub(crate) fn de_ecs_task_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EcsTaskDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "containers" => {
                             builder = builder.set_containers(
-                                crate::protocol_serde::shape_list_task_container_details::de_list_task_container_details(tokens, _value)?,
+                                crate::protocol_serde::shape_list_task_container_details::de_list_task_container_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "containerInstanceArn" => {
@@ -35,8 +41,11 @@ where
                             );
                         }
                         "ephemeralStorage" => {
-                            builder =
-                                builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens, _value)?);
+                            builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "executionRoleArn" => {
                             builder = builder.set_execution_role_arn(
@@ -75,15 +84,18 @@ where
                         }
                         "networkConfiguration" => {
                             builder = builder.set_network_configuration(
-                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "runtimePlatform" => {
-                            builder =
-                                builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(tokens, _value)?);
+                            builder = builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "volumes" => {
-                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value)?);
+                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value, depth + 1)?);
                         }
                         "enableExecuteCommand" => {
                             builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

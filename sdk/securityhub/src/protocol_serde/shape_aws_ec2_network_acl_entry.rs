@@ -42,10 +42,16 @@ pub fn ser_aws_ec2_network_acl_entry(
 pub(crate) fn de_aws_ec2_network_acl_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsEc2NetworkAclEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,7 +72,11 @@ where
                             builder = builder.set_egress(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "IcmpTypeCode" => {
-                            builder = builder.set_icmp_type_code(crate::protocol_serde::shape_icmp_type_code::de_icmp_type_code(tokens, _value)?);
+                            builder = builder.set_icmp_type_code(crate::protocol_serde::shape_icmp_type_code::de_icmp_type_code(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Ipv6CidrBlock" => {
                             builder = builder.set_ipv6_cidr_block(
@@ -76,7 +86,11 @@ where
                             );
                         }
                         "PortRange" => {
-                            builder = builder.set_port_range(crate::protocol_serde::shape_port_range_from_to::de_port_range_from_to(tokens, _value)?);
+                            builder = builder.set_port_range(crate::protocol_serde::shape_port_range_from_to::de_port_range_from_to(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Protocol" => {
                             builder = builder.set_protocol(

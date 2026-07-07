@@ -61,5 +61,11 @@ pub fn ser_create_rule_group_input_input(
         }
         object_16.finish();
     }
+    if let Some(var_20) = &input.monetization_config {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("MonetizationConfig").start_object();
+        crate::protocol_serde::shape_monetization_config::ser_monetization_config(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }

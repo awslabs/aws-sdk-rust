@@ -2,10 +2,16 @@
 pub(crate) fn de_pull_request_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PullRequestEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,41 +51,51 @@ where
                         "pullRequestCreatedEventMetadata" => {
                             builder = builder.set_pull_request_created_event_metadata(
                                 crate::protocol_serde::shape_pull_request_created_event_metadata::de_pull_request_created_event_metadata(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "pullRequestStatusChangedEventMetadata" => {
                             builder = builder.set_pull_request_status_changed_event_metadata(
-                                    crate::protocol_serde::shape_pull_request_status_changed_event_metadata::de_pull_request_status_changed_event_metadata(tokens, _value)?
+                                    crate::protocol_serde::shape_pull_request_status_changed_event_metadata::de_pull_request_status_changed_event_metadata(tokens, _value, depth + 1)?
                                 );
                         }
                         "pullRequestSourceReferenceUpdatedEventMetadata" => {
                             builder = builder.set_pull_request_source_reference_updated_event_metadata(
-                                    crate::protocol_serde::shape_pull_request_source_reference_updated_event_metadata::de_pull_request_source_reference_updated_event_metadata(tokens, _value)?
+                                    crate::protocol_serde::shape_pull_request_source_reference_updated_event_metadata::de_pull_request_source_reference_updated_event_metadata(tokens, _value, depth + 1)?
                                 );
                         }
                         "pullRequestMergedStateChangedEventMetadata" => {
                             builder = builder.set_pull_request_merged_state_changed_event_metadata(
-                                    crate::protocol_serde::shape_pull_request_merged_state_changed_event_metadata::de_pull_request_merged_state_changed_event_metadata(tokens, _value)?
+                                    crate::protocol_serde::shape_pull_request_merged_state_changed_event_metadata::de_pull_request_merged_state_changed_event_metadata(tokens, _value, depth + 1)?
                                 );
                         }
                         "approvalRuleEventMetadata" => {
                             builder = builder.set_approval_rule_event_metadata(
-                                crate::protocol_serde::shape_approval_rule_event_metadata::de_approval_rule_event_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_approval_rule_event_metadata::de_approval_rule_event_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "approvalStateChangedEventMetadata" => {
                             builder = builder.set_approval_state_changed_event_metadata(
                                 crate::protocol_serde::shape_approval_state_changed_event_metadata::de_approval_state_changed_event_metadata(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "approvalRuleOverriddenEventMetadata" => {
                             builder = builder.set_approval_rule_overridden_event_metadata(
                                 crate::protocol_serde::shape_approval_rule_overridden_event_metadata::de_approval_rule_overridden_event_metadata(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

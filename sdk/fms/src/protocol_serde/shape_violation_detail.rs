@@ -2,10 +2,16 @@
 pub(crate) fn de_violation_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ViolationDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,14 @@ where
                             );
                         }
                         "ResourceViolations" => {
-                            builder = builder
-                                .set_resource_violations(crate::protocol_serde::shape_resource_violations::de_resource_violations(tokens, _value)?);
+                            builder = builder.set_resource_violations(crate::protocol_serde::shape_resource_violations::de_resource_violations(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ResourceTags" => {
-                            builder = builder.set_resource_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_resource_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "ResourceDescription" => {
                             builder = builder.set_resource_description(

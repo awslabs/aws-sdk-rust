@@ -79,6 +79,10 @@ pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomer;
 
 pub use crate::types::_aws_opportunity_project::AwsOpportunityProject;
 
+pub use crate::types::_prospecting_from_engagement_task_sort::ProspectingFromEngagementTaskSort;
+
+pub use crate::types::_prospecting_task_status::ProspectingTaskStatus;
+
 pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_resource_snapshot_payload::ResourceSnapshotPayload;
@@ -92,6 +96,8 @@ pub use crate::types::_solution_sort::SolutionSort;
 pub use crate::types::_customer_projects_context::CustomerProjectsContext;
 
 pub use crate::types::_lead_context::LeadContext;
+
+pub use crate::types::_prospecting_result::ProspectingResult;
 
 pub use crate::types::_validation_exception_error::ValidationExceptionError;
 
@@ -139,6 +145,8 @@ pub use crate::types::_primary_need_from_aws::PrimaryNeedFromAws;
 
 pub use crate::types::_account::Account;
 
+pub use crate::types::_expected_contract_duration::ExpectedContractDuration;
+
 pub use crate::types::_competitor_name::CompetitorName;
 
 pub use crate::types::_aws_partition::AwsPartition;
@@ -165,7 +173,15 @@ pub use crate::types::_engagement_score::EngagementScore;
 
 pub use crate::types::_aws_products_spend_insights_by_source::AwsProductsSpendInsightsBySource;
 
+pub use crate::types::_opportunity_quality::OpportunityQuality;
+
 pub use crate::types::_list_opportunity_from_engagement_task_summary::ListOpportunityFromEngagementTaskSummary;
+
+pub use crate::types::_prospecting_from_engagement_task_sort_name::ProspectingFromEngagementTaskSortName;
+
+pub use crate::types::_prospecting_task_summary::ProspectingTaskSummary;
+
+pub use crate::types::_engagement_prospecting_result::EngagementProspectingResult;
 
 pub use crate::types::_opportunity_summary_view::OpportunitySummaryView;
 
@@ -189,7 +205,11 @@ pub use crate::types::_engagement_customer::EngagementCustomer;
 
 pub use crate::types::_engagement_customer_project_details::EngagementCustomerProjectDetails;
 
+pub use crate::types::_lead_insights::LeadInsights;
+
 pub use crate::types::_lead_customer::LeadCustomer;
+
+pub use crate::types::_prospecting_result_aws::ProspectingResultAws;
 
 pub use crate::types::_validation_exception_error_code::ValidationExceptionErrorCode;
 
@@ -215,6 +235,8 @@ pub use crate::types::_delivery_model::DeliveryModel;
 
 pub use crate::types::_expected_customer_spend::ExpectedCustomerSpend;
 
+pub use crate::types::_expected_contract_duration_term::ExpectedContractDurationTerm;
+
 pub use crate::types::_sales_activity::SalesActivity;
 
 pub use crate::types::_channel::Channel;
@@ -229,6 +251,8 @@ pub use crate::types::_aws_member_business_title::AwsMemberBusinessTitle;
 
 pub use crate::types::_aws_product_insights::AwsProductInsights;
 
+pub use crate::types::_recommendation::Recommendation;
+
 pub use crate::types::_life_cycle_for_view::LifeCycleForView;
 
 pub use crate::types::_project_view::ProjectView;
@@ -238,6 +262,10 @@ pub use crate::types::_country_code::CountryCode;
 pub use crate::types::_address_summary::AddressSummary;
 
 pub use crate::types::_market_segment::MarketSegment;
+
+pub use crate::types::_prospecting_result_customer::ProspectingResultCustomer;
+
+pub use crate::types::_prospecting_insights::ProspectingInsights;
 
 pub use crate::types::_lead_contact::LeadContact;
 
@@ -341,6 +369,8 @@ mod _engagement_member;
 
 mod _engagement_member_summary;
 
+mod _engagement_prospecting_result;
+
 mod _engagement_resource_association_summary;
 
 mod _engagement_score;
@@ -350,6 +380,10 @@ mod _engagement_sort;
 mod _engagement_sort_name;
 
 mod _engagement_summary;
+
+mod _expected_contract_duration;
+
+mod _expected_contract_duration_term;
 
 mod _expected_customer_spend;
 
@@ -368,6 +402,8 @@ mod _lead_contact;
 mod _lead_context;
 
 mod _lead_customer;
+
+mod _lead_insights;
 
 mod _lead_interaction;
 
@@ -413,6 +449,8 @@ mod _opportunity_invitation_payload;
 
 mod _opportunity_origin;
 
+mod _opportunity_quality;
+
 mod _opportunity_sort;
 
 mod _opportunity_sort_name;
@@ -441,11 +479,29 @@ mod _project_summary;
 
 mod _project_view;
 
+mod _prospecting_from_engagement_task_sort;
+
+mod _prospecting_from_engagement_task_sort_name;
+
+mod _prospecting_insights;
+
+mod _prospecting_result;
+
+mod _prospecting_result_aws;
+
+mod _prospecting_result_customer;
+
+mod _prospecting_task_status;
+
+mod _prospecting_task_summary;
+
 mod _reason_code;
 
 mod _receiver;
 
 mod _receiver_responsibility;
+
+mod _recommendation;
 
 mod _related_entity_identifiers;
 

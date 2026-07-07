@@ -137,6 +137,8 @@ pub(crate) fn de_update_event_trigger(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -157,12 +159,14 @@ pub(crate) fn de_update_event_trigger(
                 }
                 "EventTriggerConditions" => {
                     builder = builder.set_event_trigger_conditions(
-                        crate::protocol_serde::shape_event_trigger_conditions::de_event_trigger_conditions(tokens, _value)?,
+                        crate::protocol_serde::shape_event_trigger_conditions::de_event_trigger_conditions(tokens, _value, depth + 1)?,
                     );
                 }
                 "EventTriggerLimits" => {
                     builder = builder.set_event_trigger_limits(crate::protocol_serde::shape_event_trigger_limits::de_event_trigger_limits(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "EventTriggerName" => {
@@ -193,7 +197,7 @@ pub(crate) fn de_update_event_trigger(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

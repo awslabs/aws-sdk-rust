@@ -23,6 +23,8 @@ impl crate::operation::retrieve_and_generate_stream::builders::RetrieveAndGenera
 /// Fluent builder constructing a request to `RetrieveAndGenerateStream`.
 ///
 /// <p>Queries a knowledge base and generates responses based on the retrieved results, with output in streaming format.</p><note>
+/// <p>This API cannot be used with managed knowledge bases. Use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_AgenticRetrieveStream.html">AgenticRetrieveStream</a> or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html">Retrieve</a> with managed knowledge bases.</p>
+/// </note> <note>
 /// <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeModelWithResponseStream</code>.</p>
 /// </note>
 /// <p>This operation requires permission for the <code> bedrock:RetrieveAndGenerate</code> action.</p>
@@ -196,5 +198,19 @@ impl RetrieveAndGenerateStreamFluentBuilder {
     /// <p>Contains details about the session with the knowledge base.</p>
     pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration> {
         self.inner.get_session_configuration()
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
+        self.inner = self.inner.user_context(input);
+        self
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.inner = self.inner.set_user_context(input);
+        self
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
+        self.inner.get_user_context()
     }
 }

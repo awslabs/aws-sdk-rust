@@ -30,7 +30,7 @@ pub struct CoverageFilterCriteria {
     pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
     pub last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
-    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_AGENTLESS</code>.</p>
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code>, <code>EC2_AGENTLESS</code>, and <code>EC2_INSPECTOR_AGENT_BASED</code>.</p>
     pub scan_mode: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The date an image was last pulled at.</p>
     pub image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
@@ -46,6 +46,28 @@ pub struct CoverageFilterCriteria {
     pub code_repository_provider_type_visibility: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Filter criteria for code repositories based on the ID of the last scanned commit.</p>
     pub last_scanned_commit_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud provider to filter coverage results by.</p>
+    pub cloud_provider: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    pub cloud_provider_account_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud provider region to filter coverage results by.</p>
+    pub cloud_provider_region: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud VM instance tags to filter coverage results by.</p>
+    pub cloud_vm_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
+    /// <p>The cloud container image tags to filter coverage results by.</p>
+    pub cloud_container_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud container repository name to filter coverage results by.</p>
+    pub cloud_container_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud container registry name to filter coverage results by.</p>
+    pub cloud_container_registry_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud serverless function name to filter coverage results by.</p>
+    pub cloud_serverless_function_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud serverless function runtime to filter coverage results by.</p>
+    pub cloud_serverless_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The cloud serverless function tags to filter coverage results by.</p>
+    pub cloud_serverless_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
+    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    pub cloud_provider_org_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
 }
 impl CoverageFilterCriteria {
     /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
@@ -126,7 +148,7 @@ impl CoverageFilterCriteria {
     pub fn last_scanned_at(&self) -> &[crate::types::CoverageDateFilter] {
         self.last_scanned_at.as_deref().unwrap_or_default()
     }
-    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_AGENTLESS</code>.</p>
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code>, <code>EC2_AGENTLESS</code>, and <code>EC2_INSPECTOR_AGENT_BASED</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_mode.is_none()`.
     pub fn scan_mode(&self) -> &[crate::types::CoverageStringFilter] {
@@ -174,6 +196,72 @@ impl CoverageFilterCriteria {
     pub fn last_scanned_commit_id(&self) -> &[crate::types::CoverageStringFilter] {
         self.last_scanned_commit_id.as_deref().unwrap_or_default()
     }
+    /// <p>The cloud provider to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider.is_none()`.
+    pub fn cloud_provider(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_provider.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_account_id.is_none()`.
+    pub fn cloud_provider_account_id(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_provider_account_id.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud provider region to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_region.is_none()`.
+    pub fn cloud_provider_region(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_provider_region.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud VM instance tags to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_vm_instance_tags.is_none()`.
+    pub fn cloud_vm_instance_tags(&self) -> &[crate::types::CoverageMapFilter] {
+        self.cloud_vm_instance_tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud container image tags to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_container_image_tags.is_none()`.
+    pub fn cloud_container_image_tags(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_container_image_tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud container repository name to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_container_repository_name.is_none()`.
+    pub fn cloud_container_repository_name(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_container_repository_name.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud container registry name to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_container_registry_name.is_none()`.
+    pub fn cloud_container_registry_name(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_container_registry_name.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud serverless function name to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_serverless_function_name.is_none()`.
+    pub fn cloud_serverless_function_name(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_serverless_function_name.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud serverless function runtime to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_serverless_function_runtime.is_none()`.
+    pub fn cloud_serverless_function_runtime(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_serverless_function_runtime.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud serverless function tags to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_serverless_function_tags.is_none()`.
+    pub fn cloud_serverless_function_tags(&self) -> &[crate::types::CoverageMapFilter] {
+        self.cloud_serverless_function_tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_org_id.is_none()`.
+    pub fn cloud_provider_org_id(&self) -> &[crate::types::CoverageStringFilter] {
+        self.cloud_provider_org_id.as_deref().unwrap_or_default()
+    }
 }
 impl CoverageFilterCriteria {
     /// Creates a new builder-style object to manufacture [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
@@ -207,6 +295,17 @@ pub struct CoverageFilterCriteriaBuilder {
     pub(crate) code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     pub(crate) code_repository_provider_type_visibility: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     pub(crate) last_scanned_commit_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_provider: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_provider_account_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_provider_region: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_vm_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
+    pub(crate) cloud_container_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_container_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_container_registry_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_serverless_function_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_serverless_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) cloud_serverless_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
+    pub(crate) cloud_provider_org_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
 }
 impl CoverageFilterCriteriaBuilder {
     /// Appends an item to `scan_status_code`.
@@ -473,19 +572,19 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_scan_mode`](Self::set_scan_mode).
     ///
-    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_AGENTLESS</code>.</p>
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code>, <code>EC2_AGENTLESS</code>, and <code>EC2_INSPECTOR_AGENT_BASED</code>.</p>
     pub fn scan_mode(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.scan_mode.unwrap_or_default();
         v.push(input);
         self.scan_mode = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_AGENTLESS</code>.</p>
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code>, <code>EC2_AGENTLESS</code>, and <code>EC2_INSPECTOR_AGENT_BASED</code>.</p>
     pub fn set_scan_mode(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.scan_mode = input;
         self
     }
-    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_AGENTLESS</code>.</p>
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code>, <code>EC2_AGENTLESS</code>, and <code>EC2_INSPECTOR_AGENT_BASED</code>.</p>
     pub fn get_scan_mode(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.scan_mode
     }
@@ -632,6 +731,229 @@ impl CoverageFilterCriteriaBuilder {
     pub fn get_last_scanned_commit_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.last_scanned_commit_id
     }
+    /// Appends an item to `cloud_provider`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_provider`](Self::set_cloud_provider).
+    ///
+    /// <p>The cloud provider to filter coverage results by.</p>
+    pub fn cloud_provider(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_provider.unwrap_or_default();
+        v.push(input);
+        self.cloud_provider = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud provider to filter coverage results by.</p>
+    pub fn set_cloud_provider(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.cloud_provider = input;
+        self
+    }
+    /// <p>The cloud provider to filter coverage results by.</p>
+    pub fn get_cloud_provider(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_provider
+    }
+    /// Appends an item to `cloud_provider_account_id`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_provider_account_id`](Self::set_cloud_provider_account_id).
+    ///
+    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    pub fn cloud_provider_account_id(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_provider_account_id.unwrap_or_default();
+        v.push(input);
+        self.cloud_provider_account_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    pub fn set_cloud_provider_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.cloud_provider_account_id = input;
+        self
+    }
+    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    pub fn get_cloud_provider_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_provider_account_id
+    }
+    /// Appends an item to `cloud_provider_region`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_provider_region`](Self::set_cloud_provider_region).
+    ///
+    /// <p>The cloud provider region to filter coverage results by.</p>
+    pub fn cloud_provider_region(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_provider_region.unwrap_or_default();
+        v.push(input);
+        self.cloud_provider_region = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud provider region to filter coverage results by.</p>
+    pub fn set_cloud_provider_region(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.cloud_provider_region = input;
+        self
+    }
+    /// <p>The cloud provider region to filter coverage results by.</p>
+    pub fn get_cloud_provider_region(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_provider_region
+    }
+    /// Appends an item to `cloud_vm_instance_tags`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_vm_instance_tags`](Self::set_cloud_vm_instance_tags).
+    ///
+    /// <p>The cloud VM instance tags to filter coverage results by.</p>
+    pub fn cloud_vm_instance_tags(mut self, input: crate::types::CoverageMapFilter) -> Self {
+        let mut v = self.cloud_vm_instance_tags.unwrap_or_default();
+        v.push(input);
+        self.cloud_vm_instance_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud VM instance tags to filter coverage results by.</p>
+    pub fn set_cloud_vm_instance_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>) -> Self {
+        self.cloud_vm_instance_tags = input;
+        self
+    }
+    /// <p>The cloud VM instance tags to filter coverage results by.</p>
+    pub fn get_cloud_vm_instance_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
+        &self.cloud_vm_instance_tags
+    }
+    /// Appends an item to `cloud_container_image_tags`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_container_image_tags`](Self::set_cloud_container_image_tags).
+    ///
+    /// <p>The cloud container image tags to filter coverage results by.</p>
+    pub fn cloud_container_image_tags(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_container_image_tags.unwrap_or_default();
+        v.push(input);
+        self.cloud_container_image_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud container image tags to filter coverage results by.</p>
+    pub fn set_cloud_container_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.cloud_container_image_tags = input;
+        self
+    }
+    /// <p>The cloud container image tags to filter coverage results by.</p>
+    pub fn get_cloud_container_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_container_image_tags
+    }
+    /// Appends an item to `cloud_container_repository_name`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_container_repository_name`](Self::set_cloud_container_repository_name).
+    ///
+    /// <p>The cloud container repository name to filter coverage results by.</p>
+    pub fn cloud_container_repository_name(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_container_repository_name.unwrap_or_default();
+        v.push(input);
+        self.cloud_container_repository_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud container repository name to filter coverage results by.</p>
+    pub fn set_cloud_container_repository_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.cloud_container_repository_name = input;
+        self
+    }
+    /// <p>The cloud container repository name to filter coverage results by.</p>
+    pub fn get_cloud_container_repository_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_container_repository_name
+    }
+    /// Appends an item to `cloud_container_registry_name`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_container_registry_name`](Self::set_cloud_container_registry_name).
+    ///
+    /// <p>The cloud container registry name to filter coverage results by.</p>
+    pub fn cloud_container_registry_name(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_container_registry_name.unwrap_or_default();
+        v.push(input);
+        self.cloud_container_registry_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud container registry name to filter coverage results by.</p>
+    pub fn set_cloud_container_registry_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.cloud_container_registry_name = input;
+        self
+    }
+    /// <p>The cloud container registry name to filter coverage results by.</p>
+    pub fn get_cloud_container_registry_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_container_registry_name
+    }
+    /// Appends an item to `cloud_serverless_function_name`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_serverless_function_name`](Self::set_cloud_serverless_function_name).
+    ///
+    /// <p>The cloud serverless function name to filter coverage results by.</p>
+    pub fn cloud_serverless_function_name(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_serverless_function_name.unwrap_or_default();
+        v.push(input);
+        self.cloud_serverless_function_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud serverless function name to filter coverage results by.</p>
+    pub fn set_cloud_serverless_function_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.cloud_serverless_function_name = input;
+        self
+    }
+    /// <p>The cloud serverless function name to filter coverage results by.</p>
+    pub fn get_cloud_serverless_function_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_serverless_function_name
+    }
+    /// Appends an item to `cloud_serverless_function_runtime`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_serverless_function_runtime`](Self::set_cloud_serverless_function_runtime).
+    ///
+    /// <p>The cloud serverless function runtime to filter coverage results by.</p>
+    pub fn cloud_serverless_function_runtime(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_serverless_function_runtime.unwrap_or_default();
+        v.push(input);
+        self.cloud_serverless_function_runtime = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud serverless function runtime to filter coverage results by.</p>
+    pub fn set_cloud_serverless_function_runtime(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    ) -> Self {
+        self.cloud_serverless_function_runtime = input;
+        self
+    }
+    /// <p>The cloud serverless function runtime to filter coverage results by.</p>
+    pub fn get_cloud_serverless_function_runtime(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_serverless_function_runtime
+    }
+    /// Appends an item to `cloud_serverless_function_tags`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_serverless_function_tags`](Self::set_cloud_serverless_function_tags).
+    ///
+    /// <p>The cloud serverless function tags to filter coverage results by.</p>
+    pub fn cloud_serverless_function_tags(mut self, input: crate::types::CoverageMapFilter) -> Self {
+        let mut v = self.cloud_serverless_function_tags.unwrap_or_default();
+        v.push(input);
+        self.cloud_serverless_function_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud serverless function tags to filter coverage results by.</p>
+    pub fn set_cloud_serverless_function_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>) -> Self {
+        self.cloud_serverless_function_tags = input;
+        self
+    }
+    /// <p>The cloud serverless function tags to filter coverage results by.</p>
+    pub fn get_cloud_serverless_function_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
+        &self.cloud_serverless_function_tags
+    }
+    /// Appends an item to `cloud_provider_org_id`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_provider_org_id`](Self::set_cloud_provider_org_id).
+    ///
+    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    pub fn cloud_provider_org_id(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.cloud_provider_org_id.unwrap_or_default();
+        v.push(input);
+        self.cloud_provider_org_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    pub fn set_cloud_provider_org_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.cloud_provider_org_id = input;
+        self
+    }
+    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    pub fn get_cloud_provider_org_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.cloud_provider_org_id
+    }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
     pub fn build(self) -> crate::types::CoverageFilterCriteria {
         crate::types::CoverageFilterCriteria {
@@ -656,6 +978,17 @@ impl CoverageFilterCriteriaBuilder {
             code_repository_provider_type: self.code_repository_provider_type,
             code_repository_provider_type_visibility: self.code_repository_provider_type_visibility,
             last_scanned_commit_id: self.last_scanned_commit_id,
+            cloud_provider: self.cloud_provider,
+            cloud_provider_account_id: self.cloud_provider_account_id,
+            cloud_provider_region: self.cloud_provider_region,
+            cloud_vm_instance_tags: self.cloud_vm_instance_tags,
+            cloud_container_image_tags: self.cloud_container_image_tags,
+            cloud_container_repository_name: self.cloud_container_repository_name,
+            cloud_container_registry_name: self.cloud_container_registry_name,
+            cloud_serverless_function_name: self.cloud_serverless_function_name,
+            cloud_serverless_function_runtime: self.cloud_serverless_function_runtime,
+            cloud_serverless_function_tags: self.cloud_serverless_function_tags,
+            cloud_provider_org_id: self.cloud_provider_org_id,
         }
     }
 }

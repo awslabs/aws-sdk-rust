@@ -4,7 +4,9 @@ pub(crate) fn de_live_tail_session_start_payload(
 ) -> ::std::result::Result<crate::types::LiveTailSessionStart, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::protocol_serde::shape_live_tail_session_start::de_live_tail_session_start(tokens, _value)?
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    let result = crate::protocol_serde::shape_live_tail_session_start::de_live_tail_session_start(tokens, _value, depth + 1)?
         .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -17,10 +19,16 @@ pub(crate) fn de_live_tail_session_start_payload(
 pub(crate) fn de_live_tail_session_start<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LiveTailSessionStart>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -29,47 +37,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "requestId" => {
-                            builder = builder.set_request_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "requestId" => {
+                                builder = builder.set_request_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "sessionId" => {
+                                builder = builder.set_session_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "logGroupIdentifiers" => {
+                                builder = builder.set_log_group_identifiers(
+                                    crate::protocol_serde::shape_start_live_tail_log_group_identifiers::de_start_live_tail_log_group_identifiers(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "logStreamNames" => {
+                                builder = builder.set_log_stream_names(
+                                    crate::protocol_serde::shape_input_log_stream_names::de_input_log_stream_names(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "logStreamNamePrefixes" => {
+                                builder = builder.set_log_stream_name_prefixes(
+                                    crate::protocol_serde::shape_input_log_stream_names::de_input_log_stream_names(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "logEventFilterPattern" => {
+                                builder = builder.set_log_event_filter_pattern(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "sessionId" => {
-                            builder = builder.set_session_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "logGroupIdentifiers" => {
-                            builder = builder.set_log_group_identifiers(
-                                crate::protocol_serde::shape_start_live_tail_log_group_identifiers::de_start_live_tail_log_group_identifiers(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "logStreamNames" => {
-                            builder = builder.set_log_stream_names(crate::protocol_serde::shape_input_log_stream_names::de_input_log_stream_names(
-                                tokens, _value,
-                            )?);
-                        }
-                        "logStreamNamePrefixes" => {
-                            builder = builder.set_log_stream_name_prefixes(
-                                crate::protocol_serde::shape_input_log_stream_names::de_input_log_stream_names(tokens, _value)?,
-                            );
-                        }
-                        "logEventFilterPattern" => {
-                            builder = builder.set_log_event_filter_pattern(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

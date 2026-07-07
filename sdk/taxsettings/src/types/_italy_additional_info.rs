@@ -12,6 +12,8 @@ pub struct ItalyAdditionalInfo {
     pub cup_number: ::std::option::Option<::std::string::String>,
     /// <p>List of service tax codes for your TRN in Italy. You can use your customer tax code as part of a VAT Group.</p>
     pub tax_code: ::std::option::Option<::std::string::String>,
+    /// <p>The customer type for tax registration in Italy. Valid values are <code>Business</code> or <code>Individual</code>.</p>
+    pub customer_type: ::std::option::Option<crate::types::CustomerType>,
 }
 impl ItalyAdditionalInfo {
     /// <p>Additional tax information to specify for a TRN in Italy. Use CodiceDestinatario to receive your invoices via web service (API) or FTP.</p>
@@ -30,6 +32,10 @@ impl ItalyAdditionalInfo {
     pub fn tax_code(&self) -> ::std::option::Option<&str> {
         self.tax_code.as_deref()
     }
+    /// <p>The customer type for tax registration in Italy. Valid values are <code>Business</code> or <code>Individual</code>.</p>
+    pub fn customer_type(&self) -> ::std::option::Option<&crate::types::CustomerType> {
+        self.customer_type.as_ref()
+    }
 }
 impl ItalyAdditionalInfo {
     /// Creates a new builder-style object to manufacture [`ItalyAdditionalInfo`](crate::types::ItalyAdditionalInfo).
@@ -46,6 +52,7 @@ pub struct ItalyAdditionalInfoBuilder {
     pub(crate) cig_number: ::std::option::Option<::std::string::String>,
     pub(crate) cup_number: ::std::option::Option<::std::string::String>,
     pub(crate) tax_code: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_type: ::std::option::Option<crate::types::CustomerType>,
 }
 impl ItalyAdditionalInfoBuilder {
     /// <p>Additional tax information to specify for a TRN in Italy. Use CodiceDestinatario to receive your invoices via web service (API) or FTP.</p>
@@ -104,6 +111,20 @@ impl ItalyAdditionalInfoBuilder {
     pub fn get_tax_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.tax_code
     }
+    /// <p>The customer type for tax registration in Italy. Valid values are <code>Business</code> or <code>Individual</code>.</p>
+    pub fn customer_type(mut self, input: crate::types::CustomerType) -> Self {
+        self.customer_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customer type for tax registration in Italy. Valid values are <code>Business</code> or <code>Individual</code>.</p>
+    pub fn set_customer_type(mut self, input: ::std::option::Option<crate::types::CustomerType>) -> Self {
+        self.customer_type = input;
+        self
+    }
+    /// <p>The customer type for tax registration in Italy. Valid values are <code>Business</code> or <code>Individual</code>.</p>
+    pub fn get_customer_type(&self) -> &::std::option::Option<crate::types::CustomerType> {
+        &self.customer_type
+    }
     /// Consumes the builder and constructs a [`ItalyAdditionalInfo`](crate::types::ItalyAdditionalInfo).
     pub fn build(self) -> crate::types::ItalyAdditionalInfo {
         crate::types::ItalyAdditionalInfo {
@@ -111,6 +132,7 @@ impl ItalyAdditionalInfoBuilder {
             cig_number: self.cig_number,
             cup_number: self.cup_number,
             tax_code: self.tax_code,
+            customer_type: self.customer_type,
         }
     }
 }

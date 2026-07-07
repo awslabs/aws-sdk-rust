@@ -227,20 +227,26 @@ pub(crate) fn de_disassociate_accounts(
     crate::operation::disassociate_accounts::builders::DisassociateAccountsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::disassociate_accounts::builders::DisassociateAccountsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::disassociate_accounts::builders::DisassociateAccountsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "accountIds" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_account_ids(Some(crate::protocol_serde::shape_account_id_list::de_account_id_list(decoder)?)))
+                Ok(
+                    builder.set_account_ids(Some(crate::protocol_serde::shape_account_id_list::de_account_id_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "errors" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_errors(Some(crate::protocol_serde::shape_string_list::de_string_list(decoder)?)))
+                Ok(builder.set_errors(Some(crate::protocol_serde::shape_string_list::de_string_list(decoder, depth + 1)?)))
             })?,
             _ => {
                 decoder.skip()?;
@@ -251,6 +257,8 @@ pub(crate) fn de_disassociate_accounts(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -260,13 +268,13 @@ pub(crate) fn de_disassociate_accounts(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

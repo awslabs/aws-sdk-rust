@@ -160,6 +160,8 @@ pub(crate) fn de_update_resource_gateway(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -194,8 +196,11 @@ pub(crate) fn de_update_resource_gateway(
                     );
                 }
                 "securityGroupIds" => {
-                    builder =
-                        builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens, _value)?);
+                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -205,7 +210,7 @@ pub(crate) fn de_update_resource_gateway(
                     );
                 }
                 "subnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_list::de_subnet_list(tokens, _value)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_list::de_subnet_list(tokens, _value, depth + 1)?);
                 }
                 "vpcId" => {
                     builder = builder.set_vpc_id(

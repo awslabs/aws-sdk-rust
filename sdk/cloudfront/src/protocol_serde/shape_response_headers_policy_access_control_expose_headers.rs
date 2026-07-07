@@ -25,7 +25,11 @@ pub fn ser_response_headers_policy_access_control_expose_headers(
 #[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_access_control_expose_headers(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyAccessControlExposeHeaders::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_response_headers_policy_access_control_expose_headers(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#ResponseHeadersPolicyAccessControlExposeHeaders$Items */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_access_control_expose_headers_list::de_access_control_expose_headers_list(&mut tag)
+                        crate::protocol_serde::shape_access_control_expose_headers_list::de_access_control_expose_headers_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

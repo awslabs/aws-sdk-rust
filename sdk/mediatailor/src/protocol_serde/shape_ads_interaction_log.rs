@@ -2,10 +2,16 @@
 pub(crate) fn de_ads_interaction_log<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AdsInteractionLog>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,12 +24,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "PublishOptInEventTypes" => {
                                 builder = builder.set_publish_opt_in_event_types(
-                                    crate::protocol_serde::shape_ads_interaction_publish_opt_in_event_types_list::de_ads_interaction_publish_opt_in_event_types_list(tokens, _value)?
+                                    crate::protocol_serde::shape_ads_interaction_publish_opt_in_event_types_list::de_ads_interaction_publish_opt_in_event_types_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "ExcludeEventTypes" => {
                                 builder = builder.set_exclude_event_types(
-                                    crate::protocol_serde::shape_ads_interaction_exclude_event_types_list::de_ads_interaction_exclude_event_types_list(tokens, _value)?
+                                    crate::protocol_serde::shape_ads_interaction_exclude_event_types_list::de_ads_interaction_exclude_event_types_list(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

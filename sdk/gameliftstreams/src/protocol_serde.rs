@@ -31,6 +31,8 @@ pub(crate) mod shape_create_application;
 
 pub(crate) mod shape_create_stream_group;
 
+pub(crate) mod shape_create_stream_session_admin_shell;
+
 pub(crate) mod shape_create_stream_session_connection;
 
 pub(crate) mod shape_delete_application;
@@ -104,6 +106,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_stream_session_input;
+
+pub(crate) mod shape_stream_session_access_not_ready_exception;
 
 pub(crate) mod shape_tag_resource_input;
 

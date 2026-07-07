@@ -2,10 +2,16 @@
 pub(crate) fn de_data_source_run_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSourceRunSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,12 +58,12 @@ where
                         }
                         "runStatisticsForAssets" => {
                             builder = builder.set_run_statistics_for_assets(
-                                crate::protocol_serde::shape_run_statistics_for_assets::de_run_statistics_for_assets(tokens, _value)?,
+                                crate::protocol_serde::shape_run_statistics_for_assets::de_run_statistics_for_assets(tokens, _value, depth + 1)?,
                             );
                         }
                         "errorMessage" => {
                             builder = builder.set_error_message(
-                                crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(tokens, _value)?,
+                                crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(tokens, _value, depth + 1)?,
                             );
                         }
                         "createdAt" => {
@@ -86,7 +92,11 @@ where
                         }
                         "lineageSummary" => {
                             builder = builder.set_lineage_summary(
-                                crate::protocol_serde::shape_data_source_run_lineage_summary::de_data_source_run_lineage_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_data_source_run_lineage_summary::de_data_source_run_lineage_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

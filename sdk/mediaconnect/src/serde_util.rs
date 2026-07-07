@@ -569,6 +569,12 @@ pub(crate) fn router_input_correct_errors(mut builder: crate::types::builders::R
     if builder.maintenance_configuration.is_none() {
         builder.maintenance_configuration = Some(crate::types::MaintenanceConfiguration::Unknown)
     }
+    if builder.content_quality_analysis_type.is_none() {
+        builder.content_quality_analysis_type = "no value was set".parse::<crate::types::RouterContentQualityAnalysisType>().ok()
+    }
+    if builder.content_quality_analysis_configuration.is_none() {
+        builder.content_quality_analysis_configuration = Some(crate::types::RouterContentQualityAnalysisConfiguration::Unknown)
+    }
     builder
 }
 
@@ -1686,6 +1692,18 @@ pub(crate) fn vpc_router_network_interface_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn black_frames_configuration_correct_errors(
+    mut builder: crate::types::builders::BlackFramesConfigurationBuilder,
+) -> crate::types::builders::BlackFramesConfigurationBuilder {
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::ContentQualityAnalysisState>().ok()
+    }
+    if builder.threshold_seconds.is_none() {
+        builder.threshold_seconds = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn encoding_parameters_correct_errors(
     mut builder: crate::types::builders::EncodingParametersBuilder,
 ) -> crate::types::builders::EncodingParametersBuilder {
@@ -1703,6 +1721,18 @@ pub(crate) fn failover_router_input_indexed_stream_details_correct_errors(
 ) -> crate::types::builders::FailoverRouterInputIndexedStreamDetailsBuilder {
     if builder.source_index.is_none() {
         builder.source_index = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn frozen_frames_configuration_correct_errors(
+    mut builder: crate::types::builders::FrozenFramesConfigurationBuilder,
+) -> crate::types::builders::FrozenFramesConfigurationBuilder {
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::ContentQualityAnalysisState>().ok()
+    }
+    if builder.threshold_seconds.is_none() {
+        builder.threshold_seconds = Some(Default::default())
     }
     builder
 }
@@ -1760,6 +1790,18 @@ pub(crate) fn secrets_manager_encryption_key_configuration_correct_errors(
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn silent_audio_configuration_correct_errors(
+    mut builder: crate::types::builders::SilentAudioConfigurationBuilder,
+) -> crate::types::builders::SilentAudioConfigurationBuilder {
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::ContentQualityAnalysisState>().ok()
+    }
+    if builder.threshold_seconds.is_none() {
+        builder.threshold_seconds = Some(Default::default())
     }
     builder
 }

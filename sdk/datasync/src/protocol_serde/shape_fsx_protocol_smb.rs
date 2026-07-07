@@ -42,10 +42,16 @@ pub fn ser_fsx_protocol_smb(
 pub(crate) fn de_fsx_protocol_smb<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FsxProtocolSmb>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,48 +60,56 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Domain" => {
-                            builder = builder.set_domain(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Domain" => {
+                                builder = builder.set_domain(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "MountOptions" => {
+                                builder = builder.set_mount_options(crate::protocol_serde::shape_smb_mount_options::de_smb_mount_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Password" => {
+                                builder = builder.set_password(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "User" => {
+                                builder = builder.set_user(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ManagedSecretConfig" => {
+                                builder = builder.set_managed_secret_config(
+                                    crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "CmkSecretConfig" => {
+                                builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CustomSecretConfig" => {
+                                builder = builder.set_custom_secret_config(
+                                    crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "MountOptions" => {
-                            builder =
-                                builder.set_mount_options(crate::protocol_serde::shape_smb_mount_options::de_smb_mount_options(tokens, _value)?);
-                        }
-                        "Password" => {
-                            builder = builder.set_password(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "User" => {
-                            builder = builder.set_user(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ManagedSecretConfig" => {
-                            builder = builder.set_managed_secret_config(
-                                crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(tokens, _value)?,
-                            );
-                        }
-                        "CmkSecretConfig" => {
-                            builder =
-                                builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens, _value)?);
-                        }
-                        "CustomSecretConfig" => {
-                            builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -12,6 +12,10 @@ pub struct HarnessBedrockModelConfig {
     pub temperature: ::std::option::Option<f32>,
     /// <p>The topP set when calling the model.</p>
     pub top_p: ::std::option::Option<f32>,
+    /// <p>The API format to use when calling the Bedrock provider.</p>
+    pub api_format: ::std::option::Option<crate::types::HarnessBedrockApiFormat>,
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub additional_params: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl HarnessBedrockModelConfig {
     /// <p>The Bedrock model ID.</p>
@@ -31,6 +35,14 @@ impl HarnessBedrockModelConfig {
     pub fn top_p(&self) -> ::std::option::Option<f32> {
         self.top_p
     }
+    /// <p>The API format to use when calling the Bedrock provider.</p>
+    pub fn api_format(&self) -> ::std::option::Option<&crate::types::HarnessBedrockApiFormat> {
+        self.api_format.as_ref()
+    }
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub fn additional_params(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.additional_params.as_ref()
+    }
 }
 impl HarnessBedrockModelConfig {
     /// Creates a new builder-style object to manufacture [`HarnessBedrockModelConfig`](crate::types::HarnessBedrockModelConfig).
@@ -47,6 +59,8 @@ pub struct HarnessBedrockModelConfigBuilder {
     pub(crate) max_tokens: ::std::option::Option<i32>,
     pub(crate) temperature: ::std::option::Option<f32>,
     pub(crate) top_p: ::std::option::Option<f32>,
+    pub(crate) api_format: ::std::option::Option<crate::types::HarnessBedrockApiFormat>,
+    pub(crate) additional_params: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl HarnessBedrockModelConfigBuilder {
     /// <p>The Bedrock model ID.</p>
@@ -106,6 +120,34 @@ impl HarnessBedrockModelConfigBuilder {
     pub fn get_top_p(&self) -> &::std::option::Option<f32> {
         &self.top_p
     }
+    /// <p>The API format to use when calling the Bedrock provider.</p>
+    pub fn api_format(mut self, input: crate::types::HarnessBedrockApiFormat) -> Self {
+        self.api_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The API format to use when calling the Bedrock provider.</p>
+    pub fn set_api_format(mut self, input: ::std::option::Option<crate::types::HarnessBedrockApiFormat>) -> Self {
+        self.api_format = input;
+        self
+    }
+    /// <p>The API format to use when calling the Bedrock provider.</p>
+    pub fn get_api_format(&self) -> &::std::option::Option<crate::types::HarnessBedrockApiFormat> {
+        &self.api_format
+    }
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub fn additional_params(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.additional_params = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub fn set_additional_params(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.additional_params = input;
+        self
+    }
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub fn get_additional_params(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.additional_params
+    }
     /// Consumes the builder and constructs a [`HarnessBedrockModelConfig`](crate::types::HarnessBedrockModelConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_id`](crate::types::builders::HarnessBedrockModelConfigBuilder::model_id)
@@ -120,6 +162,8 @@ impl HarnessBedrockModelConfigBuilder {
             max_tokens: self.max_tokens,
             temperature: self.temperature,
             top_p: self.top_p,
+            api_format: self.api_format,
+            additional_params: self.additional_params,
         })
     }
 }

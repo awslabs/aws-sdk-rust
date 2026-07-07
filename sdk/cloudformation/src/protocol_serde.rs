@@ -395,6 +395,8 @@ pub(crate) mod shape_concurrent_resources_limit_exceeded_exception;
 
 pub(crate) mod shape_created_but_modified_exception;
 
+pub(crate) mod shape_deployment_config;
+
 pub(crate) mod shape_deployment_targets;
 
 pub(crate) mod shape_event_filter;

@@ -33,6 +33,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
+pub use crate::types::_shared_dns_view_summary::SharedDnsViewSummary;
+
 pub use crate::types::_access_sources_item::AccessSourcesItem;
 
 pub use crate::types::_access_token_item::AccessTokenItem;
@@ -128,6 +130,8 @@ mod _ip_address_type;
 mod _managed_firewall_domain_lists_item;
 
 mod _profile_resource_status;
+
+mod _shared_dns_view_summary;
 
 mod _token_status;
 

@@ -72,6 +72,8 @@ pub fn de_apply_pending_maintenance_action(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ApplyPendingMaintenanceActionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ApplyPendingMaintenanceActionResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_apply_pending_maintenance_action(
             s if s.matches("ResourcePendingMaintenanceActions") /* ResourcePendingMaintenanceActions com.amazonaws.neptune.synthetic#ApplyPendingMaintenanceActionOutput$ResourcePendingMaintenanceActions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_resource_pending_maintenance_actions::de_resource_pending_maintenance_actions(&mut tag)
+                        crate::protocol_serde::shape_resource_pending_maintenance_actions::de_resource_pending_maintenance_actions(&mut tag, depth + 1)
                         ?
                     )
                 ;

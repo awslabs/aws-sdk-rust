@@ -53,6 +53,8 @@ pub fn de_create_delegate_mac_volume_ownership_task(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateDelegateMacVolumeOwnershipTaskResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateDelegateMacVolumeOwnershipTaskResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_create_delegate_mac_volume_ownership_task(
             s if s.matches("macModificationTask") /* MacModificationTask com.amazonaws.ec2.synthetic#CreateDelegateMacVolumeOwnershipTaskOutput$MacModificationTask */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_mac_modification_task::de_mac_modification_task(&mut tag)
+                        crate::protocol_serde::shape_mac_modification_task::de_mac_modification_task(&mut tag, depth + 1)
                         ?
                     )
                 ;

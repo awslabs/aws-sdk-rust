@@ -134,6 +134,8 @@ pub(crate) fn de_describe_asset_model_interface_relationship(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -147,7 +149,11 @@ pub(crate) fn de_describe_asset_model_interface_relationship(
                     );
                 }
                 "hierarchyMappings" => {
-                    builder = builder.set_hierarchy_mappings(crate::protocol_serde::shape_hierarchy_mappings::de_hierarchy_mappings(tokens, _value)?);
+                    builder = builder.set_hierarchy_mappings(crate::protocol_serde::shape_hierarchy_mappings::de_hierarchy_mappings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "interfaceAssetModelId" => {
                     builder = builder.set_interface_asset_model_id(
@@ -157,7 +163,11 @@ pub(crate) fn de_describe_asset_model_interface_relationship(
                     );
                 }
                 "propertyMappings" => {
-                    builder = builder.set_property_mappings(crate::protocol_serde::shape_property_mappings::de_property_mappings(tokens, _value)?);
+                    builder = builder.set_property_mappings(crate::protocol_serde::shape_property_mappings::de_property_mappings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

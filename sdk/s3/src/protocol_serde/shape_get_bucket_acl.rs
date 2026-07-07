@@ -60,6 +60,8 @@ pub fn de_get_bucket_acl(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("AccessControlPolicy") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected AccessControlPolicy but got {start_el:?}. This is likely a bug in the SDK."
@@ -70,7 +72,7 @@ pub fn de_get_bucket_acl(
             s if s.matches("Owner") /* Owner com.amazonaws.s3.synthetic#GetBucketAclOutput$Owner */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_owner::de_owner(&mut tag)
+                        crate::protocol_serde::shape_owner::de_owner(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -80,7 +82,7 @@ pub fn de_get_bucket_acl(
             s if s.matches("AccessControlList") /* Grants com.amazonaws.s3.synthetic#GetBucketAclOutput$Grants */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_grants::de_grants(&mut tag)
+                        crate::protocol_serde::shape_grants::de_grants(&mut tag, depth + 1)
                         ?
                     )
                 ;

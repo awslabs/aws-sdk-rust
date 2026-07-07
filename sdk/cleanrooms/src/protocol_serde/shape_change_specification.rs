@@ -28,10 +28,16 @@ pub fn ser_change_specification(
 pub(crate) fn de_change_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ChangeSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,13 +63,18 @@ where
                     }
                     variant = match key.as_ref() {
                         "member" => Some(crate::types::ChangeSpecification::Member(
-                            crate::protocol_serde::shape_member_change_specification::de_member_change_specification(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_member_change_specification::de_member_change_specification(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null")
+                                })?,
                         )),
                         "collaboration" => Some(crate::types::ChangeSpecification::Collaboration(
-                            crate::protocol_serde::shape_collaboration_change_specification::de_collaboration_change_specification(tokens, _value)?
-                                .ok_or_else(|| {
+                            crate::protocol_serde::shape_collaboration_change_specification::de_collaboration_change_specification(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'collaboration' cannot be null")
                             })?,
                         )),

@@ -255,5 +255,137 @@ pub fn ser_coverage_filter_criteria(
         }
         array_82.finish();
     }
+    if let Some(var_85) = &input.cloud_provider {
+        let mut array_86 = object.key("cloudProvider").start_array();
+        for item_87 in var_85 {
+            {
+                #[allow(unused_mut)]
+                let mut object_88 = array_86.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_88, item_87)?;
+                object_88.finish();
+            }
+        }
+        array_86.finish();
+    }
+    if let Some(var_89) = &input.cloud_provider_account_id {
+        let mut array_90 = object.key("cloudProviderAccountId").start_array();
+        for item_91 in var_89 {
+            {
+                #[allow(unused_mut)]
+                let mut object_92 = array_90.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_92, item_91)?;
+                object_92.finish();
+            }
+        }
+        array_90.finish();
+    }
+    if let Some(var_93) = &input.cloud_provider_region {
+        let mut array_94 = object.key("cloudProviderRegion").start_array();
+        for item_95 in var_93 {
+            {
+                #[allow(unused_mut)]
+                let mut object_96 = array_94.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_96, item_95)?;
+                object_96.finish();
+            }
+        }
+        array_94.finish();
+    }
+    if let Some(var_97) = &input.cloud_vm_instance_tags {
+        let mut array_98 = object.key("cloudVmInstanceTags").start_array();
+        for item_99 in var_97 {
+            {
+                #[allow(unused_mut)]
+                let mut object_100 = array_98.value().start_object();
+                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_100, item_99)?;
+                object_100.finish();
+            }
+        }
+        array_98.finish();
+    }
+    if let Some(var_101) = &input.cloud_container_image_tags {
+        let mut array_102 = object.key("cloudContainerImageTags").start_array();
+        for item_103 in var_101 {
+            {
+                #[allow(unused_mut)]
+                let mut object_104 = array_102.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_104, item_103)?;
+                object_104.finish();
+            }
+        }
+        array_102.finish();
+    }
+    if let Some(var_105) = &input.cloud_container_repository_name {
+        let mut array_106 = object.key("cloudContainerRepositoryName").start_array();
+        for item_107 in var_105 {
+            {
+                #[allow(unused_mut)]
+                let mut object_108 = array_106.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_108, item_107)?;
+                object_108.finish();
+            }
+        }
+        array_106.finish();
+    }
+    if let Some(var_109) = &input.cloud_container_registry_name {
+        let mut array_110 = object.key("cloudContainerRegistryName").start_array();
+        for item_111 in var_109 {
+            {
+                #[allow(unused_mut)]
+                let mut object_112 = array_110.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_112, item_111)?;
+                object_112.finish();
+            }
+        }
+        array_110.finish();
+    }
+    if let Some(var_113) = &input.cloud_serverless_function_name {
+        let mut array_114 = object.key("cloudServerlessFunctionName").start_array();
+        for item_115 in var_113 {
+            {
+                #[allow(unused_mut)]
+                let mut object_116 = array_114.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_116, item_115)?;
+                object_116.finish();
+            }
+        }
+        array_114.finish();
+    }
+    if let Some(var_117) = &input.cloud_serverless_function_runtime {
+        let mut array_118 = object.key("cloudServerlessFunctionRuntime").start_array();
+        for item_119 in var_117 {
+            {
+                #[allow(unused_mut)]
+                let mut object_120 = array_118.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_120, item_119)?;
+                object_120.finish();
+            }
+        }
+        array_118.finish();
+    }
+    if let Some(var_121) = &input.cloud_serverless_function_tags {
+        let mut array_122 = object.key("cloudServerlessFunctionTags").start_array();
+        for item_123 in var_121 {
+            {
+                #[allow(unused_mut)]
+                let mut object_124 = array_122.value().start_object();
+                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_124, item_123)?;
+                object_124.finish();
+            }
+        }
+        array_122.finish();
+    }
+    if let Some(var_125) = &input.cloud_provider_org_id {
+        let mut array_126 = object.key("cloudProviderOrgId").start_array();
+        for item_127 in var_125 {
+            {
+                #[allow(unused_mut)]
+                let mut object_128 = array_126.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_128, item_127)?;
+                object_128.finish();
+            }
+        }
+        array_126.finish();
+    }
     Ok(())
 }

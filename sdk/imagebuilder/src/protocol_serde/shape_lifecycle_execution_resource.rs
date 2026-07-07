@@ -2,10 +2,16 @@
 pub(crate) fn de_lifecycle_execution_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LifecycleExecutionResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -32,14 +38,18 @@ where
                         "state" => {
                             builder = builder.set_state(
                                 crate::protocol_serde::shape_lifecycle_execution_resource_state::de_lifecycle_execution_resource_state(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "action" => {
                             builder = builder.set_action(
                                 crate::protocol_serde::shape_lifecycle_execution_resource_action::de_lifecycle_execution_resource_action(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -52,11 +62,11 @@ where
                         }
                         "snapshots" => {
                             builder = builder.set_snapshots(
-                                    crate::protocol_serde::shape_lifecycle_execution_snapshot_resource_list::de_lifecycle_execution_snapshot_resource_list(tokens, _value)?
+                                    crate::protocol_serde::shape_lifecycle_execution_snapshot_resource_list::de_lifecycle_execution_snapshot_resource_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "imageUris" => {
-                            builder = builder.set_image_uris(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_image_uris(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "startTime" => {
                             builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

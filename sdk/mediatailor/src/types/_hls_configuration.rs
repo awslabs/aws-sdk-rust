@@ -4,13 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsConfiguration {
-    /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    /// <p>The URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
     pub manifest_endpoint_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>The dual-stack (IPv4 and IPv6) URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    pub dual_stack_manifest_endpoint_prefix: ::std::option::Option<::std::string::String>,
 }
 impl HlsConfiguration {
-    /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    /// <p>The URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
     pub fn manifest_endpoint_prefix(&self) -> ::std::option::Option<&str> {
         self.manifest_endpoint_prefix.as_deref()
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    pub fn dual_stack_manifest_endpoint_prefix(&self) -> ::std::option::Option<&str> {
+        self.dual_stack_manifest_endpoint_prefix.as_deref()
     }
 }
 impl HlsConfiguration {
@@ -25,26 +31,42 @@ impl HlsConfiguration {
 #[non_exhaustive]
 pub struct HlsConfigurationBuilder {
     pub(crate) manifest_endpoint_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) dual_stack_manifest_endpoint_prefix: ::std::option::Option<::std::string::String>,
 }
 impl HlsConfigurationBuilder {
-    /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    /// <p>The URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
     pub fn manifest_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_endpoint_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    /// <p>The URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
     pub fn set_manifest_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_endpoint_prefix = input;
         self
     }
-    /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    /// <p>The URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
     pub fn get_manifest_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.manifest_endpoint_prefix
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    pub fn dual_stack_manifest_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dual_stack_manifest_endpoint_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    pub fn set_dual_stack_manifest_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dual_stack_manifest_endpoint_prefix = input;
+        self
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that MediaTailor generates to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    pub fn get_dual_stack_manifest_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dual_stack_manifest_endpoint_prefix
     }
     /// Consumes the builder and constructs a [`HlsConfiguration`](crate::types::HlsConfiguration).
     pub fn build(self) -> crate::types::HlsConfiguration {
         crate::types::HlsConfiguration {
             manifest_endpoint_prefix: self.manifest_endpoint_prefix,
+            dual_stack_manifest_endpoint_prefix: self.dual_stack_manifest_endpoint_prefix,
         }
     }
 }

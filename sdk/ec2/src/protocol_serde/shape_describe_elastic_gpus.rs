@@ -47,6 +47,8 @@ pub fn de_describe_elastic_gpus(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeElasticGpusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeElasticGpusResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_describe_elastic_gpus(
             s if s.matches("elasticGpuSet") /* ElasticGpuSet com.amazonaws.ec2.synthetic#DescribeElasticGpusOutput$ElasticGpuSet */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_elastic_gpu_set::de_elastic_gpu_set(&mut tag)
+                        crate::protocol_serde::shape_elastic_gpu_set::de_elastic_gpu_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

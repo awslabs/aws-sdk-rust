@@ -38,11 +38,19 @@ pub fn ser_global_aurora_configuration(
 
 pub(crate) fn de_global_aurora_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::GlobalAuroraConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::GlobalAuroraConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::GlobalAuroraConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "timeoutMinutes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -61,13 +69,14 @@ pub(crate) fn de_global_aurora_configuration(
                 Ok(
                     builder.set_ungraceful(Some(crate::protocol_serde::shape_global_aurora_ungraceful::de_global_aurora_ungraceful(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
             "globalClusterIdentifier" => builder.set_global_cluster_identifier(Some(decoder.string()?)),
-            "databaseClusterArns" => {
-                builder.set_database_cluster_arns(Some(crate::protocol_serde::shape_aurora_cluster_arns::de_aurora_cluster_arns(decoder)?))
-            }
+            "databaseClusterArns" => builder.set_database_cluster_arns(Some(
+                crate::protocol_serde::shape_aurora_cluster_arns::de_aurora_cluster_arns(decoder, depth + 1)?,
+            )),
             _ => {
                 decoder.skip()?;
                 builder
@@ -86,13 +95,13 @@ pub(crate) fn de_global_aurora_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

@@ -72,10 +72,16 @@ pub fn ser_tool_configuration(
 pub(crate) fn de_tool_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ToolConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -84,71 +90,85 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "toolName" => {
-                            builder = builder.set_tool_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "toolName" => {
+                                builder = builder.set_tool_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "toolType" => {
+                                builder = builder.set_tool_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ToolType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "title" => {
+                                builder = builder.set_title(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "toolId" => {
+                                builder = builder.set_tool_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "description" => {
+                                builder = builder.set_description(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "instruction" => {
+                                builder = builder.set_instruction(crate::protocol_serde::shape_tool_instruction::de_tool_instruction(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "overrideInputValues" => {
+                                builder = builder.set_override_input_values(
+                                    crate::protocol_serde::shape_tool_override_input_value_list::de_tool_override_input_value_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "outputFilters" => {
+                                builder = builder.set_output_filters(
+                                    crate::protocol_serde::shape_tool_output_filter_list::de_tool_output_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "inputSchema" => {
+                                builder = builder.set_input_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                            }
+                            "outputSchema" => {
+                                builder = builder.set_output_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                            }
+                            "annotations" => {
+                                builder = builder.set_annotations(crate::protocol_serde::shape_annotation::de_annotation(tokens, _value, depth + 1)?);
+                            }
+                            "userInteractionConfiguration" => {
+                                builder = builder.set_user_interaction_configuration(
+                                    crate::protocol_serde::shape_user_interaction_configuration::de_user_interaction_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "toolType" => {
-                            builder = builder.set_tool_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ToolType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "title" => {
-                            builder = builder.set_title(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "toolId" => {
-                            builder = builder.set_tool_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "description" => {
-                            builder = builder.set_description(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "instruction" => {
-                            builder = builder.set_instruction(crate::protocol_serde::shape_tool_instruction::de_tool_instruction(tokens, _value)?);
-                        }
-                        "overrideInputValues" => {
-                            builder = builder.set_override_input_values(
-                                crate::protocol_serde::shape_tool_override_input_value_list::de_tool_override_input_value_list(tokens, _value)?,
-                            );
-                        }
-                        "outputFilters" => {
-                            builder = builder.set_output_filters(crate::protocol_serde::shape_tool_output_filter_list::de_tool_output_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "inputSchema" => {
-                            builder = builder.set_input_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
-                        }
-                        "outputSchema" => {
-                            builder = builder.set_output_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
-                        }
-                        "annotations" => {
-                            builder = builder.set_annotations(crate::protocol_serde::shape_annotation::de_annotation(tokens, _value)?);
-                        }
-                        "userInteractionConfiguration" => {
-                            builder = builder.set_user_interaction_configuration(
-                                crate::protocol_serde::shape_user_interaction_configuration::de_user_interaction_configuration(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

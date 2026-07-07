@@ -20,7 +20,11 @@ pub fn ser_predictive_scaling_predefined_scaling_metric(
 #[allow(clippy::needless_question_mark)]
 pub fn de_predictive_scaling_predefined_scaling_metric(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PredictiveScalingPredefinedScalingMetric, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PredictiveScalingPredefinedScalingMetric::builder();
     while let Some(mut tag) = decoder.next_tag() {

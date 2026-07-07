@@ -110,6 +110,8 @@ pub(crate) fn de_poll_for_decision_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -130,13 +132,21 @@ pub(crate) fn de_poll_for_decision_task(
                     );
                 }
                 "workflowExecution" => {
-                    builder = builder.set_workflow_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(tokens, _value)?);
+                    builder = builder.set_workflow_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "workflowType" => {
-                    builder = builder.set_workflow_type(crate::protocol_serde::shape_workflow_type::de_workflow_type(tokens, _value)?);
+                    builder = builder.set_workflow_type(crate::protocol_serde::shape_workflow_type::de_workflow_type(tokens, _value, depth + 1)?);
                 }
                 "events" => {
-                    builder = builder.set_events(crate::protocol_serde::shape_history_event_list::de_history_event_list(tokens, _value)?);
+                    builder = builder.set_events(crate::protocol_serde::shape_history_event_list::de_history_event_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "nextPageToken" => {
                     builder = builder.set_next_page_token(

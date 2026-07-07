@@ -9,16 +9,43 @@ pub fn ser_evaluation_form_multi_select_question_option(
     {
         object.key("Text").string(input.text.as_str());
     }
+    if input.score != 0 {
+        object.key("Score").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.score).into()),
+        );
+    }
+    if input.automatic_fail {
+        object.key("AutomaticFail").boolean(input.automatic_fail);
+    }
+    if let Some(var_1) = &input.automatic_fail_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("AutomaticFailConfiguration").start_object();
+        crate::protocol_serde::shape_automatic_fail_configuration::ser_automatic_fail_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.points_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("PointsConfiguration").start_object();
+        crate::protocol_serde::shape_question_option_points_configuration::ser_question_option_points_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_evaluation_form_multi_select_question_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormMultiSelectQuestionOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -40,6 +67,34 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "Score" => {
+                            builder = builder.set_score(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "AutomaticFail" => {
+                            builder = builder.set_automatic_fail(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "AutomaticFailConfiguration" => {
+                            builder = builder.set_automatic_fail_configuration(
+                                crate::protocol_serde::shape_automatic_fail_configuration::de_automatic_fail_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "PointsConfiguration" => {
+                            builder = builder.set_points_configuration(
+                                crate::protocol_serde::shape_question_option_points_configuration::de_question_option_points_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

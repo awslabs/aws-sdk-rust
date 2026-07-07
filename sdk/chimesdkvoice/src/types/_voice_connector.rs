@@ -20,7 +20,7 @@ pub struct VoiceConnector {
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the Voice Connector.</p>
     pub voice_connector_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The connectors for use with Amazon Connect.</p>
+    /// <p>The connectors for use with Connect Customer.</p>
     pub integration_type: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>,
     /// <p>The type of network of the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
@@ -58,7 +58,7 @@ impl VoiceConnector {
     pub fn voice_connector_arn(&self) -> ::std::option::Option<&str> {
         self.voice_connector_arn.as_deref()
     }
-    /// <p>The connectors for use with Amazon Connect.</p>
+    /// <p>The connectors for use with Connect Customer.</p>
     pub fn integration_type(&self) -> ::std::option::Option<&crate::types::VoiceConnectorIntegrationType> {
         self.integration_type.as_ref()
     }
@@ -202,17 +202,17 @@ impl VoiceConnectorBuilder {
     pub fn get_voice_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.voice_connector_arn
     }
-    /// <p>The connectors for use with Amazon Connect.</p>
+    /// <p>The connectors for use with Connect Customer.</p>
     pub fn integration_type(mut self, input: crate::types::VoiceConnectorIntegrationType) -> Self {
         self.integration_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The connectors for use with Amazon Connect.</p>
+    /// <p>The connectors for use with Connect Customer.</p>
     pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>) -> Self {
         self.integration_type = input;
         self
     }
-    /// <p>The connectors for use with Amazon Connect.</p>
+    /// <p>The connectors for use with Connect Customer.</p>
     pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::VoiceConnectorIntegrationType> {
         &self.integration_type
     }

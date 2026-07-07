@@ -49,6 +49,8 @@ pub fn de_describe_volume_status(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVolumeStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVolumeStatusResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_describe_volume_status(
             s if s.matches("volumeStatusSet") /* VolumeStatuses com.amazonaws.ec2.synthetic#DescribeVolumeStatusOutput$VolumeStatuses */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_volume_status_list::de_volume_status_list(&mut tag)
+                        crate::protocol_serde::shape_volume_status_list::de_volume_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

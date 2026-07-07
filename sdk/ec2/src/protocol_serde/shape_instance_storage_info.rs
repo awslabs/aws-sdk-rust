@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_storage_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceStorageInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceStorageInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -25,7 +29,7 @@ pub fn de_instance_storage_info(
             s if s.matches("disks") /* Disks com.amazonaws.ec2#InstanceStorageInfo$Disks */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_disk_info_list::de_disk_info_list(&mut tag)
+                        crate::protocol_serde::shape_disk_info_list::de_disk_info_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

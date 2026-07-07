@@ -20,5 +20,7 @@ pub fn de_legal_hold(inp: &[u8]) -> std::result::Result<crate::types::ObjectLock
             "invalid root, expected LegalHold got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_object_lock_legal_hold::de_object_lock_legal_hold(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_object_lock_legal_hold::de_object_lock_legal_hold(&mut decoder, depth + 1)
 }

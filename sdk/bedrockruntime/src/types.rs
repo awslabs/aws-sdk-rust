@@ -17,6 +17,12 @@ pub use crate::types::_guardrail_action::GuardrailAction;
 
 pub use crate::types::_guardrail_coverage::GuardrailCoverage;
 
+pub use crate::types::_guardrail_checks_config::GuardrailChecksConfig;
+
+pub use crate::types::_guardrail_checks_results::GuardrailChecksResults;
+
+pub use crate::types::_guardrail_checks_usage_results::GuardrailChecksUsageResults;
+
 pub use crate::types::_inference_configuration::InferenceConfiguration;
 
 pub use crate::types::_tool_configuration::ToolConfiguration;
@@ -72,6 +78,26 @@ pub use crate::types::_guardrail_assessment::GuardrailAssessment;
 pub use crate::types::_guardrail_text_characters_coverage::GuardrailTextCharactersCoverage;
 
 pub use crate::types::_guardrail_image_coverage::GuardrailImageCoverage;
+
+pub use crate::types::_guardrail_checks_message::GuardrailChecksMessage;
+
+pub use crate::types::_guardrail_checks_content_filter_config::GuardrailChecksContentFilterConfig;
+
+pub use crate::types::_guardrail_checks_prompt_attack_config::GuardrailChecksPromptAttackConfig;
+
+pub use crate::types::_guardrail_checks_sensitive_information_config::GuardrailChecksSensitiveInformationConfig;
+
+pub use crate::types::_guardrail_checks_content_filter_result::GuardrailChecksContentFilterResult;
+
+pub use crate::types::_guardrail_checks_prompt_attack_result::GuardrailChecksPromptAttackResult;
+
+pub use crate::types::_guardrail_checks_sensitive_information_result::GuardrailChecksSensitiveInformationResult;
+
+pub use crate::types::_guardrail_checks_content_filter_usage::GuardrailChecksContentFilterUsage;
+
+pub use crate::types::_guardrail_checks_prompt_attack_usage::GuardrailChecksPromptAttackUsage;
+
+pub use crate::types::_guardrail_checks_sensitive_information_usage::GuardrailChecksSensitiveInformationUsage;
 
 pub use crate::types::_message::Message;
 
@@ -133,6 +159,8 @@ pub use crate::types::_guardrail_invocation_metrics::GuardrailInvocationMetrics;
 
 pub use crate::types::_applied_guardrail_details::AppliedGuardrailDetails;
 
+pub use crate::types::_guardrail_checks_role::GuardrailChecksRole;
+
 pub use crate::types::_conversation_role::ConversationRole;
 
 pub use crate::types::_guardrail_converse_content_block::GuardrailConverseContentBlock;
@@ -166,6 +194,20 @@ pub use crate::types::_guardrail_image_format::GuardrailImageFormat;
 pub use crate::types::_guardrail_image_source::GuardrailImageSource;
 
 pub use crate::types::_guardrail_ownership::GuardrailOwnership;
+
+pub use crate::types::_guardrail_checks_content_block::GuardrailChecksContentBlock;
+
+pub use crate::types::_guardrail_checks_content_filter_category_config::GuardrailChecksContentFilterCategoryConfig;
+
+pub use crate::types::_guardrail_checks_prompt_attack_category_config::GuardrailChecksPromptAttackCategoryConfig;
+
+pub use crate::types::_guardrail_checks_sensitive_information_entity_config::GuardrailChecksSensitiveInformationEntityConfig;
+
+pub use crate::types::_guardrail_checks_content_filter_result_entry::GuardrailChecksContentFilterResultEntry;
+
+pub use crate::types::_guardrail_checks_prompt_attack_result_entry::GuardrailChecksPromptAttackResultEntry;
+
+pub use crate::types::_guardrail_checks_sensitive_information_result_entry::GuardrailChecksSensitiveInformationResultEntry;
 
 pub use crate::types::_content_block::ContentBlock;
 
@@ -216,6 +258,12 @@ pub use crate::types::_guardrail_contextual_grounding_filter::GuardrailContextua
 pub use crate::types::_guardrail_automated_reasoning_finding::GuardrailAutomatedReasoningFinding;
 
 pub use crate::types::_guardrail_origin::GuardrailOrigin;
+
+pub use crate::types::_guardrail_checks_content_filter_category::GuardrailChecksContentFilterCategory;
+
+pub use crate::types::_guardrail_checks_prompt_attack_category::GuardrailChecksPromptAttackCategory;
+
+pub use crate::types::_guardrail_checks_sensitive_information_entity_type::GuardrailChecksSensitiveInformationEntityType;
 
 pub use crate::types::_image_block::ImageBlock;
 
@@ -486,6 +534,54 @@ mod _guardrail_automated_reasoning_translation_ambiguous_finding;
 mod _guardrail_automated_reasoning_translation_option;
 
 mod _guardrail_automated_reasoning_valid_finding;
+
+mod _guardrail_checks_config;
+
+mod _guardrail_checks_content_block;
+
+mod _guardrail_checks_content_filter_category;
+
+mod _guardrail_checks_content_filter_category_config;
+
+mod _guardrail_checks_content_filter_config;
+
+mod _guardrail_checks_content_filter_result;
+
+mod _guardrail_checks_content_filter_result_entry;
+
+mod _guardrail_checks_content_filter_usage;
+
+mod _guardrail_checks_message;
+
+mod _guardrail_checks_prompt_attack_category;
+
+mod _guardrail_checks_prompt_attack_category_config;
+
+mod _guardrail_checks_prompt_attack_config;
+
+mod _guardrail_checks_prompt_attack_result;
+
+mod _guardrail_checks_prompt_attack_result_entry;
+
+mod _guardrail_checks_prompt_attack_usage;
+
+mod _guardrail_checks_results;
+
+mod _guardrail_checks_role;
+
+mod _guardrail_checks_sensitive_information_config;
+
+mod _guardrail_checks_sensitive_information_entity_config;
+
+mod _guardrail_checks_sensitive_information_entity_type;
+
+mod _guardrail_checks_sensitive_information_result;
+
+mod _guardrail_checks_sensitive_information_result_entry;
+
+mod _guardrail_checks_sensitive_information_usage;
+
+mod _guardrail_checks_usage_results;
 
 mod _guardrail_configuration;
 

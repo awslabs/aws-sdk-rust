@@ -150,6 +150,8 @@ pub(crate) fn de_describe_flow_source_metadata(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -164,12 +166,16 @@ pub(crate) fn de_describe_flow_source_metadata(
                 }
                 "messages" => {
                     builder = builder.set_messages(crate::protocol_serde::shape_list_of_message_detail::de_list_of_message_detail(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ndiInfo" => {
                     builder = builder.set_ndi_info(crate::protocol_serde::shape_ndi_source_metadata_info::de_ndi_source_metadata_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "timestamp" => {
@@ -180,7 +186,9 @@ pub(crate) fn de_describe_flow_source_metadata(
                 }
                 "transportMediaInfo" => {
                     builder = builder.set_transport_media_info(crate::protocol_serde::shape_transport_media_info::de_transport_media_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

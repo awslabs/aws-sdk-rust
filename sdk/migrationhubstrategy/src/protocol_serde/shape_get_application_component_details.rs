@@ -102,31 +102,37 @@ pub(crate) fn de_get_application_component_details(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "applicationComponentDetail" => {
-                    builder = builder.set_application_component_detail(
-                        crate::protocol_serde::shape_application_component_detail::de_application_component_detail(tokens, _value)?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "applicationComponentDetail" => {
+                        builder = builder.set_application_component_detail(
+                            crate::protocol_serde::shape_application_component_detail::de_application_component_detail(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "associatedApplications" => {
+                        builder = builder.set_associated_applications(
+                            crate::protocol_serde::shape_associated_applications::de_associated_applications(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "associatedServerIds" => {
+                        builder = builder.set_associated_server_ids(crate::protocol_serde::shape_associated_server_ids::de_associated_server_ids(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "moreApplicationResource" => {
+                        builder = builder.set_more_application_resource(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "associatedApplications" => {
-                    builder = builder.set_associated_applications(crate::protocol_serde::shape_associated_applications::de_associated_applications(
-                        tokens, _value,
-                    )?);
-                }
-                "associatedServerIds" => {
-                    builder = builder.set_associated_server_ids(crate::protocol_serde::shape_associated_server_ids::de_associated_server_ids(
-                        tokens, _value,
-                    )?);
-                }
-                "moreApplicationResource" => {
-                    builder = builder.set_more_application_resource(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

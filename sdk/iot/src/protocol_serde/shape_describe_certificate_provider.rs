@@ -148,6 +148,8 @@ pub(crate) fn de_describe_certificate_provider(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -155,7 +157,7 @@ pub(crate) fn de_describe_certificate_provider(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "accountDefaultForOperations" => {
                     builder = builder.set_account_default_for_operations(
-                            crate::protocol_serde::shape_certificate_provider_account_default_for_operations::de_certificate_provider_account_default_for_operations(tokens, _value)?
+                            crate::protocol_serde::shape_certificate_provider_account_default_for_operations::de_certificate_provider_account_default_for_operations(tokens, _value, depth + 1)?
                         );
                 }
                 "certificateProviderArn" => {

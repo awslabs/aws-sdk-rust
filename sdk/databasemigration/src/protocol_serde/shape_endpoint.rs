@@ -2,10 +2,16 @@
 pub(crate) fn de_endpoint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Endpoint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -138,81 +144,138 @@ where
                             builder = builder.set_is_read_only(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "DynamoDbSettings" => {
-                            builder = builder
-                                .set_dynamo_db_settings(crate::protocol_serde::shape_dynamo_db_settings::de_dynamo_db_settings(tokens, _value)?);
+                            builder = builder.set_dynamo_db_settings(crate::protocol_serde::shape_dynamo_db_settings::de_dynamo_db_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "S3Settings" => {
-                            builder = builder.set_s3_settings(crate::protocol_serde::shape_s3_settings::de_s3_settings(tokens, _value)?);
+                            builder = builder.set_s3_settings(crate::protocol_serde::shape_s3_settings::de_s3_settings(tokens, _value, depth + 1)?);
                         }
                         "DmsTransferSettings" => {
                             builder = builder.set_dms_transfer_settings(
-                                crate::protocol_serde::shape_dms_transfer_settings::de_dms_transfer_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_dms_transfer_settings::de_dms_transfer_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "MongoDbSettings" => {
-                            builder =
-                                builder.set_mongo_db_settings(crate::protocol_serde::shape_mongo_db_settings::de_mongo_db_settings(tokens, _value)?);
+                            builder = builder.set_mongo_db_settings(crate::protocol_serde::shape_mongo_db_settings::de_mongo_db_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "KinesisSettings" => {
-                            builder =
-                                builder.set_kinesis_settings(crate::protocol_serde::shape_kinesis_settings::de_kinesis_settings(tokens, _value)?);
+                            builder = builder.set_kinesis_settings(crate::protocol_serde::shape_kinesis_settings::de_kinesis_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "KafkaSettings" => {
-                            builder = builder.set_kafka_settings(crate::protocol_serde::shape_kafka_settings::de_kafka_settings(tokens, _value)?);
+                            builder = builder.set_kafka_settings(crate::protocol_serde::shape_kafka_settings::de_kafka_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ElasticsearchSettings" => {
                             builder = builder.set_elasticsearch_settings(
-                                crate::protocol_serde::shape_elasticsearch_settings::de_elasticsearch_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_elasticsearch_settings::de_elasticsearch_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "NeptuneSettings" => {
-                            builder =
-                                builder.set_neptune_settings(crate::protocol_serde::shape_neptune_settings::de_neptune_settings(tokens, _value)?);
+                            builder = builder.set_neptune_settings(crate::protocol_serde::shape_neptune_settings::de_neptune_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RedshiftSettings" => {
-                            builder =
-                                builder.set_redshift_settings(crate::protocol_serde::shape_redshift_settings::de_redshift_settings(tokens, _value)?);
+                            builder = builder.set_redshift_settings(crate::protocol_serde::shape_redshift_settings::de_redshift_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PostgreSQLSettings" => {
                             builder = builder.set_postgre_sql_settings(crate::protocol_serde::shape_postgre_sql_settings::de_postgre_sql_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "MySQLSettings" => {
-                            builder = builder.set_my_sql_settings(crate::protocol_serde::shape_my_sql_settings::de_my_sql_settings(tokens, _value)?);
+                            builder = builder.set_my_sql_settings(crate::protocol_serde::shape_my_sql_settings::de_my_sql_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OracleSettings" => {
-                            builder = builder.set_oracle_settings(crate::protocol_serde::shape_oracle_settings::de_oracle_settings(tokens, _value)?);
+                            builder = builder.set_oracle_settings(crate::protocol_serde::shape_oracle_settings::de_oracle_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SybaseSettings" => {
-                            builder = builder.set_sybase_settings(crate::protocol_serde::shape_sybase_settings::de_sybase_settings(tokens, _value)?);
+                            builder = builder.set_sybase_settings(crate::protocol_serde::shape_sybase_settings::de_sybase_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MicrosoftSQLServerSettings" => {
                             builder = builder.set_microsoft_sql_server_settings(
-                                crate::protocol_serde::shape_microsoft_sql_server_settings::de_microsoft_sql_server_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_microsoft_sql_server_settings::de_microsoft_sql_server_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "IBMDb2Settings" => {
-                            builder =
-                                builder.set_ibm_db2_settings(crate::protocol_serde::shape_ibm_db2_settings::de_ibm_db2_settings(tokens, _value)?);
+                            builder = builder.set_ibm_db2_settings(crate::protocol_serde::shape_ibm_db2_settings::de_ibm_db2_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DocDbSettings" => {
-                            builder = builder.set_doc_db_settings(crate::protocol_serde::shape_doc_db_settings::de_doc_db_settings(tokens, _value)?);
+                            builder = builder.set_doc_db_settings(crate::protocol_serde::shape_doc_db_settings::de_doc_db_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RedisSettings" => {
-                            builder = builder.set_redis_settings(crate::protocol_serde::shape_redis_settings::de_redis_settings(tokens, _value)?);
+                            builder = builder.set_redis_settings(crate::protocol_serde::shape_redis_settings::de_redis_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "GcpMySQLSettings" => {
-                            builder = builder
-                                .set_gcp_my_sql_settings(crate::protocol_serde::shape_gcp_my_sql_settings::de_gcp_my_sql_settings(tokens, _value)?);
+                            builder = builder.set_gcp_my_sql_settings(crate::protocol_serde::shape_gcp_my_sql_settings::de_gcp_my_sql_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TimestreamSettings" => {
-                            builder = builder
-                                .set_timestream_settings(crate::protocol_serde::shape_timestream_settings::de_timestream_settings(tokens, _value)?);
+                            builder = builder.set_timestream_settings(crate::protocol_serde::shape_timestream_settings::de_timestream_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LakehouseSettings" => {
-                            builder = builder
-                                .set_lakehouse_settings(crate::protocol_serde::shape_lakehouse_settings::de_lakehouse_settings(tokens, _value)?);
+                            builder = builder.set_lakehouse_settings(crate::protocol_serde::shape_lakehouse_settings::de_lakehouse_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

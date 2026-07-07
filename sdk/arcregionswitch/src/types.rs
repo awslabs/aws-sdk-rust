@@ -101,6 +101,14 @@ pub use crate::types::_rds_promote_read_replica_configuration::RdsPromoteReadRep
 
 pub use crate::types::_rds_create_cross_region_replica_configuration::RdsCreateCrossRegionReplicaConfiguration;
 
+pub use crate::types::_lambda_event_source_mapping_configuration::LambdaEventSourceMappingConfiguration;
+
+pub use crate::types::_aurora_serverless_scaling_configuration::AuroraServerlessScalingConfiguration;
+
+pub use crate::types::_aurora_provisioned_scaling_configuration::AuroraProvisionedScalingConfiguration;
+
+pub use crate::types::_neptune_global_database_configuration::NeptuneGlobalDatabaseConfiguration;
+
 pub use crate::types::_region_to_run_in::RegionToRunIn;
 
 pub use crate::types::_lambda_ungraceful::LambdaUngraceful;
@@ -127,6 +135,14 @@ pub use crate::types::_document_db_default_behavior::DocumentDbDefaultBehavior;
 
 pub use crate::types::_document_db_ungraceful::DocumentDbUngraceful;
 
+pub use crate::types::_event_source_mapping_action::EventSourceMappingAction;
+
+pub use crate::types::_lambda_event_source_mapping_ungraceful::LambdaEventSourceMappingUngraceful;
+
+pub use crate::types::_neptune_default_behavior::NeptuneDefaultBehavior;
+
+pub use crate::types::_neptune_ungraceful::NeptuneUngraceful;
+
 pub use crate::types::_lambdas::Lambdas;
 
 pub use crate::types::_lambda_ungraceful_behavior::LambdaUngracefulBehavior;
@@ -142,6 +158,12 @@ pub use crate::types::_eks_cluster::EksCluster;
 pub use crate::types::_route53_resource_record_set::Route53ResourceRecordSet;
 
 pub use crate::types::_document_db_ungraceful_behavior::DocumentDbUngracefulBehavior;
+
+pub use crate::types::_event_source_mapping::EventSourceMapping;
+
+pub use crate::types::_lambda_event_source_mapping_ungraceful_behavior::LambdaEventSourceMappingUngracefulBehavior;
+
+pub use crate::types::_neptune_ungraceful_behavior::NeptuneUngracefulBehavior;
 
 pub use crate::types::_arc_routing_control_state::ArcRoutingControlState;
 
@@ -166,6 +188,10 @@ mod _arc_routing_control_state;
 mod _asg;
 
 mod _associated_alarm;
+
+mod _aurora_provisioned_scaling_configuration;
+
+mod _aurora_serverless_scaling_configuration;
 
 mod _custom_action_lambda_configuration;
 
@@ -198,6 +224,10 @@ mod _eks_resource_scaling_configuration;
 mod _eks_resource_scaling_ungraceful;
 
 mod _evaluation_status;
+
+mod _event_source_mapping;
+
+mod _event_source_mapping_action;
 
 mod _execution_action;
 
@@ -233,6 +263,12 @@ mod _kubernetes_resource_type;
 
 mod _kubernetes_scaling_resource;
 
+mod _lambda_event_source_mapping_configuration;
+
+mod _lambda_event_source_mapping_ungraceful;
+
+mod _lambda_event_source_mapping_ungraceful_behavior;
+
 mod _lambda_ungraceful;
 
 mod _lambda_ungraceful_behavior;
@@ -240,6 +276,14 @@ mod _lambda_ungraceful_behavior;
 mod _lambdas;
 
 mod _minimal_workflow;
+
+mod _neptune_default_behavior;
+
+mod _neptune_global_database_configuration;
+
+mod _neptune_ungraceful;
+
+mod _neptune_ungraceful_behavior;
 
 mod _parallel_execution_block_configuration;
 

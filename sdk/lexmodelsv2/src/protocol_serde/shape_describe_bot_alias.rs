@@ -131,6 +131,8 @@ pub(crate) fn de_describe_bot_alias(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -138,7 +140,7 @@ pub(crate) fn de_describe_bot_alias(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "botAliasHistoryEvents" => {
                     builder = builder.set_bot_alias_history_events(
-                        crate::protocol_serde::shape_bot_alias_history_events_list::de_bot_alias_history_events_list(tokens, _value)?,
+                        crate::protocol_serde::shape_bot_alias_history_events_list::de_bot_alias_history_events_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "botAliasId" => {
@@ -150,7 +152,7 @@ pub(crate) fn de_describe_bot_alias(
                 }
                 "botAliasLocaleSettings" => {
                     builder = builder.set_bot_alias_locale_settings(
-                        crate::protocol_serde::shape_bot_alias_locale_settings_map::de_bot_alias_locale_settings_map(tokens, _value)?,
+                        crate::protocol_serde::shape_bot_alias_locale_settings_map::de_bot_alias_locale_settings_map(tokens, _value, depth + 1)?,
                     );
                 }
                 "botAliasName" => {
@@ -183,7 +185,7 @@ pub(crate) fn de_describe_bot_alias(
                 }
                 "conversationLogSettings" => {
                     builder = builder.set_conversation_log_settings(
-                        crate::protocol_serde::shape_conversation_log_settings::de_conversation_log_settings(tokens, _value)?,
+                        crate::protocol_serde::shape_conversation_log_settings::de_conversation_log_settings(tokens, _value, depth + 1)?,
                     );
                 }
                 "creationDateTime" => {
@@ -206,12 +208,15 @@ pub(crate) fn de_describe_bot_alias(
                     )?);
                 }
                 "parentBotNetworks" => {
-                    builder =
-                        builder.set_parent_bot_networks(crate::protocol_serde::shape_parent_bot_networks::de_parent_bot_networks(tokens, _value)?);
+                    builder = builder.set_parent_bot_networks(crate::protocol_serde::shape_parent_bot_networks::de_parent_bot_networks(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "sentimentAnalysisSettings" => {
                     builder = builder.set_sentiment_analysis_settings(
-                        crate::protocol_serde::shape_sentiment_analysis_settings::de_sentiment_analysis_settings(tokens, _value)?,
+                        crate::protocol_serde::shape_sentiment_analysis_settings::de_sentiment_analysis_settings(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -79,10 +79,14 @@ pub struct GetRunOutput {
     pub workflow_uuid: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
     pub networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If absent, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub scratch_storage_mode: ::std::option::Option<crate::types::ScratchStorageMode>,
     /// <p>Configuration details for the workflow run.</p>
     pub configuration: ::std::option::Option<crate::types::ConfigurationDetails>,
     /// <p>VPC configuration for the workflow run.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -238,6 +242,10 @@ impl GetRunOutput {
     pub fn networking_mode(&self) -> ::std::option::Option<&crate::types::NetworkingMode> {
         self.networking_mode.as_ref()
     }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If absent, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn scratch_storage_mode(&self) -> ::std::option::Option<&crate::types::ScratchStorageMode> {
+        self.scratch_storage_mode.as_ref()
+    }
     /// <p>Configuration details for the workflow run.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::ConfigurationDetails> {
         self.configuration.as_ref()
@@ -245,6 +253,10 @@ impl GetRunOutput {
     /// <p>VPC configuration for the workflow run.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfigResponse> {
         self.vpc_config.as_ref()
+    }
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.engine_settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRunOutput {
@@ -301,8 +313,10 @@ pub struct GetRunOutputBuilder {
     pub(crate) workflow_version_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_uuid: ::std::option::Option<::std::string::String>,
     pub(crate) networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    pub(crate) scratch_storage_mode: ::std::option::Option<crate::types::ScratchStorageMode>,
     pub(crate) configuration: ::std::option::Option<crate::types::ConfigurationDetails>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
+    pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -857,6 +871,20 @@ impl GetRunOutputBuilder {
     pub fn get_networking_mode(&self) -> &::std::option::Option<crate::types::NetworkingMode> {
         &self.networking_mode
     }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If absent, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn scratch_storage_mode(mut self, input: crate::types::ScratchStorageMode) -> Self {
+        self.scratch_storage_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If absent, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn set_scratch_storage_mode(mut self, input: ::std::option::Option<crate::types::ScratchStorageMode>) -> Self {
+        self.scratch_storage_mode = input;
+        self
+    }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If absent, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn get_scratch_storage_mode(&self) -> &::std::option::Option<crate::types::ScratchStorageMode> {
+        &self.scratch_storage_mode
+    }
     /// <p>Configuration details for the workflow run.</p>
     pub fn configuration(mut self, input: crate::types::ConfigurationDetails) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -884,6 +912,20 @@ impl GetRunOutputBuilder {
     /// <p>VPC configuration for the workflow run.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigResponse> {
         &self.vpc_config
+    }
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.engine_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.engine_settings = input;
+        self
+    }
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.engine_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -935,8 +977,10 @@ impl GetRunOutputBuilder {
             workflow_version_name: self.workflow_version_name,
             workflow_uuid: self.workflow_uuid,
             networking_mode: self.networking_mode,
+            scratch_storage_mode: self.scratch_storage_mode,
             configuration: self.configuration,
             vpc_config: self.vpc_config,
+            engine_settings: self.engine_settings,
             _request_id: self._request_id,
         }
     }

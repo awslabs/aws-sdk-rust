@@ -19,5 +19,8 @@ pub fn ser_data_quality_ruleset_evaluation_run_filter(
             .key("StartedAfter")
             .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_5) = &input.ruleset_name {
+        object.key("RulesetName").string(var_5.as_str());
+    }
     Ok(())
 }

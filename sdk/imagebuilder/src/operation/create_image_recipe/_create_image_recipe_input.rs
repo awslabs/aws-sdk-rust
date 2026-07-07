@@ -49,6 +49,10 @@ pub struct CreateImageRecipeInput {
     pub additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
     /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
     pub ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers. They automatically propagate to derivative AMIs when the source AMI is copied or distributed across Regions or accounts.</p><note>
+    /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
+    /// </note>
+    pub ami_watermarks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -123,6 +127,14 @@ impl CreateImageRecipeInput {
     pub fn ami_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.ami_tags.as_ref()
     }
+    /// <p>The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers. They automatically propagate to derivative AMIs when the source AMI is copied or distributed across Regions or accounts.</p><note>
+    /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ami_watermarks.is_none()`.
+    pub fn ami_watermarks(&self) -> &[::std::string::String] {
+        self.ami_watermarks.as_deref().unwrap_or_default()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -149,6 +161,7 @@ pub struct CreateImageRecipeInputBuilder {
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
     pub(crate) ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ami_watermarks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateImageRecipeInputBuilder {
@@ -397,6 +410,32 @@ impl CreateImageRecipeInputBuilder {
     pub fn get_ami_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.ami_tags
     }
+    /// Appends an item to `ami_watermarks`.
+    ///
+    /// To override the contents of this collection use [`set_ami_watermarks`](Self::set_ami_watermarks).
+    ///
+    /// <p>The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers. They automatically propagate to derivative AMIs when the source AMI is copied or distributed across Regions or accounts.</p><note>
+    /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
+    /// </note>
+    pub fn ami_watermarks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ami_watermarks.unwrap_or_default();
+        v.push(input.into());
+        self.ami_watermarks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers. They automatically propagate to derivative AMIs when the source AMI is copied or distributed across Regions or accounts.</p><note>
+    /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
+    /// </note>
+    pub fn set_ami_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ami_watermarks = input;
+        self
+    }
+    /// <p>The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers. They automatically propagate to derivative AMIs when the source AMI is copied or distributed across Regions or accounts.</p><note>
+    /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
+    /// </note>
+    pub fn get_ami_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ami_watermarks
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -427,6 +466,7 @@ impl CreateImageRecipeInputBuilder {
             working_directory: self.working_directory,
             additional_instance_configuration: self.additional_instance_configuration,
             ami_tags: self.ami_tags,
+            ami_watermarks: self.ami_watermarks,
             client_token: self.client_token,
         })
     }

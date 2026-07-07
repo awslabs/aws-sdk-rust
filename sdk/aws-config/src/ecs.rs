@@ -113,19 +113,31 @@ impl EcsCredentialsProvider {
                 .await
                 .map_err(CredentialsError::provider_error)?;
             Some(HeaderValue::from_bytes(auth.as_slice()).map_err(|err| {
-                let auth_token = String::from_utf8_lossy(auth.as_slice()).to_string();
-                tracing::warn!(token = %auth_token, "invalid auth token");
+                tracing::warn!(
+                    token_length = auth.len(),
+                    ends_with_whitespace = auth
+                        .last()
+                        .map(|b| b.is_ascii_whitespace())
+                        .unwrap_or(false),
+                    "invalid auth token from file"
+                );
                 CredentialsError::invalid_configuration(EcsConfigurationError::InvalidAuthToken {
                     err,
-                    value: auth_token,
                 })
             })?)
         } else if let Some(auth_token) = env_token {
             Some(HeaderValue::from_str(&auth_token).map_err(|err| {
-                tracing::warn!(token = %auth_token, "invalid auth token");
+                tracing::warn!(
+                    token_length = auth_token.len(),
+                    ends_with_whitespace = auth_token
+                        .chars()
+                        .last()
+                        .map(|c| c.is_ascii_whitespace())
+                        .unwrap_or(false),
+                    "invalid auth token from env"
+                );
                 CredentialsError::invalid_configuration(EcsConfigurationError::InvalidAuthToken {
                     err,
-                    value: auth_token,
                 })
             })?)
         } else {
@@ -245,7 +257,6 @@ enum EcsConfigurationError {
     },
     InvalidAuthToken {
         err: InvalidHeaderValue,
-        value: String,
     },
     NotConfigured,
 }
@@ -263,9 +274,9 @@ impl Display for EcsConfigurationError {
                 f,
                 "No environment variables were set to configure ECS provider"
             ),
-            EcsConfigurationError::InvalidAuthToken { err, value } => write!(
+            EcsConfigurationError::InvalidAuthToken { err } => write!(
                 f,
-                "`{value}` could not be used as a header value for the auth token. {err}",
+                "the auth token could not be used as an HTTP header value. {err}",
             ),
         }
     }
@@ -792,6 +803,75 @@ mod test {
             .expect("valid credentials");
         assert_correct(creds);
         http_client.assert_requests_match(&[]);
+    }
+
+    #[tokio::test]
+    #[traced_test]
+    async fn invalid_auth_token_env_does_not_log_value() {
+        let env = Env::from_slice(&[
+            ("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "/credentials"),
+            (
+                "AWS_CONTAINER_AUTHORIZATION_TOKEN",
+                "SECRET-MARKER-DO-NOT-LOG-abc123\n",
+            ),
+        ]);
+        let provider = provider(env, Fs::default(), no_traffic_client());
+        let err = provider
+            .provide_credentials()
+            .await
+            .expect_err("token with trailing newline should fail");
+        assert!(
+            matches!(err, CredentialsError::InvalidConfiguration { .. }),
+            "expected InvalidConfiguration, got: {:?}",
+            err
+        );
+        let error_display = format!("{}", DisplayErrorContext(&err));
+        assert!(
+            !error_display.contains("SECRET-MARKER"),
+            "error display must not contain the raw token value, got: {error_display}"
+        );
+        assert!(
+            !logs_contain("SECRET-MARKER"),
+            "logs must not contain the raw token value"
+        );
+    }
+
+    #[tokio::test]
+    #[traced_test]
+    async fn invalid_auth_token_file_does_not_log_value() {
+        let env = Env::from_slice(&[
+            (
+                "AWS_CONTAINER_CREDENTIALS_FULL_URI",
+                "http://169.254.170.23/v1/credentials",
+            ),
+            (
+                "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE",
+                "/eks-pod-identity-token",
+            ),
+        ]);
+        let fs = Fs::from_raw_map(HashMap::from([(
+            OsString::from("/eks-pod-identity-token"),
+            "SECRET-MARKER-DO-NOT-LOG-abc123\n".into(),
+        )]));
+        let provider = provider(env, fs, no_traffic_client());
+        let err = provider
+            .provide_credentials()
+            .await
+            .expect_err("token with trailing newline should fail");
+        assert!(
+            matches!(err, CredentialsError::InvalidConfiguration { .. }),
+            "expected InvalidConfiguration, got: {:?}",
+            err
+        );
+        let error_display = format!("{}", DisplayErrorContext(&err));
+        assert!(
+            !error_display.contains("SECRET-MARKER"),
+            "error display must not contain the raw token value, got: {error_display}"
+        );
+        assert!(
+            !logs_contain("SECRET-MARKER"),
+            "logs must not contain the raw token value"
+        );
     }
 
     #[tokio::test]

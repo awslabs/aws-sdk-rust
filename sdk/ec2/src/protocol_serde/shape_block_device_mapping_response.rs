@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_block_device_mapping_response(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::BlockDeviceMappingResponse, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::BlockDeviceMappingResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_block_device_mapping_response(
             s if s.matches("ebs") /* Ebs com.amazonaws.ec2#BlockDeviceMappingResponse$Ebs */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_ebs_block_device_response::de_ebs_block_device_response(&mut tag)
+                        crate::protocol_serde::shape_ebs_block_device_response::de_ebs_block_device_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

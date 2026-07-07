@@ -35,9 +35,9 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeWithResponseSt
                 "InvokeComplete" => {
                     let parsed =
                             crate::protocol_serde::shape_invoke_with_response_stream_complete_event::de_invoke_with_response_stream_complete_event_payload(&message.payload()[..])
-                                            .map_err(|err| {
-                                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InvokeComplete: {err}"))
-                                            })?
+                                                .map_err(|err| {
+                                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InvokeComplete: {err}"))
+                                                })?
                         ;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::InvokeWithResponseStreamResponseEvent::InvokeComplete(parsed),

@@ -107,6 +107,8 @@ pub(crate) fn de_describe_user(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -123,11 +125,13 @@ pub(crate) fn de_describe_user(
                     builder = builder.set_console_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "groups" => {
-                    builder = builder.set_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "pending" => {
                     builder = builder.set_pending(crate::protocol_serde::shape_user_pending_changes::de_user_pending_changes(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "replicationUser" => {

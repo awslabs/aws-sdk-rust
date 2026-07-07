@@ -180,6 +180,8 @@ pub fn de_create_event_subscription(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateEventSubscriptionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateEventSubscriptionResponse got {start_el:?}"
@@ -197,7 +199,7 @@ pub fn de_create_event_subscription(
             s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune.synthetic#CreateEventSubscriptionOutput$EventSubscription */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_event_subscription::de_event_subscription(&mut tag)
+                        crate::protocol_serde::shape_event_subscription::de_event_subscription(&mut tag, depth + 1)
                         ?
                     )
                 ;

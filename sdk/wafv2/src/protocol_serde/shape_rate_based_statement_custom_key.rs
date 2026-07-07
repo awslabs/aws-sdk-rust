@@ -81,10 +81,16 @@ pub fn ser_rate_based_statement_custom_key(
 pub(crate) fn de_rate_based_statement_custom_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RateBasedStatementCustomKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -95,54 +101,72 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Header" => {
-                            builder = builder.set_header(crate::protocol_serde::shape_rate_limit_header::de_rate_limit_header(tokens, _value)?);
+                            builder = builder.set_header(crate::protocol_serde::shape_rate_limit_header::de_rate_limit_header(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Cookie" => {
-                            builder = builder.set_cookie(crate::protocol_serde::shape_rate_limit_cookie::de_rate_limit_cookie(tokens, _value)?);
+                            builder = builder.set_cookie(crate::protocol_serde::shape_rate_limit_cookie::de_rate_limit_cookie(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "QueryArgument" => {
                             builder = builder.set_query_argument(
-                                crate::protocol_serde::shape_rate_limit_query_argument::de_rate_limit_query_argument(tokens, _value)?,
+                                crate::protocol_serde::shape_rate_limit_query_argument::de_rate_limit_query_argument(tokens, _value, depth + 1)?,
                             );
                         }
                         "QueryString" => {
                             builder = builder.set_query_string(crate::protocol_serde::shape_rate_limit_query_string::de_rate_limit_query_string(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "HTTPMethod" => {
                             builder = builder.set_http_method(crate::protocol_serde::shape_rate_limit_http_method::de_rate_limit_http_method(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ForwardedIP" => {
                             builder = builder.set_forwarded_ip(crate::protocol_serde::shape_rate_limit_forwarded_ip::de_rate_limit_forwarded_ip(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "IP" => {
-                            builder = builder.set_ip(crate::protocol_serde::shape_rate_limit_ip::de_rate_limit_ip(tokens, _value)?);
+                            builder = builder.set_ip(crate::protocol_serde::shape_rate_limit_ip::de_rate_limit_ip(tokens, _value, depth + 1)?);
                         }
                         "LabelNamespace" => {
                             builder = builder.set_label_namespace(
-                                crate::protocol_serde::shape_rate_limit_label_namespace::de_rate_limit_label_namespace(tokens, _value)?,
+                                crate::protocol_serde::shape_rate_limit_label_namespace::de_rate_limit_label_namespace(tokens, _value, depth + 1)?,
                             );
                         }
                         "UriPath" => {
-                            builder = builder.set_uri_path(crate::protocol_serde::shape_rate_limit_uri_path::de_rate_limit_uri_path(tokens, _value)?);
+                            builder = builder.set_uri_path(crate::protocol_serde::shape_rate_limit_uri_path::de_rate_limit_uri_path(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JA3Fingerprint" => {
                             builder = builder.set_ja3_fingerprint(
-                                crate::protocol_serde::shape_rate_limit_ja3_fingerprint::de_rate_limit_ja3_fingerprint(tokens, _value)?,
+                                crate::protocol_serde::shape_rate_limit_ja3_fingerprint::de_rate_limit_ja3_fingerprint(tokens, _value, depth + 1)?,
                             );
                         }
                         "JA4Fingerprint" => {
                             builder = builder.set_ja4_fingerprint(
-                                crate::protocol_serde::shape_rate_limit_ja4_fingerprint::de_rate_limit_ja4_fingerprint(tokens, _value)?,
+                                crate::protocol_serde::shape_rate_limit_ja4_fingerprint::de_rate_limit_ja4_fingerprint(tokens, _value, depth + 1)?,
                             );
                         }
                         "ASN" => {
-                            builder = builder.set_asn(crate::protocol_serde::shape_rate_limit_asn::de_rate_limit_asn(tokens, _value)?);
+                            builder = builder.set_asn(crate::protocol_serde::shape_rate_limit_asn::de_rate_limit_asn(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

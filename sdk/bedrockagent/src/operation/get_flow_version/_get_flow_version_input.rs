@@ -7,6 +7,8 @@ pub struct GetFlowVersionInput {
     pub flow_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The version of the flow for which to get information.</p>
     pub flow_version: ::std::option::Option<::std::string::String>,
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetFlowVersionInput {
     /// <p>The unique identifier of the flow for which to get information.</p>
@@ -16,6 +18,10 @@ impl GetFlowVersionInput {
     /// <p>The version of the flow for which to get information.</p>
     pub fn flow_version(&self) -> ::std::option::Option<&str> {
         self.flow_version.as_deref()
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
     }
 }
 impl GetFlowVersionInput {
@@ -31,6 +37,7 @@ impl GetFlowVersionInput {
 pub struct GetFlowVersionInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) flow_version: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetFlowVersionInputBuilder {
     /// <p>The unique identifier of the flow for which to get information.</p>
@@ -63,6 +70,20 @@ impl GetFlowVersionInputBuilder {
     pub fn get_flow_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_version
     }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`GetFlowVersionInput`](crate::operation::get_flow_version::GetFlowVersionInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl GetFlowVersionInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_flow_version::GetFlowVersionInput {
             flow_identifier: self.flow_identifier,
             flow_version: self.flow_version,
+            included_data: self.included_data,
         })
     }
 }

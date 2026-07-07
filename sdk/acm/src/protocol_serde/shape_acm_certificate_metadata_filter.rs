@@ -28,6 +28,15 @@ pub fn ser_acm_certificate_metadata_filter(
         crate::types::AcmCertificateMetadataFilter::ValidationMethod(inner) => {
             object_2.key("ValidationMethod").string(inner.as_str());
         }
+        crate::types::AcmCertificateMetadataFilter::CertificateKeyPairOrigin(inner) => {
+            object_2.key("CertificateKeyPairOrigin").string(inner.as_str());
+        }
+        crate::types::AcmCertificateMetadataFilter::AcmeEndpointArn(inner) => {
+            object_2.key("AcmeEndpointArn").string(inner.as_str());
+        }
+        crate::types::AcmCertificateMetadataFilter::AcmeAccountId(inner) => {
+            object_2.key("AcmeAccountId").string(inner.as_str());
+        }
         crate::types::AcmCertificateMetadataFilter::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AcmCertificateMetadataFilter",

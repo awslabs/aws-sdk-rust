@@ -125,10 +125,11 @@ pub(crate) fn de_describe_ec2_instance_limits(
     crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -138,6 +139,7 @@ pub(crate) fn de_describe_ec2_instance_limits(
                 Ok(
                     builder.set_ec2_instance_limits(Some(crate::protocol_serde::shape_ec2_instance_limit_list::de_ec2_instance_limit_list(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -150,6 +152,8 @@ pub(crate) fn de_describe_ec2_instance_limits(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -159,13 +163,13 @@ pub(crate) fn de_describe_ec2_instance_limits(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

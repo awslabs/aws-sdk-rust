@@ -6,5 +6,8 @@ pub fn ser_delete_procurement_portal_preference_input_input(
     if let Some(var_1) = &input.procurement_portal_preference_arn {
         object.key("ProcurementPortalPreferenceArn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.client_token {
+        object.key("ClientToken").string(var_2.as_str());
+    }
     Ok(())
 }

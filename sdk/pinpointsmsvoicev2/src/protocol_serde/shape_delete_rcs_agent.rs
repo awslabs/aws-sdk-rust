@@ -148,6 +148,8 @@ pub(crate) fn de_delete_rcs_agent(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -209,6 +211,13 @@ pub(crate) fn de_delete_rcs_agent(
                 }
                 "TwoWayEnabled" => {
                     builder = builder.set_two_way_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "TwoWayRcsEventsEnabled" => {
+                    builder = builder.set_two_way_rcs_events_enabled(crate::protocol_serde::shape_rcs_event_type_list::de_rcs_event_type_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

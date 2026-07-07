@@ -377,4 +377,23 @@ impl CreateFlowLogsFluentBuilder {
     pub fn get_destination_options(&self) -> &::std::option::Option<crate::types::DestinationOptionsRequest> {
         self.inner.get_destination_options()
     }
+    ///
+    /// Appends an item to `TagFieldSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_field_specifications`](Self::set_tag_field_specifications).
+    ///
+    /// <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>
+    pub fn tag_field_specifications(mut self, input: crate::types::TagFieldSpecificationRequest) -> Self {
+        self.inner = self.inner.tag_field_specifications(input);
+        self
+    }
+    /// <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>
+    pub fn set_tag_field_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFieldSpecificationRequest>>) -> Self {
+        self.inner = self.inner.set_tag_field_specifications(input);
+        self
+    }
+    /// <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>
+    pub fn get_tag_field_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFieldSpecificationRequest>> {
+        self.inner.get_tag_field_specifications()
+    }
 }

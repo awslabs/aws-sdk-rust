@@ -9,5 +9,8 @@ pub fn ser_put_suppressed_destination_input_input(
     if let Some(var_2) = &input.reason {
         object.key("Reason").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.tenant_name {
+        object.key("TenantName").string(var_3.as_str());
+    }
     Ok(())
 }

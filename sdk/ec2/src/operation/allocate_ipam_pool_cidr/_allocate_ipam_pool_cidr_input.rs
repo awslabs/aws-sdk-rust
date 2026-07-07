@@ -35,6 +35,9 @@ pub struct AllocateIpamPoolCidrInput {
     pub allowed_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
     pub disallowed_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl AllocateIpamPoolCidrInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -91,6 +94,13 @@ impl AllocateIpamPoolCidrInput {
     pub fn disallowed_cidrs(&self) -> &[::std::string::String] {
         self.disallowed_cidrs.as_deref().unwrap_or_default()
     }
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
+    }
 }
 impl AllocateIpamPoolCidrInput {
     /// Creates a new builder-style object to manufacture [`AllocateIpamPoolCidrInput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput).
@@ -112,6 +122,7 @@ pub struct AllocateIpamPoolCidrInputBuilder {
     pub(crate) preview_next_cidr: ::std::option::Option<bool>,
     pub(crate) allowed_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) disallowed_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl AllocateIpamPoolCidrInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -295,6 +306,29 @@ impl AllocateIpamPoolCidrInputBuilder {
     pub fn get_disallowed_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.disallowed_cidrs
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// Consumes the builder and constructs a [`AllocateIpamPoolCidrInput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput).
     pub fn build(
         self,
@@ -310,6 +344,7 @@ impl AllocateIpamPoolCidrInputBuilder {
             preview_next_cidr: self.preview_next_cidr,
             allowed_cidrs: self.allowed_cidrs,
             disallowed_cidrs: self.disallowed_cidrs,
+            tag_specifications: self.tag_specifications,
         })
     }
 }

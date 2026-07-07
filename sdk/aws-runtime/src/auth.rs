@@ -284,10 +284,7 @@ fn extract_field_from_endpoint_config<'a>(
     field_name: &'static str,
     endpoint_config: &'a AuthSchemeEndpointConfig<'_>,
 ) -> Option<&'a Document> {
-    endpoint_config
-        .as_document()
-        .and_then(Document::as_object)
-        .and_then(|config| config.get(field_name))
+    endpoint_config.get(field_name)
 }
 
 fn apply_signing_instructions(

@@ -133,6 +133,8 @@ pub(crate) fn de_start_capacity_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -176,12 +178,16 @@ pub(crate) fn de_start_capacity_task(
                 }
                 "Failed" => {
                     builder = builder.set_failed(crate::protocol_serde::shape_capacity_task_failure::de_capacity_task_failure(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "InstancesToExclude" => {
                     builder = builder.set_instances_to_exclude(crate::protocol_serde::shape_instances_to_exclude::de_instances_to_exclude(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "LastModifiedDate" => {
@@ -206,7 +212,7 @@ pub(crate) fn de_start_capacity_task(
                 }
                 "RequestedInstancePools" => {
                     builder = builder.set_requested_instance_pools(
-                        crate::protocol_serde::shape_requested_instance_pools::de_requested_instance_pools(tokens, _value)?,
+                        crate::protocol_serde::shape_requested_instance_pools::de_requested_instance_pools(tokens, _value, depth + 1)?,
                     );
                 }
                 "TaskActionOnBlockingInstances" => {

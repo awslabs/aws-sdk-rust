@@ -2,10 +2,16 @@
 pub(crate) fn de_list_access_points_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ListAccessPointsDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,10 +57,14 @@ where
                             );
                         }
                         "posixUser" => {
-                            builder = builder.set_posix_user(crate::protocol_serde::shape_posix_user::de_posix_user(tokens, _value)?);
+                            builder = builder.set_posix_user(crate::protocol_serde::shape_posix_user::de_posix_user(tokens, _value, depth + 1)?);
                         }
                         "rootDirectory" => {
-                            builder = builder.set_root_directory(crate::protocol_serde::shape_root_directory::de_root_directory(tokens, _value)?);
+                            builder = builder.set_root_directory(crate::protocol_serde::shape_root_directory::de_root_directory(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "name" => {
                             builder = builder.set_name(

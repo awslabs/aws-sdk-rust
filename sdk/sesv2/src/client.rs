@@ -355,6 +355,8 @@ mod put_email_identity_mail_from_attributes;
 
 mod put_suppressed_destination;
 
+mod put_tenant_suppression_attributes;
+
 mod send_bulk_email;
 
 mod send_custom_verification_email;

@@ -2,10 +2,16 @@
 pub(crate) fn de_invocation_input_member<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InvocationInputMember>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,18 +37,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "apiInvocationInput" => Some(crate::types::InvocationInputMember::ApiInvocationInput(
-                            crate::protocol_serde::shape_api_invocation_input::de_api_invocation_input(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'apiInvocationInput' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_api_invocation_input::de_api_invocation_input(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'apiInvocationInput' cannot be null"),
+                            )?,
                         )),
                         "functionInvocationInput" => Some(crate::types::InvocationInputMember::FunctionInvocationInput(
-                            crate::protocol_serde::shape_function_invocation_input::de_function_invocation_input(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_function_invocation_input::de_function_invocation_input(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'functionInvocationInput' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

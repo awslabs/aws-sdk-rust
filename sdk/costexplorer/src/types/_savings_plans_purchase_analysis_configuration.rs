@@ -16,6 +16,8 @@ pub struct SavingsPlansPurchaseAnalysisConfiguration {
     pub savings_plans_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time period associated with the analysis.</p>
     pub look_back_time_period: ::std::option::Option<crate::types::DateInterval>,
+    /// <p>Specifies the target Savings Plans coverage as a percentage from <code>10</code> to <code>100</code>. This field is required when <code>AnalysisType</code> is <code>TARGET_AVERAGE_COVERAGE</code>. It defines the target average hourly coverage that the recommended Savings Plans commitment should achieve over the lookback period.</p>
+    pub savings_plans_target_coverage: ::std::option::Option<i32>,
 }
 impl SavingsPlansPurchaseAnalysisConfiguration {
     /// <p>The account scope that you want your analysis for.</p>
@@ -45,6 +47,10 @@ impl SavingsPlansPurchaseAnalysisConfiguration {
     pub fn look_back_time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
         self.look_back_time_period.as_ref()
     }
+    /// <p>Specifies the target Savings Plans coverage as a percentage from <code>10</code> to <code>100</code>. This field is required when <code>AnalysisType</code> is <code>TARGET_AVERAGE_COVERAGE</code>. It defines the target average hourly coverage that the recommended Savings Plans commitment should achieve over the lookback period.</p>
+    pub fn savings_plans_target_coverage(&self) -> ::std::option::Option<i32> {
+        self.savings_plans_target_coverage
+    }
 }
 impl SavingsPlansPurchaseAnalysisConfiguration {
     /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseAnalysisConfiguration`](crate::types::SavingsPlansPurchaseAnalysisConfiguration).
@@ -63,6 +69,7 @@ pub struct SavingsPlansPurchaseAnalysisConfigurationBuilder {
     pub(crate) savings_plans_to_add: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlans>>,
     pub(crate) savings_plans_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) look_back_time_period: ::std::option::Option<crate::types::DateInterval>,
+    pub(crate) savings_plans_target_coverage: ::std::option::Option<i32>,
 }
 impl SavingsPlansPurchaseAnalysisConfigurationBuilder {
     /// <p>The account scope that you want your analysis for.</p>
@@ -163,6 +170,20 @@ impl SavingsPlansPurchaseAnalysisConfigurationBuilder {
     pub fn get_look_back_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         &self.look_back_time_period
     }
+    /// <p>Specifies the target Savings Plans coverage as a percentage from <code>10</code> to <code>100</code>. This field is required when <code>AnalysisType</code> is <code>TARGET_AVERAGE_COVERAGE</code>. It defines the target average hourly coverage that the recommended Savings Plans commitment should achieve over the lookback period.</p>
+    pub fn savings_plans_target_coverage(mut self, input: i32) -> Self {
+        self.savings_plans_target_coverage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the target Savings Plans coverage as a percentage from <code>10</code> to <code>100</code>. This field is required when <code>AnalysisType</code> is <code>TARGET_AVERAGE_COVERAGE</code>. It defines the target average hourly coverage that the recommended Savings Plans commitment should achieve over the lookback period.</p>
+    pub fn set_savings_plans_target_coverage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.savings_plans_target_coverage = input;
+        self
+    }
+    /// <p>Specifies the target Savings Plans coverage as a percentage from <code>10</code> to <code>100</code>. This field is required when <code>AnalysisType</code> is <code>TARGET_AVERAGE_COVERAGE</code>. It defines the target average hourly coverage that the recommended Savings Plans commitment should achieve over the lookback period.</p>
+    pub fn get_savings_plans_target_coverage(&self) -> &::std::option::Option<i32> {
+        &self.savings_plans_target_coverage
+    }
     /// Consumes the builder and constructs a [`SavingsPlansPurchaseAnalysisConfiguration`](crate::types::SavingsPlansPurchaseAnalysisConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`analysis_type`](crate::types::builders::SavingsPlansPurchaseAnalysisConfigurationBuilder::analysis_type)
@@ -187,6 +208,7 @@ impl SavingsPlansPurchaseAnalysisConfigurationBuilder {
             })?,
             savings_plans_to_exclude: self.savings_plans_to_exclude,
             look_back_time_period: self.look_back_time_period,
+            savings_plans_target_coverage: self.savings_plans_target_coverage,
         })
     }
 }

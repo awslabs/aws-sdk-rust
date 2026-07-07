@@ -23,20 +23,22 @@ pub struct UpdateFunctionCodeInput {
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub s3_object_version: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub s3_object_storage_mode: ::std::option::Option<crate::types::S3ObjectStorageMode>,
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
+    pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub publish: ::std::option::Option<bool>,
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
     /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
     pub source_kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies where to publish the function version or configuration.</p>
-    pub publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
 }
 impl UpdateFunctionCodeInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -69,13 +71,27 @@ impl UpdateFunctionCodeInput {
     pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
         self.s3_object_version.as_deref()
     }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn s3_object_storage_mode(&self) -> ::std::option::Option<&crate::types::S3ObjectStorageMode> {
+        self.s3_object_storage_mode.as_ref()
+    }
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
     }
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
+    pub fn architectures(&self) -> &[crate::types::Architecture] {
+        self.architectures.as_deref().unwrap_or_default()
+    }
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub fn publish(&self) -> ::std::option::Option<bool> {
         self.publish
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(&self) -> ::std::option::Option<&crate::types::FunctionVersionLatestPublished> {
+        self.publish_to.as_ref()
     }
     /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -85,19 +101,9 @@ impl UpdateFunctionCodeInput {
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
-    pub fn architectures(&self) -> &[crate::types::Architecture] {
-        self.architectures.as_deref().unwrap_or_default()
-    }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
     pub fn source_kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.source_kms_key_arn.as_deref()
-    }
-    /// <p>Specifies where to publish the function version or configuration.</p>
-    pub fn publish_to(&self) -> ::std::option::Option<&crate::types::FunctionVersionLatestPublished> {
-        self.publish_to.as_ref()
     }
 }
 impl ::std::fmt::Debug for UpdateFunctionCodeInput {
@@ -108,13 +114,14 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInput {
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
+        formatter.field("s3_object_storage_mode", &self.s3_object_storage_mode);
         formatter.field("image_uri", &self.image_uri);
+        formatter.field("architectures", &self.architectures);
         formatter.field("publish", &self.publish);
+        formatter.field("publish_to", &self.publish_to);
         formatter.field("dry_run", &self.dry_run);
         formatter.field("revision_id", &self.revision_id);
-        formatter.field("architectures", &self.architectures);
         formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
-        formatter.field("publish_to", &self.publish_to);
         formatter.finish()
     }
 }
@@ -134,13 +141,14 @@ pub struct UpdateFunctionCodeInputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) s3_object_version: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_object_storage_mode: ::std::option::Option<crate::types::S3ObjectStorageMode>,
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     pub(crate) publish: ::std::option::Option<bool>,
+    pub(crate) publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
-    pub(crate) architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     pub(crate) source_kms_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
 }
 impl UpdateFunctionCodeInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -244,6 +252,20 @@ impl UpdateFunctionCodeInputBuilder {
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_object_version
     }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn s3_object_storage_mode(mut self, input: crate::types::S3ObjectStorageMode) -> Self {
+        self.s3_object_storage_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn set_s3_object_storage_mode(mut self, input: ::std::option::Option<crate::types::S3ObjectStorageMode>) -> Self {
+        self.s3_object_storage_mode = input;
+        self
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn get_s3_object_storage_mode(&self) -> &::std::option::Option<crate::types::S3ObjectStorageMode> {
+        &self.s3_object_storage_mode
+    }
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
@@ -258,6 +280,26 @@ impl UpdateFunctionCodeInputBuilder {
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }
+    /// Appends an item to `architectures`.
+    ///
+    /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
+    ///
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
+    pub fn architectures(mut self, input: crate::types::Architecture) -> Self {
+        let mut v = self.architectures.unwrap_or_default();
+        v.push(input);
+        self.architectures = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
+    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
+        self.architectures = input;
+        self
+    }
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
+    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+        &self.architectures
+    }
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub fn publish(mut self, input: bool) -> Self {
         self.publish = ::std::option::Option::Some(input);
@@ -271,6 +313,20 @@ impl UpdateFunctionCodeInputBuilder {
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub fn get_publish(&self) -> &::std::option::Option<bool> {
         &self.publish
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
+        self.publish_to = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
+        self.publish_to = input;
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
+        &self.publish_to
     }
     /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -300,26 +356,6 @@ impl UpdateFunctionCodeInputBuilder {
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
-    /// Appends an item to `architectures`.
-    ///
-    /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
-    ///
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn architectures(mut self, input: crate::types::Architecture) -> Self {
-        let mut v = self.architectures.unwrap_or_default();
-        v.push(input);
-        self.architectures = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
-        self.architectures = input;
-        self
-    }
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
-        &self.architectures
-    }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
     pub fn source_kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_kms_key_arn = ::std::option::Option::Some(input.into());
@@ -334,20 +370,6 @@ impl UpdateFunctionCodeInputBuilder {
     pub fn get_source_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_kms_key_arn
     }
-    /// <p>Specifies where to publish the function version or configuration.</p>
-    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
-        self.publish_to = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies where to publish the function version or configuration.</p>
-    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
-        self.publish_to = input;
-        self
-    }
-    /// <p>Specifies where to publish the function version or configuration.</p>
-    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
-        &self.publish_to
-    }
     /// Consumes the builder and constructs a [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
     pub fn build(
         self,
@@ -359,13 +381,14 @@ impl UpdateFunctionCodeInputBuilder {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,
             s3_object_version: self.s3_object_version,
+            s3_object_storage_mode: self.s3_object_storage_mode,
             image_uri: self.image_uri,
+            architectures: self.architectures,
             publish: self.publish,
+            publish_to: self.publish_to,
             dry_run: self.dry_run,
             revision_id: self.revision_id,
-            architectures: self.architectures,
             source_kms_key_arn: self.source_kms_key_arn,
-            publish_to: self.publish_to,
         })
     }
 }
@@ -377,13 +400,14 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInputBuilder {
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
+        formatter.field("s3_object_storage_mode", &self.s3_object_storage_mode);
         formatter.field("image_uri", &self.image_uri);
+        formatter.field("architectures", &self.architectures);
         formatter.field("publish", &self.publish);
+        formatter.field("publish_to", &self.publish_to);
         formatter.field("dry_run", &self.dry_run);
         formatter.field("revision_id", &self.revision_id);
-        formatter.field("architectures", &self.architectures);
         formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
-        formatter.field("publish_to", &self.publish_to);
         formatter.finish()
     }
 }

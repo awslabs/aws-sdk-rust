@@ -99,6 +99,8 @@ pub(crate) fn de_get_maintenance_window_execution_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -142,7 +144,9 @@ pub(crate) fn de_get_maintenance_window_execution_task(
                 "TaskParameters" => {
                     builder = builder.set_task_parameters(
                         crate::protocol_serde::shape_maintenance_window_task_parameters_list::de_maintenance_window_task_parameters_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -194,12 +198,15 @@ pub(crate) fn de_get_maintenance_window_execution_task(
                     )?);
                 }
                 "AlarmConfiguration" => {
-                    builder =
-                        builder.set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value)?);
+                    builder = builder.set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "TriggeredAlarms" => {
                     builder = builder.set_triggered_alarms(
-                        crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(tokens, _value)?,
+                        crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

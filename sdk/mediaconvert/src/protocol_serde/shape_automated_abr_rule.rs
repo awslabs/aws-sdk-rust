@@ -48,10 +48,16 @@ pub fn ser_automated_abr_rule(
 pub(crate) fn de_automated_abr_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomatedAbrRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,24 +69,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allowedRenditions" => {
                             builder = builder.set_allowed_renditions(
-                                crate::protocol_serde::shape_list_of_allowed_rendition_size::de_list_of_allowed_rendition_size(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_allowed_rendition_size::de_list_of_allowed_rendition_size(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "forceIncludeRenditions" => {
                             builder = builder.set_force_include_renditions(
                                 crate::protocol_serde::shape_list_of_force_include_rendition_size::de_list_of_force_include_rendition_size(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "minBottomRenditionSize" => {
                             builder = builder.set_min_bottom_rendition_size(
-                                crate::protocol_serde::shape_min_bottom_rendition_size::de_min_bottom_rendition_size(tokens, _value)?,
+                                crate::protocol_serde::shape_min_bottom_rendition_size::de_min_bottom_rendition_size(tokens, _value, depth + 1)?,
                             );
                         }
                         "minTopRenditionSize" => {
                             builder = builder.set_min_top_rendition_size(
-                                crate::protocol_serde::shape_min_top_rendition_size::de_min_top_rendition_size(tokens, _value)?,
+                                crate::protocol_serde::shape_min_top_rendition_size::de_min_top_rendition_size(tokens, _value, depth + 1)?,
                             );
                         }
                         "type" => {

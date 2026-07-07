@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_hosted_zone(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::HostedZone, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::HostedZone::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_hosted_zone(
             s if s.matches("Config") /* Config com.amazonaws.route53#HostedZone$Config */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_hosted_zone_config::de_hosted_zone_config(&mut tag)
+                        crate::protocol_serde::shape_hosted_zone_config::de_hosted_zone_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -74,7 +78,7 @@ pub fn de_hosted_zone(
             s if s.matches("LinkedService") /* LinkedService com.amazonaws.route53#HostedZone$LinkedService */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_linked_service::de_linked_service(&mut tag)
+                        crate::protocol_serde::shape_linked_service::de_linked_service(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -84,7 +88,7 @@ pub fn de_hosted_zone(
             s if s.matches("Features") /* Features com.amazonaws.route53#HostedZone$Features */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_hosted_zone_features::de_hosted_zone_features(&mut tag)
+                        crate::protocol_serde::shape_hosted_zone_features::de_hosted_zone_features(&mut tag, depth + 1)
                         ?
                     )
                 ;

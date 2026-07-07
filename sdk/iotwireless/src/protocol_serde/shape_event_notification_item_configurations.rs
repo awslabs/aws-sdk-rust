@@ -2,10 +2,16 @@
 pub(crate) fn de_event_notification_item_configurations<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EventNotificationItemConfigurations>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,29 +23,37 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DeviceRegistrationState" => {
                             builder = builder.set_device_registration_state(
-                                    crate::protocol_serde::shape_device_registration_state_event_configuration::de_device_registration_state_event_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_device_registration_state_event_configuration::de_device_registration_state_event_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         "Proximity" => {
                             builder = builder.set_proximity(
-                                crate::protocol_serde::shape_proximity_event_configuration::de_proximity_event_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_proximity_event_configuration::de_proximity_event_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Join" => {
                             builder = builder.set_join(crate::protocol_serde::shape_join_event_configuration::de_join_event_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ConnectionStatus" => {
                             builder = builder.set_connection_status(
                                 crate::protocol_serde::shape_connection_status_event_configuration::de_connection_status_event_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "MessageDeliveryStatus" => {
                             builder = builder.set_message_delivery_status(
-                                    crate::protocol_serde::shape_message_delivery_status_event_configuration::de_message_delivery_status_event_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_message_delivery_status_event_configuration::de_message_delivery_status_event_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

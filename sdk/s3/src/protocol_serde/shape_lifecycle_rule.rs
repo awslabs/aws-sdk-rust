@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_lifecycle_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LifecycleRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LifecycleRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("Expiration") /* Expiration com.amazonaws.s3#LifecycleRule$Expiration */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_lifecycle_expiration::de_lifecycle_expiration(&mut tag)
+                        crate::protocol_serde::shape_lifecycle_expiration::de_lifecycle_expiration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("Filter") /* Filter com.amazonaws.s3#LifecycleRule$Filter */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_lifecycle_rule_filter::de_lifecycle_rule_filter(&mut tag)
+                        crate::protocol_serde::shape_lifecycle_rule_filter::de_lifecycle_rule_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +77,7 @@ pub fn de_lifecycle_rule(
                         Result::<::std::vec::Vec::<crate::types::Transition>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.transitions.take().unwrap_or_default();
                             list_7.push(
-                                crate::protocol_serde::shape_transition::de_transition(&mut tag)
+                                crate::protocol_serde::shape_transition::de_transition(&mut tag, depth + 1)
                                 ?
                             );
                             list_7
@@ -90,7 +94,7 @@ pub fn de_lifecycle_rule(
                         Result::<::std::vec::Vec::<crate::types::NoncurrentVersionTransition>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_9 = builder.noncurrent_version_transitions.take().unwrap_or_default();
                             list_9.push(
-                                crate::protocol_serde::shape_noncurrent_version_transition::de_noncurrent_version_transition(&mut tag)
+                                crate::protocol_serde::shape_noncurrent_version_transition::de_noncurrent_version_transition(&mut tag, depth + 1)
                                 ?
                             );
                             list_9
@@ -104,7 +108,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("NoncurrentVersionExpiration") /* NoncurrentVersionExpiration com.amazonaws.s3#LifecycleRule$NoncurrentVersionExpiration */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_noncurrent_version_expiration::de_noncurrent_version_expiration(&mut tag)
+                        crate::protocol_serde::shape_noncurrent_version_expiration::de_noncurrent_version_expiration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -114,7 +118,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("AbortIncompleteMultipartUpload") /* AbortIncompleteMultipartUpload com.amazonaws.s3#LifecycleRule$AbortIncompleteMultipartUpload */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_abort_incomplete_multipart_upload::de_abort_incomplete_multipart_upload(&mut tag)
+                        crate::protocol_serde::shape_abort_incomplete_multipart_upload::de_abort_incomplete_multipart_upload(&mut tag, depth + 1)
                         ?
                     )
                 ;

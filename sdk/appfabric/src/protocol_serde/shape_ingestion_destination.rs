@@ -2,10 +2,16 @@
 pub(crate) fn de_ingestion_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::IngestionDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,12 +37,12 @@ where
                         }
                         "processingConfiguration" => {
                             builder = builder.set_processing_configuration(
-                                crate::protocol_serde::shape_processing_configuration::de_processing_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_processing_configuration::de_processing_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "destinationConfiguration" => {
                             builder = builder.set_destination_configuration(
-                                crate::protocol_serde::shape_destination_configuration::de_destination_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_destination_configuration::de_destination_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "status" => {

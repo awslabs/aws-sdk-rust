@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_network_interface(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceNetworkInterface, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceNetworkInterface::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_instance_network_interface(
             s if s.matches("association") /* Association com.amazonaws.ec2#InstanceNetworkInterface$Association */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_network_interface_association::de_instance_network_interface_association(&mut tag)
+                        crate::protocol_serde::shape_instance_network_interface_association::de_instance_network_interface_association(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_instance_network_interface(
             s if s.matches("attachment") /* Attachment com.amazonaws.ec2#InstanceNetworkInterface$Attachment */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_instance_network_interface_attachment::de_instance_network_interface_attachment(&mut tag)
+                        crate::protocol_serde::shape_instance_network_interface_attachment::de_instance_network_interface_attachment(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_instance_network_interface(
             s if s.matches("groupSet") /* Groups com.amazonaws.ec2#InstanceNetworkInterface$Groups */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_instance_network_interface(
             s if s.matches("ipv6AddressesSet") /* Ipv6Addresses com.amazonaws.ec2#InstanceNetworkInterface$Ipv6Addresses */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_instance_ipv6_address_list::de_instance_ipv6_address_list(&mut tag)
+                        crate::protocol_serde::shape_instance_ipv6_address_list::de_instance_ipv6_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -128,7 +132,7 @@ pub fn de_instance_network_interface(
             s if s.matches("privateIpAddressesSet") /* PrivateIpAddresses com.amazonaws.ec2#InstanceNetworkInterface$PrivateIpAddresses */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_instance_private_ip_address_list::de_instance_private_ip_address_list(&mut tag)
+                        crate::protocol_serde::shape_instance_private_ip_address_list::de_instance_private_ip_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -206,7 +210,7 @@ pub fn de_instance_network_interface(
             s if s.matches("ipv4PrefixSet") /* Ipv4Prefixes com.amazonaws.ec2#InstanceNetworkInterface$Ipv4Prefixes */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_instance_ipv4_prefix_list::de_instance_ipv4_prefix_list(&mut tag)
+                        crate::protocol_serde::shape_instance_ipv4_prefix_list::de_instance_ipv4_prefix_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -216,7 +220,7 @@ pub fn de_instance_network_interface(
             s if s.matches("ipv6PrefixSet") /* Ipv6Prefixes com.amazonaws.ec2#InstanceNetworkInterface$Ipv6Prefixes */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_instance_ipv6_prefix_list::de_instance_ipv6_prefix_list(&mut tag)
+                        crate::protocol_serde::shape_instance_ipv6_prefix_list::de_instance_ipv6_prefix_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -226,7 +230,7 @@ pub fn de_instance_network_interface(
             s if s.matches("connectionTrackingConfiguration") /* ConnectionTrackingConfiguration com.amazonaws.ec2#InstanceNetworkInterface$ConnectionTrackingConfiguration */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_connection_tracking_specification_response::de_connection_tracking_specification_response(&mut tag)
+                        crate::protocol_serde::shape_connection_tracking_specification_response::de_connection_tracking_specification_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -236,7 +240,7 @@ pub fn de_instance_network_interface(
             s if s.matches("operator") /* Operator com.amazonaws.ec2#InstanceNetworkInterface$Operator */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

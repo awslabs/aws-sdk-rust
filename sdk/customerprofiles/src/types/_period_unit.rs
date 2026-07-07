@@ -14,6 +14,7 @@
 /// match periodunit {
 ///     PeriodUnit::Days => { /* ... */ },
 ///     PeriodUnit::Hours => { /* ... */ },
+///     PeriodUnit::Minutes => { /* ... */ },
 ///     PeriodUnit::Months => { /* ... */ },
 ///     PeriodUnit::Weeks => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum PeriodUnit {
     #[allow(missing_docs)] // documentation missing in model
     Hours,
     #[allow(missing_docs)] // documentation missing in model
+    Minutes,
+    #[allow(missing_docs)] // documentation missing in model
     Months,
     #[allow(missing_docs)] // documentation missing in model
     Weeks,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for PeriodUnit {
         match s {
             "DAYS" => PeriodUnit::Days,
             "HOURS" => PeriodUnit::Hours,
+            "MINUTES" => PeriodUnit::Minutes,
             "MONTHS" => PeriodUnit::Months,
             "WEEKS" => PeriodUnit::Weeks,
             other => PeriodUnit::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl PeriodUnit {
         match self {
             PeriodUnit::Days => "DAYS",
             PeriodUnit::Hours => "HOURS",
+            PeriodUnit::Minutes => "MINUTES",
             PeriodUnit::Months => "MONTHS",
             PeriodUnit::Weeks => "WEEKS",
             PeriodUnit::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl PeriodUnit {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAYS", "HOURS", "MONTHS", "WEEKS"]
+        &["DAYS", "HOURS", "MINUTES", "MONTHS", "WEEKS"]
     }
 }
 impl ::std::convert::AsRef<str> for PeriodUnit {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for PeriodUnit {
         match self {
             PeriodUnit::Days => write!(f, "DAYS"),
             PeriodUnit::Hours => write!(f, "HOURS"),
+            PeriodUnit::Minutes => write!(f, "MINUTES"),
             PeriodUnit::Months => write!(f, "MONTHS"),
             PeriodUnit::Weeks => write!(f, "WEEKS"),
             PeriodUnit::Unknown(value) => write!(f, "{value}"),

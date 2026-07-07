@@ -53,6 +53,8 @@ pub use crate::types::_network::Network;
 
 pub use crate::types::_read_receipt_config::ReadReceiptConfig;
 
+pub use crate::types::_consent_popup_config::ConsentPopupConfig;
+
 pub use crate::types::_calling_settings::CallingSettings;
 
 pub use crate::types::_password_requirements::PasswordRequirements;
@@ -88,6 +90,8 @@ mod _blocked_guest_user;
 mod _bot;
 
 mod _calling_settings;
+
+mod _consent_popup_config;
 
 mod _data_retention_action_type;
 

@@ -93,23 +93,26 @@ pub(crate) fn de_list_service_versions(
     crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
-            "ServiceVersions" => {
-                builder.set_service_versions(Some(crate::protocol_serde::shape_service_version_list::de_service_version_list(decoder)?))
-            }
+            "ServiceVersions" => builder.set_service_versions(Some(crate::protocol_serde::shape_service_version_list::de_service_version_list(
+                decoder,
+                depth + 1,
+            )?)),
             "ServiceName" => builder.set_service_name(Some(decoder.string().map(|s| crate::types::ServiceName::from(s.as_ref()))?)),
             "DependentServices" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_dependent_services(Some(crate::protocol_serde::shape_dependent_service_list::de_dependent_service_list(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -125,6 +128,8 @@ pub(crate) fn de_list_service_versions(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -134,13 +139,13 @@ pub(crate) fn de_list_service_versions(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

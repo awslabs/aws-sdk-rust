@@ -5,6 +5,8 @@ pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExcep
 
 pub use crate::types::error::_not_authorized_exception::NotAuthorizedExceptionBuilder;
 
+pub use crate::types::error::_operation_not_enabled_exception::OperationNotEnabledExceptionBuilder;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExceptionBuilder;
@@ -110,5 +112,7 @@ pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuild
 pub use crate::types::error::_unsupported_token_type_exception::UnsupportedTokenTypeExceptionBuilder;
 
 pub use crate::types::error::_web_authn_configuration_missing_exception::WebAuthnConfigurationMissingExceptionBuilder;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
 pub use crate::types::error::_enable_software_token_mfa_exception::EnableSoftwareTokenMfaExceptionBuilder;

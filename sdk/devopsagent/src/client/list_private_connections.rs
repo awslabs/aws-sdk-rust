@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::list_private_connections::builders::ListPrivateConnectionsFluentBuilder::send) it.
     /// - On success, responds with [`ListPrivateConnectionsOutput`](crate::operation::list_private_connections::ListPrivateConnectionsOutput) with field(s):
-    ///   - [`private_connections(Vec::<PrivateConnectionSummary>)`](crate::operation::list_private_connections::ListPrivateConnectionsOutput::private_connections): The list of Private Connections.
+    ///   - [`private_connections(Vec::<PrivateConnectionSummary>)`](crate::operation::list_private_connections::ListPrivateConnectionsOutput::private_connections): <p>The list of Private Connections.</p>
     /// - On failure, responds with [`SdkError<ListPrivateConnectionsError>`](crate::operation::list_private_connections::ListPrivateConnectionsError)
     pub fn list_private_connections(&self) -> crate::operation::list_private_connections::builders::ListPrivateConnectionsFluentBuilder {
         crate::operation::list_private_connections::builders::ListPrivateConnectionsFluentBuilder::new(self.handle.clone())

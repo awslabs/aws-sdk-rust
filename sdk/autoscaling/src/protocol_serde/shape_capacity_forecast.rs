@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_capacity_forecast(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CapacityForecast, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CapacityForecast::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_capacity_forecast(
             s if s.matches("Timestamps") /* Timestamps com.amazonaws.autoscaling#CapacityForecast$Timestamps */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_forecast_timestamps::de_predictive_scaling_forecast_timestamps(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_forecast_timestamps::de_predictive_scaling_forecast_timestamps(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_capacity_forecast(
             s if s.matches("Values") /* Values com.amazonaws.autoscaling#CapacityForecast$Values */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_forecast_values::de_predictive_scaling_forecast_values(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_forecast_values::de_predictive_scaling_forecast_values(&mut tag, depth + 1)
                         ?
                     )
                 ;

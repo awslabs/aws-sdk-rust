@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_access_point(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AccessPoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AccessPoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -37,7 +41,7 @@ pub fn de_access_point(
             s if s.matches("VpcConfiguration") /* VpcConfiguration com.amazonaws.s3control#AccessPoint$VpcConfiguration */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(&mut tag)
+                        crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

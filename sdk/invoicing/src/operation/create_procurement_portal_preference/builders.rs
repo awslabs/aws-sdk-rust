@@ -22,6 +22,7 @@ impl crate::operation::create_procurement_portal_preference::builders::CreatePro
 }
 /// Fluent builder constructing a request to `CreateProcurementPortalPreference`.
 ///
+/// <p><i> <b>This feature API is subject to changing at any time. For more information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Betas and Previews).</b> </i></p>
 /// <p>Creates a procurement portal preference configuration for e-invoice delivery and purchase order retrieval. This preference defines how invoices are delivered to a procurement portal and how purchase orders are retrieved.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProcurementPortalPreferenceFluentBuilder {

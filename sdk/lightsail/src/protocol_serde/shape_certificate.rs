@@ -2,10 +2,16 @@
 pub(crate) fn de_certificate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Certificate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,12 +58,20 @@ where
                         }
                         "subjectAlternativeNames" => {
                             builder = builder.set_subject_alternative_names(
-                                crate::protocol_serde::shape_subject_alternative_name_list::de_subject_alternative_name_list(tokens, _value)?,
+                                crate::protocol_serde::shape_subject_alternative_name_list::de_subject_alternative_name_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "domainValidationRecords" => {
                             builder = builder.set_domain_validation_records(
-                                crate::protocol_serde::shape_domain_validation_record_list::de_domain_validation_record_list(tokens, _value)?,
+                                crate::protocol_serde::shape_domain_validation_record_list::de_domain_validation_record_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "requestFailureReason" => {
@@ -120,7 +134,11 @@ where
                             );
                         }
                         "renewalSummary" => {
-                            builder = builder.set_renewal_summary(crate::protocol_serde::shape_renewal_summary::de_renewal_summary(tokens, _value)?);
+                            builder = builder.set_renewal_summary(crate::protocol_serde::shape_renewal_summary::de_renewal_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "revokedAt" => {
                             builder = builder.set_revoked_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -136,7 +154,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "supportCode" => {
                             builder = builder.set_support_code(

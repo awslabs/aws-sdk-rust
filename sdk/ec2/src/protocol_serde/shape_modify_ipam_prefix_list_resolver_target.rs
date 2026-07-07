@@ -51,6 +51,8 @@ pub fn de_modify_ipam_prefix_list_resolver_target(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyIpamPrefixListResolverTargetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyIpamPrefixListResolverTargetResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_modify_ipam_prefix_list_resolver_target(
             s if s.matches("ipamPrefixListResolverTarget") /* IpamPrefixListResolverTarget com.amazonaws.ec2.synthetic#ModifyIpamPrefixListResolverTargetOutput$IpamPrefixListResolverTarget */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipam_prefix_list_resolver_target::de_ipam_prefix_list_resolver_target(&mut tag)
+                        crate::protocol_serde::shape_ipam_prefix_list_resolver_target::de_ipam_prefix_list_resolver_target(&mut tag, depth + 1)
                         ?
                     )
                 ;

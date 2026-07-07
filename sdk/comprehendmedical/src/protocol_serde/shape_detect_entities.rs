@@ -148,18 +148,20 @@ pub(crate) fn de_detect_entities(
     value: &[u8],
     mut builder: crate::operation::detect_entities::builders::DetectEntitiesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::detect_entities::builders::DetectEntitiesOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::detect_entities::builders::DetectEntitiesOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::detect_entities::builders::DetectEntitiesOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
-            "Entities" => builder.set_entities(Some(crate::protocol_serde::shape_entity_list::de_entity_list(decoder)?)),
+            "Entities" => builder.set_entities(Some(crate::protocol_serde::shape_entity_list::de_entity_list(decoder, depth + 1)?)),
             "UnmappedAttributes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_unmapped_attributes(Some(crate::protocol_serde::shape_unmapped_attribute_list::de_unmapped_attribute_list(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -176,6 +178,8 @@ pub(crate) fn de_detect_entities(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -185,13 +189,13 @@ pub(crate) fn de_detect_entities(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

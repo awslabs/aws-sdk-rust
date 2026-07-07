@@ -159,13 +159,19 @@ pub(crate) fn de_create_domain_unit(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ancestorDomainUnitIds" => {
-                    builder = builder.set_ancestor_domain_unit_ids(crate::protocol_serde::shape_domain_unit_ids::de_domain_unit_ids(tokens, _value)?);
+                    builder = builder.set_ancestor_domain_unit_ids(crate::protocol_serde::shape_domain_unit_ids::de_domain_unit_ids(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -209,7 +215,11 @@ pub(crate) fn de_create_domain_unit(
                     );
                 }
                 "owners" => {
-                    builder = builder.set_owners(crate::protocol_serde::shape_domain_unit_owners::de_domain_unit_owners(tokens, _value)?);
+                    builder = builder.set_owners(crate::protocol_serde::shape_domain_unit_owners::de_domain_unit_owners(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "parentDomainUnitId" => {
                     builder = builder.set_parent_domain_unit_id(

@@ -17,7 +17,7 @@ pub struct GetDomainSuggestionsInput {
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     pub suggestion_count: ::std::option::Option<i32>,
     /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
     pub only_available: ::std::option::Option<bool>,
@@ -39,7 +39,7 @@ impl GetDomainSuggestionsInput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     pub fn suggestion_count(&self) -> ::std::option::Option<i32> {
         self.suggestion_count
     }
@@ -115,18 +115,18 @@ impl GetDomainSuggestionsInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     /// This field is required.
     pub fn suggestion_count(mut self, input: i32) -> Self {
         self.suggestion_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     pub fn set_suggestion_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.suggestion_count = input;
         self
     }
-    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     pub fn get_suggestion_count(&self) -> &::std::option::Option<i32> {
         &self.suggestion_count
     }

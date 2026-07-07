@@ -15,6 +15,7 @@
 ///     ResourceType::CapacityBlock => { /* ... */ },
 ///     ResourceType::CapacityManagerDataExport => { /* ... */ },
 ///     ResourceType::CapacityReservation => { /* ... */ },
+///     ResourceType::CapacityReservationCancellationQuote => { /* ... */ },
 ///     ResourceType::CapacityReservationFleet => { /* ... */ },
 ///     ResourceType::CarrierGateway => { /* ... */ },
 ///     ResourceType::ClientVpnEndpoint => { /* ... */ },
@@ -43,6 +44,7 @@
 ///     ResourceType::IpamExternalResourceVerificationToken => { /* ... */ },
 ///     ResourceType::IpamPolicy => { /* ... */ },
 ///     ResourceType::IpamPool => { /* ... */ },
+///     ResourceType::IpamPoolAllocation => { /* ... */ },
 ///     ResourceType::IpamPrefixListResolver => { /* ... */ },
 ///     ResourceType::IpamPrefixListResolverTarget => { /* ... */ },
 ///     ResourceType::IpamResourceDiscovery => { /* ... */ },
@@ -154,6 +156,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CapacityReservation,
     #[allow(missing_docs)] // documentation missing in model
+    CapacityReservationCancellationQuote,
+    #[allow(missing_docs)] // documentation missing in model
     CapacityReservationFleet,
     #[allow(missing_docs)] // documentation missing in model
     CarrierGateway,
@@ -209,6 +213,8 @@ pub enum ResourceType {
     IpamPolicy,
     #[allow(missing_docs)] // documentation missing in model
     IpamPool,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamPoolAllocation,
     #[allow(missing_docs)] // documentation missing in model
     IpamPrefixListResolver,
     #[allow(missing_docs)] // documentation missing in model
@@ -371,6 +377,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "capacity-block" => ResourceType::CapacityBlock,
             "capacity-manager-data-export" => ResourceType::CapacityManagerDataExport,
             "capacity-reservation" => ResourceType::CapacityReservation,
+            "capacity-reservation-cancellation-quote" => ResourceType::CapacityReservationCancellationQuote,
             "capacity-reservation-fleet" => ResourceType::CapacityReservationFleet,
             "carrier-gateway" => ResourceType::CarrierGateway,
             "client-vpn-endpoint" => ResourceType::ClientVpnEndpoint,
@@ -399,6 +406,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "ipam-external-resource-verification-token" => ResourceType::IpamExternalResourceVerificationToken,
             "ipam-policy" => ResourceType::IpamPolicy,
             "ipam-pool" => ResourceType::IpamPool,
+            "ipam-pool-allocation" => ResourceType::IpamPoolAllocation,
             "ipam-prefix-list-resolver" => ResourceType::IpamPrefixListResolver,
             "ipam-prefix-list-resolver-target" => ResourceType::IpamPrefixListResolverTarget,
             "ipam-resource-discovery" => ResourceType::IpamResourceDiscovery,
@@ -493,6 +501,7 @@ impl ResourceType {
             ResourceType::CapacityBlock => "capacity-block",
             ResourceType::CapacityManagerDataExport => "capacity-manager-data-export",
             ResourceType::CapacityReservation => "capacity-reservation",
+            ResourceType::CapacityReservationCancellationQuote => "capacity-reservation-cancellation-quote",
             ResourceType::CapacityReservationFleet => "capacity-reservation-fleet",
             ResourceType::CarrierGateway => "carrier-gateway",
             ResourceType::ClientVpnEndpoint => "client-vpn-endpoint",
@@ -521,6 +530,7 @@ impl ResourceType {
             ResourceType::IpamExternalResourceVerificationToken => "ipam-external-resource-verification-token",
             ResourceType::IpamPolicy => "ipam-policy",
             ResourceType::IpamPool => "ipam-pool",
+            ResourceType::IpamPoolAllocation => "ipam-pool-allocation",
             ResourceType::IpamPrefixListResolver => "ipam-prefix-list-resolver",
             ResourceType::IpamPrefixListResolverTarget => "ipam-prefix-list-resolver-target",
             ResourceType::IpamResourceDiscovery => "ipam-resource-discovery",
@@ -606,6 +616,7 @@ impl ResourceType {
             "capacity-block",
             "capacity-manager-data-export",
             "capacity-reservation",
+            "capacity-reservation-cancellation-quote",
             "capacity-reservation-fleet",
             "carrier-gateway",
             "client-vpn-endpoint",
@@ -634,6 +645,7 @@ impl ResourceType {
             "ipam-external-resource-verification-token",
             "ipam-policy",
             "ipam-pool",
+            "ipam-pool-allocation",
             "ipam-prefix-list-resolver",
             "ipam-prefix-list-resolver-target",
             "ipam-resource-discovery",
@@ -736,6 +748,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::CapacityBlock => write!(f, "capacity-block"),
             ResourceType::CapacityManagerDataExport => write!(f, "capacity-manager-data-export"),
             ResourceType::CapacityReservation => write!(f, "capacity-reservation"),
+            ResourceType::CapacityReservationCancellationQuote => write!(f, "capacity-reservation-cancellation-quote"),
             ResourceType::CapacityReservationFleet => write!(f, "capacity-reservation-fleet"),
             ResourceType::CarrierGateway => write!(f, "carrier-gateway"),
             ResourceType::ClientVpnEndpoint => write!(f, "client-vpn-endpoint"),
@@ -764,6 +777,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::IpamExternalResourceVerificationToken => write!(f, "ipam-external-resource-verification-token"),
             ResourceType::IpamPolicy => write!(f, "ipam-policy"),
             ResourceType::IpamPool => write!(f, "ipam-pool"),
+            ResourceType::IpamPoolAllocation => write!(f, "ipam-pool-allocation"),
             ResourceType::IpamPrefixListResolver => write!(f, "ipam-prefix-list-resolver"),
             ResourceType::IpamPrefixListResolverTarget => write!(f, "ipam-prefix-list-resolver-target"),
             ResourceType::IpamResourceDiscovery => write!(f, "ipam-resource-discovery"),

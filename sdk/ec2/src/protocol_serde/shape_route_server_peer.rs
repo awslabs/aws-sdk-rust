@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_route_server_peer(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RouteServerPeer, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RouteServerPeer::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -141,7 +145,7 @@ pub fn de_route_server_peer(
             s if s.matches("bgpOptions") /* BgpOptions com.amazonaws.ec2#RouteServerPeer$BgpOptions */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_route_server_bgp_options::de_route_server_bgp_options(&mut tag)
+                        crate::protocol_serde::shape_route_server_bgp_options::de_route_server_bgp_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -151,7 +155,7 @@ pub fn de_route_server_peer(
             s if s.matches("bgpStatus") /* BgpStatus com.amazonaws.ec2#RouteServerPeer$BgpStatus */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_route_server_bgp_status::de_route_server_bgp_status(&mut tag)
+                        crate::protocol_serde::shape_route_server_bgp_status::de_route_server_bgp_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -161,7 +165,7 @@ pub fn de_route_server_peer(
             s if s.matches("bfdStatus") /* BfdStatus com.amazonaws.ec2#RouteServerPeer$BfdStatus */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_route_server_bfd_status::de_route_server_bfd_status(&mut tag)
+                        crate::protocol_serde::shape_route_server_bfd_status::de_route_server_bfd_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -171,7 +175,7 @@ pub fn de_route_server_peer(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#RouteServerPeer$Tags */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

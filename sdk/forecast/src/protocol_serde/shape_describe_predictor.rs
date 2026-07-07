@@ -88,6 +88,8 @@ pub(crate) fn de_describe_predictor(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -115,7 +117,7 @@ pub(crate) fn de_describe_predictor(
                     );
                 }
                 "AutoMLAlgorithmArns" => {
-                    builder = builder.set_auto_ml_algorithm_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
+                    builder = builder.set_auto_ml_algorithm_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value, depth + 1)?);
                 }
                 "ForecastHorizon" => {
                     builder = builder.set_forecast_horizon(
@@ -125,7 +127,7 @@ pub(crate) fn de_describe_predictor(
                     );
                 }
                 "ForecastTypes" => {
-                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens, _value)?);
+                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens, _value, depth + 1)?);
                 }
                 "PerformAutoML" => {
                     builder = builder.set_perform_auto_ml(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -141,33 +143,52 @@ pub(crate) fn de_describe_predictor(
                     builder = builder.set_perform_hpo(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "TrainingParameters" => {
-                    builder =
-                        builder.set_training_parameters(crate::protocol_serde::shape_training_parameters::de_training_parameters(tokens, _value)?);
+                    builder = builder.set_training_parameters(crate::protocol_serde::shape_training_parameters::de_training_parameters(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "EvaluationParameters" => {
                     builder = builder.set_evaluation_parameters(crate::protocol_serde::shape_evaluation_parameters::de_evaluation_parameters(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "HPOConfig" => {
                     builder = builder.set_hpo_config(
-                        crate::protocol_serde::shape_hyper_parameter_tuning_job_config::de_hyper_parameter_tuning_job_config(tokens, _value)?,
+                        crate::protocol_serde::shape_hyper_parameter_tuning_job_config::de_hyper_parameter_tuning_job_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "InputDataConfig" => {
-                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens, _value)?);
+                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FeaturizationConfig" => {
                     builder = builder.set_featurization_config(crate::protocol_serde::shape_featurization_config::de_featurization_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "EncryptionConfig" => {
-                    builder = builder.set_encryption_config(crate::protocol_serde::shape_encryption_config::de_encryption_config(tokens, _value)?);
+                    builder = builder.set_encryption_config(crate::protocol_serde::shape_encryption_config::de_encryption_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "PredictorExecutionDetails" => {
                     builder = builder.set_predictor_execution_details(
-                        crate::protocol_serde::shape_predictor_execution_details::de_predictor_execution_details(tokens, _value)?,
+                        crate::protocol_serde::shape_predictor_execution_details::de_predictor_execution_details(tokens, _value, depth + 1)?,
                     );
                 }
                 "EstimatedTimeRemainingInMinutes" => {
@@ -181,7 +202,7 @@ pub(crate) fn de_describe_predictor(
                     builder = builder.set_is_auto_predictor(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "DatasetImportJobArns" => {
-                    builder = builder.set_dataset_import_job_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
+                    builder = builder.set_dataset_import_job_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value, depth + 1)?);
                 }
                 "Status" => {
                     builder = builder.set_status(

@@ -4,12 +4,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupplementalDocument {
+    /// <p>The type of supplemental document.</p>
+    pub document_type: ::std::option::Option<crate::types::SupplementalDocumentType>,
+    /// <p>The ID of the supplemental document.</p>
+    pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The pre-signed URL to download invoice supplemental document.</p>
     pub document_url: ::std::option::Option<::std::string::String>,
     /// <p>The pre-signed URL expiration date of invoice supplemental document.</p>
     pub document_url_expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SupplementalDocument {
+    /// <p>The type of supplemental document.</p>
+    pub fn document_type(&self) -> ::std::option::Option<&crate::types::SupplementalDocumentType> {
+        self.document_type.as_ref()
+    }
+    /// <p>The ID of the supplemental document.</p>
+    pub fn document_id(&self) -> ::std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
     /// <p>The pre-signed URL to download invoice supplemental document.</p>
     pub fn document_url(&self) -> ::std::option::Option<&str> {
         self.document_url.as_deref()
@@ -30,10 +42,40 @@ impl SupplementalDocument {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct SupplementalDocumentBuilder {
+    pub(crate) document_type: ::std::option::Option<crate::types::SupplementalDocumentType>,
+    pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_url: ::std::option::Option<::std::string::String>,
     pub(crate) document_url_expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SupplementalDocumentBuilder {
+    /// <p>The type of supplemental document.</p>
+    pub fn document_type(mut self, input: crate::types::SupplementalDocumentType) -> Self {
+        self.document_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of supplemental document.</p>
+    pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::SupplementalDocumentType>) -> Self {
+        self.document_type = input;
+        self
+    }
+    /// <p>The type of supplemental document.</p>
+    pub fn get_document_type(&self) -> &::std::option::Option<crate::types::SupplementalDocumentType> {
+        &self.document_type
+    }
+    /// <p>The ID of the supplemental document.</p>
+    pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the supplemental document.</p>
+    pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.document_id = input;
+        self
+    }
+    /// <p>The ID of the supplemental document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// <p>The pre-signed URL to download invoice supplemental document.</p>
     pub fn document_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_url = ::std::option::Option::Some(input.into());
@@ -65,6 +107,8 @@ impl SupplementalDocumentBuilder {
     /// Consumes the builder and constructs a [`SupplementalDocument`](crate::types::SupplementalDocument).
     pub fn build(self) -> crate::types::SupplementalDocument {
         crate::types::SupplementalDocument {
+            document_type: self.document_type,
+            document_id: self.document_id,
             document_url: self.document_url,
             document_url_expiration_date: self.document_url_expiration_date,
         }

@@ -27,5 +27,7 @@ pub fn de_public_key_config(inp: &[u8]) -> std::result::Result<crate::types::Pub
             "invalid root, expected PublicKeyConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_public_key_config::de_public_key_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_public_key_config::de_public_key_config(&mut decoder, depth + 1)
 }

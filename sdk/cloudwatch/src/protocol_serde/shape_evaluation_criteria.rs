@@ -20,13 +20,23 @@ pub fn ser_evaluation_criteria(
 
 pub(crate) fn de_evaluation_criteria(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EvaluationCriteria, ::aws_smithy_cbor::decode::DeserializeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+
+    #[allow(unused_variables)]
     fn pair(
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::EvaluationCriteria, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "PromQLCriteria" => crate::types::EvaluationCriteria::PromQlCriteria(
-                crate::protocol_serde::shape_alarm_prom_ql_criteria::de_alarm_prom_ql_criteria(decoder)?,
+                crate::protocol_serde::shape_alarm_prom_ql_criteria::de_alarm_prom_ql_criteria(decoder, depth + 1)?,
             ),
             _ => {
                 decoder.skip()?;
@@ -37,7 +47,7 @@ pub(crate) fn de_evaluation_criteria(
 
     match decoder.map()? {
         None => {
-            let variant = pair(decoder)?;
+            let variant = pair(decoder, depth)?;
             match decoder.datatype()? {
                 ::aws_smithy_cbor::data::Type::Break => {
                     decoder.skip()?;
@@ -49,7 +59,7 @@ pub(crate) fn de_evaluation_criteria(
                 )),
             }
         }
-        Some(1) => pair(decoder),
+        Some(1) => pair(decoder, depth),
         Some(_) => Err(::aws_smithy_cbor::decode::DeserializeError::mixed_union_variants(decoder.position())),
     }
 }

@@ -122,6 +122,8 @@ pub(crate) fn de_get_resources_trends_v2(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -143,7 +145,9 @@ pub(crate) fn de_get_resources_trends_v2(
                 }
                 "TrendsMetrics" => {
                     builder = builder.set_trends_metrics(crate::protocol_serde::shape_resources_trends_metrics::de_resources_trends_metrics(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

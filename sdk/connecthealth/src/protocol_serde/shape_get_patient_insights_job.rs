@@ -129,6 +129,8 @@ pub(crate) fn de_get_patient_insights_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -142,17 +144,33 @@ pub(crate) fn de_get_patient_insights_job(
                 }
                 "encounterContext" => {
                     builder = builder.set_encounter_context(
-                        crate::protocol_serde::shape_patient_insights_encounter_context::de_patient_insights_encounter_context(tokens, _value)?,
+                        crate::protocol_serde::shape_patient_insights_encounter_context::de_patient_insights_encounter_context(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "inputDataConfig" => {
-                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens, _value)?);
+                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "insightsContext" => {
-                    builder = builder.set_insights_context(crate::protocol_serde::shape_insights_context::de_insights_context(tokens, _value)?);
+                    builder = builder.set_insights_context(crate::protocol_serde::shape_insights_context::de_insights_context(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "insightsOutput" => {
-                    builder = builder.set_insights_output(crate::protocol_serde::shape_insights_output::de_insights_output(tokens, _value)?);
+                    builder = builder.set_insights_output(crate::protocol_serde::shape_insights_output::de_insights_output(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "jobArn" => {
                     builder = builder.set_job_arn(
@@ -176,11 +194,19 @@ pub(crate) fn de_get_patient_insights_job(
                     );
                 }
                 "outputDataConfig" => {
-                    builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens, _value)?);
+                    builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "patientContext" => {
                     builder = builder.set_patient_context(
-                        crate::protocol_serde::shape_patient_insights_patient_context::de_patient_insights_patient_context(tokens, _value)?,
+                        crate::protocol_serde::shape_patient_insights_patient_context::de_patient_insights_patient_context(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "statusDetails" => {
@@ -197,7 +223,7 @@ pub(crate) fn de_get_patient_insights_job(
                     )?);
                 }
                 "userContext" => {
-                    builder = builder.set_user_context(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_user_context(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

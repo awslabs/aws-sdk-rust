@@ -2,10 +2,16 @@
 pub(crate) fn de_action_type_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ActionTypeDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,36 +30,56 @@ where
                         }
                         "executor" => {
                             builder = builder.set_executor(crate::protocol_serde::shape_action_type_executor::de_action_type_executor(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "id" => {
                             builder = builder.set_id(crate::protocol_serde::shape_action_type_identifier::de_action_type_identifier(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "inputArtifactDetails" => {
                             builder = builder.set_input_artifact_details(
-                                crate::protocol_serde::shape_action_type_artifact_details::de_action_type_artifact_details(tokens, _value)?,
+                                crate::protocol_serde::shape_action_type_artifact_details::de_action_type_artifact_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "outputArtifactDetails" => {
                             builder = builder.set_output_artifact_details(
-                                crate::protocol_serde::shape_action_type_artifact_details::de_action_type_artifact_details(tokens, _value)?,
+                                crate::protocol_serde::shape_action_type_artifact_details::de_action_type_artifact_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "permissions" => {
                             builder = builder.set_permissions(crate::protocol_serde::shape_action_type_permissions::de_action_type_permissions(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "properties" => {
                             builder = builder.set_properties(crate::protocol_serde::shape_action_type_properties::de_action_type_properties(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "urls" => {
-                            builder = builder.set_urls(crate::protocol_serde::shape_action_type_urls::de_action_type_urls(tokens, _value)?);
+                            builder = builder.set_urls(crate::protocol_serde::shape_action_type_urls::de_action_type_urls(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

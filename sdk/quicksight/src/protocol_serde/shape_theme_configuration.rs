@@ -33,10 +33,16 @@ pub fn ser_theme_configuration(
 pub(crate) fn de_theme_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ThemeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -47,18 +53,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataColorPalette" => {
-                            builder = builder
-                                .set_data_color_palette(crate::protocol_serde::shape_data_color_palette::de_data_color_palette(tokens, _value)?);
+                            builder = builder.set_data_color_palette(crate::protocol_serde::shape_data_color_palette::de_data_color_palette(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "UIColorPalette" => {
-                            builder =
-                                builder.set_ui_color_palette(crate::protocol_serde::shape_ui_color_palette::de_ui_color_palette(tokens, _value)?);
+                            builder = builder.set_ui_color_palette(crate::protocol_serde::shape_ui_color_palette::de_ui_color_palette(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Sheet" => {
-                            builder = builder.set_sheet(crate::protocol_serde::shape_sheet_style::de_sheet_style(tokens, _value)?);
+                            builder = builder.set_sheet(crate::protocol_serde::shape_sheet_style::de_sheet_style(tokens, _value, depth + 1)?);
                         }
                         "Typography" => {
-                            builder = builder.set_typography(crate::protocol_serde::shape_typography::de_typography(tokens, _value)?);
+                            builder = builder.set_typography(crate::protocol_serde::shape_typography::de_typography(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

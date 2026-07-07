@@ -69,8 +69,68 @@ pub(crate) fn reflens_list_code_interpreters_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_configuration_bundle_versions_output_output_next_token(
+    input: &crate::operation::list_configuration_bundle_versions::ListConfigurationBundleVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_configuration_bundles_output_output_next_token(
+    input: &crate::operation::list_configuration_bundles::ListConfigurationBundlesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_dataset_examples_output_output_next_token(
+    input: &crate::operation::list_dataset_examples::ListDatasetExamplesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_dataset_versions_output_output_next_token(
+    input: &crate::operation::list_dataset_versions::ListDatasetVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_datasets_output_output_next_token(
+    input: &crate::operation::list_datasets::ListDatasetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_evaluators_output_output_next_token(
     input: &crate::operation::list_evaluators::ListEvaluatorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_gateway_rules_output_output_next_token(
+    input: &crate::operation::list_gateway_rules::ListGatewayRulesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -91,6 +151,26 @@ pub(crate) fn reflens_list_gateway_targets_output_output_next_token(
 
 pub(crate) fn reflens_list_gateways_output_output_next_token(
     input: &crate::operation::list_gateways::ListGatewaysOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_harness_endpoints_output_output_next_token(
+    input: &crate::operation::list_harness_endpoints::ListHarnessEndpointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_harness_versions_output_output_next_token(
+    input: &crate::operation::list_harness_versions::ListHarnessVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -139,8 +219,48 @@ pub(crate) fn reflens_list_online_evaluation_configs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_payment_connectors_output_output_next_token(
+    input: &crate::operation::list_payment_connectors::ListPaymentConnectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_payment_credential_providers_output_output_next_token(
+    input: &crate::operation::list_payment_credential_providers::ListPaymentCredentialProvidersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_payment_managers_output_output_next_token(
+    input: &crate::operation::list_payment_managers::ListPaymentManagersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policies_output_output_next_token(
     input: &crate::operation::list_policies::ListPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policy_engine_summaries_output_output_next_token(
+    input: &crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -169,8 +289,28 @@ pub(crate) fn reflens_list_policy_generation_assets_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_policy_generation_summaries_output_output_next_token(
+    input: &crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policy_generations_output_output_next_token(
     input: &crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policy_summaries_output_output_next_token(
+    input: &crate::operation::list_policy_summaries::ListPolicySummariesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -258,10 +398,52 @@ pub(crate) fn lens_list_code_interpreters_output_output_code_interpreter_summari
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_configuration_bundle_versions_output_output_versions(
+    input: crate::operation::list_configuration_bundle_versions::ListConfigurationBundleVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationBundleVersionSummary>> {
+    let input = input.versions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configuration_bundles_output_output_bundles(
+    input: crate::operation::list_configuration_bundles::ListConfigurationBundlesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationBundleSummary>> {
+    let input = input.bundles;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dataset_examples_output_output_examples(
+    input: crate::operation::list_dataset_examples::ListDatasetExamplesOutput,
+) -> ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
+    let input = input.examples;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dataset_versions_output_output_versions(
+    input: crate::operation::list_dataset_versions::ListDatasetVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetVersionSummary>> {
+    let input = input.versions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_datasets_output_output_datasets(
+    input: crate::operation::list_datasets::ListDatasetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+    let input = input.datasets;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_evaluators_output_output_evaluators(
     input: crate::operation::list_evaluators::ListEvaluatorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorSummary>> {
     let input = input.evaluators;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_gateway_rules_output_output_gateway_rules(
+    input: crate::operation::list_gateway_rules::ListGatewayRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewayRuleDetail>> {
+    let input = input.gateway_rules;
     ::std::option::Option::Some(input)
 }
 
@@ -276,6 +458,20 @@ pub(crate) fn lens_list_gateways_output_output_items(
     input: crate::operation::list_gateways::ListGatewaysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>> {
     let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_harness_endpoints_output_output_endpoints(
+    input: crate::operation::list_harness_endpoints::ListHarnessEndpointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HarnessEndpoint>> {
+    let input = input.endpoints;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_harness_versions_output_output_harness_versions(
+    input: crate::operation::list_harness_versions::ListHarnessVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HarnessVersionSummary>> {
+    let input = input.harness_versions;
     ::std::option::Option::Some(input)
 }
 
@@ -307,10 +503,38 @@ pub(crate) fn lens_list_online_evaluation_configs_output_output_online_evaluatio
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_payment_connectors_output_output_payment_connectors(
+    input: crate::operation::list_payment_connectors::ListPaymentConnectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentConnectorSummary>> {
+    let input = input.payment_connectors;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_payment_credential_providers_output_output_credential_providers(
+    input: crate::operation::list_payment_credential_providers::ListPaymentCredentialProvidersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentCredentialProviderItem>> {
+    let input = input.credential_providers;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_payment_managers_output_output_payment_managers(
+    input: crate::operation::list_payment_managers::ListPaymentManagersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentManagerSummary>> {
+    let input = input.payment_managers;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_policies_output_output_policies(
     input: crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
     let input = input.policies;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_engine_summaries_output_output_policy_engines(
+    input: crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyEngineSummary>> {
+    let input = input.policy_engines;
     ::std::option::Option::Some(input)
 }
 
@@ -328,10 +552,24 @@ pub(crate) fn lens_list_policy_generation_assets_output_output_policy_generation
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_policy_generation_summaries_output_output_policy_generations(
+    input: crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGenerationSummary>> {
+    let input = input.policy_generations;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_policy_generations_output_output_policy_generations(
     input: crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
     let input = input.policy_generations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_summaries_output_output_policies(
+    input: crate::operation::list_policy_summaries::ListPolicySummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>> {
+    let input = input.policies;
     ::std::option::Option::Some(input)
 }
 

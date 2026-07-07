@@ -285,6 +285,8 @@ pub(crate) mod shape_intermediate_source_configuration;
 
 pub(crate) mod shape_matched_records_list;
 
+pub(crate) mod shape_matching_config;
+
 pub(crate) mod shape_output_attributes;
 
 pub(crate) mod shape_provider_schema_attribute;

@@ -21,10 +21,16 @@ pub fn ser_kpi_actual_value_conditional_formatting(
 pub(crate) fn de_kpi_actual_value_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KpiActualValueConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,12 +42,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TextColor" => {
                             builder = builder.set_text_color(
-                                crate::protocol_serde::shape_conditional_formatting_color::de_conditional_formatting_color(tokens, _value)?,
+                                crate::protocol_serde::shape_conditional_formatting_color::de_conditional_formatting_color(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Icon" => {
                             builder = builder.set_icon(crate::protocol_serde::shape_conditional_formatting_icon::de_conditional_formatting_icon(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

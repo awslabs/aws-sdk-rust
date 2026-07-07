@@ -2,10 +2,16 @@
 pub(crate) fn de_storage_descriptor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StorageDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Columns" => {
-                            builder = builder.set_columns(crate::protocol_serde::shape_column_list::de_column_list(tokens, _value)?);
+                            builder = builder.set_columns(crate::protocol_serde::shape_column_list::de_column_list(tokens, _value, depth + 1)?);
                         }
                         "Location" => {
                             builder = builder.set_location(
@@ -27,7 +33,9 @@ where
                         }
                         "AdditionalLocations" => {
                             builder = builder.set_additional_locations(crate::protocol_serde::shape_location_string_list::de_location_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InputFormat" => {
@@ -55,27 +63,35 @@ where
                             );
                         }
                         "SerdeInfo" => {
-                            builder = builder.set_serde_info(crate::protocol_serde::shape_ser_de_info::de_ser_de_info(tokens, _value)?);
+                            builder = builder.set_serde_info(crate::protocol_serde::shape_ser_de_info::de_ser_de_info(tokens, _value, depth + 1)?);
                         }
                         "BucketColumns" => {
-                            builder = builder.set_bucket_columns(crate::protocol_serde::shape_name_string_list::de_name_string_list(tokens, _value)?);
+                            builder = builder.set_bucket_columns(crate::protocol_serde::shape_name_string_list::de_name_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SortColumns" => {
-                            builder = builder.set_sort_columns(crate::protocol_serde::shape_order_list::de_order_list(tokens, _value)?);
+                            builder = builder.set_sort_columns(crate::protocol_serde::shape_order_list::de_order_list(tokens, _value, depth + 1)?);
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens, _value)?);
+                            builder =
+                                builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens, _value, depth + 1)?);
                         }
                         "SkewedInfo" => {
-                            builder = builder.set_skewed_info(crate::protocol_serde::shape_skewed_info::de_skewed_info(tokens, _value)?);
+                            builder = builder.set_skewed_info(crate::protocol_serde::shape_skewed_info::de_skewed_info(tokens, _value, depth + 1)?);
                         }
                         "StoredAsSubDirectories" => {
                             builder =
                                 builder.set_stored_as_sub_directories(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "SchemaReference" => {
-                            builder =
-                                builder.set_schema_reference(crate::protocol_serde::shape_schema_reference::de_schema_reference(tokens, _value)?);
+                            builder = builder.set_schema_reference(crate::protocol_serde::shape_schema_reference::de_schema_reference(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

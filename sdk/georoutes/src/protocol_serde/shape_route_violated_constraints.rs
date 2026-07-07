@@ -2,10 +2,16 @@
 pub(crate) fn de_route_violated_constraints<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouteViolatedConstraints>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,118 +20,127 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AllHazardsRestricted" => {
-                            builder = builder.set_all_hazards_restricted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AllHazardsRestricted" => {
+                                builder =
+                                    builder.set_all_hazards_restricted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "AxleCount" => {
+                                builder = builder.set_axle_count(
+                                    crate::protocol_serde::shape_route_notice_detail_range::de_route_notice_detail_range(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "HazardousCargos" => {
+                                builder = builder.set_hazardous_cargos(
+                                    crate::protocol_serde::shape_route_hazardous_cargo_type_list::de_route_hazardous_cargo_type_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "MaxHeight" => {
+                                builder = builder.set_max_height(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "MaxKpraLength" => {
+                                builder = builder.set_max_kpra_length(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "MaxLength" => {
+                                builder = builder.set_max_length(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "MaxPayloadCapacity" => {
+                                builder = builder.set_max_payload_capacity(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "MaxWeight" => {
+                                builder = builder.set_max_weight(crate::protocol_serde::shape_route_weight_constraint::de_route_weight_constraint(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "MaxWeightPerAxle" => {
+                                builder = builder.set_max_weight_per_axle(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "MaxWeightPerAxleGroup" => {
+                                builder = builder.set_max_weight_per_axle_group(
+                                    crate::protocol_serde::shape_weight_per_axle_group::de_weight_per_axle_group(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "MaxWidth" => {
+                                builder = builder.set_max_width(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "Occupancy" => {
+                                builder = builder.set_occupancy(
+                                    crate::protocol_serde::shape_route_notice_detail_range::de_route_notice_detail_range(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "RestrictedTimes" => {
+                                builder = builder.set_restricted_times(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "TimeDependent" => {
+                                builder = builder.set_time_dependent(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "TrailerCount" => {
+                                builder = builder.set_trailer_count(
+                                    crate::protocol_serde::shape_route_notice_detail_range::de_route_notice_detail_range(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "TravelMode" => {
+                                builder = builder.set_travel_mode(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "TruckRoadType" => {
+                                builder = builder.set_truck_road_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "TruckType" => {
+                                builder = builder.set_truck_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::RouteTruckType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "TunnelRestrictionCode" => {
+                                builder = builder.set_tunnel_restriction_code(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "AxleCount" => {
-                            builder = builder.set_axle_count(crate::protocol_serde::shape_route_notice_detail_range::de_route_notice_detail_range(
-                                tokens, _value,
-                            )?);
-                        }
-                        "HazardousCargos" => {
-                            builder = builder.set_hazardous_cargos(
-                                crate::protocol_serde::shape_route_hazardous_cargo_type_list::de_route_hazardous_cargo_type_list(tokens, _value)?,
-                            );
-                        }
-                        "MaxHeight" => {
-                            builder = builder.set_max_height(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "MaxKpraLength" => {
-                            builder = builder.set_max_kpra_length(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "MaxLength" => {
-                            builder = builder.set_max_length(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "MaxPayloadCapacity" => {
-                            builder = builder.set_max_payload_capacity(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "MaxWeight" => {
-                            builder = builder.set_max_weight(crate::protocol_serde::shape_route_weight_constraint::de_route_weight_constraint(
-                                tokens, _value,
-                            )?);
-                        }
-                        "MaxWeightPerAxle" => {
-                            builder = builder.set_max_weight_per_axle(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "MaxWeightPerAxleGroup" => {
-                            builder = builder.set_max_weight_per_axle_group(
-                                crate::protocol_serde::shape_weight_per_axle_group::de_weight_per_axle_group(tokens, _value)?,
-                            );
-                        }
-                        "MaxWidth" => {
-                            builder = builder.set_max_width(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "Occupancy" => {
-                            builder = builder.set_occupancy(crate::protocol_serde::shape_route_notice_detail_range::de_route_notice_detail_range(
-                                tokens, _value,
-                            )?);
-                        }
-                        "RestrictedTimes" => {
-                            builder = builder.set_restricted_times(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "TimeDependent" => {
-                            builder = builder.set_time_dependent(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "TrailerCount" => {
-                            builder = builder.set_trailer_count(
-                                crate::protocol_serde::shape_route_notice_detail_range::de_route_notice_detail_range(tokens, _value)?,
-                            );
-                        }
-                        "TravelMode" => {
-                            builder = builder.set_travel_mode(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "TruckRoadType" => {
-                            builder = builder.set_truck_road_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "TruckType" => {
-                            builder = builder.set_truck_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::RouteTruckType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "TunnelRestrictionCode" => {
-                            builder = builder.set_tunnel_restriction_code(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

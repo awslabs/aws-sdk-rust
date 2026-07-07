@@ -16,6 +16,8 @@ pub struct HarnessSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the harness was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The latest version of the harness.</p>
+    pub harness_version: ::std::option::Option<::std::string::String>,
 }
 impl HarnessSummary {
     /// <p>The ID of the harness.</p>
@@ -45,6 +47,10 @@ impl HarnessSummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>The latest version of the harness.</p>
+    pub fn harness_version(&self) -> ::std::option::Option<&str> {
+        self.harness_version.as_deref()
+    }
 }
 impl HarnessSummary {
     /// Creates a new builder-style object to manufacture [`HarnessSummary`](crate::types::HarnessSummary).
@@ -63,6 +69,7 @@ pub struct HarnessSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::HarnessStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) harness_version: ::std::option::Option<::std::string::String>,
 }
 impl HarnessSummaryBuilder {
     /// <p>The ID of the harness.</p>
@@ -155,6 +162,20 @@ impl HarnessSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The latest version of the harness.</p>
+    pub fn harness_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.harness_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The latest version of the harness.</p>
+    pub fn set_harness_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.harness_version = input;
+        self
+    }
+    /// <p>The latest version of the harness.</p>
+    pub fn get_harness_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.harness_version
+    }
     /// Consumes the builder and constructs a [`HarnessSummary`](crate::types::HarnessSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`harness_id`](crate::types::builders::HarnessSummaryBuilder::harness_id)
@@ -201,6 +222,7 @@ impl HarnessSummaryBuilder {
                     "updated_at was not specified but it is required when building HarnessSummary",
                 )
             })?,
+            harness_version: self.harness_version,
         })
     }
 }

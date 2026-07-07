@@ -152,6 +152,20 @@ impl InvokeHarnessFluentBuilder {
     pub fn get_harness_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_harness_arn()
     }
+    /// <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+    pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.qualifier(input.into());
+        self
+    }
+    /// <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+    pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_qualifier(input);
+        self
+    }
+    /// <p>The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.</p>
+    pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_qualifier()
+    }
     /// <p>The session ID for the invocation. Use the same session ID across requests to continue a conversation.</p>
     pub fn runtime_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.runtime_session_id(input.into());
@@ -165,6 +179,20 @@ impl InvokeHarnessFluentBuilder {
     /// <p>The session ID for the invocation. Use the same session ID across requests to continue a conversation.</p>
     pub fn get_runtime_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_runtime_session_id()
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn runtime_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.runtime_user_id(input.into());
+        self
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn set_runtime_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_runtime_user_id(input);
+        self
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn get_runtime_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_runtime_user_id()
     }
     ///
     /// Appends an item to `messages`.

@@ -111,10 +111,16 @@ pub fn ser_aws_rds_db_snapshot_details(
 pub(crate) fn de_aws_rds_db_snapshot_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbSnapshotDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -294,7 +300,11 @@ where
                         }
                         "ProcessorFeatures" => {
                             builder = builder.set_processor_features(
-                                crate::protocol_serde::shape_aws_rds_db_processor_features::de_aws_rds_db_processor_features(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_rds_db_processor_features::de_aws_rds_db_processor_features(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DbiResourceId" => {

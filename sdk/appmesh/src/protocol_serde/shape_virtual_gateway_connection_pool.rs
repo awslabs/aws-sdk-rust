@@ -34,10 +34,16 @@ pub fn ser_virtual_gateway_connection_pool(
 pub(crate) fn de_virtual_gateway_connection_pool<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayConnectionPool>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -64,19 +70,25 @@ where
                     variant = match key.as_ref() {
                         "http" => Some(crate::types::VirtualGatewayConnectionPool::Http(
                             crate::protocol_serde::shape_virtual_gateway_http_connection_pool::de_virtual_gateway_http_connection_pool(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?,
                         )),
                         "http2" => Some(crate::types::VirtualGatewayConnectionPool::Http2(
                             crate::protocol_serde::shape_virtual_gateway_http2_connection_pool::de_virtual_gateway_http2_connection_pool(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http2' cannot be null"))?,
                         )),
                         "grpc" => Some(crate::types::VirtualGatewayConnectionPool::Grpc(
                             crate::protocol_serde::shape_virtual_gateway_grpc_connection_pool::de_virtual_gateway_grpc_connection_pool(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'grpc' cannot be null"))?,
                         )),

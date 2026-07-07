@@ -49,6 +49,8 @@ pub fn de_disassociate_instance_event_window(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DisassociateInstanceEventWindowResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisassociateInstanceEventWindowResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_disassociate_instance_event_window(
             s if s.matches("instanceEventWindow") /* InstanceEventWindow com.amazonaws.ec2.synthetic#DisassociateInstanceEventWindowOutput$InstanceEventWindow */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_event_window::de_instance_event_window(&mut tag)
+                        crate::protocol_serde::shape_instance_event_window::de_instance_event_window(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -27,10 +27,16 @@ pub fn ser_http_gateway_route_rewrite(
 pub(crate) fn de_http_gateway_route_rewrite<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HttpGatewayRouteRewrite>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,17 +48,29 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "prefix" => {
                             builder = builder.set_prefix(
-                                crate::protocol_serde::shape_http_gateway_route_prefix_rewrite::de_http_gateway_route_prefix_rewrite(tokens, _value)?,
+                                crate::protocol_serde::shape_http_gateway_route_prefix_rewrite::de_http_gateway_route_prefix_rewrite(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "path" => {
                             builder = builder.set_path(
-                                crate::protocol_serde::shape_http_gateway_route_path_rewrite::de_http_gateway_route_path_rewrite(tokens, _value)?,
+                                crate::protocol_serde::shape_http_gateway_route_path_rewrite::de_http_gateway_route_path_rewrite(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "hostname" => {
                             builder = builder.set_hostname(
-                                crate::protocol_serde::shape_gateway_route_hostname_rewrite::de_gateway_route_hostname_rewrite(tokens, _value)?,
+                                crate::protocol_serde::shape_gateway_route_hostname_rewrite::de_gateway_route_hostname_rewrite(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

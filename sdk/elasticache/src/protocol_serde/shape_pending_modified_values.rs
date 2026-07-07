@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_pending_modified_values(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PendingModifiedValues, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PendingModifiedValues::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -25,7 +29,7 @@ pub fn de_pending_modified_values(
             s if s.matches("CacheNodeIdsToRemove") /* CacheNodeIdsToRemove com.amazonaws.elasticache#PendingModifiedValues$CacheNodeIdsToRemove */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_cache_node_ids_list::de_cache_node_ids_list(&mut tag)
+                        crate::protocol_serde::shape_cache_node_ids_list::de_cache_node_ids_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -75,7 +79,7 @@ pub fn de_pending_modified_values(
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#PendingModifiedValues$LogDeliveryConfigurations */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_pending_log_delivery_configuration_list::de_pending_log_delivery_configuration_list(&mut tag)
+                        crate::protocol_serde::shape_pending_log_delivery_configuration_list::de_pending_log_delivery_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -114,7 +118,7 @@ pub fn de_pending_modified_values(
             s if s.matches("ScaleConfig") /* ScaleConfig com.amazonaws.elasticache#PendingModifiedValues$ScaleConfig */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_scale_config::de_scale_config(&mut tag)
+                        crate::protocol_serde::shape_scale_config::de_scale_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

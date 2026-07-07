@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListHos
 #[derive(Debug)]
 struct ListHostedZoneAssociationsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListHostedZoneAssociationsResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -196,19 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHostedZo
                 output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
-                let input_1 = &_input.resource_arn;
-                let input_1 = input_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
-                let resource_arn = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Greedy);
-                if resource_arn.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    ));
-                }
-                ::std::write!(output, "/hosted-zone-associations/resource-arn/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                ::std::write!(output, "/hosted-zone-associations").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(
@@ -216,14 +205,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHostedZo
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_1) = &_input.max_results {
                     {
-                        query.push_kv("max_results", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                        query.push_kv("max_results", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_3) = &_input.resource_arn {
+                    {
+                        query.push_kv("resourceArn", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

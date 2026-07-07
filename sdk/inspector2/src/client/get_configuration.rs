@@ -2,7 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetConfiguration`](crate::operation::get_configuration::builders::GetConfigurationFluentBuilder) operation.
     ///
-    /// - The fluent builder takes no input, just [`send`](crate::operation::get_configuration::builders::GetConfigurationFluentBuilder::send) it.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::operation::get_configuration::builders::GetConfigurationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_configuration::builders::GetConfigurationFluentBuilder::set_account_id):<br>required: **false**<br><p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p><br>
     /// - On success, responds with [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput) with field(s):
     ///   - [`ecr_configuration(Option<EcrConfigurationState>)`](crate::operation::get_configuration::GetConfigurationOutput::ecr_configuration): <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
     ///   - [`ec2_configuration(Option<Ec2ConfigurationState>)`](crate::operation::get_configuration::GetConfigurationOutput::ec2_configuration): <p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>

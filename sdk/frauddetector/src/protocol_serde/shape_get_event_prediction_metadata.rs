@@ -132,6 +132,8 @@ pub(crate) fn de_get_event_prediction_metadata(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -195,11 +197,19 @@ pub(crate) fn de_get_event_prediction_metadata(
                 }
                 "eventVariables" => {
                     builder = builder.set_event_variables(
-                        crate::protocol_serde::shape_list_of_event_variable_summaries::de_list_of_event_variable_summaries(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_event_variable_summaries::de_list_of_event_variable_summaries(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "rules" => {
-                    builder = builder.set_rules(crate::protocol_serde::shape_evaluated_rule_list::de_evaluated_rule_list(tokens, _value)?);
+                    builder = builder.set_rules(crate::protocol_serde::shape_evaluated_rule_list::de_evaluated_rule_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ruleExecutionMode" => {
                     builder = builder.set_rule_execution_mode(
@@ -209,16 +219,28 @@ pub(crate) fn de_get_event_prediction_metadata(
                     );
                 }
                 "outcomes" => {
-                    builder = builder.set_outcomes(crate::protocol_serde::shape_list_of_strings::de_list_of_strings(tokens, _value)?);
+                    builder = builder.set_outcomes(crate::protocol_serde::shape_list_of_strings::de_list_of_strings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "evaluatedModelVersions" => {
                     builder = builder.set_evaluated_model_versions(
-                        crate::protocol_serde::shape_list_of_evaluated_model_versions::de_list_of_evaluated_model_versions(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_evaluated_model_versions::de_list_of_evaluated_model_versions(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "evaluatedExternalModels" => {
                     builder = builder.set_evaluated_external_models(
-                        crate::protocol_serde::shape_list_of_evaluated_external_models::de_list_of_evaluated_external_models(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_evaluated_external_models::de_list_of_evaluated_external_models(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "predictionTimestamp" => {

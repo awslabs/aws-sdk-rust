@@ -13,6 +13,7 @@
 /// # let purchaseoption = unimplemented!();
 /// match purchaseoption {
 ///     PurchaseOption::CapacityBlock => { /* ... */ },
+///     PurchaseOption::InterruptibleCapacityReservation => { /* ... */ },
 ///     PurchaseOption::Ondemand => { /* ... */ },
 ///     PurchaseOption::Spot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum PurchaseOption {
     #[allow(missing_docs)] // documentation missing in model
     CapacityBlock,
     #[allow(missing_docs)] // documentation missing in model
+    InterruptibleCapacityReservation,
+    #[allow(missing_docs)] // documentation missing in model
     Ondemand,
     #[allow(missing_docs)] // documentation missing in model
     Spot,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for PurchaseOption {
     fn from(s: &str) -> Self {
         match s {
             "CAPACITY_BLOCK" => PurchaseOption::CapacityBlock,
+            "INTERRUPTIBLE_CAPACITY_RESERVATION" => PurchaseOption::InterruptibleCapacityReservation,
             "ONDEMAND" => PurchaseOption::Ondemand,
             "SPOT" => PurchaseOption::Spot,
             other => PurchaseOption::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl PurchaseOption {
     pub fn as_str(&self) -> &str {
         match self {
             PurchaseOption::CapacityBlock => "CAPACITY_BLOCK",
+            PurchaseOption::InterruptibleCapacityReservation => "INTERRUPTIBLE_CAPACITY_RESERVATION",
             PurchaseOption::Ondemand => "ONDEMAND",
             PurchaseOption::Spot => "SPOT",
             PurchaseOption::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl PurchaseOption {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAPACITY_BLOCK", "ONDEMAND", "SPOT"]
+        &["CAPACITY_BLOCK", "INTERRUPTIBLE_CAPACITY_RESERVATION", "ONDEMAND", "SPOT"]
     }
 }
 impl ::std::convert::AsRef<str> for PurchaseOption {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for PurchaseOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PurchaseOption::CapacityBlock => write!(f, "CAPACITY_BLOCK"),
+            PurchaseOption::InterruptibleCapacityReservation => write!(f, "INTERRUPTIBLE_CAPACITY_RESERVATION"),
             PurchaseOption::Ondemand => write!(f, "ONDEMAND"),
             PurchaseOption::Spot => write!(f, "SPOT"),
             PurchaseOption::Unknown(value) => write!(f, "{value}"),

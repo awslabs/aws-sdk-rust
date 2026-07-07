@@ -6,5 +6,8 @@ pub fn ser_delete_service_linked_configuration_recorder_input_input(
     if let Some(var_1) = &input.service_principal {
         object.key("ServicePrincipal").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.arn {
+        object.key("Arn").string(var_2.as_str());
+    }
     Ok(())
 }

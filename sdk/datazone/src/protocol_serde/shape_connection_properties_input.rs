@@ -52,35 +52,47 @@ pub fn ser_connection_properties_input(
             crate::protocol_serde::shape_s3_properties_input::ser_s3_properties_input(&mut object_8, inner)?;
             object_8.finish();
         }
+        crate::types::ConnectionPropertiesInput::SnowflakeProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_13.key("snowflakeProperties").start_object();
+            crate::protocol_serde::shape_snowflake_properties_input::ser_snowflake_properties_input(&mut object_9, inner)?;
+            object_9.finish();
+        }
         crate::types::ConnectionPropertiesInput::AmazonQProperties(inner) => {
             #[allow(unused_mut)]
-            let mut object_9 = object_13.key("amazonQProperties").start_object();
-            crate::protocol_serde::shape_amazon_q_properties_input::ser_amazon_q_properties_input(&mut object_9, inner)?;
-            object_9.finish();
+            let mut object_10 = object_13.key("amazonQProperties").start_object();
+            crate::protocol_serde::shape_amazon_q_properties_input::ser_amazon_q_properties_input(&mut object_10, inner)?;
+            object_10.finish();
         }
         crate::types::ConnectionPropertiesInput::MlflowProperties(inner) => {
             #[allow(unused_mut)]
-            let mut object_10 = object_13.key("mlflowProperties").start_object();
-            crate::protocol_serde::shape_mlflow_properties_input::ser_mlflow_properties_input(&mut object_10, inner)?;
-            object_10.finish();
+            let mut object_11 = object_13.key("mlflowProperties").start_object();
+            crate::protocol_serde::shape_mlflow_properties_input::ser_mlflow_properties_input(&mut object_11, inner)?;
+            object_11.finish();
         }
         crate::types::ConnectionPropertiesInput::WorkflowsMwaaProperties(inner) => {
             #[allow(unused_mut)]
-            let mut object_11 = object_13.key("workflowsMwaaProperties").start_object();
-            crate::protocol_serde::shape_workflows_mwaa_properties_input::ser_workflows_mwaa_properties_input(&mut object_11, inner)?;
-            object_11.finish();
+            let mut object_12 = object_13.key("workflowsMwaaProperties").start_object();
+            crate::protocol_serde::shape_workflows_mwaa_properties_input::ser_workflows_mwaa_properties_input(&mut object_12, inner)?;
+            object_12.finish();
         }
         crate::types::ConnectionPropertiesInput::WorkflowsServerlessProperties(inner) => {
             #[allow(unused_mut)]
-            let mut object_12 = object_13.key("workflowsServerlessProperties").start_object();
-            crate::protocol_serde::shape_workflows_serverless_properties_input::ser_workflows_serverless_properties_input(&mut object_12, inner)?;
-            object_12.finish();
+            let mut object_13 = object_13.key("workflowsServerlessProperties").start_object();
+            crate::protocol_serde::shape_workflows_serverless_properties_input::ser_workflows_serverless_properties_input(&mut object_13, inner)?;
+            object_13.finish();
         }
         crate::types::ConnectionPropertiesInput::LakehouseProperties(inner) => {
             #[allow(unused_mut)]
-            let mut object_13 = object_13.key("lakehouseProperties").start_object();
-            crate::protocol_serde::shape_lakehouse_properties_input::ser_lakehouse_properties_input(&mut object_13, inner)?;
-            object_13.finish();
+            let mut object_14 = object_13.key("lakehouseProperties").start_object();
+            crate::protocol_serde::shape_lakehouse_properties_input::ser_lakehouse_properties_input(&mut object_14, inner)?;
+            object_14.finish();
+        }
+        crate::types::ConnectionPropertiesInput::VpcProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_15 = object_13.key("vpcProperties").start_object();
+            crate::protocol_serde::shape_vpc_properties_input::ser_vpc_properties_input(&mut object_15, inner)?;
+            object_15.finish();
         }
         crate::types::ConnectionPropertiesInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

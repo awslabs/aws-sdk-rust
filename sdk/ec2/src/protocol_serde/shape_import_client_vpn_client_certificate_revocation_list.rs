@@ -49,6 +49,8 @@ pub fn de_import_client_vpn_client_certificate_revocation_list(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ImportClientVpnClientCertificateRevocationListResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ImportClientVpnClientCertificateRevocationListResponse got {start_el:?}"

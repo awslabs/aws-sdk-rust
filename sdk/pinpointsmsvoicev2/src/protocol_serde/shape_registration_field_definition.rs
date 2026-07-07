@@ -2,10 +2,16 @@
 pub(crate) fn de_registration_field_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RegistrationFieldDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,15 +50,26 @@ where
                             );
                         }
                         "SelectValidation" => {
-                            builder =
-                                builder.set_select_validation(crate::protocol_serde::shape_select_validation::de_select_validation(tokens, _value)?);
+                            builder = builder.set_select_validation(crate::protocol_serde::shape_select_validation::de_select_validation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TextValidation" => {
-                            builder = builder.set_text_validation(crate::protocol_serde::shape_text_validation::de_text_validation(tokens, _value)?);
+                            builder = builder.set_text_validation(crate::protocol_serde::shape_text_validation::de_text_validation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DisplayHints" => {
                             builder = builder.set_display_hints(
-                                crate::protocol_serde::shape_registration_field_display_hints::de_registration_field_display_hints(tokens, _value)?,
+                                crate::protocol_serde::shape_registration_field_display_hints::de_registration_field_display_hints(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

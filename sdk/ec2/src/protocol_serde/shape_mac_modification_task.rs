@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_mac_modification_task(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MacModificationTask, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MacModificationTask::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_mac_modification_task(
             s if s.matches("macSystemIntegrityProtectionConfig") /* MacSystemIntegrityProtectionConfig com.amazonaws.ec2#MacModificationTask$MacSystemIntegrityProtectionConfig */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_mac_system_integrity_protection_configuration::de_mac_system_integrity_protection_configuration(&mut tag)
+                        crate::protocol_serde::shape_mac_system_integrity_protection_configuration::de_mac_system_integrity_protection_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -60,7 +64,7 @@ pub fn de_mac_modification_task(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#MacModificationTask$Tags */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

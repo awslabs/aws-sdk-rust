@@ -93,6 +93,8 @@ pub(crate) mod shape_delete_bucket_website;
 
 pub(crate) mod shape_delete_object;
 
+pub(crate) mod shape_delete_object_annotation;
+
 pub(crate) mod shape_delete_object_tagging;
 
 pub(crate) mod shape_delete_objects;
@@ -151,6 +153,8 @@ pub(crate) mod shape_get_object;
 
 pub(crate) mod shape_get_object_acl;
 
+pub(crate) mod shape_get_object_annotation;
+
 pub(crate) mod shape_get_object_attributes;
 
 pub(crate) mod shape_get_object_legal_hold;
@@ -182,6 +186,8 @@ pub(crate) mod shape_list_buckets;
 pub(crate) mod shape_list_directory_buckets;
 
 pub(crate) mod shape_list_multipart_uploads;
+
+pub(crate) mod shape_list_object_annotations;
 
 pub(crate) mod shape_list_object_versions;
 
@@ -273,6 +279,10 @@ pub(crate) mod shape_put_object_acl;
 
 pub(crate) mod shape_put_object_acl_input;
 
+pub(crate) mod shape_put_object_annotation;
+
+pub(crate) mod shape_put_object_annotation_input;
+
 pub(crate) mod shape_put_object_input;
 
 pub(crate) mod shape_put_object_legal_hold;
@@ -302,6 +312,10 @@ pub(crate) mod shape_restore_object;
 pub(crate) mod shape_restore_object_input;
 
 pub(crate) mod shape_select_object_content;
+
+pub(crate) mod shape_update_bucket_metadata_annotation_table_configuration;
+
+pub(crate) mod shape_update_bucket_metadata_annotation_table_configuration_input;
 
 pub(crate) mod shape_update_bucket_metadata_inventory_table_configuration;
 
@@ -333,6 +347,10 @@ pub(crate) mod shape_abort_multipart_upload_output;
 
 pub(crate) mod shape_access_denied;
 
+pub(crate) mod shape_annotation_limit_exceeded;
+
+pub(crate) mod shape_annotation_name_too_long;
+
 pub(crate) mod shape_bucket_already_exists;
 
 pub(crate) mod shape_bucket_already_owned_by_you;
@@ -346,6 +364,8 @@ pub(crate) mod shape_create_bucket_output;
 pub(crate) mod shape_create_multipart_upload_output;
 
 pub(crate) mod shape_create_session_output;
+
+pub(crate) mod shape_delete_object_annotation_output;
 
 pub(crate) mod shape_delete_object_output;
 
@@ -385,6 +405,8 @@ pub(crate) mod shape_get_bucket_replication_output;
 
 pub(crate) mod shape_get_object_acl_output;
 
+pub(crate) mod shape_get_object_annotation_output;
+
 pub(crate) mod shape_get_object_attributes_output;
 
 pub(crate) mod shape_get_object_legal_hold_output;
@@ -407,13 +429,19 @@ pub(crate) mod shape_head_object_output;
 
 pub(crate) mod shape_idempotency_parameter_mismatch;
 
+pub(crate) mod shape_invalid_annotation_name;
+
 pub(crate) mod shape_invalid_object_state;
+
+pub(crate) mod shape_invalid_prefix;
 
 pub(crate) mod shape_invalid_request;
 
 pub(crate) mod shape_invalid_write_offset;
 
 pub(crate) mod shape_list_multipart_uploads_output;
+
+pub(crate) mod shape_list_object_annotations_output;
 
 pub(crate) mod shape_list_object_versions_output;
 
@@ -422,6 +450,8 @@ pub(crate) mod shape_list_objects_output;
 pub(crate) mod shape_list_objects_v2_output;
 
 pub(crate) mod shape_list_parts_output;
+
+pub(crate) mod shape_no_such_annotation;
 
 pub(crate) mod shape_no_such_bucket;
 
@@ -438,6 +468,8 @@ pub(crate) mod shape_object_not_in_active_tier_error;
 pub(crate) mod shape_put_bucket_lifecycle_configuration_output;
 
 pub(crate) mod shape_put_object_acl_output;
+
+pub(crate) mod shape_put_object_annotation_output;
 
 pub(crate) mod shape_put_object_legal_hold_output;
 
@@ -456,6 +488,8 @@ pub(crate) mod shape_select_object_content_input;
 pub(crate) mod shape_select_object_content_output;
 
 pub(crate) mod shape_too_many_parts;
+
+pub(crate) mod shape_unsupported_media_type;
 
 pub(crate) mod shape_update_object_encryption_output;
 
@@ -476,6 +510,10 @@ pub(crate) mod shape_accelerate_configuration;
 pub(crate) mod shape_access_control_policy;
 
 pub(crate) mod shape_analytics_configuration;
+
+pub(crate) mod shape_annotation_list;
+
+pub(crate) mod shape_annotation_table_configuration_updates;
 
 pub(crate) mod shape_bucket_lifecycle_configuration;
 
@@ -596,6 +634,10 @@ pub(crate) mod shape_website_configuration;
 pub(crate) mod shape_abort_incomplete_multipart_upload;
 
 pub(crate) mod shape_analytics_filter;
+
+pub(crate) mod shape_annotation_entry;
+
+pub(crate) mod shape_annotation_table_configuration;
 
 pub(crate) mod shape_bucket;
 
@@ -754,6 +796,8 @@ pub(crate) mod shape_target_grant;
 pub(crate) mod shape_access_control_translation;
 
 pub(crate) mod shape_analytics_export_destination;
+
+pub(crate) mod shape_annotation_table_configuration_result;
 
 pub(crate) mod shape_destination_result;
 

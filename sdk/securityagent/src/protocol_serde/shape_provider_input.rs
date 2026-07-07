@@ -10,6 +10,24 @@ pub fn ser_provider_input(
             crate::protocol_serde::shape_git_hub_integration_input::ser_git_hub_integration_input(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ProviderInput::Gitlab(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_2.key("gitlab").start_object();
+            crate::protocol_serde::shape_git_lab_integration_input::ser_git_lab_integration_input(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::ProviderInput::Bitbucket(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("bitbucket").start_object();
+            crate::protocol_serde::shape_bitbucket_integration_input::ser_bitbucket_integration_input(&mut object_3, inner)?;
+            object_3.finish();
+        }
+        crate::types::ProviderInput::Confluence(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_2.key("confluence").start_object();
+            crate::protocol_serde::shape_confluence_integration_input::ser_confluence_integration_input(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::ProviderInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ProviderInput"))
         }

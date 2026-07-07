@@ -362,6 +362,24 @@ pub(crate) fn get_attached_file_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_evaluation_form_validation_output_output_correct_errors(
+    mut builder: crate::operation::get_evaluation_form_validation::builders::GetEvaluationFormValidationOutputBuilder,
+) -> crate::operation::get_evaluation_form_validation::builders::GetEvaluationFormValidationOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::EvaluationFormValidationStatus>().ok()
+    }
+    if builder.evaluation_form_id.is_none() {
+        builder.evaluation_form_id = Some(Default::default())
+    }
+    if builder.evaluation_form_version.is_none() {
+        builder.evaluation_form_version = Some(Default::default())
+    }
+    if builder.started_time.is_none() {
+        builder.started_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_task_template_output_output_correct_errors(
     mut builder: crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder,
 ) -> crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder {
@@ -526,6 +544,21 @@ pub(crate) fn start_contact_streaming_output_output_correct_errors(
 ) -> crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder {
     if builder.streaming_id.is_none() {
         builder.streaming_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_evaluation_form_validation_output_output_correct_errors(
+    mut builder: crate::operation::start_evaluation_form_validation::builders::StartEvaluationFormValidationOutputBuilder,
+) -> crate::operation::start_evaluation_form_validation::builders::StartEvaluationFormValidationOutputBuilder {
+    if builder.evaluation_form_id.is_none() {
+        builder.evaluation_form_id = Some(Default::default())
+    }
+    if builder.evaluation_form_arn.is_none() {
+        builder.evaluation_form_arn = Some(Default::default())
+    }
+    if builder.evaluation_form_version.is_none() {
+        builder.evaluation_form_version = Some(Default::default())
     }
     builder
 }
@@ -1256,6 +1289,21 @@ pub(crate) fn evaluation_form_target_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_form_validation_finding_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormValidationFindingBuilder,
+) -> crate::types::builders::EvaluationFormValidationFindingBuilder {
+    if builder.issue_code.is_none() {
+        builder.issue_code = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.severity.is_none() {
+        builder.severity = "no value was set".parse::<crate::types::EvaluationFormValidationFindingSeverity>().ok()
+    }
+    builder
+}
+
 pub(crate) fn evaluation_form_version_summary_correct_errors(
     mut builder: crate::types::builders::EvaluationFormVersionSummaryBuilder,
 ) -> crate::types::builders::EvaluationFormVersionSummaryBuilder {
@@ -1974,6 +2022,15 @@ pub(crate) fn evaluation_form_question_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_form_score_threshold_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormScoreThresholdBuilder,
+) -> crate::types::builders::EvaluationFormScoreThresholdBuilder {
+    if builder.performance_category.is_none() {
+        builder.performance_category = "no value was set".parse::<crate::types::PerformanceCategoryName>().ok()
+    }
+    builder
+}
+
 pub(crate) fn evaluation_form_section_correct_errors(
     mut builder: crate::types::builders::EvaluationFormSectionBuilder,
 ) -> crate::types::builders::EvaluationFormSectionBuilder {
@@ -2358,6 +2415,15 @@ pub(crate) fn evaluation_form_item_enablement_expression_correct_errors(
     }
     if builder.comparator.is_none() {
         builder.comparator = "no value was set".parse::<crate::types::EvaluationFormItemSourceValuesComparator>().ok()
+    }
+    builder
+}
+
+pub(crate) fn question_option_points_configuration_correct_errors(
+    mut builder: crate::types::builders::QuestionOptionPointsConfigurationBuilder,
+) -> crate::types::builders::QuestionOptionPointsConfigurationBuilder {
+    if builder.point_value.is_none() {
+        builder.point_value = Some(Default::default())
     }
     builder
 }

@@ -22,6 +22,8 @@ pub struct AgreementViewSummary {
     pub proposal_summary: ::std::option::Option<crate::types::ProposalSummary>,
     /// <p>The current status of the agreement.</p>
     pub status: ::std::option::Option<crate::types::AgreementStatus>,
+    /// <p>A list of entitlements associated with the agreement.</p>
+    pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
 }
 impl AgreementViewSummary {
     /// <p>The unique identifier of the agreement.</p>
@@ -60,6 +62,12 @@ impl AgreementViewSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatus> {
         self.status.as_ref()
     }
+    /// <p>A list of entitlements associated with the agreement.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
+        self.entitlements.as_deref().unwrap_or_default()
+    }
 }
 impl AgreementViewSummary {
     /// Creates a new builder-style object to manufacture [`AgreementViewSummary`](crate::types::AgreementViewSummary).
@@ -81,6 +89,7 @@ pub struct AgreementViewSummaryBuilder {
     pub(crate) proposer: ::std::option::Option<crate::types::Proposer>,
     pub(crate) proposal_summary: ::std::option::Option<crate::types::ProposalSummary>,
     pub(crate) status: ::std::option::Option<crate::types::AgreementStatus>,
+    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
 }
 impl AgreementViewSummaryBuilder {
     /// <p>The unique identifier of the agreement.</p>
@@ -209,6 +218,26 @@ impl AgreementViewSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatus> {
         &self.status
     }
+    /// Appends an item to `entitlements`.
+    ///
+    /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+    ///
+    /// <p>A list of entitlements associated with the agreement.</p>
+    pub fn entitlements(mut self, input: crate::types::Entitlement) -> Self {
+        let mut v = self.entitlements.unwrap_or_default();
+        v.push(input);
+        self.entitlements = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of entitlements associated with the agreement.</p>
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
+        self.entitlements = input;
+        self
+    }
+    /// <p>A list of entitlements associated with the agreement.</p>
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+        &self.entitlements
+    }
     /// Consumes the builder and constructs a [`AgreementViewSummary`](crate::types::AgreementViewSummary).
     pub fn build(self) -> crate::types::AgreementViewSummary {
         crate::types::AgreementViewSummary {
@@ -221,6 +250,7 @@ impl AgreementViewSummaryBuilder {
             proposer: self.proposer,
             proposal_summary: self.proposal_summary,
             status: self.status,
+            entitlements: self.entitlements,
         }
     }
 }

@@ -8,8 +8,12 @@ pub enum ResourceDetails {
     AuroraDbClusterStorage(crate::types::AuroraDbClusterStorage),
     /// <p>The Compute Savings Plans recommendation details.</p>
     ComputeSavingsPlans(crate::types::ComputeSavingsPlans),
+    /// <p>The Amazon DocumentDB cluster recommendation details.</p>
+    DocumentDbCluster(crate::types::DocumentDbCluster),
     /// <p>The DynamoDB reserved capacity recommendation details.</p>
     DynamoDbReservedCapacity(crate::types::DynamoDbReservedCapacity),
+    /// <p>The DynamoDB table recommendation details.</p>
+    DynamoDbTable(crate::types::DynamoDbTable),
     /// <p>The Amazon Elastic Block Store volume recommendation details.</p>
     EbsVolume(crate::types::EbsVolume),
     /// <p>The EC2 Auto Scaling group recommendation details.</p>
@@ -22,10 +26,14 @@ pub enum ResourceDetails {
     Ec2ReservedInstances(crate::types::Ec2ReservedInstances),
     /// <p>The ECS service recommendation details.</p>
     EcsService(crate::types::EcsService),
+    /// <p>The ElastiCache cluster recommendation details.</p>
+    ElastiCacheCluster(crate::types::ElastiCacheCluster),
     /// <p>The ElastiCache reserved instances recommendation details.</p>
     ElastiCacheReservedInstances(crate::types::ElastiCacheReservedInstances),
     /// <p>The Lambda function recommendation details.</p>
     LambdaFunction(crate::types::LambdaFunction),
+    /// <p>The MemoryDB cluster recommendation details.</p>
+    MemoryDbCluster(crate::types::MemoryDbCluster),
     /// <p>The MemoryDB reserved instances recommendation details.</p>
     MemoryDbReservedInstances(crate::types::MemoryDbReservedInstances),
     /// <p>The NAT Gateway recommendation details.</p>
@@ -40,8 +48,12 @@ pub enum ResourceDetails {
     RdsReservedInstances(crate::types::RdsReservedInstances),
     /// <p>The Redshift reserved instances recommendation details.</p>
     RedshiftReservedInstances(crate::types::RedshiftReservedInstances),
+    /// <p>The SageMaker endpoint recommendation details.</p>
+    SageMakerEndpoint(crate::types::SageMakerEndpoint),
     /// <p>The SageMaker AI Savings Plans recommendation details.</p>
     SageMakerSavingsPlans(crate::types::SageMakerSavingsPlans),
+    /// <p>The WorkSpaces recommendation details.</p>
+    WorkSpaces(crate::types::WorkSpaces),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -79,6 +91,19 @@ impl ResourceDetails {
     pub fn is_compute_savings_plans(&self) -> bool {
         self.as_compute_savings_plans().is_ok()
     }
+    /// Tries to convert the enum instance into [`DocumentDbCluster`](crate::types::ResourceDetails::DocumentDbCluster), extracting the inner [`DocumentDbCluster`](crate::types::DocumentDbCluster).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_document_db_cluster(&self) -> ::std::result::Result<&crate::types::DocumentDbCluster, &Self> {
+        if let ResourceDetails::DocumentDbCluster(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DocumentDbCluster`](crate::types::ResourceDetails::DocumentDbCluster).
+    pub fn is_document_db_cluster(&self) -> bool {
+        self.as_document_db_cluster().is_ok()
+    }
     /// Tries to convert the enum instance into [`DynamoDbReservedCapacity`](crate::types::ResourceDetails::DynamoDbReservedCapacity), extracting the inner [`DynamoDbReservedCapacity`](crate::types::DynamoDbReservedCapacity).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dynamo_db_reserved_capacity(&self) -> ::std::result::Result<&crate::types::DynamoDbReservedCapacity, &Self> {
@@ -91,6 +116,19 @@ impl ResourceDetails {
     /// Returns true if this is a [`DynamoDbReservedCapacity`](crate::types::ResourceDetails::DynamoDbReservedCapacity).
     pub fn is_dynamo_db_reserved_capacity(&self) -> bool {
         self.as_dynamo_db_reserved_capacity().is_ok()
+    }
+    /// Tries to convert the enum instance into [`DynamoDbTable`](crate::types::ResourceDetails::DynamoDbTable), extracting the inner [`DynamoDbTable`](crate::types::DynamoDbTable).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_dynamo_db_table(&self) -> ::std::result::Result<&crate::types::DynamoDbTable, &Self> {
+        if let ResourceDetails::DynamoDbTable(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DynamoDbTable`](crate::types::ResourceDetails::DynamoDbTable).
+    pub fn is_dynamo_db_table(&self) -> bool {
+        self.as_dynamo_db_table().is_ok()
     }
     /// Tries to convert the enum instance into [`EbsVolume`](crate::types::ResourceDetails::EbsVolume), extracting the inner [`EbsVolume`](crate::types::EbsVolume).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -170,6 +208,19 @@ impl ResourceDetails {
     pub fn is_ecs_service(&self) -> bool {
         self.as_ecs_service().is_ok()
     }
+    /// Tries to convert the enum instance into [`ElastiCacheCluster`](crate::types::ResourceDetails::ElastiCacheCluster), extracting the inner [`ElastiCacheCluster`](crate::types::ElastiCacheCluster).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_elasti_cache_cluster(&self) -> ::std::result::Result<&crate::types::ElastiCacheCluster, &Self> {
+        if let ResourceDetails::ElastiCacheCluster(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ElastiCacheCluster`](crate::types::ResourceDetails::ElastiCacheCluster).
+    pub fn is_elasti_cache_cluster(&self) -> bool {
+        self.as_elasti_cache_cluster().is_ok()
+    }
     /// Tries to convert the enum instance into [`ElastiCacheReservedInstances`](crate::types::ResourceDetails::ElastiCacheReservedInstances), extracting the inner [`ElastiCacheReservedInstances`](crate::types::ElastiCacheReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_elasti_cache_reserved_instances(&self) -> ::std::result::Result<&crate::types::ElastiCacheReservedInstances, &Self> {
@@ -195,6 +246,19 @@ impl ResourceDetails {
     /// Returns true if this is a [`LambdaFunction`](crate::types::ResourceDetails::LambdaFunction).
     pub fn is_lambda_function(&self) -> bool {
         self.as_lambda_function().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MemoryDbCluster`](crate::types::ResourceDetails::MemoryDbCluster), extracting the inner [`MemoryDbCluster`](crate::types::MemoryDbCluster).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_memory_db_cluster(&self) -> ::std::result::Result<&crate::types::MemoryDbCluster, &Self> {
+        if let ResourceDetails::MemoryDbCluster(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MemoryDbCluster`](crate::types::ResourceDetails::MemoryDbCluster).
+    pub fn is_memory_db_cluster(&self) -> bool {
+        self.as_memory_db_cluster().is_ok()
     }
     /// Tries to convert the enum instance into [`MemoryDbReservedInstances`](crate::types::ResourceDetails::MemoryDbReservedInstances), extracting the inner [`MemoryDbReservedInstances`](crate::types::MemoryDbReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -287,6 +351,19 @@ impl ResourceDetails {
     pub fn is_redshift_reserved_instances(&self) -> bool {
         self.as_redshift_reserved_instances().is_ok()
     }
+    /// Tries to convert the enum instance into [`SageMakerEndpoint`](crate::types::ResourceDetails::SageMakerEndpoint), extracting the inner [`SageMakerEndpoint`](crate::types::SageMakerEndpoint).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_sage_maker_endpoint(&self) -> ::std::result::Result<&crate::types::SageMakerEndpoint, &Self> {
+        if let ResourceDetails::SageMakerEndpoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SageMakerEndpoint`](crate::types::ResourceDetails::SageMakerEndpoint).
+    pub fn is_sage_maker_endpoint(&self) -> bool {
+        self.as_sage_maker_endpoint().is_ok()
+    }
     /// Tries to convert the enum instance into [`SageMakerSavingsPlans`](crate::types::ResourceDetails::SageMakerSavingsPlans), extracting the inner [`SageMakerSavingsPlans`](crate::types::SageMakerSavingsPlans).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sage_maker_savings_plans(&self) -> ::std::result::Result<&crate::types::SageMakerSavingsPlans, &Self> {
@@ -299,6 +376,19 @@ impl ResourceDetails {
     /// Returns true if this is a [`SageMakerSavingsPlans`](crate::types::ResourceDetails::SageMakerSavingsPlans).
     pub fn is_sage_maker_savings_plans(&self) -> bool {
         self.as_sage_maker_savings_plans().is_ok()
+    }
+    /// Tries to convert the enum instance into [`WorkSpaces`](crate::types::ResourceDetails::WorkSpaces), extracting the inner [`WorkSpaces`](crate::types::WorkSpaces).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_work_spaces(&self) -> ::std::result::Result<&crate::types::WorkSpaces, &Self> {
+        if let ResourceDetails::WorkSpaces(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`WorkSpaces`](crate::types::ResourceDetails::WorkSpaces).
+    pub fn is_work_spaces(&self) -> bool {
+        self.as_work_spaces().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

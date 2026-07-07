@@ -30,7 +30,7 @@ impl crate::operation::delete_domain::builders::DeleteDomainInputBuilder {
 /// <li>
 /// <p>The registry for the top-level domain might hold the domain name for a brief time before releasing it for other users to register (varies by registry).</p></li>
 /// <li>
-/// <p>When the registration has been deleted, we'll send you a confirmation to the registrant contact. The email will come from <code>noreply@domainnameverification.net</code> or <code>noreply@registrar.amazon.com</code>.</p></li>
+/// <p>When the registration has been deleted, we'll send you a confirmation to the registrant contact. The email will come from <code>noreply@domainnameverification.net</code> or <code>noreply@emailverification.info</code> or <code>noreply@registrar.amazon</code>.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDomainFluentBuilder {

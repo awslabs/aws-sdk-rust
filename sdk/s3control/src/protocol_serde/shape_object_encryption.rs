@@ -16,7 +16,11 @@ pub fn ser_object_encryption(
 #[allow(clippy::needless_question_mark)]
 pub fn de_object_encryption(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ObjectEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ObjectEncryption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_object_encryption(
             s if s.matches("SSE-KMS") /* SSEKMS com.amazonaws.s3control#ObjectEncryption$SSEKMS */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_s3_update_object_encryption_ssekms::de_s3_update_object_encryption_ssekms(&mut tag)
+                        crate::protocol_serde::shape_s3_update_object_encryption_ssekms::de_s3_update_object_encryption_ssekms(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -86,6 +86,8 @@ pub(crate) fn de_describe_flow(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -113,7 +115,7 @@ pub(crate) fn de_describe_flow(
                 }
                 "destinationFlowConfigList" => {
                     builder = builder.set_destination_flow_config_list(
-                        crate::protocol_serde::shape_destination_flow_config_list::de_destination_flow_config_list(tokens, _value)?,
+                        crate::protocol_serde::shape_destination_flow_config_list::de_destination_flow_config_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "flowArn" => {
@@ -152,12 +154,15 @@ pub(crate) fn de_describe_flow(
                     );
                 }
                 "lastRunExecutionDetails" => {
-                    builder =
-                        builder.set_last_run_execution_details(crate::protocol_serde::shape_execution_details::de_execution_details(tokens, _value)?);
+                    builder = builder.set_last_run_execution_details(crate::protocol_serde::shape_execution_details::de_execution_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "lastRunMetadataCatalogDetails" => {
                     builder = builder.set_last_run_metadata_catalog_details(
-                        crate::protocol_serde::shape_metadata_catalog_details::de_metadata_catalog_details(tokens, _value)?,
+                        crate::protocol_serde::shape_metadata_catalog_details::de_metadata_catalog_details(tokens, _value, depth + 1)?,
                     );
                 }
                 "lastUpdatedAt" => {
@@ -175,7 +180,9 @@ pub(crate) fn de_describe_flow(
                 }
                 "metadataCatalogConfig" => {
                     builder = builder.set_metadata_catalog_config(crate::protocol_serde::shape_metadata_catalog_config::de_metadata_catalog_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "schemaVersion" => {
@@ -186,16 +193,20 @@ pub(crate) fn de_describe_flow(
                     );
                 }
                 "sourceFlowConfig" => {
-                    builder = builder.set_source_flow_config(crate::protocol_serde::shape_source_flow_config::de_source_flow_config(tokens, _value)?);
+                    builder = builder.set_source_flow_config(crate::protocol_serde::shape_source_flow_config::de_source_flow_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "tasks" => {
-                    builder = builder.set_tasks(crate::protocol_serde::shape_tasks::de_tasks(tokens, _value)?);
+                    builder = builder.set_tasks(crate::protocol_serde::shape_tasks::de_tasks(tokens, _value, depth + 1)?);
                 }
                 "triggerConfig" => {
-                    builder = builder.set_trigger_config(crate::protocol_serde::shape_trigger_config::de_trigger_config(tokens, _value)?);
+                    builder = builder.set_trigger_config(crate::protocol_serde::shape_trigger_config::de_trigger_config(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

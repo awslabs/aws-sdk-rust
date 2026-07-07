@@ -23,15 +23,25 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_delete_instrumentation_configurations;
+
 pub(crate) mod shape_batch_get_service_level_objective_budget_report;
 
 pub(crate) mod shape_batch_update_exclusion_windows;
+
+pub(crate) mod shape_create_instrumentation_configuration;
 
 pub(crate) mod shape_create_service_level_objective;
 
 pub(crate) mod shape_delete_grouping_configuration;
 
+pub(crate) mod shape_delete_instrumentation_configuration;
+
 pub(crate) mod shape_delete_service_level_objective;
+
+pub(crate) mod shape_get_instrumentation_configuration;
+
+pub(crate) mod shape_get_instrumentation_configuration_status;
 
 pub(crate) mod shape_get_service;
 
@@ -42,6 +52,8 @@ pub(crate) mod shape_list_audit_findings;
 pub(crate) mod shape_list_entity_events;
 
 pub(crate) mod shape_list_grouping_attribute_definitions;
+
+pub(crate) mod shape_list_instrumentation_configurations;
 
 pub(crate) mod shape_list_service_dependencies;
 
@@ -61,6 +73,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_grouping_configuration;
 
+pub(crate) mod shape_report_instrumentation_configuration_status;
+
 pub(crate) mod shape_start_discovery;
 
 pub(crate) mod shape_tag_resource;
@@ -79,19 +93,31 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_delete_instrumentation_configurations_input;
+
 pub(crate) mod shape_batch_get_service_level_objective_budget_report_input;
 
 pub(crate) mod shape_batch_update_exclusion_windows_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_instrumentation_configuration_input;
+
 pub(crate) mod shape_create_service_level_objective_input;
+
+pub(crate) mod shape_delete_instrumentation_configuration_input;
+
+pub(crate) mod shape_get_instrumentation_configuration_input;
+
+pub(crate) mod shape_get_instrumentation_configuration_status_input;
 
 pub(crate) mod shape_get_service_input;
 
 pub(crate) mod shape_list_audit_findings_input;
 
 pub(crate) mod shape_list_entity_events_input;
+
+pub(crate) mod shape_list_instrumentation_configurations_input;
 
 pub(crate) mod shape_list_service_dependencies_input;
 
@@ -104,6 +130,8 @@ pub(crate) mod shape_list_service_operations_input;
 pub(crate) mod shape_list_service_states_input;
 
 pub(crate) mod shape_put_grouping_configuration_input;
+
+pub(crate) mod shape_report_instrumentation_configuration_status_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -125,13 +153,23 @@ pub(crate) mod shape_audit_findings;
 
 pub(crate) mod shape_audit_target;
 
+pub(crate) mod shape_batch_delete_deletion_target;
+
+pub(crate) mod shape_batch_delete_error_list;
+
+pub(crate) mod shape_batch_delete_successful_deletion_list;
+
 pub(crate) mod shape_batch_update_exclusion_windows_errors;
 
 pub(crate) mod shape_burn_rate_configuration;
 
+pub(crate) mod shape_capture_configuration;
+
 pub(crate) mod shape_change_events;
 
 pub(crate) mod shape_dependency_config;
+
+pub(crate) mod shape_dynamic_instrumentation_attribute_filters;
 
 pub(crate) mod shape_exclusion_window;
 
@@ -144,6 +182,18 @@ pub(crate) mod shape_grouping_attribute_definition;
 pub(crate) mod shape_grouping_attribute_definitions;
 
 pub(crate) mod shape_grouping_configuration;
+
+pub(crate) mod shape_instrumentation_configuration;
+
+pub(crate) mod shape_instrumentation_configuration_status_report;
+
+pub(crate) mod shape_instrumentation_configurations_without_service_env;
+
+pub(crate) mod shape_instrumentation_status_event_list;
+
+pub(crate) mod shape_location;
+
+pub(crate) mod shape_location_identifier;
 
 pub(crate) mod shape_log_group_references;
 
@@ -179,6 +229,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_unprocessed_status_event_list;
+
 pub(crate) mod shape_attribute_maps;
 
 pub(crate) mod shape_attributes;
@@ -187,11 +239,29 @@ pub(crate) mod shape_audit_finding;
 
 pub(crate) mod shape_audit_target_entity;
 
+pub(crate) mod shape_batch_delete_by_resource_arns;
+
+pub(crate) mod shape_batch_delete_error;
+
+pub(crate) mod shape_batch_delete_scope;
+
+pub(crate) mod shape_batch_delete_successful_deletion;
+
 pub(crate) mod shape_batch_update_exclusion_windows_error;
 
 pub(crate) mod shape_burn_rate_configurations;
 
 pub(crate) mod shape_change_event;
+
+pub(crate) mod shape_code_capture_configuration;
+
+pub(crate) mod shape_code_location;
+
+pub(crate) mod shape_dynamic_instrumentation_attribute_filter_group;
+
+pub(crate) mod shape_instrumentation_configuration_without_service_env;
+
+pub(crate) mod shape_instrumentation_status_event;
 
 pub(crate) mod shape_interval;
 
@@ -225,6 +295,8 @@ pub(crate) mod shape_service_state;
 
 pub(crate) mod shape_service_summary;
 
+pub(crate) mod shape_unprocessed_status_event;
+
 pub(crate) mod shape_window;
 
 pub(crate) mod shape_attribute_filters;
@@ -236,6 +308,8 @@ pub(crate) mod shape_auditor_results;
 pub(crate) mod shape_calendar_interval;
 
 pub(crate) mod shape_canary_entity;
+
+pub(crate) mod shape_capture_limits_config;
 
 pub(crate) mod shape_composite_sli_config;
 
@@ -266,6 +340,8 @@ pub(crate) mod shape_service_level_indicator_metric;
 pub(crate) mod shape_service_level_objective_entity;
 
 pub(crate) mod shape_service_operation_entity;
+
+pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_auditor_result;
 

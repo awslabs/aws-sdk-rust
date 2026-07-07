@@ -12,8 +12,11 @@
 /// ```text
 /// # let routelegadditionalfeature = unimplemented!();
 /// match routelegadditionalfeature {
+///     RouteLegAdditionalFeature::Bookings => { /* ... */ },
 ///     RouteLegAdditionalFeature::Elevation => { /* ... */ },
 ///     RouteLegAdditionalFeature::Incidents => { /* ... */ },
+///     RouteLegAdditionalFeature::IntermediateStops => { /* ... */ },
+///     RouteLegAdditionalFeature::NextDepartures => { /* ... */ },
 ///     RouteLegAdditionalFeature::PassThroughWaypoints => { /* ... */ },
 ///     RouteLegAdditionalFeature::Summary => { /* ... */ },
 ///     RouteLegAdditionalFeature::Tolls => { /* ... */ },
@@ -48,9 +51,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum RouteLegAdditionalFeature {
     #[allow(missing_docs)] // documentation missing in model
+    Bookings,
+    #[allow(missing_docs)] // documentation missing in model
     Elevation,
     #[allow(missing_docs)] // documentation missing in model
     Incidents,
+    #[allow(missing_docs)] // documentation missing in model
+    IntermediateStops,
+    #[allow(missing_docs)] // documentation missing in model
+    NextDepartures,
     #[allow(missing_docs)] // documentation missing in model
     PassThroughWaypoints,
     #[allow(missing_docs)] // documentation missing in model
@@ -72,8 +81,11 @@ pub enum RouteLegAdditionalFeature {
 impl ::std::convert::From<&str> for RouteLegAdditionalFeature {
     fn from(s: &str) -> Self {
         match s {
+            "Bookings" => RouteLegAdditionalFeature::Bookings,
             "Elevation" => RouteLegAdditionalFeature::Elevation,
             "Incidents" => RouteLegAdditionalFeature::Incidents,
+            "IntermediateStops" => RouteLegAdditionalFeature::IntermediateStops,
+            "NextDepartures" => RouteLegAdditionalFeature::NextDepartures,
             "PassThroughWaypoints" => RouteLegAdditionalFeature::PassThroughWaypoints,
             "Summary" => RouteLegAdditionalFeature::Summary,
             "Tolls" => RouteLegAdditionalFeature::Tolls,
@@ -96,8 +108,11 @@ impl RouteLegAdditionalFeature {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RouteLegAdditionalFeature::Bookings => "Bookings",
             RouteLegAdditionalFeature::Elevation => "Elevation",
             RouteLegAdditionalFeature::Incidents => "Incidents",
+            RouteLegAdditionalFeature::IntermediateStops => "IntermediateStops",
+            RouteLegAdditionalFeature::NextDepartures => "NextDepartures",
             RouteLegAdditionalFeature::PassThroughWaypoints => "PassThroughWaypoints",
             RouteLegAdditionalFeature::Summary => "Summary",
             RouteLegAdditionalFeature::Tolls => "Tolls",
@@ -111,8 +126,11 @@ impl RouteLegAdditionalFeature {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "Bookings",
             "Elevation",
             "Incidents",
+            "IntermediateStops",
+            "NextDepartures",
             "PassThroughWaypoints",
             "Summary",
             "Tolls",
@@ -143,8 +161,11 @@ impl RouteLegAdditionalFeature {
 impl ::std::fmt::Display for RouteLegAdditionalFeature {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RouteLegAdditionalFeature::Bookings => write!(f, "Bookings"),
             RouteLegAdditionalFeature::Elevation => write!(f, "Elevation"),
             RouteLegAdditionalFeature::Incidents => write!(f, "Incidents"),
+            RouteLegAdditionalFeature::IntermediateStops => write!(f, "IntermediateStops"),
+            RouteLegAdditionalFeature::NextDepartures => write!(f, "NextDepartures"),
             RouteLegAdditionalFeature::PassThroughWaypoints => write!(f, "PassThroughWaypoints"),
             RouteLegAdditionalFeature::Summary => write!(f, "Summary"),
             RouteLegAdditionalFeature::Tolls => write!(f, "Tolls"),

@@ -123,6 +123,8 @@ pub fn de_delete_expression(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteExpressionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteExpressionResponse got {start_el:?}"
@@ -140,7 +142,7 @@ pub fn de_delete_expression(
             s if s.matches("Expression") /* Expression com.amazonaws.cloudsearch.synthetic#DeleteExpressionOutput$Expression */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_expression_status::de_expression_status(&mut tag)
+                        crate::protocol_serde::shape_expression_status::de_expression_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

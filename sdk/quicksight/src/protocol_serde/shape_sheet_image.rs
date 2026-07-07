@@ -51,10 +51,16 @@ pub fn ser_sheet_image(
 pub(crate) fn de_sheet_image<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SheetImage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,46 +69,62 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "SheetImageId" => {
-                            builder = builder.set_sheet_image_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "SheetImageId" => {
+                                builder = builder.set_sheet_image_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Source" => {
+                                builder = builder.set_source(crate::protocol_serde::shape_sheet_image_source::de_sheet_image_source(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Scaling" => {
+                                builder = builder.set_scaling(
+                                    crate::protocol_serde::shape_sheet_image_scaling_configuration::de_sheet_image_scaling_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "Tooltip" => {
+                                builder = builder.set_tooltip(
+                                    crate::protocol_serde::shape_sheet_image_tooltip_configuration::de_sheet_image_tooltip_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ImageContentAltText" => {
+                                builder = builder.set_image_content_alt_text(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Interactions" => {
+                                builder = builder.set_interactions(
+                                    crate::protocol_serde::shape_image_interaction_options::de_image_interaction_options(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Actions" => {
+                                builder = builder.set_actions(crate::protocol_serde::shape_image_custom_action_list::de_image_custom_action_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_sheet_image_source::de_sheet_image_source(tokens, _value)?);
-                        }
-                        "Scaling" => {
-                            builder = builder.set_scaling(
-                                crate::protocol_serde::shape_sheet_image_scaling_configuration::de_sheet_image_scaling_configuration(tokens, _value)?,
-                            );
-                        }
-                        "Tooltip" => {
-                            builder = builder.set_tooltip(
-                                crate::protocol_serde::shape_sheet_image_tooltip_configuration::de_sheet_image_tooltip_configuration(tokens, _value)?,
-                            );
-                        }
-                        "ImageContentAltText" => {
-                            builder = builder.set_image_content_alt_text(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Interactions" => {
-                            builder = builder.set_interactions(crate::protocol_serde::shape_image_interaction_options::de_image_interaction_options(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_image_custom_action_list::de_image_custom_action_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

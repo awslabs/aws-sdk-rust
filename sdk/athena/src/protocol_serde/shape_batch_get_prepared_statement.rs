@@ -96,6 +96,8 @@ pub(crate) fn de_batch_get_prepared_statement(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -103,13 +105,15 @@ pub(crate) fn de_batch_get_prepared_statement(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "PreparedStatements" => {
                     builder = builder.set_prepared_statements(
-                        crate::protocol_serde::shape_prepared_statement_details_list::de_prepared_statement_details_list(tokens, _value)?,
+                        crate::protocol_serde::shape_prepared_statement_details_list::de_prepared_statement_details_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "UnprocessedPreparedStatementNames" => {
                     builder = builder.set_unprocessed_prepared_statement_names(
                         crate::protocol_serde::shape_unprocessed_prepared_statement_name_list::de_unprocessed_prepared_statement_name_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

@@ -100,6 +100,8 @@ pub fn de_list_policy_versions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListPolicyVersionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListPolicyVersionsResponse got {start_el:?}"
@@ -117,7 +119,7 @@ pub fn de_list_policy_versions(
             s if s.matches("Versions") /* Versions com.amazonaws.iam.synthetic#ListPolicyVersionsOutput$Versions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_policy_document_version_list_type::de_policy_document_version_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_document_version_list_type::de_policy_document_version_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

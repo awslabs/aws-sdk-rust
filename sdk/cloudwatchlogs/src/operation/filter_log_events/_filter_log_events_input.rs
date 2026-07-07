@@ -28,6 +28,11 @@ pub struct FilterLogEventsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of events to return. The default is 10,000 events.</p>
     pub limit: ::std::option::Option<i32>,
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is true.</p>
+    /// <p>The <code>startFromHead</code> parameter sets the sort direction on the first request. On subsequent requests, the <code>nextToken</code> determines the sort direction. To continue paginating in the same direction, provide the returned <code>nextToken</code>. If you provide both <code>nextToken</code> and <code>startFromHead</code>, the direction of the <code>nextToken</code> is used.</p><note>
+    /// <p>Setting <code>startFromHead</code> to <code>false</code> is supported only when <code>startTime</code> is on or after <code>Jan 1, 2024 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to <code>false</code> and a <code>startTime</code> before this date returns an <code>InvalidParameterException</code>.</p>
+    /// </note>
+    pub start_from_head: ::std::option::Option<bool>,
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
     #[deprecated(
@@ -84,6 +89,13 @@ impl FilterLogEventsInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is true.</p>
+    /// <p>The <code>startFromHead</code> parameter sets the sort direction on the first request. On subsequent requests, the <code>nextToken</code> determines the sort direction. To continue paginating in the same direction, provide the returned <code>nextToken</code>. If you provide both <code>nextToken</code> and <code>startFromHead</code>, the direction of the <code>nextToken</code> is used.</p><note>
+    /// <p>Setting <code>startFromHead</code> to <code>false</code> is supported only when <code>startTime</code> is on or after <code>Jan 1, 2024 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to <code>false</code> and a <code>startTime</code> before this date returns an <code>InvalidParameterException</code>.</p>
+    /// </note>
+    pub fn start_from_head(&self) -> ::std::option::Option<bool> {
+        self.start_from_head
+    }
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
     #[deprecated(
@@ -118,6 +130,7 @@ pub struct FilterLogEventsInputBuilder {
     pub(crate) filter_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) start_from_head: ::std::option::Option<bool>,
     pub(crate) interleaved: ::std::option::Option<bool>,
     pub(crate) unmask: ::std::option::Option<bool>,
 }
@@ -275,6 +288,29 @@ impl FilterLogEventsInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is true.</p>
+    /// <p>The <code>startFromHead</code> parameter sets the sort direction on the first request. On subsequent requests, the <code>nextToken</code> determines the sort direction. To continue paginating in the same direction, provide the returned <code>nextToken</code>. If you provide both <code>nextToken</code> and <code>startFromHead</code>, the direction of the <code>nextToken</code> is used.</p><note>
+    /// <p>Setting <code>startFromHead</code> to <code>false</code> is supported only when <code>startTime</code> is on or after <code>Jan 1, 2024 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to <code>false</code> and a <code>startTime</code> before this date returns an <code>InvalidParameterException</code>.</p>
+    /// </note>
+    pub fn start_from_head(mut self, input: bool) -> Self {
+        self.start_from_head = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is true.</p>
+    /// <p>The <code>startFromHead</code> parameter sets the sort direction on the first request. On subsequent requests, the <code>nextToken</code> determines the sort direction. To continue paginating in the same direction, provide the returned <code>nextToken</code>. If you provide both <code>nextToken</code> and <code>startFromHead</code>, the direction of the <code>nextToken</code> is used.</p><note>
+    /// <p>Setting <code>startFromHead</code> to <code>false</code> is supported only when <code>startTime</code> is on or after <code>Jan 1, 2024 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to <code>false</code> and a <code>startTime</code> before this date returns an <code>InvalidParameterException</code>.</p>
+    /// </note>
+    pub fn set_start_from_head(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.start_from_head = input;
+        self
+    }
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is true.</p>
+    /// <p>The <code>startFromHead</code> parameter sets the sort direction on the first request. On subsequent requests, the <code>nextToken</code> determines the sort direction. To continue paginating in the same direction, provide the returned <code>nextToken</code>. If you provide both <code>nextToken</code> and <code>startFromHead</code>, the direction of the <code>nextToken</code> is used.</p><note>
+    /// <p>Setting <code>startFromHead</code> to <code>false</code> is supported only when <code>startTime</code> is on or after <code>Jan 1, 2024 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to <code>false</code> and a <code>startTime</code> before this date returns an <code>InvalidParameterException</code>.</p>
+    /// </note>
+    pub fn get_start_from_head(&self) -> &::std::option::Option<bool> {
+        &self.start_from_head
+    }
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
     #[deprecated(
@@ -332,6 +368,7 @@ impl FilterLogEventsInputBuilder {
             filter_pattern: self.filter_pattern,
             next_token: self.next_token,
             limit: self.limit,
+            start_from_head: self.start_from_head,
             interleaved: self.interleaved,
             unmask: self.unmask,
         })

@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster_operation_v2_serverless<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterOperationV2Serverless>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,17 +23,29 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sourceClusterInfo" => {
                             builder = builder.set_source_cluster_info(
-                                crate::protocol_serde::shape_serverless_connectivity_info::de_serverless_connectivity_info(tokens, _value)?,
+                                crate::protocol_serde::shape_serverless_connectivity_info::de_serverless_connectivity_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "targetClusterInfo" => {
                             builder = builder.set_target_cluster_info(
-                                crate::protocol_serde::shape_serverless_connectivity_info::de_serverless_connectivity_info(tokens, _value)?,
+                                crate::protocol_serde::shape_serverless_connectivity_info::de_serverless_connectivity_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "vpcConnectionInfo" => {
                             builder = builder.set_vpc_connection_info(
-                                crate::protocol_serde::shape_vpc_connection_info_serverless::de_vpc_connection_info_serverless(tokens, _value)?,
+                                crate::protocol_serde::shape_vpc_connection_info_serverless::de_vpc_connection_info_serverless(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

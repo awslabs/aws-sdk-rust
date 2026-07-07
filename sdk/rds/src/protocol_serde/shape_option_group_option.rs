@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_option_group_option(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OptionGroupOption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OptionGroupOption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -105,7 +109,7 @@ pub fn de_option_group_option(
             s if s.matches("OptionsDependedOn") /* OptionsDependedOn com.amazonaws.rds#OptionGroupOption$OptionsDependedOn */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_options_depended_on::de_options_depended_on(&mut tag)
+                        crate::protocol_serde::shape_options_depended_on::de_options_depended_on(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -115,7 +119,7 @@ pub fn de_option_group_option(
             s if s.matches("OptionsConflictsWith") /* OptionsConflictsWith com.amazonaws.rds#OptionGroupOption$OptionsConflictsWith */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_options_conflicts_with::de_options_conflicts_with(&mut tag)
+                        crate::protocol_serde::shape_options_conflicts_with::de_options_conflicts_with(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -200,7 +204,7 @@ pub fn de_option_group_option(
             s if s.matches("OptionGroupOptionSettings") /* OptionGroupOptionSettings com.amazonaws.rds#OptionGroupOption$OptionGroupOptionSettings */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_option_group_option_settings_list::de_option_group_option_settings_list(&mut tag)
+                        crate::protocol_serde::shape_option_group_option_settings_list::de_option_group_option_settings_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -210,7 +214,7 @@ pub fn de_option_group_option(
             s if s.matches("OptionGroupOptionVersions") /* OptionGroupOptionVersions com.amazonaws.rds#OptionGroupOption$OptionGroupOptionVersions */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_option_group_option_versions_list::de_option_group_option_versions_list(&mut tag)
+                        crate::protocol_serde::shape_option_group_option_versions_list::de_option_group_option_versions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

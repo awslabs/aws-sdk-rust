@@ -43,6 +43,8 @@ pub struct UpdateWorkspaceInput {
     /// <p>Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.</p>
     /// <p>If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
     pub remove_network_access_configuration: ::std::option::Option<bool>,
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl UpdateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -121,6 +123,10 @@ impl UpdateWorkspaceInput {
     pub fn remove_network_access_configuration(&self) -> ::std::option::Option<bool> {
         self.remove_network_access_configuration
     }
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateWorkspaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -140,6 +146,7 @@ impl ::std::fmt::Debug for UpdateWorkspaceInput {
         formatter.field("remove_vpc_configuration", &self.remove_vpc_configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("remove_network_access_configuration", &self.remove_network_access_configuration);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }
@@ -169,6 +176,7 @@ pub struct UpdateWorkspaceInputBuilder {
     pub(crate) remove_vpc_configuration: ::std::option::Option<bool>,
     pub(crate) network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     pub(crate) remove_network_access_configuration: ::std::option::Option<bool>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl UpdateWorkspaceInputBuilder {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -433,6 +441,20 @@ impl UpdateWorkspaceInputBuilder {
     pub fn get_remove_network_access_configuration(&self) -> &::std::option::Option<bool> {
         &self.remove_network_access_configuration
     }
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values are <code>IPv4</code> and <code>DualStack</code>. For more information about IP address types, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network access control</a>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
     pub fn build(
         self,
@@ -453,6 +475,7 @@ impl UpdateWorkspaceInputBuilder {
             remove_vpc_configuration: self.remove_vpc_configuration,
             network_access_control: self.network_access_control,
             remove_network_access_configuration: self.remove_network_access_configuration,
+            ip_address_type: self.ip_address_type,
         })
     }
 }
@@ -474,6 +497,7 @@ impl ::std::fmt::Debug for UpdateWorkspaceInputBuilder {
         formatter.field("remove_vpc_configuration", &self.remove_vpc_configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("remove_network_access_configuration", &self.remove_network_access_configuration);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }

@@ -81,6 +81,8 @@ pub fn de_launch_instances(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("LaunchInstancesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected LaunchInstancesResponse got {start_el:?}"
@@ -124,7 +126,7 @@ pub fn de_launch_instances(
             s if s.matches("Instances") /* Instances com.amazonaws.autoscaling.synthetic#LaunchInstancesOutput$Instances */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_instance_collections::de_instance_collections(&mut tag)
+                        crate::protocol_serde::shape_instance_collections::de_instance_collections(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -134,7 +136,7 @@ pub fn de_launch_instances(
             s if s.matches("Errors") /* Errors com.amazonaws.autoscaling.synthetic#LaunchInstancesOutput$Errors */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_launch_instances_errors::de_launch_instances_errors(&mut tag)
+                        crate::protocol_serde::shape_launch_instances_errors::de_launch_instances_errors(&mut tag, depth + 1)
                         ?
                     )
                 ;

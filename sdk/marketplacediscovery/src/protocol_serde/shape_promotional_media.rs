@@ -2,10 +2,16 @@
 pub(crate) fn de_promotional_media<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PromotionalMedia>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,14 +37,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "embeddedImage" => Some(crate::types::PromotionalMedia::EmbeddedImage(
-                            crate::protocol_serde::shape_promotional_embedded_image::de_promotional_embedded_image(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'embeddedImage' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_promotional_embedded_image::de_promotional_embedded_image(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'embeddedImage' cannot be null")
+                                })?,
                         )),
                         "embeddedVideo" => Some(crate::types::PromotionalMedia::EmbeddedVideo(
-                            crate::protocol_serde::shape_promotional_embedded_video::de_promotional_embedded_video(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'embeddedVideo' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_promotional_embedded_video::de_promotional_embedded_video(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'embeddedVideo' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

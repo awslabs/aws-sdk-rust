@@ -121,6 +121,8 @@ pub fn de_list_connection_functions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListConnectionFunctionsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListConnectionFunctionsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -131,7 +133,7 @@ pub fn de_list_connection_functions(
             s if s.matches("ConnectionFunctions") /* ConnectionFunctions com.amazonaws.cloudfront.synthetic#ListConnectionFunctionsOutput$ConnectionFunctions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_connection_function_summary_list::de_connection_function_summary_list(&mut tag)
+                        crate::protocol_serde::shape_connection_function_summary_list::de_connection_function_summary_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_reserved_instance_reservation_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReservedInstanceReservationValue, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedInstanceReservationValue::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_reserved_instance_reservation_value(
             s if s.matches("reservationValue") /* ReservationValue com.amazonaws.ec2#ReservedInstanceReservationValue$ReservationValue */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_reservation_value::de_reservation_value(&mut tag)
+                        crate::protocol_serde::shape_reservation_value::de_reservation_value(&mut tag, depth + 1)
                         ?
                     )
                 ;

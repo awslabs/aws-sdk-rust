@@ -75,6 +75,8 @@ pub(crate) fn de_get_detector(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -89,13 +91,19 @@ pub(crate) fn de_get_detector(
                 }
                 "dataSources" => {
                     builder = builder.set_data_sources(
-                        crate::protocol_serde::shape_data_source_configurations_result::de_data_source_configurations_result(tokens, _value)?,
+                        crate::protocol_serde::shape_data_source_configurations_result::de_data_source_configurations_result(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "features" => {
                     builder = builder.set_features(
                         crate::protocol_serde::shape_detector_feature_configurations_results::de_detector_feature_configurations_results(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -121,7 +129,7 @@ pub(crate) fn de_get_detector(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(

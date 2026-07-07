@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_list_access_grant_entry(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ListAccessGrantEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ListAccessGrantEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -50,7 +54,7 @@ pub fn de_list_access_grant_entry(
             s if s.matches("Grantee") /* Grantee com.amazonaws.s3control#ListAccessGrantEntry$Grantee */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag)
+                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -87,7 +91,7 @@ pub fn de_list_access_grant_entry(
             s if s.matches("AccessGrantsLocationConfiguration") /* AccessGrantsLocationConfiguration com.amazonaws.s3control#ListAccessGrantEntry$AccessGrantsLocationConfiguration */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_access_grants_location_configuration::de_access_grants_location_configuration(&mut tag)
+                        crate::protocol_serde::shape_access_grants_location_configuration::de_access_grants_location_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_metrics_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MetricsSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,24 +30,36 @@ where
                         "openFindings" => {
                             builder = builder.set_open_findings(
                                 crate::protocol_serde::shape_finding_metrics_value_per_severity::de_finding_metrics_value_per_severity(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "categoriesWithMostFindings" => {
                             builder = builder.set_categories_with_most_findings(
-                                crate::protocol_serde::shape_categories_with_most_findings::de_categories_with_most_findings(tokens, _value)?,
+                                crate::protocol_serde::shape_categories_with_most_findings::de_categories_with_most_findings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "scansWithMostOpenFindings" => {
                             builder = builder.set_scans_with_most_open_findings(
-                                crate::protocol_serde::shape_scans_with_most_open_findings::de_scans_with_most_open_findings(tokens, _value)?,
+                                crate::protocol_serde::shape_scans_with_most_open_findings::de_scans_with_most_open_findings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "scansWithMostOpenCriticalFindings" => {
                             builder = builder.set_scans_with_most_open_critical_findings(
                                 crate::protocol_serde::shape_scans_with_most_open_critical_findings::de_scans_with_most_open_critical_findings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

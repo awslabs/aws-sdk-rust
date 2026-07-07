@@ -156,9 +156,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListGat
 #[derive(Debug)]
 struct ListGatewayTargetsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListGatewayTargetsResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -297,6 +298,8 @@ pub enum ListGatewayTargetsError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception is thrown if there was an unexpected error during processing of request</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>This exception is thrown when a resource referenced by the operation does not exist</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the number of requests exceeds the limit</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by the service.</p>
@@ -336,6 +339,7 @@ impl ListGatewayTargetsError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -348,6 +352,10 @@ impl ListGatewayTargetsError {
     /// Returns `true` if the error kind is `ListGatewayTargetsError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ListGatewayTargetsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListGatewayTargetsError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -363,6 +371,7 @@ impl ::std::error::Error for ListGatewayTargetsError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -374,6 +383,7 @@ impl ::std::fmt::Display for ListGatewayTargetsError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -399,6 +409,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListGatewayTa
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

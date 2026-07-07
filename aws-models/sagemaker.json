@@ -178,6 +178,12 @@
                         "smithy.api#documentation": "<p>The Amazon S3 URI where benchmark results are stored.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "MlflowConfig": {
+                    "target": "com.amazonaws.sagemaker#AIMlflowConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The MLflow tracking configuration for the job. If you don't specify this parameter, MLflow tracking is disabled.</p>"
+                    }
                 }
             },
             "traits": {
@@ -199,6 +205,12 @@
                     "target": "com.amazonaws.sagemaker#AICloudWatchLogsList",
                     "traits": {
                         "smithy.api#documentation": "<p>The CloudWatch log information for the benchmark job.</p>"
+                    }
+                },
+                "MlflowConfig": {
+                    "target": "com.amazonaws.sagemaker#AIMlflowConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The MLflow tracking configuration for the job.</p>"
                     }
                 }
             },
@@ -334,6 +346,64 @@
             "type": "list",
             "member": {
                 "target": "com.amazonaws.sagemaker#AIMlReservationArn"
+            }
+        },
+        "com.amazonaws.sagemaker#AIMlflowConfig": {
+            "type": "structure",
+            "members": {
+                "MlflowResourceArn": {
+                    "target": "com.amazonaws.sagemaker#AIMlflowResourceArn",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the SageMaker managed MLflow resource.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "MlflowExperimentName": {
+                    "target": "com.amazonaws.sagemaker#AIMlflowExperimentName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The MLflow experiment name used for tracking.</p>"
+                    }
+                },
+                "MlflowRunName": {
+                    "target": "com.amazonaws.sagemaker#AIMlflowRunName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The MLflow run name used for tracking.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The MLflow tracking configuration for logging metrics and parameters to a SageMaker managed MLflow tracking server.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#AIMlflowExperimentName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 256
+                },
+                "smithy.api#pattern": "^[a-zA-Z0-9\\-_./]+$"
+            }
+        },
+        "com.amazonaws.sagemaker#AIMlflowResourceArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 20,
+                    "max": 2048
+                },
+                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:mlflow-(app|tracking-server)/.*$"
+            }
+        },
+        "com.amazonaws.sagemaker#AIMlflowRunName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 256
+                },
+                "smithy.api#pattern": "^[a-zA-Z0-9\\-_./]+$"
             }
         },
         "com.amazonaws.sagemaker#AIModelSource": {
@@ -828,6 +898,12 @@
                     "traits": {
                         "smithy.api#enumValue": "ml.p5en.48xlarge"
                     }
+                },
+                "ML_P6_B200_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p6-b200.48xlarge"
+                    }
                 }
             }
         },
@@ -1062,6 +1138,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The name or Amazon Resource Name (ARN) of the model package group where the optimized model is registered as a new model package version.</p>"
                     }
+                },
+                "MlflowConfig": {
+                    "target": "com.amazonaws.sagemaker#AIMlflowConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The MLflow tracking configuration for the job. If you don't specify this parameter, MLflow tracking is disabled.</p>"
+                    }
                 }
             },
             "traits": {
@@ -1083,6 +1165,12 @@
                     "target": "com.amazonaws.sagemaker#AIResourceIdentifier",
                     "traits": {
                         "smithy.api#documentation": "<p>The name or Amazon Resource Name (ARN) of the model package group where deployment-ready model packages are registered.</p>"
+                    }
+                },
+                "MlflowConfig": {
+                    "target": "com.amazonaws.sagemaker#AIMlflowConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The MLflow tracking configuration for the job.</p>"
                     }
                 }
             },
@@ -3517,6 +3605,48 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "ml.r6id.32xlarge"
+                    }
+                },
+                "ML_P5_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p5.4xlarge"
+                    }
+                },
+                "ML_G7E_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g7e.2xlarge"
+                    }
+                },
+                "ML_G7E_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g7e.4xlarge"
+                    }
+                },
+                "ML_G7E_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g7e.8xlarge"
+                    }
+                },
+                "ML_G7E_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g7e.12xlarge"
+                    }
+                },
+                "ML_G7E_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g7e.24xlarge"
+                    }
+                },
+                "ML_G7E_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g7e.48xlarge"
                     }
                 }
             }
@@ -9638,6 +9768,65 @@
                 "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$"
             }
         },
+        "com.amazonaws.sagemaker#ClusterAutoPatchConfig": {
+            "type": "structure",
+            "members": {
+                "PatchingStrategy": {
+                    "target": "com.amazonaws.sagemaker#ClusterPatchingStrategy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The strategy for applying patches to instances in the group.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "PatchSchedule": {
+                    "target": "com.amazonaws.sagemaker#ClusterPatchSchedule",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The schedule for automatic patching, including the next patch date.</p>"
+                    }
+                },
+                "DeploymentConfig": {
+                    "target": "com.amazonaws.sagemaker#DeploymentConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The deployment configuration for rolling patch updates, including rollback settings and batch sizes. Only applicable when using a rolling patching strategy.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for automatic patching of the instance group. When configured, the system automatically applies security patch AMI updates to the instance group.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterAutoPatchConfigDetails": {
+            "type": "structure",
+            "members": {
+                "PatchingStrategy": {
+                    "target": "com.amazonaws.sagemaker#ClusterPatchingStrategy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The strategy used for applying patches to instances in the group.</p>"
+                    }
+                },
+                "CurrentPatchSchedule": {
+                    "target": "com.amazonaws.sagemaker#ClusterPatchScheduleDetails",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The currently active patch schedule that the system will execute.</p>"
+                    }
+                },
+                "DesiredPatchSchedule": {
+                    "target": "com.amazonaws.sagemaker#ClusterPatchScheduleDetails",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The requested patch schedule. Differs from CurrentPatchSchedule when a reschedule request is pending.</p>"
+                    }
+                },
+                "DeploymentConfig": {
+                    "target": "com.amazonaws.sagemaker#DeploymentConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The deployment configuration for rolling patch updates.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The auto-patching configuration details for the instance group, including the patching strategy and schedule.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#ClusterAutoScalerType": {
             "type": "enum",
             "members": {
@@ -9943,10 +10132,42 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A human-readable description of the event.</p>"
                     }
+                },
+                "EventLevel": {
+                    "target": "com.amazonaws.sagemaker#ClusterEventLevel",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The severity level of the event. Valid values are <code>Info</code>, <code>Warn</code>, and <code>Error</code>.</p>"
+                    }
                 }
             },
             "traits": {
                 "smithy.api#documentation": "<p>Detailed information about a specific event in a HyperPod cluster.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterEventLevel": {
+            "type": "enum",
+            "members": {
+                "INFO": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Info"
+                    }
+                },
+                "WARN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Warn"
+                    }
+                },
+                "ERROR": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Error"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The severity level for a HyperPod cluster event.</p>"
             }
         },
         "com.amazonaws.sagemaker#ClusterEventMaxResults": {
@@ -10053,10 +10274,36 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A brief, human-readable description of the event.</p>"
                     }
+                },
+                "EventLevel": {
+                    "target": "com.amazonaws.sagemaker#ClusterEventLevel",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The severity level of the event. Valid values are <code>Info</code>, <code>Warn</code>, and <code>Error</code>.</p>"
+                    }
                 }
             },
             "traits": {
                 "smithy.api#documentation": "<p>A summary of an event in a HyperPod cluster.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterFSxLustreDeletionPolicy": {
+            "type": "enum",
+            "members": {
+                "DELETE_IF_NOT_USED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DeleteIfNotUsed"
+                    }
+                },
+                "KEEP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Keep"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The deletion policy for the Amazon FSx for Lustre file system used in the shared environment of restricted instance groups (RIG).</p>"
             }
         },
         "com.amazonaws.sagemaker#ClusterFsxLustreConfig": {
@@ -10116,6 +10363,38 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Defines the configuration for attaching an Amazon FSx for OpenZFS file system to instances in a SageMaker HyperPod cluster instance group.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterImageVersionStatus": {
+            "type": "enum",
+            "members": {
+                "UP_TO_DATE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "UpToDate"
+                    }
+                },
+                "UPDATE_AVAILABLE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "UpdateAvailable"
+                    }
+                },
+                "SECURITY_UPDATE_REQUIRED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SecurityUpdateRequired"
+                    }
+                },
+                "END_OF_LIFE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EndOfLife"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The status of the Amazon Machine Image (AMI) version for the HyperPod cluster instance group, node, or cluster. The AMI version is determined at the instance group level, and all nodes within an instance group run the same AMI. The cluster-level status is aggregated across all instance groups.</p> <ul> <li> <p> <code>UpToDate</code>: The resource is running the latest available AMI version.</p> </li> <li> <p> <code>UpdateAvailable</code>: A newer AMI version is available for the resource.</p> </li> <li> <p> <code>SecurityUpdateRequired</code>: The current AMI has known security vulnerabilities, and a patched version is available.</p> </li> <li> <p> <code>EndOfLife</code>: The AMI variant has reached end of support and an upgrade is required.</p> </li> </ul>"
             }
         },
         "com.amazonaws.sagemaker#ClusterInstanceCount": {
@@ -10232,6 +10511,12 @@
                         "smithy.api#documentation": "<p>The configuration object of the schedule that SageMaker follows when updating the AMI.</p>"
                     }
                 },
+                "AutoPatchConfig": {
+                    "target": "com.amazonaws.sagemaker#ClusterAutoPatchConfigDetails",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The auto-patching configuration for the instance group, including the current patching strategy and next scheduled patch date.</p>"
+                    }
+                },
                 "CurrentImageId": {
                     "target": "com.amazonaws.sagemaker#ImageId",
                     "traits": {
@@ -10242,6 +10527,24 @@
                     "target": "com.amazonaws.sagemaker#ImageId",
                     "traits": {
                         "smithy.api#documentation": "<p>The ID of the Amazon Machine Image (AMI) desired for the instance group.</p>"
+                    }
+                },
+                "CurrentImageReleaseVersion": {
+                    "target": "com.amazonaws.sagemaker#ImageReleaseVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version of the HyperPod-managed AMI currently running on the instance group.</p>"
+                    }
+                },
+                "DesiredImageReleaseVersion": {
+                    "target": "com.amazonaws.sagemaker#ImageReleaseVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The desired version of the HyperPod-managed AMI for the instance group. This may differ from the current version when an update is pending.</p>"
+                    }
+                },
+                "ImageVersionStatus": {
+                    "target": "com.amazonaws.sagemaker#ClusterImageVersionStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status of the image version for the instance group. Indicates whether the instance group is running the latest image version or if an update is available.</p>"
                     }
                 },
                 "ActiveOperations": {
@@ -10401,6 +10704,18 @@
                     "target": "com.amazonaws.sagemaker#ImageId",
                     "traits": {
                         "smithy.api#documentation": "<p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p> <ul> <li> <p> <code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p> </li> <li> <p> <code>CustomAmiId</code>: Use your custom AMI</p> </li> <li> <p> <code>default</code>: Use the default latest system image</p> </li> </ul> <p>If you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p> <ul> <li> <p>Encryption: The custom AMI must be unencrypted.</p> </li> <li> <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p> </li> <li> <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p> </li> </ul> <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input. Note that if you don't specify an instance group in your <code>UpdateClusterSoftware</code> request, then all of the instance groups are patched with the specified image.</p>"
+                    }
+                },
+                "AutoPatchConfig": {
+                    "target": "com.amazonaws.sagemaker#ClusterAutoPatchConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for automatic OS security patching. If present, the system automatically applies PATCH AMI updates to this instance group.</p>"
+                    }
+                },
+                "ImageReleaseVersion": {
+                    "target": "com.amazonaws.sagemaker#ImageReleaseVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version of the HyperPod-managed AMI to use for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code> (for example, <code>1.2.3</code>). If omitted, the latest available version is used.</p>"
                     }
                 },
                 "KubernetesConfig": {
@@ -11864,6 +12179,24 @@
                         "smithy.api#documentation": "<p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>"
                     }
                 },
+                "CurrentImageReleaseVersion": {
+                    "target": "com.amazonaws.sagemaker#ImageReleaseVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version of the HyperPod-managed AMI currently running on the node.</p>"
+                    }
+                },
+                "DesiredImageReleaseVersion": {
+                    "target": "com.amazonaws.sagemaker#ImageReleaseVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The desired version of the HyperPod-managed AMI for the node. This may differ from the current version when an update is pending.</p>"
+                    }
+                },
+                "ImageVersionStatus": {
+                    "target": "com.amazonaws.sagemaker#ClusterImageVersionStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status of the image version for the cluster node.</p>"
+                    }
+                },
                 "UltraServerInfo": {
                     "target": "com.amazonaws.sagemaker#UltraServerInfo",
                     "traits": {
@@ -12041,6 +12374,18 @@
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>"
                     }
+                },
+                "CurrentImageReleaseVersion": {
+                    "target": "com.amazonaws.sagemaker#ImageReleaseVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version of the HyperPod-managed AMI currently running on the node.</p>"
+                    }
+                },
+                "ImageVersionStatus": {
+                    "target": "com.amazonaws.sagemaker#ClusterImageVersionStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status of the image version for the cluster node.</p>"
+                    }
                 }
             },
             "traits": {
@@ -12131,6 +12476,54 @@
                 "smithy.api#length": {
                     "max": 1
                 }
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterPatchSchedule": {
+            "type": "structure",
+            "members": {
+                "NextPatchDate": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time of the next scheduled automatic patch. The system sets this automatically when a patch is detected. Use this field to reschedule the patch to a different date.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The schedule configuration for automatic patching.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterPatchScheduleDetails": {
+            "type": "structure",
+            "members": {
+                "NextPatchDate": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time of the next scheduled automatic patch.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The schedule details for automatic patching, including the next scheduled patch date.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterPatchingStrategy": {
+            "type": "enum",
+            "members": {
+                "WHEN_IDLE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "WhenIdle"
+                    }
+                },
+                "WHEN_ALL_IDLE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "WhenAllIdle"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The strategy for applying automatic patches to instances.</p> <ul> <li> <p> <code>WhenIdle</code>: Cordons all instances and patches each instance as it becomes idle (no running jobs). Each instance is uncordoned immediately after patching and becomes available for new jobs. If instances do not become idle, they remain on the previous AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion to manually update the remaining instances.</p> </li> <li> <p> <code>WhenAllIdle</code>: Cordons all instances and waits for all to become idle before patching. All instances are uncordoned after patching completes. If not all instances become idle, no patching occurs and all instances remain on the previous AMI version.</p> </li> </ul>"
             }
         },
         "com.amazonaws.sagemaker#ClusterPrivateDnsHostname": {
@@ -12308,9 +12701,7 @@
                 "EnvironmentConfig": {
                     "target": "com.amazonaws.sagemaker#EnvironmentConfig",
                     "traits": {
-                        "smithy.api#clientOptional": {},
-                        "smithy.api#documentation": "<p>The configuration for the restricted instance groups (RIG) environment.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The configuration for the restricted instance groups (RIG) environment.</p>"
                     }
                 }
             },
@@ -12328,6 +12719,38 @@
                     "min": 1,
                     "max": 100
                 }
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterRestrictedInstanceGroupsConfig": {
+            "type": "structure",
+            "members": {
+                "SharedEnvironmentConfig": {
+                    "target": "com.amazonaws.sagemaker#ClusterSharedEnvironmentConfig",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The shared environment configuration for the restricted instance groups (RIG).</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterRestrictedInstanceGroupsConfigOutput": {
+            "type": "structure",
+            "members": {
+                "SharedEnvironmentConfig": {
+                    "target": "com.amazonaws.sagemaker#ClusterSharedEnvironmentConfigDetails",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The shared environment configuration details for the restricted instance groups (RIG).</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The output configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>"
             }
         },
         "com.amazonaws.sagemaker#ClusterSchedulerConfigArn": {
@@ -12432,6 +12855,62 @@
             "type": "string",
             "traits": {
                 "smithy.api#pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9]){0,39}?$"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterSharedEnvironmentConfig": {
+            "type": "structure",
+            "members": {
+                "FSxLustreDeletionPolicy": {
+                    "target": "com.amazonaws.sagemaker#ClusterFSxLustreDeletionPolicy",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The deletion policy for the Amazon FSx for Lustre file system in the shared environment.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FSxLustreConfig": {
+                    "target": "com.amazonaws.sagemaker#FSxLustreConfig",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>Configuration settings for an Amazon FSx for Lustre file system in the shared environment.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The shared environment configuration for the restricted instance groups (RIG).</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ClusterSharedEnvironmentConfigDetails": {
+            "type": "structure",
+            "members": {
+                "CurrentFSxLustreConfig": {
+                    "target": "com.amazonaws.sagemaker#FSxLustreConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The current Amazon FSx for Lustre file system configuration in the shared environment.</p>"
+                    }
+                },
+                "DesiredFSxLustreConfig": {
+                    "target": "com.amazonaws.sagemaker#FSxLustreConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The desired Amazon FSx for Lustre file system configuration in the shared environment.</p>"
+                    }
+                },
+                "CurrentFSxLustreDeletionPolicy": {
+                    "target": "com.amazonaws.sagemaker#ClusterFSxLustreDeletionPolicy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The current deletion policy for the Amazon FSx for Lustre file system in the shared environment.</p>"
+                    }
+                },
+                "DesiredFSxLustreDeletionPolicy": {
+                    "target": "com.amazonaws.sagemaker#ClusterFSxLustreDeletionPolicy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The desired deletion policy for the Amazon FSx for Lustre file system in the shared environment.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The shared environment configuration details for the restricted instance groups (RIG).</p>"
             }
         },
         "com.amazonaws.sagemaker#ClusterSlurmConfig": {
@@ -12638,6 +13117,12 @@
                     "target": "com.amazonaws.sagemaker#TrainingPlanArns",
                     "traits": {
                         "smithy.api#documentation": "<p>A list of Amazon Resource Names (ARNs) of the training plans associated with this cluster.</p> <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html\">CreateTrainingPlan</a> </code>.</p>"
+                    }
+                },
+                "ImageVersionStatus": {
+                    "target": "com.amazonaws.sagemaker#ClusterImageVersionStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The aggregate status of the image version across the cluster's instance groups.</p>"
                     }
                 }
             },
@@ -13657,6 +14142,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies additional configuration for multi-model endpoints.</p>"
                     }
+                },
+                "ContainerMetricsConfig": {
+                    "target": "com.amazonaws.sagemaker#ContainerMetricsConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>"
+                    }
                 }
             },
             "traits": {
@@ -13715,6 +14206,20 @@
                     "max": 255
                 },
                 "smithy.api#pattern": "^[\\S]+$"
+            }
+        },
+        "com.amazonaws.sagemaker#ContainerMetricsConfig": {
+            "type": "structure",
+            "members": {
+                "MetricsEndpoints": {
+                    "target": "com.amazonaws.sagemaker#MetricsEndpointList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of metrics endpoints to scrape from the container. Each endpoint specifies the path where the container exposes Prometheus-formatted metrics and the frequency at which to publish them. You can specify a maximum of 1 endpoint.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for container-level metrics scraping. Use this configuration to specify a custom metrics endpoint path and publishing frequency for container metrics. When <code>EnableDetailedObservability</code> is set to <code>True</code> in <code>MetricsConfig</code>, metrics are scraped from the container's Prometheus endpoint. If this configuration is not provided, the default path <code>/metrics</code> on port <code>8080</code> is used with a default publishing frequency of <code>60</code> seconds. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>"
             }
         },
         "com.amazonaws.sagemaker#ContainerMode": {
@@ -14983,6 +15488,12 @@
                         "smithy.api#documentation": "<p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>"
                     }
                 },
+                "RestrictedInstanceGroupsConfig": {
+                    "target": "com.amazonaws.sagemaker#ClusterRestrictedInstanceGroupsConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>"
+                    }
+                },
                 "VpcConfig": {
                     "target": "com.amazonaws.sagemaker#VpcConfig",
                     "traits": {
@@ -15760,6 +16271,12 @@
                         "smithy.api#documentation": "<p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>"
                     }
                 },
+                "HomeEfsFileSystemCreation": {
+                    "target": "com.amazonaws.sagemaker#HomeEfsFileSystemCreation",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>"
+                    }
+                },
                 "TagPropagation": {
                     "target": "com.amazonaws.sagemaker#TagPropagation",
                     "traits": {
@@ -16071,7 +16588,7 @@
                 "KmsKeyId": {
                     "target": "com.amazonaws.sagemaker#KmsKeyId",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li> </ul> <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html\"> Using Key Policies in Amazon Web Services KMS </a> </p> <note> <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p> <p>For a list of instance types that support local instance storage, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes\">Instance Store Volumes</a>.</p> <p>For more information about local instance storage encryption, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html\">SSD Instance Store Volumes</a>.</p> </note>"
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li> </ul> <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html\"> Using Key Policies in Amazon Web Services KMS </a> </p> <note> <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, the <code>KmsKeyId</code> parameter does not encrypt instance local storage.</p> <p>For a list of instance types that support local instance storage, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes\">Instance Store Volumes</a>.</p> <p>For more information about local instance storage encryption, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html\">SSD Instance Store Volumes</a>.</p> </note>"
                     }
                 },
                 "AsyncInferenceConfig": {
@@ -17115,6 +17632,12 @@
                         "smithy.api#documentation": "<p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>"
                     }
                 },
+                "Specifications": {
+                    "target": "com.amazonaws.sagemaker#InferenceComponentSpecificationList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to deploy a different model or resource configuration for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>"
+                    }
+                },
                 "RuntimeConfig": {
                     "target": "com.amazonaws.sagemaker#InferenceComponentRuntimeConfig",
                     "traits": {
@@ -17362,6 +17885,99 @@
                     "traits": {
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the recommendation job.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sagemaker#CreateJob": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#CreateJobRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#CreateJobResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceInUse"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceLimitExceeded"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Creates a model customization job in Amazon SageMaker. A job runs a workload based on the job category and configuration you provide. You specify the job category, a schema-versioned configuration document, and an IAM role that grants Amazon SageMaker permission to access resources on your behalf.</p> <p>Use the <code>AgentRFT</code> category to fine-tune a model using multi-turn reinforcement learning with reward signals. Use the <code>AgentRFTEvaluation</code> category to evaluate a fine-tuned or base model by running multi-turn rollouts against a held-out prompt dataset and computing metrics such as pass@k and mean reward.</p> <p>Before creating a job, call <code>ListJobSchemaVersions</code> and <code>DescribeJobSchemaVersion</code> to retrieve the configuration schema for your job category. The <code>JobConfigDocument</code> must conform to the schema specified by <code>JobConfigSchemaVersion</code>.</p> <p>The following operations are related to <code>CreateJob</code>:</p> <ul> <li> <p> <code>DescribeJob</code> </p> </li> <li> <p> <code>ListJobs</code> </p> </li> <li> <p> <code>StopJob</code> </p> </li> <li> <p> <code>DeleteJob</code> </p> </li> <li> <p> <code>ListJobSchemaVersions</code> </p> </li> <li> <p> <code>DescribeJobSchemaVersion</code> </p> </li> </ul>"
+            }
+        },
+        "com.amazonaws.sagemaker#CreateJobRequest": {
+            "type": "structure",
+            "members": {
+                "JobName": {
+                    "target": "com.amazonaws.sagemaker#JobName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The name of the job. The name must be unique within your account and Amazon Web Services Region.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RoleArn": {
+                    "target": "com.amazonaws.sagemaker#RoleArn",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform the job. The role must have the necessary permissions to access the resources required by the job configuration.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of the job. The category determines the type of workload that the job runs.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobConfigSchemaVersion": {
+                    "target": "com.amazonaws.sagemaker#JobSchemaVersion",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The version of the configuration schema to use for the job configuration document. Use <code>ListJobSchemaVersions</code> to get available schema versions for a job category.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobConfigDocument": {
+                    "target": "com.amazonaws.sagemaker#JobConfigDocument",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The JSON configuration document for the job. The document must conform to the schema specified by <code>JobConfigSchemaVersion</code>. Use <code>DescribeJobSchemaVersion</code> to retrieve the schema for validation.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.sagemaker#TagList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of key-value pairs to apply to the job as tags. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services Resources</a>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sagemaker#CreateJobResponse": {
+            "type": "structure",
+            "members": {
+                "JobArn": {
+                    "target": "com.amazonaws.sagemaker#JobArn",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the job.</p>",
                         "smithy.api#required": {}
                     }
                 }
@@ -18213,6 +18829,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A list of key value pairs associated with the model group. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>"
                     }
+                },
+                "ManagedConfiguration": {
+                    "target": "com.amazonaws.sagemaker#ManagedConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The managed configuration of the model package group.</p>"
+                    }
                 }
             },
             "traits": {
@@ -18378,6 +19000,12 @@
                     "target": "com.amazonaws.sagemaker#ModelLifeCycle",
                     "traits": {
                         "smithy.api#documentation": "<p> A structure describing the current state of the model in its life cycle. </p>"
+                    }
+                },
+                "ManagedStorageType": {
+                    "target": "com.amazonaws.sagemaker#ManagedStorageType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The storage type of the model package.</p>"
                     }
                 }
             },
@@ -18697,7 +19325,7 @@
                 "PlatformIdentifier": {
                     "target": "com.amazonaws.sagemaker#PlatformIdentifier",
                     "traits": {
-                        "smithy.api#documentation": "<p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>"
+                        "smithy.api#documentation": "<p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2023-v1</code>.</p>"
                     }
                 },
                 "InstanceMetadataServiceConfiguration": {
@@ -23085,6 +23713,58 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.sagemaker#DeleteJob": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#DeleteJobRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#DeleteJobResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceInUse"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Deletes a job. This operation is idempotent. If the job is currently running, you must stop it before deleting it by calling <code>StopJob</code>.</p> <p>The following operations are related to <code>DeleteJob</code>:</p> <ul> <li> <p> <code>CreateJob</code> </p> </li> <li> <p> <code>StopJob</code> </p> </li> <li> <p> <code>DescribeJob</code> </p> </li> </ul>",
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.sagemaker#DeleteJobRequest": {
+            "type": "structure",
+            "members": {
+                "JobName": {
+                    "target": "com.amazonaws.sagemaker#JobName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The name of the job to delete.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of the job to delete.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sagemaker#DeleteJobResponse": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.sagemaker#DeleteMlflowApp": {
             "type": "operation",
             "input": {
@@ -25912,6 +26592,12 @@
                         "smithy.api#documentation": "<p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>"
                     }
                 },
+                "RestrictedInstanceGroupsConfig": {
+                    "target": "com.amazonaws.sagemaker#ClusterRestrictedInstanceGroupsConfigOutput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>"
+                    }
+                },
                 "VpcConfig": {
                     "target": "com.amazonaws.sagemaker#VpcConfig"
                 },
@@ -27091,6 +27777,12 @@
                     "target": "com.amazonaws.sagemaker#AppSecurityGroupManagement",
                     "traits": {
                         "smithy.api#documentation": "<p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>"
+                    }
+                },
+                "HomeEfsFileSystemCreation": {
+                    "target": "com.amazonaws.sagemaker#HomeEfsFileSystemCreation",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether a home EFS file system is created for the domain.</p>"
                     }
                 },
                 "TagPropagation": {
@@ -29206,6 +29898,12 @@
                         "smithy.api#documentation": "<p>Details about the resources that are deployed with this inference component.</p>"
                     }
                 },
+                "Specifications": {
+                    "target": "com.amazonaws.sagemaker#InferenceComponentSpecificationSummaryList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of specification summaries for the inference component, one per instance type. This parameter is populated when the inference component was created with multiple specifications. When this parameter is populated, the singular <code>Specification</code> parameter is not returned.</p>"
+                    }
+                },
                 "RuntimeConfig": {
                     "target": "com.amazonaws.sagemaker#InferenceComponentRuntimeConfigSummary",
                     "traits": {
@@ -29528,6 +30226,232 @@
                     "target": "com.amazonaws.sagemaker#EndpointPerformances",
                     "traits": {
                         "smithy.api#documentation": "<p>The performance results from running an Inference Recommender job on an existing endpoint.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeJob": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#DescribeJobRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#DescribeJobResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Returns detailed information about a job, including its current status, secondary status, configuration, and timestamps. Use <code>SecondaryStatus</code> for granular progress tracking and <code>SecondaryStatusTransitions</code> to see the full history of status changes with timestamps.</p> <p>The following operations are related to <code>DescribeJob</code>:</p> <ul> <li> <p> <code>CreateJob</code> </p> </li> <li> <p> <code>ListJobs</code> </p> </li> <li> <p> <code>StopJob</code> </p> </li> <li> <p> <code>DeleteJob</code> </p> </li> </ul>",
+                "smithy.api#readonly": {}
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeJobRequest": {
+            "type": "structure",
+            "members": {
+                "JobName": {
+                    "target": "com.amazonaws.sagemaker#JobName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The name of the job to describe.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeJobResponse": {
+            "type": "structure",
+            "members": {
+                "JobName": {
+                    "target": "com.amazonaws.sagemaker#JobName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The name of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobArn": {
+                    "target": "com.amazonaws.sagemaker#JobArn",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RoleArn": {
+                    "target": "com.amazonaws.sagemaker#RoleArn",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ARN of the IAM role associated with the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobConfigSchemaVersion": {
+                    "target": "com.amazonaws.sagemaker#JobSchemaVersion",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The schema version used for the job configuration document.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobConfigDocument": {
+                    "target": "com.amazonaws.sagemaker#JobConfigDocument",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The JSON configuration document for the job.</p>"
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The date and time that the job was created.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The date and time that the job was last modified.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EndTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that the job ended.</p>"
+                    }
+                },
+                "JobStatus": {
+                    "target": "com.amazonaws.sagemaker#JobStatus",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The current status of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "SecondaryStatus": {
+                    "target": "com.amazonaws.sagemaker#JobSecondaryStatus",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The detailed secondary status of the job, providing more granular information about the job's progress. Secondary statuses may change between releases.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "SecondaryStatusTransitions": {
+                    "target": "com.amazonaws.sagemaker#JobSecondaryStatusTransitions",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>A list of secondary status transitions for the job, with timestamps and optional status messages.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FailureReason": {
+                    "target": "com.amazonaws.sagemaker#FailureReason",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If the job failed, the reason it failed.</p>"
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.sagemaker#TagList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The tags associated with the job.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeJobSchemaVersion": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#DescribeJobSchemaVersionRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#DescribeJobSchemaVersionResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Returns the JSON schema for a specified job category and schema version. Use this schema to validate your <code>JobConfigDocument</code> before calling <code>CreateJob</code>. If you don't specify a schema version, the latest version is returned. The schema defines required fields, allowed values, and constraints for the job configuration.</p> <p>The following operations are related to <code>DescribeJobSchemaVersion</code>:</p> <ul> <li> <p> <code>ListJobSchemaVersions</code> </p> </li> <li> <p> <code>CreateJob</code> </p> </li> </ul>",
+                "smithy.api#readonly": {}
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeJobSchemaVersionRequest": {
+            "type": "structure",
+            "members": {
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of the job schema to describe.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobConfigSchemaVersion": {
+                    "target": "com.amazonaws.sagemaker#JobSchemaVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version of the schema to retrieve. If not specified, the latest version is returned.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeJobSchemaVersionResponse": {
+            "type": "structure",
+            "members": {
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of the job schema.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobConfigSchemaVersion": {
+                    "target": "com.amazonaws.sagemaker#JobSchemaVersion",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The version of the schema.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobConfigSchema": {
+                    "target": "com.amazonaws.sagemaker#JobConfigDocument",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The JSON schema document that defines the structure of the job configuration.</p>",
+                        "smithy.api#required": {}
                     }
                 }
             },
@@ -30201,7 +31125,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.</p>"
+                "smithy.api#documentation": "<p>Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.</p> <important> <p>To retrieve only metadata about a model card without requiring <code>kms:Decrypt</code> permission on the associated customer-managed Amazon Web Services KMS key, set <code>IncludedData</code> to <code>MetadataOnly</code>. The default is <code>AllData</code>, which returns the full model card <code>Content</code> and requires <code>kms:Decrypt</code> permission when a customer-managed key is configured.</p> </important>"
             }
         },
         "com.amazonaws.sagemaker#DescribeModelCardExportJob": {
@@ -30337,6 +31261,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>"
                     }
+                },
+                "IncludedData": {
+                    "target": "com.amazonaws.sagemaker#IncludedData",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the level of model card data to include in the response. Use this parameter to call <code>DescribeModelCard</code> without requiring <code>kms:Decrypt</code> permission on the customer-managed Amazon Web Services KMS key.</p> <ul> <li> <p> <code>AllData</code>: Returns the full model card <code>Content</code>. This option requires <code>kms:Decrypt</code> permission on the customer-managed key, if one is associated with the model card. This is the default.</p> </li> <li> <p> <code>MetadataOnly</code>: Returns the model card with sanitized <code>Content</code> that includes only a small set of unencrypted metadata fields. This option does not require <code>kms:Decrypt</code> permission. For the list of fields preserved in the response, see <code>Content</code>.</p> </li> </ul> <p>If you don't specify a value, SageMaker returns <code>AllData</code>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -30374,7 +31304,7 @@
                     "target": "com.amazonaws.sagemaker#ModelCardContent",
                     "traits": {
                         "smithy.api#clientOptional": {},
-                        "smithy.api#documentation": "<p>The content of the model card.</p>",
+                        "smithy.api#documentation": "<p>The content of the model card. Content is provided as a string in the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema\">model card JSON schema</a>.</p> <p>When you set <code>IncludedData</code> to <code>MetadataOnly</code> in the request, SageMaker returns a sanitized version of <code>Content</code> that includes only the following JSON paths, when present in the model card:</p> <ul> <li> <p> <code>model_overview.model_id</code> </p> </li> <li> <p> <code>model_overview.model_name</code> </p> </li> <li> <p> <code>intended_uses.risk_rating</code> </p> </li> <li> <p> <code>model_package_details.model_package_group_name</code> </p> </li> <li> <p> <code>model_package_details.model_package_arn</code> </p> </li> </ul> <p>All other fields are removed from <code>Content</code> when <code>IncludedData</code> is <code>MetadataOnly</code>, including model description, training details, evaluation details, business details, and additional information. To retrieve the complete <code>Content</code>, set <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -30644,7 +31574,7 @@
                 "target": "com.amazonaws.sagemaker#DescribeModelPackageOutput"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Returns a description of the specified model package, which is used to create SageMaker models or list them on Amazon Web Services Marketplace.</p> <important> <p>If you provided a KMS Key ID when you created your model package, you will see the <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html\">KMS Decrypt</a> API call in your CloudTrail logs when you use this API.</p> </important> <p>To create models in SageMaker, buyers can subscribe to model packages listed on Amazon Web Services Marketplace.</p>"
+                "smithy.api#documentation": "<p>Returns a description of the specified model package, which is used to create SageMaker models or list them on Amazon Web Services Marketplace.</p> <important> <p>If you provided a KMS Key ID when you created your model package, you will see the <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html\">KMS Decrypt</a> API call in your CloudTrail logs when you use this API. To call this operation without requiring <code>kms:Decrypt</code> permission on the customer-managed key, set <code>IncludedData</code> to <code>MetadataOnly</code>; the response is returned with the embedded <code>ModelCard.ModelCardContent</code> field sanitized.</p> </important> <p>To create models in SageMaker, buyers can subscribe to model packages listed on Amazon Web Services Marketplace.</p>"
             }
         },
         "com.amazonaws.sagemaker#DescribeModelPackageGroup": {
@@ -30722,6 +31652,12 @@
                         "smithy.api#documentation": "<p>The status of the model group.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "ManagedConfiguration": {
+                    "target": "com.amazonaws.sagemaker#ManagedConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The managed configuration of the model package group.</p>"
+                    }
                 }
             },
             "traits": {
@@ -30737,6 +31673,12 @@
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>The name or Amazon Resource Name (ARN) of the model package to describe.</p> <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "IncludedData": {
+                    "target": "com.amazonaws.sagemaker#IncludedData",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the level of model package data to include in the response. Use this parameter to call <code>DescribeModelPackage</code> on a model package that has an associated model card without requiring <code>kms:Decrypt</code> permission on the customer-managed KMS key associated with the embedded model card.</p> <ul> <li> <p> <code>AllData</code>: Returns the full model package response, including the unredacted <code>ModelCard.ModelCardContent</code>. This option requires <code>kms:Decrypt</code> permission on the customer-managed key, if one is associated with the embedded model card. This is the default.</p> </li> <li> <p> <code>MetadataOnly</code>: Returns the full model package response, but with the embedded <code>ModelCard.ModelCardContent</code> sanitized to include only a small set of unencrypted metadata fields. This option does not require <code>kms:Decrypt</code> permission. All other top-level response fields, including <code>InferenceSpecification</code>, <code>ModelMetrics</code>, <code>DriftCheckBaselines</code>, and <code>SecurityConfig</code>, are returned unchanged. For the list of fields preserved within <code>ModelCardContent</code>, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeModelPackage.html#sagemaker-DescribeModelPackage-response-ModelCard\">ModelCard</a>.</p> </li> </ul> <p>If you don't specify a value, SageMaker returns <code>AllData</code>.</p>"
                     }
                 }
             },
@@ -30925,13 +31867,19 @@
                 "ModelCard": {
                     "target": "com.amazonaws.sagemaker#ModelPackageModelCard",
                     "traits": {
-                        "smithy.api#documentation": "<p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model package model card schema, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema\">Model package model card schema</a>. For more information about the model card associated with the model package, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html\">View the Details of a Model Version</a>.</p>"
+                        "smithy.api#documentation": "<p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model package model card schema, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema\">Model package model card schema</a>. For more information about the model card associated with the model package, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html\">View the Details of a Model Version</a>.</p> <p>When you set <code>IncludedData</code> to <code>MetadataOnly</code> in the request, <code>ModelCardStatus</code> is preserved and <code>ModelCardContent</code> is sanitized to include only the following JSON paths, when present in the model card:</p> <ul> <li> <p> <code>model_overview.model_id</code> </p> </li> <li> <p> <code>model_overview.model_name</code> </p> </li> <li> <p> <code>intended_uses.risk_rating</code> </p> </li> <li> <p> <code>model_package_details.model_package_group_name</code> </p> </li> <li> <p> <code>model_package_details.model_package_arn</code> </p> </li> </ul> <p>Because the <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code> and limits <code>model_overview</code> to <code>model_creator</code> and <code>model_artifact</code>, the sanitized <code>ModelCardContent</code> for a model package typically contains only <code>intended_uses.risk_rating</code> if it was provided when the model card was created. To retrieve the complete <code>ModelCardContent</code>, set <code>IncludedData</code> to <code>AllData</code> or omit the parameter.</p>"
                     }
                 },
                 "ModelLifeCycle": {
                     "target": "com.amazonaws.sagemaker#ModelLifeCycle",
                     "traits": {
                         "smithy.api#documentation": "<p> A structure describing the current state of the model in its life cycle. </p>"
+                    }
+                },
+                "ManagedStorageType": {
+                    "target": "com.amazonaws.sagemaker#ManagedStorageType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The storage type of the model package.</p>"
                     }
                 }
             },
@@ -33444,7 +34392,7 @@
                 "TargetResources": {
                     "target": "com.amazonaws.sagemaker#SageMakerResourceNames",
                     "traits": {
-                        "smithy.api#documentation": "<p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) that can use this training plan.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> </ul>"
+                        "smithy.api#documentation": "<p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints, Studio apps) that can use this training plan.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> <li> <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p> </li> </ul>"
                     }
                 },
                 "ReservedCapacitySummaries": {
@@ -35052,7 +36000,6 @@
         "com.amazonaws.sagemaker#DomainId": {
             "type": "string",
             "traits": {
-                "smithy.api#documentation": "Types duplicated from IronmanApiServiceModel for federation.\nThese types are defined in other service directories and are not\navailable via IronmanApiServiceCommonModel.",
                 "smithy.api#length": {
                     "min": 0,
                     "max": 63
@@ -36212,6 +37159,9 @@
         "com.amazonaws.sagemaker#EnableCapture": {
             "type": "boolean"
         },
+        "com.amazonaws.sagemaker#EnableDetailedObservability": {
+            "type": "boolean"
+        },
         "com.amazonaws.sagemaker#EnableEnhancedMetrics": {
             "type": "boolean"
         },
@@ -37184,6 +38134,23 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "DISABLED"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#ExecutionRoleSessionNameMode": {
+            "type": "enum",
+            "members": {
+                "Static": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "STATIC"
+                    }
+                },
+                "UserIdentity": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "USER_IDENTITY"
                     }
                 }
             }
@@ -39508,6 +40475,26 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Stores the holiday featurization attributes applicable to each item of time-series datasets during the training of a forecasting model. This allows the model to identify patterns associated with specific holidays.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#HomeEfsFileSystemCreation": {
+            "type": "enum",
+            "members": {
+                "Enabled": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Enabled"
+                    }
+                },
+                "Disabled": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Disabled"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Indicates whether a home EFS file system is created for the domain.</p>"
             }
         },
         "com.amazonaws.sagemaker#HookParameters": {
@@ -41892,6 +42879,15 @@
                 "smithy.api#pattern": "^[a-zA-Z0-9\\-.]+$"
             }
         },
+        "com.amazonaws.sagemaker#ImageReleaseVersion": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "max": 64
+                },
+                "smithy.api#pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+            }
+        },
         "com.amazonaws.sagemaker#ImageSortBy": {
             "type": "enum",
             "members": {
@@ -42324,6 +43320,23 @@
         "com.amazonaws.sagemaker#IncludeNodeLogicalIdsBoolean": {
             "type": "boolean"
         },
+        "com.amazonaws.sagemaker#IncludedData": {
+            "type": "enum",
+            "members": {
+                "ALL_DATA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AllData"
+                    }
+                },
+                "METADATA_ONLY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "MetadataOnly"
+                    }
+                }
+            }
+        },
         "com.amazonaws.sagemaker#InferenceComponentArn": {
             "type": "string",
             "traits": {
@@ -42450,6 +43463,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The environment variables to set in the Docker container. Each key and value in the Environment string-to-string map can have length of up to 1024. We support up to 16 entries in the map.</p>"
                     }
+                },
+                "ContainerMetricsConfig": {
+                    "target": "com.amazonaws.sagemaker#ContainerMetricsConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency for the inference component's container. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>"
+                    }
                 }
             },
             "traits": {
@@ -42472,6 +43491,12 @@
                     "target": "com.amazonaws.sagemaker#EnvironmentMap",
                     "traits": {
                         "smithy.api#documentation": "<p>The environment variables to set in the Docker container.</p>"
+                    }
+                },
+                "ContainerMetricsConfig": {
+                    "target": "com.amazonaws.sagemaker#ContainerMetricsConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The container metrics scraping configuration for this inference component, including the metrics endpoint path and publishing frequency.</p>"
                     }
                 }
             },
@@ -42572,6 +43597,41 @@
                 "smithy.api#pattern": "^[a-zA-Z0-9-]+$"
             }
         },
+        "com.amazonaws.sagemaker#InferenceComponentPlacementStatus": {
+            "type": "structure",
+            "members": {
+                "InstanceType": {
+                    "target": "com.amazonaws.sagemaker#ProductionVariantInstanceType",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ML compute instance type where the inference component copies are placed.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CurrentCopyCount": {
+                    "target": "com.amazonaws.sagemaker#InferenceComponentCopyCount",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The number of inference component copies currently placed on instances of this type.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The placement status of an inference component on a specific instance type. Shows the number of inference component copies currently placed on instances of a given type.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#InferenceComponentPlacementStatusList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#InferenceComponentPlacementStatus"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1
+                }
+            }
+        },
         "com.amazonaws.sagemaker#InferenceComponentPlacementStrategy": {
             "type": "enum",
             "members": {
@@ -42655,6 +43715,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The number of runtime copies of the model container that are currently deployed.</p>"
                     }
+                },
+                "PlacementStatus": {
+                    "target": "com.amazonaws.sagemaker#InferenceComponentPlacementStatusList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The placement status of the inference component across instance types. Shows how the inference component copies are distributed across instance types.</p>"
+                    }
                 }
             },
             "traits": {
@@ -42709,6 +43775,12 @@
         "com.amazonaws.sagemaker#InferenceComponentSpecification": {
             "type": "structure",
             "members": {
+                "InstanceType": {
+                    "target": "com.amazonaws.sagemaker#ProductionVariantInstanceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ML compute instance type for the inference component specification. Specifies which instance type this specification applies to. Required when using the <code>Specifications</code> parameter with multiple entries.</p>"
+                    }
+                },
                 "ModelName": {
                     "target": "com.amazonaws.sagemaker#ModelName",
                     "traits": {
@@ -42756,9 +43828,27 @@
                 "smithy.api#documentation": "<p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>"
             }
         },
+        "com.amazonaws.sagemaker#InferenceComponentSpecificationList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#InferenceComponentSpecification"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 5
+                }
+            }
+        },
         "com.amazonaws.sagemaker#InferenceComponentSpecificationSummary": {
             "type": "structure",
             "members": {
+                "InstanceType": {
+                    "target": "com.amazonaws.sagemaker#ProductionVariantInstanceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ML compute instance type associated with this inference component specification.</p>"
+                    }
+                },
                 "ModelName": {
                     "target": "com.amazonaws.sagemaker#ModelName",
                     "traits": {
@@ -42804,6 +43894,17 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Details about the resources that are deployed with this inference component.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#InferenceComponentSpecificationSummaryList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#InferenceComponentSpecificationSummary"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1
+                }
             }
         },
         "com.amazonaws.sagemaker#InferenceComponentStartupParameters": {
@@ -43907,6 +45008,12 @@
                         "smithy.api#documentation": "<p>Information about additional Elastic Network Interfaces (ENIs) associated with the instance.</p>"
                     }
                 },
+                "InstanceRequirementsEniConfigurations": {
+                    "target": "com.amazonaws.sagemaker#InstanceRequirementsEniConfigurations",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ENI configurations for the instance types in the instance requirements, grouped by network interface category (for example, ENI-only or EFA with ENIs). At most one configuration per category.</p>"
+                    }
+                },
                 "CapacityReservation": {
                     "target": "com.amazonaws.sagemaker#CapacityReservation",
                     "traits": {
@@ -43970,6 +45077,118 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Configuration for how instances are placed and allocated within UltraServers. This is only applicable for UltraServer capacity.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#InstancePool": {
+            "type": "structure",
+            "members": {
+                "InstanceType": {
+                    "target": "com.amazonaws.sagemaker#ProductionVariantInstanceType",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ML compute instance type for the instance pool.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ModelNameOverride": {
+                    "target": "com.amazonaws.sagemaker#ModelName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of a SageMaker model to use for this instance pool instead of the model specified for the production variant. Use this to deploy a different model optimized for the instance type in this pool.</p>"
+                    }
+                },
+                "Priority": {
+                    "target": "com.amazonaws.sagemaker#InstancePoolPriority",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The priority for the instance pool. SageMaker attempts to provision instances in order of priority, starting with the lowest value. If instances for a higher-priority pool are unavailable, SageMaker attempts to provision from the next pool.</p> <p>Valid values: 1 to 5, where 1 is the highest priority.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies an instance type and its priority for a heterogeneous endpoint. Use instance pools to configure a production variant with multiple instance types, enabling the endpoint to provision instances across different types based on priority.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#InstancePoolList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#InstancePool"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 5
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#InstancePoolPriority": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1,
+                    "max": 5
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#InstancePoolSummary": {
+            "type": "structure",
+            "members": {
+                "InstanceType": {
+                    "target": "com.amazonaws.sagemaker#ProductionVariantInstanceType",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ML compute instance type for the instance pool.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CurrentInstanceCount": {
+                    "target": "com.amazonaws.sagemaker#TaskCount",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The current number of instances of this type in the instance pool.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A summary of an instance pool for a production variant, including the instance type and the current number of instances.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#InstancePoolSummaryList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#InstancePoolSummary"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#InstanceRequirementsEniConfiguration": {
+            "type": "structure",
+            "members": {
+                "CustomerEni": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the customer-managed Elastic Network Interface (ENI) associated with the instance type category.</p>"
+                    }
+                },
+                "AdditionalEnis": {
+                    "target": "com.amazonaws.sagemaker#AdditionalEnis",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about additional Elastic Network Interfaces (ENIs) associated with the instance type category.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The customer ENI and additional ENIs associated with a network interface category.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#InstanceRequirementsEniConfigurations": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#InstanceRequirementsEniConfiguration"
             }
         },
         "com.amazonaws.sagemaker#InstanceType": {
@@ -45012,6 +46231,66 @@
                     "traits": {
                         "smithy.api#enumValue": "ml.g6.48xlarge"
                     }
+                },
+                "ML_P5_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p5.4xlarge"
+                    }
+                },
+                "ML_P5EN_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p5en.48xlarge"
+                    }
+                },
+                "ML_G6E_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g6e.xlarge"
+                    }
+                },
+                "ML_G6E_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g6e.2xlarge"
+                    }
+                },
+                "ML_G6E_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g6e.4xlarge"
+                    }
+                },
+                "ML_G6E_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g6e.8xlarge"
+                    }
+                },
+                "ML_G6E_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g6e.12xlarge"
+                    }
+                },
+                "ML_G6E_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g6e.16xlarge"
+                    }
+                },
+                "ML_G6E_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g6e.24xlarge"
+                    }
+                },
+                "ML_G6E_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.g6e.48xlarge"
+                    }
                 }
             }
         },
@@ -45148,12 +46427,178 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#Job": {
+            "type": "structure",
+            "members": {
+                "JobName": {
+                    "target": "com.amazonaws.sagemaker#JobName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the job.</p>"
+                    }
+                },
+                "JobArn": {
+                    "target": "com.amazonaws.sagemaker#JobArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the job.</p>"
+                    }
+                },
+                "RoleArn": {
+                    "target": "com.amazonaws.sagemaker#RoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the IAM role associated with the job.</p>"
+                    }
+                },
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The category of the job.</p>"
+                    }
+                },
+                "JobConfigSchemaVersion": {
+                    "target": "com.amazonaws.sagemaker#JobSchemaVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The schema version used for the job configuration document.</p>"
+                    }
+                },
+                "JobConfigDocument": {
+                    "target": "com.amazonaws.sagemaker#JobConfigDocument",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The JSON configuration document for the job.</p>"
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that the job was created.</p>"
+                    }
+                },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that the job was last modified.</p>"
+                    }
+                },
+                "EndTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that the job ended.</p>"
+                    }
+                },
+                "JobStatus": {
+                    "target": "com.amazonaws.sagemaker#JobStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The current status of the job.</p>"
+                    }
+                },
+                "SecondaryStatus": {
+                    "target": "com.amazonaws.sagemaker#JobSecondaryStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The detailed secondary status of the job, providing more granular information about the job's progress.</p>"
+                    }
+                },
+                "SecondaryStatusTransitions": {
+                    "target": "com.amazonaws.sagemaker#JobSecondaryStatusTransitions",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of secondary status transitions for the job, with timestamps and optional status messages.</p>"
+                    }
+                },
+                "FailureReason": {
+                    "target": "com.amazonaws.sagemaker#FailureReason",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If the job failed, the reason it failed.</p>"
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.sagemaker#TagList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The tags associated with the job.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The properties of a job returned by the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html\">Search</a> API.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#JobArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 256
+                },
+                "smithy.api#pattern": "^arn:(aws[a-z\\-]*):sagemaker:[a-z0-9\\-]+:[0-9]{12}:job/[a-zA-Z0-9]+/[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$"
+            }
+        },
+        "com.amazonaws.sagemaker#JobCategory": {
+            "type": "enum",
+            "members": {
+                "AGENT_RFT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AgentRFT"
+                    }
+                },
+                "AGENT_RFT_EVALUATION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AgentRFTEvaluation"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#JobConfigDocument": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 262144
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#JobConfigSchemaVersionSummary": {
+            "type": "structure",
+            "members": {
+                "JobConfigSchemaVersion": {
+                    "target": "com.amazonaws.sagemaker#JobSchemaVersion",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The version of the job configuration schema.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Provides summary information about a job configuration schema version.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#JobConfigSchemas": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#JobConfigSchemaVersionSummary"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 100
+                }
+            }
+        },
         "com.amazonaws.sagemaker#JobDurationInSeconds": {
             "type": "integer",
             "traits": {
                 "smithy.api#range": {
                     "min": 1
                 }
+            }
+        },
+        "com.amazonaws.sagemaker#JobName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 63
+                },
+                "smithy.api#pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$"
             }
         },
         "com.amazonaws.sagemaker#JobReferenceCode": {
@@ -45173,6 +46618,302 @@
                     "max": 255
                 },
                 "smithy.api#pattern": "^.+$"
+            }
+        },
+        "com.amazonaws.sagemaker#JobSchemaVersion": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 5,
+                    "max": 16
+                },
+                "smithy.api#pattern": "^\\d+\\.\\d+\\.\\d+$"
+            }
+        },
+        "com.amazonaws.sagemaker#JobSecondaryStatus": {
+            "type": "enum",
+            "members": {
+                "STARTING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Starting"
+                    }
+                },
+                "DOWNLOADING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Downloading"
+                    }
+                },
+                "TRAINING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Training"
+                    }
+                },
+                "UPLOADING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Uploading"
+                    }
+                },
+                "STOPPING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Stopping"
+                    }
+                },
+                "STOPPED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Stopped"
+                    }
+                },
+                "MAX_RUNTIME_EXCEEDED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "MaxRuntimeExceeded"
+                    }
+                },
+                "INTERRUPTED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Interrupted"
+                    }
+                },
+                "FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Failed"
+                    }
+                },
+                "COMPLETED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Completed"
+                    }
+                },
+                "RESTARTING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Restarting"
+                    }
+                },
+                "PENDING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Pending"
+                    }
+                },
+                "EVALUATING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Evaluating"
+                    }
+                },
+                "DELETING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Deleting"
+                    }
+                },
+                "DELETE_FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DeleteFailed"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#JobSecondaryStatusTransition": {
+            "type": "structure",
+            "members": {
+                "Status": {
+                    "target": "com.amazonaws.sagemaker#JobSecondaryStatus",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The secondary status of the job at this transition point.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "StartTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The date and time that the status transition started.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EndTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that the status transition ended.</p>"
+                    }
+                },
+                "StatusMessage": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A detailed message about the status transition.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Represents a secondary status transition for a job. Jobs progress through multiple secondary statuses during execution. Each transition records the status, start time, optional end time, and an optional message with additional details.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#JobSecondaryStatusTransitions": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#JobSecondaryStatusTransition"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 100
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#JobStatus": {
+            "type": "enum",
+            "members": {
+                "IN_PROGRESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "InProgress"
+                    }
+                },
+                "COMPLETED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Completed"
+                    }
+                },
+                "FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Failed"
+                    }
+                },
+                "STOPPING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Stopping"
+                    }
+                },
+                "STOPPED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Stopped"
+                    }
+                },
+                "DELETING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Deleting"
+                    }
+                },
+                "DELETE_FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DeleteFailed"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#JobStepMetadata": {
+            "type": "structure",
+            "members": {
+                "Arn": {
+                    "target": "com.amazonaws.sagemaker#String1024",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the SageMaker job that was run by this step execution.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Metadata for a SageMaker job step.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#JobSummaries": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#JobSummary"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 100
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#JobSummary": {
+            "type": "structure",
+            "members": {
+                "JobArn": {
+                    "target": "com.amazonaws.sagemaker#JobArn",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobName": {
+                    "target": "com.amazonaws.sagemaker#JobName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The name of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobStatus": {
+                    "target": "com.amazonaws.sagemaker#JobStatus",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The current status of the job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobSecondaryStatus": {
+                    "target": "com.amazonaws.sagemaker#JobSecondaryStatus",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The secondary status of the job, providing more granular information about the job's progress. Secondary statuses may change between releases.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The date and time that the job was created.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The date and time that the job was last modified.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EndTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that the job ended.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Provides summary information about a job, returned by the <code>ListJobs</code> operation. Use <code>DescribeJob</code> to get full details for a specific job.</p>"
             }
         },
         "com.amazonaws.sagemaker#JobType": {
@@ -50595,6 +52336,197 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#ListJobSchemaVersions": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#ListJobSchemaVersionsRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#ListJobSchemaVersionsResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Lists available configuration schema versions for a specified job category. Use the schema versions with <code>DescribeJobSchemaVersion</code> to retrieve the full schema document.</p> <p>The following operations are related to <code>ListJobSchemaVersions</code>:</p> <ul> <li> <p> <code>DescribeJobSchemaVersion</code> </p> </li> <li> <p> <code>CreateJob</code> </p> </li> </ul>",
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "JobConfigSchemas",
+                    "pageSize": "MaxResults"
+                },
+                "smithy.api#readonly": {}
+            }
+        },
+        "com.amazonaws.sagemaker#ListJobSchemaVersionsRequest": {
+            "type": "structure",
+            "members": {
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of job schemas to list.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If the previous response was truncated, this token retrieves the next set of results.</p>"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.sagemaker#MaxResults",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of schema versions to return in the response. The default value is 5.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sagemaker#ListJobSchemaVersionsResponse": {
+            "type": "structure",
+            "members": {
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If the response is truncated, this token retrieves the next set of results.</p>"
+                    }
+                },
+                "JobConfigSchemas": {
+                    "target": "com.amazonaws.sagemaker#JobConfigSchemas",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>An array of <code>JobConfigSchemaVersionSummary</code> objects listing the available schema versions.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sagemaker#ListJobs": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#ListJobsRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#ListJobsResponse"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Lists jobs in a specified category. You can filter results by creation time, last modified time, name, and status. Results are sorted by the field you specify in <code>SortBy</code>. Use pagination to retrieve large result sets efficiently.</p> <p>The following operations are related to <code>ListJobs</code>:</p> <ul> <li> <p> <code>CreateJob</code> </p> </li> <li> <p> <code>DescribeJob</code> </p> </li> </ul>",
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "JobSummaries",
+                    "pageSize": "MaxResults"
+                },
+                "smithy.api#readonly": {}
+            }
+        },
+        "com.amazonaws.sagemaker#ListJobsRequest": {
+            "type": "structure",
+            "members": {
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of jobs to list.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If the previous response was truncated, this token retrieves the next set of results.</p>"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.sagemaker#MaxResults",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of jobs to return in the response. The default value is 50.</p>"
+                    }
+                },
+                "CreationTimeAfter": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A filter that returns only jobs created after the specified time.</p>"
+                    }
+                },
+                "CreationTimeBefore": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A filter that returns only jobs created before the specified time.</p>"
+                    }
+                },
+                "LastModifiedTimeAfter": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A filter that returns only jobs modified after the specified time.</p>"
+                    }
+                },
+                "LastModifiedTimeBefore": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A filter that returns only jobs modified before the specified time.</p>"
+                    }
+                },
+                "NameContains": {
+                    "target": "com.amazonaws.sagemaker#NameContains",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A string in the job name to filter results. Only jobs whose name contains the specified string are returned.</p>"
+                    }
+                },
+                "SortBy": {
+                    "target": "com.amazonaws.sagemaker#SortBy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The field to sort results by.</p>"
+                    }
+                },
+                "SortOrder": {
+                    "target": "com.amazonaws.sagemaker#SortOrder",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The sort order for results. Valid values are <code>Ascending</code> and <code>Descending</code>.</p>"
+                    }
+                },
+                "StatusEquals": {
+                    "target": "com.amazonaws.sagemaker#JobStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A filter that returns only jobs with the specified status.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sagemaker#ListJobsResponse": {
+            "type": "structure",
+            "members": {
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If the response is truncated, this token retrieves the next set of results.</p>"
+                    }
+                },
+                "JobSummaries": {
+                    "target": "com.amazonaws.sagemaker#JobSummaries",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>An array of <code>JobSummary</code> objects that provide summary information about the jobs.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.sagemaker#ListLabelingJobs": {
             "type": "operation",
             "input": {
@@ -55278,6 +57210,20 @@
                 "smithy.api#pattern": "^\\d+\\.\\d+$"
             }
         },
+        "com.amazonaws.sagemaker#ManagedConfiguration": {
+            "type": "structure",
+            "members": {
+                "ManagedStorageType": {
+                    "target": "com.amazonaws.sagemaker#ManagedStorageType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The storage type of the model package.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The managed configuration of a model package group.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#ManagedInstanceScalingCooldownInMinutes": {
             "type": "integer",
             "traits": {
@@ -55342,6 +57288,17 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "DISABLED"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#ManagedStorageType": {
+            "type": "enum",
+            "members": {
+                "RESTRICTED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Restricted"
                     }
                 }
             }
@@ -55874,15 +57831,65 @@
                         "smithy.api#documentation": "<p>Specifies whether to enable enhanced metrics for the endpoint. Enhanced metrics provide utilization and invocation data at instance and container granularity. Container granularity is supported for Inference Components. The default is <code>False</code>.</p>"
                     }
                 },
+                "EnableDetailedObservability": {
+                    "target": "com.amazonaws.sagemaker#EnableDetailedObservability",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether detailed observability is enabled for the endpoint. When set to <code>True</code>, the following metrics are published at the configured frequency:</p> <ul> <li> <p>Container-level inference metrics scraped from the container's Prometheus endpoint (such as request latency, error counts, and throughput). Available metrics vary by framework.</p> </li> <li> <p>Per-GPU metrics (utilization, memory, and temperature) attributed to individual inference components.</p> </li> <li> <p>Per-instance host metrics (CPU, memory, and disk utilization).</p> </li> <li> <p>Inference component placement metrics (copy count per Availability Zone).</p> </li> </ul> <p>For first-party and Deep Learning Containers (DLC), the Prometheus endpoint path is determined automatically. For Bring-Your-Own-Container (BYOC) cases, you can optionally set <code>ContainerMetricsConfig</code> to specify a custom endpoint path. If not specified, the default path <code>/metrics</code> on port <code>8080</code> is used.</p> <p>When set to <code>False</code>, these additional metrics are not published. Standard invocation and utilization metrics controlled by <code>EnableEnhancedMetrics</code> are unaffected.</p> <p>The default value for new endpoint configurations is <code>True</code>. For existing endpoint configurations created before this feature, the value is <code>False</code> unless explicitly set.</p>"
+                    }
+                },
                 "MetricPublishFrequencyInSeconds": {
                     "target": "com.amazonaws.sagemaker#MetricPublishFrequencyInSeconds",
                     "traits": {
-                        "smithy.api#documentation": "<p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>. When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only; invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>"
+                        "smithy.api#documentation": "<p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>.</p> <p>When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only. Invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p> <p>When <code>EnableDetailedObservability</code> is set to <code>True</code>, this interval applies to per-GPU metrics, per-instance host metrics, container metrics, and fleet-level inference component lifecycle and placement metrics.</p>"
                     }
                 }
             },
             "traits": {
                 "smithy.api#documentation": "<p>The configuration for Utilization metrics.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#MetricsEndpoint": {
+            "type": "structure",
+            "members": {
+                "MetricsEndpointPath": {
+                    "target": "com.amazonaws.sagemaker#MetricsEndpointPath",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The path to the metrics endpoint exposed by the container. For example, <code>/metrics</code> or <code>/server/metrics</code>. The path must start with <code>/</code> and can contain alphanumeric characters, forward slashes, underscores, hyphens, and periods. Maximum length is 256 characters. If not specified, defaults to <code>/metrics</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "MetricPublishFrequencyInSeconds": {
+                    "target": "com.amazonaws.sagemaker#MetricPublishFrequencyInSeconds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The interval, in seconds, at which container metrics scraped from the endpoint are published to Amazon CloudWatch. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>. Defaults to <code>60</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies a metrics endpoint for a container, including the path where the container exposes Prometheus-formatted metrics and the frequency at which to publish them to Amazon CloudWatch.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#MetricsEndpointList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#MetricsEndpoint"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A list of metrics endpoints for a container.</p>",
+                "smithy.api#length": {
+                    "max": 1
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#MetricsEndpointPath": {
+            "type": "string",
+            "traits": {
+                "smithy.api#documentation": "Per-container Prometheus metrics scraping configuration",
+                "smithy.api#length": {
+                    "max": 256
+                },
+                "smithy.api#pattern": "^/(?!.*\\.\\.)[a-zA-Z0-9/_.\\-]+$"
             }
         },
         "com.amazonaws.sagemaker#MetricsSource": {
@@ -58402,6 +60409,12 @@
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>The status of the model group.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "ManagedConfiguration": {
+                    "target": "com.amazonaws.sagemaker#ManagedConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The managed configuration of the model package group.</p>"
                     }
                 }
             },
@@ -63029,6 +65042,12 @@
                         "smithy.api#documentation": "<p>The type of instances associated with the variant.</p>"
                     }
                 },
+                "InstancePools": {
+                    "target": "com.amazonaws.sagemaker#InstancePoolSummaryList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>"
+                    }
+                },
                 "AcceleratorType": {
                     "target": "com.amazonaws.sagemaker#ProductionVariantAcceleratorType",
                     "traits": {
@@ -63655,6 +65674,12 @@
                     "target": "com.amazonaws.sagemaker#LineageMetadata",
                     "traits": {
                         "smithy.api#documentation": "<p> The metadata of the lineage used in pipeline execution step. </p>"
+                    }
+                },
+                "Job": {
+                    "target": "com.amazonaws.sagemaker#JobStepMetadata",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The metadata for a SageMaker job used in a pipeline execution step.</p>"
                     }
                 }
             },
@@ -65707,6 +67732,18 @@
                     "target": "com.amazonaws.sagemaker#ProductionVariantInstanceType",
                     "traits": {
                         "smithy.api#documentation": "<p>The ML compute instance type.</p>"
+                    }
+                },
+                "InstancePools": {
+                    "target": "com.amazonaws.sagemaker#InstancePoolList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of instance pools for the production variant. Each instance pool specifies an instance type and its priority for provisioning. Use instance pools to configure heterogeneous endpoints that deploy models across multiple instance types.</p>"
+                    }
+                },
+                "VariantInstanceProvisionTimeoutInSeconds": {
+                    "target": "com.amazonaws.sagemaker#VariantInstanceProvisionTimeoutInSeconds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timeout value, in seconds, for provisioning instances for the production variant. When SageMaker encounters an insufficient capacity error while provisioning instances, it retries with the next instance pool (if configured) or waits until the timeout expires. This timeout applies only to capacity provisioning and does not include the time for model download or container startup.</p> <p>Valid values: 300 to 3600.</p>"
                     }
                 },
                 "InitialVariantWeight": {
@@ -67819,6 +69856,12 @@
                         "smithy.api#documentation": "<p>The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request. </p>"
                     }
                 },
+                "InstancePools": {
+                    "target": "com.amazonaws.sagemaker#InstancePoolSummaryList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>"
+                    }
+                },
                 "VariantStatus": {
                     "target": "com.amazonaws.sagemaker#ProductionVariantStatusList",
                     "traits": {
@@ -68974,7 +71017,7 @@
             "type": "structure",
             "members": {
                 "InstanceType": {
-                    "target": "com.amazonaws.sagemaker#InstanceType",
+                    "target": "com.amazonaws.sagemaker#ProductionVariantInstanceType",
                     "traits": {
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>The instance type the model is deployed to.</p>",
@@ -70494,6 +72537,12 @@
                         "smithy.api#documentation": "<p>The availability zone for the reserved capacity.</p>"
                     }
                 },
+                "AvailabilityZoneId": {
+                    "target": "com.amazonaws.sagemaker#AvailabilityZoneId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Availability Zone ID of the reserved capacity.</p>"
+                    }
+                },
                 "DurationHours": {
                     "target": "com.amazonaws.sagemaker#ReservedCapacityDurationHours",
                     "traits": {
@@ -70940,6 +72989,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>"
                     }
+                },
+                "TrainingPlanArn": {
+                    "target": "com.amazonaws.sagemaker#StudioResourceSpecTrainingPlanArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the SageMaker AI Training Plan to use for this app. When you specify a training plan, the app launches on reserved GPU capacity. This field is supported for JupyterLab and CodeEditor app types.</p> <p>For more information about how to reserve GPU capacity with SageMaker AI Training Plans, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/training-plan-utilization-for-studio-apps.html\">Using training plans in Studio applications</a>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -71055,6 +73110,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "PipelineVersion"
+                    }
+                },
+                "JOB": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Job"
                     }
                 }
             }
@@ -71830,6 +73891,9 @@
                     "target": "com.amazonaws.sagemaker#CreateInferenceRecommendationsJob"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#CreateJob"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#CreateLabelingJob"
                 },
                 {
@@ -72034,6 +74098,9 @@
                     "target": "com.amazonaws.sagemaker#DeleteInferenceExperiment"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#DeleteJob"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#DeleteMlflowApp"
                 },
                 {
@@ -72233,6 +74300,12 @@
                 },
                 {
                     "target": "com.amazonaws.sagemaker#DescribeInferenceRecommendationsJob"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#DescribeJob"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#DescribeJobSchemaVersion"
                 },
                 {
                     "target": "com.amazonaws.sagemaker#DescribeLabelingJob"
@@ -72502,6 +74575,12 @@
                     "target": "com.amazonaws.sagemaker#ListInferenceRecommendationsJobSteps"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#ListJobs"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#ListJobSchemaVersions"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#ListLabelingJobs"
                 },
                 {
@@ -72718,6 +74797,9 @@
                     "target": "com.amazonaws.sagemaker#StopInferenceRecommendationsJob"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#StopJob"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#StopLabelingJob"
                 },
                 {
@@ -72896,6 +74978,233 @@
                 "smithy.api#title": "Amazon SageMaker Service",
                 "smithy.api#xmlNamespace": {
                     "uri": "http://sagemaker.amazonaws.com/doc/2017-05-13/"
+                },
+                "smithy.rules#endpointBdd": {
+                    "version": "1.1",
+                    "parameters": {
+                        "Region": {
+                            "builtIn": "AWS::Region",
+                            "required": false,
+                            "documentation": "The AWS region used to dispatch the request.",
+                            "type": "string"
+                        },
+                        "UseDualStack": {
+                            "builtIn": "AWS::UseDualStack",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+                            "type": "boolean"
+                        },
+                        "UseFIPS": {
+                            "builtIn": "AWS::UseFIPS",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+                            "type": "boolean"
+                        },
+                        "Endpoint": {
+                            "builtIn": "SDK::Endpoint",
+                            "required": false,
+                            "documentation": "Override the endpoint used to send this request",
+                            "type": "string"
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "aws.partition",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ],
+                            "assign": "PartitionResult"
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseFIPS"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseDualStack"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsDualStack"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsFIPS"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "stringEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "name"
+                                    ]
+                                },
+                                "aws"
+                            ]
+                        },
+                        {
+                            "fn": "stringEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "name"
+                                    ]
+                                },
+                                "aws-us-gov"
+                            ]
+                        }
+                    ],
+                    "results": [
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": {
+                                    "ref": "Endpoint"
+                                },
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://api.sagemaker-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://api-fips.sagemaker.{Region}.amazonaws.com",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://api.sagemaker-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS is enabled but this partition does not support FIPS",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://api.sagemaker.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "DualStack is enabled but this partition does not support DualStack",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://api.sagemaker.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
+                        }
+                    ],
+                    "root": 2,
+                    "nodeCount": 15,
+                    "nodes": "/////wAAAAH/////AAAAAAAAAA4AAAADAAAAAQAAAAQF9eEMAAAAAgAAAAUF9eEMAAAAAwAAAAgAAAAGAAAABAAAAAcF9eELAAAABQX14QkF9eEKAAAABAAAAAwAAAAJAAAABgAAAAoF9eEIAAAABwX14QYAAAALAAAACAX14QYF9eEHAAAABQAAAA0F9eEFAAAABgX14QQF9eEFAAAAAwX14QEAAAAPAAAABAX14QIF9eED"
                 },
                 "smithy.rules#endpointRuleSet": {
                     "version": "1.0",
@@ -73928,6 +76237,12 @@
                     "traits": {
                         "smithy.api#enumValue": "endpoint"
                     }
+                },
+                "STUDIO_APPS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "studio-apps"
+                    }
                 }
             }
         },
@@ -74401,6 +76716,12 @@
                 },
                 "Model": {
                     "target": "com.amazonaws.sagemaker#ModelDashboardModel"
+                },
+                "Job": {
+                    "target": "com.amazonaws.sagemaker#Job",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The properties of a job.</p>"
+                    }
                 }
             },
             "traits": {
@@ -74579,7 +76900,7 @@
                 "TargetResources": {
                     "target": "com.amazonaws.sagemaker#SageMakerResourceNames",
                     "traits": {
-                        "smithy.api#documentation": "<p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) to search for in the offerings.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> </ul>"
+                        "smithy.api#documentation": "<p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints, Studio apps) to search for in the offerings.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> <li> <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p> </li> </ul>"
                     }
                 },
                 "TrainingPlanArn": {
@@ -77270,6 +79591,54 @@
                 "smithy.api#input": {}
             }
         },
+        "com.amazonaws.sagemaker#StopJob": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#StopJobRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#StopJobResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Stops a running job. When you call <code>StopJob</code>, Amazon SageMaker sets the job status to <code>Stopping</code>. After the job stops, the status changes to <code>Stopped</code>. Partial results may be available in the output location if the job was in progress. To delete a stopped job, call <code>DeleteJob</code>.</p> <p>The following operations are related to <code>StopJob</code>:</p> <ul> <li> <p> <code>CreateJob</code> </p> </li> <li> <p> <code>DescribeJob</code> </p> </li> <li> <p> <code>DeleteJob</code> </p> </li> </ul>"
+            }
+        },
+        "com.amazonaws.sagemaker#StopJobRequest": {
+            "type": "structure",
+            "members": {
+                "JobName": {
+                    "target": "com.amazonaws.sagemaker#JobName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The name of the job to stop.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "JobCategory": {
+                    "target": "com.amazonaws.sagemaker#JobCategory",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The category of the job to stop.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sagemaker#StopJobResponse": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.sagemaker#StopLabelingJob": {
             "type": "operation",
             "input": {
@@ -77872,6 +80241,17 @@
                 "target": "com.amazonaws.sagemaker#StudioLifecycleConfigDetails"
             }
         },
+        "com.amazonaws.sagemaker#StudioResourceSpecTrainingPlanArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#documentation": "TrainingPlanArn variant for ResourceSpec that allows \"None\" to detach a training plan.\nBased on TrainingPlanArn (min:50, max:2048) but with min:0 and \"None\" in pattern.",
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 2048
+                },
+                "smithy.api#pattern": "^(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:training-plan/.*|None)$"
+            }
+        },
         "com.amazonaws.sagemaker#StudioWebPortal": {
             "type": "enum",
             "members": {
@@ -77914,6 +80294,12 @@
                     "target": "com.amazonaws.sagemaker#HiddenSageMakerImageVersionAliasesList",
                     "traits": {
                         "smithy.api#documentation": "<p> The version aliases you are hiding from the Studio user interface. </p>"
+                    }
+                },
+                "ExecutionRoleSessionNameMode": {
+                    "target": "com.amazonaws.sagemaker#ExecutionRoleSessionNameMode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The execution role session name mode. If this value is set to <code>USER_IDENTITY</code>, the session name of the execution role corresponds to the user's identity. For IAM domains, the session name is the IAM session name used to generate the presigned URL. For IAM Identity Center domains, the session name is the username of the associated IAM Identity Center user. If this value is set to <code>STATIC</code> or is not set, the session name defaults to <code>SageMaker</code>.</p>"
                     }
                 }
             },
@@ -80657,6 +83043,12 @@
                         "smithy.api#documentation": "<p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>"
                     }
                 },
+                "WarmPoolStatus": {
+                    "target": "com.amazonaws.sagemaker#WarmPoolStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status of the warm pool associated with the training job.</p>"
+                    }
+                },
                 "VpcConfig": {
                     "target": "com.amazonaws.sagemaker#VpcConfig",
                     "traits": {
@@ -81370,7 +83762,7 @@
                     "target": "com.amazonaws.sagemaker#SageMakerResourceNames",
                     "traits": {
                         "smithy.api#clientOptional": {},
-                        "smithy.api#documentation": "<p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) for this training plan offering.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> </ul>",
+                        "smithy.api#documentation": "<p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints, Studio apps) for this training plan offering.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> <li> <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p> </li> </ul>",
                         "smithy.api#required": {}
                     }
                 },
@@ -81628,7 +84020,7 @@
                 "TargetResources": {
                     "target": "com.amazonaws.sagemaker#SageMakerResourceNames",
                     "traits": {
-                        "smithy.api#documentation": "<p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints) that can use this training plan.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> </ul>"
+                        "smithy.api#documentation": "<p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints, Studio apps) that can use this training plan.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> <li> <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p> </li> </ul>"
                     }
                 },
                 "ReservedCapacitySummaries": {
@@ -84449,6 +86841,12 @@
                         "smithy.api#documentation": "<p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>"
                     }
                 },
+                "RestrictedInstanceGroupsConfig": {
+                    "target": "com.amazonaws.sagemaker#ClusterRestrictedInstanceGroupsConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>"
+                    }
+                },
                 "TieredStorageConfig": {
                     "target": "com.amazonaws.sagemaker#ClusterTieredStorageConfig",
                     "traits": {
@@ -84621,6 +87019,12 @@
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>The name of the instance group to update.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "ImageReleaseVersion": {
+                    "target": "com.amazonaws.sagemaker#ImageReleaseVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version of the HyperPod-managed AMI to update to for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code>.</p>"
                     }
                 }
             },
@@ -85077,6 +87481,12 @@
                     "target": "com.amazonaws.sagemaker#TagPropagation",
                     "traits": {
                         "smithy.api#documentation": "<p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>"
+                    }
+                },
+                "HomeEfsFileSystemCreation": {
+                    "target": "com.amazonaws.sagemaker#HomeEfsFileSystemCreation",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>"
                     }
                 },
                 "VpcId": {
@@ -85915,6 +88325,12 @@
                     "target": "com.amazonaws.sagemaker#InferenceComponentSpecification",
                     "traits": {
                         "smithy.api#documentation": "<p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>"
+                    }
+                },
+                "Specifications": {
+                    "target": "com.amazonaws.sagemaker#InferenceComponentSpecificationList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to specify different model or resource configurations for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>"
                     }
                 },
                 "RuntimeConfig": {
@@ -88059,6 +90475,15 @@
                 "smithy.api#range": {
                     "min": 0,
                     "max": 1
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#VariantInstanceProvisionTimeoutInSeconds": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 300,
+                    "max": 3600
                 }
             }
         },

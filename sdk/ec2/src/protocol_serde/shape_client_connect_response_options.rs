@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_client_connect_response_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ClientConnectResponseOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ClientConnectResponseOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -38,7 +42,7 @@ pub fn de_client_connect_response_options(
             s if s.matches("status") /* Status com.amazonaws.ec2#ClientConnectResponseOptions$Status */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_endpoint_attribute_status::de_client_vpn_endpoint_attribute_status(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_endpoint_attribute_status::de_client_vpn_endpoint_attribute_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

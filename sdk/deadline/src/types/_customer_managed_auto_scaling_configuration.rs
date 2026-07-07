@@ -8,7 +8,7 @@ pub struct CustomerManagedAutoScalingConfiguration {
     pub standby_worker_count: ::std::option::Option<i32>,
     /// <p>The number of seconds that a worker can remain idle before it is shut down. The default is 300 seconds (5 minutes).</p>
     pub worker_idle_duration_seconds: i32,
-    /// <p>The number of workers that can be added per minute to the fleet. The default is a service-defined value that balances efficiency with cost.</p>
+    /// <p>The number of workers that can be added per minute to the fleet. The default is 10 workers per minute.</p>
     pub scale_out_workers_per_minute: ::std::option::Option<i32>,
 }
 impl CustomerManagedAutoScalingConfiguration {
@@ -20,7 +20,7 @@ impl CustomerManagedAutoScalingConfiguration {
     pub fn worker_idle_duration_seconds(&self) -> i32 {
         self.worker_idle_duration_seconds
     }
-    /// <p>The number of workers that can be added per minute to the fleet. The default is a service-defined value that balances efficiency with cost.</p>
+    /// <p>The number of workers that can be added per minute to the fleet. The default is 10 workers per minute.</p>
     pub fn scale_out_workers_per_minute(&self) -> ::std::option::Option<i32> {
         self.scale_out_workers_per_minute
     }
@@ -69,17 +69,17 @@ impl CustomerManagedAutoScalingConfigurationBuilder {
     pub fn get_worker_idle_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.worker_idle_duration_seconds
     }
-    /// <p>The number of workers that can be added per minute to the fleet. The default is a service-defined value that balances efficiency with cost.</p>
+    /// <p>The number of workers that can be added per minute to the fleet. The default is 10 workers per minute.</p>
     pub fn scale_out_workers_per_minute(mut self, input: i32) -> Self {
         self.scale_out_workers_per_minute = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of workers that can be added per minute to the fleet. The default is a service-defined value that balances efficiency with cost.</p>
+    /// <p>The number of workers that can be added per minute to the fleet. The default is 10 workers per minute.</p>
     pub fn set_scale_out_workers_per_minute(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_out_workers_per_minute = input;
         self
     }
-    /// <p>The number of workers that can be added per minute to the fleet. The default is a service-defined value that balances efficiency with cost.</p>
+    /// <p>The number of workers that can be added per minute to the fleet. The default is 10 workers per minute.</p>
     pub fn get_scale_out_workers_per_minute(&self) -> &::std::option::Option<i32> {
         &self.scale_out_workers_per_minute
     }

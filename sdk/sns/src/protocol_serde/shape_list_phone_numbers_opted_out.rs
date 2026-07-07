@@ -121,6 +121,8 @@ pub fn de_list_phone_numbers_opted_out(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListPhoneNumbersOptedOutResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListPhoneNumbersOptedOutResponse got {start_el:?}"
@@ -138,7 +140,7 @@ pub fn de_list_phone_numbers_opted_out(
             s if s.matches("phoneNumbers") /* phoneNumbers com.amazonaws.sns.synthetic#ListPhoneNumbersOptedOutOutput$phoneNumbers */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_phone_number_list::de_phone_number_list(&mut tag)
+                        crate::protocol_serde::shape_phone_number_list::de_phone_number_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

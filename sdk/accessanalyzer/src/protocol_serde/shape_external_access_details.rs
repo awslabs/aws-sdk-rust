@@ -2,10 +2,16 @@
 pub(crate) fn de_external_access_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ExternalAccessDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,19 +22,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_action_list::de_action_list(tokens, _value)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_action_list::de_action_list(tokens, _value, depth + 1)?);
                         }
                         "condition" => {
-                            builder = builder.set_condition(crate::protocol_serde::shape_condition_key_map::de_condition_key_map(tokens, _value)?);
+                            builder = builder.set_condition(crate::protocol_serde::shape_condition_key_map::de_condition_key_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "isPublic" => {
                             builder = builder.set_is_public(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "principal" => {
-                            builder = builder.set_principal(crate::protocol_serde::shape_principal_map::de_principal_map(tokens, _value)?);
+                            builder = builder.set_principal(crate::protocol_serde::shape_principal_map::de_principal_map(tokens, _value, depth + 1)?);
                         }
                         "sources" => {
-                            builder = builder.set_sources(crate::protocol_serde::shape_finding_source_list::de_finding_source_list(tokens, _value)?);
+                            builder = builder.set_sources(crate::protocol_serde::shape_finding_source_list::de_finding_source_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceControlPolicyRestriction" => {
                             builder = builder.set_resource_control_policy_restriction(

@@ -156,6 +156,8 @@ pub(crate) fn de_put_schema(
 ) -> ::std::result::Result<crate::operation::put_schema::builders::PutSchemaOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -169,7 +171,7 @@ pub(crate) fn de_put_schema(
                     );
                 }
                 "namespaces" => {
-                    builder = builder.set_namespaces(crate::protocol_serde::shape_namespace_list::de_namespace_list(tokens, _value)?);
+                    builder = builder.set_namespaces(crate::protocol_serde::shape_namespace_list::de_namespace_list(tokens, _value, depth + 1)?);
                 }
                 "createdDate" => {
                     builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

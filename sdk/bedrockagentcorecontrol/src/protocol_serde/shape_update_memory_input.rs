@@ -3,32 +3,44 @@ pub fn ser_update_memory_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_memory::UpdateMemoryInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
+    if let Some(var_1) = &input.add_indexed_keys {
+        let mut array_2 = object.key("addIndexedKeys").start_array();
+        for item_3 in var_1 {
+            {
+                #[allow(unused_mut)]
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_indexed_key::ser_indexed_key(&mut object_4, item_3)?;
+                object_4.finish();
+            }
+        }
+        array_2.finish();
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_5) = &input.client_token {
+        object.key("clientToken").string(var_5.as_str());
     }
-    if let Some(var_3) = &input.event_expiry_duration {
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.event_expiry_duration {
         object.key("eventExpiryDuration").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_4) = &input.memory_execution_role_arn {
-        object.key("memoryExecutionRoleArn").string(var_4.as_str());
+    if let Some(var_8) = &input.memory_execution_role_arn {
+        object.key("memoryExecutionRoleArn").string(var_8.as_str());
     }
-    if let Some(var_5) = &input.memory_strategies {
+    if let Some(var_9) = &input.memory_strategies {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("memoryStrategies").start_object();
-        crate::protocol_serde::shape_modify_memory_strategies::ser_modify_memory_strategies(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_10 = object.key("memoryStrategies").start_object();
+        crate::protocol_serde::shape_modify_memory_strategies::ser_modify_memory_strategies(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_7) = &input.stream_delivery_resources {
+    if let Some(var_11) = &input.stream_delivery_resources {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("streamDeliveryResources").start_object();
-        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_12 = object.key("streamDeliveryResources").start_object();
+        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

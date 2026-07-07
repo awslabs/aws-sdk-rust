@@ -92,6 +92,8 @@ pub fn de_describe_cluster_security_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeClusterSecurityGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeClusterSecurityGroupsResponse got {start_el:?}"
@@ -122,7 +124,7 @@ pub fn de_describe_cluster_security_groups(
             s if s.matches("ClusterSecurityGroups") /* ClusterSecurityGroups com.amazonaws.redshift.synthetic#DescribeClusterSecurityGroupsOutput$ClusterSecurityGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_cluster_security_groups::de_cluster_security_groups(&mut tag)
+                        crate::protocol_serde::shape_cluster_security_groups::de_cluster_security_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;

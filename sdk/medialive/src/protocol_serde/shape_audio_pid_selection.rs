@@ -9,16 +9,34 @@ pub fn ser_audio_pid_selection(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.pids {
+        let mut array_3 = object.key("pids").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_audio_pid::ser_audio_pid(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_audio_pid_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AudioPidSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -34,6 +52,13 @@ where
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "pids" => {
+                            builder = builder.set_pids(crate::protocol_serde::shape_list_of_audio_pid::de_list_of_audio_pid(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

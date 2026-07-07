@@ -2,10 +2,16 @@
 pub(crate) fn de_actor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Actor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,13 +29,13 @@ where
                             );
                         }
                         "user" => {
-                            builder = builder.set_user(crate::protocol_serde::shape_user::de_user(tokens, _value)?);
+                            builder = builder.set_user(crate::protocol_serde::shape_user::de_user(tokens, _value, depth + 1)?);
                         }
                         "session" => {
-                            builder = builder.set_session(crate::protocol_serde::shape_session::de_session(tokens, _value)?);
+                            builder = builder.set_session(crate::protocol_serde::shape_session::de_session(tokens, _value, depth + 1)?);
                         }
                         "process" => {
-                            builder = builder.set_process(crate::protocol_serde::shape_actor_process::de_actor_process(tokens, _value)?);
+                            builder = builder.set_process(crate::protocol_serde::shape_actor_process::de_actor_process(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

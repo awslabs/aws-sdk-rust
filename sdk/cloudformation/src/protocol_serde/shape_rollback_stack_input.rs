@@ -25,6 +25,11 @@ pub fn ser_rollback_stack_input_input_input(
     if let Some(var_8) = &input.retain_except_on_create {
         scope_7.boolean(*var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("DeploymentConfig");
+    if let Some(var_10) = &input.deployment_config {
+        crate::protocol_serde::shape_deployment_config::ser_deployment_config(scope_9, var_10)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_composition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Composition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,14 +44,20 @@ where
                         }
                         "layout" => {
                             builder = builder.set_layout(crate::protocol_serde::shape_layout_configuration::de_layout_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "destinations" => {
-                            builder = builder.set_destinations(crate::protocol_serde::shape_destination_list::de_destination_list(tokens, _value)?);
+                            builder = builder.set_destinations(crate::protocol_serde::shape_destination_list::de_destination_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "startTime" => {
                             builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

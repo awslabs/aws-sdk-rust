@@ -40,6 +40,7 @@ impl super::Client {
     ///   - [`input_contexts(Option<Vec::<InputContext>>)`](crate::operation::put_intent::PutIntentOutput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
     ///   - [`output_contexts(Option<Vec::<OutputContext>>)`](crate::operation::put_intent::PutIntentOutput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
     /// - On failure, responds with [`SdkError<PutIntentError>`](crate::operation::put_intent::PutIntentError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn put_intent(&self) -> crate::operation::put_intent::builders::PutIntentFluentBuilder {
         crate::operation::put_intent::builders::PutIntentFluentBuilder::new(self.handle.clone())
     }

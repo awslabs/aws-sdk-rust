@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_option_group_option_setting(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OptionGroupOptionSetting, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OptionGroupOptionSetting::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -105,7 +109,7 @@ pub fn de_option_group_option_setting(
             s if s.matches("MinimumEngineVersionPerAllowedValue") /* MinimumEngineVersionPerAllowedValue com.amazonaws.rds#OptionGroupOptionSetting$MinimumEngineVersionPerAllowedValue */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_minimum_engine_version_per_allowed_value_list::de_minimum_engine_version_per_allowed_value_list(&mut tag)
+                        crate::protocol_serde::shape_minimum_engine_version_per_allowed_value_list::de_minimum_engine_version_per_allowed_value_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

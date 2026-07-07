@@ -2,10 +2,16 @@
 pub(crate) fn de_savings_plans_utilization_by_time<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SavingsPlansUtilizationByTime>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,29 +20,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "TimePeriod" => {
-                            builder = builder.set_time_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "TimePeriod" => {
+                                builder =
+                                    builder.set_time_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens, _value, depth + 1)?);
+                            }
+                            "Utilization" => {
+                                builder = builder.set_utilization(
+                                    crate::protocol_serde::shape_savings_plans_utilization::de_savings_plans_utilization(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Savings" => {
+                                builder = builder.set_savings(crate::protocol_serde::shape_savings_plans_savings::de_savings_plans_savings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "AmortizedCommitment" => {
+                                builder = builder.set_amortized_commitment(
+                                    crate::protocol_serde::shape_savings_plans_amortized_commitment::de_savings_plans_amortized_commitment(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Utilization" => {
-                            builder = builder.set_utilization(crate::protocol_serde::shape_savings_plans_utilization::de_savings_plans_utilization(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Savings" => {
-                            builder = builder.set_savings(crate::protocol_serde::shape_savings_plans_savings::de_savings_plans_savings(
-                                tokens, _value,
-                            )?);
-                        }
-                        "AmortizedCommitment" => {
-                            builder = builder.set_amortized_commitment(
-                                crate::protocol_serde::shape_savings_plans_amortized_commitment::de_savings_plans_amortized_commitment(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

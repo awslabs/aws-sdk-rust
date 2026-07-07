@@ -2,10 +2,16 @@
 pub(crate) fn de_capacity_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CapacityProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,24 +37,34 @@ where
                         }
                         "VpcConfig" => {
                             builder = builder.set_vpc_config(
-                                crate::protocol_serde::shape_capacity_provider_vpc_config::de_capacity_provider_vpc_config(tokens, _value)?,
+                                crate::protocol_serde::shape_capacity_provider_vpc_config::de_capacity_provider_vpc_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "PermissionsConfig" => {
                             builder = builder.set_permissions_config(
                                 crate::protocol_serde::shape_capacity_provider_permissions_config::de_capacity_provider_permissions_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "InstanceRequirements" => {
                             builder = builder.set_instance_requirements(
-                                crate::protocol_serde::shape_instance_requirements::de_instance_requirements(tokens, _value)?,
+                                crate::protocol_serde::shape_instance_requirements::de_instance_requirements(tokens, _value, depth + 1)?,
                             );
                         }
                         "CapacityProviderScalingConfig" => {
                             builder = builder.set_capacity_provider_scaling_config(
-                                crate::protocol_serde::shape_capacity_provider_scaling_config::de_capacity_provider_scaling_config(tokens, _value)?,
+                                crate::protocol_serde::shape_capacity_provider_scaling_config::de_capacity_provider_scaling_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "KmsKeyArn" => {
@@ -64,6 +80,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "PropagateTags" => {
+                            builder = builder.set_propagate_tags(crate::protocol_serde::shape_propagate_tags::de_propagate_tags(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

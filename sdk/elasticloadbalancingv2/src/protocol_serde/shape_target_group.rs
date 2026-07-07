@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TargetGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -193,7 +197,7 @@ pub fn de_target_group(
             s if s.matches("Matcher") /* Matcher com.amazonaws.elasticloadbalancingv2#TargetGroup$Matcher */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_matcher::de_matcher(&mut tag)
+                        crate::protocol_serde::shape_matcher::de_matcher(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -203,7 +207,7 @@ pub fn de_target_group(
             s if s.matches("LoadBalancerArns") /* LoadBalancerArns com.amazonaws.elasticloadbalancingv2#TargetGroup$LoadBalancerArns */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_load_balancer_arns::de_load_balancer_arns(&mut tag)
+                        crate::protocol_serde::shape_load_balancer_arns::de_load_balancer_arns(&mut tag, depth + 1)
                         ?
                     )
                 ;

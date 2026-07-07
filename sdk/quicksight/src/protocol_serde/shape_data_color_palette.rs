@@ -30,10 +30,16 @@ pub fn ser_data_color_palette(
 pub(crate) fn de_data_color_palette<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataColorPalette>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,10 +50,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Colors" => {
-                            builder = builder.set_colors(crate::protocol_serde::shape_color_list::de_color_list(tokens, _value)?);
+                            builder = builder.set_colors(crate::protocol_serde::shape_color_list::de_color_list(tokens, _value, depth + 1)?);
                         }
                         "MinMaxGradient" => {
-                            builder = builder.set_min_max_gradient(crate::protocol_serde::shape_color_list::de_color_list(tokens, _value)?);
+                            builder =
+                                builder.set_min_max_gradient(crate::protocol_serde::shape_color_list::de_color_list(tokens, _value, depth + 1)?);
                         }
                         "EmptyFillColor" => {
                             builder = builder.set_empty_fill_color(

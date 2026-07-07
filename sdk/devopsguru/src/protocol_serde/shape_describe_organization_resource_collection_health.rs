@@ -131,17 +131,25 @@ pub(crate) fn de_describe_organization_resource_collection_health(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Account" => {
-                    builder = builder.set_account(crate::protocol_serde::shape_account_healths::de_account_healths(tokens, _value)?);
+                    builder = builder.set_account(crate::protocol_serde::shape_account_healths::de_account_healths(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CloudFormation" => {
                     builder = builder.set_cloud_formation(crate::protocol_serde::shape_cloud_formation_healths::de_cloud_formation_healths(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NextToken" => {
@@ -152,10 +160,14 @@ pub(crate) fn de_describe_organization_resource_collection_health(
                     );
                 }
                 "Service" => {
-                    builder = builder.set_service(crate::protocol_serde::shape_service_healths::de_service_healths(tokens, _value)?);
+                    builder = builder.set_service(crate::protocol_serde::shape_service_healths::de_service_healths(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_healths::de_tag_healths(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_healths::de_tag_healths(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

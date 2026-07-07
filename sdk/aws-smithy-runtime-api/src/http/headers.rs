@@ -10,10 +10,46 @@ use std::borrow::Cow;
 use std::fmt::Debug;
 use std::str::FromStr;
 
+/// Header names whose values must be redacted in Debug output to prevent
+/// credential / session-token / customer-key leakage via tracing.
+const DENYLIST: &[&str] = &[
+    "authorization",
+    "proxy-authorization",
+    "x-amz-security-token",
+    "cookie",
+    "set-cookie",
+    "x-amz-server-side-encryption-customer-key",
+    "x-amz-server-side-encryption-customer-key-md5",
+    "x-amz-copy-source-server-side-encryption-customer-key",
+    "x-amz-copy-source-server-side-encryption-customer-key-md5",
+];
+
+fn is_sensitive(name: &str) -> bool {
+    DENYLIST.iter().any(|d| name.eq_ignore_ascii_case(d))
+}
+
 /// An immutable view of headers
-#[derive(Clone, Default, Debug)]
+#[derive(Clone, Default)]
 pub struct Headers {
     pub(super) headers: http_02x::HeaderMap<HeaderValue>,
+}
+
+impl Debug for Headers {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut map = f.debug_map();
+        for (key, value) in self.headers.iter() {
+            let name = key.as_str();
+            if is_sensitive(name) {
+                map.entry(
+                    &name,
+                    &format_args!("** redacted (length={}) **", value.as_ref().len()),
+                );
+            } else {
+                map.entry(&name, &value.as_ref());
+            }
+        }
+        map.finish()
+    }
 }
 
 impl<'a> IntoIterator for &'a Headers {
@@ -597,5 +633,78 @@ mod tests {
             let mut headers = Headers::new();
             let _ = headers.try_append(input.clone(), input);
         }
+    }
+}
+
+#[cfg(test)]
+mod redaction_tests {
+    use super::*;
+
+    #[test]
+    fn debug_redacts_authorization() {
+        let mut headers = Headers::new();
+        headers.insert(
+            "authorization",
+            "AWS4-HMAC-SHA256 Credential=AKIAXXX/.../Signature=SECRETSIGMARKER",
+        );
+        let output = format!("{:?}", headers);
+        assert!(!output.contains("SECRETSIGMARKER"));
+        assert!(output.contains("authorization"));
+        assert!(output.contains("** redacted"));
+    }
+
+    #[test]
+    fn debug_redacts_security_token() {
+        let mut headers = Headers::new();
+        headers.insert("x-amz-security-token", "IQoJb3JpZ2luSECRETTOKENMARKERzzz");
+        let output = format!("{:?}", headers);
+        assert!(!output.contains("SECRETTOKENMARKER"));
+        assert!(output.contains("x-amz-security-token"));
+        assert!(output.contains("length="));
+    }
+
+    #[test]
+    fn debug_redacts_mixed_case_header_name() {
+        let mut headers = Headers::new();
+        headers.insert(
+            "Authorization",
+            "AWS4-HMAC-SHA256 Credential=AKIAXXX/.../Signature=SECRETSIGMARKER",
+        );
+        let output = format!("{:?}", headers);
+        assert!(!output.contains("SECRETSIGMARKER"));
+        assert!(output.contains("** redacted"));
+    }
+
+    #[test]
+    fn debug_preserves_non_sensitive_headers() {
+        let mut headers = Headers::new();
+        headers.insert("host", "example.com");
+        headers.insert("x-amz-user-agent", "aws-sdk-rust/1.0");
+        let output = format!("{:?}", headers);
+        assert!(output.contains("example.com"));
+        assert!(output.contains("aws-sdk-rust/1.0"));
+    }
+
+    #[test]
+    fn debug_handles_sse_customer_key() {
+        let mut headers = Headers::new();
+        headers.insert(
+            "x-amz-server-side-encryption-customer-key",
+            "BASE64KEYMARKER_DO_NOT_LOG",
+        );
+        let output = format!("{:?}", headers);
+        assert!(!output.contains("BASE64KEYMARKER_DO_NOT_LOG"));
+        assert!(output.contains("x-amz-server-side-encryption-customer-key"));
+        assert!(output.contains("** redacted"));
+    }
+
+    #[test]
+    fn debug_includes_length() {
+        let value = "exactly-twenty-chars";
+        assert_eq!(value.len(), 20);
+        let mut headers = Headers::new();
+        headers.insert("authorization", value);
+        let output = format!("{:?}", headers);
+        assert!(output.contains("length=20"));
     }
 }

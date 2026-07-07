@@ -51,10 +51,16 @@ pub fn ser_telemetry_rule(
 pub(crate) fn de_telemetry_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TelemetryRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -80,13 +86,15 @@ where
                         }
                         "TelemetrySourceTypes" => {
                             builder = builder.set_telemetry_source_types(
-                                crate::protocol_serde::shape_telemetry_source_types::de_telemetry_source_types(tokens, _value)?,
+                                crate::protocol_serde::shape_telemetry_source_types::de_telemetry_source_types(tokens, _value, depth + 1)?,
                             );
                         }
                         "DestinationConfiguration" => {
                             builder = builder.set_destination_configuration(
                                 crate::protocol_serde::shape_telemetry_destination_configuration::de_telemetry_destination_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -108,7 +116,7 @@ where
                             builder = builder.set_allow_field_updates(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Regions" => {
-                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);
+                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value, depth + 1)?);
                         }
                         "AllRegions" => {
                             builder = builder.set_all_regions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

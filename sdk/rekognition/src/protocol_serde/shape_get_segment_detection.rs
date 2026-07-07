@@ -171,6 +171,8 @@ pub(crate) fn de_get_segment_detection(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -191,10 +193,18 @@ pub(crate) fn de_get_segment_detection(
                     );
                 }
                 "VideoMetadata" => {
-                    builder = builder.set_video_metadata(crate::protocol_serde::shape_video_metadata_list::de_video_metadata_list(tokens, _value)?);
+                    builder = builder.set_video_metadata(crate::protocol_serde::shape_video_metadata_list::de_video_metadata_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "AudioMetadata" => {
-                    builder = builder.set_audio_metadata(crate::protocol_serde::shape_audio_metadata_list::de_audio_metadata_list(tokens, _value)?);
+                    builder = builder.set_audio_metadata(crate::protocol_serde::shape_audio_metadata_list::de_audio_metadata_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(
@@ -204,11 +214,18 @@ pub(crate) fn de_get_segment_detection(
                     );
                 }
                 "Segments" => {
-                    builder = builder.set_segments(crate::protocol_serde::shape_segment_detections::de_segment_detections(tokens, _value)?);
+                    builder = builder.set_segments(crate::protocol_serde::shape_segment_detections::de_segment_detections(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "SelectedSegmentTypes" => {
-                    builder =
-                        builder.set_selected_segment_types(crate::protocol_serde::shape_segment_types_info::de_segment_types_info(tokens, _value)?);
+                    builder = builder.set_selected_segment_types(crate::protocol_serde::shape_segment_types_info::de_segment_types_info(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "JobId" => {
                     builder = builder.set_job_id(
@@ -218,7 +235,7 @@ pub(crate) fn de_get_segment_detection(
                     );
                 }
                 "Video" => {
-                    builder = builder.set_video(crate::protocol_serde::shape_video::de_video(tokens, _value)?);
+                    builder = builder.set_video(crate::protocol_serde::shape_video::de_video(tokens, _value, depth + 1)?);
                 }
                 "JobTag" => {
                     builder = builder.set_job_tag(

@@ -2,10 +2,16 @@
 pub(crate) fn de_ontap_volume_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OntapVolumeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,7 +65,11 @@ where
                                 builder.set_storage_virtual_machine_root(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "TieringPolicy" => {
-                            builder = builder.set_tiering_policy(crate::protocol_serde::shape_tiering_policy::de_tiering_policy(tokens, _value)?);
+                            builder = builder.set_tiering_policy(crate::protocol_serde::shape_tiering_policy::de_tiering_policy(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "UUID" => {
                             builder = builder.set_uuid(
@@ -87,7 +97,7 @@ where
                         }
                         "SnaplockConfiguration" => {
                             builder = builder.set_snaplock_configuration(
-                                crate::protocol_serde::shape_snaplock_configuration::de_snaplock_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_snaplock_configuration::de_snaplock_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "VolumeStyle" => {
@@ -99,7 +109,7 @@ where
                         }
                         "AggregateConfiguration" => {
                             builder = builder.set_aggregate_configuration(
-                                crate::protocol_serde::shape_aggregate_configuration::de_aggregate_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_aggregate_configuration::de_aggregate_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "SizeInBytes" => {

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_phone_number_information(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PhoneNumberInformation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PhoneNumberInformation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -77,7 +81,7 @@ pub fn de_phone_number_information(
             s if s.matches("NumberCapabilities") /* NumberCapabilities com.amazonaws.sns#PhoneNumberInformation$NumberCapabilities */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_number_capability_list::de_number_capability_list(&mut tag)
+                        crate::protocol_serde::shape_number_capability_list::de_number_capability_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

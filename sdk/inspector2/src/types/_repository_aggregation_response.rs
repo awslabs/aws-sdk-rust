@@ -8,6 +8,38 @@ pub struct RepositoryAggregationResponse {
     pub repository: ::std::string::String,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud service provider associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub cloud_provider: ::std::option::Option<crate::types::Provider>,
+    /// <p>The cloud infrastructure partition associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub cloud_partition: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud Region associated with this repository aggregation. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub cloud_region: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud organization ID for the repository aggregation.</p>
+    pub cloud_org_id: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud account ID for the repository aggregation.</p>
+    pub cloud_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     /// <p>The number of container images impacted by the findings.</p>
@@ -22,6 +54,48 @@ impl RepositoryAggregationResponse {
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
+    }
+    /// <p>The cloud service provider associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub fn cloud_provider(&self) -> ::std::option::Option<&crate::types::Provider> {
+        self.cloud_provider.as_ref()
+    }
+    /// <p>The cloud infrastructure partition associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub fn cloud_partition(&self) -> ::std::option::Option<&str> {
+        self.cloud_partition.as_deref()
+    }
+    /// <p>The cloud Region associated with this repository aggregation. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub fn cloud_region(&self) -> ::std::option::Option<&str> {
+        self.cloud_region.as_deref()
+    }
+    /// <p>The cloud organization ID for the repository aggregation.</p>
+    pub fn cloud_org_id(&self) -> ::std::option::Option<&str> {
+        self.cloud_org_id.as_deref()
+    }
+    /// <p>The cloud account ID for the repository aggregation.</p>
+    pub fn cloud_account_id(&self) -> ::std::option::Option<&str> {
+        self.cloud_account_id.as_deref()
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
@@ -45,6 +119,11 @@ impl RepositoryAggregationResponse {
 pub struct RepositoryAggregationResponseBuilder {
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_provider: ::std::option::Option<crate::types::Provider>,
+    pub(crate) cloud_partition: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_region: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_org_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     pub(crate) affected_images: ::std::option::Option<i64>,
 }
@@ -77,6 +156,142 @@ impl RepositoryAggregationResponseBuilder {
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
+    }
+    /// <p>The cloud service provider associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub fn cloud_provider(mut self, input: crate::types::Provider) -> Self {
+        self.cloud_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cloud service provider associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub fn set_cloud_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
+        self.cloud_provider = input;
+        self
+    }
+    /// <p>The cloud service provider associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// </ul>
+    pub fn get_cloud_provider(&self) -> &::std::option::Option<crate::types::Provider> {
+        &self.cloud_provider
+    }
+    /// <p>The cloud infrastructure partition associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub fn cloud_partition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_partition = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud infrastructure partition associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub fn set_cloud_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_partition = input;
+        self
+    }
+    /// <p>The cloud infrastructure partition associated with this repository aggregation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws</code> – Amazon Web Services commercial Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-cn</code> – Amazon Web Services China Regions.</p></li>
+    /// <li>
+    /// <p><code>aws-us-gov</code> – Amazon Web Services GovCloud (US) Regions.</p></li>
+    /// <li>
+    /// <p><code>AzureCloud</code> – Azure commercial Regions.</p></li>
+    /// </ul>
+    pub fn get_cloud_partition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_partition
+    }
+    /// <p>The cloud Region associated with this repository aggregation. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub fn cloud_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud Region associated with this repository aggregation. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub fn set_cloud_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_region = input;
+        self
+    }
+    /// <p>The cloud Region associated with this repository aggregation. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// </ul>
+    pub fn get_cloud_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_region
+    }
+    /// <p>The cloud organization ID for the repository aggregation.</p>
+    pub fn cloud_org_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_org_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud organization ID for the repository aggregation.</p>
+    pub fn set_cloud_org_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_org_id = input;
+        self
+    }
+    /// <p>The cloud organization ID for the repository aggregation.</p>
+    pub fn get_cloud_org_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_org_id
+    }
+    /// <p>The cloud account ID for the repository aggregation.</p>
+    pub fn cloud_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud account ID for the repository aggregation.</p>
+    pub fn set_cloud_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_account_id = input;
+        self
+    }
+    /// <p>The cloud account ID for the repository aggregation.</p>
+    pub fn get_cloud_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_account_id
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -118,6 +333,11 @@ impl RepositoryAggregationResponseBuilder {
                 )
             })?,
             account_id: self.account_id,
+            cloud_provider: self.cloud_provider,
+            cloud_partition: self.cloud_partition,
+            cloud_region: self.cloud_region,
+            cloud_org_id: self.cloud_org_id,
+            cloud_account_id: self.cloud_account_id,
             severity_counts: self.severity_counts,
             affected_images: self.affected_images,
         })

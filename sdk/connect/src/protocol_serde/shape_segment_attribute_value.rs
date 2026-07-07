@@ -46,10 +46,16 @@ pub fn ser_segment_attribute_value(
 pub(crate) fn de_segment_attribute_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SegmentAttributeValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,7 +74,7 @@ where
                         }
                         "ValueMap" => {
                             builder = builder.set_value_map(
-                                crate::protocol_serde::shape_segment_attribute_value_map::de_segment_attribute_value_map(tokens, _value)?,
+                                crate::protocol_serde::shape_segment_attribute_value_map::de_segment_attribute_value_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "ValueInteger" => {
@@ -80,7 +86,11 @@ where
                         }
                         "ValueList" => {
                             builder = builder.set_value_list(
-                                crate::protocol_serde::shape_segment_attribute_value_list::de_segment_attribute_value_list(tokens, _value)?,
+                                crate::protocol_serde::shape_segment_attribute_value_list::de_segment_attribute_value_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ValueArn" => {

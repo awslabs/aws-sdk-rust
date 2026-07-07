@@ -54,6 +54,8 @@ pub(crate) fn de_verify_target_domain(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -91,6 +93,13 @@ pub(crate) fn de_verify_target_domain(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "verificationStatusReason" => {
+                    builder = builder.set_verification_status_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "verifiedAt" => {
                     builder = builder.set_verified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -86,6 +86,8 @@ pub fn de_modify_target_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyTargetGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyTargetGroupResponse got {start_el:?}"
@@ -103,7 +105,7 @@ pub fn de_modify_target_group(
             s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2.synthetic#ModifyTargetGroupOutput$TargetGroups */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_target_groups::de_target_groups(&mut tag)
+                        crate::protocol_serde::shape_target_groups::de_target_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;

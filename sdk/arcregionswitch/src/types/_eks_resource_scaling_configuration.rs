@@ -21,7 +21,7 @@ pub struct EksResourceScalingConfiguration {
     pub eks_clusters: ::std::option::Option<::std::vec::Vec<crate::types::EksCluster>>,
     /// <p>The settings for ungraceful execution.</p>
     pub ungraceful: ::std::option::Option<crate::types::EksResourceScalingUngraceful>,
-    /// <p>The target percentage for the configuration.</p>
+    /// <p>The target percentage for the configuration. The default is 100.</p>
     pub target_percent: i32,
     /// <p>The monitoring approach for the configuration, that is, whether it was sampled in the last 24 hours or autoscaled in the last 24 hours.</p>
     pub capacity_monitoring_approach: crate::types::EksCapacityMonitoringApproach,
@@ -56,7 +56,7 @@ impl EksResourceScalingConfiguration {
     pub fn ungraceful(&self) -> ::std::option::Option<&crate::types::EksResourceScalingUngraceful> {
         self.ungraceful.as_ref()
     }
-    /// <p>The target percentage for the configuration.</p>
+    /// <p>The target percentage for the configuration. The default is 100.</p>
     pub fn target_percent(&self) -> i32 {
         self.target_percent
     }
@@ -200,17 +200,17 @@ impl EksResourceScalingConfigurationBuilder {
     pub fn get_ungraceful(&self) -> &::std::option::Option<crate::types::EksResourceScalingUngraceful> {
         &self.ungraceful
     }
-    /// <p>The target percentage for the configuration.</p>
+    /// <p>The target percentage for the configuration. The default is 100.</p>
     pub fn target_percent(mut self, input: i32) -> Self {
         self.target_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The target percentage for the configuration.</p>
+    /// <p>The target percentage for the configuration. The default is 100.</p>
     pub fn set_target_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_percent = input;
         self
     }
-    /// <p>The target percentage for the configuration.</p>
+    /// <p>The target percentage for the configuration. The default is 100.</p>
     pub fn get_target_percent(&self) -> &::std::option::Option<i32> {
         &self.target_percent
     }

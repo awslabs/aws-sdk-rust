@@ -13,6 +13,8 @@ pub use crate::types::_on_stack_failure::OnStackFailure;
 
 pub use crate::types::_deployment_mode::DeploymentMode;
 
+pub use crate::types::_deployment_config::DeploymentConfig;
+
 pub use crate::types::_template_configuration::TemplateConfiguration;
 
 pub use crate::types::_on_failure::OnFailure;
@@ -124,6 +126,8 @@ pub use crate::types::_capability::Capability;
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_resource_to_import::ResourceToImport;
+
+pub use crate::types::_deployment_config_mode::DeploymentConfigMode;
 
 pub use crate::types::_resource_definition::ResourceDefinition;
 
@@ -400,6 +404,10 @@ mod _change_type;
 mod _concurrency_mode;
 
 mod _deletion_mode;
+
+mod _deployment_config;
+
+mod _deployment_config_mode;
 
 mod _deployment_mode;
 

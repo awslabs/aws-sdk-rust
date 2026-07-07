@@ -2,10 +2,16 @@
 pub(crate) fn de_automated_reasoning_policy_definition_element<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningPolicyDefinitionElement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,19 +38,19 @@ where
                     variant = match key.as_ref() {
                             "policyDefinitionVariable" => {
                                 Some(crate::types::AutomatedReasoningPolicyDefinitionElement::PolicyDefinitionVariable(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_variable::de_automated_reasoning_policy_definition_variable(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_variable::de_automated_reasoning_policy_definition_variable(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'policyDefinitionVariable' cannot be null"))?
                                 ))
                             }
                             "policyDefinitionType" => {
                                 Some(crate::types::AutomatedReasoningPolicyDefinitionElement::PolicyDefinitionType(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_type::de_automated_reasoning_policy_definition_type(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_type::de_automated_reasoning_policy_definition_type(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'policyDefinitionType' cannot be null"))?
                                 ))
                             }
                             "policyDefinitionRule" => {
                                 Some(crate::types::AutomatedReasoningPolicyDefinitionElement::PolicyDefinitionRule(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_rule::de_automated_reasoning_policy_definition_rule(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_rule::de_automated_reasoning_policy_definition_rule(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'policyDefinitionRule' cannot be null"))?
                                 ))
                             }

@@ -2,10 +2,16 @@
 pub(crate) fn de_token_balance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TokenBalance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,12 +22,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ownerIdentifier" => {
-                            builder =
-                                builder.set_owner_identifier(crate::protocol_serde::shape_owner_identifier::de_owner_identifier(tokens, _value)?);
+                            builder = builder.set_owner_identifier(crate::protocol_serde::shape_owner_identifier::de_owner_identifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "tokenIdentifier" => {
-                            builder =
-                                builder.set_token_identifier(crate::protocol_serde::shape_token_identifier::de_token_identifier(tokens, _value)?);
+                            builder = builder.set_token_identifier(crate::protocol_serde::shape_token_identifier::de_token_identifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "balance" => {
                             builder = builder.set_balance(
@@ -31,12 +43,18 @@ where
                             );
                         }
                         "atBlockchainInstant" => {
-                            builder = builder
-                                .set_at_blockchain_instant(crate::protocol_serde::shape_blockchain_instant::de_blockchain_instant(tokens, _value)?);
+                            builder = builder.set_at_blockchain_instant(crate::protocol_serde::shape_blockchain_instant::de_blockchain_instant(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lastUpdatedTime" => {
-                            builder = builder
-                                .set_last_updated_time(crate::protocol_serde::shape_blockchain_instant::de_blockchain_instant(tokens, _value)?);
+                            builder = builder.set_last_updated_time(crate::protocol_serde::shape_blockchain_instant::de_blockchain_instant(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

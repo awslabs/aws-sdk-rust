@@ -35,22 +35,35 @@ pub fn ser_player(
 
 pub(crate) fn de_player(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Player, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::PlayerBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::PlayerBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "PlayerId" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_player_id(Some(decoder.string()?))))?
             }
             "PlayerAttributes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_player_attributes(Some(crate::protocol_serde::shape_player_attribute_map::de_player_attribute_map(decoder)?)))
+                Ok(
+                    builder.set_player_attributes(Some(crate::protocol_serde::shape_player_attribute_map::de_player_attribute_map(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "Team" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_team(Some(decoder.string()?))))?,
             "LatencyInMs" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_latency_in_ms(Some(crate::protocol_serde::shape_latency_map::de_latency_map(decoder)?)))
+                Ok(builder.set_latency_in_ms(Some(crate::protocol_serde::shape_latency_map::de_latency_map(decoder, depth + 1)?)))
             })?,
             _ => {
                 decoder.skip()?;
@@ -70,13 +83,13 @@ pub(crate) fn de_player(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

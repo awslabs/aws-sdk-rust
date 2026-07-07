@@ -50,6 +50,10 @@ pub struct ConfigurationRecorder {
     pub recording_scope: ::std::option::Option<crate::types::RecordingScope>,
     /// <p>For service-linked configuration recorders, specifies the linked Amazon Web Services service for the configuration recorder.</p>
     pub service_principal: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the connector that specifies the connection between a third-party cloud service provider and Config.</p>
+    pub connector_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the scope of resources to record from the third-party cloud service provider connected through the connector.</p>
+    pub scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
 }
 impl ConfigurationRecorder {
     /// <p>The Amazon Resource Name (ARN) of the specified configuration recorder.</p>
@@ -111,6 +115,14 @@ impl ConfigurationRecorder {
     pub fn service_principal(&self) -> ::std::option::Option<&str> {
         self.service_principal.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the connector that specifies the connection between a third-party cloud service provider and Config.</p>
+    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+        self.connector_arn.as_deref()
+    }
+    /// <p>Specifies the scope of resources to record from the third-party cloud service provider connected through the connector.</p>
+    pub fn scope_configuration(&self) -> ::std::option::Option<&crate::types::ScopeConfiguration> {
+        self.scope_configuration.as_ref()
+    }
 }
 impl ConfigurationRecorder {
     /// Creates a new builder-style object to manufacture [`ConfigurationRecorder`](crate::types::ConfigurationRecorder).
@@ -130,6 +142,8 @@ pub struct ConfigurationRecorderBuilder {
     pub(crate) recording_mode: ::std::option::Option<crate::types::RecordingMode>,
     pub(crate) recording_scope: ::std::option::Option<crate::types::RecordingScope>,
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
 }
 impl ConfigurationRecorderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the specified configuration recorder.</p>
@@ -323,6 +337,34 @@ impl ConfigurationRecorderBuilder {
     pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_principal
     }
+    /// <p>The Amazon Resource Name (ARN) of the connector that specifies the connection between a third-party cloud service provider and Config.</p>
+    pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connector_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connector that specifies the connection between a third-party cloud service provider and Config.</p>
+    pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connector that specifies the connection between a third-party cloud service provider and Config.</p>
+    pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_arn
+    }
+    /// <p>Specifies the scope of resources to record from the third-party cloud service provider connected through the connector.</p>
+    pub fn scope_configuration(mut self, input: crate::types::ScopeConfiguration) -> Self {
+        self.scope_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the scope of resources to record from the third-party cloud service provider connected through the connector.</p>
+    pub fn set_scope_configuration(mut self, input: ::std::option::Option<crate::types::ScopeConfiguration>) -> Self {
+        self.scope_configuration = input;
+        self
+    }
+    /// <p>Specifies the scope of resources to record from the third-party cloud service provider connected through the connector.</p>
+    pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
+        &self.scope_configuration
+    }
     /// Consumes the builder and constructs a [`ConfigurationRecorder`](crate::types::ConfigurationRecorder).
     pub fn build(self) -> crate::types::ConfigurationRecorder {
         crate::types::ConfigurationRecorder {
@@ -333,6 +375,8 @@ impl ConfigurationRecorderBuilder {
             recording_mode: self.recording_mode,
             recording_scope: self.recording_scope,
             service_principal: self.service_principal,
+            connector_arn: self.connector_arn,
+            scope_configuration: self.scope_configuration,
         }
     }
 }

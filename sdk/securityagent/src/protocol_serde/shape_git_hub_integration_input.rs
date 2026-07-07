@@ -12,5 +12,11 @@ pub fn ser_git_hub_integration_input(
     if let Some(var_1) = &input.organization_name {
         object.key("organizationName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.target_url {
+        object.key("targetUrl").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.installation_id {
+        object.key("installationId").string(var_3.as_str());
+    }
     Ok(())
 }

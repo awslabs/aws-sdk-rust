@@ -140,6 +140,8 @@ pub fn de_get_query_results_workload_insights_top_contributors_data_http_respons
 pub(crate) fn de_get_query_results_workload_insights_top_contributors_data(_value: &[u8], mut builder: crate::operation::get_query_results_workload_insights_top_contributors_data::builders::GetQueryResultsWorkloadInsightsTopContributorsDataOutputBuilder) -> ::std::result::Result<crate::operation::get_query_results_workload_insights_top_contributors_data::builders::GetQueryResultsWorkloadInsightsTopContributorsDataOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -147,7 +149,7 @@ pub(crate) fn de_get_query_results_workload_insights_top_contributors_data(_valu
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "datapoints" => {
                     builder = builder.set_datapoints(
-                            crate::protocol_serde::shape_workload_insights_top_contributors_data_points::de_workload_insights_top_contributors_data_points(tokens, _value)?
+                            crate::protocol_serde::shape_workload_insights_top_contributors_data_points::de_workload_insights_top_contributors_data_points(tokens, _value, depth + 1)?
                         );
                 }
                 "nextToken" => {

@@ -93,6 +93,8 @@ pub fn de_batch_modify_cluster_snapshots(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("BatchModifyClusterSnapshotsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected BatchModifyClusterSnapshotsResponse got {start_el:?}"
@@ -110,7 +112,7 @@ pub fn de_batch_modify_cluster_snapshots(
             s if s.matches("Resources") /* Resources com.amazonaws.redshift.synthetic#BatchModifyClusterSnapshotsOutput$Resources */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_identifier_list::de_snapshot_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_snapshot_identifier_list::de_snapshot_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -120,7 +122,7 @@ pub fn de_batch_modify_cluster_snapshots(
             s if s.matches("Errors") /* Errors com.amazonaws.redshift.synthetic#BatchModifyClusterSnapshotsOutput$Errors */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_batch_snapshot_operation_errors::de_batch_snapshot_operation_errors(&mut tag)
+                        crate::protocol_serde::shape_batch_snapshot_operation_errors::de_batch_snapshot_operation_errors(&mut tag, depth + 1)
                         ?
                     )
                 ;

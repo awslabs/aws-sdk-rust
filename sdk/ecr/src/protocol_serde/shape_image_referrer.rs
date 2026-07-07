@@ -2,10 +2,16 @@
 pub(crate) fn de_image_referrer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ImageReferrer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,7 @@ where
                             );
                         }
                         "annotations" => {
-                            builder = builder.set_annotations(crate::protocol_serde::shape_annotations::de_annotations(tokens, _value)?);
+                            builder = builder.set_annotations(crate::protocol_serde::shape_annotations::de_annotations(tokens, _value, depth + 1)?);
                         }
                         "artifactStatus" => {
                             builder = builder.set_artifact_status(

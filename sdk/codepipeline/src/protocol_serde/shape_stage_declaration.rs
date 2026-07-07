@@ -54,10 +54,16 @@ pub fn ser_stage_declaration(
 pub(crate) fn de_stage_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StageDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -76,23 +82,41 @@ where
                         }
                         "blockers" => {
                             builder = builder.set_blockers(
-                                crate::protocol_serde::shape_stage_blocker_declaration_list::de_stage_blocker_declaration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_stage_blocker_declaration_list::de_stage_blocker_declaration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "actions" => {
                             builder = builder.set_actions(
-                                crate::protocol_serde::shape_stage_action_declaration_list::de_stage_action_declaration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_stage_action_declaration_list::de_stage_action_declaration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "onFailure" => {
-                            builder = builder.set_on_failure(crate::protocol_serde::shape_failure_conditions::de_failure_conditions(tokens, _value)?);
+                            builder = builder.set_on_failure(crate::protocol_serde::shape_failure_conditions::de_failure_conditions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "onSuccess" => {
-                            builder = builder.set_on_success(crate::protocol_serde::shape_success_conditions::de_success_conditions(tokens, _value)?);
+                            builder = builder.set_on_success(crate::protocol_serde::shape_success_conditions::de_success_conditions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "beforeEntry" => {
                             builder = builder.set_before_entry(crate::protocol_serde::shape_before_entry_conditions::de_before_entry_conditions(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_certificate_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CertificateSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,8 +36,11 @@ where
                             );
                         }
                         "SubjectAlternativeNameSummaries" => {
-                            builder = builder
-                                .set_subject_alternative_name_summaries(crate::protocol_serde::shape_domain_list::de_domain_list(tokens, _value)?);
+                            builder = builder.set_subject_alternative_name_summaries(crate::protocol_serde::shape_domain_list::de_domain_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "HasAdditionalSubjectAlternativeNames" => {
                             builder = builder.set_has_additional_subject_alternative_names(
@@ -60,11 +69,15 @@ where
                             );
                         }
                         "KeyUsages" => {
-                            builder = builder.set_key_usages(crate::protocol_serde::shape_key_usage_names::de_key_usage_names(tokens, _value)?);
+                            builder = builder.set_key_usages(crate::protocol_serde::shape_key_usage_names::de_key_usage_names(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExtendedKeyUsages" => {
                             builder = builder.set_extended_key_usages(
-                                crate::protocol_serde::shape_extended_key_usage_names::de_extended_key_usage_names(tokens, _value)?,
+                                crate::protocol_serde::shape_extended_key_usage_names::de_extended_key_usage_names(tokens, _value, depth + 1)?,
                             );
                         }
                         "ExportOption" => {
@@ -127,6 +140,13 @@ where
                             builder = builder.set_managed_by(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CertificateManagedBy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CertificateKeyPairOrigin" => {
+                            builder = builder.set_certificate_key_pair_origin(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CertificateKeyPairOrigin::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

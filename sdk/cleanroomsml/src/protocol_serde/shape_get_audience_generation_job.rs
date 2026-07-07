@@ -100,6 +100,8 @@ pub(crate) fn de_get_audience_generation_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,7 +146,9 @@ pub(crate) fn de_get_audience_generation_job(
                 }
                 "metrics" => {
                     builder = builder.set_metrics(crate::protocol_serde::shape_audience_quality_metrics::de_audience_quality_metrics(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "name" => {
@@ -163,7 +167,11 @@ pub(crate) fn de_get_audience_generation_job(
                 }
                 "seedAudience" => {
                     builder = builder.set_seed_audience(
-                        crate::protocol_serde::shape_audience_generation_job_data_source::de_audience_generation_job_data_source(tokens, _value)?,
+                        crate::protocol_serde::shape_audience_generation_job_data_source::de_audience_generation_job_data_source(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "startedBy" => {
@@ -181,10 +189,10 @@ pub(crate) fn de_get_audience_generation_job(
                     );
                 }
                 "statusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value, depth + 1)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "updateTime" => {
                     builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

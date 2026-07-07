@@ -343,6 +343,18 @@ fn extract_endpoint_auth_scheme_config<'a>(
     if scheme_id == &NO_AUTH_SCHEME_ID {
         return Ok(AuthSchemeEndpointConfig::empty());
     }
+
+    // Try typed auth schemes first (from BDD endpoint resolution)
+    let typed_schemes = endpoint.auth_schemes();
+    if !typed_schemes.is_empty() {
+        return typed_schemes
+            .iter()
+            .find(|scheme| scheme.name() == scheme_id.inner())
+            .map(AuthSchemeEndpointConfig::from_typed)
+            .ok_or(AuthOrchestrationError::MissingEndpointConfig);
+    }
+
+    // Fall back to Document-based properties
     let auth_schemes = match endpoint.properties().get("authSchemes") {
         Some(Document::Array(schemes)) => schemes,
         // no auth schemes:

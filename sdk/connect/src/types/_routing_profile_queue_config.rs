@@ -8,7 +8,7 @@ pub struct RoutingProfileQueueConfig {
     pub queue_reference: ::std::option::Option<crate::types::RoutingProfileQueueReference>,
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub priority: i32,
-    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub delay: i32,
 }
 impl RoutingProfileQueueConfig {
@@ -20,7 +20,7 @@ impl RoutingProfileQueueConfig {
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn delay(&self) -> i32 {
         self.delay
     }
@@ -71,18 +71,18 @@ impl RoutingProfileQueueConfigBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     /// This field is required.
     pub fn delay(mut self, input: i32) -> Self {
         self.delay = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn set_delay(mut self, input: ::std::option::Option<i32>) -> Self {
         self.delay = input;
         self
     }
-    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn get_delay(&self) -> &::std::option::Option<i32> {
         &self.delay
     }

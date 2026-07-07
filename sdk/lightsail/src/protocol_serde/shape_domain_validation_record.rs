@@ -2,10 +2,16 @@
 pub(crate) fn de_domain_validation_record<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DomainValidationRecord>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,11 +29,15 @@ where
                             );
                         }
                         "resourceRecord" => {
-                            builder = builder.set_resource_record(crate::protocol_serde::shape_resource_record::de_resource_record(tokens, _value)?);
+                            builder = builder.set_resource_record(crate::protocol_serde::shape_resource_record::de_resource_record(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dnsRecordCreationState" => {
                             builder = builder.set_dns_record_creation_state(
-                                crate::protocol_serde::shape_dns_record_creation_state::de_dns_record_creation_state(tokens, _value)?,
+                                crate::protocol_serde::shape_dns_record_creation_state::de_dns_record_creation_state(tokens, _value, depth + 1)?,
                             );
                         }
                         "validationStatus" => {

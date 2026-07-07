@@ -1053,6 +1053,15 @@ pub(crate) fn cache_behaviors_correct_errors(
     builder
 }
 
+pub(crate) fn cache_tag_config_correct_errors(
+    mut builder: crate::types::builders::CacheTagConfigBuilder,
+) -> crate::types::builders::CacheTagConfigBuilder {
+    if builder.header_name.is_none() {
+        builder.header_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn connection_function_association_correct_errors(
     mut builder: crate::types::builders::ConnectionFunctionAssociationBuilder,
 ) -> crate::types::builders::ConnectionFunctionAssociationBuilder {

@@ -30,5 +30,7 @@ pub fn de_streaming_distribution(inp: &[u8]) -> std::result::Result<crate::types
             "invalid root, expected StreamingDistribution got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_streaming_distribution::de_streaming_distribution(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_streaming_distribution::de_streaming_distribution(&mut decoder, depth + 1)
 }

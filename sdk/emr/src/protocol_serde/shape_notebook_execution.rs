@@ -2,10 +2,16 @@
 pub(crate) fn de_notebook_execution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NotebookExecution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,116 +20,124 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "NotebookExecutionId" => {
-                            builder = builder.set_notebook_execution_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "NotebookExecutionId" => {
+                                builder = builder.set_notebook_execution_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "EditorId" => {
+                                builder = builder.set_editor_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ExecutionEngine" => {
+                                builder = builder.set_execution_engine(
+                                    crate::protocol_serde::shape_execution_engine_config::de_execution_engine_config(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "NotebookExecutionName" => {
+                                builder = builder.set_notebook_execution_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NotebookParams" => {
+                                builder = builder.set_notebook_params(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Status" => {
+                                builder = builder.set_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::NotebookExecutionStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "StartTime" => {
+                                builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "EndTime" => {
+                                builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "Arn" => {
+                                builder = builder.set_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "OutputNotebookURI" => {
+                                builder = builder.set_output_notebook_uri(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "LastStateChangeReason" => {
+                                builder = builder.set_last_state_change_reason(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NotebookInstanceSecurityGroupId" => {
+                                builder = builder.set_notebook_instance_security_group_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Tags" => {
+                                builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
+                            }
+                            "NotebookS3Location" => {
+                                builder = builder.set_notebook_s3_location(
+                                    crate::protocol_serde::shape_notebook_s3_location_for_output::de_notebook_s3_location_for_output(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "OutputNotebookS3Location" => {
+                                builder = builder.set_output_notebook_s3_location(
+                                    crate::protocol_serde::shape_output_notebook_s3_location_for_output::de_output_notebook_s3_location_for_output(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "OutputNotebookFormat" => {
+                                builder = builder.set_output_notebook_format(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::OutputNotebookFormat::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "EnvironmentVariables" => {
+                                builder = builder.set_environment_variables(
+                                    crate::protocol_serde::shape_environment_variables_map::de_environment_variables_map(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "EditorId" => {
-                            builder = builder.set_editor_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ExecutionEngine" => {
-                            builder = builder.set_execution_engine(crate::protocol_serde::shape_execution_engine_config::de_execution_engine_config(
-                                tokens, _value,
-                            )?);
-                        }
-                        "NotebookExecutionName" => {
-                            builder = builder.set_notebook_execution_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NotebookParams" => {
-                            builder = builder.set_notebook_params(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Status" => {
-                            builder = builder.set_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::NotebookExecutionStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "StartTime" => {
-                            builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "EndTime" => {
-                            builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "Arn" => {
-                            builder = builder.set_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "OutputNotebookURI" => {
-                            builder = builder.set_output_notebook_uri(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "LastStateChangeReason" => {
-                            builder = builder.set_last_state_change_reason(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NotebookInstanceSecurityGroupId" => {
-                            builder = builder.set_notebook_instance_security_group_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
-                        }
-                        "NotebookS3Location" => {
-                            builder = builder.set_notebook_s3_location(
-                                crate::protocol_serde::shape_notebook_s3_location_for_output::de_notebook_s3_location_for_output(tokens, _value)?,
-                            );
-                        }
-                        "OutputNotebookS3Location" => {
-                            builder = builder.set_output_notebook_s3_location(
-                                crate::protocol_serde::shape_output_notebook_s3_location_for_output::de_output_notebook_s3_location_for_output(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "OutputNotebookFormat" => {
-                            builder = builder.set_output_notebook_format(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::OutputNotebookFormat::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "EnvironmentVariables" => {
-                            builder = builder.set_environment_variables(
-                                crate::protocol_serde::shape_environment_variables_map::de_environment_variables_map(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

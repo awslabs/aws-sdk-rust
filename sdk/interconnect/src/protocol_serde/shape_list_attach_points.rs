@@ -165,17 +165,18 @@ pub(crate) fn de_list_attach_points(
     mut builder: crate::operation::list_attach_points::builders::ListAttachPointsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_attach_points::builders::ListAttachPointsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
 {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_attach_points::builders::ListAttachPointsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_attach_points::builders::ListAttachPointsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "attachPoints" => builder.set_attach_points(Some(
-                crate::protocol_serde::shape_attach_point_descriptor_list::de_attach_point_descriptor_list(decoder)?,
+                crate::protocol_serde::shape_attach_point_descriptor_list::de_attach_point_descriptor_list(decoder, depth + 1)?,
             )),
             "nextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
@@ -189,6 +190,8 @@ pub(crate) fn de_list_attach_points(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -198,13 +201,13 @@ pub(crate) fn de_list_attach_points(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

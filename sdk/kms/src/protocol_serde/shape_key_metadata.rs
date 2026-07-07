@@ -2,10 +2,16 @@
 pub(crate) fn de_key_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KeyMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -129,17 +135,25 @@ where
                         }
                         "EncryptionAlgorithms" => {
                             builder = builder.set_encryption_algorithms(
-                                crate::protocol_serde::shape_encryption_algorithm_spec_list::de_encryption_algorithm_spec_list(tokens, _value)?,
+                                crate::protocol_serde::shape_encryption_algorithm_spec_list::de_encryption_algorithm_spec_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SigningAlgorithms" => {
                             builder = builder.set_signing_algorithms(
-                                crate::protocol_serde::shape_signing_algorithm_spec_list::de_signing_algorithm_spec_list(tokens, _value)?,
+                                crate::protocol_serde::shape_signing_algorithm_spec_list::de_signing_algorithm_spec_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "KeyAgreementAlgorithms" => {
                             builder = builder.set_key_agreement_algorithms(
-                                crate::protocol_serde::shape_key_agreement_algorithm_spec_list::de_key_agreement_algorithm_spec_list(tokens, _value)?,
+                                crate::protocol_serde::shape_key_agreement_algorithm_spec_list::de_key_agreement_algorithm_spec_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MultiRegion" => {
@@ -147,7 +161,7 @@ where
                         }
                         "MultiRegionConfiguration" => {
                             builder = builder.set_multi_region_configuration(
-                                crate::protocol_serde::shape_multi_region_configuration::de_multi_region_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_multi_region_configuration::de_multi_region_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "PendingDeletionWindowInDays" => {
@@ -159,12 +173,14 @@ where
                         }
                         "MacAlgorithms" => {
                             builder = builder.set_mac_algorithms(crate::protocol_serde::shape_mac_algorithm_spec_list::de_mac_algorithm_spec_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "XksKeyConfiguration" => {
                             builder = builder.set_xks_key_configuration(
-                                crate::protocol_serde::shape_xks_key_configuration_type::de_xks_key_configuration_type(tokens, _value)?,
+                                crate::protocol_serde::shape_xks_key_configuration_type::de_xks_key_configuration_type(tokens, _value, depth + 1)?,
                             );
                         }
                         "CurrentKeyMaterialId" => {

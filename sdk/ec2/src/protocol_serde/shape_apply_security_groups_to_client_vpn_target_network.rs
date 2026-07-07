@@ -55,6 +55,8 @@ pub fn de_apply_security_groups_to_client_vpn_target_network(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ApplySecurityGroupsToClientVpnTargetNetworkResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ApplySecurityGroupsToClientVpnTargetNetworkResponse got {start_el:?}"
@@ -65,7 +67,7 @@ pub fn de_apply_security_groups_to_client_vpn_target_network(
             s if s.matches("securityGroupIds") /* SecurityGroupIds com.amazonaws.ec2.synthetic#ApplySecurityGroupsToClientVpnTargetNetworkOutput$SecurityGroupIds */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_security_group_id_set::de_client_vpn_security_group_id_set(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_security_group_id_set::de_client_vpn_security_group_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

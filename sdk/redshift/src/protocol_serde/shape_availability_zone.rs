@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_availability_zone(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AvailabilityZone, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AvailabilityZone::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_availability_zone(
             s if s.matches("SupportedPlatforms") /* SupportedPlatforms com.amazonaws.redshift#AvailabilityZone$SupportedPlatforms */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_supported_platforms_list::de_supported_platforms_list(&mut tag)
+                        crate::protocol_serde::shape_supported_platforms_list::de_supported_platforms_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

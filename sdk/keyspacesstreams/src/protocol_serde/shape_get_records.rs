@@ -129,13 +129,15 @@ pub(crate) fn de_get_records(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "changeRecords" => {
-                    builder = builder.set_change_records(crate::protocol_serde::shape_record_list::de_record_list(tokens, _value)?);
+                    builder = builder.set_change_records(crate::protocol_serde::shape_record_list::de_record_list(tokens, _value, depth + 1)?);
                 }
                 "nextShardIterator" => {
                     builder = builder.set_next_shard_iterator(
@@ -143,6 +145,13 @@ pub(crate) fn de_get_records(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "iteratorDescription" => {
+                    builder = builder.set_iterator_description(crate::protocol_serde::shape_iterator_description::de_iterator_description(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

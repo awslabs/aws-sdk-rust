@@ -14,6 +14,7 @@
 /// match analysistype {
 ///     AnalysisType::CustomCommitment => { /* ... */ },
 ///     AnalysisType::MaxSavings => { /* ... */ },
+///     AnalysisType::TargetAverageCoverage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum AnalysisType {
     CustomCommitment,
     #[allow(missing_docs)] // documentation missing in model
     MaxSavings,
+    #[allow(missing_docs)] // documentation missing in model
+    TargetAverageCoverage,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for AnalysisType {
         match s {
             "CUSTOM_COMMITMENT" => AnalysisType::CustomCommitment,
             "MAX_SAVINGS" => AnalysisType::MaxSavings,
+            "TARGET_AVERAGE_COVERAGE" => AnalysisType::TargetAverageCoverage,
             other => AnalysisType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl AnalysisType {
         match self {
             AnalysisType::CustomCommitment => "CUSTOM_COMMITMENT",
             AnalysisType::MaxSavings => "MAX_SAVINGS",
+            AnalysisType::TargetAverageCoverage => "TARGET_AVERAGE_COVERAGE",
             AnalysisType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM_COMMITMENT", "MAX_SAVINGS"]
+        &["CUSTOM_COMMITMENT", "MAX_SAVINGS", "TARGET_AVERAGE_COVERAGE"]
     }
 }
 impl ::std::convert::AsRef<str> for AnalysisType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for AnalysisType {
         match self {
             AnalysisType::CustomCommitment => write!(f, "CUSTOM_COMMITMENT"),
             AnalysisType::MaxSavings => write!(f, "MAX_SAVINGS"),
+            AnalysisType::TargetAverageCoverage => write!(f, "TARGET_AVERAGE_COVERAGE"),
             AnalysisType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringCriteriaCondition {
-    /// <p>The comparison operator used to evaluate the string criteria, such as equals, not equals, or contains.</p>
+    /// <p>The comparison operator used to evaluate the attribute against the specified values.</p>
     pub comparison: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>List of string values to compare against when applying the criteria condition.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StringCriteriaCondition {
-    /// <p>The comparison operator used to evaluate the string criteria, such as equals, not equals, or contains.</p>
+    /// <p>The comparison operator used to evaluate the attribute against the specified values.</p>
     pub fn comparison(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison.as_ref()
     }
@@ -36,17 +36,17 @@ pub struct StringCriteriaConditionBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StringCriteriaConditionBuilder {
-    /// <p>The comparison operator used to evaluate the string criteria, such as equals, not equals, or contains.</p>
+    /// <p>The comparison operator used to evaluate the attribute against the specified values.</p>
     pub fn comparison(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The comparison operator used to evaluate the string criteria, such as equals, not equals, or contains.</p>
+    /// <p>The comparison operator used to evaluate the attribute against the specified values.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison = input;
         self
     }
-    /// <p>The comparison operator used to evaluate the string criteria, such as equals, not equals, or contains.</p>
+    /// <p>The comparison operator used to evaluate the attribute against the specified values.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison
     }

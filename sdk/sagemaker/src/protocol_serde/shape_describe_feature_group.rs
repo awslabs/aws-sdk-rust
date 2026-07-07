@@ -77,6 +77,8 @@ pub(crate) fn de_describe_feature_group(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -111,8 +113,11 @@ pub(crate) fn de_describe_feature_group(
                     );
                 }
                 "FeatureDefinitions" => {
-                    builder =
-                        builder.set_feature_definitions(crate::protocol_serde::shape_feature_definitions::de_feature_definitions(tokens, _value)?);
+                    builder = builder.set_feature_definitions(crate::protocol_serde::shape_feature_definitions::de_feature_definitions(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -127,17 +132,22 @@ pub(crate) fn de_describe_feature_group(
                     )?);
                 }
                 "OnlineStoreConfig" => {
-                    builder =
-                        builder.set_online_store_config(crate::protocol_serde::shape_online_store_config::de_online_store_config(tokens, _value)?);
+                    builder = builder.set_online_store_config(crate::protocol_serde::shape_online_store_config::de_online_store_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "OfflineStoreConfig" => {
                     builder = builder.set_offline_store_config(crate::protocol_serde::shape_offline_store_config::de_offline_store_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ThroughputConfig" => {
                     builder = builder.set_throughput_config(
-                        crate::protocol_serde::shape_throughput_config_description::de_throughput_config_description(tokens, _value)?,
+                        crate::protocol_serde::shape_throughput_config_description::de_throughput_config_description(tokens, _value, depth + 1)?,
                     );
                 }
                 "RoleArn" => {
@@ -156,11 +166,17 @@ pub(crate) fn de_describe_feature_group(
                 }
                 "OfflineStoreStatus" => {
                     builder = builder.set_offline_store_status(crate::protocol_serde::shape_offline_store_status::de_offline_store_status(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "LastUpdateStatus" => {
-                    builder = builder.set_last_update_status(crate::protocol_serde::shape_last_update_status::de_last_update_status(tokens, _value)?);
+                    builder = builder.set_last_update_status(crate::protocol_serde::shape_last_update_status::de_last_update_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FailureReason" => {
                     builder = builder.set_failure_reason(

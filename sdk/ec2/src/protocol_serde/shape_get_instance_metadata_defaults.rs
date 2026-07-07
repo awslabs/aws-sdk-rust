@@ -49,6 +49,8 @@ pub fn de_get_instance_metadata_defaults(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetInstanceMetadataDefaultsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetInstanceMetadataDefaultsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_get_instance_metadata_defaults(
             s if s.matches("accountLevel") /* AccountLevel com.amazonaws.ec2.synthetic#GetInstanceMetadataDefaultsOutput$AccountLevel */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_metadata_defaults_response::de_instance_metadata_defaults_response(&mut tag)
+                        crate::protocol_serde::shape_instance_metadata_defaults_response::de_instance_metadata_defaults_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -14,6 +14,10 @@ pub struct AnalysisRuleCustom {
     pub disallowed_output_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The differential privacy configuration.</p>
     pub differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
+    /// <p>The list of Amazon Web Services account IDs that are allowed to receive results from queries run on the configured table.</p>
+    pub allowed_result_receivers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The list of allowed additional analyses for the custom analysis rule.</p>
+    pub allowed_additional_analyses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnalysisRuleCustom {
     /// <p>The ARN of the analysis templates that are allowed by the custom analysis rule.</p>
@@ -41,6 +45,18 @@ impl AnalysisRuleCustom {
     pub fn differential_privacy(&self) -> ::std::option::Option<&crate::types::DifferentialPrivacyConfiguration> {
         self.differential_privacy.as_ref()
     }
+    /// <p>The list of Amazon Web Services account IDs that are allowed to receive results from queries run on the configured table.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_result_receivers.is_none()`.
+    pub fn allowed_result_receivers(&self) -> &[::std::string::String] {
+        self.allowed_result_receivers.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of allowed additional analyses for the custom analysis rule.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_additional_analyses.is_none()`.
+    pub fn allowed_additional_analyses(&self) -> &[::std::string::String] {
+        self.allowed_additional_analyses.as_deref().unwrap_or_default()
+    }
 }
 impl AnalysisRuleCustom {
     /// Creates a new builder-style object to manufacture [`AnalysisRuleCustom`](crate::types::AnalysisRuleCustom).
@@ -58,6 +74,8 @@ pub struct AnalysisRuleCustomBuilder {
     pub(crate) additional_analyses: ::std::option::Option<crate::types::AdditionalAnalyses>,
     pub(crate) disallowed_output_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
+    pub(crate) allowed_result_receivers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_additional_analyses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnalysisRuleCustomBuilder {
     /// Appends an item to `allowed_analyses`.
@@ -148,6 +166,46 @@ impl AnalysisRuleCustomBuilder {
     pub fn get_differential_privacy(&self) -> &::std::option::Option<crate::types::DifferentialPrivacyConfiguration> {
         &self.differential_privacy
     }
+    /// Appends an item to `allowed_result_receivers`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_result_receivers`](Self::set_allowed_result_receivers).
+    ///
+    /// <p>The list of Amazon Web Services account IDs that are allowed to receive results from queries run on the configured table.</p>
+    pub fn allowed_result_receivers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.allowed_result_receivers.unwrap_or_default();
+        v.push(input.into());
+        self.allowed_result_receivers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Amazon Web Services account IDs that are allowed to receive results from queries run on the configured table.</p>
+    pub fn set_allowed_result_receivers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allowed_result_receivers = input;
+        self
+    }
+    /// <p>The list of Amazon Web Services account IDs that are allowed to receive results from queries run on the configured table.</p>
+    pub fn get_allowed_result_receivers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_result_receivers
+    }
+    /// Appends an item to `allowed_additional_analyses`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_additional_analyses`](Self::set_allowed_additional_analyses).
+    ///
+    /// <p>The list of allowed additional analyses for the custom analysis rule.</p>
+    pub fn allowed_additional_analyses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.allowed_additional_analyses.unwrap_or_default();
+        v.push(input.into());
+        self.allowed_additional_analyses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of allowed additional analyses for the custom analysis rule.</p>
+    pub fn set_allowed_additional_analyses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allowed_additional_analyses = input;
+        self
+    }
+    /// <p>The list of allowed additional analyses for the custom analysis rule.</p>
+    pub fn get_allowed_additional_analyses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_additional_analyses
+    }
     /// Consumes the builder and constructs a [`AnalysisRuleCustom`](crate::types::AnalysisRuleCustom).
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_analyses`](crate::types::builders::AnalysisRuleCustomBuilder::allowed_analyses)
@@ -163,6 +221,8 @@ impl AnalysisRuleCustomBuilder {
             additional_analyses: self.additional_analyses,
             disallowed_output_columns: self.disallowed_output_columns,
             differential_privacy: self.differential_privacy,
+            allowed_result_receivers: self.allowed_result_receivers,
+            allowed_additional_analyses: self.allowed_additional_analyses,
         })
     }
 }

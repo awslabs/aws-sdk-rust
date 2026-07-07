@@ -119,6 +119,8 @@ pub(crate) mod shape_get_backup_vault_notifications;
 
 pub(crate) mod shape_get_legal_hold;
 
+pub(crate) mod shape_get_pitr_malware_scan_results;
+
 pub(crate) mod shape_get_recovery_point_index_details;
 
 pub(crate) mod shape_get_recovery_point_restore_metadata;

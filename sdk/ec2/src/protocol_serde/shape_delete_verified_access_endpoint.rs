@@ -49,6 +49,8 @@ pub fn de_delete_verified_access_endpoint(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteVerifiedAccessEndpointResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteVerifiedAccessEndpointResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_delete_verified_access_endpoint(
             s if s.matches("verifiedAccessEndpoint") /* VerifiedAccessEndpoint com.amazonaws.ec2.synthetic#DeleteVerifiedAccessEndpointOutput$VerifiedAccessEndpoint */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint::de_verified_access_endpoint(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint::de_verified_access_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;

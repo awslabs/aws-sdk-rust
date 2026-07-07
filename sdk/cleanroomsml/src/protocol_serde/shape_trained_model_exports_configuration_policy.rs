@@ -24,10 +24,16 @@ pub fn ser_trained_model_exports_configuration_policy(
 pub(crate) fn de_trained_model_exports_configuration_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TrainedModelExportsConfigurationPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,13 +45,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "maxSize" => {
                             builder = builder.set_max_size(
-                                crate::protocol_serde::shape_trained_model_exports_max_size::de_trained_model_exports_max_size(tokens, _value)?,
+                                crate::protocol_serde::shape_trained_model_exports_max_size::de_trained_model_exports_max_size(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "filesToExport" => {
                             builder = builder.set_files_to_export(
                                 crate::protocol_serde::shape_trained_model_export_file_type_list::de_trained_model_export_file_type_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -3,13 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateGameSessionInput {
-    /// <p>A unique identifier for the game session to be terminated. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
+    /// <p>An identifier for the game session that is unique across all regions to be terminated. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
     /// ::gamesession/
     /// <fleet id>
     /// /
-    /// <custom id string or idempotency token></custom>
+    /// <id string></id>
     /// </fleet>
-    /// </location></code>.</p>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The method to use to terminate the game session. Available methods include:</p>
     /// <ul>
@@ -23,13 +32,22 @@ pub struct TerminateGameSessionInput {
     pub termination_mode: ::std::option::Option<crate::types::TerminationMode>,
 }
 impl TerminateGameSessionInput {
-    /// <p>A unique identifier for the game session to be terminated. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
+    /// <p>An identifier for the game session that is unique across all regions to be terminated. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
     /// ::gamesession/
     /// <fleet id>
     /// /
-    /// <custom id string or idempotency token></custom>
+    /// <id string></id>
     /// </fleet>
-    /// </location></code>.</p>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
@@ -61,36 +79,63 @@ pub struct TerminateGameSessionInputBuilder {
     pub(crate) termination_mode: ::std::option::Option<crate::types::TerminationMode>,
 }
 impl TerminateGameSessionInputBuilder {
-    /// <p>A unique identifier for the game session to be terminated. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
+    /// <p>An identifier for the game session that is unique across all regions to be terminated. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
     /// ::gamesession/
     /// <fleet id>
     /// /
-    /// <custom id string or idempotency token></custom>
+    /// <id string></id>
     /// </fleet>
-    /// </location></code>.</p>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     /// This field is required.
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session to be terminated. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
+    /// <p>An identifier for the game session that is unique across all regions to be terminated. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
     /// ::gamesession/
     /// <fleet id>
     /// /
-    /// <custom id string or idempotency token></custom>
+    /// <id string></id>
     /// </fleet>
-    /// </location></code>.</p>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session to be terminated. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
+    /// <p>An identifier for the game session that is unique across all regions to be terminated. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
     /// ::gamesession/
     /// <fleet id>
     /// /
-    /// <custom id string or idempotency token></custom>
+    /// <id string></id>
     /// </fleet>
-    /// </location></code>.</p>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_id
     }

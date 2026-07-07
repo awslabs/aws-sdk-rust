@@ -120,119 +120,143 @@ pub(crate) fn de_get_job(
 ) -> ::std::result::Result<crate::operation::get_job::builders::GetJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "algorithmSpecification" => {
-                    builder = builder.set_algorithm_specification(crate::protocol_serde::shape_algorithm_specification::de_algorithm_specification(
-                        tokens, _value,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "algorithmSpecification" => {
+                        builder = builder.set_algorithm_specification(
+                            crate::protocol_serde::shape_algorithm_specification::de_algorithm_specification(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "associations" => {
+                        builder = builder.set_associations(crate::protocol_serde::shape_associations::de_associations(tokens, _value, depth + 1)?);
+                    }
+                    "billableDuration" => {
+                        builder = builder.set_billable_duration(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                .map(i32::try_from)
+                                .transpose()?,
+                        );
+                    }
+                    "checkpointConfig" => {
+                        builder = builder.set_checkpoint_config(crate::protocol_serde::shape_job_checkpoint_config::de_job_checkpoint_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "createdAt" => {
+                        builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "deviceConfig" => {
+                        builder = builder.set_device_config(crate::protocol_serde::shape_device_config::de_device_config(tokens, _value, depth + 1)?);
+                    }
+                    "endedAt" => {
+                        builder = builder.set_ended_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "events" => {
+                        builder = builder.set_events(crate::protocol_serde::shape_job_events::de_job_events(tokens, _value, depth + 1)?);
+                    }
+                    "failureReason" => {
+                        builder = builder.set_failure_reason(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "hyperParameters" => {
+                        builder = builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "inputDataConfig" => {
+                        builder = builder.set_input_data_config(crate::protocol_serde::shape_input_config_list::de_input_config_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "instanceConfig" => {
+                        builder = builder.set_instance_config(crate::protocol_serde::shape_instance_config::de_instance_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "jobArn" => {
+                        builder = builder.set_job_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "jobName" => {
+                        builder = builder.set_job_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "outputDataConfig" => {
+                        builder = builder.set_output_data_config(crate::protocol_serde::shape_job_output_data_config::de_job_output_data_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "queueInfo" => {
+                        builder = builder.set_queue_info(crate::protocol_serde::shape_hybrid_job_queue_info::de_hybrid_job_queue_info(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "roleArn" => {
+                        builder = builder.set_role_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "startedAt" => {
+                        builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "status" => {
+                        builder = builder.set_status(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::JobPrimaryStatus::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "stoppingCondition" => {
+                        builder = builder.set_stopping_condition(crate::protocol_serde::shape_job_stopping_condition::de_job_stopping_condition(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "tags" => {
+                        builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "associations" => {
-                    builder = builder.set_associations(crate::protocol_serde::shape_associations::de_associations(tokens, _value)?);
-                }
-                "billableDuration" => {
-                    builder = builder.set_billable_duration(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
-                "checkpointConfig" => {
-                    builder = builder.set_checkpoint_config(crate::protocol_serde::shape_job_checkpoint_config::de_job_checkpoint_config(
-                        tokens, _value,
-                    )?);
-                }
-                "createdAt" => {
-                    builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "deviceConfig" => {
-                    builder = builder.set_device_config(crate::protocol_serde::shape_device_config::de_device_config(tokens, _value)?);
-                }
-                "endedAt" => {
-                    builder = builder.set_ended_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "events" => {
-                    builder = builder.set_events(crate::protocol_serde::shape_job_events::de_job_events(tokens, _value)?);
-                }
-                "failureReason" => {
-                    builder = builder.set_failure_reason(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "hyperParameters" => {
-                    builder = builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
-                }
-                "inputDataConfig" => {
-                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_config_list::de_input_config_list(tokens, _value)?);
-                }
-                "instanceConfig" => {
-                    builder = builder.set_instance_config(crate::protocol_serde::shape_instance_config::de_instance_config(tokens, _value)?);
-                }
-                "jobArn" => {
-                    builder = builder.set_job_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "jobName" => {
-                    builder = builder.set_job_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "outputDataConfig" => {
-                    builder = builder.set_output_data_config(crate::protocol_serde::shape_job_output_data_config::de_job_output_data_config(
-                        tokens, _value,
-                    )?);
-                }
-                "queueInfo" => {
-                    builder = builder.set_queue_info(crate::protocol_serde::shape_hybrid_job_queue_info::de_hybrid_job_queue_info(
-                        tokens, _value,
-                    )?);
-                }
-                "roleArn" => {
-                    builder = builder.set_role_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "startedAt" => {
-                    builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::JobPrimaryStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "stoppingCondition" => {
-                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_job_stopping_condition::de_job_stopping_condition(
-                        tokens, _value,
-                    )?);
-                }
-                "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

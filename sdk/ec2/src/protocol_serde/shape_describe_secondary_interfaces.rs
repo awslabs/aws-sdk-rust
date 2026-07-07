@@ -49,6 +49,8 @@ pub fn de_describe_secondary_interfaces(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSecondaryInterfacesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSecondaryInterfacesResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_secondary_interfaces(
             s if s.matches("secondaryInterfaceSet") /* SecondaryInterfaces com.amazonaws.ec2.synthetic#DescribeSecondaryInterfacesOutput$SecondaryInterfaces */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_secondary_interface_list::de_secondary_interface_list(&mut tag)
+                        crate::protocol_serde::shape_secondary_interface_list::de_secondary_interface_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

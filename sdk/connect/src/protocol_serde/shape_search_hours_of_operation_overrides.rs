@@ -147,6 +147,8 @@ pub(crate) fn de_search_hours_of_operation_overrides(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -161,7 +163,11 @@ pub(crate) fn de_search_hours_of_operation_overrides(
                 }
                 "HoursOfOperationOverrides" => {
                     builder = builder.set_hours_of_operation_overrides(
-                        crate::protocol_serde::shape_hours_of_operation_override_list::de_hours_of_operation_override_list(tokens, _value)?,
+                        crate::protocol_serde::shape_hours_of_operation_override_list::de_hours_of_operation_override_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "NextToken" => {

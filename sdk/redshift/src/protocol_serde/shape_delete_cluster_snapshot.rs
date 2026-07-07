@@ -93,6 +93,8 @@ pub fn de_delete_cluster_snapshot(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteClusterSnapshotResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteClusterSnapshotResponse got {start_el:?}"
@@ -110,7 +112,7 @@ pub fn de_delete_cluster_snapshot(
             s if s.matches("Snapshot") /* Snapshot com.amazonaws.redshift.synthetic#DeleteClusterSnapshotOutput$Snapshot */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_snapshot::de_snapshot(&mut tag)
+                        crate::protocol_serde::shape_snapshot::de_snapshot(&mut tag, depth + 1)
                         ?
                     )
                 ;

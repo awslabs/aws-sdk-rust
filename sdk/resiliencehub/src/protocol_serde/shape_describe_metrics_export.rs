@@ -139,6 +139,8 @@ pub(crate) fn de_describe_metrics_export(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -152,7 +154,7 @@ pub(crate) fn de_describe_metrics_export(
                     );
                 }
                 "exportLocation" => {
-                    builder = builder.set_export_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
+                    builder = builder.set_export_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value, depth + 1)?);
                 }
                 "metricsExportId" => {
                     builder = builder.set_metrics_export_id(

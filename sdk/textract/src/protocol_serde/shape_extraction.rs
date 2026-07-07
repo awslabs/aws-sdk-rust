@@ -2,10 +2,16 @@
 pub(crate) fn de_extraction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Extraction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,16 +22,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LendingDocument" => {
-                            builder =
-                                builder.set_lending_document(crate::protocol_serde::shape_lending_document::de_lending_document(tokens, _value)?);
+                            builder = builder.set_lending_document(crate::protocol_serde::shape_lending_document::de_lending_document(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExpenseDocument" => {
-                            builder =
-                                builder.set_expense_document(crate::protocol_serde::shape_expense_document::de_expense_document(tokens, _value)?);
+                            builder = builder.set_expense_document(crate::protocol_serde::shape_expense_document::de_expense_document(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IdentityDocument" => {
-                            builder =
-                                builder.set_identity_document(crate::protocol_serde::shape_identity_document::de_identity_document(tokens, _value)?);
+                            builder = builder.set_identity_document(crate::protocol_serde::shape_identity_document::de_identity_document(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

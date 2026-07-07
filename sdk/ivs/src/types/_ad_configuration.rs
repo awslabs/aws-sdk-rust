@@ -8,7 +8,7 @@ pub struct AdConfiguration {
     pub arn: ::std::string::String,
     /// <p>Ad configuration name. Defaults to “”.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>List of integration configurations with media tailor resources.</p>
+    /// <p>List of integration configurations with MediaTailor resources. The first item in the list is the default playback configuration used for the ad configuration. To select a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate and Sign IVS Playback Tokens</a>.</p>
     pub media_tailor_playback_configurations: ::std::vec::Vec<crate::types::MediaTailorPlaybackConfiguration>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -23,7 +23,7 @@ impl AdConfiguration {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>List of integration configurations with media tailor resources.</p>
+    /// <p>List of integration configurations with MediaTailor resources. The first item in the list is the default playback configuration used for the ad configuration. To select a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate and Sign IVS Playback Tokens</a>.</p>
     pub fn media_tailor_playback_configurations(&self) -> &[crate::types::MediaTailorPlaybackConfiguration] {
         use std::ops::Deref;
         self.media_tailor_playback_configurations.deref()
@@ -83,14 +83,14 @@ impl AdConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_media_tailor_playback_configurations`](Self::set_media_tailor_playback_configurations).
     ///
-    /// <p>List of integration configurations with media tailor resources.</p>
+    /// <p>List of integration configurations with MediaTailor resources. The first item in the list is the default playback configuration used for the ad configuration. To select a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate and Sign IVS Playback Tokens</a>.</p>
     pub fn media_tailor_playback_configurations(mut self, input: crate::types::MediaTailorPlaybackConfiguration) -> Self {
         let mut v = self.media_tailor_playback_configurations.unwrap_or_default();
         v.push(input);
         self.media_tailor_playback_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of integration configurations with media tailor resources.</p>
+    /// <p>List of integration configurations with MediaTailor resources. The first item in the list is the default playback configuration used for the ad configuration. To select a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate and Sign IVS Playback Tokens</a>.</p>
     pub fn set_media_tailor_playback_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::MediaTailorPlaybackConfiguration>>,
@@ -98,7 +98,7 @@ impl AdConfigurationBuilder {
         self.media_tailor_playback_configurations = input;
         self
     }
-    /// <p>List of integration configurations with media tailor resources.</p>
+    /// <p>List of integration configurations with MediaTailor resources. The first item in the list is the default playback configuration used for the ad configuration. To select a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate and Sign IVS Playback Tokens</a>.</p>
     pub fn get_media_tailor_playback_configurations(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaTailorPlaybackConfiguration>> {

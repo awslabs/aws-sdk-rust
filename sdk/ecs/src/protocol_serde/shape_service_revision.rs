@@ -2,10 +2,16 @@
 pub(crate) fn de_service_revision<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceRevision>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,7 @@ where
                         }
                         "capacityProviderStrategy" => {
                             builder = builder.set_capacity_provider_strategy(
-                                crate::protocol_serde::shape_capacity_provider_strategy::de_capacity_provider_strategy(tokens, _value)?,
+                                crate::protocol_serde::shape_capacity_provider_strategy::de_capacity_provider_strategy(tokens, _value, depth + 1)?,
                             );
                         }
                         "launchType" => {
@@ -70,37 +76,59 @@ where
                             );
                         }
                         "loadBalancers" => {
-                            builder = builder.set_load_balancers(crate::protocol_serde::shape_load_balancers::de_load_balancers(tokens, _value)?);
+                            builder = builder.set_load_balancers(crate::protocol_serde::shape_load_balancers::de_load_balancers(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "serviceRegistries" => {
-                            builder = builder
-                                .set_service_registries(crate::protocol_serde::shape_service_registries::de_service_registries(tokens, _value)?);
+                            builder = builder.set_service_registries(crate::protocol_serde::shape_service_registries::de_service_registries(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "networkConfiguration" => {
                             builder = builder.set_network_configuration(
-                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "containerImages" => {
-                            builder =
-                                builder.set_container_images(crate::protocol_serde::shape_container_images::de_container_images(tokens, _value)?);
+                            builder = builder.set_container_images(crate::protocol_serde::shape_container_images::de_container_images(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "guardDutyEnabled" => {
                             builder = builder.set_guard_duty_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "serviceConnectConfiguration" => {
                             builder = builder.set_service_connect_configuration(
-                                crate::protocol_serde::shape_service_connect_configuration::de_service_connect_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_service_connect_configuration::de_service_connect_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "volumeConfigurations" => {
                             builder = builder.set_volume_configurations(
-                                crate::protocol_serde::shape_service_volume_configurations::de_service_volume_configurations(tokens, _value)?,
+                                crate::protocol_serde::shape_service_volume_configurations::de_service_volume_configurations(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "fargateEphemeralStorage" => {
                             builder = builder.set_fargate_ephemeral_storage(
-                                crate::protocol_serde::shape_deployment_ephemeral_storage::de_deployment_ephemeral_storage(tokens, _value)?,
+                                crate::protocol_serde::shape_deployment_ephemeral_storage::de_deployment_ephemeral_storage(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "createdAt" => {
@@ -111,18 +139,25 @@ where
                         }
                         "vpcLatticeConfigurations" => {
                             builder = builder.set_vpc_lattice_configurations(
-                                crate::protocol_serde::shape_vpc_lattice_configurations::de_vpc_lattice_configurations(tokens, _value)?,
+                                crate::protocol_serde::shape_vpc_lattice_configurations::de_vpc_lattice_configurations(tokens, _value, depth + 1)?,
                             );
                         }
                         "resolvedConfiguration" => {
                             builder = builder.set_resolved_configuration(
-                                crate::protocol_serde::shape_resolved_configuration::de_resolved_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_resolved_configuration::de_resolved_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "ecsManagedResources" => {
                             builder = builder.set_ecs_managed_resources(
-                                crate::protocol_serde::shape_ecs_managed_resources::de_ecs_managed_resources(tokens, _value)?,
+                                crate::protocol_serde::shape_ecs_managed_resources::de_ecs_managed_resources(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "monitoring" => {
+                            builder = builder.set_monitoring(crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -28,6 +28,8 @@ pub fn parse_http_error_metadata(
     Ok(builder)
 }
 
+pub(crate) mod shape_associate_dataset_kms_key;
+
 pub(crate) mod shape_delete_alarm_mute_rule;
 
 pub(crate) mod shape_delete_alarms;
@@ -56,6 +58,8 @@ pub(crate) mod shape_disable_alarm_actions;
 
 pub(crate) mod shape_disable_insight_rules;
 
+pub(crate) mod shape_disassociate_dataset_kms_key;
+
 pub(crate) mod shape_enable_alarm_actions;
 
 pub(crate) mod shape_enable_insight_rules;
@@ -63,6 +67,8 @@ pub(crate) mod shape_enable_insight_rules;
 pub(crate) mod shape_get_alarm_mute_rule;
 
 pub(crate) mod shape_get_dashboard;
+
+pub(crate) mod shape_get_dataset;
 
 pub(crate) mod shape_get_insight_rule_report;
 
@@ -98,6 +104,8 @@ pub(crate) mod shape_put_dashboard;
 
 pub(crate) mod shape_put_insight_rule;
 
+pub(crate) mod shape_put_log_alarm;
+
 pub(crate) mod shape_put_managed_insight_rules;
 
 pub(crate) mod shape_put_metric_alarm;
@@ -119,6 +127,8 @@ pub(crate) mod shape_stop_o_tel_enrichment;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_associate_dataset_kms_key_input;
 
 pub(crate) mod shape_concurrent_modification_exception;
 
@@ -156,6 +166,8 @@ pub(crate) mod shape_disable_alarm_actions_input;
 
 pub(crate) mod shape_disable_insight_rules_input;
 
+pub(crate) mod shape_disassociate_dataset_kms_key_input;
+
 pub(crate) mod shape_enable_alarm_actions_input;
 
 pub(crate) mod shape_enable_insight_rules_input;
@@ -163,6 +175,8 @@ pub(crate) mod shape_enable_insight_rules_input;
 pub(crate) mod shape_get_alarm_mute_rule_input;
 
 pub(crate) mod shape_get_dashboard_input;
+
+pub(crate) mod shape_get_dataset_input;
 
 pub(crate) mod shape_get_insight_rule_report_input;
 
@@ -185,6 +199,12 @@ pub(crate) mod shape_invalid_next_token;
 pub(crate) mod shape_invalid_parameter_combination_exception;
 
 pub(crate) mod shape_invalid_parameter_value_exception;
+
+pub(crate) mod shape_kms_access_denied_exception;
+
+pub(crate) mod shape_kms_key_disabled_exception;
+
+pub(crate) mod shape_kms_key_not_found_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
@@ -214,6 +234,8 @@ pub(crate) mod shape_put_dashboard_input;
 
 pub(crate) mod shape_put_insight_rule_input;
 
+pub(crate) mod shape_put_log_alarm_input;
+
 pub(crate) mod shape_put_managed_insight_rules_input;
 
 pub(crate) mod shape_put_metric_alarm_input;
@@ -221,6 +243,8 @@ pub(crate) mod shape_put_metric_alarm_input;
 pub(crate) mod shape_put_metric_data_input;
 
 pub(crate) mod shape_put_metric_stream_input;
+
+pub(crate) mod shape_resource_conflict;
 
 pub(crate) mod shape_resource_not_found;
 
@@ -268,6 +292,8 @@ pub(crate) mod shape_entity_metric_data;
 
 pub(crate) mod shape_evaluation_criteria;
 
+pub(crate) mod shape_evaluation_window;
+
 pub(crate) mod shape_insight_rule_contributor_key_labels;
 
 pub(crate) mod shape_insight_rule_contributors;
@@ -277,6 +303,8 @@ pub(crate) mod shape_insight_rule_metric_datapoints;
 pub(crate) mod shape_insight_rules;
 
 pub(crate) mod shape_label_options;
+
+pub(crate) mod shape_log_alarms;
 
 pub(crate) mod shape_managed_rule;
 
@@ -314,6 +342,8 @@ pub(crate) mod shape_owning_accounts;
 
 pub(crate) mod shape_rule;
 
+pub(crate) mod shape_scheduled_query_configuration;
+
 pub(crate) mod shape_single_metric_anomaly_detector;
 
 pub(crate) mod shape_tag;
@@ -346,6 +376,8 @@ pub(crate) mod shape_insight_rule_contributor;
 
 pub(crate) mod shape_insight_rule_metric_datapoint;
 
+pub(crate) mod shape_log_alarm;
+
 pub(crate) mod shape_managed_rule_description;
 
 pub(crate) mod shape_message_data;
@@ -370,7 +402,13 @@ pub(crate) mod shape_range;
 
 pub(crate) mod shape_schedule;
 
+pub(crate) mod shape_schedule_configuration;
+
+pub(crate) mod shape_sliding_window;
+
 pub(crate) mod shape_statistic_set;
+
+pub(crate) mod shape_wall_clock_window;
 
 pub(crate) mod shape_contributor_attributes;
 
@@ -401,3 +439,5 @@ pub(crate) mod shape_timestamps;
 pub(crate) mod shape_anomaly_detector_excluded_time_ranges;
 
 pub(crate) mod shape_insight_rule_contributor_datapoint;
+
+pub(crate) mod shape_log_group_identifiers;

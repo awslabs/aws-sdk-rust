@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_node_group_member(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NodeGroupMember, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NodeGroupMember::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_node_group_member(
             s if s.matches("ReadEndpoint") /* ReadEndpoint com.amazonaws.elasticache#NodeGroupMember$ReadEndpoint */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;

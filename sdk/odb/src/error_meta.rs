@@ -153,6 +153,149 @@ impl From<crate::operation::associate_iam_role_to_resource::AssociateIamRoleToRe
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_autonomous_database::CreateAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_autonomous_database::CreateAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_autonomous_database::CreateAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::create_autonomous_database::CreateAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::create_autonomous_database::CreateAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_autonomous_database::CreateAutonomousDatabaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_autonomous_database::CreateAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_autonomous_database::CreateAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_autonomous_database::CreateAutonomousDatabaseError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_autonomous_database::CreateAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_autonomous_database::CreateAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_autonomous_database::CreateAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError> for Error {
+    fn from(err: crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError) -> Self {
+        match err {
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_autonomous_database_backup::CreateAutonomousDatabaseBackupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError> for Error {
+    fn from(err: crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError) -> Self {
+        match err {
+            crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_autonomous_database_wallet::CreateAutonomousDatabaseWalletError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -360,6 +503,96 @@ impl From<crate::operation::create_odb_peering_connection::CreateOdbPeeringConne
                 Error::ValidationException(inner)
             }
             crate::operation::create_odb_peering_connection::CreateOdbPeeringConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_autonomous_database::DeleteAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError> for Error {
+    fn from(err: crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError) -> Self {
+        match err {
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_autonomous_database_backup::DeleteAutonomousDatabaseBackupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -604,6 +837,174 @@ impl From<crate::operation::disassociate_iam_role_from_resource::DisassociateIam
                 Error::ValidationException(inner)
             }
             crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::failover_autonomous_database::FailoverAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_autonomous_database::GetAutonomousDatabaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_autonomous_database::GetAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_autonomous_database::GetAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::get_autonomous_database::GetAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::get_autonomous_database::GetAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_autonomous_database::GetAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_autonomous_database::GetAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_autonomous_database::GetAutonomousDatabaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_autonomous_database::GetAutonomousDatabaseError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_autonomous_database::GetAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError> for Error {
+    fn from(err: crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError) -> Self {
+        match err {
+            crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_autonomous_database_backup::GetAutonomousDatabaseBackupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError> for Error {
+    fn from(err: crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError) -> Self {
+        match err {
+            crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_autonomous_database_wallet_details::GetAutonomousDatabaseWalletDetailsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -934,6 +1335,262 @@ impl From<crate::operation::initialize_service::InitializeServiceError> for Erro
             crate::operation::initialize_service::InitializeServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::initialize_service::InitializeServiceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::initialize_service::InitializeServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError> for Error {
+    fn from(err: crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError) -> Self {
+        match err {
+            crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_autonomous_database_backups::ListAutonomousDatabaseBackupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError> for Error {
+    fn from(err: crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError) -> Self {
+        match err {
+            crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_autonomous_database_character_sets::ListAutonomousDatabaseCharacterSetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError> for Error {
+    fn from(err: crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError) -> Self {
+        match err {
+            crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_autonomous_database_clones::ListAutonomousDatabaseClonesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError> for Error {
+    fn from(err: crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError) -> Self {
+        match err {
+            crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_autonomous_databases::ListAutonomousDatabasesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_autonomous_databases::ListAutonomousDatabasesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_autonomous_databases::ListAutonomousDatabasesError> for Error {
+    fn from(err: crate::operation::list_autonomous_databases::ListAutonomousDatabasesError) -> Self {
+        match err {
+            crate::operation::list_autonomous_databases::ListAutonomousDatabasesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_autonomous_databases::ListAutonomousDatabasesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_autonomous_databases::ListAutonomousDatabasesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_autonomous_databases::ListAutonomousDatabasesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_autonomous_databases::ListAutonomousDatabasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError> for Error {
+    fn from(err: crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError) -> Self {
+        match err {
+            crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1320,6 +1977,46 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::reboot_autonomous_database::RebootAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_db_node::RebootDbNodeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1343,6 +2040,128 @@ impl From<crate::operation::reboot_db_node::RebootDbNodeError> for Error {
             crate::operation::reboot_db_node::RebootDbNodeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::reboot_db_node::RebootDbNodeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::reboot_db_node::RebootDbNodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::restore_autonomous_database::RestoreAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::shrink_autonomous_database::ShrinkAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_autonomous_database::StartAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_autonomous_database::StartAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_autonomous_database::StartAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::start_autonomous_database::StartAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::start_autonomous_database::StartAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_autonomous_database::StartAutonomousDatabaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_autonomous_database::StartAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_autonomous_database::StartAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_autonomous_database::StartAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_autonomous_database::StartAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_autonomous_database::StartAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1372,6 +2191,41 @@ impl From<crate::operation::start_db_node::StartDbNodeError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_autonomous_database::StopAutonomousDatabaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_autonomous_database::StopAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_autonomous_database::StopAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::stop_autonomous_database::StopAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::stop_autonomous_database::StopAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_autonomous_database::StopAutonomousDatabaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_autonomous_database::StopAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::stop_autonomous_database::StopAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_autonomous_database::StopAutonomousDatabaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_autonomous_database::StopAutonomousDatabaseError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_autonomous_database::StopAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_db_node::StopDbNodeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1395,6 +2249,52 @@ impl From<crate::operation::stop_db_node::StopDbNodeError> for Error {
             crate::operation::stop_db_node::StopDbNodeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::stop_db_node::StopDbNodeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::stop_db_node::StopDbNodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::switchover_autonomous_database::SwitchoverAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1440,6 +2340,96 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         match err {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError> for Error {
+    fn from(err: crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError) -> Self {
+        match err {
+            crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_autonomous_database::UpdateAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError> for Error {
+    fn from(err: crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError) -> Self {
+        match err {
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_autonomous_database_backup::UpdateAutonomousDatabaseBackupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

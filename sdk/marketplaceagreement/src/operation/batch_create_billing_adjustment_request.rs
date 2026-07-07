@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchCr
 #[derive(Debug)]
 struct BatchCreateBillingAdjustmentRequestResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for BatchCreateBillingAdjustmentRequestResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -279,7 +280,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchCreateBi
 pub enum BatchCreateBillingAdjustmentRequestError {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request could not be completed due to a conflict with the current state of the resource.</p>
+    /// <p>Request was denied due to a resource conflict.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Unexpected error during processing of request.</p>
     InternalServerException(crate::types::error::InternalServerException),

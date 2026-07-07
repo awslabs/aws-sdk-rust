@@ -3,12 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#![cfg(any(
-    feature = "rustls-ring",
-    feature = "rustls-aws-lc",
-    feature = "rustls-aws-lc-fips",
-    feature = "s2n-tls",
-))]
+#![cfg(any(feature = "__rustls", feature = "s2n-tls",))]
 
 use aws_smithy_async::time::SystemTimeSource;
 use aws_smithy_http_client::{tls, Builder};
@@ -50,6 +45,18 @@ async fn aws_lc_client() {
     let client = Builder::new()
         .tls_provider(tls::Provider::Rustls(
             tls::rustls_provider::CryptoMode::AwsLc,
+        ))
+        .build_https();
+    smoke_test_client(&client).await.unwrap();
+}
+
+#[cfg(all(aws_sdk_unstable, feature = "rustls-ring",))]
+#[tokio::test]
+async fn custom_provider_client() {
+    let provider = rustls::crypto::ring::default_provider();
+    let client = Builder::new()
+        .tls_provider(tls::Provider::Rustls(
+            tls::rustls_provider::CryptoMode::Custom(provider),
         ))
         .build_https();
     smoke_test_client(&client).await.unwrap();

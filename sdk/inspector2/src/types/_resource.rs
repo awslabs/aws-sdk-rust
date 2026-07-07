@@ -16,6 +16,12 @@ pub struct Resource {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object that contains details about the resource involved in a finding.</p>
     pub details: ::std::option::Option<crate::types::ResourceDetails>,
+    /// <p>The cloud provider of the resource.</p>
+    pub provider: ::std::option::Option<crate::types::Provider>,
+    /// <p>The cloud provider account ID of the resource.</p>
+    pub provider_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud provider organization ID of the resource.</p>
+    pub provider_org_id: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
     /// <p>The type of resource.</p>
@@ -43,6 +49,18 @@ impl Resource {
     pub fn details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
         self.details.as_ref()
     }
+    /// <p>The cloud provider of the resource.</p>
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
+        self.provider.as_ref()
+    }
+    /// <p>The cloud provider account ID of the resource.</p>
+    pub fn provider_account_id(&self) -> ::std::option::Option<&str> {
+        self.provider_account_id.as_deref()
+    }
+    /// <p>The cloud provider organization ID of the resource.</p>
+    pub fn provider_org_id(&self) -> ::std::option::Option<&str> {
+        self.provider_org_id.as_deref()
+    }
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
@@ -61,6 +79,9 @@ pub struct ResourceBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) details: ::std::option::Option<crate::types::ResourceDetails>,
+    pub(crate) provider: ::std::option::Option<crate::types::Provider>,
+    pub(crate) provider_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_org_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceBuilder {
     /// <p>The type of resource.</p>
@@ -155,6 +176,48 @@ impl ResourceBuilder {
     pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
         &self.details
     }
+    /// <p>The cloud provider of the resource.</p>
+    pub fn provider(mut self, input: crate::types::Provider) -> Self {
+        self.provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cloud provider of the resource.</p>
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
+        self.provider = input;
+        self
+    }
+    /// <p>The cloud provider of the resource.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
+        &self.provider
+    }
+    /// <p>The cloud provider account ID of the resource.</p>
+    pub fn provider_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud provider account ID of the resource.</p>
+    pub fn set_provider_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_account_id = input;
+        self
+    }
+    /// <p>The cloud provider account ID of the resource.</p>
+    pub fn get_provider_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_account_id
+    }
+    /// <p>The cloud provider organization ID of the resource.</p>
+    pub fn provider_org_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider_org_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cloud provider organization ID of the resource.</p>
+    pub fn set_provider_org_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_org_id = input;
+        self
+    }
+    /// <p>The cloud provider organization ID of the resource.</p>
+    pub fn get_provider_org_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_org_id
+    }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ResourceBuilder::type)
@@ -177,6 +240,9 @@ impl ResourceBuilder {
             region: self.region,
             tags: self.tags,
             details: self.details,
+            provider: self.provider,
+            provider_account_id: self.provider_account_id,
+            provider_org_id: self.provider_org_id,
         })
     }
 }

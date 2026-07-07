@@ -122,13 +122,19 @@ pub(crate) fn de_get_gateway_target(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "authorizationData" => {
-                    builder = builder.set_authorization_data(crate::protocol_serde::shape_authorization_data::de_authorization_data(tokens, _value)?);
+                    builder = builder.set_authorization_data(crate::protocol_serde::shape_authorization_data::de_authorization_data(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -138,7 +144,11 @@ pub(crate) fn de_get_gateway_target(
                 }
                 "credentialProviderConfigurations" => {
                     builder = builder.set_credential_provider_configurations(
-                        crate::protocol_serde::shape_credential_provider_configurations::de_credential_provider_configurations(tokens, _value)?,
+                        crate::protocol_serde::shape_credential_provider_configurations::de_credential_provider_configurations(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "description" => {
@@ -163,7 +173,9 @@ pub(crate) fn de_get_gateway_target(
                 }
                 "metadataConfiguration" => {
                     builder = builder.set_metadata_configuration(crate::protocol_serde::shape_metadata_configuration::de_metadata_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "name" => {
@@ -174,11 +186,26 @@ pub(crate) fn de_get_gateway_target(
                     );
                 }
                 "privateEndpoint" => {
-                    builder = builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(tokens, _value)?);
+                    builder = builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "privateEndpointManagedResources" => {
                     builder = builder.set_private_endpoint_managed_resources(
-                        crate::protocol_serde::shape_private_endpoint_managed_resources::de_private_endpoint_managed_resources(tokens, _value)?,
+                        crate::protocol_serde::shape_private_endpoint_managed_resources::de_private_endpoint_managed_resources(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
+                    );
+                }
+                "protocolType" => {
+                    builder = builder.set_protocol_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::TargetProtocolType::from(u.as_ref())))
+                            .transpose()?,
                     );
                 }
                 "status" => {
@@ -189,11 +216,13 @@ pub(crate) fn de_get_gateway_target(
                     );
                 }
                 "statusReasons" => {
-                    builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons::de_status_reasons(tokens, _value)?);
+                    builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons::de_status_reasons(tokens, _value, depth + 1)?);
                 }
                 "targetConfiguration" => {
                     builder = builder.set_target_configuration(crate::protocol_serde::shape_target_configuration::de_target_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "targetId" => {

@@ -2,10 +2,16 @@
 pub(crate) fn de_consolidated_policy_aggregation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConsolidatedPolicyAggregation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,63 +20,71 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "aggregateColumns" => {
-                            builder = builder.set_aggregate_columns(crate::protocol_serde::shape_aggregate_column_list::de_aggregate_column_list(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "aggregateColumns" => {
+                                builder = builder.set_aggregate_columns(
+                                    crate::protocol_serde::shape_aggregate_column_list::de_aggregate_column_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "joinColumns" => {
+                                builder = builder.set_join_columns(
+                                    crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "joinRequired" => {
+                                builder = builder.set_join_required(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::JoinRequiredOption::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "allowedJoinOperators" => {
+                                builder = builder.set_allowed_join_operators(
+                                    crate::protocol_serde::shape_join_operators_list::de_join_operators_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "dimensionColumns" => {
+                                builder = builder.set_dimension_columns(
+                                    crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "scalarFunctions" => {
+                                builder = builder.set_scalar_functions(crate::protocol_serde::shape_scalar_functions_list::de_scalar_functions_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "outputConstraints" => {
+                                builder = builder.set_output_constraints(
+                                    crate::protocol_serde::shape_aggregation_constraints::de_aggregation_constraints(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "additionalAnalyses" => {
+                                builder = builder.set_additional_analyses(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::AdditionalAnalyses::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "allowedResultReceivers" => {
+                                builder = builder.set_allowed_result_receivers(
+                                    crate::protocol_serde::shape_allowed_result_receivers::de_allowed_result_receivers(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "allowedAdditionalAnalyses" => {
+                                builder = builder.set_allowed_additional_analyses(
+                                    crate::protocol_serde::shape_allowed_additional_analyses::de_allowed_additional_analyses(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "joinColumns" => {
-                            builder = builder.set_join_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "joinRequired" => {
-                            builder = builder.set_join_required(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::JoinRequiredOption::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "allowedJoinOperators" => {
-                            builder = builder.set_allowed_join_operators(crate::protocol_serde::shape_join_operators_list::de_join_operators_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "dimensionColumns" => {
-                            builder = builder.set_dimension_columns(
-                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value)?,
-                            );
-                        }
-                        "scalarFunctions" => {
-                            builder = builder.set_scalar_functions(crate::protocol_serde::shape_scalar_functions_list::de_scalar_functions_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "outputConstraints" => {
-                            builder = builder.set_output_constraints(
-                                crate::protocol_serde::shape_aggregation_constraints::de_aggregation_constraints(tokens, _value)?,
-                            );
-                        }
-                        "additionalAnalyses" => {
-                            builder = builder.set_additional_analyses(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AdditionalAnalyses::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "allowedResultReceivers" => {
-                            builder = builder.set_allowed_result_receivers(
-                                crate::protocol_serde::shape_allowed_result_receivers::de_allowed_result_receivers(tokens, _value)?,
-                            );
-                        }
-                        "allowedAdditionalAnalyses" => {
-                            builder = builder.set_allowed_additional_analyses(
-                                crate::protocol_serde::shape_allowed_additional_analyses::de_allowed_additional_analyses(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_instance_automated_backup(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbInstanceAutomatedBackup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbInstanceAutomatedBackup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_db_instance_automated_backup(
             s if s.matches("RestoreWindow") /* RestoreWindow com.amazonaws.rds#DBInstanceAutomatedBackup$RestoreWindow */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_restore_window::de_restore_window(&mut tag)
+                        crate::protocol_serde::shape_restore_window::de_restore_window(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -387,7 +391,7 @@ pub fn de_db_instance_automated_backup(
             s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsReplications */ =>  {
                 let var_29 =
                     Some(
-                        crate::protocol_serde::shape_db_instance_automated_backups_replication_list::de_db_instance_automated_backups_replication_list(&mut tag)
+                        crate::protocol_serde::shape_db_instance_automated_backups_replication_list::de_db_instance_automated_backups_replication_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -438,7 +442,7 @@ pub fn de_db_instance_automated_backup(
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBInstanceAutomatedBackup$TagList */ =>  {
                 let var_33 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -463,7 +467,7 @@ pub fn de_db_instance_automated_backup(
             s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBInstanceAutomatedBackup$AdditionalStorageVolumes */ =>  {
                 let var_35 =
                     Some(
-                        crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
+                        crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

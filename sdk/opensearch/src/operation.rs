@@ -19,6 +19,9 @@ pub mod associate_package;
 /// Types for the `AssociatePackages` operation.
 pub mod associate_packages;
 
+/// Types for the `AttachDataSource` operation.
+pub mod attach_data_source;
+
 /// Types for the `AuthorizeVpcEndpointAccess` operation.
 pub mod authorize_vpc_endpoint_access;
 
@@ -76,6 +79,9 @@ pub mod delete_vpc_endpoint;
 /// Types for the `DeregisterCapability` operation.
 pub mod deregister_capability;
 
+/// Types for the `DescribeDataSourceAttachment` operation.
+pub mod describe_data_source_attachment;
+
 /// Types for the `DescribeDomain` operation.
 pub mod describe_domain;
 
@@ -124,6 +130,9 @@ pub mod describe_reserved_instances;
 /// Types for the `DescribeVpcEndpoints` operation.
 pub mod describe_vpc_endpoints;
 
+/// Types for the `DetachDataSource` operation.
+pub mod detach_data_source;
+
 /// Types for the `DissociatePackage` operation.
 pub mod dissociate_package;
 
@@ -154,6 +163,9 @@ pub mod get_domain_maintenance_status;
 /// Types for the `GetIndex` operation.
 pub mod get_index;
 
+/// Types for the `GetMigration` operation.
+pub mod get_migration;
+
 /// Types for the `GetPackageVersionHistory` operation.
 pub mod get_package_version_history;
 
@@ -163,8 +175,14 @@ pub mod get_upgrade_history;
 /// Types for the `GetUpgradeStatus` operation.
 pub mod get_upgrade_status;
 
+/// Types for the `InsightFeedback` operation.
+pub mod insight_feedback;
+
 /// Types for the `ListApplications` operation.
 pub mod list_applications;
+
+/// Types for the `ListDataSourceAttachments` operation.
+pub mod list_data_source_attachments;
 
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
@@ -186,6 +204,9 @@ pub mod list_insights;
 
 /// Types for the `ListInstanceTypeDetails` operation.
 pub mod list_instance_type_details;
+
+/// Types for the `ListMigrations` operation.
+pub mod list_migrations;
 
 /// Types for the `ListPackagesForDomain` operation.
 pub mod list_packages_for_domain;
@@ -231,6 +252,9 @@ pub mod rollback_service_software_update;
 
 /// Types for the `StartDomainMaintenance` operation.
 pub mod start_domain_maintenance;
+
+/// Types for the `StartMigration` operation.
+pub mod start_migration;
 
 /// Types for the `StartServiceSoftwareUpdate` operation.
 pub mod start_service_software_update;

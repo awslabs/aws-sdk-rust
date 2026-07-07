@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_secondary_network(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SecondaryNetwork, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SecondaryNetwork::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -90,7 +94,7 @@ pub fn de_secondary_network(
             s if s.matches("ipv4CidrBlockAssociationSet") /* Ipv4CidrBlockAssociations com.amazonaws.ec2#SecondaryNetwork$Ipv4CidrBlockAssociations */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_secondary_network_ipv4_cidr_block_association_list::de_secondary_network_ipv4_cidr_block_association_list(&mut tag)
+                        crate::protocol_serde::shape_secondary_network_ipv4_cidr_block_association_list::de_secondary_network_ipv4_cidr_block_association_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -100,7 +104,7 @@ pub fn de_secondary_network(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#SecondaryNetwork$Tags */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -21,6 +21,10 @@ pub struct UpdateExpressGatewayServiceInput {
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The auto-scaling configuration for the Express service.</p>
     pub scaling_target: ::std::option::Option<crate::types::ExpressGatewayScalingTarget>,
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub task_definition_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateExpressGatewayServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the Express service to update.</p>
@@ -59,6 +63,12 @@ impl UpdateExpressGatewayServiceInput {
     pub fn scaling_target(&self) -> ::std::option::Option<&crate::types::ExpressGatewayScalingTarget> {
         self.scaling_target.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub fn task_definition_arn(&self) -> ::std::option::Option<&str> {
+        self.task_definition_arn.as_deref()
+    }
 }
 impl UpdateExpressGatewayServiceInput {
     /// Creates a new builder-style object to manufacture [`UpdateExpressGatewayServiceInput`](crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceInput).
@@ -80,6 +90,7 @@ pub struct UpdateExpressGatewayServiceInputBuilder {
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_target: ::std::option::Option<crate::types::ExpressGatewayScalingTarget>,
+    pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateExpressGatewayServiceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Express service to update.</p>
@@ -209,6 +220,26 @@ impl UpdateExpressGatewayServiceInputBuilder {
     pub fn get_scaling_target(&self) -> &::std::option::Option<crate::types::ExpressGatewayScalingTarget> {
         &self.scaling_target
     }
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub fn task_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_definition_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task_definition_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub fn get_task_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition_arn
+    }
     /// Consumes the builder and constructs a [`UpdateExpressGatewayServiceInput`](crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceInput).
     pub fn build(
         self,
@@ -226,6 +257,7 @@ impl UpdateExpressGatewayServiceInputBuilder {
             cpu: self.cpu,
             memory: self.memory,
             scaling_target: self.scaling_target,
+            task_definition_arn: self.task_definition_arn,
         })
     }
 }

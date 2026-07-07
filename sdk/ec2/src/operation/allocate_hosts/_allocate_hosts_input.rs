@@ -26,6 +26,8 @@ pub struct AllocateHostsInput {
     pub asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Availability Zone.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The CPU configuration options to apply to the Dedicated Host.</p>
+    pub cpu_options: ::std::option::Option<crate::types::HostCpuOptionsRequest>,
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>off</code></p>
     pub auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
@@ -81,6 +83,10 @@ impl AllocateHostsInput {
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
+    /// <p>The CPU configuration options to apply to the Dedicated Host.</p>
+    pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::HostCpuOptionsRequest> {
+        self.cpu_options.as_ref()
+    }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>off</code></p>
     pub fn auto_placement(&self) -> ::std::option::Option<&crate::types::AutoPlacement> {
@@ -122,6 +128,7 @@ pub struct AllocateHostsInputBuilder {
     pub(crate) host_maintenance: ::std::option::Option<crate::types::HostMaintenance>,
     pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cpu_options: ::std::option::Option<crate::types::HostCpuOptionsRequest>,
     pub(crate) auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
@@ -266,6 +273,20 @@ impl AllocateHostsInputBuilder {
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
+    /// <p>The CPU configuration options to apply to the Dedicated Host.</p>
+    pub fn cpu_options(mut self, input: crate::types::HostCpuOptionsRequest) -> Self {
+        self.cpu_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The CPU configuration options to apply to the Dedicated Host.</p>
+    pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::HostCpuOptionsRequest>) -> Self {
+        self.cpu_options = input;
+        self
+    }
+    /// <p>The CPU configuration options to apply to the Dedicated Host.</p>
+    pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::HostCpuOptionsRequest> {
+        &self.cpu_options
+    }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>off</code></p>
     pub fn auto_placement(mut self, input: crate::types::AutoPlacement) -> Self {
@@ -354,6 +375,7 @@ impl AllocateHostsInputBuilder {
             host_maintenance: self.host_maintenance,
             asset_ids: self.asset_ids,
             availability_zone_id: self.availability_zone_id,
+            cpu_options: self.cpu_options,
             auto_placement: self.auto_placement,
             client_token: self.client_token,
             instance_type: self.instance_type,

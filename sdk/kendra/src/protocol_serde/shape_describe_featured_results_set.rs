@@ -137,6 +137,8 @@ pub(crate) fn de_describe_featured_results_set(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -171,16 +173,24 @@ pub(crate) fn de_describe_featured_results_set(
                     );
                 }
                 "QueryTexts" => {
-                    builder = builder.set_query_texts(crate::protocol_serde::shape_query_text_list::de_query_text_list(tokens, _value)?);
+                    builder = builder.set_query_texts(crate::protocol_serde::shape_query_text_list::de_query_text_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FeaturedDocumentsWithMetadata" => {
                     builder = builder.set_featured_documents_with_metadata(
-                        crate::protocol_serde::shape_featured_document_with_metadata_list::de_featured_document_with_metadata_list(tokens, _value)?,
+                        crate::protocol_serde::shape_featured_document_with_metadata_list::de_featured_document_with_metadata_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "FeaturedDocumentsMissing" => {
                     builder = builder.set_featured_documents_missing(
-                        crate::protocol_serde::shape_featured_document_missing_list::de_featured_document_missing_list(tokens, _value)?,
+                        crate::protocol_serde::shape_featured_document_missing_list::de_featured_document_missing_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "LastUpdatedTimestamp" => {

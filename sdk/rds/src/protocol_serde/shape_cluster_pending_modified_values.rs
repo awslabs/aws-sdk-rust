@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cluster_pending_modified_values(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ClusterPendingModifiedValues, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ClusterPendingModifiedValues::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_cluster_pending_modified_values(
             s if s.matches("PendingCloudwatchLogsExports") /* PendingCloudwatchLogsExports com.amazonaws.rds#ClusterPendingModifiedValues$PendingCloudwatchLogsExports */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_pending_cloudwatch_logs_exports::de_pending_cloudwatch_logs_exports(&mut tag)
+                        crate::protocol_serde::shape_pending_cloudwatch_logs_exports::de_pending_cloudwatch_logs_exports(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -117,7 +121,7 @@ pub fn de_cluster_pending_modified_values(
             s if s.matches("RdsCustomClusterConfiguration") /* RdsCustomClusterConfiguration com.amazonaws.rds#ClusterPendingModifiedValues$RdsCustomClusterConfiguration */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_rds_custom_cluster_configuration::de_rds_custom_cluster_configuration(&mut tag)
+                        crate::protocol_serde::shape_rds_custom_cluster_configuration::de_rds_custom_cluster_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -142,7 +146,7 @@ pub fn de_cluster_pending_modified_values(
             s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#ClusterPendingModifiedValues$CertificateDetails */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
+                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

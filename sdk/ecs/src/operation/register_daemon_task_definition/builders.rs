@@ -288,4 +288,38 @@ impl RegisterDaemonTaskDefinitionFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The PID namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use <code>pidMode: "shared"</code>.</p>
+    pub fn pid_mode(mut self, input: crate::types::DaemonPidMode) -> Self {
+        self.inner = self.inner.pid_mode(input);
+        self
+    }
+    /// <p>The PID namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use <code>pidMode: "shared"</code>.</p>
+    pub fn set_pid_mode(mut self, input: ::std::option::Option<crate::types::DaemonPidMode>) -> Self {
+        self.inner = self.inner.set_pid_mode(input);
+        self
+    }
+    /// <p>The PID namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use <code>pidMode: "shared"</code>.</p>
+    pub fn get_pid_mode(&self) -> &::std::option::Option<crate::types::DaemonPidMode> {
+        self.inner.get_pid_mode()
+    }
+    /// <p>The IPC namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use <code>ipcMode: "shared"</code>.</p>
+    pub fn ipc_mode(mut self, input: crate::types::DaemonIpcMode) -> Self {
+        self.inner = self.inner.ipc_mode(input);
+        self
+    }
+    /// <p>The IPC namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use <code>ipcMode: "shared"</code>.</p>
+    pub fn set_ipc_mode(mut self, input: ::std::option::Option<crate::types::DaemonIpcMode>) -> Self {
+        self.inner = self.inner.set_ipc_mode(input);
+        self
+    }
+    /// <p>The IPC namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use <code>ipcMode: "shared"</code>.</p>
+    pub fn get_ipc_mode(&self) -> &::std::option::Option<crate::types::DaemonIpcMode> {
+        self.inner.get_ipc_mode()
+    }
 }

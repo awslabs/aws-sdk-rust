@@ -17,7 +17,7 @@ pub struct SendAgreementPaymentRequestOutput {
     pub charge_amount: ::std::option::Option<::std::string::String>,
     /// <p>The currency code for the charge amount (e.g., <code>USD</code>).</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
-    /// <p>The time when the payment request was created, in ISO 8601 format.</p>
+    /// <p>The time when the payment request was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -50,7 +50,7 @@ impl SendAgreementPaymentRequestOutput {
     pub fn currency_code(&self) -> ::std::option::Option<&str> {
         self.currency_code.as_deref()
     }
-    /// <p>The time when the payment request was created, in ISO 8601 format.</p>
+    /// <p>The time when the payment request was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -195,17 +195,17 @@ impl SendAgreementPaymentRequestOutputBuilder {
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.currency_code
     }
-    /// <p>The time when the payment request was created, in ISO 8601 format.</p>
+    /// <p>The time when the payment request was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the payment request was created, in ISO 8601 format.</p>
+    /// <p>The time when the payment request was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The time when the payment request was created, in ISO 8601 format.</p>
+    /// <p>The time when the payment request was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

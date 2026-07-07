@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_analysis_reports_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_container_associations_output_output_next_token(
+    input: &crate::operation::list_container_associations::ListContainerAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_firewall_policies_output_output_next_token(
     input: &crate::operation::list_firewall_policies::ListFirewallPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -140,6 +150,13 @@ pub(crate) fn lens_list_analysis_reports_output_output_analysis_reports(
     input: crate::operation::list_analysis_reports::ListAnalysisReportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisReport>> {
     let input = input.analysis_reports?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_container_associations_output_output_container_associations(
+    input: crate::operation::list_container_associations::ListContainerAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContainerAssociationSummary>> {
+    let input = input.container_associations?;
     ::std::option::Option::Some(input)
 }
 

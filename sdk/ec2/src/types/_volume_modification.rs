@@ -36,7 +36,7 @@ pub struct VolumeModification {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The modification completion or failure time.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Describes whether the resource is managed by a service provider and, if so, describes the service provider that manages it.</p>
+    /// <p>The service provider that manages the resource.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl VolumeModification {
@@ -104,7 +104,7 @@ impl VolumeModification {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Describes whether the resource is managed by a service provider and, if so, describes the service provider that manages it.</p>
+    /// <p>The service provider that manages the resource.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
@@ -363,17 +363,17 @@ impl VolumeModificationBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>Describes whether the resource is managed by a service provider and, if so, describes the service provider that manages it.</p>
+    /// <p>The service provider that manages the resource.</p>
     pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether the resource is managed by a service provider and, if so, describes the service provider that manages it.</p>
+    /// <p>The service provider that manages the resource.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
         self.operator = input;
         self
     }
-    /// <p>Describes whether the resource is managed by a service provider and, if so, describes the service provider that manages it.</p>
+    /// <p>The service provider that manages the resource.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }

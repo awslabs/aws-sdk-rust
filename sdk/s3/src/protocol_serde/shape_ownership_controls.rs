@@ -20,7 +20,11 @@ pub fn ser_ownership_controls(
 #[allow(clippy::needless_question_mark)]
 pub fn de_ownership_controls(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OwnershipControls, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OwnershipControls::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -31,7 +35,7 @@ pub fn de_ownership_controls(
                         Result::<::std::vec::Vec::<crate::types::OwnershipControlsRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_3 = builder.rules.take().unwrap_or_default();
                             list_3.push(
-                                crate::protocol_serde::shape_ownership_controls_rule::de_ownership_controls_rule(&mut tag)
+                                crate::protocol_serde::shape_ownership_controls_rule::de_ownership_controls_rule(&mut tag, depth + 1)
                                 ?
                             );
                             list_3

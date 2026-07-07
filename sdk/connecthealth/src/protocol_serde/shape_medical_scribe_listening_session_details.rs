@@ -2,10 +2,16 @@
 pub(crate) fn de_medical_scribe_listening_session_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MedicalScribeListeningSessionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,18 +67,20 @@ where
                             "channelDefinitions" => {
                                 builder = builder.set_channel_definitions(
                                     crate::protocol_serde::shape_medical_scribe_channel_definitions::de_medical_scribe_channel_definitions(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "postStreamActionSettings" => {
                                 builder = builder.set_post_stream_action_settings(
-                                    crate::protocol_serde::shape_medical_scribe_post_stream_action_settings_response::de_medical_scribe_post_stream_action_settings_response(tokens, _value)?
+                                    crate::protocol_serde::shape_medical_scribe_post_stream_action_settings_response::de_medical_scribe_post_stream_action_settings_response(tokens, _value, depth + 1)?
                                 );
                             }
                             "postStreamActionResult" => {
                                 builder = builder.set_post_stream_action_result(
-                                    crate::protocol_serde::shape_medical_scribe_post_stream_actions_result::de_medical_scribe_post_stream_actions_result(tokens, _value)?
+                                    crate::protocol_serde::shape_medical_scribe_post_stream_actions_result::de_medical_scribe_post_stream_actions_result(tokens, _value, depth + 1)?
                                 );
                             }
                             "encounterContextProvided" => {

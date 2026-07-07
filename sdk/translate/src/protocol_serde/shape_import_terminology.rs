@@ -154,6 +154,8 @@ pub(crate) fn de_import_terminology(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -161,12 +163,14 @@ pub(crate) fn de_import_terminology(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TerminologyProperties" => {
                     builder = builder.set_terminology_properties(crate::protocol_serde::shape_terminology_properties::de_terminology_properties(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "AuxiliaryDataLocation" => {
                     builder = builder.set_auxiliary_data_location(
-                        crate::protocol_serde::shape_terminology_data_location::de_terminology_data_location(tokens, _value)?,
+                        crate::protocol_serde::shape_terminology_data_location::de_terminology_data_location(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

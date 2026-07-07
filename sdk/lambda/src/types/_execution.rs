@@ -16,6 +16,8 @@ pub struct Execution {
     pub start_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the durable execution ended, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl Execution {
     /// <p>The Amazon Resource Name (ARN) of the durable execution, if this execution is a durable execution.</p>
@@ -45,6 +47,10 @@ impl Execution {
     pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl Execution {
     /// Creates a new builder-style object to manufacture [`Execution`](crate::types::Execution).
@@ -63,6 +69,7 @@ pub struct ExecutionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ExecutionStatus>,
     pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the durable execution, if this execution is a durable execution.</p>
@@ -154,6 +161,20 @@ impl ExecutionBuilder {
     pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_timestamp
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`Execution`](crate::types::Execution).
     /// This method will fail if any of the following fields are not set:
     /// - [`durable_execution_arn`](crate::types::builders::ExecutionBuilder::durable_execution_arn)
@@ -194,6 +215,7 @@ impl ExecutionBuilder {
                 )
             })?,
             end_timestamp: self.end_timestamp,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }

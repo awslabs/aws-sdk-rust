@@ -159,6 +159,24 @@ pub(crate) fn path_statistics_correct_errors(
     builder
 }
 
+pub(crate) fn revenue_path_statistics_correct_errors(
+    mut builder: crate::types::builders::RevenuePathStatisticsBuilder,
+) -> crate::types::builders::RevenuePathStatisticsBuilder {
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    if builder.percentage.is_none() {
+        builder.percentage = Some(Default::default())
+    }
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
+    }
+    if builder.request_count.is_none() {
+        builder.request_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn sampled_http_request_correct_errors(
     mut builder: crate::types::builders::SampledHttpRequestBuilder,
 ) -> crate::types::builders::SampledHttpRequestBuilder {
@@ -174,6 +192,39 @@ pub(crate) fn sampled_http_request_correct_errors(
     builder
 }
 
+pub(crate) fn settlement_record_correct_errors(
+    mut builder: crate::types::builders::SettlementRecordBuilder,
+) -> crate::types::builders::SettlementRecordBuilder {
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SettlementStatus>().ok()
+    }
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn source_statistics_correct_errors(
+    mut builder: crate::types::builders::SourceStatisticsBuilder,
+) -> crate::types::builders::SourceStatisticsBuilder {
+    if builder.source_name.is_none() {
+        builder.source_name = Some(Default::default())
+    }
+    if builder.percentage.is_none() {
+        builder.percentage = Some(Default::default())
+    }
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
+    }
+    if builder.request_count.is_none() {
+        builder.request_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn visibility_config_correct_errors(
     mut builder: crate::types::builders::VisibilityConfigBuilder,
 ) -> crate::types::builders::VisibilityConfigBuilder {
@@ -185,6 +236,13 @@ pub(crate) fn visibility_config_correct_errors(
     }
     if builder.metric_name.is_none() {
         builder.metric_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn crypto_config_correct_errors(mut builder: crate::types::builders::CryptoConfigBuilder) -> crate::types::builders::CryptoConfigBuilder {
+    if builder.payment_networks.is_none() {
+        builder.payment_networks = Some(Default::default())
     }
     builder
 }
@@ -531,6 +589,21 @@ pub(crate) fn or_statement_correct_errors(mut builder: crate::types::builders::O
     builder
 }
 
+pub(crate) fn payment_network_correct_errors(
+    mut builder: crate::types::builders::PaymentNetworkBuilder,
+) -> crate::types::builders::PaymentNetworkBuilder {
+    if builder.chain.is_none() {
+        builder.chain = "no value was set".parse::<crate::types::BlockchainChain>().ok()
+    }
+    if builder.wallet_address.is_none() {
+        builder.wallet_address = Some(Default::default())
+    }
+    if builder.prices.is_none() {
+        builder.prices = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn rate_based_statement_correct_errors(
     mut builder: crate::types::builders::RateBasedStatementBuilder,
 ) -> crate::types::builders::RateBasedStatementBuilder {
@@ -699,6 +772,16 @@ pub(crate) fn label_name_condition_correct_errors(
 ) -> crate::types::builders::LabelNameConditionBuilder {
     if builder.label_name.is_none() {
         builder.label_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn price_correct_errors(mut builder: crate::types::builders::PriceBuilder) -> crate::types::builders::PriceBuilder {
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
+    }
+    if builder.currency.is_none() {
+        builder.currency = "no value was set".parse::<crate::types::CryptoCurrency>().ok()
     }
     builder
 }

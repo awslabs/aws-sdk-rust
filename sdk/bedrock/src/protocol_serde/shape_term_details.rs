@@ -2,10 +2,16 @@
 pub(crate) fn de_term_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TermDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,17 +22,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "usageBasedPricingTerm" => {
-                            builder =
-                                builder.set_usage_based_pricing_term(crate::protocol_serde::shape_pricing_term::de_pricing_term(tokens, _value)?);
+                            builder = builder.set_usage_based_pricing_term(crate::protocol_serde::shape_pricing_term::de_pricing_term(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "legalTerm" => {
-                            builder = builder.set_legal_term(crate::protocol_serde::shape_legal_term::de_legal_term(tokens, _value)?);
+                            builder = builder.set_legal_term(crate::protocol_serde::shape_legal_term::de_legal_term(tokens, _value, depth + 1)?);
                         }
                         "supportTerm" => {
-                            builder = builder.set_support_term(crate::protocol_serde::shape_support_term::de_support_term(tokens, _value)?);
+                            builder =
+                                builder.set_support_term(crate::protocol_serde::shape_support_term::de_support_term(tokens, _value, depth + 1)?);
                         }
                         "validityTerm" => {
-                            builder = builder.set_validity_term(crate::protocol_serde::shape_validity_term::de_validity_term(tokens, _value)?);
+                            builder =
+                                builder.set_validity_term(crate::protocol_serde::shape_validity_term::de_validity_term(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

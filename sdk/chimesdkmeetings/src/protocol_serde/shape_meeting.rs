@@ -2,10 +2,16 @@
 pub(crate) fn de_meeting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Meeting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,19 @@ where
                             );
                         }
                         "MediaPlacement" => {
-                            builder = builder.set_media_placement(crate::protocol_serde::shape_media_placement::de_media_placement(tokens, _value)?);
+                            builder = builder.set_media_placement(crate::protocol_serde::shape_media_placement::de_media_placement(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MeetingFeatures" => {
                             builder = builder.set_meeting_features(
-                                crate::protocol_serde::shape_meeting_features_configuration::de_meeting_features_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_meeting_features_configuration::de_meeting_features_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "PrimaryMeetingId" => {
@@ -59,7 +73,8 @@ where
                             );
                         }
                         "TenantIds" => {
-                            builder = builder.set_tenant_ids(crate::protocol_serde::shape_tenant_id_list::de_tenant_id_list(tokens, _value)?);
+                            builder =
+                                builder.set_tenant_ids(crate::protocol_serde::shape_tenant_id_list::de_tenant_id_list(tokens, _value, depth + 1)?);
                         }
                         "MeetingArn" => {
                             builder = builder.set_meeting_arn(

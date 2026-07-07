@@ -49,6 +49,8 @@ pub fn de_start_network_insights_analysis(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("StartNetworkInsightsAnalysisResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected StartNetworkInsightsAnalysisResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_start_network_insights_analysis(
             s if s.matches("networkInsightsAnalysis") /* NetworkInsightsAnalysis com.amazonaws.ec2.synthetic#StartNetworkInsightsAnalysisOutput$NetworkInsightsAnalysis */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_network_insights_analysis::de_network_insights_analysis(&mut tag)
+                        crate::protocol_serde::shape_network_insights_analysis::de_network_insights_analysis(&mut tag, depth + 1)
                         ?
                     )
                 ;

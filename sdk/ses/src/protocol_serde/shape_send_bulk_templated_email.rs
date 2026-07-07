@@ -167,6 +167,8 @@ pub fn de_send_bulk_templated_email(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("SendBulkTemplatedEmailResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected SendBulkTemplatedEmailResponse got {start_el:?}"
@@ -184,7 +186,7 @@ pub fn de_send_bulk_templated_email(
             s if s.matches("Status") /* Status com.amazonaws.ses.synthetic#SendBulkTemplatedEmailOutput$Status */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_bulk_email_destination_status_list::de_bulk_email_destination_status_list(&mut tag)
+                        crate::protocol_serde::shape_bulk_email_destination_status_list::de_bulk_email_destination_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

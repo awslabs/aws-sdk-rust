@@ -21,6 +21,7 @@ pub fn ser_aws_s3_bucket_notification_configuration_s3_key_filter(
 pub(crate) fn de_aws_s3_bucket_notification_configuration_s3_key_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,6 +29,11 @@ pub(crate) fn de_aws_s3_bucket_notification_configuration_s3_key_filter<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FilterRules" => {
                             builder = builder.set_filter_rules(
-                                    crate::protocol_serde::shape_aws_s3_bucket_notification_configuration_s3_key_filter_rules::de_aws_s3_bucket_notification_configuration_s3_key_filter_rules(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_notification_configuration_s3_key_filter_rules::de_aws_s3_bucket_notification_configuration_s3_key_filter_rules(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

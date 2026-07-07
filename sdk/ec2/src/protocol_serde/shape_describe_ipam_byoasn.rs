@@ -47,6 +47,8 @@ pub fn de_describe_ipam_byoasn(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeIpamByoasnResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeIpamByoasnResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_describe_ipam_byoasn(
             s if s.matches("byoasnSet") /* Byoasns com.amazonaws.ec2.synthetic#DescribeIpamByoasnOutput$Byoasns */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_byoasn_set::de_byoasn_set(&mut tag)
+                        crate::protocol_serde::shape_byoasn_set::de_byoasn_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

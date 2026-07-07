@@ -5,13 +5,15 @@ pub(crate) fn de_slot_not_available_exception_json_err(
 ) -> ::std::result::Result<crate::types::error::builders::SlotNotAvailableExceptionBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SlotSuggestions" => {
-                    builder = builder.set_slot_suggestions(crate::protocol_serde::shape_slot_list::de_slot_list(tokens, _value)?);
+                    builder = builder.set_slot_suggestions(crate::protocol_serde::shape_slot_list::de_slot_list(tokens, _value, depth + 1)?);
                 }
                 "message" => {
                     builder = builder.set_message(

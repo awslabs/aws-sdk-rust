@@ -133,6 +133,8 @@ pub fn de_disable_snapshot_copy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DisableSnapshotCopyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisableSnapshotCopyResponse got {start_el:?}"
@@ -150,7 +152,7 @@ pub fn de_disable_snapshot_copy(
             s if s.matches("Cluster") /* Cluster com.amazonaws.redshift.synthetic#DisableSnapshotCopyOutput$Cluster */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag)
+                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag, depth + 1)
                         ?
                     )
                 ;

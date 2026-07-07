@@ -13,6 +13,7 @@
 /// # let allocationstate = unimplemented!();
 /// match allocationstate {
 ///     AllocationState::Available => { /* ... */ },
+///     AllocationState::Configuring => { /* ... */ },
 ///     AllocationState::Pending => { /* ... */ },
 ///     AllocationState::PermanentFailure => { /* ... */ },
 ///     AllocationState::Released => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum AllocationState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    Configuring,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     PermanentFailure,
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for AllocationState {
     fn from(s: &str) -> Self {
         match s {
             "available" => AllocationState::Available,
+            "configuring" => AllocationState::Configuring,
             "pending" => AllocationState::Pending,
             "permanent-failure" => AllocationState::PermanentFailure,
             "released" => AllocationState::Released,
@@ -87,6 +91,7 @@ impl AllocationState {
     pub fn as_str(&self) -> &str {
         match self {
             AllocationState::Available => "available",
+            AllocationState::Configuring => "configuring",
             AllocationState::Pending => "pending",
             AllocationState::PermanentFailure => "permanent-failure",
             AllocationState::Released => "released",
@@ -99,6 +104,7 @@ impl AllocationState {
     pub const fn values() -> &'static [&'static str] {
         &[
             "available",
+            "configuring",
             "pending",
             "permanent-failure",
             "released",
@@ -128,6 +134,7 @@ impl ::std::fmt::Display for AllocationState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AllocationState::Available => write!(f, "available"),
+            AllocationState::Configuring => write!(f, "configuring"),
             AllocationState::Pending => write!(f, "pending"),
             AllocationState::PermanentFailure => write!(f, "permanent-failure"),
             AllocationState::Released => write!(f, "released"),

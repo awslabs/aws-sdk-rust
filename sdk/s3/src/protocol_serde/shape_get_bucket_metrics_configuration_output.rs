@@ -23,5 +23,7 @@ pub fn de_metrics_configuration(inp: &[u8]) -> std::result::Result<crate::types:
             "invalid root, expected MetricsConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_metrics_configuration::de_metrics_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_metrics_configuration::de_metrics_configuration(&mut decoder, depth + 1)
 }

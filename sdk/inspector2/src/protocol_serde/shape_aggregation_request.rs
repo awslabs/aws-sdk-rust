@@ -76,6 +76,24 @@ pub fn ser_aggregation_request(
             crate::protocol_serde::shape_code_repository_aggregation::ser_code_repository_aggregation(&mut object_12, inner)?;
             object_12.finish();
         }
+        crate::types::AggregationRequest::VmInstanceAggregation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_13 = object_6.key("vmInstanceAggregation").start_object();
+            crate::protocol_serde::shape_vm_instance_aggregation::ser_vm_instance_aggregation(&mut object_13, inner)?;
+            object_13.finish();
+        }
+        crate::types::AggregationRequest::ContainerImageAggregation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_14 = object_6.key("containerImageAggregation").start_object();
+            crate::protocol_serde::shape_container_image_aggregation::ser_container_image_aggregation(&mut object_14, inner)?;
+            object_14.finish();
+        }
+        crate::types::AggregationRequest::ServerlessFunctionAggregation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_15 = object_6.key("serverlessFunctionAggregation").start_object();
+            crate::protocol_serde::shape_serverless_function_aggregation::ser_serverless_function_aggregation(&mut object_15, inner)?;
+            object_15.finish();
+        }
         crate::types::AggregationRequest::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AggregationRequest",

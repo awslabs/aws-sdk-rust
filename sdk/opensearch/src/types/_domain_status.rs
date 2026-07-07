@@ -80,6 +80,12 @@ pub struct DomainStatus {
     pub aiml_options: ::std::option::Option<crate::types::AimlOptionsOutput>,
     /// <p>The current status of the domain's deployment strategy options.</p>
     pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    /// <p>The current status of the domain's automated snapshot pause options.</p>
+    pub automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptions>,
+    /// <p>The primary use case for the domain.</p>
+    pub use_case: ::std::option::Option<crate::types::DomainUseCase>,
+    /// <p>The engine mode for the domain.</p>
+    pub engine_mode: ::std::option::Option<crate::types::EngineMode>,
 }
 impl DomainStatus {
     /// <p>Unique identifier for the domain.</p>
@@ -235,6 +241,18 @@ impl DomainStatus {
     pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
         self.deployment_strategy_options.as_ref()
     }
+    /// <p>The current status of the domain's automated snapshot pause options.</p>
+    pub fn automated_snapshot_pause_options(&self) -> ::std::option::Option<&crate::types::AutomatedSnapshotPauseOptions> {
+        self.automated_snapshot_pause_options.as_ref()
+    }
+    /// <p>The primary use case for the domain.</p>
+    pub fn use_case(&self) -> ::std::option::Option<&crate::types::DomainUseCase> {
+        self.use_case.as_ref()
+    }
+    /// <p>The engine mode for the domain.</p>
+    pub fn engine_mode(&self) -> ::std::option::Option<&crate::types::EngineMode> {
+        self.engine_mode.as_ref()
+    }
 }
 impl DomainStatus {
     /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::types::DomainStatus).
@@ -282,6 +300,9 @@ pub struct DomainStatusBuilder {
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
     pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsOutput>,
     pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    pub(crate) automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptions>,
+    pub(crate) use_case: ::std::option::Option<crate::types::DomainUseCase>,
+    pub(crate) engine_mode: ::std::option::Option<crate::types::EngineMode>,
 }
 impl DomainStatusBuilder {
     /// <p>Unique identifier for the domain.</p>
@@ -832,6 +853,48 @@ impl DomainStatusBuilder {
     pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
         &self.deployment_strategy_options
     }
+    /// <p>The current status of the domain's automated snapshot pause options.</p>
+    pub fn automated_snapshot_pause_options(mut self, input: crate::types::AutomatedSnapshotPauseOptions) -> Self {
+        self.automated_snapshot_pause_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the domain's automated snapshot pause options.</p>
+    pub fn set_automated_snapshot_pause_options(mut self, input: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptions>) -> Self {
+        self.automated_snapshot_pause_options = input;
+        self
+    }
+    /// <p>The current status of the domain's automated snapshot pause options.</p>
+    pub fn get_automated_snapshot_pause_options(&self) -> &::std::option::Option<crate::types::AutomatedSnapshotPauseOptions> {
+        &self.automated_snapshot_pause_options
+    }
+    /// <p>The primary use case for the domain.</p>
+    pub fn use_case(mut self, input: crate::types::DomainUseCase) -> Self {
+        self.use_case = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The primary use case for the domain.</p>
+    pub fn set_use_case(mut self, input: ::std::option::Option<crate::types::DomainUseCase>) -> Self {
+        self.use_case = input;
+        self
+    }
+    /// <p>The primary use case for the domain.</p>
+    pub fn get_use_case(&self) -> &::std::option::Option<crate::types::DomainUseCase> {
+        &self.use_case
+    }
+    /// <p>The engine mode for the domain.</p>
+    pub fn engine_mode(mut self, input: crate::types::EngineMode) -> Self {
+        self.engine_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The engine mode for the domain.</p>
+    pub fn set_engine_mode(mut self, input: ::std::option::Option<crate::types::EngineMode>) -> Self {
+        self.engine_mode = input;
+        self
+    }
+    /// <p>The engine mode for the domain.</p>
+    pub fn get_engine_mode(&self) -> &::std::option::Option<crate::types::EngineMode> {
+        &self.engine_mode
+    }
     /// Consumes the builder and constructs a [`DomainStatus`](crate::types::DomainStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::DomainStatusBuilder::domain_id)
@@ -889,6 +952,9 @@ impl DomainStatusBuilder {
             modifying_properties: self.modifying_properties,
             aiml_options: self.aiml_options,
             deployment_strategy_options: self.deployment_strategy_options,
+            automated_snapshot_pause_options: self.automated_snapshot_pause_options,
+            use_case: self.use_case,
+            engine_mode: self.engine_mode,
         })
     }
 }

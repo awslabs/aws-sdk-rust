@@ -70,6 +70,8 @@ pub fn de_get_template_summary(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetTemplateSummaryResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetTemplateSummaryResponse got {start_el:?}"
@@ -87,7 +89,7 @@ pub fn de_get_template_summary(
             s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Parameters */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_parameter_declarations::de_parameter_declarations(&mut tag)
+                        crate::protocol_serde::shape_parameter_declarations::de_parameter_declarations(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -110,7 +112,7 @@ pub fn de_get_template_summary(
             s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Capabilities */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag)
+                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -133,7 +135,7 @@ pub fn de_get_template_summary(
             s if s.matches("ResourceTypes") /* ResourceTypes com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$ResourceTypes */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_resource_types::de_resource_types(&mut tag)
+                        crate::protocol_serde::shape_resource_types::de_resource_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -169,7 +171,7 @@ pub fn de_get_template_summary(
             s if s.matches("DeclaredTransforms") /* DeclaredTransforms com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$DeclaredTransforms */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_transforms_list::de_transforms_list(&mut tag)
+                        crate::protocol_serde::shape_transforms_list::de_transforms_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -179,7 +181,7 @@ pub fn de_get_template_summary(
             s if s.matches("ResourceIdentifierSummaries") /* ResourceIdentifierSummaries com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$ResourceIdentifierSummaries */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_resource_identifier_summaries::de_resource_identifier_summaries(&mut tag)
+                        crate::protocol_serde::shape_resource_identifier_summaries::de_resource_identifier_summaries(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -189,7 +191,7 @@ pub fn de_get_template_summary(
             s if s.matches("Warnings") /* Warnings com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Warnings */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_warnings::de_warnings(&mut tag)
+                        crate::protocol_serde::shape_warnings::de_warnings(&mut tag, depth + 1)
                         ?
                     )
                 ;

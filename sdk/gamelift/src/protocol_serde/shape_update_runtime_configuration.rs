@@ -156,10 +156,11 @@ pub(crate) fn de_update_runtime_configuration(
     crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -169,6 +170,7 @@ pub(crate) fn de_update_runtime_configuration(
                 Ok(
                     builder.set_runtime_configuration(Some(crate::protocol_serde::shape_runtime_configuration::de_runtime_configuration(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -181,6 +183,8 @@ pub(crate) fn de_update_runtime_configuration(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -190,13 +194,13 @@ pub(crate) fn de_update_runtime_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

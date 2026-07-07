@@ -20,5 +20,7 @@ pub fn de_storage_lens_group(inp: &[u8]) -> std::result::Result<crate::types::St
             "invalid root, expected StorageLensGroup got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_storage_lens_group::de_storage_lens_group(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_storage_lens_group::de_storage_lens_group(&mut decoder, depth + 1)
 }

@@ -15,6 +15,10 @@ pub struct Resource {
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 16.</p>
     pub region: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub provider: ::std::option::Option<crate::types::CloudProviderName>,
+    /// <p>Information about the account and organization that own the resource.</p>
+    pub owner: ::std::option::Option<crate::types::ResourceOwner>,
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
     pub resource_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web Services tag naming limits and requirements</a>.</p>
@@ -47,6 +51,14 @@ impl Resource {
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 16.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
+    }
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::CloudProviderName> {
+        self.provider.as_ref()
+    }
+    /// <p>Information about the account and organization that own the resource.</p>
+    pub fn owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+        self.owner.as_ref()
     }
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
     pub fn resource_role(&self) -> ::std::option::Option<&str> {
@@ -88,6 +100,8 @@ pub struct ResourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) partition: ::std::option::Option<crate::types::Partition>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) provider: ::std::option::Option<crate::types::CloudProviderName>,
+    pub(crate) owner: ::std::option::Option<crate::types::ResourceOwner>,
     pub(crate) resource_role: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) data_classification: ::std::option::Option<crate::types::DataClassificationDetails>,
@@ -162,6 +176,34 @@ impl ResourceBuilder {
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 16.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
+    }
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub fn provider(mut self, input: crate::types::CloudProviderName) -> Self {
+        self.provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::CloudProviderName>) -> Self {
+        self.provider = input;
+        self
+    }
+    /// <p>The cloud provider that the resource belongs to. Valid values are <code>AWS</code> and <code>Azure</code>.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::CloudProviderName> {
+        &self.provider
+    }
+    /// <p>Information about the account and organization that own the resource.</p>
+    pub fn owner(mut self, input: crate::types::ResourceOwner) -> Self {
+        self.owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the account and organization that own the resource.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>Information about the account and organization that own the resource.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        &self.owner
     }
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
     pub fn resource_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -260,6 +302,8 @@ impl ResourceBuilder {
             id: self.id,
             partition: self.partition,
             region: self.region,
+            provider: self.provider,
+            owner: self.owner,
             resource_role: self.resource_role,
             tags: self.tags,
             data_classification: self.data_classification,

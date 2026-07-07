@@ -54,10 +54,16 @@ pub fn ser_report_setting(
 pub(crate) fn de_report_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReportSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -75,7 +81,8 @@ where
                             );
                         }
                         "FrameworkArns" => {
-                            builder = builder.set_framework_arns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_framework_arns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "NumberOfFrameworks" => {
                             builder = builder.set_number_of_frameworks(
@@ -85,13 +92,14 @@ where
                             );
                         }
                         "Accounts" => {
-                            builder = builder.set_accounts(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_accounts(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "OrganizationUnits" => {
-                            builder = builder.set_organization_units(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_organization_units(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "Regions" => {
-                            builder = builder.set_regions(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_regions(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

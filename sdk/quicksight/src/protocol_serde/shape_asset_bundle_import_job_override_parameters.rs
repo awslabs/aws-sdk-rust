@@ -2,10 +2,16 @@
 pub(crate) fn de_asset_bundle_import_job_override_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AssetBundleImportJobOverrideParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,47 +23,47 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ResourceIdOverrideConfiguration" => {
                             builder = builder.set_resource_id_override_configuration(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_resource_id_override_configuration::de_asset_bundle_import_job_resource_id_override_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_resource_id_override_configuration::de_asset_bundle_import_job_resource_id_override_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         "VPCConnections" => {
                             builder = builder.set_vpc_connections(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_vpc_connection_override_parameters_list::de_asset_bundle_import_job_vpc_connection_override_parameters_list(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_vpc_connection_override_parameters_list::de_asset_bundle_import_job_vpc_connection_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "RefreshSchedules" => {
                             builder = builder.set_refresh_schedules(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_refresh_schedule_override_parameters_list::de_asset_bundle_import_job_refresh_schedule_override_parameters_list(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_refresh_schedule_override_parameters_list::de_asset_bundle_import_job_refresh_schedule_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "DataSources" => {
                             builder = builder.set_data_sources(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_data_source_override_parameters_list::de_asset_bundle_import_job_data_source_override_parameters_list(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_data_source_override_parameters_list::de_asset_bundle_import_job_data_source_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "DataSets" => {
                             builder = builder.set_data_sets(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_data_set_override_parameters_list::de_asset_bundle_import_job_data_set_override_parameters_list(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_data_set_override_parameters_list::de_asset_bundle_import_job_data_set_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Themes" => {
                             builder = builder.set_themes(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_theme_override_parameters_list::de_asset_bundle_import_job_theme_override_parameters_list(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_theme_override_parameters_list::de_asset_bundle_import_job_theme_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Analyses" => {
                             builder = builder.set_analyses(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_analysis_override_parameters_list::de_asset_bundle_import_job_analysis_override_parameters_list(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_analysis_override_parameters_list::de_asset_bundle_import_job_analysis_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Dashboards" => {
                             builder = builder.set_dashboards(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_dashboard_override_parameters_list::de_asset_bundle_import_job_dashboard_override_parameters_list(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_dashboard_override_parameters_list::de_asset_bundle_import_job_dashboard_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Folders" => {
                             builder = builder.set_folders(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_folder_override_parameters_list::de_asset_bundle_import_job_folder_override_parameters_list(tokens, _value)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_folder_override_parameters_list::de_asset_bundle_import_job_folder_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

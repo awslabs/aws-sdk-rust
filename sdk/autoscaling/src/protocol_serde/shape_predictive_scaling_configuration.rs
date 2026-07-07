@@ -47,7 +47,11 @@ pub fn ser_predictive_scaling_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_predictive_scaling_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PredictiveScalingConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PredictiveScalingConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -55,7 +59,7 @@ pub fn de_predictive_scaling_configuration(
             s if s.matches("MetricSpecifications") /* MetricSpecifications com.amazonaws.autoscaling#PredictiveScalingConfiguration$MetricSpecifications */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_metric_specifications::de_predictive_scaling_metric_specifications(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_metric_specifications::de_predictive_scaling_metric_specifications(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -42,6 +42,8 @@ pub fn de_get_ipam_pool_cidrs(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetIpamPoolCidrsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetIpamPoolCidrsResponse got {start_el:?}"
@@ -52,7 +54,7 @@ pub fn de_get_ipam_pool_cidrs(
             s if s.matches("ipamPoolCidrSet") /* IpamPoolCidrs com.amazonaws.ec2.synthetic#GetIpamPoolCidrsOutput$IpamPoolCidrs */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipam_pool_cidr_set::de_ipam_pool_cidr_set(&mut tag)
+                        crate::protocol_serde::shape_ipam_pool_cidr_set::de_ipam_pool_cidr_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

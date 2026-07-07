@@ -30,10 +30,16 @@ pub fn ser_account_aggregation_source(
 pub(crate) fn de_account_aggregation_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AccountAggregationSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -46,7 +52,9 @@ where
                         "AccountIds" => {
                             builder = builder.set_account_ids(
                                 crate::protocol_serde::shape_account_aggregation_source_account_list::de_account_aggregation_source_account_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -55,7 +63,9 @@ where
                         }
                         "AwsRegions" => {
                             builder = builder.set_aws_regions(crate::protocol_serde::shape_aggregator_region_list::de_aggregator_region_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

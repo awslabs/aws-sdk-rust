@@ -2,10 +2,16 @@
 pub(crate) fn de_space_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SpaceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,17 +56,21 @@ where
                         }
                         "SpaceSettingsSummary" => {
                             builder = builder.set_space_settings_summary(
-                                crate::protocol_serde::shape_space_settings_summary::de_space_settings_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_space_settings_summary::de_space_settings_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "SpaceSharingSettingsSummary" => {
                             builder = builder.set_space_sharing_settings_summary(
-                                crate::protocol_serde::shape_space_sharing_settings_summary::de_space_sharing_settings_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_space_sharing_settings_summary::de_space_sharing_settings_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "OwnershipSettingsSummary" => {
                             builder = builder.set_ownership_settings_summary(
-                                crate::protocol_serde::shape_ownership_settings_summary::de_ownership_settings_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_ownership_settings_summary::de_ownership_settings_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "SpaceDisplayName" => {

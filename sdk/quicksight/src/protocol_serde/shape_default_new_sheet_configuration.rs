@@ -24,10 +24,16 @@ pub fn ser_default_new_sheet_configuration(
 pub(crate) fn de_default_new_sheet_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DefaultNewSheetConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -40,13 +46,15 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "InteractiveLayoutConfiguration" => {
                                 builder = builder.set_interactive_layout_configuration(
-                                    crate::protocol_serde::shape_default_interactive_layout_configuration::de_default_interactive_layout_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_default_interactive_layout_configuration::de_default_interactive_layout_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "PaginatedLayoutConfiguration" => {
                                 builder = builder.set_paginated_layout_configuration(
                                     crate::protocol_serde::shape_default_paginated_layout_configuration::de_default_paginated_layout_configuration(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }

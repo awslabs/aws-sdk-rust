@@ -23,6 +23,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
 /// <p>Gets a list of tags associated with the specified resource. Only bots, bot aliases, and bot channels can have tags associated with them.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -105,6 +105,8 @@ pub fn de_describe_target_health(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeTargetHealthResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTargetHealthResponse got {start_el:?}"
@@ -122,7 +124,7 @@ pub fn de_describe_target_health(
             s if s.matches("TargetHealthDescriptions") /* TargetHealthDescriptions com.amazonaws.elasticloadbalancingv2.synthetic#DescribeTargetHealthOutput$TargetHealthDescriptions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_target_health_descriptions::de_target_health_descriptions(&mut tag)
+                        crate::protocol_serde::shape_target_health_descriptions::de_target_health_descriptions(&mut tag, depth + 1)
                         ?
                     )
                 ;

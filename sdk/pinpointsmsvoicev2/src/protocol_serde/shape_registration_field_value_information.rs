@@ -2,10 +2,16 @@
 pub(crate) fn de_registration_field_value_information<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RegistrationFieldValueInformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,8 +29,11 @@ where
                             );
                         }
                         "SelectChoices" => {
-                            builder =
-                                builder.set_select_choices(crate::protocol_serde::shape_select_choice_list::de_select_choice_list(tokens, _value)?);
+                            builder = builder.set_select_choices(crate::protocol_serde::shape_select_choice_list::de_select_choice_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TextValue" => {
                             builder = builder.set_text_value(

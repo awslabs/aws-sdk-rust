@@ -18,5 +18,8 @@ pub fn ser_update_procurement_portal_preference_status_input_input(
     if let Some(var_5) = &input.purchase_order_retrieval_preference_status_reason {
         object.key("PurchaseOrderRetrievalPreferenceStatusReason").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.client_token {
+        object.key("ClientToken").string(var_6.as_str());
+    }
     Ok(())
 }

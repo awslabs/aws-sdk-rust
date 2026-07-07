@@ -2,6 +2,7 @@
 pub(crate) fn de_search_related_items_response_item_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -9,6 +10,11 @@ pub(crate) fn de_search_related_items_response_item_list<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartArray { .. }) => {
@@ -21,7 +27,11 @@ where
                     }
                     _ => {
                         items.push(
-                            crate::protocol_serde::shape_search_related_items_response_item::de_search_related_items_response_item(tokens, _value)?,
+                            crate::protocol_serde::shape_search_related_items_response_item::de_search_related_items_response_item(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
                         );
                     }
                 }

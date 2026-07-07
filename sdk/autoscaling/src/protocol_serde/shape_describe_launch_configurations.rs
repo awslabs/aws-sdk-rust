@@ -87,6 +87,8 @@ pub fn de_describe_launch_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeLaunchConfigurationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeLaunchConfigurationsResponse got {start_el:?}"
@@ -104,7 +106,7 @@ pub fn de_describe_launch_configurations(
             s if s.matches("LaunchConfigurations") /* LaunchConfigurations com.amazonaws.autoscaling.synthetic#DescribeLaunchConfigurationsOutput$LaunchConfigurations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_launch_configurations::de_launch_configurations(&mut tag)
+                        crate::protocol_serde::shape_launch_configurations::de_launch_configurations(&mut tag, depth + 1)
                         ?
                     )
                 ;

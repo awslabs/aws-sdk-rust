@@ -6,11 +6,17 @@
 pub struct UpdateClusterSoftwareInstanceGroupSpecification {
     /// <p>The name of the instance group to update.</p>
     pub instance_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the HyperPod-managed AMI to update to for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code>.</p>
+    pub image_release_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterSoftwareInstanceGroupSpecification {
     /// <p>The name of the instance group to update.</p>
     pub fn instance_group_name(&self) -> ::std::option::Option<&str> {
         self.instance_group_name.as_deref()
+    }
+    /// <p>The version of the HyperPod-managed AMI to update to for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code>.</p>
+    pub fn image_release_version(&self) -> ::std::option::Option<&str> {
+        self.image_release_version.as_deref()
     }
 }
 impl UpdateClusterSoftwareInstanceGroupSpecification {
@@ -25,6 +31,7 @@ impl UpdateClusterSoftwareInstanceGroupSpecification {
 #[non_exhaustive]
 pub struct UpdateClusterSoftwareInstanceGroupSpecificationBuilder {
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) image_release_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterSoftwareInstanceGroupSpecificationBuilder {
     /// <p>The name of the instance group to update.</p>
@@ -42,10 +49,25 @@ impl UpdateClusterSoftwareInstanceGroupSpecificationBuilder {
     pub fn get_instance_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_group_name
     }
+    /// <p>The version of the HyperPod-managed AMI to update to for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code>.</p>
+    pub fn image_release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_release_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the HyperPod-managed AMI to update to for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code>.</p>
+    pub fn set_image_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_release_version = input;
+        self
+    }
+    /// <p>The version of the HyperPod-managed AMI to update to for the instance group. Uses semantic versioning in the format <code>MAJOR.MINOR.PATCH</code>.</p>
+    pub fn get_image_release_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_release_version
+    }
     /// Consumes the builder and constructs a [`UpdateClusterSoftwareInstanceGroupSpecification`](crate::types::UpdateClusterSoftwareInstanceGroupSpecification).
     pub fn build(self) -> crate::types::UpdateClusterSoftwareInstanceGroupSpecification {
         crate::types::UpdateClusterSoftwareInstanceGroupSpecification {
             instance_group_name: self.instance_group_name,
+            image_release_version: self.image_release_version,
         }
     }
 }

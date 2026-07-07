@@ -209,6 +209,8 @@ mod delete_knowledge_base_documents;
 
 mod delete_prompt;
 
+mod delete_resource_policy;
+
 mod disassociate_agent_collaborator;
 
 mod disassociate_agent_knowledge_base;
@@ -240,6 +242,8 @@ mod get_knowledge_base;
 mod get_knowledge_base_documents;
 
 mod get_prompt;
+
+mod get_resource_policy;
 
 mod ingest_knowledge_base_documents;
 
@@ -276,6 +280,8 @@ mod list_tags_for_resource;
 mod prepare_agent;
 
 mod prepare_flow;
+
+mod put_resource_policy;
 
 mod start_ingestion_job;
 

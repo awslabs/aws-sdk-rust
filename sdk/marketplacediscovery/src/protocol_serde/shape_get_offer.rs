@@ -130,6 +130,8 @@ pub(crate) fn de_get_offer(
 ) -> ::std::result::Result<crate::operation::get_offer::builders::GetOfferOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,7 +146,7 @@ pub(crate) fn de_get_offer(
                 }
                 "associatedEntities" => {
                     builder = builder.set_associated_entities(
-                        crate::protocol_serde::shape_offer_associated_entity_list::de_offer_associated_entity_list(tokens, _value)?,
+                        crate::protocol_serde::shape_offer_associated_entity_list::de_offer_associated_entity_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "availableFromTime" => {
@@ -155,7 +157,9 @@ pub(crate) fn de_get_offer(
                 }
                 "badges" => {
                     builder = builder.set_badges(crate::protocol_serde::shape_purchase_option_badge_list::de_purchase_option_badge_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "catalog" => {
@@ -186,7 +190,7 @@ pub(crate) fn de_get_offer(
                     );
                 }
                 "pricingModel" => {
-                    builder = builder.set_pricing_model(crate::protocol_serde::shape_pricing_model::de_pricing_model(tokens, _value)?);
+                    builder = builder.set_pricing_model(crate::protocol_serde::shape_pricing_model::de_pricing_model(tokens, _value, depth + 1)?);
                 }
                 "replacementAgreementId" => {
                     builder = builder.set_replacement_agreement_id(
@@ -196,7 +200,11 @@ pub(crate) fn de_get_offer(
                     );
                 }
                 "sellerOfRecord" => {
-                    builder = builder.set_seller_of_record(crate::protocol_serde::shape_seller_information::de_seller_information(tokens, _value)?);
+                    builder = builder.set_seller_of_record(crate::protocol_serde::shape_seller_information::de_seller_information(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

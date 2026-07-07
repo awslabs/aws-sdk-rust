@@ -57,10 +57,16 @@ pub fn ser_expression(
 pub(crate) fn de_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Expression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -71,23 +77,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Or" => {
-                            builder = builder.set_or(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value)?);
+                            builder = builder.set_or(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value, depth + 1)?);
                         }
                         "And" => {
-                            builder = builder.set_and(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value)?);
+                            builder = builder.set_and(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value, depth + 1)?);
                         }
                         "Not" => {
-                            builder = builder.set_not(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?.map(Box::new));
+                            builder =
+                                builder.set_not(crate::protocol_serde::shape_expression::de_expression(tokens, _value, depth + 1)?.map(Box::new));
                         }
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimension_values::de_dimension_values(tokens, _value)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimension_values::de_dimension_values(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_values::de_tag_values(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_values::de_tag_values(tokens, _value, depth + 1)?);
                         }
                         "CostCategories" => {
                             builder = builder.set_cost_categories(crate::protocol_serde::shape_cost_category_values::de_cost_category_values(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

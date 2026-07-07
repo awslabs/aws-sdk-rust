@@ -15,7 +15,11 @@ pub fn ser_spot_fleet_monitoring(
 #[allow(clippy::needless_question_mark)]
 pub fn de_spot_fleet_monitoring(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SpotFleetMonitoring, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SpotFleetMonitoring::builder();
     while let Some(mut tag) = decoder.next_tag() {

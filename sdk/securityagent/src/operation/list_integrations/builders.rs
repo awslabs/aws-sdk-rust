@@ -22,7 +22,7 @@ impl crate::operation::list_integrations::builders::ListIntegrationsInputBuilder
 }
 /// Fluent builder constructing a request to `ListIntegrations`.
 ///
-/// Retrieves the Integrations associated with the user's account
+/// <p>Lists the integrations in your account, optionally filtered by provider or provider type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIntegrationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListIntegrationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_integrations::paginator::ListIntegrationsPaginator {
         crate::operation::list_integrations::paginator::ListIntegrationsPaginator::new(self.handle, self.inner)
     }
-    /// Filter criteria for integrations
+    /// <p>A filter to apply to the list of integrations.</p>
     pub fn filter(mut self, input: crate::types::IntegrationFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// Filter criteria for integrations
+    /// <p>A filter to apply to the list of integrations.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::IntegrationFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// Filter criteria for integrations
+    /// <p>A filter to apply to the list of integrations.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::IntegrationFilter> {
         self.inner.get_filter()
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

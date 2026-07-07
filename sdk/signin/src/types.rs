@@ -5,7 +5,13 @@ pub use crate::types::_create_o_auth2_token_response_body::CreateOAuth2TokenResp
 
 pub use crate::types::_o_auth2_error_code::OAuth2ErrorCode;
 
+pub use crate::types::_signin_resource_based_policy::SigninResourceBasedPolicy;
+
 pub use crate::types::_access_token::AccessToken;
+
+pub use crate::types::_permission_statement_summary::PermissionStatementSummary;
+
+pub use crate::types::_policy_statement::PolicyStatement;
 
 mod _access_token;
 
@@ -14,6 +20,12 @@ mod _create_o_auth2_token_request_body;
 mod _create_o_auth2_token_response_body;
 
 mod _o_auth2_error_code;
+
+mod _permission_statement_summary;
+
+mod _policy_statement;
+
+mod _signin_resource_based_policy;
 
 /// Builders
 pub mod builders;

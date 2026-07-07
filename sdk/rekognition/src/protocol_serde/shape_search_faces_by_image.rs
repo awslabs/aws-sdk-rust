@@ -199,13 +199,19 @@ pub(crate) fn de_search_faces_by_image(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SearchedFaceBoundingBox" => {
-                    builder = builder.set_searched_face_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value)?);
+                    builder = builder.set_searched_face_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "SearchedFaceConfidence" => {
                     builder = builder.set_searched_face_confidence(
@@ -213,7 +219,11 @@ pub(crate) fn de_search_faces_by_image(
                     );
                 }
                 "FaceMatches" => {
-                    builder = builder.set_face_matches(crate::protocol_serde::shape_face_match_list::de_face_match_list(tokens, _value)?);
+                    builder = builder.set_face_matches(crate::protocol_serde::shape_face_match_list::de_face_match_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FaceModelVersion" => {
                     builder = builder.set_face_model_version(

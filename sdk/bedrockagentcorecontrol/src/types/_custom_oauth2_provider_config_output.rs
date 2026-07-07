@@ -10,8 +10,12 @@ pub struct CustomOauth2ProviderConfigOutput {
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
 }
 impl CustomOauth2ProviderConfigOutput {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -26,11 +30,19 @@ impl CustomOauth2ProviderConfigOutput {
     pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
         self.private_endpoint.as_ref()
     }
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_endpoint_overrides.is_none()`.
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub fn on_behalf_of_token_exchange_config(&self) -> ::std::option::Option<&crate::types::OnBehalfOfTokenExchangeConfigType> {
+        self.on_behalf_of_token_exchange_config.as_ref()
+    }
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub fn client_authentication_method(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationMethodType> {
+        self.client_authentication_method.as_ref()
     }
 }
 impl CustomOauth2ProviderConfigOutput {
@@ -48,6 +60,8 @@ pub struct CustomOauth2ProviderConfigOutputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    pub(crate) on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
+    pub(crate) client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
 }
 impl CustomOauth2ProviderConfigOutputBuilder {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -97,21 +111,49 @@ impl CustomOauth2ProviderConfigOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_private_endpoint_overrides`](Self::set_private_endpoint_overrides).
     ///
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub fn private_endpoint_overrides(mut self, input: crate::types::PrivateEndpointOverride) -> Self {
         let mut v = self.private_endpoint_overrides.unwrap_or_default();
         v.push(input);
         self.private_endpoint_overrides = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub fn set_private_endpoint_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>) -> Self {
         self.private_endpoint_overrides = input;
         self
     }
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
+    }
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub fn on_behalf_of_token_exchange_config(mut self, input: crate::types::OnBehalfOfTokenExchangeConfigType) -> Self {
+        self.on_behalf_of_token_exchange_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub fn set_on_behalf_of_token_exchange_config(mut self, input: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>) -> Self {
+        self.on_behalf_of_token_exchange_config = input;
+        self
+    }
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub fn get_on_behalf_of_token_exchange_config(&self) -> &::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType> {
+        &self.on_behalf_of_token_exchange_config
+    }
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub fn client_authentication_method(mut self, input: crate::types::ClientAuthenticationMethodType) -> Self {
+        self.client_authentication_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub fn set_client_authentication_method(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationMethodType>) -> Self {
+        self.client_authentication_method = input;
+        self
+    }
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub fn get_client_authentication_method(&self) -> &::std::option::Option<crate::types::ClientAuthenticationMethodType> {
+        &self.client_authentication_method
     }
     /// Consumes the builder and constructs a [`CustomOauth2ProviderConfigOutput`](crate::types::CustomOauth2ProviderConfigOutput).
     pub fn build(self) -> crate::types::CustomOauth2ProviderConfigOutput {
@@ -120,6 +162,8 @@ impl CustomOauth2ProviderConfigOutputBuilder {
             client_id: self.client_id,
             private_endpoint: self.private_endpoint,
             private_endpoint_overrides: self.private_endpoint_overrides,
+            on_behalf_of_token_exchange_config: self.on_behalf_of_token_exchange_config,
+            client_authentication_method: self.client_authentication_method,
         }
     }
 }

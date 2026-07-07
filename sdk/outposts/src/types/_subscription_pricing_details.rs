@@ -12,6 +12,8 @@ pub struct SubscriptionPricingDetails {
     pub upfront_price: ::std::option::Option<f32>,
     /// <p>The monthly recurring price.</p>
     pub monthly_recurring_price: ::std::option::Option<f32>,
+    /// <p>The currency of the price. Currently only <code>USD</code> is supported.</p>
+    pub currency: ::std::option::Option<crate::types::CurrencyCode>,
 }
 impl SubscriptionPricingDetails {
     /// <p>The payment option.</p>
@@ -30,6 +32,10 @@ impl SubscriptionPricingDetails {
     pub fn monthly_recurring_price(&self) -> ::std::option::Option<f32> {
         self.monthly_recurring_price
     }
+    /// <p>The currency of the price. Currently only <code>USD</code> is supported.</p>
+    pub fn currency(&self) -> ::std::option::Option<&crate::types::CurrencyCode> {
+        self.currency.as_ref()
+    }
 }
 impl SubscriptionPricingDetails {
     /// Creates a new builder-style object to manufacture [`SubscriptionPricingDetails`](crate::types::SubscriptionPricingDetails).
@@ -46,6 +52,7 @@ pub struct SubscriptionPricingDetailsBuilder {
     pub(crate) payment_term: ::std::option::Option<crate::types::PaymentTerm>,
     pub(crate) upfront_price: ::std::option::Option<f32>,
     pub(crate) monthly_recurring_price: ::std::option::Option<f32>,
+    pub(crate) currency: ::std::option::Option<crate::types::CurrencyCode>,
 }
 impl SubscriptionPricingDetailsBuilder {
     /// <p>The payment option.</p>
@@ -104,6 +111,20 @@ impl SubscriptionPricingDetailsBuilder {
     pub fn get_monthly_recurring_price(&self) -> &::std::option::Option<f32> {
         &self.monthly_recurring_price
     }
+    /// <p>The currency of the price. Currently only <code>USD</code> is supported.</p>
+    pub fn currency(mut self, input: crate::types::CurrencyCode) -> Self {
+        self.currency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The currency of the price. Currently only <code>USD</code> is supported.</p>
+    pub fn set_currency(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
+        self.currency = input;
+        self
+    }
+    /// <p>The currency of the price. Currently only <code>USD</code> is supported.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
+        &self.currency
+    }
     /// Consumes the builder and constructs a [`SubscriptionPricingDetails`](crate::types::SubscriptionPricingDetails).
     pub fn build(self) -> crate::types::SubscriptionPricingDetails {
         crate::types::SubscriptionPricingDetails {
@@ -111,6 +132,7 @@ impl SubscriptionPricingDetailsBuilder {
             payment_term: self.payment_term,
             upfront_price: self.upfront_price,
             monthly_recurring_price: self.monthly_recurring_price,
+            currency: self.currency,
         }
     }
 }

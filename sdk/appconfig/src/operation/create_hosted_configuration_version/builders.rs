@@ -22,7 +22,7 @@ impl crate::operation::create_hosted_configuration_version::builders::CreateHost
 }
 /// Fluent builder constructing a request to `CreateHostedConfigurationVersion`.
 ///
-/// <p>Creates a new configuration in the AppConfig hosted configuration store. If you're creating a feature flag, we recommend you familiarize yourself with the JSON schema for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User Guide</i>.</p>
+/// <p>Creates a new configuration in the AppConfig hosted configuration store. If you're creating a feature flag, we recommend you familiarize yourself with the JSON schema for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-type-reference-feature-flags.html">Type reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHostedConfigurationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,23 @@ impl CreateHostedConfigurationVersionFluentBuilder {
     pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_profile_id()
     }
-    /// <p>A description of the configuration.</p>
+    /// <p>A description of the configuration.</p><note>
+    /// <p>Due to HTTP limitations, this field only supports ASCII characters.</p>
+    /// </note>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description of the configuration.</p>
+    /// <p>A description of the configuration.</p><note>
+    /// <p>Due to HTTP limitations, this field only supports ASCII characters.</p>
+    /// </note>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description of the configuration.</p>
+    /// <p>A description of the configuration.</p><note>
+    /// <p>Due to HTTP limitations, this field only supports ASCII characters.</p>
+    /// </note>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

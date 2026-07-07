@@ -118,6 +118,8 @@ pub fn de_delete_db_cluster_endpoint(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteDBClusterEndpointResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteDBClusterEndpointResponse got {start_el:?}"
@@ -226,7 +228,7 @@ pub fn de_delete_db_cluster_endpoint(
             s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$StaticMembers */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -236,7 +238,7 @@ pub fn de_delete_db_cluster_endpoint(
             s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$ExcludedMembers */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

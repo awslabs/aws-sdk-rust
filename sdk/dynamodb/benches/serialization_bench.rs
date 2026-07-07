@@ -3,13 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use criterion::{criterion_group, criterion_main, Criterion};
+
+// TODO(schema-serde): Re-enable this benchmark when schema-serde codegen is
+// active for DynamoDB (awsJson1_0). The body below exercises the schema-serde
+// request serialization path, which requires a `SharedClientProtocol` in the
+// config bag. With `SchemaSerdeAllowlist` empty on main, DynamoDB falls back
+// to the legacy codegen path that does not consult the protocol. Once
+// awsJson1_0 (or DynamoDB specifically) is re-added to the allowlist, replace
+// the no-op `bench_group` below with the commented-out implementation.
+// See: codegen-client/.../customizations/SchemaDecorator.kt
+//
+// --- BEGIN schema-serde bench (disabled) ---
+/*
 use aws_sdk_dynamodb::operation::put_item::{PutItem, PutItemInput};
 use aws_sdk_dynamodb::types::AttributeValue;
 use aws_smithy_runtime_api::client::interceptors::context::Input;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_runtime_api::client::ser_de::{SerializeRequest, SharedRequestSerializer};
 use aws_smithy_types::config_bag::ConfigBag;
-use criterion::{criterion_group, criterion_main, Criterion};
 
 macro_rules! attr_s {
     ($str_val:expr) => {
@@ -42,7 +54,17 @@ fn do_bench(input: &PutItemInput) {
     let serializer = config
         .load::<SharedRequestSerializer>()
         .expect("operation should set a serializer");
+
+    // Create a config bag with the required SharedClientProtocol
     let mut config_bag = ConfigBag::base();
+    let protocol = aws_smithy_json::protocol::aws_json_rpc::AwsJsonRpcProtocol::aws_json_1_0(
+        "DynamoDB_20120810",
+    );
+    let shared_protocol = aws_smithy_schema::protocol::SharedClientProtocol::new(protocol);
+    let mut layer = aws_smithy_types::config_bag::Layer::new("bench");
+    layer.store_put(shared_protocol);
+    config_bag.push_shared_layer(layer.freeze());
+
     let input = Input::erase(input.clone());
 
     let request = serializer
@@ -77,6 +99,12 @@ fn bench_group(c: &mut Criterion) {
             .expect("valid input");
         b.iter(|| do_bench(&input))
     });
+}
+*/
+// --- END schema-serde bench (disabled) ---
+
+fn bench_group(_c: &mut Criterion) {
+    // no-op while schema-serde is disabled; see module note above.
 }
 
 criterion_group!(benches, bench_group);

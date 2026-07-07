@@ -113,6 +113,9 @@ pub struct DbInstance {
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The network type of the DB instance. Inherited from the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl DbInstance {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -347,6 +350,11 @@ impl DbInstance {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The network type of the DB instance. Inherited from the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -412,6 +420,7 @@ pub struct DbInstanceBuilder {
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceBuilder {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -1216,6 +1225,23 @@ impl DbInstanceBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>The network type of the DB instance. Inherited from the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network type of the DB instance. Inherited from the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the DB instance. Inherited from the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -1272,6 +1298,7 @@ impl DbInstanceBuilder {
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
             deletion_protection: self.deletion_protection,
+            network_type: self.network_type,
         }
     }
 }

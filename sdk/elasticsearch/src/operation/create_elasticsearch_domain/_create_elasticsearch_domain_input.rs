@@ -37,6 +37,11 @@ pub struct CreateElasticsearchDomainInput {
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the deployment strategy options.</p>
     pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>,
 }
 impl CreateElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -111,6 +116,13 @@ impl CreateElasticsearchDomainInput {
     pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
         self.deployment_strategy_options.as_ref()
     }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn automated_snapshot_pause_options(&self) -> ::std::option::Option<&crate::types::AutomatedSnapshotPauseRequestOptions> {
+        self.automated_snapshot_pause_options.as_ref()
+    }
 }
 impl CreateElasticsearchDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainInput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainInput).
@@ -140,6 +152,7 @@ pub struct CreateElasticsearchDomainInputBuilder {
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsInput>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    pub(crate) automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>,
 }
 impl CreateElasticsearchDomainInputBuilder {
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -411,6 +424,29 @@ impl CreateElasticsearchDomainInputBuilder {
     pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
         &self.deployment_strategy_options
     }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn automated_snapshot_pause_options(mut self, input: crate::types::AutomatedSnapshotPauseRequestOptions) -> Self {
+        self.automated_snapshot_pause_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn set_automated_snapshot_pause_options(mut self, input: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>) -> Self {
+        self.automated_snapshot_pause_options = input;
+        self
+    }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn get_automated_snapshot_pause_options(&self) -> &::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions> {
+        &self.automated_snapshot_pause_options
+    }
     /// Consumes the builder and constructs a [`CreateElasticsearchDomainInput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainInput).
     pub fn build(
         self,
@@ -436,6 +472,7 @@ impl CreateElasticsearchDomainInputBuilder {
             auto_tune_options: self.auto_tune_options,
             tag_list: self.tag_list,
             deployment_strategy_options: self.deployment_strategy_options,
+            automated_snapshot_pause_options: self.automated_snapshot_pause_options,
         })
     }
 }

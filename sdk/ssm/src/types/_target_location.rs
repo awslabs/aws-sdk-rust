@@ -16,9 +16,7 @@ pub struct TargetLocation {
     pub execution_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub target_location_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
-    /// <p>This parameter is not supported by State Manager.</p>
-    /// </note>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
     pub include_child_organization_units: bool,
     /// <p>Amazon Web Services accounts or organizational units to exclude as expanded targets.</p>
     pub exclude_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -59,9 +57,7 @@ impl TargetLocation {
     pub fn target_location_alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
         self.target_location_alarm_configuration.as_ref()
     }
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
-    /// <p>This parameter is not supported by State Manager.</p>
-    /// </note>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
     pub fn include_child_organization_units(&self) -> bool {
         self.include_child_organization_units
     }
@@ -207,23 +203,17 @@ impl TargetLocationBuilder {
     pub fn get_target_location_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.target_location_alarm_configuration
     }
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
-    /// <p>This parameter is not supported by State Manager.</p>
-    /// </note>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
     pub fn include_child_organization_units(mut self, input: bool) -> Self {
         self.include_child_organization_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
-    /// <p>This parameter is not supported by State Manager.</p>
-    /// </note>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
     pub fn set_include_child_organization_units(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_child_organization_units = input;
         self
     }
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
-    /// <p>This parameter is not supported by State Manager.</p>
-    /// </note>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
     pub fn get_include_child_organization_units(&self) -> &::std::option::Option<bool> {
         &self.include_child_organization_units
     }

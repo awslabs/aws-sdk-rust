@@ -2,10 +2,16 @@
 pub(crate) fn de_campaign<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Campaign>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,7 @@ where
                         }
                         "channelSubtypeConfig" => {
                             builder = builder.set_channel_subtype_config(
-                                crate::protocol_serde::shape_channel_subtype_config::de_channel_subtype_config(tokens, _value)?,
+                                crate::protocol_serde::shape_channel_subtype_config::de_channel_subtype_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "type" => {
@@ -56,7 +62,7 @@ where
                             );
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value, depth + 1)?);
                         }
                         "connectCampaignFlowArn" => {
                             builder = builder.set_connect_campaign_flow_arn(
@@ -66,24 +72,27 @@ where
                             );
                         }
                         "schedule" => {
-                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
+                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value, depth + 1)?);
                         }
                         "entryLimitsConfig" => {
-                            builder = builder
-                                .set_entry_limits_config(crate::protocol_serde::shape_entry_limits_config::de_entry_limits_config(tokens, _value)?);
+                            builder = builder.set_entry_limits_config(crate::protocol_serde::shape_entry_limits_config::de_entry_limits_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "communicationTimeConfig" => {
                             builder = builder.set_communication_time_config(
-                                crate::protocol_serde::shape_communication_time_config::de_communication_time_config(tokens, _value)?,
+                                crate::protocol_serde::shape_communication_time_config::de_communication_time_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "communicationLimitsOverride" => {
                             builder = builder.set_communication_limits_override(
-                                crate::protocol_serde::shape_communication_limits_config::de_communication_limits_config(tokens, _value)?,
+                                crate::protocol_serde::shape_communication_limits_config::de_communication_limits_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

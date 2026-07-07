@@ -12,5 +12,8 @@ pub fn ser_update_recommender_input_input(
         crate::protocol_serde::shape_recommender_config::ser_recommender_config(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.recommender_version_name {
+        object.key("RecommenderVersionName").string(var_4.as_str());
+    }
     Ok(())
 }

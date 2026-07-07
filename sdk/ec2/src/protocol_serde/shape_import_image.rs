@@ -40,6 +40,8 @@ pub fn de_import_image(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ImportImageResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ImportImageResponse got {start_el:?}"
@@ -182,7 +184,7 @@ pub fn de_import_image(
             s if s.matches("snapshotDetailSet") /* SnapshotDetails com.amazonaws.ec2.synthetic#ImportImageOutput$SnapshotDetails */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_detail_list::de_snapshot_detail_list(&mut tag)
+                        crate::protocol_serde::shape_snapshot_detail_list::de_snapshot_detail_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -218,7 +220,7 @@ pub fn de_import_image(
             s if s.matches("licenseSpecifications") /* LicenseSpecifications com.amazonaws.ec2.synthetic#ImportImageOutput$LicenseSpecifications */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_import_image_license_specification_list_response::de_import_image_license_specification_list_response(&mut tag)
+                        crate::protocol_serde::shape_import_image_license_specification_list_response::de_import_image_license_specification_list_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -228,7 +230,7 @@ pub fn de_import_image(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#ImportImageOutput$Tags */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

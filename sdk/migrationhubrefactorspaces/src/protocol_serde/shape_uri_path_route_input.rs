@@ -2,10 +2,16 @@
 pub(crate) fn de_uri_path_route_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UriPathRouteInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,7 @@ where
                             );
                         }
                         "Methods" => {
-                            builder = builder.set_methods(crate::protocol_serde::shape_http_methods::de_http_methods(tokens, _value)?);
+                            builder = builder.set_methods(crate::protocol_serde::shape_http_methods::de_http_methods(tokens, _value, depth + 1)?);
                         }
                         "IncludeChildPaths" => {
                             builder = builder.set_include_child_paths(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

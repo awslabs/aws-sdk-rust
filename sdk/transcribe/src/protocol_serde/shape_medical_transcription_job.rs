@@ -2,10 +2,16 @@
 pub(crate) fn de_medical_transcription_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MedicalTranscriptionJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,10 +57,14 @@ where
                             );
                         }
                         "Media" => {
-                            builder = builder.set_media(crate::protocol_serde::shape_media::de_media(tokens, _value)?);
+                            builder = builder.set_media(crate::protocol_serde::shape_media::de_media(tokens, _value, depth + 1)?);
                         }
                         "Transcript" => {
-                            builder = builder.set_transcript(crate::protocol_serde::shape_medical_transcript::de_medical_transcript(tokens, _value)?);
+                            builder = builder.set_transcript(crate::protocol_serde::shape_medical_transcript::de_medical_transcript(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StartTime" => {
                             builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -83,7 +93,11 @@ where
                         }
                         "Settings" => {
                             builder = builder.set_settings(
-                                crate::protocol_serde::shape_medical_transcription_setting::de_medical_transcription_setting(tokens, _value)?,
+                                crate::protocol_serde::shape_medical_transcription_setting::de_medical_transcription_setting(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ContentIdentificationType" => {
@@ -108,7 +122,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

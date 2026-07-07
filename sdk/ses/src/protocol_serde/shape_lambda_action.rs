@@ -25,7 +25,11 @@ pub fn ser_lambda_action(
 #[allow(clippy::needless_question_mark)]
 pub fn de_lambda_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LambdaAction, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LambdaAction::builder();
     while let Some(mut tag) = decoder.next_tag() {

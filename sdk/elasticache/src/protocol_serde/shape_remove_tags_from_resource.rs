@@ -338,6 +338,8 @@ pub fn de_remove_tags_from_resource(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RemoveTagsFromResourceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RemoveTagsFromResourceResponse got {start_el:?}"
@@ -355,7 +357,7 @@ pub fn de_remove_tags_from_resource(
             s if s.matches("TagList") /* TagList com.amazonaws.elasticache.synthetic#RemoveTagsFromResourceOutput$TagList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

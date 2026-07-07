@@ -105,6 +105,15 @@ pub struct DbCluster {
     /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
     /// </ul>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication.</p></li>
+    /// </ul>
+    pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl DbCluster {
     /// <p><code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
@@ -311,6 +320,17 @@ impl DbCluster {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication.</p></li>
+    /// </ul>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::types::DbCluster).
@@ -368,6 +388,7 @@ pub struct DbClusterBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterBuilder {
     /// <p><code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
@@ -1078,6 +1099,41 @@ impl DbClusterBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication.</p></li>
+    /// </ul>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication.</p></li>
+    /// </ul>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication.</p></li>
+    /// </ul>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -1126,6 +1182,7 @@ impl DbClusterBuilder {
             global_cluster_identifier: self.global_cluster_identifier,
             io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
             storage_type: self.storage_type,
+            network_type: self.network_type,
         }
     }
 }

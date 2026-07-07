@@ -51,6 +51,8 @@ pub fn de_revoke_security_group_ingress(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RevokeSecurityGroupIngressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RevokeSecurityGroupIngressResponse got {start_el:?}"
@@ -76,7 +78,7 @@ pub fn de_revoke_security_group_ingress(
             s if s.matches("unknownIpPermissionSet") /* UnknownIpPermissions com.amazonaws.ec2.synthetic#RevokeSecurityGroupIngressOutput$UnknownIpPermissions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_ip_permission_list::de_ip_permission_list(&mut tag)
+                        crate::protocol_serde::shape_ip_permission_list::de_ip_permission_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +88,7 @@ pub fn de_revoke_security_group_ingress(
             s if s.matches("revokedSecurityGroupRuleSet") /* RevokedSecurityGroupRules com.amazonaws.ec2.synthetic#RevokeSecurityGroupIngressOutput$RevokedSecurityGroupRules */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_revoked_security_group_rule_list::de_revoked_security_group_rule_list(&mut tag)
+                        crate::protocol_serde::shape_revoked_security_group_rule_list::de_revoked_security_group_rule_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

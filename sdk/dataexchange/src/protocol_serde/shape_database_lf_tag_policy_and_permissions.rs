@@ -30,10 +30,16 @@ pub fn ser_database_lf_tag_policy_and_permissions(
 pub(crate) fn de_database_lf_tag_policy_and_permissions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DatabaseLfTagPolicyAndPermissions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Expression" => {
-                            builder = builder.set_expression(crate::protocol_serde::shape_list_of_lf_tags::de_list_of_lf_tags(tokens, _value)?);
+                            builder = builder.set_expression(crate::protocol_serde::shape_list_of_lf_tags::de_list_of_lf_tags(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Permissions" => {
                             builder = builder.set_permissions(
-                                    crate::protocol_serde::shape_list_of_database_lf_tag_policy_permissions::de_list_of_database_lf_tag_policy_permissions(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_database_lf_tag_policy_permissions::de_list_of_database_lf_tag_policy_permissions(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

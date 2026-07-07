@@ -49,10 +49,16 @@ pub fn ser_partner_app_config(
 pub(crate) fn de_partner_app_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PartnerAppConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,22 +70,28 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AdminUsers" => {
                             builder = builder.set_admin_users(
-                                crate::protocol_serde::shape_partner_app_admin_user_list::de_partner_app_admin_user_list(tokens, _value)?,
+                                crate::protocol_serde::shape_partner_app_admin_user_list::de_partner_app_admin_user_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Arguments" => {
                             builder = builder.set_arguments(crate::protocol_serde::shape_partner_app_arguments::de_partner_app_arguments(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "AssignedGroupPatterns" => {
                             builder = builder.set_assigned_group_patterns(
-                                crate::protocol_serde::shape_assigned_group_patterns_list::de_assigned_group_patterns_list(tokens, _value)?,
+                                crate::protocol_serde::shape_assigned_group_patterns_list::de_assigned_group_patterns_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "RoleGroupAssignments" => {
                             builder = builder.set_role_group_assignments(
-                                crate::protocol_serde::shape_role_group_assignments_list::de_role_group_assignments_list(tokens, _value)?,
+                                crate::protocol_serde::shape_role_group_assignments_list::de_role_group_assignments_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

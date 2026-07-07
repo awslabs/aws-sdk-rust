@@ -45,16 +45,28 @@ pub fn ser_telemetry_destination_configuration(
         crate::protocol_serde::shape_log_delivery_parameters::ser_log_delivery_parameters(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.msk_monitoring_parameters {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("MskMonitoringParameters").start_object();
+        crate::protocol_serde::shape_msk_monitoring_parameters::ser_msk_monitoring_parameters(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_telemetry_destination_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TelemetryDestinationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -87,29 +99,36 @@ where
                         }
                         "VPCFlowLogParameters" => {
                             builder = builder.set_vpc_flow_log_parameters(
-                                crate::protocol_serde::shape_vpc_flow_log_parameters::de_vpc_flow_log_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_vpc_flow_log_parameters::de_vpc_flow_log_parameters(tokens, _value, depth + 1)?,
                             );
                         }
                         "CloudtrailParameters" => {
                             builder = builder.set_cloudtrail_parameters(
-                                crate::protocol_serde::shape_cloudtrail_parameters::de_cloudtrail_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_cloudtrail_parameters::de_cloudtrail_parameters(tokens, _value, depth + 1)?,
                             );
                         }
                         "ELBLoadBalancerLoggingParameters" => {
                             builder = builder.set_elb_load_balancer_logging_parameters(
                                 crate::protocol_serde::shape_elb_load_balancer_logging_parameters::de_elb_load_balancer_logging_parameters(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "WAFLoggingParameters" => {
                             builder = builder.set_waf_logging_parameters(
-                                crate::protocol_serde::shape_waf_logging_parameters::de_waf_logging_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_waf_logging_parameters::de_waf_logging_parameters(tokens, _value, depth + 1)?,
                             );
                         }
                         "LogDeliveryParameters" => {
                             builder = builder.set_log_delivery_parameters(
-                                crate::protocol_serde::shape_log_delivery_parameters::de_log_delivery_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_log_delivery_parameters::de_log_delivery_parameters(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "MskMonitoringParameters" => {
+                            builder = builder.set_msk_monitoring_parameters(
+                                crate::protocol_serde::shape_msk_monitoring_parameters::de_msk_monitoring_parameters(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

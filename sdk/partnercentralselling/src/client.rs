@@ -193,6 +193,8 @@ mod get_engagement_invitation;
 
 mod get_opportunity;
 
+mod get_prospecting_from_engagement_task;
+
 mod get_resource_snapshot;
 
 mod get_resource_snapshot_job;
@@ -215,6 +217,8 @@ mod list_opportunities;
 
 mod list_opportunity_from_engagement_tasks;
 
+mod list_prospecting_from_engagement_tasks;
+
 mod list_resource_snapshot_jobs;
 
 mod list_resource_snapshots;
@@ -232,6 +236,8 @@ mod start_engagement_by_accepting_invitation_task;
 mod start_engagement_from_opportunity_task;
 
 mod start_opportunity_from_engagement_task;
+
+mod start_prospecting_from_engagement_task;
 
 mod start_resource_snapshot_job;
 

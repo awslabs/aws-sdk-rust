@@ -118,6 +118,8 @@ pub fn de_describe_cache_security_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeCacheSecurityGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeCacheSecurityGroupsResponse got {start_el:?}"
@@ -148,7 +150,7 @@ pub fn de_describe_cache_security_groups(
             s if s.matches("CacheSecurityGroups") /* CacheSecurityGroups com.amazonaws.elasticache.synthetic#DescribeCacheSecurityGroupsOutput$CacheSecurityGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_cache_security_groups::de_cache_security_groups(&mut tag)
+                        crate::protocol_serde::shape_cache_security_groups::de_cache_security_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;

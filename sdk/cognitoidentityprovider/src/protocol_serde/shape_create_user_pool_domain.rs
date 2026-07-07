@@ -118,6 +118,22 @@ pub fn de_create_user_pool_domain_http_error(
             }
             tmp
         }),
+        "OperationNotEnabledException" => crate::operation::create_user_pool_domain::CreateUserPoolDomainError::OperationNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotEnabledExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_not_enabled_exception::de_operation_not_enabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_user_pool_domain::CreateUserPoolDomainError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::create_user_pool_domain::CreateUserPoolDomainError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -175,6 +191,8 @@ pub(crate) fn de_create_user_pool_domain(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -193,6 +211,9 @@ pub(crate) fn de_create_user_pool_domain(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "Routing" => {
+                    builder = builder.set_routing(crate::protocol_serde::shape_routing_type::de_routing_type(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

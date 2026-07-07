@@ -22,7 +22,9 @@ impl crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCer
 }
 /// Fluent builder constructing a request to `RemoveTagsFromCertificate`.
 ///
-/// <p>Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value.</p>
+/// <p>Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value.</p><note>
+/// <p>This action applies only to the <code>certificate</code> resource type. For all other ACM resource types, use <code>UntagResource</code> instead.</p>
+/// </note>
 /// <p>To add tags to a certificate, use the <code>AddTagsToCertificate</code> action. To view all of the tags that have been applied to a specific ACM certificate, use the <code>ListTagsForCertificate</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFromCertificateFluentBuilder {

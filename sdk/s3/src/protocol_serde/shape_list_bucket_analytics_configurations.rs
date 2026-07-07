@@ -69,6 +69,8 @@ pub fn de_list_bucket_analytics_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListBucketAnalyticsConfigurationResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListBucketAnalyticsConfigurationResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -123,7 +125,7 @@ pub fn de_list_bucket_analytics_configurations(
                         Result::<::std::vec::Vec::<crate::types::AnalyticsConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_7 = builder.analytics_configuration_list.take().unwrap_or_default();
                             list_7.push(
-                                crate::protocol_serde::shape_analytics_configuration::de_analytics_configuration(&mut tag)
+                                crate::protocol_serde::shape_analytics_configuration::de_analytics_configuration(&mut tag, depth + 1)
                                 ?
                             );
                             list_7

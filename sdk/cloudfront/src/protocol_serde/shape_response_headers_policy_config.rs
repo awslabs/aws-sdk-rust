@@ -52,7 +52,11 @@ pub fn ser_response_headers_policy_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -86,7 +90,7 @@ pub fn de_response_headers_policy_config(
             s if s.matches("CorsConfig") /* CorsConfig com.amazonaws.cloudfront#ResponseHeadersPolicyConfig$CorsConfig */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_cors_config::de_response_headers_policy_cors_config(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_cors_config::de_response_headers_policy_cors_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -96,7 +100,7 @@ pub fn de_response_headers_policy_config(
             s if s.matches("SecurityHeadersConfig") /* SecurityHeadersConfig com.amazonaws.cloudfront#ResponseHeadersPolicyConfig$SecurityHeadersConfig */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_security_headers_config::de_response_headers_policy_security_headers_config(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_security_headers_config::de_response_headers_policy_security_headers_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -106,7 +110,7 @@ pub fn de_response_headers_policy_config(
             s if s.matches("ServerTimingHeadersConfig") /* ServerTimingHeadersConfig com.amazonaws.cloudfront#ResponseHeadersPolicyConfig$ServerTimingHeadersConfig */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_server_timing_headers_config::de_response_headers_policy_server_timing_headers_config(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_server_timing_headers_config::de_response_headers_policy_server_timing_headers_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -116,7 +120,7 @@ pub fn de_response_headers_policy_config(
             s if s.matches("CustomHeadersConfig") /* CustomHeadersConfig com.amazonaws.cloudfront#ResponseHeadersPolicyConfig$CustomHeadersConfig */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_custom_headers_config::de_response_headers_policy_custom_headers_config(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_custom_headers_config::de_response_headers_policy_custom_headers_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -126,7 +130,7 @@ pub fn de_response_headers_policy_config(
             s if s.matches("RemoveHeadersConfig") /* RemoveHeadersConfig com.amazonaws.cloudfront#ResponseHeadersPolicyConfig$RemoveHeadersConfig */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_remove_headers_config::de_response_headers_policy_remove_headers_config(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_remove_headers_config::de_response_headers_policy_remove_headers_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

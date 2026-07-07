@@ -2,10 +2,16 @@
 pub(crate) fn de_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Source>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,7 @@ where
                                 );
                             }
                             "decryption" => {
-                                builder = builder.set_decryption(crate::protocol_serde::shape_encryption::de_encryption(tokens, _value)?);
+                                builder = builder.set_decryption(crate::protocol_serde::shape_encryption::de_encryption(tokens, _value, depth + 1)?);
                             }
                             "description" => {
                                 builder = builder.set_description(
@@ -56,7 +62,7 @@ where
                             }
                             "mediaStreamSourceConfigurations" => {
                                 builder = builder.set_media_stream_source_configurations(
-                                    crate::protocol_serde::shape_list_of_media_stream_source_configuration::de_list_of_media_stream_source_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_media_stream_source_configuration::de_list_of_media_stream_source_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "name" => {
@@ -88,7 +94,7 @@ where
                                 );
                             }
                             "transport" => {
-                                builder = builder.set_transport(crate::protocol_serde::shape_transport::de_transport(tokens, _value)?);
+                                builder = builder.set_transport(crate::protocol_serde::shape_transport::de_transport(tokens, _value, depth + 1)?);
                             }
                             "vpcInterfaceName" => {
                                 builder = builder.set_vpc_interface_name(
@@ -106,7 +112,7 @@ where
                             }
                             "gatewayBridgeSource" => {
                                 builder = builder.set_gateway_bridge_source(
-                                    crate::protocol_serde::shape_gateway_bridge_source::de_gateway_bridge_source(tokens, _value)?,
+                                    crate::protocol_serde::shape_gateway_bridge_source::de_gateway_bridge_source(tokens, _value, depth + 1)?,
                                 );
                             }
                             "peerIpAddress" => {
@@ -125,7 +131,7 @@ where
                             }
                             "routerIntegrationTransitDecryption" => {
                                 builder = builder.set_router_integration_transit_decryption(
-                                    crate::protocol_serde::shape_flow_transit_encryption::de_flow_transit_encryption(tokens, _value)?,
+                                    crate::protocol_serde::shape_flow_transit_encryption::de_flow_transit_encryption(tokens, _value, depth + 1)?,
                                 );
                             }
                             "connectedRouterOutputArn" => {

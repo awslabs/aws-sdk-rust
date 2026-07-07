@@ -26,6 +26,8 @@ pub struct AnalyzerSummary {
     pub status_reason: ::std::option::Option<crate::types::StatusReason>,
     /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer. The <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html">GetAnalyzer</a> action includes this property in its response if a configuration is specified, while the <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html">ListAnalyzers</a> action omits it.</p>
     pub configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
+    /// <p>The service principal that manages this analyzer (for example, <code>securityhubv2.amazonaws.com</code>). This field is only present for service-linked analyzers and is not included for customer-managed analyzers.</p>
+    pub managed_by: ::std::option::Option<::std::string::String>,
 }
 impl AnalyzerSummary {
     /// <p>The ARN of the analyzer.</p>
@@ -72,6 +74,10 @@ impl AnalyzerSummary {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnalyzerConfiguration> {
         self.configuration.as_ref()
     }
+    /// <p>The service principal that manages this analyzer (for example, <code>securityhubv2.amazonaws.com</code>). This field is only present for service-linked analyzers and is not included for customer-managed analyzers.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&str> {
+        self.managed_by.as_deref()
+    }
 }
 impl AnalyzerSummary {
     /// Creates a new builder-style object to manufacture [`AnalyzerSummary`](crate::types::AnalyzerSummary).
@@ -94,6 +100,7 @@ pub struct AnalyzerSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AnalyzerStatus>,
     pub(crate) status_reason: ::std::option::Option<crate::types::StatusReason>,
     pub(crate) configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
+    pub(crate) managed_by: ::std::option::Option<::std::string::String>,
 }
 impl AnalyzerSummaryBuilder {
     /// <p>The ARN of the analyzer.</p>
@@ -253,6 +260,20 @@ impl AnalyzerSummaryBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnalyzerConfiguration> {
         &self.configuration
     }
+    /// <p>The service principal that manages this analyzer (for example, <code>securityhubv2.amazonaws.com</code>). This field is only present for service-linked analyzers and is not included for customer-managed analyzers.</p>
+    pub fn managed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The service principal that manages this analyzer (for example, <code>securityhubv2.amazonaws.com</code>). This field is only present for service-linked analyzers and is not included for customer-managed analyzers.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>The service principal that manages this analyzer (for example, <code>securityhubv2.amazonaws.com</code>). This field is only present for service-linked analyzers and is not included for customer-managed analyzers.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by
+    }
     /// Consumes the builder and constructs a [`AnalyzerSummary`](crate::types::AnalyzerSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::AnalyzerSummaryBuilder::arn)
@@ -297,6 +318,7 @@ impl AnalyzerSummaryBuilder {
             })?,
             status_reason: self.status_reason,
             configuration: self.configuration,
+            managed_by: self.managed_by,
         })
     }
 }

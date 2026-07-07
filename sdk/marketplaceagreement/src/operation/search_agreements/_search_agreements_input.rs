@@ -13,7 +13,7 @@ pub struct SearchAgreementsInput {
     /// <li>
     /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. Use <code>Proposer</code> or <code>Acceptor</code>.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -50,7 +50,7 @@ impl SearchAgreementsInput {
     /// <li>
     /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. Use <code>Proposer</code> or <code>Acceptor</code>.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -128,7 +128,7 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. Use <code>Proposer</code> or <code>Acceptor</code>.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -158,7 +158,7 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. Use <code>Proposer</code> or <code>Acceptor</code>.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -186,7 +186,7 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. Use <code>Proposer</code> or <code>Acceptor</code>.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>

@@ -190,10 +190,11 @@ pub(crate) fn de_get_idle_recommendations(
     crate::operation::get_idle_recommendations::builders::GetIdleRecommendationsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_idle_recommendations::builders::GetIdleRecommendationsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_idle_recommendations::builders::GetIdleRecommendationsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -203,11 +204,16 @@ pub(crate) fn de_get_idle_recommendations(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
             }
             "idleRecommendations" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_idle_recommendations(Some(crate::protocol_serde::shape_idle_recommendations::de_idle_recommendations(decoder)?)))
+                Ok(
+                    builder.set_idle_recommendations(Some(crate::protocol_serde::shape_idle_recommendations::de_idle_recommendations(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "errors" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_errors(Some(
-                    crate::protocol_serde::shape_idle_recommendation_errors::de_idle_recommendation_errors(decoder)?,
+                    crate::protocol_serde::shape_idle_recommendation_errors::de_idle_recommendation_errors(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -219,6 +225,8 @@ pub(crate) fn de_get_idle_recommendations(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -228,13 +236,13 @@ pub(crate) fn de_get_idle_recommendations(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

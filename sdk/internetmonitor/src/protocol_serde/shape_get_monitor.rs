@@ -106,6 +106,8 @@ pub(crate) fn de_get_monitor(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -119,12 +121,18 @@ pub(crate) fn de_get_monitor(
                 }
                 "HealthEventsConfig" => {
                     builder = builder.set_health_events_config(crate::protocol_serde::shape_health_events_config::de_health_events_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "InternetMeasurementsLogDelivery" => {
                     builder = builder.set_internet_measurements_log_delivery(
-                        crate::protocol_serde::shape_internet_measurements_log_delivery::de_internet_measurements_log_delivery(tokens, _value)?,
+                        crate::protocol_serde::shape_internet_measurements_log_delivery::de_internet_measurements_log_delivery(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "MaxCityNetworksToMonitor" => {
@@ -169,7 +177,7 @@ pub(crate) fn de_get_monitor(
                     );
                 }
                 "Resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape_set_of_arns::de_set_of_arns(tokens, _value)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_set_of_arns::de_set_of_arns(tokens, _value, depth + 1)?);
                 }
                 "Status" => {
                     builder = builder.set_status(
@@ -179,7 +187,7 @@ pub(crate) fn de_get_monitor(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "TrafficPercentageToMonitor" => {
                     builder = builder.set_traffic_percentage_to_monitor(

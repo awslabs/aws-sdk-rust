@@ -2,10 +2,16 @@
 pub(crate) fn de_service_job_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceJobSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,13 +23,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "latestAttempt" => {
                             builder = builder.set_latest_attempt(
-                                crate::protocol_serde::shape_latest_service_job_attempt::de_latest_service_job_attempt(tokens, _value)?,
+                                crate::protocol_serde::shape_latest_service_job_attempt::de_latest_service_job_attempt(tokens, _value, depth + 1)?,
                             );
                         }
                         "capacityUsage" => {
                             builder = builder.set_capacity_usage(
                                 crate::protocol_serde::shape_service_job_capacity_usage_summary_list::de_service_job_capacity_usage_summary_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

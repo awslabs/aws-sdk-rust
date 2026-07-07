@@ -2,10 +2,16 @@
 pub(crate) fn de_spark_emr_properties_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SparkEmrPropertiesOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,11 @@ where
                             );
                         }
                         "credentials" => {
-                            builder = builder.set_credentials(crate::protocol_serde::shape_username_password::de_username_password(tokens, _value)?);
+                            builder = builder.set_credentials(crate::protocol_serde::shape_username_password::de_username_password(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "credentialsExpiration" => {
                             builder = builder.set_credentials_expiration(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -103,7 +113,11 @@ where
                         }
                         "managedEndpointCredentials" => {
                             builder = builder.set_managed_endpoint_credentials(
-                                crate::protocol_serde::shape_managed_endpoint_credentials::de_managed_endpoint_credentials(tokens, _value)?,
+                                crate::protocol_serde::shape_managed_endpoint_credentials::de_managed_endpoint_credentials(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

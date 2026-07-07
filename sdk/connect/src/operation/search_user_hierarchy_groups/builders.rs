@@ -22,7 +22,7 @@ impl crate::operation::search_user_hierarchy_groups::builders::SearchUserHierarc
 }
 /// Fluent builder constructing a request to `SearchUserHierarchyGroups`.
 ///
-/// <p>Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.</p><important>
+/// <p>Searches UserHierarchyGroups in an Connect Customer instance, with optional filtering.</p><important>
 /// <p>The UserHierarchyGroup with <code>"LevelId": "0"</code> is the foundation for building levels on top of an instance. It is not user-definable, nor is it visible in the UI.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,17 +116,17 @@ impl SearchUserHierarchyGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_user_hierarchy_groups::paginator::SearchUserHierarchyGroupsPaginator {
         crate::operation::search_user_hierarchy_groups::paginator::SearchUserHierarchyGroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

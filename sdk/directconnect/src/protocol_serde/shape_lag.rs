@@ -2,10 +2,16 @@
 pub(crate) fn de_lag<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Lag>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -100,7 +106,11 @@ where
                             );
                         }
                         "connections" => {
-                            builder = builder.set_connections(crate::protocol_serde::shape_connection_list::de_connection_list(tokens, _value)?);
+                            builder = builder.set_connections(crate::protocol_serde::shape_connection_list::de_connection_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "allowsHostedConnections" => {
                             builder =
@@ -117,7 +127,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "providerName" => {
                             builder = builder.set_provider_name(
@@ -137,7 +147,18 @@ where
                             );
                         }
                         "macSecKeys" => {
-                            builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(tokens, _value)?);
+                            builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "rateLimiterStatus" => {
+                            builder = builder.set_rate_limiter_status(crate::protocol_serde::shape_rate_limiter_status::de_rate_limiter_status(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -44,6 +44,8 @@ pub struct ImageRecipe {
     pub additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
     /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
     pub ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The AMI watermark names attached to the output AMI from this recipe. AMI watermarks are lineage markers that automatically propagate to derivative AMIs when the source AMI is copied or distributed.</p>
+    pub ami_watermarks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
@@ -120,6 +122,12 @@ impl ImageRecipe {
     pub fn ami_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.ami_tags.as_ref()
     }
+    /// <p>The AMI watermark names attached to the output AMI from this recipe. AMI watermarks are lineage markers that automatically propagate to derivative AMIs when the source AMI is copied or distributed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ami_watermarks.is_none()`.
+    pub fn ami_watermarks(&self) -> &[::std::string::String] {
+        self.ami_watermarks.as_deref().unwrap_or_default()
+    }
 }
 impl ImageRecipe {
     /// Creates a new builder-style object to manufacture [`ImageRecipe`](crate::types::ImageRecipe).
@@ -147,6 +155,7 @@ pub struct ImageRecipeBuilder {
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
     pub(crate) ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ami_watermarks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImageRecipeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
@@ -413,6 +422,26 @@ impl ImageRecipeBuilder {
     pub fn get_ami_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.ami_tags
     }
+    /// Appends an item to `ami_watermarks`.
+    ///
+    /// To override the contents of this collection use [`set_ami_watermarks`](Self::set_ami_watermarks).
+    ///
+    /// <p>The AMI watermark names attached to the output AMI from this recipe. AMI watermarks are lineage markers that automatically propagate to derivative AMIs when the source AMI is copied or distributed.</p>
+    pub fn ami_watermarks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ami_watermarks.unwrap_or_default();
+        v.push(input.into());
+        self.ami_watermarks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The AMI watermark names attached to the output AMI from this recipe. AMI watermarks are lineage markers that automatically propagate to derivative AMIs when the source AMI is copied or distributed.</p>
+    pub fn set_ami_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ami_watermarks = input;
+        self
+    }
+    /// <p>The AMI watermark names attached to the output AMI from this recipe. AMI watermarks are lineage markers that automatically propagate to derivative AMIs when the source AMI is copied or distributed.</p>
+    pub fn get_ami_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ami_watermarks
+    }
     /// Consumes the builder and constructs a [`ImageRecipe`](crate::types::ImageRecipe).
     pub fn build(self) -> crate::types::ImageRecipe {
         crate::types::ImageRecipe {
@@ -431,6 +460,7 @@ impl ImageRecipeBuilder {
             working_directory: self.working_directory,
             additional_instance_configuration: self.additional_instance_configuration,
             ami_tags: self.ami_tags,
+            ami_watermarks: self.ami_watermarks,
         }
     }
 }

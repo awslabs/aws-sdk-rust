@@ -14,15 +14,28 @@ pub fn ser_snowcone_device_configuration(
 
 pub(crate) fn de_snowcone_device_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SnowconeDeviceConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::SnowconeDeviceConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::SnowconeDeviceConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "WirelessConnection" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_wireless_connection(Some(crate::protocol_serde::shape_wireless_connection::de_wireless_connection(decoder)?)))
+                Ok(
+                    builder.set_wireless_connection(Some(crate::protocol_serde::shape_wireless_connection::de_wireless_connection(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             _ => {
                 decoder.skip()?;
@@ -42,13 +55,13 @@ pub(crate) fn de_snowcone_device_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

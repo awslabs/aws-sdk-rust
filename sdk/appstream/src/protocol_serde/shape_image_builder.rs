@@ -2,10 +2,16 @@
 pub(crate) fn de_image_builder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ImageBuilder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,7 @@ where
                             );
                         }
                         "VpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "InstanceType" => {
                             builder = builder.set_instance_type(
@@ -83,7 +89,11 @@ where
                         }
                         "StateChangeReason" => {
                             builder = builder.set_state_change_reason(
-                                crate::protocol_serde::shape_image_builder_state_change_reason::de_image_builder_state_change_reason(tokens, _value)?,
+                                crate::protocol_serde::shape_image_builder_state_change_reason::de_image_builder_state_change_reason(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CreatedTime" => {
@@ -97,17 +107,27 @@ where
                                 .set_enable_default_internet_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "DomainJoinInfo" => {
-                            builder =
-                                builder.set_domain_join_info(crate::protocol_serde::shape_domain_join_info::de_domain_join_info(tokens, _value)?);
+                            builder = builder.set_domain_join_info(crate::protocol_serde::shape_domain_join_info::de_domain_join_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "NetworkAccessConfiguration" => {
                             builder = builder.set_network_access_configuration(
-                                crate::protocol_serde::shape_network_access_configuration::de_network_access_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_network_access_configuration::de_network_access_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ImageBuilderErrors" => {
-                            builder =
-                                builder.set_image_builder_errors(crate::protocol_serde::shape_resource_errors::de_resource_errors(tokens, _value)?);
+                            builder = builder.set_image_builder_errors(crate::protocol_serde::shape_resource_errors::de_resource_errors(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AppstreamAgentVersion" => {
                             builder = builder.set_appstream_agent_version(
@@ -118,11 +138,17 @@ where
                         }
                         "AccessEndpoints" => {
                             builder = builder.set_access_endpoints(crate::protocol_serde::shape_access_endpoint_list::de_access_endpoint_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "RootVolumeConfig" => {
-                            builder = builder.set_root_volume_config(crate::protocol_serde::shape_volume_config::de_volume_config(tokens, _value)?);
+                            builder = builder.set_root_volume_config(crate::protocol_serde::shape_volume_config::de_volume_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LatestAppstreamAgentVersion" => {
                             builder = builder.set_latest_appstream_agent_version(

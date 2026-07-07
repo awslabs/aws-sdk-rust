@@ -33,10 +33,16 @@ pub fn ser_vector_ingestion_configuration(
 pub(crate) fn de_vector_ingestion_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VectorIngestionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,24 +54,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "chunkingConfiguration" => {
                             builder = builder.set_chunking_configuration(
-                                crate::protocol_serde::shape_chunking_configuration::de_chunking_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_chunking_configuration::de_chunking_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "customTransformationConfiguration" => {
                             builder = builder.set_custom_transformation_configuration(
                                 crate::protocol_serde::shape_custom_transformation_configuration::de_custom_transformation_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "parsingConfiguration" => {
                             builder = builder.set_parsing_configuration(
-                                crate::protocol_serde::shape_parsing_configuration::de_parsing_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_parsing_configuration::de_parsing_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "contextEnrichmentConfiguration" => {
                             builder = builder.set_context_enrichment_configuration(
-                                crate::protocol_serde::shape_context_enrichment_configuration::de_context_enrichment_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_context_enrichment_configuration::de_context_enrichment_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

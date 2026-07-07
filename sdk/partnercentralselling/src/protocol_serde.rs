@@ -53,6 +53,8 @@ pub(crate) mod shape_get_engagement_invitation;
 
 pub(crate) mod shape_get_opportunity;
 
+pub(crate) mod shape_get_prospecting_from_engagement_task;
+
 pub(crate) mod shape_get_resource_snapshot;
 
 pub(crate) mod shape_get_resource_snapshot_job;
@@ -75,6 +77,8 @@ pub(crate) mod shape_list_opportunities;
 
 pub(crate) mod shape_list_opportunity_from_engagement_tasks;
 
+pub(crate) mod shape_list_prospecting_from_engagement_tasks;
+
 pub(crate) mod shape_list_resource_snapshot_jobs;
 
 pub(crate) mod shape_list_resource_snapshots;
@@ -92,6 +96,8 @@ pub(crate) mod shape_start_engagement_by_accepting_invitation_task;
 pub(crate) mod shape_start_engagement_from_opportunity_task;
 
 pub(crate) mod shape_start_opportunity_from_engagement_task;
+
+pub(crate) mod shape_start_prospecting_from_engagement_task;
 
 pub(crate) mod shape_start_resource_snapshot_job;
 
@@ -149,6 +155,8 @@ pub(crate) mod shape_get_engagement_invitation_input;
 
 pub(crate) mod shape_get_opportunity_input;
 
+pub(crate) mod shape_get_prospecting_from_engagement_task_input;
+
 pub(crate) mod shape_get_resource_snapshot_input;
 
 pub(crate) mod shape_get_resource_snapshot_job_input;
@@ -173,6 +181,8 @@ pub(crate) mod shape_list_opportunities_input;
 
 pub(crate) mod shape_list_opportunity_from_engagement_tasks_input;
 
+pub(crate) mod shape_list_prospecting_from_engagement_tasks_input;
+
 pub(crate) mod shape_list_resource_snapshot_jobs_input;
 
 pub(crate) mod shape_list_resource_snapshots_input;
@@ -194,6 +204,8 @@ pub(crate) mod shape_start_engagement_by_accepting_invitation_task_input;
 pub(crate) mod shape_start_engagement_from_opportunity_task_input;
 
 pub(crate) mod shape_start_opportunity_from_engagement_task_input;
+
+pub(crate) mod shape_start_prospecting_from_engagement_task_input;
 
 pub(crate) mod shape_start_resource_snapshot_job_input;
 
@@ -243,11 +255,15 @@ pub(crate) mod shape_engagement_context_payload;
 
 pub(crate) mod shape_engagement_contexts;
 
+pub(crate) mod shape_engagement_identifier_list;
+
 pub(crate) mod shape_engagement_invitation_summaries;
 
 pub(crate) mod shape_engagement_member_summaries;
 
 pub(crate) mod shape_engagement_members;
+
+pub(crate) mod shape_engagement_prospecting_result_list;
 
 pub(crate) mod shape_engagement_resource_association_summary_list;
 
@@ -284,6 +300,10 @@ pub(crate) mod shape_payload;
 pub(crate) mod shape_primary_needs_from_aws;
 
 pub(crate) mod shape_project;
+
+pub(crate) mod shape_prospecting_from_engagement_task_sort;
+
+pub(crate) mod shape_prospecting_task_summary_list;
 
 pub(crate) mod shape_receiver;
 
@@ -323,6 +343,10 @@ pub(crate) mod shape_aws_marketplace_offer_identifiers;
 
 pub(crate) mod shape_aws_marketplace_offer_set_identifiers;
 
+pub(crate) mod shape_aws_marketplace_product_identifiers;
+
+pub(crate) mod shape_aws_marketplace_solution_identifiers;
+
 pub(crate) mod shape_aws_opportunity_summary_full_view;
 
 pub(crate) mod shape_aws_product_identifiers;
@@ -345,9 +369,13 @@ pub(crate) mod shape_engagement_member;
 
 pub(crate) mod shape_engagement_member_summary;
 
+pub(crate) mod shape_engagement_prospecting_result;
+
 pub(crate) mod shape_engagement_resource_association_summary;
 
 pub(crate) mod shape_engagement_summary;
+
+pub(crate) mod shape_expected_contract_duration;
 
 pub(crate) mod shape_expected_customer_spend;
 
@@ -371,11 +399,19 @@ pub(crate) mod shape_next_steps_history;
 
 pub(crate) mod shape_opportunity_invitation_payload;
 
+pub(crate) mod shape_opportunity_quality;
+
 pub(crate) mod shape_opportunity_summary;
 
 pub(crate) mod shape_opportunity_summary_view;
 
 pub(crate) mod shape_profile_next_steps_histories;
+
+pub(crate) mod shape_prospecting_result;
+
+pub(crate) mod shape_prospecting_task_summary;
+
+pub(crate) mod shape_recommendation_list;
 
 pub(crate) mod shape_resource_snapshot_job_summary;
 
@@ -407,6 +443,8 @@ pub(crate) mod shape_engagement_customer_project_details;
 
 pub(crate) mod shape_lead_customer;
 
+pub(crate) mod shape_lead_insights;
+
 pub(crate) mod shape_lead_interaction;
 
 pub(crate) mod shape_lead_invitation_customer;
@@ -425,7 +463,11 @@ pub(crate) mod shape_project_summary;
 
 pub(crate) mod shape_project_view;
 
+pub(crate) mod shape_prospecting_result_aws;
+
 pub(crate) mod shape_receiver_responsibility_list;
+
+pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_sender_contact_list;
 
@@ -439,6 +481,12 @@ pub(crate) mod shape_aws_products_list;
 
 pub(crate) mod shape_lead_contact;
 
+pub(crate) mod shape_prospecting_insights;
+
+pub(crate) mod shape_prospecting_result_customer;
+
+pub(crate) mod shape_recommendation_attribute_map;
+
 pub(crate) mod shape_sender_contact;
 
 pub(crate) mod shape_aws_product_details;
@@ -450,3 +498,5 @@ pub(crate) mod shape_aws_product_optimizations_list;
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_aws_product_optimization;
+
+pub(crate) mod shape_eligible_programs_list;

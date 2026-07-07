@@ -263,6 +263,8 @@ pub(crate) mod shape_disassociate_mac_sec_key_input;
 
 pub(crate) mod shape_duplicate_tag_keys_exception;
 
+pub(crate) mod shape_limit_exceeded_exception;
+
 pub(crate) mod shape_list_virtual_interface_test_history_input;
 
 pub(crate) mod shape_start_bgp_failover_test_input;
@@ -328,6 +330,8 @@ pub(crate) mod shape_new_public_virtual_interface_allocation;
 pub(crate) mod shape_new_transit_virtual_interface;
 
 pub(crate) mod shape_new_transit_virtual_interface_allocation;
+
+pub(crate) mod shape_rate_limiter_status;
 
 pub(crate) mod shape_resource_tag_list;
 

@@ -22,7 +22,7 @@ impl crate::operation::create_target_domain::builders::CreateTargetDomainInputBu
 }
 /// Fluent builder constructing a request to `CreateTargetDomain`.
 ///
-/// Creates a target domain record
+/// <p>Creates a new target domain for penetration testing. A target domain is a web domain that must be registered and verified before it can be tested.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTargetDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateTargetDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Domain name of the target domain
+    /// <p>The domain name to register as a target domain.</p>
     pub fn target_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_domain_name(input.into());
         self
     }
-    /// Domain name of the target domain
+    /// <p>The domain name to register as a target domain.</p>
     pub fn set_target_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_domain_name(input);
         self
     }
-    /// Domain name of the target domain
+    /// <p>The domain name to register as a target domain.</p>
     pub fn get_target_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_domain_name()
     }
-    /// Verification method for the target domain
+    /// <p>The method to use for verifying domain ownership. Valid values are DNS_TXT, HTTP_ROUTE, and PRIVATE_VPC.</p>
     pub fn verification_method(mut self, input: crate::types::DomainVerificationMethod) -> Self {
         self.inner = self.inner.verification_method(input);
         self
     }
-    /// Verification method for the target domain
+    /// <p>The method to use for verifying domain ownership. Valid values are DNS_TXT, HTTP_ROUTE, and PRIVATE_VPC.</p>
     pub fn set_verification_method(mut self, input: ::std::option::Option<crate::types::DomainVerificationMethod>) -> Self {
         self.inner = self.inner.set_verification_method(input);
         self
     }
-    /// Verification method for the target domain
+    /// <p>The method to use for verifying domain ownership. Valid values are DNS_TXT, HTTP_ROUTE, and PRIVATE_VPC.</p>
     pub fn get_verification_method(&self) -> &::std::option::Option<crate::types::DomainVerificationMethod> {
         self.inner.get_verification_method()
     }
@@ -141,17 +141,17 @@ impl CreateTargetDomainFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags to associate with the target domain
+    /// <p>The tags to associate with the target domain.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Tags to associate with the target domain
+    /// <p>The tags to associate with the target domain.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Tags to associate with the target domain
+    /// <p>The tags to associate with the target domain.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

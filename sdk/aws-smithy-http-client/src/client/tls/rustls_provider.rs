@@ -6,7 +6,7 @@ use crate::client::tls::Provider;
 use rustls::crypto::CryptoProvider;
 
 /// Choice of underlying cryptography library (this only applies to rustls)
-#[derive(Debug, Eq, PartialEq, Clone)]
+#[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum CryptoMode {
     /// Crypto based on [ring](https://github.com/briansmith/ring)
@@ -18,7 +18,38 @@ pub enum CryptoMode {
     /// FIPS compliant variant of [aws-lc](https://github.com/aws/aws-lc-rs)
     #[cfg(feature = "rustls-aws-lc-fips")]
     AwsLcFips,
+    /// Use a caller-supplied [`CryptoProvider`].
+    ///
+    /// Unlike the built-in modes, the cipher-suite restriction normally
+    /// applied by smithy-rs is skipped -- the caller is expected
+    /// to select the applicable cipher suites via the supplied provider.
+    ///
+    /// This variant is provided behind an `aws_sdk_unstable` cfg flag,
+    /// because the version of rustls may change in the future,
+    #[cfg(all(aws_sdk_unstable, feature = "__rustls"))]
+    Custom(CryptoProvider),
 }
+
+impl std::cmp::PartialEq for CryptoMode {
+    fn eq(&self, other: &CryptoMode) -> bool {
+        match (self, other) {
+            #[cfg(feature = "rustls-ring")]
+            (Self::Ring, Self::Ring) => true,
+            #[cfg(feature = "rustls-aws-lc")]
+            (Self::AwsLc, Self::AwsLc) => true,
+            #[cfg(feature = "rustls-aws-lc-fips")]
+            (Self::AwsLcFips, Self::AwsLcFips) => true,
+            // `CryptoProvider` does not implement PartialEq, so any
+            // `CryptoMode::Custom` value will always compare not equal to
+            // any other.
+            #[allow(unreachable_patterns)]
+            _ => false,
+        }
+    }
+}
+
+#[cfg(not(all(aws_sdk_unstable, feature = "__rustls")))]
+impl Eq for CryptoMode {}
 
 impl CryptoMode {
     fn provider(self) -> CryptoProvider {
@@ -38,7 +69,19 @@ impl CryptoMode {
                 );
                 provider
             }
+            #[cfg(all(aws_sdk_unstable, feature = "__rustls"))]
+            CryptoMode::Custom(provider) => provider,
         }
+    }
+
+    #[cfg(all(aws_sdk_unstable, feature = "__rustls"))]
+    fn is_custom(&self) -> bool {
+        matches!(self, Self::Custom(_))
+    }
+
+    #[cfg(not(all(aws_sdk_unstable, feature = "__rustls")))]
+    fn is_custom(&self) -> bool {
+        false
     }
 }
 
@@ -137,8 +180,14 @@ pub(crate) mod build_connector {
         crypto_mode: CryptoMode,
         tls_context: &TlsContext,
     ) -> rustls::ClientConfig {
+        let skip_restrict = crypto_mode.is_custom();
+        let provider = if skip_restrict {
+            crypto_mode.provider()
+        } else {
+            restrict_ciphers(crypto_mode.provider())
+        };
         let root_certs = tls_context.rustls_root_certs();
-        rustls::ClientConfig::builder_with_provider(Arc::new(restrict_ciphers(crypto_mode.provider())))
+        rustls::ClientConfig::builder_with_provider(Arc::new(provider))
             .with_safe_default_protocol_versions()
             .expect("Error with the TLS configuration. Please file a bug report under https://github.com/smithy-lang/smithy-rs/issues.")
             .with_root_certificates(root_certs)

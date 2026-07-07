@@ -2,10 +2,16 @@
 pub(crate) fn de_session_action_definition_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SessionActionDefinitionSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,25 +38,25 @@ where
                     variant = match key.as_ref() {
                             "envEnter" => {
                                 Some(crate::types::SessionActionDefinitionSummary::EnvEnter(
-                                    crate::protocol_serde::shape_environment_enter_session_action_definition_summary::de_environment_enter_session_action_definition_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_environment_enter_session_action_definition_summary::de_environment_enter_session_action_definition_summary(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'envEnter' cannot be null"))?
                                 ))
                             }
                             "envExit" => {
                                 Some(crate::types::SessionActionDefinitionSummary::EnvExit(
-                                    crate::protocol_serde::shape_environment_exit_session_action_definition_summary::de_environment_exit_session_action_definition_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_environment_exit_session_action_definition_summary::de_environment_exit_session_action_definition_summary(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'envExit' cannot be null"))?
                                 ))
                             }
                             "taskRun" => {
                                 Some(crate::types::SessionActionDefinitionSummary::TaskRun(
-                                    crate::protocol_serde::shape_task_run_session_action_definition_summary::de_task_run_session_action_definition_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_task_run_session_action_definition_summary::de_task_run_session_action_definition_summary(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'taskRun' cannot be null"))?
                                 ))
                             }
                             "syncInputJobAttachments" => {
                                 Some(crate::types::SessionActionDefinitionSummary::SyncInputJobAttachments(
-                                    crate::protocol_serde::shape_sync_input_job_attachments_session_action_definition_summary::de_sync_input_job_attachments_session_action_definition_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_sync_input_job_attachments_session_action_definition_summary::de_sync_input_job_attachments_session_action_definition_summary(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'syncInputJobAttachments' cannot be null"))?
                                 ))
                             }

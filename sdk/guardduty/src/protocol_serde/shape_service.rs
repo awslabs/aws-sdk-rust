@@ -2,10 +2,16 @@
 pub(crate) fn de_service<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Service>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,95 +20,101 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "action" => {
+                                builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens, _value, depth + 1)?);
+                            }
+                            "evidence" => {
+                                builder = builder.set_evidence(crate::protocol_serde::shape_evidence::de_evidence(tokens, _value, depth + 1)?);
+                            }
+                            "archived" => {
+                                builder = builder.set_archived(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "count" => {
+                                builder = builder.set_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "detectorId" => {
+                                builder = builder.set_detector_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "eventFirstSeen" => {
+                                builder = builder.set_event_first_seen(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "eventLastSeen" => {
+                                builder = builder.set_event_last_seen(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "resourceRole" => {
+                                builder = builder.set_resource_role(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "serviceName" => {
+                                builder = builder.set_service_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "userFeedback" => {
+                                builder = builder.set_user_feedback(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "additionalInfo" => {
+                                builder = builder.set_additional_info(
+                                    crate::protocol_serde::shape_service_additional_info::de_service_additional_info(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "featureName" => {
+                                builder = builder.set_feature_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ebsVolumeScanDetails" => {
+                                builder = builder.set_ebs_volume_scan_details(
+                                    crate::protocol_serde::shape_ebs_volume_scan_details::de_ebs_volume_scan_details(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "runtimeDetails" => {
+                                builder = builder.set_runtime_details(crate::protocol_serde::shape_runtime_details::de_runtime_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "detection" => {
+                                builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens, _value, depth + 1)?);
+                            }
+                            "malwareScanDetails" => {
+                                builder = builder.set_malware_scan_details(
+                                    crate::protocol_serde::shape_malware_scan_details::de_malware_scan_details(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "evidence" => {
-                            builder = builder.set_evidence(crate::protocol_serde::shape_evidence::de_evidence(tokens, _value)?);
-                        }
-                        "archived" => {
-                            builder = builder.set_archived(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "count" => {
-                            builder = builder.set_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "detectorId" => {
-                            builder = builder.set_detector_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "eventFirstSeen" => {
-                            builder = builder.set_event_first_seen(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "eventLastSeen" => {
-                            builder = builder.set_event_last_seen(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "resourceRole" => {
-                            builder = builder.set_resource_role(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "serviceName" => {
-                            builder = builder.set_service_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "userFeedback" => {
-                            builder = builder.set_user_feedback(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "additionalInfo" => {
-                            builder = builder.set_additional_info(crate::protocol_serde::shape_service_additional_info::de_service_additional_info(
-                                tokens, _value,
-                            )?);
-                        }
-                        "featureName" => {
-                            builder = builder.set_feature_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ebsVolumeScanDetails" => {
-                            builder = builder.set_ebs_volume_scan_details(
-                                crate::protocol_serde::shape_ebs_volume_scan_details::de_ebs_volume_scan_details(tokens, _value)?,
-                            );
-                        }
-                        "runtimeDetails" => {
-                            builder = builder.set_runtime_details(crate::protocol_serde::shape_runtime_details::de_runtime_details(tokens, _value)?);
-                        }
-                        "detection" => {
-                            builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens, _value)?);
-                        }
-                        "malwareScanDetails" => {
-                            builder = builder.set_malware_scan_details(crate::protocol_serde::shape_malware_scan_details::de_malware_scan_details(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

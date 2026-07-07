@@ -2,10 +2,16 @@
 pub(crate) fn de_lake_formation_opt_ins_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LakeFormationOptInsInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,14 +22,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Resource" => {
-                            builder = builder.set_resource(crate::protocol_serde::shape_resource::de_resource(tokens, _value)?);
+                            builder = builder.set_resource(crate::protocol_serde::shape_resource::de_resource(tokens, _value, depth + 1)?);
                         }
                         "Principal" => {
-                            builder =
-                                builder.set_principal(crate::protocol_serde::shape_data_lake_principal::de_data_lake_principal(tokens, _value)?);
+                            builder = builder.set_principal(crate::protocol_serde::shape_data_lake_principal::de_data_lake_principal(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Condition" => {
-                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens, _value)?);
+                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens, _value, depth + 1)?);
                         }
                         "LastModified" => {
                             builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

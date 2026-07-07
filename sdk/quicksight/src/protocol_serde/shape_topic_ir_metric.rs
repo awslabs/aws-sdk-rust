@@ -69,10 +69,16 @@ pub fn ser_topic_ir_metric(
 pub(crate) fn de_topic_ir_metric<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TopicIrMetric>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -83,17 +89,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MetricId" => {
-                            builder = builder.set_metric_id(crate::protocol_serde::shape_identifier::de_identifier(tokens, _value)?);
+                            builder = builder.set_metric_id(crate::protocol_serde::shape_identifier::de_identifier(tokens, _value, depth + 1)?);
                         }
                         "Function" => {
-                            builder = builder.set_function(crate::protocol_serde::shape_agg_function::de_agg_function(tokens, _value)?);
+                            builder = builder.set_function(crate::protocol_serde::shape_agg_function::de_agg_function(tokens, _value, depth + 1)?);
                         }
                         "Operands" => {
-                            builder = builder.set_operands(crate::protocol_serde::shape_operand_list::de_operand_list(tokens, _value)?);
+                            builder = builder.set_operands(crate::protocol_serde::shape_operand_list::de_operand_list(tokens, _value, depth + 1)?);
                         }
                         "ComparisonMethod" => {
                             builder = builder.set_comparison_method(
-                                crate::protocol_serde::shape_topic_ir_comparison_method::de_topic_ir_comparison_method(tokens, _value)?,
+                                crate::protocol_serde::shape_topic_ir_comparison_method::de_topic_ir_comparison_method(tokens, _value, depth + 1)?,
                             );
                         }
                         "Expression" => {
@@ -105,7 +111,11 @@ where
                         }
                         "CalculatedFieldReferences" => {
                             builder = builder.set_calculated_field_references(
-                                crate::protocol_serde::shape_calculated_field_reference_list::de_calculated_field_reference_list(tokens, _value)?,
+                                crate::protocol_serde::shape_calculated_field_reference_list::de_calculated_field_reference_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DisplayFormat" => {
@@ -117,11 +127,15 @@ where
                         }
                         "DisplayFormatOptions" => {
                             builder = builder.set_display_format_options(
-                                crate::protocol_serde::shape_display_format_options::de_display_format_options(tokens, _value)?,
+                                crate::protocol_serde::shape_display_format_options::de_display_format_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "NamedEntity" => {
-                            builder = builder.set_named_entity(crate::protocol_serde::shape_named_entity_ref::de_named_entity_ref(tokens, _value)?);
+                            builder = builder.set_named_entity(crate::protocol_serde::shape_named_entity_ref::de_named_entity_ref(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

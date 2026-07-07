@@ -32,5 +32,7 @@ pub fn de_cloud_front_origin_access_identity_config(
             "invalid root, expected CloudFrontOriginAccessIdentityConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_cloud_front_origin_access_identity_config::de_cloud_front_origin_access_identity_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_cloud_front_origin_access_identity_config::de_cloud_front_origin_access_identity_config(&mut decoder, depth + 1)
 }

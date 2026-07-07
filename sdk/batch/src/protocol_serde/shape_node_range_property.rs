@@ -45,10 +45,16 @@ pub fn ser_node_range_property(
 pub(crate) fn de_node_range_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NodeRangeProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -67,21 +73,36 @@ where
                         }
                         "container" => {
                             builder = builder.set_container(crate::protocol_serde::shape_container_properties::de_container_properties(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "instanceTypes" => {
-                            builder = builder.set_instance_types(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_instance_types(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "ecsProperties" => {
-                            builder = builder.set_ecs_properties(crate::protocol_serde::shape_ecs_properties::de_ecs_properties(tokens, _value)?);
+                            builder = builder.set_ecs_properties(crate::protocol_serde::shape_ecs_properties::de_ecs_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "eksProperties" => {
-                            builder = builder.set_eks_properties(crate::protocol_serde::shape_eks_properties::de_eks_properties(tokens, _value)?);
+                            builder = builder.set_eks_properties(crate::protocol_serde::shape_eks_properties::de_eks_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "consumableResourceProperties" => {
                             builder = builder.set_consumable_resource_properties(
-                                crate::protocol_serde::shape_consumable_resource_properties::de_consumable_resource_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_consumable_resource_properties::de_consumable_resource_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

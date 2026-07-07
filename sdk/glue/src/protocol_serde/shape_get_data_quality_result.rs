@@ -122,6 +122,8 @@ pub(crate) fn de_get_data_quality_result(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,7 +148,7 @@ pub(crate) fn de_get_data_quality_result(
                         builder.set_score(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                 }
                 "DataSource" => {
-                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
+                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value, depth + 1)?);
                 }
                 "RulesetName" => {
                     builder = builder.set_ruleset_name(
@@ -197,22 +199,26 @@ pub(crate) fn de_get_data_quality_result(
                 }
                 "RuleResults" => {
                     builder = builder.set_rule_results(crate::protocol_serde::shape_data_quality_rule_results::de_data_quality_rule_results(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "AnalyzerResults" => {
                     builder = builder.set_analyzer_results(
-                        crate::protocol_serde::shape_data_quality_analyzer_results::de_data_quality_analyzer_results(tokens, _value)?,
+                        crate::protocol_serde::shape_data_quality_analyzer_results::de_data_quality_analyzer_results(tokens, _value, depth + 1)?,
                     );
                 }
                 "Observations" => {
                     builder = builder.set_observations(crate::protocol_serde::shape_data_quality_observations::de_data_quality_observations(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "AggregatedMetrics" => {
                     builder = builder.set_aggregated_metrics(
-                        crate::protocol_serde::shape_data_quality_aggregated_metrics::de_data_quality_aggregated_metrics(tokens, _value)?,
+                        crate::protocol_serde::shape_data_quality_aggregated_metrics::de_data_quality_aggregated_metrics(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

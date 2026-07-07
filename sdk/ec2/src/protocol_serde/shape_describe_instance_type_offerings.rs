@@ -49,6 +49,8 @@ pub fn de_describe_instance_type_offerings(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeInstanceTypeOfferingsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeInstanceTypeOfferingsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_instance_type_offerings(
             s if s.matches("instanceTypeOfferingSet") /* InstanceTypeOfferings com.amazonaws.ec2.synthetic#DescribeInstanceTypeOfferingsOutput$InstanceTypeOfferings */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_type_offerings_list::de_instance_type_offerings_list(&mut tag)
+                        crate::protocol_serde::shape_instance_type_offerings_list::de_instance_type_offerings_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

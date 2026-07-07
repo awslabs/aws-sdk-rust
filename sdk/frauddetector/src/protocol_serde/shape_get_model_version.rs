@@ -126,6 +126,8 @@ pub(crate) fn de_get_model_version(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -161,17 +163,23 @@ pub(crate) fn de_get_model_version(
                 }
                 "trainingDataSchema" => {
                     builder = builder.set_training_data_schema(crate::protocol_serde::shape_training_data_schema::de_training_data_schema(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "externalEventsDetail" => {
                     builder = builder.set_external_events_detail(crate::protocol_serde::shape_external_events_detail::de_external_events_detail(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ingestedEventsDetail" => {
                     builder = builder.set_ingested_events_detail(crate::protocol_serde::shape_ingested_events_detail::de_ingested_events_detail(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {

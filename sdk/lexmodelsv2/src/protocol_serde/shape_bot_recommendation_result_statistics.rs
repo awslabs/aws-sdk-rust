@@ -2,10 +2,16 @@
 pub(crate) fn de_bot_recommendation_result_statistics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BotRecommendationResultStatistics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,11 +22,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "intents" => {
-                            builder = builder.set_intents(crate::protocol_serde::shape_intent_statistics::de_intent_statistics(tokens, _value)?);
+                            builder = builder.set_intents(crate::protocol_serde::shape_intent_statistics::de_intent_statistics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "slotTypes" => {
                             builder = builder.set_slot_types(crate::protocol_serde::shape_slot_type_statistics::de_slot_type_statistics(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

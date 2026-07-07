@@ -20,8 +20,12 @@ pub enum ConnectionPropertiesPatch {
     RedshiftProperties(crate::types::RedshiftPropertiesPatch),
     /// <p>The Amazon S3 properties of a connection properties patch.</p>
     S3Properties(crate::types::S3PropertiesPatch),
+    /// <p>The Snowflake-specific connection properties to update.</p>
+    SnowflakeProperties(crate::types::SnowflakePropertiesPatch),
     /// <p>The Spark EMR properties of a connection properties patch.</p>
     SparkEmrProperties(crate::types::SparkEmrPropertiesPatch),
+    /// <p>The VPC properties of a connection properties patch.</p>
+    VpcProperties(crate::types::VpcPropertiesPatch),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -137,6 +141,19 @@ impl ConnectionPropertiesPatch {
     pub fn is_s3_properties(&self) -> bool {
         self.as_s3_properties().is_ok()
     }
+    /// Tries to convert the enum instance into [`SnowflakeProperties`](crate::types::ConnectionPropertiesPatch::SnowflakeProperties), extracting the inner [`SnowflakePropertiesPatch`](crate::types::SnowflakePropertiesPatch).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_snowflake_properties(&self) -> ::std::result::Result<&crate::types::SnowflakePropertiesPatch, &Self> {
+        if let ConnectionPropertiesPatch::SnowflakeProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SnowflakeProperties`](crate::types::ConnectionPropertiesPatch::SnowflakeProperties).
+    pub fn is_snowflake_properties(&self) -> bool {
+        self.as_snowflake_properties().is_ok()
+    }
     /// Tries to convert the enum instance into [`SparkEmrProperties`](crate::types::ConnectionPropertiesPatch::SparkEmrProperties), extracting the inner [`SparkEmrPropertiesPatch`](crate::types::SparkEmrPropertiesPatch).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_spark_emr_properties(&self) -> ::std::result::Result<&crate::types::SparkEmrPropertiesPatch, &Self> {
@@ -149,6 +166,19 @@ impl ConnectionPropertiesPatch {
     /// Returns true if this is a [`SparkEmrProperties`](crate::types::ConnectionPropertiesPatch::SparkEmrProperties).
     pub fn is_spark_emr_properties(&self) -> bool {
         self.as_spark_emr_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VpcProperties`](crate::types::ConnectionPropertiesPatch::VpcProperties), extracting the inner [`VpcPropertiesPatch`](crate::types::VpcPropertiesPatch).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_vpc_properties(&self) -> ::std::result::Result<&crate::types::VpcPropertiesPatch, &Self> {
+        if let ConnectionPropertiesPatch::VpcProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VpcProperties`](crate::types::ConnectionPropertiesPatch::VpcProperties).
+    pub fn is_vpc_properties(&self) -> bool {
+        self.as_vpc_properties().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

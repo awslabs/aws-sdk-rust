@@ -2,10 +2,16 @@
 pub(crate) fn de_data_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,18 +23,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "opensearchConfiguration" => {
                             builder = builder.set_opensearch_configuration(
-                                crate::protocol_serde::shape_opensearch_configuration::de_opensearch_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_opensearch_configuration::de_opensearch_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "kendraConfiguration" => {
                             builder = builder.set_kendra_configuration(
-                                crate::protocol_serde::shape_qn_a_kendra_configuration::de_qn_a_kendra_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_qn_a_kendra_configuration::de_qn_a_kendra_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "bedrockKnowledgeStoreConfiguration" => {
                             builder = builder.set_bedrock_knowledge_store_configuration(
                                 crate::protocol_serde::shape_bedrock_knowledge_store_configuration::de_bedrock_knowledge_store_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -2,10 +2,16 @@
 pub(crate) fn de_history_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HistoryEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,197 +50,295 @@ where
                         }
                         "activityFailedEventDetails" => {
                             builder = builder.set_activity_failed_event_details(
-                                crate::protocol_serde::shape_activity_failed_event_details::de_activity_failed_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_activity_failed_event_details::de_activity_failed_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "activityScheduleFailedEventDetails" => {
                             builder = builder.set_activity_schedule_failed_event_details(
                                 crate::protocol_serde::shape_activity_schedule_failed_event_details::de_activity_schedule_failed_event_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "activityScheduledEventDetails" => {
                             builder = builder.set_activity_scheduled_event_details(
-                                crate::protocol_serde::shape_activity_scheduled_event_details::de_activity_scheduled_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_activity_scheduled_event_details::de_activity_scheduled_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "activityStartedEventDetails" => {
                             builder = builder.set_activity_started_event_details(
-                                crate::protocol_serde::shape_activity_started_event_details::de_activity_started_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_activity_started_event_details::de_activity_started_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "activitySucceededEventDetails" => {
                             builder = builder.set_activity_succeeded_event_details(
-                                crate::protocol_serde::shape_activity_succeeded_event_details::de_activity_succeeded_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_activity_succeeded_event_details::de_activity_succeeded_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "activityTimedOutEventDetails" => {
                             builder = builder.set_activity_timed_out_event_details(
-                                crate::protocol_serde::shape_activity_timed_out_event_details::de_activity_timed_out_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_activity_timed_out_event_details::de_activity_timed_out_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "taskFailedEventDetails" => {
                             builder = builder.set_task_failed_event_details(
-                                crate::protocol_serde::shape_task_failed_event_details::de_task_failed_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_task_failed_event_details::de_task_failed_event_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "taskScheduledEventDetails" => {
                             builder = builder.set_task_scheduled_event_details(
-                                crate::protocol_serde::shape_task_scheduled_event_details::de_task_scheduled_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_task_scheduled_event_details::de_task_scheduled_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "taskStartFailedEventDetails" => {
                             builder = builder.set_task_start_failed_event_details(
-                                crate::protocol_serde::shape_task_start_failed_event_details::de_task_start_failed_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_task_start_failed_event_details::de_task_start_failed_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "taskStartedEventDetails" => {
                             builder = builder.set_task_started_event_details(
-                                crate::protocol_serde::shape_task_started_event_details::de_task_started_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_task_started_event_details::de_task_started_event_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "taskSubmitFailedEventDetails" => {
                             builder = builder.set_task_submit_failed_event_details(
-                                crate::protocol_serde::shape_task_submit_failed_event_details::de_task_submit_failed_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_task_submit_failed_event_details::de_task_submit_failed_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "taskSubmittedEventDetails" => {
                             builder = builder.set_task_submitted_event_details(
-                                crate::protocol_serde::shape_task_submitted_event_details::de_task_submitted_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_task_submitted_event_details::de_task_submitted_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "taskSucceededEventDetails" => {
                             builder = builder.set_task_succeeded_event_details(
-                                crate::protocol_serde::shape_task_succeeded_event_details::de_task_succeeded_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_task_succeeded_event_details::de_task_succeeded_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "taskTimedOutEventDetails" => {
                             builder = builder.set_task_timed_out_event_details(
-                                crate::protocol_serde::shape_task_timed_out_event_details::de_task_timed_out_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_task_timed_out_event_details::de_task_timed_out_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "executionFailedEventDetails" => {
                             builder = builder.set_execution_failed_event_details(
-                                crate::protocol_serde::shape_execution_failed_event_details::de_execution_failed_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_execution_failed_event_details::de_execution_failed_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "executionStartedEventDetails" => {
                             builder = builder.set_execution_started_event_details(
-                                crate::protocol_serde::shape_execution_started_event_details::de_execution_started_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_execution_started_event_details::de_execution_started_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "executionSucceededEventDetails" => {
                             builder = builder.set_execution_succeeded_event_details(
-                                crate::protocol_serde::shape_execution_succeeded_event_details::de_execution_succeeded_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_execution_succeeded_event_details::de_execution_succeeded_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "executionAbortedEventDetails" => {
                             builder = builder.set_execution_aborted_event_details(
-                                crate::protocol_serde::shape_execution_aborted_event_details::de_execution_aborted_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_execution_aborted_event_details::de_execution_aborted_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "executionTimedOutEventDetails" => {
                             builder = builder.set_execution_timed_out_event_details(
-                                crate::protocol_serde::shape_execution_timed_out_event_details::de_execution_timed_out_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_execution_timed_out_event_details::de_execution_timed_out_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "executionRedrivenEventDetails" => {
                             builder = builder.set_execution_redriven_event_details(
-                                crate::protocol_serde::shape_execution_redriven_event_details::de_execution_redriven_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_execution_redriven_event_details::de_execution_redriven_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "mapStateStartedEventDetails" => {
                             builder = builder.set_map_state_started_event_details(
-                                crate::protocol_serde::shape_map_state_started_event_details::de_map_state_started_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_map_state_started_event_details::de_map_state_started_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "mapIterationStartedEventDetails" => {
                             builder = builder.set_map_iteration_started_event_details(
-                                crate::protocol_serde::shape_map_iteration_event_details::de_map_iteration_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_map_iteration_event_details::de_map_iteration_event_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "mapIterationSucceededEventDetails" => {
                             builder = builder.set_map_iteration_succeeded_event_details(
-                                crate::protocol_serde::shape_map_iteration_event_details::de_map_iteration_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_map_iteration_event_details::de_map_iteration_event_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "mapIterationFailedEventDetails" => {
                             builder = builder.set_map_iteration_failed_event_details(
-                                crate::protocol_serde::shape_map_iteration_event_details::de_map_iteration_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_map_iteration_event_details::de_map_iteration_event_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "mapIterationAbortedEventDetails" => {
                             builder = builder.set_map_iteration_aborted_event_details(
-                                crate::protocol_serde::shape_map_iteration_event_details::de_map_iteration_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_map_iteration_event_details::de_map_iteration_event_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "lambdaFunctionFailedEventDetails" => {
                             builder = builder.set_lambda_function_failed_event_details(
                                 crate::protocol_serde::shape_lambda_function_failed_event_details::de_lambda_function_failed_event_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "lambdaFunctionScheduleFailedEventDetails" => {
                             builder = builder.set_lambda_function_schedule_failed_event_details(
-                                    crate::protocol_serde::shape_lambda_function_schedule_failed_event_details::de_lambda_function_schedule_failed_event_details(tokens, _value)?
+                                    crate::protocol_serde::shape_lambda_function_schedule_failed_event_details::de_lambda_function_schedule_failed_event_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "lambdaFunctionScheduledEventDetails" => {
                             builder = builder.set_lambda_function_scheduled_event_details(
                                 crate::protocol_serde::shape_lambda_function_scheduled_event_details::de_lambda_function_scheduled_event_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "lambdaFunctionStartFailedEventDetails" => {
                             builder = builder.set_lambda_function_start_failed_event_details(
-                                    crate::protocol_serde::shape_lambda_function_start_failed_event_details::de_lambda_function_start_failed_event_details(tokens, _value)?
+                                    crate::protocol_serde::shape_lambda_function_start_failed_event_details::de_lambda_function_start_failed_event_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "lambdaFunctionSucceededEventDetails" => {
                             builder = builder.set_lambda_function_succeeded_event_details(
                                 crate::protocol_serde::shape_lambda_function_succeeded_event_details::de_lambda_function_succeeded_event_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "lambdaFunctionTimedOutEventDetails" => {
                             builder = builder.set_lambda_function_timed_out_event_details(
                                 crate::protocol_serde::shape_lambda_function_timed_out_event_details::de_lambda_function_timed_out_event_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "stateEnteredEventDetails" => {
                             builder = builder.set_state_entered_event_details(
-                                crate::protocol_serde::shape_state_entered_event_details::de_state_entered_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_state_entered_event_details::de_state_entered_event_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "stateExitedEventDetails" => {
                             builder = builder.set_state_exited_event_details(
-                                crate::protocol_serde::shape_state_exited_event_details::de_state_exited_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_state_exited_event_details::de_state_exited_event_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "mapRunStartedEventDetails" => {
                             builder = builder.set_map_run_started_event_details(
-                                crate::protocol_serde::shape_map_run_started_event_details::de_map_run_started_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_map_run_started_event_details::de_map_run_started_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "mapRunFailedEventDetails" => {
                             builder = builder.set_map_run_failed_event_details(
-                                crate::protocol_serde::shape_map_run_failed_event_details::de_map_run_failed_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_map_run_failed_event_details::de_map_run_failed_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "mapRunRedrivenEventDetails" => {
                             builder = builder.set_map_run_redriven_event_details(
-                                crate::protocol_serde::shape_map_run_redriven_event_details::de_map_run_redriven_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_map_run_redriven_event_details::de_map_run_redriven_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "evaluationFailedEventDetails" => {
                             builder = builder.set_evaluation_failed_event_details(
-                                crate::protocol_serde::shape_evaluation_failed_event_details::de_evaluation_failed_event_details(tokens, _value)?,
+                                crate::protocol_serde::shape_evaluation_failed_event_details::de_evaluation_failed_event_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

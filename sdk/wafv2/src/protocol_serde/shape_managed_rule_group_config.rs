@@ -51,10 +51,16 @@ pub fn ser_managed_rule_group_config(
 pub(crate) fn de_managed_rule_group_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedRuleGroupConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -79,32 +85,52 @@ where
                             );
                         }
                         "UsernameField" => {
-                            builder = builder.set_username_field(crate::protocol_serde::shape_username_field::de_username_field(tokens, _value)?);
+                            builder = builder.set_username_field(crate::protocol_serde::shape_username_field::de_username_field(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PasswordField" => {
-                            builder = builder.set_password_field(crate::protocol_serde::shape_password_field::de_password_field(tokens, _value)?);
+                            builder = builder.set_password_field(crate::protocol_serde::shape_password_field::de_password_field(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AWSManagedRulesBotControlRuleSet" => {
                             builder = builder.set_aws_managed_rules_bot_control_rule_set(
                                 crate::protocol_serde::shape_aws_managed_rules_bot_control_rule_set::de_aws_managed_rules_bot_control_rule_set(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "AWSManagedRulesATPRuleSet" => {
                             builder = builder.set_aws_managed_rules_atp_rule_set(
-                                crate::protocol_serde::shape_aws_managed_rules_atp_rule_set::de_aws_managed_rules_atp_rule_set(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_managed_rules_atp_rule_set::de_aws_managed_rules_atp_rule_set(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AWSManagedRulesACFPRuleSet" => {
                             builder = builder.set_aws_managed_rules_acfp_rule_set(
-                                crate::protocol_serde::shape_aws_managed_rules_acfp_rule_set::de_aws_managed_rules_acfp_rule_set(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_managed_rules_acfp_rule_set::de_aws_managed_rules_acfp_rule_set(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AWSManagedRulesAntiDDoSRuleSet" => {
                             builder = builder.set_aws_managed_rules_anti_d_do_s_rule_set(
                                 crate::protocol_serde::shape_aws_managed_rules_anti_d_do_s_rule_set::de_aws_managed_rules_anti_d_do_s_rule_set(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -2,10 +2,16 @@
 pub(crate) fn de_replica_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReplicaDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,22 +65,34 @@ where
                         }
                         "ProvisionedThroughputOverride" => {
                             builder = builder.set_provisioned_throughput_override(
-                                crate::protocol_serde::shape_provisioned_throughput_override::de_provisioned_throughput_override(tokens, _value)?,
+                                crate::protocol_serde::shape_provisioned_throughput_override::de_provisioned_throughput_override(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "OnDemandThroughputOverride" => {
                             builder = builder.set_on_demand_throughput_override(
-                                crate::protocol_serde::shape_on_demand_throughput_override::de_on_demand_throughput_override(tokens, _value)?,
+                                crate::protocol_serde::shape_on_demand_throughput_override::de_on_demand_throughput_override(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "WarmThroughput" => {
                             builder = builder.set_warm_throughput(
-                                crate::protocol_serde::shape_table_warm_throughput_description::de_table_warm_throughput_description(tokens, _value)?,
+                                crate::protocol_serde::shape_table_warm_throughput_description::de_table_warm_throughput_description(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "GlobalSecondaryIndexes" => {
                             builder = builder.set_global_secondary_indexes(
-                                    crate::protocol_serde::shape_replica_global_secondary_index_description_list::de_replica_global_secondary_index_description_list(tokens, _value)?
+                                    crate::protocol_serde::shape_replica_global_secondary_index_description_list::de_replica_global_secondary_index_description_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "ReplicaInaccessibleDateTime" => {
@@ -85,7 +103,7 @@ where
                         }
                         "ReplicaTableClassSummary" => {
                             builder = builder.set_replica_table_class_summary(
-                                crate::protocol_serde::shape_table_class_summary::de_table_class_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_table_class_summary::de_table_class_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "GlobalTableSettingsReplicationMode" => {

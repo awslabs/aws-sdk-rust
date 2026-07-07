@@ -154,6 +154,8 @@ pub(crate) fn de_describe_multiplex(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -167,11 +169,16 @@ pub(crate) fn de_describe_multiplex(
                     );
                 }
                 "availabilityZones" => {
-                    builder = builder.set_availability_zones(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder =
+                        builder.set_availability_zones(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "destinations" => {
                     builder = builder.set_destinations(
-                        crate::protocol_serde::shape_list_of_multiplex_output_destination::de_list_of_multiplex_output_destination(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_multiplex_output_destination::de_list_of_multiplex_output_destination(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "id" => {
@@ -182,7 +189,11 @@ pub(crate) fn de_describe_multiplex(
                     );
                 }
                 "multiplexSettings" => {
-                    builder = builder.set_multiplex_settings(crate::protocol_serde::shape_multiplex_settings::de_multiplex_settings(tokens, _value)?);
+                    builder = builder.set_multiplex_settings(crate::protocol_serde::shape_multiplex_settings::de_multiplex_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -213,7 +224,7 @@ pub(crate) fn de_describe_multiplex(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

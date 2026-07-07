@@ -2,6 +2,7 @@
 pub(crate) fn de_inference_component_container_specification_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::InferenceComponentContainerSpecificationSummary>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -9,6 +10,11 @@ pub(crate) fn de_inference_component_container_specification_summary<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,7 +25,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DeployedImage" => {
-                            builder = builder.set_deployed_image(crate::protocol_serde::shape_deployed_image::de_deployed_image(tokens, _value)?);
+                            builder = builder.set_deployed_image(crate::protocol_serde::shape_deployed_image::de_deployed_image(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ArtifactUrl" => {
                             builder = builder.set_artifact_url(
@@ -29,7 +39,16 @@ where
                             );
                         }
                         "Environment" => {
-                            builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(tokens, _value)?);
+                            builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "ContainerMetricsConfig" => {
+                            builder = builder.set_container_metrics_config(
+                                crate::protocol_serde::shape_container_metrics_config::de_container_metrics_config(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

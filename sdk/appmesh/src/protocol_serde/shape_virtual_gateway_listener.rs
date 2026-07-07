@@ -33,10 +33,16 @@ pub fn ser_virtual_gateway_listener(
 pub(crate) fn de_virtual_gateway_listener<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayListener>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,22 +55,37 @@ where
                         "healthCheck" => {
                             builder = builder.set_health_check(
                                 crate::protocol_serde::shape_virtual_gateway_health_check_policy::de_virtual_gateway_health_check_policy(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "portMapping" => {
                             builder = builder.set_port_mapping(
-                                crate::protocol_serde::shape_virtual_gateway_port_mapping::de_virtual_gateway_port_mapping(tokens, _value)?,
+                                crate::protocol_serde::shape_virtual_gateway_port_mapping::de_virtual_gateway_port_mapping(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "tls" => {
-                            builder = builder
-                                .set_tls(crate::protocol_serde::shape_virtual_gateway_listener_tls::de_virtual_gateway_listener_tls(tokens, _value)?);
+                            builder = builder.set_tls(
+                                crate::protocol_serde::shape_virtual_gateway_listener_tls::de_virtual_gateway_listener_tls(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         "connectionPool" => {
                             builder = builder.set_connection_pool(
-                                crate::protocol_serde::shape_virtual_gateway_connection_pool::de_virtual_gateway_connection_pool(tokens, _value)?,
+                                crate::protocol_serde::shape_virtual_gateway_connection_pool::de_virtual_gateway_connection_pool(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

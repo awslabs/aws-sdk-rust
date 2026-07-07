@@ -96,6 +96,8 @@ pub(crate) fn de_list_logging_configurations(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -103,7 +105,7 @@ pub(crate) fn de_list_logging_configurations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "loggingConfigurations" => {
                     builder = builder.set_logging_configurations(
-                        crate::protocol_serde::shape_logging_configuration_list::de_logging_configuration_list(tokens, _value)?,
+                        crate::protocol_serde::shape_logging_configuration_list::de_logging_configuration_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "nextToken" => {

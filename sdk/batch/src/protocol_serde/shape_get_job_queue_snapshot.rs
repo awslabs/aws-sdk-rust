@@ -92,6 +92,8 @@ pub(crate) fn de_get_job_queue_snapshot(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -99,17 +101,23 @@ pub(crate) fn de_get_job_queue_snapshot(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "frontOfQueue" => {
                     builder = builder.set_front_of_queue(crate::protocol_serde::shape_front_of_queue_detail::de_front_of_queue_detail(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "frontOfQuotaShares" => {
                     builder = builder.set_front_of_quota_shares(
-                        crate::protocol_serde::shape_front_of_quota_shares_detail::de_front_of_quota_shares_detail(tokens, _value)?,
+                        crate::protocol_serde::shape_front_of_quota_shares_detail::de_front_of_quota_shares_detail(tokens, _value, depth + 1)?,
                     );
                 }
                 "queueUtilization" => {
                     builder = builder.set_queue_utilization(
-                        crate::protocol_serde::shape_queue_snapshot_utilization_detail::de_queue_snapshot_utilization_detail(tokens, _value)?,
+                        crate::protocol_serde::shape_queue_snapshot_utilization_detail::de_queue_snapshot_utilization_detail(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

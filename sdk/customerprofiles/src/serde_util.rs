@@ -654,6 +654,30 @@ pub(crate) fn batch_get_profile_error_correct_errors(
     builder
 }
 
+pub(crate) fn batch_put_profile_object_error_item_correct_errors(
+    mut builder: crate::types::builders::BatchPutProfileObjectErrorItemBuilder,
+) -> crate::types::builders::BatchPutProfileObjectErrorItemBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_put_profile_object_response_item_correct_errors(
+    mut builder: crate::types::builders::BatchPutProfileObjectResponseItemBuilder,
+) -> crate::types::builders::BatchPutProfileObjectResponseItemBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.profile_object_unique_key.is_none() {
+        builder.profile_object_unique_key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn conflict_resolution_correct_errors(
     mut builder: crate::types::builders::ConflictResolutionBuilder,
 ) -> crate::types::builders::ConflictResolutionBuilder {
@@ -1051,6 +1075,21 @@ pub(crate) fn value_range_correct_errors(mut builder: crate::types::builders::Va
     }
     if builder.end.is_none() {
         builder.end = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn diversity_column_correct_errors(
+    mut builder: crate::types::builders::DiversityColumnBuilder,
+) -> crate::types::builders::DiversityColumnBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.cap_type.is_none() {
+        builder.cap_type = "no value was set".parse::<crate::types::DiversityCapType>().ok()
+    }
+    if builder.target.is_none() {
+        builder.target = Some(Default::default())
     }
     builder
 }

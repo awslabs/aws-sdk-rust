@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_job_descriptor(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::JobDescriptor, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::JobDescriptor::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -78,7 +82,7 @@ pub fn de_job_descriptor(
             s if s.matches("Manifest") /* Manifest com.amazonaws.s3control#JobDescriptor$Manifest */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_job_manifest::de_job_manifest(&mut tag)
+                        crate::protocol_serde::shape_job_manifest::de_job_manifest(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -88,7 +92,7 @@ pub fn de_job_descriptor(
             s if s.matches("Operation") /* Operation com.amazonaws.s3control#JobDescriptor$Operation */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_job_operation::de_job_operation(&mut tag)
+                        crate::protocol_serde::shape_job_operation::de_job_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -113,7 +117,7 @@ pub fn de_job_descriptor(
             s if s.matches("ProgressSummary") /* ProgressSummary com.amazonaws.s3control#JobDescriptor$ProgressSummary */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_job_progress_summary::de_job_progress_summary(&mut tag)
+                        crate::protocol_serde::shape_job_progress_summary::de_job_progress_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -136,7 +140,7 @@ pub fn de_job_descriptor(
             s if s.matches("FailureReasons") /* FailureReasons com.amazonaws.s3control#JobDescriptor$FailureReasons */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_job_failure_list::de_job_failure_list(&mut tag)
+                        crate::protocol_serde::shape_job_failure_list::de_job_failure_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -146,7 +150,7 @@ pub fn de_job_descriptor(
             s if s.matches("Report") /* Report com.amazonaws.s3control#JobDescriptor$Report */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_job_report::de_job_report(&mut tag)
+                        crate::protocol_serde::shape_job_report::de_job_report(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -224,7 +228,7 @@ pub fn de_job_descriptor(
             s if s.matches("ManifestGenerator") /* ManifestGenerator com.amazonaws.s3control#JobDescriptor$ManifestGenerator */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_job_manifest_generator::de_job_manifest_generator(&mut tag)
+                        crate::protocol_serde::shape_job_manifest_generator::de_job_manifest_generator(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -234,7 +238,7 @@ pub fn de_job_descriptor(
             s if s.matches("GeneratedManifestDescriptor") /* GeneratedManifestDescriptor com.amazonaws.s3control#JobDescriptor$GeneratedManifestDescriptor */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_s3_generated_manifest_descriptor::de_s3_generated_manifest_descriptor(&mut tag)
+                        crate::protocol_serde::shape_s3_generated_manifest_descriptor::de_s3_generated_manifest_descriptor(&mut tag, depth + 1)
                         ?
                     )
                 ;

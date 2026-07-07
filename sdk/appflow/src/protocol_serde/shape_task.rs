@@ -40,10 +40,16 @@ pub fn ser_task(
 pub(crate) fn de_task<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Task>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,11 +60,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sourceFields" => {
-                            builder = builder.set_source_fields(crate::protocol_serde::shape_source_fields::de_source_fields(tokens, _value)?);
+                            builder =
+                                builder.set_source_fields(crate::protocol_serde::shape_source_fields::de_source_fields(tokens, _value, depth + 1)?);
                         }
                         "connectorOperator" => {
-                            builder = builder
-                                .set_connector_operator(crate::protocol_serde::shape_connector_operator::de_connector_operator(tokens, _value)?);
+                            builder = builder.set_connector_operator(crate::protocol_serde::shape_connector_operator::de_connector_operator(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "destinationField" => {
                             builder = builder.set_destination_field(
@@ -75,8 +85,11 @@ where
                             );
                         }
                         "taskProperties" => {
-                            builder = builder
-                                .set_task_properties(crate::protocol_serde::shape_task_properties_map::de_task_properties_map(tokens, _value)?);
+                            builder = builder.set_task_properties(crate::protocol_serde::shape_task_properties_map::de_task_properties_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

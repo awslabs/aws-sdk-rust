@@ -49,6 +49,8 @@ pub use crate::types::_replication_state_info::ReplicationStateInfo;
 
 pub use crate::types::_connectivity_info::ConnectivityInfo;
 
+pub use crate::types::_zookeeper_access::ZookeeperAccess;
+
 pub use crate::types::_consumer_group_replication_update::ConsumerGroupReplicationUpdate;
 
 pub use crate::types::_topic_replication_update::TopicReplicationUpdate;
@@ -209,6 +211,8 @@ pub use crate::types::_vpc_connectivity_client_authentication::VpcConnectivityCl
 
 pub use crate::types::_kafka_cluster_sasl_scram_authentication::KafkaClusterSaslScramAuthentication;
 
+pub use crate::types::_kafka_cluster_mtls_authentication::KafkaClusterMtlsAuthentication;
+
 pub use crate::types::_kafka_cluster_encryption_in_transit_type::KafkaClusterEncryptionInTransitType;
 
 pub use crate::types::_consumer_group_offset_sync_mode::ConsumerGroupOffsetSyncMode;
@@ -344,6 +348,8 @@ mod _kafka_cluster_description;
 mod _kafka_cluster_encryption_in_transit;
 
 mod _kafka_cluster_encryption_in_transit_type;
+
+mod _kafka_cluster_mtls_authentication;
 
 mod _kafka_cluster_sasl_scram_authentication;
 
@@ -484,6 +490,8 @@ mod _vpc_connectivity_sasl;
 mod _vpc_connectivity_scram;
 
 mod _vpc_connectivity_tls;
+
+mod _zookeeper_access;
 
 mod _zookeeper_node_info;
 

@@ -66,6 +66,8 @@ pub fn de_describe_change_set(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeChangeSetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeChangeSetResponse got {start_el:?}"
@@ -148,7 +150,7 @@ pub fn de_describe_change_set(
             s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Parameters */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_parameters::de_parameters(&mut tag)
+                        crate::protocol_serde::shape_parameters::de_parameters(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -227,7 +229,7 @@ pub fn de_describe_change_set(
             s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$NotificationARNs */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_notification_arns::de_notification_arns(&mut tag)
+                        crate::protocol_serde::shape_notification_arns::de_notification_arns(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -237,7 +239,7 @@ pub fn de_describe_change_set(
             s if s.matches("RollbackConfiguration") /* RollbackConfiguration com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$RollbackConfiguration */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_rollback_configuration::de_rollback_configuration(&mut tag)
+                        crate::protocol_serde::shape_rollback_configuration::de_rollback_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -247,7 +249,7 @@ pub fn de_describe_change_set(
             s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Capabilities */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag)
+                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -257,7 +259,7 @@ pub fn de_describe_change_set(
             s if s.matches("Tags") /* Tags com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Tags */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_tags::de_tags(&mut tag)
+                        crate::protocol_serde::shape_tags::de_tags(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -267,7 +269,7 @@ pub fn de_describe_change_set(
             s if s.matches("Changes") /* Changes com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Changes */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_changes::de_changes(&mut tag)
+                        crate::protocol_serde::shape_changes::de_changes(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -369,6 +371,16 @@ pub fn de_describe_change_set(
                     )
                 ;
                 builder = builder.set_deployment_mode(var_23);
+            }
+            ,
+            s if s.matches("DeploymentConfig") /* DeploymentConfig com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$DeploymentConfig */ =>  {
+                let var_24 =
+                    Some(
+                        crate::protocol_serde::shape_deployment_config::de_deployment_config(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_deployment_config(var_24);
             }
             ,
             _ => {}

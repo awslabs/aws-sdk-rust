@@ -28,10 +28,16 @@ pub fn ser_network_origin_configuration(
 pub(crate) fn de_network_origin_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NetworkOriginConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,14 +63,18 @@ where
                     }
                     variant = match key.as_ref() {
                         "vpcConfiguration" => Some(crate::types::NetworkOriginConfiguration::VpcConfiguration(
-                            crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vpcConfiguration' cannot be null")
                             })?,
                         )),
                         "internetConfiguration" => Some(crate::types::NetworkOriginConfiguration::InternetConfiguration(
-                            crate::protocol_serde::shape_internet_configuration::de_internet_configuration(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'internetConfiguration' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_internet_configuration::de_internet_configuration(tokens, _value, depth + 1)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'internetConfiguration' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

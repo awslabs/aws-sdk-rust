@@ -115,35 +115,41 @@ pub(crate) fn de_get_portfolio_preferences(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "applicationMode" => {
-                    builder = builder.set_application_mode(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ApplicationMode::from(u.as_ref())))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "applicationMode" => {
+                        builder = builder.set_application_mode(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::ApplicationMode::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "applicationPreferences" => {
+                        builder = builder.set_application_preferences(
+                            crate::protocol_serde::shape_application_preferences::de_application_preferences(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "databasePreferences" => {
+                        builder = builder.set_database_preferences(crate::protocol_serde::shape_database_preferences::de_database_preferences(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "prioritizeBusinessGoals" => {
+                        builder = builder.set_prioritize_business_goals(
+                            crate::protocol_serde::shape_prioritize_business_goals::de_prioritize_business_goals(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "applicationPreferences" => {
-                    builder = builder.set_application_preferences(crate::protocol_serde::shape_application_preferences::de_application_preferences(
-                        tokens, _value,
-                    )?);
-                }
-                "databasePreferences" => {
-                    builder = builder.set_database_preferences(crate::protocol_serde::shape_database_preferences::de_database_preferences(
-                        tokens, _value,
-                    )?);
-                }
-                "prioritizeBusinessGoals" => {
-                    builder = builder.set_prioritize_business_goals(
-                        crate::protocol_serde::shape_prioritize_business_goals::de_prioritize_business_goals(tokens, _value)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

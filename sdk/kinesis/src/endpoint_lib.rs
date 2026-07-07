@@ -15,12 +15,16 @@ pub(crate) static DEFAULT_PARTITION_RESOLVER: std::sync::LazyLock<crate::endpoin
     },
 );
 
-pub(crate) mod diagnostic;
-
-pub(crate) mod partition;
-
 pub(crate) mod arn;
 
+pub(crate) mod bdd_interpreter;
+
+pub(crate) mod coalesce;
+
+pub(crate) mod diagnostic;
+
 pub(crate) mod host;
+
+pub(crate) mod partition;
 
 pub(crate) mod substring;

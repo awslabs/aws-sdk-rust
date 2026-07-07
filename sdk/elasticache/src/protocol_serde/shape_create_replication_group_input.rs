@@ -263,6 +263,11 @@ pub fn ser_create_replication_group_input_input_input(
     if let Some(var_102) = &input.serverless_cache_snapshot_name {
         scope_101.string(var_102);
     }
+    #[allow(unused_mut)]
+    let mut scope_103 = writer.prefix("Durability");
+    if let Some(var_104) = &input.durability {
+        scope_103.string(var_104.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

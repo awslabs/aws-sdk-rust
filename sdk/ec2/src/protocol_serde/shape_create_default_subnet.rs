@@ -47,6 +47,8 @@ pub fn de_create_default_subnet(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateDefaultSubnetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateDefaultSubnetResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_create_default_subnet(
             s if s.matches("subnet") /* Subnet com.amazonaws.ec2.synthetic#CreateDefaultSubnetOutput$Subnet */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_subnet::de_subnet(&mut tag)
+                        crate::protocol_serde::shape_subnet::de_subnet(&mut tag, depth + 1)
                         ?
                     )
                 ;

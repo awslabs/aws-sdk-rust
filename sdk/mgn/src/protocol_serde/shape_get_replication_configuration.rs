@@ -100,6 +100,8 @@ pub(crate) fn de_get_replication_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -173,7 +175,9 @@ pub(crate) fn de_get_replication_configuration(
                 "replicatedDisks" => {
                     builder = builder.set_replicated_disks(
                         crate::protocol_serde::shape_replication_configuration_replicated_disks::de_replication_configuration_replicated_disks(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -187,7 +191,9 @@ pub(crate) fn de_get_replication_configuration(
                 "replicationServersSecurityGroupsIDs" => {
                     builder = builder.set_replication_servers_security_groups_ids(
                         crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -206,7 +212,14 @@ pub(crate) fn de_get_replication_configuration(
                     );
                 }
                 "stagingAreaTags" => {
-                    builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                    builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
+                }
+                "storageConfiguration" => {
+                    builder = builder.set_storage_configuration(crate::protocol_serde::shape_storage_configuration::de_storage_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "storeSnapshotOnLocalZone" => {
                     builder = builder.set_store_snapshot_on_local_zone(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

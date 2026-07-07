@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleDeparture {
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the departure.</p>
     pub place: ::std::option::Option<crate::types::RouteVehiclePlace>,
     /// <p>The departure time.</p>
     pub time: ::std::option::Option<::std::string::String>,
 }
 impl RouteVehicleDeparture {
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the departure.</p>
     pub fn place(&self) -> ::std::option::Option<&crate::types::RouteVehiclePlace> {
         self.place.as_ref()
     }
@@ -42,18 +42,18 @@ pub struct RouteVehicleDepartureBuilder {
     pub(crate) time: ::std::option::Option<::std::string::String>,
 }
 impl RouteVehicleDepartureBuilder {
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the departure.</p>
     /// This field is required.
     pub fn place(mut self, input: crate::types::RouteVehiclePlace) -> Self {
         self.place = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the departure.</p>
     pub fn set_place(mut self, input: ::std::option::Option<crate::types::RouteVehiclePlace>) -> Self {
         self.place = input;
         self
     }
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the departure.</p>
     pub fn get_place(&self) -> &::std::option::Option<crate::types::RouteVehiclePlace> {
         &self.place
     }

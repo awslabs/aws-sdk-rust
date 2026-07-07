@@ -140,16 +140,20 @@ pub(crate) fn de_create_matchmaking_rule_set(
     crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
-            "RuleSet" => builder.set_rule_set(Some(crate::protocol_serde::shape_matchmaking_rule_set::de_matchmaking_rule_set(decoder)?)),
+            "RuleSet" => builder.set_rule_set(Some(crate::protocol_serde::shape_matchmaking_rule_set::de_matchmaking_rule_set(
+                decoder,
+                depth + 1,
+            )?)),
             _ => {
                 decoder.skip()?;
                 builder
@@ -159,6 +163,8 @@ pub(crate) fn de_create_matchmaking_rule_set(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -168,13 +174,13 @@ pub(crate) fn de_create_matchmaking_rule_set(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

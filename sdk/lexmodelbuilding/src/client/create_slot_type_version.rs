@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`parent_slot_type_signature(Option<String>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::parent_slot_type_signature): <p>The built-in slot type used a the parent of the slot type.</p>
     ///   - [`slot_type_configurations(Option<Vec::<SlotTypeConfiguration>>)`](crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
     /// - On failure, responds with [`SdkError<CreateSlotTypeVersionError>`](crate::operation::create_slot_type_version::CreateSlotTypeVersionError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn create_slot_type_version(&self) -> crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionFluentBuilder {
         crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionFluentBuilder::new(self.handle.clone())
     }

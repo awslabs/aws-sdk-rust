@@ -9,6 +9,8 @@ pub struct UpdateApplicationInput {
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     /// <p>The configuration settings to modify for the OpenSearch application.</p>
     pub app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
+    /// <p>Configuration settings for integrating IAM Identity Center with the OpenSearch application.</p>
+    pub iam_identity_center_options: ::std::option::Option<crate::types::IamIdentityCenterOptionsInput>,
 }
 impl UpdateApplicationInput {
     /// <p>The unique identifier for the OpenSearch application to be updated.</p>
@@ -27,6 +29,10 @@ impl UpdateApplicationInput {
     pub fn app_configs(&self) -> &[crate::types::AppConfig] {
         self.app_configs.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration settings for integrating IAM Identity Center with the OpenSearch application.</p>
+    pub fn iam_identity_center_options(&self) -> ::std::option::Option<&crate::types::IamIdentityCenterOptionsInput> {
+        self.iam_identity_center_options.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -42,6 +48,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     pub(crate) app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
+    pub(crate) iam_identity_center_options: ::std::option::Option<crate::types::IamIdentityCenterOptionsInput>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The unique identifier for the OpenSearch application to be updated.</p>
@@ -99,6 +106,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_app_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppConfig>> {
         &self.app_configs
     }
+    /// <p>Configuration settings for integrating IAM Identity Center with the OpenSearch application.</p>
+    pub fn iam_identity_center_options(mut self, input: crate::types::IamIdentityCenterOptionsInput) -> Self {
+        self.iam_identity_center_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for integrating IAM Identity Center with the OpenSearch application.</p>
+    pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::IamIdentityCenterOptionsInput>) -> Self {
+        self.iam_identity_center_options = input;
+        self
+    }
+    /// <p>Configuration settings for integrating IAM Identity Center with the OpenSearch application.</p>
+    pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::IamIdentityCenterOptionsInput> {
+        &self.iam_identity_center_options
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -107,6 +128,7 @@ impl UpdateApplicationInputBuilder {
             id: self.id,
             data_sources: self.data_sources,
             app_configs: self.app_configs,
+            iam_identity_center_options: self.iam_identity_center_options,
         })
     }
 }

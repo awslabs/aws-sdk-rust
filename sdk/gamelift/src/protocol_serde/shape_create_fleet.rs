@@ -187,17 +187,28 @@ pub(crate) fn de_create_fleet(
     value: &[u8],
     mut builder: crate::operation::create_fleet::builders::CreateFleetOutputBuilder,
 ) -> ::std::result::Result<crate::operation::create_fleet::builders::CreateFleetOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::create_fleet::builders::CreateFleetOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::create_fleet::builders::CreateFleetOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "FleetAttributes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_fleet_attributes(Some(crate::protocol_serde::shape_fleet_attributes::de_fleet_attributes(decoder)?)))
+                Ok(
+                    builder.set_fleet_attributes(Some(crate::protocol_serde::shape_fleet_attributes::de_fleet_attributes(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "LocationStates" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_location_states(Some(crate::protocol_serde::shape_location_state_list::de_location_state_list(decoder)?)))
+                Ok(
+                    builder.set_location_states(Some(crate::protocol_serde::shape_location_state_list::de_location_state_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             _ => {
                 decoder.skip()?;
@@ -208,6 +219,8 @@ pub(crate) fn de_create_fleet(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -217,13 +230,13 @@ pub(crate) fn de_create_fleet(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

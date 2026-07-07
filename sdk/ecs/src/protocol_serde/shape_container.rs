@@ -2,10 +2,16 @@
 pub(crate) fn de_container<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Container>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -79,12 +85,18 @@ where
                             );
                         }
                         "networkBindings" => {
-                            builder =
-                                builder.set_network_bindings(crate::protocol_serde::shape_network_bindings::de_network_bindings(tokens, _value)?);
+                            builder = builder.set_network_bindings(crate::protocol_serde::shape_network_bindings::de_network_bindings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "networkInterfaces" => {
-                            builder = builder
-                                .set_network_interfaces(crate::protocol_serde::shape_network_interfaces::de_network_interfaces(tokens, _value)?);
+                            builder = builder.set_network_interfaces(crate::protocol_serde::shape_network_interfaces::de_network_interfaces(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "healthStatus" => {
                             builder = builder.set_health_status(
@@ -94,7 +106,11 @@ where
                             );
                         }
                         "managedAgents" => {
-                            builder = builder.set_managed_agents(crate::protocol_serde::shape_managed_agents::de_managed_agents(tokens, _value)?);
+                            builder = builder.set_managed_agents(crate::protocol_serde::shape_managed_agents::de_managed_agents(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "cpu" => {
                             builder = builder.set_cpu(
@@ -118,7 +134,14 @@ where
                             );
                         }
                         "gpuIds" => {
-                            builder = builder.set_gpu_ids(crate::protocol_serde::shape_gpu_ids::de_gpu_ids(tokens, _value)?);
+                            builder = builder.set_gpu_ids(crate::protocol_serde::shape_gpu_ids::de_gpu_ids(tokens, _value, depth + 1)?);
+                        }
+                        "neuronDeviceIds" => {
+                            builder = builder.set_neuron_device_ids(crate::protocol_serde::shape_neuron_device_ids::de_neuron_device_ids(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

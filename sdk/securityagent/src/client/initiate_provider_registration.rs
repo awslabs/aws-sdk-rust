@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`InitiateProviderRegistration`](crate::operation::initiate_provider_registration::builders::InitiateProviderRegistrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`provider(Provider)`](crate::operation::initiate_provider_registration::builders::InitiateProviderRegistrationFluentBuilder::provider) / [`set_provider(Option<Provider>)`](crate::operation::initiate_provider_registration::builders::InitiateProviderRegistrationFluentBuilder::set_provider):<br>required: **true**<br>Provider to register with<br>
+    ///   - [`provider(Provider)`](crate::operation::initiate_provider_registration::builders::InitiateProviderRegistrationFluentBuilder::provider) / [`set_provider(Option<Provider>)`](crate::operation::initiate_provider_registration::builders::InitiateProviderRegistrationFluentBuilder::set_provider):<br>required: **true**<br><p>The provider to initiate registration with. Currently, only GITHUB is supported.</p><br>
     /// - On success, responds with [`InitiateProviderRegistrationOutput`](crate::operation::initiate_provider_registration::InitiateProviderRegistrationOutput) with field(s):
-    ///   - [`redirect_to(String)`](crate::operation::initiate_provider_registration::InitiateProviderRegistrationOutput::redirect_to): OAuth redirect URL
-    ///   - [`csrf_state(String)`](crate::operation::initiate_provider_registration::InitiateProviderRegistrationOutput::csrf_state): CSRF state token for OAuth security
+    ///   - [`redirect_to(String)`](crate::operation::initiate_provider_registration::InitiateProviderRegistrationOutput::redirect_to): <p>The URL to redirect the user to for completing the OAuth authorization.</p>
+    ///   - [`csrf_state(String)`](crate::operation::initiate_provider_registration::InitiateProviderRegistrationOutput::csrf_state): <p>The CSRF state token to use when completing the OAuth flow.</p>
     /// - On failure, responds with [`SdkError<InitiateProviderRegistrationError>`](crate::operation::initiate_provider_registration::InitiateProviderRegistrationError)
     pub fn initiate_provider_registration(
         &self,

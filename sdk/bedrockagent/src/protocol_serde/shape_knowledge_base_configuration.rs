@@ -12,17 +12,23 @@ pub fn ser_knowledge_base_configuration(
         crate::protocol_serde::shape_vector_knowledge_base_configuration::ser_vector_knowledge_base_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.kendra_knowledge_base_configuration {
+    if let Some(var_3) = &input.managed_knowledge_base_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("kendraKnowledgeBaseConfiguration").start_object();
-        crate::protocol_serde::shape_kendra_knowledge_base_configuration::ser_kendra_knowledge_base_configuration(&mut object_4, var_3)?;
+        let mut object_4 = object.key("managedKnowledgeBaseConfiguration").start_object();
+        crate::protocol_serde::shape_managed_knowledge_base_configuration::ser_managed_knowledge_base_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.sql_knowledge_base_configuration {
+    if let Some(var_5) = &input.kendra_knowledge_base_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("sqlKnowledgeBaseConfiguration").start_object();
-        crate::protocol_serde::shape_sql_knowledge_base_configuration::ser_sql_knowledge_base_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("kendraKnowledgeBaseConfiguration").start_object();
+        crate::protocol_serde::shape_kendra_knowledge_base_configuration::ser_kendra_knowledge_base_configuration(&mut object_6, var_5)?;
         object_6.finish();
+    }
+    if let Some(var_7) = &input.sql_knowledge_base_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("sqlKnowledgeBaseConfiguration").start_object();
+        crate::protocol_serde::shape_sql_knowledge_base_configuration::ser_sql_knowledge_base_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }
@@ -30,10 +36,16 @@ pub fn ser_knowledge_base_configuration(
 pub(crate) fn de_knowledge_base_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,20 +65,37 @@ where
                         "vectorKnowledgeBaseConfiguration" => {
                             builder = builder.set_vector_knowledge_base_configuration(
                                 crate::protocol_serde::shape_vector_knowledge_base_configuration::de_vector_knowledge_base_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "managedKnowledgeBaseConfiguration" => {
+                            builder = builder.set_managed_knowledge_base_configuration(
+                                crate::protocol_serde::shape_managed_knowledge_base_configuration::de_managed_knowledge_base_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "kendraKnowledgeBaseConfiguration" => {
                             builder = builder.set_kendra_knowledge_base_configuration(
                                 crate::protocol_serde::shape_kendra_knowledge_base_configuration::de_kendra_knowledge_base_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "sqlKnowledgeBaseConfiguration" => {
                             builder = builder.set_sql_knowledge_base_configuration(
-                                crate::protocol_serde::shape_sql_knowledge_base_configuration::de_sql_knowledge_base_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_sql_knowledge_base_configuration::de_sql_knowledge_base_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

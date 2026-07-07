@@ -13,6 +13,7 @@
 /// # let conversationrole = unimplemented!();
 /// match conversationrole {
 ///     ConversationRole::Assistant => { /* ... */ },
+///     ConversationRole::System => { /* ... */ },
 ///     ConversationRole::User => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum ConversationRole {
     #[allow(missing_docs)] // documentation missing in model
     Assistant,
     #[allow(missing_docs)] // documentation missing in model
+    System,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ConversationRole {
     fn from(s: &str) -> Self {
         match s {
             "assistant" => ConversationRole::Assistant,
+            "system" => ConversationRole::System,
             "user" => ConversationRole::User,
             other => ConversationRole::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl ConversationRole {
     pub fn as_str(&self) -> &str {
         match self {
             ConversationRole::Assistant => "assistant",
+            ConversationRole::System => "system",
             ConversationRole::User => "user",
             ConversationRole::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["assistant", "user"]
+        &["assistant", "system", "user"]
     }
 }
 impl ::std::convert::AsRef<str> for ConversationRole {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ConversationRole {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConversationRole::Assistant => write!(f, "assistant"),
+            ConversationRole::System => write!(f, "system"),
             ConversationRole::User => write!(f, "user"),
             ConversationRole::Unknown(value) => write!(f, "{value}"),
         }

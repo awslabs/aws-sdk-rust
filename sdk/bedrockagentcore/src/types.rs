@@ -7,6 +7,10 @@ pub use crate::types::_oauth2_flow_type::Oauth2FlowType;
 
 pub use crate::types::_session_status::SessionStatus;
 
+pub use crate::types::_payment_token_request_input::PaymentTokenRequestInput;
+
+pub use crate::types::_payment_token_response_output::PaymentTokenResponseOutput;
+
 pub use crate::types::_tool_name::ToolName;
 
 pub use crate::types::_tool_arguments::ToolArguments;
@@ -39,11 +43,47 @@ pub use crate::types::_stream_update::StreamUpdate;
 
 pub use crate::types::_code_interpreter_session_status::CodeInterpreterSessionStatus;
 
+pub use crate::types::_gateway_filter::GatewayFilter;
+
+pub use crate::types::_ab_test_evaluation_config::AbTestEvaluationConfig;
+
+pub use crate::types::_ab_test_status::AbTestStatus;
+
+pub use crate::types::_ab_test_execution_status::AbTestExecutionStatus;
+
+pub use crate::types::_batch_evaluation_status::BatchEvaluationStatus;
+
+pub use crate::types::_recommendation_status::RecommendationStatus;
+
 pub use crate::types::_evaluation_input::EvaluationInput;
 
 pub use crate::types::_evaluation_target::EvaluationTarget;
 
+pub use crate::types::_ab_test_results::AbTestResults;
+
+pub use crate::types::_data_source_config::DataSourceConfig;
+
+pub use crate::types::_output_config::OutputConfig;
+
+pub use crate::types::_evaluation_job_results::EvaluationJobResults;
+
+pub use crate::types::_failure_analysis_result_content::FailureAnalysisResultContent;
+
+pub use crate::types::_user_intent_clustering_result_content::UserIntentClusteringResultContent;
+
+pub use crate::types::_execution_summary_clustering_result_content::ExecutionSummaryClusteringResultContent;
+
+pub use crate::types::_recommendation_type::RecommendationType;
+
+pub use crate::types::_recommendation_config::RecommendationConfig;
+
+pub use crate::types::_recommendation_result::RecommendationResult;
+
+pub use crate::types::_evaluation_metadata::EvaluationMetadata;
+
 pub use crate::types::_branch::Branch;
+
+pub use crate::types::_extraction_mode::ExtractionMode;
 
 pub use crate::types::_event::Event;
 
@@ -59,7 +99,43 @@ pub use crate::types::_search_criteria::SearchCriteria;
 
 pub use crate::types::_extraction_job::ExtractionJob;
 
+pub use crate::types::_payment_instrument_type::PaymentInstrumentType;
+
+pub use crate::types::_payment_instrument_details::PaymentInstrumentDetails;
+
+pub use crate::types::_payment_instrument::PaymentInstrument;
+
+pub use crate::types::_payment_instrument_status::PaymentInstrumentStatus;
+
+pub use crate::types::_blockchain_chain_id::BlockchainChainId;
+
+pub use crate::types::_instrument_balance_token::InstrumentBalanceToken;
+
+pub use crate::types::_token_balance::TokenBalance;
+
+pub use crate::types::_session_limits::SessionLimits;
+
+pub use crate::types::_payment_session::PaymentSession;
+
+pub use crate::types::_payment_session_status::PaymentSessionStatus;
+
+pub use crate::types::_payment_type::PaymentType;
+
+pub use crate::types::_payment_input::PaymentInput;
+
+pub use crate::types::_payment_status::PaymentStatus;
+
+pub use crate::types::_payment_output::PaymentOutput;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
+
+pub use crate::types::_coinbase_cdp_token_request_input::CoinbaseCdpTokenRequestInput;
+
+pub use crate::types::_stripe_privy_token_request_input::StripePrivyTokenRequestInput;
+
+pub use crate::types::_coinbase_cdp_token_response_output::CoinbaseCdpTokenResponseOutput;
+
+pub use crate::types::_stripe_privy_token_response_output::StripePrivyTokenResponseOutput;
 
 pub use crate::types::_programming_language::ProgrammingLanguage;
 
@@ -74,6 +150,8 @@ pub use crate::types::_harness_bedrock_model_config::HarnessBedrockModelConfig;
 pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfig;
 
 pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfig;
+
+pub use crate::types::_harness_lite_llm_model_config::HarnessLiteLlmModelConfig;
 
 pub use crate::types::_harness_system_content_block::HarnessSystemContentBlock;
 
@@ -145,9 +223,35 @@ pub use crate::types::_automation_stream_update::AutomationStreamUpdate;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummary;
 
+pub use crate::types::_variant::Variant;
+
 pub use crate::types::_evaluation_reference_input::EvaluationReferenceInput;
 
 pub use crate::types::_evaluation_result_content::EvaluationResultContent;
+
+pub use crate::types::_evaluator::Evaluator;
+
+pub use crate::types::_insight::Insight;
+
+pub use crate::types::_cloud_watch_logs_source::CloudWatchLogsSource;
+
+pub use crate::types::_online_evaluation_config_source::OnlineEvaluationConfigSource;
+
+pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfig;
+
+pub use crate::types::_system_prompt_recommendation_config::SystemPromptRecommendationConfig;
+
+pub use crate::types::_tool_description_recommendation_config::ToolDescriptionRecommendationConfig;
+
+pub use crate::types::_system_prompt_recommendation_result::SystemPromptRecommendationResult;
+
+pub use crate::types::_tool_description_recommendation_result::ToolDescriptionRecommendationResult;
+
+pub use crate::types::_ab_test_summary::AbTestSummary;
+
+pub use crate::types::_batch_evaluation_summary::BatchEvaluationSummary;
+
+pub use crate::types::_recommendation_summary::RecommendationSummary;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInput;
 
@@ -171,13 +275,33 @@ pub use crate::types::_extraction_job_status::ExtractionJobStatus;
 
 pub use crate::types::_extraction_job_metadata::ExtractionJobMetadata;
 
+pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpression;
+
 pub use crate::types::_memory_record_summary::MemoryRecordSummary;
 
 pub use crate::types::_event_filter_condition::EventFilterCondition;
 
 pub use crate::types::_session_summary::SessionSummary;
 
+pub use crate::types::_payment_instrument_summary::PaymentInstrumentSummary;
+
+pub use crate::types::_embedded_crypto_wallet::EmbeddedCryptoWallet;
+
+pub use crate::types::_crypto_wallet_network::CryptoWalletNetwork;
+
+pub use crate::types::_payment_session_summary::PaymentSessionSummary;
+
+pub use crate::types::_amount::Amount;
+
+pub use crate::types::_available_limits::AvailableLimits;
+
+pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInput;
+
+pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutput;
+
 pub use crate::types::_registry_record_summary::RegistryRecordSummary;
+
+pub use crate::types::_payment_http_method_type::PaymentHttpMethodType;
 
 pub use crate::types::_input_content_block::InputContentBlock;
 
@@ -185,9 +309,19 @@ pub use crate::types::_tool_result_structured_content::ToolResultStructuredConte
 
 pub use crate::types::_harness_conversation_role::HarnessConversationRole;
 
+pub use crate::types::_harness_bedrock_api_format::HarnessBedrockApiFormat;
+
+pub use crate::types::_harness_open_ai_api_format::HarnessOpenAiApiFormat;
+
 pub use crate::types::_harness_tool_type::HarnessToolType;
 
 pub use crate::types::_harness_tool_configuration::HarnessToolConfiguration;
+
+pub use crate::types::_harness_skill_s3_source::HarnessSkillS3Source;
+
+pub use crate::types::_harness_skill_git_source::HarnessSkillGitSource;
+
+pub use crate::types::_harness_skill_aws_skills_source::HarnessSkillAwsSkillsSource;
 
 pub use crate::types::_harness_content_block_start::HarnessContentBlockStart;
 
@@ -221,6 +355,10 @@ pub use crate::types::_screenshot_format::ScreenshotFormat;
 
 pub use crate::types::_browser_action_status::BrowserActionStatus;
 
+pub use crate::types::_variant_configuration::VariantConfiguration;
+
+pub use crate::types::_per_variant_online_evaluation_config::PerVariantOnlineEvaluationConfig;
+
 pub use crate::types::_context::Context;
 
 pub use crate::types::_evaluation_content::EvaluationContent;
@@ -229,15 +367,49 @@ pub use crate::types::_evaluation_expected_trajectory::EvaluationExpectedTraject
 
 pub use crate::types::_token_usage::TokenUsage;
 
+pub use crate::types::_evaluator_metric::EvaluatorMetric;
+
+pub use crate::types::_cloud_watch_filter_config::CloudWatchFilterConfig;
+
+pub use crate::types::_session_filter_config::SessionFilterConfig;
+
+pub use crate::types::_evaluator_summary::EvaluatorSummary;
+
+pub use crate::types::_failure_category_cluster::FailureCategoryCluster;
+
+pub use crate::types::_user_intent_cluster::UserIntentCluster;
+
+pub use crate::types::_execution_summary_cluster::ExecutionSummaryCluster;
+
+pub use crate::types::_system_prompt_config::SystemPromptConfig;
+
+pub use crate::types::_agent_traces_config::AgentTracesConfig;
+
+pub use crate::types::_recommendation_evaluation_config::RecommendationEvaluationConfig;
+
+pub use crate::types::_tool_description_source::ToolDescriptionSource;
+
+pub use crate::types::_recommendation_result_configuration_bundle::RecommendationResultConfigurationBundle;
+
+pub use crate::types::_session_metadata_shape::SessionMetadataShape;
+
 pub use crate::types::_memory_record_status::MemoryRecordStatus;
 
 pub use crate::types::_conversational::Conversational;
+
+pub use crate::types::_memory_record_metadata_value::MemoryRecordMetadataValue;
 
 pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpression;
 
 pub use crate::types::_extraction_job_messages::ExtractionJobMessages;
 
-pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpression;
+pub use crate::types::_memory_record_left_expression::MemoryRecordLeftExpression;
+
+pub use crate::types::_memory_record_operator_type::MemoryRecordOperatorType;
+
+pub use crate::types::_memory_record_right_expression::MemoryRecordRightExpression;
+
+pub use crate::types::_currency::Currency;
 
 pub use crate::types::_descriptor_type::DescriptorType;
 
@@ -261,6 +433,8 @@ pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConf
 
 pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfig;
 
+pub use crate::types::_harness_skill_git_auth::HarnessSkillGitAuth;
+
 pub use crate::types::_harness_tool_use_block_start::HarnessToolUseBlockStart;
 
 pub use crate::types::_harness_tool_result_block_start::HarnessToolResultBlockStart;
@@ -277,7 +451,29 @@ pub use crate::types::_external_proxy::ExternalProxy;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
 
+pub use crate::types::_configuration_bundle_ref::ConfigurationBundleRef;
+
+pub use crate::types::_target_ref::TargetRef;
+
 pub use crate::types::_span_context::SpanContext;
+
+pub use crate::types::_control_stats::ControlStats;
+
+pub use crate::types::_evaluator_statistics::EvaluatorStatistics;
+
+pub use crate::types::_system_prompt_configuration_bundle::SystemPromptConfigurationBundle;
+
+pub use crate::types::_cloud_watch_logs_trace_config::CloudWatchLogsTraceConfig;
+
+pub use crate::types::_batch_evaluation_trace_config::BatchEvaluationTraceConfig;
+
+pub use crate::types::_tool_description_text_input::ToolDescriptionTextInput;
+
+pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionConfigurationBundle;
+
+pub use crate::types::_tool_description_output::ToolDescriptionOutput;
+
+pub use crate::types::_ground_truth_source::GroundTruthSource;
 
 pub use crate::types::_content::Content;
 
@@ -288,6 +484,8 @@ pub use crate::types::_left_expression::LeftExpression;
 pub use crate::types::_operator_type::OperatorType;
 
 pub use crate::types::_right_expression::RightExpression;
+
+pub use crate::types::_linked_account::LinkedAccount;
 
 pub use crate::types::_mcp_descriptor::McpDescriptor;
 
@@ -317,7 +515,29 @@ pub use crate::types::_harness_tool_result_block_delta::HarnessToolResultBlockDe
 
 pub use crate::types::_proxy_credentials::ProxyCredentials;
 
+pub use crate::types::_variant_result::VariantResult;
+
+pub use crate::types::_failure_sub_category_cluster::FailureSubCategoryCluster;
+
+pub use crate::types::_user_intent_affected_session::UserIntentAffectedSession;
+
+pub use crate::types::_execution_summary_affected_session::ExecutionSummaryAffectedSession;
+
+pub use crate::types::_cloud_watch_logs_rule::CloudWatchLogsRule;
+
+pub use crate::types::_recommendation_evaluator_reference::RecommendationEvaluatorReference;
+
+pub use crate::types::_inline_ground_truth::InlineGroundTruth;
+
 pub use crate::types::_message_metadata::MessageMetadata;
+
+pub use crate::types::_linked_account_email::LinkedAccountEmail;
+
+pub use crate::types::_linked_account_sms::LinkedAccountSms;
+
+pub use crate::types::_linked_account_developer_jwt::LinkedAccountDeveloperJwt;
+
+pub use crate::types::_linked_account_o_auth2::LinkedAccountOAuth2;
 
 pub use crate::types::_server_definition::ServerDefinition;
 
@@ -339,17 +559,63 @@ pub use crate::types::_o_auth_credential_provider::OAuthCredentialProvider;
 
 pub use crate::types::_basic_auth::BasicAuth;
 
+pub use crate::types::_confidence_interval::ConfidenceInterval;
+
+pub use crate::types::_tool_description_input::ToolDescriptionInput;
+
+pub use crate::types::_configuration_bundle_tool_entry::ConfigurationBundleToolEntry;
+
+pub use crate::types::_o_auth2_authentication::OAuth2Authentication;
+
 pub use crate::types::_harness_tool_result_content_block::HarnessToolResultContentBlock;
 
 pub use crate::types::_o_auth_grant_type::OAuthGrantType;
 
+pub use crate::types::_root_cause_cluster::RootCauseCluster;
+
+pub use crate::types::_cloud_watch_logs_filter::CloudWatchLogsFilter;
+
+pub use crate::types::_tool_description_config::ToolDescriptionConfig;
+
+pub use crate::types::_ground_truth_turn::GroundTruthTurn;
+
+pub use crate::types::_cloud_watch_logs_filter_operator::CloudWatchLogsFilterOperator;
+
+pub use crate::types::_filter_value::FilterValue;
+
+pub use crate::types::_ground_truth_turn_input::GroundTruthTurnInput;
+
+pub use crate::types::_affected_session::AffectedSession;
+
+pub use crate::types::_failure_span_detail::FailureSpanDetail;
+
+pub use crate::types::_insights_failure_signal::InsightsFailureSignal;
+
+pub use crate::types::_insights_failure_category::InsightsFailureCategory;
+
 mod _a2a_descriptor;
 
+mod _ab_test_evaluation_config;
+
+mod _ab_test_execution_status;
+
+mod _ab_test_results;
+
+mod _ab_test_status;
+
+mod _ab_test_summary;
+
 mod _actor_summary;
+
+mod _affected_session;
 
 mod _agent_card_definition;
 
 mod _agent_skills_descriptor;
+
+mod _agent_traces_config;
+
+mod _amount;
 
 mod _automation_stream;
 
@@ -357,7 +623,17 @@ mod _automation_stream_status;
 
 mod _automation_stream_update;
 
+mod _available_limits;
+
 mod _basic_auth;
+
+mod _batch_evaluation_status;
+
+mod _batch_evaluation_summary;
+
+mod _batch_evaluation_trace_config;
+
+mod _blockchain_chain_id;
 
 mod _branch;
 
@@ -387,6 +663,20 @@ mod _certificate;
 
 mod _certificate_location;
 
+mod _cloud_watch_filter_config;
+
+mod _cloud_watch_logs_filter;
+
+mod _cloud_watch_logs_filter_operator;
+
+mod _cloud_watch_logs_rule;
+
+mod _cloud_watch_logs_source;
+
+mod _cloud_watch_logs_trace_config;
+
+mod _cloud_watch_output_config;
+
 mod _code_interpreter_result;
 
 mod _code_interpreter_session_status;
@@ -395,7 +685,17 @@ mod _code_interpreter_session_summary;
 
 mod _code_interpreter_stream_output;
 
+mod _coinbase_cdp_token_request_input;
+
+mod _coinbase_cdp_token_response_output;
+
 mod _command_execution_status;
+
+mod _confidence_interval;
+
+mod _configuration_bundle_ref;
+
+mod _configuration_bundle_tool_entry;
 
 mod _content;
 
@@ -411,13 +711,27 @@ mod _content_stop_event;
 
 mod _context;
 
+mod _control_stats;
+
 mod _conversational;
 
+mod _crypto_wallet_network;
+
+mod _crypto_x402_payment_input;
+
+mod _crypto_x402_payment_output;
+
+mod _currency;
+
 mod _custom_descriptor;
+
+mod _data_source_config;
 
 mod _descriptor_type;
 
 mod _descriptors;
+
+mod _embedded_crypto_wallet;
 
 mod _evaluation_content;
 
@@ -425,17 +739,35 @@ mod _evaluation_expected_trajectory;
 
 mod _evaluation_input;
 
+mod _evaluation_job_results;
+
+mod _evaluation_metadata;
+
 mod _evaluation_reference_input;
 
 mod _evaluation_result_content;
 
 mod _evaluation_target;
 
+mod _evaluator;
+
+mod _evaluator_metric;
+
+mod _evaluator_statistics;
+
+mod _evaluator_summary;
+
 mod _event;
 
 mod _event_filter_condition;
 
 mod _event_metadata_filter_expression;
+
+mod _execution_summary_affected_session;
+
+mod _execution_summary_cluster;
+
+mod _execution_summary_clustering_result_content;
 
 mod _external_proxy;
 
@@ -449,13 +781,35 @@ mod _extraction_job_metadata;
 
 mod _extraction_job_status;
 
+mod _extraction_mode;
+
+mod _failure_analysis_result_content;
+
+mod _failure_category_cluster;
+
+mod _failure_span_detail;
+
+mod _failure_sub_category_cluster;
+
 mod _filter_input;
+
+mod _filter_value;
+
+mod _gateway_filter;
+
+mod _ground_truth_source;
+
+mod _ground_truth_turn;
+
+mod _ground_truth_turn_input;
 
 mod _harness_agent_core_browser_config;
 
 mod _harness_agent_core_code_interpreter_config;
 
 mod _harness_agent_core_gateway_config;
+
+mod _harness_bedrock_api_format;
 
 mod _harness_bedrock_model_config;
 
@@ -479,6 +833,8 @@ mod _harness_gemini_model_config;
 
 mod _harness_inline_function_config;
 
+mod _harness_lite_llm_model_config;
+
 mod _harness_message;
 
 mod _harness_message_start_event;
@@ -488,6 +844,8 @@ mod _harness_message_stop_event;
 mod _harness_metadata_event;
 
 mod _harness_model_configuration;
+
+mod _harness_open_ai_api_format;
 
 mod _harness_open_ai_model_config;
 
@@ -500,6 +858,14 @@ mod _harness_reasoning_text_block;
 mod _harness_remote_mcp_config;
 
 mod _harness_skill;
+
+mod _harness_skill_aws_skills_source;
+
+mod _harness_skill_git_auth;
+
+mod _harness_skill_git_source;
+
+mod _harness_skill_s3_source;
 
 mod _harness_stop_reason;
 
@@ -533,7 +899,17 @@ mod _harness_tool_use_status;
 
 mod _harness_tool_use_type;
 
+mod _inline_ground_truth;
+
 mod _input_content_block;
+
+mod _insight;
+
+mod _insights_failure_category;
+
+mod _insights_failure_signal;
+
+mod _instrument_balance_token;
 
 mod _invoke_agent_runtime_command_request_body;
 
@@ -557,6 +933,16 @@ mod _language_runtime;
 
 mod _left_expression;
 
+mod _linked_account;
+
+mod _linked_account_developer_jwt;
+
+mod _linked_account_email;
+
+mod _linked_account_o_auth2;
+
+mod _linked_account_sms;
+
 mod _live_view_stream;
 
 mod _mcp_descriptor;
@@ -571,7 +957,15 @@ mod _memory_record_create_input;
 
 mod _memory_record_delete_input;
 
+mod _memory_record_left_expression;
+
+mod _memory_record_metadata_value;
+
+mod _memory_record_operator_type;
+
 mod _memory_record_output;
+
+mod _memory_record_right_expression;
 
 mod _memory_record_status;
 
@@ -601,15 +995,53 @@ mod _mouse_scroll_arguments;
 
 mod _mouse_scroll_result;
 
+mod _o_auth2_authentication;
+
 mod _o_auth_credential_provider;
 
 mod _o_auth_grant_type;
 
 mod _oauth2_flow_type;
 
+mod _online_evaluation_config_source;
+
 mod _operator_type;
 
+mod _output_config;
+
 mod _payload_type;
+
+mod _payment_http_method_type;
+
+mod _payment_input;
+
+mod _payment_instrument;
+
+mod _payment_instrument_details;
+
+mod _payment_instrument_status;
+
+mod _payment_instrument_summary;
+
+mod _payment_instrument_type;
+
+mod _payment_output;
+
+mod _payment_session;
+
+mod _payment_session_status;
+
+mod _payment_session_summary;
+
+mod _payment_status;
+
+mod _payment_token_request_input;
+
+mod _payment_token_response_output;
+
+mod _payment_type;
+
+mod _per_variant_online_evaluation_config;
 
 mod _programming_language;
 
@@ -620,6 +1052,22 @@ mod _proxy_bypass;
 mod _proxy_configuration;
 
 mod _proxy_credentials;
+
+mod _recommendation_config;
+
+mod _recommendation_evaluation_config;
+
+mod _recommendation_evaluator_reference;
+
+mod _recommendation_result;
+
+mod _recommendation_result_configuration_bundle;
+
+mod _recommendation_status;
+
+mod _recommendation_summary;
+
+mod _recommendation_type;
 
 mod _registry_record_status;
 
@@ -637,6 +1085,8 @@ mod _right_expression;
 
 mod _role;
 
+mod _root_cause_cluster;
+
 mod _s3_location;
 
 mod _screenshot_arguments;
@@ -653,6 +1103,12 @@ mod _server_definition;
 
 mod _session_filter;
 
+mod _session_filter_config;
+
+mod _session_limits;
+
+mod _session_metadata_shape;
+
 mod _session_status;
 
 mod _session_summary;
@@ -665,11 +1121,43 @@ mod _span_context;
 
 mod _stream_update;
 
+mod _stripe_privy_token_request_input;
+
+mod _stripe_privy_token_response_output;
+
+mod _system_prompt_config;
+
+mod _system_prompt_configuration_bundle;
+
+mod _system_prompt_recommendation_config;
+
+mod _system_prompt_recommendation_result;
+
+mod _target_ref;
+
 mod _task_status;
+
+mod _token_balance;
 
 mod _token_usage;
 
 mod _tool_arguments;
+
+mod _tool_description_config;
+
+mod _tool_description_configuration_bundle;
+
+mod _tool_description_input;
+
+mod _tool_description_output;
+
+mod _tool_description_recommendation_config;
+
+mod _tool_description_recommendation_result;
+
+mod _tool_description_source;
+
+mod _tool_description_text_input;
 
 mod _tool_name;
 
@@ -681,9 +1169,21 @@ mod _unit;
 
 mod _user_identifier;
 
+mod _user_intent_affected_session;
+
+mod _user_intent_cluster;
+
+mod _user_intent_clustering_result_content;
+
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _variant;
+
+mod _variant_configuration;
+
+mod _variant_result;
 
 mod _view_port;
 

@@ -2,10 +2,16 @@
 pub(crate) fn de_run<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Run>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -76,7 +82,7 @@ where
                             )?);
                         }
                         "counters" => {
-                            builder = builder.set_counters(crate::protocol_serde::shape_counters::de_counters(tokens, _value)?);
+                            builder = builder.set_counters(crate::protocol_serde::shape_counters::de_counters(tokens, _value, depth + 1)?);
                         }
                         "message" => {
                             builder = builder.set_message(
@@ -107,13 +113,22 @@ where
                             );
                         }
                         "deviceMinutes" => {
-                            builder = builder.set_device_minutes(crate::protocol_serde::shape_device_minutes::de_device_minutes(tokens, _value)?);
+                            builder = builder.set_device_minutes(crate::protocol_serde::shape_device_minutes::de_device_minutes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "networkProfile" => {
-                            builder = builder.set_network_profile(crate::protocol_serde::shape_network_profile::de_network_profile(tokens, _value)?);
+                            builder = builder.set_network_profile(crate::protocol_serde::shape_network_profile::de_network_profile(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "deviceProxy" => {
-                            builder = builder.set_device_proxy(crate::protocol_serde::shape_device_proxy::de_device_proxy(tokens, _value)?);
+                            builder =
+                                builder.set_device_proxy(crate::protocol_serde::shape_device_proxy::de_device_proxy(tokens, _value, depth + 1)?);
                         }
                         "parsingResultUrl" => {
                             builder = builder.set_parsing_result_url(
@@ -172,14 +187,14 @@ where
                             );
                         }
                         "radios" => {
-                            builder = builder.set_radios(crate::protocol_serde::shape_radios::de_radios(tokens, _value)?);
+                            builder = builder.set_radios(crate::protocol_serde::shape_radios::de_radios(tokens, _value, depth + 1)?);
                         }
                         "location" => {
-                            builder = builder.set_location(crate::protocol_serde::shape_location::de_location(tokens, _value)?);
+                            builder = builder.set_location(crate::protocol_serde::shape_location::de_location(tokens, _value, depth + 1)?);
                         }
                         "customerArtifactPaths" => {
                             builder = builder.set_customer_artifact_paths(
-                                crate::protocol_serde::shape_customer_artifact_paths::de_customer_artifact_paths(tokens, _value)?,
+                                crate::protocol_serde::shape_customer_artifact_paths::de_customer_artifact_paths(tokens, _value, depth + 1)?,
                             );
                         }
                         "webUrl" => {
@@ -201,11 +216,11 @@ where
                         }
                         "deviceSelectionResult" => {
                             builder = builder.set_device_selection_result(
-                                crate::protocol_serde::shape_device_selection_result::de_device_selection_result(tokens, _value)?,
+                                crate::protocol_serde::shape_device_selection_result::de_device_selection_result(tokens, _value, depth + 1)?,
                             );
                         }
                         "vpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "executionRoleArn" => {
                             builder = builder.set_execution_role_arn(
@@ -216,7 +231,7 @@ where
                         }
                         "environmentVariables" => {
                             builder = builder.set_environment_variables(
-                                crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens, _value)?,
+                                crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

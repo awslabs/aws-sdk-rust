@@ -28,11 +28,16 @@ impl crate::operation::cancel_capacity_reservation::builders::CancelCapacityRese
 /// <li>
 /// <p><code>assessing</code></p></li>
 /// <li>
-/// <p><code>active</code> and there is no commitment duration or the commitment duration has elapsed. You can't cancel a future-dated Capacity Reservation during the commitment duration.</p></li>
+/// <p><code>scheduled</code> — requires a cancellation quote. Use <code>CreateCapacityReservationCancellationQuote</code> to generate a quote, then pass the quote ID with <code>ApplyCancellationCharges</code> set to <code>commitment-wind-down</code>. The cancellation charge depends on how close the reservation is to its start date.</p></li>
+/// <li>
+/// <p><code>active</code> and there is no commitment duration or the commitment duration has elapsed.</p></li>
+/// <li>
+/// <p><code>active</code> during the commitment duration — requires a cancellation quote. Use <code>CreateCapacityReservationCancellationQuote</code> to generate a quote, then pass the quote ID with <code>ApplyCancellationCharges</code> set to <code>commitment-wind-down</code>. The Capacity Reservation transitions to <code>cancelling</code> while charges are applied.</p></li>
+/// <li>
+/// <p><code>delayed</code> — the commitment duration is waived, so no cancellation charge applies.</p></li>
 /// </ul><note>
 /// <p>You can't modify or cancel a Capacity Block. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity Blocks for ML</a>.</p>
 /// </note>
-/// <p>If a future-dated Capacity Reservation enters the <code>delayed</code> state, the commitment duration is waived, and you can cancel it as soon as it enters the <code>active</code> state.</p>
 /// <p>Instances running in the reserved capacity continue running until you stop them. Stopped instances that target the Capacity Reservation can no longer launch. Modify these instances to either target a different Capacity Reservation, launch On-Demand Instance capacity, or run in any open Capacity Reservation that has matching attributes and sufficient capacity.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationFluentBuilder {
@@ -146,5 +151,33 @@ impl CancelCapacityReservationFluentBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
+    }
+    /// <p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity Reservation during its commitment duration. Possible values include <code>commitment-wind-down</code>, which continues billing for the remaining commitment duration without delivering capacity.</p>
+    pub fn apply_cancellation_charges(mut self, input: crate::types::ApplyCancellationCharges) -> Self {
+        self.inner = self.inner.apply_cancellation_charges(input);
+        self
+    }
+    /// <p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity Reservation during its commitment duration. Possible values include <code>commitment-wind-down</code>, which continues billing for the remaining commitment duration without delivering capacity.</p>
+    pub fn set_apply_cancellation_charges(mut self, input: ::std::option::Option<crate::types::ApplyCancellationCharges>) -> Self {
+        self.inner = self.inner.set_apply_cancellation_charges(input);
+        self
+    }
+    /// <p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity Reservation during its commitment duration. Possible values include <code>commitment-wind-down</code>, which continues billing for the remaining commitment duration without delivering capacity.</p>
+    pub fn get_apply_cancellation_charges(&self) -> &::std::option::Option<crate::types::ApplyCancellationCharges> {
+        self.inner.get_apply_cancellation_charges()
+    }
+    /// <p>The ID of the cancellation quote to use for the cancellation. You can generate a cancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation quote must be in an <code>active</code> state.</p>
+    pub fn quote_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.quote_id(input.into());
+        self
+    }
+    /// <p>The ID of the cancellation quote to use for the cancellation. You can generate a cancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation quote must be in an <code>active</code> state.</p>
+    pub fn set_quote_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_quote_id(input);
+        self
+    }
+    /// <p>The ID of the cancellation quote to use for the cancellation. You can generate a cancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation quote must be in an <code>active</code> state.</p>
+    pub fn get_quote_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quote_id()
     }
 }

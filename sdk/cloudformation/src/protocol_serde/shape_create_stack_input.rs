@@ -128,6 +128,16 @@ pub fn ser_create_stack_input_input_input(
     if let Some(var_51) = &input.retain_except_on_create {
         scope_50.boolean(*var_51);
     }
+    #[allow(unused_mut)]
+    let mut scope_52 = writer.prefix("DeploymentConfig");
+    if let Some(var_53) = &input.deployment_config {
+        crate::protocol_serde::shape_deployment_config::ser_deployment_config(scope_52, var_53)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_54 = writer.prefix("DisableValidation");
+    if let Some(var_55) = &input.disable_validation {
+        scope_54.boolean(*var_55);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

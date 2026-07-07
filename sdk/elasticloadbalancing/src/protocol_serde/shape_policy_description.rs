@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_policy_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PolicyDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PolicyDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_policy_description(
             s if s.matches("PolicyAttributeDescriptions") /* PolicyAttributeDescriptions com.amazonaws.elasticloadbalancing#PolicyDescription$PolicyAttributeDescriptions */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_policy_attribute_descriptions::de_policy_attribute_descriptions(&mut tag)
+                        crate::protocol_serde::shape_policy_attribute_descriptions::de_policy_attribute_descriptions(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -49,6 +49,8 @@ pub fn de_accept_transit_gateway_vpc_attachment(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AcceptTransitGatewayVpcAttachmentResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AcceptTransitGatewayVpcAttachmentResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_accept_transit_gateway_vpc_attachment(
             s if s.matches("transitGatewayVpcAttachment") /* TransitGatewayVpcAttachment com.amazonaws.ec2.synthetic#AcceptTransitGatewayVpcAttachmentOutput$TransitGatewayVpcAttachment */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_vpc_attachment::de_transit_gateway_vpc_attachment(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_vpc_attachment::de_transit_gateway_vpc_attachment(&mut tag, depth + 1)
                         ?
                     )
                 ;

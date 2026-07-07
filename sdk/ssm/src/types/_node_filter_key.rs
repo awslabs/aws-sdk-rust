@@ -15,6 +15,8 @@
 ///     NodeFilterKey::AccountId => { /* ... */ },
 ///     NodeFilterKey::AgentType => { /* ... */ },
 ///     NodeFilterKey::AgentVersion => { /* ... */ },
+///     NodeFilterKey::AvailabilityZone => { /* ... */ },
+///     NodeFilterKey::AvailabilityZoneId => { /* ... */ },
 ///     NodeFilterKey::ComputerName => { /* ... */ },
 ///     NodeFilterKey::InstanceId => { /* ... */ },
 ///     NodeFilterKey::InstanceStatus => { /* ... */ },
@@ -27,6 +29,9 @@
 ///     NodeFilterKey::PlatformVersion => { /* ... */ },
 ///     NodeFilterKey::Region => { /* ... */ },
 ///     NodeFilterKey::ResourceType => { /* ... */ },
+///     NodeFilterKey::SourceId => { /* ... */ },
+///     NodeFilterKey::SourceLocation => { /* ... */ },
+///     NodeFilterKey::SourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -62,6 +67,10 @@ pub enum NodeFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     AgentVersion,
     #[allow(missing_docs)] // documentation missing in model
+    AvailabilityZone,
+    #[allow(missing_docs)] // documentation missing in model
+    AvailabilityZoneId,
+    #[allow(missing_docs)] // documentation missing in model
     ComputerName,
     #[allow(missing_docs)] // documentation missing in model
     InstanceId,
@@ -85,6 +94,12 @@ pub enum NodeFilterKey {
     Region,
     #[allow(missing_docs)] // documentation missing in model
     ResourceType,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceId,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceLocation,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -95,6 +110,8 @@ impl ::std::convert::From<&str> for NodeFilterKey {
             "AccountId" => NodeFilterKey::AccountId,
             "AgentType" => NodeFilterKey::AgentType,
             "AgentVersion" => NodeFilterKey::AgentVersion,
+            "AvailabilityZone" => NodeFilterKey::AvailabilityZone,
+            "AvailabilityZoneId" => NodeFilterKey::AvailabilityZoneId,
             "ComputerName" => NodeFilterKey::ComputerName,
             "InstanceId" => NodeFilterKey::InstanceId,
             "InstanceStatus" => NodeFilterKey::InstanceStatus,
@@ -107,6 +124,9 @@ impl ::std::convert::From<&str> for NodeFilterKey {
             "PlatformVersion" => NodeFilterKey::PlatformVersion,
             "Region" => NodeFilterKey::Region,
             "ResourceType" => NodeFilterKey::ResourceType,
+            "SourceId" => NodeFilterKey::SourceId,
+            "SourceLocation" => NodeFilterKey::SourceLocation,
+            "SourceType" => NodeFilterKey::SourceType,
             other => NodeFilterKey::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -125,6 +145,8 @@ impl NodeFilterKey {
             NodeFilterKey::AccountId => "AccountId",
             NodeFilterKey::AgentType => "AgentType",
             NodeFilterKey::AgentVersion => "AgentVersion",
+            NodeFilterKey::AvailabilityZone => "AvailabilityZone",
+            NodeFilterKey::AvailabilityZoneId => "AvailabilityZoneId",
             NodeFilterKey::ComputerName => "ComputerName",
             NodeFilterKey::InstanceId => "InstanceId",
             NodeFilterKey::InstanceStatus => "InstanceStatus",
@@ -137,6 +159,9 @@ impl NodeFilterKey {
             NodeFilterKey::PlatformVersion => "PlatformVersion",
             NodeFilterKey::Region => "Region",
             NodeFilterKey::ResourceType => "ResourceType",
+            NodeFilterKey::SourceId => "SourceId",
+            NodeFilterKey::SourceLocation => "SourceLocation",
+            NodeFilterKey::SourceType => "SourceType",
             NodeFilterKey::Unknown(value) => value.as_str(),
         }
     }
@@ -146,6 +171,8 @@ impl NodeFilterKey {
             "AccountId",
             "AgentType",
             "AgentVersion",
+            "AvailabilityZone",
+            "AvailabilityZoneId",
             "ComputerName",
             "InstanceId",
             "InstanceStatus",
@@ -158,6 +185,9 @@ impl NodeFilterKey {
             "PlatformVersion",
             "Region",
             "ResourceType",
+            "SourceId",
+            "SourceLocation",
+            "SourceType",
         ]
     }
 }
@@ -184,6 +214,8 @@ impl ::std::fmt::Display for NodeFilterKey {
             NodeFilterKey::AccountId => write!(f, "AccountId"),
             NodeFilterKey::AgentType => write!(f, "AgentType"),
             NodeFilterKey::AgentVersion => write!(f, "AgentVersion"),
+            NodeFilterKey::AvailabilityZone => write!(f, "AvailabilityZone"),
+            NodeFilterKey::AvailabilityZoneId => write!(f, "AvailabilityZoneId"),
             NodeFilterKey::ComputerName => write!(f, "ComputerName"),
             NodeFilterKey::InstanceId => write!(f, "InstanceId"),
             NodeFilterKey::InstanceStatus => write!(f, "InstanceStatus"),
@@ -196,6 +228,9 @@ impl ::std::fmt::Display for NodeFilterKey {
             NodeFilterKey::PlatformVersion => write!(f, "PlatformVersion"),
             NodeFilterKey::Region => write!(f, "Region"),
             NodeFilterKey::ResourceType => write!(f, "ResourceType"),
+            NodeFilterKey::SourceId => write!(f, "SourceId"),
+            NodeFilterKey::SourceLocation => write!(f, "SourceLocation"),
+            NodeFilterKey::SourceType => write!(f, "SourceType"),
             NodeFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }

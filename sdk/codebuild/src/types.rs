@@ -89,6 +89,8 @@ pub use crate::types::_image_pull_credentials_type::ImagePullCredentialsType;
 
 pub use crate::types::_project_fleet::ProjectFleet;
 
+pub use crate::types::_host_kernel::HostKernel;
+
 pub use crate::types::_command_type::CommandType;
 
 pub use crate::types::_command_execution::CommandExecution;
@@ -356,6 +358,8 @@ mod _fleet_status;
 mod _fleet_status_code;
 
 mod _git_submodules_config;
+
+mod _host_kernel;
 
 mod _image_pull_credentials_type;
 

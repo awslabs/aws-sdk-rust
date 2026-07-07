@@ -5,6 +5,10 @@
 pub struct CreateOrderInput {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the quote to use for the order.</p>
+    pub quote_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the quote option to use for the order.</p>
+    pub quote_option_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The line items that make up the order.</p>
     pub line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>,
     /// <p>The payment option.</p>
@@ -16,6 +20,14 @@ impl CreateOrderInput {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_identifier(&self) -> ::std::option::Option<&str> {
         self.outpost_identifier.as_deref()
+    }
+    /// <p>The ID of the quote to use for the order.</p>
+    pub fn quote_identifier(&self) -> ::std::option::Option<&str> {
+        self.quote_identifier.as_deref()
+    }
+    /// <p>The ID of the quote option to use for the order.</p>
+    pub fn quote_option_identifier(&self) -> ::std::option::Option<&str> {
+        self.quote_option_identifier.as_deref()
     }
     /// <p>The line items that make up the order.</p>
     ///
@@ -44,6 +56,8 @@ impl CreateOrderInput {
 #[non_exhaustive]
 pub struct CreateOrderInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) quote_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) quote_option_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>,
     pub(crate) payment_option: ::std::option::Option<crate::types::PaymentOption>,
     pub(crate) payment_term: ::std::option::Option<crate::types::PaymentTerm>,
@@ -63,6 +77,34 @@ impl CreateOrderInputBuilder {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_identifier
+    }
+    /// <p>The ID of the quote to use for the order.</p>
+    pub fn quote_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quote_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the quote to use for the order.</p>
+    pub fn set_quote_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quote_identifier = input;
+        self
+    }
+    /// <p>The ID of the quote to use for the order.</p>
+    pub fn get_quote_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_identifier
+    }
+    /// <p>The ID of the quote option to use for the order.</p>
+    pub fn quote_option_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quote_option_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the quote option to use for the order.</p>
+    pub fn set_quote_option_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quote_option_identifier = input;
+        self
+    }
+    /// <p>The ID of the quote option to use for the order.</p>
+    pub fn get_quote_option_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_option_identifier
     }
     /// Appends an item to `line_items`.
     ///
@@ -117,6 +159,8 @@ impl CreateOrderInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::create_order::CreateOrderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_order::CreateOrderInput {
             outpost_identifier: self.outpost_identifier,
+            quote_identifier: self.quote_identifier,
+            quote_option_identifier: self.quote_option_identifier,
             line_items: self.line_items,
             payment_option: self.payment_option,
             payment_term: self.payment_term,

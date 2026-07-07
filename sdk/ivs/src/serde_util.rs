@@ -92,6 +92,18 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_ad_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_ad_configuration::builders::UpdateAdConfigurationOutputBuilder,
+) -> crate::operation::update_ad_configuration::builders::UpdateAdConfigurationOutputBuilder {
+    if builder.ad_configuration.is_none() {
+        builder.ad_configuration = {
+            let builder = crate::types::builders::AdConfigurationBuilder::default();
+            crate::serde_util::ad_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn ad_configuration_correct_errors(
     mut builder: crate::types::builders::AdConfigurationBuilder,
 ) -> crate::types::builders::AdConfigurationBuilder {

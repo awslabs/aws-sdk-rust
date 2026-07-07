@@ -11,6 +11,8 @@ pub struct RetrieveAndGenerateInput {
     pub retrieve_and_generate_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateConfiguration>,
     /// <p>Contains details about the session with the knowledge base.</p>
     pub session_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration>,
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub user_context: ::std::option::Option<crate::types::UserContext>,
 }
 impl RetrieveAndGenerateInput {
     /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
@@ -29,6 +31,10 @@ impl RetrieveAndGenerateInput {
     pub fn session_configuration(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateSessionConfiguration> {
         self.session_configuration.as_ref()
     }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn user_context(&self) -> ::std::option::Option<&crate::types::UserContext> {
+        self.user_context.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RetrieveAndGenerateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -37,6 +43,7 @@ impl ::std::fmt::Debug for RetrieveAndGenerateInput {
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("retrieve_and_generate_configuration", &self.retrieve_and_generate_configuration);
         formatter.field("session_configuration", &self.session_configuration);
+        formatter.field("user_context", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -55,6 +62,7 @@ pub struct RetrieveAndGenerateInputBuilder {
     pub(crate) input: ::std::option::Option<crate::types::RetrieveAndGenerateInput>,
     pub(crate) retrieve_and_generate_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateConfiguration>,
     pub(crate) session_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration>,
+    pub(crate) user_context: ::std::option::Option<crate::types::UserContext>,
 }
 impl RetrieveAndGenerateInputBuilder {
     /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
@@ -114,6 +122,20 @@ impl RetrieveAndGenerateInputBuilder {
     pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration> {
         &self.session_configuration
     }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
+        self.user_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.user_context = input;
+        self
+    }
+    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.user_context
+    }
     /// Consumes the builder and constructs a [`RetrieveAndGenerateInput`](crate::operation::retrieve_and_generate::RetrieveAndGenerateInput).
     pub fn build(
         self,
@@ -124,6 +146,7 @@ impl RetrieveAndGenerateInputBuilder {
             input: self.input,
             retrieve_and_generate_configuration: self.retrieve_and_generate_configuration,
             session_configuration: self.session_configuration,
+            user_context: self.user_context,
         })
     }
 }
@@ -134,6 +157,7 @@ impl ::std::fmt::Debug for RetrieveAndGenerateInputBuilder {
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("retrieve_and_generate_configuration", &self.retrieve_and_generate_configuration);
         formatter.field("session_configuration", &self.session_configuration);
+        formatter.field("user_context", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

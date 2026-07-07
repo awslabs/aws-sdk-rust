@@ -11,6 +11,8 @@ pub struct CreateConnectorV2Output {
     pub auth_url: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the connectorV2.</p>
     pub connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
+    /// <p>The enablement status of the connector after creation.</p>
+    pub enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
     _request_id: Option<String>,
 }
 impl CreateConnectorV2Output {
@@ -29,6 +31,10 @@ impl CreateConnectorV2Output {
     /// <p>The current status of the connectorV2.</p>
     pub fn connector_status(&self) -> ::std::option::Option<&crate::types::ConnectorStatus> {
         self.connector_status.as_ref()
+    }
+    /// <p>The enablement status of the connector after creation.</p>
+    pub fn enablement_status(&self) -> ::std::option::Option<&crate::types::EnablementStatus> {
+        self.enablement_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateConnectorV2Output {
@@ -51,6 +57,7 @@ pub struct CreateConnectorV2OutputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) auth_url: ::std::option::Option<::std::string::String>,
     pub(crate) connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
+    pub(crate) enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
     _request_id: Option<String>,
 }
 impl CreateConnectorV2OutputBuilder {
@@ -112,6 +119,20 @@ impl CreateConnectorV2OutputBuilder {
     pub fn get_connector_status(&self) -> &::std::option::Option<crate::types::ConnectorStatus> {
         &self.connector_status
     }
+    /// <p>The enablement status of the connector after creation.</p>
+    pub fn enablement_status(mut self, input: crate::types::EnablementStatus) -> Self {
+        self.enablement_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enablement status of the connector after creation.</p>
+    pub fn set_enablement_status(mut self, input: ::std::option::Option<crate::types::EnablementStatus>) -> Self {
+        self.enablement_status = input;
+        self
+    }
+    /// <p>The enablement status of the connector after creation.</p>
+    pub fn get_enablement_status(&self) -> &::std::option::Option<crate::types::EnablementStatus> {
+        &self.enablement_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -128,6 +149,7 @@ impl CreateConnectorV2OutputBuilder {
             connector_id: self.connector_id,
             auth_url: self.auth_url,
             connector_status: self.connector_status,
+            enablement_status: self.enablement_status,
             _request_id: self._request_id,
         }
     }

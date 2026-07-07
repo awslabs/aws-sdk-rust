@@ -156,4 +156,18 @@ impl ListScheduledQueriesFluentBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         self.inner.get_state()
     }
+    /// <p>Filter scheduled queries by schedule type. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified, scheduled queries of all schedule types are returned.</p>
+    pub fn schedule_type(mut self, input: crate::types::ScheduleType) -> Self {
+        self.inner = self.inner.schedule_type(input);
+        self
+    }
+    /// <p>Filter scheduled queries by schedule type. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified, scheduled queries of all schedule types are returned.</p>
+    pub fn set_schedule_type(mut self, input: ::std::option::Option<crate::types::ScheduleType>) -> Self {
+        self.inner = self.inner.set_schedule_type(input);
+        self
+    }
+    /// <p>Filter scheduled queries by schedule type. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>. If not specified, scheduled queries of all schedule types are returned.</p>
+    pub fn get_schedule_type(&self) -> &::std::option::Option<crate::types::ScheduleType> {
+        self.inner.get_schedule_type()
+    }
 }

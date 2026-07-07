@@ -178,6 +178,8 @@ pub(crate) fn de_create_access_point(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -233,13 +235,13 @@ pub(crate) fn de_create_access_point(
                     );
                 }
                 "PosixUser" => {
-                    builder = builder.set_posix_user(crate::protocol_serde::shape_posix_user::de_posix_user(tokens, _value)?);
+                    builder = builder.set_posix_user(crate::protocol_serde::shape_posix_user::de_posix_user(tokens, _value, depth + 1)?);
                 }
                 "RootDirectory" => {
-                    builder = builder.set_root_directory(crate::protocol_serde::shape_root_directory::de_root_directory(tokens, _value)?);
+                    builder = builder.set_root_directory(crate::protocol_serde::shape_root_directory::de_root_directory(tokens, _value, depth + 1)?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

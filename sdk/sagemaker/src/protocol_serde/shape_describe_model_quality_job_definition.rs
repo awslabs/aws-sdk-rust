@@ -80,6 +80,8 @@ pub(crate) fn de_describe_model_quality_job_definition(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -107,32 +109,38 @@ pub(crate) fn de_describe_model_quality_job_definition(
                 }
                 "ModelQualityBaselineConfig" => {
                     builder = builder.set_model_quality_baseline_config(
-                        crate::protocol_serde::shape_model_quality_baseline_config::de_model_quality_baseline_config(tokens, _value)?,
+                        crate::protocol_serde::shape_model_quality_baseline_config::de_model_quality_baseline_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "ModelQualityAppSpecification" => {
                     builder = builder.set_model_quality_app_specification(
-                        crate::protocol_serde::shape_model_quality_app_specification::de_model_quality_app_specification(tokens, _value)?,
+                        crate::protocol_serde::shape_model_quality_app_specification::de_model_quality_app_specification(tokens, _value, depth + 1)?,
                     );
                 }
                 "ModelQualityJobInput" => {
                     builder = builder.set_model_quality_job_input(crate::protocol_serde::shape_model_quality_job_input::de_model_quality_job_input(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ModelQualityJobOutputConfig" => {
                     builder = builder.set_model_quality_job_output_config(
-                        crate::protocol_serde::shape_monitoring_output_config::de_monitoring_output_config(tokens, _value)?,
+                        crate::protocol_serde::shape_monitoring_output_config::de_monitoring_output_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "JobResources" => {
                     builder = builder.set_job_resources(crate::protocol_serde::shape_monitoring_resources::de_monitoring_resources(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NetworkConfig" => {
                     builder = builder.set_network_config(crate::protocol_serde::shape_monitoring_network_config::de_monitoring_network_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "RoleArn" => {
@@ -144,7 +152,7 @@ pub(crate) fn de_describe_model_quality_job_definition(
                 }
                 "StoppingCondition" => {
                     builder = builder.set_stopping_condition(
-                        crate::protocol_serde::shape_monitoring_stopping_condition::de_monitoring_stopping_condition(tokens, _value)?,
+                        crate::protocol_serde::shape_monitoring_stopping_condition::de_monitoring_stopping_condition(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_restore_testing_selection_for_get<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RestoreTestingSelectionForGet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,11 +42,19 @@ where
                             );
                         }
                         "ProtectedResourceArns" => {
-                            builder = builder.set_protected_resource_arns(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_protected_resource_arns(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ProtectedResourceConditions" => {
                             builder = builder.set_protected_resource_conditions(
-                                crate::protocol_serde::shape_protected_resource_conditions::de_protected_resource_conditions(tokens, _value)?,
+                                crate::protocol_serde::shape_protected_resource_conditions::de_protected_resource_conditions(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ProtectedResourceType" => {
@@ -52,7 +66,7 @@ where
                         }
                         "RestoreMetadataOverrides" => {
                             builder = builder.set_restore_metadata_overrides(
-                                crate::protocol_serde::shape_sensitive_string_map::de_sensitive_string_map(tokens, _value)?,
+                                crate::protocol_serde::shape_sensitive_string_map::de_sensitive_string_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "RestoreTestingPlanName" => {

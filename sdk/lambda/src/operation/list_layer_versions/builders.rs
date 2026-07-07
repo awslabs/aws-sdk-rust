@@ -114,6 +114,20 @@ impl ListLayerVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator {
         crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::new(self.handle, self.inner)
     }
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    pub fn compatible_architecture(mut self, input: crate::types::Architecture) -> Self {
+        self.inner = self.inner.compatible_architecture(input);
+        self
+    }
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    pub fn set_compatible_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
+        self.inner = self.inner.set_compatible_architecture(input);
+        self
+    }
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    pub fn get_compatible_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        self.inner.get_compatible_architecture()
+    }
     /// <p>A runtime identifier.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime use after deprecation</a>.</p>
     /// <p>For a list of all currently supported runtimes, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported runtimes</a>.</p>
@@ -175,19 +189,5 @@ impl ListLayerVersionsFluentBuilder {
     /// <p>The maximum number of versions to return.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_items()
-    }
-    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn compatible_architecture(mut self, input: crate::types::Architecture) -> Self {
-        self.inner = self.inner.compatible_architecture(input);
-        self
-    }
-    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn set_compatible_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
-        self.inner = self.inner.set_compatible_architecture(input);
-        self
-    }
-    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn get_compatible_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
-        self.inner.get_compatible_architecture()
     }
 }

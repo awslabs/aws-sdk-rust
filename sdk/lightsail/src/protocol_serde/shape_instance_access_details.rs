@@ -2,10 +2,16 @@
 pub(crate) fn de_instance_access_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InstanceAccessDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,8 +42,11 @@ where
                             );
                         }
                         "ipv6Addresses" => {
-                            builder =
-                                builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(tokens, _value)?);
+                            builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "password" => {
                             builder = builder.set_password(
@@ -47,7 +56,8 @@ where
                             );
                         }
                         "passwordData" => {
-                            builder = builder.set_password_data(crate::protocol_serde::shape_password_data::de_password_data(tokens, _value)?);
+                            builder =
+                                builder.set_password_data(crate::protocol_serde::shape_password_data::de_password_data(tokens, _value, depth + 1)?);
                         }
                         "privateKey" => {
                             builder = builder.set_private_key(
@@ -78,7 +88,8 @@ where
                             );
                         }
                         "hostKeys" => {
-                            builder = builder.set_host_keys(crate::protocol_serde::shape_host_keys_list::de_host_keys_list(tokens, _value)?);
+                            builder =
+                                builder.set_host_keys(crate::protocol_serde::shape_host_keys_list::de_host_keys_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

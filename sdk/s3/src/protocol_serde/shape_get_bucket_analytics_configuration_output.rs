@@ -23,5 +23,7 @@ pub fn de_analytics_configuration(inp: &[u8]) -> std::result::Result<crate::type
             "invalid root, expected AnalyticsConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_analytics_configuration::de_analytics_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_analytics_configuration::de_analytics_configuration(&mut decoder, depth + 1)
 }

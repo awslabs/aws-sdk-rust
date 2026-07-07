@@ -10,6 +10,8 @@ pub fn de_invalid_scheme_exception_xml_err(
     let mut document = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancing#InvalidSchemeException$Message */ =>  {

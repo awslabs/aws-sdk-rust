@@ -132,6 +132,8 @@ pub fn de_describe_domain_endpoint_options(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDomainEndpointOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDomainEndpointOptionsResponse got {start_el:?}"
@@ -149,7 +151,7 @@ pub fn de_describe_domain_endpoint_options(
             s if s.matches("DomainEndpointOptions") /* DomainEndpointOptions com.amazonaws.cloudsearch.synthetic#DescribeDomainEndpointOptionsOutput$DomainEndpointOptions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_domain_endpoint_options_status::de_domain_endpoint_options_status(&mut tag)
+                        crate::protocol_serde::shape_domain_endpoint_options_status::de_domain_endpoint_options_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

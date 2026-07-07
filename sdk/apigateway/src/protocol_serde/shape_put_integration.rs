@@ -160,13 +160,16 @@ pub(crate) fn de_put_integration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "cacheKeyParameters" => {
-                    builder = builder.set_cache_key_parameters(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder =
+                        builder.set_cache_key_parameters(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "cacheNamespace" => {
                     builder = builder.set_cache_namespace(
@@ -212,7 +215,7 @@ pub(crate) fn de_put_integration(
                 }
                 "integrationResponses" => {
                     builder = builder.set_integration_responses(
-                        crate::protocol_serde::shape_map_of_integration_response::de_map_of_integration_response(tokens, _value)?,
+                        crate::protocol_serde::shape_map_of_integration_response::de_map_of_integration_response(tokens, _value, depth + 1)?,
                     );
                 }
                 "integrationTarget" => {
@@ -231,12 +234,16 @@ pub(crate) fn de_put_integration(
                 }
                 "requestParameters" => {
                     builder = builder.set_request_parameters(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "requestTemplates" => {
                     builder = builder.set_request_templates(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "responseTransferMode" => {
@@ -254,7 +261,7 @@ pub(crate) fn de_put_integration(
                     );
                 }
                 "tlsConfig" => {
-                    builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens, _value)?);
+                    builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens, _value, depth + 1)?);
                 }
                 "type" => {
                     builder = builder.set_type(

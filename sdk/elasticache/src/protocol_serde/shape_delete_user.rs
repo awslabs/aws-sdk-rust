@@ -130,6 +130,8 @@ pub fn de_delete_user(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteUserResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteUserResponse got {start_el:?}"
@@ -225,7 +227,7 @@ pub fn de_delete_user(
             s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserGroupIds */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_user_group_id_list::de_user_group_id_list(&mut tag)
+                        crate::protocol_serde::shape_user_group_id_list::de_user_group_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -235,7 +237,7 @@ pub fn de_delete_user(
             s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#DeleteUserOutput$Authentication */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_authentication::de_authentication(&mut tag)
+                        crate::protocol_serde::shape_authentication::de_authentication(&mut tag, depth + 1)
                         ?
                     )
                 ;

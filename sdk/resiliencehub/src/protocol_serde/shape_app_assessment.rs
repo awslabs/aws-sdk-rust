@@ -2,10 +2,16 @@
 pub(crate) fn de_app_assessment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AppAssessment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,15 +43,20 @@ where
                             );
                         }
                         "cost" => {
-                            builder = builder.set_cost(crate::protocol_serde::shape_cost::de_cost(tokens, _value)?);
+                            builder = builder.set_cost(crate::protocol_serde::shape_cost::de_cost(tokens, _value, depth + 1)?);
                         }
                         "resiliencyScore" => {
-                            builder =
-                                builder.set_resiliency_score(crate::protocol_serde::shape_resiliency_score::de_resiliency_score(tokens, _value)?);
+                            builder = builder.set_resiliency_score(crate::protocol_serde::shape_resiliency_score::de_resiliency_score(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "compliance" => {
                             builder = builder.set_compliance(crate::protocol_serde::shape_assessment_compliance::de_assessment_compliance(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "complianceStatus" => {
@@ -96,14 +107,18 @@ where
                             );
                         }
                         "policy" => {
-                            builder = builder.set_policy(crate::protocol_serde::shape_resiliency_policy::de_resiliency_policy(tokens, _value)?);
+                            builder = builder.set_policy(crate::protocol_serde::shape_resiliency_policy::de_resiliency_policy(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "resourceErrorsDetails" => {
                             builder = builder.set_resource_errors_details(
-                                crate::protocol_serde::shape_resource_errors_details::de_resource_errors_details(tokens, _value)?,
+                                crate::protocol_serde::shape_resource_errors_details::de_resource_errors_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "versionName" => {
@@ -121,7 +136,11 @@ where
                             );
                         }
                         "summary" => {
-                            builder = builder.set_summary(crate::protocol_serde::shape_assessment_summary::de_assessment_summary(tokens, _value)?);
+                            builder = builder.set_summary(crate::protocol_serde::shape_assessment_summary::de_assessment_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -114,6 +114,11 @@ pub struct CreateChangeSetInput {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
     pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub disable_validation: ::std::option::Option<bool>,
 }
 impl CreateChangeSetInput {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
@@ -278,6 +283,15 @@ impl CreateChangeSetInput {
     pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
         self.deployment_mode.as_ref()
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn disable_validation(&self) -> ::std::option::Option<bool> {
+        self.disable_validation
+    }
 }
 impl CreateChangeSetInput {
     /// Creates a new builder-style object to manufacture [`CreateChangeSetInput`](crate::operation::create_change_set::CreateChangeSetInput).
@@ -310,6 +324,8 @@ pub struct CreateChangeSetInputBuilder {
     pub(crate) on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     pub(crate) import_existing_resources: ::std::option::Option<bool>,
     pub(crate) deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
+    pub(crate) disable_validation: ::std::option::Option<bool>,
 }
 impl CreateChangeSetInputBuilder {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
@@ -840,6 +856,37 @@ impl CreateChangeSetInputBuilder {
     pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
         &self.deployment_mode
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.deployment_config = input;
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn disable_validation(mut self, input: bool) -> Self {
+        self.disable_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_disable_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_validation = input;
+        self
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_disable_validation(&self) -> &::std::option::Option<bool> {
+        &self.disable_validation
+    }
     /// Consumes the builder and constructs a [`CreateChangeSetInput`](crate::operation::create_change_set::CreateChangeSetInput).
     pub fn build(
         self,
@@ -865,6 +912,8 @@ impl CreateChangeSetInputBuilder {
             on_stack_failure: self.on_stack_failure,
             import_existing_resources: self.import_existing_resources,
             deployment_mode: self.deployment_mode,
+            deployment_config: self.deployment_config,
+            disable_validation: self.disable_validation,
         })
     }
 }

@@ -93,10 +93,16 @@ pub fn ser_field_to_match(
 pub(crate) fn de_field_to_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FieldToMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -107,49 +113,64 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SingleHeader" => {
-                            builder = builder.set_single_header(crate::protocol_serde::shape_single_header::de_single_header(tokens, _value)?);
+                            builder =
+                                builder.set_single_header(crate::protocol_serde::shape_single_header::de_single_header(tokens, _value, depth + 1)?);
                         }
                         "SingleQueryArgument" => {
                             builder = builder.set_single_query_argument(
-                                crate::protocol_serde::shape_single_query_argument::de_single_query_argument(tokens, _value)?,
+                                crate::protocol_serde::shape_single_query_argument::de_single_query_argument(tokens, _value, depth + 1)?,
                             );
                         }
                         "AllQueryArguments" => {
-                            builder = builder
-                                .set_all_query_arguments(crate::protocol_serde::shape_all_query_arguments::de_all_query_arguments(tokens, _value)?);
+                            builder = builder.set_all_query_arguments(crate::protocol_serde::shape_all_query_arguments::de_all_query_arguments(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "UriPath" => {
-                            builder = builder.set_uri_path(crate::protocol_serde::shape_uri_path::de_uri_path(tokens, _value)?);
+                            builder = builder.set_uri_path(crate::protocol_serde::shape_uri_path::de_uri_path(tokens, _value, depth + 1)?);
                         }
                         "QueryString" => {
-                            builder = builder.set_query_string(crate::protocol_serde::shape_query_string::de_query_string(tokens, _value)?);
+                            builder =
+                                builder.set_query_string(crate::protocol_serde::shape_query_string::de_query_string(tokens, _value, depth + 1)?);
                         }
                         "Body" => {
-                            builder = builder.set_body(crate::protocol_serde::shape_body::de_body(tokens, _value)?);
+                            builder = builder.set_body(crate::protocol_serde::shape_body::de_body(tokens, _value, depth + 1)?);
                         }
                         "Method" => {
-                            builder = builder.set_method(crate::protocol_serde::shape_method::de_method(tokens, _value)?);
+                            builder = builder.set_method(crate::protocol_serde::shape_method::de_method(tokens, _value, depth + 1)?);
                         }
                         "JsonBody" => {
-                            builder = builder.set_json_body(crate::protocol_serde::shape_json_body::de_json_body(tokens, _value)?);
+                            builder = builder.set_json_body(crate::protocol_serde::shape_json_body::de_json_body(tokens, _value, depth + 1)?);
                         }
                         "Headers" => {
-                            builder = builder.set_headers(crate::protocol_serde::shape_headers::de_headers(tokens, _value)?);
+                            builder = builder.set_headers(crate::protocol_serde::shape_headers::de_headers(tokens, _value, depth + 1)?);
                         }
                         "Cookies" => {
-                            builder = builder.set_cookies(crate::protocol_serde::shape_cookies::de_cookies(tokens, _value)?);
+                            builder = builder.set_cookies(crate::protocol_serde::shape_cookies::de_cookies(tokens, _value, depth + 1)?);
                         }
                         "HeaderOrder" => {
-                            builder = builder.set_header_order(crate::protocol_serde::shape_header_order::de_header_order(tokens, _value)?);
+                            builder =
+                                builder.set_header_order(crate::protocol_serde::shape_header_order::de_header_order(tokens, _value, depth + 1)?);
                         }
                         "JA3Fingerprint" => {
-                            builder = builder.set_ja3_fingerprint(crate::protocol_serde::shape_ja3_fingerprint::de_ja3_fingerprint(tokens, _value)?);
+                            builder = builder.set_ja3_fingerprint(crate::protocol_serde::shape_ja3_fingerprint::de_ja3_fingerprint(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JA4Fingerprint" => {
-                            builder = builder.set_ja4_fingerprint(crate::protocol_serde::shape_ja4_fingerprint::de_ja4_fingerprint(tokens, _value)?);
+                            builder = builder.set_ja4_fingerprint(crate::protocol_serde::shape_ja4_fingerprint::de_ja4_fingerprint(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "UriFragment" => {
-                            builder = builder.set_uri_fragment(crate::protocol_serde::shape_uri_fragment::de_uri_fragment(tokens, _value)?);
+                            builder =
+                                builder.set_uri_fragment(crate::protocol_serde::shape_uri_fragment::de_uri_fragment(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

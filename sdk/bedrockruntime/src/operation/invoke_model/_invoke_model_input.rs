@@ -43,6 +43,8 @@ pub struct InvokeModelInput {
     pub performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
     /// <p>Specifies the processing tier type used for serving the request.</p>
     pub service_tier: ::std::option::Option<crate::types::ServiceTierType>,
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub request_metadata: ::std::option::Option<::std::string::String>,
 }
 impl InvokeModelInput {
     /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
@@ -103,6 +105,10 @@ impl InvokeModelInput {
     pub fn service_tier(&self) -> ::std::option::Option<&crate::types::ServiceTierType> {
         self.service_tier.as_ref()
     }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn request_metadata(&self) -> ::std::option::Option<&str> {
+        self.request_metadata.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeModelInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -116,6 +122,7 @@ impl ::std::fmt::Debug for InvokeModelInput {
         formatter.field("guardrail_version", &self.guardrail_version);
         formatter.field("performance_config_latency", &self.performance_config_latency);
         formatter.field("service_tier", &self.service_tier);
+        formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -139,6 +146,7 @@ pub struct InvokeModelInputBuilder {
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,
     pub(crate) performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
     pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTierType>,
+    pub(crate) request_metadata: ::std::option::Option<::std::string::String>,
 }
 impl InvokeModelInputBuilder {
     /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
@@ -334,6 +342,20 @@ impl InvokeModelInputBuilder {
     pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTierType> {
         &self.service_tier
     }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn request_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_metadata = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn set_request_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_metadata = input;
+        self
+    }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn get_request_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_metadata
+    }
     /// Consumes the builder and constructs a [`InvokeModelInput`](crate::operation::invoke_model::InvokeModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_model::InvokeModelInput {
@@ -346,6 +368,7 @@ impl InvokeModelInputBuilder {
             guardrail_version: self.guardrail_version,
             performance_config_latency: self.performance_config_latency,
             service_tier: self.service_tier,
+            request_metadata: self.request_metadata,
         })
     }
 }
@@ -361,6 +384,7 @@ impl ::std::fmt::Debug for InvokeModelInputBuilder {
         formatter.field("guardrail_version", &self.guardrail_version);
         formatter.field("performance_config_latency", &self.performance_config_latency);
         formatter.field("service_tier", &self.service_tier);
+        formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

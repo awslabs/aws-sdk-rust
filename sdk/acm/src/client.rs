@@ -140,10 +140,34 @@ impl Client {
 /// Import this trait to get `wait_until` methods on the client.
 ///
 pub trait Waiters {
+    /// Wait until an ACME domain validation reaches a terminal validation state.
+    fn wait_until_acme_domain_validation_validated(
+        &self,
+    ) -> crate::waiters::acme_domain_validation_validated::AcmeDomainValidationValidatedFluentBuilder;
+    /// Wait until an ACME domain validation has been deleted.
+    fn wait_until_acme_domain_validation_deleted(&self) -> crate::waiters::acme_domain_validation_deleted::AcmeDomainValidationDeletedFluentBuilder;
+    /// Wait until an ACME endpoint has finished provisioning and is ACTIVE.
+    fn wait_until_acme_endpoint_active(&self) -> crate::waiters::acme_endpoint_active::AcmeEndpointActiveFluentBuilder;
+    /// Wait until an ACME endpoint has been deleted.
+    fn wait_until_acme_endpoint_deleted(&self) -> crate::waiters::acme_endpoint_deleted::AcmeEndpointDeletedFluentBuilder;
     /// Wait for `certificate_validated`
     fn wait_until_certificate_validated(&self) -> crate::waiters::certificate_validated::CertificateValidatedFluentBuilder;
 }
 impl Waiters for Client {
+    fn wait_until_acme_domain_validation_validated(
+        &self,
+    ) -> crate::waiters::acme_domain_validation_validated::AcmeDomainValidationValidatedFluentBuilder {
+        crate::waiters::acme_domain_validation_validated::AcmeDomainValidationValidatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_acme_domain_validation_deleted(&self) -> crate::waiters::acme_domain_validation_deleted::AcmeDomainValidationDeletedFluentBuilder {
+        crate::waiters::acme_domain_validation_deleted::AcmeDomainValidationDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_acme_endpoint_active(&self) -> crate::waiters::acme_endpoint_active::AcmeEndpointActiveFluentBuilder {
+        crate::waiters::acme_endpoint_active::AcmeEndpointActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_acme_endpoint_deleted(&self) -> crate::waiters::acme_endpoint_deleted::AcmeEndpointDeletedFluentBuilder {
+        crate::waiters::acme_endpoint_deleted::AcmeEndpointDeletedFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_certificate_validated(&self) -> crate::waiters::certificate_validated::CertificateValidatedFluentBuilder {
         crate::waiters::certificate_validated::CertificateValidatedFluentBuilder::new(self.handle.clone())
     }
@@ -166,6 +190,12 @@ impl Client {
 }
 
 mod add_tags_to_certificate;
+
+mod create_acme_domain_validation;
+
+mod create_acme_endpoint;
+
+mod create_acme_external_account_binding;
 
 /// Operation customization and supporting types.
 ///
@@ -194,7 +224,21 @@ mod add_tags_to_certificate;
 /// ```
 pub mod customize;
 
+mod delete_acme_domain_validation;
+
+mod delete_acme_endpoint;
+
+mod delete_acme_external_account_binding;
+
 mod delete_certificate;
+
+mod describe_acme_account;
+
+mod describe_acme_domain_validation;
+
+mod describe_acme_endpoint;
+
+mod describe_acme_external_account_binding;
 
 mod describe_certificate;
 
@@ -202,13 +246,25 @@ mod export_certificate;
 
 mod get_account_configuration;
 
+mod get_acme_external_account_binding_credentials;
+
 mod get_certificate;
 
 mod import_certificate;
 
+mod list_acme_accounts;
+
+mod list_acme_domain_validations;
+
+mod list_acme_endpoints;
+
+mod list_acme_external_account_bindings;
+
 mod list_certificates;
 
 mod list_tags_for_certificate;
+
+mod list_tags_for_resource;
 
 mod put_account_configuration;
 
@@ -220,8 +276,20 @@ mod request_certificate;
 
 mod resend_validation_email;
 
+mod revoke_acme_account;
+
+mod revoke_acme_external_account_binding;
+
 mod revoke_certificate;
 
 mod search_certificates;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_acme_domain_validation;
+
+mod update_acme_endpoint;
 
 mod update_certificate_options;

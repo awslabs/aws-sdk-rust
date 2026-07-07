@@ -57,16 +57,28 @@ pub fn ser_typography(
         crate::protocol_serde::shape_visual_subtitle_font_configuration::ser_visual_subtitle_font_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.control_title_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ControlTitleFontConfiguration").start_object();
+        crate::protocol_serde::shape_control_title_font_configuration::ser_control_title_font_configuration(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_typography<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Typography>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -77,42 +89,57 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FontFamilies" => {
-                            builder = builder.set_font_families(crate::protocol_serde::shape_font_list::de_font_list(tokens, _value)?);
+                            builder = builder.set_font_families(crate::protocol_serde::shape_font_list::de_font_list(tokens, _value, depth + 1)?);
                         }
                         "AxisTitleFontConfiguration" => {
                             builder = builder.set_axis_title_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "AxisLabelFontConfiguration" => {
                             builder = builder.set_axis_label_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "LegendTitleFontConfiguration" => {
                             builder = builder.set_legend_title_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "LegendValueFontConfiguration" => {
                             builder = builder.set_legend_value_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "DataLabelFontConfiguration" => {
                             builder = builder.set_data_label_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "VisualTitleFontConfiguration" => {
                             builder = builder.set_visual_title_font_configuration(
-                                crate::protocol_serde::shape_visual_title_font_configuration::de_visual_title_font_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_visual_title_font_configuration::de_visual_title_font_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "VisualSubtitleFontConfiguration" => {
                             builder = builder.set_visual_subtitle_font_configuration(
                                 crate::protocol_serde::shape_visual_subtitle_font_configuration::de_visual_subtitle_font_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "ControlTitleFontConfiguration" => {
+                            builder = builder.set_control_title_font_configuration(
+                                crate::protocol_serde::shape_control_title_font_configuration::de_control_title_font_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

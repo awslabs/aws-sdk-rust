@@ -86,6 +86,8 @@ pub(crate) fn de_describe_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -142,22 +144,26 @@ pub(crate) fn de_describe_task(
                 }
                 "SourceNetworkInterfaceArns" => {
                     builder = builder.set_source_network_interface_arns(
-                        crate::protocol_serde::shape_source_network_interface_arns::de_source_network_interface_arns(tokens, _value)?,
+                        crate::protocol_serde::shape_source_network_interface_arns::de_source_network_interface_arns(tokens, _value, depth + 1)?,
                     );
                 }
                 "DestinationNetworkInterfaceArns" => {
                     builder = builder.set_destination_network_interface_arns(
-                        crate::protocol_serde::shape_destination_network_interface_arns::de_destination_network_interface_arns(tokens, _value)?,
+                        crate::protocol_serde::shape_destination_network_interface_arns::de_destination_network_interface_arns(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Options" => {
-                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens, _value)?);
+                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens, _value, depth + 1)?);
                 }
                 "Excludes" => {
-                    builder = builder.set_excludes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
+                    builder = builder.set_excludes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value, depth + 1)?);
                 }
                 "Schedule" => {
-                    builder = builder.set_schedule(crate::protocol_serde::shape_task_schedule::de_task_schedule(tokens, _value)?);
+                    builder = builder.set_schedule(crate::protocol_serde::shape_task_schedule::de_task_schedule(tokens, _value, depth + 1)?);
                 }
                 "ErrorCode" => {
                     builder = builder.set_error_code(
@@ -180,17 +186,27 @@ pub(crate) fn de_describe_task(
                     )?);
                 }
                 "Includes" => {
-                    builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
+                    builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value, depth + 1)?);
                 }
                 "ManifestConfig" => {
-                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(tokens, _value)?);
+                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "TaskReportConfig" => {
-                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens, _value)?);
+                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ScheduleDetails" => {
                     builder = builder.set_schedule_details(crate::protocol_serde::shape_task_schedule_details::de_task_schedule_details(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "TaskMode" => {

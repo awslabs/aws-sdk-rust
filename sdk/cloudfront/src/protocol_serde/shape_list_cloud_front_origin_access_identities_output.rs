@@ -25,5 +25,7 @@ pub fn de_cloud_front_origin_access_identity_list(
             "invalid root, expected CloudFrontOriginAccessIdentityList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_cloud_front_origin_access_identity_list::de_cloud_front_origin_access_identity_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_cloud_front_origin_access_identity_list::de_cloud_front_origin_access_identity_list(&mut decoder, depth + 1)
 }

@@ -84,6 +84,8 @@ pub fn de_create_access_point_for_object_lambda(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("CreateAccessPointForObjectLambdaResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected CreateAccessPointForObjectLambdaResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -94,7 +96,7 @@ pub fn de_create_access_point_for_object_lambda(
             s if s.matches("Alias") /* Alias com.amazonaws.s3control.synthetic#CreateAccessPointForObjectLambdaOutput$Alias */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag, depth + 1)
                         ?
                     )
                 ;

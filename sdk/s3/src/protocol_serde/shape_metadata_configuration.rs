@@ -13,6 +13,10 @@ pub fn ser_metadata_configuration(
         let inner_writer = scope.start_el("InventoryTableConfiguration");
         crate::protocol_serde::shape_inventory_table_configuration::ser_inventory_table_configuration(var_2, inner_writer)?
     }
+    if let Some(var_3) = &input.annotation_table_configuration {
+        let inner_writer = scope.start_el("AnnotationTableConfiguration");
+        crate::protocol_serde::shape_annotation_table_configuration::ser_annotation_table_configuration(var_3, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }

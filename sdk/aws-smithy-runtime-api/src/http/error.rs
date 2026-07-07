@@ -26,6 +26,7 @@ enum Kind {
     InvalidExtensions,
     InvalidHeaderName,
     InvalidHeaderValue,
+    InvalidMethod,
     InvalidStatusCode,
     InvalidUri,
     InvalidUriParts,
@@ -71,6 +72,13 @@ impl HttpError {
     pub(super) fn invalid_header_name(err: InvalidHeaderName) -> Self {
         Self {
             kind: Kind::InvalidHeaderName,
+            source: Some(Box::new(err)),
+        }
+    }
+
+    pub(super) fn invalid_method(err: http_1x::method::InvalidMethod) -> Self {
+        Self {
+            kind: Kind::InvalidMethod,
             source: Some(Box::new(err)),
         }
     }
@@ -132,6 +140,7 @@ impl Display for HttpError {
             InvalidExtensions => write!(f, "Extensions were provided during initialization. This prevents the request format from being converted."),
             InvalidHeaderName => write!(f, "invalid header name"),
             InvalidHeaderValue => write!(f, "invalid header value"),
+            InvalidMethod => write!(f, "invalid HTTP method"),
             InvalidStatusCode => write!(f, "invalid HTTP status code"),
             InvalidUri => write!(f, "endpoint is not a valid URI"),
             InvalidUriParts => write!(f, "endpoint parts are not valid"),

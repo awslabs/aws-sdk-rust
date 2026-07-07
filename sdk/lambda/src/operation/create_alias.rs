@@ -146,9 +146,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
 #[derive(Debug)]
 struct CreateAliasResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateAliasResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -269,6 +270,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAliasEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateAliasError {
+    /// <p>Lambda couldn't create the alias because your Amazon Web Services account has exceeded the maximum number of aliases allowed per Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
+    AliasLimitExceededException(crate::types::error::AliasLimitExceededException),
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The resource already exists, or another operation is in progress.</p>
@@ -312,6 +315,7 @@ impl CreateAliasError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AliasLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -319,6 +323,10 @@ impl CreateAliasError {
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `CreateAliasError::AliasLimitExceededException`.
+    pub fn is_alias_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::AliasLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateAliasError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -344,6 +352,7 @@ impl CreateAliasError {
 impl ::std::error::Error for CreateAliasError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AliasLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -356,6 +365,7 @@ impl ::std::error::Error for CreateAliasError {
 impl ::std::fmt::Display for CreateAliasError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AliasLimitExceededException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -382,6 +392,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateAliasError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateAliasError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AliasLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

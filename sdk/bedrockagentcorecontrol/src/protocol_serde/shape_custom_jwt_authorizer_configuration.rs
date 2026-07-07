@@ -63,16 +63,28 @@ pub fn ser_custom_jwt_authorizer_configuration(
         }
         array_17.finish();
     }
+    if let Some(var_20) = &input.allowed_workload_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("allowedWorkloadConfiguration").start_object();
+        crate::protocol_serde::shape_allowed_workload_configuration::ser_allowed_workload_configuration(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_custom_jwt_authorizer_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomJwtAuthorizerConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -91,30 +103,53 @@ where
                         }
                         "allowedAudience" => {
                             builder = builder.set_allowed_audience(crate::protocol_serde::shape_allowed_audience_list::de_allowed_audience_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "allowedClients" => {
                             builder = builder.set_allowed_clients(crate::protocol_serde::shape_allowed_clients_list::de_allowed_clients_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "allowedScopes" => {
-                            builder =
-                                builder.set_allowed_scopes(crate::protocol_serde::shape_allowed_scopes_type::de_allowed_scopes_type(tokens, _value)?);
+                            builder = builder.set_allowed_scopes(crate::protocol_serde::shape_allowed_scopes_type::de_allowed_scopes_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "customClaims" => {
                             builder = builder.set_custom_claims(
-                                crate::protocol_serde::shape_custom_claim_validations_type::de_custom_claim_validations_type(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_claim_validations_type::de_custom_claim_validations_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "privateEndpoint" => {
-                            builder =
-                                builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(tokens, _value)?);
+                            builder = builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "privateEndpointOverrides" => {
                             builder = builder.set_private_endpoint_overrides(
-                                crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value)?,
+                                crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "allowedWorkloadConfiguration" => {
+                            builder = builder.set_allowed_workload_configuration(
+                                crate::protocol_serde::shape_allowed_workload_configuration::de_allowed_workload_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

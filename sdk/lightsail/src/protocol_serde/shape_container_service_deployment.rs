@@ -2,10 +2,16 @@
 pub(crate) fn de_container_service_deployment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ContainerServiceDeployment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,11 +36,12 @@ where
                             );
                         }
                         "containers" => {
-                            builder = builder.set_containers(crate::protocol_serde::shape_container_map::de_container_map(tokens, _value)?);
+                            builder =
+                                builder.set_containers(crate::protocol_serde::shape_container_map::de_container_map(tokens, _value, depth + 1)?);
                         }
                         "publicEndpoint" => {
                             builder = builder.set_public_endpoint(
-                                crate::protocol_serde::shape_container_service_endpoint::de_container_service_endpoint(tokens, _value)?,
+                                crate::protocol_serde::shape_container_service_endpoint::de_container_service_endpoint(tokens, _value, depth + 1)?,
                             );
                         }
                         "createdAt" => {

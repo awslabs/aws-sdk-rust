@@ -2,10 +2,16 @@
 pub(crate) fn de_addon<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Addon>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,7 @@ where
                             );
                         }
                         "health" => {
-                            builder = builder.set_health(crate::protocol_serde::shape_addon_health::de_addon_health(tokens, _value)?);
+                            builder = builder.set_health(crate::protocol_serde::shape_addon_health::de_addon_health(tokens, _value, depth + 1)?);
                         }
                         "addonArn" => {
                             builder = builder.set_addon_arn(
@@ -73,7 +79,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "publisher" => {
                             builder = builder.set_publisher(
@@ -91,7 +97,7 @@ where
                         }
                         "marketplaceInformation" => {
                             builder = builder.set_marketplace_information(
-                                crate::protocol_serde::shape_marketplace_information::de_marketplace_information(tokens, _value)?,
+                                crate::protocol_serde::shape_marketplace_information::de_marketplace_information(tokens, _value, depth + 1)?,
                             );
                         }
                         "configurationValues" => {
@@ -102,12 +108,19 @@ where
                             );
                         }
                         "podIdentityAssociations" => {
-                            builder =
-                                builder.set_pod_identity_associations(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_pod_identity_associations(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "namespaceConfig" => {
                             builder = builder.set_namespace_config(
-                                crate::protocol_serde::shape_addon_namespace_config_response::de_addon_namespace_config_response(tokens, _value)?,
+                                crate::protocol_serde::shape_addon_namespace_config_response::de_addon_namespace_config_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

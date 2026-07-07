@@ -85,6 +85,14 @@ pub use crate::types::_greece_additional_info::GreeceAdditionalInfo;
 
 pub use crate::types::_uzbekistan_additional_info::UzbekistanAdditionalInfo;
 
+pub use crate::types::_philippines_additional_info::PhilippinesAdditionalInfo;
+
+pub use crate::types::_belgium_additional_info::BelgiumAdditionalInfo;
+
+pub use crate::types::_chile_additional_info::ChileAdditionalInfo;
+
+pub use crate::types::_france_additional_info::FranceAdditionalInfo;
+
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfo;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfo;
@@ -107,15 +115,21 @@ pub use crate::types::_person_type::PersonType;
 
 pub use crate::types::_industries::Industries;
 
+pub use crate::types::_customer_type::CustomerType;
+
 pub use crate::types::_tax_registration_number_type::TaxRegistrationNumberType;
 
 pub use crate::types::_ukraine_trn_type::UkraineTrnType;
+
+pub use crate::types::_poland_tax_registration_number_type::PolandTaxRegistrationNumberType;
 
 pub use crate::types::_saudi_arabia_tax_registration_number_type::SaudiArabiaTaxRegistrationNumberType;
 
 pub use crate::types::_indonesia_tax_registration_number_type::IndonesiaTaxRegistrationNumberType;
 
 pub use crate::types::_uzbekistan_tax_registration_number_type::UzbekistanTaxRegistrationNumberType;
+
+pub use crate::types::_chile_document_type::ChileDocumentType;
 
 pub use crate::types::_tax_registration_document::TaxRegistrationDocument;
 
@@ -149,9 +163,17 @@ mod _batch_delete_tax_registration_error;
 
 mod _batch_put_tax_registration_error;
 
+mod _belgium_additional_info;
+
 mod _brazil_additional_info;
 
 mod _canada_additional_info;
+
+mod _chile_additional_info;
+
+mod _chile_document_type;
+
+mod _customer_type;
 
 mod _destination_s3_location;
 
@@ -162,6 +184,8 @@ mod _entity_exemption_account_status;
 mod _estonia_additional_info;
 
 mod _exemption_certificate;
+
+mod _france_additional_info;
 
 mod _georgia_additional_info;
 
@@ -195,7 +219,11 @@ mod _malaysia_service_tax_code;
 
 mod _person_type;
 
+mod _philippines_additional_info;
+
 mod _poland_additional_info;
+
+mod _poland_tax_registration_number_type;
 
 mod _registration_type;
 

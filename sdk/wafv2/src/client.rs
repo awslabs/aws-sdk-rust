@@ -219,6 +219,12 @@ mod get_rate_based_statement_managed_keys;
 
 mod get_regex_pattern_set;
 
+mod get_revenue_statistics;
+
+mod get_revenue_statistics_summary;
+
+mod get_revenue_statistics_time_series;
+
 mod get_rule_group;
 
 mod get_sampled_requests;
@@ -248,6 +254,8 @@ mod list_regex_pattern_sets;
 mod list_resources_for_web_acl;
 
 mod list_rule_groups;
+
+mod list_settlement_records;
 
 mod list_tags_for_resource;
 

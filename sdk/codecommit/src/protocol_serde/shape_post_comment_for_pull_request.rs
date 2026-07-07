@@ -560,6 +560,8 @@ pub(crate) fn de_post_comment_for_pull_request(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -608,10 +610,10 @@ pub(crate) fn de_post_comment_for_pull_request(
                     );
                 }
                 "location" => {
-                    builder = builder.set_location(crate::protocol_serde::shape_location::de_location(tokens, _value)?);
+                    builder = builder.set_location(crate::protocol_serde::shape_location::de_location(tokens, _value, depth + 1)?);
                 }
                 "comment" => {
-                    builder = builder.set_comment(crate::protocol_serde::shape_comment::de_comment(tokens, _value)?);
+                    builder = builder.set_comment(crate::protocol_serde::shape_comment::de_comment(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

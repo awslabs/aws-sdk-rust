@@ -53,11 +53,11 @@ impl crate::operation::create_container_group_definition::builders::CreateContai
 /// <li>
 /// <p><code>ContainerGroupType</code> (<code>GAME_SERVER</code>)</p></li>
 /// <li>
-/// <p><code>OperatingSystem</code> (omit to use default value)</p></li>
+/// <p><code>OperatingSystem</code></p></li>
 /// <li>
-/// <p><code>TotalMemoryLimitMebibytes</code> (omit to use default value)</p></li>
+/// <p><code>TotalMemoryLimitMebibytes</code></p></li>
 /// <li>
-/// <p><code>TotalVcpuLimit </code>(omit to use default value)</p></li>
+/// <p><code>TotalVcpuLimit</code></p></li>
 /// <li>
 /// <p>At least one <code>GameServerContainerDefinition</code></p>
 /// <ul>
@@ -68,7 +68,7 @@ impl crate::operation::create_container_group_definition::builders::CreateContai
 /// <li>
 /// <p><code>PortConfiguration</code></p></li>
 /// <li>
-/// <p><code>ServerSdkVersion</code> (omit to use default value)</p></li>
+/// <p><code>ServerSdkVersion</code></p></li>
 /// </ul></li>
 /// </ul></li>
 /// <li>
@@ -79,11 +79,11 @@ impl crate::operation::create_container_group_definition::builders::CreateContai
 /// <li>
 /// <p><code>ContainerGroupType</code> (<code>PER_INSTANCE</code>)</p></li>
 /// <li>
-/// <p><code>OperatingSystem</code> (omit to use default value)</p></li>
+/// <p><code>OperatingSystem</code></p></li>
 /// <li>
-/// <p><code>TotalMemoryLimitMebibytes</code> (omit to use default value)</p></li>
+/// <p><code>TotalMemoryLimitMebibytes</code></p></li>
 /// <li>
-/// <p><code>TotalVcpuLimit </code>(omit to use default value)</p></li>
+/// <p><code>TotalVcpuLimit</code></p></li>
 /// <li>
 /// <p>At least one <code>SupportContainerDefinition</code></p>
 /// <ul>

@@ -332,4 +332,18 @@ impl UpdateStackFluentBuilder {
     pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
         self.inner.get_content_redirection()
     }
+    /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
+    pub fn agent_access_config(mut self, input: crate::types::AgentAccessConfigForUpdate) -> Self {
+        self.inner = self.inner.agent_access_config(input);
+        self
+    }
+    /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
+    pub fn set_agent_access_config(mut self, input: ::std::option::Option<crate::types::AgentAccessConfigForUpdate>) -> Self {
+        self.inner = self.inner.set_agent_access_config(input);
+        self
+    }
+    /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
+    pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::AgentAccessConfigForUpdate> {
+        self.inner.get_agent_access_config()
+    }
 }

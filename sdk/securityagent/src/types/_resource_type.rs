@@ -13,6 +13,7 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::CodeRepository => { /* ... */ },
+///     ResourceType::Document => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -35,7 +36,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Type of resource
+/// <p>Type of resource.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -43,6 +44,8 @@
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CodeRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    Document,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "CODE_REPOSITORY" => ResourceType::CodeRepository,
+            "DOCUMENT" => ResourceType::Document,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::CodeRepository => "CODE_REPOSITORY",
+            ResourceType::Document => "DOCUMENT",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODE_REPOSITORY"]
+        &["CODE_REPOSITORY", "DOCUMENT"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
+            ResourceType::Document => write!(f, "DOCUMENT"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

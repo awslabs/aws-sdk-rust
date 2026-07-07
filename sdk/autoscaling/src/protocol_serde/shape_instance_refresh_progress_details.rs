@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_refresh_progress_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceRefreshProgressDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceRefreshProgressDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_instance_refresh_progress_details(
             s if s.matches("LivePoolProgress") /* LivePoolProgress com.amazonaws.autoscaling#InstanceRefreshProgressDetails$LivePoolProgress */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_refresh_live_pool_progress::de_instance_refresh_live_pool_progress(&mut tag)
+                        crate::protocol_serde::shape_instance_refresh_live_pool_progress::de_instance_refresh_live_pool_progress(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_instance_refresh_progress_details(
             s if s.matches("WarmPoolProgress") /* WarmPoolProgress com.amazonaws.autoscaling#InstanceRefreshProgressDetails$WarmPoolProgress */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_instance_refresh_warm_pool_progress::de_instance_refresh_warm_pool_progress(&mut tag)
+                        crate::protocol_serde::shape_instance_refresh_warm_pool_progress::de_instance_refresh_warm_pool_progress(&mut tag, depth + 1)
                         ?
                     )
                 ;

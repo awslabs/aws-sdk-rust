@@ -178,4 +178,18 @@ impl UpdatePolicyFluentBuilder {
     pub fn get_validation_mode(&self) -> &::std::option::Option<crate::types::PolicyValidationMode> {
         self.inner.get_validation_mode()
     }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. If you omit this field, the policy's existing enforcement mode is unchanged.</p>
+    pub fn enforcement_mode(mut self, input: crate::types::EnforcementMode) -> Self {
+        self.inner = self.inner.enforcement_mode(input);
+        self
+    }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. If you omit this field, the policy's existing enforcement mode is unchanged.</p>
+    pub fn set_enforcement_mode(mut self, input: ::std::option::Option<crate::types::EnforcementMode>) -> Self {
+        self.inner = self.inner.set_enforcement_mode(input);
+        self
+    }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. If you omit this field, the policy's existing enforcement mode is unchanged.</p>
+    pub fn get_enforcement_mode(&self) -> &::std::option::Option<crate::types::EnforcementMode> {
+        self.inner.get_enforcement_mode()
+    }
 }

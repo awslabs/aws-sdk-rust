@@ -52,6 +52,8 @@ pub fn de_create_ipam_external_resource_verification_token(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateIpamExternalResourceVerificationTokenResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateIpamExternalResourceVerificationTokenResponse got {start_el:?}"
@@ -62,7 +64,7 @@ pub fn de_create_ipam_external_resource_verification_token(
             s if s.matches("ipamExternalResourceVerificationToken") /* IpamExternalResourceVerificationToken com.amazonaws.ec2.synthetic#CreateIpamExternalResourceVerificationTokenOutput$IpamExternalResourceVerificationToken */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipam_external_resource_verification_token::de_ipam_external_resource_verification_token(&mut tag)
+                        crate::protocol_serde::shape_ipam_external_resource_verification_token::de_ipam_external_resource_verification_token(&mut tag, depth + 1)
                         ?
                     )
                 ;

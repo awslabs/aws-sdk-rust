@@ -107,6 +107,8 @@ pub(crate) fn de_get_statement_result_v2(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -114,12 +116,16 @@ pub(crate) fn de_get_statement_result_v2(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Records" => {
                     builder = builder.set_records(crate::protocol_serde::shape_formatted_sql_records::de_formatted_sql_records(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ColumnMetadata" => {
                     builder = builder.set_column_metadata(crate::protocol_serde::shape_column_metadata_list::de_column_metadata_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "TotalNumRows" => {

@@ -66,10 +66,16 @@ pub fn ser_audio_description(
 pub(crate) fn de_audio_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AudioDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -78,91 +84,103 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "audioNormalizationSettings" => {
-                            builder = builder.set_audio_normalization_settings(
-                                crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "audioNormalizationSettings" => {
+                                builder = builder.set_audio_normalization_settings(
+                                    crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "audioSelectorName" => {
+                                builder = builder.set_audio_selector_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "audioType" => {
+                                builder = builder.set_audio_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::AudioType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "audioTypeControl" => {
+                                builder = builder.set_audio_type_control(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::AudioDescriptionAudioTypeControl::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "audioWatermarkingSettings" => {
+                                builder = builder.set_audio_watermarking_settings(
+                                    crate::protocol_serde::shape_audio_watermark_settings::de_audio_watermark_settings(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "codecSettings" => {
+                                builder = builder.set_codec_settings(crate::protocol_serde::shape_audio_codec_settings::de_audio_codec_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "languageCode" => {
+                                builder = builder.set_language_code(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "languageCodeControl" => {
+                                builder = builder.set_language_code_control(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::AudioDescriptionLanguageCodeControl::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            "name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "remixSettings" => {
+                                builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "streamName" => {
+                                builder = builder.set_stream_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "audioDashRoles" => {
+                                builder = builder.set_audio_dash_roles(
+                                    crate::protocol_serde::shape_list_of_dash_role_audio::de_list_of_dash_role_audio(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "dvbDashAccessibility" => {
+                                builder = builder.set_dvb_dash_accessibility(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DvbDashAccessibility::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "audioSelectorName" => {
-                            builder = builder.set_audio_selector_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "audioType" => {
-                            builder = builder.set_audio_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AudioType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "audioTypeControl" => {
-                            builder = builder.set_audio_type_control(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AudioDescriptionAudioTypeControl::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "audioWatermarkingSettings" => {
-                            builder = builder.set_audio_watermarking_settings(
-                                crate::protocol_serde::shape_audio_watermark_settings::de_audio_watermark_settings(tokens, _value)?,
-                            );
-                        }
-                        "codecSettings" => {
-                            builder = builder.set_codec_settings(crate::protocol_serde::shape_audio_codec_settings::de_audio_codec_settings(
-                                tokens, _value,
-                            )?);
-                        }
-                        "languageCode" => {
-                            builder = builder.set_language_code(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "languageCodeControl" => {
-                            builder = builder.set_language_code_control(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::AudioDescriptionLanguageCodeControl::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        "name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "remixSettings" => {
-                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens, _value)?);
-                        }
-                        "streamName" => {
-                            builder = builder.set_stream_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "audioDashRoles" => {
-                            builder = builder.set_audio_dash_roles(crate::protocol_serde::shape_list_of_dash_role_audio::de_list_of_dash_role_audio(
-                                tokens, _value,
-                            )?);
-                        }
-                        "dvbDashAccessibility" => {
-                            builder = builder.set_dvb_dash_accessibility(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DvbDashAccessibility::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

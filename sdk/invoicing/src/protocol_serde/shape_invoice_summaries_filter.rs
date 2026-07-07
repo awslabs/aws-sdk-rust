@@ -18,5 +18,8 @@ pub fn ser_invoice_summaries_filter(
     if let Some(var_5) = &input.invoicing_entity {
         object.key("InvoicingEntity").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.receiver_role {
+        object.key("ReceiverRole").string(var_6.as_str());
+    }
     Ok(())
 }

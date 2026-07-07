@@ -10,6 +10,8 @@ pub struct DocumentMetadata {
     pub inline_attributes: ::std::option::Option<::std::vec::Vec<crate::types::MetadataAttribute>>,
     /// <p>The Amazon S3 location of the file containing metadata to associate with the content to ingest.</p>
     pub s3_location: ::std::option::Option<crate::types::CustomS3Location>,
+    /// <p>Access control list for the document. Used when metadata type is IN_LINE_ATTRIBUTE.</p>
+    pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAccessControlEntry>>,
 }
 impl DocumentMetadata {
     /// <p>The type of the source source from which to add metadata.</p>
@@ -26,6 +28,12 @@ impl DocumentMetadata {
     pub fn s3_location(&self) -> ::std::option::Option<&crate::types::CustomS3Location> {
         self.s3_location.as_ref()
     }
+    /// <p>Access control list for the document. Used when metadata type is IN_LINE_ATTRIBUTE.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
+    pub fn access_control_list(&self) -> &[crate::types::DocumentAccessControlEntry] {
+        self.access_control_list.as_deref().unwrap_or_default()
+    }
 }
 impl DocumentMetadata {
     /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::types::DocumentMetadata).
@@ -41,6 +49,7 @@ pub struct DocumentMetadataBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MetadataSourceType>,
     pub(crate) inline_attributes: ::std::option::Option<::std::vec::Vec<crate::types::MetadataAttribute>>,
     pub(crate) s3_location: ::std::option::Option<crate::types::CustomS3Location>,
+    pub(crate) access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAccessControlEntry>>,
 }
 impl DocumentMetadataBuilder {
     /// <p>The type of the source source from which to add metadata.</p>
@@ -92,6 +101,26 @@ impl DocumentMetadataBuilder {
     pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::CustomS3Location> {
         &self.s3_location
     }
+    /// Appends an item to `access_control_list`.
+    ///
+    /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
+    ///
+    /// <p>Access control list for the document. Used when metadata type is IN_LINE_ATTRIBUTE.</p>
+    pub fn access_control_list(mut self, input: crate::types::DocumentAccessControlEntry) -> Self {
+        let mut v = self.access_control_list.unwrap_or_default();
+        v.push(input);
+        self.access_control_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Access control list for the document. Used when metadata type is IN_LINE_ATTRIBUTE.</p>
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAccessControlEntry>>) -> Self {
+        self.access_control_list = input;
+        self
+    }
+    /// <p>Access control list for the document. Used when metadata type is IN_LINE_ATTRIBUTE.</p>
+    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAccessControlEntry>> {
+        &self.access_control_list
+    }
     /// Consumes the builder and constructs a [`DocumentMetadata`](crate::types::DocumentMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::DocumentMetadataBuilder::type)
@@ -105,6 +134,7 @@ impl DocumentMetadataBuilder {
             })?,
             inline_attributes: self.inline_attributes,
             s3_location: self.s3_location,
+            access_control_list: self.access_control_list,
         })
     }
 }

@@ -33,6 +33,8 @@ pub use crate::types::_replication_state_info::ReplicationStateInfoBuilder;
 
 pub use crate::types::_connectivity_info::ConnectivityInfoBuilder;
 
+pub use crate::types::_zookeeper_access::ZookeeperAccessBuilder;
+
 pub use crate::types::_consumer_group_replication_update::ConsumerGroupReplicationUpdateBuilder;
 
 pub use crate::types::_topic_replication_update::TopicReplicationUpdateBuilder;
@@ -176,6 +178,8 @@ pub use crate::types::_zookeeper_node_info::ZookeeperNodeInfoBuilder;
 pub use crate::types::_vpc_connectivity_client_authentication::VpcConnectivityClientAuthenticationBuilder;
 
 pub use crate::types::_kafka_cluster_sasl_scram_authentication::KafkaClusterSaslScramAuthenticationBuilder;
+
+pub use crate::types::_kafka_cluster_mtls_authentication::KafkaClusterMtlsAuthenticationBuilder;
 
 pub use crate::types::_replication_starting_position::ReplicationStartingPositionBuilder;
 

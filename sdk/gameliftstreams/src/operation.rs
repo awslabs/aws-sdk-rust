@@ -13,6 +13,9 @@ pub mod create_application;
 /// Types for the `CreateStreamGroup` operation.
 pub mod create_stream_group;
 
+/// Types for the `CreateStreamSessionAdminShell` operation.
+pub mod create_stream_session_admin_shell;
+
 /// Types for the `CreateStreamSessionConnection` operation.
 pub mod create_stream_session_connection;
 

@@ -49,6 +49,8 @@ pub fn de_create_capacity_reservation_fleet(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateCapacityReservationFleetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateCapacityReservationFleetResponse got {start_el:?}"
@@ -185,7 +187,7 @@ pub fn de_create_capacity_reservation_fleet(
             s if s.matches("fleetCapacityReservationSet") /* FleetCapacityReservations com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$FleetCapacityReservations */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_fleet_capacity_reservation_set::de_fleet_capacity_reservation_set(&mut tag)
+                        crate::protocol_serde::shape_fleet_capacity_reservation_set::de_fleet_capacity_reservation_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -195,7 +197,7 @@ pub fn de_create_capacity_reservation_fleet(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$Tags */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_limits<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Limits>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,21 +20,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "StorageTypes" => {
-                            builder =
-                                builder.set_storage_types(crate::protocol_serde::shape_storage_type_list::de_storage_type_list(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "StorageTypes" => {
+                                builder = builder.set_storage_types(crate::protocol_serde::shape_storage_type_list::de_storage_type_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "InstanceLimits" => {
+                                builder = builder.set_instance_limits(crate::protocol_serde::shape_instance_limits::de_instance_limits(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "AdditionalLimits" => {
+                                builder = builder.set_additional_limits(
+                                    crate::protocol_serde::shape_additional_limit_list::de_additional_limit_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "InstanceLimits" => {
-                            builder = builder.set_instance_limits(crate::protocol_serde::shape_instance_limits::de_instance_limits(tokens, _value)?);
-                        }
-                        "AdditionalLimits" => {
-                            builder = builder.set_additional_limits(crate::protocol_serde::shape_additional_limit_list::de_additional_limit_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

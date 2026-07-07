@@ -2,10 +2,16 @@
 pub(crate) fn de_app_block_builder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AppBlockBuilder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,7 +75,7 @@ where
                             );
                         }
                         "VpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "State" => {
                             builder = builder.set_state(
@@ -85,19 +91,26 @@ where
                             )?);
                         }
                         "AppBlockBuilderErrors" => {
-                            builder = builder
-                                .set_app_block_builder_errors(crate::protocol_serde::shape_resource_errors::de_resource_errors(tokens, _value)?);
+                            builder = builder.set_app_block_builder_errors(crate::protocol_serde::shape_resource_errors::de_resource_errors(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StateChangeReason" => {
                             builder = builder.set_state_change_reason(
                                 crate::protocol_serde::shape_app_block_builder_state_change_reason::de_app_block_builder_state_change_reason(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "AccessEndpoints" => {
                             builder = builder.set_access_endpoints(crate::protocol_serde::shape_access_endpoint_list::de_access_endpoint_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DisableIMDSV1" => {

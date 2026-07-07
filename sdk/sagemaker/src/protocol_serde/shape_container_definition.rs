@@ -61,16 +61,28 @@ pub fn ser_container_definition(
         crate::protocol_serde::shape_multi_model_config::ser_multi_model_config(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if let Some(var_21) = &input.container_metrics_config {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("ContainerMetricsConfig").start_object();
+        crate::protocol_serde::shape_container_metrics_config::ser_container_metrics_config(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_container_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ContainerDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -95,7 +107,8 @@ where
                             );
                         }
                         "ImageConfig" => {
-                            builder = builder.set_image_config(crate::protocol_serde::shape_image_config::de_image_config(tokens, _value)?);
+                            builder =
+                                builder.set_image_config(crate::protocol_serde::shape_image_config::de_image_config(tokens, _value, depth + 1)?);
                         }
                         "Mode" => {
                             builder = builder.set_mode(
@@ -112,16 +125,27 @@ where
                             );
                         }
                         "ModelDataSource" => {
-                            builder =
-                                builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens, _value)?);
+                            builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AdditionalModelDataSources" => {
                             builder = builder.set_additional_model_data_sources(
-                                crate::protocol_serde::shape_additional_model_data_sources::de_additional_model_data_sources(tokens, _value)?,
+                                crate::protocol_serde::shape_additional_model_data_sources::de_additional_model_data_sources(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Environment" => {
-                            builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(tokens, _value)?);
+                            builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ModelPackageName" => {
                             builder = builder.set_model_package_name(
@@ -138,8 +162,16 @@ where
                             );
                         }
                         "MultiModelConfig" => {
-                            builder = builder
-                                .set_multi_model_config(crate::protocol_serde::shape_multi_model_config::de_multi_model_config(tokens, _value)?);
+                            builder = builder.set_multi_model_config(crate::protocol_serde::shape_multi_model_config::de_multi_model_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "ContainerMetricsConfig" => {
+                            builder = builder.set_container_metrics_config(
+                                crate::protocol_serde::shape_container_metrics_config::de_container_metrics_config(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

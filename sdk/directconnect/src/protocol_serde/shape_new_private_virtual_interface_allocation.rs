@@ -54,5 +54,8 @@ pub fn ser_new_private_virtual_interface_allocation(
         }
         array_8.finish();
     }
+    if let Some(var_11) = &input.rate_limit {
+        object.key("rateLimit").string(var_11.as_str());
+    }
     Ok(())
 }

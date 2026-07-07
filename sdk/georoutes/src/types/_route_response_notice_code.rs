@@ -13,7 +13,10 @@
 /// # let routeresponsenoticecode = unimplemented!();
 /// match routeresponsenoticecode {
 ///     RouteResponseNoticeCode::MainLanguageNotFound => { /* ... */ },
+///     RouteResponseNoticeCode::NoTransitStationsFound => { /* ... */ },
 ///     RouteResponseNoticeCode::Other => { /* ... */ },
+///     RouteResponseNoticeCode::TransitDataUnavailable => { /* ... */ },
+///     RouteResponseNoticeCode::TransitRouteUnavailable => { /* ... */ },
 ///     RouteResponseNoticeCode::TravelTimeExceedsDriverWorkHours => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,7 +49,13 @@ pub enum RouteResponseNoticeCode {
     #[allow(missing_docs)] // documentation missing in model
     MainLanguageNotFound,
     #[allow(missing_docs)] // documentation missing in model
+    NoTransitStationsFound,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitDataUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitRouteUnavailable,
     #[allow(missing_docs)] // documentation missing in model
     TravelTimeExceedsDriverWorkHours,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -57,7 +66,10 @@ impl ::std::convert::From<&str> for RouteResponseNoticeCode {
     fn from(s: &str) -> Self {
         match s {
             "MainLanguageNotFound" => RouteResponseNoticeCode::MainLanguageNotFound,
+            "NoTransitStationsFound" => RouteResponseNoticeCode::NoTransitStationsFound,
             "Other" => RouteResponseNoticeCode::Other,
+            "TransitDataUnavailable" => RouteResponseNoticeCode::TransitDataUnavailable,
+            "TransitRouteUnavailable" => RouteResponseNoticeCode::TransitRouteUnavailable,
             "TravelTimeExceedsDriverWorkHours" => RouteResponseNoticeCode::TravelTimeExceedsDriverWorkHours,
             other => RouteResponseNoticeCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,14 +87,24 @@ impl RouteResponseNoticeCode {
     pub fn as_str(&self) -> &str {
         match self {
             RouteResponseNoticeCode::MainLanguageNotFound => "MainLanguageNotFound",
+            RouteResponseNoticeCode::NoTransitStationsFound => "NoTransitStationsFound",
             RouteResponseNoticeCode::Other => "Other",
+            RouteResponseNoticeCode::TransitDataUnavailable => "TransitDataUnavailable",
+            RouteResponseNoticeCode::TransitRouteUnavailable => "TransitRouteUnavailable",
             RouteResponseNoticeCode::TravelTimeExceedsDriverWorkHours => "TravelTimeExceedsDriverWorkHours",
             RouteResponseNoticeCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MainLanguageNotFound", "Other", "TravelTimeExceedsDriverWorkHours"]
+        &[
+            "MainLanguageNotFound",
+            "NoTransitStationsFound",
+            "Other",
+            "TransitDataUnavailable",
+            "TransitRouteUnavailable",
+            "TravelTimeExceedsDriverWorkHours",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RouteResponseNoticeCode {
@@ -106,7 +128,10 @@ impl ::std::fmt::Display for RouteResponseNoticeCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RouteResponseNoticeCode::MainLanguageNotFound => write!(f, "MainLanguageNotFound"),
+            RouteResponseNoticeCode::NoTransitStationsFound => write!(f, "NoTransitStationsFound"),
             RouteResponseNoticeCode::Other => write!(f, "Other"),
+            RouteResponseNoticeCode::TransitDataUnavailable => write!(f, "TransitDataUnavailable"),
+            RouteResponseNoticeCode::TransitRouteUnavailable => write!(f, "TransitRouteUnavailable"),
             RouteResponseNoticeCode::TravelTimeExceedsDriverWorkHours => write!(f, "TravelTimeExceedsDriverWorkHours"),
             RouteResponseNoticeCode::Unknown(value) => write!(f, "{value}"),
         }

@@ -51,6 +51,8 @@ pub fn de_assign_private_ip_addresses(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AssignPrivateIpAddressesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AssignPrivateIpAddressesResponse got {start_el:?}"
@@ -74,7 +76,7 @@ pub fn de_assign_private_ip_addresses(
             s if s.matches("assignedPrivateIpAddressesSet") /* AssignedPrivateIpAddresses com.amazonaws.ec2.synthetic#AssignPrivateIpAddressesOutput$AssignedPrivateIpAddresses */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_assigned_private_ip_address_list::de_assigned_private_ip_address_list(&mut tag)
+                        crate::protocol_serde::shape_assigned_private_ip_address_list::de_assigned_private_ip_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -84,7 +86,7 @@ pub fn de_assign_private_ip_addresses(
             s if s.matches("assignedIpv4PrefixSet") /* AssignedIpv4Prefixes com.amazonaws.ec2.synthetic#AssignPrivateIpAddressesOutput$AssignedIpv4Prefixes */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_ipv4_prefixes_list::de_ipv4_prefixes_list(&mut tag)
+                        crate::protocol_serde::shape_ipv4_prefixes_list::de_ipv4_prefixes_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

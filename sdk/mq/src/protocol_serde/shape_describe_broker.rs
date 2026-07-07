@@ -107,6 +107,8 @@ pub(crate) fn de_describe_broker(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -114,7 +116,9 @@ pub(crate) fn de_describe_broker(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionsRequired" => {
                     builder = builder.set_actions_required(crate::protocol_serde::shape_list_of_action_required::de_list_of_action_required(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "authenticationStrategy" => {
@@ -143,7 +147,9 @@ pub(crate) fn de_describe_broker(
                 }
                 "brokerInstances" => {
                     builder = builder.set_broker_instances(crate::protocol_serde::shape_list_of_broker_instance::de_list_of_broker_instance(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "brokerName" => {
@@ -161,7 +167,7 @@ pub(crate) fn de_describe_broker(
                     );
                 }
                 "configurations" => {
-                    builder = builder.set_configurations(crate::protocol_serde::shape_configurations::de_configurations(tokens, _value)?);
+                    builder = builder.set_configurations(crate::protocol_serde::shape_configurations::de_configurations(tokens, _value, depth + 1)?);
                 }
                 "created" => {
                     builder = builder.set_created(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -171,7 +177,11 @@ pub(crate) fn de_describe_broker(
                 }
                 "dataReplicationMetadata" => {
                     builder = builder.set_data_replication_metadata(
-                        crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(tokens, _value)?,
+                        crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "dataReplicationMode" => {
@@ -189,7 +199,11 @@ pub(crate) fn de_describe_broker(
                     );
                 }
                 "encryptionOptions" => {
-                    builder = builder.set_encryption_options(crate::protocol_serde::shape_encryption_options::de_encryption_options(tokens, _value)?);
+                    builder = builder.set_encryption_options(crate::protocol_serde::shape_encryption_options::de_encryption_options(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "engineType" => {
                     builder = builder.set_engine_type(
@@ -214,15 +228,18 @@ pub(crate) fn de_describe_broker(
                 }
                 "ldapServerMetadata" => {
                     builder = builder.set_ldap_server_metadata(
-                        crate::protocol_serde::shape_ldap_server_metadata_output::de_ldap_server_metadata_output(tokens, _value)?,
+                        crate::protocol_serde::shape_ldap_server_metadata_output::de_ldap_server_metadata_output(tokens, _value, depth + 1)?,
                     );
                 }
                 "logs" => {
-                    builder = builder.set_logs(crate::protocol_serde::shape_logs_summary::de_logs_summary(tokens, _value)?);
+                    builder = builder.set_logs(crate::protocol_serde::shape_logs_summary::de_logs_summary(tokens, _value, depth + 1)?);
                 }
                 "maintenanceWindowStartTime" => {
-                    builder = builder
-                        .set_maintenance_window_start_time(crate::protocol_serde::shape_weekly_start_time::de_weekly_start_time(tokens, _value)?);
+                    builder = builder.set_maintenance_window_start_time(crate::protocol_serde::shape_weekly_start_time::de_weekly_start_time(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "pendingAuthenticationStrategy" => {
                     builder = builder.set_pending_authentication_strategy(
@@ -233,7 +250,11 @@ pub(crate) fn de_describe_broker(
                 }
                 "pendingDataReplicationMetadata" => {
                     builder = builder.set_pending_data_replication_metadata(
-                        crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(tokens, _value)?,
+                        crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "pendingDataReplicationMode" => {
@@ -259,17 +280,21 @@ pub(crate) fn de_describe_broker(
                 }
                 "pendingLdapServerMetadata" => {
                     builder = builder.set_pending_ldap_server_metadata(
-                        crate::protocol_serde::shape_ldap_server_metadata_output::de_ldap_server_metadata_output(tokens, _value)?,
+                        crate::protocol_serde::shape_ldap_server_metadata_output::de_ldap_server_metadata_output(tokens, _value, depth + 1)?,
                     );
                 }
                 "pendingSecurityGroups" => {
-                    builder = builder.set_pending_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_pending_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "publiclyAccessible" => {
                     builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "storageType" => {
                     builder = builder.set_storage_type(
@@ -279,14 +304,16 @@ pub(crate) fn de_describe_broker(
                     );
                 }
                 "subnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                 }
                 "users" => {
                     builder = builder.set_users(crate::protocol_serde::shape_list_of_user_summary::de_list_of_user_summary(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -13,11 +13,17 @@
 /// # let idlerecommendationresourcetype = unimplemented!();
 /// match idlerecommendationresourcetype {
 ///     IdleRecommendationResourceType::AutoScalingGroup => { /* ... */ },
+///     IdleRecommendationResourceType::DocumentDbCluster => { /* ... */ },
+///     IdleRecommendationResourceType::DynamoDbTable => { /* ... */ },
 ///     IdleRecommendationResourceType::EbsVolume => { /* ... */ },
 ///     IdleRecommendationResourceType::Ec2Instance => { /* ... */ },
 ///     IdleRecommendationResourceType::EcsService => { /* ... */ },
+///     IdleRecommendationResourceType::ElastiCacheCluster => { /* ... */ },
+///     IdleRecommendationResourceType::MemoryDbCluster => { /* ... */ },
 ///     IdleRecommendationResourceType::NatGateway => { /* ... */ },
 ///     IdleRecommendationResourceType::RdsDbInstance => { /* ... */ },
+///     IdleRecommendationResourceType::SageMakerEndpoint => { /* ... */ },
+///     IdleRecommendationResourceType::Workspaces => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,15 +55,27 @@ pub enum IdleRecommendationResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroup,
     #[allow(missing_docs)] // documentation missing in model
+    DocumentDbCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    DynamoDbTable,
+    #[allow(missing_docs)] // documentation missing in model
     EbsVolume,
     #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
     EcsService,
     #[allow(missing_docs)] // documentation missing in model
+    ElastiCacheCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    MemoryDbCluster,
+    #[allow(missing_docs)] // documentation missing in model
     NatGateway,
     #[allow(missing_docs)] // documentation missing in model
     RdsDbInstance,
+    #[allow(missing_docs)] // documentation missing in model
+    SageMakerEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
+    Workspaces,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -66,11 +84,17 @@ impl ::std::convert::From<&str> for IdleRecommendationResourceType {
     fn from(s: &str) -> Self {
         match s {
             "AutoScalingGroup" => IdleRecommendationResourceType::AutoScalingGroup,
+            "DocumentDBCluster" => IdleRecommendationResourceType::DocumentDbCluster,
+            "DynamoDBTable" => IdleRecommendationResourceType::DynamoDbTable,
             "EBSVolume" => IdleRecommendationResourceType::EbsVolume,
             "EC2Instance" => IdleRecommendationResourceType::Ec2Instance,
             "ECSService" => IdleRecommendationResourceType::EcsService,
+            "ElastiCacheCluster" => IdleRecommendationResourceType::ElastiCacheCluster,
+            "MemoryDBCluster" => IdleRecommendationResourceType::MemoryDbCluster,
             "NatGateway" => IdleRecommendationResourceType::NatGateway,
             "RDSDBInstance" => IdleRecommendationResourceType::RdsDbInstance,
+            "SageMakerEndpoint" => IdleRecommendationResourceType::SageMakerEndpoint,
+            "WorkSpaces" => IdleRecommendationResourceType::Workspaces,
             other => IdleRecommendationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,11 +111,17 @@ impl IdleRecommendationResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             IdleRecommendationResourceType::AutoScalingGroup => "AutoScalingGroup",
+            IdleRecommendationResourceType::DocumentDbCluster => "DocumentDBCluster",
+            IdleRecommendationResourceType::DynamoDbTable => "DynamoDBTable",
             IdleRecommendationResourceType::EbsVolume => "EBSVolume",
             IdleRecommendationResourceType::Ec2Instance => "EC2Instance",
             IdleRecommendationResourceType::EcsService => "ECSService",
+            IdleRecommendationResourceType::ElastiCacheCluster => "ElastiCacheCluster",
+            IdleRecommendationResourceType::MemoryDbCluster => "MemoryDBCluster",
             IdleRecommendationResourceType::NatGateway => "NatGateway",
             IdleRecommendationResourceType::RdsDbInstance => "RDSDBInstance",
+            IdleRecommendationResourceType::SageMakerEndpoint => "SageMakerEndpoint",
+            IdleRecommendationResourceType::Workspaces => "WorkSpaces",
             IdleRecommendationResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -99,11 +129,17 @@ impl IdleRecommendationResourceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AutoScalingGroup",
+            "DocumentDBCluster",
+            "DynamoDBTable",
             "EBSVolume",
             "EC2Instance",
             "ECSService",
+            "ElastiCacheCluster",
+            "MemoryDBCluster",
             "NatGateway",
             "RDSDBInstance",
+            "SageMakerEndpoint",
+            "WorkSpaces",
         ]
     }
 }
@@ -128,11 +164,17 @@ impl ::std::fmt::Display for IdleRecommendationResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IdleRecommendationResourceType::AutoScalingGroup => write!(f, "AutoScalingGroup"),
+            IdleRecommendationResourceType::DocumentDbCluster => write!(f, "DocumentDBCluster"),
+            IdleRecommendationResourceType::DynamoDbTable => write!(f, "DynamoDBTable"),
             IdleRecommendationResourceType::EbsVolume => write!(f, "EBSVolume"),
             IdleRecommendationResourceType::Ec2Instance => write!(f, "EC2Instance"),
             IdleRecommendationResourceType::EcsService => write!(f, "ECSService"),
+            IdleRecommendationResourceType::ElastiCacheCluster => write!(f, "ElastiCacheCluster"),
+            IdleRecommendationResourceType::MemoryDbCluster => write!(f, "MemoryDBCluster"),
             IdleRecommendationResourceType::NatGateway => write!(f, "NatGateway"),
             IdleRecommendationResourceType::RdsDbInstance => write!(f, "RDSDBInstance"),
+            IdleRecommendationResourceType::SageMakerEndpoint => write!(f, "SageMakerEndpoint"),
+            IdleRecommendationResourceType::Workspaces => write!(f, "WorkSpaces"),
             IdleRecommendationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

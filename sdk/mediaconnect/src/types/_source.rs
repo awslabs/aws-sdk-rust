@@ -20,9 +20,9 @@ pub struct Source {
     pub media_stream_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfiguration>>,
     /// <p>The name of the source.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
-    pub sender_control_port: ::std::option::Option<i32>,
     /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
+    pub sender_control_port: ::std::option::Option<i32>,
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub sender_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the source.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
@@ -89,11 +89,11 @@ impl Source {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn sender_control_port(&self) -> ::std::option::Option<i32> {
         self.sender_control_port
     }
-    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn sender_ip_address(&self) -> ::std::option::Option<&str> {
         self.sender_ip_address.as_deref()
     }
@@ -299,31 +299,31 @@ impl SourceBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn sender_control_port(mut self, input: i32) -> Self {
         self.sender_control_port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn set_sender_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sender_control_port = input;
         self
     }
-    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn get_sender_control_port(&self) -> &::std::option::Option<i32> {
         &self.sender_control_port
     }
-    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn sender_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_ip_address = input;
         self
     }
-    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.sender_ip_address
     }

@@ -8,7 +8,7 @@ pub struct UserSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Connect user name of the user account.</p>
+    /// <p>The Connect Customer user name of the user account.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when this resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,7 +24,7 @@ impl UserSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Connect user name of the user account.</p>
+    /// <p>The Connect Customer user name of the user account.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -83,17 +83,17 @@ impl UserSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The Amazon Connect user name of the user account.</p>
+    /// <p>The Connect Customer user name of the user account.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Connect user name of the user account.</p>
+    /// <p>The Connect Customer user name of the user account.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The Amazon Connect user name of the user account.</p>
+    /// <p>The Connect Customer user name of the user account.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }

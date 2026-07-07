@@ -72,6 +72,8 @@ pub fn de_reset_service_specific_credential(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ResetServiceSpecificCredentialResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ResetServiceSpecificCredentialResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_reset_service_specific_credential(
             s if s.matches("ServiceSpecificCredential") /* ServiceSpecificCredential com.amazonaws.iam.synthetic#ResetServiceSpecificCredentialOutput$ServiceSpecificCredential */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_service_specific_credential::de_service_specific_credential(&mut tag)
+                        crate::protocol_serde::shape_service_specific_credential::de_service_specific_credential(&mut tag, depth + 1)
                         ?
                     )
                 ;

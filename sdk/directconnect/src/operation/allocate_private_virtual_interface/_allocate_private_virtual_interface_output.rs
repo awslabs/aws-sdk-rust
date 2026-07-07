@@ -18,25 +18,32 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     pub virtual_interface_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub asn: i32,
-    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub asn_long: ::std::option::Option<i64>,
     /// <p>The autonomous system number (AS) for the Amazon side of the connection.</p>
     pub amazon_side_asn: ::std::option::Option<i64>,
@@ -96,6 +103,8 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub site_link_enabled: ::std::option::Option<bool>,
+    /// <p>The rate limit (bandwidth allocation) applied to the virtual interface. The value must be one of the supported bandwidth values and cannot exceed the bandwidth of the parent connection or LAG. Supported values: <code>50Mbps</code>, <code>100Mbps</code>, <code>200Mbps</code>, <code>300Mbps</code>, <code>400Mbps</code>, <code>500Mbps</code>, <code>600Mbps</code>, <code>700Mbps</code>, <code>800Mbps</code>, <code>900Mbps</code>, <code>1Gbps</code>, <code>1.2Gbps</code>, <code>1.5Gbps</code>, <code>1.8Gbps</code>, <code>2Gbps</code>, <code>2.1Gbps</code>, <code>2.4Gbps</code>, <code>2.7Gbps</code>, <code>3Gbps</code>, <code>3.2Gbps</code>, <code>3.6Gbps</code>, <code>4Gbps</code>, <code>5Gbps</code>, <code>6Gbps</code>, <code>7Gbps</code>, <code>8Gbps</code>, <code>9Gbps</code>, <code>10Gbps</code>, <code>12Gbps</code>, <code>15Gbps</code>, <code>18Gbps</code>, <code>20Gbps</code>, <code>21Gbps</code>, <code>24Gbps</code>, <code>27Gbps</code>, <code>30Gbps</code>, <code>32Gbps</code>, <code>36Gbps</code>, <code>40Gbps</code>, <code>50Gbps</code>, <code>60Gbps</code>, <code>70Gbps</code>, <code>80Gbps</code>, <code>100Gbps</code>, <code>120Gbps</code>, <code>150Gbps</code>, <code>180Gbps</code>, <code>200Gbps</code>, <code>210Gbps</code>, <code>240Gbps</code>, <code>270Gbps</code>, <code>300Gbps</code>, <code>320Gbps</code>, <code>360Gbps</code>, <code>400Gbps</code>, <code>450Gbps</code>, <code>480Gbps</code>, <code>500Gbps</code>, <code>540Gbps</code>, <code>600Gbps</code>, <code>700Gbps</code>, <code>800Gbps</code>, <code>900Gbps</code>, <code>1Tbps</code>, <code>1.1Tbps</code>, <code>1.2Tbps</code>, <code>1.3Tbps</code>, <code>1.4Tbps</code>, <code>1.5Tbps</code>, <code>1.6Tbps</code>.</p>
+    pub rate_limit: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AllocatePrivateVirtualInterfaceOutput {
@@ -127,27 +136,34 @@ impl AllocatePrivateVirtualInterfaceOutput {
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub fn asn(&self) -> i32 {
         self.asn
     }
-    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub fn asn_long(&self) -> ::std::option::Option<i64> {
         self.asn_long
     }
@@ -251,6 +267,10 @@ impl AllocatePrivateVirtualInterfaceOutput {
     pub fn site_link_enabled(&self) -> ::std::option::Option<bool> {
         self.site_link_enabled
     }
+    /// <p>The rate limit (bandwidth allocation) applied to the virtual interface. The value must be one of the supported bandwidth values and cannot exceed the bandwidth of the parent connection or LAG. Supported values: <code>50Mbps</code>, <code>100Mbps</code>, <code>200Mbps</code>, <code>300Mbps</code>, <code>400Mbps</code>, <code>500Mbps</code>, <code>600Mbps</code>, <code>700Mbps</code>, <code>800Mbps</code>, <code>900Mbps</code>, <code>1Gbps</code>, <code>1.2Gbps</code>, <code>1.5Gbps</code>, <code>1.8Gbps</code>, <code>2Gbps</code>, <code>2.1Gbps</code>, <code>2.4Gbps</code>, <code>2.7Gbps</code>, <code>3Gbps</code>, <code>3.2Gbps</code>, <code>3.6Gbps</code>, <code>4Gbps</code>, <code>5Gbps</code>, <code>6Gbps</code>, <code>7Gbps</code>, <code>8Gbps</code>, <code>9Gbps</code>, <code>10Gbps</code>, <code>12Gbps</code>, <code>15Gbps</code>, <code>18Gbps</code>, <code>20Gbps</code>, <code>21Gbps</code>, <code>24Gbps</code>, <code>27Gbps</code>, <code>30Gbps</code>, <code>32Gbps</code>, <code>36Gbps</code>, <code>40Gbps</code>, <code>50Gbps</code>, <code>60Gbps</code>, <code>70Gbps</code>, <code>80Gbps</code>, <code>100Gbps</code>, <code>120Gbps</code>, <code>150Gbps</code>, <code>180Gbps</code>, <code>200Gbps</code>, <code>210Gbps</code>, <code>240Gbps</code>, <code>270Gbps</code>, <code>300Gbps</code>, <code>320Gbps</code>, <code>360Gbps</code>, <code>400Gbps</code>, <code>450Gbps</code>, <code>480Gbps</code>, <code>500Gbps</code>, <code>540Gbps</code>, <code>600Gbps</code>, <code>700Gbps</code>, <code>800Gbps</code>, <code>900Gbps</code>, <code>1Tbps</code>, <code>1.1Tbps</code>, <code>1.2Tbps</code>, <code>1.3Tbps</code>, <code>1.4Tbps</code>, <code>1.5Tbps</code>, <code>1.6Tbps</code>.</p>
+    pub fn rate_limit(&self) -> ::std::option::Option<&str> {
+        self.rate_limit.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for AllocatePrivateVirtualInterfaceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -295,6 +315,7 @@ pub struct AllocatePrivateVirtualInterfaceOutputBuilder {
     pub(crate) aws_logical_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) site_link_enabled: ::std::option::Option<bool>,
+    pub(crate) rate_limit: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AllocatePrivateVirtualInterfaceOutputBuilder {
@@ -396,79 +417,100 @@ impl AllocatePrivateVirtualInterfaceOutputBuilder {
     pub fn get_vlan(&self) -> &::std::option::Option<i32> {
         &self.vlan
     }
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.asn = input;
         self
     }
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub fn get_asn(&self) -> &::std::option::Option<i32> {
         &self.asn
     }
-    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub fn asn_long(mut self, input: i64) -> Self {
         self.asn_long = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub fn set_asn_long(mut self, input: ::std::option::Option<i64>) -> Self {
         self.asn_long = input;
         self
     }
-    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub fn get_asn_long(&self) -> &::std::option::Option<i64> {
         &self.asn_long
     }
@@ -808,6 +850,20 @@ impl AllocatePrivateVirtualInterfaceOutputBuilder {
     pub fn get_site_link_enabled(&self) -> &::std::option::Option<bool> {
         &self.site_link_enabled
     }
+    /// <p>The rate limit (bandwidth allocation) applied to the virtual interface. The value must be one of the supported bandwidth values and cannot exceed the bandwidth of the parent connection or LAG. Supported values: <code>50Mbps</code>, <code>100Mbps</code>, <code>200Mbps</code>, <code>300Mbps</code>, <code>400Mbps</code>, <code>500Mbps</code>, <code>600Mbps</code>, <code>700Mbps</code>, <code>800Mbps</code>, <code>900Mbps</code>, <code>1Gbps</code>, <code>1.2Gbps</code>, <code>1.5Gbps</code>, <code>1.8Gbps</code>, <code>2Gbps</code>, <code>2.1Gbps</code>, <code>2.4Gbps</code>, <code>2.7Gbps</code>, <code>3Gbps</code>, <code>3.2Gbps</code>, <code>3.6Gbps</code>, <code>4Gbps</code>, <code>5Gbps</code>, <code>6Gbps</code>, <code>7Gbps</code>, <code>8Gbps</code>, <code>9Gbps</code>, <code>10Gbps</code>, <code>12Gbps</code>, <code>15Gbps</code>, <code>18Gbps</code>, <code>20Gbps</code>, <code>21Gbps</code>, <code>24Gbps</code>, <code>27Gbps</code>, <code>30Gbps</code>, <code>32Gbps</code>, <code>36Gbps</code>, <code>40Gbps</code>, <code>50Gbps</code>, <code>60Gbps</code>, <code>70Gbps</code>, <code>80Gbps</code>, <code>100Gbps</code>, <code>120Gbps</code>, <code>150Gbps</code>, <code>180Gbps</code>, <code>200Gbps</code>, <code>210Gbps</code>, <code>240Gbps</code>, <code>270Gbps</code>, <code>300Gbps</code>, <code>320Gbps</code>, <code>360Gbps</code>, <code>400Gbps</code>, <code>450Gbps</code>, <code>480Gbps</code>, <code>500Gbps</code>, <code>540Gbps</code>, <code>600Gbps</code>, <code>700Gbps</code>, <code>800Gbps</code>, <code>900Gbps</code>, <code>1Tbps</code>, <code>1.1Tbps</code>, <code>1.2Tbps</code>, <code>1.3Tbps</code>, <code>1.4Tbps</code>, <code>1.5Tbps</code>, <code>1.6Tbps</code>.</p>
+    pub fn rate_limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rate_limit = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The rate limit (bandwidth allocation) applied to the virtual interface. The value must be one of the supported bandwidth values and cannot exceed the bandwidth of the parent connection or LAG. Supported values: <code>50Mbps</code>, <code>100Mbps</code>, <code>200Mbps</code>, <code>300Mbps</code>, <code>400Mbps</code>, <code>500Mbps</code>, <code>600Mbps</code>, <code>700Mbps</code>, <code>800Mbps</code>, <code>900Mbps</code>, <code>1Gbps</code>, <code>1.2Gbps</code>, <code>1.5Gbps</code>, <code>1.8Gbps</code>, <code>2Gbps</code>, <code>2.1Gbps</code>, <code>2.4Gbps</code>, <code>2.7Gbps</code>, <code>3Gbps</code>, <code>3.2Gbps</code>, <code>3.6Gbps</code>, <code>4Gbps</code>, <code>5Gbps</code>, <code>6Gbps</code>, <code>7Gbps</code>, <code>8Gbps</code>, <code>9Gbps</code>, <code>10Gbps</code>, <code>12Gbps</code>, <code>15Gbps</code>, <code>18Gbps</code>, <code>20Gbps</code>, <code>21Gbps</code>, <code>24Gbps</code>, <code>27Gbps</code>, <code>30Gbps</code>, <code>32Gbps</code>, <code>36Gbps</code>, <code>40Gbps</code>, <code>50Gbps</code>, <code>60Gbps</code>, <code>70Gbps</code>, <code>80Gbps</code>, <code>100Gbps</code>, <code>120Gbps</code>, <code>150Gbps</code>, <code>180Gbps</code>, <code>200Gbps</code>, <code>210Gbps</code>, <code>240Gbps</code>, <code>270Gbps</code>, <code>300Gbps</code>, <code>320Gbps</code>, <code>360Gbps</code>, <code>400Gbps</code>, <code>450Gbps</code>, <code>480Gbps</code>, <code>500Gbps</code>, <code>540Gbps</code>, <code>600Gbps</code>, <code>700Gbps</code>, <code>800Gbps</code>, <code>900Gbps</code>, <code>1Tbps</code>, <code>1.1Tbps</code>, <code>1.2Tbps</code>, <code>1.3Tbps</code>, <code>1.4Tbps</code>, <code>1.5Tbps</code>, <code>1.6Tbps</code>.</p>
+    pub fn set_rate_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rate_limit = input;
+        self
+    }
+    /// <p>The rate limit (bandwidth allocation) applied to the virtual interface. The value must be one of the supported bandwidth values and cannot exceed the bandwidth of the parent connection or LAG. Supported values: <code>50Mbps</code>, <code>100Mbps</code>, <code>200Mbps</code>, <code>300Mbps</code>, <code>400Mbps</code>, <code>500Mbps</code>, <code>600Mbps</code>, <code>700Mbps</code>, <code>800Mbps</code>, <code>900Mbps</code>, <code>1Gbps</code>, <code>1.2Gbps</code>, <code>1.5Gbps</code>, <code>1.8Gbps</code>, <code>2Gbps</code>, <code>2.1Gbps</code>, <code>2.4Gbps</code>, <code>2.7Gbps</code>, <code>3Gbps</code>, <code>3.2Gbps</code>, <code>3.6Gbps</code>, <code>4Gbps</code>, <code>5Gbps</code>, <code>6Gbps</code>, <code>7Gbps</code>, <code>8Gbps</code>, <code>9Gbps</code>, <code>10Gbps</code>, <code>12Gbps</code>, <code>15Gbps</code>, <code>18Gbps</code>, <code>20Gbps</code>, <code>21Gbps</code>, <code>24Gbps</code>, <code>27Gbps</code>, <code>30Gbps</code>, <code>32Gbps</code>, <code>36Gbps</code>, <code>40Gbps</code>, <code>50Gbps</code>, <code>60Gbps</code>, <code>70Gbps</code>, <code>80Gbps</code>, <code>100Gbps</code>, <code>120Gbps</code>, <code>150Gbps</code>, <code>180Gbps</code>, <code>200Gbps</code>, <code>210Gbps</code>, <code>240Gbps</code>, <code>270Gbps</code>, <code>300Gbps</code>, <code>320Gbps</code>, <code>360Gbps</code>, <code>400Gbps</code>, <code>450Gbps</code>, <code>480Gbps</code>, <code>500Gbps</code>, <code>540Gbps</code>, <code>600Gbps</code>, <code>700Gbps</code>, <code>800Gbps</code>, <code>900Gbps</code>, <code>1Tbps</code>, <code>1.1Tbps</code>, <code>1.2Tbps</code>, <code>1.3Tbps</code>, <code>1.4Tbps</code>, <code>1.5Tbps</code>, <code>1.6Tbps</code>.</p>
+    pub fn get_rate_limit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rate_limit
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -847,6 +903,7 @@ impl AllocatePrivateVirtualInterfaceOutputBuilder {
             aws_logical_device_id: self.aws_logical_device_id,
             tags: self.tags,
             site_link_enabled: self.site_link_enabled,
+            rate_limit: self.rate_limit,
             _request_id: self._request_id,
         }
     }

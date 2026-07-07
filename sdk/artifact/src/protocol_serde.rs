@@ -23,7 +23,13 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_compliance_inquiry;
+
+pub(crate) mod shape_export_compliance_inquiry;
+
 pub(crate) mod shape_get_account_settings;
+
+pub(crate) mod shape_get_compliance_inquiry_metadata;
 
 pub(crate) mod shape_get_report;
 
@@ -31,13 +37,23 @@ pub(crate) mod shape_get_report_metadata;
 
 pub(crate) mod shape_get_term_for_report;
 
+pub(crate) mod shape_list_compliance_inquiries;
+
+pub(crate) mod shape_list_compliance_inquiry_queries;
+
 pub(crate) mod shape_list_customer_agreements;
 
 pub(crate) mod shape_list_report_versions;
 
 pub(crate) mod shape_list_reports;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_put_account_settings;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -51,6 +67,10 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_compliance_inquiry_input;
+
+pub(crate) mod shape_export_compliance_inquiry_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_put_account_settings_input;
@@ -58,6 +78,8 @@ pub(crate) mod shape_put_account_settings_input;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
@@ -67,16 +89,40 @@ pub(crate) mod shape_account_settings;
 
 pub(crate) mod shape_customer_agreement_list;
 
+pub(crate) mod shape_inquiries_list;
+
+pub(crate) mod shape_inquiry_content;
+
+pub(crate) mod shape_inquiry_detail;
+
+pub(crate) mod shape_inquiry_summary;
+
+pub(crate) mod shape_queries_list;
+
 pub(crate) mod shape_report_detail;
 
 pub(crate) mod shape_reports_list;
 
+pub(crate) mod shape_tags_map;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_customer_agreement_summary;
+
+pub(crate) mod shape_inquiry_file_content;
+
+pub(crate) mod shape_query_summary;
 
 pub(crate) mod shape_report_summary;
 
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_agreement_terms;
+
+pub(crate) mod shape_citation_list;
+
+pub(crate) mod shape_response_version_list;
+
+pub(crate) mod shape_citation;
+
+pub(crate) mod shape_response_version;

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArtifactsInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to list artifacts for.</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListArtifactsInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to list artifacts for.</p>
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -40,46 +40,46 @@ pub struct ListArtifactsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListArtifactsInputBuilder {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to list artifacts for.</p>
     /// This field is required.
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_space_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to list artifacts for.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_space_id = input;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to list artifacts for.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

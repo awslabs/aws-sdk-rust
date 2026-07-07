@@ -92,6 +92,8 @@ pub(crate) fn de_describe_task_execution(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -112,16 +114,20 @@ pub(crate) fn de_describe_task_execution(
                     );
                 }
                 "Options" => {
-                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens, _value)?);
+                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens, _value, depth + 1)?);
                 }
                 "Excludes" => {
-                    builder = builder.set_excludes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
+                    builder = builder.set_excludes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value, depth + 1)?);
                 }
                 "Includes" => {
-                    builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
+                    builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value, depth + 1)?);
                 }
                 "ManifestConfig" => {
-                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(tokens, _value)?);
+                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "StartTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -172,11 +178,16 @@ pub(crate) fn de_describe_task_execution(
                     );
                 }
                 "Result" => {
-                    builder = builder
-                        .set_result(crate::protocol_serde::shape_task_execution_result_detail::de_task_execution_result_detail(tokens, _value)?);
+                    builder = builder.set_result(
+                        crate::protocol_serde::shape_task_execution_result_detail::de_task_execution_result_detail(tokens, _value, depth + 1)?,
+                    );
                 }
                 "TaskReportConfig" => {
-                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens, _value)?);
+                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FilesDeleted" => {
                     builder = builder.set_files_deleted(
@@ -200,7 +211,7 @@ pub(crate) fn de_describe_task_execution(
                     );
                 }
                 "ReportResult" => {
-                    builder = builder.set_report_result(crate::protocol_serde::shape_report_result::de_report_result(tokens, _value)?);
+                    builder = builder.set_report_result(crate::protocol_serde::shape_report_result::de_report_result(tokens, _value, depth + 1)?);
                 }
                 "EstimatedFilesToDelete" => {
                     builder = builder.set_estimated_files_to_delete(
@@ -225,12 +236,20 @@ pub(crate) fn de_describe_task_execution(
                 }
                 "FilesListed" => {
                     builder = builder.set_files_listed(
-                        crate::protocol_serde::shape_task_execution_files_listed_detail::de_task_execution_files_listed_detail(tokens, _value)?,
+                        crate::protocol_serde::shape_task_execution_files_listed_detail::de_task_execution_files_listed_detail(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "FilesFailed" => {
                     builder = builder.set_files_failed(
-                        crate::protocol_serde::shape_task_execution_files_failed_detail::de_task_execution_files_failed_detail(tokens, _value)?,
+                        crate::protocol_serde::shape_task_execution_files_failed_detail::de_task_execution_files_failed_detail(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "EstimatedFoldersToDelete" => {
@@ -284,12 +303,20 @@ pub(crate) fn de_describe_task_execution(
                 }
                 "FoldersListed" => {
                     builder = builder.set_folders_listed(
-                        crate::protocol_serde::shape_task_execution_folders_listed_detail::de_task_execution_folders_listed_detail(tokens, _value)?,
+                        crate::protocol_serde::shape_task_execution_folders_listed_detail::de_task_execution_folders_listed_detail(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "FoldersFailed" => {
                     builder = builder.set_folders_failed(
-                        crate::protocol_serde::shape_task_execution_folders_failed_detail::de_task_execution_folders_failed_detail(tokens, _value)?,
+                        crate::protocol_serde::shape_task_execution_folders_failed_detail::de_task_execution_folders_failed_detail(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "LaunchTime" => {

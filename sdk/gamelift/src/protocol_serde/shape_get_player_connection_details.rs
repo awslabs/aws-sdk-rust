@@ -174,10 +174,11 @@ pub(crate) fn de_get_player_connection_details(
     crate::operation::get_player_connection_details::builders::GetPlayerConnectionDetailsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_player_connection_details::builders::GetPlayerConnectionDetailsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_player_connection_details::builders::GetPlayerConnectionDetailsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -188,7 +189,7 @@ pub(crate) fn de_get_player_connection_details(
             })?,
             "PlayerConnectionDetails" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_player_connection_details(Some(
-                    crate::protocol_serde::shape_player_connection_detail_list::de_player_connection_detail_list(decoder)?,
+                    crate::protocol_serde::shape_player_connection_detail_list::de_player_connection_detail_list(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -200,6 +201,8 @@ pub(crate) fn de_get_player_connection_details(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -209,13 +212,13 @@ pub(crate) fn de_get_player_connection_details(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

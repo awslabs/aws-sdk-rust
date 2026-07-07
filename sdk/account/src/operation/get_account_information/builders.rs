@@ -22,7 +22,7 @@ impl crate::operation::get_account_information::builders::GetAccountInformationI
 }
 /// Fluent builder constructing a request to `GetAccountInformation`.
 ///
-/// <p>Retrieves information about the specified account including its account name, account ID, and account creation date and time. To use this API, an IAM user or role must have the <code>account:GetAccountInformation</code> IAM permission.</p>
+/// <p>Retrieves information about the specified account including its account name, account ID, account creation date and time, and account state. To use this API, an IAM user or role must have the <code>account:GetAccountInformation</code> IAM permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountInformationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

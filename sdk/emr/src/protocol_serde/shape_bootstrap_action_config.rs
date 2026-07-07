@@ -18,10 +18,16 @@ pub fn ser_bootstrap_action_config(
 pub(crate) fn de_bootstrap_action_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BootstrapActionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -40,7 +46,11 @@ where
                         }
                         "ScriptBootstrapAction" => {
                             builder = builder.set_script_bootstrap_action(
-                                crate::protocol_serde::shape_script_bootstrap_action_config::de_script_bootstrap_action_config(tokens, _value)?,
+                                crate::protocol_serde::shape_script_bootstrap_action_config::de_script_bootstrap_action_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

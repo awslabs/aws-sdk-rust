@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_attribute_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AttributeSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AttributeSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -66,7 +70,7 @@ pub fn de_attribute_summary(
             s if s.matches("regionalSummarySet") /* RegionalSummaries com.amazonaws.ec2#AttributeSummary$RegionalSummaries */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_regional_summary_list::de_regional_summary_list(&mut tag)
+                        crate::protocol_serde::shape_regional_summary_list::de_regional_summary_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

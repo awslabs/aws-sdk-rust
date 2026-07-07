@@ -54,10 +54,16 @@ pub fn ser_column_statistics_data(
 pub(crate) fn de_column_statistics_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ColumnStatisticsData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -76,37 +82,57 @@ where
                         }
                         "BooleanColumnStatisticsData" => {
                             builder = builder.set_boolean_column_statistics_data(
-                                crate::protocol_serde::shape_boolean_column_statistics_data::de_boolean_column_statistics_data(tokens, _value)?,
+                                crate::protocol_serde::shape_boolean_column_statistics_data::de_boolean_column_statistics_data(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DateColumnStatisticsData" => {
                             builder = builder.set_date_column_statistics_data(
-                                crate::protocol_serde::shape_date_column_statistics_data::de_date_column_statistics_data(tokens, _value)?,
+                                crate::protocol_serde::shape_date_column_statistics_data::de_date_column_statistics_data(tokens, _value, depth + 1)?,
                             );
                         }
                         "DecimalColumnStatisticsData" => {
                             builder = builder.set_decimal_column_statistics_data(
-                                crate::protocol_serde::shape_decimal_column_statistics_data::de_decimal_column_statistics_data(tokens, _value)?,
+                                crate::protocol_serde::shape_decimal_column_statistics_data::de_decimal_column_statistics_data(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DoubleColumnStatisticsData" => {
                             builder = builder.set_double_column_statistics_data(
-                                crate::protocol_serde::shape_double_column_statistics_data::de_double_column_statistics_data(tokens, _value)?,
+                                crate::protocol_serde::shape_double_column_statistics_data::de_double_column_statistics_data(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "LongColumnStatisticsData" => {
                             builder = builder.set_long_column_statistics_data(
-                                crate::protocol_serde::shape_long_column_statistics_data::de_long_column_statistics_data(tokens, _value)?,
+                                crate::protocol_serde::shape_long_column_statistics_data::de_long_column_statistics_data(tokens, _value, depth + 1)?,
                             );
                         }
                         "StringColumnStatisticsData" => {
                             builder = builder.set_string_column_statistics_data(
-                                crate::protocol_serde::shape_string_column_statistics_data::de_string_column_statistics_data(tokens, _value)?,
+                                crate::protocol_serde::shape_string_column_statistics_data::de_string_column_statistics_data(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "BinaryColumnStatisticsData" => {
                             builder = builder.set_binary_column_statistics_data(
-                                crate::protocol_serde::shape_binary_column_statistics_data::de_binary_column_statistics_data(tokens, _value)?,
+                                crate::protocol_serde::shape_binary_column_statistics_data::de_binary_column_statistics_data(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -130,6 +130,8 @@ pub(crate) fn de_get_stream(
 ) -> ::std::result::Result<crate::operation::get_stream::builders::GetStreamOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -185,7 +187,9 @@ pub(crate) fn de_get_stream(
                 }
                 "shards" => {
                     builder = builder.set_shards(crate::protocol_serde::shape_shard_description_list::de_shard_description_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "nextToken" => {

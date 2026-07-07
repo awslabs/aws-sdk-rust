@@ -214,23 +214,27 @@ pub fn ser_batch_disassociate_approval_rule_template_from_repositories_input(
 pub(crate) fn de_batch_disassociate_approval_rule_template_from_repositories(_value: &[u8], mut builder: crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder) -> ::std::result::Result<crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "disassociatedRepositoryNames" => {
-                    builder = builder.set_disassociated_repository_names(crate::protocol_serde::shape_repository_name_list::de_repository_name_list(
-                        tokens, _value,
-                    )?);
-                }
-                "errors" => {
-                    builder = builder.set_errors(
-                            crate::protocol_serde::shape_batch_disassociate_approval_rule_template_from_repositories_errors_list::de_batch_disassociate_approval_rule_template_from_repositories_errors_list(tokens, _value)?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "disassociatedRepositoryNames" => {
+                        builder = builder.set_disassociated_repository_names(
+                            crate::protocol_serde::shape_repository_name_list::de_repository_name_list(tokens, _value, depth + 1)?,
                         );
+                    }
+                    "errors" => {
+                        builder = builder.set_errors(
+                            crate::protocol_serde::shape_batch_disassociate_approval_rule_template_from_repositories_errors_list::de_batch_disassociate_approval_rule_template_from_repositories_errors_list(tokens, _value, depth + 1)?
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

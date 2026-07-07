@@ -77,6 +77,8 @@ pub(crate) fn de_describe_cluster_scheduler_config(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -125,7 +127,11 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                     );
                 }
                 "StatusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details_map::de_status_details_map(tokens, _value)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details_map::de_status_details_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ClusterArn" => {
                     builder = builder.set_cluster_arn(
@@ -135,7 +141,11 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                     );
                 }
                 "SchedulerConfig" => {
-                    builder = builder.set_scheduler_config(crate::protocol_serde::shape_scheduler_config::de_scheduler_config(tokens, _value)?);
+                    builder = builder.set_scheduler_config(crate::protocol_serde::shape_scheduler_config::de_scheduler_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -151,7 +161,7 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -160,7 +170,7 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -12,26 +12,35 @@ pub fn ser_list_certificates_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.includes {
+    if let Some(var_4) = &input.certificate_key_pair_origins {
+        let mut array_5 = object.key("CertificateKeyPairOrigins").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.includes {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Includes").start_object();
-        crate::protocol_serde::shape_filters::ser_filters(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_8 = object.key("Includes").start_object();
+        crate::protocol_serde::shape_filters::ser_filters(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("NextToken").string(var_6.as_str());
+    if let Some(var_9) = &input.next_token {
+        object.key("NextToken").string(var_9.as_str());
     }
-    if let Some(var_7) = &input.max_items {
+    if let Some(var_10) = &input.max_items {
         object.key("MaxItems").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_8) = &input.sort_by {
-        object.key("SortBy").string(var_8.as_str());
+    if let Some(var_11) = &input.sort_by {
+        object.key("SortBy").string(var_11.as_str());
     }
-    if let Some(var_9) = &input.sort_order {
-        object.key("SortOrder").string(var_9.as_str());
+    if let Some(var_12) = &input.sort_order {
+        object.key("SortOrder").string(var_12.as_str());
     }
     Ok(())
 }

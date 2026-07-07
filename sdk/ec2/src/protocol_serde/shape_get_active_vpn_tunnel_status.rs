@@ -51,6 +51,8 @@ pub fn de_get_active_vpn_tunnel_status(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetActiveVpnTunnelStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetActiveVpnTunnelStatusResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_get_active_vpn_tunnel_status(
             s if s.matches("activeVpnTunnelStatus") /* ActiveVpnTunnelStatus com.amazonaws.ec2.synthetic#GetActiveVpnTunnelStatusOutput$ActiveVpnTunnelStatus */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_active_vpn_tunnel_status::de_active_vpn_tunnel_status(&mut tag)
+                        crate::protocol_serde::shape_active_vpn_tunnel_status::de_active_vpn_tunnel_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

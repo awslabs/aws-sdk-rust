@@ -69,6 +69,8 @@ pub fn de_get_multi_region_access_point(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetMultiRegionAccessPointResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetMultiRegionAccessPointResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -79,7 +81,7 @@ pub fn de_get_multi_region_access_point(
             s if s.matches("AccessPoint") /* AccessPoint com.amazonaws.s3control.synthetic#GetMultiRegionAccessPointOutput$AccessPoint */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_multi_region_access_point_report::de_multi_region_access_point_report(&mut tag)
+                        crate::protocol_serde::shape_multi_region_access_point_report::de_multi_region_access_point_report(&mut tag, depth + 1)
                         ?
                     )
                 ;

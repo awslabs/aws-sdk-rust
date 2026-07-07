@@ -14,10 +14,14 @@ pub struct VideoProperties {
     pub color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
     /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub frame_rate: ::std::option::Option<crate::types::FrameRate>,
+    /// HDR (High Dynamic Range) metadata extracted from the container, including mastering display color volume and content light level information. This metadata is present in HDR10 and similar HDR content.
+    pub hdr_metadata: ::std::option::Option<crate::types::HdrMetadata>,
     /// The height of the video track, in pixels.
     pub height: ::std::option::Option<i32>,
     /// The color space matrix coefficients of the video track, defining how RGB color values are converted to and from YUV color space. This affects color accuracy during encoding and decoding processes.
     pub matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
+    /// The clockwise rotation angle of the video track, in degrees, as derived from container-level metadata (e.g. the MP4 tkhd transformation matrix or the Matroska ProjectionPoseRoll element). Common values are 90, 180, and 270. This field is null when no rotation metadata is present or when the rotation is 0 degrees. For MP4, non-standard transformation matrices also yield null.
+    pub rotation: ::std::option::Option<i32>,
     /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub transfer_characteristics: ::std::option::Option<crate::types::TransferCharacteristics>,
     /// The width of the video track, in pixels.
@@ -44,6 +48,10 @@ impl VideoProperties {
     pub fn frame_rate(&self) -> ::std::option::Option<&crate::types::FrameRate> {
         self.frame_rate.as_ref()
     }
+    /// HDR (High Dynamic Range) metadata extracted from the container, including mastering display color volume and content light level information. This metadata is present in HDR10 and similar HDR content.
+    pub fn hdr_metadata(&self) -> ::std::option::Option<&crate::types::HdrMetadata> {
+        self.hdr_metadata.as_ref()
+    }
     /// The height of the video track, in pixels.
     pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
@@ -51,6 +59,10 @@ impl VideoProperties {
     /// The color space matrix coefficients of the video track, defining how RGB color values are converted to and from YUV color space. This affects color accuracy during encoding and decoding processes.
     pub fn matrix_coefficients(&self) -> ::std::option::Option<&crate::types::MatrixCoefficients> {
         self.matrix_coefficients.as_ref()
+    }
+    /// The clockwise rotation angle of the video track, in degrees, as derived from container-level metadata (e.g. the MP4 tkhd transformation matrix or the Matroska ProjectionPoseRoll element). Common values are 90, 180, and 270. This field is null when no rotation metadata is present or when the rotation is 0 degrees. For MP4, non-standard transformation matrices also yield null.
+    pub fn rotation(&self) -> ::std::option::Option<i32> {
+        self.rotation
     }
     /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub fn transfer_characteristics(&self) -> ::std::option::Option<&crate::types::TransferCharacteristics> {
@@ -77,8 +89,10 @@ pub struct VideoPropertiesBuilder {
     pub(crate) codec_metadata: ::std::option::Option<crate::types::CodecMetadata>,
     pub(crate) color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
     pub(crate) frame_rate: ::std::option::Option<crate::types::FrameRate>,
+    pub(crate) hdr_metadata: ::std::option::Option<crate::types::HdrMetadata>,
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
+    pub(crate) rotation: ::std::option::Option<i32>,
     pub(crate) transfer_characteristics: ::std::option::Option<crate::types::TransferCharacteristics>,
     pub(crate) width: ::std::option::Option<i32>,
 }
@@ -153,6 +167,20 @@ impl VideoPropertiesBuilder {
     pub fn get_frame_rate(&self) -> &::std::option::Option<crate::types::FrameRate> {
         &self.frame_rate
     }
+    /// HDR (High Dynamic Range) metadata extracted from the container, including mastering display color volume and content light level information. This metadata is present in HDR10 and similar HDR content.
+    pub fn hdr_metadata(mut self, input: crate::types::HdrMetadata) -> Self {
+        self.hdr_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// HDR (High Dynamic Range) metadata extracted from the container, including mastering display color volume and content light level information. This metadata is present in HDR10 and similar HDR content.
+    pub fn set_hdr_metadata(mut self, input: ::std::option::Option<crate::types::HdrMetadata>) -> Self {
+        self.hdr_metadata = input;
+        self
+    }
+    /// HDR (High Dynamic Range) metadata extracted from the container, including mastering display color volume and content light level information. This metadata is present in HDR10 and similar HDR content.
+    pub fn get_hdr_metadata(&self) -> &::std::option::Option<crate::types::HdrMetadata> {
+        &self.hdr_metadata
+    }
     /// The height of the video track, in pixels.
     pub fn height(mut self, input: i32) -> Self {
         self.height = ::std::option::Option::Some(input);
@@ -180,6 +208,20 @@ impl VideoPropertiesBuilder {
     /// The color space matrix coefficients of the video track, defining how RGB color values are converted to and from YUV color space. This affects color accuracy during encoding and decoding processes.
     pub fn get_matrix_coefficients(&self) -> &::std::option::Option<crate::types::MatrixCoefficients> {
         &self.matrix_coefficients
+    }
+    /// The clockwise rotation angle of the video track, in degrees, as derived from container-level metadata (e.g. the MP4 tkhd transformation matrix or the Matroska ProjectionPoseRoll element). Common values are 90, 180, and 270. This field is null when no rotation metadata is present or when the rotation is 0 degrees. For MP4, non-standard transformation matrices also yield null.
+    pub fn rotation(mut self, input: i32) -> Self {
+        self.rotation = ::std::option::Option::Some(input);
+        self
+    }
+    /// The clockwise rotation angle of the video track, in degrees, as derived from container-level metadata (e.g. the MP4 tkhd transformation matrix or the Matroska ProjectionPoseRoll element). Common values are 90, 180, and 270. This field is null when no rotation metadata is present or when the rotation is 0 degrees. For MP4, non-standard transformation matrices also yield null.
+    pub fn set_rotation(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.rotation = input;
+        self
+    }
+    /// The clockwise rotation angle of the video track, in degrees, as derived from container-level metadata (e.g. the MP4 tkhd transformation matrix or the Matroska ProjectionPoseRoll element). Common values are 90, 180, and 270. This field is null when no rotation metadata is present or when the rotation is 0 degrees. For MP4, non-standard transformation matrices also yield null.
+    pub fn get_rotation(&self) -> &::std::option::Option<i32> {
+        &self.rotation
     }
     /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub fn transfer_characteristics(mut self, input: crate::types::TransferCharacteristics) -> Self {
@@ -217,8 +259,10 @@ impl VideoPropertiesBuilder {
             codec_metadata: self.codec_metadata,
             color_primaries: self.color_primaries,
             frame_rate: self.frame_rate,
+            hdr_metadata: self.hdr_metadata,
             height: self.height,
             matrix_coefficients: self.matrix_coefficients,
+            rotation: self.rotation,
             transfer_characteristics: self.transfer_characteristics,
             width: self.width,
         }

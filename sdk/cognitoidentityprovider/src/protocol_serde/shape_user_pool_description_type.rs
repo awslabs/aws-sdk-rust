@@ -2,10 +2,16 @@
 pub(crate) fn de_user_pool_description_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UserPoolDescriptionType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,8 +36,11 @@ where
                             );
                         }
                         "LambdaConfig" => {
-                            builder =
-                                builder.set_lambda_config(crate::protocol_serde::shape_lambda_config_type::de_lambda_config_type(tokens, _value)?);
+                            builder = builder.set_lambda_config(crate::protocol_serde::shape_lambda_config_type::de_lambda_config_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Status" => {
                             builder = builder.set_status(
@@ -50,6 +59,13 @@ where
                             builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "ReplicaRegions" => {
+                            builder = builder.set_replica_regions(crate::protocol_serde::shape_replica_regions_type::de_replica_regions_type(
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

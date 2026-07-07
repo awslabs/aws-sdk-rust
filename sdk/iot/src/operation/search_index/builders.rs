@@ -22,7 +22,8 @@ impl crate::operation::search_index::builders::SearchIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchIndex`.
 ///
-/// <p>The query search index.</p>
+/// <p>Searches the specified index.</p>
+/// <p>If a device has never connected to IoT Core or was disconnected for more than 1 hour before fleet indexing's <code>thingConnectivityIndexingMode</code> was enabled, the <code>connectivity</code> object for this device in the response will have the <code>connected</code> field set to <code>false</code> with no additional session details.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchIndexFluentBuilder {

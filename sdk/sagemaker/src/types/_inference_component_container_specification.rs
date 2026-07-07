@@ -10,6 +10,8 @@ pub struct InferenceComponentContainerSpecification {
     pub artifact_url: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the Environment string-to-string map can have length of up to 1024. We support up to 16 entries in the map.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency for the inference component's container. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub container_metrics_config: ::std::option::Option<crate::types::ContainerMetricsConfig>,
 }
 impl InferenceComponentContainerSpecification {
     /// <p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker image for the model is stored.</p>
@@ -23,6 +25,10 @@ impl InferenceComponentContainerSpecification {
     /// <p>The environment variables to set in the Docker container. Each key and value in the Environment string-to-string map can have length of up to 1024. We support up to 16 entries in the map.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
+    }
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency for the inference component's container. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub fn container_metrics_config(&self) -> ::std::option::Option<&crate::types::ContainerMetricsConfig> {
+        self.container_metrics_config.as_ref()
     }
 }
 impl InferenceComponentContainerSpecification {
@@ -39,6 +45,7 @@ pub struct InferenceComponentContainerSpecificationBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_url: ::std::option::Option<::std::string::String>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) container_metrics_config: ::std::option::Option<crate::types::ContainerMetricsConfig>,
 }
 impl InferenceComponentContainerSpecificationBuilder {
     /// <p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker image for the model is stored.</p>
@@ -92,12 +99,27 @@ impl InferenceComponentContainerSpecificationBuilder {
     pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency for the inference component's container. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub fn container_metrics_config(mut self, input: crate::types::ContainerMetricsConfig) -> Self {
+        self.container_metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency for the inference component's container. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub fn set_container_metrics_config(mut self, input: ::std::option::Option<crate::types::ContainerMetricsConfig>) -> Self {
+        self.container_metrics_config = input;
+        self
+    }
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency for the inference component's container. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub fn get_container_metrics_config(&self) -> &::std::option::Option<crate::types::ContainerMetricsConfig> {
+        &self.container_metrics_config
+    }
     /// Consumes the builder and constructs a [`InferenceComponentContainerSpecification`](crate::types::InferenceComponentContainerSpecification).
     pub fn build(self) -> crate::types::InferenceComponentContainerSpecification {
         crate::types::InferenceComponentContainerSpecification {
             image: self.image,
             artifact_url: self.artifact_url,
             environment: self.environment,
+            container_metrics_config: self.container_metrics_config,
         }
     }
 }

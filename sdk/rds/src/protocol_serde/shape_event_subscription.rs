@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_event_subscription(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EventSubscription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EventSubscription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -88,7 +92,7 @@ pub fn de_event_subscription(
             s if s.matches("SourceIdsList") /* SourceIdsList com.amazonaws.rds#EventSubscription$SourceIdsList */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_source_ids_list::de_source_ids_list(&mut tag)
+                        crate::protocol_serde::shape_source_ids_list::de_source_ids_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_event_subscription(
             s if s.matches("EventCategoriesList") /* EventCategoriesList com.amazonaws.rds#EventSubscription$EventCategoriesList */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_event_categories_list::de_event_categories_list(&mut tag)
+                        crate::protocol_serde::shape_event_categories_list::de_event_categories_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

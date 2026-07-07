@@ -153,6 +153,8 @@ pub(crate) fn de_list_account_assignments_for_principal(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -160,7 +162,11 @@ pub(crate) fn de_list_account_assignments_for_principal(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AccountAssignments" => {
                     builder = builder.set_account_assignments(
-                        crate::protocol_serde::shape_account_assignment_list_for_principal::de_account_assignment_list_for_principal(tokens, _value)?,
+                        crate::protocol_serde::shape_account_assignment_list_for_principal::de_account_assignment_list_for_principal(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "NextToken" => {

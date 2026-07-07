@@ -25,7 +25,11 @@ pub fn ser_scheduled_action_type(
 #[allow(clippy::needless_question_mark)]
 pub fn de_scheduled_action_type(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ScheduledActionType, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ScheduledActionType::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -33,7 +37,7 @@ pub fn de_scheduled_action_type(
             s if s.matches("ResizeCluster") /* ResizeCluster com.amazonaws.redshift#ScheduledActionType$ResizeCluster */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_resize_cluster_message::de_resize_cluster_message(&mut tag)
+                        crate::protocol_serde::shape_resize_cluster_message::de_resize_cluster_message(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_scheduled_action_type(
             s if s.matches("PauseCluster") /* PauseCluster com.amazonaws.redshift#ScheduledActionType$PauseCluster */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_pause_cluster_message::de_pause_cluster_message(&mut tag)
+                        crate::protocol_serde::shape_pause_cluster_message::de_pause_cluster_message(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_scheduled_action_type(
             s if s.matches("ResumeCluster") /* ResumeCluster com.amazonaws.redshift#ScheduledActionType$ResumeCluster */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_resume_cluster_message::de_resume_cluster_message(&mut tag)
+                        crate::protocol_serde::shape_resume_cluster_message::de_resume_cluster_message(&mut tag, depth + 1)
                         ?
                     )
                 ;

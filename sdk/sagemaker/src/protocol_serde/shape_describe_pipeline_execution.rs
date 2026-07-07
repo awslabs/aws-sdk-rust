@@ -81,6 +81,8 @@ pub(crate) fn de_describe_pipeline_execution(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -123,7 +125,7 @@ pub(crate) fn de_describe_pipeline_execution(
                 }
                 "PipelineExperimentConfig" => {
                     builder = builder.set_pipeline_experiment_config(
-                        crate::protocol_serde::shape_pipeline_experiment_config::de_pipeline_experiment_config(tokens, _value)?,
+                        crate::protocol_serde::shape_pipeline_experiment_config::de_pipeline_experiment_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "FailureReason" => {
@@ -146,19 +148,19 @@ pub(crate) fn de_describe_pipeline_execution(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "ParallelismConfiguration" => {
                     builder = builder.set_parallelism_configuration(
-                        crate::protocol_serde::shape_parallelism_configuration::de_parallelism_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_parallelism_configuration::de_parallelism_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "SelectiveExecutionConfig" => {
                     builder = builder.set_selective_execution_config(
-                        crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens, _value)?,
+                        crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "PipelineVersionId" => {
@@ -170,7 +172,9 @@ pub(crate) fn de_describe_pipeline_execution(
                 }
                 "MLflowConfig" => {
                     builder = builder.set_m_lflow_config(crate::protocol_serde::shape_m_lflow_configuration::de_m_lflow_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

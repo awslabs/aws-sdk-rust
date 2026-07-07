@@ -12,17 +12,29 @@ pub fn ser_update_inference_component_input_input(
         crate::protocol_serde::shape_inference_component_specification::ser_inference_component_specification(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.runtime_config {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("RuntimeConfig").start_object();
-        crate::protocol_serde::shape_inference_component_runtime_config::ser_inference_component_runtime_config(&mut object_5, var_4)?;
-        object_5.finish();
+    if let Some(var_4) = &input.specifications {
+        let mut array_5 = object.key("Specifications").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_inference_component_specification::ser_inference_component_specification(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_6) = &input.deployment_config {
+    if let Some(var_8) = &input.runtime_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("DeploymentConfig").start_object();
-        crate::protocol_serde::shape_inference_component_deployment_config::ser_inference_component_deployment_config(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_9 = object.key("RuntimeConfig").start_object();
+        crate::protocol_serde::shape_inference_component_runtime_config::ser_inference_component_runtime_config(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.deployment_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("DeploymentConfig").start_object();
+        crate::protocol_serde::shape_inference_component_deployment_config::ser_inference_component_deployment_config(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

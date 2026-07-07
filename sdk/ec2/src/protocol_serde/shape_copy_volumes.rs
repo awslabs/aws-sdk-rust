@@ -40,6 +40,8 @@ pub fn de_copy_volumes(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CopyVolumesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CopyVolumesResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_copy_volumes(
             s if s.matches("volumeSet") /* Volumes com.amazonaws.ec2.synthetic#CopyVolumesOutput$Volumes */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_volume_list::de_volume_list(&mut tag)
+                        crate::protocol_serde::shape_volume_list::de_volume_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

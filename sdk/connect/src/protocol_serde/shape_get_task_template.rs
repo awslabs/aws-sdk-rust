@@ -123,6 +123,8 @@ pub(crate) fn de_get_task_template(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -137,7 +139,9 @@ pub(crate) fn de_get_task_template(
                 }
                 "Constraints" => {
                     builder = builder.set_constraints(crate::protocol_serde::shape_task_template_constraints::de_task_template_constraints(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ContactFlowId" => {
@@ -155,7 +159,9 @@ pub(crate) fn de_get_task_template(
                 }
                 "Defaults" => {
                     builder = builder.set_defaults(crate::protocol_serde::shape_task_template_defaults::de_task_template_defaults(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Description" => {
@@ -167,7 +173,9 @@ pub(crate) fn de_get_task_template(
                 }
                 "Fields" => {
                     builder = builder.set_fields(crate::protocol_serde::shape_task_template_fields::de_task_template_fields(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Id" => {
@@ -212,7 +220,7 @@ pub(crate) fn de_get_task_template(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_unsuccessful_instance_credit_specification_item(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::UnsuccessfulInstanceCreditSpecificationItem, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::UnsuccessfulInstanceCreditSpecificationItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_unsuccessful_instance_credit_specification_item(
             s if s.matches("error") /* Error com.amazonaws.ec2#UnsuccessfulInstanceCreditSpecificationItem$Error */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_unsuccessful_instance_credit_specification_item_error::de_unsuccessful_instance_credit_specification_item_error(&mut tag)
+                        crate::protocol_serde::shape_unsuccessful_instance_credit_specification_item_error::de_unsuccessful_instance_credit_specification_item_error(&mut tag, depth + 1)
                         ?
                     )
                 ;

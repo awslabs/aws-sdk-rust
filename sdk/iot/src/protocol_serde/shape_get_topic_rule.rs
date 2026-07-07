@@ -107,13 +107,15 @@ pub(crate) fn de_get_topic_rule(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "rule" => {
-                    builder = builder.set_rule(crate::protocol_serde::shape_topic_rule::de_topic_rule(tokens, _value)?);
+                    builder = builder.set_rule(crate::protocol_serde::shape_topic_rule::de_topic_rule(tokens, _value, depth + 1)?);
                 }
                 "ruleArn" => {
                     builder = builder.set_rule_arn(

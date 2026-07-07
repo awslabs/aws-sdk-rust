@@ -33,10 +33,16 @@ pub fn ser_parameter_declaration(
 pub(crate) fn de_parameter_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ParameterDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,22 +54,38 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StringParameterDeclaration" => {
                             builder = builder.set_string_parameter_declaration(
-                                crate::protocol_serde::shape_string_parameter_declaration::de_string_parameter_declaration(tokens, _value)?,
+                                crate::protocol_serde::shape_string_parameter_declaration::de_string_parameter_declaration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DecimalParameterDeclaration" => {
                             builder = builder.set_decimal_parameter_declaration(
-                                crate::protocol_serde::shape_decimal_parameter_declaration::de_decimal_parameter_declaration(tokens, _value)?,
+                                crate::protocol_serde::shape_decimal_parameter_declaration::de_decimal_parameter_declaration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "IntegerParameterDeclaration" => {
                             builder = builder.set_integer_parameter_declaration(
-                                crate::protocol_serde::shape_integer_parameter_declaration::de_integer_parameter_declaration(tokens, _value)?,
+                                crate::protocol_serde::shape_integer_parameter_declaration::de_integer_parameter_declaration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DateTimeParameterDeclaration" => {
                             builder = builder.set_date_time_parameter_declaration(
-                                crate::protocol_serde::shape_date_time_parameter_declaration::de_date_time_parameter_declaration(tokens, _value)?,
+                                crate::protocol_serde::shape_date_time_parameter_declaration::de_date_time_parameter_declaration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

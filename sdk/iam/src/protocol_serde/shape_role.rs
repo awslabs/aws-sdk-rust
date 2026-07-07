@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_role(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Role, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Role::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -117,7 +121,7 @@ pub fn de_role(
             s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#Role$PermissionsBoundary */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_attached_permissions_boundary::de_attached_permissions_boundary(&mut tag)
+                        crate::protocol_serde::shape_attached_permissions_boundary::de_attached_permissions_boundary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -127,7 +131,7 @@ pub fn de_role(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#Role$Tags */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -137,7 +141,7 @@ pub fn de_role(
             s if s.matches("RoleLastUsed") /* RoleLastUsed com.amazonaws.iam#Role$RoleLastUsed */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_role_last_used::de_role_last_used(&mut tag)
+                        crate::protocol_serde::shape_role_last_used::de_role_last_used(&mut tag, depth + 1)
                         ?
                     )
                 ;

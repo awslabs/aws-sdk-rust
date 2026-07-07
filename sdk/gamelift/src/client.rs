@@ -245,6 +245,8 @@ mod describe_container_fleet;
 
 mod describe_container_group_definition;
 
+mod describe_container_group_port_mappings;
+
 mod describe_ec2_instance_limits;
 
 mod describe_fleet_attributes;

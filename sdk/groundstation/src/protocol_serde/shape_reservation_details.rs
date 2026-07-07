@@ -2,10 +2,16 @@
 pub(crate) fn de_reservation_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReservationDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,15 +37,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "maintenance" => Some(crate::types::ReservationDetails::Maintenance(
-                            crate::protocol_serde::shape_maintenance_reservation_details::de_maintenance_reservation_details(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'maintenance' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_maintenance_reservation_details::de_maintenance_reservation_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'maintenance' cannot be null")
+                            })?,
                         )),
                         "contact" => Some(crate::types::ReservationDetails::Contact(
-                            crate::protocol_serde::shape_contact_reservation_details::de_contact_reservation_details(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contact' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_contact_reservation_details::de_contact_reservation_details(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contact' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

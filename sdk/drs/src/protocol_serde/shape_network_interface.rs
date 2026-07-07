@@ -2,10 +2,16 @@
 pub(crate) fn de_network_interface<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NetworkInterface>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,7 @@ where
                             );
                         }
                         "ips" => {
-                            builder = builder.set_ips(crate::protocol_serde::shape_ips_list::de_ips_list(tokens, _value)?);
+                            builder = builder.set_ips(crate::protocol_serde::shape_ips_list::de_ips_list(tokens, _value, depth + 1)?);
                         }
                         "isPrimary" => {
                             builder = builder.set_is_primary(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

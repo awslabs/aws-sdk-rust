@@ -2,10 +2,16 @@
 pub(crate) fn de_node_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NodeInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,50 +20,58 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "addedToClusterTime" => {
-                            builder = builder.set_added_to_cluster_time(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "addedToClusterTime" => {
+                                builder = builder.set_added_to_cluster_time(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "brokerNodeInfo" => {
+                                builder = builder.set_broker_node_info(crate::protocol_serde::shape_broker_node_info::de_broker_node_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "controllerNodeInfo" => {
+                                builder = builder.set_controller_node_info(
+                                    crate::protocol_serde::shape_controller_node_info::de_controller_node_info(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "instanceType" => {
+                                builder = builder.set_instance_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "nodeARN" => {
+                                builder = builder.set_node_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "nodeType" => {
+                                builder = builder.set_node_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::NodeType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "zookeeperNodeInfo" => {
+                                builder = builder.set_zookeeper_node_info(crate::protocol_serde::shape_zookeeper_node_info::de_zookeeper_node_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "brokerNodeInfo" => {
-                            builder =
-                                builder.set_broker_node_info(crate::protocol_serde::shape_broker_node_info::de_broker_node_info(tokens, _value)?);
-                        }
-                        "controllerNodeInfo" => {
-                            builder = builder.set_controller_node_info(crate::protocol_serde::shape_controller_node_info::de_controller_node_info(
-                                tokens, _value,
-                            )?);
-                        }
-                        "instanceType" => {
-                            builder = builder.set_instance_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "nodeARN" => {
-                            builder = builder.set_node_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "nodeType" => {
-                            builder = builder.set_node_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::NodeType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "zookeeperNodeInfo" => {
-                            builder = builder
-                                .set_zookeeper_node_info(crate::protocol_serde::shape_zookeeper_node_info::de_zookeeper_node_info(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

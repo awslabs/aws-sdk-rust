@@ -21,7 +21,11 @@ pub fn ser_predictive_scaling_customized_capacity_metric(
 #[allow(clippy::needless_question_mark)]
 pub fn de_predictive_scaling_customized_capacity_metric(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PredictiveScalingCustomizedCapacityMetric, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PredictiveScalingCustomizedCapacityMetric::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -29,7 +33,7 @@ pub fn de_predictive_scaling_customized_capacity_metric(
             s if s.matches("MetricDataQueries") /* MetricDataQueries com.amazonaws.autoscaling#PredictiveScalingCustomizedCapacityMetric$MetricDataQueries */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_metric_data_queries::de_metric_data_queries(&mut tag)
+                        crate::protocol_serde::shape_metric_data_queries::de_metric_data_queries(&mut tag, depth + 1)
                         ?
                     )
                 ;

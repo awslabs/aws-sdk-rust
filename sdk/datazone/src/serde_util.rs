@@ -542,6 +542,30 @@ pub(crate) fn create_listing_change_set_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_notebook_output_output_correct_errors(
+    mut builder: crate::operation::create_notebook::builders::CreateNotebookOutputBuilder,
+) -> crate::operation::create_notebook::builders::CreateNotebookOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.cell_order.is_none() {
+        builder.cell_order = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_project_output_output_correct_errors(
     mut builder: crate::operation::create_project::builders::CreateProjectOutputBuilder,
 ) -> crate::operation::create_project::builders::CreateProjectOutputBuilder {
@@ -1196,6 +1220,75 @@ pub(crate) fn get_metadata_generation_run_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_notebook_output_output_correct_errors(
+    mut builder: crate::operation::get_notebook::builders::GetNotebookOutputBuilder,
+) -> crate::operation::get_notebook::builders::GetNotebookOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.cell_order.is_none() {
+        builder.cell_order = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_notebook_export_output_output_correct_errors(
+    mut builder: crate::operation::get_notebook_export::builders::GetNotebookExportOutputBuilder,
+) -> crate::operation::get_notebook_export::builders::GetNotebookExportOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.notebook_id.is_none() {
+        builder.notebook_id = Some(Default::default())
+    }
+    if builder.file_format.is_none() {
+        builder.file_format = "no value was set".parse::<crate::types::FileFormat>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookExportStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_notebook_run_output_output_correct_errors(
+    mut builder: crate::operation::get_notebook_run::builders::GetNotebookRunOutputBuilder,
+) -> crate::operation::get_notebook_run::builders::GetNotebookRunOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.notebook_id.is_none() {
+        builder.notebook_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookRunStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_project_output_output_correct_errors(
     mut builder: crate::operation::get_project::builders::GetProjectOutputBuilder,
 ) -> crate::operation::get_project::builders::GetProjectOutputBuilder {
@@ -1721,6 +1814,69 @@ pub(crate) fn start_metadata_generation_run_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_notebook_export_output_output_correct_errors(
+    mut builder: crate::operation::start_notebook_export::builders::StartNotebookExportOutputBuilder,
+) -> crate::operation::start_notebook_export::builders::StartNotebookExportOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.notebook_id.is_none() {
+        builder.notebook_id = Some(Default::default())
+    }
+    if builder.file_format.is_none() {
+        builder.file_format = "no value was set".parse::<crate::types::FileFormat>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookExportStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn start_notebook_run_output_output_correct_errors(
+    mut builder: crate::operation::start_notebook_run::builders::StartNotebookRunOutputBuilder,
+) -> crate::operation::start_notebook_run::builders::StartNotebookRunOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.notebook_id.is_none() {
+        builder.notebook_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookRunStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn stop_notebook_run_output_output_correct_errors(
+    mut builder: crate::operation::stop_notebook_run::builders::StopNotebookRunOutputBuilder,
+) -> crate::operation::stop_notebook_run::builders::StopNotebookRunOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookRunStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_account_pool_output_output_correct_errors(
     mut builder: crate::operation::update_account_pool::builders::UpdateAccountPoolOutputBuilder,
 ) -> crate::operation::update_account_pool::builders::UpdateAccountPoolOutputBuilder {
@@ -1939,6 +2095,30 @@ pub(crate) fn update_glossary_term_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::GlossaryTermStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_notebook_output_output_correct_errors(
+    mut builder: crate::operation::update_notebook::builders::UpdateNotebookOutputBuilder,
+) -> crate::operation::update_notebook::builders::UpdateNotebookOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.cell_order.is_none() {
+        builder.cell_order = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookStatus>().ok()
     }
     builder
 }
@@ -2186,6 +2366,42 @@ pub(crate) fn metadata_generation_run_target_correct_errors(
     }
     if builder.identifier.is_none() {
         builder.identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn network_config_correct_errors(
+    mut builder: crate::types::builders::NetworkConfigBuilder,
+) -> crate::types::builders::NetworkConfigBuilder {
+    if builder.network_access_type.is_none() {
+        builder.network_access_type = "no value was set".parse::<crate::types::NetworkAccessType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn notebook_error_correct_errors(
+    mut builder: crate::types::builders::NotebookErrorBuilder,
+) -> crate::types::builders::NotebookErrorBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn notebook_export_error_correct_errors(
+    mut builder: crate::types::builders::NotebookExportErrorBuilder,
+) -> crate::types::builders::NotebookExportErrorBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn notebook_run_error_correct_errors(
+    mut builder: crate::types::builders::NotebookRunErrorBuilder,
+) -> crate::types::builders::NotebookRunErrorBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -2706,6 +2922,48 @@ pub(crate) fn metadata_generation_run_type_stat_correct_errors(
     builder
 }
 
+pub(crate) fn notebook_run_summary_correct_errors(
+    mut builder: crate::types::builders::NotebookRunSummaryBuilder,
+) -> crate::types::builders::NotebookRunSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.notebook_id.is_none() {
+        builder.notebook_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookRunStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn notebook_summary_correct_errors(
+    mut builder: crate::types::builders::NotebookSummaryBuilder,
+) -> crate::types::builders::NotebookSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn notification_output_correct_errors(
     mut builder: crate::types::builders::NotificationOutputBuilder,
 ) -> crate::types::builders::NotificationOutputBuilder {
@@ -2738,6 +2996,15 @@ pub(crate) fn notification_output_correct_errors(
     }
     if builder.last_updated_timestamp.is_none() {
         builder.last_updated_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn package_config_correct_errors(
+    mut builder: crate::types::builders::PackageConfigBuilder,
+) -> crate::types::builders::PackageConfigBuilder {
+    if builder.package_manager.is_none() {
+        builder.package_manager = "no value was set".parse::<crate::types::PackageManager>().ok()
     }
     builder
 }
@@ -2830,6 +3097,24 @@ pub(crate) fn resource_correct_errors(mut builder: crate::types::builders::Resou
     builder
 }
 
+pub(crate) fn resource_configuration_correct_errors(
+    mut builder: crate::types::builders::ResourceConfigurationBuilder,
+) -> crate::types::builders::ResourceConfigurationBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.parameters.is_none() {
+        builder.parameters = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::ResourceTagBuilder) -> crate::types::builders::ResourceTagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -2881,6 +3166,30 @@ pub(crate) fn sage_maker_run_configuration_output_correct_errors(
 ) -> crate::types::builders::SageMakerRunConfigurationOutputBuilder {
     if builder.tracking_assets.is_none() {
         builder.tracking_assets = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn snowflake_properties_output_correct_errors(
+    mut builder: crate::types::builders::SnowflakePropertiesOutputBuilder,
+) -> crate::types::builders::SnowflakePropertiesOutputBuilder {
+    if builder.snowflake_role.is_none() {
+        builder.snowflake_role = Some(Default::default())
+    }
+    if builder.identity_mapping.is_none() {
+        builder.identity_mapping = {
+            let builder = crate::types::builders::IdentityMappingBuilder::default();
+            crate::serde_util::identity_mapping_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.lineage_sync.is_none() {
+        builder.lineage_sync = {
+            let builder = crate::types::builders::LineageSyncOutputBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConnectionStatus>().ok()
     }
     builder
 }
@@ -3065,6 +3374,21 @@ pub(crate) fn time_series_data_point_summary_form_output_correct_errors(
     builder
 }
 
+pub(crate) fn vpc_properties_output_correct_errors(
+    mut builder: crate::types::builders::VpcPropertiesOutputBuilder,
+) -> crate::types::builders::VpcPropertiesOutputBuilder {
+    if builder.vpc_id.is_none() {
+        builder.vpc_id = Some(Default::default())
+    }
+    if builder.subnet_ids.is_none() {
+        builder.subnet_ids = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConnectionStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn asset_item_correct_errors(mut builder: crate::types::builders::AssetItemBuilder) -> crate::types::builders::AssetItemBuilder {
     if builder.domain_id.is_none() {
         builder.domain_id = Some(Default::default())
@@ -3200,6 +3524,15 @@ pub(crate) fn glossary_term_item_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::GlossaryTermStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn identity_mapping_correct_errors(
+    mut builder: crate::types::builders::IdentityMappingBuilder,
+) -> crate::types::builders::IdentityMappingBuilder {
+    if builder.username_attribute.is_none() {
+        builder.username_attribute = Some(Default::default())
     }
     builder
 }

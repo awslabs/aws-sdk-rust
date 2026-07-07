@@ -83,6 +83,8 @@ pub use crate::types::_action_type::ActionType;
 
 pub use crate::types::_metadata_config::MetadataConfig;
 
+pub use crate::types::_recommendation_diversity_config::RecommendationDiversityConfig;
+
 pub use crate::types::_recommender_status::RecommenderStatus;
 
 pub use crate::types::_recommender_update::RecommenderUpdate;
@@ -129,6 +131,12 @@ pub use crate::types::_batch_get_profile_error::BatchGetProfileError;
 
 pub use crate::types::_profile::Profile;
 
+pub use crate::types::_batch_put_profile_object_request_item::BatchPutProfileObjectRequestItem;
+
+pub use crate::types::_batch_put_profile_object_response_item::BatchPutProfileObjectResponseItem;
+
+pub use crate::types::_batch_put_profile_object_error_item::BatchPutProfileObjectErrorItem;
+
 pub use crate::types::_range::Range;
 
 pub use crate::types::_threshold::Threshold;
@@ -150,6 +158,8 @@ pub use crate::types::_appflow_integration::AppflowIntegration;
 pub use crate::types::_events_config::EventsConfig;
 
 pub use crate::types::_inference_config::InferenceConfig;
+
+pub use crate::types::_diversity_config::DiversityConfig;
 
 pub use crate::types::_include_options::IncludeOptions;
 
@@ -313,6 +323,8 @@ pub use crate::types::_contact_type::ContactType;
 
 pub use crate::types::_event_parameters::EventParameters;
 
+pub use crate::types::_diversity_column::DiversityColumn;
+
 pub use crate::types::_segment_sort_data_type::SegmentSortDataType;
 
 pub use crate::types::_segment_sort_order::SegmentSortOrder;
@@ -338,6 +350,8 @@ pub use crate::types::_task_type::TaskType;
 pub use crate::types::_scheduled_trigger_properties::ScheduledTriggerProperties;
 
 pub use crate::types::_filter_dimension::FilterDimension;
+
+pub use crate::types::_diversity_cap_type::DiversityCapType;
 
 pub use crate::types::_dimension::Dimension;
 
@@ -429,6 +443,12 @@ mod _batch_get_calculated_attribute_for_profile_error;
 
 mod _batch_get_profile_error;
 
+mod _batch_put_profile_object_error_item;
+
+mod _batch_put_profile_object_request_item;
+
+mod _batch_put_profile_object_response_item;
+
 mod _calculated_attribute_dimension;
 
 mod _calculated_attribute_value;
@@ -472,6 +492,12 @@ mod _destination_summary;
 mod _detected_profile_object_type;
 
 mod _dimension;
+
+mod _diversity_cap_type;
+
+mod _diversity_column;
+
+mod _diversity_config;
 
 mod _domain_object_type_field;
 
@@ -650,6 +676,8 @@ mod _readiness;
 mod _readiness_status;
 
 mod _recommendation;
+
+mod _recommendation_diversity_config;
 
 mod _recommender_config;
 

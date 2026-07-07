@@ -10,6 +10,9 @@ pub mod encrypt_data;
 /// Types for the `GenerateAs2805KekValidation` operation.
 pub mod generate_as2805_kek_validation;
 
+/// Types for the `GenerateAuthRequestCryptogram` operation.
+pub mod generate_auth_request_cryptogram;
+
 /// Types for the `GenerateCardValidationData` operation.
 pub mod generate_card_validation_data;
 

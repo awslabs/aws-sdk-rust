@@ -58,6 +58,16 @@ pub struct Capabilities {
     pub automate: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform flow-related actions.</p>
     pub flow: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform apps-related actions.</p>
+    pub apps: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create or update apps.</p>
+    pub create_and_update_apps: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share apps with other users.</p>
+    pub share_apps: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to add and invoke AI inference in new and existing apps.</p>
+    pub invoke_apps_ai_inference: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to access the native data store for new and existing apps.</p>
+    pub access_apps_native_data_store: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to enable approvals for flow share.</p>
     pub publish_without_approval: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use Bedrock models for general knowledge step in flows.</p>
@@ -447,6 +457,10 @@ pub struct Capabilities {
     pub manage_shared_folders: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to generate analysis using AI</p>
     pub generate_analyses: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform Story-related actions.</p>
+    pub story: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub scenario: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl Capabilities {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -556,6 +570,26 @@ impl Capabilities {
     /// <p>The ability to perform flow-related actions.</p>
     pub fn flow(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.flow.as_ref()
+    }
+    /// <p>The ability to perform apps-related actions.</p>
+    pub fn apps(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.apps.as_ref()
+    }
+    /// <p>The ability to create or update apps.</p>
+    pub fn create_and_update_apps(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_apps.as_ref()
+    }
+    /// <p>The ability to share apps with other users.</p>
+    pub fn share_apps(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_apps.as_ref()
+    }
+    /// <p>The ability to add and invoke AI inference in new and existing apps.</p>
+    pub fn invoke_apps_ai_inference(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.invoke_apps_ai_inference.as_ref()
+    }
+    /// <p>The ability to access the native data store for new and existing apps.</p>
+    pub fn access_apps_native_data_store(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.access_apps_native_data_store.as_ref()
     }
     /// <p>The ability to enable approvals for flow share.</p>
     pub fn publish_without_approval(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
@@ -1334,6 +1368,14 @@ impl Capabilities {
     pub fn generate_analyses(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.generate_analyses.as_ref()
     }
+    /// <p>The ability to perform Story-related actions.</p>
+    pub fn story(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.story.as_ref()
+    }
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub fn scenario(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.scenario.as_ref()
+    }
 }
 impl Capabilities {
     /// Creates a new builder-style object to manufacture [`Capabilities`](crate::types::Capabilities).
@@ -1373,6 +1415,11 @@ pub struct CapabilitiesBuilder {
     pub(crate) analysis: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) automate: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) flow: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) apps: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_apps: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_apps: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) invoke_apps_ai_inference: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) access_apps_native_data_store: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) publish_without_approval: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) use_bedrock_models: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) perform_flow_ui_task: ::std::option::Option<crate::types::CapabilityState>,
@@ -1567,6 +1614,8 @@ pub struct CapabilitiesBuilder {
     pub(crate) extension: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) manage_shared_folders: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) generate_analyses: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) story: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) scenario: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl CapabilitiesBuilder {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -1946,6 +1995,76 @@ impl CapabilitiesBuilder {
     /// <p>The ability to perform flow-related actions.</p>
     pub fn get_flow(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.flow
+    }
+    /// <p>The ability to perform apps-related actions.</p>
+    pub fn apps(mut self, input: crate::types::CapabilityState) -> Self {
+        self.apps = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform apps-related actions.</p>
+    pub fn set_apps(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.apps = input;
+        self
+    }
+    /// <p>The ability to perform apps-related actions.</p>
+    pub fn get_apps(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.apps
+    }
+    /// <p>The ability to create or update apps.</p>
+    pub fn create_and_update_apps(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_apps = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create or update apps.</p>
+    pub fn set_create_and_update_apps(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_apps = input;
+        self
+    }
+    /// <p>The ability to create or update apps.</p>
+    pub fn get_create_and_update_apps(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_apps
+    }
+    /// <p>The ability to share apps with other users.</p>
+    pub fn share_apps(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_apps = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share apps with other users.</p>
+    pub fn set_share_apps(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_apps = input;
+        self
+    }
+    /// <p>The ability to share apps with other users.</p>
+    pub fn get_share_apps(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_apps
+    }
+    /// <p>The ability to add and invoke AI inference in new and existing apps.</p>
+    pub fn invoke_apps_ai_inference(mut self, input: crate::types::CapabilityState) -> Self {
+        self.invoke_apps_ai_inference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to add and invoke AI inference in new and existing apps.</p>
+    pub fn set_invoke_apps_ai_inference(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.invoke_apps_ai_inference = input;
+        self
+    }
+    /// <p>The ability to add and invoke AI inference in new and existing apps.</p>
+    pub fn get_invoke_apps_ai_inference(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.invoke_apps_ai_inference
+    }
+    /// <p>The ability to access the native data store for new and existing apps.</p>
+    pub fn access_apps_native_data_store(mut self, input: crate::types::CapabilityState) -> Self {
+        self.access_apps_native_data_store = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to access the native data store for new and existing apps.</p>
+    pub fn set_access_apps_native_data_store(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.access_apps_native_data_store = input;
+        self
+    }
+    /// <p>The ability to access the native data store for new and existing apps.</p>
+    pub fn get_access_apps_native_data_store(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.access_apps_native_data_store
     }
     /// <p>The ability to enable approvals for flow share.</p>
     pub fn publish_without_approval(mut self, input: crate::types::CapabilityState) -> Self {
@@ -4666,6 +4785,34 @@ impl CapabilitiesBuilder {
     pub fn get_generate_analyses(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.generate_analyses
     }
+    /// <p>The ability to perform Story-related actions.</p>
+    pub fn story(mut self, input: crate::types::CapabilityState) -> Self {
+        self.story = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform Story-related actions.</p>
+    pub fn set_story(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.story = input;
+        self
+    }
+    /// <p>The ability to perform Story-related actions.</p>
+    pub fn get_story(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.story
+    }
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub fn scenario(mut self, input: crate::types::CapabilityState) -> Self {
+        self.scenario = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub fn set_scenario(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.scenario = input;
+        self
+    }
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub fn get_scenario(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.scenario
+    }
     /// Consumes the builder and constructs a [`Capabilities`](crate::types::Capabilities).
     pub fn build(self) -> crate::types::Capabilities {
         crate::types::Capabilities {
@@ -4696,6 +4843,11 @@ impl CapabilitiesBuilder {
             analysis: self.analysis,
             automate: self.automate,
             flow: self.flow,
+            apps: self.apps,
+            create_and_update_apps: self.create_and_update_apps,
+            share_apps: self.share_apps,
+            invoke_apps_ai_inference: self.invoke_apps_ai_inference,
+            access_apps_native_data_store: self.access_apps_native_data_store,
             publish_without_approval: self.publish_without_approval,
             use_bedrock_models: self.use_bedrock_models,
             perform_flow_ui_task: self.perform_flow_ui_task,
@@ -4890,6 +5042,8 @@ impl CapabilitiesBuilder {
             extension: self.extension,
             manage_shared_folders: self.manage_shared_folders,
             generate_analyses: self.generate_analyses,
+            story: self.story,
+            scenario: self.scenario,
         }
     }
 }

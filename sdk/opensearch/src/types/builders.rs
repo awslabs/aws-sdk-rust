@@ -5,6 +5,8 @@ pub use crate::types::_package_association_configuration::PackageAssociationConf
 
 pub use crate::types::_domain_package_details::DomainPackageDetailsBuilder;
 
+pub use crate::types::_workspace_configuration_input::WorkspaceConfigurationInputBuilder;
+
 pub use crate::types::_service_options::ServiceOptionsBuilder;
 
 pub use crate::types::_authorized_principal::AuthorizedPrincipalBuilder;
@@ -45,6 +47,8 @@ pub use crate::types::_aiml_options_input::AimlOptionsInputBuilder;
 
 pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptionsBuilder;
 
+pub use crate::types::_automated_snapshot_pause_request_options::AutomatedSnapshotPauseRequestOptionsBuilder;
+
 pub use crate::types::_domain_status::DomainStatusBuilder;
 
 pub use crate::types::_domain_information_container::DomainInformationContainerBuilder;
@@ -79,9 +83,17 @@ pub use crate::types::_dry_run_results::DryRunResultsBuilder;
 
 pub use crate::types::_insight_entity::InsightEntityBuilder;
 
+pub use crate::types::_migration_source::MigrationSourceBuilder;
+
+pub use crate::types::_migration_error::MigrationErrorBuilder;
+
+pub use crate::types::_insight_feedback_entity::InsightFeedbackEntityBuilder;
+
 pub use crate::types::_insight_time_range::InsightTimeRangeBuilder;
 
 pub use crate::types::_rollback_service_software_options::RollbackServiceSoftwareOptionsBuilder;
+
+pub use crate::types::_migration_options::MigrationOptionsBuilder;
 
 pub use crate::types::_auto_tune_options::AutoTuneOptionsBuilder;
 
@@ -145,6 +157,8 @@ pub use crate::types::_auto_tune_options_output::AutoTuneOptionsOutputBuilder;
 
 pub use crate::types::_aiml_options_output::AimlOptionsOutputBuilder;
 
+pub use crate::types::_automated_snapshot_pause_options::AutomatedSnapshotPauseOptionsBuilder;
+
 pub use crate::types::_aws_domain_information::AwsDomainInformationBuilder;
 
 pub use crate::types::_cross_cluster_search_connection_properties::CrossClusterSearchConnectionPropertiesBuilder;
@@ -193,6 +207,12 @@ pub use crate::types::_aiml_options_status::AimlOptionsStatusBuilder;
 
 pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatusBuilder;
 
+pub use crate::types::_automated_snapshot_pause_options_status::AutomatedSnapshotPauseOptionsStatusBuilder;
+
+pub use crate::types::_use_case_status::UseCaseStatusBuilder;
+
+pub use crate::types::_engine_mode_status::EngineModeStatusBuilder;
+
 pub use crate::types::_environment_info::EnvironmentInfoBuilder;
 
 pub use crate::types::_domain_nodes_status::DomainNodesStatusBuilder;
@@ -223,6 +243,8 @@ pub use crate::types::_upgrade_history::UpgradeHistoryBuilder;
 
 pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
+pub use crate::types::_data_source_attachment_summary::DataSourceAttachmentSummaryBuilder;
+
 pub use crate::types::_data_source_details::DataSourceDetailsBuilder;
 
 pub use crate::types::_direct_query_data_source::DirectQueryDataSourceBuilder;
@@ -234,6 +256,12 @@ pub use crate::types::_domain_info::DomainInfoBuilder;
 pub use crate::types::_insight::InsightBuilder;
 
 pub use crate::types::_instance_type_details::InstanceTypeDetailsBuilder;
+
+pub use crate::types::_migration_summary::MigrationSummaryBuilder;
+
+pub use crate::types::_migration_workspace::MigrationWorkspaceBuilder;
+
+pub use crate::types::_export_options::ExportOptionsBuilder;
 
 pub use crate::types::_node_option::NodeOptionBuilder;
 
@@ -282,5 +310,7 @@ pub use crate::types::_additional_limit::AdditionalLimitBuilder;
 pub use crate::types::_recurring_charge::RecurringChargeBuilder;
 
 pub use crate::types::_upgrade_step_item::UpgradeStepItemBuilder;
+
+pub use crate::types::_saved_object_identifier::SavedObjectIdentifierBuilder;
 
 pub use crate::types::_storage_type_limit::StorageTypeLimitBuilder;

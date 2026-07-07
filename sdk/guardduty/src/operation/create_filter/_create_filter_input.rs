@@ -29,8 +29,6 @@ pub struct CreateFilterInput {
     /// <p>createdAt</p>
     /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>description</p></li>
-    /// <li>
     /// <p>id</p></li>
     /// <li>
     /// <p>partition</p></li>
@@ -360,10 +358,6 @@ pub struct CreateFilterInput {
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
-    /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
@@ -460,8 +454,6 @@ pub struct CreateFilterInput {
     /// <p>schemaVersion</p></li>
     /// <li>
     /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
@@ -750,10 +742,6 @@ pub struct CreateFilterInput {
     /// <p>service.archived</p></li>
     /// <li>
     /// <p>service.count</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.profiles</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.unusual.behavior</p></li>
     /// <li>
     /// <p>service.detection.sequence.actors.id</p></li>
     /// <li>
@@ -1307,8 +1295,6 @@ pub struct CreateFilterInput {
     /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>title</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>
@@ -1358,8 +1344,6 @@ impl CreateFilterInput {
     /// <p>createdAt</p>
     /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>description</p></li>
-    /// <li>
     /// <p>id</p></li>
     /// <li>
     /// <p>partition</p></li>
@@ -1689,10 +1673,6 @@ impl CreateFilterInput {
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
-    /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
@@ -1789,8 +1769,6 @@ impl CreateFilterInput {
     /// <p>schemaVersion</p></li>
     /// <li>
     /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
@@ -2079,10 +2057,6 @@ impl CreateFilterInput {
     /// <p>service.archived</p></li>
     /// <li>
     /// <p>service.count</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.profiles</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.unusual.behavior</p></li>
     /// <li>
     /// <p>service.detection.sequence.actors.id</p></li>
     /// <li>
@@ -2636,8 +2610,6 @@ impl CreateFilterInput {
     /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>title</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>
@@ -2769,8 +2741,6 @@ impl CreateFilterInputBuilder {
     /// <p>createdAt</p>
     /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>description</p></li>
-    /// <li>
     /// <p>id</p></li>
     /// <li>
     /// <p>partition</p></li>
@@ -3100,10 +3070,6 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
-    /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
@@ -3200,8 +3166,6 @@ impl CreateFilterInputBuilder {
     /// <p>schemaVersion</p></li>
     /// <li>
     /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
@@ -3490,10 +3454,6 @@ impl CreateFilterInputBuilder {
     /// <p>service.archived</p></li>
     /// <li>
     /// <p>service.count</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.profiles</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.unusual.behavior</p></li>
     /// <li>
     /// <p>service.detection.sequence.actors.id</p></li>
     /// <li>
@@ -4047,8 +4007,6 @@ impl CreateFilterInputBuilder {
     /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>title</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>
@@ -4074,8 +4032,6 @@ impl CreateFilterInputBuilder {
     /// <p>createdAt</p>
     /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>description</p></li>
-    /// <li>
     /// <p>id</p></li>
     /// <li>
     /// <p>partition</p></li>
@@ -4405,10 +4361,6 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
-    /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
@@ -4505,8 +4457,6 @@ impl CreateFilterInputBuilder {
     /// <p>schemaVersion</p></li>
     /// <li>
     /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
@@ -4795,10 +4745,6 @@ impl CreateFilterInputBuilder {
     /// <p>service.archived</p></li>
     /// <li>
     /// <p>service.count</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.profiles</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.unusual.behavior</p></li>
     /// <li>
     /// <p>service.detection.sequence.actors.id</p></li>
     /// <li>
@@ -5352,8 +5298,6 @@ impl CreateFilterInputBuilder {
     /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>title</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>
@@ -5378,8 +5322,6 @@ impl CreateFilterInputBuilder {
     /// <p>createdAt</p>
     /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>description</p></li>
-    /// <li>
     /// <p>id</p></li>
     /// <li>
     /// <p>partition</p></li>
@@ -5709,10 +5651,6 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
-    /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
     /// <li>
     /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
@@ -5809,8 +5747,6 @@ impl CreateFilterInputBuilder {
     /// <p>schemaVersion</p></li>
     /// <li>
     /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
@@ -6099,10 +6035,6 @@ impl CreateFilterInputBuilder {
     /// <p>service.archived</p></li>
     /// <li>
     /// <p>service.count</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.profiles</p></li>
-    /// <li>
-    /// <p>service.detection.anomaly.unusual.behavior</p></li>
     /// <li>
     /// <p>service.detection.sequence.actors.id</p></li>
     /// <li>
@@ -6656,8 +6588,6 @@ impl CreateFilterInputBuilder {
     /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>title</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>

@@ -2,10 +2,16 @@
 pub(crate) fn de_session_state<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SessionState>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,18 +22,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dialogAction" => {
-                            builder = builder.set_dialog_action(crate::protocol_serde::shape_dialog_action::de_dialog_action(tokens, _value)?);
+                            builder =
+                                builder.set_dialog_action(crate::protocol_serde::shape_dialog_action::de_dialog_action(tokens, _value, depth + 1)?);
                         }
                         "intent" => {
-                            builder = builder.set_intent(crate::protocol_serde::shape_intent::de_intent(tokens, _value)?);
+                            builder = builder.set_intent(crate::protocol_serde::shape_intent::de_intent(tokens, _value, depth + 1)?);
                         }
                         "activeContexts" => {
                             builder = builder.set_active_contexts(crate::protocol_serde::shape_active_contexts_list::de_active_contexts_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "sessionAttributes" => {
-                            builder = builder.set_session_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
+                            builder =
+                                builder.set_session_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value, depth + 1)?);
                         }
                         "originatingRequestId" => {
                             builder = builder.set_originating_request_id(
@@ -37,7 +47,8 @@ where
                             );
                         }
                         "runtimeHints" => {
-                            builder = builder.set_runtime_hints(crate::protocol_serde::shape_runtime_hints::de_runtime_hints(tokens, _value)?);
+                            builder =
+                                builder.set_runtime_hints(crate::protocol_serde::shape_runtime_hints::de_runtime_hints(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

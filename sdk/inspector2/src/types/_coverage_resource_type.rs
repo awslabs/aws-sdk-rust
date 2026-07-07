@@ -17,6 +17,11 @@
 ///     CoverageResourceType::AwsEcrRepository => { /* ... */ },
 ///     CoverageResourceType::AwsLambdaFunction => { /* ... */ },
 ///     CoverageResourceType::CodeRepository => { /* ... */ },
+///     CoverageResourceType::MicrosoftComputeVirtualMachines => { /* ... */ },
+///     CoverageResourceType::MicrosoftContainerRegistryRegistries => { /* ... */ },
+///     CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage => { /* ... */ },
+///     CoverageResourceType::MicrosoftContainerRegistryRegistryContainerRepository => { /* ... */ },
+///     CoverageResourceType::MicrosoftWebSites => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +60,16 @@ pub enum CoverageResourceType {
     AwsLambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
     CodeRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftComputeVirtualMachines,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftContainerRegistryRegistries,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftContainerRegistryRegistryContainerImage,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftContainerRegistryRegistryContainerRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftWebSites,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +82,11 @@ impl ::std::convert::From<&str> for CoverageResourceType {
             "AWS_ECR_REPOSITORY" => CoverageResourceType::AwsEcrRepository,
             "AWS_LAMBDA_FUNCTION" => CoverageResourceType::AwsLambdaFunction,
             "CODE_REPOSITORY" => CoverageResourceType::CodeRepository,
+            "Microsoft.Compute/virtualMachines" => CoverageResourceType::MicrosoftComputeVirtualMachines,
+            "Microsoft.ContainerRegistry/registries" => CoverageResourceType::MicrosoftContainerRegistryRegistries,
+            "Microsoft.ContainerRegistry/registry/containerImage" => CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage,
+            "Microsoft.ContainerRegistry/registry/containerRepository" => CoverageResourceType::MicrosoftContainerRegistryRegistryContainerRepository,
+            "Microsoft.Web/sites" => CoverageResourceType::MicrosoftWebSites,
             other => CoverageResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,6 +107,11 @@ impl CoverageResourceType {
             CoverageResourceType::AwsEcrRepository => "AWS_ECR_REPOSITORY",
             CoverageResourceType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
             CoverageResourceType::CodeRepository => "CODE_REPOSITORY",
+            CoverageResourceType::MicrosoftComputeVirtualMachines => "Microsoft.Compute/virtualMachines",
+            CoverageResourceType::MicrosoftContainerRegistryRegistries => "Microsoft.ContainerRegistry/registries",
+            CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage => "Microsoft.ContainerRegistry/registry/containerImage",
+            CoverageResourceType::MicrosoftContainerRegistryRegistryContainerRepository => "Microsoft.ContainerRegistry/registry/containerRepository",
+            CoverageResourceType::MicrosoftWebSites => "Microsoft.Web/sites",
             CoverageResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -98,6 +123,11 @@ impl CoverageResourceType {
             "AWS_ECR_REPOSITORY",
             "AWS_LAMBDA_FUNCTION",
             "CODE_REPOSITORY",
+            "Microsoft.Compute/virtualMachines",
+            "Microsoft.ContainerRegistry/registries",
+            "Microsoft.ContainerRegistry/registry/containerImage",
+            "Microsoft.ContainerRegistry/registry/containerRepository",
+            "Microsoft.Web/sites",
         ]
     }
 }
@@ -126,6 +156,15 @@ impl ::std::fmt::Display for CoverageResourceType {
             CoverageResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
             CoverageResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
             CoverageResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
+            CoverageResourceType::MicrosoftComputeVirtualMachines => write!(f, "Microsoft.Compute/virtualMachines"),
+            CoverageResourceType::MicrosoftContainerRegistryRegistries => write!(f, "Microsoft.ContainerRegistry/registries"),
+            CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage => {
+                write!(f, "Microsoft.ContainerRegistry/registry/containerImage")
+            }
+            CoverageResourceType::MicrosoftContainerRegistryRegistryContainerRepository => {
+                write!(f, "Microsoft.ContainerRegistry/registry/containerRepository")
+            }
+            CoverageResourceType::MicrosoftWebSites => write!(f, "Microsoft.Web/sites"),
             CoverageResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

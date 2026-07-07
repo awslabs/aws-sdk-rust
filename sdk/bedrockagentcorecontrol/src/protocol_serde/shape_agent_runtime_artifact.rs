@@ -28,10 +28,16 @@ pub fn ser_agent_runtime_artifact(
 pub(crate) fn de_agent_runtime_artifact<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AgentRuntimeArtifact>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,12 +63,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "containerConfiguration" => Some(crate::types::AgentRuntimeArtifact::ContainerConfiguration(
-                            crate::protocol_serde::shape_container_configuration::de_container_configuration(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'containerConfiguration' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_container_configuration::de_container_configuration(tokens, _value, depth + 1)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'containerConfiguration' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         "codeConfiguration" => Some(crate::types::AgentRuntimeArtifact::CodeConfiguration(
-                            crate::protocol_serde::shape_code_configuration::de_code_configuration(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_code_configuration::de_code_configuration(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'codeConfiguration' cannot be null")
                             })?,
                         )),

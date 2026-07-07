@@ -99,10 +99,16 @@ pub fn ser_pipe_target_ecs_task_parameters(
 pub(crate) fn de_pipe_target_ecs_task_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipeTargetEcsTaskParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -135,7 +141,7 @@ where
                         }
                         "NetworkConfiguration" => {
                             builder = builder.set_network_configuration(
-                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "PlatformVersion" => {
@@ -154,7 +160,7 @@ where
                         }
                         "CapacityProviderStrategy" => {
                             builder = builder.set_capacity_provider_strategy(
-                                crate::protocol_serde::shape_capacity_provider_strategy::de_capacity_provider_strategy(tokens, _value)?,
+                                crate::protocol_serde::shape_capacity_provider_strategy::de_capacity_provider_strategy(tokens, _value, depth + 1)?,
                             );
                         }
                         "EnableECSManagedTags" => {
@@ -165,12 +171,14 @@ where
                         }
                         "PlacementConstraints" => {
                             builder = builder.set_placement_constraints(
-                                crate::protocol_serde::shape_placement_constraints::de_placement_constraints(tokens, _value)?,
+                                crate::protocol_serde::shape_placement_constraints::de_placement_constraints(tokens, _value, depth + 1)?,
                             );
                         }
                         "PlacementStrategy" => {
                             builder = builder.set_placement_strategy(crate::protocol_serde::shape_placement_strategies::de_placement_strategies(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "PropagateTags" => {
@@ -188,10 +196,14 @@ where
                             );
                         }
                         "Overrides" => {
-                            builder = builder.set_overrides(crate::protocol_serde::shape_ecs_task_override::de_ecs_task_override(tokens, _value)?);
+                            builder = builder.set_overrides(crate::protocol_serde::shape_ecs_task_override::de_ecs_task_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

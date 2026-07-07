@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_instance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbInstance, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbInstance::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -88,7 +92,7 @@ pub fn de_db_instance(
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune#DBInstance$Endpoint */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -155,7 +159,7 @@ pub fn de_db_instance(
             s if s.matches("DBSecurityGroups") /* DBSecurityGroups com.amazonaws.neptune#DBInstance$DBSecurityGroups */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_db_security_group_membership_list::de_db_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_db_security_group_membership_list::de_db_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -165,7 +169,7 @@ pub fn de_db_instance(
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.neptune#DBInstance$VpcSecurityGroups */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -175,7 +179,7 @@ pub fn de_db_instance(
             s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.neptune#DBInstance$DBParameterGroups */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_db_parameter_group_status_list::de_db_parameter_group_status_list(&mut tag)
+                        crate::protocol_serde::shape_db_parameter_group_status_list::de_db_parameter_group_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -198,7 +202,7 @@ pub fn de_db_instance(
             s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.neptune#DBInstance$DBSubnetGroup */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_db_subnet_group::de_db_subnet_group(&mut tag)
+                        crate::protocol_serde::shape_db_subnet_group::de_db_subnet_group(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -221,7 +225,7 @@ pub fn de_db_instance(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.neptune#DBInstance$PendingModifiedValues */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag)
+                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -301,7 +305,7 @@ pub fn de_db_instance(
             s if s.matches("ReadReplicaDBInstanceIdentifiers") /* ReadReplicaDBInstanceIdentifiers com.amazonaws.neptune#DBInstance$ReadReplicaDBInstanceIdentifiers */ =>  {
                 let var_24 =
                     Some(
-                        crate::protocol_serde::shape_read_replica_db_instance_identifier_list::de_read_replica_db_instance_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_read_replica_db_instance_identifier_list::de_read_replica_db_instance_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -311,7 +315,7 @@ pub fn de_db_instance(
             s if s.matches("ReadReplicaDBClusterIdentifiers") /* ReadReplicaDBClusterIdentifiers com.amazonaws.neptune#DBInstance$ReadReplicaDBClusterIdentifiers */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_read_replica_db_cluster_identifier_list::de_read_replica_db_cluster_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_read_replica_db_cluster_identifier_list::de_read_replica_db_cluster_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -349,7 +353,7 @@ pub fn de_db_instance(
             s if s.matches("OptionGroupMemberships") /* OptionGroupMemberships com.amazonaws.neptune#DBInstance$OptionGroupMemberships */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_option_group_membership_list::de_option_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_option_group_membership_list::de_option_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -400,7 +404,7 @@ pub fn de_db_instance(
             s if s.matches("StatusInfos") /* StatusInfos com.amazonaws.neptune#DBInstance$StatusInfos */ =>  {
                 let var_32 =
                     Some(
-                        crate::protocol_serde::shape_db_instance_status_info_list::de_db_instance_status_info_list(&mut tag)
+                        crate::protocol_serde::shape_db_instance_status_info_list::de_db_instance_status_info_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -518,7 +522,7 @@ pub fn de_db_instance(
             s if s.matches("DomainMemberships") /* DomainMemberships com.amazonaws.neptune#DBInstance$DomainMemberships */ =>  {
                 let var_41 =
                     Some(
-                        crate::protocol_serde::shape_domain_membership_list::de_domain_membership_list(&mut tag)
+                        crate::protocol_serde::shape_domain_membership_list::de_domain_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -668,7 +672,7 @@ pub fn de_db_instance(
             s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.neptune#DBInstance$EnabledCloudwatchLogsExports */ =>  {
                 let var_52 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -688,6 +692,19 @@ pub fn de_db_instance(
                     )
                 ;
                 builder = builder.set_deletion_protection(var_53);
+            }
+            ,
+            s if s.matches("NetworkType") /* NetworkType com.amazonaws.neptune#DBInstance$NetworkType */ =>  {
+                let var_54 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_type(var_54);
             }
             ,
             _ => {}

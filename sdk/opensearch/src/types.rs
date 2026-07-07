@@ -9,6 +9,10 @@ pub use crate::types::_package_association_configuration::PackageAssociationConf
 
 pub use crate::types::_domain_package_details::DomainPackageDetails;
 
+pub use crate::types::_workspace_configuration_input::WorkspaceConfigurationInput;
+
+pub use crate::types::_data_source_attachment_status::DataSourceAttachmentStatus;
+
 pub use crate::types::_aws_service_principal::AwsServicePrincipal;
 
 pub use crate::types::_service_options::ServiceOptions;
@@ -52,6 +56,12 @@ pub use crate::types::_software_update_options::SoftwareUpdateOptions;
 pub use crate::types::_aiml_options_input::AimlOptionsInput;
 
 pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptions;
+
+pub use crate::types::_automated_snapshot_pause_request_options::AutomatedSnapshotPauseRequestOptions;
+
+pub use crate::types::_domain_use_case::DomainUseCase;
+
+pub use crate::types::_engine_mode::EngineMode;
 
 pub use crate::types::_domain_status::DomainStatus;
 
@@ -113,9 +123,19 @@ pub use crate::types::_maintenance_status::MaintenanceStatus;
 
 pub use crate::types::_maintenance_type::MaintenanceType;
 
+pub use crate::types::_migration_source::MigrationSource;
+
+pub use crate::types::_migration_error::MigrationError;
+
 pub use crate::types::_upgrade_step::UpgradeStep;
 
 pub use crate::types::_upgrade_status::UpgradeStatus;
+
+pub use crate::types::_insight_feedback_entity::InsightFeedbackEntity;
+
+pub use crate::types::_insight_feedback_thumbs::InsightFeedbackThumbs;
+
+pub use crate::types::_insight_response_status::InsightResponseStatus;
 
 pub use crate::types::_engine_type::EngineType;
 
@@ -128,6 +148,8 @@ pub use crate::types::_capability_base_request_config::CapabilityBaseRequestConf
 pub use crate::types::_capability_base_response_config::CapabilityBaseResponseConfig;
 
 pub use crate::types::_rollback_service_software_options::RollbackServiceSoftwareOptions;
+
+pub use crate::types::_migration_options::MigrationOptions;
 
 pub use crate::types::_schedule_at::ScheduleAt;
 
@@ -223,6 +245,8 @@ pub use crate::types::_domain_processing_status_type::DomainProcessingStatusType
 
 pub use crate::types::_aiml_options_output::AimlOptionsOutput;
 
+pub use crate::types::_automated_snapshot_pause_options::AutomatedSnapshotPauseOptions;
+
 pub use crate::types::_aws_domain_information::AwsDomainInformation;
 
 pub use crate::types::_cross_cluster_search_connection_properties::CrossClusterSearchConnectionProperties;
@@ -285,6 +309,12 @@ pub use crate::types::_aiml_options_status::AimlOptionsStatus;
 
 pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatus;
 
+pub use crate::types::_automated_snapshot_pause_options_status::AutomatedSnapshotPauseOptionsStatus;
+
+pub use crate::types::_use_case_status::UseCaseStatus;
+
+pub use crate::types::_engine_mode_status::EngineModeStatus;
+
 pub use crate::types::_environment_info::EnvironmentInfo;
 
 pub use crate::types::_domain_nodes_status::DomainNodesStatus;
@@ -315,7 +345,11 @@ pub use crate::types::_package_version_history::PackageVersionHistory;
 
 pub use crate::types::_upgrade_history::UpgradeHistory;
 
+pub use crate::types::_insight_feedback_entity_type::InsightFeedbackEntityType;
+
 pub use crate::types::_application_summary::ApplicationSummary;
+
+pub use crate::types::_data_source_attachment_summary::DataSourceAttachmentSummary;
 
 pub use crate::types::_data_source_details::DataSourceDetails;
 
@@ -328,6 +362,12 @@ pub use crate::types::_domain_info::DomainInfo;
 pub use crate::types::_insight::Insight;
 
 pub use crate::types::_instance_type_details::InstanceTypeDetails;
+
+pub use crate::types::_migration_summary::MigrationSummary;
+
+pub use crate::types::_migration_workspace::MigrationWorkspace;
+
+pub use crate::types::_export_options::ExportOptions;
 
 pub use crate::types::_rollback_on_disable::RollbackOnDisable;
 
@@ -362,6 +402,8 @@ pub use crate::types::_auto_tune_state::AutoTuneState;
 pub use crate::types::_modifying_properties::ModifyingProperties;
 
 pub use crate::types::_natural_language_query_generation_options_output::NaturalLanguageQueryGenerationOptionsOutput;
+
+pub use crate::types::_pause_state::PauseState;
 
 pub use crate::types::_skip_unavailable_status::SkipUnavailableStatus;
 
@@ -424,6 +466,8 @@ pub use crate::types::_additional_limit::AdditionalLimit;
 pub use crate::types::_recurring_charge::RecurringCharge;
 
 pub use crate::types::_upgrade_step_item::UpgradeStepItem;
+
+pub use crate::types::_saved_object_identifier::SavedObjectIdentifier;
 
 pub use crate::types::_time_unit::TimeUnit;
 
@@ -493,6 +537,12 @@ mod _auto_tune_status;
 
 mod _auto_tune_type;
 
+mod _automated_snapshot_pause_options;
+
+mod _automated_snapshot_pause_options_status;
+
+mod _automated_snapshot_pause_request_options;
+
 mod _availability_zone_info;
 
 mod _aws_domain_information;
@@ -543,6 +593,10 @@ mod _cross_cluster_search_connection_properties;
 
 mod _data_source;
 
+mod _data_source_attachment_status;
+
+mod _data_source_attachment_summary;
+
 mod _data_source_details;
 
 mod _data_source_status;
@@ -591,6 +645,8 @@ mod _domain_state;
 
 mod _domain_status;
 
+mod _domain_use_case;
+
 mod _dry_run_mode;
 
 mod _dry_run_progress_status;
@@ -607,11 +663,17 @@ mod _encryption_at_rest_options;
 
 mod _encryption_at_rest_options_status;
 
+mod _engine_mode;
+
+mod _engine_mode_status;
+
 mod _engine_type;
 
 mod _environment_info;
 
 mod _error_details;
+
+mod _export_options;
 
 mod _filter;
 
@@ -645,11 +707,19 @@ mod _insight_entity;
 
 mod _insight_entity_type;
 
+mod _insight_feedback_entity;
+
+mod _insight_feedback_entity_type;
+
+mod _insight_feedback_thumbs;
+
 mod _insight_field;
 
 mod _insight_field_type;
 
 mod _insight_priority_level;
+
+mod _insight_response_status;
 
 mod _insight_sort_order;
 
@@ -690,6 +760,16 @@ mod _maintenance_type;
 mod _master_node_status;
 
 mod _master_user_options;
+
+mod _migration_error;
+
+mod _migration_options;
+
+mod _migration_source;
+
+mod _migration_summary;
+
+mod _migration_workspace;
 
 mod _modifying_properties;
 
@@ -759,6 +839,8 @@ mod _package_vending_options;
 
 mod _package_version_history;
 
+mod _pause_state;
+
 mod _plugin_properties;
 
 mod _principal_type;
@@ -792,6 +874,8 @@ mod _saml_idp;
 mod _saml_options_input;
 
 mod _saml_options_output;
+
+mod _saved_object_identifier;
 
 mod _schedule_at;
 
@@ -843,6 +927,8 @@ mod _upgrade_step;
 
 mod _upgrade_step_item;
 
+mod _use_case_status;
+
 mod _validation_failure;
 
 mod _version_status;
@@ -866,6 +952,8 @@ mod _vpc_endpoint_summary;
 mod _vpc_options;
 
 mod _window_start_time;
+
+mod _workspace_configuration_input;
 
 mod _zone_awareness_config;
 

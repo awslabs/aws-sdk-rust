@@ -75,10 +75,16 @@ pub fn ser_table_configuration(
 pub(crate) fn de_table_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TableConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -89,46 +95,69 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
-                            builder = builder.set_field_wells(crate::protocol_serde::shape_table_field_wells::de_table_field_wells(tokens, _value)?);
+                            builder = builder.set_field_wells(crate::protocol_serde::shape_table_field_wells::de_table_field_wells(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SortConfiguration" => {
                             builder = builder.set_sort_configuration(
-                                crate::protocol_serde::shape_table_sort_configuration::de_table_sort_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_table_sort_configuration::de_table_sort_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "TableOptions" => {
-                            builder = builder.set_table_options(crate::protocol_serde::shape_table_options::de_table_options(tokens, _value)?);
+                            builder =
+                                builder.set_table_options(crate::protocol_serde::shape_table_options::de_table_options(tokens, _value, depth + 1)?);
                         }
                         "TotalOptions" => {
-                            builder = builder.set_total_options(crate::protocol_serde::shape_total_options::de_total_options(tokens, _value)?);
+                            builder =
+                                builder.set_total_options(crate::protocol_serde::shape_total_options::de_total_options(tokens, _value, depth + 1)?);
                         }
                         "FieldOptions" => {
-                            builder =
-                                builder.set_field_options(crate::protocol_serde::shape_table_field_options::de_table_field_options(tokens, _value)?);
+                            builder = builder.set_field_options(crate::protocol_serde::shape_table_field_options::de_table_field_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PaginatedReportOptions" => {
                             builder = builder.set_paginated_report_options(
-                                crate::protocol_serde::shape_table_paginated_report_options::de_table_paginated_report_options(tokens, _value)?,
+                                crate::protocol_serde::shape_table_paginated_report_options::de_table_paginated_report_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TableInlineVisualizations" => {
                             builder = builder.set_table_inline_visualizations(
-                                crate::protocol_serde::shape_table_inline_visualization_list::de_table_inline_visualization_list(tokens, _value)?,
+                                crate::protocol_serde::shape_table_inline_visualization_list::de_table_inline_visualization_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Tooltip" => {
-                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DashboardCustomizationVisualOptions" => {
                             builder = builder.set_dashboard_customization_visual_options(
                                 crate::protocol_serde::shape_dashboard_customization_visual_options::de_dashboard_customization_visual_options(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

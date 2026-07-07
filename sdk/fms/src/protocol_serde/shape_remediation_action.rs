@@ -2,10 +2,16 @@
 pub(crate) fn de_remediation_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RemediationAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,64 +30,82 @@ where
                         }
                         "EC2CreateRouteAction" => {
                             builder = builder.set_ec2_create_route_action(
-                                crate::protocol_serde::shape_ec2_create_route_action::de_ec2_create_route_action(tokens, _value)?,
+                                crate::protocol_serde::shape_ec2_create_route_action::de_ec2_create_route_action(tokens, _value, depth + 1)?,
                             );
                         }
                         "EC2ReplaceRouteAction" => {
                             builder = builder.set_ec2_replace_route_action(
-                                crate::protocol_serde::shape_ec2_replace_route_action::de_ec2_replace_route_action(tokens, _value)?,
+                                crate::protocol_serde::shape_ec2_replace_route_action::de_ec2_replace_route_action(tokens, _value, depth + 1)?,
                             );
                         }
                         "EC2DeleteRouteAction" => {
                             builder = builder.set_ec2_delete_route_action(
-                                crate::protocol_serde::shape_ec2_delete_route_action::de_ec2_delete_route_action(tokens, _value)?,
+                                crate::protocol_serde::shape_ec2_delete_route_action::de_ec2_delete_route_action(tokens, _value, depth + 1)?,
                             );
                         }
                         "EC2CopyRouteTableAction" => {
                             builder = builder.set_ec2_copy_route_table_action(
-                                crate::protocol_serde::shape_ec2_copy_route_table_action::de_ec2_copy_route_table_action(tokens, _value)?,
+                                crate::protocol_serde::shape_ec2_copy_route_table_action::de_ec2_copy_route_table_action(tokens, _value, depth + 1)?,
                             );
                         }
                         "EC2ReplaceRouteTableAssociationAction" => {
                             builder = builder.set_ec2_replace_route_table_association_action(
-                                    crate::protocol_serde::shape_ec2_replace_route_table_association_action::de_ec2_replace_route_table_association_action(tokens, _value)?
+                                    crate::protocol_serde::shape_ec2_replace_route_table_association_action::de_ec2_replace_route_table_association_action(tokens, _value, depth + 1)?
                                 );
                         }
                         "EC2AssociateRouteTableAction" => {
                             builder = builder.set_ec2_associate_route_table_action(
-                                crate::protocol_serde::shape_ec2_associate_route_table_action::de_ec2_associate_route_table_action(tokens, _value)?,
+                                crate::protocol_serde::shape_ec2_associate_route_table_action::de_ec2_associate_route_table_action(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "EC2CreateRouteTableAction" => {
                             builder = builder.set_ec2_create_route_table_action(
-                                crate::protocol_serde::shape_ec2_create_route_table_action::de_ec2_create_route_table_action(tokens, _value)?,
+                                crate::protocol_serde::shape_ec2_create_route_table_action::de_ec2_create_route_table_action(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "FMSPolicyUpdateFirewallCreationConfigAction" => {
                             builder = builder.set_fms_policy_update_firewall_creation_config_action(
-                                    crate::protocol_serde::shape_fms_policy_update_firewall_creation_config_action::de_fms_policy_update_firewall_creation_config_action(tokens, _value)?
+                                    crate::protocol_serde::shape_fms_policy_update_firewall_creation_config_action::de_fms_policy_update_firewall_creation_config_action(tokens, _value, depth + 1)?
                                 );
                         }
                         "CreateNetworkAclAction" => {
                             builder = builder.set_create_network_acl_action(
-                                crate::protocol_serde::shape_create_network_acl_action::de_create_network_acl_action(tokens, _value)?,
+                                crate::protocol_serde::shape_create_network_acl_action::de_create_network_acl_action(tokens, _value, depth + 1)?,
                             );
                         }
                         "ReplaceNetworkAclAssociationAction" => {
                             builder = builder.set_replace_network_acl_association_action(
                                 crate::protocol_serde::shape_replace_network_acl_association_action::de_replace_network_acl_association_action(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "CreateNetworkAclEntriesAction" => {
                             builder = builder.set_create_network_acl_entries_action(
-                                crate::protocol_serde::shape_create_network_acl_entries_action::de_create_network_acl_entries_action(tokens, _value)?,
+                                crate::protocol_serde::shape_create_network_acl_entries_action::de_create_network_acl_entries_action(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DeleteNetworkAclEntriesAction" => {
                             builder = builder.set_delete_network_acl_entries_action(
-                                crate::protocol_serde::shape_delete_network_acl_entries_action::de_delete_network_acl_entries_action(tokens, _value)?,
+                                crate::protocol_serde::shape_delete_network_acl_entries_action::de_delete_network_acl_entries_action(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

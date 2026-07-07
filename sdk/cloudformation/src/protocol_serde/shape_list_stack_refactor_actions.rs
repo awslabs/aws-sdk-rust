@@ -51,6 +51,8 @@ pub fn de_list_stack_refactor_actions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListStackRefactorActionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListStackRefactorActionsResponse got {start_el:?}"
@@ -68,7 +70,7 @@ pub fn de_list_stack_refactor_actions(
             s if s.matches("StackRefactorActions") /* StackRefactorActions com.amazonaws.cloudformation.synthetic#ListStackRefactorActionsOutput$StackRefactorActions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stack_refactor_actions::de_stack_refactor_actions(&mut tag)
+                        crate::protocol_serde::shape_stack_refactor_actions::de_stack_refactor_actions(&mut tag, depth + 1)
                         ?
                     )
                 ;

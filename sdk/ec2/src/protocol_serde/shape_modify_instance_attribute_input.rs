@@ -11,102 +11,107 @@ pub fn ser_modify_instance_attribute_input_input_input(
         crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_1, var_2)?;
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DisableApiStop");
-    if let Some(var_4) = &input.disable_api_stop {
-        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_3, var_4)?;
+    let mut scope_3 = writer.prefix("EnclaveOptions");
+    if let Some(var_4) = &input.enclave_options {
+        crate::protocol_serde::shape_enclave_options_request::ser_enclave_options_request(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DryRun");
-    if let Some(var_6) = &input.dry_run {
-        scope_5.boolean(*var_6);
+    let mut scope_5 = writer.prefix("DisableApiStop");
+    if let Some(var_6) = &input.disable_api_stop {
+        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_5, var_6)?;
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("InstanceId");
-    if let Some(var_8) = &input.instance_id {
-        scope_7.string(var_8);
+    let mut scope_7 = writer.prefix("DryRun");
+    if let Some(var_8) = &input.dry_run {
+        scope_7.boolean(*var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("Attribute");
-    if let Some(var_10) = &input.attribute {
-        scope_9.string(var_10.as_str());
+    let mut scope_9 = writer.prefix("InstanceId");
+    if let Some(var_10) = &input.instance_id {
+        scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("Value");
-    if let Some(var_12) = &input.value {
-        scope_11.string(var_12);
+    let mut scope_11 = writer.prefix("Attribute");
+    if let Some(var_12) = &input.attribute {
+        scope_11.string(var_12.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_14) = &input.block_device_mappings {
-        if !var_14.is_empty() {
-            let mut list_16 = scope_13.start_list(true, Some("item"));
-            for item_15 in var_14 {
+    let mut scope_13 = writer.prefix("Value");
+    if let Some(var_14) = &input.value {
+        scope_13.string(var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_16) = &input.block_device_mappings {
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, Some("item"));
+            for item_17 in var_16 {
                 #[allow(unused_mut)]
-                let mut entry_17 = list_16.entry();
+                let mut entry_19 = list_18.entry();
                 crate::protocol_serde::shape_instance_block_device_mapping_specification::ser_instance_block_device_mapping_specification(
-                    entry_17, item_15,
+                    entry_19, item_17,
                 )?;
             }
-            list_16.finish();
+            list_18.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("DisableApiTermination");
-    if let Some(var_19) = &input.disable_api_termination {
-        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_18, var_19)?;
+    let mut scope_20 = writer.prefix("DisableApiTermination");
+    if let Some(var_21) = &input.disable_api_termination {
+        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_20, var_21)?;
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("InstanceType");
-    if let Some(var_21) = &input.instance_type {
-        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_20, var_21)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("Kernel");
-    if let Some(var_23) = &input.kernel {
+    let mut scope_22 = writer.prefix("InstanceType");
+    if let Some(var_23) = &input.instance_type {
         crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_22, var_23)?;
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("Ramdisk");
-    if let Some(var_25) = &input.ramdisk {
+    let mut scope_24 = writer.prefix("Kernel");
+    if let Some(var_25) = &input.kernel {
         crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_24, var_25)?;
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("UserData");
-    if let Some(var_27) = &input.user_data {
-        crate::protocol_serde::shape_blob_attribute_value::ser_blob_attribute_value(scope_26, var_27)?;
+    let mut scope_26 = writer.prefix("Ramdisk");
+    if let Some(var_27) = &input.ramdisk {
+        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_26, var_27)?;
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("InstanceInitiatedShutdownBehavior");
-    if let Some(var_29) = &input.instance_initiated_shutdown_behavior {
-        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_28, var_29)?;
+    let mut scope_28 = writer.prefix("UserData");
+    if let Some(var_29) = &input.user_data {
+        crate::protocol_serde::shape_blob_attribute_value::ser_blob_attribute_value(scope_28, var_29)?;
     }
     #[allow(unused_mut)]
-    let mut scope_30 = writer.prefix("GroupId");
-    if let Some(var_31) = &input.groups {
-        if !var_31.is_empty() {
-            let mut list_33 = scope_30.start_list(true, Some("groupId"));
-            for item_32 in var_31 {
+    let mut scope_30 = writer.prefix("InstanceInitiatedShutdownBehavior");
+    if let Some(var_31) = &input.instance_initiated_shutdown_behavior {
+        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_30, var_31)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_32 = writer.prefix("GroupId");
+    if let Some(var_33) = &input.groups {
+        if !var_33.is_empty() {
+            let mut list_35 = scope_32.start_list(true, Some("groupId"));
+            for item_34 in var_33 {
                 #[allow(unused_mut)]
-                let mut entry_34 = list_33.entry();
-                entry_34.string(item_32);
+                let mut entry_36 = list_35.entry();
+                entry_36.string(item_34);
             }
-            list_33.finish();
+            list_35.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_35 = writer.prefix("EbsOptimized");
-    if let Some(var_36) = &input.ebs_optimized {
-        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_35, var_36)?;
+    let mut scope_37 = writer.prefix("EbsOptimized");
+    if let Some(var_38) = &input.ebs_optimized {
+        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_37, var_38)?;
     }
     #[allow(unused_mut)]
-    let mut scope_37 = writer.prefix("SriovNetSupport");
-    if let Some(var_38) = &input.sriov_net_support {
-        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_37, var_38)?;
+    let mut scope_39 = writer.prefix("SriovNetSupport");
+    if let Some(var_40) = &input.sriov_net_support {
+        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_39, var_40)?;
     }
     #[allow(unused_mut)]
-    let mut scope_39 = writer.prefix("EnaSupport");
-    if let Some(var_40) = &input.ena_support {
-        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_39, var_40)?;
+    let mut scope_41 = writer.prefix("EnaSupport");
+    if let Some(var_42) = &input.ena_support {
+        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_41, var_42)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -13,6 +13,7 @@
 /// # let oauth2flowtype = unimplemented!();
 /// match oauth2flowtype {
 ///     Oauth2FlowType::M2M => { /* ... */ },
+///     Oauth2FlowType::OnBehalfOfTokenExchange => { /* ... */ },
 ///     Oauth2FlowType::UserFederation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum Oauth2FlowType {
     #[allow(missing_docs)] // documentation missing in model
     M2M,
     #[allow(missing_docs)] // documentation missing in model
+    OnBehalfOfTokenExchange,
+    #[allow(missing_docs)] // documentation missing in model
     UserFederation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for Oauth2FlowType {
     fn from(s: &str) -> Self {
         match s {
             "M2M" => Oauth2FlowType::M2M,
+            "ON_BEHALF_OF_TOKEN_EXCHANGE" => Oauth2FlowType::OnBehalfOfTokenExchange,
             "USER_FEDERATION" => Oauth2FlowType::UserFederation,
             other => Oauth2FlowType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl Oauth2FlowType {
     pub fn as_str(&self) -> &str {
         match self {
             Oauth2FlowType::M2M => "M2M",
+            Oauth2FlowType::OnBehalfOfTokenExchange => "ON_BEHALF_OF_TOKEN_EXCHANGE",
             Oauth2FlowType::UserFederation => "USER_FEDERATION",
             Oauth2FlowType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["M2M", "USER_FEDERATION"]
+        &["M2M", "ON_BEHALF_OF_TOKEN_EXCHANGE", "USER_FEDERATION"]
     }
 }
 impl ::std::convert::AsRef<str> for Oauth2FlowType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for Oauth2FlowType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Oauth2FlowType::M2M => write!(f, "M2M"),
+            Oauth2FlowType::OnBehalfOfTokenExchange => write!(f, "ON_BEHALF_OF_TOKEN_EXCHANGE"),
             Oauth2FlowType::UserFederation => write!(f, "USER_FEDERATION"),
             Oauth2FlowType::Unknown(value) => write!(f, "{value}"),
         }

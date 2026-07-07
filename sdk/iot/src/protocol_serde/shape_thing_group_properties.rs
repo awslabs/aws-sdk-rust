@@ -18,10 +18,16 @@ pub fn ser_thing_group_properties(
 pub(crate) fn de_thing_group_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ThingGroupProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,8 +45,11 @@ where
                             );
                         }
                         "attributePayload" => {
-                            builder =
-                                builder.set_attribute_payload(crate::protocol_serde::shape_attribute_payload::de_attribute_payload(tokens, _value)?);
+                            builder = builder.set_attribute_payload(crate::protocol_serde::shape_attribute_payload::de_attribute_payload(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

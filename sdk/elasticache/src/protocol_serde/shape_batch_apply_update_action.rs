@@ -95,6 +95,8 @@ pub fn de_batch_apply_update_action(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("BatchApplyUpdateActionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected BatchApplyUpdateActionResponse got {start_el:?}"
@@ -112,7 +114,7 @@ pub fn de_batch_apply_update_action(
             s if s.matches("ProcessedUpdateActions") /* ProcessedUpdateActions com.amazonaws.elasticache.synthetic#BatchApplyUpdateActionOutput$ProcessedUpdateActions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_processed_update_action_list::de_processed_update_action_list(&mut tag)
+                        crate::protocol_serde::shape_processed_update_action_list::de_processed_update_action_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -122,7 +124,7 @@ pub fn de_batch_apply_update_action(
             s if s.matches("UnprocessedUpdateActions") /* UnprocessedUpdateActions com.amazonaws.elasticache.synthetic#BatchApplyUpdateActionOutput$UnprocessedUpdateActions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_unprocessed_update_action_list::de_unprocessed_update_action_list(&mut tag)
+                        crate::protocol_serde::shape_unprocessed_update_action_list::de_unprocessed_update_action_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

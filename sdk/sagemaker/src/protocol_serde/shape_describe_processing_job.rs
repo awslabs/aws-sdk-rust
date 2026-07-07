@@ -77,17 +77,23 @@ pub(crate) fn de_describe_processing_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProcessingInputs" => {
-                    builder = builder.set_processing_inputs(crate::protocol_serde::shape_processing_inputs::de_processing_inputs(tokens, _value)?);
+                    builder = builder.set_processing_inputs(crate::protocol_serde::shape_processing_inputs::de_processing_inputs(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ProcessingOutputConfig" => {
                     builder = builder.set_processing_output_config(
-                        crate::protocol_serde::shape_processing_output_config::de_processing_output_config(tokens, _value)?,
+                        crate::protocol_serde::shape_processing_output_config::de_processing_output_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "ProcessingJobName" => {
@@ -99,24 +105,32 @@ pub(crate) fn de_describe_processing_job(
                 }
                 "ProcessingResources" => {
                     builder = builder.set_processing_resources(crate::protocol_serde::shape_processing_resources::de_processing_resources(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "StoppingCondition" => {
                     builder = builder.set_stopping_condition(
-                        crate::protocol_serde::shape_processing_stopping_condition::de_processing_stopping_condition(tokens, _value)?,
+                        crate::protocol_serde::shape_processing_stopping_condition::de_processing_stopping_condition(tokens, _value, depth + 1)?,
                     );
                 }
                 "AppSpecification" => {
-                    builder = builder.set_app_specification(crate::protocol_serde::shape_app_specification::de_app_specification(tokens, _value)?);
+                    builder = builder.set_app_specification(crate::protocol_serde::shape_app_specification::de_app_specification(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_processing_environment_map::de_processing_environment_map(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NetworkConfig" => {
-                    builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(tokens, _value)?);
+                    builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(tokens, _value, depth + 1)?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -126,7 +140,11 @@ pub(crate) fn de_describe_processing_job(
                     );
                 }
                 "ExperimentConfig" => {
-                    builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(tokens, _value)?);
+                    builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ProcessingJobArn" => {
                     builder = builder.set_processing_job_arn(

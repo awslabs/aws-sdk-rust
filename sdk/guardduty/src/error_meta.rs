@@ -190,6 +190,32 @@ impl From<crate::operation::create_filter::CreateFilterError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_investigation::CreateInvestigationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_investigation::CreateInvestigationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_investigation::CreateInvestigationError> for Error {
+    fn from(err: crate::operation::create_investigation::CreateInvestigationError) -> Self {
+        match err {
+            crate::operation::create_investigation::CreateInvestigationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_investigation::CreateInvestigationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_investigation::CreateInvestigationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_investigation::CreateInvestigationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ip_set::CreateIPSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1137,6 +1163,33 @@ impl From<crate::operation::get_findings_statistics::GetFindingsStatisticsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_investigation::GetInvestigationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_investigation::GetInvestigationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_investigation::GetInvestigationError> for Error {
+    fn from(err: crate::operation::get_investigation::GetInvestigationError) -> Self {
+        match err {
+            crate::operation::get_investigation::GetInvestigationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_investigation::GetInvestigationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_investigation::GetInvestigationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_investigation::GetInvestigationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_investigation::GetInvestigationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_invitations_count::GetInvitationsCountError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1620,6 +1673,32 @@ impl From<crate::operation::list_findings::ListFindingsError> for Error {
             crate::operation::list_findings::ListFindingsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_findings::ListFindingsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_findings::ListFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_investigations::ListInvestigationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_investigations::ListInvestigationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_investigations::ListInvestigationsError> for Error {
+    fn from(err: crate::operation::list_investigations::ListInvestigationsError) -> Self {
+        match err {
+            crate::operation::list_investigations::ListInvestigationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_investigations::ListInvestigationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_investigations::ListInvestigationsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_investigations::ListInvestigationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -103,6 +103,11 @@ pub struct UpdateStackInput {
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub retain_except_on_create: ::std::option::Option<bool>,
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub disable_validation: ::std::option::Option<bool>,
 }
 impl UpdateStackInput {
     /// <p>The name or unique stack ID of the stack to update.</p>
@@ -250,6 +255,15 @@ impl UpdateStackInput {
     pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
         self.retain_except_on_create
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn disable_validation(&self) -> ::std::option::Option<bool> {
+        self.disable_validation
+    }
 }
 impl UpdateStackInput {
     /// Creates a new builder-style object to manufacture [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
@@ -280,6 +294,8 @@ pub struct UpdateStackInputBuilder {
     pub(crate) disable_rollback: ::std::option::Option<bool>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) retain_except_on_create: ::std::option::Option<bool>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
+    pub(crate) disable_validation: ::std::option::Option<bool>,
 }
 impl UpdateStackInputBuilder {
     /// <p>The name or unique stack ID of the stack to update.</p>
@@ -754,6 +770,37 @@ impl UpdateStackInputBuilder {
     pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
         &self.retain_except_on_create
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.deployment_config = input;
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn disable_validation(mut self, input: bool) -> Self {
+        self.disable_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_disable_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_validation = input;
+        self
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_disable_validation(&self) -> &::std::option::Option<bool> {
+        &self.disable_validation
+    }
     /// Consumes the builder and constructs a [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_stack::UpdateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stack::UpdateStackInput {
@@ -775,6 +822,8 @@ impl UpdateStackInputBuilder {
             disable_rollback: self.disable_rollback,
             client_request_token: self.client_request_token,
             retain_except_on_create: self.retain_except_on_create,
+            deployment_config: self.deployment_config,
+            disable_validation: self.disable_validation,
         })
     }
 }

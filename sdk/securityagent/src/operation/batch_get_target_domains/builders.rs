@@ -22,7 +22,7 @@ impl crate::operation::batch_get_target_domains::builders::BatchGetTargetDomains
 }
 /// Fluent builder constructing a request to `BatchGetTargetDomains`.
 ///
-/// Retrieves multiple target domains in a single request
+/// <p>Retrieves information about one or more target domains.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetTargetDomainsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +113,17 @@ impl BatchGetTargetDomainsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_target_domain_ids`](Self::set_target_domain_ids).
     ///
-    /// List of target domain IDs to retrieve
+    /// <p>The list of target domain identifiers to retrieve.</p>
     pub fn target_domain_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_domain_ids(input.into());
         self
     }
-    /// List of target domain IDs to retrieve
+    /// <p>The list of target domain identifiers to retrieve.</p>
     pub fn set_target_domain_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_domain_ids(input);
         self
     }
-    /// List of target domain IDs to retrieve
+    /// <p>The list of target domain identifiers to retrieve.</p>
     pub fn get_target_domain_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_domain_ids()
     }

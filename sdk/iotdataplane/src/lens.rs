@@ -9,9 +9,26 @@ pub(crate) fn reflens_list_retained_messages_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_subscriptions_output_output_next_token(
+    input: &crate::operation::list_subscriptions::ListSubscriptionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_retained_messages_output_output_retained_topics(
     input: crate::operation::list_retained_messages::ListRetainedMessagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RetainedMessageSummary>> {
     let input = input.retained_topics?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_subscriptions_output_output_subscriptions(
+    input: crate::operation::list_subscriptions::ListSubscriptionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionSummary>> {
+    let input = input.subscriptions?;
     ::std::option::Option::Some(input)
 }

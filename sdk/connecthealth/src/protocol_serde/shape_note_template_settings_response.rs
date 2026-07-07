@@ -2,10 +2,16 @@
 pub(crate) fn de_note_template_settings_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NoteTemplateSettingsResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,14 +37,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "managedTemplate" => Some(crate::types::NoteTemplateSettingsResponse::ManagedTemplate(
-                            crate::protocol_serde::shape_managed_template_response::de_managed_template_response(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'managedTemplate' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_managed_template_response::de_managed_template_response(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'managedTemplate' cannot be null")
+                                })?,
                         )),
                         "customTemplate" => Some(crate::types::NoteTemplateSettingsResponse::CustomTemplate(
-                            crate::protocol_serde::shape_custom_template_response::de_custom_template_response(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customTemplate' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_custom_template_response::de_custom_template_response(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customTemplate' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

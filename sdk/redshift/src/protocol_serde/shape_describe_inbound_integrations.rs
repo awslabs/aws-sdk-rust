@@ -102,6 +102,8 @@ pub fn de_describe_inbound_integrations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeInboundIntegrationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeInboundIntegrationsResponse got {start_el:?}"
@@ -132,7 +134,7 @@ pub fn de_describe_inbound_integrations(
             s if s.matches("InboundIntegrations") /* InboundIntegrations com.amazonaws.redshift.synthetic#DescribeInboundIntegrationsOutput$InboundIntegrations */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_inbound_integration_list::de_inbound_integration_list(&mut tag)
+                        crate::protocol_serde::shape_inbound_integration_list::de_inbound_integration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

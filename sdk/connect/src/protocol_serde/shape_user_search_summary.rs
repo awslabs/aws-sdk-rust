@@ -2,10 +2,16 @@
 pub(crate) fn de_user_search_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UserSearchSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,91 +20,108 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Arn" => {
-                            builder = builder.set_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Arn" => {
+                                builder = builder.set_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "DirectoryUserId" => {
+                                builder = builder.set_directory_user_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "HierarchyGroupId" => {
+                                builder = builder.set_hierarchy_group_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Id" => {
+                                builder = builder.set_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "IdentityInfo" => {
+                                builder = builder.set_identity_info(
+                                    crate::protocol_serde::shape_user_identity_info_lite::de_user_identity_info_lite(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "PhoneConfig" => {
+                                builder = builder.set_phone_config(crate::protocol_serde::shape_user_phone_config::de_user_phone_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RoutingProfileId" => {
+                                builder = builder.set_routing_profile_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SecurityProfileIds" => {
+                                builder = builder.set_security_profile_ids(
+                                    crate::protocol_serde::shape_security_profile_ids::de_security_profile_ids(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Tags" => {
+                                builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
+                            }
+                            "Username" => {
+                                builder = builder.set_username(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "AutoAcceptConfigs" => {
+                                builder = builder.set_auto_accept_configs(crate::protocol_serde::shape_auto_accept_configs::de_auto_accept_configs(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "AfterContactWorkConfigs" => {
+                                builder = builder.set_after_contact_work_configs(
+                                    crate::protocol_serde::shape_after_contact_work_configs::de_after_contact_work_configs(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "PhoneNumberConfigs" => {
+                                builder = builder.set_phone_number_configs(
+                                    crate::protocol_serde::shape_phone_number_configs::de_phone_number_configs(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "PersistentConnectionConfigs" => {
+                                builder = builder.set_persistent_connection_configs(
+                                    crate::protocol_serde::shape_persistent_connection_configs::de_persistent_connection_configs(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "VoiceEnhancementConfigs" => {
+                                builder = builder.set_voice_enhancement_configs(
+                                    crate::protocol_serde::shape_voice_enhancement_configs::de_voice_enhancement_configs(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "DirectoryUserId" => {
-                            builder = builder.set_directory_user_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "HierarchyGroupId" => {
-                            builder = builder.set_hierarchy_group_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Id" => {
-                            builder = builder.set_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "IdentityInfo" => {
-                            builder = builder.set_identity_info(crate::protocol_serde::shape_user_identity_info_lite::de_user_identity_info_lite(
-                                tokens, _value,
-                            )?);
-                        }
-                        "PhoneConfig" => {
-                            builder = builder.set_phone_config(crate::protocol_serde::shape_user_phone_config::de_user_phone_config(tokens, _value)?);
-                        }
-                        "RoutingProfileId" => {
-                            builder = builder.set_routing_profile_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SecurityProfileIds" => {
-                            builder = builder.set_security_profile_ids(crate::protocol_serde::shape_security_profile_ids::de_security_profile_ids(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
-                        }
-                        "Username" => {
-                            builder = builder.set_username(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "AutoAcceptConfigs" => {
-                            builder = builder
-                                .set_auto_accept_configs(crate::protocol_serde::shape_auto_accept_configs::de_auto_accept_configs(tokens, _value)?);
-                        }
-                        "AfterContactWorkConfigs" => {
-                            builder = builder.set_after_contact_work_configs(
-                                crate::protocol_serde::shape_after_contact_work_configs::de_after_contact_work_configs(tokens, _value)?,
-                            );
-                        }
-                        "PhoneNumberConfigs" => {
-                            builder = builder.set_phone_number_configs(crate::protocol_serde::shape_phone_number_configs::de_phone_number_configs(
-                                tokens, _value,
-                            )?);
-                        }
-                        "PersistentConnectionConfigs" => {
-                            builder = builder.set_persistent_connection_configs(
-                                crate::protocol_serde::shape_persistent_connection_configs::de_persistent_connection_configs(tokens, _value)?,
-                            );
-                        }
-                        "VoiceEnhancementConfigs" => {
-                            builder = builder.set_voice_enhancement_configs(
-                                crate::protocol_serde::shape_voice_enhancement_configs::de_voice_enhancement_configs(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

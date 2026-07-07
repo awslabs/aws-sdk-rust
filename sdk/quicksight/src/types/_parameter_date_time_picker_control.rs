@@ -12,6 +12,8 @@ pub struct ParameterDateTimePickerControl {
     pub source_parameter_name: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterDateTimePickerControl {
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
@@ -33,6 +35,10 @@ impl ParameterDateTimePickerControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::DateTimePickerControlDisplayOptions> {
         self.display_options.as_ref()
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl ParameterDateTimePickerControl {
     /// Creates a new builder-style object to manufacture [`ParameterDateTimePickerControl`](crate::types::ParameterDateTimePickerControl).
@@ -49,6 +55,7 @@ pub struct ParameterDateTimePickerControlBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) source_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterDateTimePickerControlBuilder {
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
@@ -67,7 +74,6 @@ impl ParameterDateTimePickerControlBuilder {
         &self.parameter_control_id
     }
     /// <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -110,10 +116,23 @@ impl ParameterDateTimePickerControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::DateTimePickerControlDisplayOptions> {
         &self.display_options
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`ParameterDateTimePickerControl`](crate::types::ParameterDateTimePickerControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_control_id`](crate::types::builders::ParameterDateTimePickerControlBuilder::parameter_control_id)
-    /// - [`title`](crate::types::builders::ParameterDateTimePickerControlBuilder::title)
     /// - [`source_parameter_name`](crate::types::builders::ParameterDateTimePickerControlBuilder::source_parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterDateTimePickerControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterDateTimePickerControl {
@@ -123,12 +142,7 @@ impl ParameterDateTimePickerControlBuilder {
                     "parameter_control_id was not specified but it is required when building ParameterDateTimePickerControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ParameterDateTimePickerControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_parameter_name: self.source_parameter_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_parameter_name",
@@ -136,6 +150,7 @@ impl ParameterDateTimePickerControlBuilder {
                 )
             })?,
             display_options: self.display_options,
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

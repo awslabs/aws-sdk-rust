@@ -2,10 +2,16 @@
 pub(crate) fn de_medical_scribe_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MedicalScribeJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,11 +43,11 @@ where
                             );
                         }
                         "Media" => {
-                            builder = builder.set_media(crate::protocol_serde::shape_media::de_media(tokens, _value)?);
+                            builder = builder.set_media(crate::protocol_serde::shape_media::de_media(tokens, _value, depth + 1)?);
                         }
                         "MedicalScribeOutput" => {
                             builder = builder.set_medical_scribe_output(
-                                crate::protocol_serde::shape_medical_scribe_output::de_medical_scribe_output(tokens, _value)?,
+                                crate::protocol_serde::shape_medical_scribe_output::de_medical_scribe_output(tokens, _value, depth + 1)?,
                             );
                         }
                         "StartTime" => {
@@ -71,7 +77,9 @@ where
                         }
                         "Settings" => {
                             builder = builder.set_settings(crate::protocol_serde::shape_medical_scribe_settings::de_medical_scribe_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DataAccessRoleArn" => {
@@ -84,7 +92,9 @@ where
                         "ChannelDefinitions" => {
                             builder = builder.set_channel_definitions(
                                 crate::protocol_serde::shape_medical_scribe_channel_definitions::de_medical_scribe_channel_definitions(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -93,7 +103,7 @@ where
                                 .set_medical_scribe_context_provided(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

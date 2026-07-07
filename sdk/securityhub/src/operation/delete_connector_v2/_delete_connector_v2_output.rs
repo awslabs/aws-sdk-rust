@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectorV2Output {
+    /// <p>The enablement status of the connector after deletion.</p>
+    pub enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
     _request_id: Option<String>,
+}
+impl DeleteConnectorV2Output {
+    /// <p>The enablement status of the connector after deletion.</p>
+    pub fn enablement_status(&self) -> ::std::option::Option<&crate::types::EnablementStatus> {
+        self.enablement_status.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteConnectorV2Output {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,24 @@ impl DeleteConnectorV2Output {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteConnectorV2OutputBuilder {
+    pub(crate) enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
     _request_id: Option<String>,
 }
 impl DeleteConnectorV2OutputBuilder {
+    /// <p>The enablement status of the connector after deletion.</p>
+    pub fn enablement_status(mut self, input: crate::types::EnablementStatus) -> Self {
+        self.enablement_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enablement status of the connector after deletion.</p>
+    pub fn set_enablement_status(mut self, input: ::std::option::Option<crate::types::EnablementStatus>) -> Self {
+        self.enablement_status = input;
+        self
+    }
+    /// <p>The enablement status of the connector after deletion.</p>
+    pub fn get_enablement_status(&self) -> &::std::option::Option<crate::types::EnablementStatus> {
+        &self.enablement_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +59,7 @@ impl DeleteConnectorV2OutputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectorV2Output`](crate::operation::delete_connector_v2::DeleteConnectorV2Output).
     pub fn build(self) -> crate::operation::delete_connector_v2::DeleteConnectorV2Output {
         crate::operation::delete_connector_v2::DeleteConnectorV2Output {
+            enablement_status: self.enablement_status,
             _request_id: self._request_id,
         }
     }

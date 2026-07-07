@@ -23,7 +23,7 @@ impl crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInput
 /// Fluent builder constructing a request to `CreateKnowledgeBase`.
 ///
 /// <p>Creates a knowledge base. A knowledge base contains your data sources so that Large Language Models (LLMs) can use your data. To create a knowledge base, you must first set up your data sources and configure a supported vector store. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowlege-base-prereq.html">Set up a knowledge base</a>.</p><note>
-/// <p>If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon OpenSearch Service, use the console. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create a knowledge base</a>.</p>
+/// <p>To create a managed knowledge base, provide a <code>managedKnowledgeBaseConfiguration</code> during creation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-build-managed.html">Build a managed knowledge base</a>.</p>
 /// </note>
 /// <ul>
 /// <li>
@@ -31,9 +31,11 @@ impl crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInput
 /// <li>
 /// <p>Provide the Amazon Resource Name (ARN) with permissions to create a knowledge base in the <code>roleArn</code> field.</p></li>
 /// <li>
-/// <p>Provide the embedding model to use in the <code>embeddingModelArn</code> field in the <code>knowledgeBaseConfiguration</code> object.</p></li>
+/// <p>For managed knowledge bases, set <code>embeddingModelType</code> to <code>MANAGED</code> to use the service-managed embedding model, or <code>CUSTOM</code> with an <code>embeddingModelArn</code> to use your own. To use your own KMS key for encryption, provide the ARN in <code>serverSideEncryptionConfiguration</code>. No vector store configuration is required for managed knowledge bases.</p></li>
 /// <li>
-/// <p>Provide the configuration for your vector store in the <code>storageConfiguration</code> object.</p>
+/// <p>For self-managed knowledge bases, provide the embedding model to use in the <code>embeddingModelArn</code> field in the <code>knowledgeBaseConfiguration</code> object.</p></li>
+/// <li>
+/// <p>For self-managed knowledge bases, provide the configuration for your vector store in the <code>storageConfiguration</code> object.</p>
 /// <ul>
 /// <li>
 /// <p>For an Amazon OpenSearch Service database, use the <code>opensearchServerlessConfiguration</code> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create a vector store in Amazon OpenSearch Service</a>.</p></li>

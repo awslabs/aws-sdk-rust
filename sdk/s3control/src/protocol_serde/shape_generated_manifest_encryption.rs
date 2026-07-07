@@ -19,7 +19,11 @@ pub fn ser_generated_manifest_encryption(
 #[allow(clippy::needless_question_mark)]
 pub fn de_generated_manifest_encryption(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::GeneratedManifestEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::GeneratedManifestEncryption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -27,7 +31,7 @@ pub fn de_generated_manifest_encryption(
             s if s.matches("SSE-S3") /* SSES3 com.amazonaws.s3control#GeneratedManifestEncryption$SSES3 */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_sses3_encryption::de_sses3_encryption(&mut tag)
+                        crate::protocol_serde::shape_sses3_encryption::de_sses3_encryption(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -37,7 +41,7 @@ pub fn de_generated_manifest_encryption(
             s if s.matches("SSE-KMS") /* SSEKMS com.amazonaws.s3control#GeneratedManifestEncryption$SSEKMS */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_ssekms_encryption::de_ssekms_encryption(&mut tag)
+                        crate::protocol_serde::shape_ssekms_encryption::de_ssekms_encryption(&mut tag, depth + 1)
                         ?
                     )
                 ;

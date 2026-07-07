@@ -76,10 +76,16 @@ pub fn ser_recurrence_settings(
 pub(crate) fn de_recurrence_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecurrenceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -90,14 +96,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MonthlySettings" => {
-                            builder =
-                                builder.set_monthly_settings(crate::protocol_serde::shape_monthly_settings::de_monthly_settings(tokens, _value)?);
+                            builder = builder.set_monthly_settings(crate::protocol_serde::shape_monthly_settings::de_monthly_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "WeeklySettings" => {
-                            builder = builder.set_weekly_settings(crate::protocol_serde::shape_weekly_settings::de_weekly_settings(tokens, _value)?);
+                            builder = builder.set_weekly_settings(crate::protocol_serde::shape_weekly_settings::de_weekly_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DailySettings" => {
-                            builder = builder.set_daily_settings(crate::protocol_serde::shape_daily_settings::de_daily_settings(tokens, _value)?);
+                            builder = builder.set_daily_settings(crate::protocol_serde::shape_daily_settings::de_daily_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "NumberOfOnCalls" => {
                             builder = builder.set_number_of_on_calls(
@@ -107,8 +124,11 @@ where
                             );
                         }
                         "ShiftCoverages" => {
-                            builder = builder
-                                .set_shift_coverages(crate::protocol_serde::shape_shift_coverages_map::de_shift_coverages_map(tokens, _value)?);
+                            builder = builder.set_shift_coverages(crate::protocol_serde::shape_shift_coverages_map::de_shift_coverages_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RecurrenceMultiplier" => {
                             builder = builder.set_recurrence_multiplier(

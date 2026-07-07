@@ -13,11 +13,11 @@ pub struct UpdateFeedOutput {
     pub data_endpoints: ::std::vec::Vec<::std::string::String>,
     /// <p>The array of outputs in the feed. You might have left this array unchanged, or you might have changed it.</p>
     pub outputs: ::std::vec::Vec<crate::types::GetOutput>,
-    /// <p>The status of the output.</p>
+    /// <p>The status of the feed.</p>
     pub status: crate::types::FeedStatus,
-    /// <p>True means that the output was originally created in the feed by the AssociateFeed operation. False means it was created using CreateFeed or UpdateFeed. You will need this value if you use the UpdateFeed operation to modify the list of outputs in the feed.</p>
+    /// <p>Information about the resource that is associated with the feed, if any.</p>
     pub association: ::std::option::Option<crate::types::FeedAssociation>,
-    /// <p>The name of the resource currently associated with the feed, if any.</p>
+    /// <p>The tags associated with the feed.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -47,15 +47,15 @@ impl UpdateFeedOutput {
         use std::ops::Deref;
         self.outputs.deref()
     }
-    /// <p>The status of the output.</p>
+    /// <p>The status of the feed.</p>
     pub fn status(&self) -> &crate::types::FeedStatus {
         &self.status
     }
-    /// <p>True means that the output was originally created in the feed by the AssociateFeed operation. False means it was created using CreateFeed or UpdateFeed. You will need this value if you use the UpdateFeed operation to modify the list of outputs in the feed.</p>
+    /// <p>Information about the resource that is associated with the feed, if any.</p>
     pub fn association(&self) -> ::std::option::Option<&crate::types::FeedAssociation> {
         self.association.as_ref()
     }
-    /// <p>The name of the resource currently associated with the feed, if any.</p>
+    /// <p>The tags associated with the feed.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -172,32 +172,32 @@ impl UpdateFeedOutputBuilder {
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetOutput>> {
         &self.outputs
     }
-    /// <p>The status of the output.</p>
+    /// <p>The status of the feed.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::FeedStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the output.</p>
+    /// <p>The status of the feed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeedStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the output.</p>
+    /// <p>The status of the feed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeedStatus> {
         &self.status
     }
-    /// <p>True means that the output was originally created in the feed by the AssociateFeed operation. False means it was created using CreateFeed or UpdateFeed. You will need this value if you use the UpdateFeed operation to modify the list of outputs in the feed.</p>
+    /// <p>Information about the resource that is associated with the feed, if any.</p>
     pub fn association(mut self, input: crate::types::FeedAssociation) -> Self {
         self.association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>True means that the output was originally created in the feed by the AssociateFeed operation. False means it was created using CreateFeed or UpdateFeed. You will need this value if you use the UpdateFeed operation to modify the list of outputs in the feed.</p>
+    /// <p>Information about the resource that is associated with the feed, if any.</p>
     pub fn set_association(mut self, input: ::std::option::Option<crate::types::FeedAssociation>) -> Self {
         self.association = input;
         self
     }
-    /// <p>True means that the output was originally created in the feed by the AssociateFeed operation. False means it was created using CreateFeed or UpdateFeed. You will need this value if you use the UpdateFeed operation to modify the list of outputs in the feed.</p>
+    /// <p>Information about the resource that is associated with the feed, if any.</p>
     pub fn get_association(&self) -> &::std::option::Option<crate::types::FeedAssociation> {
         &self.association
     }
@@ -205,19 +205,19 @@ impl UpdateFeedOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The name of the resource currently associated with the feed, if any.</p>
+    /// <p>The tags associated with the feed.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The name of the resource currently associated with the feed, if any.</p>
+    /// <p>The tags associated with the feed.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The name of the resource currently associated with the feed, if any.</p>
+    /// <p>The tags associated with the feed.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

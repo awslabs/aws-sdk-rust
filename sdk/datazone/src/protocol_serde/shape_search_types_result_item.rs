@@ -2,10 +2,16 @@
 pub(crate) fn de_search_types_result_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SearchTypesResultItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,19 +37,19 @@ where
                     }
                     variant = match key.as_ref() {
                         "assetTypeItem" => Some(crate::types::SearchTypesResultItem::AssetTypeItem(
-                            crate::protocol_serde::shape_asset_type_item::de_asset_type_item(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_asset_type_item::de_asset_type_item(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'assetTypeItem' cannot be null")
                             })?,
                         )),
                         "formTypeItem" => Some(crate::types::SearchTypesResultItem::FormTypeItem(
-                            crate::protocol_serde::shape_form_type_data::de_form_type_data(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_form_type_data::de_form_type_data(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'formTypeItem' cannot be null")
                             })?,
                         )),
                         "lineageNodeTypeItem" => Some(crate::types::SearchTypesResultItem::LineageNodeTypeItem(
-                            crate::protocol_serde::shape_lineage_node_type_item::de_lineage_node_type_item(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lineageNodeTypeItem' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_lineage_node_type_item::de_lineage_node_type_item(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lineageNodeTypeItem' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -113,6 +113,8 @@ pub fn de_list_stack_instance_resource_drifts(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListStackInstanceResourceDriftsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListStackInstanceResourceDriftsResponse got {start_el:?}"
@@ -130,7 +132,7 @@ pub fn de_list_stack_instance_resource_drifts(
             s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation.synthetic#ListStackInstanceResourceDriftsOutput$Summaries */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stack_instance_resource_drifts_summaries::de_stack_instance_resource_drifts_summaries(&mut tag)
+                        crate::protocol_serde::shape_stack_instance_resource_drifts_summaries::de_stack_instance_resource_drifts_summaries(&mut tag, depth + 1)
                         ?
                     )
                 ;

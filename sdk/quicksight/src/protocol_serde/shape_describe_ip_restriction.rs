@@ -131,45 +131,53 @@ pub(crate) fn de_describe_ip_restriction(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "AwsAccountId" => {
-                    builder = builder.set_aws_account_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "AwsAccountId" => {
+                        builder = builder.set_aws_account_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "Enabled" => {
+                        builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    }
+                    "IpRestrictionRuleMap" => {
+                        builder = builder.set_ip_restriction_rule_map(
+                            crate::protocol_serde::shape_ip_restriction_rule_map::de_ip_restriction_rule_map(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "RequestId" => {
+                        builder = builder.set_request_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "VpcEndpointIdRestrictionRuleMap" => {
+                        builder = builder.set_vpc_endpoint_id_restriction_rule_map(
+                            crate::protocol_serde::shape_vpc_endpoint_id_restriction_rule_map::de_vpc_endpoint_id_restriction_rule_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
+                        );
+                    }
+                    "VpcIdRestrictionRuleMap" => {
+                        builder = builder.set_vpc_id_restriction_rule_map(
+                            crate::protocol_serde::shape_vpc_id_restriction_rule_map::de_vpc_id_restriction_rule_map(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "Enabled" => {
-                    builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                "IpRestrictionRuleMap" => {
-                    builder = builder.set_ip_restriction_rule_map(crate::protocol_serde::shape_ip_restriction_rule_map::de_ip_restriction_rule_map(
-                        tokens, _value,
-                    )?);
-                }
-                "RequestId" => {
-                    builder = builder.set_request_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "VpcEndpointIdRestrictionRuleMap" => {
-                    builder = builder.set_vpc_endpoint_id_restriction_rule_map(
-                        crate::protocol_serde::shape_vpc_endpoint_id_restriction_rule_map::de_vpc_endpoint_id_restriction_rule_map(tokens, _value)?,
-                    );
-                }
-                "VpcIdRestrictionRuleMap" => {
-                    builder = builder.set_vpc_id_restriction_rule_map(
-                        crate::protocol_serde::shape_vpc_id_restriction_rule_map::de_vpc_id_restriction_rule_map(tokens, _value)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

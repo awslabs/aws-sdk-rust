@@ -94,6 +94,19 @@ pub fn ser_create_flow_logs_input_input_input(
     if let Some(var_34) = &input.destination_options {
         crate::protocol_serde::shape_destination_options_request::ser_destination_options_request(scope_33, var_34)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_35 = writer.prefix("TagFieldSpecification");
+    if let Some(var_36) = &input.tag_field_specifications {
+        if !var_36.is_empty() {
+            let mut list_38 = scope_35.start_list(true, Some("item"));
+            for item_37 in var_36 {
+                #[allow(unused_mut)]
+                let mut entry_39 = list_38.entry();
+                crate::protocol_serde::shape_tag_field_specification_request::ser_tag_field_specification_request(entry_39, item_37)?;
+            }
+            list_38.finish();
+        }
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

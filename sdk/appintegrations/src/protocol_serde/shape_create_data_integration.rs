@@ -155,6 +155,8 @@ pub(crate) fn de_create_data_integration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -182,7 +184,11 @@ pub(crate) fn de_create_data_integration(
                     );
                 }
                 "FileConfiguration" => {
-                    builder = builder.set_file_configuration(crate::protocol_serde::shape_file_configuration::de_file_configuration(tokens, _value)?);
+                    builder = builder.set_file_configuration(crate::protocol_serde::shape_file_configuration::de_file_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Id" => {
                     builder = builder.set_id(
@@ -207,12 +213,16 @@ pub(crate) fn de_create_data_integration(
                 }
                 "ObjectConfiguration" => {
                     builder = builder.set_object_configuration(crate::protocol_serde::shape_object_configuration::de_object_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ScheduleConfiguration" => {
                     builder = builder.set_schedule_configuration(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "SourceURI" => {
@@ -223,7 +233,7 @@ pub(crate) fn de_create_data_integration(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -120,6 +120,8 @@ pub fn de_describe_cache_parameters(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeCacheParametersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeCacheParametersResponse got {start_el:?}"
@@ -150,7 +152,7 @@ pub fn de_describe_cache_parameters(
             s if s.matches("Parameters") /* Parameters com.amazonaws.elasticache.synthetic#DescribeCacheParametersOutput$Parameters */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_parameters_list::de_parameters_list(&mut tag)
+                        crate::protocol_serde::shape_parameters_list::de_parameters_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -160,7 +162,7 @@ pub fn de_describe_cache_parameters(
             s if s.matches("CacheNodeTypeSpecificParameters") /* CacheNodeTypeSpecificParameters com.amazonaws.elasticache.synthetic#DescribeCacheParametersOutput$CacheNodeTypeSpecificParameters */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_cache_node_type_specific_parameters_list::de_cache_node_type_specific_parameters_list(&mut tag)
+                        crate::protocol_serde::shape_cache_node_type_specific_parameters_list::de_cache_node_type_specific_parameters_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

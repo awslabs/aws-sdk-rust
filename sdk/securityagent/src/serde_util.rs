@@ -53,11 +53,77 @@ pub(crate) fn add_artifact_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_create_security_requirements_output_output_correct_errors(
+    mut builder: crate::operation::batch_create_security_requirements::builders::BatchCreateSecurityRequirementsOutputBuilder,
+) -> crate::operation::batch_create_security_requirements::builders::BatchCreateSecurityRequirementsOutputBuilder {
+    if builder.security_requirements.is_none() {
+        builder.security_requirements = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_delete_security_requirements_output_output_correct_errors(
+    mut builder: crate::operation::batch_delete_security_requirements::builders::BatchDeleteSecurityRequirementsOutputBuilder,
+) -> crate::operation::batch_delete_security_requirements::builders::BatchDeleteSecurityRequirementsOutputBuilder {
+    if builder.deleted_security_requirement_names.is_none() {
+        builder.deleted_security_requirement_names = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_artifact_metadata_output_output_correct_errors(
     mut builder: crate::operation::batch_get_artifact_metadata::builders::BatchGetArtifactMetadataOutputBuilder,
 ) -> crate::operation::batch_get_artifact_metadata::builders::BatchGetArtifactMetadataOutputBuilder {
     if builder.artifact_metadata_list.is_none() {
         builder.artifact_metadata_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_security_requirements_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_security_requirements::builders::BatchGetSecurityRequirementsOutputBuilder,
+) -> crate::operation::batch_get_security_requirements::builders::BatchGetSecurityRequirementsOutputBuilder {
+    if builder.security_requirements.is_none() {
+        builder.security_requirements = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_security_requirements_output_output_correct_errors(
+    mut builder: crate::operation::batch_update_security_requirements::builders::BatchUpdateSecurityRequirementsOutputBuilder,
+) -> crate::operation::batch_update_security_requirements::builders::BatchUpdateSecurityRequirementsOutputBuilder {
+    if builder.updated_security_requirement_names.is_none() {
+        builder.updated_security_requirement_names = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
     }
     builder
 }
@@ -83,11 +149,11 @@ pub(crate) fn create_application_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn conflict_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
-) -> crate::types::error::builders::ConflictExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
+pub(crate) fn create_code_review_output_output_correct_errors(
+    mut builder: crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder,
+) -> crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
     }
     builder
 }
@@ -97,6 +163,33 @@ pub(crate) fn create_integration_output_output_correct_errors(
 ) -> crate::operation::create_integration::builders::CreateIntegrationOutputBuilder {
     if builder.integration_id.is_none() {
         builder.integration_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_private_connection_output_output_correct_errors(
+    mut builder: crate::operation::create_private_connection::builders::CreatePrivateConnectionOutputBuilder,
+) -> crate::operation::create_private_connection::builders::CreatePrivateConnectionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PrivateConnectionType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PrivateConnectionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_security_requirement_pack_output_output_correct_errors(
+    mut builder: crate::operation::create_security_requirement_pack::builders::CreateSecurityRequirementPackOutputBuilder,
+) -> crate::operation::create_security_requirement_pack::builders::CreateSecurityRequirementPackOutputBuilder {
+    if builder.pack_id.is_none() {
+        builder.pack_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SecurityRequirementPackStatus>().ok()
     }
     builder
 }
@@ -112,6 +205,57 @@ pub(crate) fn create_target_domain_output_output_correct_errors(
     }
     if builder.verification_status.is_none() {
         builder.verification_status = "no value was set".parse::<crate::types::TargetDomainStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_threat_output_output_correct_errors(
+    mut builder: crate::operation::create_threat::builders::CreateThreatOutputBuilder,
+) -> crate::operation::create_threat::builders::CreateThreatOutputBuilder {
+    if builder.threat_id.is_none() {
+        builder.threat_id = Some(Default::default())
+    }
+    if builder.threat_job_id.is_none() {
+        builder.threat_job_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_threat_model_output_output_correct_errors(
+    mut builder: crate::operation::create_threat_model::builders::CreateThreatModelOutputBuilder,
+) -> crate::operation::create_threat_model::builders::CreateThreatModelOutputBuilder {
+    if builder.threat_model_id.is_none() {
+        builder.threat_model_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_private_connection_output_output_correct_errors(
+    mut builder: crate::operation::delete_private_connection::builders::DeletePrivateConnectionOutputBuilder,
+) -> crate::operation::delete_private_connection::builders::DeletePrivateConnectionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PrivateConnectionType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PrivateConnectionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn describe_private_connection_output_output_correct_errors(
+    mut builder: crate::operation::describe_private_connection::builders::DescribePrivateConnectionOutputBuilder,
+) -> crate::operation::describe_private_connection::builders::DescribePrivateConnectionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PrivateConnectionType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PrivateConnectionStatus>().ok()
     }
     builder
 }
@@ -166,6 +310,42 @@ pub(crate) fn get_integration_output_output_correct_errors(
     }
     if builder.provider_type.is_none() {
         builder.provider_type = "no value was set".parse::<crate::types::ProviderType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_security_requirement_pack_output_output_correct_errors(
+    mut builder: crate::operation::get_security_requirement_pack::builders::GetSecurityRequirementPackOutputBuilder,
+) -> crate::operation::get_security_requirement_pack::builders::GetSecurityRequirementPackOutputBuilder {
+    if builder.pack_id.is_none() {
+        builder.pack_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.management_type.is_none() {
+        builder.management_type = "no value was set".parse::<crate::types::ManagementType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SecurityRequirementPackStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn import_security_requirements_output_output_correct_errors(
+    mut builder: crate::operation::import_security_requirements::builders::ImportSecurityRequirementsOutputBuilder,
+) -> crate::operation::import_security_requirements::builders::ImportSecurityRequirementsOutputBuilder {
+    if builder.pack_id.is_none() {
+        builder.pack_id = Some(Default::default())
+    }
+    if builder.import_status.is_none() {
+        builder.import_status = "no value was set".parse::<crate::types::SecurityRequirementPackImportStatus>().ok()
     }
     builder
 }
@@ -227,6 +407,54 @@ pub(crate) fn list_memberships_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_private_connections_output_output_correct_errors(
+    mut builder: crate::operation::list_private_connections::builders::ListPrivateConnectionsOutputBuilder,
+) -> crate::operation::list_private_connections::builders::ListPrivateConnectionsOutputBuilder {
+    if builder.private_connections.is_none() {
+        builder.private_connections = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_security_requirement_packs_output_output_correct_errors(
+    mut builder: crate::operation::list_security_requirement_packs::builders::ListSecurityRequirementPacksOutputBuilder,
+) -> crate::operation::list_security_requirement_packs::builders::ListSecurityRequirementPacksOutputBuilder {
+    if builder.security_requirement_pack_summaries.is_none() {
+        builder.security_requirement_pack_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_security_requirements_output_output_correct_errors(
+    mut builder: crate::operation::list_security_requirements::builders::ListSecurityRequirementsOutputBuilder,
+) -> crate::operation::list_security_requirements::builders::ListSecurityRequirementsOutputBuilder {
+    if builder.security_requirement_summaries.is_none() {
+        builder.security_requirement_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_code_review_job_output_output_correct_errors(
+    mut builder: crate::operation::start_code_review_job::builders::StartCodeReviewJobOutputBuilder,
+) -> crate::operation::start_code_review_job::builders::StartCodeReviewJobOutputBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    if builder.code_review_job_id.is_none() {
+        builder.code_review_job_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_threat_model_job_output_output_correct_errors(
+    mut builder: crate::operation::start_threat_model_job::builders::StartThreatModelJobOutputBuilder,
+) -> crate::operation::start_threat_model_job::builders::StartThreatModelJobOutputBuilder {
+    if builder.threat_model_job_id.is_none() {
+        builder.threat_model_job_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_agent_space_output_output_correct_errors(
     mut builder: crate::operation::update_agent_space::builders::UpdateAgentSpaceOutputBuilder,
 ) -> crate::operation::update_agent_space::builders::UpdateAgentSpaceOutputBuilder {
@@ -248,6 +476,39 @@ pub(crate) fn update_application_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_code_review_output_output_correct_errors(
+    mut builder: crate::operation::update_code_review::builders::UpdateCodeReviewOutputBuilder,
+) -> crate::operation::update_code_review::builders::UpdateCodeReviewOutputBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_private_connection_certificate_output_output_correct_errors(
+    mut builder: crate::operation::update_private_connection_certificate::builders::UpdatePrivateConnectionCertificateOutputBuilder,
+) -> crate::operation::update_private_connection_certificate::builders::UpdatePrivateConnectionCertificateOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PrivateConnectionType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PrivateConnectionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_security_requirement_pack_output_output_correct_errors(
+    mut builder: crate::operation::update_security_requirement_pack::builders::UpdateSecurityRequirementPackOutputBuilder,
+) -> crate::operation::update_security_requirement_pack::builders::UpdateSecurityRequirementPackOutputBuilder {
+    if builder.pack_id.is_none() {
+        builder.pack_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_target_domain_output_output_correct_errors(
     mut builder: crate::operation::update_target_domain::builders::UpdateTargetDomainOutputBuilder,
 ) -> crate::operation::update_target_domain::builders::UpdateTargetDomainOutputBuilder {
@@ -259,6 +520,27 @@ pub(crate) fn update_target_domain_output_output_correct_errors(
     }
     if builder.verification_status.is_none() {
         builder.verification_status = "no value was set".parse::<crate::types::TargetDomainStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_threat_output_output_correct_errors(
+    mut builder: crate::operation::update_threat::builders::UpdateThreatOutputBuilder,
+) -> crate::operation::update_threat::builders::UpdateThreatOutputBuilder {
+    if builder.threat_id.is_none() {
+        builder.threat_id = Some(Default::default())
+    }
+    if builder.threat_job_id.is_none() {
+        builder.threat_job_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_threat_model_output_output_correct_errors(
+    mut builder: crate::operation::update_threat_model::builders::UpdateThreatModelOutputBuilder,
+) -> crate::operation::update_threat_model::builders::UpdateThreatModelOutputBuilder {
+    if builder.threat_model_id.is_none() {
+        builder.threat_model_id = Some(Default::default())
     }
     builder
 }
@@ -351,6 +633,139 @@ pub(crate) fn artifact_summary_correct_errors(
     }
     if builder.artifact_type.is_none() {
         builder.artifact_type = "no value was set".parse::<crate::types::ArtifactType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn batch_create_security_requirement_result_correct_errors(
+    mut builder: crate::types::builders::BatchCreateSecurityRequirementResultBuilder,
+) -> crate::types::builders::BatchCreateSecurityRequirementResultBuilder {
+    if builder.pack_id.is_none() {
+        builder.pack_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    if builder.evaluation.is_none() {
+        builder.evaluation = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn batch_get_security_requirement_result_correct_errors(
+    mut builder: crate::types::builders::BatchGetSecurityRequirementResultBuilder,
+) -> crate::types::builders::BatchGetSecurityRequirementResultBuilder {
+    if builder.pack_id.is_none() {
+        builder.pack_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    if builder.evaluation.is_none() {
+        builder.evaluation = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn batch_security_requirement_error_correct_errors(
+    mut builder: crate::types::builders::BatchSecurityRequirementErrorBuilder,
+) -> crate::types::builders::BatchSecurityRequirementErrorBuilder {
+    if builder.security_requirement_name.is_none() {
+        builder.security_requirement_name = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_review_correct_errors(mut builder: crate::types::builders::CodeReviewBuilder) -> crate::types::builders::CodeReviewBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    if builder.agent_space_id.is_none() {
+        builder.agent_space_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.assets.is_none() {
+        builder.assets = {
+            let builder = crate::types::builders::AssetsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn code_review_job_summary_correct_errors(
+    mut builder: crate::types::builders::CodeReviewJobSummaryBuilder,
+) -> crate::types::builders::CodeReviewJobSummaryBuilder {
+    if builder.code_review_job_id.is_none() {
+        builder.code_review_job_id = Some(Default::default())
+    }
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_review_job_task_correct_errors(
+    mut builder: crate::types::builders::CodeReviewJobTaskBuilder,
+) -> crate::types::builders::CodeReviewJobTaskBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_review_job_task_summary_correct_errors(
+    mut builder: crate::types::builders::CodeReviewJobTaskSummaryBuilder,
+) -> crate::types::builders::CodeReviewJobTaskSummaryBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_review_summary_correct_errors(
+    mut builder: crate::types::builders::CodeReviewSummaryBuilder,
+) -> crate::types::builders::CodeReviewSummaryBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    if builder.agent_space_id.is_none() {
+        builder.agent_space_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
     }
     builder
 }
@@ -504,6 +919,66 @@ pub(crate) fn pentest_summary_correct_errors(
     builder
 }
 
+pub(crate) fn private_connection_summary_correct_errors(
+    mut builder: crate::types::builders::PrivateConnectionSummaryBuilder,
+) -> crate::types::builders::PrivateConnectionSummaryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PrivateConnectionType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PrivateConnectionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn security_requirement_pack_summary_correct_errors(
+    mut builder: crate::types::builders::SecurityRequirementPackSummaryBuilder,
+) -> crate::types::builders::SecurityRequirementPackSummaryBuilder {
+    if builder.pack_id.is_none() {
+        builder.pack_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.management_type.is_none() {
+        builder.management_type = "no value was set".parse::<crate::types::ManagementType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SecurityRequirementPackStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn security_requirement_summary_correct_errors(
+    mut builder: crate::types::builders::SecurityRequirementSummaryBuilder,
+) -> crate::types::builders::SecurityRequirementSummaryBuilder {
+    if builder.pack_id.is_none() {
+        builder.pack_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn target_domain_correct_errors(mut builder: crate::types::builders::TargetDomainBuilder) -> crate::types::builders::TargetDomainBuilder {
     if builder.target_domain_id.is_none() {
         builder.target_domain_id = Some(Default::default())
@@ -540,6 +1015,70 @@ pub(crate) fn task_summary_correct_errors(mut builder: crate::types::builders::T
     builder
 }
 
+pub(crate) fn threat_model_correct_errors(mut builder: crate::types::builders::ThreatModelBuilder) -> crate::types::builders::ThreatModelBuilder {
+    if builder.threat_model_id.is_none() {
+        builder.threat_model_id = Some(Default::default())
+    }
+    if builder.agent_space_id.is_none() {
+        builder.agent_space_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.assets.is_none() {
+        builder.assets = {
+            let builder = crate::types::builders::AssetsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn threat_model_job_summary_correct_errors(
+    mut builder: crate::types::builders::ThreatModelJobSummaryBuilder,
+) -> crate::types::builders::ThreatModelJobSummaryBuilder {
+    if builder.threat_model_job_id.is_none() {
+        builder.threat_model_job_id = Some(Default::default())
+    }
+    if builder.threat_model_id.is_none() {
+        builder.threat_model_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn threat_model_job_task_correct_errors(
+    mut builder: crate::types::builders::ThreatModelJobTaskBuilder,
+) -> crate::types::builders::ThreatModelJobTaskBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn threat_model_job_task_summary_correct_errors(
+    mut builder: crate::types::builders::ThreatModelJobTaskSummaryBuilder,
+) -> crate::types::builders::ThreatModelJobTaskSummaryBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn threat_model_summary_correct_errors(
+    mut builder: crate::types::builders::ThreatModelSummaryBuilder,
+) -> crate::types::builders::ThreatModelSummaryBuilder {
+    if builder.threat_model_id.is_none() {
+        builder.threat_model_id = Some(Default::default())
+    }
+    if builder.agent_space_id.is_none() {
+        builder.agent_space_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {
@@ -561,6 +1100,18 @@ pub(crate) fn code_remediation_task_correct_errors(
     builder
 }
 
+pub(crate) fn integrated_document_correct_errors(
+    mut builder: crate::types::builders::IntegratedDocumentBuilder,
+) -> crate::types::builders::IntegratedDocumentBuilder {
+    if builder.integration_id.is_none() {
+        builder.integration_id = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn integrated_repository_correct_errors(
     mut builder: crate::types::builders::IntegratedRepositoryBuilder,
 ) -> crate::types::builders::IntegratedRepositoryBuilder {
@@ -569,6 +1120,46 @@ pub(crate) fn integrated_repository_correct_errors(
     }
     if builder.provider_resource_id.is_none() {
         builder.provider_resource_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bitbucket_repository_metadata_correct_errors(
+    mut builder: crate::types::builders::BitbucketRepositoryMetadataBuilder,
+) -> crate::types::builders::BitbucketRepositoryMetadataBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider_resource_id.is_none() {
+        builder.provider_resource_id = Some(Default::default())
+    }
+    if builder.workspace.is_none() {
+        builder.workspace = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_location_correct_errors(mut builder: crate::types::builders::CodeLocationBuilder) -> crate::types::builders::CodeLocationBuilder {
+    if builder.file_path.is_none() {
+        builder.file_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn confluence_document_metadata_correct_errors(
+    mut builder: crate::types::builders::ConfluenceDocumentMetadataBuilder,
+) -> crate::types::builders::ConfluenceDocumentMetadataBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider_resource_id.is_none() {
+        builder.provider_resource_id = Some(Default::default())
+    }
+    if builder.space_key.is_none() {
+        builder.space_key = Some(Default::default())
+    }
+    if builder.page_id.is_none() {
+        builder.page_id = Some(Default::default())
     }
     builder
 }
@@ -584,6 +1175,21 @@ pub(crate) fn git_hub_repository_metadata_correct_errors(
     }
     if builder.owner.is_none() {
         builder.owner = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn git_lab_repository_metadata_correct_errors(
+    mut builder: crate::types::builders::GitLabRepositoryMetadataBuilder,
+) -> crate::types::builders::GitLabRepositoryMetadataBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider_resource_id.is_none() {
+        builder.provider_resource_id = Some(Default::default())
+    }
+    if builder.namespace.is_none() {
+        builder.namespace = Some(Default::default())
     }
     builder
 }

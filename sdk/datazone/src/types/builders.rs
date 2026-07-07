@@ -17,6 +17,24 @@ pub use crate::types::_term_relations::TermRelationsBuilder;
 
 pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTargetBuilder;
 
+pub use crate::types::_environment_config::EnvironmentConfigBuilder;
+
+pub use crate::types::_notebook_error::NotebookErrorBuilder;
+
+pub use crate::types::_notebook_export_error::NotebookExportErrorBuilder;
+
+pub use crate::types::_compute_config::ComputeConfigBuilder;
+
+pub use crate::types::_network_config::NetworkConfigBuilder;
+
+pub use crate::types::_timeout_config::TimeoutConfigBuilder;
+
+pub use crate::types::_storage_config::StorageConfigBuilder;
+
+pub use crate::types::_trigger_source::TriggerSourceBuilder;
+
+pub use crate::types::_notebook_run_error::NotebookRunErrorBuilder;
+
 pub use crate::types::_rule_scope::RuleScopeBuilder;
 
 pub use crate::types::_accept_rule::AcceptRuleBuilder;
@@ -62,6 +80,12 @@ pub use crate::types::_data_product_item::DataProductItemBuilder;
 pub use crate::types::_asset_listing::AssetListingBuilder;
 
 pub use crate::types::_data_product_listing::DataProductListingBuilder;
+
+pub use crate::types::_cell_information::CellInformationBuilder;
+
+pub use crate::types::_package_config::PackageConfigBuilder;
+
+pub use crate::types::_s3_destination::S3DestinationBuilder;
 
 pub use crate::types::_domain_unit_target::DomainUnitTargetBuilder;
 
@@ -153,6 +177,8 @@ pub use crate::types::_spark_glue_properties_input::SparkGluePropertiesInputBuil
 
 pub use crate::types::_s3_properties_input::S3PropertiesInputBuilder;
 
+pub use crate::types::_snowflake_properties_input::SnowflakePropertiesInputBuilder;
+
 pub use crate::types::_amazon_q_properties_input::AmazonQPropertiesInputBuilder;
 
 pub use crate::types::_mlflow_properties_input::MlflowPropertiesInputBuilder;
@@ -162,6 +188,8 @@ pub use crate::types::_workflows_mwaa_properties_input::WorkflowsMwaaPropertiesI
 pub use crate::types::_workflows_serverless_properties_input::WorkflowsServerlessPropertiesInputBuilder;
 
 pub use crate::types::_lakehouse_properties_input::LakehousePropertiesInputBuilder;
+
+pub use crate::types::_vpc_properties_input::VpcPropertiesInputBuilder;
 
 pub use crate::types::_physical_endpoint::PhysicalEndpointBuilder;
 
@@ -181,6 +209,8 @@ pub use crate::types::_spark_glue_properties_output::SparkGluePropertiesOutputBu
 
 pub use crate::types::_s3_properties_output::S3PropertiesOutputBuilder;
 
+pub use crate::types::_snowflake_properties_output::SnowflakePropertiesOutputBuilder;
+
 pub use crate::types::_amazon_q_properties_output::AmazonQPropertiesOutputBuilder;
 
 pub use crate::types::_mlflow_properties_output::MlflowPropertiesOutputBuilder;
@@ -190,6 +220,8 @@ pub use crate::types::_workflows_mwaa_properties_output::WorkflowsMwaaProperties
 pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerlessPropertiesOutputBuilder;
 
 pub use crate::types::_lakehouse_properties_output::LakehousePropertiesOutputBuilder;
+
+pub use crate::types::_vpc_properties_output::VpcPropertiesOutputBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
@@ -311,11 +343,15 @@ pub use crate::types::_spark_emr_properties_patch::SparkEmrPropertiesPatchBuilde
 
 pub use crate::types::_s3_properties_patch::S3PropertiesPatchBuilder;
 
+pub use crate::types::_snowflake_properties_patch::SnowflakePropertiesPatchBuilder;
+
 pub use crate::types::_amazon_q_properties_patch::AmazonQPropertiesPatchBuilder;
 
 pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatchBuilder;
 
 pub use crate::types::_lakehouse_properties_patch::LakehousePropertiesPatchBuilder;
+
+pub use crate::types::_vpc_properties_patch::VpcPropertiesPatchBuilder;
 
 pub use crate::types::_domain_unit_user_properties::DomainUnitUserPropertiesBuilder;
 
@@ -349,11 +385,19 @@ pub use crate::types::_domain_unit_summary::DomainUnitSummaryBuilder;
 
 pub use crate::types::_environment_blueprint_configuration_item::EnvironmentBlueprintConfigurationItemBuilder;
 
+pub use crate::types::_put_resource_configuration::PutResourceConfigurationBuilder;
+
+pub use crate::types::_resource_configuration::ResourceConfigurationBuilder;
+
 pub use crate::types::_import::ImportBuilder;
 
 pub use crate::types::_metadata_generation_run_item::MetadataGenerationRunItemBuilder;
 
 pub use crate::types::_metadata_generation_run_type_stat::MetadataGenerationRunTypeStatBuilder;
+
+pub use crate::types::_notebook_summary::NotebookSummaryBuilder;
+
+pub use crate::types::_notebook_run_summary::NotebookRunSummaryBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
 
@@ -369,6 +413,12 @@ pub use crate::types::_redshift_lineage_sync_configuration_input::RedshiftLineag
 
 pub use crate::types::_spark_glue_args::SparkGlueArgsBuilder;
 
+pub use crate::types::_connectivity_properties::ConnectivityPropertiesBuilder;
+
+pub use crate::types::_identity_mapping::IdentityMappingBuilder;
+
+pub use crate::types::_lineage_sync_input::LineageSyncInputBuilder;
+
 pub use crate::types::_glue_connection::GlueConnectionBuilder;
 
 pub use crate::types::_redshift_lineage_sync_configuration_output::RedshiftLineageSyncConfigurationOutputBuilder;
@@ -376,6 +426,8 @@ pub use crate::types::_redshift_lineage_sync_configuration_output::RedshiftLinea
 pub use crate::types::_username_password::UsernamePasswordBuilder;
 
 pub use crate::types::_managed_endpoint_credentials::ManagedEndpointCredentialsBuilder;
+
+pub use crate::types::_lineage_sync_output::LineageSyncOutputBuilder;
 
 pub use crate::types::_environment_resolved_account::EnvironmentResolvedAccountBuilder;
 
@@ -426,6 +478,8 @@ pub use crate::types::_form_type_data::FormTypeDataBuilder;
 pub use crate::types::_lineage_node_type_item::LineageNodeTypeItemBuilder;
 
 pub use crate::types::_glue_connection_patch::GlueConnectionPatchBuilder;
+
+pub use crate::types::_connectivity_properties_patch::ConnectivityPropertiesPatchBuilder;
 
 pub use crate::types::_detailed_glossary_term::DetailedGlossaryTermBuilder;
 

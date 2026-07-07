@@ -2,10 +2,16 @@
 pub(crate) fn de_signing_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SigningJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,14 +29,18 @@ where
                             );
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value, depth + 1)?);
                         }
                         "signedObject" => {
-                            builder = builder.set_signed_object(crate::protocol_serde::shape_signed_object::de_signed_object(tokens, _value)?);
+                            builder =
+                                builder.set_signed_object(crate::protocol_serde::shape_signed_object::de_signed_object(tokens, _value, depth + 1)?);
                         }
                         "signingMaterial" => {
-                            builder =
-                                builder.set_signing_material(crate::protocol_serde::shape_signing_material::de_signing_material(tokens, _value)?);
+                            builder = builder.set_signing_material(crate::protocol_serde::shape_signing_material::de_signing_material(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

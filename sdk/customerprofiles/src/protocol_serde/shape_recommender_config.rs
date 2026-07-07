@@ -37,16 +37,44 @@ pub fn ser_recommender_config(
         }
         object_7.finish();
     }
+    if let Some(var_12) = &input.excluded_columns {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("ExcludedColumns").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                let mut array_16 = object_13.key(key_14.as_str()).start_array();
+                for item_17 in value_15 {
+                    {
+                        array_16.value().string(item_17.as_str());
+                    }
+                }
+                array_16.finish();
+            }
+        }
+        object_13.finish();
+    }
+    if let Some(var_18) = &input.diversity_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("DiversityConfig").start_object();
+        crate::protocol_serde::shape_diversity_config::ser_diversity_config(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_recommender_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecommenderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -57,7 +85,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EventsConfig" => {
-                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens, _value)?);
+                            builder =
+                                builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens, _value, depth + 1)?);
                         }
                         "TrainingFrequency" => {
                             builder = builder.set_training_frequency(
@@ -67,12 +96,32 @@ where
                             );
                         }
                         "InferenceConfig" => {
-                            builder =
-                                builder.set_inference_config(crate::protocol_serde::shape_inference_config::de_inference_config(tokens, _value)?);
+                            builder = builder.set_inference_config(crate::protocol_serde::shape_inference_config::de_inference_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IncludedColumns" => {
-                            builder =
-                                builder.set_included_columns(crate::protocol_serde::shape_included_columns::de_included_columns(tokens, _value)?);
+                            builder = builder.set_included_columns(crate::protocol_serde::shape_included_columns::de_included_columns(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "ExcludedColumns" => {
+                            builder = builder.set_excluded_columns(crate::protocol_serde::shape_included_columns::de_included_columns(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "DiversityConfig" => {
+                            builder = builder.set_diversity_config(crate::protocol_serde::shape_diversity_config::de_diversity_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

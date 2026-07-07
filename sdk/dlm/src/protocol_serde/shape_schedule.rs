@@ -93,10 +93,16 @@ pub fn ser_schedule(
 pub(crate) fn de_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Schedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -117,35 +123,50 @@ where
                             builder = builder.set_copy_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "TagsToAdd" => {
-                            builder = builder.set_tags_to_add(crate::protocol_serde::shape_tags_to_add_list::de_tags_to_add_list(tokens, _value)?);
+                            builder = builder.set_tags_to_add(crate::protocol_serde::shape_tags_to_add_list::de_tags_to_add_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "VariableTags" => {
-                            builder =
-                                builder.set_variable_tags(crate::protocol_serde::shape_variable_tags_list::de_variable_tags_list(tokens, _value)?);
+                            builder = builder.set_variable_tags(crate::protocol_serde::shape_variable_tags_list::de_variable_tags_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CreateRule" => {
-                            builder = builder.set_create_rule(crate::protocol_serde::shape_create_rule::de_create_rule(tokens, _value)?);
+                            builder = builder.set_create_rule(crate::protocol_serde::shape_create_rule::de_create_rule(tokens, _value, depth + 1)?);
                         }
                         "RetainRule" => {
-                            builder = builder.set_retain_rule(crate::protocol_serde::shape_retain_rule::de_retain_rule(tokens, _value)?);
+                            builder = builder.set_retain_rule(crate::protocol_serde::shape_retain_rule::de_retain_rule(tokens, _value, depth + 1)?);
                         }
                         "FastRestoreRule" => {
-                            builder =
-                                builder.set_fast_restore_rule(crate::protocol_serde::shape_fast_restore_rule::de_fast_restore_rule(tokens, _value)?);
+                            builder = builder.set_fast_restore_rule(crate::protocol_serde::shape_fast_restore_rule::de_fast_restore_rule(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CrossRegionCopyRules" => {
                             builder = builder.set_cross_region_copy_rules(
-                                crate::protocol_serde::shape_cross_region_copy_rules::de_cross_region_copy_rules(tokens, _value)?,
+                                crate::protocol_serde::shape_cross_region_copy_rules::de_cross_region_copy_rules(tokens, _value, depth + 1)?,
                             );
                         }
                         "ShareRules" => {
-                            builder = builder.set_share_rules(crate::protocol_serde::shape_share_rules::de_share_rules(tokens, _value)?);
+                            builder = builder.set_share_rules(crate::protocol_serde::shape_share_rules::de_share_rules(tokens, _value, depth + 1)?);
                         }
                         "DeprecateRule" => {
-                            builder = builder.set_deprecate_rule(crate::protocol_serde::shape_deprecate_rule::de_deprecate_rule(tokens, _value)?);
+                            builder = builder.set_deprecate_rule(crate::protocol_serde::shape_deprecate_rule::de_deprecate_rule(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ArchiveRule" => {
-                            builder = builder.set_archive_rule(crate::protocol_serde::shape_archive_rule::de_archive_rule(tokens, _value)?);
+                            builder =
+                                builder.set_archive_rule(crate::protocol_serde::shape_archive_rule::de_archive_rule(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

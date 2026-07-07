@@ -48,5 +48,8 @@ pub fn ser_put_procurement_portal_preference_input_input(
         }
         array_13.finish();
     }
+    if let Some(var_16) = &input.client_token {
+        object.key("ClientToken").string(var_16.as_str());
+    }
     Ok(())
 }

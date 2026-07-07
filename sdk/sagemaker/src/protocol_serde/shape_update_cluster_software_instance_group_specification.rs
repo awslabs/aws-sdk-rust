@@ -6,5 +6,8 @@ pub fn ser_update_cluster_software_instance_group_specification(
     if let Some(var_1) = &input.instance_group_name {
         object.key("InstanceGroupName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.image_release_version {
+        object.key("ImageReleaseVersion").string(var_2.as_str());
+    }
     Ok(())
 }

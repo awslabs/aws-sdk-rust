@@ -49,6 +49,8 @@ pub fn de_run_scheduled_instances(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RunScheduledInstancesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RunScheduledInstancesResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_run_scheduled_instances(
             s if s.matches("instanceIdSet") /* InstanceIdSet com.amazonaws.ec2.synthetic#RunScheduledInstancesOutput$InstanceIdSet */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_id_set::de_instance_id_set(&mut tag)
+                        crate::protocol_serde::shape_instance_id_set::de_instance_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

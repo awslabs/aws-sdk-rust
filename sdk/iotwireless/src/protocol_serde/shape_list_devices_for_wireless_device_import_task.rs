@@ -172,6 +172,8 @@ pub(crate) fn de_list_devices_for_wireless_device_import_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -186,7 +188,7 @@ pub(crate) fn de_list_devices_for_wireless_device_import_task(
                 }
                 "ImportedWirelessDeviceList" => {
                     builder = builder.set_imported_wireless_device_list(
-                        crate::protocol_serde::shape_imported_wireless_device_list::de_imported_wireless_device_list(tokens, _value)?,
+                        crate::protocol_serde::shape_imported_wireless_device_list::de_imported_wireless_device_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "NextToken" => {
@@ -205,7 +207,11 @@ pub(crate) fn de_list_devices_for_wireless_device_import_task(
                 }
                 "Sidewalk" => {
                     builder = builder.set_sidewalk(
-                        crate::protocol_serde::shape_sidewalk_list_devices_for_import_info::de_sidewalk_list_devices_for_import_info(tokens, _value)?,
+                        crate::protocol_serde::shape_sidewalk_list_devices_for_import_info::de_sidewalk_list_devices_for_import_info(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

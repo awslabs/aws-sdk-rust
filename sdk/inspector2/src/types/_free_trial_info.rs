@@ -12,6 +12,8 @@ pub struct FreeTrialInfo {
     pub end: ::aws_smithy_types::DateTime,
     /// <p>The order to sort results by.</p>
     pub status: crate::types::FreeTrialStatus,
+    /// <p>The cloud provider associated with the free trial information.</p>
+    pub cloud_provider: ::std::option::Option<crate::types::CloudProvider>,
 }
 impl FreeTrialInfo {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
@@ -30,6 +32,10 @@ impl FreeTrialInfo {
     pub fn status(&self) -> &crate::types::FreeTrialStatus {
         &self.status
     }
+    /// <p>The cloud provider associated with the free trial information.</p>
+    pub fn cloud_provider(&self) -> ::std::option::Option<&crate::types::CloudProvider> {
+        self.cloud_provider.as_ref()
+    }
 }
 impl FreeTrialInfo {
     /// Creates a new builder-style object to manufacture [`FreeTrialInfo`](crate::types::FreeTrialInfo).
@@ -46,6 +52,7 @@ pub struct FreeTrialInfoBuilder {
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::FreeTrialStatus>,
+    pub(crate) cloud_provider: ::std::option::Option<crate::types::CloudProvider>,
 }
 impl FreeTrialInfoBuilder {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
@@ -108,6 +115,20 @@ impl FreeTrialInfoBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FreeTrialStatus> {
         &self.status
     }
+    /// <p>The cloud provider associated with the free trial information.</p>
+    pub fn cloud_provider(mut self, input: crate::types::CloudProvider) -> Self {
+        self.cloud_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cloud provider associated with the free trial information.</p>
+    pub fn set_cloud_provider(mut self, input: ::std::option::Option<crate::types::CloudProvider>) -> Self {
+        self.cloud_provider = input;
+        self
+    }
+    /// <p>The cloud provider associated with the free trial information.</p>
+    pub fn get_cloud_provider(&self) -> &::std::option::Option<crate::types::CloudProvider> {
+        &self.cloud_provider
+    }
     /// Consumes the builder and constructs a [`FreeTrialInfo`](crate::types::FreeTrialInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::FreeTrialInfoBuilder::type)
@@ -140,6 +161,7 @@ impl FreeTrialInfoBuilder {
                     "status was not specified but it is required when building FreeTrialInfo",
                 )
             })?,
+            cloud_provider: self.cloud_provider,
         })
     }
 }

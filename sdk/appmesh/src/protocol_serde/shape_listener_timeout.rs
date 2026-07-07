@@ -40,10 +40,16 @@ pub fn ser_listener_timeout(
 pub(crate) fn de_listener_timeout<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ListenerTimeout>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -69,19 +75,19 @@ where
                     }
                     variant = match key.as_ref() {
                         "tcp" => Some(crate::types::ListenerTimeout::Tcp(
-                            crate::protocol_serde::shape_tcp_timeout::de_tcp_timeout(tokens, _value)?
+                            crate::protocol_serde::shape_tcp_timeout::de_tcp_timeout(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tcp' cannot be null"))?,
                         )),
                         "http" => Some(crate::types::ListenerTimeout::Http(
-                            crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens, _value)?
+                            crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?,
                         )),
                         "http2" => Some(crate::types::ListenerTimeout::Http2(
-                            crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens, _value)?
+                            crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http2' cannot be null"))?,
                         )),
                         "grpc" => Some(crate::types::ListenerTimeout::Grpc(
-                            crate::protocol_serde::shape_grpc_timeout::de_grpc_timeout(tokens, _value)?
+                            crate::protocol_serde::shape_grpc_timeout::de_grpc_timeout(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'grpc' cannot be null"))?,
                         )),
                         _ => {

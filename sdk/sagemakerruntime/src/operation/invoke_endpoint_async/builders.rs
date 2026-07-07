@@ -257,4 +257,24 @@ impl InvokeEndpointAsyncFluentBuilder {
     pub fn get_invocation_timeout_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_invocation_timeout_seconds()
     }
+    /// <p>Provides inline input data for the inference request, in the format specified in the <code>ContentType</code> request header. Use this parameter to send the request payload directly in the API call instead of uploading it to Amazon S3 and referencing it with <code>InputLocation</code>. The inline payload can be up to 128,000 bytes.</p>
+    /// <p><code>Body</code> and <code>InputLocation</code> are mutually exclusive. Provide exactly one of them.</p>
+    /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.inner = self.inner.body(input);
+        self
+    }
+    /// <p>Provides inline input data for the inference request, in the format specified in the <code>ContentType</code> request header. Use this parameter to send the request payload directly in the API call instead of uploading it to Amazon S3 and referencing it with <code>InputLocation</code>. The inline payload can be up to 128,000 bytes.</p>
+    /// <p><code>Body</code> and <code>InputLocation</code> are mutually exclusive. Provide exactly one of them.</p>
+    /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.inner = self.inner.set_body(input);
+        self
+    }
+    /// <p>Provides inline input data for the inference request, in the format specified in the <code>ContentType</code> request header. Use this parameter to send the request payload directly in the API call instead of uploading it to Amazon S3 and referencing it with <code>InputLocation</code>. The inline payload can be up to 128,000 bytes.</p>
+    /// <p><code>Body</code> and <code>InputLocation</code> are mutually exclusive. Provide exactly one of them.</p>
+    /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_body()
+    }
 }

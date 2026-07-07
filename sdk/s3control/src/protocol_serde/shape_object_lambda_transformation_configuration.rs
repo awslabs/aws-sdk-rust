@@ -25,7 +25,11 @@ pub fn ser_object_lambda_transformation_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_object_lambda_transformation_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ObjectLambdaTransformationConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ObjectLambdaTransformationConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -33,7 +37,7 @@ pub fn de_object_lambda_transformation_configuration(
             s if s.matches("Actions") /* Actions com.amazonaws.s3control#ObjectLambdaTransformationConfiguration$Actions */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_transformation_configuration_actions_list::de_object_lambda_transformation_configuration_actions_list(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_transformation_configuration_actions_list::de_object_lambda_transformation_configuration_actions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_object_lambda_transformation_configuration(
             s if s.matches("ContentTransformation") /* ContentTransformation com.amazonaws.s3control#ObjectLambdaTransformationConfiguration$ContentTransformation */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_content_transformation::de_object_lambda_content_transformation(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_content_transformation::de_object_lambda_content_transformation(&mut tag, depth + 1)
                         ?
                     )
                 ;

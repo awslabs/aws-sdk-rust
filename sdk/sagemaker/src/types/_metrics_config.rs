@@ -6,7 +6,24 @@
 pub struct MetricsConfig {
     /// <p>Specifies whether to enable enhanced metrics for the endpoint. Enhanced metrics provide utilization and invocation data at instance and container granularity. Container granularity is supported for Inference Components. The default is <code>False</code>.</p>
     pub enable_enhanced_metrics: ::std::option::Option<bool>,
-    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>. When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only; invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>Indicates whether detailed observability is enabled for the endpoint. When set to <code>True</code>, the following metrics are published at the configured frequency:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Container-level inference metrics scraped from the container's Prometheus endpoint (such as request latency, error counts, and throughput). Available metrics vary by framework.</p></li>
+    /// <li>
+    /// <p>Per-GPU metrics (utilization, memory, and temperature) attributed to individual inference components.</p></li>
+    /// <li>
+    /// <p>Per-instance host metrics (CPU, memory, and disk utilization).</p></li>
+    /// <li>
+    /// <p>Inference component placement metrics (copy count per Availability Zone).</p></li>
+    /// </ul>
+    /// <p>For first-party and Deep Learning Containers (DLC), the Prometheus endpoint path is determined automatically. For Bring-Your-Own-Container (BYOC) cases, you can optionally set <code>ContainerMetricsConfig</code> to specify a custom endpoint path. If not specified, the default path <code>/metrics</code> on port <code>8080</code> is used.</p>
+    /// <p>When set to <code>False</code>, these additional metrics are not published. Standard invocation and utilization metrics controlled by <code>EnableEnhancedMetrics</code> are unaffected.</p>
+    /// <p>The default value for new endpoint configurations is <code>True</code>. For existing endpoint configurations created before this feature, the value is <code>False</code> unless explicitly set.</p>
+    pub enable_detailed_observability: ::std::option::Option<bool>,
+    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>.</p>
+    /// <p>When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only. Invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>When <code>EnableDetailedObservability</code> is set to <code>True</code>, this interval applies to per-GPU metrics, per-instance host metrics, container metrics, and fleet-level inference component lifecycle and placement metrics.</p>
     pub metric_publish_frequency_in_seconds: ::std::option::Option<i32>,
 }
 impl MetricsConfig {
@@ -14,7 +31,26 @@ impl MetricsConfig {
     pub fn enable_enhanced_metrics(&self) -> ::std::option::Option<bool> {
         self.enable_enhanced_metrics
     }
-    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>. When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only; invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>Indicates whether detailed observability is enabled for the endpoint. When set to <code>True</code>, the following metrics are published at the configured frequency:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Container-level inference metrics scraped from the container's Prometheus endpoint (such as request latency, error counts, and throughput). Available metrics vary by framework.</p></li>
+    /// <li>
+    /// <p>Per-GPU metrics (utilization, memory, and temperature) attributed to individual inference components.</p></li>
+    /// <li>
+    /// <p>Per-instance host metrics (CPU, memory, and disk utilization).</p></li>
+    /// <li>
+    /// <p>Inference component placement metrics (copy count per Availability Zone).</p></li>
+    /// </ul>
+    /// <p>For first-party and Deep Learning Containers (DLC), the Prometheus endpoint path is determined automatically. For Bring-Your-Own-Container (BYOC) cases, you can optionally set <code>ContainerMetricsConfig</code> to specify a custom endpoint path. If not specified, the default path <code>/metrics</code> on port <code>8080</code> is used.</p>
+    /// <p>When set to <code>False</code>, these additional metrics are not published. Standard invocation and utilization metrics controlled by <code>EnableEnhancedMetrics</code> are unaffected.</p>
+    /// <p>The default value for new endpoint configurations is <code>True</code>. For existing endpoint configurations created before this feature, the value is <code>False</code> unless explicitly set.</p>
+    pub fn enable_detailed_observability(&self) -> ::std::option::Option<bool> {
+        self.enable_detailed_observability
+    }
+    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>.</p>
+    /// <p>When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only. Invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>When <code>EnableDetailedObservability</code> is set to <code>True</code>, this interval applies to per-GPU metrics, per-instance host metrics, container metrics, and fleet-level inference component lifecycle and placement metrics.</p>
     pub fn metric_publish_frequency_in_seconds(&self) -> ::std::option::Option<i32> {
         self.metric_publish_frequency_in_seconds
     }
@@ -31,6 +67,7 @@ impl MetricsConfig {
 #[non_exhaustive]
 pub struct MetricsConfigBuilder {
     pub(crate) enable_enhanced_metrics: ::std::option::Option<bool>,
+    pub(crate) enable_detailed_observability: ::std::option::Option<bool>,
     pub(crate) metric_publish_frequency_in_seconds: ::std::option::Option<i32>,
 }
 impl MetricsConfigBuilder {
@@ -48,17 +85,76 @@ impl MetricsConfigBuilder {
     pub fn get_enable_enhanced_metrics(&self) -> &::std::option::Option<bool> {
         &self.enable_enhanced_metrics
     }
-    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>. When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only; invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>Indicates whether detailed observability is enabled for the endpoint. When set to <code>True</code>, the following metrics are published at the configured frequency:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Container-level inference metrics scraped from the container's Prometheus endpoint (such as request latency, error counts, and throughput). Available metrics vary by framework.</p></li>
+    /// <li>
+    /// <p>Per-GPU metrics (utilization, memory, and temperature) attributed to individual inference components.</p></li>
+    /// <li>
+    /// <p>Per-instance host metrics (CPU, memory, and disk utilization).</p></li>
+    /// <li>
+    /// <p>Inference component placement metrics (copy count per Availability Zone).</p></li>
+    /// </ul>
+    /// <p>For first-party and Deep Learning Containers (DLC), the Prometheus endpoint path is determined automatically. For Bring-Your-Own-Container (BYOC) cases, you can optionally set <code>ContainerMetricsConfig</code> to specify a custom endpoint path. If not specified, the default path <code>/metrics</code> on port <code>8080</code> is used.</p>
+    /// <p>When set to <code>False</code>, these additional metrics are not published. Standard invocation and utilization metrics controlled by <code>EnableEnhancedMetrics</code> are unaffected.</p>
+    /// <p>The default value for new endpoint configurations is <code>True</code>. For existing endpoint configurations created before this feature, the value is <code>False</code> unless explicitly set.</p>
+    pub fn enable_detailed_observability(mut self, input: bool) -> Self {
+        self.enable_detailed_observability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether detailed observability is enabled for the endpoint. When set to <code>True</code>, the following metrics are published at the configured frequency:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Container-level inference metrics scraped from the container's Prometheus endpoint (such as request latency, error counts, and throughput). Available metrics vary by framework.</p></li>
+    /// <li>
+    /// <p>Per-GPU metrics (utilization, memory, and temperature) attributed to individual inference components.</p></li>
+    /// <li>
+    /// <p>Per-instance host metrics (CPU, memory, and disk utilization).</p></li>
+    /// <li>
+    /// <p>Inference component placement metrics (copy count per Availability Zone).</p></li>
+    /// </ul>
+    /// <p>For first-party and Deep Learning Containers (DLC), the Prometheus endpoint path is determined automatically. For Bring-Your-Own-Container (BYOC) cases, you can optionally set <code>ContainerMetricsConfig</code> to specify a custom endpoint path. If not specified, the default path <code>/metrics</code> on port <code>8080</code> is used.</p>
+    /// <p>When set to <code>False</code>, these additional metrics are not published. Standard invocation and utilization metrics controlled by <code>EnableEnhancedMetrics</code> are unaffected.</p>
+    /// <p>The default value for new endpoint configurations is <code>True</code>. For existing endpoint configurations created before this feature, the value is <code>False</code> unless explicitly set.</p>
+    pub fn set_enable_detailed_observability(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_detailed_observability = input;
+        self
+    }
+    /// <p>Indicates whether detailed observability is enabled for the endpoint. When set to <code>True</code>, the following metrics are published at the configured frequency:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Container-level inference metrics scraped from the container's Prometheus endpoint (such as request latency, error counts, and throughput). Available metrics vary by framework.</p></li>
+    /// <li>
+    /// <p>Per-GPU metrics (utilization, memory, and temperature) attributed to individual inference components.</p></li>
+    /// <li>
+    /// <p>Per-instance host metrics (CPU, memory, and disk utilization).</p></li>
+    /// <li>
+    /// <p>Inference component placement metrics (copy count per Availability Zone).</p></li>
+    /// </ul>
+    /// <p>For first-party and Deep Learning Containers (DLC), the Prometheus endpoint path is determined automatically. For Bring-Your-Own-Container (BYOC) cases, you can optionally set <code>ContainerMetricsConfig</code> to specify a custom endpoint path. If not specified, the default path <code>/metrics</code> on port <code>8080</code> is used.</p>
+    /// <p>When set to <code>False</code>, these additional metrics are not published. Standard invocation and utilization metrics controlled by <code>EnableEnhancedMetrics</code> are unaffected.</p>
+    /// <p>The default value for new endpoint configurations is <code>True</code>. For existing endpoint configurations created before this feature, the value is <code>False</code> unless explicitly set.</p>
+    pub fn get_enable_detailed_observability(&self) -> &::std::option::Option<bool> {
+        &self.enable_detailed_observability
+    }
+    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>.</p>
+    /// <p>When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only. Invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>When <code>EnableDetailedObservability</code> is set to <code>True</code>, this interval applies to per-GPU metrics, per-instance host metrics, container metrics, and fleet-level inference component lifecycle and placement metrics.</p>
     pub fn metric_publish_frequency_in_seconds(mut self, input: i32) -> Self {
         self.metric_publish_frequency_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>. When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only; invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>.</p>
+    /// <p>When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only. Invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>When <code>EnableDetailedObservability</code> is set to <code>True</code>, this interval applies to per-GPU metrics, per-instance host metrics, container metrics, and fleet-level inference component lifecycle and placement metrics.</p>
     pub fn set_metric_publish_frequency_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.metric_publish_frequency_in_seconds = input;
         self
     }
-    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>. When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only; invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults to <code>60</code>. Valid values: <code>10</code>, <code>30</code>, <code>60</code>, <code>120</code>, <code>180</code>, <code>240</code>, <code>300</code>.</p>
+    /// <p>When <code>EnableEnhancedMetrics</code> is set to <code>False</code>, this interval applies to utilization metrics only. Invocation metrics continue to be published at the default 60-second interval. When <code>EnableEnhancedMetrics</code> is set to <code>True</code>, this interval applies to both utilization and invocation metrics.</p>
+    /// <p>When <code>EnableDetailedObservability</code> is set to <code>True</code>, this interval applies to per-GPU metrics, per-instance host metrics, container metrics, and fleet-level inference component lifecycle and placement metrics.</p>
     pub fn get_metric_publish_frequency_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.metric_publish_frequency_in_seconds
     }
@@ -66,6 +162,7 @@ impl MetricsConfigBuilder {
     pub fn build(self) -> crate::types::MetricsConfig {
         crate::types::MetricsConfig {
             enable_enhanced_metrics: self.enable_enhanced_metrics,
+            enable_detailed_observability: self.enable_detailed_observability,
             metric_publish_frequency_in_seconds: self.metric_publish_frequency_in_seconds,
         }
     }

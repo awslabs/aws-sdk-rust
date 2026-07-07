@@ -11,7 +11,7 @@
 pub struct FilterAttribute {
     /// <p>The name that the metadata attribute must match.</p>
     pub key: ::std::string::String,
-    /// <p>The value to whcih to compare the value of the metadata attribute.</p>
+    /// <p>The value to which to compare the value of the metadata attribute.</p>
     pub value: ::aws_smithy_types::Document,
 }
 impl FilterAttribute {
@@ -20,7 +20,7 @@ impl FilterAttribute {
         use std::ops::Deref;
         self.key.deref()
     }
-    /// <p>The value to whcih to compare the value of the metadata attribute.</p>
+    /// <p>The value to which to compare the value of the metadata attribute.</p>
     pub fn value(&self) -> &::aws_smithy_types::Document {
         &self.value
     }
@@ -55,18 +55,18 @@ impl FilterAttributeBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>The value to whcih to compare the value of the metadata attribute.</p>
+    /// <p>The value to which to compare the value of the metadata attribute.</p>
     /// This field is required.
     pub fn value(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value to whcih to compare the value of the metadata attribute.</p>
+    /// <p>The value to which to compare the value of the metadata attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The value to whcih to compare the value of the metadata attribute.</p>
+    /// <p>The value to which to compare the value of the metadata attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.value
     }

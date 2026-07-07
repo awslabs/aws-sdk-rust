@@ -60,7 +60,11 @@ pub fn ser_origin(
 #[allow(clippy::needless_question_mark)]
 pub fn de_origin(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Origin, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Origin::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -107,7 +111,7 @@ pub fn de_origin(
             s if s.matches("CustomHeaders") /* CustomHeaders com.amazonaws.cloudfront#Origin$CustomHeaders */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_custom_headers::de_custom_headers(&mut tag)
+                        crate::protocol_serde::shape_custom_headers::de_custom_headers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -117,7 +121,7 @@ pub fn de_origin(
             s if s.matches("S3OriginConfig") /* S3OriginConfig com.amazonaws.cloudfront#Origin$S3OriginConfig */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_s3_origin_config::de_s3_origin_config(&mut tag)
+                        crate::protocol_serde::shape_s3_origin_config::de_s3_origin_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -127,7 +131,7 @@ pub fn de_origin(
             s if s.matches("CustomOriginConfig") /* CustomOriginConfig com.amazonaws.cloudfront#Origin$CustomOriginConfig */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_custom_origin_config::de_custom_origin_config(&mut tag)
+                        crate::protocol_serde::shape_custom_origin_config::de_custom_origin_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -137,7 +141,7 @@ pub fn de_origin(
             s if s.matches("VpcOriginConfig") /* VpcOriginConfig com.amazonaws.cloudfront#Origin$VpcOriginConfig */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_vpc_origin_config::de_vpc_origin_config(&mut tag)
+                        crate::protocol_serde::shape_vpc_origin_config::de_vpc_origin_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -192,7 +196,7 @@ pub fn de_origin(
             s if s.matches("OriginShield") /* OriginShield com.amazonaws.cloudfront#Origin$OriginShield */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_origin_shield::de_origin_shield(&mut tag)
+                        crate::protocol_serde::shape_origin_shield::de_origin_shield(&mut tag, depth + 1)
                         ?
                     )
                 ;

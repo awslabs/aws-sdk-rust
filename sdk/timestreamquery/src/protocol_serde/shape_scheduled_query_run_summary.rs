@@ -2,10 +2,16 @@
 pub(crate) fn de_scheduled_query_run_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScheduledQueryRunSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,16 +41,24 @@ where
                             );
                         }
                         "ExecutionStats" => {
-                            builder = builder.set_execution_stats(crate::protocol_serde::shape_execution_stats::de_execution_stats(tokens, _value)?);
+                            builder = builder.set_execution_stats(crate::protocol_serde::shape_execution_stats::de_execution_stats(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "QueryInsightsResponse" => {
                             builder = builder.set_query_insights_response(
-                                crate::protocol_serde::shape_scheduled_query_insights_response::de_scheduled_query_insights_response(tokens, _value)?,
+                                crate::protocol_serde::shape_scheduled_query_insights_response::de_scheduled_query_insights_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ErrorReportLocation" => {
                             builder = builder.set_error_report_location(
-                                crate::protocol_serde::shape_error_report_location::de_error_report_location(tokens, _value)?,
+                                crate::protocol_serde::shape_error_report_location::de_error_report_location(tokens, _value, depth + 1)?,
                             );
                         }
                         "FailureReason" => {

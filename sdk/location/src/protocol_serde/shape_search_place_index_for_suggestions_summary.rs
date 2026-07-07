@@ -2,10 +2,16 @@
 pub(crate) fn de_search_place_index_for_suggestions_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SearchPlaceIndexForSuggestionsSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,14 +29,18 @@ where
                             );
                         }
                         "BiasPosition" => {
-                            builder = builder.set_bias_position(crate::protocol_serde::shape_position::de_position(tokens, _value)?);
+                            builder = builder.set_bias_position(crate::protocol_serde::shape_position::de_position(tokens, _value, depth + 1)?);
                         }
                         "FilterBBox" => {
-                            builder = builder.set_filter_b_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value)?);
+                            builder =
+                                builder.set_filter_b_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value, depth + 1)?);
                         }
                         "FilterCountries" => {
-                            builder =
-                                builder.set_filter_countries(crate::protocol_serde::shape_country_code_list::de_country_code_list(tokens, _value)?);
+                            builder = builder.set_filter_countries(crate::protocol_serde::shape_country_code_list::de_country_code_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MaxResults" => {
                             builder = builder.set_max_results(
@@ -55,7 +65,7 @@ where
                         }
                         "FilterCategories" => {
                             builder = builder.set_filter_categories(
-                                crate::protocol_serde::shape_filter_place_category_list::de_filter_place_category_list(tokens, _value)?,
+                                crate::protocol_serde::shape_filter_place_category_list::de_filter_place_category_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

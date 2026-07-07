@@ -18,6 +18,8 @@ pub struct LinkedWhatsAppBusinessAccountSummary {
     pub waba_name: ::std::string::String,
     /// <p>The event destinations for the linked WhatsApp Business Account.</p>
     pub event_destinations: ::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>,
+    /// <p>The onboarding status for the Marketing Messages API. This value is fetched from Meta and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing Messages API.</p>
+    pub marketing_messages_onboarding_status: ::std::option::Option<::std::string::String>,
 }
 impl LinkedWhatsAppBusinessAccountSummary {
     /// <p>The ARN of the linked WhatsApp Business Account.</p>
@@ -53,6 +55,10 @@ impl LinkedWhatsAppBusinessAccountSummary {
         use std::ops::Deref;
         self.event_destinations.deref()
     }
+    /// <p>The onboarding status for the Marketing Messages API. This value is fetched from Meta and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing Messages API.</p>
+    pub fn marketing_messages_onboarding_status(&self) -> ::std::option::Option<&str> {
+        self.marketing_messages_onboarding_status.as_deref()
+    }
 }
 impl LinkedWhatsAppBusinessAccountSummary {
     /// Creates a new builder-style object to manufacture [`LinkedWhatsAppBusinessAccountSummary`](crate::types::LinkedWhatsAppBusinessAccountSummary).
@@ -72,6 +78,7 @@ pub struct LinkedWhatsAppBusinessAccountSummaryBuilder {
     pub(crate) link_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) waba_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>>,
+    pub(crate) marketing_messages_onboarding_status: ::std::option::Option<::std::string::String>,
 }
 impl LinkedWhatsAppBusinessAccountSummaryBuilder {
     /// <p>The ARN of the linked WhatsApp Business Account.</p>
@@ -187,6 +194,20 @@ impl LinkedWhatsAppBusinessAccountSummaryBuilder {
     pub fn get_event_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>> {
         &self.event_destinations
     }
+    /// <p>The onboarding status for the Marketing Messages API. This value is fetched from Meta and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing Messages API.</p>
+    pub fn marketing_messages_onboarding_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marketing_messages_onboarding_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The onboarding status for the Marketing Messages API. This value is fetched from Meta and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing Messages API.</p>
+    pub fn set_marketing_messages_onboarding_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marketing_messages_onboarding_status = input;
+        self
+    }
+    /// <p>The onboarding status for the Marketing Messages API. This value is fetched from Meta and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing Messages API.</p>
+    pub fn get_marketing_messages_onboarding_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketing_messages_onboarding_status
+    }
     /// Consumes the builder and constructs a [`LinkedWhatsAppBusinessAccountSummary`](crate::types::LinkedWhatsAppBusinessAccountSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::LinkedWhatsAppBusinessAccountSummaryBuilder::arn)
@@ -242,6 +263,7 @@ impl LinkedWhatsAppBusinessAccountSummaryBuilder {
                     "event_destinations was not specified but it is required when building LinkedWhatsAppBusinessAccountSummary",
                 )
             })?,
+            marketing_messages_onboarding_status: self.marketing_messages_onboarding_status,
         })
     }
 }

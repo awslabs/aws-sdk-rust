@@ -2,10 +2,16 @@
 pub(crate) fn de_step_execution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StepExecution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -77,11 +83,17 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_normal_string_map::de_normal_string_map(tokens, _value)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_normal_string_map::de_normal_string_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Outputs" => {
                             builder = builder.set_outputs(crate::protocol_serde::shape_automation_parameter_map::de_automation_parameter_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Response" => {
@@ -99,7 +111,11 @@ where
                             );
                         }
                         "FailureDetails" => {
-                            builder = builder.set_failure_details(crate::protocol_serde::shape_failure_details::de_failure_details(tokens, _value)?);
+                            builder = builder.set_failure_details(crate::protocol_serde::shape_failure_details::de_failure_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StepExecutionId" => {
                             builder = builder.set_step_execution_id(
@@ -110,7 +126,7 @@ where
                         }
                         "OverriddenParameters" => {
                             builder = builder.set_overridden_parameters(
-                                crate::protocol_serde::shape_automation_parameter_map::de_automation_parameter_map(tokens, _value)?,
+                                crate::protocol_serde::shape_automation_parameter_map::de_automation_parameter_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "IsEnd" => {
@@ -128,23 +144,36 @@ where
                         }
                         "ValidNextSteps" => {
                             builder = builder.set_valid_next_steps(crate::protocol_serde::shape_valid_next_step_list::de_valid_next_step_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value, depth + 1)?);
                         }
                         "TargetLocation" => {
-                            builder = builder.set_target_location(crate::protocol_serde::shape_target_location::de_target_location(tokens, _value)?);
+                            builder = builder.set_target_location(crate::protocol_serde::shape_target_location::de_target_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TriggeredAlarms" => {
                             builder = builder.set_triggered_alarms(
-                                crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(tokens, _value)?,
+                                crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ParentStepDetails" => {
-                            builder = builder
-                                .set_parent_step_details(crate::protocol_serde::shape_parent_step_details::de_parent_step_details(tokens, _value)?);
+                            builder = builder.set_parent_step_details(crate::protocol_serde::shape_parent_step_details::de_parent_step_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

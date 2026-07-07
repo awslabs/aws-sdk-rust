@@ -108,17 +108,17 @@ impl CreateScheduledQueryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Length must be between 1 and 300 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Length must be between 1 and 300 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Length must be between 1 and 300 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -224,6 +224,20 @@ impl CreateScheduledQueryFluentBuilder {
     /// <p>The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.</p>
     pub fn get_start_time_offset(&self) -> &::std::option::Option<i64> {
         self.inner.get_start_time_offset()
+    }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
+    pub fn end_time_offset(mut self, input: i64) -> Self {
+        self.inner = self.inner.end_time_offset(input);
+        self
+    }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
+    pub fn set_end_time_offset(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_end_time_offset(input);
+        self
+    }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
+    pub fn get_end_time_offset(&self) -> &::std::option::Option<i64> {
+        self.inner.get_end_time_offset()
     }
     /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {

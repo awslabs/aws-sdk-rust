@@ -80,6 +80,8 @@ pub fn de_get_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetGroupResponse got {start_el:?}"
@@ -97,7 +99,7 @@ pub fn de_get_group(
             s if s.matches("Group") /* Group com.amazonaws.iam.synthetic#GetGroupOutput$Group */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_group::de_group(&mut tag)
+                        crate::protocol_serde::shape_group::de_group(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -107,7 +109,7 @@ pub fn de_get_group(
             s if s.matches("Users") /* Users com.amazonaws.iam.synthetic#GetGroupOutput$Users */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_user_list_type::de_user_list_type(&mut tag)
+                        crate::protocol_serde::shape_user_list_type::de_user_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

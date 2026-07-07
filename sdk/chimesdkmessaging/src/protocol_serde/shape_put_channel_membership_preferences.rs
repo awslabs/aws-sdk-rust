@@ -195,6 +195,8 @@ pub(crate) fn de_put_channel_membership_preferences(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -208,11 +210,11 @@ pub(crate) fn de_put_channel_membership_preferences(
                     );
                 }
                 "Member" => {
-                    builder = builder.set_member(crate::protocol_serde::shape_identity::de_identity(tokens, _value)?);
+                    builder = builder.set_member(crate::protocol_serde::shape_identity::de_identity(tokens, _value, depth + 1)?);
                 }
                 "Preferences" => {
                     builder = builder.set_preferences(
-                        crate::protocol_serde::shape_channel_membership_preferences::de_channel_membership_preferences(tokens, _value)?,
+                        crate::protocol_serde::shape_channel_membership_preferences::de_channel_membership_preferences(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

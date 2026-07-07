@@ -15,8 +15,8 @@ impl super::Client {
     ///   - [`currency_code(String)`](crate::operation::get_billing_adjustment_request::GetBillingAdjustmentRequestOutput::currency_code): <p>The currency code for the adjustment amount (e.g., <code>USD</code>).</p>
     ///   - [`status(BillingAdjustmentStatus)`](crate::operation::get_billing_adjustment_request::GetBillingAdjustmentRequestOutput::status): <p>The current status of the billing adjustment request.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_billing_adjustment_request::GetBillingAdjustmentRequestOutput::status_message): <p>A message providing additional context about the billing adjustment request status. This field is populated only when the status is <code>VALIDATION_FAILED</code>.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_billing_adjustment_request::GetBillingAdjustmentRequestOutput::created_at): <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
-    ///   - [`updated_at(DateTime)`](crate::operation::get_billing_adjustment_request::GetBillingAdjustmentRequestOutput::updated_at): <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_billing_adjustment_request::GetBillingAdjustmentRequestOutput::created_at): <p>The date and time when the billing adjustment request was created.</p>
+    ///   - [`updated_at(DateTime)`](crate::operation::get_billing_adjustment_request::GetBillingAdjustmentRequestOutput::updated_at): <p>The date and time when the billing adjustment request was last updated.</p>
     /// - On failure, responds with [`SdkError<GetBillingAdjustmentRequestError>`](crate::operation::get_billing_adjustment_request::GetBillingAdjustmentRequestError)
     pub fn get_billing_adjustment_request(
         &self,

@@ -2,10 +2,16 @@
 pub(crate) fn de_case_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CaseDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -80,12 +86,14 @@ where
                         }
                         "recentCommunications" => {
                             builder = builder.set_recent_communications(
-                                crate::protocol_serde::shape_recent_case_communications::de_recent_case_communications(tokens, _value)?,
+                                crate::protocol_serde::shape_recent_case_communications::de_recent_case_communications(tokens, _value, depth + 1)?,
                             );
                         }
                         "ccEmailAddresses" => {
                             builder = builder.set_cc_email_addresses(crate::protocol_serde::shape_cc_email_address_list::de_cc_email_address_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "language" => {

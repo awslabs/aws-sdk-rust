@@ -2,10 +2,16 @@
 pub(crate) fn de_guardrail_automated_reasoning_invalid_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GuardrailAutomatedReasoningInvalidFinding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,19 +24,21 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "translation" => {
                                 builder = builder.set_translation(
-                                    crate::protocol_serde::shape_guardrail_automated_reasoning_translation::de_guardrail_automated_reasoning_translation(tokens, _value)?
+                                    crate::protocol_serde::shape_guardrail_automated_reasoning_translation::de_guardrail_automated_reasoning_translation(tokens, _value, depth + 1)?
                                 );
                             }
                             "contradictingRules" => {
                                 builder = builder.set_contradicting_rules(
                                     crate::protocol_serde::shape_guardrail_automated_reasoning_rule_list::de_guardrail_automated_reasoning_rule_list(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "logicWarning" => {
                                 builder = builder.set_logic_warning(
-                                    crate::protocol_serde::shape_guardrail_automated_reasoning_logic_warning::de_guardrail_automated_reasoning_logic_warning(tokens, _value)?
+                                    crate::protocol_serde::shape_guardrail_automated_reasoning_logic_warning::de_guardrail_automated_reasoning_logic_warning(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

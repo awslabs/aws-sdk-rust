@@ -24,10 +24,16 @@ pub fn ser_antenna_uplink_config(
 pub(crate) fn de_antenna_uplink_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AntennaUplinkConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,20 +42,22 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "transmitDisabled" => {
-                            builder = builder.set_transmit_disabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "transmitDisabled" => {
+                                builder = builder.set_transmit_disabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "spectrumConfig" => {
+                                builder = builder.set_spectrum_config(
+                                    crate::protocol_serde::shape_uplink_spectrum_config::de_uplink_spectrum_config(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "targetEirp" => {
+                                builder = builder.set_target_eirp(crate::protocol_serde::shape_eirp::de_eirp(tokens, _value, depth + 1)?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "spectrumConfig" => {
-                            builder = builder.set_spectrum_config(crate::protocol_serde::shape_uplink_spectrum_config::de_uplink_spectrum_config(
-                                tokens, _value,
-                            )?);
-                        }
-                        "targetEirp" => {
-                            builder = builder.set_target_eirp(crate::protocol_serde::shape_eirp::de_eirp(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

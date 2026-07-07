@@ -16,7 +16,11 @@ pub fn ser_prefix_level(
 #[allow(clippy::needless_question_mark)]
 pub fn de_prefix_level(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PrefixLevel, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PrefixLevel::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_prefix_level(
             s if s.matches("StorageMetrics") /* StorageMetrics com.amazonaws.s3control#PrefixLevel$StorageMetrics */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_prefix_level_storage_metrics::de_prefix_level_storage_metrics(&mut tag)
+                        crate::protocol_serde::shape_prefix_level_storage_metrics::de_prefix_level_storage_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;

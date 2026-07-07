@@ -48,5 +48,14 @@ pub fn ser_list_solutions_input_input(
         }
         array_13.finish();
     }
+    if let Some(var_15) = &input.aws_marketplace_solution_arn {
+        let mut array_16 = object.key("AwsMarketplaceSolutionArn").start_array();
+        for item_17 in var_15 {
+            {
+                array_16.value().string(item_17.as_str());
+            }
+        }
+        array_16.finish();
+    }
     Ok(())
 }

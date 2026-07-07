@@ -144,6 +144,8 @@ pub fn de_modify_snapshot_copy_retention_period(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifySnapshotCopyRetentionPeriodResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifySnapshotCopyRetentionPeriodResponse got {start_el:?}"
@@ -161,7 +163,7 @@ pub fn de_modify_snapshot_copy_retention_period(
             s if s.matches("Cluster") /* Cluster com.amazonaws.redshift.synthetic#ModifySnapshotCopyRetentionPeriodOutput$Cluster */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag)
+                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -40,23 +40,23 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Status of a recommendation
+/// <p>Status of a recommendation</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecommendationStatus {
-    /// Recommendation has been accepted by the user
+    /// <p>Recommendation has been accepted by the user</p>
     Accepted,
-    /// Recommendation has been closed and is no longer relevant
+    /// <p>Recommendation has been closed and is no longer relevant</p>
     Closed,
-    /// Recommendation has been completed by the user
+    /// <p>Recommendation has been completed by the user</p>
     Completed,
-    /// Recommendation has been generated but not yet acted upon
+    /// <p>Recommendation has been generated but not yet acted upon</p>
     Proposed,
-    /// Recommendation has been rejected by the user
+    /// <p>Recommendation has been rejected by the user</p>
     Rejected,
-    /// Recommendation is being actively updated
+    /// <p>Recommendation is being actively updated</p>
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

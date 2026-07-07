@@ -231,6 +231,39 @@ impl PutEnvironmentBlueprintConfigurationFluentBuilder {
         self.inner.get_regional_parameters()
     }
     ///
+    /// Appends an item to `resourceConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_resource_configurations`](Self::set_resource_configurations).
+    ///
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn resource_configurations(mut self, input: crate::types::PutResourceConfiguration) -> Self {
+        self.inner = self.inner.resource_configurations(input);
+        self
+    }
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn set_resource_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutResourceConfiguration>>) -> Self {
+        self.inner = self.inner.set_resource_configurations(input);
+        self
+    }
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn get_resource_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutResourceConfiguration>> {
+        self.inner.get_resource_configurations()
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn allow_user_provided_configurations(mut self, input: bool) -> Self {
+        self.inner = self.inner.allow_user_provided_configurations(input);
+        self
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn set_allow_user_provided_configurations(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_allow_user_provided_configurations(input);
+        self
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn get_allow_user_provided_configurations(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_user_provided_configurations()
+    }
+    ///
     /// Adds a key-value pair to `globalParameters`.
     ///
     /// To override the contents of this collection use [`set_global_parameters`](Self::set_global_parameters).

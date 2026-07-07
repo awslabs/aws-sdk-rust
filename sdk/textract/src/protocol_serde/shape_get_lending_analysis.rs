@@ -183,13 +183,19 @@ pub(crate) fn de_get_lending_analysis(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DocumentMetadata" => {
-                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens, _value)?);
+                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "JobStatus" => {
                     builder = builder.set_job_status(
@@ -206,10 +212,14 @@ pub(crate) fn de_get_lending_analysis(
                     );
                 }
                 "Results" => {
-                    builder = builder.set_results(crate::protocol_serde::shape_lending_result_list::de_lending_result_list(tokens, _value)?);
+                    builder = builder.set_results(crate::protocol_serde::shape_lending_result_list::de_lending_result_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens, _value)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens, _value, depth + 1)?);
                 }
                 "StatusMessage" => {
                     builder = builder.set_status_message(

@@ -49,6 +49,8 @@ pub fn de_create_carrier_gateway(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateCarrierGatewayResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateCarrierGatewayResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_create_carrier_gateway(
             s if s.matches("carrierGateway") /* CarrierGateway com.amazonaws.ec2.synthetic#CreateCarrierGatewayOutput$CarrierGateway */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_carrier_gateway::de_carrier_gateway(&mut tag)
+                        crate::protocol_serde::shape_carrier_gateway::de_carrier_gateway(&mut tag, depth + 1)
                         ?
                     )
                 ;

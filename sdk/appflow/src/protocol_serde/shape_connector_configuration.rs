@@ -2,10 +2,16 @@
 pub(crate) fn de_connector_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConnectorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,12 +29,16 @@ where
                         }
                         "supportedDestinationConnectors" => {
                             builder = builder.set_supported_destination_connectors(
-                                crate::protocol_serde::shape_connector_type_list::de_connector_type_list(tokens, _value)?,
+                                crate::protocol_serde::shape_connector_type_list::de_connector_type_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "supportedSchedulingFrequencies" => {
                             builder = builder.set_supported_scheduling_frequencies(
-                                crate::protocol_serde::shape_scheduling_frequency_type_list::de_scheduling_frequency_type_list(tokens, _value)?,
+                                crate::protocol_serde::shape_scheduling_frequency_type_list::de_scheduling_frequency_type_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "isPrivateLinkEnabled" => {
@@ -40,12 +50,18 @@ where
                             )?);
                         }
                         "supportedTriggerTypes" => {
-                            builder = builder
-                                .set_supported_trigger_types(crate::protocol_serde::shape_trigger_type_list::de_trigger_type_list(tokens, _value)?);
+                            builder = builder.set_supported_trigger_types(crate::protocol_serde::shape_trigger_type_list::de_trigger_type_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "connectorMetadata" => {
-                            builder = builder
-                                .set_connector_metadata(crate::protocol_serde::shape_connector_metadata::de_connector_metadata(tokens, _value)?);
+                            builder = builder.set_connector_metadata(crate::protocol_serde::shape_connector_metadata::de_connector_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "connectorType" => {
                             builder = builder.set_connector_type(
@@ -97,32 +113,43 @@ where
                             );
                         }
                         "connectorModes" => {
-                            builder = builder
-                                .set_connector_modes(crate::protocol_serde::shape_connector_mode_list::de_connector_mode_list(tokens, _value)?);
+                            builder = builder.set_connector_modes(crate::protocol_serde::shape_connector_mode_list::de_connector_mode_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "authenticationConfig" => {
                             builder = builder.set_authentication_config(
-                                crate::protocol_serde::shape_authentication_config::de_authentication_config(tokens, _value)?,
+                                crate::protocol_serde::shape_authentication_config::de_authentication_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "connectorRuntimeSettings" => {
                             builder = builder.set_connector_runtime_settings(
-                                crate::protocol_serde::shape_connector_runtime_setting_list::de_connector_runtime_setting_list(tokens, _value)?,
+                                crate::protocol_serde::shape_connector_runtime_setting_list::de_connector_runtime_setting_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "supportedApiVersions" => {
                             builder = builder.set_supported_api_versions(
-                                crate::protocol_serde::shape_supported_api_version_list::de_supported_api_version_list(tokens, _value)?,
+                                crate::protocol_serde::shape_supported_api_version_list::de_supported_api_version_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "supportedOperators" => {
                             builder = builder.set_supported_operators(
-                                crate::protocol_serde::shape_supported_operator_list::de_supported_operator_list(tokens, _value)?,
+                                crate::protocol_serde::shape_supported_operator_list::de_supported_operator_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "supportedWriteOperations" => {
                             builder = builder.set_supported_write_operations(
-                                crate::protocol_serde::shape_supported_write_operation_list::de_supported_write_operation_list(tokens, _value)?,
+                                crate::protocol_serde::shape_supported_write_operation_list::de_supported_write_operation_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "connectorProvisioningType" => {
@@ -134,7 +161,11 @@ where
                         }
                         "connectorProvisioningConfig" => {
                             builder = builder.set_connector_provisioning_config(
-                                crate::protocol_serde::shape_connector_provisioning_config::de_connector_provisioning_config(tokens, _value)?,
+                                crate::protocol_serde::shape_connector_provisioning_config::de_connector_provisioning_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "logoURL" => {
@@ -159,12 +190,20 @@ where
                         }
                         "supportedDataTransferTypes" => {
                             builder = builder.set_supported_data_transfer_types(
-                                crate::protocol_serde::shape_supported_data_transfer_type_list::de_supported_data_transfer_type_list(tokens, _value)?,
+                                crate::protocol_serde::shape_supported_data_transfer_type_list::de_supported_data_transfer_type_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "supportedDataTransferApis" => {
                             builder = builder.set_supported_data_transfer_apis(
-                                crate::protocol_serde::shape_supported_data_transfer_apis::de_supported_data_transfer_apis(tokens, _value)?,
+                                crate::protocol_serde::shape_supported_data_transfer_apis::de_supported_data_transfer_apis(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -114,6 +114,8 @@ pub(crate) fn de_reimport_api(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,7 +146,7 @@ pub(crate) fn de_reimport_api(
                     );
                 }
                 "corsConfiguration" => {
-                    builder = builder.set_cors_configuration(crate::protocol_serde::shape_cors::de_cors(tokens, _value)?);
+                    builder = builder.set_cors_configuration(crate::protocol_serde::shape_cors::de_cors(tokens, _value, depth + 1)?);
                 }
                 "createdDate" => {
                     builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -166,7 +168,7 @@ pub(crate) fn de_reimport_api(
                     builder = builder.set_disable_schema_validation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "importInfo" => {
-                    builder = builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "ipAddressType" => {
                     builder = builder.set_ip_address_type(
@@ -197,7 +199,7 @@ pub(crate) fn de_reimport_api(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "version" => {
                     builder = builder.set_version(
@@ -207,7 +209,7 @@ pub(crate) fn de_reimport_api(
                     );
                 }
                 "warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

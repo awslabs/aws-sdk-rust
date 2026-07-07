@@ -49,6 +49,8 @@ pub fn de_describe_launch_template_versions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeLaunchTemplateVersionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeLaunchTemplateVersionsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_launch_template_versions(
             s if s.matches("launchTemplateVersionSet") /* LaunchTemplateVersions com.amazonaws.ec2.synthetic#DescribeLaunchTemplateVersionsOutput$LaunchTemplateVersions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_version_set::de_launch_template_version_set(&mut tag)
+                        crate::protocol_serde::shape_launch_template_version_set::de_launch_template_version_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

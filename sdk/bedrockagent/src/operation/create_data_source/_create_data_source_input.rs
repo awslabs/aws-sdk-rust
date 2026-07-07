@@ -20,7 +20,9 @@ pub struct CreateDataSourceInput {
     /// <p>DELETE: Deletes all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b>, only the data. This flag is ignored if an Amazon Web Services account is deleted.</p></li>
     /// <li>
     /// <p>RETAIN: Retains all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b> if you delete a knowledge base or data source resource.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>For managed knowledge bases, the only supported option is <code>DELETE</code>, which is also the default.</p>
+    /// </note>
     pub data_deletion_policy: ::std::option::Option<crate::types::DataDeletionPolicy>,
     /// <p>Contains details about the server-side encryption for the data source.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
@@ -55,7 +57,9 @@ impl CreateDataSourceInput {
     /// <p>DELETE: Deletes all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b>, only the data. This flag is ignored if an Amazon Web Services account is deleted.</p></li>
     /// <li>
     /// <p>RETAIN: Retains all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b> if you delete a knowledge base or data source resource.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>For managed knowledge bases, the only supported option is <code>DELETE</code>, which is also the default.</p>
+    /// </note>
     pub fn data_deletion_policy(&self) -> ::std::option::Option<&crate::types::DataDeletionPolicy> {
         self.data_deletion_policy.as_ref()
     }
@@ -169,7 +173,9 @@ impl CreateDataSourceInputBuilder {
     /// <p>DELETE: Deletes all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b>, only the data. This flag is ignored if an Amazon Web Services account is deleted.</p></li>
     /// <li>
     /// <p>RETAIN: Retains all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b> if you delete a knowledge base or data source resource.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>For managed knowledge bases, the only supported option is <code>DELETE</code>, which is also the default.</p>
+    /// </note>
     pub fn data_deletion_policy(mut self, input: crate::types::DataDeletionPolicy) -> Self {
         self.data_deletion_policy = ::std::option::Option::Some(input);
         self
@@ -181,7 +187,9 @@ impl CreateDataSourceInputBuilder {
     /// <p>DELETE: Deletes all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b>, only the data. This flag is ignored if an Amazon Web Services account is deleted.</p></li>
     /// <li>
     /// <p>RETAIN: Retains all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b> if you delete a knowledge base or data source resource.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>For managed knowledge bases, the only supported option is <code>DELETE</code>, which is also the default.</p>
+    /// </note>
     pub fn set_data_deletion_policy(mut self, input: ::std::option::Option<crate::types::DataDeletionPolicy>) -> Self {
         self.data_deletion_policy = input;
         self
@@ -193,7 +201,9 @@ impl CreateDataSourceInputBuilder {
     /// <p>DELETE: Deletes all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b>, only the data. This flag is ignored if an Amazon Web Services account is deleted.</p></li>
     /// <li>
     /// <p>RETAIN: Retains all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the <b>vector store itself is not deleted</b> if you delete a knowledge base or data source resource.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>For managed knowledge bases, the only supported option is <code>DELETE</code>, which is also the default.</p>
+    /// </note>
     pub fn get_data_deletion_policy(&self) -> &::std::option::Option<crate::types::DataDeletionPolicy> {
         &self.data_deletion_policy
     }

@@ -79,14 +79,20 @@ pub fn ser_update_replication_configuration_input_input(
         }
         object_22.finish();
     }
-    if let Some(var_25) = &input.store_snapshot_on_local_zone {
-        object.key("storeSnapshotOnLocalZone").boolean(*var_25);
+    if let Some(var_25) = &input.storage_configuration {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("storageConfiguration").start_object();
+        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_26) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_26);
+    if let Some(var_27) = &input.store_snapshot_on_local_zone {
+        object.key("storeSnapshotOnLocalZone").boolean(*var_27);
     }
-    if let Some(var_27) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_27);
+    if let Some(var_28) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_28);
+    }
+    if let Some(var_29) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_29);
     }
     Ok(())
 }

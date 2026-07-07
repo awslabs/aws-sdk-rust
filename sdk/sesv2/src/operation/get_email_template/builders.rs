@@ -23,7 +23,7 @@ impl crate::operation::get_email_template::builders::GetEmailTemplateInputBuilde
 /// Fluent builder constructing a request to `GetEmailTemplate`.
 ///
 /// <p>Displays the template object (which includes the subject line, HTML part and text part) for the template you specify.</p>
-/// <p>You can execute this operation no more than once per second.</p>
+/// <p>You can execute this operation no more than 50 times per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEmailTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

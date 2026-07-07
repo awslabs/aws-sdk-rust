@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ClaimGa
 #[derive(Debug)]
 struct ClaimGameServerResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ClaimGameServerResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -274,7 +275,7 @@ pub enum ClaimGameServerError {
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The requested resources was not found. The resource was either not created yet or deleted.</p>
+    /// <p>The requested resource was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     OutOfCapacityException(crate::types::error::OutOfCapacityException),

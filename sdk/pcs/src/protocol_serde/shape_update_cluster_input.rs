@@ -18,5 +18,11 @@ pub fn ser_update_cluster_input_input(
         )?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.scheduler {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("scheduler").start_object();
+        crate::protocol_serde::shape_update_scheduler_request::ser_update_scheduler_request(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

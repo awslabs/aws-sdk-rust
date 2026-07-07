@@ -385,6 +385,8 @@ pub(crate) mod shape_deinterlacer;
 
 pub(crate) mod shape_dolby_vision;
 
+pub(crate) mod shape_duration_control;
+
 pub(crate) mod shape_dvb_nit_settings;
 
 pub(crate) mod shape_dvb_sdt_settings;
@@ -511,11 +513,15 @@ pub(crate) mod shape_cmaf_encryption_settings;
 
 pub(crate) mod shape_cmaf_image_based_trick_play_settings;
 
+pub(crate) mod shape_cmaf_image_based_trick_play_variant;
+
 pub(crate) mod shape_dash_additional_manifest;
 
 pub(crate) mod shape_dash_iso_encryption_settings;
 
 pub(crate) mod shape_dash_iso_image_based_trick_play_settings;
+
+pub(crate) mod shape_dash_iso_image_based_trick_play_variant;
 
 pub(crate) mod shape_destination_settings;
 
@@ -538,6 +544,8 @@ pub(crate) mod shape_hls_caption_language_mapping;
 pub(crate) mod shape_hls_encryption_settings;
 
 pub(crate) mod shape_hls_image_based_trick_play_settings;
+
+pub(crate) mod shape_hls_image_based_trick_play_variant;
 
 pub(crate) mod shape_hls_settings;
 
@@ -639,19 +647,27 @@ pub(crate) mod shape_encryption_contract_configuration;
 
 pub(crate) mod shape_frame_rate;
 
+pub(crate) mod shape_hdr_metadata;
+
 pub(crate) mod shape_list_of_automated_abr_rule;
 
 pub(crate) mod shape_list_of_caption_description;
 
 pub(crate) mod shape_list_of_cmaf_additional_manifest;
 
+pub(crate) mod shape_list_of_cmaf_image_based_trick_play_variant;
+
 pub(crate) mod shape_list_of_dash_additional_manifest;
+
+pub(crate) mod shape_list_of_dash_iso_image_based_trick_play_variant;
 
 pub(crate) mod shape_list_of_hls_ad_markers;
 
 pub(crate) mod shape_list_of_hls_additional_manifest;
 
 pub(crate) mod shape_list_of_hls_caption_language_mapping;
+
+pub(crate) mod shape_list_of_hls_image_based_trick_play_variant;
 
 pub(crate) mod shape_list_of_ms_smooth_additional_manifest;
 
@@ -667,7 +683,11 @@ pub(crate) mod shape_s3_destination_access_control;
 
 pub(crate) mod shape_s3_encryption_settings;
 
+pub(crate) mod shape_content_light_level;
+
 pub(crate) mod shape_list_of_video_overlay_input_clipping;
+
+pub(crate) mod shape_mastering_display_color_volume;
 
 pub(crate) mod shape_list_of_allowed_rendition_size;
 

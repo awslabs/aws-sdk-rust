@@ -135,6 +135,8 @@ pub fn de_describe_redshift_idc_applications(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeRedshiftIdcApplicationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeRedshiftIdcApplicationsResponse got {start_el:?}"
@@ -152,7 +154,7 @@ pub fn de_describe_redshift_idc_applications(
             s if s.matches("RedshiftIdcApplications") /* RedshiftIdcApplications com.amazonaws.redshift.synthetic#DescribeRedshiftIdcApplicationsOutput$RedshiftIdcApplications */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_redshift_idc_application_list::de_redshift_idc_application_list(&mut tag)
+                        crate::protocol_serde::shape_redshift_idc_application_list::de_redshift_idc_application_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

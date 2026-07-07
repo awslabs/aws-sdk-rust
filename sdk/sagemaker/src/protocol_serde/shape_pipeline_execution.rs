@@ -2,10 +2,16 @@
 pub(crate) fn de_pipeline_execution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipelineExecution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,7 +58,7 @@ where
                         }
                         "PipelineExperimentConfig" => {
                             builder = builder.set_pipeline_experiment_config(
-                                crate::protocol_serde::shape_pipeline_experiment_config::de_pipeline_experiment_config(tokens, _value)?,
+                                crate::protocol_serde::shape_pipeline_experiment_config::de_pipeline_experiment_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "FailureReason" => {
@@ -75,24 +81,28 @@ where
                             )?);
                         }
                         "CreatedBy" => {
-                            builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                            builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                         }
                         "LastModifiedBy" => {
-                            builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                            builder =
+                                builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                         }
                         "ParallelismConfiguration" => {
                             builder = builder.set_parallelism_configuration(
-                                crate::protocol_serde::shape_parallelism_configuration::de_parallelism_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_parallelism_configuration::de_parallelism_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "SelectiveExecutionConfig" => {
                             builder = builder.set_selective_execution_config(
-                                crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens, _value)?,
+                                crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "PipelineParameters" => {
-                            builder =
-                                builder.set_pipeline_parameters(crate::protocol_serde::shape_parameter_list::de_parameter_list(tokens, _value)?);
+                            builder = builder.set_pipeline_parameters(crate::protocol_serde::shape_parameter_list::de_parameter_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PipelineVersionId" => {
                             builder = builder.set_pipeline_version_id(

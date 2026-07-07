@@ -2,10 +2,16 @@
 pub(crate) fn de_action_execution_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ActionExecutionInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,48 +20,60 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "actionTypeId" => {
-                            builder = builder.set_action_type_id(crate::protocol_serde::shape_action_type_id::de_action_type_id(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "actionTypeId" => {
+                                builder = builder.set_action_type_id(crate::protocol_serde::shape_action_type_id::de_action_type_id(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "configuration" => {
+                                builder = builder.set_configuration(
+                                    crate::protocol_serde::shape_action_configuration_map::de_action_configuration_map(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "resolvedConfiguration" => {
+                                builder = builder.set_resolved_configuration(
+                                    crate::protocol_serde::shape_resolved_action_configuration_map::de_resolved_action_configuration_map(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "roleArn" => {
+                                builder = builder.set_role_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "region" => {
+                                builder = builder.set_region(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "inputArtifacts" => {
+                                builder = builder.set_input_artifacts(crate::protocol_serde::shape_artifact_detail_list::de_artifact_detail_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "namespace" => {
+                                builder = builder.set_namespace(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "configuration" => {
-                            builder = builder.set_configuration(crate::protocol_serde::shape_action_configuration_map::de_action_configuration_map(
-                                tokens, _value,
-                            )?);
-                        }
-                        "resolvedConfiguration" => {
-                            builder = builder.set_resolved_configuration(
-                                crate::protocol_serde::shape_resolved_action_configuration_map::de_resolved_action_configuration_map(tokens, _value)?,
-                            );
-                        }
-                        "roleArn" => {
-                            builder = builder.set_role_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "region" => {
-                            builder = builder.set_region(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "inputArtifacts" => {
-                            builder = builder.set_input_artifacts(crate::protocol_serde::shape_artifact_detail_list::de_artifact_detail_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "namespace" => {
-                            builder = builder.set_namespace(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

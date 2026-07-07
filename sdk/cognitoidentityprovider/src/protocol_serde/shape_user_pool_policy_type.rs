@@ -21,10 +21,16 @@ pub fn ser_user_pool_policy_type(
 pub(crate) fn de_user_pool_policy_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UserPoolPolicyType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,12 +42,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PasswordPolicy" => {
                             builder = builder.set_password_policy(crate::protocol_serde::shape_password_policy_type::de_password_policy_type(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SignInPolicy" => {
-                            builder =
-                                builder.set_sign_in_policy(crate::protocol_serde::shape_sign_in_policy_type::de_sign_in_policy_type(tokens, _value)?);
+                            builder = builder.set_sign_in_policy(crate::protocol_serde::shape_sign_in_policy_type::de_sign_in_policy_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -2,10 +2,16 @@
 pub(crate) fn de_configuration_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigurationSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -72,12 +78,18 @@ where
                         }
                         "FirstClassParameters" => {
                             builder = builder.set_first_class_parameters(
-                                crate::protocol_serde::shape_configuration_parameters_map::de_configuration_parameters_map(tokens, _value)?,
+                                crate::protocol_serde::shape_configuration_parameters_map::de_configuration_parameters_map(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StatusSummaries" => {
                             builder = builder.set_status_summaries(crate::protocol_serde::shape_status_summaries_list::de_status_summaries_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

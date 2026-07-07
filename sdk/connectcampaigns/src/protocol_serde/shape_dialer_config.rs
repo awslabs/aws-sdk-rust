@@ -30,10 +30,16 @@ pub fn ser_dialer_config(
 pub(crate) fn de_dialer_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DialerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -59,23 +65,29 @@ where
                     }
                     variant = match key.as_ref() {
                         "progressiveDialerConfig" => Some(crate::types::DialerConfig::ProgressiveDialerConfig(
-                            crate::protocol_serde::shape_progressive_dialer_config::de_progressive_dialer_config(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_progressive_dialer_config::de_progressive_dialer_config(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'progressiveDialerConfig' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "predictiveDialerConfig" => Some(crate::types::DialerConfig::PredictiveDialerConfig(
-                            crate::protocol_serde::shape_predictive_dialer_config::de_predictive_dialer_config(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'predictiveDialerConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_predictive_dialer_config::de_predictive_dialer_config(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'predictiveDialerConfig' cannot be null",
+                                    )
+                                })?,
                         )),
                         "agentlessDialerConfig" => Some(crate::types::DialerConfig::AgentlessDialerConfig(
-                            crate::protocol_serde::shape_agentless_dialer_config::de_agentless_dialer_config(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentlessDialerConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_agentless_dialer_config::de_agentless_dialer_config(tokens, _value, depth + 1)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'agentlessDialerConfig' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

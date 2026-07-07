@@ -53,7 +53,7 @@ impl crate::operation::put_tax_registration::builders::PutTaxRegistrationInputBu
 /// <p>If you specify <code>decisionNumber</code>, you must specify the <code>ppnExceptionDesignationCode</code> in the <code>indonesiaAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object. If the <code>taxRegistrationNumberType</code> is set to NPWP or NITKU, valid values for <code>ppnExceptionDesignationCode</code> are either <code>01</code>, <code>02</code>, <code>03</code>, <code>07</code>, or <code>08</code>.</p>
 /// <p>For other <code>taxRegistrationNumberType</code> values, <code>ppnExceptionDesignationCode</code> must be either <code>01</code>, <code>07</code>, or <code>08</code>.</p></li>
 /// <li>
-/// <p>If <code>ppnExceptionDesignationCode</code> is <code>07</code>, you must specify the <code>decisionNumber</code> in the <code>indonesiaAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
+/// <p>If <code>ppnExceptionDesignationCode</code> is <code>07</code> or <code>08</code>, you must specify the <code>decisionNumber</code> in the <code>indonesiaAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
 /// </ul>
 /// <p><b>Kenya</b></p>
 /// <ul>
@@ -85,6 +85,13 @@ impl crate::operation::put_tax_registration::builders::PutTaxRegistrationInputBu
 /// <p>Training or coaching service - 9907071685</p>
 /// <p>IT service - 9907101676</p>
 /// <p>Digital services and electronic medium - 9907121690</p></li>
+/// </ul>
+/// <p><b>Mexico</b></p>
+/// <ul>
+/// <li>
+/// <p>You must provide a Constancia de Situación fiscal (CSF) document in the <b>verificationDetails</b> field.</p></li>
+/// <li>
+/// <p>You do not need to provide address and legal name. These will be populated based on your tax registration number.</p></li>
 /// </ul>
 /// <p><b>Nepal</b></p>
 /// <ul>
@@ -137,6 +144,31 @@ impl crate::operation::put_tax_registration::builders::PutTaxRegistrationInputBu
 /// <ul>
 /// <li>
 /// <p>The sector valid values are <code>Business</code> and <code>Individual</code>.</p></li>
+/// </ul>
+/// <p><b>Philippines</b></p>
+/// <ul>
+/// <li>
+/// <p>You can optionally specify the <code>isVatRegistered</code> in the <code>philippinesAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object to indicate your VAT registration status with the Bureau of Internal Revenue (BIR).</p></li>
+/// </ul>
+/// <p><b>Belgium</b></p>
+/// <ul>
+/// <li>
+/// <p>You can optionally specify the <code>peppolId</code> in the <code>belgiumAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
+/// </ul>
+/// <p><b>Chile</b></p>
+/// <ul>
+/// <li>
+/// <p>You can optionally specify the <code>documentType</code> and <code>businessActivity</code> in the <code>chileAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
+/// </ul>
+/// <p><b>France</b></p>
+/// <ul>
+/// <li>
+/// <p>You must specify the <code>sirenNumber</code> in the <code>franceAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
+/// </ul>
+/// <p><b>Poland</b></p>
+/// <ul>
+/// <li>
+/// <p>You can optionally specify the <code>taxRegistrationNumberType</code> in the <code>polandAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object. Valid values are <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>, or <code>LocalRegistrationNumber</code>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutTaxRegistrationFluentBuilder {

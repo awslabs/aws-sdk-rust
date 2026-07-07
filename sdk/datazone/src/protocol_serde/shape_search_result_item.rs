@@ -2,10 +2,16 @@
 pub(crate) fn de_search_result_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SearchResultItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,14 +37,15 @@ where
                     }
                     variant = match key.as_ref() {
                         "assetListing" => Some(crate::types::SearchResultItem::AssetListing(
-                            crate::protocol_serde::shape_asset_listing_item::de_asset_listing_item(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_asset_listing_item::de_asset_listing_item(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'assetListing' cannot be null")
                             })?,
                         )),
                         "dataProductListing" => Some(crate::types::SearchResultItem::DataProductListing(
-                            crate::protocol_serde::shape_data_product_listing_item::de_data_product_listing_item(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dataProductListing' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_data_product_listing_item::de_data_product_listing_item(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dataProductListing' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

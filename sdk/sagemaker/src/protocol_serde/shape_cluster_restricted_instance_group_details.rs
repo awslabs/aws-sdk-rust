@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster_restricted_instance_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterRestrictedInstanceGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,12 +65,16 @@ where
                         }
                         "InstanceStorageConfigs" => {
                             builder = builder.set_instance_storage_configs(
-                                crate::protocol_serde::shape_cluster_instance_storage_configs::de_cluster_instance_storage_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_instance_storage_configs::de_cluster_instance_storage_configs(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "OnStartDeepHealthChecks" => {
                             builder = builder.set_on_start_deep_health_checks(
-                                crate::protocol_serde::shape_on_start_deep_health_checks::de_on_start_deep_health_checks(tokens, _value)?,
+                                crate::protocol_serde::shape_on_start_deep_health_checks::de_on_start_deep_health_checks(tokens, _value, depth + 1)?,
                             );
                         }
                         "Status" => {
@@ -89,16 +99,17 @@ where
                             );
                         }
                         "OverrideVpcConfig" => {
-                            builder = builder.set_override_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder =
+                                builder.set_override_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "ScheduledUpdateConfig" => {
                             builder = builder.set_scheduled_update_config(
-                                crate::protocol_serde::shape_scheduled_update_config::de_scheduled_update_config(tokens, _value)?,
+                                crate::protocol_serde::shape_scheduled_update_config::de_scheduled_update_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "EnvironmentConfig" => {
                             builder = builder.set_environment_config(
-                                crate::protocol_serde::shape_environment_config_details::de_environment_config_details(tokens, _value)?,
+                                crate::protocol_serde::shape_environment_config_details::de_environment_config_details(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -40,10 +40,16 @@ pub fn ser_react_start_codegen_job_data(
 pub(crate) fn de_react_start_codegen_job_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReactStartCodegenJobData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -82,12 +88,15 @@ where
                             builder = builder.set_inline_source_map(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "apiConfiguration" => {
-                            builder =
-                                builder.set_api_configuration(crate::protocol_serde::shape_api_configuration::de_api_configuration(tokens, _value)?);
+                            builder = builder.set_api_configuration(crate::protocol_serde::shape_api_configuration::de_api_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dependencies" => {
                             builder = builder.set_dependencies(
-                                crate::protocol_serde::shape_react_codegen_dependencies::de_react_codegen_dependencies(tokens, _value)?,
+                                crate::protocol_serde::shape_react_codegen_dependencies::de_react_codegen_dependencies(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

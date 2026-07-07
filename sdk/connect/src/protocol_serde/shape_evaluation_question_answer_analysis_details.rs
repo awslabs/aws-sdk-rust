@@ -2,10 +2,16 @@
 pub(crate) fn de_evaluation_question_answer_analysis_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationQuestionAnswerAnalysisDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,13 +38,13 @@ where
                     variant = match key.as_ref() {
                             "GenAI" => {
                                 Some(crate::types::EvaluationQuestionAnswerAnalysisDetails::GenAi(
-                                    crate::protocol_serde::shape_evaluation_gen_ai_answer_analysis_details::de_evaluation_gen_ai_answer_analysis_details(tokens, _value)?
+                                    crate::protocol_serde::shape_evaluation_gen_ai_answer_analysis_details::de_evaluation_gen_ai_answer_analysis_details(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'GenAI' cannot be null"))?
                                 ))
                             }
                             "ContactLens" => {
                                 Some(crate::types::EvaluationQuestionAnswerAnalysisDetails::ContactLens(
-                                    crate::protocol_serde::shape_evaluation_contact_lens_answer_analysis_details::de_evaluation_contact_lens_answer_analysis_details(tokens, _value)?
+                                    crate::protocol_serde::shape_evaluation_contact_lens_answer_analysis_details::de_evaluation_contact_lens_answer_analysis_details(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ContactLens' cannot be null"))?
                                 ))
                             }

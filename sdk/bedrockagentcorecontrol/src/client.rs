@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAgentRuntime`](crate::operation::create_agent_runtime) operation has
-/// a [`Client::create_agent_runtime`], function which returns a builder for that operation.
+/// For example, the [`AddDatasetExamples`](crate::operation::add_dataset_examples) operation has
+/// a [`Client::add_dataset_examples`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_agent_runtime()
-///     .agent_runtime_name("example")
+/// let result = client.add_dataset_examples()
+///     .dataset_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -190,6 +190,8 @@ impl Client {
     }
 }
 
+mod add_dataset_examples;
+
 mod create_agent_runtime;
 
 mod create_agent_runtime_endpoint;
@@ -202,19 +204,35 @@ mod create_browser_profile;
 
 mod create_code_interpreter;
 
+mod create_configuration_bundle;
+
+mod create_dataset;
+
+mod create_dataset_version;
+
 mod create_evaluator;
 
 mod create_gateway;
 
+mod create_gateway_rule;
+
 mod create_gateway_target;
 
 mod create_harness;
+
+mod create_harness_endpoint;
 
 mod create_memory;
 
 mod create_oauth2_credential_provider;
 
 mod create_online_evaluation_config;
+
+mod create_payment_connector;
+
+mod create_payment_credential_provider;
+
+mod create_payment_manager;
 
 mod create_policy;
 
@@ -237,7 +255,7 @@ mod create_workload_identity;
 /// # let client: aws_sdk_bedrockagentcorecontrol::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_agent_runtime()
+/// let result = client.add_dataset_examples()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -265,19 +283,35 @@ mod delete_browser_profile;
 
 mod delete_code_interpreter;
 
+mod delete_configuration_bundle;
+
+mod delete_dataset;
+
+mod delete_dataset_examples;
+
 mod delete_evaluator;
 
 mod delete_gateway;
 
+mod delete_gateway_rule;
+
 mod delete_gateway_target;
 
 mod delete_harness;
+
+mod delete_harness_endpoint;
 
 mod delete_memory;
 
 mod delete_oauth2_credential_provider;
 
 mod delete_online_evaluation_config;
+
+mod delete_payment_connector;
+
+mod delete_payment_credential_provider;
+
+mod delete_payment_manager;
 
 mod delete_policy;
 
@@ -303,13 +337,23 @@ mod get_browser_profile;
 
 mod get_code_interpreter;
 
+mod get_configuration_bundle;
+
+mod get_configuration_bundle_version;
+
+mod get_dataset;
+
 mod get_evaluator;
 
 mod get_gateway;
 
+mod get_gateway_rule;
+
 mod get_gateway_target;
 
 mod get_harness;
+
+mod get_harness_endpoint;
 
 mod get_memory;
 
@@ -317,11 +361,23 @@ mod get_oauth2_credential_provider;
 
 mod get_online_evaluation_config;
 
+mod get_payment_connector;
+
+mod get_payment_credential_provider;
+
+mod get_payment_manager;
+
 mod get_policy;
 
 mod get_policy_engine;
 
+mod get_policy_engine_summary;
+
 mod get_policy_generation;
+
+mod get_policy_generation_summary;
+
+mod get_policy_summary;
 
 mod get_registry;
 
@@ -347,11 +403,27 @@ mod list_browsers;
 
 mod list_code_interpreters;
 
+mod list_configuration_bundle_versions;
+
+mod list_configuration_bundles;
+
+mod list_dataset_examples;
+
+mod list_dataset_versions;
+
+mod list_datasets;
+
 mod list_evaluators;
+
+mod list_gateway_rules;
 
 mod list_gateway_targets;
 
 mod list_gateways;
+
+mod list_harness_endpoints;
+
+mod list_harness_versions;
 
 mod list_harnesses;
 
@@ -361,13 +433,25 @@ mod list_oauth2_credential_providers;
 
 mod list_online_evaluation_configs;
 
+mod list_payment_connectors;
+
+mod list_payment_credential_providers;
+
+mod list_payment_managers;
+
 mod list_policies;
+
+mod list_policy_engine_summaries;
 
 mod list_policy_engines;
 
 mod list_policy_generation_assets;
 
+mod list_policy_generation_summaries;
+
 mod list_policy_generations;
+
+mod list_policy_summaries;
 
 mod list_registries;
 
@@ -397,19 +481,35 @@ mod update_agent_runtime_endpoint;
 
 mod update_api_key_credential_provider;
 
+mod update_configuration_bundle;
+
+mod update_dataset;
+
+mod update_dataset_examples;
+
 mod update_evaluator;
 
 mod update_gateway;
 
+mod update_gateway_rule;
+
 mod update_gateway_target;
 
 mod update_harness;
+
+mod update_harness_endpoint;
 
 mod update_memory;
 
 mod update_oauth2_credential_provider;
 
 mod update_online_evaluation_config;
+
+mod update_payment_connector;
+
+mod update_payment_credential_provider;
+
+mod update_payment_manager;
 
 mod update_policy;
 

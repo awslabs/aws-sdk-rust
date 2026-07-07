@@ -180,4 +180,23 @@ impl UpdateGlobalResolverFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::GlobalResolverIpAddressType> {
         self.inner.get_ip_address_type()
     }
+    ///
+    /// Appends an item to `regions`.
+    ///
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+    ///
+    /// <p>The list of Amazon Web Services Regions where the Global Resolver will operate. The resolver will be distributed across these Regions to provide global availability and low-latency DNS resolution.</p>
+    pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.regions(input.into());
+        self
+    }
+    /// <p>The list of Amazon Web Services Regions where the Global Resolver will operate. The resolver will be distributed across these Regions to provide global availability and low-latency DNS resolution.</p>
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_regions(input);
+        self
+    }
+    /// <p>The list of Amazon Web Services Regions where the Global Resolver will operate. The resolver will be distributed across these Regions to provide global availability and low-latency DNS resolution.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_regions()
+    }
 }

@@ -73,6 +73,8 @@ pub use crate::types::_state::State;
 
 pub use crate::types::_flow_transit_encryption::FlowTransitEncryption;
 
+pub use crate::types::_ndi_output_timecode_source::NdiOutputTimecodeSource;
+
 pub use crate::types::_output::Output;
 
 pub use crate::types::_update_gateway_bridge_source_request::UpdateGatewayBridgeSourceRequest;
@@ -102,6 +104,8 @@ pub use crate::types::_router_input_tier::RouterInputTier;
 pub use crate::types::_router_input_transit_encryption::RouterInputTransitEncryption;
 
 pub use crate::types::_maintenance_configuration::MaintenanceConfiguration;
+
+pub use crate::types::_router_content_quality_analysis_configuration::RouterContentQualityAnalysisConfiguration;
 
 pub use crate::types::_router_input::RouterInput;
 
@@ -253,11 +257,15 @@ pub use crate::types::_preferred_day_time_maintenance_configuration::PreferredDa
 
 pub use crate::types::_default_maintenance_configuration::DefaultMaintenanceConfiguration;
 
+pub use crate::types::_content_quality_analysis_feature_configuration::ContentQualityAnalysisFeatureConfiguration;
+
 pub use crate::types::_router_input_type::RouterInputType;
 
 pub use crate::types::_router_input_stream_details::RouterInputStreamDetails;
 
 pub use crate::types::_maintenance_type::MaintenanceType;
+
+pub use crate::types::_router_content_quality_analysis_type::RouterContentQualityAnalysisType;
 
 pub use crate::types::_router_input_metadata::RouterInputMetadata;
 
@@ -346,6 +354,12 @@ pub use crate::types::_media_live_transit_encryption::MediaLiveTransitEncryption
 pub use crate::types::_failover_input_source_priority_mode::FailoverInputSourcePriorityMode;
 
 pub use crate::types::_day::Day;
+
+pub use crate::types::_black_frames_configuration::BlackFramesConfiguration;
+
+pub use crate::types::_frozen_frames_configuration::FrozenFramesConfiguration;
+
+pub use crate::types::_silent_audio_configuration::SilentAudioConfiguration;
 
 pub use crate::types::_router_input_message::RouterInputMessage;
 
@@ -471,6 +485,8 @@ mod _batch_get_router_output_error;
 
 mod _black_frames;
 
+mod _black_frames_configuration;
+
 mod _bridge;
 
 mod _bridge_flow_output;
@@ -492,6 +508,8 @@ mod _bridge_state;
 mod _colorimetry;
 
 mod _connection_status;
+
+mod _content_quality_analysis_feature_configuration;
 
 mod _content_quality_analysis_state;
 
@@ -560,6 +578,8 @@ mod _forward_error_correction_state;
 mod _frame_resolution;
 
 mod _frozen_frames;
+
+mod _frozen_frames_configuration;
 
 mod _gateway;
 
@@ -681,6 +701,8 @@ mod _ndi_media_info;
 
 mod _ndi_media_stream_info;
 
+mod _ndi_output_timecode_source;
+
 mod _ndi_source_info;
 
 mod _ndi_source_metadata_info;
@@ -720,6 +742,10 @@ mod _resource_type;
 mod _rist_router_input_configuration;
 
 mod _rist_router_output_configuration;
+
+mod _router_content_quality_analysis_configuration;
+
+mod _router_content_quality_analysis_type;
 
 mod _router_input;
 
@@ -800,6 +826,8 @@ mod _set_gateway_bridge_source_request;
 mod _set_source_request;
 
 mod _silent_audio;
+
+mod _silent_audio_configuration;
 
 mod _source;
 

@@ -152,6 +152,8 @@ pub(crate) fn de_get_telemetry_rule(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -182,7 +184,11 @@ pub(crate) fn de_get_telemetry_rule(
                     );
                 }
                 "RegionStatuses" => {
-                    builder = builder.set_region_statuses(crate::protocol_serde::shape_region_statuses::de_region_statuses(tokens, _value)?);
+                    builder = builder.set_region_statuses(crate::protocol_serde::shape_region_statuses::de_region_statuses(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "RuleArn" => {
                     builder = builder.set_rule_arn(
@@ -199,7 +205,7 @@ pub(crate) fn de_get_telemetry_rule(
                     );
                 }
                 "TelemetryRule" => {
-                    builder = builder.set_telemetry_rule(crate::protocol_serde::shape_telemetry_rule::de_telemetry_rule(tokens, _value)?);
+                    builder = builder.set_telemetry_rule(crate::protocol_serde::shape_telemetry_rule::de_telemetry_rule(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

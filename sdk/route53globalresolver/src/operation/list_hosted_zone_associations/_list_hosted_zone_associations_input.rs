@@ -7,7 +7,7 @@ pub struct ListHostedZoneAssociationsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token used for large sets of results that can't be returned in a single response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Amazon Resource Name (ARN) of the DNS view.</p>
+    /// <p>The Amazon Resource Name (ARN) of the DNS view to list hosted zone associations for. This parameter is optional; if you omit it, all hosted zone associations in your Amazon Web Services account are returned.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListHostedZoneAssociationsInput {
@@ -19,7 +19,7 @@ impl ListHostedZoneAssociationsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Amazon Resource Name (ARN) of the DNS view.</p>
+    /// <p>The Amazon Resource Name (ARN) of the DNS view to list hosted zone associations for. This parameter is optional; if you omit it, all hosted zone associations in your Amazon Web Services account are returned.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -68,18 +68,17 @@ impl ListHostedZoneAssociationsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Amazon Resource Name (ARN) of the DNS view.</p>
-    /// This field is required.
+    /// <p>The Amazon Resource Name (ARN) of the DNS view to list hosted zone associations for. This parameter is optional; if you omit it, all hosted zone associations in your Amazon Web Services account are returned.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the DNS view.</p>
+    /// <p>The Amazon Resource Name (ARN) of the DNS view to list hosted zone associations for. This parameter is optional; if you omit it, all hosted zone associations in your Amazon Web Services account are returned.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the DNS view.</p>
+    /// <p>The Amazon Resource Name (ARN) of the DNS view to list hosted zone associations for. This parameter is optional; if you omit it, all hosted zone associations in your Amazon Web Services account are returned.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

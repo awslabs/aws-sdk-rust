@@ -198,10 +198,11 @@ pub(crate) fn de_get_rds_database_recommendation_projected_metrics(
     crate::operation::get_rds_database_recommendation_projected_metrics::builders::GetRdsDatabaseRecommendationProjectedMetricsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_rds_database_recommendation_projected_metrics::builders::GetRdsDatabaseRecommendationProjectedMetricsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_rds_database_recommendation_projected_metrics::builders::GetRdsDatabaseRecommendationProjectedMetricsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -210,7 +211,7 @@ pub(crate) fn de_get_rds_database_recommendation_projected_metrics(
             "recommendedOptionProjectedMetrics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_recommended_option_projected_metrics(
                 Some(
-                    crate::protocol_serde::shape_rds_database_recommended_option_projected_metrics::de_rds_database_recommended_option_projected_metrics(decoder)?
+                    crate::protocol_serde::shape_rds_database_recommended_option_projected_metrics::de_rds_database_recommended_option_projected_metrics(decoder, depth + 1)?
                 )
             ))
             })?,
@@ -223,6 +224,8 @@ pub(crate) fn de_get_rds_database_recommendation_projected_metrics(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -232,13 +235,13 @@ pub(crate) fn de_get_rds_database_recommendation_projected_metrics(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

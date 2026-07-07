@@ -32,5 +32,7 @@ pub fn de_streaming_distribution_config(
             "invalid root, expected StreamingDistributionConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_streaming_distribution_config::de_streaming_distribution_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_streaming_distribution_config::de_streaming_distribution_config(&mut decoder, depth + 1)
 }

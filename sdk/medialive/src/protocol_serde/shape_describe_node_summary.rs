@@ -2,10 +2,16 @@
 pub(crate) fn de_describe_node_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribeNodeSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,8 +29,11 @@ where
                             );
                         }
                         "channelPlacementGroups" => {
-                            builder =
-                                builder.set_channel_placement_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_channel_placement_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "clusterId" => {
                             builder = builder.set_cluster_id(
@@ -70,7 +79,11 @@ where
                         }
                         "nodeInterfaceMappings" => {
                             builder = builder.set_node_interface_mappings(
-                                crate::protocol_serde::shape_list_of_node_interface_mapping::de_list_of_node_interface_mapping(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_node_interface_mapping::de_list_of_node_interface_mapping(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "role" => {
@@ -88,8 +101,11 @@ where
                             );
                         }
                         "sdiSourceMappings" => {
-                            builder = builder
-                                .set_sdi_source_mappings(crate::protocol_serde::shape_sdi_source_mappings::de_sdi_source_mappings(tokens, _value)?);
+                            builder = builder.set_sdi_source_mappings(crate::protocol_serde::shape_sdi_source_mappings::de_sdi_source_mappings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

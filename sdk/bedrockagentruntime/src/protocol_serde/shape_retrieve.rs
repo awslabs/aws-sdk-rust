@@ -193,6 +193,8 @@ pub(crate) fn de_retrieve(
 ) -> ::std::result::Result<crate::operation::retrieve::builders::RetrieveOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -214,7 +216,11 @@ pub(crate) fn de_retrieve(
                 }
                 "retrievalResults" => {
                     builder = builder.set_retrieval_results(
-                        crate::protocol_serde::shape_knowledge_base_retrieval_results::de_knowledge_base_retrieval_results(tokens, _value)?,
+                        crate::protocol_serde::shape_knowledge_base_retrieval_results::de_knowledge_base_retrieval_results(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

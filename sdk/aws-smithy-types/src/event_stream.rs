@@ -5,8 +5,12 @@
 
 //! Types relevant to event stream serialization/deserialization
 
+use crate::config_bag::{Storable, StoreReplace};
 use crate::str_bytes::StrBytes;
 use bytes::Bytes;
+use std::any::Any;
+use std::fmt;
+use std::sync::{mpsc, Mutex};
 
 mod value {
     use crate::str_bytes::StrBytes;
@@ -200,4 +204,125 @@ impl RawMessage {
     pub fn invalid(bytes: Option<Bytes>) -> Self {
         Self::Invalid(bytes)
     }
+}
+
+/// Error returned when sending a deferred signer fails.
+#[derive(Debug)]
+pub struct DeferredSignerSendError {
+    kind: DeferredSignerSendErrorKind,
+}
+
+#[derive(Debug)]
+enum DeferredSignerSendErrorKind {
+    Closed,
+}
+
+impl fmt::Display for DeferredSignerSendError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self.kind {
+            DeferredSignerSendErrorKind::Closed => f.write_str("receiver was dropped"),
+        }
+    }
+}
+
+impl std::error::Error for DeferredSignerSendError {}
+
+/// Error returned when receiving a deferred signer fails.
+#[derive(Debug)]
+pub struct DeferredSignerRecvError {
+    kind: DeferredSignerRecvErrorKind,
+}
+
+#[derive(Debug)]
+enum DeferredSignerRecvErrorKind {
+    NoSigner,
+}
+
+impl fmt::Display for DeferredSignerRecvError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self.kind {
+            DeferredSignerRecvErrorKind::NoSigner => f.write_str("no signer was available"),
+        }
+    }
+}
+
+impl std::error::Error for DeferredSignerRecvError {}
+
+/// Receiver half of the deferred signer channel.
+///
+/// Held internally by a deferred signer implementation to receive the concrete
+/// signer once it becomes available after HTTP request signing.
+#[derive(Debug)]
+pub struct DeferredSignerReceiver {
+    rx: Mutex<Option<mpsc::Receiver<Box<dyn Any + Send + Sync>>>>,
+}
+
+impl DeferredSignerReceiver {
+    /// Receives the value sent by the corresponding [`DeferredSignerSender`].
+    ///
+    /// This consumes the receiver's channel on first call. Subsequent calls will
+    /// return an error.
+    pub fn recv<T: Send + Sync + 'static>(&self) -> Result<T, DeferredSignerRecvError> {
+        let mut rx = self.rx.lock().unwrap();
+        rx.take()
+            .and_then(|r| r.try_recv().ok())
+            .and_then(|any| any.downcast::<T>().ok())
+            .map(|b| *b)
+            .ok_or(DeferredSignerRecvError {
+                kind: DeferredSignerRecvErrorKind::NoSigner,
+            })
+    }
+}
+
+/// Sender for wiring up an event stream message signer after HTTP request signing.
+///
+/// During serialization, a [`DeferredSignerSender`] is placed in the config bag.
+/// After HTTP signing completes, the auth scheme retrieves it and sends the
+/// concrete signer implementation through the channel.
+#[derive(Debug)]
+pub struct DeferredSignerSender {
+    tx: Mutex<mpsc::Sender<Box<dyn Any + Send + Sync>>>,
+}
+
+impl DeferredSignerSender {
+    /// Creates a new sender/receiver pair.
+    pub fn new() -> (DeferredSignerReceiver, Self) {
+        let (tx, rx) = mpsc::channel();
+        (
+            DeferredSignerReceiver {
+                rx: Mutex::new(Some(rx)),
+            },
+            Self { tx: Mutex::new(tx) },
+        )
+    }
+
+    /// Sends a value through the channel.
+    pub fn send<T: Send + Sync + 'static>(&self, value: T) -> Result<(), DeferredSignerSendError> {
+        self.tx
+            .lock()
+            .unwrap()
+            .send(Box::new(value))
+            .map_err(|_| DeferredSignerSendError {
+                kind: DeferredSignerSendErrorKind::Closed,
+            })
+    }
+}
+
+impl Storable for DeferredSignerSender {
+    type Storer = StoreReplace<Self>;
+}
+
+/// An error that occurs when signing an Event Stream message.
+pub type SignMessageError = Box<dyn std::error::Error + Send + Sync + 'static>;
+
+/// Signs an Event Stream message.
+pub trait SignMessage: fmt::Debug {
+    /// Signs a message, returning the signed version.
+    fn sign(&mut self, message: Message) -> Result<Message, SignMessageError>;
+
+    /// SigV4 requires an empty last signed message to be sent.
+    /// Other protocols do not require one.
+    /// Return `Some(_)` to send a signed last empty message, before completing the stream.
+    /// Return `None` to not send one and terminate the stream immediately.
+    fn sign_empty(&mut self) -> Option<Result<Message, SignMessageError>>;
 }

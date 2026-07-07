@@ -25,7 +25,11 @@ pub fn ser_query_arg_profiles(
 #[allow(clippy::needless_question_mark)]
 pub fn de_query_arg_profiles(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::QueryArgProfiles, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::QueryArgProfiles::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_query_arg_profiles(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#QueryArgProfiles$Items */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_query_arg_profile_list::de_query_arg_profile_list(&mut tag)
+                        crate::protocol_serde::shape_query_arg_profile_list::de_query_arg_profile_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

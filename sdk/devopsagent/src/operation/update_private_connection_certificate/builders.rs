@@ -22,7 +22,7 @@ impl crate::operation::update_private_connection_certificate::builders::UpdatePr
 }
 /// Fluent builder constructing a request to `UpdatePrivateConnectionCertificate`.
 ///
-/// Updates the certificate associated with a Private Connection.
+/// <p>Updates the certificate associated with a Private Connection.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePrivateConnectionCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdatePrivateConnectionCertificateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// The new certificate for the Private Connection.
+    /// <p>The new certificate for the Private Connection.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate(input.into());
         self
     }
-    /// The new certificate for the Private Connection.
+    /// <p>The new certificate for the Private Connection.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
     }
-    /// The new certificate for the Private Connection.
+    /// <p>The new certificate for the Private Connection.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate()
     }

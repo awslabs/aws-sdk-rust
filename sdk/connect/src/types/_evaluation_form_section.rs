@@ -14,6 +14,10 @@ pub struct EvaluationFormSection {
     pub items: ::std::vec::Vec<crate::types::EvaluationFormItem>,
     /// <p>The scoring weight of the section.</p>
     pub weight: f64,
+    /// <p>The flag to exclude the section from scoring.</p>
+    pub is_excluded_from_scoring: bool,
+    /// <p>The score thresholds for performance categories.</p>
+    pub score_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>>,
 }
 impl EvaluationFormSection {
     /// <p>The title of the section.</p>
@@ -39,6 +43,16 @@ impl EvaluationFormSection {
     pub fn weight(&self) -> f64 {
         self.weight
     }
+    /// <p>The flag to exclude the section from scoring.</p>
+    pub fn is_excluded_from_scoring(&self) -> bool {
+        self.is_excluded_from_scoring
+    }
+    /// <p>The score thresholds for performance categories.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.score_thresholds.is_none()`.
+    pub fn score_thresholds(&self) -> &[crate::types::EvaluationFormScoreThreshold] {
+        self.score_thresholds.as_deref().unwrap_or_default()
+    }
 }
 impl EvaluationFormSection {
     /// Creates a new builder-style object to manufacture [`EvaluationFormSection`](crate::types::EvaluationFormSection).
@@ -56,6 +70,8 @@ pub struct EvaluationFormSectionBuilder {
     pub(crate) instructions: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     pub(crate) weight: ::std::option::Option<f64>,
+    pub(crate) is_excluded_from_scoring: ::std::option::Option<bool>,
+    pub(crate) score_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>>,
 }
 impl EvaluationFormSectionBuilder {
     /// <p>The title of the section.</p>
@@ -136,6 +152,40 @@ impl EvaluationFormSectionBuilder {
     pub fn get_weight(&self) -> &::std::option::Option<f64> {
         &self.weight
     }
+    /// <p>The flag to exclude the section from scoring.</p>
+    pub fn is_excluded_from_scoring(mut self, input: bool) -> Self {
+        self.is_excluded_from_scoring = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag to exclude the section from scoring.</p>
+    pub fn set_is_excluded_from_scoring(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_excluded_from_scoring = input;
+        self
+    }
+    /// <p>The flag to exclude the section from scoring.</p>
+    pub fn get_is_excluded_from_scoring(&self) -> &::std::option::Option<bool> {
+        &self.is_excluded_from_scoring
+    }
+    /// Appends an item to `score_thresholds`.
+    ///
+    /// To override the contents of this collection use [`set_score_thresholds`](Self::set_score_thresholds).
+    ///
+    /// <p>The score thresholds for performance categories.</p>
+    pub fn score_thresholds(mut self, input: crate::types::EvaluationFormScoreThreshold) -> Self {
+        let mut v = self.score_thresholds.unwrap_or_default();
+        v.push(input);
+        self.score_thresholds = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The score thresholds for performance categories.</p>
+    pub fn set_score_thresholds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>>) -> Self {
+        self.score_thresholds = input;
+        self
+    }
+    /// <p>The score thresholds for performance categories.</p>
+    pub fn get_score_thresholds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>> {
+        &self.score_thresholds
+    }
     /// Consumes the builder and constructs a [`EvaluationFormSection`](crate::types::EvaluationFormSection).
     /// This method will fail if any of the following fields are not set:
     /// - [`title`](crate::types::builders::EvaluationFormSectionBuilder::title)
@@ -163,6 +213,8 @@ impl EvaluationFormSectionBuilder {
                 )
             })?,
             weight: self.weight.unwrap_or_default(),
+            is_excluded_from_scoring: self.is_excluded_from_scoring.unwrap_or_default(),
+            score_thresholds: self.score_thresholds,
         })
     }
 }

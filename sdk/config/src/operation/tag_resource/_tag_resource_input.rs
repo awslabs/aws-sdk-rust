@@ -21,6 +21,8 @@ pub struct TagResourceInput {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of tag object.</p>
@@ -45,6 +47,8 @@ impl TagResourceInput {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
@@ -89,6 +93,8 @@ impl TagResourceInputBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,6 +119,8 @@ impl TagResourceInputBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
@@ -136,6 +144,8 @@ impl TagResourceInputBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn

@@ -25,9 +25,13 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_accept_link;
 
+pub(crate) mod shape_associate_certificate;
+
 pub(crate) mod shape_create_inbound_external_link;
 
 pub(crate) mod shape_create_link;
+
+pub(crate) mod shape_create_link_routing_rule;
 
 pub(crate) mod shape_create_outbound_external_link;
 
@@ -39,21 +43,33 @@ pub(crate) mod shape_delete_inbound_external_link;
 
 pub(crate) mod shape_delete_link;
 
+pub(crate) mod shape_delete_link_routing_rule;
+
 pub(crate) mod shape_delete_outbound_external_link;
 
 pub(crate) mod shape_delete_requester_gateway;
 
 pub(crate) mod shape_delete_responder_gateway;
 
+pub(crate) mod shape_disassociate_certificate;
+
+pub(crate) mod shape_get_certificate_association;
+
 pub(crate) mod shape_get_inbound_external_link;
 
 pub(crate) mod shape_get_link;
+
+pub(crate) mod shape_get_link_routing_rule;
 
 pub(crate) mod shape_get_outbound_external_link;
 
 pub(crate) mod shape_get_requester_gateway;
 
 pub(crate) mod shape_get_responder_gateway;
+
+pub(crate) mod shape_list_certificate_associations;
+
+pub(crate) mod shape_list_link_routing_rules;
 
 pub(crate) mod shape_list_links;
 
@@ -73,6 +89,8 @@ pub(crate) mod shape_update_link;
 
 pub(crate) mod shape_update_link_module_flow;
 
+pub(crate) mod shape_update_link_routing_rule;
+
 pub(crate) mod shape_update_requester_gateway;
 
 pub(crate) mod shape_update_responder_gateway;
@@ -89,11 +107,15 @@ pub(crate) mod shape_accept_link_input;
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_associate_certificate_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_inbound_external_link_input;
 
 pub(crate) mod shape_create_link_input;
+
+pub(crate) mod shape_create_link_routing_rule_input;
 
 pub(crate) mod shape_create_outbound_external_link_input;
 
@@ -115,11 +137,15 @@ pub(crate) mod shape_update_link_input;
 
 pub(crate) mod shape_update_link_module_flow_input;
 
+pub(crate) mod shape_update_link_routing_rule_input;
+
 pub(crate) mod shape_update_requester_gateway_input;
 
 pub(crate) mod shape_update_responder_gateway_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_certificate_association_summary_list;
 
 pub(crate) mod shape_gateway_id_list;
 
@@ -129,6 +155,8 @@ pub(crate) mod shape_link_list;
 
 pub(crate) mod shape_link_log_settings;
 
+pub(crate) mod shape_link_routing_rule_list;
+
 pub(crate) mod shape_listener_config;
 
 pub(crate) mod shape_managed_endpoint_configuration;
@@ -136,6 +164,8 @@ pub(crate) mod shape_managed_endpoint_configuration;
 pub(crate) mod shape_module_configuration;
 
 pub(crate) mod shape_module_configuration_list;
+
+pub(crate) mod shape_rule_condition;
 
 pub(crate) mod shape_security_group_id_list;
 
@@ -147,17 +177,23 @@ pub(crate) mod shape_trust_store_configuration;
 
 pub(crate) mod shape_auto_scaling_groups_configuration;
 
+pub(crate) mod shape_certificate_association_summary;
+
 pub(crate) mod shape_certificate_authority_certificates;
 
 pub(crate) mod shape_eks_endpoints_configuration;
 
 pub(crate) mod shape_link_application_log_configuration;
 
+pub(crate) mod shape_link_routing_rule_summary;
+
 pub(crate) mod shape_list_links_response_structure;
 
 pub(crate) mod shape_module_parameters;
 
 pub(crate) mod shape_protocol_list;
+
+pub(crate) mod shape_query_string_key_value_pair;
 
 pub(crate) mod shape_responder_error_masking;
 

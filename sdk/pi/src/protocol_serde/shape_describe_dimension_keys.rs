@@ -107,6 +107,8 @@ pub(crate) fn de_describe_dimension_keys(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -126,12 +128,15 @@ pub(crate) fn de_describe_dimension_keys(
                 }
                 "PartitionKeys" => {
                     builder = builder.set_partition_keys(crate::protocol_serde::shape_response_partition_key_list::de_response_partition_key_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Keys" => {
-                    builder = builder
-                        .set_keys(crate::protocol_serde::shape_dimension_key_description_list::de_dimension_key_description_list(tokens, _value)?);
+                    builder = builder.set_keys(
+                        crate::protocol_serde::shape_dimension_key_description_list::de_dimension_key_description_list(tokens, _value, depth + 1)?,
+                    );
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

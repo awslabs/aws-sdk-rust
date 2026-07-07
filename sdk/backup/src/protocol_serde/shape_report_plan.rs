@@ -2,10 +2,16 @@
 pub(crate) fn de_report_plan<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReportPlan>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,11 +43,15 @@ where
                             );
                         }
                         "ReportSetting" => {
-                            builder = builder.set_report_setting(crate::protocol_serde::shape_report_setting::de_report_setting(tokens, _value)?);
+                            builder = builder.set_report_setting(crate::protocol_serde::shape_report_setting::de_report_setting(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ReportDeliveryChannel" => {
                             builder = builder.set_report_delivery_channel(
-                                crate::protocol_serde::shape_report_delivery_channel::de_report_delivery_channel(tokens, _value)?,
+                                crate::protocol_serde::shape_report_delivery_channel::de_report_delivery_channel(tokens, _value, depth + 1)?,
                             );
                         }
                         "DeploymentStatus" => {

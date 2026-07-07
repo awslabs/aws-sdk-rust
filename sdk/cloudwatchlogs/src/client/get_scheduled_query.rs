@@ -14,8 +14,10 @@ impl super::Client {
     ///   - [`schedule_expression(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::schedule_expression): <p>The cron expression that defines when the scheduled query runs.</p>
     ///   - [`timezone(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::timezone): <p>The timezone used for evaluating the schedule expression.</p>
     ///   - [`start_time_offset(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::start_time_offset): <p>The time offset in seconds that defines the lookback period for the query.</p>
+    ///   - [`end_time_offset(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::end_time_offset): <p>The time offset in seconds that defines the end of the lookback period for the query.</p>
     ///   - [`destination_configuration(Option<DestinationConfiguration>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::destination_configuration): <p>Configuration for where query results are delivered.</p>
     ///   - [`state(Option<ScheduledQueryState>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::state): <p>The current state of the scheduled query.</p>
+    ///   - [`schedule_type(Option<ScheduleType>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::schedule_type): <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
     ///   - [`last_triggered_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::last_triggered_time): <p>The timestamp when the scheduled query was last executed.</p>
     ///   - [`last_execution_status(Option<ExecutionStatus>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::last_execution_status): <p>The status of the most recent execution of the scheduled query.</p>
     ///   - [`schedule_start_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::schedule_start_time): <p>The start time for the scheduled query in Unix epoch format.</p>

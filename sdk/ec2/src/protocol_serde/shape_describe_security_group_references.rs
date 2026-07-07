@@ -49,6 +49,8 @@ pub fn de_describe_security_group_references(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSecurityGroupReferencesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSecurityGroupReferencesResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_security_group_references(
             s if s.matches("securityGroupReferenceSet") /* SecurityGroupReferenceSet com.amazonaws.ec2.synthetic#DescribeSecurityGroupReferencesOutput$SecurityGroupReferenceSet */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_security_group_references::de_security_group_references(&mut tag)
+                        crate::protocol_serde::shape_security_group_references::de_security_group_references(&mut tag, depth + 1)
                         ?
                     )
                 ;

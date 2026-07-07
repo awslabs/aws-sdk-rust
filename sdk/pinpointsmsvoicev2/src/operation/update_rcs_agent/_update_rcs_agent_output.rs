@@ -23,6 +23,14 @@ pub struct UpdateRcsAgentOutput {
     pub two_way_channel_role: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub two_way_enabled: bool,
+    /// <p>The name of the S3 bucket where inbound RCS media files are stored.</p>
+    pub two_way_media_s3_bucket_name: ::std::option::Option<::std::string::String>,
+    /// <p>The key prefix used for inbound RCS media objects in the S3 bucket.</p>
+    pub two_way_media_s3_key_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the IAM role used to write inbound RCS media files to the S3 bucket.</p>
+    pub two_way_media_s3_role: ::std::option::Option<::std::string::String>,
+    /// <p>The list of RCS event types enabled for two-way messaging on the agent.</p>
+    pub two_way_rcs_events_enabled: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateRcsAgentOutput {
@@ -68,6 +76,24 @@ impl UpdateRcsAgentOutput {
     pub fn two_way_enabled(&self) -> bool {
         self.two_way_enabled
     }
+    /// <p>The name of the S3 bucket where inbound RCS media files are stored.</p>
+    pub fn two_way_media_s3_bucket_name(&self) -> ::std::option::Option<&str> {
+        self.two_way_media_s3_bucket_name.as_deref()
+    }
+    /// <p>The key prefix used for inbound RCS media objects in the S3 bucket.</p>
+    pub fn two_way_media_s3_key_prefix(&self) -> ::std::option::Option<&str> {
+        self.two_way_media_s3_key_prefix.as_deref()
+    }
+    /// <p>The ARN of the IAM role used to write inbound RCS media files to the S3 bucket.</p>
+    pub fn two_way_media_s3_role(&self) -> ::std::option::Option<&str> {
+        self.two_way_media_s3_role.as_deref()
+    }
+    /// <p>The list of RCS event types enabled for two-way messaging on the agent.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.two_way_rcs_events_enabled.is_none()`.
+    pub fn two_way_rcs_events_enabled(&self) -> &[::std::string::String] {
+        self.two_way_rcs_events_enabled.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateRcsAgentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -95,6 +121,10 @@ pub struct UpdateRcsAgentOutputBuilder {
     pub(crate) two_way_channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) two_way_channel_role: ::std::option::Option<::std::string::String>,
     pub(crate) two_way_enabled: ::std::option::Option<bool>,
+    pub(crate) two_way_media_s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) two_way_media_s3_key_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) two_way_media_s3_role: ::std::option::Option<::std::string::String>,
+    pub(crate) two_way_rcs_events_enabled: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateRcsAgentOutputBuilder {
@@ -245,6 +275,68 @@ impl UpdateRcsAgentOutputBuilder {
     pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
         &self.two_way_enabled
     }
+    /// <p>The name of the S3 bucket where inbound RCS media files are stored.</p>
+    pub fn two_way_media_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.two_way_media_s3_bucket_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the S3 bucket where inbound RCS media files are stored.</p>
+    pub fn set_two_way_media_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.two_way_media_s3_bucket_name = input;
+        self
+    }
+    /// <p>The name of the S3 bucket where inbound RCS media files are stored.</p>
+    pub fn get_two_way_media_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_media_s3_bucket_name
+    }
+    /// <p>The key prefix used for inbound RCS media objects in the S3 bucket.</p>
+    pub fn two_way_media_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.two_way_media_s3_key_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The key prefix used for inbound RCS media objects in the S3 bucket.</p>
+    pub fn set_two_way_media_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.two_way_media_s3_key_prefix = input;
+        self
+    }
+    /// <p>The key prefix used for inbound RCS media objects in the S3 bucket.</p>
+    pub fn get_two_way_media_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_media_s3_key_prefix
+    }
+    /// <p>The ARN of the IAM role used to write inbound RCS media files to the S3 bucket.</p>
+    pub fn two_way_media_s3_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.two_way_media_s3_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role used to write inbound RCS media files to the S3 bucket.</p>
+    pub fn set_two_way_media_s3_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.two_way_media_s3_role = input;
+        self
+    }
+    /// <p>The ARN of the IAM role used to write inbound RCS media files to the S3 bucket.</p>
+    pub fn get_two_way_media_s3_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_media_s3_role
+    }
+    /// Appends an item to `two_way_rcs_events_enabled`.
+    ///
+    /// To override the contents of this collection use [`set_two_way_rcs_events_enabled`](Self::set_two_way_rcs_events_enabled).
+    ///
+    /// <p>The list of RCS event types enabled for two-way messaging on the agent.</p>
+    pub fn two_way_rcs_events_enabled(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.two_way_rcs_events_enabled.unwrap_or_default();
+        v.push(input.into());
+        self.two_way_rcs_events_enabled = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of RCS event types enabled for two-way messaging on the agent.</p>
+    pub fn set_two_way_rcs_events_enabled(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.two_way_rcs_events_enabled = input;
+        self
+    }
+    /// <p>The list of RCS event types enabled for two-way messaging on the agent.</p>
+    pub fn get_two_way_rcs_events_enabled(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.two_way_rcs_events_enabled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -294,6 +386,10 @@ impl UpdateRcsAgentOutputBuilder {
             two_way_channel_arn: self.two_way_channel_arn,
             two_way_channel_role: self.two_way_channel_role,
             two_way_enabled: self.two_way_enabled.unwrap_or_default(),
+            two_way_media_s3_bucket_name: self.two_way_media_s3_bucket_name,
+            two_way_media_s3_key_prefix: self.two_way_media_s3_key_prefix,
+            two_way_media_s3_role: self.two_way_media_s3_role,
+            two_way_rcs_events_enabled: self.two_way_rcs_events_enabled,
             _request_id: self._request_id,
         })
     }

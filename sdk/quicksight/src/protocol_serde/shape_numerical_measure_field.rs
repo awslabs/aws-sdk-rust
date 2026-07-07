@@ -30,10 +30,16 @@ pub fn ser_numerical_measure_field(
 pub(crate) fn de_numerical_measure_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NumericalMeasureField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,16 +57,24 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AggregationFunction" => {
                             builder = builder.set_aggregation_function(
-                                crate::protocol_serde::shape_numerical_aggregation_function::de_numerical_aggregation_function(tokens, _value)?,
+                                crate::protocol_serde::shape_numerical_aggregation_function::de_numerical_aggregation_function(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "FormatConfiguration" => {
                             builder = builder.set_format_configuration(
-                                crate::protocol_serde::shape_number_format_configuration::de_number_format_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_number_format_configuration::de_number_format_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

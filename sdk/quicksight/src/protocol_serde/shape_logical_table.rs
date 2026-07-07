@@ -30,10 +30,16 @@ pub fn ser_logical_table(
 pub(crate) fn de_logical_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LogicalTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,12 +58,14 @@ where
                         }
                         "DataTransforms" => {
                             builder = builder.set_data_transforms(
-                                crate::protocol_serde::shape_transform_operation_list::de_transform_operation_list(tokens, _value)?,
+                                crate::protocol_serde::shape_transform_operation_list::de_transform_operation_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_logical_table_source::de_logical_table_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -203,16 +203,19 @@ impl UpdateContainerFleetFluentBuilder {
         self.inner.get_game_server_container_groups_per_instance()
     }
     /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_connection_port_range(mut self, input: crate::types::ConnectionPortRange) -> Self {
         self.inner = self.inner.instance_connection_port_range(input);
         self
     }
     /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn set_instance_connection_port_range(mut self, input: ::std::option::Option<crate::types::ConnectionPortRange>) -> Self {
         self.inner = self.inner.set_instance_connection_port_range(input);
         self
     }
     /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn get_instance_connection_port_range(&self) -> &::std::option::Option<crate::types::ConnectionPortRange> {
         self.inner.get_instance_connection_port_range()
     }
@@ -222,11 +225,13 @@ impl UpdateContainerFleetFluentBuilder {
     /// To override the contents of this collection use [`set_instance_inbound_permission_authorizations`](Self::set_instance_inbound_permission_authorizations).
     ///
     /// <p>A set of ports to add to the container fleet's inbound permissions.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_inbound_permission_authorizations(mut self, input: crate::types::IpPermission) -> Self {
         self.inner = self.inner.instance_inbound_permission_authorizations(input);
         self
     }
     /// <p>A set of ports to add to the container fleet's inbound permissions.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn set_instance_inbound_permission_authorizations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
@@ -235,6 +240,7 @@ impl UpdateContainerFleetFluentBuilder {
         self
     }
     /// <p>A set of ports to add to the container fleet's inbound permissions.</p>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn get_instance_inbound_permission_authorizations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_instance_inbound_permission_authorizations()
     }

@@ -2,10 +2,16 @@
 pub(crate) fn de_problem<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Problem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,19 +22,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "run" => {
-                            builder = builder.set_run(crate::protocol_serde::shape_problem_detail::de_problem_detail(tokens, _value)?);
+                            builder = builder.set_run(crate::protocol_serde::shape_problem_detail::de_problem_detail(tokens, _value, depth + 1)?);
                         }
                         "job" => {
-                            builder = builder.set_job(crate::protocol_serde::shape_problem_detail::de_problem_detail(tokens, _value)?);
+                            builder = builder.set_job(crate::protocol_serde::shape_problem_detail::de_problem_detail(tokens, _value, depth + 1)?);
                         }
                         "suite" => {
-                            builder = builder.set_suite(crate::protocol_serde::shape_problem_detail::de_problem_detail(tokens, _value)?);
+                            builder = builder.set_suite(crate::protocol_serde::shape_problem_detail::de_problem_detail(tokens, _value, depth + 1)?);
                         }
                         "test" => {
-                            builder = builder.set_test(crate::protocol_serde::shape_problem_detail::de_problem_detail(tokens, _value)?);
+                            builder = builder.set_test(crate::protocol_serde::shape_problem_detail::de_problem_detail(tokens, _value, depth + 1)?);
                         }
                         "device" => {
-                            builder = builder.set_device(crate::protocol_serde::shape_device::de_device(tokens, _value)?);
+                            builder = builder.set_device(crate::protocol_serde::shape_device::de_device(tokens, _value, depth + 1)?);
                         }
                         "result" => {
                             builder = builder.set_result(

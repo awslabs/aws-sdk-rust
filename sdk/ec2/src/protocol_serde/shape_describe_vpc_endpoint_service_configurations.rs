@@ -54,6 +54,8 @@ pub fn de_describe_vpc_endpoint_service_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVpcEndpointServiceConfigurationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVpcEndpointServiceConfigurationsResponse got {start_el:?}"
@@ -64,7 +66,7 @@ pub fn de_describe_vpc_endpoint_service_configurations(
             s if s.matches("serviceConfigurationSet") /* ServiceConfigurations com.amazonaws.ec2.synthetic#DescribeVpcEndpointServiceConfigurationsOutput$ServiceConfigurations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_service_configuration_set::de_service_configuration_set(&mut tag)
+                        crate::protocol_serde::shape_service_configuration_set::de_service_configuration_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

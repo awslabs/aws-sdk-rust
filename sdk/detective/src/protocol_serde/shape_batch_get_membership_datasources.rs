@@ -127,6 +127,8 @@ pub(crate) fn de_batch_get_membership_datasources(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -134,12 +136,14 @@ pub(crate) fn de_batch_get_membership_datasources(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "MembershipDatasources" => {
                     builder = builder.set_membership_datasources(
-                        crate::protocol_serde::shape_membership_datasources_list::de_membership_datasources_list(tokens, _value)?,
+                        crate::protocol_serde::shape_membership_datasources_list::de_membership_datasources_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "UnprocessedGraphs" => {
                     builder = builder.set_unprocessed_graphs(crate::protocol_serde::shape_unprocessed_graph_list::de_unprocessed_graph_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

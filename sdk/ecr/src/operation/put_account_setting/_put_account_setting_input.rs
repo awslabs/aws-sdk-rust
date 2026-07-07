@@ -5,7 +5,7 @@
 pub struct PutAccountSettingInput {
     /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code>, <code>REGISTRY_POLICY_SCOPE</code>, or <code>BLOB_MOUNTING</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountSettingInput {
@@ -13,7 +13,7 @@ impl PutAccountSettingInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -48,18 +48,18 @@ impl PutAccountSettingInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>Setting value that is specified. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

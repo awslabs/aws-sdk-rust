@@ -2,10 +2,16 @@
 pub(crate) fn de_auth_event_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AuthEventType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -43,21 +49,32 @@ where
                             );
                         }
                         "EventRisk" => {
-                            builder = builder.set_event_risk(crate::protocol_serde::shape_event_risk_type::de_event_risk_type(tokens, _value)?);
+                            builder = builder.set_event_risk(crate::protocol_serde::shape_event_risk_type::de_event_risk_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ChallengeResponses" => {
                             builder = builder.set_challenge_responses(
-                                crate::protocol_serde::shape_challenge_response_list_type::de_challenge_response_list_type(tokens, _value)?,
+                                crate::protocol_serde::shape_challenge_response_list_type::de_challenge_response_list_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "EventContextData" => {
                             builder = builder.set_event_context_data(
-                                crate::protocol_serde::shape_event_context_data_type::de_event_context_data_type(tokens, _value)?,
+                                crate::protocol_serde::shape_event_context_data_type::de_event_context_data_type(tokens, _value, depth + 1)?,
                             );
                         }
                         "EventFeedback" => {
-                            builder =
-                                builder.set_event_feedback(crate::protocol_serde::shape_event_feedback_type::de_event_feedback_type(tokens, _value)?);
+                            builder = builder.set_event_feedback(crate::protocol_serde::shape_event_feedback_type::de_event_feedback_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -24,10 +24,16 @@ pub fn ser_axis_label_options(
 pub(crate) fn de_axis_label_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AxisLabelOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,8 +44,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FontConfiguration" => {
-                            builder = builder
-                                .set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?);
+                            builder = builder.set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CustomLabel" => {
                             builder = builder.set_custom_label(
@@ -50,7 +59,11 @@ where
                         }
                         "ApplyTo" => {
                             builder = builder.set_apply_to(
-                                crate::protocol_serde::shape_axis_label_reference_options::de_axis_label_reference_options(tokens, _value)?,
+                                crate::protocol_serde::shape_axis_label_reference_options::de_axis_label_reference_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

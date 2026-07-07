@@ -12,11 +12,25 @@
 /// ```text
 /// # let routelegtravelmode = unimplemented!();
 /// match routelegtravelmode {
+///     RouteLegTravelMode::AerialTramway => { /* ... */ },
+///     RouteLegTravelMode::Airplane => { /* ... */ },
+///     RouteLegTravelMode::Bus => { /* ... */ },
+///     RouteLegTravelMode::BusRapidTransit => { /* ... */ },
 ///     RouteLegTravelMode::Car => { /* ... */ },
 ///     RouteLegTravelMode::CarShuttleTrain => { /* ... */ },
+///     RouteLegTravelMode::CityTrain => { /* ... */ },
 ///     RouteLegTravelMode::Ferry => { /* ... */ },
+///     RouteLegTravelMode::FunicularRailway => { /* ... */ },
+///     RouteLegTravelMode::HighSpeedTrain => { /* ... */ },
+///     RouteLegTravelMode::IntercityTrain => { /* ... */ },
+///     RouteLegTravelMode::InterregionalTrain => { /* ... */ },
+///     RouteLegTravelMode::LightRail => { /* ... */ },
+///     RouteLegTravelMode::Monorail => { /* ... */ },
 ///     RouteLegTravelMode::Pedestrian => { /* ... */ },
+///     RouteLegTravelMode::PrivateBus => { /* ... */ },
+///     RouteLegTravelMode::RegionalTrain => { /* ... */ },
 ///     RouteLegTravelMode::Scooter => { /* ... */ },
+///     RouteLegTravelMode::Subway => { /* ... */ },
 ///     RouteLegTravelMode::Truck => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,15 +59,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum RouteLegTravelMode {
     #[allow(missing_docs)] // documentation missing in model
+    AerialTramway,
+    #[allow(missing_docs)] // documentation missing in model
+    Airplane,
+    #[allow(missing_docs)] // documentation missing in model
+    Bus,
+    #[allow(missing_docs)] // documentation missing in model
+    BusRapidTransit,
+    #[allow(missing_docs)] // documentation missing in model
     Car,
     #[allow(missing_docs)] // documentation missing in model
     CarShuttleTrain,
     #[allow(missing_docs)] // documentation missing in model
+    CityTrain,
+    #[allow(missing_docs)] // documentation missing in model
     Ferry,
+    #[allow(missing_docs)] // documentation missing in model
+    FunicularRailway,
+    #[allow(missing_docs)] // documentation missing in model
+    HighSpeedTrain,
+    #[allow(missing_docs)] // documentation missing in model
+    IntercityTrain,
+    #[allow(missing_docs)] // documentation missing in model
+    InterregionalTrain,
+    #[allow(missing_docs)] // documentation missing in model
+    LightRail,
+    #[allow(missing_docs)] // documentation missing in model
+    Monorail,
     #[allow(missing_docs)] // documentation missing in model
     Pedestrian,
     #[allow(missing_docs)] // documentation missing in model
+    PrivateBus,
+    #[allow(missing_docs)] // documentation missing in model
+    RegionalTrain,
+    #[allow(missing_docs)] // documentation missing in model
     Scooter,
+    #[allow(missing_docs)] // documentation missing in model
+    Subway,
     #[allow(missing_docs)] // documentation missing in model
     Truck,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -63,11 +105,25 @@ pub enum RouteLegTravelMode {
 impl ::std::convert::From<&str> for RouteLegTravelMode {
     fn from(s: &str) -> Self {
         match s {
+            "AerialTramway" => RouteLegTravelMode::AerialTramway,
+            "Airplane" => RouteLegTravelMode::Airplane,
+            "Bus" => RouteLegTravelMode::Bus,
+            "BusRapidTransit" => RouteLegTravelMode::BusRapidTransit,
             "Car" => RouteLegTravelMode::Car,
             "CarShuttleTrain" => RouteLegTravelMode::CarShuttleTrain,
+            "CityTrain" => RouteLegTravelMode::CityTrain,
             "Ferry" => RouteLegTravelMode::Ferry,
+            "FunicularRailway" => RouteLegTravelMode::FunicularRailway,
+            "HighSpeedTrain" => RouteLegTravelMode::HighSpeedTrain,
+            "IntercityTrain" => RouteLegTravelMode::IntercityTrain,
+            "InterregionalTrain" => RouteLegTravelMode::InterregionalTrain,
+            "LightRail" => RouteLegTravelMode::LightRail,
+            "Monorail" => RouteLegTravelMode::Monorail,
             "Pedestrian" => RouteLegTravelMode::Pedestrian,
+            "PrivateBus" => RouteLegTravelMode::PrivateBus,
+            "RegionalTrain" => RouteLegTravelMode::RegionalTrain,
             "Scooter" => RouteLegTravelMode::Scooter,
+            "Subway" => RouteLegTravelMode::Subway,
             "Truck" => RouteLegTravelMode::Truck,
             other => RouteLegTravelMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -84,18 +140,53 @@ impl RouteLegTravelMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RouteLegTravelMode::AerialTramway => "AerialTramway",
+            RouteLegTravelMode::Airplane => "Airplane",
+            RouteLegTravelMode::Bus => "Bus",
+            RouteLegTravelMode::BusRapidTransit => "BusRapidTransit",
             RouteLegTravelMode::Car => "Car",
             RouteLegTravelMode::CarShuttleTrain => "CarShuttleTrain",
+            RouteLegTravelMode::CityTrain => "CityTrain",
             RouteLegTravelMode::Ferry => "Ferry",
+            RouteLegTravelMode::FunicularRailway => "FunicularRailway",
+            RouteLegTravelMode::HighSpeedTrain => "HighSpeedTrain",
+            RouteLegTravelMode::IntercityTrain => "IntercityTrain",
+            RouteLegTravelMode::InterregionalTrain => "InterregionalTrain",
+            RouteLegTravelMode::LightRail => "LightRail",
+            RouteLegTravelMode::Monorail => "Monorail",
             RouteLegTravelMode::Pedestrian => "Pedestrian",
+            RouteLegTravelMode::PrivateBus => "PrivateBus",
+            RouteLegTravelMode::RegionalTrain => "RegionalTrain",
             RouteLegTravelMode::Scooter => "Scooter",
+            RouteLegTravelMode::Subway => "Subway",
             RouteLegTravelMode::Truck => "Truck",
             RouteLegTravelMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Car", "CarShuttleTrain", "Ferry", "Pedestrian", "Scooter", "Truck"]
+        &[
+            "AerialTramway",
+            "Airplane",
+            "Bus",
+            "BusRapidTransit",
+            "Car",
+            "CarShuttleTrain",
+            "CityTrain",
+            "Ferry",
+            "FunicularRailway",
+            "HighSpeedTrain",
+            "IntercityTrain",
+            "InterregionalTrain",
+            "LightRail",
+            "Monorail",
+            "Pedestrian",
+            "PrivateBus",
+            "RegionalTrain",
+            "Scooter",
+            "Subway",
+            "Truck",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RouteLegTravelMode {
@@ -118,11 +209,25 @@ impl RouteLegTravelMode {
 impl ::std::fmt::Display for RouteLegTravelMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RouteLegTravelMode::AerialTramway => write!(f, "AerialTramway"),
+            RouteLegTravelMode::Airplane => write!(f, "Airplane"),
+            RouteLegTravelMode::Bus => write!(f, "Bus"),
+            RouteLegTravelMode::BusRapidTransit => write!(f, "BusRapidTransit"),
             RouteLegTravelMode::Car => write!(f, "Car"),
             RouteLegTravelMode::CarShuttleTrain => write!(f, "CarShuttleTrain"),
+            RouteLegTravelMode::CityTrain => write!(f, "CityTrain"),
             RouteLegTravelMode::Ferry => write!(f, "Ferry"),
+            RouteLegTravelMode::FunicularRailway => write!(f, "FunicularRailway"),
+            RouteLegTravelMode::HighSpeedTrain => write!(f, "HighSpeedTrain"),
+            RouteLegTravelMode::IntercityTrain => write!(f, "IntercityTrain"),
+            RouteLegTravelMode::InterregionalTrain => write!(f, "InterregionalTrain"),
+            RouteLegTravelMode::LightRail => write!(f, "LightRail"),
+            RouteLegTravelMode::Monorail => write!(f, "Monorail"),
             RouteLegTravelMode::Pedestrian => write!(f, "Pedestrian"),
+            RouteLegTravelMode::PrivateBus => write!(f, "PrivateBus"),
+            RouteLegTravelMode::RegionalTrain => write!(f, "RegionalTrain"),
             RouteLegTravelMode::Scooter => write!(f, "Scooter"),
+            RouteLegTravelMode::Subway => write!(f, "Subway"),
             RouteLegTravelMode::Truck => write!(f, "Truck"),
             RouteLegTravelMode::Unknown(value) => write!(f, "{value}"),
         }

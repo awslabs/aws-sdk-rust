@@ -247,6 +247,8 @@ pub(crate) fn de_get_ml_model_training_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -254,7 +256,9 @@ pub(crate) fn de_get_ml_model_training_job(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "hpoJob" => {
                     builder = builder.set_hpo_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "id" => {
@@ -265,16 +269,20 @@ pub(crate) fn de_get_ml_model_training_job(
                     );
                 }
                 "mlModels" => {
-                    builder = builder.set_ml_models(crate::protocol_serde::shape_ml_models::de_ml_models(tokens, _value)?);
+                    builder = builder.set_ml_models(crate::protocol_serde::shape_ml_models::de_ml_models(tokens, _value, depth + 1)?);
                 }
                 "modelTransformJob" => {
                     builder = builder.set_model_transform_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "processingJob" => {
                     builder = builder.set_processing_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {

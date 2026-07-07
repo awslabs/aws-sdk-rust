@@ -87,6 +87,8 @@ pub(crate) fn de_get_dashboard(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -114,10 +116,14 @@ pub(crate) fn de_get_dashboard(
                     );
                 }
                 "Widgets" => {
-                    builder = builder.set_widgets(crate::protocol_serde::shape_widget_list::de_widget_list(tokens, _value)?);
+                    builder = builder.set_widgets(crate::protocol_serde::shape_widget_list::de_widget_list(tokens, _value, depth + 1)?);
                 }
                 "RefreshSchedule" => {
-                    builder = builder.set_refresh_schedule(crate::protocol_serde::shape_refresh_schedule::de_refresh_schedule(tokens, _value)?);
+                    builder = builder.set_refresh_schedule(crate::protocol_serde::shape_refresh_schedule::de_refresh_schedule(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CreatedTimestamp" => {
                     builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

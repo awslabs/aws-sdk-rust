@@ -2,10 +2,16 @@
 pub(crate) fn de_deployment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Deployment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,12 +43,17 @@ where
                             );
                         }
                         "failureReason" => {
-                            builder =
-                                builder.set_failure_reason(crate::protocol_serde::shape_environment_error::de_environment_error(tokens, _value)?);
+                            builder = builder.set_failure_reason(crate::protocol_serde::shape_environment_error::de_environment_error(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "messages" => {
                             builder = builder.set_messages(crate::protocol_serde::shape_deployment_messages_list::de_deployment_messages_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "isDeploymentComplete" => {

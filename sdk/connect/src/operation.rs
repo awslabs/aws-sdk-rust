@@ -100,6 +100,12 @@ pub mod complete_attached_file_upload;
 /// Types for the `CreateAgentStatus` operation.
 pub mod create_agent_status;
 
+/// Types for the `CreateAttachedFile` operation.
+pub mod create_attached_file;
+
+/// Types for the `CreateAuthCode` operation.
+pub mod create_auth_code;
+
 /// Types for the `CreateContact` operation.
 pub mod create_contact;
 
@@ -282,6 +288,9 @@ pub mod delete_rule;
 
 /// Types for the `DeleteSecurityProfile` operation.
 pub mod delete_security_profile;
+
+/// Types for the `DeleteSession` operation.
+pub mod delete_session;
 
 /// Types for the `DeleteTaskTemplate` operation.
 pub mod delete_task_template;
@@ -498,6 +507,9 @@ pub mod get_current_user_data;
 
 /// Types for the `GetEffectiveHoursOfOperations` operation.
 pub mod get_effective_hours_of_operations;
+
+/// Types for the `GetEvaluationFormValidation` operation.
+pub mod get_evaluation_form_validation;
 
 /// Types for the `GetFederationToken` operation.
 pub mod get_federation_token;
@@ -841,11 +853,17 @@ pub mod send_chat_integration_event;
 /// Types for the `SendOutboundEmail` operation.
 pub mod send_outbound_email;
 
+/// Types for the `SendOutboundWebNotification` operation.
+pub mod send_outbound_web_notification;
+
 /// Types for the `StartAttachedFileUpload` operation.
 pub mod start_attached_file_upload;
 
 /// Types for the `StartChatContact` operation.
 pub mod start_chat_contact;
+
+/// Types for the `StartContactConversationalAnalyticsJob` operation.
+pub mod start_contact_conversational_analytics_job;
 
 /// Types for the `StartContactEvaluation` operation.
 pub mod start_contact_evaluation;
@@ -861,6 +879,9 @@ pub mod start_contact_streaming;
 
 /// Types for the `StartEmailContact` operation.
 pub mod start_email_contact;
+
+/// Types for the `StartEvaluationFormValidation` operation.
+pub mod start_evaluation_form_validation;
 
 /// Types for the `StartOutboundChatContact` operation.
 pub mod start_outbound_chat_contact;

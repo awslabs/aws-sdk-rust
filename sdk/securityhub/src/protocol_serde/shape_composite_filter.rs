@@ -96,10 +96,16 @@ pub fn ser_composite_filter(
 pub(crate) fn de_composite_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CompositeFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -108,50 +114,59 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "StringFilters" => {
-                            builder = builder.set_string_filters(crate::protocol_serde::shape_ocsf_string_filter_list::de_ocsf_string_filter_list(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "StringFilters" => {
+                                builder = builder.set_string_filters(
+                                    crate::protocol_serde::shape_ocsf_string_filter_list::de_ocsf_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "DateFilters" => {
+                                builder = builder.set_date_filters(crate::protocol_serde::shape_ocsf_date_filter_list::de_ocsf_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "BooleanFilters" => {
+                                builder = builder.set_boolean_filters(
+                                    crate::protocol_serde::shape_ocsf_boolean_filter_list::de_ocsf_boolean_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "NumberFilters" => {
+                                builder = builder.set_number_filters(
+                                    crate::protocol_serde::shape_ocsf_number_filter_list::de_ocsf_number_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "MapFilters" => {
+                                builder = builder.set_map_filters(crate::protocol_serde::shape_ocsf_map_filter_list::de_ocsf_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "IpFilters" => {
+                                builder = builder.set_ip_filters(crate::protocol_serde::shape_ocsf_ip_filter_list::de_ocsf_ip_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NestedCompositeFilters" => {
+                                builder = builder.set_nested_composite_filters(
+                                    crate::protocol_serde::shape_composite_filter_list::de_composite_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Operator" => {
+                                builder = builder.set_operator(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::AllowedOperators::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "DateFilters" => {
-                            builder = builder.set_date_filters(crate::protocol_serde::shape_ocsf_date_filter_list::de_ocsf_date_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "BooleanFilters" => {
-                            builder = builder.set_boolean_filters(
-                                crate::protocol_serde::shape_ocsf_boolean_filter_list::de_ocsf_boolean_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "NumberFilters" => {
-                            builder = builder.set_number_filters(crate::protocol_serde::shape_ocsf_number_filter_list::de_ocsf_number_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "MapFilters" => {
-                            builder = builder.set_map_filters(crate::protocol_serde::shape_ocsf_map_filter_list::de_ocsf_map_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "IpFilters" => {
-                            builder =
-                                builder.set_ip_filters(crate::protocol_serde::shape_ocsf_ip_filter_list::de_ocsf_ip_filter_list(tokens, _value)?);
-                        }
-                        "NestedCompositeFilters" => {
-                            builder = builder.set_nested_composite_filters(
-                                crate::protocol_serde::shape_composite_filter_list::de_composite_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "Operator" => {
-                            builder = builder.set_operator(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AllowedOperators::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

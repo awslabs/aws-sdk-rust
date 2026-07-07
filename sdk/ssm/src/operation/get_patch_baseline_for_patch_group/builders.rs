@@ -122,17 +122,17 @@ impl GetPatchBaselineForPatchGroupFluentBuilder {
     pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_patch_group()
     }
-    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline. The default value is <code>WINDOWS</code>.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.inner = self.inner.operating_system(input);
         self
     }
-    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline. The default value is <code>WINDOWS</code>.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
     }
-    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline. The default value is <code>WINDOWS</code>.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         self.inner.get_operating_system()
     }

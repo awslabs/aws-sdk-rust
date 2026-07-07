@@ -90,10 +90,16 @@ pub fn ser_firewall_policy(
 pub(crate) fn de_firewall_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FirewallPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -102,56 +108,76 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "StatelessRuleGroupReferences" => {
-                            builder = builder.set_stateless_rule_group_references(
-                                crate::protocol_serde::shape_stateless_rule_group_references::de_stateless_rule_group_references(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "StatelessRuleGroupReferences" => {
+                                builder = builder.set_stateless_rule_group_references(
+                                    crate::protocol_serde::shape_stateless_rule_group_references::de_stateless_rule_group_references(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "StatelessDefaultActions" => {
+                                builder = builder.set_stateless_default_actions(
+                                    crate::protocol_serde::shape_stateless_actions::de_stateless_actions(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "StatelessFragmentDefaultActions" => {
+                                builder = builder.set_stateless_fragment_default_actions(
+                                    crate::protocol_serde::shape_stateless_actions::de_stateless_actions(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "StatelessCustomActions" => {
+                                builder = builder.set_stateless_custom_actions(crate::protocol_serde::shape_custom_actions::de_custom_actions(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "StatefulRuleGroupReferences" => {
+                                builder = builder.set_stateful_rule_group_references(
+                                    crate::protocol_serde::shape_stateful_rule_group_references::de_stateful_rule_group_references(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "StatefulDefaultActions" => {
+                                builder = builder.set_stateful_default_actions(crate::protocol_serde::shape_stateful_actions::de_stateful_actions(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "StatefulEngineOptions" => {
+                                builder = builder.set_stateful_engine_options(
+                                    crate::protocol_serde::shape_stateful_engine_options::de_stateful_engine_options(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "TLSInspectionConfigurationArn" => {
+                                builder = builder.set_tls_inspection_configuration_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "PolicyVariables" => {
+                                builder = builder.set_policy_variables(crate::protocol_serde::shape_policy_variables::de_policy_variables(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "EnableTLSSessionHolding" => {
+                                builder = builder
+                                    .set_enable_tls_session_holding(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "StatelessDefaultActions" => {
-                            builder = builder
-                                .set_stateless_default_actions(crate::protocol_serde::shape_stateless_actions::de_stateless_actions(tokens, _value)?);
-                        }
-                        "StatelessFragmentDefaultActions" => {
-                            builder = builder.set_stateless_fragment_default_actions(
-                                crate::protocol_serde::shape_stateless_actions::de_stateless_actions(tokens, _value)?,
-                            );
-                        }
-                        "StatelessCustomActions" => {
-                            builder =
-                                builder.set_stateless_custom_actions(crate::protocol_serde::shape_custom_actions::de_custom_actions(tokens, _value)?);
-                        }
-                        "StatefulRuleGroupReferences" => {
-                            builder = builder.set_stateful_rule_group_references(
-                                crate::protocol_serde::shape_stateful_rule_group_references::de_stateful_rule_group_references(tokens, _value)?,
-                            );
-                        }
-                        "StatefulDefaultActions" => {
-                            builder = builder
-                                .set_stateful_default_actions(crate::protocol_serde::shape_stateful_actions::de_stateful_actions(tokens, _value)?);
-                        }
-                        "StatefulEngineOptions" => {
-                            builder = builder.set_stateful_engine_options(
-                                crate::protocol_serde::shape_stateful_engine_options::de_stateful_engine_options(tokens, _value)?,
-                            );
-                        }
-                        "TLSInspectionConfigurationArn" => {
-                            builder = builder.set_tls_inspection_configuration_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "PolicyVariables" => {
-                            builder =
-                                builder.set_policy_variables(crate::protocol_serde::shape_policy_variables::de_policy_variables(tokens, _value)?);
-                        }
-                        "EnableTLSSessionHolding" => {
-                            builder =
-                                builder.set_enable_tls_session_holding(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

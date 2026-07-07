@@ -212,6 +212,22 @@ pub fn de_update_user_attributes_http_error(
             }
             tmp
         }),
+        "OperationNotEnabledException" => crate::operation::update_user_attributes::UpdateUserAttributesError::OperationNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotEnabledExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_not_enabled_exception::de_operation_not_enabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::update_user_attributes::UpdateUserAttributesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "PasswordResetRequiredException" => crate::operation::update_user_attributes::UpdateUserAttributesError::PasswordResetRequiredException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -365,6 +381,8 @@ pub(crate) fn de_update_user_attributes(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -372,7 +390,7 @@ pub(crate) fn de_update_user_attributes(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CodeDeliveryDetailsList" => {
                     builder = builder.set_code_delivery_details_list(
-                        crate::protocol_serde::shape_code_delivery_details_list_type::de_code_delivery_details_list_type(tokens, _value)?,
+                        crate::protocol_serde::shape_code_delivery_details_list_type::de_code_delivery_details_list_type(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

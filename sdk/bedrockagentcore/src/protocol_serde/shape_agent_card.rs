@@ -4,6 +4,8 @@ pub(crate) fn de_document_payload(
 ) -> ::std::result::Result<::aws_smithy_types::Document, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(_value).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     let result = Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?)
         .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
     if tokens.next().is_some() {

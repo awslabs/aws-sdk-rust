@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deregis
 #[derive(Debug)]
 struct DeregisterDelegatedAdministratorResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeregisterDelegatedAdministratorResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -401,7 +402,9 @@ pub enum DeregisterDelegatedAdministratorError {
     /// <li>
     /// <p>END_DATE_NOT_END_OF_MONTH: You provided an invalid end date. The end date must be the end of the last day of the month (23.59.59.999).</p></li>
     /// <li>
-    /// <p>END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer to end.</p></li>
+    /// <p>END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.</p></li>
+    /// <li>
+    /// <p>END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.</p></li>
     /// <li>
     /// <p>IMMUTABLE_POLICY: You specified a policy that is managed by Amazon Web Services and can't be modified.</p></li>
     /// <li>

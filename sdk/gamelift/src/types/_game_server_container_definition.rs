@@ -3,7 +3,7 @@
 /// <p>Describes the game server container in an existing game server container group. A game server container identifies a container image with your game server build. A game server container is automatically considered essential; if an essential container fails, the entire container group restarts.</p>
 /// <p>You can update a container definition and deploy the updates to an existing fleet. When creating or updating a game server container group definition, use the property <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput</a>.</p>
 /// <p><b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a></p>
-/// <p><b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a></p>
+/// <p><b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameServerContainerDefinition {
@@ -23,6 +23,8 @@ pub struct GameServerContainerDefinition {
     pub resolved_image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon GameLift Servers server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
     pub server_sdk_version: ::std::option::Option<::std::string::String>,
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
 }
 impl GameServerContainerDefinition {
     /// <p>The container definition identifier. Container names are unique within a container group definition.</p>
@@ -63,6 +65,10 @@ impl GameServerContainerDefinition {
     pub fn server_sdk_version(&self) -> ::std::option::Option<&str> {
         self.server_sdk_version.as_deref()
     }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn linux_capabilities(&self) -> ::std::option::Option<&crate::types::LinuxCapabilities> {
+        self.linux_capabilities.as_ref()
+    }
 }
 impl GameServerContainerDefinition {
     /// Creates a new builder-style object to manufacture [`GameServerContainerDefinition`](crate::types::GameServerContainerDefinition).
@@ -83,6 +89,7 @@ pub struct GameServerContainerDefinitionBuilder {
     pub(crate) port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     pub(crate) resolved_image_digest: ::std::option::Option<::std::string::String>,
     pub(crate) server_sdk_version: ::std::option::Option<::std::string::String>,
+    pub(crate) linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
 }
 impl GameServerContainerDefinitionBuilder {
     /// <p>The container definition identifier. Container names are unique within a container group definition.</p>
@@ -215,6 +222,20 @@ impl GameServerContainerDefinitionBuilder {
     pub fn get_server_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_sdk_version
     }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn linux_capabilities(mut self, input: crate::types::LinuxCapabilities) -> Self {
+        self.linux_capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn set_linux_capabilities(mut self, input: ::std::option::Option<crate::types::LinuxCapabilities>) -> Self {
+        self.linux_capabilities = input;
+        self
+    }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn get_linux_capabilities(&self) -> &::std::option::Option<crate::types::LinuxCapabilities> {
+        &self.linux_capabilities
+    }
     /// Consumes the builder and constructs a [`GameServerContainerDefinition`](crate::types::GameServerContainerDefinition).
     pub fn build(self) -> crate::types::GameServerContainerDefinition {
         crate::types::GameServerContainerDefinition {
@@ -226,6 +247,7 @@ impl GameServerContainerDefinitionBuilder {
             port_configuration: self.port_configuration,
             resolved_image_digest: self.resolved_image_digest,
             server_sdk_version: self.server_sdk_version,
+            linux_capabilities: self.linux_capabilities,
         }
     }
 }

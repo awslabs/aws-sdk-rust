@@ -71,6 +71,8 @@ pub struct DescribeChangeSetOutput {
     pub import_existing_resources: ::std::option::Option<bool>,
     /// <p>The deployment mode specified when the change set was created. Valid value is <code>REVERT_DRIFT</code>. Only present for drift-aware change sets.</p>
     pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
+    /// <p>The deployment configuration specified when the change set was created.</p>
+    pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     _request_id: Option<String>,
 }
 impl DescribeChangeSetOutput {
@@ -197,6 +199,10 @@ impl DescribeChangeSetOutput {
     pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
         self.deployment_mode.as_ref()
     }
+    /// <p>The deployment configuration specified when the change set was created.</p>
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeChangeSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -237,6 +243,7 @@ pub struct DescribeChangeSetOutputBuilder {
     pub(crate) on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     pub(crate) import_existing_resources: ::std::option::Option<bool>,
     pub(crate) deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     _request_id: Option<String>,
 }
 impl DescribeChangeSetOutputBuilder {
@@ -655,6 +662,20 @@ impl DescribeChangeSetOutputBuilder {
     pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
         &self.deployment_mode
     }
+    /// <p>The deployment configuration specified when the change set was created.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment configuration specified when the change set was created.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.deployment_config = input;
+        self
+    }
+    /// <p>The deployment configuration specified when the change set was created.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -690,6 +711,7 @@ impl DescribeChangeSetOutputBuilder {
             on_stack_failure: self.on_stack_failure,
             import_existing_resources: self.import_existing_resources,
             deployment_mode: self.deployment_mode,
+            deployment_config: self.deployment_config,
             _request_id: self._request_id,
         }
     }

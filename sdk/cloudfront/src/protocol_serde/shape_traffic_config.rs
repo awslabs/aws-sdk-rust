@@ -24,7 +24,11 @@ pub fn ser_traffic_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_traffic_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TrafficConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TrafficConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -32,7 +36,7 @@ pub fn de_traffic_config(
             s if s.matches("SingleWeightConfig") /* SingleWeightConfig com.amazonaws.cloudfront#TrafficConfig$SingleWeightConfig */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_continuous_deployment_single_weight_config::de_continuous_deployment_single_weight_config(&mut tag)
+                        crate::protocol_serde::shape_continuous_deployment_single_weight_config::de_continuous_deployment_single_weight_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -42,7 +46,7 @@ pub fn de_traffic_config(
             s if s.matches("SingleHeaderConfig") /* SingleHeaderConfig com.amazonaws.cloudfront#TrafficConfig$SingleHeaderConfig */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_continuous_deployment_single_header_config::de_continuous_deployment_single_header_config(&mut tag)
+                        crate::protocol_serde::shape_continuous_deployment_single_header_config::de_continuous_deployment_single_header_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

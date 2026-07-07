@@ -25,53 +25,61 @@ pub fn ser_membership_protected_job_output_configuration(
 pub(crate) fn de_membership_protected_job_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MembershipProtectedJobOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
-        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => loop {
-            match tokens.next().transpose()? {
-                Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                    if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
-                        tokens.peek()
-                    {
-                        let _ = tokens.next().expect("peek returned a token")?;
-                        continue;
-                    }
-                    let key = key.to_unescaped()?;
-                    if key == "__type" {
-                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                        continue;
-                    }
-                    if variant.is_some() {
-                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                            "encountered mixed variants in union",
-                        ));
-                    }
-                    variant = match key.as_ref() {
-                        "s3" => Some(crate::types::MembershipProtectedJobOutputConfiguration::S3(
-                            crate::protocol_serde::shape_protected_job_s3_output_configuration_input::de_protected_job_s3_output_configuration_input(
-                                tokens, _value,
-                            )?
-                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
-                        )),
-                        _ => {
-                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::types::MembershipProtectedJobOutputConfiguration::Unknown)
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            loop {
+                match tokens.next().transpose()? {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
+                            tokens.peek()
+                        {
+                            let _ = tokens.next().expect("peek returned a token")?;
+                            continue;
                         }
-                    };
-                }
-                other => {
-                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {other:?}"
-                    )))
+                        let key = key.to_unescaped()?;
+                        if key == "__type" {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            continue;
+                        }
+                        if variant.is_some() {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "encountered mixed variants in union",
+                            ));
+                        }
+                        variant = match key.as_ref() {
+                            "s3" => {
+                                Some(crate::types::MembershipProtectedJobOutputConfiguration::S3(
+                                    crate::protocol_serde::shape_protected_job_s3_output_configuration_input::de_protected_job_s3_output_configuration_input(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?
+                                ))
+                            }
+                            _ => {
+                                                                              ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                                                              Some(crate::types::MembershipProtectedJobOutputConfiguration::Unknown)
+                                                                            }
+                        };
+                    }
+                    other => {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {other:?}"
+                        )))
+                    }
                 }
             }
-        },
+        }
         _ => {
             return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start object or null",

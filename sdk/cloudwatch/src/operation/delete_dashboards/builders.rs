@@ -22,7 +22,7 @@ impl crate::operation::delete_dashboards::builders::DeleteDashboardsInputBuilder
 }
 /// Fluent builder constructing a request to `DeleteDashboards`.
 ///
-/// <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete. If there is an error during this call, no dashboards are deleted.</p>
+/// <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete. If there is an error during this call, the operation attempts to delete as many dashboards as possible.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDashboardsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

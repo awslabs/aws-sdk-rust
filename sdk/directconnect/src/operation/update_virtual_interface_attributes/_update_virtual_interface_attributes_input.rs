@@ -11,6 +11,8 @@ pub struct UpdateVirtualInterfaceAttributesInput {
     pub enable_site_link: ::std::option::Option<bool>,
     /// <p>The name of the virtual private interface.</p>
     pub virtual_interface_name: ::std::option::Option<::std::string::String>,
+    /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
+    pub rate_limit: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
@@ -29,6 +31,10 @@ impl UpdateVirtualInterfaceAttributesInput {
     pub fn virtual_interface_name(&self) -> ::std::option::Option<&str> {
         self.virtual_interface_name.as_deref()
     }
+    /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
+    pub fn rate_limit(&self) -> ::std::option::Option<&str> {
+        self.rate_limit.as_deref()
+    }
 }
 impl UpdateVirtualInterfaceAttributesInput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesInput`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput).
@@ -45,6 +51,7 @@ pub struct UpdateVirtualInterfaceAttributesInputBuilder {
     pub(crate) mtu: ::std::option::Option<i32>,
     pub(crate) enable_site_link: ::std::option::Option<bool>,
     pub(crate) virtual_interface_name: ::std::option::Option<::std::string::String>,
+    pub(crate) rate_limit: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVirtualInterfaceAttributesInputBuilder {
     /// <p>The ID of the virtual private interface.</p>
@@ -104,6 +111,20 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
     pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_interface_name
     }
+    /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
+    pub fn rate_limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rate_limit = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
+    pub fn set_rate_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rate_limit = input;
+        self
+    }
+    /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
+    pub fn get_rate_limit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rate_limit
+    }
     /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesInput`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput).
     pub fn build(
         self,
@@ -117,6 +138,7 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
                 mtu: self.mtu,
                 enable_site_link: self.enable_site_link,
                 virtual_interface_name: self.virtual_interface_name,
+                rate_limit: self.rate_limit,
             },
         )
     }

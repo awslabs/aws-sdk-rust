@@ -77,6 +77,8 @@ pub fn de_describe_blue_green_deployments(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeBlueGreenDeploymentsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeBlueGreenDeploymentsResponse got {start_el:?}"
@@ -94,7 +96,7 @@ pub fn de_describe_blue_green_deployments(
             s if s.matches("BlueGreenDeployments") /* BlueGreenDeployments com.amazonaws.rds.synthetic#DescribeBlueGreenDeploymentsOutput$BlueGreenDeployments */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_blue_green_deployment_list::de_blue_green_deployment_list(&mut tag)
+                        crate::protocol_serde::shape_blue_green_deployment_list::de_blue_green_deployment_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

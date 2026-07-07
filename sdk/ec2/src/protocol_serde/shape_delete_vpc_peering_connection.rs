@@ -51,6 +51,8 @@ pub fn de_delete_vpc_peering_connection(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteVpcPeeringConnectionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteVpcPeeringConnectionResponse got {start_el:?}"

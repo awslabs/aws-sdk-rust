@@ -13,6 +13,8 @@ pub enum Error {
     InvalidInput(crate::types::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::types::error::OperationLimitExceeded),
+    /// <p>The top-level domain is currently undergoing maintenance and the request cannot be processed. Try again later.</p>
+    TldInMaintenance(crate::types::error::TldInMaintenance),
     /// <p>The top-level domain does not support this operation.</p>
     TldRulesViolation(crate::types::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
@@ -34,6 +36,7 @@ impl ::std::fmt::Display for Error {
             Error::DuplicateRequest(inner) => inner.fmt(f),
             Error::InvalidInput(inner) => inner.fmt(f),
             Error::OperationLimitExceeded(inner) => inner.fmt(f),
+            Error::TldInMaintenance(inner) => inner.fmt(f),
             Error::TldRulesViolation(inner) => inner.fmt(f),
             Error::UnsupportedTld(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -62,6 +65,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DuplicateRequest(inner) => inner.meta(),
             Self::InvalidInput(inner) => inner.meta(),
             Self::OperationLimitExceeded(inner) => inner.meta(),
+            Self::TldInMaintenance(inner) => inner.meta(),
             Self::TldRulesViolation(inner) => inner.meta(),
             Self::UnsupportedTld(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -220,6 +224,7 @@ impl From<crate::operation::check_domain_availability::CheckDomainAvailabilityEr
     fn from(err: crate::operation::check_domain_availability::CheckDomainAvailabilityError) -> Self {
         match err {
             crate::operation::check_domain_availability::CheckDomainAvailabilityError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::check_domain_availability::CheckDomainAvailabilityError::TldInMaintenance(inner) => Error::TldInMaintenance(inner),
             crate::operation::check_domain_availability::CheckDomainAvailabilityError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
             crate::operation::check_domain_availability::CheckDomainAvailabilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -246,6 +251,9 @@ impl From<crate::operation::check_domain_transferability::CheckDomainTransferabi
     fn from(err: crate::operation::check_domain_transferability::CheckDomainTransferabilityError) -> Self {
         match err {
             crate::operation::check_domain_transferability::CheckDomainTransferabilityError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::check_domain_transferability::CheckDomainTransferabilityError::TldInMaintenance(inner) => {
+                Error::TldInMaintenance(inner)
+            }
             crate::operation::check_domain_transferability::CheckDomainTransferabilityError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
             crate::operation::check_domain_transferability::CheckDomainTransferabilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -541,6 +549,7 @@ impl From<crate::operation::get_domain_suggestions::GetDomainSuggestionsError> f
     fn from(err: crate::operation::get_domain_suggestions::GetDomainSuggestionsError) -> Self {
         match err {
             crate::operation::get_domain_suggestions::GetDomainSuggestionsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::get_domain_suggestions::GetDomainSuggestionsError::TldInMaintenance(inner) => Error::TldInMaintenance(inner),
             crate::operation::get_domain_suggestions::GetDomainSuggestionsError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
             crate::operation::get_domain_suggestions::GetDomainSuggestionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -678,6 +687,7 @@ impl From<crate::operation::push_domain::PushDomainError> for Error {
         match err {
             crate::operation::push_domain::PushDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
             crate::operation::push_domain::PushDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::operation::push_domain::PushDomainError::TldInMaintenance(inner) => Error::TldInMaintenance(inner),
             crate::operation::push_domain::PushDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
             crate::operation::push_domain::PushDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -805,6 +815,9 @@ impl From<crate::operation::resend_contact_reachability_email::ResendContactReac
             crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError::OperationLimitExceeded(inner) => {
                 Error::OperationLimitExceeded(inner)
             }
+            crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError::TldInMaintenance(inner) => {
+                Error::TldInMaintenance(inner)
+            }
             crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError::UnsupportedTld(inner) => {
                 Error::UnsupportedTld(inner)
             }
@@ -837,6 +850,9 @@ impl From<crate::operation::resend_operation_authorization::ResendOperationAutho
     fn from(err: crate::operation::resend_operation_authorization::ResendOperationAuthorizationError) -> Self {
         match err {
             crate::operation::resend_operation_authorization::ResendOperationAuthorizationError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::resend_operation_authorization::ResendOperationAuthorizationError::TldInMaintenance(inner) => {
+                Error::TldInMaintenance(inner)
+            }
             crate::operation::resend_operation_authorization::ResendOperationAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -862,6 +878,7 @@ impl From<crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeErr
     fn from(err: crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError) -> Self {
         match err {
             crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError::TldInMaintenance(inner) => Error::TldInMaintenance(inner),
             crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
             crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1086,6 +1103,7 @@ impl ::std::error::Error for Error {
             Error::DuplicateRequest(inner) => inner.source(),
             Error::InvalidInput(inner) => inner.source(),
             Error::OperationLimitExceeded(inner) => inner.source(),
+            Error::TldInMaintenance(inner) => inner.source(),
             Error::TldRulesViolation(inner) => inner.source(),
             Error::UnsupportedTld(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -1100,6 +1118,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DuplicateRequest(e) => e.request_id(),
             Self::InvalidInput(e) => e.request_id(),
             Self::OperationLimitExceeded(e) => e.request_id(),
+            Self::TldInMaintenance(e) => e.request_id(),
             Self::TldRulesViolation(e) => e.request_id(),
             Self::UnsupportedTld(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

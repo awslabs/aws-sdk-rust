@@ -2,10 +2,16 @@
 pub(crate) fn de_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Operation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -70,25 +76,37 @@ where
                             );
                         }
                         "ExecutionDetails" => {
-                            builder =
-                                builder.set_execution_details(crate::protocol_serde::shape_execution_details::de_execution_details(tokens, _value)?);
+                            builder = builder.set_execution_details(crate::protocol_serde::shape_execution_details::de_execution_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ContextDetails" => {
-                            builder = builder.set_context_details(crate::protocol_serde::shape_context_details::de_context_details(tokens, _value)?);
+                            builder = builder.set_context_details(crate::protocol_serde::shape_context_details::de_context_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StepDetails" => {
-                            builder = builder.set_step_details(crate::protocol_serde::shape_step_details::de_step_details(tokens, _value)?);
+                            builder =
+                                builder.set_step_details(crate::protocol_serde::shape_step_details::de_step_details(tokens, _value, depth + 1)?);
                         }
                         "WaitDetails" => {
-                            builder = builder.set_wait_details(crate::protocol_serde::shape_wait_details::de_wait_details(tokens, _value)?);
+                            builder =
+                                builder.set_wait_details(crate::protocol_serde::shape_wait_details::de_wait_details(tokens, _value, depth + 1)?);
                         }
                         "CallbackDetails" => {
-                            builder =
-                                builder.set_callback_details(crate::protocol_serde::shape_callback_details::de_callback_details(tokens, _value)?);
+                            builder = builder.set_callback_details(crate::protocol_serde::shape_callback_details::de_callback_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ChainedInvokeDetails" => {
                             builder = builder.set_chained_invoke_details(
-                                crate::protocol_serde::shape_chained_invoke_details::de_chained_invoke_details(tokens, _value)?,
+                                crate::protocol_serde::shape_chained_invoke_details::de_chained_invoke_details(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

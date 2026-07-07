@@ -71,6 +71,8 @@ pub fn de_describe_multi_region_access_point_operation(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("DescribeMultiRegionAccessPointOperationResult") {
         return Err(
                                 ::aws_smithy_xml::decode::XmlDecodeError::custom(
@@ -83,7 +85,7 @@ pub fn de_describe_multi_region_access_point_operation(
             s if s.matches("AsyncOperation") /* AsyncOperation com.amazonaws.s3control.synthetic#DescribeMultiRegionAccessPointOperationOutput$AsyncOperation */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_async_operation::de_async_operation(&mut tag)
+                        crate::protocol_serde::shape_async_operation::de_async_operation(&mut tag, depth + 1)
                         ?
                     )
                 ;

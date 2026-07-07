@@ -99,11 +99,26 @@ pub fn ser_create_dash_manifest_configuration(
     if let Some(var_27) = &input.compactness {
         object.key("Compactness").string(var_27.as_str());
     }
-    if let Some(var_28) = &input.subtitle_configuration {
+    if let Some(var_28) = &input.audio_timeline_pattern {
+        object.key("AudioTimelinePattern").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.subtitle_configuration {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("SubtitleConfiguration").start_object();
-        crate::protocol_serde::shape_dash_subtitle_configuration::ser_dash_subtitle_configuration(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_30 = object.key("SubtitleConfiguration").start_object();
+        crate::protocol_serde::shape_dash_subtitle_configuration::ser_dash_subtitle_configuration(&mut object_30, var_29)?;
+        object_30.finish();
+    }
+    if let Some(var_31) = &input.uri_path_type {
+        object.key("UriPathType").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.availability_start_time_configuration {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("AvailabilityStartTimeConfiguration").start_object();
+        crate::protocol_serde::shape_dash_availability_start_time_configuration::ser_dash_availability_start_time_configuration(
+            &mut object_33,
+            var_32,
+        )?;
+        object_33.finish();
     }
     Ok(())
 }

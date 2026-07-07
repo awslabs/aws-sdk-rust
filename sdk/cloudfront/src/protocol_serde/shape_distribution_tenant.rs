@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_distribution_tenant(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DistributionTenant, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DistributionTenant::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_distribution_tenant(
             s if s.matches("Domains") /* Domains com.amazonaws.cloudfront#DistributionTenant$Domains */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_domain_result_list::de_domain_result_list(&mut tag)
+                        crate::protocol_serde::shape_domain_result_list::de_domain_result_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_distribution_tenant(
             s if s.matches("Tags") /* Tags com.amazonaws.cloudfront#DistributionTenant$Tags */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_tags::de_tags(&mut tag)
+                        crate::protocol_serde::shape_tags::de_tags(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_distribution_tenant(
             s if s.matches("Customizations") /* Customizations com.amazonaws.cloudfront#DistributionTenant$Customizations */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_customizations::de_customizations(&mut tag)
+                        crate::protocol_serde::shape_customizations::de_customizations(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -92,7 +96,7 @@ pub fn de_distribution_tenant(
             s if s.matches("Parameters") /* Parameters com.amazonaws.cloudfront#DistributionTenant$Parameters */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_parameters::de_parameters(&mut tag)
+                        crate::protocol_serde::shape_parameters::de_parameters(&mut tag, depth + 1)
                         ?
                     )
                 ;

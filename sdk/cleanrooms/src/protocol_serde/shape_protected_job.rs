@@ -2,10 +2,16 @@
 pub(crate) fn de_protected_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProtectedJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,75 +20,92 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "id" => {
-                            builder = builder.set_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "id" => {
+                                builder = builder.set_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "membershipId" => {
+                                builder = builder.set_membership_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "membershipArn" => {
+                                builder = builder.set_membership_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "createTime" => {
+                                builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "jobParameters" => {
+                                builder = builder.set_job_parameters(
+                                    crate::protocol_serde::shape_protected_job_parameters::de_protected_job_parameters(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "status" => {
+                                builder = builder.set_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ProtectedJobStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "resultConfiguration" => {
+                                builder = builder.set_result_configuration(
+                                    crate::protocol_serde::shape_protected_job_result_configuration_output::de_protected_job_result_configuration_output(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "statistics" => {
+                                builder = builder.set_statistics(crate::protocol_serde::shape_protected_job_statistics::de_protected_job_statistics(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "result" => {
+                                builder = builder.set_result(crate::protocol_serde::shape_protected_job_result::de_protected_job_result(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "error" => {
+                                builder = builder.set_error(crate::protocol_serde::shape_protected_job_error::de_protected_job_error(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "computeConfiguration" => {
+                                builder = builder.set_compute_configuration(
+                                    crate::protocol_serde::shape_protected_job_compute_configuration::de_protected_job_compute_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "jobComputePayerAccountId" => {
+                                builder = builder.set_job_compute_payer_account_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "membershipId" => {
-                            builder = builder.set_membership_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "membershipArn" => {
-                            builder = builder.set_membership_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "createTime" => {
-                            builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "jobParameters" => {
-                            builder = builder.set_job_parameters(crate::protocol_serde::shape_protected_job_parameters::de_protected_job_parameters(
-                                tokens, _value,
-                            )?);
-                        }
-                        "status" => {
-                            builder = builder.set_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProtectedJobStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "resultConfiguration" => {
-                            builder = builder.set_result_configuration(
-                                crate::protocol_serde::shape_protected_job_result_configuration_output::de_protected_job_result_configuration_output(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "statistics" => {
-                            builder = builder.set_statistics(crate::protocol_serde::shape_protected_job_statistics::de_protected_job_statistics(
-                                tokens, _value,
-                            )?);
-                        }
-                        "result" => {
-                            builder = builder.set_result(crate::protocol_serde::shape_protected_job_result::de_protected_job_result(
-                                tokens, _value,
-                            )?);
-                        }
-                        "error" => {
-                            builder = builder.set_error(crate::protocol_serde::shape_protected_job_error::de_protected_job_error(tokens, _value)?);
-                        }
-                        "computeConfiguration" => {
-                            builder = builder.set_compute_configuration(
-                                crate::protocol_serde::shape_protected_job_compute_configuration::de_protected_job_compute_configuration(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

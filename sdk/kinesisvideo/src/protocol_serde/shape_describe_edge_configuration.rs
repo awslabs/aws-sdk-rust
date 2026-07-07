@@ -147,6 +147,8 @@ pub(crate) fn de_describe_edge_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -159,10 +161,14 @@ pub(crate) fn de_describe_edge_configuration(
                     )?);
                 }
                 "EdgeAgentStatus" => {
-                    builder = builder.set_edge_agent_status(crate::protocol_serde::shape_edge_agent_status::de_edge_agent_status(tokens, _value)?);
+                    builder = builder.set_edge_agent_status(crate::protocol_serde::shape_edge_agent_status::de_edge_agent_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "EdgeConfig" => {
-                    builder = builder.set_edge_config(crate::protocol_serde::shape_edge_config::de_edge_config(tokens, _value)?);
+                    builder = builder.set_edge_config(crate::protocol_serde::shape_edge_config::de_edge_config(tokens, _value, depth + 1)?);
                 }
                 "FailedStatusDetails" => {
                     builder = builder.set_failed_status_details(

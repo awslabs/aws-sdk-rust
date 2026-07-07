@@ -31,10 +31,16 @@ pub fn ser_evaluation_precomputed_rag_source_config(
 pub(crate) fn de_evaluation_precomputed_rag_source_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationPrecomputedRagSourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -61,13 +67,13 @@ where
                     variant = match key.as_ref() {
                             "retrieveSourceConfig" => {
                                 Some(crate::types::EvaluationPrecomputedRagSourceConfig::RetrieveSourceConfig(
-                                    crate::protocol_serde::shape_evaluation_precomputed_retrieve_source_config::de_evaluation_precomputed_retrieve_source_config(tokens, _value)?
+                                    crate::protocol_serde::shape_evaluation_precomputed_retrieve_source_config::de_evaluation_precomputed_retrieve_source_config(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'retrieveSourceConfig' cannot be null"))?
                                 ))
                             }
                             "retrieveAndGenerateSourceConfig" => {
                                 Some(crate::types::EvaluationPrecomputedRagSourceConfig::RetrieveAndGenerateSourceConfig(
-                                    crate::protocol_serde::shape_evaluation_precomputed_retrieve_and_generate_source_config::de_evaluation_precomputed_retrieve_and_generate_source_config(tokens, _value)?
+                                    crate::protocol_serde::shape_evaluation_precomputed_retrieve_and_generate_source_config::de_evaluation_precomputed_retrieve_and_generate_source_config(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'retrieveAndGenerateSourceConfig' cannot be null"))?
                                 ))
                             }

@@ -52,10 +52,16 @@ pub fn ser_transform_job_definition(
 pub(crate) fn de_transform_job_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TransformJobDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,46 +70,58 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "MaxConcurrentTransforms" => {
-                            builder = builder.set_max_concurrent_transforms(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MaxConcurrentTransforms" => {
+                                builder = builder.set_max_concurrent_transforms(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "MaxPayloadInMB" => {
+                                builder = builder.set_max_payload_in_mb(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "BatchStrategy" => {
+                                builder = builder.set_batch_strategy(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::BatchStrategy::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "Environment" => {
+                                builder = builder.set_environment(
+                                    crate::protocol_serde::shape_transform_environment_map::de_transform_environment_map(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "TransformInput" => {
+                                builder = builder.set_transform_input(crate::protocol_serde::shape_transform_input::de_transform_input(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "TransformOutput" => {
+                                builder = builder.set_transform_output(crate::protocol_serde::shape_transform_output::de_transform_output(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "TransformResources" => {
+                                builder = builder.set_transform_resources(crate::protocol_serde::shape_transform_resources::de_transform_resources(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "MaxPayloadInMB" => {
-                            builder = builder.set_max_payload_in_mb(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "BatchStrategy" => {
-                            builder = builder.set_batch_strategy(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::BatchStrategy::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "Environment" => {
-                            builder = builder.set_environment(crate::protocol_serde::shape_transform_environment_map::de_transform_environment_map(
-                                tokens, _value,
-                            )?);
-                        }
-                        "TransformInput" => {
-                            builder = builder.set_transform_input(crate::protocol_serde::shape_transform_input::de_transform_input(tokens, _value)?);
-                        }
-                        "TransformOutput" => {
-                            builder =
-                                builder.set_transform_output(crate::protocol_serde::shape_transform_output::de_transform_output(tokens, _value)?);
-                        }
-                        "TransformResources" => {
-                            builder = builder
-                                .set_transform_resources(crate::protocol_serde::shape_transform_resources::de_transform_resources(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

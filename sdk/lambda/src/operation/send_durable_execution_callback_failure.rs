@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendDur
 #[derive(Debug)]
 struct SendDurableExecutionCallbackFailureResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SendDurableExecutionCallbackFailureResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -292,6 +293,16 @@ pub enum SendDurableExecutionCallbackFailureError {
     CallbackTimeoutException(crate::types::error::CallbackTimeoutException),
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>Lambda couldn't decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>Lambda couldn't decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
+    KmsDisabledException(crate::types::error::KmsDisabledException),
+    /// <p>Lambda couldn't decrypt the environment variables because the state of the KMS key used is not valid for Decrypt. Check the function's KMS key settings.</p>
+    KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
+    /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
+    KmsNotFoundException(crate::types::error::KmsNotFoundException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
@@ -331,6 +342,11 @@ impl SendDurableExecutionCallbackFailureError {
         match self {
             Self::CallbackTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -343,6 +359,26 @@ impl SendDurableExecutionCallbackFailureError {
     /// Returns `true` if the error kind is `SendDurableExecutionCallbackFailureError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
+    }
+    /// Returns `true` if the error kind is `SendDurableExecutionCallbackFailureError::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(self, Self::KmsAccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `SendDurableExecutionCallbackFailureError::KmsDisabledException`.
+    pub fn is_kms_disabled_exception(&self) -> bool {
+        matches!(self, Self::KmsDisabledException(_))
+    }
+    /// Returns `true` if the error kind is `SendDurableExecutionCallbackFailureError::KmsInvalidStateException`.
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(self, Self::KmsInvalidStateException(_))
+    }
+    /// Returns `true` if the error kind is `SendDurableExecutionCallbackFailureError::KmsNotFoundException`.
+    pub fn is_kms_not_found_exception(&self) -> bool {
+        matches!(self, Self::KmsNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `SendDurableExecutionCallbackFailureError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `SendDurableExecutionCallbackFailureError::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
@@ -358,6 +394,11 @@ impl ::std::error::Error for SendDurableExecutionCallbackFailureError {
         match self {
             Self::CallbackTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsDisabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -369,6 +410,11 @@ impl ::std::fmt::Display for SendDurableExecutionCallbackFailureError {
         match self {
             Self::CallbackTimeoutException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsDisabledException(_inner) => _inner.fmt(f),
+            Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            Self::KmsNotFoundException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -394,6 +440,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SendDurableEx
         match self {
             Self::CallbackTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

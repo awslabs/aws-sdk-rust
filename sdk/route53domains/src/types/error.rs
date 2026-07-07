@@ -13,6 +13,8 @@ pub use crate::types::error::_duplicate_request::DuplicateRequest;
 
 pub use crate::types::error::_tld_rules_violation::TldRulesViolation;
 
+pub use crate::types::error::_tld_in_maintenance::TldInMaintenance;
+
 mod _dnssec_limit_exceeded;
 
 mod _domain_limit_exceeded;
@@ -22,6 +24,8 @@ mod _duplicate_request;
 mod _invalid_input;
 
 mod _operation_limit_exceeded;
+
+mod _tld_in_maintenance;
 
 mod _tld_rules_violation;
 

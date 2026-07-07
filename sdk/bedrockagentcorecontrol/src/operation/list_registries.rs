@@ -156,9 +156,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListReg
 #[derive(Debug)]
 struct ListRegistriesResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListRegistriesResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -218,6 +219,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRegistri
                 if let ::std::option::Option::Some(inner_3) = &_input.status {
                     {
                         query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.authorizer_type {
+                    {
+                        query.push_kv("authorizerType", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())

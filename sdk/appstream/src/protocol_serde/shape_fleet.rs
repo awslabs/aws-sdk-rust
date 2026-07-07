@@ -2,10 +2,16 @@
 pub(crate) fn de_fleet<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Fleet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -73,7 +79,7 @@ where
                         }
                         "ComputeCapacityStatus" => {
                             builder = builder.set_compute_capacity_status(
-                                crate::protocol_serde::shape_compute_capacity_status::de_compute_capacity_status(tokens, _value)?,
+                                crate::protocol_serde::shape_compute_capacity_status::de_compute_capacity_status(tokens, _value, depth + 1)?,
                             );
                         }
                         "MaxUserDurationInSeconds" => {
@@ -98,7 +104,7 @@ where
                             );
                         }
                         "VpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "CreatedTime" => {
                             builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -107,15 +113,19 @@ where
                             )?);
                         }
                         "FleetErrors" => {
-                            builder = builder.set_fleet_errors(crate::protocol_serde::shape_fleet_errors::de_fleet_errors(tokens, _value)?);
+                            builder =
+                                builder.set_fleet_errors(crate::protocol_serde::shape_fleet_errors::de_fleet_errors(tokens, _value, depth + 1)?);
                         }
                         "EnableDefaultInternetAccess" => {
                             builder = builder
                                 .set_enable_default_internet_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "DomainJoinInfo" => {
-                            builder =
-                                builder.set_domain_join_info(crate::protocol_serde::shape_domain_join_info::de_domain_join_info(tokens, _value)?);
+                            builder = builder.set_domain_join_info(crate::protocol_serde::shape_domain_join_info::de_domain_join_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IdleDisconnectTimeoutInSeconds" => {
                             builder = builder.set_idle_disconnect_timeout_in_seconds(
@@ -154,12 +164,15 @@ where
                         }
                         "UsbDeviceFilterStrings" => {
                             builder = builder.set_usb_device_filter_strings(
-                                crate::protocol_serde::shape_usb_device_filter_strings::de_usb_device_filter_strings(tokens, _value)?,
+                                crate::protocol_serde::shape_usb_device_filter_strings::de_usb_device_filter_strings(tokens, _value, depth + 1)?,
                             );
                         }
                         "SessionScriptS3Location" => {
-                            builder =
-                                builder.set_session_script_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
+                            builder = builder.set_session_script_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MaxSessionsPerInstance" => {
                             builder = builder.set_max_sessions_per_instance(
@@ -169,7 +182,11 @@ where
                             );
                         }
                         "RootVolumeConfig" => {
-                            builder = builder.set_root_volume_config(crate::protocol_serde::shape_volume_config::de_volume_config(tokens, _value)?);
+                            builder = builder.set_root_volume_config(crate::protocol_serde::shape_volume_config::de_volume_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DisableIMDSV1" => {
                             builder = builder.set_disable_imdsv1(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

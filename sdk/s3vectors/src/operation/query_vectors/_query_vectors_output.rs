@@ -7,6 +7,8 @@ pub struct QueryVectorsOutput {
     pub vectors: ::std::vec::Vec<crate::types::QueryOutputVector>,
     /// <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
     pub distance_metric: ::std::option::Option<crate::types::DistanceMetric>,
+    /// <p>Pagination token to be used in the subsequent page request. The field is empty if no further pagination is required.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl QueryVectorsOutput {
@@ -18,6 +20,10 @@ impl QueryVectorsOutput {
     /// <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
     pub fn distance_metric(&self) -> ::std::option::Option<&crate::types::DistanceMetric> {
         self.distance_metric.as_ref()
+    }
+    /// <p>Pagination token to be used in the subsequent page request. The field is empty if no further pagination is required.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for QueryVectorsOutput {
@@ -38,6 +44,7 @@ impl QueryVectorsOutput {
 pub struct QueryVectorsOutputBuilder {
     pub(crate) vectors: ::std::option::Option<::std::vec::Vec<crate::types::QueryOutputVector>>,
     pub(crate) distance_metric: ::std::option::Option<crate::types::DistanceMetric>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl QueryVectorsOutputBuilder {
@@ -76,6 +83,20 @@ impl QueryVectorsOutputBuilder {
     pub fn get_distance_metric(&self) -> &::std::option::Option<crate::types::DistanceMetric> {
         &self.distance_metric
     }
+    /// <p>Pagination token to be used in the subsequent page request. The field is empty if no further pagination is required.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Pagination token to be used in the subsequent page request. The field is empty if no further pagination is required.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>Pagination token to be used in the subsequent page request. The field is empty if no further pagination is required.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -99,6 +120,7 @@ impl QueryVectorsOutputBuilder {
                 )
             })?,
             distance_metric: self.distance_metric,
+            next_token: self.next_token,
             _request_id: self._request_id,
         })
     }

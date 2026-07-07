@@ -8,17 +8,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoutePedestrianArrival {
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the arrival.</p>
     pub place: ::std::option::Option<crate::types::RoutePedestrianPlace>,
-    /// <p>The time.</p>
+    /// <p>The arrival time.</p>
     pub time: ::std::option::Option<::std::string::String>,
 }
 impl RoutePedestrianArrival {
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the arrival.</p>
     pub fn place(&self) -> ::std::option::Option<&crate::types::RoutePedestrianPlace> {
         self.place.as_ref()
     }
-    /// <p>The time.</p>
+    /// <p>The arrival time.</p>
     pub fn time(&self) -> ::std::option::Option<&str> {
         self.time.as_deref()
     }
@@ -46,32 +46,32 @@ pub struct RoutePedestrianArrivalBuilder {
     pub(crate) time: ::std::option::Option<::std::string::String>,
 }
 impl RoutePedestrianArrivalBuilder {
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the arrival.</p>
     /// This field is required.
     pub fn place(mut self, input: crate::types::RoutePedestrianPlace) -> Self {
         self.place = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the arrival.</p>
     pub fn set_place(mut self, input: ::std::option::Option<crate::types::RoutePedestrianPlace>) -> Self {
         self.place = input;
         self
     }
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the arrival.</p>
     pub fn get_place(&self) -> &::std::option::Option<crate::types::RoutePedestrianPlace> {
         &self.place
     }
-    /// <p>The time.</p>
+    /// <p>The arrival time.</p>
     pub fn time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The time.</p>
+    /// <p>The arrival time.</p>
     pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time = input;
         self
     }
-    /// <p>The time.</p>
+    /// <p>The arrival time.</p>
     pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.time
     }

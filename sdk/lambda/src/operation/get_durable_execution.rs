@@ -150,9 +150,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDura
 #[derive(Debug)]
 struct GetDurableExecutionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetDurableExecutionResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -210,6 +211,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDurableEx
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::get_durable_execution::GetDurableExecutionInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_2) = &_input.include_execution_data {
+                    {
+                        query.push_kv("IncludeExecutionData", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_durable_execution::GetDurableExecutionInput,
@@ -217,6 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDurableEx
             ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
@@ -275,6 +289,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDurableExe
 pub enum GetDurableExecutionError {
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>Lambda couldn't decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>Lambda couldn't decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
+    KmsDisabledException(crate::types::error::KmsDisabledException),
+    /// <p>Lambda couldn't decrypt the environment variables because the state of the KMS key used is not valid for Decrypt. Check the function's KMS key settings.</p>
+    KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
+    /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
+    KmsNotFoundException(crate::types::error::KmsNotFoundException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
@@ -315,6 +337,10 @@ impl GetDurableExecutionError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -324,6 +350,22 @@ impl GetDurableExecutionError {
     /// Returns `true` if the error kind is `GetDurableExecutionError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
+    }
+    /// Returns `true` if the error kind is `GetDurableExecutionError::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(self, Self::KmsAccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetDurableExecutionError::KmsDisabledException`.
+    pub fn is_kms_disabled_exception(&self) -> bool {
+        matches!(self, Self::KmsDisabledException(_))
+    }
+    /// Returns `true` if the error kind is `GetDurableExecutionError::KmsInvalidStateException`.
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(self, Self::KmsInvalidStateException(_))
+    }
+    /// Returns `true` if the error kind is `GetDurableExecutionError::KmsNotFoundException`.
+    pub fn is_kms_not_found_exception(&self) -> bool {
+        matches!(self, Self::KmsNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetDurableExecutionError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -342,6 +384,10 @@ impl ::std::error::Error for GetDurableExecutionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsDisabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -353,6 +399,10 @@ impl ::std::fmt::Display for GetDurableExecutionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsDisabledException(_inner) => _inner.fmt(f),
+            Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            Self::KmsNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -378,6 +428,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetDurableExe
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

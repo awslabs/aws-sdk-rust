@@ -183,6 +183,8 @@ pub(crate) fn de_post_time_series_data_points(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -212,7 +214,9 @@ pub(crate) fn de_post_time_series_data_points(
                 "forms" => {
                     builder = builder.set_forms(
                         crate::protocol_serde::shape_time_series_data_point_form_output_list::de_time_series_data_point_form_output_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

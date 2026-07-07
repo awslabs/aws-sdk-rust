@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_domain_endpoint_options_status(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DomainEndpointOptionsStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DomainEndpointOptionsStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_domain_endpoint_options_status(
             s if s.matches("Options") /* Options com.amazonaws.cloudsearch#DomainEndpointOptionsStatus$Options */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_domain_endpoint_options::de_domain_endpoint_options(&mut tag)
+                        crate::protocol_serde::shape_domain_endpoint_options::de_domain_endpoint_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_domain_endpoint_options_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#DomainEndpointOptionsStatus$Status */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_option_status::de_option_status(&mut tag)
+                        crate::protocol_serde::shape_option_status::de_option_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

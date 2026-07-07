@@ -441,6 +441,8 @@ pub(crate) mod shape_workflow_version_list;
 
 pub(crate) mod shape_ami_distribution_configuration;
 
+pub(crate) mod shape_ami_watermarks_list;
+
 pub(crate) mod shape_auto_disable_policy;
 
 pub(crate) mod shape_component_configuration_list;

@@ -30,10 +30,16 @@ pub fn ser_device_selection_config(
 pub(crate) fn de_device_selection_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DeviceSelectionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,7 +64,8 @@ where
                             );
                         }
                         "DeviceNames" => {
-                            builder = builder.set_device_names(crate::protocol_serde::shape_device_names::de_device_names(tokens, _value)?);
+                            builder =
+                                builder.set_device_names(crate::protocol_serde::shape_device_names::de_device_names(tokens, _value, depth + 1)?);
                         }
                         "DeviceNameContains" => {
                             builder = builder.set_device_name_contains(

@@ -23,6 +23,8 @@ pub struct DomainDescriptionType {
     /// <p>The version of managed login branding that you want to apply to your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
     /// <p>Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a> other than <code>Lite</code>.</p>
     pub managed_login_version: ::std::option::Option<i32>,
+    /// <p>The routing configuration for the domain, including failover settings for multi-region deployments. Currently only <code>Failover</code> configurations are allowed.</p>
+    pub routing: ::std::option::Option<crate::types::RoutingType>,
 }
 impl DomainDescriptionType {
     /// <p>The ID of the user pool that the domain is attached to.</p>
@@ -62,6 +64,10 @@ impl DomainDescriptionType {
     pub fn managed_login_version(&self) -> ::std::option::Option<i32> {
         self.managed_login_version
     }
+    /// <p>The routing configuration for the domain, including failover settings for multi-region deployments. Currently only <code>Failover</code> configurations are allowed.</p>
+    pub fn routing(&self) -> ::std::option::Option<&crate::types::RoutingType> {
+        self.routing.as_ref()
+    }
 }
 impl DomainDescriptionType {
     /// Creates a new builder-style object to manufacture [`DomainDescriptionType`](crate::types::DomainDescriptionType).
@@ -83,6 +89,7 @@ pub struct DomainDescriptionTypeBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DomainStatusType>,
     pub(crate) custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
     pub(crate) managed_login_version: ::std::option::Option<i32>,
+    pub(crate) routing: ::std::option::Option<crate::types::RoutingType>,
 }
 impl DomainDescriptionTypeBuilder {
     /// <p>The ID of the user pool that the domain is attached to.</p>
@@ -214,6 +221,20 @@ impl DomainDescriptionTypeBuilder {
     pub fn get_managed_login_version(&self) -> &::std::option::Option<i32> {
         &self.managed_login_version
     }
+    /// <p>The routing configuration for the domain, including failover settings for multi-region deployments. Currently only <code>Failover</code> configurations are allowed.</p>
+    pub fn routing(mut self, input: crate::types::RoutingType) -> Self {
+        self.routing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The routing configuration for the domain, including failover settings for multi-region deployments. Currently only <code>Failover</code> configurations are allowed.</p>
+    pub fn set_routing(mut self, input: ::std::option::Option<crate::types::RoutingType>) -> Self {
+        self.routing = input;
+        self
+    }
+    /// <p>The routing configuration for the domain, including failover settings for multi-region deployments. Currently only <code>Failover</code> configurations are allowed.</p>
+    pub fn get_routing(&self) -> &::std::option::Option<crate::types::RoutingType> {
+        &self.routing
+    }
     /// Consumes the builder and constructs a [`DomainDescriptionType`](crate::types::DomainDescriptionType).
     pub fn build(self) -> crate::types::DomainDescriptionType {
         crate::types::DomainDescriptionType {
@@ -226,6 +247,7 @@ impl DomainDescriptionTypeBuilder {
             status: self.status,
             custom_domain_config: self.custom_domain_config,
             managed_login_version: self.managed_login_version,
+            routing: self.routing,
         }
     }
 }

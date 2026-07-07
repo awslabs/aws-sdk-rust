@@ -242,10 +242,11 @@ pub(crate) fn de_create_automation_rule(
     crate::operation::create_automation_rule::builders::CreateAutomationRuleOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::create_automation_rule::builders::CreateAutomationRuleOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::create_automation_rule::builders::CreateAutomationRuleOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -269,7 +270,7 @@ pub(crate) fn de_create_automation_rule(
             }
             "organizationConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_organization_configuration(Some(
-                    crate::protocol_serde::shape_organization_configuration::de_organization_configuration(decoder)?,
+                    crate::protocol_serde::shape_organization_configuration::de_organization_configuration(decoder, depth + 1)?,
                 )))
             })?,
             "priority" => {
@@ -277,20 +278,20 @@ pub(crate) fn de_create_automation_rule(
             }
             "recommendedActionTypes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_recommended_action_types(Some(
-                    crate::protocol_serde::shape_recommended_action_type_list::de_recommended_action_type_list(decoder)?,
+                    crate::protocol_serde::shape_recommended_action_type_list::de_recommended_action_type_list(decoder, depth + 1)?,
                 )))
             })?,
             "criteria" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_criteria(Some(crate::protocol_serde::shape_criteria::de_criteria(decoder)?)))
+                Ok(builder.set_criteria(Some(crate::protocol_serde::shape_criteria::de_criteria(decoder, depth + 1)?)))
             })?,
             "schedule" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_schedule(Some(crate::protocol_serde::shape_schedule::de_schedule(decoder)?)))
+                Ok(builder.set_schedule(Some(crate::protocol_serde::shape_schedule::de_schedule(decoder, depth + 1)?)))
             })?,
             "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::RuleStatus::from(s.as_ref()))?)))
             })?,
             "tags" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_tags(Some(crate::protocol_serde::shape_tag_list::de_tag_list(decoder)?)))
+                Ok(builder.set_tags(Some(crate::protocol_serde::shape_tag_list::de_tag_list(decoder, depth + 1)?)))
             })?,
             "createdTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_created_timestamp(Some(decoder.timestamp()?)))
@@ -304,6 +305,8 @@ pub(crate) fn de_create_automation_rule(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -313,13 +316,13 @@ pub(crate) fn de_create_automation_rule(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

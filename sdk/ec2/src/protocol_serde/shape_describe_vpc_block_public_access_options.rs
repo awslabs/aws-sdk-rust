@@ -53,6 +53,8 @@ pub fn de_describe_vpc_block_public_access_options(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVpcBlockPublicAccessOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVpcBlockPublicAccessOptionsResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_describe_vpc_block_public_access_options(
             s if s.matches("vpcBlockPublicAccessOptions") /* VpcBlockPublicAccessOptions com.amazonaws.ec2.synthetic#DescribeVpcBlockPublicAccessOptionsOutput$VpcBlockPublicAccessOptions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc_block_public_access_options::de_vpc_block_public_access_options(&mut tag)
+                        crate::protocol_serde::shape_vpc_block_public_access_options::de_vpc_block_public_access_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

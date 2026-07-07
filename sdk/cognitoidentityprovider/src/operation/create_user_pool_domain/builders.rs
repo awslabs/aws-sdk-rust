@@ -184,4 +184,18 @@ impl CreateUserPoolDomainFluentBuilder {
     pub fn get_custom_domain_config(&self) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
         self.inner.get_custom_domain_config()
     }
+    /// <p>The configuration of routing for requests to the domain for replicas of a replicated user pool. The routing configuration is currently only supported for custom domains.</p>
+    pub fn routing(mut self, input: crate::types::RoutingType) -> Self {
+        self.inner = self.inner.routing(input);
+        self
+    }
+    /// <p>The configuration of routing for requests to the domain for replicas of a replicated user pool. The routing configuration is currently only supported for custom domains.</p>
+    pub fn set_routing(mut self, input: ::std::option::Option<crate::types::RoutingType>) -> Self {
+        self.inner = self.inner.set_routing(input);
+        self
+    }
+    /// <p>The configuration of routing for requests to the domain for replicas of a replicated user pool. The routing configuration is currently only supported for custom domains.</p>
+    pub fn get_routing(&self) -> &::std::option::Option<crate::types::RoutingType> {
+        self.inner.get_routing()
+    }
 }

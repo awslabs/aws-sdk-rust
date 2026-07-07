@@ -2,10 +2,16 @@
 pub(crate) fn de_route_toll_rate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouteTollRate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,8 +29,11 @@ where
                             );
                         }
                         "ConvertedPrice" => {
-                            builder =
-                                builder.set_converted_price(crate::protocol_serde::shape_route_toll_price::de_route_toll_price(tokens, _value)?);
+                            builder = builder.set_converted_price(crate::protocol_serde::shape_route_toll_price::de_route_toll_price(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Id" => {
                             builder = builder.set_id(
@@ -34,7 +43,11 @@ where
                             );
                         }
                         "LocalPrice" => {
-                            builder = builder.set_local_price(crate::protocol_serde::shape_route_toll_price::de_route_toll_price(tokens, _value)?);
+                            builder = builder.set_local_price(crate::protocol_serde::shape_route_toll_price::de_route_toll_price(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Name" => {
                             builder = builder.set_name(
@@ -44,16 +57,26 @@ where
                             );
                         }
                         "Pass" => {
-                            builder = builder.set_pass(crate::protocol_serde::shape_route_toll_pass::de_route_toll_pass(tokens, _value)?);
+                            builder = builder.set_pass(crate::protocol_serde::shape_route_toll_pass::de_route_toll_pass(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PaymentMethods" => {
                             builder = builder.set_payment_methods(
-                                crate::protocol_serde::shape_route_toll_payment_method_list::de_route_toll_payment_method_list(tokens, _value)?,
+                                crate::protocol_serde::shape_route_toll_payment_method_list::de_route_toll_payment_method_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Transponders" => {
                             builder = builder.set_transponders(crate::protocol_serde::shape_route_transponder_list::de_route_transponder_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

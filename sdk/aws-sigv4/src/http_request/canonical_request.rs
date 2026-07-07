@@ -24,6 +24,24 @@ use std::fmt;
 use std::str::FromStr;
 use std::time::SystemTime;
 
+const SIGV4_SENSITIVE_HEADERS: &[&str] = &[
+    "authorization",
+    "proxy-authorization",
+    "x-amz-security-token",
+    "cookie",
+    "set-cookie",
+    "x-amz-server-side-encryption-customer-key",
+    "x-amz-server-side-encryption-customer-key-md5",
+    "x-amz-copy-source-server-side-encryption-customer-key",
+    "x-amz-copy-source-server-side-encryption-customer-key-md5",
+];
+
+fn is_sensitive_sigv4(name: &str) -> bool {
+    SIGV4_SENSITIVE_HEADERS
+        .iter()
+        .any(|d| name.eq_ignore_ascii_case(d))
+}
+
 #[cfg(feature = "sigv4a")]
 pub(crate) mod sigv4a;
 
@@ -462,6 +480,27 @@ impl CanonicalRequest<'_> {
             .collect();
         values.join(",")
     }
+
+    fn redacted_header_values_for(&self, key: impl AsHeaderName, key_as_str: &str) -> String {
+        if is_sensitive_sigv4(key_as_str) {
+            let total_len: usize = self
+                .headers
+                .get_all(key)
+                .into_iter()
+                .map(|v| v.as_bytes().len())
+                .sum();
+            format!("** redacted (length={total_len}) **")
+        } else {
+            self.header_values_for(key)
+        }
+    }
+
+    /// Returns a wrapper whose `Display` impl redacts sensitive header values.
+    /// Use this for logging; use the plain `Display` impl (`to_string()`) when the
+    /// raw canonical request is required (e.g. for signature computation).
+    pub(crate) fn redacted(&self) -> RedactedCanonicalRequest<'_, '_> {
+        RedactedCanonicalRequest(self)
+    }
 }
 
 impl fmt::Display for CanonicalRequest<'_> {
@@ -478,6 +517,30 @@ impl fmt::Display for CanonicalRequest<'_> {
         // write out the signed headers
         writeln!(f, "{}", self.values.signed_headers().as_str())?;
         write!(f, "{}", self.values.content_sha256())?;
+        Ok(())
+    }
+}
+
+/// A wrapper around `CanonicalRequest` whose `Display` impl redacts sensitive
+/// header values. Use this when logging a canonical request, to avoid leaking
+/// credentials or session tokens into log output. The plain `Display` impl on
+/// `CanonicalRequest` remains unchanged and produces the raw canonical form
+/// required for signature computation.
+pub(crate) struct RedactedCanonicalRequest<'a, 'b>(&'a CanonicalRequest<'b>);
+
+impl fmt::Display for RedactedCanonicalRequest<'_, '_> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        writeln!(f, "{}", self.0.method)?;
+        writeln!(f, "{}", self.0.path)?;
+        writeln!(f, "{}", self.0.params.as_deref().unwrap_or(""))?;
+        for header in &self.0.values.signed_headers().headers {
+            let name = header.0.as_str();
+            write!(f, "{}:", name)?;
+            writeln!(f, "{}", self.0.redacted_header_values_for(&header.0, name))?;
+        }
+        writeln!(f)?;
+        writeln!(f, "{}", self.0.values.signed_headers().as_str())?;
+        write!(f, "{}", self.0.values.content_sha256())?;
         Ok(())
     }
 }
@@ -1132,5 +1195,92 @@ mod tests {
         fn test_trim_all_does_nothing_when_there_are_no_spaces(s in "[^ ]*") {
             assert_eq!(trim_all(&s).as_ref(), s);
         }
+    }
+
+    #[test]
+    fn canonical_request_redacted_display_redacts_security_token() {
+        let request = http::Request::builder()
+            .uri("https://example.amazonaws.com/")
+            .header("x-amz-security-token", "SECRETTOKENMARKER_DO_NOT_LOG")
+            .body("")
+            .unwrap()
+            .into();
+        let request = SignableRequest::from(&request);
+        let settings = SigningSettings {
+            payload_checksum_kind: PayloadChecksumKind::XAmzSha256,
+            session_token_mode: SessionTokenMode::Include,
+            ..Default::default()
+        };
+        let identity = Credentials::for_tests_with_session_token().into();
+        let signing_params = signing_params(&identity, settings);
+        let creq = CanonicalRequest::from(&request, &signing_params).unwrap();
+        let output = format!("{}", creq.redacted());
+        assert!(
+            !output.contains("SECRETTOKENMARKER_DO_NOT_LOG"),
+            "security token must not appear in redacted Display output"
+        );
+        assert!(
+            output.contains("x-amz-security-token:"),
+            "header name must still appear"
+        );
+        assert!(
+            output.contains("** redacted"),
+            "redaction marker must appear"
+        );
+    }
+
+    #[test]
+    fn canonical_request_raw_display_preserves_security_token() {
+        let request = http::Request::builder()
+            .uri("https://example.amazonaws.com/")
+            .body("")
+            .unwrap()
+            .into();
+        let request = SignableRequest::from(&request);
+        let settings = SigningSettings {
+            payload_checksum_kind: PayloadChecksumKind::XAmzSha256,
+            session_token_mode: SessionTokenMode::Include,
+            ..Default::default()
+        };
+        let identity = Credentials::for_tests_with_session_token().into();
+        let signing_params = signing_params(&identity, settings);
+        let creq = CanonicalRequest::from(&request, &signing_params).unwrap();
+        let output = format!("{}", creq);
+        assert!(
+            output.contains("notarealsessiontoken"),
+            "security token must appear verbatim in raw Display output"
+        );
+    }
+
+    #[test]
+    fn canonical_request_display_preserves_non_sensitive() {
+        let request = http::Request::builder()
+            .uri("https://example.amazonaws.com/")
+            .header("x-amz-date", "20210511T154045Z")
+            .body("")
+            .unwrap()
+            .into();
+        let request = SignableRequest::from(&request);
+        let settings = SigningSettings {
+            payload_checksum_kind: PayloadChecksumKind::XAmzSha256,
+            session_token_mode: SessionTokenMode::Exclude,
+            ..Default::default()
+        };
+        let identity = Credentials::for_tests().into();
+        let signing_params = signing_params(&identity, settings);
+        let creq = CanonicalRequest::from(&request, &signing_params).unwrap();
+        let output = format!("{}", creq);
+        assert!(
+            output.contains("host:example.amazonaws.com"),
+            "host value must appear verbatim"
+        );
+        assert!(
+            output.contains("x-amz-date:20210511T154045Z"),
+            "date value must appear verbatim"
+        );
+        assert!(
+            output.contains("x-amz-content-sha256:"),
+            "content-sha256 header must appear"
+        );
     }
 }

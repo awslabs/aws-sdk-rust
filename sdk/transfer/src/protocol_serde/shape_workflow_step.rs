@@ -42,10 +42,16 @@ pub fn ser_workflow_step(
 pub(crate) fn de_workflow_step<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkflowStep>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,37 +60,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Type" => {
-                            builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::WorkflowStepType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Type" => {
+                                builder = builder.set_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::WorkflowStepType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "CopyStepDetails" => {
+                                builder = builder.set_copy_step_details(crate::protocol_serde::shape_copy_step_details::de_copy_step_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CustomStepDetails" => {
+                                builder = builder.set_custom_step_details(crate::protocol_serde::shape_custom_step_details::de_custom_step_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "DeleteStepDetails" => {
+                                builder = builder.set_delete_step_details(crate::protocol_serde::shape_delete_step_details::de_delete_step_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "TagStepDetails" => {
+                                builder = builder.set_tag_step_details(crate::protocol_serde::shape_tag_step_details::de_tag_step_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "DecryptStepDetails" => {
+                                builder = builder.set_decrypt_step_details(
+                                    crate::protocol_serde::shape_decrypt_step_details::de_decrypt_step_details(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "CopyStepDetails" => {
-                            builder =
-                                builder.set_copy_step_details(crate::protocol_serde::shape_copy_step_details::de_copy_step_details(tokens, _value)?);
-                        }
-                        "CustomStepDetails" => {
-                            builder = builder
-                                .set_custom_step_details(crate::protocol_serde::shape_custom_step_details::de_custom_step_details(tokens, _value)?);
-                        }
-                        "DeleteStepDetails" => {
-                            builder = builder
-                                .set_delete_step_details(crate::protocol_serde::shape_delete_step_details::de_delete_step_details(tokens, _value)?);
-                        }
-                        "TagStepDetails" => {
-                            builder =
-                                builder.set_tag_step_details(crate::protocol_serde::shape_tag_step_details::de_tag_step_details(tokens, _value)?);
-                        }
-                        "DecryptStepDetails" => {
-                            builder = builder.set_decrypt_step_details(crate::protocol_serde::shape_decrypt_step_details::de_decrypt_step_details(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

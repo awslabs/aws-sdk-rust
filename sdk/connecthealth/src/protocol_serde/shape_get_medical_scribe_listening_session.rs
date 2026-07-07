@@ -141,6 +141,8 @@ pub(crate) fn de_get_medical_scribe_listening_session(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -149,7 +151,9 @@ pub(crate) fn de_get_medical_scribe_listening_session(
                 "medicalScribeListeningSessionDetails" => {
                     builder = builder.set_medical_scribe_listening_session_details(
                         crate::protocol_serde::shape_medical_scribe_listening_session_details::de_medical_scribe_listening_session_details(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

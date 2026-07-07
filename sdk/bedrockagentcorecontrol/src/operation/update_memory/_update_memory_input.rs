@@ -15,6 +15,8 @@ pub struct UpdateMemoryInput {
     pub memory_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The memory strategies to add, modify, or delete.</p>
     pub memory_strategies: ::std::option::Option<crate::types::ModifyMemoryStrategies>,
+    /// <p>Additional metadata keys to index. Previously indexed keys cannot be removed.</p>
+    pub add_indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
 }
@@ -43,6 +45,12 @@ impl UpdateMemoryInput {
     pub fn memory_strategies(&self) -> ::std::option::Option<&crate::types::ModifyMemoryStrategies> {
         self.memory_strategies.as_ref()
     }
+    /// <p>Additional metadata keys to index. Previously indexed keys cannot be removed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_indexed_keys.is_none()`.
+    pub fn add_indexed_keys(&self) -> &[crate::types::IndexedKey] {
+        self.add_indexed_keys.as_deref().unwrap_or_default()
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(&self) -> ::std::option::Option<&crate::types::StreamDeliveryResources> {
         self.stream_delivery_resources.as_ref()
@@ -57,6 +65,7 @@ impl ::std::fmt::Debug for UpdateMemoryInput {
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("add_indexed_keys", &self.add_indexed_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.finish()
     }
@@ -78,6 +87,7 @@ pub struct UpdateMemoryInputBuilder {
     pub(crate) event_expiry_duration: ::std::option::Option<i32>,
     pub(crate) memory_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) memory_strategies: ::std::option::Option<crate::types::ModifyMemoryStrategies>,
+    pub(crate) add_indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
     pub(crate) stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
 }
 impl UpdateMemoryInputBuilder {
@@ -166,6 +176,26 @@ impl UpdateMemoryInputBuilder {
     pub fn get_memory_strategies(&self) -> &::std::option::Option<crate::types::ModifyMemoryStrategies> {
         &self.memory_strategies
     }
+    /// Appends an item to `add_indexed_keys`.
+    ///
+    /// To override the contents of this collection use [`set_add_indexed_keys`](Self::set_add_indexed_keys).
+    ///
+    /// <p>Additional metadata keys to index. Previously indexed keys cannot be removed.</p>
+    pub fn add_indexed_keys(mut self, input: crate::types::IndexedKey) -> Self {
+        let mut v = self.add_indexed_keys.unwrap_or_default();
+        v.push(input);
+        self.add_indexed_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Additional metadata keys to index. Previously indexed keys cannot be removed.</p>
+    pub fn set_add_indexed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>) -> Self {
+        self.add_indexed_keys = input;
+        self
+    }
+    /// <p>Additional metadata keys to index. Previously indexed keys cannot be removed.</p>
+    pub fn get_add_indexed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>> {
+        &self.add_indexed_keys
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
         self.stream_delivery_resources = ::std::option::Option::Some(input);
@@ -191,6 +221,7 @@ impl UpdateMemoryInputBuilder {
             event_expiry_duration: self.event_expiry_duration,
             memory_execution_role_arn: self.memory_execution_role_arn,
             memory_strategies: self.memory_strategies,
+            add_indexed_keys: self.add_indexed_keys,
             stream_delivery_resources: self.stream_delivery_resources,
         })
     }
@@ -204,6 +235,7 @@ impl ::std::fmt::Debug for UpdateMemoryInputBuilder {
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("add_indexed_keys", &self.add_indexed_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.finish()
     }

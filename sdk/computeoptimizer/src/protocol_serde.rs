@@ -431,6 +431,8 @@ pub(crate) mod shape_ecs_service_projected_utilization_metrics;
 
 pub(crate) mod shape_gpu;
 
+pub(crate) mod shape_idle_dimensions;
+
 pub(crate) mod shape_instance_savings_opportunity_after_discounts;
 
 pub(crate) mod shape_lambda_function_memory_projected_metrics;
@@ -465,6 +467,8 @@ pub(crate) mod shape_ecs_estimated_monthly_savings;
 
 pub(crate) mod shape_ecs_service_projected_utilization_metric;
 
+pub(crate) mod shape_idle_dimension;
+
 pub(crate) mod shape_instance_estimated_monthly_savings;
 
 pub(crate) mod shape_lambda_estimated_monthly_savings;
@@ -478,3 +482,5 @@ pub(crate) mod shape_rds_instance_estimated_monthly_savings;
 pub(crate) mod shape_rds_storage_estimated_monthly_savings;
 
 pub(crate) mod shape_reason_code_summary;
+
+pub(crate) mod shape_idle_dimension_values;

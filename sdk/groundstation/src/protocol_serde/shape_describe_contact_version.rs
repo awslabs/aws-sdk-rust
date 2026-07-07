@@ -101,6 +101,8 @@ pub(crate) fn de_describe_contact_version(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -121,7 +123,7 @@ pub(crate) fn de_describe_contact_version(
                     );
                 }
                 "dataflowList" => {
-                    builder = builder.set_dataflow_list(crate::protocol_serde::shape_dataflow_list::de_dataflow_list(tokens, _value)?);
+                    builder = builder.set_dataflow_list(crate::protocol_serde::shape_dataflow_list::de_dataflow_list(tokens, _value, depth + 1)?);
                 }
                 "endTime" => {
                     builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -131,7 +133,9 @@ pub(crate) fn de_describe_contact_version(
                 }
                 "ephemeris" => {
                     builder = builder.set_ephemeris(crate::protocol_serde::shape_ephemeris_response_data::de_ephemeris_response_data(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "errorMessage" => {
@@ -149,7 +153,7 @@ pub(crate) fn de_describe_contact_version(
                     );
                 }
                 "maximumElevation" => {
-                    builder = builder.set_maximum_elevation(crate::protocol_serde::shape_elevation::de_elevation(tokens, _value)?);
+                    builder = builder.set_maximum_elevation(crate::protocol_serde::shape_elevation::de_elevation(tokens, _value, depth + 1)?);
                 }
                 "missionProfileArn" => {
                     builder = builder.set_mission_profile_arn(
@@ -191,13 +195,21 @@ pub(crate) fn de_describe_contact_version(
                     )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                 }
                 "trackingOverrides" => {
-                    builder = builder.set_tracking_overrides(crate::protocol_serde::shape_tracking_overrides::de_tracking_overrides(tokens, _value)?);
+                    builder = builder.set_tracking_overrides(crate::protocol_serde::shape_tracking_overrides::de_tracking_overrides(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "version" => {
-                    builder = builder.set_version(crate::protocol_serde::shape_contact_version::de_contact_version(tokens, _value)?);
+                    builder = builder.set_version(crate::protocol_serde::shape_contact_version::de_contact_version(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "visibilityEndTime" => {
                     builder = builder.set_visibility_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -131,6 +131,8 @@ pub(crate) fn de_describe_index(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -166,7 +168,11 @@ pub(crate) fn de_describe_index(
                 }
                 "ServerSideEncryptionConfiguration" => {
                     builder = builder.set_server_side_encryption_configuration(
-                        crate::protocol_serde::shape_server_side_encryption_configuration::de_server_side_encryption_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_server_side_encryption_configuration::de_server_side_encryption_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Status" => {
@@ -197,11 +203,19 @@ pub(crate) fn de_describe_index(
                 }
                 "DocumentMetadataConfigurations" => {
                     builder = builder.set_document_metadata_configurations(
-                        crate::protocol_serde::shape_document_metadata_configuration_list::de_document_metadata_configuration_list(tokens, _value)?,
+                        crate::protocol_serde::shape_document_metadata_configuration_list::de_document_metadata_configuration_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "IndexStatistics" => {
-                    builder = builder.set_index_statistics(crate::protocol_serde::shape_index_statistics::de_index_statistics(tokens, _value)?);
+                    builder = builder.set_index_statistics(crate::protocol_serde::shape_index_statistics::de_index_statistics(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ErrorMessage" => {
                     builder = builder.set_error_message(
@@ -212,12 +226,12 @@ pub(crate) fn de_describe_index(
                 }
                 "CapacityUnits" => {
                     builder = builder.set_capacity_units(
-                        crate::protocol_serde::shape_capacity_units_configuration::de_capacity_units_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_capacity_units_configuration::de_capacity_units_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "UserTokenConfigurations" => {
                     builder = builder.set_user_token_configurations(
-                        crate::protocol_serde::shape_user_token_configuration_list::de_user_token_configuration_list(tokens, _value)?,
+                        crate::protocol_serde::shape_user_token_configuration_list::de_user_token_configuration_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "UserContextPolicy" => {
@@ -229,7 +243,11 @@ pub(crate) fn de_describe_index(
                 }
                 "UserGroupResolutionConfiguration" => {
                     builder = builder.set_user_group_resolution_configuration(
-                        crate::protocol_serde::shape_user_group_resolution_configuration::de_user_group_resolution_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_user_group_resolution_configuration::de_user_group_resolution_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

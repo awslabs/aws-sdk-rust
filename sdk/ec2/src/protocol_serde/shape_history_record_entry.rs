@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_history_record_entry(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::HistoryRecordEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::HistoryRecordEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_history_record_entry(
             s if s.matches("eventInformation") /* EventInformation com.amazonaws.ec2#HistoryRecordEntry$EventInformation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_event_information::de_event_information(&mut tag)
+                        crate::protocol_serde::shape_event_information::de_event_information(&mut tag, depth + 1)
                         ?
                     )
                 ;

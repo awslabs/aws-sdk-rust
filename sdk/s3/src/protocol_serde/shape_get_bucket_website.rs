@@ -60,6 +60,8 @@ pub fn de_get_bucket_website(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("WebsiteConfiguration") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected WebsiteConfiguration but got {start_el:?}. This is likely a bug in the SDK."
@@ -70,7 +72,7 @@ pub fn de_get_bucket_website(
             s if s.matches("IndexDocument") /* IndexDocument com.amazonaws.s3.synthetic#GetBucketWebsiteOutput$IndexDocument */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_index_document::de_index_document(&mut tag)
+                        crate::protocol_serde::shape_index_document::de_index_document(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -80,7 +82,7 @@ pub fn de_get_bucket_website(
             s if s.matches("RedirectAllRequestsTo") /* RedirectAllRequestsTo com.amazonaws.s3.synthetic#GetBucketWebsiteOutput$RedirectAllRequestsTo */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_redirect_all_requests_to::de_redirect_all_requests_to(&mut tag)
+                        crate::protocol_serde::shape_redirect_all_requests_to::de_redirect_all_requests_to(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -90,7 +92,7 @@ pub fn de_get_bucket_website(
             s if s.matches("RoutingRules") /* RoutingRules com.amazonaws.s3.synthetic#GetBucketWebsiteOutput$RoutingRules */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_routing_rules::de_routing_rules(&mut tag)
+                        crate::protocol_serde::shape_routing_rules::de_routing_rules(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -100,7 +102,7 @@ pub fn de_get_bucket_website(
             s if s.matches("ErrorDocument") /* ErrorDocument com.amazonaws.s3.synthetic#GetBucketWebsiteOutput$ErrorDocument */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_error_document::de_error_document(&mut tag)
+                        crate::protocol_serde::shape_error_document::de_error_document(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -223,6 +223,8 @@ pub(crate) mod shape_email_channel_subtype_config;
 
 pub(crate) mod shape_event_trigger;
 
+pub(crate) mod shape_event_trigger_context;
+
 pub(crate) mod shape_failed_campaign_state_response;
 
 pub(crate) mod shape_failed_profile_outbound_request;
@@ -256,6 +258,8 @@ pub(crate) mod shape_telephony_channel_subtype_config;
 pub(crate) mod shape_time_window;
 
 pub(crate) mod shape_whats_app_channel_subtype_config;
+
+pub(crate) mod shape_channel_context;
 
 pub(crate) mod shape_channel_subtype_list;
 
@@ -314,6 +318,8 @@ pub(crate) mod shape_progressive_config;
 pub(crate) mod shape_restricted_period;
 
 pub(crate) mod shape_time_range;
+
+pub(crate) mod shape_web_notification_context;
 
 pub(crate) mod shape_daily_hours;
 

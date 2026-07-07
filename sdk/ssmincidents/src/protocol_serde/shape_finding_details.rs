@@ -2,10 +2,16 @@
 pub(crate) fn de_finding_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FindingDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,18 +37,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "codeDeployDeployment" => Some(crate::types::FindingDetails::CodeDeployDeployment(
-                            crate::protocol_serde::shape_code_deploy_deployment::de_code_deploy_deployment(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'codeDeployDeployment' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_code_deploy_deployment::de_code_deploy_deployment(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'codeDeployDeployment' cannot be null"),
+                            )?,
                         )),
                         "cloudFormationStackUpdate" => Some(crate::types::FindingDetails::CloudFormationStackUpdate(
-                            crate::protocol_serde::shape_cloud_formation_stack_update::de_cloud_formation_stack_update(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_cloud_formation_stack_update::de_cloud_formation_stack_update(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'cloudFormationStackUpdate' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

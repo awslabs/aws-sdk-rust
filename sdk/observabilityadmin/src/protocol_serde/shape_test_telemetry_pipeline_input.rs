@@ -21,5 +21,8 @@ pub fn ser_test_telemetry_pipeline_input_input(
         }
         array_4.finish();
     }
+    if let Some(var_7) = &input.signal_type {
+        object.key("SignalType").string(var_7.as_str());
+    }
     Ok(())
 }

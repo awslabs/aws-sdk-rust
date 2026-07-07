@@ -92,6 +92,8 @@ pub(crate) fn de_describe_location_fsx_windows(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -113,7 +115,7 @@ pub(crate) fn de_describe_location_fsx_windows(
                 }
                 "SecurityGroupArns" => {
                     builder = builder.set_security_group_arns(
-                        crate::protocol_serde::shape_ec2_security_group_arn_list::de_ec2_security_group_arn_list(tokens, _value)?,
+                        crate::protocol_serde::shape_ec2_security_group_arn_list::de_ec2_security_group_arn_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "CreationTime" => {
@@ -138,15 +140,23 @@ pub(crate) fn de_describe_location_fsx_windows(
                 }
                 "ManagedSecretConfig" => {
                     builder = builder.set_managed_secret_config(crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "CmkSecretConfig" => {
-                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens, _value)?);
+                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CustomSecretConfig" => {
                     builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

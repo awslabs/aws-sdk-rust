@@ -2,10 +2,16 @@
 pub(crate) fn de_find_matches_metrics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FindMatchesMetrics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -34,12 +40,17 @@ where
                                 .set_f1(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                         }
                         "ConfusionMatrix" => {
-                            builder =
-                                builder.set_confusion_matrix(crate::protocol_serde::shape_confusion_matrix::de_confusion_matrix(tokens, _value)?);
+                            builder = builder.set_confusion_matrix(crate::protocol_serde::shape_confusion_matrix::de_confusion_matrix(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ColumnImportances" => {
                             builder = builder.set_column_importances(crate::protocol_serde::shape_column_importance_list::de_column_importance_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

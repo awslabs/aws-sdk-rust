@@ -9,6 +9,8 @@ pub struct ListSecurityControlDefinitionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources.</p>
+    pub providers: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlsProvider>>,
 }
 impl ListSecurityControlDefinitionsInput {
     /// <p>The Amazon Resource Name (ARN) of the standard that you want to view controls for.</p>
@@ -22,6 +24,12 @@ impl ListSecurityControlDefinitionsInput {
     /// <p>An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.providers.is_none()`.
+    pub fn providers(&self) -> &[crate::types::SecurityControlsProvider] {
+        self.providers.as_deref().unwrap_or_default()
     }
 }
 impl ListSecurityControlDefinitionsInput {
@@ -38,6 +46,7 @@ pub struct ListSecurityControlDefinitionsInputBuilder {
     pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) providers: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlsProvider>>,
 }
 impl ListSecurityControlDefinitionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the standard that you want to view controls for.</p>
@@ -82,6 +91,26 @@ impl ListSecurityControlDefinitionsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// Appends an item to `providers`.
+    ///
+    /// To override the contents of this collection use [`set_providers`](Self::set_providers).
+    ///
+    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources.</p>
+    pub fn providers(mut self, input: crate::types::SecurityControlsProvider) -> Self {
+        let mut v = self.providers.unwrap_or_default();
+        v.push(input);
+        self.providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources.</p>
+    pub fn set_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlsProvider>>) -> Self {
+        self.providers = input;
+        self
+    }
+    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources.</p>
+    pub fn get_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlsProvider>> {
+        &self.providers
+    }
     /// Consumes the builder and constructs a [`ListSecurityControlDefinitionsInput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput).
     pub fn build(
         self,
@@ -93,6 +122,7 @@ impl ListSecurityControlDefinitionsInputBuilder {
             standards_arn: self.standards_arn,
             next_token: self.next_token,
             max_results: self.max_results,
+            providers: self.providers,
         })
     }
 }

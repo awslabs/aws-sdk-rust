@@ -114,100 +114,118 @@ pub(crate) fn de_describe_asset_model(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "assetModelArn" => {
-                    builder = builder.set_asset_model_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "assetModelArn" => {
+                        builder = builder.set_asset_model_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "assetModelCompositeModelSummaries" => {
+                        builder = builder.set_asset_model_composite_model_summaries(
+                            crate::protocol_serde::shape_asset_model_composite_model_summaries::de_asset_model_composite_model_summaries(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
+                        );
+                    }
+                    "assetModelCompositeModels" => {
+                        builder = builder.set_asset_model_composite_models(
+                            crate::protocol_serde::shape_asset_model_composite_models::de_asset_model_composite_models(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "assetModelCreationDate" => {
+                        builder = builder.set_asset_model_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "assetModelDescription" => {
+                        builder = builder.set_asset_model_description(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "assetModelExternalId" => {
+                        builder = builder.set_asset_model_external_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "assetModelHierarchies" => {
+                        builder = builder.set_asset_model_hierarchies(
+                            crate::protocol_serde::shape_asset_model_hierarchies::de_asset_model_hierarchies(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "assetModelId" => {
+                        builder = builder.set_asset_model_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "assetModelLastUpdateDate" => {
+                        builder = builder.set_asset_model_last_update_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "assetModelName" => {
+                        builder = builder.set_asset_model_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "assetModelProperties" => {
+                        builder = builder.set_asset_model_properties(crate::protocol_serde::shape_asset_model_properties::de_asset_model_properties(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "assetModelStatus" => {
+                        builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "assetModelType" => {
+                        builder = builder.set_asset_model_type(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::AssetModelType::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "assetModelVersion" => {
+                        builder = builder.set_asset_model_version(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "interfaceDetails" => {
+                        builder = builder.set_interface_details(crate::protocol_serde::shape_interface_details::de_interface_details(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "assetModelCompositeModelSummaries" => {
-                    builder = builder.set_asset_model_composite_model_summaries(
-                        crate::protocol_serde::shape_asset_model_composite_model_summaries::de_asset_model_composite_model_summaries(tokens, _value)?,
-                    );
-                }
-                "assetModelCompositeModels" => {
-                    builder = builder.set_asset_model_composite_models(
-                        crate::protocol_serde::shape_asset_model_composite_models::de_asset_model_composite_models(tokens, _value)?,
-                    );
-                }
-                "assetModelCreationDate" => {
-                    builder = builder.set_asset_model_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "assetModelDescription" => {
-                    builder = builder.set_asset_model_description(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "assetModelExternalId" => {
-                    builder = builder.set_asset_model_external_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "assetModelHierarchies" => {
-                    builder = builder.set_asset_model_hierarchies(crate::protocol_serde::shape_asset_model_hierarchies::de_asset_model_hierarchies(
-                        tokens, _value,
-                    )?);
-                }
-                "assetModelId" => {
-                    builder = builder.set_asset_model_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "assetModelLastUpdateDate" => {
-                    builder = builder.set_asset_model_last_update_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "assetModelName" => {
-                    builder = builder.set_asset_model_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "assetModelProperties" => {
-                    builder = builder.set_asset_model_properties(crate::protocol_serde::shape_asset_model_properties::de_asset_model_properties(
-                        tokens, _value,
-                    )?);
-                }
-                "assetModelStatus" => {
-                    builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens, _value)?);
-                }
-                "assetModelType" => {
-                    builder = builder.set_asset_model_type(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::AssetModelType::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "assetModelVersion" => {
-                    builder = builder.set_asset_model_version(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "interfaceDetails" => {
-                    builder = builder.set_interface_details(crate::protocol_serde::shape_interface_details::de_interface_details(tokens, _value)?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

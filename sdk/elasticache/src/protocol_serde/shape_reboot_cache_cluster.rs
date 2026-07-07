@@ -88,6 +88,8 @@ pub fn de_reboot_cache_cluster(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RebootCacheClusterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RebootCacheClusterResponse got {start_el:?}"
@@ -105,7 +107,7 @@ pub fn de_reboot_cache_cluster(
             s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache.synthetic#RebootCacheClusterOutput$CacheCluster */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cache_cluster::de_cache_cluster(&mut tag)
+                        crate::protocol_serde::shape_cache_cluster::de_cache_cluster(&mut tag, depth + 1)
                         ?
                     )
                 ;

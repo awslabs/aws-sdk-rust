@@ -1824,6 +1824,42 @@ impl From<crate::operation::get_legal_hold::GetLegalHoldError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError> for Error {
+    fn from(err: crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError) -> Self {
+        match err {
+            crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_pitr_malware_scan_results::GetPITRMalwareScanResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError, R>>
     for Error

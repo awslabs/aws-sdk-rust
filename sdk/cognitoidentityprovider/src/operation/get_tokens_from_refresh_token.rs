@@ -146,9 +146,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetToke
 #[derive(Debug)]
 struct GetTokensFromRefreshTokenResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetTokensFromRefreshTokenResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -274,6 +275,8 @@ pub enum GetTokensFromRefreshTokenError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
+    /// <p>This exception is thrown when an operation is not available in the current region or for the current user pool configuration. This can occur when attempting to perform operations that are not supported in secondary replica regions.</p>
+    OperationNotEnabledException(crate::types::error::OperationNotEnabledException),
     /// <p>This exception is throw when your application requests token refresh with a refresh token that has been invalidated by refresh-token rotation.</p>
     RefreshTokenReuseException(crate::types::error::RefreshTokenReuseException),
     /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
@@ -324,6 +327,7 @@ impl GetTokensFromRefreshTokenError {
             Self::InvalidLambdaResponseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotAuthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RefreshTokenReuseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -352,6 +356,10 @@ impl GetTokensFromRefreshTokenError {
     /// Returns `true` if the error kind is `GetTokensFromRefreshTokenError::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(self, Self::NotAuthorizedException(_))
+    }
+    /// Returns `true` if the error kind is `GetTokensFromRefreshTokenError::OperationNotEnabledException`.
+    pub fn is_operation_not_enabled_exception(&self) -> bool {
+        matches!(self, Self::OperationNotEnabledException(_))
     }
     /// Returns `true` if the error kind is `GetTokensFromRefreshTokenError::RefreshTokenReuseException`.
     pub fn is_refresh_token_reuse_exception(&self) -> bool {
@@ -386,6 +394,7 @@ impl ::std::error::Error for GetTokensFromRefreshTokenError {
             Self::InvalidLambdaResponseException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotAuthorizedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::RefreshTokenReuseException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -404,6 +413,7 @@ impl ::std::fmt::Display for GetTokensFromRefreshTokenError {
             Self::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::NotAuthorizedException(_inner) => _inner.fmt(f),
+            Self::OperationNotEnabledException(_inner) => _inner.fmt(f),
             Self::RefreshTokenReuseException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -436,6 +446,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetTokensFrom
             Self::InvalidLambdaResponseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotAuthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RefreshTokenReuseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

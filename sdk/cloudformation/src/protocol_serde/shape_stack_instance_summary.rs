@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_instance_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackInstanceSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackInstanceSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -89,7 +93,7 @@ pub fn de_stack_instance_summary(
             s if s.matches("StackInstanceStatus") /* StackInstanceStatus com.amazonaws.cloudformation#StackInstanceSummary$StackInstanceStatus */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_stack_instance_comprehensive_status::de_stack_instance_comprehensive_status(&mut tag)
+                        crate::protocol_serde::shape_stack_instance_comprehensive_status::de_stack_instance_comprehensive_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

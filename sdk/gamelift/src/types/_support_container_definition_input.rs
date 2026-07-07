@@ -39,6 +39,8 @@ pub struct SupportContainerDefinitionInput {
     /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve CPU units for this container, it shares the container group's total vCPU limit.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalCpuLimit</p>
     pub vcpu: ::std::option::Option<f64>,
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
 }
 impl SupportContainerDefinitionInput {
     /// <p>A string that uniquely identifies the container definition within a container group.</p>
@@ -100,6 +102,10 @@ impl SupportContainerDefinitionInput {
     pub fn vcpu(&self) -> ::std::option::Option<f64> {
         self.vcpu
     }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn linux_capabilities(&self) -> ::std::option::Option<&crate::types::LinuxCapabilities> {
+        self.linux_capabilities.as_ref()
+    }
 }
 impl SupportContainerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`SupportContainerDefinitionInput`](crate::types::SupportContainerDefinitionInput).
@@ -122,6 +128,7 @@ pub struct SupportContainerDefinitionInputBuilder {
     pub(crate) memory_hard_limit_mebibytes: ::std::option::Option<i32>,
     pub(crate) port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     pub(crate) vcpu: ::std::option::Option<f64>,
+    pub(crate) linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
 }
 impl SupportContainerDefinitionInputBuilder {
     /// <p>A string that uniquely identifies the container definition within a container group.</p>
@@ -323,6 +330,20 @@ impl SupportContainerDefinitionInputBuilder {
     pub fn get_vcpu(&self) -> &::std::option::Option<f64> {
         &self.vcpu
     }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn linux_capabilities(mut self, input: crate::types::LinuxCapabilities) -> Self {
+        self.linux_capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn set_linux_capabilities(mut self, input: ::std::option::Option<crate::types::LinuxCapabilities>) -> Self {
+        self.linux_capabilities = input;
+        self
+    }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn get_linux_capabilities(&self) -> &::std::option::Option<crate::types::LinuxCapabilities> {
+        &self.linux_capabilities
+    }
     /// Consumes the builder and constructs a [`SupportContainerDefinitionInput`](crate::types::SupportContainerDefinitionInput).
     pub fn build(self) -> crate::types::SupportContainerDefinitionInput {
         crate::types::SupportContainerDefinitionInput {
@@ -336,6 +357,7 @@ impl SupportContainerDefinitionInputBuilder {
             memory_hard_limit_mebibytes: self.memory_hard_limit_mebibytes,
             port_configuration: self.port_configuration,
             vcpu: self.vcpu,
+            linux_capabilities: self.linux_capabilities,
         }
     }
 }

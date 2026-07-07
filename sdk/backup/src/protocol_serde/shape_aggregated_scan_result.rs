@@ -2,10 +2,16 @@
 pub(crate) fn de_aggregated_scan_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AggregatedScanResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,7 +25,7 @@ where
                             builder = builder.set_failed_scan(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Findings" => {
-                            builder = builder.set_findings(crate::protocol_serde::shape_scan_findings::de_scan_findings(tokens, _value)?);
+                            builder = builder.set_findings(crate::protocol_serde::shape_scan_findings::de_scan_findings(tokens, _value, depth + 1)?);
                         }
                         "LastComputed" => {
                             builder = builder.set_last_computed(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

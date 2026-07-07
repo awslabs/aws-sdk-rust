@@ -37,23 +37,42 @@ pub fn ser_job_resource(
 
 pub(crate) fn de_job_resource(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::JobResource, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::JobResourceBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::JobResourceBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "S3Resources" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_s3_resources(Some(crate::protocol_serde::shape_s3_resource_list::de_s3_resource_list(decoder)?)))
+                Ok(
+                    builder.set_s3_resources(Some(crate::protocol_serde::shape_s3_resource_list::de_s3_resource_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "LambdaResources" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_lambda_resources(Some(crate::protocol_serde::shape_lambda_resource_list::de_lambda_resource_list(decoder)?)))
+                Ok(
+                    builder.set_lambda_resources(Some(crate::protocol_serde::shape_lambda_resource_list::de_lambda_resource_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "Ec2AmiResources" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_ec2_ami_resources(Some(crate::protocol_serde::shape_ec2_ami_resource_list::de_ec2_ami_resource_list(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -75,13 +94,13 @@ pub(crate) fn de_job_resource(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

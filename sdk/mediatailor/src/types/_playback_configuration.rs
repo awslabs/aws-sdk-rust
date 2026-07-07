@@ -34,10 +34,14 @@ pub struct PlaybackConfiguration {
     pub personalization_threshold_seconds: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
     pub playback_configuration_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    /// <p>The URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
     pub playback_endpoint_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    pub dual_stack_playback_endpoint_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>The URL that your player uses to initialize a session that uses client-side reporting.</p>
     pub session_initialization_endpoint_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses to initialize a session that uses client-side reporting.</p>
+    pub dual_stack_session_initialization_endpoint_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
     pub slate_ad_url: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
@@ -50,6 +54,8 @@ pub struct PlaybackConfiguration {
     pub ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
     /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
     pub ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
 }
 impl PlaybackConfiguration {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -112,13 +118,21 @@ impl PlaybackConfiguration {
     pub fn playback_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.playback_configuration_arn.as_deref()
     }
-    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    /// <p>The URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
     pub fn playback_endpoint_prefix(&self) -> ::std::option::Option<&str> {
         self.playback_endpoint_prefix.as_deref()
     }
-    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    pub fn dual_stack_playback_endpoint_prefix(&self) -> ::std::option::Option<&str> {
+        self.dual_stack_playback_endpoint_prefix.as_deref()
+    }
+    /// <p>The URL that your player uses to initialize a session that uses client-side reporting.</p>
     pub fn session_initialization_endpoint_prefix(&self) -> ::std::option::Option<&str> {
         self.session_initialization_endpoint_prefix.as_deref()
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses to initialize a session that uses client-side reporting.</p>
+    pub fn dual_stack_session_initialization_endpoint_prefix(&self) -> ::std::option::Option<&str> {
+        self.dual_stack_session_initialization_endpoint_prefix.as_deref()
     }
     /// <p>The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
     pub fn slate_ad_url(&self) -> ::std::option::Option<&str> {
@@ -143,6 +157,10 @@ impl PlaybackConfiguration {
     /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
     pub fn ad_decision_server_configuration(&self) -> ::std::option::Option<&crate::types::AdDecisionServerConfiguration> {
         self.ad_decision_server_configuration.as_ref()
+    }
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub fn function_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
+        self.function_mapping.as_ref()
     }
 }
 impl PlaybackConfiguration {
@@ -173,13 +191,16 @@ pub struct PlaybackConfigurationBuilder {
     pub(crate) personalization_threshold_seconds: ::std::option::Option<i32>,
     pub(crate) playback_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) playback_endpoint_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) dual_stack_playback_endpoint_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) session_initialization_endpoint_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) dual_stack_session_initialization_endpoint_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) slate_ad_url: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) transcode_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) video_content_source_url: ::std::option::Option<::std::string::String>,
     pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
     pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
+    pub(crate) function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
 }
 impl PlaybackConfigurationBuilder {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -397,33 +418,61 @@ impl PlaybackConfigurationBuilder {
     pub fn get_playback_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_configuration_arn
     }
-    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    /// <p>The URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
     pub fn playback_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_endpoint_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    /// <p>The URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
     pub fn set_playback_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_endpoint_prefix = input;
         self
     }
-    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    /// <p>The URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
     pub fn get_playback_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_endpoint_prefix
     }
-    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    pub fn dual_stack_playback_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dual_stack_playback_endpoint_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    pub fn set_dual_stack_playback_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dual_stack_playback_endpoint_prefix = input;
+        self
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    pub fn get_dual_stack_playback_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dual_stack_playback_endpoint_prefix
+    }
+    /// <p>The URL that your player uses to initialize a session that uses client-side reporting.</p>
     pub fn session_initialization_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_initialization_endpoint_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    /// <p>The URL that your player uses to initialize a session that uses client-side reporting.</p>
     pub fn set_session_initialization_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_initialization_endpoint_prefix = input;
         self
     }
-    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    /// <p>The URL that your player uses to initialize a session that uses client-side reporting.</p>
     pub fn get_session_initialization_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_initialization_endpoint_prefix
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses to initialize a session that uses client-side reporting.</p>
+    pub fn dual_stack_session_initialization_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dual_stack_session_initialization_endpoint_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses to initialize a session that uses client-side reporting.</p>
+    pub fn set_dual_stack_session_initialization_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dual_stack_session_initialization_endpoint_prefix = input;
+        self
+    }
+    /// <p>The dual-stack (IPv4 and IPv6) URL that your player uses to initialize a session that uses client-side reporting.</p>
+    pub fn get_dual_stack_session_initialization_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dual_stack_session_initialization_endpoint_prefix
     }
     /// <p>The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
     pub fn slate_ad_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -515,6 +564,29 @@ impl PlaybackConfigurationBuilder {
     pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::AdDecisionServerConfiguration> {
         &self.ad_decision_server_configuration
     }
+    /// Adds a key-value pair to `function_mapping`.
+    ///
+    /// To override the contents of this collection use [`set_function_mapping`](Self::set_function_mapping).
+    ///
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub fn function_mapping(mut self, k: crate::types::EventName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.function_mapping.unwrap_or_default();
+        hash_map.insert(k, v.into());
+        self.function_mapping = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub fn set_function_mapping(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
+    ) -> Self {
+        self.function_mapping = input;
+        self
+    }
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub fn get_function_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
+        &self.function_mapping
+    }
     /// Consumes the builder and constructs a [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
     pub fn build(self) -> crate::types::PlaybackConfiguration {
         crate::types::PlaybackConfiguration {
@@ -537,13 +609,16 @@ impl PlaybackConfigurationBuilder {
             personalization_threshold_seconds: self.personalization_threshold_seconds,
             playback_configuration_arn: self.playback_configuration_arn,
             playback_endpoint_prefix: self.playback_endpoint_prefix,
+            dual_stack_playback_endpoint_prefix: self.dual_stack_playback_endpoint_prefix,
             session_initialization_endpoint_prefix: self.session_initialization_endpoint_prefix,
+            dual_stack_session_initialization_endpoint_prefix: self.dual_stack_session_initialization_endpoint_prefix,
             slate_ad_url: self.slate_ad_url,
             tags: self.tags,
             transcode_profile_name: self.transcode_profile_name,
             video_content_source_url: self.video_content_source_url,
             ad_conditioning_configuration: self.ad_conditioning_configuration,
             ad_decision_server_configuration: self.ad_decision_server_configuration,
+            function_mapping: self.function_mapping,
         }
     }
 }

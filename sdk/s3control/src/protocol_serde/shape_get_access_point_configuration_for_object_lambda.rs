@@ -70,6 +70,8 @@ pub fn de_get_access_point_configuration_for_object_lambda(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetAccessPointConfigurationForObjectLambdaResult") {
         return Err(
                                 ::aws_smithy_xml::decode::XmlDecodeError::custom(
@@ -82,7 +84,7 @@ pub fn de_get_access_point_configuration_for_object_lambda(
             s if s.matches("Configuration") /* Configuration com.amazonaws.s3control.synthetic#GetAccessPointConfigurationForObjectLambdaOutput$Configuration */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_configuration::de_object_lambda_configuration(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_configuration::de_object_lambda_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

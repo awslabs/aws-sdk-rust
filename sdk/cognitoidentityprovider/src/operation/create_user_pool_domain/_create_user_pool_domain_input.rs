@@ -14,6 +14,8 @@ pub struct CreateUserPoolDomainInput {
     /// <p>Provide this parameter only if you want to use a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">custom domain</a> for your user pool. Otherwise, you can omit this parameter and use a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain-prefix.html">prefix domain</a> instead.</p>
     /// <p>When you create a custom domain, the passkey RP ID defaults to the custom domain. If you had a prefix domain active, this will cause passkey integration for your prefix domain to stop working due to a mismatch in RP ID. To keep the prefix domain passkey integration working, you can explicitly set RP ID to the prefix domain.</p>
     pub custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
+    /// <p>The configuration of routing for requests to the domain for replicas of a replicated user pool. The routing configuration is currently only supported for custom domains.</p>
+    pub routing: ::std::option::Option<crate::types::RoutingType>,
 }
 impl CreateUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For prefix domains, this is the prefix alone, such as <code>myprefix</code>. A prefix value of <code>myprefix</code> for a user pool in the <code>us-east-1</code> Region results in a domain of <code>myprefix.auth.us-east-1.amazoncognito.com</code>.</p>
@@ -35,6 +37,10 @@ impl CreateUserPoolDomainInput {
     pub fn custom_domain_config(&self) -> ::std::option::Option<&crate::types::CustomDomainConfigType> {
         self.custom_domain_config.as_ref()
     }
+    /// <p>The configuration of routing for requests to the domain for replicas of a replicated user pool. The routing configuration is currently only supported for custom domains.</p>
+    pub fn routing(&self) -> ::std::option::Option<&crate::types::RoutingType> {
+        self.routing.as_ref()
+    }
 }
 impl CreateUserPoolDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolDomainInput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainInput).
@@ -51,6 +57,7 @@ pub struct CreateUserPoolDomainInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) managed_login_version: ::std::option::Option<i32>,
     pub(crate) custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
+    pub(crate) routing: ::std::option::Option<crate::types::RoutingType>,
 }
 impl CreateUserPoolDomainInputBuilder {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For prefix domains, this is the prefix alone, such as <code>myprefix</code>. A prefix value of <code>myprefix</code> for a user pool in the <code>us-east-1</code> Region results in a domain of <code>myprefix.auth.us-east-1.amazoncognito.com</code>.</p>
@@ -120,6 +127,20 @@ impl CreateUserPoolDomainInputBuilder {
     pub fn get_custom_domain_config(&self) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
         &self.custom_domain_config
     }
+    /// <p>The configuration of routing for requests to the domain for replicas of a replicated user pool. The routing configuration is currently only supported for custom domains.</p>
+    pub fn routing(mut self, input: crate::types::RoutingType) -> Self {
+        self.routing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of routing for requests to the domain for replicas of a replicated user pool. The routing configuration is currently only supported for custom domains.</p>
+    pub fn set_routing(mut self, input: ::std::option::Option<crate::types::RoutingType>) -> Self {
+        self.routing = input;
+        self
+    }
+    /// <p>The configuration of routing for requests to the domain for replicas of a replicated user pool. The routing configuration is currently only supported for custom domains.</p>
+    pub fn get_routing(&self) -> &::std::option::Option<crate::types::RoutingType> {
+        &self.routing
+    }
     /// Consumes the builder and constructs a [`CreateUserPoolDomainInput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainInput).
     pub fn build(
         self,
@@ -130,6 +151,7 @@ impl CreateUserPoolDomainInputBuilder {
             user_pool_id: self.user_pool_id,
             managed_login_version: self.managed_login_version,
             custom_domain_config: self.custom_domain_config,
+            routing: self.routing,
         })
     }
 }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KekValidationResponse {
-    /// <p>The random key for generating a KEK validation response.</p>
+    /// <p>The random key send value received from the initiating node to generate a KEK validation response.</p>
     pub random_key_send: ::std::string::String,
 }
 impl KekValidationResponse {
-    /// <p>The random key for generating a KEK validation response.</p>
+    /// <p>The random key send value received from the initiating node to generate a KEK validation response.</p>
     pub fn random_key_send(&self) -> &str {
         use std::ops::Deref;
         self.random_key_send.deref()
@@ -35,18 +35,18 @@ pub struct KekValidationResponseBuilder {
     pub(crate) random_key_send: ::std::option::Option<::std::string::String>,
 }
 impl KekValidationResponseBuilder {
-    /// <p>The random key for generating a KEK validation response.</p>
+    /// <p>The random key send value received from the initiating node to generate a KEK validation response.</p>
     /// This field is required.
     pub fn random_key_send(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.random_key_send = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The random key for generating a KEK validation response.</p>
+    /// <p>The random key send value received from the initiating node to generate a KEK validation response.</p>
     pub fn set_random_key_send(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.random_key_send = input;
         self
     }
-    /// <p>The random key for generating a KEK validation response.</p>
+    /// <p>The random key send value received from the initiating node to generate a KEK validation response.</p>
     pub fn get_random_key_send(&self) -> &::std::option::Option<::std::string::String> {
         &self.random_key_send
     }

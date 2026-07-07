@@ -2,10 +2,16 @@
 pub(crate) fn de_violation_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ViolationEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,14 +43,19 @@ where
                             );
                         }
                         "behavior" => {
-                            builder = builder.set_behavior(crate::protocol_serde::shape_behavior::de_behavior(tokens, _value)?);
+                            builder = builder.set_behavior(crate::protocol_serde::shape_behavior::de_behavior(tokens, _value, depth + 1)?);
                         }
                         "metricValue" => {
-                            builder = builder.set_metric_value(crate::protocol_serde::shape_metric_value::de_metric_value(tokens, _value)?);
+                            builder =
+                                builder.set_metric_value(crate::protocol_serde::shape_metric_value::de_metric_value(tokens, _value, depth + 1)?);
                         }
                         "violationEventAdditionalInfo" => {
                             builder = builder.set_violation_event_additional_info(
-                                crate::protocol_serde::shape_violation_event_additional_info::de_violation_event_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_violation_event_additional_info::de_violation_event_additional_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "violationEventType" => {

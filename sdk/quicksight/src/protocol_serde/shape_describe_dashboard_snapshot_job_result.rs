@@ -184,6 +184,8 @@ pub(crate) fn de_describe_dashboard_snapshot_job_result(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -204,7 +206,9 @@ pub(crate) fn de_describe_dashboard_snapshot_job_result(
                 }
                 "ErrorInfo" => {
                     builder = builder.set_error_info(crate::protocol_serde::shape_snapshot_job_error_info::de_snapshot_job_error_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "JobStatus" => {
@@ -228,7 +232,11 @@ pub(crate) fn de_describe_dashboard_snapshot_job_result(
                     );
                 }
                 "Result" => {
-                    builder = builder.set_result(crate::protocol_serde::shape_snapshot_job_result::de_snapshot_job_result(tokens, _value)?);
+                    builder = builder.set_result(crate::protocol_serde::shape_snapshot_job_result::de_snapshot_job_result(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

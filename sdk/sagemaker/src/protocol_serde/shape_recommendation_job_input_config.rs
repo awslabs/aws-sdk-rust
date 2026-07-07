@@ -72,10 +72,16 @@ pub fn ser_recommendation_job_input_config(
 pub(crate) fn de_recommendation_job_input_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecommendationJobInputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -107,16 +113,28 @@ where
                             );
                         }
                         "TrafficPattern" => {
-                            builder = builder.set_traffic_pattern(crate::protocol_serde::shape_traffic_pattern::de_traffic_pattern(tokens, _value)?);
+                            builder = builder.set_traffic_pattern(crate::protocol_serde::shape_traffic_pattern::de_traffic_pattern(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ResourceLimit" => {
                             builder = builder.set_resource_limit(
-                                crate::protocol_serde::shape_recommendation_job_resource_limit::de_recommendation_job_resource_limit(tokens, _value)?,
+                                crate::protocol_serde::shape_recommendation_job_resource_limit::de_recommendation_job_resource_limit(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "EndpointConfigurations" => {
                             builder = builder.set_endpoint_configurations(
-                                crate::protocol_serde::shape_endpoint_input_configurations::de_endpoint_input_configurations(tokens, _value)?,
+                                crate::protocol_serde::shape_endpoint_input_configurations::de_endpoint_input_configurations(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "VolumeKmsKeyId" => {
@@ -129,16 +147,22 @@ where
                         "ContainerConfig" => {
                             builder = builder.set_container_config(
                                 crate::protocol_serde::shape_recommendation_job_container_config::de_recommendation_job_container_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Endpoints" => {
-                            builder = builder.set_endpoints(crate::protocol_serde::shape_endpoints::de_endpoints(tokens, _value)?);
+                            builder = builder.set_endpoints(crate::protocol_serde::shape_endpoints::de_endpoints(tokens, _value, depth + 1)?);
                         }
                         "VpcConfig" => {
                             builder = builder.set_vpc_config(
-                                crate::protocol_serde::shape_recommendation_job_vpc_config::de_recommendation_job_vpc_config(tokens, _value)?,
+                                crate::protocol_serde::shape_recommendation_job_vpc_config::de_recommendation_job_vpc_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

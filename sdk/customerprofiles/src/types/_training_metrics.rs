@@ -8,6 +8,8 @@ pub struct TrainingMetrics {
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A collection of performance metrics and statistics from the training process.</p>
     pub metrics: ::std::option::Option<::std::collections::HashMap<crate::types::TrainingMetricName, f64>>,
+    /// <p>The name of the recommender version that produced these training metrics.</p>
+    pub recommender_version_name: ::std::option::Option<::std::string::String>,
 }
 impl TrainingMetrics {
     /// <p>The timestamp when these training metrics were recorded.</p>
@@ -17,6 +19,10 @@ impl TrainingMetrics {
     /// <p>A collection of performance metrics and statistics from the training process.</p>
     pub fn metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TrainingMetricName, f64>> {
         self.metrics.as_ref()
+    }
+    /// <p>The name of the recommender version that produced these training metrics.</p>
+    pub fn recommender_version_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_version_name.as_deref()
     }
 }
 impl TrainingMetrics {
@@ -32,6 +38,7 @@ impl TrainingMetrics {
 pub struct TrainingMetricsBuilder {
     pub(crate) time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metrics: ::std::option::Option<::std::collections::HashMap<crate::types::TrainingMetricName, f64>>,
+    pub(crate) recommender_version_name: ::std::option::Option<::std::string::String>,
 }
 impl TrainingMetricsBuilder {
     /// <p>The timestamp when these training metrics were recorded.</p>
@@ -68,11 +75,26 @@ impl TrainingMetricsBuilder {
     pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TrainingMetricName, f64>> {
         &self.metrics
     }
+    /// <p>The name of the recommender version that produced these training metrics.</p>
+    pub fn recommender_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender version that produced these training metrics.</p>
+    pub fn set_recommender_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_version_name = input;
+        self
+    }
+    /// <p>The name of the recommender version that produced these training metrics.</p>
+    pub fn get_recommender_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_version_name
+    }
     /// Consumes the builder and constructs a [`TrainingMetrics`](crate::types::TrainingMetrics).
     pub fn build(self) -> crate::types::TrainingMetrics {
         crate::types::TrainingMetrics {
             time: self.time,
             metrics: self.metrics,
+            recommender_version_name: self.recommender_version_name,
         }
     }
 }

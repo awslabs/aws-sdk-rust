@@ -385,16 +385,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2605,16 +2599,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2639,16 +2627,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2674,16 +2656,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2709,16 +2685,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2744,16 +2714,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2779,16 +2743,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2814,16 +2772,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2847,16 +2799,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2934,16 +2880,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2967,16 +2907,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3000,16 +2934,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3033,16 +2961,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3120,16 +3042,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3154,16 +3070,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3186,16 +3096,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3273,16 +3177,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3307,16 +3205,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3342,16 +3234,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3377,16 +3263,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3412,16 +3292,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3447,16 +3321,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3482,16 +3350,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3515,16 +3377,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3602,16 +3458,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3635,16 +3485,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3668,16 +3512,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3701,16 +3539,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3788,16 +3620,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3822,16 +3648,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3854,16 +3674,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3941,16 +3755,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3975,16 +3783,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4010,16 +3812,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4045,16 +3841,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4080,16 +3870,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4115,16 +3899,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4150,16 +3928,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4183,16 +3955,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4270,16 +4036,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4303,16 +4063,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4336,16 +4090,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4369,16 +4117,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4456,16 +4198,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4490,16 +4226,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4522,16 +4252,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://localhost:8000")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "dynamodb".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -8435,36 +8159,924 @@ where
     }
 }
 
-/// The default endpoint resolver
-#[derive(Debug, Default)]
+#[derive(Debug)]
+/// The default endpoint resolver.
 pub struct DefaultResolver {
-    partition_resolver: crate::endpoint_lib::partition::PartitionResolver,
+    partition_resolver: &'static crate::endpoint_lib::partition::PartitionResolver,
+    endpoint_cache: ::arc_swap::ArcSwap<::std::option::Option<(Params, ::aws_smithy_types::endpoint::Endpoint)>>,
+}
+
+impl Default for DefaultResolver {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DefaultResolver {
-    /// Create a new endpoint resolver with default settings
+    /// Create a new DefaultResolver
     pub fn new() -> Self {
         Self {
-            partition_resolver: crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER.clone(),
+            partition_resolver: &crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER,
+            endpoint_cache: ::arc_swap::ArcSwap::from_pointee(None),
         }
     }
 
-    fn resolve_endpoint(
-        &self,
-        params: &crate::config::endpoint::Params,
+    #[allow(
+        unused_variables,
+        unused_parens,
+        clippy::double_parens,
+        clippy::useless_conversion,
+        clippy::bool_comparison,
+        clippy::comparison_to_empty,
+        clippy::needless_borrow,
+        clippy::useless_asref,
+        clippy::redundant_closure_call,
+        clippy::clone_on_copy
+    )]
+    fn resolve_endpoint<'a>(
+        &'a self,
+        params: &'a crate::config::endpoint::Params,
     ) -> ::std::result::Result<::aws_smithy_types::endpoint::Endpoint, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        Ok(
-            crate::config::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
-                .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))?,
-        )
+        let mut _diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
+        #[allow(unused_mut)]
+        let mut context = ConditionContext::default();
+
+        // Param bindings
+        let region = &params.region;
+        let use_dual_stack = &params.use_dual_stack;
+        let use_fips = &params.use_fips;
+        let endpoint = &params.endpoint;
+        let account_id = &params.account_id;
+        let account_id_endpoint_mode = &params.account_id_endpoint_mode;
+        let resource_arn = &params.resource_arn;
+        let resource_arn_list = &params.resource_arn_list;
+
+        let mut current_ref: i32 = 2;
+        loop {
+            match current_ref {
+                ref_val if ref_val >= 100_000_000 => {
+                    return match (ref_val - 100_000_000) as usize {
+                                        0 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("No endpoint rule matched")) as ::aws_smithy_runtime_api::box_error::BoxError),
+1 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: FIPS and custom endpoint are not supported"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+2 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: Dualstack and custom endpoint are not supported"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+3 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+4 => {
+                            let endpoint = params.endpoint.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url(endpoint.to_owned())
+.build())
+                        },
+5 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: FIPS and local endpoint are not supported"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+6 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: Dualstack and local endpoint are not supported"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+7 => {
+
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url("http://localhost:8000"
+.to_string())
+.auth_scheme(::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4"
+.to_string(), 2)
+.put("signingName", "dynamodb")
+.put("signingRegion", "us-east-1")
+)
+.build())
+                        },
+8 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+9 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://dynamodb-fips.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dual_stack_dns_suffix());
+out })
+.build())
+                        },
+10 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("FIPS and DualStack are enabled, but this partition does not support one or both"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+11 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://dynamodb.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out })
+.build())
+                        },
+12 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://dynamodb-fips.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out })
+.build())
+                        },
+13 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("FIPS is enabled but this partition does not support FIPS"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+14 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+let parsed_arn_ssa_2 = context.parsed_arn_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&parsed_arn_ssa_2.account_id());
+out.push_str(".ddb.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dual_stack_dns_suffix());
+out })
+.property("metricValues", vec![::aws_smithy_types::Document::from("O"
+.to_string()),])
+.build())
+                        },
+15 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+let parsed_arn_ssa_1 = context.parsed_arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&parsed_arn_ssa_1.account_id());
+out.push_str(".ddb.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dual_stack_dns_suffix());
+out })
+.property("metricValues", vec![::aws_smithy_types::Document::from("O"
+.to_string()),])
+.build())
+                        },
+16 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let account_id = params.account_id.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&account_id.as_ref());
+out.push_str(".ddb.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dual_stack_dns_suffix());
+out })
+.property("metricValues", vec![::aws_smithy_types::Document::from("O"
+.to_string()),])
+.build())
+                        },
+17 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Credentials-sourced account ID parameter is invalid"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+18 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+19 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+20 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://dynamodb.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dual_stack_dns_suffix());
+out })
+.build())
+                        },
+21 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("DualStack is enabled but this partition does not support DualStack"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+22 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+let parsed_arn_ssa_2 = context.parsed_arn_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&parsed_arn_ssa_2.account_id());
+out.push_str(".ddb.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out })
+.property("metricValues", vec![::aws_smithy_types::Document::from("O"
+.to_string()),])
+.build())
+                        },
+23 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+let parsed_arn_ssa_1 = context.parsed_arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&parsed_arn_ssa_1.account_id());
+out.push_str(".ddb.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out })
+.property("metricValues", vec![::aws_smithy_types::Document::from("O"
+.to_string()),])
+.build())
+                        },
+24 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+let account_id = params.account_id.as_deref().unwrap_or_default();
+let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&account_id.as_ref());
+out.push_str(".ddb.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region.as_ref());
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out })
+.property("metricValues", vec![::aws_smithy_types::Document::from("O"
+.to_string()),])
+.build())
+                        },
+25 => {
+
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: Missing Region"
+.to_string())) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        },
+                                        _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("No endpoint rule matched")) as ::aws_smithy_runtime_api::box_error::BoxError),
+                                    };
+                }
+                1 | -1 => {
+                    return ::std::result::Result::Err(
+                        Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("No endpoint rule matched"))
+                            as ::aws_smithy_runtime_api::box_error::BoxError,
+                    )
+                }
+                ref_val => {
+                    let is_complement = ref_val < 0;
+                    let node = &NODES[(ref_val.unsigned_abs() as usize) - 1];
+                    let condition_result = match node.condition_index {
+                        0 => region.is_some(),
+                        1 => endpoint.is_some(),
+                        2 => (use_fips) == (&true),
+                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &mut context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *partition_result = partition_resolver
+                                    .resolve_partition(if let Some(param) = region { param } else { return false }, _diagnostic_collector)
+                                    .map(|inner| inner.into());
+                                partition_result.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        4 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("local".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_fips()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        6 => (use_dual_stack) == (&true),
+                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_dual_stack()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            &mut Some(
+                                ({
+                                    let mut out = String::new();
+                                    out.push_str("https://dynamodb.");
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&region.as_deref().unwrap_or_default());
+                                    out.push('.');
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&if let Some(inner) = partition_result {
+                                        inner.dual_stack_dns_suffix()
+                                    } else {
+                                        return false;
+                                    });
+                                    out
+                                }
+                                .into()),
+                            ) == (endpoint)
+                        })(&mut _diagnostic_collector),
+                        9 => account_id_endpoint_mode.is_some(),
+                        10 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws")
+                        })(&mut _diagnostic_collector),
+                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (account_id_endpoint_mode) == &mut Some(("disabled".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        12 => resource_arn.is_some(),
+                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_2 = &mut context.parsed_arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *parsed_arn_ssa_2 = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = resource_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                parsed_arn_ssa_2.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_2 = &context.parsed_arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            &mut Some(
+                                (if let Some(inner) = parsed_arn_ssa_2 {
+                                    inner.region()
+                                } else {
+                                    return false;
+                                }
+                                .into()),
+                            ) == (region)
+                        })(&mut _diagnostic_collector),
+                        15 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_2 = &context.parsed_arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = parsed_arn_ssa_2 {
+                                inner.service()
+                            } else {
+                                return false;
+                            }) == ("dynamodb")
+                        })(&mut _diagnostic_collector),
+                        16 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_2 = &context.parsed_arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = parsed_arn_ssa_2 {
+                                    inner.account_id()
+                                } else {
+                                    return false;
+                                },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        17 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_2 = &context.parsed_arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = parsed_arn_ssa_2 {
+                                    inner.region()
+                                } else {
+                                    return false;
+                                },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        18 => resource_arn_list.is_some(),
+                        19 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let first_arn = &mut context.first_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *first_arn = if let Some(inner) = resource_arn_list {
+                                    inner.first().map(|s| s.as_str())
+                                } else {
+                                    return false;
+                                };
+                                first_arn.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        20 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let first_arn = &context.first_arn;
+                            let parsed_arn_ssa_1 = &mut context.parsed_arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *parsed_arn_ssa_1 = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = first_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                parsed_arn_ssa_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        21 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_1 = &context.parsed_arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            &mut Some(
+                                (if let Some(inner) = parsed_arn_ssa_1 {
+                                    inner.region()
+                                } else {
+                                    return false;
+                                }
+                                .into()),
+                            ) == (region)
+                        })(&mut _diagnostic_collector),
+                        22 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_1 = &context.parsed_arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = parsed_arn_ssa_1 {
+                                inner.service()
+                            } else {
+                                return false;
+                            }) == ("dynamodb")
+                        })(&mut _diagnostic_collector),
+                        23 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_1 = &context.parsed_arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = parsed_arn_ssa_1 {
+                                    inner.account_id()
+                                } else {
+                                    return false;
+                                },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        24 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn_ssa_1 = &context.parsed_arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = parsed_arn_ssa_1 {
+                                    inner.region()
+                                } else {
+                                    return false;
+                                },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        25 => account_id.is_some(),
+                        26 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (account_id_endpoint_mode) == &mut Some(("required".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        27 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = account_id { param } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        28 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-us-gov")
+                        })(&mut _diagnostic_collector),
+                        _ => unreachable!("Invalid condition index"),
+                    };
+                    current_ref = if is_complement ^ condition_result { node.high_ref } else { node.low_ref };
+                }
+            }
+        }
     }
 }
 
 impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
-    fn resolve_endpoint(&self, params: &crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'_> {
-        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(self.resolve_endpoint(params))
+    fn resolve_endpoint<'a>(&'a self, params: &'a crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'a> {
+        // Check single-entry cache (lock-free read via ArcSwap)
+        let cached = self.endpoint_cache.load();
+        if let Some((cached_params, cached_endpoint)) = cached.as_ref() {
+            if cached_params == params {
+                return ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(::std::result::Result::Ok(cached_endpoint.clone()));
+            }
+        }
+        drop(cached);
+        let result = self.resolve_endpoint(params);
+        if let ::std::result::Result::Ok(ref endpoint) = result {
+            self.endpoint_cache.store(::std::sync::Arc::new(Some((params.clone(), endpoint.clone()))));
+        }
+        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
+}
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 67] = [
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: -1,
+        high_ref: 1,
+        low_ref: -1,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 0,
+        high_ref: 5,
+        low_ref: 3,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 1,
+        high_ref: 4,
+        low_ref: 100000025,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 100000001,
+        low_ref: 65,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 1,
+        high_ref: 63,
+        low_ref: 6,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 52,
+        low_ref: 7,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 8,
+        low_ref: 100000025,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 51,
+        low_ref: 9,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 30,
+        low_ref: 10,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 11,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 13,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000019,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 29,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 15,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 16,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 17,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 18,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 19,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 17,
+        high_ref: 100000022,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 18,
+        high_ref: 21,
+        low_ref: 27,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 19,
+        high_ref: 22,
+        low_ref: 27,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 23,
+        low_ref: 27,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 24,
+        low_ref: 27,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 25,
+        low_ref: 27,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 26,
+        low_ref: 27,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 100000023,
+        low_ref: 27,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 28,
+        low_ref: 29,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 100000024,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000018,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 31,
+        low_ref: 100000021,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 32,
+        low_ref: 100000020,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 34,
+        low_ref: 33,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000019,
+        low_ref: 100000020,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 50,
+        low_ref: 35,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 36,
+        low_ref: 41,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 37,
+        low_ref: 41,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 38,
+        low_ref: 41,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 39,
+        low_ref: 41,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 40,
+        low_ref: 41,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 17,
+        high_ref: 100000014,
+        low_ref: 41,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 18,
+        high_ref: 42,
+        low_ref: 48,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 19,
+        high_ref: 43,
+        low_ref: 48,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 44,
+        low_ref: 48,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 45,
+        low_ref: 48,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 46,
+        low_ref: 48,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 47,
+        low_ref: 48,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 100000015,
+        low_ref: 48,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 49,
+        low_ref: 50,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 100000016,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000018,
+        low_ref: 100000020,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000006,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 53,
+        low_ref: 100000025,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 100000005,
+        low_ref: 54,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 56,
+        low_ref: 55,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000010,
+        low_ref: 100000013,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 60,
+        low_ref: 57,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 58,
+        low_ref: 59,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000008,
+        low_ref: 59,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 100000011,
+        low_ref: 100000012,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 61,
+        low_ref: 100000010,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 62,
+        low_ref: 100000009,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000008,
+        low_ref: 100000009,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 100000001,
+        low_ref: 64,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 66,
+        low_ref: 65,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000002,
+        low_ref: 100000004,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000002,
+        low_ref: 67,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000003,
+        low_ref: 100000004,
+    },
+];
+// These are all optional since they are set by conditions and will
+// all be unset when we start evaluation
+#[derive(Default)]
+#[allow(unused_lifetimes)]
+pub(crate) struct ConditionContext<'a> {
+    pub(crate) partition_result: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    pub(crate) parsed_arn_ssa_2: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) first_arn: Option<&'a str>,
+    pub(crate) parsed_arn_ssa_1: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    // Sometimes none of the members reference the lifetime, this makes it still valid
+    phantom: std::marker::PhantomData<&'a ()>,
 }
 
 #[non_exhaustive]
@@ -8742,5 +9354,3 @@ impl std::fmt::Display for InvalidParams {
 }
 
 impl std::error::Error for InvalidParams {}
-
-mod internals;

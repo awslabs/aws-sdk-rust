@@ -515,6 +515,8 @@ pub fn de_restore_db_instance_from_db_snapshot(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RestoreDBInstanceFromDBSnapshotResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RestoreDBInstanceFromDBSnapshotResponse got {start_el:?}"
@@ -532,7 +534,7 @@ pub fn de_restore_db_instance_from_db_snapshot(
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#RestoreDBInstanceFromDBSnapshotOutput$DBInstance */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_instance::de_db_instance(&mut tag)
+                        crate::protocol_serde::shape_db_instance::de_db_instance(&mut tag, depth + 1)
                         ?
                     )
                 ;

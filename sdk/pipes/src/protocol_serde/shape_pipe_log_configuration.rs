@@ -2,10 +2,16 @@
 pub(crate) fn de_pipe_log_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipeLogConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,17 +22,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3LogDestination" => {
-                            builder = builder
-                                .set_s3_log_destination(crate::protocol_serde::shape_s3_log_destination::de_s3_log_destination(tokens, _value)?);
+                            builder = builder.set_s3_log_destination(crate::protocol_serde::shape_s3_log_destination::de_s3_log_destination(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "FirehoseLogDestination" => {
                             builder = builder.set_firehose_log_destination(
-                                crate::protocol_serde::shape_firehose_log_destination::de_firehose_log_destination(tokens, _value)?,
+                                crate::protocol_serde::shape_firehose_log_destination::de_firehose_log_destination(tokens, _value, depth + 1)?,
                             );
                         }
                         "CloudwatchLogsLogDestination" => {
                             builder = builder.set_cloudwatch_logs_log_destination(
-                                crate::protocol_serde::shape_cloudwatch_logs_log_destination::de_cloudwatch_logs_log_destination(tokens, _value)?,
+                                crate::protocol_serde::shape_cloudwatch_logs_log_destination::de_cloudwatch_logs_log_destination(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Level" => {
@@ -38,7 +51,7 @@ where
                         }
                         "IncludeExecutionData" => {
                             builder = builder.set_include_execution_data(
-                                crate::protocol_serde::shape_include_execution_data::de_include_execution_data(tokens, _value)?,
+                                crate::protocol_serde::shape_include_execution_data::de_include_execution_data(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

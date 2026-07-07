@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster_node_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterNodeSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -57,17 +63,38 @@ where
                         }
                         "InstanceStatus" => {
                             builder = builder.set_instance_status(
-                                crate::protocol_serde::shape_cluster_instance_status_details::de_cluster_instance_status_details(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_instance_status_details::de_cluster_instance_status_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "UltraServerInfo" => {
-                            builder =
-                                builder.set_ultra_server_info(crate::protocol_serde::shape_ultra_server_info::de_ultra_server_info(tokens, _value)?);
+                            builder = builder.set_ultra_server_info(crate::protocol_serde::shape_ultra_server_info::de_ultra_server_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PrivateDnsHostname" => {
                             builder = builder.set_private_dns_hostname(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "CurrentImageReleaseVersion" => {
+                            builder = builder.set_current_image_release_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ImageVersionStatus" => {
+                            builder = builder.set_image_version_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ClusterImageVersionStatus::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

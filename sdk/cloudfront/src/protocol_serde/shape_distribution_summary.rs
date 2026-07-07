@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_distribution_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DistributionSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DistributionSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -89,7 +93,7 @@ pub fn de_distribution_summary(
             s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#DistributionSummary$Aliases */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_aliases::de_aliases(&mut tag)
+                        crate::protocol_serde::shape_aliases::de_aliases(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -99,7 +103,7 @@ pub fn de_distribution_summary(
             s if s.matches("Origins") /* Origins com.amazonaws.cloudfront#DistributionSummary$Origins */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_origins::de_origins(&mut tag)
+                        crate::protocol_serde::shape_origins::de_origins(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -109,7 +113,7 @@ pub fn de_distribution_summary(
             s if s.matches("OriginGroups") /* OriginGroups com.amazonaws.cloudfront#DistributionSummary$OriginGroups */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_origin_groups::de_origin_groups(&mut tag)
+                        crate::protocol_serde::shape_origin_groups::de_origin_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -119,7 +123,7 @@ pub fn de_distribution_summary(
             s if s.matches("DefaultCacheBehavior") /* DefaultCacheBehavior com.amazonaws.cloudfront#DistributionSummary$DefaultCacheBehavior */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_default_cache_behavior::de_default_cache_behavior(&mut tag)
+                        crate::protocol_serde::shape_default_cache_behavior::de_default_cache_behavior(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -129,7 +133,7 @@ pub fn de_distribution_summary(
             s if s.matches("CacheBehaviors") /* CacheBehaviors com.amazonaws.cloudfront#DistributionSummary$CacheBehaviors */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_cache_behaviors::de_cache_behaviors(&mut tag)
+                        crate::protocol_serde::shape_cache_behaviors::de_cache_behaviors(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -139,7 +143,7 @@ pub fn de_distribution_summary(
             s if s.matches("CustomErrorResponses") /* CustomErrorResponses com.amazonaws.cloudfront#DistributionSummary$CustomErrorResponses */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_custom_error_responses::de_custom_error_responses(&mut tag)
+                        crate::protocol_serde::shape_custom_error_responses::de_custom_error_responses(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -191,7 +195,7 @@ pub fn de_distribution_summary(
             s if s.matches("ViewerCertificate") /* ViewerCertificate com.amazonaws.cloudfront#DistributionSummary$ViewerCertificate */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_viewer_certificate::de_viewer_certificate(&mut tag)
+                        crate::protocol_serde::shape_viewer_certificate::de_viewer_certificate(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -201,7 +205,7 @@ pub fn de_distribution_summary(
             s if s.matches("Restrictions") /* Restrictions com.amazonaws.cloudfront#DistributionSummary$Restrictions */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_restrictions::de_restrictions(&mut tag)
+                        crate::protocol_serde::shape_restrictions::de_restrictions(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -253,7 +257,7 @@ pub fn de_distribution_summary(
             s if s.matches("AliasICPRecordals") /* AliasICPRecordals com.amazonaws.cloudfront#DistributionSummary$AliasICPRecordals */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_alias_icp_recordals::de_alias_icp_recordals(&mut tag)
+                        crate::protocol_serde::shape_alias_icp_recordals::de_alias_icp_recordals(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -305,7 +309,7 @@ pub fn de_distribution_summary(
             s if s.matches("ViewerMtlsConfig") /* ViewerMtlsConfig com.amazonaws.cloudfront#DistributionSummary$ViewerMtlsConfig */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_viewer_mtls_config::de_viewer_mtls_config(&mut tag)
+                        crate::protocol_serde::shape_viewer_mtls_config::de_viewer_mtls_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -315,7 +319,7 @@ pub fn de_distribution_summary(
             s if s.matches("ConnectionFunctionAssociation") /* ConnectionFunctionAssociation com.amazonaws.cloudfront#DistributionSummary$ConnectionFunctionAssociation */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_connection_function_association::de_connection_function_association(&mut tag)
+                        crate::protocol_serde::shape_connection_function_association::de_connection_function_association(&mut tag, depth + 1)
                         ?
                     )
                 ;

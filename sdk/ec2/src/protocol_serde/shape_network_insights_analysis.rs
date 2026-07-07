@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_insights_analysis(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NetworkInsightsAnalysis, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkInsightsAnalysis::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("additionalAccountSet") /* AdditionalAccounts com.amazonaws.ec2#NetworkInsightsAnalysis$AdditionalAccounts */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -59,7 +63,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("filterInArnSet") /* FilterInArns com.amazonaws.ec2#NetworkInsightsAnalysis$FilterInArns */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_arn_list::de_arn_list(&mut tag)
+                        crate::protocol_serde::shape_arn_list::de_arn_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +73,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("filterOutArnSet") /* FilterOutArns com.amazonaws.ec2#NetworkInsightsAnalysis$FilterOutArns */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_arn_list::de_arn_list(&mut tag)
+                        crate::protocol_serde::shape_arn_list::de_arn_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -148,7 +152,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("forwardPathComponentSet") /* ForwardPathComponents com.amazonaws.ec2#NetworkInsightsAnalysis$ForwardPathComponents */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_path_component_list::de_path_component_list(&mut tag)
+                        crate::protocol_serde::shape_path_component_list::de_path_component_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -158,7 +162,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("returnPathComponentSet") /* ReturnPathComponents com.amazonaws.ec2#NetworkInsightsAnalysis$ReturnPathComponents */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_path_component_list::de_path_component_list(&mut tag)
+                        crate::protocol_serde::shape_path_component_list::de_path_component_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -168,7 +172,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("explanationSet") /* Explanations com.amazonaws.ec2#NetworkInsightsAnalysis$Explanations */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_explanation_list::de_explanation_list(&mut tag)
+                        crate::protocol_serde::shape_explanation_list::de_explanation_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -178,7 +182,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("alternatePathHintSet") /* AlternatePathHints com.amazonaws.ec2#NetworkInsightsAnalysis$AlternatePathHints */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_alternate_path_hint_list::de_alternate_path_hint_list(&mut tag)
+                        crate::protocol_serde::shape_alternate_path_hint_list::de_alternate_path_hint_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -188,7 +192,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("suggestedAccountSet") /* SuggestedAccounts com.amazonaws.ec2#NetworkInsightsAnalysis$SuggestedAccounts */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -198,7 +202,7 @@ pub fn de_network_insights_analysis(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#NetworkInsightsAnalysis$Tags */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

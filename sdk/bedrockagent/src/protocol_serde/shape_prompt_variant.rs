@@ -51,10 +51,16 @@ pub fn ser_prompt_variant(
 pub(crate) fn de_prompt_variant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PromptVariant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,54 +69,66 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "templateType" => {
+                                builder = builder.set_template_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::PromptTemplateType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "templateConfiguration" => {
+                                builder = builder.set_template_configuration(
+                                    crate::protocol_serde::shape_prompt_template_configuration::de_prompt_template_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "modelId" => {
+                                builder = builder.set_model_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "inferenceConfiguration" => {
+                                builder = builder.set_inference_configuration(
+                                    crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "metadata" => {
+                                builder = builder.set_metadata(crate::protocol_serde::shape_prompt_metadata_list::de_prompt_metadata_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "additionalModelRequestFields" => {
+                                builder = builder
+                                    .set_additional_model_request_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                            }
+                            "genAiResource" => {
+                                builder = builder.set_gen_ai_resource(
+                                    crate::protocol_serde::shape_prompt_gen_ai_resource::de_prompt_gen_ai_resource(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "templateType" => {
-                            builder = builder.set_template_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::PromptTemplateType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "templateConfiguration" => {
-                            builder = builder.set_template_configuration(
-                                crate::protocol_serde::shape_prompt_template_configuration::de_prompt_template_configuration(tokens, _value)?,
-                            );
-                        }
-                        "modelId" => {
-                            builder = builder.set_model_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "inferenceConfiguration" => {
-                            builder = builder.set_inference_configuration(
-                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens, _value)?,
-                            );
-                        }
-                        "metadata" => {
-                            builder = builder.set_metadata(crate::protocol_serde::shape_prompt_metadata_list::de_prompt_metadata_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "additionalModelRequestFields" => {
-                            builder =
-                                builder.set_additional_model_request_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
-                        }
-                        "genAiResource" => {
-                            builder = builder.set_gen_ai_resource(crate::protocol_serde::shape_prompt_gen_ai_resource::de_prompt_gen_ai_resource(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

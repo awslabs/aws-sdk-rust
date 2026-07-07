@@ -6,11 +6,17 @@
 pub struct KafkaClusterClientAuthentication {
     /// <p>Details for SASL/SCRAM client authentication.</p>
     pub sasl_scram: ::std::option::Option<crate::types::KafkaClusterSaslScramAuthentication>,
+    /// <p>Details for mTLS client authentication.</p>
+    pub mtls: ::std::option::Option<crate::types::KafkaClusterMtlsAuthentication>,
 }
 impl KafkaClusterClientAuthentication {
     /// <p>Details for SASL/SCRAM client authentication.</p>
     pub fn sasl_scram(&self) -> ::std::option::Option<&crate::types::KafkaClusterSaslScramAuthentication> {
         self.sasl_scram.as_ref()
+    }
+    /// <p>Details for mTLS client authentication.</p>
+    pub fn mtls(&self) -> ::std::option::Option<&crate::types::KafkaClusterMtlsAuthentication> {
+        self.mtls.as_ref()
     }
 }
 impl KafkaClusterClientAuthentication {
@@ -25,10 +31,10 @@ impl KafkaClusterClientAuthentication {
 #[non_exhaustive]
 pub struct KafkaClusterClientAuthenticationBuilder {
     pub(crate) sasl_scram: ::std::option::Option<crate::types::KafkaClusterSaslScramAuthentication>,
+    pub(crate) mtls: ::std::option::Option<crate::types::KafkaClusterMtlsAuthentication>,
 }
 impl KafkaClusterClientAuthenticationBuilder {
     /// <p>Details for SASL/SCRAM client authentication.</p>
-    /// This field is required.
     pub fn sasl_scram(mut self, input: crate::types::KafkaClusterSaslScramAuthentication) -> Self {
         self.sasl_scram = ::std::option::Option::Some(input);
         self
@@ -42,8 +48,25 @@ impl KafkaClusterClientAuthenticationBuilder {
     pub fn get_sasl_scram(&self) -> &::std::option::Option<crate::types::KafkaClusterSaslScramAuthentication> {
         &self.sasl_scram
     }
+    /// <p>Details for mTLS client authentication.</p>
+    pub fn mtls(mut self, input: crate::types::KafkaClusterMtlsAuthentication) -> Self {
+        self.mtls = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details for mTLS client authentication.</p>
+    pub fn set_mtls(mut self, input: ::std::option::Option<crate::types::KafkaClusterMtlsAuthentication>) -> Self {
+        self.mtls = input;
+        self
+    }
+    /// <p>Details for mTLS client authentication.</p>
+    pub fn get_mtls(&self) -> &::std::option::Option<crate::types::KafkaClusterMtlsAuthentication> {
+        &self.mtls
+    }
     /// Consumes the builder and constructs a [`KafkaClusterClientAuthentication`](crate::types::KafkaClusterClientAuthentication).
     pub fn build(self) -> crate::types::KafkaClusterClientAuthentication {
-        crate::types::KafkaClusterClientAuthentication { sasl_scram: self.sasl_scram }
+        crate::types::KafkaClusterClientAuthentication {
+            sasl_scram: self.sasl_scram,
+            mtls: self.mtls,
+        }
     }
 }

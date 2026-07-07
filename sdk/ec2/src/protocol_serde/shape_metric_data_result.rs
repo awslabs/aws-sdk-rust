@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_metric_data_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MetricDataResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MetricDataResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_metric_data_result(
             s if s.matches("dimension") /* Dimension com.amazonaws.ec2#MetricDataResult$Dimension */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_capacity_manager_dimension::de_capacity_manager_dimension(&mut tag)
+                        crate::protocol_serde::shape_capacity_manager_dimension::de_capacity_manager_dimension(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -34,7 +38,7 @@ pub fn de_metric_data_result(
             s if s.matches("metricValueSet") /* MetricValues com.amazonaws.ec2#MetricDataResult$MetricValues */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_metric_value_set::de_metric_value_set(&mut tag)
+                        crate::protocol_serde::shape_metric_value_set::de_metric_value_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -75,6 +75,8 @@ pub fn de_describe_capacity_reservation(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeCapacityReservationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeCapacityReservationResponse got {start_el:?}"
@@ -121,7 +123,7 @@ pub fn de_describe_capacity_reservation(
             s if s.matches("MinimumLoadBalancerCapacity") /* MinimumLoadBalancerCapacity com.amazonaws.elasticloadbalancingv2.synthetic#DescribeCapacityReservationOutput$MinimumLoadBalancerCapacity */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_minimum_load_balancer_capacity::de_minimum_load_balancer_capacity(&mut tag)
+                        crate::protocol_serde::shape_minimum_load_balancer_capacity::de_minimum_load_balancer_capacity(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -131,7 +133,7 @@ pub fn de_describe_capacity_reservation(
             s if s.matches("CapacityReservationState") /* CapacityReservationState com.amazonaws.elasticloadbalancingv2.synthetic#DescribeCapacityReservationOutput$CapacityReservationState */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_zonal_capacity_reservation_states::de_zonal_capacity_reservation_states(&mut tag)
+                        crate::protocol_serde::shape_zonal_capacity_reservation_states::de_zonal_capacity_reservation_states(&mut tag, depth + 1)
                         ?
                     )
                 ;

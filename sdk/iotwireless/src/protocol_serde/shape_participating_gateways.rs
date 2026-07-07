@@ -30,10 +30,16 @@ pub fn ser_participating_gateways(
 pub(crate) fn de_participating_gateways<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ParticipatingGateways>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,8 @@ where
                             );
                         }
                         "GatewayList" => {
-                            builder = builder.set_gateway_list(crate::protocol_serde::shape_gateway_list::de_gateway_list(tokens, _value)?);
+                            builder =
+                                builder.set_gateway_list(crate::protocol_serde::shape_gateway_list::de_gateway_list(tokens, _value, depth + 1)?);
                         }
                         "TransmissionInterval" => {
                             builder = builder.set_transmission_interval(

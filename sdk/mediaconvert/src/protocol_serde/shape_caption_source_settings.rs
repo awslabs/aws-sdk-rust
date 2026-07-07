@@ -54,10 +54,16 @@ pub fn ser_caption_source_settings(
 pub(crate) fn de_caption_source_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CaptionSourceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,22 +75,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ancillarySourceSettings" => {
                             builder = builder.set_ancillary_source_settings(
-                                crate::protocol_serde::shape_ancillary_source_settings::de_ancillary_source_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_ancillary_source_settings::de_ancillary_source_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "dvbSubSourceSettings" => {
                             builder = builder.set_dvb_sub_source_settings(
-                                crate::protocol_serde::shape_dvb_sub_source_settings::de_dvb_sub_source_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_dvb_sub_source_settings::de_dvb_sub_source_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "embeddedSourceSettings" => {
                             builder = builder.set_embedded_source_settings(
-                                crate::protocol_serde::shape_embedded_source_settings::de_embedded_source_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_embedded_source_settings::de_embedded_source_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "fileSourceSettings" => {
                             builder = builder.set_file_source_settings(crate::protocol_serde::shape_file_source_settings::de_file_source_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "sourceType" => {
@@ -96,17 +104,17 @@ where
                         }
                         "teletextSourceSettings" => {
                             builder = builder.set_teletext_source_settings(
-                                crate::protocol_serde::shape_teletext_source_settings::de_teletext_source_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_teletext_source_settings::de_teletext_source_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "trackSourceSettings" => {
                             builder = builder.set_track_source_settings(
-                                crate::protocol_serde::shape_track_source_settings::de_track_source_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_track_source_settings::de_track_source_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "webvttHlsSourceSettings" => {
                             builder = builder.set_webvtt_hls_source_settings(
-                                crate::protocol_serde::shape_webvtt_hls_source_settings::de_webvtt_hls_source_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_webvtt_hls_source_settings::de_webvtt_hls_source_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

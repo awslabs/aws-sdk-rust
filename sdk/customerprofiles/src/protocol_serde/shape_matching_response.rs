@@ -2,10 +2,16 @@
 pub(crate) fn de_matching_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MatchingResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,14 +25,19 @@ where
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "JobSchedule" => {
-                            builder = builder.set_job_schedule(crate::protocol_serde::shape_job_schedule::de_job_schedule(tokens, _value)?);
+                            builder =
+                                builder.set_job_schedule(crate::protocol_serde::shape_job_schedule::de_job_schedule(tokens, _value, depth + 1)?);
                         }
                         "AutoMerging" => {
-                            builder = builder.set_auto_merging(crate::protocol_serde::shape_auto_merging::de_auto_merging(tokens, _value)?);
+                            builder =
+                                builder.set_auto_merging(crate::protocol_serde::shape_auto_merging::de_auto_merging(tokens, _value, depth + 1)?);
                         }
                         "ExportingConfig" => {
-                            builder =
-                                builder.set_exporting_config(crate::protocol_serde::shape_exporting_config::de_exporting_config(tokens, _value)?);
+                            builder = builder.set_exporting_config(crate::protocol_serde::shape_exporting_config::de_exporting_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

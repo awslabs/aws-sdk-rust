@@ -49,6 +49,8 @@ pub fn de_get_reserved_instances_exchange_quote(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetReservedInstancesExchangeQuoteResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetReservedInstancesExchangeQuoteResponse got {start_el:?}"
@@ -114,7 +116,7 @@ pub fn de_get_reserved_instances_exchange_quote(
             s if s.matches("reservedInstanceValueRollup") /* ReservedInstanceValueRollup com.amazonaws.ec2.synthetic#GetReservedInstancesExchangeQuoteOutput$ReservedInstanceValueRollup */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_reservation_value::de_reservation_value(&mut tag)
+                        crate::protocol_serde::shape_reservation_value::de_reservation_value(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -124,7 +126,7 @@ pub fn de_get_reserved_instances_exchange_quote(
             s if s.matches("reservedInstanceValueSet") /* ReservedInstanceValueSet com.amazonaws.ec2.synthetic#GetReservedInstancesExchangeQuoteOutput$ReservedInstanceValueSet */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_reserved_instance_reservation_value_set::de_reserved_instance_reservation_value_set(&mut tag)
+                        crate::protocol_serde::shape_reserved_instance_reservation_value_set::de_reserved_instance_reservation_value_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -134,7 +136,7 @@ pub fn de_get_reserved_instances_exchange_quote(
             s if s.matches("targetConfigurationValueRollup") /* TargetConfigurationValueRollup com.amazonaws.ec2.synthetic#GetReservedInstancesExchangeQuoteOutput$TargetConfigurationValueRollup */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_reservation_value::de_reservation_value(&mut tag)
+                        crate::protocol_serde::shape_reservation_value::de_reservation_value(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -144,7 +146,7 @@ pub fn de_get_reserved_instances_exchange_quote(
             s if s.matches("targetConfigurationValueSet") /* TargetConfigurationValueSet com.amazonaws.ec2.synthetic#GetReservedInstancesExchangeQuoteOutput$TargetConfigurationValueSet */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_target_reservation_value_set::de_target_reservation_value_set(&mut tag)
+                        crate::protocol_serde::shape_target_reservation_value_set::de_target_reservation_value_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

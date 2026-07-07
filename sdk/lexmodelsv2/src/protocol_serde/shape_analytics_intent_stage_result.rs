@@ -2,10 +2,16 @@
 pub(crate) fn de_analytics_intent_stage_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AnalyticsIntentStageResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,19 +22,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "binKeys" => {
-                            builder = builder.set_bin_keys(crate::protocol_serde::shape_analytics_bin_keys::de_analytics_bin_keys(tokens, _value)?);
+                            builder = builder.set_bin_keys(crate::protocol_serde::shape_analytics_bin_keys::de_analytics_bin_keys(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "groupByKeys" => {
                             builder = builder.set_group_by_keys(
                                 crate::protocol_serde::shape_analytics_intent_stage_group_by_keys::de_analytics_intent_stage_group_by_keys(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "metricsResults" => {
                             builder = builder.set_metrics_results(
                                 crate::protocol_serde::shape_analytics_intent_stage_metric_results::de_analytics_intent_stage_metric_results(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -70,10 +70,16 @@ pub fn ser_monitoring_job_definition(
 pub(crate) fn de_monitoring_job_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MonitoringJobDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -85,40 +91,57 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BaselineConfig" => {
                             builder = builder.set_baseline_config(
-                                crate::protocol_serde::shape_monitoring_baseline_config::de_monitoring_baseline_config(tokens, _value)?,
+                                crate::protocol_serde::shape_monitoring_baseline_config::de_monitoring_baseline_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "MonitoringInputs" => {
-                            builder =
-                                builder.set_monitoring_inputs(crate::protocol_serde::shape_monitoring_inputs::de_monitoring_inputs(tokens, _value)?);
+                            builder = builder.set_monitoring_inputs(crate::protocol_serde::shape_monitoring_inputs::de_monitoring_inputs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MonitoringOutputConfig" => {
                             builder = builder.set_monitoring_output_config(
-                                crate::protocol_serde::shape_monitoring_output_config::de_monitoring_output_config(tokens, _value)?,
+                                crate::protocol_serde::shape_monitoring_output_config::de_monitoring_output_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "MonitoringResources" => {
                             builder = builder.set_monitoring_resources(crate::protocol_serde::shape_monitoring_resources::de_monitoring_resources(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "MonitoringAppSpecification" => {
                             builder = builder.set_monitoring_app_specification(
-                                crate::protocol_serde::shape_monitoring_app_specification::de_monitoring_app_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_monitoring_app_specification::de_monitoring_app_specification(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StoppingCondition" => {
                             builder = builder.set_stopping_condition(
-                                crate::protocol_serde::shape_monitoring_stopping_condition::de_monitoring_stopping_condition(tokens, _value)?,
+                                crate::protocol_serde::shape_monitoring_stopping_condition::de_monitoring_stopping_condition(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_monitoring_environment_map::de_monitoring_environment_map(tokens, _value)?,
+                                crate::protocol_serde::shape_monitoring_environment_map::de_monitoring_environment_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "NetworkConfig" => {
-                            builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(tokens, _value)?);
+                            builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RoleArn" => {
                             builder = builder.set_role_arn(

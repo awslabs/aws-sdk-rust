@@ -2,10 +2,16 @@
 pub(crate) fn de_model_dashboard_model<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ModelDashboardModel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,27 +22,36 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Model" => {
-                            builder = builder.set_model(crate::protocol_serde::shape_model::de_model(tokens, _value)?);
+                            builder = builder.set_model(crate::protocol_serde::shape_model::de_model(tokens, _value, depth + 1)?);
                         }
                         "Endpoints" => {
                             builder = builder.set_endpoints(crate::protocol_serde::shape_model_dashboard_endpoints::de_model_dashboard_endpoints(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "LastBatchTransformJob" => {
-                            builder =
-                                builder.set_last_batch_transform_job(crate::protocol_serde::shape_transform_job::de_transform_job(tokens, _value)?);
+                            builder = builder.set_last_batch_transform_job(crate::protocol_serde::shape_transform_job::de_transform_job(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MonitoringSchedules" => {
                             builder = builder.set_monitoring_schedules(
                                 crate::protocol_serde::shape_model_dashboard_monitoring_schedules::de_model_dashboard_monitoring_schedules(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ModelCard" => {
                             builder = builder.set_model_card(crate::protocol_serde::shape_model_dashboard_model_card::de_model_dashboard_model_card(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

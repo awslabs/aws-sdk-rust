@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_service_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ServiceConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ServiceConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_service_configuration(
             s if s.matches("serviceType") /* ServiceType com.amazonaws.ec2#ServiceConfiguration$ServiceType */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_service_type_detail_set::de_service_type_detail_set(&mut tag)
+                        crate::protocol_serde::shape_service_type_detail_set::de_service_type_detail_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -60,7 +64,7 @@ pub fn de_service_configuration(
             s if s.matches("availabilityZoneIdSet") /* AvailabilityZoneIds com.amazonaws.ec2#ServiceConfiguration$AvailabilityZoneIds */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -70,7 +74,7 @@ pub fn de_service_configuration(
             s if s.matches("availabilityZoneSet") /* AvailabilityZones com.amazonaws.ec2#ServiceConfiguration$AvailabilityZones */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -110,7 +114,7 @@ pub fn de_service_configuration(
             s if s.matches("networkLoadBalancerArnSet") /* NetworkLoadBalancerArns com.amazonaws.ec2#ServiceConfiguration$NetworkLoadBalancerArns */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -120,7 +124,7 @@ pub fn de_service_configuration(
             s if s.matches("gatewayLoadBalancerArnSet") /* GatewayLoadBalancerArns com.amazonaws.ec2#ServiceConfiguration$GatewayLoadBalancerArns */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -130,7 +134,7 @@ pub fn de_service_configuration(
             s if s.matches("supportedIpAddressTypeSet") /* SupportedIpAddressTypes com.amazonaws.ec2#ServiceConfiguration$SupportedIpAddressTypes */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_supported_ip_address_types::de_supported_ip_address_types(&mut tag)
+                        crate::protocol_serde::shape_supported_ip_address_types::de_supported_ip_address_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -140,7 +144,7 @@ pub fn de_service_configuration(
             s if s.matches("baseEndpointDnsNameSet") /* BaseEndpointDnsNames com.amazonaws.ec2#ServiceConfiguration$BaseEndpointDnsNames */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -163,7 +167,7 @@ pub fn de_service_configuration(
             s if s.matches("privateDnsNameConfiguration") /* PrivateDnsNameConfiguration com.amazonaws.ec2#ServiceConfiguration$PrivateDnsNameConfiguration */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_private_dns_name_configuration::de_private_dns_name_configuration(&mut tag)
+                        crate::protocol_serde::shape_private_dns_name_configuration::de_private_dns_name_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -187,7 +191,7 @@ pub fn de_service_configuration(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ServiceConfiguration$Tags */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -197,7 +201,7 @@ pub fn de_service_configuration(
             s if s.matches("supportedRegionSet") /* SupportedRegions com.amazonaws.ec2#ServiceConfiguration$SupportedRegions */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_supported_region_set::de_supported_region_set(&mut tag)
+                        crate::protocol_serde::shape_supported_region_set::de_supported_region_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

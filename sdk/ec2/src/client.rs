@@ -477,6 +477,8 @@ mod associate_vpc_cidr_block;
 
 mod attach_classic_link_vpc;
 
+mod attach_image_watermark;
+
 mod attach_internet_gateway;
 
 mod attach_network_interface;
@@ -532,6 +534,8 @@ mod create_capacity_manager_data_export;
 mod create_capacity_reservation;
 
 mod create_capacity_reservation_by_splitting;
+
+mod create_capacity_reservation_cancellation_quote;
 
 mod create_capacity_reservation_fleet;
 
@@ -966,6 +970,8 @@ mod deregister_transit_gateway_multicast_group_sources;
 
 mod describe_account_attributes;
 
+mod describe_account_vpc_encryption_control;
+
 mod describe_address_transfers;
 
 mod describe_addresses;
@@ -995,6 +1001,8 @@ mod describe_capacity_blocks;
 mod describe_capacity_manager_data_exports;
 
 mod describe_capacity_reservation_billing_requests;
+
+mod describe_capacity_reservation_cancellation_quotes;
 
 mod describe_capacity_reservation_fleets;
 
@@ -1109,6 +1117,8 @@ mod describe_ipam_byoasn;
 mod describe_ipam_external_resource_verification_tokens;
 
 mod describe_ipam_policies;
+
+mod describe_ipam_pool_allocations;
 
 mod describe_ipam_pools;
 
@@ -1335,6 +1345,8 @@ mod describe_vpn_connections;
 mod describe_vpn_gateways;
 
 mod detach_classic_link_vpc;
+
+mod detach_image_watermark;
 
 mod detach_internet_gateway;
 
@@ -1640,6 +1652,8 @@ mod list_volumes_in_recycle_bin;
 
 mod lock_snapshot;
 
+mod modify_account_vpc_encryption_control;
+
 mod modify_address_attribute;
 
 mod modify_availability_zone_group;
@@ -1695,6 +1709,8 @@ mod modify_ipam;
 mod modify_ipam_policy_allocation_rules;
 
 mod modify_ipam_pool;
+
+mod modify_ipam_pool_allocation;
 
 mod modify_ipam_prefix_list_resolver;
 
@@ -1777,6 +1793,8 @@ mod modify_vpc_encryption_control;
 mod modify_vpc_endpoint;
 
 mod modify_vpc_endpoint_connection_notification;
+
+mod modify_vpc_endpoint_payer_responsibility;
 
 mod modify_vpc_endpoint_service_configuration;
 

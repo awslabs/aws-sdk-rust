@@ -2,10 +2,16 @@
 pub(crate) fn de_catalog<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Catalog>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,8 @@ where
                             );
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens, _value)?);
+                            builder =
+                                builder.set_parameters(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens, _value, depth + 1)?);
                         }
                         "CreateTime" => {
                             builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -60,26 +67,29 @@ where
                         }
                         "TargetRedshiftCatalog" => {
                             builder = builder.set_target_redshift_catalog(
-                                crate::protocol_serde::shape_target_redshift_catalog::de_target_redshift_catalog(tokens, _value)?,
+                                crate::protocol_serde::shape_target_redshift_catalog::de_target_redshift_catalog(tokens, _value, depth + 1)?,
                             );
                         }
                         "FederatedCatalog" => {
-                            builder =
-                                builder.set_federated_catalog(crate::protocol_serde::shape_federated_catalog::de_federated_catalog(tokens, _value)?);
+                            builder = builder.set_federated_catalog(crate::protocol_serde::shape_federated_catalog::de_federated_catalog(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CatalogProperties" => {
                             builder = builder.set_catalog_properties(
-                                crate::protocol_serde::shape_catalog_properties_output::de_catalog_properties_output(tokens, _value)?,
+                                crate::protocol_serde::shape_catalog_properties_output::de_catalog_properties_output(tokens, _value, depth + 1)?,
                             );
                         }
                         "CreateTableDefaultPermissions" => {
                             builder = builder.set_create_table_default_permissions(
-                                crate::protocol_serde::shape_principal_permissions_list::de_principal_permissions_list(tokens, _value)?,
+                                crate::protocol_serde::shape_principal_permissions_list::de_principal_permissions_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "CreateDatabaseDefaultPermissions" => {
                             builder = builder.set_create_database_default_permissions(
-                                crate::protocol_serde::shape_principal_permissions_list::de_principal_permissions_list(tokens, _value)?,
+                                crate::protocol_serde::shape_principal_permissions_list::de_principal_permissions_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "AllowFullTableExternalDataAccess" => {

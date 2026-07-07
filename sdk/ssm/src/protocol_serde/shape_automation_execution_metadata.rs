@@ -2,10 +2,16 @@
 pub(crate) fn de_automation_execution_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomationExecutionMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -71,7 +77,9 @@ where
                         }
                         "Outputs" => {
                             builder = builder.set_outputs(crate::protocol_serde::shape_automation_parameter_map::de_automation_parameter_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Mode" => {
@@ -117,14 +125,17 @@ where
                             );
                         }
                         "Targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value, depth + 1)?);
                         }
                         "TargetMaps" => {
-                            builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens, _value)?);
+                            builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens, _value, depth + 1)?);
                         }
                         "ResolvedTargets" => {
-                            builder =
-                                builder.set_resolved_targets(crate::protocol_serde::shape_resolved_targets::de_resolved_targets(tokens, _value)?);
+                            builder = builder.set_resolved_targets(crate::protocol_serde::shape_resolved_targets::de_resolved_targets(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MaxConcurrency" => {
                             builder = builder.set_max_concurrency(
@@ -155,12 +166,19 @@ where
                             );
                         }
                         "AlarmConfiguration" => {
-                            builder = builder
-                                .set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value)?);
+                            builder = builder.set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TriggeredAlarms" => {
                             builder = builder.set_triggered_alarms(
-                                crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(tokens, _value)?,
+                                crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TargetLocationsURL" => {
@@ -184,7 +202,7 @@ where
                             )?);
                         }
                         "Runbooks" => {
-                            builder = builder.set_runbooks(crate::protocol_serde::shape_runbooks::de_runbooks(tokens, _value)?);
+                            builder = builder.set_runbooks(crate::protocol_serde::shape_runbooks::de_runbooks(tokens, _value, depth + 1)?);
                         }
                         "OpsItemId" => {
                             builder = builder.set_ops_item_id(

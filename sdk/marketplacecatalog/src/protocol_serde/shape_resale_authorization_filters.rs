@@ -102,5 +102,14 @@ pub fn ser_resale_authorization_filters(
         )?;
         object_26.finish();
     }
+    if let Some(var_27) = &input.reseller_role {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("ResellerRole").start_object();
+        crate::protocol_serde::shape_resale_authorization_reseller_role_filter::ser_resale_authorization_reseller_role_filter(
+            &mut object_28,
+            var_27,
+        )?;
+        object_28.finish();
+    }
     Ok(())
 }

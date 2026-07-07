@@ -163,6 +163,8 @@ pub(crate) mod shape_update_compute_node_group_slurm_configuration_request;
 
 pub(crate) mod shape_update_queue_slurm_configuration_request;
 
+pub(crate) mod shape_update_scheduler_request;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_accounting_request;

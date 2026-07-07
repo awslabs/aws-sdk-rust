@@ -49,6 +49,8 @@ pub fn de_describe_application_versions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeApplicationVersionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeApplicationVersionsResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_describe_application_versions(
             s if s.matches("ApplicationVersions") /* ApplicationVersions com.amazonaws.elasticbeanstalk.synthetic#DescribeApplicationVersionsOutput$ApplicationVersions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_application_version_description_list::de_application_version_description_list(&mut tag)
+                        crate::protocol_serde::shape_application_version_description_list::de_application_version_description_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

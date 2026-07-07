@@ -2,10 +2,16 @@
 pub(crate) fn de_source_table_feature_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SourceTableFeatureDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,26 +23,32 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LocalSecondaryIndexes" => {
                             builder = builder.set_local_secondary_indexes(
-                                crate::protocol_serde::shape_local_secondary_indexes::de_local_secondary_indexes(tokens, _value)?,
+                                crate::protocol_serde::shape_local_secondary_indexes::de_local_secondary_indexes(tokens, _value, depth + 1)?,
                             );
                         }
                         "GlobalSecondaryIndexes" => {
                             builder = builder.set_global_secondary_indexes(
-                                crate::protocol_serde::shape_global_secondary_indexes::de_global_secondary_indexes(tokens, _value)?,
+                                crate::protocol_serde::shape_global_secondary_indexes::de_global_secondary_indexes(tokens, _value, depth + 1)?,
                             );
                         }
                         "StreamDescription" => {
                             builder = builder.set_stream_description(crate::protocol_serde::shape_stream_specification::de_stream_specification(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "TimeToLiveDescription" => {
                             builder = builder.set_time_to_live_description(
-                                crate::protocol_serde::shape_time_to_live_description::de_time_to_live_description(tokens, _value)?,
+                                crate::protocol_serde::shape_time_to_live_description::de_time_to_live_description(tokens, _value, depth + 1)?,
                             );
                         }
                         "SSEDescription" => {
-                            builder = builder.set_sse_description(crate::protocol_serde::shape_sse_description::de_sse_description(tokens, _value)?);
+                            builder = builder.set_sse_description(crate::protocol_serde::shape_sse_description::de_sse_description(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

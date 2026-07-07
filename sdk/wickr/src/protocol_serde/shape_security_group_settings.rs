@@ -129,50 +129,56 @@ pub fn ser_security_group_settings(
             ::aws_smithy_types::Number::NegInt((*var_37).into()),
         );
     }
-    if let Some(var_38) = &input.federation_mode {
-        object.key("federationMode").number(
+    if let Some(var_38) = &input.max_non_sso_session_minutes {
+        object.key("maxNonSsoSessionMinutes").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
-    if let Some(var_39) = &input.lockout_threshold {
-        object.key("lockoutThreshold").number(
+    if let Some(var_39) = &input.federation_mode {
+        object.key("federationMode").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_39).into()),
         );
     }
-    if let Some(var_40) = &input.permitted_networks {
-        let mut array_41 = object.key("permittedNetworks").start_array();
-        for item_42 in var_40 {
+    if let Some(var_40) = &input.lockout_threshold {
+        object.key("lockoutThreshold").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_40).into()),
+        );
+    }
+    if let Some(var_41) = &input.permitted_networks {
+        let mut array_42 = object.key("permittedNetworks").start_array();
+        for item_43 in var_41 {
             {
-                array_41.value().string(item_42.as_str());
+                array_42.value().string(item_43.as_str());
             }
         }
-        array_41.finish();
+        array_42.finish();
     }
-    if let Some(var_43) = &input.permitted_wickr_aws_networks {
-        let mut array_44 = object.key("permittedWickrAwsNetworks").start_array();
-        for item_45 in var_43 {
+    if let Some(var_44) = &input.permitted_wickr_aws_networks {
+        let mut array_45 = object.key("permittedWickrAwsNetworks").start_array();
+        for item_46 in var_44 {
             {
                 #[allow(unused_mut)]
-                let mut object_46 = array_44.value().start_object();
-                crate::protocol_serde::shape_wickr_aws_networks::ser_wickr_aws_networks(&mut object_46, item_45)?;
-                object_46.finish();
+                let mut object_47 = array_45.value().start_object();
+                crate::protocol_serde::shape_wickr_aws_networks::ser_wickr_aws_networks(&mut object_47, item_46)?;
+                object_47.finish();
             }
         }
-        array_44.finish();
+        array_45.finish();
     }
-    if let Some(var_47) = &input.permitted_wickr_enterprise_networks {
-        let mut array_48 = object.key("permittedWickrEnterpriseNetworks").start_array();
-        for item_49 in var_47 {
+    if let Some(var_48) = &input.permitted_wickr_enterprise_networks {
+        let mut array_49 = object.key("permittedWickrEnterpriseNetworks").start_array();
+        for item_50 in var_48 {
             {
                 #[allow(unused_mut)]
-                let mut object_50 = array_48.value().start_object();
-                crate::protocol_serde::shape_permitted_wickr_enterprise_network::ser_permitted_wickr_enterprise_network(&mut object_50, item_49)?;
-                object_50.finish();
+                let mut object_51 = array_49.value().start_object();
+                crate::protocol_serde::shape_permitted_wickr_enterprise_network::ser_permitted_wickr_enterprise_network(&mut object_51, item_50)?;
+                object_51.finish();
             }
         }
-        array_48.finish();
+        array_49.finish();
     }
     Ok(())
 }
@@ -180,10 +186,16 @@ pub fn ser_security_group_settings(
 pub(crate) fn de_security_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SecurityGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -198,11 +210,15 @@ where
                         }
                         "atakPackageValues" => {
                             builder = builder.set_atak_package_values(
-                                crate::protocol_serde::shape_security_group_string_list::de_security_group_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_security_group_string_list::de_security_group_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "calling" => {
-                            builder = builder.set_calling(crate::protocol_serde::shape_calling_settings::de_calling_settings(tokens, _value)?);
+                            builder = builder.set_calling(crate::protocol_serde::shape_calling_settings::de_calling_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "checkForUpdates" => {
                             builder = builder.set_check_for_updates(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -289,7 +305,7 @@ where
                         }
                         "passwordRequirements" => {
                             builder = builder.set_password_requirements(
-                                crate::protocol_serde::shape_password_requirements::de_password_requirements(tokens, _value)?,
+                                crate::protocol_serde::shape_password_requirements::de_password_requirements(tokens, _value, depth + 1)?,
                             );
                         }
                         "presenceEnabled" => {
@@ -297,7 +313,7 @@ where
                         }
                         "quickResponses" => {
                             builder = builder.set_quick_responses(
-                                crate::protocol_serde::shape_security_group_string_list::de_security_group_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_security_group_string_list::de_security_group_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "showMasterRecoveryKey" => {
@@ -305,10 +321,21 @@ where
                                 builder.set_show_master_recovery_key(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "shredder" => {
-                            builder = builder.set_shredder(crate::protocol_serde::shape_shredder_settings::de_shredder_settings(tokens, _value)?);
+                            builder = builder.set_shredder(crate::protocol_serde::shape_shredder_settings::de_shredder_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ssoMaxIdleMinutes" => {
                             builder = builder.set_sso_max_idle_minutes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "maxNonSsoSessionMinutes" => {
+                            builder = builder.set_max_non_sso_session_minutes(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
@@ -330,18 +357,20 @@ where
                         }
                         "permittedNetworks" => {
                             builder = builder.set_permitted_networks(
-                                crate::protocol_serde::shape_permitted_networks_list::de_permitted_networks_list(tokens, _value)?,
+                                crate::protocol_serde::shape_permitted_networks_list::de_permitted_networks_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "permittedWickrAwsNetworks" => {
                             builder = builder.set_permitted_wickr_aws_networks(
-                                crate::protocol_serde::shape_wickr_aws_networks_list::de_wickr_aws_networks_list(tokens, _value)?,
+                                crate::protocol_serde::shape_wickr_aws_networks_list::de_wickr_aws_networks_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "permittedWickrEnterpriseNetworks" => {
                             builder = builder.set_permitted_wickr_enterprise_networks(
                                 crate::protocol_serde::shape_permitted_wickr_enterprise_networks_list::de_permitted_wickr_enterprise_networks_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

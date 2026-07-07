@@ -96,6 +96,44 @@ pub struct FilterCriteria {
     pub code_repository_project_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filter criteria for findings based on the repository provider type (such as GitHub, GitLab, etc.).</p>
     pub code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the cloud provider.</p>
+    pub cloud_provider: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the cloud provider region.</p>
+    pub cloud_provider_region: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the cloud provider account ID.</p>
+    pub cloud_provider_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the cloud provider organization ID.</p>
+    pub cloud_provider_org_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the image reference of a VM instance.</p>
+    pub cloud_vm_image_reference: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the network ID of a VM instance.</p>
+    pub cloud_vm_network_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the subnet IDs of a VM instance.</p>
+    pub cloud_vm_subnet_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the repository name of a container image.</p>
+    pub cloud_image_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the registry of a container image.</p>
+    pub cloud_image_registry: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the digest of a container image.</p>
+    pub cloud_image_digest: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the tags of a container image.</p>
+    pub cloud_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for when a container image was pushed.</p>
+    pub cloud_image_pushed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    /// <p>Filter criteria for the architecture of a container image.</p>
+    pub cloud_image_architecture: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the last time a container image was in use.</p>
+    pub cloud_image_last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    /// <p>Filter criteria for the in-use count of a container image.</p>
+    pub cloud_image_in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    /// <p>Filter criteria for the name of a serverless function.</p>
+    pub cloud_serverless_function_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for the runtime of a serverless function.</p>
+    pub cloud_serverless_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for when a serverless function was last modified.</p>
+    pub cloud_serverless_function_last_modified_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    /// <p>Filter criteria for the execution role of a serverless function.</p>
+    pub cloud_serverless_function_execution_role: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl FilterCriteria {
     /// <p>Details on the finding ARNs used to filter findings.</p>
@@ -374,6 +412,120 @@ impl FilterCriteria {
     pub fn code_repository_provider_type(&self) -> &[crate::types::StringFilter] {
         self.code_repository_provider_type.as_deref().unwrap_or_default()
     }
+    /// <p>Filter criteria for the cloud provider.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider.is_none()`.
+    pub fn cloud_provider(&self) -> &[crate::types::StringFilter] {
+        self.cloud_provider.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the cloud provider region.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_region.is_none()`.
+    pub fn cloud_provider_region(&self) -> &[crate::types::StringFilter] {
+        self.cloud_provider_region.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the cloud provider account ID.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_account_id.is_none()`.
+    pub fn cloud_provider_account_id(&self) -> &[crate::types::StringFilter] {
+        self.cloud_provider_account_id.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the cloud provider organization ID.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_org_id.is_none()`.
+    pub fn cloud_provider_org_id(&self) -> &[crate::types::StringFilter] {
+        self.cloud_provider_org_id.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the image reference of a VM instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_vm_image_reference.is_none()`.
+    pub fn cloud_vm_image_reference(&self) -> &[crate::types::StringFilter] {
+        self.cloud_vm_image_reference.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the network ID of a VM instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_vm_network_id.is_none()`.
+    pub fn cloud_vm_network_id(&self) -> &[crate::types::StringFilter] {
+        self.cloud_vm_network_id.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the subnet IDs of a VM instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_vm_subnet_ids.is_none()`.
+    pub fn cloud_vm_subnet_ids(&self) -> &[crate::types::StringFilter] {
+        self.cloud_vm_subnet_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the repository name of a container image.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_image_repository_name.is_none()`.
+    pub fn cloud_image_repository_name(&self) -> &[crate::types::StringFilter] {
+        self.cloud_image_repository_name.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the registry of a container image.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_image_registry.is_none()`.
+    pub fn cloud_image_registry(&self) -> &[crate::types::StringFilter] {
+        self.cloud_image_registry.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the digest of a container image.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_image_digest.is_none()`.
+    pub fn cloud_image_digest(&self) -> &[crate::types::StringFilter] {
+        self.cloud_image_digest.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the tags of a container image.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_image_tags.is_none()`.
+    pub fn cloud_image_tags(&self) -> &[crate::types::StringFilter] {
+        self.cloud_image_tags.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for when a container image was pushed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_image_pushed_at.is_none()`.
+    pub fn cloud_image_pushed_at(&self) -> &[crate::types::DateFilter] {
+        self.cloud_image_pushed_at.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the architecture of a container image.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_image_architecture.is_none()`.
+    pub fn cloud_image_architecture(&self) -> &[crate::types::StringFilter] {
+        self.cloud_image_architecture.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the last time a container image was in use.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_image_last_in_use_at.is_none()`.
+    pub fn cloud_image_last_in_use_at(&self) -> &[crate::types::DateFilter] {
+        self.cloud_image_last_in_use_at.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the in-use count of a container image.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_image_in_use_count.is_none()`.
+    pub fn cloud_image_in_use_count(&self) -> &[crate::types::NumberFilter] {
+        self.cloud_image_in_use_count.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the name of a serverless function.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_serverless_function_name.is_none()`.
+    pub fn cloud_serverless_function_name(&self) -> &[crate::types::StringFilter] {
+        self.cloud_serverless_function_name.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the runtime of a serverless function.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_serverless_function_runtime.is_none()`.
+    pub fn cloud_serverless_function_runtime(&self) -> &[crate::types::StringFilter] {
+        self.cloud_serverless_function_runtime.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for when a serverless function was last modified.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_serverless_function_last_modified_at.is_none()`.
+    pub fn cloud_serverless_function_last_modified_at(&self) -> &[crate::types::DateFilter] {
+        self.cloud_serverless_function_last_modified_at.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for the execution role of a serverless function.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_serverless_function_execution_role.is_none()`.
+    pub fn cloud_serverless_function_execution_role(&self) -> &[crate::types::StringFilter] {
+        self.cloud_serverless_function_execution_role.as_deref().unwrap_or_default()
+    }
 }
 impl FilterCriteria {
     /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::types::FilterCriteria).
@@ -432,6 +584,25 @@ pub struct FilterCriteriaBuilder {
     pub(crate) epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     pub(crate) code_repository_project_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_provider: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_provider_region: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_provider_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_provider_org_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_vm_image_reference: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_vm_network_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_vm_subnet_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_image_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_image_registry: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_image_digest: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_image_pushed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) cloud_image_architecture: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_image_last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) cloud_image_in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) cloud_serverless_function_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_serverless_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) cloud_serverless_function_last_modified_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) cloud_serverless_function_execution_role: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl FilterCriteriaBuilder {
     /// Appends an item to `finding_arn`.
@@ -1354,6 +1525,386 @@ impl FilterCriteriaBuilder {
     pub fn get_code_repository_provider_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.code_repository_provider_type
     }
+    /// Appends an item to `cloud_provider`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_provider`](Self::set_cloud_provider).
+    ///
+    /// <p>Filter criteria for the cloud provider.</p>
+    pub fn cloud_provider(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_provider.unwrap_or_default();
+        v.push(input);
+        self.cloud_provider = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the cloud provider.</p>
+    pub fn set_cloud_provider(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_provider = input;
+        self
+    }
+    /// <p>Filter criteria for the cloud provider.</p>
+    pub fn get_cloud_provider(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_provider
+    }
+    /// Appends an item to `cloud_provider_region`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_provider_region`](Self::set_cloud_provider_region).
+    ///
+    /// <p>Filter criteria for the cloud provider region.</p>
+    pub fn cloud_provider_region(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_provider_region.unwrap_or_default();
+        v.push(input);
+        self.cloud_provider_region = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the cloud provider region.</p>
+    pub fn set_cloud_provider_region(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_provider_region = input;
+        self
+    }
+    /// <p>Filter criteria for the cloud provider region.</p>
+    pub fn get_cloud_provider_region(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_provider_region
+    }
+    /// Appends an item to `cloud_provider_account_id`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_provider_account_id`](Self::set_cloud_provider_account_id).
+    ///
+    /// <p>Filter criteria for the cloud provider account ID.</p>
+    pub fn cloud_provider_account_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_provider_account_id.unwrap_or_default();
+        v.push(input);
+        self.cloud_provider_account_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the cloud provider account ID.</p>
+    pub fn set_cloud_provider_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_provider_account_id = input;
+        self
+    }
+    /// <p>Filter criteria for the cloud provider account ID.</p>
+    pub fn get_cloud_provider_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_provider_account_id
+    }
+    /// Appends an item to `cloud_provider_org_id`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_provider_org_id`](Self::set_cloud_provider_org_id).
+    ///
+    /// <p>Filter criteria for the cloud provider organization ID.</p>
+    pub fn cloud_provider_org_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_provider_org_id.unwrap_or_default();
+        v.push(input);
+        self.cloud_provider_org_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the cloud provider organization ID.</p>
+    pub fn set_cloud_provider_org_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_provider_org_id = input;
+        self
+    }
+    /// <p>Filter criteria for the cloud provider organization ID.</p>
+    pub fn get_cloud_provider_org_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_provider_org_id
+    }
+    /// Appends an item to `cloud_vm_image_reference`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_vm_image_reference`](Self::set_cloud_vm_image_reference).
+    ///
+    /// <p>Filter criteria for the image reference of a VM instance.</p>
+    pub fn cloud_vm_image_reference(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_vm_image_reference.unwrap_or_default();
+        v.push(input);
+        self.cloud_vm_image_reference = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the image reference of a VM instance.</p>
+    pub fn set_cloud_vm_image_reference(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_vm_image_reference = input;
+        self
+    }
+    /// <p>Filter criteria for the image reference of a VM instance.</p>
+    pub fn get_cloud_vm_image_reference(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_vm_image_reference
+    }
+    /// Appends an item to `cloud_vm_network_id`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_vm_network_id`](Self::set_cloud_vm_network_id).
+    ///
+    /// <p>Filter criteria for the network ID of a VM instance.</p>
+    pub fn cloud_vm_network_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_vm_network_id.unwrap_or_default();
+        v.push(input);
+        self.cloud_vm_network_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the network ID of a VM instance.</p>
+    pub fn set_cloud_vm_network_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_vm_network_id = input;
+        self
+    }
+    /// <p>Filter criteria for the network ID of a VM instance.</p>
+    pub fn get_cloud_vm_network_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_vm_network_id
+    }
+    /// Appends an item to `cloud_vm_subnet_ids`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_vm_subnet_ids`](Self::set_cloud_vm_subnet_ids).
+    ///
+    /// <p>Filter criteria for the subnet IDs of a VM instance.</p>
+    pub fn cloud_vm_subnet_ids(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_vm_subnet_ids.unwrap_or_default();
+        v.push(input);
+        self.cloud_vm_subnet_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the subnet IDs of a VM instance.</p>
+    pub fn set_cloud_vm_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_vm_subnet_ids = input;
+        self
+    }
+    /// <p>Filter criteria for the subnet IDs of a VM instance.</p>
+    pub fn get_cloud_vm_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_vm_subnet_ids
+    }
+    /// Appends an item to `cloud_image_repository_name`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_image_repository_name`](Self::set_cloud_image_repository_name).
+    ///
+    /// <p>Filter criteria for the repository name of a container image.</p>
+    pub fn cloud_image_repository_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_image_repository_name.unwrap_or_default();
+        v.push(input);
+        self.cloud_image_repository_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the repository name of a container image.</p>
+    pub fn set_cloud_image_repository_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_image_repository_name = input;
+        self
+    }
+    /// <p>Filter criteria for the repository name of a container image.</p>
+    pub fn get_cloud_image_repository_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_image_repository_name
+    }
+    /// Appends an item to `cloud_image_registry`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_image_registry`](Self::set_cloud_image_registry).
+    ///
+    /// <p>Filter criteria for the registry of a container image.</p>
+    pub fn cloud_image_registry(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_image_registry.unwrap_or_default();
+        v.push(input);
+        self.cloud_image_registry = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the registry of a container image.</p>
+    pub fn set_cloud_image_registry(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_image_registry = input;
+        self
+    }
+    /// <p>Filter criteria for the registry of a container image.</p>
+    pub fn get_cloud_image_registry(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_image_registry
+    }
+    /// Appends an item to `cloud_image_digest`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_image_digest`](Self::set_cloud_image_digest).
+    ///
+    /// <p>Filter criteria for the digest of a container image.</p>
+    pub fn cloud_image_digest(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_image_digest.unwrap_or_default();
+        v.push(input);
+        self.cloud_image_digest = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the digest of a container image.</p>
+    pub fn set_cloud_image_digest(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_image_digest = input;
+        self
+    }
+    /// <p>Filter criteria for the digest of a container image.</p>
+    pub fn get_cloud_image_digest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_image_digest
+    }
+    /// Appends an item to `cloud_image_tags`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_image_tags`](Self::set_cloud_image_tags).
+    ///
+    /// <p>Filter criteria for the tags of a container image.</p>
+    pub fn cloud_image_tags(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_image_tags.unwrap_or_default();
+        v.push(input);
+        self.cloud_image_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the tags of a container image.</p>
+    pub fn set_cloud_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_image_tags = input;
+        self
+    }
+    /// <p>Filter criteria for the tags of a container image.</p>
+    pub fn get_cloud_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_image_tags
+    }
+    /// Appends an item to `cloud_image_pushed_at`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_image_pushed_at`](Self::set_cloud_image_pushed_at).
+    ///
+    /// <p>Filter criteria for when a container image was pushed.</p>
+    pub fn cloud_image_pushed_at(mut self, input: crate::types::DateFilter) -> Self {
+        let mut v = self.cloud_image_pushed_at.unwrap_or_default();
+        v.push(input);
+        self.cloud_image_pushed_at = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for when a container image was pushed.</p>
+    pub fn set_cloud_image_pushed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
+        self.cloud_image_pushed_at = input;
+        self
+    }
+    /// <p>Filter criteria for when a container image was pushed.</p>
+    pub fn get_cloud_image_pushed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.cloud_image_pushed_at
+    }
+    /// Appends an item to `cloud_image_architecture`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_image_architecture`](Self::set_cloud_image_architecture).
+    ///
+    /// <p>Filter criteria for the architecture of a container image.</p>
+    pub fn cloud_image_architecture(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_image_architecture.unwrap_or_default();
+        v.push(input);
+        self.cloud_image_architecture = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the architecture of a container image.</p>
+    pub fn set_cloud_image_architecture(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_image_architecture = input;
+        self
+    }
+    /// <p>Filter criteria for the architecture of a container image.</p>
+    pub fn get_cloud_image_architecture(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_image_architecture
+    }
+    /// Appends an item to `cloud_image_last_in_use_at`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_image_last_in_use_at`](Self::set_cloud_image_last_in_use_at).
+    ///
+    /// <p>Filter criteria for the last time a container image was in use.</p>
+    pub fn cloud_image_last_in_use_at(mut self, input: crate::types::DateFilter) -> Self {
+        let mut v = self.cloud_image_last_in_use_at.unwrap_or_default();
+        v.push(input);
+        self.cloud_image_last_in_use_at = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the last time a container image was in use.</p>
+    pub fn set_cloud_image_last_in_use_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
+        self.cloud_image_last_in_use_at = input;
+        self
+    }
+    /// <p>Filter criteria for the last time a container image was in use.</p>
+    pub fn get_cloud_image_last_in_use_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.cloud_image_last_in_use_at
+    }
+    /// Appends an item to `cloud_image_in_use_count`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_image_in_use_count`](Self::set_cloud_image_in_use_count).
+    ///
+    /// <p>Filter criteria for the in-use count of a container image.</p>
+    pub fn cloud_image_in_use_count(mut self, input: crate::types::NumberFilter) -> Self {
+        let mut v = self.cloud_image_in_use_count.unwrap_or_default();
+        v.push(input);
+        self.cloud_image_in_use_count = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the in-use count of a container image.</p>
+    pub fn set_cloud_image_in_use_count(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
+        self.cloud_image_in_use_count = input;
+        self
+    }
+    /// <p>Filter criteria for the in-use count of a container image.</p>
+    pub fn get_cloud_image_in_use_count(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+        &self.cloud_image_in_use_count
+    }
+    /// Appends an item to `cloud_serverless_function_name`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_serverless_function_name`](Self::set_cloud_serverless_function_name).
+    ///
+    /// <p>Filter criteria for the name of a serverless function.</p>
+    pub fn cloud_serverless_function_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_serverless_function_name.unwrap_or_default();
+        v.push(input);
+        self.cloud_serverless_function_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the name of a serverless function.</p>
+    pub fn set_cloud_serverless_function_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_serverless_function_name = input;
+        self
+    }
+    /// <p>Filter criteria for the name of a serverless function.</p>
+    pub fn get_cloud_serverless_function_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_serverless_function_name
+    }
+    /// Appends an item to `cloud_serverless_function_runtime`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_serverless_function_runtime`](Self::set_cloud_serverless_function_runtime).
+    ///
+    /// <p>Filter criteria for the runtime of a serverless function.</p>
+    pub fn cloud_serverless_function_runtime(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_serverless_function_runtime.unwrap_or_default();
+        v.push(input);
+        self.cloud_serverless_function_runtime = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the runtime of a serverless function.</p>
+    pub fn set_cloud_serverless_function_runtime(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_serverless_function_runtime = input;
+        self
+    }
+    /// <p>Filter criteria for the runtime of a serverless function.</p>
+    pub fn get_cloud_serverless_function_runtime(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_serverless_function_runtime
+    }
+    /// Appends an item to `cloud_serverless_function_last_modified_at`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_serverless_function_last_modified_at`](Self::set_cloud_serverless_function_last_modified_at).
+    ///
+    /// <p>Filter criteria for when a serverless function was last modified.</p>
+    pub fn cloud_serverless_function_last_modified_at(mut self, input: crate::types::DateFilter) -> Self {
+        let mut v = self.cloud_serverless_function_last_modified_at.unwrap_or_default();
+        v.push(input);
+        self.cloud_serverless_function_last_modified_at = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for when a serverless function was last modified.</p>
+    pub fn set_cloud_serverless_function_last_modified_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
+        self.cloud_serverless_function_last_modified_at = input;
+        self
+    }
+    /// <p>Filter criteria for when a serverless function was last modified.</p>
+    pub fn get_cloud_serverless_function_last_modified_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.cloud_serverless_function_last_modified_at
+    }
+    /// Appends an item to `cloud_serverless_function_execution_role`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_serverless_function_execution_role`](Self::set_cloud_serverless_function_execution_role).
+    ///
+    /// <p>Filter criteria for the execution role of a serverless function.</p>
+    pub fn cloud_serverless_function_execution_role(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.cloud_serverless_function_execution_role.unwrap_or_default();
+        v.push(input);
+        self.cloud_serverless_function_execution_role = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for the execution role of a serverless function.</p>
+    pub fn set_cloud_serverless_function_execution_role(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.cloud_serverless_function_execution_role = input;
+        self
+    }
+    /// <p>Filter criteria for the execution role of a serverless function.</p>
+    pub fn get_cloud_serverless_function_execution_role(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.cloud_serverless_function_execution_role
+    }
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {
         crate::types::FilterCriteria {
@@ -1403,6 +1954,25 @@ impl FilterCriteriaBuilder {
             epss_score: self.epss_score,
             code_repository_project_name: self.code_repository_project_name,
             code_repository_provider_type: self.code_repository_provider_type,
+            cloud_provider: self.cloud_provider,
+            cloud_provider_region: self.cloud_provider_region,
+            cloud_provider_account_id: self.cloud_provider_account_id,
+            cloud_provider_org_id: self.cloud_provider_org_id,
+            cloud_vm_image_reference: self.cloud_vm_image_reference,
+            cloud_vm_network_id: self.cloud_vm_network_id,
+            cloud_vm_subnet_ids: self.cloud_vm_subnet_ids,
+            cloud_image_repository_name: self.cloud_image_repository_name,
+            cloud_image_registry: self.cloud_image_registry,
+            cloud_image_digest: self.cloud_image_digest,
+            cloud_image_tags: self.cloud_image_tags,
+            cloud_image_pushed_at: self.cloud_image_pushed_at,
+            cloud_image_architecture: self.cloud_image_architecture,
+            cloud_image_last_in_use_at: self.cloud_image_last_in_use_at,
+            cloud_image_in_use_count: self.cloud_image_in_use_count,
+            cloud_serverless_function_name: self.cloud_serverless_function_name,
+            cloud_serverless_function_runtime: self.cloud_serverless_function_runtime,
+            cloud_serverless_function_last_modified_at: self.cloud_serverless_function_last_modified_at,
+            cloud_serverless_function_execution_role: self.cloud_serverless_function_execution_role,
         }
     }
 }

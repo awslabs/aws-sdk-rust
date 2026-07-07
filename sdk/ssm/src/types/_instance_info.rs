@@ -16,6 +16,8 @@ pub struct InstanceInfo {
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the node is managed by Systems Manager.</p>
     pub managed_status: ::std::option::Option<crate::types::ManagedStatus>,
+    /// <p>The name assigned to the managed node.</p>
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform type of the managed node.</p>
     pub platform_type: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The name of the operating system platform running on your managed node.</p>
@@ -24,6 +26,16 @@ pub struct InstanceInfo {
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance, either an EC2 instance or another supported machine type in a hybrid fleet.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    pub source_type: ::std::option::Option<crate::types::SourceType>,
+    /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name.</p>
+    pub source_id: ::std::option::Option<::std::string::String>,
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub source_location: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone ID where the managed node is located.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceInfo {
     /// <p>The type of agent installed on the node.</p>
@@ -50,6 +62,10 @@ impl InstanceInfo {
     pub fn managed_status(&self) -> ::std::option::Option<&crate::types::ManagedStatus> {
         self.managed_status.as_ref()
     }
+    /// <p>The name assigned to the managed node.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
     /// <p>The operating system platform type of the managed node.</p>
     pub fn platform_type(&self) -> ::std::option::Option<&crate::types::PlatformType> {
         self.platform_type.as_ref()
@@ -66,6 +82,26 @@ impl InstanceInfo {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name.</p>
+    pub fn source_id(&self) -> ::std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn source_location(&self) -> ::std::option::Option<&str> {
+        self.source_location.as_deref()
+    }
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The Availability Zone ID where the managed node is located.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InstanceInfo {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -76,10 +112,16 @@ impl ::std::fmt::Debug for InstanceInfo {
         formatter.field("instance_status", &self.instance_status);
         formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("managed_status", &self.managed_status);
+        formatter.field("name", &self.name);
         formatter.field("platform_type", &self.platform_type);
         formatter.field("platform_name", &self.platform_name);
         formatter.field("platform_version", &self.platform_version);
         formatter.field("resource_type", &self.resource_type);
+        formatter.field("source_type", &self.source_type);
+        formatter.field("source_id", &self.source_id);
+        formatter.field("source_location", &self.source_location);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("availability_zone_id", &self.availability_zone_id);
         formatter.finish()
     }
 }
@@ -100,10 +142,16 @@ pub struct InstanceInfoBuilder {
     pub(crate) instance_status: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) managed_status: ::std::option::Option<crate::types::ManagedStatus>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_type: ::std::option::Option<crate::types::PlatformType>,
     pub(crate) platform_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
+    pub(crate) source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_location: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceInfoBuilder {
     /// <p>The type of agent installed on the node.</p>
@@ -190,6 +238,20 @@ impl InstanceInfoBuilder {
     pub fn get_managed_status(&self) -> &::std::option::Option<crate::types::ManagedStatus> {
         &self.managed_status
     }
+    /// <p>The name assigned to the managed node.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name assigned to the managed node.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name assigned to the managed node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The operating system platform type of the managed node.</p>
     pub fn platform_type(mut self, input: crate::types::PlatformType) -> Self {
         self.platform_type = ::std::option::Option::Some(input);
@@ -246,6 +308,76 @@ impl InstanceInfoBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
+        self.source_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
+        self.source_type = input;
+        self
+    }
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
+    }
+    /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name.</p>
+    pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name.</p>
+    pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_id = input;
+        self
+    }
+    /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name.</p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn source_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn set_source_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_location = input;
+        self
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn get_source_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location
+    }
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
+    /// <p>The Availability Zone ID where the managed node is located.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID where the managed node is located.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The Availability Zone ID where the managed node is located.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`InstanceInfo`](crate::types::InstanceInfo).
     pub fn build(self) -> crate::types::InstanceInfo {
         crate::types::InstanceInfo {
@@ -255,10 +387,16 @@ impl InstanceInfoBuilder {
             instance_status: self.instance_status,
             ip_address: self.ip_address,
             managed_status: self.managed_status,
+            name: self.name,
             platform_type: self.platform_type,
             platform_name: self.platform_name,
             platform_version: self.platform_version,
             resource_type: self.resource_type,
+            source_type: self.source_type,
+            source_id: self.source_id,
+            source_location: self.source_location,
+            availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }
@@ -271,10 +409,16 @@ impl ::std::fmt::Debug for InstanceInfoBuilder {
         formatter.field("instance_status", &self.instance_status);
         formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("managed_status", &self.managed_status);
+        formatter.field("name", &self.name);
         formatter.field("platform_type", &self.platform_type);
         formatter.field("platform_name", &self.platform_name);
         formatter.field("platform_version", &self.platform_version);
         formatter.field("resource_type", &self.resource_type);
+        formatter.field("source_type", &self.source_type);
+        formatter.field("source_id", &self.source_id);
+        formatter.field("source_location", &self.source_location);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("availability_zone_id", &self.availability_zone_id);
         formatter.finish()
     }
 }

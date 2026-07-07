@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_performance_insights_metric_dimension_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PerformanceInsightsMetricDimensionGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PerformanceInsightsMetricDimensionGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_performance_insights_metric_dimension_group(
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.rds#PerformanceInsightsMetricDimensionGroup$Dimensions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

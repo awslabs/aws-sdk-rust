@@ -2,10 +2,16 @@
 pub(crate) fn de_bucket_level_permissions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BucketLevelPermissions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,15 +22,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "accessControlList" => {
-                            builder = builder
-                                .set_access_control_list(crate::protocol_serde::shape_access_control_list::de_access_control_list(tokens, _value)?);
+                            builder = builder.set_access_control_list(crate::protocol_serde::shape_access_control_list::de_access_control_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "bucketPolicy" => {
-                            builder = builder.set_bucket_policy(crate::protocol_serde::shape_bucket_policy::de_bucket_policy(tokens, _value)?);
+                            builder =
+                                builder.set_bucket_policy(crate::protocol_serde::shape_bucket_policy::de_bucket_policy(tokens, _value, depth + 1)?);
                         }
                         "blockPublicAccess" => {
-                            builder = builder
-                                .set_block_public_access(crate::protocol_serde::shape_block_public_access::de_block_public_access(tokens, _value)?);
+                            builder = builder.set_block_public_access(crate::protocol_serde::shape_block_public_access::de_block_public_access(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

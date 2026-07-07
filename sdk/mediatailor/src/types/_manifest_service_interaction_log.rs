@@ -5,10 +5,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManifestServiceInteractionLog {
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in.</p>
+    pub publish_opt_in_event_types: ::std::option::Option<::std::vec::Vec<crate::types::ManifestServicePublishOptInEventType>>,
     /// <p>Indicates that MediaTailor won't emit the selected events in the logs for playback sessions that are initialized with this configuration.</p>
     pub exclude_event_types: ::std::option::Option<::std::vec::Vec<crate::types::ManifestServiceExcludeEventType>>,
 }
 impl ManifestServiceInteractionLog {
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publish_opt_in_event_types.is_none()`.
+    pub fn publish_opt_in_event_types(&self) -> &[crate::types::ManifestServicePublishOptInEventType] {
+        self.publish_opt_in_event_types.as_deref().unwrap_or_default()
+    }
     /// <p>Indicates that MediaTailor won't emit the selected events in the logs for playback sessions that are initialized with this configuration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_event_types.is_none()`.
@@ -27,9 +35,33 @@ impl ManifestServiceInteractionLog {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ManifestServiceInteractionLogBuilder {
+    pub(crate) publish_opt_in_event_types: ::std::option::Option<::std::vec::Vec<crate::types::ManifestServicePublishOptInEventType>>,
     pub(crate) exclude_event_types: ::std::option::Option<::std::vec::Vec<crate::types::ManifestServiceExcludeEventType>>,
 }
 impl ManifestServiceInteractionLogBuilder {
+    /// Appends an item to `publish_opt_in_event_types`.
+    ///
+    /// To override the contents of this collection use [`set_publish_opt_in_event_types`](Self::set_publish_opt_in_event_types).
+    ///
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in.</p>
+    pub fn publish_opt_in_event_types(mut self, input: crate::types::ManifestServicePublishOptInEventType) -> Self {
+        let mut v = self.publish_opt_in_event_types.unwrap_or_default();
+        v.push(input);
+        self.publish_opt_in_event_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in.</p>
+    pub fn set_publish_opt_in_event_types(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ManifestServicePublishOptInEventType>>,
+    ) -> Self {
+        self.publish_opt_in_event_types = input;
+        self
+    }
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in.</p>
+    pub fn get_publish_opt_in_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManifestServicePublishOptInEventType>> {
+        &self.publish_opt_in_event_types
+    }
     /// Appends an item to `exclude_event_types`.
     ///
     /// To override the contents of this collection use [`set_exclude_event_types`](Self::set_exclude_event_types).
@@ -53,6 +85,7 @@ impl ManifestServiceInteractionLogBuilder {
     /// Consumes the builder and constructs a [`ManifestServiceInteractionLog`](crate::types::ManifestServiceInteractionLog).
     pub fn build(self) -> crate::types::ManifestServiceInteractionLog {
         crate::types::ManifestServiceInteractionLog {
+            publish_opt_in_event_types: self.publish_opt_in_event_types,
             exclude_event_types: self.exclude_event_types,
         }
     }

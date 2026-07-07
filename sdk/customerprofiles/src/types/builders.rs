@@ -55,6 +55,8 @@ pub use crate::types::_get_object_type_attribute_statistics_stats::GetObjectType
 
 pub use crate::types::_metadata_config::MetadataConfigBuilder;
 
+pub use crate::types::_recommendation_diversity_config::RecommendationDiversityConfigBuilder;
+
 pub use crate::types::_recommender_update::RecommenderUpdateBuilder;
 
 pub use crate::types::_results_summary::ResultsSummaryBuilder;
@@ -81,6 +83,12 @@ pub use crate::types::_batch_get_profile_error::BatchGetProfileErrorBuilder;
 
 pub use crate::types::_profile::ProfileBuilder;
 
+pub use crate::types::_batch_put_profile_object_request_item::BatchPutProfileObjectRequestItemBuilder;
+
+pub use crate::types::_batch_put_profile_object_response_item::BatchPutProfileObjectResponseItemBuilder;
+
+pub use crate::types::_batch_put_profile_object_error_item::BatchPutProfileObjectErrorItemBuilder;
+
 pub use crate::types::_range::RangeBuilder;
 
 pub use crate::types::_threshold::ThresholdBuilder;
@@ -98,6 +106,8 @@ pub use crate::types::_appflow_integration::AppflowIntegrationBuilder;
 pub use crate::types::_events_config::EventsConfigBuilder;
 
 pub use crate::types::_inference_config::InferenceConfigBuilder;
+
+pub use crate::types::_diversity_config::DiversityConfigBuilder;
 
 pub use crate::types::_object_type_field::ObjectTypeFieldBuilder;
 
@@ -224,6 +234,8 @@ pub use crate::types::_event_trigger_dimension::EventTriggerDimensionBuilder;
 pub use crate::types::_batch::BatchBuilder;
 
 pub use crate::types::_event_parameters::EventParametersBuilder;
+
+pub use crate::types::_diversity_column::DiversityColumnBuilder;
 
 pub use crate::types::_marketo_source_properties::MarketoSourcePropertiesBuilder;
 

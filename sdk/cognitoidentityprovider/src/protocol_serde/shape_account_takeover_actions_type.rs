@@ -27,10 +27,16 @@ pub fn ser_account_takeover_actions_type(
 pub(crate) fn de_account_takeover_actions_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AccountTakeoverActionsType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,17 +48,29 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LowAction" => {
                             builder = builder.set_low_action(
-                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens, _value)?,
+                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MediumAction" => {
                             builder = builder.set_medium_action(
-                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens, _value)?,
+                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "HighAction" => {
                             builder = builder.set_high_action(
-                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens, _value)?,
+                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

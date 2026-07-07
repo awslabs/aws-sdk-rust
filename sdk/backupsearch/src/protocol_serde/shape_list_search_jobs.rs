@@ -118,6 +118,8 @@ pub(crate) fn de_list_search_jobs(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -131,7 +133,7 @@ pub(crate) fn de_list_search_jobs(
                     );
                 }
                 "SearchJobs" => {
-                    builder = builder.set_search_jobs(crate::protocol_serde::shape_search_jobs::de_search_jobs(tokens, _value)?);
+                    builder = builder.set_search_jobs(crate::protocol_serde::shape_search_jobs::de_search_jobs(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

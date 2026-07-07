@@ -91,6 +91,8 @@ pub fn de_describe_scaling_activities(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeScalingActivitiesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeScalingActivitiesResponse got {start_el:?}"
@@ -108,7 +110,7 @@ pub fn de_describe_scaling_activities(
             s if s.matches("Activities") /* Activities com.amazonaws.autoscaling.synthetic#DescribeScalingActivitiesOutput$Activities */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_activities::de_activities(&mut tag)
+                        crate::protocol_serde::shape_activities::de_activities(&mut tag, depth + 1)
                         ?
                     )
                 ;

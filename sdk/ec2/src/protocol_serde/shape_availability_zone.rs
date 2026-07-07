@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_availability_zone(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AvailabilityZone, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AvailabilityZone::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_availability_zone(
             s if s.matches("messageSet") /* Messages com.amazonaws.ec2#AvailabilityZone$Messages */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_message_list::de_availability_zone_message_list(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_message_list::de_availability_zone_message_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -151,7 +155,7 @@ pub fn de_availability_zone(
             s if s.matches("geographySet") /* Geography com.amazonaws.ec2#AvailabilityZone$Geography */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_geography_list::de_availability_zone_geography_list(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_geography_list::de_availability_zone_geography_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -161,7 +165,7 @@ pub fn de_availability_zone(
             s if s.matches("subGeographySet") /* SubGeography com.amazonaws.ec2#AvailabilityZone$SubGeography */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_sub_geography_list::de_availability_zone_sub_geography_list(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_sub_geography_list::de_availability_zone_sub_geography_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

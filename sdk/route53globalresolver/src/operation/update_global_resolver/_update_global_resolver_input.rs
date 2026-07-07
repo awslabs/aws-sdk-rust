@@ -13,6 +13,8 @@ pub struct UpdateGlobalResolverInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
     pub ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
+    /// <p>The list of Amazon Web Services Regions where the Global Resolver will operate. The resolver will be distributed across these Regions to provide global availability and low-latency DNS resolution.</p>
+    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateGlobalResolverInput {
     /// <p>The ID of the Global Resolver.</p>
@@ -35,6 +37,12 @@ impl UpdateGlobalResolverInput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::GlobalResolverIpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The list of Amazon Web Services Regions where the Global Resolver will operate. The resolver will be distributed across these Regions to provide global availability and low-latency DNS resolution.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateGlobalResolverInput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalResolverInput`](crate::operation::update_global_resolver::UpdateGlobalResolverInput).
@@ -52,6 +60,7 @@ pub struct UpdateGlobalResolverInputBuilder {
     pub(crate) observability_region: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateGlobalResolverInputBuilder {
     /// <p>The ID of the Global Resolver.</p>
@@ -125,6 +134,26 @@ impl UpdateGlobalResolverInputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::GlobalResolverIpAddressType> {
         &self.ip_address_type
     }
+    /// Appends an item to `regions`.
+    ///
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+    ///
+    /// <p>The list of Amazon Web Services Regions where the Global Resolver will operate. The resolver will be distributed across these Regions to provide global availability and low-latency DNS resolution.</p>
+    pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.regions.unwrap_or_default();
+        v.push(input.into());
+        self.regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Amazon Web Services Regions where the Global Resolver will operate. The resolver will be distributed across these Regions to provide global availability and low-latency DNS resolution.</p>
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regions = input;
+        self
+    }
+    /// <p>The list of Amazon Web Services Regions where the Global Resolver will operate. The resolver will be distributed across these Regions to provide global availability and low-latency DNS resolution.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
     /// Consumes the builder and constructs a [`UpdateGlobalResolverInput`](crate::operation::update_global_resolver::UpdateGlobalResolverInput).
     pub fn build(
         self,
@@ -136,6 +165,7 @@ impl UpdateGlobalResolverInputBuilder {
             observability_region: self.observability_region,
             description: self.description,
             ip_address_type: self.ip_address_type,
+            regions: self.regions,
         })
     }
 }

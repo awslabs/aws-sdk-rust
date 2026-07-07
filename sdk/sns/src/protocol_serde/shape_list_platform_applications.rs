@@ -106,6 +106,8 @@ pub fn de_list_platform_applications(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListPlatformApplicationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListPlatformApplicationsResponse got {start_el:?}"
@@ -123,7 +125,7 @@ pub fn de_list_platform_applications(
             s if s.matches("PlatformApplications") /* PlatformApplications com.amazonaws.sns.synthetic#ListPlatformApplicationsOutput$PlatformApplications */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_list_of_platform_applications::de_list_of_platform_applications(&mut tag)
+                        crate::protocol_serde::shape_list_of_platform_applications::de_list_of_platform_applications(&mut tag, depth + 1)
                         ?
                     )
                 ;

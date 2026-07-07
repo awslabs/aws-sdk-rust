@@ -22,7 +22,7 @@ impl crate::operation::deregister_service::builders::DeregisterServiceInputBuild
 }
 /// Fluent builder constructing a request to `DeregisterService`.
 ///
-/// Deregister a service
+/// <p>Deregister a service</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeregisterServiceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The service id to deregister. A service can only be deregistered if it is not associated with any AgentSpace.
+    /// <p>The service id to deregister. A service can only be deregistered if it is not associated with any AgentSpace.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_id(input.into());
         self
     }
-    /// The service id to deregister. A service can only be deregistered if it is not associated with any AgentSpace.
+    /// <p>The service id to deregister. A service can only be deregistered if it is not associated with any AgentSpace.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_id(input);
         self
     }
-    /// The service id to deregister. A service can only be deregistered if it is not associated with any AgentSpace.
+    /// <p>The service id to deregister. A service can only be deregistered if it is not associated with any AgentSpace.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_id()
     }

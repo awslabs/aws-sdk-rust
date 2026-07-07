@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_verified_access_endpoint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VerifiedAccessEndpoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VerifiedAccessEndpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -129,7 +133,7 @@ pub fn de_verified_access_endpoint(
             s if s.matches("securityGroupIdSet") /* SecurityGroupIds com.amazonaws.ec2#VerifiedAccessEndpoint$SecurityGroupIds */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(&mut tag)
+                        crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -139,7 +143,7 @@ pub fn de_verified_access_endpoint(
             s if s.matches("loadBalancerOptions") /* LoadBalancerOptions com.amazonaws.ec2#VerifiedAccessEndpoint$LoadBalancerOptions */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint_load_balancer_options::de_verified_access_endpoint_load_balancer_options(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint_load_balancer_options::de_verified_access_endpoint_load_balancer_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -149,7 +153,7 @@ pub fn de_verified_access_endpoint(
             s if s.matches("networkInterfaceOptions") /* NetworkInterfaceOptions com.amazonaws.ec2#VerifiedAccessEndpoint$NetworkInterfaceOptions */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint_eni_options::de_verified_access_endpoint_eni_options(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint_eni_options::de_verified_access_endpoint_eni_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -159,7 +163,7 @@ pub fn de_verified_access_endpoint(
             s if s.matches("status") /* Status com.amazonaws.ec2#VerifiedAccessEndpoint$Status */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint_status::de_verified_access_endpoint_status(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint_status::de_verified_access_endpoint_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -221,7 +225,7 @@ pub fn de_verified_access_endpoint(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VerifiedAccessEndpoint$Tags */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -231,7 +235,7 @@ pub fn de_verified_access_endpoint(
             s if s.matches("sseSpecification") /* SseSpecification com.amazonaws.ec2#VerifiedAccessEndpoint$SseSpecification */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag)
+                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -241,7 +245,7 @@ pub fn de_verified_access_endpoint(
             s if s.matches("rdsOptions") /* RdsOptions com.amazonaws.ec2#VerifiedAccessEndpoint$RdsOptions */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint_rds_options::de_verified_access_endpoint_rds_options(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint_rds_options::de_verified_access_endpoint_rds_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -251,7 +255,7 @@ pub fn de_verified_access_endpoint(
             s if s.matches("cidrOptions") /* CidrOptions com.amazonaws.ec2#VerifiedAccessEndpoint$CidrOptions */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint_cidr_options::de_verified_access_endpoint_cidr_options(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint_cidr_options::de_verified_access_endpoint_cidr_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

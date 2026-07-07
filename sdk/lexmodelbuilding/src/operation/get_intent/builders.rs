@@ -24,6 +24,7 @@ impl crate::operation::get_intent::builders::GetIntentInputBuilder {
 ///
 /// <p>Returns information about an intent. In addition to the intent name, you must specify the intent version.</p>
 /// <p>This operation requires permissions to perform the <code>lex:GetIntent</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIntentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

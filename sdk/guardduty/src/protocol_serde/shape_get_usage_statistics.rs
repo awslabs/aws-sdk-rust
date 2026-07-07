@@ -93,6 +93,8 @@ pub(crate) fn de_get_usage_statistics(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -106,7 +108,11 @@ pub(crate) fn de_get_usage_statistics(
                     );
                 }
                 "usageStatistics" => {
-                    builder = builder.set_usage_statistics(crate::protocol_serde::shape_usage_statistics::de_usage_statistics(tokens, _value)?);
+                    builder = builder.set_usage_statistics(crate::protocol_serde::shape_usage_statistics::de_usage_statistics(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

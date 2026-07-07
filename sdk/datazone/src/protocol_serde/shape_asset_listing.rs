@@ -2,10 +2,16 @@
 pub(crate) fn de_asset_listing<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AssetListing>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,65 +20,67 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "assetId" => {
-                            builder = builder.set_asset_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "assetRevision" => {
-                            builder = builder.set_asset_revision(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "assetType" => {
-                            builder = builder.set_asset_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "createdAt" => {
-                            builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "forms" => {
-                            builder = builder.set_forms(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "latestTimeSeriesDataPointForms" => {
-                            builder = builder.set_latest_time_series_data_point_forms(
-                                    crate::protocol_serde::shape_time_series_data_point_summary_form_output_list::de_time_series_data_point_summary_form_output_list(tokens, _value)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "assetId" => {
+                                builder = builder.set_asset_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
+                            }
+                            "assetRevision" => {
+                                builder = builder.set_asset_revision(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "assetType" => {
+                                builder = builder.set_asset_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "createdAt" => {
+                                builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "forms" => {
+                                builder = builder.set_forms(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "latestTimeSeriesDataPointForms" => {
+                                builder = builder.set_latest_time_series_data_point_forms(
+                                    crate::protocol_serde::shape_time_series_data_point_summary_form_output_list::de_time_series_data_point_summary_form_output_list(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "glossaryTerms" => {
+                                builder = builder.set_glossary_terms(
+                                    crate::protocol_serde::shape_detailed_glossary_terms::de_detailed_glossary_terms(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "governedGlossaryTerms" => {
+                                builder = builder.set_governed_glossary_terms(
+                                    crate::protocol_serde::shape_detailed_glossary_terms::de_detailed_glossary_terms(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "owningProjectId" => {
+                                builder = builder.set_owning_project_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "glossaryTerms" => {
-                            builder = builder.set_glossary_terms(crate::protocol_serde::shape_detailed_glossary_terms::de_detailed_glossary_terms(
-                                tokens, _value,
-                            )?);
-                        }
-                        "governedGlossaryTerms" => {
-                            builder = builder.set_governed_glossary_terms(
-                                crate::protocol_serde::shape_detailed_glossary_terms::de_detailed_glossary_terms(tokens, _value)?,
-                            );
-                        }
-                        "owningProjectId" => {
-                            builder = builder.set_owning_project_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -105,10 +105,16 @@ pub fn ser_aws_lambda_function_details(
 pub(crate) fn de_aws_lambda_function_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsLambdaFunctionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -120,7 +126,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Code" => {
                             builder = builder.set_code(crate::protocol_serde::shape_aws_lambda_function_code::de_aws_lambda_function_code(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "CodeSha256" => {
@@ -133,13 +141,19 @@ where
                         "DeadLetterConfig" => {
                             builder = builder.set_dead_letter_config(
                                 crate::protocol_serde::shape_aws_lambda_function_dead_letter_config::de_aws_lambda_function_dead_letter_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_aws_lambda_function_environment::de_aws_lambda_function_environment(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_lambda_function_environment::de_aws_lambda_function_environment(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "FunctionName" => {
@@ -172,7 +186,11 @@ where
                         }
                         "Layers" => {
                             builder = builder.set_layers(
-                                crate::protocol_serde::shape_aws_lambda_function_layer_list::de_aws_lambda_function_layer_list(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_lambda_function_layer_list::de_aws_lambda_function_layer_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MasterArn" => {
@@ -220,13 +238,19 @@ where
                         "TracingConfig" => {
                             builder = builder.set_tracing_config(
                                 crate::protocol_serde::shape_aws_lambda_function_tracing_config::de_aws_lambda_function_tracing_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "VpcConfig" => {
                             builder = builder.set_vpc_config(
-                                crate::protocol_serde::shape_aws_lambda_function_vpc_config::de_aws_lambda_function_vpc_config(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_lambda_function_vpc_config::de_aws_lambda_function_vpc_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Version" => {
@@ -238,7 +262,9 @@ where
                         }
                         "Architectures" => {
                             builder = builder.set_architectures(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "PackageType" => {

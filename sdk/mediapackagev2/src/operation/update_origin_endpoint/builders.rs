@@ -300,6 +300,20 @@ impl UpdateOriginEndpointFluentBuilder {
     pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
         self.inner.get_force_endpoint_error_configuration()
     }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
+    pub fn uri_separator(mut self, input: crate::types::UriSeparator) -> Self {
+        self.inner = self.inner.uri_separator(input);
+        self
+    }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
+    pub fn set_uri_separator(mut self, input: ::std::option::Option<crate::types::UriSeparator>) -> Self {
+        self.inner = self.inner.set_uri_separator(input);
+        self
+    }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
+    pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
+        self.inner.get_uri_separator()
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.e_tag(input.into());

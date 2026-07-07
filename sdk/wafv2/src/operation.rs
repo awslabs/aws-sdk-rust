@@ -85,6 +85,15 @@ pub mod get_rate_based_statement_managed_keys;
 /// Types for the `GetRegexPatternSet` operation.
 pub mod get_regex_pattern_set;
 
+/// Types for the `GetRevenueStatistics` operation.
+pub mod get_revenue_statistics;
+
+/// Types for the `GetRevenueStatisticsSummary` operation.
+pub mod get_revenue_statistics_summary;
+
+/// Types for the `GetRevenueStatisticsTimeSeries` operation.
+pub mod get_revenue_statistics_time_series;
+
 /// Types for the `GetRuleGroup` operation.
 pub mod get_rule_group;
 
@@ -129,6 +138,9 @@ pub mod list_resources_for_web_acl;
 
 /// Types for the `ListRuleGroups` operation.
 pub mod list_rule_groups;
+
+/// Types for the `ListSettlementRecords` operation.
+pub mod list_settlement_records;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

@@ -76,6 +76,8 @@ pub fn de_describe_lifecycle_hooks(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeLifecycleHooksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeLifecycleHooksResponse got {start_el:?}"
@@ -93,7 +95,7 @@ pub fn de_describe_lifecycle_hooks(
             s if s.matches("LifecycleHooks") /* LifecycleHooks com.amazonaws.autoscaling.synthetic#DescribeLifecycleHooksOutput$LifecycleHooks */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_lifecycle_hooks::de_lifecycle_hooks(&mut tag)
+                        crate::protocol_serde::shape_lifecycle_hooks::de_lifecycle_hooks(&mut tag, depth + 1)
                         ?
                     )
                 ;

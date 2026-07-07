@@ -48,10 +48,16 @@ pub fn ser_data_prep_configuration(
 pub(crate) fn de_data_prep_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataPrepConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -62,16 +68,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SourceTableMap" => {
-                            builder =
-                                builder.set_source_table_map(crate::protocol_serde::shape_source_table_map::de_source_table_map(tokens, _value)?);
+                            builder = builder.set_source_table_map(crate::protocol_serde::shape_source_table_map::de_source_table_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TransformStepMap" => {
-                            builder = builder
-                                .set_transform_step_map(crate::protocol_serde::shape_transform_step_map::de_transform_step_map(tokens, _value)?);
+                            builder = builder.set_transform_step_map(crate::protocol_serde::shape_transform_step_map::de_transform_step_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DestinationTableMap" => {
                             builder = builder.set_destination_table_map(
-                                crate::protocol_serde::shape_destination_table_map::de_destination_table_map(tokens, _value)?,
+                                crate::protocol_serde::shape_destination_table_map::de_destination_table_map(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

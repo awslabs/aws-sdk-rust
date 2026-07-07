@@ -9,6 +9,8 @@ pub struct CreateClusterInput {
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
     /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
     pub restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub restricted_instance_groups_config: ::std::option::Option<crate::types::ClusterRestrictedInstanceGroupsConfig>,
     /// <p>Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon SageMaker HyperPod cluster. You can control access to and from your resources by configuring your VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to resources in your Amazon VPC</a>.</p><note>
     /// <p>When your Amazon VPC and subnets support IPv6, network communications differ based on the cluster orchestration platform:</p>
     /// <ul>
@@ -65,6 +67,10 @@ impl CreateClusterInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restricted_instance_groups.is_none()`.
     pub fn restricted_instance_groups(&self) -> &[crate::types::ClusterRestrictedInstanceGroupSpecification] {
         self.restricted_instance_groups.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn restricted_instance_groups_config(&self) -> ::std::option::Option<&crate::types::ClusterRestrictedInstanceGroupsConfig> {
+        self.restricted_instance_groups_config.as_ref()
     }
     /// <p>Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon SageMaker HyperPod cluster. You can control access to and from your resources by configuring your VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to resources in your Amazon VPC</a>.</p><note>
     /// <p>When your Amazon VPC and subnets support IPv6, network communications differ based on the cluster orchestration platform:</p>
@@ -138,6 +144,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
     pub(crate) restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
+    pub(crate) restricted_instance_groups_config: ::std::option::Option<crate::types::ClusterRestrictedInstanceGroupsConfig>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
@@ -207,6 +214,23 @@ impl CreateClusterInputBuilder {
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>> {
         &self.restricted_instance_groups
+    }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn restricted_instance_groups_config(mut self, input: crate::types::ClusterRestrictedInstanceGroupsConfig) -> Self {
+        self.restricted_instance_groups_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn set_restricted_instance_groups_config(
+        mut self,
+        input: ::std::option::Option<crate::types::ClusterRestrictedInstanceGroupsConfig>,
+    ) -> Self {
+        self.restricted_instance_groups_config = input;
+        self
+    }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn get_restricted_instance_groups_config(&self) -> &::std::option::Option<crate::types::ClusterRestrictedInstanceGroupsConfig> {
+        &self.restricted_instance_groups_config
     }
     /// <p>Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon SageMaker HyperPod cluster. You can control access to and from your resources by configuring your VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to resources in your Amazon VPC</a>.</p><note>
     /// <p>When your Amazon VPC and subnets support IPv6, network communications differ based on the cluster orchestration platform:</p>
@@ -403,6 +427,7 @@ impl CreateClusterInputBuilder {
             cluster_name: self.cluster_name,
             instance_groups: self.instance_groups,
             restricted_instance_groups: self.restricted_instance_groups,
+            restricted_instance_groups_config: self.restricted_instance_groups_config,
             vpc_config: self.vpc_config,
             tags: self.tags,
             orchestrator: self.orchestrator,

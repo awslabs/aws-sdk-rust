@@ -517,4 +517,32 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_user_pool_tier(&self) -> &::std::option::Option<crate::types::UserPoolTierType> {
         self.inner.get_user_pool_tier()
     }
+    /// <p>The key configuration for the user pool. Specifies the key type and KMS key ARN for encryption.</p>
+    pub fn key_configuration(mut self, input: crate::types::KeyConfigurationType) -> Self {
+        self.inner = self.inner.key_configuration(input);
+        self
+    }
+    /// <p>The key configuration for the user pool. Specifies the key type and KMS key ARN for encryption.</p>
+    pub fn set_key_configuration(mut self, input: ::std::option::Option<crate::types::KeyConfigurationType>) -> Self {
+        self.inner = self.inner.set_key_configuration(input);
+        self
+    }
+    /// <p>The key configuration for the user pool. Specifies the key type and KMS key ARN for encryption.</p>
+    pub fn get_key_configuration(&self) -> &::std::option::Option<crate::types::KeyConfigurationType> {
+        self.inner.get_key_configuration()
+    }
+    /// <p>The issuer configuration for the user pool. Specifies the issuer type for token generation.</p>
+    pub fn issuer_configuration(mut self, input: crate::types::IssuerConfigurationType) -> Self {
+        self.inner = self.inner.issuer_configuration(input);
+        self
+    }
+    /// <p>The issuer configuration for the user pool. Specifies the issuer type for token generation.</p>
+    pub fn set_issuer_configuration(mut self, input: ::std::option::Option<crate::types::IssuerConfigurationType>) -> Self {
+        self.inner = self.inner.set_issuer_configuration(input);
+        self
+    }
+    /// <p>The issuer configuration for the user pool. Specifies the issuer type for token generation.</p>
+    pub fn get_issuer_configuration(&self) -> &::std::option::Option<crate::types::IssuerConfigurationType> {
+        self.inner.get_issuer_configuration()
+    }
 }

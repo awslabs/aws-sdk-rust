@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`conversation_logs(Option<ConversationLogsResponse>)`](crate::operation::put_bot_alias::PutBotAliasOutput::conversation_logs): <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::put_bot_alias::PutBotAliasOutput::tags): <p>A list of tags associated with a bot.</p>
     /// - On failure, responds with [`SdkError<PutBotAliasError>`](crate::operation::put_bot_alias::PutBotAliasError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn put_bot_alias(&self) -> crate::operation::put_bot_alias::builders::PutBotAliasFluentBuilder {
         crate::operation::put_bot_alias::builders::PutBotAliasFluentBuilder::new(self.handle.clone())
     }

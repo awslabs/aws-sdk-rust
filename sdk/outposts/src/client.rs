@@ -144,6 +144,8 @@ mod create_order;
 
 mod create_outpost;
 
+mod create_quote;
+
 mod create_renewal;
 
 mod create_site;
@@ -177,6 +179,8 @@ pub mod customize;
 
 mod delete_outpost;
 
+mod delete_quote;
+
 mod delete_site;
 
 mod get_capacity_task;
@@ -195,6 +199,8 @@ mod get_outpost_instance_types;
 
 mod get_outpost_supported_instance_types;
 
+mod get_quote;
+
 mod get_renewal_pricing;
 
 mod get_site;
@@ -211,9 +217,13 @@ mod list_capacity_tasks;
 
 mod list_catalog_items;
 
+mod list_orderable_instance_types;
+
 mod list_orders;
 
 mod list_outposts;
+
+mod list_quotes;
 
 mod list_sites;
 
@@ -230,6 +240,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_outpost;
+
+mod update_quote;
 
 mod update_site;
 

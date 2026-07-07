@@ -33,10 +33,16 @@ pub fn ser_exclusions(
 pub(crate) fn de_exclusions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Exclusions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,11 +57,15 @@ where
                         }
                         "ExcludeVolumeTypes" => {
                             builder = builder.set_exclude_volume_types(
-                                crate::protocol_serde::shape_exclude_volume_types_list::de_exclude_volume_types_list(tokens, _value)?,
+                                crate::protocol_serde::shape_exclude_volume_types_list::de_exclude_volume_types_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "ExcludeTags" => {
-                            builder = builder.set_exclude_tags(crate::protocol_serde::shape_exclude_tags_list::de_exclude_tags_list(tokens, _value)?);
+                            builder = builder.set_exclude_tags(crate::protocol_serde::shape_exclude_tags_list::de_exclude_tags_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

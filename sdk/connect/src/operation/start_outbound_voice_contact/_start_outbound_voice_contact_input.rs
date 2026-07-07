@@ -5,7 +5,7 @@
 pub struct StartOutboundVoiceContactInput {
     /// <p>The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Contacts can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during voice contact creation.</p>
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
@@ -13,25 +13,25 @@ pub struct StartOutboundVoiceContactInput {
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the customer, in E.164 format.</p>
     pub destination_phone_number: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
+    /// <p>The phone number associated with the Connect Customer instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     pub source_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configuration of the answering machine detection for this outbound call.</p>
     pub answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
     /// <p>The campaign identifier of the outbound communication.</p>
     pub campaign_id: ::std::option::Option<::std::string::String>,
-    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
+    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Connect Customer. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
     /// <p>Information about the outbound strategy.</p>
     pub outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
@@ -43,7 +43,7 @@ impl StartOutboundVoiceContactInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -59,12 +59,12 @@ impl StartOutboundVoiceContactInput {
     pub fn destination_phone_number(&self) -> ::std::option::Option<&str> {
         self.destination_phone_number.as_deref()
     }
-    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -72,7 +72,7 @@ impl StartOutboundVoiceContactInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
+    /// <p>The phone number associated with the Connect Customer instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     pub fn source_phone_number(&self) -> ::std::option::Option<&str> {
         self.source_phone_number.as_deref()
     }
@@ -80,7 +80,7 @@ impl StartOutboundVoiceContactInput {
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
@@ -93,7 +93,7 @@ impl StartOutboundVoiceContactInput {
     pub fn campaign_id(&self) -> ::std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
-    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
+    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Connect Customer. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
     pub fn traffic_type(&self) -> ::std::option::Option<&crate::types::TrafficType> {
         self.traffic_type.as_ref()
     }
@@ -171,17 +171,17 @@ impl StartOutboundVoiceContactInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download and review CCP logs</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -237,36 +237,36 @@ impl StartOutboundVoiceContactInputBuilder {
     pub fn get_destination_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_phone_number
     }
-    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     /// This field is required.
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_id = input;
         self
     }
-    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_id
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
@@ -284,17 +284,17 @@ impl StartOutboundVoiceContactInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
+    /// <p>The phone number associated with the Connect Customer instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     pub fn source_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_phone_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
+    /// <p>The phone number associated with the Connect Customer instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     pub fn set_source_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_phone_number = input;
         self
     }
-    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
+    /// <p>The phone number associated with the Connect Customer instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     pub fn get_source_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_phone_number
     }
@@ -316,7 +316,7 @@ impl StartOutboundVoiceContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
@@ -324,13 +324,13 @@ impl StartOutboundVoiceContactInputBuilder {
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
@@ -363,17 +363,17 @@ impl StartOutboundVoiceContactInputBuilder {
     pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.campaign_id
     }
-    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
+    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Connect Customer. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
     pub fn traffic_type(mut self, input: crate::types::TrafficType) -> Self {
         self.traffic_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
+    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Connect Customer. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
     pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.traffic_type = input;
         self
     }
-    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
+    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Connect Customer. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
     pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
         &self.traffic_type
     }

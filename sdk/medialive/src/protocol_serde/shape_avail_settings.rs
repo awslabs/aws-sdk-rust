@@ -27,10 +27,16 @@ pub fn ser_avail_settings(
 pub(crate) fn de_avail_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AvailSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,22 +45,24 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "esam" => {
-                            builder = builder.set_esam(crate::protocol_serde::shape_esam::de_esam(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "esam" => {
+                                builder = builder.set_esam(crate::protocol_serde::shape_esam::de_esam(tokens, _value, depth + 1)?);
+                            }
+                            "scte35SpliceInsert" => {
+                                builder = builder.set_scte35_splice_insert(
+                                    crate::protocol_serde::shape_scte35_splice_insert::de_scte35_splice_insert(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "scte35TimeSignalApos" => {
+                                builder = builder.set_scte35_time_signal_apos(
+                                    crate::protocol_serde::shape_scte35_time_signal_apos::de_scte35_time_signal_apos(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "scte35SpliceInsert" => {
-                            builder = builder.set_scte35_splice_insert(crate::protocol_serde::shape_scte35_splice_insert::de_scte35_splice_insert(
-                                tokens, _value,
-                            )?);
-                        }
-                        "scte35TimeSignalApos" => {
-                            builder = builder.set_scte35_time_signal_apos(
-                                crate::protocol_serde::shape_scte35_time_signal_apos::de_scte35_time_signal_apos(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

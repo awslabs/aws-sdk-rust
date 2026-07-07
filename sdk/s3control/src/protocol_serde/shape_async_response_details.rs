@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_async_response_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AsyncResponseDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AsyncResponseDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_async_response_details(
             s if s.matches("MultiRegionAccessPointDetails") /* MultiRegionAccessPointDetails com.amazonaws.s3control#AsyncResponseDetails$MultiRegionAccessPointDetails */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_multi_region_access_points_async_response::de_multi_region_access_points_async_response(&mut tag)
+                        crate::protocol_serde::shape_multi_region_access_points_async_response::de_multi_region_access_points_async_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_async_response_details(
             s if s.matches("ErrorDetails") /* ErrorDetails com.amazonaws.s3control#AsyncResponseDetails$ErrorDetails */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_async_error_details::de_async_error_details(&mut tag)
+                        crate::protocol_serde::shape_async_error_details::de_async_error_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

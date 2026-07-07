@@ -22,7 +22,7 @@ impl crate::operation::get_harness::builders::GetHarnessInputBuilder {
 }
 /// Fluent builder constructing a request to `GetHarness`.
 ///
-/// <p>Operation to get a single Harness.</p>
+/// <p>Operation to get a single harness.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHarnessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,5 +121,19 @@ impl GetHarnessFluentBuilder {
     /// <p>The ID of the harness to retrieve.</p>
     pub fn get_harness_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_harness_id()
+    }
+    /// <p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p>
+    pub fn harness_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.harness_version(input.into());
+        self
+    }
+    /// <p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p>
+    pub fn set_harness_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_harness_version(input);
+        self
+    }
+    /// <p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p>
+    pub fn get_harness_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_harness_version()
     }
 }

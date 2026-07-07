@@ -36,29 +36,35 @@ pub fn ser_update_scheduled_query_input_input(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_11) = &input.destination_configuration {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("destinationConfiguration").start_object();
-        crate::protocol_serde::shape_destination_configuration::ser_destination_configuration(&mut object_12, var_11)?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.schedule_start_time {
-        object.key("scheduleStartTime").number(
+    if let Some(var_11) = &input.end_time_offset {
+        object.key("endTimeOffset").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_14) = &input.schedule_end_time {
-        object.key("scheduleEndTime").number(
+    if let Some(var_12) = &input.destination_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("destinationConfiguration").start_object();
+        crate::protocol_serde::shape_destination_configuration::ser_destination_configuration(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.schedule_start_time {
+        object.key("scheduleStartTime").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_15) = &input.execution_role_arn {
-        object.key("executionRoleArn").string(var_15.as_str());
+    if let Some(var_15) = &input.schedule_end_time {
+        object.key("scheduleEndTime").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
     }
-    if let Some(var_16) = &input.state {
-        object.key("state").string(var_16.as_str());
+    if let Some(var_16) = &input.execution_role_arn {
+        object.key("executionRoleArn").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.state {
+        object.key("state").string(var_17.as_str());
     }
     Ok(())
 }

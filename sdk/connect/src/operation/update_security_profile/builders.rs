@@ -23,7 +23,7 @@ impl crate::operation::update_security_profile::builders::UpdateSecurityProfileI
 /// Fluent builder constructing a request to `UpdateSecurityProfile`.
 ///
 /// <p>Updates a security profile.</p>
-/// <p>For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
+/// <p>For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSecurityProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -156,17 +156,17 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn get_security_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_profile_id()
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
@@ -175,7 +175,7 @@ impl UpdateSecurityProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
     ///
-    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn allowed_access_control_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -184,7 +184,7 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.allowed_access_control_tags(k.into(), v.into());
         self
     }
-    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn set_allowed_access_control_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -192,7 +192,7 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_allowed_access_control_tags(input);
         self
     }
-    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn get_allowed_access_control_tags(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -203,17 +203,17 @@ impl UpdateSecurityProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
     ///
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Connect Customer.</p>
     pub fn tag_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_restricted_resources(input.into());
         self
     }
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Connect Customer.</p>
     pub fn set_tag_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_restricted_resources(input);
         self
     }
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Connect Customer.</p>
     pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_restricted_resources()
     }
@@ -241,31 +241,31 @@ impl UpdateSecurityProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_hierarchy_restricted_resources`](Self::set_hierarchy_restricted_resources).
     ///
-    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub fn hierarchy_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hierarchy_restricted_resources(input.into());
         self
     }
-    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub fn set_hierarchy_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_hierarchy_restricted_resources(input);
         self
     }
-    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub fn get_hierarchy_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_hierarchy_restricted_resources()
     }
-    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn allowed_access_control_hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allowed_access_control_hierarchy_group_id(input.into());
         self
     }
-    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn set_allowed_access_control_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allowed_access_control_hierarchy_group_id(input);
         self
     }
-    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn get_allowed_access_control_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_allowed_access_control_hierarchy_group_id()
     }

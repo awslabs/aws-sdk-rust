@@ -154,6 +154,8 @@ pub(crate) fn de_update_related_item(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -167,14 +169,16 @@ pub(crate) fn de_update_related_item(
                 }
                 "content" => {
                     builder = builder.set_content(crate::protocol_serde::shape_related_item_content::de_related_item_content(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "createdBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_union::de_user_union(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_union::de_user_union(tokens, _value, depth + 1)?);
                 }
                 "lastUpdatedUser" => {
-                    builder = builder.set_last_updated_user(crate::protocol_serde::shape_user_union::de_user_union(tokens, _value)?);
+                    builder = builder.set_last_updated_user(crate::protocol_serde::shape_user_union::de_user_union(tokens, _value, depth + 1)?);
                 }
                 "relatedItemArn" => {
                     builder = builder.set_related_item_arn(
@@ -191,7 +195,7 @@ pub(crate) fn de_update_related_item(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "type" => {
                     builder = builder.set_type(

@@ -152,6 +152,8 @@ mod create_analyzer;
 
 mod create_archive_rule;
 
+mod create_service_linked_analyzer;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -182,6 +184,8 @@ pub mod customize;
 mod delete_analyzer;
 
 mod delete_archive_rule;
+
+mod delete_service_linked_analyzer;
 
 mod generate_finding_recommendation;
 

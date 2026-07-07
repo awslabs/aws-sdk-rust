@@ -140,6 +140,8 @@ pub(crate) fn de_get_resource_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -229,7 +231,11 @@ pub(crate) fn de_get_resource_configuration(
                     );
                 }
                 "portRanges" => {
-                    builder = builder.set_port_ranges(crate::protocol_serde::shape_port_range_list::de_port_range_list(tokens, _value)?);
+                    builder = builder.set_port_ranges(crate::protocol_serde::shape_port_range_list::de_port_range_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "protocol" => {
                     builder = builder.set_protocol(
@@ -240,7 +246,11 @@ pub(crate) fn de_get_resource_configuration(
                 }
                 "resourceConfigurationDefinition" => {
                     builder = builder.set_resource_configuration_definition(
-                        crate::protocol_serde::shape_resource_configuration_definition::de_resource_configuration_definition(tokens, _value)?,
+                        crate::protocol_serde::shape_resource_configuration_definition::de_resource_configuration_definition(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "resourceConfigurationGroupId" => {

@@ -23,7 +23,8 @@ impl crate::operation::leave_organization::builders::LeaveOrganizationInputBuild
 /// Fluent builder constructing a request to `LeaveOrganization`.
 ///
 /// <p>Removes a member account from its parent organization. This version of the operation is performed by the account that wants to leave. To remove a member account as a user in the management account, use <code>RemoveAccountFromOrganization</code> instead.</p>
-/// <p>You can only call from operation from a member account.</p><important>
+/// <p>You can only call from operation from a member account.</p>
+/// <p>When an account leaves an organization, Organizations logs a membership event in CloudTrail. The event is an <code>AccountDepartedOrganization</code> event with <code>departedMethod:Left</code> and <code>departedTime</code>. This event is available only in the management account's event history.</p><important>
 /// <ul>
 /// <li>
 /// <p>The management account in an organization with all features enabled can set service control policies (SCPs) that can restrict what administrators of member accounts can do. This includes preventing them from successfully calling <code>LeaveOrganization</code> and leaving the organization.</p></li>

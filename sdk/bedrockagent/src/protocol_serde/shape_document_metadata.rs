@@ -24,5 +24,17 @@ pub fn ser_document_metadata(
         crate::protocol_serde::shape_custom_s3_location::ser_custom_s3_location(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.access_control_list {
+        let mut array_8 = object.key("accessControlList").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_document_access_control_entry::ser_document_access_control_entry(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }

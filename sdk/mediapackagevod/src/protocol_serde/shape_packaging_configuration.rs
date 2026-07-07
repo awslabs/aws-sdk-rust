@@ -2,10 +2,16 @@
 pub(crate) fn de_packaging_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PackagingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,8 @@ where
                             );
                         }
                         "cmafPackage" => {
-                            builder = builder.set_cmaf_package(crate::protocol_serde::shape_cmaf_package::de_cmaf_package(tokens, _value)?);
+                            builder =
+                                builder.set_cmaf_package(crate::protocol_serde::shape_cmaf_package::de_cmaf_package(tokens, _value, depth + 1)?);
                         }
                         "createdAt" => {
                             builder = builder.set_created_at(
@@ -33,10 +40,11 @@ where
                             );
                         }
                         "dashPackage" => {
-                            builder = builder.set_dash_package(crate::protocol_serde::shape_dash_package::de_dash_package(tokens, _value)?);
+                            builder =
+                                builder.set_dash_package(crate::protocol_serde::shape_dash_package::de_dash_package(tokens, _value, depth + 1)?);
                         }
                         "hlsPackage" => {
-                            builder = builder.set_hls_package(crate::protocol_serde::shape_hls_package::de_hls_package(tokens, _value)?);
+                            builder = builder.set_hls_package(crate::protocol_serde::shape_hls_package::de_hls_package(tokens, _value, depth + 1)?);
                         }
                         "id" => {
                             builder = builder.set_id(
@@ -46,7 +54,7 @@ where
                             );
                         }
                         "mssPackage" => {
-                            builder = builder.set_mss_package(crate::protocol_serde::shape_mss_package::de_mss_package(tokens, _value)?);
+                            builder = builder.set_mss_package(crate::protocol_serde::shape_mss_package::de_mss_package(tokens, _value, depth + 1)?);
                         }
                         "packagingGroupId" => {
                             builder = builder.set_packaging_group_id(
@@ -56,7 +64,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

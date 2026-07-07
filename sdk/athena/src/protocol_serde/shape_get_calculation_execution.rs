@@ -111,6 +111,8 @@ pub(crate) fn de_get_calculation_execution(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -145,15 +147,25 @@ pub(crate) fn de_get_calculation_execution(
                     );
                 }
                 "Status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_calculation_status::de_calculation_status(tokens, _value)?);
+                    builder = builder.set_status(crate::protocol_serde::shape_calculation_status::de_calculation_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Statistics" => {
                     builder = builder.set_statistics(crate::protocol_serde::shape_calculation_statistics::de_calculation_statistics(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Result" => {
-                    builder = builder.set_result(crate::protocol_serde::shape_calculation_result::de_calculation_result(tokens, _value)?);
+                    builder = builder.set_result(crate::protocol_serde::shape_calculation_result::de_calculation_result(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

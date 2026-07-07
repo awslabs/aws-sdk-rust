@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSec
 #[derive(Debug)]
 struct ListSecurityControlDefinitionsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListSecurityControlDefinitionsResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -217,6 +218,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSecurity
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
                     {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.providers {
+                    {
+                        for inner_5 in inner_4 {
+                            query.push_kv("Providers", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
+                        }
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -15,16 +15,25 @@ pub fn ser_local_time_zone_config(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.local_time_zone_detection_scope {
+        object.key("localTimeZoneDetectionScope").string(var_5.as_str());
+    }
     Ok(())
 }
 
 pub(crate) fn de_local_time_zone_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LocalTimeZoneConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -43,7 +52,14 @@ where
                         }
                         "localTimeZoneDetection" => {
                             builder = builder.set_local_time_zone_detection(
-                                crate::protocol_serde::shape_local_time_zone_detection::de_local_time_zone_detection(tokens, _value)?,
+                                crate::protocol_serde::shape_local_time_zone_detection::de_local_time_zone_detection(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "localTimeZoneDetectionScope" => {
+                            builder = builder.set_local_time_zone_detection_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LocalTimeZoneDetectionScope::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

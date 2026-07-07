@@ -32,7 +32,7 @@ impl crate::operation::update_container_group_definition::builders::UpdateContai
 /// <li>
 /// <p>Update based on a specific version of the container group definition. Specify the container group definition name and a source version number, or use an ARN value with a version number. Provide updated values for the properties that you want to change only. All other values remain the same as the source version.</p></li>
 /// <li>
-/// <p>Change a game server container definition. Provide the updated container definition.</p></li>
+/// <p>Change a game server container definition. Provide a complete set of container definitions, including the updated definition.</p></li>
 /// <li>
 /// <p>Add or change a support container definition. Provide a complete set of container definitions, including the updated definition.</p></li>
 /// <li>

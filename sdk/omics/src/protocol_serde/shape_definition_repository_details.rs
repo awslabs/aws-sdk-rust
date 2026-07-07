@@ -2,10 +2,16 @@
 pub(crate) fn de_definition_repository_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DefinitionRepositoryDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,8 +36,11 @@ where
                             );
                         }
                         "sourceReference" => {
-                            builder =
-                                builder.set_source_reference(crate::protocol_serde::shape_source_reference::de_source_reference(tokens, _value)?);
+                            builder = builder.set_source_reference(crate::protocol_serde::shape_source_reference::de_source_reference(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "providerType" => {
                             builder = builder.set_provider_type(

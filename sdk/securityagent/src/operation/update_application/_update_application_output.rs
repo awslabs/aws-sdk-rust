@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutput {
-    /// Application ID
+    /// <p>The unique identifier of the updated application.</p>
     pub application_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutput {
-    /// Application ID
+    /// <p>The unique identifier of the updated application.</p>
     pub fn application_id(&self) -> &str {
         use std::ops::Deref;
         self.application_id.deref()
@@ -34,18 +34,18 @@ pub struct UpdateApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutputBuilder {
-    /// Application ID
+    /// <p>The unique identifier of the updated application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the updated application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the updated application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }

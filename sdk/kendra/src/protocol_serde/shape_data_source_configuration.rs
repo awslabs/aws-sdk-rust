@@ -117,10 +117,16 @@ pub fn ser_data_source_configuration(
 pub(crate) fn de_data_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -132,87 +138,106 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3Configuration" => {
                             builder = builder.set_s3_configuration(
-                                crate::protocol_serde::shape_s3_data_source_configuration::de_s3_data_source_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_data_source_configuration::de_s3_data_source_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SharePointConfiguration" => {
                             builder = builder.set_share_point_configuration(
-                                crate::protocol_serde::shape_share_point_configuration::de_share_point_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_share_point_configuration::de_share_point_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "DatabaseConfiguration" => {
                             builder = builder.set_database_configuration(
-                                crate::protocol_serde::shape_database_configuration::de_database_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_database_configuration::de_database_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "SalesforceConfiguration" => {
                             builder = builder.set_salesforce_configuration(
-                                crate::protocol_serde::shape_salesforce_configuration::de_salesforce_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_salesforce_configuration::de_salesforce_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "OneDriveConfiguration" => {
                             builder = builder.set_one_drive_configuration(
-                                crate::protocol_serde::shape_one_drive_configuration::de_one_drive_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_one_drive_configuration::de_one_drive_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "ServiceNowConfiguration" => {
                             builder = builder.set_service_now_configuration(
-                                crate::protocol_serde::shape_service_now_configuration::de_service_now_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_service_now_configuration::de_service_now_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "ConfluenceConfiguration" => {
                             builder = builder.set_confluence_configuration(
-                                crate::protocol_serde::shape_confluence_configuration::de_confluence_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_confluence_configuration::de_confluence_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "GoogleDriveConfiguration" => {
                             builder = builder.set_google_drive_configuration(
-                                crate::protocol_serde::shape_google_drive_configuration::de_google_drive_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_google_drive_configuration::de_google_drive_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "WebCrawlerConfiguration" => {
                             builder = builder.set_web_crawler_configuration(
-                                crate::protocol_serde::shape_web_crawler_configuration::de_web_crawler_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_web_crawler_configuration::de_web_crawler_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "WorkDocsConfiguration" => {
                             builder = builder.set_work_docs_configuration(
-                                crate::protocol_serde::shape_work_docs_configuration::de_work_docs_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_work_docs_configuration::de_work_docs_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "FsxConfiguration" => {
-                            builder =
-                                builder.set_fsx_configuration(crate::protocol_serde::shape_fsx_configuration::de_fsx_configuration(tokens, _value)?);
+                            builder = builder.set_fsx_configuration(crate::protocol_serde::shape_fsx_configuration::de_fsx_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SlackConfiguration" => {
-                            builder = builder
-                                .set_slack_configuration(crate::protocol_serde::shape_slack_configuration::de_slack_configuration(tokens, _value)?);
+                            builder = builder.set_slack_configuration(crate::protocol_serde::shape_slack_configuration::de_slack_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BoxConfiguration" => {
-                            builder =
-                                builder.set_box_configuration(crate::protocol_serde::shape_box_configuration::de_box_configuration(tokens, _value)?);
+                            builder = builder.set_box_configuration(crate::protocol_serde::shape_box_configuration::de_box_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "QuipConfiguration" => {
-                            builder = builder
-                                .set_quip_configuration(crate::protocol_serde::shape_quip_configuration::de_quip_configuration(tokens, _value)?);
+                            builder = builder.set_quip_configuration(crate::protocol_serde::shape_quip_configuration::de_quip_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JiraConfiguration" => {
-                            builder = builder
-                                .set_jira_configuration(crate::protocol_serde::shape_jira_configuration::de_jira_configuration(tokens, _value)?);
+                            builder = builder.set_jira_configuration(crate::protocol_serde::shape_jira_configuration::de_jira_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "GitHubConfiguration" => {
                             builder = builder.set_git_hub_configuration(
-                                crate::protocol_serde::shape_git_hub_configuration::de_git_hub_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_git_hub_configuration::de_git_hub_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "AlfrescoConfiguration" => {
                             builder = builder.set_alfresco_configuration(
-                                crate::protocol_serde::shape_alfresco_configuration::de_alfresco_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_alfresco_configuration::de_alfresco_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "TemplateConfiguration" => {
                             builder = builder.set_template_configuration(
-                                crate::protocol_serde::shape_template_configuration::de_template_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_template_configuration::de_template_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,6 +20,30 @@ pub(crate) fn describe_channel_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_function_output_output_correct_errors(
+    mut builder: crate::operation::get_function::builders::GetFunctionOutputBuilder,
+) -> crate::operation::get_function::builders::GetFunctionOutputBuilder {
+    if builder.function_id.is_none() {
+        builder.function_id = Some(Default::default())
+    }
+    if builder.function_type.is_none() {
+        builder.function_type = "no value was set".parse::<crate::types::FunctionType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn put_function_output_output_correct_errors(
+    mut builder: crate::operation::put_function::builders::PutFunctionOutputBuilder,
+) -> crate::operation::put_function::builders::PutFunctionOutputBuilder {
+    if builder.function_id.is_none() {
+        builder.function_id = Some(Default::default())
+    }
+    if builder.function_type.is_none() {
+        builder.function_type = "no value was set".parse::<crate::types::FunctionType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn ad_conditioning_configuration_correct_errors(
     mut builder: crate::types::builders::AdConditioningConfigurationBuilder,
 ) -> crate::types::builders::AdConditioningConfigurationBuilder {
@@ -29,11 +53,38 @@ pub(crate) fn ad_conditioning_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn custom_output_configuration_correct_errors(
+    mut builder: crate::types::builders::CustomOutputConfigurationBuilder,
+) -> crate::types::builders::CustomOutputConfigurationBuilder {
+    if builder.runtime.is_none() {
+        builder.runtime = "no value was set".parse::<crate::types::RuntimeType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn http_configuration_correct_errors(
     mut builder: crate::types::builders::HttpConfigurationBuilder,
 ) -> crate::types::builders::HttpConfigurationBuilder {
     if builder.base_url.is_none() {
         builder.base_url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn http_request_configuration_correct_errors(
+    mut builder: crate::types::builders::HttpRequestConfigurationBuilder,
+) -> crate::types::builders::HttpRequestConfigurationBuilder {
+    if builder.runtime.is_none() {
+        builder.runtime = "no value was set".parse::<crate::types::RuntimeType>().ok()
+    }
+    if builder.method_type.is_none() {
+        builder.method_type = "no value was set".parse::<crate::types::MethodType>().ok()
+    }
+    if builder.request_timeout_milliseconds.is_none() {
+        builder.request_timeout_milliseconds = Some(Default::default())
+    }
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
     }
     builder
 }
@@ -85,6 +136,21 @@ pub(crate) fn recurring_prefetch_configuration_correct_errors(
             let builder = crate::types::builders::RecurringRetrievalBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn sequential_executor_configuration_correct_errors(
+    mut builder: crate::types::builders::SequentialExecutorConfigurationBuilder,
+) -> crate::types::builders::SequentialExecutorConfigurationBuilder {
+    if builder.runtime.is_none() {
+        builder.runtime = "no value was set".parse::<crate::types::RuntimeType>().ok()
+    }
+    if builder.function_list.is_none() {
+        builder.function_list = Some(Default::default())
+    }
+    if builder.timeout_milliseconds.is_none() {
+        builder.timeout_milliseconds = Some(Default::default())
     }
     builder
 }
@@ -157,6 +223,16 @@ pub(crate) fn channel_correct_errors(mut builder: crate::types::builders::Channe
             let builder = crate::types::builders::LogConfigurationForChannelBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn function_correct_errors(mut builder: crate::types::builders::FunctionBuilder) -> crate::types::builders::FunctionBuilder {
+    if builder.function_id.is_none() {
+        builder.function_id = Some(Default::default())
+    }
+    if builder.function_type.is_none() {
+        builder.function_type = "no value was set".parse::<crate::types::FunctionType>().ok()
     }
     builder
 }

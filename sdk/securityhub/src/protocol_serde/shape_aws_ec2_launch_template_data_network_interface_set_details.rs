@@ -126,6 +126,7 @@ pub fn ser_aws_ec2_launch_template_data_network_interface_set_details(
 pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -133,6 +134,11 @@ pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_details<'a, 
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -169,7 +175,9 @@ where
                         }
                         "Groups" => {
                             builder = builder.set_groups(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InterfaceType" => {
@@ -188,7 +196,7 @@ where
                         }
                         "Ipv4Prefixes" => {
                             builder = builder.set_ipv4_prefixes(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_list::de_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_list::de_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Ipv6AddressCount" => {
@@ -200,7 +208,7 @@ where
                         }
                         "Ipv6Addresses" => {
                             builder = builder.set_ipv6_addresses(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_list::de_aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_list::de_aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Ipv6PrefixCount" => {
@@ -212,7 +220,7 @@ where
                         }
                         "Ipv6Prefixes" => {
                             builder = builder.set_ipv6_prefixes(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_list::de_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_list::de_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "NetworkCardIndex" => {
@@ -238,7 +246,7 @@ where
                         }
                         "PrivateIpAddresses" => {
                             builder = builder.set_private_ip_addresses(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_list::de_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_list::de_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "SecondaryPrivateIpAddressCount" => {

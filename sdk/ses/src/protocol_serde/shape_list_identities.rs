@@ -42,6 +42,8 @@ pub fn de_list_identities(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListIdentitiesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListIdentitiesResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_list_identities(
             s if s.matches("Identities") /* Identities com.amazonaws.ses.synthetic#ListIdentitiesOutput$Identities */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_identity_list::de_identity_list(&mut tag)
+                        crate::protocol_serde::shape_identity_list::de_identity_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

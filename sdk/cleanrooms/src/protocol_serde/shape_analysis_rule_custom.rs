@@ -39,16 +39,40 @@ pub fn ser_analysis_rule_custom(
         crate::protocol_serde::shape_differential_privacy_configuration::ser_differential_privacy_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.allowed_result_receivers {
+        let mut array_13 = object.key("allowedResultReceivers").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_15) = &input.allowed_additional_analyses {
+        let mut array_16 = object.key("allowedAdditionalAnalyses").start_array();
+        for item_17 in var_15 {
+            {
+                array_16.value().string(item_17.as_str());
+            }
+        }
+        array_16.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_analysis_rule_custom<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AnalysisRuleCustom>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,12 +84,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allowedAnalyses" => {
                             builder = builder.set_allowed_analyses(crate::protocol_serde::shape_allowed_analyses_list::de_allowed_analyses_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "allowedAnalysisProviders" => {
                             builder = builder.set_allowed_analysis_providers(
-                                crate::protocol_serde::shape_allowed_analysis_provider_list::de_allowed_analysis_provider_list(tokens, _value)?,
+                                crate::protocol_serde::shape_allowed_analysis_provider_list::de_allowed_analysis_provider_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "additionalAnalyses" => {
@@ -77,14 +107,26 @@ where
                         }
                         "disallowedOutputColumns" => {
                             builder = builder.set_disallowed_output_columns(
-                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value)?,
+                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "differentialPrivacy" => {
                             builder = builder.set_differential_privacy(
                                 crate::protocol_serde::shape_differential_privacy_configuration::de_differential_privacy_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
+                            );
+                        }
+                        "allowedResultReceivers" => {
+                            builder = builder.set_allowed_result_receivers(
+                                crate::protocol_serde::shape_allowed_result_receivers::de_allowed_result_receivers(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "allowedAdditionalAnalyses" => {
+                            builder = builder.set_allowed_additional_analyses(
+                                crate::protocol_serde::shape_allowed_additional_analyses::de_allowed_additional_analyses(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

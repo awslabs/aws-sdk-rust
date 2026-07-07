@@ -2,10 +2,16 @@
 pub(crate) fn de_transport<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Transport>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cidrAllowList" => {
-                            builder = builder.set_cidr_allow_list(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_cidr_allow_list(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "maxBitrate" => {
                             builder = builder.set_max_bitrate(
@@ -117,8 +127,18 @@ where
                             );
                         }
                         "ndiSourceSettings" => {
-                            builder = builder
-                                .set_ndi_source_settings(crate::protocol_serde::shape_ndi_source_settings::de_ndi_source_settings(tokens, _value)?);
+                            builder = builder.set_ndi_source_settings(crate::protocol_serde::shape_ndi_source_settings::de_ndi_source_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "ndiOutputTimecodeSource" => {
+                            builder = builder.set_ndi_output_timecode_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NdiOutputTimecodeSource::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

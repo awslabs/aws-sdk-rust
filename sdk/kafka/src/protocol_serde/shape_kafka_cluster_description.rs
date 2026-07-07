@@ -2,10 +2,16 @@
 pub(crate) fn de_kafka_cluster_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KafkaClusterDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,44 +20,57 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "amazonMskCluster" => {
-                            builder = builder
-                                .set_amazon_msk_cluster(crate::protocol_serde::shape_amazon_msk_cluster::de_amazon_msk_cluster(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "amazonMskCluster" => {
+                                builder = builder.set_amazon_msk_cluster(crate::protocol_serde::shape_amazon_msk_cluster::de_amazon_msk_cluster(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "apacheKafkaCluster" => {
+                                builder = builder.set_apache_kafka_cluster(
+                                    crate::protocol_serde::shape_apache_kafka_cluster::de_apache_kafka_cluster(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "kafkaClusterAlias" => {
+                                builder = builder.set_kafka_cluster_alias(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "vpcConfig" => {
+                                builder = builder.set_vpc_config(
+                                    crate::protocol_serde::shape_kafka_cluster_client_vpc_config::de_kafka_cluster_client_vpc_config(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "clientAuthentication" => {
+                                builder = builder.set_client_authentication(
+                                    crate::protocol_serde::shape_kafka_cluster_client_authentication::de_kafka_cluster_client_authentication(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "encryptionInTransit" => {
+                                builder = builder.set_encryption_in_transit(
+                                    crate::protocol_serde::shape_kafka_cluster_encryption_in_transit::de_kafka_cluster_encryption_in_transit(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "apacheKafkaCluster" => {
-                            builder = builder.set_apache_kafka_cluster(crate::protocol_serde::shape_apache_kafka_cluster::de_apache_kafka_cluster(
-                                tokens, _value,
-                            )?);
-                        }
-                        "kafkaClusterAlias" => {
-                            builder = builder.set_kafka_cluster_alias(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "vpcConfig" => {
-                            builder = builder.set_vpc_config(
-                                crate::protocol_serde::shape_kafka_cluster_client_vpc_config::de_kafka_cluster_client_vpc_config(tokens, _value)?,
-                            );
-                        }
-                        "clientAuthentication" => {
-                            builder = builder.set_client_authentication(
-                                crate::protocol_serde::shape_kafka_cluster_client_authentication::de_kafka_cluster_client_authentication(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "encryptionInTransit" => {
-                            builder = builder.set_encryption_in_transit(
-                                crate::protocol_serde::shape_kafka_cluster_encryption_in_transit::de_kafka_cluster_encryption_in_transit(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

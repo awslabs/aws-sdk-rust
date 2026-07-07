@@ -26,6 +26,7 @@ impl crate::operation::delete_bot::builders::DeleteBotInputBuilder {
 /// <p>Amazon Lex stores utterances indefinitely for improving the ability of your bot to respond to user inputs. These utterances are not removed when the bot is deleted. To remove the utterances, use the <code>DeleteUtterances</code> operation.</p>
 /// <p>If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception that includes a reference to the alias that refers to the bot. To remove the reference to the bot, delete the alias. If you get the same exception again, delete the referring alias until the <code>DeleteBot</code> operation is successful.</p>
 /// <p>This operation requires permissions for the <code>lex:DeleteBot</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

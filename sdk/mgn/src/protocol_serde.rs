@@ -579,6 +579,8 @@ pub(crate) mod shape_start_network_migration_mapping_update_construct;
 
 pub(crate) mod shape_start_network_migration_mapping_update_segment;
 
+pub(crate) mod shape_storage_configuration;
+
 pub(crate) mod shape_tags_map;
 
 pub(crate) mod shape_target_network;
@@ -623,6 +625,8 @@ pub(crate) mod shape_export_task_error;
 
 pub(crate) mod shape_export_task_summary;
 
+pub(crate) mod shape_fsx_ontap_configuration;
+
 pub(crate) mod shape_identification_hints;
 
 pub(crate) mod shape_import_file_enrichment;
@@ -632,6 +636,8 @@ pub(crate) mod shape_import_task_error;
 pub(crate) mod shape_import_task_summary;
 
 pub(crate) mod shape_job_log;
+
+pub(crate) mod shape_last_known_checks_list;
 
 pub(crate) mod shape_launch_configuration_template;
 
@@ -716,6 +722,8 @@ pub(crate) mod shape_import_task_summary_servers;
 pub(crate) mod shape_import_task_summary_waves;
 
 pub(crate) mod shape_job_log_event_data;
+
+pub(crate) mod shape_last_known_check;
 
 pub(crate) mod shape_life_cycle_last_cutover_finalized;
 

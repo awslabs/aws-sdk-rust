@@ -2,10 +2,16 @@
 pub(crate) fn de_restore_jobs_list_member<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RestoreJobsListMember>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -135,8 +141,11 @@ where
                             );
                         }
                         "CreatedBy" => {
-                            builder =
-                                builder.set_created_by(crate::protocol_serde::shape_restore_job_creator::de_restore_job_creator(tokens, _value)?);
+                            builder = builder.set_created_by(crate::protocol_serde::shape_restore_job_creator::de_restore_job_creator(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ValidationStatus" => {
                             builder = builder.set_validation_status(

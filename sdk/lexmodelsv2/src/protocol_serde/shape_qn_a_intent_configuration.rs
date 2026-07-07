@@ -2,10 +2,16 @@
 pub(crate) fn de_qn_a_intent_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::QnAIntentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,12 +23,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dataSourceConfiguration" => {
                             builder = builder.set_data_source_configuration(
-                                crate::protocol_serde::shape_data_source_configuration::de_data_source_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_data_source_configuration::de_data_source_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "bedrockModelConfiguration" => {
                             builder = builder.set_bedrock_model_configuration(
-                                crate::protocol_serde::shape_bedrock_model_specification::de_bedrock_model_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_bedrock_model_specification::de_bedrock_model_specification(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

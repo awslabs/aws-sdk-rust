@@ -49,6 +49,8 @@ pub fn de_describe_verified_access_endpoints(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVerifiedAccessEndpointsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVerifiedAccessEndpointsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_verified_access_endpoints(
             s if s.matches("verifiedAccessEndpointSet") /* VerifiedAccessEndpoints com.amazonaws.ec2.synthetic#DescribeVerifiedAccessEndpointsOutput$VerifiedAccessEndpoints */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_endpoint_list::de_verified_access_endpoint_list(&mut tag)
+                        crate::protocol_serde::shape_verified_access_endpoint_list::de_verified_access_endpoint_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

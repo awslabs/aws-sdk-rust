@@ -21,6 +21,8 @@ pub use crate::types::_block_public_access_configuration_metadata::BlockPublicAc
 
 pub use crate::types::_managed_scaling_policy::ManagedScalingPolicyBuilder;
 
+pub use crate::types::_session::SessionBuilder;
+
 pub use crate::types::_session_mapping_detail::SessionMappingDetailBuilder;
 
 pub use crate::types::_release_label_filter::ReleaseLabelFilterBuilder;
@@ -42,6 +44,8 @@ pub use crate::types::_execution_engine_config::ExecutionEngineConfigBuilder;
 pub use crate::types::_notebook_s3_location_from_input::NotebookS3LocationFromInputBuilder;
 
 pub use crate::types::_output_notebook_s3_location_from_input::OutputNotebookS3LocationFromInputBuilder;
+
+pub use crate::types::_session_monitoring_configuration::SessionMonitoringConfigurationBuilder;
 
 pub use crate::types::_instance_fleet_provisioning_specifications::InstanceFleetProvisioningSpecificationsBuilder;
 
@@ -76,6 +80,8 @@ pub use crate::types::_step_status::StepStatusBuilder;
 pub use crate::types::_username_password::UsernamePasswordBuilder;
 
 pub use crate::types::_compute_limits::ComputeLimitsBuilder;
+
+pub use crate::types::_certificate_authority::CertificateAuthorityBuilder;
 
 pub use crate::types::_command::CommandBuilder;
 
@@ -120,6 +126,12 @@ pub use crate::types::_placement_group_config::PlacementGroupConfigBuilder;
 pub use crate::types::_cloud_watch_log_configuration::CloudWatchLogConfigurationBuilder;
 
 pub use crate::types::_s3_logging_configuration::S3LoggingConfigurationBuilder;
+
+pub use crate::types::_session_cloud_watch_logging_configuration::SessionCloudWatchLoggingConfigurationBuilder;
+
+pub use crate::types::_session_managed_logging_configuration::SessionManagedLoggingConfigurationBuilder;
+
+pub use crate::types::_session_s3_logging_configuration::SessionS3LoggingConfigurationBuilder;
 
 pub use crate::types::_instance_type_config::InstanceTypeConfigBuilder;
 

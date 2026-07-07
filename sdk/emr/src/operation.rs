@@ -79,6 +79,12 @@ pub mod get_on_cluster_app_ui_presigned_url;
 /// Types for the `GetPersistentAppUIPresignedURL` operation.
 pub mod get_persistent_app_ui_presigned_url;
 
+/// Types for the `GetSession` operation.
+pub mod get_session;
+
+/// Types for the `GetSessionEndpoint` operation.
+pub mod get_session_endpoint;
+
 /// Types for the `GetStudioSessionMapping` operation.
 pub mod get_studio_session_mapping;
 
@@ -105,6 +111,9 @@ pub mod list_release_labels;
 
 /// Types for the `ListSecurityConfigurations` operation.
 pub mod list_security_configurations;
+
+/// Types for the `ListSessions` operation.
+pub mod list_sessions;
 
 /// Types for the `ListSteps` operation.
 pub mod list_steps;
@@ -169,11 +178,17 @@ pub mod set_visible_to_all_users;
 /// Types for the `StartNotebookExecution` operation.
 pub mod start_notebook_execution;
 
+/// Types for the `StartSession` operation.
+pub mod start_session;
+
 /// Types for the `StopNotebookExecution` operation.
 pub mod stop_notebook_execution;
 
 /// Types for the `TerminateJobFlows` operation.
 pub mod terminate_job_flows;
+
+/// Types for the `TerminateSession` operation.
+pub mod terminate_session;
 
 /// Types for the `UpdateStudio` operation.
 pub mod update_studio;

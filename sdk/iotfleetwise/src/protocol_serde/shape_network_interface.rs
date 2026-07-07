@@ -39,10 +39,16 @@ pub fn ser_network_interface(
 pub(crate) fn de_network_interface<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NetworkInterface>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -67,18 +73,23 @@ where
                             );
                         }
                         "canInterface" => {
-                            builder = builder.set_can_interface(crate::protocol_serde::shape_can_interface::de_can_interface(tokens, _value)?);
+                            builder =
+                                builder.set_can_interface(crate::protocol_serde::shape_can_interface::de_can_interface(tokens, _value, depth + 1)?);
                         }
                         "obdInterface" => {
-                            builder = builder.set_obd_interface(crate::protocol_serde::shape_obd_interface::de_obd_interface(tokens, _value)?);
+                            builder =
+                                builder.set_obd_interface(crate::protocol_serde::shape_obd_interface::de_obd_interface(tokens, _value, depth + 1)?);
                         }
                         "vehicleMiddleware" => {
-                            builder = builder
-                                .set_vehicle_middleware(crate::protocol_serde::shape_vehicle_middleware::de_vehicle_middleware(tokens, _value)?);
+                            builder = builder.set_vehicle_middleware(crate::protocol_serde::shape_vehicle_middleware::de_vehicle_middleware(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "customDecodingInterface" => {
                             builder = builder.set_custom_decoding_interface(
-                                crate::protocol_serde::shape_custom_decoding_interface::de_custom_decoding_interface(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_decoding_interface::de_custom_decoding_interface(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

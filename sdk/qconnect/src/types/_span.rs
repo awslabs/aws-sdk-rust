@@ -22,9 +22,11 @@ pub struct Span {
     pub end_timestamp: ::aws_smithy_types::DateTime,
     /// <p>Span completion status</p>
     pub status: crate::types::SpanStatus,
+    /// <p>Human-readable error description when status is ERROR or TIMEOUT</p>
+    pub status_description: ::std::option::Option<::std::string::String>,
     /// <p>The service request ID that initiated the operation</p>
     pub request_id: ::std::string::String,
-    /// The origin request identifier for end-to-end tracing.
+    /// <p>The origin request identifier for end-to-end tracing.</p>
     pub origin_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Span-specific contextual attributes</p>
     pub attributes: ::std::option::Option<crate::types::SpanAttributes>,
@@ -70,12 +72,16 @@ impl Span {
     pub fn status(&self) -> &crate::types::SpanStatus {
         &self.status
     }
+    /// <p>Human-readable error description when status is ERROR or TIMEOUT</p>
+    pub fn status_description(&self) -> ::std::option::Option<&str> {
+        self.status_description.as_deref()
+    }
     /// <p>The service request ID that initiated the operation</p>
     pub fn request_id(&self) -> &str {
         use std::ops::Deref;
         self.request_id.deref()
     }
-    /// The origin request identifier for end-to-end tracing.
+    /// <p>The origin request identifier for end-to-end tracing.</p>
     pub fn origin_request_id(&self) -> ::std::option::Option<&str> {
         self.origin_request_id.as_deref()
     }
@@ -104,6 +110,7 @@ pub struct SpanBuilder {
     pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::SpanStatus>,
+    pub(crate) status_description: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<crate::types::SpanAttributes>,
@@ -243,6 +250,20 @@ impl SpanBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SpanStatus> {
         &self.status
     }
+    /// <p>Human-readable error description when status is ERROR or TIMEOUT</p>
+    pub fn status_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Human-readable error description when status is ERROR or TIMEOUT</p>
+    pub fn set_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_description = input;
+        self
+    }
+    /// <p>Human-readable error description when status is ERROR or TIMEOUT</p>
+    pub fn get_status_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_description
+    }
     /// <p>The service request ID that initiated the operation</p>
     /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -258,17 +279,17 @@ impl SpanBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// The origin request identifier for end-to-end tracing.
+    /// <p>The origin request identifier for end-to-end tracing.</p>
     pub fn origin_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The origin request identifier for end-to-end tracing.
+    /// <p>The origin request identifier for end-to-end tracing.</p>
     pub fn set_origin_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_request_id = input;
         self
     }
-    /// The origin request identifier for end-to-end tracing.
+    /// <p>The origin request identifier for end-to-end tracing.</p>
     pub fn get_origin_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin_request_id
     }
@@ -349,6 +370,7 @@ impl SpanBuilder {
                     "status was not specified but it is required when building Span",
                 )
             })?,
+            status_description: self.status_description,
             request_id: self.request_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_id",

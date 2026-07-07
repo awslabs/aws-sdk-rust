@@ -124,6 +124,8 @@ pub(crate) fn de_get_browser(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -145,11 +147,11 @@ pub(crate) fn de_get_browser(
                 }
                 "browserSigning" => {
                     builder = builder.set_browser_signing(
-                        crate::protocol_serde::shape_browser_signing_config_output::de_browser_signing_config_output(tokens, _value)?,
+                        crate::protocol_serde::shape_browser_signing_config_output::de_browser_signing_config_output(tokens, _value, depth + 1)?,
                     );
                 }
                 "certificates" => {
-                    builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens, _value)?);
+                    builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens, _value, depth + 1)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -166,7 +168,7 @@ pub(crate) fn de_get_browser(
                 }
                 "enterprisePolicies" => {
                     builder = builder.set_enterprise_policies(
-                        crate::protocol_serde::shape_browser_enterprise_policies::de_browser_enterprise_policies(tokens, _value)?,
+                        crate::protocol_serde::shape_browser_enterprise_policies::de_browser_enterprise_policies(tokens, _value, depth + 1)?,
                     );
                 }
                 "executionRoleArn" => {
@@ -198,11 +200,15 @@ pub(crate) fn de_get_browser(
                 }
                 "networkConfiguration" => {
                     builder = builder.set_network_configuration(
-                        crate::protocol_serde::shape_browser_network_configuration::de_browser_network_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_browser_network_configuration::de_browser_network_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "recording" => {
-                    builder = builder.set_recording(crate::protocol_serde::shape_recording_config::de_recording_config(tokens, _value)?);
+                    builder = builder.set_recording(crate::protocol_serde::shape_recording_config::de_recording_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

@@ -105,10 +105,16 @@ pub fn ser_crawler_targets(
 pub(crate) fn de_crawler_targets<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CrawlerTargets>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -119,35 +125,57 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3Targets" => {
-                            builder = builder.set_s3_targets(crate::protocol_serde::shape_s3_target_list::de_s3_target_list(tokens, _value)?);
+                            builder =
+                                builder.set_s3_targets(crate::protocol_serde::shape_s3_target_list::de_s3_target_list(tokens, _value, depth + 1)?);
                         }
                         "JdbcTargets" => {
-                            builder = builder.set_jdbc_targets(crate::protocol_serde::shape_jdbc_target_list::de_jdbc_target_list(tokens, _value)?);
+                            builder = builder.set_jdbc_targets(crate::protocol_serde::shape_jdbc_target_list::de_jdbc_target_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MongoDBTargets" => {
                             builder = builder.set_mongo_db_targets(crate::protocol_serde::shape_mongo_db_target_list::de_mongo_db_target_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DynamoDBTargets" => {
                             builder = builder.set_dynamo_db_targets(crate::protocol_serde::shape_dynamo_db_target_list::de_dynamo_db_target_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "CatalogTargets" => {
-                            builder = builder
-                                .set_catalog_targets(crate::protocol_serde::shape_catalog_target_list::de_catalog_target_list(tokens, _value)?);
+                            builder = builder.set_catalog_targets(crate::protocol_serde::shape_catalog_target_list::de_catalog_target_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DeltaTargets" => {
-                            builder =
-                                builder.set_delta_targets(crate::protocol_serde::shape_delta_target_list::de_delta_target_list(tokens, _value)?);
+                            builder = builder.set_delta_targets(crate::protocol_serde::shape_delta_target_list::de_delta_target_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IcebergTargets" => {
-                            builder = builder
-                                .set_iceberg_targets(crate::protocol_serde::shape_iceberg_target_list::de_iceberg_target_list(tokens, _value)?);
+                            builder = builder.set_iceberg_targets(crate::protocol_serde::shape_iceberg_target_list::de_iceberg_target_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "HudiTargets" => {
-                            builder = builder.set_hudi_targets(crate::protocol_serde::shape_hudi_target_list::de_hudi_target_list(tokens, _value)?);
+                            builder = builder.set_hudi_targets(crate::protocol_serde::shape_hudi_target_list::de_hudi_target_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

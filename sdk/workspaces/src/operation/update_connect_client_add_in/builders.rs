@@ -22,7 +22,7 @@ impl crate::operation::update_connect_client_add_in::builders::UpdateConnectClie
 }
 /// Fluent builder constructing a request to `UpdateConnectClientAddIn`.
 ///
-/// <p>Updates a Amazon Connect client add-in. Use this action to update the name and endpoint URL of a Amazon Connect client add-in.</p>
+/// <p>Updates a Connect Customer client add-in. Use this action to update the name and endpoint URL of a Connect Customer client add-in.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectClientAddInFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,17 @@ impl UpdateConnectClientAddInFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.url(input.into());
         self
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_url(input);
         self
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_url()
     }

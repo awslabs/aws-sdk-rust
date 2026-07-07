@@ -42,10 +42,16 @@ pub fn ser_s3_data_access_asset_source_entry(
 pub(crate) fn de_s3_data_access_asset_source_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::S3DataAccessAssetSourceEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,14 +69,15 @@ where
                             );
                         }
                         "KeyPrefixes" => {
-                            builder = builder.set_key_prefixes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder =
+                                builder.set_key_prefixes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                         }
                         "Keys" => {
-                            builder = builder.set_keys(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_keys(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                         }
                         "KmsKeysToGrant" => {
                             builder = builder.set_kms_keys_to_grant(
-                                crate::protocol_serde::shape_list_of_kms_keys_to_grant::de_list_of_kms_keys_to_grant(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_kms_keys_to_grant::de_list_of_kms_keys_to_grant(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

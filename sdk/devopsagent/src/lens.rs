@@ -9,6 +9,46 @@ pub(crate) fn reflens_list_agent_spaces_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_asset_files_output_output_next_token(
+    input: &crate::operation::list_asset_files::ListAssetFilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_asset_types_output_output_next_token(
+    input: &crate::operation::list_asset_types::ListAssetTypesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_asset_versions_output_output_next_token(
+    input: &crate::operation::list_asset_versions::ListAssetVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_assets_output_output_next_token(
+    input: &crate::operation::list_assets::ListAssetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_associations_output_output_next_token(
     input: &crate::operation::list_associations::ListAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -69,10 +109,48 @@ pub(crate) fn reflens_list_services_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_triggers_output_output_next_token(
+    input: &crate::operation::list_triggers::ListTriggersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_agent_spaces_output_output_agent_spaces(
     input: crate::operation::list_agent_spaces::ListAgentSpacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentSpace>> {
     let input = input.agent_spaces;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_asset_files_output_output_items(
+    input: crate::operation::list_asset_files::ListAssetFilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetFileSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_asset_types_output_output_items(
+    input: crate::operation::list_asset_types::ListAssetTypesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetTypeSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_asset_versions_output_output_items(
+    input: crate::operation::list_asset_versions::ListAssetVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetVersionMetadata>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_assets_output_output_items(
+    input: crate::operation::list_assets::ListAssetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Asset>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
@@ -115,5 +193,12 @@ pub(crate) fn lens_list_services_output_output_services(
     input: crate::operation::list_services::ListServicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RegisteredService>> {
     let input = input.services;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_triggers_output_output_items(
+    input: crate::operation::list_triggers::ListTriggersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }

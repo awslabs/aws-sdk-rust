@@ -22,7 +22,7 @@ impl crate::operation::create_agent_space::builders::CreateAgentSpaceInputBuilde
 }
 /// Fluent builder constructing a request to `CreateAgentSpace`.
 ///
-/// Creates an agent space record
+/// <p>Creates a new agent space. An agent space is a dedicated workspace for securing a specific application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAgentSpaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CreateAgentSpaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Name of the agent space
+    /// <p>The name of the agent space.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// Name of the agent space
+    /// <p>The name of the agent space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// Name of the agent space
+    /// <p>The name of the agent space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// Description of the agent space
+    /// <p>A description of the agent space.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description of the agent space
+    /// <p>A description of the agent space.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description of the agent space
+    /// <p>A description of the agent space.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// AWS resource configurations associated with the agent space
+    /// <p>The AWS resources to associate with the agent space.</p>
     pub fn aws_resources(mut self, input: crate::types::AwsResources) -> Self {
         self.inner = self.inner.aws_resources(input);
         self
     }
-    /// AWS resource configurations associated with the agent space
+    /// <p>The AWS resources to associate with the agent space.</p>
     pub fn set_aws_resources(mut self, input: ::std::option::Option<crate::types::AwsResources>) -> Self {
         self.inner = self.inner.set_aws_resources(input);
         self
     }
-    /// AWS resource configurations associated with the agent space
+    /// <p>The AWS resources to associate with the agent space.</p>
     pub fn get_aws_resources(&self) -> &::std::option::Option<crate::types::AwsResources> {
         self.inner.get_aws_resources()
     }
@@ -155,45 +155,45 @@ impl CreateAgentSpaceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_target_domain_ids`](Self::set_target_domain_ids).
     ///
-    /// Target domain IDs to associate with the agent space
+    /// <p>The list of target domain identifiers to associate with the agent space.</p>
     pub fn target_domain_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_domain_ids(input.into());
         self
     }
-    /// Target domain IDs to associate with the agent space
+    /// <p>The list of target domain identifiers to associate with the agent space.</p>
     pub fn set_target_domain_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_domain_ids(input);
         self
     }
-    /// Target domain IDs to associate with the agent space
+    /// <p>The list of target domain identifiers to associate with the agent space.</p>
     pub fn get_target_domain_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_domain_ids()
     }
-    /// Configuration for code review analysis, including controls scanning and general purpose scanning settings
+    /// <p>The code review settings for the agent space.</p>
     pub fn code_review_settings(mut self, input: crate::types::CodeReviewSettings) -> Self {
         self.inner = self.inner.code_review_settings(input);
         self
     }
-    /// Configuration for code review analysis, including controls scanning and general purpose scanning settings
+    /// <p>The code review settings for the agent space.</p>
     pub fn set_code_review_settings(mut self, input: ::std::option::Option<crate::types::CodeReviewSettings>) -> Self {
         self.inner = self.inner.set_code_review_settings(input);
         self
     }
-    /// Configuration for code review analysis, including controls scanning and general purpose scanning settings
+    /// <p>The code review settings for the agent space.</p>
     pub fn get_code_review_settings(&self) -> &::std::option::Option<crate::types::CodeReviewSettings> {
         self.inner.get_code_review_settings()
     }
-    /// Identifier of the KMS key used to encrypt data. Can be a key ID, key ARN, alias name, or alias ARN. If not specified, an AWS managed key is used.
+    /// <p>The identifier of the AWS KMS key to use for encrypting data in the agent space.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// Identifier of the KMS key used to encrypt data. Can be a key ID, key ARN, alias name, or alias ARN. If not specified, an AWS managed key is used.
+    /// <p>The identifier of the AWS KMS key to use for encrypting data in the agent space.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// Identifier of the KMS key used to encrypt data. Can be a key ID, key ARN, alias name, or alias ARN. If not specified, an AWS managed key is used.
+    /// <p>The identifier of the AWS KMS key to use for encrypting data in the agent space.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
@@ -202,17 +202,17 @@ impl CreateAgentSpaceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags to associate with the agent space
+    /// <p>The tags to associate with the agent space.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Tags to associate with the agent space
+    /// <p>The tags to associate with the agent space.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Tags to associate with the agent space
+    /// <p>The tags to associate with the agent space.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

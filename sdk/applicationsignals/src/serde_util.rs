@@ -8,6 +8,21 @@ pub(crate) fn throttling_exception_correct_errors(
     builder
 }
 
+pub(crate) fn batch_delete_instrumentation_configurations_output_output_correct_errors(
+    mut builder: crate::operation::batch_delete_instrumentation_configurations::builders::BatchDeleteInstrumentationConfigurationsOutputBuilder,
+) -> crate::operation::batch_delete_instrumentation_configurations::builders::BatchDeleteInstrumentationConfigurationsOutputBuilder {
+    if builder.deleted_count.is_none() {
+        builder.deleted_count = Some(Default::default())
+    }
+    if builder.successful_deletions.is_none() {
+        builder.successful_deletions = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_service_level_objective_budget_report_output_output_correct_errors(
     mut builder: crate::operation::batch_get_service_level_objective_budget_report::builders::BatchGetServiceLevelObjectiveBudgetReportOutputBuilder,
 ) -> crate::operation::batch_get_service_level_objective_budget_report::builders::BatchGetServiceLevelObjectiveBudgetReportOutputBuilder {
@@ -68,6 +83,39 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_instrumentation_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_instrumentation_configuration::builders::CreateInstrumentationConfigurationOutputBuilder,
+) -> crate::operation::create_instrumentation_configuration::builders::CreateInstrumentationConfigurationOutputBuilder {
+    if builder.instrumentation_type.is_none() {
+        builder.instrumentation_type = "no value was set".parse::<crate::types::InstrumentationType>().ok()
+    }
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.environment.is_none() {
+        builder.environment = Some(Default::default())
+    }
+    if builder.signal_type.is_none() {
+        builder.signal_type = "no value was set".parse::<crate::types::DynamicInstrumentationSignalType>().ok()
+    }
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::Location::Unknown)
+    }
+    if builder.location_hash.is_none() {
+        builder.location_hash = Some(Default::default())
+    }
+    if builder.capture_configuration.is_none() {
+        builder.capture_configuration = Some(crate::types::CaptureConfiguration::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_service_level_objective_output_output_correct_errors(
     mut builder: crate::operation::create_service_level_objective::builders::CreateServiceLevelObjectiveOutputBuilder,
 ) -> crate::operation::create_service_level_objective::builders::CreateServiceLevelObjectiveOutputBuilder {
@@ -76,6 +124,51 @@ pub(crate) fn create_service_level_objective_output_output_correct_errors(
             let builder = crate::types::builders::ServiceLevelObjectiveBuilder::default();
             crate::serde_util::service_level_objective_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn delete_instrumentation_configuration_output_output_correct_errors(
+    mut builder: crate::operation::delete_instrumentation_configuration::builders::DeleteInstrumentationConfigurationOutputBuilder,
+) -> crate::operation::delete_instrumentation_configuration::builders::DeleteInstrumentationConfigurationOutputBuilder {
+    if builder.deletion_status.is_none() {
+        builder.deletion_status = "no value was set".parse::<crate::types::DynamicInstrumentationDeletionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_instrumentation_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_instrumentation_configuration::builders::GetInstrumentationConfigurationOutputBuilder,
+) -> crate::operation::get_instrumentation_configuration::builders::GetInstrumentationConfigurationOutputBuilder {
+    if builder.configuration.is_none() {
+        builder.configuration = {
+            let builder = crate::types::builders::InstrumentationConfigurationBuilder::default();
+            crate::serde_util::instrumentation_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_instrumentation_configuration_status_output_output_correct_errors(
+    mut builder: crate::operation::get_instrumentation_configuration_status::builders::GetInstrumentationConfigurationStatusOutputBuilder,
+) -> crate::operation::get_instrumentation_configuration_status::builders::GetInstrumentationConfigurationStatusOutputBuilder {
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.environment.is_none() {
+        builder.environment = Some(Default::default())
+    }
+    if builder.signal_type.is_none() {
+        builder.signal_type = "no value was set".parse::<crate::types::DynamicInstrumentationSignalType>().ok()
+    }
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::Location::Unknown)
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InstrumentationConfigurationStatus>().ok()
+    }
+    if builder.events.is_none() {
+        builder.events = Some(Default::default())
     }
     builder
 }
@@ -139,6 +232,27 @@ pub(crate) fn list_grouping_attribute_definitions_output_output_correct_errors(
 ) -> crate::operation::list_grouping_attribute_definitions::builders::ListGroupingAttributeDefinitionsOutputBuilder {
     if builder.grouping_attribute_definitions.is_none() {
         builder.grouping_attribute_definitions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_instrumentation_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_instrumentation_configurations::builders::ListInstrumentationConfigurationsOutputBuilder,
+) -> crate::operation::list_instrumentation_configurations::builders::ListInstrumentationConfigurationsOutputBuilder {
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.environment.is_none() {
+        builder.environment = Some(Default::default())
+    }
+    if builder.changed.is_none() {
+        builder.changed = Some(Default::default())
+    }
+    if builder.synced_at.is_none() {
+        builder.synced_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.sync_interval.is_none() {
+        builder.sync_interval = Some(Default::default())
     }
     builder
 }
@@ -239,6 +353,21 @@ pub(crate) fn put_grouping_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn report_instrumentation_configuration_status_output_output_correct_errors(
+    mut builder: crate::operation::report_instrumentation_configuration_status::builders::ReportInstrumentationConfigurationStatusOutputBuilder,
+) -> crate::operation::report_instrumentation_configuration_status::builders::ReportInstrumentationConfigurationStatusOutputBuilder {
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.environment.is_none() {
+        builder.environment = Some(Default::default())
+    }
+    if builder.unprocessed_status_events.is_none() {
+        builder.unprocessed_status_events = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_service_level_objective_output_output_correct_errors(
     mut builder: crate::operation::update_service_level_objective::builders::UpdateServiceLevelObjectiveOutputBuilder,
 ) -> crate::operation::update_service_level_objective::builders::UpdateServiceLevelObjectiveOutputBuilder {
@@ -275,6 +404,39 @@ pub(crate) fn service_level_objective_correct_errors(
     builder
 }
 
+pub(crate) fn instrumentation_configuration_correct_errors(
+    mut builder: crate::types::builders::InstrumentationConfigurationBuilder,
+) -> crate::types::builders::InstrumentationConfigurationBuilder {
+    if builder.instrumentation_type.is_none() {
+        builder.instrumentation_type = "no value was set".parse::<crate::types::InstrumentationType>().ok()
+    }
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.environment.is_none() {
+        builder.environment = Some(Default::default())
+    }
+    if builder.signal_type.is_none() {
+        builder.signal_type = "no value was set".parse::<crate::types::DynamicInstrumentationSignalType>().ok()
+    }
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::Location::Unknown)
+    }
+    if builder.location_hash.is_none() {
+        builder.location_hash = Some(Default::default())
+    }
+    if builder.capture_configuration.is_none() {
+        builder.capture_configuration = Some(crate::types::CaptureConfiguration::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_correct_errors(mut builder: crate::types::builders::ServiceBuilder) -> crate::types::builders::ServiceBuilder {
     if builder.key_attributes.is_none() {
         builder.key_attributes = Some(Default::default())
@@ -300,6 +462,21 @@ pub(crate) fn grouping_configuration_correct_errors(
 pub(crate) fn audit_finding_correct_errors(mut builder: crate::types::builders::AuditFindingBuilder) -> crate::types::builders::AuditFindingBuilder {
     if builder.key_attributes.is_none() {
         builder.key_attributes = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_delete_error_correct_errors(
+    mut builder: crate::types::builders::BatchDeleteErrorBuilder,
+) -> crate::types::builders::BatchDeleteErrorBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchDeleteErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -341,6 +518,28 @@ pub(crate) fn change_event_correct_errors(mut builder: crate::types::builders::C
     builder
 }
 
+pub(crate) fn code_capture_configuration_correct_errors(
+    mut builder: crate::types::builders::CodeCaptureConfigurationBuilder,
+) -> crate::types::builders::CodeCaptureConfigurationBuilder {
+    if builder.capture_limits.is_none() {
+        builder.capture_limits = {
+            let builder = crate::types::builders::CaptureLimitsConfigBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn code_location_correct_errors(mut builder: crate::types::builders::CodeLocationBuilder) -> crate::types::builders::CodeLocationBuilder {
+    if builder.language.is_none() {
+        builder.language = "no value was set".parse::<crate::types::ProgrammingLanguage>().ok()
+    }
+    if builder.file_path.is_none() {
+        builder.file_path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn exclusion_window_correct_errors(
     mut builder: crate::types::builders::ExclusionWindowBuilder,
 ) -> crate::types::builders::ExclusionWindowBuilder {
@@ -358,6 +557,42 @@ pub(crate) fn grouping_attribute_definition_correct_errors(
 ) -> crate::types::builders::GroupingAttributeDefinitionBuilder {
     if builder.grouping_name.is_none() {
         builder.grouping_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instrumentation_configuration_without_service_env_correct_errors(
+    mut builder: crate::types::builders::InstrumentationConfigurationWithoutServiceEnvBuilder,
+) -> crate::types::builders::InstrumentationConfigurationWithoutServiceEnvBuilder {
+    if builder.instrumentation_type.is_none() {
+        builder.instrumentation_type = "no value was set".parse::<crate::types::InstrumentationType>().ok()
+    }
+    if builder.signal_type.is_none() {
+        builder.signal_type = "no value was set".parse::<crate::types::DynamicInstrumentationSignalType>().ok()
+    }
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::Location::Unknown)
+    }
+    if builder.location_hash.is_none() {
+        builder.location_hash = Some(Default::default())
+    }
+    if builder.capture_configuration.is_none() {
+        builder.capture_configuration = Some(crate::types::CaptureConfiguration::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instrumentation_status_event_correct_errors(
+    mut builder: crate::types::builders::InstrumentationStatusEventBuilder,
+) -> crate::types::builders::InstrumentationStatusEventBuilder {
+    if builder.time.is_none() {
+        builder.time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -509,6 +744,30 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unprocessed_status_event_correct_errors(
+    mut builder: crate::types::builders::UnprocessedStatusEventBuilder,
+) -> crate::types::builders::UnprocessedStatusEventBuilder {
+    if builder.instrumentation_type.is_none() {
+        builder.instrumentation_type = "no value was set".parse::<crate::types::InstrumentationType>().ok()
+    }
+    if builder.signal_type.is_none() {
+        builder.signal_type = "no value was set".parse::<crate::types::DynamicInstrumentationSignalType>().ok()
+    }
+    if builder.location_hash.is_none() {
+        builder.location_hash = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InstrumentationConfigurationStatus>().ok()
+    }
+    if builder.time.is_none() {
+        builder.time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.failed_reason.is_none() {
+        builder.failed_reason = "no value was set".parse::<crate::types::UnprocessedStatusEventFailureReason>().ok()
     }
     builder
 }

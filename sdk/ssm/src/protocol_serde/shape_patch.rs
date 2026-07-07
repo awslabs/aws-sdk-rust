@@ -2,10 +2,16 @@
 pub(crate) fn de_patch<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Patch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -107,16 +113,24 @@ where
                         }
                         "AdvisoryIds" => {
                             builder = builder.set_advisory_ids(crate::protocol_serde::shape_patch_advisory_id_list::de_patch_advisory_id_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "BugzillaIds" => {
                             builder = builder.set_bugzilla_ids(crate::protocol_serde::shape_patch_bugzilla_id_list::de_patch_bugzilla_id_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "CVEIds" => {
-                            builder = builder.set_cve_ids(crate::protocol_serde::shape_patch_cve_id_list::de_patch_cve_id_list(tokens, _value)?);
+                            builder = builder.set_cve_ids(crate::protocol_serde::shape_patch_cve_id_list::de_patch_cve_id_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Name" => {
                             builder = builder.set_name(

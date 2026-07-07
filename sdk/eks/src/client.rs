@@ -206,6 +206,8 @@ mod associate_encryption_config;
 
 mod associate_identity_provider_config;
 
+mod cancel_update;
+
 mod create_access_entry;
 
 mod create_addon;

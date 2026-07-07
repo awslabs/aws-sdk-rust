@@ -138,13 +138,15 @@ pub(crate) fn de_create_extension(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Actions" => {
-                    builder = builder.set_actions(crate::protocol_serde::shape_actions_map::de_actions_map(tokens, _value)?);
+                    builder = builder.set_actions(crate::protocol_serde::shape_actions_map::de_actions_map(tokens, _value, depth + 1)?);
                 }
                 "Arn" => {
                     builder = builder.set_arn(
@@ -175,7 +177,7 @@ pub(crate) fn de_create_extension(
                     );
                 }
                 "Parameters" => {
-                    builder = builder.set_parameters(crate::protocol_serde::shape_parameter_map::de_parameter_map(tokens, _value)?);
+                    builder = builder.set_parameters(crate::protocol_serde::shape_parameter_map::de_parameter_map(tokens, _value, depth + 1)?);
                 }
                 "VersionNumber" => {
                     builder = builder.set_version_number(

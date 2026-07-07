@@ -57,6 +57,8 @@ pub use crate::types::_availability_zone_mapping::AvailabilityZoneMappingBuilder
 
 pub use crate::types::_proxy_rule_group_attachment::ProxyRuleGroupAttachmentBuilder;
 
+pub use crate::types::_container_monitoring_configuration::ContainerMonitoringConfigurationBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_capacity_usage_summary::CapacityUsageSummaryBuilder;
@@ -84,6 +86,8 @@ pub use crate::types::_availability_zone_metadata::AvailabilityZoneMetadataBuild
 pub use crate::types::_analysis_type_report_result::AnalysisTypeReportResultBuilder;
 
 pub use crate::types::_analysis_report::AnalysisReportBuilder;
+
+pub use crate::types::_container_association_summary::ContainerAssociationSummaryBuilder;
 
 pub use crate::types::_firewall_policy_metadata::FirewallPolicyMetadataBuilder;
 
@@ -152,6 +156,8 @@ pub use crate::types::_hits::HitsBuilder;
 pub use crate::types::_unique_sources::UniqueSourcesBuilder;
 
 pub use crate::types::_address::AddressBuilder;
+
+pub use crate::types::_container_attribute::ContainerAttributeBuilder;
 
 pub use crate::types::_attachment::AttachmentBuilder;
 

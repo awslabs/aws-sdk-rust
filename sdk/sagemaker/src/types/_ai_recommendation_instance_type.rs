@@ -51,6 +51,7 @@
 ///     AiRecommendationInstanceType::MlP54Xlarge => { /* ... */ },
 ///     AiRecommendationInstanceType::MlP5E48Xlarge => { /* ... */ },
 ///     AiRecommendationInstanceType::MlP5En48Xlarge => { /* ... */ },
+///     AiRecommendationInstanceType::MlP6B20048Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -157,6 +158,8 @@ pub enum AiRecommendationInstanceType {
     MlP5E48Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP5En48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP6B20048Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -203,6 +206,7 @@ impl ::std::convert::From<&str> for AiRecommendationInstanceType {
             "ml.p5.4xlarge" => AiRecommendationInstanceType::MlP54Xlarge,
             "ml.p5e.48xlarge" => AiRecommendationInstanceType::MlP5E48Xlarge,
             "ml.p5en.48xlarge" => AiRecommendationInstanceType::MlP5En48Xlarge,
+            "ml.p6-b200.48xlarge" => AiRecommendationInstanceType::MlP6B20048Xlarge,
             other => AiRecommendationInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -257,6 +261,7 @@ impl AiRecommendationInstanceType {
             AiRecommendationInstanceType::MlP54Xlarge => "ml.p5.4xlarge",
             AiRecommendationInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
             AiRecommendationInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
+            AiRecommendationInstanceType::MlP6B20048Xlarge => "ml.p6-b200.48xlarge",
             AiRecommendationInstanceType::Unknown(value) => value.as_str(),
         }
     }
@@ -302,6 +307,7 @@ impl AiRecommendationInstanceType {
             "ml.p5.4xlarge",
             "ml.p5e.48xlarge",
             "ml.p5en.48xlarge",
+            "ml.p6-b200.48xlarge",
         ]
     }
 }
@@ -364,6 +370,7 @@ impl ::std::fmt::Display for AiRecommendationInstanceType {
             AiRecommendationInstanceType::MlP54Xlarge => write!(f, "ml.p5.4xlarge"),
             AiRecommendationInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
             AiRecommendationInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
+            AiRecommendationInstanceType::MlP6B20048Xlarge => write!(f, "ml.p6-b200.48xlarge"),
             AiRecommendationInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }

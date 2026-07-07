@@ -37,7 +37,21 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The confidence threshold for a DNS Firewall Advanced rule. One of:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>LOW</code> — Provides the highest detection rate for threats, but also increases false positives.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>MEDIUM</code> — Provides a balance between detecting threats and false positives.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>HIGH</code> — Detects only the most well-corroborated threats with a low rate of false positives.</p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

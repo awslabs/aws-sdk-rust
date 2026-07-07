@@ -13,8 +13,8 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::cancel_agreement_payment_request::CancelAgreementPaymentRequestOutput::description): <p>The detailed description of the payment request, if provided.</p>
     ///   - [`charge_amount(Option<String>)`](crate::operation::cancel_agreement_payment_request::CancelAgreementPaymentRequestOutput::charge_amount): <p>The amount that was requested to be charged.</p>
     ///   - [`currency_code(Option<String>)`](crate::operation::cancel_agreement_payment_request::CancelAgreementPaymentRequestOutput::currency_code): <p>The currency code for the charge amount.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::cancel_agreement_payment_request::CancelAgreementPaymentRequestOutput::created_at): <p>The date and time when the payment request was originally created, in ISO 8601 format.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::cancel_agreement_payment_request::CancelAgreementPaymentRequestOutput::updated_at): <p>The date and time when the payment request was cancelled, in ISO 8601 format.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::cancel_agreement_payment_request::CancelAgreementPaymentRequestOutput::created_at): <p>The date and time when the payment request was originally created.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::cancel_agreement_payment_request::CancelAgreementPaymentRequestOutput::updated_at): <p>The date and time when the payment request was cancelled.</p>
     /// - On failure, responds with [`SdkError<CancelAgreementPaymentRequestError>`](crate::operation::cancel_agreement_payment_request::CancelAgreementPaymentRequestError)
     pub fn cancel_agreement_payment_request(
         &self,

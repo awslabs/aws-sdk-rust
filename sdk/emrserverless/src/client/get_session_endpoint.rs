@@ -8,9 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetSessionEndpointOutput`](crate::operation::get_session_endpoint::GetSessionEndpointOutput) with field(s):
     ///   - [`application_id(String)`](crate::operation::get_session_endpoint::GetSessionEndpointOutput::application_id): <p>The output contains the ID of the application.</p>
     ///   - [`session_id(String)`](crate::operation::get_session_endpoint::GetSessionEndpointOutput::session_id): <p>The output contains the ID of the session.</p>
-    ///   - [`endpoint(String)`](crate::operation::get_session_endpoint::GetSessionEndpointOutput::endpoint): The endpoint URL for connecting to the session.
-    ///   - [`auth_token(String)`](crate::operation::get_session_endpoint::GetSessionEndpointOutput::auth_token): Authentication token for accessing the session endpoint.
-    ///   - [`auth_token_expires_at(DateTime)`](crate::operation::get_session_endpoint::GetSessionEndpointOutput::auth_token_expires_at): The expiration time of the authentication token.
+    ///   - [`endpoint(String)`](crate::operation::get_session_endpoint::GetSessionEndpointOutput::endpoint): <p>The endpoint URL for connecting to the session.</p>
+    ///   - [`auth_token(String)`](crate::operation::get_session_endpoint::GetSessionEndpointOutput::auth_token): <p>The authentication token for connecting to the session endpoint. Call <code>GetSessionEndpoint</code> again to obtain a new token before it expires.</p>
+    ///   - [`auth_token_expires_at(DateTime)`](crate::operation::get_session_endpoint::GetSessionEndpointOutput::auth_token_expires_at): <p>The expiration time of the authentication token.</p>
     /// - On failure, responds with [`SdkError<GetSessionEndpointError>`](crate::operation::get_session_endpoint::GetSessionEndpointError)
     pub fn get_session_endpoint(&self) -> crate::operation::get_session_endpoint::builders::GetSessionEndpointFluentBuilder {
         crate::operation::get_session_endpoint::builders::GetSessionEndpointFluentBuilder::new(self.handle.clone())

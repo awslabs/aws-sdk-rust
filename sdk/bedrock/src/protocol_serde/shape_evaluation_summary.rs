@@ -2,10 +2,16 @@
 pub(crate) fn de_evaluation_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,35 +57,39 @@ where
                         }
                         "evaluationTaskTypes" => {
                             builder = builder.set_evaluation_task_types(
-                                crate::protocol_serde::shape_evaluation_task_types::de_evaluation_task_types(tokens, _value)?,
+                                crate::protocol_serde::shape_evaluation_task_types::de_evaluation_task_types(tokens, _value, depth + 1)?,
                             );
                         }
                         "modelIdentifiers" => {
                             builder = builder.set_model_identifiers(
                                 crate::protocol_serde::shape_evaluation_bedrock_model_identifiers::de_evaluation_bedrock_model_identifiers(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ragIdentifiers" => {
                             builder = builder.set_rag_identifiers(
-                                    crate::protocol_serde::shape_evaluation_bedrock_knowledge_base_identifiers::de_evaluation_bedrock_knowledge_base_identifiers(tokens, _value)?
+                                    crate::protocol_serde::shape_evaluation_bedrock_knowledge_base_identifiers::de_evaluation_bedrock_knowledge_base_identifiers(tokens, _value, depth + 1)?
                                 );
                         }
                         "evaluatorModelIdentifiers" => {
                             builder = builder.set_evaluator_model_identifiers(
-                                crate::protocol_serde::shape_evaluator_model_identifiers::de_evaluator_model_identifiers(tokens, _value)?,
+                                crate::protocol_serde::shape_evaluator_model_identifiers::de_evaluator_model_identifiers(tokens, _value, depth + 1)?,
                             );
                         }
                         "customMetricsEvaluatorModelIdentifiers" => {
                             builder = builder.set_custom_metrics_evaluator_model_identifiers(
-                                crate::protocol_serde::shape_evaluator_model_identifiers::de_evaluator_model_identifiers(tokens, _value)?,
+                                crate::protocol_serde::shape_evaluator_model_identifiers::de_evaluator_model_identifiers(tokens, _value, depth + 1)?,
                             );
                         }
                         "inferenceConfigSummary" => {
                             builder = builder.set_inference_config_summary(
                                 crate::protocol_serde::shape_evaluation_inference_config_summary::de_evaluation_inference_config_summary(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

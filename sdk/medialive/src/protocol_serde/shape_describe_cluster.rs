@@ -152,6 +152,8 @@ pub(crate) fn de_describe_cluster(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -165,7 +167,7 @@ pub(crate) fn de_describe_cluster(
                     );
                 }
                 "channelIds" => {
-                    builder = builder.set_channel_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_channel_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "clusterType" => {
                     builder = builder.set_cluster_type(
@@ -197,7 +199,9 @@ pub(crate) fn de_describe_cluster(
                 }
                 "networkSettings" => {
                     builder = builder.set_network_settings(crate::protocol_serde::shape_cluster_network_settings::de_cluster_network_settings(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "state" => {

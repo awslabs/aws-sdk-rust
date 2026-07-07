@@ -97,6 +97,8 @@ pub(crate) fn de_batch_get_resource_config(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -104,11 +106,15 @@ pub(crate) fn de_batch_get_resource_config(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "baseConfigurationItems" => {
                     builder = builder.set_base_configuration_items(
-                        crate::protocol_serde::shape_base_configuration_items::de_base_configuration_items(tokens, _value)?,
+                        crate::protocol_serde::shape_base_configuration_items::de_base_configuration_items(tokens, _value, depth + 1)?,
                     );
                 }
                 "unprocessedResourceKeys" => {
-                    builder = builder.set_unprocessed_resource_keys(crate::protocol_serde::shape_resource_keys::de_resource_keys(tokens, _value)?);
+                    builder = builder.set_unprocessed_resource_keys(crate::protocol_serde::shape_resource_keys::de_resource_keys(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

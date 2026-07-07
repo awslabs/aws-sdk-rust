@@ -102,6 +102,8 @@ pub(crate) fn de_describe_router_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -115,7 +117,7 @@ pub(crate) fn de_describe_router_configuration(
                     );
                 }
                 "router" => {
-                    builder = builder.set_router(crate::protocol_serde::shape_router_type::de_router_type(tokens, _value)?);
+                    builder = builder.set_router(crate::protocol_serde::shape_router_type::de_router_type(tokens, _value, depth + 1)?);
                 }
                 "virtualInterfaceId" => {
                     builder = builder.set_virtual_interface_id(

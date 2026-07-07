@@ -29,103 +29,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EndpointOverr
 #[cfg(test)]
 mod test {
 
-    /// For custom endpoint with region not set and fips disabled
+    /// Control Plane operation in us-east-1 (aws partition)
     #[test]
     fn test_1() {
         let params = crate::config::endpoint::Params::builder()
-            .endpoint("https://example.com".to_string())
-            .use_fips(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
-        );
-    }
-
-    /// For custom endpoint with fips enabled
-    #[test]
-    fn test_2() {
-        let params = crate::config::endpoint::Params::builder()
-            .endpoint("https://example.com".to_string())
-            .use_fips(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint
-            .expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with fips enabled]");
-        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
-    }
-
-    /// For custom endpoint with fips disabled and dualstack enabled
-    #[test]
-    fn test_3() {
-        let params = crate::config::endpoint::Params::builder()
-            .endpoint("https://example.com".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [For custom endpoint with fips disabled and dualstack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: Dualstack and custom endpoint are not supported"
-        )
-    }
-
-    /// For region us-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_4() {
-        let params = crate::config::endpoint::Params::builder()
+            .is_control_plane(true)
             .region("us-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.us-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.us-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_5() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(true)
+            .use_fips(false)
             .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.us-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.us-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_6() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -135,13 +46,65 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://signin.us-east-1.api.aws")
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "signin".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
+                )
                 .build()
         );
     }
 
-    /// For region us-east-1 with FIPS disabled and DualStack disabled
+    /// Control Plane operation in cn-north-1 (aws-cn partition)
     #[test]
-    fn test_7() {
+    fn test_2() {
+        let params = crate::config::endpoint::Params::builder()
+            .is_control_plane(true)
+            .region("cn-north-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://signin.cn-north-1.api.amazonwebservices.com.cn")
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "signin".to_string())
+                        .put("signingRegion", "cn-north-1".to_string())
+                )
+                .build()
+        );
+    }
+
+    /// Data Plane operation in us-east-1
+    #[test]
+    fn test_3() {
+        let params = crate::config::endpoint::Params::builder()
+            .is_control_plane(false)
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://us-east-1.signin.aws.amazon.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://us-east-1.signin.aws.amazon.com")
+                .build()
+        );
+    }
+
+    /// Data Plane operation in us-east-1 (IsControlPlane not set)
+    #[test]
+    fn test_4() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -159,329 +122,151 @@ mod test {
         );
     }
 
-    /// For region cn-northwest-1 with FIPS enabled and DualStack enabled
+    /// Data Plane operation in cn-north-1
+    #[test]
+    fn test_5() {
+        let params = crate::config::endpoint::Params::builder()
+            .is_control_plane(false)
+            .region("cn-north-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cn-north-1.signin.amazonaws.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cn-north-1.signin.amazonaws.cn")
+                .build()
+        );
+    }
+
+    /// Data Plane operation in us-gov-west-1
+    #[test]
+    fn test_6() {
+        let params = crate::config::endpoint::Params::builder()
+            .is_control_plane(false)
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://us-gov-west-1.signin.amazonaws-us-gov.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://us-gov-west-1.signin.amazonaws-us-gov.com")
+                .build()
+        );
+    }
+
+    /// FIPS endpoint in us-gov-west-1 (global endpoint)
+    #[test]
+    fn test_7() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.amazonaws-us-gov.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://signin-fips.amazonaws-us-gov.com")
+                .build()
+        );
+    }
+
+    /// FIPS endpoint in us-gov-east-1 (regional endpoint)
     #[test]
     fn test_8() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-northwest-1".to_string())
+            .region("us-gov-east-1".to_string())
             .use_fips(true)
-            .use_dual_stack(true)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.cn-northwest-1.api.amazonwebservices.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://us-gov-east-1.signin-fips.amazonaws-us-gov.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.cn-northwest-1.api.amazonwebservices.com.cn")
+                .url("https://us-gov-east-1.signin-fips.amazonaws-us-gov.com")
                 .build()
         );
     }
 
-    /// For region cn-northwest-1 with FIPS enabled and DualStack disabled
+    /// FIPS endpoint in us-east-1
     #[test]
     fn test_9() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-northwest-1".to_string())
+            .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.cn-northwest-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.cn-northwest-1.amazonaws.com.cn")
+                .url("https://signin-fips.us-east-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region cn-northwest-1 with FIPS disabled and DualStack enabled
+    /// DualStack falls through to default SDK endpoint in us-east-1 (aws partition)
     #[test]
     fn test_10() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-northwest-1".to_string())
+            .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.cn-northwest-1.api.amazonwebservices.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin.cn-northwest-1.api.amazonwebservices.com.cn")
+                .url("https://signin.us-east-1.api.aws")
                 .build()
         );
     }
 
-    /// For region cn-northwest-1 with FIPS disabled and DualStack disabled
+    /// DualStack falls through to default SDK endpoint in cn-north-1 (aws-cn partition)
     #[test]
     fn test_11() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-northwest-1".to_string())
+            .region("cn-north-1".to_string())
             .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cn-northwest-1.signin.amazonaws.cn");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cn-northwest-1.signin.amazonaws.cn")
-                .build()
-        );
-    }
-
-    /// For region eusc-de-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_12() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eusc-de-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.eusc-de-east-1.amazonaws.eu");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.eusc-de-east-1.amazonaws.eu")
-                .build()
-        );
-    }
-
-    /// For region eusc-de-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_13() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eusc-de-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.eusc-de-east-1.amazonaws.eu");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin.eusc-de-east-1.amazonaws.eu")
-                .build()
-        );
-    }
-
-    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_14() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.us-iso-east-1.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.us-iso-east-1.c2s.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_15() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.us-iso-east-1.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin.us-iso-east-1.c2s.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_16() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.us-isob-east-1.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.us-isob-east-1.sc2s.sgov.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_17() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.us-isob-east-1.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin.us-isob-east-1.sc2s.sgov.gov")
-                .build()
-        );
-    }
-
-    /// For region eu-isoe-west-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_18() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.eu-isoe-west-1.cloud.adc-e.uk");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.eu-isoe-west-1.cloud.adc-e.uk")
-                .build()
-        );
-    }
-
-    /// For region eu-isoe-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_19() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.eu-isoe-west-1.cloud.adc-e.uk");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin.eu-isoe-west-1.cloud.adc-e.uk")
-                .build()
-        );
-    }
-
-    /// For region us-isof-south-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_20() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.us-isof-south-1.csp.hci.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.us-isof-south-1.csp.hci.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isof-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_21() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.us-isof-south-1.csp.hci.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin.us-isof-south-1.csp.hci.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_22() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(true)
             .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.us-gov-west-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://signin.cn-north-1.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.us-gov-west-1.api.aws")
+                .url("https://signin.cn-north-1.api.amazonwebservices.com.cn")
                 .build()
         );
     }
 
-    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
+    /// DualStack falls through to default SDK endpoint in us-gov-west-1 (aws-us-gov partition)
     #[test]
-    fn test_23() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://signin-fips.us-gov-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://signin-fips.us-gov-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_24() {
+    fn test_12() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
             .use_fips(false)
@@ -499,34 +284,65 @@ mod test {
         );
     }
 
-    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
+    /// Custom SDK endpoint override
     #[test]
-    fn test_25() {
+    fn test_13() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
+            .region("us-east-1".to_string())
+            .endpoint("https://custom.signin.example.com".to_string())
             .use_fips(false)
             .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://us-gov-west-1.signin.amazonaws-us-gov.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://custom.signin.example.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://us-gov-west-1.signin.amazonaws-us-gov.com")
+                .url("https://custom.signin.example.com")
                 .build()
         );
     }
 
-    /// Missing region
+    /// ISO partition (us-iso-east-1)
     #[test]
-    fn test_26() {
-        let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
+    fn test_14() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
-        assert_eq!(format!("{}", error), "Invalid Configuration: Missing Region")
+        let endpoint = endpoint.expect("Expected valid endpoint: https://us-iso-east-1.signin.c2shome.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://us-iso-east-1.signin.c2shome.ic.gov")
+                .build()
+        );
+    }
+
+    /// ISO-B partition (us-isob-east-1)
+    #[test]
+    fn test_15() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://us-isob-east-1.signin.sc2shome.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://us-isob-east-1.signin.sc2shome.sgov.gov")
+                .build()
+        );
     }
 }
 
@@ -564,36 +380,706 @@ where
     }
 }
 
-/// The default endpoint resolver
-#[derive(Debug, Default)]
+#[derive(Debug)]
+/// The default endpoint resolver.
 pub struct DefaultResolver {
-    partition_resolver: crate::endpoint_lib::partition::PartitionResolver,
+    partition_resolver: &'static crate::endpoint_lib::partition::PartitionResolver,
+    endpoint_cache: ::arc_swap::ArcSwap<::std::option::Option<(Params, ::aws_smithy_types::endpoint::Endpoint)>>,
+}
+
+impl Default for DefaultResolver {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DefaultResolver {
-    /// Create a new endpoint resolver with default settings
+    /// Create a new DefaultResolver
     pub fn new() -> Self {
         Self {
-            partition_resolver: crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER.clone(),
+            partition_resolver: &crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER,
+            endpoint_cache: ::arc_swap::ArcSwap::from_pointee(None),
         }
     }
 
-    fn resolve_endpoint(
-        &self,
-        params: &crate::config::endpoint::Params,
+    #[allow(
+        unused_variables,
+        unused_parens,
+        clippy::double_parens,
+        clippy::useless_conversion,
+        clippy::bool_comparison,
+        clippy::comparison_to_empty,
+        clippy::needless_borrow,
+        clippy::useless_asref,
+        clippy::redundant_closure_call,
+        clippy::clone_on_copy
+    )]
+    fn resolve_endpoint<'a>(
+        &'a self,
+        params: &'a crate::config::endpoint::Params,
     ) -> ::std::result::Result<::aws_smithy_types::endpoint::Endpoint, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        Ok(
-            crate::config::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
-                .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))?,
-        )
+        let mut _diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
+        #[allow(unused_mut)]
+        let mut context = ConditionContext::default();
+
+        // Param bindings
+        let use_dual_stack = &params.use_dual_stack;
+        let use_fips = &params.use_fips;
+        let endpoint = &params.endpoint;
+        let region = &params.region;
+        let is_control_plane = &params.is_control_plane;
+
+        let mut current_ref: i32 = 2;
+        loop {
+            match current_ref {
+                ref_val if ref_val >= 100_000_000 => {
+                    return match (ref_val - 100_000_000) as usize {
+                        0 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        1 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://signin.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".api.aws");
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 2)
+                                            .put("signingName", "signin")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        2 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://signin.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".api.amazonwebservices.com.cn");
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 2)
+                                            .put("signingName", "signin")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        3 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://signin.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 2)
+                                            .put("signingName", "signin")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        4 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.aws.amazon.com");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        5 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.amazonaws.cn");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        6 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.amazonaws-us-gov.com");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        7 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.c2shome.ic.gov");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        8 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.sc2shome.sgov.gov");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        9 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.csphome.hci.ic.gov");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        10 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.csphome.adc-e.uk");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        11 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.amazonaws-eusc.eu");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        12 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://signin-fips.amazonaws-us-gov.com".to_string())
+                                .build(),
+                        ),
+                        13 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin-fips.amazonaws-us-gov.com");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        14 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".signin.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        15 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        16 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: Dualstack and custom endpoint are not supported".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        17 => {
+                            let endpoint = params.endpoint.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url(endpoint.to_owned()).build())
+                        }
+                        18 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://signin-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        19 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "FIPS and DualStack are enabled, but this partition does not support one or both".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        20 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://signin-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        21 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "FIPS is enabled but this partition does not support FIPS".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        22 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://signin.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        23 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "DualStack is enabled but this partition does not support DualStack".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        24 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://signin.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        25 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: Missing Region".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                    };
+                }
+                1 | -1 => {
+                    return ::std::result::Result::Err(
+                        Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("No endpoint rule matched"))
+                            as ::aws_smithy_runtime_api::box_error::BoxError,
+                    )
+                }
+                ref_val => {
+                    let is_complement = ref_val < 0;
+                    let node = &NODES[(ref_val.unsigned_abs() as usize) - 1];
+                    let condition_result = match node.condition_index {
+                        0 => region.is_some(),
+                        1 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(is_control_plane.clone(), false)) == (true)
+                        })(&mut _diagnostic_collector),
+                        2 => endpoint.is_some(),
+                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &mut context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *partition_result = partition_resolver
+                                    .resolve_partition(if let Some(param) = region { param } else { return false }, _diagnostic_collector)
+                                    .map(|inner| inner.into());
+                                partition_result.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        4 => (use_fips) == (&true),
+                        5 => (use_dual_stack) == (&true),
+                        6 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws")
+                        })(&mut _diagnostic_collector),
+                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-cn")
+                        })(&mut _diagnostic_collector),
+                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_dual_stack()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        9 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("us-gov-west-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        10 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-us-gov")
+                        })(&mut _diagnostic_collector),
+                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_fips()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        12 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-iso")
+                        })(&mut _diagnostic_collector),
+                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-iso-b")
+                        })(&mut _diagnostic_collector),
+                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-iso-f")
+                        })(&mut _diagnostic_collector),
+                        15 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-iso-e")
+                        })(&mut _diagnostic_collector),
+                        16 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-eusc")
+                        })(&mut _diagnostic_collector),
+                        _ => unreachable!("Invalid condition index"),
+                    };
+                    current_ref = if is_complement ^ condition_result { node.high_ref } else { node.low_ref };
+                }
+            }
+        }
     }
 }
 
 impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
-    fn resolve_endpoint(&self, params: &crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'_> {
-        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(self.resolve_endpoint(params))
+    fn resolve_endpoint<'a>(&'a self, params: &'a crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'a> {
+        // Check single-entry cache (lock-free read via ArcSwap)
+        let cached = self.endpoint_cache.load();
+        if let Some((cached_params, cached_endpoint)) = cached.as_ref() {
+            if cached_params == params {
+                return ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(::std::result::Result::Ok(cached_endpoint.clone()));
+            }
+        }
+        drop(cached);
+        let result = self.resolve_endpoint(params);
+        if let ::std::result::Result::Ok(ref endpoint) = result {
+            self.endpoint_cache.store(::std::sync::Arc::new(Some((params.clone(), endpoint.clone()))));
+        }
+        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
+}
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 33] = [
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: -1,
+        high_ref: 1,
+        low_ref: -1,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 0,
+        high_ref: 4,
+        low_ref: 3,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 30,
+        low_ref: 100000025,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 1,
+        high_ref: 24,
+        low_ref: 5,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 30,
+        low_ref: 6,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 7,
+        low_ref: 26,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 18,
+        low_ref: 8,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 17,
+        low_ref: 9,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000004,
+        low_ref: 10,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 100000005,
+        low_ref: 11,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 100000006,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 100000007,
+        low_ref: 13,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 100000008,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 100000009,
+        low_ref: 15,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 100000010,
+        low_ref: 16,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000011,
+        low_ref: 100000014,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000022,
+        low_ref: 100000023,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 22,
+        low_ref: 19,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 100000012,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 100000013,
+        low_ref: 21,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 100000020,
+        low_ref: 100000021,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 23,
+        low_ref: 100000019,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 100000018,
+        low_ref: 100000019,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 29,
+        low_ref: 25,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 32,
+        low_ref: 26,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 27,
+        low_ref: 100000025,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 100000025,
+        low_ref: 28,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 100000012,
+        low_ref: 100000025,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 32,
+        low_ref: 30,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 100000015,
+        low_ref: 31,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 100000016,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000001,
+        low_ref: 33,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 100000002,
+        low_ref: 100000003,
+    },
+];
+// These are all optional since they are set by conditions and will
+// all be unset when we start evaluation
+#[derive(Default)]
+#[allow(unused_lifetimes)]
+pub(crate) struct ConditionContext<'a> {
+    pub(crate) partition_result: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    // Sometimes none of the members reference the lifetime, this makes it still valid
+    phantom: std::marker::PhantomData<&'a ()>,
 }
 
 #[non_exhaustive]
@@ -608,6 +1094,8 @@ pub struct Params {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     /// The AWS region used to dispatch the request.
     pub(crate) region: ::std::option::Option<::std::string::String>,
+    /// Indicates if the operation targets the control plane endpoint
+    pub(crate) is_control_plane: ::std::option::Option<bool>,
 }
 impl Params {
     /// Create a builder for [`Params`]
@@ -630,6 +1118,10 @@ impl Params {
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
+    /// Indicates if the operation targets the control plane endpoint
+    pub fn is_control_plane(&self) -> ::std::option::Option<bool> {
+        self.is_control_plane
+    }
 }
 
 /// Builder for [`Params`]
@@ -639,6 +1131,7 @@ pub struct ParamsBuilder {
     use_fips: ::std::option::Option<bool>,
     endpoint: ::std::option::Option<::std::string::String>,
     region: ::std::option::Option<::std::string::String>,
+    is_control_plane: ::std::option::Option<bool>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -668,6 +1161,7 @@ impl ParamsBuilder {
                     .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("use_fips"))?,
                 endpoint: self.endpoint,
                 region: self.region,
+                is_control_plane: self.is_control_plane,
             },
         )
     }
@@ -735,6 +1229,21 @@ impl ParamsBuilder {
         self.region = param;
         self
     }
+    /// Sets the value for is_control_plane
+    ///
+    /// Indicates if the operation targets the control plane endpoint
+    pub fn is_control_plane(mut self, value: impl Into<bool>) -> Self {
+        self.is_control_plane = Some(value.into());
+        self
+    }
+
+    /// Sets the value for is_control_plane
+    ///
+    /// Indicates if the operation targets the control plane endpoint
+    pub fn set_is_control_plane(mut self, param: Option<bool>) -> Self {
+        self.is_control_plane = param;
+        self
+    }
 }
 
 /// An error that occurred during endpoint resolution
@@ -779,5 +1288,3 @@ impl std::fmt::Display for InvalidParams {
 }
 
 impl std::error::Error for InvalidParams {}
-
-mod internals;

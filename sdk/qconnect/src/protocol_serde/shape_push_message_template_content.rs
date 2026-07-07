@@ -33,10 +33,16 @@ pub fn ser_push_message_template_content(
 pub(crate) fn de_push_message_template_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PushMessageTemplateContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,25 +54,37 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adm" => {
                             builder = builder.set_adm(
-                                crate::protocol_serde::shape_push_adm_message_template_content::de_push_adm_message_template_content(tokens, _value)?,
+                                crate::protocol_serde::shape_push_adm_message_template_content::de_push_adm_message_template_content(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "apns" => {
                             builder = builder.set_apns(
                                 crate::protocol_serde::shape_push_apns_message_template_content::de_push_apns_message_template_content(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "fcm" => {
                             builder = builder.set_fcm(
-                                crate::protocol_serde::shape_push_fcm_message_template_content::de_push_fcm_message_template_content(tokens, _value)?,
+                                crate::protocol_serde::shape_push_fcm_message_template_content::de_push_fcm_message_template_content(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "baidu" => {
                             builder = builder.set_baidu(
                                 crate::protocol_serde::shape_push_baidu_message_template_content::de_push_baidu_message_template_content(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

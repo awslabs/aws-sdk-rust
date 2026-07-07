@@ -2,10 +2,16 @@
 pub(crate) fn de_describe_network_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribeNetworkSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,8 +29,11 @@ where
                             );
                         }
                         "associatedClusterIds" => {
-                            builder =
-                                builder.set_associated_cluster_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_associated_cluster_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "id" => {
                             builder = builder.set_id(
@@ -34,7 +43,11 @@ where
                             );
                         }
                         "ipPools" => {
-                            builder = builder.set_ip_pools(crate::protocol_serde::shape_list_of_ip_pool::de_list_of_ip_pool(tokens, _value)?);
+                            builder = builder.set_ip_pools(crate::protocol_serde::shape_list_of_ip_pool::de_list_of_ip_pool(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "name" => {
                             builder = builder.set_name(
@@ -44,7 +57,7 @@ where
                             );
                         }
                         "routes" => {
-                            builder = builder.set_routes(crate::protocol_serde::shape_list_of_route::de_list_of_route(tokens, _value)?);
+                            builder = builder.set_routes(crate::protocol_serde::shape_list_of_route::de_list_of_route(tokens, _value, depth + 1)?);
                         }
                         "state" => {
                             builder = builder.set_state(

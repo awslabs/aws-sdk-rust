@@ -199,13 +199,19 @@ pub(crate) fn de_search_users_by_image(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "UserMatches" => {
-                    builder = builder.set_user_matches(crate::protocol_serde::shape_user_match_list::de_user_match_list(tokens, _value)?);
+                    builder = builder.set_user_matches(crate::protocol_serde::shape_user_match_list::de_user_match_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FaceModelVersion" => {
                     builder = builder.set_face_model_version(
@@ -216,12 +222,16 @@ pub(crate) fn de_search_users_by_image(
                 }
                 "SearchedFace" => {
                     builder = builder.set_searched_face(crate::protocol_serde::shape_searched_face_details::de_searched_face_details(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "UnsearchedFaces" => {
                     builder = builder.set_unsearched_faces(crate::protocol_serde::shape_unsearched_faces_list::de_unsearched_faces_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

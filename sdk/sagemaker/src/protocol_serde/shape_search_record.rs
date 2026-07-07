@@ -2,10 +2,16 @@
 pub(crate) fn de_search_record<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SearchRecord>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,62 +22,88 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TrainingJob" => {
-                            builder = builder.set_training_job(crate::protocol_serde::shape_training_job::de_training_job(tokens, _value)?);
+                            builder =
+                                builder.set_training_job(crate::protocol_serde::shape_training_job::de_training_job(tokens, _value, depth + 1)?);
                         }
                         "Experiment" => {
-                            builder = builder.set_experiment(crate::protocol_serde::shape_experiment::de_experiment(tokens, _value)?);
+                            builder = builder.set_experiment(crate::protocol_serde::shape_experiment::de_experiment(tokens, _value, depth + 1)?);
                         }
                         "Trial" => {
-                            builder = builder.set_trial(crate::protocol_serde::shape_trial::de_trial(tokens, _value)?);
+                            builder = builder.set_trial(crate::protocol_serde::shape_trial::de_trial(tokens, _value, depth + 1)?);
                         }
                         "TrialComponent" => {
-                            builder = builder.set_trial_component(crate::protocol_serde::shape_trial_component::de_trial_component(tokens, _value)?);
+                            builder = builder.set_trial_component(crate::protocol_serde::shape_trial_component::de_trial_component(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Endpoint" => {
-                            builder = builder.set_endpoint(crate::protocol_serde::shape_endpoint::de_endpoint(tokens, _value)?);
+                            builder = builder.set_endpoint(crate::protocol_serde::shape_endpoint::de_endpoint(tokens, _value, depth + 1)?);
                         }
                         "ModelPackage" => {
-                            builder = builder.set_model_package(crate::protocol_serde::shape_model_package::de_model_package(tokens, _value)?);
+                            builder =
+                                builder.set_model_package(crate::protocol_serde::shape_model_package::de_model_package(tokens, _value, depth + 1)?);
                         }
                         "ModelPackageGroup" => {
-                            builder = builder
-                                .set_model_package_group(crate::protocol_serde::shape_model_package_group::de_model_package_group(tokens, _value)?);
+                            builder = builder.set_model_package_group(crate::protocol_serde::shape_model_package_group::de_model_package_group(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Pipeline" => {
-                            builder = builder.set_pipeline(crate::protocol_serde::shape_pipeline::de_pipeline(tokens, _value)?);
+                            builder = builder.set_pipeline(crate::protocol_serde::shape_pipeline::de_pipeline(tokens, _value, depth + 1)?);
                         }
                         "PipelineExecution" => {
-                            builder = builder
-                                .set_pipeline_execution(crate::protocol_serde::shape_pipeline_execution::de_pipeline_execution(tokens, _value)?);
+                            builder = builder.set_pipeline_execution(crate::protocol_serde::shape_pipeline_execution::de_pipeline_execution(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PipelineVersion" => {
-                            builder =
-                                builder.set_pipeline_version(crate::protocol_serde::shape_pipeline_version::de_pipeline_version(tokens, _value)?);
+                            builder = builder.set_pipeline_version(crate::protocol_serde::shape_pipeline_version::de_pipeline_version(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "FeatureGroup" => {
-                            builder = builder.set_feature_group(crate::protocol_serde::shape_feature_group::de_feature_group(tokens, _value)?);
+                            builder =
+                                builder.set_feature_group(crate::protocol_serde::shape_feature_group::de_feature_group(tokens, _value, depth + 1)?);
                         }
                         "FeatureMetadata" => {
-                            builder =
-                                builder.set_feature_metadata(crate::protocol_serde::shape_feature_metadata::de_feature_metadata(tokens, _value)?);
+                            builder = builder.set_feature_metadata(crate::protocol_serde::shape_feature_metadata::de_feature_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Project" => {
-                            builder = builder.set_project(crate::protocol_serde::shape_project::de_project(tokens, _value)?);
+                            builder = builder.set_project(crate::protocol_serde::shape_project::de_project(tokens, _value, depth + 1)?);
                         }
                         "HyperParameterTuningJob" => {
                             builder = builder.set_hyper_parameter_tuning_job(
                                 crate::protocol_serde::shape_hyper_parameter_tuning_job_search_entity::de_hyper_parameter_tuning_job_search_entity(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ModelCard" => {
-                            builder = builder.set_model_card(crate::protocol_serde::shape_model_card::de_model_card(tokens, _value)?);
+                            builder = builder.set_model_card(crate::protocol_serde::shape_model_card::de_model_card(tokens, _value, depth + 1)?);
                         }
                         "Model" => {
                             builder = builder.set_model(crate::protocol_serde::shape_model_dashboard_model::de_model_dashboard_model(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
+                        }
+                        "Job" => {
+                            builder = builder.set_job(crate::protocol_serde::shape_job::de_job(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

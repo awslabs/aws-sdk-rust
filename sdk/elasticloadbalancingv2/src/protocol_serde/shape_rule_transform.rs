@@ -25,7 +25,11 @@ pub fn ser_rule_transform(
 #[allow(clippy::needless_question_mark)]
 pub fn de_rule_transform(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RuleTransform, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RuleTransform::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -47,7 +51,7 @@ pub fn de_rule_transform(
             s if s.matches("HostHeaderRewriteConfig") /* HostHeaderRewriteConfig com.amazonaws.elasticloadbalancingv2#RuleTransform$HostHeaderRewriteConfig */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_host_header_rewrite_config::de_host_header_rewrite_config(&mut tag)
+                        crate::protocol_serde::shape_host_header_rewrite_config::de_host_header_rewrite_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -57,7 +61,7 @@ pub fn de_rule_transform(
             s if s.matches("UrlRewriteConfig") /* UrlRewriteConfig com.amazonaws.elasticloadbalancingv2#RuleTransform$UrlRewriteConfig */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_url_rewrite_config::de_url_rewrite_config(&mut tag)
+                        crate::protocol_serde::shape_url_rewrite_config::de_url_rewrite_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

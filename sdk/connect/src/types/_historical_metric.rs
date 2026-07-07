@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoricalMetric {
-    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Connect Customer Administrator Guide</i>.</p>
     /// <dl>
     /// <dt>
     /// ABANDON_TIME
@@ -218,7 +218,7 @@ pub struct HistoricalMetric {
     pub unit: ::std::option::Option<crate::types::Unit>,
 }
 impl HistoricalMetric {
-    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Connect Customer Administrator Guide</i>.</p>
     /// <dl>
     /// <dt>
     /// ABANDON_TIME
@@ -456,7 +456,7 @@ pub struct HistoricalMetricBuilder {
     pub(crate) unit: ::std::option::Option<crate::types::Unit>,
 }
 impl HistoricalMetricBuilder {
-    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Connect Customer Administrator Guide</i>.</p>
     /// <dl>
     /// <dt>
     /// ABANDON_TIME
@@ -665,7 +665,7 @@ impl HistoricalMetricBuilder {
         self.name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Connect Customer Administrator Guide</i>.</p>
     /// <dl>
     /// <dt>
     /// ABANDON_TIME
@@ -874,7 +874,7 @@ impl HistoricalMetricBuilder {
         self.name = input;
         self
     }
-    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The name of the metric. Following is a list of each supported metric mapped to the UI name, linked to a detailed description in the <i>Connect Customer Administrator Guide</i>.</p>
     /// <dl>
     /// <dt>
     /// ABANDON_TIME

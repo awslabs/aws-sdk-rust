@@ -2,10 +2,16 @@
 pub(crate) fn de_aws_resources<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsResources>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,24 +22,28 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "vpcs" => {
-                            builder = builder.set_vpcs(crate::protocol_serde::shape_vpc_configs::de_vpc_configs(tokens, _value)?);
+                            builder = builder.set_vpcs(crate::protocol_serde::shape_vpc_configs::de_vpc_configs(tokens, _value, depth + 1)?);
                         }
                         "logGroups" => {
-                            builder = builder.set_log_groups(crate::protocol_serde::shape_log_group_arns::de_log_group_arns(tokens, _value)?);
+                            builder =
+                                builder.set_log_groups(crate::protocol_serde::shape_log_group_arns::de_log_group_arns(tokens, _value, depth + 1)?);
                         }
                         "s3Buckets" => {
-                            builder = builder.set_s3_buckets(crate::protocol_serde::shape_s3_bucket_arns::de_s3_bucket_arns(tokens, _value)?);
+                            builder =
+                                builder.set_s3_buckets(crate::protocol_serde::shape_s3_bucket_arns::de_s3_bucket_arns(tokens, _value, depth + 1)?);
                         }
                         "secretArns" => {
-                            builder = builder.set_secret_arns(crate::protocol_serde::shape_secret_arns::de_secret_arns(tokens, _value)?);
+                            builder = builder.set_secret_arns(crate::protocol_serde::shape_secret_arns::de_secret_arns(tokens, _value, depth + 1)?);
                         }
                         "lambdaFunctionArns" => {
                             builder = builder.set_lambda_function_arns(crate::protocol_serde::shape_lambda_function_arns::de_lambda_function_arns(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "iamRoles" => {
-                            builder = builder.set_iam_roles(crate::protocol_serde::shape_iam_roles::de_iam_roles(tokens, _value)?);
+                            builder = builder.set_iam_roles(crate::protocol_serde::shape_iam_roles::de_iam_roles(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

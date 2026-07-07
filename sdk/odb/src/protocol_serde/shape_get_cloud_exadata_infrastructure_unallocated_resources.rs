@@ -121,6 +121,8 @@ pub fn ser_get_cloud_exadata_infrastructure_unallocated_resources_input(
 pub(crate) fn de_get_cloud_exadata_infrastructure_unallocated_resources(_value: &[u8], mut builder: crate::operation::get_cloud_exadata_infrastructure_unallocated_resources::builders::GetCloudExadataInfrastructureUnallocatedResourcesOutputBuilder) -> ::std::result::Result<crate::operation::get_cloud_exadata_infrastructure_unallocated_resources::builders::GetCloudExadataInfrastructureUnallocatedResourcesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -128,7 +130,7 @@ pub(crate) fn de_get_cloud_exadata_infrastructure_unallocated_resources(_value: 
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "cloudExadataInfrastructureUnallocatedResources" => {
                     builder = builder.set_cloud_exadata_infrastructure_unallocated_resources(
-                            crate::protocol_serde::shape_cloud_exadata_infrastructure_unallocated_resources::de_cloud_exadata_infrastructure_unallocated_resources(tokens, _value)?
+                            crate::protocol_serde::shape_cloud_exadata_infrastructure_unallocated_resources::de_cloud_exadata_infrastructure_unallocated_resources(tokens, _value, depth + 1)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

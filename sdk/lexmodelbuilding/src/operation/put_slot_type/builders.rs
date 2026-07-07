@@ -26,6 +26,7 @@ impl crate::operation::put_slot_type::builders::PutSlotTypeInputBuilder {
 /// <p>To create a custom slot type, specify a name for the slot type and a set of enumeration values, which are the values that a slot of this type can assume. For more information, see <code>how-it-works</code>.</p>
 /// <p>If you specify the name of an existing slot type, the fields in the request replace the existing values in the <code>$LATEST</code> version of the slot type. Amazon Lex removes the fields that you don't provide in the request. If you don't specify required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that contains the slot type, the bot's <code>status</code> field is set to <code>NOT_BUILT</code>.</p>
 /// <p>This operation requires permissions for the <code>lex:PutSlotType</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSlotTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

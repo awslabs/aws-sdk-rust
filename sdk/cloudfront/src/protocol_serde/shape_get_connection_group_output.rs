@@ -27,5 +27,7 @@ pub fn de_connection_group(inp: &[u8]) -> std::result::Result<crate::types::Conn
             "invalid root, expected ConnectionGroup got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_connection_group::de_connection_group(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_connection_group::de_connection_group(&mut decoder, depth + 1)
 }

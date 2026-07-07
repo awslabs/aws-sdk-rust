@@ -45,8 +45,12 @@ pub struct StartRunInput {
     pub workflow_version_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
     pub networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub scratch_storage_mode: ::std::option::Option<crate::types::ScratchStorageMode>,
     /// <p>Optional configuration name to use for the workflow run.</p>
     pub configuration_name: ::std::option::Option<::std::string::String>,
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl StartRunInput {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -131,9 +135,17 @@ impl StartRunInput {
     pub fn networking_mode(&self) -> ::std::option::Option<&crate::types::NetworkingMode> {
         self.networking_mode.as_ref()
     }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn scratch_storage_mode(&self) -> ::std::option::Option<&crate::types::ScratchStorageMode> {
+        self.scratch_storage_mode.as_ref()
+    }
     /// <p>Optional configuration name to use for the workflow run.</p>
     pub fn configuration_name(&self) -> ::std::option::Option<&str> {
         self.configuration_name.as_deref()
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.engine_settings.as_ref()
     }
 }
 impl StartRunInput {
@@ -167,7 +179,9 @@ pub struct StartRunInputBuilder {
     pub(crate) workflow_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_version_name: ::std::option::Option<::std::string::String>,
     pub(crate) networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    pub(crate) scratch_storage_mode: ::std::option::Option<crate::types::ScratchStorageMode>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl StartRunInputBuilder {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -465,6 +479,20 @@ impl StartRunInputBuilder {
     pub fn get_networking_mode(&self) -> &::std::option::Option<crate::types::NetworkingMode> {
         &self.networking_mode
     }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn scratch_storage_mode(mut self, input: crate::types::ScratchStorageMode) -> Self {
+        self.scratch_storage_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn set_scratch_storage_mode(mut self, input: ::std::option::Option<crate::types::ScratchStorageMode>) -> Self {
+        self.scratch_storage_mode = input;
+        self
+    }
+    /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
+    pub fn get_scratch_storage_mode(&self) -> &::std::option::Option<crate::types::ScratchStorageMode> {
+        &self.scratch_storage_mode
+    }
     /// <p>Optional configuration name to use for the workflow run.</p>
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
@@ -478,6 +506,20 @@ impl StartRunInputBuilder {
     /// <p>Optional configuration name to use for the workflow run.</p>
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_name
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.engine_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.engine_settings = input;
+        self
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.engine_settings
     }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_types::error::operation::BuildError> {
@@ -502,7 +544,9 @@ impl StartRunInputBuilder {
             workflow_owner_id: self.workflow_owner_id,
             workflow_version_name: self.workflow_version_name,
             networking_mode: self.networking_mode,
+            scratch_storage_mode: self.scratch_storage_mode,
             configuration_name: self.configuration_name,
+            engine_settings: self.engine_settings,
         })
     }
 }

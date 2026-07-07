@@ -5,12 +5,14 @@
 pub enum Error {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request could not be completed due to a conflict with the current state of the resource.</p>
+    /// <p>Request was denied due to a resource conflict.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Unexpected error during processing of request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Request references a resource which does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>Request exceeded the maximum allowed limit (quota) for a specific resource or API operation.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by the service.</p>
@@ -31,6 +33,7 @@ impl ::std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -58,9 +61,144 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError> for Error {
+    fn from(err: crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError) -> Self {
+        match err {
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::accept_agreement_cancellation_request::AcceptAgreementCancellationRequestError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError> for Error {
+    fn from(err: crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError) -> Self {
+        match err {
+            crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::accept_agreement_payment_request::AcceptAgreementPaymentRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_agreement_request::AcceptAgreementRequestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_agreement_request::AcceptAgreementRequestError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_agreement_request::AcceptAgreementRequestError> for Error {
+    fn from(err: crate::operation::accept_agreement_request::AcceptAgreementRequestError) -> Self {
+        match err {
+            crate::operation::accept_agreement_request::AcceptAgreementRequestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::accept_agreement_request::AcceptAgreementRequestError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::accept_agreement_request::AcceptAgreementRequestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::accept_agreement_request::AcceptAgreementRequestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::accept_agreement_request::AcceptAgreementRequestError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::accept_agreement_request::AcceptAgreementRequestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::accept_agreement_request::AcceptAgreementRequestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -110,6 +248,33 @@ impl From<crate::operation::batch_create_billing_adjustment_request::BatchCreate
             crate::operation::batch_create_billing_adjustment_request::BatchCreateBillingAdjustmentRequestError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_agreement::CancelAgreementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_agreement::CancelAgreementError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_agreement::CancelAgreementError> for Error {
+    fn from(err: crate::operation::cancel_agreement::CancelAgreementError) -> Self {
+        match err {
+            crate::operation::cancel_agreement::CancelAgreementError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_agreement::CancelAgreementError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_agreement::CancelAgreementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_agreement::CancelAgreementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_agreement::CancelAgreementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_agreement::CancelAgreementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_agreement::CancelAgreementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -212,6 +377,44 @@ impl From<crate::operation::cancel_agreement_payment_request::CancelAgreementPay
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_agreement_request::CreateAgreementRequestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_agreement_request::CreateAgreementRequestError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_agreement_request::CreateAgreementRequestError> for Error {
+    fn from(err: crate::operation::create_agreement_request::CreateAgreementRequestError) -> Self {
+        match err {
+            crate::operation::create_agreement_request::CreateAgreementRequestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_agreement_request::CreateAgreementRequestError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_agreement_request::CreateAgreementRequestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_agreement_request::CreateAgreementRequestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_agreement_request::CreateAgreementRequestError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_agreement_request::CreateAgreementRequestError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_agreement_request::CreateAgreementRequestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_agreement_request::CreateAgreementRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_agreement::DescribeAgreementError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -282,6 +485,45 @@ impl From<crate::operation::get_agreement_cancellation_request::GetAgreementCanc
                 Error::ValidationException(inner)
             }
             crate::operation::get_agreement_cancellation_request::GetAgreementCancellationRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError> for Error {
+    fn from(err: crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError) -> Self {
+        match err {
+            crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_agreement_entitlements::GetAgreementEntitlementsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -441,6 +683,33 @@ impl From<crate::operation::list_agreement_cancellation_requests::ListAgreementC
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agreement_charges::ListAgreementChargesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agreement_charges::ListAgreementChargesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_agreement_charges::ListAgreementChargesError> for Error {
+    fn from(err: crate::operation::list_agreement_charges::ListAgreementChargesError) -> Self {
+        match err {
+            crate::operation::list_agreement_charges::ListAgreementChargesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_agreement_charges::ListAgreementChargesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_agreement_charges::ListAgreementChargesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_agreement_charges::ListAgreementChargesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_agreement_charges::ListAgreementChargesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -569,6 +838,105 @@ impl From<crate::operation::list_billing_adjustment_requests::ListBillingAdjustm
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError> for Error {
+    fn from(err: crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError) -> Self {
+        match err {
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::reject_agreement_cancellation_request::RejectAgreementCancellationRequestError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError> for Error {
+    fn from(err: crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError) -> Self {
+        match err {
+            crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::reject_agreement_payment_request::RejectAgreementPaymentRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_agreements::SearchAgreementsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -690,6 +1058,37 @@ impl From<crate::operation::send_agreement_payment_request::SendAgreementPayment
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_purchase_orders::UpdatePurchaseOrdersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_purchase_orders::UpdatePurchaseOrdersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_purchase_orders::UpdatePurchaseOrdersError> for Error {
+    fn from(err: crate::operation::update_purchase_orders::UpdatePurchaseOrdersError) -> Self {
+        match err {
+            crate::operation::update_purchase_orders::UpdatePurchaseOrdersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_purchase_orders::UpdatePurchaseOrdersError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_purchase_orders::UpdatePurchaseOrdersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_purchase_orders::UpdatePurchaseOrdersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_purchase_orders::UpdatePurchaseOrdersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_purchase_orders::UpdatePurchaseOrdersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_purchase_orders::UpdatePurchaseOrdersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -697,6 +1096,7 @@ impl ::std::error::Error for Error {
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -710,6 +1110,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

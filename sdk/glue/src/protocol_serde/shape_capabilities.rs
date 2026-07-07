@@ -2,10 +2,16 @@
 pub(crate) fn de_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Capabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,16 +23,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SupportedAuthenticationTypes" => {
                             builder = builder.set_supported_authentication_types(
-                                crate::protocol_serde::shape_authentication_types::de_authentication_types(tokens, _value)?,
+                                crate::protocol_serde::shape_authentication_types::de_authentication_types(tokens, _value, depth + 1)?,
                             );
                         }
                         "SupportedDataOperations" => {
-                            builder = builder
-                                .set_supported_data_operations(crate::protocol_serde::shape_data_operations::de_data_operations(tokens, _value)?);
+                            builder = builder.set_supported_data_operations(crate::protocol_serde::shape_data_operations::de_data_operations(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SupportedComputeEnvironments" => {
                             builder = builder.set_supported_compute_environments(
-                                crate::protocol_serde::shape_compute_environments::de_compute_environments(tokens, _value)?,
+                                crate::protocol_serde::shape_compute_environments::de_compute_environments(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

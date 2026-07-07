@@ -23,6 +23,7 @@ impl crate::operation::get_migrations::builders::GetMigrationsInputBuilder {
 /// Fluent builder constructing a request to `GetMigrations`.
 ///
 /// <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMigrationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

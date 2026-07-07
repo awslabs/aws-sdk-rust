@@ -94,7 +94,11 @@ pub fn ser_health_check_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_health_check_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::HealthCheckConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::HealthCheckConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -273,7 +277,7 @@ pub fn de_health_check_config(
             s if s.matches("ChildHealthChecks") /* ChildHealthChecks com.amazonaws.route53#HealthCheckConfig$ChildHealthChecks */ =>  {
                 let var_32 =
                     Some(
-                        crate::protocol_serde::shape_child_health_check_list::de_child_health_check_list(&mut tag)
+                        crate::protocol_serde::shape_child_health_check_list::de_child_health_check_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -298,7 +302,7 @@ pub fn de_health_check_config(
             s if s.matches("Regions") /* Regions com.amazonaws.route53#HealthCheckConfig$Regions */ =>  {
                 let var_34 =
                     Some(
-                        crate::protocol_serde::shape_health_check_region_list::de_health_check_region_list(&mut tag)
+                        crate::protocol_serde::shape_health_check_region_list::de_health_check_region_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -308,7 +312,7 @@ pub fn de_health_check_config(
             s if s.matches("AlarmIdentifier") /* AlarmIdentifier com.amazonaws.route53#HealthCheckConfig$AlarmIdentifier */ =>  {
                 let var_35 =
                     Some(
-                        crate::protocol_serde::shape_alarm_identifier::de_alarm_identifier(&mut tag)
+                        crate::protocol_serde::shape_alarm_identifier::de_alarm_identifier(&mut tag, depth + 1)
                         ?
                     )
                 ;

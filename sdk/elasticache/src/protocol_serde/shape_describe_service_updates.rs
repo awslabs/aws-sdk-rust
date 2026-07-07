@@ -116,6 +116,8 @@ pub fn de_describe_service_updates(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeServiceUpdatesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeServiceUpdatesResponse got {start_el:?}"
@@ -146,7 +148,7 @@ pub fn de_describe_service_updates(
             s if s.matches("ServiceUpdates") /* ServiceUpdates com.amazonaws.elasticache.synthetic#DescribeServiceUpdatesOutput$ServiceUpdates */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_service_update_list::de_service_update_list(&mut tag)
+                        crate::protocol_serde::shape_service_update_list::de_service_update_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

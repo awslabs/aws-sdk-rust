@@ -166,6 +166,8 @@ pub(crate) fn de_create_presigned_url(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -193,7 +195,9 @@ pub(crate) fn de_create_presigned_url(
                 }
                 "presignedUrlFields" => {
                     builder = builder.set_presigned_url_fields(crate::protocol_serde::shape_presigned_url_fields::de_presigned_url_fields(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

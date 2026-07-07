@@ -45,10 +45,16 @@ pub fn ser_sankey_diagram_aggregated_field_wells(
 pub(crate) fn de_sankey_diagram_aggregated_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SankeyDiagramAggregatedFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,16 +66,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Destination" => {
                             builder = builder.set_destination(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Weight" => {
-                            builder = builder.set_weight(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
+                            builder = builder.set_weight(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

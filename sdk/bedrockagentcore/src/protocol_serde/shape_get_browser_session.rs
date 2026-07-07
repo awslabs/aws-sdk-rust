@@ -124,6 +124,8 @@ pub(crate) fn de_get_browser_session(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -137,7 +139,7 @@ pub(crate) fn de_get_browser_session(
                     );
                 }
                 "certificates" => {
-                    builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens, _value)?);
+                    builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens, _value, depth + 1)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -147,11 +149,15 @@ pub(crate) fn de_get_browser_session(
                 }
                 "enterprisePolicies" => {
                     builder = builder.set_enterprise_policies(
-                        crate::protocol_serde::shape_browser_enterprise_policies::de_browser_enterprise_policies(tokens, _value)?,
+                        crate::protocol_serde::shape_browser_enterprise_policies::de_browser_enterprise_policies(tokens, _value, depth + 1)?,
                     );
                 }
                 "extensions" => {
-                    builder = builder.set_extensions(crate::protocol_serde::shape_browser_extensions::de_browser_extensions(tokens, _value)?);
+                    builder = builder.set_extensions(crate::protocol_serde::shape_browser_extensions::de_browser_extensions(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "lastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -168,12 +174,15 @@ pub(crate) fn de_get_browser_session(
                 }
                 "profileConfiguration" => {
                     builder = builder.set_profile_configuration(
-                        crate::protocol_serde::shape_browser_profile_configuration::de_browser_profile_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_browser_profile_configuration::de_browser_profile_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "proxyConfiguration" => {
-                    builder =
-                        builder.set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens, _value)?);
+                    builder = builder.set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(
@@ -205,11 +214,13 @@ pub(crate) fn de_get_browser_session(
                 }
                 "streams" => {
                     builder = builder.set_streams(crate::protocol_serde::shape_browser_session_stream::de_browser_session_stream(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "viewPort" => {
-                    builder = builder.set_view_port(crate::protocol_serde::shape_view_port::de_view_port(tokens, _value)?);
+                    builder = builder.set_view_port(crate::protocol_serde::shape_view_port::de_view_port(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

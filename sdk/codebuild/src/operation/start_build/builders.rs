@@ -768,4 +768,18 @@ impl StartBuildFluentBuilder {
     pub fn get_auto_retry_limit_override(&self) -> &::std::option::Option<i32> {
         self.inner.get_auto_retry_limit_override()
     }
+    /// <p>The host operating system kernel for this build that overrides the one specified in the build project.</p>
+    pub fn host_kernel_override(mut self, input: crate::types::HostKernel) -> Self {
+        self.inner = self.inner.host_kernel_override(input);
+        self
+    }
+    /// <p>The host operating system kernel for this build that overrides the one specified in the build project.</p>
+    pub fn set_host_kernel_override(mut self, input: ::std::option::Option<crate::types::HostKernel>) -> Self {
+        self.inner = self.inner.set_host_kernel_override(input);
+        self
+    }
+    /// <p>The host operating system kernel for this build that overrides the one specified in the build project.</p>
+    pub fn get_host_kernel_override(&self) -> &::std::option::Option<crate::types::HostKernel> {
+        self.inner.get_host_kernel_override()
+    }
 }

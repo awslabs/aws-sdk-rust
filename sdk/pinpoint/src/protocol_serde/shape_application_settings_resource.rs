@@ -4,7 +4,9 @@ pub(crate) fn de_application_settings_resource_payload(
 ) -> ::std::result::Result<crate::types::ApplicationSettingsResource, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::protocol_serde::shape_application_settings_resource::de_application_settings_resource(tokens, _value)?
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    let result = crate::protocol_serde::shape_application_settings_resource::de_application_settings_resource(tokens, _value, depth + 1)?
         .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -17,10 +19,16 @@ pub(crate) fn de_application_settings_resource_payload(
 pub(crate) fn de_application_settings_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ApplicationSettingsResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +46,8 @@ where
                             );
                         }
                         "CampaignHook" => {
-                            builder = builder.set_campaign_hook(crate::protocol_serde::shape_campaign_hook::de_campaign_hook(tokens, _value)?);
+                            builder =
+                                builder.set_campaign_hook(crate::protocol_serde::shape_campaign_hook::de_campaign_hook(tokens, _value, depth + 1)?);
                         }
                         "LastModifiedDate" => {
                             builder = builder.set_last_modified_date(
@@ -48,15 +57,21 @@ where
                             );
                         }
                         "Limits" => {
-                            builder = builder.set_limits(crate::protocol_serde::shape_campaign_limits::de_campaign_limits(tokens, _value)?);
+                            builder = builder.set_limits(crate::protocol_serde::shape_campaign_limits::de_campaign_limits(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "QuietTime" => {
-                            builder = builder.set_quiet_time(crate::protocol_serde::shape_quiet_time::de_quiet_time(tokens, _value)?);
+                            builder = builder.set_quiet_time(crate::protocol_serde::shape_quiet_time::de_quiet_time(tokens, _value, depth + 1)?);
                         }
                         "JourneyLimits" => {
                             builder = builder.set_journey_limits(
                                 crate::protocol_serde::shape_application_settings_journey_limits::de_application_settings_journey_limits(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

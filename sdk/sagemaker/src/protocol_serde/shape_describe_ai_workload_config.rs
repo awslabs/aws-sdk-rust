@@ -81,6 +81,8 @@ pub(crate) fn de_describe_ai_workload_config(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -101,14 +103,21 @@ pub(crate) fn de_describe_ai_workload_config(
                     );
                 }
                 "DatasetConfig" => {
-                    builder = builder.set_dataset_config(crate::protocol_serde::shape_ai_dataset_config::de_ai_dataset_config(tokens, _value)?);
+                    builder = builder.set_dataset_config(crate::protocol_serde::shape_ai_dataset_config::de_ai_dataset_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "AIWorkloadConfigs" => {
-                    builder =
-                        builder.set_ai_workload_configs(crate::protocol_serde::shape_ai_workload_configs::de_ai_workload_configs(tokens, _value)?);
+                    builder = builder.set_ai_workload_configs(crate::protocol_serde::shape_ai_workload_configs::de_ai_workload_configs(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

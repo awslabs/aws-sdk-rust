@@ -1251,16 +1251,58 @@ pub fn ser_aws_security_finding_filters(
         }
         array_414.finish();
     }
+    if let Some(var_417) = &input.resource_owner_account_id {
+        let mut array_418 = object.key("ResourceOwnerAccountId").start_array();
+        for item_419 in var_417 {
+            {
+                #[allow(unused_mut)]
+                let mut object_420 = array_418.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_420, item_419)?;
+                object_420.finish();
+            }
+        }
+        array_418.finish();
+    }
+    if let Some(var_421) = &input.resource_owner_org_id {
+        let mut array_422 = object.key("ResourceOwnerOrgId").start_array();
+        for item_423 in var_421 {
+            {
+                #[allow(unused_mut)]
+                let mut object_424 = array_422.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_424, item_423)?;
+                object_424.finish();
+            }
+        }
+        array_422.finish();
+    }
+    if let Some(var_425) = &input.resource_provider {
+        let mut array_426 = object.key("ResourceProvider").start_array();
+        for item_427 in var_425 {
+            {
+                #[allow(unused_mut)]
+                let mut object_428 = array_426.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_428, item_427)?;
+                object_428.finish();
+            }
+        }
+        array_426.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_aws_security_finding_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsSecurityFindingFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -1269,455 +1311,670 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ProductArn" => {
-                            builder =
-                                builder.set_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "AwsAccountId" => {
-                            builder =
-                                builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Id" => {
-                            builder = builder.set_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "GeneratorId" => {
-                            builder =
-                                builder.set_generator_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Region" => {
-                            builder = builder.set_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Type" => {
-                            builder = builder.set_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "FirstObservedAt" => {
-                            builder =
-                                builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "LastObservedAt" => {
-                            builder =
-                                builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "CreatedAt" => {
-                            builder = builder.set_created_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "UpdatedAt" => {
-                            builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "SeverityProduct" => {
-                            builder =
-                                builder.set_severity_product(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "SeverityNormalized" => {
-                            builder = builder
-                                .set_severity_normalized(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "SeverityLabel" => {
-                            builder =
-                                builder.set_severity_label(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Confidence" => {
-                            builder = builder.set_confidence(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "Criticality" => {
-                            builder =
-                                builder.set_criticality(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "Title" => {
-                            builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Description" => {
-                            builder =
-                                builder.set_description(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "RecommendationText" => {
-                            builder = builder
-                                .set_recommendation_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "SourceUrl" => {
-                            builder = builder.set_source_url(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ProductFields" => {
-                            builder = builder.set_product_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
-                        }
-                        "ProductName" => {
-                            builder =
-                                builder.set_product_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "CompanyName" => {
-                            builder =
-                                builder.set_company_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "UserDefinedFields" => {
-                            builder =
-                                builder.set_user_defined_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
-                        }
-                        "MalwareName" => {
-                            builder =
-                                builder.set_malware_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "MalwareType" => {
-                            builder =
-                                builder.set_malware_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "MalwarePath" => {
-                            builder =
-                                builder.set_malware_path(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "MalwareState" => {
-                            builder =
-                                builder.set_malware_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NetworkDirection" => {
-                            builder = builder
-                                .set_network_direction(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NetworkProtocol" => {
-                            builder =
-                                builder.set_network_protocol(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NetworkSourceIpV4" => {
-                            builder =
-                                builder.set_network_source_ipv4(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens, _value)?);
-                        }
-                        "NetworkSourceIpV6" => {
-                            builder =
-                                builder.set_network_source_ipv6(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens, _value)?);
-                        }
-                        "NetworkSourcePort" => {
-                            builder = builder
-                                .set_network_source_port(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "NetworkSourceDomain" => {
-                            builder = builder
-                                .set_network_source_domain(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NetworkSourceMac" => {
-                            builder = builder
-                                .set_network_source_mac(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NetworkDestinationIpV4" => {
-                            builder =
-                                builder.set_network_destination_ipv4(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens, _value)?);
-                        }
-                        "NetworkDestinationIpV6" => {
-                            builder =
-                                builder.set_network_destination_ipv6(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens, _value)?);
-                        }
-                        "NetworkDestinationPort" => {
-                            builder = builder.set_network_destination_port(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "NetworkDestinationDomain" => {
-                            builder = builder.set_network_destination_domain(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ProcessName" => {
-                            builder =
-                                builder.set_process_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ProcessPath" => {
-                            builder =
-                                builder.set_process_path(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ProcessPid" => {
-                            builder =
-                                builder.set_process_pid(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "ProcessParentPid" => {
-                            builder = builder
-                                .set_process_parent_pid(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "ProcessLaunchedAt" => {
-                            builder =
-                                builder.set_process_launched_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "ProcessTerminatedAt" => {
-                            builder = builder
-                                .set_process_terminated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "ThreatIntelIndicatorType" => {
-                            builder = builder.set_threat_intel_indicator_type(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ThreatIntelIndicatorValue" => {
-                            builder = builder.set_threat_intel_indicator_value(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ThreatIntelIndicatorCategory" => {
-                            builder = builder.set_threat_intel_indicator_category(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ThreatIntelIndicatorLastObservedAt" => {
-                            builder = builder.set_threat_intel_indicator_last_observed_at(
-                                crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ThreatIntelIndicatorSource" => {
-                            builder = builder.set_threat_intel_indicator_source(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ThreatIntelIndicatorSourceUrl" => {
-                            builder = builder.set_threat_intel_indicator_source_url(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceType" => {
-                            builder =
-                                builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceId" => {
-                            builder =
-                                builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourcePartition" => {
-                            builder = builder
-                                .set_resource_partition(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceRegion" => {
-                            builder =
-                                builder.set_resource_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceTags" => {
-                            builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
-                        }
-                        "ResourceAwsEc2InstanceType" => {
-                            builder = builder.set_resource_aws_ec2_instance_type(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsEc2InstanceImageId" => {
-                            builder = builder.set_resource_aws_ec2_instance_image_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsEc2InstanceIpV4Addresses" => {
-                            builder = builder.set_resource_aws_ec2_instance_ipv4_addresses(
-                                crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsEc2InstanceIpV6Addresses" => {
-                            builder = builder.set_resource_aws_ec2_instance_ipv6_addresses(
-                                crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsEc2InstanceKeyName" => {
-                            builder = builder.set_resource_aws_ec2_instance_key_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsEc2InstanceIamInstanceProfileArn" => {
-                            builder = builder.set_resource_aws_ec2_instance_iam_instance_profile_arn(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsEc2InstanceVpcId" => {
-                            builder = builder.set_resource_aws_ec2_instance_vpc_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsEc2InstanceSubnetId" => {
-                            builder = builder.set_resource_aws_ec2_instance_subnet_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsEc2InstanceLaunchedAt" => {
-                            builder = builder.set_resource_aws_ec2_instance_launched_at(
-                                crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsS3BucketOwnerId" => {
-                            builder = builder.set_resource_aws_s3_bucket_owner_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsS3BucketOwnerName" => {
-                            builder = builder.set_resource_aws_s3_bucket_owner_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsIamAccessKeyUserName" => {
-                            builder = builder.set_resource_aws_iam_access_key_user_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsIamAccessKeyPrincipalName" => {
-                            builder = builder.set_resource_aws_iam_access_key_principal_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsIamAccessKeyStatus" => {
-                            builder = builder.set_resource_aws_iam_access_key_status(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsIamAccessKeyCreatedAt" => {
-                            builder = builder.set_resource_aws_iam_access_key_created_at(
-                                crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceAwsIamUserUserName" => {
-                            builder = builder.set_resource_aws_iam_user_user_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceContainerName" => {
-                            builder = builder
-                                .set_resource_container_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceContainerImageId" => {
-                            builder = builder.set_resource_container_image_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceContainerImageName" => {
-                            builder = builder.set_resource_container_image_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ResourceContainerLaunchedAt" => {
-                            builder = builder.set_resource_container_launched_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ResourceDetailsOther" => {
-                            builder =
-                                builder.set_resource_details_other(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
-                        }
-                        "ComplianceStatus" => {
-                            builder = builder
-                                .set_compliance_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "VerificationState" => {
-                            builder = builder
-                                .set_verification_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "WorkflowState" => {
-                            builder =
-                                builder.set_workflow_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "WorkflowStatus" => {
-                            builder =
-                                builder.set_workflow_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "RecordState" => {
-                            builder =
-                                builder.set_record_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "RelatedFindingsProductArn" => {
-                            builder = builder.set_related_findings_product_arn(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "RelatedFindingsId" => {
-                            builder = builder
-                                .set_related_findings_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NoteText" => {
-                            builder = builder.set_note_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "NoteUpdatedAt" => {
-                            builder =
-                                builder.set_note_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "NoteUpdatedBy" => {
-                            builder =
-                                builder.set_note_updated_by(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "Keyword" => {
-                            builder = builder.set_keyword(crate::protocol_serde::shape_keyword_filter_list::de_keyword_filter_list(tokens, _value)?);
-                        }
-                        "FindingProviderFieldsConfidence" => {
-                            builder = builder.set_finding_provider_fields_confidence(
-                                crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "FindingProviderFieldsCriticality" => {
-                            builder = builder.set_finding_provider_fields_criticality(
-                                crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "FindingProviderFieldsRelatedFindingsId" => {
-                            builder = builder.set_finding_provider_fields_related_findings_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "FindingProviderFieldsRelatedFindingsProductArn" => {
-                            builder = builder.set_finding_provider_fields_related_findings_product_arn(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "FindingProviderFieldsSeverityLabel" => {
-                            builder = builder.set_finding_provider_fields_severity_label(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "FindingProviderFieldsSeverityOriginal" => {
-                            builder = builder.set_finding_provider_fields_severity_original(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "FindingProviderFieldsTypes" => {
-                            builder = builder.set_finding_provider_fields_types(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "Sample" => {
-                            builder = builder.set_sample(crate::protocol_serde::shape_boolean_filter_list::de_boolean_filter_list(tokens, _value)?);
-                        }
-                        "ComplianceSecurityControlId" => {
-                            builder = builder.set_compliance_security_control_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ComplianceAssociatedStandardsId" => {
-                            builder = builder.set_compliance_associated_standards_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "VulnerabilitiesExploitAvailable" => {
-                            builder = builder.set_vulnerabilities_exploit_available(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "VulnerabilitiesFixAvailable" => {
-                            builder = builder.set_vulnerabilities_fix_available(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ComplianceSecurityControlParametersName" => {
-                            builder = builder.set_compliance_security_control_parameters_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "ComplianceSecurityControlParametersValue" => {
-                            builder = builder.set_compliance_security_control_parameters_value(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "AwsAccountName" => {
-                            builder =
-                                builder.set_aws_account_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ResourceApplicationName" => {
-                            builder = builder.set_resource_application_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ResourceApplicationArn" => {
-                            builder = builder.set_resource_application_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ProductArn" => {
+                                builder = builder.set_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "AwsAccountId" => {
+                                builder = builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Id" => {
+                                builder = builder.set_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "GeneratorId" => {
+                                builder = builder.set_generator_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Region" => {
+                                builder = builder.set_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Type" => {
+                                builder = builder.set_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "FirstObservedAt" => {
+                                builder = builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "LastObservedAt" => {
+                                builder = builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CreatedAt" => {
+                                builder = builder.set_created_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "UpdatedAt" => {
+                                builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SeverityProduct" => {
+                                builder = builder.set_severity_product(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SeverityNormalized" => {
+                                builder = builder.set_severity_normalized(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SeverityLabel" => {
+                                builder = builder.set_severity_label(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Confidence" => {
+                                builder = builder.set_confidence(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Criticality" => {
+                                builder = builder.set_criticality(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Title" => {
+                                builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Description" => {
+                                builder = builder.set_description(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RecommendationText" => {
+                                builder = builder.set_recommendation_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SourceUrl" => {
+                                builder = builder.set_source_url(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ProductFields" => {
+                                builder = builder.set_product_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ProductName" => {
+                                builder = builder.set_product_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CompanyName" => {
+                                builder = builder.set_company_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "UserDefinedFields" => {
+                                builder = builder.set_user_defined_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "MalwareName" => {
+                                builder = builder.set_malware_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "MalwareType" => {
+                                builder = builder.set_malware_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "MalwarePath" => {
+                                builder = builder.set_malware_path(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "MalwareState" => {
+                                builder = builder.set_malware_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkDirection" => {
+                                builder = builder.set_network_direction(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkProtocol" => {
+                                builder = builder.set_network_protocol(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkSourceIpV4" => {
+                                builder = builder.set_network_source_ipv4(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkSourceIpV6" => {
+                                builder = builder.set_network_source_ipv6(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkSourcePort" => {
+                                builder = builder.set_network_source_port(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkSourceDomain" => {
+                                builder = builder.set_network_source_domain(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkSourceMac" => {
+                                builder = builder.set_network_source_mac(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkDestinationIpV4" => {
+                                builder = builder.set_network_destination_ipv4(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkDestinationIpV6" => {
+                                builder = builder.set_network_destination_ipv6(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NetworkDestinationPort" => {
+                                builder = builder.set_network_destination_port(
+                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "NetworkDestinationDomain" => {
+                                builder = builder.set_network_destination_domain(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ProcessName" => {
+                                builder = builder.set_process_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ProcessPath" => {
+                                builder = builder.set_process_path(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ProcessPid" => {
+                                builder = builder.set_process_pid(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ProcessParentPid" => {
+                                builder = builder.set_process_parent_pid(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ProcessLaunchedAt" => {
+                                builder = builder.set_process_launched_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ProcessTerminatedAt" => {
+                                builder = builder.set_process_terminated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ThreatIntelIndicatorType" => {
+                                builder = builder.set_threat_intel_indicator_type(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ThreatIntelIndicatorValue" => {
+                                builder = builder.set_threat_intel_indicator_value(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ThreatIntelIndicatorCategory" => {
+                                builder = builder.set_threat_intel_indicator_category(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ThreatIntelIndicatorLastObservedAt" => {
+                                builder = builder.set_threat_intel_indicator_last_observed_at(
+                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ThreatIntelIndicatorSource" => {
+                                builder = builder.set_threat_intel_indicator_source(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ThreatIntelIndicatorSourceUrl" => {
+                                builder = builder.set_threat_intel_indicator_source_url(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceType" => {
+                                builder = builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceId" => {
+                                builder = builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourcePartition" => {
+                                builder = builder.set_resource_partition(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceRegion" => {
+                                builder = builder.set_resource_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceTags" => {
+                                builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceAwsEc2InstanceType" => {
+                                builder = builder.set_resource_aws_ec2_instance_type(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsEc2InstanceImageId" => {
+                                builder = builder.set_resource_aws_ec2_instance_image_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsEc2InstanceIpV4Addresses" => {
+                                builder = builder.set_resource_aws_ec2_instance_ipv4_addresses(
+                                    crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsEc2InstanceIpV6Addresses" => {
+                                builder = builder.set_resource_aws_ec2_instance_ipv6_addresses(
+                                    crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsEc2InstanceKeyName" => {
+                                builder = builder.set_resource_aws_ec2_instance_key_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsEc2InstanceIamInstanceProfileArn" => {
+                                builder = builder.set_resource_aws_ec2_instance_iam_instance_profile_arn(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsEc2InstanceVpcId" => {
+                                builder = builder.set_resource_aws_ec2_instance_vpc_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsEc2InstanceSubnetId" => {
+                                builder = builder.set_resource_aws_ec2_instance_subnet_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsEc2InstanceLaunchedAt" => {
+                                builder = builder.set_resource_aws_ec2_instance_launched_at(
+                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsS3BucketOwnerId" => {
+                                builder = builder.set_resource_aws_s3_bucket_owner_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsS3BucketOwnerName" => {
+                                builder = builder.set_resource_aws_s3_bucket_owner_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsIamAccessKeyUserName" => {
+                                builder = builder.set_resource_aws_iam_access_key_user_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsIamAccessKeyPrincipalName" => {
+                                builder = builder.set_resource_aws_iam_access_key_principal_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsIamAccessKeyStatus" => {
+                                builder = builder.set_resource_aws_iam_access_key_status(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsIamAccessKeyCreatedAt" => {
+                                builder = builder.set_resource_aws_iam_access_key_created_at(
+                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceAwsIamUserUserName" => {
+                                builder = builder.set_resource_aws_iam_user_user_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceContainerName" => {
+                                builder = builder.set_resource_container_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceContainerImageId" => {
+                                builder = builder.set_resource_container_image_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceContainerImageName" => {
+                                builder = builder.set_resource_container_image_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceContainerLaunchedAt" => {
+                                builder = builder.set_resource_container_launched_at(
+                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceDetailsOther" => {
+                                builder = builder.set_resource_details_other(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ComplianceStatus" => {
+                                builder = builder.set_compliance_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "VerificationState" => {
+                                builder = builder.set_verification_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "WorkflowState" => {
+                                builder = builder.set_workflow_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "WorkflowStatus" => {
+                                builder = builder.set_workflow_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RecordState" => {
+                                builder = builder.set_record_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RelatedFindingsProductArn" => {
+                                builder = builder.set_related_findings_product_arn(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "RelatedFindingsId" => {
+                                builder = builder.set_related_findings_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NoteText" => {
+                                builder = builder.set_note_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NoteUpdatedAt" => {
+                                builder = builder.set_note_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NoteUpdatedBy" => {
+                                builder = builder.set_note_updated_by(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Keyword" => {
+                                builder = builder.set_keyword(crate::protocol_serde::shape_keyword_filter_list::de_keyword_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "FindingProviderFieldsConfidence" => {
+                                builder = builder.set_finding_provider_fields_confidence(
+                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "FindingProviderFieldsCriticality" => {
+                                builder = builder.set_finding_provider_fields_criticality(
+                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "FindingProviderFieldsRelatedFindingsId" => {
+                                builder = builder.set_finding_provider_fields_related_findings_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "FindingProviderFieldsRelatedFindingsProductArn" => {
+                                builder = builder.set_finding_provider_fields_related_findings_product_arn(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "FindingProviderFieldsSeverityLabel" => {
+                                builder = builder.set_finding_provider_fields_severity_label(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "FindingProviderFieldsSeverityOriginal" => {
+                                builder = builder.set_finding_provider_fields_severity_original(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "FindingProviderFieldsTypes" => {
+                                builder = builder.set_finding_provider_fields_types(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Sample" => {
+                                builder = builder.set_sample(crate::protocol_serde::shape_boolean_filter_list::de_boolean_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ComplianceSecurityControlId" => {
+                                builder = builder.set_compliance_security_control_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ComplianceAssociatedStandardsId" => {
+                                builder = builder.set_compliance_associated_standards_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "VulnerabilitiesExploitAvailable" => {
+                                builder = builder.set_vulnerabilities_exploit_available(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "VulnerabilitiesFixAvailable" => {
+                                builder = builder.set_vulnerabilities_fix_available(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ComplianceSecurityControlParametersName" => {
+                                builder = builder.set_compliance_security_control_parameters_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ComplianceSecurityControlParametersValue" => {
+                                builder = builder.set_compliance_security_control_parameters_value(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "AwsAccountName" => {
+                                builder = builder.set_aws_account_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceApplicationName" => {
+                                builder = builder.set_resource_application_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceApplicationArn" => {
+                                builder = builder.set_resource_application_arn(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceOwnerAccountId" => {
+                                builder = builder.set_resource_owner_account_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResourceOwnerOrgId" => {
+                                builder = builder.set_resource_owner_org_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ResourceProvider" => {
+                                builder = builder.set_resource_provider(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

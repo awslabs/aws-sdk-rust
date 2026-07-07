@@ -2,10 +2,16 @@
 pub(crate) fn de_address<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Address>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,103 +20,109 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Label" => {
-                            builder = builder.set_label(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Label" => {
+                                builder = builder.set_label(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Country" => {
+                                builder = builder.set_country(crate::protocol_serde::shape_country::de_country(tokens, _value, depth + 1)?);
+                            }
+                            "Region" => {
+                                builder = builder.set_region(crate::protocol_serde::shape_region::de_region(tokens, _value, depth + 1)?);
+                            }
+                            "SubRegion" => {
+                                builder = builder.set_sub_region(crate::protocol_serde::shape_sub_region::de_sub_region(tokens, _value, depth + 1)?);
+                            }
+                            "Locality" => {
+                                builder = builder.set_locality(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "District" => {
+                                builder = builder.set_district(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SubDistrict" => {
+                                builder = builder.set_sub_district(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "PostalCode" => {
+                                builder = builder.set_postal_code(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Block" => {
+                                builder = builder.set_block(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SubBlock" => {
+                                builder = builder.set_sub_block(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Intersection" => {
+                                builder = builder.set_intersection(
+                                    crate::protocol_serde::shape_intersection_street_list::de_intersection_street_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Street" => {
+                                builder = builder.set_street(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "StreetComponents" => {
+                                builder = builder.set_street_components(
+                                    crate::protocol_serde::shape_street_components_list::de_street_components_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "AddressNumber" => {
+                                builder = builder.set_address_number(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Building" => {
+                                builder = builder.set_building(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SecondaryAddressComponents" => {
+                                builder = builder.set_secondary_address_components(
+                                    crate::protocol_serde::shape_secondary_address_component_list::de_secondary_address_component_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Country" => {
-                            builder = builder.set_country(crate::protocol_serde::shape_country::de_country(tokens, _value)?);
-                        }
-                        "Region" => {
-                            builder = builder.set_region(crate::protocol_serde::shape_region::de_region(tokens, _value)?);
-                        }
-                        "SubRegion" => {
-                            builder = builder.set_sub_region(crate::protocol_serde::shape_sub_region::de_sub_region(tokens, _value)?);
-                        }
-                        "Locality" => {
-                            builder = builder.set_locality(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "District" => {
-                            builder = builder.set_district(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SubDistrict" => {
-                            builder = builder.set_sub_district(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "PostalCode" => {
-                            builder = builder.set_postal_code(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Block" => {
-                            builder = builder.set_block(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SubBlock" => {
-                            builder = builder.set_sub_block(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Intersection" => {
-                            builder = builder.set_intersection(crate::protocol_serde::shape_intersection_street_list::de_intersection_street_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Street" => {
-                            builder = builder.set_street(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "StreetComponents" => {
-                            builder = builder.set_street_components(crate::protocol_serde::shape_street_components_list::de_street_components_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "AddressNumber" => {
-                            builder = builder.set_address_number(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Building" => {
-                            builder = builder.set_building(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SecondaryAddressComponents" => {
-                            builder = builder.set_secondary_address_components(
-                                crate::protocol_serde::shape_secondary_address_component_list::de_secondary_address_component_list(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

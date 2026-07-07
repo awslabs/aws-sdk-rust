@@ -2,10 +2,16 @@
 pub(crate) fn de_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Input>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,11 +29,17 @@ where
                             );
                         }
                         "attachedChannels" => {
-                            builder = builder.set_attached_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_attached_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "destinations" => {
                             builder = builder.set_destinations(crate::protocol_serde::shape_list_of_input_destination::de_list_of_input_destination(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "id" => {
@@ -46,11 +58,19 @@ where
                         }
                         "inputDevices" => {
                             builder = builder.set_input_devices(
-                                crate::protocol_serde::shape_list_of_input_device_settings::de_list_of_input_device_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_input_device_settings::de_list_of_input_device_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "inputPartnerIds" => {
-                            builder = builder.set_input_partner_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_input_partner_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "inputSourceType" => {
                             builder = builder.set_input_source_type(
@@ -61,7 +81,7 @@ where
                         }
                         "mediaConnectFlows" => {
                             builder = builder.set_media_connect_flows(
-                                crate::protocol_serde::shape_list_of_media_connect_flow::de_list_of_media_connect_flow(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_media_connect_flow::de_list_of_media_connect_flow(tokens, _value, depth + 1)?,
                             );
                         }
                         "name" => {
@@ -79,11 +99,17 @@ where
                             );
                         }
                         "securityGroups" => {
-                            builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "sources" => {
                             builder = builder.set_sources(crate::protocol_serde::shape_list_of_input_source::de_list_of_input_source(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "state" => {
@@ -94,7 +120,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "type" => {
                             builder = builder.set_type(
@@ -104,7 +130,8 @@ where
                             );
                         }
                         "srtSettings" => {
-                            builder = builder.set_srt_settings(crate::protocol_serde::shape_srt_settings::de_srt_settings(tokens, _value)?);
+                            builder =
+                                builder.set_srt_settings(crate::protocol_serde::shape_srt_settings::de_srt_settings(tokens, _value, depth + 1)?);
                         }
                         "inputNetworkLocation" => {
                             builder = builder.set_input_network_location(
@@ -114,20 +141,33 @@ where
                             );
                         }
                         "multicastSettings" => {
-                            builder = builder
-                                .set_multicast_settings(crate::protocol_serde::shape_multicast_settings::de_multicast_settings(tokens, _value)?);
+                            builder = builder.set_multicast_settings(crate::protocol_serde::shape_multicast_settings::de_multicast_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "smpte2110ReceiverGroupSettings" => {
                             builder = builder.set_smpte2110_receiver_group_settings(
-                                crate::protocol_serde::shape_smpte2110_receiver_group_settings::de_smpte2110_receiver_group_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_smpte2110_receiver_group_settings::de_smpte2110_receiver_group_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "sdiSources" => {
-                            builder = builder.set_sdi_sources(crate::protocol_serde::shape_input_sdi_sources::de_input_sdi_sources(tokens, _value)?);
+                            builder = builder.set_sdi_sources(crate::protocol_serde::shape_input_sdi_sources::de_input_sdi_sources(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "routerSettings" => {
                             builder = builder.set_router_settings(crate::protocol_serde::shape_router_input_settings::de_router_input_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_automated_reasoning_policy_build_step_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningPolicyBuildStepContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,16 +37,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "planning" => Some(crate::types::AutomatedReasoningPolicyBuildStepContext::Planning(
-                            crate::protocol_serde::shape_automated_reasoning_policy_planning::de_automated_reasoning_policy_planning(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'planning' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_automated_reasoning_policy_planning::de_automated_reasoning_policy_planning(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'planning' cannot be null"))?,
                         )),
                         "mutation" => Some(crate::types::AutomatedReasoningPolicyBuildStepContext::Mutation(
-                            crate::protocol_serde::shape_automated_reasoning_policy_mutation::de_automated_reasoning_policy_mutation(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mutation' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_automated_reasoning_policy_mutation::de_automated_reasoning_policy_mutation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mutation' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

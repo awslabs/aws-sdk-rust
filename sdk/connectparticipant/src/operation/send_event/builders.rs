@@ -26,7 +26,7 @@ impl crate::operation::send_event::builders::SendEventInputBuilder {
 /// <p>The <code>application/vnd.amazonaws.connect.event.connection.acknowledged</code> ContentType is no longer maintained since December 31, 2024. This event has been migrated to the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API using the <code>ConnectParticipant</code> field.</p>
 /// </note>
 /// <p>Sends an event. Message receipts are not supported when there are more than two active participants in the chat. Using the SendEvent API for message receipts when a supervisor is barged-in will result in a conflict exception.</p>
-/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a>.</p><note>
+/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect Customer Chat security best practices</a>.</p><note>
 /// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>

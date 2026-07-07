@@ -130,6 +130,8 @@ pub(crate) fn de_get_wireless_device_statistics(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,12 +146,16 @@ pub(crate) fn de_get_wireless_device_statistics(
                 }
                 "LoRaWAN" => {
                     builder = builder.set_lo_ra_wan(crate::protocol_serde::shape_lo_ra_wan_device_metadata::de_lo_ra_wan_device_metadata(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Sidewalk" => {
                     builder = builder.set_sidewalk(crate::protocol_serde::shape_sidewalk_device_metadata::de_sidewalk_device_metadata(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "WirelessDeviceId" => {

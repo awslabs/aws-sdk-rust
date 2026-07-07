@@ -40,6 +40,8 @@ pub fn de_run_instances(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RunInstancesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RunInstancesResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_run_instances(
             s if s.matches("groupSet") /* Groups com.amazonaws.ec2.synthetic#RunInstancesOutput$Groups */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -99,7 +101,7 @@ pub fn de_run_instances(
             s if s.matches("instancesSet") /* Instances com.amazonaws.ec2.synthetic#RunInstancesOutput$Instances */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_instance_list::de_instance_list(&mut tag)
+                        crate::protocol_serde::shape_instance_list::de_instance_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

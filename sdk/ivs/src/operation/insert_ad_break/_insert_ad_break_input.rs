@@ -5,7 +5,7 @@
 pub struct InsertAdBreakInput {
     /// <p>ARN of the channel into which the ad break is inserted.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Maximum duration of the ad break, in seconds.</p>
+    /// <p>Duration of the ad break, in seconds.</p>
     pub duration_seconds: ::std::option::Option<i32>,
 }
 impl InsertAdBreakInput {
@@ -13,7 +13,7 @@ impl InsertAdBreakInput {
     pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>Maximum duration of the ad break, in seconds.</p>
+    /// <p>Duration of the ad break, in seconds.</p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
@@ -48,18 +48,18 @@ impl InsertAdBreakInputBuilder {
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_arn
     }
-    /// <p>Maximum duration of the ad break, in seconds.</p>
+    /// <p>Duration of the ad break, in seconds.</p>
     /// This field is required.
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum duration of the ad break, in seconds.</p>
+    /// <p>Duration of the ad break, in seconds.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
     }
-    /// <p>Maximum duration of the ad break, in seconds.</p>
+    /// <p>Duration of the ad break, in seconds.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }

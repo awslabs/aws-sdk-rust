@@ -122,45 +122,45 @@ impl SendWorkflowStepActionFluentBuilder {
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_step_execution_id()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image build version to send action for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version associated with the workflow step execution. This value must match the image that owns the waiting step. If the ARN does not correspond to the image running the workflow, then the request fails with a validation error.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_build_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image build version to send action for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version associated with the workflow step execution. This value must match the image that owns the waiting step. If the ARN does not correspond to the image running the workflow, then the request fails with a validation error.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_build_version_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image build version to send action for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version associated with the workflow step execution. This value must match the image that owns the waiting step. If the ARN does not correspond to the image running the workflow, then the request fails with a validation error.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_build_version_arn()
     }
-    /// <p>The action for the image creation process to take while a workflow <code>WaitForAction</code> step waits for an asynchronous action to complete.</p>
+    /// <p>The action to perform on the paused workflow step. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
     pub fn action(mut self, input: crate::types::WorkflowStepActionType) -> Self {
         self.inner = self.inner.action(input);
         self
     }
-    /// <p>The action for the image creation process to take while a workflow <code>WaitForAction</code> step waits for an asynchronous action to complete.</p>
+    /// <p>The action to perform on the paused workflow step. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::WorkflowStepActionType>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
-    /// <p>The action for the image creation process to take while a workflow <code>WaitForAction</code> step waits for an asynchronous action to complete.</p>
+    /// <p>The action to perform on the paused workflow step. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::WorkflowStepActionType> {
         self.inner.get_action()
     }
-    /// <p>The reason why this action is sent.</p>
+    /// <p>The reason for the action. This value is stored with the step execution record and is accessible in subsequent workflow steps via step output references.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
         self
     }
-    /// <p>The reason why this action is sent.</p>
+    /// <p>The reason for the action. This value is stored with the step execution record and is accessible in subsequent workflow steps via step output references.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }
-    /// <p>The reason why this action is sent.</p>
+    /// <p>The reason for the action. This value is stored with the step execution record and is accessible in subsequent workflow steps via step output references.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reason()
     }

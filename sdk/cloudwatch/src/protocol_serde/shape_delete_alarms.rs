@@ -17,6 +17,21 @@ pub fn de_delete_alarms_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ResourceConflict" => crate::operation::delete_alarms::DeleteAlarmsError::ResourceConflict({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceConflictBuilder::default();
+                output = crate::protocol_serde::shape_resource_conflict::de_resource_conflict_cbor_err(_response_body, output)
+                    .map_err(crate::operation::delete_alarms::DeleteAlarmsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFound" => crate::operation::delete_alarms::DeleteAlarmsError::ResourceNotFound({
             #[allow(unused_mut)]
             let mut tmp = {

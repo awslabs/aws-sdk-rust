@@ -23,14 +23,22 @@ pub fn ser_metric_stat(
 
 pub(crate) fn de_metric_stat(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MetricStat, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::MetricStatBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::MetricStatBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "Metric" => builder.set_metric(Some(crate::protocol_serde::shape_metric::de_metric(decoder)?)),
+            "Metric" => builder.set_metric(Some(crate::protocol_serde::shape_metric::de_metric(decoder, depth + 1)?)),
             "Period" => builder.set_period(Some(decoder.integer()?)),
             "Stat" => builder.set_stat(Some(decoder.string()?)),
             "Unit" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -54,13 +62,13 @@ pub(crate) fn de_metric_stat(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

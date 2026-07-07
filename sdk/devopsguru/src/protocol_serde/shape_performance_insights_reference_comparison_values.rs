@@ -2,10 +2,16 @@
 pub(crate) fn de_performance_insights_reference_comparison_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PerformanceInsightsReferenceComparisonValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,14 +24,18 @@ where
                         "ReferenceScalar" => {
                             builder = builder.set_reference_scalar(
                                 crate::protocol_serde::shape_performance_insights_reference_scalar::de_performance_insights_reference_scalar(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ReferenceMetric" => {
                             builder = builder.set_reference_metric(
                                 crate::protocol_serde::shape_performance_insights_reference_metric::de_performance_insights_reference_metric(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

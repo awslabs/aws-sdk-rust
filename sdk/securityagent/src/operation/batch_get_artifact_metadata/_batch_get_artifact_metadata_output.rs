@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetArtifactMetadataOutput {
-    /// List of artifact metadata
+    /// <p>The list of artifact metadata items that were found.</p>
     pub artifact_metadata_list: ::std::vec::Vec<crate::types::ArtifactMetadataItem>,
     _request_id: Option<String>,
 }
 impl BatchGetArtifactMetadataOutput {
-    /// List of artifact metadata
+    /// <p>The list of artifact metadata items that were found.</p>
     pub fn artifact_metadata_list(&self) -> &[crate::types::ArtifactMetadataItem] {
         use std::ops::Deref;
         self.artifact_metadata_list.deref()
@@ -38,19 +38,19 @@ impl BatchGetArtifactMetadataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_artifact_metadata_list`](Self::set_artifact_metadata_list).
     ///
-    /// List of artifact metadata
+    /// <p>The list of artifact metadata items that were found.</p>
     pub fn artifact_metadata_list(mut self, input: crate::types::ArtifactMetadataItem) -> Self {
         let mut v = self.artifact_metadata_list.unwrap_or_default();
         v.push(input);
         self.artifact_metadata_list = ::std::option::Option::Some(v);
         self
     }
-    /// List of artifact metadata
+    /// <p>The list of artifact metadata items that were found.</p>
     pub fn set_artifact_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactMetadataItem>>) -> Self {
         self.artifact_metadata_list = input;
         self
     }
-    /// List of artifact metadata
+    /// <p>The list of artifact metadata items that were found.</p>
     pub fn get_artifact_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactMetadataItem>> {
         &self.artifact_metadata_list
     }

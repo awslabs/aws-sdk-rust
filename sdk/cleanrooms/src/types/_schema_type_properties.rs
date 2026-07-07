@@ -4,8 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SchemaTypeProperties {
+    /// <p>The schema type properties for a configured table association.</p>
+    ConfiguredTableAssociation(crate::types::ConfiguredTableAssociationSchemaTypeProperties),
     /// <p>The ID mapping table for the schema type properties.</p>
     IdMappingTable(crate::types::IdMappingTableSchemaTypeProperties),
+    /// <p>The schema type properties for an intermediate table.</p>
+    IntermediateTable(crate::types::IntermediateTableSchemaTypeProperties),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +21,19 @@ pub enum SchemaTypeProperties {
     Unknown,
 }
 impl SchemaTypeProperties {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`ConfiguredTableAssociation`](crate::types::SchemaTypeProperties::ConfiguredTableAssociation), extracting the inner [`ConfiguredTableAssociationSchemaTypeProperties`](crate::types::ConfiguredTableAssociationSchemaTypeProperties).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_configured_table_association(&self) -> ::std::result::Result<&crate::types::ConfiguredTableAssociationSchemaTypeProperties, &Self> {
+        if let SchemaTypeProperties::ConfiguredTableAssociation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ConfiguredTableAssociation`](crate::types::SchemaTypeProperties::ConfiguredTableAssociation).
+    pub fn is_configured_table_association(&self) -> bool {
+        self.as_configured_table_association().is_ok()
+    }
     /// Tries to convert the enum instance into [`IdMappingTable`](crate::types::SchemaTypeProperties::IdMappingTable), extracting the inner [`IdMappingTableSchemaTypeProperties`](crate::types::IdMappingTableSchemaTypeProperties).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_id_mapping_table(&self) -> ::std::result::Result<&crate::types::IdMappingTableSchemaTypeProperties, &Self> {
@@ -30,6 +46,19 @@ impl SchemaTypeProperties {
     /// Returns true if this is a [`IdMappingTable`](crate::types::SchemaTypeProperties::IdMappingTable).
     pub fn is_id_mapping_table(&self) -> bool {
         self.as_id_mapping_table().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IntermediateTable`](crate::types::SchemaTypeProperties::IntermediateTable), extracting the inner [`IntermediateTableSchemaTypeProperties`](crate::types::IntermediateTableSchemaTypeProperties).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_intermediate_table(&self) -> ::std::result::Result<&crate::types::IntermediateTableSchemaTypeProperties, &Self> {
+        if let SchemaTypeProperties::IntermediateTable(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IntermediateTable`](crate::types::SchemaTypeProperties::IntermediateTable).
+    pub fn is_intermediate_table(&self) -> bool {
+        self.as_intermediate_table().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

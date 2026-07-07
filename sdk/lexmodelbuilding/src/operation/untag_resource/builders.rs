@@ -23,6 +23,7 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p>Removes tags from a bot, bot alias or bot channel.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

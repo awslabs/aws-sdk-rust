@@ -2,10 +2,16 @@
 pub(crate) fn de_benefit_application_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BenefitApplicationSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,11 +57,14 @@ where
                             );
                         }
                         "Programs" => {
-                            builder = builder.set_programs(crate::protocol_serde::shape_programs::de_programs(tokens, _value)?);
+                            builder = builder.set_programs(crate::protocol_serde::shape_programs::de_programs(tokens, _value, depth + 1)?);
                         }
                         "FulfillmentTypes" => {
-                            builder =
-                                builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(tokens, _value)?);
+                            builder = builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Status" => {
                             builder = builder.set_status(
@@ -84,11 +93,14 @@ where
                             )?);
                         }
                         "BenefitApplicationDetails" => {
-                            builder =
-                                builder.set_benefit_application_details(crate::protocol_serde::shape_attributes::de_attributes(tokens, _value)?);
+                            builder = builder.set_benefit_application_details(crate::protocol_serde::shape_attributes::de_attributes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AssociatedResources" => {
-                            builder = builder.set_associated_resources(crate::protocol_serde::shape_arns::de_arns(tokens, _value)?);
+                            builder = builder.set_associated_resources(crate::protocol_serde::shape_arns::de_arns(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

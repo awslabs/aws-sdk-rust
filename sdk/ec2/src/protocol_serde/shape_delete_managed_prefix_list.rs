@@ -51,6 +51,8 @@ pub fn de_delete_managed_prefix_list(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteManagedPrefixListResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteManagedPrefixListResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_delete_managed_prefix_list(
             s if s.matches("prefixList") /* PrefixList com.amazonaws.ec2.synthetic#DeleteManagedPrefixListOutput$PrefixList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_managed_prefix_list::de_managed_prefix_list(&mut tag)
+                        crate::protocol_serde::shape_managed_prefix_list::de_managed_prefix_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

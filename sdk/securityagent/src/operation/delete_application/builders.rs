@@ -22,7 +22,7 @@ impl crate::operation::delete_application::builders::DeleteApplicationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteApplication`.
 ///
-/// Deletes an application
+/// <p>Deletes an application and its associated configuration, including IAM Identity Center settings.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to delete.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to delete.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to delete.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

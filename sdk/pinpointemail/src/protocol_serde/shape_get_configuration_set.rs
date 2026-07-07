@@ -97,6 +97,8 @@ pub(crate) fn de_get_configuration_set(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -110,19 +112,35 @@ pub(crate) fn de_get_configuration_set(
                     );
                 }
                 "DeliveryOptions" => {
-                    builder = builder.set_delivery_options(crate::protocol_serde::shape_delivery_options::de_delivery_options(tokens, _value)?);
+                    builder = builder.set_delivery_options(crate::protocol_serde::shape_delivery_options::de_delivery_options(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ReputationOptions" => {
-                    builder = builder.set_reputation_options(crate::protocol_serde::shape_reputation_options::de_reputation_options(tokens, _value)?);
+                    builder = builder.set_reputation_options(crate::protocol_serde::shape_reputation_options::de_reputation_options(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "SendingOptions" => {
-                    builder = builder.set_sending_options(crate::protocol_serde::shape_sending_options::de_sending_options(tokens, _value)?);
+                    builder = builder.set_sending_options(crate::protocol_serde::shape_sending_options::de_sending_options(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                 }
                 "TrackingOptions" => {
-                    builder = builder.set_tracking_options(crate::protocol_serde::shape_tracking_options::de_tracking_options(tokens, _value)?);
+                    builder = builder.set_tracking_options(crate::protocol_serde::shape_tracking_options::de_tracking_options(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

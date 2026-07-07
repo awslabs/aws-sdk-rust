@@ -2,10 +2,16 @@
 pub(crate) fn de_program_track_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProgramTrackSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,15 +37,15 @@ where
                     }
                     variant = match key.as_ref() {
                         "azEl" => Some(crate::types::ProgramTrackSettings::AzEl(
-                            crate::protocol_serde::shape_az_el_program_track_settings::de_az_el_program_track_settings(tokens, _value)?
+                            crate::protocol_serde::shape_az_el_program_track_settings::de_az_el_program_track_settings(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azEl' cannot be null"))?,
                         )),
                         "oem" => Some(crate::types::ProgramTrackSettings::Oem(
-                            crate::protocol_serde::shape_oem_program_track_settings::de_oem_program_track_settings(tokens, _value)?
+                            crate::protocol_serde::shape_oem_program_track_settings::de_oem_program_track_settings(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'oem' cannot be null"))?,
                         )),
                         "tle" => Some(crate::types::ProgramTrackSettings::Tle(
-                            crate::protocol_serde::shape_tle_program_track_settings::de_tle_program_track_settings(tokens, _value)?
+                            crate::protocol_serde::shape_tle_program_track_settings::de_tle_program_track_settings(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tle' cannot be null"))?,
                         )),
                         _ => {

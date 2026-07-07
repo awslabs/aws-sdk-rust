@@ -6,11 +6,17 @@
 pub struct EbsEffectiveRecommendationPreferences {
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon EBS volumes.</p>
     pub savings_estimation_mode: ::std::option::Option<crate::types::EbsSavingsEstimationMode>,
+    /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
+    pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
 }
 impl EbsEffectiveRecommendationPreferences {
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon EBS volumes.</p>
     pub fn savings_estimation_mode(&self) -> ::std::option::Option<&crate::types::EbsSavingsEstimationMode> {
         self.savings_estimation_mode.as_ref()
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
+    pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
+        self.look_back_period.as_ref()
     }
 }
 impl EbsEffectiveRecommendationPreferences {
@@ -25,6 +31,7 @@ impl EbsEffectiveRecommendationPreferences {
 #[non_exhaustive]
 pub struct EbsEffectiveRecommendationPreferencesBuilder {
     pub(crate) savings_estimation_mode: ::std::option::Option<crate::types::EbsSavingsEstimationMode>,
+    pub(crate) look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
 }
 impl EbsEffectiveRecommendationPreferencesBuilder {
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon EBS volumes.</p>
@@ -41,10 +48,25 @@ impl EbsEffectiveRecommendationPreferencesBuilder {
     pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::EbsSavingsEstimationMode> {
         &self.savings_estimation_mode
     }
+    /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
+    pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
+        self.look_back_period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
+    pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
+        self.look_back_period = input;
+        self
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
+    pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
+        &self.look_back_period
+    }
     /// Consumes the builder and constructs a [`EbsEffectiveRecommendationPreferences`](crate::types::EbsEffectiveRecommendationPreferences).
     pub fn build(self) -> crate::types::EbsEffectiveRecommendationPreferences {
         crate::types::EbsEffectiveRecommendationPreferences {
             savings_estimation_mode: self.savings_estimation_mode,
+            look_back_period: self.look_back_period,
         }
     }
 }

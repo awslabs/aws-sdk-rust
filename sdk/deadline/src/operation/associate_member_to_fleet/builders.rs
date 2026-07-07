@@ -192,4 +192,18 @@ impl AssociateMemberToFleetFluentBuilder {
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }
+    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_center_region(input.into());
+        self
+    }
+    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_center_region(input);
+        self
+    }
+    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_center_region()
+    }
 }

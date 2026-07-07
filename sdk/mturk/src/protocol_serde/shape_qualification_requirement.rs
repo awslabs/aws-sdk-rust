@@ -45,10 +45,16 @@ pub fn ser_qualification_requirement(
 pub(crate) fn de_qualification_requirement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::QualificationRequirement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -73,10 +79,11 @@ where
                             );
                         }
                         "IntegerValues" => {
-                            builder = builder.set_integer_values(crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?);
+                            builder =
+                                builder.set_integer_values(crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value, depth + 1)?);
                         }
                         "LocaleValues" => {
-                            builder = builder.set_locale_values(crate::protocol_serde::shape_locale_list::de_locale_list(tokens, _value)?);
+                            builder = builder.set_locale_values(crate::protocol_serde::shape_locale_list::de_locale_list(tokens, _value, depth + 1)?);
                         }
                         "RequiredToPreview" => {
                             builder = builder.set_required_to_preview(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -57,10 +57,16 @@ pub fn ser_geospatial_layer_item(
 pub(crate) fn de_geospatial_layer_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GeospatialLayerItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -86,7 +92,7 @@ where
                         }
                         "DataSource" => {
                             builder = builder.set_data_source(
-                                crate::protocol_serde::shape_geospatial_data_source_item::de_geospatial_data_source_item(tokens, _value)?,
+                                crate::protocol_serde::shape_geospatial_data_source_item::de_geospatial_data_source_item(tokens, _value, depth + 1)?,
                             );
                         }
                         "Label" => {
@@ -105,20 +111,30 @@ where
                         }
                         "LayerDefinition" => {
                             builder = builder.set_layer_definition(
-                                crate::protocol_serde::shape_geospatial_layer_definition::de_geospatial_layer_definition(tokens, _value)?,
+                                crate::protocol_serde::shape_geospatial_layer_definition::de_geospatial_layer_definition(tokens, _value, depth + 1)?,
                             );
                         }
                         "Tooltip" => {
-                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JoinDefinition" => {
                             builder = builder.set_join_definition(
-                                crate::protocol_serde::shape_geospatial_layer_join_definition::de_geospatial_layer_join_definition(tokens, _value)?,
+                                crate::protocol_serde::shape_geospatial_layer_join_definition::de_geospatial_layer_join_definition(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Actions" => {
                             builder = builder.set_actions(crate::protocol_serde::shape_layer_custom_action_list::de_layer_custom_action_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

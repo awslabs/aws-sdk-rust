@@ -13,7 +13,9 @@
 /// # let crupdateallocationstrategy = unimplemented!();
 /// match crupdateallocationstrategy {
 ///     CrUpdateAllocationStrategy::BestFitProgressive => { /* ... */ },
+///     CrUpdateAllocationStrategy::BestFitProgressiveOrdered => { /* ... */ },
 ///     CrUpdateAllocationStrategy::SpotCapacityOptimized => { /* ... */ },
+///     CrUpdateAllocationStrategy::SpotCapacityOptimizedPrioritized => { /* ... */ },
 ///     CrUpdateAllocationStrategy::SpotPriceCapacityOptimized => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,7 +48,11 @@ pub enum CrUpdateAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     BestFitProgressive,
     #[allow(missing_docs)] // documentation missing in model
+    BestFitProgressiveOrdered,
+    #[allow(missing_docs)] // documentation missing in model
     SpotCapacityOptimized,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotCapacityOptimizedPrioritized,
     #[allow(missing_docs)] // documentation missing in model
     SpotPriceCapacityOptimized,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -57,7 +63,9 @@ impl ::std::convert::From<&str> for CrUpdateAllocationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "BEST_FIT_PROGRESSIVE" => CrUpdateAllocationStrategy::BestFitProgressive,
+            "BEST_FIT_PROGRESSIVE_ORDERED" => CrUpdateAllocationStrategy::BestFitProgressiveOrdered,
             "SPOT_CAPACITY_OPTIMIZED" => CrUpdateAllocationStrategy::SpotCapacityOptimized,
+            "SPOT_CAPACITY_OPTIMIZED_PRIORITIZED" => CrUpdateAllocationStrategy::SpotCapacityOptimizedPrioritized,
             "SPOT_PRICE_CAPACITY_OPTIMIZED" => CrUpdateAllocationStrategy::SpotPriceCapacityOptimized,
             other => CrUpdateAllocationStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,14 +83,22 @@ impl CrUpdateAllocationStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             CrUpdateAllocationStrategy::BestFitProgressive => "BEST_FIT_PROGRESSIVE",
+            CrUpdateAllocationStrategy::BestFitProgressiveOrdered => "BEST_FIT_PROGRESSIVE_ORDERED",
             CrUpdateAllocationStrategy::SpotCapacityOptimized => "SPOT_CAPACITY_OPTIMIZED",
+            CrUpdateAllocationStrategy::SpotCapacityOptimizedPrioritized => "SPOT_CAPACITY_OPTIMIZED_PRIORITIZED",
             CrUpdateAllocationStrategy::SpotPriceCapacityOptimized => "SPOT_PRICE_CAPACITY_OPTIMIZED",
             CrUpdateAllocationStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BEST_FIT_PROGRESSIVE", "SPOT_CAPACITY_OPTIMIZED", "SPOT_PRICE_CAPACITY_OPTIMIZED"]
+        &[
+            "BEST_FIT_PROGRESSIVE",
+            "BEST_FIT_PROGRESSIVE_ORDERED",
+            "SPOT_CAPACITY_OPTIMIZED",
+            "SPOT_CAPACITY_OPTIMIZED_PRIORITIZED",
+            "SPOT_PRICE_CAPACITY_OPTIMIZED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CrUpdateAllocationStrategy {
@@ -106,7 +122,9 @@ impl ::std::fmt::Display for CrUpdateAllocationStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CrUpdateAllocationStrategy::BestFitProgressive => write!(f, "BEST_FIT_PROGRESSIVE"),
+            CrUpdateAllocationStrategy::BestFitProgressiveOrdered => write!(f, "BEST_FIT_PROGRESSIVE_ORDERED"),
             CrUpdateAllocationStrategy::SpotCapacityOptimized => write!(f, "SPOT_CAPACITY_OPTIMIZED"),
+            CrUpdateAllocationStrategy::SpotCapacityOptimizedPrioritized => write!(f, "SPOT_CAPACITY_OPTIMIZED_PRIORITIZED"),
             CrUpdateAllocationStrategy::SpotPriceCapacityOptimized => write!(f, "SPOT_PRICE_CAPACITY_OPTIMIZED"),
             CrUpdateAllocationStrategy::Unknown(value) => write!(f, "{value}"),
         }

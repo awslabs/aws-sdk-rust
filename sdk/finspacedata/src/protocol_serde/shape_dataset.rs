@@ -2,10 +2,16 @@
 pub(crate) fn de_dataset<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Dataset>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,11 @@ where
                             );
                         }
                         "ownerInfo" => {
-                            builder = builder.set_owner_info(crate::protocol_serde::shape_dataset_owner_info::de_dataset_owner_info(tokens, _value)?);
+                            builder = builder.set_owner_info(crate::protocol_serde::shape_dataset_owner_info::de_dataset_owner_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "createTime" => {
                             builder = builder.set_create_time(
@@ -68,7 +78,8 @@ where
                             );
                         }
                         "schemaDefinition" => {
-                            builder = builder.set_schema_definition(crate::protocol_serde::shape_schema_union::de_schema_union(tokens, _value)?);
+                            builder =
+                                builder.set_schema_definition(crate::protocol_serde::shape_schema_union::de_schema_union(tokens, _value, depth + 1)?);
                         }
                         "alias" => {
                             builder = builder.set_alias(

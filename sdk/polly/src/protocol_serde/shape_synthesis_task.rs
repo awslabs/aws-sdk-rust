@@ -2,10 +2,16 @@
 pub(crate) fn de_synthesis_task<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SynthesisTask>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,108 +20,113 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Engine" => {
-                            builder = builder.set_engine(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Engine::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Engine" => {
+                                builder = builder.set_engine(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::Engine::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "TaskId" => {
+                                builder = builder.set_task_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "TaskStatus" => {
+                                builder = builder.set_task_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::TaskStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "TaskStatusReason" => {
+                                builder = builder.set_task_status_reason(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "OutputUri" => {
+                                builder = builder.set_output_uri(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "CreationTime" => {
+                                builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "RequestCharacters" => {
+                                builder = builder.set_request_characters(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "SnsTopicArn" => {
+                                builder = builder.set_sns_topic_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "LexiconNames" => {
+                                builder = builder.set_lexicon_names(crate::protocol_serde::shape_lexicon_name_list::de_lexicon_name_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "OutputFormat" => {
+                                builder = builder.set_output_format(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::OutputFormat::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "SampleRate" => {
+                                builder = builder.set_sample_rate(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SpeechMarkTypes" => {
+                                builder = builder.set_speech_mark_types(
+                                    crate::protocol_serde::shape_speech_mark_type_list::de_speech_mark_type_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "TextType" => {
+                                builder = builder.set_text_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::TextType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "VoiceId" => {
+                                builder = builder.set_voice_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::VoiceId::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "LanguageCode" => {
+                                builder = builder.set_language_code(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::LanguageCode::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "TaskId" => {
-                            builder = builder.set_task_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "TaskStatus" => {
-                            builder = builder.set_task_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::TaskStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "TaskStatusReason" => {
-                            builder = builder.set_task_status_reason(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "OutputUri" => {
-                            builder = builder.set_output_uri(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "CreationTime" => {
-                            builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "RequestCharacters" => {
-                            builder = builder.set_request_characters(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "SnsTopicArn" => {
-                            builder = builder.set_sns_topic_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "LexiconNames" => {
-                            builder =
-                                builder.set_lexicon_names(crate::protocol_serde::shape_lexicon_name_list::de_lexicon_name_list(tokens, _value)?);
-                        }
-                        "OutputFormat" => {
-                            builder = builder.set_output_format(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::OutputFormat::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "SampleRate" => {
-                            builder = builder.set_sample_rate(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SpeechMarkTypes" => {
-                            builder = builder.set_speech_mark_types(crate::protocol_serde::shape_speech_mark_type_list::de_speech_mark_type_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "TextType" => {
-                            builder = builder.set_text_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::TextType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "VoiceId" => {
-                            builder = builder.set_voice_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::VoiceId::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "LanguageCode" => {
-                            builder = builder.set_language_code(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::LanguageCode::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

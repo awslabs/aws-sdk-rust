@@ -400,6 +400,8 @@ pub fn de_modify_cluster(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyClusterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyClusterResponse got {start_el:?}"
@@ -417,7 +419,7 @@ pub fn de_modify_cluster(
             s if s.matches("Cluster") /* Cluster com.amazonaws.redshift.synthetic#ModifyClusterOutput$Cluster */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag)
+                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag, depth + 1)
                         ?
                     )
                 ;

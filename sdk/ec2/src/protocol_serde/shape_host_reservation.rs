@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_host_reservation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::HostReservation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::HostReservation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -68,7 +72,7 @@ pub fn de_host_reservation(
             s if s.matches("hostIdSet") /* HostIdSet com.amazonaws.ec2#HostReservation$HostIdSet */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_response_host_id_set::de_response_host_id_set(&mut tag)
+                        crate::protocol_serde::shape_response_host_id_set::de_response_host_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -185,7 +189,7 @@ pub fn de_host_reservation(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#HostReservation$Tags */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

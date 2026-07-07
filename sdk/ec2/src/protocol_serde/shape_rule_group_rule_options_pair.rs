@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_rule_group_rule_options_pair(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RuleGroupRuleOptionsPair, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RuleGroupRuleOptionsPair::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_rule_group_rule_options_pair(
             s if s.matches("ruleOptionSet") /* RuleOptions com.amazonaws.ec2#RuleGroupRuleOptionsPair$RuleOptions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_rule_option_list::de_rule_option_list(&mut tag)
+                        crate::protocol_serde::shape_rule_option_list::de_rule_option_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

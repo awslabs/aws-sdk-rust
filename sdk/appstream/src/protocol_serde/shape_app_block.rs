@@ -2,10 +2,16 @@
 pub(crate) fn de_app_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AppBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,15 @@ where
                             );
                         }
                         "SourceS3Location" => {
-                            builder = builder.set_source_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
+                            builder =
+                                builder.set_source_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value, depth + 1)?);
                         }
                         "SetupScriptDetails" => {
-                            builder =
-                                builder.set_setup_script_details(crate::protocol_serde::shape_script_details::de_script_details(tokens, _value)?);
+                            builder = builder.set_setup_script_details(crate::protocol_serde::shape_script_details::de_script_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CreatedTime" => {
                             builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -57,8 +67,11 @@ where
                             )?);
                         }
                         "PostSetupScriptDetails" => {
-                            builder = builder
-                                .set_post_setup_script_details(crate::protocol_serde::shape_script_details::de_script_details(tokens, _value)?);
+                            builder = builder.set_post_setup_script_details(crate::protocol_serde::shape_script_details::de_script_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PackagingType" => {
                             builder = builder.set_packaging_type(
@@ -75,8 +88,11 @@ where
                             );
                         }
                         "AppBlockErrors" => {
-                            builder =
-                                builder.set_app_block_errors(crate::protocol_serde::shape_error_details_list::de_error_details_list(tokens, _value)?);
+                            builder = builder.set_app_block_errors(crate::protocol_serde::shape_error_details_list::de_error_details_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

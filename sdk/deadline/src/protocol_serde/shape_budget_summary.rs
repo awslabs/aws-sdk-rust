@@ -2,10 +2,16 @@
 pub(crate) fn de_budget_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BudgetSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,7 @@ where
                         }
                         "usageTrackingResource" => {
                             builder = builder.set_usage_tracking_resource(
-                                crate::protocol_serde::shape_usage_tracking_resource::de_usage_tracking_resource(tokens, _value)?,
+                                crate::protocol_serde::shape_usage_tracking_resource::de_usage_tracking_resource(tokens, _value, depth + 1)?,
                             );
                         }
                         "status" => {
@@ -47,7 +53,11 @@ where
                             );
                         }
                         "usages" => {
-                            builder = builder.set_usages(crate::protocol_serde::shape_consumed_usages::de_consumed_usages(tokens, _value)?);
+                            builder = builder.set_usages(crate::protocol_serde::shape_consumed_usages::de_consumed_usages(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "createdBy" => {
                             builder = builder.set_created_by(

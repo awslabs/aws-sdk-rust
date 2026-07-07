@@ -51,6 +51,8 @@ pub fn de_create_transit_gateway_multicast_domain(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateTransitGatewayMulticastDomainResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateTransitGatewayMulticastDomainResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_create_transit_gateway_multicast_domain(
             s if s.matches("transitGatewayMulticastDomain") /* TransitGatewayMulticastDomain com.amazonaws.ec2.synthetic#CreateTransitGatewayMulticastDomainOutput$TransitGatewayMulticastDomain */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_multicast_domain::de_transit_gateway_multicast_domain(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_multicast_domain::de_transit_gateway_multicast_domain(&mut tag, depth + 1)
                         ?
                     )
                 ;

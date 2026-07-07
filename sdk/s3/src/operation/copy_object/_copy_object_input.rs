@@ -197,6 +197,15 @@ pub struct CopyObjectInput {
     /// </ul>
     /// </note>
     pub tagging_directive: ::std::option::Option<crate::types::TaggingDirective>,
+    /// <p>Specifies whether you want to copy annotations from the source object or exclude them. If this header isn't specified, <code>COPY</code> is the default behavior.</p>
+    /// <p>Valid Values: <code>COPY | EXCLUDE</code></p>
+    /// <p>You can specify this directive as either an HTTP header (<code>x-amz-object-annotation-directive</code>) or as a query string parameter. Use the query string form when generating presigned URLs that need to control annotation copy behavior.</p>
+    /// <p>When set to <code>COPY</code>, you must have <code>s3:GetObjectAnnotation</code> permission on the source object and <code>s3:PutObjectAnnotation</code> permission on the destination. Each annotation copied is billed as a separate PUT request. If annotations on the source are modified during the copy, Amazon S3 returns a retryable error.</p><note>
+    /// <p>For directory buckets, annotations are not supported. Use <code>EXCLUDE</code> to copy objects to directory buckets without errors. If you specify <code>COPY</code> for a directory bucket, the request returns HTTP 501 (Not Implemented).</p>
+    /// </note> <note>
+    /// <p>When you copy objects using multipart upload (for example, when the Amazon Web Services CLI or Amazon Web Services SDKs use Transfer Manager for objects larger than approximately 8 MB), annotations are not copied by default. To include annotations, specify <code>--copy-props default</code> in the Amazon Web Services CLI or the equivalent SDK configuration. With this opt-in, the SDK reads source annotations, completes the multipart upload, and then writes each annotation to the destination. Between the upload completion and the last annotation write, the destination object exists without all its annotations.</p>
+    /// </note>
+    pub annotation_directive: ::std::option::Option<crate::types::AnnotationDirective>,
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3. Unrecognized or unsupported values won’t write a destination object and will receive a <code>400 Bad Request</code> response.</p>
     /// <p>Amazon S3 automatically encrypts all new objects that are copied to an S3 bucket. When copying an object, if you don't specify encryption information in your copy request, the encryption setting of the target object is set to the default encryption configuration of the destination bucket. By default, all buckets have a base level of encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a different default encryption configuration, Amazon S3 uses the corresponding encryption key to encrypt the target object copy.</p>
     /// <p>With server-side encryption, Amazon S3 encrypts your data as it writes your data to disks in its data centers and decrypts the data when you access it. For more information about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -568,6 +577,17 @@ impl CopyObjectInput {
     pub fn tagging_directive(&self) -> ::std::option::Option<&crate::types::TaggingDirective> {
         self.tagging_directive.as_ref()
     }
+    /// <p>Specifies whether you want to copy annotations from the source object or exclude them. If this header isn't specified, <code>COPY</code> is the default behavior.</p>
+    /// <p>Valid Values: <code>COPY | EXCLUDE</code></p>
+    /// <p>You can specify this directive as either an HTTP header (<code>x-amz-object-annotation-directive</code>) or as a query string parameter. Use the query string form when generating presigned URLs that need to control annotation copy behavior.</p>
+    /// <p>When set to <code>COPY</code>, you must have <code>s3:GetObjectAnnotation</code> permission on the source object and <code>s3:PutObjectAnnotation</code> permission on the destination. Each annotation copied is billed as a separate PUT request. If annotations on the source are modified during the copy, Amazon S3 returns a retryable error.</p><note>
+    /// <p>For directory buckets, annotations are not supported. Use <code>EXCLUDE</code> to copy objects to directory buckets without errors. If you specify <code>COPY</code> for a directory bucket, the request returns HTTP 501 (Not Implemented).</p>
+    /// </note> <note>
+    /// <p>When you copy objects using multipart upload (for example, when the Amazon Web Services CLI or Amazon Web Services SDKs use Transfer Manager for objects larger than approximately 8 MB), annotations are not copied by default. To include annotations, specify <code>--copy-props default</code> in the Amazon Web Services CLI or the equivalent SDK configuration. With this opt-in, the SDK reads source annotations, completes the multipart upload, and then writes each annotation to the destination. Between the upload completion and the last annotation write, the destination object exists without all its annotations.</p>
+    /// </note>
+    pub fn annotation_directive(&self) -> ::std::option::Option<&crate::types::AnnotationDirective> {
+        self.annotation_directive.as_ref()
+    }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3. Unrecognized or unsupported values won’t write a destination object and will receive a <code>400 Bad Request</code> response.</p>
     /// <p>Amazon S3 automatically encrypts all new objects that are copied to an S3 bucket. When copying an object, if you don't specify encryption information in your copy request, the encryption setting of the target object is set to the default encryption configuration of the destination bucket. By default, all buckets have a base level of encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a different default encryption configuration, Amazon S3 uses the corresponding encryption key to encrypt the target object copy.</p>
     /// <p>With server-side encryption, Amazon S3 encrypts your data as it writes your data to disks in its data centers and decrypts the data when you access it. For more information about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -761,6 +781,7 @@ impl ::std::fmt::Debug for CopyObjectInput {
         formatter.field("metadata", &self.metadata);
         formatter.field("metadata_directive", &self.metadata_directive);
         formatter.field("tagging_directive", &self.tagging_directive);
+        formatter.field("annotation_directive", &self.annotation_directive);
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("storage_class", &self.storage_class);
         formatter.field("website_redirect_location", &self.website_redirect_location);
@@ -818,6 +839,7 @@ pub struct CopyObjectInputBuilder {
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) metadata_directive: ::std::option::Option<crate::types::MetadataDirective>,
     pub(crate) tagging_directive: ::std::option::Option<crate::types::TaggingDirective>,
+    pub(crate) annotation_directive: ::std::option::Option<crate::types::AnnotationDirective>,
     pub(crate) server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     pub(crate) storage_class: ::std::option::Option<crate::types::StorageClass>,
     pub(crate) website_redirect_location: ::std::option::Option<::std::string::String>,
@@ -1622,6 +1644,41 @@ impl CopyObjectInputBuilder {
     pub fn get_tagging_directive(&self) -> &::std::option::Option<crate::types::TaggingDirective> {
         &self.tagging_directive
     }
+    /// <p>Specifies whether you want to copy annotations from the source object or exclude them. If this header isn't specified, <code>COPY</code> is the default behavior.</p>
+    /// <p>Valid Values: <code>COPY | EXCLUDE</code></p>
+    /// <p>You can specify this directive as either an HTTP header (<code>x-amz-object-annotation-directive</code>) or as a query string parameter. Use the query string form when generating presigned URLs that need to control annotation copy behavior.</p>
+    /// <p>When set to <code>COPY</code>, you must have <code>s3:GetObjectAnnotation</code> permission on the source object and <code>s3:PutObjectAnnotation</code> permission on the destination. Each annotation copied is billed as a separate PUT request. If annotations on the source are modified during the copy, Amazon S3 returns a retryable error.</p><note>
+    /// <p>For directory buckets, annotations are not supported. Use <code>EXCLUDE</code> to copy objects to directory buckets without errors. If you specify <code>COPY</code> for a directory bucket, the request returns HTTP 501 (Not Implemented).</p>
+    /// </note> <note>
+    /// <p>When you copy objects using multipart upload (for example, when the Amazon Web Services CLI or Amazon Web Services SDKs use Transfer Manager for objects larger than approximately 8 MB), annotations are not copied by default. To include annotations, specify <code>--copy-props default</code> in the Amazon Web Services CLI or the equivalent SDK configuration. With this opt-in, the SDK reads source annotations, completes the multipart upload, and then writes each annotation to the destination. Between the upload completion and the last annotation write, the destination object exists without all its annotations.</p>
+    /// </note>
+    pub fn annotation_directive(mut self, input: crate::types::AnnotationDirective) -> Self {
+        self.annotation_directive = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether you want to copy annotations from the source object or exclude them. If this header isn't specified, <code>COPY</code> is the default behavior.</p>
+    /// <p>Valid Values: <code>COPY | EXCLUDE</code></p>
+    /// <p>You can specify this directive as either an HTTP header (<code>x-amz-object-annotation-directive</code>) or as a query string parameter. Use the query string form when generating presigned URLs that need to control annotation copy behavior.</p>
+    /// <p>When set to <code>COPY</code>, you must have <code>s3:GetObjectAnnotation</code> permission on the source object and <code>s3:PutObjectAnnotation</code> permission on the destination. Each annotation copied is billed as a separate PUT request. If annotations on the source are modified during the copy, Amazon S3 returns a retryable error.</p><note>
+    /// <p>For directory buckets, annotations are not supported. Use <code>EXCLUDE</code> to copy objects to directory buckets without errors. If you specify <code>COPY</code> for a directory bucket, the request returns HTTP 501 (Not Implemented).</p>
+    /// </note> <note>
+    /// <p>When you copy objects using multipart upload (for example, when the Amazon Web Services CLI or Amazon Web Services SDKs use Transfer Manager for objects larger than approximately 8 MB), annotations are not copied by default. To include annotations, specify <code>--copy-props default</code> in the Amazon Web Services CLI or the equivalent SDK configuration. With this opt-in, the SDK reads source annotations, completes the multipart upload, and then writes each annotation to the destination. Between the upload completion and the last annotation write, the destination object exists without all its annotations.</p>
+    /// </note>
+    pub fn set_annotation_directive(mut self, input: ::std::option::Option<crate::types::AnnotationDirective>) -> Self {
+        self.annotation_directive = input;
+        self
+    }
+    /// <p>Specifies whether you want to copy annotations from the source object or exclude them. If this header isn't specified, <code>COPY</code> is the default behavior.</p>
+    /// <p>Valid Values: <code>COPY | EXCLUDE</code></p>
+    /// <p>You can specify this directive as either an HTTP header (<code>x-amz-object-annotation-directive</code>) or as a query string parameter. Use the query string form when generating presigned URLs that need to control annotation copy behavior.</p>
+    /// <p>When set to <code>COPY</code>, you must have <code>s3:GetObjectAnnotation</code> permission on the source object and <code>s3:PutObjectAnnotation</code> permission on the destination. Each annotation copied is billed as a separate PUT request. If annotations on the source are modified during the copy, Amazon S3 returns a retryable error.</p><note>
+    /// <p>For directory buckets, annotations are not supported. Use <code>EXCLUDE</code> to copy objects to directory buckets without errors. If you specify <code>COPY</code> for a directory bucket, the request returns HTTP 501 (Not Implemented).</p>
+    /// </note> <note>
+    /// <p>When you copy objects using multipart upload (for example, when the Amazon Web Services CLI or Amazon Web Services SDKs use Transfer Manager for objects larger than approximately 8 MB), annotations are not copied by default. To include annotations, specify <code>--copy-props default</code> in the Amazon Web Services CLI or the equivalent SDK configuration. With this opt-in, the SDK reads source annotations, completes the multipart upload, and then writes each annotation to the destination. Between the upload completion and the last annotation write, the destination object exists without all its annotations.</p>
+    /// </note>
+    pub fn get_annotation_directive(&self) -> &::std::option::Option<crate::types::AnnotationDirective> {
+        &self.annotation_directive
+    }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3. Unrecognized or unsupported values won’t write a destination object and will receive a <code>400 Bad Request</code> response.</p>
     /// <p>Amazon S3 automatically encrypts all new objects that are copied to an S3 bucket. When copying an object, if you don't specify encryption information in your copy request, the encryption setting of the target object is set to the default encryption configuration of the destination bucket. By default, all buckets have a base level of encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a different default encryption configuration, Amazon S3 uses the corresponding encryption key to encrypt the target object copy.</p>
     /// <p>With server-side encryption, Amazon S3 encrypts your data as it writes your data to disks in its data centers and decrypts the data when you access it. For more information about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -2182,6 +2239,7 @@ impl CopyObjectInputBuilder {
             metadata: self.metadata,
             metadata_directive: self.metadata_directive,
             tagging_directive: self.tagging_directive,
+            annotation_directive: self.annotation_directive,
             server_side_encryption: self.server_side_encryption,
             storage_class: self.storage_class,
             website_redirect_location: self.website_redirect_location,
@@ -2231,6 +2289,7 @@ impl ::std::fmt::Debug for CopyObjectInputBuilder {
         formatter.field("metadata", &self.metadata);
         formatter.field("metadata_directive", &self.metadata_directive);
         formatter.field("tagging_directive", &self.tagging_directive);
+        formatter.field("annotation_directive", &self.annotation_directive);
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("storage_class", &self.storage_class);
         formatter.field("website_redirect_location", &self.website_redirect_location);

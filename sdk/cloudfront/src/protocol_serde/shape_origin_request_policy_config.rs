@@ -32,7 +32,11 @@ pub fn ser_origin_request_policy_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_origin_request_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OriginRequestPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginRequestPolicyConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -66,7 +70,7 @@ pub fn de_origin_request_policy_config(
             s if s.matches("HeadersConfig") /* HeadersConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$HeadersConfig */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_origin_request_policy_headers_config::de_origin_request_policy_headers_config(&mut tag)
+                        crate::protocol_serde::shape_origin_request_policy_headers_config::de_origin_request_policy_headers_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -76,7 +80,7 @@ pub fn de_origin_request_policy_config(
             s if s.matches("CookiesConfig") /* CookiesConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$CookiesConfig */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_origin_request_policy_cookies_config::de_origin_request_policy_cookies_config(&mut tag)
+                        crate::protocol_serde::shape_origin_request_policy_cookies_config::de_origin_request_policy_cookies_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +90,7 @@ pub fn de_origin_request_policy_config(
             s if s.matches("QueryStringsConfig") /* QueryStringsConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$QueryStringsConfig */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_origin_request_policy_query_strings_config::de_origin_request_policy_query_strings_config(&mut tag)
+                        crate::protocol_serde::shape_origin_request_policy_query_strings_config::de_origin_request_policy_query_strings_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_schema_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SchemaResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,12 +44,18 @@ where
                         }
                         "Server" => {
                             builder = builder.set_server(crate::protocol_serde::shape_server_short_info_response::de_server_short_info_response(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DatabaseInstance" => {
                             builder = builder.set_database_instance(
-                                crate::protocol_serde::shape_database_short_info_response::de_database_short_info_response(tokens, _value)?,
+                                crate::protocol_serde::shape_database_short_info_response::de_database_short_info_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SchemaId" => {
@@ -62,7 +74,7 @@ where
                         }
                         "OriginalSchema" => {
                             builder = builder.set_original_schema(
-                                crate::protocol_serde::shape_schema_short_info_response::de_schema_short_info_response(tokens, _value)?,
+                                crate::protocol_serde::shape_schema_short_info_response::de_schema_short_info_response(tokens, _value, depth + 1)?,
                             );
                         }
                         "Similarity" => {

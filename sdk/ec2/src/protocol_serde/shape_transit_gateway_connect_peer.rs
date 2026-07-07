@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_connect_peer(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TransitGatewayConnectPeer, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayConnectPeer::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -64,7 +68,7 @@ pub fn de_transit_gateway_connect_peer(
             s if s.matches("connectPeerConfiguration") /* ConnectPeerConfiguration com.amazonaws.ec2#TransitGatewayConnectPeer$ConnectPeerConfiguration */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_connect_peer_configuration::de_transit_gateway_connect_peer_configuration(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_connect_peer_configuration::de_transit_gateway_connect_peer_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -74,7 +78,7 @@ pub fn de_transit_gateway_connect_peer(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#TransitGatewayConnectPeer$Tags */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

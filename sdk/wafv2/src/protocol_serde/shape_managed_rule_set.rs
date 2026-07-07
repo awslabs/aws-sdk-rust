@@ -2,10 +2,16 @@
 pub(crate) fn de_managed_rule_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedRuleSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,8 +50,11 @@ where
                             );
                         }
                         "PublishedVersions" => {
-                            builder = builder
-                                .set_published_versions(crate::protocol_serde::shape_published_versions::de_published_versions(tokens, _value)?);
+                            builder = builder.set_published_versions(crate::protocol_serde::shape_published_versions::de_published_versions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RecommendedVersion" => {
                             builder = builder.set_recommended_version(

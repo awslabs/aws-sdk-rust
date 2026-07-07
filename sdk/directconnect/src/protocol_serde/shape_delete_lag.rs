@@ -85,6 +85,8 @@ pub(crate) fn de_delete_lag(
 ) -> ::std::result::Result<crate::operation::delete_lag::builders::DeleteLagOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -175,7 +177,11 @@ pub(crate) fn de_delete_lag(
                     );
                 }
                 "connections" => {
-                    builder = builder.set_connections(crate::protocol_serde::shape_connection_list::de_connection_list(tokens, _value)?);
+                    builder = builder.set_connections(crate::protocol_serde::shape_connection_list::de_connection_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "allowsHostedConnections" => {
                     builder = builder.set_allows_hosted_connections(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -191,7 +197,7 @@ pub(crate) fn de_delete_lag(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                 }
                 "providerName" => {
                     builder = builder.set_provider_name(
@@ -211,7 +217,18 @@ pub(crate) fn de_delete_lag(
                     );
                 }
                 "macSecKeys" => {
-                    builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(tokens, _value)?);
+                    builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
+                "rateLimiterStatus" => {
+                    builder = builder.set_rate_limiter_status(crate::protocol_serde::shape_rate_limiter_status::de_rate_limiter_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyD
 #[derive(Debug)]
 struct ModifyDBClusterResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ModifyDBClusterResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -283,6 +284,8 @@ pub enum ModifyDBClusterError {
     InvalidSubnet(crate::types::error::InvalidSubnet),
     /// <p>DB subnet group does not cover all Availability Zones after it is created because users' change.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
+    /// <p>The specified <i>NetworkType</i> is not supported for the DB cluster, DB subnet group, or orderable DB instance option.</p>
+    NetworkTypeNotSupportedFault(crate::types::error::NetworkTypeNotSupportedFault),
     /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
     /// <p><i>StorageType</i> specified cannot be associated with the DB Instance.</p>
@@ -330,6 +333,7 @@ impl ModifyDBClusterError {
             Self::InvalidDbSubnetGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NetworkTypeNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageTypeNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -375,6 +379,10 @@ impl ModifyDBClusterError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(self, Self::InvalidVpcNetworkStateFault(_))
     }
+    /// Returns `true` if the error kind is `ModifyDBClusterError::NetworkTypeNotSupportedFault`.
+    pub fn is_network_type_not_supported_fault(&self) -> bool {
+        matches!(self, Self::NetworkTypeNotSupportedFault(_))
+    }
     /// Returns `true` if the error kind is `ModifyDBClusterError::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::StorageQuotaExceededFault(_))
@@ -397,6 +405,7 @@ impl ::std::error::Error for ModifyDBClusterError {
             Self::InvalidDbSubnetGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::NetworkTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -416,6 +425,7 @@ impl ::std::fmt::Display for ModifyDBClusterError {
             Self::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            Self::NetworkTypeNotSupportedFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::StorageTypeNotSupportedFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -449,6 +459,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyDBClust
             Self::InvalidDbSubnetGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NetworkTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

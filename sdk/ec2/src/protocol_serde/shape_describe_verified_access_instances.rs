@@ -49,6 +49,8 @@ pub fn de_describe_verified_access_instances(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVerifiedAccessInstancesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVerifiedAccessInstancesResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_verified_access_instances(
             s if s.matches("verifiedAccessInstanceSet") /* VerifiedAccessInstances com.amazonaws.ec2.synthetic#DescribeVerifiedAccessInstancesOutput$VerifiedAccessInstances */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_instance_list::de_verified_access_instance_list(&mut tag)
+                        crate::protocol_serde::shape_verified_access_instance_list::de_verified_access_instance_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

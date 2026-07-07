@@ -9,5 +9,7 @@ pub fn de_details(inp: &[u8]) -> std::result::Result<crate::types::Progress, ::a
             "invalid root, expected Progress got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_progress::de_progress(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_progress::de_progress(&mut decoder, depth + 1)
 }

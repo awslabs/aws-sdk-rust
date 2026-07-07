@@ -206,6 +206,8 @@ pub(crate) fn de_get_unfiltered_partitions_metadata(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -213,7 +215,7 @@ pub(crate) fn de_get_unfiltered_partitions_metadata(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "UnfilteredPartitions" => {
                     builder = builder.set_unfiltered_partitions(
-                        crate::protocol_serde::shape_unfiltered_partition_list::de_unfiltered_partition_list(tokens, _value)?,
+                        crate::protocol_serde::shape_unfiltered_partition_list::de_unfiltered_partition_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "NextToken" => {

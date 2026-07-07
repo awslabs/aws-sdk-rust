@@ -47,6 +47,8 @@ pub fn de_describe_vpn_gateways(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVpnGatewaysResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVpnGatewaysResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_describe_vpn_gateways(
             s if s.matches("vpnGatewaySet") /* VpnGateways com.amazonaws.ec2.synthetic#DescribeVpnGatewaysOutput$VpnGateways */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpn_gateway_list::de_vpn_gateway_list(&mut tag)
+                        crate::protocol_serde::shape_vpn_gateway_list::de_vpn_gateway_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

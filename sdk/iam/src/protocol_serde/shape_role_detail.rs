@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_role_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RoleDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RoleDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -89,7 +93,7 @@ pub fn de_role_detail(
             s if s.matches("InstanceProfileList") /* InstanceProfileList com.amazonaws.iam#RoleDetail$InstanceProfileList */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_instance_profile_list_type::de_instance_profile_list_type(&mut tag)
+                        crate::protocol_serde::shape_instance_profile_list_type::de_instance_profile_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -99,7 +103,7 @@ pub fn de_role_detail(
             s if s.matches("RolePolicyList") /* RolePolicyList com.amazonaws.iam#RoleDetail$RolePolicyList */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_policy_detail_list_type::de_policy_detail_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_detail_list_type::de_policy_detail_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -109,7 +113,7 @@ pub fn de_role_detail(
             s if s.matches("AttachedManagedPolicies") /* AttachedManagedPolicies com.amazonaws.iam#RoleDetail$AttachedManagedPolicies */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_attached_policies_list_type::de_attached_policies_list_type(&mut tag)
+                        crate::protocol_serde::shape_attached_policies_list_type::de_attached_policies_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -119,7 +123,7 @@ pub fn de_role_detail(
             s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#RoleDetail$PermissionsBoundary */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_attached_permissions_boundary::de_attached_permissions_boundary(&mut tag)
+                        crate::protocol_serde::shape_attached_permissions_boundary::de_attached_permissions_boundary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -129,7 +133,7 @@ pub fn de_role_detail(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#RoleDetail$Tags */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -139,7 +143,7 @@ pub fn de_role_detail(
             s if s.matches("RoleLastUsed") /* RoleLastUsed com.amazonaws.iam#RoleDetail$RoleLastUsed */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_role_last_used::de_role_last_used(&mut tag)
+                        crate::protocol_serde::shape_role_last_used::de_role_last_used(&mut tag, depth + 1)
                         ?
                     )
                 ;

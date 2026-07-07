@@ -2,10 +2,16 @@
 pub(crate) fn de_endpoint_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EndpointSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,11 @@ where
                         }
                         "EnumValues" => {
                             builder = builder.set_enum_values(
-                                crate::protocol_serde::shape_endpoint_setting_enum_values::de_endpoint_setting_enum_values(tokens, _value)?,
+                                crate::protocol_serde::shape_endpoint_setting_enum_values::de_endpoint_setting_enum_values(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Sensitive" => {

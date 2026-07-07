@@ -209,6 +209,7 @@ async fn test_connect_timeout() {
 }
 
 #[tokio::test]
+#[allow(deprecated)]
 async fn test_default_connect_timeout_with_bmv_2026_01_12() {
     use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 

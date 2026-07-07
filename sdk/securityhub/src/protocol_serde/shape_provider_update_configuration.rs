@@ -16,6 +16,12 @@ pub fn ser_provider_update_configuration(
             crate::protocol_serde::shape_service_now_update_configuration::ser_service_now_update_configuration(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::ProviderUpdateConfiguration::Azure(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_3.key("Azure").start_object();
+            crate::protocol_serde::shape_azure_update_configuration::ser_azure_update_configuration(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::ProviderUpdateConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ProviderUpdateConfiguration",

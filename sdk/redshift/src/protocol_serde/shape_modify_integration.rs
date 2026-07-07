@@ -134,6 +134,8 @@ pub fn de_modify_integration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyIntegrationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyIntegrationResponse got {start_el:?}"
@@ -217,7 +219,7 @@ pub fn de_modify_integration(
             s if s.matches("Errors") /* Errors com.amazonaws.redshift.synthetic#ModifyIntegrationOutput$Errors */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_integration_error_list::de_integration_error_list(&mut tag)
+                        crate::protocol_serde::shape_integration_error_list::de_integration_error_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -267,7 +269,7 @@ pub fn de_modify_integration(
             s if s.matches("AdditionalEncryptionContext") /* AdditionalEncryptionContext com.amazonaws.redshift.synthetic#ModifyIntegrationOutput$AdditionalEncryptionContext */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_encryption_context_map::de_encryption_context_map(&mut tag)
+                        crate::protocol_serde::shape_encryption_context_map::de_encryption_context_map(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -277,7 +279,7 @@ pub fn de_modify_integration(
             s if s.matches("Tags") /* Tags com.amazonaws.redshift.synthetic#ModifyIntegrationOutput$Tags */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

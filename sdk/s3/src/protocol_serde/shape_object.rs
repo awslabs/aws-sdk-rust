@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_object(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Object, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Object::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -114,7 +118,7 @@ pub fn de_object(
             s if s.matches("Owner") /* Owner com.amazonaws.s3#Object$Owner */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_owner::de_owner(&mut tag)
+                        crate::protocol_serde::shape_owner::de_owner(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -124,7 +128,7 @@ pub fn de_object(
             s if s.matches("RestoreStatus") /* RestoreStatus com.amazonaws.s3#Object$RestoreStatus */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_restore_status::de_restore_status(&mut tag)
+                        crate::protocol_serde::shape_restore_status::de_restore_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

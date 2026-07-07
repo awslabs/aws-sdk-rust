@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_local_gateway_virtual_interface_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LocalGatewayVirtualInterfaceGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LocalGatewayVirtualInterfaceGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_local_gateway_virtual_interface_group(
             s if s.matches("localGatewayVirtualInterfaceIdSet") /* LocalGatewayVirtualInterfaceIds com.amazonaws.ec2#LocalGatewayVirtualInterfaceGroup$LocalGatewayVirtualInterfaceIds */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_local_gateway_virtual_interface_id_set::de_local_gateway_virtual_interface_id_set(&mut tag)
+                        crate::protocol_serde::shape_local_gateway_virtual_interface_id_set::de_local_gateway_virtual_interface_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -102,7 +106,7 @@ pub fn de_local_gateway_virtual_interface_group(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#LocalGatewayVirtualInterfaceGroup$Tags */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

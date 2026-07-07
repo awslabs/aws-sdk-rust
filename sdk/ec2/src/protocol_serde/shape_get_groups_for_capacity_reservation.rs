@@ -49,6 +49,8 @@ pub fn de_get_groups_for_capacity_reservation(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetGroupsForCapacityReservationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetGroupsForCapacityReservationResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_get_groups_for_capacity_reservation(
             s if s.matches("capacityReservationGroupSet") /* CapacityReservationGroups com.amazonaws.ec2.synthetic#GetGroupsForCapacityReservationOutput$CapacityReservationGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_group_set::de_capacity_reservation_group_set(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_group_set::de_capacity_reservation_group_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

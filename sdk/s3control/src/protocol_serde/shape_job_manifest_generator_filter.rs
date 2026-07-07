@@ -63,7 +63,11 @@ pub fn ser_job_manifest_generator_filter(
 #[allow(clippy::needless_question_mark)]
 pub fn de_job_manifest_generator_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::JobManifestGeneratorFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::JobManifestGeneratorFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -114,7 +118,7 @@ pub fn de_job_manifest_generator_filter(
             s if s.matches("ObjectReplicationStatuses") /* ObjectReplicationStatuses com.amazonaws.s3control#JobManifestGeneratorFilter$ObjectReplicationStatuses */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_replication_status_filter_list::de_replication_status_filter_list(&mut tag)
+                        crate::protocol_serde::shape_replication_status_filter_list::de_replication_status_filter_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -124,7 +128,7 @@ pub fn de_job_manifest_generator_filter(
             s if s.matches("KeyNameConstraint") /* KeyNameConstraint com.amazonaws.s3control#JobManifestGeneratorFilter$KeyNameConstraint */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_key_name_constraint::de_key_name_constraint(&mut tag)
+                        crate::protocol_serde::shape_key_name_constraint::de_key_name_constraint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -164,7 +168,7 @@ pub fn de_job_manifest_generator_filter(
             s if s.matches("MatchAnyStorageClass") /* MatchAnyStorageClass com.amazonaws.s3control#JobManifestGeneratorFilter$MatchAnyStorageClass */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_storage_class_list::de_storage_class_list(&mut tag)
+                        crate::protocol_serde::shape_storage_class_list::de_storage_class_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -174,7 +178,7 @@ pub fn de_job_manifest_generator_filter(
             s if s.matches("MatchAnyObjectEncryption") /* MatchAnyObjectEncryption com.amazonaws.s3control#JobManifestGeneratorFilter$MatchAnyObjectEncryption */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_object_encryption_filter_list::de_object_encryption_filter_list(&mut tag)
+                        crate::protocol_serde::shape_object_encryption_filter_list::de_object_encryption_filter_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_recommendation_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecommendationTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "templatesLocation" => {
-                            builder = builder.set_templates_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
+                            builder =
+                                builder.set_templates_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value, depth + 1)?);
                         }
                         "assessmentArn" => {
                             builder = builder.set_assessment_arn(
@@ -34,12 +41,18 @@ where
                         }
                         "recommendationIds" => {
                             builder = builder.set_recommendation_ids(crate::protocol_serde::shape_recommendation_id_list::de_recommendation_id_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "recommendationTypes" => {
                             builder = builder.set_recommendation_types(
-                                crate::protocol_serde::shape_render_recommendation_type_list::de_render_recommendation_type_list(tokens, _value)?,
+                                crate::protocol_serde::shape_render_recommendation_type_list::de_render_recommendation_type_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "format" => {
@@ -90,7 +103,7 @@ where
                             )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "needsReplacements" => {
                             builder = builder.set_needs_replacements(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

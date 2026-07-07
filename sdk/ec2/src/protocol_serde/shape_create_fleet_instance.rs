@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_create_fleet_instance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CreateFleetInstance, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CreateFleetInstance::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_create_fleet_instance(
             s if s.matches("launchTemplateAndOverrides") /* LaunchTemplateAndOverrides com.amazonaws.ec2#CreateFleetInstance$LaunchTemplateAndOverrides */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_and_overrides_response::de_launch_template_and_overrides_response(&mut tag)
+                        crate::protocol_serde::shape_launch_template_and_overrides_response::de_launch_template_and_overrides_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -34,7 +38,7 @@ pub fn de_create_fleet_instance(
             s if s.matches("instanceIds") /* InstanceIds com.amazonaws.ec2#CreateFleetInstance$InstanceIds */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_instance_ids_set::de_instance_ids_set(&mut tag)
+                        crate::protocol_serde::shape_instance_ids_set::de_instance_ids_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -56,10 +56,16 @@ pub fn ser_evaluate_data_quality_multi_frame(
 pub(crate) fn de_evaluate_data_quality_multi_frame<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluateDataQualityMultiFrame>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,45 +74,58 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Inputs" => {
+                                builder = builder.set_inputs(crate::protocol_serde::shape_many_inputs::de_many_inputs(tokens, _value, depth + 1)?);
+                            }
+                            "AdditionalDataSources" => {
+                                builder = builder.set_additional_data_sources(crate::protocol_serde::shape_dqdl_aliases::de_dqdl_aliases(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Ruleset" => {
+                                builder = builder.set_ruleset(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "PublishingOptions" => {
+                                builder = builder.set_publishing_options(
+                                    crate::protocol_serde::shape_dq_results_publishing_options::de_dq_results_publishing_options(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "AdditionalOptions" => {
+                                builder = builder.set_additional_options(
+                                    crate::protocol_serde::shape_dq_additional_options::de_dq_additional_options(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "StopJobOnFailureOptions" => {
+                                builder = builder.set_stop_job_on_failure_options(
+                                    crate::protocol_serde::shape_dq_stop_job_on_failure_options::de_dq_stop_job_on_failure_options(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_many_inputs::de_many_inputs(tokens, _value)?);
-                        }
-                        "AdditionalDataSources" => {
-                            builder =
-                                builder.set_additional_data_sources(crate::protocol_serde::shape_dqdl_aliases::de_dqdl_aliases(tokens, _value)?);
-                        }
-                        "Ruleset" => {
-                            builder = builder.set_ruleset(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "PublishingOptions" => {
-                            builder = builder.set_publishing_options(
-                                crate::protocol_serde::shape_dq_results_publishing_options::de_dq_results_publishing_options(tokens, _value)?,
-                            );
-                        }
-                        "AdditionalOptions" => {
-                            builder = builder.set_additional_options(crate::protocol_serde::shape_dq_additional_options::de_dq_additional_options(
-                                tokens, _value,
-                            )?);
-                        }
-                        "StopJobOnFailureOptions" => {
-                            builder = builder.set_stop_job_on_failure_options(
-                                crate::protocol_serde::shape_dq_stop_job_on_failure_options::de_dq_stop_job_on_failure_options(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

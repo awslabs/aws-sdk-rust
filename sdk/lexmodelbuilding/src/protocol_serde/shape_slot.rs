@@ -57,10 +57,16 @@ pub fn ser_slot(
 pub(crate) fn de_slot<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Slot>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -106,7 +112,8 @@ where
                             );
                         }
                         "valueElicitationPrompt" => {
-                            builder = builder.set_value_elicitation_prompt(crate::protocol_serde::shape_prompt::de_prompt(tokens, _value)?);
+                            builder =
+                                builder.set_value_elicitation_prompt(crate::protocol_serde::shape_prompt::de_prompt(tokens, _value, depth + 1)?);
                         }
                         "priority" => {
                             builder = builder.set_priority(
@@ -116,8 +123,11 @@ where
                             );
                         }
                         "sampleUtterances" => {
-                            builder = builder
-                                .set_sample_utterances(crate::protocol_serde::shape_slot_utterance_list::de_slot_utterance_list(tokens, _value)?);
+                            builder = builder.set_sample_utterances(crate::protocol_serde::shape_slot_utterance_list::de_slot_utterance_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "responseCard" => {
                             builder = builder.set_response_card(
@@ -135,7 +145,7 @@ where
                         }
                         "defaultValueSpec" => {
                             builder = builder.set_default_value_spec(
-                                crate::protocol_serde::shape_slot_default_value_spec::de_slot_default_value_spec(tokens, _value)?,
+                                crate::protocol_serde::shape_slot_default_value_spec::de_slot_default_value_spec(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

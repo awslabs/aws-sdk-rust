@@ -13,8 +13,17 @@ pub mod delete_billing_view;
 /// Types for the `DisassociateSourceViews` operation.
 pub mod disassociate_source_views;
 
+/// Types for the `GetBillingPreferences` operation.
+pub mod get_billing_preferences;
+
 /// Types for the `GetBillingView` operation.
 pub mod get_billing_view;
+
+/// Types for the `GetCreditAllocationHistory` operation.
+pub mod get_credit_allocation_history;
+
+/// Types for the `GetCredits` operation.
+pub mod get_credits;
 
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
@@ -28,11 +37,17 @@ pub mod list_source_views_for_billing_view;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `RedeemCredits` operation.
+pub mod redeem_credits;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateBillingPreferences` operation.
+pub mod update_billing_preferences;
 
 /// Types for the `UpdateBillingView` operation.
 pub mod update_billing_view;

@@ -2,10 +2,16 @@
 pub(crate) fn de_recovery_point_by_backup_vault<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecoveryPointByBackupVault>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,183 +20,187 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "RecoveryPointArn" => {
-                            builder = builder.set_recovery_point_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "RecoveryPointArn" => {
+                                builder = builder.set_recovery_point_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "BackupVaultName" => {
+                                builder = builder.set_backup_vault_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "BackupVaultArn" => {
+                                builder = builder.set_backup_vault_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SourceBackupVaultArn" => {
+                                builder = builder.set_source_backup_vault_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ResourceArn" => {
+                                builder = builder.set_resource_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ResourceType" => {
+                                builder = builder.set_resource_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "CreatedBy" => {
+                                builder = builder.set_created_by(crate::protocol_serde::shape_recovery_point_creator::de_recovery_point_creator(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "IamRoleArn" => {
+                                builder = builder.set_iam_role_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Status" => {
+                                builder = builder.set_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::RecoveryPointStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "StatusMessage" => {
+                                builder = builder.set_status_message(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "CreationDate" => {
+                                builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "InitiationDate" => {
+                                builder = builder.set_initiation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "CompletionDate" => {
+                                builder = builder.set_completion_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "BackupSizeInBytes" => {
+                                builder = builder.set_backup_size_in_bytes(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "CalculatedLifecycle" => {
+                                builder = builder.set_calculated_lifecycle(
+                                    crate::protocol_serde::shape_calculated_lifecycle::de_calculated_lifecycle(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Lifecycle" => {
+                                builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value, depth + 1)?);
+                            }
+                            "EncryptionKeyArn" => {
+                                builder = builder.set_encryption_key_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "IsEncrypted" => {
+                                builder = builder.set_is_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "LastRestoreTime" => {
+                                builder = builder.set_last_restore_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "ParentRecoveryPointArn" => {
+                                builder = builder.set_parent_recovery_point_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "CompositeMemberIdentifier" => {
+                                builder = builder.set_composite_member_identifier(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "IsParent" => {
+                                builder = builder.set_is_parent(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "ResourceName" => {
+                                builder = builder.set_resource_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "VaultType" => {
+                                builder = builder.set_vault_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::VaultType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "IndexStatus" => {
+                                builder = builder.set_index_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::IndexStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "IndexStatusMessage" => {
+                                builder = builder.set_index_status_message(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "EncryptionKeyType" => {
+                                builder = builder.set_encryption_key_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionKeyType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "AggregatedScanResult" => {
+                                builder = builder.set_aggregated_scan_result(
+                                    crate::protocol_serde::shape_aggregated_scan_result::de_aggregated_scan_result(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "BackupVaultName" => {
-                            builder = builder.set_backup_vault_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "BackupVaultArn" => {
-                            builder = builder.set_backup_vault_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SourceBackupVaultArn" => {
-                            builder = builder.set_source_backup_vault_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ResourceArn" => {
-                            builder = builder.set_resource_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ResourceType" => {
-                            builder = builder.set_resource_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "CreatedBy" => {
-                            builder = builder.set_created_by(crate::protocol_serde::shape_recovery_point_creator::de_recovery_point_creator(
-                                tokens, _value,
-                            )?);
-                        }
-                        "IamRoleArn" => {
-                            builder = builder.set_iam_role_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Status" => {
-                            builder = builder.set_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::RecoveryPointStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "StatusMessage" => {
-                            builder = builder.set_status_message(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "CreationDate" => {
-                            builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "InitiationDate" => {
-                            builder = builder.set_initiation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "CompletionDate" => {
-                            builder = builder.set_completion_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "BackupSizeInBytes" => {
-                            builder = builder.set_backup_size_in_bytes(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "CalculatedLifecycle" => {
-                            builder = builder.set_calculated_lifecycle(crate::protocol_serde::shape_calculated_lifecycle::de_calculated_lifecycle(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Lifecycle" => {
-                            builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value)?);
-                        }
-                        "EncryptionKeyArn" => {
-                            builder = builder.set_encryption_key_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "IsEncrypted" => {
-                            builder = builder.set_is_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "LastRestoreTime" => {
-                            builder = builder.set_last_restore_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "ParentRecoveryPointArn" => {
-                            builder = builder.set_parent_recovery_point_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "CompositeMemberIdentifier" => {
-                            builder = builder.set_composite_member_identifier(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "IsParent" => {
-                            builder = builder.set_is_parent(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "ResourceName" => {
-                            builder = builder.set_resource_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "VaultType" => {
-                            builder = builder.set_vault_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::VaultType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "IndexStatus" => {
-                            builder = builder.set_index_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::IndexStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "IndexStatusMessage" => {
-                            builder = builder.set_index_status_message(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "EncryptionKeyType" => {
-                            builder = builder.set_encryption_key_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionKeyType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "AggregatedScanResult" => {
-                            builder = builder.set_aggregated_scan_result(
-                                crate::protocol_serde::shape_aggregated_scan_result::de_aggregated_scan_result(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

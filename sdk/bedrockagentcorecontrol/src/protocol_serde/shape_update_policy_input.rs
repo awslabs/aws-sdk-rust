@@ -15,8 +15,11 @@ pub fn ser_update_policy_input_input(
         crate::protocol_serde::shape_updated_description::ser_updated_description(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.validation_mode {
-        object.key("validationMode").string(var_5.as_str());
+    if let Some(var_5) = &input.enforcement_mode {
+        object.key("enforcementMode").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.validation_mode {
+        object.key("validationMode").string(var_6.as_str());
     }
     Ok(())
 }

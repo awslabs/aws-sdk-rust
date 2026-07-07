@@ -27,5 +27,7 @@ pub fn de_key_group_config(inp: &[u8]) -> std::result::Result<crate::types::KeyG
             "invalid root, expected KeyGroupConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_key_group_config::de_key_group_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_key_group_config::de_key_group_config(&mut decoder, depth + 1)
 }

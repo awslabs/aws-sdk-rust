@@ -60,10 +60,16 @@ pub fn ser_pipe_source_self_managed_kafka_parameters(
 pub(crate) fn de_pipe_source_self_managed_kafka_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipeSourceSelfManagedKafkaParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -89,7 +95,7 @@ where
                         }
                         "AdditionalBootstrapServers" => {
                             builder = builder.set_additional_bootstrap_servers(
-                                crate::protocol_serde::shape_kafka_bootstrap_servers::de_kafka_bootstrap_servers(tokens, _value)?,
+                                crate::protocol_serde::shape_kafka_bootstrap_servers::de_kafka_bootstrap_servers(tokens, _value, depth + 1)?,
                             );
                         }
                         "BatchSize" => {
@@ -115,7 +121,7 @@ where
                         }
                         "Credentials" => {
                             builder = builder.set_credentials(
-                                    crate::protocol_serde::shape_self_managed_kafka_access_configuration_credentials::de_self_managed_kafka_access_configuration_credentials(tokens, _value)?
+                                    crate::protocol_serde::shape_self_managed_kafka_access_configuration_credentials::de_self_managed_kafka_access_configuration_credentials(tokens, _value, depth + 1)?
                                 );
                         }
                         "ServerRootCaCertificate" => {
@@ -127,7 +133,7 @@ where
                         }
                         "Vpc" => {
                             builder = builder.set_vpc(
-                                    crate::protocol_serde::shape_self_managed_kafka_access_configuration_vpc::de_self_managed_kafka_access_configuration_vpc(tokens, _value)?
+                                    crate::protocol_serde::shape_self_managed_kafka_access_configuration_vpc::de_self_managed_kafka_access_configuration_vpc(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -49,6 +49,8 @@ pub fn de_get_spot_placement_scores(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetSpotPlacementScoresResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetSpotPlacementScoresResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_get_spot_placement_scores(
             s if s.matches("spotPlacementScoreSet") /* SpotPlacementScores com.amazonaws.ec2.synthetic#GetSpotPlacementScoresOutput$SpotPlacementScores */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_spot_placement_scores::de_spot_placement_scores(&mut tag)
+                        crate::protocol_serde::shape_spot_placement_scores::de_spot_placement_scores(&mut tag, depth + 1)
                         ?
                     )
                 ;

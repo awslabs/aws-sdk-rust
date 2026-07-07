@@ -2,10 +2,16 @@
 pub(crate) fn de_application<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Application>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,7 +60,7 @@ where
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Metadata" => {
-                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens, _value)?);
+                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens, _value, depth + 1)?);
                         }
                         "WorkingDirectory" => {
                             builder = builder.set_working_directory(
@@ -85,13 +91,15 @@ where
                             );
                         }
                         "IconS3Location" => {
-                            builder = builder.set_icon_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
+                            builder =
+                                builder.set_icon_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value, depth + 1)?);
                         }
                         "Platforms" => {
-                            builder = builder.set_platforms(crate::protocol_serde::shape_platforms::de_platforms(tokens, _value)?);
+                            builder = builder.set_platforms(crate::protocol_serde::shape_platforms::de_platforms(tokens, _value, depth + 1)?);
                         }
                         "InstanceFamilies" => {
-                            builder = builder.set_instance_families(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_instance_families(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "CreatedTime" => {
                             builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

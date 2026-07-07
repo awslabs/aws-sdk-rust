@@ -27,6 +27,7 @@ impl crate::operation::create_slot_type_version::builders::CreateSlotTypeVersion
 /// </note>
 /// <p>When you create a version of a slot type, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>.</p>
 /// <p>This operation requires permissions for the <code>lex:CreateSlotTypeVersion</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSlotTypeVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

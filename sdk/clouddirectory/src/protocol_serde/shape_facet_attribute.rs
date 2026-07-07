@@ -27,10 +27,16 @@ pub fn ser_facet_attribute(
 pub(crate) fn de_facet_attribute<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FacetAttribute>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,12 +55,12 @@ where
                         }
                         "AttributeDefinition" => {
                             builder = builder.set_attribute_definition(
-                                crate::protocol_serde::shape_facet_attribute_definition::de_facet_attribute_definition(tokens, _value)?,
+                                crate::protocol_serde::shape_facet_attribute_definition::de_facet_attribute_definition(tokens, _value, depth + 1)?,
                             );
                         }
                         "AttributeReference" => {
                             builder = builder.set_attribute_reference(
-                                crate::protocol_serde::shape_facet_attribute_reference::de_facet_attribute_reference(tokens, _value)?,
+                                crate::protocol_serde::shape_facet_attribute_reference::de_facet_attribute_reference(tokens, _value, depth + 1)?,
                             );
                         }
                         "RequiredBehavior" => {

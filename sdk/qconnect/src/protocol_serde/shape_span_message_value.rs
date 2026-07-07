@@ -2,10 +2,16 @@
 pub(crate) fn de_span_message_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SpanMessageValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,18 +37,23 @@ where
                     }
                     variant = match key.as_ref() {
                         "text" => Some(crate::types::SpanMessageValue::Text(
-                            crate::protocol_serde::shape_span_text_value::de_span_text_value(tokens, _value)?
+                            crate::protocol_serde::shape_span_text_value::de_span_text_value(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "toolUse" => Some(crate::types::SpanMessageValue::ToolUse(
-                            crate::protocol_serde::shape_span_tool_use_value::de_span_tool_use_value(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolUse' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_span_tool_use_value::de_span_tool_use_value(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolUse' cannot be null"),
+                            )?,
                         )),
                         "toolResult" => Some(crate::types::SpanMessageValue::ToolResult(
-                            crate::protocol_serde::shape_span_tool_result_value::de_span_tool_result_value(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_span_tool_result_value::de_span_tool_result_value(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null"),
+                            )?,
+                        )),
+                        "reasoning" => Some(crate::types::SpanMessageValue::Reasoning(
+                            crate::protocol_serde::shape_span_reasoning_value::de_span_reasoning_value(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoning' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

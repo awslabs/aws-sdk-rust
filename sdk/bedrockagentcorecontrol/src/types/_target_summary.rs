@@ -18,6 +18,14 @@ pub struct TargetSummary {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>Priority for resolving resource URI conflicts across targets. Lower values take precedence. Defaults to 1000 when not set.</p>
     pub resource_priority: ::std::option::Option<i32>,
+    /// <p>The timestamp when the target was last synchronized.</p>
+    pub last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Contains the authorization data that is returned when a gateway target is configured with a credential provider with authorization code grant type and requires user federation.</p>
+    pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
+    /// <p>The type of the target.</p>
+    pub target_type: ::std::option::Option<crate::types::TargetType>,
+    /// <p>The listing mode for the target. MCP resources for <code>DEFAULT</code> targets are cached at the control plane for faster access. MCP resources for <code>DYNAMIC</code> targets are retrieved dynamically when listing tools.</p>
+    pub listing_mode: ::std::option::Option<crate::types::ListingMode>,
 }
 impl TargetSummary {
     /// <p>The unique identifier of the target.</p>
@@ -50,6 +58,22 @@ impl TargetSummary {
     pub fn resource_priority(&self) -> ::std::option::Option<i32> {
         self.resource_priority
     }
+    /// <p>The timestamp when the target was last synchronized.</p>
+    pub fn last_synchronized_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_synchronized_at.as_ref()
+    }
+    /// <p>Contains the authorization data that is returned when a gateway target is configured with a credential provider with authorization code grant type and requires user federation.</p>
+    pub fn authorization_data(&self) -> ::std::option::Option<&crate::types::AuthorizationData> {
+        self.authorization_data.as_ref()
+    }
+    /// <p>The type of the target.</p>
+    pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The listing mode for the target. MCP resources for <code>DEFAULT</code> targets are cached at the control plane for faster access. MCP resources for <code>DYNAMIC</code> targets are retrieved dynamically when listing tools.</p>
+    pub fn listing_mode(&self) -> ::std::option::Option<&crate::types::ListingMode> {
+        self.listing_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TargetSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -61,6 +85,10 @@ impl ::std::fmt::Debug for TargetSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("resource_priority", &self.resource_priority);
+        formatter.field("last_synchronized_at", &self.last_synchronized_at);
+        formatter.field("authorization_data", &self.authorization_data);
+        formatter.field("target_type", &self.target_type);
+        formatter.field("listing_mode", &self.listing_mode);
         formatter.finish()
     }
 }
@@ -82,6 +110,10 @@ pub struct TargetSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_priority: ::std::option::Option<i32>,
+    pub(crate) last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
+    pub(crate) target_type: ::std::option::Option<crate::types::TargetType>,
+    pub(crate) listing_mode: ::std::option::Option<crate::types::ListingMode>,
 }
 impl TargetSummaryBuilder {
     /// <p>The unique identifier of the target.</p>
@@ -187,6 +219,62 @@ impl TargetSummaryBuilder {
     pub fn get_resource_priority(&self) -> &::std::option::Option<i32> {
         &self.resource_priority
     }
+    /// <p>The timestamp when the target was last synchronized.</p>
+    pub fn last_synchronized_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_synchronized_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the target was last synchronized.</p>
+    pub fn set_last_synchronized_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_synchronized_at = input;
+        self
+    }
+    /// <p>The timestamp when the target was last synchronized.</p>
+    pub fn get_last_synchronized_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_synchronized_at
+    }
+    /// <p>Contains the authorization data that is returned when a gateway target is configured with a credential provider with authorization code grant type and requires user federation.</p>
+    pub fn authorization_data(mut self, input: crate::types::AuthorizationData) -> Self {
+        self.authorization_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the authorization data that is returned when a gateway target is configured with a credential provider with authorization code grant type and requires user federation.</p>
+    pub fn set_authorization_data(mut self, input: ::std::option::Option<crate::types::AuthorizationData>) -> Self {
+        self.authorization_data = input;
+        self
+    }
+    /// <p>Contains the authorization data that is returned when a gateway target is configured with a credential provider with authorization code grant type and requires user federation.</p>
+    pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
+        &self.authorization_data
+    }
+    /// <p>The type of the target.</p>
+    pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
+        self.target_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the target.</p>
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
+        self.target_type = input;
+        self
+    }
+    /// <p>The type of the target.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.target_type
+    }
+    /// <p>The listing mode for the target. MCP resources for <code>DEFAULT</code> targets are cached at the control plane for faster access. MCP resources for <code>DYNAMIC</code> targets are retrieved dynamically when listing tools.</p>
+    pub fn listing_mode(mut self, input: crate::types::ListingMode) -> Self {
+        self.listing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The listing mode for the target. MCP resources for <code>DEFAULT</code> targets are cached at the control plane for faster access. MCP resources for <code>DYNAMIC</code> targets are retrieved dynamically when listing tools.</p>
+    pub fn set_listing_mode(mut self, input: ::std::option::Option<crate::types::ListingMode>) -> Self {
+        self.listing_mode = input;
+        self
+    }
+    /// <p>The listing mode for the target. MCP resources for <code>DEFAULT</code> targets are cached at the control plane for faster access. MCP resources for <code>DYNAMIC</code> targets are retrieved dynamically when listing tools.</p>
+    pub fn get_listing_mode(&self) -> &::std::option::Option<crate::types::ListingMode> {
+        &self.listing_mode
+    }
     /// Consumes the builder and constructs a [`TargetSummary`](crate::types::TargetSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_id`](crate::types::builders::TargetSummaryBuilder::target_id)
@@ -228,6 +316,10 @@ impl TargetSummaryBuilder {
                 )
             })?,
             resource_priority: self.resource_priority,
+            last_synchronized_at: self.last_synchronized_at,
+            authorization_data: self.authorization_data,
+            target_type: self.target_type,
+            listing_mode: self.listing_mode,
         })
     }
 }
@@ -241,6 +333,10 @@ impl ::std::fmt::Debug for TargetSummaryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("resource_priority", &self.resource_priority);
+        formatter.field("last_synchronized_at", &self.last_synchronized_at);
+        formatter.field("authorization_data", &self.authorization_data);
+        formatter.field("target_type", &self.target_type);
+        formatter.field("listing_mode", &self.listing_mode);
         formatter.finish()
     }
 }

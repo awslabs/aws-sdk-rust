@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_verified_access_instance_open_vpn_client_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VerifiedAccessInstanceOpenVpnClientConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VerifiedAccessInstanceOpenVpnClientConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_verified_access_instance_open_vpn_client_configuration(
             s if s.matches("routeSet") /* Routes com.amazonaws.ec2#VerifiedAccessInstanceOpenVpnClientConfiguration$Routes */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_instance_open_vpn_client_configuration_route_list::de_verified_access_instance_open_vpn_client_configuration_route_list(&mut tag)
+                        crate::protocol_serde::shape_verified_access_instance_open_vpn_client_configuration_route_list::de_verified_access_instance_open_vpn_client_configuration_route_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

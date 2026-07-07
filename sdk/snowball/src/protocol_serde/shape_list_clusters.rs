@@ -67,10 +67,11 @@ pub(crate) fn de_list_clusters(
     value: &[u8],
     mut builder: crate::operation::list_clusters::builders::ListClustersOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_clusters::builders::ListClustersOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_clusters::builders::ListClustersOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::list_clusters::builders::ListClustersOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
@@ -78,6 +79,7 @@ pub(crate) fn de_list_clusters(
                 Ok(
                     builder.set_cluster_list_entries(Some(crate::protocol_serde::shape_cluster_list_entry_list::de_cluster_list_entry_list(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -93,6 +95,8 @@ pub(crate) fn de_list_clusters(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -102,13 +106,13 @@ pub(crate) fn de_list_clusters(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

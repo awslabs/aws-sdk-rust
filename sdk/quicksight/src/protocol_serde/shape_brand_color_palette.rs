@@ -2,10 +2,16 @@
 pub(crate) fn de_brand_color_palette<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BrandColorPalette>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,31 +22,31 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Primary" => {
-                            builder = builder.set_primary(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_primary(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Secondary" => {
-                            builder = builder.set_secondary(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_secondary(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Accent" => {
-                            builder = builder.set_accent(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_accent(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Measure" => {
-                            builder = builder.set_measure(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_measure(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Dimension" => {
-                            builder = builder.set_dimension(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_dimension(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Success" => {
-                            builder = builder.set_success(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_success(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Info" => {
-                            builder = builder.set_info(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_info(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Warning" => {
-                            builder = builder.set_warning(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_warning(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Danger" => {
-                            builder = builder.set_danger(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_danger(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

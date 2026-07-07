@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_metrics_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MetricsConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MetricsConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_metrics_configuration(
             s if s.matches("Filter") /* Filter com.amazonaws.s3#MetricsConfiguration$Filter */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_metrics_filter::de_metrics_filter(&mut tag)
+                        crate::protocol_serde::shape_metrics_filter::de_metrics_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;

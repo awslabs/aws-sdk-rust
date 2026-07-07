@@ -282,6 +282,18 @@ pub(crate) fn service_volume_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn threshold_configuration_correct_errors(
+    mut builder: crate::types::builders::ThresholdConfigurationBuilder,
+) -> crate::types::builders::ThresholdConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ThresholdType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn vpc_lattice_configuration_correct_errors(
     mut builder: crate::types::builders::VpcLatticeConfigurationBuilder,
 ) -> crate::types::builders::VpcLatticeConfigurationBuilder {
@@ -417,6 +429,18 @@ pub(crate) fn memory_mib_request_correct_errors(
 ) -> crate::types::builders::MemoryMiBRequestBuilder {
     if builder.min.is_none() {
         builder.min = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metric_configuration_correct_errors(
+    mut builder: crate::types::builders::MetricConfigurationBuilder,
+) -> crate::types::builders::MetricConfigurationBuilder {
+    if builder.metric_names.is_none() {
+        builder.metric_names = Some(Default::default())
+    }
+    if builder.resolution_seconds.is_none() {
+        builder.resolution_seconds = Some(Default::default())
     }
     builder
 }

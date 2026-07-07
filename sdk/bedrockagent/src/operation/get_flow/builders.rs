@@ -113,4 +113,18 @@ impl GetFlowFluentBuilder {
     pub fn get_flow_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_identifier()
     }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.inner = self.inner.included_data(input);
+        self
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.inner = self.inner.set_included_data(input);
+        self
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        self.inner.get_included_data()
+    }
 }

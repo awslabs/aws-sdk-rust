@@ -51,10 +51,16 @@ pub fn ser_data_label_options(
 pub(crate) fn de_data_label_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataLabelOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,74 +69,79 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Visibility" => {
-                            builder = builder.set_visibility(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Visibility" => {
+                                builder = builder.set_visibility(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "CategoryLabelVisibility" => {
+                                builder = builder.set_category_label_visibility(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "MeasureLabelVisibility" => {
+                                builder = builder.set_measure_label_visibility(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "DataLabelTypes" => {
+                                builder = builder.set_data_label_types(crate::protocol_serde::shape_data_label_types::de_data_label_types(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Position" => {
+                                builder = builder.set_position(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DataLabelPosition::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "LabelContent" => {
+                                builder = builder.set_label_content(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DataLabelContent::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "LabelFontConfiguration" => {
+                                builder = builder.set_label_font_configuration(
+                                    crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "LabelColor" => {
+                                builder = builder.set_label_color(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Overlap" => {
+                                builder = builder.set_overlap(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DataLabelOverlap::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "TotalsVisibility" => {
+                                builder = builder.set_totals_visibility(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "CategoryLabelVisibility" => {
-                            builder = builder.set_category_label_visibility(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "MeasureLabelVisibility" => {
-                            builder = builder.set_measure_label_visibility(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "DataLabelTypes" => {
-                            builder =
-                                builder.set_data_label_types(crate::protocol_serde::shape_data_label_types::de_data_label_types(tokens, _value)?);
-                        }
-                        "Position" => {
-                            builder = builder.set_position(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DataLabelPosition::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "LabelContent" => {
-                            builder = builder.set_label_content(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DataLabelContent::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "LabelFontConfiguration" => {
-                            builder = builder.set_label_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(
-                                tokens, _value,
-                            )?);
-                        }
-                        "LabelColor" => {
-                            builder = builder.set_label_color(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Overlap" => {
-                            builder = builder.set_overlap(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DataLabelOverlap::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "TotalsVisibility" => {
-                            builder = builder.set_totals_visibility(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -49,6 +49,8 @@ pub fn de_get_launch_template_data(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetLaunchTemplateDataResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetLaunchTemplateDataResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_get_launch_template_data(
             s if s.matches("launchTemplateData") /* LaunchTemplateData com.amazonaws.ec2.synthetic#GetLaunchTemplateDataOutput$LaunchTemplateData */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_response_launch_template_data::de_response_launch_template_data(&mut tag)
+                        crate::protocol_serde::shape_response_launch_template_data::de_response_launch_template_data(&mut tag, depth + 1)
                         ?
                     )
                 ;

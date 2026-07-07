@@ -3,46 +3,58 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntegrationOutput {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub integration_id: ::std::string::String,
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     pub installation_id: ::std::string::String,
-    /// Provider type
+    /// <p>The integration provider.</p>
     pub provider: crate::types::Provider,
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     pub provider_type: crate::types::ProviderType,
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The HTTPS URL of the customer self-hosted instance, such as a GitHub Enterprise Server or self-managed GitLab instance. This value is absent for SaaS integrations.</p>
+    pub target_url: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the private connection used to reach the integration's self-hosted instance over private networking, if one is configured.</p>
+    pub private_connection_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutput {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn integration_id(&self) -> &str {
         use std::ops::Deref;
         self.integration_id.deref()
     }
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     pub fn installation_id(&self) -> &str {
         use std::ops::Deref;
         self.installation_id.deref()
     }
-    /// Provider type
+    /// <p>The integration provider.</p>
     pub fn provider(&self) -> &crate::types::Provider {
         &self.provider
     }
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     pub fn provider_type(&self) -> &crate::types::ProviderType {
         &self.provider_type
     }
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
+    }
+    /// <p>The HTTPS URL of the customer self-hosted instance, such as a GitHub Enterprise Server or self-managed GitLab instance. This value is absent for SaaS integrations.</p>
+    pub fn target_url(&self) -> ::std::option::Option<&str> {
+        self.target_url.as_deref()
+    }
+    /// <p>The name of the private connection used to reach the integration's self-hosted instance over private networking, if one is configured.</p>
+    pub fn private_connection_name(&self) -> ::std::option::Option<&str> {
+        self.private_connection_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIntegrationOutput {
@@ -67,96 +79,126 @@ pub struct GetIntegrationOutputBuilder {
     pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_url: ::std::option::Option<::std::string::String>,
+    pub(crate) private_connection_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutputBuilder {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_id = input;
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_id
     }
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     /// This field is required.
     pub fn installation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.installation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     pub fn set_installation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.installation_id = input;
         self
     }
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     pub fn get_installation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.installation_id
     }
-    /// Provider type
+    /// <p>The integration provider.</p>
     /// This field is required.
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// Provider type
+    /// <p>The integration provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// Provider type
+    /// <p>The integration provider.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     /// This field is required.
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
         self
     }
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.provider_type = input;
         self
     }
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
         &self.provider_type
     }
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
+    }
+    /// <p>The HTTPS URL of the customer self-hosted instance, such as a GitHub Enterprise Server or self-managed GitLab instance. This value is absent for SaaS integrations.</p>
+    pub fn target_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The HTTPS URL of the customer self-hosted instance, such as a GitHub Enterprise Server or self-managed GitLab instance. This value is absent for SaaS integrations.</p>
+    pub fn set_target_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_url = input;
+        self
+    }
+    /// <p>The HTTPS URL of the customer self-hosted instance, such as a GitHub Enterprise Server or self-managed GitLab instance. This value is absent for SaaS integrations.</p>
+    pub fn get_target_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_url
+    }
+    /// <p>The name of the private connection used to reach the integration's self-hosted instance over private networking, if one is configured.</p>
+    pub fn private_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_connection_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the private connection used to reach the integration's self-hosted instance over private networking, if one is configured.</p>
+    pub fn set_private_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.private_connection_name = input;
+        self
+    }
+    /// <p>The name of the private connection used to reach the integration's self-hosted instance over private networking, if one is configured.</p>
+    pub fn get_private_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_connection_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -203,6 +245,8 @@ impl GetIntegrationOutputBuilder {
             })?,
             display_name: self.display_name,
             kms_key_id: self.kms_key_id,
+            target_url: self.target_url,
+            private_connection_name: self.private_connection_name,
             _request_id: self._request_id,
         })
     }

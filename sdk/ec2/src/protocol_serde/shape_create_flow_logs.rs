@@ -40,6 +40,8 @@ pub fn de_create_flow_logs(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateFlowLogsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateFlowLogsResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_create_flow_logs(
             s if s.matches("flowLogIdSet") /* FlowLogIds com.amazonaws.ec2.synthetic#CreateFlowLogsOutput$FlowLogIds */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +75,7 @@ pub fn de_create_flow_logs(
             s if s.matches("unsuccessful") /* Unsuccessful com.amazonaws.ec2.synthetic#CreateFlowLogsOutput$Unsuccessful */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_unsuccessful_item_set::de_unsuccessful_item_set(&mut tag)
+                        crate::protocol_serde::shape_unsuccessful_item_set::de_unsuccessful_item_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

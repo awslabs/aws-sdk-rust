@@ -12,6 +12,7 @@
 /// ```text
 /// # let vcfversion = unimplemented!();
 /// match vcfversion {
+///     VcfVersion::SelfDeployed => { /* ... */ },
 ///     VcfVersion::Vcf521 => { /* ... */ },
 ///     VcfVersion::Vcf522 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum VcfVersion {
     #[allow(missing_docs)] // documentation missing in model
+    SelfDeployed,
+    #[allow(missing_docs)] // documentation missing in model
     Vcf521,
     #[allow(missing_docs)] // documentation missing in model
     Vcf522,
@@ -53,6 +56,7 @@ pub enum VcfVersion {
 impl ::std::convert::From<&str> for VcfVersion {
     fn from(s: &str) -> Self {
         match s {
+            "SELF_DEPLOYED" => VcfVersion::SelfDeployed,
             "VCF-5.2.1" => VcfVersion::Vcf521,
             "VCF-5.2.2" => VcfVersion::Vcf522,
             other => VcfVersion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl VcfVersion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            VcfVersion::SelfDeployed => "SELF_DEPLOYED",
             VcfVersion::Vcf521 => "VCF-5.2.1",
             VcfVersion::Vcf522 => "VCF-5.2.2",
             VcfVersion::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl VcfVersion {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VCF-5.2.1", "VCF-5.2.2"]
+        &["SELF_DEPLOYED", "VCF-5.2.1", "VCF-5.2.2"]
     }
 }
 impl ::std::convert::AsRef<str> for VcfVersion {
@@ -100,6 +105,7 @@ impl VcfVersion {
 impl ::std::fmt::Display for VcfVersion {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            VcfVersion::SelfDeployed => write!(f, "SELF_DEPLOYED"),
             VcfVersion::Vcf521 => write!(f, "VCF-5.2.1"),
             VcfVersion::Vcf522 => write!(f, "VCF-5.2.2"),
             VcfVersion::Unknown(value) => write!(f, "{value}"),

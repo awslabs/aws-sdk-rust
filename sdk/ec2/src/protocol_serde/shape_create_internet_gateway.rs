@@ -49,6 +49,8 @@ pub fn de_create_internet_gateway(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateInternetGatewayResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateInternetGatewayResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_create_internet_gateway(
             s if s.matches("internetGateway") /* InternetGateway com.amazonaws.ec2.synthetic#CreateInternetGatewayOutput$InternetGateway */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_internet_gateway::de_internet_gateway(&mut tag)
+                        crate::protocol_serde::shape_internet_gateway::de_internet_gateway(&mut tag, depth + 1)
                         ?
                     )
                 ;

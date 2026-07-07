@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ssl_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SslPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SslPolicy::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_ssl_policy(
             s if s.matches("SslProtocols") /* SslProtocols com.amazonaws.elasticloadbalancingv2#SslPolicy$SslProtocols */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ssl_protocols::de_ssl_protocols(&mut tag)
+                        crate::protocol_serde::shape_ssl_protocols::de_ssl_protocols(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_ssl_policy(
             s if s.matches("Ciphers") /* Ciphers com.amazonaws.elasticloadbalancingv2#SslPolicy$Ciphers */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_ciphers::de_ciphers(&mut tag)
+                        crate::protocol_serde::shape_ciphers::de_ciphers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_ssl_policy(
             s if s.matches("SupportedLoadBalancerTypes") /* SupportedLoadBalancerTypes com.amazonaws.elasticloadbalancingv2#SslPolicy$SupportedLoadBalancerTypes */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
+                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag, depth + 1)
                         ?
                     )
                 ;

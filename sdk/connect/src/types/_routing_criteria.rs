@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingCriteria {
-    /// <p>List of routing steps. When Amazon Connect does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
+    /// <p>List of routing steps. When Connect Customer does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
     /// <p>The timestamp indicating when the routing criteria is set to active. A routing criteria is activated when contact is transferred to a queue. ActivationTimestamp will be set on routing criteria for contacts in agent queue even though Routing criteria is never activated for contacts in agent queue.</p>
     pub activation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -12,7 +12,7 @@ pub struct RoutingCriteria {
     pub index: ::std::option::Option<i32>,
 }
 impl RoutingCriteria {
-    /// <p>List of routing steps. When Amazon Connect does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
+    /// <p>List of routing steps. When Connect Customer does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
     pub fn steps(&self) -> &[crate::types::Step] {
@@ -47,19 +47,19 @@ impl RoutingCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
     ///
-    /// <p>List of routing steps. When Amazon Connect does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
+    /// <p>List of routing steps. When Connect Customer does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
     pub fn steps(mut self, input: crate::types::Step) -> Self {
         let mut v = self.steps.unwrap_or_default();
         v.push(input);
         self.steps = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of routing steps. When Amazon Connect does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
+    /// <p>List of routing steps. When Connect Customer does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
     pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>) -> Self {
         self.steps = input;
         self
     }
-    /// <p>List of routing steps. When Amazon Connect does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
+    /// <p>List of routing steps. When Connect Customer does not find an available agent meeting the requirements in a step for a given step duration, the routing criteria will move on to the next step sequentially until a join is completed with an agent. When all steps are exhausted, the contact will be offered to any agent in the queue.</p>
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Step>> {
         &self.steps
     }

@@ -20,7 +20,11 @@ pub fn ser_storage_lens_expanded_prefixes_data_export(
 #[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_expanded_prefixes_data_export(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StorageLensExpandedPrefixesDataExport, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensExpandedPrefixesDataExport::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -28,7 +32,7 @@ pub fn de_storage_lens_expanded_prefixes_data_export(
             s if s.matches("S3BucketDestination") /* S3BucketDestination com.amazonaws.s3control#StorageLensExpandedPrefixesDataExport$S3BucketDestination */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_s3_bucket_destination::de_s3_bucket_destination(&mut tag)
+                        crate::protocol_serde::shape_s3_bucket_destination::de_s3_bucket_destination(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -38,7 +42,7 @@ pub fn de_storage_lens_expanded_prefixes_data_export(
             s if s.matches("StorageLensTableDestination") /* StorageLensTableDestination com.amazonaws.s3control#StorageLensExpandedPrefixesDataExport$StorageLensTableDestination */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_storage_lens_table_destination::de_storage_lens_table_destination(&mut tag)
+                        crate::protocol_serde::shape_storage_lens_table_destination::de_storage_lens_table_destination(&mut tag, depth + 1)
                         ?
                     )
                 ;

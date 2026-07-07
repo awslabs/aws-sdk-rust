@@ -2,10 +2,16 @@
 pub(crate) fn de_security_config_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SecurityConfigDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,19 +50,28 @@ where
                             );
                         }
                         "samlOptions" => {
-                            builder =
-                                builder.set_saml_options(crate::protocol_serde::shape_saml_config_options::de_saml_config_options(tokens, _value)?);
+                            builder = builder.set_saml_options(crate::protocol_serde::shape_saml_config_options::de_saml_config_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "iamIdentityCenterOptions" => {
                             builder = builder.set_iam_identity_center_options(
                                 crate::protocol_serde::shape_iam_identity_center_config_options::de_iam_identity_center_config_options(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "iamFederationOptions" => {
                             builder = builder.set_iam_federation_options(
-                                crate::protocol_serde::shape_iam_federation_config_options::de_iam_federation_config_options(tokens, _value)?,
+                                crate::protocol_serde::shape_iam_federation_config_options::de_iam_federation_config_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "createdDate" => {

@@ -13,6 +13,8 @@ pub use crate::types::_organization_configuration::OrganizationConfigurationBuil
 
 pub use crate::types::_invitation::InvitationBuilder;
 
+pub use crate::types::_cspm_health_check::CspmHealthCheckBuilder;
+
 pub use crate::types::_health_check::HealthCheckBuilder;
 
 pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifierBuilder;
@@ -24,6 +26,8 @@ pub use crate::types::_findings_trends_filters::FindingsTrendsFiltersBuilder;
 pub use crate::types::_ocsf_finding_filters::OcsfFindingFiltersBuilder;
 
 pub use crate::types::_insight_results::InsightResultsBuilder;
+
+pub use crate::types::_recommendation_error::RecommendationErrorBuilder;
 
 pub use crate::types::_resource_scopes::ResourceScopesBuilder;
 
@@ -85,6 +89,8 @@ pub use crate::types::_automation_rules_action_v2::AutomationRulesActionV2Builde
 
 pub use crate::types::_security_hub_policy::SecurityHubPolicyBuilder;
 
+pub use crate::types::_azure_provider_configuration::AzureProviderConfigurationBuilder;
+
 pub use crate::types::_jira_cloud_provider_configuration::JiraCloudProviderConfigurationBuilder;
 
 pub use crate::types::_service_now_provider_configuration::ServiceNowProviderConfigurationBuilder;
@@ -99,9 +105,13 @@ pub use crate::types::_product::ProductBuilder;
 
 pub use crate::types::_product_v2::ProductV2Builder;
 
+pub use crate::types::_feature_detail::FeatureDetailBuilder;
+
 pub use crate::types::_standard::StandardBuilder;
 
 pub use crate::types::_standards_control::StandardsControlBuilder;
+
+pub use crate::types::_azure_detail::AzureDetailBuilder;
 
 pub use crate::types::_jira_cloud_detail::JiraCloudDetailBuilder;
 
@@ -135,6 +145,8 @@ pub use crate::types::_automation_rules_metadata_v2::AutomationRulesMetadataV2Bu
 
 pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummaryBuilder;
 
+pub use crate::types::_cspm_connector_summary::CspmConnectorSummaryBuilder;
+
 pub use crate::types::_connector_summary::ConnectorSummaryBuilder;
 
 pub use crate::types::_finding_aggregator::FindingAggregatorBuilder;
@@ -142,6 +154,8 @@ pub use crate::types::_finding_aggregator::FindingAggregatorBuilder;
 pub use crate::types::_admin_account::AdminAccountBuilder;
 
 pub use crate::types::_standards_control_association_summary::StandardsControlAssociationSummaryBuilder;
+
+pub use crate::types::_azure_update_configuration::AzureUpdateConfigurationBuilder;
 
 pub use crate::types::_jira_cloud_update_configuration::JiraCloudUpdateConfigurationBuilder;
 
@@ -191,6 +205,8 @@ pub use crate::types::_external_integration_configuration::ExternalIntegrationCo
 
 pub use crate::types::_security_controls_configuration::SecurityControlsConfigurationBuilder;
 
+pub use crate::types::_azure_scope_configuration::AzureScopeConfigurationBuilder;
+
 pub use crate::types::_ip_filter::IpFilterBuilder;
 
 pub use crate::types::_keyword_filter::KeywordFilterBuilder;
@@ -198,6 +214,8 @@ pub use crate::types::_keyword_filter::KeywordFilterBuilder;
 pub use crate::types::_boolean_filter::BooleanFilterBuilder;
 
 pub use crate::types::_standards_managed_by::StandardsManagedByBuilder;
+
+pub use crate::types::_health_issue::HealthIssueBuilder;
 
 pub use crate::types::_finding_history_update_source::FindingHistoryUpdateSourceBuilder;
 
@@ -211,6 +229,8 @@ pub use crate::types::_composite_filter::CompositeFilterBuilder;
 
 pub use crate::types::_insight_result_value::InsightResultValueBuilder;
 
+pub use crate::types::_unused_permissions_recommendation_step::UnusedPermissionsRecommendationStepBuilder;
+
 pub use crate::types::_resources_trends_composite_filter::ResourcesTrendsCompositeFilterBuilder;
 
 pub use crate::types::_resources_trends_values::ResourcesTrendsValuesBuilder;
@@ -218,6 +238,8 @@ pub use crate::types::_resources_trends_values::ResourcesTrendsValuesBuilder;
 pub use crate::types::_resources_composite_filter::ResourcesCompositeFilterBuilder;
 
 pub use crate::types::_parameter_definition::ParameterDefinitionBuilder;
+
+pub use crate::types::_cspm_provider_summary::CspmProviderSummaryBuilder;
 
 pub use crate::types::_provider_summary::ProviderSummaryBuilder;
 
@@ -266,6 +288,8 @@ pub use crate::types::_resource_tag::ResourceTagBuilder;
 pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2Builder;
 
 pub use crate::types::_network_header::NetworkHeaderBuilder;
+
+pub use crate::types::_resource_owner::ResourceOwnerBuilder;
 
 pub use crate::types::_data_classification_details::DataClassificationDetailsBuilder;
 
@@ -334,6 +358,10 @@ pub use crate::types::_enum_list_configuration_options::EnumListConfigurationOpt
 pub use crate::types::_network_path_component_details::NetworkPathComponentDetailsBuilder;
 
 pub use crate::types::_file_paths::FilePathsBuilder;
+
+pub use crate::types::_resource_owner_account::ResourceOwnerAccountBuilder;
+
+pub use crate::types::_resource_owner_org::ResourceOwnerOrgBuilder;
 
 pub use crate::types::_classification_result::ClassificationResultBuilder;
 

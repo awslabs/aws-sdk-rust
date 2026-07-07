@@ -126,13 +126,15 @@ pub(crate) fn de_get_job(
 ) -> ::std::result::Result<crate::operation::get_job::builders::GetJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "attachments" => {
-                    builder = builder.set_attachments(crate::protocol_serde::shape_attachments::de_attachments(tokens, _value)?);
+                    builder = builder.set_attachments(crate::protocol_serde::shape_attachments::de_attachments(tokens, _value, depth + 1)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -210,7 +212,7 @@ pub(crate) fn de_get_job(
                     );
                 }
                 "parameters" => {
-                    builder = builder.set_parameters(crate::protocol_serde::shape_job_parameters::de_job_parameters(tokens, _value)?);
+                    builder = builder.set_parameters(crate::protocol_serde::shape_job_parameters::de_job_parameters(tokens, _value, depth + 1)?);
                 }
                 "priority" => {
                     builder = builder.set_priority(
@@ -262,7 +264,9 @@ pub(crate) fn de_get_job(
                 }
                 "taskRunStatusCounts" => {
                     builder = builder.set_task_run_status_counts(crate::protocol_serde::shape_task_run_status_counts::de_task_run_status_counts(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "updatedAt" => {

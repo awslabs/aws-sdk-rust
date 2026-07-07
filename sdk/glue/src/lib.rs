@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-glue = "1.144.0"
+//! aws-sdk-glue = "1.153.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`BatchCreatePartition`](crate::operation::batch_create_partition) operation has
-/// a [`Client::batch_create_partition`], function which returns a builder for that operation.
+/// For example, the [`AssociateGlossaryTerms`](crate::operation::associate_glossary_terms) operation has
+/// a [`Client::associate_glossary_terms`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.batch_create_partition()
-///     .catalog_id("example")
+/// let result = client.associate_glossary_terms()
+///     .asset_identifier("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -188,6 +188,10 @@ pub mod primitives;
 
 /// Data structures used by operation inputs/outputs.
 pub mod types;
+
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
 
 mod observability_feature;
 

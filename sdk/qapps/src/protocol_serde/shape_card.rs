@@ -2,10 +2,16 @@
 pub(crate) fn de_card<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Card>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,27 +37,27 @@ where
                     }
                     variant = match key.as_ref() {
                         "textInput" => Some(crate::types::Card::TextInput(
-                            crate::protocol_serde::shape_text_input_card::de_text_input_card(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_text_input_card::de_text_input_card(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'textInput' cannot be null")
                             })?,
                         )),
                         "qQuery" => Some(crate::types::Card::QQuery(
-                            crate::protocol_serde::shape_q_query_card::de_q_query_card(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_q_query_card::de_q_query_card(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'qQuery' cannot be null")
                             })?,
                         )),
                         "qPlugin" => Some(crate::types::Card::QPlugin(
-                            crate::protocol_serde::shape_q_plugin_card::de_q_plugin_card(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_q_plugin_card::de_q_plugin_card(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'qPlugin' cannot be null")
                             })?,
                         )),
                         "fileUpload" => Some(crate::types::Card::FileUpload(
-                            crate::protocol_serde::shape_file_upload_card::de_file_upload_card(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_file_upload_card::de_file_upload_card(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fileUpload' cannot be null")
                             })?,
                         )),
                         "formInput" => Some(crate::types::Card::FormInput(
-                            crate::protocol_serde::shape_form_input_card::de_form_input_card(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_form_input_card::de_form_input_card(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'formInput' cannot be null")
                             })?,
                         )),

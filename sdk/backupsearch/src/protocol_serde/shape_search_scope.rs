@@ -2,10 +2,16 @@
 pub(crate) fn de_search_scope<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SearchScope>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,25 +22,31 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BackupResourceTypes" => {
-                            builder = builder
-                                .set_backup_resource_types(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens, _value)?);
+                            builder = builder.set_backup_resource_types(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BackupResourceCreationTime" => {
                             builder = builder.set_backup_resource_creation_time(
-                                crate::protocol_serde::shape_backup_creation_time_filter::de_backup_creation_time_filter(tokens, _value)?,
+                                crate::protocol_serde::shape_backup_creation_time_filter::de_backup_creation_time_filter(tokens, _value, depth + 1)?,
                             );
                         }
                         "SourceResourceArns" => {
-                            builder = builder
-                                .set_source_resource_arns(crate::protocol_serde::shape_resource_arn_list::de_resource_arn_list(tokens, _value)?);
+                            builder = builder.set_source_resource_arns(crate::protocol_serde::shape_resource_arn_list::de_resource_arn_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BackupResourceArns" => {
                             builder = builder.set_backup_resource_arns(
-                                crate::protocol_serde::shape_recovery_point_arn_list::de_recovery_point_arn_list(tokens, _value)?,
+                                crate::protocol_serde::shape_recovery_point_arn_list::de_recovery_point_arn_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "BackupResourceTags" => {
-                            builder = builder.set_backup_resource_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_backup_resource_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

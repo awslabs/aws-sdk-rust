@@ -91,6 +91,8 @@ pub fn de_describe_traffic_sources(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeTrafficSourcesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTrafficSourcesResponse got {start_el:?}"
@@ -108,7 +110,7 @@ pub fn de_describe_traffic_sources(
             s if s.matches("TrafficSources") /* TrafficSources com.amazonaws.autoscaling.synthetic#DescribeTrafficSourcesOutput$TrafficSources */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_traffic_source_states::de_traffic_source_states(&mut tag)
+                        crate::protocol_serde::shape_traffic_source_states::de_traffic_source_states(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_aggregation_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AggregationSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,26 +29,46 @@ where
                             );
                         }
                         "aggregatedBy" => {
-                            builder = builder.set_aggregated_by(crate::protocol_serde::shape_aggregation_keys::de_aggregation_keys(tokens, _value)?);
+                            builder = builder.set_aggregated_by(crate::protocol_serde::shape_aggregation_keys::de_aggregation_keys(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "aggregatedAccounts" => {
                             builder = builder.set_aggregated_accounts(
-                                crate::protocol_serde::shape_summarization_dimension_overview::de_summarization_dimension_overview(tokens, _value)?,
+                                crate::protocol_serde::shape_summarization_dimension_overview::de_summarization_dimension_overview(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "aggregatedRegions" => {
                             builder = builder.set_aggregated_regions(
-                                crate::protocol_serde::shape_summarization_dimension_overview::de_summarization_dimension_overview(tokens, _value)?,
+                                crate::protocol_serde::shape_summarization_dimension_overview::de_summarization_dimension_overview(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "aggregatedOrganizationalUnits" => {
                             builder = builder.set_aggregated_organizational_units(
-                                crate::protocol_serde::shape_summarization_dimension_overview::de_summarization_dimension_overview(tokens, _value)?,
+                                crate::protocol_serde::shape_summarization_dimension_overview::de_summarization_dimension_overview(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "additionalSummarizationDimensions" => {
                             builder = builder.set_additional_summarization_dimensions(
-                                crate::protocol_serde::shape_summarization_dimension_overviews::de_summarization_dimension_overviews(tokens, _value)?,
+                                crate::protocol_serde::shape_summarization_dimension_overviews::de_summarization_dimension_overviews(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

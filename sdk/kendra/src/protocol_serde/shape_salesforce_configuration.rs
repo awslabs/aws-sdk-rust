@@ -75,10 +75,16 @@ pub fn ser_salesforce_configuration(
 pub(crate) fn de_salesforce_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SalesforceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -105,18 +111,20 @@ where
                             }
                             "StandardObjectConfigurations" => {
                                 builder = builder.set_standard_object_configurations(
-                                    crate::protocol_serde::shape_salesforce_standard_object_configuration_list::de_salesforce_standard_object_configuration_list(tokens, _value)?
+                                    crate::protocol_serde::shape_salesforce_standard_object_configuration_list::de_salesforce_standard_object_configuration_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "KnowledgeArticleConfiguration" => {
                                 builder = builder.set_knowledge_article_configuration(
-                                    crate::protocol_serde::shape_salesforce_knowledge_article_configuration::de_salesforce_knowledge_article_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_salesforce_knowledge_article_configuration::de_salesforce_knowledge_article_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "ChatterFeedConfiguration" => {
                                 builder = builder.set_chatter_feed_configuration(
                                     crate::protocol_serde::shape_salesforce_chatter_feed_configuration::de_salesforce_chatter_feed_configuration(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
@@ -125,17 +133,17 @@ where
                             }
                             "StandardObjectAttachmentConfiguration" => {
                                 builder = builder.set_standard_object_attachment_configuration(
-                                    crate::protocol_serde::shape_salesforce_standard_object_attachment_configuration::de_salesforce_standard_object_attachment_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_salesforce_standard_object_attachment_configuration::de_salesforce_standard_object_attachment_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "IncludeAttachmentFilePatterns" => {
                                 builder = builder.set_include_attachment_file_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value, depth + 1)?
                                 );
                             }
                             "ExcludeAttachmentFilePatterns" => {
                                 builder = builder.set_exclude_attachment_file_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

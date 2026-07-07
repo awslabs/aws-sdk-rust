@@ -60,5 +60,8 @@ pub fn ser_new_transit_virtual_interface(
     if let Some(var_13) = &input.enable_site_link {
         object.key("enableSiteLink").boolean(*var_13);
     }
+    if let Some(var_14) = &input.rate_limit {
+        object.key("rateLimit").string(var_14.as_str());
+    }
     Ok(())
 }

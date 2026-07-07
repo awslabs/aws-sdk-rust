@@ -12,6 +12,8 @@
 /// ```text
 /// # let tableattributes = unimplemented!();
 /// match tableattributes {
+///     TableAttributes::Default => { /* ... */ },
+///     TableAttributes::LatestIcebergMetadata => { /* ... */ },
 ///     TableAttributes::Name => { /* ... */ },
 ///     TableAttributes::TableType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +45,10 @@
 )]
 pub enum TableAttributes {
     #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
+    LatestIcebergMetadata,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     #[allow(missing_docs)] // documentation missing in model
     TableType,
@@ -53,6 +59,8 @@ pub enum TableAttributes {
 impl ::std::convert::From<&str> for TableAttributes {
     fn from(s: &str) -> Self {
         match s {
+            "DEFAULT" => TableAttributes::Default,
+            "LATEST_ICEBERG_METADATA" => TableAttributes::LatestIcebergMetadata,
             "NAME" => TableAttributes::Name,
             "TABLE_TYPE" => TableAttributes::TableType,
             other => TableAttributes::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl TableAttributes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TableAttributes::Default => "DEFAULT",
+            TableAttributes::LatestIcebergMetadata => "LATEST_ICEBERG_METADATA",
             TableAttributes::Name => "NAME",
             TableAttributes::TableType => "TABLE_TYPE",
             TableAttributes::Unknown(value) => value.as_str(),
@@ -77,7 +87,7 @@ impl TableAttributes {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NAME", "TABLE_TYPE"]
+        &["DEFAULT", "LATEST_ICEBERG_METADATA", "NAME", "TABLE_TYPE"]
     }
 }
 impl ::std::convert::AsRef<str> for TableAttributes {
@@ -100,6 +110,8 @@ impl TableAttributes {
 impl ::std::fmt::Display for TableAttributes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TableAttributes::Default => write!(f, "DEFAULT"),
+            TableAttributes::LatestIcebergMetadata => write!(f, "LATEST_ICEBERG_METADATA"),
             TableAttributes::Name => write!(f, "NAME"),
             TableAttributes::TableType => write!(f, "TABLE_TYPE"),
             TableAttributes::Unknown(value) => write!(f, "{value}"),

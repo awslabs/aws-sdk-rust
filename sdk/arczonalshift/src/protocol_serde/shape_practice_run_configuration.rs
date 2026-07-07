@@ -2,10 +2,16 @@
 pub(crate) fn de_practice_run_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PracticeRunConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,19 +22,36 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "blockingAlarms" => {
-                            builder = builder.set_blocking_alarms(crate::protocol_serde::shape_blocking_alarms::de_blocking_alarms(tokens, _value)?);
+                            builder = builder.set_blocking_alarms(crate::protocol_serde::shape_blocking_alarms::de_blocking_alarms(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "outcomeAlarms" => {
-                            builder = builder.set_outcome_alarms(crate::protocol_serde::shape_outcome_alarms::de_outcome_alarms(tokens, _value)?);
+                            builder = builder.set_outcome_alarms(crate::protocol_serde::shape_outcome_alarms::de_outcome_alarms(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "blockedWindows" => {
-                            builder = builder.set_blocked_windows(crate::protocol_serde::shape_blocked_windows::de_blocked_windows(tokens, _value)?);
+                            builder = builder.set_blocked_windows(crate::protocol_serde::shape_blocked_windows::de_blocked_windows(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "allowedWindows" => {
-                            builder = builder.set_allowed_windows(crate::protocol_serde::shape_allowed_windows::de_allowed_windows(tokens, _value)?);
+                            builder = builder.set_allowed_windows(crate::protocol_serde::shape_allowed_windows::de_allowed_windows(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "blockedDates" => {
-                            builder = builder.set_blocked_dates(crate::protocol_serde::shape_blocked_dates::de_blocked_dates(tokens, _value)?);
+                            builder =
+                                builder.set_blocked_dates(crate::protocol_serde::shape_blocked_dates::de_blocked_dates(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

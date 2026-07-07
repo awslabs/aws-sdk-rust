@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_application_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ApplicationDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ApplicationDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -77,7 +81,7 @@ pub fn de_application_description(
             s if s.matches("Versions") /* Versions com.amazonaws.elasticbeanstalk#ApplicationDescription$Versions */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_version_labels_list::de_version_labels_list(&mut tag)
+                        crate::protocol_serde::shape_version_labels_list::de_version_labels_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -87,7 +91,7 @@ pub fn de_application_description(
             s if s.matches("ConfigurationTemplates") /* ConfigurationTemplates com.amazonaws.elasticbeanstalk#ApplicationDescription$ConfigurationTemplates */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_configuration_template_names_list::de_configuration_template_names_list(&mut tag)
+                        crate::protocol_serde::shape_configuration_template_names_list::de_configuration_template_names_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -97,7 +101,7 @@ pub fn de_application_description(
             s if s.matches("ResourceLifecycleConfig") /* ResourceLifecycleConfig com.amazonaws.elasticbeanstalk#ApplicationDescription$ResourceLifecycleConfig */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_application_resource_lifecycle_config::de_application_resource_lifecycle_config(&mut tag)
+                        crate::protocol_serde::shape_application_resource_lifecycle_config::de_application_resource_lifecycle_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -30,7 +30,11 @@ pub fn ser_launch_permission(
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_permission(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LaunchPermission, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchPermission::builder();
     while let Some(mut tag) = decoder.next_tag() {

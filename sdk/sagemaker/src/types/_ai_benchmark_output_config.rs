@@ -6,11 +6,17 @@
 pub struct AiBenchmarkOutputConfig {
     /// <p>The Amazon S3 URI where benchmark results are stored.</p>
     pub s3_output_location: ::std::option::Option<::std::string::String>,
+    /// <p>The MLflow tracking configuration for the job. If you don't specify this parameter, MLflow tracking is disabled.</p>
+    pub mlflow_config: ::std::option::Option<crate::types::AiMlflowConfig>,
 }
 impl AiBenchmarkOutputConfig {
     /// <p>The Amazon S3 URI where benchmark results are stored.</p>
     pub fn s3_output_location(&self) -> ::std::option::Option<&str> {
         self.s3_output_location.as_deref()
+    }
+    /// <p>The MLflow tracking configuration for the job. If you don't specify this parameter, MLflow tracking is disabled.</p>
+    pub fn mlflow_config(&self) -> ::std::option::Option<&crate::types::AiMlflowConfig> {
+        self.mlflow_config.as_ref()
     }
 }
 impl AiBenchmarkOutputConfig {
@@ -25,6 +31,7 @@ impl AiBenchmarkOutputConfig {
 #[non_exhaustive]
 pub struct AiBenchmarkOutputConfigBuilder {
     pub(crate) s3_output_location: ::std::option::Option<::std::string::String>,
+    pub(crate) mlflow_config: ::std::option::Option<crate::types::AiMlflowConfig>,
 }
 impl AiBenchmarkOutputConfigBuilder {
     /// <p>The Amazon S3 URI where benchmark results are stored.</p>
@@ -42,10 +49,25 @@ impl AiBenchmarkOutputConfigBuilder {
     pub fn get_s3_output_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_output_location
     }
+    /// <p>The MLflow tracking configuration for the job. If you don't specify this parameter, MLflow tracking is disabled.</p>
+    pub fn mlflow_config(mut self, input: crate::types::AiMlflowConfig) -> Self {
+        self.mlflow_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The MLflow tracking configuration for the job. If you don't specify this parameter, MLflow tracking is disabled.</p>
+    pub fn set_mlflow_config(mut self, input: ::std::option::Option<crate::types::AiMlflowConfig>) -> Self {
+        self.mlflow_config = input;
+        self
+    }
+    /// <p>The MLflow tracking configuration for the job. If you don't specify this parameter, MLflow tracking is disabled.</p>
+    pub fn get_mlflow_config(&self) -> &::std::option::Option<crate::types::AiMlflowConfig> {
+        &self.mlflow_config
+    }
     /// Consumes the builder and constructs a [`AiBenchmarkOutputConfig`](crate::types::AiBenchmarkOutputConfig).
     pub fn build(self) -> crate::types::AiBenchmarkOutputConfig {
         crate::types::AiBenchmarkOutputConfig {
             s3_output_location: self.s3_output_location,
+            mlflow_config: self.mlflow_config,
         }
     }
 }

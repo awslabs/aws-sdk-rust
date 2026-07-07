@@ -138,17 +138,17 @@ impl UpdateClusterConfigFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    /// <p>An object representing the VPC configuration to use for the cluster update. You can use this parameter to update the control plane egress mode, the subnets used by the cluster, the security groups, and the endpoint access settings.</p>
     pub fn resources_vpc_config(mut self, input: crate::types::VpcConfigRequest) -> Self {
         self.inner = self.inner.resources_vpc_config(input);
         self
     }
-    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    /// <p>An object representing the VPC configuration to use for the cluster update. You can use this parameter to update the control plane egress mode, the subnets used by the cluster, the security groups, and the endpoint access settings.</p>
     pub fn set_resources_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigRequest>) -> Self {
         self.inner = self.inner.set_resources_vpc_config(input);
         self
     }
-    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    /// <p>An object representing the VPC configuration to use for the cluster update. You can use this parameter to update the control plane egress mode, the subnets used by the cluster, the security groups, and the endpoint access settings.</p>
     pub fn get_resources_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigRequest> {
         self.inner.get_resources_vpc_config()
     }

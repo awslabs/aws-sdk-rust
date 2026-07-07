@@ -169,6 +169,8 @@ pub use crate::types::_preferred_day_time_maintenance_configuration::PreferredDa
 
 pub use crate::types::_default_maintenance_configuration::DefaultMaintenanceConfigurationBuilder;
 
+pub use crate::types::_content_quality_analysis_feature_configuration::ContentQualityAnalysisFeatureConfigurationBuilder;
+
 pub use crate::types::_window_maintenance_schedule::WindowMaintenanceScheduleBuilder;
 
 pub use crate::types::_batch_get_router_input_error::BatchGetRouterInputErrorBuilder;
@@ -218,6 +220,12 @@ pub use crate::types::_media_stream_output_configuration::MediaStreamOutputConfi
 pub use crate::types::_media_stream_source_configuration::MediaStreamSourceConfigurationBuilder;
 
 pub use crate::types::_media_live_transit_encryption::MediaLiveTransitEncryptionBuilder;
+
+pub use crate::types::_black_frames_configuration::BlackFramesConfigurationBuilder;
+
+pub use crate::types::_frozen_frames_configuration::FrozenFramesConfigurationBuilder;
+
+pub use crate::types::_silent_audio_configuration::SilentAudioConfigurationBuilder;
 
 pub use crate::types::_router_input_message::RouterInputMessageBuilder;
 

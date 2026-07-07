@@ -324,6 +324,16 @@ impl DescribeImagesFluentBuilder {
     /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
+    /// <p><code>image-watermark.source-image-creation-time</code> - The creation date of the source AMI, in the ISO 8601 format in the UTC time zone (<code> <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i> </code>). You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.source-image-id</code> - The ID of the AMI to which the watermark was originally attached.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.source-image-region</code> - The Region where the watermark was originally attached.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.watermark-creation-time</code> - The date and time the watermark was attached to the AMI, in the ISO 8601 format in the UTC time zone (<code> <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i> </code>). You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.watermark-key</code> - The watermark identifier, in <code>accountId:watermarkName</code> format (for example, <code>123456789012:approvedAmi</code>).</p></li>
+    /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
     /// <li>
     /// <p><code>is-public</code> - A Boolean that indicates whether the image is public.</p></li>
@@ -343,6 +353,8 @@ impl DescribeImagesFluentBuilder {
     /// <p><code>product-code</code> - The product code.</p></li>
     /// <li>
     /// <p><code>product-code.type</code> - The type of the product code (<code>marketplace</code>).</p></li>
+    /// <li>
+    /// <p><code>public-ssm-parameter-name</code> - The name of a public Systems Manager parameter associated with the AMI. The parameter must be in a trusted Amazon Web Services namespace under <code>aws/service/</code>. Returns all AMIs that have ever been associated with the parameter, including previous versions.</p></li>
     /// <li>
     /// <p><code>ramdisk-id</code> - The RAM disk ID.</p></li>
     /// <li>
@@ -405,6 +417,16 @@ impl DescribeImagesFluentBuilder {
     /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
+    /// <p><code>image-watermark.source-image-creation-time</code> - The creation date of the source AMI, in the ISO 8601 format in the UTC time zone (<code> <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i> </code>). You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.source-image-id</code> - The ID of the AMI to which the watermark was originally attached.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.source-image-region</code> - The Region where the watermark was originally attached.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.watermark-creation-time</code> - The date and time the watermark was attached to the AMI, in the ISO 8601 format in the UTC time zone (<code> <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i> </code>). You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.watermark-key</code> - The watermark identifier, in <code>accountId:watermarkName</code> format (for example, <code>123456789012:approvedAmi</code>).</p></li>
+    /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
     /// <li>
     /// <p><code>is-public</code> - A Boolean that indicates whether the image is public.</p></li>
@@ -424,6 +446,8 @@ impl DescribeImagesFluentBuilder {
     /// <p><code>product-code</code> - The product code.</p></li>
     /// <li>
     /// <p><code>product-code.type</code> - The type of the product code (<code>marketplace</code>).</p></li>
+    /// <li>
+    /// <p><code>public-ssm-parameter-name</code> - The name of a public Systems Manager parameter associated with the AMI. The parameter must be in a trusted Amazon Web Services namespace under <code>aws/service/</code>. Returns all AMIs that have ever been associated with the parameter, including previous versions.</p></li>
     /// <li>
     /// <p><code>ramdisk-id</code> - The RAM disk ID.</p></li>
     /// <li>
@@ -486,6 +510,16 @@ impl DescribeImagesFluentBuilder {
     /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
+    /// <p><code>image-watermark.source-image-creation-time</code> - The creation date of the source AMI, in the ISO 8601 format in the UTC time zone (<code> <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i> </code>). You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.source-image-id</code> - The ID of the AMI to which the watermark was originally attached.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.source-image-region</code> - The Region where the watermark was originally attached.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.watermark-creation-time</code> - The date and time the watermark was attached to the AMI, in the ISO 8601 format in the UTC time zone (<code> <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i> </code>). You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>image-watermark.watermark-key</code> - The watermark identifier, in <code>accountId:watermarkName</code> format (for example, <code>123456789012:approvedAmi</code>).</p></li>
+    /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
     /// <li>
     /// <p><code>is-public</code> - A Boolean that indicates whether the image is public.</p></li>
@@ -505,6 +539,8 @@ impl DescribeImagesFluentBuilder {
     /// <p><code>product-code</code> - The product code.</p></li>
     /// <li>
     /// <p><code>product-code.type</code> - The type of the product code (<code>marketplace</code>).</p></li>
+    /// <li>
+    /// <p><code>public-ssm-parameter-name</code> - The name of a public Systems Manager parameter associated with the AMI. The parameter must be in a trusted Amazon Web Services namespace under <code>aws/service/</code>. Returns all AMIs that have ever been associated with the parameter, including previous versions.</p></li>
     /// <li>
     /// <p><code>ramdisk-id</code> - The RAM disk ID.</p></li>
     /// <li>

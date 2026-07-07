@@ -2,10 +2,16 @@
 pub(crate) fn de_bot_locale_import_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BotLocaleImportSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,11 +48,15 @@ where
                             );
                         }
                         "voiceSettings" => {
-                            builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(tokens, _value)?);
+                            builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "speechRecognitionSettings" => {
                             builder = builder.set_speech_recognition_settings(
-                                crate::protocol_serde::shape_speech_recognition_settings::de_speech_recognition_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_speech_recognition_settings::de_speech_recognition_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "speechDetectionSensitivity" => {
@@ -58,7 +68,12 @@ where
                         }
                         "unifiedSpeechSettings" => {
                             builder = builder.set_unified_speech_settings(
-                                crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "audioFillerSettings" => {
+                            builder = builder.set_audio_filler_settings(
+                                crate::protocol_serde::shape_audio_filler_settings::de_audio_filler_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -121,6 +136,12 @@ pub fn ser_bot_locale_import_specification(
         let mut object_8 = object.key("unifiedSpeechSettings").start_object();
         crate::protocol_serde::shape_unified_speech_settings::ser_unified_speech_settings(&mut object_8, var_7)?;
         object_8.finish();
+    }
+    if let Some(var_9) = &input.audio_filler_settings {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("audioFillerSettings").start_object();
+        crate::protocol_serde::shape_audio_filler_settings::ser_audio_filler_settings(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

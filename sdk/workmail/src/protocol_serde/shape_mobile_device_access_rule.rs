@@ -2,10 +2,16 @@
 pub(crate) fn de_mobile_device_access_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MobileDeviceAccessRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,84 +20,107 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "MobileDeviceAccessRuleId" => {
-                            builder = builder.set_mobile_device_access_rule_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MobileDeviceAccessRuleId" => {
+                                builder = builder.set_mobile_device_access_rule_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Description" => {
+                                builder = builder.set_description(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Effect" => {
+                                builder = builder.set_effect(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::MobileDeviceAccessRuleEffect::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "DeviceTypes" => {
+                                builder = builder.set_device_types(crate::protocol_serde::shape_device_type_list::de_device_type_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NotDeviceTypes" => {
+                                builder = builder.set_not_device_types(crate::protocol_serde::shape_device_type_list::de_device_type_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "DeviceModels" => {
+                                builder = builder.set_device_models(crate::protocol_serde::shape_device_model_list::de_device_model_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NotDeviceModels" => {
+                                builder = builder.set_not_device_models(crate::protocol_serde::shape_device_model_list::de_device_model_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "DeviceOperatingSystems" => {
+                                builder = builder.set_device_operating_systems(
+                                    crate::protocol_serde::shape_device_operating_system_list::de_device_operating_system_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "NotDeviceOperatingSystems" => {
+                                builder = builder.set_not_device_operating_systems(
+                                    crate::protocol_serde::shape_device_operating_system_list::de_device_operating_system_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "DeviceUserAgents" => {
+                                builder = builder.set_device_user_agents(
+                                    crate::protocol_serde::shape_device_user_agent_list::de_device_user_agent_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "NotDeviceUserAgents" => {
+                                builder = builder.set_not_device_user_agents(
+                                    crate::protocol_serde::shape_device_user_agent_list::de_device_user_agent_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "DateCreated" => {
+                                builder = builder.set_date_created(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "DateModified" => {
+                                builder = builder.set_date_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Description" => {
-                            builder = builder.set_description(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Effect" => {
-                            builder = builder.set_effect(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::MobileDeviceAccessRuleEffect::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "DeviceTypes" => {
-                            builder = builder.set_device_types(crate::protocol_serde::shape_device_type_list::de_device_type_list(tokens, _value)?);
-                        }
-                        "NotDeviceTypes" => {
-                            builder =
-                                builder.set_not_device_types(crate::protocol_serde::shape_device_type_list::de_device_type_list(tokens, _value)?);
-                        }
-                        "DeviceModels" => {
-                            builder =
-                                builder.set_device_models(crate::protocol_serde::shape_device_model_list::de_device_model_list(tokens, _value)?);
-                        }
-                        "NotDeviceModels" => {
-                            builder =
-                                builder.set_not_device_models(crate::protocol_serde::shape_device_model_list::de_device_model_list(tokens, _value)?);
-                        }
-                        "DeviceOperatingSystems" => {
-                            builder = builder.set_device_operating_systems(
-                                crate::protocol_serde::shape_device_operating_system_list::de_device_operating_system_list(tokens, _value)?,
-                            );
-                        }
-                        "NotDeviceOperatingSystems" => {
-                            builder = builder.set_not_device_operating_systems(
-                                crate::protocol_serde::shape_device_operating_system_list::de_device_operating_system_list(tokens, _value)?,
-                            );
-                        }
-                        "DeviceUserAgents" => {
-                            builder = builder.set_device_user_agents(crate::protocol_serde::shape_device_user_agent_list::de_device_user_agent_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "NotDeviceUserAgents" => {
-                            builder = builder.set_not_device_user_agents(
-                                crate::protocol_serde::shape_device_user_agent_list::de_device_user_agent_list(tokens, _value)?,
-                            );
-                        }
-                        "DateCreated" => {
-                            builder = builder.set_date_created(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "DateModified" => {
-                            builder = builder.set_date_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

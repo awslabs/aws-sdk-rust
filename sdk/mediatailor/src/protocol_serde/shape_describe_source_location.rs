@@ -44,6 +44,8 @@ pub(crate) fn de_describe_source_location(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -51,7 +53,9 @@ pub(crate) fn de_describe_source_location(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AccessConfiguration" => {
                     builder = builder.set_access_configuration(crate::protocol_serde::shape_access_configuration::de_access_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Arn" => {
@@ -70,12 +74,18 @@ pub(crate) fn de_describe_source_location(
                 "DefaultSegmentDeliveryConfiguration" => {
                     builder = builder.set_default_segment_delivery_configuration(
                         crate::protocol_serde::shape_default_segment_delivery_configuration::de_default_segment_delivery_configuration(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
                 "HttpConfiguration" => {
-                    builder = builder.set_http_configuration(crate::protocol_serde::shape_http_configuration::de_http_configuration(tokens, _value)?);
+                    builder = builder.set_http_configuration(crate::protocol_serde::shape_http_configuration::de_http_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -86,7 +96,9 @@ pub(crate) fn de_describe_source_location(
                 "SegmentDeliveryConfigurations" => {
                     builder = builder.set_segment_delivery_configurations(
                         crate::protocol_serde::shape_list_of_segment_delivery_configuration::de_list_of_segment_delivery_configuration(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -98,7 +110,7 @@ pub(crate) fn de_describe_source_location(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

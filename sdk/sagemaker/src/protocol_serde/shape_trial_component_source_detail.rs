@@ -2,10 +2,16 @@
 pub(crate) fn de_trial_component_source_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TrialComponentSourceDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,13 +29,19 @@ where
                             );
                         }
                         "TrainingJob" => {
-                            builder = builder.set_training_job(crate::protocol_serde::shape_training_job::de_training_job(tokens, _value)?);
+                            builder =
+                                builder.set_training_job(crate::protocol_serde::shape_training_job::de_training_job(tokens, _value, depth + 1)?);
                         }
                         "ProcessingJob" => {
-                            builder = builder.set_processing_job(crate::protocol_serde::shape_processing_job::de_processing_job(tokens, _value)?);
+                            builder = builder.set_processing_job(crate::protocol_serde::shape_processing_job::de_processing_job(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TransformJob" => {
-                            builder = builder.set_transform_job(crate::protocol_serde::shape_transform_job::de_transform_job(tokens, _value)?);
+                            builder =
+                                builder.set_transform_job(crate::protocol_serde::shape_transform_job::de_transform_job(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

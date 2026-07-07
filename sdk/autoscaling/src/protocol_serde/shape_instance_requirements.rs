@@ -192,7 +192,11 @@ pub fn ser_instance_requirements(
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_requirements(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceRequirements, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceRequirements::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -200,7 +204,7 @@ pub fn de_instance_requirements(
             s if s.matches("VCpuCount") /* VCpuCount com.amazonaws.autoscaling#InstanceRequirements$VCpuCount */ =>  {
                 let var_75 =
                     Some(
-                        crate::protocol_serde::shape_v_cpu_count_request::de_v_cpu_count_request(&mut tag)
+                        crate::protocol_serde::shape_v_cpu_count_request::de_v_cpu_count_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -210,7 +214,7 @@ pub fn de_instance_requirements(
             s if s.matches("MemoryMiB") /* MemoryMiB com.amazonaws.autoscaling#InstanceRequirements$MemoryMiB */ =>  {
                 let var_76 =
                     Some(
-                        crate::protocol_serde::shape_memory_mib_request::de_memory_mib_request(&mut tag)
+                        crate::protocol_serde::shape_memory_mib_request::de_memory_mib_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -220,7 +224,7 @@ pub fn de_instance_requirements(
             s if s.matches("CpuManufacturers") /* CpuManufacturers com.amazonaws.autoscaling#InstanceRequirements$CpuManufacturers */ =>  {
                 let var_77 =
                     Some(
-                        crate::protocol_serde::shape_cpu_manufacturers::de_cpu_manufacturers(&mut tag)
+                        crate::protocol_serde::shape_cpu_manufacturers::de_cpu_manufacturers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -230,7 +234,7 @@ pub fn de_instance_requirements(
             s if s.matches("MemoryGiBPerVCpu") /* MemoryGiBPerVCpu com.amazonaws.autoscaling#InstanceRequirements$MemoryGiBPerVCpu */ =>  {
                 let var_78 =
                     Some(
-                        crate::protocol_serde::shape_memory_gib_per_v_cpu_request::de_memory_gib_per_v_cpu_request(&mut tag)
+                        crate::protocol_serde::shape_memory_gib_per_v_cpu_request::de_memory_gib_per_v_cpu_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -240,7 +244,7 @@ pub fn de_instance_requirements(
             s if s.matches("ExcludedInstanceTypes") /* ExcludedInstanceTypes com.amazonaws.autoscaling#InstanceRequirements$ExcludedInstanceTypes */ =>  {
                 let var_79 =
                     Some(
-                        crate::protocol_serde::shape_excluded_instance_types::de_excluded_instance_types(&mut tag)
+                        crate::protocol_serde::shape_excluded_instance_types::de_excluded_instance_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -250,7 +254,7 @@ pub fn de_instance_requirements(
             s if s.matches("InstanceGenerations") /* InstanceGenerations com.amazonaws.autoscaling#InstanceRequirements$InstanceGenerations */ =>  {
                 let var_80 =
                     Some(
-                        crate::protocol_serde::shape_instance_generations::de_instance_generations(&mut tag)
+                        crate::protocol_serde::shape_instance_generations::de_instance_generations(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -348,7 +352,7 @@ pub fn de_instance_requirements(
             s if s.matches("NetworkInterfaceCount") /* NetworkInterfaceCount com.amazonaws.autoscaling#InstanceRequirements$NetworkInterfaceCount */ =>  {
                 let var_87 =
                     Some(
-                        crate::protocol_serde::shape_network_interface_count_request::de_network_interface_count_request(&mut tag)
+                        crate::protocol_serde::shape_network_interface_count_request::de_network_interface_count_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -372,7 +376,7 @@ pub fn de_instance_requirements(
             s if s.matches("LocalStorageTypes") /* LocalStorageTypes com.amazonaws.autoscaling#InstanceRequirements$LocalStorageTypes */ =>  {
                 let var_89 =
                     Some(
-                        crate::protocol_serde::shape_local_storage_types::de_local_storage_types(&mut tag)
+                        crate::protocol_serde::shape_local_storage_types::de_local_storage_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -382,7 +386,7 @@ pub fn de_instance_requirements(
             s if s.matches("TotalLocalStorageGB") /* TotalLocalStorageGB com.amazonaws.autoscaling#InstanceRequirements$TotalLocalStorageGB */ =>  {
                 let var_90 =
                     Some(
-                        crate::protocol_serde::shape_total_local_storage_gb_request::de_total_local_storage_gb_request(&mut tag)
+                        crate::protocol_serde::shape_total_local_storage_gb_request::de_total_local_storage_gb_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -392,7 +396,7 @@ pub fn de_instance_requirements(
             s if s.matches("BaselineEbsBandwidthMbps") /* BaselineEbsBandwidthMbps com.amazonaws.autoscaling#InstanceRequirements$BaselineEbsBandwidthMbps */ =>  {
                 let var_91 =
                     Some(
-                        crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps_request::de_baseline_ebs_bandwidth_mbps_request(&mut tag)
+                        crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps_request::de_baseline_ebs_bandwidth_mbps_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -402,7 +406,7 @@ pub fn de_instance_requirements(
             s if s.matches("AcceleratorTypes") /* AcceleratorTypes com.amazonaws.autoscaling#InstanceRequirements$AcceleratorTypes */ =>  {
                 let var_92 =
                     Some(
-                        crate::protocol_serde::shape_accelerator_types::de_accelerator_types(&mut tag)
+                        crate::protocol_serde::shape_accelerator_types::de_accelerator_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -412,7 +416,7 @@ pub fn de_instance_requirements(
             s if s.matches("AcceleratorCount") /* AcceleratorCount com.amazonaws.autoscaling#InstanceRequirements$AcceleratorCount */ =>  {
                 let var_93 =
                     Some(
-                        crate::protocol_serde::shape_accelerator_count_request::de_accelerator_count_request(&mut tag)
+                        crate::protocol_serde::shape_accelerator_count_request::de_accelerator_count_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -422,7 +426,7 @@ pub fn de_instance_requirements(
             s if s.matches("AcceleratorManufacturers") /* AcceleratorManufacturers com.amazonaws.autoscaling#InstanceRequirements$AcceleratorManufacturers */ =>  {
                 let var_94 =
                     Some(
-                        crate::protocol_serde::shape_accelerator_manufacturers::de_accelerator_manufacturers(&mut tag)
+                        crate::protocol_serde::shape_accelerator_manufacturers::de_accelerator_manufacturers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -432,7 +436,7 @@ pub fn de_instance_requirements(
             s if s.matches("AcceleratorNames") /* AcceleratorNames com.amazonaws.autoscaling#InstanceRequirements$AcceleratorNames */ =>  {
                 let var_95 =
                     Some(
-                        crate::protocol_serde::shape_accelerator_names::de_accelerator_names(&mut tag)
+                        crate::protocol_serde::shape_accelerator_names::de_accelerator_names(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -442,7 +446,7 @@ pub fn de_instance_requirements(
             s if s.matches("AcceleratorTotalMemoryMiB") /* AcceleratorTotalMemoryMiB com.amazonaws.autoscaling#InstanceRequirements$AcceleratorTotalMemoryMiB */ =>  {
                 let var_96 =
                     Some(
-                        crate::protocol_serde::shape_accelerator_total_memory_mib_request::de_accelerator_total_memory_mib_request(&mut tag)
+                        crate::protocol_serde::shape_accelerator_total_memory_mib_request::de_accelerator_total_memory_mib_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -452,7 +456,7 @@ pub fn de_instance_requirements(
             s if s.matches("NetworkBandwidthGbps") /* NetworkBandwidthGbps com.amazonaws.autoscaling#InstanceRequirements$NetworkBandwidthGbps */ =>  {
                 let var_97 =
                     Some(
-                        crate::protocol_serde::shape_network_bandwidth_gbps_request::de_network_bandwidth_gbps_request(&mut tag)
+                        crate::protocol_serde::shape_network_bandwidth_gbps_request::de_network_bandwidth_gbps_request(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -462,7 +466,7 @@ pub fn de_instance_requirements(
             s if s.matches("AllowedInstanceTypes") /* AllowedInstanceTypes com.amazonaws.autoscaling#InstanceRequirements$AllowedInstanceTypes */ =>  {
                 let var_98 =
                     Some(
-                        crate::protocol_serde::shape_allowed_instance_types::de_allowed_instance_types(&mut tag)
+                        crate::protocol_serde::shape_allowed_instance_types::de_allowed_instance_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -472,7 +476,7 @@ pub fn de_instance_requirements(
             s if s.matches("BaselinePerformanceFactors") /* BaselinePerformanceFactors com.amazonaws.autoscaling#InstanceRequirements$BaselinePerformanceFactors */ =>  {
                 let var_99 =
                     Some(
-                        crate::protocol_serde::shape_baseline_performance_factors_request::de_baseline_performance_factors_request(&mut tag)
+                        crate::protocol_serde::shape_baseline_performance_factors_request::de_baseline_performance_factors_request(&mut tag, depth + 1)
                         ?
                     )
                 ;

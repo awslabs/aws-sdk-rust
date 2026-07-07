@@ -2,10 +2,16 @@
 pub(crate) fn de_suggest_place_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SuggestPlaceResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,10 +36,10 @@ where
                             );
                         }
                         "Address" => {
-                            builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
+                            builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens, _value, depth + 1)?);
                         }
                         "Position" => {
-                            builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens, _value)?);
+                            builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens, _value, depth + 1)?);
                         }
                         "Distance" => {
                             builder = builder.set_distance(
@@ -43,29 +49,37 @@ where
                             );
                         }
                         "MapView" => {
-                            builder = builder.set_map_view(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value)?);
+                            builder = builder.set_map_view(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value, depth + 1)?);
                         }
                         "Categories" => {
-                            builder = builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value)?);
+                            builder =
+                                builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value, depth + 1)?);
                         }
                         "FoodTypes" => {
-                            builder = builder.set_food_types(crate::protocol_serde::shape_food_type_list::de_food_type_list(tokens, _value)?);
+                            builder =
+                                builder.set_food_types(crate::protocol_serde::shape_food_type_list::de_food_type_list(tokens, _value, depth + 1)?);
                         }
                         "BusinessChains" => {
-                            builder = builder
-                                .set_business_chains(crate::protocol_serde::shape_business_chain_list::de_business_chain_list(tokens, _value)?);
+                            builder = builder.set_business_chains(crate::protocol_serde::shape_business_chain_list::de_business_chain_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AccessPoints" => {
-                            builder =
-                                builder.set_access_points(crate::protocol_serde::shape_access_point_list::de_access_point_list(tokens, _value)?);
+                            builder = builder.set_access_points(crate::protocol_serde::shape_access_point_list::de_access_point_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AccessRestrictions" => {
                             builder = builder.set_access_restrictions(
-                                crate::protocol_serde::shape_access_restriction_list::de_access_restriction_list(tokens, _value)?,
+                                crate::protocol_serde::shape_access_restriction_list::de_access_restriction_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "TimeZone" => {
-                            builder = builder.set_time_zone(crate::protocol_serde::shape_time_zone::de_time_zone(tokens, _value)?);
+                            builder = builder.set_time_zone(crate::protocol_serde::shape_time_zone::de_time_zone(tokens, _value, depth + 1)?);
                         }
                         "PoliticalView" => {
                             builder = builder.set_political_view(
@@ -75,7 +89,11 @@ where
                             );
                         }
                         "Phonemes" => {
-                            builder = builder.set_phonemes(crate::protocol_serde::shape_phoneme_details::de_phoneme_details(tokens, _value)?);
+                            builder = builder.set_phonemes(crate::protocol_serde::shape_phoneme_details::de_phoneme_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

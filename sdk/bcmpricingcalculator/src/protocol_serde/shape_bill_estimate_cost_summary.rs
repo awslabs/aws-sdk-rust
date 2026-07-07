@@ -2,10 +2,16 @@
 pub(crate) fn de_bill_estimate_cost_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BillEstimateCostSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,12 +22,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "totalCostDifference" => {
-                            builder =
-                                builder.set_total_cost_difference(crate::protocol_serde::shape_cost_difference::de_cost_difference(tokens, _value)?);
+                            builder = builder.set_total_cost_difference(crate::protocol_serde::shape_cost_difference::de_cost_difference(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "serviceCostDifferences" => {
                             builder = builder.set_service_cost_differences(
-                                crate::protocol_serde::shape_service_cost_difference_map::de_service_cost_difference_map(tokens, _value)?,
+                                crate::protocol_serde::shape_service_cost_difference_map::de_service_cost_difference_map(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

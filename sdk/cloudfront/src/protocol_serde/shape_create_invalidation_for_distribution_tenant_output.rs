@@ -30,5 +30,7 @@ pub fn de_invalidation(inp: &[u8]) -> std::result::Result<crate::types::Invalida
             "invalid root, expected Invalidation got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_invalidation::de_invalidation(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_invalidation::de_invalidation(&mut decoder, depth + 1)
 }

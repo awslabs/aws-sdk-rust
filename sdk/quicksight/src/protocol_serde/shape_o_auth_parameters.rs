@@ -18,16 +18,25 @@ pub fn ser_o_auth_parameters(
     if let Some(var_4) = &input.identity_provider_resource_uri {
         object.key("IdentityProviderResourceUri").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.identity_provider_ca_certificates_bundle_s3_uri {
+        object.key("IdentityProviderCACertificatesBundleS3Uri").string(var_5.as_str());
+    }
     Ok(())
 }
 
 pub(crate) fn de_o_auth_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OAuthParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,11 +62,18 @@ where
                         }
                         "IdentityProviderVpcConnectionProperties" => {
                             builder = builder.set_identity_provider_vpc_connection_properties(
-                                crate::protocol_serde::shape_vpc_connection_properties::de_vpc_connection_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_vpc_connection_properties::de_vpc_connection_properties(tokens, _value, depth + 1)?,
                             );
                         }
                         "IdentityProviderResourceUri" => {
                             builder = builder.set_identity_provider_resource_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "IdentityProviderCACertificatesBundleS3Uri" => {
+                            builder = builder.set_identity_provider_ca_certificates_bundle_s3_uri(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_private_link_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PrivateLinkConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,12 +36,15 @@ where
                             );
                         }
                         "SubnetArns" => {
-                            builder =
-                                builder.set_subnet_arns(crate::protocol_serde::shape_pl_subnet_arn_list::de_pl_subnet_arn_list(tokens, _value)?);
+                            builder = builder.set_subnet_arns(crate::protocol_serde::shape_pl_subnet_arn_list::de_pl_subnet_arn_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SecurityGroupArns" => {
                             builder = builder.set_security_group_arns(
-                                crate::protocol_serde::shape_pl_security_group_arn_list::de_pl_security_group_arn_list(tokens, _value)?,
+                                crate::protocol_serde::shape_pl_security_group_arn_list::de_pl_security_group_arn_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

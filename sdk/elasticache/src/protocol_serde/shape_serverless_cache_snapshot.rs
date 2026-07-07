@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_serverless_cache_snapshot(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ServerlessCacheSnapshot, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ServerlessCacheSnapshot::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -116,7 +120,7 @@ pub fn de_serverless_cache_snapshot(
             s if s.matches("ServerlessCacheConfiguration") /* ServerlessCacheConfiguration com.amazonaws.elasticache#ServerlessCacheSnapshot$ServerlessCacheConfiguration */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_serverless_cache_configuration::de_serverless_cache_configuration(&mut tag)
+                        crate::protocol_serde::shape_serverless_cache_configuration::de_serverless_cache_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

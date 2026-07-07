@@ -2,10 +2,16 @@
 pub(crate) fn de_license_server_endpoint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LicenseServerEndpoint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,11 @@ where
                             );
                         }
                         "ServerEndpoint" => {
-                            builder = builder.set_server_endpoint(crate::protocol_serde::shape_server_endpoint::de_server_endpoint(tokens, _value)?);
+                            builder = builder.set_server_endpoint(crate::protocol_serde::shape_server_endpoint::de_server_endpoint(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StatusMessage" => {
                             builder = builder.set_status_message(
@@ -64,8 +74,11 @@ where
                             );
                         }
                         "LicenseServers" => {
-                            builder = builder
-                                .set_license_servers(crate::protocol_serde::shape_license_server_list::de_license_server_list(tokens, _value)?);
+                            builder = builder.set_license_servers(crate::protocol_serde::shape_license_server_list::de_license_server_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CreationTime" => {
                             builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

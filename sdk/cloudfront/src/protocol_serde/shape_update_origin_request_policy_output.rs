@@ -30,5 +30,7 @@ pub fn de_origin_request_policy(inp: &[u8]) -> std::result::Result<crate::types:
             "invalid root, expected OriginRequestPolicy got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_origin_request_policy::de_origin_request_policy(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_origin_request_policy::de_origin_request_policy(&mut decoder, depth + 1)
 }

@@ -22,7 +22,7 @@ pub enum Error {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The requested resources was not found. The resource was either not created yet or deleted.</p>
+    /// <p>The requested resource was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The operation failed because Amazon GameLift Servers has not yet finished validating this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential backoffs and jitter</a>.</p>
     NotReadyException(crate::types::error::NotReadyException),
@@ -1504,6 +1504,58 @@ impl From<crate::operation::describe_container_group_definition::DescribeContain
                 Error::UnsupportedRegionException(inner)
             }
             crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError> for Error {
+    fn from(err: crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError) -> Self {
+        match err {
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::describe_container_group_port_mappings::DescribeContainerGroupPortMappingsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

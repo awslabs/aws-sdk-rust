@@ -2,10 +2,16 @@
 pub(crate) fn de_keyspaces_cell_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KeyspacesCellValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -113,15 +119,15 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'intT' cannot be null"))?,
                         )),
                         "listT" => Some(crate::types::KeyspacesCellValue::ListT(
-                            crate::protocol_serde::shape_keyspaces_cell_list::de_keyspaces_cell_list(tokens, _value)?
+                            crate::protocol_serde::shape_keyspaces_cell_list::de_keyspaces_cell_list(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'listT' cannot be null"))?,
                         )),
                         "mapT" => Some(crate::types::KeyspacesCellValue::MapT(
-                            crate::protocol_serde::shape_keyspaces_cell_map::de_keyspaces_cell_map(tokens, _value)?
+                            crate::protocol_serde::shape_keyspaces_cell_map::de_keyspaces_cell_map(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mapT' cannot be null"))?,
                         )),
                         "setT" => Some(crate::types::KeyspacesCellValue::SetT(
-                            crate::protocol_serde::shape_keyspaces_cell_list::de_keyspaces_cell_list(tokens, _value)?
+                            crate::protocol_serde::shape_keyspaces_cell_list::de_keyspaces_cell_list(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'setT' cannot be null"))?,
                         )),
                         "smallintT" => Some(crate::types::KeyspacesCellValue::SmallintT(
@@ -169,9 +175,9 @@ where
                                 })?,
                         )),
                         "tupleT" => Some(crate::types::KeyspacesCellValue::TupleT(
-                            crate::protocol_serde::shape_keyspaces_cell_list::de_keyspaces_cell_list(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tupleT' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_keyspaces_cell_list::de_keyspaces_cell_list(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tupleT' cannot be null"),
+                            )?,
                         )),
                         "uuidT" => Some(crate::types::KeyspacesCellValue::UuidT(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -196,7 +202,7 @@ where
                                 })?,
                         )),
                         "udtT" => Some(crate::types::KeyspacesCellValue::UdtT(
-                            crate::protocol_serde::shape_keyspaces_udt_map::de_keyspaces_udt_map(tokens, _value)?
+                            crate::protocol_serde::shape_keyspaces_udt_map::de_keyspaces_udt_map(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'udtT' cannot be null"))?,
                         )),
                         _ => {

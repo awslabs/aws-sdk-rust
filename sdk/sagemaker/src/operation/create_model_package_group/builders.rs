@@ -155,4 +155,18 @@ impl CreateModelPackageGroupFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn managed_configuration(mut self, input: crate::types::ManagedConfiguration) -> Self {
+        self.inner = self.inner.managed_configuration(input);
+        self
+    }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn set_managed_configuration(mut self, input: ::std::option::Option<crate::types::ManagedConfiguration>) -> Self {
+        self.inner = self.inner.set_managed_configuration(input);
+        self
+    }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn get_managed_configuration(&self) -> &::std::option::Option<crate::types::ManagedConfiguration> {
+        self.inner.get_managed_configuration()
+    }
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_pending_production_variant_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PendingProductionVariantSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,11 @@ where
                             );
                         }
                         "DeployedImages" => {
-                            builder = builder.set_deployed_images(crate::protocol_serde::shape_deployed_images::de_deployed_images(tokens, _value)?);
+                            builder = builder.set_deployed_images(crate::protocol_serde::shape_deployed_images::de_deployed_images(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CurrentWeight" => {
                             builder = builder.set_current_weight(
@@ -56,6 +66,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InstancePools" => {
+                            builder = builder.set_instance_pools(
+                                crate::protocol_serde::shape_instance_pool_summary_list::de_instance_pool_summary_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "AcceleratorType" => {
                             builder = builder.set_accelerator_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -65,31 +80,43 @@ where
                         }
                         "VariantStatus" => {
                             builder = builder.set_variant_status(
-                                crate::protocol_serde::shape_production_variant_status_list::de_production_variant_status_list(tokens, _value)?,
+                                crate::protocol_serde::shape_production_variant_status_list::de_production_variant_status_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CurrentServerlessConfig" => {
                             builder = builder.set_current_serverless_config(
                                 crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "DesiredServerlessConfig" => {
                             builder = builder.set_desired_serverless_config(
                                 crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ManagedInstanceScaling" => {
                             builder = builder.set_managed_instance_scaling(
-                                    crate::protocol_serde::shape_production_variant_managed_instance_scaling::de_production_variant_managed_instance_scaling(tokens, _value)?
+                                    crate::protocol_serde::shape_production_variant_managed_instance_scaling::de_production_variant_managed_instance_scaling(tokens, _value, depth + 1)?
                                 );
                         }
                         "RoutingConfig" => {
                             builder = builder.set_routing_config(
-                                crate::protocol_serde::shape_production_variant_routing_config::de_production_variant_routing_config(tokens, _value)?,
+                                crate::protocol_serde::shape_production_variant_routing_config::de_production_variant_routing_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

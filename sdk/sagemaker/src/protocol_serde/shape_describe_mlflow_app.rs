@@ -73,6 +73,8 @@ pub(crate) fn de_describe_mlflow_app(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -136,7 +138,9 @@ pub(crate) fn de_describe_mlflow_app(
                 }
                 "DefaultDomainIdList" => {
                     builder = builder.set_default_domain_id_list(crate::protocol_serde::shape_default_domain_id_list::de_default_domain_id_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "CreationTime" => {
@@ -146,7 +150,7 @@ pub(crate) fn de_describe_mlflow_app(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -155,7 +159,7 @@ pub(crate) fn de_describe_mlflow_app(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "WeeklyMaintenanceWindowStart" => {
                     builder = builder.set_weekly_maintenance_window_start(

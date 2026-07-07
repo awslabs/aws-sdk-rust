@@ -29,6 +29,8 @@ pub(crate) mod shape_encrypt_data;
 
 pub(crate) mod shape_generate_as2805_kek_validation;
 
+pub(crate) mod shape_generate_auth_request_cryptogram;
+
 pub(crate) mod shape_generate_card_validation_data;
 
 pub(crate) mod shape_generate_mac;
@@ -66,6 +68,8 @@ pub(crate) mod shape_decrypt_data_input;
 pub(crate) mod shape_encrypt_data_input;
 
 pub(crate) mod shape_generate_as2805_kek_validation_input;
+
+pub(crate) mod shape_generate_auth_request_cryptogram_input;
 
 pub(crate) mod shape_generate_card_validation_data_input;
 

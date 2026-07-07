@@ -2,10 +2,16 @@
 pub(crate) fn de_project_version_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProjectVersionDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,24 +69,35 @@ where
                             )?);
                         }
                         "OutputConfig" => {
-                            builder = builder.set_output_config(crate::protocol_serde::shape_output_config::de_output_config(tokens, _value)?);
+                            builder =
+                                builder.set_output_config(crate::protocol_serde::shape_output_config::de_output_config(tokens, _value, depth + 1)?);
                         }
                         "TrainingDataResult" => {
                             builder = builder.set_training_data_result(crate::protocol_serde::shape_training_data_result::de_training_data_result(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "TestingDataResult" => {
-                            builder = builder
-                                .set_testing_data_result(crate::protocol_serde::shape_testing_data_result::de_testing_data_result(tokens, _value)?);
+                            builder = builder.set_testing_data_result(crate::protocol_serde::shape_testing_data_result::de_testing_data_result(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EvaluationResult" => {
-                            builder =
-                                builder.set_evaluation_result(crate::protocol_serde::shape_evaluation_result::de_evaluation_result(tokens, _value)?);
+                            builder = builder.set_evaluation_result(crate::protocol_serde::shape_evaluation_result::de_evaluation_result(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ManifestSummary" => {
                             builder = builder.set_manifest_summary(crate::protocol_serde::shape_ground_truth_manifest::de_ground_truth_manifest(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "KmsKeyId" => {
@@ -127,7 +144,11 @@ where
                         }
                         "FeatureConfig" => {
                             builder = builder.set_feature_config(
-                                crate::protocol_serde::shape_customization_feature_config::de_customization_feature_config(tokens, _value)?,
+                                crate::protocol_serde::shape_customization_feature_config::de_customization_feature_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

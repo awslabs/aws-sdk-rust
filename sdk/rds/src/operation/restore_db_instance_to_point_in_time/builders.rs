@@ -456,7 +456,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
-    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included | bring-your-own-media</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
     /// <li>
@@ -480,7 +480,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
-    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included | bring-your-own-media</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
     /// <li>
@@ -504,7 +504,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
-    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included | bring-your-own-media</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
     /// <li>
@@ -570,6 +570,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -611,6 +613,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -651,6 +655,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>

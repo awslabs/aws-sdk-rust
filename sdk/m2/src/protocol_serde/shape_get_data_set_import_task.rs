@@ -138,6 +138,8 @@ pub(crate) fn de_get_data_set_import_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -152,7 +154,9 @@ pub(crate) fn de_get_data_set_import_task(
                 }
                 "summary" => {
                     builder = builder.set_summary(crate::protocol_serde::shape_data_set_import_summary::de_data_set_import_summary(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "taskId" => {

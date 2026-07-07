@@ -4,10 +4,11 @@ pub(crate) fn de_return_shipping_label_already_exists_exception_cbor_err(
     mut builder: crate::types::error::builders::ReturnShippingLabelAlreadyExistsExceptionBuilder,
 ) -> ::std::result::Result<crate::types::error::builders::ReturnShippingLabelAlreadyExistsExceptionBuilder, ::aws_smithy_cbor::decode::DeserializeError>
 {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::error::builders::ReturnShippingLabelAlreadyExistsExceptionBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::types::error::builders::ReturnShippingLabelAlreadyExistsExceptionBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -25,6 +26,8 @@ pub(crate) fn de_return_shipping_label_already_exists_exception_cbor_err(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -34,13 +37,13 @@ pub(crate) fn de_return_shipping_label_already_exists_exception_cbor_err(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

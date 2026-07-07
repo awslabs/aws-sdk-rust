@@ -21,6 +21,8 @@ pub struct ListTagsForResourceInput {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default.</p>
@@ -47,6 +49,8 @@ impl ListTagsForResourceInput {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
@@ -94,6 +98,8 @@ impl ListTagsForResourceInputBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,6 +124,8 @@ impl ListTagsForResourceInputBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
@@ -141,6 +149,8 @@ impl ListTagsForResourceInputBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn

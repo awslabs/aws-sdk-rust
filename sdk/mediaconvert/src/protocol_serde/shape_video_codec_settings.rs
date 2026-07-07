@@ -96,10 +96,16 @@ pub fn ser_video_codec_settings(
 pub(crate) fn de_video_codec_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VideoCodecSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -110,11 +116,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "av1Settings" => {
-                            builder = builder.set_av1_settings(crate::protocol_serde::shape_av1_settings::de_av1_settings(tokens, _value)?);
+                            builder =
+                                builder.set_av1_settings(crate::protocol_serde::shape_av1_settings::de_av1_settings(tokens, _value, depth + 1)?);
                         }
                         "avcIntraSettings" => {
-                            builder = builder
-                                .set_avc_intra_settings(crate::protocol_serde::shape_avc_intra_settings::de_avc_intra_settings(tokens, _value)?);
+                            builder = builder.set_avc_intra_settings(crate::protocol_serde::shape_avc_intra_settings::de_avc_intra_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "codec" => {
                             builder = builder.set_codec(
@@ -125,45 +135,62 @@ where
                         }
                         "frameCaptureSettings" => {
                             builder = builder.set_frame_capture_settings(
-                                crate::protocol_serde::shape_frame_capture_settings::de_frame_capture_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_frame_capture_settings::de_frame_capture_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "gifSettings" => {
-                            builder = builder.set_gif_settings(crate::protocol_serde::shape_gif_settings::de_gif_settings(tokens, _value)?);
+                            builder =
+                                builder.set_gif_settings(crate::protocol_serde::shape_gif_settings::de_gif_settings(tokens, _value, depth + 1)?);
                         }
                         "h264Settings" => {
-                            builder = builder.set_h264_settings(crate::protocol_serde::shape_h264_settings::de_h264_settings(tokens, _value)?);
+                            builder =
+                                builder.set_h264_settings(crate::protocol_serde::shape_h264_settings::de_h264_settings(tokens, _value, depth + 1)?);
                         }
                         "h265Settings" => {
-                            builder = builder.set_h265_settings(crate::protocol_serde::shape_h265_settings::de_h265_settings(tokens, _value)?);
+                            builder =
+                                builder.set_h265_settings(crate::protocol_serde::shape_h265_settings::de_h265_settings(tokens, _value, depth + 1)?);
                         }
                         "mpeg2Settings" => {
-                            builder = builder.set_mpeg2_settings(crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(tokens, _value)?);
+                            builder = builder.set_mpeg2_settings(crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "passthroughSettings" => {
                             builder = builder.set_passthrough_settings(crate::protocol_serde::shape_passthrough_settings::de_passthrough_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "proresSettings" => {
-                            builder = builder.set_prores_settings(crate::protocol_serde::shape_prores_settings::de_prores_settings(tokens, _value)?);
+                            builder = builder.set_prores_settings(crate::protocol_serde::shape_prores_settings::de_prores_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "uncompressedSettings" => {
                             builder = builder.set_uncompressed_settings(
-                                crate::protocol_serde::shape_uncompressed_settings::de_uncompressed_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_uncompressed_settings::de_uncompressed_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "vc3Settings" => {
-                            builder = builder.set_vc3_settings(crate::protocol_serde::shape_vc3_settings::de_vc3_settings(tokens, _value)?);
+                            builder =
+                                builder.set_vc3_settings(crate::protocol_serde::shape_vc3_settings::de_vc3_settings(tokens, _value, depth + 1)?);
                         }
                         "vp8Settings" => {
-                            builder = builder.set_vp8_settings(crate::protocol_serde::shape_vp8_settings::de_vp8_settings(tokens, _value)?);
+                            builder =
+                                builder.set_vp8_settings(crate::protocol_serde::shape_vp8_settings::de_vp8_settings(tokens, _value, depth + 1)?);
                         }
                         "vp9Settings" => {
-                            builder = builder.set_vp9_settings(crate::protocol_serde::shape_vp9_settings::de_vp9_settings(tokens, _value)?);
+                            builder =
+                                builder.set_vp9_settings(crate::protocol_serde::shape_vp9_settings::de_vp9_settings(tokens, _value, depth + 1)?);
                         }
                         "xavcSettings" => {
-                            builder = builder.set_xavc_settings(crate::protocol_serde::shape_xavc_settings::de_xavc_settings(tokens, _value)?);
+                            builder =
+                                builder.set_xavc_settings(crate::protocol_serde::shape_xavc_settings::de_xavc_settings(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -9,7 +9,7 @@ pub struct ListRoute53HealthChecksInRegionInput {
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The record name for the health checks.</p>
     pub record_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of objects that you want to return with this call.</p>
+    /// <p>The maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>nextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>nextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl ListRoute53HealthChecksInRegionInput {
     pub fn record_name(&self) -> ::std::option::Option<&str> {
         self.record_name.as_deref()
     }
-    /// <p>The number of objects that you want to return with this call.</p>
+    /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -97,17 +97,17 @@ impl ListRoute53HealthChecksInRegionInputBuilder {
     pub fn get_record_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_name
     }
-    /// <p>The number of objects that you want to return with this call.</p>
+    /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of objects that you want to return with this call.</p>
+    /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The number of objects that you want to return with this call.</p>
+    /// <p>The maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

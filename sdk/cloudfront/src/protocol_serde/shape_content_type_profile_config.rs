@@ -20,7 +20,11 @@ pub fn ser_content_type_profile_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_content_type_profile_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ContentTypeProfileConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ContentTypeProfileConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -43,7 +47,7 @@ pub fn de_content_type_profile_config(
             s if s.matches("ContentTypeProfiles") /* ContentTypeProfiles com.amazonaws.cloudfront#ContentTypeProfileConfig$ContentTypeProfiles */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_content_type_profiles::de_content_type_profiles(&mut tag)
+                        crate::protocol_serde::shape_content_type_profiles::de_content_type_profiles(&mut tag, depth + 1)
                         ?
                     )
                 ;

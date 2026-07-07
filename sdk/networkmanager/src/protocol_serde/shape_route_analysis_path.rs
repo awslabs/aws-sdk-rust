@@ -2,10 +2,16 @@
 pub(crate) fn de_route_analysis_path<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouteAnalysisPath>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,11 +23,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CompletionStatus" => {
                             builder = builder.set_completion_status(
-                                crate::protocol_serde::shape_route_analysis_completion::de_route_analysis_completion(tokens, _value)?,
+                                crate::protocol_serde::shape_route_analysis_completion::de_route_analysis_completion(tokens, _value, depth + 1)?,
                             );
                         }
                         "Path" => {
-                            builder = builder.set_path(crate::protocol_serde::shape_path_component_list::de_path_component_list(tokens, _value)?);
+                            builder = builder.set_path(crate::protocol_serde::shape_path_component_list::de_path_component_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -43,6 +43,8 @@ pub struct RuleGroup {
     pub available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
     pub consumed_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
+    /// <p>The monetization configuration for the rule group. Required when any rule in the rule group uses the <code>Monetize</code> action. When a rule group with a <code>MonetizationConfig</code> is used in a web ACL, the rule group's configuration applies to rules within that group unless overridden at the web ACL level.</p>
+    pub monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl RuleGroup {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -117,6 +119,10 @@ impl RuleGroup {
     pub fn consumed_labels(&self) -> &[crate::types::LabelSummary] {
         self.consumed_labels.as_deref().unwrap_or_default()
     }
+    /// <p>The monetization configuration for the rule group. Required when any rule in the rule group uses the <code>Monetize</code> action. When a rule group with a <code>MonetizationConfig</code> is used in a web ACL, the rule group's configuration applies to rules within that group unless overridden at the web ACL level.</p>
+    pub fn monetization_config(&self) -> ::std::option::Option<&crate::types::MonetizationConfig> {
+        self.monetization_config.as_ref()
+    }
 }
 impl RuleGroup {
     /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::types::RuleGroup).
@@ -140,6 +146,7 @@ pub struct RuleGroupBuilder {
     pub(crate) custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     pub(crate) available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
     pub(crate) consumed_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
+    pub(crate) monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl RuleGroupBuilder {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -381,6 +388,20 @@ impl RuleGroupBuilder {
     pub fn get_consumed_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
         &self.consumed_labels
     }
+    /// <p>The monetization configuration for the rule group. Required when any rule in the rule group uses the <code>Monetize</code> action. When a rule group with a <code>MonetizationConfig</code> is used in a web ACL, the rule group's configuration applies to rules within that group unless overridden at the web ACL level.</p>
+    pub fn monetization_config(mut self, input: crate::types::MonetizationConfig) -> Self {
+        self.monetization_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The monetization configuration for the rule group. Required when any rule in the rule group uses the <code>Monetize</code> action. When a rule group with a <code>MonetizationConfig</code> is used in a web ACL, the rule group's configuration applies to rules within that group unless overridden at the web ACL level.</p>
+    pub fn set_monetization_config(mut self, input: ::std::option::Option<crate::types::MonetizationConfig>) -> Self {
+        self.monetization_config = input;
+        self
+    }
+    /// <p>The monetization configuration for the rule group. Required when any rule in the rule group uses the <code>Monetize</code> action. When a rule group with a <code>MonetizationConfig</code> is used in a web ACL, the rule group's configuration applies to rules within that group unless overridden at the web ACL level.</p>
+    pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
+        &self.monetization_config
+    }
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RuleGroupBuilder::name)
@@ -420,6 +441,7 @@ impl RuleGroupBuilder {
             custom_response_bodies: self.custom_response_bodies,
             available_labels: self.available_labels,
             consumed_labels: self.consumed_labels,
+            monetization_config: self.monetization_config,
         })
     }
 }

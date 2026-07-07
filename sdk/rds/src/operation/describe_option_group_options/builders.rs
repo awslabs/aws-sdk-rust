@@ -120,6 +120,8 @@ impl DescribeOptionGroupOptionsFluentBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -154,6 +156,8 @@ impl DescribeOptionGroupOptionsFluentBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -187,6 +191,8 @@ impl DescribeOptionGroupOptionsFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>

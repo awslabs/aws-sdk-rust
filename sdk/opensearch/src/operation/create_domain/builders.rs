@@ -476,4 +476,55 @@ impl CreateDomainFluentBuilder {
     pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
         self.inner.get_deployment_strategy_options()
     }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn automated_snapshot_pause_options(mut self, input: crate::types::AutomatedSnapshotPauseRequestOptions) -> Self {
+        self.inner = self.inner.automated_snapshot_pause_options(input);
+        self
+    }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn set_automated_snapshot_pause_options(mut self, input: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>) -> Self {
+        self.inner = self.inner.set_automated_snapshot_pause_options(input);
+        self
+    }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn get_automated_snapshot_pause_options(&self) -> &::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions> {
+        self.inner.get_automated_snapshot_pause_options()
+    }
+    /// <p>The primary use case for the domain. For valid values, see <code>DomainUseCase</code>.</p>
+    pub fn use_case(mut self, input: crate::types::DomainUseCase) -> Self {
+        self.inner = self.inner.use_case(input);
+        self
+    }
+    /// <p>The primary use case for the domain. For valid values, see <code>DomainUseCase</code>.</p>
+    pub fn set_use_case(mut self, input: ::std::option::Option<crate::types::DomainUseCase>) -> Self {
+        self.inner = self.inner.set_use_case(input);
+        self
+    }
+    /// <p>The primary use case for the domain. For valid values, see <code>DomainUseCase</code>.</p>
+    pub fn get_use_case(&self) -> &::std::option::Option<crate::types::DomainUseCase> {
+        self.inner.get_use_case()
+    }
+    /// <p>The engine mode for the domain. For valid values and requirements, see <code>EngineMode</code>.</p>
+    pub fn engine_mode(mut self, input: crate::types::EngineMode) -> Self {
+        self.inner = self.inner.engine_mode(input);
+        self
+    }
+    /// <p>The engine mode for the domain. For valid values and requirements, see <code>EngineMode</code>.</p>
+    pub fn set_engine_mode(mut self, input: ::std::option::Option<crate::types::EngineMode>) -> Self {
+        self.inner = self.inner.set_engine_mode(input);
+        self
+    }
+    /// <p>The engine mode for the domain. For valid values and requirements, see <code>EngineMode</code>.</p>
+    pub fn get_engine_mode(&self) -> &::std::option::Option<crate::types::EngineMode> {
+        self.inner.get_engine_mode()
+    }
 }

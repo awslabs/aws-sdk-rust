@@ -78,6 +78,8 @@ pub fn de_get_user(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetUserResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetUserResponse got {start_el:?}"
@@ -95,7 +97,7 @@ pub fn de_get_user(
             s if s.matches("User") /* User com.amazonaws.iam.synthetic#GetUserOutput$User */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_user::de_user(&mut tag)
+                        crate::protocol_serde::shape_user::de_user(&mut tag, depth + 1)
                         ?
                     )
                 ;

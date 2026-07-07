@@ -30,10 +30,16 @@ pub fn ser_stateful_rule(
 pub(crate) fn de_stateful_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StatefulRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,10 +57,11 @@ where
                             );
                         }
                         "Header" => {
-                            builder = builder.set_header(crate::protocol_serde::shape_header::de_header(tokens, _value)?);
+                            builder = builder.set_header(crate::protocol_serde::shape_header::de_header(tokens, _value, depth + 1)?);
                         }
                         "RuleOptions" => {
-                            builder = builder.set_rule_options(crate::protocol_serde::shape_rule_options::de_rule_options(tokens, _value)?);
+                            builder =
+                                builder.set_rule_options(crate::protocol_serde::shape_rule_options::de_rule_options(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

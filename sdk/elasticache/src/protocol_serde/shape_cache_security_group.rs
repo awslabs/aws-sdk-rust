@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_security_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CacheSecurityGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CacheSecurityGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_cache_security_group(
             s if s.matches("EC2SecurityGroups") /* EC2SecurityGroups com.amazonaws.elasticache#CacheSecurityGroup$EC2SecurityGroups */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_ec2_security_group_list::de_ec2_security_group_list(&mut tag)
+                        crate::protocol_serde::shape_ec2_security_group_list::de_ec2_security_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

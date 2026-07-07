@@ -2,10 +2,16 @@
 pub(crate) fn de_pipeline_execution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipelineExecution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,16 +58,26 @@ where
                         }
                         "artifactRevisions" => {
                             builder = builder.set_artifact_revisions(crate::protocol_serde::shape_artifact_revision_list::de_artifact_revision_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "variables" => {
                             builder = builder.set_variables(
-                                crate::protocol_serde::shape_resolved_pipeline_variable_list::de_resolved_pipeline_variable_list(tokens, _value)?,
+                                crate::protocol_serde::shape_resolved_pipeline_variable_list::de_resolved_pipeline_variable_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "trigger" => {
-                            builder = builder.set_trigger(crate::protocol_serde::shape_execution_trigger::de_execution_trigger(tokens, _value)?);
+                            builder = builder.set_trigger(crate::protocol_serde::shape_execution_trigger::de_execution_trigger(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "executionMode" => {
                             builder = builder.set_execution_mode(
@@ -79,7 +95,7 @@ where
                         }
                         "rollbackMetadata" => {
                             builder = builder.set_rollback_metadata(
-                                crate::protocol_serde::shape_pipeline_rollback_metadata::de_pipeline_rollback_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_pipeline_rollback_metadata::de_pipeline_rollback_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

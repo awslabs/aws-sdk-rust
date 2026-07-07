@@ -48,6 +48,8 @@ pub(crate) fn de_describe_endpoint(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -76,12 +78,12 @@ pub(crate) fn de_describe_endpoint(
                 }
                 "ProductionVariants" => {
                     builder = builder.set_production_variants(
-                        crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens, _value)?,
+                        crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "DataCaptureConfig" => {
                     builder = builder.set_data_capture_config(
-                        crate::protocol_serde::shape_data_capture_config_summary::de_data_capture_config_summary(tokens, _value)?,
+                        crate::protocol_serde::shape_data_capture_config_summary::de_data_capture_config_summary(tokens, _value, depth + 1)?,
                     );
                 }
                 "EndpointStatus" => {
@@ -111,29 +113,38 @@ pub(crate) fn de_describe_endpoint(
                     )?);
                 }
                 "LastDeploymentConfig" => {
-                    builder =
-                        builder.set_last_deployment_config(crate::protocol_serde::shape_deployment_config::de_deployment_config(tokens, _value)?);
+                    builder = builder.set_last_deployment_config(crate::protocol_serde::shape_deployment_config::de_deployment_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "AsyncInferenceConfig" => {
                     builder = builder.set_async_inference_config(crate::protocol_serde::shape_async_inference_config::de_async_inference_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "PendingDeploymentSummary" => {
                     builder = builder.set_pending_deployment_summary(
-                        crate::protocol_serde::shape_pending_deployment_summary::de_pending_deployment_summary(tokens, _value)?,
+                        crate::protocol_serde::shape_pending_deployment_summary::de_pending_deployment_summary(tokens, _value, depth + 1)?,
                     );
                 }
                 "ExplainerConfig" => {
-                    builder = builder.set_explainer_config(crate::protocol_serde::shape_explainer_config::de_explainer_config(tokens, _value)?);
+                    builder = builder.set_explainer_config(crate::protocol_serde::shape_explainer_config::de_explainer_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ShadowProductionVariants" => {
                     builder = builder.set_shadow_production_variants(
-                        crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens, _value)?,
+                        crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "MetricsConfig" => {
-                    builder = builder.set_metrics_config(crate::protocol_serde::shape_metrics_config::de_metrics_config(tokens, _value)?);
+                    builder = builder.set_metrics_config(crate::protocol_serde::shape_metrics_config::de_metrics_config(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

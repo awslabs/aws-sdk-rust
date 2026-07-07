@@ -18,5 +18,8 @@ pub fn ser_update_virtual_interface_attributes_input_input(
     if let Some(var_4) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.rate_limit {
+        object.key("rateLimit").string(var_5.as_str());
+    }
     Ok(())
 }

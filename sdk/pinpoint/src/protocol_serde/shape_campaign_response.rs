@@ -4,7 +4,9 @@ pub(crate) fn de_campaign_response_payload(
 ) -> ::std::result::Result<crate::types::CampaignResponse, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::protocol_serde::shape_campaign_response::de_campaign_response(tokens, _value)?
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    let result = crate::protocol_serde::shape_campaign_response::de_campaign_response(tokens, _value, depth + 1)?
         .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -17,10 +19,16 @@ pub(crate) fn de_campaign_response_payload(
 pub(crate) fn de_campaign_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CampaignResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -32,7 +40,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AdditionalTreatments" => {
                             builder = builder.set_additional_treatments(
-                                crate::protocol_serde::shape_list_of_treatment_resource::de_list_of_treatment_resource(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_treatment_resource::de_list_of_treatment_resource(tokens, _value, depth + 1)?,
                             );
                         }
                         "ApplicationId" => {
@@ -58,11 +66,16 @@ where
                         }
                         "CustomDeliveryConfiguration" => {
                             builder = builder.set_custom_delivery_configuration(
-                                crate::protocol_serde::shape_custom_delivery_configuration::de_custom_delivery_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_delivery_configuration::de_custom_delivery_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DefaultState" => {
-                            builder = builder.set_default_state(crate::protocol_serde::shape_campaign_state::de_campaign_state(tokens, _value)?);
+                            builder =
+                                builder.set_default_state(crate::protocol_serde::shape_campaign_state::de_campaign_state(tokens, _value, depth + 1)?);
                         }
                         "Description" => {
                             builder = builder.set_description(
@@ -79,7 +92,7 @@ where
                             );
                         }
                         "Hook" => {
-                            builder = builder.set_hook(crate::protocol_serde::shape_campaign_hook::de_campaign_hook(tokens, _value)?);
+                            builder = builder.set_hook(crate::protocol_serde::shape_campaign_hook::de_campaign_hook(tokens, _value, depth + 1)?);
                         }
                         "Id" => {
                             builder = builder.set_id(
@@ -99,11 +112,15 @@ where
                             );
                         }
                         "Limits" => {
-                            builder = builder.set_limits(crate::protocol_serde::shape_campaign_limits::de_campaign_limits(tokens, _value)?);
+                            builder = builder.set_limits(crate::protocol_serde::shape_campaign_limits::de_campaign_limits(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MessageConfiguration" => {
                             builder = builder.set_message_configuration(
-                                crate::protocol_serde::shape_message_configuration::de_message_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_message_configuration::de_message_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "Name" => {
@@ -114,7 +131,7 @@ where
                             );
                         }
                         "Schedule" => {
-                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
+                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value, depth + 1)?);
                         }
                         "SegmentId" => {
                             builder = builder.set_segment_id(
@@ -131,14 +148,14 @@ where
                             );
                         }
                         "State" => {
-                            builder = builder.set_state(crate::protocol_serde::shape_campaign_state::de_campaign_state(tokens, _value)?);
+                            builder = builder.set_state(crate::protocol_serde::shape_campaign_state::de_campaign_state(tokens, _value, depth + 1)?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                         }
                         "TemplateConfiguration" => {
                             builder = builder.set_template_configuration(
-                                crate::protocol_serde::shape_template_configuration::de_template_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_template_configuration::de_template_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "TreatmentDescription" => {

@@ -22,10 +22,16 @@ pub fn ser_processing_configuration(
 pub(crate) fn de_processing_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProcessingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -49,21 +55,20 @@ where
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant =
-                        match key.as_ref() {
-                            "auditLog" => Some(crate::types::ProcessingConfiguration::AuditLog(
-                                crate::protocol_serde::shape_audit_log_processing_configuration::de_audit_log_processing_configuration(
-                                    tokens, _value,
-                                )?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'auditLog' cannot be null")
-                                })?,
-                            )),
-                            _ => {
-                                ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                Some(crate::types::ProcessingConfiguration::Unknown)
-                            }
-                        };
+                    variant = match key.as_ref() {
+                        "auditLog" => Some(crate::types::ProcessingConfiguration::AuditLog(
+                            crate::protocol_serde::shape_audit_log_processing_configuration::de_audit_log_processing_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'auditLog' cannot be null"))?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::ProcessingConfiguration::Unknown)
+                        }
+                    };
                 }
                 other => {
                     return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(

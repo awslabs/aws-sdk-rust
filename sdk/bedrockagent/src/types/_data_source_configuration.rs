@@ -6,22 +6,24 @@
 pub struct DataSourceConfiguration {
     /// <p>The type of data source.</p>
     pub r#type: crate::types::DataSourceType,
-    /// <p>The configuration information to connect to Amazon S3 as your data source.</p>
+    /// <p>Contains the configuration for a data source that connects a managed knowledge base to a supported data source connector. Specify this object when the data source type is <code>MANAGED_KNOWLEDGE_BASE_CONNECTOR</code>.</p>
+    pub managed_knowledge_base_connector_configuration: ::std::option::Option<crate::types::ManagedKnowledgeBaseConnectorConfiguration>,
+    /// <p>The configuration information to connect to Amazon S3 as your data source for self-managed knowledge bases. To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.</p>
     pub s3_configuration: ::std::option::Option<crate::types::S3DataSourceConfiguration>,
     /// <p>The configuration of web URLs to crawl for your data source. You should be authorized to crawl the URLs.</p><note>
-    /// <p>Crawling web URLs as your data source is in preview release and is subject to change.</p>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Web crawler data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub web_configuration: ::std::option::Option<crate::types::WebDataSourceConfiguration>,
-    /// <p>The configuration information to connect to Confluence as your data source.</p><note>
-    /// <p>Confluence data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to Confluence as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Confluence data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub confluence_configuration: ::std::option::Option<crate::types::ConfluenceDataSourceConfiguration>,
     /// <p>The configuration information to connect to Salesforce as your data source.</p><note>
-    /// <p>Salesforce data source connector is in preview release and is subject to change.</p>
+    /// <p>Salesforce data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub salesforce_configuration: ::std::option::Option<crate::types::SalesforceDataSourceConfiguration>,
-    /// <p>The configuration information to connect to SharePoint as your data source.</p><note>
-    /// <p>SharePoint data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to SharePoint as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. SharePoint data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub share_point_configuration: ::std::option::Option<crate::types::SharePointDataSourceConfiguration>,
 }
@@ -30,30 +32,34 @@ impl DataSourceConfiguration {
     pub fn r#type(&self) -> &crate::types::DataSourceType {
         &self.r#type
     }
-    /// <p>The configuration information to connect to Amazon S3 as your data source.</p>
+    /// <p>Contains the configuration for a data source that connects a managed knowledge base to a supported data source connector. Specify this object when the data source type is <code>MANAGED_KNOWLEDGE_BASE_CONNECTOR</code>.</p>
+    pub fn managed_knowledge_base_connector_configuration(&self) -> ::std::option::Option<&crate::types::ManagedKnowledgeBaseConnectorConfiguration> {
+        self.managed_knowledge_base_connector_configuration.as_ref()
+    }
+    /// <p>The configuration information to connect to Amazon S3 as your data source for self-managed knowledge bases. To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.</p>
     pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DataSourceConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The configuration of web URLs to crawl for your data source. You should be authorized to crawl the URLs.</p><note>
-    /// <p>Crawling web URLs as your data source is in preview release and is subject to change.</p>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Web crawler data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn web_configuration(&self) -> ::std::option::Option<&crate::types::WebDataSourceConfiguration> {
         self.web_configuration.as_ref()
     }
-    /// <p>The configuration information to connect to Confluence as your data source.</p><note>
-    /// <p>Confluence data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to Confluence as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Confluence data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn confluence_configuration(&self) -> ::std::option::Option<&crate::types::ConfluenceDataSourceConfiguration> {
         self.confluence_configuration.as_ref()
     }
     /// <p>The configuration information to connect to Salesforce as your data source.</p><note>
-    /// <p>Salesforce data source connector is in preview release and is subject to change.</p>
+    /// <p>Salesforce data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn salesforce_configuration(&self) -> ::std::option::Option<&crate::types::SalesforceDataSourceConfiguration> {
         self.salesforce_configuration.as_ref()
     }
-    /// <p>The configuration information to connect to SharePoint as your data source.</p><note>
-    /// <p>SharePoint data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to SharePoint as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. SharePoint data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn share_point_configuration(&self) -> ::std::option::Option<&crate::types::SharePointDataSourceConfiguration> {
         self.share_point_configuration.as_ref()
@@ -71,6 +77,7 @@ impl DataSourceConfiguration {
 #[non_exhaustive]
 pub struct DataSourceConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DataSourceType>,
+    pub(crate) managed_knowledge_base_connector_configuration: ::std::option::Option<crate::types::ManagedKnowledgeBaseConnectorConfiguration>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3DataSourceConfiguration>,
     pub(crate) web_configuration: ::std::option::Option<crate::types::WebDataSourceConfiguration>,
     pub(crate) confluence_configuration: ::std::option::Option<crate::types::ConfluenceDataSourceConfiguration>,
@@ -93,96 +100,115 @@ impl DataSourceConfigurationBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         &self.r#type
     }
-    /// <p>The configuration information to connect to Amazon S3 as your data source.</p>
+    /// <p>Contains the configuration for a data source that connects a managed knowledge base to a supported data source connector. Specify this object when the data source type is <code>MANAGED_KNOWLEDGE_BASE_CONNECTOR</code>.</p>
+    pub fn managed_knowledge_base_connector_configuration(mut self, input: crate::types::ManagedKnowledgeBaseConnectorConfiguration) -> Self {
+        self.managed_knowledge_base_connector_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the configuration for a data source that connects a managed knowledge base to a supported data source connector. Specify this object when the data source type is <code>MANAGED_KNOWLEDGE_BASE_CONNECTOR</code>.</p>
+    pub fn set_managed_knowledge_base_connector_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ManagedKnowledgeBaseConnectorConfiguration>,
+    ) -> Self {
+        self.managed_knowledge_base_connector_configuration = input;
+        self
+    }
+    /// <p>Contains the configuration for a data source that connects a managed knowledge base to a supported data source connector. Specify this object when the data source type is <code>MANAGED_KNOWLEDGE_BASE_CONNECTOR</code>.</p>
+    pub fn get_managed_knowledge_base_connector_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManagedKnowledgeBaseConnectorConfiguration> {
+        &self.managed_knowledge_base_connector_configuration
+    }
+    /// <p>The configuration information to connect to Amazon S3 as your data source for self-managed knowledge bases. To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.</p>
     pub fn s3_configuration(mut self, input: crate::types::S3DataSourceConfiguration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration information to connect to Amazon S3 as your data source.</p>
+    /// <p>The configuration information to connect to Amazon S3 as your data source for self-managed knowledge bases. To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3DataSourceConfiguration>) -> Self {
         self.s3_configuration = input;
         self
     }
-    /// <p>The configuration information to connect to Amazon S3 as your data source.</p>
+    /// <p>The configuration information to connect to Amazon S3 as your data source for self-managed knowledge bases. To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DataSourceConfiguration> {
         &self.s3_configuration
     }
     /// <p>The configuration of web URLs to crawl for your data source. You should be authorized to crawl the URLs.</p><note>
-    /// <p>Crawling web URLs as your data source is in preview release and is subject to change.</p>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Web crawler data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn web_configuration(mut self, input: crate::types::WebDataSourceConfiguration) -> Self {
         self.web_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of web URLs to crawl for your data source. You should be authorized to crawl the URLs.</p><note>
-    /// <p>Crawling web URLs as your data source is in preview release and is subject to change.</p>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Web crawler data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn set_web_configuration(mut self, input: ::std::option::Option<crate::types::WebDataSourceConfiguration>) -> Self {
         self.web_configuration = input;
         self
     }
     /// <p>The configuration of web URLs to crawl for your data source. You should be authorized to crawl the URLs.</p><note>
-    /// <p>Crawling web URLs as your data source is in preview release and is subject to change.</p>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Web crawler data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn get_web_configuration(&self) -> &::std::option::Option<crate::types::WebDataSourceConfiguration> {
         &self.web_configuration
     }
-    /// <p>The configuration information to connect to Confluence as your data source.</p><note>
-    /// <p>Confluence data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to Confluence as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Confluence data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn confluence_configuration(mut self, input: crate::types::ConfluenceDataSourceConfiguration) -> Self {
         self.confluence_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration information to connect to Confluence as your data source.</p><note>
-    /// <p>Confluence data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to Confluence as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Confluence data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn set_confluence_configuration(mut self, input: ::std::option::Option<crate::types::ConfluenceDataSourceConfiguration>) -> Self {
         self.confluence_configuration = input;
         self
     }
-    /// <p>The configuration information to connect to Confluence as your data source.</p><note>
-    /// <p>Confluence data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to Confluence as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. Confluence data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn get_confluence_configuration(&self) -> &::std::option::Option<crate::types::ConfluenceDataSourceConfiguration> {
         &self.confluence_configuration
     }
     /// <p>The configuration information to connect to Salesforce as your data source.</p><note>
-    /// <p>Salesforce data source connector is in preview release and is subject to change.</p>
+    /// <p>Salesforce data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn salesforce_configuration(mut self, input: crate::types::SalesforceDataSourceConfiguration) -> Self {
         self.salesforce_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration information to connect to Salesforce as your data source.</p><note>
-    /// <p>Salesforce data source connector is in preview release and is subject to change.</p>
+    /// <p>Salesforce data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn set_salesforce_configuration(mut self, input: ::std::option::Option<crate::types::SalesforceDataSourceConfiguration>) -> Self {
         self.salesforce_configuration = input;
         self
     }
     /// <p>The configuration information to connect to Salesforce as your data source.</p><note>
-    /// <p>Salesforce data source connector is in preview release and is subject to change.</p>
+    /// <p>Salesforce data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn get_salesforce_configuration(&self) -> &::std::option::Option<crate::types::SalesforceDataSourceConfiguration> {
         &self.salesforce_configuration
     }
-    /// <p>The configuration information to connect to SharePoint as your data source.</p><note>
-    /// <p>SharePoint data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to SharePoint as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. SharePoint data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn share_point_configuration(mut self, input: crate::types::SharePointDataSourceConfiguration) -> Self {
         self.share_point_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration information to connect to SharePoint as your data source.</p><note>
-    /// <p>SharePoint data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to SharePoint as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. SharePoint data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn set_share_point_configuration(mut self, input: ::std::option::Option<crate::types::SharePointDataSourceConfiguration>) -> Self {
         self.share_point_configuration = input;
         self
     }
-    /// <p>The configuration information to connect to SharePoint as your data source.</p><note>
-    /// <p>SharePoint data source connector is in preview release and is subject to change.</p>
+    /// <p>The configuration information to connect to SharePoint as your data source for self-managed knowledge bases.</p><note>
+    /// <p>To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>. SharePoint data source connector for self-managed knowledge bases is in preview release and is subject to change.</p>
     /// </note>
     pub fn get_share_point_configuration(&self) -> &::std::option::Option<crate::types::SharePointDataSourceConfiguration> {
         &self.share_point_configuration
@@ -198,6 +224,7 @@ impl DataSourceConfigurationBuilder {
                     "r#type was not specified but it is required when building DataSourceConfiguration",
                 )
             })?,
+            managed_knowledge_base_connector_configuration: self.managed_knowledge_base_connector_configuration,
             s3_configuration: self.s3_configuration,
             web_configuration: self.web_configuration,
             confluence_configuration: self.confluence_configuration,

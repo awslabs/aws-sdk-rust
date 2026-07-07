@@ -2,10 +2,16 @@
 pub(crate) fn de_route<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Route>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,15 +22,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Legs" => {
-                            builder = builder.set_legs(crate::protocol_serde::shape_route_leg_list::de_route_leg_list(tokens, _value)?);
+                            builder = builder.set_legs(crate::protocol_serde::shape_route_leg_list::de_route_leg_list(tokens, _value, depth + 1)?);
                         }
                         "MajorRoadLabels" => {
                             builder = builder.set_major_road_labels(
-                                crate::protocol_serde::shape_route_major_road_label_list::de_route_major_road_label_list(tokens, _value)?,
+                                crate::protocol_serde::shape_route_major_road_label_list::de_route_major_road_label_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Summary" => {
-                            builder = builder.set_summary(crate::protocol_serde::shape_route_summary::de_route_summary(tokens, _value)?);
+                            builder = builder.set_summary(crate::protocol_serde::shape_route_summary::de_route_summary(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

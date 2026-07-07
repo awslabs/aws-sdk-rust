@@ -34,10 +34,16 @@ pub fn ser_credential_provider(
 pub(crate) fn de_credential_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CredentialProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -63,26 +69,31 @@ where
                     }
                     variant = match key.as_ref() {
                         "oauthCredentialProvider" => Some(crate::types::CredentialProvider::OauthCredentialProvider(
-                            crate::protocol_serde::shape_o_auth_credential_provider::de_o_auth_credential_provider(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_o_auth_credential_provider::de_o_auth_credential_provider(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'oauthCredentialProvider' cannot be null",
                                     )
-                                },
-                            )?,
-                        )),
-                        "apiKeyCredentialProvider" => Some(crate::types::CredentialProvider::ApiKeyCredentialProvider(
-                            crate::protocol_serde::shape_gateway_api_key_credential_provider::de_gateway_api_key_credential_provider(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'apiKeyCredentialProvider' cannot be null",
-                                    )
                                 })?,
                         )),
-                        "iamCredentialProvider" => Some(crate::types::CredentialProvider::IamCredentialProvider(
-                            crate::protocol_serde::shape_iam_credential_provider::de_iam_credential_provider(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iamCredentialProvider' cannot be null")
+                        "apiKeyCredentialProvider" => Some(crate::types::CredentialProvider::ApiKeyCredentialProvider(
+                            crate::protocol_serde::shape_gateway_api_key_credential_provider::de_gateway_api_key_credential_provider(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'apiKeyCredentialProvider' cannot be null")
                             })?,
+                        )),
+                        "iamCredentialProvider" => Some(crate::types::CredentialProvider::IamCredentialProvider(
+                            crate::protocol_serde::shape_iam_credential_provider::de_iam_credential_provider(tokens, _value, depth + 1)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'iamCredentialProvider' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

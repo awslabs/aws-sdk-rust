@@ -40,6 +40,8 @@ pub(crate) fn de_describe_vod_source(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -47,7 +49,9 @@ pub(crate) fn de_describe_vod_source(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdBreakOpportunities" => {
                     builder = builder.set_ad_break_opportunities(crate::protocol_serde::shape_ad_break_opportunities::de_ad_break_opportunities(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Arn" => {
@@ -65,7 +69,7 @@ pub(crate) fn de_describe_vod_source(
                 }
                 "HttpPackageConfigurations" => {
                     builder = builder.set_http_package_configurations(
-                        crate::protocol_serde::shape_http_package_configurations::de_http_package_configurations(tokens, _value)?,
+                        crate::protocol_serde::shape_http_package_configurations::de_http_package_configurations(tokens, _value, depth + 1)?,
                     );
                 }
                 "LastModifiedTime" => {
@@ -82,7 +86,7 @@ pub(crate) fn de_describe_vod_source(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                 }
                 "VodSourceName" => {
                     builder = builder.set_vod_source_name(

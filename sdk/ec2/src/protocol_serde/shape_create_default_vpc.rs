@@ -40,6 +40,8 @@ pub fn de_create_default_vpc(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateDefaultVpcResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateDefaultVpcResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_create_default_vpc(
             s if s.matches("vpc") /* Vpc com.amazonaws.ec2.synthetic#CreateDefaultVpcOutput$Vpc */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc::de_vpc(&mut tag)
+                        crate::protocol_serde::shape_vpc::de_vpc(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_kubernetes_workload_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KubernetesWorkloadDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,10 +60,10 @@ where
                             );
                         }
                         "containers" => {
-                            builder = builder.set_containers(crate::protocol_serde::shape_containers::de_containers(tokens, _value)?);
+                            builder = builder.set_containers(crate::protocol_serde::shape_containers::de_containers(tokens, _value, depth + 1)?);
                         }
                         "volumes" => {
-                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value)?);
+                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value, depth + 1)?);
                         }
                         "hostIPC" => {
                             builder = builder.set_host_ipc(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

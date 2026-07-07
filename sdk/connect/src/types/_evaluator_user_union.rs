@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluatorUserUnion {
-    /// <p>Represents the Amazon Connect ARN of the user.</p>
+    /// <p>Represents the Connect Customer ARN of the user.</p>
     ConnectUserArn(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

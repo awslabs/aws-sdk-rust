@@ -49,6 +49,8 @@ pub fn de_modify_instance_metadata_options(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyInstanceMetadataOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyInstanceMetadataOptionsResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_modify_instance_metadata_options(
             s if s.matches("instanceMetadataOptions") /* InstanceMetadataOptions com.amazonaws.ec2.synthetic#ModifyInstanceMetadataOptionsOutput$InstanceMetadataOptions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_instance_metadata_options_response::de_instance_metadata_options_response(&mut tag)
+                        crate::protocol_serde::shape_instance_metadata_options_response::de_instance_metadata_options_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

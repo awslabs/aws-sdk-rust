@@ -51,16 +51,25 @@ pub fn ser_config_rule(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.rule_evaluation_visibility {
+        object.key("RuleEvaluationVisibility").string(var_17.as_str());
+    }
     Ok(())
 }
 
 pub(crate) fn de_config_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -99,10 +108,10 @@ where
                             );
                         }
                         "Scope" => {
-                            builder = builder.set_scope(crate::protocol_serde::shape_scope::de_scope(tokens, _value)?);
+                            builder = builder.set_scope(crate::protocol_serde::shape_scope::de_scope(tokens, _value, depth + 1)?);
                         }
                         "Source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value, depth + 1)?);
                         }
                         "InputParameters" => {
                             builder = builder.set_input_parameters(
@@ -133,8 +142,18 @@ where
                             );
                         }
                         "EvaluationModes" => {
-                            builder =
-                                builder.set_evaluation_modes(crate::protocol_serde::shape_evaluation_modes::de_evaluation_modes(tokens, _value)?);
+                            builder = builder.set_evaluation_modes(crate::protocol_serde::shape_evaluation_modes::de_evaluation_modes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "RuleEvaluationVisibility" => {
+                            builder = builder.set_rule_evaluation_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RuleEvaluationVisibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

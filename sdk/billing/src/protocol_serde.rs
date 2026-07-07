@@ -31,7 +31,13 @@ pub(crate) mod shape_delete_billing_view;
 
 pub(crate) mod shape_disassociate_source_views;
 
+pub(crate) mod shape_get_billing_preferences;
+
 pub(crate) mod shape_get_billing_view;
+
+pub(crate) mod shape_get_credit_allocation_history;
+
+pub(crate) mod shape_get_credits;
 
 pub(crate) mod shape_get_resource_policy;
 
@@ -41,9 +47,13 @@ pub(crate) mod shape_list_source_views_for_billing_view;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_redeem_credits;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_billing_preferences;
 
 pub(crate) mod shape_update_billing_view;
 
@@ -69,7 +79,13 @@ pub(crate) mod shape_delete_billing_view_input;
 
 pub(crate) mod shape_disassociate_source_views_input;
 
+pub(crate) mod shape_get_billing_preferences_input;
+
 pub(crate) mod shape_get_billing_view_input;
+
+pub(crate) mod shape_get_credit_allocation_history_input;
+
+pub(crate) mod shape_get_credits_input;
 
 pub(crate) mod shape_get_resource_policy_input;
 
@@ -81,6 +97,8 @@ pub(crate) mod shape_list_source_views_for_billing_view_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
+pub(crate) mod shape_redeem_credits_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -91,11 +109,19 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_billing_preferences_input;
+
 pub(crate) mod shape_update_billing_view_input;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_active_time_range;
+
+pub(crate) mod shape_billing_feature_filter;
+
+pub(crate) mod shape_billing_preference_for_key;
+
+pub(crate) mod shape_billing_preferences;
 
 pub(crate) mod shape_billing_view_element;
 
@@ -103,7 +129,13 @@ pub(crate) mod shape_billing_view_list;
 
 pub(crate) mod shape_billing_view_source_views_list;
 
+pub(crate) mod shape_credit_allocation_history_list;
+
+pub(crate) mod shape_credit_data_list;
+
 pub(crate) mod shape_expression;
+
+pub(crate) mod shape_failed_months_list;
 
 pub(crate) mod shape_resource_tag;
 
@@ -113,11 +145,17 @@ pub(crate) mod shape_string_search;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_billing_preference_summary;
+
 pub(crate) mod shape_billing_view_health_status;
 
 pub(crate) mod shape_billing_view_list_element;
 
 pub(crate) mod shape_cost_category_values;
+
+pub(crate) mod shape_credit_allocation_history_entry;
+
+pub(crate) mod shape_credit_data;
 
 pub(crate) mod shape_dimension_values;
 
@@ -127,6 +165,16 @@ pub(crate) mod shape_time_range;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_amount;
+
+pub(crate) mod shape_billing_period;
+
 pub(crate) mod shape_billing_view_status_reasons;
+
+pub(crate) mod shape_product_names;
+
+pub(crate) mod shape_purchase_type_applications;
+
+pub(crate) mod shape_shareable_account_ids;
 
 pub(crate) mod shape_values;

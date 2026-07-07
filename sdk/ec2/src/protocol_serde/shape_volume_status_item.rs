@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_volume_status_item(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VolumeStatusItem, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VolumeStatusItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_volume_status_item(
             s if s.matches("actionsSet") /* Actions com.amazonaws.ec2#VolumeStatusItem$Actions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_volume_status_actions_list::de_volume_status_actions_list(&mut tag)
+                        crate::protocol_serde::shape_volume_status_actions_list::de_volume_status_actions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_volume_status_item(
             s if s.matches("eventsSet") /* Events com.amazonaws.ec2#VolumeStatusItem$Events */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_volume_status_events_list::de_volume_status_events_list(&mut tag)
+                        crate::protocol_serde::shape_volume_status_events_list::de_volume_status_events_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +73,7 @@ pub fn de_volume_status_item(
             s if s.matches("volumeStatus") /* VolumeStatus com.amazonaws.ec2#VolumeStatusItem$VolumeStatus */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_volume_status_info::de_volume_status_info(&mut tag)
+                        crate::protocol_serde::shape_volume_status_info::de_volume_status_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -79,7 +83,7 @@ pub fn de_volume_status_item(
             s if s.matches("attachmentStatuses") /* AttachmentStatuses com.amazonaws.ec2#VolumeStatusItem$AttachmentStatuses */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_volume_status_attachment_status_list::de_volume_status_attachment_status_list(&mut tag)
+                        crate::protocol_serde::shape_volume_status_attachment_status_list::de_volume_status_attachment_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -89,7 +93,7 @@ pub fn de_volume_status_item(
             s if s.matches("initializationStatusDetails") /* InitializationStatusDetails com.amazonaws.ec2#VolumeStatusItem$InitializationStatusDetails */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_initialization_status_details::de_initialization_status_details(&mut tag)
+                        crate::protocol_serde::shape_initialization_status_details::de_initialization_status_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -112,7 +116,7 @@ pub fn de_volume_status_item(
             s if s.matches("operator") /* Operator com.amazonaws.ec2#VolumeStatusItem$Operator */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

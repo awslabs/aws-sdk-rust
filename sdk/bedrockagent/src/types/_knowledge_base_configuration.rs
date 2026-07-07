@@ -4,23 +4,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KnowledgeBaseConfiguration {
-    /// <p>The type of data that the data source is converted into for the knowledge base.</p>
+    /// <p>The type of data that the data source is converted into for the knowledge base. Choose <code>MANAGED</code> to create a managed knowledge base.</p>
     pub r#type: crate::types::KnowledgeBaseType,
     /// <p>Contains details about the model that's used to convert the data source into vector embeddings.</p>
     pub vector_knowledge_base_configuration: ::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration>,
+    /// <p>Configurations for a managed knowledge base.</p>
+    pub managed_knowledge_base_configuration: ::std::option::Option<crate::types::ManagedKnowledgeBaseConfiguration>,
     /// <p>Settings for an Amazon Kendra knowledge base.</p>
     pub kendra_knowledge_base_configuration: ::std::option::Option<crate::types::KendraKnowledgeBaseConfiguration>,
     /// <p>Specifies configurations for a knowledge base connected to an SQL database.</p>
     pub sql_knowledge_base_configuration: ::std::option::Option<crate::types::SqlKnowledgeBaseConfiguration>,
 }
 impl KnowledgeBaseConfiguration {
-    /// <p>The type of data that the data source is converted into for the knowledge base.</p>
+    /// <p>The type of data that the data source is converted into for the knowledge base. Choose <code>MANAGED</code> to create a managed knowledge base.</p>
     pub fn r#type(&self) -> &crate::types::KnowledgeBaseType {
         &self.r#type
     }
     /// <p>Contains details about the model that's used to convert the data source into vector embeddings.</p>
     pub fn vector_knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::VectorKnowledgeBaseConfiguration> {
         self.vector_knowledge_base_configuration.as_ref()
+    }
+    /// <p>Configurations for a managed knowledge base.</p>
+    pub fn managed_knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::ManagedKnowledgeBaseConfiguration> {
+        self.managed_knowledge_base_configuration.as_ref()
     }
     /// <p>Settings for an Amazon Kendra knowledge base.</p>
     pub fn kendra_knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KendraKnowledgeBaseConfiguration> {
@@ -44,22 +50,23 @@ impl KnowledgeBaseConfiguration {
 pub struct KnowledgeBaseConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::KnowledgeBaseType>,
     pub(crate) vector_knowledge_base_configuration: ::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration>,
+    pub(crate) managed_knowledge_base_configuration: ::std::option::Option<crate::types::ManagedKnowledgeBaseConfiguration>,
     pub(crate) kendra_knowledge_base_configuration: ::std::option::Option<crate::types::KendraKnowledgeBaseConfiguration>,
     pub(crate) sql_knowledge_base_configuration: ::std::option::Option<crate::types::SqlKnowledgeBaseConfiguration>,
 }
 impl KnowledgeBaseConfigurationBuilder {
-    /// <p>The type of data that the data source is converted into for the knowledge base.</p>
+    /// <p>The type of data that the data source is converted into for the knowledge base. Choose <code>MANAGED</code> to create a managed knowledge base.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::KnowledgeBaseType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of data that the data source is converted into for the knowledge base.</p>
+    /// <p>The type of data that the data source is converted into for the knowledge base. Choose <code>MANAGED</code> to create a managed knowledge base.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of data that the data source is converted into for the knowledge base.</p>
+    /// <p>The type of data that the data source is converted into for the knowledge base. Choose <code>MANAGED</code> to create a managed knowledge base.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
         &self.r#type
     }
@@ -76,6 +83,20 @@ impl KnowledgeBaseConfigurationBuilder {
     /// <p>Contains details about the model that's used to convert the data source into vector embeddings.</p>
     pub fn get_vector_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration> {
         &self.vector_knowledge_base_configuration
+    }
+    /// <p>Configurations for a managed knowledge base.</p>
+    pub fn managed_knowledge_base_configuration(mut self, input: crate::types::ManagedKnowledgeBaseConfiguration) -> Self {
+        self.managed_knowledge_base_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configurations for a managed knowledge base.</p>
+    pub fn set_managed_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::ManagedKnowledgeBaseConfiguration>) -> Self {
+        self.managed_knowledge_base_configuration = input;
+        self
+    }
+    /// <p>Configurations for a managed knowledge base.</p>
+    pub fn get_managed_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::ManagedKnowledgeBaseConfiguration> {
+        &self.managed_knowledge_base_configuration
     }
     /// <p>Settings for an Amazon Kendra knowledge base.</p>
     pub fn kendra_knowledge_base_configuration(mut self, input: crate::types::KendraKnowledgeBaseConfiguration) -> Self {
@@ -117,6 +138,7 @@ impl KnowledgeBaseConfigurationBuilder {
                 )
             })?,
             vector_knowledge_base_configuration: self.vector_knowledge_base_configuration,
+            managed_knowledge_base_configuration: self.managed_knowledge_base_configuration,
             kendra_knowledge_base_configuration: self.kendra_knowledge_base_configuration,
             sql_knowledge_base_configuration: self.sql_knowledge_base_configuration,
         })

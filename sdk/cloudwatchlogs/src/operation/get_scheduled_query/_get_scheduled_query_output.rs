@@ -21,10 +21,14 @@ pub struct GetScheduledQueryOutput {
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The time offset in seconds that defines the lookback period for the query.</p>
     pub start_time_offset: ::std::option::Option<i64>,
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub end_time_offset: ::std::option::Option<i64>,
     /// <p>Configuration for where query results are delivered.</p>
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>The current state of the scheduled query.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub schedule_type: ::std::option::Option<crate::types::ScheduleType>,
     /// <p>The timestamp when the scheduled query was last executed.</p>
     pub last_triggered_time: ::std::option::Option<i64>,
     /// <p>The status of the most recent execution of the scheduled query.</p>
@@ -80,6 +84,10 @@ impl GetScheduledQueryOutput {
     pub fn start_time_offset(&self) -> ::std::option::Option<i64> {
         self.start_time_offset
     }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn end_time_offset(&self) -> ::std::option::Option<i64> {
+        self.end_time_offset
+    }
     /// <p>Configuration for where query results are delivered.</p>
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
@@ -87,6 +95,10 @@ impl GetScheduledQueryOutput {
     /// <p>The current state of the scheduled query.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
+    }
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub fn schedule_type(&self) -> ::std::option::Option<&crate::types::ScheduleType> {
+        self.schedule_type.as_ref()
     }
     /// <p>The timestamp when the scheduled query was last executed.</p>
     pub fn last_triggered_time(&self) -> ::std::option::Option<i64> {
@@ -142,8 +154,10 @@ pub struct GetScheduledQueryOutputBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_offset: ::std::option::Option<i64>,
+    pub(crate) end_time_offset: ::std::option::Option<i64>,
     pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) state: ::std::option::Option<crate::types::ScheduledQueryState>,
+    pub(crate) schedule_type: ::std::option::Option<crate::types::ScheduleType>,
     pub(crate) last_triggered_time: ::std::option::Option<i64>,
     pub(crate) last_execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     pub(crate) schedule_start_time: ::std::option::Option<i64>,
@@ -286,6 +300,20 @@ impl GetScheduledQueryOutputBuilder {
     pub fn get_start_time_offset(&self) -> &::std::option::Option<i64> {
         &self.start_time_offset
     }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn end_time_offset(mut self, input: i64) -> Self {
+        self.end_time_offset = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn set_end_time_offset(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.end_time_offset = input;
+        self
+    }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn get_end_time_offset(&self) -> &::std::option::Option<i64> {
+        &self.end_time_offset
+    }
     /// <p>Configuration for where query results are delivered.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
@@ -313,6 +341,20 @@ impl GetScheduledQueryOutputBuilder {
     /// <p>The current state of the scheduled query.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
+    }
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub fn schedule_type(mut self, input: crate::types::ScheduleType) -> Self {
+        self.schedule_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub fn set_schedule_type(mut self, input: ::std::option::Option<crate::types::ScheduleType>) -> Self {
+        self.schedule_type = input;
+        self
+    }
+    /// <p>The schedule type of the scheduled query. Valid values are <code>CUSTOMER_MANAGED</code> and <code>AWS_MANAGED</code>.</p>
+    pub fn get_schedule_type(&self) -> &::std::option::Option<crate::types::ScheduleType> {
+        &self.schedule_type
     }
     /// <p>The timestamp when the scheduled query was last executed.</p>
     pub fn last_triggered_time(mut self, input: i64) -> Self {
@@ -433,8 +475,10 @@ impl GetScheduledQueryOutputBuilder {
             schedule_expression: self.schedule_expression,
             timezone: self.timezone,
             start_time_offset: self.start_time_offset,
+            end_time_offset: self.end_time_offset,
             destination_configuration: self.destination_configuration,
             state: self.state,
+            schedule_type: self.schedule_type,
             last_triggered_time: self.last_triggered_time,
             last_execution_status: self.last_execution_status,
             schedule_start_time: self.schedule_start_time,

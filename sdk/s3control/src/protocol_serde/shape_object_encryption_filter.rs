@@ -33,13 +33,17 @@ pub fn ser_object_encryption_filter(
 
 pub fn de_object_encryption_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ObjectEncryptionFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     let mut base: Option<crate::types::ObjectEncryptionFilter> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SSE-S3") /* SSES3 com.amazonaws.s3control#ObjectEncryptionFilter$SSES3 */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_sses3_filter::de_sses3_filter(&mut tag)
+                    crate::protocol_serde::shape_sses3_filter::de_sses3_filter(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ObjectEncryptionFilter::Sses3(tmp));
@@ -47,7 +51,7 @@ pub fn de_object_encryption_filter(
             ,
             s if s.matches("SSE-KMS") /* SSEKMS com.amazonaws.s3control#ObjectEncryptionFilter$SSEKMS */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_ssekms_filter::de_ssekms_filter(&mut tag)
+                    crate::protocol_serde::shape_ssekms_filter::de_ssekms_filter(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ObjectEncryptionFilter::Ssekms(tmp));
@@ -55,7 +59,7 @@ pub fn de_object_encryption_filter(
             ,
             s if s.matches("DSSE-KMS") /* DSSEKMS com.amazonaws.s3control#ObjectEncryptionFilter$DSSEKMS */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_dssekms_filter::de_dssekms_filter(&mut tag)
+                    crate::protocol_serde::shape_dssekms_filter::de_dssekms_filter(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ObjectEncryptionFilter::Dssekms(tmp));
@@ -63,7 +67,7 @@ pub fn de_object_encryption_filter(
             ,
             s if s.matches("SSE-C") /* SSEC com.amazonaws.s3control#ObjectEncryptionFilter$SSEC */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_ssec_filter::de_ssec_filter(&mut tag)
+                    crate::protocol_serde::shape_ssec_filter::de_ssec_filter(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ObjectEncryptionFilter::Ssec(tmp));
@@ -71,7 +75,7 @@ pub fn de_object_encryption_filter(
             ,
             s if s.matches("NOT-SSE") /* NOTSSE com.amazonaws.s3control#ObjectEncryptionFilter$NOTSSE */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_not_sse_filter::de_not_sse_filter(&mut tag)
+                    crate::protocol_serde::shape_not_sse_filter::de_not_sse_filter(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ObjectEncryptionFilter::Notsse(tmp));

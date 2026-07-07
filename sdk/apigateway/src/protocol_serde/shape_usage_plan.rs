@@ -2,10 +2,16 @@
 pub(crate) fn de_usage_plan<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UsagePlan>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,13 +43,21 @@ where
                             );
                         }
                         "apiStages" => {
-                            builder = builder.set_api_stages(crate::protocol_serde::shape_list_of_api_stage::de_list_of_api_stage(tokens, _value)?);
+                            builder = builder.set_api_stages(crate::protocol_serde::shape_list_of_api_stage::de_list_of_api_stage(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "throttle" => {
-                            builder = builder.set_throttle(crate::protocol_serde::shape_throttle_settings::de_throttle_settings(tokens, _value)?);
+                            builder = builder.set_throttle(crate::protocol_serde::shape_throttle_settings::de_throttle_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "quota" => {
-                            builder = builder.set_quota(crate::protocol_serde::shape_quota_settings::de_quota_settings(tokens, _value)?);
+                            builder = builder.set_quota(crate::protocol_serde::shape_quota_settings::de_quota_settings(tokens, _value, depth + 1)?);
                         }
                         "productCode" => {
                             builder = builder.set_product_code(
@@ -54,7 +68,9 @@ where
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

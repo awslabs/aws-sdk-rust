@@ -47,6 +47,8 @@ pub fn de_describe_applications(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeApplicationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeApplicationsResponse got {start_el:?}"
@@ -64,7 +66,7 @@ pub fn de_describe_applications(
             s if s.matches("Applications") /* Applications com.amazonaws.elasticbeanstalk.synthetic#DescribeApplicationsOutput$Applications */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_application_description_list::de_application_description_list(&mut tag)
+                        crate::protocol_serde::shape_application_description_list::de_application_description_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

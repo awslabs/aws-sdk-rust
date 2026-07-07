@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LaunchSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_launch_specification(
             s if s.matches("blockDeviceMapping") /* BlockDeviceMappings com.amazonaws.ec2#LaunchSpecification$BlockDeviceMappings */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_block_device_mapping_list::de_block_device_mapping_list(&mut tag)
+                        crate::protocol_serde::shape_block_device_mapping_list::de_block_device_mapping_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -61,7 +65,7 @@ pub fn de_launch_specification(
             s if s.matches("iamInstanceProfile") /* IamInstanceProfile com.amazonaws.ec2#LaunchSpecification$IamInstanceProfile */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_iam_instance_profile_specification::de_iam_instance_profile_specification(&mut tag)
+                        crate::protocol_serde::shape_iam_instance_profile_specification::de_iam_instance_profile_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -124,7 +128,7 @@ pub fn de_launch_specification(
             s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#LaunchSpecification$NetworkInterfaces */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_instance_network_interface_specification_list::de_instance_network_interface_specification_list(&mut tag)
+                        crate::protocol_serde::shape_instance_network_interface_specification_list::de_instance_network_interface_specification_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -134,7 +138,7 @@ pub fn de_launch_specification(
             s if s.matches("placement") /* Placement com.amazonaws.ec2#LaunchSpecification$Placement */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_spot_placement::de_spot_placement(&mut tag)
+                        crate::protocol_serde::shape_spot_placement::de_spot_placement(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -170,7 +174,7 @@ pub fn de_launch_specification(
             s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#LaunchSpecification$SecurityGroups */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -180,7 +184,7 @@ pub fn de_launch_specification(
             s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#LaunchSpecification$Monitoring */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_run_instances_monitoring_enabled::de_run_instances_monitoring_enabled(&mut tag)
+                        crate::protocol_serde::shape_run_instances_monitoring_enabled::de_run_instances_monitoring_enabled(&mut tag, depth + 1)
                         ?
                     )
                 ;

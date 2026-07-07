@@ -8,6 +8,8 @@ pub struct UpdateUserPoolDomainOutput {
     pub managed_login_version: ::std::option::Option<i32>,
     /// <p>The fully-qualified domain name (FQDN) of the Amazon CloudFront distribution that hosts your managed login or classic hosted UI pages. You domain-name authority must have an alias record that points requests for your custom domain to this FQDN. Amazon Cognito returns this value if you set a custom domain with <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank response.</p>
     pub cloud_front_domain: ::std::option::Option<::std::string::String>,
+    /// <p>The updated routing configuration for the user pool domain.</p>
+    pub routing: ::std::option::Option<crate::types::RoutingType>,
     _request_id: Option<String>,
 }
 impl UpdateUserPoolDomainOutput {
@@ -18,6 +20,10 @@ impl UpdateUserPoolDomainOutput {
     /// <p>The fully-qualified domain name (FQDN) of the Amazon CloudFront distribution that hosts your managed login or classic hosted UI pages. You domain-name authority must have an alias record that points requests for your custom domain to this FQDN. Amazon Cognito returns this value if you set a custom domain with <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank response.</p>
     pub fn cloud_front_domain(&self) -> ::std::option::Option<&str> {
         self.cloud_front_domain.as_deref()
+    }
+    /// <p>The updated routing configuration for the user pool domain.</p>
+    pub fn routing(&self) -> ::std::option::Option<&crate::types::RoutingType> {
+        self.routing.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateUserPoolDomainOutput {
@@ -38,6 +44,7 @@ impl UpdateUserPoolDomainOutput {
 pub struct UpdateUserPoolDomainOutputBuilder {
     pub(crate) managed_login_version: ::std::option::Option<i32>,
     pub(crate) cloud_front_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) routing: ::std::option::Option<crate::types::RoutingType>,
     _request_id: Option<String>,
 }
 impl UpdateUserPoolDomainOutputBuilder {
@@ -69,6 +76,20 @@ impl UpdateUserPoolDomainOutputBuilder {
     pub fn get_cloud_front_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_front_domain
     }
+    /// <p>The updated routing configuration for the user pool domain.</p>
+    pub fn routing(mut self, input: crate::types::RoutingType) -> Self {
+        self.routing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated routing configuration for the user pool domain.</p>
+    pub fn set_routing(mut self, input: ::std::option::Option<crate::types::RoutingType>) -> Self {
+        self.routing = input;
+        self
+    }
+    /// <p>The updated routing configuration for the user pool domain.</p>
+    pub fn get_routing(&self) -> &::std::option::Option<crate::types::RoutingType> {
+        &self.routing
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -83,6 +104,7 @@ impl UpdateUserPoolDomainOutputBuilder {
         crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput {
             managed_login_version: self.managed_login_version,
             cloud_front_domain: self.cloud_front_domain,
+            routing: self.routing,
             _request_id: self._request_id,
         }
     }

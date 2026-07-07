@@ -32,5 +32,7 @@ pub fn de_response_headers_policy_config(
             "invalid root, expected ResponseHeadersPolicyConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_response_headers_policy_config::de_response_headers_policy_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_response_headers_policy_config::de_response_headers_policy_config(&mut decoder, depth + 1)
 }

@@ -51,6 +51,8 @@ pub fn de_get_capacity_manager_monitored_tag_keys(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetCapacityManagerMonitoredTagKeysResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetCapacityManagerMonitoredTagKeysResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_get_capacity_manager_monitored_tag_keys(
             s if s.matches("capacityManagerTagKeySet") /* CapacityManagerTagKeys com.amazonaws.ec2.synthetic#GetCapacityManagerMonitoredTagKeysOutput$CapacityManagerTagKeys */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_capacity_manager_monitored_tag_key_list::de_capacity_manager_monitored_tag_key_list(&mut tag)
+                        crate::protocol_serde::shape_capacity_manager_monitored_tag_key_list::de_capacity_manager_monitored_tag_key_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

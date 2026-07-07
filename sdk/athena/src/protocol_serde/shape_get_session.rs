@@ -99,6 +99,8 @@ pub(crate) fn de_get_session(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -134,7 +136,9 @@ pub(crate) fn de_get_session(
                 }
                 "EngineConfiguration" => {
                     builder = builder.set_engine_configuration(crate::protocol_serde::shape_engine_configuration::de_engine_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NotebookVersion" => {
@@ -146,19 +150,25 @@ pub(crate) fn de_get_session(
                 }
                 "MonitoringConfiguration" => {
                     builder = builder.set_monitoring_configuration(
-                        crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "SessionConfiguration" => {
                     builder = builder.set_session_configuration(crate::protocol_serde::shape_session_configuration::de_session_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_session_status::de_session_status(tokens, _value)?);
+                    builder = builder.set_status(crate::protocol_serde::shape_session_status::de_session_status(tokens, _value, depth + 1)?);
                 }
                 "Statistics" => {
-                    builder = builder.set_statistics(crate::protocol_serde::shape_session_statistics::de_session_statistics(tokens, _value)?);
+                    builder = builder.set_statistics(crate::protocol_serde::shape_session_statistics::de_session_statistics(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

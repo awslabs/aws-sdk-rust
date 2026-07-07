@@ -92,7 +92,11 @@ pub fn ser_cache_behavior(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_behavior(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CacheBehavior, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CacheBehavior::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -126,7 +130,7 @@ pub fn de_cache_behavior(
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#CacheBehavior$TrustedSigners */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag)
+                        crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -136,7 +140,7 @@ pub fn de_cache_behavior(
             s if s.matches("TrustedKeyGroups") /* TrustedKeyGroups com.amazonaws.cloudfront#CacheBehavior$TrustedKeyGroups */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_trusted_key_groups::de_trusted_key_groups(&mut tag)
+                        crate::protocol_serde::shape_trusted_key_groups::de_trusted_key_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -160,7 +164,7 @@ pub fn de_cache_behavior(
             s if s.matches("AllowedMethods") /* AllowedMethods com.amazonaws.cloudfront#CacheBehavior$AllowedMethods */ =>  {
                 let var_23 =
                     Some(
-                        crate::protocol_serde::shape_allowed_methods::de_allowed_methods(&mut tag)
+                        crate::protocol_serde::shape_allowed_methods::de_allowed_methods(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -200,7 +204,7 @@ pub fn de_cache_behavior(
             s if s.matches("LambdaFunctionAssociations") /* LambdaFunctionAssociations com.amazonaws.cloudfront#CacheBehavior$LambdaFunctionAssociations */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_lambda_function_associations::de_lambda_function_associations(&mut tag)
+                        crate::protocol_serde::shape_lambda_function_associations::de_lambda_function_associations(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -210,7 +214,7 @@ pub fn de_cache_behavior(
             s if s.matches("FunctionAssociations") /* FunctionAssociations com.amazonaws.cloudfront#CacheBehavior$FunctionAssociations */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_function_associations::de_function_associations(&mut tag)
+                        crate::protocol_serde::shape_function_associations::de_function_associations(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -285,7 +289,7 @@ pub fn de_cache_behavior(
             s if s.matches("GrpcConfig") /* GrpcConfig com.amazonaws.cloudfront#CacheBehavior$GrpcConfig */ =>  {
                 let var_33 =
                     Some(
-                        crate::protocol_serde::shape_grpc_config::de_grpc_config(&mut tag)
+                        crate::protocol_serde::shape_grpc_config::de_grpc_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -295,7 +299,7 @@ pub fn de_cache_behavior(
             s if s.matches("ForwardedValues") /* ForwardedValues com.amazonaws.cloudfront#CacheBehavior$ForwardedValues */ =>  {
                 let var_34 =
                     Some(
-                        crate::protocol_serde::shape_forwarded_values::de_forwarded_values(&mut tag)
+                        crate::protocol_serde::shape_forwarded_values::de_forwarded_values(&mut tag, depth + 1)
                         ?
                     )
                 ;

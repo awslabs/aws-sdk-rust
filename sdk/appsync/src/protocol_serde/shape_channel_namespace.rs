@@ -2,10 +2,16 @@
 pub(crate) fn de_channel_namespace<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ChannelNamespace>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,10 +36,12 @@ where
                             );
                         }
                         "subscribeAuthModes" => {
-                            builder = builder.set_subscribe_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens, _value)?);
+                            builder =
+                                builder.set_subscribe_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens, _value, depth + 1)?);
                         }
                         "publishAuthModes" => {
-                            builder = builder.set_publish_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens, _value)?);
+                            builder =
+                                builder.set_publish_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens, _value, depth + 1)?);
                         }
                         "codeHandlers" => {
                             builder = builder.set_code_handlers(
@@ -43,7 +51,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "channelNamespaceArn" => {
                             builder = builder.set_channel_namespace_arn(
@@ -65,7 +73,11 @@ where
                             )?);
                         }
                         "handlerConfigs" => {
-                            builder = builder.set_handler_configs(crate::protocol_serde::shape_handler_configs::de_handler_configs(tokens, _value)?);
+                            builder = builder.set_handler_configs(crate::protocol_serde::shape_handler_configs::de_handler_configs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -22,7 +22,7 @@ impl crate::operation::update_backlog_task::builders::UpdateBacklogTaskInputBuil
 }
 /// Fluent builder constructing a request to `UpdateBacklogTask`.
 ///
-/// Update an existing backlog task.
+/// <p>Update an existing backlog task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBacklogTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateBacklogTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier for the agent space containing the task
+    /// <p>The unique identifier for the agent space containing the task</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space containing the task
+    /// <p>The unique identifier for the agent space containing the task</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space containing the task
+    /// <p>The unique identifier for the agent space containing the task</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The unique identifier of the task to update
+    /// <p>The unique identifier of the task to update</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// The unique identifier of the task to update
+    /// <p>The unique identifier of the task to update</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// The unique identifier of the task to update
+    /// <p>The unique identifier of the task to update</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }
-    /// Updated task status
+    /// <p>Updated task status</p>
     pub fn task_status(mut self, input: crate::types::TaskStatus) -> Self {
         self.inner = self.inner.task_status(input);
         self
     }
-    /// Updated task status
+    /// <p>Updated task status</p>
     pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.inner = self.inner.set_task_status(input);
         self
     }
-    /// Updated task status
+    /// <p>Updated task status</p>
     pub fn get_task_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
         self.inner.get_task_status()
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

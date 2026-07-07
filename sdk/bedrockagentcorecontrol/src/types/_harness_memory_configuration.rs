@@ -6,6 +6,10 @@
 pub enum HarnessMemoryConfiguration {
     /// <p>The AgentCore Memory configuration.</p>
     AgentCoreMemoryConfiguration(crate::types::HarnessAgentCoreMemoryConfiguration),
+    /// <p>Explicitly opt out of memory.</p>
+    Disabled(crate::types::HarnessDisabledMemoryConfiguration),
+    /// <p>Harness creates and manages a memory resource in the customer's account.</p>
+    ManagedMemoryConfiguration(crate::types::HarnessManagedMemoryConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +21,6 @@ pub enum HarnessMemoryConfiguration {
     Unknown,
 }
 impl HarnessMemoryConfiguration {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AgentCoreMemoryConfiguration`](crate::types::HarnessMemoryConfiguration::AgentCoreMemoryConfiguration), extracting the inner [`HarnessAgentCoreMemoryConfiguration`](crate::types::HarnessAgentCoreMemoryConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_agent_core_memory_configuration(&self) -> ::std::result::Result<&crate::types::HarnessAgentCoreMemoryConfiguration, &Self> {
@@ -30,6 +33,32 @@ impl HarnessMemoryConfiguration {
     /// Returns true if this is a [`AgentCoreMemoryConfiguration`](crate::types::HarnessMemoryConfiguration::AgentCoreMemoryConfiguration).
     pub fn is_agent_core_memory_configuration(&self) -> bool {
         self.as_agent_core_memory_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Disabled`](crate::types::HarnessMemoryConfiguration::Disabled), extracting the inner [`HarnessDisabledMemoryConfiguration`](crate::types::HarnessDisabledMemoryConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_disabled(&self) -> ::std::result::Result<&crate::types::HarnessDisabledMemoryConfiguration, &Self> {
+        if let HarnessMemoryConfiguration::Disabled(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Disabled`](crate::types::HarnessMemoryConfiguration::Disabled).
+    pub fn is_disabled(&self) -> bool {
+        self.as_disabled().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ManagedMemoryConfiguration`](crate::types::HarnessMemoryConfiguration::ManagedMemoryConfiguration), extracting the inner [`HarnessManagedMemoryConfiguration`](crate::types::HarnessManagedMemoryConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_managed_memory_configuration(&self) -> ::std::result::Result<&crate::types::HarnessManagedMemoryConfiguration, &Self> {
+        if let HarnessMemoryConfiguration::ManagedMemoryConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ManagedMemoryConfiguration`](crate::types::HarnessMemoryConfiguration::ManagedMemoryConfiguration).
+    pub fn is_managed_memory_configuration(&self) -> bool {
+        self.as_managed_memory_configuration().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

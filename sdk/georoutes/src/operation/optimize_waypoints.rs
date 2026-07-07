@@ -150,9 +150,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Optimiz
 #[derive(Debug)]
 struct OptimizeWaypointsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for OptimizeWaypointsResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -191,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for OptimizeWayp
                 output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/optimize-waypoints").expect("formatting should succeed");
+                ::std::write!(output, "/v2/optimize-waypoints").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(

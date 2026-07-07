@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc_peering_connection_vpc_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VpcPeeringConnectionVpcInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VpcPeeringConnectionVpcInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_vpc_peering_connection_vpc_info(
             s if s.matches("ipv6CidrBlockSet") /* Ipv6CidrBlockSet com.amazonaws.ec2#VpcPeeringConnectionVpcInfo$Ipv6CidrBlockSet */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_ipv6_cidr_block_set::de_ipv6_cidr_block_set(&mut tag)
+                        crate::protocol_serde::shape_ipv6_cidr_block_set::de_ipv6_cidr_block_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_vpc_peering_connection_vpc_info(
             s if s.matches("cidrBlockSet") /* CidrBlockSet com.amazonaws.ec2#VpcPeeringConnectionVpcInfo$CidrBlockSet */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_cidr_block_set::de_cidr_block_set(&mut tag)
+                        crate::protocol_serde::shape_cidr_block_set::de_cidr_block_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -56,7 +60,7 @@ pub fn de_vpc_peering_connection_vpc_info(
             s if s.matches("peeringOptions") /* PeeringOptions com.amazonaws.ec2#VpcPeeringConnectionVpcInfo$PeeringOptions */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_vpc_peering_connection_options_description::de_vpc_peering_connection_options_description(&mut tag)
+                        crate::protocol_serde::shape_vpc_peering_connection_options_description::de_vpc_peering_connection_options_description(&mut tag, depth + 1)
                         ?
                     )
                 ;

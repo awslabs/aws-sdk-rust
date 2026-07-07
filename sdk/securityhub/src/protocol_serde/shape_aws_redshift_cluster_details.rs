@@ -252,10 +252,16 @@ pub fn ser_aws_redshift_cluster_details(
 pub(crate) fn de_aws_redshift_cluster_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsRedshiftClusterDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -264,279 +270,306 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AllowVersionUpgrade" => {
-                            builder = builder.set_allow_version_upgrade(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "AutomatedSnapshotRetentionPeriod" => {
-                            builder = builder.set_automated_snapshot_retention_period(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "AvailabilityZone" => {
-                            builder = builder.set_availability_zone(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ClusterAvailabilityStatus" => {
-                            builder = builder.set_cluster_availability_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ClusterCreateTime" => {
-                            builder = builder.set_cluster_create_time(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ClusterIdentifier" => {
-                            builder = builder.set_cluster_identifier(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ClusterNodes" => {
-                            builder = builder.set_cluster_nodes(
-                                crate::protocol_serde::shape_aws_redshift_cluster_cluster_nodes::de_aws_redshift_cluster_cluster_nodes(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "ClusterParameterGroups" => {
-                            builder = builder.set_cluster_parameter_groups(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_parameter_groups::de_aws_redshift_cluster_cluster_parameter_groups(tokens, _value)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AllowVersionUpgrade" => {
+                                builder =
+                                    builder.set_allow_version_upgrade(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "AutomatedSnapshotRetentionPeriod" => {
+                                builder = builder.set_automated_snapshot_retention_period(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
                                 );
-                        }
-                        "ClusterPublicKey" => {
-                            builder = builder.set_cluster_public_key(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ClusterRevisionNumber" => {
-                            builder = builder.set_cluster_revision_number(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ClusterSecurityGroups" => {
-                            builder = builder.set_cluster_security_groups(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_security_groups::de_aws_redshift_cluster_cluster_security_groups(tokens, _value)?
+                            }
+                            "AvailabilityZone" => {
+                                builder = builder.set_availability_zone(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
-                        }
-                        "ClusterSnapshotCopyStatus" => {
-                            builder = builder.set_cluster_snapshot_copy_status(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_snapshot_copy_status::de_aws_redshift_cluster_cluster_snapshot_copy_status(tokens, _value)?
+                            }
+                            "ClusterAvailabilityStatus" => {
+                                builder = builder.set_cluster_availability_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
-                        }
-                        "ClusterStatus" => {
-                            builder = builder.set_cluster_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ClusterSubnetGroupName" => {
-                            builder = builder.set_cluster_subnet_group_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ClusterVersion" => {
-                            builder = builder.set_cluster_version(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "DBName" => {
-                            builder = builder.set_db_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "DeferredMaintenanceWindows" => {
-                            builder = builder.set_deferred_maintenance_windows(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_deferred_maintenance_windows::de_aws_redshift_cluster_deferred_maintenance_windows(tokens, _value)?
+                            }
+                            "ClusterCreateTime" => {
+                                builder = builder.set_cluster_create_time(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
-                        }
-                        "ElasticIpStatus" => {
-                            builder = builder.set_elastic_ip_status(
-                                crate::protocol_serde::shape_aws_redshift_cluster_elastic_ip_status::de_aws_redshift_cluster_elastic_ip_status(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "ElasticResizeNumberOfNodeOptions" => {
-                            builder = builder.set_elastic_resize_number_of_node_options(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Encrypted" => {
-                            builder = builder.set_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "Endpoint" => {
-                            builder = builder.set_endpoint(
-                                crate::protocol_serde::shape_aws_redshift_cluster_endpoint::de_aws_redshift_cluster_endpoint(tokens, _value)?,
-                            );
-                        }
-                        "EnhancedVpcRouting" => {
-                            builder = builder.set_enhanced_vpc_routing(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "ExpectedNextSnapshotScheduleTime" => {
-                            builder = builder.set_expected_next_snapshot_schedule_time(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ExpectedNextSnapshotScheduleTimeStatus" => {
-                            builder = builder.set_expected_next_snapshot_schedule_time_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "HsmStatus" => {
-                            builder = builder.set_hsm_status(
-                                crate::protocol_serde::shape_aws_redshift_cluster_hsm_status::de_aws_redshift_cluster_hsm_status(tokens, _value)?,
-                            );
-                        }
-                        "IamRoles" => {
-                            builder = builder.set_iam_roles(
-                                crate::protocol_serde::shape_aws_redshift_cluster_iam_roles::de_aws_redshift_cluster_iam_roles(tokens, _value)?,
-                            );
-                        }
-                        "KmsKeyId" => {
-                            builder = builder.set_kms_key_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "MaintenanceTrackName" => {
-                            builder = builder.set_maintenance_track_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ManualSnapshotRetentionPeriod" => {
-                            builder = builder.set_manual_snapshot_retention_period(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "MasterUsername" => {
-                            builder = builder.set_master_username(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NextMaintenanceWindowStartTime" => {
-                            builder = builder.set_next_maintenance_window_start_time(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NodeType" => {
-                            builder = builder.set_node_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NumberOfNodes" => {
-                            builder = builder.set_number_of_nodes(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "PendingActions" => {
-                            builder = builder.set_pending_actions(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
-                        }
-                        "PendingModifiedValues" => {
-                            builder = builder.set_pending_modified_values(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_pending_modified_values::de_aws_redshift_cluster_pending_modified_values(tokens, _value)?
+                            }
+                            "ClusterIdentifier" => {
+                                builder = builder.set_cluster_identifier(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
+                            }
+                            "ClusterNodes" => {
+                                builder = builder.set_cluster_nodes(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_nodes::de_aws_redshift_cluster_cluster_nodes(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ClusterParameterGroups" => {
+                                builder = builder.set_cluster_parameter_groups(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_parameter_groups::de_aws_redshift_cluster_cluster_parameter_groups(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "ClusterPublicKey" => {
+                                builder = builder.set_cluster_public_key(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ClusterRevisionNumber" => {
+                                builder = builder.set_cluster_revision_number(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ClusterSecurityGroups" => {
+                                builder = builder.set_cluster_security_groups(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_security_groups::de_aws_redshift_cluster_cluster_security_groups(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "ClusterSnapshotCopyStatus" => {
+                                builder = builder.set_cluster_snapshot_copy_status(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_snapshot_copy_status::de_aws_redshift_cluster_cluster_snapshot_copy_status(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "ClusterStatus" => {
+                                builder = builder.set_cluster_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ClusterSubnetGroupName" => {
+                                builder = builder.set_cluster_subnet_group_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ClusterVersion" => {
+                                builder = builder.set_cluster_version(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "DBName" => {
+                                builder = builder.set_db_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "DeferredMaintenanceWindows" => {
+                                builder = builder.set_deferred_maintenance_windows(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_deferred_maintenance_windows::de_aws_redshift_cluster_deferred_maintenance_windows(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "ElasticIpStatus" => {
+                                builder = builder.set_elastic_ip_status(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_elastic_ip_status::de_aws_redshift_cluster_elastic_ip_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ElasticResizeNumberOfNodeOptions" => {
+                                builder = builder.set_elastic_resize_number_of_node_options(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Encrypted" => {
+                                builder = builder.set_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "Endpoint" => {
+                                builder = builder.set_endpoint(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_endpoint::de_aws_redshift_cluster_endpoint(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "EnhancedVpcRouting" => {
+                                builder =
+                                    builder.set_enhanced_vpc_routing(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "ExpectedNextSnapshotScheduleTime" => {
+                                builder = builder.set_expected_next_snapshot_schedule_time(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ExpectedNextSnapshotScheduleTimeStatus" => {
+                                builder = builder.set_expected_next_snapshot_schedule_time_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "HsmStatus" => {
+                                builder = builder.set_hsm_status(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_hsm_status::de_aws_redshift_cluster_hsm_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "IamRoles" => {
+                                builder = builder.set_iam_roles(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_iam_roles::de_aws_redshift_cluster_iam_roles(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "KmsKeyId" => {
+                                builder = builder.set_kms_key_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "MaintenanceTrackName" => {
+                                builder = builder.set_maintenance_track_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ManualSnapshotRetentionPeriod" => {
+                                builder = builder.set_manual_snapshot_retention_period(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "MasterUsername" => {
+                                builder = builder.set_master_username(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NextMaintenanceWindowStartTime" => {
+                                builder = builder.set_next_maintenance_window_start_time(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NodeType" => {
+                                builder = builder.set_node_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NumberOfNodes" => {
+                                builder = builder.set_number_of_nodes(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "PendingActions" => {
+                                builder =
+                                    builder.set_pending_actions(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
+                            }
+                            "PendingModifiedValues" => {
+                                builder = builder.set_pending_modified_values(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_pending_modified_values::de_aws_redshift_cluster_pending_modified_values(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "PreferredMaintenanceWindow" => {
+                                builder = builder.set_preferred_maintenance_window(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "PubliclyAccessible" => {
+                                builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "ResizeInfo" => {
+                                builder = builder.set_resize_info(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_resize_info::de_aws_redshift_cluster_resize_info(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "RestoreStatus" => {
+                                builder = builder.set_restore_status(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_restore_status::de_aws_redshift_cluster_restore_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "SnapshotScheduleIdentifier" => {
+                                builder = builder.set_snapshot_schedule_identifier(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SnapshotScheduleState" => {
+                                builder = builder.set_snapshot_schedule_state(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "VpcId" => {
+                                builder = builder.set_vpc_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "VpcSecurityGroups" => {
+                                builder = builder.set_vpc_security_groups(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_vpc_security_groups::de_aws_redshift_cluster_vpc_security_groups(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "LoggingStatus" => {
+                                builder = builder.set_logging_status(
+                                    crate::protocol_serde::shape_aws_redshift_cluster_logging_status::de_aws_redshift_cluster_logging_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "PreferredMaintenanceWindow" => {
-                            builder = builder.set_preferred_maintenance_window(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "PubliclyAccessible" => {
-                            builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "ResizeInfo" => {
-                            builder = builder.set_resize_info(
-                                crate::protocol_serde::shape_aws_redshift_cluster_resize_info::de_aws_redshift_cluster_resize_info(tokens, _value)?,
-                            );
-                        }
-                        "RestoreStatus" => {
-                            builder = builder.set_restore_status(
-                                crate::protocol_serde::shape_aws_redshift_cluster_restore_status::de_aws_redshift_cluster_restore_status(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "SnapshotScheduleIdentifier" => {
-                            builder = builder.set_snapshot_schedule_identifier(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SnapshotScheduleState" => {
-                            builder = builder.set_snapshot_schedule_state(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "VpcId" => {
-                            builder = builder.set_vpc_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "VpcSecurityGroups" => {
-                            builder = builder.set_vpc_security_groups(
-                                crate::protocol_serde::shape_aws_redshift_cluster_vpc_security_groups::de_aws_redshift_cluster_vpc_security_groups(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "LoggingStatus" => {
-                            builder = builder.set_logging_status(
-                                crate::protocol_serde::shape_aws_redshift_cluster_logging_status::de_aws_redshift_cluster_logging_status(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

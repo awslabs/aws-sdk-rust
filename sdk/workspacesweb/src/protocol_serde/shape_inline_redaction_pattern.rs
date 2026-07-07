@@ -48,10 +48,16 @@ pub fn ser_inline_redaction_pattern(
 pub(crate) fn de_inline_redaction_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InlineRedactionPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,21 +75,29 @@ where
                             );
                         }
                         "customPattern" => {
-                            builder = builder.set_custom_pattern(crate::protocol_serde::shape_custom_pattern::de_custom_pattern(tokens, _value)?);
+                            builder = builder.set_custom_pattern(crate::protocol_serde::shape_custom_pattern::de_custom_pattern(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "redactionPlaceHolder" => {
                             builder = builder.set_redaction_place_holder(
-                                crate::protocol_serde::shape_redaction_place_holder::de_redaction_place_holder(tokens, _value)?,
+                                crate::protocol_serde::shape_redaction_place_holder::de_redaction_place_holder(tokens, _value, depth + 1)?,
                             );
                         }
                         "enforcedUrls" => {
                             builder = builder.set_enforced_urls(crate::protocol_serde::shape_inline_redaction_urls::de_inline_redaction_urls(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "exemptUrls" => {
                             builder = builder.set_exempt_urls(crate::protocol_serde::shape_inline_redaction_urls::de_inline_redaction_urls(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "confidenceLevel" => {

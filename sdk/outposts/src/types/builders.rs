@@ -3,6 +3,8 @@ pub use crate::types::_order::OrderBuilder;
 
 pub use crate::types::_outpost::OutpostBuilder;
 
+pub use crate::types::_quote::QuoteBuilder;
+
 pub use crate::types::_address::AddressBuilder;
 
 pub use crate::types::_rack_physical_properties::RackPhysicalPropertiesBuilder;
@@ -18,6 +20,10 @@ pub use crate::types::_catalog_item::CatalogItemBuilder;
 pub use crate::types::_connection_details::ConnectionDetailsBuilder;
 
 pub use crate::types::_line_item_request::LineItemRequestBuilder;
+
+pub use crate::types::_quote_capacity::QuoteCapacityBuilder;
+
+pub use crate::types::_quote_constraint::QuoteConstraintBuilder;
 
 pub use crate::types::_instance_type_capacity::InstanceTypeCapacityBuilder;
 
@@ -35,9 +41,17 @@ pub use crate::types::_blocking_instance::BlockingInstanceBuilder;
 
 pub use crate::types::_capacity_task_summary::CapacityTaskSummaryBuilder;
 
+pub use crate::types::_detailed_instance_type_item::DetailedInstanceTypeItemBuilder;
+
 pub use crate::types::_order_summary::OrderSummaryBuilder;
 
+pub use crate::types::_quote_summary::QuoteSummaryBuilder;
+
 pub use crate::types::_line_item::LineItemBuilder;
+
+pub use crate::types::_quote_option::QuoteOptionBuilder;
+
+pub use crate::types::_ordering_requirement::OrderingRequirementBuilder;
 
 pub use crate::types::_ec2_capacity::Ec2CapacityBuilder;
 
@@ -49,6 +63,16 @@ pub use crate::types::_asset_location::AssetLocationBuilder;
 
 pub use crate::types::_shipment_information::ShipmentInformationBuilder;
 
+pub use crate::types::_capacity_summary::CapacitySummaryBuilder;
+
+pub use crate::types::_form_factor_config::FormFactorConfigBuilder;
+
 pub use crate::types::_line_item_asset_information::LineItemAssetInformationBuilder;
 
+pub use crate::types::_quote_specification::QuoteSpecificationBuilder;
+
 pub use crate::types::_asset_instance_type_capacity::AssetInstanceTypeCapacityBuilder;
+
+pub use crate::types::_rack_specification_details::RackSpecificationDetailsBuilder;
+
+pub use crate::types::_server_specification_details::ServerSpecificationDetailsBuilder;

@@ -9,5 +9,11 @@ pub fn ser_update_account_settings_input_input(
         crate::protocol_serde::shape_deletion_protection_settings::ser_deletion_protection_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.vended_metrics {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("VendedMetrics").start_object();
+        crate::protocol_serde::shape_vended_metrics_settings::ser_vended_metrics_settings(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

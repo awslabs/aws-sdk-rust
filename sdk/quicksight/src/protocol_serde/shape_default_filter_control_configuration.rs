@@ -12,16 +12,28 @@ pub fn ser_default_filter_control_configuration(
         crate::protocol_serde::shape_default_filter_control_options::ser_default_filter_control_options(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.control_title_format_text {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ControlTitleFormatText").start_object();
+        crate::protocol_serde::shape_control_title_format_text::ser_control_title_format_text(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_default_filter_control_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DefaultFilterControlConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -40,7 +52,16 @@ where
                         }
                         "ControlOptions" => {
                             builder = builder.set_control_options(
-                                crate::protocol_serde::shape_default_filter_control_options::de_default_filter_control_options(tokens, _value)?,
+                                crate::protocol_serde::shape_default_filter_control_options::de_default_filter_control_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "ControlTitleFormatText" => {
+                            builder = builder.set_control_title_format_text(
+                                crate::protocol_serde::shape_control_title_format_text::de_control_title_format_text(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -53,9 +74,7 @@ where
                 }
             }
             Ok(Some(
-                crate::serde_util::default_filter_control_configuration_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+                crate::serde_util::default_filter_control_configuration_correct_errors(builder).build(),
             ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(

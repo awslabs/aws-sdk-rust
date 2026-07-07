@@ -16,6 +16,8 @@ pub struct OAuthCredentialProvider {
     /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
     /// <li>
     /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// <li>
+    /// <p><code>TOKEN_EXCHANGE</code> - Authorization using on-behalf-of token exchange. An inbound user token is exchanged for a downstream access token scoped to the target audience.</p></li>
     /// </ul>
     pub grant_type: crate::types::OAuthGrantType,
     /// <p>The URL where the end user's browser is redirected after obtaining the authorization code. Generally points to the customer's application.</p>
@@ -42,6 +44,8 @@ impl OAuthCredentialProvider {
     /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
     /// <li>
     /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// <li>
+    /// <p><code>TOKEN_EXCHANGE</code> - Authorization using on-behalf-of token exchange. An inbound user token is exchanged for a downstream access token scoped to the target audience.</p></li>
     /// </ul>
     pub fn grant_type(&self) -> &crate::types::OAuthGrantType {
         &self.grant_type
@@ -137,6 +141,8 @@ impl OAuthCredentialProviderBuilder {
     /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
     /// <li>
     /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// <li>
+    /// <p><code>TOKEN_EXCHANGE</code> - Authorization using on-behalf-of token exchange. An inbound user token is exchanged for a downstream access token scoped to the target audience.</p></li>
     /// </ul>
     pub fn grant_type(mut self, input: crate::types::OAuthGrantType) -> Self {
         self.grant_type = ::std::option::Option::Some(input);
@@ -148,6 +154,8 @@ impl OAuthCredentialProviderBuilder {
     /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
     /// <li>
     /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// <li>
+    /// <p><code>TOKEN_EXCHANGE</code> - Authorization using on-behalf-of token exchange. An inbound user token is exchanged for a downstream access token scoped to the target audience.</p></li>
     /// </ul>
     pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::OAuthGrantType>) -> Self {
         self.grant_type = input;
@@ -159,6 +167,8 @@ impl OAuthCredentialProviderBuilder {
     /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
     /// <li>
     /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// <li>
+    /// <p><code>TOKEN_EXCHANGE</code> - Authorization using on-behalf-of token exchange. An inbound user token is exchanged for a downstream access token scoped to the target audience.</p></li>
     /// </ul>
     pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::OAuthGrantType> {
         &self.grant_type

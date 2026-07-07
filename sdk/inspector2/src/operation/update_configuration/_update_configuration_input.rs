@@ -3,12 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationInput {
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to update. When specified, you must be the delegated administrator for this member account. If not specified, the operation updates your own configuration and propagates changes to any member accounts that have not been individually configured.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
     /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
     pub ec2_configuration: ::std::option::Option<crate::types::Ec2Configuration>,
+    /// <p>Specifies which scan-type configurations to reset to the delegated administrator's inherited values for the targeted member account. Each member of this structure is independently optional. When specified, <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent, and <code>accountId</code> must also be present. Only <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the operation uses the <code>ec2Configuration</code> and <code>ecrConfiguration</code> parameters instead.</p>
+    pub update_configuration_inheritance: ::std::option::Option<crate::types::UpdateConfigurationInheritance>,
 }
 impl UpdateConfigurationInput {
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to update. When specified, you must be the delegated administrator for this member account. If not specified, the operation updates your own configuration and propagates changes to any member accounts that have not been individually configured.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     pub fn ecr_configuration(&self) -> ::std::option::Option<&crate::types::EcrConfiguration> {
         self.ecr_configuration.as_ref()
@@ -16,6 +24,10 @@ impl UpdateConfigurationInput {
     /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
     pub fn ec2_configuration(&self) -> ::std::option::Option<&crate::types::Ec2Configuration> {
         self.ec2_configuration.as_ref()
+    }
+    /// <p>Specifies which scan-type configurations to reset to the delegated administrator's inherited values for the targeted member account. Each member of this structure is independently optional. When specified, <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent, and <code>accountId</code> must also be present. Only <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the operation uses the <code>ec2Configuration</code> and <code>ecrConfiguration</code> parameters instead.</p>
+    pub fn update_configuration_inheritance(&self) -> ::std::option::Option<&crate::types::UpdateConfigurationInheritance> {
+        self.update_configuration_inheritance.as_ref()
     }
 }
 impl UpdateConfigurationInput {
@@ -29,10 +41,26 @@ impl UpdateConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UpdateConfigurationInputBuilder {
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
     pub(crate) ec2_configuration: ::std::option::Option<crate::types::Ec2Configuration>,
+    pub(crate) update_configuration_inheritance: ::std::option::Option<crate::types::UpdateConfigurationInheritance>,
 }
 impl UpdateConfigurationInputBuilder {
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to update. When specified, you must be the delegated administrator for this member account. If not specified, the operation updates your own configuration and propagates changes to any member accounts that have not been individually configured.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to update. When specified, you must be the delegated administrator for this member account. If not specified, the operation updates your own configuration and propagates changes to any member accounts that have not been individually configured.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to update. When specified, you must be the delegated administrator for this member account. If not specified, the operation updates your own configuration and propagates changes to any member accounts that have not been individually configured.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     pub fn ecr_configuration(mut self, input: crate::types::EcrConfiguration) -> Self {
         self.ecr_configuration = ::std::option::Option::Some(input);
@@ -61,14 +89,30 @@ impl UpdateConfigurationInputBuilder {
     pub fn get_ec2_configuration(&self) -> &::std::option::Option<crate::types::Ec2Configuration> {
         &self.ec2_configuration
     }
+    /// <p>Specifies which scan-type configurations to reset to the delegated administrator's inherited values for the targeted member account. Each member of this structure is independently optional. When specified, <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent, and <code>accountId</code> must also be present. Only <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the operation uses the <code>ec2Configuration</code> and <code>ecrConfiguration</code> parameters instead.</p>
+    pub fn update_configuration_inheritance(mut self, input: crate::types::UpdateConfigurationInheritance) -> Self {
+        self.update_configuration_inheritance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies which scan-type configurations to reset to the delegated administrator's inherited values for the targeted member account. Each member of this structure is independently optional. When specified, <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent, and <code>accountId</code> must also be present. Only <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the operation uses the <code>ec2Configuration</code> and <code>ecrConfiguration</code> parameters instead.</p>
+    pub fn set_update_configuration_inheritance(mut self, input: ::std::option::Option<crate::types::UpdateConfigurationInheritance>) -> Self {
+        self.update_configuration_inheritance = input;
+        self
+    }
+    /// <p>Specifies which scan-type configurations to reset to the delegated administrator's inherited values for the targeted member account. Each member of this structure is independently optional. When specified, <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent, and <code>accountId</code> must also be present. Only <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the operation uses the <code>ec2Configuration</code> and <code>ecrConfiguration</code> parameters instead.</p>
+    pub fn get_update_configuration_inheritance(&self) -> &::std::option::Option<crate::types::UpdateConfigurationInheritance> {
+        &self.update_configuration_inheritance
+    }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_configuration::UpdateConfigurationInput {
+            account_id: self.account_id,
             ecr_configuration: self.ecr_configuration,
             ec2_configuration: self.ec2_configuration,
+            update_configuration_inheritance: self.update_configuration_inheritance,
         })
     }
 }

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cluster_pending_modified_values(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ClusterPendingModifiedValues, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ClusterPendingModifiedValues::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_cluster_pending_modified_values(
             s if s.matches("PendingCloudwatchLogsExports") /* PendingCloudwatchLogsExports com.amazonaws.neptune#ClusterPendingModifiedValues$PendingCloudwatchLogsExports */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_pending_cloudwatch_logs_exports::de_pending_cloudwatch_logs_exports(&mut tag)
+                        crate::protocol_serde::shape_pending_cloudwatch_logs_exports::de_pending_cloudwatch_logs_exports(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -114,6 +118,19 @@ pub fn de_cluster_pending_modified_values(
                     )
                 ;
                 builder = builder.set_iops(var_8);
+            }
+            ,
+            s if s.matches("NetworkType") /* NetworkType com.amazonaws.neptune#ClusterPendingModifiedValues$NetworkType */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_type(var_9);
             }
             ,
             _ => {}

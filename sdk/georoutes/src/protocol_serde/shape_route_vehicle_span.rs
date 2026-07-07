@@ -2,10 +2,16 @@
 pub(crate) fn de_route_vehicle_span<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouteVehicleSpan>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,142 +20,165 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "BestCaseDuration" => {
-                            builder = builder.set_best_case_duration(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "BestCaseDuration" => {
+                                builder = builder.set_best_case_duration(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "CarAccess" => {
+                                builder = builder.set_car_access(
+                                    crate::protocol_serde::shape_route_span_car_access_attribute_list::de_route_span_car_access_attribute_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "Country" => {
+                                builder = builder.set_country(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Distance" => {
+                                builder = builder.set_distance(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "Duration" => {
+                                builder = builder.set_duration(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "DynamicSpeed" => {
+                                builder = builder.set_dynamic_speed(
+                                    crate::protocol_serde::shape_route_span_dynamic_speed_details::de_route_span_dynamic_speed_details(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "FunctionalClassification" => {
+                                builder = builder.set_functional_classification(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "Gate" => {
+                                builder = builder.set_gate(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::RouteSpanGateAttribute::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "GeometryOffset" => {
+                                builder = builder.set_geometry_offset(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "Incidents" => {
+                                builder = builder.set_incidents(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value, depth + 1)?);
+                            }
+                            "Names" => {
+                                builder = builder.set_names(crate::protocol_serde::shape_localized_string_list::de_localized_string_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Notices" => {
+                                builder = builder.set_notices(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value, depth + 1)?);
+                            }
+                            "RailwayCrossing" => {
+                                builder = builder.set_railway_crossing(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::RouteSpanRailwayCrossingAttribute::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            "Region" => {
+                                builder = builder.set_region(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RoadAttributes" => {
+                                builder = builder.set_road_attributes(
+                                    crate::protocol_serde::shape_route_span_road_attribute_list::de_route_span_road_attribute_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "RouteNumbers" => {
+                                builder = builder.set_route_numbers(crate::protocol_serde::shape_route_number_list::de_route_number_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ScooterAccess" => {
+                                builder = builder.set_scooter_access(
+                                    crate::protocol_serde::shape_route_span_scooter_access_attribute_list::de_route_span_scooter_access_attribute_list(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "SpeedLimit" => {
+                                builder = builder.set_speed_limit(
+                                    crate::protocol_serde::shape_route_span_speed_limit_details::de_route_span_speed_limit_details(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "TollSystems" => {
+                                builder =
+                                    builder.set_toll_systems(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value, depth + 1)?);
+                            }
+                            "TruckAccess" => {
+                                builder = builder.set_truck_access(
+                                    crate::protocol_serde::shape_route_span_truck_access_attribute_list::de_route_span_truck_access_attribute_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "TruckRoadTypes" => {
+                                builder =
+                                    builder.set_truck_road_types(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value, depth + 1)?);
+                            }
+                            "TypicalDuration" => {
+                                builder = builder.set_typical_duration(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "Zones" => {
+                                builder = builder.set_zones(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value, depth + 1)?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "CarAccess" => {
-                            builder = builder.set_car_access(
-                                crate::protocol_serde::shape_route_span_car_access_attribute_list::de_route_span_car_access_attribute_list(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "Country" => {
-                            builder = builder.set_country(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Distance" => {
-                            builder = builder.set_distance(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "Duration" => {
-                            builder = builder.set_duration(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "DynamicSpeed" => {
-                            builder = builder.set_dynamic_speed(
-                                crate::protocol_serde::shape_route_span_dynamic_speed_details::de_route_span_dynamic_speed_details(tokens, _value)?,
-                            );
-                        }
-                        "FunctionalClassification" => {
-                            builder = builder.set_functional_classification(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "Gate" => {
-                            builder = builder.set_gate(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::RouteSpanGateAttribute::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "GeometryOffset" => {
-                            builder = builder.set_geometry_offset(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "Incidents" => {
-                            builder = builder.set_incidents(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value)?);
-                        }
-                        "Names" => {
-                            builder = builder.set_names(crate::protocol_serde::shape_localized_string_list::de_localized_string_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Notices" => {
-                            builder = builder.set_notices(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value)?);
-                        }
-                        "RailwayCrossing" => {
-                            builder = builder.set_railway_crossing(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::RouteSpanRailwayCrossingAttribute::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        "Region" => {
-                            builder = builder.set_region(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "RoadAttributes" => {
-                            builder = builder.set_road_attributes(
-                                crate::protocol_serde::shape_route_span_road_attribute_list::de_route_span_road_attribute_list(tokens, _value)?,
-                            );
-                        }
-                        "RouteNumbers" => {
-                            builder =
-                                builder.set_route_numbers(crate::protocol_serde::shape_route_number_list::de_route_number_list(tokens, _value)?);
-                        }
-                        "ScooterAccess" => {
-                            builder = builder.set_scooter_access(
-                                crate::protocol_serde::shape_route_span_scooter_access_attribute_list::de_route_span_scooter_access_attribute_list(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "SpeedLimit" => {
-                            builder = builder.set_speed_limit(
-                                crate::protocol_serde::shape_route_span_speed_limit_details::de_route_span_speed_limit_details(tokens, _value)?,
-                            );
-                        }
-                        "TollSystems" => {
-                            builder = builder.set_toll_systems(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value)?);
-                        }
-                        "TruckAccess" => {
-                            builder = builder.set_truck_access(
-                                crate::protocol_serde::shape_route_span_truck_access_attribute_list::de_route_span_truck_access_attribute_list(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "TruckRoadTypes" => {
-                            builder = builder.set_truck_road_types(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value)?);
-                        }
-                        "TypicalDuration" => {
-                            builder = builder.set_typical_duration(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "Zones" => {
-                            builder = builder.set_zones(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -178,6 +178,8 @@ pub(crate) fn de_create_notify_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -227,12 +229,14 @@ pub(crate) fn de_create_notify_configuration(
                 }
                 "EnabledCountries" => {
                     builder = builder.set_enabled_countries(crate::protocol_serde::shape_iso_country_code_list::de_iso_country_code_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "EnabledChannels" => {
                     builder = builder.set_enabled_channels(
-                        crate::protocol_serde::shape_notify_enabled_channels_list::de_notify_enabled_channels_list(tokens, _value)?,
+                        crate::protocol_serde::shape_notify_enabled_channels_list::de_notify_enabled_channels_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "Tier" => {
@@ -267,7 +271,7 @@ pub(crate) fn de_create_notify_configuration(
                     builder = builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                 }
                 "CreatedTimestamp" => {
                     builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

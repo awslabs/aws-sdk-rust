@@ -2,10 +2,16 @@
 pub(crate) fn de_smb_file_share_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SmbFileShareInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -112,13 +118,13 @@ where
                                 builder.set_access_based_enumeration(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "AdminUserList" => {
-                            builder = builder.set_admin_user_list(crate::protocol_serde::shape_user_list::de_user_list(tokens, _value)?);
+                            builder = builder.set_admin_user_list(crate::protocol_serde::shape_user_list::de_user_list(tokens, _value, depth + 1)?);
                         }
                         "ValidUserList" => {
-                            builder = builder.set_valid_user_list(crate::protocol_serde::shape_user_list::de_user_list(tokens, _value)?);
+                            builder = builder.set_valid_user_list(crate::protocol_serde::shape_user_list::de_user_list(tokens, _value, depth + 1)?);
                         }
                         "InvalidUserList" => {
-                            builder = builder.set_invalid_user_list(crate::protocol_serde::shape_user_list::de_user_list(tokens, _value)?);
+                            builder = builder.set_invalid_user_list(crate::protocol_serde::shape_user_list::de_user_list(tokens, _value, depth + 1)?);
                         }
                         "AuditDestinationARN" => {
                             builder = builder.set_audit_destination_arn(
@@ -142,7 +148,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "FileShareName" => {
                             builder = builder.set_file_share_name(
@@ -152,8 +158,11 @@ where
                             );
                         }
                         "CacheAttributes" => {
-                            builder =
-                                builder.set_cache_attributes(crate::protocol_serde::shape_cache_attributes::de_cache_attributes(tokens, _value)?);
+                            builder = builder.set_cache_attributes(crate::protocol_serde::shape_cache_attributes::de_cache_attributes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "NotificationPolicy" => {
                             builder = builder.set_notification_policy(

@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateInvocation`](crate::operation::create_invocation) operation has
-/// a [`Client::create_invocation`], function which returns a builder for that operation.
+/// For example, the [`AgenticRetrieveStream`](crate::operation::agentic_retrieve_stream) operation has
+/// a [`Client::agentic_retrieve_stream`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_invocation()
-///     .invocation_id("example")
+/// let result = client.agentic_retrieve_stream()
+///     .next_token("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod agentic_retrieve_stream;
+
 mod create_invocation;
 
 mod create_session;
@@ -151,7 +153,7 @@ mod create_session;
 /// # let client: aws_sdk_bedrockagentruntime::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_invocation()
+/// let result = client.agentic_retrieve_stream()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -176,6 +178,8 @@ mod end_session;
 mod generate_query;
 
 mod get_agent_memory;
+
+mod get_document_content;
 
 mod get_execution_flow_snapshot;
 

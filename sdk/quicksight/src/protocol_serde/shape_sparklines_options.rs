@@ -48,10 +48,16 @@ pub fn ser_sparklines_options(
 pub(crate) fn de_sparklines_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SparklinesOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,7 +75,11 @@ where
                             );
                         }
                         "XAxisField" => {
-                            builder = builder.set_x_axis_field(crate::protocol_serde::shape_dimension_field::de_dimension_field(tokens, _value)?);
+                            builder = builder.set_x_axis_field(crate::protocol_serde::shape_dimension_field::de_dimension_field(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "YAxisBehavior" => {
                             builder = builder.set_y_axis_behavior(
@@ -101,17 +111,29 @@ where
                         }
                         "AllPointsMarker" => {
                             builder = builder.set_all_points_marker(
-                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MaxValueMarker" => {
                             builder = builder.set_max_value_marker(
-                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MinValueMarker" => {
                             builder = builder.set_min_value_marker(
-                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

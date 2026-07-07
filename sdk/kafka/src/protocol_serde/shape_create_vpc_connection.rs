@@ -154,6 +154,8 @@ pub(crate) fn de_create_vpc_connection(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -167,7 +169,7 @@ pub(crate) fn de_create_vpc_connection(
                     );
                 }
                 "clientSubnets" => {
-                    builder = builder.set_client_subnets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_client_subnets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -176,7 +178,7 @@ pub(crate) fn de_create_vpc_connection(
                     )?);
                 }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "state" => {
                     builder = builder.set_state(
@@ -186,7 +188,7 @@ pub(crate) fn de_create_vpc_connection(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                 }
                 "vpcConnectionArn" => {
                     builder = builder.set_vpc_connection_arn(

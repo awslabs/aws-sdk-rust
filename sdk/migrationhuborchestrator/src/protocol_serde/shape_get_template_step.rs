@@ -116,6 +116,8 @@ pub(crate) fn de_get_template_step(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -150,13 +152,17 @@ pub(crate) fn de_get_template_step(
                     );
                 }
                 "next" => {
-                    builder = builder.set_next(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                    builder = builder.set_next(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                 }
                 "outputs" => {
-                    builder = builder.set_outputs(crate::protocol_serde::shape_step_output_list::de_step_output_list(tokens, _value)?);
+                    builder = builder.set_outputs(crate::protocol_serde::shape_step_output_list::de_step_output_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "previous" => {
-                    builder = builder.set_previous(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                    builder = builder.set_previous(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                 }
                 "stepActionType" => {
                     builder = builder.set_step_action_type(
@@ -167,7 +173,7 @@ pub(crate) fn de_get_template_step(
                 }
                 "stepAutomationConfiguration" => {
                     builder = builder.set_step_automation_configuration(
-                        crate::protocol_serde::shape_step_automation_configuration::de_step_automation_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_step_automation_configuration::de_step_automation_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "stepGroupId" => {

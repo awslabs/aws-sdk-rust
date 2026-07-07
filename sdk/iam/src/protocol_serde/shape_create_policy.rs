@@ -145,6 +145,8 @@ pub fn de_create_policy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreatePolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreatePolicyResponse got {start_el:?}"
@@ -162,7 +164,7 @@ pub fn de_create_policy(
             s if s.matches("Policy") /* Policy com.amazonaws.iam.synthetic#CreatePolicyOutput$Policy */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_policy::de_policy(&mut tag)
+                        crate::protocol_serde::shape_policy::de_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

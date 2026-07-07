@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCapacityProvider`](crate::operation::create_capacity_provider) operation has
-/// a [`Client::create_capacity_provider`], function which returns a builder for that operation.
+/// For example, the [`ContinueServiceDeployment`](crate::operation::continue_service_deployment) operation has
+/// a [`Client::continue_service_deployment`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_capacity_provider()
-///     .name("example")
+/// let result = client.continue_service_deployment()
+///     .service_deployment_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -205,6 +205,8 @@ impl Client {
     }
 }
 
+mod continue_service_deployment;
+
 mod create_capacity_provider;
 
 mod create_cluster;
@@ -228,7 +230,7 @@ mod create_task_set;
 /// # let client: aws_sdk_ecs::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_capacity_provider()
+/// let result = client.continue_service_deployment()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

@@ -2,10 +2,16 @@
 pub(crate) fn de_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Output>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,7 @@ where
                                 );
                             }
                             "encryption" => {
-                                builder = builder.set_encryption(crate::protocol_serde::shape_encryption::de_encryption(tokens, _value)?);
+                                builder = builder.set_encryption(crate::protocol_serde::shape_encryption::de_encryption(tokens, _value, depth + 1)?);
                             }
                             "entitlementArn" => {
                                 builder = builder.set_entitlement_arn(
@@ -63,7 +69,7 @@ where
                             }
                             "mediaStreamOutputConfigurations" => {
                                 builder = builder.set_media_stream_output_configurations(
-                                    crate::protocol_serde::shape_list_of_media_stream_output_configuration::de_list_of_media_stream_output_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_media_stream_output_configuration::de_list_of_media_stream_output_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "name" => {
@@ -88,11 +94,11 @@ where
                                 );
                             }
                             "transport" => {
-                                builder = builder.set_transport(crate::protocol_serde::shape_transport::de_transport(tokens, _value)?);
+                                builder = builder.set_transport(crate::protocol_serde::shape_transport::de_transport(tokens, _value, depth + 1)?);
                             }
                             "vpcInterfaceAttachment" => {
                                 builder = builder.set_vpc_interface_attachment(
-                                    crate::protocol_serde::shape_vpc_interface_attachment::de_vpc_interface_attachment(tokens, _value)?,
+                                    crate::protocol_serde::shape_vpc_interface_attachment::de_vpc_interface_attachment(tokens, _value, depth + 1)?,
                                 );
                             }
                             "bridgeArn" => {
@@ -103,7 +109,11 @@ where
                                 );
                             }
                             "bridgePorts" => {
-                                builder = builder.set_bridge_ports(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(tokens, _value)?);
+                                builder = builder.set_bridge_ports(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
                             }
                             "outputStatus" => {
                                 builder = builder.set_output_status(
@@ -128,7 +138,7 @@ where
                             }
                             "routerIntegrationTransitEncryption" => {
                                 builder = builder.set_router_integration_transit_encryption(
-                                    crate::protocol_serde::shape_flow_transit_encryption::de_flow_transit_encryption(tokens, _value)?,
+                                    crate::protocol_serde::shape_flow_transit_encryption::de_flow_transit_encryption(tokens, _value, depth + 1)?,
                                 );
                             }
                             "connectedRouterInputArn" => {

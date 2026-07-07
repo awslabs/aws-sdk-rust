@@ -30,5 +30,7 @@ pub fn de_distribution(inp: &[u8]) -> std::result::Result<crate::types::Distribu
             "invalid root, expected Distribution got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_distribution::de_distribution(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_distribution::de_distribution(&mut decoder, depth + 1)
 }

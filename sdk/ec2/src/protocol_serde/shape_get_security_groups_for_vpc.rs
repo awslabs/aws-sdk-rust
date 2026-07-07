@@ -51,6 +51,8 @@ pub fn de_get_security_groups_for_vpc(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetSecurityGroupsForVpcResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetSecurityGroupsForVpcResponse got {start_el:?}"
@@ -74,7 +76,7 @@ pub fn de_get_security_groups_for_vpc(
             s if s.matches("securityGroupForVpcSet") /* SecurityGroupForVpcs com.amazonaws.ec2.synthetic#GetSecurityGroupsForVpcOutput$SecurityGroupForVpcs */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_security_group_for_vpc_list::de_security_group_for_vpc_list(&mut tag)
+                        crate::protocol_serde::shape_security_group_for_vpc_list::de_security_group_for_vpc_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

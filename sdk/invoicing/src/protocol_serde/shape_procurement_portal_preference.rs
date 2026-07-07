@@ -2,10 +2,16 @@
 pub(crate) fn de_procurement_portal_preference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProcurementPortalPreference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -67,7 +73,9 @@ where
                         "Selector" => {
                             builder = builder.set_selector(
                                 crate::protocol_serde::shape_procurement_portal_preference_selector::de_procurement_portal_preference_selector(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -93,8 +101,11 @@ where
                             );
                         }
                         "TestEnvPreference" => {
-                            builder = builder
-                                .set_test_env_preference(crate::protocol_serde::shape_test_env_preference::de_test_env_preference(tokens, _value)?);
+                            builder = builder.set_test_env_preference(crate::protocol_serde::shape_test_env_preference::de_test_env_preference(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EinvoiceDeliveryEnabled" => {
                             builder =
@@ -102,7 +113,11 @@ where
                         }
                         "EinvoiceDeliveryPreference" => {
                             builder = builder.set_einvoice_delivery_preference(
-                                crate::protocol_serde::shape_einvoice_delivery_preference::de_einvoice_delivery_preference(tokens, _value)?,
+                                crate::protocol_serde::shape_einvoice_delivery_preference::de_einvoice_delivery_preference(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "PurchaseOrderRetrievalEnabled" => {
@@ -110,7 +125,7 @@ where
                                 .set_purchase_order_retrieval_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Contacts" => {
-                            builder = builder.set_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens, _value)?);
+                            builder = builder.set_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens, _value, depth + 1)?);
                         }
                         "EinvoiceDeliveryPreferenceStatus" => {
                             builder = builder.set_einvoice_delivery_preference_status(

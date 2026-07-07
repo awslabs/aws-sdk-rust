@@ -22,7 +22,12 @@ impl crate::operation::replace_image_criteria_in_allowed_images_settings::builde
 }
 /// Fluent builder constructing a request to `ReplaceImageCriteriaInAllowedImagesSettings`.
 ///
-/// <p>Sets or replaces the criteria for Allowed AMIs.</p><note>
+/// <p>Sets or replaces the criteria for Allowed AMIs.</p>
+/// <p>The <code>ImageCriteria</code> can include up to:</p>
+/// <ul>
+/// <li>
+/// <p>10 <code>ImageCriterion</code></p></li>
+/// </ul><note>
 /// <p>The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless of the criteria you set, the AMIs created by your account will always be discoverable and usable by users in your account.</p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>

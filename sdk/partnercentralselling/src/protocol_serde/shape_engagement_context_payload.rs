@@ -16,6 +16,12 @@ pub fn ser_engagement_context_payload(
             crate::protocol_serde::shape_lead_context::ser_lead_context(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::EngagementContextPayload::ProspectingResult(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_6.key("ProspectingResult").start_object();
+            crate::protocol_serde::shape_prospecting_result::ser_prospecting_result(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::EngagementContextPayload::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EngagementContextPayload",
@@ -28,10 +34,16 @@ pub fn ser_engagement_context_payload(
 pub(crate) fn de_engagement_context_payload<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EngagementContextPayload>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,13 +69,19 @@ where
                     }
                     variant = match key.as_ref() {
                         "CustomerProject" => Some(crate::types::EngagementContextPayload::CustomerProject(
-                            crate::protocol_serde::shape_customer_projects_context::de_customer_projects_context(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CustomerProject' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_customer_projects_context::de_customer_projects_context(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CustomerProject' cannot be null")
+                                })?,
                         )),
                         "Lead" => Some(crate::types::EngagementContextPayload::Lead(
-                            crate::protocol_serde::shape_lead_context::de_lead_context(tokens, _value)?
+                            crate::protocol_serde::shape_lead_context::de_lead_context(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Lead' cannot be null"))?,
+                        )),
+                        "ProspectingResult" => Some(crate::types::EngagementContextPayload::ProspectingResult(
+                            crate::protocol_serde::shape_prospecting_result::de_prospecting_result(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ProspectingResult' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

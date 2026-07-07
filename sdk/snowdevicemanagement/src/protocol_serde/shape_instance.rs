@@ -2,10 +2,16 @@
 pub(crate) fn de_instance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Instance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,7 @@ where
                             );
                         }
                         "state" => {
-                            builder = builder.set_state(crate::protocol_serde::shape_instance_state::de_instance_state(tokens, _value)?);
+                            builder = builder.set_state(crate::protocol_serde::shape_instance_state::de_instance_state(tokens, _value, depth + 1)?);
                         }
                         "instanceType" => {
                             builder = builder.set_instance_type(
@@ -75,17 +81,23 @@ where
                         "blockDeviceMappings" => {
                             builder = builder.set_block_device_mappings(
                                 crate::protocol_serde::shape_instance_block_device_mapping_list::de_instance_block_device_mapping_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "securityGroups" => {
                             builder = builder.set_security_groups(
-                                crate::protocol_serde::shape_security_group_identifier_list::de_security_group_identifier_list(tokens, _value)?,
+                                crate::protocol_serde::shape_security_group_identifier_list::de_security_group_identifier_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "cpuOptions" => {
-                            builder = builder.set_cpu_options(crate::protocol_serde::shape_cpu_options::de_cpu_options(tokens, _value)?);
+                            builder = builder.set_cpu_options(crate::protocol_serde::shape_cpu_options::de_cpu_options(tokens, _value, depth + 1)?);
                         }
                         "rootDeviceName" => {
                             builder = builder.set_root_device_name(

@@ -2,10 +2,16 @@
 pub(crate) fn de_connection_auth_response_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConnectionAuthResponseParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,38 +20,42 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "BasicAuthParameters" => {
-                                builder = builder.set_basic_auth_parameters(
-                                    crate::protocol_serde::shape_connection_basic_auth_response_parameters::de_connection_basic_auth_response_parameters(tokens, _value)?
-                                );
-                            }
-                            "OAuthParameters" => {
-                                builder = builder.set_o_auth_parameters(
-                                    crate::protocol_serde::shape_connection_o_auth_response_parameters::de_connection_o_auth_response_parameters(
-                                        tokens, _value,
-                                    )?,
-                                );
-                            }
-                            "ApiKeyAuthParameters" => {
-                                builder = builder.set_api_key_auth_parameters(
-                                    crate::protocol_serde::shape_connection_api_key_auth_response_parameters::de_connection_api_key_auth_response_parameters(tokens, _value)?
-                                );
-                            }
-                            "InvocationHttpParameters" => {
-                                builder = builder.set_invocation_http_parameters(
-                                    crate::protocol_serde::shape_connection_http_parameters::de_connection_http_parameters(tokens, _value)?,
-                                );
-                            }
-                            "ConnectivityParameters" => {
-                                builder = builder.set_connectivity_parameters(
-                                    crate::protocol_serde::shape_describe_connection_connectivity_parameters::de_describe_connection_connectivity_parameters(tokens, _value)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "BasicAuthParameters" => {
+                            builder = builder.set_basic_auth_parameters(
+                                crate::protocol_serde::shape_connection_basic_auth_response_parameters::de_connection_basic_auth_response_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
-                    }
+                        "OAuthParameters" => {
+                            builder = builder.set_o_auth_parameters(
+                                crate::protocol_serde::shape_connection_o_auth_response_parameters::de_connection_o_auth_response_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "ApiKeyAuthParameters" => {
+                            builder = builder.set_api_key_auth_parameters(
+                                    crate::protocol_serde::shape_connection_api_key_auth_response_parameters::de_connection_api_key_auth_response_parameters(tokens, _value, depth + 1)?
+                                );
+                        }
+                        "InvocationHttpParameters" => {
+                            builder = builder.set_invocation_http_parameters(
+                                crate::protocol_serde::shape_connection_http_parameters::de_connection_http_parameters(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "ConnectivityParameters" => {
+                            builder = builder.set_connectivity_parameters(
+                                    crate::protocol_serde::shape_describe_connection_connectivity_parameters::de_describe_connection_connectivity_parameters(tokens, _value, depth + 1)?
+                                );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

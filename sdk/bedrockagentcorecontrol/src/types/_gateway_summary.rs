@@ -61,7 +61,7 @@ impl ::std::fmt::Debug for GatewaySummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GatewaySummary");
         formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("status", &self.status);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
@@ -197,7 +197,6 @@ impl GatewaySummaryBuilder {
         &self.authorizer_type
     }
     /// <p>The protocol type used by the gateway.</p>
-    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self
@@ -219,7 +218,6 @@ impl GatewaySummaryBuilder {
     /// - [`created_at`](crate::types::builders::GatewaySummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::GatewaySummaryBuilder::updated_at)
     /// - [`authorizer_type`](crate::types::builders::GatewaySummaryBuilder::authorizer_type)
-    /// - [`protocol_type`](crate::types::builders::GatewaySummaryBuilder::protocol_type)
     pub fn build(self) -> ::std::result::Result<crate::types::GatewaySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GatewaySummary {
             gateway_id: self.gateway_id.ok_or_else(|| {
@@ -259,12 +257,11 @@ impl GatewaySummaryBuilder {
                     "authorizer_type was not specified but it is required when building GatewaySummary",
                 )
             })?,
-            protocol_type: self.protocol_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol_type",
-                    "protocol_type was not specified but it is required when building GatewaySummary",
-                )
-            })?,
+            protocol_type: self.protocol_type.unwrap_or(
+                "MCP"
+                    .parse::<crate::types::GatewayProtocolType>()
+                    .expect("static value validated to member"),
+            ),
         })
     }
 }
@@ -272,7 +269,7 @@ impl ::std::fmt::Debug for GatewaySummaryBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GatewaySummaryBuilder");
         formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("status", &self.status);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);

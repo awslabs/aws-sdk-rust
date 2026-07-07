@@ -95,6 +95,8 @@ pub use crate::types::_deployment_details::DeploymentDetailsBuilder;
 
 pub use crate::types::_container_port_configuration::ContainerPortConfigurationBuilder;
 
+pub use crate::types::_linux_capabilities::LinuxCapabilitiesBuilder;
+
 pub use crate::types::_support_container_definition_input::SupportContainerDefinitionInputBuilder;
 
 pub use crate::types::_game_server_container_definition::GameServerContainerDefinitionBuilder;
@@ -112,6 +114,8 @@ pub use crate::types::_player_latency_policy::PlayerLatencyPolicyBuilder;
 pub use crate::types::_game_session_queue_destination::GameSessionQueueDestinationBuilder;
 
 pub use crate::types::_ping_beacon::PingBeaconBuilder;
+
+pub use crate::types::_container_group_port_mapping::ContainerGroupPortMappingBuilder;
 
 pub use crate::types::_ec2_instance_limit::Ec2InstanceLimitBuilder;
 
@@ -172,6 +176,8 @@ pub use crate::types::_placed_player_session::PlacedPlayerSessionBuilder;
 pub use crate::types::_vpc_peering_connection_status::VpcPeeringConnectionStatusBuilder;
 
 pub use crate::types::_container_port_range::ContainerPortRangeBuilder;
+
+pub use crate::types::_container_port_mapping::ContainerPortMappingBuilder;
 
 pub use crate::types::_player_connection_endpoint::PlayerConnectionEndpointBuilder;
 

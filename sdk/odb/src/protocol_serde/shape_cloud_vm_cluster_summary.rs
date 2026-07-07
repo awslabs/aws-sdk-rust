@@ -2,10 +2,16 @@
 pub(crate) fn de_cloud_vm_cluster_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CloudVmClusterSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -80,7 +86,7 @@ where
                         }
                         "dataCollectionOptions" => {
                             builder = builder.set_data_collection_options(
-                                crate::protocol_serde::shape_data_collection_options::de_data_collection_options(tokens, _value)?,
+                                crate::protocol_serde::shape_data_collection_options::de_data_collection_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "dataStorageSizeInTBs" => {
@@ -96,7 +102,7 @@ where
                             );
                         }
                         "dbServers" => {
-                            builder = builder.set_db_servers(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_db_servers(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "diskRedundancy" => {
                             builder = builder.set_disk_redundancy(
@@ -120,8 +126,11 @@ where
                             );
                         }
                         "iormConfigCache" => {
-                            builder = builder
-                                .set_iorm_config_cache(crate::protocol_serde::shape_exadata_iorm_config::de_exadata_iorm_config(tokens, _value)?);
+                            builder = builder.set_iorm_config_cache(crate::protocol_serde::shape_exadata_iorm_config::de_exadata_iorm_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "isLocalBackupEnabled" => {
                             builder = builder.set_is_local_backup_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -208,7 +217,7 @@ where
                             );
                         }
                         "scanIpIds" => {
-                            builder = builder.set_scan_ip_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_scan_ip_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "shape" => {
                             builder = builder.set_shape(
@@ -219,7 +228,9 @@ where
                         }
                         "sshPublicKeys" => {
                             builder = builder.set_ssh_public_keys(crate::protocol_serde::shape_sensitive_string_list::de_sensitive_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "storageSizeInGBs" => {
@@ -250,7 +261,7 @@ where
                             );
                         }
                         "vipIds" => {
-                            builder = builder.set_vip_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_vip_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "odbNetworkId" => {
                             builder = builder.set_odb_network_id(
@@ -279,7 +290,7 @@ where
                             );
                         }
                         "iamRoles" => {
-                            builder = builder.set_iam_roles(crate::protocol_serde::shape_iam_role_list::de_iam_role_list(tokens, _value)?);
+                            builder = builder.set_iam_roles(crate::protocol_serde::shape_iam_role_list::de_iam_role_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -2,10 +2,16 @@
 pub(crate) fn de_workload<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Workload>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,17 +64,21 @@ where
                         }
                         "AccountIds" => {
                             builder = builder.set_account_ids(crate::protocol_serde::shape_workload_account_ids::de_workload_account_ids(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "AwsRegions" => {
                             builder = builder.set_aws_regions(crate::protocol_serde::shape_workload_aws_regions::de_workload_aws_regions(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "NonAwsRegions" => {
                             builder = builder.set_non_aws_regions(
-                                crate::protocol_serde::shape_workload_non_aws_regions::de_workload_non_aws_regions(tokens, _value)?,
+                                crate::protocol_serde::shape_workload_non_aws_regions::de_workload_non_aws_regions(tokens, _value, depth + 1)?,
                             );
                         }
                         "ArchitecturalDesign" => {
@@ -124,15 +134,19 @@ where
                             );
                         }
                         "RiskCounts" => {
-                            builder = builder.set_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens, _value)?);
+                            builder = builder.set_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens, _value, depth + 1)?);
                         }
                         "PillarPriorities" => {
                             builder = builder.set_pillar_priorities(
-                                crate::protocol_serde::shape_workload_pillar_priorities::de_workload_pillar_priorities(tokens, _value)?,
+                                crate::protocol_serde::shape_workload_pillar_priorities::de_workload_pillar_priorities(tokens, _value, depth + 1)?,
                             );
                         }
                         "Lenses" => {
-                            builder = builder.set_lenses(crate::protocol_serde::shape_workload_lenses::de_workload_lenses(tokens, _value)?);
+                            builder = builder.set_lenses(crate::protocol_serde::shape_workload_lenses::de_workload_lenses(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Owner" => {
                             builder = builder.set_owner(
@@ -149,28 +163,40 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "DiscoveryConfig" => {
                             builder = builder.set_discovery_config(
-                                crate::protocol_serde::shape_workload_discovery_config::de_workload_discovery_config(tokens, _value)?,
+                                crate::protocol_serde::shape_workload_discovery_config::de_workload_discovery_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "Applications" => {
                             builder = builder.set_applications(crate::protocol_serde::shape_workload_applications::de_workload_applications(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Profiles" => {
-                            builder = builder.set_profiles(crate::protocol_serde::shape_workload_profiles::de_workload_profiles(tokens, _value)?);
+                            builder = builder.set_profiles(crate::protocol_serde::shape_workload_profiles::de_workload_profiles(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PrioritizedRiskCounts" => {
-                            builder = builder.set_prioritized_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens, _value)?);
+                            builder = builder.set_prioritized_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JiraConfiguration" => {
                             builder = builder.set_jira_configuration(
                                 crate::protocol_serde::shape_workload_jira_configuration_output::de_workload_jira_configuration_output(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

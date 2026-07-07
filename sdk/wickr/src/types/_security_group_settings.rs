@@ -64,6 +64,8 @@ pub struct SecurityGroupSettings {
     pub shredder: ::std::option::Option<crate::types::ShredderSettings>,
     /// <p>The duration for which users SSO session remains inactive before automatically logging them out for security. Available in SSO enabled network.</p>
     pub sso_max_idle_minutes: ::std::option::Option<i32>,
+    /// <p>Maximum session duration in minutes for non-SSO users. Set to 0 to disable. Valid range is 60 to 525600 (1 hour to 365 days).</p>
+    pub max_non_sso_session_minutes: ::std::option::Option<i32>,
     /// <p>The local federation mode controlling how users can communicate with other networks. Values: 0 (none), 1 (federated), 2 (restricted).</p>
     pub federation_mode: ::std::option::Option<i32>,
     /// <p>The number of failed password attempts before a user account is locked out.</p>
@@ -200,6 +202,10 @@ impl SecurityGroupSettings {
     pub fn sso_max_idle_minutes(&self) -> ::std::option::Option<i32> {
         self.sso_max_idle_minutes
     }
+    /// <p>Maximum session duration in minutes for non-SSO users. Set to 0 to disable. Valid range is 60 to 525600 (1 hour to 365 days).</p>
+    pub fn max_non_sso_session_minutes(&self) -> ::std::option::Option<i32> {
+        self.max_non_sso_session_minutes
+    }
     /// <p>The local federation mode controlling how users can communicate with other networks. Values: 0 (none), 1 (federated), 2 (restricted).</p>
     pub fn federation_mode(&self) -> ::std::option::Option<i32> {
         self.federation_mode
@@ -268,6 +274,7 @@ pub struct SecurityGroupSettingsBuilder {
     pub(crate) show_master_recovery_key: ::std::option::Option<bool>,
     pub(crate) shredder: ::std::option::Option<crate::types::ShredderSettings>,
     pub(crate) sso_max_idle_minutes: ::std::option::Option<i32>,
+    pub(crate) max_non_sso_session_minutes: ::std::option::Option<i32>,
     pub(crate) federation_mode: ::std::option::Option<i32>,
     pub(crate) lockout_threshold: ::std::option::Option<i32>,
     pub(crate) permitted_networks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -707,6 +714,20 @@ impl SecurityGroupSettingsBuilder {
     pub fn get_sso_max_idle_minutes(&self) -> &::std::option::Option<i32> {
         &self.sso_max_idle_minutes
     }
+    /// <p>Maximum session duration in minutes for non-SSO users. Set to 0 to disable. Valid range is 60 to 525600 (1 hour to 365 days).</p>
+    pub fn max_non_sso_session_minutes(mut self, input: i32) -> Self {
+        self.max_non_sso_session_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum session duration in minutes for non-SSO users. Set to 0 to disable. Valid range is 60 to 525600 (1 hour to 365 days).</p>
+    pub fn set_max_non_sso_session_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_non_sso_session_minutes = input;
+        self
+    }
+    /// <p>Maximum session duration in minutes for non-SSO users. Set to 0 to disable. Valid range is 60 to 525600 (1 hour to 365 days).</p>
+    pub fn get_max_non_sso_session_minutes(&self) -> &::std::option::Option<i32> {
+        &self.max_non_sso_session_minutes
+    }
     /// <p>The local federation mode controlling how users can communicate with other networks. Values: 0 (none), 1 (federated), 2 (restricted).</p>
     pub fn federation_mode(mut self, input: i32) -> Self {
         self.federation_mode = ::std::option::Option::Some(input);
@@ -831,6 +852,7 @@ impl SecurityGroupSettingsBuilder {
             show_master_recovery_key: self.show_master_recovery_key,
             shredder: self.shredder,
             sso_max_idle_minutes: self.sso_max_idle_minutes,
+            max_non_sso_session_minutes: self.max_non_sso_session_minutes,
             federation_mode: self.federation_mode,
             lockout_threshold: self.lockout_threshold,
             permitted_networks: self.permitted_networks,

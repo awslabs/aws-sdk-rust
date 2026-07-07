@@ -92,6 +92,8 @@ pub(crate) fn de_update_maintenance_window_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -113,7 +115,7 @@ pub(crate) fn de_update_maintenance_window_task(
                         );
                     }
                     "Targets" => {
-                        builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value)?);
+                        builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value, depth + 1)?);
                     }
                     "TaskArn" => {
                         builder = builder.set_task_arn(
@@ -131,12 +133,16 @@ pub(crate) fn de_update_maintenance_window_task(
                     }
                     "TaskParameters" => {
                         builder = builder.set_task_parameters(
-                            crate::protocol_serde::shape_maintenance_window_task_parameters::de_maintenance_window_task_parameters(tokens, _value)?,
+                            crate::protocol_serde::shape_maintenance_window_task_parameters::de_maintenance_window_task_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
                         );
                     }
                     "TaskInvocationParameters" => {
                         builder = builder.set_task_invocation_parameters(
-                            crate::protocol_serde::shape_maintenance_window_task_invocation_parameters::de_maintenance_window_task_invocation_parameters(tokens, _value)?
+                            crate::protocol_serde::shape_maintenance_window_task_invocation_parameters::de_maintenance_window_task_invocation_parameters(tokens, _value, depth + 1)?
                         );
                     }
                     "Priority" => {
@@ -161,7 +167,7 @@ pub(crate) fn de_update_maintenance_window_task(
                         );
                     }
                     "LoggingInfo" => {
-                        builder = builder.set_logging_info(crate::protocol_serde::shape_logging_info::de_logging_info(tokens, _value)?);
+                        builder = builder.set_logging_info(crate::protocol_serde::shape_logging_info::de_logging_info(tokens, _value, depth + 1)?);
                     }
                     "Name" => {
                         builder = builder.set_name(
@@ -188,8 +194,11 @@ pub(crate) fn de_update_maintenance_window_task(
                         );
                     }
                     "AlarmConfiguration" => {
-                        builder = builder
-                            .set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value)?);
+                        builder = builder.set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }

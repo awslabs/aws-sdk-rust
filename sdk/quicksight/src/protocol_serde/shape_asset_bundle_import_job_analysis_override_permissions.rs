@@ -24,6 +24,7 @@ pub fn ser_asset_bundle_import_job_analysis_override_permissions(
 pub(crate) fn de_asset_bundle_import_job_analysis_override_permissions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AssetBundleImportJobAnalysisOverridePermissions>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -31,6 +32,11 @@ pub(crate) fn de_asset_bundle_import_job_analysis_override_permissions<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,21 +45,25 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AnalysisIds" => {
-                            builder = builder.set_analysis_ids(
-                                crate::protocol_serde::shape_asset_bundle_restrictive_resource_id_list::de_asset_bundle_restrictive_resource_id_list(
-                                    tokens, _value,
-                                )?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AnalysisIds" => {
+                                builder = builder.set_analysis_ids(
+                                    crate::protocol_serde::shape_asset_bundle_restrictive_resource_id_list::de_asset_bundle_restrictive_resource_id_list(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "Permissions" => {
+                                builder = builder.set_permissions(
+                                    crate::protocol_serde::shape_asset_bundle_resource_permissions::de_asset_bundle_resource_permissions(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Permissions" => {
-                            builder = builder.set_permissions(
-                                crate::protocol_serde::shape_asset_bundle_resource_permissions::de_asset_bundle_resource_permissions(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

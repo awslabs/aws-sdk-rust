@@ -2,10 +2,16 @@
 pub(crate) fn de_route_has_out_of_scope_endpoint_violation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouteHasOutOfScopeEndpointViolation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,7 @@ where
                             );
                         }
                         "ViolatingRoutes" => {
-                            builder = builder.set_violating_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value)?);
+                            builder = builder.set_violating_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value, depth + 1)?);
                         }
                         "SubnetAvailabilityZone" => {
                             builder = builder.set_subnet_availability_zone(
@@ -68,7 +74,7 @@ where
                             );
                         }
                         "FirewallSubnetRoutes" => {
-                            builder = builder.set_firewall_subnet_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value)?);
+                            builder = builder.set_firewall_subnet_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value, depth + 1)?);
                         }
                         "InternetGatewayId" => {
                             builder = builder.set_internet_gateway_id(
@@ -85,7 +91,7 @@ where
                             );
                         }
                         "InternetGatewayRoutes" => {
-                            builder = builder.set_internet_gateway_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value)?);
+                            builder = builder.set_internet_gateway_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

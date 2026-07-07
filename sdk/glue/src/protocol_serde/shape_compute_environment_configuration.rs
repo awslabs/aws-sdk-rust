@@ -2,10 +2,16 @@
 pub(crate) fn de_compute_environment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComputeEnvironmentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,25 +44,29 @@ where
                         }
                         "SupportedAuthenticationTypes" => {
                             builder = builder.set_supported_authentication_types(
-                                crate::protocol_serde::shape_authentication_types::de_authentication_types(tokens, _value)?,
+                                crate::protocol_serde::shape_authentication_types::de_authentication_types(tokens, _value, depth + 1)?,
                             );
                         }
                         "ConnectionOptions" => {
-                            builder = builder.set_connection_options(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
+                            builder = builder.set_connection_options(crate::protocol_serde::shape_properties_map::de_properties_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ConnectionPropertyNameOverrides" => {
                             builder = builder.set_connection_property_name_overrides(
-                                crate::protocol_serde::shape_property_name_overrides::de_property_name_overrides(tokens, _value)?,
+                                crate::protocol_serde::shape_property_name_overrides::de_property_name_overrides(tokens, _value, depth + 1)?,
                             );
                         }
                         "ConnectionOptionNameOverrides" => {
                             builder = builder.set_connection_option_name_overrides(
-                                crate::protocol_serde::shape_property_name_overrides::de_property_name_overrides(tokens, _value)?,
+                                crate::protocol_serde::shape_property_name_overrides::de_property_name_overrides(tokens, _value, depth + 1)?,
                             );
                         }
                         "ConnectionPropertiesRequiredOverrides" => {
                             builder = builder.set_connection_properties_required_overrides(
-                                crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?,
                             );
                         }
                         "PhysicalConnectionPropertiesRequired" => {

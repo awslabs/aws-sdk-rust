@@ -67,6 +67,8 @@ pub fn de_list_storage_lens_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListStorageLensGroupsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListStorageLensGroupsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -93,7 +95,7 @@ pub fn de_list_storage_lens_groups(
                         Result::<::std::vec::Vec::<crate::types::ListStorageLensGroupEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_5 = builder.storage_lens_group_list.take().unwrap_or_default();
                             list_5.push(
-                                crate::protocol_serde::shape_list_storage_lens_group_entry::de_list_storage_lens_group_entry(&mut tag)
+                                crate::protocol_serde::shape_list_storage_lens_group_entry::de_list_storage_lens_group_entry(&mut tag, depth + 1)
                                 ?
                             );
                             list_5

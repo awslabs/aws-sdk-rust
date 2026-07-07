@@ -97,13 +97,19 @@ pub(crate) fn de_get_message_insights(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "EmailTags" => {
-                    builder = builder.set_email_tags(crate::protocol_serde::shape_message_tag_list::de_message_tag_list(tokens, _value)?);
+                    builder = builder.set_email_tags(crate::protocol_serde::shape_message_tag_list::de_message_tag_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FromEmailAddress" => {
                     builder = builder.set_from_email_address(
@@ -113,7 +119,11 @@ pub(crate) fn de_get_message_insights(
                     );
                 }
                 "Insights" => {
-                    builder = builder.set_insights(crate::protocol_serde::shape_email_insights_list::de_email_insights_list(tokens, _value)?);
+                    builder = builder.set_insights(crate::protocol_serde::shape_email_insights_list::de_email_insights_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "MessageId" => {
                     builder = builder.set_message_id(

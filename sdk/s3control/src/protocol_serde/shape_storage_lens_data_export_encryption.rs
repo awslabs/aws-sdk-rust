@@ -19,7 +19,11 @@ pub fn ser_storage_lens_data_export_encryption(
 #[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_data_export_encryption(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StorageLensDataExportEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensDataExportEncryption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -27,7 +31,7 @@ pub fn de_storage_lens_data_export_encryption(
             s if s.matches("SSE-S3") /* SSES3 com.amazonaws.s3control#StorageLensDataExportEncryption$SSES3 */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_sses3::de_sses3(&mut tag)
+                        crate::protocol_serde::shape_sses3::de_sses3(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -37,7 +41,7 @@ pub fn de_storage_lens_data_export_encryption(
             s if s.matches("SSE-KMS") /* SSEKMS com.amazonaws.s3control#StorageLensDataExportEncryption$SSEKMS */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_ssekms::de_ssekms(&mut tag)
+                        crate::protocol_serde::shape_ssekms::de_ssekms(&mut tag, depth + 1)
                         ?
                     )
                 ;

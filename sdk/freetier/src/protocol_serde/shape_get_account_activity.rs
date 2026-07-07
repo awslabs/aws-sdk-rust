@@ -120,6 +120,8 @@ pub(crate) fn de_get_account_activity(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -161,7 +163,11 @@ pub(crate) fn de_get_account_activity(
                     );
                 }
                 "reward" => {
-                    builder = builder.set_reward(crate::protocol_serde::shape_activity_reward::de_activity_reward(tokens, _value)?);
+                    builder = builder.set_reward(crate::protocol_serde::shape_activity_reward::de_activity_reward(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "estimatedTimeToCompleteInMinutes" => {
                     builder = builder.set_estimated_time_to_complete_in_minutes(

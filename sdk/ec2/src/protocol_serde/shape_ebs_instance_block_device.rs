@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ebs_instance_block_device(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EbsInstanceBlockDevice, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EbsInstanceBlockDevice::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -92,7 +96,7 @@ pub fn de_ebs_instance_block_device(
             s if s.matches("operator") /* Operator com.amazonaws.ec2#EbsInstanceBlockDevice$Operator */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

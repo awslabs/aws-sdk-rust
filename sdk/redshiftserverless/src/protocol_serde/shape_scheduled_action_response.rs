@@ -2,10 +2,16 @@
 pub(crate) fn de_scheduled_action_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScheduledActionResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,7 @@ where
                             );
                         }
                         "schedule" => {
-                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
+                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value, depth + 1)?);
                         }
                         "scheduledActionDescription" => {
                             builder = builder.set_scheduled_action_description(
@@ -34,7 +40,9 @@ where
                         }
                         "nextInvocations" => {
                             builder = builder.set_next_invocations(crate::protocol_serde::shape_next_invocations_list::de_next_invocations_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "roleArn" => {
@@ -64,7 +72,8 @@ where
                             )?);
                         }
                         "targetAction" => {
-                            builder = builder.set_target_action(crate::protocol_serde::shape_target_action::de_target_action(tokens, _value)?);
+                            builder =
+                                builder.set_target_action(crate::protocol_serde::shape_target_action::de_target_action(tokens, _value, depth + 1)?);
                         }
                         "namespaceName" => {
                             builder = builder.set_namespace_name(

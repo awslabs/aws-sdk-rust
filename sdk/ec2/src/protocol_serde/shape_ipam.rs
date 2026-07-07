@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ipam(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Ipam, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Ipam::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -116,7 +120,7 @@ pub fn de_ipam(
             s if s.matches("operatingRegionSet") /* OperatingRegions com.amazonaws.ec2#Ipam$OperatingRegions */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_ipam_operating_region_set::de_ipam_operating_region_set(&mut tag)
+                        crate::protocol_serde::shape_ipam_operating_region_set::de_ipam_operating_region_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -140,7 +144,7 @@ pub fn de_ipam(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Ipam$Tags */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

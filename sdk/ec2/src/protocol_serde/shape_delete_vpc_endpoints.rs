@@ -47,6 +47,8 @@ pub fn de_delete_vpc_endpoints(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteVpcEndpointsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteVpcEndpointsResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_delete_vpc_endpoints(
             s if s.matches("unsuccessful") /* Unsuccessful com.amazonaws.ec2.synthetic#DeleteVpcEndpointsOutput$Unsuccessful */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_unsuccessful_item_set::de_unsuccessful_item_set(&mut tag)
+                        crate::protocol_serde::shape_unsuccessful_item_set::de_unsuccessful_item_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

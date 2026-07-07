@@ -2,6 +2,7 @@
 pub(crate) fn de_network_firewall_invalid_route_configuration_violation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::NetworkFirewallInvalidRouteConfigurationViolation>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -9,6 +10,11 @@ pub(crate) fn de_network_firewall_invalid_route_configuration_violation<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,8 +25,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AffectedSubnets" => {
-                            builder =
-                                builder.set_affected_subnets(crate::protocol_serde::shape_resource_id_list::de_resource_id_list(tokens, _value)?);
+                            builder = builder.set_affected_subnets(crate::protocol_serde::shape_resource_id_list::de_resource_id_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RouteTableId" => {
                             builder = builder.set_route_table_id(
@@ -34,7 +43,7 @@ where
                                 .set_is_route_table_used_in_different_az(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ViolatingRoute" => {
-                            builder = builder.set_violating_route(crate::protocol_serde::shape_route::de_route(tokens, _value)?);
+                            builder = builder.set_violating_route(crate::protocol_serde::shape_route::de_route(tokens, _value, depth + 1)?);
                         }
                         "CurrentFirewallSubnetRouteTable" => {
                             builder = builder.set_current_firewall_subnet_route_table(
@@ -73,11 +82,14 @@ where
                         }
                         "ExpectedFirewallSubnetRoutes" => {
                             builder = builder.set_expected_firewall_subnet_routes(crate::protocol_serde::shape_expected_routes::de_expected_routes(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ActualFirewallSubnetRoutes" => {
-                            builder = builder.set_actual_firewall_subnet_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value)?);
+                            builder =
+                                builder.set_actual_firewall_subnet_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value, depth + 1)?);
                         }
                         "InternetGatewayId" => {
                             builder = builder.set_internet_gateway_id(
@@ -95,11 +107,17 @@ where
                         }
                         "ExpectedInternetGatewayRoutes" => {
                             builder = builder.set_expected_internet_gateway_routes(crate::protocol_serde::shape_expected_routes::de_expected_routes(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ActualInternetGatewayRoutes" => {
-                            builder = builder.set_actual_internet_gateway_routes(crate::protocol_serde::shape_routes::de_routes(tokens, _value)?);
+                            builder = builder.set_actual_internet_gateway_routes(crate::protocol_serde::shape_routes::de_routes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "VpcId" => {
                             builder = builder.set_vpc_id(

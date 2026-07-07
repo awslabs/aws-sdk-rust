@@ -173,6 +173,21 @@ pub(crate) fn admin_app_license_usage_record_correct_errors(
     builder
 }
 
+pub(crate) fn agent_access_config_correct_errors(
+    mut builder: crate::types::builders::AgentAccessConfigBuilder,
+) -> crate::types::builders::AgentAccessConfigBuilder {
+    if builder.settings.is_none() {
+        builder.settings = Some(Default::default())
+    }
+    if builder.screen_resolution.is_none() {
+        builder.screen_resolution = "no value was set".parse::<crate::types::ScreenResolution>().ok()
+    }
+    if builder.screen_image_format.is_none() {
+        builder.screen_image_format = "no value was set".parse::<crate::types::ScreenImageFormat>().ok()
+    }
+    builder
+}
+
 pub(crate) fn compute_capacity_status_correct_errors(
     mut builder: crate::types::builders::ComputeCapacityStatusBuilder,
 ) -> crate::types::builders::ComputeCapacityStatusBuilder {
@@ -326,6 +341,18 @@ pub(crate) fn url_redirection_config_correct_errors(
 pub(crate) fn user_setting_correct_errors(mut builder: crate::types::builders::UserSettingBuilder) -> crate::types::builders::UserSettingBuilder {
     if builder.action.is_none() {
         builder.action = "no value was set".parse::<crate::types::Action>().ok()
+    }
+    if builder.permission.is_none() {
+        builder.permission = "no value was set".parse::<crate::types::Permission>().ok()
+    }
+    builder
+}
+
+pub(crate) fn agent_access_setting_correct_errors(
+    mut builder: crate::types::builders::AgentAccessSettingBuilder,
+) -> crate::types::builders::AgentAccessSettingBuilder {
+    if builder.agent_action.is_none() {
+        builder.agent_action = "no value was set".parse::<crate::types::AgentAction>().ok()
     }
     if builder.permission.is_none() {
         builder.permission = "no value was set".parse::<crate::types::Permission>().ok()

@@ -14,6 +14,16 @@ pub struct ResourceScanMetadata {
     pub lambda_function: ::std::option::Option<crate::types::LambdaFunctionMetadata>,
     /// <p>Contains metadata about scan coverage for a code repository resource.</p>
     pub code_repository: ::std::option::Option<crate::types::CodeRepositoryMetadata>,
+    /// <p>The VM instance metadata associated with a covered resource.</p>
+    pub vm_instance: ::std::option::Option<crate::types::VmInstanceMetadata>,
+    /// <p>The container image metadata associated with a covered resource.</p>
+    pub container_image: ::std::option::Option<crate::types::ContainerImageMetadata>,
+    /// <p>The container repository metadata associated with a covered resource.</p>
+    pub container_repository: ::std::option::Option<crate::types::ContainerRepositoryMetadata>,
+    /// <p>The container registry metadata associated with a covered resource.</p>
+    pub container_registry: ::std::option::Option<crate::types::ContainerRegistryMetadata>,
+    /// <p>The serverless function metadata associated with a covered resource.</p>
+    pub serverless_function: ::std::option::Option<crate::types::ServerlessFunctionMetadata>,
 }
 impl ResourceScanMetadata {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
@@ -36,6 +46,26 @@ impl ResourceScanMetadata {
     pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepositoryMetadata> {
         self.code_repository.as_ref()
     }
+    /// <p>The VM instance metadata associated with a covered resource.</p>
+    pub fn vm_instance(&self) -> ::std::option::Option<&crate::types::VmInstanceMetadata> {
+        self.vm_instance.as_ref()
+    }
+    /// <p>The container image metadata associated with a covered resource.</p>
+    pub fn container_image(&self) -> ::std::option::Option<&crate::types::ContainerImageMetadata> {
+        self.container_image.as_ref()
+    }
+    /// <p>The container repository metadata associated with a covered resource.</p>
+    pub fn container_repository(&self) -> ::std::option::Option<&crate::types::ContainerRepositoryMetadata> {
+        self.container_repository.as_ref()
+    }
+    /// <p>The container registry metadata associated with a covered resource.</p>
+    pub fn container_registry(&self) -> ::std::option::Option<&crate::types::ContainerRegistryMetadata> {
+        self.container_registry.as_ref()
+    }
+    /// <p>The serverless function metadata associated with a covered resource.</p>
+    pub fn serverless_function(&self) -> ::std::option::Option<&crate::types::ServerlessFunctionMetadata> {
+        self.serverless_function.as_ref()
+    }
 }
 impl ResourceScanMetadata {
     /// Creates a new builder-style object to manufacture [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
@@ -53,6 +83,11 @@ pub struct ResourceScanMetadataBuilder {
     pub(crate) ec2: ::std::option::Option<crate::types::Ec2Metadata>,
     pub(crate) lambda_function: ::std::option::Option<crate::types::LambdaFunctionMetadata>,
     pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepositoryMetadata>,
+    pub(crate) vm_instance: ::std::option::Option<crate::types::VmInstanceMetadata>,
+    pub(crate) container_image: ::std::option::Option<crate::types::ContainerImageMetadata>,
+    pub(crate) container_repository: ::std::option::Option<crate::types::ContainerRepositoryMetadata>,
+    pub(crate) container_registry: ::std::option::Option<crate::types::ContainerRegistryMetadata>,
+    pub(crate) serverless_function: ::std::option::Option<crate::types::ServerlessFunctionMetadata>,
 }
 impl ResourceScanMetadataBuilder {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
@@ -125,6 +160,76 @@ impl ResourceScanMetadataBuilder {
     pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepositoryMetadata> {
         &self.code_repository
     }
+    /// <p>The VM instance metadata associated with a covered resource.</p>
+    pub fn vm_instance(mut self, input: crate::types::VmInstanceMetadata) -> Self {
+        self.vm_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VM instance metadata associated with a covered resource.</p>
+    pub fn set_vm_instance(mut self, input: ::std::option::Option<crate::types::VmInstanceMetadata>) -> Self {
+        self.vm_instance = input;
+        self
+    }
+    /// <p>The VM instance metadata associated with a covered resource.</p>
+    pub fn get_vm_instance(&self) -> &::std::option::Option<crate::types::VmInstanceMetadata> {
+        &self.vm_instance
+    }
+    /// <p>The container image metadata associated with a covered resource.</p>
+    pub fn container_image(mut self, input: crate::types::ContainerImageMetadata) -> Self {
+        self.container_image = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The container image metadata associated with a covered resource.</p>
+    pub fn set_container_image(mut self, input: ::std::option::Option<crate::types::ContainerImageMetadata>) -> Self {
+        self.container_image = input;
+        self
+    }
+    /// <p>The container image metadata associated with a covered resource.</p>
+    pub fn get_container_image(&self) -> &::std::option::Option<crate::types::ContainerImageMetadata> {
+        &self.container_image
+    }
+    /// <p>The container repository metadata associated with a covered resource.</p>
+    pub fn container_repository(mut self, input: crate::types::ContainerRepositoryMetadata) -> Self {
+        self.container_repository = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The container repository metadata associated with a covered resource.</p>
+    pub fn set_container_repository(mut self, input: ::std::option::Option<crate::types::ContainerRepositoryMetadata>) -> Self {
+        self.container_repository = input;
+        self
+    }
+    /// <p>The container repository metadata associated with a covered resource.</p>
+    pub fn get_container_repository(&self) -> &::std::option::Option<crate::types::ContainerRepositoryMetadata> {
+        &self.container_repository
+    }
+    /// <p>The container registry metadata associated with a covered resource.</p>
+    pub fn container_registry(mut self, input: crate::types::ContainerRegistryMetadata) -> Self {
+        self.container_registry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The container registry metadata associated with a covered resource.</p>
+    pub fn set_container_registry(mut self, input: ::std::option::Option<crate::types::ContainerRegistryMetadata>) -> Self {
+        self.container_registry = input;
+        self
+    }
+    /// <p>The container registry metadata associated with a covered resource.</p>
+    pub fn get_container_registry(&self) -> &::std::option::Option<crate::types::ContainerRegistryMetadata> {
+        &self.container_registry
+    }
+    /// <p>The serverless function metadata associated with a covered resource.</p>
+    pub fn serverless_function(mut self, input: crate::types::ServerlessFunctionMetadata) -> Self {
+        self.serverless_function = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The serverless function metadata associated with a covered resource.</p>
+    pub fn set_serverless_function(mut self, input: ::std::option::Option<crate::types::ServerlessFunctionMetadata>) -> Self {
+        self.serverless_function = input;
+        self
+    }
+    /// <p>The serverless function metadata associated with a covered resource.</p>
+    pub fn get_serverless_function(&self) -> &::std::option::Option<crate::types::ServerlessFunctionMetadata> {
+        &self.serverless_function
+    }
     /// Consumes the builder and constructs a [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
     pub fn build(self) -> crate::types::ResourceScanMetadata {
         crate::types::ResourceScanMetadata {
@@ -133,6 +238,11 @@ impl ResourceScanMetadataBuilder {
             ec2: self.ec2,
             lambda_function: self.lambda_function,
             code_repository: self.code_repository,
+            vm_instance: self.vm_instance,
+            container_image: self.container_image,
+            container_repository: self.container_repository,
+            container_registry: self.container_registry,
+            serverless_function: self.serverless_function,
         }
     }
 }

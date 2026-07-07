@@ -47,6 +47,8 @@ pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfigBuilder;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfigBuilder;
 
+pub use crate::types::_cluster_restricted_instance_groups_config::ClusterRestrictedInstanceGroupsConfigBuilder;
+
 pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_cluster_orchestrator::ClusterOrchestratorBuilder;
@@ -193,6 +195,8 @@ pub use crate::types::_model_package_model_card::ModelPackageModelCardBuilder;
 
 pub use crate::types::_model_life_cycle::ModelLifeCycleBuilder;
 
+pub use crate::types::_managed_configuration::ManagedConfigurationBuilder;
+
 pub use crate::types::_model_quality_baseline_config::ModelQualityBaselineConfigBuilder;
 
 pub use crate::types::_model_quality_app_specification::ModelQualityAppSpecificationBuilder;
@@ -310,6 +314,8 @@ pub use crate::types::_resolved_attributes::ResolvedAttributesBuilder;
 pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
 
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributesBuilder;
+
+pub use crate::types::_cluster_restricted_instance_groups_config_output::ClusterRestrictedInstanceGroupsConfigOutputBuilder;
 
 pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutputBuilder;
 
@@ -465,6 +471,8 @@ pub use crate::types::_batch_replace_cluster_node_logical_ids_error::BatchReplac
 
 pub use crate::types::_ai_benchmark_endpoint::AiBenchmarkEndpointBuilder;
 
+pub use crate::types::_ai_mlflow_config::AiMlflowConfigBuilder;
+
 pub use crate::types::_ai_model_source_s3::AiModelSourceS3Builder;
 
 pub use crate::types::_ai_capacity_reservation_config::AiCapacityReservationConfigBuilder;
@@ -498,6 +506,8 @@ pub use crate::types::_emr_serverless_compute_config::EmrServerlessComputeConfig
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
 
 pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecificationBuilder;
+
+pub use crate::types::_cluster_shared_environment_config::ClusterSharedEnvironmentConfigBuilder;
 
 pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfigBuilder;
 
@@ -639,6 +649,8 @@ pub use crate::types::_model_data_source::ModelDataSourceBuilder;
 
 pub use crate::types::_multi_model_config::MultiModelConfigBuilder;
 
+pub use crate::types::_container_metrics_config::ContainerMetricsConfigBuilder;
+
 pub use crate::types::_monitoring_ground_truth_s3_input::MonitoringGroundTruthS3InputBuilder;
 
 pub use crate::types::_model_quality::ModelQualityBuilder;
@@ -713,6 +725,8 @@ pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetai
 
 pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetailsBuilder;
 
+pub use crate::types::_cluster_shared_environment_config_details::ClusterSharedEnvironmentConfigDetailsBuilder;
+
 pub use crate::types::_event_details::EventDetailsBuilder;
 
 pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetailsBuilder;
@@ -750,6 +764,8 @@ pub use crate::types::_model_variant_config_summary::ModelVariantConfigSummaryBu
 pub use crate::types::_inference_recommendation::InferenceRecommendationBuilder;
 
 pub use crate::types::_endpoint_performance::EndpointPerformanceBuilder;
+
+pub use crate::types::_job_secondary_status_transition::JobSecondaryStatusTransitionBuilder;
 
 pub use crate::types::_template_provider_detail::TemplateProviderDetailBuilder;
 
@@ -856,6 +872,10 @@ pub use crate::types::_inference_experiment_summary::InferenceExperimentSummaryB
 pub use crate::types::_inference_recommendations_job::InferenceRecommendationsJobBuilder;
 
 pub use crate::types::_inference_recommendations_job_step::InferenceRecommendationsJobStepBuilder;
+
+pub use crate::types::_job_summary::JobSummaryBuilder;
+
+pub use crate::types::_job_config_schema_version_summary::JobConfigSchemaVersionSummaryBuilder;
 
 pub use crate::types::_labeling_job_summary::LabelingJobSummaryBuilder;
 
@@ -997,6 +1017,8 @@ pub use crate::types::_cluster_instance_requirements::ClusterInstanceRequirement
 
 pub use crate::types::_scheduled_update_config::ScheduledUpdateConfigBuilder;
 
+pub use crate::types::_cluster_auto_patch_config::ClusterAutoPatchConfigBuilder;
+
 pub use crate::types::_cluster_kubernetes_config::ClusterKubernetesConfigBuilder;
 
 pub use crate::types::_cluster_slurm_config::ClusterSlurmConfigBuilder;
@@ -1006,6 +1028,8 @@ pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirement
 pub use crate::types::_cluster_network_interface::ClusterNetworkInterfaceBuilder;
 
 pub use crate::types::_environment_config::EnvironmentConfigBuilder;
+
+pub use crate::types::_f_sx_lustre_config::FSxLustreConfigBuilder;
 
 pub use crate::types::_priority_class::PriorityClassBuilder;
 
@@ -1173,6 +1197,8 @@ pub use crate::types::_text_generation_resolved_attributes::TextGenerationResolv
 
 pub use crate::types::_cluster_instance_requirement_details::ClusterInstanceRequirementDetailsBuilder;
 
+pub use crate::types::_cluster_auto_patch_config_details::ClusterAutoPatchConfigDetailsBuilder;
+
 pub use crate::types::_cluster_kubernetes_config_details::ClusterKubernetesConfigDetailsBuilder;
 
 pub use crate::types::_cluster_slurm_config_details::ClusterSlurmConfigDetailsBuilder;
@@ -1186,6 +1212,8 @@ pub use crate::types::_production_variant_capacity_reservation_summary::Producti
 pub use crate::types::_pending_production_variant_summary::PendingProductionVariantSummaryBuilder;
 
 pub use crate::types::_deployed_image::DeployedImageBuilder;
+
+pub use crate::types::_inference_component_placement_status::InferenceComponentPlacementStatusBuilder;
 
 pub use crate::types::_inference_component_capacity_size::InferenceComponentCapacitySizeBuilder;
 
@@ -1261,6 +1289,8 @@ pub use crate::types::_model_card::ModelCardBuilder;
 
 pub use crate::types::_model_dashboard_model::ModelDashboardModelBuilder;
 
+pub use crate::types::_job::JobBuilder;
+
 pub use crate::types::_capacity_size_config::CapacitySizeConfigBuilder;
 
 pub use crate::types::_alarm_details::AlarmDetailsBuilder;
@@ -1289,11 +1319,11 @@ pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfigBuilder;
 
 pub use crate::types::_holiday_config_attributes::HolidayConfigAttributesBuilder;
 
+pub use crate::types::_cluster_patch_schedule::ClusterPatchScheduleBuilder;
+
 pub use crate::types::_cluster_spot_options::ClusterSpotOptionsBuilder;
 
 pub use crate::types::_cluster_on_demand_options::ClusterOnDemandOptionsBuilder;
-
-pub use crate::types::_f_sx_lustre_config::FSxLustreConfigBuilder;
 
 pub use crate::types::_accelerator_partition_config::AcceleratorPartitionConfigBuilder;
 
@@ -1323,6 +1353,8 @@ pub use crate::types::_hidden_sage_maker_image::HiddenSageMakerImageBuilder;
 
 pub use crate::types::_alarm::AlarmBuilder;
 
+pub use crate::types::_instance_pool::InstancePoolBuilder;
+
 pub use crate::types::_production_variant_managed_instance_scaling_scale_in_policy::ProductionVariantManagedInstanceScalingScaleInPolicyBuilder;
 
 pub use crate::types::_clarify_shap_baseline_config::ClarifyShapBaselineConfigBuilder;
@@ -1348,6 +1380,8 @@ pub use crate::types::_phase::PhaseBuilder;
 pub use crate::types::_environment_parameter_ranges::EnvironmentParameterRangesBuilder;
 
 pub use crate::types::_inference_hub_access_config::InferenceHubAccessConfigBuilder;
+
+pub use crate::types::_metrics_endpoint::MetricsEndpointBuilder;
 
 pub use crate::types::_monitoring_input::MonitoringInputBuilder;
 
@@ -1385,6 +1419,8 @@ pub use crate::types::_metric_datum::MetricDatumBuilder;
 
 pub use crate::types::_cluster_instance_type_detail::ClusterInstanceTypeDetailBuilder;
 
+pub use crate::types::_cluster_patch_schedule_details::ClusterPatchScheduleDetailsBuilder;
+
 pub use crate::types::_cluster_metadata::ClusterMetadataBuilder;
 
 pub use crate::types::_instance_group_metadata::InstanceGroupMetadataBuilder;
@@ -1400,6 +1436,8 @@ pub use crate::types::_cluster_fsx_lustre_config::ClusterFsxLustreConfigBuilder;
 pub use crate::types::_cluster_fsx_open_zfs_config::ClusterFsxOpenZfsConfigBuilder;
 
 pub use crate::types::_cluster_kubernetes_taint::ClusterKubernetesTaintBuilder;
+
+pub use crate::types::_instance_pool_summary::InstancePoolSummaryBuilder;
 
 pub use crate::types::_production_variant_status::ProductionVariantStatusBuilder;
 
@@ -1455,6 +1493,8 @@ pub use crate::types::_inference_component_metadata::InferenceComponentMetadataB
 
 pub use crate::types::_lineage_metadata::LineageMetadataBuilder;
 
+pub use crate::types::_job_step_metadata::JobStepMetadataBuilder;
+
 pub use crate::types::_trial_component_source_detail::TrialComponentSourceDetailBuilder;
 
 pub use crate::types::_model::ModelBuilder;
@@ -1506,6 +1546,8 @@ pub use crate::types::_model_dashboard_monitoring_schedule::ModelDashboardMonito
 pub use crate::types::_cfn_stack_update_parameter::CfnStackUpdateParameterBuilder;
 
 pub use crate::types::_categorical_parameter::CategoricalParameterBuilder;
+
+pub use crate::types::_instance_requirements_eni_configuration::InstanceRequirementsEniConfigurationBuilder;
 
 pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecificationBuilder;
 

@@ -2,10 +2,16 @@
 pub(crate) fn de_policy_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PolicyOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,17 +23,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NetworkFirewallPolicy" => {
                             builder = builder.set_network_firewall_policy(
-                                crate::protocol_serde::shape_network_firewall_policy::de_network_firewall_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_network_firewall_policy::de_network_firewall_policy(tokens, _value, depth + 1)?,
                             );
                         }
                         "ThirdPartyFirewallPolicy" => {
                             builder = builder.set_third_party_firewall_policy(
-                                crate::protocol_serde::shape_third_party_firewall_policy::de_third_party_firewall_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_third_party_firewall_policy::de_third_party_firewall_policy(tokens, _value, depth + 1)?,
                             );
                         }
                         "NetworkAclCommonPolicy" => {
                             builder = builder.set_network_acl_common_policy(
-                                crate::protocol_serde::shape_network_acl_common_policy::de_network_acl_common_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_network_acl_common_policy::de_network_acl_common_policy(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

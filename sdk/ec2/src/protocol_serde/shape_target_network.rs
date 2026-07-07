@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_network(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TargetNetwork, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetNetwork::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_target_network(
             s if s.matches("status") /* Status com.amazonaws.ec2#TargetNetwork$Status */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_association_status::de_association_status(&mut tag)
+                        crate::protocol_serde::shape_association_status::de_association_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_target_network(
             s if s.matches("securityGroups") /* SecurityGroups com.amazonaws.ec2#TargetNetwork$SecurityGroups */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_target_network(
             s if s.matches("availabilityZoneSet") /* AvailabilityZones com.amazonaws.ec2#TargetNetwork$AvailabilityZones */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_availability_zone_set::de_client_vpn_availability_zone_set(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_availability_zone_set::de_client_vpn_availability_zone_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -92,7 +96,7 @@ pub fn de_target_network(
             s if s.matches("availabilityZoneIdSet") /* AvailabilityZoneIds com.amazonaws.ec2#TargetNetwork$AvailabilityZoneIds */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_availability_zone_id_set::de_client_vpn_availability_zone_id_set(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_availability_zone_id_set::de_client_vpn_availability_zone_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

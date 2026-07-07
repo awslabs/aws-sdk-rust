@@ -10,7 +10,7 @@ pub struct Filters {
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
     pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
+    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria. Accepts filter values up to 3,000 characters in length. Filter values are case-sensitive. JSON object key order and whitespace may be arbitrary; array order and tree structure must be preserved.</p>
     pub routing_step_expressions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of up to 50 agent status IDs or ARNs.</p>
     pub agent_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -38,7 +38,7 @@ impl Filters {
     pub fn routing_profiles(&self) -> &[::std::string::String] {
         self.routing_profiles.as_deref().unwrap_or_default()
     }
-    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
+    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria. Accepts filter values up to 3,000 characters in length. Filter values are case-sensitive. JSON object key order and whitespace may be arbitrary; array order and tree structure must be preserved.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_step_expressions.is_none()`.
     pub fn routing_step_expressions(&self) -> &[::std::string::String] {
@@ -147,19 +147,19 @@ impl FiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_routing_step_expressions`](Self::set_routing_step_expressions).
     ///
-    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
+    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria. Accepts filter values up to 3,000 characters in length. Filter values are case-sensitive. JSON object key order and whitespace may be arbitrary; array order and tree structure must be preserved.</p>
     pub fn routing_step_expressions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.routing_step_expressions.unwrap_or_default();
         v.push(input.into());
         self.routing_step_expressions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
+    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria. Accepts filter values up to 3,000 characters in length. Filter values are case-sensitive. JSON object key order and whitespace may be arbitrary; array order and tree structure must be preserved.</p>
     pub fn set_routing_step_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.routing_step_expressions = input;
         self
     }
-    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
+    /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria. Accepts filter values up to 3,000 characters in length. Filter values are case-sensitive. JSON object key order and whitespace may be arbitrary; array order and tree structure must be preserved.</p>
     pub fn get_routing_step_expressions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.routing_step_expressions
     }

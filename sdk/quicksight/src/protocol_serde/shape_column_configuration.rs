@@ -36,10 +36,16 @@ pub fn ser_column_configuration(
 pub(crate) fn de_column_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ColumnConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,34 +54,44 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Column" => {
+                                builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "FormatConfiguration" => {
+                                builder = builder.set_format_configuration(
+                                    crate::protocol_serde::shape_format_configuration::de_format_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Role" => {
+                                builder = builder.set_role(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ColumnRole::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "ColorsConfiguration" => {
+                                builder = builder.set_colors_configuration(
+                                    crate::protocol_serde::shape_colors_configuration::de_colors_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "DecalSettingsConfiguration" => {
+                                builder = builder.set_decal_settings_configuration(
+                                    crate::protocol_serde::shape_decal_settings_configuration::de_decal_settings_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "FormatConfiguration" => {
-                            builder = builder.set_format_configuration(crate::protocol_serde::shape_format_configuration::de_format_configuration(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Role" => {
-                            builder = builder.set_role(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ColumnRole::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "ColorsConfiguration" => {
-                            builder = builder.set_colors_configuration(crate::protocol_serde::shape_colors_configuration::de_colors_configuration(
-                                tokens, _value,
-                            )?);
-                        }
-                        "DecalSettingsConfiguration" => {
-                            builder = builder.set_decal_settings_configuration(
-                                crate::protocol_serde::shape_decal_settings_configuration::de_decal_settings_configuration(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

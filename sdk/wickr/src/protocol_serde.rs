@@ -243,6 +243,8 @@ pub(crate) mod shape_bot;
 
 pub(crate) mod shape_calling_settings;
 
+pub(crate) mod shape_consent_popup_config;
+
 pub(crate) mod shape_error_detail;
 
 pub(crate) mod shape_guest_user;

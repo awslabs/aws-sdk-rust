@@ -22,8 +22,8 @@ impl crate::operation::create_predefined_attribute::builders::CreatePredefinedAt
 }
 /// Fluent builder constructing a request to `CreatePredefinedAttribute`.
 ///
-/// <p>Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined attribute</i> is made up of a name and a value.</p>
-/// <p>For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon Connect quotas</a>.</p>
+/// <p>Creates a new predefined attribute for the specified Connect Customer instance. A <i>predefined attribute</i> is made up of a name and a value.</p>
+/// <p>For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect Customer quotas</a>.</p>
 /// <p><b>Use cases</b></p>
 /// <p>Following are common uses cases for this API:</p>
 /// <ul>
@@ -32,7 +32,7 @@ impl crate::operation::create_predefined_attribute::builders::CreatePredefinedAt
 /// <li>
 /// <p>Create an attribute for business unit name that has a list of predefined business unit names used in your organization. This is a use case where information for a contact varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use contact segment attributes</a>.</p></li>
 /// </ul>
-/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect endpoints and quotas</a>.</p>
+/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect Customer endpoints and quotas</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePredefinedAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -118,17 +118,17 @@ impl CreatePredefinedAttributeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
@@ -165,31 +165,31 @@ impl CreatePredefinedAttributeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_purposes`](Self::set_purposes).
     ///
-    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Connect Customer admin website.</p>
     pub fn purposes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.purposes(input.into());
         self
     }
-    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Connect Customer admin website.</p>
     pub fn set_purposes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_purposes(input);
         self
     }
-    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Connect Customer admin website.</p>
     pub fn get_purposes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_purposes()
     }
-    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Connect Customer admin website.</p>
     pub fn attribute_configuration(mut self, input: crate::types::InputPredefinedAttributeConfiguration) -> Self {
         self.inner = self.inner.attribute_configuration(input);
         self
     }
-    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Connect Customer admin website.</p>
     pub fn set_attribute_configuration(mut self, input: ::std::option::Option<crate::types::InputPredefinedAttributeConfiguration>) -> Self {
         self.inner = self.inner.set_attribute_configuration(input);
         self
     }
-    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Connect Customer admin website.</p>
     pub fn get_attribute_configuration(&self) -> &::std::option::Option<crate::types::InputPredefinedAttributeConfiguration> {
         self.inner.get_attribute_configuration()
     }

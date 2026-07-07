@@ -141,6 +141,8 @@ pub(crate) fn de_describe_bot_analyzer_recommendation(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -148,7 +150,11 @@ pub(crate) fn de_describe_bot_analyzer_recommendation(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "botAnalyzerRecommendationList" => {
                     builder = builder.set_bot_analyzer_recommendation_list(
-                        crate::protocol_serde::shape_bot_analyzer_recommendation_list::de_bot_analyzer_recommendation_list(tokens, _value)?,
+                        crate::protocol_serde::shape_bot_analyzer_recommendation_list::de_bot_analyzer_recommendation_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "botAnalyzerStatus" => {

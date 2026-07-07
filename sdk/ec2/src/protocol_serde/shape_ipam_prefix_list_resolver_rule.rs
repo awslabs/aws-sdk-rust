@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ipam_prefix_list_resolver_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IpamPrefixListResolverRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IpamPrefixListResolverRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -64,7 +68,7 @@ pub fn de_ipam_prefix_list_resolver_rule(
             s if s.matches("conditionSet") /* Conditions com.amazonaws.ec2#IpamPrefixListResolverRule$Conditions */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_ipam_prefix_list_resolver_rule_condition_set::de_ipam_prefix_list_resolver_rule_condition_set(&mut tag)
+                        crate::protocol_serde::shape_ipam_prefix_list_resolver_rule_condition_set::de_ipam_prefix_list_resolver_rule_condition_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

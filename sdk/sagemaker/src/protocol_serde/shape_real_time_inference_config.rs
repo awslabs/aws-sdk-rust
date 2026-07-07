@@ -18,10 +18,16 @@ pub fn ser_real_time_inference_config(
 pub(crate) fn de_real_time_inference_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RealTimeInferenceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -34,7 +40,7 @@ where
                         "InstanceType" => {
                             builder = builder.set_instance_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::InstanceType::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProductionVariantInstanceType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

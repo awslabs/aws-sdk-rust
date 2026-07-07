@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_parameter_group_status(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CacheParameterGroupStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CacheParameterGroupStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_cache_parameter_group_status(
             s if s.matches("CacheNodeIdsToReboot") /* CacheNodeIdsToReboot com.amazonaws.elasticache#CacheParameterGroupStatus$CacheNodeIdsToReboot */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_cache_node_ids_list::de_cache_node_ids_list(&mut tag)
+                        crate::protocol_serde::shape_cache_node_ids_list::de_cache_node_ids_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -118,6 +118,8 @@ pub(crate) fn de_get_backend_storage(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -139,7 +141,11 @@ pub(crate) fn de_get_backend_storage(
                 }
                 "resourceConfig" => {
                     builder = builder.set_resource_config(
-                        crate::protocol_serde::shape_get_backend_storage_resource_config::de_get_backend_storage_resource_config(tokens, _value)?,
+                        crate::protocol_serde::shape_get_backend_storage_resource_config::de_get_backend_storage_resource_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "resourceName" => {

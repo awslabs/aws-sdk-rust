@@ -22,7 +22,7 @@ impl crate::operation::list_chats::builders::ListChatsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChats`.
 ///
-/// Retrieves a paginated list of the user's recent chat executions
+/// <p>Retrieves a paginated list of the user's recent chat executions</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChatsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,62 +102,62 @@ impl ListChatsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// Maximum number of results to return
+    /// <p>Maximum number of results to return</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>Maximum number of results to return</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>Maximum number of results to return</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// Token for pagination
+    /// <p>Token for pagination</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for pagination
+    /// <p>Token for pagination</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for pagination
+    /// <p>Token for pagination</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

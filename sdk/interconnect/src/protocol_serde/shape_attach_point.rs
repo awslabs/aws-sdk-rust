@@ -20,9 +20,19 @@ pub fn ser_attach_point(
 
 pub(crate) fn de_attach_point(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AttachPoint, ::aws_smithy_cbor::decode::DeserializeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+
+    #[allow(unused_variables)]
     fn pair(
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::AttachPoint, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "directConnectGateway" => crate::types::AttachPoint::DirectConnectGateway(decoder.string()?),
@@ -36,7 +46,7 @@ pub(crate) fn de_attach_point(
 
     match decoder.map()? {
         None => {
-            let variant = pair(decoder)?;
+            let variant = pair(decoder, depth)?;
             match decoder.datatype()? {
                 ::aws_smithy_cbor::data::Type::Break => {
                     decoder.skip()?;
@@ -48,7 +58,7 @@ pub(crate) fn de_attach_point(
                 )),
             }
         }
-        Some(1) => pair(decoder),
+        Some(1) => pair(decoder, depth),
         Some(_) => Err(::aws_smithy_cbor::decode::DeserializeError::mixed_union_variants(decoder.position())),
     }
 }

@@ -97,6 +97,8 @@ pub fn de_apply_environment_managed_action(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ApplyEnvironmentManagedActionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ApplyEnvironmentManagedActionResponse got {start_el:?}"

@@ -22,15 +22,15 @@ impl crate::operation::list_predefined_attributes::builders::ListPredefinedAttri
 }
 /// Fluent builder constructing a request to `ListPredefinedAttributes`.
 ///
-/// <p>Lists predefined attributes for the specified Amazon Connect instance. A <i>predefined attribute</i> is made up of a name and a value. You can use predefined attributes for:</p>
+/// <p>Lists predefined attributes for the specified Connect Customer instance. A <i>predefined attribute</i> is made up of a name and a value. You can use predefined attributes for:</p>
 /// <ul>
 /// <li>
 /// <p>Routing proficiency (for example, agent certification) that has predefined values (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create predefined attributes for routing contacts to agents</a>.</p></li>
 /// <li>
 /// <p>Contact information that varies between transfers or conferences, such as the name of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use contact segment attributes</a>.</p></li>
 /// </ul>
-/// <p>For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon Connect quotas</a>.</p>
-/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect endpoints and quotas</a>.</p>
+/// <p>For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect Customer quotas</a>.</p>
+/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect Customer endpoints and quotas</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPredefinedAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl ListPredefinedAttributesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_predefined_attributes::paginator::ListPredefinedAttributesPaginator {
         crate::operation::list_predefined_attributes::paginator::ListPredefinedAttributesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

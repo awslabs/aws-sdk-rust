@@ -114,6 +114,8 @@ pub(crate) fn de_get_private_graph_endpoint(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -127,7 +129,7 @@ pub(crate) fn de_get_private_graph_endpoint(
                     );
                 }
                 "subnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value, depth + 1)?);
                 }
                 "vpcEndpointId" => {
                     builder = builder.set_vpc_endpoint_id(

@@ -235,4 +235,18 @@ impl CreateEventFluentBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.inner.get_metadata()
     }
+    /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
+    pub fn extraction_mode(mut self, input: crate::types::ExtractionMode) -> Self {
+        self.inner = self.inner.extraction_mode(input);
+        self
+    }
+    /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
+    pub fn set_extraction_mode(mut self, input: ::std::option::Option<crate::types::ExtractionMode>) -> Self {
+        self.inner = self.inner.set_extraction_mode(input);
+        self
+    }
+    /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
+    pub fn get_extraction_mode(&self) -> &::std::option::Option<crate::types::ExtractionMode> {
+        self.inner.get_extraction_mode()
+    }
 }

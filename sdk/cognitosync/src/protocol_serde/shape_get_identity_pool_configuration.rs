@@ -131,13 +131,19 @@ pub(crate) fn de_get_identity_pool_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CognitoStreams" => {
-                    builder = builder.set_cognito_streams(crate::protocol_serde::shape_cognito_streams::de_cognito_streams(tokens, _value)?);
+                    builder = builder.set_cognito_streams(crate::protocol_serde::shape_cognito_streams::de_cognito_streams(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "IdentityPoolId" => {
                     builder = builder.set_identity_pool_id(
@@ -147,7 +153,7 @@ pub(crate) fn de_get_identity_pool_configuration(
                     );
                 }
                 "PushSync" => {
-                    builder = builder.set_push_sync(crate::protocol_serde::shape_push_sync::de_push_sync(tokens, _value)?);
+                    builder = builder.set_push_sync(crate::protocol_serde::shape_push_sync::de_push_sync(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

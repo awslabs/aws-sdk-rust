@@ -152,6 +152,8 @@ pub(crate) fn de_put_log_events(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -166,12 +168,14 @@ pub(crate) fn de_put_log_events(
                 }
                 "rejectedLogEventsInfo" => {
                     builder = builder.set_rejected_log_events_info(
-                        crate::protocol_serde::shape_rejected_log_events_info::de_rejected_log_events_info(tokens, _value)?,
+                        crate::protocol_serde::shape_rejected_log_events_info::de_rejected_log_events_info(tokens, _value, depth + 1)?,
                     );
                 }
                 "rejectedEntityInfo" => {
                     builder = builder.set_rejected_entity_info(crate::protocol_serde::shape_rejected_entity_info::de_rejected_entity_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

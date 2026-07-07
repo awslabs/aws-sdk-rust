@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_path_statement(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PathStatement, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PathStatement::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_path_statement(
             s if s.matches("packetHeaderStatement") /* PacketHeaderStatement com.amazonaws.ec2#PathStatement$PacketHeaderStatement */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_packet_header_statement::de_packet_header_statement(&mut tag)
+                        crate::protocol_serde::shape_packet_header_statement::de_packet_header_statement(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_path_statement(
             s if s.matches("resourceStatement") /* ResourceStatement com.amazonaws.ec2#PathStatement$ResourceStatement */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_resource_statement::de_resource_statement(&mut tag)
+                        crate::protocol_serde::shape_resource_statement::de_resource_statement(&mut tag, depth + 1)
                         ?
                     )
                 ;

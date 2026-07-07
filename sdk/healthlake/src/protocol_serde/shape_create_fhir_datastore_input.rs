@@ -42,5 +42,23 @@ pub fn ser_create_fhir_datastore_input_input(
         crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.analytics_configuration {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("AnalyticsConfiguration").start_object();
+        crate::protocol_serde::shape_analytics_configuration::ser_analytics_configuration(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.nlp_configuration {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("NlpConfiguration").start_object();
+        crate::protocol_serde::shape_nlp_configuration::ser_nlp_configuration(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.profile_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("ProfileConfiguration").start_object();
+        crate::protocol_serde::shape_profile_configuration::ser_profile_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

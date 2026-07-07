@@ -48,7 +48,11 @@ pub fn ser_replication_rule(
 #[allow(clippy::needless_question_mark)]
 pub fn de_replication_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReplicationRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -97,7 +101,7 @@ pub fn de_replication_rule(
             s if s.matches("Filter") /* Filter com.amazonaws.s3#ReplicationRule$Filter */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_replication_rule_filter::de_replication_rule_filter(&mut tag)
+                        crate::protocol_serde::shape_replication_rule_filter::de_replication_rule_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -121,7 +125,7 @@ pub fn de_replication_rule(
             s if s.matches("SourceSelectionCriteria") /* SourceSelectionCriteria com.amazonaws.s3#ReplicationRule$SourceSelectionCriteria */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_source_selection_criteria::de_source_selection_criteria(&mut tag)
+                        crate::protocol_serde::shape_source_selection_criteria::de_source_selection_criteria(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -131,7 +135,7 @@ pub fn de_replication_rule(
             s if s.matches("ExistingObjectReplication") /* ExistingObjectReplication com.amazonaws.s3#ReplicationRule$ExistingObjectReplication */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_existing_object_replication::de_existing_object_replication(&mut tag)
+                        crate::protocol_serde::shape_existing_object_replication::de_existing_object_replication(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -141,7 +145,7 @@ pub fn de_replication_rule(
             s if s.matches("Destination") /* Destination com.amazonaws.s3#ReplicationRule$Destination */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_destination::de_destination(&mut tag)
+                        crate::protocol_serde::shape_destination::de_destination(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -151,7 +155,7 @@ pub fn de_replication_rule(
             s if s.matches("DeleteMarkerReplication") /* DeleteMarkerReplication com.amazonaws.s3#ReplicationRule$DeleteMarkerReplication */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_delete_marker_replication::de_delete_marker_replication(&mut tag)
+                        crate::protocol_serde::shape_delete_marker_replication::de_delete_marker_replication(&mut tag, depth + 1)
                         ?
                     )
                 ;

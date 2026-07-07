@@ -60,6 +60,10 @@ pub struct JobRun {
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total time for a job in the QUEUED state in milliseconds.</p>
     pub queued_duration_milliseconds: ::std::option::Option<i64>,
+    /// <p>The applied image configuration.</p>
+    pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
+    /// <p>The specification applied to each worker type. Includes the JobRun-level ImageConfiguration when the applicationLevelDigestResolution is false for the application.</p>
+    pub worker_type_specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
 }
 impl JobRun {
     /// <p>The ID of the application the job is running on.</p>
@@ -181,6 +185,16 @@ impl JobRun {
     pub fn queued_duration_milliseconds(&self) -> ::std::option::Option<i64> {
         self.queued_duration_milliseconds
     }
+    /// <p>The applied image configuration.</p>
+    pub fn image_configuration(&self) -> ::std::option::Option<&crate::types::ImageConfiguration> {
+        self.image_configuration.as_ref()
+    }
+    /// <p>The specification applied to each worker type. Includes the JobRun-level ImageConfiguration when the applicationLevelDigestResolution is false for the application.</p>
+    pub fn worker_type_specifications(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
+        self.worker_type_specifications.as_ref()
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -221,6 +235,9 @@ pub struct JobRunBuilder {
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) queued_duration_milliseconds: ::std::option::Option<i64>,
+    pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
+    pub(crate) worker_type_specifications:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
 }
 impl JobRunBuilder {
     /// <p>The ID of the application the job is running on.</p>
@@ -632,6 +649,49 @@ impl JobRunBuilder {
     pub fn get_queued_duration_milliseconds(&self) -> &::std::option::Option<i64> {
         &self.queued_duration_milliseconds
     }
+    /// <p>The applied image configuration.</p>
+    pub fn image_configuration(mut self, input: crate::types::ImageConfiguration) -> Self {
+        self.image_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The applied image configuration.</p>
+    pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfiguration>) -> Self {
+        self.image_configuration = input;
+        self
+    }
+    /// <p>The applied image configuration.</p>
+    pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfiguration> {
+        &self.image_configuration
+    }
+    /// Adds a key-value pair to `worker_type_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
+    ///
+    /// <p>The specification applied to each worker type. Includes the JobRun-level ImageConfiguration when the applicationLevelDigestResolution is false for the application.</p>
+    pub fn worker_type_specifications(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::WorkerTypeSpecification,
+    ) -> Self {
+        let mut hash_map = self.worker_type_specifications.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.worker_type_specifications = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The specification applied to each worker type. Includes the JobRun-level ImageConfiguration when the applicationLevelDigestResolution is false for the application.</p>
+    pub fn set_worker_type_specifications(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
+    ) -> Self {
+        self.worker_type_specifications = input;
+        self
+    }
+    /// <p>The specification applied to each worker type. Includes the JobRun-level ImageConfiguration when the applicationLevelDigestResolution is false for the application.</p>
+    pub fn get_worker_type_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
+        &self.worker_type_specifications
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::JobRunBuilder::application_id)
@@ -724,6 +784,8 @@ impl JobRunBuilder {
             started_at: self.started_at,
             ended_at: self.ended_at,
             queued_duration_milliseconds: self.queued_duration_milliseconds,
+            image_configuration: self.image_configuration,
+            worker_type_specifications: self.worker_type_specifications,
         })
     }
 }

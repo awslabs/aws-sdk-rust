@@ -57,10 +57,16 @@ pub fn ser_parameters(
 pub(crate) fn de_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Parameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,29 +75,31 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "StringParameters" => {
-                            builder = builder.set_string_parameters(crate::protocol_serde::shape_string_parameter_list::de_string_parameter_list(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "StringParameters" => {
+                                builder = builder.set_string_parameters(
+                                    crate::protocol_serde::shape_string_parameter_list::de_string_parameter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "IntegerParameters" => {
+                                builder = builder.set_integer_parameters(
+                                    crate::protocol_serde::shape_integer_parameter_list::de_integer_parameter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "DecimalParameters" => {
+                                builder = builder.set_decimal_parameters(
+                                    crate::protocol_serde::shape_decimal_parameter_list::de_decimal_parameter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "DateTimeParameters" => {
+                                builder = builder.set_date_time_parameters(
+                                    crate::protocol_serde::shape_date_time_parameter_list::de_date_time_parameter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "IntegerParameters" => {
-                            builder = builder.set_integer_parameters(crate::protocol_serde::shape_integer_parameter_list::de_integer_parameter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "DecimalParameters" => {
-                            builder = builder.set_decimal_parameters(crate::protocol_serde::shape_decimal_parameter_list::de_decimal_parameter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "DateTimeParameters" => {
-                            builder = builder.set_date_time_parameters(
-                                crate::protocol_serde::shape_date_time_parameter_list::de_date_time_parameter_list(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

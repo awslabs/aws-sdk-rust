@@ -47,6 +47,8 @@ pub fn de_list_receipt_filters(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListReceiptFiltersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListReceiptFiltersResponse got {start_el:?}"
@@ -64,7 +66,7 @@ pub fn de_list_receipt_filters(
             s if s.matches("Filters") /* Filters com.amazonaws.ses.synthetic#ListReceiptFiltersOutput$Filters */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_receipt_filter_list::de_receipt_filter_list(&mut tag)
+                        crate::protocol_serde::shape_receipt_filter_list::de_receipt_filter_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

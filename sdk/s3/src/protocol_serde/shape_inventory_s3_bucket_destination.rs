@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_inventory_s3_bucket_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InventoryS3BucketDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InventoryS3BucketDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -63,7 +67,7 @@ pub fn de_inventory_s3_bucket_destination(
             s if s.matches("Encryption") /* Encryption com.amazonaws.s3#InventoryS3BucketDestination$Encryption */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_inventory_encryption::de_inventory_encryption(&mut tag)
+                        crate::protocol_serde::shape_inventory_encryption::de_inventory_encryption(&mut tag, depth + 1)
                         ?
                     )
                 ;

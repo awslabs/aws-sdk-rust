@@ -95,6 +95,8 @@ pub(crate) fn de_describe_upload_buffer(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -108,7 +110,7 @@ pub(crate) fn de_describe_upload_buffer(
                     );
                 }
                 "DiskIds" => {
-                    builder = builder.set_disk_ids(crate::protocol_serde::shape_disk_ids::de_disk_ids(tokens, _value)?);
+                    builder = builder.set_disk_ids(crate::protocol_serde::shape_disk_ids::de_disk_ids(tokens, _value, depth + 1)?);
                 }
                 "UploadBufferUsedInBytes" => {
                     builder = builder.set_upload_buffer_used_in_bytes(

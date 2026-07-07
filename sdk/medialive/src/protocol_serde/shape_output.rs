@@ -39,10 +39,16 @@ pub fn ser_output(
 pub(crate) fn de_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Output>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,12 +59,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptionNames" => {
-                            builder =
-                                builder.set_audio_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_audio_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "captionDescriptionNames" => {
-                            builder = builder
-                                .set_caption_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_caption_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "outputName" => {
                             builder = builder.set_output_name(
@@ -68,7 +80,11 @@ where
                             );
                         }
                         "outputSettings" => {
-                            builder = builder.set_output_settings(crate::protocol_serde::shape_output_settings::de_output_settings(tokens, _value)?);
+                            builder = builder.set_output_settings(crate::protocol_serde::shape_output_settings::de_output_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "videoDescriptionName" => {
                             builder = builder.set_video_description_name(

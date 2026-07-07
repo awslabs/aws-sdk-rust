@@ -52,6 +52,10 @@ pub struct RouterInput {
     pub maintenance_schedule_type: ::std::option::Option<crate::types::MaintenanceScheduleType>,
     /// <p>The current maintenance schedule details for this router input.</p>
     pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    /// <p>The type of content quality analysis applied to the router input.</p>
+    pub content_quality_analysis_type: ::std::option::Option<crate::types::RouterContentQualityAnalysisType>,
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub content_quality_analysis_configuration: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
 }
 impl RouterInput {
     /// <p>The name of the router input.</p>
@@ -156,6 +160,14 @@ impl RouterInput {
     pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
         self.maintenance_schedule.as_ref()
     }
+    /// <p>The type of content quality analysis applied to the router input.</p>
+    pub fn content_quality_analysis_type(&self) -> ::std::option::Option<&crate::types::RouterContentQualityAnalysisType> {
+        self.content_quality_analysis_type.as_ref()
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn content_quality_analysis_configuration(&self) -> ::std::option::Option<&crate::types::RouterContentQualityAnalysisConfiguration> {
+        self.content_quality_analysis_configuration.as_ref()
+    }
 }
 impl RouterInput {
     /// Creates a new builder-style object to manufacture [`RouterInput`](crate::types::RouterInput).
@@ -192,6 +204,8 @@ pub struct RouterInputBuilder {
     pub(crate) maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
     pub(crate) maintenance_schedule_type: ::std::option::Option<crate::types::MaintenanceScheduleType>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    pub(crate) content_quality_analysis_type: ::std::option::Option<crate::types::RouterContentQualityAnalysisType>,
+    pub(crate) content_quality_analysis_configuration: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
 }
 impl RouterInputBuilder {
     /// <p>The name of the router input.</p>
@@ -560,6 +574,39 @@ impl RouterInputBuilder {
     pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
         &self.maintenance_schedule
     }
+    /// <p>The type of content quality analysis applied to the router input.</p>
+    /// This field is required.
+    pub fn content_quality_analysis_type(mut self, input: crate::types::RouterContentQualityAnalysisType) -> Self {
+        self.content_quality_analysis_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of content quality analysis applied to the router input.</p>
+    pub fn set_content_quality_analysis_type(mut self, input: ::std::option::Option<crate::types::RouterContentQualityAnalysisType>) -> Self {
+        self.content_quality_analysis_type = input;
+        self
+    }
+    /// <p>The type of content quality analysis applied to the router input.</p>
+    pub fn get_content_quality_analysis_type(&self) -> &::std::option::Option<crate::types::RouterContentQualityAnalysisType> {
+        &self.content_quality_analysis_type
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    /// This field is required.
+    pub fn content_quality_analysis_configuration(mut self, input: crate::types::RouterContentQualityAnalysisConfiguration) -> Self {
+        self.content_quality_analysis_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn set_content_quality_analysis_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
+    ) -> Self {
+        self.content_quality_analysis_configuration = input;
+        self
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn get_content_quality_analysis_configuration(&self) -> &::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration> {
+        &self.content_quality_analysis_configuration
+    }
     /// Consumes the builder and constructs a [`RouterInput`](crate::types::RouterInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RouterInputBuilder::name)
@@ -684,6 +731,8 @@ impl RouterInputBuilder {
             maintenance_configuration: self.maintenance_configuration,
             maintenance_schedule_type: self.maintenance_schedule_type,
             maintenance_schedule: self.maintenance_schedule,
+            content_quality_analysis_type: self.content_quality_analysis_type,
+            content_quality_analysis_configuration: self.content_quality_analysis_configuration,
         })
     }
 }

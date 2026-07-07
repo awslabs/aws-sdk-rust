@@ -19,6 +19,8 @@ pub use crate::types::error::_unmodifiable_entity_exception::UnmodifiableEntityE
 
 pub use crate::types::error::_no_such_conformance_pack_exception::NoSuchConformancePackExceptionBuilder;
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
 pub use crate::types::error::_last_delivery_channel_delete_failed_exception::LastDeliveryChannelDeleteFailedExceptionBuilder;
 
 pub use crate::types::error::_no_such_delivery_channel_exception::NoSuchDeliveryChannelExceptionBuilder;
@@ -40,8 +42,6 @@ pub use crate::types::error::_no_such_remediation_exception_exception::NoSuchRem
 pub use crate::types::error::_no_running_configuration_recorder_exception::NoRunningConfigurationRecorderExceptionBuilder;
 
 pub use crate::types::error::_no_such_retention_configuration_exception::NoSuchRetentionConfigurationExceptionBuilder;
-
-pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_invalid_limit_exception::InvalidLimitExceptionBuilder;
 
@@ -74,6 +74,8 @@ pub use crate::types::error::_max_number_of_configuration_recorders_exceeded_exc
 pub use crate::types::error::_conformance_pack_template_validation_exception::ConformancePackTemplateValidationExceptionBuilder;
 
 pub use crate::types::error::_max_number_of_conformance_packs_exceeded_exception::MaxNumberOfConformancePacksExceededExceptionBuilder;
+
+pub use crate::types::error::_max_number_of_connectors_exceeded_exception::MaxNumberOfConnectorsExceededExceptionBuilder;
 
 pub use crate::types::error::_insufficient_delivery_policy_exception::InsufficientDeliveryPolicyExceptionBuilder;
 

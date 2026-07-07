@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_valid_storage_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ValidStorageOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ValidStorageOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_valid_storage_options(
             s if s.matches("StorageSize") /* StorageSize com.amazonaws.rds#ValidStorageOptions$StorageSize */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_range_list::de_range_list(&mut tag)
+                        crate::protocol_serde::shape_range_list::de_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_valid_storage_options(
             s if s.matches("ProvisionedIops") /* ProvisionedIops com.amazonaws.rds#ValidStorageOptions$ProvisionedIops */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_range_list::de_range_list(&mut tag)
+                        crate::protocol_serde::shape_range_list::de_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_valid_storage_options(
             s if s.matches("IopsToStorageRatio") /* IopsToStorageRatio com.amazonaws.rds#ValidStorageOptions$IopsToStorageRatio */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_double_range_list::de_double_range_list(&mut tag)
+                        crate::protocol_serde::shape_double_range_list::de_double_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_valid_storage_options(
             s if s.matches("ProvisionedStorageThroughput") /* ProvisionedStorageThroughput com.amazonaws.rds#ValidStorageOptions$ProvisionedStorageThroughput */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_range_list::de_range_list(&mut tag)
+                        crate::protocol_serde::shape_range_list::de_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -63,7 +67,7 @@ pub fn de_valid_storage_options(
             s if s.matches("StorageThroughputToIopsRatio") /* StorageThroughputToIopsRatio com.amazonaws.rds#ValidStorageOptions$StorageThroughputToIopsRatio */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_double_range_list::de_double_range_list(&mut tag)
+                        crate::protocol_serde::shape_double_range_list::de_double_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -6,11 +6,11 @@
 pub struct ExpectedCustomerSpend {
     /// <p>Represents the estimated monthly revenue that the partner expects to earn from the opportunity. This helps in forecasting financial returns.</p>
     pub amount: ::std::string::String,
-    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
+    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     pub currency_code: crate::types::CurrencyCode,
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Use <code>Monthly</code> for recurring monthly spend (required for <code>TargetCompany: "AWS"</code> entries). Use <code>None</code> for one-time deal value entries (required for <code>TargetCompany: "Self"</code> entries when providing Total Contract Value).</p>
     pub frequency: crate::types::PaymentFrequency,
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
+    /// <p>Specifies the entity associated with this spend entry. Use <code>AWS</code> for the system’s AWS Monthly Recurring Revenue (MRR) estimate. Use <code>Self</code> for the partner’s own deal value entry when providing Total Contract Value (TCV) for automatic MRR conversion. When <code>ExpectedContractDuration</code> is present on the Project, only <code>AWS</code> and <code>Self</code> are accepted. When <code>ExpectedContractDuration</code> is not present, only <code>AWS</code> is accepted and any other value will be automatically set to <code>AWS</code>.</p>
     pub target_company: ::std::string::String,
     /// <p>A URL providing additional information or context about the spend estimation.</p>
     pub estimation_url: ::std::option::Option<::std::string::String>,
@@ -21,15 +21,15 @@ impl ExpectedCustomerSpend {
         use std::ops::Deref;
         self.amount.deref()
     }
-    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
+    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     pub fn currency_code(&self) -> &crate::types::CurrencyCode {
         &self.currency_code
     }
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Use <code>Monthly</code> for recurring monthly spend (required for <code>TargetCompany: "AWS"</code> entries). Use <code>None</code> for one-time deal value entries (required for <code>TargetCompany: "Self"</code> entries when providing Total Contract Value).</p>
     pub fn frequency(&self) -> &crate::types::PaymentFrequency {
         &self.frequency
     }
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
+    /// <p>Specifies the entity associated with this spend entry. Use <code>AWS</code> for the system’s AWS Monthly Recurring Revenue (MRR) estimate. Use <code>Self</code> for the partner’s own deal value entry when providing Total Contract Value (TCV) for automatic MRR conversion. When <code>ExpectedContractDuration</code> is present on the Project, only <code>AWS</code> and <code>Self</code> are accepted. When <code>ExpectedContractDuration</code> is not present, only <code>AWS</code> is accepted and any other value will be automatically set to <code>AWS</code>.</p>
     pub fn target_company(&self) -> &str {
         use std::ops::Deref;
         self.target_company.deref()
@@ -82,48 +82,48 @@ impl ExpectedCustomerSpendBuilder {
     pub fn get_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.amount
     }
-    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
+    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     /// This field is required.
     pub fn currency_code(mut self, input: crate::types::CurrencyCode) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
         self
     }
-    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
+    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
         self.currency_code = input;
         self
     }
-    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
+    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
         &self.currency_code
     }
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Use <code>Monthly</code> for recurring monthly spend (required for <code>TargetCompany: "AWS"</code> entries). Use <code>None</code> for one-time deal value entries (required for <code>TargetCompany: "Self"</code> entries when providing Total Contract Value).</p>
     /// This field is required.
     pub fn frequency(mut self, input: crate::types::PaymentFrequency) -> Self {
         self.frequency = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Use <code>Monthly</code> for recurring monthly spend (required for <code>TargetCompany: "AWS"</code> entries). Use <code>None</code> for one-time deal value entries (required for <code>TargetCompany: "Self"</code> entries when providing Total Contract Value).</p>
     pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::PaymentFrequency>) -> Self {
         self.frequency = input;
         self
     }
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Use <code>Monthly</code> for recurring monthly spend (required for <code>TargetCompany: "AWS"</code> entries). Use <code>None</code> for one-time deal value entries (required for <code>TargetCompany: "Self"</code> entries when providing Total Contract Value).</p>
     pub fn get_frequency(&self) -> &::std::option::Option<crate::types::PaymentFrequency> {
         &self.frequency
     }
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
+    /// <p>Specifies the entity associated with this spend entry. Use <code>AWS</code> for the system’s AWS Monthly Recurring Revenue (MRR) estimate. Use <code>Self</code> for the partner’s own deal value entry when providing Total Contract Value (TCV) for automatic MRR conversion. When <code>ExpectedContractDuration</code> is present on the Project, only <code>AWS</code> and <code>Self</code> are accepted. When <code>ExpectedContractDuration</code> is not present, only <code>AWS</code> is accepted and any other value will be automatically set to <code>AWS</code>.</p>
     /// This field is required.
     pub fn target_company(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_company = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
+    /// <p>Specifies the entity associated with this spend entry. Use <code>AWS</code> for the system’s AWS Monthly Recurring Revenue (MRR) estimate. Use <code>Self</code> for the partner’s own deal value entry when providing Total Contract Value (TCV) for automatic MRR conversion. When <code>ExpectedContractDuration</code> is present on the Project, only <code>AWS</code> and <code>Self</code> are accepted. When <code>ExpectedContractDuration</code> is not present, only <code>AWS</code> is accepted and any other value will be automatically set to <code>AWS</code>.</p>
     pub fn set_target_company(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_company = input;
         self
     }
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
+    /// <p>Specifies the entity associated with this spend entry. Use <code>AWS</code> for the system’s AWS Monthly Recurring Revenue (MRR) estimate. Use <code>Self</code> for the partner’s own deal value entry when providing Total Contract Value (TCV) for automatic MRR conversion. When <code>ExpectedContractDuration</code> is present on the Project, only <code>AWS</code> and <code>Self</code> are accepted. When <code>ExpectedContractDuration</code> is not present, only <code>AWS</code> is accepted and any other value will be automatically set to <code>AWS</code>.</p>
     pub fn get_target_company(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_company
     }

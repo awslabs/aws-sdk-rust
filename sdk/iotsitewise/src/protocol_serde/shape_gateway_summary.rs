@@ -2,10 +2,16 @@
 pub(crate) fn de_gateway_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GatewaySummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,8 +36,11 @@ where
                             );
                         }
                         "gatewayPlatform" => {
-                            builder =
-                                builder.set_gateway_platform(crate::protocol_serde::shape_gateway_platform::de_gateway_platform(tokens, _value)?);
+                            builder = builder.set_gateway_platform(crate::protocol_serde::shape_gateway_platform::de_gateway_platform(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "gatewayVersion" => {
                             builder = builder.set_gateway_version(
@@ -42,7 +51,11 @@ where
                         }
                         "gatewayCapabilitySummaries" => {
                             builder = builder.set_gateway_capability_summaries(
-                                crate::protocol_serde::shape_gateway_capability_summaries::de_gateway_capability_summaries(tokens, _value)?,
+                                crate::protocol_serde::shape_gateway_capability_summaries::de_gateway_capability_summaries(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "creationDate" => {

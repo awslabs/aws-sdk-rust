@@ -2,10 +2,16 @@
 pub(crate) fn de_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Job>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -105,16 +111,18 @@ where
                             );
                         }
                         "Outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape_output_list::de_output_list(tokens, _value)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_output_list::de_output_list(tokens, _value, depth + 1)?);
                         }
                         "DataCatalogOutputs" => {
                             builder = builder.set_data_catalog_outputs(
-                                crate::protocol_serde::shape_data_catalog_output_list::de_data_catalog_output_list(tokens, _value)?,
+                                crate::protocol_serde::shape_data_catalog_output_list::de_data_catalog_output_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "DatabaseOutputs" => {
                             builder = builder.set_database_outputs(crate::protocol_serde::shape_database_output_list::de_database_output_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ProjectName" => {
@@ -125,8 +133,11 @@ where
                             );
                         }
                         "RecipeReference" => {
-                            builder =
-                                builder.set_recipe_reference(crate::protocol_serde::shape_recipe_reference::de_recipe_reference(tokens, _value)?);
+                            builder = builder.set_recipe_reference(crate::protocol_serde::shape_recipe_reference::de_recipe_reference(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ResourceArn" => {
                             builder = builder.set_resource_arn(
@@ -150,14 +161,18 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "JobSample" => {
-                            builder = builder.set_job_sample(crate::protocol_serde::shape_job_sample::de_job_sample(tokens, _value)?);
+                            builder = builder.set_job_sample(crate::protocol_serde::shape_job_sample::de_job_sample(tokens, _value, depth + 1)?);
                         }
                         "ValidationConfigurations" => {
                             builder = builder.set_validation_configurations(
-                                crate::protocol_serde::shape_validation_configuration_list::de_validation_configuration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_validation_configuration_list::de_validation_configuration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

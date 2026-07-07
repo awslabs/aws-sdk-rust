@@ -2,10 +2,16 @@
 pub(crate) fn de_described_web_app<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribedWebApp>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,7 @@ where
                         }
                         "DescribedIdentityProviderDetails" => {
                             builder = builder.set_described_identity_provider_details(
-                                    crate::protocol_serde::shape_described_web_app_identity_provider_details::de_described_web_app_identity_provider_details(tokens, _value)?
+                                    crate::protocol_serde::shape_described_web_app_identity_provider_details::de_described_web_app_identity_provider_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "AccessEndpoint" => {
@@ -49,10 +55,11 @@ where
                             );
                         }
                         "WebAppUnits" => {
-                            builder = builder.set_web_app_units(crate::protocol_serde::shape_web_app_units::de_web_app_units(tokens, _value)?);
+                            builder =
+                                builder.set_web_app_units(crate::protocol_serde::shape_web_app_units::de_web_app_units(tokens, _value, depth + 1)?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "WebAppEndpointPolicy" => {
                             builder = builder.set_web_app_endpoint_policy(
@@ -71,7 +78,9 @@ where
                         "DescribedEndpointDetails" => {
                             builder = builder.set_described_endpoint_details(
                                 crate::protocol_serde::shape_described_web_app_endpoint_details::de_described_web_app_endpoint_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

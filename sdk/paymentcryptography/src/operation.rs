@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddKeyReplicationRegions` operation.
 pub mod add_key_replication_regions;
 
+/// Types for the `AssociateMpaTeam` operation.
+pub mod associate_mpa_team;
+
 /// Types for the `CreateAlias` operation.
 pub mod create_alias;
 
@@ -16,8 +19,14 @@ pub mod delete_alias;
 /// Types for the `DeleteKey` operation.
 pub mod delete_key;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DisableDefaultKeyReplicationRegions` operation.
 pub mod disable_default_key_replication_regions;
+
+/// Types for the `DisassociateMpaTeam` operation.
+pub mod disassociate_mpa_team;
 
 /// Types for the `EnableDefaultKeyReplicationRegions` operation.
 pub mod enable_default_key_replication_regions;
@@ -37,6 +46,9 @@ pub mod get_default_key_replication_regions;
 /// Types for the `GetKey` operation.
 pub mod get_key;
 
+/// Types for the `GetMpaTeamAssociation` operation.
+pub mod get_mpa_team_association;
+
 /// Types for the `GetParametersForExport` operation.
 pub mod get_parameters_for_export;
 
@@ -45,6 +57,9 @@ pub mod get_parameters_for_import;
 
 /// Types for the `GetPublicKeyCertificate` operation.
 pub mod get_public_key_certificate;
+
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
 
 /// Types for the `ImportKey` operation.
 pub mod import_key;
@@ -57,6 +72,9 @@ pub mod list_keys;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `RemoveKeyReplicationRegions` operation.
 pub mod remove_key_replication_regions;

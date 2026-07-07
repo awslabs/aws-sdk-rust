@@ -95,6 +95,8 @@ pub use crate::types::_replication_configuration_data_plane_routing::Replication
 
 pub use crate::types::_internet_protocol::InternetProtocol;
 
+pub use crate::types::_storage_configuration::StorageConfiguration;
+
 pub use crate::types::_describe_source_servers_request_filters::DescribeSourceServersRequestFilters;
 
 pub use crate::types::_source_server_connector_action::SourceServerConnectorAction;
@@ -195,9 +197,15 @@ pub use crate::types::_encryption_algorithm::EncryptionAlgorithm;
 
 pub use crate::types::_replication_configuration_template::ReplicationConfigurationTemplate;
 
+pub use crate::types::_storage_type::StorageType;
+
+pub use crate::types::_fsx_ontap_configuration::FsxOntapConfiguration;
+
 pub use crate::types::_source_server::SourceServer;
 
 pub use crate::types::_first_boot::FirstBoot;
+
+pub use crate::types::_last_known_check_status::LastKnownCheckStatus;
 
 pub use crate::types::_data_replication_state::DataReplicationState;
 
@@ -283,6 +291,8 @@ pub use crate::types::_execution_stage_activity::ExecutionStageActivity;
 
 pub use crate::types::_operation_union::OperationUnion;
 
+pub use crate::types::_last_known_check::LastKnownCheck;
+
 pub use crate::types::_data_replication_info_replicated_disk::DataReplicationInfoReplicatedDisk;
 
 pub use crate::types::_data_replication_error_string::DataReplicationErrorString;
@@ -324,6 +334,8 @@ pub use crate::types::_split_operation::SplitOperation;
 pub use crate::types::_delete_operation::DeleteOperation;
 
 pub use crate::types::_update_operation::UpdateOperation;
+
+pub use crate::types::_last_known_check_type::LastKnownCheckType;
 
 pub use crate::types::_data_replication_initiation_step::DataReplicationInitiationStep;
 
@@ -437,6 +449,8 @@ mod _export_task_summary;
 
 mod _first_boot;
 
+mod _fsx_ontap_configuration;
+
 mod _identification_hints;
 
 mod _import_error_data;
@@ -480,6 +494,12 @@ mod _job_post_launch_actions_launch_status;
 mod _job_status;
 
 mod _job_type;
+
+mod _last_known_check;
+
+mod _last_known_check_status;
+
+mod _last_known_check_type;
 
 mod _launch_configuration_template;
 
@@ -670,6 +690,10 @@ mod _ssm_parameter_store_parameter_type;
 mod _start_network_migration_mapping_update_construct;
 
 mod _start_network_migration_mapping_update_segment;
+
+mod _storage_configuration;
+
+mod _storage_type;
 
 mod _target_deployment;
 

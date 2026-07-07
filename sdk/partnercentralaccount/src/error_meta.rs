@@ -795,6 +795,9 @@ impl From<crate::operation::put_profile_visibility::PutProfileVisibilityError> f
             crate::operation::put_profile_visibility::PutProfileVisibilityError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::put_profile_visibility::PutProfileVisibilityError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::put_profile_visibility::PutProfileVisibilityError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_profile_visibility::PutProfileVisibilityError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_profile_visibility::PutProfileVisibilityError::Unhandled(inner) => Error::Unhandled(inner),
@@ -911,6 +914,9 @@ impl From<crate::operation::start_profile_update_task::StartProfileUpdateTaskErr
             }
             crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ValidationException(inner) => Error::ValidationException(inner),

@@ -149,6 +149,8 @@ pub fn de_list_tags_for_resources(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListTagsForResourcesResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListTagsForResourcesResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -159,7 +161,7 @@ pub fn de_list_tags_for_resources(
             s if s.matches("ResourceTagSets") /* ResourceTagSets com.amazonaws.route53.synthetic#ListTagsForResourcesOutput$ResourceTagSets */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_resource_tag_set_list::de_resource_tag_set_list(&mut tag)
+                        crate::protocol_serde::shape_resource_tag_set_list::de_resource_tag_set_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

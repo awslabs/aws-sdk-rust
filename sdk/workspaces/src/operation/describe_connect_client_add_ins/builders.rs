@@ -22,7 +22,7 @@ impl crate::operation::describe_connect_client_add_ins::builders::DescribeConnec
 }
 /// Fluent builder constructing a request to `DescribeConnectClientAddIns`.
 ///
-/// <p>Retrieves a list of Amazon Connect client add-ins that have been created.</p>
+/// <p>Retrieves a list of Connect Customer client add-ins that have been created.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConnectClientAddInsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -20,7 +20,11 @@ pub fn ser_receipt_filter(
 #[allow(clippy::needless_question_mark)]
 pub fn de_receipt_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReceiptFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReceiptFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -41,7 +45,7 @@ pub fn de_receipt_filter(
             s if s.matches("IpFilter") /* IpFilter com.amazonaws.ses#ReceiptFilter$IpFilter */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_receipt_ip_filter::de_receipt_ip_filter(&mut tag)
+                        crate::protocol_serde::shape_receipt_ip_filter::de_receipt_ip_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;

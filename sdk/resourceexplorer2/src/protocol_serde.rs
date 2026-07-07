@@ -215,11 +215,15 @@ pub(crate) mod shape_region_status;
 
 pub(crate) mod shape_resource;
 
+pub(crate) mod shape_service_linked_recorder_info;
+
 pub(crate) mod shape_streaming_access_details;
 
 pub(crate) mod shape_supported_resource_type;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_cfn_resource_type_list;
 
 pub(crate) mod shape_index_status;
 

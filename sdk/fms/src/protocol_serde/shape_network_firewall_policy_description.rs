@@ -2,10 +2,16 @@
 pub(crate) fn de_network_firewall_policy_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NetworkFirewallPolicyDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,37 +23,53 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StatelessRuleGroups" => {
                             builder = builder.set_stateless_rule_groups(
-                                crate::protocol_serde::shape_stateless_rule_group_list::de_stateless_rule_group_list(tokens, _value)?,
+                                crate::protocol_serde::shape_stateless_rule_group_list::de_stateless_rule_group_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "StatelessDefaultActions" => {
                             builder = builder.set_stateless_default_actions(
-                                crate::protocol_serde::shape_network_firewall_action_list::de_network_firewall_action_list(tokens, _value)?,
+                                crate::protocol_serde::shape_network_firewall_action_list::de_network_firewall_action_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StatelessFragmentDefaultActions" => {
                             builder = builder.set_stateless_fragment_default_actions(
-                                crate::protocol_serde::shape_network_firewall_action_list::de_network_firewall_action_list(tokens, _value)?,
+                                crate::protocol_serde::shape_network_firewall_action_list::de_network_firewall_action_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StatelessCustomActions" => {
                             builder = builder.set_stateless_custom_actions(
-                                crate::protocol_serde::shape_network_firewall_action_list::de_network_firewall_action_list(tokens, _value)?,
+                                crate::protocol_serde::shape_network_firewall_action_list::de_network_firewall_action_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StatefulRuleGroups" => {
                             builder = builder.set_stateful_rule_groups(
-                                crate::protocol_serde::shape_stateful_rule_group_list::de_stateful_rule_group_list(tokens, _value)?,
+                                crate::protocol_serde::shape_stateful_rule_group_list::de_stateful_rule_group_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "StatefulDefaultActions" => {
                             builder = builder.set_stateful_default_actions(
-                                crate::protocol_serde::shape_network_firewall_action_list::de_network_firewall_action_list(tokens, _value)?,
+                                crate::protocol_serde::shape_network_firewall_action_list::de_network_firewall_action_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StatefulEngineOptions" => {
                             builder = builder.set_stateful_engine_options(
-                                crate::protocol_serde::shape_stateful_engine_options::de_stateful_engine_options(tokens, _value)?,
+                                crate::protocol_serde::shape_stateful_engine_options::de_stateful_engine_options(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -139,6 +139,8 @@ pub(crate) fn de_get_launch_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -166,11 +168,11 @@ pub(crate) fn de_get_launch_configuration(
                 }
                 "launchIntoInstanceProperties" => {
                     builder = builder.set_launch_into_instance_properties(
-                        crate::protocol_serde::shape_launch_into_instance_properties::de_launch_into_instance_properties(tokens, _value)?,
+                        crate::protocol_serde::shape_launch_into_instance_properties::de_launch_into_instance_properties(tokens, _value, depth + 1)?,
                     );
                 }
                 "licensing" => {
-                    builder = builder.set_licensing(crate::protocol_serde::shape_licensing::de_licensing(tokens, _value)?);
+                    builder = builder.set_licensing(crate::protocol_serde::shape_licensing::de_licensing(tokens, _value, depth + 1)?);
                 }
                 "name" => {
                     builder = builder.set_name(

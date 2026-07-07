@@ -156,6 +156,8 @@ pub(crate) fn de_create_practice_run_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -177,7 +179,7 @@ pub(crate) fn de_create_practice_run_configuration(
                 }
                 "practiceRunConfiguration" => {
                     builder = builder.set_practice_run_configuration(
-                        crate::protocol_serde::shape_practice_run_configuration::de_practice_run_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_practice_run_configuration::de_practice_run_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "zonalAutoshiftStatus" => {

@@ -65,6 +65,8 @@ pub use crate::types::_create_association_batch_request_entry::CreateAssociation
 
 pub use crate::types::_failed_create_association::FailedCreateAssociationBuilder;
 
+pub use crate::types::_azure_configuration::AzureConfigurationBuilder;
+
 pub use crate::types::_document_requires::DocumentRequiresBuilder;
 
 pub use crate::types::_attachments_source::AttachmentsSourceBuilder;
@@ -219,6 +221,10 @@ pub use crate::types::_association::AssociationBuilder;
 
 pub use crate::types::_association_version_info::AssociationVersionInfoBuilder;
 
+pub use crate::types::_cloud_connector_filter::CloudConnectorFilterBuilder;
+
+pub use crate::types::_cloud_connector_summary::CloudConnectorSummaryBuilder;
+
 pub use crate::types::_command_filter::CommandFilterBuilder;
 
 pub use crate::types::_command_invocation::CommandInvocationBuilder;
@@ -267,6 +273,8 @@ pub use crate::types::_runbook::RunbookBuilder;
 
 pub use crate::types::_automation_execution_inputs::AutomationExecutionInputsBuilder;
 
+pub use crate::types::_validation_finding::ValidationFindingBuilder;
+
 pub use crate::types::_alarm::AlarmBuilder;
 
 pub use crate::types::_document_parameter::DocumentParameterBuilder;
@@ -309,6 +317,8 @@ pub use crate::types::_resource_data_sync_source_with_state::ResourceDataSyncSou
 
 pub use crate::types::_document_review_comment_source::DocumentReviewCommentSourceBuilder;
 
+pub use crate::types::_validation_finding_scope::ValidationFindingScopeBuilder;
+
 pub use crate::types::_resource_data_sync_organizational_unit::ResourceDataSyncOrganizationalUnitBuilder;
 
 pub use crate::types::_s3_output_url::S3OutputUrlBuilder;
@@ -330,3 +340,5 @@ pub use crate::types::_command_plugin::CommandPluginBuilder;
 pub use crate::types::_severity_summary::SeveritySummaryBuilder;
 
 pub use crate::types::_instance_info::InstanceInfoBuilder;
+
+pub use crate::types::_azure_subscription::AzureSubscriptionBuilder;

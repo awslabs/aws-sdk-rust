@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIntegratedResourcesInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space.</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub integration_id: ::std::option::Option<::std::string::String>,
-    /// List of integrated resources to update
+    /// <p>The list of integrated resource items to update.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedResourceInputItem>>,
 }
 impl UpdateIntegratedResourcesInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space.</p>
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn integration_id(&self) -> ::std::option::Option<&str> {
         self.integration_id.as_deref()
     }
-    /// List of integrated resources to update
+    /// <p>The list of integrated resource items to update.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::IntegratedResourceInputItem] {
@@ -42,33 +42,33 @@ pub struct UpdateIntegratedResourcesInputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedResourceInputItem>>,
 }
 impl UpdateIntegratedResourcesInputBuilder {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space.</p>
     /// This field is required.
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_space_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_space_id = input;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_id = input;
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_id
     }
@@ -76,19 +76,19 @@ impl UpdateIntegratedResourcesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// List of integrated resources to update
+    /// <p>The list of integrated resource items to update.</p>
     pub fn items(mut self, input: crate::types::IntegratedResourceInputItem) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// List of integrated resources to update
+    /// <p>The list of integrated resource items to update.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedResourceInputItem>>) -> Self {
         self.items = input;
         self
     }
-    /// List of integrated resources to update
+    /// <p>The list of integrated resource items to update.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegratedResourceInputItem>> {
         &self.items
     }

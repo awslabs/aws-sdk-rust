@@ -49,6 +49,18 @@ pub use crate::types::_memory_db_reserved_instances::MemoryDbReservedInstancesBu
 
 pub use crate::types::_nat_gateway::NatGatewayBuilder;
 
+pub use crate::types::_dynamo_db_table::DynamoDbTableBuilder;
+
+pub use crate::types::_elasti_cache_cluster::ElastiCacheClusterBuilder;
+
+pub use crate::types::_memory_db_cluster::MemoryDbClusterBuilder;
+
+pub use crate::types::_document_db_cluster::DocumentDbClusterBuilder;
+
+pub use crate::types::_work_spaces::WorkSpacesBuilder;
+
+pub use crate::types::_sage_maker_endpoint::SageMakerEndpointBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_efficiency_metrics_by_group::EfficiencyMetricsByGroupBuilder;

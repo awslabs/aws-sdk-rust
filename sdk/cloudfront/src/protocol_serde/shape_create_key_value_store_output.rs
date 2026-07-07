@@ -34,5 +34,7 @@ pub fn de_key_value_store(inp: &[u8]) -> std::result::Result<crate::types::KeyVa
             "invalid root, expected KeyValueStore got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_key_value_store::de_key_value_store(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_key_value_store::de_key_value_store(&mut decoder, depth + 1)
 }

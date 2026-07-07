@@ -123,50 +123,54 @@ pub(crate) fn de_get_matching_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "endTime" => {
-                    builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "endTime" => {
+                        builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "errorDetails" => {
+                        builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value, depth + 1)?);
+                    }
+                    "jobId" => {
+                        builder = builder.set_job_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "metrics" => {
+                        builder = builder.set_metrics(crate::protocol_serde::shape_job_metrics::de_job_metrics(tokens, _value, depth + 1)?);
+                    }
+                    "outputSourceConfig" => {
+                        builder = builder.set_output_source_config(
+                            crate::protocol_serde::shape_job_output_source_config::de_job_output_source_config(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "startTime" => {
+                        builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "status" => {
+                        builder = builder.set_status(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::JobStatus::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "errorDetails" => {
-                    builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value)?);
-                }
-                "jobId" => {
-                    builder = builder.set_job_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "metrics" => {
-                    builder = builder.set_metrics(crate::protocol_serde::shape_job_metrics::de_job_metrics(tokens, _value)?);
-                }
-                "outputSourceConfig" => {
-                    builder = builder.set_output_source_config(crate::protocol_serde::shape_job_output_source_config::de_job_output_source_config(
-                        tokens, _value,
-                    )?);
-                }
-                "startTime" => {
-                    builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::JobStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

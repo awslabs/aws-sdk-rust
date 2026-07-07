@@ -552,7 +552,26 @@ impl ChainProvider {
 
             // we want to create `SdkConfig` _after_ we have resolved the profile or else
             // we won't get things like `service_config()` set appropriately.
-            let sdk_config = config.provider_config.client_config();
+            //
+            // Resolve FIPS/dual-stack from the profile if they weren't set explicitly on the
+            // `ProviderConfig` (e.g. when `ProfileFileCredentialsProvider` is constructed
+            // directly via its builder, bypassing `ConfigLoader::load`).
+            let mut sdk_config_builder = config.provider_config.client_config().into_builder();
+            if config.provider_config.use_fips().is_none() {
+                sdk_config_builder.set_use_fips(
+                    crate::default_provider::use_fips::use_fips_provider(&config.provider_config)
+                        .await,
+                );
+            }
+            if config.provider_config.use_dual_stack().is_none() {
+                sdk_config_builder.set_use_dual_stack(
+                    crate::default_provider::use_dual_stack::use_dual_stack_provider(
+                        &config.provider_config,
+                    )
+                    .await,
+                );
+            }
+            let sdk_config = sdk_config_builder.build();
             for provider in chain.chain().iter() {
                 let next_creds = provider
                     .credentials(creds, &sdk_config)
@@ -633,6 +652,67 @@ mod test {
     make_test!(assume_role_override_service_env_url);
     make_test!(assume_role_override_global_profile_url);
     make_test!(assume_role_override_service_profile_url);
+
+    /// Regression test for https://github.com/smithy-lang/smithy-rs/issues/4614:
+    /// when building `ProfileFileCredentialsProvider` directly via its builder (bypassing
+    /// `ConfigLoader::load`), the profile's `use_fips_endpoint` and `use_dualstack_endpoint`
+    /// settings must still propagate to the internal STS client used for assume-role.
+    #[tokio::test]
+    async fn profile_use_fips_endpoint_propagates_to_sts_client() {
+        #[allow(deprecated)]
+        use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
+        use crate::provider_config::ProviderConfig;
+        use aws_smithy_http_client::test_util::capture_request;
+        use aws_smithy_types::body::SdkBody;
+        use aws_types::os_shim_internal::Env;
+        use aws_types::region::Region;
+
+        let (http_client, rx) = capture_request(Some(
+            http::Response::builder()
+                .status(200)
+                .body(SdkBody::from(
+                    r#"<AssumeRoleResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+                        <AssumeRoleResult>
+                          <Credentials>
+                            <AccessKeyId>ASIAFAKEKEY</AccessKeyId>
+                            <SecretAccessKey>fakesecret</SecretAccessKey>
+                            <SessionToken>fakesession</SessionToken>
+                            <Expiration>2099-01-01T00:00:00Z</Expiration>
+                          </Credentials>
+                        </AssumeRoleResult>
+                       </AssumeRoleResponse>"#,
+                ))
+                .unwrap(),
+        ));
+
+        let provider_config = ProviderConfig::empty()
+            .with_env(Env::from_slice(&[]))
+            .with_region(Some(Region::new("us-east-1")))
+            .with_http_client(http_client);
+
+        #[allow(deprecated)]
+        let profile_files = ProfileFiles::builder()
+            .with_contents(
+                ProfileFileKind::Config,
+                "[profile fips-test]\nuse_fips_endpoint = true\nuse_dualstack_endpoint = true\nregion = us-east-1\nrole_arn = arn:aws:iam::123456789012:role/FakeTestRole\nsource_profile = source\n\n[profile source]\naws_access_key_id = AKIAIOSFODNN7EXAMPLE\naws_secret_access_key = secret\n",
+            )
+            .build();
+
+        let provider = Builder::default()
+            .configure(&provider_config)
+            .profile_files(profile_files)
+            .profile_name("fips-test")
+            .build();
+
+        let _ = provider.provide_credentials().await;
+        let request = rx.expect_request();
+        let uri = request.uri().to_string();
+        // FIPS + dual-stack STS endpoint has the form `sts-fips.<region>.api.aws`.
+        assert!(
+            uri.contains("sts-fips.us-east-1.api.aws"),
+            "expected STS FIPS + dual-stack endpoint, got: {uri}"
+        );
+    }
 }
 
 #[cfg(all(test, feature = "sso"))]

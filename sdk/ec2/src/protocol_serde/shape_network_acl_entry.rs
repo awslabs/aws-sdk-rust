@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_acl_entry(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NetworkAclEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkAclEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -38,7 +42,7 @@ pub fn de_network_acl_entry(
             s if s.matches("icmpTypeCode") /* IcmpTypeCode com.amazonaws.ec2#NetworkAclEntry$IcmpTypeCode */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_icmp_type_code::de_icmp_type_code(&mut tag)
+                        crate::protocol_serde::shape_icmp_type_code::de_icmp_type_code(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -61,7 +65,7 @@ pub fn de_network_acl_entry(
             s if s.matches("portRange") /* PortRange com.amazonaws.ec2#NetworkAclEntry$PortRange */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_port_range::de_port_range(&mut tag)
+                        crate::protocol_serde::shape_port_range::de_port_range(&mut tag, depth + 1)
                         ?
                     )
                 ;

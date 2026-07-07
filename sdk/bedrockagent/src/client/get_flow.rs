@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`flow_identifier(impl Into<String>)`](crate::operation::get_flow::builders::GetFlowFluentBuilder::flow_identifier) / [`set_flow_identifier(Option<String>)`](crate::operation::get_flow::builders::GetFlowFluentBuilder::set_flow_identifier):<br>required: **true**<br><p>The unique identifier of the flow.</p><br>
+    ///   - [`included_data(IncludedData)`](crate::operation::get_flow::builders::GetFlowFluentBuilder::included_data) / [`set_included_data(Option<IncludedData>)`](crate::operation::get_flow::builders::GetFlowFluentBuilder::set_included_data):<br>required: **false**<br><p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p><br>
     /// - On success, responds with [`GetFlowOutput`](crate::operation::get_flow::GetFlowOutput) with field(s):
     ///   - [`name(String)`](crate::operation::get_flow::GetFlowOutput::name): <p>The name of the flow.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_flow::GetFlowOutput::description): <p>The description of the flow.</p>

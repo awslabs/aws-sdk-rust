@@ -24,10 +24,16 @@ pub fn ser_scatter_plot_field_wells(
 pub(crate) fn de_scatter_plot_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScatterPlotFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,13 +45,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ScatterPlotCategoricallyAggregatedFieldWells" => {
                             builder = builder.set_scatter_plot_categorically_aggregated_field_wells(
-                                    crate::protocol_serde::shape_scatter_plot_categorically_aggregated_field_wells::de_scatter_plot_categorically_aggregated_field_wells(tokens, _value)?
+                                    crate::protocol_serde::shape_scatter_plot_categorically_aggregated_field_wells::de_scatter_plot_categorically_aggregated_field_wells(tokens, _value, depth + 1)?
                                 );
                         }
                         "ScatterPlotUnaggregatedFieldWells" => {
                             builder = builder.set_scatter_plot_unaggregated_field_wells(
                                 crate::protocol_serde::shape_scatter_plot_unaggregated_field_wells::de_scatter_plot_unaggregated_field_wells(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

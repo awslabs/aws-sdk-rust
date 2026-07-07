@@ -36,7 +36,7 @@ impl crate::operation::filter_log_events::builders::FilterLogEventsInputBuilder 
 /// <p><code>FilterLogEvents</code> is a paginated operation. Each page returned can contain up to 1 MB of log events or up to 10,000 log events. A returned page might only be partially full, or even empty. For example, if the result of a query would return 15,000 log events, the first page isn't guaranteed to have 10,000 log events even if they all fit into 1 MB.</p>
 /// <p>Partially full or empty pages don't necessarily mean that pagination is finished. If the results include a <code>nextToken</code>, there might be more log events available. You can return these additional log events by providing the nextToken in a subsequent <code>FilterLogEvents</code> operation. If the results don't include a <code>nextToken</code>, then pagination is finished.</p>
 /// <p>Specifying the <code>limit</code> parameter only guarantees that a single page doesn't return more log events than the specified limit, but it might return fewer events than the limit. This is the expected API behavior.</p>
-/// <p>The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.</p>
+/// <p>The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request. By default, the events are returned in ascending timestamp order (oldest first). To return events in descending timestamp order (newest first), set the <code>startFromHead</code> parameter to <code>false</code>.</p>
 /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p><note>
 /// <p>If you are using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">log transformation</a>, the <code>FilterLogEvents</code> operation returns only the original versions of log events, before they were transformed. To view the transformed versions, you must use a <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">CloudWatch Logs query.</a></p>
 /// </note>
@@ -282,6 +282,29 @@ impl FilterLogEventsFluentBuilder {
     /// <p>The maximum number of events to return. The default is 10,000 events.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
+    }
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is true.</p>
+    /// <p>The <code>startFromHead</code> parameter sets the sort direction on the first request. On subsequent requests, the <code>nextToken</code> determines the sort direction. To continue paginating in the same direction, provide the returned <code>nextToken</code>. If you provide both <code>nextToken</code> and <code>startFromHead</code>, the direction of the <code>nextToken</code> is used.</p><note>
+    /// <p>Setting <code>startFromHead</code> to <code>false</code> is supported only when <code>startTime</code> is on or after <code>Jan 1, 2024 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to <code>false</code> and a <code>startTime</code> before this date returns an <code>InvalidParameterException</code>.</p>
+    /// </note>
+    pub fn start_from_head(mut self, input: bool) -> Self {
+        self.inner = self.inner.start_from_head(input);
+        self
+    }
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is true.</p>
+    /// <p>The <code>startFromHead</code> parameter sets the sort direction on the first request. On subsequent requests, the <code>nextToken</code> determines the sort direction. To continue paginating in the same direction, provide the returned <code>nextToken</code>. If you provide both <code>nextToken</code> and <code>startFromHead</code>, the direction of the <code>nextToken</code> is used.</p><note>
+    /// <p>Setting <code>startFromHead</code> to <code>false</code> is supported only when <code>startTime</code> is on or after <code>Jan 1, 2024 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to <code>false</code> and a <code>startTime</code> before this date returns an <code>InvalidParameterException</code>.</p>
+    /// </note>
+    pub fn set_start_from_head(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_start_from_head(input);
+        self
+    }
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is true.</p>
+    /// <p>The <code>startFromHead</code> parameter sets the sort direction on the first request. On subsequent requests, the <code>nextToken</code> determines the sort direction. To continue paginating in the same direction, provide the returned <code>nextToken</code>. If you provide both <code>nextToken</code> and <code>startFromHead</code>, the direction of the <code>nextToken</code> is used.</p><note>
+    /// <p>Setting <code>startFromHead</code> to <code>false</code> is supported only when <code>startTime</code> is on or after <code>Jan 1, 2024 00:00:00 UTC</code>. A request with <code>startFromHead</code> set to <code>false</code> and a <code>startTime</code> before this date returns an <code>InvalidParameterException</code>.</p>
+    /// </note>
+    pub fn get_start_from_head(&self) -> &::std::option::Option<bool> {
+        self.inner.get_start_from_head()
     }
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>

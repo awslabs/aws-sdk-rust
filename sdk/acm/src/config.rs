@@ -181,6 +181,7 @@ impl Builder {
         let mut builder = Self::new();
         builder.set_stalled_stream_protection(config_bag.load::<crate::config::StalledStreamProtectionConfig>().cloned());
         builder.set_auth_scheme_preference(config_bag.load::<::aws_smithy_runtime_api::client::auth::AuthSchemePreference>().cloned());
+        builder.set_service_type(config_bag.load::<crate::config::ServiceType>().map(|ty| ty.0.clone()));
         builder.set_retry_config(config_bag.load::<::aws_smithy_types::retry::RetryConfig>().cloned());
         builder.set_timeout_config(config_bag.load::<::aws_smithy_types::timeout::TimeoutConfig>().cloned());
         builder.set_retry_partition(config_bag.load::<::aws_smithy_runtime::client::retries::RetryPartition>().cloned());
@@ -204,6 +205,22 @@ impl Builder {
         stalled_stream_protection_config: ::std::option::Option<crate::config::StalledStreamProtectionConfig>,
     ) -> &mut Self {
         self.config.store_or_unset(stalled_stream_protection_config);
+        self
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn idempotency_token_provider(
+        mut self,
+        idempotency_token_provider: impl ::std::convert::Into<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> Self {
+        self.set_idempotency_token_provider(::std::option::Option::Some(idempotency_token_provider.into()));
+        self
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn set_idempotency_token_provider(
+        &mut self,
+        idempotency_token_provider: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> &mut Self {
+        self.config.store_or_unset(idempotency_token_provider);
         self
     }
     /// Sets the HTTP client to use when making requests.
@@ -503,6 +520,16 @@ impl Builder {
         preference: ::std::option::Option<::aws_smithy_runtime_api::client::auth::AuthSchemePreference>,
     ) -> &mut Self {
         self.config.store_or_unset(preference);
+        self
+    }
+    /// The service type: ACM or ACM-ACME. Injected via @staticContextParams.
+    pub fn service_type(mut self, service_type: impl Into<::std::string::String>) -> Self {
+        self.set_service_type(Some(service_type.into()));
+        self
+    }
+    /// The service type: ACM or ACM-ACME. Injected via @staticContextParams.
+    pub fn set_service_type(&mut self, service_type: Option<::std::string::String>) -> &mut Self {
+        self.config.store_or_unset(service_type.map(crate::config::ServiceType));
         self
     }
     /// Sets the endpoint resolver to use when making requests.
@@ -1230,6 +1257,7 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder. NOTE: Consider migrating to use `apply_test_defaults_v2` instead.
     pub fn apply_test_defaults(&mut self) -> &mut Self {
+        self.set_idempotency_token_provider(Some("00000000-0000-4000-8000-000000000000".into()));
         self.set_time_source(::std::option::Option::Some(::aws_smithy_async::time::SharedTimeSource::new(
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
@@ -1299,6 +1327,7 @@ impl ServiceRuntimePlugin {
     pub fn new(_service_config: crate::config::Config) -> Self {
         let config = {
             let mut cfg = ::aws_smithy_types::config_bag::Layer::new("CertificateManager");
+            cfg.store_put(crate::idempotency_token::default_provider());
             cfg.store_put(::aws_smithy_runtime::client::orchestrator::AuthSchemeAndEndpointOrchestrationV2);
             ::std::option::Option::Some(cfg.freeze())
         };
@@ -1565,6 +1594,12 @@ pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 pub use ::aws_types::region::Region;
 
 pub use ::aws_credential_types::provider::SharedCredentialsProvider;
+
+#[derive(Debug, Clone)]
+pub(crate) struct ServiceType(pub(crate) String);
+impl ::aws_smithy_types::config_bag::Storable for ServiceType {
+    type Storer = ::aws_smithy_types::config_bag::StoreReplace<Self>;
+}
 
 pub use ::aws_smithy_runtime_api::client::http::HttpClient;
 

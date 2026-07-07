@@ -272,6 +272,27 @@ impl From<crate::operation::delete_channel_policy::DeleteChannelPolicyError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_function::DeleteFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_function::DeleteFunctionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_function::DeleteFunctionError> for Error {
+    fn from(err: crate::operation::delete_function::DeleteFunctionError) -> Self {
+        match err {
+            crate::operation::delete_function::DeleteFunctionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_live_source::DeleteLiveSourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -552,6 +573,27 @@ impl From<crate::operation::get_channel_schedule::GetChannelScheduleError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function::GetFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function::GetFunctionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_function::GetFunctionError> for Error {
+    fn from(err: crate::operation::get_function::GetFunctionError) -> Self {
+        match err {
+            crate::operation::get_function::GetFunctionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_playback_configuration::GetPlaybackConfigurationError, R>>
     for Error
 where
@@ -636,6 +678,27 @@ impl From<crate::operation::list_channels::ListChannelsError> for Error {
     fn from(err: crate::operation::list_channels::ListChannelsError) -> Self {
         match err {
             crate::operation::list_channels::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_functions::ListFunctionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_functions::ListFunctionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_functions::ListFunctionsError> for Error {
+    fn from(err: crate::operation::list_functions::ListFunctionsError) -> Self {
+        match err {
+            crate::operation::list_functions::ListFunctionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -789,6 +852,27 @@ impl From<crate::operation::put_channel_policy::PutChannelPolicyError> for Error
     fn from(err: crate::operation::put_channel_policy::PutChannelPolicyError) -> Self {
         match err {
             crate::operation::put_channel_policy::PutChannelPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_function::PutFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_function::PutFunctionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_function::PutFunctionError> for Error {
+    fn from(err: crate::operation::put_function::PutFunctionError) -> Self {
+        match err {
+            crate::operation::put_function::PutFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

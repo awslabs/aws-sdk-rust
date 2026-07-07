@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutConf
 #[derive(Debug)]
 struct PutConfigRuleResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutConfigRuleResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -283,6 +284,8 @@ pub enum PutConfigRuleError {
     /// </ul></li>
     /// <li>
     /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>, a service-linked configuration recorder cannot be created because you do not have the following permissions: IAM <code>CreateServiceLinkedRole</code>.</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>, a connector cannot be created because you do not have the following permissions: IAM <code>CreateServiceLinkedRole</code>.</p></li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
     /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>

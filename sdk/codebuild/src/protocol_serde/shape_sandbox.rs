@@ -2,10 +2,16 @@
 pub(crate) fn de_sandbox<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Sandbox>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -62,7 +68,7 @@ where
                             );
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_project_source::de_project_source(tokens, _value)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_project_source::de_project_source(tokens, _value, depth + 1)?);
                         }
                         "sourceVersion" => {
                             builder = builder.set_source_version(
@@ -72,21 +78,35 @@ where
                             );
                         }
                         "secondarySources" => {
-                            builder =
-                                builder.set_secondary_sources(crate::protocol_serde::shape_project_sources::de_project_sources(tokens, _value)?);
+                            builder = builder.set_secondary_sources(crate::protocol_serde::shape_project_sources::de_project_sources(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "secondarySourceVersions" => {
                             builder = builder.set_secondary_source_versions(
-                                crate::protocol_serde::shape_project_secondary_source_versions::de_project_secondary_source_versions(tokens, _value)?,
+                                crate::protocol_serde::shape_project_secondary_source_versions::de_project_secondary_source_versions(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "environment" => {
-                            builder =
-                                builder.set_environment(crate::protocol_serde::shape_project_environment::de_project_environment(tokens, _value)?);
+                            builder = builder.set_environment(crate::protocol_serde::shape_project_environment::de_project_environment(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "fileSystemLocations" => {
                             builder = builder.set_file_system_locations(
-                                crate::protocol_serde::shape_project_file_system_locations::de_project_file_system_locations(tokens, _value)?,
+                                crate::protocol_serde::shape_project_file_system_locations::de_project_file_system_locations(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "timeoutInMinutes" => {
@@ -104,10 +124,10 @@ where
                             );
                         }
                         "vpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "logConfig" => {
-                            builder = builder.set_log_config(crate::protocol_serde::shape_logs_config::de_logs_config(tokens, _value)?);
+                            builder = builder.set_log_config(crate::protocol_serde::shape_logs_config::de_logs_config(tokens, _value, depth + 1)?);
                         }
                         "encryptionKey" => {
                             builder = builder.set_encryption_key(
@@ -124,7 +144,11 @@ where
                             );
                         }
                         "currentSession" => {
-                            builder = builder.set_current_session(crate::protocol_serde::shape_sandbox_session::de_sandbox_session(tokens, _value)?);
+                            builder = builder.set_current_session(crate::protocol_serde::shape_sandbox_session::de_sandbox_session(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -118,6 +118,8 @@ pub fn de_describe_reserved_cache_nodes(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeReservedCacheNodesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeReservedCacheNodesResponse got {start_el:?}"
@@ -148,7 +150,7 @@ pub fn de_describe_reserved_cache_nodes(
             s if s.matches("ReservedCacheNodes") /* ReservedCacheNodes com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOutput$ReservedCacheNodes */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_reserved_cache_node_list::de_reserved_cache_node_list(&mut tag)
+                        crate::protocol_serde::shape_reserved_cache_node_list::de_reserved_cache_node_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

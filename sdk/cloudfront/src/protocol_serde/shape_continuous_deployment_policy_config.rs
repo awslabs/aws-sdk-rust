@@ -24,7 +24,11 @@ pub fn ser_continuous_deployment_policy_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_continuous_deployment_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ContinuousDeploymentPolicyConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -32,7 +36,7 @@ pub fn de_continuous_deployment_policy_config(
             s if s.matches("StagingDistributionDnsNames") /* StagingDistributionDnsNames com.amazonaws.cloudfront#ContinuousDeploymentPolicyConfig$StagingDistributionDnsNames */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_staging_distribution_dns_names::de_staging_distribution_dns_names(&mut tag)
+                        crate::protocol_serde::shape_staging_distribution_dns_names::de_staging_distribution_dns_names(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -57,7 +61,7 @@ pub fn de_continuous_deployment_policy_config(
             s if s.matches("TrafficConfig") /* TrafficConfig com.amazonaws.cloudfront#ContinuousDeploymentPolicyConfig$TrafficConfig */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_traffic_config::de_traffic_config(&mut tag)
+                        crate::protocol_serde::shape_traffic_config::de_traffic_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

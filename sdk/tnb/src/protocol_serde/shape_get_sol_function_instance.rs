@@ -128,6 +128,8 @@ pub(crate) fn de_get_sol_function_instance(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -148,7 +150,11 @@ pub(crate) fn de_get_sol_function_instance(
                     );
                 }
                 "instantiatedVnfInfo" => {
-                    builder = builder.set_instantiated_vnf_info(crate::protocol_serde::shape_get_sol_vnf_info::de_get_sol_vnf_info(tokens, _value)?);
+                    builder = builder.set_instantiated_vnf_info(crate::protocol_serde::shape_get_sol_vnf_info::de_get_sol_vnf_info(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "instantiationState" => {
                     builder = builder.set_instantiation_state(
@@ -159,7 +165,11 @@ pub(crate) fn de_get_sol_function_instance(
                 }
                 "metadata" => {
                     builder = builder.set_metadata(
-                        crate::protocol_serde::shape_get_sol_function_instance_metadata::de_get_sol_function_instance_metadata(tokens, _value)?,
+                        crate::protocol_serde::shape_get_sol_function_instance_metadata::de_get_sol_function_instance_metadata(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "nsInstanceId" => {
@@ -170,7 +180,7 @@ pub(crate) fn de_get_sol_function_instance(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "vnfPkgId" => {
                     builder = builder.set_vnf_pkg_id(

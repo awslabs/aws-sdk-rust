@@ -2,10 +2,16 @@
 pub(crate) fn de_aws_opportunity_life_cycle<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsOpportunityLifeCycle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,11 @@ where
                         }
                         "NextStepsHistory" => {
                             builder = builder.set_next_steps_history(
-                                crate::protocol_serde::shape_profile_next_steps_histories::de_profile_next_steps_histories(tokens, _value)?,
+                                crate::protocol_serde::shape_profile_next_steps_histories::de_profile_next_steps_histories(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

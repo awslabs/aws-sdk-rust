@@ -74,6 +74,8 @@ pub fn de_list_instance_profiles(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListInstanceProfilesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListInstanceProfilesResponse got {start_el:?}"
@@ -91,7 +93,7 @@ pub fn de_list_instance_profiles(
             s if s.matches("InstanceProfiles") /* InstanceProfiles com.amazonaws.iam.synthetic#ListInstanceProfilesOutput$InstanceProfiles */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_profile_list_type::de_instance_profile_list_type(&mut tag)
+                        crate::protocol_serde::shape_instance_profile_list_type::de_instance_profile_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

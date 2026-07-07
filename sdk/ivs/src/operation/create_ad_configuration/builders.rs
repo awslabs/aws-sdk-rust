@@ -127,12 +127,12 @@ impl CreateAdConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_media_tailor_playback_configurations`](Self::set_media_tailor_playback_configurations).
     ///
-    /// <p>List of integration configurations with media tailor resources.</p>
+    /// <p>List of integration configurations with MediaTailor resources. The first item in the list is the default playback configuration used for the ad configuration. To select a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate and Sign IVS Playback Tokens</a>.</p>
     pub fn media_tailor_playback_configurations(mut self, input: crate::types::MediaTailorPlaybackConfiguration) -> Self {
         self.inner = self.inner.media_tailor_playback_configurations(input);
         self
     }
-    /// <p>List of integration configurations with media tailor resources.</p>
+    /// <p>List of integration configurations with MediaTailor resources. The first item in the list is the default playback configuration used for the ad configuration. To select a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate and Sign IVS Playback Tokens</a>.</p>
     pub fn set_media_tailor_playback_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::MediaTailorPlaybackConfiguration>>,
@@ -140,7 +140,7 @@ impl CreateAdConfigurationFluentBuilder {
         self.inner = self.inner.set_media_tailor_playback_configurations(input);
         self
     }
-    /// <p>List of integration configurations with media tailor resources.</p>
+    /// <p>List of integration configurations with MediaTailor resources. The first item in the list is the default playback configuration used for the ad configuration. To select a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate and Sign IVS Playback Tokens</a>.</p>
     pub fn get_media_tailor_playback_configurations(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaTailorPlaybackConfiguration>> {

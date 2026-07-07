@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_types::{Blob, DateTime};
+use aws_smithy_types::{BigInteger, Blob, DateTime};
 
 /// Macro for delegating method calls to the encoder.
 ///
@@ -51,6 +51,8 @@ impl Encoder {
         /// Used when it's not cheap to calculate the size, i.e. when the struct has one or more
         /// `Option`al members.
         begin_map => begin_map();
+        /// Begins an indefinite-length array.
+        begin_array => begin_array();
         /// Writes a boolean value.
         boolean => bool(x: bool);
         /// Writes a byte value.
@@ -124,6 +126,68 @@ impl Encoder {
         self
     }
 
+    /// Writes a `BigInteger` using preferred serialization per RFC 8949 §3.4.3.
+    ///
+    /// Values that fit in a CBOR major type 0 or 1 integer are encoded directly
+    /// (preferred serialization). Larger values use tag 2 (unsigned bignum) or
+    /// tag 3 (negative bignum). For tag 3, the byte string encodes `n` where
+    /// the value is `-1 - n`.
+    pub fn big_integer(&mut self, value: &BigInteger) -> &mut Self {
+        use num_bigint::{BigInt, Sign};
+
+        let n: BigInt = value
+            .as_ref()
+            .parse()
+            .expect("BigInteger contains invalid value");
+        let (sign, magnitude) = n.to_bytes_be();
+
+        match sign {
+            Sign::Plus | Sign::NoSign => {
+                // Try preferred serialization as major type 0.
+                if magnitude.len() <= 8 {
+                    let mut buf = [0u8; 8];
+                    buf[8 - magnitude.len()..].copy_from_slice(&magnitude);
+                    let val = u64::from_be_bytes(buf);
+                    self.encoder.u64(val).expect(INFALLIBLE_WRITE);
+                } else {
+                    self.encoder
+                        .tag(minicbor::data::Tag::new(2))
+                        .expect(INFALLIBLE_WRITE);
+                    // Preferred serialization: strip leading zeroes.
+                    let stripped = strip_leading_zeroes(&magnitude);
+                    self.encoder.bytes(stripped).expect(INFALLIBLE_WRITE);
+                }
+            }
+            Sign::Minus => {
+                // Tag 3 value = -1 - n, so n = -1 - value = |value| - 1.
+                let one = BigInt::from(1u8);
+                let n = (-n) - one;
+                let (_, n_bytes) = n.to_bytes_be();
+
+                // Try preferred serialization as major type 1.
+                if n_bytes.len() <= 8 {
+                    let mut buf = [0u8; 8];
+                    buf[8 - n_bytes.len()..].copy_from_slice(&n_bytes);
+                    let val = u64::from_be_bytes(buf);
+                    // Use i128 to represent -1 - val without overflow, then
+                    // convert to minicbor::data::Int which covers the full
+                    // CBOR major type 1 range.
+                    let neg = -1i128 - (val as i128);
+                    let int_val = minicbor::data::Int::try_from(neg)
+                        .expect("value fits in CBOR integer range");
+                    self.encoder.int(int_val).expect(INFALLIBLE_WRITE);
+                } else {
+                    self.encoder
+                        .tag(minicbor::data::Tag::new(3))
+                        .expect(INFALLIBLE_WRITE);
+                    let stripped = strip_leading_zeroes(&n_bytes);
+                    self.encoder.bytes(stripped).expect(INFALLIBLE_WRITE);
+                }
+            }
+        }
+        self
+    }
+
     /// Writes a blob. Collapses header+data into a single reserve+write.
     pub fn blob(&mut self, x: &Blob) -> &mut Self {
         let data = x.as_ref();
@@ -166,9 +230,15 @@ impl Encoder {
     }
 }
 
+/// Strips leading zero bytes from a big-endian byte slice.
+fn strip_leading_zeroes(bytes: &[u8]) -> &[u8] {
+    let start = bytes.iter().position(|&b| b != 0).unwrap_or(bytes.len());
+    &bytes[start..]
+}
+
 #[cfg(test)]
 mod tests {
-    use super::Encoder;
+    use super::*;
     use aws_smithy_types::Blob;
 
     /// Verify our `str()` produces byte-identical output to minicbor's.
@@ -290,5 +360,103 @@ mod tests {
                 input
             );
         }
+    }
+
+    #[test]
+    fn preferred_serialization_small_positive() {
+        // Small values use major type 0 directly, not tag 2.
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"0".parse().unwrap());
+        assert_eq!(encoder.into_writer(), vec![0x00]); // major type 0, value 0
+
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"23".parse().unwrap());
+        assert_eq!(encoder.into_writer(), vec![0x17]); // major type 0, value 23
+
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"256".parse().unwrap());
+        // major type 0, additional info 25 (2-byte), 0x0100
+        assert_eq!(encoder.into_writer(), vec![0x19, 0x01, 0x00]);
+    }
+
+    #[test]
+    fn preferred_serialization_small_negative() {
+        // Small negatives use major type 1 directly, not tag 3.
+        // Major type 1 value = -1 - argument.
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"-1".parse().unwrap());
+        assert_eq!(encoder.into_writer(), vec![0x20]); // -1 = -1-0, argument 0
+
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"-42".parse().unwrap());
+        // -42 = -1-41, argument 41 = 0x29 (major type 1, additional info 24, value 41)
+        assert_eq!(encoder.into_writer(), vec![0x38, 0x29]);
+    }
+
+    #[test]
+    fn preferred_serialization_u64_max() {
+        // u64::MAX = 18446744073709551615 fits in major type 0.
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"18446744073709551615".parse().unwrap());
+        let bytes = encoder.into_writer();
+        assert_eq!(bytes[0], 0x1b); // major type 0, 8-byte argument
+        assert_eq!(
+            &bytes[1..],
+            &[0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff]
+        );
+    }
+
+    #[test]
+    fn tag2_for_values_exceeding_u64() {
+        // 2^64 = 18446744073709551616 requires tag 2.
+        // RFC 8949 Appendix A: 0xc249010000000000000000
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"18446744073709551616".parse().unwrap());
+        let bytes = encoder.into_writer();
+        assert_eq!(
+            bytes,
+            vec![0xc2, 0x49, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
+        );
+    }
+
+    #[test]
+    fn tag3_negative_bignum_rfc8949_example() {
+        // RFC 8949 Appendix A: -18446744073709551617 = 0xc349010000000000000000
+        // value = -1 - n, n = 18446744073709551616 = 2^64
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"-18446744073709551617".parse().unwrap());
+        let bytes = encoder.into_writer();
+        assert_eq!(
+            bytes,
+            vec![0xc3, 0x49, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
+        );
+    }
+
+    #[test]
+    fn negative_at_major_type_1_boundary() {
+        // -18446744073709551616 = -1 - 18446744073709551615 = -1 - u64::MAX
+        // This fits in major type 1 with 8-byte argument = u64::MAX.
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_integer(&"-18446744073709551616".parse().unwrap());
+        let bytes = encoder.into_writer();
+        assert_eq!(bytes[0], 0x3b); // major type 1, 8-byte argument
+        assert_eq!(
+            &bytes[1..],
+            &[0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff]
+        );
+    }
+
+    #[test]
+    fn tag2_strips_leading_zeroes() {
+        // A large number whose big-endian representation has no leading zeroes.
+        let mut encoder = Encoder::new(Vec::new());
+        let large = "123456789012345678901234567890";
+        encoder.big_integer(&large.parse().unwrap());
+        let bytes = encoder.into_writer();
+        assert_eq!(bytes[0], 0xc2); // tag 2
+                                    // Verify the byte string has no leading zero bytes.
+                                    // bytes[1] is the CBOR byte string length header.
+        let payload_start = if bytes[1] < 0x58 { 2 } else { 3 };
+        assert_ne!(bytes[payload_start], 0x00);
     }
 }

@@ -116,6 +116,8 @@ pub(crate) fn de_get_approval_team(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -123,12 +125,18 @@ pub(crate) fn de_get_approval_team(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ApprovalStrategy" => {
                     builder = builder.set_approval_strategy(crate::protocol_serde::shape_approval_strategy_response::de_approval_strategy_response(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Approvers" => {
                     builder = builder.set_approvers(
-                        crate::protocol_serde::shape_get_approval_team_response_approvers::de_get_approval_team_response_approvers(tokens, _value)?,
+                        crate::protocol_serde::shape_get_approval_team_response_approvers::de_get_approval_team_response_approvers(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Arn" => {
@@ -172,10 +180,14 @@ pub(crate) fn de_get_approval_team(
                     );
                 }
                 "PendingUpdate" => {
-                    builder = builder.set_pending_update(crate::protocol_serde::shape_pending_update::de_pending_update(tokens, _value)?);
+                    builder = builder.set_pending_update(crate::protocol_serde::shape_pending_update::de_pending_update(tokens, _value, depth + 1)?);
                 }
                 "Policies" => {
-                    builder = builder.set_policies(crate::protocol_serde::shape_policies_references::de_policies_references(tokens, _value)?);
+                    builder = builder.set_policies(crate::protocol_serde::shape_policies_references::de_policies_references(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Status" => {
                     builder = builder.set_status(

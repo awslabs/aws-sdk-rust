@@ -158,17 +158,17 @@ impl GetDomainSuggestionsFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     pub fn suggestion_count(mut self, input: i32) -> Self {
         self.inner = self.inner.suggestion_count(input);
         self
     }
-    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     pub fn set_suggestion_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_suggestion_count(input);
         self
     }
-    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     pub fn get_suggestion_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_suggestion_count()
     }

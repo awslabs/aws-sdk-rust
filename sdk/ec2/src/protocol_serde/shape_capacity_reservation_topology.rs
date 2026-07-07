@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_capacity_reservation_topology(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CapacityReservationTopology, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CapacityReservationTopology::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_capacity_reservation_topology(
             s if s.matches("networkNodeSet") /* NetworkNodes com.amazonaws.ec2#CapacityReservationTopology$NetworkNodes */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_network_node_set::de_network_node_set(&mut tag)
+                        crate::protocol_serde::shape_network_node_set::de_network_node_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

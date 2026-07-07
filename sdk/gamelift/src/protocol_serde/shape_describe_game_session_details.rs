@@ -159,10 +159,11 @@ pub(crate) fn de_describe_game_session_details(
     crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -172,6 +173,7 @@ pub(crate) fn de_describe_game_session_details(
                 Ok(
                     builder.set_game_session_details(Some(crate::protocol_serde::shape_game_session_detail_list::de_game_session_detail_list(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -187,6 +189,8 @@ pub(crate) fn de_describe_game_session_details(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -196,13 +200,13 @@ pub(crate) fn de_describe_game_session_details(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

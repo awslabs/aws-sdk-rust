@@ -24,5 +24,11 @@ pub fn ser_create_order_input_input(
     if let Some(var_7) = &input.payment_term {
         object.key("PaymentTerm").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.quote_identifier {
+        object.key("QuoteIdentifier").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.quote_option_identifier {
+        object.key("QuoteOptionIdentifier").string(var_9.as_str());
+    }
     Ok(())
 }

@@ -371,4 +371,18 @@ impl CreateSessionFluentBuilder {
     pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_origin()
     }
+    /// <p>The type of session to create.</p>
+    pub fn session_type(mut self, input: crate::types::SessionType) -> Self {
+        self.inner = self.inner.session_type(input);
+        self
+    }
+    /// <p>The type of session to create.</p>
+    pub fn set_session_type(mut self, input: ::std::option::Option<crate::types::SessionType>) -> Self {
+        self.inner = self.inner.set_session_type(input);
+        self
+    }
+    /// <p>The type of session to create.</p>
+    pub fn get_session_type(&self) -> &::std::option::Option<crate::types::SessionType> {
+        self.inner.get_session_type()
+    }
 }

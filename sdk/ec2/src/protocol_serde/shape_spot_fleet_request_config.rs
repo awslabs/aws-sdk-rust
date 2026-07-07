@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_spot_fleet_request_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SpotFleetRequestConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SpotFleetRequestConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -38,7 +42,7 @@ pub fn de_spot_fleet_request_config(
             s if s.matches("spotFleetRequestConfig") /* SpotFleetRequestConfig com.amazonaws.ec2#SpotFleetRequestConfig$SpotFleetRequestConfig */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_spot_fleet_request_config_data::de_spot_fleet_request_config_data(&mut tag)
+                        crate::protocol_serde::shape_spot_fleet_request_config_data::de_spot_fleet_request_config_data(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -75,7 +79,7 @@ pub fn de_spot_fleet_request_config(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#SpotFleetRequestConfig$Tags */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

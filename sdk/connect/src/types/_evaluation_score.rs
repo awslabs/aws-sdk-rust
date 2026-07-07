@@ -12,6 +12,12 @@ pub struct EvaluationScore {
     pub automatic_fail: bool,
     /// <p>Weight applied to this evaluation score.</p>
     pub applied_weight: ::std::option::Option<f64>,
+    /// <p>The points earned for the item.</p>
+    pub earned_points: i32,
+    /// <p>The maximum base points possible for the item.</p>
+    pub max_base_point: i32,
+    /// <p>The performance category for the score.</p>
+    pub performance_category: ::std::option::Option<crate::types::PerformanceCategoryName>,
 }
 impl EvaluationScore {
     /// <p>The score percentage for an item in a contact evaluation.</p>
@@ -30,6 +36,18 @@ impl EvaluationScore {
     pub fn applied_weight(&self) -> ::std::option::Option<f64> {
         self.applied_weight
     }
+    /// <p>The points earned for the item.</p>
+    pub fn earned_points(&self) -> i32 {
+        self.earned_points
+    }
+    /// <p>The maximum base points possible for the item.</p>
+    pub fn max_base_point(&self) -> i32 {
+        self.max_base_point
+    }
+    /// <p>The performance category for the score.</p>
+    pub fn performance_category(&self) -> ::std::option::Option<&crate::types::PerformanceCategoryName> {
+        self.performance_category.as_ref()
+    }
 }
 impl EvaluationScore {
     /// Creates a new builder-style object to manufacture [`EvaluationScore`](crate::types::EvaluationScore).
@@ -46,6 +64,9 @@ pub struct EvaluationScoreBuilder {
     pub(crate) not_applicable: ::std::option::Option<bool>,
     pub(crate) automatic_fail: ::std::option::Option<bool>,
     pub(crate) applied_weight: ::std::option::Option<f64>,
+    pub(crate) earned_points: ::std::option::Option<i32>,
+    pub(crate) max_base_point: ::std::option::Option<i32>,
+    pub(crate) performance_category: ::std::option::Option<crate::types::PerformanceCategoryName>,
 }
 impl EvaluationScoreBuilder {
     /// <p>The score percentage for an item in a contact evaluation.</p>
@@ -104,6 +125,48 @@ impl EvaluationScoreBuilder {
     pub fn get_applied_weight(&self) -> &::std::option::Option<f64> {
         &self.applied_weight
     }
+    /// <p>The points earned for the item.</p>
+    pub fn earned_points(mut self, input: i32) -> Self {
+        self.earned_points = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The points earned for the item.</p>
+    pub fn set_earned_points(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.earned_points = input;
+        self
+    }
+    /// <p>The points earned for the item.</p>
+    pub fn get_earned_points(&self) -> &::std::option::Option<i32> {
+        &self.earned_points
+    }
+    /// <p>The maximum base points possible for the item.</p>
+    pub fn max_base_point(mut self, input: i32) -> Self {
+        self.max_base_point = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum base points possible for the item.</p>
+    pub fn set_max_base_point(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_base_point = input;
+        self
+    }
+    /// <p>The maximum base points possible for the item.</p>
+    pub fn get_max_base_point(&self) -> &::std::option::Option<i32> {
+        &self.max_base_point
+    }
+    /// <p>The performance category for the score.</p>
+    pub fn performance_category(mut self, input: crate::types::PerformanceCategoryName) -> Self {
+        self.performance_category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The performance category for the score.</p>
+    pub fn set_performance_category(mut self, input: ::std::option::Option<crate::types::PerformanceCategoryName>) -> Self {
+        self.performance_category = input;
+        self
+    }
+    /// <p>The performance category for the score.</p>
+    pub fn get_performance_category(&self) -> &::std::option::Option<crate::types::PerformanceCategoryName> {
+        &self.performance_category
+    }
     /// Consumes the builder and constructs a [`EvaluationScore`](crate::types::EvaluationScore).
     pub fn build(self) -> crate::types::EvaluationScore {
         crate::types::EvaluationScore {
@@ -111,6 +174,9 @@ impl EvaluationScoreBuilder {
             not_applicable: self.not_applicable.unwrap_or_default(),
             automatic_fail: self.automatic_fail.unwrap_or_default(),
             applied_weight: self.applied_weight,
+            earned_points: self.earned_points.unwrap_or_default(),
+            max_base_point: self.max_base_point.unwrap_or_default(),
+            performance_category: self.performance_category,
         }
     }
 }

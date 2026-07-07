@@ -27,10 +27,16 @@ pub fn ser_chime_sdk_meeting_live_connector_configuration(
 pub(crate) fn de_chime_sdk_meeting_live_connector_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -57,12 +63,12 @@ where
                             }
                             "CompositedVideo" => {
                                 builder = builder.set_composited_video(
-                                    crate::protocol_serde::shape_composited_video_artifacts_configuration::de_composited_video_artifacts_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_composited_video_artifacts_configuration::de_composited_video_artifacts_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "SourceConfiguration" => {
                                 builder = builder.set_source_configuration(
-                                    crate::protocol_serde::shape_source_configuration::de_source_configuration(tokens, _value)?,
+                                    crate::protocol_serde::shape_source_configuration::de_source_configuration(tokens, _value, depth + 1)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

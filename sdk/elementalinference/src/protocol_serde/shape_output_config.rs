@@ -16,6 +16,12 @@ pub fn ser_output_config(
             crate::protocol_serde::shape_clipping_config::ser_clipping_config(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::OutputConfig::Subtitling(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("subtitling").start_object();
+            crate::protocol_serde::shape_subtitling_config::ser_subtitling_config(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::OutputConfig::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("OutputConfig")),
     }
     Ok(())
@@ -24,10 +30,16 @@ pub fn ser_output_config(
 pub(crate) fn de_output_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OutputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -53,13 +65,18 @@ where
                     }
                     variant = match key.as_ref() {
                         "cropping" => Some(crate::types::OutputConfig::Cropping(
-                            crate::protocol_serde::shape_cropping_config::de_cropping_config(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_cropping_config::de_cropping_config(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cropping' cannot be null")
                             })?,
                         )),
                         "clipping" => Some(crate::types::OutputConfig::Clipping(
-                            crate::protocol_serde::shape_clipping_config::de_clipping_config(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_clipping_config::de_clipping_config(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'clipping' cannot be null")
+                            })?,
+                        )),
+                        "subtitling" => Some(crate::types::OutputConfig::Subtitling(
+                            crate::protocol_serde::shape_subtitling_config::de_subtitling_config(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'subtitling' cannot be null")
                             })?,
                         )),
                         _ => {

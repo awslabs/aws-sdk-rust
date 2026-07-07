@@ -2,10 +2,16 @@
 pub(crate) fn de_datum<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Datum>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,14 +30,14 @@ where
                         }
                         "TimeSeriesValue" => {
                             builder = builder.set_time_series_value(
-                                crate::protocol_serde::shape_time_series_data_point_list::de_time_series_data_point_list(tokens, _value)?,
+                                crate::protocol_serde::shape_time_series_data_point_list::de_time_series_data_point_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "ArrayValue" => {
-                            builder = builder.set_array_value(crate::protocol_serde::shape_datum_list::de_datum_list(tokens, _value)?);
+                            builder = builder.set_array_value(crate::protocol_serde::shape_datum_list::de_datum_list(tokens, _value, depth + 1)?);
                         }
                         "RowValue" => {
-                            builder = builder.set_row_value(crate::protocol_serde::shape_row::de_row(tokens, _value)?);
+                            builder = builder.set_row_value(crate::protocol_serde::shape_row::de_row(tokens, _value, depth + 1)?);
                         }
                         "NullValue" => {
                             builder = builder.set_null_value(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

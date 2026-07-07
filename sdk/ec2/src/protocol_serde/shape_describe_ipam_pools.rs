@@ -42,6 +42,8 @@ pub fn de_describe_ipam_pools(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeIpamPoolsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeIpamPoolsResponse got {start_el:?}"
@@ -65,7 +67,7 @@ pub fn de_describe_ipam_pools(
             s if s.matches("ipamPoolSet") /* IpamPools com.amazonaws.ec2.synthetic#DescribeIpamPoolsOutput$IpamPools */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_ipam_pool_set::de_ipam_pool_set(&mut tag)
+                        crate::protocol_serde::shape_ipam_pool_set::de_ipam_pool_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -4,25 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationSearchFilter {
-    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> or <code>AND</code> (List of List) input where:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p></li>
-    /// <li>
-    /// <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
-    /// </ul>
+    /// <p>An object that can be used to specify tag conditions.</p>
     pub attribute_filter: ::std::option::Option<crate::types::ControlPlaneAttributeFilter>,
+    /// <p>An object that can be used to specify tag conditions and attribute conditions for contact evaluations.</p>
+    pub contact_evaluation_attribute_filter: ::std::option::Option<crate::types::ContactEvaluationAttributeFilter>,
 }
 impl EvaluationSearchFilter {
-    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> or <code>AND</code> (List of List) input where:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p></li>
-    /// <li>
-    /// <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
-    /// </ul>
+    /// <p>An object that can be used to specify tag conditions.</p>
     pub fn attribute_filter(&self) -> ::std::option::Option<&crate::types::ControlPlaneAttributeFilter> {
         self.attribute_filter.as_ref()
+    }
+    /// <p>An object that can be used to specify tag conditions and attribute conditions for contact evaluations.</p>
+    pub fn contact_evaluation_attribute_filter(&self) -> ::std::option::Option<&crate::types::ContactEvaluationAttributeFilter> {
+        self.contact_evaluation_attribute_filter.as_ref()
     }
 }
 impl EvaluationSearchFilter {
@@ -37,44 +31,42 @@ impl EvaluationSearchFilter {
 #[non_exhaustive]
 pub struct EvaluationSearchFilterBuilder {
     pub(crate) attribute_filter: ::std::option::Option<crate::types::ControlPlaneAttributeFilter>,
+    pub(crate) contact_evaluation_attribute_filter: ::std::option::Option<crate::types::ContactEvaluationAttributeFilter>,
 }
 impl EvaluationSearchFilterBuilder {
-    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> or <code>AND</code> (List of List) input where:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p></li>
-    /// <li>
-    /// <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
-    /// </ul>
+    /// <p>An object that can be used to specify tag conditions.</p>
     pub fn attribute_filter(mut self, input: crate::types::ControlPlaneAttributeFilter) -> Self {
         self.attribute_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> or <code>AND</code> (List of List) input where:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p></li>
-    /// <li>
-    /// <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
-    /// </ul>
+    /// <p>An object that can be used to specify tag conditions.</p>
     pub fn set_attribute_filter(mut self, input: ::std::option::Option<crate::types::ControlPlaneAttributeFilter>) -> Self {
         self.attribute_filter = input;
         self
     }
-    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> or <code>AND</code> (List of List) input where:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p></li>
-    /// <li>
-    /// <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
-    /// </ul>
+    /// <p>An object that can be used to specify tag conditions.</p>
     pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::ControlPlaneAttributeFilter> {
         &self.attribute_filter
+    }
+    /// <p>An object that can be used to specify tag conditions and attribute conditions for contact evaluations.</p>
+    pub fn contact_evaluation_attribute_filter(mut self, input: crate::types::ContactEvaluationAttributeFilter) -> Self {
+        self.contact_evaluation_attribute_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that can be used to specify tag conditions and attribute conditions for contact evaluations.</p>
+    pub fn set_contact_evaluation_attribute_filter(mut self, input: ::std::option::Option<crate::types::ContactEvaluationAttributeFilter>) -> Self {
+        self.contact_evaluation_attribute_filter = input;
+        self
+    }
+    /// <p>An object that can be used to specify tag conditions and attribute conditions for contact evaluations.</p>
+    pub fn get_contact_evaluation_attribute_filter(&self) -> &::std::option::Option<crate::types::ContactEvaluationAttributeFilter> {
+        &self.contact_evaluation_attribute_filter
     }
     /// Consumes the builder and constructs a [`EvaluationSearchFilter`](crate::types::EvaluationSearchFilter).
     pub fn build(self) -> crate::types::EvaluationSearchFilter {
         crate::types::EvaluationSearchFilter {
             attribute_filter: self.attribute_filter,
+            contact_evaluation_attribute_filter: self.contact_evaluation_attribute_filter,
         }
     }
 }

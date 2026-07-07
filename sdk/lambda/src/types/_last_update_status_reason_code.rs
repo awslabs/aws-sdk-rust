@@ -44,6 +44,7 @@
 ///     LastUpdateStatusReasonCode::InvalidZipFileException => { /* ... */ },
 ///     LastUpdateStatusReasonCode::KmsKeyAccessDenied => { /* ... */ },
 ///     LastUpdateStatusReasonCode::KmsKeyNotFound => { /* ... */ },
+///     LastUpdateStatusReasonCode::ServiceQuotaExceededException => { /* ... */ },
 ///     LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => { /* ... */ },
 ///     LastUpdateStatusReasonCode::VcpuLimitExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -139,6 +140,8 @@ pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     KmsKeyNotFound,
     #[allow(missing_docs)] // documentation missing in model
+    ServiceQuotaExceededException,
+    #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
     #[allow(missing_docs)] // documentation missing in model
     VcpuLimitExceeded,
@@ -181,6 +184,7 @@ impl ::std::convert::From<&str> for LastUpdateStatusReasonCode {
             "InvalidZipFileException" => LastUpdateStatusReasonCode::InvalidZipFileException,
             "KMSKeyAccessDenied" => LastUpdateStatusReasonCode::KmsKeyAccessDenied,
             "KMSKeyNotFound" => LastUpdateStatusReasonCode::KmsKeyNotFound,
+            "ServiceQuotaExceededException" => LastUpdateStatusReasonCode::ServiceQuotaExceededException,
             "SubnetOutOfIPAddresses" => LastUpdateStatusReasonCode::SubnetOutOfIpAddresses,
             "VcpuLimitExceeded" => LastUpdateStatusReasonCode::VcpuLimitExceeded,
             other => LastUpdateStatusReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -230,6 +234,7 @@ impl LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::InvalidZipFileException => "InvalidZipFileException",
             LastUpdateStatusReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
             LastUpdateStatusReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
+            LastUpdateStatusReasonCode::ServiceQuotaExceededException => "ServiceQuotaExceededException",
             LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
             LastUpdateStatusReasonCode::VcpuLimitExceeded => "VcpuLimitExceeded",
             LastUpdateStatusReasonCode::Unknown(value) => value.as_str(),
@@ -270,6 +275,7 @@ impl LastUpdateStatusReasonCode {
             "InvalidZipFileException",
             "KMSKeyAccessDenied",
             "KMSKeyNotFound",
+            "ServiceQuotaExceededException",
             "SubnetOutOfIPAddresses",
             "VcpuLimitExceeded",
         ]
@@ -327,6 +333,7 @@ impl ::std::fmt::Display for LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::InvalidZipFileException => write!(f, "InvalidZipFileException"),
             LastUpdateStatusReasonCode::KmsKeyAccessDenied => write!(f, "KMSKeyAccessDenied"),
             LastUpdateStatusReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
+            LastUpdateStatusReasonCode::ServiceQuotaExceededException => write!(f, "ServiceQuotaExceededException"),
             LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
             LastUpdateStatusReasonCode::VcpuLimitExceeded => write!(f, "VcpuLimitExceeded"),
             LastUpdateStatusReasonCode::Unknown(value) => write!(f, "{value}"),

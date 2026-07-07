@@ -13,6 +13,7 @@
 /// # let alarmtype = unimplemented!();
 /// match alarmtype {
 ///     AlarmType::CompositeAlarm => { /* ... */ },
+///     AlarmType::LogAlarm => { /* ... */ },
 ///     AlarmType::MetricAlarm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum AlarmType {
     #[allow(missing_docs)] // documentation missing in model
     CompositeAlarm,
     #[allow(missing_docs)] // documentation missing in model
+    LogAlarm,
+    #[allow(missing_docs)] // documentation missing in model
     MetricAlarm,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for AlarmType {
     fn from(s: &str) -> Self {
         match s {
             "CompositeAlarm" => AlarmType::CompositeAlarm,
+            "LogAlarm" => AlarmType::LogAlarm,
             "MetricAlarm" => AlarmType::MetricAlarm,
             other => AlarmType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl AlarmType {
     pub fn as_str(&self) -> &str {
         match self {
             AlarmType::CompositeAlarm => "CompositeAlarm",
+            AlarmType::LogAlarm => "LogAlarm",
             AlarmType::MetricAlarm => "MetricAlarm",
             AlarmType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CompositeAlarm", "MetricAlarm"]
+        &["CompositeAlarm", "LogAlarm", "MetricAlarm"]
     }
 }
 impl ::std::convert::AsRef<str> for AlarmType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for AlarmType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AlarmType::CompositeAlarm => write!(f, "CompositeAlarm"),
+            AlarmType::LogAlarm => write!(f, "LogAlarm"),
             AlarmType::MetricAlarm => write!(f, "MetricAlarm"),
             AlarmType::Unknown(value) => write!(f, "{value}"),
         }

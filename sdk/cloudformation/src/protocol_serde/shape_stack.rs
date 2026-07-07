@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Stack, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Stack::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_stack(
             s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation#Stack$Parameters */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_parameters::de_parameters(&mut tag)
+                        crate::protocol_serde::shape_parameters::de_parameters(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -114,7 +118,7 @@ pub fn de_stack(
             s if s.matches("RollbackConfiguration") /* RollbackConfiguration com.amazonaws.cloudformation#Stack$RollbackConfiguration */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_rollback_configuration::de_rollback_configuration(&mut tag)
+                        crate::protocol_serde::shape_rollback_configuration::de_rollback_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -163,18 +167,28 @@ pub fn de_stack(
                 builder = builder.set_disable_rollback(var_12);
             }
             ,
-            s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation#Stack$NotificationARNs */ =>  {
+            s if s.matches("DeploymentConfig") /* DeploymentConfig com.amazonaws.cloudformation#Stack$DeploymentConfig */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_notification_arns::de_notification_arns(&mut tag)
+                        crate::protocol_serde::shape_deployment_config::de_deployment_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_notification_arns(var_13);
+                builder = builder.set_deployment_config(var_13);
+            }
+            ,
+            s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation#Stack$NotificationARNs */ =>  {
+                let var_14 =
+                    Some(
+                        crate::protocol_serde::shape_notification_arns::de_notification_arns(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_notification_arns(var_14);
             }
             ,
             s if s.matches("TimeoutInMinutes") /* TimeoutInMinutes com.amazonaws.cloudformation#Stack$TimeoutInMinutes */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -185,31 +199,31 @@ pub fn de_stack(
                         ?
                     )
                 ;
-                builder = builder.set_timeout_in_minutes(var_14);
+                builder = builder.set_timeout_in_minutes(var_15);
             }
             ,
             s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation#Stack$Capabilities */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
-                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag)
+                        crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_capabilities(var_15);
+                builder = builder.set_capabilities(var_16);
             }
             ,
             s if s.matches("Outputs") /* Outputs com.amazonaws.cloudformation#Stack$Outputs */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
-                        crate::protocol_serde::shape_outputs::de_outputs(&mut tag)
+                        crate::protocol_serde::shape_outputs::de_outputs(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_outputs(var_16);
+                builder = builder.set_outputs(var_17);
             }
             ,
             s if s.matches("RoleARN") /* RoleARN com.amazonaws.cloudformation#Stack$RoleARN */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -218,21 +232,21 @@ pub fn de_stack(
                         ?
                     )
                 ;
-                builder = builder.set_role_arn(var_17);
+                builder = builder.set_role_arn(var_18);
             }
             ,
             s if s.matches("Tags") /* Tags com.amazonaws.cloudformation#Stack$Tags */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
-                        crate::protocol_serde::shape_tags::de_tags(&mut tag)
+                        crate::protocol_serde::shape_tags::de_tags(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_18);
+                builder = builder.set_tags(var_19);
             }
             ,
             s if s.matches("EnableTerminationProtection") /* EnableTerminationProtection com.amazonaws.cloudformation#Stack$EnableTerminationProtection */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -243,23 +257,10 @@ pub fn de_stack(
                         ?
                     )
                 ;
-                builder = builder.set_enable_termination_protection(var_19);
+                builder = builder.set_enable_termination_protection(var_20);
             }
             ,
             s if s.matches("ParentId") /* ParentId com.amazonaws.cloudformation#Stack$ParentId */ =>  {
-                let var_20 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_parent_id(var_20);
-            }
-            ,
-            s if s.matches("RootId") /* RootId com.amazonaws.cloudformation#Stack$RootId */ =>  {
                 let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -269,21 +270,34 @@ pub fn de_stack(
                         ?
                     )
                 ;
-                builder = builder.set_root_id(var_21);
+                builder = builder.set_parent_id(var_21);
             }
             ,
-            s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#Stack$DriftInformation */ =>  {
+            s if s.matches("RootId") /* RootId com.amazonaws.cloudformation#Stack$RootId */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_stack_drift_information::de_stack_drift_information(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_drift_information(var_22);
+                builder = builder.set_root_id(var_22);
+            }
+            ,
+            s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#Stack$DriftInformation */ =>  {
+                let var_23 =
+                    Some(
+                        crate::protocol_serde::shape_stack_drift_information::de_stack_drift_information(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_drift_information(var_23);
             }
             ,
             s if s.matches("RetainExceptOnCreate") /* RetainExceptOnCreate com.amazonaws.cloudformation#Stack$RetainExceptOnCreate */ =>  {
-                let var_23 =
+                let var_24 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -294,11 +308,11 @@ pub fn de_stack(
                         ?
                     )
                 ;
-                builder = builder.set_retain_except_on_create(var_23);
+                builder = builder.set_retain_except_on_create(var_24);
             }
             ,
             s if s.matches("DeletionMode") /* DeletionMode com.amazonaws.cloudformation#Stack$DeletionMode */ =>  {
-                let var_24 =
+                let var_25 =
                     Some(
                         Result::<crate::types::DeletionMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DeletionMode::from(
@@ -308,11 +322,11 @@ pub fn de_stack(
                         ?
                     )
                 ;
-                builder = builder.set_deletion_mode(var_24);
+                builder = builder.set_deletion_mode(var_25);
             }
             ,
             s if s.matches("DetailedStatus") /* DetailedStatus com.amazonaws.cloudformation#Stack$DetailedStatus */ =>  {
-                let var_25 =
+                let var_26 =
                     Some(
                         Result::<crate::types::DetailedStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DetailedStatus::from(
@@ -322,17 +336,17 @@ pub fn de_stack(
                         ?
                     )
                 ;
-                builder = builder.set_detailed_status(var_25);
+                builder = builder.set_detailed_status(var_26);
             }
             ,
             s if s.matches("LastOperations") /* LastOperations com.amazonaws.cloudformation#Stack$LastOperations */ =>  {
-                let var_26 =
+                let var_27 =
                     Some(
-                        crate::protocol_serde::shape_last_operations::de_last_operations(&mut tag)
+                        crate::protocol_serde::shape_last_operations::de_last_operations(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_last_operations(var_26);
+                builder = builder.set_last_operations(var_27);
             }
             ,
             _ => {}

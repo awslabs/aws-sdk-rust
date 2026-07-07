@@ -2,10 +2,16 @@
 pub(crate) fn de_security_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SecurityProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,16 +57,20 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "AllowedAccessControlTags" => {
                             builder = builder.set_allowed_access_control_tags(
-                                crate::protocol_serde::shape_allowed_access_control_tags::de_allowed_access_control_tags(tokens, _value)?,
+                                crate::protocol_serde::shape_allowed_access_control_tags::de_allowed_access_control_tags(tokens, _value, depth + 1)?,
                             );
                         }
                         "TagRestrictedResources" => {
                             builder = builder.set_tag_restricted_resources(
-                                crate::protocol_serde::shape_tag_restricted_resource_list::de_tag_restricted_resource_list(tokens, _value)?,
+                                crate::protocol_serde::shape_tag_restricted_resource_list::de_tag_restricted_resource_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "LastModifiedTime" => {
@@ -79,7 +89,9 @@ where
                         "HierarchyRestrictedResources" => {
                             builder = builder.set_hierarchy_restricted_resources(
                                 crate::protocol_serde::shape_hierarchy_restricted_resource_list::de_hierarchy_restricted_resource_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -93,7 +105,9 @@ where
                         "GranularAccessControlConfiguration" => {
                             builder = builder.set_granular_access_control_configuration(
                                 crate::protocol_serde::shape_granular_access_control_configuration::de_granular_access_control_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

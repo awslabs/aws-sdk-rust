@@ -2,10 +2,16 @@
 pub(crate) fn de_automated_reasoning_policy_build_step<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningPolicyBuildStep>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,17 +23,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "context" => {
                             builder = builder.set_context(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_build_step_context::de_automated_reasoning_policy_build_step_context(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_build_step_context::de_automated_reasoning_policy_build_step_context(tokens, _value, depth + 1)?
                                 );
                         }
                         "priorElement" => {
                             builder = builder.set_prior_element(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_element::de_automated_reasoning_policy_definition_element(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_element::de_automated_reasoning_policy_definition_element(tokens, _value, depth + 1)?
                                 );
                         }
                         "messages" => {
                             builder = builder.set_messages(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_build_step_message_list::de_automated_reasoning_policy_build_step_message_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_build_step_message_list::de_automated_reasoning_policy_build_step_message_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

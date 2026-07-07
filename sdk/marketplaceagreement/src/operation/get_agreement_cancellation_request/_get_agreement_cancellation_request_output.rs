@@ -11,13 +11,13 @@ pub struct GetAgreementCancellationRequestOutput {
     pub reason_code: ::std::option::Option<crate::types::AgreementCancellationRequestReasonCode>,
     /// <p>The detailed description of the cancellation reason, if provided.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the cancellation request. Possible values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>The current status of the cancellation request.</p>
     pub status: ::std::option::Option<crate::types::AgreementCancellationRequestStatus>,
     /// <p>A message providing additional context about the cancellation request status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -38,7 +38,7 @@ impl GetAgreementCancellationRequestOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The current status of the cancellation request. Possible values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>The current status of the cancellation request.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementCancellationRequestStatus> {
         self.status.as_ref()
     }
@@ -46,11 +46,11 @@ impl GetAgreementCancellationRequestOutput {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The date and time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date and time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -153,17 +153,17 @@ impl GetAgreementCancellationRequestOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The current status of the cancellation request. Possible values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>The current status of the cancellation request.</p>
     pub fn status(mut self, input: crate::types::AgreementCancellationRequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the cancellation request. Possible values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>The current status of the cancellation request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementCancellationRequestStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the cancellation request. Possible values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>The current status of the cancellation request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementCancellationRequestStatus> {
         &self.status
     }
@@ -181,31 +181,31 @@ impl GetAgreementCancellationRequestOutputBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The date and time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

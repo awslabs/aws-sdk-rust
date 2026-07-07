@@ -49,6 +49,8 @@ pub fn de_disable_fast_snapshot_restores(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DisableFastSnapshotRestoresResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisableFastSnapshotRestoresResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_disable_fast_snapshot_restores(
             s if s.matches("successful") /* Successful com.amazonaws.ec2.synthetic#DisableFastSnapshotRestoresOutput$Successful */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_disable_fast_snapshot_restore_success_set::de_disable_fast_snapshot_restore_success_set(&mut tag)
+                        crate::protocol_serde::shape_disable_fast_snapshot_restore_success_set::de_disable_fast_snapshot_restore_success_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_disable_fast_snapshot_restores(
             s if s.matches("unsuccessful") /* Unsuccessful com.amazonaws.ec2.synthetic#DisableFastSnapshotRestoresOutput$Unsuccessful */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_disable_fast_snapshot_restore_error_set::de_disable_fast_snapshot_restore_error_set(&mut tag)
+                        crate::protocol_serde::shape_disable_fast_snapshot_restore_error_set::de_disable_fast_snapshot_restore_error_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

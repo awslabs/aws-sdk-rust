@@ -21,10 +21,16 @@ pub fn ser_customer_projects_context(
 pub(crate) fn de_customer_projects_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomerProjectsContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,12 +41,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Customer" => {
-                            builder = builder.set_customer(crate::protocol_serde::shape_engagement_customer::de_engagement_customer(tokens, _value)?);
+                            builder = builder.set_customer(crate::protocol_serde::shape_engagement_customer::de_engagement_customer(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Project" => {
                             builder = builder.set_project(
                                 crate::protocol_serde::shape_engagement_customer_project_details::de_engagement_customer_project_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

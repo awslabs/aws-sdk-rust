@@ -164,4 +164,18 @@ impl ListConnectorsV2FluentBuilder {
     pub fn get_connector_status(&self) -> &::std::option::Option<crate::types::ConnectorStatus> {
         self.inner.get_connector_status()
     }
+    /// <p>The enablement status to filter connectors by.</p>
+    pub fn enablement_status(mut self, input: crate::types::EnablementStatus) -> Self {
+        self.inner = self.inner.enablement_status(input);
+        self
+    }
+    /// <p>The enablement status to filter connectors by.</p>
+    pub fn set_enablement_status(mut self, input: ::std::option::Option<crate::types::EnablementStatus>) -> Self {
+        self.inner = self.inner.set_enablement_status(input);
+        self
+    }
+    /// <p>The enablement status to filter connectors by.</p>
+    pub fn get_enablement_status(&self) -> &::std::option::Option<crate::types::EnablementStatus> {
+        self.inner.get_enablement_status()
+    }
 }

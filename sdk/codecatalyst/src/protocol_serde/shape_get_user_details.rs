@@ -133,6 +133,8 @@ pub(crate) fn de_get_user_details(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,7 +148,7 @@ pub(crate) fn de_get_user_details(
                     );
                 }
                 "primaryEmail" => {
-                    builder = builder.set_primary_email(crate::protocol_serde::shape_email_address::de_email_address(tokens, _value)?);
+                    builder = builder.set_primary_email(crate::protocol_serde::shape_email_address::de_email_address(tokens, _value, depth + 1)?);
                 }
                 "userId" => {
                     builder = builder.set_user_id(

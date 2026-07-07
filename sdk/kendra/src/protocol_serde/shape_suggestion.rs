@@ -2,10 +2,16 @@
 pub(crate) fn de_suggestion<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Suggestion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,11 +29,18 @@ where
                             );
                         }
                         "Value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_suggestion_value::de_suggestion_value(tokens, _value)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_suggestion_value::de_suggestion_value(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SourceDocuments" => {
-                            builder =
-                                builder.set_source_documents(crate::protocol_serde::shape_source_documents::de_source_documents(tokens, _value)?);
+                            builder = builder.set_source_documents(crate::protocol_serde::shape_source_documents::de_source_documents(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

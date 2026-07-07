@@ -2,10 +2,19 @@
 pub(crate) fn de_string_array<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
-) -> ::std::result::Result<Option<::std::vec::Vec<::std::string::String>>, ::aws_smithy_json::deserialize::error::DeserializeError>
+    depth: u32,
+) -> ::std::result::Result<
+    Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartArray { .. }) => {
@@ -17,16 +26,11 @@ where
                         break;
                     }
                     _ => {
-                        let value = ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?;
-                        if let Some(value) = value {
-                            items.push(value);
-                        } else {
-                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "dense list cannot contain null values",
-                            ));
-                        }
+                        items.push(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
                     }
                 }
             }

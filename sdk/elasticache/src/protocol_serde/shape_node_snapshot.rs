@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_node_snapshot(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NodeSnapshot, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NodeSnapshot::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_node_snapshot(
             s if s.matches("NodeGroupConfiguration") /* NodeGroupConfiguration com.amazonaws.elasticache#NodeSnapshot$NodeGroupConfiguration */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_node_group_configuration::de_node_group_configuration(&mut tag)
+                        crate::protocol_serde::shape_node_group_configuration::de_node_group_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

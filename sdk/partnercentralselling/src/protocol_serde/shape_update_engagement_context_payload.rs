@@ -16,6 +16,12 @@ pub fn ser_update_engagement_context_payload(
             crate::protocol_serde::shape_customer_projects_context::ser_customer_projects_context(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::UpdateEngagementContextPayload::ProspectingResult(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_7.key("ProspectingResult").start_object();
+            crate::protocol_serde::shape_prospecting_result::ser_prospecting_result(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::UpdateEngagementContextPayload::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "UpdateEngagementContextPayload",

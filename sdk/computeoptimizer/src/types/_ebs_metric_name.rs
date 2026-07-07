@@ -12,8 +12,10 @@
 /// ```text
 /// # let ebsmetricname = unimplemented!();
 /// match ebsmetricname {
+///     EbsMetricName::VolumeIopsExceeded => { /* ... */ },
 ///     EbsMetricName::VolumeReadBytesPerSecond => { /* ... */ },
 ///     EbsMetricName::VolumeReadOpsPerSecond => { /* ... */ },
+///     EbsMetricName::VolumeThroughputExceeded => { /* ... */ },
 ///     EbsMetricName::VolumeWriteBytesPerSecond => { /* ... */ },
 ///     EbsMetricName::VolumeWriteOpsPerSecond => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,9 +47,13 @@
 )]
 pub enum EbsMetricName {
     #[allow(missing_docs)] // documentation missing in model
+    VolumeIopsExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     VolumeReadBytesPerSecond,
     #[allow(missing_docs)] // documentation missing in model
     VolumeReadOpsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
+    VolumeThroughputExceeded,
     #[allow(missing_docs)] // documentation missing in model
     VolumeWriteBytesPerSecond,
     #[allow(missing_docs)] // documentation missing in model
@@ -59,8 +65,10 @@ pub enum EbsMetricName {
 impl ::std::convert::From<&str> for EbsMetricName {
     fn from(s: &str) -> Self {
         match s {
+            "VolumeIOPSExceeded" => EbsMetricName::VolumeIopsExceeded,
             "VolumeReadBytesPerSecond" => EbsMetricName::VolumeReadBytesPerSecond,
             "VolumeReadOpsPerSecond" => EbsMetricName::VolumeReadOpsPerSecond,
+            "VolumeThroughputExceeded" => EbsMetricName::VolumeThroughputExceeded,
             "VolumeWriteBytesPerSecond" => EbsMetricName::VolumeWriteBytesPerSecond,
             "VolumeWriteOpsPerSecond" => EbsMetricName::VolumeWriteOpsPerSecond,
             other => EbsMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -78,8 +86,10 @@ impl EbsMetricName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EbsMetricName::VolumeIopsExceeded => "VolumeIOPSExceeded",
             EbsMetricName::VolumeReadBytesPerSecond => "VolumeReadBytesPerSecond",
             EbsMetricName::VolumeReadOpsPerSecond => "VolumeReadOpsPerSecond",
+            EbsMetricName::VolumeThroughputExceeded => "VolumeThroughputExceeded",
             EbsMetricName::VolumeWriteBytesPerSecond => "VolumeWriteBytesPerSecond",
             EbsMetricName::VolumeWriteOpsPerSecond => "VolumeWriteOpsPerSecond",
             EbsMetricName::Unknown(value) => value.as_str(),
@@ -88,8 +98,10 @@ impl EbsMetricName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "VolumeIOPSExceeded",
             "VolumeReadBytesPerSecond",
             "VolumeReadOpsPerSecond",
+            "VolumeThroughputExceeded",
             "VolumeWriteBytesPerSecond",
             "VolumeWriteOpsPerSecond",
         ]
@@ -115,8 +127,10 @@ impl EbsMetricName {
 impl ::std::fmt::Display for EbsMetricName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EbsMetricName::VolumeIopsExceeded => write!(f, "VolumeIOPSExceeded"),
             EbsMetricName::VolumeReadBytesPerSecond => write!(f, "VolumeReadBytesPerSecond"),
             EbsMetricName::VolumeReadOpsPerSecond => write!(f, "VolumeReadOpsPerSecond"),
+            EbsMetricName::VolumeThroughputExceeded => write!(f, "VolumeThroughputExceeded"),
             EbsMetricName::VolumeWriteBytesPerSecond => write!(f, "VolumeWriteBytesPerSecond"),
             EbsMetricName::VolumeWriteOpsPerSecond => write!(f, "VolumeWriteOpsPerSecond"),
             EbsMetricName::Unknown(value) => write!(f, "{value}"),

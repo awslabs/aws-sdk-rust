@@ -235,7 +235,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// Db2
     /// </dt>
     /// <dd>
-    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE), Db2 Community Edition (CE), and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
     /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
@@ -640,7 +640,7 @@ impl CreateDbInstanceReadReplicaInput {
     /// Db2
     /// </dt>
     /// <dd>
-    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE), Db2 Community Edition (CE), and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
     /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
@@ -1878,7 +1878,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// Db2
     /// </dt>
     /// <dd>
-    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE), Db2 Community Edition (CE), and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
     /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
@@ -1902,7 +1902,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// Db2
     /// </dt>
     /// <dd>
-    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE), Db2 Community Edition (CE), and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
     /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
@@ -1926,7 +1926,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// Db2
     /// </dt>
     /// <dd>
-    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE), Db2 Community Edition (CE), and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
     /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>

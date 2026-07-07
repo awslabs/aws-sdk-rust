@@ -123,97 +123,106 @@ pub(crate) fn de_get_evaluation_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "applicationType" => {
-                    builder = builder.set_application_type(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ApplicationType::from(u.as_ref())))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "applicationType" => {
+                        builder = builder.set_application_type(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::ApplicationType::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "creationTime" => {
+                        builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "customerEncryptionKeyId" => {
+                        builder = builder.set_customer_encryption_key_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "evaluationConfig" => {
+                        builder = builder.set_evaluation_config(crate::protocol_serde::shape_evaluation_config::de_evaluation_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "failureMessages" => {
+                        builder =
+                            builder.set_failure_messages(crate::protocol_serde::shape_error_messages::de_error_messages(tokens, _value, depth + 1)?);
+                    }
+                    "inferenceConfig" => {
+                        builder = builder.set_inference_config(
+                            crate::protocol_serde::shape_evaluation_inference_config::de_evaluation_inference_config(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "jobArn" => {
+                        builder = builder.set_job_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "jobDescription" => {
+                        builder = builder.set_job_description(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "jobName" => {
+                        builder = builder.set_job_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "jobType" => {
+                        builder = builder.set_job_type(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationJobType::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "lastModifiedTime" => {
+                        builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "outputDataConfig" => {
+                        builder = builder.set_output_data_config(
+                            crate::protocol_serde::shape_evaluation_output_data_config::de_evaluation_output_data_config(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "roleArn" => {
+                        builder = builder.set_role_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "status" => {
+                        builder = builder.set_status(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationJobStatus::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "creationTime" => {
-                    builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "customerEncryptionKeyId" => {
-                    builder = builder.set_customer_encryption_key_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "evaluationConfig" => {
-                    builder = builder.set_evaluation_config(crate::protocol_serde::shape_evaluation_config::de_evaluation_config(tokens, _value)?);
-                }
-                "failureMessages" => {
-                    builder = builder.set_failure_messages(crate::protocol_serde::shape_error_messages::de_error_messages(tokens, _value)?);
-                }
-                "inferenceConfig" => {
-                    builder = builder.set_inference_config(crate::protocol_serde::shape_evaluation_inference_config::de_evaluation_inference_config(
-                        tokens, _value,
-                    )?);
-                }
-                "jobArn" => {
-                    builder = builder.set_job_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "jobDescription" => {
-                    builder = builder.set_job_description(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "jobName" => {
-                    builder = builder.set_job_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "jobType" => {
-                    builder = builder.set_job_type(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationJobType::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "lastModifiedTime" => {
-                    builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "outputDataConfig" => {
-                    builder = builder.set_output_data_config(
-                        crate::protocol_serde::shape_evaluation_output_data_config::de_evaluation_output_data_config(tokens, _value)?,
-                    );
-                }
-                "roleArn" => {
-                    builder = builder.set_role_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationJobStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

@@ -27,5 +27,11 @@ pub fn ser_update_application_input_input(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.iam_identity_center_options {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("iamIdentityCenterOptions").start_object();
+        crate::protocol_serde::shape_iam_identity_center_options_input::ser_iam_identity_center_options_input(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

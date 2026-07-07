@@ -2,10 +2,16 @@
 pub(crate) fn de_bill_estimate_line_item_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BillEstimateLineItemSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -87,23 +93,28 @@ where
                         }
                         "estimatedUsageQuantity" => {
                             builder = builder.set_estimated_usage_quantity(
-                                crate::protocol_serde::shape_usage_quantity_result::de_usage_quantity_result(tokens, _value)?,
+                                crate::protocol_serde::shape_usage_quantity_result::de_usage_quantity_result(tokens, _value, depth + 1)?,
                             );
                         }
                         "estimatedCost" => {
-                            builder = builder.set_estimated_cost(crate::protocol_serde::shape_cost_amount::de_cost_amount(tokens, _value)?);
+                            builder =
+                                builder.set_estimated_cost(crate::protocol_serde::shape_cost_amount::de_cost_amount(tokens, _value, depth + 1)?);
                         }
                         "historicalUsageQuantity" => {
                             builder = builder.set_historical_usage_quantity(
-                                crate::protocol_serde::shape_usage_quantity_result::de_usage_quantity_result(tokens, _value)?,
+                                crate::protocol_serde::shape_usage_quantity_result::de_usage_quantity_result(tokens, _value, depth + 1)?,
                             );
                         }
                         "historicalCost" => {
-                            builder = builder.set_historical_cost(crate::protocol_serde::shape_cost_amount::de_cost_amount(tokens, _value)?);
+                            builder =
+                                builder.set_historical_cost(crate::protocol_serde::shape_cost_amount::de_cost_amount(tokens, _value, depth + 1)?);
                         }
                         "savingsPlanArns" => {
-                            builder =
-                                builder.set_savings_plan_arns(crate::protocol_serde::shape_savings_plan_arns::de_savings_plan_arns(tokens, _value)?);
+                            builder = builder.set_savings_plan_arns(crate::protocol_serde::shape_savings_plan_arns::de_savings_plan_arns(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

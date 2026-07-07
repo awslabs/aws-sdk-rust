@@ -49,6 +49,8 @@ pub fn de_deprovision_public_ipv4_pool_cidr(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeprovisionPublicIpv4PoolCidrResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeprovisionPublicIpv4PoolCidrResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_deprovision_public_ipv4_pool_cidr(
             s if s.matches("deprovisionedAddressSet") /* DeprovisionedAddresses com.amazonaws.ec2.synthetic#DeprovisionPublicIpv4PoolCidrOutput$DeprovisionedAddresses */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_deprovisioned_address_set::de_deprovisioned_address_set(&mut tag)
+                        crate::protocol_serde::shape_deprovisioned_address_set::de_deprovisioned_address_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

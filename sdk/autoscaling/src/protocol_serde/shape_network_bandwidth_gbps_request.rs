@@ -26,7 +26,11 @@ pub fn ser_network_bandwidth_gbps_request(
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_bandwidth_gbps_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NetworkBandwidthGbpsRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkBandwidthGbpsRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {

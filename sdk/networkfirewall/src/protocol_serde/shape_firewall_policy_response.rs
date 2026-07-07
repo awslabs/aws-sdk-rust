@@ -2,10 +2,16 @@
 pub(crate) fn de_firewall_policy_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FirewallPolicyResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "ConsumedStatelessRuleCapacity" => {
                             builder = builder.set_consumed_stateless_rule_capacity(
@@ -83,7 +89,7 @@ where
                         }
                         "EncryptionConfiguration" => {
                             builder = builder.set_encryption_configuration(
-                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "LastModifiedTime" => {

@@ -12,6 +12,7 @@
 /// ```text
 /// # let sourceenvironment = unimplemented!();
 /// match sourceenvironment {
+///     SourceEnvironment::AwsDiscoveryCollector => { /* ... */ },
 ///     SourceEnvironment::CiscoAci => { /* ... */ },
 ///     SourceEnvironment::FortigateFirewall => { /* ... */ },
 ///     SourceEnvironment::LogicalModel => { /* ... */ },
@@ -48,6 +49,8 @@
 )]
 pub enum SourceEnvironment {
     #[allow(missing_docs)] // documentation missing in model
+    AwsDiscoveryCollector,
+    #[allow(missing_docs)] // documentation missing in model
     CiscoAci,
     #[allow(missing_docs)] // documentation missing in model
     FortigateFirewall,
@@ -68,6 +71,7 @@ pub enum SourceEnvironment {
 impl ::std::convert::From<&str> for SourceEnvironment {
     fn from(s: &str) -> Self {
         match s {
+            "AWS_DISCOVERY_COLLECTOR" => SourceEnvironment::AwsDiscoveryCollector,
             "CISCO_ACI" => SourceEnvironment::CiscoAci,
             "FORTIGATE_FIREWALL" => SourceEnvironment::FortigateFirewall,
             "LOGICAL_MODEL" => SourceEnvironment::LogicalModel,
@@ -90,6 +94,7 @@ impl SourceEnvironment {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SourceEnvironment::AwsDiscoveryCollector => "AWS_DISCOVERY_COLLECTOR",
             SourceEnvironment::CiscoAci => "CISCO_ACI",
             SourceEnvironment::FortigateFirewall => "FORTIGATE_FIREWALL",
             SourceEnvironment::LogicalModel => "LOGICAL_MODEL",
@@ -103,6 +108,7 @@ impl SourceEnvironment {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS_DISCOVERY_COLLECTOR",
             "CISCO_ACI",
             "FORTIGATE_FIREWALL",
             "LOGICAL_MODEL",
@@ -133,6 +139,7 @@ impl SourceEnvironment {
 impl ::std::fmt::Display for SourceEnvironment {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SourceEnvironment::AwsDiscoveryCollector => write!(f, "AWS_DISCOVERY_COLLECTOR"),
             SourceEnvironment::CiscoAci => write!(f, "CISCO_ACI"),
             SourceEnvironment::FortigateFirewall => write!(f, "FORTIGATE_FIREWALL"),
             SourceEnvironment::LogicalModel => write!(f, "LOGICAL_MODEL"),

@@ -53,6 +53,8 @@ pub fn de_describe_transit_gateway_vpc_attachments(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeTransitGatewayVpcAttachmentsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTransitGatewayVpcAttachmentsResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_describe_transit_gateway_vpc_attachments(
             s if s.matches("transitGatewayVpcAttachments") /* TransitGatewayVpcAttachments com.amazonaws.ec2.synthetic#DescribeTransitGatewayVpcAttachmentsOutput$TransitGatewayVpcAttachments */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_vpc_attachment_list::de_transit_gateway_vpc_attachment_list(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_vpc_attachment_list::de_transit_gateway_vpc_attachment_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

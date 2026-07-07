@@ -3,47 +3,50 @@ pub fn ser_inference_component_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InferenceComponentSpecification,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.model_name {
-        object.key("ModelName").string(var_1.as_str());
+    if let Some(var_1) = &input.instance_type {
+        object.key("InstanceType").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.container {
+    if let Some(var_2) = &input.model_name {
+        object.key("ModelName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.container {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Container").start_object();
+        let mut object_4 = object.key("Container").start_object();
         crate::protocol_serde::shape_inference_component_container_specification::ser_inference_component_container_specification(
-            &mut object_3,
-            var_2,
+            &mut object_4,
+            var_3,
         )?;
-        object_3.finish();
+        object_4.finish();
     }
-    if let Some(var_4) = &input.startup_parameters {
+    if let Some(var_5) = &input.startup_parameters {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("StartupParameters").start_object();
-        crate::protocol_serde::shape_inference_component_startup_parameters::ser_inference_component_startup_parameters(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("StartupParameters").start_object();
+        crate::protocol_serde::shape_inference_component_startup_parameters::ser_inference_component_startup_parameters(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.compute_resource_requirements {
+    if let Some(var_7) = &input.compute_resource_requirements {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ComputeResourceRequirements").start_object();
+        let mut object_8 = object.key("ComputeResourceRequirements").start_object();
         crate::protocol_serde::shape_inference_component_compute_resource_requirements::ser_inference_component_compute_resource_requirements(
-            &mut object_7,
-            var_6,
+            &mut object_8,
+            var_7,
         )?;
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_8) = &input.base_inference_component_name {
-        object.key("BaseInferenceComponentName").string(var_8.as_str());
+    if let Some(var_9) = &input.base_inference_component_name {
+        object.key("BaseInferenceComponentName").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.data_cache_config {
+    if let Some(var_10) = &input.data_cache_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("DataCacheConfig").start_object();
-        crate::protocol_serde::shape_inference_component_data_cache_config::ser_inference_component_data_cache_config(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("DataCacheConfig").start_object();
+        crate::protocol_serde::shape_inference_component_data_cache_config::ser_inference_component_data_cache_config(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.scheduling_config {
+    if let Some(var_12) = &input.scheduling_config {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("SchedulingConfig").start_object();
-        crate::protocol_serde::shape_inference_component_scheduling_config::ser_inference_component_scheduling_config(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("SchedulingConfig").start_object();
+        crate::protocol_serde::shape_inference_component_scheduling_config::ser_inference_component_scheduling_config(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

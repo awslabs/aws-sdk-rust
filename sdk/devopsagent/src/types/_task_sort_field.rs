@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Fields available for sorting tasks
+/// <p>Fields available for sorting tasks</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TaskSortField {
-    /// Sort by task creation timestamp
+    /// <p>Sort by task creation timestamp</p>
     CreatedAt,
-    /// Sort by task priority level
+    /// <p>Sort by task priority level</p>
     Priority,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

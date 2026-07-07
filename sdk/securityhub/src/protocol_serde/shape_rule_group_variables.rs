@@ -21,10 +21,16 @@ pub fn ser_rule_group_variables(
 pub(crate) fn de_rule_group_variables<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleGroupVariables>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,14 +43,18 @@ where
                         "IpSets" => {
                             builder = builder.set_ip_sets(
                                 crate::protocol_serde::shape_rule_group_variables_ip_sets_details::de_rule_group_variables_ip_sets_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "PortSets" => {
                             builder = builder.set_port_sets(
                                 crate::protocol_serde::shape_rule_group_variables_port_sets_details::de_rule_group_variables_port_sets_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

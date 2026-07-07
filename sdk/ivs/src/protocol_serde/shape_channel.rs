@@ -2,10 +2,16 @@
 pub(crate) fn de_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Channel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,7 +74,7 @@ where
                             builder = builder.set_authorized(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "insecureIngest" => {
                             builder = builder.set_insecure_ingest(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -81,7 +87,7 @@ where
                             );
                         }
                         "srt" => {
-                            builder = builder.set_srt(crate::protocol_serde::shape_srt::de_srt(tokens, _value)?);
+                            builder = builder.set_srt(crate::protocol_serde::shape_srt::de_srt(tokens, _value, depth + 1)?);
                         }
                         "playbackRestrictionPolicyArn" => {
                             builder = builder.set_playback_restriction_policy_arn(
@@ -92,7 +98,11 @@ where
                         }
                         "multitrackInputConfiguration" => {
                             builder = builder.set_multitrack_input_configuration(
-                                crate::protocol_serde::shape_multitrack_input_configuration::de_multitrack_input_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_multitrack_input_configuration::de_multitrack_input_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "containerFormat" => {

@@ -139,6 +139,10 @@ pub use crate::types::_route_scooter_options::RouteScooterOptions;
 
 pub use crate::types::_route_truck_options::RouteTruckOptions;
 
+pub use crate::types::_route_intermodal_options::RouteIntermodalOptions;
+
+pub use crate::types::_route_transit_options::RouteTransitOptions;
+
 pub use crate::types::_route_waypoint::RouteWaypoint;
 
 pub use crate::types::_route_response_notice::RouteResponseNotice;
@@ -231,6 +235,18 @@ pub use crate::types::_route_trailer_options::RouteTrailerOptions;
 
 pub use crate::types::_route_truck_type::RouteTruckType;
 
+pub use crate::types::_route_intermodal_pedestrian_options::RouteIntermodalPedestrianOptions;
+
+pub use crate::types::_route_intermodal_rental_options::RouteIntermodalRentalOptions;
+
+pub use crate::types::_route_intermodal_taxi_options::RouteIntermodalTaxiOptions;
+
+pub use crate::types::_route_intermodal_transit_options::RouteIntermodalTransitOptions;
+
+pub use crate::types::_route_intermodal_vehicle_options::RouteIntermodalVehicleOptions;
+
+pub use crate::types::_route_transit_pedestrian_options::RouteTransitPedestrianOptions;
+
 pub use crate::types::_route_response_notice_code::RouteResponseNoticeCode;
 
 pub use crate::types::_route_notice_impact::RouteNoticeImpact;
@@ -279,6 +295,10 @@ pub use crate::types::_route_zone_category::RouteZoneCategory;
 
 pub use crate::types::_route_hazardous_cargo_type::RouteHazardousCargoType;
 
+pub use crate::types::_route_accessibility_attribute::RouteAccessibilityAttribute;
+
+pub use crate::types::_route_transit_mode::RouteTransitMode;
+
 pub use crate::types::_route_leg::RouteLeg;
 
 pub use crate::types::_route_major_road_label::RouteMajorRoadLabel;
@@ -301,6 +321,14 @@ pub use crate::types::_polyline_corridor::PolylineCorridor;
 
 pub use crate::types::_isoline_connection_geometry::IsolineConnectionGeometry;
 
+pub use crate::types::_route_rental_mode::RouteRentalMode;
+
+pub use crate::types::_route_intermodal_enabled_legs::RouteIntermodalEnabledLegs;
+
+pub use crate::types::_route_taxi_mode::RouteTaxiMode;
+
+pub use crate::types::_route_vehicle_mode::RouteVehicleMode;
+
 pub use crate::types::_route_ferry_leg_details::RouteFerryLegDetails;
 
 pub use crate::types::_route_leg_geometry::RouteLegGeometry;
@@ -312,6 +340,12 @@ pub use crate::types::_route_leg_travel_mode::RouteLegTravelMode;
 pub use crate::types::_route_leg_type::RouteLegType;
 
 pub use crate::types::_route_vehicle_leg_details::RouteVehicleLegDetails;
+
+pub use crate::types::_route_rental_leg_details::RouteRentalLegDetails;
+
+pub use crate::types::_route_taxi_leg_details::RouteTaxiLegDetails;
+
+pub use crate::types::_route_transit_leg_details::RouteTransitLegDetails;
 
 pub use crate::types::_localized_string::LocalizedString;
 
@@ -339,6 +373,36 @@ pub use crate::types::_route_vehicle_departure::RouteVehicleDeparture;
 
 pub use crate::types::_route_vehicle_summary::RouteVehicleSummary;
 
+pub use crate::types::_route_rental_agency::RouteRentalAgency;
+
+pub use crate::types::_route_rental_arrival::RouteRentalArrival;
+
+pub use crate::types::_route_rental_departure::RouteRentalDeparture;
+
+pub use crate::types::_route_rental_summary::RouteRentalSummary;
+
+pub use crate::types::_route_rental_transport_mode_details::RouteRentalTransportModeDetails;
+
+pub use crate::types::_route_taxi_agency::RouteTaxiAgency;
+
+pub use crate::types::_route_taxi_arrival::RouteTaxiArrival;
+
+pub use crate::types::_route_taxi_departure::RouteTaxiDeparture;
+
+pub use crate::types::_route_taxi_summary::RouteTaxiSummary;
+
+pub use crate::types::_route_taxi_transport_mode_details::RouteTaxiTransportModeDetails;
+
+pub use crate::types::_route_transit_agency::RouteTransitAgency;
+
+pub use crate::types::_route_transit_arrival::RouteTransitArrival;
+
+pub use crate::types::_route_transit_departure::RouteTransitDeparture;
+
+pub use crate::types::_route_transit_summary::RouteTransitSummary;
+
+pub use crate::types::_route_transit_transport_mode_details::RouteTransitTransportModeDetails;
+
 pub use crate::types::_route_direction::RouteDirection;
 
 pub use crate::types::_route_toll_price_value_range::RouteTollPriceValueRange;
@@ -361,6 +425,8 @@ pub use crate::types::_route_ferry_travel_only_summary::RouteFerryTravelOnlySumm
 
 pub use crate::types::_route_ferry_travel_step::RouteFerryTravelStep;
 
+pub use crate::types::_route_pedestrian_after_travel_step::RoutePedestrianAfterTravelStep;
+
 pub use crate::types::_route_pedestrian_place::RoutePedestrianPlace;
 
 pub use crate::types::_route_pedestrian_notice::RoutePedestrianNotice;
@@ -372,6 +438,8 @@ pub use crate::types::_route_pedestrian_overview_summary::RoutePedestrianOvervie
 pub use crate::types::_route_pedestrian_travel_only_summary::RoutePedestrianTravelOnlySummary;
 
 pub use crate::types::_route_pedestrian_travel_step::RoutePedestrianTravelStep;
+
+pub use crate::types::_route_vehicle_after_travel_step::RouteVehicleAfterTravelStep;
 
 pub use crate::types::_route_vehicle_place::RouteVehiclePlace;
 
@@ -393,6 +461,62 @@ pub use crate::types::_route_vehicle_travel_step::RouteVehicleTravelStep;
 
 pub use crate::types::_route_zone::RouteZone;
 
+pub use crate::types::_route_rental_after_travel_step::RouteRentalAfterTravelStep;
+
+pub use crate::types::_route_rental_place::RouteRentalPlace;
+
+pub use crate::types::_route_attribution::RouteAttribution;
+
+pub use crate::types::_route_rental_before_travel_step::RouteRentalBeforeTravelStep;
+
+pub use crate::types::_route_web_link::RouteWebLink;
+
+pub use crate::types::_route_rental_overview_summary::RouteRentalOverviewSummary;
+
+pub use crate::types::_route_rental_travel_only_summary::RouteRentalTravelOnlySummary;
+
+pub use crate::types::_route_rental_travel_step::RouteRentalTravelStep;
+
+pub use crate::types::_route_taxi_after_travel_step::RouteTaxiAfterTravelStep;
+
+pub use crate::types::_route_taxi_place::RouteTaxiPlace;
+
+pub use crate::types::_route_taxi_before_travel_step::RouteTaxiBeforeTravelStep;
+
+pub use crate::types::_route_taxi_notice::RouteTaxiNotice;
+
+pub use crate::types::_route_taxi_overview_summary::RouteTaxiOverviewSummary;
+
+pub use crate::types::_route_taxi_travel_only_summary::RouteTaxiTravelOnlySummary;
+
+pub use crate::types::_route_taxi_travel_step::RouteTaxiTravelStep;
+
+pub use crate::types::_route_transit_after_travel_step::RouteTransitAfterTravelStep;
+
+pub use crate::types::_route_transit_place::RouteTransitPlace;
+
+pub use crate::types::_route_transit_trip_status::RouteTransitTripStatus;
+
+pub use crate::types::_route_transit_before_travel_step::RouteTransitBeforeTravelStep;
+
+pub use crate::types::_route_transit_incident::RouteTransitIncident;
+
+pub use crate::types::_route_transit_intermediate_stop::RouteTransitIntermediateStop;
+
+pub use crate::types::_route_transit_next_departure::RouteTransitNextDeparture;
+
+pub use crate::types::_route_transit_notice::RouteTransitNotice;
+
+pub use crate::types::_route_transit_span::RouteTransitSpan;
+
+pub use crate::types::_route_transit_overview_summary::RouteTransitOverviewSummary;
+
+pub use crate::types::_route_transit_travel_only_summary::RouteTransitTravelOnlySummary;
+
+pub use crate::types::_route_accessibility_availability_details::RouteAccessibilityAvailabilityDetails;
+
+pub use crate::types::_route_transit_travel_step::RouteTransitTravelStep;
+
 pub use crate::types::_route_ferry_after_travel_step_type::RouteFerryAfterTravelStepType;
 
 pub use crate::types::_route_ferry_before_travel_step_type::RouteFerryBeforeTravelStepType;
@@ -403,7 +527,15 @@ pub use crate::types::_route_pass_through_place::RoutePassThroughPlace;
 
 pub use crate::types::_route_ferry_travel_step_type::RouteFerryTravelStepType;
 
+pub use crate::types::_route_pedestrian_after_travel_step_type::RoutePedestrianAfterTravelStepType;
+
+pub use crate::types::_route_access_point_details::RouteAccessPointDetails;
+
 pub use crate::types::_route_side_of_street::RouteSideOfStreet;
+
+pub use crate::types::_route_station_details::RouteStationDetails;
+
+pub use crate::types::_route_pedestrian_place_type::RoutePedestrianPlaceType;
 
 pub use crate::types::_route_pedestrian_notice_code::RoutePedestrianNoticeCode;
 
@@ -429,6 +561,12 @@ pub use crate::types::_route_turn_step_details::RouteTurnStepDetails;
 
 pub use crate::types::_route_pedestrian_travel_step_type::RoutePedestrianTravelStepType;
 
+pub use crate::types::_route_charge_step_details::RouteChargeStepDetails;
+
+pub use crate::types::_route_vehicle_after_travel_step_type::RouteVehicleAfterTravelStepType;
+
+pub use crate::types::_route_vehicle_place_type::RouteVehiclePlaceType;
+
 pub use crate::types::_route_vehicle_incident_severity::RouteVehicleIncidentSeverity;
 
 pub use crate::types::_route_vehicle_incident_type::RouteVehicleIncidentType;
@@ -451,6 +589,44 @@ pub use crate::types::_route_vehicle_travel_step_type::RouteVehicleTravelStepTyp
 
 pub use crate::types::_route_u_turn_step_details::RouteUTurnStepDetails;
 
+pub use crate::types::_route_rental_after_travel_step_type::RouteRentalAfterTravelStepType;
+
+pub use crate::types::_route_rental_place_type::RouteRentalPlaceType;
+
+pub use crate::types::_route_attribution_type::RouteAttributionType;
+
+pub use crate::types::_route_rental_before_travel_step_type::RouteRentalBeforeTravelStepType;
+
+pub use crate::types::_route_web_link_device_type::RouteWebLinkDeviceType;
+
+pub use crate::types::_route_rental_travel_step_type::RouteRentalTravelStepType;
+
+pub use crate::types::_route_taxi_after_travel_step_type::RouteTaxiAfterTravelStepType;
+
+pub use crate::types::_route_taxi_place_type::RouteTaxiPlaceType;
+
+pub use crate::types::_route_taxi_before_travel_step_type::RouteTaxiBeforeTravelStepType;
+
+pub use crate::types::_route_taxi_notice_code::RouteTaxiNoticeCode;
+
+pub use crate::types::_route_taxi_travel_step_type::RouteTaxiTravelStepType;
+
+pub use crate::types::_route_transit_after_travel_step_type::RouteTransitAfterTravelStepType;
+
+pub use crate::types::_route_transit_place_type::RouteTransitPlaceType;
+
+pub use crate::types::_route_transit_before_travel_step_type::RouteTransitBeforeTravelStepType;
+
+pub use crate::types::_route_transit_incident_effect::RouteTransitIncidentEffect;
+
+pub use crate::types::_route_transit_incident_type::RouteTransitIncidentType;
+
+pub use crate::types::_route_transit_notice_code::RouteTransitNoticeCode;
+
+pub use crate::types::_route_accessibility_availability::RouteAccessibilityAvailability;
+
+pub use crate::types::_route_transit_travel_step_type::RouteTransitTravelStepType;
+
 pub use crate::types::_route_span_pedestrian_access_attribute::RouteSpanPedestrianAccessAttribute;
 
 pub use crate::types::_route_span_road_attribute::RouteSpanRoadAttribute;
@@ -472,6 +648,8 @@ pub use crate::types::_route_span_truck_access_attribute::RouteSpanTruckAccessAt
 pub use crate::types::_route_toll_payment_site::RouteTollPaymentSite;
 
 pub use crate::types::_route_toll_rate::RouteTollRate;
+
+pub use crate::types::_route_transit_intermediate_stop_attribute::RouteTransitIntermediateStopAttribute;
 
 pub use crate::types::_route_signpost_label::RouteSignpostLabel;
 
@@ -589,7 +767,19 @@ mod _road_snap_truck_options;
 
 mod _route;
 
+mod _route_access_point_details;
+
+mod _route_accessibility_attribute;
+
+mod _route_accessibility_availability;
+
+mod _route_accessibility_availability_details;
+
 mod _route_allow_options;
+
+mod _route_attribution;
+
+mod _route_attribution_type;
 
 mod _route_avoidance_area;
 
@@ -600,6 +790,8 @@ mod _route_avoidance_options;
 mod _route_avoidance_zone_category;
 
 mod _route_car_options;
+
+mod _route_charge_step_details;
 
 mod _route_continue_highway_step_details;
 
@@ -656,6 +848,20 @@ mod _route_ferry_travel_step;
 mod _route_ferry_travel_step_type;
 
 mod _route_hazardous_cargo_type;
+
+mod _route_intermodal_enabled_legs;
+
+mod _route_intermodal_options;
+
+mod _route_intermodal_pedestrian_options;
+
+mod _route_intermodal_rental_options;
+
+mod _route_intermodal_taxi_options;
+
+mod _route_intermodal_transit_options;
+
+mod _route_intermodal_vehicle_options;
 
 mod _route_keep_step_details;
 
@@ -741,6 +947,10 @@ mod _route_pass_through_place;
 
 mod _route_pass_through_waypoint;
 
+mod _route_pedestrian_after_travel_step;
+
+mod _route_pedestrian_after_travel_step_type;
+
 mod _route_pedestrian_arrival;
 
 mod _route_pedestrian_departure;
@@ -757,6 +967,8 @@ mod _route_pedestrian_overview_summary;
 
 mod _route_pedestrian_place;
 
+mod _route_pedestrian_place_type;
+
 mod _route_pedestrian_span;
 
 mod _route_pedestrian_summary;
@@ -768,6 +980,40 @@ mod _route_pedestrian_travel_step;
 mod _route_pedestrian_travel_step_type;
 
 mod _route_ramp_step_details;
+
+mod _route_rental_after_travel_step;
+
+mod _route_rental_after_travel_step_type;
+
+mod _route_rental_agency;
+
+mod _route_rental_arrival;
+
+mod _route_rental_before_travel_step;
+
+mod _route_rental_before_travel_step_type;
+
+mod _route_rental_departure;
+
+mod _route_rental_leg_details;
+
+mod _route_rental_mode;
+
+mod _route_rental_overview_summary;
+
+mod _route_rental_place;
+
+mod _route_rental_place_type;
+
+mod _route_rental_summary;
+
+mod _route_rental_transport_mode_details;
+
+mod _route_rental_travel_only_summary;
+
+mod _route_rental_travel_step;
+
+mod _route_rental_travel_step_type;
 
 mod _route_response_notice;
 
@@ -813,9 +1059,49 @@ mod _route_span_speed_limit_details;
 
 mod _route_span_truck_access_attribute;
 
+mod _route_station_details;
+
 mod _route_steering_direction;
 
 mod _route_summary;
+
+mod _route_taxi_after_travel_step;
+
+mod _route_taxi_after_travel_step_type;
+
+mod _route_taxi_agency;
+
+mod _route_taxi_arrival;
+
+mod _route_taxi_before_travel_step;
+
+mod _route_taxi_before_travel_step_type;
+
+mod _route_taxi_departure;
+
+mod _route_taxi_leg_details;
+
+mod _route_taxi_mode;
+
+mod _route_taxi_notice;
+
+mod _route_taxi_notice_code;
+
+mod _route_taxi_overview_summary;
+
+mod _route_taxi_place;
+
+mod _route_taxi_place_type;
+
+mod _route_taxi_summary;
+
+mod _route_taxi_transport_mode_details;
+
+mod _route_taxi_travel_only_summary;
+
+mod _route_taxi_travel_step;
+
+mod _route_taxi_travel_step_type;
 
 mod _route_toll;
 
@@ -849,6 +1135,64 @@ mod _route_traffic_options;
 
 mod _route_trailer_options;
 
+mod _route_transit_after_travel_step;
+
+mod _route_transit_after_travel_step_type;
+
+mod _route_transit_agency;
+
+mod _route_transit_arrival;
+
+mod _route_transit_before_travel_step;
+
+mod _route_transit_before_travel_step_type;
+
+mod _route_transit_departure;
+
+mod _route_transit_incident;
+
+mod _route_transit_incident_effect;
+
+mod _route_transit_incident_type;
+
+mod _route_transit_intermediate_stop;
+
+mod _route_transit_intermediate_stop_attribute;
+
+mod _route_transit_leg_details;
+
+mod _route_transit_mode;
+
+mod _route_transit_next_departure;
+
+mod _route_transit_notice;
+
+mod _route_transit_notice_code;
+
+mod _route_transit_options;
+
+mod _route_transit_overview_summary;
+
+mod _route_transit_pedestrian_options;
+
+mod _route_transit_place;
+
+mod _route_transit_place_type;
+
+mod _route_transit_span;
+
+mod _route_transit_summary;
+
+mod _route_transit_transport_mode_details;
+
+mod _route_transit_travel_only_summary;
+
+mod _route_transit_travel_step;
+
+mod _route_transit_travel_step_type;
+
+mod _route_transit_trip_status;
+
 mod _route_transponder;
 
 mod _route_travel_mode;
@@ -867,6 +1211,10 @@ mod _route_turn_step_details;
 
 mod _route_u_turn_step_details;
 
+mod _route_vehicle_after_travel_step;
+
+mod _route_vehicle_after_travel_step_type;
+
 mod _route_vehicle_arrival;
 
 mod _route_vehicle_departure;
@@ -881,6 +1229,8 @@ mod _route_vehicle_leg_details;
 
 mod _route_vehicle_license_plate;
 
+mod _route_vehicle_mode;
+
 mod _route_vehicle_notice;
 
 mod _route_vehicle_notice_code;
@@ -890,6 +1240,8 @@ mod _route_vehicle_notice_detail;
 mod _route_vehicle_overview_summary;
 
 mod _route_vehicle_place;
+
+mod _route_vehicle_place_type;
 
 mod _route_vehicle_span;
 
@@ -904,6 +1256,10 @@ mod _route_vehicle_travel_step_type;
 mod _route_violated_constraints;
 
 mod _route_waypoint;
+
+mod _route_web_link;
+
+mod _route_web_link_device_type;
 
 mod _route_weight_constraint;
 

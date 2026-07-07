@@ -27,5 +27,7 @@ pub fn de_public_key(inp: &[u8]) -> std::result::Result<crate::types::PublicKey,
             "invalid root, expected PublicKey got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_public_key::de_public_key(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_public_key::de_public_key(&mut decoder, depth + 1)
 }

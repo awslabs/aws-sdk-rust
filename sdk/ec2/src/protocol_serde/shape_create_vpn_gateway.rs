@@ -40,6 +40,8 @@ pub fn de_create_vpn_gateway(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateVpnGatewayResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateVpnGatewayResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_create_vpn_gateway(
             s if s.matches("vpnGateway") /* VpnGateway com.amazonaws.ec2.synthetic#CreateVpnGatewayOutput$VpnGateway */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpn_gateway::de_vpn_gateway(&mut tag)
+                        crate::protocol_serde::shape_vpn_gateway::de_vpn_gateway(&mut tag, depth + 1)
                         ?
                     )
                 ;

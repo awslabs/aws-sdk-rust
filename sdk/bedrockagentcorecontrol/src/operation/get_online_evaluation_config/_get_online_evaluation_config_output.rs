@@ -17,6 +17,10 @@ pub struct GetOnlineEvaluationConfigOutput {
     pub data_source_config: ::std::option::Option<crate::types::DataSourceConfig>,
     /// <p>The list of evaluators applied during online evaluation.</p>
     pub evaluators: ::std::vec::Vec<crate::types::EvaluatorReference>,
+    /// <p>The list of insight types configured for this evaluation.</p>
+    pub insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
     /// <p>The output configuration specifying where evaluation results are written.</p>
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
@@ -66,6 +70,16 @@ impl GetOnlineEvaluationConfigOutput {
         use std::ops::Deref;
         self.evaluators.deref()
     }
+    /// <p>The list of insight types configured for this evaluation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights.is_none()`.
+    pub fn insights(&self) -> &[crate::types::Insight] {
+        self.insights.as_deref().unwrap_or_default()
+    }
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub fn clustering_config(&self) -> ::std::option::Option<&crate::types::ClusteringConfig> {
+        self.clustering_config.as_ref()
+    }
     /// <p>The output configuration specifying where evaluation results are written.</p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
         self.output_config.as_ref()
@@ -105,6 +119,8 @@ impl ::std::fmt::Debug for GetOnlineEvaluationConfigOutput {
         formatter.field("rule", &self.rule);
         formatter.field("data_source_config", &self.data_source_config);
         formatter.field("evaluators", &self.evaluators);
+        formatter.field("insights", &self.insights);
+        formatter.field("clustering_config", &self.clustering_config);
         formatter.field("output_config", &self.output_config);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("status", &self.status);
@@ -139,6 +155,8 @@ pub struct GetOnlineEvaluationConfigOutputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     pub(crate) data_source_config: ::std::option::Option<crate::types::DataSourceConfig>,
     pub(crate) evaluators: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>>,
+    pub(crate) insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
+    pub(crate) clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
     pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
     pub(crate) evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OnlineEvaluationConfigStatus>,
@@ -258,6 +276,40 @@ impl GetOnlineEvaluationConfigOutputBuilder {
     pub fn get_evaluators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>> {
         &self.evaluators
     }
+    /// Appends an item to `insights`.
+    ///
+    /// To override the contents of this collection use [`set_insights`](Self::set_insights).
+    ///
+    /// <p>The list of insight types configured for this evaluation.</p>
+    pub fn insights(mut self, input: crate::types::Insight) -> Self {
+        let mut v = self.insights.unwrap_or_default();
+        v.push(input);
+        self.insights = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of insight types configured for this evaluation.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>) -> Self {
+        self.insights = input;
+        self
+    }
+    /// <p>The list of insight types configured for this evaluation.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
+        &self.insights
+    }
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub fn clustering_config(mut self, input: crate::types::ClusteringConfig) -> Self {
+        self.clustering_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub fn set_clustering_config(mut self, input: ::std::option::Option<crate::types::ClusteringConfig>) -> Self {
+        self.clustering_config = input;
+        self
+    }
+    /// <p>The clustering configuration for periodic batch evaluation.</p>
+    pub fn get_clustering_config(&self) -> &::std::option::Option<crate::types::ClusteringConfig> {
+        &self.clustering_config
+    }
     /// <p>The output configuration specifying where evaluation results are written.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -374,7 +426,6 @@ impl GetOnlineEvaluationConfigOutputBuilder {
     /// - [`online_evaluation_config_arn`](crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder::online_evaluation_config_arn)
     /// - [`online_evaluation_config_id`](crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder::online_evaluation_config_id)
     /// - [`online_evaluation_config_name`](crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder::online_evaluation_config_name)
-    /// - [`evaluators`](crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder::evaluators)
     /// - [`status`](crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder::status)
     /// - [`execution_status`](crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder::execution_status)
     /// - [`created_at`](crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder::created_at)
@@ -407,12 +458,9 @@ impl GetOnlineEvaluationConfigOutputBuilder {
             description: self.description,
             rule: self.rule,
             data_source_config: self.data_source_config,
-            evaluators: self.evaluators.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluators",
-                    "evaluators was not specified but it is required when building GetOnlineEvaluationConfigOutput",
-                )
-            })?,
+            evaluators: self.evaluators.unwrap_or_default(),
+            insights: self.insights,
+            clustering_config: self.clustering_config,
             output_config: self.output_config,
             evaluation_execution_role_arn: self.evaluation_execution_role_arn,
             status: self.status.ok_or_else(|| {
@@ -454,6 +502,8 @@ impl ::std::fmt::Debug for GetOnlineEvaluationConfigOutputBuilder {
         formatter.field("rule", &self.rule);
         formatter.field("data_source_config", &self.data_source_config);
         formatter.field("evaluators", &self.evaluators);
+        formatter.field("insights", &self.insights);
+        formatter.field("clustering_config", &self.clustering_config);
         formatter.field("output_config", &self.output_config);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("status", &self.status);

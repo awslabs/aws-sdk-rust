@@ -19,6 +19,8 @@ pub struct QueryVectorsInput {
     pub return_metadata: ::std::option::Option<bool>,
     /// <p>Indicates whether to include the computed distance in the response. The default value is <code>false</code>.</p>
     pub return_distance: ::std::option::Option<bool>,
+    /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl QueryVectorsInput {
     /// <p>The name of the vector bucket that contains the vector index.</p>
@@ -53,6 +55,10 @@ impl QueryVectorsInput {
     pub fn return_distance(&self) -> ::std::option::Option<bool> {
         self.return_distance
     }
+    /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl QueryVectorsInput {
     /// Creates a new builder-style object to manufacture [`QueryVectorsInput`](crate::operation::query_vectors::QueryVectorsInput).
@@ -73,6 +79,7 @@ pub struct QueryVectorsInputBuilder {
     pub(crate) filter: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) return_metadata: ::std::option::Option<bool>,
     pub(crate) return_distance: ::std::option::Option<bool>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl QueryVectorsInputBuilder {
     /// <p>The name of the vector bucket that contains the vector index.</p>
@@ -189,6 +196,20 @@ impl QueryVectorsInputBuilder {
     pub fn get_return_distance(&self) -> &::std::option::Option<bool> {
         &self.return_distance
     }
+    /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`QueryVectorsInput`](crate::operation::query_vectors::QueryVectorsInput).
     pub fn build(
         self,
@@ -202,6 +223,7 @@ impl QueryVectorsInputBuilder {
             filter: self.filter,
             return_metadata: self.return_metadata,
             return_distance: self.return_distance,
+            next_token: self.next_token,
         })
     }
 }

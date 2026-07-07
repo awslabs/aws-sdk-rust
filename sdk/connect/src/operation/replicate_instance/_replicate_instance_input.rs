@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReplicateInstanceInput {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+    /// <p>The Amazon Web Services Region where to replicate the Connect Customer instance.</p>
     pub replica_region: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReplicateInstanceInput {
     pub replica_alias: ::std::option::Option<::std::string::String>,
 }
 impl ReplicateInstanceInput {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+    /// <p>The Amazon Web Services Region where to replicate the Connect Customer instance.</p>
     pub fn replica_region(&self) -> ::std::option::Option<&str> {
         self.replica_region.as_deref()
     }
@@ -57,33 +57,33 @@ pub struct ReplicateInstanceInputBuilder {
     pub(crate) replica_alias: ::std::option::Option<::std::string::String>,
 }
 impl ReplicateInstanceInputBuilder {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+    /// <p>The Amazon Web Services Region where to replicate the Connect Customer instance.</p>
     /// This field is required.
     pub fn replica_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replica_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+    /// <p>The Amazon Web Services Region where to replicate the Connect Customer instance.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replica_region = input;
         self
     }
-    /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+    /// <p>The Amazon Web Services Region where to replicate the Connect Customer instance.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.replica_region
     }

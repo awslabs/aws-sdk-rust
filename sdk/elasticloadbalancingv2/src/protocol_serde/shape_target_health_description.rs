@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_health_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TargetHealthDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetHealthDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_target_health_description(
             s if s.matches("Target") /* Target com.amazonaws.elasticloadbalancingv2#TargetHealthDescription$Target */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_target_description::de_target_description(&mut tag)
+                        crate::protocol_serde::shape_target_description::de_target_description(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_target_health_description(
             s if s.matches("TargetHealth") /* TargetHealth com.amazonaws.elasticloadbalancingv2#TargetHealthDescription$TargetHealth */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_target_health::de_target_health(&mut tag)
+                        crate::protocol_serde::shape_target_health::de_target_health(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_target_health_description(
             s if s.matches("AnomalyDetection") /* AnomalyDetection com.amazonaws.elasticloadbalancingv2#TargetHealthDescription$AnomalyDetection */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_anomaly_detection::de_anomaly_detection(&mut tag)
+                        crate::protocol_serde::shape_anomaly_detection::de_anomaly_detection(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_target_health_description(
             s if s.matches("AdministrativeOverride") /* AdministrativeOverride com.amazonaws.elasticloadbalancingv2#TargetHealthDescription$AdministrativeOverride */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_administrative_override::de_administrative_override(&mut tag)
+                        crate::protocol_serde::shape_administrative_override::de_administrative_override(&mut tag, depth + 1)
                         ?
                     )
                 ;

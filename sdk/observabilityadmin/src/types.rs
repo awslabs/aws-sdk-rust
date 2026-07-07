@@ -17,6 +17,8 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_telemetry_pipeline_configuration::TelemetryPipelineConfiguration;
 
+pub use crate::types::_signal_type::SignalType;
+
 pub use crate::types::_telemetry_pipeline::TelemetryPipeline;
 
 pub use crate::types::_centralization_rule_source::CentralizationRuleSource;
@@ -57,7 +59,11 @@ pub use crate::types::_telemetry_pipeline_status_reason::TelemetryPipelineStatus
 
 pub use crate::types::_source_logs_configuration::SourceLogsConfiguration;
 
+pub use crate::types::_source_metrics_configuration::SourceMetricsConfiguration;
+
 pub use crate::types::_destination_logs_configuration::DestinationLogsConfiguration;
+
+pub use crate::types::_destination_metrics_configuration::DestinationMetricsConfiguration;
 
 pub use crate::types::_telemetry_source_type::TelemetrySourceType;
 
@@ -73,6 +79,8 @@ pub use crate::types::_waf_logging_parameters::WafLoggingParameters;
 
 pub use crate::types::_log_delivery_parameters::LogDeliveryParameters;
 
+pub use crate::types::_msk_monitoring_parameters::MskMonitoringParameters;
+
 pub use crate::types::_record_format::RecordFormat;
 
 pub use crate::types::_pipeline_output_error::PipelineOutputError;
@@ -87,11 +95,15 @@ pub use crate::types::_logs_backup_configuration::LogsBackupConfiguration;
 
 pub use crate::types::_log_group_name_configuration::LogGroupNameConfiguration;
 
+pub use crate::types::_metrics_backup_configuration::MetricsBackupConfiguration;
+
 pub use crate::types::_output_format::OutputFormat;
 
 pub use crate::types::_logging_filter::LoggingFilter;
 
 pub use crate::types::_waf_log_type::WafLogType;
+
+pub use crate::types::_msk_enhanced_monitoring_level::MskEnhancedMonitoringLevel;
 
 pub use crate::types::_encryption_strategy::EncryptionStrategy;
 
@@ -153,6 +165,8 @@ mod _data_source;
 
 mod _destination_logs_configuration;
 
+mod _destination_metrics_configuration;
+
 mod _destination_type;
 
 mod _elb_load_balancer_logging_parameters;
@@ -191,6 +205,12 @@ mod _logs_backup_configuration;
 
 mod _logs_encryption_configuration;
 
+mod _metrics_backup_configuration;
+
+mod _msk_enhanced_monitoring_level;
+
+mod _msk_monitoring_parameters;
+
 mod _output_format;
 
 mod _pipeline_output;
@@ -207,11 +227,15 @@ mod _resource_type;
 
 mod _rule_health;
 
+mod _signal_type;
+
 mod _single_header;
 
 mod _source;
 
 mod _source_logs_configuration;
+
+mod _source_metrics_configuration;
 
 mod _sse_algorithm;
 

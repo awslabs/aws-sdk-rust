@@ -2,10 +2,16 @@
 pub(crate) fn de_person_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PersonMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,10 +29,14 @@ where
                             );
                         }
                         "Person" => {
-                            builder = builder.set_person(crate::protocol_serde::shape_person_detail::de_person_detail(tokens, _value)?);
+                            builder = builder.set_person(crate::protocol_serde::shape_person_detail::de_person_detail(tokens, _value, depth + 1)?);
                         }
                         "FaceMatches" => {
-                            builder = builder.set_face_matches(crate::protocol_serde::shape_face_match_list::de_face_match_list(tokens, _value)?);
+                            builder = builder.set_face_matches(crate::protocol_serde::shape_face_match_list::de_face_match_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

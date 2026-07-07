@@ -25,7 +25,11 @@ pub fn ser_analysis_scheme(
 #[allow(clippy::needless_question_mark)]
 pub fn de_analysis_scheme(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AnalysisScheme, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AnalysisScheme::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -60,7 +64,7 @@ pub fn de_analysis_scheme(
             s if s.matches("AnalysisOptions") /* AnalysisOptions com.amazonaws.cloudsearch#AnalysisScheme$AnalysisOptions */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_analysis_options::de_analysis_options(&mut tag)
+                        crate::protocol_serde::shape_analysis_options::de_analysis_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

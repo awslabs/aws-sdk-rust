@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_proxy_target_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbProxyTargetGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbProxyTargetGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -77,7 +81,7 @@ pub fn de_db_proxy_target_group(
             s if s.matches("ConnectionPoolConfig") /* ConnectionPoolConfig com.amazonaws.rds#DBProxyTargetGroup$ConnectionPoolConfig */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_connection_pool_configuration_info::de_connection_pool_configuration_info(&mut tag)
+                        crate::protocol_serde::shape_connection_pool_configuration_info::de_connection_pool_configuration_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

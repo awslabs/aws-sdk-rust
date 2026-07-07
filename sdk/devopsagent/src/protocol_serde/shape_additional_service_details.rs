@@ -2,10 +2,16 @@
 pub(crate) fn de_additional_service_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AdditionalServiceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,73 +37,128 @@ where
                     }
                     variant = match key.as_ref() {
                         "github" => Some(crate::types::AdditionalServiceDetails::Github(
-                            crate::protocol_serde::shape_registered_github_service_details::de_registered_github_service_details(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'github' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_registered_github_service_details::de_registered_github_service_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'github' cannot be null"))?,
                         )),
                         "slack" => Some(crate::types::AdditionalServiceDetails::Slack(
-                            crate::protocol_serde::shape_registered_slack_service_details::de_registered_slack_service_details(tokens, _value)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'slack' cannot be null"))?,
+                            crate::protocol_serde::shape_registered_slack_service_details::de_registered_slack_service_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'slack' cannot be null"))?,
                         )),
                         "mcpserverdatadog" => Some(crate::types::AdditionalServiceDetails::Mcpserverdatadog(
-                            crate::protocol_serde::shape_registered_mcp_server_details::de_registered_mcp_server_details(tokens, _value)?
+                            crate::protocol_serde::shape_registered_mcp_server_details::de_registered_mcp_server_details(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserverdatadog' cannot be null")
                                 })?,
                         )),
                         "mcpserver" => Some(crate::types::AdditionalServiceDetails::Mcpserver(
-                            crate::protocol_serde::shape_registered_mcp_server_details::de_registered_mcp_server_details(tokens, _value)?
+                            crate::protocol_serde::shape_registered_mcp_server_details::de_registered_mcp_server_details(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserver' cannot be null")
                                 })?,
                         )),
                         "servicenow" => Some(crate::types::AdditionalServiceDetails::Servicenow(
-                            crate::protocol_serde::shape_registered_service_now_details::de_registered_service_now_details(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'servicenow' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_registered_service_now_details::de_registered_service_now_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'servicenow' cannot be null")
+                            })?,
                         )),
                         "gitlab" => Some(crate::types::AdditionalServiceDetails::Gitlab(
-                            crate::protocol_serde::shape_registered_git_lab_service_details::de_registered_git_lab_service_details(tokens, _value)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'gitlab' cannot be null"))?,
+                            crate::protocol_serde::shape_registered_git_lab_service_details::de_registered_git_lab_service_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'gitlab' cannot be null"))?,
                         )),
                         "mcpserversplunk" => Some(crate::types::AdditionalServiceDetails::Mcpserversplunk(
-                            crate::protocol_serde::shape_registered_mcp_server_details::de_registered_mcp_server_details(tokens, _value)?
+                            crate::protocol_serde::shape_registered_mcp_server_details::de_registered_mcp_server_details(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserversplunk' cannot be null")
                                 })?,
                         )),
                         "mcpservernewrelic" => Some(crate::types::AdditionalServiceDetails::Mcpservernewrelic(
-                            crate::protocol_serde::shape_registered_new_relic_details::de_registered_new_relic_details(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpservernewrelic' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_registered_new_relic_details::de_registered_new_relic_details(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpservernewrelic' cannot be null")
+                                })?,
                         )),
                         "azuredevops" => Some(crate::types::AdditionalServiceDetails::Azuredevops(
                             crate::protocol_serde::shape_registered_azure_dev_ops_service_details::de_registered_azure_dev_ops_service_details(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azuredevops' cannot be null")
                             })?,
                         )),
                         "azureidentity" => Some(crate::types::AdditionalServiceDetails::Azureidentity(
-                            crate::protocol_serde::shape_registered_azure_identity_details::de_registered_azure_identity_details(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azureidentity' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_registered_azure_identity_details::de_registered_azure_identity_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azureidentity' cannot be null")
+                            })?,
                         )),
                         "mcpservergrafana" => Some(crate::types::AdditionalServiceDetails::Mcpservergrafana(
-                            crate::protocol_serde::shape_registered_grafana_server_details::de_registered_grafana_server_details(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpservergrafana' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_registered_grafana_server_details::de_registered_grafana_server_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpservergrafana' cannot be null")
+                            })?,
                         )),
                         "pagerduty" => Some(crate::types::AdditionalServiceDetails::Pagerduty(
-                            crate::protocol_serde::shape_registered_pager_duty_details::de_registered_pager_duty_details(tokens, _value)?
+                            crate::protocol_serde::shape_registered_pager_duty_details::de_registered_pager_duty_details(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerduty' cannot be null")
                                 })?,
+                        )),
+                        "mcpserversigv4" => Some(crate::types::AdditionalServiceDetails::Mcpserversigv4(
+                            crate::protocol_serde::shape_registered_mcp_server_sigv4_details::de_registered_mcp_server_sigv4_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserversigv4' cannot be null")
+                            })?,
+                        )),
+                        "remoteagent" => Some(crate::types::AdditionalServiceDetails::Remoteagent(
+                            crate::protocol_serde::shape_registered_remote_agent_details::de_registered_remote_agent_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'remoteagent' cannot be null")
+                            })?,
+                        )),
+                        "remoteagentsigv4" => Some(crate::types::AdditionalServiceDetails::Remoteagentsigv4(
+                            crate::protocol_serde::shape_registered_remote_agent_sigv4_details::de_registered_remote_agent_sigv4_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'remoteagentsigv4' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

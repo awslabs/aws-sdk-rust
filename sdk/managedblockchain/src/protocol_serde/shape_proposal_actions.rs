@@ -33,10 +33,16 @@ pub fn ser_proposal_actions(
 pub(crate) fn de_proposal_actions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProposalActions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -47,11 +53,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Invitations" => {
-                            builder =
-                                builder.set_invitations(crate::protocol_serde::shape_invite_action_list::de_invite_action_list(tokens, _value)?);
+                            builder = builder.set_invitations(crate::protocol_serde::shape_invite_action_list::de_invite_action_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Removals" => {
-                            builder = builder.set_removals(crate::protocol_serde::shape_remove_action_list::de_remove_action_list(tokens, _value)?);
+                            builder = builder.set_removals(crate::protocol_serde::shape_remove_action_list::de_remove_action_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

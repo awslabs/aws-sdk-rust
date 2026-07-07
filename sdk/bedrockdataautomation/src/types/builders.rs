@@ -61,6 +61,8 @@ pub use crate::types::_video_standard_output_configuration::VideoStandardOutputC
 
 pub use crate::types::_audio_standard_output_configuration::AudioStandardOutputConfigurationBuilder;
 
+pub use crate::types::_document_custom_output_configuration::DocumentCustomOutputConfigurationBuilder;
+
 pub use crate::types::_document_override_configuration::DocumentOverrideConfigurationBuilder;
 
 pub use crate::types::_image_override_configuration::ImageOverrideConfigurationBuilder;

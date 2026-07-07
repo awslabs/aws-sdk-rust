@@ -403,6 +403,8 @@ pub(crate) mod shape_output;
 
 pub(crate) mod shape_reservation;
 
+pub(crate) mod shape_router_content_quality_analysis_configuration;
+
 pub(crate) mod shape_router_input;
 
 pub(crate) mod shape_router_input_configuration;
@@ -484,6 +486,8 @@ pub(crate) mod shape_bridge_flow_source;
 pub(crate) mod shape_bridge_network_output;
 
 pub(crate) mod shape_bridge_network_source;
+
+pub(crate) mod shape_content_quality_analysis_feature_configuration;
 
 pub(crate) mod shape_default_maintenance_configuration;
 
@@ -599,6 +603,8 @@ pub(crate) mod shape_automatic_encryption_key_configuration;
 
 pub(crate) mod shape_black_frames;
 
+pub(crate) mod shape_black_frames_configuration;
+
 pub(crate) mod shape_failover_router_input_protocol_configuration;
 
 pub(crate) mod shape_failover_router_input_stream_details;
@@ -606,6 +612,8 @@ pub(crate) mod shape_failover_router_input_stream_details;
 pub(crate) mod shape_fmtp;
 
 pub(crate) mod shape_frozen_frames;
+
+pub(crate) mod shape_frozen_frames_configuration;
 
 pub(crate) mod shape_interface_request;
 
@@ -648,6 +656,8 @@ pub(crate) mod shape_router_output_protocol_configuration;
 pub(crate) mod shape_secrets_manager_encryption_key_configuration;
 
 pub(crate) mod shape_silent_audio;
+
+pub(crate) mod shape_silent_audio_configuration;
 
 pub(crate) mod shape_standard_router_input_stream_details;
 

@@ -2,10 +2,16 @@
 pub(crate) fn de_workspace_directory<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkspaceDirectory>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,15 +50,21 @@ where
                             );
                         }
                         "SubnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value, depth + 1)?);
                         }
                         "DnsIpAddresses" => {
-                            builder =
-                                builder.set_dns_ip_addresses(crate::protocol_serde::shape_dns_ip_addresses::de_dns_ip_addresses(tokens, _value)?);
+                            builder = builder.set_dns_ip_addresses(crate::protocol_serde::shape_dns_ip_addresses::de_dns_ip_addresses(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DnsIpv6Addresses" => {
-                            builder = builder
-                                .set_dns_ipv6_addresses(crate::protocol_serde::shape_dns_ipv6_addresses::de_dns_ipv6_addresses(tokens, _value)?);
+                            builder = builder.set_dns_ipv6_addresses(crate::protocol_serde::shape_dns_ipv6_addresses::de_dns_ipv6_addresses(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CustomerUserName" => {
                             builder = builder.set_customer_user_name(
@@ -92,16 +104,22 @@ where
                         "WorkspaceCreationProperties" => {
                             builder = builder.set_workspace_creation_properties(
                                 crate::protocol_serde::shape_default_workspace_creation_properties::de_default_workspace_creation_properties(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ipGroupIds" => {
-                            builder = builder.set_ip_group_ids(crate::protocol_serde::shape_ip_group_id_list::de_ip_group_id_list(tokens, _value)?);
+                            builder = builder.set_ip_group_ids(crate::protocol_serde::shape_ip_group_id_list::de_ip_group_id_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "WorkspaceAccessProperties" => {
                             builder = builder.set_workspace_access_properties(
-                                crate::protocol_serde::shape_workspace_access_properties::de_workspace_access_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_workspace_access_properties::de_workspace_access_properties(tokens, _value, depth + 1)?,
                             );
                         }
                         "Tenancy" => {
@@ -113,15 +131,23 @@ where
                         }
                         "SelfservicePermissions" => {
                             builder = builder.set_selfservice_permissions(
-                                crate::protocol_serde::shape_selfservice_permissions::de_selfservice_permissions(tokens, _value)?,
+                                crate::protocol_serde::shape_selfservice_permissions::de_selfservice_permissions(tokens, _value, depth + 1)?,
                             );
                         }
                         "SamlProperties" => {
-                            builder = builder.set_saml_properties(crate::protocol_serde::shape_saml_properties::de_saml_properties(tokens, _value)?);
+                            builder = builder.set_saml_properties(crate::protocol_serde::shape_saml_properties::de_saml_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CertificateBasedAuthProperties" => {
                             builder = builder.set_certificate_based_auth_properties(
-                                crate::protocol_serde::shape_certificate_based_auth_properties::de_certificate_based_auth_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_certificate_based_auth_properties::de_certificate_based_auth_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "EndpointEncryptionMode" => {
@@ -133,7 +159,7 @@ where
                         }
                         "MicrosoftEntraConfig" => {
                             builder = builder.set_microsoft_entra_config(
-                                crate::protocol_serde::shape_microsoft_entra_config::de_microsoft_entra_config(tokens, _value)?,
+                                crate::protocol_serde::shape_microsoft_entra_config::de_microsoft_entra_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "WorkspaceDirectoryName" => {
@@ -165,16 +191,18 @@ where
                             );
                         }
                         "IDCConfig" => {
-                            builder = builder.set_idc_config(crate::protocol_serde::shape_idc_config::de_idc_config(tokens, _value)?);
+                            builder = builder.set_idc_config(crate::protocol_serde::shape_idc_config::de_idc_config(tokens, _value, depth + 1)?);
                         }
                         "ActiveDirectoryConfig" => {
                             builder = builder.set_active_directory_config(
-                                crate::protocol_serde::shape_active_directory_config::de_active_directory_config(tokens, _value)?,
+                                crate::protocol_serde::shape_active_directory_config::de_active_directory_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "StreamingProperties" => {
                             builder = builder.set_streaming_properties(crate::protocol_serde::shape_streaming_properties::de_streaming_properties(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ErrorMessage" => {

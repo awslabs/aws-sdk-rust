@@ -2,10 +2,16 @@
 pub(crate) fn de_sql_application_configuration_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SqlApplicationConfigurationDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,17 +22,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InputDescriptions" => {
-                            builder = builder
-                                .set_input_descriptions(crate::protocol_serde::shape_input_descriptions::de_input_descriptions(tokens, _value)?);
+                            builder = builder.set_input_descriptions(crate::protocol_serde::shape_input_descriptions::de_input_descriptions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OutputDescriptions" => {
-                            builder = builder
-                                .set_output_descriptions(crate::protocol_serde::shape_output_descriptions::de_output_descriptions(tokens, _value)?);
+                            builder = builder.set_output_descriptions(crate::protocol_serde::shape_output_descriptions::de_output_descriptions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ReferenceDataSourceDescriptions" => {
                             builder = builder.set_reference_data_source_descriptions(
                                 crate::protocol_serde::shape_reference_data_source_descriptions::de_reference_data_source_descriptions(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

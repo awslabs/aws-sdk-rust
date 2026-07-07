@@ -8,7 +8,7 @@ pub enum HarnessGatewayOutboundAuth {
     AwsIam,
     /// <p>No authentication.</p>
     None,
-    /// <p>An OAuth credential provider for gateway authentication. This structure contains the configuration for authenticating with the target endpoint using OAuth.</p>
+    /// <p>Use OAuth credentials for outbound authentication to the gateway.</p>
     Oauth(crate::types::OAuthCredentialProvider),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

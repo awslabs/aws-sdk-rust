@@ -52,10 +52,16 @@ pub fn ser_training_job_definition(
 pub(crate) fn de_training_job_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TrainingJobDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -73,23 +79,39 @@ where
                             );
                         }
                         "HyperParameters" => {
-                            builder =
-                                builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
+                            builder = builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InputDataConfig" => {
-                            builder =
-                                builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens, _value)?);
+                            builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OutputDataConfig" => {
-                            builder = builder
-                                .set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens, _value)?);
+                            builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ResourceConfig" => {
-                            builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens, _value)?);
+                            builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StoppingCondition" => {
-                            builder = builder
-                                .set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens, _value)?);
+                            builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

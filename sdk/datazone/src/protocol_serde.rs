@@ -83,6 +83,8 @@ pub(crate) mod shape_create_group_profile;
 
 pub(crate) mod shape_create_listing_change_set;
 
+pub(crate) mod shape_create_notebook;
+
 pub(crate) mod shape_create_project;
 
 pub(crate) mod shape_create_project_membership;
@@ -135,7 +137,11 @@ pub(crate) mod shape_delete_glossary;
 
 pub(crate) mod shape_delete_glossary_term;
 
+pub(crate) mod shape_delete_lineage_event;
+
 pub(crate) mod shape_delete_listing;
+
+pub(crate) mod shape_delete_notebook;
 
 pub(crate) mod shape_delete_project;
 
@@ -211,6 +217,12 @@ pub(crate) mod shape_get_listing;
 
 pub(crate) mod shape_get_metadata_generation_run;
 
+pub(crate) mod shape_get_notebook;
+
+pub(crate) mod shape_get_notebook_export;
+
+pub(crate) mod shape_get_notebook_run;
+
 pub(crate) mod shape_get_project;
 
 pub(crate) mod shape_get_project_profile;
@@ -270,6 +282,10 @@ pub(crate) mod shape_list_lineage_events;
 pub(crate) mod shape_list_lineage_node_history;
 
 pub(crate) mod shape_list_metadata_generation_runs;
+
+pub(crate) mod shape_list_notebook_runs;
+
+pub(crate) mod shape_list_notebooks;
 
 pub(crate) mod shape_list_notifications;
 
@@ -331,6 +347,14 @@ pub(crate) mod shape_start_data_source_run;
 
 pub(crate) mod shape_start_metadata_generation_run;
 
+pub(crate) mod shape_start_notebook_export;
+
+pub(crate) mod shape_start_notebook_import;
+
+pub(crate) mod shape_start_notebook_run;
+
+pub(crate) mod shape_stop_notebook_run;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -360,6 +384,8 @@ pub(crate) mod shape_update_glossary;
 pub(crate) mod shape_update_glossary_term;
 
 pub(crate) mod shape_update_group_profile;
+
+pub(crate) mod shape_update_notebook;
 
 pub(crate) mod shape_update_project;
 
@@ -441,6 +467,8 @@ pub(crate) mod shape_create_group_profile_input;
 
 pub(crate) mod shape_create_listing_change_set_input;
 
+pub(crate) mod shape_create_notebook_input;
+
 pub(crate) mod shape_create_project_input;
 
 pub(crate) mod shape_create_project_membership_input;
@@ -501,6 +529,14 @@ pub(crate) mod shape_start_data_source_run_input;
 
 pub(crate) mod shape_start_metadata_generation_run_input;
 
+pub(crate) mod shape_start_notebook_export_input;
+
+pub(crate) mod shape_start_notebook_import_input;
+
+pub(crate) mod shape_start_notebook_run_input;
+
+pub(crate) mod shape_stop_notebook_run_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -532,6 +568,8 @@ pub(crate) mod shape_update_glossary_input;
 pub(crate) mod shape_update_glossary_term_input;
 
 pub(crate) mod shape_update_group_profile_input;
+
+pub(crate) mod shape_update_notebook_input;
 
 pub(crate) mod shape_update_project_input;
 
@@ -597,7 +635,13 @@ pub(crate) mod shape_batch_get_attribute_items;
 
 pub(crate) mod shape_batch_put_attribute_items;
 
+pub(crate) mod shape_cell_information;
+
+pub(crate) mod shape_cell_order;
+
 pub(crate) mod shape_column_name_list;
+
+pub(crate) mod shape_compute_config;
 
 pub(crate) mod shape_configuration;
 
@@ -660,6 +704,8 @@ pub(crate) mod shape_environment_action_list;
 pub(crate) mod shape_environment_blueprint_configurations;
 
 pub(crate) mod shape_environment_blueprint_summaries;
+
+pub(crate) mod shape_environment_config;
 
 pub(crate) mod shape_environment_configuration;
 
@@ -725,6 +771,8 @@ pub(crate) mod shape_match_clause;
 
 pub(crate) mod shape_member;
 
+pub(crate) mod shape_metadata;
+
 pub(crate) mod shape_metadata_forms;
 
 pub(crate) mod shape_metadata_generation_run_target;
@@ -737,9 +785,25 @@ pub(crate) mod shape_metadata_generation_runs;
 
 pub(crate) mod shape_model;
 
+pub(crate) mod shape_network_config;
+
+pub(crate) mod shape_notebook_error;
+
+pub(crate) mod shape_notebook_export_error;
+
+pub(crate) mod shape_notebook_run_error;
+
+pub(crate) mod shape_notebook_run_summary_list;
+
+pub(crate) mod shape_notebook_summary_list;
+
 pub(crate) mod shape_notifications_list;
 
+pub(crate) mod shape_output_location;
+
 pub(crate) mod shape_owner_properties;
+
+pub(crate) mod shape_parameters;
 
 pub(crate) mod shape_physical_endpoints;
 
@@ -767,6 +831,8 @@ pub(crate) mod shape_provisioning_configuration_list;
 
 pub(crate) mod shape_provisioning_properties;
 
+pub(crate) mod shape_put_resource_configuration;
+
 pub(crate) mod shape_recommendation_configuration;
 
 pub(crate) mod shape_regional_parameter_map;
@@ -774,6 +840,8 @@ pub(crate) mod shape_regional_parameter_map;
 pub(crate) mod shape_reject_choice;
 
 pub(crate) mod shape_reject_rule;
+
+pub(crate) mod shape_resource_configurations;
 
 pub(crate) mod shape_resource_list;
 
@@ -808,6 +876,10 @@ pub(crate) mod shape_search_types_result_items;
 pub(crate) mod shape_self_grant_status_output;
 
 pub(crate) mod shape_single_sign_on;
+
+pub(crate) mod shape_source_location;
+
+pub(crate) mod shape_storage_config;
 
 pub(crate) mod shape_subscribed_assets;
 
@@ -846,6 +918,10 @@ pub(crate) mod shape_time_series_data_point_form_output;
 pub(crate) mod shape_time_series_data_point_form_output_list;
 
 pub(crate) mod shape_time_series_data_point_summary_form_output_list;
+
+pub(crate) mod shape_timeout_config;
+
+pub(crate) mod shape_trigger_source;
 
 pub(crate) mod shape_user_profile_details;
 
@@ -1029,6 +1105,10 @@ pub(crate) mod shape_mlflow_properties_output;
 
 pub(crate) mod shape_mlflow_properties_patch;
 
+pub(crate) mod shape_notebook_run_summary;
+
+pub(crate) mod shape_notebook_summary;
+
 pub(crate) mod shape_notification_output;
 
 pub(crate) mod shape_override_domain_unit_owners_policy_grant_detail;
@@ -1040,6 +1120,8 @@ pub(crate) mod shape_owner_group_properties;
 pub(crate) mod shape_owner_properties_output;
 
 pub(crate) mod shape_owner_user_properties;
+
+pub(crate) mod shape_package_config;
 
 pub(crate) mod shape_permissions;
 
@@ -1079,6 +1161,8 @@ pub(crate) mod shape_relation_pattern;
 
 pub(crate) mod shape_resource;
 
+pub(crate) mod shape_resource_configuration;
+
 pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_result_item;
@@ -1086,6 +1170,8 @@ pub(crate) mod shape_result_item;
 pub(crate) mod shape_row_filter_configuration;
 
 pub(crate) mod shape_rule_summary;
+
+pub(crate) mod shape_s3_destination;
 
 pub(crate) mod shape_s3_properties_input;
 
@@ -1103,6 +1189,14 @@ pub(crate) mod shape_search_result_item;
 
 pub(crate) mod shape_search_types_result_item;
 
+pub(crate) mod shape_security_group_ids;
+
+pub(crate) mod shape_snowflake_properties_input;
+
+pub(crate) mod shape_snowflake_properties_output;
+
+pub(crate) mod shape_snowflake_properties_patch;
+
 pub(crate) mod shape_spark_emr_properties_input;
 
 pub(crate) mod shape_spark_emr_properties_output;
@@ -1114,6 +1208,8 @@ pub(crate) mod shape_spark_glue_properties_input;
 pub(crate) mod shape_spark_glue_properties_output;
 
 pub(crate) mod shape_sso_user_profile_details;
+
+pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_subscribed_asset;
 
@@ -1153,6 +1249,12 @@ pub(crate) mod shape_user_policy_grant_principal;
 
 pub(crate) mod shape_user_profile_summary;
 
+pub(crate) mod shape_vpc_properties_input;
+
+pub(crate) mod shape_vpc_properties_output;
+
+pub(crate) mod shape_vpc_properties_patch;
+
 pub(crate) mod shape_workflows_mwaa_properties_input;
 
 pub(crate) mod shape_workflows_mwaa_properties_output;
@@ -1178,6 +1280,10 @@ pub(crate) mod shape_asset_type_item;
 pub(crate) mod shape_aws_region_list;
 
 pub(crate) mod shape_configurable_action_parameter_list;
+
+pub(crate) mod shape_connectivity_properties;
+
+pub(crate) mod shape_connectivity_properties_patch;
 
 pub(crate) mod shape_data_product_listing_item;
 
@@ -1215,6 +1321,8 @@ pub(crate) mod shape_glue_connection_names;
 
 pub(crate) mod shape_glue_connection_patch;
 
+pub(crate) mod shape_identity_mapping;
+
 pub(crate) mod shape_item_glossary_terms;
 
 pub(crate) mod shape_lineage_info;
@@ -1224,6 +1332,10 @@ pub(crate) mod shape_lineage_node_item;
 pub(crate) mod shape_lineage_node_type_item;
 
 pub(crate) mod shape_lineage_sql_query_run_details;
+
+pub(crate) mod shape_lineage_sync_input;
+
+pub(crate) mod shape_lineage_sync_output;
 
 pub(crate) mod shape_listing_summaries;
 
@@ -1263,6 +1375,8 @@ pub(crate) mod shape_relational_filter_configurations;
 
 pub(crate) mod shape_required_metadata_form_list;
 
+pub(crate) mod shape_resource_configuration_parameter_map;
+
 pub(crate) mod shape_row_filter;
 
 pub(crate) mod shape_rule_asset_type_list;
@@ -1282,6 +1396,8 @@ pub(crate) mod shape_topic;
 pub(crate) mod shape_tracking_assets;
 
 pub(crate) mod shape_username_password;
+
+pub(crate) mod shape_vpc_connection_subnet_id_list;
 
 pub(crate) mod shape_aggregation_output_item;
 

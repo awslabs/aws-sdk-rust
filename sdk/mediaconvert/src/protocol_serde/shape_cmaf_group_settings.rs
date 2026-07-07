@@ -60,62 +60,74 @@ pub fn ser_cmaf_group_settings(
         crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::ser_cmaf_image_based_trick_play_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.manifest_compression {
-        object.key("manifestCompression").string(var_19.as_str());
+    if let Some(var_19) = &input.image_based_trick_play_variants {
+        let mut array_20 = object.key("imageBasedTrickPlayVariants").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_cmaf_image_based_trick_play_variant::ser_cmaf_image_based_trick_play_variant(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
     }
-    if let Some(var_20) = &input.manifest_duration_format {
-        object.key("manifestDurationFormat").string(var_20.as_str());
+    if let Some(var_23) = &input.manifest_compression {
+        object.key("manifestCompression").string(var_23.as_str());
     }
-    if let Some(var_21) = &input.min_buffer_time {
+    if let Some(var_24) = &input.manifest_duration_format {
+        object.key("manifestDurationFormat").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.min_buffer_time {
         object.key("minBufferTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_22) = &input.min_final_segment_length {
+    if let Some(var_26) = &input.min_final_segment_length {
         object.key("minFinalSegmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_22).into()),
+            ::aws_smithy_types::Number::Float((*var_26).into()),
         );
     }
-    if let Some(var_23) = &input.mpd_manifest_bandwidth_type {
-        object.key("mpdManifestBandwidthType").string(var_23.as_str());
+    if let Some(var_27) = &input.mpd_manifest_bandwidth_type {
+        object.key("mpdManifestBandwidthType").string(var_27.as_str());
     }
-    if let Some(var_24) = &input.mpd_profile {
-        object.key("mpdProfile").string(var_24.as_str());
+    if let Some(var_28) = &input.mpd_profile {
+        object.key("mpdProfile").string(var_28.as_str());
     }
-    if let Some(var_25) = &input.pts_offset_handling_for_b_frames {
-        object.key("ptsOffsetHandlingForBFrames").string(var_25.as_str());
+    if let Some(var_29) = &input.pts_offset_handling_for_b_frames {
+        object.key("ptsOffsetHandlingForBFrames").string(var_29.as_str());
     }
-    if let Some(var_26) = &input.segment_control {
-        object.key("segmentControl").string(var_26.as_str());
+    if let Some(var_30) = &input.segment_control {
+        object.key("segmentControl").string(var_30.as_str());
     }
-    if let Some(var_27) = &input.segment_length {
+    if let Some(var_31) = &input.segment_length {
         object.key("segmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
         );
     }
-    if let Some(var_28) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_28.as_str());
+    if let Some(var_32) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_32.as_str());
     }
-    if let Some(var_29) = &input.stream_inf_resolution {
-        object.key("streamInfResolution").string(var_29.as_str());
+    if let Some(var_33) = &input.stream_inf_resolution {
+        object.key("streamInfResolution").string(var_33.as_str());
     }
-    if let Some(var_30) = &input.target_duration_compatibility_mode {
-        object.key("targetDurationCompatibilityMode").string(var_30.as_str());
+    if let Some(var_34) = &input.target_duration_compatibility_mode {
+        object.key("targetDurationCompatibilityMode").string(var_34.as_str());
     }
-    if let Some(var_31) = &input.video_composition_offsets {
-        object.key("videoCompositionOffsets").string(var_31.as_str());
+    if let Some(var_35) = &input.video_composition_offsets {
+        object.key("videoCompositionOffsets").string(var_35.as_str());
     }
-    if let Some(var_32) = &input.write_dash_manifest {
-        object.key("writeDashManifest").string(var_32.as_str());
+    if let Some(var_36) = &input.write_dash_manifest {
+        object.key("writeDashManifest").string(var_36.as_str());
     }
-    if let Some(var_33) = &input.write_hls_manifest {
-        object.key("writeHlsManifest").string(var_33.as_str());
+    if let Some(var_37) = &input.write_hls_manifest {
+        object.key("writeHlsManifest").string(var_37.as_str());
     }
-    if let Some(var_34) = &input.write_segment_timeline_in_representation {
-        object.key("writeSegmentTimelineInRepresentation").string(var_34.as_str());
+    if let Some(var_38) = &input.write_segment_timeline_in_representation {
+        object.key("writeSegmentTimelineInRepresentation").string(var_38.as_str());
     }
     Ok(())
 }
@@ -123,10 +135,16 @@ pub fn ser_cmaf_group_settings(
 pub(crate) fn de_cmaf_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CmafGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -135,203 +153,218 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "additionalManifests" => {
-                            builder = builder.set_additional_manifests(
-                                crate::protocol_serde::shape_list_of_cmaf_additional_manifest::de_list_of_cmaf_additional_manifest(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "additionalManifests" => {
+                                builder = builder.set_additional_manifests(
+                                    crate::protocol_serde::shape_list_of_cmaf_additional_manifest::de_list_of_cmaf_additional_manifest(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "baseUrl" => {
+                                builder = builder.set_base_url(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "clientCache" => {
+                                builder = builder.set_client_cache(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafClientCache::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "codecSpecification" => {
+                                builder = builder.set_codec_specification(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafCodecSpecification::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "dashIFrameTrickPlayNameModifier" => {
+                                builder = builder.set_dash_i_frame_trick_play_name_modifier(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "dashManifestStyle" => {
+                                builder = builder.set_dash_manifest_style(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DashManifestStyle::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "destination" => {
+                                builder = builder.set_destination(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "destinationSettings" => {
+                                builder = builder.set_destination_settings(
+                                    crate::protocol_serde::shape_destination_settings::de_destination_settings(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "encryption" => {
+                                builder = builder.set_encryption(crate::protocol_serde::shape_cmaf_encryption_settings::de_cmaf_encryption_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "fragmentLength" => {
+                                builder = builder.set_fragment_length(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "imageBasedTrickPlay" => {
+                                builder = builder.set_image_based_trick_play(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafImageBasedTrickPlay::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "imageBasedTrickPlaySettings" => {
+                                builder = builder.set_image_based_trick_play_settings(
+                                    crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::de_cmaf_image_based_trick_play_settings(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "imageBasedTrickPlayVariants" => {
+                                builder = builder.set_image_based_trick_play_variants(
+                                    crate::protocol_serde::shape_list_of_cmaf_image_based_trick_play_variant::de_list_of_cmaf_image_based_trick_play_variant(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "manifestCompression" => {
+                                builder = builder.set_manifest_compression(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafManifestCompression::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "manifestDurationFormat" => {
+                                builder = builder.set_manifest_duration_format(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafManifestDurationFormat::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "minBufferTime" => {
+                                builder = builder.set_min_buffer_time(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "minFinalSegmentLength" => {
+                                builder = builder.set_min_final_segment_length(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                                );
+                            }
+                            "mpdManifestBandwidthType" => {
+                                builder = builder.set_mpd_manifest_bandwidth_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafMpdManifestBandwidthType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "mpdProfile" => {
+                                builder = builder.set_mpd_profile(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafMpdProfile::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "ptsOffsetHandlingForBFrames" => {
+                                builder = builder.set_pts_offset_handling_for_b_frames(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafPtsOffsetHandlingForBFrames::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "segmentControl" => {
+                                builder = builder.set_segment_control(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafSegmentControl::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "segmentLength" => {
+                                builder = builder.set_segment_length(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "segmentLengthControl" => {
+                                builder = builder.set_segment_length_control(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafSegmentLengthControl::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "streamInfResolution" => {
+                                builder = builder.set_stream_inf_resolution(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafStreamInfResolution::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "targetDurationCompatibilityMode" => {
+                                builder = builder.set_target_duration_compatibility_mode(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::CmafTargetDurationCompatibilityMode::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            "videoCompositionOffsets" => {
+                                builder = builder.set_video_composition_offsets(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafVideoCompositionOffsets::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "writeDashManifest" => {
+                                builder = builder.set_write_dash_manifest(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafWriteDashManifest::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "writeHlsManifest" => {
+                                builder = builder.set_write_hls_manifest(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CmafWriteHlsManifest::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "writeSegmentTimelineInRepresentation" => {
+                                builder = builder.set_write_segment_timeline_in_representation(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::CmafWriteSegmentTimelineInRepresentation::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "baseUrl" => {
-                            builder = builder.set_base_url(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "clientCache" => {
-                            builder = builder.set_client_cache(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafClientCache::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "codecSpecification" => {
-                            builder = builder.set_codec_specification(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafCodecSpecification::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "dashIFrameTrickPlayNameModifier" => {
-                            builder = builder.set_dash_i_frame_trick_play_name_modifier(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "dashManifestStyle" => {
-                            builder = builder.set_dash_manifest_style(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashManifestStyle::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "destination" => {
-                            builder = builder.set_destination(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "destinationSettings" => {
-                            builder = builder.set_destination_settings(crate::protocol_serde::shape_destination_settings::de_destination_settings(
-                                tokens, _value,
-                            )?);
-                        }
-                        "encryption" => {
-                            builder = builder.set_encryption(crate::protocol_serde::shape_cmaf_encryption_settings::de_cmaf_encryption_settings(
-                                tokens, _value,
-                            )?);
-                        }
-                        "fragmentLength" => {
-                            builder = builder.set_fragment_length(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "imageBasedTrickPlay" => {
-                            builder = builder.set_image_based_trick_play(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafImageBasedTrickPlay::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "imageBasedTrickPlaySettings" => {
-                            builder = builder.set_image_based_trick_play_settings(
-                                crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::de_cmaf_image_based_trick_play_settings(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "manifestCompression" => {
-                            builder = builder.set_manifest_compression(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafManifestCompression::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "manifestDurationFormat" => {
-                            builder = builder.set_manifest_duration_format(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafManifestDurationFormat::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "minBufferTime" => {
-                            builder = builder.set_min_buffer_time(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "minFinalSegmentLength" => {
-                            builder = builder.set_min_final_segment_length(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
-                            );
-                        }
-                        "mpdManifestBandwidthType" => {
-                            builder = builder.set_mpd_manifest_bandwidth_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafMpdManifestBandwidthType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "mpdProfile" => {
-                            builder = builder.set_mpd_profile(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafMpdProfile::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "ptsOffsetHandlingForBFrames" => {
-                            builder = builder.set_pts_offset_handling_for_b_frames(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafPtsOffsetHandlingForBFrames::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "segmentControl" => {
-                            builder = builder.set_segment_control(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafSegmentControl::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "segmentLength" => {
-                            builder = builder.set_segment_length(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "segmentLengthControl" => {
-                            builder = builder.set_segment_length_control(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafSegmentLengthControl::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "streamInfResolution" => {
-                            builder = builder.set_stream_inf_resolution(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafStreamInfResolution::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "targetDurationCompatibilityMode" => {
-                            builder = builder.set_target_duration_compatibility_mode(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::CmafTargetDurationCompatibilityMode::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        "videoCompositionOffsets" => {
-                            builder = builder.set_video_composition_offsets(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafVideoCompositionOffsets::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "writeDashManifest" => {
-                            builder = builder.set_write_dash_manifest(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafWriteDashManifest::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "writeHlsManifest" => {
-                            builder = builder.set_write_hls_manifest(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafWriteHlsManifest::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "writeSegmentTimelineInRepresentation" => {
-                            builder = builder.set_write_segment_timeline_in_representation(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::CmafWriteSegmentTimelineInRepresentation::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

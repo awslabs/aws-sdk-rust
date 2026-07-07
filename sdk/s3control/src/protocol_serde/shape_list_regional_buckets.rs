@@ -76,6 +76,8 @@ pub fn de_list_regional_buckets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListRegionalBucketsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListRegionalBucketsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -86,7 +88,7 @@ pub fn de_list_regional_buckets(
             s if s.matches("RegionalBucketList") /* RegionalBucketList com.amazonaws.s3control.synthetic#ListRegionalBucketsOutput$RegionalBucketList */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_regional_bucket_list::de_regional_bucket_list(&mut tag)
+                        crate::protocol_serde::shape_regional_bucket_list::de_regional_bucket_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

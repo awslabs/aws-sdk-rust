@@ -126,6 +126,8 @@ pub(crate) fn de_get_worker(
 ) -> ::std::result::Result<crate::operation::get_worker::builders::GetWorkerOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -160,11 +162,17 @@ pub(crate) fn de_get_worker(
                 }
                 "hostProperties" => {
                     builder = builder.set_host_properties(crate::protocol_serde::shape_host_properties_response::de_host_properties_response(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "log" => {
-                    builder = builder.set_log(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens, _value)?);
+                    builder = builder.set_log(crate::protocol_serde::shape_log_configuration::de_log_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

@@ -183,6 +183,8 @@ mod delete_environment_host;
 
 mod disassociate_eip_from_vlan;
 
+mod get_depot_url;
+
 mod get_environment;
 
 mod get_versions;

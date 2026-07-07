@@ -45,10 +45,16 @@ pub fn ser_customized_metric_specification(
 pub(crate) fn de_customized_metric_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CustomizedMetricSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -73,7 +79,11 @@ where
                             );
                         }
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_metric_dimensions::de_metric_dimensions(tokens, _value)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_metric_dimensions::de_metric_dimensions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Statistic" => {
                             builder = builder.set_statistic(
@@ -92,7 +102,9 @@ where
                         "Metrics" => {
                             builder = builder.set_metrics(
                                 crate::protocol_serde::shape_target_tracking_metric_data_queries::de_target_tracking_metric_data_queries(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

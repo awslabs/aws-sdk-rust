@@ -59,8 +59,11 @@ pub(crate) fn de_automated_reasoning_policy_definition_payload(
 ) -> ::std::result::Result<crate::types::AutomatedReasoningPolicyDefinition, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::protocol_serde::shape_automated_reasoning_policy_definition::de_automated_reasoning_policy_definition(tokens, _value)?
-        .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    let result =
+        crate::protocol_serde::shape_automated_reasoning_policy_definition::de_automated_reasoning_policy_definition(tokens, _value, depth + 1)?
+            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "found more JSON tokens after completing parsing",
@@ -72,10 +75,16 @@ pub(crate) fn de_automated_reasoning_policy_definition_payload(
 pub(crate) fn de_automated_reasoning_policy_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningPolicyDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -94,17 +103,17 @@ where
                         }
                         "types" => {
                             builder = builder.set_types(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_type_list::de_automated_reasoning_policy_definition_type_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_type_list::de_automated_reasoning_policy_definition_type_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "rules" => {
                             builder = builder.set_rules(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_rule_list::de_automated_reasoning_policy_definition_rule_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_rule_list::de_automated_reasoning_policy_definition_rule_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "variables" => {
                             builder = builder.set_variables(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_variable_list::de_automated_reasoning_policy_definition_variable_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_variable_list::de_automated_reasoning_policy_definition_variable_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

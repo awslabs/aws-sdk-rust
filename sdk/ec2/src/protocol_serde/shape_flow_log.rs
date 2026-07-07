@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_flow_log(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FlowLog, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FlowLog::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -182,7 +186,7 @@ pub fn de_flow_log(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#FlowLog$Tags */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -207,11 +211,21 @@ pub fn de_flow_log(
             s if s.matches("destinationOptions") /* DestinationOptions com.amazonaws.ec2#FlowLog$DestinationOptions */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_destination_options_response::de_destination_options_response(&mut tag)
+                        crate::protocol_serde::shape_destination_options_response::de_destination_options_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
                 builder = builder.set_destination_options(var_16);
+            }
+            ,
+            s if s.matches("tagFieldSpecificationSet") /* TagFieldSpecifications com.amazonaws.ec2#FlowLog$TagFieldSpecifications */ =>  {
+                let var_17 =
+                    Some(
+                        crate::protocol_serde::shape_tag_field_specification_list_response::de_tag_field_specification_list_response(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_field_specifications(var_17);
             }
             ,
             _ => {}

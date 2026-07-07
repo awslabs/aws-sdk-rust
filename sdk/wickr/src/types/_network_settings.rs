@@ -12,6 +12,8 @@ pub struct NetworkSettings {
     pub data_retention: ::std::option::Option<bool>,
     /// <p>Configuration for OpenTDF integration at the network level, enforcing ABAC decision making when operating in TDF enabled rooms.</p>
     pub enable_trusted_data_format: ::std::option::Option<bool>,
+    /// <p>Consent popup configuration for the network, displayed to users on login.</p>
+    pub consent_popup: ::std::option::Option<crate::types::ConsentPopupConfig>,
 }
 impl NetworkSettings {
     /// <p>Allows Wickr clients to send anonymized performance and usage metrics to the Wickr backend server for service improvement and troubleshooting.</p>
@@ -30,6 +32,10 @@ impl NetworkSettings {
     pub fn enable_trusted_data_format(&self) -> ::std::option::Option<bool> {
         self.enable_trusted_data_format
     }
+    /// <p>Consent popup configuration for the network, displayed to users on login.</p>
+    pub fn consent_popup(&self) -> ::std::option::Option<&crate::types::ConsentPopupConfig> {
+        self.consent_popup.as_ref()
+    }
 }
 impl NetworkSettings {
     /// Creates a new builder-style object to manufacture [`NetworkSettings`](crate::types::NetworkSettings).
@@ -46,6 +52,7 @@ pub struct NetworkSettingsBuilder {
     pub(crate) read_receipt_config: ::std::option::Option<crate::types::ReadReceiptConfig>,
     pub(crate) data_retention: ::std::option::Option<bool>,
     pub(crate) enable_trusted_data_format: ::std::option::Option<bool>,
+    pub(crate) consent_popup: ::std::option::Option<crate::types::ConsentPopupConfig>,
 }
 impl NetworkSettingsBuilder {
     /// <p>Allows Wickr clients to send anonymized performance and usage metrics to the Wickr backend server for service improvement and troubleshooting.</p>
@@ -104,6 +111,20 @@ impl NetworkSettingsBuilder {
     pub fn get_enable_trusted_data_format(&self) -> &::std::option::Option<bool> {
         &self.enable_trusted_data_format
     }
+    /// <p>Consent popup configuration for the network, displayed to users on login.</p>
+    pub fn consent_popup(mut self, input: crate::types::ConsentPopupConfig) -> Self {
+        self.consent_popup = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Consent popup configuration for the network, displayed to users on login.</p>
+    pub fn set_consent_popup(mut self, input: ::std::option::Option<crate::types::ConsentPopupConfig>) -> Self {
+        self.consent_popup = input;
+        self
+    }
+    /// <p>Consent popup configuration for the network, displayed to users on login.</p>
+    pub fn get_consent_popup(&self) -> &::std::option::Option<crate::types::ConsentPopupConfig> {
+        &self.consent_popup
+    }
     /// Consumes the builder and constructs a [`NetworkSettings`](crate::types::NetworkSettings).
     pub fn build(self) -> crate::types::NetworkSettings {
         crate::types::NetworkSettings {
@@ -111,6 +132,7 @@ impl NetworkSettingsBuilder {
             read_receipt_config: self.read_receipt_config,
             data_retention: self.data_retention,
             enable_trusted_data_format: self.enable_trusted_data_format,
+            consent_popup: self.consent_popup,
         }
     }
 }

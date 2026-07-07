@@ -23,5 +23,7 @@ pub fn de_inventory_configuration(inp: &[u8]) -> std::result::Result<crate::type
             "invalid root, expected InventoryConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_inventory_configuration::de_inventory_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_inventory_configuration::de_inventory_configuration(&mut decoder, depth + 1)
 }

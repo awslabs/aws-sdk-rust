@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_version(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LaunchTemplateVersion, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchTemplateVersion::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -106,7 +110,7 @@ pub fn de_launch_template_version(
             s if s.matches("launchTemplateData") /* LaunchTemplateData com.amazonaws.ec2#LaunchTemplateVersion$LaunchTemplateData */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_response_launch_template_data::de_response_launch_template_data(&mut tag)
+                        crate::protocol_serde::shape_response_launch_template_data::de_response_launch_template_data(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -116,7 +120,7 @@ pub fn de_launch_template_version(
             s if s.matches("operator") /* Operator com.amazonaws.ec2#LaunchTemplateVersion$Operator */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

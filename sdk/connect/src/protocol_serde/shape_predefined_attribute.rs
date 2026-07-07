@@ -2,10 +2,16 @@
 pub(crate) fn de_predefined_attribute<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PredefinedAttribute>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,20 +30,26 @@ where
                         }
                         "Values" => {
                             builder = builder.set_values(crate::protocol_serde::shape_predefined_attribute_values::de_predefined_attribute_values(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Purposes" => {
                             builder = builder.set_purposes(
                                 crate::protocol_serde::shape_predefined_attribute_purpose_name_list::de_predefined_attribute_purpose_name_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "AttributeConfiguration" => {
                             builder = builder.set_attribute_configuration(
                                 crate::protocol_serde::shape_predefined_attribute_configuration::de_predefined_attribute_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

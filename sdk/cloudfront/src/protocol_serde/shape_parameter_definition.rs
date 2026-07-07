@@ -20,7 +20,11 @@ pub fn ser_parameter_definition(
 #[allow(clippy::needless_question_mark)]
 pub fn de_parameter_definition(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ParameterDefinition, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ParameterDefinition::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -41,7 +45,7 @@ pub fn de_parameter_definition(
             s if s.matches("Definition") /* Definition com.amazonaws.cloudfront#ParameterDefinition$Definition */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_parameter_definition_schema::de_parameter_definition_schema(&mut tag)
+                        crate::protocol_serde::shape_parameter_definition_schema::de_parameter_definition_schema(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetFunc
 #[derive(Debug)]
 struct GetFunctionCodeSigningConfigResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetFunctionCodeSigningConfigResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -278,6 +279,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetFunctionCo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetFunctionCodeSigningConfigError {
+    /// <p>The specified code signing configuration does not exist.</p>
+    CodeSigningConfigNotFoundException(crate::types::error::CodeSigningConfigNotFoundException),
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The resource specified in the request does not exist.</p>
@@ -319,12 +322,17 @@ impl GetFunctionCodeSigningConfigError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CodeSigningConfigNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `GetFunctionCodeSigningConfigError::CodeSigningConfigNotFoundException`.
+    pub fn is_code_signing_config_not_found_exception(&self) -> bool {
+        matches!(self, Self::CodeSigningConfigNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetFunctionCodeSigningConfigError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -346,6 +354,7 @@ impl GetFunctionCodeSigningConfigError {
 impl ::std::error::Error for GetFunctionCodeSigningConfigError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::CodeSigningConfigNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
@@ -357,6 +366,7 @@ impl ::std::error::Error for GetFunctionCodeSigningConfigError {
 impl ::std::fmt::Display for GetFunctionCodeSigningConfigError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::CodeSigningConfigNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
@@ -382,6 +392,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for GetFunctionCodeSigningConfi
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetFunctionCodeSigningConfigError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CodeSigningConfigNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

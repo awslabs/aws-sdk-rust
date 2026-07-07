@@ -2,10 +2,16 @@
 pub(crate) fn de_labeling_job_for_workteam_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LabelingJobForWorkteamSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,7 @@ where
                         }
                         "LabelCounters" => {
                             builder = builder.set_label_counters(
-                                crate::protocol_serde::shape_label_counters_for_workteam::de_label_counters_for_workteam(tokens, _value)?,
+                                crate::protocol_serde::shape_label_counters_for_workteam::de_label_counters_for_workteam(tokens, _value, depth + 1)?,
                             );
                         }
                         "NumberOfHumanWorkersPerDataObject" => {

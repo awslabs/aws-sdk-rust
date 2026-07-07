@@ -2,10 +2,16 @@
 pub(crate) fn de_job_queue_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobQueueDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,12 +72,12 @@ where
                         }
                         "computeEnvironmentOrder" => {
                             builder = builder.set_compute_environment_order(
-                                crate::protocol_serde::shape_compute_environment_orders::de_compute_environment_orders(tokens, _value)?,
+                                crate::protocol_serde::shape_compute_environment_orders::de_compute_environment_orders(tokens, _value, depth + 1)?,
                             );
                         }
                         "serviceEnvironmentOrder" => {
                             builder = builder.set_service_environment_order(
-                                crate::protocol_serde::shape_service_environment_orders::de_service_environment_orders(tokens, _value)?,
+                                crate::protocol_serde::shape_service_environment_orders::de_service_environment_orders(tokens, _value, depth + 1)?,
                             );
                         }
                         "jobQueueType" => {
@@ -82,11 +88,19 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "jobStateTimeLimitActions" => {
                             builder = builder.set_job_state_time_limit_actions(
-                                crate::protocol_serde::shape_job_state_time_limit_actions::de_job_state_time_limit_actions(tokens, _value)?,
+                                crate::protocol_serde::shape_job_state_time_limit_actions::de_job_state_time_limit_actions(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

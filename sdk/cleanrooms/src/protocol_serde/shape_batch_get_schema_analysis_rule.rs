@@ -141,6 +141,8 @@ pub(crate) fn de_batch_get_schema_analysis_rule(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -148,13 +150,17 @@ pub(crate) fn de_batch_get_schema_analysis_rule(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "analysisRules" => {
                     builder = builder.set_analysis_rules(crate::protocol_serde::shape_schema_analysis_rule_list::de_schema_analysis_rule_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "errors" => {
                     builder = builder.set_errors(
                         crate::protocol_serde::shape_batch_get_schema_analysis_rule_error_list::de_batch_get_schema_analysis_rule_error_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

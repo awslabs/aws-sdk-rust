@@ -2,10 +2,16 @@
 pub(crate) fn de_flow<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Flow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,8 +43,11 @@ where
                             );
                         }
                         "entitlements" => {
-                            builder =
-                                builder.set_entitlements(crate::protocol_serde::shape_list_of_entitlement::de_list_of_entitlement(tokens, _value)?);
+                            builder = builder.set_entitlements(crate::protocol_serde::shape_list_of_entitlement::de_list_of_entitlement(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "flowArn" => {
                             builder = builder.set_flow_arn(
@@ -49,7 +58,9 @@ where
                         }
                         "mediaStreams" => {
                             builder = builder.set_media_streams(crate::protocol_serde::shape_list_of_media_stream::de_list_of_media_stream(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "name" => {
@@ -60,17 +71,20 @@ where
                             );
                         }
                         "outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens, _value)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens, _value, depth + 1)?);
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value, depth + 1)?);
                         }
                         "sourceFailoverConfig" => {
-                            builder =
-                                builder.set_source_failover_config(crate::protocol_serde::shape_failover_config::de_failover_config(tokens, _value)?);
+                            builder = builder.set_source_failover_config(crate::protocol_serde::shape_failover_config::de_failover_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "sources" => {
-                            builder = builder.set_sources(crate::protocol_serde::shape_list_of_source::de_list_of_source(tokens, _value)?);
+                            builder = builder.set_sources(crate::protocol_serde::shape_list_of_source::de_list_of_source(tokens, _value, depth + 1)?);
                         }
                         "status" => {
                             builder = builder.set_status(
@@ -81,15 +95,20 @@ where
                         }
                         "vpcInterfaces" => {
                             builder = builder.set_vpc_interfaces(crate::protocol_serde::shape_list_of_vpc_interface::de_list_of_vpc_interface(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "maintenance" => {
-                            builder = builder.set_maintenance(crate::protocol_serde::shape_maintenance::de_maintenance(tokens, _value)?);
+                            builder = builder.set_maintenance(crate::protocol_serde::shape_maintenance::de_maintenance(tokens, _value, depth + 1)?);
                         }
                         "sourceMonitoringConfig" => {
-                            builder = builder
-                                .set_source_monitoring_config(crate::protocol_serde::shape_monitoring_config::de_monitoring_config(tokens, _value)?);
+                            builder = builder.set_source_monitoring_config(crate::protocol_serde::shape_monitoring_config::de_monitoring_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "flowSize" => {
                             builder = builder.set_flow_size(
@@ -99,10 +118,14 @@ where
                             );
                         }
                         "ndiConfig" => {
-                            builder = builder.set_ndi_config(crate::protocol_serde::shape_ndi_config::de_ndi_config(tokens, _value)?);
+                            builder = builder.set_ndi_config(crate::protocol_serde::shape_ndi_config::de_ndi_config(tokens, _value, depth + 1)?);
                         }
                         "encodingConfig" => {
-                            builder = builder.set_encoding_config(crate::protocol_serde::shape_encoding_config::de_encoding_config(tokens, _value)?);
+                            builder = builder.set_encoding_config(crate::protocol_serde::shape_encoding_config::de_encoding_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

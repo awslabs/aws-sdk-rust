@@ -14,6 +14,8 @@ pub struct MemoryRecordCreateInput {
     pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>The ID of the memory strategy that defines how this memory record is grouped.</p>
     pub memory_strategy_id: ::std::option::Option<::std::string::String>,
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
 impl MemoryRecordCreateInput {
     /// <p>A client-provided identifier for tracking this specific record creation request.</p>
@@ -38,6 +40,10 @@ impl MemoryRecordCreateInput {
     pub fn memory_strategy_id(&self) -> ::std::option::Option<&str> {
         self.memory_strategy_id.as_deref()
     }
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
+        self.metadata.as_ref()
+    }
 }
 impl MemoryRecordCreateInput {
     /// Creates a new builder-style object to manufacture [`MemoryRecordCreateInput`](crate::types::MemoryRecordCreateInput).
@@ -55,6 +61,7 @@ pub struct MemoryRecordCreateInputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::MemoryContent>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) memory_strategy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
 impl MemoryRecordCreateInputBuilder {
     /// <p>A client-provided identifier for tracking this specific record creation request.</p>
@@ -136,6 +143,31 @@ impl MemoryRecordCreateInputBuilder {
     pub fn get_memory_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_strategy_id
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MemoryRecordMetadataValue) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub fn set_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Metadata key-value pairs to be stored with the memory record.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`MemoryRecordCreateInput`](crate::types::MemoryRecordCreateInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`request_identifier`](crate::types::builders::MemoryRecordCreateInputBuilder::request_identifier)
@@ -163,6 +195,7 @@ impl MemoryRecordCreateInputBuilder {
                 )
             })?,
             memory_strategy_id: self.memory_strategy_id,
+            metadata: self.metadata,
         })
     }
 }

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_image_metadata(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ImageMetadata, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ImageMetadata::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -127,6 +131,16 @@ pub fn de_image_metadata(
                     )
                 ;
                 builder = builder.set_is_public(var_9);
+            }
+            ,
+            s if s.matches("imageWatermarkSet") /* ImageWatermarks com.amazonaws.ec2#ImageMetadata$ImageWatermarks */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_image_watermark_list::de_image_watermark_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_image_watermarks(var_10);
             }
             ,
             _ => {}

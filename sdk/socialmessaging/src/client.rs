@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateWhatsAppMessageTemplate`](crate::operation::create_whats_app_message_template) operation has
-/// a [`Client::create_whats_app_message_template`], function which returns a builder for that operation.
+/// For example, the [`CreateWhatsAppFlow`](crate::operation::create_whats_app_flow) operation has
+/// a [`Client::create_whats_app_flow`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_whats_app_message_template()
+/// let result = client.create_whats_app_flow()
 ///     .id("example")
 ///     .send()
 ///     .await;
@@ -138,6 +138,8 @@ impl Client {
 
 mod associate_whats_app_business_account;
 
+mod create_whats_app_flow;
+
 mod create_whats_app_message_template;
 
 mod create_whats_app_message_template_from_library;
@@ -171,15 +173,23 @@ mod create_whats_app_message_template_media;
 /// ```
 pub mod customize;
 
+mod delete_whats_app_flow;
+
 mod delete_whats_app_message_media;
 
 mod delete_whats_app_message_template;
+
+mod deprecate_whats_app_flow;
 
 mod disassociate_whats_app_business_account;
 
 mod get_linked_whats_app_business_account;
 
 mod get_linked_whats_app_business_account_phone_number;
+
+mod get_whats_app_flow;
+
+mod get_whats_app_flow_preview;
 
 mod get_whats_app_message_media;
 
@@ -189,11 +199,17 @@ mod list_linked_whats_app_business_accounts;
 
 mod list_tags_for_resource;
 
+mod list_whats_app_flow_assets;
+
+mod list_whats_app_flows;
+
 mod list_whats_app_message_templates;
 
 mod list_whats_app_template_library;
 
 mod post_whats_app_message_media;
+
+mod publish_whats_app_flow;
 
 mod put_whats_app_business_account_event_destinations;
 
@@ -202,5 +218,9 @@ mod send_whats_app_message;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_whats_app_flow;
+
+mod update_whats_app_flow_assets;
 
 mod update_whats_app_message_template;

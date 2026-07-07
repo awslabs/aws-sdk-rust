@@ -2,10 +2,16 @@
 pub(crate) fn de_savings_plans_purchase_analysis_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SavingsPlansPurchaseAnalysisConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,44 +20,56 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AccountScope" => {
-                            builder = builder.set_account_scope(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AccountScope::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AccountScope" => {
+                                builder = builder.set_account_scope(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::AccountScope::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "AccountId" => {
+                                builder = builder.set_account_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "AnalysisType" => {
+                                builder = builder.set_analysis_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::AnalysisType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "SavingsPlansToAdd" => {
+                                builder = builder.set_savings_plans_to_add(
+                                    crate::protocol_serde::shape_savings_plans_to_add::de_savings_plans_to_add(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "SavingsPlansToExclude" => {
+                                builder = builder.set_savings_plans_to_exclude(
+                                    crate::protocol_serde::shape_savings_plans_to_exclude::de_savings_plans_to_exclude(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "LookBackTimePeriod" => {
+                                builder = builder.set_look_back_time_period(crate::protocol_serde::shape_date_interval::de_date_interval(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SavingsPlansTargetCoverage" => {
+                                builder = builder.set_savings_plans_target_coverage(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "AccountId" => {
-                            builder = builder.set_account_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "AnalysisType" => {
-                            builder = builder.set_analysis_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AnalysisType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "SavingsPlansToAdd" => {
-                            builder = builder.set_savings_plans_to_add(crate::protocol_serde::shape_savings_plans_to_add::de_savings_plans_to_add(
-                                tokens, _value,
-                            )?);
-                        }
-                        "SavingsPlansToExclude" => {
-                            builder = builder.set_savings_plans_to_exclude(
-                                crate::protocol_serde::shape_savings_plans_to_exclude::de_savings_plans_to_exclude(tokens, _value)?,
-                            );
-                        }
-                        "LookBackTimePeriod" => {
-                            builder =
-                                builder.set_look_back_time_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"
@@ -110,6 +128,12 @@ pub fn ser_savings_plans_purchase_analysis_configuration(
         let mut object_10 = object.key("LookBackTimePeriod").start_object();
         crate::protocol_serde::shape_date_interval::ser_date_interval(&mut object_10, var_9)?;
         object_10.finish();
+    }
+    if let Some(var_11) = &input.savings_plans_target_coverage {
+        object.key("SavingsPlansTargetCoverage").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+        );
     }
     Ok(())
 }

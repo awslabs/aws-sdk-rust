@@ -21,6 +21,8 @@ pub struct UpdateGatewayInput {
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>The updated ARN of the KMS key used to encrypt the gateway.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The updated custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub custom_transform_configuration: ::std::option::Option<crate::types::CustomTransformConfiguration>,
     /// <p>The updated interceptor configurations for the gateway.</p>
     pub interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
     /// <p>The updated policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
@@ -33,6 +35,8 @@ pub struct UpdateGatewayInput {
     /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
     /// </ul>
     pub exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
+    /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+    pub waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
 }
 impl UpdateGatewayInput {
     /// <p>The identifier of the gateway to update.</p>
@@ -71,6 +75,10 @@ impl UpdateGatewayInput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The updated custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn custom_transform_configuration(&self) -> ::std::option::Option<&crate::types::CustomTransformConfiguration> {
+        self.custom_transform_configuration.as_ref()
+    }
     /// <p>The updated interceptor configurations for the gateway.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interceptor_configurations.is_none()`.
@@ -91,12 +99,16 @@ impl UpdateGatewayInput {
     pub fn exception_level(&self) -> ::std::option::Option<&crate::types::ExceptionLevel> {
         self.exception_level.as_ref()
     }
+    /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn waf_configuration(&self) -> ::std::option::Option<&crate::types::WafConfiguration> {
+        self.waf_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateGatewayInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayInput");
         formatter.field("gateway_identifier", &self.gateway_identifier);
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("role_arn", &self.role_arn);
         formatter.field("protocol_type", &self.protocol_type);
@@ -104,9 +116,11 @@ impl ::std::fmt::Debug for UpdateGatewayInput {
         formatter.field("authorizer_type", &self.authorizer_type);
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("custom_transform_configuration", &self.custom_transform_configuration);
         formatter.field("interceptor_configurations", &self.interceptor_configurations);
         formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("exception_level", &self.exception_level);
+        formatter.field("waf_configuration", &self.waf_configuration);
         formatter.finish()
     }
 }
@@ -130,9 +144,11 @@ pub struct UpdateGatewayInputBuilder {
     pub(crate) authorizer_type: ::std::option::Option<crate::types::AuthorizerType>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_transform_configuration: ::std::option::Option<crate::types::CustomTransformConfiguration>,
     pub(crate) interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
     pub(crate) policy_engine_configuration: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
+    pub(crate) waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
 }
 impl UpdateGatewayInputBuilder {
     /// <p>The identifier of the gateway to update.</p>
@@ -195,7 +211,6 @@ impl UpdateGatewayInputBuilder {
         &self.role_arn
     }
     /// <p>The updated protocol type for the gateway.</p>
-    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self
@@ -266,6 +281,20 @@ impl UpdateGatewayInputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>The updated custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn custom_transform_configuration(mut self, input: crate::types::CustomTransformConfiguration) -> Self {
+        self.custom_transform_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn set_custom_transform_configuration(mut self, input: ::std::option::Option<crate::types::CustomTransformConfiguration>) -> Self {
+        self.custom_transform_configuration = input;
+        self
+    }
+    /// <p>The updated custom transformation configuration for the gateway. This configuration defines how the gateway transforms requests and responses.</p>
+    pub fn get_custom_transform_configuration(&self) -> &::std::option::Option<crate::types::CustomTransformConfiguration> {
+        &self.custom_transform_configuration
+    }
     /// Appends an item to `interceptor_configurations`.
     ///
     /// To override the contents of this collection use [`set_interceptor_configurations`](Self::set_interceptor_configurations).
@@ -335,6 +364,20 @@ impl UpdateGatewayInputBuilder {
     pub fn get_exception_level(&self) -> &::std::option::Option<crate::types::ExceptionLevel> {
         &self.exception_level
     }
+    /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn waf_configuration(mut self, input: crate::types::WafConfiguration) -> Self {
+        self.waf_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn set_waf_configuration(mut self, input: ::std::option::Option<crate::types::WafConfiguration>) -> Self {
+        self.waf_configuration = input;
+        self
+    }
+    /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
+    pub fn get_waf_configuration(&self) -> &::std::option::Option<crate::types::WafConfiguration> {
+        &self.waf_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
     pub fn build(
         self,
@@ -349,9 +392,11 @@ impl UpdateGatewayInputBuilder {
             authorizer_type: self.authorizer_type,
             authorizer_configuration: self.authorizer_configuration,
             kms_key_arn: self.kms_key_arn,
+            custom_transform_configuration: self.custom_transform_configuration,
             interceptor_configurations: self.interceptor_configurations,
             policy_engine_configuration: self.policy_engine_configuration,
             exception_level: self.exception_level,
+            waf_configuration: self.waf_configuration,
         })
     }
 }
@@ -359,7 +404,7 @@ impl ::std::fmt::Debug for UpdateGatewayInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayInputBuilder");
         formatter.field("gateway_identifier", &self.gateway_identifier);
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("role_arn", &self.role_arn);
         formatter.field("protocol_type", &self.protocol_type);
@@ -367,9 +412,11 @@ impl ::std::fmt::Debug for UpdateGatewayInputBuilder {
         formatter.field("authorizer_type", &self.authorizer_type);
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("custom_transform_configuration", &self.custom_transform_configuration);
         formatter.field("interceptor_configurations", &self.interceptor_configurations);
         formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("exception_level", &self.exception_level);
+        formatter.field("waf_configuration", &self.waf_configuration);
         formatter.finish()
     }
 }

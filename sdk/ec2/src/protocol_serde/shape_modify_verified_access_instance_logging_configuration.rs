@@ -53,6 +53,8 @@ pub fn de_modify_verified_access_instance_logging_configuration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyVerifiedAccessInstanceLoggingConfigurationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyVerifiedAccessInstanceLoggingConfigurationResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_modify_verified_access_instance_logging_configuration(
             s if s.matches("loggingConfiguration") /* LoggingConfiguration com.amazonaws.ec2.synthetic#ModifyVerifiedAccessInstanceLoggingConfigurationOutput$LoggingConfiguration */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_instance_logging_configuration::de_verified_access_instance_logging_configuration(&mut tag)
+                        crate::protocol_serde::shape_verified_access_instance_logging_configuration::de_verified_access_instance_logging_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

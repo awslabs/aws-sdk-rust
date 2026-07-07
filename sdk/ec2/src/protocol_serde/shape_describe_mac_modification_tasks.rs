@@ -49,6 +49,8 @@ pub fn de_describe_mac_modification_tasks(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeMacModificationTasksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeMacModificationTasksResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_mac_modification_tasks(
             s if s.matches("macModificationTaskSet") /* MacModificationTasks com.amazonaws.ec2.synthetic#DescribeMacModificationTasksOutput$MacModificationTasks */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_mac_modification_task_list::de_mac_modification_task_list(&mut tag)
+                        crate::protocol_serde::shape_mac_modification_task_list::de_mac_modification_task_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

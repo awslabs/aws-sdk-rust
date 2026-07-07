@@ -28,5 +28,7 @@ pub fn de_distribution_config(inp: &[u8]) -> std::result::Result<crate::types::D
             "invalid root, expected DistributionConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_distribution_config::de_distribution_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_distribution_config::de_distribution_config(&mut decoder, depth + 1)
 }

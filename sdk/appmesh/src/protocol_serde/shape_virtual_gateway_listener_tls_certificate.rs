@@ -43,10 +43,16 @@ pub fn ser_virtual_gateway_listener_tls_certificate(
 pub(crate) fn de_virtual_gateway_listener_tls_certificate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayListenerTlsCertificate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -73,19 +79,19 @@ where
                     variant = match key.as_ref() {
                             "acm" => {
                                 Some(crate::types::VirtualGatewayListenerTlsCertificate::Acm(
-                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_acm_certificate::de_virtual_gateway_listener_tls_acm_certificate(tokens, _value)?
+                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_acm_certificate::de_virtual_gateway_listener_tls_acm_certificate(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'acm' cannot be null"))?
                                 ))
                             }
                             "file" => {
                                 Some(crate::types::VirtualGatewayListenerTlsCertificate::File(
-                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_file_certificate::de_virtual_gateway_listener_tls_file_certificate(tokens, _value)?
+                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_file_certificate::de_virtual_gateway_listener_tls_file_certificate(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?
                                 ))
                             }
                             "sds" => {
                                 Some(crate::types::VirtualGatewayListenerTlsCertificate::Sds(
-                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_sds_certificate::de_virtual_gateway_listener_tls_sds_certificate(tokens, _value)?
+                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_sds_certificate::de_virtual_gateway_listener_tls_sds_certificate(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sds' cannot be null"))?
                                 ))
                             }

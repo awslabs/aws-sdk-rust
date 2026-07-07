@@ -35,10 +35,16 @@ pub fn ser_image_configuration(
 pub(crate) fn de_image_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ImageConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,7 +56,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RuntimeEnvironmentVariables" => {
                             builder = builder.set_runtime_environment_variables(
-                                crate::protocol_serde::shape_runtime_environment_variables::de_runtime_environment_variables(tokens, _value)?,
+                                crate::protocol_serde::shape_runtime_environment_variables::de_runtime_environment_variables(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StartCommand" => {
@@ -69,7 +79,7 @@ where
                         }
                         "RuntimeEnvironmentSecrets" => {
                             builder = builder.set_runtime_environment_secrets(
-                                crate::protocol_serde::shape_runtime_environment_secrets::de_runtime_environment_secrets(tokens, _value)?,
+                                crate::protocol_serde::shape_runtime_environment_secrets::de_runtime_environment_secrets(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

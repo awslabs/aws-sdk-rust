@@ -36,10 +36,16 @@ pub fn ser_marketing(
 pub(crate) fn de_marketing<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Marketing>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,10 +70,10 @@ where
                             );
                         }
                         "UseCases" => {
-                            builder = builder.set_use_cases(crate::protocol_serde::shape_use_cases::de_use_cases(tokens, _value)?);
+                            builder = builder.set_use_cases(crate::protocol_serde::shape_use_cases::de_use_cases(tokens, _value, depth + 1)?);
                         }
                         "Channels" => {
-                            builder = builder.set_channels(crate::protocol_serde::shape_channels::de_channels(tokens, _value)?);
+                            builder = builder.set_channels(crate::protocol_serde::shape_channels::de_channels(tokens, _value, depth + 1)?);
                         }
                         "AwsFundingUsed" => {
                             builder = builder.set_aws_funding_used(

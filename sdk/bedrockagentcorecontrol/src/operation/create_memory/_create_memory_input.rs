@@ -17,6 +17,8 @@ pub struct CreateMemoryInput {
     pub event_expiry_duration: ::std::option::Option<i32>,
     /// <p>The memory strategies to use for this memory. Strategies define how information is extracted, processed, and consolidated.</p>
     pub memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
+    /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
+    pub indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
     /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
@@ -53,6 +55,12 @@ impl CreateMemoryInput {
     pub fn memory_strategies(&self) -> &[crate::types::MemoryStrategyInput] {
         self.memory_strategies.as_deref().unwrap_or_default()
     }
+    /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.indexed_keys.is_none()`.
+    pub fn indexed_keys(&self) -> &[crate::types::IndexedKey] {
+        self.indexed_keys.as_deref().unwrap_or_default()
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(&self) -> ::std::option::Option<&crate::types::StreamDeliveryResources> {
         self.stream_delivery_resources.as_ref()
@@ -72,6 +80,7 @@ impl ::std::fmt::Debug for CreateMemoryInput {
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("indexed_keys", &self.indexed_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -95,6 +104,7 @@ pub struct CreateMemoryInputBuilder {
     pub(crate) memory_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_expiry_duration: ::std::option::Option<i32>,
     pub(crate) memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
+    pub(crate) indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
     pub(crate) stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -205,6 +215,26 @@ impl CreateMemoryInputBuilder {
     pub fn get_memory_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>> {
         &self.memory_strategies
     }
+    /// Appends an item to `indexed_keys`.
+    ///
+    /// To override the contents of this collection use [`set_indexed_keys`](Self::set_indexed_keys).
+    ///
+    /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
+    pub fn indexed_keys(mut self, input: crate::types::IndexedKey) -> Self {
+        let mut v = self.indexed_keys.unwrap_or_default();
+        v.push(input);
+        self.indexed_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
+    pub fn set_indexed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>) -> Self {
+        self.indexed_keys = input;
+        self
+    }
+    /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
+    pub fn get_indexed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>> {
+        &self.indexed_keys
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
         self.stream_delivery_resources = ::std::option::Option::Some(input);
@@ -251,6 +281,7 @@ impl CreateMemoryInputBuilder {
             memory_execution_role_arn: self.memory_execution_role_arn,
             event_expiry_duration: self.event_expiry_duration,
             memory_strategies: self.memory_strategies,
+            indexed_keys: self.indexed_keys,
             stream_delivery_resources: self.stream_delivery_resources,
             tags: self.tags,
         })
@@ -266,6 +297,7 @@ impl ::std::fmt::Debug for CreateMemoryInputBuilder {
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("indexed_keys", &self.indexed_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.field("tags", &self.tags);
         formatter.finish()

@@ -123,6 +123,8 @@ pub(crate) fn de_put_source_server_action(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -175,7 +177,11 @@ pub(crate) fn de_put_source_server_action(
                 }
                 "externalParameters" => {
                     builder = builder.set_external_parameters(
-                        crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens, _value)?,
+                        crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "mustSucceedForCutover" => {
@@ -190,7 +196,9 @@ pub(crate) fn de_put_source_server_action(
                 }
                 "parameters" => {
                     builder = builder.set_parameters(crate::protocol_serde::shape_ssm_document_parameters::de_ssm_document_parameters(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "timeoutSeconds" => {

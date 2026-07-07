@@ -112,6 +112,8 @@ pub(crate) fn de_get_function(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -119,22 +121,26 @@ pub(crate) fn de_get_function(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Code" => {
                     builder = builder.set_code(crate::protocol_serde::shape_function_code_location::de_function_code_location(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Concurrency" => {
-                    builder = builder.set_concurrency(crate::protocol_serde::shape_concurrency::de_concurrency(tokens, _value)?);
+                    builder = builder.set_concurrency(crate::protocol_serde::shape_concurrency::de_concurrency(tokens, _value, depth + 1)?);
                 }
                 "Configuration" => {
                     builder = builder.set_configuration(crate::protocol_serde::shape_function_configuration::de_function_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "TagsError" => {
-                    builder = builder.set_tags_error(crate::protocol_serde::shape_tags_error::de_tags_error(tokens, _value)?);
+                    builder = builder.set_tags_error(crate::protocol_serde::shape_tags_error::de_tags_error(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

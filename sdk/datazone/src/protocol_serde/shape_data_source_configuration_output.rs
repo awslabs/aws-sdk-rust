@@ -2,10 +2,16 @@
 pub(crate) fn de_data_source_configuration_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSourceConfigurationOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,26 +37,32 @@ where
                     }
                     variant = match key.as_ref() {
                         "glueRunConfiguration" => Some(crate::types::DataSourceConfigurationOutput::GlueRunConfiguration(
-                            crate::protocol_serde::shape_glue_run_configuration_output::de_glue_run_configuration_output(tokens, _value)?
+                            crate::protocol_serde::shape_glue_run_configuration_output::de_glue_run_configuration_output(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'glueRunConfiguration' cannot be null")
                                 })?,
                         )),
                         "redshiftRunConfiguration" => Some(crate::types::DataSourceConfigurationOutput::RedshiftRunConfiguration(
-                            crate::protocol_serde::shape_redshift_run_configuration_output::de_redshift_run_configuration_output(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'redshiftRunConfiguration' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_redshift_run_configuration_output::de_redshift_run_configuration_output(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'redshiftRunConfiguration' cannot be null")
+                            })?,
                         )),
                         "sageMakerRunConfiguration" => Some(crate::types::DataSourceConfigurationOutput::SageMakerRunConfiguration(
-                            crate::protocol_serde::shape_sage_maker_run_configuration_output::de_sage_maker_run_configuration_output(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'sageMakerRunConfiguration' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_sage_maker_run_configuration_output::de_sage_maker_run_configuration_output(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'sageMakerRunConfiguration' cannot be null",
+                                )
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

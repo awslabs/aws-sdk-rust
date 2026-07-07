@@ -133,6 +133,8 @@ pub use crate::types::_resale_authorization_offer_extended_status_filter::Resale
 
 pub use crate::types::_resale_authorization_last_modified_date_filter::ResaleAuthorizationLastModifiedDateFilterBuilder;
 
+pub use crate::types::_resale_authorization_reseller_role_filter::ResaleAuthorizationResellerRoleFilterBuilder;
+
 pub use crate::types::_machine_learning_product_entity_id_filter::MachineLearningProductEntityIdFilterBuilder;
 
 pub use crate::types::_machine_learning_product_last_modified_date_filter::MachineLearningProductLastModifiedDateFilterBuilder;

@@ -146,6 +146,8 @@ pub(crate) fn de_set_principal_tag_attribute_map(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -169,7 +171,7 @@ pub(crate) fn de_set_principal_tag_attribute_map(
                     builder = builder.set_use_defaults(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "PrincipalTags" => {
-                    builder = builder.set_principal_tags(crate::protocol_serde::shape_principal_tags::de_principal_tags(tokens, _value)?);
+                    builder = builder.set_principal_tags(crate::protocol_serde::shape_principal_tags::de_principal_tags(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

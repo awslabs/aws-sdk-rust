@@ -2,10 +2,16 @@
 pub(crate) fn de_relational_database<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RelationalDatabase>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -43,7 +49,11 @@ where
                             )?);
                         }
                         "location" => {
-                            builder = builder.set_location(crate::protocol_serde::shape_resource_location::de_resource_location(tokens, _value)?);
+                            builder = builder.set_location(crate::protocol_serde::shape_resource_location::de_resource_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceType" => {
                             builder = builder.set_resource_type(
@@ -53,7 +63,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "relationalDatabaseBlueprintId" => {
                             builder = builder.set_relational_database_blueprint_id(
@@ -78,7 +88,11 @@ where
                         }
                         "hardware" => {
                             builder = builder.set_hardware(
-                                crate::protocol_serde::shape_relational_database_hardware::de_relational_database_hardware(tokens, _value)?,
+                                crate::protocol_serde::shape_relational_database_hardware::de_relational_database_hardware(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "state" => {
@@ -101,7 +115,7 @@ where
                         }
                         "pendingModifiedValues" => {
                             builder = builder.set_pending_modified_values(
-                                    crate::protocol_serde::shape_pending_modified_relational_database_values::de_pending_modified_relational_database_values(tokens, _value)?
+                                    crate::protocol_serde::shape_pending_modified_relational_database_values::de_pending_modified_relational_database_values(tokens, _value, depth + 1)?
                                 );
                         }
                         "engine" => {
@@ -157,12 +171,20 @@ where
                         }
                         "masterEndpoint" => {
                             builder = builder.set_master_endpoint(
-                                crate::protocol_serde::shape_relational_database_endpoint::de_relational_database_endpoint(tokens, _value)?,
+                                crate::protocol_serde::shape_relational_database_endpoint::de_relational_database_endpoint(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "pendingMaintenanceActions" => {
                             builder = builder.set_pending_maintenance_actions(
-                                crate::protocol_serde::shape_pending_maintenance_action_list::de_pending_maintenance_action_list(tokens, _value)?,
+                                crate::protocol_serde::shape_pending_maintenance_action_list::de_pending_maintenance_action_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "caCertificateIdentifier" => {

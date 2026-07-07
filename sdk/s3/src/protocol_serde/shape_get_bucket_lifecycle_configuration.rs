@@ -79,6 +79,8 @@ pub fn de_get_bucket_lifecycle_configuration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("LifecycleConfiguration") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected LifecycleConfiguration but got {start_el:?}. This is likely a bug in the SDK."
@@ -92,7 +94,7 @@ pub fn de_get_bucket_lifecycle_configuration(
                         Result::<::std::vec::Vec::<crate::types::LifecycleRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.rules.take().unwrap_or_default();
                             list_4.push(
-                                crate::protocol_serde::shape_lifecycle_rule::de_lifecycle_rule(&mut tag)
+                                crate::protocol_serde::shape_lifecycle_rule::de_lifecycle_rule(&mut tag, depth + 1)
                                 ?
                             );
                             list_4

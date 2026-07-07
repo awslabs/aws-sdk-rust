@@ -13,10 +13,13 @@
 /// # let freetrialtype = unimplemented!();
 /// match freetrialtype {
 ///     FreeTrialType::CodeRepository => { /* ... */ },
+///     FreeTrialType::ContainerImage => { /* ... */ },
 ///     FreeTrialType::Ec2 => { /* ... */ },
 ///     FreeTrialType::Ecr => { /* ... */ },
 ///     FreeTrialType::Lambda => { /* ... */ },
 ///     FreeTrialType::LambdaCode => { /* ... */ },
+///     FreeTrialType::ServerlessFunction => { /* ... */ },
+///     FreeTrialType::Vm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +51,8 @@ pub enum FreeTrialType {
     #[allow(missing_docs)] // documentation missing in model
     CodeRepository,
     #[allow(missing_docs)] // documentation missing in model
+    ContainerImage,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
     #[allow(missing_docs)] // documentation missing in model
     Ecr,
@@ -55,6 +60,10 @@ pub enum FreeTrialType {
     Lambda,
     #[allow(missing_docs)] // documentation missing in model
     LambdaCode,
+    #[allow(missing_docs)] // documentation missing in model
+    ServerlessFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    Vm,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,10 +72,13 @@ impl ::std::convert::From<&str> for FreeTrialType {
     fn from(s: &str) -> Self {
         match s {
             "CODE_REPOSITORY" => FreeTrialType::CodeRepository,
+            "CONTAINER_IMAGE" => FreeTrialType::ContainerImage,
             "EC2" => FreeTrialType::Ec2,
             "ECR" => FreeTrialType::Ecr,
             "LAMBDA" => FreeTrialType::Lambda,
             "LAMBDA_CODE" => FreeTrialType::LambdaCode,
+            "SERVERLESS_FUNCTION" => FreeTrialType::ServerlessFunction,
+            "VM" => FreeTrialType::Vm,
             other => FreeTrialType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -83,16 +95,28 @@ impl FreeTrialType {
     pub fn as_str(&self) -> &str {
         match self {
             FreeTrialType::CodeRepository => "CODE_REPOSITORY",
+            FreeTrialType::ContainerImage => "CONTAINER_IMAGE",
             FreeTrialType::Ec2 => "EC2",
             FreeTrialType::Ecr => "ECR",
             FreeTrialType::Lambda => "LAMBDA",
             FreeTrialType::LambdaCode => "LAMBDA_CODE",
+            FreeTrialType::ServerlessFunction => "SERVERLESS_FUNCTION",
+            FreeTrialType::Vm => "VM",
             FreeTrialType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODE_REPOSITORY", "EC2", "ECR", "LAMBDA", "LAMBDA_CODE"]
+        &[
+            "CODE_REPOSITORY",
+            "CONTAINER_IMAGE",
+            "EC2",
+            "ECR",
+            "LAMBDA",
+            "LAMBDA_CODE",
+            "SERVERLESS_FUNCTION",
+            "VM",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FreeTrialType {
@@ -116,10 +140,13 @@ impl ::std::fmt::Display for FreeTrialType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FreeTrialType::CodeRepository => write!(f, "CODE_REPOSITORY"),
+            FreeTrialType::ContainerImage => write!(f, "CONTAINER_IMAGE"),
             FreeTrialType::Ec2 => write!(f, "EC2"),
             FreeTrialType::Ecr => write!(f, "ECR"),
             FreeTrialType::Lambda => write!(f, "LAMBDA"),
             FreeTrialType::LambdaCode => write!(f, "LAMBDA_CODE"),
+            FreeTrialType::ServerlessFunction => write!(f, "SERVERLESS_FUNCTION"),
+            FreeTrialType::Vm => write!(f, "VM"),
             FreeTrialType::Unknown(value) => write!(f, "{value}"),
         }
     }

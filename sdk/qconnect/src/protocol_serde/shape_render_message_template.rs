@@ -122,6 +122,8 @@ pub(crate) fn de_render_message_template(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -130,22 +132,34 @@ pub(crate) fn de_render_message_template(
                 match key.to_unescaped()?.as_ref() {
                     "attachments" => {
                         builder = builder.set_attachments(
-                            crate::protocol_serde::shape_message_template_attachment_list::de_message_template_attachment_list(tokens, _value)?,
+                            crate::protocol_serde::shape_message_template_attachment_list::de_message_template_attachment_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
                         );
                     }
                     "attributesNotInterpolated" => {
                         builder = builder.set_attributes_not_interpolated(
-                            crate::protocol_serde::shape_message_template_attribute_key_list::de_message_template_attribute_key_list(tokens, _value)?,
+                            crate::protocol_serde::shape_message_template_attribute_key_list::de_message_template_attribute_key_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
                         );
                     }
                     "content" => {
                         builder = builder.set_content(
-                            crate::protocol_serde::shape_message_template_content_provider::de_message_template_content_provider(tokens, _value)?,
+                            crate::protocol_serde::shape_message_template_content_provider::de_message_template_content_provider(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
                         );
                     }
                     "sourceConfigurationSummary" => {
                         builder = builder.set_source_configuration_summary(
-                            crate::protocol_serde::shape_message_template_source_configuration_summary::de_message_template_source_configuration_summary(tokens, _value)?
+                            crate::protocol_serde::shape_message_template_source_configuration_summary::de_message_template_source_configuration_summary(tokens, _value, depth + 1)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

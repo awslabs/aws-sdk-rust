@@ -2,10 +2,16 @@
 pub(crate) fn de_track<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Track>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,8 +22,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioProperties" => {
-                            builder =
-                                builder.set_audio_properties(crate::protocol_serde::shape_audio_properties::de_audio_properties(tokens, _value)?);
+                            builder = builder.set_audio_properties(crate::protocol_serde::shape_audio_properties::de_audio_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "codec" => {
                             builder = builder.set_codec(
@@ -27,7 +36,11 @@ where
                             );
                         }
                         "dataProperties" => {
-                            builder = builder.set_data_properties(crate::protocol_serde::shape_data_properties::de_data_properties(tokens, _value)?);
+                            builder = builder.set_data_properties(crate::protocol_serde::shape_data_properties::de_data_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "duration" => {
                             builder = builder
@@ -48,8 +61,11 @@ where
                             );
                         }
                         "videoProperties" => {
-                            builder =
-                                builder.set_video_properties(crate::protocol_serde::shape_video_properties::de_video_properties(tokens, _value)?);
+                            builder = builder.set_video_properties(crate::protocol_serde::shape_video_properties::de_video_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

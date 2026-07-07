@@ -18,5 +18,11 @@ pub fn ser_network_settings(
     if let Some(var_5) = &input.enable_trusted_data_format {
         object.key("enableTrustedDataFormat").boolean(*var_5);
     }
+    if let Some(var_6) = &input.consent_popup {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("consentPopup").start_object();
+        crate::protocol_serde::shape_consent_popup_config::ser_consent_popup_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

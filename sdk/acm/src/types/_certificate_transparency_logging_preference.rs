@@ -37,6 +37,7 @@
 /// - It might inadvertently shadow other intended match arms.
 ///
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "Certificate transparency logging opt-out is no longer available.", since = "12th June 2026")]
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

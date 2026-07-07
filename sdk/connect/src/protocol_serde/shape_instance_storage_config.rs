@@ -39,10 +39,16 @@ pub fn ser_instance_storage_config(
 pub(crate) fn de_instance_storage_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InstanceStorageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -67,21 +73,21 @@ where
                             );
                         }
                         "S3Config" => {
-                            builder = builder.set_s3_config(crate::protocol_serde::shape_s3_config::de_s3_config(tokens, _value)?);
+                            builder = builder.set_s3_config(crate::protocol_serde::shape_s3_config::de_s3_config(tokens, _value, depth + 1)?);
                         }
                         "KinesisVideoStreamConfig" => {
                             builder = builder.set_kinesis_video_stream_config(
-                                crate::protocol_serde::shape_kinesis_video_stream_config::de_kinesis_video_stream_config(tokens, _value)?,
+                                crate::protocol_serde::shape_kinesis_video_stream_config::de_kinesis_video_stream_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "KinesisStreamConfig" => {
                             builder = builder.set_kinesis_stream_config(
-                                crate::protocol_serde::shape_kinesis_stream_config::de_kinesis_stream_config(tokens, _value)?,
+                                crate::protocol_serde::shape_kinesis_stream_config::de_kinesis_stream_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "KinesisFirehoseConfig" => {
                             builder = builder.set_kinesis_firehose_config(
-                                crate::protocol_serde::shape_kinesis_firehose_config::de_kinesis_firehose_config(tokens, _value)?,
+                                crate::protocol_serde::shape_kinesis_firehose_config::de_kinesis_firehose_config(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

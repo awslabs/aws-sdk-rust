@@ -2,10 +2,16 @@
 pub(crate) fn de_training_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TrainingResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,16 +23,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dataValidationMetrics" => {
                             builder = builder.set_data_validation_metrics(
-                                crate::protocol_serde::shape_data_validation_metrics::de_data_validation_metrics(tokens, _value)?,
+                                crate::protocol_serde::shape_data_validation_metrics::de_data_validation_metrics(tokens, _value, depth + 1)?,
                             );
                         }
                         "trainingMetrics" => {
-                            builder =
-                                builder.set_training_metrics(crate::protocol_serde::shape_training_metrics::de_training_metrics(tokens, _value)?);
+                            builder = builder.set_training_metrics(crate::protocol_serde::shape_training_metrics::de_training_metrics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "variableImportanceMetrics" => {
                             builder = builder.set_variable_importance_metrics(
-                                crate::protocol_serde::shape_variable_importance_metrics::de_variable_importance_metrics(tokens, _value)?,
+                                crate::protocol_serde::shape_variable_importance_metrics::de_variable_importance_metrics(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

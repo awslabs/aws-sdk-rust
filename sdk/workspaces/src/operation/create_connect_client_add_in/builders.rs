@@ -22,8 +22,8 @@ impl crate::operation::create_connect_client_add_in::builders::CreateConnectClie
 }
 /// Fluent builder constructing a request to `CreateConnectClientAddIn`.
 ///
-/// <p>Creates a client-add-in for Amazon Connect within a directory. You can create only one Amazon Connect client add-in within a directory.</p>
-/// <p>This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.</p>
+/// <p>Creates a client-add-in for Connect Customer within a directory. You can create only one Connect Customer client add-in within a directory.</p>
+/// <p>This client add-in allows WorkSpaces users to seamlessly connect to Connect Customer.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectClientAddInFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,17 +137,17 @@ impl CreateConnectClientAddInFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.url(input.into());
         self
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_url(input);
         self
     }
-    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// <p>The endpoint URL of the Connect Customer client add-in.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_url()
     }

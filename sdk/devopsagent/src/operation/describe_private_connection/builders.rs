@@ -22,7 +22,7 @@ impl crate::operation::describe_private_connection::builders::DescribePrivateCon
 }
 /// Fluent builder constructing a request to `DescribePrivateConnection`.
 ///
-/// Retrieves details of an existing Private Connection.
+/// <p>Retrieves details of an existing Private Connection.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePrivateConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribePrivateConnectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

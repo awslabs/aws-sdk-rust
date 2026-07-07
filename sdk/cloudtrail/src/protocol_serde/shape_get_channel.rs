@@ -119,6 +119,8 @@ pub(crate) fn de_get_channel(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,13 +148,17 @@ pub(crate) fn de_get_channel(
                     );
                 }
                 "SourceConfig" => {
-                    builder = builder.set_source_config(crate::protocol_serde::shape_source_config::de_source_config(tokens, _value)?);
+                    builder = builder.set_source_config(crate::protocol_serde::shape_source_config::de_source_config(tokens, _value, depth + 1)?);
                 }
                 "Destinations" => {
-                    builder = builder.set_destinations(crate::protocol_serde::shape_destinations::de_destinations(tokens, _value)?);
+                    builder = builder.set_destinations(crate::protocol_serde::shape_destinations::de_destinations(tokens, _value, depth + 1)?);
                 }
                 "IngestionStatus" => {
-                    builder = builder.set_ingestion_status(crate::protocol_serde::shape_ingestion_status::de_ingestion_status(tokens, _value)?);
+                    builder = builder.set_ingestion_status(crate::protocol_serde::shape_ingestion_status::de_ingestion_status(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

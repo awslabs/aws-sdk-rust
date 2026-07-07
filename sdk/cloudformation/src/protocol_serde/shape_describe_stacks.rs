@@ -40,6 +40,8 @@ pub fn de_describe_stacks(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeStacksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeStacksResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_describe_stacks(
             s if s.matches("Stacks") /* Stacks com.amazonaws.cloudformation.synthetic#DescribeStacksOutput$Stacks */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stacks::de_stacks(&mut tag)
+                        crate::protocol_serde::shape_stacks::de_stacks(&mut tag, depth + 1)
                         ?
                     )
                 ;

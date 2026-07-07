@@ -16,7 +16,11 @@ pub fn ser_resource_record(
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_record(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceRecord, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceRecord::builder();
     while let Some(mut tag) = decoder.next_tag() {

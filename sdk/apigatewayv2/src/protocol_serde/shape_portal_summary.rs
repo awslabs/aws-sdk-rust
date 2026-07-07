@@ -2,10 +2,16 @@
 pub(crate) fn de_portal_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PortalSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,16 +22,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "authorization" => {
-                            builder = builder.set_authorization(crate::protocol_serde::shape_authorization::de_authorization(tokens, _value)?);
+                            builder =
+                                builder.set_authorization(crate::protocol_serde::shape_authorization::de_authorization(tokens, _value, depth + 1)?);
                         }
                         "endpointConfiguration" => {
                             builder = builder.set_endpoint_configuration(
-                                crate::protocol_serde::shape_endpoint_configuration_response::de_endpoint_configuration_response(tokens, _value)?,
+                                crate::protocol_serde::shape_endpoint_configuration_response::de_endpoint_configuration_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "includedPortalProductArns" => {
                             builder = builder.set_included_portal_product_arns(
-                                crate::protocol_serde::shape_list_of_string_min20_max2048::de_list_of_string_min20_max2048(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_string_min20_max2048::de_list_of_string_min20_max2048(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "lastModified" => {
@@ -55,7 +70,11 @@ where
                             );
                         }
                         "portalContent" => {
-                            builder = builder.set_portal_content(crate::protocol_serde::shape_portal_content::de_portal_content(tokens, _value)?);
+                            builder = builder.set_portal_content(crate::protocol_serde::shape_portal_content::de_portal_content(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "portalId" => {
                             builder = builder.set_portal_id(
@@ -65,7 +84,7 @@ where
                             );
                         }
                         "preview" => {
-                            builder = builder.set_preview(crate::protocol_serde::shape_preview::de_preview(tokens, _value)?);
+                            builder = builder.set_preview(crate::protocol_serde::shape_preview::de_preview(tokens, _value, depth + 1)?);
                         }
                         "publishStatus" => {
                             builder = builder.set_publish_status(
@@ -82,11 +101,14 @@ where
                             );
                         }
                         "statusException" => {
-                            builder =
-                                builder.set_status_exception(crate::protocol_serde::shape_status_exception::de_status_exception(tokens, _value)?);
+                            builder = builder.set_status_exception(crate::protocol_serde::shape_status_exception::de_status_exception(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

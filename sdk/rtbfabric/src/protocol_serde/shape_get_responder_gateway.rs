@@ -124,6 +124,8 @@ pub(crate) fn de_get_responder_gateway(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -184,12 +186,23 @@ pub(crate) fn de_get_responder_gateway(
                             .transpose()?,
                     );
                 }
+                "linksRequestedCount" => {
+                    builder = builder.set_links_requested_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "listenerConfig" => {
-                    builder = builder.set_listener_config(crate::protocol_serde::shape_listener_config::de_listener_config(tokens, _value)?);
+                    builder = builder.set_listener_config(crate::protocol_serde::shape_listener_config::de_listener_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "managedEndpointConfiguration" => {
                     builder = builder.set_managed_endpoint_configuration(
-                        crate::protocol_serde::shape_managed_endpoint_configuration::de_managed_endpoint_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_managed_endpoint_configuration::de_managed_endpoint_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "port" => {
@@ -208,7 +221,9 @@ pub(crate) fn de_get_responder_gateway(
                 }
                 "securityGroupIds" => {
                     builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {
@@ -219,10 +234,10 @@ pub(crate) fn de_get_responder_gateway(
                     );
                 }
                 "subnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens, _value)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens, _value, depth + 1)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                 }
                 "totalLinksCount" => {
                     builder = builder.set_total_links_count(
@@ -233,7 +248,7 @@ pub(crate) fn de_get_responder_gateway(
                 }
                 "trustStoreConfiguration" => {
                     builder = builder.set_trust_store_configuration(
-                        crate::protocol_serde::shape_trust_store_configuration::de_trust_store_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_trust_store_configuration::de_trust_store_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "updatedAt" => {

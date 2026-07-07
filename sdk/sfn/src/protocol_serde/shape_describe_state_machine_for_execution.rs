@@ -152,6 +152,8 @@ pub(crate) fn de_describe_state_machine_for_execution(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -193,12 +195,16 @@ pub(crate) fn de_describe_state_machine_for_execution(
                 }
                 "loggingConfiguration" => {
                     builder = builder.set_logging_configuration(crate::protocol_serde::shape_logging_configuration::de_logging_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "tracingConfiguration" => {
                     builder = builder.set_tracing_configuration(crate::protocol_serde::shape_tracing_configuration::de_tracing_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "mapRunArn" => {
@@ -224,12 +230,15 @@ pub(crate) fn de_describe_state_machine_for_execution(
                 }
                 "encryptionConfiguration" => {
                     builder = builder.set_encryption_configuration(
-                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "variableReferences" => {
-                    builder =
-                        builder.set_variable_references(crate::protocol_serde::shape_variable_references::de_variable_references(tokens, _value)?);
+                    builder = builder.set_variable_references(crate::protocol_serde::shape_variable_references::de_variable_references(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

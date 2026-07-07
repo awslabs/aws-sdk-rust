@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_orderable_db_instance_option(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OrderableDbInstanceOption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OrderableDbInstanceOption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_orderable_db_instance_option(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.neptune#OrderableDBInstanceOption$AvailabilityZones */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_list::de_availability_zone_list(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_list::de_availability_zone_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -305,6 +309,16 @@ pub fn de_orderable_db_instance_option(
                     )
                 ;
                 builder = builder.set_supports_global_databases(var_21);
+            }
+            ,
+            s if s.matches("SupportedNetworkTypes") /* SupportedNetworkTypes com.amazonaws.neptune#OrderableDBInstanceOption$SupportedNetworkTypes */ =>  {
+                let var_22 =
+                    Some(
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_network_types(var_22);
             }
             ,
             _ => {}

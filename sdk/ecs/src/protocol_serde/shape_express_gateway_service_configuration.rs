@@ -2,10 +2,16 @@
 pub(crate) fn de_express_gateway_service_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ExpressGatewayServiceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "taskDefinitionArn" => {
+                            builder = builder.set_task_definition_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "cpu" => {
                             builder = builder.set_cpu(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -52,7 +65,7 @@ where
                         }
                         "networkConfiguration" => {
                             builder = builder.set_network_configuration(
-                                    crate::protocol_serde::shape_express_gateway_service_network_configuration::de_express_gateway_service_network_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_express_gateway_service_network_configuration::de_express_gateway_service_network_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         "healthCheckPath" => {
@@ -64,17 +77,23 @@ where
                         }
                         "primaryContainer" => {
                             builder = builder.set_primary_container(
-                                crate::protocol_serde::shape_express_gateway_container::de_express_gateway_container(tokens, _value)?,
+                                crate::protocol_serde::shape_express_gateway_container::de_express_gateway_container(tokens, _value, depth + 1)?,
                             );
                         }
                         "scalingTarget" => {
                             builder = builder.set_scaling_target(
-                                crate::protocol_serde::shape_express_gateway_scaling_target::de_express_gateway_scaling_target(tokens, _value)?,
+                                crate::protocol_serde::shape_express_gateway_scaling_target::de_express_gateway_scaling_target(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ingressPaths" => {
                             builder = builder.set_ingress_paths(crate::protocol_serde::shape_ingress_path_summaries::de_ingress_path_summaries(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "createdAt" => {

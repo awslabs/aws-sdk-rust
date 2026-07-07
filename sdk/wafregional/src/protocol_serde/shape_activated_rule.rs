@@ -2,10 +2,16 @@
 pub(crate) fn de_activated_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ActivatedRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,11 +36,14 @@ where
                             );
                         }
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_waf_action::de_waf_action(tokens, _value)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_waf_action::de_waf_action(tokens, _value, depth + 1)?);
                         }
                         "OverrideAction" => {
-                            builder = builder
-                                .set_override_action(crate::protocol_serde::shape_waf_override_action::de_waf_override_action(tokens, _value)?);
+                            builder = builder.set_override_action(crate::protocol_serde::shape_waf_override_action::de_waf_override_action(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Type" => {
                             builder = builder.set_type(
@@ -44,7 +53,11 @@ where
                             );
                         }
                         "ExcludedRules" => {
-                            builder = builder.set_excluded_rules(crate::protocol_serde::shape_excluded_rules::de_excluded_rules(tokens, _value)?);
+                            builder = builder.set_excluded_rules(crate::protocol_serde::shape_excluded_rules::de_excluded_rules(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

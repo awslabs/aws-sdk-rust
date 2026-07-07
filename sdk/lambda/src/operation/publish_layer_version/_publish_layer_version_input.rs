@@ -9,6 +9,8 @@ pub struct PublishLayerVersionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The function layer archive.</p>
     pub content: ::std::option::Option<crate::types::LayerVersionContentInput>,
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
@@ -22,8 +24,6 @@ pub struct PublishLayerVersionInput {
     /// <p>The full text of the license.</p></li>
     /// </ul>
     pub license_info: ::std::option::Option<::std::string::String>,
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
 }
 impl PublishLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -37,6 +37,12 @@ impl PublishLayerVersionInput {
     /// <p>The function layer archive.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::LayerVersionContentInput> {
         self.content.as_ref()
+    }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_architectures.is_none()`.
+    pub fn compatible_architectures(&self) -> &[crate::types::Architecture] {
+        self.compatible_architectures.as_deref().unwrap_or_default()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
@@ -57,12 +63,6 @@ impl PublishLayerVersionInput {
     pub fn license_info(&self) -> ::std::option::Option<&str> {
         self.license_info.as_deref()
     }
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_architectures.is_none()`.
-    pub fn compatible_architectures(&self) -> &[crate::types::Architecture] {
-        self.compatible_architectures.as_deref().unwrap_or_default()
-    }
 }
 impl PublishLayerVersionInput {
     /// Creates a new builder-style object to manufacture [`PublishLayerVersionInput`](crate::operation::publish_layer_version::PublishLayerVersionInput).
@@ -78,9 +78,9 @@ pub struct PublishLayerVersionInputBuilder {
     pub(crate) layer_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::LayerVersionContentInput>,
+    pub(crate) compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
     pub(crate) license_info: ::std::option::Option<::std::string::String>,
-    pub(crate) compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
 }
 impl PublishLayerVersionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -126,6 +126,26 @@ impl PublishLayerVersionInputBuilder {
     /// <p>The function layer archive.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::LayerVersionContentInput> {
         &self.content
+    }
+    /// Appends an item to `compatible_architectures`.
+    ///
+    /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
+    ///
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn compatible_architectures(mut self, input: crate::types::Architecture) -> Self {
+        let mut v = self.compatible_architectures.unwrap_or_default();
+        v.push(input);
+        self.compatible_architectures = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn set_compatible_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
+        self.compatible_architectures = input;
+        self
+    }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn get_compatible_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+        &self.compatible_architectures
     }
     /// Appends an item to `compatible_runtimes`.
     ///
@@ -188,26 +208,6 @@ impl PublishLayerVersionInputBuilder {
     pub fn get_license_info(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_info
     }
-    /// Appends an item to `compatible_architectures`.
-    ///
-    /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
-    ///
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn compatible_architectures(mut self, input: crate::types::Architecture) -> Self {
-        let mut v = self.compatible_architectures.unwrap_or_default();
-        v.push(input);
-        self.compatible_architectures = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn set_compatible_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
-        self.compatible_architectures = input;
-        self
-    }
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn get_compatible_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
-        &self.compatible_architectures
-    }
     /// Consumes the builder and constructs a [`PublishLayerVersionInput`](crate::operation::publish_layer_version::PublishLayerVersionInput).
     pub fn build(
         self,
@@ -217,9 +217,9 @@ impl PublishLayerVersionInputBuilder {
             layer_name: self.layer_name,
             description: self.description,
             content: self.content,
+            compatible_architectures: self.compatible_architectures,
             compatible_runtimes: self.compatible_runtimes,
             license_info: self.license_info,
-            compatible_architectures: self.compatible_architectures,
         })
     }
 }

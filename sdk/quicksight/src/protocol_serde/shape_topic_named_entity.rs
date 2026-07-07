@@ -42,10 +42,16 @@ pub fn ser_topic_named_entity(
 pub(crate) fn de_topic_named_entity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TopicNamedEntity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,36 +60,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "EntityName" => {
-                            builder = builder.set_entity_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "EntityName" => {
+                                builder = builder.set_entity_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "EntityDescription" => {
+                                builder = builder.set_entity_description(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "EntitySynonyms" => {
+                                builder = builder.set_entity_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens, _value, depth + 1)?);
+                            }
+                            "SemanticEntityType" => {
+                                builder = builder.set_semantic_entity_type(
+                                    crate::protocol_serde::shape_semantic_entity_type::de_semantic_entity_type(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Definition" => {
+                                builder = builder.set_definition(crate::protocol_serde::shape_named_entity_definitions::de_named_entity_definitions(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "EntityDescription" => {
-                            builder = builder.set_entity_description(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "EntitySynonyms" => {
-                            builder = builder.set_entity_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens, _value)?);
-                        }
-                        "SemanticEntityType" => {
-                            builder = builder.set_semantic_entity_type(crate::protocol_serde::shape_semantic_entity_type::de_semantic_entity_type(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Definition" => {
-                            builder = builder.set_definition(crate::protocol_serde::shape_named_entity_definitions::de_named_entity_definitions(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

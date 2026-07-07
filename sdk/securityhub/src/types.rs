@@ -17,9 +17,17 @@ pub use crate::types::_criteria::Criteria;
 
 pub use crate::types::_policy::Policy;
 
+pub use crate::types::_cspm_provider_configuration::CspmProviderConfiguration;
+
+pub use crate::types::_cspm_connector_status::CspmConnectorStatus;
+
+pub use crate::types::_cspm_enablement_status::CspmEnablementStatus;
+
 pub use crate::types::_provider_configuration::ProviderConfiguration;
 
 pub use crate::types::_connector_status::ConnectorStatus;
+
+pub use crate::types::_enablement_status::EnablementStatus;
 
 pub use crate::types::_aws_security_finding_filters::AwsSecurityFindingFilters;
 
@@ -33,6 +41,8 @@ pub use crate::types::_organization_configuration::OrganizationConfiguration;
 
 pub use crate::types::_security_hub_feature::SecurityHubFeature;
 
+pub use crate::types::_feature_name::FeatureName;
+
 pub use crate::types::_invitation::Invitation;
 
 pub use crate::types::_target::Target;
@@ -42,6 +52,10 @@ pub use crate::types::_target_type::TargetType;
 pub use crate::types::_association_type::AssociationType;
 
 pub use crate::types::_configuration_policy_association_status::ConfigurationPolicyAssociationStatus;
+
+pub use crate::types::_cspm_health_check::CspmHealthCheck;
+
+pub use crate::types::_cspm_provider_detail::CspmProviderDetail;
 
 pub use crate::types::_health_check::HealthCheck;
 
@@ -61,6 +75,12 @@ pub use crate::types::_ocsf_finding_filters::OcsfFindingFilters;
 
 pub use crate::types::_insight_results::InsightResults;
 
+pub use crate::types::_recommendation_type::RecommendationType;
+
+pub use crate::types::_recommendation_error::RecommendationError;
+
+pub use crate::types::_recommendation_status::RecommendationStatus;
+
 pub use crate::types::_resource_scopes::ResourceScopes;
 
 pub use crate::types::_resources_trends_filters::ResourcesTrendsFilters;
@@ -71,7 +91,11 @@ pub use crate::types::_security_control_definition::SecurityControlDefinition;
 
 pub use crate::types::_association_filters::AssociationFilters;
 
+pub use crate::types::_cspm_connector_provider_name::CspmConnectorProviderName;
+
 pub use crate::types::_connector_provider_name::ConnectorProviderName;
+
+pub use crate::types::_cspm_provider_update_configuration::CspmProviderUpdateConfiguration;
 
 pub use crate::types::_provider_update_configuration::ProviderUpdateConfiguration;
 
@@ -133,6 +157,8 @@ pub use crate::types::_automation_rules_action_v2::AutomationRulesActionV2;
 
 pub use crate::types::_security_hub_policy::SecurityHubPolicy;
 
+pub use crate::types::_azure_provider_configuration::AzureProviderConfiguration;
+
 pub use crate::types::_jira_cloud_provider_configuration::JiraCloudProviderConfiguration;
 
 pub use crate::types::_service_now_provider_configuration::ServiceNowProviderConfiguration;
@@ -151,9 +177,15 @@ pub use crate::types::_product::Product;
 
 pub use crate::types::_product_v2::ProductV2;
 
+pub use crate::types::_feature_detail::FeatureDetail;
+
+pub use crate::types::_standards_provider::StandardsProvider;
+
 pub use crate::types::_standard::Standard;
 
 pub use crate::types::_standards_control::StandardsControl;
+
+pub use crate::types::_azure_detail::AzureDetail;
 
 pub use crate::types::_jira_cloud_detail::JiraCloudDetail;
 
@@ -175,6 +207,8 @@ pub use crate::types::_insight::Insight;
 
 pub use crate::types::_member::Member;
 
+pub use crate::types::_recommendation_step::RecommendationStep;
+
 pub use crate::types::_resource_group_by_rule::ResourceGroupByRule;
 
 pub use crate::types::_resources_trends_metrics_result::ResourcesTrendsMetricsResult;
@@ -185,6 +219,8 @@ pub use crate::types::_severity_rating::SeverityRating;
 
 pub use crate::types::_region_availability_status::RegionAvailabilityStatus;
 
+pub use crate::types::_security_controls_provider::SecurityControlsProvider;
+
 pub use crate::types::_aggregator_v2::AggregatorV2;
 
 pub use crate::types::_automation_rules_metadata::AutomationRulesMetadata;
@@ -193,6 +229,8 @@ pub use crate::types::_automation_rules_metadata_v2::AutomationRulesMetadataV2;
 
 pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummary;
 
+pub use crate::types::_cspm_connector_summary::CspmConnectorSummary;
+
 pub use crate::types::_connector_summary::ConnectorSummary;
 
 pub use crate::types::_finding_aggregator::FindingAggregator;
@@ -200,6 +238,8 @@ pub use crate::types::_finding_aggregator::FindingAggregator;
 pub use crate::types::_admin_account::AdminAccount;
 
 pub use crate::types::_standards_control_association_summary::StandardsControlAssociationSummary;
+
+pub use crate::types::_azure_update_configuration::AzureUpdateConfiguration;
 
 pub use crate::types::_jira_cloud_update_configuration::JiraCloudUpdateConfiguration;
 
@@ -267,13 +307,19 @@ pub use crate::types::_external_integration_configuration::ExternalIntegrationCo
 
 pub use crate::types::_security_controls_configuration::SecurityControlsConfiguration;
 
+pub use crate::types::_azure_scope_configuration::AzureScopeConfiguration;
+
 pub use crate::types::_ip_filter::IpFilter;
 
 pub use crate::types::_keyword_filter::KeywordFilter;
 
 pub use crate::types::_boolean_filter::BooleanFilter;
 
+pub use crate::types::_feature_status::FeatureStatus;
+
 pub use crate::types::_standards_managed_by::StandardsManagedBy;
+
+pub use crate::types::_health_issue::HealthIssue;
 
 pub use crate::types::_connector_auth_status::ConnectorAuthStatus;
 
@@ -291,6 +337,8 @@ pub use crate::types::_composite_filter::CompositeFilter;
 
 pub use crate::types::_insight_result_value::InsightResultValue;
 
+pub use crate::types::_unused_permissions_recommendation_step::UnusedPermissionsRecommendationStep;
+
 pub use crate::types::_resource_group_by_field::ResourceGroupByField;
 
 pub use crate::types::_resources_trends_composite_filter::ResourcesTrendsCompositeFilter;
@@ -304,6 +352,8 @@ pub use crate::types::_resource_category::ResourceCategory;
 pub use crate::types::_security_control_property::SecurityControlProperty;
 
 pub use crate::types::_parameter_definition::ParameterDefinition;
+
+pub use crate::types::_cspm_provider_summary::CspmProviderSummary;
 
 pub use crate::types::_provider_summary::ProviderSummary;
 
@@ -353,9 +403,13 @@ pub use crate::types::_date_range::DateRange;
 
 pub use crate::types::_map_filter_comparison::MapFilterComparison;
 
+pub use crate::types::_scope_type::ScopeType;
+
 pub use crate::types::_integration_type::IntegrationType;
 
 pub use crate::types::_integration_v2_type::IntegrationV2Type;
+
+pub use crate::types::_health_issue_code::HealthIssueCode;
 
 pub use crate::types::_finding_history_update_source_type::FindingHistoryUpdateSourceType;
 
@@ -387,6 +441,10 @@ pub use crate::types::_threat_intel_indicator_category::ThreatIntelIndicatorCate
 
 pub use crate::types::_partition::Partition;
 
+pub use crate::types::_cloud_provider_name::CloudProviderName;
+
+pub use crate::types::_resource_owner::ResourceOwner;
+
 pub use crate::types::_data_classification_details::DataClassificationDetails;
 
 pub use crate::types::_resource_details::ResourceDetails;
@@ -412,6 +470,8 @@ pub use crate::types::_action_local_port_details::ActionLocalPortDetails;
 pub use crate::types::_aws_api_call_action_domain_details::AwsApiCallActionDomainDetails;
 
 pub use crate::types::_date_range_unit::DateRangeUnit;
+
+pub use crate::types::_date_range_comparison::DateRangeComparison;
 
 pub use crate::types::_security_control_custom_parameter::SecurityControlCustomParameter;
 
@@ -460,6 +520,10 @@ pub use crate::types::_enum_list_configuration_options::EnumListConfigurationOpt
 pub use crate::types::_network_path_component_details::NetworkPathComponentDetails;
 
 pub use crate::types::_file_paths::FilePaths;
+
+pub use crate::types::_resource_owner_account::ResourceOwnerAccount;
+
+pub use crate::types::_resource_owner_org::ResourceOwnerOrg;
 
 pub use crate::types::_classification_result::ClassificationResult;
 
@@ -2699,6 +2763,14 @@ mod _aws_wafv2_web_acl_details;
 
 mod _aws_xray_encryption_config_details;
 
+mod _azure_detail;
+
+mod _azure_provider_configuration;
+
+mod _azure_scope_configuration;
+
+mod _azure_update_configuration;
+
 mod _batch_update_findings_unprocessed_finding;
 
 mod _batch_update_findings_v2_processed_finding;
@@ -2720,6 +2792,8 @@ mod _city;
 mod _classification_result;
 
 mod _classification_status;
+
+mod _cloud_provider_name;
 
 mod _cloud_watch_logs_log_group_arn_config_details;
 
@@ -2763,6 +2837,24 @@ mod _country;
 
 mod _criteria;
 
+mod _cspm_connector_provider_name;
+
+mod _cspm_connector_status;
+
+mod _cspm_connector_summary;
+
+mod _cspm_enablement_status;
+
+mod _cspm_health_check;
+
+mod _cspm_provider_configuration;
+
+mod _cspm_provider_detail;
+
+mod _cspm_provider_summary;
+
+mod _cspm_provider_update_configuration;
+
 mod _custom_data_identifiers_detections;
 
 mod _custom_data_identifiers_result;
@@ -2775,6 +2867,8 @@ mod _date_filter;
 
 mod _date_range;
 
+mod _date_range_comparison;
+
 mod _date_range_unit;
 
 mod _detection;
@@ -2783,11 +2877,19 @@ mod _dns_request_action;
 
 mod _double_configuration_options;
 
+mod _enablement_status;
+
 mod _enum_configuration_options;
 
 mod _enum_list_configuration_options;
 
 mod _external_integration_configuration;
+
+mod _feature_detail;
+
+mod _feature_name;
+
+mod _feature_status;
 
 mod _file_paths;
 
@@ -2838,6 +2940,10 @@ mod _group_by_rule;
 mod _group_by_value;
 
 mod _health_check;
+
+mod _health_issue;
+
+mod _health_issue_code;
 
 mod _icmp_type_code;
 
@@ -2995,6 +3101,14 @@ mod _range;
 
 mod _recommendation;
 
+mod _recommendation_error;
+
+mod _recommendation_status;
+
+mod _recommendation_step;
+
+mod _recommendation_type;
+
 mod _record;
 
 mod _record_state;
@@ -3016,6 +3130,12 @@ mod _resource_findings_summary;
 mod _resource_group_by_field;
 
 mod _resource_group_by_rule;
+
+mod _resource_owner;
+
+mod _resource_owner_account;
+
+mod _resource_owner_org;
 
 mod _resource_result;
 
@@ -3105,6 +3225,8 @@ mod _rule_status;
 
 mod _rule_status_v2;
 
+mod _scope_type;
+
 mod _security_control;
 
 mod _security_control_custom_parameter;
@@ -3116,6 +3238,8 @@ mod _security_control_parameter;
 mod _security_control_property;
 
 mod _security_controls_configuration;
+
+mod _security_controls_provider;
 
 mod _security_hub_feature;
 
@@ -3166,6 +3290,8 @@ mod _standards_control_association_update;
 mod _standards_controls_updatable;
 
 mod _standards_managed_by;
+
+mod _standards_provider;
 
 mod _standards_status;
 
@@ -3222,6 +3348,8 @@ mod _unprocessed_security_control;
 mod _unprocessed_standards_control_association;
 
 mod _unprocessed_standards_control_association_update;
+
+mod _unused_permissions_recommendation_step;
 
 mod _update_automation_rules_request_item;
 

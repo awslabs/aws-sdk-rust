@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_address_attribute(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AddressAttribute, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AddressAttribute::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_address_attribute(
             s if s.matches("ptrRecordUpdate") /* PtrRecordUpdate com.amazonaws.ec2#AddressAttribute$PtrRecordUpdate */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_ptr_update_status::de_ptr_update_status(&mut tag)
+                        crate::protocol_serde::shape_ptr_update_status::de_ptr_update_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

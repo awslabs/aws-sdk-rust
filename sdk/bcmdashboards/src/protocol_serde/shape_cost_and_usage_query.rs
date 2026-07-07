@@ -45,10 +45,16 @@ pub fn ser_cost_and_usage_query(
 pub(crate) fn de_cost_and_usage_query<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CostAndUsageQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,10 +65,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_metric_names::de_metric_names(tokens, _value)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_metric_names::de_metric_names(tokens, _value, depth + 1)?);
                         }
                         "timeRange" => {
-                            builder = builder.set_time_range(crate::protocol_serde::shape_date_time_range::de_date_time_range(tokens, _value)?);
+                            builder = builder.set_time_range(crate::protocol_serde::shape_date_time_range::de_date_time_range(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "granularity" => {
                             builder = builder.set_granularity(
@@ -72,10 +82,14 @@ where
                             );
                         }
                         "groupBy" => {
-                            builder = builder.set_group_by(crate::protocol_serde::shape_group_definitions::de_group_definitions(tokens, _value)?);
+                            builder = builder.set_group_by(crate::protocol_serde::shape_group_definitions::de_group_definitions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "filter" => {
-                            builder = builder.set_filter(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
+                            builder = builder.set_filter(crate::protocol_serde::shape_expression::de_expression(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

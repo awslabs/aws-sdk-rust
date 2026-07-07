@@ -14,6 +14,7 @@
 /// match languagecode {
 ///     LanguageCode::AbGe => { /* ... */ },
 ///     LanguageCode::AfZa => { /* ... */ },
+///     LanguageCode::AmEt => { /* ... */ },
 ///     LanguageCode::ArAe => { /* ... */ },
 ///     LanguageCode::ArSa => { /* ... */ },
 ///     LanguageCode::AstEs => { /* ... */ },
@@ -27,6 +28,7 @@
 ///     LanguageCode::CkbIq => { /* ... */ },
 ///     LanguageCode::CkbIr => { /* ... */ },
 ///     LanguageCode::CsCz => { /* ... */ },
+///     LanguageCode::CyGb => { /* ... */ },
 ///     LanguageCode::CyWl => { /* ... */ },
 ///     LanguageCode::DaDk => { /* ... */ },
 ///     LanguageCode::DeCh => { /* ... */ },
@@ -42,29 +44,36 @@
 ///     LanguageCode::EnWl => { /* ... */ },
 ///     LanguageCode::EnZa => { /* ... */ },
 ///     LanguageCode::EsEs => { /* ... */ },
+///     LanguageCode::EsMx => { /* ... */ },
 ///     LanguageCode::EsUs => { /* ... */ },
 ///     LanguageCode::EtEe => { /* ... */ },
 ///     LanguageCode::EtEt => { /* ... */ },
 ///     LanguageCode::EuEs => { /* ... */ },
+///     LanguageCode::FaAf => { /* ... */ },
 ///     LanguageCode::FaIr => { /* ... */ },
 ///     LanguageCode::FiFi => { /* ... */ },
 ///     LanguageCode::FrCa => { /* ... */ },
 ///     LanguageCode::FrFr => { /* ... */ },
+///     LanguageCode::GaIe => { /* ... */ },
+///     LanguageCode::GdGb => { /* ... */ },
 ///     LanguageCode::GlEs => { /* ... */ },
 ///     LanguageCode::GuIn => { /* ... */ },
 ///     LanguageCode::HaNg => { /* ... */ },
 ///     LanguageCode::HeIl => { /* ... */ },
 ///     LanguageCode::HiIn => { /* ... */ },
 ///     LanguageCode::HrHr => { /* ... */ },
+///     LanguageCode::HtHt => { /* ... */ },
 ///     LanguageCode::HuHu => { /* ... */ },
 ///     LanguageCode::HyAm => { /* ... */ },
 ///     LanguageCode::IdId => { /* ... */ },
 ///     LanguageCode::IsIs => { /* ... */ },
 ///     LanguageCode::ItIt => { /* ... */ },
 ///     LanguageCode::JaJp => { /* ... */ },
+///     LanguageCode::JvId => { /* ... */ },
 ///     LanguageCode::KaGe => { /* ... */ },
 ///     LanguageCode::KabDz => { /* ... */ },
 ///     LanguageCode::KkKz => { /* ... */ },
+///     LanguageCode::KmKh => { /* ... */ },
 ///     LanguageCode::KnIn => { /* ... */ },
 ///     LanguageCode::KoKr => { /* ... */ },
 ///     LanguageCode::KyKg => { /* ... */ },
@@ -79,6 +88,8 @@
 ///     LanguageCode::MrIn => { /* ... */ },
 ///     LanguageCode::MsMy => { /* ... */ },
 ///     LanguageCode::MtMt => { /* ... */ },
+///     LanguageCode::MyMm => { /* ... */ },
+///     LanguageCode::NeNp => { /* ... */ },
 ///     LanguageCode::NlNl => { /* ... */ },
 ///     LanguageCode::NoNo => { /* ... */ },
 ///     LanguageCode::OrIn => { /* ... */ },
@@ -94,6 +105,7 @@
 ///     LanguageCode::SkSk => { /* ... */ },
 ///     LanguageCode::SlSi => { /* ... */ },
 ///     LanguageCode::SoSo => { /* ... */ },
+///     LanguageCode::SqAl => { /* ... */ },
 ///     LanguageCode::SrRs => { /* ... */ },
 ///     LanguageCode::SuId => { /* ... */ },
 ///     LanguageCode::SvSe => { /* ... */ },
@@ -150,6 +162,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     AfZa,
     #[allow(missing_docs)] // documentation missing in model
+    AmEt,
+    #[allow(missing_docs)] // documentation missing in model
     ArAe,
     #[allow(missing_docs)] // documentation missing in model
     ArSa,
@@ -175,6 +189,8 @@ pub enum LanguageCode {
     CkbIr,
     #[allow(missing_docs)] // documentation missing in model
     CsCz,
+    #[allow(missing_docs)] // documentation missing in model
+    CyGb,
     #[allow(missing_docs)] // documentation missing in model
     CyWl,
     #[allow(missing_docs)] // documentation missing in model
@@ -206,6 +222,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     EsEs,
     #[allow(missing_docs)] // documentation missing in model
+    EsMx,
+    #[allow(missing_docs)] // documentation missing in model
     EsUs,
     #[allow(missing_docs)] // documentation missing in model
     EtEe,
@@ -214,6 +232,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     EuEs,
     #[allow(missing_docs)] // documentation missing in model
+    FaAf,
+    #[allow(missing_docs)] // documentation missing in model
     FaIr,
     #[allow(missing_docs)] // documentation missing in model
     FiFi,
@@ -221,6 +241,10 @@ pub enum LanguageCode {
     FrCa,
     #[allow(missing_docs)] // documentation missing in model
     FrFr,
+    #[allow(missing_docs)] // documentation missing in model
+    GaIe,
+    #[allow(missing_docs)] // documentation missing in model
+    GdGb,
     #[allow(missing_docs)] // documentation missing in model
     GlEs,
     #[allow(missing_docs)] // documentation missing in model
@@ -234,6 +258,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     HrHr,
     #[allow(missing_docs)] // documentation missing in model
+    HtHt,
+    #[allow(missing_docs)] // documentation missing in model
     HuHu,
     #[allow(missing_docs)] // documentation missing in model
     HyAm,
@@ -246,11 +272,15 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     JaJp,
     #[allow(missing_docs)] // documentation missing in model
+    JvId,
+    #[allow(missing_docs)] // documentation missing in model
     KaGe,
     #[allow(missing_docs)] // documentation missing in model
     KabDz,
     #[allow(missing_docs)] // documentation missing in model
     KkKz,
+    #[allow(missing_docs)] // documentation missing in model
+    KmKh,
     #[allow(missing_docs)] // documentation missing in model
     KnIn,
     #[allow(missing_docs)] // documentation missing in model
@@ -279,6 +309,10 @@ pub enum LanguageCode {
     MsMy,
     #[allow(missing_docs)] // documentation missing in model
     MtMt,
+    #[allow(missing_docs)] // documentation missing in model
+    MyMm,
+    #[allow(missing_docs)] // documentation missing in model
+    NeNp,
     #[allow(missing_docs)] // documentation missing in model
     NlNl,
     #[allow(missing_docs)] // documentation missing in model
@@ -309,6 +343,8 @@ pub enum LanguageCode {
     SlSi,
     #[allow(missing_docs)] // documentation missing in model
     SoSo,
+    #[allow(missing_docs)] // documentation missing in model
+    SqAl,
     #[allow(missing_docs)] // documentation missing in model
     SrRs,
     #[allow(missing_docs)] // documentation missing in model
@@ -364,6 +400,7 @@ impl ::std::convert::From<&str> for LanguageCode {
         match s {
             "ab-GE" => LanguageCode::AbGe,
             "af-ZA" => LanguageCode::AfZa,
+            "am-ET" => LanguageCode::AmEt,
             "ar-AE" => LanguageCode::ArAe,
             "ar-SA" => LanguageCode::ArSa,
             "ast-ES" => LanguageCode::AstEs,
@@ -377,6 +414,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "ckb-IQ" => LanguageCode::CkbIq,
             "ckb-IR" => LanguageCode::CkbIr,
             "cs-CZ" => LanguageCode::CsCz,
+            "cy-GB" => LanguageCode::CyGb,
             "cy-WL" => LanguageCode::CyWl,
             "da-DK" => LanguageCode::DaDk,
             "de-CH" => LanguageCode::DeCh,
@@ -392,29 +430,36 @@ impl ::std::convert::From<&str> for LanguageCode {
             "en-WL" => LanguageCode::EnWl,
             "en-ZA" => LanguageCode::EnZa,
             "es-ES" => LanguageCode::EsEs,
+            "es-MX" => LanguageCode::EsMx,
             "es-US" => LanguageCode::EsUs,
             "et-EE" => LanguageCode::EtEe,
             "et-ET" => LanguageCode::EtEt,
             "eu-ES" => LanguageCode::EuEs,
+            "fa-AF" => LanguageCode::FaAf,
             "fa-IR" => LanguageCode::FaIr,
             "fi-FI" => LanguageCode::FiFi,
             "fr-CA" => LanguageCode::FrCa,
             "fr-FR" => LanguageCode::FrFr,
+            "ga-IE" => LanguageCode::GaIe,
+            "gd-GB" => LanguageCode::GdGb,
             "gl-ES" => LanguageCode::GlEs,
             "gu-IN" => LanguageCode::GuIn,
             "ha-NG" => LanguageCode::HaNg,
             "he-IL" => LanguageCode::HeIl,
             "hi-IN" => LanguageCode::HiIn,
             "hr-HR" => LanguageCode::HrHr,
+            "ht-HT" => LanguageCode::HtHt,
             "hu-HU" => LanguageCode::HuHu,
             "hy-AM" => LanguageCode::HyAm,
             "id-ID" => LanguageCode::IdId,
             "is-IS" => LanguageCode::IsIs,
             "it-IT" => LanguageCode::ItIt,
             "ja-JP" => LanguageCode::JaJp,
+            "jv-ID" => LanguageCode::JvId,
             "ka-GE" => LanguageCode::KaGe,
             "kab-DZ" => LanguageCode::KabDz,
             "kk-KZ" => LanguageCode::KkKz,
+            "km-KH" => LanguageCode::KmKh,
             "kn-IN" => LanguageCode::KnIn,
             "ko-KR" => LanguageCode::KoKr,
             "ky-KG" => LanguageCode::KyKg,
@@ -429,6 +474,8 @@ impl ::std::convert::From<&str> for LanguageCode {
             "mr-IN" => LanguageCode::MrIn,
             "ms-MY" => LanguageCode::MsMy,
             "mt-MT" => LanguageCode::MtMt,
+            "my-MM" => LanguageCode::MyMm,
+            "ne-NP" => LanguageCode::NeNp,
             "nl-NL" => LanguageCode::NlNl,
             "no-NO" => LanguageCode::NoNo,
             "or-IN" => LanguageCode::OrIn,
@@ -444,6 +491,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "sk-SK" => LanguageCode::SkSk,
             "sl-SI" => LanguageCode::SlSi,
             "so-SO" => LanguageCode::SoSo,
+            "sq-AL" => LanguageCode::SqAl,
             "sr-RS" => LanguageCode::SrRs,
             "su-ID" => LanguageCode::SuId,
             "sv-SE" => LanguageCode::SvSe,
@@ -484,6 +532,7 @@ impl LanguageCode {
         match self {
             LanguageCode::AbGe => "ab-GE",
             LanguageCode::AfZa => "af-ZA",
+            LanguageCode::AmEt => "am-ET",
             LanguageCode::ArAe => "ar-AE",
             LanguageCode::ArSa => "ar-SA",
             LanguageCode::AstEs => "ast-ES",
@@ -497,6 +546,7 @@ impl LanguageCode {
             LanguageCode::CkbIq => "ckb-IQ",
             LanguageCode::CkbIr => "ckb-IR",
             LanguageCode::CsCz => "cs-CZ",
+            LanguageCode::CyGb => "cy-GB",
             LanguageCode::CyWl => "cy-WL",
             LanguageCode::DaDk => "da-DK",
             LanguageCode::DeCh => "de-CH",
@@ -512,29 +562,36 @@ impl LanguageCode {
             LanguageCode::EnWl => "en-WL",
             LanguageCode::EnZa => "en-ZA",
             LanguageCode::EsEs => "es-ES",
+            LanguageCode::EsMx => "es-MX",
             LanguageCode::EsUs => "es-US",
             LanguageCode::EtEe => "et-EE",
             LanguageCode::EtEt => "et-ET",
             LanguageCode::EuEs => "eu-ES",
+            LanguageCode::FaAf => "fa-AF",
             LanguageCode::FaIr => "fa-IR",
             LanguageCode::FiFi => "fi-FI",
             LanguageCode::FrCa => "fr-CA",
             LanguageCode::FrFr => "fr-FR",
+            LanguageCode::GaIe => "ga-IE",
+            LanguageCode::GdGb => "gd-GB",
             LanguageCode::GlEs => "gl-ES",
             LanguageCode::GuIn => "gu-IN",
             LanguageCode::HaNg => "ha-NG",
             LanguageCode::HeIl => "he-IL",
             LanguageCode::HiIn => "hi-IN",
             LanguageCode::HrHr => "hr-HR",
+            LanguageCode::HtHt => "ht-HT",
             LanguageCode::HuHu => "hu-HU",
             LanguageCode::HyAm => "hy-AM",
             LanguageCode::IdId => "id-ID",
             LanguageCode::IsIs => "is-IS",
             LanguageCode::ItIt => "it-IT",
             LanguageCode::JaJp => "ja-JP",
+            LanguageCode::JvId => "jv-ID",
             LanguageCode::KaGe => "ka-GE",
             LanguageCode::KabDz => "kab-DZ",
             LanguageCode::KkKz => "kk-KZ",
+            LanguageCode::KmKh => "km-KH",
             LanguageCode::KnIn => "kn-IN",
             LanguageCode::KoKr => "ko-KR",
             LanguageCode::KyKg => "ky-KG",
@@ -549,6 +606,8 @@ impl LanguageCode {
             LanguageCode::MrIn => "mr-IN",
             LanguageCode::MsMy => "ms-MY",
             LanguageCode::MtMt => "mt-MT",
+            LanguageCode::MyMm => "my-MM",
+            LanguageCode::NeNp => "ne-NP",
             LanguageCode::NlNl => "nl-NL",
             LanguageCode::NoNo => "no-NO",
             LanguageCode::OrIn => "or-IN",
@@ -564,6 +623,7 @@ impl LanguageCode {
             LanguageCode::SkSk => "sk-SK",
             LanguageCode::SlSi => "sl-SI",
             LanguageCode::SoSo => "so-SO",
+            LanguageCode::SqAl => "sq-AL",
             LanguageCode::SrRs => "sr-RS",
             LanguageCode::SuId => "su-ID",
             LanguageCode::SvSe => "sv-SE",
@@ -593,13 +653,14 @@ impl LanguageCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ab-GE", "af-ZA", "ar-AE", "ar-SA", "ast-ES", "az-AZ", "ba-RU", "be-BY", "bg-BG", "bn-IN", "bs-BA", "ca-ES", "ckb-IQ", "ckb-IR", "cs-CZ",
-            "cy-WL", "da-DK", "de-CH", "de-DE", "el-GR", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES",
-            "es-US", "et-EE", "et-ET", "eu-ES", "fa-IR", "fi-FI", "fr-CA", "fr-FR", "gl-ES", "gu-IN", "ha-NG", "he-IL", "hi-IN", "hr-HR", "hu-HU",
-            "hy-AM", "id-ID", "is-IS", "it-IT", "ja-JP", "ka-GE", "kab-DZ", "kk-KZ", "kn-IN", "ko-KR", "ky-KG", "lg-IN", "lt-LT", "lv-LV", "mhr-RU",
-            "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-IN", "ms-MY", "mt-MT", "nl-NL", "no-NO", "or-IN", "pa-IN", "pl-PL", "ps-AF", "pt-BR", "pt-PT",
-            "ro-RO", "ru-RU", "rw-RW", "si-LK", "sk-SK", "sl-SI", "so-SO", "sr-RS", "su-ID", "sv-SE", "sw-BI", "sw-KE", "sw-RW", "sw-TZ", "sw-UG",
-            "ta-IN", "te-IN", "th-TH", "tl-PH", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "uz-UZ", "vi-VN", "wo-SN", "zh-CN", "zh-HK", "zh-TW", "zu-ZA",
+            "ab-GE", "af-ZA", "am-ET", "ar-AE", "ar-SA", "ast-ES", "az-AZ", "ba-RU", "be-BY", "bg-BG", "bn-IN", "bs-BA", "ca-ES", "ckb-IQ", "ckb-IR",
+            "cs-CZ", "cy-GB", "cy-WL", "da-DK", "de-CH", "de-DE", "el-GR", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL",
+            "en-ZA", "es-ES", "es-MX", "es-US", "et-EE", "et-ET", "eu-ES", "fa-AF", "fa-IR", "fi-FI", "fr-CA", "fr-FR", "ga-IE", "gd-GB", "gl-ES",
+            "gu-IN", "ha-NG", "he-IL", "hi-IN", "hr-HR", "ht-HT", "hu-HU", "hy-AM", "id-ID", "is-IS", "it-IT", "ja-JP", "jv-ID", "ka-GE", "kab-DZ",
+            "kk-KZ", "km-KH", "kn-IN", "ko-KR", "ky-KG", "lg-IN", "lt-LT", "lv-LV", "mhr-RU", "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-IN", "ms-MY",
+            "mt-MT", "my-MM", "ne-NP", "nl-NL", "no-NO", "or-IN", "pa-IN", "pl-PL", "ps-AF", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "rw-RW", "si-LK",
+            "sk-SK", "sl-SI", "so-SO", "sq-AL", "sr-RS", "su-ID", "sv-SE", "sw-BI", "sw-KE", "sw-RW", "sw-TZ", "sw-UG", "ta-IN", "te-IN", "th-TH",
+            "tl-PH", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "uz-UZ", "vi-VN", "wo-SN", "zh-CN", "zh-HK", "zh-TW", "zu-ZA",
         ]
     }
 }
@@ -625,6 +686,7 @@ impl ::std::fmt::Display for LanguageCode {
         match self {
             LanguageCode::AbGe => write!(f, "ab-GE"),
             LanguageCode::AfZa => write!(f, "af-ZA"),
+            LanguageCode::AmEt => write!(f, "am-ET"),
             LanguageCode::ArAe => write!(f, "ar-AE"),
             LanguageCode::ArSa => write!(f, "ar-SA"),
             LanguageCode::AstEs => write!(f, "ast-ES"),
@@ -638,6 +700,7 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::CkbIq => write!(f, "ckb-IQ"),
             LanguageCode::CkbIr => write!(f, "ckb-IR"),
             LanguageCode::CsCz => write!(f, "cs-CZ"),
+            LanguageCode::CyGb => write!(f, "cy-GB"),
             LanguageCode::CyWl => write!(f, "cy-WL"),
             LanguageCode::DaDk => write!(f, "da-DK"),
             LanguageCode::DeCh => write!(f, "de-CH"),
@@ -653,29 +716,36 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::EnWl => write!(f, "en-WL"),
             LanguageCode::EnZa => write!(f, "en-ZA"),
             LanguageCode::EsEs => write!(f, "es-ES"),
+            LanguageCode::EsMx => write!(f, "es-MX"),
             LanguageCode::EsUs => write!(f, "es-US"),
             LanguageCode::EtEe => write!(f, "et-EE"),
             LanguageCode::EtEt => write!(f, "et-ET"),
             LanguageCode::EuEs => write!(f, "eu-ES"),
+            LanguageCode::FaAf => write!(f, "fa-AF"),
             LanguageCode::FaIr => write!(f, "fa-IR"),
             LanguageCode::FiFi => write!(f, "fi-FI"),
             LanguageCode::FrCa => write!(f, "fr-CA"),
             LanguageCode::FrFr => write!(f, "fr-FR"),
+            LanguageCode::GaIe => write!(f, "ga-IE"),
+            LanguageCode::GdGb => write!(f, "gd-GB"),
             LanguageCode::GlEs => write!(f, "gl-ES"),
             LanguageCode::GuIn => write!(f, "gu-IN"),
             LanguageCode::HaNg => write!(f, "ha-NG"),
             LanguageCode::HeIl => write!(f, "he-IL"),
             LanguageCode::HiIn => write!(f, "hi-IN"),
             LanguageCode::HrHr => write!(f, "hr-HR"),
+            LanguageCode::HtHt => write!(f, "ht-HT"),
             LanguageCode::HuHu => write!(f, "hu-HU"),
             LanguageCode::HyAm => write!(f, "hy-AM"),
             LanguageCode::IdId => write!(f, "id-ID"),
             LanguageCode::IsIs => write!(f, "is-IS"),
             LanguageCode::ItIt => write!(f, "it-IT"),
             LanguageCode::JaJp => write!(f, "ja-JP"),
+            LanguageCode::JvId => write!(f, "jv-ID"),
             LanguageCode::KaGe => write!(f, "ka-GE"),
             LanguageCode::KabDz => write!(f, "kab-DZ"),
             LanguageCode::KkKz => write!(f, "kk-KZ"),
+            LanguageCode::KmKh => write!(f, "km-KH"),
             LanguageCode::KnIn => write!(f, "kn-IN"),
             LanguageCode::KoKr => write!(f, "ko-KR"),
             LanguageCode::KyKg => write!(f, "ky-KG"),
@@ -690,6 +760,8 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::MrIn => write!(f, "mr-IN"),
             LanguageCode::MsMy => write!(f, "ms-MY"),
             LanguageCode::MtMt => write!(f, "mt-MT"),
+            LanguageCode::MyMm => write!(f, "my-MM"),
+            LanguageCode::NeNp => write!(f, "ne-NP"),
             LanguageCode::NlNl => write!(f, "nl-NL"),
             LanguageCode::NoNo => write!(f, "no-NO"),
             LanguageCode::OrIn => write!(f, "or-IN"),
@@ -705,6 +777,7 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::SkSk => write!(f, "sk-SK"),
             LanguageCode::SlSi => write!(f, "sl-SI"),
             LanguageCode::SoSo => write!(f, "so-SO"),
+            LanguageCode::SqAl => write!(f, "sq-AL"),
             LanguageCode::SrRs => write!(f, "sr-RS"),
             LanguageCode::SuId => write!(f, "su-ID"),
             LanguageCode::SvSe => write!(f, "sv-SE"),

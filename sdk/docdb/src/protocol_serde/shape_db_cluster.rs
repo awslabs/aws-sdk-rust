@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_cluster(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbCluster, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbCluster::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_db_cluster(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.docdb#DBCluster$AvailabilityZones */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag)
+                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -262,7 +266,7 @@ pub fn de_db_cluster(
             s if s.matches("ReadReplicaIdentifiers") /* ReadReplicaIdentifiers com.amazonaws.docdb#DBCluster$ReadReplicaIdentifiers */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_read_replica_identifier_list::de_read_replica_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_read_replica_identifier_list::de_read_replica_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -272,7 +276,7 @@ pub fn de_db_cluster(
             s if s.matches("DBClusterMembers") /* DBClusterMembers com.amazonaws.docdb#DBCluster$DBClusterMembers */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_db_cluster_member_list::de_db_cluster_member_list(&mut tag)
+                        crate::protocol_serde::shape_db_cluster_member_list::de_db_cluster_member_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -282,7 +286,7 @@ pub fn de_db_cluster(
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.docdb#DBCluster$VpcSecurityGroups */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -359,7 +363,7 @@ pub fn de_db_cluster(
             s if s.matches("AssociatedRoles") /* AssociatedRoles com.amazonaws.docdb#DBCluster$AssociatedRoles */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_db_cluster_roles::de_db_cluster_roles(&mut tag)
+                        crate::protocol_serde::shape_db_cluster_roles::de_db_cluster_roles(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -396,7 +400,7 @@ pub fn de_db_cluster(
             s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.docdb#DBCluster$EnabledCloudwatchLogsExports */ =>  {
                 let var_31 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -448,7 +452,7 @@ pub fn de_db_cluster(
             s if s.matches("ServerlessV2ScalingConfiguration") /* ServerlessV2ScalingConfiguration com.amazonaws.docdb#DBCluster$ServerlessV2ScalingConfiguration */ =>  {
                 let var_35 =
                     Some(
-                        crate::protocol_serde::shape_serverless_v2_scaling_configuration_info::de_serverless_v2_scaling_configuration_info(&mut tag)
+                        crate::protocol_serde::shape_serverless_v2_scaling_configuration_info::de_serverless_v2_scaling_configuration_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -458,7 +462,7 @@ pub fn de_db_cluster(
             s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.docdb#DBCluster$MasterUserSecret */ =>  {
                 let var_36 =
                     Some(
-                        crate::protocol_serde::shape_cluster_master_user_secret::de_cluster_master_user_secret(&mut tag)
+                        crate::protocol_serde::shape_cluster_master_user_secret::de_cluster_master_user_secret(&mut tag, depth + 1)
                         ?
                     )
                 ;

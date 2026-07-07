@@ -2,10 +2,16 @@
 pub(crate) fn de_amount_breakdown<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AmountBreakdown>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,14 +29,21 @@ where
                             );
                         }
                         "Discounts" => {
-                            builder =
-                                builder.set_discounts(crate::protocol_serde::shape_discounts_breakdown::de_discounts_breakdown(tokens, _value)?);
+                            builder = builder.set_discounts(crate::protocol_serde::shape_discounts_breakdown::de_discounts_breakdown(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Taxes" => {
-                            builder = builder.set_taxes(crate::protocol_serde::shape_taxes_breakdown::de_taxes_breakdown(tokens, _value)?);
+                            builder = builder.set_taxes(crate::protocol_serde::shape_taxes_breakdown::de_taxes_breakdown(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Fees" => {
-                            builder = builder.set_fees(crate::protocol_serde::shape_fees_breakdown::de_fees_breakdown(tokens, _value)?);
+                            builder = builder.set_fees(crate::protocol_serde::shape_fees_breakdown::de_fees_breakdown(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

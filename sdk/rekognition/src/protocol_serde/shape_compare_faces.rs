@@ -178,42 +178,48 @@ pub(crate) fn de_compare_faces(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "SourceImageFace" => {
-                    builder = builder.set_source_image_face(crate::protocol_serde::shape_compared_source_image_face::de_compared_source_image_face(
-                        tokens, _value,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "SourceImageFace" => {
+                        builder = builder.set_source_image_face(
+                            crate::protocol_serde::shape_compared_source_image_face::de_compared_source_image_face(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "FaceMatches" => {
+                        builder = builder.set_face_matches(crate::protocol_serde::shape_compare_faces_match_list::de_compare_faces_match_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "UnmatchedFaces" => {
+                        builder = builder.set_unmatched_faces(
+                            crate::protocol_serde::shape_compare_faces_unmatch_list::de_compare_faces_unmatch_list(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "SourceImageOrientationCorrection" => {
+                        builder = builder.set_source_image_orientation_correction(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::OrientationCorrection::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "TargetImageOrientationCorrection" => {
+                        builder = builder.set_target_image_orientation_correction(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::OrientationCorrection::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "FaceMatches" => {
-                    builder = builder.set_face_matches(crate::protocol_serde::shape_compare_faces_match_list::de_compare_faces_match_list(
-                        tokens, _value,
-                    )?);
-                }
-                "UnmatchedFaces" => {
-                    builder = builder.set_unmatched_faces(crate::protocol_serde::shape_compare_faces_unmatch_list::de_compare_faces_unmatch_list(
-                        tokens, _value,
-                    )?);
-                }
-                "SourceImageOrientationCorrection" => {
-                    builder = builder.set_source_image_orientation_correction(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::OrientationCorrection::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "TargetImageOrientationCorrection" => {
-                    builder = builder.set_target_image_orientation_correction(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::OrientationCorrection::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

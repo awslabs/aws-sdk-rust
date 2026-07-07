@@ -49,6 +49,8 @@ pub fn de_create_launch_template_version(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateLaunchTemplateVersionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateLaunchTemplateVersionResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_create_launch_template_version(
             s if s.matches("launchTemplateVersion") /* LaunchTemplateVersion com.amazonaws.ec2.synthetic#CreateLaunchTemplateVersionOutput$LaunchTemplateVersion */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_version::de_launch_template_version(&mut tag)
+                        crate::protocol_serde::shape_launch_template_version::de_launch_template_version(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_create_launch_template_version(
             s if s.matches("warning") /* Warning com.amazonaws.ec2.synthetic#CreateLaunchTemplateVersionOutput$Warning */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_validation_warning::de_validation_warning(&mut tag)
+                        crate::protocol_serde::shape_validation_warning::de_validation_warning(&mut tag, depth + 1)
                         ?
                     )
                 ;

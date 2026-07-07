@@ -13,7 +13,9 @@
 /// # let credentialprovidertype = unimplemented!();
 /// match credentialprovidertype {
 ///     CredentialProviderType::ApiKey => { /* ... */ },
+///     CredentialProviderType::CallerIamCredentials => { /* ... */ },
 ///     CredentialProviderType::GatewayIamRole => { /* ... */ },
+///     CredentialProviderType::JwtPassthrough => { /* ... */ },
 ///     CredentialProviderType::Oauth => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,7 +48,11 @@ pub enum CredentialProviderType {
     #[allow(missing_docs)] // documentation missing in model
     ApiKey,
     #[allow(missing_docs)] // documentation missing in model
+    CallerIamCredentials,
+    #[allow(missing_docs)] // documentation missing in model
     GatewayIamRole,
+    #[allow(missing_docs)] // documentation missing in model
+    JwtPassthrough,
     #[allow(missing_docs)] // documentation missing in model
     Oauth,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -57,7 +63,9 @@ impl ::std::convert::From<&str> for CredentialProviderType {
     fn from(s: &str) -> Self {
         match s {
             "API_KEY" => CredentialProviderType::ApiKey,
+            "CALLER_IAM_CREDENTIALS" => CredentialProviderType::CallerIamCredentials,
             "GATEWAY_IAM_ROLE" => CredentialProviderType::GatewayIamRole,
+            "JWT_PASSTHROUGH" => CredentialProviderType::JwtPassthrough,
             "OAUTH" => CredentialProviderType::Oauth,
             other => CredentialProviderType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,14 +83,16 @@ impl CredentialProviderType {
     pub fn as_str(&self) -> &str {
         match self {
             CredentialProviderType::ApiKey => "API_KEY",
+            CredentialProviderType::CallerIamCredentials => "CALLER_IAM_CREDENTIALS",
             CredentialProviderType::GatewayIamRole => "GATEWAY_IAM_ROLE",
+            CredentialProviderType::JwtPassthrough => "JWT_PASSTHROUGH",
             CredentialProviderType::Oauth => "OAUTH",
             CredentialProviderType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["API_KEY", "GATEWAY_IAM_ROLE", "OAUTH"]
+        &["API_KEY", "CALLER_IAM_CREDENTIALS", "GATEWAY_IAM_ROLE", "JWT_PASSTHROUGH", "OAUTH"]
     }
 }
 impl ::std::convert::AsRef<str> for CredentialProviderType {
@@ -106,7 +116,9 @@ impl ::std::fmt::Display for CredentialProviderType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CredentialProviderType::ApiKey => write!(f, "API_KEY"),
+            CredentialProviderType::CallerIamCredentials => write!(f, "CALLER_IAM_CREDENTIALS"),
             CredentialProviderType::GatewayIamRole => write!(f, "GATEWAY_IAM_ROLE"),
+            CredentialProviderType::JwtPassthrough => write!(f, "JWT_PASSTHROUGH"),
             CredentialProviderType::Oauth => write!(f, "OAUTH"),
             CredentialProviderType::Unknown(value) => write!(f, "{value}"),
         }

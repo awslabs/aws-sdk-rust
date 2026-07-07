@@ -2,10 +2,16 @@
 pub(crate) fn de_vector_enrichment_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VectorEnrichmentJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,14 +37,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "ReverseGeocodingConfig" => Some(crate::types::VectorEnrichmentJobConfig::ReverseGeocodingConfig(
-                            crate::protocol_serde::shape_reverse_geocoding_config::de_reverse_geocoding_config(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ReverseGeocodingConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_reverse_geocoding_config::de_reverse_geocoding_config(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'ReverseGeocodingConfig' cannot be null",
+                                    )
+                                })?,
                         )),
                         "MapMatchingConfig" => Some(crate::types::VectorEnrichmentJobConfig::MapMatchingConfig(
-                            crate::protocol_serde::shape_map_matching_config::de_map_matching_config(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MapMatchingConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_map_matching_config::de_map_matching_config(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MapMatchingConfig' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

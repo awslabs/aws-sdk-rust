@@ -146,6 +146,8 @@ pub(crate) fn de_import_rest_api(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -173,7 +175,8 @@ pub(crate) fn de_import_rest_api(
                     );
                 }
                 "binaryMediaTypes" => {
-                    builder = builder.set_binary_media_types(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder =
+                        builder.set_binary_media_types(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "createdDate" => {
                     builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -200,7 +203,9 @@ pub(crate) fn de_import_rest_api(
                 }
                 "endpointConfiguration" => {
                     builder = builder.set_endpoint_configuration(crate::protocol_serde::shape_endpoint_configuration::de_endpoint_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "id" => {
@@ -247,7 +252,9 @@ pub(crate) fn de_import_rest_api(
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "version" => {
@@ -258,7 +265,7 @@ pub(crate) fn de_import_rest_api(
                     );
                 }
                 "warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

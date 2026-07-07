@@ -22,7 +22,7 @@ impl crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCluster`.
 ///
-/// <p>Updates a cluster configuration. You can modify Slurm scheduler settings, accounting configuration, and security groups for an existing cluster.</p><note>
+/// <p>Updates a cluster configuration. You can upgrade the Slurm version, modify scheduler settings, and update accounting configuration for an existing cluster. For more information about upgrading the Slurm version, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p><note>
 /// <p>You can only update clusters that are in <code>ACTIVE</code>, <code>UPDATE_FAILED</code>, or <code>SUSPENDED</code> state. All associated resources (queues and compute node groups) must be in <code>ACTIVE</code> state before you can update the cluster.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -151,5 +151,19 @@ impl UpdateClusterFluentBuilder {
     /// <p>Additional options related to the Slurm scheduler.</p>
     pub fn get_slurm_configuration(&self) -> &::std::option::Option<crate::types::UpdateClusterSlurmConfigurationRequest> {
         self.inner.get_slurm_configuration()
+    }
+    /// <p>The scheduler configuration to update for the cluster. Use this to upgrade the Slurm version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+    pub fn scheduler(mut self, input: crate::types::UpdateSchedulerRequest) -> Self {
+        self.inner = self.inner.scheduler(input);
+        self
+    }
+    /// <p>The scheduler configuration to update for the cluster. Use this to upgrade the Slurm version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+    pub fn set_scheduler(mut self, input: ::std::option::Option<crate::types::UpdateSchedulerRequest>) -> Self {
+        self.inner = self.inner.set_scheduler(input);
+        self
+    }
+    /// <p>The scheduler configuration to update for the cluster. Use this to upgrade the Slurm version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+    pub fn get_scheduler(&self) -> &::std::option::Option<crate::types::UpdateSchedulerRequest> {
+        self.inner.get_scheduler()
     }
 }

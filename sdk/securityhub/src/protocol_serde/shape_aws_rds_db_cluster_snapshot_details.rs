@@ -90,10 +90,16 @@ pub fn ser_aws_rds_db_cluster_snapshot_details(
 pub(crate) fn de_aws_rds_db_cluster_snapshot_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbClusterSnapshotDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -104,7 +110,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AvailabilityZones" => {
-                            builder = builder.set_availability_zones(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_availability_zones(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "SnapshotCreateTime" => {
                             builder = builder.set_snapshot_create_time(
@@ -220,7 +227,7 @@ where
                         }
                         "DbClusterSnapshotAttributes" => {
                             builder = builder.set_db_cluster_snapshot_attributes(
-                                    crate::protocol_serde::shape_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attributes::de_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attributes(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attributes::de_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attributes(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

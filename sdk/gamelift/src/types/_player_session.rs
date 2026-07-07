@@ -10,7 +10,22 @@ pub struct PlayerSession {
     pub player_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player that is associated with this player session.</p>
     pub player_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the game session that the player session is connected to.</p>
+    /// <p>An identifier for the game session that is unique across all regions that the player session is connected to. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
@@ -65,7 +80,22 @@ impl PlayerSession {
     pub fn player_id(&self) -> ::std::option::Option<&str> {
         self.player_id.as_deref()
     }
-    /// <p>A unique identifier for the game session that the player session is connected to.</p>
+    /// <p>An identifier for the game session that is unique across all regions that the player session is connected to. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
@@ -202,17 +232,62 @@ impl PlayerSessionBuilder {
     pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.player_id
     }
-    /// <p>A unique identifier for the game session that the player session is connected to.</p>
+    /// <p>An identifier for the game session that is unique across all regions that the player session is connected to. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session that the player session is connected to.</p>
+    /// <p>An identifier for the game session that is unique across all regions that the player session is connected to. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session that the player session is connected to.</p>
+    /// <p>An identifier for the game session that is unique across all regions that the player session is connected to. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_id
     }

@@ -8,6 +8,8 @@ pub struct PolandAdditionalInfo {
     pub individual_registration_number: ::std::option::Option<::std::string::String>,
     /// <p>True if your business is a member of a VAT group with a NIP active for VAT purposes. Otherwise, this is false.</p>
     pub is_group_vat_enabled: ::std::option::Option<bool>,
+    /// <p>The tax registration number type. Valid values are <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>, or <code>LocalRegistrationNumber</code>.</p>
+    pub tax_registration_number_type: ::std::option::Option<crate::types::PolandTaxRegistrationNumberType>,
 }
 impl PolandAdditionalInfo {
     /// <p>The individual tax registration number (NIP). Individual NIP is valid for other taxes excluding VAT purposes.</p>
@@ -17,6 +19,10 @@ impl PolandAdditionalInfo {
     /// <p>True if your business is a member of a VAT group with a NIP active for VAT purposes. Otherwise, this is false.</p>
     pub fn is_group_vat_enabled(&self) -> ::std::option::Option<bool> {
         self.is_group_vat_enabled
+    }
+    /// <p>The tax registration number type. Valid values are <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>, or <code>LocalRegistrationNumber</code>.</p>
+    pub fn tax_registration_number_type(&self) -> ::std::option::Option<&crate::types::PolandTaxRegistrationNumberType> {
+        self.tax_registration_number_type.as_ref()
     }
 }
 impl PolandAdditionalInfo {
@@ -32,6 +38,7 @@ impl PolandAdditionalInfo {
 pub struct PolandAdditionalInfoBuilder {
     pub(crate) individual_registration_number: ::std::option::Option<::std::string::String>,
     pub(crate) is_group_vat_enabled: ::std::option::Option<bool>,
+    pub(crate) tax_registration_number_type: ::std::option::Option<crate::types::PolandTaxRegistrationNumberType>,
 }
 impl PolandAdditionalInfoBuilder {
     /// <p>The individual tax registration number (NIP). Individual NIP is valid for other taxes excluding VAT purposes.</p>
@@ -62,11 +69,26 @@ impl PolandAdditionalInfoBuilder {
     pub fn get_is_group_vat_enabled(&self) -> &::std::option::Option<bool> {
         &self.is_group_vat_enabled
     }
+    /// <p>The tax registration number type. Valid values are <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>, or <code>LocalRegistrationNumber</code>.</p>
+    pub fn tax_registration_number_type(mut self, input: crate::types::PolandTaxRegistrationNumberType) -> Self {
+        self.tax_registration_number_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tax registration number type. Valid values are <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>, or <code>LocalRegistrationNumber</code>.</p>
+    pub fn set_tax_registration_number_type(mut self, input: ::std::option::Option<crate::types::PolandTaxRegistrationNumberType>) -> Self {
+        self.tax_registration_number_type = input;
+        self
+    }
+    /// <p>The tax registration number type. Valid values are <code>EUTaxRegistrationNumber</code>, <code>LocalTaxRegistrationNumber</code>, or <code>LocalRegistrationNumber</code>.</p>
+    pub fn get_tax_registration_number_type(&self) -> &::std::option::Option<crate::types::PolandTaxRegistrationNumberType> {
+        &self.tax_registration_number_type
+    }
     /// Consumes the builder and constructs a [`PolandAdditionalInfo`](crate::types::PolandAdditionalInfo).
     pub fn build(self) -> crate::types::PolandAdditionalInfo {
         crate::types::PolandAdditionalInfo {
             individual_registration_number: self.individual_registration_number,
             is_group_vat_enabled: self.is_group_vat_enabled,
+            tax_registration_number_type: self.tax_registration_number_type,
         }
     }
 }

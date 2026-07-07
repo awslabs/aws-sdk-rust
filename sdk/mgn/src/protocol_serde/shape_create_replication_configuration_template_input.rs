@@ -55,24 +55,30 @@ pub fn ser_create_replication_configuration_template_input_input(
         }
         object_15.finish();
     }
-    if let Some(var_18) = &input.store_snapshot_on_local_zone {
-        object.key("storeSnapshotOnLocalZone").boolean(*var_18);
-    }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_18) = &input.storage_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_19 = object.key("storageConfiguration").start_object();
+        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.store_snapshot_on_local_zone {
+        object.key("storeSnapshotOnLocalZone").boolean(*var_20);
+    }
+    if let Some(var_21) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("tags").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_20.finish();
+        object_22.finish();
     }
-    if let Some(var_23) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_23);
+    if let Some(var_25) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_25);
     }
-    if let Some(var_24) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_24);
+    if let Some(var_26) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_26);
     }
     Ok(())
 }

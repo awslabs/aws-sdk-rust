@@ -91,6 +91,8 @@ pub fn de_generate_credential_report(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GenerateCredentialReportResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GenerateCredentialReportResponse got {start_el:?}"

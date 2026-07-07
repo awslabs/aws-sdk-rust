@@ -2,10 +2,16 @@
 pub(crate) fn de_user_stack_association_error<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UserStackAssociationError>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UserStackAssociation" => {
                             builder = builder.set_user_stack_association(
-                                crate::protocol_serde::shape_user_stack_association::de_user_stack_association(tokens, _value)?,
+                                crate::protocol_serde::shape_user_stack_association::de_user_stack_association(tokens, _value, depth + 1)?,
                             );
                         }
                         "ErrorCode" => {

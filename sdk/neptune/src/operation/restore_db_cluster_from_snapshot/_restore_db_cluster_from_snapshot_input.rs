@@ -80,6 +80,15 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Valid values: <code>standard</code>, <code>iopt1</code></p>
     /// <p>Default: <code>standard</code></p>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
@@ -205,6 +214,17 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
@@ -236,6 +256,7 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -648,6 +669,41 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
     pub fn build(
         self,
@@ -675,6 +731,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
             copy_tags_to_snapshot: self.copy_tags_to_snapshot,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             storage_type: self.storage_type,
+            network_type: self.network_type,
         })
     }
 }

@@ -125,20 +125,26 @@ pub(crate) fn de_request_upload_credentials(
     crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "UploadCredentials" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_upload_credentials(Some(crate::protocol_serde::shape_aws_credentials::de_aws_credentials(decoder)?)))
+                Ok(
+                    builder.set_upload_credentials(Some(crate::protocol_serde::shape_aws_credentials::de_aws_credentials(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "StorageLocation" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_storage_location(Some(crate::protocol_serde::shape_s3_location::de_s3_location(decoder)?)))
+                Ok(builder.set_storage_location(Some(crate::protocol_serde::shape_s3_location::de_s3_location(decoder, depth + 1)?)))
             })?,
             _ => {
                 decoder.skip()?;
@@ -149,6 +155,8 @@ pub(crate) fn de_request_upload_credentials(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -158,13 +166,13 @@ pub(crate) fn de_request_upload_credentials(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

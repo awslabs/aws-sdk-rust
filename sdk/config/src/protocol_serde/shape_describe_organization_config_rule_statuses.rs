@@ -135,6 +135,8 @@ pub(crate) fn de_describe_organization_config_rule_statuses(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -142,7 +144,11 @@ pub(crate) fn de_describe_organization_config_rule_statuses(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "OrganizationConfigRuleStatuses" => {
                     builder = builder.set_organization_config_rule_statuses(
-                        crate::protocol_serde::shape_organization_config_rule_statuses::de_organization_config_rule_statuses(tokens, _value)?,
+                        crate::protocol_serde::shape_organization_config_rule_statuses::de_organization_config_rule_statuses(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "NextToken" => {

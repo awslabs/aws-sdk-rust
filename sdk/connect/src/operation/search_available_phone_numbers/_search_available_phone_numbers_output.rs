@@ -5,7 +5,7 @@
 pub struct SearchAvailablePhoneNumbersOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>A list of available phone numbers that you can claim to your Connect Customer instance or traffic distribution group.</p>
     pub available_numbers_list: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl SearchAvailablePhoneNumbersOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>A list of available phone numbers that you can claim to your Connect Customer instance or traffic distribution group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_numbers_list.is_none()`.
     pub fn available_numbers_list(&self) -> &[crate::types::AvailableNumberSummary] {
@@ -60,19 +60,19 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_available_numbers_list`](Self::set_available_numbers_list).
     ///
-    /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>A list of available phone numbers that you can claim to your Connect Customer instance or traffic distribution group.</p>
     pub fn available_numbers_list(mut self, input: crate::types::AvailableNumberSummary) -> Self {
         let mut v = self.available_numbers_list.unwrap_or_default();
         v.push(input);
         self.available_numbers_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>A list of available phone numbers that you can claim to your Connect Customer instance or traffic distribution group.</p>
     pub fn set_available_numbers_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>) -> Self {
         self.available_numbers_list = input;
         self
     }
-    /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>A list of available phone numbers that you can claim to your Connect Customer instance or traffic distribution group.</p>
     pub fn get_available_numbers_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>> {
         &self.available_numbers_list
     }

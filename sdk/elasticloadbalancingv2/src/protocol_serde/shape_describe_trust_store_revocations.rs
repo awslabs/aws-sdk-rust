@@ -97,6 +97,8 @@ pub fn de_describe_trust_store_revocations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeTrustStoreRevocationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTrustStoreRevocationsResponse got {start_el:?}"
@@ -114,7 +116,7 @@ pub fn de_describe_trust_store_revocations(
             s if s.matches("TrustStoreRevocations") /* TrustStoreRevocations com.amazonaws.elasticloadbalancingv2.synthetic#DescribeTrustStoreRevocationsOutput$TrustStoreRevocations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_describe_trust_store_revocation_response::de_describe_trust_store_revocation_response(&mut tag)
+                        crate::protocol_serde::shape_describe_trust_store_revocation_response::de_describe_trust_store_revocation_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

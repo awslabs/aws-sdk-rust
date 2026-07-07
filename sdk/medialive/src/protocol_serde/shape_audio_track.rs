@@ -9,16 +9,28 @@ pub fn ser_audio_track(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.premix_settings {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("premixSettings").start_object();
+        crate::protocol_serde::shape_audio_pre_mixer_settings::ser_audio_pre_mixer_settings(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_audio_track<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AudioTrack>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -33,6 +45,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "premixSettings" => {
+                            builder = builder.set_premix_settings(
+                                crate::protocol_serde::shape_audio_pre_mixer_settings::de_audio_pre_mixer_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

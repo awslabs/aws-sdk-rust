@@ -116,6 +116,8 @@ pub struct TrainingJob {
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
     pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
@@ -321,6 +323,10 @@ impl TrainingJob {
     pub fn resource_config(&self) -> ::std::option::Option<&crate::types::ResourceConfig> {
         self.resource_config.as_ref()
     }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn warm_pool_status(&self) -> ::std::option::Option<&crate::types::WarmPoolStatus> {
+        self.warm_pool_status.as_ref()
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
@@ -467,6 +473,7 @@ pub struct TrainingJobBuilder {
     pub(crate) input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     pub(crate) resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    pub(crate) warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -969,6 +976,20 @@ impl TrainingJobBuilder {
     pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
         &self.resource_config
     }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn warm_pool_status(mut self, input: crate::types::WarmPoolStatus) -> Self {
+        self.warm_pool_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn set_warm_pool_status(mut self, input: ::std::option::Option<crate::types::WarmPoolStatus>) -> Self {
+        self.warm_pool_status = input;
+        self
+    }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn get_warm_pool_status(&self) -> &::std::option::Option<crate::types::WarmPoolStatus> {
+        &self.warm_pool_status
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -1409,6 +1430,7 @@ impl TrainingJobBuilder {
             input_data_config: self.input_data_config,
             output_data_config: self.output_data_config,
             resource_config: self.resource_config,
+            warm_pool_status: self.warm_pool_status,
             vpc_config: self.vpc_config,
             stopping_condition: self.stopping_condition,
             creation_time: self.creation_time,

@@ -85,6 +85,8 @@ pub(crate) mod shape_delete_scheduled_query;
 
 pub(crate) mod shape_delete_subscription_filter;
 
+pub(crate) mod shape_delete_syslog_configuration;
+
 pub(crate) mod shape_delete_transformer;
 
 pub(crate) mod shape_describe_account_policies;
@@ -163,6 +165,8 @@ pub(crate) mod shape_get_scheduled_query;
 
 pub(crate) mod shape_get_scheduled_query_history;
 
+pub(crate) mod shape_get_storage_tier_policy;
+
 pub(crate) mod shape_get_transformer;
 
 pub(crate) mod shape_list_aggregate_log_group_summaries;
@@ -180,6 +184,8 @@ pub(crate) mod shape_list_log_groups_for_query;
 pub(crate) mod shape_list_scheduled_queries;
 
 pub(crate) mod shape_list_sources_for_s3_table_integration;
+
+pub(crate) mod shape_list_syslog_configurations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -217,7 +223,11 @@ pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_put_retention_policy;
 
+pub(crate) mod shape_put_storage_tier_policy;
+
 pub(crate) mod shape_put_subscription_filter;
+
+pub(crate) mod shape_put_syslog_configuration;
 
 pub(crate) mod shape_put_transformer;
 
@@ -324,6 +334,8 @@ pub(crate) mod shape_delete_retention_policy_input;
 pub(crate) mod shape_delete_scheduled_query_input;
 
 pub(crate) mod shape_delete_subscription_filter_input;
+
+pub(crate) mod shape_delete_syslog_configuration_input;
 
 pub(crate) mod shape_delete_transformer_input;
 
@@ -435,6 +447,8 @@ pub(crate) mod shape_list_scheduled_queries_input;
 
 pub(crate) mod shape_list_sources_for_s3_table_integration_input;
 
+pub(crate) mod shape_list_syslog_configurations_input;
+
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_tags_log_group_input;
@@ -475,7 +489,11 @@ pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_put_retention_policy_input;
 
+pub(crate) mod shape_put_storage_tier_policy_input;
+
 pub(crate) mod shape_put_subscription_filter_input;
+
+pub(crate) mod shape_put_syslog_configuration_input;
 
 pub(crate) mod shape_put_transformer_input;
 
@@ -665,6 +683,10 @@ pub(crate) mod shape_subscription_filters;
 
 pub(crate) mod shape_suppression_period;
 
+pub(crate) mod shape_syslog_configurations;
+
+pub(crate) mod shape_tag_filter;
+
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_transformed_logs;
@@ -688,6 +710,8 @@ pub(crate) mod shape_csv;
 pub(crate) mod shape_date_time_converter;
 
 pub(crate) mod shape_delete_keys;
+
+pub(crate) mod shape_delivery_source_configuration;
 
 pub(crate) mod shape_export_task;
 
@@ -781,6 +805,8 @@ pub(crate) mod shape_subscription_filter;
 
 pub(crate) mod shape_substitute_string;
 
+pub(crate) mod shape_syslog_configuration;
+
 pub(crate) mod shape_transformed_log_record;
 
 pub(crate) mod shape_trigger_history_record;
@@ -800,6 +826,8 @@ pub(crate) mod shape_allowed_fields;
 pub(crate) mod shape_configuration_template_delivery_config_values;
 
 pub(crate) mod shape_copy_value_entry;
+
+pub(crate) mod shape_delivery_source_configuration_schemas;
 
 pub(crate) mod shape_emit_system_fields;
 
@@ -851,6 +879,8 @@ pub(crate) mod shape_rename_key_entry;
 
 pub(crate) mod shape_result_field;
 
+pub(crate) mod shape_s3_tables_integration;
+
 pub(crate) mod shape_scheduled_query_destination_list;
 
 pub(crate) mod shape_split_string_entry;
@@ -868,6 +898,8 @@ pub(crate) mod shape_columns;
 pub(crate) mod shape_copy_value_entries;
 
 pub(crate) mod shape_delete_with_keys;
+
+pub(crate) mod shape_delivery_source_configuration_schema;
 
 pub(crate) mod shape_grouping_identifier;
 
@@ -906,6 +938,8 @@ pub(crate) mod shape_trim_string_with_keys;
 pub(crate) mod shape_type_converter_entries;
 
 pub(crate) mod shape_upper_case_string_with_keys;
+
+pub(crate) mod shape_delivery_source_configuration_supported_values;
 
 pub(crate) mod shape_dimensions;
 

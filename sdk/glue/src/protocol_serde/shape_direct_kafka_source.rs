@@ -33,10 +33,16 @@ pub fn ser_direct_kafka_source(
 pub(crate) fn de_direct_kafka_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DirectKafkaSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -55,7 +61,11 @@ where
                         }
                         "StreamingOptions" => {
                             builder = builder.set_streaming_options(
-                                crate::protocol_serde::shape_kafka_streaming_source_options::de_kafka_streaming_source_options(tokens, _value)?,
+                                crate::protocol_serde::shape_kafka_streaming_source_options::de_kafka_streaming_source_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "WindowSize" => {
@@ -70,7 +80,11 @@ where
                         }
                         "DataPreviewOptions" => {
                             builder = builder.set_data_preview_options(
-                                crate::protocol_serde::shape_streaming_data_preview_options::de_streaming_data_preview_options(tokens, _value)?,
+                                crate::protocol_serde::shape_streaming_data_preview_options::de_streaming_data_preview_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

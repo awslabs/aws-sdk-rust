@@ -132,6 +132,8 @@ pub(crate) fn de_update_broker(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -155,11 +157,19 @@ pub(crate) fn de_update_broker(
                     );
                 }
                 "configuration" => {
-                    builder = builder.set_configuration(crate::protocol_serde::shape_configuration_id::de_configuration_id(tokens, _value)?);
+                    builder = builder.set_configuration(crate::protocol_serde::shape_configuration_id::de_configuration_id(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "dataReplicationMetadata" => {
                     builder = builder.set_data_replication_metadata(
-                        crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(tokens, _value)?,
+                        crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "dataReplicationMode" => {
@@ -185,19 +195,26 @@ pub(crate) fn de_update_broker(
                 }
                 "ldapServerMetadata" => {
                     builder = builder.set_ldap_server_metadata(
-                        crate::protocol_serde::shape_ldap_server_metadata_output::de_ldap_server_metadata_output(tokens, _value)?,
+                        crate::protocol_serde::shape_ldap_server_metadata_output::de_ldap_server_metadata_output(tokens, _value, depth + 1)?,
                     );
                 }
                 "logs" => {
-                    builder = builder.set_logs(crate::protocol_serde::shape_logs::de_logs(tokens, _value)?);
+                    builder = builder.set_logs(crate::protocol_serde::shape_logs::de_logs(tokens, _value, depth + 1)?);
                 }
                 "maintenanceWindowStartTime" => {
-                    builder = builder
-                        .set_maintenance_window_start_time(crate::protocol_serde::shape_weekly_start_time::de_weekly_start_time(tokens, _value)?);
+                    builder = builder.set_maintenance_window_start_time(crate::protocol_serde::shape_weekly_start_time::de_weekly_start_time(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "pendingDataReplicationMetadata" => {
                     builder = builder.set_pending_data_replication_metadata(
-                        crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(tokens, _value)?,
+                        crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "pendingDataReplicationMode" => {
@@ -207,8 +224,12 @@ pub(crate) fn de_update_broker(
                             .transpose()?,
                     );
                 }
+                "resourceShareArns" => {
+                    builder =
+                        builder.set_resource_share_arns(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
+                }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

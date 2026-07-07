@@ -20,7 +20,11 @@ pub fn ser_additional_attribute(
 #[allow(clippy::needless_question_mark)]
 pub fn de_additional_attribute(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AdditionalAttribute, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AdditionalAttribute::builder();
     while let Some(mut tag) = decoder.next_tag() {

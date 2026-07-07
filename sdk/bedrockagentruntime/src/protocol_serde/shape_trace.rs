@@ -2,10 +2,16 @@
 pub(crate) fn de_trace<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Trace>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,43 +37,45 @@ where
                     }
                     variant = match key.as_ref() {
                         "guardrailTrace" => Some(crate::types::Trace::GuardrailTrace(
-                            crate::protocol_serde::shape_guardrail_trace::de_guardrail_trace(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_guardrail_trace::de_guardrail_trace(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'guardrailTrace' cannot be null")
                             })?,
                         )),
                         "preProcessingTrace" => Some(crate::types::Trace::PreProcessingTrace(
-                            crate::protocol_serde::shape_pre_processing_trace::de_pre_processing_trace(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'preProcessingTrace' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_pre_processing_trace::de_pre_processing_trace(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'preProcessingTrace' cannot be null"),
+                            )?,
                         )),
                         "orchestrationTrace" => Some(crate::types::Trace::OrchestrationTrace(
-                            crate::protocol_serde::shape_orchestration_trace::de_orchestration_trace(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orchestrationTrace' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_orchestration_trace::de_orchestration_trace(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orchestrationTrace' cannot be null"),
+                            )?,
                         )),
                         "postProcessingTrace" => Some(crate::types::Trace::PostProcessingTrace(
-                            crate::protocol_serde::shape_post_processing_trace::de_post_processing_trace(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'postProcessingTrace' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_post_processing_trace::de_post_processing_trace(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'postProcessingTrace' cannot be null"),
+                            )?,
                         )),
                         "routingClassifierTrace" => Some(crate::types::Trace::RoutingClassifierTrace(
-                            crate::protocol_serde::shape_routing_classifier_trace::de_routing_classifier_trace(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'routingClassifierTrace' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_routing_classifier_trace::de_routing_classifier_trace(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'routingClassifierTrace' cannot be null",
+                                    )
+                                })?,
                         )),
                         "failureTrace" => Some(crate::types::Trace::FailureTrace(
-                            crate::protocol_serde::shape_failure_trace::de_failure_trace(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_failure_trace::de_failure_trace(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'failureTrace' cannot be null")
                             })?,
                         )),
                         "customOrchestrationTrace" => Some(crate::types::Trace::CustomOrchestrationTrace(
-                            crate::protocol_serde::shape_custom_orchestration_trace::de_custom_orchestration_trace(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_custom_orchestration_trace::de_custom_orchestration_trace(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'customOrchestrationTrace' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

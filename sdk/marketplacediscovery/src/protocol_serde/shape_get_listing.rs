@@ -131,6 +131,8 @@ pub(crate) fn de_get_listing(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -138,11 +140,15 @@ pub(crate) fn de_get_listing(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "associatedEntities" => {
                     builder = builder.set_associated_entities(
-                        crate::protocol_serde::shape_listing_associated_entity_list::de_listing_associated_entity_list(tokens, _value)?,
+                        crate::protocol_serde::shape_listing_associated_entity_list::de_listing_associated_entity_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "badges" => {
-                    builder = builder.set_badges(crate::protocol_serde::shape_listing_badge_list::de_listing_badge_list(tokens, _value)?);
+                    builder = builder.set_badges(crate::protocol_serde::shape_listing_badge_list::de_listing_badge_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "catalog" => {
                     builder = builder.set_catalog(
@@ -152,15 +158,15 @@ pub(crate) fn de_get_listing(
                     );
                 }
                 "categories" => {
-                    builder = builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value)?);
+                    builder = builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value, depth + 1)?);
                 }
                 "fulfillmentOptionSummaries" => {
                     builder = builder.set_fulfillment_option_summaries(
-                        crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(tokens, _value)?,
+                        crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "highlights" => {
-                    builder = builder.set_highlights(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                    builder = builder.set_highlights(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                 }
                 "integrationGuide" => {
                     builder = builder.set_integration_guide(
@@ -198,28 +204,44 @@ pub(crate) fn de_get_listing(
                     );
                 }
                 "pricingModels" => {
-                    builder = builder.set_pricing_models(crate::protocol_serde::shape_pricing_model_list::de_pricing_model_list(tokens, _value)?);
+                    builder = builder.set_pricing_models(crate::protocol_serde::shape_pricing_model_list::de_pricing_model_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "pricingUnits" => {
-                    builder = builder.set_pricing_units(crate::protocol_serde::shape_pricing_unit_list::de_pricing_unit_list(tokens, _value)?);
+                    builder = builder.set_pricing_units(crate::protocol_serde::shape_pricing_unit_list::de_pricing_unit_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "promotionalMedia" => {
                     builder = builder.set_promotional_media(crate::protocol_serde::shape_promotional_media_list::de_promotional_media_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "publisher" => {
-                    builder = builder.set_publisher(crate::protocol_serde::shape_seller_information::de_seller_information(tokens, _value)?);
+                    builder = builder.set_publisher(crate::protocol_serde::shape_seller_information::de_seller_information(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value, depth + 1)?);
                 }
                 "reviewSummary" => {
-                    builder = builder.set_review_summary(crate::protocol_serde::shape_review_summary::de_review_summary(tokens, _value)?);
+                    builder = builder.set_review_summary(crate::protocol_serde::shape_review_summary::de_review_summary(tokens, _value, depth + 1)?);
                 }
                 "sellerEngagements" => {
                     builder = builder.set_seller_engagements(crate::protocol_serde::shape_seller_engagement_list::de_seller_engagement_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "shortDescription" => {
@@ -230,7 +252,7 @@ pub(crate) fn de_get_listing(
                     );
                 }
                 "useCases" => {
-                    builder = builder.set_use_cases(crate::protocol_serde::shape_use_case_list::de_use_case_list(tokens, _value)?);
+                    builder = builder.set_use_cases(crate::protocol_serde::shape_use_case_list::de_use_case_list(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

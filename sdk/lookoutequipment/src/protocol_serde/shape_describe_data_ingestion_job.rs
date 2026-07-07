@@ -136,6 +136,8 @@ pub(crate) fn de_describe_data_ingestion_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -157,7 +159,7 @@ pub(crate) fn de_describe_data_ingestion_job(
                 }
                 "IngestionInputConfiguration" => {
                     builder = builder.set_ingestion_input_configuration(
-                        crate::protocol_serde::shape_ingestion_input_configuration::de_ingestion_input_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_ingestion_input_configuration::de_ingestion_input_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "RoleArn" => {
@@ -189,12 +191,16 @@ pub(crate) fn de_describe_data_ingestion_job(
                 }
                 "DataQualitySummary" => {
                     builder = builder.set_data_quality_summary(crate::protocol_serde::shape_data_quality_summary::de_data_quality_summary(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "IngestedFilesSummary" => {
                     builder = builder.set_ingested_files_summary(crate::protocol_serde::shape_ingested_files_summary::de_ingested_files_summary(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "StatusDetail" => {

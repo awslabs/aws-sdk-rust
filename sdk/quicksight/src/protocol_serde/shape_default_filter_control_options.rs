@@ -54,10 +54,16 @@ pub fn ser_default_filter_control_options(
 pub(crate) fn de_default_filter_control_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DefaultFilterControlOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -70,43 +76,53 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "DefaultDateTimePickerOptions" => {
                                 builder = builder.set_default_date_time_picker_options(
-                                    crate::protocol_serde::shape_default_date_time_picker_control_options::de_default_date_time_picker_control_options(tokens, _value)?
+                                    crate::protocol_serde::shape_default_date_time_picker_control_options::de_default_date_time_picker_control_options(tokens, _value, depth + 1)?
                                 );
                             }
                             "DefaultListOptions" => {
                                 builder = builder.set_default_list_options(
                                     crate::protocol_serde::shape_default_filter_list_control_options::de_default_filter_list_control_options(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "DefaultDropdownOptions" => {
                                 builder = builder.set_default_dropdown_options(
-                                    crate::protocol_serde::shape_default_filter_drop_down_control_options::de_default_filter_drop_down_control_options(tokens, _value)?
+                                    crate::protocol_serde::shape_default_filter_drop_down_control_options::de_default_filter_drop_down_control_options(tokens, _value, depth + 1)?
                                 );
                             }
                             "DefaultTextFieldOptions" => {
                                 builder = builder.set_default_text_field_options(
                                     crate::protocol_serde::shape_default_text_field_control_options::de_default_text_field_control_options(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "DefaultTextAreaOptions" => {
                                 builder = builder.set_default_text_area_options(
                                     crate::protocol_serde::shape_default_text_area_control_options::de_default_text_area_control_options(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "DefaultSliderOptions" => {
                                 builder = builder.set_default_slider_options(
-                                    crate::protocol_serde::shape_default_slider_control_options::de_default_slider_control_options(tokens, _value)?,
+                                    crate::protocol_serde::shape_default_slider_control_options::de_default_slider_control_options(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "DefaultRelativeDateTimeOptions" => {
                                 builder = builder.set_default_relative_date_time_options(
-                                    crate::protocol_serde::shape_default_relative_date_time_control_options::de_default_relative_date_time_control_options(tokens, _value)?
+                                    crate::protocol_serde::shape_default_relative_date_time_control_options::de_default_relative_date_time_control_options(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

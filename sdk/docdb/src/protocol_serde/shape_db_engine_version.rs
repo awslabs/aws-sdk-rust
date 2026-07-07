@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_engine_version(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbEngineVersion, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbEngineVersion::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_db_engine_version(
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.docdb#DBEngineVersion$ValidUpgradeTarget */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag)
+                        crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_db_engine_version(
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.docdb#DBEngineVersion$ExportableLogTypes */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -110,7 +114,7 @@ pub fn de_db_engine_version(
             s if s.matches("SupportedCACertificateIdentifiers") /* SupportedCACertificateIdentifiers com.amazonaws.docdb#DBEngineVersion$SupportedCACertificateIdentifiers */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag)
+                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -135,7 +139,7 @@ pub fn de_db_engine_version(
             s if s.matches("ServerlessV2FeaturesSupport") /* ServerlessV2FeaturesSupport com.amazonaws.docdb#DBEngineVersion$ServerlessV2FeaturesSupport */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_serverless_v2_features_support::de_serverless_v2_features_support(&mut tag)
+                        crate::protocol_serde::shape_serverless_v2_features_support::de_serverless_v2_features_support(&mut tag, depth + 1)
                         ?
                     )
                 ;

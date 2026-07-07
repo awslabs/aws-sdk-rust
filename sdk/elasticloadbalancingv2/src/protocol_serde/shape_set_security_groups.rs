@@ -104,6 +104,8 @@ pub fn de_set_security_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("SetSecurityGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected SetSecurityGroupsResponse got {start_el:?}"
@@ -121,7 +123,7 @@ pub fn de_set_security_groups(
             s if s.matches("SecurityGroupIds") /* SecurityGroupIds com.amazonaws.elasticloadbalancingv2.synthetic#SetSecurityGroupsOutput$SecurityGroupIds */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_security_groups::de_security_groups(&mut tag)
+                        crate::protocol_serde::shape_security_groups::de_security_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVocabularyOutput {
-    /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    /// <p>A list of specific words that you want Contact Lens for Connect Customer to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     pub vocabulary: ::std::option::Option<crate::types::Vocabulary>,
     _request_id: Option<String>,
 }
 impl DescribeVocabularyOutput {
-    /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    /// <p>A list of specific words that you want Contact Lens for Connect Customer to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     pub fn vocabulary(&self) -> ::std::option::Option<&crate::types::Vocabulary> {
         self.vocabulary.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeVocabularyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeVocabularyOutputBuilder {
-    /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    /// <p>A list of specific words that you want Contact Lens for Connect Customer to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     /// This field is required.
     pub fn vocabulary(mut self, input: crate::types::Vocabulary) -> Self {
         self.vocabulary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    /// <p>A list of specific words that you want Contact Lens for Connect Customer to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     pub fn set_vocabulary(mut self, input: ::std::option::Option<crate::types::Vocabulary>) -> Self {
         self.vocabulary = input;
         self
     }
-    /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    /// <p>A list of specific words that you want Contact Lens for Connect Customer to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     pub fn get_vocabulary(&self) -> &::std::option::Option<crate::types::Vocabulary> {
         &self.vocabulary
     }

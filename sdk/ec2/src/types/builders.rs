@@ -13,6 +13,8 @@ pub use crate::types::_vpc_peering_connection::VpcPeeringConnectionBuilder;
 
 pub use crate::types::_byoip_cidr::ByoipCidrBuilder;
 
+pub use crate::types::_host_cpu_options_request::HostCpuOptionsRequestBuilder;
+
 pub use crate::types::_ipam_pool_allocation::IpamPoolAllocationBuilder;
 
 pub use crate::types::_association_status::AssociationStatusBuilder;
@@ -60,6 +62,8 @@ pub use crate::types::_storage::StorageBuilder;
 pub use crate::types::_bundle_task::BundleTaskBuilder;
 
 pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
+
+pub use crate::types::_capacity_reservation_cancellation_quote::CapacityReservationCancellationQuoteBuilder;
 
 pub use crate::types::_carrier_gateway::CarrierGatewayBuilder;
 
@@ -307,6 +311,8 @@ pub use crate::types::_transit_gateway_multicast_deregistered_group_members::Tra
 
 pub use crate::types::_transit_gateway_multicast_deregistered_group_sources::TransitGatewayMulticastDeregisteredGroupSourcesBuilder;
 
+pub use crate::types::_account_vpc_encryption_control::AccountVpcEncryptionControlBuilder;
+
 pub use crate::types::_fpga_image_attribute::FpgaImageAttributeBuilder;
 
 pub use crate::types::_attribute_value::AttributeValueBuilder;
@@ -395,6 +401,8 @@ pub use crate::types::_load_permission_modifications::LoadPermissionModification
 
 pub use crate::types::_launch_permission_modifications::LaunchPermissionModificationsBuilder;
 
+pub use crate::types::_enclave_options_request::EnclaveOptionsRequestBuilder;
+
 pub use crate::types::_blob_attribute_value::BlobAttributeValueBuilder;
 
 pub use crate::types::_capacity_reservation_specification::CapacityReservationSpecificationBuilder;
@@ -479,8 +487,6 @@ pub use crate::types::_hibernation_options_request::HibernationOptionsRequestBui
 
 pub use crate::types::_instance_metadata_options_request::InstanceMetadataOptionsRequestBuilder;
 
-pub use crate::types::_enclave_options_request::EnclaveOptionsRequestBuilder;
-
 pub use crate::types::_private_dns_name_options_request::PrivateDnsNameOptionsRequestBuilder;
 
 pub use crate::types::_instance_maintenance_options_request::InstanceMaintenanceOptionsRequestBuilder;
@@ -561,6 +567,8 @@ pub use crate::types::_volume::VolumeBuilder;
 
 pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfoBuilder;
 
+pub use crate::types::_capacity_reservation_configuration::CapacityReservationConfigurationBuilder;
+
 pub use crate::types::_reservation_fleet_instance_specification::ReservationFleetInstanceSpecificationBuilder;
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservationBuilder;
@@ -584,6 +592,8 @@ pub use crate::types::_fleet_launch_template_config_request::FleetLaunchTemplate
 pub use crate::types::_create_fleet_error::CreateFleetErrorBuilder;
 
 pub use crate::types::_create_fleet_instance::CreateFleetInstanceBuilder;
+
+pub use crate::types::_tag_field_specification_request::TagFieldSpecificationRequestBuilder;
 
 pub use crate::types::_block_device_mapping::BlockDeviceMappingBuilder;
 
@@ -728,6 +738,8 @@ pub use crate::types::_ipam_pool_cidr_failure_reason::IpamPoolCidrFailureReasonB
 pub use crate::types::_delete_snapshot_return_code::DeleteSnapshotReturnCodeBuilder;
 
 pub use crate::types::_account_attribute::AccountAttributeBuilder;
+
+pub use crate::types::_account_vpc_encryption_control_exclusions::AccountVpcEncryptionControlExclusionsBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
@@ -1113,6 +1125,8 @@ pub use crate::types::_verified_access_log_kinesis_data_firehose_destination_opt
 
 pub use crate::types::_verified_access_logs::VerifiedAccessLogsBuilder;
 
+pub use crate::types::_payer_responsibility_entry::PayerResponsibilityEntryBuilder;
+
 pub use crate::types::_added_principal::AddedPrincipalBuilder;
 
 pub use crate::types::_vpn_tunnel_log_options_specification::VpnTunnelLogOptionsSpecificationBuilder;
@@ -1176,6 +1190,8 @@ pub use crate::types::_cancel_capacity_reservation_fleet_error::CancelCapacityRe
 pub use crate::types::_cancel_spot_fleet_requests_error::CancelSpotFleetRequestsErrorBuilder;
 
 pub use crate::types::_capacity_allocation::CapacityAllocationBuilder;
+
+pub use crate::types::_cancellation_terms::CancellationTermsBuilder;
 
 pub use crate::types::_directory_service_authentication_request::DirectoryServiceAuthenticationRequestBuilder;
 
@@ -1314,6 +1330,8 @@ pub use crate::types::_fpga_image_state::FpgaImageStateBuilder;
 pub use crate::types::_available_capacity::AvailableCapacityBuilder;
 
 pub use crate::types::_host_properties::HostPropertiesBuilder;
+
+pub use crate::types::_host_cpu_options::HostCpuOptionsBuilder;
 
 pub use crate::types::_ebs_instance_block_device::EbsInstanceBlockDeviceBuilder;
 
@@ -1567,9 +1585,13 @@ pub use crate::types::_describe_fleet_error::DescribeFleetErrorBuilder;
 
 pub use crate::types::_describe_fleets_instances::DescribeFleetsInstancesBuilder;
 
+pub use crate::types::_tag_field_specification_response::TagFieldSpecificationResponseBuilder;
+
 pub use crate::types::_host_instance::HostInstanceBuilder;
 
 pub use crate::types::_resource_type_option::ResourceTypeOptionBuilder;
+
+pub use crate::types::_image_watermark::ImageWatermarkBuilder;
 
 pub use crate::types::_image_usage_resource_type::ImageUsageResourceTypeBuilder;
 
@@ -1609,6 +1631,8 @@ pub use crate::types::_enable_fast_snapshot_restore_state_error_item::EnableFast
 
 pub use crate::types::_verified_access_instance_open_vpn_client_configuration_route::VerifiedAccessInstanceOpenVpnClientConfigurationRouteBuilder;
 
+pub use crate::types::_image_watermark_filter_response::ImageWatermarkFilterResponseBuilder;
+
 pub use crate::types::_metric_point::MetricPointBuilder;
 
 pub use crate::types::_metric_value::MetricValueBuilder;
@@ -1638,6 +1662,8 @@ pub use crate::types::_import_instance_volume_detail_item::ImportInstanceVolumeD
 pub use crate::types::_launch_template_overrides::LaunchTemplateOverridesBuilder;
 
 pub use crate::types::_verified_access_log_delivery_status::VerifiedAccessLogDeliveryStatusBuilder;
+
+pub use crate::types::_image_watermark_filter_request::ImageWatermarkFilterRequestBuilder;
 
 pub use crate::types::_spot_fleet_monitoring::SpotFleetMonitoringBuilder;
 

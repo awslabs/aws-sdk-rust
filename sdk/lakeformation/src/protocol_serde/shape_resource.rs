@@ -63,10 +63,16 @@ pub fn ser_resource(
 pub(crate) fn de_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Resource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -77,40 +83,56 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Catalog" => {
-                            builder = builder.set_catalog(crate::protocol_serde::shape_catalog_resource::de_catalog_resource(tokens, _value)?);
+                            builder = builder.set_catalog(crate::protocol_serde::shape_catalog_resource::de_catalog_resource(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Database" => {
-                            builder = builder.set_database(crate::protocol_serde::shape_database_resource::de_database_resource(tokens, _value)?);
+                            builder = builder.set_database(crate::protocol_serde::shape_database_resource::de_database_resource(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Table" => {
-                            builder = builder.set_table(crate::protocol_serde::shape_table_resource::de_table_resource(tokens, _value)?);
+                            builder = builder.set_table(crate::protocol_serde::shape_table_resource::de_table_resource(tokens, _value, depth + 1)?);
                         }
                         "TableWithColumns" => {
                             builder = builder.set_table_with_columns(
-                                crate::protocol_serde::shape_table_with_columns_resource::de_table_with_columns_resource(tokens, _value)?,
+                                crate::protocol_serde::shape_table_with_columns_resource::de_table_with_columns_resource(tokens, _value, depth + 1)?,
                             );
                         }
                         "DataLocation" => {
                             builder = builder.set_data_location(crate::protocol_serde::shape_data_location_resource::de_data_location_resource(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DataCellsFilter" => {
                             builder = builder.set_data_cells_filter(
-                                crate::protocol_serde::shape_data_cells_filter_resource::de_data_cells_filter_resource(tokens, _value)?,
+                                crate::protocol_serde::shape_data_cells_filter_resource::de_data_cells_filter_resource(tokens, _value, depth + 1)?,
                             );
                         }
                         "LFTag" => {
-                            builder = builder.set_lf_tag(crate::protocol_serde::shape_lf_tag_key_resource::de_lf_tag_key_resource(tokens, _value)?);
+                            builder = builder.set_lf_tag(crate::protocol_serde::shape_lf_tag_key_resource::de_lf_tag_key_resource(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LFTagPolicy" => {
                             builder = builder.set_lf_tag_policy(crate::protocol_serde::shape_lf_tag_policy_resource::de_lf_tag_policy_resource(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "LFTagExpression" => {
                             builder = builder.set_lf_tag_expression(
-                                crate::protocol_serde::shape_lf_tag_expression_resource::de_lf_tag_expression_resource(tokens, _value)?,
+                                crate::protocol_serde::shape_lf_tag_expression_resource::de_lf_tag_expression_resource(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

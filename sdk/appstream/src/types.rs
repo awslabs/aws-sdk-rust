@@ -59,6 +59,8 @@ pub use crate::types::_streaming_experience_settings::StreamingExperienceSetting
 
 pub use crate::types::_content_redirection::ContentRedirection;
 
+pub use crate::types::_agent_access_config::AgentAccessConfig;
+
 pub use crate::types::_stack::Stack;
 
 pub use crate::types::_theme_styling::ThemeStyling;
@@ -74,6 +76,8 @@ pub use crate::types::_authentication_type::AuthenticationType;
 pub use crate::types::_visibility_type::VisibilityType;
 
 pub use crate::types::_image_permissions::ImagePermissions;
+
+pub use crate::types::_agent_access_config_for_update::AgentAccessConfigForUpdate;
 
 pub use crate::types::_theme_state::ThemeState;
 
@@ -127,6 +131,12 @@ pub use crate::types::_preferred_protocol::PreferredProtocol;
 
 pub use crate::types::_url_redirection_config::UrlRedirectionConfig;
 
+pub use crate::types::_screen_resolution::ScreenResolution;
+
+pub use crate::types::_screen_image_format::ScreenImageFormat;
+
+pub use crate::types::_user_control_mode::UserControlMode;
+
 pub use crate::types::_application_settings_response::ApplicationSettingsResponse;
 
 pub use crate::types::_theme_footer_link::ThemeFooterLink;
@@ -179,6 +189,8 @@ pub use crate::types::_action::Action;
 
 pub use crate::types::_permission::Permission;
 
+pub use crate::types::_agent_access_setting::AgentAccessSetting;
+
 pub use crate::types::_stack_error::StackError;
 
 pub use crate::types::_session_state::SessionState;
@@ -190,6 +202,8 @@ pub use crate::types::_instance_drain_status::InstanceDrainStatus;
 pub use crate::types::_software_deployment_status::SoftwareDeploymentStatus;
 
 pub use crate::types::_fleet_error_code::FleetErrorCode;
+
+pub use crate::types::_agent_action::AgentAction;
 
 pub use crate::types::_stack_error_code::StackErrorCode;
 
@@ -204,6 +218,14 @@ mod _access_endpoint_type;
 mod _action;
 
 mod _admin_app_license_usage_record;
+
+mod _agent_access_config;
+
+mod _agent_access_config_for_update;
+
+mod _agent_access_setting;
+
+mod _agent_action;
 
 mod _agent_software_version;
 
@@ -329,6 +351,10 @@ mod _runtime_validation_config;
 
 mod _s3_location;
 
+mod _screen_image_format;
+
+mod _screen_resolution;
+
 mod _script_details;
 
 mod _service_account_credentials;
@@ -380,6 +406,8 @@ mod _usage_report_schedule;
 mod _usage_report_subscription;
 
 mod _user;
+
+mod _user_control_mode;
 
 mod _user_setting;
 

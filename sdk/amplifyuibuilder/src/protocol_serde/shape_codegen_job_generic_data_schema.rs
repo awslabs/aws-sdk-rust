@@ -51,10 +51,16 @@ pub fn ser_codegen_job_generic_data_schema(
 pub(crate) fn de_codegen_job_generic_data_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CodegenJobGenericDataSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -73,17 +79,25 @@ where
                         }
                         "models" => {
                             builder = builder.set_models(crate::protocol_serde::shape_codegen_generic_data_models::de_codegen_generic_data_models(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "enums" => {
                             builder = builder.set_enums(crate::protocol_serde::shape_codegen_generic_data_enums::de_codegen_generic_data_enums(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "nonModels" => {
                             builder = builder.set_non_models(
-                                crate::protocol_serde::shape_codegen_generic_data_non_models::de_codegen_generic_data_non_models(tokens, _value)?,
+                                crate::protocol_serde::shape_codegen_generic_data_non_models::de_codegen_generic_data_non_models(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

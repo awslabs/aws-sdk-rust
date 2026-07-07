@@ -80,6 +80,8 @@ pub fn de_list_user_policies(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListUserPoliciesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListUserPoliciesResponse got {start_el:?}"
@@ -97,7 +99,7 @@ pub fn de_list_user_policies(
             s if s.matches("PolicyNames") /* PolicyNames com.amazonaws.iam.synthetic#ListUserPoliciesOutput$PolicyNames */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_policy_name_list_type::de_policy_name_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_name_list_type::de_policy_name_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

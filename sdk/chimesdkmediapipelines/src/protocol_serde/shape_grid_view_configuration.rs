@@ -45,10 +45,16 @@ pub fn ser_grid_view_configuration(
 pub(crate) fn de_grid_view_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GridViewConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -67,26 +73,46 @@ where
                         }
                         "PresenterOnlyConfiguration" => {
                             builder = builder.set_presenter_only_configuration(
-                                crate::protocol_serde::shape_presenter_only_configuration::de_presenter_only_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_presenter_only_configuration::de_presenter_only_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ActiveSpeakerOnlyConfiguration" => {
                             builder = builder.set_active_speaker_only_configuration(
-                                crate::protocol_serde::shape_active_speaker_only_configuration::de_active_speaker_only_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_active_speaker_only_configuration::de_active_speaker_only_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "HorizontalLayoutConfiguration" => {
                             builder = builder.set_horizontal_layout_configuration(
-                                crate::protocol_serde::shape_horizontal_layout_configuration::de_horizontal_layout_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_horizontal_layout_configuration::de_horizontal_layout_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "VerticalLayoutConfiguration" => {
                             builder = builder.set_vertical_layout_configuration(
-                                crate::protocol_serde::shape_vertical_layout_configuration::de_vertical_layout_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_vertical_layout_configuration::de_vertical_layout_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "VideoAttribute" => {
-                            builder = builder.set_video_attribute(crate::protocol_serde::shape_video_attribute::de_video_attribute(tokens, _value)?);
+                            builder = builder.set_video_attribute(crate::protocol_serde::shape_video_attribute::de_video_attribute(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CanvasOrientation" => {
                             builder = builder.set_canvas_orientation(

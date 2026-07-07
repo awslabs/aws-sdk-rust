@@ -42,14 +42,23 @@ pub fn ser_update_broker_input_input(
         crate::protocol_serde::shape_weekly_start_time::ser_weekly_start_time(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.security_groups {
-        let mut array_15 = object.key("securityGroups").start_array();
+    if let Some(var_14) = &input.resource_share_arns {
+        let mut array_15 = object.key("resourceShareArns").start_array();
         for item_16 in var_14 {
             {
                 array_15.value().string(item_16.as_str());
             }
         }
         array_15.finish();
+    }
+    if let Some(var_17) = &input.security_groups {
+        let mut array_18 = object.key("securityGroups").start_array();
+        for item_19 in var_17 {
+            {
+                array_18.value().string(item_19.as_str());
+            }
+        }
+        array_18.finish();
     }
     Ok(())
 }

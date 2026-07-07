@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CheckDo
 #[derive(Debug)]
 struct CheckDomainTransferabilityResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CheckDomainTransferabilityResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -275,6 +276,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CheckDomainTr
 pub enum CheckDomainTransferabilityError {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::types::error::InvalidInput),
+    /// <p>The top-level domain is currently undergoing maintenance and the request cannot be processed. Try again later.</p>
+    TldInMaintenance(crate::types::error::TldInMaintenance),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::types::error::UnsupportedTld),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -311,6 +314,7 @@ impl CheckDomainTransferabilityError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidInput(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TldInMaintenance(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedTld(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -318,6 +322,10 @@ impl CheckDomainTransferabilityError {
     /// Returns `true` if the error kind is `CheckDomainTransferabilityError::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(self, Self::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `CheckDomainTransferabilityError::TldInMaintenance`.
+    pub fn is_tld_in_maintenance(&self) -> bool {
+        matches!(self, Self::TldInMaintenance(_))
     }
     /// Returns `true` if the error kind is `CheckDomainTransferabilityError::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
@@ -328,6 +336,7 @@ impl ::std::error::Error for CheckDomainTransferabilityError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidInput(_inner) => ::std::option::Option::Some(_inner),
+            Self::TldInMaintenance(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedTld(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -337,6 +346,7 @@ impl ::std::fmt::Display for CheckDomainTransferabilityError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidInput(_inner) => _inner.fmt(f),
+            Self::TldInMaintenance(_inner) => _inner.fmt(f),
             Self::UnsupportedTld(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -360,6 +370,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CheckDomainTr
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidInput(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TldInMaintenance(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedTld(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

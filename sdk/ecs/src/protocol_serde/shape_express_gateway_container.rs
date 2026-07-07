@@ -66,10 +66,16 @@ pub fn ser_express_gateway_container(
 pub(crate) fn de_express_gateway_container<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ExpressGatewayContainer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -95,26 +101,30 @@ where
                         }
                         "awsLogsConfiguration" => {
                             builder = builder.set_aws_logs_configuration(
-                                    crate::protocol_serde::shape_express_gateway_service_aws_logs_configuration::de_express_gateway_service_aws_logs_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_express_gateway_service_aws_logs_configuration::de_express_gateway_service_aws_logs_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         "repositoryCredentials" => {
                             builder = builder.set_repository_credentials(
                                 crate::protocol_serde::shape_express_gateway_repository_credentials::de_express_gateway_repository_credentials(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "environment" => {
                             builder = builder.set_environment(crate::protocol_serde::shape_environment_variables::de_environment_variables(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "secrets" => {
-                            builder = builder.set_secrets(crate::protocol_serde::shape_secret_list::de_secret_list(tokens, _value)?);
+                            builder = builder.set_secrets(crate::protocol_serde::shape_secret_list::de_secret_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

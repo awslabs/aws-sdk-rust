@@ -27,6 +27,9 @@ pub struct ClusterPendingModifiedValues {
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for Multi-AZ DB clusters.</p>
     pub iops: ::std::option::Option<i32>,
+    /// <p>The pending change in network type for the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl ClusterPendingModifiedValues {
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
@@ -68,6 +71,11 @@ impl ClusterPendingModifiedValues {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
+    /// <p>The pending change in network type for the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl ClusterPendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
@@ -88,6 +96,7 @@ pub struct ClusterPendingModifiedValuesBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
 }
 impl ClusterPendingModifiedValuesBuilder {
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
@@ -223,6 +232,23 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
+    /// <p>The pending change in network type for the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The pending change in network type for the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The pending change in network type for the DB cluster.</p>
+    /// <p>Valid Values: <code>IPV4</code>, <code>DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::ClusterPendingModifiedValues {
         crate::types::ClusterPendingModifiedValues {
@@ -234,6 +260,7 @@ impl ClusterPendingModifiedValuesBuilder {
             storage_type: self.storage_type,
             allocated_storage: self.allocated_storage,
             iops: self.iops,
+            network_type: self.network_type,
         }
     }
 }

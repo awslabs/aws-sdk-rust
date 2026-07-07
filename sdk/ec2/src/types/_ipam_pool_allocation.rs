@@ -18,6 +18,8 @@ pub struct IpamPoolAllocation {
     pub resource_region: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the resource.</p>
     pub resource_owner: ::std::option::Option<::std::string::String>,
+    /// <p>The tags for the IPAM pool allocation.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IpamPoolAllocation {
     /// <p>The CIDR for the allocation. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
@@ -48,6 +50,12 @@ impl IpamPoolAllocation {
     pub fn resource_owner(&self) -> ::std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
+    /// <p>The tags for the IPAM pool allocation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl IpamPoolAllocation {
     /// Creates a new builder-style object to manufacture [`IpamPoolAllocation`](crate::types::IpamPoolAllocation).
@@ -67,6 +75,7 @@ pub struct IpamPoolAllocationBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::IpamPoolAllocationResourceType>,
     pub(crate) resource_region: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IpamPoolAllocationBuilder {
     /// <p>The CIDR for the allocation. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
@@ -167,6 +176,26 @@ impl IpamPoolAllocationBuilder {
     pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_owner
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags for the IPAM pool allocation.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags for the IPAM pool allocation.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags for the IPAM pool allocation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`IpamPoolAllocation`](crate::types::IpamPoolAllocation).
     pub fn build(self) -> crate::types::IpamPoolAllocation {
         crate::types::IpamPoolAllocation {
@@ -177,6 +206,7 @@ impl IpamPoolAllocationBuilder {
             resource_type: self.resource_type,
             resource_region: self.resource_region,
             resource_owner: self.resource_owner,
+            tags: self.tags,
         }
     }
 }

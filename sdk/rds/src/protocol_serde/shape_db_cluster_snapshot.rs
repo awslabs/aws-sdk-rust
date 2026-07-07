@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_cluster_snapshot(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbClusterSnapshot, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbClusterSnapshot::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_db_cluster_snapshot(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.rds#DBClusterSnapshot$AvailabilityZones */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag)
+                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -334,7 +338,7 @@ pub fn de_db_cluster_snapshot(
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBClusterSnapshot$TagList */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

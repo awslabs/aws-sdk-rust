@@ -30,5 +30,7 @@ pub fn de_response_headers_policy(inp: &[u8]) -> std::result::Result<crate::type
             "invalid root, expected ResponseHeadersPolicy got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_response_headers_policy::de_response_headers_policy(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_response_headers_policy::de_response_headers_policy(&mut decoder, depth + 1)
 }

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_continuous_deployment_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ContinuousDeploymentPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ContinuousDeploymentPolicy::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -37,7 +41,7 @@ pub fn de_continuous_deployment_policy(
             s if s.matches("ContinuousDeploymentPolicyConfig") /* ContinuousDeploymentPolicyConfig com.amazonaws.cloudfront#ContinuousDeploymentPolicy$ContinuousDeploymentPolicyConfig */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_continuous_deployment_policy_config::de_continuous_deployment_policy_config(&mut tag)
+                        crate::protocol_serde::shape_continuous_deployment_policy_config::de_continuous_deployment_policy_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

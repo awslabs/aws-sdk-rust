@@ -2,10 +2,16 @@
 pub(crate) fn de_consolidated_report_metric<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConsolidatedReportMetric>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,7 @@ where
                             );
                         }
                         "RiskCounts" => {
-                            builder = builder.set_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens, _value)?);
+                            builder = builder.set_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens, _value, depth + 1)?);
                         }
                         "WorkloadId" => {
                             builder = builder.set_workload_id(
@@ -53,7 +59,7 @@ where
                             )?);
                         }
                         "Lenses" => {
-                            builder = builder.set_lenses(crate::protocol_serde::shape_lens_metrics::de_lens_metrics(tokens, _value)?);
+                            builder = builder.set_lenses(crate::protocol_serde::shape_lens_metrics::de_lens_metrics(tokens, _value, depth + 1)?);
                         }
                         "LensesAppliedCount" => {
                             builder = builder.set_lenses_applied_count(

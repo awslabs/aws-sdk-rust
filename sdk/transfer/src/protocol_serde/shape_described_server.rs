@@ -2,10 +2,16 @@
 pub(crate) fn de_described_server<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribedServer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,8 +36,11 @@ where
                             );
                         }
                         "ProtocolDetails" => {
-                            builder =
-                                builder.set_protocol_details(crate::protocol_serde::shape_protocol_details::de_protocol_details(tokens, _value)?);
+                            builder = builder.set_protocol_details(crate::protocol_serde::shape_protocol_details::de_protocol_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Domain" => {
                             builder = builder.set_domain(
@@ -41,8 +50,11 @@ where
                             );
                         }
                         "EndpointDetails" => {
-                            builder =
-                                builder.set_endpoint_details(crate::protocol_serde::shape_endpoint_details::de_endpoint_details(tokens, _value)?);
+                            builder = builder.set_endpoint_details(crate::protocol_serde::shape_endpoint_details::de_endpoint_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EndpointType" => {
                             builder = builder.set_endpoint_type(
@@ -60,7 +72,7 @@ where
                         }
                         "IdentityProviderDetails" => {
                             builder = builder.set_identity_provider_details(
-                                crate::protocol_serde::shape_identity_provider_details::de_identity_provider_details(tokens, _value)?,
+                                crate::protocol_serde::shape_identity_provider_details::de_identity_provider_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "IdentityProviderType" => {
@@ -92,7 +104,7 @@ where
                             );
                         }
                         "Protocols" => {
-                            builder = builder.set_protocols(crate::protocol_serde::shape_protocols::de_protocols(tokens, _value)?);
+                            builder = builder.set_protocols(crate::protocol_serde::shape_protocols::de_protocols(tokens, _value, depth + 1)?);
                         }
                         "SecurityPolicyName" => {
                             builder = builder.set_security_policy_name(
@@ -116,7 +128,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "UserCount" => {
                             builder = builder.set_user_count(
@@ -126,22 +138,30 @@ where
                             );
                         }
                         "WorkflowDetails" => {
-                            builder =
-                                builder.set_workflow_details(crate::protocol_serde::shape_workflow_details::de_workflow_details(tokens, _value)?);
+                            builder = builder.set_workflow_details(crate::protocol_serde::shape_workflow_details::de_workflow_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StructuredLogDestinations" => {
                             builder = builder.set_structured_log_destinations(
-                                crate::protocol_serde::shape_structured_log_destinations::de_structured_log_destinations(tokens, _value)?,
+                                crate::protocol_serde::shape_structured_log_destinations::de_structured_log_destinations(tokens, _value, depth + 1)?,
                             );
                         }
                         "S3StorageOptions" => {
-                            builder = builder
-                                .set_s3_storage_options(crate::protocol_serde::shape_s3_storage_options::de_s3_storage_options(tokens, _value)?);
+                            builder = builder.set_s3_storage_options(crate::protocol_serde::shape_s3_storage_options::de_s3_storage_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "As2ServiceManagedEgressIpAddresses" => {
                             builder = builder.set_as2_service_managed_egress_ip_addresses(
                                 crate::protocol_serde::shape_service_managed_egress_ip_addresses::de_service_managed_egress_ip_addresses(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

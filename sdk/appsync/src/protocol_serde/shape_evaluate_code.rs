@@ -101,6 +101,8 @@ pub(crate) fn de_evaluate_code(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -108,7 +110,9 @@ pub(crate) fn de_evaluate_code(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "error" => {
                     builder = builder.set_error(crate::protocol_serde::shape_evaluate_code_error_detail::de_evaluate_code_error_detail(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "evaluationResult" => {
@@ -119,7 +123,7 @@ pub(crate) fn de_evaluate_code(
                     );
                 }
                 "logs" => {
-                    builder = builder.set_logs(crate::protocol_serde::shape_logs::de_logs(tokens, _value)?);
+                    builder = builder.set_logs(crate::protocol_serde::shape_logs::de_logs(tokens, _value, depth + 1)?);
                 }
                 "outErrors" => {
                     builder = builder.set_out_errors(

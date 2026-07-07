@@ -39,21 +39,21 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Status of a pentest job
+/// <p>Status of a pentest job.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobStatus {
-    /// Pentest job completed successfully
+    /// <p>Pentest job completed successfully.</p>
     Completed,
-    /// Pentest job failed during execution
+    /// <p>Pentest job failed during execution.</p>
     Failed,
-    /// Pentest job is currently running
+    /// <p>Pentest job is currently running.</p>
     InProgress,
-    /// Pentest job was stopped by the user
+    /// <p>Pentest job was stopped by the user.</p>
     Stopped,
-    /// Pentest job is being stopped
+    /// <p>Pentest job is being stopped.</p>
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

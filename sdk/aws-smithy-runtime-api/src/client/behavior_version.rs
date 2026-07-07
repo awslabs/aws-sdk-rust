@@ -144,6 +144,7 @@ mod tests {
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2024_03_28()));
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2025_01_17()));
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2025_08_07()));
+        assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2026_01_12()));
         assert!(!BehaviorVersion::v2023_11_09().is_at_least(BehaviorVersion::v2024_03_28()));
         assert!(Inner::V2024_03_28 > Inner::V2023_11_09);
         assert!(Inner::V2023_11_09 < Inner::V2024_03_28);

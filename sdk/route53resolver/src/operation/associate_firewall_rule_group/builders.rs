@@ -23,6 +23,7 @@ impl crate::operation::associate_firewall_rule_group::builders::AssociateFirewal
 /// Fluent builder constructing a request to `AssociateFirewallRuleGroup`.
 ///
 /// <p>Associates a <code>FirewallRuleGroup</code> with a VPC, to provide DNS filtering for the VPC.</p>
+/// <p>If the rule group contains any rule configured with the <code>PartnerThreatProtection</code> rule type, the calling account must hold an active AWS Marketplace subscription to the named partner. If the subscription is missing, the association request is rejected.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -41,6 +41,8 @@ pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomerBuilder;
 
 pub use crate::types::_aws_opportunity_project::AwsOpportunityProjectBuilder;
 
+pub use crate::types::_prospecting_from_engagement_task_sort::ProspectingFromEngagementTaskSortBuilder;
+
 pub use crate::types::_sort_object::SortObjectBuilder;
 
 pub use crate::types::_solution_sort::SolutionSortBuilder;
@@ -48,6 +50,8 @@ pub use crate::types::_solution_sort::SolutionSortBuilder;
 pub use crate::types::_customer_projects_context::CustomerProjectsContextBuilder;
 
 pub use crate::types::_lead_context::LeadContextBuilder;
+
+pub use crate::types::_prospecting_result::ProspectingResultBuilder;
 
 pub use crate::types::_validation_exception_error::ValidationExceptionErrorBuilder;
 
@@ -79,6 +83,8 @@ pub use crate::types::_opportunity_summary::OpportunitySummaryBuilder;
 
 pub use crate::types::_account::AccountBuilder;
 
+pub use crate::types::_expected_contract_duration::ExpectedContractDurationBuilder;
+
 pub use crate::types::_monetary_value::MonetaryValueBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
@@ -87,7 +93,13 @@ pub use crate::types::_aws_team_member::AwsTeamMemberBuilder;
 
 pub use crate::types::_aws_products_spend_insights_by_source::AwsProductsSpendInsightsBySourceBuilder;
 
+pub use crate::types::_opportunity_quality::OpportunityQualityBuilder;
+
 pub use crate::types::_list_opportunity_from_engagement_task_summary::ListOpportunityFromEngagementTaskSummaryBuilder;
+
+pub use crate::types::_prospecting_task_summary::ProspectingTaskSummaryBuilder;
+
+pub use crate::types::_engagement_prospecting_result::EngagementProspectingResultBuilder;
 
 pub use crate::types::_opportunity_summary_view::OpportunitySummaryViewBuilder;
 
@@ -105,7 +117,11 @@ pub use crate::types::_engagement_customer::EngagementCustomerBuilder;
 
 pub use crate::types::_engagement_customer_project_details::EngagementCustomerProjectDetailsBuilder;
 
+pub use crate::types::_lead_insights::LeadInsightsBuilder;
+
 pub use crate::types::_lead_customer::LeadCustomerBuilder;
+
+pub use crate::types::_prospecting_result_aws::ProspectingResultAwsBuilder;
 
 pub use crate::types::_lead_interaction::LeadInteractionBuilder;
 
@@ -131,11 +147,17 @@ pub use crate::types::_profile_next_steps_history::ProfileNextStepsHistoryBuilde
 
 pub use crate::types::_aws_product_insights::AwsProductInsightsBuilder;
 
+pub use crate::types::_recommendation::RecommendationBuilder;
+
 pub use crate::types::_life_cycle_for_view::LifeCycleForViewBuilder;
 
 pub use crate::types::_project_view::ProjectViewBuilder;
 
 pub use crate::types::_address_summary::AddressSummaryBuilder;
+
+pub use crate::types::_prospecting_result_customer::ProspectingResultCustomerBuilder;
+
+pub use crate::types::_prospecting_insights::ProspectingInsightsBuilder;
 
 pub use crate::types::_lead_contact::LeadContactBuilder;
 

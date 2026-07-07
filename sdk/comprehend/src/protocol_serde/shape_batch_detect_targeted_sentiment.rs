@@ -154,6 +154,8 @@ pub(crate) fn de_batch_detect_targeted_sentiment(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,13 +164,17 @@ pub(crate) fn de_batch_detect_targeted_sentiment(
                 "ResultList" => {
                     builder = builder.set_result_list(
                         crate::protocol_serde::shape_list_of_detect_targeted_sentiment_result::de_list_of_detect_targeted_sentiment_result(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
                 "ErrorList" => {
                     builder = builder.set_error_list(crate::protocol_serde::shape_batch_item_error_list::de_batch_item_error_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

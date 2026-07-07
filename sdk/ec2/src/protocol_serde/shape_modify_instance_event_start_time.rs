@@ -49,6 +49,8 @@ pub fn de_modify_instance_event_start_time(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyInstanceEventStartTimeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyInstanceEventStartTimeResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_modify_instance_event_start_time(
             s if s.matches("event") /* Event com.amazonaws.ec2.synthetic#ModifyInstanceEventStartTimeOutput$Event */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_status_event::de_instance_status_event(&mut tag)
+                        crate::protocol_serde::shape_instance_status_event::de_instance_status_event(&mut tag, depth + 1)
                         ?
                     )
                 ;

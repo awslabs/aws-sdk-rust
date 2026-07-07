@@ -106,6 +106,8 @@ pub fn de_modify_aqua_configuration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyAquaConfigurationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyAquaConfigurationResponse got {start_el:?}"
@@ -123,7 +125,7 @@ pub fn de_modify_aqua_configuration(
             s if s.matches("AquaConfiguration") /* AquaConfiguration com.amazonaws.redshift.synthetic#ModifyAquaConfigurationOutput$AquaConfiguration */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_aqua_configuration::de_aqua_configuration(&mut tag)
+                        crate::protocol_serde::shape_aqua_configuration::de_aqua_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

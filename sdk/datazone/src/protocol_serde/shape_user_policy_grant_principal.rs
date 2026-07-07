@@ -25,10 +25,16 @@ pub fn ser_user_policy_grant_principal(
 pub(crate) fn de_user_policy_grant_principal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::UserPolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -62,9 +68,9 @@ where
                                 })?,
                         )),
                         "allUsersGrantFilter" => Some(crate::types::UserPolicyGrantPrincipal::AllUsersGrantFilter(
-                            crate::protocol_serde::shape_all_users_grant_filter::de_all_users_grant_filter(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'allUsersGrantFilter' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_all_users_grant_filter::de_all_users_grant_filter(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'allUsersGrantFilter' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

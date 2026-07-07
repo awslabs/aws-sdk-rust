@@ -12,3 +12,5 @@ pub use crate::types::error::_dnssec_limit_exceeded::DnssecLimitExceededBuilder;
 pub use crate::types::error::_duplicate_request::DuplicateRequestBuilder;
 
 pub use crate::types::error::_tld_rules_violation::TldRulesViolationBuilder;
+
+pub use crate::types::error::_tld_in_maintenance::TldInMaintenanceBuilder;

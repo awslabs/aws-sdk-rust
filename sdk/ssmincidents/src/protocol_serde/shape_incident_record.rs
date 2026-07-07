@@ -2,10 +2,16 @@
 pub(crate) fn de_incident_record<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::IncidentRecord>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -77,12 +83,12 @@ where
                         }
                         "automationExecutions" => {
                             builder = builder.set_automation_executions(
-                                crate::protocol_serde::shape_automation_execution_set::de_automation_execution_set(tokens, _value)?,
+                                crate::protocol_serde::shape_automation_execution_set::de_automation_execution_set(tokens, _value, depth + 1)?,
                             );
                         }
                         "incidentRecordSource" => {
                             builder = builder.set_incident_record_source(
-                                crate::protocol_serde::shape_incident_record_source::de_incident_record_source(tokens, _value)?,
+                                crate::protocol_serde::shape_incident_record_source::de_incident_record_source(tokens, _value, depth + 1)?,
                             );
                         }
                         "dedupeString" => {
@@ -93,11 +99,12 @@ where
                             );
                         }
                         "chatChannel" => {
-                            builder = builder.set_chat_channel(crate::protocol_serde::shape_chat_channel::de_chat_channel(tokens, _value)?);
+                            builder =
+                                builder.set_chat_channel(crate::protocol_serde::shape_chat_channel::de_chat_channel(tokens, _value, depth + 1)?);
                         }
                         "notificationTargets" => {
                             builder = builder.set_notification_targets(
-                                crate::protocol_serde::shape_notification_target_set::de_notification_target_set(tokens, _value)?,
+                                crate::protocol_serde::shape_notification_target_set::de_notification_target_set(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

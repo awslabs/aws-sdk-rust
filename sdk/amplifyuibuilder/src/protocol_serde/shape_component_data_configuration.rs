@@ -39,10 +39,16 @@ pub fn ser_component_data_configuration(
 pub(crate) fn de_component_data_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComponentDataConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,13 +66,21 @@ where
                             );
                         }
                         "sort" => {
-                            builder = builder.set_sort(crate::protocol_serde::shape_sort_property_list::de_sort_property_list(tokens, _value)?);
+                            builder = builder.set_sort(crate::protocol_serde::shape_sort_property_list::de_sort_property_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "predicate" => {
-                            builder = builder.set_predicate(crate::protocol_serde::shape_predicate::de_predicate(tokens, _value)?);
+                            builder = builder.set_predicate(crate::protocol_serde::shape_predicate::de_predicate(tokens, _value, depth + 1)?);
                         }
                         "identifiers" => {
-                            builder = builder.set_identifiers(crate::protocol_serde::shape_identifier_list::de_identifier_list(tokens, _value)?);
+                            builder = builder.set_identifiers(crate::protocol_serde::shape_identifier_list::de_identifier_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

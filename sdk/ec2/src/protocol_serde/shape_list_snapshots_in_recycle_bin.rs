@@ -51,6 +51,8 @@ pub fn de_list_snapshots_in_recycle_bin(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListSnapshotsInRecycleBinResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListSnapshotsInRecycleBinResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_list_snapshots_in_recycle_bin(
             s if s.matches("snapshotSet") /* Snapshots com.amazonaws.ec2.synthetic#ListSnapshotsInRecycleBinOutput$Snapshots */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_recycle_bin_info_list::de_snapshot_recycle_bin_info_list(&mut tag)
+                        crate::protocol_serde::shape_snapshot_recycle_bin_info_list::de_snapshot_recycle_bin_info_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

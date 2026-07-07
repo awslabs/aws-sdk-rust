@@ -51,10 +51,16 @@ pub fn ser_einvoice_delivery_preference(
 pub(crate) fn de_einvoice_delivery_preference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EinvoiceDeliveryPreference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,13 +72,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EinvoiceDeliveryDocumentTypes" => {
                             builder = builder.set_einvoice_delivery_document_types(
-                                crate::protocol_serde::shape_einvoice_delivery_document_types::de_einvoice_delivery_document_types(tokens, _value)?,
+                                crate::protocol_serde::shape_einvoice_delivery_document_types::de_einvoice_delivery_document_types(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "EinvoiceDeliveryAttachmentTypes" => {
                             builder = builder.set_einvoice_delivery_attachment_types(
                                 crate::protocol_serde::shape_einvoice_delivery_attachment_types::de_einvoice_delivery_attachment_types(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -85,7 +97,7 @@ where
                         }
                         "PurchaseOrderDataSources" => {
                             builder = builder.set_purchase_order_data_sources(
-                                crate::protocol_serde::shape_purchase_order_data_sources::de_purchase_order_data_sources(tokens, _value)?,
+                                crate::protocol_serde::shape_purchase_order_data_sources::de_purchase_order_data_sources(tokens, _value, depth + 1)?,
                             );
                         }
                         "ConnectionTestingMethod" => {

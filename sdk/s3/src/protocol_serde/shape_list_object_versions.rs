@@ -103,6 +103,8 @@ pub fn de_list_object_versions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListVersionsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListVersionsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -116,7 +118,7 @@ pub fn de_list_object_versions(
                         Result::<::std::vec::Vec::<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_9 = builder.common_prefixes.take().unwrap_or_default();
                             list_9.push(
-                                crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
+                                crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag, depth + 1)
                                 ?
                             );
                             list_9
@@ -240,7 +242,7 @@ pub fn de_list_object_versions(
                         Result::<::std::vec::Vec::<crate::types::ObjectVersion>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_19 = builder.versions.take().unwrap_or_default();
                             list_19.push(
-                                crate::protocol_serde::shape_object_version::de_object_version(&mut tag)
+                                crate::protocol_serde::shape_object_version::de_object_version(&mut tag, depth + 1)
                                 ?
                             );
                             list_19
@@ -272,7 +274,7 @@ pub fn de_list_object_versions(
                         Result::<::std::vec::Vec::<crate::types::DeleteMarkerEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_22 = builder.delete_markers.take().unwrap_or_default();
                             list_22.push(
-                                crate::protocol_serde::shape_delete_marker_entry::de_delete_marker_entry(&mut tag)
+                                crate::protocol_serde::shape_delete_marker_entry::de_delete_marker_entry(&mut tag, depth + 1)
                                 ?
                             );
                             list_22

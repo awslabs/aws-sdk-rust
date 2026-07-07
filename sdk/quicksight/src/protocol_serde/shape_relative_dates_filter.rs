@@ -57,10 +57,16 @@ pub fn ser_relative_dates_filter(
 pub(crate) fn de_relative_dates_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RelativeDatesFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -78,11 +84,15 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AnchorDateConfiguration" => {
                             builder = builder.set_anchor_date_configuration(
-                                crate::protocol_serde::shape_anchor_date_configuration::de_anchor_date_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_anchor_date_configuration::de_anchor_date_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "MinimumGranularity" => {
@@ -129,13 +139,19 @@ where
                         }
                         "ExcludePeriodConfiguration" => {
                             builder = builder.set_exclude_period_configuration(
-                                crate::protocol_serde::shape_exclude_period_configuration::de_exclude_period_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_exclude_period_configuration::de_exclude_period_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DefaultFilterControlConfiguration" => {
                             builder = builder.set_default_filter_control_configuration(
                                 crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

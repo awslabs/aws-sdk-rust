@@ -222,22 +222,22 @@ impl RequestCertificateFluentBuilder {
     pub fn get_domain_validation_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainValidationOption>> {
         self.inner.get_domain_validation_options()
     }
-    /// <p>You can use this parameter to specify whether to add the certificate to a certificate transparency log and export your certificate.</p>
-    /// <p>Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
+    /// <p>You can use this parameter to specify whether to export your certificate.</p>
+    /// <p>Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
     /// <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
     pub fn options(mut self, input: crate::types::CertificateOptions) -> Self {
         self.inner = self.inner.options(input);
         self
     }
-    /// <p>You can use this parameter to specify whether to add the certificate to a certificate transparency log and export your certificate.</p>
-    /// <p>Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
+    /// <p>You can use this parameter to specify whether to export your certificate.</p>
+    /// <p>Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
     /// <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::CertificateOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
-    /// <p>You can use this parameter to specify whether to add the certificate to a certificate transparency log and export your certificate.</p>
-    /// <p>Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
+    /// <p>You can use this parameter to specify whether to export your certificate.</p>
+    /// <p>Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
     /// <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CertificateOptions> {
         self.inner.get_options()

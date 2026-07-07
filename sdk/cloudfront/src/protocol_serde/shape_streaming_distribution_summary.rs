@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_streaming_distribution_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StreamingDistributionSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StreamingDistributionSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -76,7 +80,7 @@ pub fn de_streaming_distribution_summary(
             s if s.matches("S3Origin") /* S3Origin com.amazonaws.cloudfront#StreamingDistributionSummary$S3Origin */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_s3_origin::de_s3_origin(&mut tag)
+                        crate::protocol_serde::shape_s3_origin::de_s3_origin(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +90,7 @@ pub fn de_streaming_distribution_summary(
             s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#StreamingDistributionSummary$Aliases */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_aliases::de_aliases(&mut tag)
+                        crate::protocol_serde::shape_aliases::de_aliases(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -96,7 +100,7 @@ pub fn de_streaming_distribution_summary(
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#StreamingDistributionSummary$TrustedSigners */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag)
+                        crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag, depth + 1)
                         ?
                     )
                 ;

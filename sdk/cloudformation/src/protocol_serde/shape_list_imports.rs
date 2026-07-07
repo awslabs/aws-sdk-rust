@@ -40,6 +40,8 @@ pub fn de_list_imports(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListImportsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListImportsResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_list_imports(
             s if s.matches("Imports") /* Imports com.amazonaws.cloudformation.synthetic#ListImportsOutput$Imports */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_imports::de_imports(&mut tag)
+                        crate::protocol_serde::shape_imports::de_imports(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -28,7 +28,11 @@ pub fn ser_field_level_encryption_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_field_level_encryption_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FieldLevelEncryptionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FieldLevelEncryptionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_field_level_encryption_config(
             s if s.matches("QueryArgProfileConfig") /* QueryArgProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionConfig$QueryArgProfileConfig */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_query_arg_profile_config::de_query_arg_profile_config(&mut tag)
+                        crate::protocol_serde::shape_query_arg_profile_config::de_query_arg_profile_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_field_level_encryption_config(
             s if s.matches("ContentTypeProfileConfig") /* ContentTypeProfileConfig com.amazonaws.cloudfront#FieldLevelEncryptionConfig$ContentTypeProfileConfig */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_content_type_profile_config::de_content_type_profile_config(&mut tag)
+                        crate::protocol_serde::shape_content_type_profile_config::de_content_type_profile_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -70,6 +70,8 @@ pub fn de_describe_db_instances(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDBInstancesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDBInstancesResponse got {start_el:?}"
@@ -100,7 +102,7 @@ pub fn de_describe_db_instances(
             s if s.matches("DBInstances") /* DBInstances com.amazonaws.rds.synthetic#DescribeDBInstancesOutput$DBInstances */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_db_instance_list::de_db_instance_list(&mut tag)
+                        crate::protocol_serde::shape_db_instance_list::de_db_instance_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

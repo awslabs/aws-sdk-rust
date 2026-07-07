@@ -2,10 +2,16 @@
 pub(crate) fn de_skewed_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SkewedInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,17 +22,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SkewedColumnNames" => {
-                            builder =
-                                builder.set_skewed_column_names(crate::protocol_serde::shape_name_string_list::de_name_string_list(tokens, _value)?);
+                            builder = builder.set_skewed_column_names(crate::protocol_serde::shape_name_string_list::de_name_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SkewedColumnValues" => {
                             builder = builder.set_skewed_column_values(
-                                crate::protocol_serde::shape_column_value_string_list::de_column_value_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_column_value_string_list::de_column_value_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "SkewedColumnValueLocationMaps" => {
-                            builder = builder
-                                .set_skewed_column_value_location_maps(crate::protocol_serde::shape_location_map::de_location_map(tokens, _value)?);
+                            builder = builder.set_skewed_column_value_location_maps(crate::protocol_serde::shape_location_map::de_location_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

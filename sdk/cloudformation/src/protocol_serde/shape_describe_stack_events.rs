@@ -47,6 +47,8 @@ pub fn de_describe_stack_events(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeStackEventsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeStackEventsResponse got {start_el:?}"
@@ -64,7 +66,7 @@ pub fn de_describe_stack_events(
             s if s.matches("StackEvents") /* StackEvents com.amazonaws.cloudformation.synthetic#DescribeStackEventsOutput$StackEvents */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stack_events::de_stack_events(&mut tag)
+                        crate::protocol_serde::shape_stack_events::de_stack_events(&mut tag, depth + 1)
                         ?
                     )
                 ;

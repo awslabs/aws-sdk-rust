@@ -2,10 +2,16 @@
 pub(crate) fn de_data_quality_evaluation_run_additional_run_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,6 +36,13 @@ where
                             builder = builder.set_composite_rule_evaluation_method(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::DqCompositeRuleEvaluationMethod::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CustomLogGroupPrefix" => {
+                            builder = builder.set_custom_log_group_prefix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
@@ -62,6 +75,9 @@ pub fn ser_data_quality_evaluation_run_additional_run_options(
     }
     if let Some(var_3) = &input.composite_rule_evaluation_method {
         object.key("CompositeRuleEvaluationMethod").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.custom_log_group_prefix {
+        object.key("CustomLogGroupPrefix").string(var_4.as_str());
     }
     Ok(())
 }

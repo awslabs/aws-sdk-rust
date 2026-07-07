@@ -43,6 +43,9 @@ pub mod create_code_security_integration;
 /// Types for the `CreateCodeSecurityScanConfiguration` operation.
 pub mod create_code_security_scan_configuration;
 
+/// Types for the `CreateConnector` operation.
+pub mod create_connector;
+
 /// Types for the `CreateFilter` operation.
 pub mod create_filter;
 
@@ -60,6 +63,9 @@ pub mod delete_code_security_integration;
 
 /// Types for the `DeleteCodeSecurityScanConfiguration` operation.
 pub mod delete_code_security_scan_configuration;
+
+/// Types for the `DeleteConnector` operation.
+pub mod delete_connector;
 
 /// Types for the `DeleteFilter` operation.
 pub mod delete_filter;
@@ -145,6 +151,12 @@ pub mod list_code_security_scan_configuration_associations;
 /// Types for the `ListCodeSecurityScanConfigurations` operation.
 pub mod list_code_security_scan_configurations;
 
+/// Types for the `ListConnectorScanConfigurations` operation.
+pub mod list_connector_scan_configurations;
+
+/// Types for the `ListConnectors` operation.
+pub mod list_connectors;
+
 /// Types for the `ListCoverage` operation.
 pub mod list_coverage;
 
@@ -210,6 +222,12 @@ pub mod update_code_security_scan_configuration;
 
 /// Types for the `UpdateConfiguration` operation.
 pub mod update_configuration;
+
+/// Types for the `UpdateConnector` operation.
+pub mod update_connector;
+
+/// Types for the `UpdateConnectorScanConfiguration` operation.
+pub mod update_connector_scan_configuration;
 
 /// Types for the `UpdateEc2DeepInspectionConfiguration` operation.
 pub mod update_ec2_deep_inspection_configuration;

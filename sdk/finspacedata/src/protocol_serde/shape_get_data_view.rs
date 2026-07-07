@@ -119,6 +119,8 @@ pub(crate) fn de_get_data_view(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -164,12 +166,18 @@ pub(crate) fn de_get_data_view(
                 }
                 "destinationTypeParams" => {
                     builder = builder.set_destination_type_params(
-                        crate::protocol_serde::shape_data_view_destination_type_params::de_data_view_destination_type_params(tokens, _value)?,
+                        crate::protocol_serde::shape_data_view_destination_type_params::de_data_view_destination_type_params(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "errorInfo" => {
                     builder = builder.set_error_info(crate::protocol_serde::shape_data_view_error_info::de_data_view_error_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "lastModifiedTime" => {
@@ -181,11 +189,17 @@ pub(crate) fn de_get_data_view(
                 }
                 "partitionColumns" => {
                     builder = builder.set_partition_columns(crate::protocol_serde::shape_partition_column_list::de_partition_column_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "sortColumns" => {
-                    builder = builder.set_sort_columns(crate::protocol_serde::shape_sort_column_list::de_sort_column_list(tokens, _value)?);
+                    builder = builder.set_sort_columns(crate::protocol_serde::shape_sort_column_list::de_sort_column_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

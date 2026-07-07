@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_packet_header_statement(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PacketHeaderStatement, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PacketHeaderStatement::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_packet_header_statement(
             s if s.matches("sourceAddressSet") /* SourceAddresses com.amazonaws.ec2#PacketHeaderStatement$SourceAddresses */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_packet_header_statement(
             s if s.matches("destinationAddressSet") /* DestinationAddresses com.amazonaws.ec2#PacketHeaderStatement$DestinationAddresses */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -30,7 +34,7 @@ pub fn de_packet_header_statement(
             s if s.matches("sourcePortSet") /* SourcePorts com.amazonaws.ec2#PacketHeaderStatement$SourcePorts */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -40,7 +44,7 @@ pub fn de_packet_header_statement(
             s if s.matches("destinationPortSet") /* DestinationPorts com.amazonaws.ec2#PacketHeaderStatement$DestinationPorts */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -50,7 +54,7 @@ pub fn de_packet_header_statement(
             s if s.matches("sourcePrefixListSet") /* SourcePrefixLists com.amazonaws.ec2#PacketHeaderStatement$SourcePrefixLists */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -60,7 +64,7 @@ pub fn de_packet_header_statement(
             s if s.matches("destinationPrefixListSet") /* DestinationPrefixLists com.amazonaws.ec2#PacketHeaderStatement$DestinationPrefixLists */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -70,7 +74,7 @@ pub fn de_packet_header_statement(
             s if s.matches("protocolSet") /* Protocols com.amazonaws.ec2#PacketHeaderStatement$Protocols */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_protocol_list::de_protocol_list(&mut tag)
+                        crate::protocol_serde::shape_protocol_list::de_protocol_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

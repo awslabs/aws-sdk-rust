@@ -188,6 +188,8 @@ pub(crate) fn de_import_resources_to_draft_app_version(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -208,10 +210,14 @@ pub(crate) fn de_import_resources_to_draft_app_version(
                     );
                 }
                 "eksSources" => {
-                    builder = builder.set_eks_sources(crate::protocol_serde::shape_eks_source_list::de_eks_source_list(tokens, _value)?);
+                    builder = builder.set_eks_sources(crate::protocol_serde::shape_eks_source_list::de_eks_source_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "sourceArns" => {
-                    builder = builder.set_source_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
+                    builder = builder.set_source_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value, depth + 1)?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -222,7 +228,9 @@ pub(crate) fn de_import_resources_to_draft_app_version(
                 }
                 "terraformSources" => {
                     builder = builder.set_terraform_sources(crate::protocol_serde::shape_terraform_source_list::de_terraform_source_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

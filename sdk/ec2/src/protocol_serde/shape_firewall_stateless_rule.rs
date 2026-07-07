@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_firewall_stateless_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FirewallStatelessRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FirewallStatelessRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_firewall_stateless_rule(
             s if s.matches("sourceSet") /* Sources com.amazonaws.ec2#FirewallStatelessRule$Sources */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_firewall_stateless_rule(
             s if s.matches("destinationSet") /* Destinations com.amazonaws.ec2#FirewallStatelessRule$Destinations */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_firewall_stateless_rule(
             s if s.matches("sourcePortSet") /* SourcePorts com.amazonaws.ec2#FirewallStatelessRule$SourcePorts */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_port_range_list::de_port_range_list(&mut tag)
+                        crate::protocol_serde::shape_port_range_list::de_port_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_firewall_stateless_rule(
             s if s.matches("destinationPortSet") /* DestinationPorts com.amazonaws.ec2#FirewallStatelessRule$DestinationPorts */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_port_range_list::de_port_range_list(&mut tag)
+                        crate::protocol_serde::shape_port_range_list::de_port_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -63,7 +67,7 @@ pub fn de_firewall_stateless_rule(
             s if s.matches("protocolSet") /* Protocols com.amazonaws.ec2#FirewallStatelessRule$Protocols */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_protocol_int_list::de_protocol_int_list(&mut tag)
+                        crate::protocol_serde::shape_protocol_int_list::de_protocol_int_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

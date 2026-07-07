@@ -119,6 +119,8 @@ pub fn de_copy_db_cluster_parameter_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CopyDBClusterParameterGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CopyDBClusterParameterGroupResponse got {start_el:?}"
@@ -136,7 +138,7 @@ pub fn de_copy_db_cluster_parameter_group(
             s if s.matches("DBClusterParameterGroup") /* DBClusterParameterGroup com.amazonaws.rds.synthetic#CopyDBClusterParameterGroupOutput$DBClusterParameterGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_cluster_parameter_group::de_db_cluster_parameter_group(&mut tag)
+                        crate::protocol_serde::shape_db_cluster_parameter_group::de_db_cluster_parameter_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

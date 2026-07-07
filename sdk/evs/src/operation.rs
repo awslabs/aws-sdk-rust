@@ -31,6 +31,9 @@ pub mod delete_environment_host;
 /// Types for the `DisassociateEipFromVlan` operation.
 pub mod disassociate_eip_from_vlan;
 
+/// Types for the `GetDepotUrl` operation.
+pub mod get_depot_url;
+
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
 

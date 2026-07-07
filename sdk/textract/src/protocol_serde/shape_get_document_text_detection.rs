@@ -187,13 +187,19 @@ pub(crate) fn de_get_document_text_detection(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DocumentMetadata" => {
-                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens, _value)?);
+                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "JobStatus" => {
                     builder = builder.set_job_status(
@@ -210,10 +216,10 @@ pub(crate) fn de_get_document_text_detection(
                     );
                 }
                 "Blocks" => {
-                    builder = builder.set_blocks(crate::protocol_serde::shape_block_list::de_block_list(tokens, _value)?);
+                    builder = builder.set_blocks(crate::protocol_serde::shape_block_list::de_block_list(tokens, _value, depth + 1)?);
                 }
                 "Warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens, _value)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens, _value, depth + 1)?);
                 }
                 "StatusMessage" => {
                     builder = builder.set_status_message(

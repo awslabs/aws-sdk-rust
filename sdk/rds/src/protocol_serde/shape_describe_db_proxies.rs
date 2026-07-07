@@ -65,6 +65,8 @@ pub fn de_describe_db_proxies(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDBProxiesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDBProxiesResponse got {start_el:?}"
@@ -82,7 +84,7 @@ pub fn de_describe_db_proxies(
             s if s.matches("DBProxies") /* DBProxies com.amazonaws.rds.synthetic#DescribeDBProxiesOutput$DBProxies */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_proxy_list::de_db_proxy_list(&mut tag)
+                        crate::protocol_serde::shape_db_proxy_list::de_db_proxy_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

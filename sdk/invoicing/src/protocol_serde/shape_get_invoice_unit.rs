@@ -131,6 +131,8 @@ pub(crate) fn de_get_invoice_unit(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -168,7 +170,11 @@ pub(crate) fn de_get_invoice_unit(
                     builder = builder.set_tax_inheritance_disabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Rule" => {
-                    builder = builder.set_rule(crate::protocol_serde::shape_invoice_unit_rule::de_invoice_unit_rule(tokens, _value)?);
+                    builder = builder.set_rule(crate::protocol_serde::shape_invoice_unit_rule::de_invoice_unit_rule(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "LastModified" => {
                     builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

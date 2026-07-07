@@ -181,4 +181,18 @@ impl RollbackStackFluentBuilder {
     pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
         self.inner.get_retain_except_on_create()
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.inner = self.inner.deployment_config(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.inner = self.inner.set_deployment_config(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        self.inner.get_deployment_config()
+    }
 }

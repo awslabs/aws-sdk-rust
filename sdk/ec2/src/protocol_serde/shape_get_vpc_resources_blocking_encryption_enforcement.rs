@@ -55,6 +55,8 @@ pub fn de_get_vpc_resources_blocking_encryption_enforcement(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetVpcResourcesBlockingEncryptionEnforcementResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetVpcResourcesBlockingEncryptionEnforcementResponse got {start_el:?}"
@@ -65,7 +67,7 @@ pub fn de_get_vpc_resources_blocking_encryption_enforcement(
             s if s.matches("nonCompliantResourceSet") /* NonCompliantResources com.amazonaws.ec2.synthetic#GetVpcResourcesBlockingEncryptionEnforcementOutput$NonCompliantResources */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_non_compliant_resource_list::de_vpc_encryption_non_compliant_resource_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_non_compliant_resource_list::de_vpc_encryption_non_compliant_resource_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

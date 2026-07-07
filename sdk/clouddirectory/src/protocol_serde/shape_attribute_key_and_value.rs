@@ -21,10 +21,16 @@ pub fn ser_attribute_key_and_value(
 pub(crate) fn de_attribute_key_and_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AttributeKeyAndValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,11 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Key" => {
-                            builder = builder.set_key(crate::protocol_serde::shape_attribute_key::de_attribute_key(tokens, _value)?);
+                            builder = builder.set_key(crate::protocol_serde::shape_attribute_key::de_attribute_key(tokens, _value, depth + 1)?);
                         }
                         "Value" => {
                             builder = builder.set_value(crate::protocol_serde::shape_typed_attribute_value::de_typed_attribute_value(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_cloud_watch_metrics_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CloudWatchMetricsDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,11 @@ where
                         }
                         "Dimensions" => {
                             builder = builder.set_dimensions(
-                                crate::protocol_serde::shape_cloud_watch_metrics_dimensions::de_cloud_watch_metrics_dimensions(tokens, _value)?,
+                                crate::protocol_serde::shape_cloud_watch_metrics_dimensions::de_cloud_watch_metrics_dimensions(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Stat" => {
@@ -57,7 +67,11 @@ where
                         }
                         "MetricDataSummary" => {
                             builder = builder.set_metric_data_summary(
-                                crate::protocol_serde::shape_cloud_watch_metrics_data_summary::de_cloud_watch_metrics_data_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_cloud_watch_metrics_data_summary::de_cloud_watch_metrics_data_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

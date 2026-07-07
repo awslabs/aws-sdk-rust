@@ -51,6 +51,8 @@ pub fn de_modify_fpga_image_attribute(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyFpgaImageAttributeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyFpgaImageAttributeResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_modify_fpga_image_attribute(
             s if s.matches("fpgaImageAttribute") /* FpgaImageAttribute com.amazonaws.ec2.synthetic#ModifyFpgaImageAttributeOutput$FpgaImageAttribute */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_fpga_image_attribute::de_fpga_image_attribute(&mut tag)
+                        crate::protocol_serde::shape_fpga_image_attribute::de_fpga_image_attribute(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -6,11 +6,17 @@
 pub struct ControlPlanePlacementResponse {
     /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The spread level used with the placement group for control plane instances on your local Amazon EKS cluster on Amazon Web Services Outposts.</p>
+    pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
 }
 impl ControlPlanePlacementResponse {
     /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
+    }
+    /// <p>The spread level used with the placement group for control plane instances on your local Amazon EKS cluster on Amazon Web Services Outposts.</p>
+    pub fn spread_level(&self) -> ::std::option::Option<&crate::types::SpreadLevel> {
+        self.spread_level.as_ref()
     }
 }
 impl ControlPlanePlacementResponse {
@@ -25,6 +31,7 @@ impl ControlPlanePlacementResponse {
 #[non_exhaustive]
 pub struct ControlPlanePlacementResponseBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
 }
 impl ControlPlanePlacementResponseBuilder {
     /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
@@ -41,8 +48,25 @@ impl ControlPlanePlacementResponseBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
+    /// <p>The spread level used with the placement group for control plane instances on your local Amazon EKS cluster on Amazon Web Services Outposts.</p>
+    pub fn spread_level(mut self, input: crate::types::SpreadLevel) -> Self {
+        self.spread_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The spread level used with the placement group for control plane instances on your local Amazon EKS cluster on Amazon Web Services Outposts.</p>
+    pub fn set_spread_level(mut self, input: ::std::option::Option<crate::types::SpreadLevel>) -> Self {
+        self.spread_level = input;
+        self
+    }
+    /// <p>The spread level used with the placement group for control plane instances on your local Amazon EKS cluster on Amazon Web Services Outposts.</p>
+    pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
+        &self.spread_level
+    }
     /// Consumes the builder and constructs a [`ControlPlanePlacementResponse`](crate::types::ControlPlanePlacementResponse).
     pub fn build(self) -> crate::types::ControlPlanePlacementResponse {
-        crate::types::ControlPlanePlacementResponse { group_name: self.group_name }
+        crate::types::ControlPlanePlacementResponse {
+            group_name: self.group_name,
+            spread_level: self.spread_level,
+        }
     }
 }

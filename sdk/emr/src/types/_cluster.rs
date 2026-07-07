@@ -80,6 +80,8 @@ pub struct Cluster {
     pub extended_support: ::std::option::Option<bool>,
     /// <p>Contains Cloudwatch log configuration metadata and settings.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>Indicates whether Spark Connect sessions are enabled on the cluster.</p>
+    pub session_enabled: ::std::option::Option<bool>,
 }
 impl Cluster {
     /// <p>The unique identifier for the cluster.</p>
@@ -238,6 +240,10 @@ impl Cluster {
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
+    /// <p>Indicates whether Spark Connect sessions are enabled on the cluster.</p>
+    pub fn session_enabled(&self) -> ::std::option::Option<bool> {
+        self.session_enabled
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -286,6 +292,7 @@ pub struct ClusterBuilder {
     pub(crate) ebs_root_volume_throughput: ::std::option::Option<i32>,
     pub(crate) extended_support: ::std::option::Option<bool>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) session_enabled: ::std::option::Option<bool>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier for the cluster.</p>
@@ -828,6 +835,20 @@ impl ClusterBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         &self.monitoring_configuration
     }
+    /// <p>Indicates whether Spark Connect sessions are enabled on the cluster.</p>
+    pub fn session_enabled(mut self, input: bool) -> Self {
+        self.session_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Spark Connect sessions are enabled on the cluster.</p>
+    pub fn set_session_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.session_enabled = input;
+        self
+    }
+    /// <p>Indicates whether Spark Connect sessions are enabled on the cluster.</p>
+    pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
+        &self.session_enabled
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -867,6 +888,7 @@ impl ClusterBuilder {
             ebs_root_volume_throughput: self.ebs_root_volume_throughput,
             extended_support: self.extended_support,
             monitoring_configuration: self.monitoring_configuration,
+            session_enabled: self.session_enabled,
         }
     }
 }

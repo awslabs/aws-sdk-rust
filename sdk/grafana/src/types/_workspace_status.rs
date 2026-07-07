@@ -15,6 +15,7 @@
 ///     WorkspaceStatus::Active => { /* ... */ },
 ///     WorkspaceStatus::Creating => { /* ... */ },
 ///     WorkspaceStatus::CreationFailed => { /* ... */ },
+///     WorkspaceStatus::Degraded => { /* ... */ },
 ///     WorkspaceStatus::Deleting => { /* ... */ },
 ///     WorkspaceStatus::DeletionFailed => { /* ... */ },
 ///     WorkspaceStatus::Failed => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum WorkspaceStatus {
     Creating,
     /// Workspace creation failed.
     CreationFailed,
+    /// Workspace is degraded.
+    Degraded,
     /// Workspace is being deleted.
     Deleting,
     /// Workspace deletion failed.
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for WorkspaceStatus {
             "ACTIVE" => WorkspaceStatus::Active,
             "CREATING" => WorkspaceStatus::Creating,
             "CREATION_FAILED" => WorkspaceStatus::CreationFailed,
+            "DEGRADED" => WorkspaceStatus::Degraded,
             "DELETING" => WorkspaceStatus::Deleting,
             "DELETION_FAILED" => WorkspaceStatus::DeletionFailed,
             "FAILED" => WorkspaceStatus::Failed,
@@ -117,6 +121,7 @@ impl WorkspaceStatus {
             WorkspaceStatus::Active => "ACTIVE",
             WorkspaceStatus::Creating => "CREATING",
             WorkspaceStatus::CreationFailed => "CREATION_FAILED",
+            WorkspaceStatus::Degraded => "DEGRADED",
             WorkspaceStatus::Deleting => "DELETING",
             WorkspaceStatus::DeletionFailed => "DELETION_FAILED",
             WorkspaceStatus::Failed => "FAILED",
@@ -136,6 +141,7 @@ impl WorkspaceStatus {
             "ACTIVE",
             "CREATING",
             "CREATION_FAILED",
+            "DEGRADED",
             "DELETING",
             "DELETION_FAILED",
             "FAILED",
@@ -172,6 +178,7 @@ impl ::std::fmt::Display for WorkspaceStatus {
             WorkspaceStatus::Active => write!(f, "ACTIVE"),
             WorkspaceStatus::Creating => write!(f, "CREATING"),
             WorkspaceStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            WorkspaceStatus::Degraded => write!(f, "DEGRADED"),
             WorkspaceStatus::Deleting => write!(f, "DELETING"),
             WorkspaceStatus::DeletionFailed => write!(f, "DELETION_FAILED"),
             WorkspaceStatus::Failed => write!(f, "FAILED"),

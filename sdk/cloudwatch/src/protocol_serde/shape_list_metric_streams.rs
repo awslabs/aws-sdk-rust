@@ -121,10 +121,11 @@ pub(crate) fn de_list_metric_streams(
     mut builder: crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
 {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -137,6 +138,7 @@ pub(crate) fn de_list_metric_streams(
                 Ok(
                     builder.set_entries(Some(crate::protocol_serde::shape_metric_stream_entries::de_metric_stream_entries(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -149,6 +151,8 @@ pub(crate) fn de_list_metric_streams(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -158,13 +162,13 @@ pub(crate) fn de_list_metric_streams(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

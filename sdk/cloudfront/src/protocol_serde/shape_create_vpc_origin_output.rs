@@ -34,5 +34,7 @@ pub fn de_vpc_origin(inp: &[u8]) -> std::result::Result<crate::types::VpcOrigin,
             "invalid root, expected VpcOrigin got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_vpc_origin::de_vpc_origin(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_vpc_origin::de_vpc_origin(&mut decoder, depth + 1)
 }

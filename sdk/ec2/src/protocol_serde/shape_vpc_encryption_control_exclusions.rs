@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc_encryption_control_exclusions(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VpcEncryptionControlExclusions, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VpcEncryptionControlExclusions::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_vpc_encryption_control_exclusions(
             s if s.matches("internetGateway") /* InternetGateway com.amazonaws.ec2#VpcEncryptionControlExclusions$InternetGateway */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_vpc_encryption_control_exclusions(
             s if s.matches("egressOnlyInternetGateway") /* EgressOnlyInternetGateway com.amazonaws.ec2#VpcEncryptionControlExclusions$EgressOnlyInternetGateway */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -30,7 +34,7 @@ pub fn de_vpc_encryption_control_exclusions(
             s if s.matches("natGateway") /* NatGateway com.amazonaws.ec2#VpcEncryptionControlExclusions$NatGateway */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -40,7 +44,7 @@ pub fn de_vpc_encryption_control_exclusions(
             s if s.matches("virtualPrivateGateway") /* VirtualPrivateGateway com.amazonaws.ec2#VpcEncryptionControlExclusions$VirtualPrivateGateway */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -50,7 +54,7 @@ pub fn de_vpc_encryption_control_exclusions(
             s if s.matches("vpcPeering") /* VpcPeering com.amazonaws.ec2#VpcEncryptionControlExclusions$VpcPeering */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -60,7 +64,7 @@ pub fn de_vpc_encryption_control_exclusions(
             s if s.matches("lambda") /* Lambda com.amazonaws.ec2#VpcEncryptionControlExclusions$Lambda */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -70,7 +74,7 @@ pub fn de_vpc_encryption_control_exclusions(
             s if s.matches("vpcLattice") /* VpcLattice com.amazonaws.ec2#VpcEncryptionControlExclusions$VpcLattice */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -80,7 +84,7 @@ pub fn de_vpc_encryption_control_exclusions(
             s if s.matches("elasticFileSystem") /* ElasticFileSystem com.amazonaws.ec2#VpcEncryptionControlExclusions$ElasticFileSystem */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -14,6 +14,8 @@ pub struct MemorySummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the memory was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// ARN of the resource managing this memory (e.g. a harness). Null if not managed.
+    pub managed_by_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemorySummary {
     /// <p>The Amazon Resource Name (ARN) of the memory.</p>
@@ -36,6 +38,10 @@ impl MemorySummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// ARN of the resource managing this memory (e.g. a harness). Null if not managed.
+    pub fn managed_by_resource_arn(&self) -> ::std::option::Option<&str> {
+        self.managed_by_resource_arn.as_deref()
+    }
 }
 impl MemorySummary {
     /// Creates a new builder-style object to manufacture [`MemorySummary`](crate::types::MemorySummary).
@@ -53,6 +59,7 @@ pub struct MemorySummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MemoryStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) managed_by_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemorySummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the memory.</p>
@@ -127,6 +134,20 @@ impl MemorySummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// ARN of the resource managing this memory (e.g. a harness). Null if not managed.
+    pub fn managed_by_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_by_resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// ARN of the resource managing this memory (e.g. a harness). Null if not managed.
+    pub fn set_managed_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_by_resource_arn = input;
+        self
+    }
+    /// ARN of the resource managing this memory (e.g. a harness). Null if not managed.
+    pub fn get_managed_by_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by_resource_arn
+    }
     /// Consumes the builder and constructs a [`MemorySummary`](crate::types::MemorySummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`created_at`](crate::types::builders::MemorySummaryBuilder::created_at)
@@ -148,6 +169,7 @@ impl MemorySummaryBuilder {
                     "updated_at was not specified but it is required when building MemorySummary",
                 )
             })?,
+            managed_by_resource_arn: self.managed_by_resource_arn,
         })
     }
 }

@@ -51,10 +51,16 @@ pub fn ser_audio_codec_settings(
 pub(crate) fn de_audio_codec_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AudioCodecSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,28 +71,36 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "aacSettings" => {
-                            builder = builder.set_aac_settings(crate::protocol_serde::shape_aac_settings::de_aac_settings(tokens, _value)?);
+                            builder =
+                                builder.set_aac_settings(crate::protocol_serde::shape_aac_settings::de_aac_settings(tokens, _value, depth + 1)?);
                         }
                         "ac3Settings" => {
-                            builder = builder.set_ac3_settings(crate::protocol_serde::shape_ac3_settings::de_ac3_settings(tokens, _value)?);
+                            builder =
+                                builder.set_ac3_settings(crate::protocol_serde::shape_ac3_settings::de_ac3_settings(tokens, _value, depth + 1)?);
                         }
                         "eac3AtmosSettings" => {
-                            builder = builder
-                                .set_eac3_atmos_settings(crate::protocol_serde::shape_eac3_atmos_settings::de_eac3_atmos_settings(tokens, _value)?);
+                            builder = builder.set_eac3_atmos_settings(crate::protocol_serde::shape_eac3_atmos_settings::de_eac3_atmos_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "eac3Settings" => {
-                            builder = builder.set_eac3_settings(crate::protocol_serde::shape_eac3_settings::de_eac3_settings(tokens, _value)?);
+                            builder =
+                                builder.set_eac3_settings(crate::protocol_serde::shape_eac3_settings::de_eac3_settings(tokens, _value, depth + 1)?);
                         }
                         "mp2Settings" => {
-                            builder = builder.set_mp2_settings(crate::protocol_serde::shape_mp2_settings::de_mp2_settings(tokens, _value)?);
+                            builder =
+                                builder.set_mp2_settings(crate::protocol_serde::shape_mp2_settings::de_mp2_settings(tokens, _value, depth + 1)?);
                         }
                         "passThroughSettings" => {
                             builder = builder.set_pass_through_settings(
-                                crate::protocol_serde::shape_pass_through_settings::de_pass_through_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_pass_through_settings::de_pass_through_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "wavSettings" => {
-                            builder = builder.set_wav_settings(crate::protocol_serde::shape_wav_settings::de_wav_settings(tokens, _value)?);
+                            builder =
+                                builder.set_wav_settings(crate::protocol_serde::shape_wav_settings::de_wav_settings(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -177,6 +177,8 @@ pub(crate) fn de_create_channel_placement_group(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -190,7 +192,7 @@ pub(crate) fn de_create_channel_placement_group(
                     );
                 }
                 "channels" => {
-                    builder = builder.set_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "clusterId" => {
                     builder = builder.set_cluster_id(
@@ -214,7 +216,7 @@ pub(crate) fn de_create_channel_placement_group(
                     );
                 }
                 "nodes" => {
-                    builder = builder.set_nodes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_nodes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value, depth + 1)?);
                 }
                 "state" => {
                     builder = builder.set_state(

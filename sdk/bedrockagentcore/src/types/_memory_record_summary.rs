@@ -17,7 +17,7 @@ pub struct MemoryRecordSummary {
     /// <p>The relevance score of the memory record when returned as part of a search result. Higher values indicate greater relevance to the search query.</p>
     pub score: ::std::option::Option<f64>,
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
 impl MemoryRecordSummary {
     /// <p>The unique identifier of the memory record.</p>
@@ -48,7 +48,7 @@ impl MemoryRecordSummary {
         self.score
     }
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
         self.metadata.as_ref()
     }
 }
@@ -69,7 +69,7 @@ pub struct MemoryRecordSummaryBuilder {
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) score: ::std::option::Option<f64>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
 impl MemoryRecordSummaryBuilder {
     /// <p>The unique identifier of the memory record.</p>
@@ -171,7 +171,7 @@ impl MemoryRecordSummaryBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
-    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MemoryRecordMetadataValue) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.metadata = ::std::option::Option::Some(hash_map);
@@ -180,13 +180,15 @@ impl MemoryRecordSummaryBuilder {
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
     pub fn set_metadata(
         mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
     ) -> Self {
         self.metadata = input;
         self
     }
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`MemoryRecordSummary`](crate::types::MemoryRecordSummary).

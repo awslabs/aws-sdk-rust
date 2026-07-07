@@ -2,10 +2,16 @@
 pub(crate) fn de_ontap_file_system_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OntapFileSystemConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,12 +51,14 @@ where
                         }
                         "Endpoints" => {
                             builder = builder.set_endpoints(crate::protocol_serde::shape_file_system_endpoints::de_file_system_endpoints(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DiskIopsConfiguration" => {
                             builder = builder.set_disk_iops_configuration(
-                                crate::protocol_serde::shape_disk_iops_configuration::de_disk_iops_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_disk_iops_configuration::de_disk_iops_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "PreferredSubnetId" => {
@@ -61,7 +69,11 @@ where
                             );
                         }
                         "RouteTableIds" => {
-                            builder = builder.set_route_table_ids(crate::protocol_serde::shape_route_table_ids::de_route_table_ids(tokens, _value)?);
+                            builder = builder.set_route_table_ids(crate::protocol_serde::shape_route_table_ids::de_route_table_ids(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ThroughputCapacity" => {
                             builder = builder.set_throughput_capacity(

@@ -49,6 +49,8 @@ pub fn de_create_network_interface_permission(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateNetworkInterfacePermissionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateNetworkInterfacePermissionResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_create_network_interface_permission(
             s if s.matches("interfacePermission") /* InterfacePermission com.amazonaws.ec2.synthetic#CreateNetworkInterfacePermissionOutput$InterfacePermission */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_network_interface_permission::de_network_interface_permission(&mut tag)
+                        crate::protocol_serde::shape_network_interface_permission::de_network_interface_permission(&mut tag, depth + 1)
                         ?
                     )
                 ;

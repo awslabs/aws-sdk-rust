@@ -73,22 +73,32 @@ pub(crate) fn de_describe_portfolio(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "PortfolioDetail" => {
-                    builder = builder.set_portfolio_detail(crate::protocol_serde::shape_portfolio_detail::de_portfolio_detail(tokens, _value)?);
+                    builder = builder.set_portfolio_detail(crate::protocol_serde::shape_portfolio_detail::de_portfolio_detail(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "TagOptions" => {
-                    builder = builder.set_tag_options(crate::protocol_serde::shape_tag_option_details::de_tag_option_details(tokens, _value)?);
+                    builder = builder.set_tag_options(crate::protocol_serde::shape_tag_option_details::de_tag_option_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Budgets" => {
-                    builder = builder.set_budgets(crate::protocol_serde::shape_budgets::de_budgets(tokens, _value)?);
+                    builder = builder.set_budgets(crate::protocol_serde::shape_budgets::de_budgets(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

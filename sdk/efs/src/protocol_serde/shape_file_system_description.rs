@@ -2,10 +2,16 @@
 pub(crate) fn de_file_system_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FileSystemDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -71,7 +77,11 @@ where
                             );
                         }
                         "SizeInBytes" => {
-                            builder = builder.set_size_in_bytes(crate::protocol_serde::shape_file_system_size::de_file_system_size(tokens, _value)?);
+                            builder = builder.set_size_in_bytes(crate::protocol_serde::shape_file_system_size::de_file_system_size(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PerformanceMode" => {
                             builder = builder.set_performance_mode(
@@ -117,12 +127,14 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "FileSystemProtection" => {
                             builder = builder.set_file_system_protection(
                                 crate::protocol_serde::shape_file_system_protection_description::de_file_system_protection_description(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

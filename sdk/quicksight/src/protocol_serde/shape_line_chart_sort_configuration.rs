@@ -51,10 +51,16 @@ pub fn ser_line_chart_sort_configuration(
 pub(crate) fn de_line_chart_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LineChartSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,34 +69,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "CategorySort" => {
-                            builder = builder.set_category_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "CategorySort" => {
+                                builder = builder.set_category_sort(
+                                    crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "CategoryItemsLimitConfiguration" => {
+                                builder = builder.set_category_items_limit_configuration(
+                                    crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ColorItemsLimitConfiguration" => {
+                                builder = builder.set_color_items_limit_configuration(
+                                    crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "SmallMultiplesSort" => {
+                                builder = builder.set_small_multiples_sort(
+                                    crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "SmallMultiplesLimitConfiguration" => {
+                                builder = builder.set_small_multiples_limit_configuration(
+                                    crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "CategoryItemsLimitConfiguration" => {
-                            builder = builder.set_category_items_limit_configuration(
-                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value)?,
-                            );
-                        }
-                        "ColorItemsLimitConfiguration" => {
-                            builder = builder.set_color_items_limit_configuration(
-                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value)?,
-                            );
-                        }
-                        "SmallMultiplesSort" => {
-                            builder = builder.set_small_multiples_sort(
-                                crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens, _value)?,
-                            );
-                        }
-                        "SmallMultiplesLimitConfiguration" => {
-                            builder = builder.set_small_multiples_limit_configuration(
-                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

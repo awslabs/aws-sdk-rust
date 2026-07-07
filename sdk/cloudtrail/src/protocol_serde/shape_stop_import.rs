@@ -118,6 +118,8 @@ pub(crate) fn de_stop_import(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -131,10 +133,14 @@ pub(crate) fn de_stop_import(
                     );
                 }
                 "ImportSource" => {
-                    builder = builder.set_import_source(crate::protocol_serde::shape_import_source::de_import_source(tokens, _value)?);
+                    builder = builder.set_import_source(crate::protocol_serde::shape_import_source::de_import_source(tokens, _value, depth + 1)?);
                 }
                 "Destinations" => {
-                    builder = builder.set_destinations(crate::protocol_serde::shape_import_destinations::de_import_destinations(tokens, _value)?);
+                    builder = builder.set_destinations(crate::protocol_serde::shape_import_destinations::de_import_destinations(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ImportStatus" => {
                     builder = builder.set_import_status(
@@ -168,7 +174,11 @@ pub(crate) fn de_stop_import(
                     )?);
                 }
                 "ImportStatistics" => {
-                    builder = builder.set_import_statistics(crate::protocol_serde::shape_import_statistics::de_import_statistics(tokens, _value)?);
+                    builder = builder.set_import_statistics(crate::protocol_serde::shape_import_statistics::de_import_statistics(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

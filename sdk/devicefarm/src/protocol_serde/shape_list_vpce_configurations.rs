@@ -96,14 +96,19 @@ pub(crate) fn de_list_vpce_configurations(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "vpceConfigurations" => {
-                    builder =
-                        builder.set_vpce_configurations(crate::protocol_serde::shape_vpce_configurations::de_vpce_configurations(tokens, _value)?);
+                    builder = builder.set_vpce_configurations(crate::protocol_serde::shape_vpce_configurations::de_vpce_configurations(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

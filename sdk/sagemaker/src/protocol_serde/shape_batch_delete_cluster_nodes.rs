@@ -81,6 +81,8 @@ pub(crate) fn de_batch_delete_cluster_nodes(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -88,20 +90,28 @@ pub(crate) fn de_batch_delete_cluster_nodes(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Failed" => {
                     builder = builder.set_failed(
-                        crate::protocol_serde::shape_batch_delete_cluster_nodes_error_list::de_batch_delete_cluster_nodes_error_list(tokens, _value)?,
+                        crate::protocol_serde::shape_batch_delete_cluster_nodes_error_list::de_batch_delete_cluster_nodes_error_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Successful" => {
-                    builder = builder.set_successful(crate::protocol_serde::shape_cluster_node_ids::de_cluster_node_ids(tokens, _value)?);
+                    builder = builder.set_successful(crate::protocol_serde::shape_cluster_node_ids::de_cluster_node_ids(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "FailedNodeLogicalIds" => {
                     builder = builder.set_failed_node_logical_ids(
-                            crate::protocol_serde::shape_batch_delete_cluster_node_logical_ids_error_list::de_batch_delete_cluster_node_logical_ids_error_list(tokens, _value)?
+                            crate::protocol_serde::shape_batch_delete_cluster_node_logical_ids_error_list::de_batch_delete_cluster_node_logical_ids_error_list(tokens, _value, depth + 1)?
                         );
                 }
                 "SuccessfulNodeLogicalIds" => {
                     builder = builder.set_successful_node_logical_ids(
-                        crate::protocol_serde::shape_cluster_node_logical_id_list::de_cluster_node_logical_id_list(tokens, _value)?,
+                        crate::protocol_serde::shape_cluster_node_logical_id_list::de_cluster_node_logical_id_list(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

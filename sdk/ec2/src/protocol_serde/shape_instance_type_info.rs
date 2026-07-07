@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_type_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceTypeInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceTypeInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -54,7 +58,7 @@ pub fn de_instance_type_info(
             s if s.matches("supportedUsageClasses") /* SupportedUsageClasses com.amazonaws.ec2#InstanceTypeInfo$SupportedUsageClasses */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_usage_class_type_list::de_usage_class_type_list(&mut tag)
+                        crate::protocol_serde::shape_usage_class_type_list::de_usage_class_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -64,7 +68,7 @@ pub fn de_instance_type_info(
             s if s.matches("supportedRootDeviceTypes") /* SupportedRootDeviceTypes com.amazonaws.ec2#InstanceTypeInfo$SupportedRootDeviceTypes */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_root_device_type_list::de_root_device_type_list(&mut tag)
+                        crate::protocol_serde::shape_root_device_type_list::de_root_device_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -74,7 +78,7 @@ pub fn de_instance_type_info(
             s if s.matches("supportedVirtualizationTypes") /* SupportedVirtualizationTypes com.amazonaws.ec2#InstanceTypeInfo$SupportedVirtualizationTypes */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_virtualization_type_list::de_virtualization_type_list(&mut tag)
+                        crate::protocol_serde::shape_virtualization_type_list::de_virtualization_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -113,7 +117,7 @@ pub fn de_instance_type_info(
             s if s.matches("processorInfo") /* ProcessorInfo com.amazonaws.ec2#InstanceTypeInfo$ProcessorInfo */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_processor_info::de_processor_info(&mut tag)
+                        crate::protocol_serde::shape_processor_info::de_processor_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -123,7 +127,7 @@ pub fn de_instance_type_info(
             s if s.matches("vCpuInfo") /* VCpuInfo com.amazonaws.ec2#InstanceTypeInfo$VCpuInfo */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_v_cpu_info::de_v_cpu_info(&mut tag)
+                        crate::protocol_serde::shape_v_cpu_info::de_v_cpu_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -133,7 +137,7 @@ pub fn de_instance_type_info(
             s if s.matches("memoryInfo") /* MemoryInfo com.amazonaws.ec2#InstanceTypeInfo$MemoryInfo */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_memory_info::de_memory_info(&mut tag)
+                        crate::protocol_serde::shape_memory_info::de_memory_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -158,7 +162,7 @@ pub fn de_instance_type_info(
             s if s.matches("instanceStorageInfo") /* InstanceStorageInfo com.amazonaws.ec2#InstanceTypeInfo$InstanceStorageInfo */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_instance_storage_info::de_instance_storage_info(&mut tag)
+                        crate::protocol_serde::shape_instance_storage_info::de_instance_storage_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -168,7 +172,7 @@ pub fn de_instance_type_info(
             s if s.matches("ebsInfo") /* EbsInfo com.amazonaws.ec2#InstanceTypeInfo$EbsInfo */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_ebs_info::de_ebs_info(&mut tag)
+                        crate::protocol_serde::shape_ebs_info::de_ebs_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -178,7 +182,7 @@ pub fn de_instance_type_info(
             s if s.matches("networkInfo") /* NetworkInfo com.amazonaws.ec2#InstanceTypeInfo$NetworkInfo */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_network_info::de_network_info(&mut tag)
+                        crate::protocol_serde::shape_network_info::de_network_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -188,7 +192,7 @@ pub fn de_instance_type_info(
             s if s.matches("gpuInfo") /* GpuInfo com.amazonaws.ec2#InstanceTypeInfo$GpuInfo */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_gpu_info::de_gpu_info(&mut tag)
+                        crate::protocol_serde::shape_gpu_info::de_gpu_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -198,7 +202,7 @@ pub fn de_instance_type_info(
             s if s.matches("fpgaInfo") /* FpgaInfo com.amazonaws.ec2#InstanceTypeInfo$FpgaInfo */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_fpga_info::de_fpga_info(&mut tag)
+                        crate::protocol_serde::shape_fpga_info::de_fpga_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -208,7 +212,7 @@ pub fn de_instance_type_info(
             s if s.matches("placementGroupInfo") /* PlacementGroupInfo com.amazonaws.ec2#InstanceTypeInfo$PlacementGroupInfo */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_placement_group_info::de_placement_group_info(&mut tag)
+                        crate::protocol_serde::shape_placement_group_info::de_placement_group_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -218,7 +222,7 @@ pub fn de_instance_type_info(
             s if s.matches("inferenceAcceleratorInfo") /* InferenceAcceleratorInfo com.amazonaws.ec2#InstanceTypeInfo$InferenceAcceleratorInfo */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_inference_accelerator_info::de_inference_accelerator_info(&mut tag)
+                        crate::protocol_serde::shape_inference_accelerator_info::de_inference_accelerator_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -288,7 +292,7 @@ pub fn de_instance_type_info(
             s if s.matches("supportedBootModes") /* SupportedBootModes com.amazonaws.ec2#InstanceTypeInfo$SupportedBootModes */ =>  {
                 let var_24 =
                     Some(
-                        crate::protocol_serde::shape_boot_mode_type_list::de_boot_mode_type_list(&mut tag)
+                        crate::protocol_serde::shape_boot_mode_type_list::de_boot_mode_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -326,7 +330,7 @@ pub fn de_instance_type_info(
             s if s.matches("nitroTpmInfo") /* NitroTpmInfo com.amazonaws.ec2#InstanceTypeInfo$NitroTpmInfo */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_nitro_tpm_info::de_nitro_tpm_info(&mut tag)
+                        crate::protocol_serde::shape_nitro_tpm_info::de_nitro_tpm_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -336,7 +340,7 @@ pub fn de_instance_type_info(
             s if s.matches("mediaAcceleratorInfo") /* MediaAcceleratorInfo com.amazonaws.ec2#InstanceTypeInfo$MediaAcceleratorInfo */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_media_accelerator_info::de_media_accelerator_info(&mut tag)
+                        crate::protocol_serde::shape_media_accelerator_info::de_media_accelerator_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -346,7 +350,7 @@ pub fn de_instance_type_info(
             s if s.matches("neuronInfo") /* NeuronInfo com.amazonaws.ec2#InstanceTypeInfo$NeuronInfo */ =>  {
                 let var_29 =
                     Some(
-                        crate::protocol_serde::shape_neuron_info::de_neuron_info(&mut tag)
+                        crate::protocol_serde::shape_neuron_info::de_neuron_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -379,6 +383,21 @@ pub fn de_instance_type_info(
                     )
                 ;
                 builder = builder.set_reboot_migration_support(var_31);
+            }
+            ,
+            s if s.matches("supportedInRegion") /* SupportedInRegion com.amazonaws.ec2#InstanceTypeInfo$SupportedInRegion */ =>  {
+                let var_32 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#SupportedInRegion`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_in_region(var_32);
             }
             ,
             _ => {}

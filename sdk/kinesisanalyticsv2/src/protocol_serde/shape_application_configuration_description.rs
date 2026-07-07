@@ -2,10 +2,16 @@
 pub(crate) fn de_application_configuration_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ApplicationConfigurationDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,61 +20,73 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "SqlApplicationConfigurationDescription" => {
-                            builder = builder.set_sql_application_configuration_description(
-                                crate::protocol_serde::shape_sql_application_configuration_description::de_sql_application_configuration_description(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "ApplicationCodeConfigurationDescription" => {
-                            builder = builder.set_application_code_configuration_description(
-                                    crate::protocol_serde::shape_application_code_configuration_description::de_application_code_configuration_description(tokens, _value)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "SqlApplicationConfigurationDescription" => {
+                                builder = builder.set_sql_application_configuration_description(
+                                    crate::protocol_serde::shape_sql_application_configuration_description::de_sql_application_configuration_description(tokens, _value, depth + 1)?
                                 );
-                        }
-                        "RunConfigurationDescription" => {
-                            builder = builder.set_run_configuration_description(
-                                crate::protocol_serde::shape_run_configuration_description::de_run_configuration_description(tokens, _value)?,
-                            );
-                        }
-                        "FlinkApplicationConfigurationDescription" => {
-                            builder = builder.set_flink_application_configuration_description(
-                                    crate::protocol_serde::shape_flink_application_configuration_description::de_flink_application_configuration_description(tokens, _value)?
+                            }
+                            "ApplicationCodeConfigurationDescription" => {
+                                builder = builder.set_application_code_configuration_description(
+                                    crate::protocol_serde::shape_application_code_configuration_description::de_application_code_configuration_description(tokens, _value, depth + 1)?
                                 );
-                        }
-                        "EnvironmentPropertyDescriptions" => {
-                            builder = builder.set_environment_property_descriptions(
-                                crate::protocol_serde::shape_environment_property_descriptions::de_environment_property_descriptions(tokens, _value)?,
-                            );
-                        }
-                        "ApplicationSnapshotConfigurationDescription" => {
-                            builder = builder.set_application_snapshot_configuration_description(
-                                    crate::protocol_serde::shape_application_snapshot_configuration_description::de_application_snapshot_configuration_description(tokens, _value)?
+                            }
+                            "RunConfigurationDescription" => {
+                                builder = builder.set_run_configuration_description(
+                                    crate::protocol_serde::shape_run_configuration_description::de_run_configuration_description(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
-                        }
-                        "ApplicationSystemRollbackConfigurationDescription" => {
-                            builder = builder.set_application_system_rollback_configuration_description(
-                                    crate::protocol_serde::shape_application_system_rollback_configuration_description::de_application_system_rollback_configuration_description(tokens, _value)?
+                            }
+                            "FlinkApplicationConfigurationDescription" => {
+                                builder = builder.set_flink_application_configuration_description(
+                                    crate::protocol_serde::shape_flink_application_configuration_description::de_flink_application_configuration_description(tokens, _value, depth + 1)?
                                 );
-                        }
-                        "VpcConfigurationDescriptions" => {
-                            builder = builder.set_vpc_configuration_descriptions(
-                                crate::protocol_serde::shape_vpc_configuration_descriptions::de_vpc_configuration_descriptions(tokens, _value)?,
-                            );
-                        }
-                        "ZeppelinApplicationConfigurationDescription" => {
-                            builder = builder.set_zeppelin_application_configuration_description(
-                                    crate::protocol_serde::shape_zeppelin_application_configuration_description::de_zeppelin_application_configuration_description(tokens, _value)?
+                            }
+                            "EnvironmentPropertyDescriptions" => {
+                                builder = builder.set_environment_property_descriptions(
+                                    crate::protocol_serde::shape_environment_property_descriptions::de_environment_property_descriptions(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
-                        }
-                        "ApplicationEncryptionConfigurationDescription" => {
-                            builder = builder.set_application_encryption_configuration_description(
-                                    crate::protocol_serde::shape_application_encryption_configuration_description::de_application_encryption_configuration_description(tokens, _value)?
+                            }
+                            "ApplicationSnapshotConfigurationDescription" => {
+                                builder = builder.set_application_snapshot_configuration_description(
+                                    crate::protocol_serde::shape_application_snapshot_configuration_description::de_application_snapshot_configuration_description(tokens, _value, depth + 1)?
                                 );
+                            }
+                            "ApplicationSystemRollbackConfigurationDescription" => {
+                                builder = builder.set_application_system_rollback_configuration_description(
+                                    crate::protocol_serde::shape_application_system_rollback_configuration_description::de_application_system_rollback_configuration_description(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "VpcConfigurationDescriptions" => {
+                                builder = builder.set_vpc_configuration_descriptions(
+                                    crate::protocol_serde::shape_vpc_configuration_descriptions::de_vpc_configuration_descriptions(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ZeppelinApplicationConfigurationDescription" => {
+                                builder = builder.set_zeppelin_application_configuration_description(
+                                    crate::protocol_serde::shape_zeppelin_application_configuration_description::de_zeppelin_application_configuration_description(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "ApplicationEncryptionConfigurationDescription" => {
+                                builder = builder.set_application_encryption_configuration_description(
+                                    crate::protocol_serde::shape_application_encryption_configuration_description::de_application_encryption_configuration_description(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

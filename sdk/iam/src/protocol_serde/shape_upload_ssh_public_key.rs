@@ -134,6 +134,8 @@ pub fn de_upload_ssh_public_key(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("UploadSSHPublicKeyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected UploadSSHPublicKeyResponse got {start_el:?}"
@@ -151,7 +153,7 @@ pub fn de_upload_ssh_public_key(
             s if s.matches("SSHPublicKey") /* SSHPublicKey com.amazonaws.iam.synthetic#UploadSSHPublicKeyOutput$SSHPublicKey */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ssh_public_key::de_ssh_public_key(&mut tag)
+                        crate::protocol_serde::shape_ssh_public_key::de_ssh_public_key(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -389,6 +389,8 @@ pub fn de_restore_db_instance_from_s3(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RestoreDBInstanceFromS3Response")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RestoreDBInstanceFromS3Response got {start_el:?}"
@@ -406,7 +408,7 @@ pub fn de_restore_db_instance_from_s3(
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#RestoreDBInstanceFromS3Output$DBInstance */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_instance::de_db_instance(&mut tag)
+                        crate::protocol_serde::shape_db_instance::de_db_instance(&mut tag, depth + 1)
                         ?
                     )
                 ;

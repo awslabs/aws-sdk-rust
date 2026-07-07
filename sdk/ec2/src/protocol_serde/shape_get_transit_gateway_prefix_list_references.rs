@@ -53,6 +53,8 @@ pub fn de_get_transit_gateway_prefix_list_references(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetTransitGatewayPrefixListReferencesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetTransitGatewayPrefixListReferencesResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_get_transit_gateway_prefix_list_references(
             s if s.matches("transitGatewayPrefixListReferenceSet") /* TransitGatewayPrefixListReferences com.amazonaws.ec2.synthetic#GetTransitGatewayPrefixListReferencesOutput$TransitGatewayPrefixListReferences */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_prefix_list_reference_set::de_transit_gateway_prefix_list_reference_set(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_prefix_list_reference_set::de_transit_gateway_prefix_list_reference_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

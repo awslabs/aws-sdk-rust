@@ -184,6 +184,20 @@ impl CreateCollectionGroupFluentBuilder {
     pub fn get_capacity_limits(&self) -> &::std::option::Option<crate::types::CollectionGroupCapacityLimits> {
         self.inner.get_capacity_limits()
     }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group. Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+    pub fn generation(mut self, input: crate::types::ServerlessGeneration) -> Self {
+        self.inner = self.inner.generation(input);
+        self
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group. Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+    pub fn set_generation(mut self, input: ::std::option::Option<crate::types::ServerlessGeneration>) -> Self {
+        self.inner = self.inner.set_generation(input);
+        self
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group. Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+    pub fn get_generation(&self) -> &::std::option::Option<crate::types::ServerlessGeneration> {
+        self.inner.get_generation()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

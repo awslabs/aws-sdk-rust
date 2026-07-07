@@ -25,10 +25,16 @@ pub fn ser_redshift_credentials(
 pub(crate) fn de_redshift_credentials<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RedshiftCredentials>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -62,7 +68,7 @@ where
                                 })?,
                         )),
                         "usernamePassword" => Some(crate::types::RedshiftCredentials::UsernamePassword(
-                            crate::protocol_serde::shape_username_password::de_username_password(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_username_password::de_username_password(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'usernamePassword' cannot be null")
                             })?,
                         )),

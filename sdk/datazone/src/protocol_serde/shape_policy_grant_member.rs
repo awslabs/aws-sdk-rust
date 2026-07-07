@@ -2,10 +2,16 @@
 pub(crate) fn de_policy_grant_member<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PolicyGrantMember>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,11 +23,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "principal" => {
                             builder = builder.set_principal(crate::protocol_serde::shape_policy_grant_principal::de_policy_grant_principal(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "detail" => {
-                            builder = builder.set_detail(crate::protocol_serde::shape_policy_grant_detail::de_policy_grant_detail(tokens, _value)?);
+                            builder = builder.set_detail(crate::protocol_serde::shape_policy_grant_detail::de_policy_grant_detail(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

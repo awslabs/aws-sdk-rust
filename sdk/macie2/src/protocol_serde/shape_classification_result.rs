@@ -2,10 +2,16 @@
 pub(crate) fn de_classification_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClassificationResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -20,7 +26,7 @@ where
                         }
                         "customDataIdentifiers" => {
                             builder = builder.set_custom_data_identifiers(
-                                crate::protocol_serde::shape_custom_data_identifiers::de_custom_data_identifiers(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_data_identifiers::de_custom_data_identifiers(tokens, _value, depth + 1)?,
                             );
                         }
                         "mimeType" => {
@@ -31,7 +37,11 @@ where
                             );
                         }
                         "sensitiveData" => {
-                            builder = builder.set_sensitive_data(crate::protocol_serde::shape_sensitive_data::de_sensitive_data(tokens, _value)?);
+                            builder = builder.set_sensitive_data(crate::protocol_serde::shape_sensitive_data::de_sensitive_data(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "sizeClassified" => {
                             builder = builder.set_size_classified(
@@ -42,7 +52,11 @@ where
                         }
                         "status" => {
                             builder = builder.set_status(
-                                crate::protocol_serde::shape_classification_result_status::de_classification_result_status(tokens, _value)?,
+                                crate::protocol_serde::shape_classification_result_status::de_classification_result_status(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

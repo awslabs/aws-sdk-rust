@@ -49,6 +49,8 @@ pub fn de_get_managed_prefix_list_associations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetManagedPrefixListAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetManagedPrefixListAssociationsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_get_managed_prefix_list_associations(
             s if s.matches("prefixListAssociationSet") /* PrefixListAssociations com.amazonaws.ec2.synthetic#GetManagedPrefixListAssociationsOutput$PrefixListAssociations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_prefix_list_association_set::de_prefix_list_association_set(&mut tag)
+                        crate::protocol_serde::shape_prefix_list_association_set::de_prefix_list_association_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

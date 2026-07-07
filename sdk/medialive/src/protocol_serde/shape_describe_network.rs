@@ -152,6 +152,8 @@ pub(crate) fn de_describe_network(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -165,7 +167,11 @@ pub(crate) fn de_describe_network(
                     );
                 }
                 "associatedClusterIds" => {
-                    builder = builder.set_associated_cluster_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                    builder = builder.set_associated_cluster_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -175,7 +181,11 @@ pub(crate) fn de_describe_network(
                     );
                 }
                 "ipPools" => {
-                    builder = builder.set_ip_pools(crate::protocol_serde::shape_list_of_ip_pool::de_list_of_ip_pool(tokens, _value)?);
+                    builder = builder.set_ip_pools(crate::protocol_serde::shape_list_of_ip_pool::de_list_of_ip_pool(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -185,7 +195,7 @@ pub(crate) fn de_describe_network(
                     );
                 }
                 "routes" => {
-                    builder = builder.set_routes(crate::protocol_serde::shape_list_of_route::de_list_of_route(tokens, _value)?);
+                    builder = builder.set_routes(crate::protocol_serde::shape_list_of_route::de_list_of_route(tokens, _value, depth + 1)?);
                 }
                 "state" => {
                     builder = builder.set_state(

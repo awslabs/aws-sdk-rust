@@ -20,7 +20,11 @@ pub fn ser_application_version_lifecycle_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_application_version_lifecycle_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ApplicationVersionLifecycleConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ApplicationVersionLifecycleConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -28,7 +32,7 @@ pub fn de_application_version_lifecycle_config(
             s if s.matches("MaxCountRule") /* MaxCountRule com.amazonaws.elasticbeanstalk#ApplicationVersionLifecycleConfig$MaxCountRule */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_max_count_rule::de_max_count_rule(&mut tag)
+                        crate::protocol_serde::shape_max_count_rule::de_max_count_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -38,7 +42,7 @@ pub fn de_application_version_lifecycle_config(
             s if s.matches("MaxAgeRule") /* MaxAgeRule com.amazonaws.elasticbeanstalk#ApplicationVersionLifecycleConfig$MaxAgeRule */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_max_age_rule::de_max_age_rule(&mut tag)
+                        crate::protocol_serde::shape_max_age_rule::de_max_age_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;

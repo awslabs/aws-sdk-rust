@@ -2,10 +2,16 @@
 pub(crate) fn de_geocode_parsed_query_address_components<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GeocodeParsedQueryAddressComponents>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,67 +23,81 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Country" => {
                             builder = builder.set_country(crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Region" => {
                             builder = builder.set_region(crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SubRegion" => {
                             builder = builder.set_sub_region(
-                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value)?,
+                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Locality" => {
                             builder = builder.set_locality(crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "District" => {
                             builder = builder.set_district(crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SubDistrict" => {
                             builder = builder.set_sub_district(
-                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value)?,
+                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "PostalCode" => {
                             builder = builder.set_postal_code(
-                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value)?,
+                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Block" => {
                             builder = builder.set_block(crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SubBlock" => {
                             builder = builder.set_sub_block(
-                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value)?,
+                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Street" => {
                             builder = builder.set_street(crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "AddressNumber" => {
                             builder = builder.set_address_number(
-                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value)?,
+                                crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Building" => {
                             builder = builder.set_building(crate::protocol_serde::shape_parsed_query_component_list::de_parsed_query_component_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SecondaryAddressComponents" => {
                             builder = builder.set_secondary_address_components(
-                                    crate::protocol_serde::shape_parsed_query_secondary_address_component_list::de_parsed_query_secondary_address_component_list(tokens, _value)?
+                                    crate::protocol_serde::shape_parsed_query_secondary_address_component_list::de_parsed_query_secondary_address_component_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

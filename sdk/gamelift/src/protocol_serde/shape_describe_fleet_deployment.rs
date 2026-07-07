@@ -140,22 +140,29 @@ pub(crate) fn de_describe_fleet_deployment(
     crate::operation::describe_fleet_deployment::builders::DescribeFleetDeploymentOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_fleet_deployment::builders::DescribeFleetDeploymentOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_deployment::builders::DescribeFleetDeploymentOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "FleetDeployment" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_fleet_deployment(Some(crate::protocol_serde::shape_fleet_deployment::de_fleet_deployment(decoder)?)))
+                Ok(
+                    builder.set_fleet_deployment(Some(crate::protocol_serde::shape_fleet_deployment::de_fleet_deployment(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "LocationalDeployments" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_locational_deployments(Some(crate::protocol_serde::shape_locational_deployments::de_locational_deployments(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -168,6 +175,8 @@ pub(crate) fn de_describe_fleet_deployment(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -177,13 +186,13 @@ pub(crate) fn de_describe_fleet_deployment(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

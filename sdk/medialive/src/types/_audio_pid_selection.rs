@@ -6,11 +6,19 @@
 pub struct AudioPidSelection {
     /// Selects a specific PID from within a source.
     pub pid: ::std::option::Option<i32>,
+    /// Selects one or more unique PIDs from within a source. When using 'pids', you can specify per-PID audio pre-mixer settings.
+    pub pids: ::std::option::Option<::std::vec::Vec<crate::types::AudioPid>>,
 }
 impl AudioPidSelection {
     /// Selects a specific PID from within a source.
     pub fn pid(&self) -> ::std::option::Option<i32> {
         self.pid
+    }
+    /// Selects one or more unique PIDs from within a source. When using 'pids', you can specify per-PID audio pre-mixer settings.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pids.is_none()`.
+    pub fn pids(&self) -> &[crate::types::AudioPid] {
+        self.pids.as_deref().unwrap_or_default()
     }
 }
 impl AudioPidSelection {
@@ -25,6 +33,7 @@ impl AudioPidSelection {
 #[non_exhaustive]
 pub struct AudioPidSelectionBuilder {
     pub(crate) pid: ::std::option::Option<i32>,
+    pub(crate) pids: ::std::option::Option<::std::vec::Vec<crate::types::AudioPid>>,
 }
 impl AudioPidSelectionBuilder {
     /// Selects a specific PID from within a source.
@@ -42,8 +51,31 @@ impl AudioPidSelectionBuilder {
     pub fn get_pid(&self) -> &::std::option::Option<i32> {
         &self.pid
     }
+    /// Appends an item to `pids`.
+    ///
+    /// To override the contents of this collection use [`set_pids`](Self::set_pids).
+    ///
+    /// Selects one or more unique PIDs from within a source. When using 'pids', you can specify per-PID audio pre-mixer settings.
+    pub fn pids(mut self, input: crate::types::AudioPid) -> Self {
+        let mut v = self.pids.unwrap_or_default();
+        v.push(input);
+        self.pids = ::std::option::Option::Some(v);
+        self
+    }
+    /// Selects one or more unique PIDs from within a source. When using 'pids', you can specify per-PID audio pre-mixer settings.
+    pub fn set_pids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioPid>>) -> Self {
+        self.pids = input;
+        self
+    }
+    /// Selects one or more unique PIDs from within a source. When using 'pids', you can specify per-PID audio pre-mixer settings.
+    pub fn get_pids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioPid>> {
+        &self.pids
+    }
     /// Consumes the builder and constructs a [`AudioPidSelection`](crate::types::AudioPidSelection).
     pub fn build(self) -> crate::types::AudioPidSelection {
-        crate::types::AudioPidSelection { pid: self.pid }
+        crate::types::AudioPidSelection {
+            pid: self.pid,
+            pids: self.pids,
+        }
     }
 }

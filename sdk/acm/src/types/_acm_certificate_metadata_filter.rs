@@ -4,6 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AcmCertificateMetadataFilter {
+    /// <p>Filter by ACME account identifier.</p>
+    AcmeAccountId(::std::string::String),
+    /// <p>Filter by ACME endpoint ARN.</p>
+    AcmeEndpointArn(::std::string::String),
+    /// <p>Filter by certificate key pair origin.</p>
+    CertificateKeyPairOrigin(crate::types::CertificateKeyPairOrigin),
     /// <p>Filter by certificate export option.</p>
     ExportOption(crate::types::CertificateExport),
     /// <p>Filter by whether the certificate has been exported.</p>
@@ -31,6 +37,45 @@ pub enum AcmCertificateMetadataFilter {
     Unknown,
 }
 impl AcmCertificateMetadataFilter {
+    /// Tries to convert the enum instance into [`AcmeAccountId`](crate::types::AcmCertificateMetadataFilter::AcmeAccountId), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_acme_account_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let AcmCertificateMetadataFilter::AcmeAccountId(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AcmeAccountId`](crate::types::AcmCertificateMetadataFilter::AcmeAccountId).
+    pub fn is_acme_account_id(&self) -> bool {
+        self.as_acme_account_id().is_ok()
+    }
+    /// Tries to convert the enum instance into [`AcmeEndpointArn`](crate::types::AcmCertificateMetadataFilter::AcmeEndpointArn), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_acme_endpoint_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let AcmCertificateMetadataFilter::AcmeEndpointArn(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AcmeEndpointArn`](crate::types::AcmCertificateMetadataFilter::AcmeEndpointArn).
+    pub fn is_acme_endpoint_arn(&self) -> bool {
+        self.as_acme_endpoint_arn().is_ok()
+    }
+    /// Tries to convert the enum instance into [`CertificateKeyPairOrigin`](crate::types::AcmCertificateMetadataFilter::CertificateKeyPairOrigin), extracting the inner [`CertificateKeyPairOrigin`](crate::types::CertificateKeyPairOrigin).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_certificate_key_pair_origin(&self) -> ::std::result::Result<&crate::types::CertificateKeyPairOrigin, &Self> {
+        if let AcmCertificateMetadataFilter::CertificateKeyPairOrigin(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CertificateKeyPairOrigin`](crate::types::AcmCertificateMetadataFilter::CertificateKeyPairOrigin).
+    pub fn is_certificate_key_pair_origin(&self) -> bool {
+        self.as_certificate_key_pair_origin().is_ok()
+    }
     /// Tries to convert the enum instance into [`ExportOption`](crate::types::AcmCertificateMetadataFilter::ExportOption), extracting the inner [`CertificateExport`](crate::types::CertificateExport).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_export_option(&self) -> ::std::result::Result<&crate::types::CertificateExport, &Self> {

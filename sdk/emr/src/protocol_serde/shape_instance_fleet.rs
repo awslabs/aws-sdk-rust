@@ -2,10 +2,16 @@
 pub(crate) fn de_instance_fleet<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InstanceFleet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,9 @@ where
                         }
                         "Status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_instance_fleet_status::de_instance_fleet_status(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InstanceFleetType" => {
@@ -71,18 +79,24 @@ where
                         }
                         "InstanceTypeSpecifications" => {
                             builder = builder.set_instance_type_specifications(
-                                crate::protocol_serde::shape_instance_type_specification_list::de_instance_type_specification_list(tokens, _value)?,
+                                crate::protocol_serde::shape_instance_type_specification_list::de_instance_type_specification_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "LaunchSpecifications" => {
                             builder = builder.set_launch_specifications(
-                                    crate::protocol_serde::shape_instance_fleet_provisioning_specifications::de_instance_fleet_provisioning_specifications(tokens, _value)?
+                                    crate::protocol_serde::shape_instance_fleet_provisioning_specifications::de_instance_fleet_provisioning_specifications(tokens, _value, depth + 1)?
                                 );
                         }
                         "ResizeSpecifications" => {
                             builder = builder.set_resize_specifications(
                                 crate::protocol_serde::shape_instance_fleet_resizing_specifications::de_instance_fleet_resizing_specifications(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -2,10 +2,16 @@
 pub(crate) fn de_chat_metrics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ChatMetrics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,22 +20,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ChatContactMetrics" => {
-                            builder = builder.set_chat_contact_metrics(crate::protocol_serde::shape_chat_contact_metrics::de_chat_contact_metrics(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ChatContactMetrics" => {
+                                builder = builder.set_chat_contact_metrics(
+                                    crate::protocol_serde::shape_chat_contact_metrics::de_chat_contact_metrics(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "AgentMetrics" => {
+                                builder = builder.set_agent_metrics(crate::protocol_serde::shape_participant_metrics::de_participant_metrics(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CustomerMetrics" => {
+                                builder = builder.set_customer_metrics(crate::protocol_serde::shape_participant_metrics::de_participant_metrics(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "AgentMetrics" => {
-                            builder =
-                                builder.set_agent_metrics(crate::protocol_serde::shape_participant_metrics::de_participant_metrics(tokens, _value)?);
-                        }
-                        "CustomerMetrics" => {
-                            builder = builder
-                                .set_customer_metrics(crate::protocol_serde::shape_participant_metrics::de_participant_metrics(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

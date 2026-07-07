@@ -30,10 +30,16 @@ pub fn ser_date_time_default_values(
 pub(crate) fn de_date_time_default_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DateTimeDefaultValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,17 +51,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DynamicValue" => {
                             builder = builder.set_dynamic_value(crate::protocol_serde::shape_dynamic_default_value::de_dynamic_default_value(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "StaticValues" => {
                             builder = builder.set_static_values(
-                                crate::protocol_serde::shape_date_time_default_value_list::de_date_time_default_value_list(tokens, _value)?,
+                                crate::protocol_serde::shape_date_time_default_value_list::de_date_time_default_value_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "RollingDate" => {
                             builder = builder.set_rolling_date(
-                                crate::protocol_serde::shape_rolling_date_configuration::de_rolling_date_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_rolling_date_configuration::de_rolling_date_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

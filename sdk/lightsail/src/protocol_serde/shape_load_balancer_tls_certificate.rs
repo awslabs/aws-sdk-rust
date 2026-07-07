@@ -2,10 +2,16 @@
 pub(crate) fn de_load_balancer_tls_certificate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LoadBalancerTlsCertificate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -43,7 +49,11 @@ where
                             )?);
                         }
                         "location" => {
-                            builder = builder.set_location(crate::protocol_serde::shape_resource_location::de_resource_location(tokens, _value)?);
+                            builder = builder.set_location(crate::protocol_serde::shape_resource_location::de_resource_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceType" => {
                             builder = builder.set_resource_type(
@@ -53,7 +63,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "loadBalancerName" => {
                             builder = builder.set_load_balancer_name(
@@ -81,7 +91,7 @@ where
                         }
                         "domainValidationRecords" => {
                             builder = builder.set_domain_validation_records(
-                                    crate::protocol_serde::shape_load_balancer_tls_certificate_domain_validation_record_list::de_load_balancer_tls_certificate_domain_validation_record_list(tokens, _value)?
+                                    crate::protocol_serde::shape_load_balancer_tls_certificate_domain_validation_record_list::de_load_balancer_tls_certificate_domain_validation_record_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "failureReason" => {
@@ -128,7 +138,7 @@ where
                         }
                         "renewalSummary" => {
                             builder = builder.set_renewal_summary(
-                                    crate::protocol_serde::shape_load_balancer_tls_certificate_renewal_summary::de_load_balancer_tls_certificate_renewal_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_load_balancer_tls_certificate_renewal_summary::de_load_balancer_tls_certificate_renewal_summary(tokens, _value, depth + 1)?
                                 );
                         }
                         "revocationReason" => {
@@ -169,8 +179,11 @@ where
                             );
                         }
                         "subjectAlternativeNames" => {
-                            builder =
-                                builder.set_subject_alternative_names(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_subject_alternative_names(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

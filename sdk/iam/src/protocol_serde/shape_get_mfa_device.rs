@@ -80,6 +80,8 @@ pub fn de_get_mfa_device(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetMFADeviceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetMFADeviceResponse got {start_el:?}"
@@ -137,7 +139,7 @@ pub fn de_get_mfa_device(
             s if s.matches("Certifications") /* Certifications com.amazonaws.iam.synthetic#GetMFADeviceOutput$Certifications */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_certification_map_type::de_certification_map_type(&mut tag)
+                        crate::protocol_serde::shape_certification_map_type::de_certification_map_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -15,6 +15,7 @@
 ///     LogType::Access => { /* ... */ },
 ///     LogType::Application => { /* ... */ },
 ///     LogType::Connection => { /* ... */ },
+///     LogType::S3ServerAccess => { /* ... */ },
 ///     LogType::SecurityFinding => { /* ... */ },
 ///     LogType::Usage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,8 @@ pub enum LogType {
     #[allow(missing_docs)] // documentation missing in model
     Connection,
     #[allow(missing_docs)] // documentation missing in model
+    S3ServerAccess,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityFinding,
     #[allow(missing_docs)] // documentation missing in model
     Usage,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for LogType {
             "ACCESS_LOGS" => LogType::Access,
             "APPLICATION_LOGS" => LogType::Application,
             "CONNECTION_LOGS" => LogType::Connection,
+            "S3_SERVER_ACCESS_LOGS" => LogType::S3ServerAccess,
             "SECURITY_FINDING_LOGS" => LogType::SecurityFinding,
             "USAGE_LOGS" => LogType::Usage,
             other => LogType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +89,7 @@ impl LogType {
             LogType::Access => "ACCESS_LOGS",
             LogType::Application => "APPLICATION_LOGS",
             LogType::Connection => "CONNECTION_LOGS",
+            LogType::S3ServerAccess => "S3_SERVER_ACCESS_LOGS",
             LogType::SecurityFinding => "SECURITY_FINDING_LOGS",
             LogType::Usage => "USAGE_LOGS",
             LogType::Unknown(value) => value.as_str(),
@@ -96,6 +101,7 @@ impl LogType {
             "ACCESS_LOGS",
             "APPLICATION_LOGS",
             "CONNECTION_LOGS",
+            "S3_SERVER_ACCESS_LOGS",
             "SECURITY_FINDING_LOGS",
             "USAGE_LOGS",
         ]
@@ -124,6 +130,7 @@ impl ::std::fmt::Display for LogType {
             LogType::Access => write!(f, "ACCESS_LOGS"),
             LogType::Application => write!(f, "APPLICATION_LOGS"),
             LogType::Connection => write!(f, "CONNECTION_LOGS"),
+            LogType::S3ServerAccess => write!(f, "S3_SERVER_ACCESS_LOGS"),
             LogType::SecurityFinding => write!(f, "SECURITY_FINDING_LOGS"),
             LogType::Usage => write!(f, "USAGE_LOGS"),
             LogType::Unknown(value) => write!(f, "{value}"),

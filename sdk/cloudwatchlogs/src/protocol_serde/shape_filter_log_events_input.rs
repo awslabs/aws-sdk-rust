@@ -45,11 +45,14 @@ pub fn ser_filter_log_events_input_input(
             ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_12) = &input.interleaved {
-        object.key("interleaved").boolean(*var_12);
+    if let Some(var_12) = &input.start_from_head {
+        object.key("startFromHead").boolean(*var_12);
     }
-    if let Some(var_13) = &input.unmask {
-        object.key("unmask").boolean(*var_13);
+    if let Some(var_13) = &input.interleaved {
+        object.key("interleaved").boolean(*var_13);
+    }
+    if let Some(var_14) = &input.unmask {
+        object.key("unmask").boolean(*var_14);
     }
     Ok(())
 }

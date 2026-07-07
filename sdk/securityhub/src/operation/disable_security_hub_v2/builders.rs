@@ -22,7 +22,7 @@ impl crate::operation::disable_security_hub_v2::builders::DisableSecurityHubV2In
 }
 /// Fluent builder constructing a request to `DisableSecurityHubV2`.
 ///
-/// <p>Disable the service for the current Amazon Web Services Region or specified Amazon Web Services Region.</p>
+/// <p>Disable the service for the current Amazon Web Services Region or specified Amazon Web Services Region. Disabling the service also disables all opt-in features that are currently enabled in that Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableSecurityHubV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

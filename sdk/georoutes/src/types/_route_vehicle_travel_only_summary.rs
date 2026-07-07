@@ -10,7 +10,7 @@ pub struct RouteVehicleTravelOnlySummary {
     /// <p>Duration of the step.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub duration: i64,
-    /// <p>Duration of the computed span under typical traffic congestion.</p>
+    /// <p>Duration of the leg under typical traffic congestion.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub typical_duration: i64,
 }
@@ -25,7 +25,7 @@ impl RouteVehicleTravelOnlySummary {
     pub fn duration(&self) -> i64 {
         self.duration
     }
-    /// <p>Duration of the computed span under typical traffic congestion.</p>
+    /// <p>Duration of the leg under typical traffic congestion.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub fn typical_duration(&self) -> i64 {
         self.typical_duration
@@ -91,19 +91,19 @@ impl RouteVehicleTravelOnlySummaryBuilder {
     pub fn get_duration(&self) -> &::std::option::Option<i64> {
         &self.duration
     }
-    /// <p>Duration of the computed span under typical traffic congestion.</p>
+    /// <p>Duration of the leg under typical traffic congestion.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub fn typical_duration(mut self, input: i64) -> Self {
         self.typical_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Duration of the computed span under typical traffic congestion.</p>
+    /// <p>Duration of the leg under typical traffic congestion.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub fn set_typical_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.typical_duration = input;
         self
     }
-    /// <p>Duration of the computed span under typical traffic congestion.</p>
+    /// <p>Duration of the leg under typical traffic congestion.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub fn get_typical_duration(&self) -> &::std::option::Option<i64> {
         &self.typical_duration

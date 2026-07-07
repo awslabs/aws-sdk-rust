@@ -49,6 +49,8 @@ pub fn de_describe_orderable_cluster_options(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeOrderableClusterOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeOrderableClusterOptionsResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_describe_orderable_cluster_options(
             s if s.matches("OrderableClusterOptions") /* OrderableClusterOptions com.amazonaws.redshift.synthetic#DescribeOrderableClusterOptionsOutput$OrderableClusterOptions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_orderable_cluster_options_list::de_orderable_cluster_options_list(&mut tag)
+                        crate::protocol_serde::shape_orderable_cluster_options_list::de_orderable_cluster_options_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -53,6 +53,8 @@ pub fn de_delete_local_gateway_virtual_interface_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteLocalGatewayVirtualInterfaceGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteLocalGatewayVirtualInterfaceGroupResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_delete_local_gateway_virtual_interface_group(
             s if s.matches("localGatewayVirtualInterfaceGroup") /* LocalGatewayVirtualInterfaceGroup com.amazonaws.ec2.synthetic#DeleteLocalGatewayVirtualInterfaceGroupOutput$LocalGatewayVirtualInterfaceGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_local_gateway_virtual_interface_group::de_local_gateway_virtual_interface_group(&mut tag)
+                        crate::protocol_serde::shape_local_gateway_virtual_interface_group::de_local_gateway_virtual_interface_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

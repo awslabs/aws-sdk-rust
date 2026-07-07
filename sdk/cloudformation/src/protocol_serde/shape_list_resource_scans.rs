@@ -42,6 +42,8 @@ pub fn de_list_resource_scans(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListResourceScansResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListResourceScansResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_list_resource_scans(
             s if s.matches("ResourceScanSummaries") /* ResourceScanSummaries com.amazonaws.cloudformation.synthetic#ListResourceScansOutput$ResourceScanSummaries */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_resource_scan_summaries::de_resource_scan_summaries(&mut tag)
+                        crate::protocol_serde::shape_resource_scan_summaries::de_resource_scan_summaries(&mut tag, depth + 1)
                         ?
                     )
                 ;

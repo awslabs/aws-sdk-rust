@@ -51,6 +51,8 @@ pub use crate::types::_order_by::OrderBy;
 
 pub use crate::types::_finding_statistics::FindingStatistics;
 
+pub use crate::types::_investigation::Investigation;
+
 pub use crate::types::_ip_set_status::IpSetStatus;
 
 pub use crate::types::_malware_protection_plan_status::MalwareProtectionPlanStatus;
@@ -90,6 +92,8 @@ pub use crate::types::_usage_criteria::UsageCriteria;
 pub use crate::types::_usage_statistics::UsageStatistics;
 
 pub use crate::types::_coverage_sort_criteria::CoverageSortCriteria;
+
+pub use crate::types::_investigation_sort_criteria::InvestigationSortCriteria;
 
 pub use crate::types::_list_malware_scans_filter_criteria::ListMalwareScansFilterCriteria;
 
@@ -149,6 +153,16 @@ pub use crate::types::_finding::Finding;
 
 pub use crate::types::_finding_statistic_type::FindingStatisticType;
 
+pub use crate::types::_investigation_status::InvestigationStatus;
+
+pub use crate::types::_investigation_metadata::InvestigationMetadata;
+
+pub use crate::types::_cloud_details::CloudDetails;
+
+pub use crate::types::_risk_level::RiskLevel;
+
+pub use crate::types::_confidence::Confidence;
+
 pub use crate::types::_malware_protection_plan_status_reason::MalwareProtectionPlanStatusReason;
 
 pub use crate::types::_scanned_resource::ScannedResource;
@@ -172,6 +186,10 @@ pub use crate::types::_account_free_trial_info::AccountFreeTrialInfo;
 pub use crate::types::_coverage_sort_key::CoverageSortKey;
 
 pub use crate::types::_coverage_resource::CoverageResource;
+
+pub use crate::types::_investigation_sort_field::InvestigationSortField;
+
+pub use crate::types::_investigation_summary::InvestigationSummary;
 
 pub use crate::types::_invitation::Invitation;
 
@@ -255,9 +273,15 @@ pub use crate::types::_resource_statistics::ResourceStatistics;
 
 pub use crate::types::_severity_statistics::SeverityStatistics;
 
+pub use crate::types::_product::Product;
+
+pub use crate::types::_cloud_provider::CloudProvider;
+
 pub use crate::types::_scanned_resource_details::ScannedResourceDetails;
 
 pub use crate::types::_trigger_type::TriggerType;
+
+pub use crate::types::_scan_configuration_continuous_scan_details::ScanConfigurationContinuousScanDetails;
 
 pub use crate::types::_scan_result_threat::ScanResultThreat;
 
@@ -286,6 +310,8 @@ pub use crate::types::_coverage_resource_details::CoverageResourceDetails;
 pub use crate::types::_list_malware_scans_filter_criterion::ListMalwareScansFilterCriterion;
 
 pub use crate::types::_admin_status::AdminStatus;
+
+pub use crate::types::_continuous_scan_details::ContinuousScanDetails;
 
 pub use crate::types::_organization_kubernetes_audit_logs_configuration::OrganizationKubernetesAuditLogsConfiguration;
 
@@ -691,6 +717,10 @@ mod _bucket_policy;
 
 mod _city;
 
+mod _cloud_details;
+
+mod _cloud_provider;
+
 mod _cloud_trail_configuration_result;
 
 mod _cloudformation_stack;
@@ -699,11 +729,15 @@ mod _cluster_status;
 
 mod _condition;
 
+mod _confidence;
+
 mod _container;
 
 mod _container_finding_resource;
 
 mod _container_instance_details;
+
+mod _continuous_scan_details;
 
 mod _country;
 
@@ -889,6 +923,18 @@ mod _indicator_type;
 
 mod _instance_details;
 
+mod _investigation;
+
+mod _investigation_metadata;
+
+mod _investigation_sort_criteria;
+
+mod _investigation_sort_field;
+
+mod _investigation_status;
+
+mod _investigation_summary;
+
 mod _invitation;
 
 mod _ip_set_format;
@@ -1071,6 +1117,8 @@ mod _private_ip_address_details;
 
 mod _process_details;
 
+mod _product;
+
 mod _product_code;
 
 mod _profile_subtype;
@@ -1119,6 +1167,8 @@ mod _resource_type;
 
 mod _resource_v2;
 
+mod _risk_level;
+
 mod _runtime_context;
 
 mod _runtime_details;
@@ -1146,6 +1196,8 @@ mod _scan_condition;
 mod _scan_condition_pair;
 
 mod _scan_configuration;
+
+mod _scan_configuration_continuous_scan_details;
 
 mod _scan_configuration_recovery_point;
 

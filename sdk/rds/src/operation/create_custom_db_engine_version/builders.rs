@@ -127,11 +127,19 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-sqlserver-se</code></p></li>
     /// <li>
-    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <p><code>custom-sqlserver-web</code></p></li>
     /// <li>
     /// <p><code>custom-sqlserver-dev</code></p></li>
     /// </ul>
-    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
+    /// <p>RDS for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>sqlserver-ee</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
+    /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
@@ -155,11 +163,19 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-sqlserver-se</code></p></li>
     /// <li>
-    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <p><code>custom-sqlserver-web</code></p></li>
     /// <li>
     /// <p><code>custom-sqlserver-dev</code></p></li>
     /// </ul>
-    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
+    /// <p>RDS for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>sqlserver-ee</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
+    /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
@@ -183,17 +199,26 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-sqlserver-se</code></p></li>
     /// <li>
-    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <p><code>custom-sqlserver-web</code></p></li>
     /// <li>
     /// <p><code>custom-sqlserver-dev</code></p></li>
     /// </ul>
-    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
+    /// <p>RDS for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>sqlserver-ee</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code> (Bring Your Own Media)</p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
+    /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
     /// <p>The name of your custom engine version (CEV).</p>
     /// <p>For RDS Custom for Oracle, the name format is <code>19.*customized_string*</code>. For example, a valid CEV name is <code>19.my_cev1</code>.</p>
-    /// <p>For RDS for SQL Server and RDS Custom for SQL Server, the name format is <code>major engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>For RDS Custom for SQL Server and RDS for SQL Server <code>sqlserver-dev-ee</code>, the name format is <code>*major_engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>For RDS for SQL Server Bring Your Own Media (<code>sqlserver-ee</code>, <code>sqlserver-se</code>), specify the RDS engine version that you want to use. For example, <code>16.00.4175.1.v1</code>.</p>
     /// <p>The CEV name is unique per customer per Amazon Web Services Regions.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
@@ -201,7 +226,8 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     }
     /// <p>The name of your custom engine version (CEV).</p>
     /// <p>For RDS Custom for Oracle, the name format is <code>19.*customized_string*</code>. For example, a valid CEV name is <code>19.my_cev1</code>.</p>
-    /// <p>For RDS for SQL Server and RDS Custom for SQL Server, the name format is <code>major engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>For RDS Custom for SQL Server and RDS for SQL Server <code>sqlserver-dev-ee</code>, the name format is <code>*major_engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>For RDS for SQL Server Bring Your Own Media (<code>sqlserver-ee</code>, <code>sqlserver-se</code>), specify the RDS engine version that you want to use. For example, <code>16.00.4175.1.v1</code>.</p>
     /// <p>The CEV name is unique per customer per Amazon Web Services Regions.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
@@ -209,7 +235,8 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     }
     /// <p>The name of your custom engine version (CEV).</p>
     /// <p>For RDS Custom for Oracle, the name format is <code>19.*customized_string*</code>. For example, a valid CEV name is <code>19.my_cev1</code>.</p>
-    /// <p>For RDS for SQL Server and RDS Custom for SQL Server, the name format is <code>major engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>For RDS Custom for SQL Server and RDS for SQL Server <code>sqlserver-dev-ee</code>, the name format is <code>*major_engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>For RDS for SQL Server Bring Your Own Media (<code>sqlserver-ee</code>, <code>sqlserver-se</code>), specify the RDS engine version that you want to use. For example, <code>16.00.4175.1.v1</code>.</p>
     /// <p>The CEV name is unique per customer per Amazon Web Services Regions.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
@@ -248,16 +275,19 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     /// To override the contents of this collection use [`set_database_installation_files`](Self::set_database_installation_files).
     ///
     /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    /// <p>For RDS for SQL Server Bring Your Own Media (<code>sqlserver-ee</code>, <code>sqlserver-se</code>), provide the SQL Server RTM ISO file once per major version and edition combination. Minor versions reuse the same file.</p>
     pub fn database_installation_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_installation_files(input.into());
         self
     }
     /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    /// <p>For RDS for SQL Server Bring Your Own Media (<code>sqlserver-ee</code>, <code>sqlserver-se</code>), provide the SQL Server RTM ISO file once per major version and edition combination. Minor versions reuse the same file.</p>
     pub fn set_database_installation_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_database_installation_files(input);
         self
     }
     /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    /// <p>For RDS for SQL Server Bring Your Own Media (<code>sqlserver-ee</code>, <code>sqlserver-se</code>), provide the SQL Server RTM ISO file once per major version and edition combination. Minor versions reuse the same file.</p>
     pub fn get_database_installation_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_database_installation_files()
     }

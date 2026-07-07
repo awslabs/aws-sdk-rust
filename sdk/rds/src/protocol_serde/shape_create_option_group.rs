@@ -86,6 +86,8 @@ pub fn de_create_option_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateOptionGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateOptionGroupResponse got {start_el:?}"
@@ -103,7 +105,7 @@ pub fn de_create_option_group(
             s if s.matches("OptionGroup") /* OptionGroup com.amazonaws.rds.synthetic#CreateOptionGroupOutput$OptionGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_option_group::de_option_group(&mut tag)
+                        crate::protocol_serde::shape_option_group::de_option_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

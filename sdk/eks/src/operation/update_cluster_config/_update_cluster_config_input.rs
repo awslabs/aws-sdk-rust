@@ -5,7 +5,7 @@
 pub struct UpdateClusterConfigInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    /// <p>An object representing the VPC configuration to use for the cluster update. You can use this parameter to update the control plane egress mode, the subnets used by the cluster, the security groups, and the endpoint access settings.</p>
     pub resources_vpc_config: ::std::option::Option<crate::types::VpcConfigRequest>,
     /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs . By default, cluster control plane logs aren't exported to CloudWatch Logs . For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p><note>
     /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
@@ -39,7 +39,7 @@ impl UpdateClusterConfigInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    /// <p>An object representing the VPC configuration to use for the cluster update. You can use this parameter to update the control plane egress mode, the subnets used by the cluster, the security groups, and the endpoint access settings.</p>
     pub fn resources_vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfigRequest> {
         self.resources_vpc_config.as_ref()
     }
@@ -133,17 +133,17 @@ impl UpdateClusterConfigInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    /// <p>An object representing the VPC configuration to use for the cluster update. You can use this parameter to update the control plane egress mode, the subnets used by the cluster, the security groups, and the endpoint access settings.</p>
     pub fn resources_vpc_config(mut self, input: crate::types::VpcConfigRequest) -> Self {
         self.resources_vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    /// <p>An object representing the VPC configuration to use for the cluster update. You can use this parameter to update the control plane egress mode, the subnets used by the cluster, the security groups, and the endpoint access settings.</p>
     pub fn set_resources_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigRequest>) -> Self {
         self.resources_vpc_config = input;
         self
     }
-    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    /// <p>An object representing the VPC configuration to use for the cluster update. You can use this parameter to update the control plane egress mode, the subnets used by the cluster, the security groups, and the endpoint access settings.</p>
     pub fn get_resources_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigRequest> {
         &self.resources_vpc_config
     }

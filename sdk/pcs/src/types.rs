@@ -13,6 +13,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_update_cluster_slurm_configuration_request::UpdateClusterSlurmConfigurationRequest;
 
+pub use crate::types::_update_scheduler_request::UpdateSchedulerRequest;
+
 pub use crate::types::_purchase_option::PurchaseOption;
 
 pub use crate::types::_custom_launch_template::CustomLaunchTemplate;
@@ -200,6 +202,8 @@ mod _update_cluster_slurm_configuration_request;
 mod _update_compute_node_group_slurm_configuration_request;
 
 mod _update_queue_slurm_configuration_request;
+
+mod _update_scheduler_request;
 
 mod _update_slurm_rest_request;
 

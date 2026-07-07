@@ -18,6 +18,8 @@ pub struct UpdateCollectionGroupDetail {
     pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection group was last modified.</p>
     pub last_modified_date: ::std::option::Option<i64>,
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub generation: ::std::option::Option<crate::types::ServerlessGeneration>,
 }
 impl UpdateCollectionGroupDetail {
     /// <p>The unique identifier of the collection group.</p>
@@ -48,6 +50,10 @@ impl UpdateCollectionGroupDetail {
     pub fn last_modified_date(&self) -> ::std::option::Option<i64> {
         self.last_modified_date
     }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub fn generation(&self) -> ::std::option::Option<&crate::types::ServerlessGeneration> {
+        self.generation.as_ref()
+    }
 }
 impl UpdateCollectionGroupDetail {
     /// Creates a new builder-style object to manufacture [`UpdateCollectionGroupDetail`](crate::types::UpdateCollectionGroupDetail).
@@ -67,6 +73,7 @@ pub struct UpdateCollectionGroupDetailBuilder {
     pub(crate) capacity_limits: ::std::option::Option<crate::types::CollectionGroupCapacityLimits>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
+    pub(crate) generation: ::std::option::Option<crate::types::ServerlessGeneration>,
 }
 impl UpdateCollectionGroupDetailBuilder {
     /// <p>The unique identifier of the collection group.</p>
@@ -167,6 +174,20 @@ impl UpdateCollectionGroupDetailBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
         &self.last_modified_date
     }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub fn generation(mut self, input: crate::types::ServerlessGeneration) -> Self {
+        self.generation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub fn set_generation(mut self, input: ::std::option::Option<crate::types::ServerlessGeneration>) -> Self {
+        self.generation = input;
+        self
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group.</p>
+    pub fn get_generation(&self) -> &::std::option::Option<crate::types::ServerlessGeneration> {
+        &self.generation
+    }
     /// Consumes the builder and constructs a [`UpdateCollectionGroupDetail`](crate::types::UpdateCollectionGroupDetail).
     pub fn build(self) -> crate::types::UpdateCollectionGroupDetail {
         crate::types::UpdateCollectionGroupDetail {
@@ -177,6 +198,7 @@ impl UpdateCollectionGroupDetailBuilder {
             capacity_limits: self.capacity_limits,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,
+            generation: self.generation,
         }
     }
 }

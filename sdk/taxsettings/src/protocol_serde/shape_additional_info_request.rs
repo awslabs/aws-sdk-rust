@@ -117,5 +117,29 @@ pub fn ser_additional_info_request(
         crate::protocol_serde::shape_uzbekistan_additional_info::ser_uzbekistan_additional_info(&mut object_38, var_37)?;
         object_38.finish();
     }
+    if let Some(var_39) = &input.philippines_additional_info {
+        #[allow(unused_mut)]
+        let mut object_40 = object.key("philippinesAdditionalInfo").start_object();
+        crate::protocol_serde::shape_philippines_additional_info::ser_philippines_additional_info(&mut object_40, var_39)?;
+        object_40.finish();
+    }
+    if let Some(var_41) = &input.belgium_additional_info {
+        #[allow(unused_mut)]
+        let mut object_42 = object.key("belgiumAdditionalInfo").start_object();
+        crate::protocol_serde::shape_belgium_additional_info::ser_belgium_additional_info(&mut object_42, var_41)?;
+        object_42.finish();
+    }
+    if let Some(var_43) = &input.chile_additional_info {
+        #[allow(unused_mut)]
+        let mut object_44 = object.key("chileAdditionalInfo").start_object();
+        crate::protocol_serde::shape_chile_additional_info::ser_chile_additional_info(&mut object_44, var_43)?;
+        object_44.finish();
+    }
+    if let Some(var_45) = &input.france_additional_info {
+        #[allow(unused_mut)]
+        let mut object_46 = object.key("franceAdditionalInfo").start_object();
+        crate::protocol_serde::shape_france_additional_info::ser_france_additional_info(&mut object_46, var_45)?;
+        object_46.finish();
+    }
     Ok(())
 }

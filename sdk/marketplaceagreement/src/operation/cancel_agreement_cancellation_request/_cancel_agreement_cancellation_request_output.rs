@@ -15,9 +15,9 @@ pub struct CancelAgreementCancellationRequestOutput {
     pub status: ::std::option::Option<crate::types::AgreementCancellationRequestStatus>,
     /// <p>A message providing additional context about the cancellation request status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the cancellation request was originally created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was originally created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time when the cancellation request was cancelled, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was cancelled.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -46,11 +46,11 @@ impl CancelAgreementCancellationRequestOutput {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The date and time when the cancellation request was originally created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was originally created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date and time when the cancellation request was cancelled, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was cancelled.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -181,31 +181,31 @@ impl CancelAgreementCancellationRequestOutputBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The date and time when the cancellation request was originally created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was originally created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the cancellation request was originally created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was originally created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time when the cancellation request was originally created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was originally created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time when the cancellation request was cancelled, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was cancelled.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the cancellation request was cancelled, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was cancelled.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time when the cancellation request was cancelled, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the cancellation request was cancelled.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

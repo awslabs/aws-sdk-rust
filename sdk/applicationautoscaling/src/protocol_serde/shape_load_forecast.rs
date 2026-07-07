@@ -2,10 +2,16 @@
 pub(crate) fn de_load_forecast<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LoadForecast>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,21 +24,27 @@ where
                         "Timestamps" => {
                             builder = builder.set_timestamps(
                                 crate::protocol_serde::shape_predictive_scaling_forecast_timestamps::de_predictive_scaling_forecast_timestamps(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Values" => {
                             builder = builder.set_values(
                                 crate::protocol_serde::shape_predictive_scaling_forecast_values::de_predictive_scaling_forecast_values(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "MetricSpecification" => {
                             builder = builder.set_metric_specification(
                                 crate::protocol_serde::shape_predictive_scaling_metric_specification::de_predictive_scaling_metric_specification(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -122,6 +122,8 @@ pub(crate) fn de_describe_app_license_usage(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -129,7 +131,7 @@ pub(crate) fn de_describe_app_license_usage(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AppLicenseUsages" => {
                     builder = builder.set_app_license_usages(
-                        crate::protocol_serde::shape_admin_app_license_usage_list::de_admin_app_license_usage_list(tokens, _value)?,
+                        crate::protocol_serde::shape_admin_app_license_usage_list::de_admin_app_license_usage_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "NextToken" => {

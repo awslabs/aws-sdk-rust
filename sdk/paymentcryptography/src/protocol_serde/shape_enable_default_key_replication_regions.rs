@@ -192,13 +192,15 @@ pub(crate) fn de_enable_default_key_replication_regions(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "EnabledReplicationRegions" => {
-                    builder = builder.set_enabled_replication_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);
+                    builder = builder.set_enabled_replication_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

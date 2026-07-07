@@ -6,9 +6,11 @@
 pub enum PhysicalTable {
     /// <p>A physical table type built from the results of the custom SQL query.</p>
     CustomSql(crate::types::CustomSql),
+    /// <p>A physical table type for a file data source.</p>
+    FileSource(crate::types::FileSource),
     /// <p>A physical table type for relational data sources.</p>
     RelationalTable(crate::types::RelationalTable),
-    /// <p>A physical table type for as S3 data source.</p>
+    /// <p>A physical table type for an S3 data source.</p>
     S3Source(crate::types::S3Source),
     /// <p>A physical table type for Software-as-a-Service (SaaS) sources.</p>
     SaaSTable(crate::types::SaaSTable),
@@ -35,6 +37,19 @@ impl PhysicalTable {
     /// Returns true if this is a [`CustomSql`](crate::types::PhysicalTable::CustomSql).
     pub fn is_custom_sql(&self) -> bool {
         self.as_custom_sql().is_ok()
+    }
+    /// Tries to convert the enum instance into [`FileSource`](crate::types::PhysicalTable::FileSource), extracting the inner [`FileSource`](crate::types::FileSource).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_file_source(&self) -> ::std::result::Result<&crate::types::FileSource, &Self> {
+        if let PhysicalTable::FileSource(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FileSource`](crate::types::PhysicalTable::FileSource).
+    pub fn is_file_source(&self) -> bool {
+        self.as_file_source().is_ok()
     }
     /// Tries to convert the enum instance into [`RelationalTable`](crate::types::PhysicalTable::RelationalTable), extracting the inner [`RelationalTable`](crate::types::RelationalTable).
     /// Returns `Err(&Self)` if it can't be converted.

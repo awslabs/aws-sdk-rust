@@ -17,6 +17,8 @@ pub struct UserPoolDescriptionType {
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of Amazon Web Services Regions where replicas of this user pool exist.</p>
+    pub replica_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UserPoolDescriptionType {
     /// <p>The user pool ID.</p>
@@ -44,6 +46,12 @@ impl UserPoolDescriptionType {
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
+    /// <p>A list of Amazon Web Services Regions where replicas of this user pool exist.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_regions.is_none()`.
+    pub fn replica_regions(&self) -> &[::std::string::String] {
+        self.replica_regions.as_deref().unwrap_or_default()
+    }
 }
 impl UserPoolDescriptionType {
     /// Creates a new builder-style object to manufacture [`UserPoolDescriptionType`](crate::types::UserPoolDescriptionType).
@@ -62,6 +70,7 @@ pub struct UserPoolDescriptionTypeBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatusType>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) replica_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UserPoolDescriptionTypeBuilder {
     /// <p>The user pool ID.</p>
@@ -151,6 +160,26 @@ impl UserPoolDescriptionTypeBuilder {
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }
+    /// Appends an item to `replica_regions`.
+    ///
+    /// To override the contents of this collection use [`set_replica_regions`](Self::set_replica_regions).
+    ///
+    /// <p>A list of Amazon Web Services Regions where replicas of this user pool exist.</p>
+    pub fn replica_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replica_regions.unwrap_or_default();
+        v.push(input.into());
+        self.replica_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services Regions where replicas of this user pool exist.</p>
+    pub fn set_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.replica_regions = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services Regions where replicas of this user pool exist.</p>
+    pub fn get_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replica_regions
+    }
     /// Consumes the builder and constructs a [`UserPoolDescriptionType`](crate::types::UserPoolDescriptionType).
     pub fn build(self) -> crate::types::UserPoolDescriptionType {
         crate::types::UserPoolDescriptionType {
@@ -160,6 +189,7 @@ impl UserPoolDescriptionTypeBuilder {
             status: self.status,
             last_modified_date: self.last_modified_date,
             creation_date: self.creation_date,
+            replica_regions: self.replica_regions,
         }
     }
 }

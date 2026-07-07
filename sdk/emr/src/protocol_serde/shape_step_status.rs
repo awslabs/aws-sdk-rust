@@ -2,10 +2,16 @@
 pub(crate) fn de_step_status<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StepStatus>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,14 +30,18 @@ where
                         }
                         "StateChangeReason" => {
                             builder = builder.set_state_change_reason(
-                                crate::protocol_serde::shape_step_state_change_reason::de_step_state_change_reason(tokens, _value)?,
+                                crate::protocol_serde::shape_step_state_change_reason::de_step_state_change_reason(tokens, _value, depth + 1)?,
                             );
                         }
                         "FailureDetails" => {
-                            builder = builder.set_failure_details(crate::protocol_serde::shape_failure_details::de_failure_details(tokens, _value)?);
+                            builder = builder.set_failure_details(crate::protocol_serde::shape_failure_details::de_failure_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Timeline" => {
-                            builder = builder.set_timeline(crate::protocol_serde::shape_step_timeline::de_step_timeline(tokens, _value)?);
+                            builder = builder.set_timeline(crate::protocol_serde::shape_step_timeline::de_step_timeline(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

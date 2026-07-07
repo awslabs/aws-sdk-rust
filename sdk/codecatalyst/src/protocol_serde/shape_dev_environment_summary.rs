@@ -2,10 +2,16 @@
 pub(crate) fn de_dev_environment_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DevEnvironmentSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,7 +72,9 @@ where
                         "repositories" => {
                             builder = builder.set_repositories(
                                 crate::protocol_serde::shape_dev_environment_repository_summaries::de_dev_environment_repository_summaries(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -78,7 +86,7 @@ where
                             );
                         }
                         "ides" => {
-                            builder = builder.set_ides(crate::protocol_serde::shape_ides::de_ides(tokens, _value)?);
+                            builder = builder.set_ides(crate::protocol_serde::shape_ides::de_ides(tokens, _value, depth + 1)?);
                         }
                         "instanceType" => {
                             builder = builder.set_instance_type(
@@ -95,8 +103,11 @@ where
                             );
                         }
                         "persistentStorage" => {
-                            builder = builder
-                                .set_persistent_storage(crate::protocol_serde::shape_persistent_storage::de_persistent_storage(tokens, _value)?);
+                            builder = builder.set_persistent_storage(crate::protocol_serde::shape_persistent_storage::de_persistent_storage(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "vpcConnectionName" => {
                             builder = builder.set_vpc_connection_name(

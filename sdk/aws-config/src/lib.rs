@@ -231,6 +231,7 @@ mod loader {
     use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
     use aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig;
     use aws_smithy_runtime_api::shared::IntoShared;
+    use aws_smithy_schema::protocol::{ClientProtocol, SharedClientProtocol};
     use aws_smithy_types::checksum_config::{
         RequestChecksumCalculation, ResponseChecksumValidation,
     };
@@ -303,6 +304,7 @@ mod loader {
         behavior_version: Option<BehaviorVersion>,
         request_checksum_calculation: Option<RequestChecksumCalculation>,
         response_checksum_validation: Option<ResponseChecksumValidation>,
+        protocol: Option<SharedClientProtocol>,
     }
 
     impl ConfigLoader {
@@ -407,6 +409,26 @@ mod loader {
         /// then override the HTTP client set with this function on the client-specific `Config`s.
         pub fn http_client(mut self, http_client: impl HttpClient + 'static) -> Self {
             self.http_client = Some(http_client.into_shared());
+            self
+        }
+
+        /// Sets the client protocol to use for serialization and deserialization.
+        ///
+        /// This overrides the default protocol determined by the service model.
+        ///
+        /// # Transport
+        ///
+        /// This setter is HTTP-specific. `self.protocol` is typed
+        /// `Option<SharedClientProtocol>` which elides to the HTTP specialization,
+        /// and only `SharedClientProtocol<http::Request, http::Response>` has a
+        /// `Storable` impl. The `impl ClientProtocol + 'static` bound here
+        /// elides to `impl ClientProtocol<http::Request, http::Response>` to
+        /// match. A non-HTTP transport would add its own setter paired with its
+        /// own `Storable` newtype rather than generalizing this one — the
+        /// underlying `ClientProtocol<Req, Res>` trait is already
+        /// transport-generic.
+        pub fn protocol(mut self, protocol: impl ClientProtocol + 'static) -> Self {
+            self.protocol = Some(SharedClientProtocol::new(protocol));
             self
         }
 
@@ -824,6 +846,7 @@ mod loader {
                     }
                     config
                 })
+                .with_behavior_version(self.behavior_version)
                 .with_profile_config(self.profile_files_override, self.profile_name_override);
 
             let use_fips = if let Some(use_fips) = self.use_fips {
@@ -852,15 +875,6 @@ mod loader {
                     .await
             };
             let conf = conf.with_region(region.clone());
-
-            let retry_config = if let Some(retry_config) = self.retry_config {
-                retry_config
-            } else {
-                retry_config::default_provider()
-                    .configure(&conf)
-                    .retry_config()
-                    .await
-            };
 
             let app_name = if self.app_name.is_some() {
                 self.app_name
@@ -914,10 +928,20 @@ mod loader {
             };
             let mut builder = SdkConfig::builder()
                 .region(region.clone())
-                .retry_config(retry_config)
                 .timeout_config(timeout_config)
                 .time_source(time_source)
                 .service_config(service_config);
+
+            let retry_config = if let Some(retry_config) = self.retry_config {
+                builder.insert_origin("retry_config", Origin::shared_config());
+                retry_config
+            } else {
+                retry_config::default_provider()
+                    .configure(&conf)
+                    .retry_config()
+                    .await
+            };
+            builder = builder.retry_config(retry_config);
 
             // If an endpoint URL is set programmatically, then our work is done.
             let endpoint_url = if self.endpoint_url.is_some() {
@@ -972,6 +996,7 @@ mod loader {
             builder.set_endpoint_url(endpoint_url);
             builder.set_behavior_version(self.behavior_version);
             builder.set_http_client(self.http_client);
+            builder.set_protocol(self.protocol);
             builder.set_app_name(app_name);
 
             let identity_cache = match self.identity_cache {
@@ -1295,7 +1320,21 @@ mod loader {
         #[allow(deprecated)]
         #[tokio::test]
         async fn identity_cache_old_behavior_version() {
-            let config = defaults(BehaviorVersion::v2023_11_09()).load().await;
+            // Previously, `load()` did not need an explicit HTTP client because
+            // internal providers (e.g. IMDS) built their Operation without a
+            // BehaviorVersion, so default_plugins defaulted to latest() and the
+            // `default-https-client` code path provided one automatically.
+            //
+            // Now that BehaviorVersion is threaded through to Operation::builder(),
+            // the old BV here (v2023_11_09) causes default_plugins to use the
+            // legacy hyper 0.14 code path, which returns None without
+            // `legacy-rustls-ring`. NeverClient satisfies the debug_assertions
+            // check in Operation::build() without additional TLS dependencies.
+            let config = defaults(BehaviorVersion::v2023_11_09())
+                .http_client(NeverClient::new())
+                .sleep_impl(InstantSleep)
+                .load()
+                .await;
 
             assert!(config.identity_cache().is_none());
         }

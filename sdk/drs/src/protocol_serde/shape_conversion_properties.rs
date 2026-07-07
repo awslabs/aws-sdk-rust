@@ -2,10 +2,16 @@
 pub(crate) fn de_conversion_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConversionProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "volumeToConversionMap" => {
                             builder = builder.set_volume_to_conversion_map(
-                                crate::protocol_serde::shape_volume_to_conversion_map::de_volume_to_conversion_map(tokens, _value)?,
+                                crate::protocol_serde::shape_volume_to_conversion_map::de_volume_to_conversion_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "rootVolumeName" => {
@@ -38,12 +44,15 @@ where
                             );
                         }
                         "volumeToVolumeSize" => {
-                            builder = builder
-                                .set_volume_to_volume_size(crate::protocol_serde::shape_volume_to_size_map::de_volume_to_size_map(tokens, _value)?);
+                            builder = builder.set_volume_to_volume_size(crate::protocol_serde::shape_volume_to_size_map::de_volume_to_size_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "volumeToProductCodes" => {
                             builder = builder.set_volume_to_product_codes(
-                                crate::protocol_serde::shape_volume_to_product_codes::de_volume_to_product_codes(tokens, _value)?,
+                                crate::protocol_serde::shape_volume_to_product_codes::de_volume_to_product_codes(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

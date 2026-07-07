@@ -2,10 +2,16 @@
 pub(crate) fn de_multiplex_program<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MultiplexProgram>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -25,17 +31,21 @@ where
                             }
                             "multiplexProgramSettings" => {
                                 builder = builder.set_multiplex_program_settings(
-                                    crate::protocol_serde::shape_multiplex_program_settings::de_multiplex_program_settings(tokens, _value)?,
+                                    crate::protocol_serde::shape_multiplex_program_settings::de_multiplex_program_settings(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "packetIdentifiersMap" => {
                                 builder = builder.set_packet_identifiers_map(
-                                    crate::protocol_serde::shape_multiplex_program_packet_identifiers_map::de_multiplex_program_packet_identifiers_map(tokens, _value)?
+                                    crate::protocol_serde::shape_multiplex_program_packet_identifiers_map::de_multiplex_program_packet_identifiers_map(tokens, _value, depth + 1)?
                                 );
                             }
                             "pipelineDetails" => {
                                 builder = builder.set_pipeline_details(
-                                    crate::protocol_serde::shape_list_of_multiplex_program_pipeline_detail::de_list_of_multiplex_program_pipeline_detail(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_multiplex_program_pipeline_detail::de_list_of_multiplex_program_pipeline_detail(tokens, _value, depth + 1)?
                                 );
                             }
                             "programName" => {

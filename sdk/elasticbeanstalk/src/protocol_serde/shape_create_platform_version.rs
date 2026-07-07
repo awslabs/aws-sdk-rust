@@ -112,6 +112,8 @@ pub fn de_create_platform_version(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreatePlatformVersionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreatePlatformVersionResponse got {start_el:?}"
@@ -129,7 +131,7 @@ pub fn de_create_platform_version(
             s if s.matches("PlatformSummary") /* PlatformSummary com.amazonaws.elasticbeanstalk.synthetic#CreatePlatformVersionOutput$PlatformSummary */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_platform_summary::de_platform_summary(&mut tag)
+                        crate::protocol_serde::shape_platform_summary::de_platform_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -139,7 +141,7 @@ pub fn de_create_platform_version(
             s if s.matches("Builder") /* Builder com.amazonaws.elasticbeanstalk.synthetic#CreatePlatformVersionOutput$Builder */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_builder::de_builder(&mut tag)
+                        crate::protocol_serde::shape_builder::de_builder(&mut tag, depth + 1)
                         ?
                     )
                 ;

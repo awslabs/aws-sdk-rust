@@ -951,25 +951,22 @@ impl CreateReplicationGroupFluentBuilder {
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_transit_encryption_enabled()
     }
-    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>A flag that enables encryption at-rest on the replication group when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.at_rest_encryption_enabled(input);
         self
     }
-    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>A flag that enables encryption at-rest on the replication group when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_at_rest_encryption_enabled(input);
         self
     }
-    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>A flag that enables encryption at-rest on the replication group when set to <code>true</code>. In some cases, encryption at-rest may be enabled even when this value is false. Use <code>StorageEncryptionType</code> to view the effective encryption state of a cluster.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_at_rest_encryption_enabled()
@@ -1121,5 +1118,19 @@ impl CreateReplicationGroupFluentBuilder {
     /// <p>The name of the snapshot used to create a replication group. Available for Valkey, Redis OSS only.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serverless_cache_snapshot_name()
+    }
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn durability(mut self, input: crate::types::Durability) -> Self {
+        self.inner = self.inner.durability(input);
+        self
+    }
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn set_durability(mut self, input: ::std::option::Option<crate::types::Durability>) -> Self {
+        self.inner = self.inner.set_durability(input);
+        self
+    }
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn get_durability(&self) -> &::std::option::Option<crate::types::Durability> {
+        self.inner.get_durability()
     }
 }

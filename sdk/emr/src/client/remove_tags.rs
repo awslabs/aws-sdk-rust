@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_resource_id):<br>required: **true**<br><p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p><br>
     ///   - [`tag_keys(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>A list of tag keys to remove from the resource.</p><br>
+    ///   - [`cluster_id(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_cluster_id):<br>required: **false**<br><p>The ID of the cluster that scopes the tag operation. Required when the resource being untagged is a session-scoped resource.</p><br>
     /// - On success, responds with [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::operation::remove_tags::RemoveTagsError)
     pub fn remove_tags(&self) -> crate::operation::remove_tags::builders::RemoveTagsFluentBuilder {

@@ -239,6 +239,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_ad_configuration;
+
 mod update_channel;
 
 mod update_playback_restriction_policy;

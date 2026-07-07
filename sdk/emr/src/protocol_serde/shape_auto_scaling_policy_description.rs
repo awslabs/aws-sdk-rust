@@ -2,10 +2,16 @@
 pub(crate) fn de_auto_scaling_policy_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutoScalingPolicyDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,15 +23,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_auto_scaling_policy_status::de_auto_scaling_policy_status(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Constraints" => {
-                            builder =
-                                builder.set_constraints(crate::protocol_serde::shape_scaling_constraints::de_scaling_constraints(tokens, _value)?);
+                            builder = builder.set_constraints(crate::protocol_serde::shape_scaling_constraints::de_scaling_constraints(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Rules" => {
-                            builder = builder.set_rules(crate::protocol_serde::shape_scaling_rule_list::de_scaling_rule_list(tokens, _value)?);
+                            builder = builder.set_rules(crate::protocol_serde::shape_scaling_rule_list::de_scaling_rule_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

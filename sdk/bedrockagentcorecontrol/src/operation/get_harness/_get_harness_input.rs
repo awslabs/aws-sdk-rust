@@ -5,11 +5,17 @@
 pub struct GetHarnessInput {
     /// <p>The ID of the harness to retrieve.</p>
     pub harness_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p>
+    pub harness_version: ::std::option::Option<::std::string::String>,
 }
 impl GetHarnessInput {
     /// <p>The ID of the harness to retrieve.</p>
     pub fn harness_id(&self) -> ::std::option::Option<&str> {
         self.harness_id.as_deref()
+    }
+    /// <p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p>
+    pub fn harness_version(&self) -> ::std::option::Option<&str> {
+        self.harness_version.as_deref()
     }
 }
 impl GetHarnessInput {
@@ -24,6 +30,7 @@ impl GetHarnessInput {
 #[non_exhaustive]
 pub struct GetHarnessInputBuilder {
     pub(crate) harness_id: ::std::option::Option<::std::string::String>,
+    pub(crate) harness_version: ::std::option::Option<::std::string::String>,
 }
 impl GetHarnessInputBuilder {
     /// <p>The ID of the harness to retrieve.</p>
@@ -41,8 +48,25 @@ impl GetHarnessInputBuilder {
     pub fn get_harness_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.harness_id
     }
+    /// <p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p>
+    pub fn harness_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.harness_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p>
+    pub fn set_harness_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.harness_version = input;
+        self
+    }
+    /// <p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p>
+    pub fn get_harness_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.harness_version
+    }
     /// Consumes the builder and constructs a [`GetHarnessInput`](crate::operation::get_harness::GetHarnessInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_harness::GetHarnessInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_harness::GetHarnessInput { harness_id: self.harness_id })
+        ::std::result::Result::Ok(crate::operation::get_harness::GetHarnessInput {
+            harness_id: self.harness_id,
+            harness_version: self.harness_version,
+        })
     }
 }

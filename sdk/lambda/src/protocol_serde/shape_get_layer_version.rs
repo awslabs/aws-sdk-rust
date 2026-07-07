@@ -116,6 +116,8 @@ pub(crate) fn de_get_layer_version(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -123,16 +125,20 @@ pub(crate) fn de_get_layer_version(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CompatibleArchitectures" => {
                     builder = builder.set_compatible_architectures(
-                        crate::protocol_serde::shape_compatible_architectures::de_compatible_architectures(tokens, _value)?,
+                        crate::protocol_serde::shape_compatible_architectures::de_compatible_architectures(tokens, _value, depth + 1)?,
                     );
                 }
                 "CompatibleRuntimes" => {
-                    builder =
-                        builder.set_compatible_runtimes(crate::protocol_serde::shape_compatible_runtimes::de_compatible_runtimes(tokens, _value)?);
+                    builder = builder.set_compatible_runtimes(crate::protocol_serde::shape_compatible_runtimes::de_compatible_runtimes(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Content" => {
-                    builder = builder
-                        .set_content(crate::protocol_serde::shape_layer_version_content_output::de_layer_version_content_output(tokens, _value)?);
+                    builder = builder.set_content(
+                        crate::protocol_serde::shape_layer_version_content_output::de_layer_version_content_output(tokens, _value, depth + 1)?,
+                    );
                 }
                 "CreatedDate" => {
                     builder = builder.set_created_date(

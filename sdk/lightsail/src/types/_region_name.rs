@@ -12,6 +12,7 @@
 /// ```text
 /// # let regionname = unimplemented!();
 /// match regionname {
+///     RegionName::ApEast1 => { /* ... */ },
 ///     RegionName::ApNortheast1 => { /* ... */ },
 ///     RegionName::ApNortheast2 => { /* ... */ },
 ///     RegionName::ApSouth1 => { /* ... */ },
@@ -22,9 +23,11 @@
 ///     RegionName::CaCentral1 => { /* ... */ },
 ///     RegionName::EuCentral1 => { /* ... */ },
 ///     RegionName::EuNorth1 => { /* ... */ },
+///     RegionName::EuSouth2 => { /* ... */ },
 ///     RegionName::EuWest1 => { /* ... */ },
 ///     RegionName::EuWest2 => { /* ... */ },
 ///     RegionName::EuWest3 => { /* ... */ },
+///     RegionName::SaEast1 => { /* ... */ },
 ///     RegionName::UsEast1 => { /* ... */ },
 ///     RegionName::UsEast2 => { /* ... */ },
 ///     RegionName::UsWest1 => { /* ... */ },
@@ -58,6 +61,8 @@
 )]
 pub enum RegionName {
     #[allow(missing_docs)] // documentation missing in model
+    ApEast1,
+    #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast2,
@@ -78,11 +83,15 @@ pub enum RegionName {
     #[allow(missing_docs)] // documentation missing in model
     EuNorth1,
     #[allow(missing_docs)] // documentation missing in model
+    EuSouth2,
+    #[allow(missing_docs)] // documentation missing in model
     EuWest1,
     #[allow(missing_docs)] // documentation missing in model
     EuWest2,
     #[allow(missing_docs)] // documentation missing in model
     EuWest3,
+    #[allow(missing_docs)] // documentation missing in model
+    SaEast1,
     #[allow(missing_docs)] // documentation missing in model
     UsEast1,
     #[allow(missing_docs)] // documentation missing in model
@@ -98,6 +107,7 @@ pub enum RegionName {
 impl ::std::convert::From<&str> for RegionName {
     fn from(s: &str) -> Self {
         match s {
+            "ap-east-1" => RegionName::ApEast1,
             "ap-northeast-1" => RegionName::ApNortheast1,
             "ap-northeast-2" => RegionName::ApNortheast2,
             "ap-south-1" => RegionName::ApSouth1,
@@ -108,9 +118,11 @@ impl ::std::convert::From<&str> for RegionName {
             "ca-central-1" => RegionName::CaCentral1,
             "eu-central-1" => RegionName::EuCentral1,
             "eu-north-1" => RegionName::EuNorth1,
+            "eu-south-2" => RegionName::EuSouth2,
             "eu-west-1" => RegionName::EuWest1,
             "eu-west-2" => RegionName::EuWest2,
             "eu-west-3" => RegionName::EuWest3,
+            "sa-east-1" => RegionName::SaEast1,
             "us-east-1" => RegionName::UsEast1,
             "us-east-2" => RegionName::UsEast2,
             "us-west-1" => RegionName::UsWest1,
@@ -130,6 +142,7 @@ impl RegionName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RegionName::ApEast1 => "ap-east-1",
             RegionName::ApNortheast1 => "ap-northeast-1",
             RegionName::ApNortheast2 => "ap-northeast-2",
             RegionName::ApSouth1 => "ap-south-1",
@@ -140,9 +153,11 @@ impl RegionName {
             RegionName::CaCentral1 => "ca-central-1",
             RegionName::EuCentral1 => "eu-central-1",
             RegionName::EuNorth1 => "eu-north-1",
+            RegionName::EuSouth2 => "eu-south-2",
             RegionName::EuWest1 => "eu-west-1",
             RegionName::EuWest2 => "eu-west-2",
             RegionName::EuWest3 => "eu-west-3",
+            RegionName::SaEast1 => "sa-east-1",
             RegionName::UsEast1 => "us-east-1",
             RegionName::UsEast2 => "us-east-2",
             RegionName::UsWest1 => "us-west-1",
@@ -153,6 +168,7 @@ impl RegionName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ap-east-1",
             "ap-northeast-1",
             "ap-northeast-2",
             "ap-south-1",
@@ -163,9 +179,11 @@ impl RegionName {
             "ca-central-1",
             "eu-central-1",
             "eu-north-1",
+            "eu-south-2",
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
+            "sa-east-1",
             "us-east-1",
             "us-east-2",
             "us-west-1",
@@ -193,6 +211,7 @@ impl RegionName {
 impl ::std::fmt::Display for RegionName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RegionName::ApEast1 => write!(f, "ap-east-1"),
             RegionName::ApNortheast1 => write!(f, "ap-northeast-1"),
             RegionName::ApNortheast2 => write!(f, "ap-northeast-2"),
             RegionName::ApSouth1 => write!(f, "ap-south-1"),
@@ -203,9 +222,11 @@ impl ::std::fmt::Display for RegionName {
             RegionName::CaCentral1 => write!(f, "ca-central-1"),
             RegionName::EuCentral1 => write!(f, "eu-central-1"),
             RegionName::EuNorth1 => write!(f, "eu-north-1"),
+            RegionName::EuSouth2 => write!(f, "eu-south-2"),
             RegionName::EuWest1 => write!(f, "eu-west-1"),
             RegionName::EuWest2 => write!(f, "eu-west-2"),
             RegionName::EuWest3 => write!(f, "eu-west-3"),
+            RegionName::SaEast1 => write!(f, "sa-east-1"),
             RegionName::UsEast1 => write!(f, "us-east-1"),
             RegionName::UsEast2 => write!(f, "us-east-2"),
             RegionName::UsWest1 => write!(f, "us-west-1"),

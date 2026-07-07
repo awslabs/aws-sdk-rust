@@ -69,10 +69,16 @@ pub fn ser_scatter_plot_categorically_aggregated_field_wells(
 pub(crate) fn de_scatter_plot_categorically_aggregated_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScatterPlotCategoricallyAggregatedFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -83,22 +89,38 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "XAxis" => {
-                            builder = builder.set_x_axis(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
+                            builder = builder.set_x_axis(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "YAxis" => {
-                            builder = builder.set_y_axis(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
+                            builder = builder.set_y_axis(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Category" => {
                             builder = builder.set_category(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Size" => {
-                            builder = builder.set_size(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
+                            builder = builder.set_size(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Label" => {
                             builder = builder.set_label(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

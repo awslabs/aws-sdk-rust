@@ -2,10 +2,16 @@
 pub(crate) fn de_array_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ArrayValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,27 +37,27 @@ where
                     }
                     variant = match key.as_ref() {
                         "booleanValues" => Some(crate::types::ArrayValue::BooleanValues(
-                            crate::protocol_serde::shape_boolean_array::de_boolean_array(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_boolean_array::de_boolean_array(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'booleanValues' cannot be null")
                             })?,
                         )),
                         "longValues" => Some(crate::types::ArrayValue::LongValues(
-                            crate::protocol_serde::shape_long_array::de_long_array(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_long_array::de_long_array(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'longValues' cannot be null")
                             })?,
                         )),
                         "doubleValues" => Some(crate::types::ArrayValue::DoubleValues(
-                            crate::protocol_serde::shape_double_array::de_double_array(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_double_array::de_double_array(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'doubleValues' cannot be null")
                             })?,
                         )),
                         "stringValues" => Some(crate::types::ArrayValue::StringValues(
-                            crate::protocol_serde::shape_string_array::de_string_array(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_string_array::de_string_array(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringValues' cannot be null")
                             })?,
                         )),
                         "arrayValues" => Some(crate::types::ArrayValue::ArrayValues(
-                            crate::protocol_serde::shape_array_of_array::de_array_of_array(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_array_of_array::de_array_of_array(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'arrayValues' cannot be null")
                             })?,
                         )),
@@ -90,56 +96,66 @@ pub fn ser_array_value(
         crate::types::ArrayValue::BooleanValues(inner) => {
             let mut array_1 = object_1.key("booleanValues").start_array();
             for item_2 in inner {
-                {
-                    array_1.value().boolean(*item_2);
+                if let Some(var_3) = item_2 {
+                    array_1.value().boolean(*var_3);
+                } else {
+                    array_1.value().null();
                 }
             }
             array_1.finish();
         }
         crate::types::ArrayValue::LongValues(inner) => {
-            let mut array_3 = object_1.key("longValues").start_array();
-            for item_4 in inner {
-                {
-                    array_3.value().number(
+            let mut array_4 = object_1.key("longValues").start_array();
+            for item_5 in inner {
+                if let Some(var_6) = item_5 {
+                    array_4.value().number(
                         #[allow(clippy::useless_conversion)]
-                        ::aws_smithy_types::Number::NegInt((*item_4).into()),
+                        ::aws_smithy_types::Number::NegInt((*var_6).into()),
                     );
+                } else {
+                    array_4.value().null();
                 }
             }
-            array_3.finish();
+            array_4.finish();
         }
         crate::types::ArrayValue::DoubleValues(inner) => {
-            let mut array_5 = object_1.key("doubleValues").start_array();
-            for item_6 in inner {
-                {
-                    array_5.value().number(
-                        #[allow(clippy::useless_conversion)]
-                        ::aws_smithy_types::Number::Float((*item_6).into()),
-                    );
-                }
-            }
-            array_5.finish();
-        }
-        crate::types::ArrayValue::StringValues(inner) => {
-            let mut array_7 = object_1.key("stringValues").start_array();
+            let mut array_7 = object_1.key("doubleValues").start_array();
             for item_8 in inner {
-                {
-                    array_7.value().string(item_8.as_str());
+                if let Some(var_9) = item_8 {
+                    array_7.value().number(
+                        #[allow(clippy::useless_conversion)]
+                        ::aws_smithy_types::Number::Float((*var_9).into()),
+                    );
+                } else {
+                    array_7.value().null();
                 }
             }
             array_7.finish();
         }
-        crate::types::ArrayValue::ArrayValues(inner) => {
-            let mut array_9 = object_1.key("arrayValues").start_array();
-            for item_10 in inner {
-                {
-                    #[allow(unused_mut)]
-                    let mut object_11 = array_9.value().start_object();
-                    crate::protocol_serde::shape_array_value::ser_array_value(&mut object_11, item_10)?;
-                    object_11.finish();
+        crate::types::ArrayValue::StringValues(inner) => {
+            let mut array_10 = object_1.key("stringValues").start_array();
+            for item_11 in inner {
+                if let Some(var_12) = item_11 {
+                    array_10.value().string(var_12.as_str());
+                } else {
+                    array_10.value().null();
                 }
             }
-            array_9.finish();
+            array_10.finish();
+        }
+        crate::types::ArrayValue::ArrayValues(inner) => {
+            let mut array_13 = object_1.key("arrayValues").start_array();
+            for item_14 in inner {
+                if let Some(var_15) = item_14 {
+                    #[allow(unused_mut)]
+                    let mut object_16 = array_13.value().start_object();
+                    crate::protocol_serde::shape_array_value::ser_array_value(&mut object_16, var_15)?;
+                    object_16.finish();
+                } else {
+                    array_13.value().null();
+                }
+            }
+            array_13.finish();
         }
         crate::types::ArrayValue::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ArrayValue")),
     }

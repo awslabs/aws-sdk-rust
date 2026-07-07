@@ -84,6 +84,8 @@ pub fn de_put_multi_region_access_point_policy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("PutMultiRegionAccessPointPolicyResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected PutMultiRegionAccessPointPolicyResult but got {start_el:?}. This is likely a bug in the SDK."

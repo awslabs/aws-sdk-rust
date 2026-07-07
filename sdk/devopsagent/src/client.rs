@@ -140,11 +140,17 @@ mod associate_service;
 
 mod create_agent_space;
 
+mod create_asset;
+
+mod create_asset_file;
+
 mod create_backlog_task;
 
 mod create_chat;
 
 mod create_private_connection;
+
+mod create_trigger;
 
 /// Operation customization and supporting types.
 ///
@@ -175,7 +181,13 @@ pub mod customize;
 
 mod delete_agent_space;
 
+mod delete_asset;
+
+mod delete_asset_file;
+
 mod delete_private_connection;
+
+mod delete_trigger;
 
 mod deregister_service;
 
@@ -191,6 +203,12 @@ mod get_account_usage;
 
 mod get_agent_space;
 
+mod get_asset;
+
+mod get_asset_content;
+
+mod get_asset_file;
+
 mod get_association;
 
 mod get_backlog_task;
@@ -201,7 +219,17 @@ mod get_recommendation;
 
 mod get_service;
 
+mod get_trigger;
+
 mod list_agent_spaces;
+
+mod list_asset_files;
+
+mod list_asset_types;
+
+mod list_asset_versions;
+
+mod list_assets;
 
 mod list_associations;
 
@@ -225,6 +253,8 @@ mod list_services;
 
 mod list_tags_for_resource;
 
+mod list_triggers;
+
 mod list_webhooks;
 
 mod register_service;
@@ -237,6 +267,10 @@ mod untag_resource;
 
 mod update_agent_space;
 
+mod update_asset;
+
+mod update_asset_file;
+
 mod update_association;
 
 mod update_backlog_task;
@@ -248,5 +282,7 @@ mod update_operator_app_idp_config;
 mod update_private_connection_certificate;
 
 mod update_recommendation;
+
+mod update_trigger;
 
 mod validate_aws_associations;

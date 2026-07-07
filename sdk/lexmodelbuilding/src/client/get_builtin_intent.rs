@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`supported_locales(Option<Vec::<Locale>>)`](crate::operation::get_builtin_intent::GetBuiltinIntentOutput::supported_locales): <p>A list of locales that the intent supports.</p>
     ///   - [`slots(Option<Vec::<BuiltinIntentSlot>>)`](crate::operation::get_builtin_intent::GetBuiltinIntentOutput::slots): <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
     /// - On failure, responds with [`SdkError<GetBuiltinIntentError>`](crate::operation::get_builtin_intent::GetBuiltinIntentError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn get_builtin_intent(&self) -> crate::operation::get_builtin_intent::builders::GetBuiltinIntentFluentBuilder {
         crate::operation::get_builtin_intent::builders::GetBuiltinIntentFluentBuilder::new(self.handle.clone())
     }

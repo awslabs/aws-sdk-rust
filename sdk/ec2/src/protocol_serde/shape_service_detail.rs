@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_service_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ServiceDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ServiceDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_service_detail(
             s if s.matches("serviceType") /* ServiceType com.amazonaws.ec2#ServiceDetail$ServiceType */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_service_type_detail_set::de_service_type_detail_set(&mut tag)
+                        crate::protocol_serde::shape_service_type_detail_set::de_service_type_detail_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -59,7 +63,7 @@ pub fn de_service_detail(
             s if s.matches("availabilityZoneIdSet") /* AvailabilityZoneIds com.amazonaws.ec2#ServiceDetail$AvailabilityZoneIds */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +73,7 @@ pub fn de_service_detail(
             s if s.matches("availabilityZoneSet") /* AvailabilityZones com.amazonaws.ec2#ServiceDetail$AvailabilityZones */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -92,7 +96,7 @@ pub fn de_service_detail(
             s if s.matches("baseEndpointDnsNameSet") /* BaseEndpointDnsNames com.amazonaws.ec2#ServiceDetail$BaseEndpointDnsNames */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -115,7 +119,7 @@ pub fn de_service_detail(
             s if s.matches("privateDnsNameSet") /* PrivateDnsNames com.amazonaws.ec2#ServiceDetail$PrivateDnsNames */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_private_dns_details_set::de_private_dns_details_set(&mut tag)
+                        crate::protocol_serde::shape_private_dns_details_set::de_private_dns_details_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -184,7 +188,7 @@ pub fn de_service_detail(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ServiceDetail$Tags */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -208,7 +212,7 @@ pub fn de_service_detail(
             s if s.matches("supportedIpAddressTypeSet") /* SupportedIpAddressTypes com.amazonaws.ec2#ServiceDetail$SupportedIpAddressTypes */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_supported_ip_address_types::de_supported_ip_address_types(&mut tag)
+                        crate::protocol_serde::shape_supported_ip_address_types::de_supported_ip_address_types(&mut tag, depth + 1)
                         ?
                     )
                 ;

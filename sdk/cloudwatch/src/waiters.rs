@@ -9,6 +9,9 @@ pub mod alarm_mute_rule_exists;
 /// Supporting types for the `composite_alarm_exists` waiter.
 pub mod composite_alarm_exists;
 
+/// Supporting types for the `log_alarm_exists` waiter.
+pub mod log_alarm_exists;
+
 #[allow(clippy::needless_lifetimes)]
 #[allow(clippy::let_and_return)]
 pub(crate) mod matchers;

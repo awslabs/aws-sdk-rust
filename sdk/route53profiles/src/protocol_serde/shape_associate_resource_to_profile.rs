@@ -186,6 +186,8 @@ pub(crate) fn de_associate_resource_to_profile(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -193,7 +195,7 @@ pub(crate) fn de_associate_resource_to_profile(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProfileResourceAssociation" => {
                     builder = builder.set_profile_resource_association(
-                        crate::protocol_serde::shape_profile_resource_association::de_profile_resource_association(tokens, _value)?,
+                        crate::protocol_serde::shape_profile_resource_association::de_profile_resource_association(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

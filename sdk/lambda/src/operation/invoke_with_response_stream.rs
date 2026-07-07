@@ -164,9 +164,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for InvokeWit
         ))
     }
 
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         // For streaming operations, we only hit this case if its an error
         let body = response.body().bytes().expect("body loaded");
@@ -362,10 +363,14 @@ pub enum InvokeWithResponseStreamError {
     SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
+    /// <p>The request would exceed a service quota. For more information about Lambda service quotas, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>. To request a quota increase, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">Requesting a quota increase</a> in the <i>Service Quotas User Guide</i>.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
     SnapStartException(crate::types::error::SnapStartException),
     /// <p>Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes <code>Active</code>.</p>
     SnapStartNotReadyException(crate::types::error::SnapStartNotReadyException),
+    /// <p>Lambda couldn't regenerate the SnapStart snapshot for the function. SnapStart-enabled functions periodically regenerate snapshots when their underlying runtime or dependencies change; this regeneration failed. Wait for Lambda to retry, or update the function's configuration to trigger a new snapshot. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda SnapStart</a>.</p>
+    SnapStartRegenerationFailureException(crate::types::error::SnapStartRegenerationFailureException),
     /// <p>Lambda couldn't restore the snapshot within the timeout limit.</p>
     SnapStartTimeoutException(crate::types::error::SnapStartTimeoutException),
     /// <p>Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
@@ -436,8 +441,10 @@ impl InvokeWithResponseStreamError {
             Self::S3FilesMountTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SerializedRequestEntityTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SnapStartRegenerationFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SubnetIpAddressLimitReachedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -561,6 +568,10 @@ impl InvokeWithResponseStreamError {
     pub fn is_service_exception(&self) -> bool {
         matches!(self, Self::ServiceException(_))
     }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `InvokeWithResponseStreamError::SnapStartException`.
     pub fn is_snap_start_exception(&self) -> bool {
         matches!(self, Self::SnapStartException(_))
@@ -568,6 +579,10 @@ impl InvokeWithResponseStreamError {
     /// Returns `true` if the error kind is `InvokeWithResponseStreamError::SnapStartNotReadyException`.
     pub fn is_snap_start_not_ready_exception(&self) -> bool {
         matches!(self, Self::SnapStartNotReadyException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::SnapStartRegenerationFailureException`.
+    pub fn is_snap_start_regeneration_failure_exception(&self) -> bool {
+        matches!(self, Self::SnapStartRegenerationFailureException(_))
     }
     /// Returns `true` if the error kind is `InvokeWithResponseStreamError::SnapStartTimeoutException`.
     pub fn is_snap_start_timeout_exception(&self) -> bool {
@@ -618,8 +633,10 @@ impl ::std::error::Error for InvokeWithResponseStreamError {
             Self::S3FilesMountTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::SerializedRequestEntityTooLargeException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartNotReadyException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SnapStartRegenerationFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::SubnetIpAddressLimitReachedException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -660,8 +677,10 @@ impl ::std::fmt::Display for InvokeWithResponseStreamError {
             Self::S3FilesMountTimeoutException(_inner) => _inner.fmt(f),
             Self::SerializedRequestEntityTooLargeException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::SnapStartException(_inner) => _inner.fmt(f),
             Self::SnapStartNotReadyException(_inner) => _inner.fmt(f),
+            Self::SnapStartRegenerationFailureException(_inner) => _inner.fmt(f),
             Self::SnapStartTimeoutException(_inner) => _inner.fmt(f),
             Self::SubnetIpAddressLimitReachedException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -716,8 +735,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeWithRes
             Self::S3FilesMountTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SerializedRequestEntityTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SnapStartRegenerationFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SubnetIpAddressLimitReachedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

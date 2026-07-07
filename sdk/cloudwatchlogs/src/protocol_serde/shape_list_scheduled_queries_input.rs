@@ -15,5 +15,8 @@ pub fn ser_list_scheduled_queries_input_input(
     if let Some(var_3) = &input.state {
         object.key("state").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.schedule_type {
+        object.key("scheduleType").string(var_4.as_str());
+    }
     Ok(())
 }

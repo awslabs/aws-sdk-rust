@@ -25,5 +25,7 @@ pub fn de_response_headers_policy_list(
             "invalid root, expected ResponseHeadersPolicyList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_response_headers_policy_list::de_response_headers_policy_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_response_headers_policy_list::de_response_headers_policy_list(&mut decoder, depth + 1)
 }

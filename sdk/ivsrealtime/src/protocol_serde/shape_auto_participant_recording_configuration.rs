@@ -42,10 +42,16 @@ pub fn ser_auto_participant_recording_configuration(
 pub(crate) fn de_auto_participant_recording_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutoParticipantRecordingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,14 +71,18 @@ where
                         "mediaTypes" => {
                             builder = builder.set_media_types(
                                 crate::protocol_serde::shape_participant_recording_media_type_list::de_participant_recording_media_type_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "thumbnailConfiguration" => {
                             builder = builder.set_thumbnail_configuration(
                                 crate::protocol_serde::shape_participant_thumbnail_configuration::de_participant_thumbnail_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -86,7 +96,9 @@ where
                         "hlsConfiguration" => {
                             builder = builder.set_hls_configuration(
                                 crate::protocol_serde::shape_participant_recording_hls_configuration::de_participant_recording_hls_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

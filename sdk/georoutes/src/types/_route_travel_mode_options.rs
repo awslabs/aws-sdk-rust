@@ -14,6 +14,14 @@ pub struct RouteTravelModeOptions {
     pub scooter: ::std::option::Option<crate::types::RouteScooterOptions>,
     /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub truck: ::std::option::Option<crate::types::RouteTruckOptions>,
+    /// <p>Travel mode options when the provided travel mode is <code>Intermodal</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub intermodal: ::std::option::Option<crate::types::RouteIntermodalOptions>,
+    /// <p>Travel mode options when the provided travel mode is <code>Transit</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub transit: ::std::option::Option<crate::types::RouteTransitOptions>,
 }
 impl RouteTravelModeOptions {
     /// <p>Travel mode options when the provided travel mode is <code>Car</code>.</p>
@@ -34,6 +42,18 @@ impl RouteTravelModeOptions {
     pub fn truck(&self) -> ::std::option::Option<&crate::types::RouteTruckOptions> {
         self.truck.as_ref()
     }
+    /// <p>Travel mode options when the provided travel mode is <code>Intermodal</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn intermodal(&self) -> ::std::option::Option<&crate::types::RouteIntermodalOptions> {
+        self.intermodal.as_ref()
+    }
+    /// <p>Travel mode options when the provided travel mode is <code>Transit</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn transit(&self) -> ::std::option::Option<&crate::types::RouteTransitOptions> {
+        self.transit.as_ref()
+    }
 }
 impl RouteTravelModeOptions {
     /// Creates a new builder-style object to manufacture [`RouteTravelModeOptions`](crate::types::RouteTravelModeOptions).
@@ -50,6 +70,8 @@ pub struct RouteTravelModeOptionsBuilder {
     pub(crate) pedestrian: ::std::option::Option<crate::types::RoutePedestrianOptions>,
     pub(crate) scooter: ::std::option::Option<crate::types::RouteScooterOptions>,
     pub(crate) truck: ::std::option::Option<crate::types::RouteTruckOptions>,
+    pub(crate) intermodal: ::std::option::Option<crate::types::RouteIntermodalOptions>,
+    pub(crate) transit: ::std::option::Option<crate::types::RouteTransitOptions>,
 }
 impl RouteTravelModeOptionsBuilder {
     /// <p>Travel mode options when the provided travel mode is <code>Car</code>.</p>
@@ -114,6 +136,46 @@ impl RouteTravelModeOptionsBuilder {
     pub fn get_truck(&self) -> &::std::option::Option<crate::types::RouteTruckOptions> {
         &self.truck
     }
+    /// <p>Travel mode options when the provided travel mode is <code>Intermodal</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn intermodal(mut self, input: crate::types::RouteIntermodalOptions) -> Self {
+        self.intermodal = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Travel mode options when the provided travel mode is <code>Intermodal</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn set_intermodal(mut self, input: ::std::option::Option<crate::types::RouteIntermodalOptions>) -> Self {
+        self.intermodal = input;
+        self
+    }
+    /// <p>Travel mode options when the provided travel mode is <code>Intermodal</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn get_intermodal(&self) -> &::std::option::Option<crate::types::RouteIntermodalOptions> {
+        &self.intermodal
+    }
+    /// <p>Travel mode options when the provided travel mode is <code>Transit</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn transit(mut self, input: crate::types::RouteTransitOptions) -> Self {
+        self.transit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Travel mode options when the provided travel mode is <code>Transit</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn set_transit(mut self, input: ::std::option::Option<crate::types::RouteTransitOptions>) -> Self {
+        self.transit = input;
+        self
+    }
+    /// <p>Travel mode options when the provided travel mode is <code>Transit</code>.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn get_transit(&self) -> &::std::option::Option<crate::types::RouteTransitOptions> {
+        &self.transit
+    }
     /// Consumes the builder and constructs a [`RouteTravelModeOptions`](crate::types::RouteTravelModeOptions).
     pub fn build(self) -> crate::types::RouteTravelModeOptions {
         crate::types::RouteTravelModeOptions {
@@ -121,6 +183,8 @@ impl RouteTravelModeOptionsBuilder {
             pedestrian: self.pedestrian,
             scooter: self.scooter,
             truck: self.truck,
+            intermodal: self.intermodal,
+            transit: self.transit,
         }
     }
 }

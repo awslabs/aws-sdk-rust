@@ -190,6 +190,8 @@ pub fn de_create_scheduled_action(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateScheduledActionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateScheduledActionResponse got {start_el:?}"
@@ -220,7 +222,7 @@ pub fn de_create_scheduled_action(
             s if s.matches("TargetAction") /* TargetAction com.amazonaws.redshift.synthetic#CreateScheduledActionOutput$TargetAction */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_scheduled_action_type::de_scheduled_action_type(&mut tag)
+                        crate::protocol_serde::shape_scheduled_action_type::de_scheduled_action_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -283,7 +285,7 @@ pub fn de_create_scheduled_action(
             s if s.matches("NextInvocations") /* NextInvocations com.amazonaws.redshift.synthetic#CreateScheduledActionOutput$NextInvocations */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_scheduled_action_time_list::de_scheduled_action_time_list(&mut tag)
+                        crate::protocol_serde::shape_scheduled_action_time_list::de_scheduled_action_time_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

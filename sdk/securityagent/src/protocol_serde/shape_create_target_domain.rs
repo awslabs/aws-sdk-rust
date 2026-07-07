@@ -56,6 +56,8 @@ pub(crate) fn de_create_target_domain(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -83,13 +85,22 @@ pub(crate) fn de_create_target_domain(
                 }
                 "verificationDetails" => {
                     builder = builder.set_verification_details(crate::protocol_serde::shape_verification_details::de_verification_details(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "verificationStatus" => {
                     builder = builder.set_verification_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::TargetDomainStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "verificationStatusReason" => {
+                    builder = builder.set_verification_status_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

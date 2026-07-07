@@ -2,10 +2,16 @@
 pub(crate) fn de_resource_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResourceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,125 +37,161 @@ where
                     }
                     variant = match key.as_ref() {
                         "lambdaFunction" => Some(crate::types::ResourceDetails::LambdaFunction(
-                            crate::protocol_serde::shape_lambda_function::de_lambda_function(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_lambda_function::de_lambda_function(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lambdaFunction' cannot be null")
                             })?,
                         )),
                         "ecsService" => Some(crate::types::ResourceDetails::EcsService(
-                            crate::protocol_serde::shape_ecs_service::de_ecs_service(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ecs_service::de_ecs_service(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ecsService' cannot be null")
                             })?,
                         )),
                         "ec2Instance" => Some(crate::types::ResourceDetails::Ec2Instance(
-                            crate::protocol_serde::shape_ec2_instance::de_ec2_instance(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ec2_instance::de_ec2_instance(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ec2Instance' cannot be null")
                             })?,
                         )),
                         "ebsVolume" => Some(crate::types::ResourceDetails::EbsVolume(
-                            crate::protocol_serde::shape_ebs_volume::de_ebs_volume(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ebs_volume::de_ebs_volume(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ebsVolume' cannot be null")
                             })?,
                         )),
                         "ec2AutoScalingGroup" => Some(crate::types::ResourceDetails::Ec2AutoScalingGroup(
-                            crate::protocol_serde::shape_ec2_auto_scaling_group::de_ec2_auto_scaling_group(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ec2AutoScalingGroup' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_ec2_auto_scaling_group::de_ec2_auto_scaling_group(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ec2AutoScalingGroup' cannot be null"),
+                            )?,
                         )),
                         "ec2ReservedInstances" => Some(crate::types::ResourceDetails::Ec2ReservedInstances(
-                            crate::protocol_serde::shape_ec2_reserved_instances::de_ec2_reserved_instances(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ec2ReservedInstances' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_ec2_reserved_instances::de_ec2_reserved_instances(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ec2ReservedInstances' cannot be null"),
+                            )?,
                         )),
                         "rdsReservedInstances" => Some(crate::types::ResourceDetails::RdsReservedInstances(
-                            crate::protocol_serde::shape_rds_reserved_instances::de_rds_reserved_instances(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsReservedInstances' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_rds_reserved_instances::de_rds_reserved_instances(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsReservedInstances' cannot be null"),
+                            )?,
                         )),
                         "elastiCacheReservedInstances" => Some(crate::types::ResourceDetails::ElastiCacheReservedInstances(
-                            crate::protocol_serde::shape_elasti_cache_reserved_instances::de_elasti_cache_reserved_instances(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'elastiCacheReservedInstances' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_elasti_cache_reserved_instances::de_elasti_cache_reserved_instances(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'elastiCacheReservedInstances' cannot be null",
+                                )
+                            })?,
                         )),
                         "openSearchReservedInstances" => Some(crate::types::ResourceDetails::OpenSearchReservedInstances(
-                            crate::protocol_serde::shape_open_search_reserved_instances::de_open_search_reserved_instances(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'openSearchReservedInstances' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_open_search_reserved_instances::de_open_search_reserved_instances(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'openSearchReservedInstances' cannot be null",
+                                )
+                            })?,
                         )),
                         "redshiftReservedInstances" => Some(crate::types::ResourceDetails::RedshiftReservedInstances(
-                            crate::protocol_serde::shape_redshift_reserved_instances::de_redshift_reserved_instances(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_redshift_reserved_instances::de_redshift_reserved_instances(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'redshiftReservedInstances' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "ec2InstanceSavingsPlans" => Some(crate::types::ResourceDetails::Ec2InstanceSavingsPlans(
-                            crate::protocol_serde::shape_ec2_instance_savings_plans::de_ec2_instance_savings_plans(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_ec2_instance_savings_plans::de_ec2_instance_savings_plans(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'ec2InstanceSavingsPlans' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "computeSavingsPlans" => Some(crate::types::ResourceDetails::ComputeSavingsPlans(
-                            crate::protocol_serde::shape_compute_savings_plans::de_compute_savings_plans(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'computeSavingsPlans' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_compute_savings_plans::de_compute_savings_plans(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'computeSavingsPlans' cannot be null"),
+                            )?,
                         )),
                         "sageMakerSavingsPlans" => Some(crate::types::ResourceDetails::SageMakerSavingsPlans(
-                            crate::protocol_serde::shape_sage_maker_savings_plans::de_sage_maker_savings_plans(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sageMakerSavingsPlans' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_sage_maker_savings_plans::de_sage_maker_savings_plans(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'sageMakerSavingsPlans' cannot be null",
+                                    )
+                                })?,
                         )),
                         "rdsDbInstance" => Some(crate::types::ResourceDetails::RdsDbInstance(
-                            crate::protocol_serde::shape_rds_db_instance::de_rds_db_instance(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rds_db_instance::de_rds_db_instance(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbInstance' cannot be null")
                             })?,
                         )),
                         "rdsDbInstanceStorage" => Some(crate::types::ResourceDetails::RdsDbInstanceStorage(
-                            crate::protocol_serde::shape_rds_db_instance_storage::de_rds_db_instance_storage(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbInstanceStorage' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_rds_db_instance_storage::de_rds_db_instance_storage(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbInstanceStorage' cannot be null"),
+                            )?,
                         )),
                         "auroraDbClusterStorage" => Some(crate::types::ResourceDetails::AuroraDbClusterStorage(
-                            crate::protocol_serde::shape_aurora_db_cluster_storage::de_aurora_db_cluster_storage(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_aurora_db_cluster_storage::de_aurora_db_cluster_storage(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'auroraDbClusterStorage' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "dynamoDbReservedCapacity" => Some(crate::types::ResourceDetails::DynamoDbReservedCapacity(
-                            crate::protocol_serde::shape_dynamo_db_reserved_capacity::de_dynamo_db_reserved_capacity(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_dynamo_db_reserved_capacity::de_dynamo_db_reserved_capacity(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'dynamoDbReservedCapacity' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "memoryDbReservedInstances" => Some(crate::types::ResourceDetails::MemoryDbReservedInstances(
-                            crate::protocol_serde::shape_memory_db_reserved_instances::de_memory_db_reserved_instances(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_memory_db_reserved_instances::de_memory_db_reserved_instances(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'memoryDbReservedInstances' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "natGateway" => Some(crate::types::ResourceDetails::NatGateway(
-                            crate::protocol_serde::shape_nat_gateway::de_nat_gateway(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_nat_gateway::de_nat_gateway(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'natGateway' cannot be null")
                             })?,
+                        )),
+                        "dynamoDbTable" => Some(crate::types::ResourceDetails::DynamoDbTable(
+                            crate::protocol_serde::shape_dynamo_db_table::de_dynamo_db_table(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamoDbTable' cannot be null")
+                            })?,
+                        )),
+                        "elastiCacheCluster" => Some(crate::types::ResourceDetails::ElastiCacheCluster(
+                            crate::protocol_serde::shape_elasti_cache_cluster::de_elasti_cache_cluster(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'elastiCacheCluster' cannot be null"),
+                            )?,
+                        )),
+                        "memoryDbCluster" => Some(crate::types::ResourceDetails::MemoryDbCluster(
+                            crate::protocol_serde::shape_memory_db_cluster::de_memory_db_cluster(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'memoryDbCluster' cannot be null")
+                            })?,
+                        )),
+                        "documentDbCluster" => Some(crate::types::ResourceDetails::DocumentDbCluster(
+                            crate::protocol_serde::shape_document_db_cluster::de_document_db_cluster(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentDbCluster' cannot be null"),
+                            )?,
+                        )),
+                        "workSpaces" => Some(crate::types::ResourceDetails::WorkSpaces(
+                            crate::protocol_serde::shape_work_spaces::de_work_spaces(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'workSpaces' cannot be null")
+                            })?,
+                        )),
+                        "sageMakerEndpoint" => Some(crate::types::ResourceDetails::SageMakerEndpoint(
+                            crate::protocol_serde::shape_sage_maker_endpoint::de_sage_maker_endpoint(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sageMakerEndpoint' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

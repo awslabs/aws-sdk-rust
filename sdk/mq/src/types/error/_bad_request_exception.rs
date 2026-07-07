@@ -8,12 +8,20 @@ pub struct BadRequestException {
     pub error_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The explanation of the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The list of resource share errors.</p>
+    pub resource_share_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareError>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl BadRequestException {
     /// <p>The attribute which caused the error.</p>
     pub fn error_attribute(&self) -> ::std::option::Option<&str> {
         self.error_attribute.as_deref()
+    }
+    /// <p>The list of resource share errors.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_errors.is_none()`.
+    pub fn resource_share_errors(&self) -> &[crate::types::ResourceShareError] {
+        self.resource_share_errors.as_deref().unwrap_or_default()
     }
 }
 impl BadRequestException {
@@ -58,6 +66,7 @@ impl BadRequestException {
 pub struct BadRequestExceptionBuilder {
     pub(crate) error_attribute: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_share_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareError>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl BadRequestExceptionBuilder {
@@ -89,6 +98,26 @@ impl BadRequestExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// Appends an item to `resource_share_errors`.
+    ///
+    /// To override the contents of this collection use [`set_resource_share_errors`](Self::set_resource_share_errors).
+    ///
+    /// <p>The list of resource share errors.</p>
+    pub fn resource_share_errors(mut self, input: crate::types::ResourceShareError) -> Self {
+        let mut v = self.resource_share_errors.unwrap_or_default();
+        v.push(input);
+        self.resource_share_errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of resource share errors.</p>
+    pub fn set_resource_share_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareError>>) -> Self {
+        self.resource_share_errors = input;
+        self
+    }
+    /// <p>The list of resource share errors.</p>
+    pub fn get_resource_share_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceShareError>> {
+        &self.resource_share_errors
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -105,6 +134,7 @@ impl BadRequestExceptionBuilder {
         crate::types::error::BadRequestException {
             error_attribute: self.error_attribute,
             message: self.message,
+            resource_share_errors: self.resource_share_errors,
             meta: self.meta.unwrap_or_default(),
         }
     }

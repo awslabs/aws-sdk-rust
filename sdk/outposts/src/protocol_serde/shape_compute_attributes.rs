@@ -2,10 +2,16 @@
 pub(crate) fn de_compute_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComputeAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,12 +36,19 @@ where
                             );
                         }
                         "InstanceFamilies" => {
-                            builder =
-                                builder.set_instance_families(crate::protocol_serde::shape_instance_families::de_instance_families(tokens, _value)?);
+                            builder = builder.set_instance_families(crate::protocol_serde::shape_instance_families::de_instance_families(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InstanceTypeCapacities" => {
                             builder = builder.set_instance_type_capacities(
-                                crate::protocol_serde::shape_asset_instance_capacity_list::de_asset_instance_capacity_list(tokens, _value)?,
+                                crate::protocol_serde::shape_asset_instance_capacity_list::de_asset_instance_capacity_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MaxVcpus" => {

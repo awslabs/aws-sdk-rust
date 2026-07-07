@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_recommendation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbRecommendation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbRecommendation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -155,7 +159,7 @@ pub fn de_db_recommendation(
             s if s.matches("RecommendedActions") /* RecommendedActions com.amazonaws.rds#DBRecommendation$RecommendedActions */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_recommended_action_list::de_recommended_action_list(&mut tag)
+                        crate::protocol_serde::shape_recommended_action_list::de_recommended_action_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -243,7 +247,7 @@ pub fn de_db_recommendation(
             s if s.matches("Links") /* Links com.amazonaws.rds#DBRecommendation$Links */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_doc_link_list::de_doc_link_list(&mut tag)
+                        crate::protocol_serde::shape_doc_link_list::de_doc_link_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -253,7 +257,7 @@ pub fn de_db_recommendation(
             s if s.matches("IssueDetails") /* IssueDetails com.amazonaws.rds#DBRecommendation$IssueDetails */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_issue_details::de_issue_details(&mut tag)
+                        crate::protocol_serde::shape_issue_details::de_issue_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

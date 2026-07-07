@@ -119,6 +119,8 @@ pub(crate) fn de_get_ota_task(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -152,7 +154,7 @@ pub(crate) fn de_get_ota_task(
                 }
                 "OtaSchedulingConfig" => {
                     builder = builder.set_ota_scheduling_config(
-                        crate::protocol_serde::shape_ota_task_scheduling_config::de_ota_task_scheduling_config(tokens, _value)?,
+                        crate::protocol_serde::shape_ota_task_scheduling_config::de_ota_task_scheduling_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "OtaTargetQueryString" => {
@@ -164,7 +166,7 @@ pub(crate) fn de_get_ota_task(
                 }
                 "OtaTaskExecutionRetryConfig" => {
                     builder = builder.set_ota_task_execution_retry_config(
-                        crate::protocol_serde::shape_ota_task_execution_retry_config::de_ota_task_execution_retry_config(tokens, _value)?,
+                        crate::protocol_serde::shape_ota_task_execution_retry_config::de_ota_task_execution_retry_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "OtaType" => {
@@ -196,10 +198,10 @@ pub(crate) fn de_get_ota_task(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                 }
                 "Target" => {
-                    builder = builder.set_target(crate::protocol_serde::shape_target::de_target(tokens, _value)?);
+                    builder = builder.set_target(crate::protocol_serde::shape_target::de_target(tokens, _value, depth + 1)?);
                 }
                 "TaskArn" => {
                     builder = builder.set_task_arn(
@@ -224,7 +226,9 @@ pub(crate) fn de_get_ota_task(
                 }
                 "TaskProcessingDetails" => {
                     builder = builder.set_task_processing_details(crate::protocol_serde::shape_task_processing_details::de_task_processing_details(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_entity_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EntitySummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,40 +64,57 @@ where
                             );
                         }
                         "AmiProductSummary" => {
-                            builder = builder
-                                .set_ami_product_summary(crate::protocol_serde::shape_ami_product_summary::de_ami_product_summary(tokens, _value)?);
+                            builder = builder.set_ami_product_summary(crate::protocol_serde::shape_ami_product_summary::de_ami_product_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ContainerProductSummary" => {
                             builder = builder.set_container_product_summary(
-                                crate::protocol_serde::shape_container_product_summary::de_container_product_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_container_product_summary::de_container_product_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "DataProductSummary" => {
                             builder = builder.set_data_product_summary(crate::protocol_serde::shape_data_product_summary::de_data_product_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SaaSProductSummary" => {
                             builder = builder.set_saa_s_product_summary(
-                                crate::protocol_serde::shape_saa_s_product_summary::de_saa_s_product_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_saa_s_product_summary::de_saa_s_product_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "OfferSummary" => {
-                            builder = builder.set_offer_summary(crate::protocol_serde::shape_offer_summary::de_offer_summary(tokens, _value)?);
+                            builder =
+                                builder.set_offer_summary(crate::protocol_serde::shape_offer_summary::de_offer_summary(tokens, _value, depth + 1)?);
                         }
                         "ResaleAuthorizationSummary" => {
                             builder = builder.set_resale_authorization_summary(
-                                crate::protocol_serde::shape_resale_authorization_summary::de_resale_authorization_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_resale_authorization_summary::de_resale_authorization_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MachineLearningProductSummary" => {
                             builder = builder.set_machine_learning_product_summary(
-                                crate::protocol_serde::shape_machine_learning_product_summary::de_machine_learning_product_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_machine_learning_product_summary::de_machine_learning_product_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "OfferSetSummary" => {
-                            builder =
-                                builder.set_offer_set_summary(crate::protocol_serde::shape_offer_set_summary::de_offer_set_summary(tokens, _value)?);
+                            builder = builder.set_offer_set_summary(crate::protocol_serde::shape_offer_set_summary::de_offer_set_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

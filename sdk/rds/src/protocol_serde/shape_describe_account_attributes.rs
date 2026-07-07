@@ -51,6 +51,8 @@ pub fn de_describe_account_attributes(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeAccountAttributesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeAccountAttributesResponse got {start_el:?}"
@@ -68,7 +70,7 @@ pub fn de_describe_account_attributes(
             s if s.matches("AccountQuotas") /* AccountQuotas com.amazonaws.rds.synthetic#DescribeAccountAttributesOutput$AccountQuotas */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_account_quota_list::de_account_quota_list(&mut tag)
+                        crate::protocol_serde::shape_account_quota_list::de_account_quota_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

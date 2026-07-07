@@ -9,6 +9,8 @@ pub struct CreateTenantInput {
     pub tenant_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) to associate with the tenant</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>An object that contains information about the suppression list preferences for the tenant. Use this to configure tenant-level suppression at creation time.</p>
+    pub suppression_attributes: ::std::option::Option<crate::types::TenantSuppressionAttributes>,
 }
 impl CreateTenantInput {
     /// <p>The name of the tenant to create. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
@@ -20,6 +22,10 @@ impl CreateTenantInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>An object that contains information about the suppression list preferences for the tenant. Use this to configure tenant-level suppression at creation time.</p>
+    pub fn suppression_attributes(&self) -> ::std::option::Option<&crate::types::TenantSuppressionAttributes> {
+        self.suppression_attributes.as_ref()
     }
 }
 impl CreateTenantInput {
@@ -35,6 +41,7 @@ impl CreateTenantInput {
 pub struct CreateTenantInputBuilder {
     pub(crate) tenant_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) suppression_attributes: ::std::option::Option<crate::types::TenantSuppressionAttributes>,
 }
 impl CreateTenantInputBuilder {
     /// <p>The name of the tenant to create. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
@@ -72,6 +79,20 @@ impl CreateTenantInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>An object that contains information about the suppression list preferences for the tenant. Use this to configure tenant-level suppression at creation time.</p>
+    pub fn suppression_attributes(mut self, input: crate::types::TenantSuppressionAttributes) -> Self {
+        self.suppression_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains information about the suppression list preferences for the tenant. Use this to configure tenant-level suppression at creation time.</p>
+    pub fn set_suppression_attributes(mut self, input: ::std::option::Option<crate::types::TenantSuppressionAttributes>) -> Self {
+        self.suppression_attributes = input;
+        self
+    }
+    /// <p>An object that contains information about the suppression list preferences for the tenant. Use this to configure tenant-level suppression at creation time.</p>
+    pub fn get_suppression_attributes(&self) -> &::std::option::Option<crate::types::TenantSuppressionAttributes> {
+        &self.suppression_attributes
+    }
     /// Consumes the builder and constructs a [`CreateTenantInput`](crate::operation::create_tenant::CreateTenantInput).
     pub fn build(
         self,
@@ -79,6 +100,7 @@ impl CreateTenantInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_tenant::CreateTenantInput {
             tenant_name: self.tenant_name,
             tags: self.tags,
+            suppression_attributes: self.suppression_attributes,
         })
     }
 }

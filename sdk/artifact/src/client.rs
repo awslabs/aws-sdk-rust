@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetReport`](crate::operation::get_report) operation has
-/// a [`Client::get_report`], function which returns a builder for that operation.
+/// For example, the [`CreateComplianceInquiry`](crate::operation::create_compliance_inquiry) operation has
+/// a [`Client::create_compliance_inquiry`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_report()
-///     .report_id("example")
+/// let result = client.create_compliance_inquiry()
+///     .name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod create_compliance_inquiry;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -147,7 +149,7 @@ impl Client {
 /// # let client: aws_sdk_artifact::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_account_settings()
+/// let result = client.create_compliance_inquiry()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -163,7 +165,11 @@ impl Client {
 /// ```
 pub mod customize;
 
+mod export_compliance_inquiry;
+
 mod get_account_settings;
+
+mod get_compliance_inquiry_metadata;
 
 mod get_report;
 
@@ -171,10 +177,20 @@ mod get_report_metadata;
 
 mod get_term_for_report;
 
+mod list_compliance_inquiries;
+
+mod list_compliance_inquiry_queries;
+
 mod list_customer_agreements;
 
 mod list_report_versions;
 
 mod list_reports;
 
+mod list_tags_for_resource;
+
 mod put_account_settings;
+
+mod tag_resource;
+
+mod untag_resource;

@@ -25,7 +25,11 @@ pub fn ser_cached_methods(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cached_methods(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CachedMethods, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CachedMethods::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_cached_methods(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#CachedMethods$Items */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_methods_list::de_methods_list(&mut tag)
+                        crate::protocol_serde::shape_methods_list::de_methods_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

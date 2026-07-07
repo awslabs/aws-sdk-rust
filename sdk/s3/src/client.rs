@@ -255,6 +255,8 @@ mod delete_bucket_website;
 
 mod delete_object;
 
+mod delete_object_annotation;
+
 mod delete_object_tagging;
 
 mod delete_objects;
@@ -311,6 +313,8 @@ mod get_object;
 
 mod get_object_acl;
 
+mod get_object_annotation;
+
 mod get_object_attributes;
 
 mod get_object_legal_hold;
@@ -342,6 +346,8 @@ mod list_buckets;
 mod list_directory_buckets;
 
 mod list_multipart_uploads;
+
+mod list_object_annotations;
 
 mod list_object_versions;
 
@@ -393,6 +399,8 @@ mod put_object;
 
 mod put_object_acl;
 
+mod put_object_annotation;
+
 mod put_object_legal_hold;
 
 mod put_object_lock_configuration;
@@ -408,6 +416,8 @@ mod rename_object;
 mod restore_object;
 
 mod select_object_content;
+
+mod update_bucket_metadata_annotation_table_configuration;
 
 mod update_bucket_metadata_inventory_table_configuration;
 

@@ -9,27 +9,49 @@ pub use crate::types::_provider::Provider;
 
 pub use crate::types::_provider_type::ProviderType;
 
+pub use crate::types::_management_type::ManagementType;
+
+pub use crate::types::_security_requirement_pack_status::SecurityRequirementPackStatus;
+
+pub use crate::types::_security_requirement_pack_import_status::SecurityRequirementPackImportStatus;
+
 pub use crate::types::_target_domain_status::TargetDomainStatus;
 
 pub use crate::types::_verification_details::VerificationDetails;
 
 pub use crate::types::_artifact_type::ArtifactType;
 
-pub use crate::types::_membership_type::MembershipType;
-
-pub use crate::types::_membership_config::MembershipConfig;
-
 pub use crate::types::_assets::Assets;
 
 pub use crate::types::_cloud_watch_log::CloudWatchLog;
+
+pub use crate::types::_code_remediation_strategy::CodeRemediationStrategy;
+
+pub use crate::types::_validation_mode::ValidationMode;
+
+pub use crate::types::_membership_type::MembershipType;
+
+pub use crate::types::_membership_config::MembershipConfig;
 
 pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_network_traffic_config::NetworkTrafficConfig;
 
-pub use crate::types::_code_remediation_strategy::CodeRemediationStrategy;
+pub use crate::types::_threat_severity::ThreatSeverity;
+
+pub use crate::types::_threat_anchor_shape::ThreatAnchorShape;
+
+pub use crate::types::_threat_status::ThreatStatus;
+
+pub use crate::types::_threat_actor::ThreatActor;
+
+pub use crate::types::_report_destination::ReportDestination;
 
 pub use crate::types::_artifact::Artifact;
+
+pub use crate::types::_import_source::ImportSource;
+
+pub use crate::types::_step_name::StepName;
 
 pub use crate::types::_risk_level::RiskLevel;
 
@@ -41,7 +63,7 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_membership_type_filter::MembershipTypeFilter;
 
-pub use crate::types::_step_name::StepName;
+pub use crate::types::_diff_source::DiffSource;
 
 pub use crate::types::_job_status::JobStatus;
 
@@ -55,13 +77,39 @@ pub use crate::types::_integration_filter::IntegrationFilter;
 
 pub use crate::types::_provider_input::ProviderInput;
 
+pub use crate::types::_private_connection_type::PrivateConnectionType;
+
+pub use crate::types::_private_connection_status::PrivateConnectionStatus;
+
+pub use crate::types::_resource_config_dns_resolution::ResourceConfigDnsResolution;
+
+pub use crate::types::_private_connection_mode::PrivateConnectionMode;
+
+pub use crate::types::_list_security_requirement_pack_filter::ListSecurityRequirementPackFilter;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
+
+pub use crate::types::_create_security_requirement_entry::CreateSecurityRequirementEntry;
+
+pub use crate::types::_batch_create_security_requirement_result::BatchCreateSecurityRequirementResult;
+
+pub use crate::types::_batch_security_requirement_error::BatchSecurityRequirementError;
+
+pub use crate::types::_delete_code_review_failure::DeleteCodeReviewFailure;
 
 pub use crate::types::_pentest::Pentest;
 
 pub use crate::types::_delete_pentest_failure::DeletePentestFailure;
 
+pub use crate::types::_delete_threat_model_failure::DeleteThreatModelFailure;
+
 pub use crate::types::_artifact_metadata_item::ArtifactMetadataItem;
+
+pub use crate::types::_code_review_job::CodeReviewJob;
+
+pub use crate::types::_code_review_job_task::CodeReviewJobTask;
+
+pub use crate::types::_code_review::CodeReview;
 
 pub use crate::types::_finding::Finding;
 
@@ -69,11 +117,37 @@ pub use crate::types::_pentest_job::PentestJob;
 
 pub use crate::types::_task::Task;
 
+pub use crate::types::_batch_get_security_requirement_result::BatchGetSecurityRequirementResult;
+
+pub use crate::types::_threat_model_job::ThreatModelJob;
+
+pub use crate::types::_threat_model_job_task::ThreatModelJobTask;
+
+pub use crate::types::_threat_model::ThreatModel;
+
+pub use crate::types::_threat::Threat;
+
+pub use crate::types::_update_security_requirement_entry::UpdateSecurityRequirementEntry;
+
 pub use crate::types::_user_config::UserConfig;
 
 pub use crate::types::_risk_type::RiskType;
 
+pub use crate::types::_skill_type::SkillType;
+
+pub use crate::types::_stride_category::StrideCategory;
+
+pub use crate::types::_threat_evidence_shape::ThreatEvidenceShape;
+
+pub use crate::types::_document_info::DocumentInfo;
+
 pub use crate::types::_artifact_summary::ArtifactSummary;
+
+pub use crate::types::_code_review_job_summary::CodeReviewJobSummary;
+
+pub use crate::types::_code_review_job_task_summary::CodeReviewJobTaskSummary;
+
+pub use crate::types::_code_review_summary::CodeReviewSummary;
 
 pub use crate::types::_discovered_endpoint::DiscoveredEndpoint;
 
@@ -89,6 +163,16 @@ pub use crate::types::_task_summary::TaskSummary;
 
 pub use crate::types::_pentest_summary::PentestSummary;
 
+pub use crate::types::_security_requirement_summary::SecurityRequirementSummary;
+
+pub use crate::types::_threat_model_job_summary::ThreatModelJobSummary;
+
+pub use crate::types::_threat_model_job_task_summary::ThreatModelJobTaskSummary;
+
+pub use crate::types::_threat_model_summary::ThreatModelSummary;
+
+pub use crate::types::_threat_summary::ThreatSummary;
+
 pub use crate::types::_integrated_resource_input_item::IntegratedResourceInputItem;
 
 pub use crate::types::_dns_record_type::DnsRecordType;
@@ -103,33 +187,55 @@ pub use crate::types::_integration_summary::IntegrationSummary;
 
 pub use crate::types::_git_hub_integration_input::GitHubIntegrationInput;
 
+pub use crate::types::_git_lab_integration_input::GitLabIntegrationInput;
+
+pub use crate::types::_bitbucket_integration_input::BitbucketIntegrationInput;
+
+pub use crate::types::_confluence_integration_input::ConfluenceIntegrationInput;
+
+pub use crate::types::_private_connection_summary::PrivateConnectionSummary;
+
+pub use crate::types::_service_managed_input::ServiceManagedInput;
+
+pub use crate::types::_self_managed_input::SelfManagedInput;
+
+pub use crate::types::_security_requirement_pack_summary::SecurityRequirementPackSummary;
+
 pub use crate::types::_target_domain_summary::TargetDomainSummary;
 
 pub use crate::types::_target_domain::TargetDomain;
 
-pub use crate::types::_code_remediation_task::CodeRemediationTask;
+pub use crate::types::_clean_up_strategy::CleanUpStrategy;
 
 pub use crate::types::_error_information::ErrorInformation;
-
-pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_task_execution_status::TaskExecutionStatus;
 
 pub use crate::types::_log_location::LogLocation;
 
-pub use crate::types::_user_role::UserRole;
+pub use crate::types::_validation_status::ValidationStatus;
+
+pub use crate::types::_code_remediation_task::CodeRemediationTask;
+
+pub use crate::types::_verification_script::VerificationScript;
+
+pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_actor::Actor;
-
-pub use crate::types::_document_info::DocumentInfo;
 
 pub use crate::types::_source_code_repository::SourceCodeRepository;
 
 pub use crate::types::_integrated_repository::IntegratedRepository;
 
+pub use crate::types::_user_role::UserRole;
+
 pub use crate::types::_network_traffic_rule::NetworkTrafficRule;
 
 pub use crate::types::_custom_header::CustomHeader;
+
+pub use crate::types::_integrated_document::IntegratedDocument;
+
+pub use crate::types::_security_requirement_artifact::SecurityRequirementArtifact;
 
 pub use crate::types::_integrated_resource_metadata::IntegratedResourceMetadata;
 
@@ -139,7 +245,9 @@ pub use crate::types::_member_metadata::MemberMetadata;
 
 pub use crate::types::_integrated_resource::IntegratedResource;
 
-pub use crate::types::_code_remediation_task_status::CodeRemediationTaskStatus;
+pub use crate::types::_git_lab_token_type::GitLabTokenType;
+
+pub use crate::types::_ip_address_type::IpAddressType;
 
 pub use crate::types::_step::Step;
 
@@ -151,25 +259,51 @@ pub use crate::types::_category::Category;
 
 pub use crate::types::_log_type::LogType;
 
+pub use crate::types::_code_remediation_task_status::CodeRemediationTaskStatus;
+
+pub use crate::types::_code_location::CodeLocation;
+
 pub use crate::types::_authentication::Authentication;
 
 pub use crate::types::_network_traffic_rule_effect::NetworkTrafficRuleEffect;
 
 pub use crate::types::_network_traffic_rule_type::NetworkTrafficRuleType;
 
+pub use crate::types::_security_requirement_artifact_format::SecurityRequirementArtifactFormat;
+
 pub use crate::types::_git_hub_repository_metadata::GitHubRepositoryMetadata;
 
+pub use crate::types::_git_lab_repository_metadata::GitLabRepositoryMetadata;
+
+pub use crate::types::_bitbucket_repository_metadata::BitbucketRepositoryMetadata;
+
+pub use crate::types::_confluence_document_metadata::ConfluenceDocumentMetadata;
+
 pub use crate::types::_git_hub_resource_capabilities::GitHubResourceCapabilities;
+
+pub use crate::types::_git_lab_resource_capabilities::GitLabResourceCapabilities;
+
+pub use crate::types::_bitbucket_resource_capabilities::BitbucketResourceCapabilities;
+
+pub use crate::types::_confluence_resource_capabilities::ConfluenceResourceCapabilities;
 
 pub use crate::types::_user_metadata::UserMetadata;
 
 pub use crate::types::_git_hub_repository_resource::GitHubRepositoryResource;
 
-pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetails;
+pub use crate::types::_git_lab_repository_resource::GitLabRepositoryResource;
+
+pub use crate::types::_bitbucket_repository_resource::BitbucketRepositoryResource;
+
+pub use crate::types::_confluence_document_resource::ConfluenceDocumentResource;
 
 pub use crate::types::_step_status::StepStatus;
 
 pub use crate::types::_context_type::ContextType;
+
+pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetails;
+
+pub use crate::types::_verification_script_env_var::VerificationScriptEnvVar;
 
 pub use crate::types::_authentication_provider_type::AuthenticationProviderType;
 
@@ -201,9 +335,27 @@ mod _authentication_provider_type;
 
 mod _aws_resources;
 
+mod _batch_create_security_requirement_result;
+
+mod _batch_get_security_requirement_result;
+
+mod _batch_security_requirement_error;
+
+mod _bitbucket_integration_input;
+
+mod _bitbucket_repository_metadata;
+
+mod _bitbucket_repository_resource;
+
+mod _bitbucket_resource_capabilities;
+
 mod _category;
 
+mod _clean_up_strategy;
+
 mod _cloud_watch_log;
+
+mod _code_location;
 
 mod _code_remediation_strategy;
 
@@ -213,15 +365,43 @@ mod _code_remediation_task_details;
 
 mod _code_remediation_task_status;
 
+mod _code_review;
+
+mod _code_review_job;
+
+mod _code_review_job_summary;
+
+mod _code_review_job_task;
+
+mod _code_review_job_task_summary;
+
 mod _code_review_settings;
+
+mod _code_review_summary;
 
 mod _confidence_level;
 
+mod _confluence_document_metadata;
+
+mod _confluence_document_resource;
+
+mod _confluence_integration_input;
+
+mod _confluence_resource_capabilities;
+
 mod _context_type;
+
+mod _create_security_requirement_entry;
 
 mod _custom_header;
 
+mod _delete_code_review_failure;
+
 mod _delete_pentest_failure;
+
+mod _delete_threat_model_failure;
+
+mod _diff_source;
 
 mod _discovered_endpoint;
 
@@ -255,9 +435,23 @@ mod _git_hub_repository_resource;
 
 mod _git_hub_resource_capabilities;
 
+mod _git_lab_integration_input;
+
+mod _git_lab_repository_metadata;
+
+mod _git_lab_repository_resource;
+
+mod _git_lab_resource_capabilities;
+
+mod _git_lab_token_type;
+
 mod _http_verification;
 
 mod _id_c_configuration;
+
+mod _import_source;
+
+mod _integrated_document;
 
 mod _integrated_repository;
 
@@ -273,11 +467,17 @@ mod _integration_filter;
 
 mod _integration_summary;
 
+mod _ip_address_type;
+
 mod _job_status;
+
+mod _list_security_requirement_pack_filter;
 
 mod _log_location;
 
 mod _log_type;
+
+mod _management_type;
 
 mod _member_metadata;
 
@@ -305,6 +505,14 @@ mod _pentest_job_summary;
 
 mod _pentest_summary;
 
+mod _private_connection_mode;
+
+mod _private_connection_status;
+
+mod _private_connection_summary;
+
+mod _private_connection_type;
+
 mod _provider;
 
 mod _provider_input;
@@ -313,11 +521,33 @@ mod _provider_resource_capabilities;
 
 mod _provider_type;
 
+mod _report_destination;
+
+mod _resource_config_dns_resolution;
+
 mod _resource_type;
 
 mod _risk_level;
 
 mod _risk_type;
+
+mod _security_requirement_artifact;
+
+mod _security_requirement_artifact_format;
+
+mod _security_requirement_pack_import_status;
+
+mod _security_requirement_pack_status;
+
+mod _security_requirement_pack_summary;
+
+mod _security_requirement_summary;
+
+mod _self_managed_input;
+
+mod _service_managed_input;
+
+mod _skill_type;
 
 mod _source_code_repository;
 
@@ -326,6 +556,8 @@ mod _step;
 mod _step_name;
 
 mod _step_status;
+
+mod _stride_category;
 
 mod _target_domain;
 
@@ -339,6 +571,34 @@ mod _task_execution_status;
 
 mod _task_summary;
 
+mod _threat;
+
+mod _threat_actor;
+
+mod _threat_anchor_shape;
+
+mod _threat_evidence_shape;
+
+mod _threat_model;
+
+mod _threat_model_job;
+
+mod _threat_model_job_summary;
+
+mod _threat_model_job_task;
+
+mod _threat_model_job_task_summary;
+
+mod _threat_model_summary;
+
+mod _threat_severity;
+
+mod _threat_status;
+
+mod _threat_summary;
+
+mod _update_security_requirement_entry;
+
 mod _user_config;
 
 mod _user_metadata;
@@ -347,7 +607,15 @@ mod _user_role;
 
 mod _validation_exception_field;
 
+mod _validation_mode;
+
+mod _validation_status;
+
 mod _verification_details;
+
+mod _verification_script;
+
+mod _verification_script_env_var;
 
 mod _vpc_config;
 

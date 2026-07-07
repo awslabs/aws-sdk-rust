@@ -22,7 +22,7 @@ impl crate::operation::get_recommendation::builders::GetRecommendationInputBuild
 }
 /// Fluent builder constructing a request to `GetRecommendation`.
 ///
-/// Retrieves a specific recommendation by its ID
+/// <p>Retrieves a specific recommendation by its ID</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl GetRecommendationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier for the agent space containing the recommendation
+    /// <p>The unique identifier for the agent space containing the recommendation</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space containing the recommendation
+    /// <p>The unique identifier for the agent space containing the recommendation</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space containing the recommendation
+    /// <p>The unique identifier for the agent space containing the recommendation</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The unique identifier for the recommendation to retrieve
+    /// <p>The unique identifier for the recommendation to retrieve</p>
     pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_id(input.into());
         self
     }
-    /// The unique identifier for the recommendation to retrieve
+    /// <p>The unique identifier for the recommendation to retrieve</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommendation_id(input);
         self
     }
-    /// The unique identifier for the recommendation to retrieve
+    /// <p>The unique identifier for the recommendation to retrieve</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recommendation_id()
     }
-    /// Specific version of the recommendation to retrieve. If not specified, returns the latest version.
+    /// <p>Specific version of the recommendation to retrieve. If not specified, returns the latest version.</p>
     pub fn recommendation_version(mut self, input: i64) -> Self {
         self.inner = self.inner.recommendation_version(input);
         self
     }
-    /// Specific version of the recommendation to retrieve. If not specified, returns the latest version.
+    /// <p>Specific version of the recommendation to retrieve. If not specified, returns the latest version.</p>
     pub fn set_recommendation_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_recommendation_version(input);
         self
     }
-    /// Specific version of the recommendation to retrieve. If not specified, returns the latest version.
+    /// <p>Specific version of the recommendation to retrieve. If not specified, returns the latest version.</p>
     pub fn get_recommendation_version(&self) -> &::std::option::Option<i64> {
         self.inner.get_recommendation_version()
     }

@@ -29,10 +29,16 @@ pub fn ser_refresh_schedule(
 pub(crate) fn de_refresh_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RefreshSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,8 +56,11 @@ where
                             );
                         }
                         "ScheduleFrequency" => {
-                            builder =
-                                builder.set_schedule_frequency(crate::protocol_serde::shape_refresh_frequency::de_refresh_frequency(tokens, _value)?);
+                            builder = builder.set_schedule_frequency(crate::protocol_serde::shape_refresh_frequency::de_refresh_frequency(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StartAfterDateTime" => {
                             builder = builder.set_start_after_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

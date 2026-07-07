@@ -44,6 +44,8 @@ pub struct Session {
     pub idle_timeout: ::std::option::Option<i32>,
     /// <p>The name of an Glue usage profile associated with the session.</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the session.</p>
+    pub session_type: ::std::option::Option<crate::types::SessionType>,
 }
 impl Session {
     /// <p>The ID of the session.</p>
@@ -126,6 +128,10 @@ impl Session {
     pub fn profile_name(&self) -> ::std::option::Option<&str> {
         self.profile_name.as_deref()
     }
+    /// <p>The type of the session.</p>
+    pub fn session_type(&self) -> ::std::option::Option<&crate::types::SessionType> {
+        self.session_type.as_ref()
+    }
 }
 impl Session {
     /// Creates a new builder-style object to manufacture [`Session`](crate::types::Session).
@@ -158,6 +164,7 @@ pub struct SessionBuilder {
     pub(crate) dpu_seconds: ::std::option::Option<f64>,
     pub(crate) idle_timeout: ::std::option::Option<i32>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) session_type: ::std::option::Option<crate::types::SessionType>,
 }
 impl SessionBuilder {
     /// <p>The ID of the session.</p>
@@ -453,6 +460,20 @@ impl SessionBuilder {
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_name
     }
+    /// <p>The type of the session.</p>
+    pub fn session_type(mut self, input: crate::types::SessionType) -> Self {
+        self.session_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the session.</p>
+    pub fn set_session_type(mut self, input: ::std::option::Option<crate::types::SessionType>) -> Self {
+        self.session_type = input;
+        self
+    }
+    /// <p>The type of the session.</p>
+    pub fn get_session_type(&self) -> &::std::option::Option<crate::types::SessionType> {
+        &self.session_type
+    }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
@@ -476,6 +497,7 @@ impl SessionBuilder {
             dpu_seconds: self.dpu_seconds,
             idle_timeout: self.idle_timeout,
             profile_name: self.profile_name,
+            session_type: self.session_type,
         }
     }
 }

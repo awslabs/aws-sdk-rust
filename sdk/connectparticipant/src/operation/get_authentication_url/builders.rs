@@ -23,7 +23,7 @@ impl crate::operation::get_authentication_url::builders::GetAuthenticationUrlInp
 /// Fluent builder constructing a request to `GetAuthenticationUrl`.
 ///
 /// <p>Retrieves the AuthenticationUrl for the current authentication session for the AuthenticateCustomer flow block.</p>
-/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a>.</p><note>
+/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect Customer Chat security best practices</a>.</p><note>
 /// <ul>
 /// <li>
 /// <p>This API can only be called within one minute of receiving the authenticationInitiated event.</p></li>

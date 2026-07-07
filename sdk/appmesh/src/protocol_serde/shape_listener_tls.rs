@@ -24,10 +24,16 @@ pub fn ser_listener_tls(
 pub(crate) fn de_listener_tls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ListenerTls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,26 +42,32 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "mode" => {
-                            builder = builder.set_mode(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ListenerTlsMode::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "mode" => {
+                                builder = builder.set_mode(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ListenerTlsMode::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "certificate" => {
+                                builder = builder.set_certificate(
+                                    crate::protocol_serde::shape_listener_tls_certificate::de_listener_tls_certificate(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "validation" => {
+                                builder = builder.set_validation(
+                                    crate::protocol_serde::shape_listener_tls_validation_context::de_listener_tls_validation_context(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "certificate" => {
-                            builder = builder.set_certificate(crate::protocol_serde::shape_listener_tls_certificate::de_listener_tls_certificate(
-                                tokens, _value,
-                            )?);
-                        }
-                        "validation" => {
-                            builder = builder.set_validation(
-                                crate::protocol_serde::shape_listener_tls_validation_context::de_listener_tls_validation_context(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

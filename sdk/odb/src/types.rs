@@ -7,11 +7,55 @@ pub use crate::types::_oci_onboarding_status::OciOnboardingStatus;
 
 pub use crate::types::_oci_identity_domain::OciIdentityDomain;
 
-pub use crate::types::_license_model::LicenseModel;
+pub use crate::types::_character_set_type::CharacterSetType;
 
-pub use crate::types::_maintenance_window::MaintenanceWindow;
+pub use crate::types::_db_workload::DbWorkload;
+
+pub use crate::types::_autonomous_database_backup_status::AutonomousDatabaseBackupStatus;
+
+pub use crate::types::_autonomous_database_backup_type::AutonomousDatabaseBackupType;
 
 pub use crate::types::_resource_status::ResourceStatus;
+
+pub use crate::types::_autonomous_database_backup::AutonomousDatabaseBackup;
+
+pub use crate::types::_license_model::LicenseModel;
+
+pub use crate::types::_database_edition::DatabaseEdition;
+
+pub use crate::types::_standby_allowlisted_ips_source::StandbyAllowlistedIpsSource;
+
+pub use crate::types::_autonomous_maintenance_schedule_type::AutonomousMaintenanceScheduleType;
+
+pub use crate::types::_resource_pool_summary::ResourcePoolSummary;
+
+pub use crate::types::_transportable_tablespace::TransportableTablespace;
+
+pub use crate::types::_source_type::SourceType;
+
+pub use crate::types::_source_configuration::SourceConfiguration;
+
+pub use crate::types::_encryption_key_provider_input::EncryptionKeyProviderInput;
+
+pub use crate::types::_encryption_key_configuration_input::EncryptionKeyConfigurationInput;
+
+pub use crate::types::_autonomous_database_resource_status::AutonomousDatabaseResourceStatus;
+
+pub use crate::types::_autonomous_database::AutonomousDatabase;
+
+pub use crate::types::_long_term_backup_schedule::LongTermBackupSchedule;
+
+pub use crate::types::_open_mode::OpenMode;
+
+pub use crate::types::_permission_level::PermissionLevel;
+
+pub use crate::types::_refreshable_mode::RefreshableMode;
+
+pub use crate::types::_wallet_type::WalletType;
+
+pub use crate::types::_autonomous_database_wallet_details::AutonomousDatabaseWalletDetails;
+
+pub use crate::types::_maintenance_window::MaintenanceWindow;
 
 pub use crate::types::_cloud_autonomous_vm_cluster::CloudAutonomousVmCluster;
 
@@ -37,11 +81,79 @@ pub use crate::types::_odb_peering_connection::OdbPeeringConnection;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
+pub use crate::types::_oci_iam_role::OciIamRole;
+
+pub use crate::types::_subscription_error::SubscriptionError;
+
+pub use crate::types::_autonomous_database_character_set_summary::AutonomousDatabaseCharacterSetSummary;
+
+pub use crate::types::_autonomous_database_version_summary::AutonomousDatabaseVersionSummary;
+
 pub use crate::types::_db_system_shape_summary::DbSystemShapeSummary;
 
 pub use crate::types::_gi_version_summary::GiVersionSummary;
 
 pub use crate::types::_system_version_summary::SystemVersionSummary;
+
+pub use crate::types::_autonomous_database_backup_summary::AutonomousDatabaseBackupSummary;
+
+pub use crate::types::_autonomous_database_summary::AutonomousDatabaseSummary;
+
+pub use crate::types::_customer_contact::CustomerContact;
+
+pub use crate::types::_scheduled_operation_details::ScheduledOperationDetails;
+
+pub use crate::types::_database_tool::DatabaseTool;
+
+pub use crate::types::_database_clone_configuration::DatabaseCloneConfiguration;
+
+pub use crate::types::_restore_from_backup_configuration::RestoreFromBackupConfiguration;
+
+pub use crate::types::_point_in_time_restore_configuration::PointInTimeRestoreConfiguration;
+
+pub use crate::types::_cross_region_data_guard_configuration::CrossRegionDataGuardConfiguration;
+
+pub use crate::types::_cross_region_disaster_recovery_configuration::CrossRegionDisasterRecoveryConfiguration;
+
+pub use crate::types::_clone_to_refreshable_configuration::CloneToRefreshableConfiguration;
+
+pub use crate::types::_aws_encryption_key_configuration_input::AwsEncryptionKeyConfigurationInput;
+
+pub use crate::types::_database_type::DatabaseType;
+
+pub use crate::types::_net_services_architecture::NetServicesArchitecture;
+
+pub use crate::types::_autonomous_database_connection_strings::AutonomousDatabaseConnectionStrings;
+
+pub use crate::types::_autonomous_database_apex::AutonomousDatabaseApex;
+
+pub use crate::types::_database_standby_summary::DatabaseStandbySummary;
+
+pub use crate::types::_data_safe_status::DataSafeStatus;
+
+pub use crate::types::_database_management_status::DatabaseManagementStatus;
+
+pub use crate::types::_operations_insights_status::OperationsInsightsStatus;
+
+pub use crate::types::_autonomous_database_connection_urls::AutonomousDatabaseConnectionUrls;
+
+pub use crate::types::_compute_model::ComputeModel;
+
+pub use crate::types::_disaster_recovery_type::DisasterRecoveryType;
+
+pub use crate::types::_data_guard_role::DataGuardRole;
+
+pub use crate::types::_disaster_recovery_configuration::DisasterRecoveryConfiguration;
+
+pub use crate::types::_refreshable_status::RefreshableStatus;
+
+pub use crate::types::_encryption_summary::EncryptionSummary;
+
+pub use crate::types::_repeat_cadence::RepeatCadence;
+
+pub use crate::types::_autonomous_database_wallet_status::AutonomousDatabaseWalletStatus;
+
+pub use crate::types::_autonomous_database_peer_summary::AutonomousDatabasePeerSummary;
 
 pub use crate::types::_cloud_autonomous_vm_cluster_summary::CloudAutonomousVmClusterSummary;
 
@@ -49,13 +161,9 @@ pub use crate::types::_patching_mode_type::PatchingModeType;
 
 pub use crate::types::_preference_type::PreferenceType;
 
-pub use crate::types::_compute_model::ComputeModel;
-
 pub use crate::types::_autonomous_virtual_machine_summary::AutonomousVirtualMachineSummary;
 
 pub use crate::types::_cloud_exadata_infrastructure_summary::CloudExadataInfrastructureSummary;
-
-pub use crate::types::_customer_contact::CustomerContact;
 
 pub use crate::types::_db_server_patching_details::DbServerPatchingDetails;
 
@@ -77,9 +185,19 @@ pub use crate::types::_managed_services::ManagedServices;
 
 pub use crate::types::_odb_peering_connection_summary::OdbPeeringConnectionSummary;
 
+pub use crate::types::_oci_aws_integration::OciAwsIntegration;
+
 pub use crate::types::_shape_type::ShapeType;
 
 pub use crate::types::_day_of_week::DayOfWeek;
+
+pub use crate::types::_clone_type::CloneType;
+
+pub use crate::types::_external_id_type::ExternalIdType;
+
+pub use crate::types::_encryption_key_provider::EncryptionKeyProvider;
+
+pub use crate::types::_encryption_key_configuration::EncryptionKeyConfiguration;
 
 pub use crate::types::_month::Month;
 
@@ -109,6 +227,14 @@ pub use crate::types::_kms_access::KmsAccess;
 
 pub use crate::types::_day_of_week_name::DayOfWeekName;
 
+pub use crate::types::_database_connection_string_profile::DatabaseConnectionStringProfile;
+
+pub use crate::types::_aws_encryption_key_configuration::AwsEncryptionKeyConfiguration;
+
+pub use crate::types::_oci_encryption_key_configuration::OciEncryptionKeyConfiguration;
+
+pub use crate::types::_okv_encryption_key_configuration::OkvEncryptionKeyConfiguration;
+
 pub use crate::types::_month_name::MonthName;
 
 pub use crate::types::_iam_role_status::IamRoleStatus;
@@ -123,7 +249,49 @@ pub use crate::types::_cross_region_s3_restore_sources_access::CrossRegionS3Rest
 
 mod _access;
 
+mod _autonomous_database;
+
+mod _autonomous_database_apex;
+
+mod _autonomous_database_backup;
+
+mod _autonomous_database_backup_status;
+
+mod _autonomous_database_backup_summary;
+
+mod _autonomous_database_backup_type;
+
+mod _autonomous_database_character_set_summary;
+
+mod _autonomous_database_connection_strings;
+
+mod _autonomous_database_connection_urls;
+
+mod _autonomous_database_peer_summary;
+
+mod _autonomous_database_resource_status;
+
+mod _autonomous_database_summary;
+
+mod _autonomous_database_version_summary;
+
+mod _autonomous_database_wallet_details;
+
+mod _autonomous_database_wallet_status;
+
+mod _autonomous_maintenance_schedule_type;
+
 mod _autonomous_virtual_machine_summary;
+
+mod _aws_encryption_key_configuration;
+
+mod _aws_encryption_key_configuration_input;
+
+mod _character_set_type;
+
+mod _clone_to_refreshable_configuration;
+
+mod _clone_type;
 
 mod _cloud_autonomous_vm_cluster;
 
@@ -143,11 +311,33 @@ mod _cloud_vm_cluster_summary;
 
 mod _compute_model;
 
+mod _cross_region_data_guard_configuration;
+
+mod _cross_region_disaster_recovery_configuration;
+
 mod _cross_region_s3_restore_sources_access;
 
 mod _customer_contact;
 
 mod _data_collection_options;
+
+mod _data_guard_role;
+
+mod _data_safe_status;
+
+mod _database_clone_configuration;
+
+mod _database_connection_string_profile;
+
+mod _database_edition;
+
+mod _database_management_status;
+
+mod _database_standby_summary;
+
+mod _database_tool;
+
+mod _database_type;
 
 mod _day_of_week;
 
@@ -173,9 +363,27 @@ mod _db_server_summary;
 
 mod _db_system_shape_summary;
 
+mod _db_workload;
+
+mod _disaster_recovery_configuration;
+
+mod _disaster_recovery_type;
+
 mod _disk_redundancy;
 
+mod _encryption_key_configuration;
+
+mod _encryption_key_configuration_input;
+
+mod _encryption_key_provider;
+
+mod _encryption_key_provider_input;
+
+mod _encryption_summary;
+
 mod _exadata_iorm_config;
+
+mod _external_id_type;
 
 mod _gi_version_summary;
 
@@ -189,6 +397,8 @@ mod _kms_access;
 
 mod _license_model;
 
+mod _long_term_backup_schedule;
+
 mod _maintenance_window;
 
 mod _managed_resource_status;
@@ -201,9 +411,17 @@ mod _month;
 
 mod _month_name;
 
+mod _net_services_architecture;
+
 mod _objective;
 
+mod _oci_aws_integration;
+
 mod _oci_dns_forwarding_config;
+
+mod _oci_encryption_key_configuration;
+
+mod _oci_iam_role;
 
 mod _oci_identity_domain;
 
@@ -217,29 +435,63 @@ mod _odb_peering_connection;
 
 mod _odb_peering_connection_summary;
 
+mod _okv_encryption_key_configuration;
+
+mod _open_mode;
+
+mod _operations_insights_status;
+
 mod _patching_mode_type;
+
+mod _permission_level;
+
+mod _point_in_time_restore_configuration;
 
 mod _preference_type;
 
+mod _refreshable_mode;
+
+mod _refreshable_status;
+
+mod _repeat_cadence;
+
+mod _resource_pool_summary;
+
 mod _resource_status;
 
+mod _restore_from_backup_configuration;
+
 mod _s3_access;
+
+mod _scheduled_operation_details;
 
 mod _service_network_endpoint;
 
 mod _shape_type;
 
+mod _source_configuration;
+
+mod _source_type;
+
+mod _standby_allowlisted_ips_source;
+
 mod _sts_access;
+
+mod _subscription_error;
 
 mod _supported_aws_integration;
 
 mod _system_version_summary;
+
+mod _transportable_tablespace;
 
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
 
 mod _vpc_endpoint_type;
+
+mod _wallet_type;
 
 mod _zero_etl_access;
 

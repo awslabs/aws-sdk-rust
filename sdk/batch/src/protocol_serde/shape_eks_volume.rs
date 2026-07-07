@@ -36,10 +36,16 @@ pub fn ser_eks_volume(
 pub(crate) fn de_eks_volume<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EksVolume>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -57,17 +63,17 @@ where
                             );
                         }
                         "hostPath" => {
-                            builder = builder.set_host_path(crate::protocol_serde::shape_eks_host_path::de_eks_host_path(tokens, _value)?);
+                            builder = builder.set_host_path(crate::protocol_serde::shape_eks_host_path::de_eks_host_path(tokens, _value, depth + 1)?);
                         }
                         "emptyDir" => {
-                            builder = builder.set_empty_dir(crate::protocol_serde::shape_eks_empty_dir::de_eks_empty_dir(tokens, _value)?);
+                            builder = builder.set_empty_dir(crate::protocol_serde::shape_eks_empty_dir::de_eks_empty_dir(tokens, _value, depth + 1)?);
                         }
                         "secret" => {
-                            builder = builder.set_secret(crate::protocol_serde::shape_eks_secret::de_eks_secret(tokens, _value)?);
+                            builder = builder.set_secret(crate::protocol_serde::shape_eks_secret::de_eks_secret(tokens, _value, depth + 1)?);
                         }
                         "persistentVolumeClaim" => {
                             builder = builder.set_persistent_volume_claim(
-                                crate::protocol_serde::shape_eks_persistent_volume_claim::de_eks_persistent_volume_claim(tokens, _value)?,
+                                crate::protocol_serde::shape_eks_persistent_volume_claim::de_eks_persistent_volume_claim(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

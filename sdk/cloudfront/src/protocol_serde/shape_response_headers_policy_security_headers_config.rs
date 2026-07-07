@@ -45,7 +45,11 @@ pub fn ser_response_headers_policy_security_headers_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_security_headers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResponseHeadersPolicySecurityHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicySecurityHeadersConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -53,7 +57,7 @@ pub fn de_response_headers_policy_security_headers_config(
             s if s.matches("XSSProtection") /* XSSProtection com.amazonaws.cloudfront#ResponseHeadersPolicySecurityHeadersConfig$XSSProtection */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_xss_protection::de_response_headers_policy_xss_protection(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_xss_protection::de_response_headers_policy_xss_protection(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -63,7 +67,7 @@ pub fn de_response_headers_policy_security_headers_config(
             s if s.matches("FrameOptions") /* FrameOptions com.amazonaws.cloudfront#ResponseHeadersPolicySecurityHeadersConfig$FrameOptions */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_frame_options::de_response_headers_policy_frame_options(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_frame_options::de_response_headers_policy_frame_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +77,7 @@ pub fn de_response_headers_policy_security_headers_config(
             s if s.matches("ReferrerPolicy") /* ReferrerPolicy com.amazonaws.cloudfront#ResponseHeadersPolicySecurityHeadersConfig$ReferrerPolicy */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_referrer_policy::de_response_headers_policy_referrer_policy(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_referrer_policy::de_response_headers_policy_referrer_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -83,7 +87,7 @@ pub fn de_response_headers_policy_security_headers_config(
             s if s.matches("ContentSecurityPolicy") /* ContentSecurityPolicy com.amazonaws.cloudfront#ResponseHeadersPolicySecurityHeadersConfig$ContentSecurityPolicy */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_content_security_policy::de_response_headers_policy_content_security_policy(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_content_security_policy::de_response_headers_policy_content_security_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -93,7 +97,7 @@ pub fn de_response_headers_policy_security_headers_config(
             s if s.matches("ContentTypeOptions") /* ContentTypeOptions com.amazonaws.cloudfront#ResponseHeadersPolicySecurityHeadersConfig$ContentTypeOptions */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_content_type_options::de_response_headers_policy_content_type_options(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_content_type_options::de_response_headers_policy_content_type_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -103,7 +107,7 @@ pub fn de_response_headers_policy_security_headers_config(
             s if s.matches("StrictTransportSecurity") /* StrictTransportSecurity com.amazonaws.cloudfront#ResponseHeadersPolicySecurityHeadersConfig$StrictTransportSecurity */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_strict_transport_security::de_response_headers_policy_strict_transport_security(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_strict_transport_security::de_response_headers_policy_strict_transport_security(&mut tag, depth + 1)
                         ?
                     )
                 ;

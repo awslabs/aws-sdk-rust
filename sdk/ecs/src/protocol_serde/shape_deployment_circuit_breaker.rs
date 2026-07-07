@@ -9,16 +9,31 @@ pub fn ser_deployment_circuit_breaker(
     {
         object.key("rollback").boolean(input.rollback);
     }
+    if let Some(var_1) = &input.reset_on_healthy_task {
+        object.key("resetOnHealthyTask").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.threshold_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("thresholdConfiguration").start_object();
+        crate::protocol_serde::shape_threshold_configuration::ser_threshold_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_deployment_circuit_breaker<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DeploymentCircuitBreaker>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -33,6 +48,14 @@ where
                         }
                         "rollback" => {
                             builder = builder.set_rollback(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "resetOnHealthyTask" => {
+                            builder = builder.set_reset_on_healthy_task(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "thresholdConfiguration" => {
+                            builder = builder.set_threshold_configuration(
+                                crate::protocol_serde::shape_threshold_configuration::de_threshold_configuration(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

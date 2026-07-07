@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cluster(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Cluster, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Cluster::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -101,7 +105,7 @@ pub fn de_cluster(
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.redshift#Cluster$Endpoint */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -155,7 +159,7 @@ pub fn de_cluster(
             s if s.matches("ClusterSecurityGroups") /* ClusterSecurityGroups com.amazonaws.redshift#Cluster$ClusterSecurityGroups */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_cluster_security_group_membership_list::de_cluster_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_cluster_security_group_membership_list::de_cluster_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -165,7 +169,7 @@ pub fn de_cluster(
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.redshift#Cluster$VpcSecurityGroups */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -175,7 +179,7 @@ pub fn de_cluster(
             s if s.matches("ClusterParameterGroups") /* ClusterParameterGroups com.amazonaws.redshift#Cluster$ClusterParameterGroups */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_cluster_parameter_group_status_list::de_cluster_parameter_group_status_list(&mut tag)
+                        crate::protocol_serde::shape_cluster_parameter_group_status_list::de_cluster_parameter_group_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -237,7 +241,7 @@ pub fn de_cluster(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.redshift#Cluster$PendingModifiedValues */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag)
+                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -320,7 +324,7 @@ pub fn de_cluster(
             s if s.matches("RestoreStatus") /* RestoreStatus com.amazonaws.redshift#Cluster$RestoreStatus */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_restore_status::de_restore_status(&mut tag)
+                        crate::protocol_serde::shape_restore_status::de_restore_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -330,7 +334,7 @@ pub fn de_cluster(
             s if s.matches("DataTransferProgress") /* DataTransferProgress com.amazonaws.redshift#Cluster$DataTransferProgress */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_data_transfer_progress::de_data_transfer_progress(&mut tag)
+                        crate::protocol_serde::shape_data_transfer_progress::de_data_transfer_progress(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -340,7 +344,7 @@ pub fn de_cluster(
             s if s.matches("HsmStatus") /* HsmStatus com.amazonaws.redshift#Cluster$HsmStatus */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_hsm_status::de_hsm_status(&mut tag)
+                        crate::protocol_serde::shape_hsm_status::de_hsm_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -350,7 +354,7 @@ pub fn de_cluster(
             s if s.matches("ClusterSnapshotCopyStatus") /* ClusterSnapshotCopyStatus com.amazonaws.redshift#Cluster$ClusterSnapshotCopyStatus */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_cluster_snapshot_copy_status::de_cluster_snapshot_copy_status(&mut tag)
+                        crate::protocol_serde::shape_cluster_snapshot_copy_status::de_cluster_snapshot_copy_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -373,7 +377,7 @@ pub fn de_cluster(
             s if s.matches("ClusterNodes") /* ClusterNodes com.amazonaws.redshift#Cluster$ClusterNodes */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_cluster_nodes_list::de_cluster_nodes_list(&mut tag)
+                        crate::protocol_serde::shape_cluster_nodes_list::de_cluster_nodes_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -383,7 +387,7 @@ pub fn de_cluster(
             s if s.matches("ElasticIpStatus") /* ElasticIpStatus com.amazonaws.redshift#Cluster$ElasticIpStatus */ =>  {
                 let var_31 =
                     Some(
-                        crate::protocol_serde::shape_elastic_ip_status::de_elastic_ip_status(&mut tag)
+                        crate::protocol_serde::shape_elastic_ip_status::de_elastic_ip_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -406,7 +410,7 @@ pub fn de_cluster(
             s if s.matches("Tags") /* Tags com.amazonaws.redshift#Cluster$Tags */ =>  {
                 let var_33 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -444,7 +448,7 @@ pub fn de_cluster(
             s if s.matches("IamRoles") /* IamRoles com.amazonaws.redshift#Cluster$IamRoles */ =>  {
                 let var_36 =
                     Some(
-                        crate::protocol_serde::shape_cluster_iam_role_list::de_cluster_iam_role_list(&mut tag)
+                        crate::protocol_serde::shape_cluster_iam_role_list::de_cluster_iam_role_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -454,7 +458,7 @@ pub fn de_cluster(
             s if s.matches("PendingActions") /* PendingActions com.amazonaws.redshift#Cluster$PendingActions */ =>  {
                 let var_37 =
                     Some(
-                        crate::protocol_serde::shape_pending_actions_list::de_pending_actions_list(&mut tag)
+                        crate::protocol_serde::shape_pending_actions_list::de_pending_actions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -490,7 +494,7 @@ pub fn de_cluster(
             s if s.matches("DeferredMaintenanceWindows") /* DeferredMaintenanceWindows com.amazonaws.redshift#Cluster$DeferredMaintenanceWindows */ =>  {
                 let var_40 =
                     Some(
-                        crate::protocol_serde::shape_deferred_maintenance_windows_list::de_deferred_maintenance_windows_list(&mut tag)
+                        crate::protocol_serde::shape_deferred_maintenance_windows_list::de_deferred_maintenance_windows_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -568,7 +572,7 @@ pub fn de_cluster(
             s if s.matches("ResizeInfo") /* ResizeInfo com.amazonaws.redshift#Cluster$ResizeInfo */ =>  {
                 let var_46 =
                     Some(
-                        crate::protocol_serde::shape_resize_info::de_resize_info(&mut tag)
+                        crate::protocol_serde::shape_resize_info::de_resize_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -619,7 +623,7 @@ pub fn de_cluster(
             s if s.matches("AquaConfiguration") /* AquaConfiguration com.amazonaws.redshift#Cluster$AquaConfiguration */ =>  {
                 let var_50 =
                     Some(
-                        crate::protocol_serde::shape_aqua_configuration::de_aqua_configuration(&mut tag)
+                        crate::protocol_serde::shape_aqua_configuration::de_aqua_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -642,7 +646,7 @@ pub fn de_cluster(
             s if s.matches("ReservedNodeExchangeStatus") /* ReservedNodeExchangeStatus com.amazonaws.redshift#Cluster$ReservedNodeExchangeStatus */ =>  {
                 let var_52 =
                     Some(
-                        crate::protocol_serde::shape_reserved_node_exchange_status::de_reserved_node_exchange_status(&mut tag)
+                        crate::protocol_serde::shape_reserved_node_exchange_status::de_reserved_node_exchange_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -744,7 +748,7 @@ pub fn de_cluster(
             s if s.matches("MultiAZSecondary") /* MultiAZSecondary com.amazonaws.redshift#Cluster$MultiAZSecondary */ =>  {
                 let var_60 =
                     Some(
-                        crate::protocol_serde::shape_secondary_cluster_info::de_secondary_cluster_info(&mut tag)
+                        crate::protocol_serde::shape_secondary_cluster_info::de_secondary_cluster_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

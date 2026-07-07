@@ -14,6 +14,8 @@ pub struct AudioProperties {
     pub frame_rate: ::std::option::Option<crate::types::FrameRate>,
     /// The language code of the audio track, in three character ISO 639-3 format.
     pub language_code: ::std::option::Option<::std::string::String>,
+    /// The number of audio objects in an object-based or immersive audio track. This field is present for codecs that support object-based audio, such as E-AC-3 with Joint Object Coding (JOC) or IAMF. This field is null when the audio track does not contain object-based audio metadata.
+    pub object_count: ::std::option::Option<i32>,
     /// The sample rate of the audio track.
     pub sample_rate: ::std::option::Option<i32>,
 }
@@ -38,6 +40,10 @@ impl AudioProperties {
     pub fn language_code(&self) -> ::std::option::Option<&str> {
         self.language_code.as_deref()
     }
+    /// The number of audio objects in an object-based or immersive audio track. This field is present for codecs that support object-based audio, such as E-AC-3 with Joint Object Coding (JOC) or IAMF. This field is null when the audio track does not contain object-based audio metadata.
+    pub fn object_count(&self) -> ::std::option::Option<i32> {
+        self.object_count
+    }
     /// The sample rate of the audio track.
     pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
@@ -59,6 +65,7 @@ pub struct AudioPropertiesBuilder {
     pub(crate) channels: ::std::option::Option<i32>,
     pub(crate) frame_rate: ::std::option::Option<crate::types::FrameRate>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
+    pub(crate) object_count: ::std::option::Option<i32>,
     pub(crate) sample_rate: ::std::option::Option<i32>,
 }
 impl AudioPropertiesBuilder {
@@ -132,6 +139,20 @@ impl AudioPropertiesBuilder {
     pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.language_code
     }
+    /// The number of audio objects in an object-based or immersive audio track. This field is present for codecs that support object-based audio, such as E-AC-3 with Joint Object Coding (JOC) or IAMF. This field is null when the audio track does not contain object-based audio metadata.
+    pub fn object_count(mut self, input: i32) -> Self {
+        self.object_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// The number of audio objects in an object-based or immersive audio track. This field is present for codecs that support object-based audio, such as E-AC-3 with Joint Object Coding (JOC) or IAMF. This field is null when the audio track does not contain object-based audio metadata.
+    pub fn set_object_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.object_count = input;
+        self
+    }
+    /// The number of audio objects in an object-based or immersive audio track. This field is present for codecs that support object-based audio, such as E-AC-3 with Joint Object Coding (JOC) or IAMF. This field is null when the audio track does not contain object-based audio metadata.
+    pub fn get_object_count(&self) -> &::std::option::Option<i32> {
+        &self.object_count
+    }
     /// The sample rate of the audio track.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -154,6 +175,7 @@ impl AudioPropertiesBuilder {
             channels: self.channels,
             frame_rate: self.frame_rate,
             language_code: self.language_code,
+            object_count: self.object_count,
             sample_rate: self.sample_rate,
         }
     }

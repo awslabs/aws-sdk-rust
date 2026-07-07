@@ -87,6 +87,8 @@ pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
 pub use crate::types::_session_command::SessionCommand;
 
+pub use crate::types::_session_type::SessionType;
+
 pub use crate::types::_session::Session;
 
 pub use crate::types::_table_input::TableInput;
@@ -138,6 +140,8 @@ pub use crate::types::_connection::Connection;
 pub use crate::types::_get_connections_filter::GetConnectionsFilter;
 
 pub use crate::types::_crawler::Crawler;
+
+pub use crate::types::_glue_resource_type::GlueResourceType;
 
 pub use crate::types::_database::Database;
 
@@ -191,6 +195,8 @@ pub use crate::types::_schema_diff_type::SchemaDiffType;
 
 pub use crate::types::_security_configuration::SecurityConfiguration;
 
+pub use crate::types::_session_endpoint::SessionEndpoint;
+
 pub use crate::types::_statement::Statement;
 
 pub use crate::types::_table::Table;
@@ -235,6 +241,10 @@ pub use crate::types::_connection_properties_configuration::ConnectionProperties
 
 pub use crate::types::_connector_authentication_configuration::ConnectorAuthenticationConfiguration;
 
+pub use crate::types::_search_sort::SearchSort;
+
+pub use crate::types::_search_filter_clause::SearchFilterClause;
+
 pub use crate::types::_test_connection_input::TestConnectionInput;
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequest;
@@ -272,6 +282,10 @@ pub use crate::types::_table_version_error::TableVersionError;
 pub use crate::types::_custom_entity_type::CustomEntityType;
 
 pub use crate::types::_data_quality_result::DataQualityResult;
+
+pub use crate::types::_iterable_form_item::IterableFormItem;
+
+pub use crate::types::_item_error::ItemError;
 
 pub use crate::types::_batch_get_table_optimizer_entry::BatchGetTableOptimizerEntry;
 
@@ -389,6 +403,12 @@ pub use crate::types::_integration_filter::IntegrationFilter;
 
 pub use crate::types::_integration::Integration;
 
+pub use crate::types::_asset_form_entry::AssetFormEntry;
+
+pub use crate::types::_iterable_form_entry::IterableFormEntry;
+
+pub use crate::types::_asset_type_form_reference::AssetTypeFormReference;
+
 pub use crate::types::_blueprint_status::BlueprintStatus;
 
 pub use crate::types::_last_active_definition::LastActiveDefinition;
@@ -487,17 +507,19 @@ pub use crate::types::_statement_state::StatementState;
 
 pub use crate::types::_statement_output::StatementOutput;
 
+pub use crate::types::_table_attributes::TableAttributes;
+
 pub use crate::types::_federated_table::FederatedTable;
 
 pub use crate::types::_view_definition::ViewDefinition;
+
+pub use crate::types::_iceberg_table_metadata::IcebergTableMetadata;
 
 pub use crate::types::_table_status::TableStatus;
 
 pub use crate::types::_table_optimizer_run::TableOptimizerRun;
 
 pub use crate::types::_configuration_source::ConfigurationSource;
-
-pub use crate::types::_table_attributes::TableAttributes;
 
 pub use crate::types::_trigger_state::TriggerState;
 
@@ -521,6 +543,8 @@ pub use crate::types::_workflow_run_statistics::WorkflowRunStatistics;
 
 pub use crate::types::_starting_event_batch_condition::StartingEventBatchCondition;
 
+pub use crate::types::_asset_type_item::AssetTypeItem;
+
 pub use crate::types::_connection_type_brief::ConnectionTypeBrief;
 
 pub use crate::types::_crawls_filter::CrawlsFilter;
@@ -541,9 +565,17 @@ pub use crate::types::_statistic_summary::StatisticSummary;
 
 pub use crate::types::_entity::Entity;
 
+pub use crate::types::_form_type_item::FormTypeItem;
+
+pub use crate::types::_glossary_item::GlossaryItem;
+
+pub use crate::types::_glossary_term_item::GlossaryTermItem;
+
 pub use crate::types::_integration_resource_property_filter::IntegrationResourcePropertyFilter;
 
 pub use crate::types::_integration_resource_property::IntegrationResourceProperty;
+
+pub use crate::types::_iterable_form_list_item::IterableFormListItem;
 
 pub use crate::types::_registry_list_item::RegistryListItem;
 
@@ -562,6 +594,14 @@ pub use crate::types::_connector_o_auth2_properties::ConnectorOAuth2Properties;
 pub use crate::types::_basic_authentication_properties::BasicAuthenticationProperties;
 
 pub use crate::types::_custom_authentication_properties::CustomAuthenticationProperties;
+
+pub use crate::types::_search_sort_order::SearchSortOrder;
+
+pub use crate::types::_search_attribute_filter::SearchAttributeFilter;
+
+pub use crate::types::_search_map_filter::SearchMapFilter;
+
+pub use crate::types::_search_result_item::SearchResultItem;
 
 pub use crate::types::_property_predicate::PropertyPredicate;
 
@@ -883,6 +923,12 @@ pub use crate::types::_jwt_bearer_properties::JwtBearerProperties;
 
 pub use crate::types::_connector_authorization_code_properties::ConnectorAuthorizationCodeProperties;
 
+pub use crate::types::_search_filter_operator::SearchFilterOperator;
+
+pub use crate::types::_search_filter_value::SearchFilterValue;
+
+pub use crate::types::_search_map_filter_value::SearchMapFilterValue;
+
 pub use crate::types::_comparator::Comparator;
 
 pub use crate::types::_sort::Sort;
@@ -1156,6 +1202,12 @@ mod _amazon_redshift_target;
 mod _annotation_error;
 
 mod _apply_mapping;
+
+mod _asset_form_entry;
+
+mod _asset_type_form_reference;
+
+mod _asset_type_item;
 
 mod _athena_connector_source;
 
@@ -1593,13 +1645,21 @@ mod _find_matches_parameters;
 
 mod _find_matches_task_run_properties;
 
+mod _form_type_item;
+
 mod _function_type;
 
 mod _get_connections_filter;
 
+mod _glossary_item;
+
+mod _glossary_term_item;
+
 mod _glue_policy;
 
 mod _glue_record_type;
+
+mod _glue_resource_type;
 
 mod _glue_schema;
 
@@ -1661,6 +1721,8 @@ mod _iceberg_struct_field;
 
 mod _iceberg_struct_type_enum;
 
+mod _iceberg_table_metadata;
+
 mod _iceberg_table_update;
 
 mod _iceberg_target;
@@ -1692,6 +1754,14 @@ mod _integration_resource_property_filter;
 mod _integration_status;
 
 mod _integration_type;
+
+mod _item_error;
+
+mod _iterable_form_entry;
+
+mod _iterable_form_item;
+
+mod _iterable_form_list_item;
 
 mod _jdbc_connection_type;
 
@@ -2029,6 +2099,24 @@ mod _schema_version_number;
 
 mod _schema_version_status;
 
+mod _search_attribute_filter;
+
+mod _search_filter_clause;
+
+mod _search_filter_operator;
+
+mod _search_filter_value;
+
+mod _search_map_filter;
+
+mod _search_map_filter_value;
+
+mod _search_result_item;
+
+mod _search_sort;
+
+mod _search_sort_order;
+
 mod _security_configuration;
 
 mod _segment;
@@ -2045,7 +2133,11 @@ mod _session;
 
 mod _session_command;
 
+mod _session_endpoint;
+
 mod _session_status;
+
+mod _session_type;
 
 mod _setting_source;
 

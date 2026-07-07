@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_node_type_specific_parameter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CacheNodeTypeSpecificParameter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CacheNodeTypeSpecificParameter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -103,7 +107,7 @@ pub fn de_cache_node_type_specific_parameter(
             s if s.matches("CacheNodeTypeSpecificValues") /* CacheNodeTypeSpecificValues com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$CacheNodeTypeSpecificValues */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_cache_node_type_specific_value_list::de_cache_node_type_specific_value_list(&mut tag)
+                        crate::protocol_serde::shape_cache_node_type_specific_value_list::de_cache_node_type_specific_value_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

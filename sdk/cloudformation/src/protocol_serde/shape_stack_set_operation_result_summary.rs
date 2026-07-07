@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_operation_result_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackSetOperationResultSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSetOperationResultSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -63,7 +67,7 @@ pub fn de_stack_set_operation_result_summary(
             s if s.matches("AccountGateResult") /* AccountGateResult com.amazonaws.cloudformation#StackSetOperationResultSummary$AccountGateResult */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_account_gate_result::de_account_gate_result(&mut tag)
+                        crate::protocol_serde::shape_account_gate_result::de_account_gate_result(&mut tag, depth + 1)
                         ?
                     )
                 ;

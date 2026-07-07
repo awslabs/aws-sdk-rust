@@ -108,6 +108,12 @@ impl ListActionsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_actions::paginator::ListActionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_actions::paginator::ListActionsPaginator {
+        crate::operation::list_actions::paginator::ListActionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The type of resource.</p>
     pub fn target_resource_type(mut self, input: crate::types::TargetResourceType) -> Self {
         self.inner = self.inner.target_resource_type(input);

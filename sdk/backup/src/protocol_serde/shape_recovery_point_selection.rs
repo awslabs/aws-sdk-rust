@@ -2,10 +2,16 @@
 pub(crate) fn de_recovery_point_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecoveryPointSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,15 +22,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "VaultNames" => {
-                            builder = builder.set_vault_names(crate::protocol_serde::shape_vault_names::de_vault_names(tokens, _value)?);
+                            builder = builder.set_vault_names(crate::protocol_serde::shape_vault_names::de_vault_names(tokens, _value, depth + 1)?);
                         }
                         "ResourceIdentifiers" => {
                             builder = builder.set_resource_identifiers(crate::protocol_serde::shape_resource_identifiers::de_resource_identifiers(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "DateRange" => {
-                            builder = builder.set_date_range(crate::protocol_serde::shape_date_range::de_date_range(tokens, _value)?);
+                            builder = builder.set_date_range(crate::protocol_serde::shape_date_range::de_date_range(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

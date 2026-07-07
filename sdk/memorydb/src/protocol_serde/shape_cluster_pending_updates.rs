@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster_pending_updates<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterPendingUpdates>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,15 +22,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Resharding" => {
-                            builder = builder.set_resharding(crate::protocol_serde::shape_resharding_status::de_resharding_status(tokens, _value)?);
+                            builder = builder.set_resharding(crate::protocol_serde::shape_resharding_status::de_resharding_status(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ACLs" => {
-                            builder = builder.set_acls(crate::protocol_serde::shape_acls_update_status::de_acls_update_status(tokens, _value)?);
+                            builder = builder.set_acls(crate::protocol_serde::shape_acls_update_status::de_acls_update_status(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ServiceUpdates" => {
                             builder = builder.set_service_updates(
                                 crate::protocol_serde::shape_pending_modified_service_update_list::de_pending_modified_service_update_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

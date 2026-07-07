@@ -25,7 +25,27 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_tags_to_certificate;
 
+pub(crate) mod shape_create_acme_domain_validation;
+
+pub(crate) mod shape_create_acme_endpoint;
+
+pub(crate) mod shape_create_acme_external_account_binding;
+
+pub(crate) mod shape_delete_acme_domain_validation;
+
+pub(crate) mod shape_delete_acme_endpoint;
+
+pub(crate) mod shape_delete_acme_external_account_binding;
+
 pub(crate) mod shape_delete_certificate;
+
+pub(crate) mod shape_describe_acme_account;
+
+pub(crate) mod shape_describe_acme_domain_validation;
+
+pub(crate) mod shape_describe_acme_endpoint;
+
+pub(crate) mod shape_describe_acme_external_account_binding;
 
 pub(crate) mod shape_describe_certificate;
 
@@ -33,13 +53,25 @@ pub(crate) mod shape_export_certificate;
 
 pub(crate) mod shape_get_account_configuration;
 
+pub(crate) mod shape_get_acme_external_account_binding_credentials;
+
 pub(crate) mod shape_get_certificate;
 
 pub(crate) mod shape_import_certificate;
 
+pub(crate) mod shape_list_acme_accounts;
+
+pub(crate) mod shape_list_acme_domain_validations;
+
+pub(crate) mod shape_list_acme_endpoints;
+
+pub(crate) mod shape_list_acme_external_account_bindings;
+
 pub(crate) mod shape_list_certificates;
 
 pub(crate) mod shape_list_tags_for_certificate;
+
+pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_account_configuration;
 
@@ -51,9 +83,21 @@ pub(crate) mod shape_request_certificate;
 
 pub(crate) mod shape_resend_validation_email;
 
+pub(crate) mod shape_revoke_acme_account;
+
+pub(crate) mod shape_revoke_acme_external_account_binding;
+
 pub(crate) mod shape_revoke_certificate;
 
 pub(crate) mod shape_search_certificates;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_acme_domain_validation;
+
+pub(crate) mod shape_update_acme_endpoint;
 
 pub(crate) mod shape_update_certificate_options;
 
@@ -71,15 +115,39 @@ pub(crate) mod shape_add_tags_to_certificate_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_acme_domain_validation_input;
+
+pub(crate) mod shape_create_acme_endpoint_input;
+
+pub(crate) mod shape_create_acme_external_account_binding_input;
+
+pub(crate) mod shape_delete_acme_domain_validation_input;
+
+pub(crate) mod shape_delete_acme_endpoint_input;
+
+pub(crate) mod shape_delete_acme_external_account_binding_input;
+
 pub(crate) mod shape_delete_certificate_input;
+
+pub(crate) mod shape_describe_acme_account_input;
+
+pub(crate) mod shape_describe_acme_domain_validation_input;
+
+pub(crate) mod shape_describe_acme_endpoint_input;
+
+pub(crate) mod shape_describe_acme_external_account_binding_input;
 
 pub(crate) mod shape_describe_certificate_input;
 
 pub(crate) mod shape_export_certificate_input;
 
+pub(crate) mod shape_get_acme_external_account_binding_credentials_input;
+
 pub(crate) mod shape_get_certificate_input;
 
 pub(crate) mod shape_import_certificate_input;
+
+pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_args_exception;
 
@@ -95,9 +163,19 @@ pub(crate) mod shape_invalid_tag_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_list_acme_accounts_input;
+
+pub(crate) mod shape_list_acme_domain_validations_input;
+
+pub(crate) mod shape_list_acme_endpoints_input;
+
+pub(crate) mod shape_list_acme_external_account_bindings_input;
+
 pub(crate) mod shape_list_certificates_input;
 
 pub(crate) mod shape_list_tags_for_certificate_input;
+
+pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_put_account_configuration_input;
 
@@ -115,19 +193,51 @@ pub(crate) mod shape_resource_in_use_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_revoke_acme_account_input;
+
+pub(crate) mod shape_revoke_acme_external_account_binding_input;
+
 pub(crate) mod shape_revoke_certificate_input;
 
 pub(crate) mod shape_search_certificates_input;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_tag_policy_exception;
+
+pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_too_many_tags_exception;
 
+pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_acme_domain_validation_input;
+
+pub(crate) mod shape_update_acme_endpoint_input;
+
 pub(crate) mod shape_update_certificate_options_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_acme_account;
+
+pub(crate) mod shape_acme_account_list;
+
+pub(crate) mod shape_acme_domain_validation;
+
+pub(crate) mod shape_acme_domain_validation_list;
+
+pub(crate) mod shape_acme_endpoint;
+
+pub(crate) mod shape_acme_endpoint_list;
+
+pub(crate) mod shape_acme_external_account_binding;
+
+pub(crate) mod shape_acme_external_account_binding_list;
+
+pub(crate) mod shape_certificate_authority;
 
 pub(crate) mod shape_certificate_detail;
 
@@ -141,9 +251,13 @@ pub(crate) mod shape_certificate_summary_list;
 
 pub(crate) mod shape_domain_validation_option;
 
+pub(crate) mod shape_expiration;
+
 pub(crate) mod shape_expiry_events_configuration;
 
 pub(crate) mod shape_filters;
+
+pub(crate) mod shape_prevalidation_options;
 
 pub(crate) mod shape_tag;
 
@@ -151,11 +265,23 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_throttling_reason_list;
 
+pub(crate) mod shape_acme_account_summary;
+
+pub(crate) mod shape_acme_domain_validation_summary;
+
+pub(crate) mod shape_acme_endpoint_summary;
+
+pub(crate) mod shape_acme_external_account_binding_summary;
+
 pub(crate) mod shape_certificate_filter;
 
 pub(crate) mod shape_certificate_search_result;
 
 pub(crate) mod shape_certificate_summary;
+
+pub(crate) mod shape_contact_list;
+
+pub(crate) mod shape_dns_prevalidation_options;
 
 pub(crate) mod shape_domain_list;
 
@@ -163,9 +289,15 @@ pub(crate) mod shape_domain_validation_list;
 
 pub(crate) mod shape_extended_key_usage_list;
 
+pub(crate) mod shape_failure_details;
+
 pub(crate) mod shape_in_use_list;
 
 pub(crate) mod shape_key_usage_list;
+
+pub(crate) mod shape_prevalidation_details;
+
+pub(crate) mod shape_public_certificate_authority;
 
 pub(crate) mod shape_renewal_summary;
 
@@ -174,6 +306,10 @@ pub(crate) mod shape_throttling_reason;
 pub(crate) mod shape_acm_certificate_metadata_filter;
 
 pub(crate) mod shape_certificate_metadata;
+
+pub(crate) mod shape_dns_prevalidation_details;
+
+pub(crate) mod shape_domain_scope;
 
 pub(crate) mod shape_domain_validation;
 
@@ -196,6 +332,8 @@ pub(crate) mod shape_distinguished_name;
 pub(crate) mod shape_general_name_list;
 
 pub(crate) mod shape_http_redirect;
+
+pub(crate) mod shape_public_key_algorithm_list;
 
 pub(crate) mod shape_resource_record;
 

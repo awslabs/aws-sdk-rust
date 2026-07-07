@@ -2,10 +2,16 @@
 pub(crate) fn de_rule_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,14 +37,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "forward" => Some(crate::types::RuleAction::Forward(
-                            crate::protocol_serde::shape_forward_action::de_forward_action(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_forward_action::de_forward_action(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'forward' cannot be null")
                             })?,
                         )),
                         "fixedResponse" => Some(crate::types::RuleAction::FixedResponse(
-                            crate::protocol_serde::shape_fixed_response_action::de_fixed_response_action(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fixedResponse' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_fixed_response_action::de_fixed_response_action(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fixedResponse' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -2,10 +2,16 @@
 pub(crate) fn de_file_system<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FileSystem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,7 @@ where
                         }
                         "FailureDetails" => {
                             builder = builder.set_failure_details(
-                                crate::protocol_serde::shape_file_system_failure_details::de_file_system_failure_details(tokens, _value)?,
+                                crate::protocol_serde::shape_file_system_failure_details::de_file_system_failure_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "StorageCapacity" => {
@@ -76,11 +82,11 @@ where
                             );
                         }
                         "SubnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value, depth + 1)?);
                         }
                         "NetworkInterfaceIds" => {
                             builder = builder.set_network_interface_ids(
-                                crate::protocol_serde::shape_network_interface_ids::de_network_interface_ids(tokens, _value)?,
+                                crate::protocol_serde::shape_network_interface_ids::de_network_interface_ids(tokens, _value, depth + 1)?,
                             );
                         }
                         "DNSName" => {
@@ -105,26 +111,38 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "WindowsConfiguration" => {
                             builder = builder.set_windows_configuration(
-                                crate::protocol_serde::shape_windows_file_system_configuration::de_windows_file_system_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_windows_file_system_configuration::de_windows_file_system_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "LustreConfiguration" => {
                             builder = builder.set_lustre_configuration(
-                                crate::protocol_serde::shape_lustre_file_system_configuration::de_lustre_file_system_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_lustre_file_system_configuration::de_lustre_file_system_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AdministrativeActions" => {
                             builder = builder.set_administrative_actions(
-                                crate::protocol_serde::shape_administrative_actions::de_administrative_actions(tokens, _value)?,
+                                crate::protocol_serde::shape_administrative_actions::de_administrative_actions(tokens, _value, depth + 1)?,
                             );
                         }
                         "OntapConfiguration" => {
                             builder = builder.set_ontap_configuration(
-                                crate::protocol_serde::shape_ontap_file_system_configuration::de_ontap_file_system_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_ontap_file_system_configuration::de_ontap_file_system_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "FileSystemTypeVersion" => {
@@ -137,7 +155,9 @@ where
                         "OpenZFSConfiguration" => {
                             builder = builder.set_open_zfs_configuration(
                                 crate::protocol_serde::shape_open_zfs_file_system_configuration::de_open_zfs_file_system_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

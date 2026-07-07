@@ -9,5 +9,11 @@ pub fn ser_ai_recommendation_output_config(
     if let Some(var_2) = &input.model_package_group_identifier {
         object.key("ModelPackageGroupIdentifier").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.mlflow_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("MlflowConfig").start_object();
+        crate::protocol_serde::shape_ai_mlflow_config::ser_ai_mlflow_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

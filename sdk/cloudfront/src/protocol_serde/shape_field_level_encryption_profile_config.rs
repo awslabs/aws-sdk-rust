@@ -28,7 +28,11 @@ pub fn ser_field_level_encryption_profile_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_field_level_encryption_profile_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FieldLevelEncryptionProfileConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FieldLevelEncryptionProfileConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_field_level_encryption_profile_config(
             s if s.matches("EncryptionEntities") /* EncryptionEntities com.amazonaws.cloudfront#FieldLevelEncryptionProfileConfig$EncryptionEntities */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_encryption_entities::de_encryption_entities(&mut tag)
+                        crate::protocol_serde::shape_encryption_entities::de_encryption_entities(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_catalog_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CatalogItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,52 +20,60 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "CatalogItemId" => {
-                            builder = builder.set_catalog_item_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "CatalogItemId" => {
+                                builder = builder.set_catalog_item_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ItemStatus" => {
+                                builder = builder.set_item_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CatalogItemStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "EC2Capacities" => {
+                                builder = builder.set_ec2_capacities(
+                                    crate::protocol_serde::shape_ec2_capacity_list_definition::de_ec2_capacity_list_definition(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "PowerKva" => {
+                                builder = builder.set_power_kva(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
+                                );
+                            }
+                            "WeightLbs" => {
+                                builder = builder.set_weight_lbs(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "SupportedUplinkGbps" => {
+                                builder = builder.set_supported_uplink_gbps(
+                                    crate::protocol_serde::shape_supported_uplink_gbps_list_definition::de_supported_uplink_gbps_list_definition(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "SupportedStorage" => {
+                                builder = builder.set_supported_storage(
+                                    crate::protocol_serde::shape_supported_storage_list::de_supported_storage_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "ItemStatus" => {
-                            builder = builder.set_item_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CatalogItemStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "EC2Capacities" => {
-                            builder = builder.set_ec2_capacities(
-                                crate::protocol_serde::shape_ec2_capacity_list_definition::de_ec2_capacity_list_definition(tokens, _value)?,
-                            );
-                        }
-                        "PowerKva" => {
-                            builder = builder.set_power_kva(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
-                            );
-                        }
-                        "WeightLbs" => {
-                            builder = builder.set_weight_lbs(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "SupportedUplinkGbps" => {
-                            builder = builder.set_supported_uplink_gbps(
-                                crate::protocol_serde::shape_supported_uplink_gbps_list_definition::de_supported_uplink_gbps_list_definition(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "SupportedStorage" => {
-                            builder = builder.set_supported_storage(crate::protocol_serde::shape_supported_storage_list::de_supported_storage_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

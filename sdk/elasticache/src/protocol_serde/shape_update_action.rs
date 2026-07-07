@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_update_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::UpdateAction, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::UpdateAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -188,7 +192,7 @@ pub fn de_update_action(
             s if s.matches("NodeGroupUpdateStatus") /* NodeGroupUpdateStatus com.amazonaws.elasticache#UpdateAction$NodeGroupUpdateStatus */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_node_group_update_status_list::de_node_group_update_status_list(&mut tag)
+                        crate::protocol_serde::shape_node_group_update_status_list::de_node_group_update_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -198,7 +202,7 @@ pub fn de_update_action(
             s if s.matches("CacheNodeUpdateStatus") /* CacheNodeUpdateStatus com.amazonaws.elasticache#UpdateAction$CacheNodeUpdateStatus */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_cache_node_update_status_list::de_cache_node_update_status_list(&mut tag)
+                        crate::protocol_serde::shape_cache_node_update_status_list::de_cache_node_update_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

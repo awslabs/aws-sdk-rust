@@ -93,6 +93,20 @@ pub use crate::types::_id_mapping_config::IdMappingConfig;
 
 pub use crate::types::_id_namespace_association::IdNamespaceAssociation;
 
+pub use crate::types::_population_analysis_configuration::PopulationAnalysisConfiguration;
+
+pub use crate::types::_intermediate_table::IntermediateTable;
+
+pub use crate::types::_intermediate_table_analysis_rule_type::IntermediateTableAnalysisRuleType;
+
+pub use crate::types::_intermediate_table_analysis_rule_policy::IntermediateTableAnalysisRulePolicy;
+
+pub use crate::types::_intermediate_table_analysis_rule::IntermediateTableAnalysisRule;
+
+pub use crate::types::_intermediate_table_compute_configuration::IntermediateTableComputeConfiguration;
+
+pub use crate::types::_populate_intermediate_table_analysis_type::PopulateIntermediateTableAnalysisType;
+
 pub use crate::types::_membership_status::MembershipStatus;
 
 pub use crate::types::_membership_query_log_status::MembershipQueryLogStatus;
@@ -106,6 +120,8 @@ pub use crate::types::_membership_protected_job_result_configuration::Membership
 pub use crate::types::_membership_payment_configuration::MembershipPaymentConfiguration;
 
 pub use crate::types::_membership::Membership;
+
+pub use crate::types::_update_membership_payment_configuration::UpdateMembershipPaymentConfiguration;
 
 pub use crate::types::_protected_job::ProtectedJob;
 
@@ -239,6 +255,24 @@ pub use crate::types::_id_mapping_table_input_reference_properties::IdMappingTab
 
 pub use crate::types::_id_namespace_association_summary::IdNamespaceAssociationSummary;
 
+pub use crate::types::_intermediate_table_summary::IntermediateTableSummary;
+
+pub use crate::types::_population_analysis_sql_parameters::PopulationAnalysisSqlParameters;
+
+pub use crate::types::_intermediate_table_status::IntermediateTableStatus;
+
+pub use crate::types::_intermediate_table_active_version::IntermediateTableActiveVersion;
+
+pub use crate::types::_intermediate_table_schema::IntermediateTableSchema;
+
+pub use crate::types::_intermediate_table_column::IntermediateTableColumn;
+
+pub use crate::types::_intermediate_table_analysis_rule_policy_v1::IntermediateTableAnalysisRulePolicyV1;
+
+pub use crate::types::_intermediate_table_version_summary::IntermediateTableVersionSummary;
+
+pub use crate::types::_worker_compute_configuration::WorkerComputeConfiguration;
+
 pub use crate::types::_membership_summary::MembershipSummary;
 
 pub use crate::types::_membership_protected_query_output_configuration::MembershipProtectedQueryOutputConfiguration;
@@ -282,8 +316,6 @@ pub use crate::types::_protected_job_output_configuration_input::ProtectedJobOut
 pub use crate::types::_protected_job_worker_compute_configuration::ProtectedJobWorkerComputeConfiguration;
 
 pub use crate::types::_protected_query_output_configuration::ProtectedQueryOutputConfiguration;
-
-pub use crate::types::_worker_compute_configuration::WorkerComputeConfiguration;
 
 pub use crate::types::_privacy_budget_template_summary::PrivacyBudgetTemplateSummary;
 
@@ -333,6 +365,10 @@ pub use crate::types::_schema_status_detail::SchemaStatusDetail;
 
 pub use crate::types::_id_mapping_table_schema_type_properties::IdMappingTableSchemaTypeProperties;
 
+pub use crate::types::_intermediate_table_schema_type_properties::IntermediateTableSchemaTypeProperties;
+
+pub use crate::types::_configured_table_association_schema_type_properties::ConfiguredTableAssociationSchemaTypeProperties;
+
 pub use crate::types::_analysis_rule_policy_v1::AnalysisRulePolicyV1;
 
 pub use crate::types::_consolidated_policy_v1::ConsolidatedPolicyV1;
@@ -340,6 +376,8 @@ pub use crate::types::_consolidated_policy_v1::ConsolidatedPolicyV1;
 pub use crate::types::_id_namespace_association_input_reference_properties_summary::IdNamespaceAssociationInputReferencePropertiesSummary;
 
 pub use crate::types::_privacy_budget::PrivacyBudget;
+
+pub use crate::types::_child_resource::ChildResource;
 
 pub use crate::types::_configured_table_association_analysis_rule_list::ConfiguredTableAssociationAnalysisRuleList;
 
@@ -356,6 +394,18 @@ pub use crate::types::_analysis_rule_list::AnalysisRuleList;
 pub use crate::types::_analysis_rule_aggregation::AnalysisRuleAggregation;
 
 pub use crate::types::_analysis_rule_custom::AnalysisRuleCustom;
+
+pub use crate::types::_intermediate_table_dependency::IntermediateTableDependency;
+
+pub use crate::types::_intermediate_table_inherited_constraints::IntermediateTableInheritedConstraints;
+
+pub use crate::types::_intermediate_table_analysis_rule_custom::IntermediateTableAnalysisRuleCustom;
+
+pub use crate::types::_intermediate_table_version_status::IntermediateTableVersionStatus;
+
+pub use crate::types::_worker_compute_type::WorkerComputeType;
+
+pub use crate::types::_worker_compute_configuration_properties::WorkerComputeConfigurationProperties;
 
 pub use crate::types::_protected_query_s3_output_configuration::ProtectedQueryS3OutputConfiguration;
 
@@ -377,17 +427,15 @@ pub use crate::types::_billed_resource_utilization::BilledResourceUtilization;
 
 pub use crate::types::_protected_query_output::ProtectedQueryOutput;
 
+pub use crate::types::_intermediate_table_output_configuration::IntermediateTableOutputConfiguration;
+
 pub use crate::types::_protected_job_member_output_configuration_input::ProtectedJobMemberOutputConfigurationInput;
 
 pub use crate::types::_protected_job_worker_compute_type::ProtectedJobWorkerComputeType;
 
-pub use crate::types::_worker_compute_configuration_properties::WorkerComputeConfigurationProperties;
-
 pub use crate::types::_protected_query_member_output_configuration::ProtectedQueryMemberOutputConfiguration;
 
 pub use crate::types::_protected_query_distribute_output_configuration::ProtectedQueryDistributeOutputConfiguration;
-
-pub use crate::types::_worker_compute_type::WorkerComputeType;
 
 pub use crate::types::_s3_location::S3Location;
 
@@ -419,6 +467,10 @@ pub use crate::types::_differential_privacy_privacy_budget::DifferentialPrivacyP
 
 pub use crate::types::_access_budget::AccessBudget;
 
+pub use crate::types::_child_resource_type::ChildResourceType;
+
+pub use crate::types::_resource_status::ResourceStatus;
+
 pub use crate::types::_additional_analyses::AdditionalAnalyses;
 
 pub use crate::types::_join_required_option::JoinRequiredOption;
@@ -426,6 +478,18 @@ pub use crate::types::_join_required_option::JoinRequiredOption;
 pub use crate::types::_differential_privacy_configuration::DifferentialPrivacyConfiguration;
 
 pub use crate::types::_id_mapping_table_input_source::IdMappingTableInputSource;
+
+pub use crate::types::_base_table_dependency_type::BaseTableDependencyType;
+
+pub use crate::types::_base_table_parent_type::BaseTableParentType;
+
+pub use crate::types::_inherited_additional_analyses::InheritedAdditionalAnalyses;
+
+pub use crate::types::_inherited_allowed_additional_analyses::InheritedAllowedAdditionalAnalyses;
+
+pub use crate::types::_inherited_allowed_result_receivers::InheritedAllowedResultReceivers;
+
+pub use crate::types::_inherited_disallowed_output_columns::InheritedDisallowedOutputColumns;
 
 pub use crate::types::_result_format::ResultFormat;
 
@@ -502,6 +566,14 @@ pub use crate::types::_aggregate_function_name::AggregateFunctionName;
 pub use crate::types::_aggregation_type::AggregationType;
 
 pub use crate::types::_differential_privacy_column::DifferentialPrivacyColumn;
+
+pub use crate::types::_inherited_additional_analyses_source::InheritedAdditionalAnalysesSource;
+
+pub use crate::types::_inherited_allowed_additional_analyses_source::InheritedAllowedAdditionalAnalysesSource;
+
+pub use crate::types::_inherited_allowed_result_receivers_source::InheritedAllowedResultReceiversSource;
+
+pub use crate::types::_column_lineage_entry::ColumnLineageEntry;
 
 pub use crate::types::_protected_job_direct_analysis_configuration_details::ProtectedJobDirectAnalysisConfigurationDetails;
 
@@ -593,6 +665,10 @@ mod _auto_approved_change_type;
 
 mod _auto_refresh_mode;
 
+mod _base_table_dependency_type;
+
+mod _base_table_parent_type;
+
 mod _batch_get_collaboration_analysis_template_error;
 
 mod _batch_get_schema_analysis_rule_error;
@@ -618,6 +694,10 @@ mod _change_specification;
 mod _change_specification_type;
 
 mod _change_type;
+
+mod _child_resource;
+
+mod _child_resource_type;
 
 mod _collaboration;
 
@@ -655,6 +735,8 @@ mod _column;
 
 mod _column_classification_details;
 
+mod _column_lineage_entry;
+
 mod _commercial_region;
 
 mod _compute_configuration;
@@ -690,6 +772,8 @@ mod _configured_table_association_analysis_rule_policy;
 mod _configured_table_association_analysis_rule_policy_v1;
 
 mod _configured_table_association_analysis_rule_type;
+
+mod _configured_table_association_schema_type_properties;
 
 mod _configured_table_association_summary;
 
@@ -775,6 +859,56 @@ mod _id_namespace_association_summary;
 
 mod _id_namespace_type;
 
+mod _inherited_additional_analyses;
+
+mod _inherited_additional_analyses_source;
+
+mod _inherited_allowed_additional_analyses;
+
+mod _inherited_allowed_additional_analyses_source;
+
+mod _inherited_allowed_result_receivers;
+
+mod _inherited_allowed_result_receivers_source;
+
+mod _inherited_disallowed_output_columns;
+
+mod _intermediate_table;
+
+mod _intermediate_table_active_version;
+
+mod _intermediate_table_analysis_rule;
+
+mod _intermediate_table_analysis_rule_custom;
+
+mod _intermediate_table_analysis_rule_policy;
+
+mod _intermediate_table_analysis_rule_policy_v1;
+
+mod _intermediate_table_analysis_rule_type;
+
+mod _intermediate_table_column;
+
+mod _intermediate_table_compute_configuration;
+
+mod _intermediate_table_dependency;
+
+mod _intermediate_table_inherited_constraints;
+
+mod _intermediate_table_output_configuration;
+
+mod _intermediate_table_schema;
+
+mod _intermediate_table_schema_type_properties;
+
+mod _intermediate_table_status;
+
+mod _intermediate_table_summary;
+
+mod _intermediate_table_version_status;
+
+mod _intermediate_table_version_summary;
+
 mod _job_compute_payment_config;
 
 mod _job_type;
@@ -838,6 +972,12 @@ mod _model_training_payment_config;
 mod _parameter_type;
 
 mod _payment_configuration;
+
+mod _populate_intermediate_table_analysis_type;
+
+mod _population_analysis_configuration;
+
+mod _population_analysis_sql_parameters;
 
 mod _preview_privacy_impact_parameters_input;
 
@@ -957,6 +1097,8 @@ mod _query_constraint_require_overlap;
 
 mod _receiver_configuration;
 
+mod _resource_status;
+
 mod _resource_type;
 
 mod _result_format;
@@ -1008,6 +1150,8 @@ mod _table_reference;
 mod _target_protected_job_status;
 
 mod _target_protected_query_status;
+
+mod _update_membership_payment_configuration;
 
 mod _validation_exception_field;
 

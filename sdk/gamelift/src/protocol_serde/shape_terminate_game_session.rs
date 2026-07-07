@@ -156,17 +156,18 @@ pub(crate) fn de_terminate_game_session(
     crate::operation::terminate_game_session::builders::TerminateGameSessionOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::terminate_game_session::builders::TerminateGameSessionOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::terminate_game_session::builders::TerminateGameSessionOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "GameSession" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_game_session(Some(crate::protocol_serde::shape_game_session::de_game_session(decoder)?)))
+                Ok(builder.set_game_session(Some(crate::protocol_serde::shape_game_session::de_game_session(decoder, depth + 1)?)))
             })?,
             _ => {
                 decoder.skip()?;
@@ -177,6 +178,8 @@ pub(crate) fn de_terminate_game_session(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -186,13 +189,13 @@ pub(crate) fn de_terminate_game_session(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

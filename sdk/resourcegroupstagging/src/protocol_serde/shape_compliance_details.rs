@@ -2,10 +2,16 @@
 pub(crate) fn de_compliance_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComplianceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,11 +22,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NoncompliantKeys" => {
-                            builder = builder.set_noncompliant_keys(crate::protocol_serde::shape_tag_key_list::de_tag_key_list(tokens, _value)?);
+                            builder =
+                                builder.set_noncompliant_keys(crate::protocol_serde::shape_tag_key_list::de_tag_key_list(tokens, _value, depth + 1)?);
                         }
                         "KeysWithNoncompliantValues" => {
-                            builder = builder
-                                .set_keys_with_noncompliant_values(crate::protocol_serde::shape_tag_key_list::de_tag_key_list(tokens, _value)?);
+                            builder = builder.set_keys_with_noncompliant_values(crate::protocol_serde::shape_tag_key_list::de_tag_key_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "MissingTagKeys" => {
+                            builder =
+                                builder.set_missing_tag_keys(crate::protocol_serde::shape_tag_key_list::de_tag_key_list(tokens, _value, depth + 1)?);
                         }
                         "ComplianceStatus" => {
                             builder = builder.set_compliance_status(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

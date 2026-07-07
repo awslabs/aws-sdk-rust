@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_list_policies_granting_service_access_entry(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ListPoliciesGrantingServiceAccessEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ListPoliciesGrantingServiceAccessEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_list_policies_granting_service_access_entry(
             s if s.matches("Policies") /* Policies com.amazonaws.iam#ListPoliciesGrantingServiceAccessEntry$Policies */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_policy_granting_service_access_list_type::de_policy_granting_service_access_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_granting_service_access_list_type::de_policy_granting_service_access_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

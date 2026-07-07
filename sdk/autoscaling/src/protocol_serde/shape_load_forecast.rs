@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_load_forecast(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LoadForecast, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LoadForecast::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_load_forecast(
             s if s.matches("Timestamps") /* Timestamps com.amazonaws.autoscaling#LoadForecast$Timestamps */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_forecast_timestamps::de_predictive_scaling_forecast_timestamps(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_forecast_timestamps::de_predictive_scaling_forecast_timestamps(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_load_forecast(
             s if s.matches("Values") /* Values com.amazonaws.autoscaling#LoadForecast$Values */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_forecast_values::de_predictive_scaling_forecast_values(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_forecast_values::de_predictive_scaling_forecast_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -30,7 +34,7 @@ pub fn de_load_forecast(
             s if s.matches("MetricSpecification") /* MetricSpecification com.amazonaws.autoscaling#LoadForecast$MetricSpecification */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_predictive_scaling_metric_specification::de_predictive_scaling_metric_specification(&mut tag)
+                        crate::protocol_serde::shape_predictive_scaling_metric_specification::de_predictive_scaling_metric_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;

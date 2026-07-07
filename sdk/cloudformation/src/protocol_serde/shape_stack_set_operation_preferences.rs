@@ -63,7 +63,11 @@ pub fn ser_stack_set_operation_preferences(
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_operation_preferences(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackSetOperationPreferences, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSetOperationPreferences::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -85,7 +89,7 @@ pub fn de_stack_set_operation_preferences(
             s if s.matches("RegionOrder") /* RegionOrder com.amazonaws.cloudformation#StackSetOperationPreferences$RegionOrder */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_region_list::de_region_list(&mut tag)
+                        crate::protocol_serde::shape_region_list::de_region_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

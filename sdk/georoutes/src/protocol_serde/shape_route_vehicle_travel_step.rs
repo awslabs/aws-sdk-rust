@@ -2,10 +2,16 @@
 pub(crate) fn de_route_vehicle_travel_step<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouteVehicleTravelStep>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,17 +24,19 @@ where
                         "ContinueHighwayStepDetails" => {
                             builder = builder.set_continue_highway_step_details(
                                 crate::protocol_serde::shape_route_continue_highway_step_details::de_route_continue_highway_step_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ContinueStepDetails" => {
                             builder = builder.set_continue_step_details(
-                                crate::protocol_serde::shape_route_continue_step_details::de_route_continue_step_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_continue_step_details::de_route_continue_step_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "CurrentRoad" => {
-                            builder = builder.set_current_road(crate::protocol_serde::shape_route_road::de_route_road(tokens, _value)?);
+                            builder = builder.set_current_road(crate::protocol_serde::shape_route_road::de_route_road(tokens, _value, depth + 1)?);
                         }
                         "Distance" => {
                             builder = builder.set_distance(
@@ -46,17 +54,23 @@ where
                         }
                         "EnterHighwayStepDetails" => {
                             builder = builder.set_enter_highway_step_details(
-                                crate::protocol_serde::shape_route_enter_highway_step_details::de_route_enter_highway_step_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_enter_highway_step_details::de_route_enter_highway_step_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ExitNumber" => {
                             builder = builder.set_exit_number(crate::protocol_serde::shape_localized_string_list::de_localized_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ExitStepDetails" => {
                             builder = builder.set_exit_step_details(
-                                crate::protocol_serde::shape_route_exit_step_details::de_route_exit_step_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_exit_step_details::de_route_exit_step_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "GeometryOffset" => {
@@ -75,44 +89,51 @@ where
                         }
                         "KeepStepDetails" => {
                             builder = builder.set_keep_step_details(
-                                crate::protocol_serde::shape_route_keep_step_details::de_route_keep_step_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_keep_step_details::de_route_keep_step_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "NextRoad" => {
-                            builder = builder.set_next_road(crate::protocol_serde::shape_route_road::de_route_road(tokens, _value)?);
+                            builder = builder.set_next_road(crate::protocol_serde::shape_route_road::de_route_road(tokens, _value, depth + 1)?);
                         }
                         "RampStepDetails" => {
                             builder = builder.set_ramp_step_details(
-                                crate::protocol_serde::shape_route_ramp_step_details::de_route_ramp_step_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_ramp_step_details::de_route_ramp_step_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "RoundaboutEnterStepDetails" => {
                             builder = builder.set_roundabout_enter_step_details(
                                 crate::protocol_serde::shape_route_roundabout_enter_step_details::de_route_roundabout_enter_step_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "RoundaboutExitStepDetails" => {
                             builder = builder.set_roundabout_exit_step_details(
                                 crate::protocol_serde::shape_route_roundabout_exit_step_details::de_route_roundabout_exit_step_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "RoundaboutPassStepDetails" => {
                             builder = builder.set_roundabout_pass_step_details(
                                 crate::protocol_serde::shape_route_roundabout_pass_step_details::de_route_roundabout_pass_step_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "Signpost" => {
-                            builder = builder.set_signpost(crate::protocol_serde::shape_route_signpost::de_route_signpost(tokens, _value)?);
+                            builder =
+                                builder.set_signpost(crate::protocol_serde::shape_route_signpost::de_route_signpost(tokens, _value, depth + 1)?);
                         }
                         "TurnStepDetails" => {
                             builder = builder.set_turn_step_details(
-                                crate::protocol_serde::shape_route_turn_step_details::de_route_turn_step_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_turn_step_details::de_route_turn_step_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "Type" => {
@@ -124,7 +145,7 @@ where
                         }
                         "UTurnStepDetails" => {
                             builder = builder.set_u_turn_step_details(
-                                crate::protocol_serde::shape_route_u_turn_step_details::de_route_u_turn_step_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_u_turn_step_details::de_route_u_turn_step_details(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

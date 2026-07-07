@@ -2,10 +2,16 @@
 pub(crate) fn de_source_server<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SourceServer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -33,23 +39,29 @@ where
                             builder = builder.set_is_archived(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                         }
                         "launchedInstance" => {
-                            builder =
-                                builder.set_launched_instance(crate::protocol_serde::shape_launched_instance::de_launched_instance(tokens, _value)?);
+                            builder = builder.set_launched_instance(crate::protocol_serde::shape_launched_instance::de_launched_instance(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dataReplicationInfo" => {
                             builder = builder.set_data_replication_info(
-                                crate::protocol_serde::shape_data_replication_info::de_data_replication_info(tokens, _value)?,
+                                crate::protocol_serde::shape_data_replication_info::de_data_replication_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "lifeCycle" => {
-                            builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens, _value)?);
+                            builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens, _value, depth + 1)?);
                         }
                         "sourceProperties" => {
-                            builder =
-                                builder.set_source_properties(crate::protocol_serde::shape_source_properties::de_source_properties(tokens, _value)?);
+                            builder = builder.set_source_properties(crate::protocol_serde::shape_source_properties::de_source_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "replicationType" => {
                             builder = builder.set_replication_type(
@@ -88,7 +100,11 @@ where
                         }
                         "connectorAction" => {
                             builder = builder.set_connector_action(
-                                crate::protocol_serde::shape_source_server_connector_action::de_source_server_connector_action(tokens, _value)?,
+                                crate::protocol_serde::shape_source_server_connector_action::de_source_server_connector_action(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

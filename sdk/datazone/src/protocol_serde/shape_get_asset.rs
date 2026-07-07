@@ -129,6 +129,8 @@ pub(crate) fn de_get_asset(
 ) -> ::std::result::Result<crate::operation::get_asset::builders::GetAssetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -182,14 +184,20 @@ pub(crate) fn de_get_asset(
                     );
                 }
                 "formsOutput" => {
-                    builder = builder.set_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(tokens, _value)?);
+                    builder = builder.set_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "glossaryTerms" => {
-                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens, _value)?);
+                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens, _value, depth + 1)?);
                 }
                 "governedGlossaryTerms" => {
                     builder = builder.set_governed_glossary_terms(crate::protocol_serde::shape_governed_glossary_terms::de_governed_glossary_terms(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "id" => {
@@ -201,12 +209,14 @@ pub(crate) fn de_get_asset(
                 }
                 "latestTimeSeriesDataPointFormsOutput" => {
                     builder = builder.set_latest_time_series_data_point_forms_output(
-                            crate::protocol_serde::shape_time_series_data_point_summary_form_output_list::de_time_series_data_point_summary_form_output_list(tokens, _value)?
+                            crate::protocol_serde::shape_time_series_data_point_summary_form_output_list::de_time_series_data_point_summary_form_output_list(tokens, _value, depth + 1)?
                         );
                 }
                 "listing" => {
                     builder = builder.set_listing(crate::protocol_serde::shape_asset_listing_details::de_asset_listing_details(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "name" => {
@@ -224,7 +234,11 @@ pub(crate) fn de_get_asset(
                     );
                 }
                 "readOnlyFormsOutput" => {
-                    builder = builder.set_read_only_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(tokens, _value)?);
+                    builder = builder.set_read_only_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "revision" => {
                     builder = builder.set_revision(

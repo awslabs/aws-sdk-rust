@@ -54,10 +54,16 @@ pub fn ser_recurrence_pattern(
 pub(crate) fn de_recurrence_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecurrencePattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -82,14 +88,15 @@ where
                             );
                         }
                         "ByMonth" => {
-                            builder = builder.set_by_month(crate::protocol_serde::shape_month_list::de_month_list(tokens, _value)?);
+                            builder = builder.set_by_month(crate::protocol_serde::shape_month_list::de_month_list(tokens, _value, depth + 1)?);
                         }
                         "ByMonthDay" => {
-                            builder = builder.set_by_month_day(crate::protocol_serde::shape_month_day_list::de_month_day_list(tokens, _value)?);
+                            builder =
+                                builder.set_by_month_day(crate::protocol_serde::shape_month_day_list::de_month_day_list(tokens, _value, depth + 1)?);
                         }
                         "ByWeekdayOccurrence" => {
                             builder = builder.set_by_weekday_occurrence(
-                                crate::protocol_serde::shape_weekday_occurrence_list::de_weekday_occurrence_list(tokens, _value)?,
+                                crate::protocol_serde::shape_weekday_occurrence_list::de_weekday_occurrence_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -50,6 +50,21 @@ pub fn de_list_suppressed_destinations_http_error(
             }
             tmp
         }),
+        "NotFoundException" => crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TooManyRequestsException" => crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -97,6 +112,8 @@ pub(crate) fn de_list_suppressed_destinations(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -111,7 +128,11 @@ pub(crate) fn de_list_suppressed_destinations(
                 }
                 "SuppressedDestinationSummaries" => {
                     builder = builder.set_suppressed_destination_summaries(
-                        crate::protocol_serde::shape_suppressed_destination_summaries::de_suppressed_destination_summaries(tokens, _value)?,
+                        crate::protocol_serde::shape_suppressed_destination_summaries::de_suppressed_destination_summaries(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

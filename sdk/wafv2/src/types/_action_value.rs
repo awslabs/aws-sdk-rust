@@ -18,6 +18,7 @@
 ///     ActionValue::Challenge => { /* ... */ },
 ///     ActionValue::Count => { /* ... */ },
 ///     ActionValue::ExcludedAsCount => { /* ... */ },
+///     ActionValue::Monetize => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -58,6 +59,8 @@ pub enum ActionValue {
     Count,
     #[allow(missing_docs)] // documentation missing in model
     ExcludedAsCount,
+    #[allow(missing_docs)] // documentation missing in model
+    Monetize,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -71,6 +74,7 @@ impl ::std::convert::From<&str> for ActionValue {
             "CHALLENGE" => ActionValue::Challenge,
             "COUNT" => ActionValue::Count,
             "EXCLUDED_AS_COUNT" => ActionValue::ExcludedAsCount,
+            "MONETIZE" => ActionValue::Monetize,
             other => ActionValue::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -92,12 +96,13 @@ impl ActionValue {
             ActionValue::Challenge => "CHALLENGE",
             ActionValue::Count => "COUNT",
             ActionValue::ExcludedAsCount => "EXCLUDED_AS_COUNT",
+            ActionValue::Monetize => "MONETIZE",
             ActionValue::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "BLOCK", "CAPTCHA", "CHALLENGE", "COUNT", "EXCLUDED_AS_COUNT"]
+        &["ALLOW", "BLOCK", "CAPTCHA", "CHALLENGE", "COUNT", "EXCLUDED_AS_COUNT", "MONETIZE"]
     }
 }
 impl ::std::convert::AsRef<str> for ActionValue {
@@ -126,6 +131,7 @@ impl ::std::fmt::Display for ActionValue {
             ActionValue::Challenge => write!(f, "CHALLENGE"),
             ActionValue::Count => write!(f, "COUNT"),
             ActionValue::ExcludedAsCount => write!(f, "EXCLUDED_AS_COUNT"),
+            ActionValue::Monetize => write!(f, "MONETIZE"),
             ActionValue::Unknown(value) => write!(f, "{value}"),
         }
     }

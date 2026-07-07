@@ -2,10 +2,16 @@
 pub(crate) fn de_hls_manifest<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HlsManifest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,7 +75,7 @@ where
                             );
                         }
                         "adTriggers" => {
-                            builder = builder.set_ad_triggers(crate::protocol_serde::shape_ad_triggers::de_ad_triggers(tokens, _value)?);
+                            builder = builder.set_ad_triggers(crate::protocol_serde::shape_ad_triggers::de_ad_triggers(tokens, _value, depth + 1)?);
                         }
                         "adsOnDeliveryRestrictions" => {
                             builder = builder.set_ads_on_delivery_restrictions(

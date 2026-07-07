@@ -60,10 +60,16 @@ pub fn ser_compliance(
 pub(crate) fn de_compliance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Compliance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -82,12 +88,15 @@ where
                         }
                         "RelatedRequirements" => {
                             builder = builder.set_related_requirements(
-                                crate::protocol_serde::shape_related_requirements_list::de_related_requirements_list(tokens, _value)?,
+                                crate::protocol_serde::shape_related_requirements_list::de_related_requirements_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "StatusReasons" => {
-                            builder =
-                                builder.set_status_reasons(crate::protocol_serde::shape_status_reasons_list::de_status_reasons_list(tokens, _value)?);
+                            builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons_list::de_status_reasons_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SecurityControlId" => {
                             builder = builder.set_security_control_id(
@@ -98,12 +107,16 @@ where
                         }
                         "AssociatedStandards" => {
                             builder = builder.set_associated_standards(
-                                crate::protocol_serde::shape_associated_standards_list::de_associated_standards_list(tokens, _value)?,
+                                crate::protocol_serde::shape_associated_standards_list::de_associated_standards_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "SecurityControlParameters" => {
                             builder = builder.set_security_control_parameters(
-                                crate::protocol_serde::shape_security_control_parameters_list::de_security_control_parameters_list(tokens, _value)?,
+                                crate::protocol_serde::shape_security_control_parameters_list::de_security_control_parameters_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

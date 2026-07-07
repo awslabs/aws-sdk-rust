@@ -2,10 +2,16 @@
 pub(crate) fn de_pipeline_execution_step_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipelineExecutionStepMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,107 +23,168 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TrainingJob" => {
                             builder = builder.set_training_job(
-                                crate::protocol_serde::shape_training_job_step_metadata::de_training_job_step_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_training_job_step_metadata::de_training_job_step_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         "ProcessingJob" => {
                             builder = builder.set_processing_job(
-                                crate::protocol_serde::shape_processing_job_step_metadata::de_processing_job_step_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_processing_job_step_metadata::de_processing_job_step_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TransformJob" => {
                             builder = builder.set_transform_job(
-                                crate::protocol_serde::shape_transform_job_step_metadata::de_transform_job_step_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_transform_job_step_metadata::de_transform_job_step_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         "TuningJob" => {
                             builder = builder.set_tuning_job(crate::protocol_serde::shape_tuning_job_step_meta_data::de_tuning_job_step_meta_data(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Model" => {
-                            builder = builder.set_model(crate::protocol_serde::shape_model_step_metadata::de_model_step_metadata(tokens, _value)?);
+                            builder = builder.set_model(crate::protocol_serde::shape_model_step_metadata::de_model_step_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RegisterModel" => {
                             builder = builder.set_register_model(
-                                crate::protocol_serde::shape_register_model_step_metadata::de_register_model_step_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_register_model_step_metadata::de_register_model_step_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Condition" => {
                             builder = builder.set_condition(crate::protocol_serde::shape_condition_step_metadata::de_condition_step_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Callback" => {
                             builder = builder.set_callback(crate::protocol_serde::shape_callback_step_metadata::de_callback_step_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Lambda" => {
                             builder = builder.set_lambda(crate::protocol_serde::shape_lambda_step_metadata::de_lambda_step_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "EMR" => {
-                            builder = builder.set_emr(crate::protocol_serde::shape_emr_step_metadata::de_emr_step_metadata(tokens, _value)?);
+                            builder = builder.set_emr(crate::protocol_serde::shape_emr_step_metadata::de_emr_step_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "QualityCheck" => {
                             builder = builder.set_quality_check(
-                                crate::protocol_serde::shape_quality_check_step_metadata::de_quality_check_step_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_quality_check_step_metadata::de_quality_check_step_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         "ClarifyCheck" => {
                             builder = builder.set_clarify_check(
-                                crate::protocol_serde::shape_clarify_check_step_metadata::de_clarify_check_step_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_clarify_check_step_metadata::de_clarify_check_step_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         "Fail" => {
-                            builder = builder.set_fail(crate::protocol_serde::shape_fail_step_metadata::de_fail_step_metadata(tokens, _value)?);
+                            builder = builder.set_fail(crate::protocol_serde::shape_fail_step_metadata::de_fail_step_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AutoMLJob" => {
                             builder = builder.set_auto_ml_job(crate::protocol_serde::shape_auto_ml_job_step_metadata::de_auto_ml_job_step_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Endpoint" => {
                             builder = builder.set_endpoint(crate::protocol_serde::shape_endpoint_step_metadata::de_endpoint_step_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "EndpointConfig" => {
                             builder = builder.set_endpoint_config(
-                                crate::protocol_serde::shape_endpoint_config_step_metadata::de_endpoint_config_step_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_endpoint_config_step_metadata::de_endpoint_config_step_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "BedrockCustomModel" => {
                             builder = builder.set_bedrock_custom_model(
-                                crate::protocol_serde::shape_bedrock_custom_model_metadata::de_bedrock_custom_model_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_bedrock_custom_model_metadata::de_bedrock_custom_model_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "BedrockCustomModelDeployment" => {
                             builder = builder.set_bedrock_custom_model_deployment(
                                 crate::protocol_serde::shape_bedrock_custom_model_deployment_metadata::de_bedrock_custom_model_deployment_metadata(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "BedrockProvisionedModelThroughput" => {
                             builder = builder.set_bedrock_provisioned_model_throughput(
-                                    crate::protocol_serde::shape_bedrock_provisioned_model_throughput_metadata::de_bedrock_provisioned_model_throughput_metadata(tokens, _value)?
+                                    crate::protocol_serde::shape_bedrock_provisioned_model_throughput_metadata::de_bedrock_provisioned_model_throughput_metadata(tokens, _value, depth + 1)?
                                 );
                         }
                         "BedrockModelImport" => {
                             builder = builder.set_bedrock_model_import(
-                                crate::protocol_serde::shape_bedrock_model_import_metadata::de_bedrock_model_import_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_bedrock_model_import_metadata::de_bedrock_model_import_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "InferenceComponent" => {
                             builder = builder.set_inference_component(
-                                crate::protocol_serde::shape_inference_component_metadata::de_inference_component_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_inference_component_metadata::de_inference_component_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Lineage" => {
-                            builder = builder.set_lineage(crate::protocol_serde::shape_lineage_metadata::de_lineage_metadata(tokens, _value)?);
+                            builder = builder.set_lineage(crate::protocol_serde::shape_lineage_metadata::de_lineage_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "Job" => {
+                            builder = builder.set_job(crate::protocol_serde::shape_job_step_metadata::de_job_step_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -58,6 +58,8 @@ pub fn de_get_access_point(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetAccessPointResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetAccessPointResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -68,7 +70,7 @@ pub fn de_get_access_point(
             s if s.matches("Endpoints") /* Endpoints com.amazonaws.s3control.synthetic#GetAccessPointOutput$Endpoints */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_endpoints::de_endpoints(&mut tag)
+                        crate::protocol_serde::shape_endpoints::de_endpoints(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -78,7 +80,7 @@ pub fn de_get_access_point(
             s if s.matches("PublicAccessBlockConfiguration") /* PublicAccessBlockConfiguration com.amazonaws.s3control.synthetic#GetAccessPointOutput$PublicAccessBlockConfiguration */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut tag)
+                        crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -167,7 +169,7 @@ pub fn de_get_access_point(
             s if s.matches("VpcConfiguration") /* VpcConfiguration com.amazonaws.s3control.synthetic#GetAccessPointOutput$VpcConfiguration */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(&mut tag)
+                        crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

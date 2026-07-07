@@ -72,10 +72,16 @@ pub fn ser_input_settings(
 pub(crate) fn de_input_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -84,76 +90,82 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "audioSelectors" => {
-                            builder = builder.set_audio_selectors(crate::protocol_serde::shape_list_of_audio_selector::de_list_of_audio_selector(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "audioSelectors" => {
+                                builder = builder.set_audio_selectors(
+                                    crate::protocol_serde::shape_list_of_audio_selector::de_list_of_audio_selector(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "captionSelectors" => {
+                                builder = builder.set_caption_selectors(
+                                    crate::protocol_serde::shape_list_of_caption_selector::de_list_of_caption_selector(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "deblockFilter" => {
+                                builder = builder.set_deblock_filter(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::InputDeblockFilter::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "denoiseFilter" => {
+                                builder = builder.set_denoise_filter(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::InputDenoiseFilter::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "filterStrength" => {
+                                builder = builder.set_filter_strength(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "inputFilter" => {
+                                builder = builder.set_input_filter(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::InputFilter::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "networkInputSettings" => {
+                                builder = builder.set_network_input_settings(
+                                    crate::protocol_serde::shape_network_input_settings::de_network_input_settings(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "scte35Pid" => {
+                                builder = builder.set_scte35_pid(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "smpte2038DataPreference" => {
+                                builder = builder.set_smpte2038_data_preference(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::Smpte2038DataPreference::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "sourceEndBehavior" => {
+                                builder = builder.set_source_end_behavior(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::InputSourceEndBehavior::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "videoSelector" => {
+                                builder = builder.set_video_selector(crate::protocol_serde::shape_video_selector::de_video_selector(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "captionSelectors" => {
-                            builder = builder.set_caption_selectors(
-                                crate::protocol_serde::shape_list_of_caption_selector::de_list_of_caption_selector(tokens, _value)?,
-                            );
-                        }
-                        "deblockFilter" => {
-                            builder = builder.set_deblock_filter(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputDeblockFilter::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "denoiseFilter" => {
-                            builder = builder.set_denoise_filter(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputDenoiseFilter::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "filterStrength" => {
-                            builder = builder.set_filter_strength(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "inputFilter" => {
-                            builder = builder.set_input_filter(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputFilter::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "networkInputSettings" => {
-                            builder = builder.set_network_input_settings(
-                                crate::protocol_serde::shape_network_input_settings::de_network_input_settings(tokens, _value)?,
-                            );
-                        }
-                        "scte35Pid" => {
-                            builder = builder.set_scte35_pid(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "smpte2038DataPreference" => {
-                            builder = builder.set_smpte2038_data_preference(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Smpte2038DataPreference::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "sourceEndBehavior" => {
-                            builder = builder.set_source_end_behavior(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputSourceEndBehavior::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "videoSelector" => {
-                            builder = builder.set_video_selector(crate::protocol_serde::shape_video_selector::de_video_selector(tokens, _value)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

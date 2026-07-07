@@ -2,10 +2,16 @@
 pub(crate) fn de_route_pedestrian_span<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RoutePedestrianSpan>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,11 @@ where
                         }
                         "DynamicSpeed" => {
                             builder = builder.set_dynamic_speed(
-                                crate::protocol_serde::shape_route_span_dynamic_speed_details::de_route_span_dynamic_speed_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_span_dynamic_speed_details::de_route_span_dynamic_speed_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "FunctionalClassification" => {
@@ -63,16 +73,18 @@ where
                             );
                         }
                         "Incidents" => {
-                            builder = builder.set_incidents(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value)?);
+                            builder = builder.set_incidents(crate::protocol_serde::shape_index_list::de_index_list(tokens, _value, depth + 1)?);
                         }
                         "Names" => {
                             builder = builder.set_names(crate::protocol_serde::shape_localized_string_list::de_localized_string_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "PedestrianAccess" => {
                             builder = builder.set_pedestrian_access(
-                                    crate::protocol_serde::shape_route_span_pedestrian_access_attribute_list::de_route_span_pedestrian_access_attribute_list(tokens, _value)?
+                                    crate::protocol_serde::shape_route_span_pedestrian_access_attribute_list::de_route_span_pedestrian_access_attribute_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Region" => {
@@ -84,16 +96,27 @@ where
                         }
                         "RoadAttributes" => {
                             builder = builder.set_road_attributes(
-                                crate::protocol_serde::shape_route_span_road_attribute_list::de_route_span_road_attribute_list(tokens, _value)?,
+                                crate::protocol_serde::shape_route_span_road_attribute_list::de_route_span_road_attribute_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "RouteNumbers" => {
-                            builder =
-                                builder.set_route_numbers(crate::protocol_serde::shape_route_number_list::de_route_number_list(tokens, _value)?);
+                            builder = builder.set_route_numbers(crate::protocol_serde::shape_route_number_list::de_route_number_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SpeedLimit" => {
                             builder = builder.set_speed_limit(
-                                crate::protocol_serde::shape_route_span_speed_limit_details::de_route_span_speed_limit_details(tokens, _value)?,
+                                crate::protocol_serde::shape_route_span_speed_limit_details::de_route_span_speed_limit_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TypicalDuration" => {

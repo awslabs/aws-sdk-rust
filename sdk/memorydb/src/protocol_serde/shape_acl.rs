@@ -2,10 +2,16 @@
 pub(crate) fn de_acl<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Acl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,8 @@ where
                             );
                         }
                         "UserNames" => {
-                            builder = builder.set_user_names(crate::protocol_serde::shape_user_name_list::de_user_name_list(tokens, _value)?);
+                            builder =
+                                builder.set_user_names(crate::protocol_serde::shape_user_name_list::de_user_name_list(tokens, _value, depth + 1)?);
                         }
                         "MinimumEngineVersion" => {
                             builder = builder.set_minimum_engine_version(
@@ -40,12 +47,17 @@ where
                             );
                         }
                         "PendingChanges" => {
-                            builder = builder
-                                .set_pending_changes(crate::protocol_serde::shape_acl_pending_changes::de_acl_pending_changes(tokens, _value)?);
+                            builder = builder.set_pending_changes(crate::protocol_serde::shape_acl_pending_changes::de_acl_pending_changes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Clusters" => {
                             builder = builder.set_clusters(crate::protocol_serde::shape_acl_cluster_name_list::de_acl_cluster_name_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ARN" => {

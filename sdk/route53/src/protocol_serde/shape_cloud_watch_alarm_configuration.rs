@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cloud_watch_alarm_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CloudWatchAlarmConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CloudWatchAlarmConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -109,7 +113,7 @@ pub fn de_cloud_watch_alarm_configuration(
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.route53#CloudWatchAlarmConfiguration$Dimensions */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_dimension_list::de_dimension_list(&mut tag)
+                        crate::protocol_serde::shape_dimension_list::de_dimension_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

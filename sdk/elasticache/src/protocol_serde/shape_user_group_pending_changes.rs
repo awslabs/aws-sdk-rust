@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_user_group_pending_changes(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::UserGroupPendingChanges, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::UserGroupPendingChanges::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_user_group_pending_changes(
             s if s.matches("UserIdsToRemove") /* UserIdsToRemove com.amazonaws.elasticache#UserGroupPendingChanges$UserIdsToRemove */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_user_id_list::de_user_id_list(&mut tag)
+                        crate::protocol_serde::shape_user_id_list::de_user_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_user_group_pending_changes(
             s if s.matches("UserIdsToAdd") /* UserIdsToAdd com.amazonaws.elasticache#UserGroupPendingChanges$UserIdsToAdd */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_user_id_list::de_user_id_list(&mut tag)
+                        crate::protocol_serde::shape_user_id_list::de_user_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

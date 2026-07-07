@@ -106,6 +106,8 @@ pub fn de_get_open_id_connect_provider(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetOpenIDConnectProviderResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetOpenIDConnectProviderResponse got {start_el:?}"
@@ -136,7 +138,7 @@ pub fn de_get_open_id_connect_provider(
             s if s.matches("ClientIDList") /* ClientIDList com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$ClientIDList */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_client_id_list_type::de_client_id_list_type(&mut tag)
+                        crate::protocol_serde::shape_client_id_list_type::de_client_id_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -146,7 +148,7 @@ pub fn de_get_open_id_connect_provider(
             s if s.matches("ThumbprintList") /* ThumbprintList com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$ThumbprintList */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_thumbprint_list_type::de_thumbprint_list_type(&mut tag)
+                        crate::protocol_serde::shape_thumbprint_list_type::de_thumbprint_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -170,7 +172,7 @@ pub fn de_get_open_id_connect_provider(
             s if s.matches("Tags") /* Tags com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$Tags */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -116,10 +116,11 @@ pub(crate) fn de_list_managed_insight_rules(
     crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -127,7 +128,7 @@ pub(crate) fn de_list_managed_insight_rules(
         builder = match decoder.str()?.as_ref() {
             "ManagedRules" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_managed_rules(Some(
-                    crate::protocol_serde::shape_managed_rule_descriptions::de_managed_rule_descriptions(decoder)?,
+                    crate::protocol_serde::shape_managed_rule_descriptions::de_managed_rule_descriptions(decoder, depth + 1)?,
                 )))
             })?,
             "NextToken" => {
@@ -142,6 +143,8 @@ pub(crate) fn de_list_managed_insight_rules(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -151,13 +154,13 @@ pub(crate) fn de_list_managed_insight_rules(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

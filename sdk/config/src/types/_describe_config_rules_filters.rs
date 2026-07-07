@@ -6,11 +6,17 @@
 pub struct DescribeConfigRulesFilters {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
+    /// <p>Filters the results by <code>RuleEvaluationVisibility</code>.</p>
+    pub rule_evaluation_visibility: ::std::option::Option<crate::types::RuleEvaluationVisibility>,
 }
 impl DescribeConfigRulesFilters {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
+    }
+    /// <p>Filters the results by <code>RuleEvaluationVisibility</code>.</p>
+    pub fn rule_evaluation_visibility(&self) -> ::std::option::Option<&crate::types::RuleEvaluationVisibility> {
+        self.rule_evaluation_visibility.as_ref()
     }
 }
 impl DescribeConfigRulesFilters {
@@ -25,6 +31,7 @@ impl DescribeConfigRulesFilters {
 #[non_exhaustive]
 pub struct DescribeConfigRulesFiltersBuilder {
     pub(crate) evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
+    pub(crate) rule_evaluation_visibility: ::std::option::Option<crate::types::RuleEvaluationVisibility>,
 }
 impl DescribeConfigRulesFiltersBuilder {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
@@ -41,10 +48,25 @@ impl DescribeConfigRulesFiltersBuilder {
     pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
         &self.evaluation_mode
     }
+    /// <p>Filters the results by <code>RuleEvaluationVisibility</code>.</p>
+    pub fn rule_evaluation_visibility(mut self, input: crate::types::RuleEvaluationVisibility) -> Self {
+        self.rule_evaluation_visibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filters the results by <code>RuleEvaluationVisibility</code>.</p>
+    pub fn set_rule_evaluation_visibility(mut self, input: ::std::option::Option<crate::types::RuleEvaluationVisibility>) -> Self {
+        self.rule_evaluation_visibility = input;
+        self
+    }
+    /// <p>Filters the results by <code>RuleEvaluationVisibility</code>.</p>
+    pub fn get_rule_evaluation_visibility(&self) -> &::std::option::Option<crate::types::RuleEvaluationVisibility> {
+        &self.rule_evaluation_visibility
+    }
     /// Consumes the builder and constructs a [`DescribeConfigRulesFilters`](crate::types::DescribeConfigRulesFilters).
     pub fn build(self) -> crate::types::DescribeConfigRulesFilters {
         crate::types::DescribeConfigRulesFilters {
             evaluation_mode: self.evaluation_mode,
+            rule_evaluation_visibility: self.rule_evaluation_visibility,
         }
     }
 }

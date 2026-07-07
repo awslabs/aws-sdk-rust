@@ -114,6 +114,8 @@ pub(crate) fn de_get_commitment_purchase_analysis(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,12 +164,18 @@ pub(crate) fn de_get_commitment_purchase_analysis(
                     );
                 }
                 "AnalysisDetails" => {
-                    builder = builder.set_analysis_details(crate::protocol_serde::shape_analysis_details::de_analysis_details(tokens, _value)?);
+                    builder = builder.set_analysis_details(crate::protocol_serde::shape_analysis_details::de_analysis_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CommitmentPurchaseAnalysisConfiguration" => {
                     builder = builder.set_commitment_purchase_analysis_configuration(
                         crate::protocol_serde::shape_commitment_purchase_analysis_configuration::de_commitment_purchase_analysis_configuration(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

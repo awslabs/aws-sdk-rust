@@ -13,6 +13,8 @@ pub struct PutOrganizationConfigRuleInput {
     pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
     pub organization_custom_policy_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadata>,
+    /// <p>The tags for the organization Config rule. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutOrganizationConfigRuleInput {
     /// <p>The name that you assign to an organization Config rule.</p>
@@ -37,6 +39,12 @@ impl PutOrganizationConfigRuleInput {
     pub fn organization_custom_policy_rule_metadata(&self) -> ::std::option::Option<&crate::types::OrganizationCustomPolicyRuleMetadata> {
         self.organization_custom_policy_rule_metadata.as_ref()
     }
+    /// <p>The tags for the organization Config rule. Each tag consists of a key and an optional value, both of which you define.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl PutOrganizationConfigRuleInput {
     /// Creates a new builder-style object to manufacture [`PutOrganizationConfigRuleInput`](crate::operation::put_organization_config_rule::PutOrganizationConfigRuleInput).
@@ -54,6 +62,7 @@ pub struct PutOrganizationConfigRuleInputBuilder {
     pub(crate) organization_custom_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomRuleMetadata>,
     pub(crate) excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) organization_custom_policy_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadata>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutOrganizationConfigRuleInputBuilder {
     /// <p>The name that you assign to an organization Config rule.</p>
@@ -136,6 +145,26 @@ impl PutOrganizationConfigRuleInputBuilder {
     pub fn get_organization_custom_policy_rule_metadata(&self) -> &::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadata> {
         &self.organization_custom_policy_rule_metadata
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags for the organization Config rule. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags for the organization Config rule. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags for the organization Config rule. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PutOrganizationConfigRuleInput`](crate::operation::put_organization_config_rule::PutOrganizationConfigRuleInput).
     pub fn build(
         self,
@@ -149,6 +178,7 @@ impl PutOrganizationConfigRuleInputBuilder {
             organization_custom_rule_metadata: self.organization_custom_rule_metadata,
             excluded_accounts: self.excluded_accounts,
             organization_custom_policy_rule_metadata: self.organization_custom_policy_rule_metadata,
+            tags: self.tags,
         })
     }
 }

@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCon
 #[derive(Debug)]
 struct ListConnectorsV2ResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListConnectorsV2ResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -216,6 +217,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListConnecto
                 if let ::std::option::Option::Some(inner_4) = &_input.connector_status {
                     {
                         query.push_kv("ConnectorStatus", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.enablement_status {
+                    {
+                        query.push_kv("EnablementStatus", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())

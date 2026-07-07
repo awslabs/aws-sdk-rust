@@ -25,5 +25,7 @@ pub fn de_connection_function_test_result(
             "invalid root, expected ConnectionFunctionTestResult got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_connection_function_test_result::de_connection_function_test_result(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_connection_function_test_result::de_connection_function_test_result(&mut decoder, depth + 1)
 }

@@ -70,6 +70,8 @@ pub struct AllocateConnectionOnInterconnectOutput {
     pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    /// <p>The rate limiter status for the connection, including how many rate limiters are in use and the maximum allowed.</p>
+    pub rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
     /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
     pub partner_interconnect_mac_sec_capable: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -189,6 +191,10 @@ impl AllocateConnectionOnInterconnectOutput {
     pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
         self.mac_sec_keys.as_deref().unwrap_or_default()
     }
+    /// <p>The rate limiter status for the connection, including how many rate limiters are in use and the maximum allowed.</p>
+    pub fn rate_limiter_status(&self) -> ::std::option::Option<&crate::types::RateLimiterStatus> {
+        self.rate_limiter_status.as_ref()
+    }
     /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
     pub fn partner_interconnect_mac_sec_capable(&self) -> ::std::option::Option<bool> {
         self.partner_interconnect_mac_sec_capable
@@ -232,6 +238,7 @@ pub struct AllocateConnectionOnInterconnectOutputBuilder {
     pub(crate) port_encryption_status: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
     pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    pub(crate) rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
     pub(crate) partner_interconnect_mac_sec_capable: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -622,6 +629,20 @@ impl AllocateConnectionOnInterconnectOutputBuilder {
     pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
+    /// <p>The rate limiter status for the connection, including how many rate limiters are in use and the maximum allowed.</p>
+    pub fn rate_limiter_status(mut self, input: crate::types::RateLimiterStatus) -> Self {
+        self.rate_limiter_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The rate limiter status for the connection, including how many rate limiters are in use and the maximum allowed.</p>
+    pub fn set_rate_limiter_status(mut self, input: ::std::option::Option<crate::types::RateLimiterStatus>) -> Self {
+        self.rate_limiter_status = input;
+        self
+    }
+    /// <p>The rate limiter status for the connection, including how many rate limiters are in use and the maximum allowed.</p>
+    pub fn get_rate_limiter_status(&self) -> &::std::option::Option<crate::types::RateLimiterStatus> {
+        &self.rate_limiter_status
+    }
     /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
     pub fn partner_interconnect_mac_sec_capable(mut self, input: bool) -> Self {
         self.partner_interconnect_mac_sec_capable = ::std::option::Option::Some(input);
@@ -670,6 +691,7 @@ impl AllocateConnectionOnInterconnectOutputBuilder {
             port_encryption_status: self.port_encryption_status,
             encryption_mode: self.encryption_mode,
             mac_sec_keys: self.mac_sec_keys,
+            rate_limiter_status: self.rate_limiter_status,
             partner_interconnect_mac_sec_capable: self.partner_interconnect_mac_sec_capable,
             _request_id: self._request_id,
         }

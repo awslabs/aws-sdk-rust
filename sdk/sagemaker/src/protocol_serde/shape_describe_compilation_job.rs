@@ -81,6 +81,8 @@ pub(crate) fn de_describe_compilation_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -120,7 +122,11 @@ pub(crate) fn de_describe_compilation_job(
                     )?);
                 }
                 "StoppingCondition" => {
-                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens, _value)?);
+                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "InferenceImage" => {
                     builder = builder.set_inference_image(
@@ -156,10 +162,14 @@ pub(crate) fn de_describe_compilation_job(
                     );
                 }
                 "ModelArtifacts" => {
-                    builder = builder.set_model_artifacts(crate::protocol_serde::shape_model_artifacts::de_model_artifacts(tokens, _value)?);
+                    builder = builder.set_model_artifacts(crate::protocol_serde::shape_model_artifacts::de_model_artifacts(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ModelDigests" => {
-                    builder = builder.set_model_digests(crate::protocol_serde::shape_model_digests::de_model_digests(tokens, _value)?);
+                    builder = builder.set_model_digests(crate::protocol_serde::shape_model_digests::de_model_digests(tokens, _value, depth + 1)?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -169,17 +179,20 @@ pub(crate) fn de_describe_compilation_job(
                     );
                 }
                 "InputConfig" => {
-                    builder = builder.set_input_config(crate::protocol_serde::shape_input_config::de_input_config(tokens, _value)?);
+                    builder = builder.set_input_config(crate::protocol_serde::shape_input_config::de_input_config(tokens, _value, depth + 1)?);
                 }
                 "OutputConfig" => {
-                    builder = builder.set_output_config(crate::protocol_serde::shape_output_config::de_output_config(tokens, _value)?);
+                    builder = builder.set_output_config(crate::protocol_serde::shape_output_config::de_output_config(tokens, _value, depth + 1)?);
                 }
                 "VpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_neo_vpc_config::de_neo_vpc_config(tokens, _value)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_neo_vpc_config::de_neo_vpc_config(tokens, _value, depth + 1)?);
                 }
                 "DerivedInformation" => {
-                    builder =
-                        builder.set_derived_information(crate::protocol_serde::shape_derived_information::de_derived_information(tokens, _value)?);
+                    builder = builder.set_derived_information(crate::protocol_serde::shape_derived_information::de_derived_information(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

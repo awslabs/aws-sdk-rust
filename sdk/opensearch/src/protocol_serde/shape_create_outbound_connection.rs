@@ -131,54 +131,60 @@ pub(crate) fn de_create_outbound_connection(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ConnectionAlias" => {
-                    builder = builder.set_connection_alias(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ConnectionAlias" => {
+                        builder = builder.set_connection_alias(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ConnectionId" => {
+                        builder = builder.set_connection_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ConnectionMode" => {
+                        builder = builder.set_connection_mode(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::ConnectionMode::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "ConnectionProperties" => {
+                        builder = builder.set_connection_properties(crate::protocol_serde::shape_connection_properties::de_connection_properties(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "ConnectionStatus" => {
+                        builder = builder.set_connection_status(
+                            crate::protocol_serde::shape_outbound_connection_status::de_outbound_connection_status(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "LocalDomainInfo" => {
+                        builder = builder.set_local_domain_info(
+                            crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "RemoteDomainInfo" => {
+                        builder = builder.set_remote_domain_info(
+                            crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "ConnectionId" => {
-                    builder = builder.set_connection_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ConnectionMode" => {
-                    builder = builder.set_connection_mode(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectionMode::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "ConnectionProperties" => {
-                    builder = builder.set_connection_properties(crate::protocol_serde::shape_connection_properties::de_connection_properties(
-                        tokens, _value,
-                    )?);
-                }
-                "ConnectionStatus" => {
-                    builder = builder.set_connection_status(crate::protocol_serde::shape_outbound_connection_status::de_outbound_connection_status(
-                        tokens, _value,
-                    )?);
-                }
-                "LocalDomainInfo" => {
-                    builder = builder.set_local_domain_info(
-                        crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens, _value)?,
-                    );
-                }
-                "RemoteDomainInfo" => {
-                    builder = builder.set_remote_domain_info(
-                        crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens, _value)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

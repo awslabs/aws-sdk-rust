@@ -92,6 +92,8 @@ pub(crate) fn de_describe_location_smb(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -112,7 +114,7 @@ pub(crate) fn de_describe_location_smb(
                     );
                 }
                 "AgentArns" => {
-                    builder = builder.set_agent_arns(crate::protocol_serde::shape_agent_arn_list::de_agent_arn_list(tokens, _value)?);
+                    builder = builder.set_agent_arns(crate::protocol_serde::shape_agent_arn_list::de_agent_arn_list(tokens, _value, depth + 1)?);
                 }
                 "User" => {
                     builder = builder.set_user(
@@ -129,7 +131,11 @@ pub(crate) fn de_describe_location_smb(
                     );
                 }
                 "MountOptions" => {
-                    builder = builder.set_mount_options(crate::protocol_serde::shape_smb_mount_options::de_smb_mount_options(tokens, _value)?);
+                    builder = builder.set_mount_options(crate::protocol_serde::shape_smb_mount_options::de_smb_mount_options(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -138,7 +144,7 @@ pub(crate) fn de_describe_location_smb(
                     )?);
                 }
                 "DnsIpAddresses" => {
-                    builder = builder.set_dns_ip_addresses(crate::protocol_serde::shape_dns_ip_list::de_dns_ip_list(tokens, _value)?);
+                    builder = builder.set_dns_ip_addresses(crate::protocol_serde::shape_dns_ip_list::de_dns_ip_list(tokens, _value, depth + 1)?);
                 }
                 "KerberosPrincipal" => {
                     builder = builder.set_kerberos_principal(
@@ -156,15 +162,23 @@ pub(crate) fn de_describe_location_smb(
                 }
                 "ManagedSecretConfig" => {
                     builder = builder.set_managed_secret_config(crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "CmkSecretConfig" => {
-                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens, _value)?);
+                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CustomSecretConfig" => {
                     builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -32,6 +32,27 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
+pub(crate) fn throttling_exception_correct_errors(
+    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
+) -> crate::types::error::builders::ThrottlingExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn validation_exception_correct_errors(
+    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
+) -> crate::types::error::builders::ValidationExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.reason.is_none() {
+        builder.reason = "no value was set".parse::<crate::types::ValidationExceptionReason>().ok()
+    }
+    builder
+}
+
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
@@ -68,27 +89,6 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn throttling_exception_correct_errors(
-    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
-) -> crate::types::error::builders::ThrottlingExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn validation_exception_correct_errors(
-    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
-) -> crate::types::error::builders::ValidationExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.reason.is_none() {
-        builder.reason = "no value was set".parse::<crate::types::ValidationExceptionReason>().ok()
-    }
-    builder
-}
-
 pub(crate) fn list_customer_agreements_output_output_correct_errors(
     mut builder: crate::operation::list_customer_agreements::builders::ListCustomerAgreementsOutputBuilder,
 ) -> crate::operation::list_customer_agreements::builders::ListCustomerAgreementsOutputBuilder {
@@ -107,6 +107,79 @@ pub(crate) fn list_report_versions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn inquiry_detail_correct_errors(
+    mut builder: crate::types::builders::InquiryDetailBuilder,
+) -> crate::types::builders::InquiryDetailBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InquiryStatus>().ok()
+    }
+    if builder.status_message.is_none() {
+        builder.status_message = "no value was set".parse::<crate::types::InquiryStatusMessage>().ok()
+    }
+    if builder.input_source.is_none() {
+        builder.input_source = "no value was set".parse::<crate::types::InputSource>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn inquiry_summary_correct_errors(
+    mut builder: crate::types::builders::InquirySummaryBuilder,
+) -> crate::types::builders::InquirySummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InquiryStatus>().ok()
+    }
+    if builder.status_message.is_none() {
+        builder.status_message = "no value was set".parse::<crate::types::InquiryStatusMessage>().ok()
+    }
+    if builder.input_source.is_none() {
+        builder.input_source = "no value was set".parse::<crate::types::InputSource>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn query_summary_correct_errors(mut builder: crate::types::builders::QuerySummaryBuilder) -> crate::types::builders::QuerySummaryBuilder {
+    if builder.query_identifier.is_none() {
+        builder.query_identifier = Some(Default::default())
+    }
+    if builder.query.is_none() {
+        builder.query = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::QueryStatus>().ok()
+    }
+    if builder.status_message.is_none() {
+        builder.status_message = "no value was set".parse::<crate::types::QueryStatusMessage>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {
@@ -115,6 +188,18 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn response_version_correct_errors(
+    mut builder: crate::types::builders::ResponseVersionBuilder,
+) -> crate::types::builders::ResponseVersionBuilder {
+    if builder.response_text.is_none() {
+        builder.response_text = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

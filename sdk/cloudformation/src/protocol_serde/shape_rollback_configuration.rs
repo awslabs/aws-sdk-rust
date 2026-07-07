@@ -29,7 +29,11 @@ pub fn ser_rollback_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_rollback_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RollbackConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RollbackConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -37,7 +41,7 @@ pub fn de_rollback_configuration(
             s if s.matches("RollbackTriggers") /* RollbackTriggers com.amazonaws.cloudformation#RollbackConfiguration$RollbackTriggers */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_rollback_triggers::de_rollback_triggers(&mut tag)
+                        crate::protocol_serde::shape_rollback_triggers::de_rollback_triggers(&mut tag, depth + 1)
                         ?
                     )
                 ;

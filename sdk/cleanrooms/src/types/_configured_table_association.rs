@@ -28,6 +28,8 @@ pub struct ConfiguredTableAssociation {
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the configured table association was last updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
+    /// <p>The child resources that depend on this configured table association.</p>
+    pub child_resources: ::std::option::Option<::std::vec::Vec<crate::types::ChildResource>>,
 }
 impl ConfiguredTableAssociation {
     /// <p>The unique ARN for the configured table association.</p>
@@ -88,6 +90,12 @@ impl ConfiguredTableAssociation {
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
+    /// <p>The child resources that depend on this configured table association.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.child_resources.is_none()`.
+    pub fn child_resources(&self) -> &[crate::types::ChildResource] {
+        self.child_resources.as_deref().unwrap_or_default()
+    }
 }
 impl ConfiguredTableAssociation {
     /// Creates a new builder-style object to manufacture [`ConfiguredTableAssociation`](crate::types::ConfiguredTableAssociation).
@@ -112,6 +120,7 @@ pub struct ConfiguredTableAssociationBuilder {
     pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) child_resources: ::std::option::Option<::std::vec::Vec<crate::types::ChildResource>>,
 }
 impl ConfiguredTableAssociationBuilder {
     /// <p>The unique ARN for the configured table association.</p>
@@ -301,6 +310,26 @@ impl ConfiguredTableAssociationBuilder {
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
+    /// Appends an item to `child_resources`.
+    ///
+    /// To override the contents of this collection use [`set_child_resources`](Self::set_child_resources).
+    ///
+    /// <p>The child resources that depend on this configured table association.</p>
+    pub fn child_resources(mut self, input: crate::types::ChildResource) -> Self {
+        let mut v = self.child_resources.unwrap_or_default();
+        v.push(input);
+        self.child_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The child resources that depend on this configured table association.</p>
+    pub fn set_child_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChildResource>>) -> Self {
+        self.child_resources = input;
+        self
+    }
+    /// <p>The child resources that depend on this configured table association.</p>
+    pub fn get_child_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChildResource>> {
+        &self.child_resources
+    }
     /// Consumes the builder and constructs a [`ConfiguredTableAssociation`](crate::types::ConfiguredTableAssociation).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ConfiguredTableAssociationBuilder::arn)
@@ -377,6 +406,7 @@ impl ConfiguredTableAssociationBuilder {
                     "update_time was not specified but it is required when building ConfiguredTableAssociation",
                 )
             })?,
+            child_resources: self.child_resources,
         })
     }
 }

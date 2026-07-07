@@ -134,6 +134,15 @@ pub(crate) fn disassociate_source_views_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_billing_preferences_output_output_correct_errors(
+    mut builder: crate::operation::get_billing_preferences::builders::GetBillingPreferencesOutputBuilder,
+) -> crate::operation::get_billing_preferences::builders::GetBillingPreferencesOutputBuilder {
+    if builder.billing_preferences.is_none() {
+        builder.billing_preferences = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_billing_view_output_output_correct_errors(
     mut builder: crate::operation::get_billing_view::builders::GetBillingViewOutputBuilder,
 ) -> crate::operation::get_billing_view::builders::GetBillingViewOutputBuilder {
@@ -142,6 +151,15 @@ pub(crate) fn get_billing_view_output_output_correct_errors(
             let builder = crate::types::builders::BillingViewElementBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn get_credit_allocation_history_output_output_correct_errors(
+    mut builder: crate::operation::get_credit_allocation_history::builders::GetCreditAllocationHistoryOutputBuilder,
+) -> crate::operation::get_credit_allocation_history::builders::GetCreditAllocationHistoryOutputBuilder {
+    if builder.partial_results.is_none() {
+        builder.partial_results = Some(Default::default())
     }
     builder
 }
@@ -182,6 +200,79 @@ pub(crate) fn update_billing_view_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn billing_preference_summary_correct_errors(
+    mut builder: crate::types::builders::BillingPreferenceSummaryBuilder,
+) -> crate::types::builders::BillingPreferenceSummaryBuilder {
+    if builder.feature.is_none() {
+        builder.feature = "no value was set".parse::<crate::types::BillingFeature>().ok()
+    }
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = "no value was set".parse::<crate::types::PreferenceValue>().ok()
+    }
+    builder
+}
+
+pub(crate) fn credit_allocation_history_entry_correct_errors(
+    mut builder: crate::types::builders::CreditAllocationHistoryEntryBuilder,
+) -> crate::types::builders::CreditAllocationHistoryEntryBuilder {
+    if builder.credit_id.is_none() {
+        builder.credit_id = Some(Default::default())
+    }
+    if builder.credit_amount.is_none() {
+        builder.credit_amount = {
+            let builder = crate::types::builders::AmountBuilder::default();
+            crate::serde_util::amount_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.applied_service_name.is_none() {
+        builder.applied_service_name = Some(Default::default())
+    }
+    if builder.billing_month.is_none() {
+        builder.billing_month = Some(Default::default())
+    }
+    if builder.is_estimated_bill.is_none() {
+        builder.is_estimated_bill = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn credit_data_correct_errors(mut builder: crate::types::builders::CreditDataBuilder) -> crate::types::builders::CreditDataBuilder {
+    if builder.credit_id.is_none() {
+        builder.credit_id = Some(Default::default())
+    }
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.credit_type.is_none() {
+        builder.credit_type = Some(Default::default())
+    }
+    if builder.initial_amount.is_none() {
+        builder.initial_amount = {
+            let builder = crate::types::builders::AmountBuilder::default();
+            crate::serde_util::amount_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.remaining_amount.is_none() {
+        builder.remaining_amount = {
+            let builder = crate::types::builders::AmountBuilder::default();
+            crate::serde_util::amount_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.start_date.is_none() {
+        builder.start_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::ResourceTagBuilder) -> crate::types::builders::ResourceTagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -197,6 +288,28 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn amount_correct_errors(mut builder: crate::types::builders::AmountBuilder) -> crate::types::builders::AmountBuilder {
+    if builder.currency_code.is_none() {
+        builder.currency_code = Some(Default::default())
+    }
+    if builder.currency_amount.is_none() {
+        builder.currency_amount = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn billing_period_correct_errors(
+    mut builder: crate::types::builders::BillingPeriodBuilder,
+) -> crate::types::builders::BillingPeriodBuilder {
+    if builder.year.is_none() {
+        builder.year = Some(Default::default())
+    }
+    if builder.month.is_none() {
+        builder.month = Some(Default::default())
     }
     builder
 }

@@ -26,7 +26,11 @@ pub fn ser_delegation_permission(
 #[allow(clippy::needless_question_mark)]
 pub fn de_delegation_permission(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DelegationPermission, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DelegationPermission::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -47,7 +51,7 @@ pub fn de_delegation_permission(
             s if s.matches("Parameters") /* Parameters com.amazonaws.iam#DelegationPermission$Parameters */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_policy_parameter_list_type::de_policy_parameter_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_parameter_list_type::de_policy_parameter_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

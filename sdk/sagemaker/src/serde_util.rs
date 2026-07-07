@@ -269,6 +269,15 @@ pub(crate) fn create_inference_recommendations_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_job_output_output_correct_errors(
+    mut builder: crate::operation::create_job::builders::CreateJobOutputBuilder,
+) -> crate::operation::create_job::builders::CreateJobOutputBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_labeling_job_output_output_correct_errors(
     mut builder: crate::operation::create_labeling_job::builders::CreateLabelingJobOutputBuilder,
 ) -> crate::operation::create_labeling_job::builders::CreateLabelingJobOutputBuilder {
@@ -1217,6 +1226,57 @@ pub(crate) fn describe_inference_recommendations_job_output_output_correct_error
     builder
 }
 
+pub(crate) fn describe_job_output_output_correct_errors(
+    mut builder: crate::operation::describe_job::builders::DescribeJobOutputBuilder,
+) -> crate::operation::describe_job::builders::DescribeJobOutputBuilder {
+    if builder.job_name.is_none() {
+        builder.job_name = Some(Default::default())
+    }
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.job_category.is_none() {
+        builder.job_category = "no value was set".parse::<crate::types::JobCategory>().ok()
+    }
+    if builder.job_config_schema_version.is_none() {
+        builder.job_config_schema_version = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.job_status.is_none() {
+        builder.job_status = "no value was set".parse::<crate::types::JobStatus>().ok()
+    }
+    if builder.secondary_status.is_none() {
+        builder.secondary_status = "no value was set".parse::<crate::types::JobSecondaryStatus>().ok()
+    }
+    if builder.secondary_status_transitions.is_none() {
+        builder.secondary_status_transitions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_job_schema_version_output_output_correct_errors(
+    mut builder: crate::operation::describe_job_schema_version::builders::DescribeJobSchemaVersionOutputBuilder,
+) -> crate::operation::describe_job_schema_version::builders::DescribeJobSchemaVersionOutputBuilder {
+    if builder.job_category.is_none() {
+        builder.job_category = "no value was set".parse::<crate::types::JobCategory>().ok()
+    }
+    if builder.job_config_schema_version.is_none() {
+        builder.job_config_schema_version = Some(Default::default())
+    }
+    if builder.job_config_schema.is_none() {
+        builder.job_config_schema = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_labeling_job_output_output_correct_errors(
     mut builder: crate::operation::describe_labeling_job::builders::DescribeLabelingJobOutputBuilder,
 ) -> crate::operation::describe_labeling_job::builders::DescribeLabelingJobOutputBuilder {
@@ -2083,6 +2143,24 @@ pub(crate) fn list_inference_recommendations_jobs_output_output_correct_errors(
 ) -> crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsOutputBuilder {
     if builder.inference_recommendations_jobs.is_none() {
         builder.inference_recommendations_jobs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_job_schema_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_job_schema_versions::builders::ListJobSchemaVersionsOutputBuilder,
+) -> crate::operation::list_job_schema_versions::builders::ListJobSchemaVersionsOutputBuilder {
+    if builder.job_config_schemas.is_none() {
+        builder.job_config_schemas = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_jobs::builders::ListJobsOutputBuilder,
+) -> crate::operation::list_jobs::builders::ListJobsOutputBuilder {
+    if builder.job_summaries.is_none() {
+        builder.job_summaries = Some(Default::default())
     }
     builder
 }
@@ -3122,6 +3200,18 @@ pub(crate) fn cluster_event_detail_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_restricted_instance_groups_config_output_correct_errors(
+    mut builder: crate::types::builders::ClusterRestrictedInstanceGroupsConfigOutputBuilder,
+) -> crate::types::builders::ClusterRestrictedInstanceGroupsConfigOutputBuilder {
+    if builder.shared_environment_config.is_none() {
+        builder.shared_environment_config = {
+            let builder = crate::types::builders::ClusterSharedEnvironmentConfigDetailsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn cluster_tiered_storage_config_correct_errors(
     mut builder: crate::types::builders::ClusterTieredStorageConfigBuilder,
 ) -> crate::types::builders::ClusterTieredStorageConfigBuilder {
@@ -3851,6 +3941,15 @@ pub(crate) fn ai_benchmark_job_summary_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn ai_mlflow_config_correct_errors(
+    mut builder: crate::types::builders::AiMlflowConfigBuilder,
+) -> crate::types::builders::AiMlflowConfigBuilder {
+    if builder.mlflow_resource_arn.is_none() {
+        builder.mlflow_resource_arn = Some(Default::default())
     }
     builder
 }
@@ -4986,6 +5085,52 @@ pub(crate) fn inference_recommendations_job_step_correct_errors(
     builder
 }
 
+pub(crate) fn job_config_schema_version_summary_correct_errors(
+    mut builder: crate::types::builders::JobConfigSchemaVersionSummaryBuilder,
+) -> crate::types::builders::JobConfigSchemaVersionSummaryBuilder {
+    if builder.job_config_schema_version.is_none() {
+        builder.job_config_schema_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn job_secondary_status_transition_correct_errors(
+    mut builder: crate::types::builders::JobSecondaryStatusTransitionBuilder,
+) -> crate::types::builders::JobSecondaryStatusTransitionBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::JobSecondaryStatus>().ok()
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn job_summary_correct_errors(mut builder: crate::types::builders::JobSummaryBuilder) -> crate::types::builders::JobSummaryBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.job_name.is_none() {
+        builder.job_name = Some(Default::default())
+    }
+    if builder.job_category.is_none() {
+        builder.job_category = "no value was set".parse::<crate::types::JobCategory>().ok()
+    }
+    if builder.job_status.is_none() {
+        builder.job_status = "no value was set".parse::<crate::types::JobStatus>().ok()
+    }
+    if builder.job_secondary_status.is_none() {
+        builder.job_secondary_status = "no value was set".parse::<crate::types::JobSecondaryStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn labeling_job_for_workteam_summary_correct_errors(
     mut builder: crate::types::builders::LabelingJobForWorkteamSummaryBuilder,
 ) -> crate::types::builders::LabelingJobForWorkteamSummaryBuilder {
@@ -6093,6 +6238,18 @@ pub(crate) fn endpoint_output_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn f_sx_lustre_config_correct_errors(
+    mut builder: crate::types::builders::FSxLustreConfigBuilder,
+) -> crate::types::builders::FSxLustreConfigBuilder {
+    if builder.size_in_gib.is_none() {
+        builder.size_in_gib = Some(Default::default())
+    }
+    if builder.per_unit_storage_throughput.is_none() {
+        builder.per_unit_storage_throughput = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn file_source_correct_errors(mut builder: crate::types::builders::FileSourceBuilder) -> crate::types::builders::FileSourceBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
@@ -6129,6 +6286,18 @@ pub(crate) fn inference_component_capacity_size_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inference_component_placement_status_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentPlacementStatusBuilder,
+) -> crate::types::builders::InferenceComponentPlacementStatusBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ProductionVariantInstanceType>().ok()
+    }
+    if builder.current_copy_count.is_none() {
+        builder.current_copy_count = Some(Default::default())
     }
     builder
 }
@@ -6763,18 +6932,6 @@ pub(crate) fn efs_file_system_config_correct_errors(
     builder
 }
 
-pub(crate) fn f_sx_lustre_config_correct_errors(
-    mut builder: crate::types::builders::FSxLustreConfigBuilder,
-) -> crate::types::builders::FSxLustreConfigBuilder {
-    if builder.size_in_gib.is_none() {
-        builder.size_in_gib = Some(Default::default())
-    }
-    if builder.per_unit_storage_throughput.is_none() {
-        builder.per_unit_storage_throughput = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn f_sx_lustre_file_system_correct_errors(
     mut builder: crate::types::builders::FSxLustreFileSystemBuilder,
 ) -> crate::types::builders::FSxLustreFileSystemBuilder {
@@ -6835,6 +6992,28 @@ pub(crate) fn inference_hub_access_config_correct_errors(
     builder
 }
 
+pub(crate) fn instance_pool_correct_errors(mut builder: crate::types::builders::InstancePoolBuilder) -> crate::types::builders::InstancePoolBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ProductionVariantInstanceType>().ok()
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instance_pool_summary_correct_errors(
+    mut builder: crate::types::builders::InstancePoolSummaryBuilder,
+) -> crate::types::builders::InstancePoolSummaryBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ProductionVariantInstanceType>().ok()
+    }
+    if builder.current_instance_count.is_none() {
+        builder.current_instance_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn integer_parameter_range_correct_errors(
     mut builder: crate::types::builders::IntegerParameterRangeBuilder,
 ) -> crate::types::builders::IntegerParameterRangeBuilder {
@@ -6846,6 +7025,15 @@ pub(crate) fn integer_parameter_range_correct_errors(
     }
     if builder.max_value.is_none() {
         builder.max_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metrics_endpoint_correct_errors(
+    mut builder: crate::types::builders::MetricsEndpointBuilder,
+) -> crate::types::builders::MetricsEndpointBuilder {
+    if builder.metrics_endpoint_path.is_none() {
+        builder.metrics_endpoint_path = Some(Default::default())
     }
     builder
 }
@@ -6933,7 +7121,7 @@ pub(crate) fn real_time_inference_config_correct_errors(
     mut builder: crate::types::builders::RealTimeInferenceConfigBuilder,
 ) -> crate::types::builders::RealTimeInferenceConfigBuilder {
     if builder.instance_type.is_none() {
-        builder.instance_type = "no value was set".parse::<crate::types::InstanceType>().ok()
+        builder.instance_type = "no value was set".parse::<crate::types::ProductionVariantInstanceType>().ok()
     }
     if builder.instance_count.is_none() {
         builder.instance_count = Some(Default::default())

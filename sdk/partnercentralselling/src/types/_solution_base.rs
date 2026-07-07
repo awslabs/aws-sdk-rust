@@ -18,6 +18,8 @@ pub struct SolutionBase {
     pub category: ::std::string::String,
     /// <p>Indicates the solution creation date. This is useful to track and audit.</p>
     pub created_date: ::aws_smithy_types::DateTime,
+    /// <p>The Amazon Resource Name (ARN) of the AWS Marketplace solution associated with this partner solution.</p>
+    pub aws_marketplace_solution_arn: ::std::option::Option<::std::string::String>,
 }
 impl SolutionBase {
     /// <p>Specifies the catalog in which the solution is hosted, either <code>AWS</code> or <code>Sandbox</code>. This helps partners differentiate between live solutions and those in testing environments.</p>
@@ -52,6 +54,10 @@ impl SolutionBase {
     pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
         &self.created_date
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Marketplace solution associated with this partner solution.</p>
+    pub fn aws_marketplace_solution_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_marketplace_solution_arn.as_deref()
+    }
 }
 impl SolutionBase {
     /// Creates a new builder-style object to manufacture [`SolutionBase`](crate::types::SolutionBase).
@@ -71,6 +77,7 @@ pub struct SolutionBaseBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SolutionStatus>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) aws_marketplace_solution_arn: ::std::option::Option<::std::string::String>,
 }
 impl SolutionBaseBuilder {
     /// <p>Specifies the catalog in which the solution is hosted, either <code>AWS</code> or <code>Sandbox</code>. This helps partners differentiate between live solutions and those in testing environments.</p>
@@ -177,6 +184,20 @@ impl SolutionBaseBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Marketplace solution associated with this partner solution.</p>
+    pub fn aws_marketplace_solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_marketplace_solution_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Marketplace solution associated with this partner solution.</p>
+    pub fn set_aws_marketplace_solution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_marketplace_solution_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Marketplace solution associated with this partner solution.</p>
+    pub fn get_aws_marketplace_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_marketplace_solution_arn
+    }
     /// Consumes the builder and constructs a [`SolutionBase`](crate::types::SolutionBase).
     /// This method will fail if any of the following fields are not set:
     /// - [`catalog`](crate::types::builders::SolutionBaseBuilder::catalog)
@@ -224,6 +245,7 @@ impl SolutionBaseBuilder {
                     "created_date was not specified but it is required when building SolutionBase",
                 )
             })?,
+            aws_marketplace_solution_arn: self.aws_marketplace_solution_arn,
         })
     }
 }

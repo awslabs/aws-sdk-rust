@@ -18,6 +18,8 @@ pub struct CaptionSelectorSettings {
     pub scte27_source_settings: ::std::option::Option<crate::types::Scte27SourceSettings>,
     /// Teletext Source Settings
     pub teletext_source_settings: ::std::option::Option<crate::types::TeletextSourceSettings>,
+    /// Smart Subtitle Source Settings
+    pub smart_subtitle_source_settings: ::std::option::Option<crate::types::SmartSubtitleSourceSettings>,
 }
 impl CaptionSelectorSettings {
     /// Ancillary Source Settings
@@ -48,6 +50,10 @@ impl CaptionSelectorSettings {
     pub fn teletext_source_settings(&self) -> ::std::option::Option<&crate::types::TeletextSourceSettings> {
         self.teletext_source_settings.as_ref()
     }
+    /// Smart Subtitle Source Settings
+    pub fn smart_subtitle_source_settings(&self) -> ::std::option::Option<&crate::types::SmartSubtitleSourceSettings> {
+        self.smart_subtitle_source_settings.as_ref()
+    }
 }
 impl CaptionSelectorSettings {
     /// Creates a new builder-style object to manufacture [`CaptionSelectorSettings`](crate::types::CaptionSelectorSettings).
@@ -67,6 +73,7 @@ pub struct CaptionSelectorSettingsBuilder {
     pub(crate) scte20_source_settings: ::std::option::Option<crate::types::Scte20SourceSettings>,
     pub(crate) scte27_source_settings: ::std::option::Option<crate::types::Scte27SourceSettings>,
     pub(crate) teletext_source_settings: ::std::option::Option<crate::types::TeletextSourceSettings>,
+    pub(crate) smart_subtitle_source_settings: ::std::option::Option<crate::types::SmartSubtitleSourceSettings>,
 }
 impl CaptionSelectorSettingsBuilder {
     /// Ancillary Source Settings
@@ -167,6 +174,20 @@ impl CaptionSelectorSettingsBuilder {
     pub fn get_teletext_source_settings(&self) -> &::std::option::Option<crate::types::TeletextSourceSettings> {
         &self.teletext_source_settings
     }
+    /// Smart Subtitle Source Settings
+    pub fn smart_subtitle_source_settings(mut self, input: crate::types::SmartSubtitleSourceSettings) -> Self {
+        self.smart_subtitle_source_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Smart Subtitle Source Settings
+    pub fn set_smart_subtitle_source_settings(mut self, input: ::std::option::Option<crate::types::SmartSubtitleSourceSettings>) -> Self {
+        self.smart_subtitle_source_settings = input;
+        self
+    }
+    /// Smart Subtitle Source Settings
+    pub fn get_smart_subtitle_source_settings(&self) -> &::std::option::Option<crate::types::SmartSubtitleSourceSettings> {
+        &self.smart_subtitle_source_settings
+    }
     /// Consumes the builder and constructs a [`CaptionSelectorSettings`](crate::types::CaptionSelectorSettings).
     pub fn build(self) -> crate::types::CaptionSelectorSettings {
         crate::types::CaptionSelectorSettings {
@@ -177,6 +198,7 @@ impl CaptionSelectorSettingsBuilder {
             scte20_source_settings: self.scte20_source_settings,
             scte27_source_settings: self.scte27_source_settings,
             teletext_source_settings: self.teletext_source_settings,
+            smart_subtitle_source_settings: self.smart_subtitle_source_settings,
         }
     }
 }

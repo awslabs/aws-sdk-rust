@@ -12,6 +12,7 @@
 /// ```text
 /// # let evaluationformscoringmode = unimplemented!();
 /// match evaluationformscoringmode {
+///     EvaluationFormScoringMode::PointsBased => { /* ... */ },
 ///     EvaluationFormScoringMode::QuestionOnly => { /* ... */ },
 ///     EvaluationFormScoringMode::SectionOnly => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum EvaluationFormScoringMode {
     #[allow(missing_docs)] // documentation missing in model
+    PointsBased,
+    #[allow(missing_docs)] // documentation missing in model
     QuestionOnly,
     #[allow(missing_docs)] // documentation missing in model
     SectionOnly,
@@ -53,6 +56,7 @@ pub enum EvaluationFormScoringMode {
 impl ::std::convert::From<&str> for EvaluationFormScoringMode {
     fn from(s: &str) -> Self {
         match s {
+            "POINTS_BASED" => EvaluationFormScoringMode::PointsBased,
             "QUESTION_ONLY" => EvaluationFormScoringMode::QuestionOnly,
             "SECTION_ONLY" => EvaluationFormScoringMode::SectionOnly,
             other => EvaluationFormScoringMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl EvaluationFormScoringMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationFormScoringMode::PointsBased => "POINTS_BASED",
             EvaluationFormScoringMode::QuestionOnly => "QUESTION_ONLY",
             EvaluationFormScoringMode::SectionOnly => "SECTION_ONLY",
             EvaluationFormScoringMode::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl EvaluationFormScoringMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["QUESTION_ONLY", "SECTION_ONLY"]
+        &["POINTS_BASED", "QUESTION_ONLY", "SECTION_ONLY"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormScoringMode {
@@ -100,6 +105,7 @@ impl EvaluationFormScoringMode {
 impl ::std::fmt::Display for EvaluationFormScoringMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationFormScoringMode::PointsBased => write!(f, "POINTS_BASED"),
             EvaluationFormScoringMode::QuestionOnly => write!(f, "QUESTION_ONLY"),
             EvaluationFormScoringMode::SectionOnly => write!(f, "SECTION_ONLY"),
             EvaluationFormScoringMode::Unknown(value) => write!(f, "{value}"),

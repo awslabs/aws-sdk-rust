@@ -8,7 +8,7 @@ pub struct ParticipantDetailsToAdd {
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>The display name of the participant.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub participant_capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,
 }
 impl ParticipantDetailsToAdd {
@@ -20,7 +20,7 @@ impl ParticipantDetailsToAdd {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn participant_capabilities(&self) -> ::std::option::Option<&crate::types::ParticipantCapabilities> {
         self.participant_capabilities.as_ref()
     }
@@ -69,17 +69,17 @@ impl ParticipantDetailsToAddBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn participant_capabilities(mut self, input: crate::types::ParticipantCapabilities) -> Self {
         self.participant_capabilities = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn set_participant_capabilities(mut self, input: ::std::option::Option<crate::types::ParticipantCapabilities>) -> Self {
         self.participant_capabilities = input;
         self
     }
-    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn get_participant_capabilities(&self) -> &::std::option::Option<crate::types::ParticipantCapabilities> {
         &self.participant_capabilities
     }

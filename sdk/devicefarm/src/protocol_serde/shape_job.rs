@@ -2,10 +2,16 @@
 pub(crate) fn de_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Job>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,7 +75,7 @@ where
                             )?);
                         }
                         "counters" => {
-                            builder = builder.set_counters(crate::protocol_serde::shape_counters::de_counters(tokens, _value)?);
+                            builder = builder.set_counters(crate::protocol_serde::shape_counters::de_counters(tokens, _value, depth + 1)?);
                         }
                         "message" => {
                             builder = builder.set_message(
@@ -79,7 +85,7 @@ where
                             );
                         }
                         "device" => {
-                            builder = builder.set_device(crate::protocol_serde::shape_device::de_device(tokens, _value)?);
+                            builder = builder.set_device(crate::protocol_serde::shape_device::de_device(tokens, _value, depth + 1)?);
                         }
                         "instanceArn" => {
                             builder = builder.set_instance_arn(
@@ -89,7 +95,11 @@ where
                             );
                         }
                         "deviceMinutes" => {
-                            builder = builder.set_device_minutes(crate::protocol_serde::shape_device_minutes::de_device_minutes(tokens, _value)?);
+                            builder = builder.set_device_minutes(crate::protocol_serde::shape_device_minutes::de_device_minutes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "videoEndpoint" => {
                             builder = builder.set_video_endpoint(

@@ -15,8 +15,11 @@ pub fn ser_update_collection_input_input(
         crate::protocol_serde::shape_vector_options::ser_vector_options(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.client_token {
-        object.key("clientToken").string(var_5.as_str());
+    if let Some(var_5) = &input.deletion_protection {
+        object.key("deletionProtection").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.client_token {
+        object.key("clientToken").string(var_6.as_str());
     }
     Ok(())
 }

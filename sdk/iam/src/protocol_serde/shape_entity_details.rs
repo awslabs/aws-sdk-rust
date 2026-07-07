@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_entity_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EntityDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EntityDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_entity_details(
             s if s.matches("EntityInfo") /* EntityInfo com.amazonaws.iam#EntityDetails$EntityInfo */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_entity_info::de_entity_info(&mut tag)
+                        crate::protocol_serde::shape_entity_info::de_entity_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -51,6 +51,8 @@ pub fn de_describe_vpn_concentrators(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVpnConcentratorsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVpnConcentratorsResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_vpn_concentrators(
             s if s.matches("vpnConcentratorSet") /* VpnConcentrators com.amazonaws.ec2.synthetic#DescribeVpnConcentratorsOutput$VpnConcentrators */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpn_concentrator_list::de_vpn_concentrator_list(&mut tag)
+                        crate::protocol_serde::shape_vpn_concentrator_list::de_vpn_concentrator_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

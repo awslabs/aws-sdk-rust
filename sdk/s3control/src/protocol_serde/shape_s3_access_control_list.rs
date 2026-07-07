@@ -25,7 +25,11 @@ pub fn ser_s3_access_control_list(
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_access_control_list(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::S3AccessControlList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::S3AccessControlList::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -33,7 +37,7 @@ pub fn de_s3_access_control_list(
             s if s.matches("Owner") /* Owner com.amazonaws.s3control#S3AccessControlList$Owner */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_s3_object_owner::de_s3_object_owner(&mut tag)
+                        crate::protocol_serde::shape_s3_object_owner::de_s3_object_owner(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_s3_access_control_list(
             s if s.matches("Grants") /* Grants com.amazonaws.s3control#S3AccessControlList$Grants */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_s3_grant_list::de_s3_grant_list(&mut tag)
+                        crate::protocol_serde::shape_s3_grant_list::de_s3_grant_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

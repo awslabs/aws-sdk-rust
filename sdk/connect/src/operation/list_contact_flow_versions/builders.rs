@@ -22,7 +22,7 @@ impl crate::operation::list_contact_flow_versions::builders::ListContactFlowVers
 }
 /// Fluent builder constructing a request to `ListContactFlowVersions`.
 ///
-/// <p>Returns all the available versions for the specified Amazon Connect instance and flow identifier.</p>
+/// <p>Returns all the available versions for the specified Connect Customer instance and flow identifier.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContactFlowVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListContactFlowVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_contact_flow_versions::paginator::ListContactFlowVersionsPaginator {
         crate::operation::list_contact_flow_versions::paginator::ListContactFlowVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

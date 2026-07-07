@@ -20,12 +20,16 @@ pub struct GetControlOutput {
     pub region_configuration: ::std::option::Option<crate::types::RegionConfiguration>,
     /// <p>Returns information about the control, as an <code>ImplementationDetails</code> object that shows the underlying implementation type for a control.</p>
     pub implementation: ::std::option::Option<crate::types::ImplementationDetails>,
+    /// <p>A summary that indicates whether the control requires parameters, accepts optional parameters, or does not support parameters. Use this field to determine whether you need to supply parameter values when you enable the control.</p>
+    pub parameter_requirement_summary: ::std::option::Option<crate::types::ParameterRequirementSummary>,
     /// <p>Returns an array of <code>ControlParameter</code> objects that specify the parameters a control supports. An empty list is returned for controls that don’t support parameters.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>,
     /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    /// <p>A list of resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. For Amazon Web Services controls, the resources are represented as CloudFormation resource types. For non-Amazon Web Services controls, the resources are represented in a provider-specific format. If <code>GovernedResources</code> cannot be represented by available resource types, it’s returned as an empty list.</p>
     pub governed_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of providers whose resources are governed by this control. For example, a value of <code>AWS</code> indicates that the control governs Amazon Web Services resources.</p>
+    pub governed_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetControlOutput {
@@ -67,6 +71,10 @@ impl GetControlOutput {
     pub fn implementation(&self) -> ::std::option::Option<&crate::types::ImplementationDetails> {
         self.implementation.as_ref()
     }
+    /// <p>A summary that indicates whether the control requires parameters, accepts optional parameters, or does not support parameters. Use this field to determine whether you need to supply parameter values when you enable the control.</p>
+    pub fn parameter_requirement_summary(&self) -> ::std::option::Option<&crate::types::ParameterRequirementSummary> {
+        self.parameter_requirement_summary.as_ref()
+    }
     /// <p>Returns an array of <code>ControlParameter</code> objects that specify the parameters a control supports. An empty list is returned for controls that don’t support parameters.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
@@ -77,11 +85,17 @@ impl GetControlOutput {
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    /// <p>A list of resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. For Amazon Web Services controls, the resources are represented as CloudFormation resource types. For non-Amazon Web Services controls, the resources are represented in a provider-specific format. If <code>GovernedResources</code> cannot be represented by available resource types, it’s returned as an empty list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_resources.is_none()`.
     pub fn governed_resources(&self) -> &[::std::string::String] {
         self.governed_resources.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of providers whose resources are governed by this control. For example, a value of <code>AWS</code> indicates that the control governs Amazon Web Services resources.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_providers.is_none()`.
+    pub fn governed_providers(&self) -> &[::std::string::String] {
+        self.governed_providers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetControlOutput {
@@ -108,9 +122,11 @@ pub struct GetControlOutputBuilder {
     pub(crate) severity: ::std::option::Option<crate::types::ControlSeverity>,
     pub(crate) region_configuration: ::std::option::Option<crate::types::RegionConfiguration>,
     pub(crate) implementation: ::std::option::Option<crate::types::ImplementationDetails>,
+    pub(crate) parameter_requirement_summary: ::std::option::Option<crate::types::ParameterRequirementSummary>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) governed_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) governed_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetControlOutputBuilder {
@@ -240,6 +256,20 @@ impl GetControlOutputBuilder {
     pub fn get_implementation(&self) -> &::std::option::Option<crate::types::ImplementationDetails> {
         &self.implementation
     }
+    /// <p>A summary that indicates whether the control requires parameters, accepts optional parameters, or does not support parameters. Use this field to determine whether you need to supply parameter values when you enable the control.</p>
+    pub fn parameter_requirement_summary(mut self, input: crate::types::ParameterRequirementSummary) -> Self {
+        self.parameter_requirement_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A summary that indicates whether the control requires parameters, accepts optional parameters, or does not support parameters. Use this field to determine whether you need to supply parameter values when you enable the control.</p>
+    pub fn set_parameter_requirement_summary(mut self, input: ::std::option::Option<crate::types::ParameterRequirementSummary>) -> Self {
+        self.parameter_requirement_summary = input;
+        self
+    }
+    /// <p>A summary that indicates whether the control requires parameters, accepts optional parameters, or does not support parameters. Use this field to determine whether you need to supply parameter values when you enable the control.</p>
+    pub fn get_parameter_requirement_summary(&self) -> &::std::option::Option<crate::types::ParameterRequirementSummary> {
+        &self.parameter_requirement_summary
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -278,21 +308,41 @@ impl GetControlOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_governed_resources`](Self::set_governed_resources).
     ///
-    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    /// <p>A list of resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. For Amazon Web Services controls, the resources are represented as CloudFormation resource types. For non-Amazon Web Services controls, the resources are represented in a provider-specific format. If <code>GovernedResources</code> cannot be represented by available resource types, it’s returned as an empty list.</p>
     pub fn governed_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.governed_resources.unwrap_or_default();
         v.push(input.into());
         self.governed_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    /// <p>A list of resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. For Amazon Web Services controls, the resources are represented as CloudFormation resource types. For non-Amazon Web Services controls, the resources are represented in a provider-specific format. If <code>GovernedResources</code> cannot be represented by available resource types, it’s returned as an empty list.</p>
     pub fn set_governed_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.governed_resources = input;
         self
     }
-    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    /// <p>A list of resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. For Amazon Web Services controls, the resources are represented as CloudFormation resource types. For non-Amazon Web Services controls, the resources are represented in a provider-specific format. If <code>GovernedResources</code> cannot be represented by available resource types, it’s returned as an empty list.</p>
     pub fn get_governed_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.governed_resources
+    }
+    /// Appends an item to `governed_providers`.
+    ///
+    /// To override the contents of this collection use [`set_governed_providers`](Self::set_governed_providers).
+    ///
+    /// <p>A list of providers whose resources are governed by this control. For example, a value of <code>AWS</code> indicates that the control governs Amazon Web Services resources.</p>
+    pub fn governed_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.governed_providers.unwrap_or_default();
+        v.push(input.into());
+        self.governed_providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of providers whose resources are governed by this control. For example, a value of <code>AWS</code> indicates that the control governs Amazon Web Services resources.</p>
+    pub fn set_governed_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.governed_providers = input;
+        self
+    }
+    /// <p>A list of providers whose resources are governed by this control. For example, a value of <code>AWS</code> indicates that the control governs Amazon Web Services resources.</p>
+    pub fn get_governed_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.governed_providers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -339,9 +389,11 @@ impl GetControlOutputBuilder {
             severity: self.severity,
             region_configuration: self.region_configuration,
             implementation: self.implementation,
+            parameter_requirement_summary: self.parameter_requirement_summary,
             parameters: self.parameters,
             create_time: self.create_time,
             governed_resources: self.governed_resources,
+            governed_providers: self.governed_providers,
             _request_id: self._request_id,
         })
     }

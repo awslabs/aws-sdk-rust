@@ -2,10 +2,16 @@
 pub(crate) fn de_sensor_statistics_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SensorStatisticsSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -33,34 +39,52 @@ where
                             builder = builder.set_data_exists(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "MissingValues" => {
-                            builder = builder.set_missing_values(crate::protocol_serde::shape_count_percent::de_count_percent(tokens, _value)?);
+                            builder =
+                                builder.set_missing_values(crate::protocol_serde::shape_count_percent::de_count_percent(tokens, _value, depth + 1)?);
                         }
                         "InvalidValues" => {
-                            builder = builder.set_invalid_values(crate::protocol_serde::shape_count_percent::de_count_percent(tokens, _value)?);
+                            builder =
+                                builder.set_invalid_values(crate::protocol_serde::shape_count_percent::de_count_percent(tokens, _value, depth + 1)?);
                         }
                         "InvalidDateEntries" => {
-                            builder = builder.set_invalid_date_entries(crate::protocol_serde::shape_count_percent::de_count_percent(tokens, _value)?);
+                            builder = builder.set_invalid_date_entries(crate::protocol_serde::shape_count_percent::de_count_percent(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DuplicateTimestamps" => {
-                            builder = builder.set_duplicate_timestamps(crate::protocol_serde::shape_count_percent::de_count_percent(tokens, _value)?);
+                            builder = builder.set_duplicate_timestamps(crate::protocol_serde::shape_count_percent::de_count_percent(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CategoricalValues" => {
-                            builder = builder
-                                .set_categorical_values(crate::protocol_serde::shape_categorical_values::de_categorical_values(tokens, _value)?);
+                            builder = builder.set_categorical_values(crate::protocol_serde::shape_categorical_values::de_categorical_values(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MultipleOperatingModes" => {
                             builder = builder.set_multiple_operating_modes(
-                                crate::protocol_serde::shape_multiple_operating_modes::de_multiple_operating_modes(tokens, _value)?,
+                                crate::protocol_serde::shape_multiple_operating_modes::de_multiple_operating_modes(tokens, _value, depth + 1)?,
                             );
                         }
                         "LargeTimestampGaps" => {
                             builder = builder.set_large_timestamp_gaps(crate::protocol_serde::shape_large_timestamp_gaps::de_large_timestamp_gaps(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "MonotonicValues" => {
-                            builder =
-                                builder.set_monotonic_values(crate::protocol_serde::shape_monotonic_values::de_monotonic_values(tokens, _value)?);
+                            builder = builder.set_monotonic_values(crate::protocol_serde::shape_monotonic_values::de_monotonic_values(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DataStartTime" => {
                             builder = builder.set_data_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

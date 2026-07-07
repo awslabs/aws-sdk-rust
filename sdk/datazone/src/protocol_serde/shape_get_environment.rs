@@ -132,6 +132,8 @@ pub(crate) fn de_get_environment(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -166,7 +168,9 @@ pub(crate) fn de_get_environment(
                 }
                 "deploymentProperties" => {
                     builder = builder.set_deployment_properties(crate::protocol_serde::shape_deployment_properties::de_deployment_properties(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "description" => {
@@ -185,7 +189,9 @@ pub(crate) fn de_get_environment(
                 }
                 "environmentActions" => {
                     builder = builder.set_environment_actions(crate::protocol_serde::shape_environment_action_list::de_environment_action_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "environmentBlueprintId" => {
@@ -217,7 +223,7 @@ pub(crate) fn de_get_environment(
                     );
                 }
                 "glossaryTerms" => {
-                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens, _value)?);
+                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens, _value, depth + 1)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -227,7 +233,7 @@ pub(crate) fn de_get_environment(
                     );
                 }
                 "lastDeployment" => {
-                    builder = builder.set_last_deployment(crate::protocol_serde::shape_deployment::de_deployment(tokens, _value)?);
+                    builder = builder.set_last_deployment(crate::protocol_serde::shape_deployment::de_deployment(tokens, _value, depth + 1)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -251,11 +257,14 @@ pub(crate) fn de_get_environment(
                     );
                 }
                 "provisionedResources" => {
-                    builder = builder.set_provisioned_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
+                    builder =
+                        builder.set_provisioned_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value, depth + 1)?);
                 }
                 "provisioningProperties" => {
                     builder = builder.set_provisioning_properties(crate::protocol_serde::shape_provisioning_properties::de_provisioning_properties(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {
@@ -273,7 +282,9 @@ pub(crate) fn de_get_environment(
                 }
                 "userParameters" => {
                     builder = builder.set_user_parameters(crate::protocol_serde::shape_custom_parameter_list::de_custom_parameter_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_offer_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OfferSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,7 +58,7 @@ where
                         }
                         "BuyerAccounts" => {
                             builder = builder.set_buyer_accounts(
-                                crate::protocol_serde::shape_offer_buyer_accounts_list::de_offer_buyer_accounts_list(tokens, _value)?,
+                                crate::protocol_serde::shape_offer_buyer_accounts_list::de_offer_buyer_accounts_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "State" => {
@@ -64,7 +70,9 @@ where
                         }
                         "Targeting" => {
                             builder = builder.set_targeting(crate::protocol_serde::shape_offer_targeting_list::de_offer_targeting_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "OfferSetId" => {

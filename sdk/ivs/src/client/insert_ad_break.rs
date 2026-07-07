@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::set_channel_arn):<br>required: **true**<br><p>ARN of the channel into which the ad break is inserted.</p><br>
-    ///   - [`duration_seconds(i32)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::set_duration_seconds):<br>required: **true**<br><p>Maximum duration of the ad break, in seconds.</p><br>
+    ///   - [`duration_seconds(i32)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::set_duration_seconds):<br>required: **true**<br><p>Duration of the ad break, in seconds.</p><br>
     /// - On success, responds with [`InsertAdBreakOutput`](crate::operation::insert_ad_break::InsertAdBreakOutput) with field(s):
     ///   - [`ad_break_id(Option<String>)`](crate::operation::insert_ad_break::InsertAdBreakOutput::ad_break_id): <p>Unique identifier for the ad break that was inserted into the playlist.</p>
     /// - On failure, responds with [`SdkError<InsertAdBreakError>`](crate::operation::insert_ad_break::InsertAdBreakError)

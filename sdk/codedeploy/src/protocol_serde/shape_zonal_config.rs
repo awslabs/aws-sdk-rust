@@ -27,10 +27,16 @@ pub fn ser_zonal_config(
 pub(crate) fn de_zonal_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ZonalConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -56,7 +62,11 @@ where
                         }
                         "minimumHealthyHostsPerZone" => {
                             builder = builder.set_minimum_healthy_hosts_per_zone(
-                                crate::protocol_serde::shape_minimum_healthy_hosts_per_zone::de_minimum_healthy_hosts_per_zone(tokens, _value)?,
+                                crate::protocol_serde::shape_minimum_healthy_hosts_per_zone::de_minimum_healthy_hosts_per_zone(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

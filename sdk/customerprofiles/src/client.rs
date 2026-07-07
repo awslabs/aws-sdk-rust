@@ -142,6 +142,8 @@ mod batch_get_calculated_attribute_for_profile;
 
 mod batch_get_profile;
 
+mod batch_put_profile_object;
+
 mod create_calculated_attribute_definition;
 
 mod create_domain;

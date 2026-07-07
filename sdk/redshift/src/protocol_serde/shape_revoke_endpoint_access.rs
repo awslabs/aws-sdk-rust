@@ -169,6 +169,8 @@ pub fn de_revoke_endpoint_access(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RevokeEndpointAccessResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RevokeEndpointAccessResponse got {start_el:?}"
@@ -281,7 +283,7 @@ pub fn de_revoke_endpoint_access(
             s if s.matches("AllowedVPCs") /* AllowedVPCs com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$AllowedVPCs */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_vpc_identifier_list::de_vpc_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_identifier_list::de_vpc_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -36,10 +36,16 @@ pub fn ser_knowledge_base_vector_search_configuration(
 pub(crate) fn de_knowledge_base_vector_search_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseVectorSearchConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,17 +70,27 @@ where
                             );
                         }
                         "filter" => {
-                            builder = builder.set_filter(crate::protocol_serde::shape_retrieval_filter::de_retrieval_filter(tokens, _value)?);
+                            builder = builder.set_filter(crate::protocol_serde::shape_retrieval_filter::de_retrieval_filter(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "implicitFilterConfiguration" => {
                             builder = builder.set_implicit_filter_configuration(
-                                crate::protocol_serde::shape_implicit_filter_configuration::de_implicit_filter_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_implicit_filter_configuration::de_implicit_filter_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "rerankingConfiguration" => {
                             builder = builder.set_reranking_configuration(
                                 crate::protocol_serde::shape_vector_search_reranking_configuration::de_vector_search_reranking_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

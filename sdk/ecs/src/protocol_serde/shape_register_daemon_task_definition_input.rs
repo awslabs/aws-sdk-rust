@@ -54,5 +54,11 @@ pub fn ser_register_daemon_task_definition_input_input(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.pid_mode {
+        object.key("pidMode").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.ipc_mode {
+        object.key("ipcMode").string(var_19.as_str());
+    }
     Ok(())
 }

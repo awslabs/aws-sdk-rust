@@ -2,10 +2,16 @@
 pub(crate) fn de_service_integration_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceIntegrationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,20 +23,26 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "OpsCenter" => {
                             builder = builder.set_ops_center(crate::protocol_serde::shape_ops_center_integration::de_ops_center_integration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "LogsAnomalyDetection" => {
                             builder = builder.set_logs_anomaly_detection(
                                 crate::protocol_serde::shape_logs_anomaly_detection_integration::de_logs_anomaly_detection_integration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "KMSServerSideEncryption" => {
                             builder = builder.set_kms_server_side_encryption(
                                 crate::protocol_serde::shape_kms_server_side_encryption_integration::de_kms_server_side_encryption_integration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

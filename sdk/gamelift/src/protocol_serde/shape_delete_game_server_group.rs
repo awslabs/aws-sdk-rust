@@ -121,17 +121,23 @@ pub(crate) fn de_delete_game_server_group(
     crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "GameServerGroup" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_game_server_group(Some(crate::protocol_serde::shape_game_server_group::de_game_server_group(decoder)?)))
+                Ok(
+                    builder.set_game_server_group(Some(crate::protocol_serde::shape_game_server_group::de_game_server_group(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             _ => {
                 decoder.skip()?;
@@ -142,6 +148,8 @@ pub(crate) fn de_delete_game_server_group(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -151,13 +159,13 @@ pub(crate) fn de_delete_game_server_group(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

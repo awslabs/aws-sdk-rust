@@ -97,6 +97,8 @@ pub(crate) mod shape_list_hosted_zone_associations;
 
 pub(crate) mod shape_list_managed_firewall_domain_lists;
 
+pub(crate) mod shape_list_shared_dns_views;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_tag_resource;
@@ -217,6 +219,8 @@ pub(crate) mod shape_managed_firewall_domain_lists;
 
 pub(crate) mod shape_regions;
 
+pub(crate) mod shape_shared_dns_views;
+
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_validation_exception_field_list;
@@ -242,6 +246,8 @@ pub(crate) mod shape_global_resolvers_item;
 pub(crate) mod shape_hosted_zone_association_summary;
 
 pub(crate) mod shape_managed_firewall_domain_lists_item;
+
+pub(crate) mod shape_shared_dns_view_summary;
 
 pub(crate) mod shape_validation_exception_field;
 

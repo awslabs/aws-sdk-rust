@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFeedsOutput {
-    /// <p>A list of feed summaries.</p>
+    /// <p>A list of FeedSummary objects.</p>
     pub feeds: ::std::vec::Vec<crate::types::FeedSummary>,
     /// <p>The token that identifies the batch of results that you want to see. For example, you submit a list request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the list request a second time and specify the NextToken value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFeedsOutput {
-    /// <p>A list of feed summaries.</p>
+    /// <p>A list of FeedSummary objects.</p>
     pub fn feeds(&self) -> &[crate::types::FeedSummary] {
         use std::ops::Deref;
         self.feeds.deref()
@@ -45,19 +45,19 @@ impl ListFeedsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_feeds`](Self::set_feeds).
     ///
-    /// <p>A list of feed summaries.</p>
+    /// <p>A list of FeedSummary objects.</p>
     pub fn feeds(mut self, input: crate::types::FeedSummary) -> Self {
         let mut v = self.feeds.unwrap_or_default();
         v.push(input);
         self.feeds = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of feed summaries.</p>
+    /// <p>A list of FeedSummary objects.</p>
     pub fn set_feeds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeedSummary>>) -> Self {
         self.feeds = input;
         self
     }
-    /// <p>A list of feed summaries.</p>
+    /// <p>A list of FeedSummary objects.</p>
     pub fn get_feeds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeedSummary>> {
         &self.feeds
     }

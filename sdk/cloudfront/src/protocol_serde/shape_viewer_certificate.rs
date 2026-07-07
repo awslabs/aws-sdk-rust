@@ -40,7 +40,11 @@ pub fn ser_viewer_certificate(
 #[allow(clippy::needless_question_mark)]
 pub fn de_viewer_certificate(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ViewerCertificate, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ViewerCertificate::builder();
     while let Some(mut tag) = decoder.next_tag() {

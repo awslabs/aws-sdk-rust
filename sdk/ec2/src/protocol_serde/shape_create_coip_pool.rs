@@ -40,6 +40,8 @@ pub fn de_create_coip_pool(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateCoipPoolResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateCoipPoolResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_create_coip_pool(
             s if s.matches("coipPool") /* CoipPool com.amazonaws.ec2.synthetic#CreateCoipPoolOutput$CoipPool */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_coip_pool::de_coip_pool(&mut tag)
+                        crate::protocol_serde::shape_coip_pool::de_coip_pool(&mut tag, depth + 1)
                         ?
                     )
                 ;

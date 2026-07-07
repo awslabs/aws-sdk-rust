@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_gpu_device_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::GpuDeviceInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::GpuDeviceInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -81,7 +85,7 @@ pub fn de_gpu_device_info(
             s if s.matches("workloadSet") /* Workloads com.amazonaws.ec2#GpuDeviceInfo$Workloads */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_workloads_list::de_workloads_list(&mut tag)
+                        crate::protocol_serde::shape_workloads_list::de_workloads_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -91,7 +95,7 @@ pub fn de_gpu_device_info(
             s if s.matches("memoryInfo") /* MemoryInfo com.amazonaws.ec2#GpuDeviceInfo$MemoryInfo */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_gpu_device_memory_info::de_gpu_device_memory_info(&mut tag)
+                        crate::protocol_serde::shape_gpu_device_memory_info::de_gpu_device_memory_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

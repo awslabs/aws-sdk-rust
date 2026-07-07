@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_orderable_db_instance_option(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OrderableDbInstanceOption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OrderableDbInstanceOption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_orderable_db_instance_option(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.rds#OrderableDBInstanceOption$AvailabilityZones */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_list::de_availability_zone_list(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_list::de_availability_zone_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -383,7 +387,7 @@ pub fn de_orderable_db_instance_option(
             s if s.matches("AvailableProcessorFeatures") /* AvailableProcessorFeatures com.amazonaws.rds#OrderableDBInstanceOption$AvailableProcessorFeatures */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_available_processor_feature_list::de_available_processor_feature_list(&mut tag)
+                        crate::protocol_serde::shape_available_processor_feature_list::de_available_processor_feature_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -393,7 +397,7 @@ pub fn de_orderable_db_instance_option(
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#OrderableDBInstanceOption$SupportedEngineModes */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag)
+                        crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -448,7 +452,7 @@ pub fn de_orderable_db_instance_option(
             s if s.matches("SupportedActivityStreamModes") /* SupportedActivityStreamModes com.amazonaws.rds#OrderableDBInstanceOption$SupportedActivityStreamModes */ =>  {
                 let var_32 =
                     Some(
-                        crate::protocol_serde::shape_activity_stream_mode_list::de_activity_stream_mode_list(&mut tag)
+                        crate::protocol_serde::shape_activity_stream_mode_list::de_activity_stream_mode_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -473,7 +477,7 @@ pub fn de_orderable_db_instance_option(
             s if s.matches("SupportedNetworkTypes") /* SupportedNetworkTypes com.amazonaws.rds#OrderableDBInstanceOption$SupportedNetworkTypes */ =>  {
                 let var_34 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -543,7 +547,7 @@ pub fn de_orderable_db_instance_option(
             s if s.matches("AvailableAdditionalStorageVolumesOptions") /* AvailableAdditionalStorageVolumesOptions com.amazonaws.rds#OrderableDBInstanceOption$AvailableAdditionalStorageVolumesOptions */ =>  {
                 let var_39 =
                     Some(
-                        crate::protocol_serde::shape_available_additional_storage_volumes_option_list::de_available_additional_storage_volumes_option_list(&mut tag)
+                        crate::protocol_serde::shape_available_additional_storage_volumes_option_list::de_available_additional_storage_volumes_option_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

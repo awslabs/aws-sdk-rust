@@ -119,33 +119,37 @@ pub(crate) fn de_get_parallel_data(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ParallelDataProperties" => {
-                    builder = builder.set_parallel_data_properties(
-                        crate::protocol_serde::shape_parallel_data_properties::de_parallel_data_properties(tokens, _value)?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ParallelDataProperties" => {
+                        builder = builder.set_parallel_data_properties(
+                            crate::protocol_serde::shape_parallel_data_properties::de_parallel_data_properties(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "DataLocation" => {
+                        builder = builder.set_data_location(
+                            crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "AuxiliaryDataLocation" => {
+                        builder = builder.set_auxiliary_data_location(
+                            crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "LatestUpdateAttemptAuxiliaryDataLocation" => {
+                        builder = builder.set_latest_update_attempt_auxiliary_data_location(
+                            crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "DataLocation" => {
-                    builder = builder.set_data_location(crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(
-                        tokens, _value,
-                    )?);
-                }
-                "AuxiliaryDataLocation" => {
-                    builder = builder.set_auxiliary_data_location(
-                        crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens, _value)?,
-                    );
-                }
-                "LatestUpdateAttemptAuxiliaryDataLocation" => {
-                    builder = builder.set_latest_update_attempt_auxiliary_data_location(
-                        crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens, _value)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

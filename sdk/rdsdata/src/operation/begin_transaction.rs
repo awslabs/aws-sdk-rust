@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BeginTr
 #[derive(Debug)]
 struct BeginTransactionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for BeginTransactionResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -262,13 +263,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BeginTransact
 pub enum BeginTransactionError {
     /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>There is an error in the call or in a SQL statement. (This error only appears in calls from Aurora Serverless v1 databases.)</p>
+    /// <p>There is an error in the call or in a SQL statement. This exception is deprecated.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>There was an error in processing the SQL statement.</p>
     DatabaseErrorException(crate::types::error::DatabaseErrorException),
     /// <p>The DB cluster doesn't have a DB instance.</p>
     DatabaseNotFoundException(crate::types::error::DatabaseNotFoundException),
-    /// <p>A request was cancelled because the Aurora Serverless v2 DB instance was paused. The Data API request automatically resumes the DB instance. Wait a few seconds and try again.</p>
+    /// <p>A request was cancelled because the Aurora Serverless DB instance was paused. The Data API request automatically resumes the DB instance. Wait a few seconds and try again.</p>
     DatabaseResumingException(crate::types::error::DatabaseResumingException),
     /// <p>The writer instance in the DB cluster isn't available.</p>
     DatabaseUnavailableException(crate::types::error::DatabaseUnavailableException),

@@ -14,6 +14,8 @@ pub struct ModelPackageGroupSummary {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the model group.</p>
     pub model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
+    /// <p>The managed configuration of the model package group.</p>
+    pub managed_configuration: ::std::option::Option<crate::types::ManagedConfiguration>,
 }
 impl ModelPackageGroupSummary {
     /// <p>The name of the model group.</p>
@@ -36,6 +38,10 @@ impl ModelPackageGroupSummary {
     pub fn model_package_group_status(&self) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
         self.model_package_group_status.as_ref()
     }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn managed_configuration(&self) -> ::std::option::Option<&crate::types::ManagedConfiguration> {
+        self.managed_configuration.as_ref()
+    }
 }
 impl ModelPackageGroupSummary {
     /// Creates a new builder-style object to manufacture [`ModelPackageGroupSummary`](crate::types::ModelPackageGroupSummary).
@@ -53,6 +59,7 @@ pub struct ModelPackageGroupSummaryBuilder {
     pub(crate) model_package_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
+    pub(crate) managed_configuration: ::std::option::Option<crate::types::ManagedConfiguration>,
 }
 impl ModelPackageGroupSummaryBuilder {
     /// <p>The name of the model group.</p>
@@ -129,6 +136,20 @@ impl ModelPackageGroupSummaryBuilder {
     pub fn get_model_package_group_status(&self) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
         &self.model_package_group_status
     }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn managed_configuration(mut self, input: crate::types::ManagedConfiguration) -> Self {
+        self.managed_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn set_managed_configuration(mut self, input: ::std::option::Option<crate::types::ManagedConfiguration>) -> Self {
+        self.managed_configuration = input;
+        self
+    }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn get_managed_configuration(&self) -> &::std::option::Option<crate::types::ManagedConfiguration> {
+        &self.managed_configuration
+    }
     /// Consumes the builder and constructs a [`ModelPackageGroupSummary`](crate::types::ModelPackageGroupSummary).
     pub fn build(self) -> crate::types::ModelPackageGroupSummary {
         crate::types::ModelPackageGroupSummary {
@@ -137,6 +158,7 @@ impl ModelPackageGroupSummaryBuilder {
             model_package_group_description: self.model_package_group_description,
             creation_time: self.creation_time,
             model_package_group_status: self.model_package_group_status,
+            managed_configuration: self.managed_configuration,
         }
     }
 }

@@ -48,10 +48,16 @@ pub fn ser_codegen_generic_data_relationship_type(
 pub(crate) fn de_codegen_generic_data_relationship_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CodegenGenericDataRelationshipType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,61 +66,63 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "type" => {
-                            builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::GenericDataRelationshipType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "type" => {
+                                builder = builder.set_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::GenericDataRelationshipType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "relatedModelName" => {
+                                builder = builder.set_related_model_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "relatedModelFields" => {
+                                builder = builder.set_related_model_fields(
+                                    crate::protocol_serde::shape_related_model_fields_list::de_related_model_fields_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "canUnlinkAssociatedModel" => {
+                                builder = builder
+                                    .set_can_unlink_associated_model(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "relatedJoinFieldName" => {
+                                builder = builder.set_related_join_field_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "relatedJoinTableName" => {
+                                builder = builder.set_related_join_table_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "belongsToFieldOnRelatedModel" => {
+                                builder = builder.set_belongs_to_field_on_related_model(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "associatedFields" => {
+                                builder = builder.set_associated_fields(
+                                    crate::protocol_serde::shape_associated_fields_list::de_associated_fields_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "isHasManyIndex" => {
+                                builder = builder.set_is_has_many_index(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "relatedModelName" => {
-                            builder = builder.set_related_model_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "relatedModelFields" => {
-                            builder = builder.set_related_model_fields(
-                                crate::protocol_serde::shape_related_model_fields_list::de_related_model_fields_list(tokens, _value)?,
-                            );
-                        }
-                        "canUnlinkAssociatedModel" => {
-                            builder =
-                                builder.set_can_unlink_associated_model(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "relatedJoinFieldName" => {
-                            builder = builder.set_related_join_field_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "relatedJoinTableName" => {
-                            builder = builder.set_related_join_table_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "belongsToFieldOnRelatedModel" => {
-                            builder = builder.set_belongs_to_field_on_related_model(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "associatedFields" => {
-                            builder = builder.set_associated_fields(crate::protocol_serde::shape_associated_fields_list::de_associated_fields_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "isHasManyIndex" => {
-                            builder = builder.set_is_has_many_index(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

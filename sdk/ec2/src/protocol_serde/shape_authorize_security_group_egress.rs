@@ -49,6 +49,8 @@ pub fn de_authorize_security_group_egress(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AuthorizeSecurityGroupEgressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AuthorizeSecurityGroupEgressResponse got {start_el:?}"
@@ -74,7 +76,7 @@ pub fn de_authorize_security_group_egress(
             s if s.matches("securityGroupRuleSet") /* SecurityGroupRules com.amazonaws.ec2.synthetic#AuthorizeSecurityGroupEgressOutput$SecurityGroupRules */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_security_group_rule_list::de_security_group_rule_list(&mut tag)
+                        crate::protocol_serde::shape_security_group_rule_list::de_security_group_rule_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

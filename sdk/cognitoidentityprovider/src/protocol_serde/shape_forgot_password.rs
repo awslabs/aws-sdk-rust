@@ -176,6 +176,22 @@ pub fn de_forgot_password_http_error(
             }
             tmp
         }),
+        "OperationNotEnabledException" => crate::operation::forgot_password::ForgotPasswordError::OperationNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotEnabledExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_not_enabled_exception::de_operation_not_enabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::forgot_password::ForgotPasswordError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::forgot_password::ForgotPasswordError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -293,6 +309,8 @@ pub(crate) fn de_forgot_password(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -300,7 +318,7 @@ pub(crate) fn de_forgot_password(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CodeDeliveryDetails" => {
                     builder = builder.set_code_delivery_details(
-                        crate::protocol_serde::shape_code_delivery_details_type::de_code_delivery_details_type(tokens, _value)?,
+                        crate::protocol_serde::shape_code_delivery_details_type::de_code_delivery_details_type(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -48,6 +48,8 @@ pub(crate) fn de_describe_project(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -83,13 +85,19 @@ pub(crate) fn de_describe_project(
                 }
                 "ServiceCatalogProvisioningDetails" => {
                     builder = builder.set_service_catalog_provisioning_details(
-                        crate::protocol_serde::shape_service_catalog_provisioning_details::de_service_catalog_provisioning_details(tokens, _value)?,
+                        crate::protocol_serde::shape_service_catalog_provisioning_details::de_service_catalog_provisioning_details(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "ServiceCatalogProvisionedProductDetails" => {
                     builder = builder.set_service_catalog_provisioned_product_details(
                         crate::protocol_serde::shape_service_catalog_provisioned_product_details::de_service_catalog_provisioned_product_details(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -102,11 +110,11 @@ pub(crate) fn de_describe_project(
                 }
                 "TemplateProviderDetails" => {
                     builder = builder.set_template_provider_details(
-                        crate::protocol_serde::shape_template_provider_detail_list::de_template_provider_detail_list(tokens, _value)?,
+                        crate::protocol_serde::shape_template_provider_detail_list::de_template_provider_detail_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -121,7 +129,7 @@ pub(crate) fn de_describe_project(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

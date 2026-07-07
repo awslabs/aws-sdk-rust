@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_minimum_engine_version_per_allowed_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MinimumEngineVersionPerAllowedValue, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MinimumEngineVersionPerAllowedValue::builder();
     while let Some(mut tag) = decoder.next_tag() {

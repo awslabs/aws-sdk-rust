@@ -71,6 +71,8 @@ pub(crate) fn de_describe_cluster(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -112,25 +114,36 @@ pub(crate) fn de_describe_cluster(
                 }
                 "InstanceGroups" => {
                     builder = builder.set_instance_groups(
-                        crate::protocol_serde::shape_cluster_instance_group_details_list::de_cluster_instance_group_details_list(tokens, _value)?,
+                        crate::protocol_serde::shape_cluster_instance_group_details_list::de_cluster_instance_group_details_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "RestrictedInstanceGroups" => {
                     builder = builder.set_restricted_instance_groups(
-                            crate::protocol_serde::shape_cluster_restricted_instance_group_details_list::de_cluster_restricted_instance_group_details_list(tokens, _value)?
+                            crate::protocol_serde::shape_cluster_restricted_instance_group_details_list::de_cluster_restricted_instance_group_details_list(tokens, _value, depth + 1)?
+                        );
+                }
+                "RestrictedInstanceGroupsConfig" => {
+                    builder = builder.set_restricted_instance_groups_config(
+                            crate::protocol_serde::shape_cluster_restricted_instance_groups_config_output::de_cluster_restricted_instance_groups_config_output(tokens, _value, depth + 1)?
                         );
                 }
                 "VpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                 }
                 "Orchestrator" => {
                     builder = builder.set_orchestrator(crate::protocol_serde::shape_cluster_orchestrator::de_cluster_orchestrator(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "TieredStorageConfig" => {
                     builder = builder.set_tiered_storage_config(
-                        crate::protocol_serde::shape_cluster_tiered_storage_config::de_cluster_tiered_storage_config(tokens, _value)?,
+                        crate::protocol_serde::shape_cluster_tiered_storage_config::de_cluster_tiered_storage_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "NodeRecovery" => {
@@ -156,7 +169,11 @@ pub(crate) fn de_describe_cluster(
                 }
                 "AutoScaling" => {
                     builder = builder.set_auto_scaling(
-                        crate::protocol_serde::shape_cluster_auto_scaling_config_output::de_cluster_auto_scaling_config_output(tokens, _value)?,
+                        crate::protocol_serde::shape_cluster_auto_scaling_config_output::de_cluster_auto_scaling_config_output(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

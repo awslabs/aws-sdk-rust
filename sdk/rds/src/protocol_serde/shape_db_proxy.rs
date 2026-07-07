@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_proxy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbProxy, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbProxy::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -76,7 +80,7 @@ pub fn de_db_proxy(
             s if s.matches("VpcSecurityGroupIds") /* VpcSecurityGroupIds com.amazonaws.rds#DBProxy$VpcSecurityGroupIds */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -86,7 +90,7 @@ pub fn de_db_proxy(
             s if s.matches("VpcSubnetIds") /* VpcSubnetIds com.amazonaws.rds#DBProxy$VpcSubnetIds */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -109,7 +113,7 @@ pub fn de_db_proxy(
             s if s.matches("Auth") /* Auth com.amazonaws.rds#DBProxy$Auth */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_user_auth_config_info_list::de_user_auth_config_info_list(&mut tag)
+                        crate::protocol_serde::shape_user_auth_config_info_list::de_user_auth_config_info_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

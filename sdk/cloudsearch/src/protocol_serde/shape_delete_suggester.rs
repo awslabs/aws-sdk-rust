@@ -123,6 +123,8 @@ pub fn de_delete_suggester(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteSuggesterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteSuggesterResponse got {start_el:?}"
@@ -140,7 +142,7 @@ pub fn de_delete_suggester(
             s if s.matches("Suggester") /* Suggester com.amazonaws.cloudsearch.synthetic#DeleteSuggesterOutput$Suggester */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_suggester_status::de_suggester_status(&mut tag)
+                        crate::protocol_serde::shape_suggester_status::de_suggester_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

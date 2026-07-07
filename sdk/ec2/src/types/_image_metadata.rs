@@ -24,6 +24,8 @@ pub struct ImageMetadata {
     pub image_allowed: ::std::option::Option<bool>,
     /// <p>Indicates whether the AMI has public launch permissions. A value of <code>true</code> means this AMI has public launch permissions, while <code>false</code> means it has only implicit (AMI owner) or explicit (shared with your account) launch permissions.</p>
     pub is_public: ::std::option::Option<bool>,
+    /// <p>The watermarks attached to the AMI.</p>
+    pub image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>>,
 }
 impl ImageMetadata {
     /// <p>The ID of the AMI.</p>
@@ -64,6 +66,12 @@ impl ImageMetadata {
     pub fn is_public(&self) -> ::std::option::Option<bool> {
         self.is_public
     }
+    /// <p>The watermarks attached to the AMI.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_watermarks.is_none()`.
+    pub fn image_watermarks(&self) -> &[crate::types::ImageWatermark] {
+        self.image_watermarks.as_deref().unwrap_or_default()
+    }
 }
 impl ImageMetadata {
     /// Creates a new builder-style object to manufacture [`ImageMetadata`](crate::types::ImageMetadata).
@@ -85,6 +93,7 @@ pub struct ImageMetadataBuilder {
     pub(crate) deprecation_time: ::std::option::Option<::std::string::String>,
     pub(crate) image_allowed: ::std::option::Option<bool>,
     pub(crate) is_public: ::std::option::Option<bool>,
+    pub(crate) image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>>,
 }
 impl ImageMetadataBuilder {
     /// <p>The ID of the AMI.</p>
@@ -219,6 +228,26 @@ impl ImageMetadataBuilder {
     pub fn get_is_public(&self) -> &::std::option::Option<bool> {
         &self.is_public
     }
+    /// Appends an item to `image_watermarks`.
+    ///
+    /// To override the contents of this collection use [`set_image_watermarks`](Self::set_image_watermarks).
+    ///
+    /// <p>The watermarks attached to the AMI.</p>
+    pub fn image_watermarks(mut self, input: crate::types::ImageWatermark) -> Self {
+        let mut v = self.image_watermarks.unwrap_or_default();
+        v.push(input);
+        self.image_watermarks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The watermarks attached to the AMI.</p>
+    pub fn set_image_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>>) -> Self {
+        self.image_watermarks = input;
+        self
+    }
+    /// <p>The watermarks attached to the AMI.</p>
+    pub fn get_image_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>> {
+        &self.image_watermarks
+    }
     /// Consumes the builder and constructs a [`ImageMetadata`](crate::types::ImageMetadata).
     pub fn build(self) -> crate::types::ImageMetadata {
         crate::types::ImageMetadata {
@@ -231,6 +260,7 @@ impl ImageMetadataBuilder {
             deprecation_time: self.deprecation_time,
             image_allowed: self.image_allowed,
             is_public: self.is_public,
+            image_watermarks: self.image_watermarks,
         }
     }
 }

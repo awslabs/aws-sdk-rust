@@ -2,10 +2,16 @@
 pub(crate) fn de_auto_ml_problem_type_resolved_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutoMlProblemTypeResolvedAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,18 +37,19 @@ where
                     }
                     variant = match key.as_ref() {
                         "TabularResolvedAttributes" => Some(crate::types::AutoMlProblemTypeResolvedAttributes::TabularResolvedAttributes(
-                            crate::protocol_serde::shape_tabular_resolved_attributes::de_tabular_resolved_attributes(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_tabular_resolved_attributes::de_tabular_resolved_attributes(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'TabularResolvedAttributes' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "TextGenerationResolvedAttributes" => {
                             Some(crate::types::AutoMlProblemTypeResolvedAttributes::TextGenerationResolvedAttributes(
                                 crate::protocol_serde::shape_text_generation_resolved_attributes::de_text_generation_resolved_attributes(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(

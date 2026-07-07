@@ -137,6 +137,8 @@ pub(crate) fn de_describe_data_source(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -172,12 +174,14 @@ pub(crate) fn de_describe_data_source(
                 }
                 "Configuration" => {
                     builder = builder.set_configuration(crate::protocol_serde::shape_data_source_configuration::de_data_source_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "VpcConfiguration" => {
                     builder = builder.set_vpc_configuration(
-                        crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "CreatedAt" => {
@@ -237,7 +241,9 @@ pub(crate) fn de_describe_data_source(
                 "CustomDocumentEnrichmentConfiguration" => {
                     builder = builder.set_custom_document_enrichment_configuration(
                         crate::protocol_serde::shape_custom_document_enrichment_configuration::de_custom_document_enrichment_configuration(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

@@ -8,6 +8,8 @@ pub struct DescribeStandardsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of standards to return.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>A list of cloud providers to filter the standards by. For example, specify <code>Azure</code> to return only standards that evaluate Azure resources.</p>
+    pub providers: ::std::option::Option<::std::vec::Vec<crate::types::StandardsProvider>>,
 }
 impl DescribeStandardsInput {
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -18,6 +20,12 @@ impl DescribeStandardsInput {
     /// <p>The maximum number of standards to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>A list of cloud providers to filter the standards by. For example, specify <code>Azure</code> to return only standards that evaluate Azure resources.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.providers.is_none()`.
+    pub fn providers(&self) -> &[crate::types::StandardsProvider] {
+        self.providers.as_deref().unwrap_or_default()
     }
 }
 impl DescribeStandardsInput {
@@ -33,6 +41,7 @@ impl DescribeStandardsInput {
 pub struct DescribeStandardsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) providers: ::std::option::Option<::std::vec::Vec<crate::types::StandardsProvider>>,
 }
 impl DescribeStandardsInputBuilder {
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -66,6 +75,26 @@ impl DescribeStandardsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// Appends an item to `providers`.
+    ///
+    /// To override the contents of this collection use [`set_providers`](Self::set_providers).
+    ///
+    /// <p>A list of cloud providers to filter the standards by. For example, specify <code>Azure</code> to return only standards that evaluate Azure resources.</p>
+    pub fn providers(mut self, input: crate::types::StandardsProvider) -> Self {
+        let mut v = self.providers.unwrap_or_default();
+        v.push(input);
+        self.providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of cloud providers to filter the standards by. For example, specify <code>Azure</code> to return only standards that evaluate Azure resources.</p>
+    pub fn set_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsProvider>>) -> Self {
+        self.providers = input;
+        self
+    }
+    /// <p>A list of cloud providers to filter the standards by. For example, specify <code>Azure</code> to return only standards that evaluate Azure resources.</p>
+    pub fn get_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsProvider>> {
+        &self.providers
+    }
     /// Consumes the builder and constructs a [`DescribeStandardsInput`](crate::operation::describe_standards::DescribeStandardsInput).
     pub fn build(
         self,
@@ -73,6 +102,7 @@ impl DescribeStandardsInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_standards::DescribeStandardsInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            providers: self.providers,
         })
     }
 }

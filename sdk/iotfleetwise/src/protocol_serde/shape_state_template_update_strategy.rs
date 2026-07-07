@@ -31,10 +31,16 @@ pub fn ser_state_template_update_strategy(
 pub(crate) fn de_state_template_update_strategy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StateTemplateUpdateStrategy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -61,13 +67,17 @@ where
                     variant = match key.as_ref() {
                         "periodic" => Some(crate::types::StateTemplateUpdateStrategy::Periodic(
                             crate::protocol_serde::shape_periodic_state_template_update_strategy::de_periodic_state_template_update_strategy(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'periodic' cannot be null"))?,
                         )),
                         "onChange" => Some(crate::types::StateTemplateUpdateStrategy::OnChange(
                             crate::protocol_serde::shape_on_change_state_template_update_strategy::de_on_change_state_template_update_strategy(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'onChange' cannot be null"))?,
                         )),

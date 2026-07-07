@@ -38,10 +38,16 @@ pub fn ser_http_parameters(
 pub(crate) fn de_http_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HttpParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,17 +58,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PathParameterValues" => {
-                            builder = builder
-                                .set_path_parameter_values(crate::protocol_serde::shape_path_parameter_list::de_path_parameter_list(tokens, _value)?);
+                            builder = builder.set_path_parameter_values(crate::protocol_serde::shape_path_parameter_list::de_path_parameter_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "HeaderParameters" => {
                             builder = builder.set_header_parameters(crate::protocol_serde::shape_header_parameters_map::de_header_parameters_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "QueryStringParameters" => {
                             builder = builder.set_query_string_parameters(
-                                crate::protocol_serde::shape_query_string_parameters_map::de_query_string_parameters_map(tokens, _value)?,
+                                crate::protocol_serde::shape_query_string_parameters_map::de_query_string_parameters_map(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

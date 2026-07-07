@@ -193,6 +193,8 @@ pub use crate::types::_deinterlacer::DeinterlacerBuilder;
 
 pub use crate::types::_dolby_vision::DolbyVisionBuilder;
 
+pub use crate::types::_duration_control::DurationControlBuilder;
+
 pub use crate::types::_hdr10_plus::Hdr10PlusBuilder;
 
 pub use crate::types::_noise_reducer::NoiseReducerBuilder;
@@ -379,13 +381,19 @@ pub use crate::types::_speke_key_provider_cmaf::SpekeKeyProviderCmafBuilder;
 
 pub use crate::types::_static_key_provider::StaticKeyProviderBuilder;
 
+pub use crate::types::_cmaf_image_based_trick_play_variant::CmafImageBasedTrickPlayVariantBuilder;
+
 pub use crate::types::_dash_additional_manifest::DashAdditionalManifestBuilder;
 
 pub use crate::types::_speke_key_provider::SpekeKeyProviderBuilder;
 
+pub use crate::types::_dash_iso_image_based_trick_play_variant::DashIsoImageBasedTrickPlayVariantBuilder;
+
 pub use crate::types::_hls_additional_manifest::HlsAdditionalManifestBuilder;
 
 pub use crate::types::_hls_caption_language_mapping::HlsCaptionLanguageMappingBuilder;
+
+pub use crate::types::_hls_image_based_trick_play_variant::HlsImageBasedTrickPlayVariantBuilder;
 
 pub use crate::types::_ms_smooth_additional_manifest::MsSmoothAdditionalManifestBuilder;
 
@@ -398,6 +406,8 @@ pub use crate::types::_output_channel_mapping::OutputChannelMappingBuilder;
 pub use crate::types::_frame_rate::FrameRateBuilder;
 
 pub use crate::types::_codec_metadata::CodecMetadataBuilder;
+
+pub use crate::types::_hdr_metadata::HdrMetadataBuilder;
 
 pub use crate::types::_caption_source_framerate::CaptionSourceFramerateBuilder;
 
@@ -412,6 +422,10 @@ pub use crate::types::_s3_destination_access_control::S3DestinationAccessControl
 pub use crate::types::_s3_encryption_settings::S3EncryptionSettingsBuilder;
 
 pub use crate::types::_encryption_contract_configuration::EncryptionContractConfigurationBuilder;
+
+pub use crate::types::_content_light_level::ContentLightLevelBuilder;
+
+pub use crate::types::_mastering_display_color_volume::MasteringDisplayColorVolumeBuilder;
 
 pub use crate::types::_allowed_rendition_size::AllowedRenditionSizeBuilder;
 

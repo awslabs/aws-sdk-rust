@@ -142,6 +142,8 @@ pub(crate) fn de_reboot_db_instance(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -225,14 +227,18 @@ pub(crate) fn de_reboot_db_instance(
                     );
                 }
                 "vpcSubnetIds" => {
-                    builder = builder.set_vpc_subnet_ids(crate::protocol_serde::shape_vpc_subnet_id_list::de_vpc_subnet_id_list(tokens, _value)?);
+                    builder = builder.set_vpc_subnet_ids(crate::protocol_serde::shape_vpc_subnet_id_list::de_vpc_subnet_id_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "publiclyAccessible" => {
                     builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "vpcSecurityGroupIds" => {
                     builder = builder.set_vpc_security_group_ids(
-                        crate::protocol_serde::shape_vpc_security_group_id_list::de_vpc_security_group_id_list(tokens, _value)?,
+                        crate::protocol_serde::shape_vpc_security_group_id_list::de_vpc_security_group_id_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "dbParameterGroupIdentifier" => {
@@ -258,7 +264,7 @@ pub(crate) fn de_reboot_db_instance(
                 }
                 "logDeliveryConfiguration" => {
                     builder = builder.set_log_delivery_configuration(
-                        crate::protocol_serde::shape_log_delivery_configuration::de_log_delivery_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_log_delivery_configuration::de_log_delivery_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "influxAuthParametersSecretArn" => {
@@ -283,11 +289,17 @@ pub(crate) fn de_reboot_db_instance(
                     );
                 }
                 "instanceModes" => {
-                    builder = builder.set_instance_modes(crate::protocol_serde::shape_instance_mode_list::de_instance_mode_list(tokens, _value)?);
+                    builder = builder.set_instance_modes(crate::protocol_serde::shape_instance_mode_list::de_instance_mode_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "maintenanceSchedule" => {
                     builder = builder.set_maintenance_schedule(crate::protocol_serde::shape_maintenance_schedule::de_maintenance_schedule(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "lastMaintenanceTime" => {

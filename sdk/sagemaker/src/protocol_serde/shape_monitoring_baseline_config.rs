@@ -24,10 +24,16 @@ pub fn ser_monitoring_baseline_config(
 pub(crate) fn de_monitoring_baseline_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MonitoringBaselineConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -46,12 +52,20 @@ where
                         }
                         "ConstraintsResource" => {
                             builder = builder.set_constraints_resource(
-                                crate::protocol_serde::shape_monitoring_constraints_resource::de_monitoring_constraints_resource(tokens, _value)?,
+                                crate::protocol_serde::shape_monitoring_constraints_resource::de_monitoring_constraints_resource(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StatisticsResource" => {
                             builder = builder.set_statistics_resource(
-                                crate::protocol_serde::shape_monitoring_statistics_resource::de_monitoring_statistics_resource(tokens, _value)?,
+                                crate::protocol_serde::shape_monitoring_statistics_resource::de_monitoring_statistics_resource(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

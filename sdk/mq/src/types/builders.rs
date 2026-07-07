@@ -23,6 +23,8 @@ pub use crate::types::_user_pending_changes::UserPendingChangesBuilder;
 
 pub use crate::types::_user::UserBuilder;
 
+pub use crate::types::_resource_share_error::ResourceShareErrorBuilder;
+
 pub use crate::types::_action_required::ActionRequiredBuilder;
 
 pub use crate::types::_broker_instance::BrokerInstanceBuilder;
@@ -37,11 +39,15 @@ pub use crate::types::_broker_engine_type::BrokerEngineTypeBuilder;
 
 pub use crate::types::_broker_instance_option::BrokerInstanceOptionBuilder;
 
+pub use crate::types::_shared_resource::SharedResourceBuilder;
+
 pub use crate::types::_broker_summary::BrokerSummaryBuilder;
 
 pub use crate::types::_configuration::ConfigurationBuilder;
 
 pub use crate::types::_sanitization_warning::SanitizationWarningBuilder;
+
+pub use crate::types::_shared_resource_error::SharedResourceErrorBuilder;
 
 pub use crate::types::_engine_version::EngineVersionBuilder;
 

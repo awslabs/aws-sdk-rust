@@ -46,10 +46,16 @@ pub fn ser_citation_location(
 pub(crate) fn de_citation_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CitationLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -75,28 +81,28 @@ where
                     }
                     variant = match key.as_ref() {
                         "web" => Some(crate::types::CitationLocation::Web(
-                            crate::protocol_serde::shape_web_location::de_web_location(tokens, _value)?
+                            crate::protocol_serde::shape_web_location::de_web_location(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'web' cannot be null"))?,
                         )),
                         "documentChar" => Some(crate::types::CitationLocation::DocumentChar(
-                            crate::protocol_serde::shape_document_char_location::de_document_char_location(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentChar' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_document_char_location::de_document_char_location(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentChar' cannot be null"),
+                            )?,
                         )),
                         "documentPage" => Some(crate::types::CitationLocation::DocumentPage(
-                            crate::protocol_serde::shape_document_page_location::de_document_page_location(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentPage' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_document_page_location::de_document_page_location(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentPage' cannot be null"),
+                            )?,
                         )),
                         "documentChunk" => Some(crate::types::CitationLocation::DocumentChunk(
-                            crate::protocol_serde::shape_document_chunk_location::de_document_chunk_location(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentChunk' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_document_chunk_location::de_document_chunk_location(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentChunk' cannot be null"),
+                            )?,
                         )),
                         "searchResultLocation" => Some(crate::types::CitationLocation::SearchResultLocation(
-                            crate::protocol_serde::shape_search_result_location::de_search_result_location(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResultLocation' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_search_result_location::de_search_result_location(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResultLocation' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

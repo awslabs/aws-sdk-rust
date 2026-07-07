@@ -48,6 +48,7 @@
 ///     StateReasonCode::KmsKeyAccessDenied => { /* ... */ },
 ///     StateReasonCode::KmsKeyNotFound => { /* ... */ },
 ///     StateReasonCode::Restoring => { /* ... */ },
+///     StateReasonCode::ServiceQuotaExceededException => { /* ... */ },
 ///     StateReasonCode::SubnetOutOfIpAddresses => { /* ... */ },
 ///     StateReasonCode::VcpuLimitExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -151,6 +152,8 @@ pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     Restoring,
     #[allow(missing_docs)] // documentation missing in model
+    ServiceQuotaExceededException,
+    #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
     #[allow(missing_docs)] // documentation missing in model
     VcpuLimitExceeded,
@@ -197,6 +200,7 @@ impl ::std::convert::From<&str> for StateReasonCode {
             "KMSKeyAccessDenied" => StateReasonCode::KmsKeyAccessDenied,
             "KMSKeyNotFound" => StateReasonCode::KmsKeyNotFound,
             "Restoring" => StateReasonCode::Restoring,
+            "ServiceQuotaExceededException" => StateReasonCode::ServiceQuotaExceededException,
             "SubnetOutOfIPAddresses" => StateReasonCode::SubnetOutOfIpAddresses,
             "VcpuLimitExceeded" => StateReasonCode::VcpuLimitExceeded,
             other => StateReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -250,6 +254,7 @@ impl StateReasonCode {
             StateReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
             StateReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
             StateReasonCode::Restoring => "Restoring",
+            StateReasonCode::ServiceQuotaExceededException => "ServiceQuotaExceededException",
             StateReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
             StateReasonCode::VcpuLimitExceeded => "VcpuLimitExceeded",
             StateReasonCode::Unknown(value) => value.as_str(),
@@ -294,6 +299,7 @@ impl StateReasonCode {
             "KMSKeyAccessDenied",
             "KMSKeyNotFound",
             "Restoring",
+            "ServiceQuotaExceededException",
             "SubnetOutOfIPAddresses",
             "VcpuLimitExceeded",
         ]
@@ -355,6 +361,7 @@ impl ::std::fmt::Display for StateReasonCode {
             StateReasonCode::KmsKeyAccessDenied => write!(f, "KMSKeyAccessDenied"),
             StateReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
             StateReasonCode::Restoring => write!(f, "Restoring"),
+            StateReasonCode::ServiceQuotaExceededException => write!(f, "ServiceQuotaExceededException"),
             StateReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
             StateReasonCode::VcpuLimitExceeded => write!(f, "VcpuLimitExceeded"),
             StateReasonCode::Unknown(value) => write!(f, "{value}"),

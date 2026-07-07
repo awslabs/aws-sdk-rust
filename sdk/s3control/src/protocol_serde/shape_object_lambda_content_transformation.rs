@@ -20,13 +20,17 @@ pub fn ser_object_lambda_content_transformation(
 
 pub fn de_object_lambda_content_transformation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ObjectLambdaContentTransformation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     let mut base: Option<crate::types::ObjectLambdaContentTransformation> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AwsLambda") /* AwsLambda com.amazonaws.s3control#ObjectLambdaContentTransformation$AwsLambda */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_aws_lambda_transformation::de_aws_lambda_transformation(&mut tag)
+                    crate::protocol_serde::shape_aws_lambda_transformation::de_aws_lambda_transformation(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::ObjectLambdaContentTransformation::AwsLambda(tmp));

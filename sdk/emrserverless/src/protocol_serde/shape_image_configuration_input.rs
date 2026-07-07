@@ -6,5 +6,8 @@ pub fn ser_image_configuration_input(
     if let Some(var_1) = &input.image_uri {
         object.key("imageUri").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.application_level_digest_resolution {
+        object.key("applicationLevelDigestResolution").boolean(*var_2);
+    }
     Ok(())
 }

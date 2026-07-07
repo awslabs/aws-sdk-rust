@@ -14,7 +14,9 @@
 /// match retrievalresultlocationtype {
 ///     RetrievalResultLocationType::Confluence => { /* ... */ },
 ///     RetrievalResultLocationType::Custom => { /* ... */ },
+///     RetrievalResultLocationType::Googledrive => { /* ... */ },
 ///     RetrievalResultLocationType::Kendra => { /* ... */ },
+///     RetrievalResultLocationType::Onedrive => { /* ... */ },
 ///     RetrievalResultLocationType::S3 => { /* ... */ },
 ///     RetrievalResultLocationType::Salesforce => { /* ... */ },
 ///     RetrievalResultLocationType::Sharepoint => { /* ... */ },
@@ -53,7 +55,11 @@ pub enum RetrievalResultLocationType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    Googledrive,
+    #[allow(missing_docs)] // documentation missing in model
     Kendra,
+    #[allow(missing_docs)] // documentation missing in model
+    Onedrive,
     #[allow(missing_docs)] // documentation missing in model
     S3,
     #[allow(missing_docs)] // documentation missing in model
@@ -73,7 +79,9 @@ impl ::std::convert::From<&str> for RetrievalResultLocationType {
         match s {
             "CONFLUENCE" => RetrievalResultLocationType::Confluence,
             "CUSTOM" => RetrievalResultLocationType::Custom,
+            "GOOGLEDRIVE" => RetrievalResultLocationType::Googledrive,
             "KENDRA" => RetrievalResultLocationType::Kendra,
+            "ONEDRIVE" => RetrievalResultLocationType::Onedrive,
             "S3" => RetrievalResultLocationType::S3,
             "SALESFORCE" => RetrievalResultLocationType::Salesforce,
             "SHAREPOINT" => RetrievalResultLocationType::Sharepoint,
@@ -96,7 +104,9 @@ impl RetrievalResultLocationType {
         match self {
             RetrievalResultLocationType::Confluence => "CONFLUENCE",
             RetrievalResultLocationType::Custom => "CUSTOM",
+            RetrievalResultLocationType::Googledrive => "GOOGLEDRIVE",
             RetrievalResultLocationType::Kendra => "KENDRA",
+            RetrievalResultLocationType::Onedrive => "ONEDRIVE",
             RetrievalResultLocationType::S3 => "S3",
             RetrievalResultLocationType::Salesforce => "SALESFORCE",
             RetrievalResultLocationType::Sharepoint => "SHAREPOINT",
@@ -107,7 +117,18 @@ impl RetrievalResultLocationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFLUENCE", "CUSTOM", "KENDRA", "S3", "SALESFORCE", "SHAREPOINT", "SQL", "WEB"]
+        &[
+            "CONFLUENCE",
+            "CUSTOM",
+            "GOOGLEDRIVE",
+            "KENDRA",
+            "ONEDRIVE",
+            "S3",
+            "SALESFORCE",
+            "SHAREPOINT",
+            "SQL",
+            "WEB",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RetrievalResultLocationType {
@@ -132,7 +153,9 @@ impl ::std::fmt::Display for RetrievalResultLocationType {
         match self {
             RetrievalResultLocationType::Confluence => write!(f, "CONFLUENCE"),
             RetrievalResultLocationType::Custom => write!(f, "CUSTOM"),
+            RetrievalResultLocationType::Googledrive => write!(f, "GOOGLEDRIVE"),
             RetrievalResultLocationType::Kendra => write!(f, "KENDRA"),
+            RetrievalResultLocationType::Onedrive => write!(f, "ONEDRIVE"),
             RetrievalResultLocationType::S3 => write!(f, "S3"),
             RetrievalResultLocationType::Salesforce => write!(f, "SALESFORCE"),
             RetrievalResultLocationType::Sharepoint => write!(f, "SHAREPOINT"),

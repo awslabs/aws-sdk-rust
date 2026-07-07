@@ -2,10 +2,16 @@
 pub(crate) fn de_transaction_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TransactionEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -110,8 +116,11 @@ where
                             );
                         }
                         "blockchainInstant" => {
-                            builder = builder
-                                .set_blockchain_instant(crate::protocol_serde::shape_blockchain_instant::de_blockchain_instant(tokens, _value)?);
+                            builder = builder.set_blockchain_instant(crate::protocol_serde::shape_blockchain_instant::de_blockchain_instant(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "confirmationStatus" => {
                             builder = builder.set_confirmation_status(

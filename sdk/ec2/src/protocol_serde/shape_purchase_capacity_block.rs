@@ -49,6 +49,8 @@ pub fn de_purchase_capacity_block(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("PurchaseCapacityBlockResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected PurchaseCapacityBlockResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_purchase_capacity_block(
             s if s.matches("capacityReservation") /* CapacityReservation com.amazonaws.ec2.synthetic#PurchaseCapacityBlockOutput$CapacityReservation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation::de_capacity_reservation(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation::de_capacity_reservation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_purchase_capacity_block(
             s if s.matches("capacityBlockSet") /* CapacityBlocks com.amazonaws.ec2.synthetic#PurchaseCapacityBlockOutput$CapacityBlocks */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_capacity_block_set::de_capacity_block_set(&mut tag)
+                        crate::protocol_serde::shape_capacity_block_set::de_capacity_block_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -1031,6 +1031,13 @@ pub(crate) fn scte35_segmentation_descriptor_correct_errors(
     builder
 }
 
+pub(crate) fn audio_pid_correct_errors(mut builder: crate::types::builders::AudioPidBuilder) -> crate::types::builders::AudioPidBuilder {
+    if builder.pid.is_none() {
+        builder.pid = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn audio_track_correct_errors(mut builder: crate::types::builders::AudioTrackBuilder) -> crate::types::builders::AudioTrackBuilder {
     if builder.track.is_none() {
         builder.track = Some(Default::default())

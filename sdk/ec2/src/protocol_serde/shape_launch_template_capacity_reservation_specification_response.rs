@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_capacity_reservation_specification_response(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LaunchTemplateCapacityReservationSpecificationResponse, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchTemplateCapacityReservationSpecificationResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_launch_template_capacity_reservation_specification_response(
             s if s.matches("capacityReservationTarget") /* CapacityReservationTarget com.amazonaws.ec2#LaunchTemplateCapacityReservationSpecificationResponse$CapacityReservationTarget */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation_target_response::de_capacity_reservation_target_response(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation_target_response::de_capacity_reservation_target_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

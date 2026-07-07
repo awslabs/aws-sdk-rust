@@ -2,10 +2,16 @@
 pub(crate) fn de_prefetch_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PrefetchSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,9 @@ where
                         }
                         "Consumption" => {
                             builder = builder.set_consumption(crate::protocol_serde::shape_prefetch_consumption::de_prefetch_consumption(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Name" => {
@@ -42,7 +50,11 @@ where
                             );
                         }
                         "Retrieval" => {
-                            builder = builder.set_retrieval(crate::protocol_serde::shape_prefetch_retrieval::de_prefetch_retrieval(tokens, _value)?);
+                            builder = builder.set_retrieval(crate::protocol_serde::shape_prefetch_retrieval::de_prefetch_retrieval(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ScheduleType" => {
                             builder = builder.set_schedule_type(
@@ -53,7 +65,11 @@ where
                         }
                         "RecurringPrefetchConfiguration" => {
                             builder = builder.set_recurring_prefetch_configuration(
-                                crate::protocol_serde::shape_recurring_prefetch_configuration::de_recurring_prefetch_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_recurring_prefetch_configuration::de_recurring_prefetch_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "StreamId" => {
@@ -64,7 +80,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -35,6 +35,10 @@ pub struct CreateExpressGatewayServiceInput {
     pub scaling_target: ::std::option::Option<crate::types::ExpressGatewayScalingTarget>,
     /// <p>The metadata that you apply to the Express service to help categorize and organize it. Each tag consists of a key and an optional value. You can apply up to 50 tags to a service.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to create the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub task_definition_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateExpressGatewayServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. This role is required for Amazon ECS to pull container images from Amazon ECR, send container logs to Amazon CloudWatch Logs, and retrieve sensitive data from Amazon Web Services Systems Manager Parameter Store or Amazon Web Services Secrets Manager.</p>
@@ -95,6 +99,12 @@ impl CreateExpressGatewayServiceInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to create the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub fn task_definition_arn(&self) -> ::std::option::Option<&str> {
+        self.task_definition_arn.as_deref()
+    }
 }
 impl CreateExpressGatewayServiceInput {
     /// Creates a new builder-style object to manufacture [`CreateExpressGatewayServiceInput`](crate::operation::create_express_gateway_service::CreateExpressGatewayServiceInput).
@@ -119,11 +129,11 @@ pub struct CreateExpressGatewayServiceInputBuilder {
     pub(crate) memory: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_target: ::std::option::Option<crate::types::ExpressGatewayScalingTarget>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateExpressGatewayServiceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. This role is required for Amazon ECS to pull container images from Amazon ECR, send container logs to Amazon CloudWatch Logs, and retrieve sensitive data from Amazon Web Services Systems Manager Parameter Store or Amazon Web Services Secrets Manager.</p>
     /// <p>The execution role must include the <code>AmazonECSTaskExecutionRolePolicy</code> managed policy or equivalent permissions. For Express services, this role is used during task startup and runtime for container management operations.</p>
-    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -207,7 +217,6 @@ impl CreateExpressGatewayServiceInputBuilder {
     }
     /// <p>The primary container configuration for the Express service. This defines the main application container that will receive traffic from the Application Load Balancer.</p>
     /// <p>The primary container must specify at minimum a container image. You can also configure the container port (defaults to 80), logging configuration, environment variables, secrets, and startup commands. The container image can be from Amazon ECR, Docker Hub, or any other container registry accessible to your execution role.</p>
-    /// This field is required.
     pub fn primary_container(mut self, input: crate::types::ExpressGatewayContainer) -> Self {
         self.primary_container = ::std::option::Option::Some(input);
         self
@@ -322,6 +331,26 @@ impl CreateExpressGatewayServiceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to create the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub fn task_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_definition_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to create the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task_definition_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a task definition to use to create the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
+    /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    pub fn get_task_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition_arn
+    }
     /// Consumes the builder and constructs a [`CreateExpressGatewayServiceInput`](crate::operation::create_express_gateway_service::CreateExpressGatewayServiceInput).
     pub fn build(
         self,
@@ -342,6 +371,7 @@ impl CreateExpressGatewayServiceInputBuilder {
             memory: self.memory,
             scaling_target: self.scaling_target,
             tags: self.tags,
+            task_definition_arn: self.task_definition_arn,
         })
     }
 }

@@ -148,6 +148,8 @@ pub fn de_modify_endpoint_access(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyEndpointAccessResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyEndpointAccessResponse got {start_el:?}"
@@ -272,7 +274,7 @@ pub fn de_modify_endpoint_access(
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.redshift.synthetic#ModifyEndpointAccessOutput$VpcSecurityGroups */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -282,7 +284,7 @@ pub fn de_modify_endpoint_access(
             s if s.matches("VpcEndpoint") /* VpcEndpoint com.amazonaws.redshift.synthetic#ModifyEndpointAccessOutput$VpcEndpoint */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_vpc_endpoint::de_vpc_endpoint(&mut tag)
+                        crate::protocol_serde::shape_vpc_endpoint::de_vpc_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;

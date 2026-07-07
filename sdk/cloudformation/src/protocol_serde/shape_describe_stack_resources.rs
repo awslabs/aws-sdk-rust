@@ -49,6 +49,8 @@ pub fn de_describe_stack_resources(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeStackResourcesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeStackResourcesResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_describe_stack_resources(
             s if s.matches("StackResources") /* StackResources com.amazonaws.cloudformation.synthetic#DescribeStackResourcesOutput$StackResources */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_stack_resources::de_stack_resources(&mut tag)
+                        crate::protocol_serde::shape_stack_resources::de_stack_resources(&mut tag, depth + 1)
                         ?
                     )
                 ;

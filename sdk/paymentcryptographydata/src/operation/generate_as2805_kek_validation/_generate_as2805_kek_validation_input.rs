@@ -5,7 +5,7 @@
 pub struct GenerateAs2805KekValidationInput {
     /// <p>The <code>keyARN</code> of sending KEK that Amazon Web Services Payment Cryptography uses for node-to-node initialization</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Parameter information for generating a random key for KEK validation to perform node-to-node initialization.</p>
+    /// <p>Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.</p>
     pub kek_validation_type: ::std::option::Option<crate::types::As2805KekValidationType>,
     /// <p>The key variant to use for generating a random key for KEK validation during node-to-node initialization.</p>
     pub random_key_send_variant_mask: ::std::option::Option<crate::types::RandomKeySendVariantMask>,
@@ -15,7 +15,7 @@ impl GenerateAs2805KekValidationInput {
     pub fn key_identifier(&self) -> ::std::option::Option<&str> {
         self.key_identifier.as_deref()
     }
-    /// <p>Parameter information for generating a random key for KEK validation to perform node-to-node initialization.</p>
+    /// <p>Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.</p>
     pub fn kek_validation_type(&self) -> ::std::option::Option<&crate::types::As2805KekValidationType> {
         self.kek_validation_type.as_ref()
     }
@@ -55,18 +55,18 @@ impl GenerateAs2805KekValidationInputBuilder {
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_identifier
     }
-    /// <p>Parameter information for generating a random key for KEK validation to perform node-to-node initialization.</p>
+    /// <p>Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.</p>
     /// This field is required.
     pub fn kek_validation_type(mut self, input: crate::types::As2805KekValidationType) -> Self {
         self.kek_validation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Parameter information for generating a random key for KEK validation to perform node-to-node initialization.</p>
+    /// <p>Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.</p>
     pub fn set_kek_validation_type(mut self, input: ::std::option::Option<crate::types::As2805KekValidationType>) -> Self {
         self.kek_validation_type = input;
         self
     }
-    /// <p>Parameter information for generating a random key for KEK validation to perform node-to-node initialization.</p>
+    /// <p>Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.</p>
     pub fn get_kek_validation_type(&self) -> &::std::option::Option<crate::types::As2805KekValidationType> {
         &self.kek_validation_type
     }

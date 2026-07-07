@@ -2,10 +2,16 @@
 pub(crate) fn de_input_device_uhd_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InputDeviceUhdSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -86,13 +92,15 @@ where
                         "mediaconnectSettings" => {
                             builder = builder.set_mediaconnect_settings(
                                 crate::protocol_serde::shape_input_device_media_connect_settings::de_input_device_media_connect_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "audioChannelPairs" => {
                             builder = builder.set_audio_channel_pairs(
-                                    crate::protocol_serde::shape_list_of_input_device_uhd_audio_channel_pair_config::de_list_of_input_device_uhd_audio_channel_pair_config(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_input_device_uhd_audio_channel_pair_config::de_list_of_input_device_uhd_audio_channel_pair_config(tokens, _value, depth + 1)?
                                 );
                         }
                         "inputResolution" => {

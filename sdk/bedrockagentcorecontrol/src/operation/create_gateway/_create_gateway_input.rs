@@ -117,7 +117,7 @@ impl CreateGatewayInput {
 impl ::std::fmt::Debug for CreateGatewayInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGatewayInput");
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("role_arn", &self.role_arn);
@@ -218,7 +218,6 @@ impl CreateGatewayInputBuilder {
         &self.role_arn
     }
     /// <p>The protocol type for the gateway.</p>
-    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self
@@ -426,7 +425,7 @@ impl CreateGatewayInputBuilder {
 impl ::std::fmt::Debug for CreateGatewayInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGatewayInputBuilder");
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("role_arn", &self.role_arn);

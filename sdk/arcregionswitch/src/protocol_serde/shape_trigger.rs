@@ -33,11 +33,19 @@ pub fn ser_trigger(
 
 pub(crate) fn de_trigger(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Trigger, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::TriggerBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::TriggerBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "description" => {
@@ -47,6 +55,7 @@ pub(crate) fn de_trigger(
             "action" => builder.set_action(Some(decoder.string().map(|s| crate::types::WorkflowTargetAction::from(s.as_ref()))?)),
             "conditions" => builder.set_conditions(Some(crate::protocol_serde::shape_trigger_condition_list::de_trigger_condition_list(
                 decoder,
+                depth + 1,
             )?)),
             "minDelayMinutesBetweenExecutions" => builder.set_min_delay_minutes_between_executions(Some(decoder.integer()?)),
             _ => {
@@ -67,13 +76,13 @@ pub(crate) fn de_trigger(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

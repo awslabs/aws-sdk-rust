@@ -60,7 +60,11 @@ pub fn ser_node_group_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_node_group_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NodeGroupConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NodeGroupConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -122,7 +126,7 @@ pub fn de_node_group_configuration(
             s if s.matches("ReplicaAvailabilityZones") /* ReplicaAvailabilityZones com.amazonaws.elasticache#NodeGroupConfiguration$ReplicaAvailabilityZones */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_availability_zones_list::de_availability_zones_list(&mut tag)
+                        crate::protocol_serde::shape_availability_zones_list::de_availability_zones_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -145,7 +149,7 @@ pub fn de_node_group_configuration(
             s if s.matches("ReplicaOutpostArns") /* ReplicaOutpostArns com.amazonaws.elasticache#NodeGroupConfiguration$ReplicaOutpostArns */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_outpost_arns_list::de_outpost_arns_list(&mut tag)
+                        crate::protocol_serde::shape_outpost_arns_list::de_outpost_arns_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

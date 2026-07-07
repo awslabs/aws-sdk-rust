@@ -81,29 +81,38 @@ pub fn ser_cluster_instance_group_specification(
     if let Some(var_23) = &input.image_id {
         object.key("ImageId").string(var_23.as_str());
     }
-    if let Some(var_24) = &input.kubernetes_config {
+    if let Some(var_24) = &input.auto_patch_config {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("KubernetesConfig").start_object();
-        crate::protocol_serde::shape_cluster_kubernetes_config::ser_cluster_kubernetes_config(&mut object_25, var_24)?;
+        let mut object_25 = object.key("AutoPatchConfig").start_object();
+        crate::protocol_serde::shape_cluster_auto_patch_config::ser_cluster_auto_patch_config(&mut object_25, var_24)?;
         object_25.finish();
     }
-    if let Some(var_26) = &input.slurm_config {
-        #[allow(unused_mut)]
-        let mut object_27 = object.key("SlurmConfig").start_object();
-        crate::protocol_serde::shape_cluster_slurm_config::ser_cluster_slurm_config(&mut object_27, var_26)?;
-        object_27.finish();
+    if let Some(var_26) = &input.image_release_version {
+        object.key("ImageReleaseVersion").string(var_26.as_str());
     }
-    if let Some(var_28) = &input.capacity_requirements {
+    if let Some(var_27) = &input.kubernetes_config {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("CapacityRequirements").start_object();
-        crate::protocol_serde::shape_cluster_capacity_requirements::ser_cluster_capacity_requirements(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_28 = object.key("KubernetesConfig").start_object();
+        crate::protocol_serde::shape_cluster_kubernetes_config::ser_cluster_kubernetes_config(&mut object_28, var_27)?;
+        object_28.finish();
     }
-    if let Some(var_30) = &input.network_interface {
+    if let Some(var_29) = &input.slurm_config {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("NetworkInterface").start_object();
-        crate::protocol_serde::shape_cluster_network_interface::ser_cluster_network_interface(&mut object_31, var_30)?;
-        object_31.finish();
+        let mut object_30 = object.key("SlurmConfig").start_object();
+        crate::protocol_serde::shape_cluster_slurm_config::ser_cluster_slurm_config(&mut object_30, var_29)?;
+        object_30.finish();
+    }
+    if let Some(var_31) = &input.capacity_requirements {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("CapacityRequirements").start_object();
+        crate::protocol_serde::shape_cluster_capacity_requirements::ser_cluster_capacity_requirements(&mut object_32, var_31)?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.network_interface {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("NetworkInterface").start_object();
+        crate::protocol_serde::shape_cluster_network_interface::ser_cluster_network_interface(&mut object_34, var_33)?;
+        object_34.finish();
     }
     Ok(())
 }

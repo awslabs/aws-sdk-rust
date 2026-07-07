@@ -2,10 +2,16 @@
 pub(crate) fn de_pipeline<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Pipeline>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,7 +58,9 @@ where
                         }
                         "StatusReason" => {
                             builder = builder.set_status_reason(crate::protocol_serde::shape_pipeline_status_reason::de_pipeline_status_reason(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "PipelineConfigurationBody" => {
@@ -76,24 +84,31 @@ where
                         }
                         "IngestEndpointUrls" => {
                             builder = builder.set_ingest_endpoint_urls(
-                                crate::protocol_serde::shape_ingest_endpoint_urls_list::de_ingest_endpoint_urls_list(tokens, _value)?,
+                                crate::protocol_serde::shape_ingest_endpoint_urls_list::de_ingest_endpoint_urls_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "LogPublishingOptions" => {
                             builder = builder.set_log_publishing_options(
-                                crate::protocol_serde::shape_log_publishing_options::de_log_publishing_options(tokens, _value)?,
+                                crate::protocol_serde::shape_log_publishing_options::de_log_publishing_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "VpcEndpoints" => {
-                            builder =
-                                builder.set_vpc_endpoints(crate::protocol_serde::shape_vpc_endpoints_list::de_vpc_endpoints_list(tokens, _value)?);
+                            builder = builder.set_vpc_endpoints(crate::protocol_serde::shape_vpc_endpoints_list::de_vpc_endpoints_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "BufferOptions" => {
-                            builder = builder.set_buffer_options(crate::protocol_serde::shape_buffer_options::de_buffer_options(tokens, _value)?);
+                            builder = builder.set_buffer_options(crate::protocol_serde::shape_buffer_options::de_buffer_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "EncryptionAtRestOptions" => {
                             builder = builder.set_encryption_at_rest_options(
-                                crate::protocol_serde::shape_encryption_at_rest_options::de_encryption_at_rest_options(tokens, _value)?,
+                                crate::protocol_serde::shape_encryption_at_rest_options::de_encryption_at_rest_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "VpcEndpointService" => {
@@ -105,16 +120,18 @@ where
                         }
                         "ServiceVpcEndpoints" => {
                             builder = builder.set_service_vpc_endpoints(
-                                crate::protocol_serde::shape_service_vpc_endpoints_list::de_service_vpc_endpoints_list(tokens, _value)?,
+                                crate::protocol_serde::shape_service_vpc_endpoints_list::de_service_vpc_endpoints_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Destinations" => {
                             builder = builder.set_destinations(crate::protocol_serde::shape_pipeline_destination_list::de_pipeline_destination_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "PipelineRoleArn" => {
                             builder = builder.set_pipeline_role_arn(

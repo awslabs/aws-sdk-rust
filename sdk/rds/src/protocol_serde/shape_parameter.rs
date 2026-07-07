@@ -71,7 +71,11 @@ pub fn ser_parameter(
 #[allow(clippy::needless_question_mark)]
 pub fn de_parameter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Parameter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Parameter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -212,7 +216,7 @@ pub fn de_parameter(
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#Parameter$SupportedEngineModes */ =>  {
                 let var_36 =
                     Some(
-                        crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag)
+                        crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

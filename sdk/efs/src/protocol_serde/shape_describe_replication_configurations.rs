@@ -141,6 +141,8 @@ pub(crate) fn de_describe_replication_configurations(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -156,7 +158,9 @@ pub(crate) fn de_describe_replication_configurations(
                 "Replications" => {
                     builder = builder.set_replications(
                         crate::protocol_serde::shape_replication_configuration_descriptions::de_replication_configuration_descriptions(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

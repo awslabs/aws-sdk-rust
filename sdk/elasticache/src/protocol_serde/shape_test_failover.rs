@@ -205,6 +205,8 @@ pub fn de_test_failover(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("TestFailoverResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected TestFailoverResponse got {start_el:?}"
@@ -222,7 +224,7 @@ pub fn de_test_failover(
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#TestFailoverOutput$ReplicationGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_replication_group::de_replication_group(&mut tag)
+                        crate::protocol_serde::shape_replication_group::de_replication_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

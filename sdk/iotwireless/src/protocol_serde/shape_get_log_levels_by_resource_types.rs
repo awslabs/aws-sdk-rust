@@ -130,6 +130,8 @@ pub(crate) fn de_get_log_levels_by_resource_types(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,17 +146,21 @@ pub(crate) fn de_get_log_levels_by_resource_types(
                 }
                 "FuotaTaskLogOptions" => {
                     builder = builder.set_fuota_task_log_options(
-                        crate::protocol_serde::shape_fuota_task_log_option_list::de_fuota_task_log_option_list(tokens, _value)?,
+                        crate::protocol_serde::shape_fuota_task_log_option_list::de_fuota_task_log_option_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "WirelessDeviceLogOptions" => {
                     builder = builder.set_wireless_device_log_options(
-                        crate::protocol_serde::shape_wireless_device_log_option_list::de_wireless_device_log_option_list(tokens, _value)?,
+                        crate::protocol_serde::shape_wireless_device_log_option_list::de_wireless_device_log_option_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "WirelessGatewayLogOptions" => {
                     builder = builder.set_wireless_gateway_log_options(
-                        crate::protocol_serde::shape_wireless_gateway_log_option_list::de_wireless_gateway_log_option_list(tokens, _value)?,
+                        crate::protocol_serde::shape_wireless_gateway_log_option_list::de_wireless_gateway_log_option_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -37,6 +37,8 @@ pub struct DescribeVolumesModificationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
 }
 impl DescribeVolumesModificationsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -87,6 +89,10 @@ impl DescribeVolumesModificationsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
+    }
 }
 impl DescribeVolumesModificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumesModificationsInput`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsInput).
@@ -104,6 +110,7 @@ pub struct DescribeVolumesModificationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
 }
 impl DescribeVolumesModificationsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -260,6 +267,20 @@ impl DescribeVolumesModificationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
+    }
     /// Consumes the builder and constructs a [`DescribeVolumesModificationsInput`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsInput).
     pub fn build(
         self,
@@ -273,6 +294,7 @@ impl DescribeVolumesModificationsInputBuilder {
             filters: self.filters,
             next_token: self.next_token,
             max_results: self.max_results,
+            include_managed_resources: self.include_managed_resources,
         })
     }
 }

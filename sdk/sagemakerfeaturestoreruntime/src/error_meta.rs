@@ -85,6 +85,32 @@ impl From<crate::operation::batch_get_record::BatchGetRecordError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_write_record::BatchWriteRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_write_record::BatchWriteRecordError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_write_record::BatchWriteRecordError> for Error {
+    fn from(err: crate::operation::batch_write_record::BatchWriteRecordError) -> Self {
+        match err {
+            crate::operation::batch_write_record::BatchWriteRecordError::AccessForbidden(inner) => Error::AccessForbidden(inner),
+            crate::operation::batch_write_record::BatchWriteRecordError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::batch_write_record::BatchWriteRecordError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::batch_write_record::BatchWriteRecordError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::batch_write_record::BatchWriteRecordError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::batch_write_record::BatchWriteRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_record::DeleteRecordError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -133,6 +159,32 @@ impl From<crate::operation::get_record::GetRecordError> for Error {
             crate::operation::get_record::GetRecordError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
             crate::operation::get_record::GetRecordError::ValidationError(inner) => Error::ValidationError(inner),
             crate::operation::get_record::GetRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_records::ListRecordsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_records::ListRecordsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_records::ListRecordsError> for Error {
+    fn from(err: crate::operation::list_records::ListRecordsError) -> Self {
+        match err {
+            crate::operation::list_records::ListRecordsError::AccessForbidden(inner) => Error::AccessForbidden(inner),
+            crate::operation::list_records::ListRecordsError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::list_records::ListRecordsError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::list_records::ListRecordsError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::list_records::ListRecordsError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::list_records::ListRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

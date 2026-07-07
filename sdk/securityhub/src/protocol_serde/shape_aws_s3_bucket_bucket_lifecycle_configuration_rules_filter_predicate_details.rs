@@ -33,6 +33,7 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_d
 pub(crate) fn de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -40,6 +41,11 @@ pub(crate) fn de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predi
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Operands" => {
                             builder = builder.set_operands(
-                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_list::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_list::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Prefix" => {
@@ -63,7 +69,7 @@ where
                         }
                         "Tag" => {
                             builder = builder.set_tag(
-                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "Type" => {

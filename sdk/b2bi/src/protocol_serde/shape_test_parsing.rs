@@ -126,6 +126,8 @@ pub(crate) fn de_test_parsing(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -140,12 +142,15 @@ pub(crate) fn de_test_parsing(
                 }
                 "parsedSplitFileContents" => {
                     builder = builder.set_parsed_split_file_contents(
-                        crate::protocol_serde::shape_parsed_split_file_contents_list::de_parsed_split_file_contents_list(tokens, _value)?,
+                        crate::protocol_serde::shape_parsed_split_file_contents_list::de_parsed_split_file_contents_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "validationMessages" => {
-                    builder =
-                        builder.set_validation_messages(crate::protocol_serde::shape_validation_messages::de_validation_messages(tokens, _value)?);
+                    builder = builder.set_validation_messages(crate::protocol_serde::shape_validation_messages::de_validation_messages(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

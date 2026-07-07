@@ -6,6 +6,8 @@
 pub enum MedicalScribeInputStream {
     /// <p></p>
     AudioEvent(crate::types::MedicalScribeAudioEvent),
+    /// <p>An event containing raw binary audio data for the Medical Scribe stream. The audio is sent as a raw binary payload rather than as a base64-encoded value.</p>
+    BinaryAudioEvent(crate::types::MedicalScribeBinaryAudioEvent),
     /// <p></p>
     ConfigurationEvent(crate::types::MedicalScribeConfigurationEvent),
     /// <p></p>
@@ -33,6 +35,19 @@ impl MedicalScribeInputStream {
     /// Returns true if this is a [`AudioEvent`](crate::types::MedicalScribeInputStream::AudioEvent).
     pub fn is_audio_event(&self) -> bool {
         self.as_audio_event().is_ok()
+    }
+    /// Tries to convert the enum instance into [`BinaryAudioEvent`](crate::types::MedicalScribeInputStream::BinaryAudioEvent), extracting the inner [`MedicalScribeBinaryAudioEvent`](crate::types::MedicalScribeBinaryAudioEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_binary_audio_event(&self) -> ::std::result::Result<&crate::types::MedicalScribeBinaryAudioEvent, &Self> {
+        if let MedicalScribeInputStream::BinaryAudioEvent(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`BinaryAudioEvent`](crate::types::MedicalScribeInputStream::BinaryAudioEvent).
+    pub fn is_binary_audio_event(&self) -> bool {
+        self.as_binary_audio_event().is_ok()
     }
     /// Tries to convert the enum instance into [`ConfigurationEvent`](crate::types::MedicalScribeInputStream::ConfigurationEvent), extracting the inner [`MedicalScribeConfigurationEvent`](crate::types::MedicalScribeConfigurationEvent).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -2,10 +2,16 @@
 pub(crate) fn de_job_config_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobConfigInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,30 +37,33 @@ where
                     }
                     variant = match key.as_ref() {
                         "BandMathConfig" => Some(crate::types::JobConfigInput::BandMathConfig(
-                            crate::protocol_serde::shape_band_math_config_input::de_band_math_config_input(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BandMathConfig' cannot be null")
-                            })?,
-                        )),
-                        "ResamplingConfig" => Some(crate::types::JobConfigInput::ResamplingConfig(
-                            crate::protocol_serde::shape_resampling_config_input::de_resampling_config_input(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ResamplingConfig' cannot be null")
-                            })?,
-                        )),
-                        "TemporalStatisticsConfig" => Some(crate::types::JobConfigInput::TemporalStatisticsConfig(
-                            crate::protocol_serde::shape_temporal_statistics_config_input::de_temporal_statistics_config_input(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'TemporalStatisticsConfig' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "CloudRemovalConfig" => Some(crate::types::JobConfigInput::CloudRemovalConfig(
-                            crate::protocol_serde::shape_cloud_removal_config_input::de_cloud_removal_config_input(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CloudRemovalConfig' cannot be null"),
+                            crate::protocol_serde::shape_band_math_config_input::de_band_math_config_input(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BandMathConfig' cannot be null"),
                             )?,
                         )),
+                        "ResamplingConfig" => Some(crate::types::JobConfigInput::ResamplingConfig(
+                            crate::protocol_serde::shape_resampling_config_input::de_resampling_config_input(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ResamplingConfig' cannot be null"),
+                            )?,
+                        )),
+                        "TemporalStatisticsConfig" => Some(crate::types::JobConfigInput::TemporalStatisticsConfig(
+                            crate::protocol_serde::shape_temporal_statistics_config_input::de_temporal_statistics_config_input(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TemporalStatisticsConfig' cannot be null")
+                            })?,
+                        )),
+                        "CloudRemovalConfig" => Some(crate::types::JobConfigInput::CloudRemovalConfig(
+                            crate::protocol_serde::shape_cloud_removal_config_input::de_cloud_removal_config_input(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CloudRemovalConfig' cannot be null")
+                                })?,
+                        )),
                         "ZonalStatisticsConfig" => Some(crate::types::JobConfigInput::ZonalStatisticsConfig(
-                            crate::protocol_serde::shape_zonal_statistics_config_input::de_zonal_statistics_config_input(tokens, _value)?
+                            crate::protocol_serde::shape_zonal_statistics_config_input::de_zonal_statistics_config_input(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'ZonalStatisticsConfig' cannot be null",
@@ -62,23 +71,26 @@ where
                                 })?,
                         )),
                         "GeoMosaicConfig" => Some(crate::types::JobConfigInput::GeoMosaicConfig(
-                            crate::protocol_serde::shape_geo_mosaic_config_input::de_geo_mosaic_config_input(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'GeoMosaicConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_geo_mosaic_config_input::de_geo_mosaic_config_input(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'GeoMosaicConfig' cannot be null"),
+                            )?,
                         )),
                         "StackConfig" => Some(crate::types::JobConfigInput::StackConfig(
-                            crate::protocol_serde::shape_stack_config_input::de_stack_config_input(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_stack_config_input::de_stack_config_input(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StackConfig' cannot be null")
                             })?,
                         )),
                         "CloudMaskingConfig" => Some(crate::types::JobConfigInput::CloudMaskingConfig(
-                            crate::protocol_serde::shape_cloud_masking_config_input::de_cloud_masking_config_input(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CloudMaskingConfig' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_cloud_masking_config_input::de_cloud_masking_config_input(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CloudMaskingConfig' cannot be null")
+                                })?,
                         )),
                         "LandCoverSegmentationConfig" => Some(crate::types::JobConfigInput::LandCoverSegmentationConfig(
                             crate::protocol_serde::shape_land_cover_segmentation_config_input::de_land_cover_segmentation_config_input(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(

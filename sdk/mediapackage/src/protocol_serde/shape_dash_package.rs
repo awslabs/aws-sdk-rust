@@ -2,10 +2,16 @@
 pub(crate) fn de_dash_package<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DashPackage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adTriggers" => {
-                            builder = builder.set_ad_triggers(crate::protocol_serde::shape_ad_triggers::de_ad_triggers(tokens, _value)?);
+                            builder = builder.set_ad_triggers(crate::protocol_serde::shape_ad_triggers::de_ad_triggers(tokens, _value, depth + 1)?);
                         }
                         "adsOnDeliveryRestrictions" => {
                             builder = builder.set_ads_on_delivery_restrictions(
@@ -26,7 +32,11 @@ where
                             );
                         }
                         "encryption" => {
-                            builder = builder.set_encryption(crate::protocol_serde::shape_dash_encryption::de_dash_encryption(tokens, _value)?);
+                            builder = builder.set_encryption(crate::protocol_serde::shape_dash_encryption::de_dash_encryption(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "includeIframeOnlyStream" => {
                             builder =
@@ -62,7 +72,11 @@ where
                         }
                         "periodTriggers" => {
                             builder = builder.set_period_triggers(
-                                crate::protocol_serde::shape_list_of_period_triggers_element::de_list_of_period_triggers_element(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_period_triggers_element::de_list_of_period_triggers_element(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "profile" => {
@@ -87,8 +101,11 @@ where
                             );
                         }
                         "streamSelection" => {
-                            builder =
-                                builder.set_stream_selection(crate::protocol_serde::shape_stream_selection::de_stream_selection(tokens, _value)?);
+                            builder = builder.set_stream_selection(crate::protocol_serde::shape_stream_selection::de_stream_selection(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "suggestedPresentationDelaySeconds" => {
                             builder = builder.set_suggested_presentation_delay_seconds(

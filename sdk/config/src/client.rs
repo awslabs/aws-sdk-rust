@@ -179,6 +179,8 @@ mod delete_configuration_recorder;
 
 mod delete_conformance_pack;
 
+mod delete_connector;
+
 mod delete_delivery_channel;
 
 mod delete_evaluation_results;
@@ -277,6 +279,8 @@ mod get_conformance_pack_compliance_details;
 
 mod get_conformance_pack_compliance_summary;
 
+mod get_connector;
+
 mod get_custom_rule_policy;
 
 mod get_discovered_resource_counts;
@@ -299,6 +303,8 @@ mod list_configuration_recorders;
 
 mod list_conformance_pack_compliance_scores;
 
+mod list_connectors;
+
 mod list_discovered_resources;
 
 mod list_resource_evaluations;
@@ -316,6 +322,8 @@ mod put_configuration_aggregator;
 mod put_configuration_recorder;
 
 mod put_conformance_pack;
+
+mod put_connector;
 
 mod put_delivery_channel;
 
@@ -338,6 +346,8 @@ mod put_retention_configuration;
 mod put_service_linked_configuration_recorder;
 
 mod put_stored_query;
+
+mod put_third_party_service_linked_configuration_recorder;
 
 mod select_aggregate_resource_config;
 

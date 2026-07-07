@@ -53,6 +53,8 @@ pub fn de_create_capacity_reservation_by_splitting(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateCapacityReservationBySplittingResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateCapacityReservationBySplittingResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_create_capacity_reservation_by_splitting(
             s if s.matches("sourceCapacityReservation") /* SourceCapacityReservation com.amazonaws.ec2.synthetic#CreateCapacityReservationBySplittingOutput$SourceCapacityReservation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation::de_capacity_reservation(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation::de_capacity_reservation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +75,7 @@ pub fn de_create_capacity_reservation_by_splitting(
             s if s.matches("destinationCapacityReservation") /* DestinationCapacityReservation com.amazonaws.ec2.synthetic#CreateCapacityReservationBySplittingOutput$DestinationCapacityReservation */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_capacity_reservation::de_capacity_reservation(&mut tag)
+                        crate::protocol_serde::shape_capacity_reservation::de_capacity_reservation(&mut tag, depth + 1)
                         ?
                     )
                 ;

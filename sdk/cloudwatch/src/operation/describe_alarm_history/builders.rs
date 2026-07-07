@@ -149,17 +149,17 @@ impl DescribeAlarmHistoryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_alarm_types`](Self::set_alarm_types).
     ///
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms, composite alarms, or log alarms. If you omit this parameter, only metric alarms are returned.</p>
     pub fn alarm_types(mut self, input: crate::types::AlarmType) -> Self {
         self.inner = self.inner.alarm_types(input);
         self
     }
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms, composite alarms, or log alarms. If you omit this parameter, only metric alarms are returned.</p>
     pub fn set_alarm_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>) -> Self {
         self.inner = self.inner.set_alarm_types(input);
         self
     }
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms, composite alarms, or log alarms. If you omit this parameter, only metric alarms are returned.</p>
     pub fn get_alarm_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
         self.inner.get_alarm_types()
     }

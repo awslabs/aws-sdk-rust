@@ -14,6 +14,8 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_connector_v2::GetConnectorV2Output::last_updated_at): <p>ISO 8601 UTC timestamp for the time update the connectorV2 connectorStatus.</p>
     ///   - [`health(Option<HealthCheck>)`](crate::operation::get_connector_v2::GetConnectorV2Output::health): <p>The current health status for connectorV2</p>
     ///   - [`provider_detail(Option<ProviderDetail>)`](crate::operation::get_connector_v2::GetConnectorV2Output::provider_detail): <p>The third-party provider detail for a service configuration.</p>
+    ///   - [`enablement_status(Option<EnablementStatus>)`](crate::operation::get_connector_v2::GetConnectorV2Output::enablement_status): <p>The enablement status of the connector.</p>
+    ///   - [`enablement_status_reason(Option<String>)`](crate::operation::get_connector_v2::GetConnectorV2Output::enablement_status_reason): <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
     /// - On failure, responds with [`SdkError<GetConnectorV2Error>`](crate::operation::get_connector_v2::GetConnectorV2Error)
     pub fn get_connector_v2(&self) -> crate::operation::get_connector_v2::builders::GetConnectorV2FluentBuilder {
         crate::operation::get_connector_v2::builders::GetConnectorV2FluentBuilder::new(self.handle.clone())

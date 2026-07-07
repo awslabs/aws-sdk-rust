@@ -118,13 +118,15 @@ pub(crate) fn de_get_response_plan(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actions" => {
-                    builder = builder.set_actions(crate::protocol_serde::shape_actions_list::de_actions_list(tokens, _value)?);
+                    builder = builder.set_actions(crate::protocol_serde::shape_actions_list::de_actions_list(tokens, _value, depth + 1)?);
                 }
                 "arn" => {
                     builder = builder.set_arn(
@@ -134,7 +136,7 @@ pub(crate) fn de_get_response_plan(
                     );
                 }
                 "chatChannel" => {
-                    builder = builder.set_chat_channel(crate::protocol_serde::shape_chat_channel::de_chat_channel(tokens, _value)?);
+                    builder = builder.set_chat_channel(crate::protocol_serde::shape_chat_channel::de_chat_channel(tokens, _value, depth + 1)?);
                 }
                 "displayName" => {
                     builder = builder.set_display_name(
@@ -144,13 +146,17 @@ pub(crate) fn de_get_response_plan(
                     );
                 }
                 "engagements" => {
-                    builder = builder.set_engagements(crate::protocol_serde::shape_engagement_set::de_engagement_set(tokens, _value)?);
+                    builder = builder.set_engagements(crate::protocol_serde::shape_engagement_set::de_engagement_set(tokens, _value, depth + 1)?);
                 }
                 "incidentTemplate" => {
-                    builder = builder.set_incident_template(crate::protocol_serde::shape_incident_template::de_incident_template(tokens, _value)?);
+                    builder = builder.set_incident_template(crate::protocol_serde::shape_incident_template::de_incident_template(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "integrations" => {
-                    builder = builder.set_integrations(crate::protocol_serde::shape_integrations::de_integrations(tokens, _value)?);
+                    builder = builder.set_integrations(crate::protocol_serde::shape_integrations::de_integrations(tokens, _value, depth + 1)?);
                 }
                 "name" => {
                     builder = builder.set_name(

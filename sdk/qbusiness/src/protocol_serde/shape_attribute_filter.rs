@@ -81,10 +81,16 @@ pub fn ser_attribute_filter(
 pub(crate) fn de_attribute_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AttributeFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -95,42 +101,72 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "andAllFilters" => {
-                            builder =
-                                builder.set_and_all_filters(crate::protocol_serde::shape_attribute_filters::de_attribute_filters(tokens, _value)?);
+                            builder = builder.set_and_all_filters(crate::protocol_serde::shape_attribute_filters::de_attribute_filters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "orAllFilters" => {
-                            builder =
-                                builder.set_or_all_filters(crate::protocol_serde::shape_attribute_filters::de_attribute_filters(tokens, _value)?);
+                            builder = builder.set_or_all_filters(crate::protocol_serde::shape_attribute_filters::de_attribute_filters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "notFilter" => {
-                            builder = builder
-                                .set_not_filter(crate::protocol_serde::shape_attribute_filter::de_attribute_filter(tokens, _value)?.map(Box::new));
+                            builder = builder.set_not_filter(
+                                crate::protocol_serde::shape_attribute_filter::de_attribute_filter(tokens, _value, depth + 1)?.map(Box::new),
+                            );
                         }
                         "equalsTo" => {
-                            builder = builder.set_equals_to(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens, _value)?);
+                            builder = builder.set_equals_to(crate::protocol_serde::shape_document_attribute::de_document_attribute(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "containsAll" => {
-                            builder =
-                                builder.set_contains_all(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens, _value)?);
+                            builder = builder.set_contains_all(crate::protocol_serde::shape_document_attribute::de_document_attribute(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "containsAny" => {
-                            builder =
-                                builder.set_contains_any(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens, _value)?);
+                            builder = builder.set_contains_any(crate::protocol_serde::shape_document_attribute::de_document_attribute(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "greaterThan" => {
-                            builder =
-                                builder.set_greater_than(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens, _value)?);
+                            builder = builder.set_greater_than(crate::protocol_serde::shape_document_attribute::de_document_attribute(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "greaterThanOrEquals" => {
-                            builder = builder
-                                .set_greater_than_or_equals(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens, _value)?);
+                            builder = builder.set_greater_than_or_equals(crate::protocol_serde::shape_document_attribute::de_document_attribute(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lessThan" => {
-                            builder = builder.set_less_than(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens, _value)?);
+                            builder = builder.set_less_than(crate::protocol_serde::shape_document_attribute::de_document_attribute(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lessThanOrEquals" => {
-                            builder = builder
-                                .set_less_than_or_equals(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens, _value)?);
+                            builder = builder.set_less_than_or_equals(crate::protocol_serde::shape_document_attribute::de_document_attribute(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

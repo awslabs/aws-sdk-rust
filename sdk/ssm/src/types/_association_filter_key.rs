@@ -15,6 +15,7 @@
 ///     AssociationFilterKey::AssociationId => { /* ... */ },
 ///     AssociationFilterKey::AssociationName => { /* ... */ },
 ///     AssociationFilterKey::Status => { /* ... */ },
+///     AssociationFilterKey::CloudConnectorId => { /* ... */ },
 ///     AssociationFilterKey::InstanceId => { /* ... */ },
 ///     AssociationFilterKey::LastExecutedAfter => { /* ... */ },
 ///     AssociationFilterKey::LastExecutedBefore => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum AssociationFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     #[allow(missing_docs)] // documentation missing in model
+    CloudConnectorId,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceId,
     #[allow(missing_docs)] // documentation missing in model
     LastExecutedAfter,
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for AssociationFilterKey {
             "AssociationId" => AssociationFilterKey::AssociationId,
             "AssociationName" => AssociationFilterKey::AssociationName,
             "AssociationStatusName" => AssociationFilterKey::Status,
+            "CloudConnectorId" => AssociationFilterKey::CloudConnectorId,
             "InstanceId" => AssociationFilterKey::InstanceId,
             "LastExecutedAfter" => AssociationFilterKey::LastExecutedAfter,
             "LastExecutedBefore" => AssociationFilterKey::LastExecutedBefore,
@@ -97,6 +101,7 @@ impl AssociationFilterKey {
             AssociationFilterKey::AssociationId => "AssociationId",
             AssociationFilterKey::AssociationName => "AssociationName",
             AssociationFilterKey::Status => "AssociationStatusName",
+            AssociationFilterKey::CloudConnectorId => "CloudConnectorId",
             AssociationFilterKey::InstanceId => "InstanceId",
             AssociationFilterKey::LastExecutedAfter => "LastExecutedAfter",
             AssociationFilterKey::LastExecutedBefore => "LastExecutedBefore",
@@ -111,6 +116,7 @@ impl AssociationFilterKey {
             "AssociationId",
             "AssociationName",
             "AssociationStatusName",
+            "CloudConnectorId",
             "InstanceId",
             "LastExecutedAfter",
             "LastExecutedBefore",
@@ -142,6 +148,7 @@ impl ::std::fmt::Display for AssociationFilterKey {
             AssociationFilterKey::AssociationId => write!(f, "AssociationId"),
             AssociationFilterKey::AssociationName => write!(f, "AssociationName"),
             AssociationFilterKey::Status => write!(f, "AssociationStatusName"),
+            AssociationFilterKey::CloudConnectorId => write!(f, "CloudConnectorId"),
             AssociationFilterKey::InstanceId => write!(f, "InstanceId"),
             AssociationFilterKey::LastExecutedAfter => write!(f, "LastExecutedAfter"),
             AssociationFilterKey::LastExecutedBefore => write!(f, "LastExecutedBefore"),

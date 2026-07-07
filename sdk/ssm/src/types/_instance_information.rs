@@ -47,8 +47,10 @@ pub struct InstanceInformation {
     pub association_overview: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
     /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub source_location: ::std::option::Option<::std::string::String>,
 }
 impl InstanceInformation {
     /// <p>The managed node ID.</p>
@@ -134,9 +136,13 @@ impl InstanceInformation {
     pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn source_location(&self) -> ::std::option::Option<&str> {
+        self.source_location.as_deref()
     }
 }
 impl ::std::fmt::Debug for InstanceInformation {
@@ -166,6 +172,7 @@ impl ::std::fmt::Debug for InstanceInformation {
         formatter.field("association_overview", &self.association_overview);
         formatter.field("source_id", &self.source_id);
         formatter.field("source_type", &self.source_type);
+        formatter.field("source_location", &self.source_location);
         formatter.finish()
     }
 }
@@ -201,6 +208,7 @@ pub struct InstanceInformationBuilder {
     pub(crate) association_overview: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
+    pub(crate) source_location: ::std::option::Option<::std::string::String>,
 }
 impl InstanceInformationBuilder {
     /// <p>The managed node ID.</p>
@@ -492,19 +500,33 @@ impl InstanceInformationBuilder {
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_id
     }
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.source_type
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn source_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn set_source_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_location = input;
+        self
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn get_source_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location
     }
     /// Consumes the builder and constructs a [`InstanceInformation`](crate::types::InstanceInformation).
     pub fn build(self) -> crate::types::InstanceInformation {
@@ -530,6 +552,7 @@ impl InstanceInformationBuilder {
             association_overview: self.association_overview,
             source_id: self.source_id,
             source_type: self.source_type,
+            source_location: self.source_location,
         }
     }
 }
@@ -560,6 +583,7 @@ impl ::std::fmt::Debug for InstanceInformationBuilder {
         formatter.field("association_overview", &self.association_overview);
         formatter.field("source_id", &self.source_id);
         formatter.field("source_type", &self.source_type);
+        formatter.field("source_location", &self.source_location);
         formatter.finish()
     }
 }

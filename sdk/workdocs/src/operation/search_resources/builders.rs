@@ -114,17 +114,17 @@ impl SearchResourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
         crate::operation::search_resources::paginator::SearchResourcesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    /// <p>WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    /// <p>WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
-    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    /// <p>WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_authentication_token()
     }

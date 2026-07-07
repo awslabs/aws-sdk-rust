@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_analysis_packet_header(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AnalysisPacketHeader, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AnalysisPacketHeader::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_analysis_packet_header(
             s if s.matches("destinationAddressSet") /* DestinationAddresses com.amazonaws.ec2#AnalysisPacketHeader$DestinationAddresses */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ip_address_list::de_ip_address_list(&mut tag)
+                        crate::protocol_serde::shape_ip_address_list::de_ip_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_analysis_packet_header(
             s if s.matches("destinationPortRangeSet") /* DestinationPortRanges com.amazonaws.ec2#AnalysisPacketHeader$DestinationPortRanges */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_port_range_list::de_port_range_list(&mut tag)
+                        crate::protocol_serde::shape_port_range_list::de_port_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -43,7 +47,7 @@ pub fn de_analysis_packet_header(
             s if s.matches("sourceAddressSet") /* SourceAddresses com.amazonaws.ec2#AnalysisPacketHeader$SourceAddresses */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_ip_address_list::de_ip_address_list(&mut tag)
+                        crate::protocol_serde::shape_ip_address_list::de_ip_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -53,7 +57,7 @@ pub fn de_analysis_packet_header(
             s if s.matches("sourcePortRangeSet") /* SourcePortRanges com.amazonaws.ec2#AnalysisPacketHeader$SourcePortRanges */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_port_range_list::de_port_range_list(&mut tag)
+                        crate::protocol_serde::shape_port_range_list::de_port_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

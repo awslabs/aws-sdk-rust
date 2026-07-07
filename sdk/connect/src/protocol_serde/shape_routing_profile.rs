@@ -2,10 +2,16 @@
 pub(crate) fn de_routing_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RoutingProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,8 +57,11 @@ where
                             );
                         }
                         "MediaConcurrencies" => {
-                            builder = builder
-                                .set_media_concurrencies(crate::protocol_serde::shape_media_concurrencies::de_media_concurrencies(tokens, _value)?);
+                            builder = builder.set_media_concurrencies(crate::protocol_serde::shape_media_concurrencies::de_media_concurrencies(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DefaultOutboundQueueId" => {
                             builder = builder.set_default_outbound_queue_id(
@@ -62,7 +71,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "NumberOfAssociatedQueues" => {
                             builder = builder.set_number_of_associated_queues(
@@ -110,12 +119,12 @@ where
                         }
                         "AssociatedQueueIds" => {
                             builder = builder.set_associated_queue_ids(
-                                crate::protocol_serde::shape_associated_queue_id_list::de_associated_queue_id_list(tokens, _value)?,
+                                crate::protocol_serde::shape_associated_queue_id_list::de_associated_queue_id_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "AssociatedManualAssignmentQueueIds" => {
                             builder = builder.set_associated_manual_assignment_queue_ids(
-                                crate::protocol_serde::shape_associated_queue_id_list::de_associated_queue_id_list(tokens, _value)?,
+                                crate::protocol_serde::shape_associated_queue_id_list::de_associated_queue_id_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

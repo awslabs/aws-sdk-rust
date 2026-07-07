@@ -93,5 +93,11 @@ pub fn ser_update_stack_input_input(
         crate::protocol_serde::shape_content_redirection::ser_content_redirection(&mut object_30, var_29)?;
         object_30.finish();
     }
+    if let Some(var_31) = &input.agent_access_config {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("AgentAccessConfig").start_object();
+        crate::protocol_serde::shape_agent_access_config_for_update::ser_agent_access_config_for_update(&mut object_32, var_31)?;
+        object_32.finish();
+    }
     Ok(())
 }

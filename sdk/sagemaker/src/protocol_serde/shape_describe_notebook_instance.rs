@@ -56,6 +56,8 @@ pub(crate) fn de_describe_notebook_instance(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -118,7 +120,11 @@ pub(crate) fn de_describe_notebook_instance(
                     );
                 }
                 "SecurityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens, _value)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -176,7 +182,11 @@ pub(crate) fn de_describe_notebook_instance(
                 }
                 "AcceleratorTypes" => {
                     builder = builder.set_accelerator_types(
-                        crate::protocol_serde::shape_notebook_instance_accelerator_types::de_notebook_instance_accelerator_types(tokens, _value)?,
+                        crate::protocol_serde::shape_notebook_instance_accelerator_types::de_notebook_instance_accelerator_types(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "DefaultCodeRepository" => {
@@ -189,7 +199,9 @@ pub(crate) fn de_describe_notebook_instance(
                 "AdditionalCodeRepositories" => {
                     builder = builder.set_additional_code_repositories(
                         crate::protocol_serde::shape_additional_code_repository_names_or_urls::de_additional_code_repository_names_or_urls(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -210,7 +222,9 @@ pub(crate) fn de_describe_notebook_instance(
                 "InstanceMetadataServiceConfiguration" => {
                     builder = builder.set_instance_metadata_service_configuration(
                         crate::protocol_serde::shape_instance_metadata_service_configuration::de_instance_metadata_service_configuration(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

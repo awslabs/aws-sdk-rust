@@ -2,10 +2,16 @@
 pub(crate) fn de_report<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Report>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -71,19 +77,28 @@ where
                         }
                         "exportConfig" => {
                             builder = builder.set_export_config(crate::protocol_serde::shape_report_export_config::de_report_export_config(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "truncated" => {
                             builder = builder.set_truncated(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "testSummary" => {
-                            builder =
-                                builder.set_test_summary(crate::protocol_serde::shape_test_report_summary::de_test_report_summary(tokens, _value)?);
+                            builder = builder.set_test_summary(crate::protocol_serde::shape_test_report_summary::de_test_report_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "codeCoverageSummary" => {
                             builder = builder.set_code_coverage_summary(
-                                crate::protocol_serde::shape_code_coverage_report_summary::de_code_coverage_report_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_code_coverage_report_summary::de_code_coverage_report_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

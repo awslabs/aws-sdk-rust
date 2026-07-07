@@ -28,10 +28,16 @@ pub fn ser_managed_endpoint_configuration(
 pub(crate) fn de_managed_endpoint_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedEndpointConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,15 +63,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "autoScalingGroups" => Some(crate::types::ManagedEndpointConfiguration::AutoScalingGroups(
-                            crate::protocol_serde::shape_auto_scaling_groups_configuration::de_auto_scaling_groups_configuration(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'autoScalingGroups' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_auto_scaling_groups_configuration::de_auto_scaling_groups_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'autoScalingGroups' cannot be null")
+                            })?,
                         )),
                         "eksEndpoints" => Some(crate::types::ManagedEndpointConfiguration::EksEndpoints(
-                            crate::protocol_serde::shape_eks_endpoints_configuration::de_eks_endpoints_configuration(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eksEndpoints' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_eks_endpoints_configuration::de_eks_endpoints_configuration(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eksEndpoints' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

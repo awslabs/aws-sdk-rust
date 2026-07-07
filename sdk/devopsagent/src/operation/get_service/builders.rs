@@ -22,7 +22,7 @@ impl crate::operation::get_service::builders::GetServiceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetService`.
 ///
-/// Retrieves given service by it's unique identifier
+/// <p>Retrieves given service by it's unique identifier</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetServiceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the given service.
+    /// <p>The unique identifier of the given service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_id(input.into());
         self
     }
-    /// The unique identifier of the given service.
+    /// <p>The unique identifier of the given service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_id(input);
         self
     }
-    /// The unique identifier of the given service.
+    /// <p>The unique identifier of the given service.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_id()
     }

@@ -6,5 +6,8 @@ pub fn ser_kek_validation_request(
     {
         object.key("DeriveKeyAlgorithm").string(input.derive_key_algorithm.as_str());
     }
+    if let Some(var_1) = &input.random_key_max_length {
+        object.key("RandomKeyMaxLength").string(var_1.as_str());
+    }
     Ok(())
 }

@@ -65,6 +65,18 @@ pub(crate) fn get_conformance_pack_compliance_details_output_output_correct_erro
     builder
 }
 
+pub(crate) fn get_connector_output_output_correct_errors(
+    mut builder: crate::operation::get_connector::builders::GetConnectorOutputBuilder,
+) -> crate::operation::get_connector::builders::GetConnectorOutputBuilder {
+    if builder.connector.is_none() {
+        builder.connector = {
+            let builder = crate::types::builders::ConnectorBuilder::default();
+            crate::serde_util::connector_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_configuration_recorders_output_output_correct_errors(
     mut builder: crate::operation::list_configuration_recorders::builders::ListConfigurationRecordersOutputBuilder,
 ) -> crate::operation::list_configuration_recorders::builders::ListConfigurationRecordersOutputBuilder {
@@ -79,6 +91,55 @@ pub(crate) fn list_conformance_pack_compliance_scores_output_output_correct_erro
 ) -> crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresOutputBuilder {
     if builder.conformance_pack_compliance_scores.is_none() {
         builder.conformance_pack_compliance_scores = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_connectors_output_output_correct_errors(
+    mut builder: crate::operation::list_connectors::builders::ListConnectorsOutputBuilder,
+) -> crate::operation::list_connectors::builders::ListConnectorsOutputBuilder {
+    if builder.connector_summaries.is_none() {
+        builder.connector_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_connector_output_output_correct_errors(
+    mut builder: crate::operation::put_connector::builders::PutConnectorOutputBuilder,
+) -> crate::operation::put_connector::builders::PutConnectorOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_third_party_service_linked_configuration_recorder_output_output_correct_errors(
+    mut builder: crate::operation::put_third_party_service_linked_configuration_recorder::builders::PutThirdPartyServiceLinkedConfigurationRecorderOutputBuilder,
+) -> crate::operation::put_third_party_service_linked_configuration_recorder::builders::PutThirdPartyServiceLinkedConfigurationRecorderOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn connector_correct_errors(mut builder: crate::types::builders::ConnectorBuilder) -> crate::types::builders::ConnectorBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.connector_configuration.is_none() {
+        builder.connector_configuration = {
+            let builder = crate::types::builders::ConnectorConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -237,6 +298,27 @@ pub(crate) fn conformance_pack_status_detail_correct_errors(
     }
     if builder.last_update_requested_time.is_none() {
         builder.last_update_requested_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn connector_summary_correct_errors(
+    mut builder: crate::types::builders::ConnectorSummaryBuilder,
+) -> crate::types::builders::ConnectorSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider.is_none() {
+        builder.provider = "no value was set".parse::<crate::types::Provider>().ok()
+    }
+    if builder.tenant_identifier.is_none() {
+        builder.tenant_identifier = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -408,6 +490,18 @@ pub(crate) fn resource_key_correct_errors(mut builder: crate::types::builders::R
     builder
 }
 
+pub(crate) fn scope_configuration_correct_errors(
+    mut builder: crate::types::builders::ScopeConfigurationBuilder,
+) -> crate::types::builders::ScopeConfigurationBuilder {
+    if builder.scope_type.is_none() {
+        builder.scope_type = Some(Default::default())
+    }
+    if builder.all_regions.is_none() {
+        builder.all_regions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn stored_query_metadata_correct_errors(
     mut builder: crate::types::builders::StoredQueryMetadataBuilder,
 ) -> crate::types::builders::StoredQueryMetadataBuilder {
@@ -428,6 +522,18 @@ pub(crate) fn account_aggregation_source_correct_errors(
 ) -> crate::types::builders::AccountAggregationSourceBuilder {
     if builder.account_ids.is_none() {
         builder.account_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn azure_connector_configuration_correct_errors(
+    mut builder: crate::types::builders::AzureConnectorConfigurationBuilder,
+) -> crate::types::builders::AzureConnectorConfigurationBuilder {
+    if builder.tenant_identifier.is_none() {
+        builder.tenant_identifier = Some(Default::default())
+    }
+    if builder.client_identifier.is_none() {
+        builder.client_identifier = Some(Default::default())
     }
     builder
 }

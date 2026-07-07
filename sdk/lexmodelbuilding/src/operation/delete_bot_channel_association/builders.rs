@@ -24,6 +24,7 @@ impl crate::operation::delete_bot_channel_association::builders::DeleteBotChanne
 ///
 /// <p>Deletes the association between an Amazon Lex bot and a messaging platform.</p>
 /// <p>This operation requires permission for the <code>lex:DeleteBotChannelAssociation</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBotChannelAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

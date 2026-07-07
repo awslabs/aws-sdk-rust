@@ -162,6 +162,8 @@ pub(crate) fn de_get_event_prediction(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -169,17 +171,21 @@ pub(crate) fn de_get_event_prediction(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "modelScores" => {
                     builder = builder.set_model_scores(crate::protocol_serde::shape_list_of_model_scores::de_list_of_model_scores(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ruleResults" => {
                     builder = builder.set_rule_results(crate::protocol_serde::shape_list_of_rule_results::de_list_of_rule_results(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "externalModelOutputs" => {
                     builder = builder.set_external_model_outputs(
-                        crate::protocol_serde::shape_list_of_external_model_outputs::de_list_of_external_model_outputs(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_external_model_outputs::de_list_of_external_model_outputs(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

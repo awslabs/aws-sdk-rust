@@ -112,6 +112,8 @@ pub(crate) fn de_get_product_rest_endpoint_page(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -119,7 +121,11 @@ pub(crate) fn de_get_product_rest_endpoint_page(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "displayContent" => {
                     builder = builder.set_display_content(
-                        crate::protocol_serde::shape_endpoint_display_content_response::de_endpoint_display_content_response(tokens, _value)?,
+                        crate::protocol_serde::shape_endpoint_display_content_response::de_endpoint_display_content_response(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "lastModified" => {
@@ -151,7 +157,7 @@ pub(crate) fn de_get_product_rest_endpoint_page(
                 }
                 "restEndpointIdentifier" => {
                     builder = builder.set_rest_endpoint_identifier(
-                        crate::protocol_serde::shape_rest_endpoint_identifier::de_rest_endpoint_identifier(tokens, _value)?,
+                        crate::protocol_serde::shape_rest_endpoint_identifier::de_rest_endpoint_identifier(tokens, _value, depth + 1)?,
                     );
                 }
                 "status" => {
@@ -162,7 +168,11 @@ pub(crate) fn de_get_product_rest_endpoint_page(
                     );
                 }
                 "statusException" => {
-                    builder = builder.set_status_exception(crate::protocol_serde::shape_status_exception::de_status_exception(tokens, _value)?);
+                    builder = builder.set_status_exception(crate::protocol_serde::shape_status_exception::de_status_exception(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "tryItState" => {
                     builder = builder.set_try_it_state(

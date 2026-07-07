@@ -19,5 +19,11 @@ pub fn ser_inference_component_container_specification(
         }
         object_4.finish();
     }
+    if let Some(var_7) = &input.container_metrics_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("ContainerMetricsConfig").start_object();
+        crate::protocol_serde::shape_container_metrics_config::ser_container_metrics_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

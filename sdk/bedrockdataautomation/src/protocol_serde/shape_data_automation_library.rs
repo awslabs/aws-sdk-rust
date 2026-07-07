@@ -2,10 +2,16 @@
 pub(crate) fn de_data_automation_library<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataAutomationLibrary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,9 @@ where
                         }
                         "entityTypes" => {
                             builder = builder.set_entity_types(crate::protocol_serde::shape_entity_type_info_list::de_entity_type_info_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "kmsKeyId" => {
@@ -63,7 +71,7 @@ where
                         }
                         "kmsEncryptionContext" => {
                             builder = builder.set_kms_encryption_context(
-                                crate::protocol_serde::shape_kms_encryption_context::de_kms_encryption_context(tokens, _value)?,
+                                crate::protocol_serde::shape_kms_encryption_context::de_kms_encryption_context(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

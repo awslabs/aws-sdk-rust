@@ -57,6 +57,98 @@ pub fn de_send_durable_execution_callback_failure_http_error(
                 tmp
             })
         }
+        "KMSAccessDeniedException" => {
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::KmsAccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsAccessDeniedExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_json_err(_response_body, output)
+                            .map_err(
+                                crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::unhandled,
+                            )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KMSDisabledException" => {
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::KmsDisabledException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsDisabledExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::KmsInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
+                            .map_err(
+                                crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::unhandled,
+                            )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KMSNotFoundException" => {
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::KmsNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceException" => {
             crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::ServiceException({
                 #[allow(unused_mut)]

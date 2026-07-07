@@ -95,6 +95,8 @@ pub use crate::types::_update_capability_configuration::UpdateCapabilityConfigur
 
 pub use crate::types::_update_access_config_request::UpdateAccessConfigRequest;
 
+pub use crate::types::_rollback_config::RollbackConfig;
+
 pub use crate::types::_update_labels_payload::UpdateLabelsPayload;
 
 pub use crate::types::_update_taints_payload::UpdateTaintsPayload;
@@ -106,6 +108,8 @@ pub use crate::types::_encryption_config::EncryptionConfig;
 pub use crate::types::_update_status::UpdateStatus;
 
 pub use crate::types::_update_type::UpdateType;
+
+pub use crate::types::_cancellation::Cancellation;
 
 pub use crate::types::_addon_pod_identity_associations::AddonPodIdentityAssociations;
 
@@ -125,11 +129,15 @@ pub use crate::types::_capability_configuration_response::CapabilityConfiguratio
 
 pub use crate::types::_capability_health::CapabilityHealth;
 
+pub use crate::types::_control_plane_egress_mode_type::ControlPlaneEgressModeType;
+
 pub use crate::types::_ip_family::IpFamily;
 
 pub use crate::types::_elastic_load_balancing::ElasticLoadBalancing;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequest;
+
+pub use crate::types::_etcd_placement_request::EtcdPlacementRequest;
 
 pub use crate::types::_authentication_mode::AuthenticationMode;
 
@@ -221,6 +229,8 @@ pub use crate::types::_update_param::UpdateParam;
 
 pub use crate::types::_error_detail::ErrorDetail;
 
+pub use crate::types::_cancellation_status::CancellationStatus;
+
 pub use crate::types::_argo_cd_aws_idc_config_request::ArgoCdAwsIdcConfigRequest;
 
 pub use crate::types::_argo_cd_network_access_config_request::ArgoCdNetworkAccessConfigRequest;
@@ -229,6 +239,8 @@ pub use crate::types::_argo_cd_config_response::ArgoCdConfigResponse;
 
 pub use crate::types::_log_setup::LogSetup;
 
+pub use crate::types::_spread_level::SpreadLevel;
+
 pub use crate::types::_remote_node_network::RemoteNodeNetwork;
 
 pub use crate::types::_remote_pod_network::RemotePodNetwork;
@@ -236,6 +248,8 @@ pub use crate::types::_remote_pod_network::RemotePodNetwork;
 pub use crate::types::_oidc::Oidc;
 
 pub use crate::types::_control_plane_placement_response::ControlPlanePlacementResponse;
+
+pub use crate::types::_etcd_placement_response::EtcdPlacementResponse;
 
 pub use crate::types::_license::License;
 
@@ -363,6 +377,10 @@ mod _auto_scaling_group;
 
 mod _block_storage;
 
+mod _cancellation;
+
+mod _cancellation_status;
+
 mod _capability;
 
 mod _capability_configuration_request;
@@ -419,6 +437,8 @@ mod _connector_config_request;
 
 mod _connector_config_response;
 
+mod _control_plane_egress_mode_type;
+
 mod _control_plane_placement_request;
 
 mod _control_plane_placement_response;
@@ -446,6 +466,10 @@ mod _encryption_config;
 mod _error_code;
 
 mod _error_detail;
+
+mod _etcd_placement_request;
+
+mod _etcd_placement_response;
 
 mod _fargate_profile;
 
@@ -552,6 +576,10 @@ mod _remote_pod_network;
 mod _repair_action;
 
 mod _resolve_conflicts;
+
+mod _rollback_config;
+
+mod _spread_level;
 
 mod _sso_identity;
 

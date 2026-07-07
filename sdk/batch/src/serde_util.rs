@@ -421,9 +421,6 @@ pub(crate) fn compute_resource_correct_errors(
     if builder.maxv_cpus.is_none() {
         builder.maxv_cpus = Some(Default::default())
     }
-    if builder.subnets.is_none() {
-        builder.subnets = Some(Default::default())
-    }
     builder
 }
 

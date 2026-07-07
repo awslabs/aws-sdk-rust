@@ -801,6 +801,37 @@ impl From<crate::operation::delete_prompt::DeletePromptError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
+        match err {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError, R>>
     for Error
@@ -1290,6 +1321,34 @@ impl From<crate::operation::get_prompt::GetPromptError> for Error {
             crate::operation::get_prompt::GetPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_prompt::GetPromptError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_prompt::GetPromptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1832,6 +1891,35 @@ impl From<crate::operation::prepare_flow::PrepareFlowError> for Error {
             crate::operation::prepare_flow::PrepareFlowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::prepare_flow::PrepareFlowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::prepare_flow::PrepareFlowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

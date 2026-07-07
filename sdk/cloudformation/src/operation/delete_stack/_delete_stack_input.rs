@@ -24,6 +24,8 @@ pub struct DeleteStackInput {
     /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
     /// </ul>
     pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
 }
 impl DeleteStackInput {
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
@@ -58,6 +60,10 @@ impl DeleteStackInput {
     pub fn deletion_mode(&self) -> ::std::option::Option<&crate::types::DeletionMode> {
         self.deletion_mode.as_ref()
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
 }
 impl DeleteStackInput {
     /// Creates a new builder-style object to manufacture [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
@@ -75,6 +81,7 @@ pub struct DeleteStackInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
 }
 impl DeleteStackInputBuilder {
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
@@ -184,6 +191,20 @@ impl DeleteStackInputBuilder {
     pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
         &self.deletion_mode
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.deployment_config = input;
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
+    }
     /// Consumes the builder and constructs a [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_stack::DeleteStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stack::DeleteStackInput {
@@ -192,6 +213,7 @@ impl DeleteStackInputBuilder {
             role_arn: self.role_arn,
             client_request_token: self.client_request_token,
             deletion_mode: self.deletion_mode,
+            deployment_config: self.deployment_config,
         })
     }
 }

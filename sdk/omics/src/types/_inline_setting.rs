@@ -18,6 +18,8 @@ pub struct InlineSetting {
     pub output_bucket_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Per-run AWS tags. Merged with <code>defaultRunSetting.runTags</code>; values in this object take precedence when keys overlap.</p>
     pub run_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl InlineSetting {
     /// <p>A customer-provided unique identifier for this run configuration within the batch. After submission, use <code>ListRunsInBatch</code> to map each <code>runSettingId</code> to the HealthOmics-generated <code>runId</code>.</p>
@@ -49,6 +51,10 @@ impl InlineSetting {
     pub fn run_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.run_tags.as_ref()
     }
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.engine_settings.as_ref()
+    }
 }
 impl InlineSetting {
     /// Creates a new builder-style object to manufacture [`InlineSetting`](crate::types::InlineSetting).
@@ -68,6 +74,7 @@ pub struct InlineSettingBuilder {
     pub(crate) parameters: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) output_bucket_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) run_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl InlineSettingBuilder {
     /// <p>A customer-provided unique identifier for this run configuration within the batch. After submission, use <code>ListRunsInBatch</code> to map each <code>runSettingId</code> to the HealthOmics-generated <code>runId</code>.</p>
@@ -175,6 +182,20 @@ impl InlineSettingBuilder {
     pub fn get_run_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.run_tags
     }
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.engine_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.engine_settings = input;
+        self
+    }
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.engine_settings
+    }
     /// Consumes the builder and constructs a [`InlineSetting`](crate::types::InlineSetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`run_setting_id`](crate::types::builders::InlineSettingBuilder::run_setting_id)
@@ -192,6 +213,7 @@ impl InlineSettingBuilder {
             parameters: self.parameters,
             output_bucket_owner_id: self.output_bucket_owner_id,
             run_tags: self.run_tags,
+            engine_settings: self.engine_settings,
         })
     }
 }

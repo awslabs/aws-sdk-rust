@@ -2,10 +2,16 @@
 pub(crate) fn de_read_authentication_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReadAuthenticationMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,7 +38,9 @@ where
                     variant = match key.as_ref() {
                         "AuthorizationCodeGrantMetadata" => Some(crate::types::ReadAuthenticationMetadata::AuthorizationCodeGrantMetadata(
                             crate::protocol_serde::shape_read_authorization_code_grant_metadata::de_read_authorization_code_grant_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -42,7 +50,9 @@ where
                         )),
                         "ClientCredentialsGrantMetadata" => Some(crate::types::ReadAuthenticationMetadata::ClientCredentialsGrantMetadata(
                             crate::protocol_serde::shape_read_client_credentials_grant_metadata::de_read_client_credentials_grant_metadata(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -51,23 +61,29 @@ where
                             })?,
                         )),
                         "BasicAuthConnectionMetadata" => Some(crate::types::ReadAuthenticationMetadata::BasicAuthConnectionMetadata(
-                            crate::protocol_serde::shape_read_basic_auth_connection_metadata::de_read_basic_auth_connection_metadata(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'BasicAuthConnectionMetadata' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_read_basic_auth_connection_metadata::de_read_basic_auth_connection_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'BasicAuthConnectionMetadata' cannot be null",
+                                )
+                            })?,
                         )),
                         "ApiKeyConnectionMetadata" => Some(crate::types::ReadAuthenticationMetadata::ApiKeyConnectionMetadata(
-                            crate::protocol_serde::shape_read_api_key_connection_metadata::de_read_api_key_connection_metadata(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'ApiKeyConnectionMetadata' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_read_api_key_connection_metadata::de_read_api_key_connection_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ApiKeyConnectionMetadata' cannot be null")
+                            })?,
                         )),
                         "NoneConnectionMetadata" => Some(crate::types::ReadAuthenticationMetadata::NoneConnectionMetadata(
-                            crate::protocol_serde::shape_read_none_connection_metadata::de_read_none_connection_metadata(tokens, _value)?
+                            crate::protocol_serde::shape_read_none_connection_metadata::de_read_none_connection_metadata(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'NoneConnectionMetadata' cannot be null",
@@ -75,13 +91,12 @@ where
                                 })?,
                         )),
                         "IamConnectionMetadata" => Some(crate::types::ReadAuthenticationMetadata::IamConnectionMetadata(
-                            crate::protocol_serde::shape_read_iam_connection_metadata::de_read_iam_connection_metadata(tokens, _value)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_read_iam_connection_metadata::de_read_iam_connection_metadata(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'IamConnectionMetadata' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

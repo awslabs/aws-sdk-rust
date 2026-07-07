@@ -21,7 +21,11 @@ pub fn ser_cloud_watch_destination(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cloud_watch_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CloudWatchDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CloudWatchDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -29,7 +33,7 @@ pub fn de_cloud_watch_destination(
             s if s.matches("DimensionConfigurations") /* DimensionConfigurations com.amazonaws.ses#CloudWatchDestination$DimensionConfigurations */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_cloud_watch_dimension_configurations::de_cloud_watch_dimension_configurations(&mut tag)
+                        crate::protocol_serde::shape_cloud_watch_dimension_configurations::de_cloud_watch_dimension_configurations(&mut tag, depth + 1)
                         ?
                     )
                 ;

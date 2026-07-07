@@ -16,8 +16,10 @@ pub struct CustomJwtAuthorizerConfiguration {
     pub custom_claims: ::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>>,
     /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
-    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom JWT authorizer configuration.</p>
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    /// <p>The configuration that restricts which workloads in the request's identity chain are allowed to invoke the target, identified by their hosting environments and workload identities. At launch, this is supported only for AgentCore Runtime targets, and the allowed workloads are AgentCore Gateways.</p>
+    pub allowed_workload_configuration: ::std::option::Option<crate::types::AllowedWorkloadConfiguration>,
 }
 impl CustomJwtAuthorizerConfiguration {
     /// <p>This URL is used to fetch OpenID Connect configuration or authorization server metadata for validating incoming tokens.</p>
@@ -53,11 +55,15 @@ impl CustomJwtAuthorizerConfiguration {
     pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
         self.private_endpoint.as_ref()
     }
-    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom JWT authorizer configuration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_endpoint_overrides.is_none()`.
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration that restricts which workloads in the request's identity chain are allowed to invoke the target, identified by their hosting environments and workload identities. At launch, this is supported only for AgentCore Runtime targets, and the allowed workloads are AgentCore Gateways.</p>
+    pub fn allowed_workload_configuration(&self) -> ::std::option::Option<&crate::types::AllowedWorkloadConfiguration> {
+        self.allowed_workload_configuration.as_ref()
     }
 }
 impl CustomJwtAuthorizerConfiguration {
@@ -78,6 +84,7 @@ pub struct CustomJwtAuthorizerConfigurationBuilder {
     pub(crate) custom_claims: ::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    pub(crate) allowed_workload_configuration: ::std::option::Option<crate::types::AllowedWorkloadConfiguration>,
 }
 impl CustomJwtAuthorizerConfigurationBuilder {
     /// <p>This URL is used to fetch OpenID Connect configuration or authorization server metadata for validating incoming tokens.</p>
@@ -193,21 +200,35 @@ impl CustomJwtAuthorizerConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_private_endpoint_overrides`](Self::set_private_endpoint_overrides).
     ///
-    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom JWT authorizer configuration.</p>
     pub fn private_endpoint_overrides(mut self, input: crate::types::PrivateEndpointOverride) -> Self {
         let mut v = self.private_endpoint_overrides.unwrap_or_default();
         v.push(input);
         self.private_endpoint_overrides = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom JWT authorizer configuration.</p>
     pub fn set_private_endpoint_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>) -> Self {
         self.private_endpoint_overrides = input;
         self
     }
-    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom JWT authorizer configuration.</p>
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
+    }
+    /// <p>The configuration that restricts which workloads in the request's identity chain are allowed to invoke the target, identified by their hosting environments and workload identities. At launch, this is supported only for AgentCore Runtime targets, and the allowed workloads are AgentCore Gateways.</p>
+    pub fn allowed_workload_configuration(mut self, input: crate::types::AllowedWorkloadConfiguration) -> Self {
+        self.allowed_workload_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that restricts which workloads in the request's identity chain are allowed to invoke the target, identified by their hosting environments and workload identities. At launch, this is supported only for AgentCore Runtime targets, and the allowed workloads are AgentCore Gateways.</p>
+    pub fn set_allowed_workload_configuration(mut self, input: ::std::option::Option<crate::types::AllowedWorkloadConfiguration>) -> Self {
+        self.allowed_workload_configuration = input;
+        self
+    }
+    /// <p>The configuration that restricts which workloads in the request's identity chain are allowed to invoke the target, identified by their hosting environments and workload identities. At launch, this is supported only for AgentCore Runtime targets, and the allowed workloads are AgentCore Gateways.</p>
+    pub fn get_allowed_workload_configuration(&self) -> &::std::option::Option<crate::types::AllowedWorkloadConfiguration> {
+        &self.allowed_workload_configuration
     }
     /// Consumes the builder and constructs a [`CustomJwtAuthorizerConfiguration`](crate::types::CustomJwtAuthorizerConfiguration).
     /// This method will fail if any of the following fields are not set:
@@ -226,6 +247,7 @@ impl CustomJwtAuthorizerConfigurationBuilder {
             custom_claims: self.custom_claims,
             private_endpoint: self.private_endpoint,
             private_endpoint_overrides: self.private_endpoint_overrides,
+            allowed_workload_configuration: self.allowed_workload_configuration,
         })
     }
 }

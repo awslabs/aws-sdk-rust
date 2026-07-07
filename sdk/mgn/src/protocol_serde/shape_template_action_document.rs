@@ -2,10 +2,16 @@
 pub(crate) fn de_template_action_document<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TemplateActionDocument>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,7 +72,9 @@ where
                         }
                         "parameters" => {
                             builder = builder.set_parameters(crate::protocol_serde::shape_ssm_document_parameters::de_ssm_document_parameters(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "operatingSystem" => {
@@ -78,7 +86,11 @@ where
                         }
                         "externalParameters" => {
                             builder = builder.set_external_parameters(
-                                crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "description" => {

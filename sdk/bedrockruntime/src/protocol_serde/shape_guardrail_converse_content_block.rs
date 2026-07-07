@@ -28,10 +28,16 @@ pub fn ser_guardrail_converse_content_block(
 pub(crate) fn de_guardrail_converse_content_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GuardrailConverseContentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,12 +63,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "text" => Some(crate::types::GuardrailConverseContentBlock::Text(
-                            crate::protocol_serde::shape_guardrail_converse_text_block::de_guardrail_converse_text_block(tokens, _value)?
+                            crate::protocol_serde::shape_guardrail_converse_text_block::de_guardrail_converse_text_block(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "image" => Some(crate::types::GuardrailConverseContentBlock::Image(
-                            crate::protocol_serde::shape_guardrail_converse_image_block::de_guardrail_converse_image_block(tokens, _value)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
+                            crate::protocol_serde::shape_guardrail_converse_image_block::de_guardrail_converse_image_block(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -20,5 +20,7 @@ pub fn de_function_list(inp: &[u8]) -> std::result::Result<crate::types::Functio
             "invalid root, expected FunctionList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_function_list::de_function_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_function_list::de_function_list(&mut decoder, depth + 1)
 }

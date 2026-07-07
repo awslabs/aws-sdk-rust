@@ -10,7 +10,7 @@ pub struct MetricV2 {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the threshold for service level metrics.</p>
     pub threshold: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>,
-    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Amazon Connect Arn or a UUID</p>
+    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Connect Customer Arn or a UUID</p>
     pub metric_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the filters to be used when returning data.</p>
     pub metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>,
@@ -26,7 +26,7 @@ impl MetricV2 {
     pub fn threshold(&self) -> &[crate::types::ThresholdV2] {
         self.threshold.as_deref().unwrap_or_default()
     }
-    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Amazon Connect Arn or a UUID</p>
+    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Connect Customer Arn or a UUID</p>
     pub fn metric_id(&self) -> ::std::option::Option<&str> {
         self.metric_id.as_deref()
     }
@@ -88,17 +88,17 @@ impl MetricV2Builder {
     pub fn get_threshold(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>> {
         &self.threshold
     }
-    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Amazon Connect Arn or a UUID</p>
+    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Connect Customer Arn or a UUID</p>
     pub fn metric_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Amazon Connect Arn or a UUID</p>
+    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Connect Customer Arn or a UUID</p>
     pub fn set_metric_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_id = input;
         self
     }
-    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Amazon Connect Arn or a UUID</p>
+    /// <p>Historical metrics or custom metrics can be referenced via this field. This field is a valid Connect Customer Arn or a UUID</p>
     pub fn get_metric_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_id
     }

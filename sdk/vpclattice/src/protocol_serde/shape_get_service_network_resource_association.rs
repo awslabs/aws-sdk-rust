@@ -155,6 +155,8 @@ pub(crate) fn de_get_service_network_resource_association(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -181,7 +183,7 @@ pub(crate) fn de_get_service_network_resource_association(
                     );
                 }
                 "dnsEntry" => {
-                    builder = builder.set_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens, _value)?);
+                    builder = builder.set_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens, _value, depth + 1)?);
                 }
                 "domainVerificationStatus" => {
                     builder = builder.set_domain_verification_status(
@@ -224,7 +226,7 @@ pub(crate) fn de_get_service_network_resource_association(
                     builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "privateDnsEntry" => {
-                    builder = builder.set_private_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens, _value)?);
+                    builder = builder.set_private_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens, _value, depth + 1)?);
                 }
                 "resourceConfigurationArn" => {
                     builder = builder.set_resource_configuration_arn(

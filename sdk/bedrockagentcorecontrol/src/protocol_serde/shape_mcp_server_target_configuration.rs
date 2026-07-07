@@ -2,10 +2,16 @@
 pub(crate) fn de_mcp_server_target_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::McpServerTargetConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,20 +30,24 @@ where
                         }
                         "mcpToolSchema" => {
                             builder = builder.set_mcp_tool_schema(
-                                crate::protocol_serde::shape_mcp_tool_schema_configuration::de_mcp_tool_schema_configuration(tokens, _value)?,
-                            );
-                        }
-                        "resourcePriority" => {
-                            builder = builder.set_resource_priority(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
+                                crate::protocol_serde::shape_mcp_tool_schema_configuration::de_mcp_tool_schema_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "listingMode" => {
                             builder = builder.set_listing_mode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ListingMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "resourcePriority" => {
+                            builder = builder.set_resource_priority(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
@@ -75,14 +85,14 @@ pub fn ser_mcp_server_target_configuration(
         crate::protocol_serde::shape_mcp_tool_schema_configuration::ser_mcp_tool_schema_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.resource_priority {
+    if let Some(var_3) = &input.listing_mode {
+        object.key("listingMode").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.resource_priority {
         object.key("resourcePriority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
-    }
-    if let Some(var_4) = &input.listing_mode {
-        object.key("listingMode").string(var_4.as_str());
     }
     Ok(())
 }

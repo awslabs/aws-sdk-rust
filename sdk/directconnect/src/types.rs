@@ -5,6 +5,8 @@ pub use crate::types::_connection_state::ConnectionState;
 
 pub use crate::types::_has_logical_redundancy::HasLogicalRedundancy;
 
+pub use crate::types::_rate_limiter_status::RateLimiterStatus;
+
 pub use crate::types::_new_private_virtual_interface_allocation::NewPrivateVirtualInterfaceAllocation;
 
 pub use crate::types::_address_family::AddressFamily;
@@ -158,6 +160,8 @@ mod _new_transit_virtual_interface;
 mod _new_transit_virtual_interface_allocation;
 
 mod _nni_partner_type;
+
+mod _rate_limiter_status;
 
 mod _resource_tag;
 

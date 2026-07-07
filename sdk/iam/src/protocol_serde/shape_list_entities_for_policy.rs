@@ -102,6 +102,8 @@ pub fn de_list_entities_for_policy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListEntitiesForPolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListEntitiesForPolicyResponse got {start_el:?}"
@@ -119,7 +121,7 @@ pub fn de_list_entities_for_policy(
             s if s.matches("PolicyGroups") /* PolicyGroups com.amazonaws.iam.synthetic#ListEntitiesForPolicyOutput$PolicyGroups */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_policy_group_list_type::de_policy_group_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_group_list_type::de_policy_group_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -129,7 +131,7 @@ pub fn de_list_entities_for_policy(
             s if s.matches("PolicyUsers") /* PolicyUsers com.amazonaws.iam.synthetic#ListEntitiesForPolicyOutput$PolicyUsers */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_policy_user_list_type::de_policy_user_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_user_list_type::de_policy_user_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -139,7 +141,7 @@ pub fn de_list_entities_for_policy(
             s if s.matches("PolicyRoles") /* PolicyRoles com.amazonaws.iam.synthetic#ListEntitiesForPolicyOutput$PolicyRoles */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_policy_role_list_type::de_policy_role_list_type(&mut tag)
+                        crate::protocol_serde::shape_policy_role_list_type::de_policy_role_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

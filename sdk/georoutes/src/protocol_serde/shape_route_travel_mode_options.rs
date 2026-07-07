@@ -27,5 +27,17 @@ pub fn ser_route_travel_mode_options(
         crate::protocol_serde::shape_route_truck_options::ser_route_truck_options(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.intermodal {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("Intermodal").start_object();
+        crate::protocol_serde::shape_route_intermodal_options::ser_route_intermodal_options(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.transit {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("Transit").start_object();
+        crate::protocol_serde::shape_route_transit_options::ser_route_transit_options(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

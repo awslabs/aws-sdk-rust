@@ -22,7 +22,7 @@ impl crate::operation::batch_get_findings::builders::BatchGetFindingsInputBuilde
 }
 /// Fluent builder constructing a request to `BatchGetFindings`.
 ///
-/// Retrieves multiple findings in a single request
+/// <p>Retrieves information about one or more security findings in an agent space.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,31 +113,31 @@ impl BatchGetFindingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
     ///
-    /// List of finding IDs to retrieve
+    /// <p>The list of finding identifiers to retrieve.</p>
     pub fn finding_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_ids(input.into());
         self
     }
-    /// List of finding IDs to retrieve
+    /// <p>The list of finding identifiers to retrieve.</p>
     pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_ids(input);
         self
     }
-    /// List of finding IDs to retrieve
+    /// <p>The list of finding identifiers to retrieve.</p>
     pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_ids()
     }
-    /// ID of the agent space where the findings exist
+    /// <p>The unique identifier of the agent space that contains the findings.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// ID of the agent space where the findings exist
+    /// <p>The unique identifier of the agent space that contains the findings.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// ID of the agent space where the findings exist
+    /// <p>The unique identifier of the agent space that contains the findings.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }

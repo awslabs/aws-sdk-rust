@@ -123,6 +123,8 @@ pub(crate) fn de_get_guardrail(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -130,7 +132,11 @@ pub(crate) fn de_get_guardrail(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "automatedReasoningPolicy" => {
                     builder = builder.set_automated_reasoning_policy(
-                        crate::protocol_serde::shape_guardrail_automated_reasoning_policy::de_guardrail_automated_reasoning_policy(tokens, _value)?,
+                        crate::protocol_serde::shape_guardrail_automated_reasoning_policy::de_guardrail_automated_reasoning_policy(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "blockedInputMessaging" => {
@@ -149,12 +155,18 @@ pub(crate) fn de_get_guardrail(
                 }
                 "contentPolicy" => {
                     builder = builder.set_content_policy(crate::protocol_serde::shape_guardrail_content_policy::de_guardrail_content_policy(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "contextualGroundingPolicy" => {
                     builder = builder.set_contextual_grounding_policy(
-                        crate::protocol_serde::shape_guardrail_contextual_grounding_policy::de_guardrail_contextual_grounding_policy(tokens, _value)?,
+                        crate::protocol_serde::shape_guardrail_contextual_grounding_policy::de_guardrail_contextual_grounding_policy(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "createdAt" => {
@@ -165,7 +177,7 @@ pub(crate) fn de_get_guardrail(
                 }
                 "crossRegionDetails" => {
                     builder = builder.set_cross_region_details(
-                        crate::protocol_serde::shape_guardrail_cross_region_details::de_guardrail_cross_region_details(tokens, _value)?,
+                        crate::protocol_serde::shape_guardrail_cross_region_details::de_guardrail_cross_region_details(tokens, _value, depth + 1)?,
                     );
                 }
                 "description" => {
@@ -177,7 +189,11 @@ pub(crate) fn de_get_guardrail(
                 }
                 "failureRecommendations" => {
                     builder = builder.set_failure_recommendations(
-                        crate::protocol_serde::shape_guardrail_failure_recommendations::de_guardrail_failure_recommendations(tokens, _value)?,
+                        crate::protocol_serde::shape_guardrail_failure_recommendations::de_guardrail_failure_recommendations(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "guardrailArn" => {
@@ -211,7 +227,9 @@ pub(crate) fn de_get_guardrail(
                 "sensitiveInformationPolicy" => {
                     builder = builder.set_sensitive_information_policy(
                         crate::protocol_serde::shape_guardrail_sensitive_information_policy::de_guardrail_sensitive_information_policy(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -224,12 +242,16 @@ pub(crate) fn de_get_guardrail(
                 }
                 "statusReasons" => {
                     builder = builder.set_status_reasons(crate::protocol_serde::shape_guardrail_status_reasons::de_guardrail_status_reasons(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "topicPolicy" => {
                     builder = builder.set_topic_policy(crate::protocol_serde::shape_guardrail_topic_policy::de_guardrail_topic_policy(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "updatedAt" => {
@@ -247,7 +269,9 @@ pub(crate) fn de_get_guardrail(
                 }
                 "wordPolicy" => {
                     builder = builder.set_word_policy(crate::protocol_serde::shape_guardrail_word_policy::de_guardrail_word_policy(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

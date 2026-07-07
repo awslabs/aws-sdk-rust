@@ -189,6 +189,8 @@ mod describe_configuration;
 
 mod describe_configuration_revision;
 
+mod describe_shared_resources;
+
 mod describe_user;
 
 mod list_brokers;

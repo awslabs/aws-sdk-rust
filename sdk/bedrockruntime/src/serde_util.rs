@@ -74,6 +74,24 @@ pub(crate) fn get_async_invoke_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invoke_guardrail_checks_output_output_correct_errors(
+    mut builder: crate::operation::invoke_guardrail_checks::builders::InvokeGuardrailChecksOutputBuilder,
+) -> crate::operation::invoke_guardrail_checks::builders::InvokeGuardrailChecksOutputBuilder {
+    if builder.results.is_none() {
+        builder.results = {
+            let builder = crate::types::builders::GuardrailChecksResultsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.usage.is_none() {
+        builder.usage = {
+            let builder = crate::types::builders::GuardrailChecksUsageResultsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn invoke_model_output_output_correct_errors(
     mut builder: crate::operation::invoke_model::builders::InvokeModelOutputBuilder,
 ) -> crate::operation::invoke_model::builders::InvokeModelOutputBuilder {
@@ -180,6 +198,60 @@ pub(crate) fn async_invoke_summary_correct_errors(
     }
     if builder.output_data_config.is_none() {
         builder.output_data_config = Some(crate::types::AsyncInvokeOutputDataConfig::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_content_filter_result_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksContentFilterResultBuilder,
+) -> crate::types::builders::GuardrailChecksContentFilterResultBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_content_filter_usage_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksContentFilterUsageBuilder,
+) -> crate::types::builders::GuardrailChecksContentFilterUsageBuilder {
+    if builder.text_units.is_none() {
+        builder.text_units = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_prompt_attack_result_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksPromptAttackResultBuilder,
+) -> crate::types::builders::GuardrailChecksPromptAttackResultBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_prompt_attack_usage_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksPromptAttackUsageBuilder,
+) -> crate::types::builders::GuardrailChecksPromptAttackUsageBuilder {
+    if builder.text_units.is_none() {
+        builder.text_units = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_sensitive_information_result_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksSensitiveInformationResultBuilder,
+) -> crate::types::builders::GuardrailChecksSensitiveInformationResultBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_sensitive_information_usage_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksSensitiveInformationUsageBuilder,
+) -> crate::types::builders::GuardrailChecksSensitiveInformationUsageBuilder {
+    if builder.text_units.is_none() {
+        builder.text_units = Some(Default::default())
     }
     builder
 }
@@ -320,6 +392,56 @@ pub(crate) fn converse_stream_metrics_correct_errors(
 ) -> crate::types::builders::ConverseStreamMetricsBuilder {
     if builder.latency_ms.is_none() {
         builder.latency_ms = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_content_filter_result_entry_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksContentFilterResultEntryBuilder,
+) -> crate::types::builders::GuardrailChecksContentFilterResultEntryBuilder {
+    if builder.category.is_none() {
+        builder.category = "no value was set".parse::<crate::types::GuardrailChecksContentFilterCategory>().ok()
+    }
+    if builder.severity_score.is_none() {
+        builder.severity_score = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_prompt_attack_result_entry_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksPromptAttackResultEntryBuilder,
+) -> crate::types::builders::GuardrailChecksPromptAttackResultEntryBuilder {
+    if builder.category.is_none() {
+        builder.category = "no value was set".parse::<crate::types::GuardrailChecksPromptAttackCategory>().ok()
+    }
+    if builder.severity_score.is_none() {
+        builder.severity_score = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_checks_sensitive_information_result_entry_correct_errors(
+    mut builder: crate::types::builders::GuardrailChecksSensitiveInformationResultEntryBuilder,
+) -> crate::types::builders::GuardrailChecksSensitiveInformationResultEntryBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set"
+            .parse::<crate::types::GuardrailChecksSensitiveInformationEntityType>()
+            .ok()
+    }
+    if builder.confidence_score.is_none() {
+        builder.confidence_score = Some(Default::default())
+    }
+    if builder.begin_offset.is_none() {
+        builder.begin_offset = Some(Default::default())
+    }
+    if builder.end_offset.is_none() {
+        builder.end_offset = Some(Default::default())
+    }
+    if builder.message_index.is_none() {
+        builder.message_index = Some(Default::default())
+    }
+    if builder.content_index.is_none() {
+        builder.content_index = Some(Default::default())
     }
     builder
 }

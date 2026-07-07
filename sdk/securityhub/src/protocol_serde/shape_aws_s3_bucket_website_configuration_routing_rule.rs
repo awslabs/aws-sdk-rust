@@ -21,10 +21,16 @@ pub fn ser_aws_s3_bucket_website_configuration_routing_rule(
 pub(crate) fn de_aws_s3_bucket_website_configuration_routing_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,12 +42,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Condition" => {
                             builder = builder.set_condition(
-                                    crate::protocol_serde::shape_aws_s3_bucket_website_configuration_routing_rule_condition::de_aws_s3_bucket_website_configuration_routing_rule_condition(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_website_configuration_routing_rule_condition::de_aws_s3_bucket_website_configuration_routing_rule_condition(tokens, _value, depth + 1)?
                                 );
                         }
                         "Redirect" => {
                             builder = builder.set_redirect(
-                                    crate::protocol_serde::shape_aws_s3_bucket_website_configuration_routing_rule_redirect::de_aws_s3_bucket_website_configuration_routing_rule_redirect(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_website_configuration_routing_rule_redirect::de_aws_s3_bucket_website_configuration_routing_rule_redirect(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

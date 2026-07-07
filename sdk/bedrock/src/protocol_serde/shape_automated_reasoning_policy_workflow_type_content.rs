@@ -28,6 +28,12 @@ pub fn ser_automated_reasoning_policy_workflow_type_content(
             crate::protocol_serde::shape_automated_reasoning_policy_generate_fidelity_report_content::ser_automated_reasoning_policy_generate_fidelity_report_content(&mut object_5, inner)?;
             object_5.finish();
         }
+        crate::types::AutomatedReasoningPolicyWorkflowTypeContent::IterativeRefinementContent(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_4.key("iterativeRefinementContent").start_object();
+            crate::protocol_serde::shape_automated_reasoning_policy_iterative_refinement_content::ser_automated_reasoning_policy_iterative_refinement_content(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::AutomatedReasoningPolicyWorkflowTypeContent::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AutomatedReasoningPolicyWorkflowTypeContent",

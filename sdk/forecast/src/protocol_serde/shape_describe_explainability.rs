@@ -92,6 +92,8 @@ pub(crate) fn de_describe_explainability(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -120,17 +122,19 @@ pub(crate) fn de_describe_explainability(
                 }
                 "ExplainabilityConfig" => {
                     builder = builder.set_explainability_config(crate::protocol_serde::shape_explainability_config::de_explainability_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "EnableVisualization" => {
                     builder = builder.set_enable_visualization(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "DataSource" => {
-                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
+                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value, depth + 1)?);
                 }
                 "Schema" => {
-                    builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens, _value)?);
+                    builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens, _value, depth + 1)?);
                 }
                 "StartDateTime" => {
                     builder = builder.set_start_date_time(

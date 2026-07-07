@@ -143,13 +143,15 @@ pub(crate) fn de_scan(
 ) -> ::std::result::Result<crate::operation::scan::builders::ScanOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Items" => {
-                    builder = builder.set_items(crate::protocol_serde::shape_item_list::de_item_list(tokens, _value)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_item_list::de_item_list(tokens, _value, depth + 1)?);
                 }
                 "Count" => {
                     builder = builder.set_count(
@@ -166,10 +168,14 @@ pub(crate) fn de_scan(
                     );
                 }
                 "LastEvaluatedKey" => {
-                    builder = builder.set_last_evaluated_key(crate::protocol_serde::shape_key::de_key(tokens, _value)?);
+                    builder = builder.set_last_evaluated_key(crate::protocol_serde::shape_key::de_key(tokens, _value, depth + 1)?);
                 }
                 "ConsumedCapacity" => {
-                    builder = builder.set_consumed_capacity(crate::protocol_serde::shape_consumed_capacity::de_consumed_capacity(tokens, _value)?);
+                    builder = builder.set_consumed_capacity(crate::protocol_serde::shape_consumed_capacity::de_consumed_capacity(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

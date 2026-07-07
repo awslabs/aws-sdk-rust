@@ -142,6 +142,8 @@ pub(crate) fn de_describe_application_provider(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,11 +164,13 @@ pub(crate) fn de_describe_application_provider(
                     );
                 }
                 "DisplayData" => {
-                    builder = builder.set_display_data(crate::protocol_serde::shape_display_data::de_display_data(tokens, _value)?);
+                    builder = builder.set_display_data(crate::protocol_serde::shape_display_data::de_display_data(tokens, _value, depth + 1)?);
                 }
                 "ResourceServerConfig" => {
                     builder = builder.set_resource_server_config(crate::protocol_serde::shape_resource_server_config::de_resource_server_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

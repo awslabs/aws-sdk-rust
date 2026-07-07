@@ -40,6 +40,10 @@ pub struct EvaluationForm {
     pub target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
     /// <p>Configuration for language settings of this evaluation form.</p>
     pub language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
+    /// <p>The status of the most recent validation run for this evaluation form. Valid values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>FAILED</code>.</p>
+    pub latest_validation_status: ::std::option::Option<crate::types::EvaluationFormValidationStatus>,
+    /// <p>The timestamp when the most recent validation was started for this evaluation form.</p>
+    pub last_validation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EvaluationForm {
     /// <p>The unique identifier for the evaluation form.</p>
@@ -120,6 +124,14 @@ impl EvaluationForm {
     pub fn language_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormLanguageConfiguration> {
         self.language_configuration.as_ref()
     }
+    /// <p>The status of the most recent validation run for this evaluation form. Valid values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>FAILED</code>.</p>
+    pub fn latest_validation_status(&self) -> ::std::option::Option<&crate::types::EvaluationFormValidationStatus> {
+        self.latest_validation_status.as_ref()
+    }
+    /// <p>The timestamp when the most recent validation was started for this evaluation form.</p>
+    pub fn last_validation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_validation_time.as_ref()
+    }
 }
 impl EvaluationForm {
     /// Creates a new builder-style object to manufacture [`EvaluationForm`](crate::types::EvaluationForm).
@@ -150,6 +162,8 @@ pub struct EvaluationFormBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
     pub(crate) language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
+    pub(crate) latest_validation_status: ::std::option::Option<crate::types::EvaluationFormValidationStatus>,
+    pub(crate) last_validation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EvaluationFormBuilder {
     /// <p>The unique identifier for the evaluation form.</p>
@@ -429,6 +443,34 @@ impl EvaluationFormBuilder {
     pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageConfiguration> {
         &self.language_configuration
     }
+    /// <p>The status of the most recent validation run for this evaluation form. Valid values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>FAILED</code>.</p>
+    pub fn latest_validation_status(mut self, input: crate::types::EvaluationFormValidationStatus) -> Self {
+        self.latest_validation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the most recent validation run for this evaluation form. Valid values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>FAILED</code>.</p>
+    pub fn set_latest_validation_status(mut self, input: ::std::option::Option<crate::types::EvaluationFormValidationStatus>) -> Self {
+        self.latest_validation_status = input;
+        self
+    }
+    /// <p>The status of the most recent validation run for this evaluation form. Valid values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>FAILED</code>.</p>
+    pub fn get_latest_validation_status(&self) -> &::std::option::Option<crate::types::EvaluationFormValidationStatus> {
+        &self.latest_validation_status
+    }
+    /// <p>The timestamp when the most recent validation was started for this evaluation form.</p>
+    pub fn last_validation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_validation_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the most recent validation was started for this evaluation form.</p>
+    pub fn set_last_validation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_validation_time = input;
+        self
+    }
+    /// <p>The timestamp when the most recent validation was started for this evaluation form.</p>
+    pub fn get_last_validation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_validation_time
+    }
     /// Consumes the builder and constructs a [`EvaluationForm`](crate::types::EvaluationForm).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_form_id`](crate::types::builders::EvaluationFormBuilder::evaluation_form_id)
@@ -505,6 +547,8 @@ impl EvaluationFormBuilder {
             tags: self.tags,
             target_configuration: self.target_configuration,
             language_configuration: self.language_configuration,
+            latest_validation_status: self.latest_validation_status,
+            last_validation_time: self.last_validation_time,
         })
     }
 }

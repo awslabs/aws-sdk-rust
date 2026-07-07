@@ -8,6 +8,8 @@ pub struct ProviderSummary {
     pub provider_name: ::std::option::Option<crate::types::ConnectorProviderName>,
     /// <p>The status for the connectorV2.</p>
     pub connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
+    /// <p>The third-party provider detail for a service configuration.</p>
+    pub provider_configuration: ::std::option::Option<crate::types::ProviderDetail>,
 }
 impl ProviderSummary {
     /// <p>The name of the provider.</p>
@@ -17,6 +19,10 @@ impl ProviderSummary {
     /// <p>The status for the connectorV2.</p>
     pub fn connector_status(&self) -> ::std::option::Option<&crate::types::ConnectorStatus> {
         self.connector_status.as_ref()
+    }
+    /// <p>The third-party provider detail for a service configuration.</p>
+    pub fn provider_configuration(&self) -> ::std::option::Option<&crate::types::ProviderDetail> {
+        self.provider_configuration.as_ref()
     }
 }
 impl ProviderSummary {
@@ -32,6 +38,7 @@ impl ProviderSummary {
 pub struct ProviderSummaryBuilder {
     pub(crate) provider_name: ::std::option::Option<crate::types::ConnectorProviderName>,
     pub(crate) connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
+    pub(crate) provider_configuration: ::std::option::Option<crate::types::ProviderDetail>,
 }
 impl ProviderSummaryBuilder {
     /// <p>The name of the provider.</p>
@@ -62,11 +69,26 @@ impl ProviderSummaryBuilder {
     pub fn get_connector_status(&self) -> &::std::option::Option<crate::types::ConnectorStatus> {
         &self.connector_status
     }
+    /// <p>The third-party provider detail for a service configuration.</p>
+    pub fn provider_configuration(mut self, input: crate::types::ProviderDetail) -> Self {
+        self.provider_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The third-party provider detail for a service configuration.</p>
+    pub fn set_provider_configuration(mut self, input: ::std::option::Option<crate::types::ProviderDetail>) -> Self {
+        self.provider_configuration = input;
+        self
+    }
+    /// <p>The third-party provider detail for a service configuration.</p>
+    pub fn get_provider_configuration(&self) -> &::std::option::Option<crate::types::ProviderDetail> {
+        &self.provider_configuration
+    }
     /// Consumes the builder and constructs a [`ProviderSummary`](crate::types::ProviderSummary).
     pub fn build(self) -> crate::types::ProviderSummary {
         crate::types::ProviderSummary {
             provider_name: self.provider_name,
             connector_status: self.connector_status,
+            provider_configuration: self.provider_configuration,
         }
     }
 }

@@ -9,6 +9,26 @@ pub(crate) fn reflens_list_linked_whats_app_business_accounts_output_output_next
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_whats_app_flow_assets_output_output_next_token(
+    input: &crate::operation::list_whats_app_flow_assets::ListWhatsAppFlowAssetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_whats_app_flows_output_output_next_token(
+    input: &crate::operation::list_whats_app_flows::ListWhatsAppFlowsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_whats_app_message_templates_output_output_next_token(
     input: &crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -33,6 +53,20 @@ pub(crate) fn lens_list_linked_whats_app_business_accounts_output_output_linked_
     input: crate::operation::list_linked_whats_app_business_accounts::ListLinkedWhatsAppBusinessAccountsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LinkedWhatsAppBusinessAccountSummary>> {
     let input = input.linked_accounts?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_whats_app_flow_assets_output_output_flow_assets(
+    input: crate::operation::list_whats_app_flow_assets::ListWhatsAppFlowAssetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetaFlowAsset>> {
+    let input = input.flow_assets;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_whats_app_flows_output_output_flows(
+    input: crate::operation::list_whats_app_flows::ListWhatsAppFlowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetaFlowSummary>> {
+    let input = input.flows;
     ::std::option::Option::Some(input)
 }
 

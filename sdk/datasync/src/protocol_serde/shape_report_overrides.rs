@@ -33,10 +33,16 @@ pub fn ser_report_overrides(
 pub(crate) fn de_report_overrides<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReportOverrides>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -47,16 +53,32 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Transferred" => {
-                            builder = builder.set_transferred(crate::protocol_serde::shape_report_override::de_report_override(tokens, _value)?);
+                            builder = builder.set_transferred(crate::protocol_serde::shape_report_override::de_report_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Verified" => {
-                            builder = builder.set_verified(crate::protocol_serde::shape_report_override::de_report_override(tokens, _value)?);
+                            builder = builder.set_verified(crate::protocol_serde::shape_report_override::de_report_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Deleted" => {
-                            builder = builder.set_deleted(crate::protocol_serde::shape_report_override::de_report_override(tokens, _value)?);
+                            builder = builder.set_deleted(crate::protocol_serde::shape_report_override::de_report_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Skipped" => {
-                            builder = builder.set_skipped(crate::protocol_serde::shape_report_override::de_report_override(tokens, _value)?);
+                            builder = builder.set_skipped(crate::protocol_serde::shape_report_override::de_report_override(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

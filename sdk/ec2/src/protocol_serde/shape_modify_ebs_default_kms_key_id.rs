@@ -51,6 +51,8 @@ pub fn de_modify_ebs_default_kms_key_id(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyEbsDefaultKmsKeyIdResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyEbsDefaultKmsKeyIdResponse got {start_el:?}"

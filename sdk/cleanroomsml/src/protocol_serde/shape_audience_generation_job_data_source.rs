@@ -2,10 +2,16 @@
 pub(crate) fn de_audience_generation_job_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AudienceGenerationJobDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dataSource" => {
-                            builder = builder.set_data_source(crate::protocol_serde::shape_s3_config_map::de_s3_config_map(tokens, _value)?);
+                            builder =
+                                builder.set_data_source(crate::protocol_serde::shape_s3_config_map::de_s3_config_map(tokens, _value, depth + 1)?);
                         }
                         "roleArn" => {
                             builder = builder.set_role_arn(
@@ -27,12 +34,16 @@ where
                         }
                         "sqlParameters" => {
                             builder = builder.set_sql_parameters(
-                                crate::protocol_serde::shape_protected_query_sql_parameters::de_protected_query_sql_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_protected_query_sql_parameters::de_protected_query_sql_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "sqlComputeConfiguration" => {
                             builder = builder.set_sql_compute_configuration(
-                                crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

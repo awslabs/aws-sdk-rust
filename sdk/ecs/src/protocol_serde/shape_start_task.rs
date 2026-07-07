@@ -160,16 +160,18 @@ pub(crate) fn de_start_task(
 ) -> ::std::result::Result<crate::operation::start_task::builders::StartTaskOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "tasks" => {
-                    builder = builder.set_tasks(crate::protocol_serde::shape_tasks::de_tasks(tokens, _value)?);
+                    builder = builder.set_tasks(crate::protocol_serde::shape_tasks::de_tasks(tokens, _value, depth + 1)?);
                 }
                 "failures" => {
-                    builder = builder.set_failures(crate::protocol_serde::shape_failures::de_failures(tokens, _value)?);
+                    builder = builder.set_failures(crate::protocol_serde::shape_failures::de_failures(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

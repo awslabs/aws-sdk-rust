@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stale_ip_permission(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StaleIpPermission, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StaleIpPermission::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -38,7 +42,7 @@ pub fn de_stale_ip_permission(
             s if s.matches("ipRanges") /* IpRanges com.amazonaws.ec2#StaleIpPermission$IpRanges */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_ip_ranges::de_ip_ranges(&mut tag)
+                        crate::protocol_serde::shape_ip_ranges::de_ip_ranges(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -48,7 +52,7 @@ pub fn de_stale_ip_permission(
             s if s.matches("prefixListIds") /* PrefixListIds com.amazonaws.ec2#StaleIpPermission$PrefixListIds */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_prefix_list_id_set::de_prefix_list_id_set(&mut tag)
+                        crate::protocol_serde::shape_prefix_list_id_set::de_prefix_list_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +77,7 @@ pub fn de_stale_ip_permission(
             s if s.matches("groups") /* UserIdGroupPairs com.amazonaws.ec2#StaleIpPermission$UserIdGroupPairs */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_user_id_group_pair_set::de_user_id_group_pair_set(&mut tag)
+                        crate::protocol_serde::shape_user_id_group_pair_set::de_user_id_group_pair_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

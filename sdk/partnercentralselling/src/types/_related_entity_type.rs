@@ -14,6 +14,8 @@
 /// match relatedentitytype {
 ///     RelatedEntityType::AwsMarketplaceOfferSets => { /* ... */ },
 ///     RelatedEntityType::AwsMarketplaceOffers => { /* ... */ },
+///     RelatedEntityType::AwsMarketplaceProducts => { /* ... */ },
+///     RelatedEntityType::AwsMarketplaceSolutions => { /* ... */ },
 ///     RelatedEntityType::AwsProducts => { /* ... */ },
 ///     RelatedEntityType::Solutions => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +51,10 @@ pub enum RelatedEntityType {
     #[allow(missing_docs)] // documentation missing in model
     AwsMarketplaceOffers,
     #[allow(missing_docs)] // documentation missing in model
+    AwsMarketplaceProducts,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsMarketplaceSolutions,
+    #[allow(missing_docs)] // documentation missing in model
     AwsProducts,
     #[allow(missing_docs)] // documentation missing in model
     Solutions,
@@ -61,6 +67,8 @@ impl ::std::convert::From<&str> for RelatedEntityType {
         match s {
             "AwsMarketplaceOfferSets" => RelatedEntityType::AwsMarketplaceOfferSets,
             "AwsMarketplaceOffers" => RelatedEntityType::AwsMarketplaceOffers,
+            "AwsMarketplaceProducts" => RelatedEntityType::AwsMarketplaceProducts,
+            "AwsMarketplaceSolutions" => RelatedEntityType::AwsMarketplaceSolutions,
             "AwsProducts" => RelatedEntityType::AwsProducts,
             "Solutions" => RelatedEntityType::Solutions,
             other => RelatedEntityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +88,8 @@ impl RelatedEntityType {
         match self {
             RelatedEntityType::AwsMarketplaceOfferSets => "AwsMarketplaceOfferSets",
             RelatedEntityType::AwsMarketplaceOffers => "AwsMarketplaceOffers",
+            RelatedEntityType::AwsMarketplaceProducts => "AwsMarketplaceProducts",
+            RelatedEntityType::AwsMarketplaceSolutions => "AwsMarketplaceSolutions",
             RelatedEntityType::AwsProducts => "AwsProducts",
             RelatedEntityType::Solutions => "Solutions",
             RelatedEntityType::Unknown(value) => value.as_str(),
@@ -87,7 +97,14 @@ impl RelatedEntityType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AwsMarketplaceOfferSets", "AwsMarketplaceOffers", "AwsProducts", "Solutions"]
+        &[
+            "AwsMarketplaceOfferSets",
+            "AwsMarketplaceOffers",
+            "AwsMarketplaceProducts",
+            "AwsMarketplaceSolutions",
+            "AwsProducts",
+            "Solutions",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RelatedEntityType {
@@ -112,6 +129,8 @@ impl ::std::fmt::Display for RelatedEntityType {
         match self {
             RelatedEntityType::AwsMarketplaceOfferSets => write!(f, "AwsMarketplaceOfferSets"),
             RelatedEntityType::AwsMarketplaceOffers => write!(f, "AwsMarketplaceOffers"),
+            RelatedEntityType::AwsMarketplaceProducts => write!(f, "AwsMarketplaceProducts"),
+            RelatedEntityType::AwsMarketplaceSolutions => write!(f, "AwsMarketplaceSolutions"),
             RelatedEntityType::AwsProducts => write!(f, "AwsProducts"),
             RelatedEntityType::Solutions => write!(f, "Solutions"),
             RelatedEntityType::Unknown(value) => write!(f, "{value}"),

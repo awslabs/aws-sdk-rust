@@ -5,10 +5,10 @@
 pub struct PutProvisionedConcurrencyConfigOutput {
     /// <p>The amount of provisioned concurrency requested.</p>
     pub requested_provisioned_concurrent_executions: ::std::option::Option<i32>,
-    /// <p>The amount of provisioned concurrency available.</p>
-    pub available_provisioned_concurrent_executions: ::std::option::Option<i32>,
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub allocated_provisioned_concurrent_executions: ::std::option::Option<i32>,
+    /// <p>The amount of provisioned concurrency available.</p>
+    pub available_provisioned_concurrent_executions: ::std::option::Option<i32>,
     /// <p>The status of the allocation process.</p>
     pub status: ::std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
@@ -22,13 +22,13 @@ impl PutProvisionedConcurrencyConfigOutput {
     pub fn requested_provisioned_concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.requested_provisioned_concurrent_executions
     }
-    /// <p>The amount of provisioned concurrency available.</p>
-    pub fn available_provisioned_concurrent_executions(&self) -> ::std::option::Option<i32> {
-        self.available_provisioned_concurrent_executions
-    }
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub fn allocated_provisioned_concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.allocated_provisioned_concurrent_executions
+    }
+    /// <p>The amount of provisioned concurrency available.</p>
+    pub fn available_provisioned_concurrent_executions(&self) -> ::std::option::Option<i32> {
+        self.available_provisioned_concurrent_executions
     }
     /// <p>The status of the allocation process.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisionedConcurrencyStatusEnum> {
@@ -60,8 +60,8 @@ impl PutProvisionedConcurrencyConfigOutput {
 #[non_exhaustive]
 pub struct PutProvisionedConcurrencyConfigOutputBuilder {
     pub(crate) requested_provisioned_concurrent_executions: ::std::option::Option<i32>,
-    pub(crate) available_provisioned_concurrent_executions: ::std::option::Option<i32>,
     pub(crate) allocated_provisioned_concurrent_executions: ::std::option::Option<i32>,
+    pub(crate) available_provisioned_concurrent_executions: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::std::string::String>,
@@ -82,20 +82,6 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
     pub fn get_requested_provisioned_concurrent_executions(&self) -> &::std::option::Option<i32> {
         &self.requested_provisioned_concurrent_executions
     }
-    /// <p>The amount of provisioned concurrency available.</p>
-    pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
-        self.available_provisioned_concurrent_executions = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The amount of provisioned concurrency available.</p>
-    pub fn set_available_provisioned_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.available_provisioned_concurrent_executions = input;
-        self
-    }
-    /// <p>The amount of provisioned concurrency available.</p>
-    pub fn get_available_provisioned_concurrent_executions(&self) -> &::std::option::Option<i32> {
-        &self.available_provisioned_concurrent_executions
-    }
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
         self.allocated_provisioned_concurrent_executions = ::std::option::Option::Some(input);
@@ -109,6 +95,20 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub fn get_allocated_provisioned_concurrent_executions(&self) -> &::std::option::Option<i32> {
         &self.allocated_provisioned_concurrent_executions
+    }
+    /// <p>The amount of provisioned concurrency available.</p>
+    pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
+        self.available_provisioned_concurrent_executions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of provisioned concurrency available.</p>
+    pub fn set_available_provisioned_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.available_provisioned_concurrent_executions = input;
+        self
+    }
+    /// <p>The amount of provisioned concurrency available.</p>
+    pub fn get_available_provisioned_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.available_provisioned_concurrent_executions
     }
     /// <p>The status of the allocation process.</p>
     pub fn status(mut self, input: crate::types::ProvisionedConcurrencyStatusEnum) -> Self {
@@ -165,8 +165,8 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
     pub fn build(self) -> crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput {
         crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput {
             requested_provisioned_concurrent_executions: self.requested_provisioned_concurrent_executions,
-            available_provisioned_concurrent_executions: self.available_provisioned_concurrent_executions,
             allocated_provisioned_concurrent_executions: self.allocated_provisioned_concurrent_executions,
+            available_provisioned_concurrent_executions: self.available_provisioned_concurrent_executions,
             status: self.status,
             status_reason: self.status_reason,
             last_modified: self.last_modified,

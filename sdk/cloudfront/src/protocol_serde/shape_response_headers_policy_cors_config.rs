@@ -52,7 +52,11 @@ pub fn ser_response_headers_policy_cors_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_cors_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCorsConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyCorsConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -60,7 +64,7 @@ pub fn de_response_headers_policy_cors_config(
             s if s.matches("AccessControlAllowOrigins") /* AccessControlAllowOrigins com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlAllowOrigins */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_access_control_allow_origins::de_response_headers_policy_access_control_allow_origins(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_access_control_allow_origins::de_response_headers_policy_access_control_allow_origins(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -70,7 +74,7 @@ pub fn de_response_headers_policy_cors_config(
             s if s.matches("AccessControlAllowHeaders") /* AccessControlAllowHeaders com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlAllowHeaders */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_access_control_allow_headers::de_response_headers_policy_access_control_allow_headers(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_access_control_allow_headers::de_response_headers_policy_access_control_allow_headers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -80,7 +84,7 @@ pub fn de_response_headers_policy_cors_config(
             s if s.matches("AccessControlAllowMethods") /* AccessControlAllowMethods com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlAllowMethods */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_access_control_allow_methods::de_response_headers_policy_access_control_allow_methods(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_access_control_allow_methods::de_response_headers_policy_access_control_allow_methods(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -105,7 +109,7 @@ pub fn de_response_headers_policy_cors_config(
             s if s.matches("AccessControlExposeHeaders") /* AccessControlExposeHeaders com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlExposeHeaders */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_response_headers_policy_access_control_expose_headers::de_response_headers_policy_access_control_expose_headers(&mut tag)
+                        crate::protocol_serde::shape_response_headers_policy_access_control_expose_headers::de_response_headers_policy_access_control_expose_headers(&mut tag, depth + 1)
                         ?
                     )
                 ;

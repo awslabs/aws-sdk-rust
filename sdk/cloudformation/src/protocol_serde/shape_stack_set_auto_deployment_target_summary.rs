@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_auto_deployment_target_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackSetAutoDeploymentTargetSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSetAutoDeploymentTargetSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_stack_set_auto_deployment_target_summary(
             s if s.matches("Regions") /* Regions com.amazonaws.cloudformation#StackSetAutoDeploymentTargetSummary$Regions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_region_list::de_region_list(&mut tag)
+                        crate::protocol_serde::shape_region_list::de_region_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -22,7 +22,7 @@ impl crate::operation::update_goal::builders::UpdateGoalInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGoal`.
 ///
-/// Update an existing goal
+/// <p>Update an existing goal</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGoalFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateGoalFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier for the agent space containing the goal
+    /// <p>The unique identifier for the agent space containing the goal</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space containing the goal
+    /// <p>The unique identifier for the agent space containing the goal</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space containing the goal
+    /// <p>The unique identifier for the agent space containing the goal</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The unique identifier of the goal to update
+    /// <p>The unique identifier of the goal to update</p>
     pub fn goal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.goal_id(input.into());
         self
     }
-    /// The unique identifier of the goal to update
+    /// <p>The unique identifier of the goal to update</p>
     pub fn set_goal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_goal_id(input);
         self
     }
-    /// The unique identifier of the goal to update
+    /// <p>The unique identifier of the goal to update</p>
     pub fn get_goal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_goal_id()
     }
-    /// Update goal schedule state
+    /// <p>Update goal schedule state</p>
     pub fn evaluation_schedule(mut self, input: crate::types::GoalScheduleInput) -> Self {
         self.inner = self.inner.evaluation_schedule(input);
         self
     }
-    /// Update goal schedule state
+    /// <p>Update goal schedule state</p>
     pub fn set_evaluation_schedule(mut self, input: ::std::option::Option<crate::types::GoalScheduleInput>) -> Self {
         self.inner = self.inner.set_evaluation_schedule(input);
         self
     }
-    /// Update goal schedule state
+    /// <p>Update goal schedule state</p>
     pub fn get_evaluation_schedule(&self) -> &::std::option::Option<crate::types::GoalScheduleInput> {
         self.inner.get_evaluation_schedule()
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Client-provided token for idempotent operations
+    /// <p>Client-provided token for idempotent operations</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

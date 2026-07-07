@@ -2,10 +2,16 @@
 pub(crate) fn de_data_lake_dataset<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataLakeDataset>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,9 @@ where
                         }
                         "schema" => {
                             builder = builder.set_schema(crate::protocol_serde::shape_data_lake_dataset_schema::de_data_lake_dataset_schema(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "description" => {
@@ -57,7 +65,11 @@ where
                         }
                         "partitionSpec" => {
                             builder = builder.set_partition_spec(
-                                crate::protocol_serde::shape_data_lake_dataset_partition_spec::de_data_lake_dataset_partition_spec(tokens, _value)?,
+                                crate::protocol_serde::shape_data_lake_dataset_partition_spec::de_data_lake_dataset_partition_spec(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "createdTime" => {

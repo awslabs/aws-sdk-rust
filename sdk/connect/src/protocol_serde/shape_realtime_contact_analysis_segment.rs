@@ -2,10 +2,16 @@
 pub(crate) fn de_realtime_contact_analysis_segment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RealtimeContactAnalysisSegment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,37 +38,37 @@ where
                     variant = match key.as_ref() {
                             "Transcript" => {
                                 Some(crate::types::RealtimeContactAnalysisSegment::Transcript(
-                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_transcript::de_real_time_contact_analysis_segment_transcript(tokens, _value)?
+                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_transcript::de_real_time_contact_analysis_segment_transcript(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Transcript' cannot be null"))?
                                 ))
                             }
                             "Categories" => {
                                 Some(crate::types::RealtimeContactAnalysisSegment::Categories(
-                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_categories::de_real_time_contact_analysis_segment_categories(tokens, _value)?
+                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_categories::de_real_time_contact_analysis_segment_categories(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Categories' cannot be null"))?
                                 ))
                             }
                             "Issues" => {
                                 Some(crate::types::RealtimeContactAnalysisSegment::Issues(
-                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_issues::de_real_time_contact_analysis_segment_issues(tokens, _value)?
+                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_issues::de_real_time_contact_analysis_segment_issues(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Issues' cannot be null"))?
                                 ))
                             }
                             "Event" => {
                                 Some(crate::types::RealtimeContactAnalysisSegment::Event(
-                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_event::de_real_time_contact_analysis_segment_event(tokens, _value)?
+                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_event::de_real_time_contact_analysis_segment_event(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Event' cannot be null"))?
                                 ))
                             }
                             "Attachments" => {
                                 Some(crate::types::RealtimeContactAnalysisSegment::Attachments(
-                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_attachments::de_real_time_contact_analysis_segment_attachments(tokens, _value)?
+                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_attachments::de_real_time_contact_analysis_segment_attachments(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Attachments' cannot be null"))?
                                 ))
                             }
                             "PostContactSummary" => {
                                 Some(crate::types::RealtimeContactAnalysisSegment::PostContactSummary(
-                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_post_contact_summary::de_real_time_contact_analysis_segment_post_contact_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_post_contact_summary::de_real_time_contact_analysis_segment_post_contact_summary(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PostContactSummary' cannot be null"))?
                                 ))
                             }

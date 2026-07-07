@@ -40,6 +40,8 @@ pub fn de_delete_ipam(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteIpamResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteIpamResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_delete_ipam(
             s if s.matches("ipam") /* Ipam com.amazonaws.ec2.synthetic#DeleteIpamOutput$Ipam */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipam::de_ipam(&mut tag)
+                        crate::protocol_serde::shape_ipam::de_ipam(&mut tag, depth + 1)
                         ?
                     )
                 ;

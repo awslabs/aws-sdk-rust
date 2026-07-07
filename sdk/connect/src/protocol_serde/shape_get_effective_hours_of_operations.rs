@@ -137,6 +137,8 @@ pub(crate) fn de_get_effective_hours_of_operations(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,12 +146,16 @@ pub(crate) fn de_get_effective_hours_of_operations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "EffectiveHoursOfOperationList" => {
                     builder = builder.set_effective_hours_of_operation_list(
-                        crate::protocol_serde::shape_effective_hours_of_operation_list::de_effective_hours_of_operation_list(tokens, _value)?,
+                        crate::protocol_serde::shape_effective_hours_of_operation_list::de_effective_hours_of_operation_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "EffectiveOverrideHoursList" => {
                     builder = builder.set_effective_override_hours_list(
-                        crate::protocol_serde::shape_effective_override_hours_list::de_effective_override_hours_list(tokens, _value)?,
+                        crate::protocol_serde::shape_effective_override_hours_list::de_effective_override_hours_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "TimeZone" => {

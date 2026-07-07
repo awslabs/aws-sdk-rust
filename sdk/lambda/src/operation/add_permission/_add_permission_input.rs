@@ -24,6 +24,10 @@ pub struct AddPermissionInput {
     /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
     /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
+    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
+    pub invoked_via_function_url: ::std::option::Option<bool>,
     /// <p>For Amazon Web Services service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
     pub source_account: ::std::option::Option<::std::string::String>,
     /// <p>For Alexa Smart Home functions, a token that the invoker must supply.</p>
@@ -34,10 +38,6 @@ pub struct AddPermissionInput {
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
     pub principal_org_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
-    pub function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
-    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
-    pub invoked_via_function_url: ::std::option::Option<bool>,
 }
 impl AddPermissionInput {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
@@ -71,6 +71,14 @@ impl AddPermissionInput {
     pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn function_url_auth_type(&self) -> ::std::option::Option<&crate::types::FunctionUrlAuthType> {
+        self.function_url_auth_type.as_ref()
+    }
+    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
+    pub fn invoked_via_function_url(&self) -> ::std::option::Option<bool> {
+        self.invoked_via_function_url
+    }
     /// <p>For Amazon Web Services service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
     pub fn source_account(&self) -> ::std::option::Option<&str> {
         self.source_account.as_deref()
@@ -91,14 +99,6 @@ impl AddPermissionInput {
     pub fn principal_org_id(&self) -> ::std::option::Option<&str> {
         self.principal_org_id.as_deref()
     }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
-    pub fn function_url_auth_type(&self) -> ::std::option::Option<&crate::types::FunctionUrlAuthType> {
-        self.function_url_auth_type.as_ref()
-    }
-    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
-    pub fn invoked_via_function_url(&self) -> ::std::option::Option<bool> {
-        self.invoked_via_function_url
-    }
 }
 impl AddPermissionInput {
     /// Creates a new builder-style object to manufacture [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
@@ -116,13 +116,13 @@ pub struct AddPermissionInputBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
+    pub(crate) invoked_via_function_url: ::std::option::Option<bool>,
     pub(crate) source_account: ::std::option::Option<::std::string::String>,
     pub(crate) event_source_token: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_org_id: ::std::option::Option<::std::string::String>,
-    pub(crate) function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
-    pub(crate) invoked_via_function_url: ::std::option::Option<bool>,
 }
 impl AddPermissionInputBuilder {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
@@ -232,6 +232,34 @@ impl AddPermissionInputBuilder {
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn function_url_auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
+        self.function_url_auth_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn set_function_url_auth_type(mut self, input: ::std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
+        self.function_url_auth_type = input;
+        self
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn get_function_url_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
+        &self.function_url_auth_type
+    }
+    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
+    pub fn invoked_via_function_url(mut self, input: bool) -> Self {
+        self.invoked_via_function_url = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
+    pub fn set_invoked_via_function_url(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.invoked_via_function_url = input;
+        self
+    }
+    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
+    pub fn get_invoked_via_function_url(&self) -> &::std::option::Option<bool> {
+        &self.invoked_via_function_url
+    }
     /// <p>For Amazon Web Services service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
     pub fn source_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_account = ::std::option::Option::Some(input.into());
@@ -302,34 +330,6 @@ impl AddPermissionInputBuilder {
     pub fn get_principal_org_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_org_id
     }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
-    pub fn function_url_auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
-        self.function_url_auth_type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
-    pub fn set_function_url_auth_type(mut self, input: ::std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
-        self.function_url_auth_type = input;
-        self
-    }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
-    pub fn get_function_url_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
-        &self.function_url_auth_type
-    }
-    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
-    pub fn invoked_via_function_url(mut self, input: bool) -> Self {
-        self.invoked_via_function_url = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
-    pub fn set_invoked_via_function_url(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.invoked_via_function_url = input;
-        self
-    }
-    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
-    pub fn get_invoked_via_function_url(&self) -> &::std::option::Option<bool> {
-        &self.invoked_via_function_url
-    }
     /// Consumes the builder and constructs a [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
     pub fn build(
         self,
@@ -340,13 +340,13 @@ impl AddPermissionInputBuilder {
             action: self.action,
             principal: self.principal,
             source_arn: self.source_arn,
+            function_url_auth_type: self.function_url_auth_type,
+            invoked_via_function_url: self.invoked_via_function_url,
             source_account: self.source_account,
             event_source_token: self.event_source_token,
             qualifier: self.qualifier,
             revision_id: self.revision_id,
             principal_org_id: self.principal_org_id,
-            function_url_auth_type: self.function_url_auth_type,
-            invoked_via_function_url: self.invoked_via_function_url,
         })
     }
 }

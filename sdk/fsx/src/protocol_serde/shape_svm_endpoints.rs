@@ -2,10 +2,16 @@
 pub(crate) fn de_svm_endpoints<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SvmEndpoints>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,16 +22,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Iscsi" => {
-                            builder = builder.set_iscsi(crate::protocol_serde::shape_svm_endpoint::de_svm_endpoint(tokens, _value)?);
+                            builder = builder.set_iscsi(crate::protocol_serde::shape_svm_endpoint::de_svm_endpoint(tokens, _value, depth + 1)?);
                         }
                         "Management" => {
-                            builder = builder.set_management(crate::protocol_serde::shape_svm_endpoint::de_svm_endpoint(tokens, _value)?);
+                            builder = builder.set_management(crate::protocol_serde::shape_svm_endpoint::de_svm_endpoint(tokens, _value, depth + 1)?);
                         }
                         "Nfs" => {
-                            builder = builder.set_nfs(crate::protocol_serde::shape_svm_endpoint::de_svm_endpoint(tokens, _value)?);
+                            builder = builder.set_nfs(crate::protocol_serde::shape_svm_endpoint::de_svm_endpoint(tokens, _value, depth + 1)?);
                         }
                         "Smb" => {
-                            builder = builder.set_smb(crate::protocol_serde::shape_svm_endpoint::de_svm_endpoint(tokens, _value)?);
+                            builder = builder.set_smb(crate::protocol_serde::shape_svm_endpoint::de_svm_endpoint(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

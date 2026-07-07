@@ -163,13 +163,19 @@ pub(crate) mod shape_account_meta_data;
 
 pub(crate) mod shape_authorities;
 
+pub(crate) mod shape_belgium_additional_info;
+
 pub(crate) mod shape_brazil_additional_info;
 
 pub(crate) mod shape_canada_additional_info;
 
+pub(crate) mod shape_chile_additional_info;
+
 pub(crate) mod shape_egypt_additional_info;
 
 pub(crate) mod shape_estonia_additional_info;
+
+pub(crate) mod shape_france_additional_info;
 
 pub(crate) mod shape_georgia_additional_info;
 
@@ -186,6 +192,8 @@ pub(crate) mod shape_italy_additional_info;
 pub(crate) mod shape_kenya_additional_info;
 
 pub(crate) mod shape_malaysia_additional_info;
+
+pub(crate) mod shape_philippines_additional_info;
 
 pub(crate) mod shape_poland_additional_info;
 

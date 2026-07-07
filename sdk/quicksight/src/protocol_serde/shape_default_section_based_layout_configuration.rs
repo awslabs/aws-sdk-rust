@@ -15,10 +15,16 @@ pub fn ser_default_section_based_layout_configuration(
 pub(crate) fn de_default_section_based_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DefaultSectionBasedLayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "CanvasSizeOptions" => {
                                 builder = builder.set_canvas_size_options(
-                                    crate::protocol_serde::shape_section_based_layout_canvas_size_options::de_section_based_layout_canvas_size_options(tokens, _value)?
+                                    crate::protocol_serde::shape_section_based_layout_canvas_size_options::de_section_based_layout_canvas_size_options(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

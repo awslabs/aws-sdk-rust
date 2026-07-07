@@ -71,45 +71,49 @@ pub(crate) fn de_get_bulk_deployment_status(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "BulkDeploymentMetrics" => {
-                    builder = builder.set_bulk_deployment_metrics(crate::protocol_serde::shape_bulk_deployment_metrics::de_bulk_deployment_metrics(
-                        tokens, _value,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "BulkDeploymentMetrics" => {
+                        builder = builder.set_bulk_deployment_metrics(
+                            crate::protocol_serde::shape_bulk_deployment_metrics::de_bulk_deployment_metrics(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "BulkDeploymentStatus" => {
+                        builder = builder.set_bulk_deployment_status(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::BulkDeploymentStatus::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "CreatedAt" => {
+                        builder = builder.set_created_at(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ErrorDetails" => {
+                        builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value, depth + 1)?);
+                    }
+                    "ErrorMessage" => {
+                        builder = builder.set_error_message(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "tags" => {
+                        builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "BulkDeploymentStatus" => {
-                    builder = builder.set_bulk_deployment_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::BulkDeploymentStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "CreatedAt" => {
-                    builder = builder.set_created_at(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ErrorDetails" => {
-                    builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value)?);
-                }
-                "ErrorMessage" => {
-                    builder = builder.set_error_message(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

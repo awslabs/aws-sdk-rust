@@ -194,10 +194,11 @@ pub(crate) fn de_get_ebs_volume_recommendations(
     crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -210,12 +211,13 @@ pub(crate) fn de_get_ebs_volume_recommendations(
                 Ok(
                     builder.set_volume_recommendations(Some(crate::protocol_serde::shape_volume_recommendations::de_volume_recommendations(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
             "errors" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_errors(Some(
-                    crate::protocol_serde::shape_get_recommendation_errors::de_get_recommendation_errors(decoder)?,
+                    crate::protocol_serde::shape_get_recommendation_errors::de_get_recommendation_errors(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -227,6 +229,8 @@ pub(crate) fn de_get_ebs_volume_recommendations(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -236,13 +240,13 @@ pub(crate) fn de_get_ebs_volume_recommendations(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

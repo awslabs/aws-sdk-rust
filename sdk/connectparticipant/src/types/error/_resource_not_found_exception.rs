@@ -8,7 +8,7 @@ pub struct ResourceNotFoundException {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of Amazon Connect resource.</p>
+    /// <p>The type of Connect Customer resource.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -17,7 +17,7 @@ impl ResourceNotFoundException {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The type of Amazon Connect resource.</p>
+    /// <p>The type of Connect Customer resource.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -96,17 +96,17 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p>The type of Amazon Connect resource.</p>
+    /// <p>The type of Connect Customer resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of Amazon Connect resource.</p>
+    /// <p>The type of Connect Customer resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of Amazon Connect resource.</p>
+    /// <p>The type of Connect Customer resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

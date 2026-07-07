@@ -2,10 +2,16 @@
 pub(crate) fn de_insight_impact_graph_service<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InsightImpactGraphService>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,7 @@ where
                             );
                         }
                         "Names" => {
-                            builder = builder.set_names(crate::protocol_serde::shape_service_names::de_service_names(tokens, _value)?);
+                            builder = builder.set_names(crate::protocol_serde::shape_service_names::de_service_names(tokens, _value, depth + 1)?);
                         }
                         "AccountId" => {
                             builder = builder.set_account_id(
@@ -48,7 +54,11 @@ where
                         }
                         "Edges" => {
                             builder = builder.set_edges(
-                                crate::protocol_serde::shape_insight_impact_graph_edge_list::de_insight_impact_graph_edge_list(tokens, _value)?,
+                                crate::protocol_serde::shape_insight_impact_graph_edge_list::de_insight_impact_graph_edge_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_platform_branch_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PlatformBranchSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PlatformBranchSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -64,7 +68,7 @@ pub fn de_platform_branch_summary(
             s if s.matches("SupportedTierList") /* SupportedTierList com.amazonaws.elasticbeanstalk#PlatformBranchSummary$SupportedTierList */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_supported_tier_list::de_supported_tier_list(&mut tag)
+                        crate::protocol_serde::shape_supported_tier_list::de_supported_tier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

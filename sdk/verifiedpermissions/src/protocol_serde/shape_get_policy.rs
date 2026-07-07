@@ -125,6 +125,8 @@ pub(crate) fn de_get_policy(
 ) -> ::std::result::Result<crate::operation::get_policy::builders::GetPolicyOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -152,19 +154,31 @@ pub(crate) fn de_get_policy(
                     );
                 }
                 "principal" => {
-                    builder = builder.set_principal(crate::protocol_serde::shape_entity_identifier::de_entity_identifier(tokens, _value)?);
+                    builder = builder.set_principal(crate::protocol_serde::shape_entity_identifier::de_entity_identifier(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "resource" => {
-                    builder = builder.set_resource(crate::protocol_serde::shape_entity_identifier::de_entity_identifier(tokens, _value)?);
+                    builder = builder.set_resource(crate::protocol_serde::shape_entity_identifier::de_entity_identifier(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "actions" => {
                     builder = builder.set_actions(crate::protocol_serde::shape_action_identifier_list::de_action_identifier_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "definition" => {
                     builder = builder.set_definition(crate::protocol_serde::shape_policy_definition_detail::de_policy_definition_detail(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "createdDate" => {

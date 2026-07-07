@@ -70,6 +70,9 @@ pub mod delete_knowledge_base_documents;
 /// Types for the `DeletePrompt` operation.
 pub mod delete_prompt;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DisassociateAgentCollaborator` operation.
 pub mod disassociate_agent_collaborator;
 
@@ -117,6 +120,9 @@ pub mod get_knowledge_base_documents;
 
 /// Types for the `GetPrompt` operation.
 pub mod get_prompt;
+
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
 
 /// Types for the `IngestKnowledgeBaseDocuments` operation.
 pub mod ingest_knowledge_base_documents;
@@ -171,6 +177,9 @@ pub mod prepare_agent;
 
 /// Types for the `PrepareFlow` operation.
 pub mod prepare_flow;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `StartIngestionJob` operation.
 pub mod start_ingestion_job;

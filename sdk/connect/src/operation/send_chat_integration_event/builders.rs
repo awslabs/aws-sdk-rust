@@ -22,7 +22,7 @@ impl crate::operation::send_chat_integration_event::builders::SendChatIntegratio
 }
 /// Fluent builder constructing a request to `SendChatIntegrationEvent`.
 ///
-/// <p>Processes chat integration events from Amazon Web Services or external integrations to Amazon Connect. A chat integration event includes:</p>
+/// <p>Processes chat integration events from Amazon Web Services or external integrations to Connect Customer. A chat integration event includes:</p>
 /// <ul>
 /// <li>
 /// <p>SourceId, DestinationId, and Subtype: a set of identifiers, uniquely representing a chat</p></li>
@@ -130,17 +130,17 @@ impl SendChatIntegrationEventFluentBuilder {
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_id()
     }
-    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
+    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Connect Customer instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_id(input.into());
         self
     }
-    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
+    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Connect Customer instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
     pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_id(input);
         self
     }
-    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
+    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Connect Customer instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_id()
     }

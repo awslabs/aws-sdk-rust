@@ -27,12 +27,22 @@ pub struct PutRecommendationPreferencesInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service on Fargate, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p><note>
     /// <ul>
     /// <li>
-    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <p>Lookback period preferences for Amazon EC2 instances, Amazon EBS volumes, Amazon ECS services, Amazon RDS DB instances, and Aurora DB cluster storage resource types can be set at the organization, account, and resource levels.</p></li>
     /// <li>
     /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <li>
+    /// <p>Amazon EBS volume lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon ECS service on Fargate lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon RDS DB instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster storage lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Changing the lookback period for Amazon EBS volumes to 14 days does not affect the 32-day lookback period used to determine whether an Amazon EBS volume is unattached.</p></li>
     /// </ul>
     /// </note>
     pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
@@ -58,7 +68,7 @@ pub struct PutRecommendationPreferencesInput {
     /// </note>
     pub utilization_preferences: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>,
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p>
     /// </note>
     pub preferred_resources: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>,
     /// <p>The status of the savings estimation mode preference to create or update.</p>
@@ -102,12 +112,22 @@ impl PutRecommendationPreferencesInput {
         self.external_metrics_preference.as_ref()
     }
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service on Fargate, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p><note>
     /// <ul>
     /// <li>
-    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <p>Lookback period preferences for Amazon EC2 instances, Amazon EBS volumes, Amazon ECS services, Amazon RDS DB instances, and Aurora DB cluster storage resource types can be set at the organization, account, and resource levels.</p></li>
     /// <li>
     /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <li>
+    /// <p>Amazon EBS volume lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon ECS service on Fargate lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon RDS DB instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster storage lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Changing the lookback period for Amazon EBS volumes to 14 days does not affect the 32-day lookback period used to determine whether an Amazon EBS volume is unattached.</p></li>
     /// </ul>
     /// </note>
     pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
@@ -139,7 +159,7 @@ impl PutRecommendationPreferencesInput {
         self.utilization_preferences.as_deref().unwrap_or_default()
     }
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_resources.is_none()`.
@@ -287,12 +307,22 @@ impl PutRecommendationPreferencesInputBuilder {
         &self.external_metrics_preference
     }
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service on Fargate, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p><note>
     /// <ul>
     /// <li>
-    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <p>Lookback period preferences for Amazon EC2 instances, Amazon EBS volumes, Amazon ECS services, Amazon RDS DB instances, and Aurora DB cluster storage resource types can be set at the organization, account, and resource levels.</p></li>
     /// <li>
     /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <li>
+    /// <p>Amazon EBS volume lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon ECS service on Fargate lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon RDS DB instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster storage lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Changing the lookback period for Amazon EBS volumes to 14 days does not affect the 32-day lookback period used to determine whether an Amazon EBS volume is unattached.</p></li>
     /// </ul>
     /// </note>
     pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
@@ -300,12 +330,22 @@ impl PutRecommendationPreferencesInputBuilder {
         self
     }
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service on Fargate, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p><note>
     /// <ul>
     /// <li>
-    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <p>Lookback period preferences for Amazon EC2 instances, Amazon EBS volumes, Amazon ECS services, Amazon RDS DB instances, and Aurora DB cluster storage resource types can be set at the organization, account, and resource levels.</p></li>
     /// <li>
     /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <li>
+    /// <p>Amazon EBS volume lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon ECS service on Fargate lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon RDS DB instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster storage lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Changing the lookback period for Amazon EBS volumes to 14 days does not affect the 32-day lookback period used to determine whether an Amazon EBS volume is unattached.</p></li>
     /// </ul>
     /// </note>
     pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
@@ -313,12 +353,22 @@ impl PutRecommendationPreferencesInputBuilder {
         self
     }
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service on Fargate, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p><note>
     /// <ul>
     /// <li>
-    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <p>Lookback period preferences for Amazon EC2 instances, Amazon EBS volumes, Amazon ECS services, Amazon RDS DB instances, and Aurora DB cluster storage resource types can be set at the organization, account, and resource levels.</p></li>
     /// <li>
     /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <li>
+    /// <p>Amazon EBS volume lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon ECS service on Fargate lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Amazon RDS DB instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster storage lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Changing the lookback period for Amazon EBS volumes to 14 days does not affect the 32-day lookback period used to determine whether an Amazon EBS volume is unattached.</p></li>
     /// </ul>
     /// </note>
     pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
@@ -406,7 +456,7 @@ impl PutRecommendationPreferencesInputBuilder {
     /// To override the contents of this collection use [`set_preferred_resources`](Self::set_preferred_resources).
     ///
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p>
     /// </note>
     pub fn preferred_resources(mut self, input: crate::types::PreferredResource) -> Self {
         let mut v = self.preferred_resources.unwrap_or_default();
@@ -415,14 +465,14 @@ impl PutRecommendationPreferencesInputBuilder {
         self
     }
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p>
     /// </note>
     pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>) -> Self {
         self.preferred_resources = input;
         self
     }
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance, Auto Scaling group, Amazon EBS volume, Amazon ECS service, Amazon RDS DB instance, and Aurora DB cluster storage resource types.</p>
     /// </note>
     pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>> {
         &self.preferred_resources

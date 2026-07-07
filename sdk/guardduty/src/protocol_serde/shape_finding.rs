@@ -2,10 +2,16 @@
 pub(crate) fn de_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Finding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -70,7 +76,7 @@ where
                             );
                         }
                         "resource" => {
-                            builder = builder.set_resource(crate::protocol_serde::shape_resource::de_resource(tokens, _value)?);
+                            builder = builder.set_resource(crate::protocol_serde::shape_resource::de_resource(tokens, _value, depth + 1)?);
                         }
                         "schemaVersion" => {
                             builder = builder.set_schema_version(
@@ -80,7 +86,7 @@ where
                             );
                         }
                         "service" => {
-                            builder = builder.set_service(crate::protocol_serde::shape_service::de_service(tokens, _value)?);
+                            builder = builder.set_service(crate::protocol_serde::shape_service::de_service(tokens, _value, depth + 1)?);
                         }
                         "severity" => {
                             builder = builder

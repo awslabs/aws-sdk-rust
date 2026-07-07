@@ -36,10 +36,16 @@ pub fn ser_network_acl_entry(
 pub(crate) fn de_network_acl_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NetworkAclEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IcmpTypeCode" => {
                             builder = builder.set_icmp_type_code(
-                                crate::protocol_serde::shape_network_acl_icmp_type_code::de_network_acl_icmp_type_code(tokens, _value)?,
+                                crate::protocol_serde::shape_network_acl_icmp_type_code::de_network_acl_icmp_type_code(tokens, _value, depth + 1)?,
                             );
                         }
                         "Protocol" => {
@@ -63,7 +69,9 @@ where
                         }
                         "PortRange" => {
                             builder = builder.set_port_range(crate::protocol_serde::shape_network_acl_port_range::de_network_acl_port_range(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "CidrBlock" => {

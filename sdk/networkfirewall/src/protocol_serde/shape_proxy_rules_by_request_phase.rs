@@ -45,10 +45,16 @@ pub fn ser_proxy_rules_by_request_phase(
 pub(crate) fn de_proxy_rules_by_request_phase<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProxyRulesByRequestPhase>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,13 +65,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PreDNS" => {
-                            builder = builder.set_pre_dns(crate::protocol_serde::shape_proxy_rule_list::de_proxy_rule_list(tokens, _value)?);
+                            builder = builder.set_pre_dns(crate::protocol_serde::shape_proxy_rule_list::de_proxy_rule_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PreREQUEST" => {
-                            builder = builder.set_pre_request(crate::protocol_serde::shape_proxy_rule_list::de_proxy_rule_list(tokens, _value)?);
+                            builder = builder.set_pre_request(crate::protocol_serde::shape_proxy_rule_list::de_proxy_rule_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PostRESPONSE" => {
-                            builder = builder.set_post_response(crate::protocol_serde::shape_proxy_rule_list::de_proxy_rule_list(tokens, _value)?);
+                            builder = builder.set_post_response(crate::protocol_serde::shape_proxy_rule_list::de_proxy_rule_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

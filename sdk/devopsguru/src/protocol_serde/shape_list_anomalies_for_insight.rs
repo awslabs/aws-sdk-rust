@@ -150,6 +150,8 @@ pub(crate) fn de_list_anomalies_for_insight(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -163,11 +165,18 @@ pub(crate) fn de_list_anomalies_for_insight(
                     );
                 }
                 "ProactiveAnomalies" => {
-                    builder =
-                        builder.set_proactive_anomalies(crate::protocol_serde::shape_proactive_anomalies::de_proactive_anomalies(tokens, _value)?);
+                    builder = builder.set_proactive_anomalies(crate::protocol_serde::shape_proactive_anomalies::de_proactive_anomalies(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ReactiveAnomalies" => {
-                    builder = builder.set_reactive_anomalies(crate::protocol_serde::shape_reactive_anomalies::de_reactive_anomalies(tokens, _value)?);
+                    builder = builder.set_reactive_anomalies(crate::protocol_serde::shape_reactive_anomalies::de_reactive_anomalies(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

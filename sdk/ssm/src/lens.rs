@@ -369,6 +369,16 @@ pub(crate) fn reflens_list_associations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_cloud_connectors_output_output_next_token(
+    input: &crate::operation::list_cloud_connectors::ListCloudConnectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_command_invocations_output_output_next_token(
     input: &crate::operation::list_command_invocations::ListCommandInvocationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -491,6 +501,16 @@ pub(crate) fn reflens_list_resource_compliance_summaries_output_output_next_toke
 
 pub(crate) fn reflens_list_resource_data_sync_output_output_next_token(
     input: &crate::operation::list_resource_data_sync::ListResourceDataSyncOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_validate_cloud_connector_output_output_next_token(
+    input: &crate::operation::validate_cloud_connector::ValidateCloudConnectorOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -737,6 +757,13 @@ pub(crate) fn lens_list_associations_output_output_associations(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_cloud_connectors_output_output_cloud_connectors(
+    input: crate::operation::list_cloud_connectors::ListCloudConnectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudConnectorSummary>> {
+    let input = input.cloud_connectors?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_command_invocations_output_output_command_invocations(
     input: crate::operation::list_command_invocations::ListCommandInvocationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>> {
@@ -825,5 +852,12 @@ pub(crate) fn lens_list_resource_data_sync_output_output_resource_data_sync_item
     input: crate::operation::list_resource_data_sync::ListResourceDataSyncOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>> {
     let input = input.resource_data_sync_items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_validate_cloud_connector_output_output_validation_findings(
+    input: crate::operation::validate_cloud_connector::ValidateCloudConnectorOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ValidationFinding>> {
+    let input = input.validation_findings?;
     ::std::option::Option::Some(input)
 }

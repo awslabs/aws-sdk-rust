@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_multi_region_access_point_policy_document(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MultiRegionAccessPointPolicyDocument, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MultiRegionAccessPointPolicyDocument::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_multi_region_access_point_policy_document(
             s if s.matches("Established") /* Established com.amazonaws.s3control#MultiRegionAccessPointPolicyDocument$Established */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_established_multi_region_access_point_policy::de_established_multi_region_access_point_policy(&mut tag)
+                        crate::protocol_serde::shape_established_multi_region_access_point_policy::de_established_multi_region_access_point_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_multi_region_access_point_policy_document(
             s if s.matches("Proposed") /* Proposed com.amazonaws.s3control#MultiRegionAccessPointPolicyDocument$Proposed */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_proposed_multi_region_access_point_policy::de_proposed_multi_region_access_point_policy(&mut tag)
+                        crate::protocol_serde::shape_proposed_multi_region_access_point_policy::de_proposed_multi_region_access_point_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

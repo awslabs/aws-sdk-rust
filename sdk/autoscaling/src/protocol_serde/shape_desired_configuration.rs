@@ -20,7 +20,11 @@ pub fn ser_desired_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_desired_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DesiredConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DesiredConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -28,7 +32,7 @@ pub fn de_desired_configuration(
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#DesiredConfiguration$LaunchTemplate */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag)
+                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -38,7 +42,7 @@ pub fn de_desired_configuration(
             s if s.matches("MixedInstancesPolicy") /* MixedInstancesPolicy com.amazonaws.autoscaling#DesiredConfiguration$MixedInstancesPolicy */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_mixed_instances_policy::de_mixed_instances_policy(&mut tag)
+                        crate::protocol_serde::shape_mixed_instances_policy::de_mixed_instances_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

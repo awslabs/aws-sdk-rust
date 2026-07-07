@@ -23,6 +23,9 @@ impl crate::operation::update_feed::builders::UpdateFeedInputBuilder {
 /// Fluent builder constructing a request to `UpdateFeed`.
 ///
 /// <p>Updates the name and/or outputs in a feed.</p>
+/// <p>UpdateFeed is a PUT operation, which means that the payload that you specify completely overwrites the existing payload.</p>
+/// <p>This means that if you want to touch the array of outputs, you must pass in the full new list. So you must omit outputs you want to delete, and include outputs you want to add or modify.</p>
+/// <p>If you want to patch the array of outputs to make selective additions, use AssociateFeed.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFeedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

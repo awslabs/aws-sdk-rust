@@ -5,6 +5,8 @@
 pub struct ListCertificatesInput {
     /// <p>Filter the certificate list by status value.</p>
     pub certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
+    /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
+    pub certificate_key_pair_origins: ::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>>,
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub includes: ::std::option::Option<crate::types::Filters>,
     /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
@@ -22,6 +24,12 @@ impl ListCertificatesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_statuses.is_none()`.
     pub fn certificate_statuses(&self) -> &[crate::types::CertificateStatus] {
         self.certificate_statuses.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_key_pair_origins.is_none()`.
+    pub fn certificate_key_pair_origins(&self) -> &[crate::types::CertificateKeyPairOrigin] {
+        self.certificate_key_pair_origins.as_deref().unwrap_or_default()
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn includes(&self) -> ::std::option::Option<&crate::types::Filters> {
@@ -56,6 +64,7 @@ impl ListCertificatesInput {
 #[non_exhaustive]
 pub struct ListCertificatesInputBuilder {
     pub(crate) certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
+    pub(crate) certificate_key_pair_origins: ::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>>,
     pub(crate) includes: ::std::option::Option<crate::types::Filters>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -82,6 +91,26 @@ impl ListCertificatesInputBuilder {
     /// <p>Filter the certificate list by status value.</p>
     pub fn get_certificate_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
         &self.certificate_statuses
+    }
+    /// Appends an item to `certificate_key_pair_origins`.
+    ///
+    /// To override the contents of this collection use [`set_certificate_key_pair_origins`](Self::set_certificate_key_pair_origins).
+    ///
+    /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
+    pub fn certificate_key_pair_origins(mut self, input: crate::types::CertificateKeyPairOrigin) -> Self {
+        let mut v = self.certificate_key_pair_origins.unwrap_or_default();
+        v.push(input);
+        self.certificate_key_pair_origins = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
+    pub fn set_certificate_key_pair_origins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>>) -> Self {
+        self.certificate_key_pair_origins = input;
+        self
+    }
+    /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
+    pub fn get_certificate_key_pair_origins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>> {
+        &self.certificate_key_pair_origins
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn includes(mut self, input: crate::types::Filters) -> Self {
@@ -159,6 +188,7 @@ impl ListCertificatesInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_certificates::ListCertificatesInput {
             certificate_statuses: self.certificate_statuses,
+            certificate_key_pair_origins: self.certificate_key_pair_origins,
             includes: self.includes,
             next_token: self.next_token,
             max_items: self.max_items,

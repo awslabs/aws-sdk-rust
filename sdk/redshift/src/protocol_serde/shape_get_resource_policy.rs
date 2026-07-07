@@ -95,6 +95,8 @@ pub fn de_get_resource_policy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetResourcePolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetResourcePolicyResponse got {start_el:?}"
@@ -112,7 +114,7 @@ pub fn de_get_resource_policy(
             s if s.matches("ResourcePolicy") /* ResourcePolicy com.amazonaws.redshift.synthetic#GetResourcePolicyOutput$ResourcePolicy */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_resource_policy::de_resource_policy(&mut tag)
+                        crate::protocol_serde::shape_resource_policy::de_resource_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

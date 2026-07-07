@@ -100,6 +100,8 @@ pub(crate) fn de_list_records(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -135,7 +137,9 @@ pub(crate) fn de_list_records(
                 }
                 "MergedDatasetNames" => {
                     builder = builder.set_merged_dataset_names(crate::protocol_serde::shape_merged_dataset_name_list::de_merged_dataset_name_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NextToken" => {
@@ -146,7 +150,7 @@ pub(crate) fn de_list_records(
                     );
                 }
                 "Records" => {
-                    builder = builder.set_records(crate::protocol_serde::shape_record_list::de_record_list(tokens, _value)?);
+                    builder = builder.set_records(crate::protocol_serde::shape_record_list::de_record_list(tokens, _value, depth + 1)?);
                 }
                 "SyncSessionToken" => {
                     builder = builder.set_sync_session_token(

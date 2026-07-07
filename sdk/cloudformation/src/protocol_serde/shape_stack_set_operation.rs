@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackSetOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSetOperation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -64,7 +68,7 @@ pub fn de_stack_set_operation(
             s if s.matches("OperationPreferences") /* OperationPreferences com.amazonaws.cloudformation#StackSetOperation$OperationPreferences */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_operation_preferences::de_stack_set_operation_preferences(&mut tag)
+                        crate::protocol_serde::shape_stack_set_operation_preferences::de_stack_set_operation_preferences(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -143,7 +147,7 @@ pub fn de_stack_set_operation(
             s if s.matches("DeploymentTargets") /* DeploymentTargets com.amazonaws.cloudformation#StackSetOperation$DeploymentTargets */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_deployment_targets::de_deployment_targets(&mut tag)
+                        crate::protocol_serde::shape_deployment_targets::de_deployment_targets(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -153,7 +157,7 @@ pub fn de_stack_set_operation(
             s if s.matches("StackSetDriftDetectionDetails") /* StackSetDriftDetectionDetails com.amazonaws.cloudformation#StackSetOperation$StackSetDriftDetectionDetails */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_drift_detection_details::de_stack_set_drift_detection_details(&mut tag)
+                        crate::protocol_serde::shape_stack_set_drift_detection_details::de_stack_set_drift_detection_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -176,7 +180,7 @@ pub fn de_stack_set_operation(
             s if s.matches("StatusDetails") /* StatusDetails com.amazonaws.cloudformation#StackSetOperation$StatusDetails */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_operation_status_details::de_stack_set_operation_status_details(&mut tag)
+                        crate::protocol_serde::shape_stack_set_operation_status_details::de_stack_set_operation_status_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

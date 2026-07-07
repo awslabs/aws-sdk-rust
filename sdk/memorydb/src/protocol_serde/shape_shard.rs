@@ -2,10 +2,16 @@
 pub(crate) fn de_shard<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Shard>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,7 @@ where
                             );
                         }
                         "Nodes" => {
-                            builder = builder.set_nodes(crate::protocol_serde::shape_node_list::de_node_list(tokens, _value)?);
+                            builder = builder.set_nodes(crate::protocol_serde::shape_node_list::de_node_list(tokens, _value, depth + 1)?);
                         }
                         "NumberOfNodes" => {
                             builder = builder.set_number_of_nodes(

@@ -15,6 +15,7 @@ pub fn ser_aws_open_search_service_domain_cluster_config_zone_awareness_config_d
 pub(crate) fn de_aws_open_search_service_domain_cluster_config_zone_awareness_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -22,6 +23,11 @@ pub(crate) fn de_aws_open_search_service_domain_cluster_config_zone_awareness_co
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {

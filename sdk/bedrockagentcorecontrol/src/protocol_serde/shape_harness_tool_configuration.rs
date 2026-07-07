@@ -49,78 +49,85 @@ pub fn ser_harness_tool_configuration(
 pub(crate) fn de_harness_tool_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HarnessToolConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
-        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => loop {
-            match tokens.next().transpose()? {
-                Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                    if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
-                        tokens.peek()
-                    {
-                        let _ = tokens.next().expect("peek returned a token")?;
-                        continue;
-                    }
-                    let key = key.to_unescaped()?;
-                    if key == "__type" {
-                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                        continue;
-                    }
-                    if variant.is_some() {
-                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                            "encountered mixed variants in union",
-                        ));
-                    }
-                    variant = match key.as_ref() {
-                        "remoteMcp" => Some(crate::types::HarnessToolConfiguration::RemoteMcp(
-                            crate::protocol_serde::shape_harness_remote_mcp_config::de_harness_remote_mcp_config(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'remoteMcp' cannot be null"),
-                            )?,
-                        )),
-                        "agentCoreBrowser" => Some(crate::types::HarnessToolConfiguration::AgentCoreBrowser(
-                            crate::protocol_serde::shape_harness_agent_core_browser_config::de_harness_agent_core_browser_config(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentCoreBrowser' cannot be null")
-                                })?,
-                        )),
-                        "agentCoreGateway" => Some(crate::types::HarnessToolConfiguration::AgentCoreGateway(
-                            crate::protocol_serde::shape_harness_agent_core_gateway_config::de_harness_agent_core_gateway_config(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentCoreGateway' cannot be null")
-                                })?,
-                        )),
-                        "inlineFunction" => Some(crate::types::HarnessToolConfiguration::InlineFunction(
-                            crate::protocol_serde::shape_harness_inline_function_config::de_harness_inline_function_config(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'inlineFunction' cannot be null")
-                                })?,
-                        )),
-                        "agentCoreCodeInterpreter" => Some(crate::types::HarnessToolConfiguration::AgentCoreCodeInterpreter(
-                            crate::protocol_serde::shape_harness_agent_core_code_interpreter_config::de_harness_agent_core_code_interpreter_config(
-                                tokens, _value,
-                            )?
-                            .ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentCoreCodeInterpreter' cannot be null")
-                            })?,
-                        )),
-                        _ => {
-                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::types::HarnessToolConfiguration::Unknown)
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            loop {
+                match tokens.next().transpose()? {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
+                            tokens.peek()
+                        {
+                            let _ = tokens.next().expect("peek returned a token")?;
+                            continue;
                         }
-                    };
-                }
-                other => {
-                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {other:?}"
-                    )))
+                        let key = key.to_unescaped()?;
+                        if key == "__type" {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            continue;
+                        }
+                        if variant.is_some() {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "encountered mixed variants in union",
+                            ));
+                        }
+                        variant = match key.as_ref() {
+                            "remoteMcp" => {
+                                Some(crate::types::HarnessToolConfiguration::RemoteMcp(
+                                    crate::protocol_serde::shape_harness_remote_mcp_config::de_harness_remote_mcp_config(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'remoteMcp' cannot be null"))?
+                                ))
+                            }
+                            "agentCoreBrowser" => {
+                                Some(crate::types::HarnessToolConfiguration::AgentCoreBrowser(
+                                    crate::protocol_serde::shape_harness_agent_core_browser_config::de_harness_agent_core_browser_config(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentCoreBrowser' cannot be null"))?
+                                ))
+                            }
+                            "agentCoreGateway" => {
+                                Some(crate::types::HarnessToolConfiguration::AgentCoreGateway(
+                                    crate::protocol_serde::shape_harness_agent_core_gateway_config::de_harness_agent_core_gateway_config(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentCoreGateway' cannot be null"))?
+                                ))
+                            }
+                            "inlineFunction" => {
+                                Some(crate::types::HarnessToolConfiguration::InlineFunction(
+                                    crate::protocol_serde::shape_harness_inline_function_config::de_harness_inline_function_config(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'inlineFunction' cannot be null"))?
+                                ))
+                            }
+                            "agentCoreCodeInterpreter" => {
+                                Some(crate::types::HarnessToolConfiguration::AgentCoreCodeInterpreter(
+                                    crate::protocol_serde::shape_harness_agent_core_code_interpreter_config::de_harness_agent_core_code_interpreter_config(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentCoreCodeInterpreter' cannot be null"))?
+                                ))
+                            }
+                            _ => {
+                                                                              ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                                                              Some(crate::types::HarnessToolConfiguration::Unknown)
+                                                                            }
+                        };
+                    }
+                    other => {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {other:?}"
+                        )))
+                    }
                 }
             }
-        },
+        }
         _ => {
             return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start object or null",

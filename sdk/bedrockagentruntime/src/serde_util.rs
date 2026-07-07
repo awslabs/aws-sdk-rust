@@ -47,6 +47,18 @@ pub(crate) fn end_session_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_document_content_output_output_correct_errors(
+    mut builder: crate::operation::get_document_content::builders::GetDocumentContentOutputBuilder,
+) -> crate::operation::get_document_content::builders::GetDocumentContentOutputBuilder {
+    if builder.mime_type.is_none() {
+        builder.mime_type = Some(Default::default())
+    }
+    if builder.presigned_url.is_none() {
+        builder.presigned_url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_execution_flow_snapshot_output_output_correct_errors(
     mut builder: crate::operation::get_execution_flow_snapshot::builders::GetExecutionFlowSnapshotOutputBuilder,
 ) -> crate::operation::get_execution_flow_snapshot::builders::GetExecutionFlowSnapshotOutputBuilder {
@@ -405,6 +417,44 @@ pub(crate) fn session_summary_correct_errors(
     builder
 }
 
+pub(crate) fn agentic_retrieve_response_event_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveResponseEventBuilder,
+) -> crate::types::builders::AgenticRetrieveResponseEventBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_result_event_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveResultEventBuilder,
+) -> crate::types::builders::AgenticRetrieveResultEventBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_trace_event_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveTraceEventBuilder,
+) -> crate::types::builders::AgenticRetrieveTraceEventBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(Default::default())
+    }
+    if builder.attributes.is_none() {
+        builder.attributes = {
+            let builder = crate::types::builders::AgenticRetrieveTraceEventAttributesBuilder::default();
+            crate::serde_util::agentic_retrieve_trace_event_attributes_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn condition_result_event_correct_errors(
     mut builder: crate::types::builders::ConditionResultEventBuilder,
 ) -> crate::types::builders::ConditionResultEventBuilder {
@@ -624,6 +674,30 @@ pub(crate) fn retrieve_and_generate_output_event_correct_errors(
     builder
 }
 
+pub(crate) fn agentic_retrieve_generated_response_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveGeneratedResponseBuilder,
+) -> crate::types::builders::AgenticRetrieveGeneratedResponseBuilder {
+    if builder.answer.is_none() {
+        builder.answer = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_trace_event_attributes_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveTraceEventAttributesBuilder,
+) -> crate::types::builders::AgenticRetrieveTraceEventAttributesBuilder {
+    if builder.step.is_none() {
+        builder.step = "no value was set".parse::<crate::types::AgenticRetrieveStep>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AgenticRetrieveStatus>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn audio_segment_correct_errors(mut builder: crate::types::builders::AudioSegmentBuilder) -> crate::types::builders::AudioSegmentBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
@@ -634,6 +708,24 @@ pub(crate) fn audio_segment_correct_errors(mut builder: crate::types::builders::
 pub(crate) fn video_segment_correct_errors(mut builder: crate::types::builders::VideoSegmentBuilder) -> crate::types::builders::VideoSegmentBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_result_item_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveResultItemBuilder,
+) -> crate::types::builders::AgenticRetrieveResultItemBuilder {
+    if builder.content.is_none() {
+        builder.content = {
+            let builder = crate::types::builders::RetrievalContentBuilder::default();
+            crate::serde_util::retrieval_content_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.source_retriever.is_none() {
+        builder.source_retriever = {
+            let builder = crate::types::builders::AgenticRetrieveSourceRetrieverBuilder::default();
+            crate::serde_util::agentic_retrieve_source_retriever_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -793,6 +885,39 @@ pub(crate) fn text_prompt_correct_errors(mut builder: crate::types::builders::Te
     builder
 }
 
+pub(crate) fn agentic_retrieve_citation_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveCitationBuilder,
+) -> crate::types::builders::AgenticRetrieveCitationBuilder {
+    if builder.start_index.is_none() {
+        builder.start_index = Some(Default::default())
+    }
+    if builder.end_index.is_none() {
+        builder.end_index = Some(Default::default())
+    }
+    if builder.references.is_none() {
+        builder.references = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_failure_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveFailureBuilder,
+) -> crate::types::builders::AgenticRetrieveFailureBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_source_retriever_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveSourceRetrieverBuilder,
+) -> crate::types::builders::AgenticRetrieveSourceRetrieverBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn api_invocation_input_correct_errors(
     mut builder: crate::types::builders::ApiInvocationInputBuilder,
 ) -> crate::types::builders::ApiInvocationInputBuilder {
@@ -822,6 +947,54 @@ pub(crate) fn node_input_source_correct_errors(
     }
     if builder.expression.is_none() {
         builder.expression = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn retrieval_content_correct_errors(
+    mut builder: crate::types::builders::RetrievalContentBuilder,
+) -> crate::types::builders::RetrievalContentBuilder {
+    if builder.mime_type.is_none() {
+        builder.mime_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_action_details_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveActionDetailsBuilder,
+) -> crate::types::builders::AgenticRetrieveActionDetailsBuilder {
+    if builder.input_query.is_none() {
+        builder.input_query = {
+            let builder = crate::types::builders::AgenticRetrieveMessageContentBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.source_retrievers.is_none() {
+        builder.source_retrievers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_guardrail_warning_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveGuardrailWarningBuilder,
+) -> crate::types::builders::AgenticRetrieveGuardrailWarningBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_warning_message_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveWarningMessageBuilder,
+) -> crate::types::builders::AgenticRetrieveWarningMessageBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -886,6 +1059,15 @@ pub(crate) fn node_output_next_correct_errors(
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.uri.is_none() {
         builder.uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agentic_retrieve_citation_reference_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveCitationReferenceBuilder,
+) -> crate::types::builders::AgenticRetrieveCitationReferenceBuilder {
+    if builder.result_index.is_none() {
+        builder.result_index = Some(Default::default())
     }
     builder
 }

@@ -20,7 +20,11 @@ pub fn ser_resource_mapping(
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_mapping(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceMapping::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -28,7 +32,7 @@ pub fn de_resource_mapping(
             s if s.matches("Source") /* Source com.amazonaws.cloudformation#ResourceMapping$Source */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_resource_location::de_resource_location(&mut tag)
+                        crate::protocol_serde::shape_resource_location::de_resource_location(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -38,7 +42,7 @@ pub fn de_resource_mapping(
             s if s.matches("Destination") /* Destination com.amazonaws.cloudformation#ResourceMapping$Destination */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_resource_location::de_resource_location(&mut tag)
+                        crate::protocol_serde::shape_resource_location::de_resource_location(&mut tag, depth + 1)
                         ?
                     )
                 ;

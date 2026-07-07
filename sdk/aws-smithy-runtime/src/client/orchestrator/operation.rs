@@ -16,6 +16,7 @@ use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptio
 use aws_smithy_runtime_api::client::auth::{
     AuthSchemeOptionResolverParams, SharedAuthScheme, SharedAuthSchemeOptionResolver,
 };
+use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 use aws_smithy_runtime_api::client::endpoint::{EndpointResolverParams, SharedEndpointResolver};
 use aws_smithy_runtime_api::client::http::HttpClient;
 use aws_smithy_runtime_api::client::identity::SharedIdentityResolver;
@@ -168,6 +169,7 @@ where
 pub struct OperationBuilder<I = (), O = (), E = ()> {
     service_name: Option<Cow<'static, str>>,
     operation_name: Option<Cow<'static, str>>,
+    behavior_version: Option<BehaviorVersion>,
     config: Layer,
     runtime_components: RuntimeComponentsBuilder,
     runtime_plugins: Vec<SharedRuntimePlugin>,
@@ -186,6 +188,7 @@ impl OperationBuilder<(), (), ()> {
         Self {
             service_name: None,
             operation_name: None,
+            behavior_version: None,
             config: Layer::new("operation"),
             runtime_components: RuntimeComponentsBuilder::new("operation"),
             runtime_plugins: Vec::new(),
@@ -204,6 +207,12 @@ impl<I, O, E> OperationBuilder<I, O, E> {
     /// Configures the operation name for the builder.
     pub fn operation_name(mut self, operation_name: impl Into<Cow<'static, str>>) -> Self {
         self.operation_name = Some(operation_name.into());
+        self
+    }
+
+    /// Configures the behavior version for the builder.
+    pub fn behavior_version(mut self, behavior_version: BehaviorVersion) -> Self {
+        self.behavior_version = Some(behavior_version);
         self
     }
 
@@ -323,6 +332,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         OperationBuilder {
             service_name: self.service_name,
             operation_name: self.operation_name,
+            behavior_version: self.behavior_version,
             config: self.config,
             runtime_components: self.runtime_components,
             runtime_plugins: self.runtime_plugins,
@@ -349,6 +359,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         OperationBuilder {
             service_name: self.service_name,
             operation_name: self.operation_name,
+            behavior_version: self.behavior_version,
             config: self.config,
             runtime_components: self.runtime_components,
             runtime_plugins: self.runtime_plugins,
@@ -372,6 +383,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         OperationBuilder {
             service_name: self.service_name,
             operation_name: self.operation_name,
+            behavior_version: self.behavior_version,
             config: self.config,
             runtime_components: self.runtime_components,
             runtime_plugins: self.runtime_plugins,
@@ -386,9 +398,14 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         let mut config = self.config;
         config.store_put(Metadata::new(operation_name.clone(), service_name.clone()));
         let mut runtime_plugins = RuntimePlugins::new()
-            .with_client_plugins(default_plugins(
-                DefaultPluginParams::new().with_retry_partition_name(service_name.clone()),
-            ))
+            .with_client_plugins(default_plugins({
+                let mut params =
+                    DefaultPluginParams::new().with_retry_partition_name(service_name.clone());
+                if let Some(bv) = self.behavior_version {
+                    params = params.with_behavior_version(bv);
+                }
+                params
+            }))
             .with_client_plugin(
                 StaticRuntimePlugin::new()
                     .with_config(config.freeze())

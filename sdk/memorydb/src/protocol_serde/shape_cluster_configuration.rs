@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -114,7 +120,7 @@ where
                             );
                         }
                         "Shards" => {
-                            builder = builder.set_shards(crate::protocol_serde::shape_shard_details::de_shard_details(tokens, _value)?);
+                            builder = builder.set_shards(crate::protocol_serde::shape_shard_details::de_shard_details(tokens, _value, depth + 1)?);
                         }
                         "MultiRegionParameterGroupName" => {
                             builder = builder.set_multi_region_parameter_group_name(

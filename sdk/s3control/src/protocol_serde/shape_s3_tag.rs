@@ -20,7 +20,11 @@ pub fn ser_s3_tag(
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_tag(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::S3Tag, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::S3Tag::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,10 +2,16 @@
 pub(crate) fn de_configuration_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigurationItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -105,15 +111,21 @@ where
                             )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "relatedEvents" => {
-                            builder =
-                                builder.set_related_events(crate::protocol_serde::shape_related_event_list::de_related_event_list(tokens, _value)?);
+                            builder = builder.set_related_events(crate::protocol_serde::shape_related_event_list::de_related_event_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "relationships" => {
-                            builder =
-                                builder.set_relationships(crate::protocol_serde::shape_relationship_list::de_relationship_list(tokens, _value)?);
+                            builder = builder.set_relationships(crate::protocol_serde::shape_relationship_list::de_relationship_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "configuration" => {
                             builder = builder.set_configuration(
@@ -124,7 +136,7 @@ where
                         }
                         "supplementaryConfiguration" => {
                             builder = builder.set_supplementary_configuration(
-                                crate::protocol_serde::shape_supplementary_configuration::de_supplementary_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_supplementary_configuration::de_supplementary_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "recordingFrequency" => {

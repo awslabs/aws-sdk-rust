@@ -6,10 +6,13 @@ pub fn ser_metrics_config(
     if let Some(var_1) = &input.enable_enhanced_metrics {
         object.key("EnableEnhancedMetrics").boolean(*var_1);
     }
-    if let Some(var_2) = &input.metric_publish_frequency_in_seconds {
+    if let Some(var_2) = &input.enable_detailed_observability {
+        object.key("EnableDetailedObservability").boolean(*var_2);
+    }
+    if let Some(var_3) = &input.metric_publish_frequency_in_seconds {
         object.key("MetricPublishFrequencyInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())
@@ -18,10 +21,16 @@ pub fn ser_metrics_config(
 pub(crate) fn de_metrics_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MetricsConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -33,6 +42,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EnableEnhancedMetrics" => {
                             builder = builder.set_enable_enhanced_metrics(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "EnableDetailedObservability" => {
+                            builder =
+                                builder.set_enable_detailed_observability(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "MetricPublishFrequencyInSeconds" => {
                             builder = builder.set_metric_publish_frequency_in_seconds(

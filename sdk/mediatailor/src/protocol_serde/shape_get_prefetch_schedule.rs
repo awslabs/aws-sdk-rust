@@ -44,6 +44,8 @@ pub(crate) fn de_get_prefetch_schedule(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -58,7 +60,9 @@ pub(crate) fn de_get_prefetch_schedule(
                 }
                 "Consumption" => {
                     builder = builder.set_consumption(crate::protocol_serde::shape_prefetch_consumption::de_prefetch_consumption(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Name" => {
@@ -77,11 +81,19 @@ pub(crate) fn de_get_prefetch_schedule(
                 }
                 "RecurringPrefetchConfiguration" => {
                     builder = builder.set_recurring_prefetch_configuration(
-                        crate::protocol_serde::shape_recurring_prefetch_configuration::de_recurring_prefetch_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_recurring_prefetch_configuration::de_recurring_prefetch_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Retrieval" => {
-                    builder = builder.set_retrieval(crate::protocol_serde::shape_prefetch_retrieval::de_prefetch_retrieval(tokens, _value)?);
+                    builder = builder.set_retrieval(crate::protocol_serde::shape_prefetch_retrieval::de_prefetch_retrieval(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ScheduleType" => {
                     builder = builder.set_schedule_type(
@@ -98,7 +110,7 @@ pub(crate) fn de_get_prefetch_schedule(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -186,10 +186,16 @@ pub fn ser_hls_group_settings(
 pub(crate) fn de_hls_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HlsGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -201,7 +207,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adMarkers" => {
                             builder = builder.set_ad_markers(crate::protocol_serde::shape_list_of_hls_ad_markers::de_list_of_hls_ad_markers(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "baseUrlContent" => {
@@ -234,7 +242,11 @@ where
                         }
                         "captionLanguageMappings" => {
                             builder = builder.set_caption_language_mappings(
-                                crate::protocol_serde::shape_list_of_caption_language_mapping::de_list_of_caption_language_mapping(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_caption_language_mapping::de_list_of_caption_language_mapping(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "captionLanguageSetting" => {
@@ -266,8 +278,11 @@ where
                             );
                         }
                         "destination" => {
-                            builder =
-                                builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens, _value)?);
+                            builder = builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "directoryStructure" => {
                             builder = builder.set_directory_structure(
@@ -291,8 +306,11 @@ where
                             );
                         }
                         "hlsCdnSettings" => {
-                            builder =
-                                builder.set_hls_cdn_settings(crate::protocol_serde::shape_hls_cdn_settings::de_hls_cdn_settings(tokens, _value)?);
+                            builder = builder.set_hls_cdn_settings(crate::protocol_serde::shape_hls_cdn_settings::de_hls_cdn_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "hlsId3SegmentTagging" => {
                             builder = builder.set_hls_id3_segment_tagging(
@@ -366,7 +384,7 @@ where
                         }
                         "keyProviderSettings" => {
                             builder = builder.set_key_provider_settings(
-                                crate::protocol_serde::shape_key_provider_settings::de_key_provider_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_key_provider_settings::de_key_provider_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "manifestCompression" => {

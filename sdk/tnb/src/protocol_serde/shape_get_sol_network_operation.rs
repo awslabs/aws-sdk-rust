@@ -128,6 +128,8 @@ pub(crate) fn de_get_sol_network_operation(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -141,7 +143,11 @@ pub(crate) fn de_get_sol_network_operation(
                     );
                 }
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_problem_details::de_problem_details(tokens, _value)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_problem_details::de_problem_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -159,7 +165,11 @@ pub(crate) fn de_get_sol_network_operation(
                 }
                 "metadata" => {
                     builder = builder.set_metadata(
-                        crate::protocol_serde::shape_get_sol_network_operation_metadata::de_get_sol_network_operation_metadata(tokens, _value)?,
+                        crate::protocol_serde::shape_get_sol_network_operation_metadata::de_get_sol_network_operation_metadata(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "nsInstanceId" => {
@@ -177,11 +187,15 @@ pub(crate) fn de_get_sol_network_operation(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "tasks" => {
                     builder = builder.set_tasks(
-                        crate::protocol_serde::shape_get_sol_network_operation_tasks_list::de_get_sol_network_operation_tasks_list(tokens, _value)?,
+                        crate::protocol_serde::shape_get_sol_network_operation_tasks_list::de_get_sol_network_operation_tasks_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "updateType" => {

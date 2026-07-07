@@ -2,10 +2,16 @@
 pub(crate) fn de_agent_collaborator_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AgentCollaboratorSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,8 +43,11 @@ where
                             );
                         }
                         "agentDescriptor" => {
-                            builder =
-                                builder.set_agent_descriptor(crate::protocol_serde::shape_agent_descriptor::de_agent_descriptor(tokens, _value)?);
+                            builder = builder.set_agent_descriptor(crate::protocol_serde::shape_agent_descriptor::de_agent_descriptor(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "collaborationInstruction" => {
                             builder = builder.set_collaboration_instruction(

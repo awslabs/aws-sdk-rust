@@ -49,6 +49,8 @@ pub fn de_describe_spot_instance_requests(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSpotInstanceRequestsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSpotInstanceRequestsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_spot_instance_requests(
             s if s.matches("spotInstanceRequestSet") /* SpotInstanceRequests com.amazonaws.ec2.synthetic#DescribeSpotInstanceRequestsOutput$SpotInstanceRequests */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_spot_instance_request_list::de_spot_instance_request_list(&mut tag)
+                        crate::protocol_serde::shape_spot_instance_request_list::de_spot_instance_request_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

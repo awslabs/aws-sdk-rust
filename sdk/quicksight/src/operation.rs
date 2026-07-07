@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchCreateTopicReviewedAnswer` operation.
 pub mod batch_create_topic_reviewed_answer;
 
+/// Types for the `BatchDeleteKnowledgeBase` operation.
+pub mod batch_delete_knowledge_base;
+
 /// Types for the `BatchDeleteTopicReviewedAnswer` operation.
 pub mod batch_delete_topic_reviewed_answer;
 
@@ -18,6 +21,9 @@ pub mod create_account_subscription;
 
 /// Types for the `CreateActionConnector` operation.
 pub mod create_action_connector;
+
+/// Types for the `CreateAgent` operation.
+pub mod create_agent;
 
 /// Types for the `CreateAnalysis` operation.
 pub mod create_analysis;
@@ -36,6 +42,9 @@ pub mod create_data_set;
 
 /// Types for the `CreateDataSource` operation.
 pub mod create_data_source;
+
+/// Types for the `CreateFlow` operation.
+pub mod create_flow;
 
 /// Types for the `CreateFolder` operation.
 pub mod create_folder;
@@ -58,11 +67,17 @@ pub mod create_ingestion;
 /// Types for the `CreateNamespace` operation.
 pub mod create_namespace;
 
+/// Types for the `CreateOAuthClientApplication` operation.
+pub mod create_o_auth_client_application;
+
 /// Types for the `CreateRefreshSchedule` operation.
 pub mod create_refresh_schedule;
 
 /// Types for the `CreateRoleMembership` operation.
 pub mod create_role_membership;
+
+/// Types for the `CreateSpace` operation.
+pub mod create_space;
 
 /// Types for the `CreateTemplate` operation.
 pub mod create_template;
@@ -97,6 +112,9 @@ pub mod delete_account_subscription;
 /// Types for the `DeleteActionConnector` operation.
 pub mod delete_action_connector;
 
+/// Types for the `DeleteAgent` operation.
+pub mod delete_agent;
+
 /// Types for the `DeleteAnalysis` operation.
 pub mod delete_analysis;
 
@@ -124,6 +142,9 @@ pub mod delete_data_source;
 /// Types for the `DeleteDefaultQBusinessApplication` operation.
 pub mod delete_default_q_business_application;
 
+/// Types for the `DeleteFlow` operation.
+pub mod delete_flow;
+
 /// Types for the `DeleteFolder` operation.
 pub mod delete_folder;
 
@@ -142,8 +163,14 @@ pub mod delete_iam_policy_assignment;
 /// Types for the `DeleteIdentityPropagationConfig` operation.
 pub mod delete_identity_propagation_config;
 
+/// Types for the `DeleteKnowledgeBase` operation.
+pub mod delete_knowledge_base;
+
 /// Types for the `DeleteNamespace` operation.
 pub mod delete_namespace;
+
+/// Types for the `DeleteOAuthClientApplication` operation.
+pub mod delete_o_auth_client_application;
 
 /// Types for the `DeleteRefreshSchedule` operation.
 pub mod delete_refresh_schedule;
@@ -153,6 +180,9 @@ pub mod delete_role_custom_permission;
 
 /// Types for the `DeleteRoleMembership` operation.
 pub mod delete_role_membership;
+
+/// Types for the `DeleteSpace` operation.
+pub mod delete_space;
 
 /// Types for the `DeleteTemplate` operation.
 pub mod delete_template;
@@ -201,6 +231,12 @@ pub mod describe_action_connector;
 
 /// Types for the `DescribeActionConnectorPermissions` operation.
 pub mod describe_action_connector_permissions;
+
+/// Types for the `DescribeAgent` operation.
+pub mod describe_agent;
+
+/// Types for the `DescribeAgentPermissions` operation.
+pub mod describe_agent_permissions;
 
 /// Types for the `DescribeAnalysis` operation.
 pub mod describe_analysis;
@@ -268,6 +304,9 @@ pub mod describe_data_source_permissions;
 /// Types for the `DescribeDefaultQBusinessApplication` operation.
 pub mod describe_default_q_business_application;
 
+/// Types for the `DescribeFlow` operation.
+pub mod describe_flow;
+
 /// Types for the `DescribeFolder` operation.
 pub mod describe_folder;
 
@@ -295,8 +334,17 @@ pub mod describe_ip_restriction;
 /// Types for the `DescribeKeyRegistration` operation.
 pub mod describe_key_registration;
 
+/// Types for the `DescribeKnowledgeBase` operation.
+pub mod describe_knowledge_base;
+
+/// Types for the `DescribeKnowledgeBasePermissions` operation.
+pub mod describe_knowledge_base_permissions;
+
 /// Types for the `DescribeNamespace` operation.
 pub mod describe_namespace;
+
+/// Types for the `DescribeOAuthClientApplication` operation.
+pub mod describe_o_auth_client_application;
 
 /// Types for the `DescribeQPersonalizationConfiguration` operation.
 pub mod describe_q_personalization_configuration;
@@ -312,6 +360,12 @@ pub mod describe_role_custom_permission;
 
 /// Types for the `DescribeSelfUpgradeConfiguration` operation.
 pub mod describe_self_upgrade_configuration;
+
+/// Types for the `DescribeSpace` operation.
+pub mod describe_space;
+
+/// Types for the `DescribeSpacePermissions` operation.
+pub mod describe_space_permissions;
 
 /// Types for the `DescribeTemplate` operation.
 pub mod describe_template;
@@ -379,6 +433,9 @@ pub mod get_session_embed_url;
 /// Types for the `ListActionConnectors` operation.
 pub mod list_action_connectors;
 
+/// Types for the `ListAgents` operation.
+pub mod list_agents;
+
 /// Types for the `ListAnalyses` operation.
 pub mod list_analyses;
 
@@ -436,8 +493,14 @@ pub mod list_identity_propagation_configs;
 /// Types for the `ListIngestions` operation.
 pub mod list_ingestions;
 
+/// Types for the `ListKnowledgeBases` operation.
+pub mod list_knowledge_bases;
+
 /// Types for the `ListNamespaces` operation.
 pub mod list_namespaces;
+
+/// Types for the `ListOAuthClientApplications` operation.
+pub mod list_o_auth_client_applications;
 
 /// Types for the `ListRefreshSchedules` operation.
 pub mod list_refresh_schedules;
@@ -447,6 +510,12 @@ pub mod list_role_memberships;
 
 /// Types for the `ListSelfUpgrades` operation.
 pub mod list_self_upgrades;
+
+/// Types for the `ListSpaceResources` operation.
+pub mod list_space_resources;
+
+/// Types for the `ListSpaces` operation.
+pub mod list_spaces;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -484,6 +553,9 @@ pub mod list_user_groups;
 /// Types for the `ListUsers` operation.
 pub mod list_users;
 
+/// Types for the `ListUsersIndexCapacity` operation.
+pub mod list_users_index_capacity;
+
 /// Types for the `ListVPCConnections` operation.
 pub mod list_vpc_connections;
 
@@ -501,6 +573,9 @@ pub mod restore_analysis;
 
 /// Types for the `SearchActionConnectors` operation.
 pub mod search_action_connectors;
+
+/// Types for the `SearchAgents` operation.
+pub mod search_agents;
 
 /// Types for the `SearchAnalyses` operation.
 pub mod search_analyses;
@@ -522,6 +597,12 @@ pub mod search_folders;
 
 /// Types for the `SearchGroups` operation.
 pub mod search_groups;
+
+/// Types for the `SearchKnowledgeBases` operation.
+pub mod search_knowledge_bases;
+
+/// Types for the `SearchSpaces` operation.
+pub mod search_spaces;
 
 /// Types for the `SearchTopics` operation.
 pub mod search_topics;
@@ -561,6 +642,12 @@ pub mod update_action_connector;
 
 /// Types for the `UpdateActionConnectorPermissions` operation.
 pub mod update_action_connector_permissions;
+
+/// Types for the `UpdateAgent` operation.
+pub mod update_agent;
+
+/// Types for the `UpdateAgentPermissions` operation.
+pub mod update_agent_permissions;
 
 /// Types for the `UpdateAnalysis` operation.
 pub mod update_analysis;
@@ -613,6 +700,9 @@ pub mod update_data_source_permissions;
 /// Types for the `UpdateDefaultQBusinessApplication` operation.
 pub mod update_default_q_business_application;
 
+/// Types for the `UpdateFlow` operation.
+pub mod update_flow;
+
 /// Types for the `UpdateFlowPermissions` operation.
 pub mod update_flow_permissions;
 
@@ -637,6 +727,12 @@ pub mod update_ip_restriction;
 /// Types for the `UpdateKeyRegistration` operation.
 pub mod update_key_registration;
 
+/// Types for the `UpdateKnowledgeBasePermissions` operation.
+pub mod update_knowledge_base_permissions;
+
+/// Types for the `UpdateOAuthClientApplication` operation.
+pub mod update_o_auth_client_application;
+
 /// Types for the `UpdatePublicSharingSettings` operation.
 pub mod update_public_sharing_settings;
 
@@ -657,6 +753,15 @@ pub mod update_self_upgrade;
 
 /// Types for the `UpdateSelfUpgradeConfiguration` operation.
 pub mod update_self_upgrade_configuration;
+
+/// Types for the `UpdateSpace` operation.
+pub mod update_space;
+
+/// Types for the `UpdateSpacePermissions` operation.
+pub mod update_space_permissions;
+
+/// Types for the `UpdateSpaceResources` operation.
+pub mod update_space_resources;
 
 /// Types for the `UpdateSPICECapacityConfiguration` operation.
 pub mod update_spice_capacity_configuration;

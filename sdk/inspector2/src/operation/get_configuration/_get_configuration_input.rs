@@ -2,7 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfigurationInput {}
+pub struct GetConfigurationInput {
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
+}
+impl GetConfigurationInput {
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl GetConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
     pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationInputBuilder {
@@ -13,12 +22,28 @@ impl GetConfigurationInput {
 /// A builder for [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct GetConfigurationInputBuilder {}
+pub struct GetConfigurationInputBuilder {
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+}
 impl GetConfigurationInputBuilder {
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the member account whose scan configuration you want to retrieve. When specified, you must be the delegated administrator for this member account. If not specified, the operation returns your own configuration.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_configuration::GetConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_configuration::GetConfigurationInput {})
+        ::std::result::Result::Ok(crate::operation::get_configuration::GetConfigurationInput { account_id: self.account_id })
     }
 }

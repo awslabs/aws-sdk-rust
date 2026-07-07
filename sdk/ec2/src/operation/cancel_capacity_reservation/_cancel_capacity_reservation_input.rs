@@ -7,6 +7,10 @@ pub struct CancelCapacityReservationInput {
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity Reservation during its commitment duration. Possible values include <code>commitment-wind-down</code>, which continues billing for the remaining commitment duration without delivering capacity.</p>
+    pub apply_cancellation_charges: ::std::option::Option<crate::types::ApplyCancellationCharges>,
+    /// <p>The ID of the cancellation quote to use for the cancellation. You can generate a cancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation quote must be in an <code>active</code> state.</p>
+    pub quote_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelCapacityReservationInput {
     /// <p>The ID of the Capacity Reservation to be cancelled.</p>
@@ -16,6 +20,14 @@ impl CancelCapacityReservationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
+    }
+    /// <p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity Reservation during its commitment duration. Possible values include <code>commitment-wind-down</code>, which continues billing for the remaining commitment duration without delivering capacity.</p>
+    pub fn apply_cancellation_charges(&self) -> ::std::option::Option<&crate::types::ApplyCancellationCharges> {
+        self.apply_cancellation_charges.as_ref()
+    }
+    /// <p>The ID of the cancellation quote to use for the cancellation. You can generate a cancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation quote must be in an <code>active</code> state.</p>
+    pub fn quote_id(&self) -> ::std::option::Option<&str> {
+        self.quote_id.as_deref()
     }
 }
 impl CancelCapacityReservationInput {
@@ -31,6 +43,8 @@ impl CancelCapacityReservationInput {
 pub struct CancelCapacityReservationInputBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) apply_cancellation_charges: ::std::option::Option<crate::types::ApplyCancellationCharges>,
+    pub(crate) quote_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelCapacityReservationInputBuilder {
     /// <p>The ID of the Capacity Reservation to be cancelled.</p>
@@ -62,6 +76,34 @@ impl CancelCapacityReservationInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity Reservation during its commitment duration. Possible values include <code>commitment-wind-down</code>, which continues billing for the remaining commitment duration without delivering capacity.</p>
+    pub fn apply_cancellation_charges(mut self, input: crate::types::ApplyCancellationCharges) -> Self {
+        self.apply_cancellation_charges = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity Reservation during its commitment duration. Possible values include <code>commitment-wind-down</code>, which continues billing for the remaining commitment duration without delivering capacity.</p>
+    pub fn set_apply_cancellation_charges(mut self, input: ::std::option::Option<crate::types::ApplyCancellationCharges>) -> Self {
+        self.apply_cancellation_charges = input;
+        self
+    }
+    /// <p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity Reservation during its commitment duration. Possible values include <code>commitment-wind-down</code>, which continues billing for the remaining commitment duration without delivering capacity.</p>
+    pub fn get_apply_cancellation_charges(&self) -> &::std::option::Option<crate::types::ApplyCancellationCharges> {
+        &self.apply_cancellation_charges
+    }
+    /// <p>The ID of the cancellation quote to use for the cancellation. You can generate a cancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation quote must be in an <code>active</code> state.</p>
+    pub fn quote_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quote_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the cancellation quote to use for the cancellation. You can generate a cancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation quote must be in an <code>active</code> state.</p>
+    pub fn set_quote_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quote_id = input;
+        self
+    }
+    /// <p>The ID of the cancellation quote to use for the cancellation. You can generate a cancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code> action. The cancellation quote must be in an <code>active</code> state.</p>
+    pub fn get_quote_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_id
+    }
     /// Consumes the builder and constructs a [`CancelCapacityReservationInput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput).
     pub fn build(
         self,
@@ -72,6 +114,8 @@ impl CancelCapacityReservationInputBuilder {
         ::std::result::Result::Ok(crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput {
             capacity_reservation_id: self.capacity_reservation_id,
             dry_run: self.dry_run,
+            apply_cancellation_charges: self.apply_cancellation_charges,
+            quote_id: self.quote_id,
         })
     }
 }

@@ -155,6 +155,8 @@ pub(crate) fn de_get_sensitive_data_occurrences(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -169,7 +171,7 @@ pub(crate) fn de_get_sensitive_data_occurrences(
                 }
                 "sensitiveDataOccurrences" => {
                     builder = builder.set_sensitive_data_occurrences(
-                        crate::protocol_serde::shape_sensitive_data_occurrences::de_sensitive_data_occurrences(tokens, _value)?,
+                        crate::protocol_serde::shape_sensitive_data_occurrences::de_sensitive_data_occurrences(tokens, _value, depth + 1)?,
                     );
                 }
                 "status" => {

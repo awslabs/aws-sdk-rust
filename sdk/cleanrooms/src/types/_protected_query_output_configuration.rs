@@ -6,6 +6,8 @@
 pub enum ProtectedQueryOutputConfiguration {
     /// <p>Required configuration for a protected query with a <code>distribute</code> output type.</p>
     Distribute(crate::types::ProtectedQueryDistributeOutputConfiguration),
+    /// <p>The intermediate table output configuration, present when the protected query was triggered by a populate operation.</p>
+    IntermediateTable(crate::types::IntermediateTableOutputConfiguration),
     /// <p>Required configuration for a protected query with a <code>member</code> output type.</p>
     Member(crate::types::ProtectedQueryMemberOutputConfiguration),
     /// <p>Required configuration for a protected query with an <code>s3</code> output type.</p>
@@ -33,6 +35,19 @@ impl ProtectedQueryOutputConfiguration {
     /// Returns true if this is a [`Distribute`](crate::types::ProtectedQueryOutputConfiguration::Distribute).
     pub fn is_distribute(&self) -> bool {
         self.as_distribute().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IntermediateTable`](crate::types::ProtectedQueryOutputConfiguration::IntermediateTable), extracting the inner [`IntermediateTableOutputConfiguration`](crate::types::IntermediateTableOutputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_intermediate_table(&self) -> ::std::result::Result<&crate::types::IntermediateTableOutputConfiguration, &Self> {
+        if let ProtectedQueryOutputConfiguration::IntermediateTable(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IntermediateTable`](crate::types::ProtectedQueryOutputConfiguration::IntermediateTable).
+    pub fn is_intermediate_table(&self) -> bool {
+        self.as_intermediate_table().is_ok()
     }
     /// Tries to convert the enum instance into [`Member`](crate::types::ProtectedQueryOutputConfiguration::Member), extracting the inner [`ProtectedQueryMemberOutputConfiguration`](crate::types::ProtectedQueryMemberOutputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -25,5 +25,7 @@ pub fn de_conflicting_aliases_list(
             "invalid root, expected ConflictingAliasesList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_conflicting_aliases_list::de_conflicting_aliases_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_conflicting_aliases_list::de_conflicting_aliases_list(&mut decoder, depth + 1)
 }

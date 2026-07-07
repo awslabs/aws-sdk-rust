@@ -15,6 +15,7 @@
 ///     CapacityReservationState::Active => { /* ... */ },
 ///     CapacityReservationState::Assessing => { /* ... */ },
 ///     CapacityReservationState::Cancelled => { /* ... */ },
+///     CapacityReservationState::Cancelling => { /* ... */ },
 ///     CapacityReservationState::Delayed => { /* ... */ },
 ///     CapacityReservationState::Expired => { /* ... */ },
 ///     CapacityReservationState::Failed => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum CapacityReservationState {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
     #[allow(missing_docs)] // documentation missing in model
+    Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
     Delayed,
     #[allow(missing_docs)] // documentation missing in model
     Expired,
@@ -86,6 +89,7 @@ impl ::std::convert::From<&str> for CapacityReservationState {
             "active" => CapacityReservationState::Active,
             "assessing" => CapacityReservationState::Assessing,
             "cancelled" => CapacityReservationState::Cancelled,
+            "cancelling" => CapacityReservationState::Cancelling,
             "delayed" => CapacityReservationState::Delayed,
             "expired" => CapacityReservationState::Expired,
             "failed" => CapacityReservationState::Failed,
@@ -113,6 +117,7 @@ impl CapacityReservationState {
             CapacityReservationState::Active => "active",
             CapacityReservationState::Assessing => "assessing",
             CapacityReservationState::Cancelled => "cancelled",
+            CapacityReservationState::Cancelling => "cancelling",
             CapacityReservationState::Delayed => "delayed",
             CapacityReservationState::Expired => "expired",
             CapacityReservationState::Failed => "failed",
@@ -131,6 +136,7 @@ impl CapacityReservationState {
             "active",
             "assessing",
             "cancelled",
+            "cancelling",
             "delayed",
             "expired",
             "failed",
@@ -166,6 +172,7 @@ impl ::std::fmt::Display for CapacityReservationState {
             CapacityReservationState::Active => write!(f, "active"),
             CapacityReservationState::Assessing => write!(f, "assessing"),
             CapacityReservationState::Cancelled => write!(f, "cancelled"),
+            CapacityReservationState::Cancelling => write!(f, "cancelling"),
             CapacityReservationState::Delayed => write!(f, "delayed"),
             CapacityReservationState::Expired => write!(f, "expired"),
             CapacityReservationState::Failed => write!(f, "failed"),

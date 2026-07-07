@@ -23,6 +23,7 @@
 ///     Codec::Hevc => { /* ... */ },
 ///     Codec::Jpeg2000 => { /* ... */ },
 ///     Codec::Mjpeg => { /* ... */ },
+///     Codec::Mp2 => { /* ... */ },
 ///     Codec::Mp3 => { /* ... */ },
 ///     Codec::Mp4V => { /* ... */ },
 ///     Codec::Mpeg1 => { /* ... */ },
@@ -91,6 +92,8 @@ pub enum Codec {
     #[allow(missing_docs)] // documentation missing in model
     Mjpeg,
     #[allow(missing_docs)] // documentation missing in model
+    Mp2,
+    #[allow(missing_docs)] // documentation missing in model
     Mp3,
     #[allow(missing_docs)] // documentation missing in model
     Mp4V,
@@ -141,6 +144,7 @@ impl ::std::convert::From<&str> for Codec {
             "HEVC" => Codec::Hevc,
             "JPEG2000" => Codec::Jpeg2000,
             "MJPEG" => Codec::Mjpeg,
+            "MP2" => Codec::Mp2,
             "MP3" => Codec::Mp3,
             "MP4V" => Codec::Mp4V,
             "MPEG1" => Codec::Mpeg1,
@@ -183,6 +187,7 @@ impl Codec {
             Codec::Hevc => "HEVC",
             Codec::Jpeg2000 => "JPEG2000",
             Codec::Mjpeg => "MJPEG",
+            Codec::Mp2 => "MP2",
             Codec::Mp3 => "MP3",
             Codec::Mp4V => "MP4V",
             Codec::Mpeg1 => "MPEG1",
@@ -216,6 +221,7 @@ impl Codec {
             "HEVC",
             "JPEG2000",
             "MJPEG",
+            "MP2",
             "MP3",
             "MP4V",
             "MPEG1",
@@ -266,6 +272,7 @@ impl ::std::fmt::Display for Codec {
             Codec::Hevc => write!(f, "HEVC"),
             Codec::Jpeg2000 => write!(f, "JPEG2000"),
             Codec::Mjpeg => write!(f, "MJPEG"),
+            Codec::Mp2 => write!(f, "MP2"),
             Codec::Mp3 => write!(f, "MP3"),
             Codec::Mp4V => write!(f, "MP4V"),
             Codec::Mpeg1 => write!(f, "MPEG1"),

@@ -113,6 +113,8 @@ pub fn de_rebalance_slots_in_global_replication_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RebalanceSlotsInGlobalReplicationGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RebalanceSlotsInGlobalReplicationGroupResponse got {start_el:?}"
@@ -130,7 +132,7 @@ pub fn de_rebalance_slots_in_global_replication_group(
             s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#RebalanceSlotsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_global_replication_group::de_global_replication_group(&mut tag)
+                        crate::protocol_serde::shape_global_replication_group::de_global_replication_group(&mut tag, depth + 1)
                         ?
                     )
                 ;

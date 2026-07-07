@@ -2,10 +2,16 @@
 pub(crate) fn de_automated_reasoning_check_translation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningCheckTranslation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,22 +24,22 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "premises" => {
                                 builder = builder.set_premises(
-                                    crate::protocol_serde::shape_automated_reasoning_logic_statement_list::de_automated_reasoning_logic_statement_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_logic_statement_list::de_automated_reasoning_logic_statement_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "claims" => {
                                 builder = builder.set_claims(
-                                    crate::protocol_serde::shape_automated_reasoning_logic_statement_list::de_automated_reasoning_logic_statement_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_logic_statement_list::de_automated_reasoning_logic_statement_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "untranslatedPremises" => {
                                 builder = builder.set_untranslated_premises(
-                                    crate::protocol_serde::shape_automated_reasoning_check_input_text_reference_list::de_automated_reasoning_check_input_text_reference_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_check_input_text_reference_list::de_automated_reasoning_check_input_text_reference_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "untranslatedClaims" => {
                                 builder = builder.set_untranslated_claims(
-                                    crate::protocol_serde::shape_automated_reasoning_check_input_text_reference_list::de_automated_reasoning_check_input_text_reference_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_check_input_text_reference_list::de_automated_reasoning_check_input_text_reference_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "confidence" => {

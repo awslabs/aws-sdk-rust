@@ -2,10 +2,16 @@
 pub(crate) fn de_lambda_function_aggregation_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LambdaFunctionAggregationResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,7 @@ where
                             );
                         }
                         "lambdaTags" => {
-                            builder = builder.set_lambda_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_lambda_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "accountId" => {
                             builder = builder.set_account_id(
@@ -47,7 +53,11 @@ where
                             );
                         }
                         "severityCounts" => {
-                            builder = builder.set_severity_counts(crate::protocol_serde::shape_severity_counts::de_severity_counts(tokens, _value)?);
+                            builder = builder.set_severity_counts(crate::protocol_serde::shape_severity_counts::de_severity_counts(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lastModifiedAt" => {
                             builder = builder.set_last_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

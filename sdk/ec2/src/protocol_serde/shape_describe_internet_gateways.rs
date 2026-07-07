@@ -51,6 +51,8 @@ pub fn de_describe_internet_gateways(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeInternetGatewaysResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeInternetGatewaysResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_internet_gateways(
             s if s.matches("internetGatewaySet") /* InternetGateways com.amazonaws.ec2.synthetic#DescribeInternetGatewaysOutput$InternetGateways */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_internet_gateway_list::de_internet_gateway_list(&mut tag)
+                        crate::protocol_serde::shape_internet_gateway_list::de_internet_gateway_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

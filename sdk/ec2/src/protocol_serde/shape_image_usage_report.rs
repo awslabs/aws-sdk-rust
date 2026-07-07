@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_image_usage_report(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ImageUsageReport, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ImageUsageReport::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_image_usage_report(
             s if s.matches("resourceTypeSet") /* ResourceTypes com.amazonaws.ec2#ImageUsageReport$ResourceTypes */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_image_usage_resource_type_list::de_image_usage_resource_type_list(&mut tag)
+                        crate::protocol_serde::shape_image_usage_resource_type_list::de_image_usage_resource_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_image_usage_report(
             s if s.matches("accountIdSet") /* AccountIds com.amazonaws.ec2#ImageUsageReport$AccountIds */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_user_id_list::de_user_id_list(&mut tag)
+                        crate::protocol_serde::shape_user_id_list::de_user_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -110,7 +114,7 @@ pub fn de_image_usage_report(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ImageUsageReport$Tags */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

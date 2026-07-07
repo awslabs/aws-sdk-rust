@@ -169,6 +169,8 @@ pub(crate) fn de_describe_managed_rule_group(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -196,7 +198,7 @@ pub(crate) fn de_describe_managed_rule_group(
                     );
                 }
                 "Rules" => {
-                    builder = builder.set_rules(crate::protocol_serde::shape_rule_summaries::de_rule_summaries(tokens, _value)?);
+                    builder = builder.set_rules(crate::protocol_serde::shape_rule_summaries::de_rule_summaries(tokens, _value, depth + 1)?);
                 }
                 "LabelNamespace" => {
                     builder = builder.set_label_namespace(
@@ -206,10 +208,18 @@ pub(crate) fn de_describe_managed_rule_group(
                     );
                 }
                 "AvailableLabels" => {
-                    builder = builder.set_available_labels(crate::protocol_serde::shape_label_summaries::de_label_summaries(tokens, _value)?);
+                    builder = builder.set_available_labels(crate::protocol_serde::shape_label_summaries::de_label_summaries(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ConsumedLabels" => {
-                    builder = builder.set_consumed_labels(crate::protocol_serde::shape_label_summaries::de_label_summaries(tokens, _value)?);
+                    builder = builder.set_consumed_labels(crate::protocol_serde::shape_label_summaries::de_label_summaries(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

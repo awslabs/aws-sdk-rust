@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_managed_certificate_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ManagedCertificateDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ManagedCertificateDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -51,7 +55,7 @@ pub fn de_managed_certificate_details(
             s if s.matches("ValidationTokenDetails") /* ValidationTokenDetails com.amazonaws.cloudfront#ManagedCertificateDetails$ValidationTokenDetails */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_validation_token_detail_list::de_validation_token_detail_list(&mut tag)
+                        crate::protocol_serde::shape_validation_token_detail_list::de_validation_token_detail_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

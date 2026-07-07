@@ -24,10 +24,16 @@ pub fn ser_filter_scope_configuration(
 pub(crate) fn de_filter_scope_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FilterScopeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,13 +45,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SelectedSheets" => {
                             builder = builder.set_selected_sheets(
-                                    crate::protocol_serde::shape_selected_sheets_filter_scope_configuration::de_selected_sheets_filter_scope_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_selected_sheets_filter_scope_configuration::de_selected_sheets_filter_scope_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         "AllSheets" => {
                             builder = builder.set_all_sheets(
                                 crate::protocol_serde::shape_all_sheets_filter_scope_configuration::de_all_sheets_filter_scope_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

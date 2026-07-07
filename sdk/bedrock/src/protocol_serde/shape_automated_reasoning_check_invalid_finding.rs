@@ -2,10 +2,16 @@
 pub(crate) fn de_automated_reasoning_check_invalid_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningCheckInvalidFinding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,21 +24,27 @@ where
                         "translation" => {
                             builder = builder.set_translation(
                                 crate::protocol_serde::shape_automated_reasoning_check_translation::de_automated_reasoning_check_translation(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "contradictingRules" => {
                             builder = builder.set_contradicting_rules(
                                 crate::protocol_serde::shape_automated_reasoning_check_rule_list::de_automated_reasoning_check_rule_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "logicWarning" => {
                             builder = builder.set_logic_warning(
                                 crate::protocol_serde::shape_automated_reasoning_check_logic_warning::de_automated_reasoning_check_logic_warning(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

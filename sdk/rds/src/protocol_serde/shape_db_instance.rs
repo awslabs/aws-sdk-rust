@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_instance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbInstance, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbInstance::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -88,7 +92,7 @@ pub fn de_db_instance(
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBInstance$Endpoint */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -155,7 +159,7 @@ pub fn de_db_instance(
             s if s.matches("DBSecurityGroups") /* DBSecurityGroups com.amazonaws.rds#DBInstance$DBSecurityGroups */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_db_security_group_membership_list::de_db_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_db_security_group_membership_list::de_db_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -165,7 +169,7 @@ pub fn de_db_instance(
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.rds#DBInstance$VpcSecurityGroups */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -175,7 +179,7 @@ pub fn de_db_instance(
             s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.rds#DBInstance$DBParameterGroups */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_db_parameter_group_status_list::de_db_parameter_group_status_list(&mut tag)
+                        crate::protocol_serde::shape_db_parameter_group_status_list::de_db_parameter_group_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -198,7 +202,7 @@ pub fn de_db_instance(
             s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.rds#DBInstance$DBSubnetGroup */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_db_subnet_group::de_db_subnet_group(&mut tag)
+                        crate::protocol_serde::shape_db_subnet_group::de_db_subnet_group(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -235,7 +239,7 @@ pub fn de_db_instance(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.rds#DBInstance$PendingModifiedValues */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag)
+                        crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -315,7 +319,7 @@ pub fn de_db_instance(
             s if s.matches("ReadReplicaDBInstanceIdentifiers") /* ReadReplicaDBInstanceIdentifiers com.amazonaws.rds#DBInstance$ReadReplicaDBInstanceIdentifiers */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_read_replica_db_instance_identifier_list::de_read_replica_db_instance_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_read_replica_db_instance_identifier_list::de_read_replica_db_instance_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -325,7 +329,7 @@ pub fn de_db_instance(
             s if s.matches("ReadReplicaDBClusterIdentifiers") /* ReadReplicaDBClusterIdentifiers com.amazonaws.rds#DBInstance$ReadReplicaDBClusterIdentifiers */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_read_replica_db_cluster_identifier_list::de_read_replica_db_cluster_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_read_replica_db_cluster_identifier_list::de_read_replica_db_cluster_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -392,7 +396,7 @@ pub fn de_db_instance(
             s if s.matches("OptionGroupMemberships") /* OptionGroupMemberships com.amazonaws.rds#DBInstance$OptionGroupMemberships */ =>  {
                 let var_31 =
                     Some(
-                        crate::protocol_serde::shape_option_group_membership_list::de_option_group_membership_list(&mut tag)
+                        crate::protocol_serde::shape_option_group_membership_list::de_option_group_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -456,7 +460,7 @@ pub fn de_db_instance(
             s if s.matches("StatusInfos") /* StatusInfos com.amazonaws.rds#DBInstance$StatusInfos */ =>  {
                 let var_36 =
                     Some(
-                        crate::protocol_serde::shape_db_instance_status_info_list::de_db_instance_status_info_list(&mut tag)
+                        crate::protocol_serde::shape_db_instance_status_info_list::de_db_instance_status_info_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -588,7 +592,7 @@ pub fn de_db_instance(
             s if s.matches("DomainMemberships") /* DomainMemberships com.amazonaws.rds#DBInstance$DomainMemberships */ =>  {
                 let var_46 =
                     Some(
-                        crate::protocol_serde::shape_domain_membership_list::de_domain_membership_list(&mut tag)
+                        crate::protocol_serde::shape_domain_membership_list::de_domain_membership_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -767,7 +771,7 @@ pub fn de_db_instance(
             s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.rds#DBInstance$EnabledCloudwatchLogsExports */ =>  {
                 let var_59 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -777,7 +781,7 @@ pub fn de_db_instance(
             s if s.matches("ProcessorFeatures") /* ProcessorFeatures com.amazonaws.rds#DBInstance$ProcessorFeatures */ =>  {
                 let var_60 =
                     Some(
-                        crate::protocol_serde::shape_processor_feature_list::de_processor_feature_list(&mut tag)
+                        crate::protocol_serde::shape_processor_feature_list::de_processor_feature_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -802,7 +806,7 @@ pub fn de_db_instance(
             s if s.matches("AssociatedRoles") /* AssociatedRoles com.amazonaws.rds#DBInstance$AssociatedRoles */ =>  {
                 let var_62 =
                     Some(
-                        crate::protocol_serde::shape_db_instance_roles::de_db_instance_roles(&mut tag)
+                        crate::protocol_serde::shape_db_instance_roles::de_db_instance_roles(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -812,7 +816,7 @@ pub fn de_db_instance(
             s if s.matches("ListenerEndpoint") /* ListenerEndpoint com.amazonaws.rds#DBInstance$ListenerEndpoint */ =>  {
                 let var_63 =
                     Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -837,7 +841,7 @@ pub fn de_db_instance(
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBInstance$TagList */ =>  {
                 let var_65 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -985,7 +989,7 @@ pub fn de_db_instance(
             s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstance$DBInstanceAutomatedBackupsReplications */ =>  {
                 let var_76 =
                     Some(
-                        crate::protocol_serde::shape_db_instance_automated_backups_replication_list::de_db_instance_automated_backups_replication_list(&mut tag)
+                        crate::protocol_serde::shape_db_instance_automated_backups_replication_list::de_db_instance_automated_backups_replication_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -1049,7 +1053,7 @@ pub fn de_db_instance(
             s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#DBInstance$CertificateDetails */ =>  {
                 let var_81 =
                     Some(
-                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
+                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -1072,7 +1076,7 @@ pub fn de_db_instance(
             s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.rds#DBInstance$MasterUserSecret */ =>  {
                 let var_83 =
                     Some(
-                        crate::protocol_serde::shape_master_user_secret::de_master_user_secret(&mut tag)
+                        crate::protocol_serde::shape_master_user_secret::de_master_user_secret(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -1166,7 +1170,7 @@ pub fn de_db_instance(
             s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBInstance$AdditionalStorageVolumes */ =>  {
                 let var_90 =
                     Some(
-                        crate::protocol_serde::shape_additional_storage_volumes_output_list::de_additional_storage_volumes_output_list(&mut tag)
+                        crate::protocol_serde::shape_additional_storage_volumes_output_list::de_additional_storage_volumes_output_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -148,6 +148,8 @@ pub(crate) fn de_describe_storage_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -155,7 +157,9 @@ pub(crate) fn de_describe_storage_configuration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "configurationStatus" => {
                     builder = builder.set_configuration_status(crate::protocol_serde::shape_configuration_status::de_configuration_status(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "disallowIngestNullNaN" => {
@@ -175,11 +179,18 @@ pub(crate) fn de_describe_storage_configuration(
                     )?);
                 }
                 "multiLayerStorage" => {
-                    builder =
-                        builder.set_multi_layer_storage(crate::protocol_serde::shape_multi_layer_storage::de_multi_layer_storage(tokens, _value)?);
+                    builder = builder.set_multi_layer_storage(crate::protocol_serde::shape_multi_layer_storage::de_multi_layer_storage(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "retentionPeriod" => {
-                    builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(tokens, _value)?);
+                    builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "storageType" => {
                     builder = builder.set_storage_type(
@@ -197,7 +208,7 @@ pub(crate) fn de_describe_storage_configuration(
                 }
                 "warmTierRetentionPeriod" => {
                     builder = builder.set_warm_tier_retention_period(
-                        crate::protocol_serde::shape_warm_tier_retention_period::de_warm_tier_retention_period(tokens, _value)?,
+                        crate::protocol_serde::shape_warm_tier_retention_period::de_warm_tier_retention_period(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

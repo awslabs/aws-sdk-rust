@@ -2,10 +2,16 @@
 pub(crate) fn de_database_source_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DatabaseSourceDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,20 +50,28 @@ where
                             );
                         }
                         "Databases" => {
-                            builder = builder.set_databases(crate::protocol_serde::shape_database_list::de_database_list(tokens, _value)?);
+                            builder = builder.set_databases(crate::protocol_serde::shape_database_list::de_database_list(tokens, _value, depth + 1)?);
                         }
                         "Tables" => {
-                            builder = builder.set_tables(crate::protocol_serde::shape_database_table_list::de_database_table_list(tokens, _value)?);
+                            builder = builder.set_tables(crate::protocol_serde::shape_database_table_list::de_database_table_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Columns" => {
                             builder = builder.set_columns(crate::protocol_serde::shape_database_column_list::de_database_column_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SurrogateKeys" => {
                             builder = builder.set_surrogate_keys(
                                 crate::protocol_serde::shape_database_column_include_or_exclude_list::de_database_column_include_or_exclude_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -70,17 +84,21 @@ where
                         }
                         "SnapshotInfo" => {
                             builder = builder.set_snapshot_info(
-                                crate::protocol_serde::shape_database_snapshot_info_list::de_database_snapshot_info_list(tokens, _value)?,
+                                crate::protocol_serde::shape_database_snapshot_info_list::de_database_snapshot_info_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "DatabaseSourceAuthenticationConfiguration" => {
                             builder = builder.set_database_source_authentication_configuration(
-                                    crate::protocol_serde::shape_database_source_authentication_configuration::de_database_source_authentication_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_database_source_authentication_configuration::de_database_source_authentication_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         "DatabaseSourceVPCConfiguration" => {
                             builder = builder.set_database_source_vpc_configuration(
-                                crate::protocol_serde::shape_database_source_vpc_configuration::de_database_source_vpc_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_database_source_vpc_configuration::de_database_source_vpc_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

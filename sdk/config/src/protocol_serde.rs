@@ -39,6 +39,8 @@ pub(crate) mod shape_delete_configuration_recorder;
 
 pub(crate) mod shape_delete_conformance_pack;
 
+pub(crate) mod shape_delete_connector;
+
 pub(crate) mod shape_delete_delivery_channel;
 
 pub(crate) mod shape_delete_evaluation_results;
@@ -137,6 +139,8 @@ pub(crate) mod shape_get_conformance_pack_compliance_details;
 
 pub(crate) mod shape_get_conformance_pack_compliance_summary;
 
+pub(crate) mod shape_get_connector;
+
 pub(crate) mod shape_get_custom_rule_policy;
 
 pub(crate) mod shape_get_discovered_resource_counts;
@@ -159,6 +163,8 @@ pub(crate) mod shape_list_configuration_recorders;
 
 pub(crate) mod shape_list_conformance_pack_compliance_scores;
 
+pub(crate) mod shape_list_connectors;
+
 pub(crate) mod shape_list_discovered_resources;
 
 pub(crate) mod shape_list_resource_evaluations;
@@ -176,6 +182,8 @@ pub(crate) mod shape_put_configuration_aggregator;
 pub(crate) mod shape_put_configuration_recorder;
 
 pub(crate) mod shape_put_conformance_pack;
+
+pub(crate) mod shape_put_connector;
 
 pub(crate) mod shape_put_delivery_channel;
 
@@ -198,6 +206,8 @@ pub(crate) mod shape_put_retention_configuration;
 pub(crate) mod shape_put_service_linked_configuration_recorder;
 
 pub(crate) mod shape_put_stored_query;
+
+pub(crate) mod shape_put_third_party_service_linked_configuration_recorder;
 
 pub(crate) mod shape_select_aggregate_resource_config;
 
@@ -244,6 +254,8 @@ pub(crate) mod shape_delete_configuration_aggregator_input;
 pub(crate) mod shape_delete_configuration_recorder_input;
 
 pub(crate) mod shape_delete_conformance_pack_input;
+
+pub(crate) mod shape_delete_connector_input;
 
 pub(crate) mod shape_delete_delivery_channel_input;
 
@@ -341,6 +353,8 @@ pub(crate) mod shape_get_conformance_pack_compliance_details_input;
 
 pub(crate) mod shape_get_conformance_pack_compliance_summary_input;
 
+pub(crate) mod shape_get_connector_input;
+
 pub(crate) mod shape_get_custom_rule_policy_input;
 
 pub(crate) mod shape_get_discovered_resource_counts_input;
@@ -399,6 +413,8 @@ pub(crate) mod shape_list_configuration_recorders_input;
 
 pub(crate) mod shape_list_conformance_pack_compliance_scores_input;
 
+pub(crate) mod shape_list_connectors_input;
+
 pub(crate) mod shape_list_discovered_resources_input;
 
 pub(crate) mod shape_list_resource_evaluations_input;
@@ -414,6 +430,8 @@ pub(crate) mod shape_max_number_of_config_rules_exceeded_exception;
 pub(crate) mod shape_max_number_of_configuration_recorders_exceeded_exception;
 
 pub(crate) mod shape_max_number_of_conformance_packs_exceeded_exception;
+
+pub(crate) mod shape_max_number_of_connectors_exceeded_exception;
 
 pub(crate) mod shape_max_number_of_delivery_channels_exceeded_exception;
 
@@ -473,6 +491,8 @@ pub(crate) mod shape_put_configuration_recorder_input;
 
 pub(crate) mod shape_put_conformance_pack_input;
 
+pub(crate) mod shape_put_connector_input;
+
 pub(crate) mod shape_put_delivery_channel_input;
 
 pub(crate) mod shape_put_evaluations_input;
@@ -494,6 +514,8 @@ pub(crate) mod shape_put_retention_configuration_input;
 pub(crate) mod shape_put_service_linked_configuration_recorder_input;
 
 pub(crate) mod shape_put_stored_query_input;
+
+pub(crate) mod shape_put_third_party_service_linked_configuration_recorder_input;
 
 pub(crate) mod shape_remediation_in_progress_exception;
 
@@ -613,6 +635,14 @@ pub(crate) mod shape_conformance_pack_rule_evaluation_results_list;
 
 pub(crate) mod shape_conformance_pack_status_details_list;
 
+pub(crate) mod shape_connector;
+
+pub(crate) mod shape_connector_configuration;
+
+pub(crate) mod shape_connector_filter;
+
+pub(crate) mod shape_connector_summaries;
+
 pub(crate) mod shape_delivery_channel;
 
 pub(crate) mod shape_delivery_channel_list;
@@ -703,6 +733,8 @@ pub(crate) mod shape_retention_configuration;
 
 pub(crate) mod shape_retention_configuration_list;
 
+pub(crate) mod shape_scope_configuration;
+
 pub(crate) mod shape_status_detail_filters;
 
 pub(crate) mod shape_stored_query;
@@ -735,6 +767,8 @@ pub(crate) mod shape_aggregator_filter_resource_type;
 
 pub(crate) mod shape_aggregator_filter_service_principal;
 
+pub(crate) mod shape_azure_connector_configuration;
+
 pub(crate) mod shape_base_configuration_item;
 
 pub(crate) mod shape_compliance_by_config_rule;
@@ -764,6 +798,8 @@ pub(crate) mod shape_conformance_pack_evaluation_result;
 pub(crate) mod shape_conformance_pack_rule_compliance;
 
 pub(crate) mod shape_conformance_pack_status_detail;
+
+pub(crate) mod shape_connector_summary;
 
 pub(crate) mod shape_delivery_channel_status;
 
@@ -857,6 +893,8 @@ pub(crate) mod shape_exclusion_by_resource_types;
 
 pub(crate) mod shape_field_info;
 
+pub(crate) mod shape_included_regions;
+
 pub(crate) mod shape_organization_custom_policy_rule_metadata_no_policy;
 
 pub(crate) mod shape_recording_mode_override;
@@ -876,6 +914,8 @@ pub(crate) mod shape_remediation_parameters;
 pub(crate) mod shape_resource_type_list;
 
 pub(crate) mod shape_resource_value;
+
+pub(crate) mod shape_scope_values;
 
 pub(crate) mod shape_source_detail;
 
@@ -902,6 +942,8 @@ pub(crate) mod shape_resource_type_value_list;
 pub(crate) mod shape_resource_types_scope;
 
 pub(crate) mod shape_service_principal_value_list;
+
+pub(crate) mod shape_service_principals;
 
 pub(crate) mod shape_source_details;
 

@@ -40,7 +40,7 @@ pub struct ConnectorMetadata {
     pub event_bridge: ::std::option::Option<crate::types::EventBridgeMetadata>,
     /// <p>The connector metadata specific to Upsolver.</p>
     pub upsolver: ::std::option::Option<crate::types::UpsolverMetadata>,
-    /// <p>The connector metadata specific to Amazon Connect Customer Profiles.</p>
+    /// <p>The connector metadata specific to Connect Customer Customer Profiles.</p>
     pub customer_profiles: ::std::option::Option<crate::types::CustomerProfilesMetadata>,
     /// <p>The connector metadata specific to Amazon Honeycode.</p>
     pub honeycode: ::std::option::Option<crate::types::HoneycodeMetadata>,
@@ -122,7 +122,7 @@ impl ConnectorMetadata {
     pub fn upsolver(&self) -> ::std::option::Option<&crate::types::UpsolverMetadata> {
         self.upsolver.as_ref()
     }
-    /// <p>The connector metadata specific to Amazon Connect Customer Profiles.</p>
+    /// <p>The connector metadata specific to Connect Customer Customer Profiles.</p>
     pub fn customer_profiles(&self) -> ::std::option::Option<&crate::types::CustomerProfilesMetadata> {
         self.customer_profiles.as_ref()
     }
@@ -426,17 +426,17 @@ impl ConnectorMetadataBuilder {
     pub fn get_upsolver(&self) -> &::std::option::Option<crate::types::UpsolverMetadata> {
         &self.upsolver
     }
-    /// <p>The connector metadata specific to Amazon Connect Customer Profiles.</p>
+    /// <p>The connector metadata specific to Connect Customer Customer Profiles.</p>
     pub fn customer_profiles(mut self, input: crate::types::CustomerProfilesMetadata) -> Self {
         self.customer_profiles = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The connector metadata specific to Amazon Connect Customer Profiles.</p>
+    /// <p>The connector metadata specific to Connect Customer Customer Profiles.</p>
     pub fn set_customer_profiles(mut self, input: ::std::option::Option<crate::types::CustomerProfilesMetadata>) -> Self {
         self.customer_profiles = input;
         self
     }
-    /// <p>The connector metadata specific to Amazon Connect Customer Profiles.</p>
+    /// <p>The connector metadata specific to Connect Customer Customer Profiles.</p>
     pub fn get_customer_profiles(&self) -> &::std::option::Option<crate::types::CustomerProfilesMetadata> {
         &self.customer_profiles
     }

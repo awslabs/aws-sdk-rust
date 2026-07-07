@@ -22,6 +22,7 @@
 ///     ExportableVolumeField::CurrentConfigurationVolumeType => { /* ... */ },
 ///     ExportableVolumeField::CurrentMonthlyPrice => { /* ... */ },
 ///     ExportableVolumeField::CurrentPerformanceRisk => { /* ... */ },
+///     ExportableVolumeField::EffectiveRecommendationPreferencesLookbackPeriod => { /* ... */ },
 ///     ExportableVolumeField::EffectiveRecommendationPreferencesSavingsEstimationMode => { /* ... */ },
 ///     ExportableVolumeField::Finding => { /* ... */ },
 ///     ExportableVolumeField::LastRefreshTimestamp => { /* ... */ },
@@ -42,8 +43,10 @@
 ///     ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableVolumeField::RootVolume => { /* ... */ },
 ///     ExportableVolumeField::Tags => { /* ... */ },
+///     ExportableVolumeField::UtilizationMetricsVolumeIopsExceededMaximum => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => { /* ... */ },
+///     ExportableVolumeField::UtilizationMetricsVolumeThroughputExceededMaximum => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => { /* ... */ },
 ///     ExportableVolumeField::VolumeArn => { /* ... */ },
@@ -96,6 +99,8 @@ pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentPerformanceRisk,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesLookbackPeriod,
+    #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesSavingsEstimationMode,
     #[allow(missing_docs)] // documentation missing in model
     Finding,
@@ -136,9 +141,13 @@ pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     Tags,
     #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsVolumeIopsExceededMaximum,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeReadBytesPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeReadOpsPerSecondMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsVolumeThroughputExceededMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeWriteBytesPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
@@ -162,6 +171,7 @@ impl ::std::convert::From<&str> for ExportableVolumeField {
             "CurrentConfigurationVolumeType" => ExportableVolumeField::CurrentConfigurationVolumeType,
             "CurrentMonthlyPrice" => ExportableVolumeField::CurrentMonthlyPrice,
             "CurrentPerformanceRisk" => ExportableVolumeField::CurrentPerformanceRisk,
+            "EffectiveRecommendationPreferencesLookBackPeriod" => ExportableVolumeField::EffectiveRecommendationPreferencesLookbackPeriod,
             "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
                 ExportableVolumeField::EffectiveRecommendationPreferencesSavingsEstimationMode
             }
@@ -194,8 +204,10 @@ impl ::std::convert::From<&str> for ExportableVolumeField {
             "RecommendationOptionsSavingsOpportunityPercentage" => ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage,
             "RootVolume" => ExportableVolumeField::RootVolume,
             "Tags" => ExportableVolumeField::Tags,
+            "UtilizationMetricsVolumeIOPSExceededMaximum" => ExportableVolumeField::UtilizationMetricsVolumeIopsExceededMaximum,
             "UtilizationMetricsVolumeReadBytesPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum,
             "UtilizationMetricsVolumeReadOpsPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum,
+            "UtilizationMetricsVolumeThroughputExceededMaximum" => ExportableVolumeField::UtilizationMetricsVolumeThroughputExceededMaximum,
             "UtilizationMetricsVolumeWriteBytesPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum,
             "UtilizationMetricsVolumeWriteOpsPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum,
             "VolumeArn" => ExportableVolumeField::VolumeArn,
@@ -224,6 +236,7 @@ impl ExportableVolumeField {
             ExportableVolumeField::CurrentConfigurationVolumeType => "CurrentConfigurationVolumeType",
             ExportableVolumeField::CurrentMonthlyPrice => "CurrentMonthlyPrice",
             ExportableVolumeField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+            ExportableVolumeField::EffectiveRecommendationPreferencesLookbackPeriod => "EffectiveRecommendationPreferencesLookBackPeriod",
             ExportableVolumeField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
                 "EffectiveRecommendationPreferencesSavingsEstimationMode"
             }
@@ -256,8 +269,10 @@ impl ExportableVolumeField {
             ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableVolumeField::RootVolume => "RootVolume",
             ExportableVolumeField::Tags => "Tags",
+            ExportableVolumeField::UtilizationMetricsVolumeIopsExceededMaximum => "UtilizationMetricsVolumeIOPSExceededMaximum",
             ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => "UtilizationMetricsVolumeReadBytesPerSecondMaximum",
             ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
+            ExportableVolumeField::UtilizationMetricsVolumeThroughputExceededMaximum => "UtilizationMetricsVolumeThroughputExceededMaximum",
             ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => "UtilizationMetricsVolumeWriteBytesPerSecondMaximum",
             ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => "UtilizationMetricsVolumeWriteOpsPerSecondMaximum",
             ExportableVolumeField::VolumeArn => "VolumeArn",
@@ -277,6 +292,7 @@ impl ExportableVolumeField {
             "CurrentConfigurationVolumeType",
             "CurrentMonthlyPrice",
             "CurrentPerformanceRisk",
+            "EffectiveRecommendationPreferencesLookBackPeriod",
             "EffectiveRecommendationPreferencesSavingsEstimationMode",
             "Finding",
             "LastRefreshTimestamp",
@@ -297,8 +313,10 @@ impl ExportableVolumeField {
             "RecommendationOptionsSavingsOpportunityPercentage",
             "RootVolume",
             "Tags",
+            "UtilizationMetricsVolumeIOPSExceededMaximum",
             "UtilizationMetricsVolumeReadBytesPerSecondMaximum",
             "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
+            "UtilizationMetricsVolumeThroughputExceededMaximum",
             "UtilizationMetricsVolumeWriteBytesPerSecondMaximum",
             "UtilizationMetricsVolumeWriteOpsPerSecondMaximum",
             "VolumeArn",
@@ -335,6 +353,7 @@ impl ::std::fmt::Display for ExportableVolumeField {
             ExportableVolumeField::CurrentConfigurationVolumeType => write!(f, "CurrentConfigurationVolumeType"),
             ExportableVolumeField::CurrentMonthlyPrice => write!(f, "CurrentMonthlyPrice"),
             ExportableVolumeField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
+            ExportableVolumeField::EffectiveRecommendationPreferencesLookbackPeriod => write!(f, "EffectiveRecommendationPreferencesLookBackPeriod"),
             ExportableVolumeField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
                 write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
             }
@@ -377,10 +396,14 @@ impl ::std::fmt::Display for ExportableVolumeField {
             }
             ExportableVolumeField::RootVolume => write!(f, "RootVolume"),
             ExportableVolumeField::Tags => write!(f, "Tags"),
+            ExportableVolumeField::UtilizationMetricsVolumeIopsExceededMaximum => write!(f, "UtilizationMetricsVolumeIOPSExceededMaximum"),
             ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => {
                 write!(f, "UtilizationMetricsVolumeReadBytesPerSecondMaximum")
             }
             ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsVolumeReadOpsPerSecondMaximum"),
+            ExportableVolumeField::UtilizationMetricsVolumeThroughputExceededMaximum => {
+                write!(f, "UtilizationMetricsVolumeThroughputExceededMaximum")
+            }
             ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => {
                 write!(f, "UtilizationMetricsVolumeWriteBytesPerSecondMaximum")
             }

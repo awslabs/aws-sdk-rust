@@ -65,6 +65,8 @@ pub use crate::types::_storage_type::StorageType;
 
 pub use crate::types::_networking_mode::NetworkingMode;
 
+pub use crate::types::_scratch_storage_mode::ScratchStorageMode;
+
 pub use crate::types::_configuration_details::ConfigurationDetails;
 
 pub use crate::types::_accelerators::Accelerators;
@@ -478,6 +480,8 @@ mod _run_summary;
 mod _s3_access_config;
 
 mod _schema_value_type;
+
+mod _scratch_storage_mode;
 
 mod _sequence_information;
 

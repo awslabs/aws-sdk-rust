@@ -15,7 +15,11 @@ pub fn ser_spot_maintenance_strategies(
 #[allow(clippy::needless_question_mark)]
 pub fn de_spot_maintenance_strategies(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SpotMaintenanceStrategies, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SpotMaintenanceStrategies::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_spot_maintenance_strategies(
             s if s.matches("capacityRebalance") /* CapacityRebalance com.amazonaws.ec2#SpotMaintenanceStrategies$CapacityRebalance */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_spot_capacity_rebalance::de_spot_capacity_rebalance(&mut tag)
+                        crate::protocol_serde::shape_spot_capacity_rebalance::de_spot_capacity_rebalance(&mut tag, depth + 1)
                         ?
                     )
                 ;

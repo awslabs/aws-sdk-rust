@@ -69,6 +69,8 @@ pub fn de_list_bucket_metrics_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListMetricsConfigurationsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListMetricsConfigurationsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -108,7 +110,7 @@ pub fn de_list_bucket_metrics_configurations(
                         Result::<::std::vec::Vec::<crate::types::MetricsConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_6 = builder.metrics_configuration_list.take().unwrap_or_default();
                             list_6.push(
-                                crate::protocol_serde::shape_metrics_configuration::de_metrics_configuration(&mut tag)
+                                crate::protocol_serde::shape_metrics_configuration::de_metrics_configuration(&mut tag, depth + 1)
                                 ?
                             );
                             list_6

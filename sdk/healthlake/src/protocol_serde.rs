@@ -49,6 +49,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_fhir_datastore;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -93,7 +95,11 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_fhir_datastore_input;
+
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_analytics_configuration;
 
 pub(crate) mod shape_datastore_filter;
 
@@ -113,9 +119,13 @@ pub(crate) mod shape_import_job_properties_list;
 
 pub(crate) mod shape_input_data_config;
 
+pub(crate) mod shape_nlp_configuration;
+
 pub(crate) mod shape_output_data_config;
 
 pub(crate) mod shape_preload_data_config;
+
+pub(crate) mod shape_profile_configuration;
 
 pub(crate) mod shape_sse_configuration;
 
@@ -130,3 +140,5 @@ pub(crate) mod shape_job_progress_report;
 pub(crate) mod shape_kms_encryption_config;
 
 pub(crate) mod shape_s3_configuration;
+
+pub(crate) mod shape_default_profiles;

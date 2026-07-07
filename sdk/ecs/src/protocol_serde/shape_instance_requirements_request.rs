@@ -165,10 +165,16 @@ pub fn ser_instance_requirements_request(
 pub(crate) fn de_instance_requirements_request<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InstanceRequirementsRequest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -180,30 +186,42 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "vCpuCount" => {
                             builder = builder.set_v_cpu_count(crate::protocol_serde::shape_v_cpu_count_range_request::de_v_cpu_count_range_request(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "memoryMiB" => {
-                            builder = builder.set_memory_mib(crate::protocol_serde::shape_memory_mib_request::de_memory_mib_request(tokens, _value)?);
+                            builder = builder.set_memory_mib(crate::protocol_serde::shape_memory_mib_request::de_memory_mib_request(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "cpuManufacturers" => {
                             builder = builder.set_cpu_manufacturers(crate::protocol_serde::shape_cpu_manufacturer_set::de_cpu_manufacturer_set(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "memoryGiBPerVCpu" => {
                             builder = builder.set_memory_gib_per_v_cpu(
-                                crate::protocol_serde::shape_memory_gib_per_v_cpu_request::de_memory_gib_per_v_cpu_request(tokens, _value)?,
+                                crate::protocol_serde::shape_memory_gib_per_v_cpu_request::de_memory_gib_per_v_cpu_request(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "excludedInstanceTypes" => {
                             builder = builder.set_excluded_instance_types(
-                                crate::protocol_serde::shape_excluded_instance_type_set::de_excluded_instance_type_set(tokens, _value)?,
+                                crate::protocol_serde::shape_excluded_instance_type_set::de_excluded_instance_type_set(tokens, _value, depth + 1)?,
                             );
                         }
                         "instanceGenerations" => {
                             builder = builder.set_instance_generations(
-                                crate::protocol_serde::shape_instance_generation_set::de_instance_generation_set(tokens, _value)?,
+                                crate::protocol_serde::shape_instance_generation_set::de_instance_generation_set(tokens, _value, depth + 1)?,
                             );
                         }
                         "spotMaxPricePercentageOverLowestPrice" => {
@@ -240,7 +258,11 @@ where
                         }
                         "networkInterfaceCount" => {
                             builder = builder.set_network_interface_count(
-                                crate::protocol_serde::shape_network_interface_count_request::de_network_interface_count_request(tokens, _value)?,
+                                crate::protocol_serde::shape_network_interface_count_request::de_network_interface_count_request(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "localStorage" => {
@@ -252,56 +274,76 @@ where
                         }
                         "localStorageTypes" => {
                             builder = builder.set_local_storage_types(
-                                crate::protocol_serde::shape_local_storage_type_set::de_local_storage_type_set(tokens, _value)?,
+                                crate::protocol_serde::shape_local_storage_type_set::de_local_storage_type_set(tokens, _value, depth + 1)?,
                             );
                         }
                         "totalLocalStorageGB" => {
                             builder = builder.set_total_local_storage_gb(
-                                crate::protocol_serde::shape_total_local_storage_gb_request::de_total_local_storage_gb_request(tokens, _value)?,
+                                crate::protocol_serde::shape_total_local_storage_gb_request::de_total_local_storage_gb_request(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "baselineEbsBandwidthMbps" => {
                             builder = builder.set_baseline_ebs_bandwidth_mbps(
                                 crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps_request::de_baseline_ebs_bandwidth_mbps_request(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "acceleratorTypes" => {
                             builder = builder.set_accelerator_types(crate::protocol_serde::shape_accelerator_type_set::de_accelerator_type_set(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "acceleratorCount" => {
                             builder = builder.set_accelerator_count(
-                                crate::protocol_serde::shape_accelerator_count_request::de_accelerator_count_request(tokens, _value)?,
+                                crate::protocol_serde::shape_accelerator_count_request::de_accelerator_count_request(tokens, _value, depth + 1)?,
                             );
                         }
                         "acceleratorManufacturers" => {
                             builder = builder.set_accelerator_manufacturers(
-                                crate::protocol_serde::shape_accelerator_manufacturer_set::de_accelerator_manufacturer_set(tokens, _value)?,
+                                crate::protocol_serde::shape_accelerator_manufacturer_set::de_accelerator_manufacturer_set(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "acceleratorNames" => {
                             builder = builder.set_accelerator_names(crate::protocol_serde::shape_accelerator_name_set::de_accelerator_name_set(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "acceleratorTotalMemoryMiB" => {
                             builder = builder.set_accelerator_total_memory_mib(
                                 crate::protocol_serde::shape_accelerator_total_memory_mib_request::de_accelerator_total_memory_mib_request(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "networkBandwidthGbps" => {
                             builder = builder.set_network_bandwidth_gbps(
-                                crate::protocol_serde::shape_network_bandwidth_gbps_request::de_network_bandwidth_gbps_request(tokens, _value)?,
+                                crate::protocol_serde::shape_network_bandwidth_gbps_request::de_network_bandwidth_gbps_request(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "allowedInstanceTypes" => {
                             builder = builder.set_allowed_instance_types(
-                                crate::protocol_serde::shape_allowed_instance_type_set::de_allowed_instance_type_set(tokens, _value)?,
+                                crate::protocol_serde::shape_allowed_instance_type_set::de_allowed_instance_type_set(tokens, _value, depth + 1)?,
                             );
                         }
                         "maxSpotPriceAsPercentageOfOptimalOnDemandPrice" => {

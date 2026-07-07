@@ -2,10 +2,16 @@
 pub(crate) fn de_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Event>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,7 +70,7 @@ where
                             );
                         }
                         "Resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value, depth + 1)?);
                         }
                         "CloudTrailEvent" => {
                             builder = builder.set_cloud_trail_event(

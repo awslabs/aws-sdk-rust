@@ -2,6 +2,7 @@
 pub(crate) fn de_export_filter_property_map<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<::std::collections::HashMap<::std::string::String, crate::types::ExportFilterPropertyAttributes>>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -9,6 +10,11 @@ pub(crate) fn de_export_filter_property_map<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,8 +24,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value =
-                            crate::protocol_serde::shape_export_filter_property_attributes::de_export_filter_property_attributes(tokens, _value)?;
+                        let value = crate::protocol_serde::shape_export_filter_property_attributes::de_export_filter_property_attributes(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?;
                         match value {
                             Some(value) => {
                                 map.insert(key, value);

@@ -159,6 +159,50 @@ impl From<crate::operation::generate_as2805_kek_validation::GenerateAs2805KekVal
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError> for Error {
+    fn from(err: crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError) -> Self {
+        match err {
+            crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::generate_auth_request_cryptogram::GenerateAuthRequestCryptogramError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError, R>>
     for Error
 where

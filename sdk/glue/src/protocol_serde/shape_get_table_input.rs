@@ -29,5 +29,14 @@ pub fn ser_get_table_input_input(
     if let Some(var_8) = &input.include_status_details {
         object.key("IncludeStatusDetails").boolean(*var_8);
     }
+    if let Some(var_9) = &input.attributes_to_get {
+        let mut array_10 = object.key("AttributesToGet").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }

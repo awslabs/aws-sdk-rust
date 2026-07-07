@@ -40,10 +40,16 @@ pub fn ser_boolean_condition(
 pub(crate) fn de_boolean_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BooleanCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -69,22 +75,22 @@ where
                     }
                     variant = match key.as_ref() {
                         "equalTo" => Some(crate::types::BooleanCondition::EqualTo(
-                            crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'equalTo' cannot be null")
                             })?,
                         )),
                         "notEqualTo" => Some(crate::types::BooleanCondition::NotEqualTo(
-                            crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notEqualTo' cannot be null")
                             })?,
                         )),
                         "andAll" => Some(crate::types::BooleanCondition::AndAll(
-                            crate::protocol_serde::shape_compound_condition::de_compound_condition(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_compound_condition::de_compound_condition(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'andAll' cannot be null")
                             })?,
                         )),
                         "orAll" => Some(crate::types::BooleanCondition::OrAll(
-                            crate::protocol_serde::shape_compound_condition::de_compound_condition(tokens, _value)?
+                            crate::protocol_serde::shape_compound_condition::de_compound_condition(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orAll' cannot be null"))?,
                         )),
                         _ => {

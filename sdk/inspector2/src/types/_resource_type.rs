@@ -17,6 +17,9 @@
 ///     ResourceType::AwsEcrRepository => { /* ... */ },
 ///     ResourceType::AwsLambdaFunction => { /* ... */ },
 ///     ResourceType::CodeRepository => { /* ... */ },
+///     ResourceType::MicrosoftComputeVirtualMachines => { /* ... */ },
+///     ResourceType::MicrosoftContainerRegistryRegistryContainerImage => { /* ... */ },
+///     ResourceType::MicrosoftWebSites => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +58,12 @@ pub enum ResourceType {
     AwsLambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
     CodeRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftComputeVirtualMachines,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftContainerRegistryRegistryContainerImage,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftWebSites,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +76,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS_ECR_REPOSITORY" => ResourceType::AwsEcrRepository,
             "AWS_LAMBDA_FUNCTION" => ResourceType::AwsLambdaFunction,
             "CODE_REPOSITORY" => ResourceType::CodeRepository,
+            "Microsoft.Compute/virtualMachines" => ResourceType::MicrosoftComputeVirtualMachines,
+            "Microsoft.ContainerRegistry/registry/containerImage" => ResourceType::MicrosoftContainerRegistryRegistryContainerImage,
+            "Microsoft.Web/sites" => ResourceType::MicrosoftWebSites,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,6 +99,9 @@ impl ResourceType {
             ResourceType::AwsEcrRepository => "AWS_ECR_REPOSITORY",
             ResourceType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
             ResourceType::CodeRepository => "CODE_REPOSITORY",
+            ResourceType::MicrosoftComputeVirtualMachines => "Microsoft.Compute/virtualMachines",
+            ResourceType::MicrosoftContainerRegistryRegistryContainerImage => "Microsoft.ContainerRegistry/registry/containerImage",
+            ResourceType::MicrosoftWebSites => "Microsoft.Web/sites",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -98,6 +113,9 @@ impl ResourceType {
             "AWS_ECR_REPOSITORY",
             "AWS_LAMBDA_FUNCTION",
             "CODE_REPOSITORY",
+            "Microsoft.Compute/virtualMachines",
+            "Microsoft.ContainerRegistry/registry/containerImage",
+            "Microsoft.Web/sites",
         ]
     }
 }
@@ -126,6 +144,9 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
             ResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
             ResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
+            ResourceType::MicrosoftComputeVirtualMachines => write!(f, "Microsoft.Compute/virtualMachines"),
+            ResourceType::MicrosoftContainerRegistryRegistryContainerImage => write!(f, "Microsoft.ContainerRegistry/registry/containerImage"),
+            ResourceType::MicrosoftWebSites => write!(f, "Microsoft.Web/sites"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

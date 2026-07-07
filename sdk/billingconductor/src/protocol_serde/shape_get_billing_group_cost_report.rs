@@ -146,6 +146,8 @@ pub(crate) fn de_get_billing_group_cost_report(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -154,7 +156,9 @@ pub(crate) fn de_get_billing_group_cost_report(
                 "BillingGroupCostReportResults" => {
                     builder = builder.set_billing_group_cost_report_results(
                         crate::protocol_serde::shape_billing_group_cost_report_results_list::de_billing_group_cost_report_results_list(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

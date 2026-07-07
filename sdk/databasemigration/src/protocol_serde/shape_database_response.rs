@@ -2,10 +2,16 @@
 pub(crate) fn de_database_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DatabaseResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,16 +51,22 @@ where
                         }
                         "Server" => {
                             builder = builder.set_server(crate::protocol_serde::shape_server_short_info_response::de_server_short_info_response(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SoftwareDetails" => {
                             builder = builder.set_software_details(
-                                    crate::protocol_serde::shape_database_instance_software_details_response::de_database_instance_software_details_response(tokens, _value)?
+                                    crate::protocol_serde::shape_database_instance_software_details_response::de_database_instance_software_details_response(tokens, _value, depth + 1)?
                                 );
                         }
                         "Collectors" => {
-                            builder = builder.set_collectors(crate::protocol_serde::shape_collectors_list::de_collectors_list(tokens, _value)?);
+                            builder = builder.set_collectors(crate::protocol_serde::shape_collectors_list::de_collectors_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

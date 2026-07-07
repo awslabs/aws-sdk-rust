@@ -53,10 +53,16 @@ pub fn ser_keys_and_attributes(
 pub(crate) fn de_keys_and_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KeysAndAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -67,11 +73,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Keys" => {
-                            builder = builder.set_keys(crate::protocol_serde::shape_key_list::de_key_list(tokens, _value)?);
+                            builder = builder.set_keys(crate::protocol_serde::shape_key_list::de_key_list(tokens, _value, depth + 1)?);
                         }
                         "AttributesToGet" => {
-                            builder = builder
-                                .set_attributes_to_get(crate::protocol_serde::shape_attribute_name_list::de_attribute_name_list(tokens, _value)?);
+                            builder = builder.set_attributes_to_get(crate::protocol_serde::shape_attribute_name_list::de_attribute_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ConsistentRead" => {
                             builder = builder.set_consistent_read(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -85,7 +94,11 @@ where
                         }
                         "ExpressionAttributeNames" => {
                             builder = builder.set_expression_attribute_names(
-                                crate::protocol_serde::shape_expression_attribute_name_map::de_expression_attribute_name_map(tokens, _value)?,
+                                crate::protocol_serde::shape_expression_attribute_name_map::de_expression_attribute_name_map(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

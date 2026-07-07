@@ -2,10 +2,16 @@
 pub(crate) fn de_aws_api_call_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsApiCallAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,11 @@ where
                             );
                         }
                         "domainDetails" => {
-                            builder = builder.set_domain_details(crate::protocol_serde::shape_domain_details::de_domain_details(tokens, _value)?);
+                            builder = builder.set_domain_details(crate::protocol_serde::shape_domain_details::de_domain_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "errorCode" => {
                             builder = builder.set_error_code(
@@ -47,8 +57,11 @@ where
                             );
                         }
                         "remoteIpDetails" => {
-                            builder =
-                                builder.set_remote_ip_details(crate::protocol_serde::shape_remote_ip_details::de_remote_ip_details(tokens, _value)?);
+                            builder = builder.set_remote_ip_details(crate::protocol_serde::shape_remote_ip_details::de_remote_ip_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "serviceName" => {
                             builder = builder.set_service_name(
@@ -59,12 +72,15 @@ where
                         }
                         "remoteAccountDetails" => {
                             builder = builder.set_remote_account_details(
-                                crate::protocol_serde::shape_remote_account_details::de_remote_account_details(tokens, _value)?,
+                                crate::protocol_serde::shape_remote_account_details::de_remote_account_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "affectedResources" => {
-                            builder = builder
-                                .set_affected_resources(crate::protocol_serde::shape_affected_resources::de_affected_resources(tokens, _value)?);
+                            builder = builder.set_affected_resources(crate::protocol_serde::shape_affected_resources::de_affected_resources(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

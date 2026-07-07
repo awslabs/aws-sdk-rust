@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_route_table(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TransitGatewayRouteTable, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayRouteTable::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -94,7 +98,7 @@ pub fn de_transit_gateway_route_table(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#TransitGatewayRouteTable$Tags */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -97,6 +97,8 @@ pub fn de_disable_availability_zones_for_load_balancer(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DisableAvailabilityZonesForLoadBalancerResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisableAvailabilityZonesForLoadBalancerResponse got {start_el:?}"
@@ -114,7 +116,7 @@ pub fn de_disable_availability_zones_for_load_balancer(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.elasticloadbalancing.synthetic#DisableAvailabilityZonesForLoadBalancerOutput$AvailabilityZones */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag)
+                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag, depth + 1)
                         ?
                     )
                 ;

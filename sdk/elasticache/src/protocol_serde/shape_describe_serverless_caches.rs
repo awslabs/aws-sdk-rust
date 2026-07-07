@@ -120,6 +120,8 @@ pub fn de_describe_serverless_caches(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeServerlessCachesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeServerlessCachesResponse got {start_el:?}"
@@ -150,7 +152,7 @@ pub fn de_describe_serverless_caches(
             s if s.matches("ServerlessCaches") /* ServerlessCaches com.amazonaws.elasticache.synthetic#DescribeServerlessCachesOutput$ServerlessCaches */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_serverless_cache_list::de_serverless_cache_list(&mut tag)
+                        crate::protocol_serde::shape_serverless_cache_list::de_serverless_cache_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -51,6 +51,8 @@ pub fn de_list_verified_email_addresses(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListVerifiedEmailAddressesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListVerifiedEmailAddressesResponse got {start_el:?}"
@@ -68,7 +70,7 @@ pub fn de_list_verified_email_addresses(
             s if s.matches("VerifiedEmailAddresses") /* VerifiedEmailAddresses com.amazonaws.ses.synthetic#ListVerifiedEmailAddressesOutput$VerifiedEmailAddresses */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_address_list::de_address_list(&mut tag)
+                        crate::protocol_serde::shape_address_list::de_address_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

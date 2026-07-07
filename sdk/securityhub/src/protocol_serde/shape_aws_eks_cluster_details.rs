@@ -45,10 +45,16 @@ pub fn ser_aws_eks_cluster_details(
 pub(crate) fn de_aws_eks_cluster_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsEksClusterDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -95,7 +101,7 @@ where
                         }
                         "ResourcesVpcConfig" => {
                             builder = builder.set_resources_vpc_config(
-                                    crate::protocol_serde::shape_aws_eks_cluster_resources_vpc_config_details::de_aws_eks_cluster_resources_vpc_config_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_eks_cluster_resources_vpc_config_details::de_aws_eks_cluster_resources_vpc_config_details(tokens, _value, depth + 1)?
                                 );
                         }
                         "RoleArn" => {
@@ -114,7 +120,11 @@ where
                         }
                         "Logging" => {
                             builder = builder.set_logging(
-                                crate::protocol_serde::shape_aws_eks_cluster_logging_details::de_aws_eks_cluster_logging_details(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_eks_cluster_logging_details::de_aws_eks_cluster_logging_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

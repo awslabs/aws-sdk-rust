@@ -12,9 +12,12 @@
 /// ```text
 /// # let partition = unimplemented!();
 /// match partition {
+///     Partition::AzureCloud => { /* ... */ },
 ///     Partition::Aws => { /* ... */ },
 ///     Partition::AwsCn => { /* ... */ },
 ///     Partition::AwsUsGov => { /* ... */ },
+///     Partition::AwsUsIso => { /* ... */ },
+///     Partition::AwsUsIsoB => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,11 +47,17 @@
 )]
 pub enum Partition {
     #[allow(missing_docs)] // documentation missing in model
+    AzureCloud,
+    #[allow(missing_docs)] // documentation missing in model
     Aws,
     #[allow(missing_docs)] // documentation missing in model
     AwsCn,
     #[allow(missing_docs)] // documentation missing in model
     AwsUsGov,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsUsIso,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsUsIsoB,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -56,9 +65,12 @@ pub enum Partition {
 impl ::std::convert::From<&str> for Partition {
     fn from(s: &str) -> Self {
         match s {
+            "AzureCloud" => Partition::AzureCloud,
             "aws" => Partition::Aws,
             "aws-cn" => Partition::AwsCn,
             "aws-us-gov" => Partition::AwsUsGov,
+            "aws-us-iso" => Partition::AwsUsIso,
+            "aws-us-iso-b" => Partition::AwsUsIsoB,
             other => Partition::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -74,15 +86,18 @@ impl Partition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Partition::AzureCloud => "AzureCloud",
             Partition::Aws => "aws",
             Partition::AwsCn => "aws-cn",
             Partition::AwsUsGov => "aws-us-gov",
+            Partition::AwsUsIso => "aws-us-iso",
+            Partition::AwsUsIsoB => "aws-us-iso-b",
             Partition::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["aws", "aws-cn", "aws-us-gov"]
+        &["AzureCloud", "aws", "aws-cn", "aws-us-gov", "aws-us-iso", "aws-us-iso-b"]
     }
 }
 impl ::std::convert::AsRef<str> for Partition {
@@ -105,9 +120,12 @@ impl Partition {
 impl ::std::fmt::Display for Partition {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Partition::AzureCloud => write!(f, "AzureCloud"),
             Partition::Aws => write!(f, "aws"),
             Partition::AwsCn => write!(f, "aws-cn"),
             Partition::AwsUsGov => write!(f, "aws-us-gov"),
+            Partition::AwsUsIso => write!(f, "aws-us-iso"),
+            Partition::AwsUsIsoB => write!(f, "aws-us-iso-b"),
             Partition::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -124,6 +124,8 @@ pub fn de_describe_cluster_snapshots(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeClusterSnapshotsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeClusterSnapshotsResponse got {start_el:?}"
@@ -154,7 +156,7 @@ pub fn de_describe_cluster_snapshots(
             s if s.matches("Snapshots") /* Snapshots com.amazonaws.redshift.synthetic#DescribeClusterSnapshotsOutput$Snapshots */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_list::de_snapshot_list(&mut tag)
+                        crate::protocol_serde::shape_snapshot_list::de_snapshot_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

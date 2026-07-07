@@ -114,9 +114,9 @@ impl CopyDBClusterParameterGroupFluentBuilder {
     /// <li>
     /// <p>Must specify a valid DB cluster parameter group.</p></li>
     /// <li>
-    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
+    /// <p>Must specify a valid DB cluster parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
     /// <li>
-    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
+    /// <p>The source DB cluster parameter group must be in the same Amazon Region as the copy. Neptune does not support cross-Region copying of parameter groups.</p></li>
     /// </ul>
     pub fn source_db_cluster_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_cluster_parameter_group_identifier(input.into());
@@ -128,9 +128,9 @@ impl CopyDBClusterParameterGroupFluentBuilder {
     /// <li>
     /// <p>Must specify a valid DB cluster parameter group.</p></li>
     /// <li>
-    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
+    /// <p>Must specify a valid DB cluster parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
     /// <li>
-    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
+    /// <p>The source DB cluster parameter group must be in the same Amazon Region as the copy. Neptune does not support cross-Region copying of parameter groups.</p></li>
     /// </ul>
     pub fn set_source_db_cluster_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_cluster_parameter_group_identifier(input);
@@ -142,9 +142,9 @@ impl CopyDBClusterParameterGroupFluentBuilder {
     /// <li>
     /// <p>Must specify a valid DB cluster parameter group.</p></li>
     /// <li>
-    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
+    /// <p>Must specify a valid DB cluster parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
     /// <li>
-    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
+    /// <p>The source DB cluster parameter group must be in the same Amazon Region as the copy. Neptune does not support cross-Region copying of parameter groups.</p></li>
     /// </ul>
     pub fn get_source_db_cluster_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_cluster_parameter_group_identifier()

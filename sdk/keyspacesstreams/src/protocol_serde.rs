@@ -57,6 +57,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_iterator_description;
+
 pub(crate) mod shape_record_list;
 
 pub(crate) mod shape_shard_description_list;

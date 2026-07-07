@@ -2,6 +2,7 @@
 pub(crate) fn de_localized_branding_string_map<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<::std::collections::HashMap<crate::types::Locale, crate::types::LocalizedBrandingStrings>>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -9,6 +10,11 @@ pub(crate) fn de_localized_branding_string_map<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,7 +24,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| crate::types::Locale::from(u.as_ref()))?;
-                        let value = crate::protocol_serde::shape_localized_branding_strings::de_localized_branding_strings(tokens, _value)?;
+                        let value =
+                            crate::protocol_serde::shape_localized_branding_strings::de_localized_branding_strings(tokens, _value, depth + 1)?;
                         match value {
                             Some(value) => {
                                 map.insert(key, value);

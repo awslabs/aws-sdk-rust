@@ -133,6 +133,8 @@ pub(crate) fn de_get_type(
 ) -> ::std::result::Result<crate::operation::get_type::builders::GetTypeOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -153,7 +155,7 @@ pub(crate) fn de_get_type(
                     );
                 }
                 "fieldDefinitions" => {
-                    builder = builder.set_field_definitions(crate::protocol_serde::shape_field_list::de_field_list(tokens, _value)?);
+                    builder = builder.set_field_definitions(crate::protocol_serde::shape_field_list::de_field_list(tokens, _value, depth + 1)?);
                 }
                 "lastModifiedTimestamp" => {
                     builder = builder.set_last_modified_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -169,10 +171,15 @@ pub(crate) fn de_get_type(
                     );
                 }
                 "directReferringTables" => {
-                    builder = builder.set_direct_referring_tables(crate::protocol_serde::shape_table_name_list::de_table_name_list(tokens, _value)?);
+                    builder = builder.set_direct_referring_tables(crate::protocol_serde::shape_table_name_list::de_table_name_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "directParentTypes" => {
-                    builder = builder.set_direct_parent_types(crate::protocol_serde::shape_type_name_list::de_type_name_list(tokens, _value)?);
+                    builder =
+                        builder.set_direct_parent_types(crate::protocol_serde::shape_type_name_list::de_type_name_list(tokens, _value, depth + 1)?);
                 }
                 "maxNestingDepth" => {
                     builder = builder.set_max_nesting_depth(

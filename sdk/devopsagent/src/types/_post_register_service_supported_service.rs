@@ -20,8 +20,11 @@
 ///     PostRegisterServiceSupportedService::McpServerDatadog => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerGrafana => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerNewrelic => { /* ... */ },
+///     PostRegisterServiceSupportedService::McpServerSigv4 => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerSplunk => { /* ... */ },
 ///     PostRegisterServiceSupportedService::Pagerduty => { /* ... */ },
+///     PostRegisterServiceSupportedService::RemoteAgent => { /* ... */ },
+///     PostRegisterServiceSupportedService::RemoteAgentSigv4 => { /* ... */ },
 ///     PostRegisterServiceSupportedService::Servicenow => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,13 +48,13 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Services that can be registered via the post-registration API (excludes OAuth 3LO services).
+/// <p>Services that can be registered via the post-registration API (excludes OAuth 3LO services).</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PostRegisterServiceSupportedService {
-    /// Azure Service with AWS Outbound Identity Federation.
+    /// <p>Azure Service with AWS Outbound Identity Federation.</p>
     AzureIdentity,
     #[allow(missing_docs)] // documentation missing in model
     Dynatrace,
@@ -59,18 +62,24 @@ pub enum PostRegisterServiceSupportedService {
     Eventchannel,
     #[allow(missing_docs)] // documentation missing in model
     Gitlab,
-    /// Model Context Protocol server.
+    /// <p>Model Context Protocol server.</p>
     McpServer,
-    /// Datadog MCP server.
+    /// <p>Datadog MCP server.</p>
     McpServerDatadog,
-    /// Grafana MCP server.
+    /// <p>Grafana MCP server.</p>
     McpServerGrafana,
-    /// NewRelic MCP server.
+    /// <p>NewRelic MCP server.</p>
     McpServerNewrelic,
-    /// Splunk MCP server.
+    /// <p>SigV4-authenticated MCP server.</p>
+    McpServerSigv4,
+    /// <p>Splunk MCP server.</p>
     McpServerSplunk,
     #[allow(missing_docs)] // documentation missing in model
     Pagerduty,
+    /// <p>Remote A2A agent with token-based authentication (API key or OAuth).</p>
+    RemoteAgent,
+    /// <p>Remote A2A agent with SigV4 authentication.</p>
+    RemoteAgentSigv4,
     #[allow(missing_docs)] // documentation missing in model
     Servicenow,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -88,8 +97,11 @@ impl ::std::convert::From<&str> for PostRegisterServiceSupportedService {
             "mcpserverdatadog" => PostRegisterServiceSupportedService::McpServerDatadog,
             "mcpservergrafana" => PostRegisterServiceSupportedService::McpServerGrafana,
             "mcpservernewrelic" => PostRegisterServiceSupportedService::McpServerNewrelic,
+            "mcpserversigv4" => PostRegisterServiceSupportedService::McpServerSigv4,
             "mcpserversplunk" => PostRegisterServiceSupportedService::McpServerSplunk,
             "pagerduty" => PostRegisterServiceSupportedService::Pagerduty,
+            "remoteagent" => PostRegisterServiceSupportedService::RemoteAgent,
+            "remoteagentsigv4" => PostRegisterServiceSupportedService::RemoteAgentSigv4,
             "servicenow" => PostRegisterServiceSupportedService::Servicenow,
             other => PostRegisterServiceSupportedService::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -114,8 +126,11 @@ impl PostRegisterServiceSupportedService {
             PostRegisterServiceSupportedService::McpServerDatadog => "mcpserverdatadog",
             PostRegisterServiceSupportedService::McpServerGrafana => "mcpservergrafana",
             PostRegisterServiceSupportedService::McpServerNewrelic => "mcpservernewrelic",
+            PostRegisterServiceSupportedService::McpServerSigv4 => "mcpserversigv4",
             PostRegisterServiceSupportedService::McpServerSplunk => "mcpserversplunk",
             PostRegisterServiceSupportedService::Pagerduty => "pagerduty",
+            PostRegisterServiceSupportedService::RemoteAgent => "remoteagent",
+            PostRegisterServiceSupportedService::RemoteAgentSigv4 => "remoteagentsigv4",
             PostRegisterServiceSupportedService::Servicenow => "servicenow",
             PostRegisterServiceSupportedService::Unknown(value) => value.as_str(),
         }
@@ -131,8 +146,11 @@ impl PostRegisterServiceSupportedService {
             "mcpserverdatadog",
             "mcpservergrafana",
             "mcpservernewrelic",
+            "mcpserversigv4",
             "mcpserversplunk",
             "pagerduty",
+            "remoteagent",
+            "remoteagentsigv4",
             "servicenow",
         ]
     }
@@ -165,8 +183,11 @@ impl ::std::fmt::Display for PostRegisterServiceSupportedService {
             PostRegisterServiceSupportedService::McpServerDatadog => write!(f, "mcpserverdatadog"),
             PostRegisterServiceSupportedService::McpServerGrafana => write!(f, "mcpservergrafana"),
             PostRegisterServiceSupportedService::McpServerNewrelic => write!(f, "mcpservernewrelic"),
+            PostRegisterServiceSupportedService::McpServerSigv4 => write!(f, "mcpserversigv4"),
             PostRegisterServiceSupportedService::McpServerSplunk => write!(f, "mcpserversplunk"),
             PostRegisterServiceSupportedService::Pagerduty => write!(f, "pagerduty"),
+            PostRegisterServiceSupportedService::RemoteAgent => write!(f, "remoteagent"),
+            PostRegisterServiceSupportedService::RemoteAgentSigv4 => write!(f, "remoteagentsigv4"),
             PostRegisterServiceSupportedService::Servicenow => write!(f, "servicenow"),
             PostRegisterServiceSupportedService::Unknown(value) => write!(f, "{value}"),
         }

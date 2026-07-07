@@ -8,6 +8,8 @@ pub enum HarnessModelConfiguration {
     BedrockModelConfig(crate::types::HarnessBedrockModelConfig),
     /// <p>Configuration for a Google Gemini model.</p>
     GeminiModelConfig(crate::types::HarnessGeminiModelConfig),
+    /// <p>The LiteLLM model configuration for connecting to third-party model providers.</p>
+    LiteLlmModelConfig(crate::types::HarnessLiteLlmModelConfig),
     /// <p>Configuration for an OpenAI model.</p>
     OpenAiModelConfig(crate::types::HarnessOpenAiModelConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -46,6 +48,19 @@ impl HarnessModelConfiguration {
     /// Returns true if this is a [`GeminiModelConfig`](crate::types::HarnessModelConfiguration::GeminiModelConfig).
     pub fn is_gemini_model_config(&self) -> bool {
         self.as_gemini_model_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`LiteLlmModelConfig`](crate::types::HarnessModelConfiguration::LiteLlmModelConfig), extracting the inner [`HarnessLiteLlmModelConfig`](crate::types::HarnessLiteLlmModelConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_lite_llm_model_config(&self) -> ::std::result::Result<&crate::types::HarnessLiteLlmModelConfig, &Self> {
+        if let HarnessModelConfiguration::LiteLlmModelConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`LiteLlmModelConfig`](crate::types::HarnessModelConfiguration::LiteLlmModelConfig).
+    pub fn is_lite_llm_model_config(&self) -> bool {
+        self.as_lite_llm_model_config().is_ok()
     }
     /// Tries to convert the enum instance into [`OpenAiModelConfig`](crate::types::HarnessModelConfiguration::OpenAiModelConfig), extracting the inner [`HarnessOpenAiModelConfig`](crate::types::HarnessOpenAiModelConfig).
     /// Returns `Err(&Self)` if it can't be converted.

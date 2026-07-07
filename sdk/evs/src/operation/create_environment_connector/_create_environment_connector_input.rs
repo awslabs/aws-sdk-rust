@@ -11,11 +11,19 @@ pub struct CreateEnvironmentConnectorInput {
     /// <p>A unique ID for the environment to create the connector in.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of connector to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER</code>: Connector to an Operations Manager appliance. Required for VCF 9x environments.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER</code>: Connector to an SDDC Manager appliance. Required for VCF 5.x environments.</p></li>
+    /// <li>
+    /// <p><code>VCENTER</code>: Connector to a vCenter Server appliance. Required for features that depend on vCenter, such as Windows Server license-included.</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>The fully qualified domain name (FQDN) of the VCF appliance that the connector targets.</p>
     pub appliance_fqdn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance.</p><important>
-    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with the minimum required permissions.</p>
+    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance. <code>SDDC_MANAGER</code> requires an <code>apiKey</code> field; <code>OPERATIONS_MANAGER</code> and <code>VCENTER</code> require <code>username</code> and <code>password</code> fields.</p><important>
+    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with read-only permissions.</p>
     /// </important>
     pub secret_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -32,6 +40,14 @@ impl CreateEnvironmentConnectorInput {
         self.environment_id.as_deref()
     }
     /// <p>The type of connector to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER</code>: Connector to an Operations Manager appliance. Required for VCF 9x environments.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER</code>: Connector to an SDDC Manager appliance. Required for VCF 5.x environments.</p></li>
+    /// <li>
+    /// <p><code>VCENTER</code>: Connector to a vCenter Server appliance. Required for features that depend on vCenter, such as Windows Server license-included.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
         self.r#type.as_ref()
     }
@@ -39,8 +55,8 @@ impl CreateEnvironmentConnectorInput {
     pub fn appliance_fqdn(&self) -> ::std::option::Option<&str> {
         self.appliance_fqdn.as_deref()
     }
-    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance.</p><important>
-    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with the minimum required permissions.</p>
+    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance. <code>SDDC_MANAGER</code> requires an <code>apiKey</code> field; <code>OPERATIONS_MANAGER</code> and <code>VCENTER</code> require <code>username</code> and <code>password</code> fields.</p><important>
+    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with read-only permissions.</p>
     /// </important>
     pub fn secret_identifier(&self) -> ::std::option::Option<&str> {
         self.secret_identifier.as_deref()
@@ -103,17 +119,41 @@ impl CreateEnvironmentConnectorInputBuilder {
         &self.environment_id
     }
     /// <p>The type of connector to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER</code>: Connector to an Operations Manager appliance. Required for VCF 9x environments.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER</code>: Connector to an SDDC Manager appliance. Required for VCF 5.x environments.</p></li>
+    /// <li>
+    /// <p><code>VCENTER</code>: Connector to a vCenter Server appliance. Required for features that depend on vCenter, such as Windows Server license-included.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ConnectorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of connector to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER</code>: Connector to an Operations Manager appliance. Required for VCF 9x environments.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER</code>: Connector to an SDDC Manager appliance. Required for VCF 5.x environments.</p></li>
+    /// <li>
+    /// <p><code>VCENTER</code>: Connector to a vCenter Server appliance. Required for features that depend on vCenter, such as Windows Server license-included.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of connector to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER</code>: Connector to an Operations Manager appliance. Required for VCF 9x environments.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER</code>: Connector to an SDDC Manager appliance. Required for VCF 5.x environments.</p></li>
+    /// <li>
+    /// <p><code>VCENTER</code>: Connector to a vCenter Server appliance. Required for features that depend on vCenter, such as Windows Server license-included.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
         &self.r#type
     }
@@ -132,23 +172,23 @@ impl CreateEnvironmentConnectorInputBuilder {
     pub fn get_appliance_fqdn(&self) -> &::std::option::Option<::std::string::String> {
         &self.appliance_fqdn
     }
-    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance.</p><important>
-    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with the minimum required permissions.</p>
+    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance. <code>SDDC_MANAGER</code> requires an <code>apiKey</code> field; <code>OPERATIONS_MANAGER</code> and <code>VCENTER</code> require <code>username</code> and <code>password</code> fields.</p><important>
+    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with read-only permissions.</p>
     /// </important>
     /// This field is required.
     pub fn secret_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance.</p><important>
-    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with the minimum required permissions.</p>
+    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance. <code>SDDC_MANAGER</code> requires an <code>apiKey</code> field; <code>OPERATIONS_MANAGER</code> and <code>VCENTER</code> require <code>username</code> and <code>password</code> fields.</p><important>
+    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with read-only permissions.</p>
     /// </important>
     pub fn set_secret_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_identifier = input;
         self
     }
-    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance.</p><important>
-    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with the minimum required permissions.</p>
+    /// <p>The ARN or name of the Amazon Web Services Secrets Manager secret that stores the credentials for the VCF appliance. <code>SDDC_MANAGER</code> requires an <code>apiKey</code> field; <code>OPERATIONS_MANAGER</code> and <code>VCENTER</code> require <code>username</code> and <code>password</code> fields.</p><important>
+    /// <p>Do not use credentials with Administrator privileges. We recommend using a service account with read-only permissions.</p>
     /// </important>
     pub fn get_secret_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_identifier

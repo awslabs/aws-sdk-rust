@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProviderDetail {
+    /// <p>Details about a Microsoft Azure CSPM integration.</p>
+    Azure(crate::types::AzureDetail),
     /// <p>Details about a Jira Cloud integration.</p>
     JiraCloud(crate::types::JiraCloudDetail),
     /// <p>Details about a ServiceNow ITSM integration.</p>
@@ -19,6 +21,19 @@ pub enum ProviderDetail {
     Unknown,
 }
 impl ProviderDetail {
+    /// Tries to convert the enum instance into [`Azure`](crate::types::ProviderDetail::Azure), extracting the inner [`AzureDetail`](crate::types::AzureDetail).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_azure(&self) -> ::std::result::Result<&crate::types::AzureDetail, &Self> {
+        if let ProviderDetail::Azure(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Azure`](crate::types::ProviderDetail::Azure).
+    pub fn is_azure(&self) -> bool {
+        self.as_azure().is_ok()
+    }
     /// Tries to convert the enum instance into [`JiraCloud`](crate::types::ProviderDetail::JiraCloud), extracting the inner [`JiraCloudDetail`](crate::types::JiraCloudDetail).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_jira_cloud(&self) -> ::std::result::Result<&crate::types::JiraCloudDetail, &Self> {

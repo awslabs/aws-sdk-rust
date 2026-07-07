@@ -3,12 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#![cfg(any(
-    feature = "rustls-ring",
-    feature = "rustls-aws-lc",
-    feature = "rustls-aws-lc-fips",
-    feature = "s2n-tls",
-))]
+#![cfg(any(feature = "__rustls", feature = "s2n-tls",))]
 
 use aws_smithy_async::time::SystemTimeSource;
 use aws_smithy_http_client::tls;
@@ -261,6 +256,33 @@ async fn test_rustls_ring_custom_ca() {
         .tls_context(tls_context_from_pem("tests/server.pem"))
         .build_https();
 
+    run_tls_test(&client).await.unwrap()
+}
+
+#[cfg(all(aws_sdk_unstable, feature = "rustls-ring"))]
+#[should_panic(expected = "InvalidCertificate(UnknownIssuer)")]
+#[tokio::test]
+async fn test_rustls_custom_provider_native_ca() {
+    let provider = rustls::crypto::ring::default_provider();
+    let client = aws_smithy_http_client::Builder::new()
+        .tls_provider(tls::Provider::Rustls(
+            tls::rustls_provider::CryptoMode::Custom(provider),
+        ))
+        .build_https();
+
+    run_tls_test(&client).await.unwrap()
+}
+
+#[cfg(all(aws_sdk_unstable, feature = "rustls-ring"))]
+#[tokio::test]
+async fn test_rustls_custom_provider_custom_ca() {
+    let ring_provider = rustls::crypto::ring::default_provider();
+    let client = aws_smithy_http_client::Builder::new()
+        .tls_provider(tls::Provider::Rustls(
+            tls::rustls_provider::CryptoMode::Custom(ring_provider),
+        ))
+        .tls_context(tls_context_from_pem("tests/server.pem"))
+        .build_https();
     run_tls_test(&client).await.unwrap()
 }
 

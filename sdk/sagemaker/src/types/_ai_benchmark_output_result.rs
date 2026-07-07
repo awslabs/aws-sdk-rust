@@ -8,6 +8,8 @@ pub struct AiBenchmarkOutputResult {
     pub s3_output_location: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch log information for the benchmark job.</p>
     pub cloud_watch_logs: ::std::option::Option<::std::vec::Vec<crate::types::AiCloudWatchLogs>>,
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub mlflow_config: ::std::option::Option<crate::types::AiMlflowConfig>,
 }
 impl AiBenchmarkOutputResult {
     /// <p>The Amazon S3 URI where benchmark results are stored.</p>
@@ -19,6 +21,10 @@ impl AiBenchmarkOutputResult {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logs.is_none()`.
     pub fn cloud_watch_logs(&self) -> &[crate::types::AiCloudWatchLogs] {
         self.cloud_watch_logs.as_deref().unwrap_or_default()
+    }
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub fn mlflow_config(&self) -> ::std::option::Option<&crate::types::AiMlflowConfig> {
+        self.mlflow_config.as_ref()
     }
 }
 impl AiBenchmarkOutputResult {
@@ -34,6 +40,7 @@ impl AiBenchmarkOutputResult {
 pub struct AiBenchmarkOutputResultBuilder {
     pub(crate) s3_output_location: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_logs: ::std::option::Option<::std::vec::Vec<crate::types::AiCloudWatchLogs>>,
+    pub(crate) mlflow_config: ::std::option::Option<crate::types::AiMlflowConfig>,
 }
 impl AiBenchmarkOutputResultBuilder {
     /// <p>The Amazon S3 URI where benchmark results are stored.</p>
@@ -71,11 +78,26 @@ impl AiBenchmarkOutputResultBuilder {
     pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AiCloudWatchLogs>> {
         &self.cloud_watch_logs
     }
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub fn mlflow_config(mut self, input: crate::types::AiMlflowConfig) -> Self {
+        self.mlflow_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub fn set_mlflow_config(mut self, input: ::std::option::Option<crate::types::AiMlflowConfig>) -> Self {
+        self.mlflow_config = input;
+        self
+    }
+    /// <p>The MLflow tracking configuration for the job.</p>
+    pub fn get_mlflow_config(&self) -> &::std::option::Option<crate::types::AiMlflowConfig> {
+        &self.mlflow_config
+    }
     /// Consumes the builder and constructs a [`AiBenchmarkOutputResult`](crate::types::AiBenchmarkOutputResult).
     pub fn build(self) -> crate::types::AiBenchmarkOutputResult {
         crate::types::AiBenchmarkOutputResult {
             s3_output_location: self.s3_output_location,
             cloud_watch_logs: self.cloud_watch_logs,
+            mlflow_config: self.mlflow_config,
         }
     }
 }

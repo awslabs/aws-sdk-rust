@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_insights_path(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NetworkInsightsPath, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkInsightsPath::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -157,7 +161,7 @@ pub fn de_network_insights_path(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#NetworkInsightsPath$Tags */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -167,7 +171,7 @@ pub fn de_network_insights_path(
             s if s.matches("filterAtSource") /* FilterAtSource com.amazonaws.ec2#NetworkInsightsPath$FilterAtSource */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_path_filter::de_path_filter(&mut tag)
+                        crate::protocol_serde::shape_path_filter::de_path_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -177,7 +181,7 @@ pub fn de_network_insights_path(
             s if s.matches("filterAtDestination") /* FilterAtDestination com.amazonaws.ec2#NetworkInsightsPath$FilterAtDestination */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_path_filter::de_path_filter(&mut tag)
+                        crate::protocol_serde::shape_path_filter::de_path_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;

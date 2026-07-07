@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteAlarmMuteRule`](crate::operation::delete_alarm_mute_rule) operation has
-/// a [`Client::delete_alarm_mute_rule`], function which returns a builder for that operation.
+/// For example, the [`AssociateDatasetKmsKey`](crate::operation::associate_dataset_kms_key) operation has
+/// a [`Client::associate_dataset_kms_key`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_alarm_mute_rule()
-///     .alarm_mute_rule_name("example")
+/// let result = client.associate_dataset_kms_key()
+///     .dataset_identifier("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -144,6 +144,8 @@ pub trait Waiters {
     fn wait_until_alarm_exists(&self) -> crate::waiters::alarm_exists::AlarmExistsFluentBuilder;
     /// Wait for `composite_alarm_exists`
     fn wait_until_composite_alarm_exists(&self) -> crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder;
+    /// Wait for `log_alarm_exists`
+    fn wait_until_log_alarm_exists(&self) -> crate::waiters::log_alarm_exists::LogAlarmExistsFluentBuilder;
     /// Wait for `alarm_mute_rule_exists`
     fn wait_until_alarm_mute_rule_exists(&self) -> crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder;
 }
@@ -153,6 +155,9 @@ impl Waiters for Client {
     }
     fn wait_until_composite_alarm_exists(&self) -> crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder {
         crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_log_alarm_exists(&self) -> crate::waiters::log_alarm_exists::LogAlarmExistsFluentBuilder {
+        crate::waiters::log_alarm_exists::LogAlarmExistsFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_alarm_mute_rule_exists(&self) -> crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder {
         crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder::new(self.handle.clone())
@@ -175,6 +180,8 @@ impl Client {
     }
 }
 
+mod associate_dataset_kms_key;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -186,7 +193,7 @@ impl Client {
 /// # let client: aws_sdk_cloudwatch::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.delete_alarm_mute_rule()
+/// let result = client.associate_dataset_kms_key()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -230,6 +237,8 @@ mod disable_alarm_actions;
 
 mod disable_insight_rules;
 
+mod disassociate_dataset_kms_key;
+
 mod enable_alarm_actions;
 
 mod enable_insight_rules;
@@ -237,6 +246,8 @@ mod enable_insight_rules;
 mod get_alarm_mute_rule;
 
 mod get_dashboard;
+
+mod get_dataset;
 
 mod get_insight_rule_report;
 
@@ -271,6 +282,8 @@ mod put_composite_alarm;
 mod put_dashboard;
 
 mod put_insight_rule;
+
+mod put_log_alarm;
 
 mod put_managed_insight_rules;
 

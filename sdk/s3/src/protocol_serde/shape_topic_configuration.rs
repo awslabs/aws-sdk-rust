@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_topic_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TopicConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TopicConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -57,7 +61,7 @@ pub fn de_topic_configuration(
             s if s.matches("Filter") /* Filter com.amazonaws.s3#TopicConfiguration$Filter */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_notification_configuration_filter::de_notification_configuration_filter(&mut tag)
+                        crate::protocol_serde::shape_notification_configuration_filter::de_notification_configuration_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_model<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Model>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,17 +30,21 @@ where
                         }
                         "PrimaryContainer" => {
                             builder = builder.set_primary_container(crate::protocol_serde::shape_container_definition::de_container_definition(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Containers" => {
                             builder = builder.set_containers(crate::protocol_serde::shape_container_definition_list::de_container_definition_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "InferenceExecutionConfig" => {
                             builder = builder.set_inference_execution_config(
-                                crate::protocol_serde::shape_inference_execution_config::de_inference_execution_config(tokens, _value)?,
+                                crate::protocol_serde::shape_inference_execution_config::de_inference_execution_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "ExecutionRoleArn" => {
@@ -45,7 +55,7 @@ where
                             );
                         }
                         "VpcConfig" => {
-                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                         }
                         "CreationTime" => {
                             builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -65,11 +75,11 @@ where
                                 builder.set_enable_network_isolation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "DeploymentRecommendation" => {
                             builder = builder.set_deployment_recommendation(
-                                crate::protocol_serde::shape_deployment_recommendation::de_deployment_recommendation(tokens, _value)?,
+                                crate::protocol_serde::shape_deployment_recommendation::de_deployment_recommendation(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

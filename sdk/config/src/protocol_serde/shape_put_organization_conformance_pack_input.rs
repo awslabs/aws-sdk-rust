@@ -39,5 +39,17 @@ pub fn ser_put_organization_conformance_pack_input_input(
         }
         array_11.finish();
     }
+    if let Some(var_13) = &input.tags {
+        let mut array_14 = object.key("Tags").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }

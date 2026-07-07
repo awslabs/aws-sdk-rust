@@ -10,7 +10,11 @@ pub struct ListRetirableGrantsInput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
     pub retiring_principal: ::std::option::Option<::std::string::String>,
+    /// <p>The retiring service principal for which to list grants. This filter is only usable by callers in a service principal.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
+    pub retiring_service_principal: ::std::option::Option<::std::string::String>,
 }
 impl ListRetirableGrantsInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
@@ -24,8 +28,14 @@ impl ListRetirableGrantsInput {
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
     pub fn retiring_principal(&self) -> ::std::option::Option<&str> {
         self.retiring_principal.as_deref()
+    }
+    /// <p>The retiring service principal for which to list grants. This filter is only usable by callers in a service principal.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
+    pub fn retiring_service_principal(&self) -> ::std::option::Option<&str> {
+        self.retiring_service_principal.as_deref()
     }
 }
 impl ListRetirableGrantsInput {
@@ -42,6 +52,7 @@ pub struct ListRetirableGrantsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) retiring_principal: ::std::option::Option<::std::string::String>,
+    pub(crate) retiring_service_principal: ::std::option::Option<::std::string::String>,
 }
 impl ListRetirableGrantsInputBuilder {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
@@ -77,21 +88,40 @@ impl ListRetirableGrantsInputBuilder {
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    /// This field is required.
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
     pub fn retiring_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retiring_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
     pub fn set_retiring_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retiring_principal = input;
         self
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
     pub fn get_retiring_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.retiring_principal
+    }
+    /// <p>The retiring service principal for which to list grants. This filter is only usable by callers in a service principal.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
+    pub fn retiring_service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.retiring_service_principal = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The retiring service principal for which to list grants. This filter is only usable by callers in a service principal.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
+    pub fn set_retiring_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.retiring_service_principal = input;
+        self
+    }
+    /// <p>The retiring service principal for which to list grants. This filter is only usable by callers in a service principal.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
+    pub fn get_retiring_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retiring_service_principal
     }
     /// Consumes the builder and constructs a [`ListRetirableGrantsInput`](crate::operation::list_retirable_grants::ListRetirableGrantsInput).
     pub fn build(
@@ -102,6 +132,7 @@ impl ListRetirableGrantsInputBuilder {
             limit: self.limit,
             marker: self.marker,
             retiring_principal: self.retiring_principal,
+            retiring_service_principal: self.retiring_service_principal,
         })
     }
 }

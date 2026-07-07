@@ -289,4 +289,26 @@ impl AllocateIpamPoolCidrFluentBuilder {
     pub fn get_disallowed_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_disallowed_cidrs()
     }
+    ///
+    /// Appends an item to `TagSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
+        self
+    }
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
+        self
+    }
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
 }

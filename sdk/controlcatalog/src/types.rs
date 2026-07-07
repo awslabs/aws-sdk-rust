@@ -13,6 +13,8 @@ pub use crate::types::_region_configuration::RegionConfiguration;
 
 pub use crate::types::_implementation_details::ImplementationDetails;
 
+pub use crate::types::_parameter_requirement_summary::ParameterRequirementSummary;
+
 pub use crate::types::_objective_filter::ObjectiveFilter;
 
 pub use crate::types::_control_mapping::ControlMapping;
@@ -42,6 +44,8 @@ pub use crate::types::_associated_domain_summary::AssociatedDomainSummary;
 pub use crate::types::_associated_objective_summary::AssociatedObjectiveSummary;
 
 pub use crate::types::_implementation_summary::ImplementationSummary;
+
+pub use crate::types::_control_parameter_requirement::ControlParameterRequirement;
 
 pub use crate::types::_domain_resource_filter::DomainResourceFilter;
 
@@ -73,6 +77,8 @@ mod _control_mapping_filter;
 
 mod _control_parameter;
 
+mod _control_parameter_requirement;
+
 mod _control_relation_type;
 
 mod _control_scope;
@@ -102,6 +108,8 @@ mod _objective_filter;
 mod _objective_resource_filter;
 
 mod _objective_summary;
+
+mod _parameter_requirement_summary;
 
 mod _region_configuration;
 

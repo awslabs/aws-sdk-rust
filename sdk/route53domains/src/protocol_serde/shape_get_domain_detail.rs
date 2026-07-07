@@ -86,6 +86,8 @@ pub(crate) fn de_get_domain_detail(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -99,19 +101,24 @@ pub(crate) fn de_get_domain_detail(
                     );
                 }
                 "Nameservers" => {
-                    builder = builder.set_nameservers(crate::protocol_serde::shape_nameserver_list::de_nameserver_list(tokens, _value)?);
+                    builder = builder.set_nameservers(crate::protocol_serde::shape_nameserver_list::de_nameserver_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "AutoRenew" => {
                     builder = builder.set_auto_renew(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "AdminContact" => {
-                    builder = builder.set_admin_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens, _value)?);
+                    builder = builder.set_admin_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens, _value, depth + 1)?);
                 }
                 "RegistrantContact" => {
-                    builder = builder.set_registrant_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens, _value)?);
+                    builder =
+                        builder.set_registrant_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens, _value, depth + 1)?);
                 }
                 "TechContact" => {
-                    builder = builder.set_tech_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens, _value)?);
+                    builder = builder.set_tech_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens, _value, depth + 1)?);
                 }
                 "AdminPrivacy" => {
                     builder = builder.set_admin_privacy(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -197,13 +204,21 @@ pub(crate) fn de_get_domain_detail(
                     );
                 }
                 "StatusList" => {
-                    builder = builder.set_status_list(crate::protocol_serde::shape_domain_status_list::de_domain_status_list(tokens, _value)?);
+                    builder = builder.set_status_list(crate::protocol_serde::shape_domain_status_list::de_domain_status_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "DnssecKeys" => {
-                    builder = builder.set_dnssec_keys(crate::protocol_serde::shape_dnssec_key_list::de_dnssec_key_list(tokens, _value)?);
+                    builder = builder.set_dnssec_keys(crate::protocol_serde::shape_dnssec_key_list::de_dnssec_key_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "BillingContact" => {
-                    builder = builder.set_billing_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens, _value)?);
+                    builder = builder.set_billing_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens, _value, depth + 1)?);
                 }
                 "BillingPrivacy" => {
                     builder = builder.set_billing_privacy(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

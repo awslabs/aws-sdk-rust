@@ -56,10 +56,16 @@ pub fn ser_component_child(
 pub(crate) fn de_component_child<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComponentChild>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -85,16 +91,24 @@ where
                         }
                         "properties" => {
                             builder = builder.set_properties(crate::protocol_serde::shape_component_properties::de_component_properties(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "children" => {
                             builder = builder.set_children(crate::protocol_serde::shape_component_child_list::de_component_child_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "events" => {
-                            builder = builder.set_events(crate::protocol_serde::shape_component_events::de_component_events(tokens, _value)?);
+                            builder = builder.set_events(crate::protocol_serde::shape_component_events::de_component_events(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "sourceId" => {
                             builder = builder.set_source_id(

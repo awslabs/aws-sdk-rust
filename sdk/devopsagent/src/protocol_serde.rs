@@ -27,15 +27,27 @@ pub(crate) mod shape_associate_service;
 
 pub(crate) mod shape_create_agent_space;
 
+pub(crate) mod shape_create_asset;
+
+pub(crate) mod shape_create_asset_file;
+
 pub(crate) mod shape_create_backlog_task;
 
 pub(crate) mod shape_create_chat;
 
 pub(crate) mod shape_create_private_connection;
 
+pub(crate) mod shape_create_trigger;
+
 pub(crate) mod shape_delete_agent_space;
 
+pub(crate) mod shape_delete_asset;
+
+pub(crate) mod shape_delete_asset_file;
+
 pub(crate) mod shape_delete_private_connection;
+
+pub(crate) mod shape_delete_trigger;
 
 pub(crate) mod shape_deregister_service;
 
@@ -51,6 +63,12 @@ pub(crate) mod shape_get_account_usage;
 
 pub(crate) mod shape_get_agent_space;
 
+pub(crate) mod shape_get_asset;
+
+pub(crate) mod shape_get_asset_content;
+
+pub(crate) mod shape_get_asset_file;
+
 pub(crate) mod shape_get_association;
 
 pub(crate) mod shape_get_backlog_task;
@@ -61,7 +79,17 @@ pub(crate) mod shape_get_recommendation;
 
 pub(crate) mod shape_get_service;
 
+pub(crate) mod shape_get_trigger;
+
 pub(crate) mod shape_list_agent_spaces;
+
+pub(crate) mod shape_list_asset_files;
+
+pub(crate) mod shape_list_asset_types;
+
+pub(crate) mod shape_list_asset_versions;
+
+pub(crate) mod shape_list_assets;
 
 pub(crate) mod shape_list_associations;
 
@@ -85,6 +113,8 @@ pub(crate) mod shape_list_services;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_triggers;
+
 pub(crate) mod shape_list_webhooks;
 
 pub(crate) mod shape_register_service;
@@ -97,6 +127,10 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_agent_space;
 
+pub(crate) mod shape_update_asset;
+
+pub(crate) mod shape_update_asset_file;
+
 pub(crate) mod shape_update_association;
 
 pub(crate) mod shape_update_backlog_task;
@@ -108,6 +142,8 @@ pub(crate) mod shape_update_operator_app_idp_config;
 pub(crate) mod shape_update_private_connection_certificate;
 
 pub(crate) mod shape_update_recommendation;
+
+pub(crate) mod shape_update_trigger;
 
 pub(crate) mod shape_validate_aws_associations;
 
@@ -129,9 +165,15 @@ pub(crate) mod shape_content_size_exceeded_exception;
 
 pub(crate) mod shape_create_agent_space_input;
 
+pub(crate) mod shape_create_asset_file_input;
+
+pub(crate) mod shape_create_asset_input;
+
 pub(crate) mod shape_create_backlog_task_input;
 
 pub(crate) mod shape_create_private_connection_input;
+
+pub(crate) mod shape_create_trigger_input;
 
 pub(crate) mod shape_enable_operator_app_input;
 
@@ -169,6 +211,10 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_agent_space_input;
 
+pub(crate) mod shape_update_asset_file_input;
+
+pub(crate) mod shape_update_asset_input;
+
 pub(crate) mod shape_update_association_input;
 
 pub(crate) mod shape_update_backlog_task_input;
@@ -180,6 +226,8 @@ pub(crate) mod shape_update_operator_app_idp_config_input;
 pub(crate) mod shape_update_private_connection_certificate_input;
 
 pub(crate) mod shape_update_recommendation_input;
+
+pub(crate) mod shape_update_trigger_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -195,9 +243,29 @@ pub(crate) mod shape_agent_space;
 
 pub(crate) mod shape_agent_space_list;
 
+pub(crate) mod shape_asset;
+
+pub(crate) mod shape_asset_content;
+
+pub(crate) mod shape_asset_file;
+
+pub(crate) mod shape_asset_file_body;
+
+pub(crate) mod shape_asset_file_summary_list;
+
+pub(crate) mod shape_asset_list;
+
+pub(crate) mod shape_asset_type_list;
+
+pub(crate) mod shape_asset_version_metadata_list;
+
+pub(crate) mod shape_asset_zip_content;
+
 pub(crate) mod shape_association;
 
 pub(crate) mod shape_associations_list;
+
+pub(crate) mod shape_capability_configuration;
 
 pub(crate) mod shape_chat_execution_list;
 
@@ -249,6 +317,12 @@ pub(crate) mod shape_task_filter;
 
 pub(crate) mod shape_task_list;
 
+pub(crate) mod shape_trigger;
+
+pub(crate) mod shape_trigger_condition;
+
+pub(crate) mod shape_trigger_list;
+
 pub(crate) mod shape_usage_metric;
 
 pub(crate) mod shape_validation_exception_field_list;
@@ -256,6 +330,18 @@ pub(crate) mod shape_validation_exception_field_list;
 pub(crate) mod shape_webhooks_list;
 
 pub(crate) mod shape_additional_service_details;
+
+pub(crate) mod shape_asset_file_content;
+
+pub(crate) mod shape_asset_file_summary;
+
+pub(crate) mod shape_asset_source_url_content;
+
+pub(crate) mod shape_asset_type_summary;
+
+pub(crate) mod shape_asset_version_metadata;
+
+pub(crate) mod shape_association_capabilities;
 
 pub(crate) mod shape_aws_configuration;
 
@@ -303,6 +389,10 @@ pub(crate) mod shape_mcp_server_grafana_configuration;
 
 pub(crate) mod shape_mcp_server_new_relic_configuration;
 
+pub(crate) mod shape_mcp_server_sigv4_configuration;
+
+pub(crate) mod shape_mcp_server_sigv4_service_details;
+
 pub(crate) mod shape_mcp_server_splunk_configuration;
 
 pub(crate) mod shape_new_relic_service_details;
@@ -322,6 +412,16 @@ pub(crate) mod shape_recommendation_content;
 pub(crate) mod shape_reference_output;
 
 pub(crate) mod shape_registered_azure_identity_details;
+
+pub(crate) mod shape_remote_agent_configuration;
+
+pub(crate) mod shape_remote_agent_service_details;
+
+pub(crate) mod shape_remote_agent_sigv4_configuration;
+
+pub(crate) mod shape_remote_agent_sigv4_service_details;
+
+pub(crate) mod shape_schedule_condition;
 
 pub(crate) mod shape_self_managed_input;
 
@@ -361,6 +461,8 @@ pub(crate) mod shape_dynatrace_service_authorization_config;
 
 pub(crate) mod shape_mcp_server_authorization_config;
 
+pub(crate) mod shape_mcp_server_sigv4_authorization_config;
+
 pub(crate) mod shape_message;
 
 pub(crate) mod shape_new_relic_service_authorization_config;
@@ -377,13 +479,23 @@ pub(crate) mod shape_registered_grafana_server_details;
 
 pub(crate) mod shape_registered_mcp_server_details;
 
+pub(crate) mod shape_registered_mcp_server_sigv4_details;
+
 pub(crate) mod shape_registered_new_relic_details;
 
 pub(crate) mod shape_registered_pager_duty_details;
 
+pub(crate) mod shape_registered_remote_agent_details;
+
+pub(crate) mod shape_registered_remote_agent_sigv4_details;
+
 pub(crate) mod shape_registered_service_now_details;
 
 pub(crate) mod shape_registered_slack_service_details;
+
+pub(crate) mod shape_remote_agent_authorization_config;
+
+pub(crate) mod shape_remote_agent_sigv4_authorization_config;
 
 pub(crate) mod shape_service_now_service_authorization_config;
 
@@ -392,6 +504,8 @@ pub(crate) mod shape_slack_transmission_target;
 pub(crate) mod shape_user_reference;
 
 pub(crate) mod shape_assistant_message;
+
+pub(crate) mod shape_custom_headers;
 
 pub(crate) mod shape_dynatrace_o_auth_client_credentials_config;
 
@@ -416,6 +530,12 @@ pub(crate) mod shape_pager_duty_o_auth_client_credentials_config;
 pub(crate) mod shape_pager_duty_scopes_list;
 
 pub(crate) mod shape_pager_duty_services_list;
+
+pub(crate) mod shape_remote_agent_api_key_config;
+
+pub(crate) mod shape_remote_agent_bearer_token_config;
+
+pub(crate) mod shape_remote_agent_o_auth_client_credentials_config;
 
 pub(crate) mod shape_send_message_content_block_delta;
 

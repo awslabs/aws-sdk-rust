@@ -159,6 +159,8 @@ pub(crate) fn de_list_security_group_users(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -172,7 +174,7 @@ pub(crate) fn de_list_security_group_users(
                     );
                 }
                 "users" => {
-                    builder = builder.set_users(crate::protocol_serde::shape_users::de_users(tokens, _value)?);
+                    builder = builder.set_users(crate::protocol_serde::shape_users::de_users(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -12,6 +12,10 @@
 /// ```text
 /// # let usagetype = unimplemented!();
 /// match usagetype {
+///     UsageType::AzureContainerImageInitialScan => { /* ... */ },
+///     UsageType::AzureContainerImageRescan => { /* ... */ },
+///     UsageType::AzureServerlessFunctionHours => { /* ... */ },
+///     UsageType::AzureVmAgentBasedInstanceHours => { /* ... */ },
 ///     UsageType::CodeRepositoryIac => { /* ... */ },
 ///     UsageType::CodeRepositorySast => { /* ... */ },
 ///     UsageType::CodeRepositorySca => { /* ... */ },
@@ -50,6 +54,14 @@
 )]
 pub enum UsageType {
     #[allow(missing_docs)] // documentation missing in model
+    AzureContainerImageInitialScan,
+    #[allow(missing_docs)] // documentation missing in model
+    AzureContainerImageRescan,
+    #[allow(missing_docs)] // documentation missing in model
+    AzureServerlessFunctionHours,
+    #[allow(missing_docs)] // documentation missing in model
+    AzureVmAgentBasedInstanceHours,
+    #[allow(missing_docs)] // documentation missing in model
     CodeRepositoryIac,
     #[allow(missing_docs)] // documentation missing in model
     CodeRepositorySast,
@@ -74,6 +86,10 @@ pub enum UsageType {
 impl ::std::convert::From<&str> for UsageType {
     fn from(s: &str) -> Self {
         match s {
+            "AZURE_CONTAINER_IMAGE_INITIAL_SCAN" => UsageType::AzureContainerImageInitialScan,
+            "AZURE_CONTAINER_IMAGE_RESCAN" => UsageType::AzureContainerImageRescan,
+            "AZURE_SERVERLESS_FUNCTION_HOURS" => UsageType::AzureServerlessFunctionHours,
+            "AZURE_VM_AGENT_BASED_INSTANCE_HOURS" => UsageType::AzureVmAgentBasedInstanceHours,
             "CODE_REPOSITORY_IAC" => UsageType::CodeRepositoryIac,
             "CODE_REPOSITORY_SAST" => UsageType::CodeRepositorySast,
             "CODE_REPOSITORY_SCA" => UsageType::CodeRepositorySca,
@@ -98,6 +114,10 @@ impl UsageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UsageType::AzureContainerImageInitialScan => "AZURE_CONTAINER_IMAGE_INITIAL_SCAN",
+            UsageType::AzureContainerImageRescan => "AZURE_CONTAINER_IMAGE_RESCAN",
+            UsageType::AzureServerlessFunctionHours => "AZURE_SERVERLESS_FUNCTION_HOURS",
+            UsageType::AzureVmAgentBasedInstanceHours => "AZURE_VM_AGENT_BASED_INSTANCE_HOURS",
             UsageType::CodeRepositoryIac => "CODE_REPOSITORY_IAC",
             UsageType::CodeRepositorySast => "CODE_REPOSITORY_SAST",
             UsageType::CodeRepositorySca => "CODE_REPOSITORY_SCA",
@@ -113,6 +133,10 @@ impl UsageType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AZURE_CONTAINER_IMAGE_INITIAL_SCAN",
+            "AZURE_CONTAINER_IMAGE_RESCAN",
+            "AZURE_SERVERLESS_FUNCTION_HOURS",
+            "AZURE_VM_AGENT_BASED_INSTANCE_HOURS",
             "CODE_REPOSITORY_IAC",
             "CODE_REPOSITORY_SAST",
             "CODE_REPOSITORY_SCA",
@@ -145,6 +169,10 @@ impl UsageType {
 impl ::std::fmt::Display for UsageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            UsageType::AzureContainerImageInitialScan => write!(f, "AZURE_CONTAINER_IMAGE_INITIAL_SCAN"),
+            UsageType::AzureContainerImageRescan => write!(f, "AZURE_CONTAINER_IMAGE_RESCAN"),
+            UsageType::AzureServerlessFunctionHours => write!(f, "AZURE_SERVERLESS_FUNCTION_HOURS"),
+            UsageType::AzureVmAgentBasedInstanceHours => write!(f, "AZURE_VM_AGENT_BASED_INSTANCE_HOURS"),
             UsageType::CodeRepositoryIac => write!(f, "CODE_REPOSITORY_IAC"),
             UsageType::CodeRepositorySast => write!(f, "CODE_REPOSITORY_SAST"),
             UsageType::CodeRepositorySca => write!(f, "CODE_REPOSITORY_SCA"),

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_inventory_table_configuration_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InventoryTableConfigurationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InventoryTableConfigurationResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -37,7 +41,7 @@ pub fn de_inventory_table_configuration_result(
             s if s.matches("Error") /* Error com.amazonaws.s3#InventoryTableConfigurationResult$Error */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_error_details::de_error_details(&mut tag)
+                        crate::protocol_serde::shape_error_details::de_error_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

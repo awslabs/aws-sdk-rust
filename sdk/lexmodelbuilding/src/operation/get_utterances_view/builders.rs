@@ -28,6 +28,7 @@ impl crate::operation::get_utterances_view::builders::GetUtterancesViewInputBuil
 /// <p>Utterance statistics are generated once a day. Data is available for the last 15 days. You can request information for up to 5 versions of your bot in each request. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days. The response contains information about a maximum of 100 utterances for each version.</p>
 /// <p>If you set <code>childDirected</code> field to true when you created your bot, if you are using slot obfuscation with one or more slots, or if you opted out of participating in improving Amazon Lex, utterances are not available.</p>
 /// <p>This operation requires permissions for the <code>lex:GetUtterancesView</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUtterancesViewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -32,7 +32,11 @@ pub fn ser_parameters_in_cache_key_and_forwarded_to_origin(
 #[allow(clippy::needless_question_mark)]
 pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ParametersInCacheKeyAndForwardedToOrigin, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ParametersInCacheKeyAndForwardedToOrigin::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -70,7 +74,7 @@ pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
             s if s.matches("HeadersConfig") /* HeadersConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$HeadersConfig */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_cache_policy_headers_config::de_cache_policy_headers_config(&mut tag)
+                        crate::protocol_serde::shape_cache_policy_headers_config::de_cache_policy_headers_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -80,7 +84,7 @@ pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
             s if s.matches("CookiesConfig") /* CookiesConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$CookiesConfig */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_cache_policy_cookies_config::de_cache_policy_cookies_config(&mut tag)
+                        crate::protocol_serde::shape_cache_policy_cookies_config::de_cache_policy_cookies_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -90,7 +94,7 @@ pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
             s if s.matches("QueryStringsConfig") /* QueryStringsConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$QueryStringsConfig */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_cache_policy_query_strings_config::de_cache_policy_query_strings_config(&mut tag)
+                        crate::protocol_serde::shape_cache_policy_query_strings_config::de_cache_policy_query_strings_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

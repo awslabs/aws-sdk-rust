@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_verified_access_instance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VerifiedAccessInstance, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VerifiedAccessInstance::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_verified_access_instance(
             s if s.matches("verifiedAccessTrustProviderSet") /* VerifiedAccessTrustProviders com.amazonaws.ec2#VerifiedAccessInstance$VerifiedAccessTrustProviders */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_trust_provider_condensed_list::de_verified_access_trust_provider_condensed_list(&mut tag)
+                        crate::protocol_serde::shape_verified_access_trust_provider_condensed_list::de_verified_access_trust_provider_condensed_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_verified_access_instance(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VerifiedAccessInstance$Tags */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -97,7 +101,7 @@ pub fn de_verified_access_instance(
             s if s.matches("cidrEndpointsCustomSubDomain") /* CidrEndpointsCustomSubDomain com.amazonaws.ec2#VerifiedAccessInstance$CidrEndpointsCustomSubDomain */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_instance_custom_sub_domain::de_verified_access_instance_custom_sub_domain(&mut tag)
+                        crate::protocol_serde::shape_verified_access_instance_custom_sub_domain::de_verified_access_instance_custom_sub_domain(&mut tag, depth + 1)
                         ?
                     )
                 ;

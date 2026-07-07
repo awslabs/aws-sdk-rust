@@ -37,7 +37,14 @@ pub struct OptimizeWaypointsInput {
     pub travel_mode: ::std::option::Option<crate::types::WaypointOptimizationTravelMode>,
     /// <p>Travel mode related options for the provided travel mode.</p>
     pub travel_mode_options: ::std::option::Option<crate::types::WaypointOptimizationTravelModeOptions>,
-    /// <p>List of waypoints between the <code>Origin</code> and <code>Destination</code>.</p>
+    /// <p>List of waypoints between the Origin and Destination, in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>The maximum number of waypoints allowed per request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 waypoints per request</p></li>
+    /// <li>
+    /// <p>Maximum 20 waypoints when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>, <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>, <code>Before</code>)</p></li>
+    /// </ul>
     pub waypoints: ::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationWaypoint>>,
 }
 impl OptimizeWaypointsInput {
@@ -107,7 +114,14 @@ impl OptimizeWaypointsInput {
     pub fn travel_mode_options(&self) -> ::std::option::Option<&crate::types::WaypointOptimizationTravelModeOptions> {
         self.travel_mode_options.as_ref()
     }
-    /// <p>List of waypoints between the <code>Origin</code> and <code>Destination</code>.</p>
+    /// <p>List of waypoints between the Origin and Destination, in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>The maximum number of waypoints allowed per request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 waypoints per request</p></li>
+    /// <li>
+    /// <p>Maximum 20 waypoints when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>, <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>, <code>Before</code>)</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.waypoints.is_none()`.
     pub fn waypoints(&self) -> &[crate::types::WaypointOptimizationWaypoint] {
@@ -393,19 +407,40 @@ impl OptimizeWaypointsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_waypoints`](Self::set_waypoints).
     ///
-    /// <p>List of waypoints between the <code>Origin</code> and <code>Destination</code>.</p>
+    /// <p>List of waypoints between the Origin and Destination, in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>The maximum number of waypoints allowed per request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 waypoints per request</p></li>
+    /// <li>
+    /// <p>Maximum 20 waypoints when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>, <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>, <code>Before</code>)</p></li>
+    /// </ul>
     pub fn waypoints(mut self, input: crate::types::WaypointOptimizationWaypoint) -> Self {
         let mut v = self.waypoints.unwrap_or_default();
         v.push(input);
         self.waypoints = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of waypoints between the <code>Origin</code> and <code>Destination</code>.</p>
+    /// <p>List of waypoints between the Origin and Destination, in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>The maximum number of waypoints allowed per request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 waypoints per request</p></li>
+    /// <li>
+    /// <p>Maximum 20 waypoints when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>, <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>, <code>Before</code>)</p></li>
+    /// </ul>
     pub fn set_waypoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationWaypoint>>) -> Self {
         self.waypoints = input;
         self
     }
-    /// <p>List of waypoints between the <code>Origin</code> and <code>Destination</code>.</p>
+    /// <p>List of waypoints between the Origin and Destination, in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>The maximum number of waypoints allowed per request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 waypoints per request</p></li>
+    /// <li>
+    /// <p>Maximum 20 waypoints when using constraints (<code>AccessHours</code>, <code>AppointmentTime</code>, <code>ServiceDuration</code>, <code>Heading</code>, <code>SideOfStreet</code>, <code>Before</code>)</p></li>
+    /// </ul>
     pub fn get_waypoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationWaypoint>> {
         &self.waypoints
     }

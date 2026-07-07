@@ -25,11 +25,25 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_artifact;
 
+pub(crate) mod shape_batch_create_security_requirements;
+
+pub(crate) mod shape_batch_delete_code_reviews;
+
 pub(crate) mod shape_batch_delete_pentests;
+
+pub(crate) mod shape_batch_delete_security_requirements;
+
+pub(crate) mod shape_batch_delete_threat_models;
 
 pub(crate) mod shape_batch_get_agent_spaces;
 
 pub(crate) mod shape_batch_get_artifact_metadata;
+
+pub(crate) mod shape_batch_get_code_review_job_tasks;
+
+pub(crate) mod shape_batch_get_code_review_jobs;
+
+pub(crate) mod shape_batch_get_code_reviews;
 
 pub(crate) mod shape_batch_get_findings;
 
@@ -39,11 +53,25 @@ pub(crate) mod shape_batch_get_pentest_jobs;
 
 pub(crate) mod shape_batch_get_pentests;
 
+pub(crate) mod shape_batch_get_security_requirements;
+
 pub(crate) mod shape_batch_get_target_domains;
+
+pub(crate) mod shape_batch_get_threat_model_job_tasks;
+
+pub(crate) mod shape_batch_get_threat_model_jobs;
+
+pub(crate) mod shape_batch_get_threat_models;
+
+pub(crate) mod shape_batch_get_threats;
+
+pub(crate) mod shape_batch_update_security_requirements;
 
 pub(crate) mod shape_create_agent_space;
 
 pub(crate) mod shape_create_application;
+
+pub(crate) mod shape_create_code_review;
 
 pub(crate) mod shape_create_integration;
 
@@ -51,7 +79,15 @@ pub(crate) mod shape_create_membership;
 
 pub(crate) mod shape_create_pentest;
 
+pub(crate) mod shape_create_private_connection;
+
+pub(crate) mod shape_create_security_requirement_pack;
+
 pub(crate) mod shape_create_target_domain;
+
+pub(crate) mod shape_create_threat;
+
+pub(crate) mod shape_create_threat_model;
 
 pub(crate) mod shape_delete_agent_space;
 
@@ -63,13 +99,23 @@ pub(crate) mod shape_delete_integration;
 
 pub(crate) mod shape_delete_membership;
 
+pub(crate) mod shape_delete_private_connection;
+
+pub(crate) mod shape_delete_security_requirement_pack;
+
 pub(crate) mod shape_delete_target_domain;
+
+pub(crate) mod shape_describe_private_connection;
 
 pub(crate) mod shape_get_application;
 
 pub(crate) mod shape_get_artifact;
 
 pub(crate) mod shape_get_integration;
+
+pub(crate) mod shape_get_security_requirement_pack;
+
+pub(crate) mod shape_import_security_requirements;
 
 pub(crate) mod shape_initiate_provider_registration;
 
@@ -78,6 +124,12 @@ pub(crate) mod shape_list_agent_spaces;
 pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_artifacts;
+
+pub(crate) mod shape_list_code_review_job_tasks;
+
+pub(crate) mod shape_list_code_review_jobs_for_code_review;
+
+pub(crate) mod shape_list_code_reviews;
 
 pub(crate) mod shape_list_discovered_endpoints;
 
@@ -95,15 +147,37 @@ pub(crate) mod shape_list_pentest_jobs_for_pentest;
 
 pub(crate) mod shape_list_pentests;
 
+pub(crate) mod shape_list_private_connections;
+
+pub(crate) mod shape_list_security_requirement_packs;
+
+pub(crate) mod shape_list_security_requirements;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_target_domains;
 
+pub(crate) mod shape_list_threat_model_job_tasks;
+
+pub(crate) mod shape_list_threat_model_jobs;
+
+pub(crate) mod shape_list_threat_models;
+
+pub(crate) mod shape_list_threats;
+
 pub(crate) mod shape_start_code_remediation;
+
+pub(crate) mod shape_start_code_review_job;
 
 pub(crate) mod shape_start_pentest_job;
 
+pub(crate) mod shape_start_threat_model_job;
+
+pub(crate) mod shape_stop_code_review_job;
+
 pub(crate) mod shape_stop_pentest_job;
+
+pub(crate) mod shape_stop_threat_model_job;
 
 pub(crate) mod shape_tag_resource;
 
@@ -113,13 +187,23 @@ pub(crate) mod shape_update_agent_space;
 
 pub(crate) mod shape_update_application;
 
+pub(crate) mod shape_update_code_review;
+
 pub(crate) mod shape_update_finding;
 
 pub(crate) mod shape_update_integrated_resources;
 
 pub(crate) mod shape_update_pentest;
 
+pub(crate) mod shape_update_private_connection_certificate;
+
+pub(crate) mod shape_update_security_requirement_pack;
+
 pub(crate) mod shape_update_target_domain;
+
+pub(crate) mod shape_update_threat;
+
+pub(crate) mod shape_update_threat_model;
 
 pub(crate) mod shape_verify_target_domain;
 
@@ -135,11 +219,25 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_add_artifact_input;
 
+pub(crate) mod shape_batch_create_security_requirements_input;
+
+pub(crate) mod shape_batch_delete_code_reviews_input;
+
 pub(crate) mod shape_batch_delete_pentests_input;
+
+pub(crate) mod shape_batch_delete_security_requirements_input;
+
+pub(crate) mod shape_batch_delete_threat_models_input;
 
 pub(crate) mod shape_batch_get_agent_spaces_input;
 
 pub(crate) mod shape_batch_get_artifact_metadata_input;
+
+pub(crate) mod shape_batch_get_code_review_job_tasks_input;
+
+pub(crate) mod shape_batch_get_code_review_jobs_input;
+
+pub(crate) mod shape_batch_get_code_reviews_input;
 
 pub(crate) mod shape_batch_get_findings_input;
 
@@ -149,7 +247,19 @@ pub(crate) mod shape_batch_get_pentest_jobs_input;
 
 pub(crate) mod shape_batch_get_pentests_input;
 
+pub(crate) mod shape_batch_get_security_requirements_input;
+
 pub(crate) mod shape_batch_get_target_domains_input;
+
+pub(crate) mod shape_batch_get_threat_model_job_tasks_input;
+
+pub(crate) mod shape_batch_get_threat_model_jobs_input;
+
+pub(crate) mod shape_batch_get_threat_models_input;
+
+pub(crate) mod shape_batch_get_threats_input;
+
+pub(crate) mod shape_batch_update_security_requirements_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -157,13 +267,23 @@ pub(crate) mod shape_create_agent_space_input;
 
 pub(crate) mod shape_create_application_input;
 
+pub(crate) mod shape_create_code_review_input;
+
 pub(crate) mod shape_create_integration_input;
 
 pub(crate) mod shape_create_membership_input;
 
 pub(crate) mod shape_create_pentest_input;
 
+pub(crate) mod shape_create_private_connection_input;
+
+pub(crate) mod shape_create_security_requirement_pack_input;
+
 pub(crate) mod shape_create_target_domain_input;
+
+pub(crate) mod shape_create_threat_input;
+
+pub(crate) mod shape_create_threat_model_input;
 
 pub(crate) mod shape_delete_agent_space_input;
 
@@ -175,13 +295,23 @@ pub(crate) mod shape_delete_integration_input;
 
 pub(crate) mod shape_delete_membership_input;
 
+pub(crate) mod shape_delete_private_connection_input;
+
+pub(crate) mod shape_delete_security_requirement_pack_input;
+
 pub(crate) mod shape_delete_target_domain_input;
+
+pub(crate) mod shape_describe_private_connection_input;
 
 pub(crate) mod shape_get_application_input;
 
 pub(crate) mod shape_get_artifact_input;
 
 pub(crate) mod shape_get_integration_input;
+
+pub(crate) mod shape_get_security_requirement_pack_input;
+
+pub(crate) mod shape_import_security_requirements_input;
 
 pub(crate) mod shape_initiate_provider_registration_input;
 
@@ -192,6 +322,12 @@ pub(crate) mod shape_list_agent_spaces_input;
 pub(crate) mod shape_list_applications_input;
 
 pub(crate) mod shape_list_artifacts_input;
+
+pub(crate) mod shape_list_code_review_job_tasks_input;
+
+pub(crate) mod shape_list_code_review_jobs_for_code_review_input;
+
+pub(crate) mod shape_list_code_reviews_input;
 
 pub(crate) mod shape_list_discovered_endpoints_input;
 
@@ -209,15 +345,39 @@ pub(crate) mod shape_list_pentest_jobs_for_pentest_input;
 
 pub(crate) mod shape_list_pentests_input;
 
+pub(crate) mod shape_list_private_connections_input;
+
+pub(crate) mod shape_list_security_requirement_packs_input;
+
+pub(crate) mod shape_list_security_requirements_input;
+
 pub(crate) mod shape_list_target_domains_input;
+
+pub(crate) mod shape_list_threat_model_job_tasks_input;
+
+pub(crate) mod shape_list_threat_model_jobs_input;
+
+pub(crate) mod shape_list_threat_models_input;
+
+pub(crate) mod shape_list_threats_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_start_code_remediation_input;
+
+pub(crate) mod shape_start_code_review_job_input;
 
 pub(crate) mod shape_start_pentest_job_input;
 
+pub(crate) mod shape_start_threat_model_job_input;
+
+pub(crate) mod shape_stop_code_review_job_input;
+
 pub(crate) mod shape_stop_pentest_job_input;
+
+pub(crate) mod shape_stop_threat_model_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -227,13 +387,23 @@ pub(crate) mod shape_update_agent_space_input;
 
 pub(crate) mod shape_update_application_input;
 
+pub(crate) mod shape_update_code_review_input;
+
 pub(crate) mod shape_update_finding_input;
 
 pub(crate) mod shape_update_integrated_resources_input;
 
 pub(crate) mod shape_update_pentest_input;
 
+pub(crate) mod shape_update_private_connection_certificate_input;
+
+pub(crate) mod shape_update_security_requirement_pack_input;
+
 pub(crate) mod shape_update_target_domain_input;
+
+pub(crate) mod shape_update_threat_input;
+
+pub(crate) mod shape_update_threat_model_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -257,13 +427,47 @@ pub(crate) mod shape_assets;
 
 pub(crate) mod shape_aws_resources;
 
+pub(crate) mod shape_batch_create_security_requirement_result_list;
+
+pub(crate) mod shape_batch_get_security_requirement_result_list;
+
+pub(crate) mod shape_batch_security_requirement_errors;
+
 pub(crate) mod shape_cloud_watch_log;
+
+pub(crate) mod shape_code_review_id_list;
+
+pub(crate) mod shape_code_review_job_id_list;
+
+pub(crate) mod shape_code_review_job_list;
+
+pub(crate) mod shape_code_review_job_summary_list;
+
+pub(crate) mod shape_code_review_job_task_list;
+
+pub(crate) mod shape_code_review_job_task_summary_list;
+
+pub(crate) mod shape_code_review_list;
 
 pub(crate) mod shape_code_review_settings;
 
+pub(crate) mod shape_code_review_summary_list;
+
+pub(crate) mod shape_create_security_requirement_entry;
+
+pub(crate) mod shape_delete_code_review_failure_list;
+
 pub(crate) mod shape_delete_pentest_failure_list;
 
+pub(crate) mod shape_delete_threat_model_failure_list;
+
+pub(crate) mod shape_diff_source;
+
 pub(crate) mod shape_discovered_endpoint_list;
+
+pub(crate) mod shape_document_info;
+
+pub(crate) mod shape_document_list;
 
 pub(crate) mod shape_finding_id_list;
 
@@ -273,6 +477,8 @@ pub(crate) mod shape_finding_summary_list;
 
 pub(crate) mod shape_id_c_configuration;
 
+pub(crate) mod shape_import_source;
+
 pub(crate) mod shape_integrated_resource_input_item;
 
 pub(crate) mod shape_integrated_resource_summary_list;
@@ -280,6 +486,8 @@ pub(crate) mod shape_integrated_resource_summary_list;
 pub(crate) mod shape_integration_filter;
 
 pub(crate) mod shape_integration_summary_list;
+
+pub(crate) mod shape_list_security_requirement_pack_filter;
 
 pub(crate) mod shape_membership_config;
 
@@ -299,9 +507,25 @@ pub(crate) mod shape_pentest_list;
 
 pub(crate) mod shape_pentest_summary_list;
 
+pub(crate) mod shape_private_connection_list;
+
+pub(crate) mod shape_private_connection_mode;
+
 pub(crate) mod shape_provider_input;
 
+pub(crate) mod shape_report_destination;
+
 pub(crate) mod shape_risk_type_list;
+
+pub(crate) mod shape_security_requirement_name_list;
+
+pub(crate) mod shape_security_requirement_pack_summary_list;
+
+pub(crate) mod shape_security_requirement_summary_list;
+
+pub(crate) mod shape_stride_category_list;
+
+pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_tag_map;
 
@@ -316,6 +540,36 @@ pub(crate) mod shape_task_id_list;
 pub(crate) mod shape_task_list;
 
 pub(crate) mod shape_task_summary_list;
+
+pub(crate) mod shape_threat_anchor_shape;
+
+pub(crate) mod shape_threat_evidence_list;
+
+pub(crate) mod shape_threat_evidence_shape;
+
+pub(crate) mod shape_threat_id_list;
+
+pub(crate) mod shape_threat_list;
+
+pub(crate) mod shape_threat_model_id_list;
+
+pub(crate) mod shape_threat_model_job_id_list;
+
+pub(crate) mod shape_threat_model_job_list;
+
+pub(crate) mod shape_threat_model_job_summary_list;
+
+pub(crate) mod shape_threat_model_job_task_list;
+
+pub(crate) mod shape_threat_model_job_task_summary_list;
+
+pub(crate) mod shape_threat_model_list;
+
+pub(crate) mod shape_threat_model_summary_list;
+
+pub(crate) mod shape_threat_summary_list;
+
+pub(crate) mod shape_update_security_requirement_entry;
 
 pub(crate) mod shape_validation_exception_field_list;
 
@@ -337,17 +591,39 @@ pub(crate) mod shape_artifact_metadata_item;
 
 pub(crate) mod shape_artifact_summary;
 
+pub(crate) mod shape_batch_create_security_requirement_result;
+
+pub(crate) mod shape_batch_get_security_requirement_result;
+
+pub(crate) mod shape_batch_security_requirement_error;
+
+pub(crate) mod shape_bitbucket_integration_input;
+
+pub(crate) mod shape_code_review;
+
+pub(crate) mod shape_code_review_job;
+
+pub(crate) mod shape_code_review_job_summary;
+
+pub(crate) mod shape_code_review_job_task;
+
+pub(crate) mod shape_code_review_job_task_summary;
+
+pub(crate) mod shape_code_review_summary;
+
+pub(crate) mod shape_confluence_integration_input;
+
 pub(crate) mod shape_custom_header;
 
+pub(crate) mod shape_delete_code_review_failure;
+
 pub(crate) mod shape_delete_pentest_failure;
+
+pub(crate) mod shape_delete_threat_model_failure;
 
 pub(crate) mod shape_discovered_endpoint;
 
 pub(crate) mod shape_dns_verification;
-
-pub(crate) mod shape_document_info;
-
-pub(crate) mod shape_document_list;
 
 pub(crate) mod shape_endpoint;
 
@@ -359,9 +635,13 @@ pub(crate) mod shape_finding_summary;
 
 pub(crate) mod shape_git_hub_integration_input;
 
+pub(crate) mod shape_git_lab_integration_input;
+
 pub(crate) mod shape_http_verification;
 
 pub(crate) mod shape_iam_roles;
+
+pub(crate) mod shape_integrated_document;
 
 pub(crate) mod shape_integrated_repository;
 
@@ -389,11 +669,23 @@ pub(crate) mod shape_pentest_job_summary;
 
 pub(crate) mod shape_pentest_summary;
 
+pub(crate) mod shape_private_connection_summary;
+
 pub(crate) mod shape_provider_resource_capabilities;
 
 pub(crate) mod shape_s3_bucket_arns;
 
 pub(crate) mod shape_secret_arns;
+
+pub(crate) mod shape_security_requirement_artifact;
+
+pub(crate) mod shape_security_requirement_pack_summary;
+
+pub(crate) mod shape_security_requirement_summary;
+
+pub(crate) mod shape_self_managed_input;
+
+pub(crate) mod shape_service_managed_input;
 
 pub(crate) mod shape_source_code_repository;
 
@@ -407,6 +699,22 @@ pub(crate) mod shape_task;
 
 pub(crate) mod shape_task_summary;
 
+pub(crate) mod shape_threat;
+
+pub(crate) mod shape_threat_model;
+
+pub(crate) mod shape_threat_model_job;
+
+pub(crate) mod shape_threat_model_job_summary;
+
+pub(crate) mod shape_threat_model_job_task;
+
+pub(crate) mod shape_threat_model_job_task_summary;
+
+pub(crate) mod shape_threat_model_summary;
+
+pub(crate) mod shape_threat_summary;
+
 pub(crate) mod shape_user_config;
 
 pub(crate) mod shape_validation_exception_field;
@@ -415,9 +723,19 @@ pub(crate) mod shape_vpc_configs;
 
 pub(crate) mod shape_authentication;
 
+pub(crate) mod shape_bitbucket_repository_resource;
+
+pub(crate) mod shape_bitbucket_resource_capabilities;
+
 pub(crate) mod shape_category_list;
 
+pub(crate) mod shape_code_location_list;
+
 pub(crate) mod shape_code_remediation_task;
+
+pub(crate) mod shape_confluence_document_resource;
+
+pub(crate) mod shape_confluence_resource_capabilities;
 
 pub(crate) mod shape_error_information;
 
@@ -427,23 +745,39 @@ pub(crate) mod shape_git_hub_repository_resource;
 
 pub(crate) mod shape_git_hub_resource_capabilities;
 
+pub(crate) mod shape_git_lab_repository_resource;
+
+pub(crate) mod shape_git_lab_resource_capabilities;
+
 pub(crate) mod shape_integrated_resource_metadata;
 
 pub(crate) mod shape_log_location;
 
 pub(crate) mod shape_member_metadata;
 
+pub(crate) mod shape_skill_type_list;
+
 pub(crate) mod shape_step_list;
+
+pub(crate) mod shape_verification_script;
+
+pub(crate) mod shape_bitbucket_repository_metadata;
 
 pub(crate) mod shape_category;
 
+pub(crate) mod shape_code_location;
+
 pub(crate) mod shape_code_remediation_task_details_list;
+
+pub(crate) mod shape_confluence_document_metadata;
 
 pub(crate) mod shape_custom_header_list;
 
 pub(crate) mod shape_execution_context;
 
 pub(crate) mod shape_git_hub_repository_metadata;
+
+pub(crate) mod shape_git_lab_repository_metadata;
 
 pub(crate) mod shape_network_traffic_rule_list;
 
@@ -457,4 +791,8 @@ pub(crate) mod shape_uri_list;
 
 pub(crate) mod shape_user_metadata;
 
+pub(crate) mod shape_verification_script_env_var_list;
+
 pub(crate) mod shape_code_remediation_task_details;
+
+pub(crate) mod shape_verification_script_env_var;

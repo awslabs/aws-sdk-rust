@@ -2,10 +2,16 @@
 pub(crate) fn de_service<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Service>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,7 +71,7 @@ where
                             );
                         }
                         "DnsConfig" => {
-                            builder = builder.set_dns_config(crate::protocol_serde::shape_dns_config::de_dns_config(tokens, _value)?);
+                            builder = builder.set_dns_config(crate::protocol_serde::shape_dns_config::de_dns_config(tokens, _value, depth + 1)?);
                         }
                         "Type" => {
                             builder = builder.set_type(
@@ -75,12 +81,15 @@ where
                             );
                         }
                         "HealthCheckConfig" => {
-                            builder = builder
-                                .set_health_check_config(crate::protocol_serde::shape_health_check_config::de_health_check_config(tokens, _value)?);
+                            builder = builder.set_health_check_config(crate::protocol_serde::shape_health_check_config::de_health_check_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "HealthCheckCustomConfig" => {
                             builder = builder.set_health_check_custom_config(
-                                crate::protocol_serde::shape_health_check_custom_config::de_health_check_custom_config(tokens, _value)?,
+                                crate::protocol_serde::shape_health_check_custom_config::de_health_check_custom_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "CreateDate" => {

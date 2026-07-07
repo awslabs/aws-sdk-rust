@@ -49,6 +49,8 @@ pub fn de_modify_instance_maintenance_options(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyInstanceMaintenanceOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyInstanceMaintenanceOptionsResponse got {start_el:?}"

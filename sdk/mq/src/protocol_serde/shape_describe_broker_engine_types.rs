@@ -106,6 +106,8 @@ pub(crate) fn de_describe_broker_engine_types(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -113,7 +115,7 @@ pub(crate) fn de_describe_broker_engine_types(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "brokerEngineTypes" => {
                     builder = builder.set_broker_engine_types(
-                        crate::protocol_serde::shape_list_of_broker_engine_type::de_list_of_broker_engine_type(tokens, _value)?,
+                        crate::protocol_serde::shape_list_of_broker_engine_type::de_list_of_broker_engine_type(tokens, _value, depth + 1)?,
                     );
                 }
                 "maxResults" => {

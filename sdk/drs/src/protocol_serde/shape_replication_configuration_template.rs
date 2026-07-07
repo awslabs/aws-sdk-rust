@@ -2,10 +2,16 @@
 pub(crate) fn de_replication_configuration_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReplicationConfigurationTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -43,7 +49,9 @@ where
                         "replicationServersSecurityGroupsIDs" => {
                             builder = builder.set_replication_servers_security_groups_ids(
                                 crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -106,13 +114,13 @@ where
                             builder = builder.set_create_public_ip(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "stagingAreaTags" => {
-                            builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                            builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                         }
                         "pitPolicy" => {
-                            builder = builder.set_pit_policy(crate::protocol_serde::shape_pit_policy::de_pit_policy(tokens, _value)?);
+                            builder = builder.set_pit_policy(crate::protocol_serde::shape_pit_policy::de_pit_policy(tokens, _value, depth + 1)?);
                         }
                         "autoReplicateNewDisks" => {
                             builder =

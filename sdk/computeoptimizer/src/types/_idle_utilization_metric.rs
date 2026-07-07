@@ -12,6 +12,8 @@ pub struct IdleUtilizationMetric {
     pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The value of the utilization metric.</p>
     pub value: f64,
+    /// <p>The dimensions of the utilization metric.</p>
+    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::IdleDimension>>,
 }
 impl IdleUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
@@ -28,6 +30,12 @@ impl IdleUtilizationMetric {
     pub fn value(&self) -> f64 {
         self.value
     }
+    /// <p>The dimensions of the utilization metric.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::IdleDimension] {
+        self.dimensions.as_deref().unwrap_or_default()
+    }
 }
 impl IdleUtilizationMetric {
     /// Creates a new builder-style object to manufacture [`IdleUtilizationMetric`](crate::types::IdleUtilizationMetric).
@@ -43,6 +51,7 @@ pub struct IdleUtilizationMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::IdleMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::MetricStatistic>,
     pub(crate) value: ::std::option::Option<f64>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::IdleDimension>>,
 }
 impl IdleUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
@@ -93,12 +102,33 @@ impl IdleUtilizationMetricBuilder {
     pub fn get_value(&self) -> &::std::option::Option<f64> {
         &self.value
     }
+    /// Appends an item to `dimensions`.
+    ///
+    /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+    ///
+    /// <p>The dimensions of the utilization metric.</p>
+    pub fn dimensions(mut self, input: crate::types::IdleDimension) -> Self {
+        let mut v = self.dimensions.unwrap_or_default();
+        v.push(input);
+        self.dimensions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The dimensions of the utilization metric.</p>
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdleDimension>>) -> Self {
+        self.dimensions = input;
+        self
+    }
+    /// <p>The dimensions of the utilization metric.</p>
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdleDimension>> {
+        &self.dimensions
+    }
     /// Consumes the builder and constructs a [`IdleUtilizationMetric`](crate::types::IdleUtilizationMetric).
     pub fn build(self) -> crate::types::IdleUtilizationMetric {
         crate::types::IdleUtilizationMetric {
             name: self.name,
             statistic: self.statistic,
             value: self.value.unwrap_or_default(),
+            dimensions: self.dimensions,
         }
     }
 }

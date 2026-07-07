@@ -106,6 +106,8 @@ pub fn de_describe_scaling_parameters(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeScalingParametersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeScalingParametersResponse got {start_el:?}"
@@ -123,7 +125,7 @@ pub fn de_describe_scaling_parameters(
             s if s.matches("ScalingParameters") /* ScalingParameters com.amazonaws.cloudsearch.synthetic#DescribeScalingParametersOutput$ScalingParameters */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_scaling_parameters_status::de_scaling_parameters_status(&mut tag)
+                        crate::protocol_serde::shape_scaling_parameters_status::de_scaling_parameters_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

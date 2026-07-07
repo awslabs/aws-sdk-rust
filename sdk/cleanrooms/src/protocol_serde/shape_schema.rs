@@ -2,10 +2,16 @@
 pub(crate) fn de_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Schema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,14 +22,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "columns" => {
-                            builder = builder.set_columns(crate::protocol_serde::shape_column_list::de_column_list(tokens, _value)?);
+                            builder = builder.set_columns(crate::protocol_serde::shape_column_list::de_column_list(tokens, _value, depth + 1)?);
                         }
                         "partitionKeys" => {
-                            builder = builder.set_partition_keys(crate::protocol_serde::shape_column_list::de_column_list(tokens, _value)?);
+                            builder =
+                                builder.set_partition_keys(crate::protocol_serde::shape_column_list::de_column_list(tokens, _value, depth + 1)?);
                         }
                         "analysisRuleTypes" => {
                             builder = builder.set_analysis_rule_types(
-                                crate::protocol_serde::shape_analysis_rule_type_list::de_analysis_rule_type_list(tokens, _value)?,
+                                crate::protocol_serde::shape_analysis_rule_type_list::de_analysis_rule_type_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "analysisMethod" => {
@@ -35,7 +42,7 @@ where
                         }
                         "selectedAnalysisMethods" => {
                             builder = builder.set_selected_analysis_methods(
-                                crate::protocol_serde::shape_selected_analysis_methods::de_selected_analysis_methods(tokens, _value)?,
+                                crate::protocol_serde::shape_selected_analysis_methods::de_selected_analysis_methods(tokens, _value, depth + 1)?,
                             );
                         }
                         "creatorAccountId" => {
@@ -94,7 +101,7 @@ where
                         }
                         "schemaStatusDetails" => {
                             builder = builder.set_schema_status_details(
-                                crate::protocol_serde::shape_schema_status_detail_list::de_schema_status_detail_list(tokens, _value)?,
+                                crate::protocol_serde::shape_schema_status_detail_list::de_schema_status_detail_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "resourceArn" => {
@@ -106,7 +113,7 @@ where
                         }
                         "schemaTypeProperties" => {
                             builder = builder.set_schema_type_properties(
-                                crate::protocol_serde::shape_schema_type_properties::de_schema_type_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_schema_type_properties::de_schema_type_properties(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

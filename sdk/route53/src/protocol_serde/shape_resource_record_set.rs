@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_record_set(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceRecordSet, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceRecordSet::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -79,7 +83,7 @@ pub fn de_resource_record_set(
             s if s.matches("GeoLocation") /* GeoLocation com.amazonaws.route53#ResourceRecordSet$GeoLocation */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_geo_location::de_geo_location(&mut tag)
+                        crate::protocol_serde::shape_geo_location::de_geo_location(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -133,7 +137,7 @@ pub fn de_resource_record_set(
             s if s.matches("ResourceRecords") /* ResourceRecords com.amazonaws.route53#ResourceRecordSet$ResourceRecords */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_resource_records::de_resource_records(&mut tag)
+                        crate::protocol_serde::shape_resource_records::de_resource_records(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -143,7 +147,7 @@ pub fn de_resource_record_set(
             s if s.matches("AliasTarget") /* AliasTarget com.amazonaws.route53#ResourceRecordSet$AliasTarget */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_alias_target::de_alias_target(&mut tag)
+                        crate::protocol_serde::shape_alias_target::de_alias_target(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -179,7 +183,7 @@ pub fn de_resource_record_set(
             s if s.matches("CidrRoutingConfig") /* CidrRoutingConfig com.amazonaws.route53#ResourceRecordSet$CidrRoutingConfig */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_cidr_routing_config::de_cidr_routing_config(&mut tag)
+                        crate::protocol_serde::shape_cidr_routing_config::de_cidr_routing_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -189,7 +193,7 @@ pub fn de_resource_record_set(
             s if s.matches("GeoProximityLocation") /* GeoProximityLocation com.amazonaws.route53#ResourceRecordSet$GeoProximityLocation */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_geo_proximity_location::de_geo_proximity_location(&mut tag)
+                        crate::protocol_serde::shape_geo_proximity_location::de_geo_proximity_location(&mut tag, depth + 1)
                         ?
                     )
                 ;

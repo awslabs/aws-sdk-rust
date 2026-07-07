@@ -47,6 +47,8 @@ pub struct OrderableDbInstanceOption {
     pub max_iops_per_gib: ::std::option::Option<f64>,
     /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
     pub supports_global_databases: ::std::option::Option<bool>,
+    /// <p>The network types supported by the orderable DB instance option.</p>
+    pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -135,6 +137,12 @@ impl OrderableDbInstanceOption {
     pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
+    /// <p>The network types supported by the orderable DB instance option.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
+    pub fn supported_network_types(&self) -> &[::std::string::String] {
+        self.supported_network_types.as_deref().unwrap_or_default()
+    }
 }
 impl OrderableDbInstanceOption {
     /// Creates a new builder-style object to manufacture [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
@@ -168,6 +176,7 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) min_iops_per_gib: ::std::option::Option<f64>,
     pub(crate) max_iops_per_gib: ::std::option::Option<f64>,
     pub(crate) supports_global_databases: ::std::option::Option<bool>,
+    pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OrderableDbInstanceOptionBuilder {
     /// <p>The engine type of a DB instance.</p>
@@ -470,6 +479,26 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
         &self.supports_global_databases
     }
+    /// Appends an item to `supported_network_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_network_types`](Self::set_supported_network_types).
+    ///
+    /// <p>The network types supported by the orderable DB instance option.</p>
+    pub fn supported_network_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_network_types.unwrap_or_default();
+        v.push(input.into());
+        self.supported_network_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The network types supported by the orderable DB instance option.</p>
+    pub fn set_supported_network_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_network_types = input;
+        self
+    }
+    /// <p>The network types supported by the orderable DB instance option.</p>
+    pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_network_types
+    }
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {
         crate::types::OrderableDbInstanceOption {
@@ -494,6 +523,7 @@ impl OrderableDbInstanceOptionBuilder {
             min_iops_per_gib: self.min_iops_per_gib,
             max_iops_per_gib: self.max_iops_per_gib,
             supports_global_databases: self.supports_global_databases,
+            supported_network_types: self.supported_network_types,
         }
     }
 }

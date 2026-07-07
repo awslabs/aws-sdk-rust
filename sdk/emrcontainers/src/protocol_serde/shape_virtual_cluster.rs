@@ -2,10 +2,16 @@
 pub(crate) fn de_virtual_cluster<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VirtualCluster>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,8 +50,11 @@ where
                             );
                         }
                         "containerProvider" => {
-                            builder = builder
-                                .set_container_provider(crate::protocol_serde::shape_container_provider::de_container_provider(tokens, _value)?);
+                            builder = builder.set_container_provider(crate::protocol_serde::shape_container_provider::de_container_provider(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -54,7 +63,7 @@ where
                             )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "securityConfigurationId" => {
                             builder = builder.set_security_configuration_id(

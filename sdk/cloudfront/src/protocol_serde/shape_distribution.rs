@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_distribution(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Distribution, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Distribution::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -91,7 +95,7 @@ pub fn de_distribution(
             s if s.matches("ActiveTrustedSigners") /* ActiveTrustedSigners com.amazonaws.cloudfront#Distribution$ActiveTrustedSigners */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_active_trusted_signers::de_active_trusted_signers(&mut tag)
+                        crate::protocol_serde::shape_active_trusted_signers::de_active_trusted_signers(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -101,7 +105,7 @@ pub fn de_distribution(
             s if s.matches("ActiveTrustedKeyGroups") /* ActiveTrustedKeyGroups com.amazonaws.cloudfront#Distribution$ActiveTrustedKeyGroups */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_active_trusted_key_groups::de_active_trusted_key_groups(&mut tag)
+                        crate::protocol_serde::shape_active_trusted_key_groups::de_active_trusted_key_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -111,7 +115,7 @@ pub fn de_distribution(
             s if s.matches("DistributionConfig") /* DistributionConfig com.amazonaws.cloudfront#Distribution$DistributionConfig */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_distribution_config::de_distribution_config(&mut tag)
+                        crate::protocol_serde::shape_distribution_config::de_distribution_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -121,7 +125,7 @@ pub fn de_distribution(
             s if s.matches("AliasICPRecordals") /* AliasICPRecordals com.amazonaws.cloudfront#Distribution$AliasICPRecordals */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_alias_icp_recordals::de_alias_icp_recordals(&mut tag)
+                        crate::protocol_serde::shape_alias_icp_recordals::de_alias_icp_recordals(&mut tag, depth + 1)
                         ?
                     )
                 ;

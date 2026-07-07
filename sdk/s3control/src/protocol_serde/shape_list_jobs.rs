@@ -111,6 +111,8 @@ pub fn de_list_jobs(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListJobsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListJobsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -134,7 +136,7 @@ pub fn de_list_jobs(
             s if s.matches("Jobs") /* Jobs com.amazonaws.s3control.synthetic#ListJobsOutput$Jobs */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_job_list_descriptor_list::de_job_list_descriptor_list(&mut tag)
+                        crate::protocol_serde::shape_job_list_descriptor_list::de_job_list_descriptor_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

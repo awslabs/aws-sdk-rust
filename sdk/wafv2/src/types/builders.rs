@@ -5,6 +5,8 @@ pub use crate::types::_regex_pattern_set_summary::RegexPatternSetSummaryBuilder;
 
 pub use crate::types::_visibility_config::VisibilityConfigBuilder;
 
+pub use crate::types::_monetization_config::MonetizationConfigBuilder;
+
 pub use crate::types::_rule_group_summary::RuleGroupSummaryBuilder;
 
 pub use crate::types::_default_action::DefaultActionBuilder;
@@ -35,9 +37,11 @@ pub use crate::types::_rate_based_statement_managed_keys_ip_set::RateBasedStatem
 
 pub use crate::types::_regex_pattern_set::RegexPatternSetBuilder;
 
-pub use crate::types::_rule_group::RuleGroupBuilder;
-
 pub use crate::types::_time_window::TimeWindowBuilder;
+
+pub use crate::types::_revenue_breakdown::RevenueBreakdownBuilder;
+
+pub use crate::types::_rule_group::RuleGroupBuilder;
 
 pub use crate::types::_web_acl::WebAclBuilder;
 
@@ -53,6 +57,8 @@ pub use crate::types::_regex::RegexBuilder;
 
 pub use crate::types::_custom_response_body::CustomResponseBodyBuilder;
 
+pub use crate::types::_crypto_config::CryptoConfigBuilder;
+
 pub use crate::types::_block_action::BlockActionBuilder;
 
 pub use crate::types::_allow_action::AllowActionBuilder;
@@ -67,6 +73,14 @@ pub use crate::types::_label_summary::LabelSummaryBuilder;
 
 pub use crate::types::_logging_filter::LoggingFilterBuilder;
 
+pub use crate::types::_monetization_filter::MonetizationFilterBuilder;
+
+pub use crate::types::_source_statistics::SourceStatisticsBuilder;
+
+pub use crate::types::_revenue_path_statistics::RevenuePathStatisticsBuilder;
+
+pub use crate::types::_data_point_entry::DataPointEntryBuilder;
+
 pub use crate::types::_sampled_http_request::SampledHttpRequestBuilder;
 
 pub use crate::types::_path_statistics::PathStatisticsBuilder;
@@ -80,6 +94,8 @@ pub use crate::types::_managed_rule_group_version::ManagedRuleGroupVersionBuilde
 pub use crate::types::_managed_rule_set_summary::ManagedRuleSetSummaryBuilder;
 
 pub use crate::types::_release_summary::ReleaseSummaryBuilder;
+
+pub use crate::types::_settlement_record::SettlementRecordBuilder;
 
 pub use crate::types::_version_to_publish::VersionToPublishBuilder;
 
@@ -151,9 +167,13 @@ pub use crate::types::_captcha_action::CaptchaActionBuilder;
 
 pub use crate::types::_challenge_action::ChallengeActionBuilder;
 
+pub use crate::types::_monetize_action::MonetizeActionBuilder;
+
 pub use crate::types::_none_action::NoneActionBuilder;
 
 pub use crate::types::_label::LabelBuilder;
+
+pub use crate::types::_payment_network::PaymentNetworkBuilder;
 
 pub use crate::types::_field_to_protect::FieldToProtectBuilder;
 
@@ -214,6 +234,8 @@ pub use crate::types::_rule_action_override::RuleActionOverrideBuilder;
 pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKeyBuilder;
 
 pub use crate::types::_managed_rule_group_config::ManagedRuleGroupConfigBuilder;
+
+pub use crate::types::_price::PriceBuilder;
 
 pub use crate::types::_all::AllBuilder;
 

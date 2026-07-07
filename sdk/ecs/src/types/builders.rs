@@ -51,6 +51,8 @@ pub use crate::types::_deployment_controller::DeploymentControllerBuilder;
 
 pub use crate::types::_service_connect_configuration::ServiceConnectConfigurationBuilder;
 
+pub use crate::types::_monitoring_configuration::MonitoringConfigurationBuilder;
+
 pub use crate::types::_service::ServiceBuilder;
 
 pub use crate::types::_updated_express_gateway_service::UpdatedExpressGatewayServiceBuilder;
@@ -231,11 +233,15 @@ pub use crate::types::_secret::SecretBuilder;
 
 pub use crate::types::_advanced_configuration::AdvancedConfigurationBuilder;
 
+pub use crate::types::_threshold_configuration::ThresholdConfigurationBuilder;
+
 pub use crate::types::_deployment_lifecycle_hook::DeploymentLifecycleHookBuilder;
 
 pub use crate::types::_service_connect_service::ServiceConnectServiceBuilder;
 
 pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfigurationBuilder;
+
+pub use crate::types::_metric_configuration::MetricConfigurationBuilder;
 
 pub use crate::types::_deployment::DeploymentBuilder;
 
@@ -298,6 +304,10 @@ pub use crate::types::_kernel_capabilities::KernelCapabilitiesBuilder;
 pub use crate::types::_container_dependency::ContainerDependencyBuilder;
 
 pub use crate::types::_system_control::SystemControlBuilder;
+
+pub use crate::types::_deployment_lifecycle_hook_detail::DeploymentLifecycleHookDetailBuilder;
+
+pub use crate::types::_deployment_lifecycle_hook_timeout_configuration::DeploymentLifecycleHookTimeoutConfigurationBuilder;
 
 pub use crate::types::_timeout_configuration::TimeoutConfigurationBuilder;
 

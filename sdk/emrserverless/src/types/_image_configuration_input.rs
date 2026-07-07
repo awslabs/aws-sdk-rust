@@ -6,11 +6,17 @@
 pub struct ImageConfigurationInput {
     /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub application_level_digest_resolution: ::std::option::Option<bool>,
 }
 impl ImageConfigurationInput {
     /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
+    }
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub fn application_level_digest_resolution(&self) -> ::std::option::Option<bool> {
+        self.application_level_digest_resolution
     }
 }
 impl ImageConfigurationInput {
@@ -25,6 +31,7 @@ impl ImageConfigurationInput {
 #[non_exhaustive]
 pub struct ImageConfigurationInputBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) application_level_digest_resolution: ::std::option::Option<bool>,
 }
 impl ImageConfigurationInputBuilder {
     /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
@@ -41,8 +48,25 @@ impl ImageConfigurationInputBuilder {
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub fn application_level_digest_resolution(mut self, input: bool) -> Self {
+        self.application_level_digest_resolution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub fn set_application_level_digest_resolution(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.application_level_digest_resolution = input;
+        self
+    }
+    /// <p>Boolean value indicating if the digest resolution is application level or workload level. If true, a custom image URI is resolved at application start time and all workloads submitted will use that image digest. If false, the custom image URI is resolved at the workload submission time.</p>
+    pub fn get_application_level_digest_resolution(&self) -> &::std::option::Option<bool> {
+        &self.application_level_digest_resolution
+    }
     /// Consumes the builder and constructs a [`ImageConfigurationInput`](crate::types::ImageConfigurationInput).
     pub fn build(self) -> crate::types::ImageConfigurationInput {
-        crate::types::ImageConfigurationInput { image_uri: self.image_uri }
+        crate::types::ImageConfigurationInput {
+            image_uri: self.image_uri,
+            application_level_digest_resolution: self.application_level_digest_resolution,
+        }
     }
 }

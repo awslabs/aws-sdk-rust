@@ -2,10 +2,16 @@
 pub(crate) fn de_policy_compliance_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PolicyComplianceDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,9 @@ where
                         }
                         "Violators" => {
                             builder = builder.set_violators(crate::protocol_serde::shape_compliance_violators::de_compliance_violators(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "EvaluationLimitExceeded" => {
@@ -52,7 +60,11 @@ where
                             )?);
                         }
                         "IssueInfoMap" => {
-                            builder = builder.set_issue_info_map(crate::protocol_serde::shape_issue_info_map::de_issue_info_map(tokens, _value)?);
+                            builder = builder.set_issue_info_map(crate::protocol_serde::shape_issue_info_map::de_issue_info_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

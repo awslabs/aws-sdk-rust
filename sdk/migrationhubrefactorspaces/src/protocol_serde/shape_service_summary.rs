@@ -2,10 +2,16 @@
 pub(crate) fn de_service_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -87,12 +93,16 @@ where
                         }
                         "UrlEndpoint" => {
                             builder = builder.set_url_endpoint(crate::protocol_serde::shape_url_endpoint_summary::de_url_endpoint_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "LambdaEndpoint" => {
                             builder = builder.set_lambda_endpoint(crate::protocol_serde::shape_lambda_endpoint_summary::de_lambda_endpoint_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "State" => {
@@ -103,10 +113,10 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "Error" => {
-                            builder = builder.set_error(crate::protocol_serde::shape_error_response::de_error_response(tokens, _value)?);
+                            builder = builder.set_error(crate::protocol_serde::shape_error_response::de_error_response(tokens, _value, depth + 1)?);
                         }
                         "LastUpdatedTime" => {
                             builder = builder.set_last_updated_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

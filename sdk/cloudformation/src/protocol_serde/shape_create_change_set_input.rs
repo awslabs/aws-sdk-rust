@@ -141,6 +141,16 @@ pub fn ser_create_change_set_input_input_input(
     if let Some(var_58) = &input.deployment_mode {
         scope_57.string(var_58.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_59 = writer.prefix("DeploymentConfig");
+    if let Some(var_60) = &input.deployment_config {
+        crate::protocol_serde::shape_deployment_config::ser_deployment_config(scope_59, var_60)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_61 = writer.prefix("DisableValidation");
+    if let Some(var_62) = &input.disable_validation {
+        scope_61.boolean(*var_62);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

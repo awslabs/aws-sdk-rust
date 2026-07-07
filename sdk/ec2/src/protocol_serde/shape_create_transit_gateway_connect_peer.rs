@@ -49,6 +49,8 @@ pub fn de_create_transit_gateway_connect_peer(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateTransitGatewayConnectPeerResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateTransitGatewayConnectPeerResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_create_transit_gateway_connect_peer(
             s if s.matches("transitGatewayConnectPeer") /* TransitGatewayConnectPeer com.amazonaws.ec2.synthetic#CreateTransitGatewayConnectPeerOutput$TransitGatewayConnectPeer */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_connect_peer::de_transit_gateway_connect_peer(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_connect_peer::de_transit_gateway_connect_peer(&mut tag, depth + 1)
                         ?
                     )
                 ;

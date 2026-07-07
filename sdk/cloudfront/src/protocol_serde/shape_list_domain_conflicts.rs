@@ -115,6 +115,8 @@ pub fn de_list_domain_conflicts(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListDomainConflictsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListDomainConflictsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -138,7 +140,7 @@ pub fn de_list_domain_conflicts(
             s if s.matches("DomainConflicts") /* DomainConflicts com.amazonaws.cloudfront.synthetic#ListDomainConflictsOutput$DomainConflicts */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_domain_conflicts_list::de_domain_conflicts_list(&mut tag)
+                        crate::protocol_serde::shape_domain_conflicts_list::de_domain_conflicts_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

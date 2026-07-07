@@ -82,6 +82,8 @@ pub(crate) fn de_list_profiling_groups(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -96,12 +98,14 @@ pub(crate) fn de_list_profiling_groups(
                 }
                 "profilingGroupNames" => {
                     builder = builder.set_profiling_group_names(crate::protocol_serde::shape_profiling_group_names::de_profiling_group_names(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "profilingGroups" => {
                     builder = builder.set_profiling_groups(
-                        crate::protocol_serde::shape_profiling_group_descriptions::de_profiling_group_descriptions(tokens, _value)?,
+                        crate::protocol_serde::shape_profiling_group_descriptions::de_profiling_group_descriptions(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

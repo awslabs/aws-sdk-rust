@@ -23,7 +23,9 @@
 ///     MetricType::Ec2SpotFleetRequestAverageNetworkIn => { /* ... */ },
 ///     MetricType::Ec2SpotFleetRequestAverageNetworkOut => { /* ... */ },
 ///     MetricType::EcsServiceAverageCpuUtilization => { /* ... */ },
+///     MetricType::EcsServiceAverageCpuUtilizationHighResolution => { /* ... */ },
 ///     MetricType::EcsServiceAverageMemoryUtilization => { /* ... */ },
+///     MetricType::EcsServiceAverageMemoryUtilizationHighResolution => { /* ... */ },
 ///     MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => { /* ... */ },
 ///     MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => { /* ... */ },
 ///     MetricType::ElastiCacheDatabaseMemoryUsagePercentage => { /* ... */ },
@@ -92,7 +94,11 @@ pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
     EcsServiceAverageCpuUtilization,
     #[allow(missing_docs)] // documentation missing in model
+    EcsServiceAverageCpuUtilizationHighResolution,
+    #[allow(missing_docs)] // documentation missing in model
     EcsServiceAverageMemoryUtilization,
+    #[allow(missing_docs)] // documentation missing in model
+    EcsServiceAverageMemoryUtilizationHighResolution,
     #[allow(missing_docs)] // documentation missing in model
     ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
     #[allow(missing_docs)] // documentation missing in model
@@ -145,7 +151,9 @@ impl ::std::convert::From<&str> for MetricType {
             "EC2SpotFleetRequestAverageNetworkIn" => MetricType::Ec2SpotFleetRequestAverageNetworkIn,
             "EC2SpotFleetRequestAverageNetworkOut" => MetricType::Ec2SpotFleetRequestAverageNetworkOut,
             "ECSServiceAverageCPUUtilization" => MetricType::EcsServiceAverageCpuUtilization,
+            "ECSServiceAverageCPUUtilizationHighResolution" => MetricType::EcsServiceAverageCpuUtilizationHighResolution,
             "ECSServiceAverageMemoryUtilization" => MetricType::EcsServiceAverageMemoryUtilization,
+            "ECSServiceAverageMemoryUtilizationHighResolution" => MetricType::EcsServiceAverageMemoryUtilizationHighResolution,
             "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage" => MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
             "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" => MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
             "ElastiCacheDatabaseMemoryUsagePercentage" => MetricType::ElastiCacheDatabaseMemoryUsagePercentage,
@@ -191,7 +199,9 @@ impl MetricType {
             MetricType::Ec2SpotFleetRequestAverageNetworkIn => "EC2SpotFleetRequestAverageNetworkIn",
             MetricType::Ec2SpotFleetRequestAverageNetworkOut => "EC2SpotFleetRequestAverageNetworkOut",
             MetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
+            MetricType::EcsServiceAverageCpuUtilizationHighResolution => "ECSServiceAverageCPUUtilizationHighResolution",
             MetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
+            MetricType::EcsServiceAverageMemoryUtilizationHighResolution => "ECSServiceAverageMemoryUtilizationHighResolution",
             MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage",
             MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
             MetricType::ElastiCacheDatabaseMemoryUsagePercentage => "ElastiCacheDatabaseMemoryUsagePercentage",
@@ -228,7 +238,9 @@ impl MetricType {
             "EC2SpotFleetRequestAverageNetworkIn",
             "EC2SpotFleetRequestAverageNetworkOut",
             "ECSServiceAverageCPUUtilization",
+            "ECSServiceAverageCPUUtilizationHighResolution",
             "ECSServiceAverageMemoryUtilization",
+            "ECSServiceAverageMemoryUtilizationHighResolution",
             "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage",
             "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
             "ElastiCacheDatabaseMemoryUsagePercentage",
@@ -280,7 +292,9 @@ impl ::std::fmt::Display for MetricType {
             MetricType::Ec2SpotFleetRequestAverageNetworkIn => write!(f, "EC2SpotFleetRequestAverageNetworkIn"),
             MetricType::Ec2SpotFleetRequestAverageNetworkOut => write!(f, "EC2SpotFleetRequestAverageNetworkOut"),
             MetricType::EcsServiceAverageCpuUtilization => write!(f, "ECSServiceAverageCPUUtilization"),
+            MetricType::EcsServiceAverageCpuUtilizationHighResolution => write!(f, "ECSServiceAverageCPUUtilizationHighResolution"),
             MetricType::EcsServiceAverageMemoryUtilization => write!(f, "ECSServiceAverageMemoryUtilization"),
+            MetricType::EcsServiceAverageMemoryUtilizationHighResolution => write!(f, "ECSServiceAverageMemoryUtilizationHighResolution"),
             MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => {
                 write!(f, "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage")
             }

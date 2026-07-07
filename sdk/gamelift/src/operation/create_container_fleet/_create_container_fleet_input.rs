@@ -18,11 +18,12 @@ pub struct CreateContainerFleetInput {
     /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub instance_connection_port_range: ::std::option::Option<crate::types::ConnectionPortRange>,
     /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. As a best practice, when remotely accessing a fleet instance, we recommend opening ports only when you need them and closing them when you're finished.</p>
     /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
@@ -30,17 +31,18 @@ pub struct CreateContainerFleetInput {
     /// <li>
     /// <p>Protocol: UDP</p></li>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub instance_inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The number of times to replicate the game server container group on each fleet instance.</p>
     /// <p>By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. This calculation is based on the CPU and memory resources of the fleet's instance type). To use the calculated maximum, don't set this parameter. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub game_server_container_groups_per_instance: ::std::option::Option<i32>,
     /// <p>The Amazon EC2 instance type to use for all instances in the fleet. For multi-location fleets, the instance type must be available in the home region and all remote locations. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity.</p>
-    /// <p>By default, Amazon GameLift Servers selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>By default, Amazon GameLift Servers uses the <code>c5.large</code> instance type. If this instance type does not have sufficient resources for your container groups, you can choose a different instance type that better fits your needs. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     /// <p>You can't update this fleet property later.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.</p>
@@ -113,11 +115,12 @@ impl CreateContainerFleetInput {
     /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_connection_port_range(&self) -> ::std::option::Option<&crate::types::ConnectionPortRange> {
         self.instance_connection_port_range.as_ref()
     }
@@ -127,11 +130,12 @@ impl CreateContainerFleetInput {
     /// <li>
     /// <p>Protocol: UDP</p></li>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_inbound_permissions.is_none()`.
     pub fn instance_inbound_permissions(&self) -> &[crate::types::IpPermission] {
@@ -143,7 +147,7 @@ impl CreateContainerFleetInput {
         self.game_server_container_groups_per_instance
     }
     /// <p>The Amazon EC2 instance type to use for all instances in the fleet. For multi-location fleets, the instance type must be available in the home region and all remote locations. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity.</p>
-    /// <p>By default, Amazon GameLift Servers selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>By default, Amazon GameLift Servers uses the <code>c5.large</code> instance type. If this instance type does not have sufficient resources for your container groups, you can choose a different instance type that better fits your needs. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     /// <p>You can't update this fleet property later.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -315,11 +319,12 @@ impl CreateContainerFleetInputBuilder {
     /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_connection_port_range(mut self, input: crate::types::ConnectionPortRange) -> Self {
         self.instance_connection_port_range = ::std::option::Option::Some(input);
         self
@@ -328,11 +333,12 @@ impl CreateContainerFleetInputBuilder {
     /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn set_instance_connection_port_range(mut self, input: ::std::option::Option<crate::types::ConnectionPortRange>) -> Self {
         self.instance_connection_port_range = input;
         self
@@ -341,11 +347,12 @@ impl CreateContainerFleetInputBuilder {
     /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn get_instance_connection_port_range(&self) -> &::std::option::Option<crate::types::ConnectionPortRange> {
         &self.instance_connection_port_range
     }
@@ -359,11 +366,12 @@ impl CreateContainerFleetInputBuilder {
     /// <li>
     /// <p>Protocol: UDP</p></li>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_inbound_permissions(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.instance_inbound_permissions.unwrap_or_default();
         v.push(input);
@@ -376,11 +384,12 @@ impl CreateContainerFleetInputBuilder {
     /// <li>
     /// <p>Protocol: UDP</p></li>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn set_instance_inbound_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.instance_inbound_permissions = input;
         self
@@ -391,11 +400,12 @@ impl CreateContainerFleetInputBuilder {
     /// <li>
     /// <p>Protocol: UDP</p></li>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the per instance container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn get_instance_inbound_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.instance_inbound_permissions
     }
@@ -417,21 +427,21 @@ impl CreateContainerFleetInputBuilder {
         &self.game_server_container_groups_per_instance
     }
     /// <p>The Amazon EC2 instance type to use for all instances in the fleet. For multi-location fleets, the instance type must be available in the home region and all remote locations. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity.</p>
-    /// <p>By default, Amazon GameLift Servers selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>By default, Amazon GameLift Servers uses the <code>c5.large</code> instance type. If this instance type does not have sufficient resources for your container groups, you can choose a different instance type that better fits your needs. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     /// <p>You can't update this fleet property later.</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance type to use for all instances in the fleet. For multi-location fleets, the instance type must be available in the home region and all remote locations. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity.</p>
-    /// <p>By default, Amazon GameLift Servers selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>By default, Amazon GameLift Servers uses the <code>c5.large</code> instance type. If this instance type does not have sufficient resources for your container groups, you can choose a different instance type that better fits your needs. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     /// <p>You can't update this fleet property later.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The Amazon EC2 instance type to use for all instances in the fleet. For multi-location fleets, the instance type must be available in the home region and all remote locations. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity.</p>
-    /// <p>By default, Amazon GameLift Servers selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>By default, Amazon GameLift Servers uses the <code>c5.large</code> instance type. If this instance type does not have sufficient resources for your container groups, you can choose a different instance type that better fits your needs. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     /// <p>You can't update this fleet property later.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type

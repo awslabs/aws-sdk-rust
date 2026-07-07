@@ -26,6 +26,14 @@ pub struct CreateResourceGatewayInput {
     pub ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
     /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
     pub ipv4_addresses_per_eni: ::std::option::Option<i32>,
+    /// <p>Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
     /// <p>The tags for the resource gateway.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -71,6 +79,16 @@ impl CreateResourceGatewayInput {
     pub fn ipv4_addresses_per_eni(&self) -> ::std::option::Option<i32> {
         self.ipv4_addresses_per_eni
     }
+    /// <p>Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub fn resource_config_dns_resolution(&self) -> ::std::option::Option<&crate::types::ResourceConfigDnsResolution> {
+        self.resource_config_dns_resolution.as_ref()
+    }
     /// <p>The tags for the resource gateway.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -94,6 +112,7 @@ pub struct CreateResourceGatewayInputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
     pub(crate) ipv4_addresses_per_eni: ::std::option::Option<i32>,
+    pub(crate) resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateResourceGatewayInputBuilder {
@@ -235,6 +254,38 @@ impl CreateResourceGatewayInputBuilder {
     pub fn get_ipv4_addresses_per_eni(&self) -> &::std::option::Option<i32> {
         &self.ipv4_addresses_per_eni
     }
+    /// <p>Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub fn resource_config_dns_resolution(mut self, input: crate::types::ResourceConfigDnsResolution) -> Self {
+        self.resource_config_dns_resolution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub fn set_resource_config_dns_resolution(mut self, input: ::std::option::Option<crate::types::ResourceConfigDnsResolution>) -> Self {
+        self.resource_config_dns_resolution = input;
+        self
+    }
+    /// <p>Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub fn get_resource_config_dns_resolution(&self) -> &::std::option::Option<crate::types::ResourceConfigDnsResolution> {
+        &self.resource_config_dns_resolution
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -268,6 +319,7 @@ impl CreateResourceGatewayInputBuilder {
             security_group_ids: self.security_group_ids,
             ip_address_type: self.ip_address_type,
             ipv4_addresses_per_eni: self.ipv4_addresses_per_eni,
+            resource_config_dns_resolution: self.resource_config_dns_resolution,
             tags: self.tags,
         })
     }

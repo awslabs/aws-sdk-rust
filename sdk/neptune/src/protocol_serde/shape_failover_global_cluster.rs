@@ -122,6 +122,8 @@ pub fn de_failover_global_cluster(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("FailoverGlobalClusterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected FailoverGlobalClusterResponse got {start_el:?}"
@@ -139,7 +141,7 @@ pub fn de_failover_global_cluster(
             s if s.matches("GlobalCluster") /* GlobalCluster com.amazonaws.neptune.synthetic#FailoverGlobalClusterOutput$GlobalCluster */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_global_cluster::de_global_cluster(&mut tag)
+                        crate::protocol_serde::shape_global_cluster::de_global_cluster(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -6,6 +6,8 @@
 pub enum McpTargetConfiguration {
     /// <p>The configuration for an Amazon API Gateway target.</p>
     ApiGateway(crate::types::ApiGatewayTargetConfiguration),
+    /// <p>The connector integration configuration for the Model Context Protocol target. This configuration defines how the gateway uses a pre-built connector to communicate with the target.</p>
+    Connector(crate::types::ConnectorTargetConfiguration),
     /// <p>The Lambda configuration for the Model Context Protocol target. This configuration defines how the gateway uses a Lambda function to communicate with the target.</p>
     Lambda(crate::types::McpLambdaTargetConfiguration),
     /// <p>The MCP server specified as the gateway target.</p>
@@ -37,6 +39,19 @@ impl McpTargetConfiguration {
     /// Returns true if this is a [`ApiGateway`](crate::types::McpTargetConfiguration::ApiGateway).
     pub fn is_api_gateway(&self) -> bool {
         self.as_api_gateway().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Connector`](crate::types::McpTargetConfiguration::Connector), extracting the inner [`ConnectorTargetConfiguration`](crate::types::ConnectorTargetConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_connector(&self) -> ::std::result::Result<&crate::types::ConnectorTargetConfiguration, &Self> {
+        if let McpTargetConfiguration::Connector(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Connector`](crate::types::McpTargetConfiguration::Connector).
+    pub fn is_connector(&self) -> bool {
+        self.as_connector().is_ok()
     }
     /// Tries to convert the enum instance into [`Lambda`](crate::types::McpTargetConfiguration::Lambda), extracting the inner [`McpLambdaTargetConfiguration`](crate::types::McpLambdaTargetConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

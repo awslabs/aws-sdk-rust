@@ -57,10 +57,16 @@ pub fn ser_waterfall_visual(
 pub(crate) fn de_waterfall_visual<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WaterfallVisual>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -69,48 +75,62 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "VisualId" => {
-                            builder = builder.set_visual_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "VisualId" => {
+                                builder = builder.set_visual_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Title" => {
+                                builder = builder.set_title(crate::protocol_serde::shape_visual_title_label_options::de_visual_title_label_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "Subtitle" => {
+                                builder = builder.set_subtitle(
+                                    crate::protocol_serde::shape_visual_subtitle_label_options::de_visual_subtitle_label_options(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ChartConfiguration" => {
+                                builder = builder.set_chart_configuration(
+                                    crate::protocol_serde::shape_waterfall_chart_configuration::de_waterfall_chart_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "Actions" => {
+                                builder = builder.set_actions(crate::protocol_serde::shape_visual_custom_action_list::de_visual_custom_action_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ColumnHierarchies" => {
+                                builder = builder.set_column_hierarchies(
+                                    crate::protocol_serde::shape_column_hierarchy_list::de_column_hierarchy_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "VisualContentAltText" => {
+                                builder = builder.set_visual_content_alt_text(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Title" => {
-                            builder = builder.set_title(crate::protocol_serde::shape_visual_title_label_options::de_visual_title_label_options(
-                                tokens, _value,
-                            )?);
-                        }
-                        "Subtitle" => {
-                            builder = builder.set_subtitle(
-                                crate::protocol_serde::shape_visual_subtitle_label_options::de_visual_subtitle_label_options(tokens, _value)?,
-                            );
-                        }
-                        "ChartConfiguration" => {
-                            builder = builder.set_chart_configuration(
-                                crate::protocol_serde::shape_waterfall_chart_configuration::de_waterfall_chart_configuration(tokens, _value)?,
-                            );
-                        }
-                        "Actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_visual_custom_action_list::de_visual_custom_action_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ColumnHierarchies" => {
-                            builder = builder.set_column_hierarchies(crate::protocol_serde::shape_column_hierarchy_list::de_column_hierarchy_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "VisualContentAltText" => {
-                            builder = builder.set_visual_content_alt_text(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

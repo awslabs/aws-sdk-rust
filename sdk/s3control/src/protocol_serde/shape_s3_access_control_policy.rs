@@ -20,7 +20,11 @@ pub fn ser_s3_access_control_policy(
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_access_control_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::S3AccessControlPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::S3AccessControlPolicy::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -28,7 +32,7 @@ pub fn de_s3_access_control_policy(
             s if s.matches("AccessControlList") /* AccessControlList com.amazonaws.s3control#S3AccessControlPolicy$AccessControlList */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_s3_access_control_list::de_s3_access_control_list(&mut tag)
+                        crate::protocol_serde::shape_s3_access_control_list::de_s3_access_control_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

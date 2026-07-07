@@ -136,9 +136,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Invoke 
 #[derive(Debug)]
 struct InvokeResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for InvokeResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -268,6 +269,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeEndpoin
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeError {
+    /// <p>The Lambda function couldn't be invoked because its code artifact user has been deleted. Wait for Lambda to provision a new code artifact user, or update the function's code package to recreate it.</p>
+    CodeArtifactUserDeletedException(crate::types::error::CodeArtifactUserDeletedException),
+    /// <p>The Lambda function couldn't be invoked because provisioning of its code artifact user failed. Update the function's code package or check the Lambda function's <code>State</code> and <code>StateReasonCode</code> for additional context.</p>
+    CodeArtifactUserFailedException(crate::types::error::CodeArtifactUserFailedException),
+    /// <p>The Lambda function couldn't be invoked because its code artifact user is still being provisioned. Wait for the function's <code>State</code> to become <code>Active</code> and try the request again.</p>
+    CodeArtifactUserPendingException(crate::types::error::CodeArtifactUserPendingException),
     /// <p>The durable execution with the specified name has already been started. Each durable execution name must be unique within the function. Use a different name or check the status of the existing execution.</p>
     DurableExecutionAlreadyStartedException(crate::types::error::DurableExecutionAlreadyStartedException),
     /// <p>Need additional permissions to configure VPC settings.</p>
@@ -286,6 +293,8 @@ pub enum InvokeError {
     EfsMountTimeoutException(crate::types::error::EfsMountTimeoutException),
     /// <p>Lambda couldn't create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     EniLimitReachedException(crate::types::error::EniLimitReachedException),
+    /// <p>Lambda couldn't invoke the Lambda function because the elastic network interface (ENI) configured for its VPC connection isn't ready yet. Wait a few moments and try the request again. For more information about VPC configuration, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
+    EniNotReadyException(crate::types::error::EniNotReadyException),
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The request body could not be parsed as JSON, or a request header is invalid. For example, the 'x-amzn-RequestId' header is not a valid UUID string.</p>
@@ -306,6 +315,8 @@ pub enum InvokeError {
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
+    /// <p>The Lambda function doesn't support the invocation mode requested. For example, calling <code>Invoke</code> with <code>InvocationType=RequestResponse</code> on a function configured for asynchronous-only invocation, or vice versa. For more information about invocation types, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-options.html">Invoking Lambda functions</a>.</p>
+    ModeNotSupportedException(crate::types::error::ModeNotSupportedException),
     /// <p>The function has no published versions available.</p>
     NoPublishedVersionException(crate::types::error::NoPublishedVersionException),
     /// <p>Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services resources and stopped your function's invocation.</p>
@@ -328,10 +339,14 @@ pub enum InvokeError {
     SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
+    /// <p>The request would exceed a service quota. For more information about Lambda service quotas, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>. To request a quota increase, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">Requesting a quota increase</a> in the <i>Service Quotas User Guide</i>.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
     SnapStartException(crate::types::error::SnapStartException),
     /// <p>Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes <code>Active</code>.</p>
     SnapStartNotReadyException(crate::types::error::SnapStartNotReadyException),
+    /// <p>Lambda couldn't regenerate the SnapStart snapshot for the function. SnapStart-enabled functions periodically regenerate snapshots when their underlying runtime or dependencies change; this regeneration failed. Wait for Lambda to retry, or update the function's configuration to trigger a new snapshot. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda SnapStart</a>.</p>
+    SnapStartRegenerationFailureException(crate::types::error::SnapStartRegenerationFailureException),
     /// <p>Lambda couldn't restore the snapshot within the timeout limit.</p>
     SnapStartTimeoutException(crate::types::error::SnapStartTimeoutException),
     /// <p>Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
@@ -373,6 +388,9 @@ impl InvokeError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CodeArtifactUserDeletedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CodeArtifactUserFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CodeArtifactUserPendingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DurableExecutionAlreadyStartedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2ThrottledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -382,6 +400,7 @@ impl InvokeError {
             Self::EfsMountFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EfsMountTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EniLimitReachedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EniNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestContentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRuntimeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -392,6 +411,7 @@ impl InvokeError {
             Self::KmsDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ModeNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoPublishedVersionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RecursiveInvocationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RequestTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -403,14 +423,28 @@ impl InvokeError {
             Self::S3FilesMountTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SerializedRequestEntityTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SnapStartRegenerationFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SubnetIpAddressLimitReachedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedMediaTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `InvokeError::CodeArtifactUserDeletedException`.
+    pub fn is_code_artifact_user_deleted_exception(&self) -> bool {
+        matches!(self, Self::CodeArtifactUserDeletedException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::CodeArtifactUserFailedException`.
+    pub fn is_code_artifact_user_failed_exception(&self) -> bool {
+        matches!(self, Self::CodeArtifactUserFailedException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::CodeArtifactUserPendingException`.
+    pub fn is_code_artifact_user_pending_exception(&self) -> bool {
+        matches!(self, Self::CodeArtifactUserPendingException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::DurableExecutionAlreadyStartedException`.
     pub fn is_durable_execution_already_started_exception(&self) -> bool {
@@ -447,6 +481,10 @@ impl InvokeError {
     /// Returns `true` if the error kind is `InvokeError::EniLimitReachedException`.
     pub fn is_eni_limit_reached_exception(&self) -> bool {
         matches!(self, Self::EniLimitReachedException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::EniNotReadyException`.
+    pub fn is_eni_not_ready_exception(&self) -> bool {
+        matches!(self, Self::EniNotReadyException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -487,6 +525,10 @@ impl InvokeError {
     /// Returns `true` if the error kind is `InvokeError::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(self, Self::KmsNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::ModeNotSupportedException`.
+    pub fn is_mode_not_supported_exception(&self) -> bool {
+        matches!(self, Self::ModeNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::NoPublishedVersionException`.
     pub fn is_no_published_version_exception(&self) -> bool {
@@ -532,6 +574,10 @@ impl InvokeError {
     pub fn is_service_exception(&self) -> bool {
         matches!(self, Self::ServiceException(_))
     }
+    /// Returns `true` if the error kind is `InvokeError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `InvokeError::SnapStartException`.
     pub fn is_snap_start_exception(&self) -> bool {
         matches!(self, Self::SnapStartException(_))
@@ -539,6 +585,10 @@ impl InvokeError {
     /// Returns `true` if the error kind is `InvokeError::SnapStartNotReadyException`.
     pub fn is_snap_start_not_ready_exception(&self) -> bool {
         matches!(self, Self::SnapStartNotReadyException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::SnapStartRegenerationFailureException`.
+    pub fn is_snap_start_regeneration_failure_exception(&self) -> bool {
+        matches!(self, Self::SnapStartRegenerationFailureException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::SnapStartTimeoutException`.
     pub fn is_snap_start_timeout_exception(&self) -> bool {
@@ -560,6 +610,9 @@ impl InvokeError {
 impl ::std::error::Error for InvokeError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::CodeArtifactUserDeletedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CodeArtifactUserFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CodeArtifactUserPendingException(_inner) => ::std::option::Option::Some(_inner),
             Self::DurableExecutionAlreadyStartedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2ThrottledException(_inner) => ::std::option::Option::Some(_inner),
@@ -569,6 +622,7 @@ impl ::std::error::Error for InvokeError {
             Self::EfsMountFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::EfsMountTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::EniLimitReachedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::EniNotReadyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestContentException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRuntimeException(_inner) => ::std::option::Option::Some(_inner),
@@ -579,6 +633,7 @@ impl ::std::error::Error for InvokeError {
             Self::KmsDisabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ModeNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoPublishedVersionException(_inner) => ::std::option::Option::Some(_inner),
             Self::RecursiveInvocationException(_inner) => ::std::option::Option::Some(_inner),
             Self::RequestTooLargeException(_inner) => ::std::option::Option::Some(_inner),
@@ -590,8 +645,10 @@ impl ::std::error::Error for InvokeError {
             Self::S3FilesMountTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::SerializedRequestEntityTooLargeException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartNotReadyException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SnapStartRegenerationFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::SubnetIpAddressLimitReachedException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -603,6 +660,9 @@ impl ::std::error::Error for InvokeError {
 impl ::std::fmt::Display for InvokeError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::CodeArtifactUserDeletedException(_inner) => _inner.fmt(f),
+            Self::CodeArtifactUserFailedException(_inner) => _inner.fmt(f),
+            Self::CodeArtifactUserPendingException(_inner) => _inner.fmt(f),
             Self::DurableExecutionAlreadyStartedException(_inner) => _inner.fmt(f),
             Self::Ec2AccessDeniedException(_inner) => _inner.fmt(f),
             Self::Ec2ThrottledException(_inner) => _inner.fmt(f),
@@ -612,6 +672,7 @@ impl ::std::fmt::Display for InvokeError {
             Self::EfsMountFailureException(_inner) => _inner.fmt(f),
             Self::EfsMountTimeoutException(_inner) => _inner.fmt(f),
             Self::EniLimitReachedException(_inner) => _inner.fmt(f),
+            Self::EniNotReadyException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::InvalidRequestContentException(_inner) => _inner.fmt(f),
             Self::InvalidRuntimeException(_inner) => _inner.fmt(f),
@@ -622,6 +683,7 @@ impl ::std::fmt::Display for InvokeError {
             Self::KmsDisabledException(_inner) => _inner.fmt(f),
             Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
             Self::KmsNotFoundException(_inner) => _inner.fmt(f),
+            Self::ModeNotSupportedException(_inner) => _inner.fmt(f),
             Self::NoPublishedVersionException(_inner) => _inner.fmt(f),
             Self::RecursiveInvocationException(_inner) => _inner.fmt(f),
             Self::RequestTooLargeException(_inner) => _inner.fmt(f),
@@ -633,8 +695,10 @@ impl ::std::fmt::Display for InvokeError {
             Self::S3FilesMountTimeoutException(_inner) => _inner.fmt(f),
             Self::SerializedRequestEntityTooLargeException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::SnapStartException(_inner) => _inner.fmt(f),
             Self::SnapStartNotReadyException(_inner) => _inner.fmt(f),
+            Self::SnapStartRegenerationFailureException(_inner) => _inner.fmt(f),
             Self::SnapStartTimeoutException(_inner) => _inner.fmt(f),
             Self::SubnetIpAddressLimitReachedException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -660,6 +724,9 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for InvokeError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CodeArtifactUserDeletedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CodeArtifactUserFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CodeArtifactUserPendingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DurableExecutionAlreadyStartedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2ThrottledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -669,6 +736,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
             Self::EfsMountFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EfsMountTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EniLimitReachedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EniNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestContentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRuntimeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -679,6 +747,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
             Self::KmsDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ModeNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoPublishedVersionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RecursiveInvocationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RequestTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -690,8 +759,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
             Self::S3FilesMountTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SerializedRequestEntityTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SnapStartRegenerationFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SubnetIpAddressLimitReachedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

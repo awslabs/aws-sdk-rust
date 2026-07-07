@@ -2,10 +2,16 @@
 pub(crate) fn de_anomaly<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Anomaly>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,13 +50,14 @@ where
                             );
                         }
                         "RootCauses" => {
-                            builder = builder.set_root_causes(crate::protocol_serde::shape_root_causes::de_root_causes(tokens, _value)?);
+                            builder = builder.set_root_causes(crate::protocol_serde::shape_root_causes::de_root_causes(tokens, _value, depth + 1)?);
                         }
                         "AnomalyScore" => {
-                            builder = builder.set_anomaly_score(crate::protocol_serde::shape_anomaly_score::de_anomaly_score(tokens, _value)?);
+                            builder =
+                                builder.set_anomaly_score(crate::protocol_serde::shape_anomaly_score::de_anomaly_score(tokens, _value, depth + 1)?);
                         }
                         "Impact" => {
-                            builder = builder.set_impact(crate::protocol_serde::shape_impact::de_impact(tokens, _value)?);
+                            builder = builder.set_impact(crate::protocol_serde::shape_impact::de_impact(tokens, _value, depth + 1)?);
                         }
                         "MonitorArn" => {
                             builder = builder.set_monitor_arn(

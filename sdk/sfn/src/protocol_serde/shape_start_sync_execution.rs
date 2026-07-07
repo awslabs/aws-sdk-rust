@@ -202,6 +202,8 @@ pub(crate) fn de_start_sync_execution(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -271,7 +273,9 @@ pub(crate) fn de_start_sync_execution(
                 "inputDetails" => {
                     builder = builder.set_input_details(
                         crate::protocol_serde::shape_cloud_watch_events_execution_data_details::de_cloud_watch_events_execution_data_details(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -285,7 +289,9 @@ pub(crate) fn de_start_sync_execution(
                 "outputDetails" => {
                     builder = builder.set_output_details(
                         crate::protocol_serde::shape_cloud_watch_events_execution_data_details::de_cloud_watch_events_execution_data_details(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -297,7 +303,11 @@ pub(crate) fn de_start_sync_execution(
                     );
                 }
                 "billingDetails" => {
-                    builder = builder.set_billing_details(crate::protocol_serde::shape_billing_details::de_billing_details(tokens, _value)?);
+                    builder = builder.set_billing_details(crate::protocol_serde::shape_billing_details::de_billing_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

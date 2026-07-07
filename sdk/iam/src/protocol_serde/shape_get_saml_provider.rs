@@ -93,6 +93,8 @@ pub fn de_get_saml_provider(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetSAMLProviderResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetSAMLProviderResponse got {start_el:?}"
@@ -164,7 +166,7 @@ pub fn de_get_saml_provider(
             s if s.matches("Tags") /* Tags com.amazonaws.iam.synthetic#GetSAMLProviderOutput$Tags */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -188,7 +190,7 @@ pub fn de_get_saml_provider(
             s if s.matches("PrivateKeyList") /* PrivateKeyList com.amazonaws.iam.synthetic#GetSAMLProviderOutput$PrivateKeyList */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_private_key_list::de_private_key_list(&mut tag)
+                        crate::protocol_serde::shape_private_key_list::de_private_key_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

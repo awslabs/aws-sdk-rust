@@ -85,6 +85,8 @@ pub fn de_describe_usage_limits(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeUsageLimitsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeUsageLimitsResponse got {start_el:?}"
@@ -102,7 +104,7 @@ pub fn de_describe_usage_limits(
             s if s.matches("UsageLimits") /* UsageLimits com.amazonaws.redshift.synthetic#DescribeUsageLimitsOutput$UsageLimits */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_usage_limits::de_usage_limits(&mut tag)
+                        crate::protocol_serde::shape_usage_limits::de_usage_limits(&mut tag, depth + 1)
                         ?
                     )
                 ;

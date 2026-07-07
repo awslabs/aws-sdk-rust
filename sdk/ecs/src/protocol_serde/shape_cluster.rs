@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Cluster>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,9 @@ where
                         }
                         "configuration" => {
                             builder = builder.set_configuration(crate::protocol_serde::shape_cluster_configuration::de_cluster_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "status" => {
@@ -70,24 +78,29 @@ where
                             );
                         }
                         "statistics" => {
-                            builder = builder.set_statistics(crate::protocol_serde::shape_statistics::de_statistics(tokens, _value)?);
+                            builder = builder.set_statistics(crate::protocol_serde::shape_statistics::de_statistics(tokens, _value, depth + 1)?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "settings" => {
-                            builder = builder.set_settings(crate::protocol_serde::shape_cluster_settings::de_cluster_settings(tokens, _value)?);
+                            builder = builder.set_settings(crate::protocol_serde::shape_cluster_settings::de_cluster_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "capacityProviders" => {
-                            builder = builder.set_capacity_providers(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_capacity_providers(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "defaultCapacityProviderStrategy" => {
                             builder = builder.set_default_capacity_provider_strategy(
-                                crate::protocol_serde::shape_capacity_provider_strategy::de_capacity_provider_strategy(tokens, _value)?,
+                                crate::protocol_serde::shape_capacity_provider_strategy::de_capacity_provider_strategy(tokens, _value, depth + 1)?,
                             );
                         }
                         "attachments" => {
-                            builder = builder.set_attachments(crate::protocol_serde::shape_attachments::de_attachments(tokens, _value)?);
+                            builder = builder.set_attachments(crate::protocol_serde::shape_attachments::de_attachments(tokens, _value, depth + 1)?);
                         }
                         "attachmentsStatus" => {
                             builder = builder.set_attachments_status(
@@ -98,7 +111,11 @@ where
                         }
                         "serviceConnectDefaults" => {
                             builder = builder.set_service_connect_defaults(
-                                crate::protocol_serde::shape_cluster_service_connect_defaults::de_cluster_service_connect_defaults(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_service_connect_defaults::de_cluster_service_connect_defaults(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

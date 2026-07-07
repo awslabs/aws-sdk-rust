@@ -2,10 +2,16 @@
 pub(crate) fn de_evaluation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Evaluation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,16 +36,26 @@ where
                             );
                         }
                         "Metadata" => {
-                            builder = builder.set_metadata(crate::protocol_serde::shape_evaluation_metadata::de_evaluation_metadata(tokens, _value)?);
+                            builder = builder.set_metadata(crate::protocol_serde::shape_evaluation_metadata::de_evaluation_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Answers" => {
                             builder = builder.set_answers(
-                                crate::protocol_serde::shape_evaluation_answers_output_map::de_evaluation_answers_output_map(tokens, _value)?,
+                                crate::protocol_serde::shape_evaluation_answers_output_map::de_evaluation_answers_output_map(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Notes" => {
                             builder = builder.set_notes(crate::protocol_serde::shape_evaluation_notes_map::de_evaluation_notes_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Status" => {
@@ -51,7 +67,9 @@ where
                         }
                         "Scores" => {
                             builder = builder.set_scores(crate::protocol_serde::shape_evaluation_scores_map::de_evaluation_scores_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "CreatedTime" => {
@@ -74,7 +92,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

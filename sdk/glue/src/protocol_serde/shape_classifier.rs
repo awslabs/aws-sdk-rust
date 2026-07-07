@@ -2,10 +2,16 @@
 pub(crate) fn de_classifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Classifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,16 +22,32 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "GrokClassifier" => {
-                            builder = builder.set_grok_classifier(crate::protocol_serde::shape_grok_classifier::de_grok_classifier(tokens, _value)?);
+                            builder = builder.set_grok_classifier(crate::protocol_serde::shape_grok_classifier::de_grok_classifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "XMLClassifier" => {
-                            builder = builder.set_xml_classifier(crate::protocol_serde::shape_xml_classifier::de_xml_classifier(tokens, _value)?);
+                            builder = builder.set_xml_classifier(crate::protocol_serde::shape_xml_classifier::de_xml_classifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "JsonClassifier" => {
-                            builder = builder.set_json_classifier(crate::protocol_serde::shape_json_classifier::de_json_classifier(tokens, _value)?);
+                            builder = builder.set_json_classifier(crate::protocol_serde::shape_json_classifier::de_json_classifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CsvClassifier" => {
-                            builder = builder.set_csv_classifier(crate::protocol_serde::shape_csv_classifier::de_csv_classifier(tokens, _value)?);
+                            builder = builder.set_csv_classifier(crate::protocol_serde::shape_csv_classifier::de_csv_classifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

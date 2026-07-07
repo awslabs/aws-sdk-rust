@@ -13,6 +13,8 @@ pub struct StartProtectedQueryInput {
     pub result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
     /// <p>The compute configuration for the protected query.</p>
     pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub query_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartProtectedQueryInput {
     /// <p>The type of the protected query to be started.</p>
@@ -35,6 +37,10 @@ impl StartProtectedQueryInput {
     pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
         self.compute_configuration.as_ref()
     }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn query_compute_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.query_compute_payer_account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for StartProtectedQueryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for StartProtectedQueryInput {
         formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("result_configuration", &self.result_configuration);
         formatter.field("compute_configuration", &self.compute_configuration);
+        formatter.field("query_compute_payer_account_id", &self.query_compute_payer_account_id);
         formatter.finish()
     }
 }
@@ -63,6 +70,7 @@ pub struct StartProtectedQueryInputBuilder {
     pub(crate) sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     pub(crate) result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
     pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
+    pub(crate) query_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartProtectedQueryInputBuilder {
     /// <p>The type of the protected query to be started.</p>
@@ -138,6 +146,20 @@ impl StartProtectedQueryInputBuilder {
     pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
         &self.compute_configuration
     }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn query_compute_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_compute_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn set_query_compute_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.query_compute_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn get_query_compute_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_compute_payer_account_id
+    }
     /// Consumes the builder and constructs a [`StartProtectedQueryInput`](crate::operation::start_protected_query::StartProtectedQueryInput).
     pub fn build(
         self,
@@ -149,6 +171,7 @@ impl StartProtectedQueryInputBuilder {
             sql_parameters: self.sql_parameters,
             result_configuration: self.result_configuration,
             compute_configuration: self.compute_configuration,
+            query_compute_payer_account_id: self.query_compute_payer_account_id,
         })
     }
 }
@@ -160,6 +183,7 @@ impl ::std::fmt::Debug for StartProtectedQueryInputBuilder {
         formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("result_configuration", &self.result_configuration);
         formatter.field("compute_configuration", &self.compute_configuration);
+        formatter.field("query_compute_payer_account_id", &self.query_compute_payer_account_id);
         formatter.finish()
     }
 }

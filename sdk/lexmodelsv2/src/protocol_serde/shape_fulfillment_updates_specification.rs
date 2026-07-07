@@ -2,10 +2,16 @@
 pub(crate) fn de_fulfillment_updates_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FulfillmentUpdatesSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -21,12 +27,12 @@ where
                             }
                             "startResponse" => {
                                 builder = builder.set_start_response(
-                                    crate::protocol_serde::shape_fulfillment_start_response_specification::de_fulfillment_start_response_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_fulfillment_start_response_specification::de_fulfillment_start_response_specification(tokens, _value, depth + 1)?
                                 );
                             }
                             "updateResponse" => {
                                 builder = builder.set_update_response(
-                                    crate::protocol_serde::shape_fulfillment_update_response_specification::de_fulfillment_update_response_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_fulfillment_update_response_specification::de_fulfillment_update_response_specification(tokens, _value, depth + 1)?
                                 );
                             }
                             "timeoutInSeconds" => {

@@ -326,6 +326,15 @@ pub(crate) fn delete_prompt_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::delete_resource_policy::builders::DeleteResourcePolicyOutputBuilder,
+) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyOutputBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_agent_output_output_correct_errors(
     mut builder: crate::operation::get_agent::builders::GetAgentOutputBuilder,
 ) -> crate::operation::get_agent::builders::GetAgentOutputBuilder {
@@ -542,6 +551,21 @@ pub(crate) fn get_prompt_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder,
+) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
+    }
+    if builder.revision_id.is_none() {
+        builder.revision_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_agent_action_groups_output_output_correct_errors(
     mut builder: crate::operation::list_agent_action_groups::builders::ListAgentActionGroupsOutputBuilder,
 ) -> crate::operation::list_agent_action_groups::builders::ListAgentActionGroupsOutputBuilder {
@@ -694,6 +718,18 @@ pub(crate) fn prepare_flow_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::FlowStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn put_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder,
+) -> crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.revision_id.is_none() {
+        builder.revision_id = Some(Default::default())
     }
     builder
 }
@@ -1939,6 +1975,15 @@ pub(crate) fn cyclic_connection_flow_validation_details_correct_errors(
     builder
 }
 
+pub(crate) fn deletion_protection_configuration_correct_errors(
+    mut builder: crate::types::builders::DeletionProtectionConfigurationBuilder,
+) -> crate::types::builders::DeletionProtectionConfigurationBuilder {
+    if builder.deletion_protection_status.is_none() {
+        builder.deletion_protection_status = "no value was set".parse::<crate::types::EnabledOrDisabledState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn duplicate_condition_expression_flow_validation_details_correct_errors(
     mut builder: crate::types::builders::DuplicateConditionExpressionFlowValidationDetailsBuilder,
 ) -> crate::types::builders::DuplicateConditionExpressionFlowValidationDetailsBuilder {
@@ -2540,6 +2585,15 @@ pub(crate) fn agent_flow_node_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn audio_extraction_configuration_correct_errors(
+    mut builder: crate::types::builders::AudioExtractionConfigurationBuilder,
+) -> crate::types::builders::AudioExtractionConfigurationBuilder {
+    if builder.audio_extraction_status.is_none() {
+        builder.audio_extraction_status = "no value was set".parse::<crate::types::EnabledOrDisabledState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn cache_point_block_correct_errors(
     mut builder: crate::types::builders::CachePointBlockBuilder,
 ) -> crate::types::builders::CachePointBlockBuilder {
@@ -2620,6 +2674,15 @@ pub(crate) fn flow_node_output_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::FlowNodeIoDataType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn image_extraction_configuration_correct_errors(
+    mut builder: crate::types::builders::ImageExtractionConfigurationBuilder,
+) -> crate::types::builders::ImageExtractionConfigurationBuilder {
+    if builder.image_extraction_status.is_none() {
+        builder.image_extraction_status = "no value was set".parse::<crate::types::EnabledOrDisabledState>().ok()
     }
     builder
 }
@@ -2755,6 +2818,15 @@ pub(crate) fn transformation_correct_errors(
     }
     if builder.step_to_apply.is_none() {
         builder.step_to_apply = "no value was set".parse::<crate::types::StepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn video_extraction_configuration_correct_errors(
+    mut builder: crate::types::builders::VideoExtractionConfigurationBuilder,
+) -> crate::types::builders::VideoExtractionConfigurationBuilder {
+    if builder.video_extraction_status.is_none() {
+        builder.video_extraction_status = "no value was set".parse::<crate::types::EnabledOrDisabledState>().ok()
     }
     builder
 }

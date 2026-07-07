@@ -2,10 +2,16 @@
 pub(crate) fn de_provider_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProviderDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,14 +37,18 @@ where
                     }
                     variant = match key.as_ref() {
                         "JiraCloud" => Some(crate::types::ProviderDetail::JiraCloud(
-                            crate::protocol_serde::shape_jira_cloud_detail::de_jira_cloud_detail(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_jira_cloud_detail::de_jira_cloud_detail(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'JiraCloud' cannot be null")
                             })?,
                         )),
                         "ServiceNow" => Some(crate::types::ProviderDetail::ServiceNow(
-                            crate::protocol_serde::shape_service_now_detail::de_service_now_detail(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_service_now_detail::de_service_now_detail(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ServiceNow' cannot be null")
                             })?,
+                        )),
+                        "Azure" => Some(crate::types::ProviderDetail::Azure(
+                            crate::protocol_serde::shape_azure_detail::de_azure_detail(tokens, _value, depth + 1)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Azure' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

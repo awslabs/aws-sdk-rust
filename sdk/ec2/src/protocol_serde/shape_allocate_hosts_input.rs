@@ -57,32 +57,37 @@ pub fn ser_allocate_hosts_input_input_input(
         scope_19.string(var_20);
     }
     #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("AutoPlacement");
-    if let Some(var_22) = &input.auto_placement {
-        scope_21.string(var_22.as_str());
+    let mut scope_21 = writer.prefix("CpuOptions");
+    if let Some(var_22) = &input.cpu_options {
+        crate::protocol_serde::shape_host_cpu_options_request::ser_host_cpu_options_request(scope_21, var_22)?;
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("ClientToken");
-    if let Some(var_24) = &input.client_token {
-        scope_23.string(var_24);
+    let mut scope_23 = writer.prefix("AutoPlacement");
+    if let Some(var_24) = &input.auto_placement {
+        scope_23.string(var_24.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("InstanceType");
-    if let Some(var_26) = &input.instance_type {
+    let mut scope_25 = writer.prefix("ClientToken");
+    if let Some(var_26) = &input.client_token {
         scope_25.string(var_26);
     }
     #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("Quantity");
-    if let Some(var_28) = &input.quantity {
-        scope_27.number(
+    let mut scope_27 = writer.prefix("InstanceType");
+    if let Some(var_28) = &input.instance_type {
+        scope_27.string(var_28);
+    }
+    #[allow(unused_mut)]
+    let mut scope_29 = writer.prefix("Quantity");
+    if let Some(var_30) = &input.quantity {
+        scope_29.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_28).into()),
+            ::aws_smithy_types::Number::NegInt((*var_30).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_29 = writer.prefix("AvailabilityZone");
-    if let Some(var_30) = &input.availability_zone {
-        scope_29.string(var_30);
+    let mut scope_31 = writer.prefix("AvailabilityZone");
+    if let Some(var_32) = &input.availability_zone {
+        scope_31.string(var_32);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

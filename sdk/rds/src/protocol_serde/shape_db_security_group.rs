@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_security_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbSecurityGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbSecurityGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_db_security_group(
             s if s.matches("EC2SecurityGroups") /* EC2SecurityGroups com.amazonaws.rds#DBSecurityGroup$EC2SecurityGroups */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_ec2_security_group_list::de_ec2_security_group_list(&mut tag)
+                        crate::protocol_serde::shape_ec2_security_group_list::de_ec2_security_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_db_security_group(
             s if s.matches("IPRanges") /* IPRanges com.amazonaws.rds#DBSecurityGroup$IPRanges */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_ip_range_list::de_ip_range_list(&mut tag)
+                        crate::protocol_serde::shape_ip_range_list::de_ip_range_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

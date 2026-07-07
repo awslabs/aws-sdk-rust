@@ -24,10 +24,16 @@ pub fn ser_source(
 pub(crate) fn de_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Source>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -53,12 +59,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "eksConfiguration" => Some(crate::types::Source::EksConfiguration(
-                            crate::protocol_serde::shape_eks_configuration::de_eks_configuration(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_eks_configuration::de_eks_configuration(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eksConfiguration' cannot be null")
                             })?,
                         )),
                         "vpcConfiguration" => Some(crate::types::Source::VpcConfiguration(
-                            crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vpcConfiguration' cannot be null")
                             })?,
                         )),

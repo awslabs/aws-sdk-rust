@@ -2,10 +2,16 @@
 pub(crate) fn de_capacity_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CapacityProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,12 +51,12 @@ where
                         }
                         "autoScalingGroupProvider" => {
                             builder = builder.set_auto_scaling_group_provider(
-                                crate::protocol_serde::shape_auto_scaling_group_provider::de_auto_scaling_group_provider(tokens, _value)?,
+                                crate::protocol_serde::shape_auto_scaling_group_provider::de_auto_scaling_group_provider(tokens, _value, depth + 1)?,
                             );
                         }
                         "managedInstancesProvider" => {
                             builder = builder.set_managed_instances_provider(
-                                crate::protocol_serde::shape_managed_instances_provider::de_managed_instances_provider(tokens, _value)?,
+                                crate::protocol_serde::shape_managed_instances_provider::de_managed_instances_provider(tokens, _value, depth + 1)?,
                             );
                         }
                         "updateStatus" => {
@@ -68,7 +74,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "type" => {
                             builder = builder.set_type(

@@ -22,7 +22,7 @@ impl crate::operation::list_discovered_endpoints::builders::ListDiscoveredEndpoi
 }
 /// Fluent builder constructing a request to `ListDiscoveredEndpoints`.
 ///
-/// Lists discovered endpoints associated with a pentest job with optional URI prefix filtering
+/// <p>Returns a paginated list of endpoints discovered during a pentest job execution.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDiscoveredEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl ListDiscoveredEndpointsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_discovered_endpoints::paginator::ListDiscoveredEndpointsPaginator {
         crate::operation::list_discovered_endpoints::paginator::ListDiscoveredEndpointsPaginator::new(self.handle, self.inner)
     }
-    /// Maximum number of discovered endpoints to return in a single request (default: 50)
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of discovered endpoints to return in a single request (default: 50)
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of discovered endpoints to return in a single request (default: 50)
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// Identifier of the pentest job for which to retrieve discovered endpoints
+    /// <p>The unique identifier of the pentest job to list discovered endpoints for.</p>
     pub fn pentest_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pentest_job_id(input.into());
         self
     }
-    /// Identifier of the pentest job for which to retrieve discovered endpoints
+    /// <p>The unique identifier of the pentest job to list discovered endpoints for.</p>
     pub fn set_pentest_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pentest_job_id(input);
         self
     }
-    /// Identifier of the pentest job for which to retrieve discovered endpoints
+    /// <p>The unique identifier of the pentest job to list discovered endpoints for.</p>
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pentest_job_id()
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Optional URI prefix filter to narrow down results
+    /// <p>A prefix to filter discovered endpoints by URI.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
         self
     }
-    /// Optional URI prefix filter to narrow down results
+    /// <p>A prefix to filter discovered endpoints by URI.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
     }
-    /// Optional URI prefix filter to narrow down results
+    /// <p>A prefix to filter discovered endpoints by URI.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prefix()
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

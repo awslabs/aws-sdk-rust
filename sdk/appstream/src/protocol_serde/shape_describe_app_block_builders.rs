@@ -101,6 +101,8 @@ pub(crate) fn de_describe_app_block_builders(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -108,7 +110,9 @@ pub(crate) fn de_describe_app_block_builders(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AppBlockBuilders" => {
                     builder = builder.set_app_block_builders(crate::protocol_serde::shape_app_block_builder_list::de_app_block_builder_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NextToken" => {

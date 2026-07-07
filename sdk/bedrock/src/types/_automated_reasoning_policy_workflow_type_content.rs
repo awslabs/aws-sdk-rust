@@ -8,6 +8,8 @@ pub enum AutomatedReasoningPolicyWorkflowTypeContent {
     Documents(::std::vec::Vec<crate::types::AutomatedReasoningPolicyBuildWorkflowDocument>),
     /// <p>The content configuration for generating a fidelity report workflow. This can include source documents to analyze or an existing fidelity report to update with a new policy definition.</p>
     GenerateFidelityReportContent(crate::types::AutomatedReasoningPolicyGenerateFidelityReportContent),
+    /// <p>Content configuration to start an iterative policy refinement workflow that uses generative AI to automatically make changes to the policy based on test results and the optional feedback provided.</p>
+    IterativeRefinementContent(crate::types::AutomatedReasoningPolicyIterativeRefinementContent),
     /// <p>The assets and instructions needed for a policy repair workflow, including repair annotations and guidance.</p>
     PolicyRepairAssets(crate::types::AutomatedReasoningPolicyBuildWorkflowRepairContent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -48,6 +50,19 @@ impl AutomatedReasoningPolicyWorkflowTypeContent {
     /// Returns true if this is a [`GenerateFidelityReportContent`](crate::types::AutomatedReasoningPolicyWorkflowTypeContent::GenerateFidelityReportContent).
     pub fn is_generate_fidelity_report_content(&self) -> bool {
         self.as_generate_fidelity_report_content().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IterativeRefinementContent`](crate::types::AutomatedReasoningPolicyWorkflowTypeContent::IterativeRefinementContent), extracting the inner [`AutomatedReasoningPolicyIterativeRefinementContent`](crate::types::AutomatedReasoningPolicyIterativeRefinementContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_iterative_refinement_content(&self) -> ::std::result::Result<&crate::types::AutomatedReasoningPolicyIterativeRefinementContent, &Self> {
+        if let AutomatedReasoningPolicyWorkflowTypeContent::IterativeRefinementContent(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IterativeRefinementContent`](crate::types::AutomatedReasoningPolicyWorkflowTypeContent::IterativeRefinementContent).
+    pub fn is_iterative_refinement_content(&self) -> bool {
+        self.as_iterative_refinement_content().is_ok()
     }
     /// Tries to convert the enum instance into [`PolicyRepairAssets`](crate::types::AutomatedReasoningPolicyWorkflowTypeContent::PolicyRepairAssets), extracting the inner [`AutomatedReasoningPolicyBuildWorkflowRepairContent`](crate::types::AutomatedReasoningPolicyBuildWorkflowRepairContent).
     /// Returns `Err(&Self)` if it can't be converted.

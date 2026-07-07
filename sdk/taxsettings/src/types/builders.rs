@@ -73,6 +73,14 @@ pub use crate::types::_greece_additional_info::GreeceAdditionalInfoBuilder;
 
 pub use crate::types::_uzbekistan_additional_info::UzbekistanAdditionalInfoBuilder;
 
+pub use crate::types::_philippines_additional_info::PhilippinesAdditionalInfoBuilder;
+
+pub use crate::types::_belgium_additional_info::BelgiumAdditionalInfoBuilder;
+
+pub use crate::types::_chile_additional_info::ChileAdditionalInfoBuilder;
+
+pub use crate::types::_france_additional_info::FranceAdditionalInfoBuilder;
+
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfoBuilder;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfoBuilder;

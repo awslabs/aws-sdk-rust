@@ -34,10 +34,16 @@ pub fn ser_table_reference(
 pub(crate) fn de_table_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TableReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -63,18 +69,19 @@ where
                     }
                     variant = match key.as_ref() {
                         "glue" => Some(crate::types::TableReference::Glue(
-                            crate::protocol_serde::shape_glue_table_reference::de_glue_table_reference(tokens, _value)?
+                            crate::protocol_serde::shape_glue_table_reference::de_glue_table_reference(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'glue' cannot be null"))?,
                         )),
                         "snowflake" => Some(crate::types::TableReference::Snowflake(
-                            crate::protocol_serde::shape_snowflake_table_reference::de_snowflake_table_reference(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'snowflake' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_snowflake_table_reference::de_snowflake_table_reference(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'snowflake' cannot be null")
+                                })?,
                         )),
                         "athena" => Some(crate::types::TableReference::Athena(
-                            crate::protocol_serde::shape_athena_table_reference::de_athena_table_reference(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'athena' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_athena_table_reference::de_athena_table_reference(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'athena' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

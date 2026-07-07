@@ -8,6 +8,8 @@ pub struct EvaluationFormScoringStrategy {
     pub mode: crate::types::EvaluationFormScoringMode,
     /// <p>The scoring status of the evaluation form.</p>
     pub status: crate::types::EvaluationFormScoringStatus,
+    /// <p>The score thresholds for performance categories.</p>
+    pub score_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>>,
 }
 impl EvaluationFormScoringStrategy {
     /// <p>The scoring mode of the evaluation form.</p>
@@ -17,6 +19,12 @@ impl EvaluationFormScoringStrategy {
     /// <p>The scoring status of the evaluation form.</p>
     pub fn status(&self) -> &crate::types::EvaluationFormScoringStatus {
         &self.status
+    }
+    /// <p>The score thresholds for performance categories.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.score_thresholds.is_none()`.
+    pub fn score_thresholds(&self) -> &[crate::types::EvaluationFormScoreThreshold] {
+        self.score_thresholds.as_deref().unwrap_or_default()
     }
 }
 impl EvaluationFormScoringStrategy {
@@ -32,6 +40,7 @@ impl EvaluationFormScoringStrategy {
 pub struct EvaluationFormScoringStrategyBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::EvaluationFormScoringMode>,
     pub(crate) status: ::std::option::Option<crate::types::EvaluationFormScoringStatus>,
+    pub(crate) score_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>>,
 }
 impl EvaluationFormScoringStrategyBuilder {
     /// <p>The scoring mode of the evaluation form.</p>
@@ -64,6 +73,26 @@ impl EvaluationFormScoringStrategyBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStatus> {
         &self.status
     }
+    /// Appends an item to `score_thresholds`.
+    ///
+    /// To override the contents of this collection use [`set_score_thresholds`](Self::set_score_thresholds).
+    ///
+    /// <p>The score thresholds for performance categories.</p>
+    pub fn score_thresholds(mut self, input: crate::types::EvaluationFormScoreThreshold) -> Self {
+        let mut v = self.score_thresholds.unwrap_or_default();
+        v.push(input);
+        self.score_thresholds = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The score thresholds for performance categories.</p>
+    pub fn set_score_thresholds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>>) -> Self {
+        self.score_thresholds = input;
+        self
+    }
+    /// <p>The score thresholds for performance categories.</p>
+    pub fn get_score_thresholds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>> {
+        &self.score_thresholds
+    }
     /// Consumes the builder and constructs a [`EvaluationFormScoringStrategy`](crate::types::EvaluationFormScoringStrategy).
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::EvaluationFormScoringStrategyBuilder::mode)
@@ -82,6 +111,7 @@ impl EvaluationFormScoringStrategyBuilder {
                     "status was not specified but it is required when building EvaluationFormScoringStrategy",
                 )
             })?,
+            score_thresholds: self.score_thresholds,
         })
     }
 }

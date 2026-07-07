@@ -164,6 +164,8 @@ pub(crate) fn de_list_named_shadows_for_thing(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -177,7 +179,11 @@ pub(crate) fn de_list_named_shadows_for_thing(
                     );
                 }
                 "results" => {
-                    builder = builder.set_results(crate::protocol_serde::shape_named_shadow_list::de_named_shadow_list(tokens, _value)?);
+                    builder = builder.set_results(crate::protocol_serde::shape_named_shadow_list::de_named_shadow_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "timestamp" => {
                     builder = builder.set_timestamp(

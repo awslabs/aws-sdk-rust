@@ -112,6 +112,8 @@ pub(crate) fn de_get_command_execution(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -158,12 +160,13 @@ pub(crate) fn de_get_command_execution(
                 }
                 "parameters" => {
                     builder = builder.set_parameters(
-                        crate::protocol_serde::shape_command_execution_parameter_map::de_command_execution_parameter_map(tokens, _value)?,
+                        crate::protocol_serde::shape_command_execution_parameter_map::de_command_execution_parameter_map(tokens, _value, depth + 1)?,
                     );
                 }
                 "result" => {
-                    builder = builder
-                        .set_result(crate::protocol_serde::shape_command_execution_result_map::de_command_execution_result_map(tokens, _value)?);
+                    builder = builder.set_result(
+                        crate::protocol_serde::shape_command_execution_result_map::de_command_execution_result_map(tokens, _value, depth + 1)?,
+                    );
                 }
                 "startedAt" => {
                     builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -179,7 +182,7 @@ pub(crate) fn de_get_command_execution(
                     );
                 }
                 "statusReason" => {
-                    builder = builder.set_status_reason(crate::protocol_serde::shape_status_reason::de_status_reason(tokens, _value)?);
+                    builder = builder.set_status_reason(crate::protocol_serde::shape_status_reason::de_status_reason(tokens, _value, depth + 1)?);
                 }
                 "targetArn" => {
                     builder = builder.set_target_arn(

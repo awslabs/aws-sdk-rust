@@ -112,6 +112,17 @@ pub struct ProjectEnvironment {
     pub image_pull_credentials_type: ::std::option::Option<crate::types::ImagePullCredentialsType>,
     /// <p>A DockerServer object to use for this build project.</p>
     pub docker_server: ::std::option::Option<crate::types::DockerServer>,
+    /// <p>The host operating system kernel used for on-demand builds in the build project. The host kernel does not affect the build environment operating system, which is determined by the image you specify. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_4</code>: Runs on an Amazon Linux 2 host (kernel 4.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_6</code>: Runs on an Amazon Linux 2023 host (kernel 6.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_LATEST</code>: Runs on the latest supported host kernel.</p></li>
+    /// </ul>
+    /// <p>This setting applies to the <code>LINUX_CONTAINER</code>, <code>ARM_CONTAINER</code>, <code>LINUX_EC2</code>, and <code>ARM_EC2</code> environment types. It is not applicable to Windows, Lambda, or Mac environment types.</p>
+    pub host_kernel: ::std::option::Option<crate::types::HostKernel>,
 }
 impl ProjectEnvironment {
     /// <p>The type of build environment to use for related builds.</p><note>
@@ -247,6 +258,19 @@ impl ProjectEnvironment {
     pub fn docker_server(&self) -> ::std::option::Option<&crate::types::DockerServer> {
         self.docker_server.as_ref()
     }
+    /// <p>The host operating system kernel used for on-demand builds in the build project. The host kernel does not affect the build environment operating system, which is determined by the image you specify. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_4</code>: Runs on an Amazon Linux 2 host (kernel 4.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_6</code>: Runs on an Amazon Linux 2023 host (kernel 6.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_LATEST</code>: Runs on the latest supported host kernel.</p></li>
+    /// </ul>
+    /// <p>This setting applies to the <code>LINUX_CONTAINER</code>, <code>ARM_CONTAINER</code>, <code>LINUX_EC2</code>, and <code>ARM_EC2</code> environment types. It is not applicable to Windows, Lambda, or Mac environment types.</p>
+    pub fn host_kernel(&self) -> ::std::option::Option<&crate::types::HostKernel> {
+        self.host_kernel.as_ref()
+    }
 }
 impl ProjectEnvironment {
     /// Creates a new builder-style object to manufacture [`ProjectEnvironment`](crate::types::ProjectEnvironment).
@@ -270,6 +294,7 @@ pub struct ProjectEnvironmentBuilder {
     pub(crate) registry_credential: ::std::option::Option<crate::types::RegistryCredential>,
     pub(crate) image_pull_credentials_type: ::std::option::Option<crate::types::ImagePullCredentialsType>,
     pub(crate) docker_server: ::std::option::Option<crate::types::DockerServer>,
+    pub(crate) host_kernel: ::std::option::Option<crate::types::HostKernel>,
 }
 impl ProjectEnvironmentBuilder {
     /// <p>The type of build environment to use for related builds.</p><note>
@@ -693,6 +718,47 @@ impl ProjectEnvironmentBuilder {
     pub fn get_docker_server(&self) -> &::std::option::Option<crate::types::DockerServer> {
         &self.docker_server
     }
+    /// <p>The host operating system kernel used for on-demand builds in the build project. The host kernel does not affect the build environment operating system, which is determined by the image you specify. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_4</code>: Runs on an Amazon Linux 2 host (kernel 4.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_6</code>: Runs on an Amazon Linux 2023 host (kernel 6.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_LATEST</code>: Runs on the latest supported host kernel.</p></li>
+    /// </ul>
+    /// <p>This setting applies to the <code>LINUX_CONTAINER</code>, <code>ARM_CONTAINER</code>, <code>LINUX_EC2</code>, and <code>ARM_EC2</code> environment types. It is not applicable to Windows, Lambda, or Mac environment types.</p>
+    pub fn host_kernel(mut self, input: crate::types::HostKernel) -> Self {
+        self.host_kernel = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The host operating system kernel used for on-demand builds in the build project. The host kernel does not affect the build environment operating system, which is determined by the image you specify. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_4</code>: Runs on an Amazon Linux 2 host (kernel 4.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_6</code>: Runs on an Amazon Linux 2023 host (kernel 6.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_LATEST</code>: Runs on the latest supported host kernel.</p></li>
+    /// </ul>
+    /// <p>This setting applies to the <code>LINUX_CONTAINER</code>, <code>ARM_CONTAINER</code>, <code>LINUX_EC2</code>, and <code>ARM_EC2</code> environment types. It is not applicable to Windows, Lambda, or Mac environment types.</p>
+    pub fn set_host_kernel(mut self, input: ::std::option::Option<crate::types::HostKernel>) -> Self {
+        self.host_kernel = input;
+        self
+    }
+    /// <p>The host operating system kernel used for on-demand builds in the build project. The host kernel does not affect the build environment operating system, which is determined by the image you specify. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_4</code>: Runs on an Amazon Linux 2 host (kernel 4.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_6</code>: Runs on an Amazon Linux 2023 host (kernel 6.x).</p></li>
+    /// <li>
+    /// <p><code>LINUX_KERNEL_LATEST</code>: Runs on the latest supported host kernel.</p></li>
+    /// </ul>
+    /// <p>This setting applies to the <code>LINUX_CONTAINER</code>, <code>ARM_CONTAINER</code>, <code>LINUX_EC2</code>, and <code>ARM_EC2</code> environment types. It is not applicable to Windows, Lambda, or Mac environment types.</p>
+    pub fn get_host_kernel(&self) -> &::std::option::Option<crate::types::HostKernel> {
+        &self.host_kernel
+    }
     /// Consumes the builder and constructs a [`ProjectEnvironment`](crate::types::ProjectEnvironment).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ProjectEnvironmentBuilder::type)
@@ -726,6 +792,7 @@ impl ProjectEnvironmentBuilder {
             registry_credential: self.registry_credential,
             image_pull_credentials_type: self.image_pull_credentials_type,
             docker_server: self.docker_server,
+            host_kernel: self.host_kernel,
         })
     }
 }

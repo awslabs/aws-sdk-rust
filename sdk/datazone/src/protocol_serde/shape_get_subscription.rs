@@ -132,6 +132,8 @@ pub(crate) fn de_get_subscription(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -175,11 +177,17 @@ pub(crate) fn de_get_subscription(
                     );
                 }
                 "subscribedListing" => {
-                    builder = builder.set_subscribed_listing(crate::protocol_serde::shape_subscribed_listing::de_subscribed_listing(tokens, _value)?);
+                    builder = builder.set_subscribed_listing(crate::protocol_serde::shape_subscribed_listing::de_subscribed_listing(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "subscribedPrincipal" => {
                     builder = builder.set_subscribed_principal(crate::protocol_serde::shape_subscribed_principal::de_subscribed_principal(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "subscriptionRequestId" => {

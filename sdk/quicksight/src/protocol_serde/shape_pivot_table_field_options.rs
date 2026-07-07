@@ -48,10 +48,16 @@ pub fn ser_pivot_table_field_options(
 pub(crate) fn de_pivot_table_field_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PivotTableFieldOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,17 +69,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SelectedFieldOptions" => {
                             builder = builder.set_selected_field_options(
-                                crate::protocol_serde::shape_pivot_table_field_option_list::de_pivot_table_field_option_list(tokens, _value)?,
+                                crate::protocol_serde::shape_pivot_table_field_option_list::de_pivot_table_field_option_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DataPathOptions" => {
                             builder = builder.set_data_path_options(
-                                crate::protocol_serde::shape_pivot_table_data_path_option_list::de_pivot_table_data_path_option_list(tokens, _value)?,
+                                crate::protocol_serde::shape_pivot_table_data_path_option_list::de_pivot_table_data_path_option_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CollapseStateOptions" => {
                             builder = builder.set_collapse_state_options(
-                                    crate::protocol_serde::shape_pivot_table_field_collapse_state_option_list::de_pivot_table_field_collapse_state_option_list(tokens, _value)?
+                                    crate::protocol_serde::shape_pivot_table_field_collapse_state_option_list::de_pivot_table_field_collapse_state_option_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

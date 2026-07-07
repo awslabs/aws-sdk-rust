@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_endpoint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Endpoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Endpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -38,7 +42,7 @@ pub fn de_endpoint(
             s if s.matches("VpcEndpoints") /* VpcEndpoints com.amazonaws.redshift#Endpoint$VpcEndpoints */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_vpc_endpoints_list::de_vpc_endpoints_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_endpoints_list::de_vpc_endpoints_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

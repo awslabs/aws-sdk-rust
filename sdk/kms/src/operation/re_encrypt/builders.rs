@@ -36,7 +36,9 @@ impl crate::operation::re_encrypt::builders::ReEncryptInputBuilder {
 /// <p>You are not required to supply the key ID and encryption algorithm when you decrypt with symmetric encryption KMS keys because KMS stores this information in the ciphertext blob. KMS cannot store metadata in ciphertext generated with asymmetric keys. The standard format for asymmetric key ciphertext does not include configurable fields.</p>
 /// </important></li>
 /// </ul>
-/// <p>The KMS key that you use for this operation must be in a compatible key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+/// <p>The KMS key that you use for this operation must be in a compatible key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p><note>
+/// <p>When using grants with <code>SourceArn</code> constraints for <code>ReEncrypt</code> operations, the grants on both the source KMS key (for <code>ReEncryptFrom</code>) and the destination KMS key (for <code>ReEncryptTo</code>) must specify the same <code>SourceArn</code> value.</p>
+/// </note>
 /// <p><b>Cross-account use</b>: Yes. The source KMS key and destination KMS key can be in different Amazon Web Services accounts. Either or both KMS keys can be in a different account than the caller. To specify a KMS key in a different account, use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias ARN</a>. A short <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key ID</a> is also acceptable for the source key when decrypting symmetric ciphertexts, though using a full key ARN is recommended to be more explicit about the intended KMS key.</p>
 /// <p><b>Required permissions</b>:</p>
 /// <ul>

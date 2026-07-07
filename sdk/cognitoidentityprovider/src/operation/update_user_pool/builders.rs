@@ -23,8 +23,9 @@ impl crate::operation::update_user_pool::builders::UpdateUserPoolInputBuilder {
 /// Fluent builder constructing a request to `UpdateUserPool`.
 ///
 /// <p>Updates the configuration of a user pool. To avoid setting parameters to Amazon Cognito defaults, construct this API request to pass the existing configuration of your user pool, modified to include the changes that you want to make.</p><important>
-/// <p>With the exception of <code>UserPoolTier</code>, if you don't provide a value for an attribute, Amazon Cognito sets it to its default value.</p>
-/// </important> <note>
+/// <p>If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.</p>
+/// </important>
+/// <p>In secondary regions for user pools with multi-region replication, regional configurations for email, SMS, Lambda functions, and tags can be updated. Both global and regional settings must be provided as inputs, with global settings required to match existing values to maintain consistency across replicas.</p><note>
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
 /// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
 /// </note> <note>
@@ -450,5 +451,33 @@ impl UpdateUserPoolFluentBuilder {
     /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
     pub fn get_user_pool_tier(&self) -> &::std::option::Option<crate::types::UserPoolTierType> {
         self.inner.get_user_pool_tier()
+    }
+    /// <p>The key configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn key_configuration(mut self, input: crate::types::KeyConfigurationType) -> Self {
+        self.inner = self.inner.key_configuration(input);
+        self
+    }
+    /// <p>The key configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn set_key_configuration(mut self, input: ::std::option::Option<crate::types::KeyConfigurationType>) -> Self {
+        self.inner = self.inner.set_key_configuration(input);
+        self
+    }
+    /// <p>The key configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn get_key_configuration(&self) -> &::std::option::Option<crate::types::KeyConfigurationType> {
+        self.inner.get_key_configuration()
+    }
+    /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn issuer_configuration(mut self, input: crate::types::IssuerConfigurationType) -> Self {
+        self.inner = self.inner.issuer_configuration(input);
+        self
+    }
+    /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn set_issuer_configuration(mut self, input: ::std::option::Option<crate::types::IssuerConfigurationType>) -> Self {
+        self.inner = self.inner.set_issuer_configuration(input);
+        self
+    }
+    /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
+    pub fn get_issuer_configuration(&self) -> &::std::option::Option<crate::types::IssuerConfigurationType> {
+        self.inner.get_issuer_configuration()
     }
 }

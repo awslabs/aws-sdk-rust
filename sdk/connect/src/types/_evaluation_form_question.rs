@@ -20,6 +20,8 @@ pub struct EvaluationFormQuestion {
     pub enablement: ::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration>,
     /// <p>The scoring weight of the section.</p>
     pub weight: f64,
+    /// <p>The scoring configuration of the question.</p>
+    pub scoring_configuration: ::std::option::Option<crate::types::EvaluationFormQuestionScoringConfiguration>,
 }
 impl EvaluationFormQuestion {
     /// <p>The title of the question.</p>
@@ -56,6 +58,10 @@ impl EvaluationFormQuestion {
     pub fn weight(&self) -> f64 {
         self.weight
     }
+    /// <p>The scoring configuration of the question.</p>
+    pub fn scoring_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormQuestionScoringConfiguration> {
+        self.scoring_configuration.as_ref()
+    }
 }
 impl EvaluationFormQuestion {
     /// Creates a new builder-style object to manufacture [`EvaluationFormQuestion`](crate::types::EvaluationFormQuestion).
@@ -76,6 +82,7 @@ pub struct EvaluationFormQuestionBuilder {
     pub(crate) question_type_properties: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
     pub(crate) enablement: ::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration>,
     pub(crate) weight: ::std::option::Option<f64>,
+    pub(crate) scoring_configuration: ::std::option::Option<crate::types::EvaluationFormQuestionScoringConfiguration>,
 }
 impl EvaluationFormQuestionBuilder {
     /// <p>The title of the question.</p>
@@ -193,6 +200,20 @@ impl EvaluationFormQuestionBuilder {
     pub fn get_weight(&self) -> &::std::option::Option<f64> {
         &self.weight
     }
+    /// <p>The scoring configuration of the question.</p>
+    pub fn scoring_configuration(mut self, input: crate::types::EvaluationFormQuestionScoringConfiguration) -> Self {
+        self.scoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scoring configuration of the question.</p>
+    pub fn set_scoring_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormQuestionScoringConfiguration>) -> Self {
+        self.scoring_configuration = input;
+        self
+    }
+    /// <p>The scoring configuration of the question.</p>
+    pub fn get_scoring_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormQuestionScoringConfiguration> {
+        &self.scoring_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormQuestion`](crate::types::EvaluationFormQuestion).
     /// This method will fail if any of the following fields are not set:
     /// - [`title`](crate::types::builders::EvaluationFormQuestionBuilder::title)
@@ -223,6 +244,7 @@ impl EvaluationFormQuestionBuilder {
             question_type_properties: self.question_type_properties,
             enablement: self.enablement,
             weight: self.weight.unwrap_or_default(),
+            scoring_configuration: self.scoring_configuration,
         })
     }
 }

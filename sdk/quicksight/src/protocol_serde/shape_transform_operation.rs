@@ -64,10 +64,16 @@ pub fn ser_transform_operation(
 pub(crate) fn de_transform_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TransformOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -93,47 +99,55 @@ where
                     }
                     variant = match key.as_ref() {
                         "ProjectOperation" => Some(crate::types::TransformOperation::ProjectOperation(
-                            crate::protocol_serde::shape_project_operation::de_project_operation(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_project_operation::de_project_operation(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ProjectOperation' cannot be null")
                             })?,
                         )),
                         "FilterOperation" => Some(crate::types::TransformOperation::FilterOperation(
-                            crate::protocol_serde::shape_filter_operation::de_filter_operation(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_operation::de_filter_operation(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'FilterOperation' cannot be null")
                             })?,
                         )),
                         "CreateColumnsOperation" => Some(crate::types::TransformOperation::CreateColumnsOperation(
-                            crate::protocol_serde::shape_create_columns_operation::de_create_columns_operation(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CreateColumnsOperation' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_create_columns_operation::de_create_columns_operation(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'CreateColumnsOperation' cannot be null",
+                                    )
+                                })?,
                         )),
                         "RenameColumnOperation" => Some(crate::types::TransformOperation::RenameColumnOperation(
-                            crate::protocol_serde::shape_rename_column_operation::de_rename_column_operation(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RenameColumnOperation' cannot be null")
-                            })?,
-                        )),
-                        "CastColumnTypeOperation" => Some(crate::types::TransformOperation::CastColumnTypeOperation(
-                            crate::protocol_serde::shape_cast_column_type_operation::de_cast_column_type_operation(tokens, _value)?.ok_or_else(
+                            crate::protocol_serde::shape_rename_column_operation::de_rename_column_operation(tokens, _value, depth + 1)?.ok_or_else(
                                 || {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'CastColumnTypeOperation' cannot be null",
+                                        "value for 'RenameColumnOperation' cannot be null",
                                     )
                                 },
                             )?,
                         )),
+                        "CastColumnTypeOperation" => Some(crate::types::TransformOperation::CastColumnTypeOperation(
+                            crate::protocol_serde::shape_cast_column_type_operation::de_cast_column_type_operation(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'CastColumnTypeOperation' cannot be null",
+                                    )
+                                })?,
+                        )),
                         "TagColumnOperation" => Some(crate::types::TransformOperation::TagColumnOperation(
-                            crate::protocol_serde::shape_tag_column_operation::de_tag_column_operation(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TagColumnOperation' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_tag_column_operation::de_tag_column_operation(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TagColumnOperation' cannot be null"),
+                            )?,
                         )),
                         "UntagColumnOperation" => Some(crate::types::TransformOperation::UntagColumnOperation(
-                            crate::protocol_serde::shape_untag_column_operation::de_untag_column_operation(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'UntagColumnOperation' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_untag_column_operation::de_untag_column_operation(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'UntagColumnOperation' cannot be null"),
+                            )?,
                         )),
                         "OverrideDatasetParameterOperation" => Some(crate::types::TransformOperation::OverrideDatasetParameterOperation(
                             crate::protocol_serde::shape_override_dataset_parameter_operation::de_override_dataset_parameter_operation(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(

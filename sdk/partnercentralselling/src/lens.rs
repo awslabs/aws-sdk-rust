@@ -79,6 +79,16 @@ pub(crate) fn reflens_list_opportunity_from_engagement_tasks_output_output_next_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_prospecting_from_engagement_tasks_output_output_next_token(
+    input: &crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_resource_snapshot_jobs_output_output_next_token(
     input: &crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -162,6 +172,13 @@ pub(crate) fn lens_list_opportunity_from_engagement_tasks_output_output_task_sum
     input: crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListOpportunityFromEngagementTaskSummary>> {
     let input = input.task_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_prospecting_from_engagement_tasks_output_output_task_summaries(
+    input: crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProspectingTaskSummary>> {
+    let input = input.task_summaries;
     ::std::option::Option::Some(input)
 }
 

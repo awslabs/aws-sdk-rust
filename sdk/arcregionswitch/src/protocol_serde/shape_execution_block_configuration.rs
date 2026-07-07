@@ -59,6 +59,22 @@ pub fn ser_execution_block_configuration(
                 encoder, inner,
             )?;
         }
+        crate::types::ExecutionBlockConfiguration::LambdaEventSourceMappingConfig(inner) => {
+            encoder.str("lambdaEventSourceMappingConfig");
+            crate::protocol_serde::shape_lambda_event_source_mapping_configuration::ser_lambda_event_source_mapping_configuration(encoder, inner)?;
+        }
+        crate::types::ExecutionBlockConfiguration::AuroraServerlessScalingConfig(inner) => {
+            encoder.str("auroraServerlessScalingConfig");
+            crate::protocol_serde::shape_aurora_serverless_scaling_configuration::ser_aurora_serverless_scaling_configuration(encoder, inner)?;
+        }
+        crate::types::ExecutionBlockConfiguration::AuroraProvisionedScalingConfig(inner) => {
+            encoder.str("auroraProvisionedScalingConfig");
+            crate::protocol_serde::shape_aurora_provisioned_scaling_configuration::ser_aurora_provisioned_scaling_configuration(encoder, inner)?;
+        }
+        crate::types::ExecutionBlockConfiguration::NeptuneGlobalDatabaseConfig(inner) => {
+            encoder.str("neptuneGlobalDatabaseConfig");
+            crate::protocol_serde::shape_neptune_global_database_configuration::ser_neptune_global_database_configuration(encoder, inner)?;
+        }
         crate::types::ExecutionBlockConfiguration::Unknown => {
             return ::std::result::Result::Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExecutionBlockConfiguration",
@@ -70,51 +86,80 @@ pub fn ser_execution_block_configuration(
 
 pub(crate) fn de_execution_block_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ExecutionBlockConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+
+    #[allow(unused_variables)]
     fn pair(
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::ExecutionBlockConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "customActionLambdaConfig" => crate::types::ExecutionBlockConfiguration::CustomActionLambdaConfig(
-                crate::protocol_serde::shape_custom_action_lambda_configuration::de_custom_action_lambda_configuration(decoder)?,
+                crate::protocol_serde::shape_custom_action_lambda_configuration::de_custom_action_lambda_configuration(decoder, depth + 1)?,
             ),
             "ec2AsgCapacityIncreaseConfig" => crate::types::ExecutionBlockConfiguration::Ec2AsgCapacityIncreaseConfig(
-                crate::protocol_serde::shape_ec2_asg_capacity_increase_configuration::de_ec2_asg_capacity_increase_configuration(decoder)?,
+                crate::protocol_serde::shape_ec2_asg_capacity_increase_configuration::de_ec2_asg_capacity_increase_configuration(decoder, depth + 1)?,
             ),
             "executionApprovalConfig" => crate::types::ExecutionBlockConfiguration::ExecutionApprovalConfig(
-                crate::protocol_serde::shape_execution_approval_configuration::de_execution_approval_configuration(decoder)?,
+                crate::protocol_serde::shape_execution_approval_configuration::de_execution_approval_configuration(decoder, depth + 1)?,
             ),
             "arcRoutingControlConfig" => crate::types::ExecutionBlockConfiguration::ArcRoutingControlConfig(
-                crate::protocol_serde::shape_arc_routing_control_configuration::de_arc_routing_control_configuration(decoder)?,
+                crate::protocol_serde::shape_arc_routing_control_configuration::de_arc_routing_control_configuration(decoder, depth + 1)?,
             ),
             "globalAuroraConfig" => crate::types::ExecutionBlockConfiguration::GlobalAuroraConfig(
-                crate::protocol_serde::shape_global_aurora_configuration::de_global_aurora_configuration(decoder)?,
+                crate::protocol_serde::shape_global_aurora_configuration::de_global_aurora_configuration(decoder, depth + 1)?,
             ),
             "parallelConfig" => crate::types::ExecutionBlockConfiguration::ParallelConfig(
-                crate::protocol_serde::shape_parallel_execution_block_configuration::de_parallel_execution_block_configuration(decoder)?,
+                crate::protocol_serde::shape_parallel_execution_block_configuration::de_parallel_execution_block_configuration(decoder, depth + 1)?,
             ),
             "regionSwitchPlanConfig" => crate::types::ExecutionBlockConfiguration::RegionSwitchPlanConfig(
-                crate::protocol_serde::shape_region_switch_plan_configuration::de_region_switch_plan_configuration(decoder)?,
+                crate::protocol_serde::shape_region_switch_plan_configuration::de_region_switch_plan_configuration(decoder, depth + 1)?,
             ),
             "ecsCapacityIncreaseConfig" => crate::types::ExecutionBlockConfiguration::EcsCapacityIncreaseConfig(
-                crate::protocol_serde::shape_ecs_capacity_increase_configuration::de_ecs_capacity_increase_configuration(decoder)?,
+                crate::protocol_serde::shape_ecs_capacity_increase_configuration::de_ecs_capacity_increase_configuration(decoder, depth + 1)?,
             ),
             "eksResourceScalingConfig" => crate::types::ExecutionBlockConfiguration::EksResourceScalingConfig(
-                crate::protocol_serde::shape_eks_resource_scaling_configuration::de_eks_resource_scaling_configuration(decoder)?,
+                crate::protocol_serde::shape_eks_resource_scaling_configuration::de_eks_resource_scaling_configuration(decoder, depth + 1)?,
             ),
             "route53HealthCheckConfig" => crate::types::ExecutionBlockConfiguration::Route53HealthCheckConfig(
-                crate::protocol_serde::shape_route53_health_check_configuration::de_route53_health_check_configuration(decoder)?,
+                crate::protocol_serde::shape_route53_health_check_configuration::de_route53_health_check_configuration(decoder, depth + 1)?,
             ),
             "documentDbConfig" => crate::types::ExecutionBlockConfiguration::DocumentDbConfig(
-                crate::protocol_serde::shape_document_db_configuration::de_document_db_configuration(decoder)?,
+                crate::protocol_serde::shape_document_db_configuration::de_document_db_configuration(decoder, depth + 1)?,
             ),
             "rdsPromoteReadReplicaConfig" => crate::types::ExecutionBlockConfiguration::RdsPromoteReadReplicaConfig(
-                crate::protocol_serde::shape_rds_promote_read_replica_configuration::de_rds_promote_read_replica_configuration(decoder)?,
+                crate::protocol_serde::shape_rds_promote_read_replica_configuration::de_rds_promote_read_replica_configuration(decoder, depth + 1)?,
             ),
             "rdsCreateCrossRegionReadReplicaConfig" => crate::types::ExecutionBlockConfiguration::RdsCreateCrossRegionReadReplicaConfig(
                 crate::protocol_serde::shape_rds_create_cross_region_replica_configuration::de_rds_create_cross_region_replica_configuration(
                     decoder,
+                    depth + 1,
                 )?,
+            ),
+            "lambdaEventSourceMappingConfig" => crate::types::ExecutionBlockConfiguration::LambdaEventSourceMappingConfig(
+                crate::protocol_serde::shape_lambda_event_source_mapping_configuration::de_lambda_event_source_mapping_configuration(
+                    decoder,
+                    depth + 1,
+                )?,
+            ),
+            "auroraServerlessScalingConfig" => crate::types::ExecutionBlockConfiguration::AuroraServerlessScalingConfig(
+                crate::protocol_serde::shape_aurora_serverless_scaling_configuration::de_aurora_serverless_scaling_configuration(decoder, depth + 1)?,
+            ),
+            "auroraProvisionedScalingConfig" => crate::types::ExecutionBlockConfiguration::AuroraProvisionedScalingConfig(
+                crate::protocol_serde::shape_aurora_provisioned_scaling_configuration::de_aurora_provisioned_scaling_configuration(
+                    decoder,
+                    depth + 1,
+                )?,
+            ),
+            "neptuneGlobalDatabaseConfig" => crate::types::ExecutionBlockConfiguration::NeptuneGlobalDatabaseConfig(
+                crate::protocol_serde::shape_neptune_global_database_configuration::de_neptune_global_database_configuration(decoder, depth + 1)?,
             ),
             _ => {
                 decoder.skip()?;
@@ -125,7 +170,7 @@ pub(crate) fn de_execution_block_configuration(
 
     match decoder.map()? {
         None => {
-            let variant = pair(decoder)?;
+            let variant = pair(decoder, depth)?;
             match decoder.datatype()? {
                 ::aws_smithy_cbor::data::Type::Break => {
                     decoder.skip()?;
@@ -137,7 +182,7 @@ pub(crate) fn de_execution_block_configuration(
                 )),
             }
         }
-        Some(1) => pair(decoder),
+        Some(1) => pair(decoder, depth),
         Some(_) => Err(::aws_smithy_cbor::decode::DeserializeError::mixed_union_variants(decoder.position())),
     }
 }

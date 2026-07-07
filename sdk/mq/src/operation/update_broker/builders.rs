@@ -247,6 +247,25 @@ impl UpdateBrokerFluentBuilder {
         self.inner.get_maintenance_window_start_time()
     }
     ///
+    /// Appends an item to `ResourceShareArns`.
+    ///
+    /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
+    ///
+    /// <p>The list of resource shares to update on the broker</p>
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resource_share_arns(input.into());
+        self
+    }
+    /// <p>The list of resource shares to update on the broker</p>
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_resource_share_arns(input);
+        self
+    }
+    /// <p>The list of resource shares to update on the broker</p>
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_share_arns()
+    }
+    ///
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).

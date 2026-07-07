@@ -42,10 +42,16 @@ pub fn ser_general_name(
 pub(crate) fn de_general_name<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GeneralName>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -56,7 +62,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "OtherName" => {
-                            builder = builder.set_other_name(crate::protocol_serde::shape_other_name::de_other_name(tokens, _value)?);
+                            builder = builder.set_other_name(crate::protocol_serde::shape_other_name::de_other_name(tokens, _value, depth + 1)?);
                         }
                         "Rfc822Name" => {
                             builder = builder.set_rfc822_name(
@@ -73,10 +79,15 @@ where
                             );
                         }
                         "DirectoryName" => {
-                            builder = builder.set_directory_name(crate::protocol_serde::shape_asn1_subject::de_asn1_subject(tokens, _value)?);
+                            builder =
+                                builder.set_directory_name(crate::protocol_serde::shape_asn1_subject::de_asn1_subject(tokens, _value, depth + 1)?);
                         }
                         "EdiPartyName" => {
-                            builder = builder.set_edi_party_name(crate::protocol_serde::shape_edi_party_name::de_edi_party_name(tokens, _value)?);
+                            builder = builder.set_edi_party_name(crate::protocol_serde::shape_edi_party_name::de_edi_party_name(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "UniformResourceIdentifier" => {
                             builder = builder.set_uniform_resource_identifier(

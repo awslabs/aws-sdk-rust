@@ -197,6 +197,39 @@ impl UpdateOnlineEvaluationConfigFluentBuilder {
     pub fn get_evaluators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>> {
         self.inner.get_evaluators()
     }
+    ///
+    /// Appends an item to `insights`.
+    ///
+    /// To override the contents of this collection use [`set_insights`](Self::set_insights).
+    ///
+    /// <p>The updated list of insight types to run against agent sessions.</p>
+    pub fn insights(mut self, input: crate::types::Insight) -> Self {
+        self.inner = self.inner.insights(input);
+        self
+    }
+    /// <p>The updated list of insight types to run against agent sessions.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>) -> Self {
+        self.inner = self.inner.set_insights(input);
+        self
+    }
+    /// <p>The updated list of insight types to run against agent sessions.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
+        self.inner.get_insights()
+    }
+    /// <p>The updated clustering configuration for periodic batch evaluation.</p>
+    pub fn clustering_config(mut self, input: crate::types::ClusteringConfig) -> Self {
+        self.inner = self.inner.clustering_config(input);
+        self
+    }
+    /// <p>The updated clustering configuration for periodic batch evaluation.</p>
+    pub fn set_clustering_config(mut self, input: ::std::option::Option<crate::types::ClusteringConfig>) -> Self {
+        self.inner = self.inner.set_clustering_config(input);
+        self
+    }
+    /// <p>The updated clustering configuration for periodic batch evaluation.</p>
+    pub fn get_clustering_config(&self) -> &::std::option::Option<crate::types::ClusteringConfig> {
+        self.inner.get_clustering_config()
+    }
     /// <p>The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
     pub fn evaluation_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_execution_role_arn(input.into());

@@ -137,6 +137,8 @@ pub(crate) fn de_get_aggregate_config_rule_compliance_summary(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -151,7 +153,7 @@ pub(crate) fn de_get_aggregate_config_rule_compliance_summary(
                 }
                 "AggregateComplianceCounts" => {
                     builder = builder.set_aggregate_compliance_counts(
-                        crate::protocol_serde::shape_aggregate_compliance_count_list::de_aggregate_compliance_count_list(tokens, _value)?,
+                        crate::protocol_serde::shape_aggregate_compliance_count_list::de_aggregate_compliance_count_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "NextToken" => {

@@ -34,10 +34,16 @@ pub fn ser_analysis_rule_criteria(
 pub(crate) fn de_analysis_rule_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AnalysisRuleCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,10 +54,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "accountIds" => {
-                            builder = builder.set_account_ids(crate::protocol_serde::shape_account_ids_list::de_account_ids_list(tokens, _value)?);
+                            builder = builder.set_account_ids(crate::protocol_serde::shape_account_ids_list::de_account_ids_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceTags" => {
-                            builder = builder.set_resource_tags(crate::protocol_serde::shape_tags_list::de_tags_list(tokens, _value)?);
+                            builder = builder.set_resource_tags(crate::protocol_serde::shape_tags_list::de_tags_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

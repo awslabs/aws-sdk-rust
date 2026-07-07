@@ -13,6 +13,9 @@ pub mod create_deployment_strategy;
 /// Types for the `CreateEnvironment` operation.
 pub mod create_environment;
 
+/// Types for the `CreateExperimentDefinition` operation.
+pub mod create_experiment_definition;
+
 /// Types for the `CreateExtension` operation.
 pub mod create_extension;
 
@@ -33,6 +36,9 @@ pub mod delete_deployment_strategy;
 
 /// Types for the `DeleteEnvironment` operation.
 pub mod delete_environment;
+
+/// Types for the `DeleteExperimentDefinition` operation.
+pub mod delete_experiment_definition;
 
 /// Types for the `DeleteExtension` operation.
 pub mod delete_extension;
@@ -64,6 +70,12 @@ pub mod get_deployment_strategy;
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
 
+/// Types for the `GetExperimentDefinition` operation.
+pub mod get_experiment_definition;
+
+/// Types for the `GetExperimentRun` operation.
+pub mod get_experiment_run;
+
 /// Types for the `GetExtension` operation.
 pub mod get_extension;
 
@@ -88,6 +100,15 @@ pub mod list_deployments;
 /// Types for the `ListEnvironments` operation.
 pub mod list_environments;
 
+/// Types for the `ListExperimentDefinitions` operation.
+pub mod list_experiment_definitions;
+
+/// Types for the `ListExperimentRunEvents` operation.
+pub mod list_experiment_run_events;
+
+/// Types for the `ListExperimentRuns` operation.
+pub mod list_experiment_runs;
+
 /// Types for the `ListExtensionAssociations` operation.
 pub mod list_extension_associations;
 
@@ -103,8 +124,14 @@ pub mod list_tags_for_resource;
 /// Types for the `StartDeployment` operation.
 pub mod start_deployment;
 
+/// Types for the `StartExperimentRun` operation.
+pub mod start_experiment_run;
+
 /// Types for the `StopDeployment` operation.
 pub mod stop_deployment;
+
+/// Types for the `StopExperimentRun` operation.
+pub mod stop_experiment_run;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -126,6 +153,12 @@ pub mod update_deployment_strategy;
 
 /// Types for the `UpdateEnvironment` operation.
 pub mod update_environment;
+
+/// Types for the `UpdateExperimentDefinition` operation.
+pub mod update_experiment_definition;
+
+/// Types for the `UpdateExperimentRun` operation.
+pub mod update_experiment_run;
 
 /// Types for the `UpdateExtension` operation.
 pub mod update_extension;

@@ -152,6 +152,25 @@ impl PublishLayerVersionFluentBuilder {
         self.inner.get_content()
     }
     ///
+    /// Appends an item to `CompatibleArchitectures`.
+    ///
+    /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
+    ///
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn compatible_architectures(mut self, input: crate::types::Architecture) -> Self {
+        self.inner = self.inner.compatible_architectures(input);
+        self
+    }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn set_compatible_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
+        self.inner = self.inner.set_compatible_architectures(input);
+        self
+    }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn get_compatible_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+        self.inner.get_compatible_architectures()
+    }
+    ///
     /// Appends an item to `CompatibleRuntimes`.
     ///
     /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
@@ -210,24 +229,5 @@ impl PublishLayerVersionFluentBuilder {
     /// </ul>
     pub fn get_license_info(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_info()
-    }
-    ///
-    /// Appends an item to `CompatibleArchitectures`.
-    ///
-    /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
-    ///
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn compatible_architectures(mut self, input: crate::types::Architecture) -> Self {
-        self.inner = self.inner.compatible_architectures(input);
-        self
-    }
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn set_compatible_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
-        self.inner = self.inner.set_compatible_architectures(input);
-        self
-    }
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn get_compatible_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
-        self.inner.get_compatible_architectures()
     }
 }

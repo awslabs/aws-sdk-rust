@@ -15,7 +15,9 @@
 ///     TaxRegistrationType::Cnpj => { /* ... */ },
 ///     TaxRegistrationType::Cpf => { /* ... */ },
 ///     TaxRegistrationType::Gst => { /* ... */ },
+///     TaxRegistrationType::Nip => { /* ... */ },
 ///     TaxRegistrationType::Nric => { /* ... */ },
+///     TaxRegistrationType::Pan => { /* ... */ },
 ///     TaxRegistrationType::Sst => { /* ... */ },
 ///     TaxRegistrationType::Tin => { /* ... */ },
 ///     TaxRegistrationType::Vat => { /* ... */ },
@@ -54,7 +56,11 @@ pub enum TaxRegistrationType {
     #[allow(missing_docs)] // documentation missing in model
     Gst,
     #[allow(missing_docs)] // documentation missing in model
+    Nip,
+    #[allow(missing_docs)] // documentation missing in model
     Nric,
+    #[allow(missing_docs)] // documentation missing in model
+    Pan,
     #[allow(missing_docs)] // documentation missing in model
     Sst,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,7 +77,9 @@ impl ::std::convert::From<&str> for TaxRegistrationType {
             "CNPJ" => TaxRegistrationType::Cnpj,
             "CPF" => TaxRegistrationType::Cpf,
             "GST" => TaxRegistrationType::Gst,
+            "NIP" => TaxRegistrationType::Nip,
             "NRIC" => TaxRegistrationType::Nric,
+            "PAN" => TaxRegistrationType::Pan,
             "SST" => TaxRegistrationType::Sst,
             "TIN" => TaxRegistrationType::Tin,
             "VAT" => TaxRegistrationType::Vat,
@@ -93,7 +101,9 @@ impl TaxRegistrationType {
             TaxRegistrationType::Cnpj => "CNPJ",
             TaxRegistrationType::Cpf => "CPF",
             TaxRegistrationType::Gst => "GST",
+            TaxRegistrationType::Nip => "NIP",
             TaxRegistrationType::Nric => "NRIC",
+            TaxRegistrationType::Pan => "PAN",
             TaxRegistrationType::Sst => "SST",
             TaxRegistrationType::Tin => "TIN",
             TaxRegistrationType::Vat => "VAT",
@@ -102,7 +112,7 @@ impl TaxRegistrationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CNPJ", "CPF", "GST", "NRIC", "SST", "TIN", "VAT"]
+        &["CNPJ", "CPF", "GST", "NIP", "NRIC", "PAN", "SST", "TIN", "VAT"]
     }
 }
 impl ::std::convert::AsRef<str> for TaxRegistrationType {
@@ -128,7 +138,9 @@ impl ::std::fmt::Display for TaxRegistrationType {
             TaxRegistrationType::Cnpj => write!(f, "CNPJ"),
             TaxRegistrationType::Cpf => write!(f, "CPF"),
             TaxRegistrationType::Gst => write!(f, "GST"),
+            TaxRegistrationType::Nip => write!(f, "NIP"),
             TaxRegistrationType::Nric => write!(f, "NRIC"),
+            TaxRegistrationType::Pan => write!(f, "PAN"),
             TaxRegistrationType::Sst => write!(f, "SST"),
             TaxRegistrationType::Tin => write!(f, "TIN"),
             TaxRegistrationType::Vat => write!(f, "VAT"),

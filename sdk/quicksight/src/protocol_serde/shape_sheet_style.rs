@@ -27,10 +27,16 @@ pub fn ser_sheet_style(
 pub(crate) fn de_sheet_style<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SheetStyle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -41,14 +47,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Tile" => {
-                            builder = builder.set_tile(crate::protocol_serde::shape_tile_style::de_tile_style(tokens, _value)?);
+                            builder = builder.set_tile(crate::protocol_serde::shape_tile_style::de_tile_style(tokens, _value, depth + 1)?);
                         }
                         "TileLayout" => {
-                            builder = builder.set_tile_layout(crate::protocol_serde::shape_tile_layout_style::de_tile_layout_style(tokens, _value)?);
+                            builder = builder.set_tile_layout(crate::protocol_serde::shape_tile_layout_style::de_tile_layout_style(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Background" => {
                             builder = builder.set_background(crate::protocol_serde::shape_sheet_background_style::de_sheet_background_style(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

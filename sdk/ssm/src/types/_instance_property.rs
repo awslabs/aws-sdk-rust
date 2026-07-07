@@ -54,8 +54,12 @@ pub struct InstanceProperty {
     pub association_overview: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
     /// <p>The ID of the source resource.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the source resource.</p>
+    /// <p>The type of the source resource. Valid values: <code>AWS::EC2::Instance</code> | <code>AWS::SSM::ManagedInstance</code> | <code>AWS::IoT::Thing</code> | <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub source_location: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl InstanceProperty {
     /// <p>The value of the EC2 <code>Name</code> tag associated with the node. If a <code>Name</code> tag hasn't been applied to the node, this value is blank.</p>
@@ -158,9 +162,17 @@ impl InstanceProperty {
     pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
-    /// <p>The type of the source resource.</p>
+    /// <p>The type of the source resource. Valid values: <code>AWS::EC2::Instance</code> | <code>AWS::SSM::ManagedInstance</code> | <code>AWS::IoT::Thing</code> | <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn source_location(&self) -> ::std::option::Option<&str> {
+        self.source_location.as_deref()
+    }
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
     }
 }
 impl ::std::fmt::Debug for InstanceProperty {
@@ -195,6 +207,8 @@ impl ::std::fmt::Debug for InstanceProperty {
         formatter.field("association_overview", &self.association_overview);
         formatter.field("source_id", &self.source_id);
         formatter.field("source_type", &self.source_type);
+        formatter.field("source_location", &self.source_location);
+        formatter.field("availability_zone", &self.availability_zone);
         formatter.finish()
     }
 }
@@ -235,6 +249,8 @@ pub struct InstancePropertyBuilder {
     pub(crate) association_overview: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
+    pub(crate) source_location: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl InstancePropertyBuilder {
     /// <p>The value of the EC2 <code>Name</code> tag associated with the node. If a <code>Name</code> tag hasn't been applied to the node, this value is blank.</p>
@@ -587,19 +603,47 @@ impl InstancePropertyBuilder {
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_id
     }
-    /// <p>The type of the source resource.</p>
+    /// <p>The type of the source resource. Valid values: <code>AWS::EC2::Instance</code> | <code>AWS::SSM::ManagedInstance</code> | <code>AWS::IoT::Thing</code> | <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the source resource.</p>
+    /// <p>The type of the source resource. Valid values: <code>AWS::EC2::Instance</code> | <code>AWS::SSM::ManagedInstance</code> | <code>AWS::IoT::Thing</code> | <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>The type of the source resource.</p>
+    /// <p>The type of the source resource. Valid values: <code>AWS::EC2::Instance</code> | <code>AWS::SSM::ManagedInstance</code> | <code>AWS::IoT::Thing</code> | <code>Microsoft.Compute/virtualMachines</code>.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.source_type
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn source_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn set_source_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_location = input;
+        self
+    }
+    /// <p>The location of the source resource in the third-party cloud environment.</p>
+    pub fn get_source_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location
+    }
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// <p>The Availability Zone where the managed node is located.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// Consumes the builder and constructs a [`InstanceProperty`](crate::types::InstanceProperty).
     pub fn build(self) -> crate::types::InstanceProperty {
@@ -630,6 +674,8 @@ impl InstancePropertyBuilder {
             association_overview: self.association_overview,
             source_id: self.source_id,
             source_type: self.source_type,
+            source_location: self.source_location,
+            availability_zone: self.availability_zone,
         }
     }
 }
@@ -665,6 +711,8 @@ impl ::std::fmt::Debug for InstancePropertyBuilder {
         formatter.field("association_overview", &self.association_overview);
         formatter.field("source_id", &self.source_id);
         formatter.field("source_type", &self.source_type);
+        formatter.field("source_location", &self.source_location);
+        formatter.field("availability_zone", &self.availability_zone);
         formatter.finish()
     }
 }

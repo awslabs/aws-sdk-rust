@@ -12,6 +12,8 @@ pub struct ServiceManagedEc2FleetConfiguration {
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The storage profile ID for the service managed EC2 fleet.</p>
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
+    /// <p>The persistent volume configuration for the service managed EC2 fleet.</p>
+    pub persistent_volume_configuration: ::std::option::Option<crate::types::PersistentVolumeConfiguration>,
     /// <p>The auto scaling configuration settings for the service managed EC2 fleet.</p>
     pub auto_scaling_configuration: ::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration>,
 }
@@ -31,6 +33,10 @@ impl ServiceManagedEc2FleetConfiguration {
     /// <p>The storage profile ID for the service managed EC2 fleet.</p>
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
+    }
+    /// <p>The persistent volume configuration for the service managed EC2 fleet.</p>
+    pub fn persistent_volume_configuration(&self) -> ::std::option::Option<&crate::types::PersistentVolumeConfiguration> {
+        self.persistent_volume_configuration.as_ref()
     }
     /// <p>The auto scaling configuration settings for the service managed EC2 fleet.</p>
     pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServiceManagedEc2AutoScalingConfiguration> {
@@ -52,6 +58,7 @@ pub struct ServiceManagedEc2FleetConfigurationBuilder {
     pub(crate) instance_market_options: ::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) persistent_volume_configuration: ::std::option::Option<crate::types::PersistentVolumeConfiguration>,
     pub(crate) auto_scaling_configuration: ::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration>,
 }
 impl ServiceManagedEc2FleetConfigurationBuilder {
@@ -113,6 +120,20 @@ impl ServiceManagedEc2FleetConfigurationBuilder {
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
+    /// <p>The persistent volume configuration for the service managed EC2 fleet.</p>
+    pub fn persistent_volume_configuration(mut self, input: crate::types::PersistentVolumeConfiguration) -> Self {
+        self.persistent_volume_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The persistent volume configuration for the service managed EC2 fleet.</p>
+    pub fn set_persistent_volume_configuration(mut self, input: ::std::option::Option<crate::types::PersistentVolumeConfiguration>) -> Self {
+        self.persistent_volume_configuration = input;
+        self
+    }
+    /// <p>The persistent volume configuration for the service managed EC2 fleet.</p>
+    pub fn get_persistent_volume_configuration(&self) -> &::std::option::Option<crate::types::PersistentVolumeConfiguration> {
+        &self.persistent_volume_configuration
+    }
     /// <p>The auto scaling configuration settings for the service managed EC2 fleet.</p>
     pub fn auto_scaling_configuration(mut self, input: crate::types::ServiceManagedEc2AutoScalingConfiguration) -> Self {
         self.auto_scaling_configuration = ::std::option::Option::Some(input);
@@ -134,6 +155,7 @@ impl ServiceManagedEc2FleetConfigurationBuilder {
             instance_market_options: self.instance_market_options,
             vpc_configuration: self.vpc_configuration,
             storage_profile_id: self.storage_profile_id,
+            persistent_volume_configuration: self.persistent_volume_configuration,
             auto_scaling_configuration: self.auto_scaling_configuration,
         }
     }

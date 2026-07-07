@@ -15,7 +15,11 @@ pub fn ser_baseline_performance_factors(
 #[allow(clippy::needless_question_mark)]
 pub fn de_baseline_performance_factors(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::BaselinePerformanceFactors, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::BaselinePerformanceFactors::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_baseline_performance_factors(
             s if s.matches("cpu") /* Cpu com.amazonaws.ec2#BaselinePerformanceFactors$Cpu */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_cpu_performance_factor::de_cpu_performance_factor(&mut tag)
+                        crate::protocol_serde::shape_cpu_performance_factor::de_cpu_performance_factor(&mut tag, depth + 1)
                         ?
                     )
                 ;

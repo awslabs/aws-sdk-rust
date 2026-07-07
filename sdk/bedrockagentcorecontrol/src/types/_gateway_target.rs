@@ -34,6 +34,8 @@ pub struct GatewayTarget {
     pub private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
     /// <p>OAuth2 authorization data for the gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>
     pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
+    /// <p>The protocol type of the gateway target.</p>
+    pub protocol_type: ::std::option::Option<crate::types::TargetProtocolType>,
 }
 impl GatewayTarget {
     /// <p>The Amazon Resource Name (ARN) of the gateway target.</p>
@@ -104,6 +106,10 @@ impl GatewayTarget {
     pub fn authorization_data(&self) -> ::std::option::Option<&crate::types::AuthorizationData> {
         self.authorization_data.as_ref()
     }
+    /// <p>The protocol type of the gateway target.</p>
+    pub fn protocol_type(&self) -> ::std::option::Option<&crate::types::TargetProtocolType> {
+        self.protocol_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GatewayTarget {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -123,6 +129,7 @@ impl ::std::fmt::Debug for GatewayTarget {
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.field("authorization_data", &self.authorization_data);
+        formatter.field("protocol_type", &self.protocol_type);
         formatter.finish()
     }
 }
@@ -152,6 +159,7 @@ pub struct GatewayTargetBuilder {
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
     pub(crate) authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
+    pub(crate) protocol_type: ::std::option::Option<crate::types::TargetProtocolType>,
 }
 impl GatewayTargetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway target.</p>
@@ -395,6 +403,20 @@ impl GatewayTargetBuilder {
     pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
         &self.authorization_data
     }
+    /// <p>The protocol type of the gateway target.</p>
+    pub fn protocol_type(mut self, input: crate::types::TargetProtocolType) -> Self {
+        self.protocol_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The protocol type of the gateway target.</p>
+    pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::TargetProtocolType>) -> Self {
+        self.protocol_type = input;
+        self
+    }
+    /// <p>The protocol type of the gateway target.</p>
+    pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::TargetProtocolType> {
+        &self.protocol_type
+    }
     /// Consumes the builder and constructs a [`GatewayTarget`](crate::types::GatewayTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`gateway_arn`](crate::types::builders::GatewayTargetBuilder::gateway_arn)
@@ -456,6 +478,7 @@ impl GatewayTargetBuilder {
             private_endpoint: self.private_endpoint,
             private_endpoint_managed_resources: self.private_endpoint_managed_resources,
             authorization_data: self.authorization_data,
+            protocol_type: self.protocol_type,
         })
     }
 }
@@ -477,6 +500,7 @@ impl ::std::fmt::Debug for GatewayTargetBuilder {
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.field("authorization_data", &self.authorization_data);
+        formatter.field("protocol_type", &self.protocol_type);
         formatter.finish()
     }
 }

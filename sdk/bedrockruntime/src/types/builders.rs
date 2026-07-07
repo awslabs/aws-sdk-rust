@@ -3,6 +3,12 @@ pub use crate::types::_guardrail_usage::GuardrailUsageBuilder;
 
 pub use crate::types::_guardrail_coverage::GuardrailCoverageBuilder;
 
+pub use crate::types::_guardrail_checks_config::GuardrailChecksConfigBuilder;
+
+pub use crate::types::_guardrail_checks_results::GuardrailChecksResultsBuilder;
+
+pub use crate::types::_guardrail_checks_usage_results::GuardrailChecksUsageResultsBuilder;
+
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
 pub use crate::types::_tool_configuration::ToolConfigurationBuilder;
@@ -36,6 +42,26 @@ pub use crate::types::_guardrail_assessment::GuardrailAssessmentBuilder;
 pub use crate::types::_guardrail_text_characters_coverage::GuardrailTextCharactersCoverageBuilder;
 
 pub use crate::types::_guardrail_image_coverage::GuardrailImageCoverageBuilder;
+
+pub use crate::types::_guardrail_checks_message::GuardrailChecksMessageBuilder;
+
+pub use crate::types::_guardrail_checks_content_filter_config::GuardrailChecksContentFilterConfigBuilder;
+
+pub use crate::types::_guardrail_checks_prompt_attack_config::GuardrailChecksPromptAttackConfigBuilder;
+
+pub use crate::types::_guardrail_checks_sensitive_information_config::GuardrailChecksSensitiveInformationConfigBuilder;
+
+pub use crate::types::_guardrail_checks_content_filter_result::GuardrailChecksContentFilterResultBuilder;
+
+pub use crate::types::_guardrail_checks_prompt_attack_result::GuardrailChecksPromptAttackResultBuilder;
+
+pub use crate::types::_guardrail_checks_sensitive_information_result::GuardrailChecksSensitiveInformationResultBuilder;
+
+pub use crate::types::_guardrail_checks_content_filter_usage::GuardrailChecksContentFilterUsageBuilder;
+
+pub use crate::types::_guardrail_checks_prompt_attack_usage::GuardrailChecksPromptAttackUsageBuilder;
+
+pub use crate::types::_guardrail_checks_sensitive_information_usage::GuardrailChecksSensitiveInformationUsageBuilder;
 
 pub use crate::types::_message::MessageBuilder;
 
@@ -100,6 +126,18 @@ pub use crate::types::_cache_detail::CacheDetailBuilder;
 pub use crate::types::_converse_stream_metrics::ConverseStreamMetricsBuilder;
 
 pub use crate::types::_converse_stream_trace::ConverseStreamTraceBuilder;
+
+pub use crate::types::_guardrail_checks_content_filter_category_config::GuardrailChecksContentFilterCategoryConfigBuilder;
+
+pub use crate::types::_guardrail_checks_prompt_attack_category_config::GuardrailChecksPromptAttackCategoryConfigBuilder;
+
+pub use crate::types::_guardrail_checks_sensitive_information_entity_config::GuardrailChecksSensitiveInformationEntityConfigBuilder;
+
+pub use crate::types::_guardrail_checks_content_filter_result_entry::GuardrailChecksContentFilterResultEntryBuilder;
+
+pub use crate::types::_guardrail_checks_prompt_attack_result_entry::GuardrailChecksPromptAttackResultEntryBuilder;
+
+pub use crate::types::_guardrail_checks_sensitive_information_result_entry::GuardrailChecksSensitiveInformationResultEntryBuilder;
 
 pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlockBuilder;
 

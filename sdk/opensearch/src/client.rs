@@ -148,6 +148,8 @@ mod associate_package;
 
 mod associate_packages;
 
+mod attach_data_source;
+
 mod authorize_vpc_endpoint_access;
 
 mod cancel_domain_config_change;
@@ -213,6 +215,8 @@ mod delete_vpc_endpoint;
 
 mod deregister_capability;
 
+mod describe_data_source_attachment;
+
 mod describe_domain;
 
 mod describe_domain_auto_tunes;
@@ -245,6 +249,8 @@ mod describe_reserved_instances;
 
 mod describe_vpc_endpoints;
 
+mod detach_data_source;
+
 mod dissociate_package;
 
 mod dissociate_packages;
@@ -265,13 +271,19 @@ mod get_domain_maintenance_status;
 
 mod get_index;
 
+mod get_migration;
+
 mod get_package_version_history;
 
 mod get_upgrade_history;
 
 mod get_upgrade_status;
 
+mod insight_feedback;
+
 mod list_applications;
+
+mod list_data_source_attachments;
 
 mod list_data_sources;
 
@@ -286,6 +298,8 @@ mod list_domains_for_package;
 mod list_insights;
 
 mod list_instance_type_details;
+
+mod list_migrations;
 
 mod list_packages_for_domain;
 
@@ -316,6 +330,8 @@ mod revoke_vpc_endpoint_access;
 mod rollback_service_software_update;
 
 mod start_domain_maintenance;
+
+mod start_migration;
 
 mod start_service_software_update;
 

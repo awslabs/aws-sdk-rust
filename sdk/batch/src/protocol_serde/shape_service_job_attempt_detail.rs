@@ -2,10 +2,16 @@
 pub(crate) fn de_service_job_attempt_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServiceJobAttemptDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,8 +22,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "serviceResourceId" => {
-                            builder = builder
-                                .set_service_resource_id(crate::protocol_serde::shape_service_resource_id::de_service_resource_id(tokens, _value)?);
+                            builder = builder.set_service_resource_id(crate::protocol_serde::shape_service_resource_id::de_service_resource_id(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "startedAt" => {
                             builder = builder.set_started_at(

@@ -5,17 +5,24 @@
 pub struct GetThingConnectivityDataInput {
     /// <p>The name of your IoT thing.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub include_socket_information: ::std::option::Option<bool>,
 }
 impl GetThingConnectivityDataInput {
     /// <p>The name of your IoT thing.</p>
     pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn include_socket_information(&self) -> ::std::option::Option<bool> {
+        self.include_socket_information
+    }
 }
 impl ::std::fmt::Debug for GetThingConnectivityDataInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetThingConnectivityDataInput");
         formatter.field("thing_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("include_socket_information", &self.include_socket_information);
         formatter.finish()
     }
 }
@@ -31,6 +38,7 @@ impl GetThingConnectivityDataInput {
 #[non_exhaustive]
 pub struct GetThingConnectivityDataInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) include_socket_information: ::std::option::Option<bool>,
 }
 impl GetThingConnectivityDataInputBuilder {
     /// <p>The name of your IoT thing.</p>
@@ -48,6 +56,20 @@ impl GetThingConnectivityDataInputBuilder {
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn include_socket_information(mut self, input: bool) -> Self {
+        self.include_socket_information = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn set_include_socket_information(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_socket_information = input;
+        self
+    }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn get_include_socket_information(&self) -> &::std::option::Option<bool> {
+        &self.include_socket_information
+    }
     /// Consumes the builder and constructs a [`GetThingConnectivityDataInput`](crate::operation::get_thing_connectivity_data::GetThingConnectivityDataInput).
     pub fn build(
         self,
@@ -55,13 +77,17 @@ impl GetThingConnectivityDataInputBuilder {
         crate::operation::get_thing_connectivity_data::GetThingConnectivityDataInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::get_thing_connectivity_data::GetThingConnectivityDataInput { thing_name: self.thing_name })
+        ::std::result::Result::Ok(crate::operation::get_thing_connectivity_data::GetThingConnectivityDataInput {
+            thing_name: self.thing_name,
+            include_socket_information: self.include_socket_information,
+        })
     }
 }
 impl ::std::fmt::Debug for GetThingConnectivityDataInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetThingConnectivityDataInputBuilder");
         formatter.field("thing_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("include_socket_information", &self.include_socket_information);
         formatter.finish()
     }
 }

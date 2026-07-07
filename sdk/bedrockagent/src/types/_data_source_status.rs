@@ -13,8 +13,11 @@
 /// # let datasourcestatus = unimplemented!();
 /// match datasourcestatus {
 ///     DataSourceStatus::Available => { /* ... */ },
+///     DataSourceStatus::Creating => { /* ... */ },
 ///     DataSourceStatus::DeleteUnsuccessful => { /* ... */ },
 ///     DataSourceStatus::Deleting => { /* ... */ },
+///     DataSourceStatus::Failed => { /* ... */ },
+///     DataSourceStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,9 +49,15 @@ pub enum DataSourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteUnsuccessful,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -57,8 +66,11 @@ impl ::std::convert::From<&str> for DataSourceStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => DataSourceStatus::Available,
+            "CREATING" => DataSourceStatus::Creating,
             "DELETE_UNSUCCESSFUL" => DataSourceStatus::DeleteUnsuccessful,
             "DELETING" => DataSourceStatus::Deleting,
+            "FAILED" => DataSourceStatus::Failed,
+            "UPDATING" => DataSourceStatus::Updating,
             other => DataSourceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -75,14 +87,17 @@ impl DataSourceStatus {
     pub fn as_str(&self) -> &str {
         match self {
             DataSourceStatus::Available => "AVAILABLE",
+            DataSourceStatus::Creating => "CREATING",
             DataSourceStatus::DeleteUnsuccessful => "DELETE_UNSUCCESSFUL",
             DataSourceStatus::Deleting => "DELETING",
+            DataSourceStatus::Failed => "FAILED",
+            DataSourceStatus::Updating => "UPDATING",
             DataSourceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "DELETE_UNSUCCESSFUL", "DELETING"]
+        &["AVAILABLE", "CREATING", "DELETE_UNSUCCESSFUL", "DELETING", "FAILED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for DataSourceStatus {
@@ -106,8 +121,11 @@ impl ::std::fmt::Display for DataSourceStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataSourceStatus::Available => write!(f, "AVAILABLE"),
+            DataSourceStatus::Creating => write!(f, "CREATING"),
             DataSourceStatus::DeleteUnsuccessful => write!(f, "DELETE_UNSUCCESSFUL"),
             DataSourceStatus::Deleting => write!(f, "DELETING"),
+            DataSourceStatus::Failed => write!(f, "FAILED"),
+            DataSourceStatus::Updating => write!(f, "UPDATING"),
             DataSourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

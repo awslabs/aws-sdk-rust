@@ -14,6 +14,8 @@ pub struct Application {
     pub application_account: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the instance of IAM Identity Center that is configured with this application.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub identity_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the application in this instance of IAM Identity Center.</p>
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>A structure that describes the options for the access portal associated with this application.</p>
@@ -45,6 +47,10 @@ impl Application {
     /// <p>The ARN of the instance of IAM Identity Center that is configured with this application.</p>
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn identity_store_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_store_arn.as_deref()
     }
     /// <p>The current status of the application in this instance of IAM Identity Center.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
@@ -83,6 +89,7 @@ pub struct ApplicationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) application_account: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
     pub(crate) portal_options: ::std::option::Option<crate::types::PortalOptions>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -159,6 +166,20 @@ impl ApplicationBuilder {
     /// <p>The ARN of the instance of IAM Identity Center that is configured with this application.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn identity_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn set_identity_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_arn = input;
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn get_identity_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_arn
     }
     /// <p>The current status of the application in this instance of IAM Identity Center.</p>
     pub fn status(mut self, input: crate::types::ApplicationStatus) -> Self {
@@ -238,6 +259,7 @@ impl ApplicationBuilder {
             name: self.name,
             application_account: self.application_account,
             instance_arn: self.instance_arn,
+            identity_store_arn: self.identity_store_arn,
             status: self.status,
             portal_options: self.portal_options,
             description: self.description,

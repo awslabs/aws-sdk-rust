@@ -19,6 +19,9 @@ pub struct VpcConfigResponse {
     /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is <code>0.0.0.0/0</code> and additionally <code>::/0</code> for dual-stack `IPv6` clusters. If you've disabled private endpoint access, make sure that you specify the necessary CIDR blocks for every node and Fargate <code>Pod</code> in the cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Cluster API server endpoint</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     /// <p>Note that the public endpoints are dual-stack for only <code>IPv6</code> clusters that are made after October 2024. You can't add <code>IPv6</code> CIDR blocks to <code>IPv4</code> clusters or <code>IPv6</code> clusters that were made before October 2024.</p>
     pub public_access_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The current control plane egress routing mode for the cluster. If the cluster is set to <code>AWS_MANAGED</code>, Amazon EKS manages the egress path from the control plane. If the cluster is set to <code>CUSTOMER_ROUTED</code>, you manage the egress path from the control plane in your VPC subnets.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html">Learn more about control plane egress routing in the <i>Amazon EKS User Guide</i>.</a></p>
+    pub control_plane_egress_mode: ::std::option::Option<crate::types::ControlPlaneEgressModeType>,
 }
 impl VpcConfigResponse {
     /// <p>The subnets associated with your cluster.</p>
@@ -56,6 +59,11 @@ impl VpcConfigResponse {
     pub fn public_access_cidrs(&self) -> &[::std::string::String] {
         self.public_access_cidrs.as_deref().unwrap_or_default()
     }
+    /// <p>The current control plane egress routing mode for the cluster. If the cluster is set to <code>AWS_MANAGED</code>, Amazon EKS manages the egress path from the control plane. If the cluster is set to <code>CUSTOMER_ROUTED</code>, you manage the egress path from the control plane in your VPC subnets.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html">Learn more about control plane egress routing in the <i>Amazon EKS User Guide</i>.</a></p>
+    pub fn control_plane_egress_mode(&self) -> ::std::option::Option<&crate::types::ControlPlaneEgressModeType> {
+        self.control_plane_egress_mode.as_ref()
+    }
 }
 impl VpcConfigResponse {
     /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::types::VpcConfigResponse).
@@ -75,6 +83,7 @@ pub struct VpcConfigResponseBuilder {
     pub(crate) endpoint_public_access: ::std::option::Option<bool>,
     pub(crate) endpoint_private_access: ::std::option::Option<bool>,
     pub(crate) public_access_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) control_plane_egress_mode: ::std::option::Option<crate::types::ControlPlaneEgressModeType>,
 }
 impl VpcConfigResponseBuilder {
     /// Appends an item to `subnet_ids`.
@@ -196,6 +205,23 @@ impl VpcConfigResponseBuilder {
     pub fn get_public_access_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.public_access_cidrs
     }
+    /// <p>The current control plane egress routing mode for the cluster. If the cluster is set to <code>AWS_MANAGED</code>, Amazon EKS manages the egress path from the control plane. If the cluster is set to <code>CUSTOMER_ROUTED</code>, you manage the egress path from the control plane in your VPC subnets.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html">Learn more about control plane egress routing in the <i>Amazon EKS User Guide</i>.</a></p>
+    pub fn control_plane_egress_mode(mut self, input: crate::types::ControlPlaneEgressModeType) -> Self {
+        self.control_plane_egress_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current control plane egress routing mode for the cluster. If the cluster is set to <code>AWS_MANAGED</code>, Amazon EKS manages the egress path from the control plane. If the cluster is set to <code>CUSTOMER_ROUTED</code>, you manage the egress path from the control plane in your VPC subnets.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html">Learn more about control plane egress routing in the <i>Amazon EKS User Guide</i>.</a></p>
+    pub fn set_control_plane_egress_mode(mut self, input: ::std::option::Option<crate::types::ControlPlaneEgressModeType>) -> Self {
+        self.control_plane_egress_mode = input;
+        self
+    }
+    /// <p>The current control plane egress routing mode for the cluster. If the cluster is set to <code>AWS_MANAGED</code>, Amazon EKS manages the egress path from the control plane. If the cluster is set to <code>CUSTOMER_ROUTED</code>, you manage the egress path from the control plane in your VPC subnets.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html">Learn more about control plane egress routing in the <i>Amazon EKS User Guide</i>.</a></p>
+    pub fn get_control_plane_egress_mode(&self) -> &::std::option::Option<crate::types::ControlPlaneEgressModeType> {
+        &self.control_plane_egress_mode
+    }
     /// Consumes the builder and constructs a [`VpcConfigResponse`](crate::types::VpcConfigResponse).
     pub fn build(self) -> crate::types::VpcConfigResponse {
         crate::types::VpcConfigResponse {
@@ -206,6 +232,7 @@ impl VpcConfigResponseBuilder {
             endpoint_public_access: self.endpoint_public_access.unwrap_or_default(),
             endpoint_private_access: self.endpoint_private_access.unwrap_or_default(),
             public_access_cidrs: self.public_access_cidrs,
+            control_plane_egress_mode: self.control_plane_egress_mode,
         }
     }
 }

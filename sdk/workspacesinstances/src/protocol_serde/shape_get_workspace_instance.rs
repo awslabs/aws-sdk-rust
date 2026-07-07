@@ -132,6 +132,8 @@ pub(crate) fn de_get_workspace_instance(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -139,12 +141,15 @@ pub(crate) fn de_get_workspace_instance(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "WorkspaceInstanceErrors" => {
                     builder = builder.set_workspace_instance_errors(
-                        crate::protocol_serde::shape_workspace_instance_errors::de_workspace_instance_errors(tokens, _value)?,
+                        crate::protocol_serde::shape_workspace_instance_errors::de_workspace_instance_errors(tokens, _value, depth + 1)?,
                     );
                 }
                 "EC2InstanceErrors" => {
-                    builder =
-                        builder.set_ec2_instance_errors(crate::protocol_serde::shape_ec2_instance_errors::de_ec2_instance_errors(tokens, _value)?);
+                    builder = builder.set_ec2_instance_errors(crate::protocol_serde::shape_ec2_instance_errors::de_ec2_instance_errors(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ProvisionState" => {
                     builder = builder.set_provision_state(
@@ -162,12 +167,16 @@ pub(crate) fn de_get_workspace_instance(
                 }
                 "EC2ManagedInstance" => {
                     builder = builder.set_ec2_managed_instance(crate::protocol_serde::shape_ec2_managed_instance::de_ec2_managed_instance(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "BillingConfiguration" => {
                     builder = builder.set_billing_configuration(crate::protocol_serde::shape_billing_configuration::de_billing_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

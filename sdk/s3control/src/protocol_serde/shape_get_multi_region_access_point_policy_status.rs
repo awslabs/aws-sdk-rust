@@ -71,6 +71,8 @@ pub fn de_get_multi_region_access_point_policy_status(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetMultiRegionAccessPointPolicyStatusResult") {
         return Err(
                                 ::aws_smithy_xml::decode::XmlDecodeError::custom(
@@ -83,7 +85,7 @@ pub fn de_get_multi_region_access_point_policy_status(
             s if s.matches("Established") /* Established com.amazonaws.s3control.synthetic#GetMultiRegionAccessPointPolicyStatusOutput$Established */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_policy_status::de_policy_status(&mut tag)
+                        crate::protocol_serde::shape_policy_status::de_policy_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

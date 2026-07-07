@@ -75,10 +75,16 @@ pub fn ser_output_settings(
 pub(crate) fn de_output_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OutputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -90,55 +96,76 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "archiveOutputSettings" => {
                             builder = builder.set_archive_output_settings(
-                                crate::protocol_serde::shape_archive_output_settings::de_archive_output_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_archive_output_settings::de_archive_output_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "frameCaptureOutputSettings" => {
                             builder = builder.set_frame_capture_output_settings(
-                                crate::protocol_serde::shape_frame_capture_output_settings::de_frame_capture_output_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_frame_capture_output_settings::de_frame_capture_output_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "hlsOutputSettings" => {
-                            builder = builder
-                                .set_hls_output_settings(crate::protocol_serde::shape_hls_output_settings::de_hls_output_settings(tokens, _value)?);
+                            builder = builder.set_hls_output_settings(crate::protocol_serde::shape_hls_output_settings::de_hls_output_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "mediaPackageOutputSettings" => {
                             builder = builder.set_media_package_output_settings(
-                                crate::protocol_serde::shape_media_package_output_settings::de_media_package_output_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_media_package_output_settings::de_media_package_output_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "msSmoothOutputSettings" => {
                             builder = builder.set_ms_smooth_output_settings(
-                                crate::protocol_serde::shape_ms_smooth_output_settings::de_ms_smooth_output_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_ms_smooth_output_settings::de_ms_smooth_output_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "multiplexOutputSettings" => {
                             builder = builder.set_multiplex_output_settings(
-                                crate::protocol_serde::shape_multiplex_output_settings::de_multiplex_output_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_multiplex_output_settings::de_multiplex_output_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "rtmpOutputSettings" => {
                             builder = builder.set_rtmp_output_settings(crate::protocol_serde::shape_rtmp_output_settings::de_rtmp_output_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "udpOutputSettings" => {
-                            builder = builder
-                                .set_udp_output_settings(crate::protocol_serde::shape_udp_output_settings::de_udp_output_settings(tokens, _value)?);
+                            builder = builder.set_udp_output_settings(crate::protocol_serde::shape_udp_output_settings::de_udp_output_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "cmafIngestOutputSettings" => {
                             builder = builder.set_cmaf_ingest_output_settings(
-                                crate::protocol_serde::shape_cmaf_ingest_output_settings::de_cmaf_ingest_output_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_cmaf_ingest_output_settings::de_cmaf_ingest_output_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "srtOutputSettings" => {
-                            builder = builder
-                                .set_srt_output_settings(crate::protocol_serde::shape_srt_output_settings::de_srt_output_settings(tokens, _value)?);
+                            builder = builder.set_srt_output_settings(crate::protocol_serde::shape_srt_output_settings::de_srt_output_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "mediaConnectRouterOutputSettings" => {
                             builder = builder.set_media_connect_router_output_settings(
                                 crate::protocol_serde::shape_media_connect_router_output_settings::de_media_connect_router_output_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -112,6 +112,8 @@ pub fn de_modify_db_snapshot_attribute(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyDBSnapshotAttributeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyDBSnapshotAttributeResponse got {start_el:?}"
@@ -129,7 +131,7 @@ pub fn de_modify_db_snapshot_attribute(
             s if s.matches("DBSnapshotAttributesResult") /* DBSnapshotAttributesResult com.amazonaws.rds.synthetic#ModifyDBSnapshotAttributeOutput$DBSnapshotAttributesResult */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_snapshot_attributes_result::de_db_snapshot_attributes_result(&mut tag)
+                        crate::protocol_serde::shape_db_snapshot_attributes_result::de_db_snapshot_attributes_result(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -49,6 +49,8 @@ pub fn de_create_transit_gateway_route_table(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateTransitGatewayRouteTableResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateTransitGatewayRouteTableResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_create_transit_gateway_route_table(
             s if s.matches("transitGatewayRouteTable") /* TransitGatewayRouteTable com.amazonaws.ec2.synthetic#CreateTransitGatewayRouteTableOutput$TransitGatewayRouteTable */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_route_table::de_transit_gateway_route_table(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_route_table::de_transit_gateway_route_table(&mut tag, depth + 1)
                         ?
                     )
                 ;

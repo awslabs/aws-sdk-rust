@@ -2,10 +2,16 @@
 pub(crate) fn de_route_vehicle_place<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RouteVehiclePlace>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,10 +29,11 @@ where
                             );
                         }
                         "OriginalPosition" => {
-                            builder = builder.set_original_position(crate::protocol_serde::shape_position23::de_position23(tokens, _value)?);
+                            builder =
+                                builder.set_original_position(crate::protocol_serde::shape_position23::de_position23(tokens, _value, depth + 1)?);
                         }
                         "Position" => {
-                            builder = builder.set_position(crate::protocol_serde::shape_position23::de_position23(tokens, _value)?);
+                            builder = builder.set_position(crate::protocol_serde::shape_position23::de_position23(tokens, _value, depth + 1)?);
                         }
                         "SideOfStreet" => {
                             builder = builder.set_side_of_street(
@@ -39,6 +46,25 @@ where
                             builder = builder.set_waypoint_index(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "AccessPointDetails" => {
+                            builder = builder.set_access_point_details(
+                                crate::protocol_serde::shape_route_access_point_details::de_route_access_point_details(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "StationDetails" => {
+                            builder = builder.set_station_details(crate::protocol_serde::shape_route_station_details::de_route_station_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RouteVehiclePlaceType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

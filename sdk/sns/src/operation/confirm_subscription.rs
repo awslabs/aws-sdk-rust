@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Confirm
 #[derive(Debug)]
 struct ConfirmSubscriptionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ConfirmSubscriptionResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -265,7 +266,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ConfirmSubscr
 pub enum ConfirmSubscriptionError {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::types::error::AuthorizationErrorException),
-    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web ServicesSupport Center.</p>
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.</p>
     FilterPolicyLimitExceededException(crate::types::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),

@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_managed_firewall_domain_lists_output_output_next_toke
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_shared_dns_views_output_output_next_token(
+    input: &crate::operation::list_shared_dns_views::ListSharedDnsViewsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_access_sources_output_output_access_sources(
     input: crate::operation::list_access_sources::ListAccessSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessSourcesItem>> {
@@ -149,5 +159,12 @@ pub(crate) fn lens_list_managed_firewall_domain_lists_output_output_managed_fire
     input: crate::operation::list_managed_firewall_domain_lists::ListManagedFirewallDomainListsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedFirewallDomainListsItem>> {
     let input = input.managed_firewall_domain_lists;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_shared_dns_views_output_output_dns_views(
+    input: crate::operation::list_shared_dns_views::ListSharedDnsViewsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SharedDnsViewSummary>> {
+    let input = input.dns_views;
     ::std::option::Option::Some(input)
 }

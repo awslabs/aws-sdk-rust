@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_health_check(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::HealthCheck::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_health_check(
             s if s.matches("LinkedService") /* LinkedService com.amazonaws.route53#HealthCheck$LinkedService */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_linked_service::de_linked_service(&mut tag)
+                        crate::protocol_serde::shape_linked_service::de_linked_service(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_health_check(
             s if s.matches("HealthCheckConfig") /* HealthCheckConfig com.amazonaws.route53#HealthCheck$HealthCheckConfig */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_health_check_config::de_health_check_config(&mut tag)
+                        crate::protocol_serde::shape_health_check_config::de_health_check_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -71,7 +75,7 @@ pub fn de_health_check(
             s if s.matches("CloudWatchAlarmConfiguration") /* CloudWatchAlarmConfiguration com.amazonaws.route53#HealthCheck$CloudWatchAlarmConfiguration */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_cloud_watch_alarm_configuration::de_cloud_watch_alarm_configuration(&mut tag)
+                        crate::protocol_serde::shape_cloud_watch_alarm_configuration::de_cloud_watch_alarm_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

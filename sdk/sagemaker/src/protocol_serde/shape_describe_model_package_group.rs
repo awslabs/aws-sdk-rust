@@ -56,6 +56,8 @@ pub(crate) fn de_describe_model_package_group(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -89,7 +91,7 @@ pub(crate) fn de_describe_model_package_group(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value, depth + 1)?);
                 }
                 "ModelPackageGroupStatus" => {
                     builder = builder.set_model_package_group_status(
@@ -97,6 +99,13 @@ pub(crate) fn de_describe_model_package_group(
                             .map(|s| s.to_unescaped().map(|u| crate::types::ModelPackageGroupStatus::from(u.as_ref())))
                             .transpose()?,
                     );
+                }
+                "ManagedConfiguration" => {
+                    builder = builder.set_managed_configuration(crate::protocol_serde::shape_managed_configuration::de_managed_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

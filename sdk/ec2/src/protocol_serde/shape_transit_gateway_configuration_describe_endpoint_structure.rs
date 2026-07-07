@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_configuration_describe_endpoint_structure(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TransitGatewayConfigurationDescribeEndpointStructure, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayConfigurationDescribeEndpointStructure::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_transit_gateway_configuration_describe_endpoint_structure(
             s if s.matches("availabilityZoneSet") /* AvailabilityZones com.amazonaws.ec2#TransitGatewayConfigurationDescribeEndpointStructure$AvailabilityZones */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_availability_zone_set::de_client_vpn_availability_zone_set(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_availability_zone_set::de_client_vpn_availability_zone_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_transit_gateway_configuration_describe_endpoint_structure(
             s if s.matches("availabilityZoneIdSet") /* AvailabilityZoneIds com.amazonaws.ec2#TransitGatewayConfigurationDescribeEndpointStructure$AvailabilityZoneIds */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_availability_zone_id_set::de_client_vpn_availability_zone_id_set(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_availability_zone_id_set::de_client_vpn_availability_zone_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

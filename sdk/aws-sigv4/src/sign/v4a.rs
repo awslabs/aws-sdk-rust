@@ -6,8 +6,10 @@
 use aws_smithy_runtime_api::client::identity::Identity;
 use bytes::{BufMut, BytesMut};
 use crypto_bigint::{CheckedAdd, CheckedSub, Encoding, U256};
+use hmac::{digest::FixedOutput, Hmac, KeyInit, Mac};
 use p256::ecdsa::signature::Signer;
-use p256::ecdsa::{Signature, SigningKey};
+use p256::ecdsa::{DerSignature, SigningKey};
+use sha2::Sha256;
 use std::io::Write;
 use std::sync::LazyLock;
 use std::time::SystemTime;
@@ -25,14 +27,9 @@ static BIG_N_MINUS_2: LazyLock<U256> = LazyLock::new(|| {
 
 /// Calculates a Sigv4a signature
 pub fn calculate_signature(signing_key: impl AsRef<[u8]>, string_to_sign: &[u8]) -> String {
-    let signing_key = SigningKey::from_bytes(signing_key.as_ref()).unwrap();
-    let signature: Signature = signing_key.sign(string_to_sign);
-    // This conversion sucks but we have to do it afaict. Because we also use
-    // the HMAC crate, we have to use a compatible (and therefore older) version
-    // of the p256 crate. That older version requires us to convert between
-    // signature types instead of using DER-encoded signatures directly.
-    let signature = signature.to_der();
-    hex::encode(signature.as_ref())
+    let signing_key = SigningKey::from_slice(signing_key.as_ref()).unwrap();
+    let signature: DerSignature = signing_key.sign(string_to_sign);
+    hex::encode(signature.as_bytes())
 }
 
 /// Generates a signing key for Sigv4a signing.
@@ -53,15 +50,14 @@ pub fn generate_signing_key(access_key: &str, secret_access_key: &str) -> impl A
         fis.append(&mut kdf_context);
         fis.put_i32(256);
 
-        let key = ring::hmac::Key::new(ring::hmac::HMAC_SHA256, &input_key);
+        let mut mac =
+            Hmac::<Sha256>::new_from_slice(&input_key).expect("HMAC can take key of any size");
 
         let mut buf = BytesMut::new();
         buf.put_i32(1);
         buf.put_slice(&fis);
-        let tag = ring::hmac::sign(&key, &buf);
-        let tag = &tag.as_ref()[0..32];
-
-        let k0 = U256::from_be_bytes(tag.try_into().expect("convert to [u8; 32]"));
+        mac.update(&buf);
+        let k0 = U256::from_be_bytes(mac.finalize_fixed().into());
 
         // It would be more secure for this to be a constant time comparison, but because this
         // is for client usage, that's not as big a deal.
@@ -70,7 +66,7 @@ pub fn generate_signing_key(access_key: &str, secret_access_key: &str) -> impl A
                 .checked_add(&U256::ONE)
                 .expect("k0 is always less than U256::MAX");
             let d = Zeroizing::new(pk.to_be_bytes());
-            break SigningKey::from_bytes(d.as_ref()).unwrap();
+            break SigningKey::from_slice(d.as_ref()).unwrap();
         }
 
         *counter = counter

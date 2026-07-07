@@ -25,7 +25,11 @@ pub fn ser_geo_restriction_customization(
 #[allow(clippy::needless_question_mark)]
 pub fn de_geo_restriction_customization(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::GeoRestrictionCustomization, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::GeoRestrictionCustomization::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -47,7 +51,7 @@ pub fn de_geo_restriction_customization(
             s if s.matches("Locations") /* Locations com.amazonaws.cloudfront#GeoRestrictionCustomization$Locations */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_location_list::de_location_list(&mut tag)
+                        crate::protocol_serde::shape_location_list::de_location_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

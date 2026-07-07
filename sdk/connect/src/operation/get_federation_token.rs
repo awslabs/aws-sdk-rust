@@ -150,9 +150,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetFede
 #[derive(Debug)]
 struct GetFederationTokenResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetFederationTokenResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -278,7 +279,9 @@ pub enum GetFederationTokenError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>No user with the specified credentials was found in the Amazon Connect instance.</p>
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>No user with the specified credentials was found in the Connect Customer instance.</p>
     UserNotFoundException(crate::types::error::UserNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -318,6 +321,7 @@ impl GetFederationTokenError {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UserNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -342,6 +346,10 @@ impl GetFederationTokenError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `GetFederationTokenError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `GetFederationTokenError::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(self, Self::UserNotFoundException(_))
@@ -355,6 +363,7 @@ impl ::std::error::Error for GetFederationTokenError {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UserNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -368,6 +377,7 @@ impl ::std::fmt::Display for GetFederationTokenError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UserNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -395,6 +405,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetFederation
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UserNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

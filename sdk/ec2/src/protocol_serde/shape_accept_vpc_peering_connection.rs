@@ -51,6 +51,8 @@ pub fn de_accept_vpc_peering_connection(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AcceptVpcPeeringConnectionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AcceptVpcPeeringConnectionResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_accept_vpc_peering_connection(
             s if s.matches("vpcPeeringConnection") /* VpcPeeringConnection com.amazonaws.ec2.synthetic#AcceptVpcPeeringConnectionOutput$VpcPeeringConnection */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vpc_peering_connection::de_vpc_peering_connection(&mut tag)
+                        crate::protocol_serde::shape_vpc_peering_connection::de_vpc_peering_connection(&mut tag, depth + 1)
                         ?
                     )
                 ;

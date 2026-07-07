@@ -2,10 +2,16 @@
 pub(crate) fn de_solution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Solution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,10 +70,18 @@ where
                             );
                         }
                         "solutionConfig" => {
-                            builder = builder.set_solution_config(crate::protocol_serde::shape_solution_config::de_solution_config(tokens, _value)?);
+                            builder = builder.set_solution_config(crate::protocol_serde::shape_solution_config::de_solution_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "autoMLResult" => {
-                            builder = builder.set_auto_ml_result(crate::protocol_serde::shape_auto_ml_result::de_auto_ml_result(tokens, _value)?);
+                            builder = builder.set_auto_ml_result(crate::protocol_serde::shape_auto_ml_result::de_auto_ml_result(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "status" => {
                             builder = builder.set_status(
@@ -90,12 +104,12 @@ where
                         }
                         "latestSolutionVersion" => {
                             builder = builder.set_latest_solution_version(
-                                crate::protocol_serde::shape_solution_version_summary::de_solution_version_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_solution_version_summary::de_solution_version_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "latestSolutionUpdate" => {
                             builder = builder.set_latest_solution_update(
-                                crate::protocol_serde::shape_solution_update_summary::de_solution_update_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_solution_update_summary::de_solution_update_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

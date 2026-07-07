@@ -114,14 +114,19 @@ pub(crate) fn de_update_stage(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "accessLogSettings" => {
-                    builder =
-                        builder.set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(tokens, _value)?);
+                    builder = builder.set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "apiGatewayManaged" => {
                     builder = builder.set_api_gateway_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -143,7 +148,11 @@ pub(crate) fn de_update_stage(
                     )?);
                 }
                 "defaultRouteSettings" => {
-                    builder = builder.set_default_route_settings(crate::protocol_serde::shape_route_settings::de_route_settings(tokens, _value)?);
+                    builder = builder.set_default_route_settings(crate::protocol_serde::shape_route_settings::de_route_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "deploymentId" => {
                     builder = builder.set_deployment_id(
@@ -173,7 +182,11 @@ pub(crate) fn de_update_stage(
                     )?);
                 }
                 "routeSettings" => {
-                    builder = builder.set_route_settings(crate::protocol_serde::shape_route_settings_map::de_route_settings_map(tokens, _value)?);
+                    builder = builder.set_route_settings(crate::protocol_serde::shape_route_settings_map::de_route_settings_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "stageName" => {
                     builder = builder.set_stage_name(
@@ -183,10 +196,14 @@ pub(crate) fn de_update_stage(
                     );
                 }
                 "stageVariables" => {
-                    builder = builder.set_stage_variables(crate::protocol_serde::shape_stage_variables_map::de_stage_variables_map(tokens, _value)?);
+                    builder = builder.set_stage_variables(crate::protocol_serde::shape_stage_variables_map::de_stage_variables_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

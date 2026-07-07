@@ -21,10 +21,16 @@ pub fn ser_bar_series_item(
 pub(crate) fn de_bar_series_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BarSeriesItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,12 +42,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldBarSeriesItem" => {
                             builder = builder.set_field_bar_series_item(
-                                crate::protocol_serde::shape_field_bar_series_item::de_field_bar_series_item(tokens, _value)?,
+                                crate::protocol_serde::shape_field_bar_series_item::de_field_bar_series_item(tokens, _value, depth + 1)?,
                             );
                         }
                         "DataFieldBarSeriesItem" => {
                             builder = builder.set_data_field_bar_series_item(
-                                crate::protocol_serde::shape_data_field_bar_series_item::de_data_field_bar_series_item(tokens, _value)?,
+                                crate::protocol_serde::shape_data_field_bar_series_item::de_data_field_bar_series_item(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

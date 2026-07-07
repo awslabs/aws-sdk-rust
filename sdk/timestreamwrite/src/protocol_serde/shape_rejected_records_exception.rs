@@ -5,6 +5,8 @@ pub(crate) fn de_rejected_records_exception_json_err(
 ) -> ::std::result::Result<crate::types::error::builders::RejectedRecordsExceptionBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -18,7 +20,11 @@ pub(crate) fn de_rejected_records_exception_json_err(
                     );
                 }
                 "RejectedRecords" => {
-                    builder = builder.set_rejected_records(crate::protocol_serde::shape_rejected_records::de_rejected_records(tokens, _value)?);
+                    builder = builder.set_rejected_records(crate::protocol_serde::shape_rejected_records::de_rejected_records(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

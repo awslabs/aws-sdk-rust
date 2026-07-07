@@ -120,16 +120,18 @@ pub(crate) fn de_predict_qa_results(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdditionalResults" => {
-                    builder = builder.set_additional_results(crate::protocol_serde::shape_qa_results::de_qa_results(tokens, _value)?);
+                    builder = builder.set_additional_results(crate::protocol_serde::shape_qa_results::de_qa_results(tokens, _value, depth + 1)?);
                 }
                 "PrimaryResult" => {
-                    builder = builder.set_primary_result(crate::protocol_serde::shape_qa_result::de_qa_result(tokens, _value)?);
+                    builder = builder.set_primary_result(crate::protocol_serde::shape_qa_result::de_qa_result(tokens, _value, depth + 1)?);
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(

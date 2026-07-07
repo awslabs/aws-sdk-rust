@@ -42,5 +42,11 @@ pub fn ser_create_grant_input_input(
     if let Some(var_13) = &input.dry_run {
         object.key("DryRun").boolean(*var_13);
     }
+    if let Some(var_14) = &input.grantee_service_principal {
+        object.key("GranteeServicePrincipal").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.retiring_service_principal {
+        object.key("RetiringServicePrincipal").string(var_15.as_str());
+    }
     Ok(())
 }

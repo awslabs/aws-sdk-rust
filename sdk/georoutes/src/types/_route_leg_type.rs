@@ -14,6 +14,9 @@
 /// match routelegtype {
 ///     RouteLegType::Ferry => { /* ... */ },
 ///     RouteLegType::Pedestrian => { /* ... */ },
+///     RouteLegType::Rental => { /* ... */ },
+///     RouteLegType::Taxi => { /* ... */ },
+///     RouteLegType::Transit => { /* ... */ },
 ///     RouteLegType::Vehicle => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,6 +49,12 @@ pub enum RouteLegType {
     #[allow(missing_docs)] // documentation missing in model
     Pedestrian,
     #[allow(missing_docs)] // documentation missing in model
+    Rental,
+    #[allow(missing_docs)] // documentation missing in model
+    Taxi,
+    #[allow(missing_docs)] // documentation missing in model
+    Transit,
+    #[allow(missing_docs)] // documentation missing in model
     Vehicle,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -56,6 +65,9 @@ impl ::std::convert::From<&str> for RouteLegType {
         match s {
             "Ferry" => RouteLegType::Ferry,
             "Pedestrian" => RouteLegType::Pedestrian,
+            "Rental" => RouteLegType::Rental,
+            "Taxi" => RouteLegType::Taxi,
+            "Transit" => RouteLegType::Transit,
             "Vehicle" => RouteLegType::Vehicle,
             other => RouteLegType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -74,13 +86,16 @@ impl RouteLegType {
         match self {
             RouteLegType::Ferry => "Ferry",
             RouteLegType::Pedestrian => "Pedestrian",
+            RouteLegType::Rental => "Rental",
+            RouteLegType::Taxi => "Taxi",
+            RouteLegType::Transit => "Transit",
             RouteLegType::Vehicle => "Vehicle",
             RouteLegType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Ferry", "Pedestrian", "Vehicle"]
+        &["Ferry", "Pedestrian", "Rental", "Taxi", "Transit", "Vehicle"]
     }
 }
 impl ::std::convert::AsRef<str> for RouteLegType {
@@ -105,6 +120,9 @@ impl ::std::fmt::Display for RouteLegType {
         match self {
             RouteLegType::Ferry => write!(f, "Ferry"),
             RouteLegType::Pedestrian => write!(f, "Pedestrian"),
+            RouteLegType::Rental => write!(f, "Rental"),
+            RouteLegType::Taxi => write!(f, "Taxi"),
+            RouteLegType::Transit => write!(f, "Transit"),
             RouteLegType::Vehicle => write!(f, "Vehicle"),
             RouteLegType::Unknown(value) => write!(f, "{value}"),
         }

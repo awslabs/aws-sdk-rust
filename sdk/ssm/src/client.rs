@@ -179,6 +179,8 @@ mod create_association;
 
 mod create_association_batch;
 
+mod create_cloud_connector;
+
 mod create_document;
 
 mod create_maintenance_window;
@@ -221,6 +223,8 @@ pub mod customize;
 mod delete_activation;
 
 mod delete_association;
+
+mod delete_cloud_connector;
 
 mod delete_document;
 
@@ -324,6 +328,8 @@ mod get_automation_execution;
 
 mod get_calendar_state;
 
+mod get_cloud_connector;
+
 mod get_command_invocation;
 
 mod get_connection_status;
@@ -377,6 +383,8 @@ mod label_parameter_version;
 mod list_association_versions;
 
 mod list_associations;
+
+mod list_cloud_connectors;
 
 mod list_command_invocations;
 
@@ -460,6 +468,8 @@ mod update_association;
 
 mod update_association_status;
 
+mod update_cloud_connector;
+
 mod update_document;
 
 mod update_document_default_version;
@@ -483,3 +493,5 @@ mod update_patch_baseline;
 mod update_resource_data_sync;
 
 mod update_service_setting;
+
+mod validate_cloud_connector;

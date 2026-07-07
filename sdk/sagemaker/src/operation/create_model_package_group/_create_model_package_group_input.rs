@@ -9,6 +9,8 @@ pub struct CreateModelPackageGroupInput {
     pub model_package_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The managed configuration of the model package group.</p>
+    pub managed_configuration: ::std::option::Option<crate::types::ManagedConfiguration>,
 }
 impl CreateModelPackageGroupInput {
     /// <p>The name of the model group.</p>
@@ -25,6 +27,10 @@ impl CreateModelPackageGroupInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn managed_configuration(&self) -> ::std::option::Option<&crate::types::ManagedConfiguration> {
+        self.managed_configuration.as_ref()
+    }
 }
 impl CreateModelPackageGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateModelPackageGroupInput`](crate::operation::create_model_package_group::CreateModelPackageGroupInput).
@@ -40,6 +46,7 @@ pub struct CreateModelPackageGroupInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) managed_configuration: ::std::option::Option<crate::types::ManagedConfiguration>,
 }
 impl CreateModelPackageGroupInputBuilder {
     /// <p>The name of the model group.</p>
@@ -91,6 +98,20 @@ impl CreateModelPackageGroupInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn managed_configuration(mut self, input: crate::types::ManagedConfiguration) -> Self {
+        self.managed_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn set_managed_configuration(mut self, input: ::std::option::Option<crate::types::ManagedConfiguration>) -> Self {
+        self.managed_configuration = input;
+        self
+    }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn get_managed_configuration(&self) -> &::std::option::Option<crate::types::ManagedConfiguration> {
+        &self.managed_configuration
+    }
     /// Consumes the builder and constructs a [`CreateModelPackageGroupInput`](crate::operation::create_model_package_group::CreateModelPackageGroupInput).
     pub fn build(
         self,
@@ -102,6 +123,7 @@ impl CreateModelPackageGroupInputBuilder {
             model_package_group_name: self.model_package_group_name,
             model_package_group_description: self.model_package_group_description,
             tags: self.tags,
+            managed_configuration: self.managed_configuration,
         })
     }
 }

@@ -7,26 +7,40 @@
 use crate::endpoint_lib::diagnostic::DiagnosticCollector;
 
 pub(crate) fn is_valid_host_label(label: &str, allow_dots: bool, e: &mut DiagnosticCollector) -> bool {
+    let bytes = label.as_bytes();
     if allow_dots {
-        for part in label.split('.') {
-            if !is_valid_host_label(part, false, e) {
-                return false;
+        let mut start = 0;
+        for i in 0..bytes.len() {
+            if bytes[i] == b'.' {
+                if !is_valid_segment(bytes, start, i, e) {
+                    return false;
+                }
+                start = i + 1;
             }
         }
-        true
+        is_valid_segment(bytes, start, bytes.len(), e)
     } else {
-        if label.is_empty() || label.len() > 63 {
-            e.report_error("host was too short or too long");
+        is_valid_segment(bytes, 0, bytes.len(), e)
+    }
+}
+
+#[inline]
+fn is_valid_segment(bytes: &[u8], start: usize, end: usize, e: &mut DiagnosticCollector) -> bool {
+    let len = end - start;
+    if len == 0 || len > 63 {
+        e.report_error("host was too short or too long");
+        return false;
+    }
+    if bytes[start] == b'-' {
+        e.report_error("cannot start with `-`");
+        return false;
+    }
+    for &b in &bytes[start..end] {
+        if !b.is_ascii_alphanumeric() && b != b'-' {
             return false;
         }
-        label.chars().enumerate().all(|(idx, ch)| match (ch, idx) {
-            ('-', 0) => {
-                e.report_error("cannot start with `-`");
-                false
-            }
-            _ => ch.is_alphanumeric() || ch == '-',
-        })
     }
+    true
 }
 
 #[cfg(all(test, feature = "gated-tests"))]
@@ -59,6 +73,20 @@ mod test {
         assert_eq!(is_valid_host_label("-foo", true), false);
         assert_eq!(is_valid_host_label(".foo", true), false);
         assert_eq!(is_valid_host_label("a-b.foo", true), true);
+    }
+
+    #[allow(clippy::bool_assert_comparison)]
+    #[test]
+    fn non_ascii_rejected() {
+        // DNS host labels only allow ASCII alphanumeric and hyphens (RFC 952/1123)
+        assert_eq!(is_valid_host_label("café", false), false);
+        assert_eq!(is_valid_host_label("bücher", false), false);
+        assert_eq!(is_valid_host_label("日本語", false), false);
+        assert_eq!(is_valid_host_label("a.café.b", true), false);
+        assert_eq!(is_valid_host_label("🚀rocket", false), false);
+        // ASCII is fine
+        assert_eq!(is_valid_host_label("abc123", false), true);
+        assert_eq!(is_valid_host_label("a-b-c", false), true);
     }
 
     use crate::endpoint_lib::diagnostic::DiagnosticCollector;

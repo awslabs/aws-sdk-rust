@@ -40,10 +40,16 @@ pub fn ser_function_configuration_environment(
 pub(crate) fn de_function_configuration_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FunctionConfigurationEnvironment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,16 +64,22 @@ where
                         }
                         "Execution" => {
                             builder = builder.set_execution(crate::protocol_serde::shape_function_execution_config::de_function_execution_config(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ResourceAccessPolicies" => {
                             builder = builder.set_resource_access_policies(
-                                crate::protocol_serde::shape_list_of_resource_access_policy::de_list_of_resource_access_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_resource_access_policy::de_list_of_resource_access_policy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Variables" => {
-                            builder = builder.set_variables(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                            builder = builder.set_variables(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

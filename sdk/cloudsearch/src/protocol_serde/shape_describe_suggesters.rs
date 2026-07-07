@@ -101,6 +101,8 @@ pub fn de_describe_suggesters(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSuggestersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSuggestersResponse got {start_el:?}"
@@ -118,7 +120,7 @@ pub fn de_describe_suggesters(
             s if s.matches("Suggesters") /* Suggesters com.amazonaws.cloudsearch.synthetic#DescribeSuggestersOutput$Suggesters */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_suggester_status_list::de_suggester_status_list(&mut tag)
+                        crate::protocol_serde::shape_suggester_status_list::de_suggester_status_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

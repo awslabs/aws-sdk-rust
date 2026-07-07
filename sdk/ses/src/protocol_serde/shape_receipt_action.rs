@@ -50,7 +50,11 @@ pub fn ser_receipt_action(
 #[allow(clippy::needless_question_mark)]
 pub fn de_receipt_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReceiptAction, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReceiptAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -58,7 +62,7 @@ pub fn de_receipt_action(
             s if s.matches("S3Action") /* S3Action com.amazonaws.ses#ReceiptAction$S3Action */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_s3_action::de_s3_action(&mut tag)
+                        crate::protocol_serde::shape_s3_action::de_s3_action(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -68,7 +72,7 @@ pub fn de_receipt_action(
             s if s.matches("BounceAction") /* BounceAction com.amazonaws.ses#ReceiptAction$BounceAction */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_bounce_action::de_bounce_action(&mut tag)
+                        crate::protocol_serde::shape_bounce_action::de_bounce_action(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -78,7 +82,7 @@ pub fn de_receipt_action(
             s if s.matches("WorkmailAction") /* WorkmailAction com.amazonaws.ses#ReceiptAction$WorkmailAction */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_workmail_action::de_workmail_action(&mut tag)
+                        crate::protocol_serde::shape_workmail_action::de_workmail_action(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -88,7 +92,7 @@ pub fn de_receipt_action(
             s if s.matches("LambdaAction") /* LambdaAction com.amazonaws.ses#ReceiptAction$LambdaAction */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_lambda_action::de_lambda_action(&mut tag)
+                        crate::protocol_serde::shape_lambda_action::de_lambda_action(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -98,7 +102,7 @@ pub fn de_receipt_action(
             s if s.matches("StopAction") /* StopAction com.amazonaws.ses#ReceiptAction$StopAction */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_stop_action::de_stop_action(&mut tag)
+                        crate::protocol_serde::shape_stop_action::de_stop_action(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +112,7 @@ pub fn de_receipt_action(
             s if s.matches("AddHeaderAction") /* AddHeaderAction com.amazonaws.ses#ReceiptAction$AddHeaderAction */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_add_header_action::de_add_header_action(&mut tag)
+                        crate::protocol_serde::shape_add_header_action::de_add_header_action(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -118,7 +122,7 @@ pub fn de_receipt_action(
             s if s.matches("SNSAction") /* SNSAction com.amazonaws.ses#ReceiptAction$SNSAction */ =>  {
                 let var_23 =
                     Some(
-                        crate::protocol_serde::shape_sns_action::de_sns_action(&mut tag)
+                        crate::protocol_serde::shape_sns_action::de_sns_action(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -128,7 +132,7 @@ pub fn de_receipt_action(
             s if s.matches("ConnectAction") /* ConnectAction com.amazonaws.ses#ReceiptAction$ConnectAction */ =>  {
                 let var_24 =
                     Some(
-                        crate::protocol_serde::shape_connect_action::de_connect_action(&mut tag)
+                        crate::protocol_serde::shape_connect_action::de_connect_action(&mut tag, depth + 1)
                         ?
                     )
                 ;

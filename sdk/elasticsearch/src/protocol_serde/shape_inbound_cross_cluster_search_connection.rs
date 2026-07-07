@@ -2,10 +2,16 @@
 pub(crate) fn de_inbound_cross_cluster_search_connection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InboundCrossClusterSearchConnection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,29 +20,35 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "SourceDomainInfo" => {
-                            builder = builder
-                                .set_source_domain_info(crate::protocol_serde::shape_domain_information::de_domain_information(tokens, _value)?);
-                        }
-                        "DestinationDomainInfo" => {
-                            builder = builder
-                                .set_destination_domain_info(crate::protocol_serde::shape_domain_information::de_domain_information(tokens, _value)?);
-                        }
-                        "CrossClusterSearchConnectionId" => {
-                            builder = builder.set_cross_cluster_search_connection_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "ConnectionStatus" => {
-                            builder = builder.set_connection_status(
-                                    crate::protocol_serde::shape_inbound_cross_cluster_search_connection_status::de_inbound_cross_cluster_search_connection_status(tokens, _value)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "SourceDomainInfo" => {
+                                builder = builder.set_source_domain_info(crate::protocol_serde::shape_domain_information::de_domain_information(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "DestinationDomainInfo" => {
+                                builder = builder.set_destination_domain_info(
+                                    crate::protocol_serde::shape_domain_information::de_domain_information(tokens, _value, depth + 1)?,
                                 );
+                            }
+                            "CrossClusterSearchConnectionId" => {
+                                builder = builder.set_cross_cluster_search_connection_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ConnectionStatus" => {
+                                builder = builder.set_connection_status(
+                                    crate::protocol_serde::shape_inbound_cross_cluster_search_connection_status::de_inbound_cross_cluster_search_connection_status(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

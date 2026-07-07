@@ -160,6 +160,8 @@ pub(crate) fn de_create_workflow(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -203,7 +205,11 @@ pub(crate) fn de_create_workflow(
                     builder = builder.set_is_latest_version(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_warning_messages::de_warning_messages(tokens, _value)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_warning_messages::de_warning_messages(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

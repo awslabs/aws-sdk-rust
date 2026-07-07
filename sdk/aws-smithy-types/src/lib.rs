@@ -36,7 +36,8 @@ pub mod timeout;
 pub mod type_erasure;
 
 mod blob;
-mod document;
+/// Document type and serde conversion utilities.
+pub mod document;
 mod number;
 pub mod str_bytes;
 

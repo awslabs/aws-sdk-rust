@@ -27,10 +27,16 @@ pub fn ser_scaling_rule(
 pub(crate) fn de_scaling_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScalingRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -55,10 +61,14 @@ where
                             );
                         }
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_scaling_action::de_scaling_action(tokens, _value)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_scaling_action::de_scaling_action(tokens, _value, depth + 1)?);
                         }
                         "Trigger" => {
-                            builder = builder.set_trigger(crate::protocol_serde::shape_scaling_trigger::de_scaling_trigger(tokens, _value)?);
+                            builder = builder.set_trigger(crate::protocol_serde::shape_scaling_trigger::de_scaling_trigger(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

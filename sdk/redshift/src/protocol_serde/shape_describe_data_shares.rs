@@ -70,6 +70,8 @@ pub fn de_describe_data_shares(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeDataSharesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeDataSharesResponse got {start_el:?}"
@@ -87,7 +89,7 @@ pub fn de_describe_data_shares(
             s if s.matches("DataShares") /* DataShares com.amazonaws.redshift.synthetic#DescribeDataSharesOutput$DataShares */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_data_share_list::de_data_share_list(&mut tag)
+                        crate::protocol_serde::shape_data_share_list::de_data_share_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

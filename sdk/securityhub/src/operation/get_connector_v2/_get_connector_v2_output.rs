@@ -21,6 +21,10 @@ pub struct GetConnectorV2Output {
     pub health: ::std::option::Option<crate::types::HealthCheck>,
     /// <p>The third-party provider detail for a service configuration.</p>
     pub provider_detail: ::std::option::Option<crate::types::ProviderDetail>,
+    /// <p>The enablement status of the connector.</p>
+    pub enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub enablement_status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetConnectorV2Output {
@@ -60,6 +64,14 @@ impl GetConnectorV2Output {
     pub fn provider_detail(&self) -> ::std::option::Option<&crate::types::ProviderDetail> {
         self.provider_detail.as_ref()
     }
+    /// <p>The enablement status of the connector.</p>
+    pub fn enablement_status(&self) -> ::std::option::Option<&crate::types::EnablementStatus> {
+        self.enablement_status.as_ref()
+    }
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub fn enablement_status_reason(&self) -> ::std::option::Option<&str> {
+        self.enablement_status_reason.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetConnectorV2Output {
     fn request_id(&self) -> Option<&str> {
@@ -86,6 +98,8 @@ pub struct GetConnectorV2OutputBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) health: ::std::option::Option<crate::types::HealthCheck>,
     pub(crate) provider_detail: ::std::option::Option<crate::types::ProviderDetail>,
+    pub(crate) enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
+    pub(crate) enablement_status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetConnectorV2OutputBuilder {
@@ -221,6 +235,34 @@ impl GetConnectorV2OutputBuilder {
     pub fn get_provider_detail(&self) -> &::std::option::Option<crate::types::ProviderDetail> {
         &self.provider_detail
     }
+    /// <p>The enablement status of the connector.</p>
+    pub fn enablement_status(mut self, input: crate::types::EnablementStatus) -> Self {
+        self.enablement_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enablement status of the connector.</p>
+    pub fn set_enablement_status(mut self, input: ::std::option::Option<crate::types::EnablementStatus>) -> Self {
+        self.enablement_status = input;
+        self
+    }
+    /// <p>The enablement status of the connector.</p>
+    pub fn get_enablement_status(&self) -> &::std::option::Option<crate::types::EnablementStatus> {
+        &self.enablement_status
+    }
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub fn enablement_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.enablement_status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub fn set_enablement_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.enablement_status_reason = input;
+        self
+    }
+    /// <p>The reason for the current enablement status. Provides additional context when the connector is in a failed state.</p>
+    pub fn get_enablement_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.enablement_status_reason
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -242,6 +284,8 @@ impl GetConnectorV2OutputBuilder {
             last_updated_at: self.last_updated_at,
             health: self.health,
             provider_detail: self.provider_detail,
+            enablement_status: self.enablement_status,
+            enablement_status_reason: self.enablement_status_reason,
             _request_id: self._request_id,
         }
     }

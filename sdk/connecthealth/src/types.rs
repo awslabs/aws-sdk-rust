@@ -59,6 +59,8 @@ pub use crate::types::_domain_summary::DomainSummary;
 
 pub use crate::types::_medical_scribe_audio_event::MedicalScribeAudioEvent;
 
+pub use crate::types::_medical_scribe_binary_audio_event::MedicalScribeBinaryAudioEvent;
+
 pub use crate::types::_medical_scribe_session_control_event::MedicalScribeSessionControlEvent;
 
 pub use crate::types::_medical_scribe_configuration_event::MedicalScribeConfigurationEvent;
@@ -152,6 +154,8 @@ mod _managed_template;
 mod _managed_template_response;
 
 mod _medical_scribe_audio_event;
+
+mod _medical_scribe_binary_audio_event;
 
 mod _medical_scribe_channel_definition;
 

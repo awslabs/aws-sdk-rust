@@ -5,7 +5,7 @@
 pub struct UpdateMonitorSettingsInput {
     /// <p>The unique identifier of the monitor to update settings for.</p>
     pub monitor_id: ::std::option::Option<::std::string::String>,
-    /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
     pub settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateMonitorSettingsInput {
@@ -13,7 +13,7 @@ impl UpdateMonitorSettingsInput {
     pub fn monitor_id(&self) -> ::std::option::Option<&str> {
         self.monitor_id.as_deref()
     }
-    /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
     pub fn settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.settings.as_ref()
     }
@@ -52,19 +52,19 @@ impl UpdateMonitorSettingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
     ///
-    /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
     pub fn settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.settings.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.settings = ::std::option::Option::Some(hash_map);
         self
     }
-    /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.settings = input;
         self
     }
-    /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
     pub fn get_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.settings
     }

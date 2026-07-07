@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_attachment_ena_srd_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AttachmentEnaSrdSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AttachmentEnaSrdSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -25,7 +29,7 @@ pub fn de_attachment_ena_srd_specification(
             s if s.matches("enaSrdUdpSpecification") /* EnaSrdUdpSpecification com.amazonaws.ec2#AttachmentEnaSrdSpecification$EnaSrdUdpSpecification */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_attachment_ena_srd_udp_specification::de_attachment_ena_srd_udp_specification(&mut tag)
+                        crate::protocol_serde::shape_attachment_ena_srd_udp_specification::de_attachment_ena_srd_udp_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;

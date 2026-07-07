@@ -134,6 +134,8 @@ pub fn de_list_sms_sandbox_phone_numbers(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListSMSSandboxPhoneNumbersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListSMSSandboxPhoneNumbersResponse got {start_el:?}"
@@ -151,7 +153,7 @@ pub fn de_list_sms_sandbox_phone_numbers(
             s if s.matches("PhoneNumbers") /* PhoneNumbers com.amazonaws.sns.synthetic#ListSMSSandboxPhoneNumbersOutput$PhoneNumbers */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_sms_sandbox_phone_number_list::de_sms_sandbox_phone_number_list(&mut tag)
+                        crate::protocol_serde::shape_sms_sandbox_phone_number_list::de_sms_sandbox_phone_number_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

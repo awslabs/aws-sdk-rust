@@ -96,6 +96,8 @@ pub fn de_describe_environment_health(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeEnvironmentHealthResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeEnvironmentHealthResponse got {start_el:?}"
@@ -166,7 +168,7 @@ pub fn de_describe_environment_health(
             s if s.matches("Causes") /* Causes com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$Causes */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_causes::de_causes(&mut tag)
+                        crate::protocol_serde::shape_causes::de_causes(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -176,7 +178,7 @@ pub fn de_describe_environment_health(
             s if s.matches("ApplicationMetrics") /* ApplicationMetrics com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$ApplicationMetrics */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_application_metrics::de_application_metrics(&mut tag)
+                        crate::protocol_serde::shape_application_metrics::de_application_metrics(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -186,7 +188,7 @@ pub fn de_describe_environment_health(
             s if s.matches("InstancesHealth") /* InstancesHealth com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$InstancesHealth */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_instance_health_summary::de_instance_health_summary(&mut tag)
+                        crate::protocol_serde::shape_instance_health_summary::de_instance_health_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;

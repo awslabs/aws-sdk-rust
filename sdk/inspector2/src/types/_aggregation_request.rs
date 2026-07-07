@@ -12,6 +12,8 @@ pub enum AggregationRequest {
     AwsEcrContainerAggregation(crate::types::AwsEcrContainerAggregation),
     /// <p>An object that contains details about an aggregation request based on code repositories.</p>
     CodeRepositoryAggregation(crate::types::CodeRepositoryAggregation),
+    /// <p>An object that contains details about an aggregation request based on container images.</p>
+    ContainerImageAggregation(crate::types::ContainerImageAggregation),
     /// <p>An object that contains details about an aggregation request based on Amazon EC2 instances.</p>
     Ec2InstanceAggregation(crate::types::Ec2InstanceAggregation),
     /// <p>An object that contains details about an aggregation request based on finding types.</p>
@@ -26,8 +28,12 @@ pub enum AggregationRequest {
     PackageAggregation(crate::types::PackageAggregation),
     /// <p>An object that contains details about an aggregation request based on Amazon ECR repositories.</p>
     RepositoryAggregation(crate::types::RepositoryAggregation),
+    /// <p>An object that contains details about an aggregation request based on serverless functions.</p>
+    ServerlessFunctionAggregation(crate::types::ServerlessFunctionAggregation),
     /// <p>An object that contains details about an aggregation request based on finding title.</p>
     TitleAggregation(crate::types::TitleAggregation),
+    /// <p>An object that contains details about an aggregation request based on virtual machine (VM) instances.</p>
+    VmInstanceAggregation(crate::types::VmInstanceAggregation),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -90,6 +96,19 @@ impl AggregationRequest {
     /// Returns true if this is a [`CodeRepositoryAggregation`](crate::types::AggregationRequest::CodeRepositoryAggregation).
     pub fn is_code_repository_aggregation(&self) -> bool {
         self.as_code_repository_aggregation().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ContainerImageAggregation`](crate::types::AggregationRequest::ContainerImageAggregation), extracting the inner [`ContainerImageAggregation`](crate::types::ContainerImageAggregation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_container_image_aggregation(&self) -> ::std::result::Result<&crate::types::ContainerImageAggregation, &Self> {
+        if let AggregationRequest::ContainerImageAggregation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ContainerImageAggregation`](crate::types::AggregationRequest::ContainerImageAggregation).
+    pub fn is_container_image_aggregation(&self) -> bool {
+        self.as_container_image_aggregation().is_ok()
     }
     /// Tries to convert the enum instance into [`Ec2InstanceAggregation`](crate::types::AggregationRequest::Ec2InstanceAggregation), extracting the inner [`Ec2InstanceAggregation`](crate::types::Ec2InstanceAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -182,6 +201,19 @@ impl AggregationRequest {
     pub fn is_repository_aggregation(&self) -> bool {
         self.as_repository_aggregation().is_ok()
     }
+    /// Tries to convert the enum instance into [`ServerlessFunctionAggregation`](crate::types::AggregationRequest::ServerlessFunctionAggregation), extracting the inner [`ServerlessFunctionAggregation`](crate::types::ServerlessFunctionAggregation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_serverless_function_aggregation(&self) -> ::std::result::Result<&crate::types::ServerlessFunctionAggregation, &Self> {
+        if let AggregationRequest::ServerlessFunctionAggregation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ServerlessFunctionAggregation`](crate::types::AggregationRequest::ServerlessFunctionAggregation).
+    pub fn is_serverless_function_aggregation(&self) -> bool {
+        self.as_serverless_function_aggregation().is_ok()
+    }
     /// Tries to convert the enum instance into [`TitleAggregation`](crate::types::AggregationRequest::TitleAggregation), extracting the inner [`TitleAggregation`](crate::types::TitleAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_title_aggregation(&self) -> ::std::result::Result<&crate::types::TitleAggregation, &Self> {
@@ -194,6 +226,19 @@ impl AggregationRequest {
     /// Returns true if this is a [`TitleAggregation`](crate::types::AggregationRequest::TitleAggregation).
     pub fn is_title_aggregation(&self) -> bool {
         self.as_title_aggregation().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VmInstanceAggregation`](crate::types::AggregationRequest::VmInstanceAggregation), extracting the inner [`VmInstanceAggregation`](crate::types::VmInstanceAggregation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_vm_instance_aggregation(&self) -> ::std::result::Result<&crate::types::VmInstanceAggregation, &Self> {
+        if let AggregationRequest::VmInstanceAggregation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VmInstanceAggregation`](crate::types::AggregationRequest::VmInstanceAggregation).
+    pub fn is_vm_instance_aggregation(&self) -> bool {
+        self.as_vm_instance_aggregation().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

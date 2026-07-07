@@ -306,10 +306,16 @@ pub fn ser_aws_rds_db_instance_details(
 pub(crate) fn de_aws_rds_db_instance_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbInstanceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -322,7 +328,9 @@ where
                         "AssociatedRoles" => {
                             builder = builder.set_associated_roles(
                                 crate::protocol_serde::shape_aws_rds_db_instance_associated_roles::de_aws_rds_db_instance_associated_roles(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -380,7 +388,11 @@ where
                         }
                         "Endpoint" => {
                             builder = builder.set_endpoint(
-                                crate::protocol_serde::shape_aws_rds_db_instance_endpoint::de_aws_rds_db_instance_endpoint(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_rds_db_instance_endpoint::de_aws_rds_db_instance_endpoint(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Engine" => {
@@ -431,7 +443,9 @@ where
                         "VpcSecurityGroups" => {
                             builder = builder.set_vpc_security_groups(
                                 crate::protocol_serde::shape_aws_rds_db_instance_vpc_security_groups::de_aws_rds_db_instance_vpc_security_groups(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -481,11 +495,12 @@ where
                             );
                         }
                         "DbSecurityGroups" => {
-                            builder = builder.set_db_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_db_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "DbParameterGroups" => {
                             builder = builder.set_db_parameter_groups(
-                                crate::protocol_serde::shape_aws_rds_db_parameter_groups::de_aws_rds_db_parameter_groups(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_rds_db_parameter_groups::de_aws_rds_db_parameter_groups(tokens, _value, depth + 1)?,
                             );
                         }
                         "AvailabilityZone" => {
@@ -497,7 +512,9 @@ where
                         }
                         "DbSubnetGroup" => {
                             builder = builder.set_db_subnet_group(crate::protocol_serde::shape_aws_rds_db_subnet_group::de_aws_rds_db_subnet_group(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "PreferredMaintenanceWindow" => {
@@ -510,7 +527,9 @@ where
                         "PendingModifiedValues" => {
                             builder = builder.set_pending_modified_values(
                                 crate::protocol_serde::shape_aws_rds_db_pending_modified_values::de_aws_rds_db_pending_modified_values(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -533,12 +552,18 @@ where
                             );
                         }
                         "ReadReplicaDBInstanceIdentifiers" => {
-                            builder = builder
-                                .set_read_replica_db_instance_identifiers(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_read_replica_db_instance_identifiers(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ReadReplicaDBClusterIdentifiers" => {
-                            builder = builder
-                                .set_read_replica_db_cluster_identifiers(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_read_replica_db_cluster_identifiers(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LicenseModel" => {
                             builder = builder.set_license_model(
@@ -557,7 +582,9 @@ where
                         "OptionGroupMemberships" => {
                             builder = builder.set_option_group_memberships(
                                 crate::protocol_serde::shape_aws_rds_db_option_group_memberships::de_aws_rds_db_option_group_memberships(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -577,7 +604,9 @@ where
                         }
                         "StatusInfos" => {
                             builder = builder.set_status_infos(crate::protocol_serde::shape_aws_rds_db_status_infos::de_aws_rds_db_status_infos(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "StorageType" => {
@@ -589,7 +618,11 @@ where
                         }
                         "DomainMemberships" => {
                             builder = builder.set_domain_memberships(
-                                crate::protocol_serde::shape_aws_rds_db_domain_memberships::de_aws_rds_db_domain_memberships(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_rds_db_domain_memberships::de_aws_rds_db_domain_memberships(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CopyTagsToSnapshot" => {
@@ -642,17 +675,28 @@ where
                             );
                         }
                         "EnabledCloudWatchLogsExports" => {
-                            builder = builder
-                                .set_enabled_cloud_watch_logs_exports(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_enabled_cloud_watch_logs_exports(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ProcessorFeatures" => {
                             builder = builder.set_processor_features(
-                                crate::protocol_serde::shape_aws_rds_db_processor_features::de_aws_rds_db_processor_features(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_rds_db_processor_features::de_aws_rds_db_processor_features(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ListenerEndpoint" => {
                             builder = builder.set_listener_endpoint(
-                                crate::protocol_serde::shape_aws_rds_db_instance_endpoint::de_aws_rds_db_instance_endpoint(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_rds_db_instance_endpoint::de_aws_rds_db_instance_endpoint(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "MaxAllocatedStorage" => {

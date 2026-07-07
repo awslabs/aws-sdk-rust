@@ -137,6 +137,8 @@ pub(crate) fn de_batch_update_automation_rules(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,12 +146,16 @@ pub(crate) fn de_batch_update_automation_rules(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProcessedAutomationRules" => {
                     builder = builder.set_processed_automation_rules(
-                        crate::protocol_serde::shape_automation_rules_arns_list::de_automation_rules_arns_list(tokens, _value)?,
+                        crate::protocol_serde::shape_automation_rules_arns_list::de_automation_rules_arns_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "UnprocessedAutomationRules" => {
                     builder = builder.set_unprocessed_automation_rules(
-                        crate::protocol_serde::shape_unprocessed_automation_rules_list::de_unprocessed_automation_rules_list(tokens, _value)?,
+                        crate::protocol_serde::shape_unprocessed_automation_rules_list::de_unprocessed_automation_rules_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

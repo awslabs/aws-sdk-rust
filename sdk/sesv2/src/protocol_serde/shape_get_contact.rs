@@ -89,59 +89,65 @@ pub(crate) fn de_get_contact(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "AttributesData" => {
-                    builder = builder.set_attributes_data(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "AttributesData" => {
+                        builder = builder.set_attributes_data(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ContactListName" => {
+                        builder = builder.set_contact_list_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "CreatedTimestamp" => {
+                        builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "EmailAddress" => {
+                        builder = builder.set_email_address(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "LastUpdatedTimestamp" => {
+                        builder = builder.set_last_updated_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "TopicDefaultPreferences" => {
+                        builder = builder.set_topic_default_preferences(
+                            crate::protocol_serde::shape_topic_preference_list::de_topic_preference_list(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "TopicPreferences" => {
+                        builder = builder.set_topic_preferences(crate::protocol_serde::shape_topic_preference_list::de_topic_preference_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "UnsubscribeAll" => {
+                        builder = builder.set_unsubscribe_all(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "ContactListName" => {
-                    builder = builder.set_contact_list_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "CreatedTimestamp" => {
-                    builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "EmailAddress" => {
-                    builder = builder.set_email_address(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "LastUpdatedTimestamp" => {
-                    builder = builder.set_last_updated_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "TopicDefaultPreferences" => {
-                    builder = builder.set_topic_default_preferences(crate::protocol_serde::shape_topic_preference_list::de_topic_preference_list(
-                        tokens, _value,
-                    )?);
-                }
-                "TopicPreferences" => {
-                    builder = builder.set_topic_preferences(crate::protocol_serde::shape_topic_preference_list::de_topic_preference_list(
-                        tokens, _value,
-                    )?);
-                }
-                "UnsubscribeAll" => {
-                    builder = builder.set_unsubscribe_all(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

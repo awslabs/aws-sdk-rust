@@ -2,10 +2,16 @@
 pub(crate) fn de_codec_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CodecMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,8 @@ where
                             );
                         }
                         "codedFrameRate" => {
-                            builder = builder.set_coded_frame_rate(crate::protocol_serde::shape_frame_rate::de_frame_rate(tokens, _value)?);
+                            builder =
+                                builder.set_coded_frame_rate(crate::protocol_serde::shape_frame_rate::de_frame_rate(tokens, _value, depth + 1)?);
                         }
                         "colorPrimaries" => {
                             builder = builder.set_color_primaries(
@@ -38,6 +45,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ColorPrimaries::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "contentLightLevel" => {
+                            builder = builder.set_content_light_level(crate::protocol_serde::shape_content_light_level::de_content_light_level(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "height" => {
                             builder = builder.set_height(
@@ -64,6 +78,13 @@ where
                             builder = builder.set_profile(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "rotation" => {
+                            builder = builder.set_rotation(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

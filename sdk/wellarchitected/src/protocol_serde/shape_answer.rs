@@ -2,10 +2,16 @@
 pub(crate) fn de_answer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Answer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,14 +71,21 @@ where
                             );
                         }
                         "Choices" => {
-                            builder = builder.set_choices(crate::protocol_serde::shape_choices::de_choices(tokens, _value)?);
+                            builder = builder.set_choices(crate::protocol_serde::shape_choices::de_choices(tokens, _value, depth + 1)?);
                         }
                         "SelectedChoices" => {
-                            builder =
-                                builder.set_selected_choices(crate::protocol_serde::shape_selected_choices::de_selected_choices(tokens, _value)?);
+                            builder = builder.set_selected_choices(crate::protocol_serde::shape_selected_choices::de_selected_choices(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ChoiceAnswers" => {
-                            builder = builder.set_choice_answers(crate::protocol_serde::shape_choice_answers::de_choice_answers(tokens, _value)?);
+                            builder = builder.set_choice_answers(crate::protocol_serde::shape_choice_answers::de_choice_answers(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "IsApplicable" => {
                             builder = builder.set_is_applicable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -99,8 +112,11 @@ where
                             );
                         }
                         "JiraConfiguration" => {
-                            builder = builder
-                                .set_jira_configuration(crate::protocol_serde::shape_jira_configuration::de_jira_configuration(tokens, _value)?);
+                            builder = builder.set_jira_configuration(crate::protocol_serde::shape_jira_configuration::de_jira_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

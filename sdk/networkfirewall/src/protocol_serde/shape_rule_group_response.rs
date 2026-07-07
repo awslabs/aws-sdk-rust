@@ -2,10 +2,16 @@
 pub(crate) fn de_rule_group_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleGroupResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,7 +71,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "ConsumedCapacity" => {
                             builder = builder.set_consumed_capacity(
@@ -83,11 +89,15 @@ where
                         }
                         "EncryptionConfiguration" => {
                             builder = builder.set_encryption_configuration(
-                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "SourceMetadata" => {
-                            builder = builder.set_source_metadata(crate::protocol_serde::shape_source_metadata::de_source_metadata(tokens, _value)?);
+                            builder = builder.set_source_metadata(crate::protocol_serde::shape_source_metadata::de_source_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SnsTopic" => {
                             builder = builder.set_sns_topic(
@@ -104,12 +114,14 @@ where
                         }
                         "AnalysisResults" => {
                             builder = builder.set_analysis_results(crate::protocol_serde::shape_analysis_result_list::de_analysis_result_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SummaryConfiguration" => {
                             builder = builder.set_summary_configuration(
-                                crate::protocol_serde::shape_summary_configuration::de_summary_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_summary_configuration::de_summary_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

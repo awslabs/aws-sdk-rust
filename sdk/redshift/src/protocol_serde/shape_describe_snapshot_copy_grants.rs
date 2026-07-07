@@ -92,6 +92,8 @@ pub fn de_describe_snapshot_copy_grants(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSnapshotCopyGrantsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSnapshotCopyGrantsResponse got {start_el:?}"
@@ -122,7 +124,7 @@ pub fn de_describe_snapshot_copy_grants(
             s if s.matches("SnapshotCopyGrants") /* SnapshotCopyGrants com.amazonaws.redshift.synthetic#DescribeSnapshotCopyGrantsOutput$SnapshotCopyGrants */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_snapshot_copy_grant_list::de_snapshot_copy_grant_list(&mut tag)
+                        crate::protocol_serde::shape_snapshot_copy_grant_list::de_snapshot_copy_grant_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

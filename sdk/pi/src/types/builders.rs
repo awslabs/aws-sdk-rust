@@ -21,6 +21,8 @@ pub use crate::types::_metric_dimension_groups::MetricDimensionGroupsBuilder;
 
 pub use crate::types::_response_resource_metric::ResponseResourceMetricBuilder;
 
+pub use crate::types::_recommendation::RecommendationBuilder;
+
 pub use crate::types::_analysis_report_summary::AnalysisReportSummaryBuilder;
 
 pub use crate::types::_insight::InsightBuilder;
@@ -30,8 +32,6 @@ pub use crate::types::_response_resource_metric_key::ResponseResourceMetricKeyBu
 pub use crate::types::_data_point::DataPointBuilder;
 
 pub use crate::types::_dimension_group_detail::DimensionGroupDetailBuilder;
-
-pub use crate::types::_recommendation::RecommendationBuilder;
 
 pub use crate::types::_data::DataBuilder;
 

@@ -5,11 +5,17 @@
 pub struct GetFlowInput {
     /// <p>The unique identifier of the flow.</p>
     pub flow_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetFlowInput {
     /// <p>The unique identifier of the flow.</p>
     pub fn flow_identifier(&self) -> ::std::option::Option<&str> {
         self.flow_identifier.as_deref()
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
     }
 }
 impl GetFlowInput {
@@ -24,6 +30,7 @@ impl GetFlowInput {
 #[non_exhaustive]
 pub struct GetFlowInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetFlowInputBuilder {
     /// <p>The unique identifier of the flow.</p>
@@ -41,10 +48,25 @@ impl GetFlowInputBuilder {
     pub fn get_flow_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_identifier
     }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>Controls the scope of data returned. Set to <code>METADATA_ONLY</code> to return only resource metadata. Set to <code>ALL_DATA</code> or omit this field to return the full response.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`GetFlowInput`](crate::operation::get_flow::GetFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_flow::GetFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_flow::GetFlowInput {
             flow_identifier: self.flow_identifier,
+            included_data: self.included_data,
         })
     }
 }

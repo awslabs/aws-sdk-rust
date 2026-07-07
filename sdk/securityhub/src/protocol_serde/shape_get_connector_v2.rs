@@ -136,6 +136,8 @@ pub(crate) fn de_get_connector_v2(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -168,8 +170,22 @@ pub(crate) fn de_get_connector_v2(
                             .transpose()?,
                     );
                 }
+                "EnablementStatus" => {
+                    builder = builder.set_enablement_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EnablementStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "EnablementStatusReason" => {
+                    builder = builder.set_enablement_status_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "Health" => {
-                    builder = builder.set_health(crate::protocol_serde::shape_health_check::de_health_check(tokens, _value)?);
+                    builder = builder.set_health(crate::protocol_serde::shape_health_check::de_health_check(tokens, _value, depth + 1)?);
                 }
                 "KmsKeyArn" => {
                     builder = builder.set_kms_key_arn(
@@ -192,7 +208,11 @@ pub(crate) fn de_get_connector_v2(
                     );
                 }
                 "ProviderDetail" => {
-                    builder = builder.set_provider_detail(crate::protocol_serde::shape_provider_detail::de_provider_detail(tokens, _value)?);
+                    builder = builder.set_provider_detail(crate::protocol_serde::shape_provider_detail::de_provider_detail(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

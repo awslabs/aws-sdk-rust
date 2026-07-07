@@ -2,10 +2,16 @@
 pub(crate) fn de_image<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Image>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -83,11 +89,12 @@ where
                         }
                         "StateChangeReason" => {
                             builder = builder.set_state_change_reason(
-                                crate::protocol_serde::shape_image_state_change_reason::de_image_state_change_reason(tokens, _value)?,
+                                crate::protocol_serde::shape_image_state_change_reason::de_image_state_change_reason(tokens, _value, depth + 1)?,
                             );
                         }
                         "Applications" => {
-                            builder = builder.set_applications(crate::protocol_serde::shape_applications::de_applications(tokens, _value)?);
+                            builder =
+                                builder.set_applications(crate::protocol_serde::shape_applications::de_applications(tokens, _value, depth + 1)?);
                         }
                         "CreatedTime" => {
                             builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -109,11 +116,18 @@ where
                             );
                         }
                         "ImagePermissions" => {
-                            builder =
-                                builder.set_image_permissions(crate::protocol_serde::shape_image_permissions::de_image_permissions(tokens, _value)?);
+                            builder = builder.set_image_permissions(crate::protocol_serde::shape_image_permissions::de_image_permissions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ImageErrors" => {
-                            builder = builder.set_image_errors(crate::protocol_serde::shape_resource_errors::de_resource_errors(tokens, _value)?);
+                            builder = builder.set_image_errors(crate::protocol_serde::shape_resource_errors::de_resource_errors(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LatestAppstreamAgentVersion" => {
                             builder = builder.set_latest_appstream_agent_version(
@@ -123,8 +137,11 @@ where
                             );
                         }
                         "SupportedInstanceFamilies" => {
-                            builder =
-                                builder.set_supported_instance_families(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_supported_instance_families(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DynamicAppProvidersEnabled" => {
                             builder = builder.set_dynamic_app_providers_enabled(

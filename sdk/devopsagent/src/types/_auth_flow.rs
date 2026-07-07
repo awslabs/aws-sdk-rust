@@ -37,17 +37,17 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Authentication flow type for operator app.
+/// <p>Authentication flow type for operator app.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AuthFlow {
-    /// IAM-based authentication flow
+    /// <p>IAM-based authentication flow</p>
     Iam,
-    /// Identity Center (IdC) authentication flow
+    /// <p>Identity Center (IdC) authentication flow</p>
     Idc,
-    /// Identity Provider (IdP) authentication flow
+    /// <p>Identity Provider (IdP) authentication flow</p>
     Idp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

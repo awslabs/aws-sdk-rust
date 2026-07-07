@@ -16,6 +16,7 @@
 ///     HlsImageBasedTrickPlay::None => { /* ... */ },
 ///     HlsImageBasedTrickPlay::Thumbnail => { /* ... */ },
 ///     HlsImageBasedTrickPlay::ThumbnailAndFullframe => { /* ... */ },
+///     HlsImageBasedTrickPlay::Variants => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -38,7 +39,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+/// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. Choose Advanced to customize thumbnail and tile settings for a single trick play variant. Choose Variants to specify multiple trick play variants, each with its own thumbnail and tile settings. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -52,6 +53,8 @@ pub enum HlsImageBasedTrickPlay {
     Thumbnail,
     #[allow(missing_docs)] // documentation missing in model
     ThumbnailAndFullframe,
+    #[allow(missing_docs)] // documentation missing in model
+    Variants,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for HlsImageBasedTrickPlay {
             "NONE" => HlsImageBasedTrickPlay::None,
             "THUMBNAIL" => HlsImageBasedTrickPlay::Thumbnail,
             "THUMBNAIL_AND_FULLFRAME" => HlsImageBasedTrickPlay::ThumbnailAndFullframe,
+            "VARIANTS" => HlsImageBasedTrickPlay::Variants,
             other => HlsImageBasedTrickPlay::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl HlsImageBasedTrickPlay {
             HlsImageBasedTrickPlay::None => "NONE",
             HlsImageBasedTrickPlay::Thumbnail => "THUMBNAIL",
             HlsImageBasedTrickPlay::ThumbnailAndFullframe => "THUMBNAIL_AND_FULLFRAME",
+            HlsImageBasedTrickPlay::Variants => "VARIANTS",
             HlsImageBasedTrickPlay::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADVANCED", "NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
+        &["ADVANCED", "NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME", "VARIANTS"]
     }
 }
 impl ::std::convert::AsRef<str> for HlsImageBasedTrickPlay {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for HlsImageBasedTrickPlay {
             HlsImageBasedTrickPlay::None => write!(f, "NONE"),
             HlsImageBasedTrickPlay::Thumbnail => write!(f, "THUMBNAIL"),
             HlsImageBasedTrickPlay::ThumbnailAndFullframe => write!(f, "THUMBNAIL_AND_FULLFRAME"),
+            HlsImageBasedTrickPlay::Variants => write!(f, "VARIANTS"),
             HlsImageBasedTrickPlay::Unknown(value) => write!(f, "{value}"),
         }
     }

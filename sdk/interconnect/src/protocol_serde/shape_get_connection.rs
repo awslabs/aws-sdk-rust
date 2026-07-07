@@ -162,15 +162,16 @@ pub(crate) fn de_get_connection(
     value: &[u8],
     mut builder: crate::operation::get_connection::builders::GetConnectionOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_connection::builders::GetConnectionOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::get_connection::builders::GetConnectionOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::get_connection::builders::GetConnectionOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
             "connection" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_connection(Some(crate::protocol_serde::shape_connection::de_connection(decoder)?)))
+                Ok(builder.set_connection(Some(crate::protocol_serde::shape_connection::de_connection(decoder, depth + 1)?)))
             })?,
             _ => {
                 decoder.skip()?;
@@ -181,6 +182,8 @@ pub(crate) fn de_get_connection(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -190,13 +193,13 @@ pub(crate) fn de_get_connection(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

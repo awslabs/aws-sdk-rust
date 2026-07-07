@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_verified_access_trust_provider(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VerifiedAccessTrustProvider, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VerifiedAccessTrustProvider::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -78,7 +82,7 @@ pub fn de_verified_access_trust_provider(
             s if s.matches("oidcOptions") /* OidcOptions com.amazonaws.ec2#VerifiedAccessTrustProvider$OidcOptions */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_oidc_options::de_oidc_options(&mut tag)
+                        crate::protocol_serde::shape_oidc_options::de_oidc_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -88,7 +92,7 @@ pub fn de_verified_access_trust_provider(
             s if s.matches("deviceOptions") /* DeviceOptions com.amazonaws.ec2#VerifiedAccessTrustProvider$DeviceOptions */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_device_options::de_device_options(&mut tag)
+                        crate::protocol_serde::shape_device_options::de_device_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -137,7 +141,7 @@ pub fn de_verified_access_trust_provider(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VerifiedAccessTrustProvider$Tags */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -147,7 +151,7 @@ pub fn de_verified_access_trust_provider(
             s if s.matches("sseSpecification") /* SseSpecification com.amazonaws.ec2#VerifiedAccessTrustProvider$SseSpecification */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag)
+                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -157,7 +161,7 @@ pub fn de_verified_access_trust_provider(
             s if s.matches("nativeApplicationOidcOptions") /* NativeApplicationOidcOptions com.amazonaws.ec2#VerifiedAccessTrustProvider$NativeApplicationOidcOptions */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_native_application_oidc_options::de_native_application_oidc_options(&mut tag)
+                        crate::protocol_serde::shape_native_application_oidc_options::de_native_application_oidc_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

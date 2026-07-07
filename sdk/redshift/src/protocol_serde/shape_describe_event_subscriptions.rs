@@ -87,6 +87,8 @@ pub fn de_describe_event_subscriptions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeEventSubscriptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeEventSubscriptionsResponse got {start_el:?}"
@@ -117,7 +119,7 @@ pub fn de_describe_event_subscriptions(
             s if s.matches("EventSubscriptionsList") /* EventSubscriptionsList com.amazonaws.redshift.synthetic#DescribeEventSubscriptionsOutput$EventSubscriptionsList */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_event_subscriptions_list::de_event_subscriptions_list(&mut tag)
+                        crate::protocol_serde::shape_event_subscriptions_list::de_event_subscriptions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

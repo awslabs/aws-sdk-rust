@@ -37,6 +37,8 @@ pub struct GetCapacityReservationUsageOutput {
     /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
     /// <li>
     /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <li>
+    /// <p><code>cancelling</code> - (<i>Future-dated Capacity Reservations</i>) The Capacity Reservation is being cancelled. Capacity has been released but charges continue for the commitment wind-down period. The reservation transitions to <code>cancelled</code> when the wind-down completes.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::CapacityReservationState>,
     /// <p>Information about the Capacity Reservation usage.</p>
@@ -94,6 +96,8 @@ impl GetCapacityReservationUsageOutput {
     /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
     /// <li>
     /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <li>
+    /// <p><code>cancelling</code> - (<i>Future-dated Capacity Reservations</i>) The Capacity Reservation is being cancelled. Capacity has been released but charges continue for the commitment wind-down period. The reservation transitions to <code>cancelled</code> when the wind-down completes.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::CapacityReservationState> {
         self.state.as_ref()
@@ -240,6 +244,8 @@ impl GetCapacityReservationUsageOutputBuilder {
     /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
     /// <li>
     /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <li>
+    /// <p><code>cancelling</code> - (<i>Future-dated Capacity Reservations</i>) The Capacity Reservation is being cancelled. Capacity has been released but charges continue for the commitment wind-down period. The reservation transitions to <code>cancelled</code> when the wind-down completes.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::CapacityReservationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -269,6 +275,8 @@ impl GetCapacityReservationUsageOutputBuilder {
     /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
     /// <li>
     /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <li>
+    /// <p><code>cancelling</code> - (<i>Future-dated Capacity Reservations</i>) The Capacity Reservation is being cancelled. Capacity has been released but charges continue for the commitment wind-down period. The reservation transitions to <code>cancelled</code> when the wind-down completes.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationState>) -> Self {
         self.state = input;
@@ -298,6 +306,8 @@ impl GetCapacityReservationUsageOutputBuilder {
     /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
     /// <li>
     /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <li>
+    /// <p><code>cancelling</code> - (<i>Future-dated Capacity Reservations</i>) The Capacity Reservation is being cancelled. Capacity has been released but charges continue for the commitment wind-down period. The reservation transitions to <code>cancelled</code> when the wind-down completes.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CapacityReservationState> {
         &self.state

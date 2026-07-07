@@ -130,13 +130,19 @@ pub(crate) fn de_get_case(
 ) -> ::std::result::Result<crate::operation::get_case::builders::GetCaseOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "fields" => {
-                    builder = builder.set_fields(crate::protocol_serde::shape_field_value_list::de_field_value_list(tokens, _value)?);
+                    builder = builder.set_fields(crate::protocol_serde::shape_field_value_list::de_field_value_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(
@@ -146,7 +152,7 @@ pub(crate) fn de_get_case(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "templateId" => {
                     builder = builder.set_template_id(

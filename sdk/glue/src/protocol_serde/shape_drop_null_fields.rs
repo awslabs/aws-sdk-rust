@@ -39,10 +39,16 @@ pub fn ser_drop_null_fields(
 pub(crate) fn de_drop_null_fields<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DropNullFields>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,15 +66,21 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value, depth + 1)?);
                         }
                         "NullCheckBoxList" => {
-                            builder = builder
-                                .set_null_check_box_list(crate::protocol_serde::shape_null_check_box_list::de_null_check_box_list(tokens, _value)?);
+                            builder = builder.set_null_check_box_list(crate::protocol_serde::shape_null_check_box_list::de_null_check_box_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "NullTextList" => {
-                            builder =
-                                builder.set_null_text_list(crate::protocol_serde::shape_null_value_fields::de_null_value_fields(tokens, _value)?);
+                            builder = builder.set_null_text_list(crate::protocol_serde::shape_null_value_fields::de_null_value_fields(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

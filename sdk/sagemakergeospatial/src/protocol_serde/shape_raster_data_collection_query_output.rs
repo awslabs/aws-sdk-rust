@@ -2,10 +2,16 @@
 pub(crate) fn de_raster_data_collection_query_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RasterDataCollectionQueryOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,16 +37,22 @@ where
                         }
                         "TimeRangeFilter" => {
                             builder = builder.set_time_range_filter(
-                                crate::protocol_serde::shape_time_range_filter_output::de_time_range_filter_output(tokens, _value)?,
+                                crate::protocol_serde::shape_time_range_filter_output::de_time_range_filter_output(tokens, _value, depth + 1)?,
                             );
                         }
                         "AreaOfInterest" => {
-                            builder =
-                                builder.set_area_of_interest(crate::protocol_serde::shape_area_of_interest::de_area_of_interest(tokens, _value)?);
+                            builder = builder.set_area_of_interest(crate::protocol_serde::shape_area_of_interest::de_area_of_interest(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PropertyFilters" => {
-                            builder =
-                                builder.set_property_filters(crate::protocol_serde::shape_property_filters::de_property_filters(tokens, _value)?);
+                            builder = builder.set_property_filters(crate::protocol_serde::shape_property_filters::de_property_filters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

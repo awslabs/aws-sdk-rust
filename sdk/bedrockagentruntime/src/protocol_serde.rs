@@ -15,6 +15,8 @@ where
         .map_err(::std::convert::Into::into)
 }
 
+pub(crate) mod shape_agentic_retrieve_stream;
+
 pub fn parse_http_error_metadata(
     _response_status: u16,
     response_headers: &::aws_smithy_runtime_api::http::Headers,
@@ -36,6 +38,8 @@ pub(crate) mod shape_end_session;
 pub(crate) mod shape_generate_query;
 
 pub(crate) mod shape_get_agent_memory;
+
+pub(crate) mod shape_get_document_content;
 
 pub(crate) mod shape_get_execution_flow_snapshot;
 
@@ -95,6 +99,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_agentic_retrieve_stream_input;
+
+pub(crate) mod shape_agentic_retrieve_stream_output;
+
 pub(crate) mod shape_bad_gateway_exception;
 
 pub(crate) mod shape_conflict_exception;
@@ -106,6 +114,8 @@ pub(crate) mod shape_create_session_input;
 pub(crate) mod shape_dependency_failed_exception;
 
 pub(crate) mod shape_generate_query_input;
+
+pub(crate) mod shape_get_document_content_input;
 
 pub(crate) mod shape_get_invocation_step_input;
 
@@ -164,6 +174,14 @@ pub fn parse_event_stream_error_metadata(
 }
 
 pub(crate) mod shape_agent_action_group;
+
+pub(crate) mod shape_agentic_retrieve_configuration;
+
+pub(crate) mod shape_agentic_retrieve_message;
+
+pub(crate) mod shape_agentic_retrieve_policy_configuration;
+
+pub(crate) mod shape_agentic_retriever;
 
 pub(crate) mod shape_bedrock_model_configurations;
 
@@ -247,7 +265,21 @@ pub(crate) mod shape_tags_map;
 
 pub(crate) mod shape_transformation_configuration;
 
+pub(crate) mod shape_user_context;
+
 pub(crate) mod shape_action_group_executor;
+
+pub(crate) mod shape_agentic_retrieve_bedrock_guardrail_configuration;
+
+pub(crate) mod shape_agentic_retrieve_message_content;
+
+pub(crate) mod shape_agentic_retrieve_reranking_configuration;
+
+pub(crate) mod shape_agentic_retrieve_response_event;
+
+pub(crate) mod shape_agentic_retrieve_result_event;
+
+pub(crate) mod shape_agentic_retrieve_trace_event;
 
 pub(crate) mod shape_analyze_prompt_event;
 
@@ -283,6 +315,8 @@ pub(crate) mod shape_flow_output_event;
 
 pub(crate) mod shape_flow_trace_event;
 
+pub(crate) mod shape_foundation_model_configuration;
+
 pub(crate) mod shape_function_schema;
 
 pub(crate) mod shape_generated_query;
@@ -315,6 +349,8 @@ pub(crate) mod shape_knowledge_base_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_knowledge_base_vector_search_configuration;
 
+pub(crate) mod shape_managed_search_configuration;
+
 pub(crate) mod shape_memory;
 
 pub(crate) mod shape_optimized_prompt_event;
@@ -335,6 +371,8 @@ pub(crate) mod shape_rerank_text_document;
 
 pub(crate) mod shape_retrieve_and_generate_output_event;
 
+pub(crate) mod shape_retriever_configuration;
+
 pub(crate) mod shape_return_control_payload;
 
 pub(crate) mod shape_session_summary;
@@ -345,7 +383,11 @@ pub(crate) mod shape_text_to_sql_configuration;
 
 pub(crate) mod shape_trace_part;
 
+pub(crate) mod shape_agentic_retrieve_bedrock_reranking_configuration;
+
 pub(crate) mod shape_api_result;
+
+pub(crate) mod shape_bedrock_foundation_model_configuration;
 
 pub(crate) mod shape_bedrock_reranking_model_configuration;
 
@@ -379,6 +421,10 @@ pub(crate) mod shape_implicit_filter_configuration;
 
 pub(crate) mod shape_inference_configuration;
 
+pub(crate) mod shape_knowledge_base_retriever_configuration;
+
+pub(crate) mod shape_managed_search_reranking_configuration;
+
 pub(crate) mod shape_memory_session_summary;
 
 pub(crate) mod shape_message;
@@ -411,9 +457,19 @@ pub(crate) mod shape_text_to_sql_knowledge_base_configuration;
 
 pub(crate) mod shape_vector_search_reranking_configuration;
 
+pub(crate) mod shape_agentic_retrieve_bedrock_reranking_model_configuration;
+
+pub(crate) mod shape_agentic_retrieve_generated_response;
+
+pub(crate) mod shape_agentic_retrieve_results;
+
+pub(crate) mod shape_agentic_retrieve_trace_event_attributes;
+
 pub(crate) mod shape_attribution;
 
 pub(crate) mod shape_audio_segment;
+
+pub(crate) mod shape_bedrock_foundation_model_model_configuration;
 
 pub(crate) mod shape_byte_content_doc;
 
@@ -443,6 +499,8 @@ pub(crate) mod shape_inference_config;
 
 pub(crate) mod shape_invocation_inputs;
 
+pub(crate) mod shape_managed_search_bedrock_reranking_configuration;
+
 pub(crate) mod shape_metadata_attribute_schema;
 
 pub(crate) mod shape_node_input_fields;
@@ -461,13 +519,19 @@ pub(crate) mod shape_prompt_template;
 
 pub(crate) mod shape_query_transformation_configuration;
 
+pub(crate) mod shape_retrieval_overrides;
+
 pub(crate) mod shape_retrieval_result_confluence_location;
 
 pub(crate) mod shape_retrieval_result_content_row;
 
 pub(crate) mod shape_retrieval_result_custom_document_location;
 
+pub(crate) mod shape_retrieval_result_google_drive_location;
+
 pub(crate) mod shape_retrieval_result_kendra_document_location;
+
+pub(crate) mod shape_retrieval_result_one_drive_location;
 
 pub(crate) mod shape_retrieval_result_s3_location;
 
@@ -497,6 +561,20 @@ pub(crate) mod shape_video_segment;
 
 pub(crate) mod shape_agent_traces;
 
+pub(crate) mod shape_agentic_retrieve_actions;
+
+pub(crate) mod shape_agentic_retrieve_citation_list;
+
+pub(crate) mod shape_agentic_retrieve_failures;
+
+pub(crate) mod shape_agentic_retrieve_result_item;
+
+pub(crate) mod shape_agentic_retrieve_source_metadata_list;
+
+pub(crate) mod shape_agentic_retrieve_trace_results;
+
+pub(crate) mod shape_agentic_retrieve_warnings;
+
 pub(crate) mod shape_caller;
 
 pub(crate) mod shape_custom_orchestration_trace;
@@ -522,6 +600,8 @@ pub(crate) mod shape_guardrail_trace;
 pub(crate) mod shape_image_input;
 
 pub(crate) mod shape_invocation_input_member;
+
+pub(crate) mod shape_managed_search_bedrock_reranking_model_configuration;
 
 pub(crate) mod shape_metadata_configuration_for_reranking;
 
@@ -550,6 +630,22 @@ pub(crate) mod shape_span;
 pub(crate) mod shape_text_inference_config;
 
 pub(crate) mod shape_vector_search_bedrock_reranking_model_configuration;
+
+pub(crate) mod shape_agentic_retrieve_action;
+
+pub(crate) mod shape_agentic_retrieve_citation;
+
+pub(crate) mod shape_agentic_retrieve_failure;
+
+pub(crate) mod shape_agentic_retrieve_metadata;
+
+pub(crate) mod shape_agentic_retrieve_source_metadata;
+
+pub(crate) mod shape_agentic_retrieve_source_retriever;
+
+pub(crate) mod shape_agentic_retrieve_trace_result_item;
+
+pub(crate) mod shape_agentic_retrieve_warning;
 
 pub(crate) mod shape_api_invocation_input;
 
@@ -595,6 +691,8 @@ pub(crate) mod shape_rationale;
 
 pub(crate) mod shape_reranking_metadata_selective_mode_configuration;
 
+pub(crate) mod shape_retrieval_content;
+
 pub(crate) mod shape_routing_classifier_model_invocation_output;
 
 pub(crate) mod shape_trace_elements;
@@ -606,6 +704,16 @@ pub(crate) mod shape_action_group_invocation_output;
 pub(crate) mod shape_agent_collaborator_invocation_input;
 
 pub(crate) mod shape_agent_collaborator_invocation_output;
+
+pub(crate) mod shape_agentic_retrieve_action_details;
+
+pub(crate) mod shape_agentic_retrieve_citation_reference_list;
+
+pub(crate) mod shape_agentic_retrieve_full_doc_expansion_details;
+
+pub(crate) mod shape_agentic_retrieve_guardrail_warning;
+
+pub(crate) mod shape_agentic_retrieve_warning_message;
 
 pub(crate) mod shape_api_parameters;
 
@@ -652,6 +760,10 @@ pub(crate) mod shape_usage;
 pub(crate) mod shape_agent_collaborator_input_payload;
 
 pub(crate) mod shape_agent_collaborator_output_payload;
+
+pub(crate) mod shape_agentic_retrieve_citation_reference;
+
+pub(crate) mod shape_agentic_retrieve_source_retriever_list;
 
 pub(crate) mod shape_api_content_map;
 

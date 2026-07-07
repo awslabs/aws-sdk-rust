@@ -86,6 +86,8 @@ pub(crate) fn de_describe_endpoint(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -113,14 +115,20 @@ pub(crate) fn de_describe_endpoint(
                     );
                 }
                 "RoutingConfig" => {
-                    builder = builder.set_routing_config(crate::protocol_serde::shape_routing_config::de_routing_config(tokens, _value)?);
+                    builder = builder.set_routing_config(crate::protocol_serde::shape_routing_config::de_routing_config(tokens, _value, depth + 1)?);
                 }
                 "ReplicationConfig" => {
-                    builder = builder.set_replication_config(crate::protocol_serde::shape_replication_config::de_replication_config(tokens, _value)?);
+                    builder = builder.set_replication_config(crate::protocol_serde::shape_replication_config::de_replication_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "EventBuses" => {
                     builder = builder.set_event_buses(crate::protocol_serde::shape_endpoint_event_bus_list::de_endpoint_event_bus_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "RoleArn" => {

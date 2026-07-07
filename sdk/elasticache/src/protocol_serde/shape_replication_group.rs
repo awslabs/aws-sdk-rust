@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_replication_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReplicationGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReplicationGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_replication_group(
             s if s.matches("GlobalReplicationGroupInfo") /* GlobalReplicationGroupInfo com.amazonaws.elasticache#ReplicationGroup$GlobalReplicationGroupInfo */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_global_replication_group_info::de_global_replication_group_info(&mut tag)
+                        crate::protocol_serde::shape_global_replication_group_info::de_global_replication_group_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -59,7 +63,7 @@ pub fn de_replication_group(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.elasticache#ReplicationGroup$PendingModifiedValues */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_replication_group_pending_modified_values::de_replication_group_pending_modified_values(&mut tag)
+                        crate::protocol_serde::shape_replication_group_pending_modified_values::de_replication_group_pending_modified_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +73,7 @@ pub fn de_replication_group(
             s if s.matches("MemberClusters") /* MemberClusters com.amazonaws.elasticache#ReplicationGroup$MemberClusters */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_cluster_id_list::de_cluster_id_list(&mut tag)
+                        crate::protocol_serde::shape_cluster_id_list::de_cluster_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -79,7 +83,7 @@ pub fn de_replication_group(
             s if s.matches("NodeGroups") /* NodeGroups com.amazonaws.elasticache#ReplicationGroup$NodeGroups */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_node_group_list::de_node_group_list(&mut tag)
+                        crate::protocol_serde::shape_node_group_list::de_node_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -130,7 +134,7 @@ pub fn de_replication_group(
             s if s.matches("ConfigurationEndpoint") /* ConfigurationEndpoint com.amazonaws.elasticache#ReplicationGroup$ConfigurationEndpoint */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
+                        crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -255,7 +259,7 @@ pub fn de_replication_group(
             s if s.matches("MemberClustersOutpostArns") /* MemberClustersOutpostArns com.amazonaws.elasticache#ReplicationGroup$MemberClustersOutpostArns */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_replication_group_outpost_arn_list::de_replication_group_outpost_arn_list(&mut tag)
+                        crate::protocol_serde::shape_replication_group_outpost_arn_list::de_replication_group_outpost_arn_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -275,8 +279,22 @@ pub fn de_replication_group(
                 builder = builder.set_kms_key_id(var_21);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#ReplicationGroup$ARN */ =>  {
+            s if s.matches("StorageEncryptionType") /* StorageEncryptionType com.amazonaws.elasticache#ReplicationGroup$StorageEncryptionType */ =>  {
                 let var_22 =
+                    Some(
+                        Result::<crate::types::StorageEncryptionType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StorageEncryptionType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_encryption_type(var_22);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#ReplicationGroup$ARN */ =>  {
+                let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -285,31 +303,31 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_22);
+                builder = builder.set_arn(var_23);
             }
             ,
             s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#ReplicationGroup$UserGroupIds */ =>  {
-                let var_23 =
+                let var_24 =
                     Some(
-                        crate::protocol_serde::shape_user_group_id_list::de_user_group_id_list(&mut tag)
+                        crate::protocol_serde::shape_user_group_id_list::de_user_group_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_user_group_ids(var_23);
+                builder = builder.set_user_group_ids(var_24);
             }
             ,
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#ReplicationGroup$LogDeliveryConfigurations */ =>  {
-                let var_24 =
+                let var_25 =
                     Some(
-                        crate::protocol_serde::shape_log_delivery_configuration_list::de_log_delivery_configuration_list(&mut tag)
+                        crate::protocol_serde::shape_log_delivery_configuration_list::de_log_delivery_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_log_delivery_configurations(var_24);
+                builder = builder.set_log_delivery_configurations(var_25);
             }
             ,
             s if s.matches("ReplicationGroupCreateTime") /* ReplicationGroupCreateTime com.amazonaws.elasticache#ReplicationGroup$ReplicationGroupCreateTime */ =>  {
-                let var_25 =
+                let var_26 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -319,11 +337,11 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_create_time(var_25);
+                builder = builder.set_replication_group_create_time(var_26);
             }
             ,
             s if s.matches("DataTiering") /* DataTiering com.amazonaws.elasticache#ReplicationGroup$DataTiering */ =>  {
-                let var_26 =
+                let var_27 =
                     Some(
                         Result::<crate::types::DataTieringStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DataTieringStatus::from(
@@ -333,11 +351,11 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_data_tiering(var_26);
+                builder = builder.set_data_tiering(var_27);
             }
             ,
             s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.elasticache#ReplicationGroup$AutoMinorVersionUpgrade */ =>  {
-                let var_27 =
+                let var_28 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -348,11 +366,11 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_auto_minor_version_upgrade(var_27);
+                builder = builder.set_auto_minor_version_upgrade(var_28);
             }
             ,
             s if s.matches("NetworkType") /* NetworkType com.amazonaws.elasticache#ReplicationGroup$NetworkType */ =>  {
-                let var_28 =
+                let var_29 =
                     Some(
                         Result::<crate::types::NetworkType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::NetworkType::from(
@@ -362,11 +380,11 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_network_type(var_28);
+                builder = builder.set_network_type(var_29);
             }
             ,
             s if s.matches("IpDiscovery") /* IpDiscovery com.amazonaws.elasticache#ReplicationGroup$IpDiscovery */ =>  {
-                let var_29 =
+                let var_30 =
                     Some(
                         Result::<crate::types::IpDiscovery, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::IpDiscovery::from(
@@ -376,11 +394,11 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_ip_discovery(var_29);
+                builder = builder.set_ip_discovery(var_30);
             }
             ,
             s if s.matches("TransitEncryptionMode") /* TransitEncryptionMode com.amazonaws.elasticache#ReplicationGroup$TransitEncryptionMode */ =>  {
-                let var_30 =
+                let var_31 =
                     Some(
                         Result::<crate::types::TransitEncryptionMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::TransitEncryptionMode::from(
@@ -390,11 +408,11 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_transit_encryption_mode(var_30);
+                builder = builder.set_transit_encryption_mode(var_31);
             }
             ,
             s if s.matches("ClusterMode") /* ClusterMode com.amazonaws.elasticache#ReplicationGroup$ClusterMode */ =>  {
-                let var_31 =
+                let var_32 =
                     Some(
                         Result::<crate::types::ClusterMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ClusterMode::from(
@@ -404,11 +422,11 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_cluster_mode(var_31);
+                builder = builder.set_cluster_mode(var_32);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.elasticache#ReplicationGroup$Engine */ =>  {
-                let var_32 =
+                let var_33 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -417,7 +435,35 @@ pub fn de_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_32);
+                builder = builder.set_engine(var_33);
+            }
+            ,
+            s if s.matches("Durability") /* Durability com.amazonaws.elasticache#ReplicationGroup$Durability */ =>  {
+                let var_34 =
+                    Some(
+                        Result::<crate::types::Durability, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Durability::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_durability(var_34);
+            }
+            ,
+            s if s.matches("EffectiveDurability") /* EffectiveDurability com.amazonaws.elasticache#ReplicationGroup$EffectiveDurability */ =>  {
+                let var_35 =
+                    Some(
+                        Result::<crate::types::EffectiveDurability, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EffectiveDurability::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_effective_durability(var_35);
             }
             ,
             _ => {}

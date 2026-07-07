@@ -2,10 +2,16 @@
 pub(crate) fn de_data_replication_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataReplicationInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -32,7 +38,9 @@ where
                         "replicatedDisks" => {
                             builder = builder.set_replicated_disks(
                                 crate::protocol_serde::shape_data_replication_info_replicated_disks::de_data_replication_info_replicated_disks(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -45,12 +53,12 @@ where
                         }
                         "dataReplicationInitiation" => {
                             builder = builder.set_data_replication_initiation(
-                                crate::protocol_serde::shape_data_replication_initiation::de_data_replication_initiation(tokens, _value)?,
+                                crate::protocol_serde::shape_data_replication_initiation::de_data_replication_initiation(tokens, _value, depth + 1)?,
                             );
                         }
                         "dataReplicationError" => {
                             builder = builder.set_data_replication_error(
-                                crate::protocol_serde::shape_data_replication_error::de_data_replication_error(tokens, _value)?,
+                                crate::protocol_serde::shape_data_replication_error::de_data_replication_error(tokens, _value, depth + 1)?,
                             );
                         }
                         "stagingAvailabilityZone" => {

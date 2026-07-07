@@ -72,6 +72,8 @@ pub fn de_describe_metric_collection_types(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeMetricCollectionTypesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeMetricCollectionTypesResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_describe_metric_collection_types(
             s if s.matches("Metrics") /* Metrics com.amazonaws.autoscaling.synthetic#DescribeMetricCollectionTypesOutput$Metrics */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_metric_collection_types::de_metric_collection_types(&mut tag)
+                        crate::protocol_serde::shape_metric_collection_types::de_metric_collection_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -99,7 +101,7 @@ pub fn de_describe_metric_collection_types(
             s if s.matches("Granularities") /* Granularities com.amazonaws.autoscaling.synthetic#DescribeMetricCollectionTypesOutput$Granularities */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_metric_granularity_types::de_metric_granularity_types(&mut tag)
+                        crate::protocol_serde::shape_metric_granularity_types::de_metric_granularity_types(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Message>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,12 +37,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "userMessage" => Some(crate::types::Message::UserMessage(
-                            crate::protocol_serde::shape_user_message::de_user_message(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_user_message::de_user_message(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'userMessage' cannot be null")
                             })?,
                         )),
                         "assistantMessage" => Some(crate::types::Message::AssistantMessage(
-                            crate::protocol_serde::shape_assistant_message::de_assistant_message(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_assistant_message::de_assistant_message(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'assistantMessage' cannot be null")
                             })?,
                         )),

@@ -14,15 +14,26 @@ pub fn ser_tax_documents(
 
 pub(crate) fn de_tax_documents(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TaxDocuments, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::TaxDocumentsBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::TaxDocumentsBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "IND" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_ind(Some(crate::protocol_serde::shape_ind_tax_documents::de_ind_tax_documents(decoder)?)))
+                Ok(builder.set_ind(Some(crate::protocol_serde::shape_ind_tax_documents::de_ind_tax_documents(
+                    decoder,
+                    depth + 1,
+                )?)))
             })?,
             _ => {
                 decoder.skip()?;
@@ -42,13 +53,13 @@ pub(crate) fn de_tax_documents(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

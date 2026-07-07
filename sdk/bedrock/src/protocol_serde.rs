@@ -23,9 +23,13 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_delete_advanced_prompt_optimization_job;
+
 pub(crate) mod shape_batch_delete_evaluation_job;
 
 pub(crate) mod shape_cancel_automated_reasoning_policy_build_workflow;
+
+pub(crate) mod shape_create_advanced_prompt_optimization_job;
 
 pub(crate) mod shape_create_automated_reasoning_policy;
 
@@ -95,6 +99,10 @@ pub(crate) mod shape_deregister_marketplace_model_endpoint;
 
 pub(crate) mod shape_export_automated_reasoning_policy_version;
 
+pub(crate) mod shape_get_account_data_retention;
+
+pub(crate) mod shape_get_advanced_prompt_optimization_job;
+
 pub(crate) mod shape_get_automated_reasoning_policy;
 
 pub(crate) mod shape_get_automated_reasoning_policy_annotations;
@@ -145,6 +153,8 @@ pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_get_use_case_for_model_access;
 
+pub(crate) mod shape_list_advanced_prompt_optimization_jobs;
+
 pub(crate) mod shape_list_automated_reasoning_policies;
 
 pub(crate) mod shape_list_automated_reasoning_policy_build_workflows;
@@ -187,6 +197,8 @@ pub(crate) mod shape_list_provisioned_model_throughputs;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_put_account_data_retention;
+
 pub(crate) mod shape_put_enforced_guardrail_configuration;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration;
@@ -206,6 +218,8 @@ pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
 pub(crate) mod shape_start_automated_reasoning_policy_build_workflow_input;
 
 pub(crate) mod shape_start_automated_reasoning_policy_test_workflow;
+
+pub(crate) mod shape_stop_advanced_prompt_optimization_job;
 
 pub(crate) mod shape_stop_evaluation_job;
 
@@ -241,9 +255,13 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_delete_advanced_prompt_optimization_job_input;
+
 pub(crate) mod shape_batch_delete_evaluation_job_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_advanced_prompt_optimization_job_input;
 
 pub(crate) mod shape_create_automated_reasoning_policy_input;
 
@@ -286,6 +304,8 @@ pub(crate) mod shape_export_automated_reasoning_policy_version_output;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_put_account_data_retention_input;
 
 pub(crate) mod shape_put_enforced_guardrail_configuration_input;
 
@@ -335,6 +355,12 @@ pub(crate) mod shape_account_enforced_guardrail_inference_input_configuration;
 
 pub(crate) mod shape_account_enforced_guardrails_output_configuration;
 
+pub(crate) mod shape_advanced_prompt_optimization_input_config;
+
+pub(crate) mod shape_advanced_prompt_optimization_job_summaries;
+
+pub(crate) mod shape_advanced_prompt_optimization_output_config;
+
 pub(crate) mod shape_agreement_availability;
 
 pub(crate) mod shape_automated_reasoning_policy_annotation;
@@ -361,9 +387,15 @@ pub(crate) mod shape_automated_reasoning_policy_test_list;
 
 pub(crate) mod shape_automated_reasoning_policy_test_result;
 
+pub(crate) mod shape_batch_delete_advanced_prompt_optimization_job_errors;
+
+pub(crate) mod shape_batch_delete_advanced_prompt_optimization_job_items;
+
 pub(crate) mod shape_batch_delete_evaluation_job_errors;
 
 pub(crate) mod shape_batch_delete_evaluation_job_items;
+
+pub(crate) mod shape_custom_model_data_source;
 
 pub(crate) mod shape_custom_model_deployment_summary_list;
 
@@ -439,6 +471,10 @@ pub(crate) mod shape_marketplace_model_endpoint;
 
 pub(crate) mod shape_marketplace_model_endpoint_summaries;
 
+pub(crate) mod shape_model_configuration;
+
+pub(crate) mod shape_model_configurations;
+
 pub(crate) mod shape_model_copy_job_summaries;
 
 pub(crate) mod shape_model_customization_hyper_parameters;
@@ -486,6 +522,8 @@ pub(crate) mod shape_validation_metrics;
 pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_account_enforced_guardrail_output_configuration;
+
+pub(crate) mod shape_advanced_prompt_optimization_job_summary;
 
 pub(crate) mod shape_automated_evaluation_config;
 
@@ -546,6 +584,10 @@ pub(crate) mod shape_automated_reasoning_policy_update_type_annotation;
 pub(crate) mod shape_automated_reasoning_policy_update_variable_annotation;
 
 pub(crate) mod shape_automated_reasoning_policy_workflow_type_content;
+
+pub(crate) mod shape_batch_delete_advanced_prompt_optimization_job_error;
+
+pub(crate) mod shape_batch_delete_advanced_prompt_optimization_job_item;
 
 pub(crate) mod shape_batch_delete_evaluation_job_error;
 
@@ -613,6 +655,8 @@ pub(crate) mod shape_human_evaluation_config;
 
 pub(crate) mod shape_imported_model_summary;
 
+pub(crate) mod shape_inference_configuration;
+
 pub(crate) mod shape_inference_profile_model;
 
 pub(crate) mod shape_inference_profile_summary;
@@ -640,6 +684,8 @@ pub(crate) mod shape_model_invocation_job_s3_output_data_config;
 pub(crate) mod shape_model_invocation_job_summary;
 
 pub(crate) mod shape_model_modality_list;
+
+pub(crate) mod shape_model_package_arn_data_source;
 
 pub(crate) mod shape_offer;
 
@@ -675,6 +721,8 @@ pub(crate) mod shape_validator_metric;
 
 pub(crate) mod shape_validators;
 
+pub(crate) mod shape_additional_model_request_fields;
+
 pub(crate) mod shape_automated_evaluation_custom_metric_config;
 
 pub(crate) mod shape_automated_reasoning_check_finding;
@@ -708,6 +756,8 @@ pub(crate) mod shape_automated_reasoning_policy_disjoint_rule_set_list;
 pub(crate) mod shape_automated_reasoning_policy_generate_fidelity_report_content;
 
 pub(crate) mod shape_automated_reasoning_policy_generated_test_case_list;
+
+pub(crate) mod shape_automated_reasoning_policy_iterative_refinement_content;
 
 pub(crate) mod shape_automated_reasoning_policy_report_source_document_list;
 
@@ -847,6 +897,8 @@ pub(crate) mod shape_lambda_grader_config;
 
 pub(crate) mod shape_legal_term;
 
+pub(crate) mod shape_non_empty_string_list;
+
 pub(crate) mod shape_performance_configuration;
 
 pub(crate) mod shape_pricing_term;
@@ -980,8 +1032,6 @@ pub(crate) mod shape_retrieval_filter;
 pub(crate) mod shape_s3_object_doc;
 
 pub(crate) mod shape_vector_search_reranking_configuration;
-
-pub(crate) mod shape_additional_model_request_fields;
 
 pub(crate) mod shape_automated_reasoning_policy_annotated_content;
 

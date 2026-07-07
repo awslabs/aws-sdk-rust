@@ -2,13 +2,13 @@
 
 /// <p>A keyword that relates to the control data source.</p>
 /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
-/// <p>For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub control, or Amazon Web Services API name.</p>
+/// <p>For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub CSPM control, or Amazon Web Services API name.</p>
 /// <p>To learn more about the supported keywords that you can use when mapping a control data source, see the following pages in the <i>Audit Manager User Guide</i>:</p>
 /// <ul>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Config rules supported by Audit Manager</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub controls supported by Audit Manager</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub CSPM controls supported by Audit Manager</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API calls supported by Audit Manager</a></p></li>
 /// <li>
@@ -23,7 +23,7 @@ pub struct SourceKeyword {
     /// <p><code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.</p>
     /// <ul>
     /// <li>
-    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p></li>
+    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual evidence.</p>
@@ -35,7 +35,7 @@ pub struct SourceKeyword {
     /// </ul></li>
     /// </ul>
     pub keyword_input_type: ::std::option::Option<crate::types::KeywordInputType>,
-    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p>
+    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p>
     /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
     /// <ul>
     /// <li>
@@ -78,7 +78,7 @@ pub struct SourceKeyword {
     /// <p>For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub controls</a>.</p></li>
+    /// <p>For Security Hub CSPM: The format varies for Security Hub CSPM control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub CSPM controls</a>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
@@ -94,7 +94,7 @@ impl SourceKeyword {
     /// <p><code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.</p>
     /// <ul>
     /// <li>
-    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p></li>
+    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual evidence.</p>
@@ -108,7 +108,7 @@ impl SourceKeyword {
     pub fn keyword_input_type(&self) -> ::std::option::Option<&crate::types::KeywordInputType> {
         self.keyword_input_type.as_ref()
     }
-    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p>
+    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p>
     /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
     /// <ul>
     /// <li>
@@ -151,7 +151,7 @@ impl SourceKeyword {
     /// <p>For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub controls</a>.</p></li>
+    /// <p>For Security Hub CSPM: The format varies for Security Hub CSPM control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub CSPM controls</a>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
@@ -183,7 +183,7 @@ impl SourceKeywordBuilder {
     /// <p><code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.</p>
     /// <ul>
     /// <li>
-    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p></li>
+    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual evidence.</p>
@@ -204,7 +204,7 @@ impl SourceKeywordBuilder {
     /// <p><code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.</p>
     /// <ul>
     /// <li>
-    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p></li>
+    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual evidence.</p>
@@ -225,7 +225,7 @@ impl SourceKeywordBuilder {
     /// <p><code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.</p>
     /// <ul>
     /// <li>
-    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p></li>
+    /// <p>When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual evidence.</p>
@@ -239,7 +239,7 @@ impl SourceKeywordBuilder {
     pub fn get_keyword_input_type(&self) -> &::std::option::Option<crate::types::KeywordInputType> {
         &self.keyword_input_type
     }
-    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p>
+    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p>
     /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
     /// <ul>
     /// <li>
@@ -282,7 +282,7 @@ impl SourceKeywordBuilder {
     /// <p>For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub controls</a>.</p></li>
+    /// <p>For Security Hub CSPM: The format varies for Security Hub CSPM control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub CSPM controls</a>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
@@ -293,7 +293,7 @@ impl SourceKeywordBuilder {
         self.keyword_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p>
+    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p>
     /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
     /// <ul>
     /// <li>
@@ -336,7 +336,7 @@ impl SourceKeywordBuilder {
     /// <p>For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub controls</a>.</p></li>
+    /// <p>For Security Hub CSPM: The format varies for Security Hub CSPM control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub CSPM controls</a>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
@@ -347,7 +347,7 @@ impl SourceKeywordBuilder {
         self.keyword_value = input;
         self
     }
-    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p>
+    /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon Web Services API call.</p>
     /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
     /// <ul>
     /// <li>
@@ -390,7 +390,7 @@ impl SourceKeywordBuilder {
     /// <p>For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub controls</a>.</p></li>
+    /// <p>For Security Hub CSPM: The format varies for Security Hub CSPM control names. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported Security Hub CSPM controls</a>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>

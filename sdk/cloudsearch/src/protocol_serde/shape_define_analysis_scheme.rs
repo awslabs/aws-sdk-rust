@@ -147,6 +147,8 @@ pub fn de_define_analysis_scheme(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DefineAnalysisSchemeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DefineAnalysisSchemeResponse got {start_el:?}"
@@ -164,7 +166,7 @@ pub fn de_define_analysis_scheme(
             s if s.matches("AnalysisScheme") /* AnalysisScheme com.amazonaws.cloudsearch.synthetic#DefineAnalysisSchemeOutput$AnalysisScheme */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_analysis_scheme_status::de_analysis_scheme_status(&mut tag)
+                        crate::protocol_serde::shape_analysis_scheme_status::de_analysis_scheme_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

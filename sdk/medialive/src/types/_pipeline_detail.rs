@@ -16,6 +16,9 @@ pub struct PipelineDetail {
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// Current engine version of the encoder for this pipeline.
     pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
+    /// A map of output names to the MediaConnect Router connection for this pipeline. Only present for channels with MediaConnect Router outputs.
+    pub media_connect_router_output_connection_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MediaConnectRouterOutputConnection>>,
 }
 impl PipelineDetail {
     /// The name of the active input attachment currently being ingested by this pipeline.
@@ -42,6 +45,12 @@ impl PipelineDetail {
     pub fn channel_engine_version(&self) -> ::std::option::Option<&crate::types::ChannelEngineVersionResponse> {
         self.channel_engine_version.as_ref()
     }
+    /// A map of output names to the MediaConnect Router connection for this pipeline. Only present for channels with MediaConnect Router outputs.
+    pub fn media_connect_router_output_connection_map(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MediaConnectRouterOutputConnection>> {
+        self.media_connect_router_output_connection_map.as_ref()
+    }
 }
 impl PipelineDetail {
     /// Creates a new builder-style object to manufacture [`PipelineDetail`](crate::types::PipelineDetail).
@@ -60,6 +69,8 @@ pub struct PipelineDetailBuilder {
     pub(crate) active_motion_graphics_uri: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
+    pub(crate) media_connect_router_output_connection_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MediaConnectRouterOutputConnection>>,
 }
 impl PipelineDetailBuilder {
     /// The name of the active input attachment currently being ingested by this pipeline.
@@ -146,6 +157,35 @@ impl PipelineDetailBuilder {
     pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionResponse> {
         &self.channel_engine_version
     }
+    /// Adds a key-value pair to `media_connect_router_output_connection_map`.
+    ///
+    /// To override the contents of this collection use [`set_media_connect_router_output_connection_map`](Self::set_media_connect_router_output_connection_map).
+    ///
+    /// A map of output names to the MediaConnect Router connection for this pipeline. Only present for channels with MediaConnect Router outputs.
+    pub fn media_connect_router_output_connection_map(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::MediaConnectRouterOutputConnection,
+    ) -> Self {
+        let mut hash_map = self.media_connect_router_output_connection_map.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.media_connect_router_output_connection_map = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// A map of output names to the MediaConnect Router connection for this pipeline. Only present for channels with MediaConnect Router outputs.
+    pub fn set_media_connect_router_output_connection_map(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MediaConnectRouterOutputConnection>>,
+    ) -> Self {
+        self.media_connect_router_output_connection_map = input;
+        self
+    }
+    /// A map of output names to the MediaConnect Router connection for this pipeline. Only present for channels with MediaConnect Router outputs.
+    pub fn get_media_connect_router_output_connection_map(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MediaConnectRouterOutputConnection>> {
+        &self.media_connect_router_output_connection_map
+    }
     /// Consumes the builder and constructs a [`PipelineDetail`](crate::types::PipelineDetail).
     pub fn build(self) -> crate::types::PipelineDetail {
         crate::types::PipelineDetail {
@@ -155,6 +195,7 @@ impl PipelineDetailBuilder {
             active_motion_graphics_uri: self.active_motion_graphics_uri,
             pipeline_id: self.pipeline_id,
             channel_engine_version: self.channel_engine_version,
+            media_connect_router_output_connection_map: self.media_connect_router_output_connection_map,
         }
     }
 }

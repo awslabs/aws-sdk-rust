@@ -53,6 +53,8 @@ pub fn de_describe_serverless_v2_platform_versions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeServerlessV2PlatformVersionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeServerlessV2PlatformVersionsResponse got {start_el:?}"
@@ -83,7 +85,7 @@ pub fn de_describe_serverless_v2_platform_versions(
             s if s.matches("ServerlessV2PlatformVersions") /* ServerlessV2PlatformVersions com.amazonaws.rds.synthetic#DescribeServerlessV2PlatformVersionsOutput$ServerlessV2PlatformVersions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_serverless_v2_platform_version_list::de_serverless_v2_platform_version_list(&mut tag)
+                        crate::protocol_serde::shape_serverless_v2_platform_version_list::de_serverless_v2_platform_version_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

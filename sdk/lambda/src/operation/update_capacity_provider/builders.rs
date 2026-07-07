@@ -136,4 +136,18 @@ impl UpdateCapacityProviderFluentBuilder {
     pub fn get_capacity_provider_scaling_config(&self) -> &::std::option::Option<crate::types::CapacityProviderScalingConfig> {
         self.inner.get_capacity_provider_scaling_config()
     }
+    /// <p>Configuration for tag propagation to managed resources launched by the capacity provider.</p>
+    pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
+        self.inner = self.inner.propagate_tags(input);
+        self
+    }
+    /// <p>Configuration for tag propagation to managed resources launched by the capacity provider.</p>
+    pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
+        self.inner = self.inner.set_propagate_tags(input);
+        self
+    }
+    /// <p>Configuration for tag propagation to managed resources launched by the capacity provider.</p>
+    pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
+        self.inner.get_propagate_tags()
+    }
 }

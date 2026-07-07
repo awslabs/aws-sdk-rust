@@ -10,10 +10,6 @@ pub struct Policy {
     pub name: ::std::string::String,
     /// <p>The identifier of the policy engine that manages this policy. This establishes the policy engine context for policy evaluation and management.</p>
     pub policy_engine_id: ::std::string::String,
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
-    pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
-    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the policy was originally created. This is automatically set by the service and used for auditing and lifecycle management.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the policy was last modified. This tracks the most recent changes to the policy configuration or metadata.</p>
@@ -22,6 +18,12 @@ pub struct Policy {
     pub policy_arn: ::std::string::String,
     /// <p>The current status of the policy.</p>
     pub status: crate::types::PolicyStatus,
+    /// <p>The current enforcement mode of the policy.</p>
+    pub enforcement_mode: crate::types::EnforcementMode,
+    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
+    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the policy status. This provides details about any failures or the current state of the policy lifecycle.</p>
     pub status_reasons: ::std::vec::Vec<::std::string::String>,
 }
@@ -41,14 +43,6 @@ impl Policy {
         use std::ops::Deref;
         self.policy_engine_id.deref()
     }
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
-        self.definition.as_ref()
-    }
-    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
-    }
     /// <p>The timestamp when the policy was originally created. This is automatically set by the service and used for auditing and lifecycle management.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -66,6 +60,18 @@ impl Policy {
     pub fn status(&self) -> &crate::types::PolicyStatus {
         &self.status
     }
+    /// <p>The current enforcement mode of the policy.</p>
+    pub fn enforcement_mode(&self) -> &crate::types::EnforcementMode {
+        &self.enforcement_mode
+    }
+    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
+        self.definition.as_ref()
+    }
+    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
     /// <p>Additional information about the policy status. This provides details about any failures or the current state of the policy lifecycle.</p>
     pub fn status_reasons(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -78,12 +84,13 @@ impl ::std::fmt::Debug for Policy {
         formatter.field("policy_id", &self.policy_id);
         formatter.field("name", &self.name);
         formatter.field("policy_engine_id", &self.policy_engine_id);
-        formatter.field("definition", &self.definition);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("policy_arn", &self.policy_arn);
         formatter.field("status", &self.status);
+        formatter.field("enforcement_mode", &self.enforcement_mode);
+        formatter.field("definition", &self.definition);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status_reasons", &self.status_reasons);
         formatter.finish()
     }
@@ -102,12 +109,13 @@ pub struct PolicyBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_engine_id: ::std::option::Option<::std::string::String>,
-    pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PolicyStatus>,
+    pub(crate) enforcement_mode: ::std::option::Option<crate::types::EnforcementMode>,
+    pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PolicyBuilder {
@@ -155,35 +163,6 @@ impl PolicyBuilder {
     /// <p>The identifier of the policy engine that manages this policy. This establishes the policy engine context for policy evaluation and management.</p>
     pub fn get_policy_engine_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_engine_id
-    }
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
-    /// This field is required.
-    pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
-        self.definition = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
-    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
-        self.definition = input;
-        self
-    }
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
-    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
-        &self.definition
-    }
-    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The timestamp when the policy was originally created. This is automatically set by the service and used for auditing and lifecycle management.</p>
     /// This field is required.
@@ -245,6 +224,49 @@ impl PolicyBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PolicyStatus> {
         &self.status
     }
+    /// <p>The current enforcement mode of the policy.</p>
+    pub fn enforcement_mode(mut self, input: crate::types::EnforcementMode) -> Self {
+        self.enforcement_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current enforcement mode of the policy.</p>
+    pub fn set_enforcement_mode(mut self, input: ::std::option::Option<crate::types::EnforcementMode>) -> Self {
+        self.enforcement_mode = input;
+        self
+    }
+    /// <p>The current enforcement mode of the policy.</p>
+    pub fn get_enforcement_mode(&self) -> &::std::option::Option<crate::types::EnforcementMode> {
+        &self.enforcement_mode
+    }
+    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    /// This field is required.
+    pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
+        self.definition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
+        self.definition = input;
+        self
+    }
+    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
+        &self.definition
+    }
+    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>A human-readable description of the policy's purpose and functionality. Limited to 4,096 characters, this helps administrators understand and manage the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `status_reasons`.
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
@@ -295,8 +317,6 @@ impl PolicyBuilder {
                     "policy_engine_id was not specified but it is required when building Policy",
                 )
             })?,
-            definition: self.definition,
-            description: self.description,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -321,6 +341,13 @@ impl PolicyBuilder {
                     "status was not specified but it is required when building Policy",
                 )
             })?,
+            enforcement_mode: self.enforcement_mode.unwrap_or(
+                "ACTIVE"
+                    .parse::<crate::types::EnforcementMode>()
+                    .expect("static value validated to member"),
+            ),
+            definition: self.definition,
+            description: self.description,
             status_reasons: self.status_reasons.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_reasons",
@@ -336,12 +363,13 @@ impl ::std::fmt::Debug for PolicyBuilder {
         formatter.field("policy_id", &self.policy_id);
         formatter.field("name", &self.name);
         formatter.field("policy_engine_id", &self.policy_engine_id);
-        formatter.field("definition", &self.definition);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("policy_arn", &self.policy_arn);
         formatter.field("status", &self.status);
+        formatter.field("enforcement_mode", &self.enforcement_mode);
+        formatter.field("definition", &self.definition);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status_reasons", &self.status_reasons);
         formatter.finish()
     }

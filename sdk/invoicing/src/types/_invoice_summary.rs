@@ -12,16 +12,32 @@ pub struct InvoiceSummary {
     pub issued_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The invoice due date.</p>
     pub due_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The list of Amazon Web Services account IDs that are the bill source of the invoice. Currently, only a single bill source account is returned.</p>
+    pub bill_source_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The total number of accounts that are the bill source of the invoice.</p>
+    pub bill_source_accounts_total_count: ::std::option::Option<i32>,
+    /// <p>The role of the invoice receiver.</p>
+    pub receiver_role: ::std::option::Option<crate::types::ReceiverRole>,
     /// <p>The organization name providing Amazon Web Services services.</p>
     pub entity: ::std::option::Option<crate::types::Entity>,
     /// <p>The billing period of the invoice-related document.</p>
     pub billing_period: ::std::option::Option<crate::types::BillingPeriod>,
+    /// <p>The frequency of the invoice.</p>
+    pub invoice_frequency: ::std::option::Option<crate::types::InvoiceFrequency>,
+    /// <p>The type of the bill.</p>
+    pub bill_type: ::std::option::Option<crate::types::BillType>,
     /// <p>The type of invoice.</p>
     pub invoice_type: ::std::option::Option<crate::types::InvoiceType>,
+    /// <p>The commercial invoice ID. This is only applicable for tax invoices and identifies the associated commercial invoice.</p>
+    pub commercial_invoice_id: ::std::option::Option<::std::string::String>,
     /// <p>The initial or original invoice ID.</p>
     pub original_invoice_id: ::std::option::Option<::std::string::String>,
     /// <p>The purchase order number associated to the invoice.</p>
     pub purchase_order_number: ::std::option::Option<::std::string::String>,
+    /// <p>The e-invoice delivery status.</p>
+    pub einvoice_delivery_status: ::std::option::Option<crate::types::EinvoiceDeliveryStatus>,
+    /// <p>The current status of an invoice as reported to the tax authority. This captures scenarios where an invoice may be cancelled after issuance.</p>
+    pub tax_authority_status: ::std::option::Option<crate::types::TaxAuthorityStatus>,
     /// <p>The summary with the product and service currency.</p>
     pub base_currency_amount: ::std::option::Option<crate::types::InvoiceCurrencyAmount>,
     /// <p>The summary with the tax currency.</p>
@@ -46,6 +62,20 @@ impl InvoiceSummary {
     pub fn due_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.due_date.as_ref()
     }
+    /// <p>The list of Amazon Web Services account IDs that are the bill source of the invoice. Currently, only a single bill source account is returned.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bill_source_accounts.is_none()`.
+    pub fn bill_source_accounts(&self) -> &[::std::string::String] {
+        self.bill_source_accounts.as_deref().unwrap_or_default()
+    }
+    /// <p>The total number of accounts that are the bill source of the invoice.</p>
+    pub fn bill_source_accounts_total_count(&self) -> ::std::option::Option<i32> {
+        self.bill_source_accounts_total_count
+    }
+    /// <p>The role of the invoice receiver.</p>
+    pub fn receiver_role(&self) -> ::std::option::Option<&crate::types::ReceiverRole> {
+        self.receiver_role.as_ref()
+    }
     /// <p>The organization name providing Amazon Web Services services.</p>
     pub fn entity(&self) -> ::std::option::Option<&crate::types::Entity> {
         self.entity.as_ref()
@@ -54,9 +84,21 @@ impl InvoiceSummary {
     pub fn billing_period(&self) -> ::std::option::Option<&crate::types::BillingPeriod> {
         self.billing_period.as_ref()
     }
+    /// <p>The frequency of the invoice.</p>
+    pub fn invoice_frequency(&self) -> ::std::option::Option<&crate::types::InvoiceFrequency> {
+        self.invoice_frequency.as_ref()
+    }
+    /// <p>The type of the bill.</p>
+    pub fn bill_type(&self) -> ::std::option::Option<&crate::types::BillType> {
+        self.bill_type.as_ref()
+    }
     /// <p>The type of invoice.</p>
     pub fn invoice_type(&self) -> ::std::option::Option<&crate::types::InvoiceType> {
         self.invoice_type.as_ref()
+    }
+    /// <p>The commercial invoice ID. This is only applicable for tax invoices and identifies the associated commercial invoice.</p>
+    pub fn commercial_invoice_id(&self) -> ::std::option::Option<&str> {
+        self.commercial_invoice_id.as_deref()
     }
     /// <p>The initial or original invoice ID.</p>
     pub fn original_invoice_id(&self) -> ::std::option::Option<&str> {
@@ -65,6 +107,14 @@ impl InvoiceSummary {
     /// <p>The purchase order number associated to the invoice.</p>
     pub fn purchase_order_number(&self) -> ::std::option::Option<&str> {
         self.purchase_order_number.as_deref()
+    }
+    /// <p>The e-invoice delivery status.</p>
+    pub fn einvoice_delivery_status(&self) -> ::std::option::Option<&crate::types::EinvoiceDeliveryStatus> {
+        self.einvoice_delivery_status.as_ref()
+    }
+    /// <p>The current status of an invoice as reported to the tax authority. This captures scenarios where an invoice may be cancelled after issuance.</p>
+    pub fn tax_authority_status(&self) -> ::std::option::Option<&crate::types::TaxAuthorityStatus> {
+        self.tax_authority_status.as_ref()
     }
     /// <p>The summary with the product and service currency.</p>
     pub fn base_currency_amount(&self) -> ::std::option::Option<&crate::types::InvoiceCurrencyAmount> {
@@ -94,11 +144,19 @@ pub struct InvoiceSummaryBuilder {
     pub(crate) invoice_id: ::std::option::Option<::std::string::String>,
     pub(crate) issued_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) due_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) bill_source_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bill_source_accounts_total_count: ::std::option::Option<i32>,
+    pub(crate) receiver_role: ::std::option::Option<crate::types::ReceiverRole>,
     pub(crate) entity: ::std::option::Option<crate::types::Entity>,
     pub(crate) billing_period: ::std::option::Option<crate::types::BillingPeriod>,
+    pub(crate) invoice_frequency: ::std::option::Option<crate::types::InvoiceFrequency>,
+    pub(crate) bill_type: ::std::option::Option<crate::types::BillType>,
     pub(crate) invoice_type: ::std::option::Option<crate::types::InvoiceType>,
+    pub(crate) commercial_invoice_id: ::std::option::Option<::std::string::String>,
     pub(crate) original_invoice_id: ::std::option::Option<::std::string::String>,
     pub(crate) purchase_order_number: ::std::option::Option<::std::string::String>,
+    pub(crate) einvoice_delivery_status: ::std::option::Option<crate::types::EinvoiceDeliveryStatus>,
+    pub(crate) tax_authority_status: ::std::option::Option<crate::types::TaxAuthorityStatus>,
     pub(crate) base_currency_amount: ::std::option::Option<crate::types::InvoiceCurrencyAmount>,
     pub(crate) tax_currency_amount: ::std::option::Option<crate::types::InvoiceCurrencyAmount>,
     pub(crate) payment_currency_amount: ::std::option::Option<crate::types::InvoiceCurrencyAmount>,
@@ -160,6 +218,54 @@ impl InvoiceSummaryBuilder {
     pub fn get_due_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.due_date
     }
+    /// Appends an item to `bill_source_accounts`.
+    ///
+    /// To override the contents of this collection use [`set_bill_source_accounts`](Self::set_bill_source_accounts).
+    ///
+    /// <p>The list of Amazon Web Services account IDs that are the bill source of the invoice. Currently, only a single bill source account is returned.</p>
+    pub fn bill_source_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.bill_source_accounts.unwrap_or_default();
+        v.push(input.into());
+        self.bill_source_accounts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Amazon Web Services account IDs that are the bill source of the invoice. Currently, only a single bill source account is returned.</p>
+    pub fn set_bill_source_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.bill_source_accounts = input;
+        self
+    }
+    /// <p>The list of Amazon Web Services account IDs that are the bill source of the invoice. Currently, only a single bill source account is returned.</p>
+    pub fn get_bill_source_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bill_source_accounts
+    }
+    /// <p>The total number of accounts that are the bill source of the invoice.</p>
+    pub fn bill_source_accounts_total_count(mut self, input: i32) -> Self {
+        self.bill_source_accounts_total_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of accounts that are the bill source of the invoice.</p>
+    pub fn set_bill_source_accounts_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.bill_source_accounts_total_count = input;
+        self
+    }
+    /// <p>The total number of accounts that are the bill source of the invoice.</p>
+    pub fn get_bill_source_accounts_total_count(&self) -> &::std::option::Option<i32> {
+        &self.bill_source_accounts_total_count
+    }
+    /// <p>The role of the invoice receiver.</p>
+    pub fn receiver_role(mut self, input: crate::types::ReceiverRole) -> Self {
+        self.receiver_role = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The role of the invoice receiver.</p>
+    pub fn set_receiver_role(mut self, input: ::std::option::Option<crate::types::ReceiverRole>) -> Self {
+        self.receiver_role = input;
+        self
+    }
+    /// <p>The role of the invoice receiver.</p>
+    pub fn get_receiver_role(&self) -> &::std::option::Option<crate::types::ReceiverRole> {
+        &self.receiver_role
+    }
     /// <p>The organization name providing Amazon Web Services services.</p>
     pub fn entity(mut self, input: crate::types::Entity) -> Self {
         self.entity = ::std::option::Option::Some(input);
@@ -188,6 +294,34 @@ impl InvoiceSummaryBuilder {
     pub fn get_billing_period(&self) -> &::std::option::Option<crate::types::BillingPeriod> {
         &self.billing_period
     }
+    /// <p>The frequency of the invoice.</p>
+    pub fn invoice_frequency(mut self, input: crate::types::InvoiceFrequency) -> Self {
+        self.invoice_frequency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The frequency of the invoice.</p>
+    pub fn set_invoice_frequency(mut self, input: ::std::option::Option<crate::types::InvoiceFrequency>) -> Self {
+        self.invoice_frequency = input;
+        self
+    }
+    /// <p>The frequency of the invoice.</p>
+    pub fn get_invoice_frequency(&self) -> &::std::option::Option<crate::types::InvoiceFrequency> {
+        &self.invoice_frequency
+    }
+    /// <p>The type of the bill.</p>
+    pub fn bill_type(mut self, input: crate::types::BillType) -> Self {
+        self.bill_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the bill.</p>
+    pub fn set_bill_type(mut self, input: ::std::option::Option<crate::types::BillType>) -> Self {
+        self.bill_type = input;
+        self
+    }
+    /// <p>The type of the bill.</p>
+    pub fn get_bill_type(&self) -> &::std::option::Option<crate::types::BillType> {
+        &self.bill_type
+    }
     /// <p>The type of invoice.</p>
     pub fn invoice_type(mut self, input: crate::types::InvoiceType) -> Self {
         self.invoice_type = ::std::option::Option::Some(input);
@@ -201,6 +335,20 @@ impl InvoiceSummaryBuilder {
     /// <p>The type of invoice.</p>
     pub fn get_invoice_type(&self) -> &::std::option::Option<crate::types::InvoiceType> {
         &self.invoice_type
+    }
+    /// <p>The commercial invoice ID. This is only applicable for tax invoices and identifies the associated commercial invoice.</p>
+    pub fn commercial_invoice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.commercial_invoice_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The commercial invoice ID. This is only applicable for tax invoices and identifies the associated commercial invoice.</p>
+    pub fn set_commercial_invoice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.commercial_invoice_id = input;
+        self
+    }
+    /// <p>The commercial invoice ID. This is only applicable for tax invoices and identifies the associated commercial invoice.</p>
+    pub fn get_commercial_invoice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commercial_invoice_id
     }
     /// <p>The initial or original invoice ID.</p>
     pub fn original_invoice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -229,6 +377,34 @@ impl InvoiceSummaryBuilder {
     /// <p>The purchase order number associated to the invoice.</p>
     pub fn get_purchase_order_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.purchase_order_number
+    }
+    /// <p>The e-invoice delivery status.</p>
+    pub fn einvoice_delivery_status(mut self, input: crate::types::EinvoiceDeliveryStatus) -> Self {
+        self.einvoice_delivery_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The e-invoice delivery status.</p>
+    pub fn set_einvoice_delivery_status(mut self, input: ::std::option::Option<crate::types::EinvoiceDeliveryStatus>) -> Self {
+        self.einvoice_delivery_status = input;
+        self
+    }
+    /// <p>The e-invoice delivery status.</p>
+    pub fn get_einvoice_delivery_status(&self) -> &::std::option::Option<crate::types::EinvoiceDeliveryStatus> {
+        &self.einvoice_delivery_status
+    }
+    /// <p>The current status of an invoice as reported to the tax authority. This captures scenarios where an invoice may be cancelled after issuance.</p>
+    pub fn tax_authority_status(mut self, input: crate::types::TaxAuthorityStatus) -> Self {
+        self.tax_authority_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of an invoice as reported to the tax authority. This captures scenarios where an invoice may be cancelled after issuance.</p>
+    pub fn set_tax_authority_status(mut self, input: ::std::option::Option<crate::types::TaxAuthorityStatus>) -> Self {
+        self.tax_authority_status = input;
+        self
+    }
+    /// <p>The current status of an invoice as reported to the tax authority. This captures scenarios where an invoice may be cancelled after issuance.</p>
+    pub fn get_tax_authority_status(&self) -> &::std::option::Option<crate::types::TaxAuthorityStatus> {
+        &self.tax_authority_status
     }
     /// <p>The summary with the product and service currency.</p>
     pub fn base_currency_amount(mut self, input: crate::types::InvoiceCurrencyAmount) -> Self {
@@ -279,11 +455,19 @@ impl InvoiceSummaryBuilder {
             invoice_id: self.invoice_id,
             issued_date: self.issued_date,
             due_date: self.due_date,
+            bill_source_accounts: self.bill_source_accounts,
+            bill_source_accounts_total_count: self.bill_source_accounts_total_count,
+            receiver_role: self.receiver_role,
             entity: self.entity,
             billing_period: self.billing_period,
+            invoice_frequency: self.invoice_frequency,
+            bill_type: self.bill_type,
             invoice_type: self.invoice_type,
+            commercial_invoice_id: self.commercial_invoice_id,
             original_invoice_id: self.original_invoice_id,
             purchase_order_number: self.purchase_order_number,
+            einvoice_delivery_status: self.einvoice_delivery_status,
+            tax_authority_status: self.tax_authority_status,
             base_currency_amount: self.base_currency_amount,
             tax_currency_amount: self.tax_currency_amount,
             payment_currency_amount: self.payment_currency_amount,

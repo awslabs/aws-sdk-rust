@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_object_lambda_access_point(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ObjectLambdaAccessPoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ObjectLambdaAccessPoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_object_lambda_access_point(
             s if s.matches("Alias") /* Alias com.amazonaws.s3control#ObjectLambdaAccessPoint$Alias */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_access_point_alias::de_object_lambda_access_point_alias(&mut tag, depth + 1)
                         ?
                     )
                 ;

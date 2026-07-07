@@ -2,10 +2,16 @@
 pub(crate) fn de_hit<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Hit>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,13 +29,13 @@ where
                             );
                         }
                         "fields" => {
-                            builder = builder.set_fields(crate::protocol_serde::shape_fields::de_fields(tokens, _value)?);
+                            builder = builder.set_fields(crate::protocol_serde::shape_fields::de_fields(tokens, _value, depth + 1)?);
                         }
                         "exprs" => {
-                            builder = builder.set_exprs(crate::protocol_serde::shape_exprs::de_exprs(tokens, _value)?);
+                            builder = builder.set_exprs(crate::protocol_serde::shape_exprs::de_exprs(tokens, _value, depth + 1)?);
                         }
                         "highlights" => {
-                            builder = builder.set_highlights(crate::protocol_serde::shape_highlights::de_highlights(tokens, _value)?);
+                            builder = builder.set_highlights(crate::protocol_serde::shape_highlights::de_highlights(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

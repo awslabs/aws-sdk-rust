@@ -26,6 +26,8 @@ pub struct ResaleAuthorizationSummary {
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The availability end date of the ResaleAuthorization.</p>
     pub availability_end_date: ::std::option::Option<::std::string::String>,
+    /// <p>The reseller role of the ResaleAuthorization.</p>
+    pub reseller_role: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleString>,
 }
 impl ResaleAuthorizationSummary {
     /// <p>The name of the ResaleAuthorization.</p>
@@ -72,6 +74,10 @@ impl ResaleAuthorizationSummary {
     pub fn availability_end_date(&self) -> ::std::option::Option<&str> {
         self.availability_end_date.as_deref()
     }
+    /// <p>The reseller role of the ResaleAuthorization.</p>
+    pub fn reseller_role(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationResellerRoleString> {
+        self.reseller_role.as_ref()
+    }
 }
 impl ResaleAuthorizationSummary {
     /// Creates a new builder-style object to manufacture [`ResaleAuthorizationSummary`](crate::types::ResaleAuthorizationSummary).
@@ -95,6 +101,7 @@ pub struct ResaleAuthorizationSummaryBuilder {
     pub(crate) offer_extended_status: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::std::string::String>,
     pub(crate) availability_end_date: ::std::option::Option<::std::string::String>,
+    pub(crate) reseller_role: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleString>,
 }
 impl ResaleAuthorizationSummaryBuilder {
     /// <p>The name of the ResaleAuthorization.</p>
@@ -251,6 +258,20 @@ impl ResaleAuthorizationSummaryBuilder {
     pub fn get_availability_end_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_end_date
     }
+    /// <p>The reseller role of the ResaleAuthorization.</p>
+    pub fn reseller_role(mut self, input: crate::types::ResaleAuthorizationResellerRoleString) -> Self {
+        self.reseller_role = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reseller role of the ResaleAuthorization.</p>
+    pub fn set_reseller_role(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleString>) -> Self {
+        self.reseller_role = input;
+        self
+    }
+    /// <p>The reseller role of the ResaleAuthorization.</p>
+    pub fn get_reseller_role(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationResellerRoleString> {
+        &self.reseller_role
+    }
     /// Consumes the builder and constructs a [`ResaleAuthorizationSummary`](crate::types::ResaleAuthorizationSummary).
     pub fn build(self) -> crate::types::ResaleAuthorizationSummary {
         crate::types::ResaleAuthorizationSummary {
@@ -265,6 +286,7 @@ impl ResaleAuthorizationSummaryBuilder {
             offer_extended_status: self.offer_extended_status,
             created_date: self.created_date,
             availability_end_date: self.availability_end_date,
+            reseller_role: self.reseller_role,
         }
     }
 }

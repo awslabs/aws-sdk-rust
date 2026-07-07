@@ -24,10 +24,16 @@ pub fn ser_geospatial_layer_join_definition(
 pub(crate) fn de_geospatial_layer_join_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GeospatialLayerJoinDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,12 +51,19 @@ where
                             );
                         }
                         "DatasetKeyField" => {
-                            builder = builder
-                                .set_dataset_key_field(crate::protocol_serde::shape_unaggregated_field::de_unaggregated_field(tokens, _value)?);
+                            builder = builder.set_dataset_key_field(crate::protocol_serde::shape_unaggregated_field::de_unaggregated_field(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ColorField" => {
                             builder = builder.set_color_field(
-                                crate::protocol_serde::shape_geospatial_layer_color_field::de_geospatial_layer_color_field(tokens, _value)?,
+                                crate::protocol_serde::shape_geospatial_layer_color_field::de_geospatial_layer_color_field(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

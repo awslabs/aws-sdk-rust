@@ -96,5 +96,11 @@ pub fn ser_search_criteria(
         crate::protocol_serde::shape_control_plane_tag_filter::ser_control_plane_tag_filter(&mut object_31, var_30)?;
         object_31.finish();
     }
+    if let Some(var_32) = &input.ai_agents {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("AiAgents").start_object();
+        crate::protocol_serde::shape_ai_agents_criteria::ser_ai_agents_criteria(&mut object_33, var_32)?;
+        object_33.finish();
+    }
     Ok(())
 }

@@ -3,13 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceLinkedConfigurationRecorderInput {
-    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.</p>
+    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete. This field is only supported for Amazon Web Services service principals. For third-party service-linked configuration recorders, use <code>Arn</code> instead.</p>
     pub service_principal: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder that you want to delete. For third-party service-linked configuration recorders, you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code> or <code>ServicePrincipal</code>.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceLinkedConfigurationRecorderInput {
-    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.</p>
+    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete. This field is only supported for Amazon Web Services service principals. For third-party service-linked configuration recorders, use <code>Arn</code> instead.</p>
     pub fn service_principal(&self) -> ::std::option::Option<&str> {
         self.service_principal.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder that you want to delete. For third-party service-linked configuration recorders, you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code> or <code>ServicePrincipal</code>.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl DeleteServiceLinkedConfigurationRecorderInput {
@@ -25,22 +31,36 @@ impl DeleteServiceLinkedConfigurationRecorderInput {
 #[non_exhaustive]
 pub struct DeleteServiceLinkedConfigurationRecorderInputBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceLinkedConfigurationRecorderInputBuilder {
-    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.</p>
-    /// This field is required.
+    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete. This field is only supported for Amazon Web Services service principals. For third-party service-linked configuration recorders, use <code>Arn</code> instead.</p>
     pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.</p>
+    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete. This field is only supported for Amazon Web Services service principals. For third-party service-linked configuration recorders, use <code>Arn</code> instead.</p>
     pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_principal = input;
         self
     }
-    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.</p>
+    /// <p>The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete. This field is only supported for Amazon Web Services service principals. For third-party service-linked configuration recorders, use <code>Arn</code> instead.</p>
     pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_principal
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder that you want to delete. For third-party service-linked configuration recorders, you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code> or <code>ServicePrincipal</code>.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder that you want to delete. For third-party service-linked configuration recorders, you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code> or <code>ServicePrincipal</code>.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked configuration recorder that you want to delete. For third-party service-linked configuration recorders, you must use <code>Arn</code>. You must specify exactly one of <code>Arn</code> or <code>ServicePrincipal</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteServiceLinkedConfigurationRecorderInput`](crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderInput).
     pub fn build(
@@ -52,6 +72,7 @@ impl DeleteServiceLinkedConfigurationRecorderInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderInput {
                 service_principal: self.service_principal,
+                arn: self.arn,
             },
         )
     }

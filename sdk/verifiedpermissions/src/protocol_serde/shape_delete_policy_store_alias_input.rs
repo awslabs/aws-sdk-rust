@@ -6,5 +6,8 @@ pub fn ser_delete_policy_store_alias_input_input(
     if let Some(var_1) = &input.alias_name {
         object.key("aliasName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.deletion_mode {
+        object.key("deletionMode").string(var_2.as_str());
+    }
     Ok(())
 }

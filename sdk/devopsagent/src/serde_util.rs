@@ -104,6 +104,30 @@ pub(crate) fn create_agent_space_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_asset_output_output_correct_errors(
+    mut builder: crate::operation::create_asset::builders::CreateAssetOutputBuilder,
+) -> crate::operation::create_asset::builders::CreateAssetOutputBuilder {
+    if builder.asset.is_none() {
+        builder.asset = {
+            let builder = crate::types::builders::AssetBuilder::default();
+            crate::serde_util::asset_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn create_asset_file_output_output_correct_errors(
+    mut builder: crate::operation::create_asset_file::builders::CreateAssetFileOutputBuilder,
+) -> crate::operation::create_asset_file::builders::CreateAssetFileOutputBuilder {
+    if builder.file.is_none() {
+        builder.file = {
+            let builder = crate::types::builders::AssetFileBuilder::default();
+            crate::serde_util::asset_file_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_backlog_task_output_output_correct_errors(
     mut builder: crate::operation::create_backlog_task::builders::CreateBacklogTaskOutputBuilder,
 ) -> crate::operation::create_backlog_task::builders::CreateBacklogTaskOutputBuilder {
@@ -139,6 +163,18 @@ pub(crate) fn create_private_connection_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::PrivateConnectionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_trigger_output_output_correct_errors(
+    mut builder: crate::operation::create_trigger::builders::CreateTriggerOutputBuilder,
+) -> crate::operation::create_trigger::builders::CreateTriggerOutputBuilder {
+    if builder.trigger.is_none() {
+        builder.trigger = {
+            let builder = crate::types::builders::TriggerBuilder::default();
+            crate::serde_util::trigger_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -212,6 +248,45 @@ pub(crate) fn get_agent_space_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_asset_output_output_correct_errors(
+    mut builder: crate::operation::get_asset::builders::GetAssetOutputBuilder,
+) -> crate::operation::get_asset::builders::GetAssetOutputBuilder {
+    if builder.asset.is_none() {
+        builder.asset = {
+            let builder = crate::types::builders::AssetBuilder::default();
+            crate::serde_util::asset_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_asset_content_output_output_correct_errors(
+    mut builder: crate::operation::get_asset_content::builders::GetAssetContentOutputBuilder,
+) -> crate::operation::get_asset_content::builders::GetAssetContentOutputBuilder {
+    if builder.content.is_none() {
+        builder.content = {
+            let builder = crate::types::builders::AssetZipContentBuilder::default();
+            crate::serde_util::asset_zip_content_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_asset_file_output_output_correct_errors(
+    mut builder: crate::operation::get_asset_file::builders::GetAssetFileOutputBuilder,
+) -> crate::operation::get_asset_file::builders::GetAssetFileOutputBuilder {
+    if builder.file.is_none() {
+        builder.file = {
+            let builder = crate::types::builders::AssetFileBuilder::default();
+            crate::serde_util::asset_file_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_association_output_output_correct_errors(
     mut builder: crate::operation::get_association::builders::GetAssociationOutputBuilder,
 ) -> crate::operation::get_association::builders::GetAssociationOutputBuilder {
@@ -260,11 +335,59 @@ pub(crate) fn get_service_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_trigger_output_output_correct_errors(
+    mut builder: crate::operation::get_trigger::builders::GetTriggerOutputBuilder,
+) -> crate::operation::get_trigger::builders::GetTriggerOutputBuilder {
+    if builder.trigger.is_none() {
+        builder.trigger = {
+            let builder = crate::types::builders::TriggerBuilder::default();
+            crate::serde_util::trigger_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_agent_spaces_output_output_correct_errors(
     mut builder: crate::operation::list_agent_spaces::builders::ListAgentSpacesOutputBuilder,
 ) -> crate::operation::list_agent_spaces::builders::ListAgentSpacesOutputBuilder {
     if builder.agent_spaces.is_none() {
         builder.agent_spaces = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_asset_files_output_output_correct_errors(
+    mut builder: crate::operation::list_asset_files::builders::ListAssetFilesOutputBuilder,
+) -> crate::operation::list_asset_files::builders::ListAssetFilesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_asset_types_output_output_correct_errors(
+    mut builder: crate::operation::list_asset_types::builders::ListAssetTypesOutputBuilder,
+) -> crate::operation::list_asset_types::builders::ListAssetTypesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_asset_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_asset_versions::builders::ListAssetVersionsOutputBuilder,
+) -> crate::operation::list_asset_versions::builders::ListAssetVersionsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_assets_output_output_correct_errors(
+    mut builder: crate::operation::list_assets::builders::ListAssetsOutputBuilder,
+) -> crate::operation::list_assets::builders::ListAssetsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -377,6 +500,15 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_triggers_output_output_correct_errors(
+    mut builder: crate::operation::list_triggers::builders::ListTriggersOutputBuilder,
+) -> crate::operation::list_triggers::builders::ListTriggersOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_webhooks_output_output_correct_errors(
     mut builder: crate::operation::list_webhooks::builders::ListWebhooksOutputBuilder,
 ) -> crate::operation::list_webhooks::builders::ListWebhooksOutputBuilder {
@@ -393,6 +525,30 @@ pub(crate) fn update_agent_space_output_output_correct_errors(
         builder.agent_space = {
             let builder = crate::types::builders::AgentSpaceBuilder::default();
             crate::serde_util::agent_space_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_asset_output_output_correct_errors(
+    mut builder: crate::operation::update_asset::builders::UpdateAssetOutputBuilder,
+) -> crate::operation::update_asset::builders::UpdateAssetOutputBuilder {
+    if builder.asset.is_none() {
+        builder.asset = {
+            let builder = crate::types::builders::AssetBuilder::default();
+            crate::serde_util::asset_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_asset_file_output_output_correct_errors(
+    mut builder: crate::operation::update_asset_file::builders::UpdateAssetFileOutputBuilder,
+) -> crate::operation::update_asset_file::builders::UpdateAssetFileOutputBuilder {
+    if builder.file.is_none() {
+        builder.file = {
+            let builder = crate::types::builders::AssetFileBuilder::default();
+            crate::serde_util::asset_file_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -476,6 +632,18 @@ pub(crate) fn update_recommendation_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_trigger_output_output_correct_errors(
+    mut builder: crate::operation::update_trigger::builders::UpdateTriggerOutputBuilder,
+) -> crate::operation::update_trigger::builders::UpdateTriggerOutputBuilder {
+    if builder.trigger.is_none() {
+        builder.trigger = {
+            let builder = crate::types::builders::TriggerBuilder::default();
+            crate::serde_util::trigger_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn association_correct_errors(mut builder: crate::types::builders::AssociationBuilder) -> crate::types::builders::AssociationBuilder {
     if builder.agent_space_id.is_none() {
         builder.agent_space_id = Some(Default::default())
@@ -514,6 +682,47 @@ pub(crate) fn agent_space_correct_errors(mut builder: crate::types::builders::Ag
     builder
 }
 
+pub(crate) fn asset_correct_errors(mut builder: crate::types::builders::AssetBuilder) -> crate::types::builders::AssetBuilder {
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.asset_type.is_none() {
+        builder.asset_type = Some(Default::default())
+    }
+    if builder.metadata.is_none() {
+        builder.metadata = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn asset_file_correct_errors(mut builder: crate::types::builders::AssetFileBuilder) -> crate::types::builders::AssetFileBuilder {
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    if builder.content.is_none() {
+        builder.content = Some(crate::types::AssetFileBody::Unknown)
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn task_correct_errors(mut builder: crate::types::builders::TaskBuilder) -> crate::types::builders::TaskBuilder {
     if builder.agent_space_id.is_none() {
         builder.agent_space_id = Some(Default::default())
@@ -541,6 +750,43 @@ pub(crate) fn task_correct_errors(mut builder: crate::types::builders::TaskBuild
     }
     if builder.version.is_none() {
         builder.version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trigger_correct_errors(mut builder: crate::types::builders::TriggerBuilder) -> crate::types::builders::TriggerBuilder {
+    if builder.trigger_id.is_none() {
+        builder.trigger_id = Some(Default::default())
+    }
+    if builder.agent_space_id.is_none() {
+        builder.agent_space_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    if builder.condition.is_none() {
+        builder.condition = Some(crate::types::TriggerCondition::Unknown)
+    }
+    if builder.action.is_none() {
+        builder.action = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn asset_zip_content_correct_errors(
+    mut builder: crate::types::builders::AssetZipContentBuilder,
+) -> crate::types::builders::AssetZipContentBuilder {
+    if builder.zip_file.is_none() {
+        builder.zip_file = Some(::aws_smithy_types::Blob::new(""))
     }
     builder
 }
@@ -703,6 +949,51 @@ pub(crate) fn goal_content_correct_errors(mut builder: crate::types::builders::G
     }
     if builder.objectives.is_none() {
         builder.objectives = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_file_summary_correct_errors(
+    mut builder: crate::types::builders::AssetFileSummaryBuilder,
+) -> crate::types::builders::AssetFileSummaryBuilder {
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn asset_type_summary_correct_errors(
+    mut builder: crate::types::builders::AssetTypeSummaryBuilder,
+) -> crate::types::builders::AssetTypeSummaryBuilder {
+    if builder.asset_type.is_none() {
+        builder.asset_type = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_version_metadata_correct_errors(
+    mut builder: crate::types::builders::AssetVersionMetadataBuilder,
+) -> crate::types::builders::AssetVersionMetadataBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -956,6 +1247,15 @@ pub(crate) fn mcp_server_new_relic_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn mcp_server_sigv4_configuration_correct_errors(
+    mut builder: crate::types::builders::McpServerSigV4ConfigurationBuilder,
+) -> crate::types::builders::McpServerSigV4ConfigurationBuilder {
+    if builder.tools.is_none() {
+        builder.tools = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn pager_duty_configuration_correct_errors(
     mut builder: crate::types::builders::PagerDutyConfigurationBuilder,
 ) -> crate::types::builders::PagerDutyConfigurationBuilder {
@@ -1046,6 +1346,27 @@ pub(crate) fn registered_mcp_server_details_correct_errors(
     builder
 }
 
+pub(crate) fn registered_mcp_server_sigv4_details_correct_errors(
+    mut builder: crate::types::builders::RegisteredMcpServerSigV4DetailsBuilder,
+) -> crate::types::builders::RegisteredMcpServerSigV4DetailsBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn registered_new_relic_details_correct_errors(
     mut builder: crate::types::builders::RegisteredNewRelicDetailsBuilder,
 ) -> crate::types::builders::RegisteredNewRelicDetailsBuilder {
@@ -1067,6 +1388,39 @@ pub(crate) fn registered_pager_duty_details_correct_errors(
     builder
 }
 
+pub(crate) fn registered_remote_agent_details_correct_errors(
+    mut builder: crate::types::builders::RegisteredRemoteAgentDetailsBuilder,
+) -> crate::types::builders::RegisteredRemoteAgentDetailsBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    if builder.authorization_method.is_none() {
+        builder.authorization_method = "no value was set".parse::<crate::types::RemoteAgentAuthorizationMethod>().ok()
+    }
+    builder
+}
+
+pub(crate) fn registered_remote_agent_sigv4_details_correct_errors(
+    mut builder: crate::types::builders::RegisteredRemoteAgentSigV4DetailsBuilder,
+) -> crate::types::builders::RegisteredRemoteAgentSigV4DetailsBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn registered_slack_service_details_correct_errors(
     mut builder: crate::types::builders::RegisteredSlackServiceDetailsBuilder,
 ) -> crate::types::builders::RegisteredSlackServiceDetailsBuilder {
@@ -1075,6 +1429,15 @@ pub(crate) fn registered_slack_service_details_correct_errors(
     }
     if builder.team_name.is_none() {
         builder.team_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn schedule_condition_correct_errors(
+    mut builder: crate::types::builders::ScheduleConditionBuilder,
+) -> crate::types::builders::ScheduleConditionBuilder {
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
     }
     builder
 }

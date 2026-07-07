@@ -153,6 +153,8 @@ pub(crate) fn de_update_recovery_point_lifecycle(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -167,11 +169,13 @@ pub(crate) fn de_update_recovery_point_lifecycle(
                 }
                 "CalculatedLifecycle" => {
                     builder = builder.set_calculated_lifecycle(crate::protocol_serde::shape_calculated_lifecycle::de_calculated_lifecycle(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Lifecycle" => {
-                    builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value)?);
+                    builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value, depth + 1)?);
                 }
                 "RecoveryPointArn" => {
                     builder = builder.set_recovery_point_arn(

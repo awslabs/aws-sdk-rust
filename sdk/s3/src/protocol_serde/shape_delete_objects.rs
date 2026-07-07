@@ -110,6 +110,8 @@ pub fn de_delete_objects(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("DeleteResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected DeleteResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -123,7 +125,7 @@ pub fn de_delete_objects(
                         Result::<::std::vec::Vec::<crate::types::Error>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_12 = builder.errors.take().unwrap_or_default();
                             list_12.push(
-                                crate::protocol_serde::shape_error::de_error(&mut tag)
+                                crate::protocol_serde::shape_error::de_error(&mut tag, depth + 1)
                                 ?
                             );
                             list_12
@@ -140,7 +142,7 @@ pub fn de_delete_objects(
                         Result::<::std::vec::Vec::<crate::types::DeletedObject>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_14 = builder.deleted.take().unwrap_or_default();
                             list_14.push(
-                                crate::protocol_serde::shape_deleted_object::de_deleted_object(&mut tag)
+                                crate::protocol_serde::shape_deleted_object::de_deleted_object(&mut tag, depth + 1)
                                 ?
                             );
                             list_14

@@ -30,10 +30,16 @@ pub fn ser_hierarchical_chunking_configuration(
 pub(crate) fn de_hierarchical_chunking_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HierarchicalChunkingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "levelConfigurations" => {
                             builder = builder.set_level_configurations(
-                                    crate::protocol_serde::shape_hierarchical_chunking_level_configurations::de_hierarchical_chunking_level_configurations(tokens, _value)?
+                                    crate::protocol_serde::shape_hierarchical_chunking_level_configurations::de_hierarchical_chunking_level_configurations(tokens, _value, depth + 1)?
                                 );
                         }
                         "overlapTokens" => {

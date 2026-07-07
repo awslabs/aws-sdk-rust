@@ -72,10 +72,16 @@ pub fn ser_eks_container(
 pub(crate) fn de_eks_container<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EksContainer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -107,33 +113,41 @@ where
                             );
                         }
                         "command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "args" => {
-                            builder = builder.set_args(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_args(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "env" => {
                             builder = builder.set_env(
                                 crate::protocol_serde::shape_eks_container_environment_variables::de_eks_container_environment_variables(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "resources" => {
                             builder = builder.set_resources(
                                 crate::protocol_serde::shape_eks_container_resource_requirements::de_eks_container_resource_requirements(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "volumeMounts" => {
                             builder = builder.set_volume_mounts(
-                                crate::protocol_serde::shape_eks_container_volume_mounts::de_eks_container_volume_mounts(tokens, _value)?,
+                                crate::protocol_serde::shape_eks_container_volume_mounts::de_eks_container_volume_mounts(tokens, _value, depth + 1)?,
                             );
                         }
                         "securityContext" => {
                             builder = builder.set_security_context(
-                                crate::protocol_serde::shape_eks_container_security_context::de_eks_container_security_context(tokens, _value)?,
+                                crate::protocol_serde::shape_eks_container_security_context::de_eks_container_security_context(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

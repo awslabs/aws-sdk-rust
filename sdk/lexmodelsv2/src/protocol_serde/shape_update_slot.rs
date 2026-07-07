@@ -153,6 +153,8 @@ pub(crate) fn de_update_slot(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -207,12 +209,17 @@ pub(crate) fn de_update_slot(
                 }
                 "multipleValuesSetting" => {
                     builder = builder.set_multiple_values_setting(crate::protocol_serde::shape_multiple_values_setting::de_multiple_values_setting(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "obfuscationSetting" => {
-                    builder =
-                        builder.set_obfuscation_setting(crate::protocol_serde::shape_obfuscation_setting::de_obfuscation_setting(tokens, _value)?);
+                    builder = builder.set_obfuscation_setting(crate::protocol_serde::shape_obfuscation_setting::de_obfuscation_setting(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "slotId" => {
                     builder = builder.set_slot_id(
@@ -236,11 +243,15 @@ pub(crate) fn de_update_slot(
                     );
                 }
                 "subSlotSetting" => {
-                    builder = builder.set_sub_slot_setting(crate::protocol_serde::shape_sub_slot_setting::de_sub_slot_setting(tokens, _value)?);
+                    builder = builder.set_sub_slot_setting(crate::protocol_serde::shape_sub_slot_setting::de_sub_slot_setting(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "valueElicitationSetting" => {
                     builder = builder.set_value_elicitation_setting(
-                        crate::protocol_serde::shape_slot_value_elicitation_setting::de_slot_value_elicitation_setting(tokens, _value)?,
+                        crate::protocol_serde::shape_slot_value_elicitation_setting::de_slot_value_elicitation_setting(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

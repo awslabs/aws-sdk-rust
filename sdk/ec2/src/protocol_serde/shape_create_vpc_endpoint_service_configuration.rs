@@ -53,6 +53,8 @@ pub fn de_create_vpc_endpoint_service_configuration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateVpcEndpointServiceConfigurationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateVpcEndpointServiceConfigurationResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_create_vpc_endpoint_service_configuration(
             s if s.matches("serviceConfiguration") /* ServiceConfiguration com.amazonaws.ec2.synthetic#CreateVpcEndpointServiceConfigurationOutput$ServiceConfiguration */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_service_configuration::de_service_configuration(&mut tag)
+                        crate::protocol_serde::shape_service_configuration::de_service_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

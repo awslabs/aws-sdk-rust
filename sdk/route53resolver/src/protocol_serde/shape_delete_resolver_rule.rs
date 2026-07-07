@@ -52,6 +52,21 @@ pub fn de_delete_resolver_rule_http_error(
             };
             tmp
         }),
+        "InvalidRequestException" => crate::operation::delete_resolver_rule::DeleteResolverRuleError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_resolver_rule::DeleteResolverRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceInUseException" => crate::operation::delete_resolver_rule::DeleteResolverRuleError::ResourceInUseException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -139,13 +154,15 @@ pub(crate) fn de_delete_resolver_rule(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ResolverRule" => {
-                    builder = builder.set_resolver_rule(crate::protocol_serde::shape_resolver_rule::de_resolver_rule(tokens, _value)?);
+                    builder = builder.set_resolver_rule(crate::protocol_serde::shape_resolver_rule::de_resolver_rule(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

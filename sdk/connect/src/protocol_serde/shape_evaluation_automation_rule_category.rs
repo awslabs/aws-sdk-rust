@@ -2,10 +2,16 @@
 pub(crate) fn de_evaluation_automation_rule_category<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationAutomationRuleCategory>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,7 +41,7 @@ where
                             }
                             "PointsOfInterest" => {
                                 builder = builder.set_points_of_interest(
-                                    crate::protocol_serde::shape_evaluation_transcript_points_of_interest::de_evaluation_transcript_points_of_interest(tokens, _value)?
+                                    crate::protocol_serde::shape_evaluation_transcript_points_of_interest::de_evaluation_transcript_points_of_interest(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

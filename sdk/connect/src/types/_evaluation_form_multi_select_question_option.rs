@@ -8,6 +8,14 @@ pub struct EvaluationFormMultiSelectQuestionOption {
     pub ref_id: ::std::string::String,
     /// <p>Display text for this option.</p>
     pub text: ::std::string::String,
+    /// <p>The score assigned to the answer option.</p>
+    pub score: i32,
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub automatic_fail: bool,
+    /// <p>Information about automatic fail configuration for an evaluation form.</p>
+    pub automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
+    /// <p>The points configuration for point-based scoring.</p>
+    pub points_configuration: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>,
 }
 impl EvaluationFormMultiSelectQuestionOption {
     /// <p>Reference identifier for this option.</p>
@@ -19,6 +27,22 @@ impl EvaluationFormMultiSelectQuestionOption {
     pub fn text(&self) -> &str {
         use std::ops::Deref;
         self.text.deref()
+    }
+    /// <p>The score assigned to the answer option.</p>
+    pub fn score(&self) -> i32 {
+        self.score
+    }
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub fn automatic_fail(&self) -> bool {
+        self.automatic_fail
+    }
+    /// <p>Information about automatic fail configuration for an evaluation form.</p>
+    pub fn automatic_fail_configuration(&self) -> ::std::option::Option<&crate::types::AutomaticFailConfiguration> {
+        self.automatic_fail_configuration.as_ref()
+    }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn points_configuration(&self) -> ::std::option::Option<&crate::types::QuestionOptionPointsConfiguration> {
+        self.points_configuration.as_ref()
     }
 }
 impl EvaluationFormMultiSelectQuestionOption {
@@ -34,6 +58,10 @@ impl EvaluationFormMultiSelectQuestionOption {
 pub struct EvaluationFormMultiSelectQuestionOptionBuilder {
     pub(crate) ref_id: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) score: ::std::option::Option<i32>,
+    pub(crate) automatic_fail: ::std::option::Option<bool>,
+    pub(crate) automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
+    pub(crate) points_configuration: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>,
 }
 impl EvaluationFormMultiSelectQuestionOptionBuilder {
     /// <p>Reference identifier for this option.</p>
@@ -66,6 +94,62 @@ impl EvaluationFormMultiSelectQuestionOptionBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
+    /// <p>The score assigned to the answer option.</p>
+    pub fn score(mut self, input: i32) -> Self {
+        self.score = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The score assigned to the answer option.</p>
+    pub fn set_score(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.score = input;
+        self
+    }
+    /// <p>The score assigned to the answer option.</p>
+    pub fn get_score(&self) -> &::std::option::Option<i32> {
+        &self.score
+    }
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub fn automatic_fail(mut self, input: bool) -> Self {
+        self.automatic_fail = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.automatic_fail = input;
+        self
+    }
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
+        &self.automatic_fail
+    }
+    /// <p>Information about automatic fail configuration for an evaluation form.</p>
+    pub fn automatic_fail_configuration(mut self, input: crate::types::AutomaticFailConfiguration) -> Self {
+        self.automatic_fail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about automatic fail configuration for an evaluation form.</p>
+    pub fn set_automatic_fail_configuration(mut self, input: ::std::option::Option<crate::types::AutomaticFailConfiguration>) -> Self {
+        self.automatic_fail_configuration = input;
+        self
+    }
+    /// <p>Information about automatic fail configuration for an evaluation form.</p>
+    pub fn get_automatic_fail_configuration(&self) -> &::std::option::Option<crate::types::AutomaticFailConfiguration> {
+        &self.automatic_fail_configuration
+    }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn points_configuration(mut self, input: crate::types::QuestionOptionPointsConfiguration) -> Self {
+        self.points_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn set_points_configuration(mut self, input: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>) -> Self {
+        self.points_configuration = input;
+        self
+    }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn get_points_configuration(&self) -> &::std::option::Option<crate::types::QuestionOptionPointsConfiguration> {
+        &self.points_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormMultiSelectQuestionOption`](crate::types::EvaluationFormMultiSelectQuestionOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`ref_id`](crate::types::builders::EvaluationFormMultiSelectQuestionOptionBuilder::ref_id)
@@ -86,6 +170,10 @@ impl EvaluationFormMultiSelectQuestionOptionBuilder {
                     "text was not specified but it is required when building EvaluationFormMultiSelectQuestionOption",
                 )
             })?,
+            score: self.score.unwrap_or_default(),
+            automatic_fail: self.automatic_fail.unwrap_or_default(),
+            automatic_fail_configuration: self.automatic_fail_configuration,
+            points_configuration: self.points_configuration,
         })
     }
 }

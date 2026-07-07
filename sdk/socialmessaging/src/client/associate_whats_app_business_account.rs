@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateWhatsAppBusinessAccountOutput`](crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountOutput) with field(s):
     ///   - [`signup_callback_result(Option<WhatsAppSignupCallbackResult>)`](crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountOutput::signup_callback_result): <p>Contains your WhatsApp registration status.</p>
     ///   - [`status_code(Option<i32>)`](crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountOutput::status_code): <p>The status code for the response.</p>
+    ///   - [`linked_whats_app_business_account_id(Option<String>)`](crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountOutput::linked_whats_app_business_account_id): <p>The ID of the WhatsApp Business Account that was linked to your Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<AssociateWhatsAppBusinessAccountError>`](crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountError)
     pub fn associate_whats_app_business_account(
         &self,

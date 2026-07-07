@@ -100,6 +100,8 @@ pub(crate) fn de_describe_remediation_exceptions(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -107,7 +109,9 @@ pub(crate) fn de_describe_remediation_exceptions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RemediationExceptions" => {
                     builder = builder.set_remediation_exceptions(crate::protocol_serde::shape_remediation_exceptions::de_remediation_exceptions(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "NextToken" => {

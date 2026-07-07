@@ -70,6 +70,8 @@ pub fn de_authorize_data_share(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AuthorizeDataShareResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AuthorizeDataShareResponse got {start_el:?}"
@@ -128,7 +130,7 @@ pub fn de_authorize_data_share(
             s if s.matches("DataShareAssociations") /* DataShareAssociations com.amazonaws.redshift.synthetic#AuthorizeDataShareOutput$DataShareAssociations */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_data_share_association_list::de_data_share_association_list(&mut tag)
+                        crate::protocol_serde::shape_data_share_association_list::de_data_share_association_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

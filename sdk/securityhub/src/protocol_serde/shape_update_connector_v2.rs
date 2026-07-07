@@ -122,6 +122,8 @@ pub fn de_update_connector_v2_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_connector_v2::builders::UpdateConnectorV2OutputBuilder::default();
+        output = crate::protocol_serde::shape_update_connector_v2::de_update_connector_v2(_response_body, output)
+            .map_err(crate::operation::update_connector_v2::UpdateConnectorV2Error::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
@@ -135,4 +137,51 @@ pub fn ser_update_connector_v2_input(
     crate::protocol_serde::shape_update_connector_v2_input::ser_update_connector_v2_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
+
+pub(crate) fn de_update_connector_v2(
+    _value: &[u8],
+    mut builder: crate::operation::update_connector_v2::builders::UpdateConnectorV2OutputBuilder,
+) -> ::std::result::Result<
+    crate::operation::update_connector_v2::builders::UpdateConnectorV2OutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
+    let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ConnectorStatus" => {
+                    builder = builder.set_connector_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "EnablementStatus" => {
+                    builder = builder.set_enablement_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EnablementStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
+            other => {
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {other:?}"
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
 }

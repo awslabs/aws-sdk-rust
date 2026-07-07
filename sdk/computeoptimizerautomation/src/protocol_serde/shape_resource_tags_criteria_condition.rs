@@ -25,11 +25,19 @@ pub fn ser_resource_tags_criteria_condition(
 
 pub(crate) fn de_resource_tags_criteria_condition(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceTagsCriteriaCondition, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::ResourceTagsCriteriaConditionBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::ResourceTagsCriteriaConditionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "comparison" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -40,6 +48,7 @@ pub(crate) fn de_resource_tags_criteria_condition(
                 Ok(
                     builder.set_values(Some(crate::protocol_serde::shape_string_criteria_values::de_string_criteria_values(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
@@ -61,13 +70,13 @@ pub(crate) fn de_resource_tags_criteria_condition(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

@@ -9,6 +9,8 @@ pub struct CreateFunctionInput {
     pub function_config: ::std::option::Option<crate::types::FunctionConfig>,
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub function_code: ::std::option::Option<::aws_smithy_types::Blob>,
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub tags: ::std::option::Option<crate::types::Tags>,
 }
 impl CreateFunctionInput {
     /// <p>A name to identify the function.</p>
@@ -23,6 +25,10 @@ impl CreateFunctionInput {
     pub fn function_code(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.function_code.as_ref()
     }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateFunctionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -30,6 +36,7 @@ impl ::std::fmt::Debug for CreateFunctionInput {
         formatter.field("name", &self.name);
         formatter.field("function_config", &self.function_config);
         formatter.field("function_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -47,6 +54,7 @@ pub struct CreateFunctionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) function_config: ::std::option::Option<crate::types::FunctionConfig>,
     pub(crate) function_code: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) tags: ::std::option::Option<crate::types::Tags>,
 }
 impl CreateFunctionInputBuilder {
     /// <p>A name to identify the function.</p>
@@ -94,6 +102,20 @@ impl CreateFunctionInputBuilder {
     pub fn get_function_code(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.function_code
     }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn tags(mut self, input: crate::types::Tags) -> Self {
+        self.tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
     pub fn build(
         self,
@@ -102,6 +124,7 @@ impl CreateFunctionInputBuilder {
             name: self.name,
             function_config: self.function_config,
             function_code: self.function_code,
+            tags: self.tags,
         })
     }
 }
@@ -111,6 +134,7 @@ impl ::std::fmt::Debug for CreateFunctionInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("function_config", &self.function_config);
         formatter.field("function_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

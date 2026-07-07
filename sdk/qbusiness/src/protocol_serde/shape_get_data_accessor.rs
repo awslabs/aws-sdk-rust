@@ -116,6 +116,8 @@ pub(crate) fn de_get_data_accessor(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -123,7 +125,7 @@ pub(crate) fn de_get_data_accessor(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionConfigurations" => {
                     builder = builder.set_action_configurations(
-                        crate::protocol_serde::shape_action_configuration_list::de_action_configuration_list(tokens, _value)?,
+                        crate::protocol_serde::shape_action_configuration_list::de_action_configuration_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "applicationId" => {
@@ -135,7 +137,11 @@ pub(crate) fn de_get_data_accessor(
                 }
                 "authenticationDetail" => {
                     builder = builder.set_authentication_detail(
-                        crate::protocol_serde::shape_data_accessor_authentication_detail::de_data_accessor_authentication_detail(tokens, _value)?,
+                        crate::protocol_serde::shape_data_accessor_authentication_detail::de_data_accessor_authentication_detail(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "createdAt" => {

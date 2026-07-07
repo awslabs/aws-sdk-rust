@@ -39,6 +39,8 @@ pub struct ContainerDefinition {
     pub inference_specification_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     pub multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub container_metrics_config: ::std::option::Option<crate::types::ContainerMetricsConfig>,
 }
 impl ContainerDefinition {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
@@ -100,6 +102,10 @@ impl ContainerDefinition {
     pub fn multi_model_config(&self) -> ::std::option::Option<&crate::types::MultiModelConfig> {
         self.multi_model_config.as_ref()
     }
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub fn container_metrics_config(&self) -> ::std::option::Option<&crate::types::ContainerMetricsConfig> {
+        self.container_metrics_config.as_ref()
+    }
 }
 impl ContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ContainerDefinition`](crate::types::ContainerDefinition).
@@ -123,6 +129,7 @@ pub struct ContainerDefinitionBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
+    pub(crate) container_metrics_config: ::std::option::Option<crate::types::ContainerMetricsConfig>,
 }
 impl ContainerDefinitionBuilder {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
@@ -336,6 +343,20 @@ impl ContainerDefinitionBuilder {
     pub fn get_multi_model_config(&self) -> &::std::option::Option<crate::types::MultiModelConfig> {
         &self.multi_model_config
     }
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub fn container_metrics_config(mut self, input: crate::types::ContainerMetricsConfig) -> Self {
+        self.container_metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub fn set_container_metrics_config(mut self, input: ::std::option::Option<crate::types::ContainerMetricsConfig>) -> Self {
+        self.container_metrics_config = input;
+        self
+    }
+    /// <p>The configuration for container metrics scraping. Specifies the metrics endpoint path and publishing frequency. If not specified when <code>EnableDetailedObservability</code> is <code>True</code>, the default path <code>/metrics</code> on port <code>8080</code> is used. For first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically and this configuration is optional.</p>
+    pub fn get_container_metrics_config(&self) -> &::std::option::Option<crate::types::ContainerMetricsConfig> {
+        &self.container_metrics_config
+    }
     /// Consumes the builder and constructs a [`ContainerDefinition`](crate::types::ContainerDefinition).
     pub fn build(self) -> crate::types::ContainerDefinition {
         crate::types::ContainerDefinition {
@@ -350,6 +371,7 @@ impl ContainerDefinitionBuilder {
             model_package_name: self.model_package_name,
             inference_specification_name: self.inference_specification_name,
             multi_model_config: self.multi_model_config,
+            container_metrics_config: self.container_metrics_config,
         }
     }
 }

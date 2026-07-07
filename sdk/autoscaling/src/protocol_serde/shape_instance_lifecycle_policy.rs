@@ -15,7 +15,11 @@ pub fn ser_instance_lifecycle_policy(
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_lifecycle_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceLifecyclePolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceLifecyclePolicy::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_instance_lifecycle_policy(
             s if s.matches("RetentionTriggers") /* RetentionTriggers com.amazonaws.autoscaling#InstanceLifecyclePolicy$RetentionTriggers */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_retention_triggers::de_retention_triggers(&mut tag)
+                        crate::protocol_serde::shape_retention_triggers::de_retention_triggers(&mut tag, depth + 1)
                         ?
                     )
                 ;

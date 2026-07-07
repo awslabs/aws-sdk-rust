@@ -3,17 +3,23 @@ pub fn ser_compute_node_group_slurm_configuration_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComputeNodeGroupSlurmConfigurationRequest,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.slurm_custom_settings {
-        let mut array_2 = object.key("slurmCustomSettings").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.scale_down_idle_time_in_seconds {
+        object.key("scaleDownIdleTimeInSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
+    }
+    if let Some(var_2) = &input.slurm_custom_settings {
+        let mut array_3 = object.key("slurmCustomSettings").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_slurm_custom_setting::ser_slurm_custom_setting(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_slurm_custom_setting::ser_slurm_custom_setting(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
     Ok(())
 }

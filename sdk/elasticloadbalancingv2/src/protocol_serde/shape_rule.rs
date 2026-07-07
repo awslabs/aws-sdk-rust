@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Rule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_rule(
             s if s.matches("Conditions") /* Conditions com.amazonaws.elasticloadbalancingv2#Rule$Conditions */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_rule_condition_list::de_rule_condition_list(&mut tag)
+                        crate::protocol_serde::shape_rule_condition_list::de_rule_condition_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_rule(
             s if s.matches("Actions") /* Actions com.amazonaws.elasticloadbalancingv2#Rule$Actions */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_actions::de_actions(&mut tag)
+                        crate::protocol_serde::shape_actions::de_actions(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -71,7 +75,7 @@ pub fn de_rule(
             s if s.matches("Transforms") /* Transforms com.amazonaws.elasticloadbalancingv2#Rule$Transforms */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_rule_transform_list::de_rule_transform_list(&mut tag)
+                        crate::protocol_serde::shape_rule_transform_list::de_rule_transform_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

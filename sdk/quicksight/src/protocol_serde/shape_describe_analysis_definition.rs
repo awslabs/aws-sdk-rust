@@ -183,6 +183,8 @@ pub(crate) fn de_describe_analysis_definition(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -196,10 +198,18 @@ pub(crate) fn de_describe_analysis_definition(
                     );
                 }
                 "Definition" => {
-                    builder = builder.set_definition(crate::protocol_serde::shape_analysis_definition::de_analysis_definition(tokens, _value)?);
+                    builder = builder.set_definition(crate::protocol_serde::shape_analysis_definition::de_analysis_definition(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_analysis_error_list::de_analysis_error_list(tokens, _value)?);
+                    builder = builder.set_errors(crate::protocol_serde::shape_analysis_error_list::de_analysis_error_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Name" => {
                     builder = builder.set_name(

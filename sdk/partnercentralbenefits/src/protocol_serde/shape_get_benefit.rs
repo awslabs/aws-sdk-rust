@@ -124,6 +124,8 @@ pub(crate) fn de_get_benefit(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -165,10 +167,14 @@ pub(crate) fn de_get_benefit(
                     );
                 }
                 "Programs" => {
-                    builder = builder.set_programs(crate::protocol_serde::shape_programs::de_programs(tokens, _value)?);
+                    builder = builder.set_programs(crate::protocol_serde::shape_programs::de_programs(tokens, _value, depth + 1)?);
                 }
                 "FulfillmentTypes" => {
-                    builder = builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(tokens, _value)?);
+                    builder = builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "BenefitRequestSchema" => {
                     builder = builder.set_benefit_request_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));

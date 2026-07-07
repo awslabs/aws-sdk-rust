@@ -122,6 +122,8 @@ pub(crate) fn de_create_language_model(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -149,7 +151,11 @@ pub(crate) fn de_create_language_model(
                     );
                 }
                 "InputDataConfig" => {
-                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens, _value)?);
+                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ModelStatus" => {
                     builder = builder.set_model_status(

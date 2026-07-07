@@ -39,10 +39,16 @@ pub fn ser_table_optimizer_configuration(
 pub(crate) fn de_table_optimizer_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TableOptimizerConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,23 +70,29 @@ where
                         }
                         "vpcConfiguration" => {
                             builder = builder.set_vpc_configuration(
-                                crate::protocol_serde::shape_table_optimizer_vpc_configuration::de_table_optimizer_vpc_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_table_optimizer_vpc_configuration::de_table_optimizer_vpc_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "compactionConfiguration" => {
                             builder = builder.set_compaction_configuration(
-                                crate::protocol_serde::shape_compaction_configuration::de_compaction_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_compaction_configuration::de_compaction_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "retentionConfiguration" => {
                             builder = builder.set_retention_configuration(
-                                crate::protocol_serde::shape_retention_configuration::de_retention_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_retention_configuration::de_retention_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "orphanFileDeletionConfiguration" => {
                             builder = builder.set_orphan_file_deletion_configuration(
                                 crate::protocol_serde::shape_orphan_file_deletion_configuration::de_orphan_file_deletion_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

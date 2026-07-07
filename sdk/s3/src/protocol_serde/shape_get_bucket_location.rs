@@ -62,6 +62,8 @@ pub fn de_get_bucket_location(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     match start_el {
         s if s.matches("LocationConstraint") /* LocationConstraint com.amazonaws.s3.synthetic#GetBucketLocationOutput$LocationConstraint */ =>  {
             let var_3 =

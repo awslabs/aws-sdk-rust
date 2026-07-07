@@ -19,6 +19,7 @@
 ///     ExportableEcsServiceField::CurrentServiceConfigurationMemory => { /* ... */ },
 ///     ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => { /* ... */ },
 ///     ExportableEcsServiceField::CurrentServiceContainerConfigurations => { /* ... */ },
+///     ExportableEcsServiceField::EffectiveRecommendationPreferencesLookbackPeriod => { /* ... */ },
 ///     ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => { /* ... */ },
 ///     ExportableEcsServiceField::Finding => { /* ... */ },
 ///     ExportableEcsServiceField::FindingReasonCodes => { /* ... */ },
@@ -83,6 +84,8 @@ pub enum ExportableEcsServiceField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentServiceContainerConfigurations,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesLookbackPeriod,
+    #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesSavingsEstimationMode,
     #[allow(missing_docs)] // documentation missing in model
     Finding,
@@ -138,6 +141,7 @@ impl ::std::convert::From<&str> for ExportableEcsServiceField {
             "CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
             "CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
             "CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
+            "EffectiveRecommendationPreferencesLookBackPeriod" => ExportableEcsServiceField::EffectiveRecommendationPreferencesLookbackPeriod,
             "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
                 ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode
             }
@@ -193,6 +197,7 @@ impl ExportableEcsServiceField {
             ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
             ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
             ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
+            ExportableEcsServiceField::EffectiveRecommendationPreferencesLookbackPeriod => "EffectiveRecommendationPreferencesLookBackPeriod",
             ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
                 "EffectiveRecommendationPreferencesSavingsEstimationMode"
             }
@@ -239,6 +244,7 @@ impl ExportableEcsServiceField {
             "CurrentServiceConfigurationMemory",
             "CurrentServiceConfigurationTaskDefinitionArn",
             "CurrentServiceContainerConfigurations",
+            "EffectiveRecommendationPreferencesLookBackPeriod",
             "EffectiveRecommendationPreferencesSavingsEstimationMode",
             "Finding",
             "FindingReasonCodes",
@@ -292,6 +298,9 @@ impl ::std::fmt::Display for ExportableEcsServiceField {
             ExportableEcsServiceField::CurrentServiceConfigurationMemory => write!(f, "CurrentServiceConfigurationMemory"),
             ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => write!(f, "CurrentServiceConfigurationTaskDefinitionArn"),
             ExportableEcsServiceField::CurrentServiceContainerConfigurations => write!(f, "CurrentServiceContainerConfigurations"),
+            ExportableEcsServiceField::EffectiveRecommendationPreferencesLookbackPeriod => {
+                write!(f, "EffectiveRecommendationPreferencesLookBackPeriod")
+            }
             ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
                 write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
             }

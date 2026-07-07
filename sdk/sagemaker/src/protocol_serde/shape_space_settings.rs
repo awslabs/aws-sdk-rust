@@ -60,10 +60,16 @@ pub fn ser_space_settings(
 pub(crate) fn de_space_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SpaceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -75,22 +81,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "JupyterServerAppSettings" => {
                             builder = builder.set_jupyter_server_app_settings(
-                                crate::protocol_serde::shape_jupyter_server_app_settings::de_jupyter_server_app_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_jupyter_server_app_settings::de_jupyter_server_app_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "KernelGatewayAppSettings" => {
                             builder = builder.set_kernel_gateway_app_settings(
-                                crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "CodeEditorAppSettings" => {
                             builder = builder.set_code_editor_app_settings(
-                                crate::protocol_serde::shape_space_code_editor_app_settings::de_space_code_editor_app_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_space_code_editor_app_settings::de_space_code_editor_app_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "JupyterLabAppSettings" => {
                             builder = builder.set_jupyter_lab_app_settings(
-                                crate::protocol_serde::shape_space_jupyter_lab_app_settings::de_space_jupyter_lab_app_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_space_jupyter_lab_app_settings::de_space_jupyter_lab_app_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "AppType" => {
@@ -102,7 +116,7 @@ where
                         }
                         "SpaceStorageSettings" => {
                             builder = builder.set_space_storage_settings(
-                                crate::protocol_serde::shape_space_storage_settings::de_space_storage_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_space_storage_settings::de_space_storage_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "SpaceManagedResources" => {
@@ -113,8 +127,11 @@ where
                             );
                         }
                         "CustomFileSystems" => {
-                            builder = builder
-                                .set_custom_file_systems(crate::protocol_serde::shape_custom_file_systems::de_custom_file_systems(tokens, _value)?);
+                            builder = builder.set_custom_file_systems(crate::protocol_serde::shape_custom_file_systems::de_custom_file_systems(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RemoteAccess" => {
                             builder = builder.set_remote_access(

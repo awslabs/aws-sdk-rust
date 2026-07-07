@@ -17,6 +17,8 @@ pub use crate::types::_metadata_directive::MetadataDirective;
 
 pub use crate::types::_tagging_directive::TaggingDirective;
 
+pub use crate::types::_annotation_directive::AnnotationDirective;
+
 pub use crate::types::_storage_class::StorageClass;
 
 pub use crate::types::_object_lock_mode::ObjectLockMode;
@@ -149,6 +151,8 @@ pub use crate::types::_scan_range::ScanRange;
 
 pub use crate::types::_select_object_content_event_stream::SelectObjectContentEventStream;
 
+pub use crate::types::_annotation_table_configuration_updates::AnnotationTableConfigurationUpdates;
+
 pub use crate::types::_inventory_table_configuration_updates::InventoryTableConfigurationUpdates;
 
 pub use crate::types::_journal_table_configuration_updates::JournalTableConfigurationUpdates;
@@ -164,6 +168,8 @@ pub use crate::types::_bucket_info::BucketInfo;
 pub use crate::types::_journal_table_configuration::JournalTableConfiguration;
 
 pub use crate::types::_inventory_table_configuration::InventoryTableConfiguration;
+
+pub use crate::types::_annotation_table_configuration::AnnotationTableConfiguration;
 
 pub use crate::types::_s3_tables_destination::S3TablesDestination;
 
@@ -231,6 +237,8 @@ pub use crate::types::_multipart_upload::MultipartUpload;
 
 pub use crate::types::_common_prefix::CommonPrefix;
 
+pub use crate::types::_annotation_entry::AnnotationEntry;
+
 pub use crate::types::_optional_object_attributes::OptionalObjectAttributes;
 
 pub use crate::types::_object::Object;
@@ -275,9 +283,11 @@ pub use crate::types::_continuation_event::ContinuationEvent;
 
 pub use crate::types::_end_event::EndEvent;
 
-pub use crate::types::_inventory_configuration_state::InventoryConfigurationState;
+pub use crate::types::_annotation_configuration_state::AnnotationConfigurationState;
 
 pub use crate::types::_metadata_table_encryption_configuration::MetadataTableEncryptionConfiguration;
+
+pub use crate::types::_inventory_configuration_state::InventoryConfigurationState;
 
 pub use crate::types::_record_expiration::RecordExpiration;
 
@@ -332,6 +342,8 @@ pub use crate::types::_destination_result::DestinationResult;
 pub use crate::types::_journal_table_configuration_result::JournalTableConfigurationResult;
 
 pub use crate::types::_inventory_table_configuration_result::InventoryTableConfigurationResult;
+
+pub use crate::types::_annotation_table_configuration_result::AnnotationTableConfigurationResult;
 
 pub use crate::types::_s3_tables_destination_result::S3TablesDestinationResult;
 
@@ -486,6 +498,18 @@ mod _analytics_filter;
 mod _analytics_s3_bucket_destination;
 
 mod _analytics_s3_export_file_format;
+
+mod _annotation_configuration_state;
+
+mod _annotation_directive;
+
+mod _annotation_entry;
+
+mod _annotation_table_configuration;
+
+mod _annotation_table_configuration_result;
+
+mod _annotation_table_configuration_updates;
 
 mod _archive_status;
 

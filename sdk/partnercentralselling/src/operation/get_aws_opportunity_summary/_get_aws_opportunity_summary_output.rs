@@ -25,6 +25,8 @@ pub struct GetAwsOpportunitySummaryOutput {
     pub customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
     /// <p>Provides details about the project associated with the AWS Opportunity, including the customer’s business problem, expected outcomes, and project scope. This information is crucial for understanding the broader context of the opportunity.</p>
     pub project: ::std::option::Option<crate::types::AwsOpportunityProject>,
+    /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
+    pub cosell_motion: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
     pub catalog: ::std::string::String,
     _request_id: Option<String>,
@@ -76,6 +78,10 @@ impl GetAwsOpportunitySummaryOutput {
     pub fn project(&self) -> ::std::option::Option<&crate::types::AwsOpportunityProject> {
         self.project.as_ref()
     }
+    /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
+    pub fn cosell_motion(&self) -> ::std::option::Option<&str> {
+        self.cosell_motion.as_deref()
+    }
     /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
     pub fn catalog(&self) -> &str {
         use std::ops::Deref;
@@ -109,6 +115,7 @@ pub struct GetAwsOpportunitySummaryOutputBuilder {
     pub(crate) related_entity_ids: ::std::option::Option<crate::types::AwsOpportunityRelatedEntities>,
     pub(crate) customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
     pub(crate) project: ::std::option::Option<crate::types::AwsOpportunityProject>,
+    pub(crate) cosell_motion: ::std::option::Option<::std::string::String>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -273,6 +280,20 @@ impl GetAwsOpportunitySummaryOutputBuilder {
     pub fn get_project(&self) -> &::std::option::Option<crate::types::AwsOpportunityProject> {
         &self.project
     }
+    /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
+    pub fn cosell_motion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cosell_motion = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
+    pub fn set_cosell_motion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cosell_motion = input;
+        self
+    }
+    /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
+    pub fn get_cosell_motion(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cosell_motion
+    }
     /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -318,6 +339,7 @@ impl GetAwsOpportunitySummaryOutputBuilder {
             related_entity_ids: self.related_entity_ids,
             customer: self.customer,
             project: self.project,
+            cosell_motion: self.cosell_motion,
             catalog: self.catalog.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "catalog",

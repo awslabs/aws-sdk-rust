@@ -122,4 +122,18 @@ impl GetDurableExecutionFluentBuilder {
     pub fn get_durable_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_durable_execution_arn()
     }
+    /// <p>Specifies whether to include execution data such as input payload, result, and error information in the response. Set to <code>false</code> for a more compact response that includes only execution metadata. The default value is set to <code>true</code>.</p>
+    pub fn include_execution_data(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_execution_data(input);
+        self
+    }
+    /// <p>Specifies whether to include execution data such as input payload, result, and error information in the response. Set to <code>false</code> for a more compact response that includes only execution metadata. The default value is set to <code>true</code>.</p>
+    pub fn set_include_execution_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_execution_data(input);
+        self
+    }
+    /// <p>Specifies whether to include execution data such as input payload, result, and error information in the response. Set to <code>false</code> for a more compact response that includes only execution metadata. The default value is set to <code>true</code>.</p>
+    pub fn get_include_execution_data(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_execution_data()
+    }
 }

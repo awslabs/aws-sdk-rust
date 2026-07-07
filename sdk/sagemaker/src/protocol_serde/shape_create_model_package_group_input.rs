@@ -21,5 +21,11 @@ pub fn ser_create_model_package_group_input_input(
         }
         array_4.finish();
     }
+    if let Some(var_7) = &input.managed_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("ManagedConfiguration").start_object();
+        crate::protocol_serde::shape_managed_configuration::ser_managed_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

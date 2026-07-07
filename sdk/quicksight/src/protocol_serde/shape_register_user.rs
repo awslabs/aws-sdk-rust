@@ -197,6 +197,8 @@ pub(crate) fn de_register_user(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -210,7 +212,7 @@ pub(crate) fn de_register_user(
                     );
                 }
                 "User" => {
-                    builder = builder.set_user(crate::protocol_serde::shape_user::de_user(tokens, _value)?);
+                    builder = builder.set_user(crate::protocol_serde::shape_user::de_user(tokens, _value, depth + 1)?);
                 }
                 "UserInvitationUrl" => {
                     builder = builder.set_user_invitation_url(

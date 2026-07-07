@@ -195,10 +195,16 @@ pub fn ser_h265_settings(
 pub(crate) fn de_h265_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::H265Settings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -252,12 +258,14 @@ where
                         }
                         "colorSpaceSettings" => {
                             builder = builder.set_color_space_settings(
-                                crate::protocol_serde::shape_h265_color_space_settings::de_h265_color_space_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_h265_color_space_settings::de_h265_color_space_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "filterSettings" => {
                             builder = builder.set_filter_settings(crate::protocol_serde::shape_h265_filter_settings::de_h265_filter_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "fixedAfd" => {
@@ -406,7 +414,7 @@ where
                         }
                         "timecodeBurninSettings" => {
                             builder = builder.set_timecode_burnin_settings(
-                                crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "mvOverPictureBoundaries" => {

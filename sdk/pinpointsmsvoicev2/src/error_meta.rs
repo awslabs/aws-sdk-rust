@@ -1192,6 +1192,52 @@ impl From<crate::operation::delete_rcs_agent::DeleteRcsAgentError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError> for Error {
+    fn from(err: crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError) -> Self {
+        match err {
+            crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_rcs_message_spend_limit_override::DeleteRcsMessageSpendLimitOverrideError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registration::DeleteRegistrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3213,6 +3259,36 @@ impl From<crate::operation::send_notify_voice_message::SendNotifyVoiceMessageErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_rcs_message::SendRcsMessageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_rcs_message::SendRcsMessageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_rcs_message::SendRcsMessageError> for Error {
+    fn from(err: crate::operation::send_rcs_message::SendRcsMessageError) -> Self {
+        match err {
+            crate::operation::send_rcs_message::SendRcsMessageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_rcs_message::SendRcsMessageError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_rcs_message::SendRcsMessageError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::send_rcs_message::SendRcsMessageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::send_rcs_message::SendRcsMessageError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::send_rcs_message::SendRcsMessageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_rcs_message::SendRcsMessageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::send_rcs_message::SendRcsMessageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_text_message::SendTextMessageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3522,6 +3598,50 @@ impl From<crate::operation::set_notify_message_spend_limit_override::SetNotifyMe
             crate::operation::set_notify_message_spend_limit_override::SetNotifyMessageSpendLimitOverrideError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError> for Error {
+    fn from(err: crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError) -> Self {
+        match err {
+            crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::set_rcs_message_spend_limit_override::SetRcsMessageSpendLimitOverrideError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

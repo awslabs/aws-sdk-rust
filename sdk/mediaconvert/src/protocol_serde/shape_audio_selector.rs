@@ -87,10 +87,16 @@ pub fn ser_audio_selector(
 pub(crate) fn de_audio_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AudioSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -130,7 +136,11 @@ where
                         }
                         "hlsRenditionGroupSettings" => {
                             builder = builder.set_hls_rendition_group_settings(
-                                crate::protocol_serde::shape_hls_rendition_group_settings::de_hls_rendition_group_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_hls_rendition_group_settings::de_hls_rendition_group_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "languageCode" => {
@@ -150,7 +160,9 @@ where
                         "pids" => {
                             builder = builder.set_pids(
                                 crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -162,7 +174,11 @@ where
                             );
                         }
                         "remixSettings" => {
-                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens, _value)?);
+                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "selectorType" => {
                             builder = builder.set_selector_type(
@@ -174,14 +190,18 @@ where
                         "streams" => {
                             builder = builder.set_streams(
                                 crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "tracks" => {
                             builder = builder.set_tracks(
                                 crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

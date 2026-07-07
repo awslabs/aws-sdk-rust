@@ -123,6 +123,8 @@ pub(crate) fn de_get_attached_file(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -136,7 +138,11 @@ pub(crate) fn de_get_attached_file(
                     );
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_created_by_info::de_created_by_info(tokens, _value)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_created_by_info::de_created_by_info(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(
@@ -147,7 +153,9 @@ pub(crate) fn de_get_attached_file(
                 }
                 "DownloadUrlMetadata" => {
                     builder = builder.set_download_url_metadata(crate::protocol_serde::shape_download_url_metadata::de_download_url_metadata(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "FileArn" => {
@@ -193,7 +201,7 @@ pub(crate) fn de_get_attached_file(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

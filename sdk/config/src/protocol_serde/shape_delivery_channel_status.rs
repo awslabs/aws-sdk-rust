@@ -2,10 +2,16 @@
 pub(crate) fn de_delivery_channel_status<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DeliveryChannelStatus>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,17 +30,17 @@ where
                         }
                         "configSnapshotDeliveryInfo" => {
                             builder = builder.set_config_snapshot_delivery_info(
-                                crate::protocol_serde::shape_config_export_delivery_info::de_config_export_delivery_info(tokens, _value)?,
+                                crate::protocol_serde::shape_config_export_delivery_info::de_config_export_delivery_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "configHistoryDeliveryInfo" => {
                             builder = builder.set_config_history_delivery_info(
-                                crate::protocol_serde::shape_config_export_delivery_info::de_config_export_delivery_info(tokens, _value)?,
+                                crate::protocol_serde::shape_config_export_delivery_info::de_config_export_delivery_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "configStreamDeliveryInfo" => {
                             builder = builder.set_config_stream_delivery_info(
-                                crate::protocol_serde::shape_config_stream_delivery_info::de_config_stream_delivery_info(tokens, _value)?,
+                                crate::protocol_serde::shape_config_stream_delivery_info::de_config_stream_delivery_info(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

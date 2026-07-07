@@ -22,7 +22,7 @@ impl crate::operation::put_suppressed_destination::builders::PutSuppressedDestin
 }
 /// Fluent builder constructing a request to `PutSuppressedDestination`.
 ///
-/// <p>Adds an email address to the suppression list for your account.</p>
+/// <p>Adds an email address to the suppression list for your account or for a specific tenant. To target a tenant's suppression list, specify the <code>TenantName</code> parameter. If you omit <code>TenantName</code>, the address is added to the account-level suppression list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSuppressedDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,32 +108,46 @@ impl PutSuppressedDestinationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The email address that should be added to the suppression list for your account.</p>
+    /// <p>The email address that should be added to the suppression list for your account or for the specified tenant.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
-    /// <p>The email address that should be added to the suppression list for your account.</p>
+    /// <p>The email address that should be added to the suppression list for your account or for the specified tenant.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
-    /// <p>The email address that should be added to the suppression list for your account.</p>
+    /// <p>The email address that should be added to the suppression list for your account or for the specified tenant.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_email_address()
     }
-    /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+    /// <p>The factors that should cause the email address to be added to the suppression list for your account or for the specified tenant.</p>
     pub fn reason(mut self, input: crate::types::SuppressionListReason) -> Self {
         self.inner = self.inner.reason(input);
         self
     }
-    /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+    /// <p>The factors that should cause the email address to be added to the suppression list for your account or for the specified tenant.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::SuppressionListReason>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }
-    /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+    /// <p>The factors that should cause the email address to be added to the suppression list for your account or for the specified tenant.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::SuppressionListReason> {
         self.inner.get_reason()
+    }
+    /// <p>The name of the tenant whose suppression list you want to add the address to. If you omit this parameter, the address is added to the account-level suppression list.</p>
+    pub fn tenant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tenant_name(input.into());
+        self
+    }
+    /// <p>The name of the tenant whose suppression list you want to add the address to. If you omit this parameter, the address is added to the account-level suppression list.</p>
+    pub fn set_tenant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_tenant_name(input);
+        self
+    }
+    /// <p>The name of the tenant whose suppression list you want to add the address to. If you omit this parameter, the address is added to the account-level suppression list.</p>
+    pub fn get_tenant_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tenant_name()
     }
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_data_integration_flow<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataIntegrationFlow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,19 +37,29 @@ where
                         }
                         "sources" => {
                             builder = builder.set_sources(
-                                crate::protocol_serde::shape_data_integration_flow_source_list::de_data_integration_flow_source_list(tokens, _value)?,
+                                crate::protocol_serde::shape_data_integration_flow_source_list::de_data_integration_flow_source_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "transformation" => {
                             builder = builder.set_transformation(
                                 crate::protocol_serde::shape_data_integration_flow_transformation::de_data_integration_flow_transformation(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "target" => {
                             builder = builder.set_target(
-                                crate::protocol_serde::shape_data_integration_flow_target::de_data_integration_flow_target(tokens, _value)?,
+                                crate::protocol_serde::shape_data_integration_flow_target::de_data_integration_flow_target(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "createdTime" => {

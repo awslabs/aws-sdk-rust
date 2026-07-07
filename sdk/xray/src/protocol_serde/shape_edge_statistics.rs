@@ -2,10 +2,16 @@
 pub(crate) fn de_edge_statistics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EdgeStatistics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,12 +29,18 @@ where
                             );
                         }
                         "ErrorStatistics" => {
-                            builder =
-                                builder.set_error_statistics(crate::protocol_serde::shape_error_statistics::de_error_statistics(tokens, _value)?);
+                            builder = builder.set_error_statistics(crate::protocol_serde::shape_error_statistics::de_error_statistics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "FaultStatistics" => {
-                            builder =
-                                builder.set_fault_statistics(crate::protocol_serde::shape_fault_statistics::de_fault_statistics(tokens, _value)?);
+                            builder = builder.set_fault_statistics(crate::protocol_serde::shape_fault_statistics::de_fault_statistics(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TotalCount" => {
                             builder = builder.set_total_count(

@@ -313,6 +313,20 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
         self.inner.get_force_endpoint_error_configuration()
     }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
+    pub fn uri_separator(mut self, input: crate::types::UriSeparator) -> Self {
+        self.inner = self.inner.uri_separator(input);
+        self
+    }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
+    pub fn set_uri_separator(mut self, input: ::std::option::Option<crate::types::UriSeparator>) -> Self {
+        self.inner = self.inner.set_uri_separator(input);
+        self
+    }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
+    pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
+        self.inner.get_uri_separator()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

@@ -2,10 +2,16 @@
 pub(crate) fn de_retrieval_result_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RetrievalResultLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -25,48 +31,84 @@ where
                             }
                             "s3Location" => {
                                 builder = builder.set_s3_location(
-                                    crate::protocol_serde::shape_retrieval_result_s3_location::de_retrieval_result_s3_location(tokens, _value)?,
+                                    crate::protocol_serde::shape_retrieval_result_s3_location::de_retrieval_result_s3_location(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "webLocation" => {
                                 builder = builder.set_web_location(
-                                    crate::protocol_serde::shape_retrieval_result_web_location::de_retrieval_result_web_location(tokens, _value)?,
+                                    crate::protocol_serde::shape_retrieval_result_web_location::de_retrieval_result_web_location(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "confluenceLocation" => {
                                 builder = builder.set_confluence_location(
                                     crate::protocol_serde::shape_retrieval_result_confluence_location::de_retrieval_result_confluence_location(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "salesforceLocation" => {
                                 builder = builder.set_salesforce_location(
                                     crate::protocol_serde::shape_retrieval_result_salesforce_location::de_retrieval_result_salesforce_location(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "sharePointLocation" => {
                                 builder = builder.set_share_point_location(
                                     crate::protocol_serde::shape_retrieval_result_share_point_location::de_retrieval_result_share_point_location(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "customDocumentLocation" => {
                                 builder = builder.set_custom_document_location(
-                                    crate::protocol_serde::shape_retrieval_result_custom_document_location::de_retrieval_result_custom_document_location(tokens, _value)?
+                                    crate::protocol_serde::shape_retrieval_result_custom_document_location::de_retrieval_result_custom_document_location(tokens, _value, depth + 1)?
                                 );
                             }
                             "kendraDocumentLocation" => {
                                 builder = builder.set_kendra_document_location(
-                                    crate::protocol_serde::shape_retrieval_result_kendra_document_location::de_retrieval_result_kendra_document_location(tokens, _value)?
+                                    crate::protocol_serde::shape_retrieval_result_kendra_document_location::de_retrieval_result_kendra_document_location(tokens, _value, depth + 1)?
                                 );
                             }
                             "sqlLocation" => {
                                 builder = builder.set_sql_location(
-                                    crate::protocol_serde::shape_retrieval_result_sql_location::de_retrieval_result_sql_location(tokens, _value)?,
+                                    crate::protocol_serde::shape_retrieval_result_sql_location::de_retrieval_result_sql_location(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "oneDriveLocation" => {
+                                builder = builder.set_one_drive_location(
+                                    crate::protocol_serde::shape_retrieval_result_one_drive_location::de_retrieval_result_one_drive_location(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "googleDriveLocation" => {
+                                builder = builder.set_google_drive_location(
+                                    crate::protocol_serde::shape_retrieval_result_google_drive_location::de_retrieval_result_google_drive_location(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

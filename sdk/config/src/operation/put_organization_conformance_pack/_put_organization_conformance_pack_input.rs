@@ -23,6 +23,8 @@ pub struct PutOrganizationConformancePackInput {
     pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
     pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The tags for the organization conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutOrganizationConformancePackInput {
     /// <p>Name of the organization conformance pack you want to create.</p>
@@ -63,6 +65,12 @@ impl PutOrganizationConformancePackInput {
     pub fn excluded_accounts(&self) -> &[::std::string::String] {
         self.excluded_accounts.as_deref().unwrap_or_default()
     }
+    /// <p>The tags for the organization conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl PutOrganizationConformancePackInput {
     /// Creates a new builder-style object to manufacture [`PutOrganizationConformancePackInput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput).
@@ -82,6 +90,7 @@ pub struct PutOrganizationConformancePackInputBuilder {
     pub(crate) delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     pub(crate) excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutOrganizationConformancePackInputBuilder {
     /// <p>Name of the organization conformance pack you want to create.</p>
@@ -216,6 +225,26 @@ impl PutOrganizationConformancePackInputBuilder {
     pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.excluded_accounts
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags for the organization conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags for the organization conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags for the organization conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PutOrganizationConformancePackInput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput).
     pub fn build(
         self,
@@ -231,6 +260,7 @@ impl PutOrganizationConformancePackInputBuilder {
             delivery_s3_key_prefix: self.delivery_s3_key_prefix,
             conformance_pack_input_parameters: self.conformance_pack_input_parameters,
             excluded_accounts: self.excluded_accounts,
+            tags: self.tags,
         })
     }
 }

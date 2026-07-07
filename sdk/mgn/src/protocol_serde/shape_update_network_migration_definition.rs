@@ -112,6 +112,8 @@ pub(crate) fn de_update_network_migration_definition(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -152,15 +154,15 @@ pub(crate) fn de_update_network_migration_definition(
                     );
                 }
                 "scopeTags" => {
-                    builder = builder.set_scope_tags(crate::protocol_serde::shape_scope_tags_map::de_scope_tags_map(tokens, _value)?);
+                    builder = builder.set_scope_tags(crate::protocol_serde::shape_scope_tags_map::de_scope_tags_map(tokens, _value, depth + 1)?);
                 }
                 "sourceConfigurations" => {
                     builder = builder.set_source_configurations(
-                        crate::protocol_serde::shape_source_configuration_list::de_source_configuration_list(tokens, _value)?,
+                        crate::protocol_serde::shape_source_configuration_list::de_source_configuration_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                 }
                 "targetDeployment" => {
                     builder = builder.set_target_deployment(
@@ -170,11 +172,13 @@ pub(crate) fn de_update_network_migration_definition(
                     );
                 }
                 "targetNetwork" => {
-                    builder = builder.set_target_network(crate::protocol_serde::shape_target_network::de_target_network(tokens, _value)?);
+                    builder = builder.set_target_network(crate::protocol_serde::shape_target_network::de_target_network(tokens, _value, depth + 1)?);
                 }
                 "targetS3Configuration" => {
                     builder = builder.set_target_s3_configuration(crate::protocol_serde::shape_target_s3_configuration::de_target_s3_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "updatedAt" => {

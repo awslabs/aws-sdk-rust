@@ -2,10 +2,16 @@
 pub(crate) fn de_contact_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ContactData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -82,7 +88,7 @@ where
                             );
                         }
                         "maximumElevation" => {
-                            builder = builder.set_maximum_elevation(crate::protocol_serde::shape_elevation::de_elevation(tokens, _value)?);
+                            builder = builder.set_maximum_elevation(crate::protocol_serde::shape_elevation::de_elevation(tokens, _value, depth + 1)?);
                         }
                         "region" => {
                             builder = builder.set_region(
@@ -92,7 +98,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                         }
                         "visibilityStartTime" => {
                             builder = builder.set_visibility_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -108,11 +114,17 @@ where
                         }
                         "ephemeris" => {
                             builder = builder.set_ephemeris(crate::protocol_serde::shape_ephemeris_response_data::de_ephemeris_response_data(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "version" => {
-                            builder = builder.set_version(crate::protocol_serde::shape_contact_version::de_contact_version(tokens, _value)?);
+                            builder = builder.set_version(crate::protocol_serde::shape_contact_version::de_contact_version(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

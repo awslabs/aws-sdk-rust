@@ -2,10 +2,16 @@
 pub(crate) fn de_oauth2_authorization_server_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Oauth2AuthorizationServerMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,12 +43,19 @@ where
                             );
                         }
                         "responseTypes" => {
-                            builder =
-                                builder.set_response_types(crate::protocol_serde::shape_response_list_type::de_response_list_type(tokens, _value)?);
+                            builder = builder.set_response_types(crate::protocol_serde::shape_response_list_type::de_response_list_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "tokenEndpointAuthMethods" => {
                             builder = builder.set_token_endpoint_auth_methods(
-                                crate::protocol_serde::shape_token_endpoint_auth_methods_type::de_token_endpoint_auth_methods_type(tokens, _value)?,
+                                crate::protocol_serde::shape_token_endpoint_auth_methods_type::de_token_endpoint_auth_methods_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -185,6 +185,8 @@ pub(crate) fn de_get_engine_status(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -205,19 +207,31 @@ pub(crate) fn de_get_engine_status(
                     );
                 }
                 "features" => {
-                    builder = builder.set_features(crate::protocol_serde::shape_document_valued_map::de_document_valued_map(tokens, _value)?);
+                    builder = builder.set_features(crate::protocol_serde::shape_document_valued_map::de_document_valued_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "gremlin" => {
                     builder = builder.set_gremlin(crate::protocol_serde::shape_query_language_version::de_query_language_version(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "labMode" => {
-                    builder = builder.set_lab_mode(crate::protocol_serde::shape_string_valued_map::de_string_valued_map(tokens, _value)?);
+                    builder = builder.set_lab_mode(crate::protocol_serde::shape_string_valued_map::de_string_valued_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "opencypher" => {
                     builder = builder.set_opencypher(crate::protocol_serde::shape_query_language_version::de_query_language_version(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "role" => {
@@ -242,11 +256,17 @@ pub(crate) fn de_get_engine_status(
                     );
                 }
                 "settings" => {
-                    builder = builder.set_settings(crate::protocol_serde::shape_string_valued_map::de_string_valued_map(tokens, _value)?);
+                    builder = builder.set_settings(crate::protocol_serde::shape_string_valued_map::de_string_valued_map(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "sparql" => {
                     builder = builder.set_sparql(crate::protocol_serde::shape_query_language_version::de_query_language_version(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "startTime" => {

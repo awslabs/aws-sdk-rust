@@ -56,6 +56,8 @@ pub fn de_enable_reachability_analyzer_organization_sharing(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("EnableReachabilityAnalyzerOrganizationSharingResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected EnableReachabilityAnalyzerOrganizationSharingResponse got {start_el:?}"

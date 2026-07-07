@@ -14,6 +14,8 @@
 /// match audionormalizationalgorithm {
 ///     AudioNormalizationAlgorithm::Itu17701 => { /* ... */ },
 ///     AudioNormalizationAlgorithm::Itu17702 => { /* ... */ },
+///     AudioNormalizationAlgorithm::Itu17703 => { /* ... */ },
+///     AudioNormalizationAlgorithm::Itu17704 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +48,10 @@ pub enum AudioNormalizationAlgorithm {
     Itu17701,
     #[allow(missing_docs)] // documentation missing in model
     Itu17702,
+    #[allow(missing_docs)] // documentation missing in model
+    Itu17703,
+    #[allow(missing_docs)] // documentation missing in model
+    Itu17704,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +61,8 @@ impl ::std::convert::From<&str> for AudioNormalizationAlgorithm {
         match s {
             "ITU_1770_1" => AudioNormalizationAlgorithm::Itu17701,
             "ITU_1770_2" => AudioNormalizationAlgorithm::Itu17702,
+            "ITU_1770_3" => AudioNormalizationAlgorithm::Itu17703,
+            "ITU_1770_4" => AudioNormalizationAlgorithm::Itu17704,
             other => AudioNormalizationAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +80,14 @@ impl AudioNormalizationAlgorithm {
         match self {
             AudioNormalizationAlgorithm::Itu17701 => "ITU_1770_1",
             AudioNormalizationAlgorithm::Itu17702 => "ITU_1770_2",
+            AudioNormalizationAlgorithm::Itu17703 => "ITU_1770_3",
+            AudioNormalizationAlgorithm::Itu17704 => "ITU_1770_4",
             AudioNormalizationAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ITU_1770_1", "ITU_1770_2"]
+        &["ITU_1770_1", "ITU_1770_2", "ITU_1770_3", "ITU_1770_4"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioNormalizationAlgorithm {
@@ -102,6 +112,8 @@ impl ::std::fmt::Display for AudioNormalizationAlgorithm {
         match self {
             AudioNormalizationAlgorithm::Itu17701 => write!(f, "ITU_1770_1"),
             AudioNormalizationAlgorithm::Itu17702 => write!(f, "ITU_1770_2"),
+            AudioNormalizationAlgorithm::Itu17703 => write!(f, "ITU_1770_3"),
+            AudioNormalizationAlgorithm::Itu17704 => write!(f, "ITU_1770_4"),
             AudioNormalizationAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }

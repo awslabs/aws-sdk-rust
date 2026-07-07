@@ -2,10 +2,16 @@
 pub(crate) fn de_code_signing_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CodeSigningConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,12 +43,15 @@ where
                             );
                         }
                         "AllowedPublishers" => {
-                            builder = builder
-                                .set_allowed_publishers(crate::protocol_serde::shape_allowed_publishers::de_allowed_publishers(tokens, _value)?);
+                            builder = builder.set_allowed_publishers(crate::protocol_serde::shape_allowed_publishers::de_allowed_publishers(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CodeSigningPolicies" => {
                             builder = builder.set_code_signing_policies(
-                                crate::protocol_serde::shape_code_signing_policies::de_code_signing_policies(tokens, _value)?,
+                                crate::protocol_serde::shape_code_signing_policies::de_code_signing_policies(tokens, _value, depth + 1)?,
                             );
                         }
                         "LastModified" => {

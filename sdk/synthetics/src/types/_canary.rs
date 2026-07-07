@@ -51,6 +51,8 @@ pub struct Canary {
     /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
     /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
     pub visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceOutput>>,
+    /// <p>If this canary is part of a multi-location configuration, this structure contains information about the canary's location type, primary location, and replicas.</p>
+    pub multi_location_config: ::std::option::Option<crate::types::MultiLocationConfig>,
     /// <p>The list of key-value pairs that are associated with the canary.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
@@ -150,6 +152,10 @@ impl Canary {
     pub fn visual_references(&self) -> &[crate::types::VisualReferenceOutput] {
         self.visual_references.as_deref().unwrap_or_default()
     }
+    /// <p>If this canary is part of a multi-location configuration, this structure contains information about the canary's location type, primary location, and replicas.</p>
+    pub fn multi_location_config(&self) -> ::std::option::Option<&crate::types::MultiLocationConfig> {
+        self.multi_location_config.as_ref()
+    }
     /// <p>The list of key-value pairs that are associated with the canary.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -193,6 +199,7 @@ pub struct CanaryBuilder {
     pub(crate) browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
     pub(crate) engine_configs: ::std::option::Option<::std::vec::Vec<crate::types::EngineConfig>>,
     pub(crate) visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceOutput>>,
+    pub(crate) multi_location_config: ::std::option::Option<crate::types::MultiLocationConfig>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigOutput>,
     pub(crate) dry_run_config: ::std::option::Option<crate::types::DryRunConfigOutput>,
@@ -509,6 +516,20 @@ impl CanaryBuilder {
     pub fn get_visual_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceOutput>> {
         &self.visual_references
     }
+    /// <p>If this canary is part of a multi-location configuration, this structure contains information about the canary's location type, primary location, and replicas.</p>
+    pub fn multi_location_config(mut self, input: crate::types::MultiLocationConfig) -> Self {
+        self.multi_location_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If this canary is part of a multi-location configuration, this structure contains information about the canary's location type, primary location, and replicas.</p>
+    pub fn set_multi_location_config(mut self, input: ::std::option::Option<crate::types::MultiLocationConfig>) -> Self {
+        self.multi_location_config = input;
+        self
+    }
+    /// <p>If this canary is part of a multi-location configuration, this structure contains information about the canary's location type, primary location, and replicas.</p>
+    pub fn get_multi_location_config(&self) -> &::std::option::Option<crate::types::MultiLocationConfig> {
+        &self.multi_location_config
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -579,6 +600,7 @@ impl CanaryBuilder {
             browser_configs: self.browser_configs,
             engine_configs: self.engine_configs,
             visual_references: self.visual_references,
+            multi_location_config: self.multi_location_config,
             tags: self.tags,
             artifact_config: self.artifact_config,
             dry_run_config: self.dry_run_config,

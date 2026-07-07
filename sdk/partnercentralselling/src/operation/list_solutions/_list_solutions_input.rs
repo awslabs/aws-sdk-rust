@@ -18,6 +18,8 @@ pub struct ListSolutionsInput {
     pub identifier: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the solutions based on the category to which they belong. This allows partners to search for solutions within specific categories, such as <code>Software</code>, <code>Consulting</code>, or <code>Managed Services</code>.</p>
     pub category: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.</p>
+    pub aws_marketplace_solution_arn: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListSolutionsInput {
     /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the solutions are listed in. Use <code>AWS</code> to list solutions in the Amazon Web Services catalog, and <code>Sandbox</code> to list solutions in a secure and isolated testing environment.</p>
@@ -55,6 +57,12 @@ impl ListSolutionsInput {
     pub fn category(&self) -> &[::std::string::String] {
         self.category.as_deref().unwrap_or_default()
     }
+    /// <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_marketplace_solution_arn.is_none()`.
+    pub fn aws_marketplace_solution_arn(&self) -> &[::std::string::String] {
+        self.aws_marketplace_solution_arn.as_deref().unwrap_or_default()
+    }
 }
 impl ListSolutionsInput {
     /// Creates a new builder-style object to manufacture [`ListSolutionsInput`](crate::operation::list_solutions::ListSolutionsInput).
@@ -74,6 +82,7 @@ pub struct ListSolutionsInputBuilder {
     pub(crate) status: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStatus>>,
     pub(crate) identifier: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) category: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_marketplace_solution_arn: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListSolutionsInputBuilder {
     /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the solutions are listed in. Use <code>AWS</code> to list solutions in the Amazon Web Services catalog, and <code>Sandbox</code> to list solutions in a secure and isolated testing environment.</p>
@@ -196,6 +205,26 @@ impl ListSolutionsInputBuilder {
     pub fn get_category(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.category
     }
+    /// Appends an item to `aws_marketplace_solution_arn`.
+    ///
+    /// To override the contents of this collection use [`set_aws_marketplace_solution_arn`](Self::set_aws_marketplace_solution_arn).
+    ///
+    /// <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.</p>
+    pub fn aws_marketplace_solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aws_marketplace_solution_arn.unwrap_or_default();
+        v.push(input.into());
+        self.aws_marketplace_solution_arn = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.</p>
+    pub fn set_aws_marketplace_solution_arn(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aws_marketplace_solution_arn = input;
+        self
+    }
+    /// <p>Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.</p>
+    pub fn get_aws_marketplace_solution_arn(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_marketplace_solution_arn
+    }
     /// Consumes the builder and constructs a [`ListSolutionsInput`](crate::operation::list_solutions::ListSolutionsInput).
     pub fn build(
         self,
@@ -208,6 +237,7 @@ impl ListSolutionsInputBuilder {
             status: self.status,
             identifier: self.identifier,
             category: self.category,
+            aws_marketplace_solution_arn: self.aws_marketplace_solution_arn,
         })
     }
 }

@@ -49,6 +49,8 @@ pub fn de_delete_launch_template_versions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteLaunchTemplateVersionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteLaunchTemplateVersionsResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_delete_launch_template_versions(
             s if s.matches("successfullyDeletedLaunchTemplateVersionSet") /* SuccessfullyDeletedLaunchTemplateVersions com.amazonaws.ec2.synthetic#DeleteLaunchTemplateVersionsOutput$SuccessfullyDeletedLaunchTemplateVersions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_delete_launch_template_versions_response_success_set::de_delete_launch_template_versions_response_success_set(&mut tag)
+                        crate::protocol_serde::shape_delete_launch_template_versions_response_success_set::de_delete_launch_template_versions_response_success_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_delete_launch_template_versions(
             s if s.matches("unsuccessfullyDeletedLaunchTemplateVersionSet") /* UnsuccessfullyDeletedLaunchTemplateVersions com.amazonaws.ec2.synthetic#DeleteLaunchTemplateVersionsOutput$UnsuccessfullyDeletedLaunchTemplateVersions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_delete_launch_template_versions_response_error_set::de_delete_launch_template_versions_response_error_set(&mut tag)
+                        crate::protocol_serde::shape_delete_launch_template_versions_response_error_set::de_delete_launch_template_versions_response_error_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

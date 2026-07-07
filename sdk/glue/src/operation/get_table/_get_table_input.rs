@@ -17,6 +17,17 @@ pub struct GetTableInput {
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub include_status_details: ::std::option::Option<bool>,
+    /// <p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Returns the Hive-style table definition only.</p></li>
+    /// <li>
+    /// <p><code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p></li>
+    /// <li>
+    /// <p><code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p></li>
+    /// </ul>
+    pub attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>,
 }
 impl GetTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -47,6 +58,21 @@ impl GetTableInput {
     pub fn include_status_details(&self) -> ::std::option::Option<bool> {
         self.include_status_details
     }
+    /// <p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Returns the Hive-style table definition only.</p></li>
+    /// <li>
+    /// <p><code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p></li>
+    /// <li>
+    /// <p><code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
+    pub fn attributes_to_get(&self) -> &[crate::types::TableAttributes] {
+        self.attributes_to_get.as_deref().unwrap_or_default()
+    }
 }
 impl GetTableInput {
     /// Creates a new builder-style object to manufacture [`GetTableInput`](crate::operation::get_table::GetTableInput).
@@ -66,6 +92,7 @@ pub struct GetTableInputBuilder {
     pub(crate) query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
     pub(crate) include_status_details: ::std::option::Option<bool>,
+    pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>,
 }
 impl GetTableInputBuilder {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -168,6 +195,53 @@ impl GetTableInputBuilder {
     pub fn get_include_status_details(&self) -> &::std::option::Option<bool> {
         &self.include_status_details
     }
+    /// Appends an item to `attributes_to_get`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Returns the Hive-style table definition only.</p></li>
+    /// <li>
+    /// <p><code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p></li>
+    /// <li>
+    /// <p><code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p></li>
+    /// </ul>
+    pub fn attributes_to_get(mut self, input: crate::types::TableAttributes) -> Self {
+        let mut v = self.attributes_to_get.unwrap_or_default();
+        v.push(input);
+        self.attributes_to_get = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Returns the Hive-style table definition only.</p></li>
+    /// <li>
+    /// <p><code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p></li>
+    /// <li>
+    /// <p><code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p></li>
+    /// </ul>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>) -> Self {
+        self.attributes_to_get = input;
+        self
+    }
+    /// <p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code> - Returns the Hive-style table definition only.</p></li>
+    /// <li>
+    /// <p><code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p></li>
+    /// <li>
+    /// <p><code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p></li>
+    /// </ul>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>> {
+        &self.attributes_to_get
+    }
     /// Consumes the builder and constructs a [`GetTableInput`](crate::operation::get_table::GetTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table::GetTableInput {
@@ -178,6 +252,7 @@ impl GetTableInputBuilder {
             query_as_of_time: self.query_as_of_time,
             audit_context: self.audit_context,
             include_status_details: self.include_status_details,
+            attributes_to_get: self.attributes_to_get,
         })
     }
 }

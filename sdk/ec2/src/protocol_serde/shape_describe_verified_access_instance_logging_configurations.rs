@@ -45,6 +45,8 @@ pub fn de_describe_verified_access_instance_logging_configurations(inp: &[u8], m
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVerifiedAccessInstanceLoggingConfigurationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVerifiedAccessInstanceLoggingConfigurationsResponse got {start_el:?}"
@@ -55,7 +57,7 @@ pub fn de_describe_verified_access_instance_logging_configurations(inp: &[u8], m
             s if s.matches("loggingConfigurationSet") /* LoggingConfigurations com.amazonaws.ec2.synthetic#DescribeVerifiedAccessInstanceLoggingConfigurationsOutput$LoggingConfigurations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_instance_logging_configuration_list::de_verified_access_instance_logging_configuration_list(&mut tag)
+                        crate::protocol_serde::shape_verified_access_instance_logging_configuration_list::de_verified_access_instance_logging_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

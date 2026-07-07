@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_orderable_cluster_option(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OrderableClusterOption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OrderableClusterOption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_orderable_cluster_option(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.redshift#OrderableClusterOption$AvailabilityZones */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_availability_zone_list::de_availability_zone_list(&mut tag)
+                        crate::protocol_serde::shape_availability_zone_list::de_availability_zone_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

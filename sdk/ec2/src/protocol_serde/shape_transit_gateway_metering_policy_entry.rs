@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_metering_policy_entry(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TransitGatewayMeteringPolicyEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayMeteringPolicyEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -79,7 +83,7 @@ pub fn de_transit_gateway_metering_policy_entry(
             s if s.matches("meteringPolicyRule") /* MeteringPolicyRule com.amazonaws.ec2#TransitGatewayMeteringPolicyEntry$MeteringPolicyRule */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_metering_policy_rule::de_transit_gateway_metering_policy_rule(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_metering_policy_rule::de_transit_gateway_metering_policy_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;

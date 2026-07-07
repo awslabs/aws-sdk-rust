@@ -28,10 +28,16 @@ pub fn ser_rule_configuration(
 pub(crate) fn de_rule_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -57,14 +63,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "contentBlockerRule" => Some(crate::types::RuleConfiguration::ContentBlockerRule(
-                            crate::protocol_serde::shape_content_blocker_rule::de_content_blocker_rule(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contentBlockerRule' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_content_blocker_rule::de_content_blocker_rule(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contentBlockerRule' cannot be null"),
+                            )?,
                         )),
                         "contentRetrievalRule" => Some(crate::types::RuleConfiguration::ContentRetrievalRule(
-                            crate::protocol_serde::shape_content_retrieval_rule::de_content_retrieval_rule(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contentRetrievalRule' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_content_retrieval_rule::de_content_retrieval_rule(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contentRetrievalRule' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

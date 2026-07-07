@@ -133,6 +133,8 @@ pub fn de_modify_redshift_idc_application(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyRedshiftIdcApplicationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyRedshiftIdcApplicationResponse got {start_el:?}"
@@ -150,7 +152,7 @@ pub fn de_modify_redshift_idc_application(
             s if s.matches("RedshiftIdcApplication") /* RedshiftIdcApplication com.amazonaws.redshift.synthetic#ModifyRedshiftIdcApplicationOutput$RedshiftIdcApplication */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_redshift_idc_application::de_redshift_idc_application(&mut tag)
+                        crate::protocol_serde::shape_redshift_idc_application::de_redshift_idc_application(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -104,6 +104,8 @@ pub(crate) fn de_unlock_rule(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -118,7 +120,9 @@ pub(crate) fn de_unlock_rule(
                 }
                 "ExcludeResourceTags" => {
                     builder = builder.set_exclude_resource_tags(crate::protocol_serde::shape_exclude_resource_tags::de_exclude_resource_tags(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Identifier" => {
@@ -129,7 +133,11 @@ pub(crate) fn de_unlock_rule(
                     );
                 }
                 "LockConfiguration" => {
-                    builder = builder.set_lock_configuration(crate::protocol_serde::shape_lock_configuration::de_lock_configuration(tokens, _value)?);
+                    builder = builder.set_lock_configuration(crate::protocol_serde::shape_lock_configuration::de_lock_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "LockEndTime" => {
                     builder = builder.set_lock_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -145,7 +153,7 @@ pub(crate) fn de_unlock_rule(
                     );
                 }
                 "ResourceTags" => {
-                    builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens, _value)?);
+                    builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens, _value, depth + 1)?);
                 }
                 "ResourceType" => {
                     builder = builder.set_resource_type(
@@ -155,7 +163,11 @@ pub(crate) fn de_unlock_rule(
                     );
                 }
                 "RetentionPeriod" => {
-                    builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(tokens, _value)?);
+                    builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "RuleArn" => {
                     builder = builder.set_rule_arn(

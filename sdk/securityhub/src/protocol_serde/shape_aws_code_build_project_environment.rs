@@ -39,10 +39,16 @@ pub fn ser_aws_code_build_project_environment(
 pub(crate) fn de_aws_code_build_project_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsCodeBuildProjectEnvironment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,7 +67,7 @@ where
                         }
                         "EnvironmentVariables" => {
                             builder = builder.set_environment_variables(
-                                    crate::protocol_serde::shape_aws_code_build_project_environment_environment_variables_list::de_aws_code_build_project_environment_environment_variables_list(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_code_build_project_environment_environment_variables_list::de_aws_code_build_project_environment_environment_variables_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "PrivilegedMode" => {
@@ -76,7 +82,7 @@ where
                         }
                         "RegistryCredential" => {
                             builder = builder.set_registry_credential(
-                                    crate::protocol_serde::shape_aws_code_build_project_environment_registry_credential::de_aws_code_build_project_environment_registry_credential(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_code_build_project_environment_registry_credential::de_aws_code_build_project_environment_registry_credential(tokens, _value, depth + 1)?
                                 );
                         }
                         "Type" => {

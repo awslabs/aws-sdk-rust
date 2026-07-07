@@ -49,6 +49,8 @@ pub fn de_enable_capacity_manager(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("EnableCapacityManagerResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected EnableCapacityManagerResponse got {start_el:?}"

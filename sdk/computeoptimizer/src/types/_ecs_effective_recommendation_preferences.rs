@@ -6,11 +6,17 @@
 pub struct EcsEffectiveRecommendationPreferences {
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon ECS services.</p>
     pub savings_estimation_mode: ::std::option::Option<crate::types::EcsSavingsEstimationMode>,
+    /// <p>The number of days the Amazon ECS service utilization metrics were analyzed.</p>
+    pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
 }
 impl EcsEffectiveRecommendationPreferences {
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon ECS services.</p>
     pub fn savings_estimation_mode(&self) -> ::std::option::Option<&crate::types::EcsSavingsEstimationMode> {
         self.savings_estimation_mode.as_ref()
+    }
+    /// <p>The number of days the Amazon ECS service utilization metrics were analyzed.</p>
+    pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
+        self.look_back_period.as_ref()
     }
 }
 impl EcsEffectiveRecommendationPreferences {
@@ -25,6 +31,7 @@ impl EcsEffectiveRecommendationPreferences {
 #[non_exhaustive]
 pub struct EcsEffectiveRecommendationPreferencesBuilder {
     pub(crate) savings_estimation_mode: ::std::option::Option<crate::types::EcsSavingsEstimationMode>,
+    pub(crate) look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
 }
 impl EcsEffectiveRecommendationPreferencesBuilder {
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon ECS services.</p>
@@ -41,10 +48,25 @@ impl EcsEffectiveRecommendationPreferencesBuilder {
     pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::EcsSavingsEstimationMode> {
         &self.savings_estimation_mode
     }
+    /// <p>The number of days the Amazon ECS service utilization metrics were analyzed.</p>
+    pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
+        self.look_back_period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of days the Amazon ECS service utilization metrics were analyzed.</p>
+    pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
+        self.look_back_period = input;
+        self
+    }
+    /// <p>The number of days the Amazon ECS service utilization metrics were analyzed.</p>
+    pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
+        &self.look_back_period
+    }
     /// Consumes the builder and constructs a [`EcsEffectiveRecommendationPreferences`](crate::types::EcsEffectiveRecommendationPreferences).
     pub fn build(self) -> crate::types::EcsEffectiveRecommendationPreferences {
         crate::types::EcsEffectiveRecommendationPreferences {
             savings_estimation_mode: self.savings_estimation_mode,
+            look_back_period: self.look_back_period,
         }
     }
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_application_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ApplicationDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -79,20 +85,24 @@ where
                         "ApplicationConfigurationDescription" => {
                             builder = builder.set_application_configuration_description(
                                 crate::protocol_serde::shape_application_configuration_description::de_application_configuration_description(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "CloudWatchLoggingOptionDescriptions" => {
                             builder = builder.set_cloud_watch_logging_option_descriptions(
                                 crate::protocol_serde::shape_cloud_watch_logging_option_descriptions::de_cloud_watch_logging_option_descriptions(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ApplicationMaintenanceConfigurationDescription" => {
                             builder = builder.set_application_maintenance_configuration_description(
-                                    crate::protocol_serde::shape_application_maintenance_configuration_description::de_application_maintenance_configuration_description(tokens, _value)?
+                                    crate::protocol_serde::shape_application_maintenance_configuration_description::de_application_maintenance_configuration_description(tokens, _value, depth + 1)?
                                 );
                         }
                         "ApplicationVersionUpdatedFrom" => {

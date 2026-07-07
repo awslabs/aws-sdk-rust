@@ -26,7 +26,11 @@ pub fn ser_baseline_ebs_bandwidth_mbps_request(
 #[allow(clippy::needless_question_mark)]
 pub fn de_baseline_ebs_bandwidth_mbps_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::BaselineEbsBandwidthMbpsRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::BaselineEbsBandwidthMbpsRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {

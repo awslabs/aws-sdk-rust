@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_conversion_task(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ConversionTask, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ConversionTask::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_conversion_task(
             s if s.matches("importInstance") /* ImportInstance com.amazonaws.ec2#ConversionTask$ImportInstance */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_import_instance_task_details::de_import_instance_task_details(&mut tag)
+                        crate::protocol_serde::shape_import_instance_task_details::de_import_instance_task_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_conversion_task(
             s if s.matches("importVolume") /* ImportVolume com.amazonaws.ec2#ConversionTask$ImportVolume */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_import_volume_task_details::de_import_volume_task_details(&mut tag)
+                        crate::protocol_serde::shape_import_volume_task_details::de_import_volume_task_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -83,7 +87,7 @@ pub fn de_conversion_task(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ConversionTask$Tags */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

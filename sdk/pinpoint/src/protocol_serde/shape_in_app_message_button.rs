@@ -33,10 +33,16 @@ pub fn ser_in_app_message_button(
 pub(crate) fn de_in_app_message_button<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InAppMessageButton>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,22 +54,38 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Android" => {
                             builder = builder.set_android(
-                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "DefaultConfig" => {
                             builder = builder.set_default_config(
-                                crate::protocol_serde::shape_default_button_configuration::de_default_button_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_default_button_configuration::de_default_button_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "IOS" => {
                             builder = builder.set_ios(
-                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Web" => {
                             builder = builder.set_web(
-                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

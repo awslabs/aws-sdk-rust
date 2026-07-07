@@ -22,7 +22,7 @@ impl crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuil
 }
 /// Fluent builder constructing a request to `ListQuickConnects`.
 ///
-/// <p>Provides information about the quick connects for the specified Amazon Connect instance.</p>
+/// <p>Provides information about the quick connects for the specified Connect Customer instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListQuickConnectsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListQuickConnectsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_quick_connects::paginator::ListQuickConnectsPaginator {
         crate::operation::list_quick_connects::paginator::ListQuickConnectsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. Both Instance ID and Instance ARN are supported input formats.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. Both Instance ID and Instance ARN are supported input formats.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. Both Instance ID and Instance ARN are supported input formats.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. Both Instance ID and Instance ARN are supported input formats.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. Both Instance ID and Instance ARN are supported input formats.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. Both Instance ID and Instance ARN are supported input formats.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
@@ -161,17 +161,17 @@ impl ListQuickConnectsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_quick_connect_types`](Self::set_quick_connect_types).
     ///
-    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Connect Customer admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn quick_connect_types(mut self, input: crate::types::QuickConnectType) -> Self {
         self.inner = self.inner.quick_connect_types(input);
         self
     }
-    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Connect Customer admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn set_quick_connect_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>) -> Self {
         self.inner = self.inner.set_quick_connect_types(input);
         self
     }
-    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Connect Customer admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn get_quick_connect_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>> {
         self.inner.get_quick_connect_types()
     }

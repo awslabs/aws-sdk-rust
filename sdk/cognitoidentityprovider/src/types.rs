@@ -83,6 +83,10 @@ pub use crate::types::_account_recovery_setting_type::AccountRecoverySettingType
 
 pub use crate::types::_user_pool_tier_type::UserPoolTierType;
 
+pub use crate::types::_key_configuration_type::KeyConfigurationType;
+
+pub use crate::types::_issuer_configuration_type::IssuerConfigurationType;
+
 pub use crate::types::_user_pool_type::UserPoolType;
 
 pub use crate::types::_token_validity_units_type::TokenValidityUnitsType;
@@ -97,6 +101,10 @@ pub use crate::types::_user_pool_client_type::UserPoolClientType;
 
 pub use crate::types::_custom_domain_config_type::CustomDomainConfigType;
 
+pub use crate::types::_routing_type::RoutingType;
+
+pub use crate::types::_user_pool_replica_type::UserPoolReplicaType;
+
 pub use crate::types::_risk_configuration_type::RiskConfigurationType;
 
 pub use crate::types::_domain_description_type::DomainDescriptionType;
@@ -104,6 +112,10 @@ pub use crate::types::_domain_description_type::DomainDescriptionType;
 pub use crate::types::_code_delivery_details_type::CodeDeliveryDetailsType;
 
 pub use crate::types::_log_delivery_configuration_type::LogDeliveryConfigurationType;
+
+pub use crate::types::_limit_definition_type::LimitDefinitionType;
+
+pub use crate::types::_limit_type::LimitType;
 
 pub use crate::types::_ui_customization_type::UiCustomizationType;
 
@@ -120,6 +132,8 @@ pub use crate::types::_compromised_credentials_risk_configuration_type::Compromi
 pub use crate::types::_account_takeover_risk_configuration_type::AccountTakeoverRiskConfigurationType;
 
 pub use crate::types::_risk_exception_configuration_type::RiskExceptionConfigurationType;
+
+pub use crate::types::_update_replica_status_type::UpdateReplicaStatusType;
 
 pub use crate::types::_verify_software_token_response_type::VerifySoftwareTokenResponseType;
 
@@ -169,6 +183,10 @@ pub use crate::types::_advanced_security_mode_type::AdvancedSecurityModeType;
 
 pub use crate::types::_advanced_security_additional_flows_type::AdvancedSecurityAdditionalFlowsType;
 
+pub use crate::types::_encryption_key_type::EncryptionKeyType;
+
+pub use crate::types::_issuer_type::IssuerType;
+
 pub use crate::types::_status_type::StatusType;
 
 pub use crate::types::_time_units_type::TimeUnitsType;
@@ -179,7 +197,17 @@ pub use crate::types::_o_auth_flow_type::OAuthFlowType;
 
 pub use crate::types::_feature_type::FeatureType;
 
+pub use crate::types::_security_policy_type::SecurityPolicyType;
+
+pub use crate::types::_failover_type::FailoverType;
+
+pub use crate::types::_replica_status_type::ReplicaStatusType;
+
+pub use crate::types::_replica_role_type::ReplicaRoleType;
+
 pub use crate::types::_domain_status_type::DomainStatusType;
+
+pub use crate::types::_limit_class::LimitClass;
 
 pub use crate::types::_auth_factor_type::AuthFactorType;
 
@@ -375,6 +403,8 @@ mod _email_mfa_settings_type;
 
 mod _email_sending_account_type;
 
+mod _encryption_key_type;
+
 mod _event_context_data_type;
 
 mod _event_feedback_type;
@@ -390,6 +420,8 @@ mod _event_source_name;
 mod _event_type;
 
 mod _explicit_auth_flows_type;
+
+mod _failover_type;
 
 mod _feature_type;
 
@@ -409,7 +441,19 @@ mod _inbound_federation_lambda_type;
 
 mod _inbound_federation_lambda_version_type;
 
+mod _issuer_configuration_type;
+
+mod _issuer_type;
+
+mod _key_configuration_type;
+
 mod _lambda_config_type;
+
+mod _limit_class;
+
+mod _limit_definition_type;
+
+mod _limit_type;
 
 mod _log_configuration_type;
 
@@ -453,6 +497,10 @@ mod _recovery_option_type;
 
 mod _refresh_token_rotation_type;
 
+mod _replica_role_type;
+
+mod _replica_status_type;
+
 mod _resource_server_scope_type;
 
 mod _resource_server_type;
@@ -465,9 +513,13 @@ mod _risk_exception_configuration_type;
 
 mod _risk_level_type;
 
+mod _routing_type;
+
 mod _s3_configuration_type;
 
 mod _schema_attribute_type;
+
+mod _security_policy_type;
 
 mod _sign_in_policy_type;
 
@@ -499,6 +551,8 @@ mod _token_validity_units_type;
 
 mod _ui_customization_type;
 
+mod _update_replica_status_type;
+
 mod _user_attribute_update_settings_type;
 
 mod _user_context_data_type;
@@ -518,6 +572,8 @@ mod _user_pool_description_type;
 mod _user_pool_mfa_type;
 
 mod _user_pool_policy_type;
+
+mod _user_pool_replica_type;
 
 mod _user_pool_tier_type;
 

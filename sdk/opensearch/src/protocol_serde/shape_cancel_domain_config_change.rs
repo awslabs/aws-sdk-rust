@@ -141,17 +141,19 @@ pub(crate) fn de_cancel_domain_config_change(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CancelledChangeIds" => {
-                    builder = builder.set_cancelled_change_ids(crate::protocol_serde::shape_guid_list::de_guid_list(tokens, _value)?);
+                    builder = builder.set_cancelled_change_ids(crate::protocol_serde::shape_guid_list::de_guid_list(tokens, _value, depth + 1)?);
                 }
                 "CancelledChangeProperties" => {
                     builder = builder.set_cancelled_change_properties(
-                        crate::protocol_serde::shape_cancelled_change_property_list::de_cancelled_change_property_list(tokens, _value)?,
+                        crate::protocol_serde::shape_cancelled_change_property_list::de_cancelled_change_property_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "DryRun" => {

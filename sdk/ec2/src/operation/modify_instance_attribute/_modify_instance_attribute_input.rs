@@ -5,6 +5,8 @@
 pub struct ModifyInstanceAttributeInput {
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
+    /// <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon Web Services Nitro Enclaves User Guide</a>.</p>
+    pub enclave_options: ::std::option::Option<crate::types::EnclaveOptionsRequest>,
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
     pub disable_api_stop: ::std::option::Option<crate::types::AttributeBooleanValue>,
@@ -51,6 +53,10 @@ impl ModifyInstanceAttributeInput {
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub fn source_dest_check(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.source_dest_check.as_ref()
+    }
+    /// <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon Web Services Nitro Enclaves User Guide</a>.</p>
+    pub fn enclave_options(&self) -> ::std::option::Option<&crate::types::EnclaveOptionsRequest> {
+        self.enclave_options.as_ref()
     }
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
@@ -134,6 +140,7 @@ impl ::std::fmt::Debug for ModifyInstanceAttributeInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyInstanceAttributeInput");
         formatter.field("source_dest_check", &self.source_dest_check);
+        formatter.field("enclave_options", &self.enclave_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.field("dry_run", &self.dry_run);
         formatter.field("instance_id", &self.instance_id);
@@ -165,6 +172,7 @@ impl ModifyInstanceAttributeInput {
 #[non_exhaustive]
 pub struct ModifyInstanceAttributeInputBuilder {
     pub(crate) source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
+    pub(crate) enclave_options: ::std::option::Option<crate::types::EnclaveOptionsRequest>,
     pub(crate) disable_api_stop: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -196,6 +204,20 @@ impl ModifyInstanceAttributeInputBuilder {
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.source_dest_check
+    }
+    /// <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon Web Services Nitro Enclaves User Guide</a>.</p>
+    pub fn enclave_options(mut self, input: crate::types::EnclaveOptionsRequest) -> Self {
+        self.enclave_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon Web Services Nitro Enclaves User Guide</a>.</p>
+    pub fn set_enclave_options(mut self, input: ::std::option::Option<crate::types::EnclaveOptionsRequest>) -> Self {
+        self.enclave_options = input;
+        self
+    }
+    /// <p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon Web Services Nitro Enclaves User Guide</a>.</p>
+    pub fn get_enclave_options(&self) -> &::std::option::Option<crate::types::EnclaveOptionsRequest> {
+        &self.enclave_options
     }
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
@@ -473,6 +495,7 @@ impl ModifyInstanceAttributeInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput {
             source_dest_check: self.source_dest_check,
+            enclave_options: self.enclave_options,
             disable_api_stop: self.disable_api_stop,
             dry_run: self.dry_run,
             instance_id: self.instance_id,
@@ -496,6 +519,7 @@ impl ::std::fmt::Debug for ModifyInstanceAttributeInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyInstanceAttributeInputBuilder");
         formatter.field("source_dest_check", &self.source_dest_check);
+        formatter.field("enclave_options", &self.enclave_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.field("dry_run", &self.dry_run);
         formatter.field("instance_id", &self.instance_id);

@@ -20,7 +20,7 @@ pub struct DestinationConnectorProperties {
     pub upsolver: ::std::option::Option<crate::types::UpsolverDestinationProperties>,
     /// <p>The properties required to query Amazon Honeycode.</p>
     pub honeycode: ::std::option::Option<crate::types::HoneycodeDestinationProperties>,
-    /// <p>The properties required to query Amazon Connect Customer Profiles.</p>
+    /// <p>The properties required to query Connect Customer Customer Profiles.</p>
     pub customer_profiles: ::std::option::Option<crate::types::CustomerProfilesDestinationProperties>,
     /// <p>The properties required to query Zendesk.</p>
     pub zendesk: ::std::option::Option<crate::types::ZendeskDestinationProperties>,
@@ -64,7 +64,7 @@ impl DestinationConnectorProperties {
     pub fn honeycode(&self) -> ::std::option::Option<&crate::types::HoneycodeDestinationProperties> {
         self.honeycode.as_ref()
     }
-    /// <p>The properties required to query Amazon Connect Customer Profiles.</p>
+    /// <p>The properties required to query Connect Customer Customer Profiles.</p>
     pub fn customer_profiles(&self) -> ::std::option::Option<&crate::types::CustomerProfilesDestinationProperties> {
         self.customer_profiles.as_ref()
     }
@@ -223,17 +223,17 @@ impl DestinationConnectorPropertiesBuilder {
     pub fn get_honeycode(&self) -> &::std::option::Option<crate::types::HoneycodeDestinationProperties> {
         &self.honeycode
     }
-    /// <p>The properties required to query Amazon Connect Customer Profiles.</p>
+    /// <p>The properties required to query Connect Customer Customer Profiles.</p>
     pub fn customer_profiles(mut self, input: crate::types::CustomerProfilesDestinationProperties) -> Self {
         self.customer_profiles = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The properties required to query Amazon Connect Customer Profiles.</p>
+    /// <p>The properties required to query Connect Customer Customer Profiles.</p>
     pub fn set_customer_profiles(mut self, input: ::std::option::Option<crate::types::CustomerProfilesDestinationProperties>) -> Self {
         self.customer_profiles = input;
         self
     }
-    /// <p>The properties required to query Amazon Connect Customer Profiles.</p>
+    /// <p>The properties required to query Connect Customer Customer Profiles.</p>
     pub fn get_customer_profiles(&self) -> &::std::option::Option<crate::types::CustomerProfilesDestinationProperties> {
         &self.customer_profiles
     }

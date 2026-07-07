@@ -138,6 +138,8 @@ pub(crate) fn de_get_subscription_target(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -145,12 +147,18 @@ pub(crate) fn de_get_subscription_target(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "applicableAssetTypes" => {
                     builder = builder.set_applicable_asset_types(crate::protocol_serde::shape_applicable_asset_types::de_applicable_asset_types(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "authorizedPrincipals" => {
                     builder = builder.set_authorized_principals(
-                        crate::protocol_serde::shape_authorized_principal_identifiers::de_authorized_principal_identifiers(tokens, _value)?,
+                        crate::protocol_serde::shape_authorized_principal_identifiers::de_authorized_principal_identifiers(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "createdAt" => {
@@ -224,7 +232,7 @@ pub(crate) fn de_get_subscription_target(
                 }
                 "subscriptionTargetConfig" => {
                     builder = builder.set_subscription_target_config(
-                        crate::protocol_serde::shape_subscription_target_forms::de_subscription_target_forms(tokens, _value)?,
+                        crate::protocol_serde::shape_subscription_target_forms::de_subscription_target_forms(tokens, _value, depth + 1)?,
                     );
                 }
                 "type" => {

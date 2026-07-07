@@ -50,6 +50,7 @@ mod with_service_config {
     }
 
     #[test]
+    #[allow(deprecated)]
     fn test_default_retry_enabled_with_bmv_2026_01_12() {
         // With v2026_01_12 and later, retries are enabled by default for AWS SDK clients
         // This test verifies the client builds without panicking about missing sleep impl

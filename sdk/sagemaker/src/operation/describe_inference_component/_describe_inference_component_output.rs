@@ -17,6 +17,8 @@ pub struct DescribeInferenceComponentOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Details about the resources that are deployed with this inference component.</p>
     pub specification: ::std::option::Option<crate::types::InferenceComponentSpecificationSummary>,
+    /// <p>A list of specification summaries for the inference component, one per instance type. This parameter is populated when the inference component was created with multiple specifications. When this parameter is populated, the singular <code>Specification</code> parameter is not returned.</p>
+    pub specifications: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecificationSummary>>,
     /// <p>Details about the runtime settings for the model that is deployed with the inference component.</p>
     pub runtime_config: ::std::option::Option<crate::types::InferenceComponentRuntimeConfigSummary>,
     /// <p>The time when the inference component was created.</p>
@@ -57,6 +59,12 @@ impl DescribeInferenceComponentOutput {
     /// <p>Details about the resources that are deployed with this inference component.</p>
     pub fn specification(&self) -> ::std::option::Option<&crate::types::InferenceComponentSpecificationSummary> {
         self.specification.as_ref()
+    }
+    /// <p>A list of specification summaries for the inference component, one per instance type. This parameter is populated when the inference component was created with multiple specifications. When this parameter is populated, the singular <code>Specification</code> parameter is not returned.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.specifications.is_none()`.
+    pub fn specifications(&self) -> &[crate::types::InferenceComponentSpecificationSummary] {
+        self.specifications.as_deref().unwrap_or_default()
     }
     /// <p>Details about the runtime settings for the model that is deployed with the inference component.</p>
     pub fn runtime_config(&self) -> ::std::option::Option<&crate::types::InferenceComponentRuntimeConfigSummary> {
@@ -102,6 +110,7 @@ pub struct DescribeInferenceComponentOutputBuilder {
     pub(crate) variant_name: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) specification: ::std::option::Option<crate::types::InferenceComponentSpecificationSummary>,
+    pub(crate) specifications: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecificationSummary>>,
     pub(crate) runtime_config: ::std::option::Option<crate::types::InferenceComponentRuntimeConfigSummary>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -212,6 +221,26 @@ impl DescribeInferenceComponentOutputBuilder {
     pub fn get_specification(&self) -> &::std::option::Option<crate::types::InferenceComponentSpecificationSummary> {
         &self.specification
     }
+    /// Appends an item to `specifications`.
+    ///
+    /// To override the contents of this collection use [`set_specifications`](Self::set_specifications).
+    ///
+    /// <p>A list of specification summaries for the inference component, one per instance type. This parameter is populated when the inference component was created with multiple specifications. When this parameter is populated, the singular <code>Specification</code> parameter is not returned.</p>
+    pub fn specifications(mut self, input: crate::types::InferenceComponentSpecificationSummary) -> Self {
+        let mut v = self.specifications.unwrap_or_default();
+        v.push(input);
+        self.specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of specification summaries for the inference component, one per instance type. This parameter is populated when the inference component was created with multiple specifications. When this parameter is populated, the singular <code>Specification</code> parameter is not returned.</p>
+    pub fn set_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecificationSummary>>) -> Self {
+        self.specifications = input;
+        self
+    }
+    /// <p>A list of specification summaries for the inference component, one per instance type. This parameter is populated when the inference component was created with multiple specifications. When this parameter is populated, the singular <code>Specification</code> parameter is not returned.</p>
+    pub fn get_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecificationSummary>> {
+        &self.specifications
+    }
     /// <p>Details about the runtime settings for the model that is deployed with the inference component.</p>
     pub fn runtime_config(mut self, input: crate::types::InferenceComponentRuntimeConfigSummary) -> Self {
         self.runtime_config = ::std::option::Option::Some(input);
@@ -303,6 +332,7 @@ impl DescribeInferenceComponentOutputBuilder {
             variant_name: self.variant_name,
             failure_reason: self.failure_reason,
             specification: self.specification,
+            specifications: self.specifications,
             runtime_config: self.runtime_config,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,

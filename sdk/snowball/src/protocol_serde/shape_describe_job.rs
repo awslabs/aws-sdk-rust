@@ -67,17 +67,23 @@ pub(crate) fn de_describe_job(
     value: &[u8],
     mut builder: crate::operation::describe_job::builders::DescribeJobOutputBuilder,
 ) -> ::std::result::Result<crate::operation::describe_job::builders::DescribeJobOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_job::builders::DescribeJobOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::describe_job::builders::DescribeJobOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "JobMetadata" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_job_metadata(Some(crate::protocol_serde::shape_job_metadata::de_job_metadata(decoder)?)))
+                Ok(builder.set_job_metadata(Some(crate::protocol_serde::shape_job_metadata::de_job_metadata(decoder, depth + 1)?)))
             })?,
             "SubJobMetadata" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_sub_job_metadata(Some(crate::protocol_serde::shape_job_metadata_list::de_job_metadata_list(decoder)?)))
+                Ok(
+                    builder.set_sub_job_metadata(Some(crate::protocol_serde::shape_job_metadata_list::de_job_metadata_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             _ => {
                 decoder.skip()?;
@@ -88,6 +94,8 @@ pub(crate) fn de_describe_job(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -97,13 +105,13 @@ pub(crate) fn de_describe_job(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

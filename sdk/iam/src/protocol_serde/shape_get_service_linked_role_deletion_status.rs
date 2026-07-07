@@ -112,6 +112,8 @@ pub fn de_get_service_linked_role_deletion_status(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetServiceLinkedRoleDeletionStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetServiceLinkedRoleDeletionStatusResponse got {start_el:?}"
@@ -143,7 +145,7 @@ pub fn de_get_service_linked_role_deletion_status(
             s if s.matches("Reason") /* Reason com.amazonaws.iam.synthetic#GetServiceLinkedRoleDeletionStatusOutput$Reason */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_deletion_task_failure_reason_type::de_deletion_task_failure_reason_type(&mut tag)
+                        crate::protocol_serde::shape_deletion_task_failure_reason_type::de_deletion_task_failure_reason_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

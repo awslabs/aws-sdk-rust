@@ -9,5 +9,11 @@ pub fn ser_update_capacity_provider_input_input(
         crate::protocol_serde::shape_capacity_provider_scaling_config::ser_capacity_provider_scaling_config(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.propagate_tags {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("PropagateTags").start_object();
+        crate::protocol_serde::shape_propagate_tags::ser_propagate_tags(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

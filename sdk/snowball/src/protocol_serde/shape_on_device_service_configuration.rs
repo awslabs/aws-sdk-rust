@@ -26,31 +26,39 @@ pub fn ser_on_device_service_configuration(
 
 pub(crate) fn de_on_device_service_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OnDeviceServiceConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::OnDeviceServiceConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::OnDeviceServiceConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "NFSOnDeviceService" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_nfs_on_device_service(Some(
-                    crate::protocol_serde::shape_nfs_on_device_service_configuration::de_nfs_on_device_service_configuration(decoder)?,
+                    crate::protocol_serde::shape_nfs_on_device_service_configuration::de_nfs_on_device_service_configuration(decoder, depth + 1)?,
                 )))
             })?,
             "TGWOnDeviceService" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_tgw_on_device_service(Some(
-                    crate::protocol_serde::shape_tgw_on_device_service_configuration::de_tgw_on_device_service_configuration(decoder)?,
+                    crate::protocol_serde::shape_tgw_on_device_service_configuration::de_tgw_on_device_service_configuration(decoder, depth + 1)?,
                 )))
             })?,
             "EKSOnDeviceService" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_eks_on_device_service(Some(
-                    crate::protocol_serde::shape_eks_on_device_service_configuration::de_eks_on_device_service_configuration(decoder)?,
+                    crate::protocol_serde::shape_eks_on_device_service_configuration::de_eks_on_device_service_configuration(decoder, depth + 1)?,
                 )))
             })?,
             "S3OnDeviceService" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_s3_on_device_service(Some(
-                    crate::protocol_serde::shape_s3_on_device_service_configuration::de_s3_on_device_service_configuration(decoder)?,
+                    crate::protocol_serde::shape_s3_on_device_service_configuration::de_s3_on_device_service_configuration(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -71,13 +79,13 @@ pub(crate) fn de_on_device_service_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

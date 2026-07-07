@@ -2,10 +2,16 @@
 pub(crate) fn de_scraper_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScraperDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,7 @@ where
                             );
                         }
                         "status" => {
-                            builder = builder.set_status(crate::protocol_serde::shape_scraper_status::de_scraper_status(tokens, _value)?);
+                            builder = builder.set_status(crate::protocol_serde::shape_scraper_status::de_scraper_status(tokens, _value, depth + 1)?);
                         }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -59,7 +65,7 @@ where
                             )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "statusReason" => {
                             builder = builder.set_status_reason(
@@ -70,18 +76,23 @@ where
                         }
                         "scrapeConfiguration" => {
                             builder = builder.set_scrape_configuration(crate::protocol_serde::shape_scrape_configuration::de_scrape_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value, depth + 1)?);
                         }
                         "destination" => {
-                            builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens, _value)?);
+                            builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens, _value, depth + 1)?);
                         }
                         "roleConfiguration" => {
-                            builder = builder
-                                .set_role_configuration(crate::protocol_serde::shape_role_configuration::de_role_configuration(tokens, _value)?);
+                            builder = builder.set_role_configuration(crate::protocol_serde::shape_role_configuration::de_role_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

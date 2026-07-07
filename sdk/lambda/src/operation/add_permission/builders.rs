@@ -213,6 +213,34 @@ impl AddPermissionFluentBuilder {
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_arn()
     }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn function_url_auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
+        self.inner = self.inner.function_url_auth_type(input);
+        self
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn set_function_url_auth_type(mut self, input: ::std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
+        self.inner = self.inner.set_function_url_auth_type(input);
+        self
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn get_function_url_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
+        self.inner.get_function_url_auth_type()
+    }
+    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
+    pub fn invoked_via_function_url(mut self, input: bool) -> Self {
+        self.inner = self.inner.invoked_via_function_url(input);
+        self
+    }
+    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
+    pub fn set_invoked_via_function_url(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_invoked_via_function_url(input);
+        self
+    }
+    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
+    pub fn get_invoked_via_function_url(&self) -> &::std::option::Option<bool> {
+        self.inner.get_invoked_via_function_url()
+    }
     /// <p>For Amazon Web Services service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
     pub fn source_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_account(input.into());
@@ -282,33 +310,5 @@ impl AddPermissionFluentBuilder {
     /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
     pub fn get_principal_org_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_org_id()
-    }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
-    pub fn function_url_auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
-        self.inner = self.inner.function_url_auth_type(input);
-        self
-    }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
-    pub fn set_function_url_auth_type(mut self, input: ::std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
-        self.inner = self.inner.set_function_url_auth_type(input);
-        self
-    }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
-    pub fn get_function_url_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
-        self.inner.get_function_url_auth_type()
-    }
-    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
-    pub fn invoked_via_function_url(mut self, input: bool) -> Self {
-        self.inner = self.inner.invoked_via_function_url(input);
-        self
-    }
-    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
-    pub fn set_invoked_via_function_url(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_invoked_via_function_url(input);
-        self
-    }
-    /// <p>Indicates whether the permission applies when the function is invoked through a function URL.</p>
-    pub fn get_invoked_via_function_url(&self) -> &::std::option::Option<bool> {
-        self.inner.get_invoked_via_function_url()
     }
 }

@@ -6,16 +6,28 @@ pub fn ser_interceptor_input_configuration(
     {
         object.key("passRequestHeaders").boolean(input.pass_request_headers);
     }
+    if let Some(var_1) = &input.payload_filter {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("payloadFilter").start_object();
+        crate::protocol_serde::shape_interceptor_payload_filter::ser_interceptor_payload_filter(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_interceptor_input_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InterceptorInputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -27,6 +39,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "passRequestHeaders" => {
                             builder = builder.set_pass_request_headers(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "payloadFilter" => {
+                            builder = builder.set_payload_filter(
+                                crate::protocol_serde::shape_interceptor_payload_filter::de_interceptor_payload_filter(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

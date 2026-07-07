@@ -49,6 +49,8 @@ pub fn de_list_configuration_sets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListConfigurationSetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListConfigurationSetsResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_list_configuration_sets(
             s if s.matches("ConfigurationSets") /* ConfigurationSets com.amazonaws.ses.synthetic#ListConfigurationSetsOutput$ConfigurationSets */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_configuration_sets::de_configuration_sets(&mut tag)
+                        crate::protocol_serde::shape_configuration_sets::de_configuration_sets(&mut tag, depth + 1)
                         ?
                     )
                 ;

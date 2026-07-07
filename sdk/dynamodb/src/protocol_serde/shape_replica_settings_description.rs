@@ -2,10 +2,16 @@
 pub(crate) fn de_replica_settings_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReplicaSettingsDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,7 @@ where
                         }
                         "ReplicaBillingModeSummary" => {
                             builder = builder.set_replica_billing_mode_summary(
-                                crate::protocol_serde::shape_billing_mode_summary::de_billing_mode_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_billing_mode_summary::de_billing_mode_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "ReplicaProvisionedReadCapacityUnits" => {
@@ -43,7 +49,11 @@ where
                         }
                         "ReplicaProvisionedReadCapacityAutoScalingSettings" => {
                             builder = builder.set_replica_provisioned_read_capacity_auto_scaling_settings(
-                                crate::protocol_serde::shape_auto_scaling_settings_description::de_auto_scaling_settings_description(tokens, _value)?,
+                                crate::protocol_serde::shape_auto_scaling_settings_description::de_auto_scaling_settings_description(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ReplicaProvisionedWriteCapacityUnits" => {
@@ -55,17 +65,21 @@ where
                         }
                         "ReplicaProvisionedWriteCapacityAutoScalingSettings" => {
                             builder = builder.set_replica_provisioned_write_capacity_auto_scaling_settings(
-                                crate::protocol_serde::shape_auto_scaling_settings_description::de_auto_scaling_settings_description(tokens, _value)?,
+                                crate::protocol_serde::shape_auto_scaling_settings_description::de_auto_scaling_settings_description(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ReplicaGlobalSecondaryIndexSettings" => {
                             builder = builder.set_replica_global_secondary_index_settings(
-                                    crate::protocol_serde::shape_replica_global_secondary_index_settings_description_list::de_replica_global_secondary_index_settings_description_list(tokens, _value)?
+                                    crate::protocol_serde::shape_replica_global_secondary_index_settings_description_list::de_replica_global_secondary_index_settings_description_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "ReplicaTableClassSummary" => {
                             builder = builder.set_replica_table_class_summary(
-                                crate::protocol_serde::shape_table_class_summary::de_table_class_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_table_class_summary::de_table_class_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

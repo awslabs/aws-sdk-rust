@@ -118,6 +118,8 @@ pub fn de_describe_cache_parameter_groups(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeCacheParameterGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeCacheParameterGroupsResponse got {start_el:?}"
@@ -148,7 +150,7 @@ pub fn de_describe_cache_parameter_groups(
             s if s.matches("CacheParameterGroups") /* CacheParameterGroups com.amazonaws.elasticache.synthetic#DescribeCacheParameterGroupsOutput$CacheParameterGroups */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_cache_parameter_group_list::de_cache_parameter_group_list(&mut tag)
+                        crate::protocol_serde::shape_cache_parameter_group_list::de_cache_parameter_group_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

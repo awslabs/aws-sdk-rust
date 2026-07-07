@@ -166,6 +166,8 @@ pub(crate) fn de_create_connector_v2(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -196,6 +198,13 @@ pub(crate) fn de_create_connector_v2(
                     builder = builder.set_connector_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "EnablementStatus" => {
+                    builder = builder.set_enablement_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EnablementStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

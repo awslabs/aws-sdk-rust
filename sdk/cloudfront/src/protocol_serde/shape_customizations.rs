@@ -24,7 +24,11 @@ pub fn ser_customizations(
 #[allow(clippy::needless_question_mark)]
 pub fn de_customizations(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Customizations, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Customizations::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -32,7 +36,7 @@ pub fn de_customizations(
             s if s.matches("WebAcl") /* WebAcl com.amazonaws.cloudfront#Customizations$WebAcl */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_web_acl_customization::de_web_acl_customization(&mut tag)
+                        crate::protocol_serde::shape_web_acl_customization::de_web_acl_customization(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -42,7 +46,7 @@ pub fn de_customizations(
             s if s.matches("Certificate") /* Certificate com.amazonaws.cloudfront#Customizations$Certificate */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_certificate::de_certificate(&mut tag)
+                        crate::protocol_serde::shape_certificate::de_certificate(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -52,7 +56,7 @@ pub fn de_customizations(
             s if s.matches("GeoRestrictions") /* GeoRestrictions com.amazonaws.cloudfront#Customizations$GeoRestrictions */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_geo_restriction_customization::de_geo_restriction_customization(&mut tag)
+                        crate::protocol_serde::shape_geo_restriction_customization::de_geo_restriction_customization(&mut tag, depth + 1)
                         ?
                     )
                 ;

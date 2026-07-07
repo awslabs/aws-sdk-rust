@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlackFrames {
-    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled..</p>
+    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled.</p>
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>Specifies the number of consecutive seconds of black frames that triggers an event or alert.</p>
     pub threshold_seconds: ::std::option::Option<i32>,
 }
 impl BlackFrames {
-    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled..</p>
+    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
         self.state.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct BlackFramesBuilder {
     pub(crate) threshold_seconds: ::std::option::Option<i32>,
 }
 impl BlackFramesBuilder {
-    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled..</p>
+    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled..</p>
+    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled..</p>
+    /// <p>Indicates whether the <code>BlackFrames</code> metric is enabled or disabled.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
         &self.state
     }

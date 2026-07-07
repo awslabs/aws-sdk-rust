@@ -30,10 +30,16 @@ pub fn ser_traffic_pattern(
 pub(crate) fn de_traffic_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TrafficPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,10 +57,10 @@ where
                             );
                         }
                         "Phases" => {
-                            builder = builder.set_phases(crate::protocol_serde::shape_phases::de_phases(tokens, _value)?);
+                            builder = builder.set_phases(crate::protocol_serde::shape_phases::de_phases(tokens, _value, depth + 1)?);
                         }
                         "Stairs" => {
-                            builder = builder.set_stairs(crate::protocol_serde::shape_stairs::de_stairs(tokens, _value)?);
+                            builder = builder.set_stairs(crate::protocol_serde::shape_stairs::de_stairs(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

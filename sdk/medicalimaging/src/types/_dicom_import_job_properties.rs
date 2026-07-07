@@ -24,6 +24,8 @@ pub struct DicomImportJobProperties {
     pub output_s3_uri: ::std::string::String,
     /// <p>The error message thrown if an import job fails.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The object containing <code>DicomJsonMetadataImportConfiguration</code>.</p>
+    pub import_configuration: ::std::option::Option<crate::types::ImportConfiguration>,
 }
 impl DicomImportJobProperties {
     /// <p>The import job identifier.</p>
@@ -72,6 +74,10 @@ impl DicomImportJobProperties {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
+    /// <p>The object containing <code>DicomJsonMetadataImportConfiguration</code>.</p>
+    pub fn import_configuration(&self) -> ::std::option::Option<&crate::types::ImportConfiguration> {
+        self.import_configuration.as_ref()
+    }
 }
 impl DicomImportJobProperties {
     /// Creates a new builder-style object to manufacture [`DicomImportJobProperties`](crate::types::DicomImportJobProperties).
@@ -94,6 +100,7 @@ pub struct DicomImportJobPropertiesBuilder {
     pub(crate) input_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) import_configuration: ::std::option::Option<crate::types::ImportConfiguration>,
 }
 impl DicomImportJobPropertiesBuilder {
     /// <p>The import job identifier.</p>
@@ -243,6 +250,20 @@ impl DicomImportJobPropertiesBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The object containing <code>DicomJsonMetadataImportConfiguration</code>.</p>
+    pub fn import_configuration(mut self, input: crate::types::ImportConfiguration) -> Self {
+        self.import_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The object containing <code>DicomJsonMetadataImportConfiguration</code>.</p>
+    pub fn set_import_configuration(mut self, input: ::std::option::Option<crate::types::ImportConfiguration>) -> Self {
+        self.import_configuration = input;
+        self
+    }
+    /// <p>The object containing <code>DicomJsonMetadataImportConfiguration</code>.</p>
+    pub fn get_import_configuration(&self) -> &::std::option::Option<crate::types::ImportConfiguration> {
+        &self.import_configuration
+    }
     /// Consumes the builder and constructs a [`DicomImportJobProperties`](crate::types::DicomImportJobProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::types::builders::DicomImportJobPropertiesBuilder::job_id)
@@ -299,6 +320,7 @@ impl DicomImportJobPropertiesBuilder {
                 )
             })?,
             message: self.message,
+            import_configuration: self.import_configuration,
         })
     }
 }

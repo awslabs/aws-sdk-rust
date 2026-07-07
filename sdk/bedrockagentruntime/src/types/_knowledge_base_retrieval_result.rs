@@ -17,6 +17,8 @@ pub struct KnowledgeBaseRetrievalResult {
     pub score: ::std::option::Option<f64>,
     /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    /// <p>The unique identifier of the document. Use with <code>GetDocumentContent</code> to retrieve the full document.</p>
+    pub document_id: ::std::option::Option<::std::string::String>,
 }
 impl KnowledgeBaseRetrievalResult {
     /// <p>Contains information about the content of the chunk.</p>
@@ -35,6 +37,10 @@ impl KnowledgeBaseRetrievalResult {
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         self.metadata.as_ref()
     }
+    /// <p>The unique identifier of the document. Use with <code>GetDocumentContent</code> to retrieve the full document.</p>
+    pub fn document_id(&self) -> ::std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for KnowledgeBaseRetrievalResult {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -43,6 +49,7 @@ impl ::std::fmt::Debug for KnowledgeBaseRetrievalResult {
         formatter.field("location", &"*** Sensitive Data Redacted ***");
         formatter.field("score", &self.score);
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("document_id", &self.document_id);
         formatter.finish()
     }
 }
@@ -61,6 +68,7 @@ pub struct KnowledgeBaseRetrievalResultBuilder {
     pub(crate) location: ::std::option::Option<crate::types::RetrievalResultLocation>,
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    pub(crate) document_id: ::std::option::Option<::std::string::String>,
 }
 impl KnowledgeBaseRetrievalResultBuilder {
     /// <p>Contains information about the content of the chunk.</p>
@@ -129,6 +137,20 @@ impl KnowledgeBaseRetrievalResultBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         &self.metadata
     }
+    /// <p>The unique identifier of the document. Use with <code>GetDocumentContent</code> to retrieve the full document.</p>
+    pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the document. Use with <code>GetDocumentContent</code> to retrieve the full document.</p>
+    pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.document_id = input;
+        self
+    }
+    /// <p>The unique identifier of the document. Use with <code>GetDocumentContent</code> to retrieve the full document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseRetrievalResult`](crate::types::KnowledgeBaseRetrievalResult).
     pub fn build(self) -> crate::types::KnowledgeBaseRetrievalResult {
         crate::types::KnowledgeBaseRetrievalResult {
@@ -136,6 +158,7 @@ impl KnowledgeBaseRetrievalResultBuilder {
             location: self.location,
             score: self.score,
             metadata: self.metadata,
+            document_id: self.document_id,
         }
     }
 }
@@ -146,6 +169,7 @@ impl ::std::fmt::Debug for KnowledgeBaseRetrievalResultBuilder {
         formatter.field("location", &"*** Sensitive Data Redacted ***");
         formatter.field("score", &self.score);
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("document_id", &self.document_id);
         formatter.finish()
     }
 }

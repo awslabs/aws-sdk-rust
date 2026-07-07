@@ -150,6 +150,8 @@ pub(crate) fn de_create_id_namespace(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -170,7 +172,7 @@ pub(crate) fn de_create_id_namespace(
                 }
                 "idMappingWorkflowProperties" => {
                     builder = builder.set_id_mapping_workflow_properties(
-                            crate::protocol_serde::shape_id_namespace_id_mapping_workflow_properties_list::de_id_namespace_id_mapping_workflow_properties_list(tokens, _value)?
+                            crate::protocol_serde::shape_id_namespace_id_mapping_workflow_properties_list::de_id_namespace_id_mapping_workflow_properties_list(tokens, _value, depth + 1)?
                         );
                 }
                 "idNamespaceArn" => {
@@ -189,7 +191,11 @@ pub(crate) fn de_create_id_namespace(
                 }
                 "inputSourceConfig" => {
                     builder = builder.set_input_source_config(
-                        crate::protocol_serde::shape_id_namespace_input_source_config::de_id_namespace_input_source_config(tokens, _value)?,
+                        crate::protocol_serde::shape_id_namespace_input_source_config::de_id_namespace_input_source_config(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "roleArn" => {
@@ -200,7 +206,7 @@ pub(crate) fn de_create_id_namespace(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "type" => {
                     builder = builder.set_type(

@@ -687,6 +687,8 @@ pub(crate) mod shape_get_percentiles_input;
 
 pub(crate) mod shape_get_statistics_input;
 
+pub(crate) mod shape_get_thing_connectivity_data_input;
+
 pub(crate) mod shape_index_not_ready_exception;
 
 pub(crate) mod shape_internal_exception;
@@ -1433,6 +1435,8 @@ pub(crate) mod shape_command_parameter_value_comparison_operand;
 
 pub(crate) mod shape_command_parameter_value_condition_list;
 
+pub(crate) mod shape_connectivity_filter;
+
 pub(crate) mod shape_custom_code_signing;
 
 pub(crate) mod shape_denied;
@@ -1548,6 +1552,8 @@ pub(crate) mod shape_command_parameter_value_number_range;
 pub(crate) mod shape_destination;
 
 pub(crate) mod shape_explicit_deny;
+
+pub(crate) mod shape_fleet_indexing_api_list;
 
 pub(crate) mod shape_header_list;
 

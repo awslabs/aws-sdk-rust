@@ -66,10 +66,16 @@ pub fn ser_rule(
 pub(crate) fn de_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Rule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -94,27 +100,41 @@ where
                             );
                         }
                         "Statement" => {
-                            builder = builder.set_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value)?);
+                            builder = builder.set_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value, depth + 1)?);
                         }
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_rule_action::de_rule_action(tokens, _value)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_rule_action::de_rule_action(tokens, _value, depth + 1)?);
                         }
                         "OverrideAction" => {
-                            builder = builder.set_override_action(crate::protocol_serde::shape_override_action::de_override_action(tokens, _value)?);
+                            builder = builder.set_override_action(crate::protocol_serde::shape_override_action::de_override_action(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RuleLabels" => {
-                            builder = builder.set_rule_labels(crate::protocol_serde::shape_labels::de_labels(tokens, _value)?);
+                            builder = builder.set_rule_labels(crate::protocol_serde::shape_labels::de_labels(tokens, _value, depth + 1)?);
                         }
                         "VisibilityConfig" => {
-                            builder =
-                                builder.set_visibility_config(crate::protocol_serde::shape_visibility_config::de_visibility_config(tokens, _value)?);
+                            builder = builder.set_visibility_config(crate::protocol_serde::shape_visibility_config::de_visibility_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CaptchaConfig" => {
-                            builder = builder.set_captcha_config(crate::protocol_serde::shape_captcha_config::de_captcha_config(tokens, _value)?);
+                            builder = builder.set_captcha_config(crate::protocol_serde::shape_captcha_config::de_captcha_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ChallengeConfig" => {
-                            builder =
-                                builder.set_challenge_config(crate::protocol_serde::shape_challenge_config::de_challenge_config(tokens, _value)?);
+                            builder = builder.set_challenge_config(crate::protocol_serde::shape_challenge_config::de_challenge_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

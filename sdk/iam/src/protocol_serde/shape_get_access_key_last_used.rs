@@ -49,6 +49,8 @@ pub fn de_get_access_key_last_used(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetAccessKeyLastUsedResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetAccessKeyLastUsedResponse got {start_el:?}"
@@ -79,7 +81,7 @@ pub fn de_get_access_key_last_used(
             s if s.matches("AccessKeyLastUsed") /* AccessKeyLastUsed com.amazonaws.iam.synthetic#GetAccessKeyLastUsedOutput$AccessKeyLastUsed */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_access_key_last_used::de_access_key_last_used(&mut tag)
+                        crate::protocol_serde::shape_access_key_last_used::de_access_key_last_used(&mut tag, depth + 1)
                         ?
                     )
                 ;

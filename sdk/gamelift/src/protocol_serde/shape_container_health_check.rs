@@ -31,16 +31,24 @@ pub fn ser_container_health_check(
 
 pub(crate) fn de_container_health_check(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ContainerHealthCheck, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::ContainerHealthCheckBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::ContainerHealthCheckBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder =
             match decoder.str()?.as_ref() {
                 "Command" => builder.set_command(Some(
-                    crate::protocol_serde::shape_container_command_string_list::de_container_command_string_list(decoder)?,
+                    crate::protocol_serde::shape_container_command_string_list::de_container_command_string_list(decoder, depth + 1)?,
                 )),
                 "Interval" => {
                     ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_interval(Some(decoder.integer()?))))?
@@ -72,13 +80,13 @@ pub(crate) fn de_container_health_check(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

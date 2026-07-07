@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Cluster>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -56,7 +62,7 @@ where
                             )?);
                         }
                         "scheduler" => {
-                            builder = builder.set_scheduler(crate::protocol_serde::shape_scheduler::de_scheduler(tokens, _value)?);
+                            builder = builder.set_scheduler(crate::protocol_serde::shape_scheduler::de_scheduler(tokens, _value, depth + 1)?);
                         }
                         "size" => {
                             builder = builder.set_size(
@@ -67,17 +73,21 @@ where
                         }
                         "slurmConfiguration" => {
                             builder = builder.set_slurm_configuration(
-                                crate::protocol_serde::shape_cluster_slurm_configuration::de_cluster_slurm_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_cluster_slurm_configuration::de_cluster_slurm_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "networking" => {
-                            builder = builder.set_networking(crate::protocol_serde::shape_networking::de_networking(tokens, _value)?);
+                            builder = builder.set_networking(crate::protocol_serde::shape_networking::de_networking(tokens, _value, depth + 1)?);
                         }
                         "endpoints" => {
-                            builder = builder.set_endpoints(crate::protocol_serde::shape_endpoints::de_endpoints(tokens, _value)?);
+                            builder = builder.set_endpoints(crate::protocol_serde::shape_endpoints::de_endpoints(tokens, _value, depth + 1)?);
                         }
                         "errorInfo" => {
-                            builder = builder.set_error_info(crate::protocol_serde::shape_error_info_list::de_error_info_list(tokens, _value)?);
+                            builder = builder.set_error_info(crate::protocol_serde::shape_error_info_list::de_error_info_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -92,68 +92,82 @@ pub(crate) fn de_describe_quota_share(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "capacityLimits" => {
-                    builder = builder.set_capacity_limits(crate::protocol_serde::shape_quota_share_capacity_limits::de_quota_share_capacity_limits(
-                        tokens, _value,
-                    )?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "capacityLimits" => {
+                        builder = builder.set_capacity_limits(
+                            crate::protocol_serde::shape_quota_share_capacity_limits::de_quota_share_capacity_limits(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "jobQueueArn" => {
+                        builder = builder.set_job_queue_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "preemptionConfiguration" => {
+                        builder = builder.set_preemption_configuration(
+                            crate::protocol_serde::shape_quota_share_preemption_configuration::de_quota_share_preemption_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
+                        );
+                    }
+                    "quotaShareArn" => {
+                        builder = builder.set_quota_share_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "quotaShareName" => {
+                        builder = builder.set_quota_share_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "resourceSharingConfiguration" => {
+                        builder = builder.set_resource_sharing_configuration(
+                            crate::protocol_serde::shape_quota_share_resource_sharing_configuration::de_quota_share_resource_sharing_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
+                        );
+                    }
+                    "state" => {
+                        builder = builder.set_state(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::QuotaShareState::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "status" => {
+                        builder = builder.set_status(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::QuotaShareStatus::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "tags" => {
+                        builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "jobQueueArn" => {
-                    builder = builder.set_job_queue_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "preemptionConfiguration" => {
-                    builder = builder.set_preemption_configuration(
-                        crate::protocol_serde::shape_quota_share_preemption_configuration::de_quota_share_preemption_configuration(tokens, _value)?,
-                    );
-                }
-                "quotaShareArn" => {
-                    builder = builder.set_quota_share_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "quotaShareName" => {
-                    builder = builder.set_quota_share_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "resourceSharingConfiguration" => {
-                    builder = builder.set_resource_sharing_configuration(
-                        crate::protocol_serde::shape_quota_share_resource_sharing_configuration::de_quota_share_resource_sharing_configuration(
-                            tokens, _value,
-                        )?,
-                    );
-                }
-                "state" => {
-                    builder = builder.set_state(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::QuotaShareState::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::QuotaShareStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens, _value)?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

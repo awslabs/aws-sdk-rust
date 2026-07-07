@@ -32,5 +32,7 @@ pub fn de_continuous_deployment_policy_config(
             "invalid root, expected ContinuousDeploymentPolicyConfig got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_continuous_deployment_policy_config::de_continuous_deployment_policy_config(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_continuous_deployment_policy_config::de_continuous_deployment_policy_config(&mut decoder, depth + 1)
 }

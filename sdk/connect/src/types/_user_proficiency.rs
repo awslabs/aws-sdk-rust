@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserProficiency {
-    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Connect Customer instance.</p>
     pub attribute_name: ::std::string::String,
-    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Connect Customer instance.</p>
     pub attribute_value: ::std::string::String,
     /// <p>The level of the proficiency. The valid values are 1, 2, 3, 4 and 5.</p>
     pub level: f32,
 }
 impl UserProficiency {
-    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Connect Customer instance.</p>
     pub fn attribute_name(&self) -> &str {
         use std::ops::Deref;
         self.attribute_name.deref()
     }
-    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Connect Customer instance.</p>
     pub fn attribute_value(&self) -> &str {
         use std::ops::Deref;
         self.attribute_value.deref()
@@ -43,33 +43,33 @@ pub struct UserProficiencyBuilder {
     pub(crate) level: ::std::option::Option<f32>,
 }
 impl UserProficiencyBuilder {
-    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Connect Customer instance.</p>
     /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Connect Customer instance.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
-    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Connect Customer instance.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_name
     }
-    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Connect Customer instance.</p>
     /// This field is required.
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Connect Customer instance.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_value = input;
         self
     }
-    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
+    /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Connect Customer instance.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_value
     }

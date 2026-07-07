@@ -42,6 +42,8 @@ pub fn de_update_application(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("UpdateApplicationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected UpdateApplicationResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_update_application(
             s if s.matches("Application") /* Application com.amazonaws.elasticbeanstalk.synthetic#UpdateApplicationOutput$Application */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_application_description::de_application_description(&mut tag)
+                        crate::protocol_serde::shape_application_description::de_application_description(&mut tag, depth + 1)
                         ?
                     )
                 ;

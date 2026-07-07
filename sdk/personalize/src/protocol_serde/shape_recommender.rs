@@ -2,10 +2,16 @@
 pub(crate) fn de_recommender<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Recommender>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,8 +50,11 @@ where
                             );
                         }
                         "recommenderConfig" => {
-                            builder = builder
-                                .set_recommender_config(crate::protocol_serde::shape_recommender_config::de_recommender_config(tokens, _value)?);
+                            builder = builder.set_recommender_config(crate::protocol_serde::shape_recommender_config::de_recommender_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "creationDateTime" => {
                             builder = builder.set_creation_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -75,11 +84,11 @@ where
                         }
                         "latestRecommenderUpdate" => {
                             builder = builder.set_latest_recommender_update(
-                                crate::protocol_serde::shape_recommender_update_summary::de_recommender_update_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_recommender_update_summary::de_recommender_update_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "modelMetrics" => {
-                            builder = builder.set_model_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens, _value)?);
+                            builder = builder.set_model_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

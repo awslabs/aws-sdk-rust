@@ -51,6 +51,8 @@ pub fn de_describe_orderable_db_instance_options(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeOrderableDBInstanceOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeOrderableDBInstanceOptionsResponse got {start_el:?}"
@@ -68,7 +70,7 @@ pub fn de_describe_orderable_db_instance_options(
             s if s.matches("OrderableDBInstanceOptions") /* OrderableDBInstanceOptions com.amazonaws.rds.synthetic#DescribeOrderableDBInstanceOptionsOutput$OrderableDBInstanceOptions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_orderable_db_instance_options_list::de_orderable_db_instance_options_list(&mut tag)
+                        crate::protocol_serde::shape_orderable_db_instance_options_list::de_orderable_db_instance_options_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

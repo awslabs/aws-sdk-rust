@@ -29,7 +29,11 @@ pub fn ser_trusted_key_groups(
 #[allow(clippy::needless_question_mark)]
 pub fn de_trusted_key_groups(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TrustedKeyGroups, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TrustedKeyGroups::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -67,7 +71,7 @@ pub fn de_trusted_key_groups(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#TrustedKeyGroups$Items */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_trusted_key_group_id_list::de_trusted_key_group_id_list(&mut tag)
+                        crate::protocol_serde::shape_trusted_key_group_id_list::de_trusted_key_group_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

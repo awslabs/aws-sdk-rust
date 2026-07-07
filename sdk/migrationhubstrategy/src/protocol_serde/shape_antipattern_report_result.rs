@@ -2,10 +2,16 @@
 pub(crate) fn de_antipattern_report_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AntipatternReportResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,12 +22,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "analyzerName" => {
-                            builder =
-                                builder.set_analyzer_name(crate::protocol_serde::shape_analyzer_name_union::de_analyzer_name_union(tokens, _value)?);
+                            builder = builder.set_analyzer_name(crate::protocol_serde::shape_analyzer_name_union::de_analyzer_name_union(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "antiPatternReportS3Object" => {
-                            builder =
-                                builder.set_anti_pattern_report_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value)?);
+                            builder = builder.set_anti_pattern_report_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "antipatternReportStatus" => {
                             builder = builder.set_antipattern_report_status(

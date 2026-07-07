@@ -15,6 +15,7 @@
 ///     DeploymentLifecycleHookStage::PostProductionTrafficShift => { /* ... */ },
 ///     DeploymentLifecycleHookStage::PostScaleUp => { /* ... */ },
 ///     DeploymentLifecycleHookStage::PostTestTrafficShift => { /* ... */ },
+///     DeploymentLifecycleHookStage::PreProductionTrafficShift => { /* ... */ },
 ///     DeploymentLifecycleHookStage::PreScaleUp => { /* ... */ },
 ///     DeploymentLifecycleHookStage::ProductionTrafficShift => { /* ... */ },
 ///     DeploymentLifecycleHookStage::ReconcileService => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum DeploymentLifecycleHookStage {
     #[allow(missing_docs)] // documentation missing in model
     PostTestTrafficShift,
     #[allow(missing_docs)] // documentation missing in model
+    PreProductionTrafficShift,
+    #[allow(missing_docs)] // documentation missing in model
     PreScaleUp,
     #[allow(missing_docs)] // documentation missing in model
     ProductionTrafficShift,
@@ -71,6 +74,7 @@ impl ::std::convert::From<&str> for DeploymentLifecycleHookStage {
             "POST_PRODUCTION_TRAFFIC_SHIFT" => DeploymentLifecycleHookStage::PostProductionTrafficShift,
             "POST_SCALE_UP" => DeploymentLifecycleHookStage::PostScaleUp,
             "POST_TEST_TRAFFIC_SHIFT" => DeploymentLifecycleHookStage::PostTestTrafficShift,
+            "PRE_PRODUCTION_TRAFFIC_SHIFT" => DeploymentLifecycleHookStage::PreProductionTrafficShift,
             "PRE_SCALE_UP" => DeploymentLifecycleHookStage::PreScaleUp,
             "PRODUCTION_TRAFFIC_SHIFT" => DeploymentLifecycleHookStage::ProductionTrafficShift,
             "RECONCILE_SERVICE" => DeploymentLifecycleHookStage::ReconcileService,
@@ -93,6 +97,7 @@ impl DeploymentLifecycleHookStage {
             DeploymentLifecycleHookStage::PostProductionTrafficShift => "POST_PRODUCTION_TRAFFIC_SHIFT",
             DeploymentLifecycleHookStage::PostScaleUp => "POST_SCALE_UP",
             DeploymentLifecycleHookStage::PostTestTrafficShift => "POST_TEST_TRAFFIC_SHIFT",
+            DeploymentLifecycleHookStage::PreProductionTrafficShift => "PRE_PRODUCTION_TRAFFIC_SHIFT",
             DeploymentLifecycleHookStage::PreScaleUp => "PRE_SCALE_UP",
             DeploymentLifecycleHookStage::ProductionTrafficShift => "PRODUCTION_TRAFFIC_SHIFT",
             DeploymentLifecycleHookStage::ReconcileService => "RECONCILE_SERVICE",
@@ -106,6 +111,7 @@ impl DeploymentLifecycleHookStage {
             "POST_PRODUCTION_TRAFFIC_SHIFT",
             "POST_SCALE_UP",
             "POST_TEST_TRAFFIC_SHIFT",
+            "PRE_PRODUCTION_TRAFFIC_SHIFT",
             "PRE_SCALE_UP",
             "PRODUCTION_TRAFFIC_SHIFT",
             "RECONCILE_SERVICE",
@@ -136,6 +142,7 @@ impl ::std::fmt::Display for DeploymentLifecycleHookStage {
             DeploymentLifecycleHookStage::PostProductionTrafficShift => write!(f, "POST_PRODUCTION_TRAFFIC_SHIFT"),
             DeploymentLifecycleHookStage::PostScaleUp => write!(f, "POST_SCALE_UP"),
             DeploymentLifecycleHookStage::PostTestTrafficShift => write!(f, "POST_TEST_TRAFFIC_SHIFT"),
+            DeploymentLifecycleHookStage::PreProductionTrafficShift => write!(f, "PRE_PRODUCTION_TRAFFIC_SHIFT"),
             DeploymentLifecycleHookStage::PreScaleUp => write!(f, "PRE_SCALE_UP"),
             DeploymentLifecycleHookStage::ProductionTrafficShift => write!(f, "PRODUCTION_TRAFFIC_SHIFT"),
             DeploymentLifecycleHookStage::ReconcileService => write!(f, "RECONCILE_SERVICE"),

@@ -67,6 +67,8 @@ pub fn de_list_access_points_for_object_lambda(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListAccessPointsForObjectLambdaResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListAccessPointsForObjectLambdaResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -90,7 +92,7 @@ pub fn de_list_access_points_for_object_lambda(
             s if s.matches("ObjectLambdaAccessPointList") /* ObjectLambdaAccessPointList com.amazonaws.s3control.synthetic#ListAccessPointsForObjectLambdaOutput$ObjectLambdaAccessPointList */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_object_lambda_access_point_list::de_object_lambda_access_point_list(&mut tag)
+                        crate::protocol_serde::shape_object_lambda_access_point_list::de_object_lambda_access_point_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

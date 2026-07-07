@@ -136,6 +136,20 @@ impl UpdateTrustStoreFluentBuilder {
     pub fn get_ca_certificates_bundle_source(&self) -> &::std::option::Option<crate::types::CaCertificatesBundleSource> {
         self.inner.get_ca_certificates_bundle_source()
     }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn use_client_certificate_ocsp_endpoint(mut self, input: bool) -> Self {
+        self.inner = self.inner.use_client_certificate_ocsp_endpoint(input);
+        self
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn set_use_client_certificate_ocsp_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_use_client_certificate_ocsp_endpoint(input);
+        self
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn get_use_client_certificate_ocsp_endpoint(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_client_certificate_ocsp_endpoint()
+    }
     /// <p>The current version (<code>ETag</code> value) of the trust store you are updating.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());

@@ -2,10 +2,16 @@
 pub(crate) fn de_membership<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Membership>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -84,12 +90,18 @@ where
                             );
                         }
                         "memberAbilities" => {
-                            builder =
-                                builder.set_member_abilities(crate::protocol_serde::shape_member_abilities::de_member_abilities(tokens, _value)?);
+                            builder = builder.set_member_abilities(crate::protocol_serde::shape_member_abilities::de_member_abilities(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "mlMemberAbilities" => {
-                            builder = builder
-                                .set_ml_member_abilities(crate::protocol_serde::shape_ml_member_abilities::de_ml_member_abilities(tokens, _value)?);
+                            builder = builder.set_ml_member_abilities(crate::protocol_serde::shape_ml_member_abilities::de_ml_member_abilities(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "queryLogStatus" => {
                             builder = builder.set_query_log_status(
@@ -107,17 +119,21 @@ where
                         }
                         "defaultResultConfiguration" => {
                             builder = builder.set_default_result_configuration(
-                                    crate::protocol_serde::shape_membership_protected_query_result_configuration::de_membership_protected_query_result_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_membership_protected_query_result_configuration::de_membership_protected_query_result_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         "defaultJobResultConfiguration" => {
                             builder = builder.set_default_job_result_configuration(
-                                    crate::protocol_serde::shape_membership_protected_job_result_configuration::de_membership_protected_job_result_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_membership_protected_job_result_configuration::de_membership_protected_job_result_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         "paymentConfiguration" => {
                             builder = builder.set_payment_configuration(
-                                crate::protocol_serde::shape_membership_payment_configuration::de_membership_payment_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_membership_payment_configuration::de_membership_payment_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "isMetricsEnabled" => {

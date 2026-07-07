@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_route_table_association(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RouteTableAssociation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RouteTableAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -90,7 +94,7 @@ pub fn de_route_table_association(
             s if s.matches("associationState") /* AssociationState com.amazonaws.ec2#RouteTableAssociation$AssociationState */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_route_table_association_state::de_route_table_association_state(&mut tag)
+                        crate::protocol_serde::shape_route_table_association_state::de_route_table_association_state(&mut tag, depth + 1)
                         ?
                     )
                 ;

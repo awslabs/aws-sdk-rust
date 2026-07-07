@@ -6,25 +6,32 @@
 pub struct BgpPeer {
     /// <p>The ID of the BGP peer.</p>
     pub bgp_peer_id: ::std::option::Option<::std::string::String>,
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub asn: i32,
-    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub asn_long: ::std::option::Option<i64>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub auth_key: ::std::option::Option<::std::string::String>,
@@ -68,27 +75,34 @@ impl BgpPeer {
     pub fn bgp_peer_id(&self) -> ::std::option::Option<&str> {
         self.bgp_peer_id.as_deref()
     }
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub fn asn(&self) -> i32 {
         self.asn
     }
-    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub fn asn_long(&self) -> ::std::option::Option<i64> {
         self.asn_long
     }
@@ -183,79 +197,100 @@ impl BgpPeerBuilder {
     pub fn get_bgp_peer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bgp_peer_id
     }
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.asn = input;
         self
     }
-    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// <li>
+    /// <p>If you enter a 4-byte ASN for the <code>asn</code> parameter, the API returns an error.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// </ul>
-    /// </note>
     pub fn get_asn(&self) -> &::std::option::Option<i32> {
         &self.asn
     }
-    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub fn asn_long(mut self, input: i64) -> Self {
         self.asn_long = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub fn set_asn_long(mut self, input: ::std::option::Option<i64>) -> Self {
         self.asn_long = input;
         self
     }
-    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
-    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.</p>
+    /// <p>Note the following limitations when using <code>asnLong</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p></li>
+    /// <li>
+    /// <p><code>asnLong</code> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.</p></li>
+    /// <li>
+    /// <p>When using a 4-byte <code>asnLong</code>, the API response returns <code>0</code> for the legacy <code>asn</code> attribute since 4-byte ASN values exceed the maximum supported value of 2,147,483,647.</p></li>
+    /// <li>
+    /// <p>If you are using a 2-byte ASN, the API response will include the 2-byte value for both the <code>asn</code> and <code>asnLong</code> fields.</p></li>
     /// <li>
     /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
     /// </ul>
-    /// </note>
     pub fn get_asn_long(&self) -> &::std::option::Option<i64> {
         &self.asn_long
     }

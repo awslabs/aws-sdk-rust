@@ -123,6 +123,8 @@ pub(crate) fn de_get_schema_mapping(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,7 +148,9 @@ pub(crate) fn de_get_schema_mapping(
                 }
                 "mappedInputFields" => {
                     builder = builder.set_mapped_input_fields(crate::protocol_serde::shape_schema_input_attributes::de_schema_input_attributes(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "schemaArn" => {
@@ -164,7 +168,7 @@ pub(crate) fn de_get_schema_mapping(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

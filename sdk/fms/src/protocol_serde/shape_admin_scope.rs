@@ -2,10 +2,16 @@
 pub(crate) fn de_admin_scope<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AdminScope>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,19 +22,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AccountScope" => {
-                            builder = builder.set_account_scope(crate::protocol_serde::shape_account_scope::de_account_scope(tokens, _value)?);
+                            builder =
+                                builder.set_account_scope(crate::protocol_serde::shape_account_scope::de_account_scope(tokens, _value, depth + 1)?);
                         }
                         "OrganizationalUnitScope" => {
                             builder = builder.set_organizational_unit_scope(
-                                crate::protocol_serde::shape_organizational_unit_scope::de_organizational_unit_scope(tokens, _value)?,
+                                crate::protocol_serde::shape_organizational_unit_scope::de_organizational_unit_scope(tokens, _value, depth + 1)?,
                             );
                         }
                         "RegionScope" => {
-                            builder = builder.set_region_scope(crate::protocol_serde::shape_region_scope::de_region_scope(tokens, _value)?);
+                            builder =
+                                builder.set_region_scope(crate::protocol_serde::shape_region_scope::de_region_scope(tokens, _value, depth + 1)?);
                         }
                         "PolicyTypeScope" => {
-                            builder =
-                                builder.set_policy_type_scope(crate::protocol_serde::shape_policy_type_scope::de_policy_type_scope(tokens, _value)?);
+                            builder = builder.set_policy_type_scope(crate::protocol_serde::shape_policy_type_scope::de_policy_type_scope(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

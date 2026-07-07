@@ -124,6 +124,9 @@ pub mod describe_container_fleet;
 /// Types for the `DescribeContainerGroupDefinition` operation.
 pub mod describe_container_group_definition;
 
+/// Types for the `DescribeContainerGroupPortMappings` operation.
+pub mod describe_container_group_port_mappings;
+
 /// Types for the `DescribeEC2InstanceLimits` operation.
 pub mod describe_ec2_instance_limits;
 

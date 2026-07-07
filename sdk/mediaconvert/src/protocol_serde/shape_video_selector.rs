@@ -69,10 +69,16 @@ pub fn ser_video_selector(
 pub(crate) fn de_video_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VideoSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -111,7 +117,11 @@ where
                             );
                         }
                         "hdr10Metadata" => {
-                            builder = builder.set_hdr10_metadata(crate::protocol_serde::shape_hdr10_metadata::de_hdr10_metadata(tokens, _value)?);
+                            builder = builder.set_hdr10_metadata(crate::protocol_serde::shape_hdr10_metadata::de_hdr10_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "maxLuminance" => {
                             builder = builder.set_max_luminance(
@@ -165,7 +175,9 @@ where
                         "streams" => {
                             builder = builder.set_streams(
                                 crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

@@ -14,6 +14,8 @@ pub struct EvaluationFormSingleSelectQuestionOption {
     pub automatic_fail: bool,
     /// <p>Whether automatic fail is configured on a single select question.</p>
     pub automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
+    /// <p>The points configuration for point-based scoring.</p>
+    pub points_configuration: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>,
 }
 impl EvaluationFormSingleSelectQuestionOption {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
@@ -38,6 +40,10 @@ impl EvaluationFormSingleSelectQuestionOption {
     pub fn automatic_fail_configuration(&self) -> ::std::option::Option<&crate::types::AutomaticFailConfiguration> {
         self.automatic_fail_configuration.as_ref()
     }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn points_configuration(&self) -> ::std::option::Option<&crate::types::QuestionOptionPointsConfiguration> {
+        self.points_configuration.as_ref()
+    }
 }
 impl EvaluationFormSingleSelectQuestionOption {
     /// Creates a new builder-style object to manufacture [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
@@ -55,6 +61,7 @@ pub struct EvaluationFormSingleSelectQuestionOptionBuilder {
     pub(crate) score: ::std::option::Option<i32>,
     pub(crate) automatic_fail: ::std::option::Option<bool>,
     pub(crate) automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
+    pub(crate) points_configuration: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>,
 }
 impl EvaluationFormSingleSelectQuestionOptionBuilder {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
@@ -129,6 +136,20 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     pub fn get_automatic_fail_configuration(&self) -> &::std::option::Option<crate::types::AutomaticFailConfiguration> {
         &self.automatic_fail_configuration
     }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn points_configuration(mut self, input: crate::types::QuestionOptionPointsConfiguration) -> Self {
+        self.points_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn set_points_configuration(mut self, input: ::std::option::Option<crate::types::QuestionOptionPointsConfiguration>) -> Self {
+        self.points_configuration = input;
+        self
+    }
+    /// <p>The points configuration for point-based scoring.</p>
+    pub fn get_points_configuration(&self) -> &::std::option::Option<crate::types::QuestionOptionPointsConfiguration> {
+        &self.points_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`ref_id`](crate::types::builders::EvaluationFormSingleSelectQuestionOptionBuilder::ref_id)
@@ -152,6 +173,7 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
             score: self.score.unwrap_or_default(),
             automatic_fail: self.automatic_fail.unwrap_or_default(),
             automatic_fail_configuration: self.automatic_fail_configuration,
+            points_configuration: self.points_configuration,
         })
     }
 }

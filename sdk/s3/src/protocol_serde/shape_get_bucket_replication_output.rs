@@ -25,5 +25,7 @@ pub fn de_replication_configuration(
             "invalid root, expected ReplicationConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_replication_configuration::de_replication_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_replication_configuration::de_replication_configuration(&mut decoder, depth + 1)
 }

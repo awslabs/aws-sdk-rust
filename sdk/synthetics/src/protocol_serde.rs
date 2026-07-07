@@ -125,6 +125,8 @@ pub(crate) mod shape_update_canary_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_add_replica_location_input;
+
 pub(crate) mod shape_artifact_config_input;
 
 pub(crate) mod shape_browser_config;
@@ -185,6 +187,8 @@ pub(crate) mod shape_engine_configs;
 
 pub(crate) mod shape_group_summary;
 
+pub(crate) mod shape_multi_location_config;
+
 pub(crate) mod shape_retry_config_input;
 
 pub(crate) mod shape_runtime_version;
@@ -211,10 +215,16 @@ pub(crate) mod shape_dependencies;
 
 pub(crate) mod shape_engine_config;
 
+pub(crate) mod shape_replicas;
+
 pub(crate) mod shape_retry_config_output;
 
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnet_ids;
 
+pub(crate) mod shape_replica;
+
 pub(crate) mod shape_base_screenshot_ignore_coordinates;
+
+pub(crate) mod shape_replication_status;

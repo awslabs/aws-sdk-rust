@@ -2,10 +2,16 @@
 pub(crate) fn de_protected_query<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProtectedQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,11 @@ where
                         }
                         "sqlParameters" => {
                             builder = builder.set_sql_parameters(
-                                crate::protocol_serde::shape_protected_query_sql_parameters::de_protected_query_sql_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_protected_query_sql_parameters::de_protected_query_sql_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "status" => {
@@ -57,33 +67,52 @@ where
                         "resultConfiguration" => {
                             builder = builder.set_result_configuration(
                                 crate::protocol_serde::shape_protected_query_result_configuration::de_protected_query_result_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "statistics" => {
                             builder = builder.set_statistics(crate::protocol_serde::shape_protected_query_statistics::de_protected_query_statistics(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "result" => {
                             builder = builder.set_result(crate::protocol_serde::shape_protected_query_result::de_protected_query_result(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "error" => {
                             builder = builder.set_error(crate::protocol_serde::shape_protected_query_error::de_protected_query_error(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "differentialPrivacy" => {
                             builder = builder.set_differential_privacy(
-                                crate::protocol_serde::shape_differential_privacy_parameters::de_differential_privacy_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_differential_privacy_parameters::de_differential_privacy_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "computeConfiguration" => {
                             builder = builder.set_compute_configuration(
-                                crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "queryComputePayerAccountId" => {
+                            builder = builder.set_query_compute_payer_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

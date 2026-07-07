@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_insights_access_scope_content(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NetworkInsightsAccessScopeContent, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkInsightsAccessScopeContent::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_network_insights_access_scope_content(
             s if s.matches("matchPathSet") /* MatchPaths com.amazonaws.ec2#NetworkInsightsAccessScopeContent$MatchPaths */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_access_scope_path_list::de_access_scope_path_list(&mut tag)
+                        crate::protocol_serde::shape_access_scope_path_list::de_access_scope_path_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_network_insights_access_scope_content(
             s if s.matches("excludePathSet") /* ExcludePaths com.amazonaws.ec2#NetworkInsightsAccessScopeContent$ExcludePaths */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_access_scope_path_list::de_access_scope_path_list(&mut tag)
+                        crate::protocol_serde::shape_access_scope_path_list::de_access_scope_path_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

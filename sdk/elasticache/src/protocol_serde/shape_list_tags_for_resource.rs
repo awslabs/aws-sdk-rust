@@ -311,6 +311,8 @@ pub fn de_list_tags_for_resource(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListTagsForResourceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListTagsForResourceResponse got {start_el:?}"
@@ -328,7 +330,7 @@ pub fn de_list_tags_for_resource(
             s if s.matches("TagList") /* TagList com.amazonaws.elasticache.synthetic#ListTagsForResourceOutput$TagList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

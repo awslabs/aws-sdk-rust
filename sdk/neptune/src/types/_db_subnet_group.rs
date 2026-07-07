@@ -17,6 +17,9 @@ pub struct DbSubnetGroup {
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
     pub db_subnet_group_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The network types supported by the DB subnet group.</p>
+    /// <p>Valid network types include <code>IPV4</code> and <code>DUAL</code>. A DB subnet group supports <code>DUAL</code> if all subnets in the group have both IPv4 and IPv6 CIDRs.</p>
+    pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DbSubnetGroup {
     /// <p>The name of the DB subnet group.</p>
@@ -45,6 +48,13 @@ impl DbSubnetGroup {
     pub fn db_subnet_group_arn(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_arn.as_deref()
     }
+    /// <p>The network types supported by the DB subnet group.</p>
+    /// <p>Valid network types include <code>IPV4</code> and <code>DUAL</code>. A DB subnet group supports <code>DUAL</code> if all subnets in the group have both IPv4 and IPv6 CIDRs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
+    pub fn supported_network_types(&self) -> &[::std::string::String] {
+        self.supported_network_types.as_deref().unwrap_or_default()
+    }
 }
 impl DbSubnetGroup {
     /// Creates a new builder-style object to manufacture [`DbSubnetGroup`](crate::types::DbSubnetGroup).
@@ -63,6 +73,7 @@ pub struct DbSubnetGroupBuilder {
     pub(crate) subnet_group_status: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     pub(crate) db_subnet_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DbSubnetGroupBuilder {
     /// <p>The name of the DB subnet group.</p>
@@ -155,6 +166,29 @@ impl DbSubnetGroupBuilder {
     pub fn get_db_subnet_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_subnet_group_arn
     }
+    /// Appends an item to `supported_network_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_network_types`](Self::set_supported_network_types).
+    ///
+    /// <p>The network types supported by the DB subnet group.</p>
+    /// <p>Valid network types include <code>IPV4</code> and <code>DUAL</code>. A DB subnet group supports <code>DUAL</code> if all subnets in the group have both IPv4 and IPv6 CIDRs.</p>
+    pub fn supported_network_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_network_types.unwrap_or_default();
+        v.push(input.into());
+        self.supported_network_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The network types supported by the DB subnet group.</p>
+    /// <p>Valid network types include <code>IPV4</code> and <code>DUAL</code>. A DB subnet group supports <code>DUAL</code> if all subnets in the group have both IPv4 and IPv6 CIDRs.</p>
+    pub fn set_supported_network_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_network_types = input;
+        self
+    }
+    /// <p>The network types supported by the DB subnet group.</p>
+    /// <p>Valid network types include <code>IPV4</code> and <code>DUAL</code>. A DB subnet group supports <code>DUAL</code> if all subnets in the group have both IPv4 and IPv6 CIDRs.</p>
+    pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_network_types
+    }
     /// Consumes the builder and constructs a [`DbSubnetGroup`](crate::types::DbSubnetGroup).
     pub fn build(self) -> crate::types::DbSubnetGroup {
         crate::types::DbSubnetGroup {
@@ -164,6 +198,7 @@ impl DbSubnetGroupBuilder {
             subnet_group_status: self.subnet_group_status,
             subnets: self.subnets,
             db_subnet_group_arn: self.db_subnet_group_arn,
+            supported_network_types: self.supported_network_types,
         }
     }
 }

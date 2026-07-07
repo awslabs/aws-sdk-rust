@@ -10,9 +10,9 @@ pub struct BatchCreateBillingAdjustmentRequestEntry {
     pub original_invoice_id: ::std::string::String,
     /// <p>The adjustment amount as a string representation of a decimal number in the currency of the invoice.</p>
     pub adjustment_amount: ::std::string::String,
-    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount (e.g., <code>USD</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount. Must match the currency code of the offer associated with the agreement (e.g., <code>USD</code>).</p>
     pub currency_code: ::std::string::String,
-    /// <p>The reason code for the billing adjustment. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>INCORRECT_METERING</code>, <code>TEST_ENVIRONMENT_CHARGES</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the billing adjustment.</p>
     pub adjustment_reason_code: crate::types::BillingAdjustmentReasonCode,
     /// <p>An optional detailed description of the adjustment reason.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -35,12 +35,12 @@ impl BatchCreateBillingAdjustmentRequestEntry {
         use std::ops::Deref;
         self.adjustment_amount.deref()
     }
-    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount (e.g., <code>USD</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount. Must match the currency code of the offer associated with the agreement (e.g., <code>USD</code>).</p>
     pub fn currency_code(&self) -> &str {
         use std::ops::Deref;
         self.currency_code.deref()
     }
-    /// <p>The reason code for the billing adjustment. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>INCORRECT_METERING</code>, <code>TEST_ENVIRONMENT_CHARGES</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the billing adjustment.</p>
     pub fn adjustment_reason_code(&self) -> &crate::types::BillingAdjustmentReasonCode {
         &self.adjustment_reason_code
     }
@@ -132,33 +132,33 @@ impl BatchCreateBillingAdjustmentRequestEntryBuilder {
     pub fn get_adjustment_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.adjustment_amount
     }
-    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount (e.g., <code>USD</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount. Must match the currency code of the offer associated with the agreement (e.g., <code>USD</code>).</p>
     /// This field is required.
     pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount (e.g., <code>USD</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount. Must match the currency code of the offer associated with the agreement (e.g., <code>USD</code>).</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
-    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount (e.g., <code>USD</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code for the adjustment amount. Must match the currency code of the offer associated with the agreement (e.g., <code>USD</code>).</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.currency_code
     }
-    /// <p>The reason code for the billing adjustment. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>INCORRECT_METERING</code>, <code>TEST_ENVIRONMENT_CHARGES</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the billing adjustment.</p>
     /// This field is required.
     pub fn adjustment_reason_code(mut self, input: crate::types::BillingAdjustmentReasonCode) -> Self {
         self.adjustment_reason_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The reason code for the billing adjustment. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>INCORRECT_METERING</code>, <code>TEST_ENVIRONMENT_CHARGES</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the billing adjustment.</p>
     pub fn set_adjustment_reason_code(mut self, input: ::std::option::Option<crate::types::BillingAdjustmentReasonCode>) -> Self {
         self.adjustment_reason_code = input;
         self
     }
-    /// <p>The reason code for the billing adjustment. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>INCORRECT_METERING</code>, <code>TEST_ENVIRONMENT_CHARGES</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the billing adjustment.</p>
     pub fn get_adjustment_reason_code(&self) -> &::std::option::Option<crate::types::BillingAdjustmentReasonCode> {
         &self.adjustment_reason_code
     }

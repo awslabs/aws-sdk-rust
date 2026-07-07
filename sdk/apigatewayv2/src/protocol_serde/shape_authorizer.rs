@@ -2,10 +2,16 @@
 pub(crate) fn de_authorizer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Authorizer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -62,7 +68,9 @@ where
                         }
                         "identitySource" => {
                             builder = builder.set_identity_source(crate::protocol_serde::shape_identity_source_list::de_identity_source_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "identityValidationExpression" => {
@@ -73,8 +81,11 @@ where
                             );
                         }
                         "jwtConfiguration" => {
-                            builder =
-                                builder.set_jwt_configuration(crate::protocol_serde::shape_jwt_configuration::de_jwt_configuration(tokens, _value)?);
+                            builder = builder.set_jwt_configuration(crate::protocol_serde::shape_jwt_configuration::de_jwt_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "name" => {
                             builder = builder.set_name(

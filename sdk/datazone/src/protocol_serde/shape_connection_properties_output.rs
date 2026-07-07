@@ -2,10 +2,16 @@
 pub(crate) fn de_connection_properties_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConnectionPropertiesOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,66 +37,83 @@ where
                     }
                     variant = match key.as_ref() {
                         "athenaProperties" => Some(crate::types::ConnectionPropertiesOutput::AthenaProperties(
-                            crate::protocol_serde::shape_athena_properties_output::de_athena_properties_output(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'athenaProperties' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_athena_properties_output::de_athena_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'athenaProperties' cannot be null")
+                                })?,
                         )),
                         "glueProperties" => Some(crate::types::ConnectionPropertiesOutput::GlueProperties(
-                            crate::protocol_serde::shape_glue_properties_output::de_glue_properties_output(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'glueProperties' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_glue_properties_output::de_glue_properties_output(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'glueProperties' cannot be null"),
+                            )?,
                         )),
                         "hyperPodProperties" => Some(crate::types::ConnectionPropertiesOutput::HyperPodProperties(
-                            crate::protocol_serde::shape_hyper_pod_properties_output::de_hyper_pod_properties_output(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'hyperPodProperties' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_hyper_pod_properties_output::de_hyper_pod_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'hyperPodProperties' cannot be null")
+                                })?,
                         )),
                         "iamProperties" => Some(crate::types::ConnectionPropertiesOutput::IamProperties(
-                            crate::protocol_serde::shape_iam_properties_output::de_iam_properties_output(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iamProperties' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_iam_properties_output::de_iam_properties_output(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iamProperties' cannot be null"),
+                            )?,
                         )),
                         "redshiftProperties" => Some(crate::types::ConnectionPropertiesOutput::RedshiftProperties(
-                            crate::protocol_serde::shape_redshift_properties_output::de_redshift_properties_output(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'redshiftProperties' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_redshift_properties_output::de_redshift_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'redshiftProperties' cannot be null")
+                                })?,
                         )),
                         "sparkEmrProperties" => Some(crate::types::ConnectionPropertiesOutput::SparkEmrProperties(
-                            crate::protocol_serde::shape_spark_emr_properties_output::de_spark_emr_properties_output(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sparkEmrProperties' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_spark_emr_properties_output::de_spark_emr_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sparkEmrProperties' cannot be null")
+                                })?,
                         )),
                         "sparkGlueProperties" => Some(crate::types::ConnectionPropertiesOutput::SparkGlueProperties(
-                            crate::protocol_serde::shape_spark_glue_properties_output::de_spark_glue_properties_output(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sparkGlueProperties' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_spark_glue_properties_output::de_spark_glue_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sparkGlueProperties' cannot be null")
+                                })?,
                         )),
                         "s3Properties" => Some(crate::types::ConnectionPropertiesOutput::S3Properties(
-                            crate::protocol_serde::shape_s3_properties_output::de_s3_properties_output(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Properties' cannot be null")
-                            })?,
-                        )),
-                        "amazonQProperties" => Some(crate::types::ConnectionPropertiesOutput::AmazonQProperties(
-                            crate::protocol_serde::shape_amazon_q_properties_output::de_amazon_q_properties_output(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'amazonQProperties' cannot be null"),
+                            crate::protocol_serde::shape_s3_properties_output::de_s3_properties_output(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Properties' cannot be null"),
                             )?,
                         )),
+                        "snowflakeProperties" => Some(crate::types::ConnectionPropertiesOutput::SnowflakeProperties(
+                            crate::protocol_serde::shape_snowflake_properties_output::de_snowflake_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'snowflakeProperties' cannot be null")
+                                })?,
+                        )),
+                        "amazonQProperties" => Some(crate::types::ConnectionPropertiesOutput::AmazonQProperties(
+                            crate::protocol_serde::shape_amazon_q_properties_output::de_amazon_q_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'amazonQProperties' cannot be null")
+                                })?,
+                        )),
                         "mlflowProperties" => Some(crate::types::ConnectionPropertiesOutput::MlflowProperties(
-                            crate::protocol_serde::shape_mlflow_properties_output::de_mlflow_properties_output(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mlflowProperties' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_mlflow_properties_output::de_mlflow_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mlflowProperties' cannot be null")
+                                })?,
                         )),
                         "workflowsMwaaProperties" => Some(crate::types::ConnectionPropertiesOutput::WorkflowsMwaaProperties(
-                            crate::protocol_serde::shape_workflows_mwaa_properties_output::de_workflows_mwaa_properties_output(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'workflowsMwaaProperties' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_workflows_mwaa_properties_output::de_workflows_mwaa_properties_output(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'workflowsMwaaProperties' cannot be null")
+                            })?,
                         )),
                         "workflowsServerlessProperties" => Some(crate::types::ConnectionPropertiesOutput::WorkflowsServerlessProperties(
                             crate::protocol_serde::shape_workflows_serverless_properties_output::de_workflows_serverless_properties_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -99,8 +122,14 @@ where
                             })?,
                         )),
                         "lakehouseProperties" => Some(crate::types::ConnectionPropertiesOutput::LakehouseProperties(
-                            crate::protocol_serde::shape_lakehouse_properties_output::de_lakehouse_properties_output(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lakehouseProperties' cannot be null"),
+                            crate::protocol_serde::shape_lakehouse_properties_output::de_lakehouse_properties_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lakehouseProperties' cannot be null")
+                                })?,
+                        )),
+                        "vpcProperties" => Some(crate::types::ConnectionPropertiesOutput::VpcProperties(
+                            crate::protocol_serde::shape_vpc_properties_output::de_vpc_properties_output(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vpcProperties' cannot be null"),
                             )?,
                         )),
                         _ => {

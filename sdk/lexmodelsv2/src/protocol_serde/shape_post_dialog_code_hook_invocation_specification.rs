@@ -2,10 +2,16 @@
 pub(crate) fn de_post_dialog_code_hook_invocation_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PostDialogCodeHookInvocationSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,41 +23,50 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "successResponse" => {
                             builder = builder.set_success_response(crate::protocol_serde::shape_response_specification::de_response_specification(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "successNextStep" => {
-                            builder = builder.set_success_next_step(crate::protocol_serde::shape_dialog_state::de_dialog_state(tokens, _value)?);
+                            builder =
+                                builder.set_success_next_step(crate::protocol_serde::shape_dialog_state::de_dialog_state(tokens, _value, depth + 1)?);
                         }
                         "successConditional" => {
                             builder = builder.set_success_conditional(
-                                crate::protocol_serde::shape_conditional_specification::de_conditional_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_conditional_specification::de_conditional_specification(tokens, _value, depth + 1)?,
                             );
                         }
                         "failureResponse" => {
                             builder = builder.set_failure_response(crate::protocol_serde::shape_response_specification::de_response_specification(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "failureNextStep" => {
-                            builder = builder.set_failure_next_step(crate::protocol_serde::shape_dialog_state::de_dialog_state(tokens, _value)?);
+                            builder =
+                                builder.set_failure_next_step(crate::protocol_serde::shape_dialog_state::de_dialog_state(tokens, _value, depth + 1)?);
                         }
                         "failureConditional" => {
                             builder = builder.set_failure_conditional(
-                                crate::protocol_serde::shape_conditional_specification::de_conditional_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_conditional_specification::de_conditional_specification(tokens, _value, depth + 1)?,
                             );
                         }
                         "timeoutResponse" => {
                             builder = builder.set_timeout_response(crate::protocol_serde::shape_response_specification::de_response_specification(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "timeoutNextStep" => {
-                            builder = builder.set_timeout_next_step(crate::protocol_serde::shape_dialog_state::de_dialog_state(tokens, _value)?);
+                            builder =
+                                builder.set_timeout_next_step(crate::protocol_serde::shape_dialog_state::de_dialog_state(tokens, _value, depth + 1)?);
                         }
                         "timeoutConditional" => {
                             builder = builder.set_timeout_conditional(
-                                crate::protocol_serde::shape_conditional_specification::de_conditional_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_conditional_specification::de_conditional_specification(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

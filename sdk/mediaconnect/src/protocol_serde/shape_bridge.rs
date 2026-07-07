@@ -2,10 +2,16 @@
 pub(crate) fn de_bridge<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Bridge>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,66 +20,75 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "bridgeArn" => {
-                            builder = builder.set_bridge_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "bridgeArn" => {
+                                builder = builder.set_bridge_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "bridgeMessages" => {
+                                builder = builder.set_bridge_messages(
+                                    crate::protocol_serde::shape_list_of_message_detail::de_list_of_message_detail(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "bridgeState" => {
+                                builder = builder.set_bridge_state(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::BridgeState::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "egressGatewayBridge" => {
+                                builder = builder.set_egress_gateway_bridge(
+                                    crate::protocol_serde::shape_egress_gateway_bridge::de_egress_gateway_bridge(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ingressGatewayBridge" => {
+                                builder = builder.set_ingress_gateway_bridge(
+                                    crate::protocol_serde::shape_ingress_gateway_bridge::de_ingress_gateway_bridge(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "outputs" => {
+                                builder = builder.set_outputs(crate::protocol_serde::shape_list_of_bridge_output::de_list_of_bridge_output(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "placementArn" => {
+                                builder = builder.set_placement_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "sourceFailoverConfig" => {
+                                builder = builder.set_source_failover_config(crate::protocol_serde::shape_failover_config::de_failover_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "sources" => {
+                                builder = builder.set_sources(crate::protocol_serde::shape_list_of_bridge_source::de_list_of_bridge_source(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "bridgeMessages" => {
-                            builder = builder.set_bridge_messages(crate::protocol_serde::shape_list_of_message_detail::de_list_of_message_detail(
-                                tokens, _value,
-                            )?);
-                        }
-                        "bridgeState" => {
-                            builder = builder.set_bridge_state(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::BridgeState::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "egressGatewayBridge" => {
-                            builder = builder.set_egress_gateway_bridge(
-                                crate::protocol_serde::shape_egress_gateway_bridge::de_egress_gateway_bridge(tokens, _value)?,
-                            );
-                        }
-                        "ingressGatewayBridge" => {
-                            builder = builder.set_ingress_gateway_bridge(
-                                crate::protocol_serde::shape_ingress_gateway_bridge::de_ingress_gateway_bridge(tokens, _value)?,
-                            );
-                        }
-                        "name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_bridge_output::de_list_of_bridge_output(
-                                tokens, _value,
-                            )?);
-                        }
-                        "placementArn" => {
-                            builder = builder.set_placement_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "sourceFailoverConfig" => {
-                            builder =
-                                builder.set_source_failover_config(crate::protocol_serde::shape_failover_config::de_failover_config(tokens, _value)?);
-                        }
-                        "sources" => {
-                            builder = builder.set_sources(crate::protocol_serde::shape_list_of_bridge_source::de_list_of_bridge_source(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

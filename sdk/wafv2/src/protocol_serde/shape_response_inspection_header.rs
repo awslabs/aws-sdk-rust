@@ -30,10 +30,16 @@ pub fn ser_response_inspection_header(
 pub(crate) fn de_response_inspection_header<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResponseInspectionHeader>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,12 +59,12 @@ where
                             }
                             "SuccessValues" => {
                                 builder = builder.set_success_values(
-                                    crate::protocol_serde::shape_response_inspection_header_success_values::de_response_inspection_header_success_values(tokens, _value)?
+                                    crate::protocol_serde::shape_response_inspection_header_success_values::de_response_inspection_header_success_values(tokens, _value, depth + 1)?
                                 );
                             }
                             "FailureValues" => {
                                 builder = builder.set_failure_values(
-                                    crate::protocol_serde::shape_response_inspection_header_failure_values::de_response_inspection_header_failure_values(tokens, _value)?
+                                    crate::protocol_serde::shape_response_inspection_header_failure_values::de_response_inspection_header_failure_values(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

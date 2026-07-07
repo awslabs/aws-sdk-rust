@@ -54,6 +54,10 @@ pub fn ser_support_container_definition_input(
     if let Some(var_13) = &input.vcpu {
         encoder.str("Vcpu").double(*var_13);
     }
+    if let Some(var_14) = &input.linux_capabilities {
+        encoder.str("LinuxCapabilities");
+        crate::protocol_serde::shape_linux_capabilities::ser_linux_capabilities(encoder, var_14)?;
+    }
     encoder.end();
     Ok(())
 }

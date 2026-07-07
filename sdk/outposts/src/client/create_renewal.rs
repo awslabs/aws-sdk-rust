@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`outpost_id(Option<String>)`](crate::operation::create_renewal::CreateRenewalOutput::outpost_id): <p>The ID of the Outpost.</p>
     ///   - [`upfront_price(Option<f32>)`](crate::operation::create_renewal::CreateRenewalOutput::upfront_price): <p>The upfront price of the renewal.</p>
     ///   - [`monthly_recurring_price(Option<f32>)`](crate::operation::create_renewal::CreateRenewalOutput::monthly_recurring_price): <p>The monthly recurring price of the renewal.</p>
+    ///   - [`currency(Option<CurrencyCode>)`](crate::operation::create_renewal::CreateRenewalOutput::currency): <p>The currency of the renewal price.</p>
     /// - On failure, responds with [`SdkError<CreateRenewalError>`](crate::operation::create_renewal::CreateRenewalError)
     pub fn create_renewal(&self) -> crate::operation::create_renewal::builders::CreateRenewalFluentBuilder {
         crate::operation::create_renewal::builders::CreateRenewalFluentBuilder::new(self.handle.clone())

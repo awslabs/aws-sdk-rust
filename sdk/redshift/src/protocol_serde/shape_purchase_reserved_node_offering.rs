@@ -132,6 +132,8 @@ pub fn de_purchase_reserved_node_offering(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("PurchaseReservedNodeOfferingResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected PurchaseReservedNodeOfferingResponse got {start_el:?}"
@@ -149,7 +151,7 @@ pub fn de_purchase_reserved_node_offering(
             s if s.matches("ReservedNode") /* ReservedNode com.amazonaws.redshift.synthetic#PurchaseReservedNodeOfferingOutput$ReservedNode */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_reserved_node::de_reserved_node(&mut tag)
+                        crate::protocol_serde::shape_reserved_node::de_reserved_node(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_contextual_accent_palette<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ContextualAccentPalette>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,16 +22,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Connection" => {
-                            builder = builder.set_connection(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_connection(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Visualization" => {
-                            builder = builder.set_visualization(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_visualization(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Insight" => {
-                            builder = builder.set_insight(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_insight(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         "Automation" => {
-                            builder = builder.set_automation(crate::protocol_serde::shape_palette::de_palette(tokens, _value)?);
+                            builder = builder.set_automation(crate::protocol_serde::shape_palette::de_palette(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

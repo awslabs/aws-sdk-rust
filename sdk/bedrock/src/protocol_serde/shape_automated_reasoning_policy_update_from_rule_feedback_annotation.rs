@@ -21,6 +21,7 @@ pub fn ser_automated_reasoning_policy_update_from_rule_feedback_annotation(
 pub(crate) fn de_automated_reasoning_policy_update_from_rule_feedback_annotation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AutomatedReasoningPolicyUpdateFromRuleFeedbackAnnotation>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,6 +29,11 @@ pub(crate) fn de_automated_reasoning_policy_update_from_rule_feedback_annotation
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ruleIds" => {
                             builder = builder.set_rule_ids(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_rule_id_list::de_automated_reasoning_policy_definition_rule_id_list(tokens, _value)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_rule_id_list::de_automated_reasoning_policy_definition_rule_id_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "feedback" => {

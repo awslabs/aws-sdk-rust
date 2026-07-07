@@ -5,6 +5,8 @@ pub(crate) fn de_resource_in_use_exception_json_err(
 ) -> ::std::result::Result<crate::types::error::builders::ResourceInUseExceptionBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -18,7 +20,11 @@ pub(crate) fn de_resource_in_use_exception_json_err(
                     );
                 }
                 "exampleReference" => {
-                    builder = builder.set_example_reference(crate::protocol_serde::shape_resource_reference::de_resource_reference(tokens, _value)?);
+                    builder = builder.set_example_reference(crate::protocol_serde::shape_resource_reference::de_resource_reference(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Message" => {
                     builder = builder.set_message(

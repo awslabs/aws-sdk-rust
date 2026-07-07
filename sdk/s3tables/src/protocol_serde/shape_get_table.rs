@@ -151,6 +151,8 @@ pub(crate) fn de_get_table(
 ) -> ::std::result::Result<crate::operation::get_table::builders::GetTableOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -185,7 +187,7 @@ pub(crate) fn de_get_table(
                 }
                 "managedTableInformation" => {
                     builder = builder.set_managed_table_information(
-                        crate::protocol_serde::shape_managed_table_information::de_managed_table_information(tokens, _value)?,
+                        crate::protocol_serde::shape_managed_table_information::de_managed_table_information(tokens, _value, depth + 1)?,
                     );
                 }
                 "metadataLocation" => {
@@ -216,7 +218,7 @@ pub(crate) fn de_get_table(
                     );
                 }
                 "namespace" => {
-                    builder = builder.set_namespace(crate::protocol_serde::shape_namespace_list::de_namespace_list(tokens, _value)?);
+                    builder = builder.set_namespace(crate::protocol_serde::shape_namespace_list::de_namespace_list(tokens, _value, depth + 1)?);
                 }
                 "namespaceId" => {
                     builder = builder.set_namespace_id(

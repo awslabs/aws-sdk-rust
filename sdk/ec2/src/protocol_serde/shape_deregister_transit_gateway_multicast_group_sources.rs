@@ -56,6 +56,8 @@ pub fn de_deregister_transit_gateway_multicast_group_sources(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeregisterTransitGatewayMulticastGroupSourcesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeregisterTransitGatewayMulticastGroupSourcesResponse got {start_el:?}"
@@ -66,7 +68,7 @@ pub fn de_deregister_transit_gateway_multicast_group_sources(
             s if s.matches("deregisteredMulticastGroupSources") /* DeregisteredMulticastGroupSources com.amazonaws.ec2.synthetic#DeregisterTransitGatewayMulticastGroupSourcesOutput$DeregisteredMulticastGroupSources */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_multicast_deregistered_group_sources::de_transit_gateway_multicast_deregistered_group_sources(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_multicast_deregistered_group_sources::de_transit_gateway_multicast_deregistered_group_sources(&mut tag, depth + 1)
                         ?
                     )
                 ;

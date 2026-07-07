@@ -112,6 +112,9 @@ pub mod associate_vpc_cidr_block;
 /// Types for the `AttachClassicLinkVpc` operation.
 pub mod attach_classic_link_vpc;
 
+/// Types for the `AttachImageWatermark` operation.
+pub mod attach_image_watermark;
+
 /// Types for the `AttachInternetGateway` operation.
 pub mod attach_internet_gateway;
 
@@ -195,6 +198,9 @@ pub mod create_capacity_reservation;
 
 /// Types for the `CreateCapacityReservationBySplitting` operation.
 pub mod create_capacity_reservation_by_splitting;
+
+/// Types for the `CreateCapacityReservationCancellationQuote` operation.
+pub mod create_capacity_reservation_cancellation_quote;
 
 /// Types for the `CreateCapacityReservationFleet` operation.
 pub mod create_capacity_reservation_fleet;
@@ -805,6 +811,9 @@ pub mod deregister_transit_gateway_multicast_group_sources;
 /// Types for the `DescribeAccountAttributes` operation.
 pub mod describe_account_attributes;
 
+/// Types for the `DescribeAccountVpcEncryptionControl` operation.
+pub mod describe_account_vpc_encryption_control;
+
 /// Types for the `DescribeAddressTransfers` operation.
 pub mod describe_address_transfers;
 
@@ -849,6 +858,9 @@ pub mod describe_capacity_manager_data_exports;
 
 /// Types for the `DescribeCapacityReservationBillingRequests` operation.
 pub mod describe_capacity_reservation_billing_requests;
+
+/// Types for the `DescribeCapacityReservationCancellationQuotes` operation.
+pub mod describe_capacity_reservation_cancellation_quotes;
 
 /// Types for the `DescribeCapacityReservationFleets` operation.
 pub mod describe_capacity_reservation_fleets;
@@ -1020,6 +1032,9 @@ pub mod describe_ipam_external_resource_verification_tokens;
 
 /// Types for the `DescribeIpamPolicies` operation.
 pub mod describe_ipam_policies;
+
+/// Types for the `DescribeIpamPoolAllocations` operation.
+pub mod describe_ipam_pool_allocations;
 
 /// Types for the `DescribeIpamPools` operation.
 pub mod describe_ipam_pools;
@@ -1359,6 +1374,9 @@ pub mod describe_vpn_gateways;
 
 /// Types for the `DetachClassicLinkVpc` operation.
 pub mod detach_classic_link_vpc;
+
+/// Types for the `DetachImageWatermark` operation.
+pub mod detach_image_watermark;
 
 /// Types for the `DetachInternetGateway` operation.
 pub mod detach_internet_gateway;
@@ -1816,6 +1834,9 @@ pub mod list_volumes_in_recycle_bin;
 /// Types for the `LockSnapshot` operation.
 pub mod lock_snapshot;
 
+/// Types for the `ModifyAccountVpcEncryptionControl` operation.
+pub mod modify_account_vpc_encryption_control;
+
 /// Types for the `ModifyAddressAttribute` operation.
 pub mod modify_address_attribute;
 
@@ -1899,6 +1920,9 @@ pub mod modify_ipam_policy_allocation_rules;
 
 /// Types for the `ModifyIpamPool` operation.
 pub mod modify_ipam_pool;
+
+/// Types for the `ModifyIpamPoolAllocation` operation.
+pub mod modify_ipam_pool_allocation;
 
 /// Types for the `ModifyIpamPrefixListResolver` operation.
 pub mod modify_ipam_prefix_list_resolver;
@@ -2022,6 +2046,9 @@ pub mod modify_vpc_endpoint;
 
 /// Types for the `ModifyVpcEndpointConnectionNotification` operation.
 pub mod modify_vpc_endpoint_connection_notification;
+
+/// Types for the `ModifyVpcEndpointPayerResponsibility` operation.
+pub mod modify_vpc_endpoint_payer_responsibility;
 
 /// Types for the `ModifyVpcEndpointServiceConfiguration` operation.
 pub mod modify_vpc_endpoint_service_configuration;

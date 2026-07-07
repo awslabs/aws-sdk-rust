@@ -74,6 +74,8 @@ pub fn de_get_organizations_access_report(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetOrganizationsAccessReportResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetOrganizationsAccessReportResponse got {start_el:?}"
@@ -163,7 +165,7 @@ pub fn de_get_organizations_access_report(
             s if s.matches("AccessDetails") /* AccessDetails com.amazonaws.iam.synthetic#GetOrganizationsAccessReportOutput$AccessDetails */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_access_details::de_access_details(&mut tag)
+                        crate::protocol_serde::shape_access_details::de_access_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -201,7 +203,7 @@ pub fn de_get_organizations_access_report(
             s if s.matches("ErrorDetails") /* ErrorDetails com.amazonaws.iam.synthetic#GetOrganizationsAccessReportOutput$ErrorDetails */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_error_details::de_error_details(&mut tag)
+                        crate::protocol_serde::shape_error_details::de_error_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

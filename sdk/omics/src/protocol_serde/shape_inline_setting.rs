@@ -34,5 +34,8 @@ pub fn ser_inline_setting(
         }
         object_7.finish();
     }
+    if let Some(var_10) = &input.engine_settings {
+        object.key("engineSettings").document(var_10);
+    }
     Ok(())
 }

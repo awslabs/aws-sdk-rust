@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockagentruntime = "1.126.0"
+//! aws-sdk-bedrockagentruntime = "1.131.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateInvocation`](crate::operation::create_invocation) operation has
-/// a [`Client::create_invocation`], function which returns a builder for that operation.
+/// For example, the [`AgenticRetrieveStream`](crate::operation::agentic_retrieve_stream) operation has
+/// a [`Client::agentic_retrieve_stream`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_invocation()
-///     .invocation_id("example")
+/// let result = client.agentic_retrieve_stream()
+///     .next_token("example")
 ///     .send()
 ///     .await;
 /// ```

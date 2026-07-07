@@ -91,6 +91,8 @@ pub fn de_describe_instance_refreshes(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeInstanceRefreshesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeInstanceRefreshesResponse got {start_el:?}"
@@ -108,7 +110,7 @@ pub fn de_describe_instance_refreshes(
             s if s.matches("InstanceRefreshes") /* InstanceRefreshes com.amazonaws.autoscaling.synthetic#DescribeInstanceRefreshesOutput$InstanceRefreshes */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_refreshes::de_instance_refreshes(&mut tag)
+                        crate::protocol_serde::shape_instance_refreshes::de_instance_refreshes(&mut tag, depth + 1)
                         ?
                     )
                 ;

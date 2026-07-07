@@ -2,10 +2,16 @@
 pub(crate) fn de_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Job>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -66,21 +72,32 @@ where
                             )?);
                         }
                         "ExecutionProperty" => {
-                            builder = builder
-                                .set_execution_property(crate::protocol_serde::shape_execution_property::de_execution_property(tokens, _value)?);
+                            builder = builder.set_execution_property(crate::protocol_serde::shape_execution_property::de_execution_property(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_job_command::de_job_command(tokens, _value)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_job_command::de_job_command(tokens, _value, depth + 1)?);
                         }
                         "DefaultArguments" => {
-                            builder = builder.set_default_arguments(crate::protocol_serde::shape_generic_map::de_generic_map(tokens, _value)?);
+                            builder =
+                                builder.set_default_arguments(crate::protocol_serde::shape_generic_map::de_generic_map(tokens, _value, depth + 1)?);
                         }
                         "NonOverridableArguments" => {
-                            builder =
-                                builder.set_non_overridable_arguments(crate::protocol_serde::shape_generic_map::de_generic_map(tokens, _value)?);
+                            builder = builder.set_non_overridable_arguments(crate::protocol_serde::shape_generic_map::de_generic_map(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Connections" => {
-                            builder = builder.set_connections(crate::protocol_serde::shape_connections_list::de_connections_list(tokens, _value)?);
+                            builder = builder.set_connections(crate::protocol_serde::shape_connections_list::de_connections_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MaxRetries" => {
                             builder = builder.set_max_retries(
@@ -131,7 +148,7 @@ where
                         }
                         "NotificationProperty" => {
                             builder = builder.set_notification_property(
-                                crate::protocol_serde::shape_notification_property::de_notification_property(tokens, _value)?,
+                                crate::protocol_serde::shape_notification_property::de_notification_property(tokens, _value, depth + 1)?,
                             );
                         }
                         "GlueVersion" => {
@@ -143,7 +160,11 @@ where
                         }
                         "CodeGenConfigurationNodes" => {
                             builder = builder.set_code_gen_configuration_nodes(
-                                crate::protocol_serde::shape_code_gen_configuration_nodes::de_code_gen_configuration_nodes(tokens, _value)?,
+                                crate::protocol_serde::shape_code_gen_configuration_nodes::de_code_gen_configuration_nodes(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ExecutionClass" => {
@@ -155,7 +176,7 @@ where
                         }
                         "SourceControlDetails" => {
                             builder = builder.set_source_control_details(
-                                crate::protocol_serde::shape_source_control_details::de_source_control_details(tokens, _value)?,
+                                crate::protocol_serde::shape_source_control_details::de_source_control_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "MaintenanceWindow" => {

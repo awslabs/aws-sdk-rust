@@ -42,10 +42,16 @@ pub fn ser_signal_decoder(
 pub(crate) fn de_signal_decoder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SignalDecoder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -77,17 +83,21 @@ where
                             );
                         }
                         "canSignal" => {
-                            builder = builder.set_can_signal(crate::protocol_serde::shape_can_signal::de_can_signal(tokens, _value)?);
+                            builder = builder.set_can_signal(crate::protocol_serde::shape_can_signal::de_can_signal(tokens, _value, depth + 1)?);
                         }
                         "obdSignal" => {
-                            builder = builder.set_obd_signal(crate::protocol_serde::shape_obd_signal::de_obd_signal(tokens, _value)?);
+                            builder = builder.set_obd_signal(crate::protocol_serde::shape_obd_signal::de_obd_signal(tokens, _value, depth + 1)?);
                         }
                         "messageSignal" => {
-                            builder = builder.set_message_signal(crate::protocol_serde::shape_message_signal::de_message_signal(tokens, _value)?);
+                            builder = builder.set_message_signal(crate::protocol_serde::shape_message_signal::de_message_signal(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "customDecodingSignal" => {
                             builder = builder.set_custom_decoding_signal(
-                                crate::protocol_serde::shape_custom_decoding_signal::de_custom_decoding_signal(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_decoding_signal::de_custom_decoding_signal(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetService`](crate::operation::get_service::builders::GetServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_id(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::service_id) / [`set_service_id(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_service_id):<br>required: **true**<br>The unique identifier of the given service.<br>
+    ///   - [`service_id(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::service_id) / [`set_service_id(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_service_id):<br>required: **true**<br><p>The unique identifier of the given service.</p><br>
     /// - On success, responds with [`GetServiceOutput`](crate::operation::get_service::GetServiceOutput) with field(s):
-    ///   - [`service(Option<RegisteredService>)`](crate::operation::get_service::GetServiceOutput::service): Represents a registered service with its configuration and accessible resources.
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_service::GetServiceOutput::tags): Tags associated with the Service.
+    ///   - [`service(Option<RegisteredService>)`](crate::operation::get_service::GetServiceOutput::service): <p>Represents a registered service with its configuration and accessible resources.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_service::GetServiceOutput::tags): <p>Tags associated with the Service.</p>
     /// - On failure, responds with [`SdkError<GetServiceError>`](crate::operation::get_service::GetServiceError)
     pub fn get_service(&self) -> crate::operation::get_service::builders::GetServiceFluentBuilder {
         crate::operation::get_service::builders::GetServiceFluentBuilder::new(self.handle.clone())

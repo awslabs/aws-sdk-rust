@@ -2,10 +2,16 @@
 pub(crate) fn de_domain_name<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DomainName>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,12 +44,12 @@ where
                         }
                         "domainNameConfigurations" => {
                             builder = builder.set_domain_name_configurations(
-                                crate::protocol_serde::shape_domain_name_configurations::de_domain_name_configurations(tokens, _value)?,
+                                crate::protocol_serde::shape_domain_name_configurations::de_domain_name_configurations(tokens, _value, depth + 1)?,
                             );
                         }
                         "mutualTlsAuthentication" => {
                             builder = builder.set_mutual_tls_authentication(
-                                crate::protocol_serde::shape_mutual_tls_authentication::de_mutual_tls_authentication(tokens, _value)?,
+                                crate::protocol_serde::shape_mutual_tls_authentication::de_mutual_tls_authentication(tokens, _value, depth + 1)?,
                             );
                         }
                         "routingMode" => {
@@ -54,7 +60,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

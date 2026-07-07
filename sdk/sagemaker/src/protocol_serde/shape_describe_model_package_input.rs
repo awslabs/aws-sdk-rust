@@ -6,5 +6,8 @@ pub fn ser_describe_model_package_input_input(
     if let Some(var_1) = &input.model_package_name {
         object.key("ModelPackageName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.included_data {
+        object.key("IncludedData").string(var_2.as_str());
+    }
     Ok(())
 }

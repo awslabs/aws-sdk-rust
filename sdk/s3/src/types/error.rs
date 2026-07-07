@@ -9,11 +9,15 @@ pub use crate::types::error::_bucket_already_owned_by_you::BucketAlreadyOwnedByY
 
 pub use crate::types::error::_no_such_bucket::NoSuchBucket;
 
-pub use crate::types::error::_invalid_object_state::InvalidObjectState;
-
 pub use crate::types::error::_no_such_key::NoSuchKey;
 
+pub use crate::types::error::_invalid_object_state::InvalidObjectState;
+
+pub use crate::types::error::_no_such_annotation::NoSuchAnnotation;
+
 pub use crate::types::error::_not_found::NotFound;
+
+pub use crate::types::error::_invalid_prefix::InvalidPrefix;
 
 pub use crate::types::error::_encryption_type_mismatch::EncryptionTypeMismatch;
 
@@ -22,6 +26,14 @@ pub use crate::types::error::_invalid_request::InvalidRequest;
 pub use crate::types::error::_invalid_write_offset::InvalidWriteOffset;
 
 pub use crate::types::error::_too_many_parts::TooManyParts;
+
+pub use crate::types::error::_annotation_limit_exceeded::AnnotationLimitExceeded;
+
+pub use crate::types::error::_annotation_name_too_long::AnnotationNameTooLong;
+
+pub use crate::types::error::_invalid_annotation_name::InvalidAnnotationName;
+
+pub use crate::types::error::_unsupported_media_type::UnsupportedMediaType;
 
 pub use crate::types::error::_idempotency_parameter_mismatch::IdempotencyParameterMismatch;
 
@@ -129,6 +141,10 @@ impl ::aws_types::request_id::RequestId for crate::types::error::SelectObjectCon
 
 mod _access_denied;
 
+mod _annotation_limit_exceeded;
+
+mod _annotation_name_too_long;
+
 mod _bucket_already_exists;
 
 mod _bucket_already_owned_by_you;
@@ -137,11 +153,17 @@ mod _encryption_type_mismatch;
 
 mod _idempotency_parameter_mismatch;
 
+mod _invalid_annotation_name;
+
 mod _invalid_object_state;
+
+mod _invalid_prefix;
 
 mod _invalid_request;
 
 mod _invalid_write_offset;
+
+mod _no_such_annotation;
 
 mod _no_such_bucket;
 
@@ -156,6 +178,8 @@ mod _object_already_in_active_tier_error;
 mod _object_not_in_active_tier_error;
 
 mod _too_many_parts;
+
+mod _unsupported_media_type;
 
 /// Builders
 pub mod builders;

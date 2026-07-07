@@ -115,6 +115,8 @@ pub fn de_delete_user_group(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteUserGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteUserGroupResponse got {start_el:?}"
@@ -171,7 +173,7 @@ pub fn de_delete_user_group(
             s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$UserIds */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_user_id_list::de_user_id_list(&mut tag)
+                        crate::protocol_serde::shape_user_id_list::de_user_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -194,7 +196,7 @@ pub fn de_delete_user_group(
             s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$PendingChanges */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_user_group_pending_changes::de_user_group_pending_changes(&mut tag)
+                        crate::protocol_serde::shape_user_group_pending_changes::de_user_group_pending_changes(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -204,7 +206,7 @@ pub fn de_delete_user_group(
             s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$ReplicationGroups */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_ug_replication_group_id_list::de_ug_replication_group_id_list(&mut tag)
+                        crate::protocol_serde::shape_ug_replication_group_id_list::de_ug_replication_group_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -214,7 +216,7 @@ pub fn de_delete_user_group(
             s if s.matches("ServerlessCaches") /* ServerlessCaches com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$ServerlessCaches */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_ug_serverless_cache_id_list::de_ug_serverless_cache_id_list(&mut tag)
+                        crate::protocol_serde::shape_ug_serverless_cache_id_list::de_ug_serverless_cache_id_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

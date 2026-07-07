@@ -2,10 +2,16 @@
 pub(crate) fn de_instance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Instance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -43,7 +49,11 @@ where
                             )?);
                         }
                         "location" => {
-                            builder = builder.set_location(crate::protocol_serde::shape_resource_location::de_resource_location(tokens, _value)?);
+                            builder = builder.set_location(crate::protocol_serde::shape_resource_location::de_resource_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceType" => {
                             builder = builder.set_resource_type(
@@ -53,7 +63,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }
                         "blueprintId" => {
                             builder = builder.set_blueprint_id(
@@ -77,7 +87,7 @@ where
                             );
                         }
                         "addOns" => {
-                            builder = builder.set_add_ons(crate::protocol_serde::shape_add_on_list::de_add_on_list(tokens, _value)?);
+                            builder = builder.set_add_ons(crate::protocol_serde::shape_add_on_list::de_add_on_list(tokens, _value, depth + 1)?);
                         }
                         "isStaticIp" => {
                             builder = builder.set_is_static_ip(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -97,8 +107,11 @@ where
                             );
                         }
                         "ipv6Addresses" => {
-                            builder =
-                                builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(tokens, _value)?);
+                            builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ipAddressType" => {
                             builder = builder.set_ip_address_type(
@@ -108,14 +121,21 @@ where
                             );
                         }
                         "hardware" => {
-                            builder = builder.set_hardware(crate::protocol_serde::shape_instance_hardware::de_instance_hardware(tokens, _value)?);
+                            builder = builder.set_hardware(crate::protocol_serde::shape_instance_hardware::de_instance_hardware(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "networking" => {
-                            builder =
-                                builder.set_networking(crate::protocol_serde::shape_instance_networking::de_instance_networking(tokens, _value)?);
+                            builder = builder.set_networking(crate::protocol_serde::shape_instance_networking::de_instance_networking(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "state" => {
-                            builder = builder.set_state(crate::protocol_serde::shape_instance_state::de_instance_state(tokens, _value)?);
+                            builder = builder.set_state(crate::protocol_serde::shape_instance_state::de_instance_state(tokens, _value, depth + 1)?);
                         }
                         "username" => {
                             builder = builder.set_username(
@@ -133,7 +153,7 @@ where
                         }
                         "metadataOptions" => {
                             builder = builder.set_metadata_options(
-                                crate::protocol_serde::shape_instance_metadata_options::de_instance_metadata_options(tokens, _value)?,
+                                crate::protocol_serde::shape_instance_metadata_options::de_instance_metadata_options(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

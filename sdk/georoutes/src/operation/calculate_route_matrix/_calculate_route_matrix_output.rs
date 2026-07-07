@@ -10,7 +10,7 @@ pub struct CalculateRouteMatrixOutput {
     /// <p>The calculated route matrix containing the results for all pairs of Origins to Destination positions. Each row corresponds to one entry in Origins. Each entry in the row corresponds to the route from that entry in Origins to an entry in Destination positions.</p>
     pub route_matrix: ::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>,
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
-    /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
+    /// <p>When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     /// </note>
     pub routing_boundary: ::std::option::Option<crate::types::RouteMatrixBoundary>,
     _request_id: Option<String>,
@@ -31,7 +31,7 @@ impl CalculateRouteMatrixOutput {
         self.route_matrix.deref()
     }
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
-    /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
+    /// <p>When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     /// </note>
     pub fn routing_boundary(&self) -> ::std::option::Option<&crate::types::RouteMatrixBoundary> {
         self.routing_boundary.as_ref()
@@ -111,7 +111,7 @@ impl CalculateRouteMatrixOutputBuilder {
         &self.route_matrix
     }
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
-    /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
+    /// <p>When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     /// </note>
     /// This field is required.
     pub fn routing_boundary(mut self, input: crate::types::RouteMatrixBoundary) -> Self {
@@ -119,14 +119,14 @@ impl CalculateRouteMatrixOutputBuilder {
         self
     }
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
-    /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
+    /// <p>When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     /// </note>
     pub fn set_routing_boundary(mut self, input: ::std::option::Option<crate::types::RouteMatrixBoundary>) -> Self {
         self.routing_boundary = input;
         self
     }
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
-    /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
+    /// <p>When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     /// </note>
     pub fn get_routing_boundary(&self) -> &::std::option::Option<crate::types::RouteMatrixBoundary> {
         &self.routing_boundary

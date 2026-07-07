@@ -22,6 +22,8 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -88,6 +90,8 @@ impl DescribeOrderableDbInstanceOptionsInput {
     /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
@@ -197,6 +201,8 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -244,6 +250,8 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -289,6 +297,8 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>

@@ -6,5 +6,17 @@ pub fn ser_inference_settings(
     if let Some(var_1) = &input.feed_arn {
         object.key("feedArn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.audio_feed_inputs {
+        let mut array_3 = object.key("audioFeedInputs").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_audio_feed_input::ser_audio_feed_input(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }

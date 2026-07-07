@@ -16,6 +16,7 @@
 ///     MemoryStatus::Creating => { /* ... */ },
 ///     MemoryStatus::Deleting => { /* ... */ },
 ///     MemoryStatus::Failed => { /* ... */ },
+///     MemoryStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum MemoryStatus {
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for MemoryStatus {
             "CREATING" => MemoryStatus::Creating,
             "DELETING" => MemoryStatus::Deleting,
             "FAILED" => MemoryStatus::Failed,
+            "UPDATING" => MemoryStatus::Updating,
             other => MemoryStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl MemoryStatus {
             MemoryStatus::Creating => "CREATING",
             MemoryStatus::Deleting => "DELETING",
             MemoryStatus::Failed => "FAILED",
+            MemoryStatus::Updating => "UPDATING",
             MemoryStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED"]
+        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for MemoryStatus {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for MemoryStatus {
             MemoryStatus::Creating => write!(f, "CREATING"),
             MemoryStatus::Deleting => write!(f, "DELETING"),
             MemoryStatus::Failed => write!(f, "FAILED"),
+            MemoryStatus::Updating => write!(f, "UPDATING"),
             MemoryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

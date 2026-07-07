@@ -123,17 +123,17 @@ impl InsertAdBreakFluentBuilder {
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_arn()
     }
-    /// <p>Maximum duration of the ad break, in seconds.</p>
+    /// <p>Duration of the ad break, in seconds.</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.duration_seconds(input);
         self
     }
-    /// <p>Maximum duration of the ad break, in seconds.</p>
+    /// <p>Duration of the ad break, in seconds.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration_seconds(input);
         self
     }
-    /// <p>Maximum duration of the ad break, in seconds.</p>
+    /// <p>Duration of the ad break, in seconds.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_seconds()
     }

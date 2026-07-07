@@ -363,6 +363,8 @@ pub fn de_publish_batch(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("PublishBatchResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected PublishBatchResponse got {start_el:?}"
@@ -380,7 +382,7 @@ pub fn de_publish_batch(
             s if s.matches("Successful") /* Successful com.amazonaws.sns.synthetic#PublishBatchOutput$Successful */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_publish_batch_result_entry_list::de_publish_batch_result_entry_list(&mut tag)
+                        crate::protocol_serde::shape_publish_batch_result_entry_list::de_publish_batch_result_entry_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -390,7 +392,7 @@ pub fn de_publish_batch(
             s if s.matches("Failed") /* Failed com.amazonaws.sns.synthetic#PublishBatchOutput$Failed */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_batch_result_error_entry_list::de_batch_result_error_entry_list(&mut tag)
+                        crate::protocol_serde::shape_batch_result_error_entry_list::de_batch_result_error_entry_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

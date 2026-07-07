@@ -6,7 +6,7 @@
 pub struct Address {
     /// <p>The name of the contact.</p>
     pub contact_name: ::std::string::String,
-    /// <p>The phone number of the contact.</p>
+    /// <p>The phone number of the contact, including the country code (for example, <code>+12065550100</code>).</p>
     pub contact_phone_number: ::std::string::String,
     /// <p>The first line of the address.</p>
     pub address_line1: ::std::string::String,
@@ -33,7 +33,7 @@ impl Address {
         use std::ops::Deref;
         self.contact_name.deref()
     }
-    /// <p>The phone number of the contact.</p>
+    /// <p>The phone number of the contact, including the country code (for example, <code>+12065550100</code>).</p>
     pub fn contact_phone_number(&self) -> &str {
         use std::ops::Deref;
         self.contact_phone_number.deref()
@@ -119,18 +119,18 @@ impl AddressBuilder {
     pub fn get_contact_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_name
     }
-    /// <p>The phone number of the contact.</p>
+    /// <p>The phone number of the contact, including the country code (for example, <code>+12065550100</code>).</p>
     /// This field is required.
     pub fn contact_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_phone_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The phone number of the contact.</p>
+    /// <p>The phone number of the contact, including the country code (for example, <code>+12065550100</code>).</p>
     pub fn set_contact_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_phone_number = input;
         self
     }
-    /// <p>The phone number of the contact.</p>
+    /// <p>The phone number of the contact, including the country code (for example, <code>+12065550100</code>).</p>
     pub fn get_contact_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_phone_number
     }

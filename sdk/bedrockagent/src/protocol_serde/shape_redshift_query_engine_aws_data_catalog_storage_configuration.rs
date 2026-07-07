@@ -18,6 +18,7 @@ pub fn ser_redshift_query_engine_aws_data_catalog_storage_configuration(
 pub(crate) fn de_redshift_query_engine_aws_data_catalog_storage_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::RedshiftQueryEngineAwsDataCatalogStorageConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -25,6 +26,11 @@ pub(crate) fn de_redshift_query_engine_aws_data_catalog_storage_configuration<'a
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,7 +42,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tableNames" => {
                             builder = builder.set_table_names(
-                                crate::protocol_serde::shape_aws_data_catalog_table_names::de_aws_data_catalog_table_names(tokens, _value)?,
+                                crate::protocol_serde::shape_aws_data_catalog_table_names::de_aws_data_catalog_table_names(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

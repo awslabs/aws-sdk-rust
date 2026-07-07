@@ -32,9 +32,9 @@ pub struct AssessmentEvidenceFolder {
     pub evidence_by_type_configuration_data_count: i32,
     /// <p>The number of evidence that falls under the manual category. This evidence is imported manually.</p>
     pub evidence_by_type_manual_count: i32,
-    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.</p>
+    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub CSPM.</p>
     pub evidence_by_type_compliance_check_count: i32,
-    /// <p>The total number of issues that were reported directly from Security Hub, Config, or both.</p>
+    /// <p>The total number of issues that were reported directly from Security Hub CSPM, Config, or both.</p>
     pub evidence_by_type_compliance_check_issues_count: i32,
     /// <p>The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs.</p>
     pub evidence_by_type_user_activity_count: i32,
@@ -98,11 +98,11 @@ impl AssessmentEvidenceFolder {
     pub fn evidence_by_type_manual_count(&self) -> i32 {
         self.evidence_by_type_manual_count
     }
-    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.</p>
+    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub CSPM.</p>
     pub fn evidence_by_type_compliance_check_count(&self) -> i32 {
         self.evidence_by_type_compliance_check_count
     }
-    /// <p>The total number of issues that were reported directly from Security Hub, Config, or both.</p>
+    /// <p>The total number of issues that were reported directly from Security Hub CSPM, Config, or both.</p>
     pub fn evidence_by_type_compliance_check_issues_count(&self) -> i32 {
         self.evidence_by_type_compliance_check_issues_count
     }
@@ -342,31 +342,31 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn get_evidence_by_type_manual_count(&self) -> &::std::option::Option<i32> {
         &self.evidence_by_type_manual_count
     }
-    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.</p>
+    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub CSPM.</p>
     pub fn evidence_by_type_compliance_check_count(mut self, input: i32) -> Self {
         self.evidence_by_type_compliance_check_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.</p>
+    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub CSPM.</p>
     pub fn set_evidence_by_type_compliance_check_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evidence_by_type_compliance_check_count = input;
         self
     }
-    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.</p>
+    /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub CSPM.</p>
     pub fn get_evidence_by_type_compliance_check_count(&self) -> &::std::option::Option<i32> {
         &self.evidence_by_type_compliance_check_count
     }
-    /// <p>The total number of issues that were reported directly from Security Hub, Config, or both.</p>
+    /// <p>The total number of issues that were reported directly from Security Hub CSPM, Config, or both.</p>
     pub fn evidence_by_type_compliance_check_issues_count(mut self, input: i32) -> Self {
         self.evidence_by_type_compliance_check_issues_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of issues that were reported directly from Security Hub, Config, or both.</p>
+    /// <p>The total number of issues that were reported directly from Security Hub CSPM, Config, or both.</p>
     pub fn set_evidence_by_type_compliance_check_issues_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evidence_by_type_compliance_check_issues_count = input;
         self
     }
-    /// <p>The total number of issues that were reported directly from Security Hub, Config, or both.</p>
+    /// <p>The total number of issues that were reported directly from Security Hub CSPM, Config, or both.</p>
     pub fn get_evidence_by_type_compliance_check_issues_count(&self) -> &::std::option::Option<i32> {
         &self.evidence_by_type_compliance_check_issues_count
     }

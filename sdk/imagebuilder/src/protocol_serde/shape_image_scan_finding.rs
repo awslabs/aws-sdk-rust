@@ -2,10 +2,16 @@
 pub(crate) fn de_image_scan_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ImageScanFinding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,7 +64,7 @@ where
                             );
                         }
                         "remediation" => {
-                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value)?);
+                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value, depth + 1)?);
                         }
                         "severity" => {
                             builder = builder.set_severity(
@@ -86,12 +92,16 @@ where
                         }
                         "inspectorScoreDetails" => {
                             builder = builder.set_inspector_score_details(
-                                crate::protocol_serde::shape_inspector_score_details::de_inspector_score_details(tokens, _value)?,
+                                crate::protocol_serde::shape_inspector_score_details::de_inspector_score_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "packageVulnerabilityDetails" => {
                             builder = builder.set_package_vulnerability_details(
-                                crate::protocol_serde::shape_package_vulnerability_details::de_package_vulnerability_details(tokens, _value)?,
+                                crate::protocol_serde::shape_package_vulnerability_details::de_package_vulnerability_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "fixAvailable" => {

@@ -39,21 +39,21 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Possible states of an execution
+/// <p>Possible states of an execution</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExecutionStatus {
-    /// Execution has been canceled
+    /// <p>Execution has been canceled</p>
     Canceled,
-    /// Execution has failed
+    /// <p>Execution has failed</p>
     Failed,
-    /// Execution is currently running
+    /// <p>Execution is currently running</p>
     Running,
-    /// Execution has been stopped
+    /// <p>Execution has been stopped</p>
     Stopped,
-    /// Unlike in the case of user-initiated Cancelation, a customer won't be billed
+    /// <p>Unlike in the case of user-initiated Cancelation, a customer won't be billed</p>
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

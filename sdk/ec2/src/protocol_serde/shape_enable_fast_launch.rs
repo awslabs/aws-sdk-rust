@@ -40,6 +40,8 @@ pub fn de_enable_fast_launch(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("EnableFastLaunchResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected EnableFastLaunchResponse got {start_el:?}"
@@ -77,7 +79,7 @@ pub fn de_enable_fast_launch(
             s if s.matches("snapshotConfiguration") /* SnapshotConfiguration com.amazonaws.ec2.synthetic#EnableFastLaunchOutput$SnapshotConfiguration */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_fast_launch_snapshot_configuration_response::de_fast_launch_snapshot_configuration_response(&mut tag)
+                        crate::protocol_serde::shape_fast_launch_snapshot_configuration_response::de_fast_launch_snapshot_configuration_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -87,7 +89,7 @@ pub fn de_enable_fast_launch(
             s if s.matches("launchTemplate") /* LaunchTemplate com.amazonaws.ec2.synthetic#EnableFastLaunchOutput$LaunchTemplate */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_fast_launch_launch_template_specification_response::de_fast_launch_launch_template_specification_response(&mut tag)
+                        crate::protocol_serde::shape_fast_launch_launch_template_specification_response::de_fast_launch_launch_template_specification_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

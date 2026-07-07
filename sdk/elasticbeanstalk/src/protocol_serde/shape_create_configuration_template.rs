@@ -108,6 +108,8 @@ pub fn de_create_configuration_template(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateConfigurationTemplateResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateConfigurationTemplateResponse got {start_el:?}"
@@ -245,7 +247,7 @@ pub fn de_create_configuration_template(
             s if s.matches("OptionSettings") /* OptionSettings com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$OptionSettings */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_configuration_option_settings_list::de_configuration_option_settings_list(&mut tag)
+                        crate::protocol_serde::shape_configuration_option_settings_list::de_configuration_option_settings_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

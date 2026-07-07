@@ -700,4 +700,18 @@ impl UpdateServiceFluentBuilder {
     pub fn get_vpc_lattice_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>> {
         self.inner.get_vpc_lattice_configurations()
     }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn monitoring(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.inner = self.inner.monitoring(input);
+        self
+    }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.inner = self.inner.set_monitoring(input);
+        self
+    }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        self.inner.get_monitoring()
+    }
 }

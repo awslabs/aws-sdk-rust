@@ -2,10 +2,16 @@
 pub(crate) fn de_identity_provider_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::IdentityProviderSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,11 +22,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IdentityProvider" => {
-                            builder =
-                                builder.set_identity_provider(crate::protocol_serde::shape_identity_provider::de_identity_provider(tokens, _value)?);
+                            builder = builder.set_identity_provider(crate::protocol_serde::shape_identity_provider::de_identity_provider(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Settings" => {
-                            builder = builder.set_settings(crate::protocol_serde::shape_settings::de_settings(tokens, _value)?);
+                            builder = builder.set_settings(crate::protocol_serde::shape_settings::de_settings(tokens, _value, depth + 1)?);
                         }
                         "Product" => {
                             builder = builder.set_product(

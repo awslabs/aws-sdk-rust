@@ -2,10 +2,16 @@
 pub(crate) fn de_review_template_answer_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReviewTemplateAnswerSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,15 +43,18 @@ where
                             );
                         }
                         "Choices" => {
-                            builder = builder.set_choices(crate::protocol_serde::shape_choices::de_choices(tokens, _value)?);
+                            builder = builder.set_choices(crate::protocol_serde::shape_choices::de_choices(tokens, _value, depth + 1)?);
                         }
                         "SelectedChoices" => {
-                            builder =
-                                builder.set_selected_choices(crate::protocol_serde::shape_selected_choices::de_selected_choices(tokens, _value)?);
+                            builder = builder.set_selected_choices(crate::protocol_serde::shape_selected_choices::de_selected_choices(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ChoiceAnswerSummaries" => {
                             builder = builder.set_choice_answer_summaries(
-                                crate::protocol_serde::shape_choice_answer_summaries::de_choice_answer_summaries(tokens, _value)?,
+                                crate::protocol_serde::shape_choice_answer_summaries::de_choice_answer_summaries(tokens, _value, depth + 1)?,
                             );
                         }
                         "IsApplicable" => {

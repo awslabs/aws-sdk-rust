@@ -137,6 +137,8 @@ pub(crate) fn de_create_job(
 ) -> ::std::result::Result<crate::operation::create_job::builders::CreateJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -150,8 +152,11 @@ pub(crate) fn de_create_job(
                     );
                 }
                 "AssetConfiguration" => {
-                    builder =
-                        builder.set_asset_configuration(crate::protocol_serde::shape_asset_configuration::de_asset_configuration(tokens, _value)?);
+                    builder = builder.set_asset_configuration(crate::protocol_serde::shape_asset_configuration::de_asset_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -160,10 +165,18 @@ pub(crate) fn de_create_job(
                     )?);
                 }
                 "Details" => {
-                    builder = builder.set_details(crate::protocol_serde::shape_response_details::de_response_details(tokens, _value)?);
+                    builder = builder.set_details(crate::protocol_serde::shape_response_details::de_response_details(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_list_of_job_error::de_list_of_job_error(tokens, _value)?);
+                    builder = builder.set_errors(crate::protocol_serde::shape_list_of_job_error::de_list_of_job_error(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Id" => {
                     builder = builder.set_id(

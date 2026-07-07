@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_recommender::GetRecommenderOutput::created_at): <p>The timestamp of when the recommender was created.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_recommender::GetRecommenderOutput::failure_reason): <p>If the recommender fails, provides the reason for the failure.</p>
     ///   - [`latest_recommender_update(Option<RecommenderUpdate>)`](crate::operation::get_recommender::GetRecommenderOutput::latest_recommender_update): <p>Information about the most recent update performed on the recommender, including status and timestamp.</p>
+    ///   - [`active_recommender_version_name(Option<String>)`](crate::operation::get_recommender::GetRecommenderOutput::active_recommender_version_name): <p>The name of the recommender version currently serving recommendations. Omitted when no active recommender version is set.</p>
     ///   - [`training_metrics(Option<Vec::<TrainingMetrics>>)`](crate::operation::get_recommender::GetRecommenderOutput::training_metrics): <p>A set of metrics that provide information about the recommender's training performance and accuracy.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_recommender::GetRecommenderOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetRecommenderError>`](crate::operation::get_recommender::GetRecommenderError)

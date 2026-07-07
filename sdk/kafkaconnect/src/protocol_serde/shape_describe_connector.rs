@@ -155,118 +155,138 @@ pub(crate) fn de_describe_connector(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "capacity" => {
-                    builder = builder.set_capacity(crate::protocol_serde::shape_capacity_description::de_capacity_description(
-                        tokens, _value,
-                    )?);
-                }
-                "connectorArn" => {
-                    builder = builder.set_connector_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "connectorConfiguration" => {
-                    builder = builder.set_connector_configuration(crate::protocol_serde::shape_connector_configuration::de_connector_configuration(
-                        tokens, _value,
-                    )?);
-                }
-                "connectorDescription" => {
-                    builder = builder.set_connector_description(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "connectorName" => {
-                    builder = builder.set_connector_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "connectorState" => {
-                    builder = builder.set_connector_state(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorState::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "creationTime" => {
-                    builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                    )?);
-                }
-                "currentVersion" => {
-                    builder = builder.set_current_version(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "kafkaCluster" => {
-                    builder = builder.set_kafka_cluster(crate::protocol_serde::shape_kafka_cluster_description::de_kafka_cluster_description(
-                        tokens, _value,
-                    )?);
-                }
-                "kafkaClusterClientAuthentication" => {
-                    builder = builder.set_kafka_cluster_client_authentication(
-                            crate::protocol_serde::shape_kafka_cluster_client_authentication_description::de_kafka_cluster_client_authentication_description(tokens, _value)?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "capacity" => {
+                        builder = builder.set_capacity(crate::protocol_serde::shape_capacity_description::de_capacity_description(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "connectorArn" => {
+                        builder = builder.set_connector_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                         );
-                }
-                "kafkaClusterEncryptionInTransit" => {
-                    builder = builder.set_kafka_cluster_encryption_in_transit(
-                            crate::protocol_serde::shape_kafka_cluster_encryption_in_transit_description::de_kafka_cluster_encryption_in_transit_description(tokens, _value)?
+                    }
+                    "connectorConfiguration" => {
+                        builder = builder.set_connector_configuration(
+                            crate::protocol_serde::shape_connector_configuration::de_connector_configuration(tokens, _value, depth + 1)?,
                         );
+                    }
+                    "connectorDescription" => {
+                        builder = builder.set_connector_description(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "connectorName" => {
+                        builder = builder.set_connector_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "connectorState" => {
+                        builder = builder.set_connector_state(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorState::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "creationTime" => {
+                        builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                        )?);
+                    }
+                    "currentVersion" => {
+                        builder = builder.set_current_version(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "kafkaCluster" => {
+                        builder = builder.set_kafka_cluster(crate::protocol_serde::shape_kafka_cluster_description::de_kafka_cluster_description(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "kafkaClusterClientAuthentication" => {
+                        builder = builder.set_kafka_cluster_client_authentication(
+                            crate::protocol_serde::shape_kafka_cluster_client_authentication_description::de_kafka_cluster_client_authentication_description(tokens, _value, depth + 1)?
+                        );
+                    }
+                    "kafkaClusterEncryptionInTransit" => {
+                        builder = builder.set_kafka_cluster_encryption_in_transit(
+                            crate::protocol_serde::shape_kafka_cluster_encryption_in_transit_description::de_kafka_cluster_encryption_in_transit_description(tokens, _value, depth + 1)?
+                        );
+                    }
+                    "kafkaConnectVersion" => {
+                        builder = builder.set_kafka_connect_version(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "logDelivery" => {
+                        builder = builder.set_log_delivery(crate::protocol_serde::shape_log_delivery_description::de_log_delivery_description(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "networkType" => {
+                        builder = builder.set_network_type(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "plugins" => {
+                        builder = builder.set_plugins(crate::protocol_serde::shape_list_of_plugin_description::de_list_of_plugin_description(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "serviceExecutionRoleArn" => {
+                        builder = builder.set_service_execution_role_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "stateDescription" => {
+                        builder = builder.set_state_description(crate::protocol_serde::shape_state_description::de_state_description(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "workerConfiguration" => {
+                        builder = builder.set_worker_configuration(
+                            crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "kafkaConnectVersion" => {
-                    builder = builder.set_kafka_connect_version(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "logDelivery" => {
-                    builder = builder.set_log_delivery(crate::protocol_serde::shape_log_delivery_description::de_log_delivery_description(
-                        tokens, _value,
-                    )?);
-                }
-                "networkType" => {
-                    builder = builder.set_network_type(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "plugins" => {
-                    builder = builder.set_plugins(crate::protocol_serde::shape_list_of_plugin_description::de_list_of_plugin_description(
-                        tokens, _value,
-                    )?);
-                }
-                "serviceExecutionRoleArn" => {
-                    builder = builder.set_service_execution_role_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "stateDescription" => {
-                    builder = builder.set_state_description(crate::protocol_serde::shape_state_description::de_state_description(tokens, _value)?);
-                }
-                "workerConfiguration" => {
-                    builder = builder.set_worker_configuration(
-                        crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(tokens, _value)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

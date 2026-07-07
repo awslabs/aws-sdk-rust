@@ -13,11 +13,17 @@
 pub struct KnowledgeBaseRetrievalConfiguration {
     /// <p>Contains details about how the results from the vector search should be returned. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub vector_search_configuration: ::std::option::Option<crate::types::KnowledgeBaseVectorSearchConfiguration>,
+    /// <p>Contains configurations for managed search. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub managed_search_configuration: ::std::option::Option<crate::types::ManagedSearchConfiguration>,
 }
 impl KnowledgeBaseRetrievalConfiguration {
     /// <p>Contains details about how the results from the vector search should be returned. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn vector_search_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseVectorSearchConfiguration> {
         self.vector_search_configuration.as_ref()
+    }
+    /// <p>Contains configurations for managed search. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub fn managed_search_configuration(&self) -> ::std::option::Option<&crate::types::ManagedSearchConfiguration> {
+        self.managed_search_configuration.as_ref()
     }
 }
 impl KnowledgeBaseRetrievalConfiguration {
@@ -32,10 +38,10 @@ impl KnowledgeBaseRetrievalConfiguration {
 #[non_exhaustive]
 pub struct KnowledgeBaseRetrievalConfigurationBuilder {
     pub(crate) vector_search_configuration: ::std::option::Option<crate::types::KnowledgeBaseVectorSearchConfiguration>,
+    pub(crate) managed_search_configuration: ::std::option::Option<crate::types::ManagedSearchConfiguration>,
 }
 impl KnowledgeBaseRetrievalConfigurationBuilder {
     /// <p>Contains details about how the results from the vector search should be returned. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
-    /// This field is required.
     pub fn vector_search_configuration(mut self, input: crate::types::KnowledgeBaseVectorSearchConfiguration) -> Self {
         self.vector_search_configuration = ::std::option::Option::Some(input);
         self
@@ -49,10 +55,25 @@ impl KnowledgeBaseRetrievalConfigurationBuilder {
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseVectorSearchConfiguration> {
         &self.vector_search_configuration
     }
+    /// <p>Contains configurations for managed search. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub fn managed_search_configuration(mut self, input: crate::types::ManagedSearchConfiguration) -> Self {
+        self.managed_search_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains configurations for managed search. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub fn set_managed_search_configuration(mut self, input: ::std::option::Option<crate::types::ManagedSearchConfiguration>) -> Self {
+        self.managed_search_configuration = input;
+        self
+    }
+    /// <p>Contains configurations for managed search. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub fn get_managed_search_configuration(&self) -> &::std::option::Option<crate::types::ManagedSearchConfiguration> {
+        &self.managed_search_configuration
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseRetrievalConfiguration`](crate::types::KnowledgeBaseRetrievalConfiguration).
     pub fn build(self) -> crate::types::KnowledgeBaseRetrievalConfiguration {
         crate::types::KnowledgeBaseRetrievalConfiguration {
             vector_search_configuration: self.vector_search_configuration,
+            managed_search_configuration: self.managed_search_configuration,
         }
     }
 }

@@ -20,6 +20,8 @@ pub struct ParameterListControl {
     pub cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
     /// <p>The sort configuration for the values displayed in the control. Only one sort configuration can be applied per control.</p>
     pub control_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>>,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterListControl {
     /// <p>The ID of the <code>ParameterListControl</code>.</p>
@@ -59,6 +61,10 @@ impl ParameterListControl {
     pub fn control_sort_configurations(&self) -> &[crate::types::ControlSortConfiguration] {
         self.control_sort_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl ParameterListControl {
     /// Creates a new builder-style object to manufacture [`ParameterListControl`](crate::types::ParameterListControl).
@@ -79,6 +85,7 @@ pub struct ParameterListControlBuilder {
     pub(crate) selectable_values: ::std::option::Option<crate::types::ParameterSelectableValues>,
     pub(crate) cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
     pub(crate) control_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterListControlBuilder {
     /// <p>The ID of the <code>ParameterListControl</code>.</p>
@@ -97,7 +104,6 @@ impl ParameterListControlBuilder {
         &self.parameter_control_id
     }
     /// <p>The title of the <code>ParameterListControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -202,10 +208,23 @@ impl ParameterListControlBuilder {
     pub fn get_control_sort_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>> {
         &self.control_sort_configurations
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`ParameterListControl`](crate::types::ParameterListControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_control_id`](crate::types::builders::ParameterListControlBuilder::parameter_control_id)
-    /// - [`title`](crate::types::builders::ParameterListControlBuilder::title)
     /// - [`source_parameter_name`](crate::types::builders::ParameterListControlBuilder::source_parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterListControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterListControl {
@@ -215,12 +234,7 @@ impl ParameterListControlBuilder {
                     "parameter_control_id was not specified but it is required when building ParameterListControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ParameterListControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_parameter_name: self.source_parameter_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_parameter_name",
@@ -232,6 +246,7 @@ impl ParameterListControlBuilder {
             selectable_values: self.selectable_values,
             cascading_control_configuration: self.cascading_control_configuration,
             control_sort_configurations: self.control_sort_configurations,
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

@@ -25,11 +25,17 @@ pub mod create_analyzer;
 /// Types for the `CreateArchiveRule` operation.
 pub mod create_archive_rule;
 
+/// Types for the `CreateServiceLinkedAnalyzer` operation.
+pub mod create_service_linked_analyzer;
+
 /// Types for the `DeleteAnalyzer` operation.
 pub mod delete_analyzer;
 
 /// Types for the `DeleteArchiveRule` operation.
 pub mod delete_archive_rule;
+
+/// Types for the `DeleteServiceLinkedAnalyzer` operation.
+pub mod delete_service_linked_analyzer;
 
 /// Types for the `GenerateFindingRecommendation` operation.
 pub mod generate_finding_recommendation;

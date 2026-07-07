@@ -49,6 +49,8 @@ pub fn de_get_capacity_reservation_usage(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetCapacityReservationUsageResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetCapacityReservationUsageResponse got {start_el:?}"
@@ -142,7 +144,7 @@ pub fn de_get_capacity_reservation_usage(
             s if s.matches("instanceUsageSet") /* InstanceUsages com.amazonaws.ec2.synthetic#GetCapacityReservationUsageOutput$InstanceUsages */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_instance_usage_set::de_instance_usage_set(&mut tag)
+                        crate::protocol_serde::shape_instance_usage_set::de_instance_usage_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -167,7 +169,7 @@ pub fn de_get_capacity_reservation_usage(
             s if s.matches("interruptibleCapacityAllocation") /* InterruptibleCapacityAllocation com.amazonaws.ec2.synthetic#GetCapacityReservationUsageOutput$InterruptibleCapacityAllocation */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_interruptible_capacity_allocation::de_interruptible_capacity_allocation(&mut tag)
+                        crate::protocol_serde::shape_interruptible_capacity_allocation::de_interruptible_capacity_allocation(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -177,7 +179,7 @@ pub fn de_get_capacity_reservation_usage(
             s if s.matches("interruptionInfo") /* InterruptionInfo com.amazonaws.ec2.synthetic#GetCapacityReservationUsageOutput$InterruptionInfo */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_interruption_info::de_interruption_info(&mut tag)
+                        crate::protocol_serde::shape_interruption_info::de_interruption_info(&mut tag, depth + 1)
                         ?
                     )
                 ;

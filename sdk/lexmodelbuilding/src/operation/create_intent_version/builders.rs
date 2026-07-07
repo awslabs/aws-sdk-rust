@@ -27,6 +27,7 @@ impl crate::operation::create_intent_version::builders::CreateIntentVersionInput
 /// </note>
 /// <p>When you create a version of an intent, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>.</p>
 /// <p>This operation requires permissions to perform the <code>lex:CreateIntentVersion</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntentVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

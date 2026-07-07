@@ -71,14 +71,14 @@ pub struct UpdateFunctionCodeOutput {
     pub last_update_status_reason_code: ::std::option::Option<crate::types::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a> or an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon S3 Files file system</a>.</p>
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
-    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub package_type: ::std::option::Option<crate::types::PackageType>,
-    /// <p>The function's image configuration values.</p>
-    pub image_config_response: ::std::option::Option<crate::types::ImageConfigResponse>,
     /// <p>The ARN of the signing profile version.</p>
     pub signing_profile_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub package_type: ::std::option::Option<crate::types::PackageType>,
+    /// <p>The function's image configuration values.</p>
+    pub image_config_response: ::std::option::Option<crate::types::ImageConfigResponse>,
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
@@ -89,14 +89,14 @@ pub struct UpdateFunctionCodeOutput {
     pub runtime_version_config: ::std::option::Option<crate::types::RuntimeVersionConfig>,
     /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
     pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     /// <p>The SHA256 hash of the function configuration.</p>
     pub config_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
     pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
-    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
-    pub tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     _request_id: Option<String>,
 }
 impl UpdateFunctionCodeOutput {
@@ -225,14 +225,6 @@ impl UpdateFunctionCodeOutput {
     pub fn file_system_configs(&self) -> &[crate::types::FileSystemConfig] {
         self.file_system_configs.as_deref().unwrap_or_default()
     }
-    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> ::std::option::Option<&crate::types::PackageType> {
-        self.package_type.as_ref()
-    }
-    /// <p>The function's image configuration values.</p>
-    pub fn image_config_response(&self) -> ::std::option::Option<&crate::types::ImageConfigResponse> {
-        self.image_config_response.as_ref()
-    }
     /// <p>The ARN of the signing profile version.</p>
     pub fn signing_profile_version_arn(&self) -> ::std::option::Option<&str> {
         self.signing_profile_version_arn.as_deref()
@@ -240,6 +232,14 @@ impl UpdateFunctionCodeOutput {
     /// <p>The ARN of the signing job.</p>
     pub fn signing_job_arn(&self) -> ::std::option::Option<&str> {
         self.signing_job_arn.as_deref()
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn package_type(&self) -> ::std::option::Option<&crate::types::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn image_config_response(&self) -> ::std::option::Option<&crate::types::ImageConfigResponse> {
+        self.image_config_response.as_ref()
     }
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     ///
@@ -263,6 +263,10 @@ impl UpdateFunctionCodeOutput {
     pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub fn tenancy_config(&self) -> ::std::option::Option<&crate::types::TenancyConfig> {
+        self.tenancy_config.as_ref()
+    }
     /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
     pub fn capacity_provider_config(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfig> {
         self.capacity_provider_config.as_ref()
@@ -274,10 +278,6 @@ impl UpdateFunctionCodeOutput {
     /// <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
     pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
         self.durable_config.as_ref()
-    }
-    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
-    pub fn tenancy_config(&self) -> ::std::option::Option<&crate::types::TenancyConfig> {
-        self.tenancy_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFunctionCodeOutput {
@@ -323,19 +323,19 @@ pub struct UpdateFunctionCodeOutputBuilder {
     pub(crate) last_update_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) last_update_status_reason_code: ::std::option::Option<crate::types::LastUpdateStatusReasonCode>,
     pub(crate) file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
-    pub(crate) package_type: ::std::option::Option<crate::types::PackageType>,
-    pub(crate) image_config_response: ::std::option::Option<crate::types::ImageConfigResponse>,
     pub(crate) signing_profile_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) signing_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) package_type: ::std::option::Option<crate::types::PackageType>,
+    pub(crate) image_config_response: ::std::option::Option<crate::types::ImageConfigResponse>,
     pub(crate) architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) snap_start: ::std::option::Option<crate::types::SnapStartResponse>,
     pub(crate) runtime_version_config: ::std::option::Option<crate::types::RuntimeVersionConfig>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     pub(crate) config_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
-    pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     _request_id: Option<String>,
 }
 impl UpdateFunctionCodeOutputBuilder {
@@ -768,34 +768,6 @@ impl UpdateFunctionCodeOutputBuilder {
     pub fn get_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
         &self.file_system_configs
     }
-    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
-        self.package_type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
-        self.package_type = input;
-        self
-    }
-    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
-        &self.package_type
-    }
-    /// <p>The function's image configuration values.</p>
-    pub fn image_config_response(mut self, input: crate::types::ImageConfigResponse) -> Self {
-        self.image_config_response = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The function's image configuration values.</p>
-    pub fn set_image_config_response(mut self, input: ::std::option::Option<crate::types::ImageConfigResponse>) -> Self {
-        self.image_config_response = input;
-        self
-    }
-    /// <p>The function's image configuration values.</p>
-    pub fn get_image_config_response(&self) -> &::std::option::Option<crate::types::ImageConfigResponse> {
-        &self.image_config_response
-    }
     /// <p>The ARN of the signing profile version.</p>
     pub fn signing_profile_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_profile_version_arn = ::std::option::Option::Some(input.into());
@@ -823,6 +795,34 @@ impl UpdateFunctionCodeOutputBuilder {
     /// <p>The ARN of the signing job.</p>
     pub fn get_signing_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_job_arn
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
+        self.package_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
+        self.package_type = input;
+        self
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
+        &self.package_type
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn image_config_response(mut self, input: crate::types::ImageConfigResponse) -> Self {
+        self.image_config_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn set_image_config_response(mut self, input: ::std::option::Option<crate::types::ImageConfigResponse>) -> Self {
+        self.image_config_response = input;
+        self
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn get_image_config_response(&self) -> &::std::option::Option<crate::types::ImageConfigResponse> {
+        &self.image_config_response
     }
     /// Appends an item to `architectures`.
     ///
@@ -900,6 +900,20 @@ impl UpdateFunctionCodeOutputBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         &self.logging_config
     }
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
+        self.tenancy_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub fn set_tenancy_config(mut self, input: ::std::option::Option<crate::types::TenancyConfig>) -> Self {
+        self.tenancy_config = input;
+        self
+    }
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub fn get_tenancy_config(&self) -> &::std::option::Option<crate::types::TenancyConfig> {
+        &self.tenancy_config
+    }
     /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
     pub fn capacity_provider_config(mut self, input: crate::types::CapacityProviderConfig) -> Self {
         self.capacity_provider_config = ::std::option::Option::Some(input);
@@ -942,20 +956,6 @@ impl UpdateFunctionCodeOutputBuilder {
     pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
         &self.durable_config
     }
-    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
-    pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
-        self.tenancy_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
-    pub fn set_tenancy_config(mut self, input: ::std::option::Option<crate::types::TenancyConfig>) -> Self {
-        self.tenancy_config = input;
-        self
-    }
-    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
-    pub fn get_tenancy_config(&self) -> &::std::option::Option<crate::types::TenancyConfig> {
-        &self.tenancy_config
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -995,19 +995,19 @@ impl UpdateFunctionCodeOutputBuilder {
             last_update_status_reason: self.last_update_status_reason,
             last_update_status_reason_code: self.last_update_status_reason_code,
             file_system_configs: self.file_system_configs,
-            package_type: self.package_type,
-            image_config_response: self.image_config_response,
             signing_profile_version_arn: self.signing_profile_version_arn,
             signing_job_arn: self.signing_job_arn,
+            package_type: self.package_type,
+            image_config_response: self.image_config_response,
             architectures: self.architectures,
             ephemeral_storage: self.ephemeral_storage,
             snap_start: self.snap_start,
             runtime_version_config: self.runtime_version_config,
             logging_config: self.logging_config,
+            tenancy_config: self.tenancy_config,
             capacity_provider_config: self.capacity_provider_config,
             config_sha256: self.config_sha256,
             durable_config: self.durable_config,
-            tenancy_config: self.tenancy_config,
             _request_id: self._request_id,
         }
     }

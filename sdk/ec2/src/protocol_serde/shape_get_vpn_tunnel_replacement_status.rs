@@ -49,6 +49,8 @@ pub fn de_get_vpn_tunnel_replacement_status(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetVpnTunnelReplacementStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetVpnTunnelReplacementStatusResponse got {start_el:?}"
@@ -124,7 +126,7 @@ pub fn de_get_vpn_tunnel_replacement_status(
             s if s.matches("maintenanceDetails") /* MaintenanceDetails com.amazonaws.ec2.synthetic#GetVpnTunnelReplacementStatusOutput$MaintenanceDetails */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_maintenance_details::de_maintenance_details(&mut tag)
+                        crate::protocol_serde::shape_maintenance_details::de_maintenance_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

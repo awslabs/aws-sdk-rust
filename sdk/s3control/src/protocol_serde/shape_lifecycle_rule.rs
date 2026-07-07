@@ -54,7 +54,11 @@ pub fn ser_lifecycle_rule(
 #[allow(clippy::needless_question_mark)]
 pub fn de_lifecycle_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LifecycleRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LifecycleRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("Expiration") /* Expiration com.amazonaws.s3control#LifecycleRule$Expiration */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_lifecycle_expiration::de_lifecycle_expiration(&mut tag)
+                        crate::protocol_serde::shape_lifecycle_expiration::de_lifecycle_expiration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("Filter") /* Filter com.amazonaws.s3control#LifecycleRule$Filter */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_lifecycle_rule_filter::de_lifecycle_rule_filter(&mut tag)
+                        crate::protocol_serde::shape_lifecycle_rule_filter::de_lifecycle_rule_filter(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -109,7 +113,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("Transitions") /* Transitions com.amazonaws.s3control#LifecycleRule$Transitions */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_transition_list::de_transition_list(&mut tag)
+                        crate::protocol_serde::shape_transition_list::de_transition_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -119,7 +123,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("NoncurrentVersionTransitions") /* NoncurrentVersionTransitions com.amazonaws.s3control#LifecycleRule$NoncurrentVersionTransitions */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_noncurrent_version_transition_list::de_noncurrent_version_transition_list(&mut tag)
+                        crate::protocol_serde::shape_noncurrent_version_transition_list::de_noncurrent_version_transition_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -129,7 +133,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("NoncurrentVersionExpiration") /* NoncurrentVersionExpiration com.amazonaws.s3control#LifecycleRule$NoncurrentVersionExpiration */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_noncurrent_version_expiration::de_noncurrent_version_expiration(&mut tag)
+                        crate::protocol_serde::shape_noncurrent_version_expiration::de_noncurrent_version_expiration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -139,7 +143,7 @@ pub fn de_lifecycle_rule(
             s if s.matches("AbortIncompleteMultipartUpload") /* AbortIncompleteMultipartUpload com.amazonaws.s3control#LifecycleRule$AbortIncompleteMultipartUpload */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_abort_incomplete_multipart_upload::de_abort_incomplete_multipart_upload(&mut tag)
+                        crate::protocol_serde::shape_abort_incomplete_multipart_upload::de_abort_incomplete_multipart_upload(&mut tag, depth + 1)
                         ?
                     )
                 ;

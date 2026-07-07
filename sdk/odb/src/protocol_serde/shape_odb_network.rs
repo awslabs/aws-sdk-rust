@@ -2,10 +2,16 @@
 pub(crate) fn de_odb_network<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OdbNetwork>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -93,7 +99,7 @@ where
                             );
                         }
                         "peeredCidrs" => {
-                            builder = builder.set_peered_cidrs(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_peered_cidrs(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "ociNetworkAnchorId" => {
                             builder = builder.set_oci_network_anchor_id(
@@ -132,7 +138,11 @@ where
                         }
                         "ociDnsForwardingConfigs" => {
                             builder = builder.set_oci_dns_forwarding_configs(
-                                crate::protocol_serde::shape_oci_dns_forwarding_config_list::de_oci_dns_forwarding_config_list(tokens, _value)?,
+                                crate::protocol_serde::shape_oci_dns_forwarding_config_list::de_oci_dns_forwarding_config_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "createdAt" => {
@@ -147,12 +157,18 @@ where
                             );
                         }
                         "managedServices" => {
-                            builder =
-                                builder.set_managed_services(crate::protocol_serde::shape_managed_services::de_managed_services(tokens, _value)?);
+                            builder = builder.set_managed_services(crate::protocol_serde::shape_managed_services::de_managed_services(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ec2PlacementGroupIds" => {
-                            builder = builder
-                                .set_ec2_placement_group_ids(crate::protocol_serde::shape_resource_id_list::de_resource_id_list(tokens, _value)?);
+                            builder = builder.set_ec2_placement_group_ids(crate::protocol_serde::shape_resource_id_list::de_resource_id_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

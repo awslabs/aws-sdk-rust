@@ -121,6 +121,8 @@ pub(crate) fn de_get_imported_model(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -133,7 +135,11 @@ pub(crate) fn de_get_imported_model(
                     )?);
                 }
                 "customModelUnits" => {
-                    builder = builder.set_custom_model_units(crate::protocol_serde::shape_custom_model_units::de_custom_model_units(tokens, _value)?);
+                    builder = builder.set_custom_model_units(crate::protocol_serde::shape_custom_model_units::de_custom_model_units(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "instructSupported" => {
                     builder = builder.set_instruct_supported(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -167,7 +173,11 @@ pub(crate) fn de_get_imported_model(
                     );
                 }
                 "modelDataSource" => {
-                    builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens, _value)?);
+                    builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "modelKmsKeyArn" => {
                     builder = builder.set_model_kms_key_arn(

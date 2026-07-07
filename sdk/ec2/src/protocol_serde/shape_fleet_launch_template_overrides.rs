@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_fleet_launch_template_overrides(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FleetLaunchTemplateOverrides, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FleetLaunchTemplateOverrides::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -93,7 +97,7 @@ pub fn de_fleet_launch_template_overrides(
             s if s.matches("placement") /* Placement com.amazonaws.ec2#FleetLaunchTemplateOverrides$Placement */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_placement_response::de_placement_response(&mut tag)
+                        crate::protocol_serde::shape_placement_response::de_placement_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -103,7 +107,7 @@ pub fn de_fleet_launch_template_overrides(
             s if s.matches("instanceRequirements") /* InstanceRequirements com.amazonaws.ec2#FleetLaunchTemplateOverrides$InstanceRequirements */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag)
+                        crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -126,7 +130,7 @@ pub fn de_fleet_launch_template_overrides(
             s if s.matches("blockDeviceMappingSet") /* BlockDeviceMappings com.amazonaws.ec2#FleetLaunchTemplateOverrides$BlockDeviceMappings */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_block_device_mapping_response_list::de_block_device_mapping_response_list(&mut tag)
+                        crate::protocol_serde::shape_block_device_mapping_response_list::de_block_device_mapping_response_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

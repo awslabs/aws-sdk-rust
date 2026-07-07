@@ -20,6 +20,8 @@ pub struct H264Settings {
     pub end_of_stream_markers: ::std::option::Option<crate::types::H264EndOfStreamMarkers>,
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub entropy_encoding: ::std::option::Option<crate::types::H264EntropyEncoding>,
+    /// Enable or disable explicit weighted prediction for the H.264 encoder. Weighted prediction improves compression efficiency for content with fading or brightness changes between frames.
+    pub explicit_weighted_prediction: ::std::option::Option<crate::types::H264ExplicitWeightedPrediction>,
     /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
     pub field_encoding: ::std::option::Option<crate::types::H264FieldEncoding>,
     /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled. Change this value to Enabled to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
@@ -129,6 +131,10 @@ impl H264Settings {
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub fn entropy_encoding(&self) -> ::std::option::Option<&crate::types::H264EntropyEncoding> {
         self.entropy_encoding.as_ref()
+    }
+    /// Enable or disable explicit weighted prediction for the H.264 encoder. Weighted prediction improves compression efficiency for content with fading or brightness changes between frames.
+    pub fn explicit_weighted_prediction(&self) -> ::std::option::Option<&crate::types::H264ExplicitWeightedPrediction> {
+        self.explicit_weighted_prediction.as_ref()
     }
     /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
     pub fn field_encoding(&self) -> ::std::option::Option<&crate::types::H264FieldEncoding> {
@@ -304,6 +310,7 @@ pub struct H264SettingsBuilder {
     pub(crate) dynamic_sub_gop: ::std::option::Option<crate::types::H264DynamicSubGop>,
     pub(crate) end_of_stream_markers: ::std::option::Option<crate::types::H264EndOfStreamMarkers>,
     pub(crate) entropy_encoding: ::std::option::Option<crate::types::H264EntropyEncoding>,
+    pub(crate) explicit_weighted_prediction: ::std::option::Option<crate::types::H264ExplicitWeightedPrediction>,
     pub(crate) field_encoding: ::std::option::Option<crate::types::H264FieldEncoding>,
     pub(crate) flicker_adaptive_quantization: ::std::option::Option<crate::types::H264FlickerAdaptiveQuantization>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::H264FramerateControl>,
@@ -455,6 +462,20 @@ impl H264SettingsBuilder {
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub fn get_entropy_encoding(&self) -> &::std::option::Option<crate::types::H264EntropyEncoding> {
         &self.entropy_encoding
+    }
+    /// Enable or disable explicit weighted prediction for the H.264 encoder. Weighted prediction improves compression efficiency for content with fading or brightness changes between frames.
+    pub fn explicit_weighted_prediction(mut self, input: crate::types::H264ExplicitWeightedPrediction) -> Self {
+        self.explicit_weighted_prediction = ::std::option::Option::Some(input);
+        self
+    }
+    /// Enable or disable explicit weighted prediction for the H.264 encoder. Weighted prediction improves compression efficiency for content with fading or brightness changes between frames.
+    pub fn set_explicit_weighted_prediction(mut self, input: ::std::option::Option<crate::types::H264ExplicitWeightedPrediction>) -> Self {
+        self.explicit_weighted_prediction = input;
+        self
+    }
+    /// Enable or disable explicit weighted prediction for the H.264 encoder. Weighted prediction improves compression efficiency for content with fading or brightness changes between frames.
+    pub fn get_explicit_weighted_prediction(&self) -> &::std::option::Option<crate::types::H264ExplicitWeightedPrediction> {
+        &self.explicit_weighted_prediction
     }
     /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
     pub fn field_encoding(mut self, input: crate::types::H264FieldEncoding) -> Self {
@@ -1005,6 +1026,7 @@ impl H264SettingsBuilder {
             dynamic_sub_gop: self.dynamic_sub_gop,
             end_of_stream_markers: self.end_of_stream_markers,
             entropy_encoding: self.entropy_encoding,
+            explicit_weighted_prediction: self.explicit_weighted_prediction,
             field_encoding: self.field_encoding,
             flicker_adaptive_quantization: self.flicker_adaptive_quantization,
             framerate_control: self.framerate_control,

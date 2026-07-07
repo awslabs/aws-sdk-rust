@@ -8,12 +8,16 @@ pub struct HarnessOpenAiModelConfig {
     pub model_id: ::std::string::String,
     /// <p>The ARN of your OpenAI API key on AgentCore Identity.</p>
     pub api_key_arn: ::std::string::String,
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub max_tokens: ::std::option::Option<i32>,
     /// <p>The temperature to set when calling the model.</p>
     pub temperature: ::std::option::Option<f32>,
     /// <p>The topP set when calling the model.</p>
     pub top_p: ::std::option::Option<f32>,
+    /// <p>The API format to use when calling the OpenAI provider.</p>
+    pub api_format: ::std::option::Option<crate::types::HarnessOpenAiApiFormat>,
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub additional_params: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl HarnessOpenAiModelConfig {
     /// <p>The OpenAI model ID.</p>
@@ -26,7 +30,7 @@ impl HarnessOpenAiModelConfig {
         use std::ops::Deref;
         self.api_key_arn.deref()
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn max_tokens(&self) -> ::std::option::Option<i32> {
         self.max_tokens
     }
@@ -37,6 +41,14 @@ impl HarnessOpenAiModelConfig {
     /// <p>The topP set when calling the model.</p>
     pub fn top_p(&self) -> ::std::option::Option<f32> {
         self.top_p
+    }
+    /// <p>The API format to use when calling the OpenAI provider.</p>
+    pub fn api_format(&self) -> ::std::option::Option<&crate::types::HarnessOpenAiApiFormat> {
+        self.api_format.as_ref()
+    }
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub fn additional_params(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.additional_params.as_ref()
     }
 }
 impl HarnessOpenAiModelConfig {
@@ -55,6 +67,8 @@ pub struct HarnessOpenAiModelConfigBuilder {
     pub(crate) max_tokens: ::std::option::Option<i32>,
     pub(crate) temperature: ::std::option::Option<f32>,
     pub(crate) top_p: ::std::option::Option<f32>,
+    pub(crate) api_format: ::std::option::Option<crate::types::HarnessOpenAiApiFormat>,
+    pub(crate) additional_params: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl HarnessOpenAiModelConfigBuilder {
     /// <p>The OpenAI model ID.</p>
@@ -87,17 +101,17 @@ impl HarnessOpenAiModelConfigBuilder {
     pub fn get_api_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_arn
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn max_tokens(mut self, input: i32) -> Self {
         self.max_tokens = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn set_max_tokens(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_tokens = input;
         self
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn get_max_tokens(&self) -> &::std::option::Option<i32> {
         &self.max_tokens
     }
@@ -129,6 +143,34 @@ impl HarnessOpenAiModelConfigBuilder {
     pub fn get_top_p(&self) -> &::std::option::Option<f32> {
         &self.top_p
     }
+    /// <p>The API format to use when calling the OpenAI provider.</p>
+    pub fn api_format(mut self, input: crate::types::HarnessOpenAiApiFormat) -> Self {
+        self.api_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The API format to use when calling the OpenAI provider.</p>
+    pub fn set_api_format(mut self, input: ::std::option::Option<crate::types::HarnessOpenAiApiFormat>) -> Self {
+        self.api_format = input;
+        self
+    }
+    /// <p>The API format to use when calling the OpenAI provider.</p>
+    pub fn get_api_format(&self) -> &::std::option::Option<crate::types::HarnessOpenAiApiFormat> {
+        &self.api_format
+    }
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub fn additional_params(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.additional_params = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub fn set_additional_params(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.additional_params = input;
+        self
+    }
+    /// <p>Provider-specific parameters passed through to the model provider unchanged.</p>
+    pub fn get_additional_params(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.additional_params
+    }
     /// Consumes the builder and constructs a [`HarnessOpenAiModelConfig`](crate::types::HarnessOpenAiModelConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_id`](crate::types::builders::HarnessOpenAiModelConfigBuilder::model_id)
@@ -150,6 +192,8 @@ impl HarnessOpenAiModelConfigBuilder {
             max_tokens: self.max_tokens,
             temperature: self.temperature,
             top_p: self.top_p,
+            api_format: self.api_format,
+            additional_params: self.additional_params,
         })
     }
 }

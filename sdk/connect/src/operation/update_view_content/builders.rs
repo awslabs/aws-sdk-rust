@@ -22,7 +22,7 @@ impl crate::operation::update_view_content::builders::UpdateViewContentInputBuil
 }
 /// Fluent builder constructing a request to `UpdateViewContent`.
 ///
-/// <p>Updates the view content of the given view identifier in the specified Amazon Connect instance.</p>
+/// <p>Updates the view content of the given view identifier in the specified Connect Customer instance.</p>
 /// <p>It performs content validation if <code>Status</code> is set to <code>SAVED</code> and performs full content validation if <code>Status</code> is <code>PUBLISHED</code>. Note that the <code>$SAVED</code> alias' content will always be updated, but the <code>$LATEST</code> alias' content will only be updated if <code>Status</code> is <code>PUBLISHED</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateViewContentFluentBuilder {
@@ -109,17 +109,17 @@ impl UpdateViewContentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

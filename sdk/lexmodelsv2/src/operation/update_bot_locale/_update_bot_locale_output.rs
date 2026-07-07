@@ -19,6 +19,8 @@ pub struct UpdateBotLocaleOutput {
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     /// <p>The updated unified speech settings for the bot locale.</p>
     pub unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    /// <p>The updated audio filler settings for the bot locale.</p>
+    pub audio_filler_settings: ::std::option::Option<crate::types::AudioFillerSettings>,
     /// <p>The updated speech-to-text settings for the bot locale.</p>
     pub speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
@@ -69,6 +71,10 @@ impl UpdateBotLocaleOutput {
     /// <p>The updated unified speech settings for the bot locale.</p>
     pub fn unified_speech_settings(&self) -> ::std::option::Option<&crate::types::UnifiedSpeechSettings> {
         self.unified_speech_settings.as_ref()
+    }
+    /// <p>The updated audio filler settings for the bot locale.</p>
+    pub fn audio_filler_settings(&self) -> ::std::option::Option<&crate::types::AudioFillerSettings> {
+        self.audio_filler_settings.as_ref()
     }
     /// <p>The updated speech-to-text settings for the bot locale.</p>
     pub fn speech_recognition_settings(&self) -> ::std::option::Option<&crate::types::SpeechRecognitionSettings> {
@@ -131,6 +137,7 @@ pub struct UpdateBotLocaleOutputBuilder {
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     pub(crate) unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    pub(crate) audio_filler_settings: ::std::option::Option<crate::types::AudioFillerSettings>,
     pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -253,6 +260,20 @@ impl UpdateBotLocaleOutputBuilder {
     /// <p>The updated unified speech settings for the bot locale.</p>
     pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
         &self.unified_speech_settings
+    }
+    /// <p>The updated audio filler settings for the bot locale.</p>
+    pub fn audio_filler_settings(mut self, input: crate::types::AudioFillerSettings) -> Self {
+        self.audio_filler_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated audio filler settings for the bot locale.</p>
+    pub fn set_audio_filler_settings(mut self, input: ::std::option::Option<crate::types::AudioFillerSettings>) -> Self {
+        self.audio_filler_settings = input;
+        self
+    }
+    /// <p>The updated audio filler settings for the bot locale.</p>
+    pub fn get_audio_filler_settings(&self) -> &::std::option::Option<crate::types::AudioFillerSettings> {
+        &self.audio_filler_settings
     }
     /// <p>The updated speech-to-text settings for the bot locale.</p>
     pub fn speech_recognition_settings(mut self, input: crate::types::SpeechRecognitionSettings) -> Self {
@@ -398,6 +419,7 @@ impl UpdateBotLocaleOutputBuilder {
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
             unified_speech_settings: self.unified_speech_settings,
+            audio_filler_settings: self.audio_filler_settings,
             speech_recognition_settings: self.speech_recognition_settings,
             bot_locale_status: self.bot_locale_status,
             failure_reasons: self.failure_reasons,

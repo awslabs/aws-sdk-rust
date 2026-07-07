@@ -16,6 +16,8 @@ pub struct ServiceView {
     pub streaming_access_for_service: ::std::option::Option<::std::string::String>,
     /// <p>The scope type of the service view, which determines what resources are included.</p>
     pub scope_type: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the service-linked recorder associated with this service view. When a service view is paired with a service-linked recorder, Resource Explorer uses the recorder's resource type list to filter search results and streaming data.</p>
+    pub service_linked_recorder: ::std::option::Option<crate::types::ServiceLinkedRecorderInfo>,
 }
 impl ServiceView {
     /// <p>The Amazon Resource Name (ARN) of the service view.</p>
@@ -45,6 +47,10 @@ impl ServiceView {
     pub fn scope_type(&self) -> ::std::option::Option<&str> {
         self.scope_type.as_deref()
     }
+    /// <p>Information about the service-linked recorder associated with this service view. When a service view is paired with a service-linked recorder, Resource Explorer uses the recorder's resource type list to filter search results and streaming data.</p>
+    pub fn service_linked_recorder(&self) -> ::std::option::Option<&crate::types::ServiceLinkedRecorderInfo> {
+        self.service_linked_recorder.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ServiceView {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -55,6 +61,7 @@ impl ::std::fmt::Debug for ServiceView {
         formatter.field("included_properties", &self.included_properties);
         formatter.field("streaming_access_for_service", &self.streaming_access_for_service);
         formatter.field("scope_type", &self.scope_type);
+        formatter.field("service_linked_recorder", &self.service_linked_recorder);
         formatter.finish()
     }
 }
@@ -75,6 +82,7 @@ pub struct ServiceViewBuilder {
     pub(crate) included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
     pub(crate) streaming_access_for_service: ::std::option::Option<::std::string::String>,
     pub(crate) scope_type: ::std::option::Option<::std::string::String>,
+    pub(crate) service_linked_recorder: ::std::option::Option<crate::types::ServiceLinkedRecorderInfo>,
 }
 impl ServiceViewBuilder {
     /// <p>The Amazon Resource Name (ARN) of the service view.</p>
@@ -168,6 +176,20 @@ impl ServiceViewBuilder {
     pub fn get_scope_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.scope_type
     }
+    /// <p>Information about the service-linked recorder associated with this service view. When a service view is paired with a service-linked recorder, Resource Explorer uses the recorder's resource type list to filter search results and streaming data.</p>
+    pub fn service_linked_recorder(mut self, input: crate::types::ServiceLinkedRecorderInfo) -> Self {
+        self.service_linked_recorder = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the service-linked recorder associated with this service view. When a service view is paired with a service-linked recorder, Resource Explorer uses the recorder's resource type list to filter search results and streaming data.</p>
+    pub fn set_service_linked_recorder(mut self, input: ::std::option::Option<crate::types::ServiceLinkedRecorderInfo>) -> Self {
+        self.service_linked_recorder = input;
+        self
+    }
+    /// <p>Information about the service-linked recorder associated with this service view. When a service view is paired with a service-linked recorder, Resource Explorer uses the recorder's resource type list to filter search results and streaming data.</p>
+    pub fn get_service_linked_recorder(&self) -> &::std::option::Option<crate::types::ServiceLinkedRecorderInfo> {
+        &self.service_linked_recorder
+    }
     /// Consumes the builder and constructs a [`ServiceView`](crate::types::ServiceView).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_view_arn`](crate::types::builders::ServiceViewBuilder::service_view_arn)
@@ -184,6 +206,7 @@ impl ServiceViewBuilder {
             included_properties: self.included_properties,
             streaming_access_for_service: self.streaming_access_for_service,
             scope_type: self.scope_type,
+            service_linked_recorder: self.service_linked_recorder,
         })
     }
 }
@@ -196,6 +219,7 @@ impl ::std::fmt::Debug for ServiceViewBuilder {
         formatter.field("included_properties", &self.included_properties);
         formatter.field("streaming_access_for_service", &self.streaming_access_for_service);
         formatter.field("scope_type", &self.scope_type);
+        formatter.field("service_linked_recorder", &self.service_linked_recorder);
         formatter.finish()
     }
 }

@@ -147,12 +147,6 @@ pub(crate) fn tax_registration_correct_errors(
 }
 
 pub(crate) fn address_correct_errors(mut builder: crate::types::builders::AddressBuilder) -> crate::types::builders::AddressBuilder {
-    if builder.address_line1.is_none() {
-        builder.address_line1 = Some(Default::default())
-    }
-    if builder.city.is_none() {
-        builder.city = Some(Default::default())
-    }
     if builder.postal_code.is_none() {
         builder.postal_code = Some(Default::default())
     }
@@ -227,6 +221,15 @@ pub(crate) fn estonia_additional_info_correct_errors(
 ) -> crate::types::builders::EstoniaAdditionalInfoBuilder {
     if builder.registry_commercial_code.is_none() {
         builder.registry_commercial_code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn france_additional_info_correct_errors(
+    mut builder: crate::types::builders::FranceAdditionalInfoBuilder,
+) -> crate::types::builders::FranceAdditionalInfoBuilder {
+    if builder.siren_number.is_none() {
+        builder.siren_number = Some(Default::default())
     }
     builder
 }

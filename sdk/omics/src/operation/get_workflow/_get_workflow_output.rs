@@ -49,6 +49,12 @@ pub struct GetWorkflowOutput {
     pub definition_repository_details: ::std::option::Option<crate::types::DefinitionRepositoryDetails>,
     /// <p>The path to the workflow README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
     pub readme_path: ::std::option::Option<::std::string::String>,
+    /// <p>The list of Nextflow profiles that are available for this workflow. Profiles allow you to select predefined configuration settings at runtime.</p>
+    pub profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A mapping of profile names to their parameter templates. Each profile defines its own set of parameters that you can use when starting a run with that profile.</p>
+    pub profile_parameter_templates: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
+    >,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutput {
@@ -144,6 +150,20 @@ impl GetWorkflowOutput {
     pub fn readme_path(&self) -> ::std::option::Option<&str> {
         self.readme_path.as_deref()
     }
+    /// <p>The list of Nextflow profiles that are available for this workflow. Profiles allow you to select predefined configuration settings at runtime.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiles.is_none()`.
+    pub fn profiles(&self) -> &[::std::string::String] {
+        self.profiles.as_deref().unwrap_or_default()
+    }
+    /// <p>A mapping of profile names to their parameter templates. Each profile defines its own set of parameters that you can use when starting a run with that profile.</p>
+    pub fn profile_parameter_templates(
+        &self,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
+    > {
+        self.profile_parameter_templates.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowOutput {
     fn request_id(&self) -> Option<&str> {
@@ -184,6 +204,10 @@ pub struct GetWorkflowOutputBuilder {
     pub(crate) readme: ::std::option::Option<::std::string::String>,
     pub(crate) definition_repository_details: ::std::option::Option<crate::types::DefinitionRepositoryDetails>,
     pub(crate) readme_path: ::std::option::Option<::std::string::String>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) profile_parameter_templates: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
+    >,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutputBuilder {
@@ -532,6 +556,59 @@ impl GetWorkflowOutputBuilder {
     pub fn get_readme_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.readme_path
     }
+    /// Appends an item to `profiles`.
+    ///
+    /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
+    ///
+    /// <p>The list of Nextflow profiles that are available for this workflow. Profiles allow you to select predefined configuration settings at runtime.</p>
+    pub fn profiles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.profiles.unwrap_or_default();
+        v.push(input.into());
+        self.profiles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Nextflow profiles that are available for this workflow. Profiles allow you to select predefined configuration settings at runtime.</p>
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.profiles = input;
+        self
+    }
+    /// <p>The list of Nextflow profiles that are available for this workflow. Profiles allow you to select predefined configuration settings at runtime.</p>
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.profiles
+    }
+    /// Adds a key-value pair to `profile_parameter_templates`.
+    ///
+    /// To override the contents of this collection use [`set_profile_parameter_templates`](Self::set_profile_parameter_templates).
+    ///
+    /// <p>A mapping of profile names to their parameter templates. Each profile defines its own set of parameters that you can use when starting a run with that profile.</p>
+    pub fn profile_parameter_templates(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
+    ) -> Self {
+        let mut hash_map = self.profile_parameter_templates.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.profile_parameter_templates = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A mapping of profile names to their parameter templates. Each profile defines its own set of parameters that you can use when starting a run with that profile.</p>
+    pub fn set_profile_parameter_templates(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
+        >,
+    ) -> Self {
+        self.profile_parameter_templates = input;
+        self
+    }
+    /// <p>A mapping of profile names to their parameter templates. Each profile defines its own set of parameters that you can use when starting a run with that profile.</p>
+    pub fn get_profile_parameter_templates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
+    > {
+        &self.profile_parameter_templates
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -567,6 +644,8 @@ impl GetWorkflowOutputBuilder {
             readme: self.readme,
             definition_repository_details: self.definition_repository_details,
             readme_path: self.readme_path,
+            profiles: self.profiles,
+            profile_parameter_templates: self.profile_parameter_templates,
             _request_id: self._request_id,
         }
     }

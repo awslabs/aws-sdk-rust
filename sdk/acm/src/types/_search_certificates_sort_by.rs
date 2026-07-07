@@ -12,7 +12,10 @@
 /// ```text
 /// # let searchcertificatessortby = unimplemented!();
 /// match searchcertificatessortby {
+///     SearchCertificatesSortBy::AcmeAccountId => { /* ... */ },
+///     SearchCertificatesSortBy::AcmeEndpointArn => { /* ... */ },
 ///     SearchCertificatesSortBy::CertificateArn => { /* ... */ },
+///     SearchCertificatesSortBy::CertificateKeyPairOrigin => { /* ... */ },
 ///     SearchCertificatesSortBy::CommonName => { /* ... */ },
 ///     SearchCertificatesSortBy::CreatedAt => { /* ... */ },
 ///     SearchCertificatesSortBy::Exported => { /* ... */ },
@@ -59,7 +62,13 @@
 )]
 pub enum SearchCertificatesSortBy {
     #[allow(missing_docs)] // documentation missing in model
+    AcmeAccountId,
+    #[allow(missing_docs)] // documentation missing in model
+    AcmeEndpointArn,
+    #[allow(missing_docs)] // documentation missing in model
     CertificateArn,
+    #[allow(missing_docs)] // documentation missing in model
+    CertificateKeyPairOrigin,
     #[allow(missing_docs)] // documentation missing in model
     CommonName,
     #[allow(missing_docs)] // documentation missing in model
@@ -101,7 +110,10 @@ pub enum SearchCertificatesSortBy {
 impl ::std::convert::From<&str> for SearchCertificatesSortBy {
     fn from(s: &str) -> Self {
         match s {
+            "ACME_ACCOUNT_ID" => SearchCertificatesSortBy::AcmeAccountId,
+            "ACME_ENDPOINT_ARN" => SearchCertificatesSortBy::AcmeEndpointArn,
             "CERTIFICATE_ARN" => SearchCertificatesSortBy::CertificateArn,
+            "CERTIFICATE_KEY_PAIR_ORIGIN" => SearchCertificatesSortBy::CertificateKeyPairOrigin,
             "COMMON_NAME" => SearchCertificatesSortBy::CommonName,
             "CREATED_AT" => SearchCertificatesSortBy::CreatedAt,
             "EXPORTED" => SearchCertificatesSortBy::Exported,
@@ -134,7 +146,10 @@ impl SearchCertificatesSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SearchCertificatesSortBy::AcmeAccountId => "ACME_ACCOUNT_ID",
+            SearchCertificatesSortBy::AcmeEndpointArn => "ACME_ENDPOINT_ARN",
             SearchCertificatesSortBy::CertificateArn => "CERTIFICATE_ARN",
+            SearchCertificatesSortBy::CertificateKeyPairOrigin => "CERTIFICATE_KEY_PAIR_ORIGIN",
             SearchCertificatesSortBy::CommonName => "COMMON_NAME",
             SearchCertificatesSortBy::CreatedAt => "CREATED_AT",
             SearchCertificatesSortBy::Exported => "EXPORTED",
@@ -158,7 +173,10 @@ impl SearchCertificatesSortBy {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ACME_ACCOUNT_ID",
+            "ACME_ENDPOINT_ARN",
             "CERTIFICATE_ARN",
+            "CERTIFICATE_KEY_PAIR_ORIGIN",
             "COMMON_NAME",
             "CREATED_AT",
             "EXPORTED",
@@ -199,7 +217,10 @@ impl SearchCertificatesSortBy {
 impl ::std::fmt::Display for SearchCertificatesSortBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SearchCertificatesSortBy::AcmeAccountId => write!(f, "ACME_ACCOUNT_ID"),
+            SearchCertificatesSortBy::AcmeEndpointArn => write!(f, "ACME_ENDPOINT_ARN"),
             SearchCertificatesSortBy::CertificateArn => write!(f, "CERTIFICATE_ARN"),
+            SearchCertificatesSortBy::CertificateKeyPairOrigin => write!(f, "CERTIFICATE_KEY_PAIR_ORIGIN"),
             SearchCertificatesSortBy::CommonName => write!(f, "COMMON_NAME"),
             SearchCertificatesSortBy::CreatedAt => write!(f, "CREATED_AT"),
             SearchCertificatesSortBy::Exported => write!(f, "EXPORTED"),

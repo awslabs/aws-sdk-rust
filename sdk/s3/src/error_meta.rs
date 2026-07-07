@@ -5,6 +5,10 @@
 pub enum Error {
     /// <p>You might receive this error for several reasons. For details, see the description of this API operation.</p>
     AccessDenied(crate::types::error::AccessDenied),
+    /// <p>The request would exceed the maximum number of annotations allowed per object.</p>
+    AnnotationLimitExceeded(crate::types::error::AnnotationLimitExceeded),
+    /// <p>The annotation name exceeds 512 bytes.</p>
+    AnnotationNameTooLong(crate::types::error::AnnotationNameTooLong),
     /// <p>The requested bucket name is not available. The bucket namespace is shared by all users of the system. Select a different name and try again.</p>
     BucketAlreadyExists(crate::types::error::BucketAlreadyExists),
     /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p>
@@ -16,13 +20,19 @@ pub enum Error {
     /// <p>Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     /// </note>
     IdempotencyParameterMismatch(crate::types::error::IdempotencyParameterMismatch),
+    /// <p>The annotation name you provided is invalid.</p>
+    InvalidAnnotationName(crate::types::error::InvalidAnnotationName),
     /// <p>Object is archived and inaccessible until restored.</p>
     /// <p>If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage class, the S3 Glacier Deep Archive storage class, the S3 Intelligent-Tiering Archive Access tier, or the S3 Intelligent-Tiering Deep Archive Access tier, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this operation returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     InvalidObjectState(crate::types::error::InvalidObjectState),
+    /// <p>The annotation prefix you provided is invalid.</p>
+    InvalidPrefix(crate::types::error::InvalidPrefix),
     /// <p>A parameter or header in your request isn't valid. For details, see the description of this API operation.</p>
     InvalidRequest(crate::types::error::InvalidRequest),
     /// <p>The write offset value that you specified does not match the current object size.</p>
     InvalidWriteOffset(crate::types::error::InvalidWriteOffset),
+    /// <p>The specified annotation does not exist on this object.</p>
+    NoSuchAnnotation(crate::types::error::NoSuchAnnotation),
     /// <p>The specified bucket does not exist.</p>
     NoSuchBucket(crate::types::error::NoSuchBucket),
     /// <p>The specified key does not exist.</p>
@@ -37,6 +47,8 @@ pub enum Error {
     ObjectNotInActiveTierError(crate::types::error::ObjectNotInActiveTierError),
     /// <p>You have attempted to add more parts than the maximum of 10000 that are allowed for this object. You can use the CopyObject operation to copy this object to another and then add more data to the newly copied object.</p>
     TooManyParts(crate::types::error::TooManyParts),
+    /// <p>The annotation payload is not valid UTF-8 encoded text.</p>
+    UnsupportedMediaType(crate::types::error::UnsupportedMediaType),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -50,13 +62,18 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDenied(inner) => inner.fmt(f),
+            Error::AnnotationLimitExceeded(inner) => inner.fmt(f),
+            Error::AnnotationNameTooLong(inner) => inner.fmt(f),
             Error::BucketAlreadyExists(inner) => inner.fmt(f),
             Error::BucketAlreadyOwnedByYou(inner) => inner.fmt(f),
             Error::EncryptionTypeMismatch(inner) => inner.fmt(f),
             Error::IdempotencyParameterMismatch(inner) => inner.fmt(f),
+            Error::InvalidAnnotationName(inner) => inner.fmt(f),
             Error::InvalidObjectState(inner) => inner.fmt(f),
+            Error::InvalidPrefix(inner) => inner.fmt(f),
             Error::InvalidRequest(inner) => inner.fmt(f),
             Error::InvalidWriteOffset(inner) => inner.fmt(f),
+            Error::NoSuchAnnotation(inner) => inner.fmt(f),
             Error::NoSuchBucket(inner) => inner.fmt(f),
             Error::NoSuchKey(inner) => inner.fmt(f),
             Error::NoSuchUpload(inner) => inner.fmt(f),
@@ -64,6 +81,7 @@ impl ::std::fmt::Display for Error {
             Error::ObjectAlreadyInActiveTierError(inner) => inner.fmt(f),
             Error::ObjectNotInActiveTierError(inner) => inner.fmt(f),
             Error::TooManyParts(inner) => inner.fmt(f),
+            Error::UnsupportedMediaType(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -86,13 +104,18 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDenied(inner) => inner.meta(),
+            Self::AnnotationLimitExceeded(inner) => inner.meta(),
+            Self::AnnotationNameTooLong(inner) => inner.meta(),
             Self::BucketAlreadyExists(inner) => inner.meta(),
             Self::BucketAlreadyOwnedByYou(inner) => inner.meta(),
             Self::EncryptionTypeMismatch(inner) => inner.meta(),
             Self::IdempotencyParameterMismatch(inner) => inner.meta(),
+            Self::InvalidAnnotationName(inner) => inner.meta(),
             Self::InvalidObjectState(inner) => inner.meta(),
+            Self::InvalidPrefix(inner) => inner.meta(),
             Self::InvalidRequest(inner) => inner.meta(),
             Self::InvalidWriteOffset(inner) => inner.meta(),
+            Self::NoSuchAnnotation(inner) => inner.meta(),
             Self::NoSuchBucket(inner) => inner.meta(),
             Self::NoSuchKey(inner) => inner.meta(),
             Self::NoSuchUpload(inner) => inner.meta(),
@@ -100,6 +123,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ObjectAlreadyInActiveTierError(inner) => inner.meta(),
             Self::ObjectNotInActiveTierError(inner) => inner.meta(),
             Self::TooManyParts(inner) => inner.meta(),
+            Self::UnsupportedMediaType(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -732,6 +756,31 @@ impl From<crate::operation::delete_object::DeleteObjectError> for Error {
     fn from(err: crate::operation::delete_object::DeleteObjectError) -> Self {
         match err {
             crate::operation::delete_object::DeleteObjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_object_annotation::DeleteObjectAnnotationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_object_annotation::DeleteObjectAnnotationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_object_annotation::DeleteObjectAnnotationError> for Error {
+    fn from(err: crate::operation::delete_object_annotation::DeleteObjectAnnotationError) -> Self {
+        match err {
+            crate::operation::delete_object_annotation::DeleteObjectAnnotationError::NoSuchBucket(inner) => Error::NoSuchBucket(inner),
+            crate::operation::delete_object_annotation::DeleteObjectAnnotationError::NoSuchKey(inner) => Error::NoSuchKey(inner),
+            crate::operation::delete_object_annotation::DeleteObjectAnnotationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1439,6 +1488,30 @@ impl From<crate::operation::get_object_acl::GetObjectAclError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_object_annotation::GetObjectAnnotationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_object_annotation::GetObjectAnnotationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_object_annotation::GetObjectAnnotationError> for Error {
+    fn from(err: crate::operation::get_object_annotation::GetObjectAnnotationError) -> Self {
+        match err {
+            crate::operation::get_object_annotation::GetObjectAnnotationError::NoSuchAnnotation(inner) => Error::NoSuchAnnotation(inner),
+            crate::operation::get_object_annotation::GetObjectAnnotationError::NoSuchBucket(inner) => Error::NoSuchBucket(inner),
+            crate::operation::get_object_annotation::GetObjectAnnotationError::NoSuchKey(inner) => Error::NoSuchKey(inner),
+            crate::operation::get_object_annotation::GetObjectAnnotationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_object_attributes::GetObjectAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1830,6 +1903,32 @@ impl From<crate::operation::list_multipart_uploads::ListMultipartUploadsError> f
     fn from(err: crate::operation::list_multipart_uploads::ListMultipartUploadsError) -> Self {
         match err {
             crate::operation::list_multipart_uploads::ListMultipartUploadsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_object_annotations::ListObjectAnnotationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_object_annotations::ListObjectAnnotationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_object_annotations::ListObjectAnnotationsError> for Error {
+    fn from(err: crate::operation::list_object_annotations::ListObjectAnnotationsError) -> Self {
+        match err {
+            crate::operation::list_object_annotations::ListObjectAnnotationsError::InvalidPrefix(inner) => Error::InvalidPrefix(inner),
+            crate::operation::list_object_annotations::ListObjectAnnotationsError::NoSuchBucket(inner) => Error::NoSuchBucket(inner),
+            crate::operation::list_object_annotations::ListObjectAnnotationsError::NoSuchKey(inner) => Error::NoSuchKey(inner),
+            crate::operation::list_object_annotations::ListObjectAnnotationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2449,6 +2548,36 @@ impl From<crate::operation::put_object_acl::PutObjectAclError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_object_annotation::PutObjectAnnotationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_object_annotation::PutObjectAnnotationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_object_annotation::PutObjectAnnotationError> for Error {
+    fn from(err: crate::operation::put_object_annotation::PutObjectAnnotationError) -> Self {
+        match err {
+            crate::operation::put_object_annotation::PutObjectAnnotationError::AnnotationLimitExceeded(inner) => {
+                Error::AnnotationLimitExceeded(inner)
+            }
+            crate::operation::put_object_annotation::PutObjectAnnotationError::AnnotationNameTooLong(inner) => Error::AnnotationNameTooLong(inner),
+            crate::operation::put_object_annotation::PutObjectAnnotationError::InvalidAnnotationName(inner) => Error::InvalidAnnotationName(inner),
+            crate::operation::put_object_annotation::PutObjectAnnotationError::InvalidRequest(inner) => Error::InvalidRequest(inner),
+            crate::operation::put_object_annotation::PutObjectAnnotationError::NoSuchBucket(inner) => Error::NoSuchBucket(inner),
+            crate::operation::put_object_annotation::PutObjectAnnotationError::NoSuchKey(inner) => Error::NoSuchKey(inner),
+            crate::operation::put_object_annotation::PutObjectAnnotationError::UnsupportedMediaType(inner) => Error::UnsupportedMediaType(inner),
+            crate::operation::put_object_annotation::PutObjectAnnotationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_object_legal_hold::PutObjectLegalHoldError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2623,6 +2752,40 @@ impl From<crate::operation::select_object_content::SelectObjectContentError> for
     fn from(err: crate::operation::select_object_content::SelectObjectContentError) -> Self {
         match err {
             crate::operation::select_object_content::SelectObjectContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_bucket_metadata_annotation_table_configuration::UpdateBucketMetadataAnnotationTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_bucket_metadata_annotation_table_configuration::UpdateBucketMetadataAnnotationTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_bucket_metadata_annotation_table_configuration::UpdateBucketMetadataAnnotationTableConfigurationError> for Error {
+    fn from(
+        err: crate::operation::update_bucket_metadata_annotation_table_configuration::UpdateBucketMetadataAnnotationTableConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_bucket_metadata_annotation_table_configuration::UpdateBucketMetadataAnnotationTableConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2823,13 +2986,18 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDenied(inner) => inner.source(),
+            Error::AnnotationLimitExceeded(inner) => inner.source(),
+            Error::AnnotationNameTooLong(inner) => inner.source(),
             Error::BucketAlreadyExists(inner) => inner.source(),
             Error::BucketAlreadyOwnedByYou(inner) => inner.source(),
             Error::EncryptionTypeMismatch(inner) => inner.source(),
             Error::IdempotencyParameterMismatch(inner) => inner.source(),
+            Error::InvalidAnnotationName(inner) => inner.source(),
             Error::InvalidObjectState(inner) => inner.source(),
+            Error::InvalidPrefix(inner) => inner.source(),
             Error::InvalidRequest(inner) => inner.source(),
             Error::InvalidWriteOffset(inner) => inner.source(),
+            Error::NoSuchAnnotation(inner) => inner.source(),
             Error::NoSuchBucket(inner) => inner.source(),
             Error::NoSuchKey(inner) => inner.source(),
             Error::NoSuchUpload(inner) => inner.source(),
@@ -2837,6 +3005,7 @@ impl ::std::error::Error for Error {
             Error::ObjectAlreadyInActiveTierError(inner) => inner.source(),
             Error::ObjectNotInActiveTierError(inner) => inner.source(),
             Error::TooManyParts(inner) => inner.source(),
+            Error::UnsupportedMediaType(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -2845,13 +3014,18 @@ impl crate::s3_request_id::RequestIdExt for Error {
     fn extended_request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDenied(e) => e.extended_request_id(),
+            Self::AnnotationLimitExceeded(e) => e.extended_request_id(),
+            Self::AnnotationNameTooLong(e) => e.extended_request_id(),
             Self::BucketAlreadyExists(e) => e.extended_request_id(),
             Self::BucketAlreadyOwnedByYou(e) => e.extended_request_id(),
             Self::EncryptionTypeMismatch(e) => e.extended_request_id(),
             Self::IdempotencyParameterMismatch(e) => e.extended_request_id(),
+            Self::InvalidAnnotationName(e) => e.extended_request_id(),
             Self::InvalidObjectState(e) => e.extended_request_id(),
+            Self::InvalidPrefix(e) => e.extended_request_id(),
             Self::InvalidRequest(e) => e.extended_request_id(),
             Self::InvalidWriteOffset(e) => e.extended_request_id(),
+            Self::NoSuchAnnotation(e) => e.extended_request_id(),
             Self::NoSuchBucket(e) => e.extended_request_id(),
             Self::NoSuchKey(e) => e.extended_request_id(),
             Self::NoSuchUpload(e) => e.extended_request_id(),
@@ -2859,6 +3033,7 @@ impl crate::s3_request_id::RequestIdExt for Error {
             Self::ObjectAlreadyInActiveTierError(e) => e.extended_request_id(),
             Self::ObjectNotInActiveTierError(e) => e.extended_request_id(),
             Self::TooManyParts(e) => e.extended_request_id(),
+            Self::UnsupportedMediaType(e) => e.extended_request_id(),
             Self::Unhandled(e) => e.meta.extended_request_id(),
         }
     }
@@ -2867,13 +3042,18 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDenied(e) => e.request_id(),
+            Self::AnnotationLimitExceeded(e) => e.request_id(),
+            Self::AnnotationNameTooLong(e) => e.request_id(),
             Self::BucketAlreadyExists(e) => e.request_id(),
             Self::BucketAlreadyOwnedByYou(e) => e.request_id(),
             Self::EncryptionTypeMismatch(e) => e.request_id(),
             Self::IdempotencyParameterMismatch(e) => e.request_id(),
+            Self::InvalidAnnotationName(e) => e.request_id(),
             Self::InvalidObjectState(e) => e.request_id(),
+            Self::InvalidPrefix(e) => e.request_id(),
             Self::InvalidRequest(e) => e.request_id(),
             Self::InvalidWriteOffset(e) => e.request_id(),
+            Self::NoSuchAnnotation(e) => e.request_id(),
             Self::NoSuchBucket(e) => e.request_id(),
             Self::NoSuchKey(e) => e.request_id(),
             Self::NoSuchUpload(e) => e.request_id(),
@@ -2881,6 +3061,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ObjectAlreadyInActiveTierError(e) => e.request_id(),
             Self::ObjectNotInActiveTierError(e) => e.request_id(),
             Self::TooManyParts(e) => e.request_id(),
+            Self::UnsupportedMediaType(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

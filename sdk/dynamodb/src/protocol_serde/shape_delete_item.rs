@@ -211,24 +211,32 @@ pub(crate) fn de_delete_item(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "Attributes" => {
-                    builder = builder.set_attributes(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens, _value)?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Attributes" => {
+                        builder = builder.set_attributes(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens, _value, depth + 1)?);
+                    }
+                    "ConsumedCapacity" => {
+                        builder = builder.set_consumed_capacity(crate::protocol_serde::shape_consumed_capacity::de_consumed_capacity(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "ItemCollectionMetrics" => {
+                        builder = builder.set_item_collection_metrics(
+                            crate::protocol_serde::shape_item_collection_metrics::de_item_collection_metrics(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "ConsumedCapacity" => {
-                    builder = builder.set_consumed_capacity(crate::protocol_serde::shape_consumed_capacity::de_consumed_capacity(tokens, _value)?);
-                }
-                "ItemCollectionMetrics" => {
-                    builder = builder.set_item_collection_metrics(crate::protocol_serde::shape_item_collection_metrics::de_item_collection_metrics(
-                        tokens, _value,
-                    )?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

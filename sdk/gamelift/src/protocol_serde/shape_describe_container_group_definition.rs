@@ -145,10 +145,11 @@ pub(crate) fn de_describe_container_group_definition(
     crate::operation::describe_container_group_definition::builders::DescribeContainerGroupDefinitionOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_container_group_definition::builders::DescribeContainerGroupDefinitionOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_container_group_definition::builders::DescribeContainerGroupDefinitionOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -156,7 +157,7 @@ pub(crate) fn de_describe_container_group_definition(
         builder = match decoder.str()?.as_ref() {
             "ContainerGroupDefinition" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_container_group_definition(Some(
-                    crate::protocol_serde::shape_container_group_definition::de_container_group_definition(decoder)?,
+                    crate::protocol_serde::shape_container_group_definition::de_container_group_definition(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -168,6 +169,8 @@ pub(crate) fn de_describe_container_group_definition(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -177,13 +180,13 @@ pub(crate) fn de_describe_container_group_definition(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

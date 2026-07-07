@@ -149,9 +149,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CommitT
 #[derive(Debug)]
 struct CommitTransactionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CommitTransactionResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -262,7 +263,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CommitTransac
 pub enum CommitTransactionError {
     /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>There is an error in the call or in a SQL statement. (This error only appears in calls from Aurora Serverless v1 databases.)</p>
+    /// <p>There is an error in the call or in a SQL statement. This exception is deprecated.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>There was an error in processing the SQL statement.</p>
     DatabaseErrorException(crate::types::error::DatabaseErrorException),

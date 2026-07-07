@@ -162,6 +162,8 @@ pub fn de_create_traffic_policy_version(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("CreateTrafficPolicyVersionResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected CreateTrafficPolicyVersionResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -172,7 +174,7 @@ pub fn de_create_traffic_policy_version(
             s if s.matches("TrafficPolicy") /* TrafficPolicy com.amazonaws.route53.synthetic#CreateTrafficPolicyVersionOutput$TrafficPolicy */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_traffic_policy::de_traffic_policy(&mut tag)
+                        crate::protocol_serde::shape_traffic_policy::de_traffic_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

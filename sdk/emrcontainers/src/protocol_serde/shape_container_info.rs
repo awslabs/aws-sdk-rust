@@ -20,10 +20,16 @@ pub fn ser_container_info(
 pub(crate) fn de_container_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ContainerInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -49,7 +55,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "eksInfo" => Some(crate::types::ContainerInfo::EksInfo(
-                            crate::protocol_serde::shape_eks_info::de_eks_info(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_eks_info::de_eks_info(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eksInfo' cannot be null")
                             })?,
                         )),

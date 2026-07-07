@@ -339,4 +339,18 @@ impl InvokeModelWithResponseStreamFluentBuilder {
     pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTierType> {
         self.inner.get_service_tier()
     }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn request_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.request_metadata(input.into());
+        self
+    }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn set_request_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_request_metadata(input);
+        self
+    }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn get_request_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_metadata()
+    }
 }

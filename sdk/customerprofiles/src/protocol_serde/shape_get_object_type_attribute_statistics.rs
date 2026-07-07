@@ -140,6 +140,8 @@ pub(crate) fn de_get_object_type_attribute_statistics(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -154,7 +156,9 @@ pub(crate) fn de_get_object_type_attribute_statistics(
                 "Statistics" => {
                     builder = builder.set_statistics(
                         crate::protocol_serde::shape_get_object_type_attribute_statistics_stats::de_get_object_type_attribute_statistics_stats(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

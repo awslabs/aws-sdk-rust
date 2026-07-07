@@ -17,8 +17,22 @@ pub use crate::types::_time_range::TimeRangeBuilder;
 
 pub use crate::types::_resource_tag::ResourceTagBuilder;
 
+pub use crate::types::_billing_feature_filter::BillingFeatureFilterBuilder;
+
+pub use crate::types::_billing_preference_summary::BillingPreferenceSummaryBuilder;
+
 pub use crate::types::_billing_view_health_status::BillingViewHealthStatusBuilder;
+
+pub use crate::types::_credit_allocation_history_entry::CreditAllocationHistoryEntryBuilder;
+
+pub use crate::types::_credit_data::CreditDataBuilder;
 
 pub use crate::types::_string_search::StringSearchBuilder;
 
 pub use crate::types::_billing_view_list_element::BillingViewListElementBuilder;
+
+pub use crate::types::_billing_preference_for_key::BillingPreferenceForKeyBuilder;
+
+pub use crate::types::_billing_period::BillingPeriodBuilder;
+
+pub use crate::types::_amount::AmountBuilder;

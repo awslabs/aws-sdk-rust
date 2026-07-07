@@ -45,10 +45,16 @@ pub fn ser_kpi_field_wells(
 pub(crate) fn de_kpi_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KpiFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,15 +65,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TargetValues" => {
-                            builder =
-                                builder.set_target_values(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
+                            builder = builder.set_target_values(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TrendGroups" => {
                             builder = builder.set_trend_groups(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

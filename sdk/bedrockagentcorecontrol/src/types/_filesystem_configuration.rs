@@ -4,6 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum FilesystemConfiguration {
+    /// <p>Configuration for an Amazon EFS access point to mount into the AgentCore Runtime.</p>
+    EfsAccessPoint(crate::types::EfsAccessPointConfiguration),
+    /// <p>Configuration for an Amazon S3 Files access point to mount into the AgentCore Runtime.</p>
+    S3FilesAccessPoint(crate::types::S3FilesAccessPointConfiguration),
     /// <p>Configuration for session storage. Session storage provides persistent storage that is preserved across AgentCore Runtime session invocations.</p>
     SessionStorage(crate::types::SessionStorageConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +21,32 @@ pub enum FilesystemConfiguration {
     Unknown,
 }
 impl FilesystemConfiguration {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`EfsAccessPoint`](crate::types::FilesystemConfiguration::EfsAccessPoint), extracting the inner [`EfsAccessPointConfiguration`](crate::types::EfsAccessPointConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_efs_access_point(&self) -> ::std::result::Result<&crate::types::EfsAccessPointConfiguration, &Self> {
+        if let FilesystemConfiguration::EfsAccessPoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EfsAccessPoint`](crate::types::FilesystemConfiguration::EfsAccessPoint).
+    pub fn is_efs_access_point(&self) -> bool {
+        self.as_efs_access_point().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3FilesAccessPoint`](crate::types::FilesystemConfiguration::S3FilesAccessPoint), extracting the inner [`S3FilesAccessPointConfiguration`](crate::types::S3FilesAccessPointConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_files_access_point(&self) -> ::std::result::Result<&crate::types::S3FilesAccessPointConfiguration, &Self> {
+        if let FilesystemConfiguration::S3FilesAccessPoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3FilesAccessPoint`](crate::types::FilesystemConfiguration::S3FilesAccessPoint).
+    pub fn is_s3_files_access_point(&self) -> bool {
+        self.as_s3_files_access_point().is_ok()
+    }
     /// Tries to convert the enum instance into [`SessionStorage`](crate::types::FilesystemConfiguration::SessionStorage), extracting the inner [`SessionStorageConfiguration`](crate::types::SessionStorageConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_session_storage(&self) -> ::std::result::Result<&crate::types::SessionStorageConfiguration, &Self> {

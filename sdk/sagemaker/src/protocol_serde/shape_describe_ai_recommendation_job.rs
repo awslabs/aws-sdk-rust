@@ -77,6 +77,8 @@ pub(crate) fn de_describe_ai_recommendation_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -111,17 +113,23 @@ pub(crate) fn de_describe_ai_recommendation_job(
                     );
                 }
                 "ModelSource" => {
-                    builder = builder.set_model_source(crate::protocol_serde::shape_ai_model_source::de_ai_model_source(tokens, _value)?);
+                    builder = builder.set_model_source(crate::protocol_serde::shape_ai_model_source::de_ai_model_source(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "OutputConfig" => {
                     builder = builder.set_output_config(
-                        crate::protocol_serde::shape_ai_recommendation_output_result::de_ai_recommendation_output_result(tokens, _value)?,
+                        crate::protocol_serde::shape_ai_recommendation_output_result::de_ai_recommendation_output_result(tokens, _value, depth + 1)?,
                     );
                 }
                 "InferenceSpecification" => {
                     builder = builder.set_inference_specification(
                         crate::protocol_serde::shape_ai_recommendation_inference_specification::de_ai_recommendation_inference_specification(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -137,12 +145,18 @@ pub(crate) fn de_describe_ai_recommendation_job(
                 }
                 "PerformanceTarget" => {
                     builder = builder.set_performance_target(
-                        crate::protocol_serde::shape_ai_recommendation_performance_target::de_ai_recommendation_performance_target(tokens, _value)?,
+                        crate::protocol_serde::shape_ai_recommendation_performance_target::de_ai_recommendation_performance_target(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "Recommendations" => {
                     builder = builder.set_recommendations(crate::protocol_serde::shape_ai_recommendation_list::de_ai_recommendation_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "RoleArn" => {
@@ -154,7 +168,7 @@ pub(crate) fn de_describe_ai_recommendation_job(
                 }
                 "ComputeSpec" => {
                     builder = builder.set_compute_spec(
-                        crate::protocol_serde::shape_ai_recommendation_compute_spec::de_ai_recommendation_compute_spec(tokens, _value)?,
+                        crate::protocol_serde::shape_ai_recommendation_compute_spec::de_ai_recommendation_compute_spec(tokens, _value, depth + 1)?,
                     );
                 }
                 "CreationTime" => {
@@ -176,7 +190,7 @@ pub(crate) fn de_describe_ai_recommendation_job(
                     )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

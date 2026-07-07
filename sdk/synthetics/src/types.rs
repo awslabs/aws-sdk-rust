@@ -29,6 +29,8 @@ pub use crate::types::_resource_to_tag::ResourceToTag;
 
 pub use crate::types::_browser_config::BrowserConfig;
 
+pub use crate::types::_add_replica_location_input::AddReplicaLocationInput;
+
 pub use crate::types::_s3_encryption_config::S3EncryptionConfig;
 
 pub use crate::types::_canary_code_output::CanaryCodeOutput;
@@ -44,6 +46,8 @@ pub use crate::types::_canary_timeline::CanaryTimeline;
 pub use crate::types::_vpc_config_output::VpcConfigOutput;
 
 pub use crate::types::_visual_reference_output::VisualReferenceOutput;
+
+pub use crate::types::_multi_location_config::MultiLocationConfig;
 
 pub use crate::types::_artifact_config_output::ArtifactConfigOutput;
 
@@ -67,6 +71,10 @@ pub use crate::types::_canary_state_reason_code::CanaryStateReasonCode;
 
 pub use crate::types::_engine_config::EngineConfig;
 
+pub use crate::types::_location_type::LocationType;
+
+pub use crate::types::_replication_state::ReplicationState;
+
 pub use crate::types::_canary_run_status::CanaryRunStatus;
 
 pub use crate::types::_canary_run_timeline::CanaryRunTimeline;
@@ -77,11 +85,17 @@ pub use crate::types::_base_screenshot::BaseScreenshot;
 
 pub use crate::types::_dependency_type::DependencyType;
 
+pub use crate::types::_replica::Replica;
+
 pub use crate::types::_canary_run_state::CanaryRunState;
 
 pub use crate::types::_canary_run_state_reason_code::CanaryRunStateReasonCode;
 
 pub use crate::types::_canary_run_test_result::CanaryRunTestResult;
+
+pub use crate::types::_replication_status::ReplicationStatus;
+
+mod _add_replica_location_input;
 
 mod _artifact_config_input;
 
@@ -145,7 +159,17 @@ mod _group;
 
 mod _group_summary;
 
+mod _location_type;
+
+mod _multi_location_config;
+
 mod _provisioned_resource_cleanup_setting;
+
+mod _replica;
+
+mod _replication_state;
+
+mod _replication_status;
 
 mod _resource_to_tag;
 

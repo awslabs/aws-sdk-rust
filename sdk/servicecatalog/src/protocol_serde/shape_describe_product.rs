@@ -86,6 +86,8 @@ pub(crate) fn de_describe_product(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -93,19 +95,23 @@ pub(crate) fn de_describe_product(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProductViewSummary" => {
                     builder = builder.set_product_view_summary(crate::protocol_serde::shape_product_view_summary::de_product_view_summary(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ProvisioningArtifacts" => {
                     builder = builder.set_provisioning_artifacts(crate::protocol_serde::shape_provisioning_artifacts::de_provisioning_artifacts(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Budgets" => {
-                    builder = builder.set_budgets(crate::protocol_serde::shape_budgets::de_budgets(tokens, _value)?);
+                    builder = builder.set_budgets(crate::protocol_serde::shape_budgets::de_budgets(tokens, _value, depth + 1)?);
                 }
                 "LaunchPaths" => {
-                    builder = builder.set_launch_paths(crate::protocol_serde::shape_launch_paths::de_launch_paths(tokens, _value)?);
+                    builder = builder.set_launch_paths(crate::protocol_serde::shape_launch_paths::de_launch_paths(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -23,6 +23,8 @@ pub struct Project {
     pub delivery_models: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryModel>>,
     /// <p>Represents the estimated amount that the customer is expected to spend on AWS services related to the opportunity. This helps in evaluating the potential financial value of the opportunity for AWS.</p>
     pub expected_customer_spend: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>>,
+    /// <p>Optional. The expected duration of the contract associated with this opportunity. Partners use this value alongside expected customer spend to convert Total Contract Value (TCV) into Monthly Recurring Revenue (MRR).</p>
+    pub expected_contract_duration: ::std::option::Option<crate::types::ExpectedContractDuration>,
     /// <p>Specifies the <code>Opportunity</code>'s title or name.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Partner Network (APN) program that influenced the <code>Opportunity</code>. APN programs refer to specific partner programs or initiatives that can impact the <code>Opportunity</code>.</p>
@@ -94,6 +96,10 @@ impl Project {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expected_customer_spend.is_none()`.
     pub fn expected_customer_spend(&self) -> &[crate::types::ExpectedCustomerSpend] {
         self.expected_customer_spend.as_deref().unwrap_or_default()
+    }
+    /// <p>Optional. The expected duration of the contract associated with this opportunity. Partners use this value alongside expected customer spend to convert Total Contract Value (TCV) into Monthly Recurring Revenue (MRR).</p>
+    pub fn expected_contract_duration(&self) -> ::std::option::Option<&crate::types::ExpectedContractDuration> {
+        self.expected_contract_duration.as_ref()
     }
     /// <p>Specifies the <code>Opportunity</code>'s title or name.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
@@ -170,6 +176,7 @@ impl ::std::fmt::Debug for Project {
         let mut formatter = f.debug_struct("Project");
         formatter.field("delivery_models", &self.delivery_models);
         formatter.field("expected_customer_spend", &self.expected_customer_spend);
+        formatter.field("expected_contract_duration", &self.expected_contract_duration);
         formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("apn_programs", &self.apn_programs);
         formatter.field("customer_business_problem", &"*** Sensitive Data Redacted ***");
@@ -197,6 +204,7 @@ impl Project {
 pub struct ProjectBuilder {
     pub(crate) delivery_models: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryModel>>,
     pub(crate) expected_customer_spend: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>>,
+    pub(crate) expected_contract_duration: ::std::option::Option<crate::types::ExpectedContractDuration>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) apn_programs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) customer_business_problem: ::std::option::Option<::std::string::String>,
@@ -294,6 +302,20 @@ impl ProjectBuilder {
     /// <p>Represents the estimated amount that the customer is expected to spend on AWS services related to the opportunity. This helps in evaluating the potential financial value of the opportunity for AWS.</p>
     pub fn get_expected_customer_spend(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>> {
         &self.expected_customer_spend
+    }
+    /// <p>Optional. The expected duration of the contract associated with this opportunity. Partners use this value alongside expected customer spend to convert Total Contract Value (TCV) into Monthly Recurring Revenue (MRR).</p>
+    pub fn expected_contract_duration(mut self, input: crate::types::ExpectedContractDuration) -> Self {
+        self.expected_contract_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional. The expected duration of the contract associated with this opportunity. Partners use this value alongside expected customer spend to convert Total Contract Value (TCV) into Monthly Recurring Revenue (MRR).</p>
+    pub fn set_expected_contract_duration(mut self, input: ::std::option::Option<crate::types::ExpectedContractDuration>) -> Self {
+        self.expected_contract_duration = input;
+        self
+    }
+    /// <p>Optional. The expected duration of the contract associated with this opportunity. Partners use this value alongside expected customer spend to convert Total Contract Value (TCV) into Monthly Recurring Revenue (MRR).</p>
+    pub fn get_expected_contract_duration(&self) -> &::std::option::Option<crate::types::ExpectedContractDuration> {
+        &self.expected_contract_duration
     }
     /// <p>Specifies the <code>Opportunity</code>'s title or name.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -529,6 +551,7 @@ impl ProjectBuilder {
         crate::types::Project {
             delivery_models: self.delivery_models,
             expected_customer_spend: self.expected_customer_spend,
+            expected_contract_duration: self.expected_contract_duration,
             title: self.title,
             apn_programs: self.apn_programs,
             customer_business_problem: self.customer_business_problem,
@@ -548,6 +571,7 @@ impl ::std::fmt::Debug for ProjectBuilder {
         let mut formatter = f.debug_struct("ProjectBuilder");
         formatter.field("delivery_models", &self.delivery_models);
         formatter.field("expected_customer_spend", &self.expected_customer_spend);
+        formatter.field("expected_contract_duration", &self.expected_contract_duration);
         formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("apn_programs", &self.apn_programs);
         formatter.field("customer_business_problem", &"*** Sensitive Data Redacted ***");

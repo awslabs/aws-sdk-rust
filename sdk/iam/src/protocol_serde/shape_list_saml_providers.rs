@@ -65,6 +65,8 @@ pub fn de_list_saml_providers(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ListSAMLProvidersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ListSAMLProvidersResponse got {start_el:?}"
@@ -82,7 +84,7 @@ pub fn de_list_saml_providers(
             s if s.matches("SAMLProviderList") /* SAMLProviderList com.amazonaws.iam.synthetic#ListSAMLProvidersOutput$SAMLProviderList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_saml_provider_list_type::de_saml_provider_list_type(&mut tag)
+                        crate::protocol_serde::shape_saml_provider_list_type::de_saml_provider_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

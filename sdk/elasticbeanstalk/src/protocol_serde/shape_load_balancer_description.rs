@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_load_balancer_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LoadBalancerDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LoadBalancerDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_load_balancer_description(
             s if s.matches("Listeners") /* Listeners com.amazonaws.elasticbeanstalk#LoadBalancerDescription$Listeners */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_load_balancer_listeners_description::de_load_balancer_listeners_description(&mut tag)
+                        crate::protocol_serde::shape_load_balancer_listeners_description::de_load_balancer_listeners_description(&mut tag, depth + 1)
                         ?
                     )
                 ;

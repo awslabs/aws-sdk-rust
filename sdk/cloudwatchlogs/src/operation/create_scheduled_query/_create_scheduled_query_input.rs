@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScheduledQueryInput {
-    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Length must be between 1 and 300 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the scheduled query to help identify its purpose and functionality.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,8 @@ pub struct CreateScheduledQueryInput {
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.</p>
     pub start_time_offset: ::std::option::Option<i64>,
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
+    pub end_time_offset: ::std::option::Option<i64>,
     /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>The start time for the scheduled query in Unix epoch format. The query will not execute before this time.</p>
@@ -33,7 +35,7 @@ pub struct CreateScheduledQueryInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScheduledQueryInput {
-    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Length must be between 1 and 300 characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -66,6 +68,10 @@ impl CreateScheduledQueryInput {
     /// <p>The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.</p>
     pub fn start_time_offset(&self) -> ::std::option::Option<i64> {
         self.start_time_offset
+    }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
+    pub fn end_time_offset(&self) -> ::std::option::Option<i64> {
+        self.end_time_offset
     }
     /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
@@ -111,6 +117,7 @@ pub struct CreateScheduledQueryInputBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_offset: ::std::option::Option<i64>,
+    pub(crate) end_time_offset: ::std::option::Option<i64>,
     pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) schedule_start_time: ::std::option::Option<i64>,
     pub(crate) schedule_end_time: ::std::option::Option<i64>,
@@ -119,18 +126,18 @@ pub struct CreateScheduledQueryInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScheduledQueryInputBuilder {
-    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Length must be between 1 and 300 characters.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Length must be between 1 and 300 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Length must be between 1 and 300 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -241,6 +248,20 @@ impl CreateScheduledQueryInputBuilder {
     pub fn get_start_time_offset(&self) -> &::std::option::Option<i64> {
         &self.start_time_offset
     }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
+    pub fn end_time_offset(mut self, input: i64) -> Self {
+        self.end_time_offset = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
+    pub fn set_end_time_offset(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.end_time_offset = input;
+        self
+    }
+    /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
+    pub fn get_end_time_offset(&self) -> &::std::option::Option<i64> {
+        &self.end_time_offset
+    }
     /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
@@ -346,6 +367,7 @@ impl CreateScheduledQueryInputBuilder {
             schedule_expression: self.schedule_expression,
             timezone: self.timezone,
             start_time_offset: self.start_time_offset,
+            end_time_offset: self.end_time_offset,
             destination_configuration: self.destination_configuration,
             schedule_start_time: self.schedule_start_time,
             schedule_end_time: self.schedule_end_time,

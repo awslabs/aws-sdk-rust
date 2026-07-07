@@ -121,6 +121,8 @@ pub(crate) fn de_describe_key_registration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -134,10 +136,14 @@ pub(crate) fn de_describe_key_registration(
                     );
                 }
                 "KeyRegistration" => {
-                    builder = builder.set_key_registration(crate::protocol_serde::shape_key_registration::de_key_registration(tokens, _value)?);
+                    builder = builder.set_key_registration(crate::protocol_serde::shape_key_registration::de_key_registration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "QDataKey" => {
-                    builder = builder.set_q_data_key(crate::protocol_serde::shape_q_data_key::de_q_data_key(tokens, _value)?);
+                    builder = builder.set_q_data_key(crate::protocol_serde::shape_q_data_key::de_q_data_key(tokens, _value, depth + 1)?);
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(

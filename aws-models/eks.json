@@ -186,6 +186,9 @@
                     "target": "com.amazonaws.eks#AssociateIdentityProviderConfig"
                 },
                 {
+                    "target": "com.amazonaws.eks#CancelUpdate"
+                },
+                {
                     "target": "com.amazonaws.eks#CreateAccessEntry"
                 },
                 {
@@ -383,6 +386,242 @@
                 "aws.protocols#restJson1": {},
                 "smithy.api#documentation": "<p>Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on\n            Amazon Web Services without needing to setup or maintain your own Kubernetes control plane. Kubernetes is an\n            open-source system for automating the deployment, scaling, and management of\n            containerized applications.</p>\n         <p>Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all\n            the existing plugins and tooling from the Kubernetes community. Applications running on Amazon EKS\n            are fully compatible with applications running on any standard Kubernetes environment,\n            whether running in on-premises data centers or public clouds. This means that you can\n            easily migrate any standard Kubernetes application to Amazon EKS without any code modification\n            required.</p>",
                 "smithy.api#title": "Amazon Elastic Kubernetes Service",
+                "smithy.rules#endpointBdd": {
+                    "version": "1.1",
+                    "parameters": {
+                        "Region": {
+                            "builtIn": "AWS::Region",
+                            "required": false,
+                            "documentation": "The AWS region used to dispatch the request.",
+                            "type": "string"
+                        },
+                        "UseDualStack": {
+                            "builtIn": "AWS::UseDualStack",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+                            "type": "boolean"
+                        },
+                        "UseFIPS": {
+                            "builtIn": "AWS::UseFIPS",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+                            "type": "boolean"
+                        },
+                        "Endpoint": {
+                            "builtIn": "SDK::Endpoint",
+                            "required": false,
+                            "documentation": "Override the endpoint used to send this request",
+                            "type": "string"
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "aws.partition",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ],
+                            "assign": "PartitionResult"
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseFIPS"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseDualStack"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsDualStack"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsFIPS"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "stringEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "name"
+                                    ]
+                                },
+                                "aws"
+                            ]
+                        },
+                        {
+                            "fn": "stringEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "name"
+                                    ]
+                                },
+                                "aws-us-gov"
+                            ]
+                        }
+                    ],
+                    "results": [
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": {
+                                    "ref": "Endpoint"
+                                },
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://eks-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://fips.eks.{Region}.amazonaws.com",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://eks.{Region}.amazonaws.com",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://eks-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS is enabled but this partition does not support FIPS",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://eks.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "DualStack is enabled but this partition does not support DualStack",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://eks.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
+                        }
+                    ],
+                    "root": 2,
+                    "nodeCount": 15,
+                    "nodes": "/////wAAAAH/////AAAAAAAAAA4AAAADAAAAAQAAAAQF9eENAAAAAgAAAAUF9eENAAAAAwAAAAgAAAAGAAAABAAAAAcF9eEMAAAABQX14QoF9eELAAAABAAAAAwAAAAJAAAABgAAAAoF9eEJAAAABwX14QYAAAALAAAACAX14QcF9eEIAAAABQAAAA0F9eEFAAAABgX14QQF9eEFAAAAAwX14QEAAAAPAAAABAX14QIF9eED"
+                },
                 "smithy.rules#endpointRuleSet": {
                     "version": "1.0",
                     "parameters": {
@@ -2613,6 +2852,137 @@
         "com.amazonaws.eks#BoxedInteger": {
             "type": "integer"
         },
+        "com.amazonaws.eks#CancelUpdate": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.eks#CancelUpdateRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.eks#CancelUpdateResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.eks#ClientException"
+                },
+                {
+                    "target": "com.amazonaws.eks#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.eks#InvalidRequestException"
+                },
+                {
+                    "target": "com.amazonaws.eks#InvalidStateException"
+                },
+                {
+                    "target": "com.amazonaws.eks#ResourceInUseException"
+                },
+                {
+                    "target": "com.amazonaws.eks#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.eks#ServerException"
+                },
+                {
+                    "target": "com.amazonaws.eks#ThrottlingException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Cancels an in-progress update to an Amazon EKS cluster on a best-effort basis. Cancellation\n            is only performed if the update can be cancelled. Currently, this is supported for\n            <code>VersionRollback</code> update types on EKS Auto Mode clusters when nodes are\n            rolling back.</p>\n         <p>A successful cancellation stops the node rollback. After cancellation, nodes converge\n            to the current cluster version honoring configured disruption controls. If the control\n            plane rollback has already begun, the cancellation request fails.</p>",
+                "smithy.api#http": {
+                    "method": "POST",
+                    "uri": "/clusters/{name}/updates/{updateId}/cancel-update",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.eks#CancelUpdateRequest": {
+            "type": "structure",
+            "members": {
+                "name": {
+                    "target": "com.amazonaws.eks#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the Amazon EKS cluster associated with the update.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "updateId": {
+                    "target": "com.amazonaws.eks#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the update to cancel.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "clientRequestToken": {
+                    "target": "com.amazonaws.eks#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A unique, case-sensitive identifier that you provide to ensure\nthe idempotency of the request.</p>",
+                        "smithy.api#idempotencyToken": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.eks#CancelUpdateResponse": {
+            "type": "structure",
+            "members": {
+                "update": {
+                    "target": "com.amazonaws.eks#Update",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The full description of the specified update.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.eks#Cancellation": {
+            "type": "structure",
+            "members": {
+                "status": {
+                    "target": "com.amazonaws.eks#CancellationStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The current status of the cancellation. Valid values are <code>InProgress</code>,\n            <code>Failed</code>, and <code>Successful</code>.</p>"
+                    }
+                },
+                "reason": {
+                    "target": "com.amazonaws.eks#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A message providing additional details about the cancellation, such as the reason for\n            the cancellation or failure details.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information about the latest cancellation of an update to an Amazon EKS cluster.</p>"
+            }
+        },
+        "com.amazonaws.eks#CancellationStatus": {
+            "type": "enum",
+            "members": {
+                "IN_PROGRESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "InProgress"
+                    }
+                },
+                "FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Failed"
+                    }
+                },
+                "SUCCESSFUL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Successful"
+                    }
+                }
+            }
+        },
         "com.amazonaws.eks#Capability": {
             "type": "structure",
             "members": {
@@ -2962,6 +3332,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "MISCONFIGURATION"
+                    }
+                },
+                "ROLLBACK_READINESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ROLLBACK_READINESS"
                     }
                 }
             }
@@ -3753,6 +4129,29 @@
                 "smithy.api#documentation": "<p>The full description of your connected cluster.</p>"
             }
         },
+        "com.amazonaws.eks#ControlPlaneEgressModeType": {
+            "type": "enum",
+            "members": {
+                "AWS_MANAGED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AWS_MANAGED"
+                    }
+                },
+                "CUSTOMER_ROUTED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CUSTOMER_ROUTED"
+                    }
+                },
+                "CUSTOMER_ISOLATED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CUSTOMER_ISOLATED"
+                    }
+                }
+            }
+        },
         "com.amazonaws.eks#ControlPlanePlacementRequest": {
             "type": "structure",
             "members": {
@@ -3760,6 +4159,12 @@
                     "target": "com.amazonaws.eks#String",
                     "traits": {
                         "smithy.api#documentation": "<p>The name of the placement group for the Kubernetes control plane instances. This setting\n            can't be changed after cluster creation. </p>"
+                    }
+                },
+                "spreadLevel": {
+                    "target": "com.amazonaws.eks#SpreadLevel",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Optional parameter to specify the placement group spread level for control plane instances. If not provided, Amazon EKS will deploy control plane instances without a placement group.</p>"
                     }
                 }
             },
@@ -3774,6 +4179,12 @@
                     "target": "com.amazonaws.eks#String",
                     "traits": {
                         "smithy.api#documentation": "<p>The name of the placement group for the Kubernetes control plane instances.</p>"
+                    }
+                },
+                "spreadLevel": {
+                    "target": "com.amazonaws.eks#SpreadLevel",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The spread level used with the placement group for control plane instances on your local Amazon EKS cluster on Amazon Web Services Outposts.</p>"
                     }
                 }
             },
@@ -7509,6 +7920,34 @@
                 "target": "com.amazonaws.eks#ErrorDetail"
             }
         },
+        "com.amazonaws.eks#EtcdPlacementRequest": {
+            "type": "structure",
+            "members": {
+                "spreadLevel": {
+                    "target": "com.amazonaws.eks#SpreadLevel",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Optional parameter to specify the placement group spread level for etcd instances. If not provided, Amazon EKS will deploy etcd instances without a placement group.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The placement configuration for the etcd instances of your local Amazon EKS\n            cluster on an Amazon Web Services Outpost. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html\">Capacity\n                considerations</a> in the <i>Amazon EKS User Guide</i>.</p>"
+            }
+        },
+        "com.amazonaws.eks#EtcdPlacementResponse": {
+            "type": "structure",
+            "members": {
+                "spreadLevel": {
+                    "target": "com.amazonaws.eks#SpreadLevel",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The spread level used with the placement group for etcd instances on your local Amazon EKS cluster on Amazon Web Services Outposts.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The placement configuration for the etcd instances of your local Amazon EKS\n            cluster on an Amazon Web Services Outpost. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html\">Capacity\n                considerations</a> in the <i>Amazon EKS User Guide</i>.</p>"
+            }
+        },
         "com.amazonaws.eks#FargateProfile": {
             "type": "structure",
             "members": {
@@ -10630,7 +11069,7 @@
                 "controlPlaneInstanceType": {
                     "target": "com.amazonaws.eks#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts.\n            Choose an instance type based on the number of nodes that your cluster will have. For\n            more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html\">Capacity\n                considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n         <p>The instance type that you specify is used for all Kubernetes control plane instances. The\n            instance type can't be changed after cluster creation. The control plane is not\n            automatically scaled by Amazon EKS.</p>\n         <p> </p>",
+                        "smithy.api#documentation": "<p>The Amazon EC2 instance type for the Kubernetes control plane instances of your local Amazon EKS cluster on Amazon Web Services Outposts. This instance type applies to all control plane instances and cannot be changed after cluster creation.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html\">Capacity\n                considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n         <p> </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -10638,6 +11077,18 @@
                     "target": "com.amazonaws.eks#ControlPlanePlacementRequest",
                     "traits": {
                         "smithy.api#documentation": "<p>An object representing the placement configuration for all the control plane instances\n            of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html\">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>"
+                    }
+                },
+                "etcdInstanceType": {
+                    "target": "com.amazonaws.eks#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon EC2 instance type for etcd instances of your local Amazon EKS cluster on Amazon Web Services Outposts. This instance type applies to all etcd instances and cannot be changed after cluster creation.</p>"
+                    }
+                },
+                "etcdPlacement": {
+                    "target": "com.amazonaws.eks#EtcdPlacementRequest",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object representing the placement configuration for the etcd instances of your local \n            Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html\">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>"
                     }
                 }
             },
@@ -10658,7 +11109,7 @@
                 "controlPlaneInstanceType": {
                     "target": "com.amazonaws.eks#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon EC2 instance type used for the control plane. The instance type is the same for\n            all control plane instances.</p>",
+                        "smithy.api#documentation": "<p>The Amazon EC2 instance type for the Kubernetes control plane instances of your local Amazon EKS cluster on Amazon Web Services Outposts. The instance type is the same for\n            all control plane instances.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -10666,6 +11117,18 @@
                     "target": "com.amazonaws.eks#ControlPlanePlacementResponse",
                     "traits": {
                         "smithy.api#documentation": "<p>An object representing the placement configuration for all the control plane instances\n            of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html\">Capacity\n                considerations</a> in the <i>Amazon EKS User Guide</i>.</p>"
+                    }
+                },
+                "etcdInstanceType": {
+                    "target": "com.amazonaws.eks#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon EC2 instance type for etcd instances of your local Amazon EKS cluster on Amazon Web Services Outposts. The instance type is the same for\n            all etcd instances.</p>"
+                    }
+                },
+                "etcdPlacement": {
+                    "target": "com.amazonaws.eks#EtcdPlacementResponse",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object representing the placement configuration for the etcd instances of your local \n            Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html\">Capacity\n                considerations</a> in the <i>Amazon EKS User Guide</i>.</p>"
                     }
                 }
             },
@@ -11259,6 +11722,20 @@
                 }
             }
         },
+        "com.amazonaws.eks#RollbackConfig": {
+            "type": "structure",
+            "members": {
+                "timeoutMinutes": {
+                    "target": "com.amazonaws.eks#BoxedInteger",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The length of time in minutes to wait before cancelling the update. Timeout is a\n            minimum-bound property, meaning the timeout occurs no sooner than the time you specify,\n            but can occur shortly thereafter. This value can be between 120 (2 hours) and 10080\n            (7 days). Default: <code>720</code> (12 hours) if not specified.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The rollback configuration for the cluster version rollback.</p>"
+            }
+        },
         "com.amazonaws.eks#ServerException": {
             "type": "structure",
             "members": {
@@ -11313,6 +11790,23 @@
                 "smithy.api#documentation": "<p>The service is unavailable. Back off and retry the operation.</p>",
                 "smithy.api#error": "server",
                 "smithy.api#httpError": 503
+            }
+        },
+        "com.amazonaws.eks#SpreadLevel": {
+            "type": "enum",
+            "members": {
+                "HOST": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "host"
+                    }
+                },
+                "RACK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "rack"
+                    }
+                }
             }
         },
         "com.amazonaws.eks#SsoIdentity": {
@@ -11783,6 +12277,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Any errors associated with a <code>Failed</code> update.</p>"
                     }
+                },
+                "cancellation": {
+                    "target": "com.amazonaws.eks#Cancellation",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The latest cancellation information for the update. This field is present only if any\n            cancellation is attempted for the update.</p>"
+                    }
                 }
             },
             "traits": {
@@ -12180,7 +12680,10 @@
                     }
                 },
                 "resourcesVpcConfig": {
-                    "target": "com.amazonaws.eks#VpcConfigRequest"
+                    "target": "com.amazonaws.eks#VpcConfigRequest",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object representing the VPC configuration to use for the cluster update. You can\n            use this parameter to update the control plane egress mode, the subnets used by the\n            cluster, the security groups, and the endpoint access settings.</p>"
+                    }
                 },
                 "logging": {
                     "target": "com.amazonaws.eks#Logging",
@@ -12331,7 +12834,13 @@
                     "target": "com.amazonaws.eks#Boolean",
                     "traits": {
                         "smithy.api#default": false,
-                        "smithy.api#documentation": "<p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when\n            updating a cluster.</p>"
+                        "smithy.api#documentation": "<p>Set this value to <code>true</code> to override upgrade-blocking or rollback-blocking readiness checks when\n            updating a cluster.</p>"
+                    }
+                },
+                "rollbackConfig": {
+                    "target": "com.amazonaws.eks#RollbackConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The rollback configuration for the cluster version rollback.</p>"
                     }
                 }
             },
@@ -12922,6 +13431,36 @@
                         "smithy.api#enumValue": "NodeRepairConfig"
                     }
                 },
+                "ROLE_ARN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "RoleArn"
+                    }
+                },
+                "ROLE_MAPPINGS_TO_ADD_OR_UPDATE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "RoleMappingsToAddOrUpdate"
+                    }
+                },
+                "ROLE_MAPPINGS_TO_REMOVE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "RoleMappingsToRemove"
+                    }
+                },
+                "NETWORK_ACCESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "NetworkAccess"
+                    }
+                },
+                "VENDED_LOGS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "VendedLogs"
+                    }
+                },
                 "UPDATED_TIER": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -12962,6 +13501,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "WarmPoolReuseOnScaleIn"
+                    }
+                },
+                "CONTROL_PLANE_EGRESS_MODE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ControlPlaneEgressMode"
                     }
                 }
             }
@@ -13234,6 +13779,12 @@
                         "smithy.api#enumValue": "DeletionProtectionUpdate"
                     }
                 },
+                "CAPABILITY_UPDATE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CapabilityUpdate"
+                    }
+                },
                 "CONTROL_PLANE_SCALING_CONFIG_UPDATE": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -13244,6 +13795,18 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "VendedLogsUpdate"
+                    }
+                },
+                "CONTROL_PLANE_EGRESS_UPDATE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ControlPlaneEgressUpdate"
+                    }
+                },
+                "VERSION_ROLLBACK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "VersionRollback"
                     }
                 }
             }
@@ -13331,6 +13894,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server\n            endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that\n            you specify is denied. The default value is <code>0.0.0.0/0</code> and additionally\n                <code>::/0</code> for dual-stack `IPv6` clusters. If you've disabled private\n            endpoint access, make sure that you specify the necessary CIDR blocks for every node and\n            Fargate <code>Pod</code> in the cluster. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html\">Cluster\n                API server endpoint</a> in the <i>\n               <i>Amazon EKS User Guide</i>\n            </i>.</p>\n         <p>Note that the public endpoints are dual-stack for only <code>IPv6</code> clusters that\n            are made after October 2024. You can't add <code>IPv6</code> CIDR blocks to\n                <code>IPv4</code> clusters or <code>IPv6</code> clusters that were made before\n            October 2024.</p>"
                     }
+                },
+                "controlPlaneEgressMode": {
+                    "target": "com.amazonaws.eks#ControlPlaneEgressModeType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the control plane egress routing mode for the cluster. If the cluster is set\n            to <code>AWS_MANAGED</code>, Amazon EKS manages the egress path from the control plane\n            and you don't need to configure NAT gateways or other routing infrastructure for control\n            plane traffic. If the cluster is set to <code>CUSTOMER_ROUTED</code>, you manage the\n            egress path from the control plane in your VPC subnets. You are responsible for ensuring\n            that the control plane can reach required endpoints such as webhook servers and OIDC\n            providers. The default value is <code>AWS_MANAGED</code>. Once set to\n            <code>CUSTOMER_ROUTED</code>, this setting cannot be changed back to\n            <code>AWS_MANAGED</code> on the same cluster.</p>\n         <p>\n            <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html\">Learn more about control plane\n                egress routing in the <i>Amazon EKS User Guide</i>.</a>\n         </p>"
+                    }
                 }
             },
             "traits": {
@@ -13382,6 +13951,12 @@
                     "target": "com.amazonaws.eks#StringList",
                     "traits": {
                         "smithy.api#documentation": "<p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server\n            endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that\n            you specify is denied. The default value is <code>0.0.0.0/0</code> and additionally\n            <code>::/0</code> for dual-stack `IPv6` clusters. If you've disabled private\n            endpoint access, make sure that you specify the necessary CIDR blocks for every node and\n            Fargate <code>Pod</code> in the cluster. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html\">Cluster\n                API server endpoint</a> in the <i>\n               <i>Amazon EKS User Guide</i>\n            </i>.</p>\n         <p>Note that the public endpoints are dual-stack for only <code>IPv6</code> clusters that\n            are made after October 2024. You can't add <code>IPv6</code> CIDR blocks to\n            <code>IPv4</code> clusters or <code>IPv6</code> clusters that were made before\n            October 2024.</p>"
+                    }
+                },
+                "controlPlaneEgressMode": {
+                    "target": "com.amazonaws.eks#ControlPlaneEgressModeType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The current control plane egress routing mode for the cluster. If the cluster is set\n            to <code>AWS_MANAGED</code>, Amazon EKS manages the egress path from the control plane.\n            If the cluster is set to <code>CUSTOMER_ROUTED</code>, you manage the egress path from\n            the control plane in your VPC subnets.</p>\n         <p>\n            <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html\">Learn more about control plane\n                egress routing in the <i>Amazon EKS User Guide</i>.</a>\n         </p>"
                     }
                 }
             },

@@ -4,13 +4,49 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcesTrendsStringFilter {
-    /// <p>The name of the resources field to filter on, such as resourceType, accountId, or region.</p>
+    /// <p>The name of the resources field to filter on. You can specify one of the following fields.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account_id</code> – The Amazon Web Services account ID that owns the resource.</p></li>
+    /// <li>
+    /// <p><code>region</code> – The Amazon Web Services Region of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_type</code> – The type of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_category</code> – The category of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_cloud_provider</code> – The cloud provider of the resource. Valid values are <code>AWS</code> and <code>Azure</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_region</code> – The Region of the resource. For an Amazon Web Services resource, this is the Amazon Web Services Region. For an Azure resource, this is the Azure Region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_id</code> – The identifier of the account that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services account ID. For an Azure resource, this is the Azure subscription ID.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_organization_id</code> – The identifier of the organization that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services organization ID. For an Azure resource, this is the Azure tenant ID.</p></li>
+    /// </ul>
     pub field_name: ::std::option::Option<crate::types::ResourcesTrendsStringField>,
     /// <p>A string filter for filtering Security Hub CSPM findings.</p>
     pub filter: ::std::option::Option<crate::types::StringFilter>,
 }
 impl ResourcesTrendsStringFilter {
-    /// <p>The name of the resources field to filter on, such as resourceType, accountId, or region.</p>
+    /// <p>The name of the resources field to filter on. You can specify one of the following fields.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account_id</code> – The Amazon Web Services account ID that owns the resource.</p></li>
+    /// <li>
+    /// <p><code>region</code> – The Amazon Web Services Region of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_type</code> – The type of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_category</code> – The category of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_cloud_provider</code> – The cloud provider of the resource. Valid values are <code>AWS</code> and <code>Azure</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_region</code> – The Region of the resource. For an Amazon Web Services resource, this is the Amazon Web Services Region. For an Azure resource, this is the Azure Region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_id</code> – The identifier of the account that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services account ID. For an Azure resource, this is the Azure subscription ID.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_organization_id</code> – The identifier of the organization that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services organization ID. For an Azure resource, this is the Azure tenant ID.</p></li>
+    /// </ul>
     pub fn field_name(&self) -> ::std::option::Option<&crate::types::ResourcesTrendsStringField> {
         self.field_name.as_ref()
     }
@@ -34,17 +70,71 @@ pub struct ResourcesTrendsStringFilterBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::StringFilter>,
 }
 impl ResourcesTrendsStringFilterBuilder {
-    /// <p>The name of the resources field to filter on, such as resourceType, accountId, or region.</p>
+    /// <p>The name of the resources field to filter on. You can specify one of the following fields.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account_id</code> – The Amazon Web Services account ID that owns the resource.</p></li>
+    /// <li>
+    /// <p><code>region</code> – The Amazon Web Services Region of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_type</code> – The type of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_category</code> – The category of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_cloud_provider</code> – The cloud provider of the resource. Valid values are <code>AWS</code> and <code>Azure</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_region</code> – The Region of the resource. For an Amazon Web Services resource, this is the Amazon Web Services Region. For an Azure resource, this is the Azure Region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_id</code> – The identifier of the account that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services account ID. For an Azure resource, this is the Azure subscription ID.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_organization_id</code> – The identifier of the organization that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services organization ID. For an Azure resource, this is the Azure tenant ID.</p></li>
+    /// </ul>
     pub fn field_name(mut self, input: crate::types::ResourcesTrendsStringField) -> Self {
         self.field_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the resources field to filter on, such as resourceType, accountId, or region.</p>
+    /// <p>The name of the resources field to filter on. You can specify one of the following fields.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account_id</code> – The Amazon Web Services account ID that owns the resource.</p></li>
+    /// <li>
+    /// <p><code>region</code> – The Amazon Web Services Region of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_type</code> – The type of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_category</code> – The category of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_cloud_provider</code> – The cloud provider of the resource. Valid values are <code>AWS</code> and <code>Azure</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_region</code> – The Region of the resource. For an Amazon Web Services resource, this is the Amazon Web Services Region. For an Azure resource, this is the Azure Region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_id</code> – The identifier of the account that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services account ID. For an Azure resource, this is the Azure subscription ID.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_organization_id</code> – The identifier of the organization that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services organization ID. For an Azure resource, this is the Azure tenant ID.</p></li>
+    /// </ul>
     pub fn set_field_name(mut self, input: ::std::option::Option<crate::types::ResourcesTrendsStringField>) -> Self {
         self.field_name = input;
         self
     }
-    /// <p>The name of the resources field to filter on, such as resourceType, accountId, or region.</p>
+    /// <p>The name of the resources field to filter on. You can specify one of the following fields.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account_id</code> – The Amazon Web Services account ID that owns the resource.</p></li>
+    /// <li>
+    /// <p><code>region</code> – The Amazon Web Services Region of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_type</code> – The type of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_category</code> – The category of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource_cloud_provider</code> – The cloud provider of the resource. Valid values are <code>AWS</code> and <code>Azure</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_region</code> – The Region of the resource. For an Amazon Web Services resource, this is the Amazon Web Services Region. For an Azure resource, this is the Azure Region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_id</code> – The identifier of the account that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services account ID. For an Azure resource, this is the Azure subscription ID.</p></li>
+    /// <li>
+    /// <p><code>resource_owner_organization_id</code> – The identifier of the organization that owns the resource. For an Amazon Web Services resource, this is the Amazon Web Services organization ID. For an Azure resource, this is the Azure tenant ID.</p></li>
+    /// </ul>
     pub fn get_field_name(&self) -> &::std::option::Option<crate::types::ResourcesTrendsStringField> {
         &self.field_name
     }

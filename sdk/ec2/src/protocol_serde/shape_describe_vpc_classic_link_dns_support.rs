@@ -49,6 +49,8 @@ pub fn de_describe_vpc_classic_link_dns_support(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeVpcClassicLinkDnsSupportResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeVpcClassicLinkDnsSupportResponse got {start_el:?}"
@@ -72,7 +74,7 @@ pub fn de_describe_vpc_classic_link_dns_support(
             s if s.matches("vpcs") /* Vpcs com.amazonaws.ec2.synthetic#DescribeVpcClassicLinkDnsSupportOutput$Vpcs */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_classic_link_dns_support_list::de_classic_link_dns_support_list(&mut tag)
+                        crate::protocol_serde::shape_classic_link_dns_support_list::de_classic_link_dns_support_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

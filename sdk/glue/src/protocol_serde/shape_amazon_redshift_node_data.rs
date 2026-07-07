@@ -132,10 +132,16 @@ pub fn ser_amazon_redshift_node_data(
 pub(crate) fn de_amazon_redshift_node_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AmazonRedshiftNodeData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -160,19 +166,19 @@ where
                             );
                         }
                         "Connection" => {
-                            builder = builder.set_connection(crate::protocol_serde::shape_option::de_option(tokens, _value)?);
+                            builder = builder.set_connection(crate::protocol_serde::shape_option::de_option(tokens, _value, depth + 1)?);
                         }
                         "Schema" => {
-                            builder = builder.set_schema(crate::protocol_serde::shape_option::de_option(tokens, _value)?);
+                            builder = builder.set_schema(crate::protocol_serde::shape_option::de_option(tokens, _value, depth + 1)?);
                         }
                         "Table" => {
-                            builder = builder.set_table(crate::protocol_serde::shape_option::de_option(tokens, _value)?);
+                            builder = builder.set_table(crate::protocol_serde::shape_option::de_option(tokens, _value, depth + 1)?);
                         }
                         "CatalogDatabase" => {
-                            builder = builder.set_catalog_database(crate::protocol_serde::shape_option::de_option(tokens, _value)?);
+                            builder = builder.set_catalog_database(crate::protocol_serde::shape_option::de_option(tokens, _value, depth + 1)?);
                         }
                         "CatalogTable" => {
-                            builder = builder.set_catalog_table(crate::protocol_serde::shape_option::de_option(tokens, _value)?);
+                            builder = builder.set_catalog_table(crate::protocol_serde::shape_option::de_option(tokens, _value, depth + 1)?);
                         }
                         "CatalogRedshiftSchema" => {
                             builder = builder.set_catalog_redshift_schema(
@@ -196,11 +202,15 @@ where
                             );
                         }
                         "IamRole" => {
-                            builder = builder.set_iam_role(crate::protocol_serde::shape_option::de_option(tokens, _value)?);
+                            builder = builder.set_iam_role(crate::protocol_serde::shape_option::de_option(tokens, _value, depth + 1)?);
                         }
                         "AdvancedOptions" => {
                             builder = builder.set_advanced_options(
-                                crate::protocol_serde::shape_amazon_redshift_advanced_options::de_amazon_redshift_advanced_options(tokens, _value)?,
+                                crate::protocol_serde::shape_amazon_redshift_advanced_options::de_amazon_redshift_advanced_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "SampleQuery" => {
@@ -277,7 +287,7 @@ where
                             );
                         }
                         "TableSchema" => {
-                            builder = builder.set_table_schema(crate::protocol_serde::shape_option_list::de_option_list(tokens, _value)?);
+                            builder = builder.set_table_schema(crate::protocol_serde::shape_option_list::de_option_list(tokens, _value, depth + 1)?);
                         }
                         "StagingTable" => {
                             builder = builder.set_staging_table(
@@ -287,7 +297,8 @@ where
                             );
                         }
                         "SelectedColumns" => {
-                            builder = builder.set_selected_columns(crate::protocol_serde::shape_option_list::de_option_list(tokens, _value)?);
+                            builder =
+                                builder.set_selected_columns(crate::protocol_serde::shape_option_list::de_option_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

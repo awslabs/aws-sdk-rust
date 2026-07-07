@@ -60,6 +60,8 @@ pub fn de_get_bucket_cors(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("CORSConfiguration") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected CORSConfiguration but got {start_el:?}. This is likely a bug in the SDK."
@@ -73,7 +75,7 @@ pub fn de_get_bucket_cors(
                         Result::<::std::vec::Vec::<crate::types::CorsRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.cors_rules.take().unwrap_or_default();
                             list_4.push(
-                                crate::protocol_serde::shape_cors_rule::de_cors_rule(&mut tag)
+                                crate::protocol_serde::shape_cors_rule::de_cors_rule(&mut tag, depth + 1)
                                 ?
                             );
                             list_4

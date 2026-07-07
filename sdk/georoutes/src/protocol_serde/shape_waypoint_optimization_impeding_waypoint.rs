@@ -2,10 +2,16 @@
 pub(crate) fn de_waypoint_optimization_impeding_waypoint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WaypointOptimizationImpedingWaypoint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FailedConstraints" => {
                             builder = builder.set_failed_constraints(
-                                    crate::protocol_serde::shape_waypoint_optimization_failed_constraint_list::de_waypoint_optimization_failed_constraint_list(tokens, _value)?
+                                    crate::protocol_serde::shape_waypoint_optimization_failed_constraint_list::de_waypoint_optimization_failed_constraint_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "Id" => {
@@ -28,7 +34,7 @@ where
                             );
                         }
                         "Position" => {
-                            builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens, _value)?);
+                            builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

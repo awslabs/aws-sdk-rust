@@ -2,10 +2,16 @@
 pub(crate) fn de_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Resource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,24 +22,39 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "accessKeyDetails" => {
-                            builder = builder
-                                .set_access_key_details(crate::protocol_serde::shape_access_key_details::de_access_key_details(tokens, _value)?);
+                            builder = builder.set_access_key_details(crate::protocol_serde::shape_access_key_details::de_access_key_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "s3BucketDetails" => {
-                            builder =
-                                builder.set_s3_bucket_details(crate::protocol_serde::shape_s3_bucket_details::de_s3_bucket_details(tokens, _value)?);
+                            builder = builder.set_s3_bucket_details(crate::protocol_serde::shape_s3_bucket_details::de_s3_bucket_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "instanceDetails" => {
-                            builder =
-                                builder.set_instance_details(crate::protocol_serde::shape_instance_details::de_instance_details(tokens, _value)?);
+                            builder = builder.set_instance_details(crate::protocol_serde::shape_instance_details::de_instance_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "eksClusterDetails" => {
-                            builder = builder
-                                .set_eks_cluster_details(crate::protocol_serde::shape_eks_cluster_details::de_eks_cluster_details(tokens, _value)?);
+                            builder = builder.set_eks_cluster_details(crate::protocol_serde::shape_eks_cluster_details::de_eks_cluster_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "kubernetesDetails" => {
-                            builder = builder
-                                .set_kubernetes_details(crate::protocol_serde::shape_kubernetes_details::de_kubernetes_details(tokens, _value)?);
+                            builder = builder.set_kubernetes_details(crate::protocol_serde::shape_kubernetes_details::de_kubernetes_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceType" => {
                             builder = builder.set_resource_type(
@@ -43,45 +64,63 @@ where
                             );
                         }
                         "ebsVolumeDetails" => {
-                            builder = builder
-                                .set_ebs_volume_details(crate::protocol_serde::shape_ebs_volume_details::de_ebs_volume_details(tokens, _value)?);
+                            builder = builder.set_ebs_volume_details(crate::protocol_serde::shape_ebs_volume_details::de_ebs_volume_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ecsClusterDetails" => {
-                            builder = builder
-                                .set_ecs_cluster_details(crate::protocol_serde::shape_ecs_cluster_details::de_ecs_cluster_details(tokens, _value)?);
+                            builder = builder.set_ecs_cluster_details(crate::protocol_serde::shape_ecs_cluster_details::de_ecs_cluster_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "containerDetails" => {
-                            builder = builder.set_container_details(crate::protocol_serde::shape_container::de_container(tokens, _value)?);
+                            builder = builder.set_container_details(crate::protocol_serde::shape_container::de_container(tokens, _value, depth + 1)?);
                         }
                         "lambdaDetails" => {
-                            builder = builder.set_lambda_details(crate::protocol_serde::shape_lambda_details::de_lambda_details(tokens, _value)?);
+                            builder = builder.set_lambda_details(crate::protocol_serde::shape_lambda_details::de_lambda_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "rdsDbInstanceDetails" => {
                             builder = builder.set_rds_db_instance_details(
-                                crate::protocol_serde::shape_rds_db_instance_details::de_rds_db_instance_details(tokens, _value)?,
+                                crate::protocol_serde::shape_rds_db_instance_details::de_rds_db_instance_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "rdsLimitlessDbDetails" => {
                             builder = builder.set_rds_limitless_db_details(
-                                crate::protocol_serde::shape_rds_limitless_db_details::de_rds_limitless_db_details(tokens, _value)?,
+                                crate::protocol_serde::shape_rds_limitless_db_details::de_rds_limitless_db_details(tokens, _value, depth + 1)?,
                             );
                         }
                         "rdsDbUserDetails" => {
-                            builder = builder
-                                .set_rds_db_user_details(crate::protocol_serde::shape_rds_db_user_details::de_rds_db_user_details(tokens, _value)?);
+                            builder = builder.set_rds_db_user_details(crate::protocol_serde::shape_rds_db_user_details::de_rds_db_user_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ebsSnapshotDetails" => {
                             builder = builder.set_ebs_snapshot_details(crate::protocol_serde::shape_ebs_snapshot_details::de_ebs_snapshot_details(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ec2ImageDetails" => {
-                            builder =
-                                builder.set_ec2_image_details(crate::protocol_serde::shape_ec2_image_details::de_ec2_image_details(tokens, _value)?);
+                            builder = builder.set_ec2_image_details(crate::protocol_serde::shape_ec2_image_details::de_ec2_image_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "recoveryPointDetails" => {
                             builder = builder.set_recovery_point_details(
-                                crate::protocol_serde::shape_recovery_point_details::de_recovery_point_details(tokens, _value)?,
+                                crate::protocol_serde::shape_recovery_point_details::de_recovery_point_details(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

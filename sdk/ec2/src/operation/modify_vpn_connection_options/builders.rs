@@ -191,6 +191,20 @@ impl ModifyVpnConnectionOptionsFluentBuilder {
     pub fn get_remote_ipv6_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_remote_ipv6_network_cidr()
     }
+    /// <p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>
+    pub fn tunnel_bandwidth(mut self, input: crate::types::VpnTunnelBandwidth) -> Self {
+        self.inner = self.inner.tunnel_bandwidth(input);
+        self
+    }
+    /// <p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>
+    pub fn set_tunnel_bandwidth(mut self, input: ::std::option::Option<crate::types::VpnTunnelBandwidth>) -> Self {
+        self.inner = self.inner.set_tunnel_bandwidth(input);
+        self
+    }
+    /// <p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>
+    pub fn get_tunnel_bandwidth(&self) -> &::std::option::Option<crate::types::VpnTunnelBandwidth> {
+        self.inner.get_tunnel_bandwidth()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

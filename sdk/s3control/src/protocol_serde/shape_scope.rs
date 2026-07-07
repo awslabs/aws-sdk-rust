@@ -30,7 +30,11 @@ pub fn ser_scope(
 #[allow(clippy::needless_question_mark)]
 pub fn de_scope(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Scope, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Scope::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -38,7 +42,7 @@ pub fn de_scope(
             s if s.matches("Prefixes") /* Prefixes com.amazonaws.s3control#Scope$Prefixes */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_prefixes_list::de_prefixes_list(&mut tag)
+                        crate::protocol_serde::shape_prefixes_list::de_prefixes_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -48,7 +52,7 @@ pub fn de_scope(
             s if s.matches("Permissions") /* Permissions com.amazonaws.s3control#Scope$Permissions */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_scope_permission_list::de_scope_permission_list(&mut tag)
+                        crate::protocol_serde::shape_scope_permission_list::de_scope_permission_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -33,10 +33,16 @@ pub fn ser_table_with_columns_resource(
 pub(crate) fn de_table_with_columns_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TableWithColumnsResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,10 +74,15 @@ where
                             );
                         }
                         "ColumnNames" => {
-                            builder = builder.set_column_names(crate::protocol_serde::shape_column_names::de_column_names(tokens, _value)?);
+                            builder =
+                                builder.set_column_names(crate::protocol_serde::shape_column_names::de_column_names(tokens, _value, depth + 1)?);
                         }
                         "ColumnWildcard" => {
-                            builder = builder.set_column_wildcard(crate::protocol_serde::shape_column_wildcard::de_column_wildcard(tokens, _value)?);
+                            builder = builder.set_column_wildcard(crate::protocol_serde::shape_column_wildcard::de_column_wildcard(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

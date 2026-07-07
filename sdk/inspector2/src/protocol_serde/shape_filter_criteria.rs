@@ -555,16 +555,250 @@ pub fn ser_filter_criteria(
         }
         array_182.finish();
     }
+    if let Some(var_185) = &input.cloud_provider {
+        let mut array_186 = object.key("cloudProvider").start_array();
+        for item_187 in var_185 {
+            {
+                #[allow(unused_mut)]
+                let mut object_188 = array_186.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_188, item_187)?;
+                object_188.finish();
+            }
+        }
+        array_186.finish();
+    }
+    if let Some(var_189) = &input.cloud_provider_region {
+        let mut array_190 = object.key("cloudProviderRegion").start_array();
+        for item_191 in var_189 {
+            {
+                #[allow(unused_mut)]
+                let mut object_192 = array_190.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_192, item_191)?;
+                object_192.finish();
+            }
+        }
+        array_190.finish();
+    }
+    if let Some(var_193) = &input.cloud_provider_account_id {
+        let mut array_194 = object.key("cloudProviderAccountId").start_array();
+        for item_195 in var_193 {
+            {
+                #[allow(unused_mut)]
+                let mut object_196 = array_194.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_196, item_195)?;
+                object_196.finish();
+            }
+        }
+        array_194.finish();
+    }
+    if let Some(var_197) = &input.cloud_provider_org_id {
+        let mut array_198 = object.key("cloudProviderOrgId").start_array();
+        for item_199 in var_197 {
+            {
+                #[allow(unused_mut)]
+                let mut object_200 = array_198.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_200, item_199)?;
+                object_200.finish();
+            }
+        }
+        array_198.finish();
+    }
+    if let Some(var_201) = &input.cloud_vm_image_reference {
+        let mut array_202 = object.key("cloudVmImageReference").start_array();
+        for item_203 in var_201 {
+            {
+                #[allow(unused_mut)]
+                let mut object_204 = array_202.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_204, item_203)?;
+                object_204.finish();
+            }
+        }
+        array_202.finish();
+    }
+    if let Some(var_205) = &input.cloud_vm_network_id {
+        let mut array_206 = object.key("cloudVmNetworkId").start_array();
+        for item_207 in var_205 {
+            {
+                #[allow(unused_mut)]
+                let mut object_208 = array_206.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_208, item_207)?;
+                object_208.finish();
+            }
+        }
+        array_206.finish();
+    }
+    if let Some(var_209) = &input.cloud_vm_subnet_ids {
+        let mut array_210 = object.key("cloudVmSubnetIds").start_array();
+        for item_211 in var_209 {
+            {
+                #[allow(unused_mut)]
+                let mut object_212 = array_210.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_212, item_211)?;
+                object_212.finish();
+            }
+        }
+        array_210.finish();
+    }
+    if let Some(var_213) = &input.cloud_image_repository_name {
+        let mut array_214 = object.key("cloudImageRepositoryName").start_array();
+        for item_215 in var_213 {
+            {
+                #[allow(unused_mut)]
+                let mut object_216 = array_214.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_216, item_215)?;
+                object_216.finish();
+            }
+        }
+        array_214.finish();
+    }
+    if let Some(var_217) = &input.cloud_image_registry {
+        let mut array_218 = object.key("cloudImageRegistry").start_array();
+        for item_219 in var_217 {
+            {
+                #[allow(unused_mut)]
+                let mut object_220 = array_218.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_220, item_219)?;
+                object_220.finish();
+            }
+        }
+        array_218.finish();
+    }
+    if let Some(var_221) = &input.cloud_image_digest {
+        let mut array_222 = object.key("cloudImageDigest").start_array();
+        for item_223 in var_221 {
+            {
+                #[allow(unused_mut)]
+                let mut object_224 = array_222.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_224, item_223)?;
+                object_224.finish();
+            }
+        }
+        array_222.finish();
+    }
+    if let Some(var_225) = &input.cloud_image_tags {
+        let mut array_226 = object.key("cloudImageTags").start_array();
+        for item_227 in var_225 {
+            {
+                #[allow(unused_mut)]
+                let mut object_228 = array_226.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_228, item_227)?;
+                object_228.finish();
+            }
+        }
+        array_226.finish();
+    }
+    if let Some(var_229) = &input.cloud_image_pushed_at {
+        let mut array_230 = object.key("cloudImagePushedAt").start_array();
+        for item_231 in var_229 {
+            {
+                #[allow(unused_mut)]
+                let mut object_232 = array_230.value().start_object();
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_232, item_231)?;
+                object_232.finish();
+            }
+        }
+        array_230.finish();
+    }
+    if let Some(var_233) = &input.cloud_image_architecture {
+        let mut array_234 = object.key("cloudImageArchitecture").start_array();
+        for item_235 in var_233 {
+            {
+                #[allow(unused_mut)]
+                let mut object_236 = array_234.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_236, item_235)?;
+                object_236.finish();
+            }
+        }
+        array_234.finish();
+    }
+    if let Some(var_237) = &input.cloud_image_last_in_use_at {
+        let mut array_238 = object.key("cloudImageLastInUseAt").start_array();
+        for item_239 in var_237 {
+            {
+                #[allow(unused_mut)]
+                let mut object_240 = array_238.value().start_object();
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_240, item_239)?;
+                object_240.finish();
+            }
+        }
+        array_238.finish();
+    }
+    if let Some(var_241) = &input.cloud_image_in_use_count {
+        let mut array_242 = object.key("cloudImageInUseCount").start_array();
+        for item_243 in var_241 {
+            {
+                #[allow(unused_mut)]
+                let mut object_244 = array_242.value().start_object();
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_244, item_243)?;
+                object_244.finish();
+            }
+        }
+        array_242.finish();
+    }
+    if let Some(var_245) = &input.cloud_serverless_function_name {
+        let mut array_246 = object.key("cloudServerlessFunctionName").start_array();
+        for item_247 in var_245 {
+            {
+                #[allow(unused_mut)]
+                let mut object_248 = array_246.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_248, item_247)?;
+                object_248.finish();
+            }
+        }
+        array_246.finish();
+    }
+    if let Some(var_249) = &input.cloud_serverless_function_runtime {
+        let mut array_250 = object.key("cloudServerlessFunctionRuntime").start_array();
+        for item_251 in var_249 {
+            {
+                #[allow(unused_mut)]
+                let mut object_252 = array_250.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_252, item_251)?;
+                object_252.finish();
+            }
+        }
+        array_250.finish();
+    }
+    if let Some(var_253) = &input.cloud_serverless_function_last_modified_at {
+        let mut array_254 = object.key("cloudServerlessFunctionLastModifiedAt").start_array();
+        for item_255 in var_253 {
+            {
+                #[allow(unused_mut)]
+                let mut object_256 = array_254.value().start_object();
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_256, item_255)?;
+                object_256.finish();
+            }
+        }
+        array_254.finish();
+    }
+    if let Some(var_257) = &input.cloud_serverless_function_execution_role {
+        let mut array_258 = object.key("cloudServerlessFunctionExecutionRole").start_array();
+        for item_259 in var_257 {
+            {
+                #[allow(unused_mut)]
+                let mut object_260 = array_258.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_260, item_259)?;
+                object_260.finish();
+            }
+        }
+        array_258.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_filter_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FilterCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -573,197 +807,428 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "findingArn" => {
-                            builder =
-                                builder.set_finding_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "findingArn" => {
+                                builder = builder.set_finding_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "awsAccountId" => {
+                                builder = builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "findingType" => {
+                                builder = builder.set_finding_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "severity" => {
+                                builder = builder.set_severity(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "firstObservedAt" => {
+                                builder = builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "lastObservedAt" => {
+                                builder = builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "updatedAt" => {
+                                builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "findingStatus" => {
+                                builder = builder.set_finding_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "title" => {
+                                builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "inspectorScore" => {
+                                builder = builder.set_inspector_score(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "resourceType" => {
+                                builder = builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "resourceId" => {
+                                builder = builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "resourceTags" => {
+                                builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ec2InstanceImageId" => {
+                                builder = builder.set_ec2_instance_image_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ec2InstanceVpcId" => {
+                                builder = builder.set_ec2_instance_vpc_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ec2InstanceSubnetId" => {
+                                builder = builder.set_ec2_instance_subnet_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ecrImagePushedAt" => {
+                                builder = builder.set_ecr_image_pushed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ecrImageArchitecture" => {
+                                builder = builder.set_ecr_image_architecture(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ecrImageRegistry" => {
+                                builder = builder.set_ecr_image_registry(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ecrImageRepositoryName" => {
+                                builder = builder.set_ecr_image_repository_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ecrImageTags" => {
+                                builder = builder.set_ecr_image_tags(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ecrImageHash" => {
+                                builder = builder.set_ecr_image_hash(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ecrImageLastInUseAt" => {
+                                builder = builder.set_ecr_image_last_in_use_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "ecrImageInUseCount" => {
+                                builder = builder.set_ecr_image_in_use_count(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "portRange" => {
+                                builder = builder.set_port_range(crate::protocol_serde::shape_port_range_filter_list::de_port_range_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "networkProtocol" => {
+                                builder = builder.set_network_protocol(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "componentId" => {
+                                builder = builder.set_component_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "componentType" => {
+                                builder = builder.set_component_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "vulnerabilityId" => {
+                                builder = builder.set_vulnerability_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "vulnerabilitySource" => {
+                                builder = builder.set_vulnerability_source(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "vendorSeverity" => {
+                                builder = builder.set_vendor_severity(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "vulnerablePackages" => {
+                                builder = builder.set_vulnerable_packages(crate::protocol_serde::shape_package_filter_list::de_package_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "relatedVulnerabilities" => {
+                                builder = builder.set_related_vulnerabilities(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "fixAvailable" => {
+                                builder = builder.set_fix_available(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "lambdaFunctionName" => {
+                                builder = builder.set_lambda_function_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "lambdaFunctionLayers" => {
+                                builder = builder.set_lambda_function_layers(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "lambdaFunctionRuntime" => {
+                                builder = builder.set_lambda_function_runtime(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "lambdaFunctionLastModifiedAt" => {
+                                builder = builder.set_lambda_function_last_modified_at(
+                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "lambdaFunctionExecutionRoleArn" => {
+                                builder = builder.set_lambda_function_execution_role_arn(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "exploitAvailable" => {
+                                builder = builder.set_exploit_available(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "codeVulnerabilityDetectorName" => {
+                                builder = builder.set_code_vulnerability_detector_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "codeVulnerabilityDetectorTags" => {
+                                builder = builder.set_code_vulnerability_detector_tags(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "codeVulnerabilityFilePath" => {
+                                builder = builder.set_code_vulnerability_file_path(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "epssScore" => {
+                                builder = builder.set_epss_score(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "codeRepositoryProjectName" => {
+                                builder = builder.set_code_repository_project_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "codeRepositoryProviderType" => {
+                                builder = builder.set_code_repository_provider_type(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudProvider" => {
+                                builder = builder.set_cloud_provider(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudProviderRegion" => {
+                                builder = builder.set_cloud_provider_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudProviderAccountId" => {
+                                builder = builder.set_cloud_provider_account_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudProviderOrgId" => {
+                                builder = builder.set_cloud_provider_org_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudVmImageReference" => {
+                                builder = builder.set_cloud_vm_image_reference(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudVmNetworkId" => {
+                                builder = builder.set_cloud_vm_network_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudVmSubnetIds" => {
+                                builder = builder.set_cloud_vm_subnet_ids(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudImageRepositoryName" => {
+                                builder = builder.set_cloud_image_repository_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudImageRegistry" => {
+                                builder = builder.set_cloud_image_registry(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudImageDigest" => {
+                                builder = builder.set_cloud_image_digest(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudImageTags" => {
+                                builder = builder.set_cloud_image_tags(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudImagePushedAt" => {
+                                builder = builder.set_cloud_image_pushed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudImageArchitecture" => {
+                                builder = builder.set_cloud_image_architecture(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudImageLastInUseAt" => {
+                                builder = builder.set_cloud_image_last_in_use_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "cloudImageInUseCount" => {
+                                builder = builder.set_cloud_image_in_use_count(
+                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudServerlessFunctionName" => {
+                                builder = builder.set_cloud_serverless_function_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudServerlessFunctionRuntime" => {
+                                builder = builder.set_cloud_serverless_function_runtime(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudServerlessFunctionLastModifiedAt" => {
+                                builder = builder.set_cloud_serverless_function_last_modified_at(
+                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cloudServerlessFunctionExecutionRole" => {
+                                builder = builder.set_cloud_serverless_function_execution_role(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "awsAccountId" => {
-                            builder =
-                                builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "findingType" => {
-                            builder =
-                                builder.set_finding_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "severity" => {
-                            builder = builder.set_severity(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "firstObservedAt" => {
-                            builder =
-                                builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "lastObservedAt" => {
-                            builder =
-                                builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "updatedAt" => {
-                            builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "findingStatus" => {
-                            builder =
-                                builder.set_finding_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "title" => {
-                            builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "inspectorScore" => {
-                            builder =
-                                builder.set_inspector_score(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "resourceType" => {
-                            builder =
-                                builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "resourceId" => {
-                            builder =
-                                builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "resourceTags" => {
-                            builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
-                        }
-                        "ec2InstanceImageId" => {
-                            builder = builder
-                                .set_ec2_instance_image_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ec2InstanceVpcId" => {
-                            builder = builder
-                                .set_ec2_instance_vpc_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ec2InstanceSubnetId" => {
-                            builder = builder
-                                .set_ec2_instance_subnet_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ecrImagePushedAt" => {
-                            builder =
-                                builder.set_ecr_image_pushed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "ecrImageArchitecture" => {
-                            builder = builder
-                                .set_ecr_image_architecture(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ecrImageRegistry" => {
-                            builder = builder
-                                .set_ecr_image_registry(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ecrImageRepositoryName" => {
-                            builder = builder.set_ecr_image_repository_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "ecrImageTags" => {
-                            builder =
-                                builder.set_ecr_image_tags(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ecrImageHash" => {
-                            builder =
-                                builder.set_ecr_image_hash(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "ecrImageLastInUseAt" => {
-                            builder = builder
-                                .set_ecr_image_last_in_use_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
-                        }
-                        "ecrImageInUseCount" => {
-                            builder = builder
-                                .set_ecr_image_in_use_count(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "portRange" => {
-                            builder = builder.set_port_range(crate::protocol_serde::shape_port_range_filter_list::de_port_range_filter_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "networkProtocol" => {
-                            builder =
-                                builder.set_network_protocol(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "componentId" => {
-                            builder =
-                                builder.set_component_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "componentType" => {
-                            builder =
-                                builder.set_component_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "vulnerabilityId" => {
-                            builder =
-                                builder.set_vulnerability_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "vulnerabilitySource" => {
-                            builder = builder
-                                .set_vulnerability_source(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "vendorSeverity" => {
-                            builder =
-                                builder.set_vendor_severity(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "vulnerablePackages" => {
-                            builder = builder
-                                .set_vulnerable_packages(crate::protocol_serde::shape_package_filter_list::de_package_filter_list(tokens, _value)?);
-                        }
-                        "relatedVulnerabilities" => {
-                            builder = builder
-                                .set_related_vulnerabilities(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "fixAvailable" => {
-                            builder =
-                                builder.set_fix_available(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "lambdaFunctionName" => {
-                            builder = builder
-                                .set_lambda_function_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "lambdaFunctionLayers" => {
-                            builder = builder
-                                .set_lambda_function_layers(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "lambdaFunctionRuntime" => {
-                            builder = builder
-                                .set_lambda_function_runtime(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "lambdaFunctionLastModifiedAt" => {
-                            builder = builder.set_lambda_function_last_modified_at(
-                                crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "lambdaFunctionExecutionRoleArn" => {
-                            builder = builder.set_lambda_function_execution_role_arn(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "exploitAvailable" => {
-                            builder = builder
-                                .set_exploit_available(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
-                        }
-                        "codeVulnerabilityDetectorName" => {
-                            builder = builder.set_code_vulnerability_detector_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "codeVulnerabilityDetectorTags" => {
-                            builder = builder.set_code_vulnerability_detector_tags(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "codeVulnerabilityFilePath" => {
-                            builder = builder.set_code_vulnerability_file_path(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "epssScore" => {
-                            builder = builder.set_epss_score(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
-                        }
-                        "codeRepositoryProjectName" => {
-                            builder = builder.set_code_repository_project_name(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        "codeRepositoryProviderType" => {
-                            builder = builder.set_code_repository_provider_type(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -107,6 +107,10 @@ pub use crate::types::_route_scooter_options::RouteScooterOptionsBuilder;
 
 pub use crate::types::_route_truck_options::RouteTruckOptionsBuilder;
 
+pub use crate::types::_route_intermodal_options::RouteIntermodalOptionsBuilder;
+
+pub use crate::types::_route_transit_options::RouteTransitOptionsBuilder;
+
 pub use crate::types::_route_waypoint::RouteWaypointBuilder;
 
 pub use crate::types::_route_response_notice::RouteResponseNoticeBuilder;
@@ -181,6 +185,18 @@ pub use crate::types::_route_vehicle_license_plate::RouteVehicleLicensePlateBuil
 
 pub use crate::types::_route_trailer_options::RouteTrailerOptionsBuilder;
 
+pub use crate::types::_route_intermodal_pedestrian_options::RouteIntermodalPedestrianOptionsBuilder;
+
+pub use crate::types::_route_intermodal_rental_options::RouteIntermodalRentalOptionsBuilder;
+
+pub use crate::types::_route_intermodal_taxi_options::RouteIntermodalTaxiOptionsBuilder;
+
+pub use crate::types::_route_intermodal_transit_options::RouteIntermodalTransitOptionsBuilder;
+
+pub use crate::types::_route_intermodal_vehicle_options::RouteIntermodalVehicleOptionsBuilder;
+
+pub use crate::types::_route_transit_pedestrian_options::RouteTransitPedestrianOptionsBuilder;
+
 pub use crate::types::_route_summary::RouteSummaryBuilder;
 
 pub use crate::types::_waypoint_optimization_avoidance_area::WaypointOptimizationAvoidanceAreaBuilder;
@@ -231,6 +247,12 @@ pub use crate::types::_route_pedestrian_leg_details::RoutePedestrianLegDetailsBu
 
 pub use crate::types::_route_vehicle_leg_details::RouteVehicleLegDetailsBuilder;
 
+pub use crate::types::_route_rental_leg_details::RouteRentalLegDetailsBuilder;
+
+pub use crate::types::_route_taxi_leg_details::RouteTaxiLegDetailsBuilder;
+
+pub use crate::types::_route_transit_leg_details::RouteTransitLegDetailsBuilder;
+
 pub use crate::types::_localized_string::LocalizedStringBuilder;
 
 pub use crate::types::_route_number::RouteNumberBuilder;
@@ -255,6 +277,36 @@ pub use crate::types::_route_vehicle_departure::RouteVehicleDepartureBuilder;
 
 pub use crate::types::_route_vehicle_summary::RouteVehicleSummaryBuilder;
 
+pub use crate::types::_route_rental_agency::RouteRentalAgencyBuilder;
+
+pub use crate::types::_route_rental_arrival::RouteRentalArrivalBuilder;
+
+pub use crate::types::_route_rental_departure::RouteRentalDepartureBuilder;
+
+pub use crate::types::_route_rental_summary::RouteRentalSummaryBuilder;
+
+pub use crate::types::_route_rental_transport_mode_details::RouteRentalTransportModeDetailsBuilder;
+
+pub use crate::types::_route_taxi_agency::RouteTaxiAgencyBuilder;
+
+pub use crate::types::_route_taxi_arrival::RouteTaxiArrivalBuilder;
+
+pub use crate::types::_route_taxi_departure::RouteTaxiDepartureBuilder;
+
+pub use crate::types::_route_taxi_summary::RouteTaxiSummaryBuilder;
+
+pub use crate::types::_route_taxi_transport_mode_details::RouteTaxiTransportModeDetailsBuilder;
+
+pub use crate::types::_route_transit_agency::RouteTransitAgencyBuilder;
+
+pub use crate::types::_route_transit_arrival::RouteTransitArrivalBuilder;
+
+pub use crate::types::_route_transit_departure::RouteTransitDepartureBuilder;
+
+pub use crate::types::_route_transit_summary::RouteTransitSummaryBuilder;
+
+pub use crate::types::_route_transit_transport_mode_details::RouteTransitTransportModeDetailsBuilder;
+
 pub use crate::types::_route_toll_price_value_range::RouteTollPriceValueRangeBuilder;
 
 pub use crate::types::_route_ferry_after_travel_step::RouteFerryAfterTravelStepBuilder;
@@ -275,6 +327,8 @@ pub use crate::types::_route_ferry_travel_only_summary::RouteFerryTravelOnlySumm
 
 pub use crate::types::_route_ferry_travel_step::RouteFerryTravelStepBuilder;
 
+pub use crate::types::_route_pedestrian_after_travel_step::RoutePedestrianAfterTravelStepBuilder;
+
 pub use crate::types::_route_pedestrian_place::RoutePedestrianPlaceBuilder;
 
 pub use crate::types::_route_pedestrian_notice::RoutePedestrianNoticeBuilder;
@@ -286,6 +340,8 @@ pub use crate::types::_route_pedestrian_overview_summary::RoutePedestrianOvervie
 pub use crate::types::_route_pedestrian_travel_only_summary::RoutePedestrianTravelOnlySummaryBuilder;
 
 pub use crate::types::_route_pedestrian_travel_step::RoutePedestrianTravelStepBuilder;
+
+pub use crate::types::_route_vehicle_after_travel_step::RouteVehicleAfterTravelStepBuilder;
 
 pub use crate::types::_route_vehicle_place::RouteVehiclePlaceBuilder;
 
@@ -307,7 +363,65 @@ pub use crate::types::_route_vehicle_travel_step::RouteVehicleTravelStepBuilder;
 
 pub use crate::types::_route_zone::RouteZoneBuilder;
 
+pub use crate::types::_route_rental_after_travel_step::RouteRentalAfterTravelStepBuilder;
+
+pub use crate::types::_route_rental_place::RouteRentalPlaceBuilder;
+
+pub use crate::types::_route_attribution::RouteAttributionBuilder;
+
+pub use crate::types::_route_rental_before_travel_step::RouteRentalBeforeTravelStepBuilder;
+
+pub use crate::types::_route_web_link::RouteWebLinkBuilder;
+
+pub use crate::types::_route_rental_overview_summary::RouteRentalOverviewSummaryBuilder;
+
+pub use crate::types::_route_rental_travel_only_summary::RouteRentalTravelOnlySummaryBuilder;
+
+pub use crate::types::_route_rental_travel_step::RouteRentalTravelStepBuilder;
+
+pub use crate::types::_route_taxi_after_travel_step::RouteTaxiAfterTravelStepBuilder;
+
+pub use crate::types::_route_taxi_place::RouteTaxiPlaceBuilder;
+
+pub use crate::types::_route_taxi_before_travel_step::RouteTaxiBeforeTravelStepBuilder;
+
+pub use crate::types::_route_taxi_notice::RouteTaxiNoticeBuilder;
+
+pub use crate::types::_route_taxi_overview_summary::RouteTaxiOverviewSummaryBuilder;
+
+pub use crate::types::_route_taxi_travel_only_summary::RouteTaxiTravelOnlySummaryBuilder;
+
+pub use crate::types::_route_taxi_travel_step::RouteTaxiTravelStepBuilder;
+
+pub use crate::types::_route_transit_after_travel_step::RouteTransitAfterTravelStepBuilder;
+
+pub use crate::types::_route_transit_place::RouteTransitPlaceBuilder;
+
+pub use crate::types::_route_transit_before_travel_step::RouteTransitBeforeTravelStepBuilder;
+
+pub use crate::types::_route_transit_incident::RouteTransitIncidentBuilder;
+
+pub use crate::types::_route_transit_intermediate_stop::RouteTransitIntermediateStopBuilder;
+
+pub use crate::types::_route_transit_next_departure::RouteTransitNextDepartureBuilder;
+
+pub use crate::types::_route_transit_notice::RouteTransitNoticeBuilder;
+
+pub use crate::types::_route_transit_span::RouteTransitSpanBuilder;
+
+pub use crate::types::_route_transit_overview_summary::RouteTransitOverviewSummaryBuilder;
+
+pub use crate::types::_route_transit_travel_only_summary::RouteTransitTravelOnlySummaryBuilder;
+
+pub use crate::types::_route_accessibility_availability_details::RouteAccessibilityAvailabilityDetailsBuilder;
+
+pub use crate::types::_route_transit_travel_step::RouteTransitTravelStepBuilder;
+
 pub use crate::types::_route_pass_through_place::RoutePassThroughPlaceBuilder;
+
+pub use crate::types::_route_access_point_details::RouteAccessPointDetailsBuilder;
+
+pub use crate::types::_route_station_details::RouteStationDetailsBuilder;
 
 pub use crate::types::_route_span_dynamic_speed_details::RouteSpanDynamicSpeedDetailsBuilder;
 
@@ -328,6 +442,8 @@ pub use crate::types::_route_roundabout_pass_step_details::RouteRoundaboutPassSt
 pub use crate::types::_route_signpost::RouteSignpostBuilder;
 
 pub use crate::types::_route_turn_step_details::RouteTurnStepDetailsBuilder;
+
+pub use crate::types::_route_charge_step_details::RouteChargeStepDetailsBuilder;
 
 pub use crate::types::_route_continue_highway_step_details::RouteContinueHighwayStepDetailsBuilder;
 

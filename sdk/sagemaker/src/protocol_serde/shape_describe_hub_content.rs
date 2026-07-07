@@ -77,6 +77,8 @@ pub(crate) fn de_describe_hub_content(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -182,12 +184,12 @@ pub(crate) fn de_describe_hub_content(
                 }
                 "HubContentSearchKeywords" => {
                     builder = builder.set_hub_content_search_keywords(
-                        crate::protocol_serde::shape_hub_content_search_keyword_list::de_hub_content_search_keyword_list(tokens, _value)?,
+                        crate::protocol_serde::shape_hub_content_search_keyword_list::de_hub_content_search_keyword_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "HubContentDependencies" => {
                     builder = builder.set_hub_content_dependencies(
-                        crate::protocol_serde::shape_hub_content_dependency_list::de_hub_content_dependency_list(tokens, _value)?,
+                        crate::protocol_serde::shape_hub_content_dependency_list::de_hub_content_dependency_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "HubContentStatus" => {

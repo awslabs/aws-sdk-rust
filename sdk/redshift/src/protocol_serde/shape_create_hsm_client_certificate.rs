@@ -119,6 +119,8 @@ pub fn de_create_hsm_client_certificate(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateHsmClientCertificateResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateHsmClientCertificateResponse got {start_el:?}"
@@ -136,7 +138,7 @@ pub fn de_create_hsm_client_certificate(
             s if s.matches("HsmClientCertificate") /* HsmClientCertificate com.amazonaws.redshift.synthetic#CreateHsmClientCertificateOutput$HsmClientCertificate */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_hsm_client_certificate::de_hsm_client_certificate(&mut tag)
+                        crate::protocol_serde::shape_hsm_client_certificate::de_hsm_client_certificate(&mut tag, depth + 1)
                         ?
                     )
                 ;

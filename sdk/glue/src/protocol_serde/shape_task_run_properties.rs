@@ -2,10 +2,16 @@
 pub(crate) fn de_task_run_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TaskRunProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,22 +30,34 @@ where
                         }
                         "ImportLabelsTaskRunProperties" => {
                             builder = builder.set_import_labels_task_run_properties(
-                                crate::protocol_serde::shape_import_labels_task_run_properties::de_import_labels_task_run_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_import_labels_task_run_properties::de_import_labels_task_run_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ExportLabelsTaskRunProperties" => {
                             builder = builder.set_export_labels_task_run_properties(
-                                crate::protocol_serde::shape_export_labels_task_run_properties::de_export_labels_task_run_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_export_labels_task_run_properties::de_export_labels_task_run_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "LabelingSetGenerationTaskRunProperties" => {
                             builder = builder.set_labeling_set_generation_task_run_properties(
-                                    crate::protocol_serde::shape_labeling_set_generation_task_run_properties::de_labeling_set_generation_task_run_properties(tokens, _value)?
+                                    crate::protocol_serde::shape_labeling_set_generation_task_run_properties::de_labeling_set_generation_task_run_properties(tokens, _value, depth + 1)?
                                 );
                         }
                         "FindMatchesTaskRunProperties" => {
                             builder = builder.set_find_matches_task_run_properties(
-                                crate::protocol_serde::shape_find_matches_task_run_properties::de_find_matches_task_run_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_find_matches_task_run_properties::de_find_matches_task_run_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

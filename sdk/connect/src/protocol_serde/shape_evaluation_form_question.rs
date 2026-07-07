@@ -39,16 +39,31 @@ pub fn ser_evaluation_form_question(
             ::aws_smithy_types::Number::Float((input.weight).into()),
         );
     }
+    if let Some(var_6) = &input.scoring_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ScoringConfiguration").start_object();
+        crate::protocol_serde::shape_evaluation_form_question_scoring_configuration::ser_evaluation_form_question_scoring_configuration(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_evaluation_form_question<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormQuestion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -57,56 +72,63 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Title" => {
-                            builder = builder.set_title(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Instructions" => {
-                            builder = builder.set_instructions(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "RefId" => {
-                            builder = builder.set_ref_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "NotApplicableEnabled" => {
-                            builder = builder.set_not_applicable_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "QuestionType" => {
-                            builder = builder.set_question_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationFormQuestionType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "QuestionTypeProperties" => {
-                            builder = builder.set_question_type_properties(
-                                crate::protocol_serde::shape_evaluation_form_question_type_properties::de_evaluation_form_question_type_properties(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "Enablement" => {
-                            builder = builder.set_enablement(
-                                    crate::protocol_serde::shape_evaluation_form_item_enablement_configuration::de_evaluation_form_item_enablement_configuration(tokens, _value)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Title" => {
+                                builder = builder.set_title(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
+                            }
+                            "Instructions" => {
+                                builder = builder.set_instructions(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RefId" => {
+                                builder = builder.set_ref_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NotApplicableEnabled" => {
+                                builder =
+                                    builder.set_not_applicable_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "QuestionType" => {
+                                builder = builder.set_question_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationFormQuestionType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "QuestionTypeProperties" => {
+                                builder = builder.set_question_type_properties(
+                                    crate::protocol_serde::shape_evaluation_form_question_type_properties::de_evaluation_form_question_type_properties(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "Enablement" => {
+                                builder = builder.set_enablement(
+                                    crate::protocol_serde::shape_evaluation_form_item_enablement_configuration::de_evaluation_form_item_enablement_configuration(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "Weight" => {
+                                builder = builder.set_weight(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                                );
+                            }
+                            "ScoringConfiguration" => {
+                                builder = builder.set_scoring_configuration(
+                                    crate::protocol_serde::shape_evaluation_form_question_scoring_configuration::de_evaluation_form_question_scoring_configuration(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Weight" => {
-                            builder = builder
-                                .set_weight(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

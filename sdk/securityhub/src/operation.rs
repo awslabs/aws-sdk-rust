@@ -58,6 +58,9 @@ pub mod create_automation_rule_v2;
 /// Types for the `CreateConfigurationPolicy` operation.
 pub mod create_configuration_policy;
 
+/// Types for the `CreateConnector` operation.
+pub mod create_connector;
+
 /// Types for the `CreateConnectorV2` operation.
 pub mod create_connector_v2;
 
@@ -87,6 +90,9 @@ pub mod delete_automation_rule_v2;
 
 /// Types for the `DeleteConfigurationPolicy` operation.
 pub mod delete_configuration_policy;
+
+/// Types for the `DeleteConnector` operation.
+pub mod delete_connector;
 
 /// Types for the `DeleteConnectorV2` operation.
 pub mod delete_connector_v2;
@@ -136,6 +142,9 @@ pub mod disable_organization_admin_account;
 /// Types for the `DisableSecurityHub` operation.
 pub mod disable_security_hub;
 
+/// Types for the `DisableSecurityHubFeatureV2` operation.
+pub mod disable_security_hub_feature_v2;
+
 /// Types for the `DisableSecurityHubV2` operation.
 pub mod disable_security_hub_v2;
 
@@ -157,8 +166,14 @@ pub mod enable_organization_admin_account;
 /// Types for the `EnableSecurityHub` operation.
 pub mod enable_security_hub;
 
+/// Types for the `EnableSecurityHubFeatureV2` operation.
+pub mod enable_security_hub_feature_v2;
+
 /// Types for the `EnableSecurityHubV2` operation.
 pub mod enable_security_hub_v2;
+
+/// Types for the `GenerateRecommendedPolicyV2` operation.
+pub mod generate_recommended_policy_v2;
 
 /// Types for the `GetAdministratorAccount` operation.
 pub mod get_administrator_account;
@@ -174,6 +189,9 @@ pub mod get_configuration_policy;
 
 /// Types for the `GetConfigurationPolicyAssociation` operation.
 pub mod get_configuration_policy_association;
+
+/// Types for the `GetConnector` operation.
+pub mod get_connector;
 
 /// Types for the `GetConnectorV2` operation.
 pub mod get_connector_v2;
@@ -214,6 +232,9 @@ pub mod get_master_account;
 /// Types for the `GetMembers` operation.
 pub mod get_members;
 
+/// Types for the `GetRecommendedPolicyV2` operation.
+pub mod get_recommended_policy_v2;
+
 /// Types for the `GetResourcesStatisticsV2` operation.
 pub mod get_resources_statistics_v2;
 
@@ -243,6 +264,9 @@ pub mod list_configuration_policies;
 
 /// Types for the `ListConfigurationPolicyAssociations` operation.
 pub mod list_configuration_policy_associations;
+
+/// Types for the `ListConnectors` operation.
+pub mod list_connectors;
 
 /// Types for the `ListConnectorsV2` operation.
 pub mod list_connectors_v2;
@@ -297,6 +321,9 @@ pub mod update_automation_rule_v2;
 
 /// Types for the `UpdateConfigurationPolicy` operation.
 pub mod update_configuration_policy;
+
+/// Types for the `UpdateConnector` operation.
+pub mod update_connector;
 
 /// Types for the `UpdateConnectorV2` operation.
 pub mod update_connector_v2;

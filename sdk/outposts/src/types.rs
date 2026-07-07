@@ -11,6 +11,10 @@ pub use crate::types::_supported_hardware_type::SupportedHardwareType;
 
 pub use crate::types::_outpost::Outpost;
 
+pub use crate::types::_quote::Quote;
+
+pub use crate::types::_currency_code::CurrencyCode;
+
 pub use crate::types::_address::Address;
 
 pub use crate::types::_rack_physical_properties::RackPhysicalProperties;
@@ -32,6 +36,8 @@ pub use crate::types::_connection_details::ConnectionDetails;
 pub use crate::types::_pricing_result::PricingResult;
 
 pub use crate::types::_address_type::AddressType;
+
+pub use crate::types::_outpost_generation::OutpostGeneration;
 
 pub use crate::types::_decommission_request_status::DecommissionRequestStatus;
 
@@ -58,6 +64,12 @@ pub use crate::types::_line_item_request::LineItemRequest;
 pub use crate::types::_order_status::OrderStatus;
 
 pub use crate::types::_order_type::OrderType;
+
+pub use crate::types::_quote_capacity::QuoteCapacity;
+
+pub use crate::types::_quote_constraint::QuoteConstraint;
+
+pub use crate::types::_quote_status::QuoteStatus;
 
 pub use crate::types::_instance_type_capacity::InstanceTypeCapacity;
 
@@ -89,11 +101,23 @@ pub use crate::types::_catalog_item_class::CatalogItemClass;
 
 pub use crate::types::_supported_storage_enum::SupportedStorageEnum;
 
+pub use crate::types::_detailed_instance_type_item::DetailedInstanceTypeItem;
+
 pub use crate::types::_order_summary::OrderSummary;
+
+pub use crate::types::_quote_summary::QuoteSummary;
 
 pub use crate::types::_blocking_resource_type::BlockingResourceType;
 
 pub use crate::types::_line_item::LineItem;
+
+pub use crate::types::_quote_capacity_type::QuoteCapacityType;
+
+pub use crate::types::_quote_constraint_type::QuoteConstraintType;
+
+pub use crate::types::_quote_option::QuoteOption;
+
+pub use crate::types::_ordering_requirement::OrderingRequirement;
 
 pub use crate::types::_ec2_capacity::Ec2Capacity;
 
@@ -113,13 +137,35 @@ pub use crate::types::_line_item_status::LineItemStatus;
 
 pub use crate::types::_shipment_information::ShipmentInformation;
 
+pub use crate::types::_capacity_summary::CapacitySummary;
+
+pub use crate::types::_ordering_requirement_type::OrderingRequirementType;
+
+pub use crate::types::_ordering_requirement_status::OrderingRequirementStatus;
+
 pub use crate::types::_compute_asset_state::ComputeAssetState;
+
+pub use crate::types::_form_factor_config::FormFactorConfig;
 
 pub use crate::types::_shipment_carrier::ShipmentCarrier;
 
 pub use crate::types::_line_item_asset_information::LineItemAssetInformation;
 
+pub use crate::types::_quote_specification::QuoteSpecification;
+
 pub use crate::types::_asset_instance_type_capacity::AssetInstanceTypeCapacity;
+
+pub use crate::types::_form_factor::FormFactor;
+
+pub use crate::types::_quote_specification_type::QuoteSpecificationType;
+
+pub use crate::types::_rack_specification_details::RackSpecificationDetails;
+
+pub use crate::types::_server_specification_details::ServerSpecificationDetails;
+
+pub use crate::types::_quote_rack_use_type::QuoteRackUseType;
+
+pub use crate::types::_rack_unit_height::RackUnitHeight;
 
 mod _address;
 
@@ -143,6 +189,8 @@ mod _blocking_instance;
 
 mod _blocking_resource_type;
 
+mod _capacity_summary;
+
 mod _capacity_task_failure;
 
 mod _capacity_task_failure_type;
@@ -163,11 +211,19 @@ mod _compute_attributes;
 
 mod _connection_details;
 
+mod _currency_code;
+
 mod _decommission_request_status;
+
+mod _detailed_instance_type_item;
 
 mod _ec2_capacity;
 
 mod _fiber_optic_cable_type;
+
+mod _form_factor;
+
+mod _form_factor_config;
 
 mod _instance_type_capacity;
 
@@ -195,7 +251,15 @@ mod _order_summary;
 
 mod _order_type;
 
+mod _ordering_requirement;
+
+mod _ordering_requirement_status;
+
+mod _ordering_requirement_type;
+
 mod _outpost;
+
+mod _outpost_generation;
 
 mod _payment_option;
 
@@ -213,11 +277,39 @@ mod _pricing_option;
 
 mod _pricing_result;
 
+mod _quote;
+
+mod _quote_capacity;
+
+mod _quote_capacity_type;
+
+mod _quote_constraint;
+
+mod _quote_constraint_type;
+
+mod _quote_option;
+
 mod _quote_pricing_type;
+
+mod _quote_rack_use_type;
+
+mod _quote_specification;
+
+mod _quote_specification_type;
+
+mod _quote_status;
+
+mod _quote_summary;
 
 mod _rack_physical_properties;
 
+mod _rack_specification_details;
+
+mod _rack_unit_height;
+
 mod _resource_type;
+
+mod _server_specification_details;
 
 mod _shipment_carrier;
 

@@ -2,10 +2,16 @@
 pub(crate) fn de_auto_export_revision_to_s3_request_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AutoExportRevisionToS3RequestDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,13 +23,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Encryption" => {
                             builder = builder.set_encryption(
-                                crate::protocol_serde::shape_export_server_side_encryption::de_export_server_side_encryption(tokens, _value)?,
+                                crate::protocol_serde::shape_export_server_side_encryption::de_export_server_side_encryption(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "RevisionDestination" => {
                             builder = builder.set_revision_destination(
                                 crate::protocol_serde::shape_auto_export_revision_destination_entry::de_auto_export_revision_destination_entry(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

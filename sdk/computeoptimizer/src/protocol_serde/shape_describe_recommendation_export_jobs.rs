@@ -200,10 +200,11 @@ pub(crate) fn de_describe_recommendation_export_jobs(
     crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -211,7 +212,7 @@ pub(crate) fn de_describe_recommendation_export_jobs(
         builder = match decoder.str()?.as_ref() {
             "recommendationExportJobs" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_recommendation_export_jobs(Some(
-                    crate::protocol_serde::shape_recommendation_export_jobs::de_recommendation_export_jobs(decoder)?,
+                    crate::protocol_serde::shape_recommendation_export_jobs::de_recommendation_export_jobs(decoder, depth + 1)?,
                 )))
             })?,
             "nextToken" => {
@@ -226,6 +227,8 @@ pub(crate) fn de_describe_recommendation_export_jobs(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -235,13 +238,13 @@ pub(crate) fn de_describe_recommendation_export_jobs(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

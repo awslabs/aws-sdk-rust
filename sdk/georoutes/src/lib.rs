@@ -21,14 +21,12 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! With the Amazon Location Routes API you can calculate routes and estimate travel time based on up-to-date road network and live traffic information.
-//!
-//! Calculate optimal travel routes and estimate travel times using up-to-date road network and traffic data. Key features include:
-//!   - Point-to-point routing with estimated travel time, distance, and turn-by-turn directions
-//!   - Multi-point route optimization to minimize travel time or distance
-//!   - Route matrices for efficient multi-destination planning
-//!   - Isoline calculations to determine reachable areas within specified time or distance thresholds
-//!   - Map-matching to align GPS traces with the road network
+//! With the Routes API you can calculate routes and estimate travel time based on up-to-date road network and live traffic information. Key features include:
+//!   - Point-to-point routing with estimated travel time, distance, and turn-by-turn directions. See [CalculateRoutes](https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRoutes.html).
+//!   - Multi-point route optimization to minimize travel time or distance. See [OptimizeWaypoints](https://docs.aws.amazon.com/location/latest/APIReference/API_OptimizeWaypoints.html).
+//!   - Route matrices for efficient multi-destination planning. See [CalculateRouteMatrix](https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRouteMatrix.html).
+//!   - Isoline calculations to determine reachable areas within specified time or distance thresholds. See [CalculateIsolines](https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateIsolines.html).
+//!   - Map-matching to align GPS traces with the road network. See [SnapToRoads](https://docs.aws.amazon.com/location/latest/APIReference/API_SnapToRoads.html).
 //!
 //! ## Getting Started
 //!
@@ -42,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-georoutes = "1.53.0"
+//! aws-sdk-georoutes = "1.59.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

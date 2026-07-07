@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_path_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PathFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::PathFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_path_filter(
             s if s.matches("sourcePortRange") /* SourcePortRange com.amazonaws.ec2#PathFilter$SourcePortRange */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_filter_port_range::de_filter_port_range(&mut tag)
+                        crate::protocol_serde::shape_filter_port_range::de_filter_port_range(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_path_filter(
             s if s.matches("destinationPortRange") /* DestinationPortRange com.amazonaws.ec2#PathFilter$DestinationPortRange */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_filter_port_range::de_filter_port_range(&mut tag)
+                        crate::protocol_serde::shape_filter_port_range::de_filter_port_range(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -15,7 +15,7 @@ pub enum Error {
     EmptyBatchRequestException(crate::types::error::EmptyBatchRequestException),
     /// <p>Exception error indicating endpoint disabled.</p>
     EndpointDisabledException(crate::types::error::EndpointDisabledException),
-    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web ServicesSupport Center.</p>
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.</p>
     FilterPolicyLimitExceededException(crate::types::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),

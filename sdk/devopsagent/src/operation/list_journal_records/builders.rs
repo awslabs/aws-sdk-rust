@@ -22,7 +22,7 @@ impl crate::operation::list_journal_records::builders::ListJournalRecordsInputBu
 }
 /// Fluent builder constructing a request to `ListJournalRecords`.
 ///
-/// List journal records for a specific execution
+/// <p>List journal records for a specific execution</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListJournalRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,87 +114,87 @@ impl ListJournalRecordsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_journal_records::paginator::ListJournalRecordsPaginator {
         crate::operation::list_journal_records::paginator::ListJournalRecordsPaginator::new(self.handle, self.inner)
     }
-    /// The unique identifier for the agent space containing the execution
+    /// <p>The unique identifier for the agent space containing the execution</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space containing the execution
+    /// <p>The unique identifier for the agent space containing the execution</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space containing the execution
+    /// <p>The unique identifier for the agent space containing the execution</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The unique identifier of the execution whose journal records to retrieve
+    /// <p>The unique identifier of the execution whose journal records to retrieve</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_id(input.into());
         self
     }
-    /// The unique identifier of the execution whose journal records to retrieve
+    /// <p>The unique identifier of the execution whose journal records to retrieve</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_id(input);
         self
     }
-    /// The unique identifier of the execution whose journal records to retrieve
+    /// <p>The unique identifier of the execution whose journal records to retrieve</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_id()
     }
-    /// Maximum number of records to return in a single response (1-100, default: 100)
+    /// <p>Maximum number of records to return in a single response (1-100, default: 100)</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// Maximum number of records to return in a single response (1-100, default: 100)
+    /// <p>Maximum number of records to return in a single response (1-100, default: 100)</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// Maximum number of records to return in a single response (1-100, default: 100)
+    /// <p>Maximum number of records to return in a single response (1-100, default: 100)</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Filter records by type (empty string returns all types)
+    /// <p>Filter records by type (empty string returns all types)</p>
     pub fn record_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_type(input.into());
         self
     }
-    /// Filter records by type (empty string returns all types)
+    /// <p>Filter records by type (empty string returns all types)</p>
     pub fn set_record_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_record_type(input);
         self
     }
-    /// Filter records by type (empty string returns all types)
+    /// <p>Filter records by type (empty string returns all types)</p>
     pub fn get_record_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_record_type()
     }
-    /// Sort order for the records based on timestamp (default: DESC)
+    /// <p>Sort order for the records based on timestamp (default: DESC)</p>
     pub fn order(mut self, input: crate::types::OrderType) -> Self {
         self.inner = self.inner.order(input);
         self
     }
-    /// Sort order for the records based on timestamp (default: DESC)
+    /// <p>Sort order for the records based on timestamp (default: DESC)</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.inner = self.inner.set_order(input);
         self
     }
-    /// Sort order for the records based on timestamp (default: DESC)
+    /// <p>Sort order for the records based on timestamp (default: DESC)</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::OrderType> {
         self.inner.get_order()
     }

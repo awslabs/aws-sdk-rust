@@ -22,7 +22,9 @@ impl crate::operation::describe_model_card::builders::DescribeModelCardInputBuil
 }
 /// Fluent builder constructing a request to `DescribeModelCard`.
 ///
-/// <p>Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.</p>
+/// <p>Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.</p><important>
+/// <p>To retrieve only metadata about a model card without requiring <code>kms:Decrypt</code> permission on the associated customer-managed Amazon Web Services KMS key, set <code>IncludedData</code> to <code>MetadataOnly</code>. The default is <code>AllData</code>, which returns the full model card <code>Content</code> and requires <code>kms:Decrypt</code> permission when a customer-managed key is configured.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeModelCardFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -135,5 +137,40 @@ impl DescribeModelCardFluentBuilder {
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
     pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
         self.inner.get_model_card_version()
+    }
+    /// <p>Specifies the level of model card data to include in the response. Use this parameter to call <code>DescribeModelCard</code> without requiring <code>kms:Decrypt</code> permission on the customer-managed Amazon Web Services KMS key.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AllData</code>: Returns the full model card <code>Content</code>. This option requires <code>kms:Decrypt</code> permission on the customer-managed key, if one is associated with the model card. This is the default.</p></li>
+    /// <li>
+    /// <p><code>MetadataOnly</code>: Returns the model card with sanitized <code>Content</code> that includes only a small set of unencrypted metadata fields. This option does not require <code>kms:Decrypt</code> permission. For the list of fields preserved in the response, see <code>Content</code>.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, SageMaker returns <code>AllData</code>.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.inner = self.inner.included_data(input);
+        self
+    }
+    /// <p>Specifies the level of model card data to include in the response. Use this parameter to call <code>DescribeModelCard</code> without requiring <code>kms:Decrypt</code> permission on the customer-managed Amazon Web Services KMS key.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AllData</code>: Returns the full model card <code>Content</code>. This option requires <code>kms:Decrypt</code> permission on the customer-managed key, if one is associated with the model card. This is the default.</p></li>
+    /// <li>
+    /// <p><code>MetadataOnly</code>: Returns the model card with sanitized <code>Content</code> that includes only a small set of unencrypted metadata fields. This option does not require <code>kms:Decrypt</code> permission. For the list of fields preserved in the response, see <code>Content</code>.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, SageMaker returns <code>AllData</code>.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.inner = self.inner.set_included_data(input);
+        self
+    }
+    /// <p>Specifies the level of model card data to include in the response. Use this parameter to call <code>DescribeModelCard</code> without requiring <code>kms:Decrypt</code> permission on the customer-managed Amazon Web Services KMS key.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AllData</code>: Returns the full model card <code>Content</code>. This option requires <code>kms:Decrypt</code> permission on the customer-managed key, if one is associated with the model card. This is the default.</p></li>
+    /// <li>
+    /// <p><code>MetadataOnly</code>: Returns the model card with sanitized <code>Content</code> that includes only a small set of unencrypted metadata fields. This option does not require <code>kms:Decrypt</code> permission. For the list of fields preserved in the response, see <code>Content</code>.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, SageMaker returns <code>AllData</code>.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        self.inner.get_included_data()
     }
 }

@@ -1255,6 +1255,45 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ad_configuration::UpdateAdConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ad_configuration::UpdateAdConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_ad_configuration::UpdateAdConfigurationError> for Error {
+    fn from(err: crate::operation::update_ad_configuration::UpdateAdConfigurationError) -> Self {
+        match err {
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::PendingVerification(inner) => Error::PendingVerification(inner),
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_ad_configuration::UpdateAdConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_channel::UpdateChannelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

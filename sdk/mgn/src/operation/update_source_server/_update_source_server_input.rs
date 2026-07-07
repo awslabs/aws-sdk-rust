@@ -9,6 +9,12 @@ pub struct UpdateSourceServerInput {
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Update Source Server request connector action.</p>
     pub connector_action: ::std::option::Option<crate::types::SourceServerConnectorAction>,
+    /// <p>Update Source Server request user provided ID.</p>
+    pub user_provided_id: ::std::option::Option<::std::string::String>,
+    /// <p>Update Source Server request FQDN for action framework.</p>
+    pub fqdn_for_action_framework: ::std::option::Option<::std::string::String>,
+    /// <p>Update Source Server request platform operating system.</p>
+    pub platform: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSourceServerInput {
     /// <p>Update Source Server request account ID.</p>
@@ -22,6 +28,18 @@ impl UpdateSourceServerInput {
     /// <p>Update Source Server request connector action.</p>
     pub fn connector_action(&self) -> ::std::option::Option<&crate::types::SourceServerConnectorAction> {
         self.connector_action.as_ref()
+    }
+    /// <p>Update Source Server request user provided ID.</p>
+    pub fn user_provided_id(&self) -> ::std::option::Option<&str> {
+        self.user_provided_id.as_deref()
+    }
+    /// <p>Update Source Server request FQDN for action framework.</p>
+    pub fn fqdn_for_action_framework(&self) -> ::std::option::Option<&str> {
+        self.fqdn_for_action_framework.as_deref()
+    }
+    /// <p>Update Source Server request platform operating system.</p>
+    pub fn platform(&self) -> ::std::option::Option<&str> {
+        self.platform.as_deref()
     }
 }
 impl UpdateSourceServerInput {
@@ -38,6 +56,9 @@ pub struct UpdateSourceServerInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) connector_action: ::std::option::Option<crate::types::SourceServerConnectorAction>,
+    pub(crate) user_provided_id: ::std::option::Option<::std::string::String>,
+    pub(crate) fqdn_for_action_framework: ::std::option::Option<::std::string::String>,
+    pub(crate) platform: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSourceServerInputBuilder {
     /// <p>Update Source Server request account ID.</p>
@@ -83,6 +104,48 @@ impl UpdateSourceServerInputBuilder {
     pub fn get_connector_action(&self) -> &::std::option::Option<crate::types::SourceServerConnectorAction> {
         &self.connector_action
     }
+    /// <p>Update Source Server request user provided ID.</p>
+    pub fn user_provided_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_provided_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Update Source Server request user provided ID.</p>
+    pub fn set_user_provided_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_provided_id = input;
+        self
+    }
+    /// <p>Update Source Server request user provided ID.</p>
+    pub fn get_user_provided_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_provided_id
+    }
+    /// <p>Update Source Server request FQDN for action framework.</p>
+    pub fn fqdn_for_action_framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fqdn_for_action_framework = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Update Source Server request FQDN for action framework.</p>
+    pub fn set_fqdn_for_action_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fqdn_for_action_framework = input;
+        self
+    }
+    /// <p>Update Source Server request FQDN for action framework.</p>
+    pub fn get_fqdn_for_action_framework(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fqdn_for_action_framework
+    }
+    /// <p>Update Source Server request platform operating system.</p>
+    pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Update Source Server request platform operating system.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.platform = input;
+        self
+    }
+    /// <p>Update Source Server request platform operating system.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
     /// Consumes the builder and constructs a [`UpdateSourceServerInput`](crate::operation::update_source_server::UpdateSourceServerInput).
     pub fn build(
         self,
@@ -92,6 +155,9 @@ impl UpdateSourceServerInputBuilder {
             account_id: self.account_id,
             source_server_id: self.source_server_id,
             connector_action: self.connector_action,
+            user_provided_id: self.user_provided_id,
+            fqdn_for_action_framework: self.fqdn_for_action_framework,
+            platform: self.platform,
         })
     }
 }

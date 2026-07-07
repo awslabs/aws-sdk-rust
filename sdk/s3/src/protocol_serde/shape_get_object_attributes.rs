@@ -203,6 +203,8 @@ pub fn de_get_object_attributes(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ETag") /* ETag com.amazonaws.s3.synthetic#GetObjectAttributesOutput$ETag */ =>  {
@@ -221,7 +223,7 @@ pub fn de_get_object_attributes(
             s if s.matches("Checksum") /* Checksum com.amazonaws.s3.synthetic#GetObjectAttributesOutput$Checksum */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_checksum::de_checksum(&mut tag)
+                        crate::protocol_serde::shape_checksum::de_checksum(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -260,7 +262,7 @@ pub fn de_get_object_attributes(
             s if s.matches("ObjectParts") /* ObjectParts com.amazonaws.s3.synthetic#GetObjectAttributesOutput$ObjectParts */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_get_object_attributes_parts::de_get_object_attributes_parts(&mut tag)
+                        crate::protocol_serde::shape_get_object_attributes_parts::de_get_object_attributes_parts(&mut tag, depth + 1)
                         ?
                     )
                 ;

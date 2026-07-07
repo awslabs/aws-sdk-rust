@@ -122,17 +122,26 @@ pub(crate) fn de_put_pipeline_definition(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "validationErrors" => {
-                    builder = builder.set_validation_errors(crate::protocol_serde::shape_validation_errors::de_validation_errors(tokens, _value)?);
+                    builder = builder.set_validation_errors(crate::protocol_serde::shape_validation_errors::de_validation_errors(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "validationWarnings" => {
-                    builder =
-                        builder.set_validation_warnings(crate::protocol_serde::shape_validation_warnings::de_validation_warnings(tokens, _value)?);
+                    builder = builder.set_validation_warnings(crate::protocol_serde::shape_validation_warnings::de_validation_warnings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "errored" => {
                     builder = builder.set_errored(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

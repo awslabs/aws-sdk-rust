@@ -95,6 +95,8 @@ pub fn de_get_dnssec(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetDNSSECResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetDNSSECResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -105,7 +107,7 @@ pub fn de_get_dnssec(
             s if s.matches("Status") /* Status com.amazonaws.route53.synthetic#GetDNSSECOutput$Status */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_dnssec_status::de_dnssec_status(&mut tag)
+                        crate::protocol_serde::shape_dnssec_status::de_dnssec_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -115,7 +117,7 @@ pub fn de_get_dnssec(
             s if s.matches("KeySigningKeys") /* KeySigningKeys com.amazonaws.route53.synthetic#GetDNSSECOutput$KeySigningKeys */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_key_signing_keys::de_key_signing_keys(&mut tag)
+                        crate::protocol_serde::shape_key_signing_keys::de_key_signing_keys(&mut tag, depth + 1)
                         ?
                     )
                 ;

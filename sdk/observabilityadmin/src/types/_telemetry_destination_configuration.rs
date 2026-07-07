@@ -20,6 +20,8 @@ pub struct TelemetryDestinationConfiguration {
     pub waf_logging_parameters: ::std::option::Option<crate::types::WafLoggingParameters>,
     /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
     pub log_delivery_parameters: ::std::option::Option<crate::types::LogDeliveryParameters>,
+    /// <p>Configuration parameters specific to MSK monitoring when MSK is the resource type.</p>
+    pub msk_monitoring_parameters: ::std::option::Option<crate::types::MskMonitoringParameters>,
 }
 impl TelemetryDestinationConfiguration {
     /// <p>The type of destination for the telemetry data (e.g., "Amazon CloudWatch Logs", "S3").</p>
@@ -54,6 +56,10 @@ impl TelemetryDestinationConfiguration {
     pub fn log_delivery_parameters(&self) -> ::std::option::Option<&crate::types::LogDeliveryParameters> {
         self.log_delivery_parameters.as_ref()
     }
+    /// <p>Configuration parameters specific to MSK monitoring when MSK is the resource type.</p>
+    pub fn msk_monitoring_parameters(&self) -> ::std::option::Option<&crate::types::MskMonitoringParameters> {
+        self.msk_monitoring_parameters.as_ref()
+    }
 }
 impl TelemetryDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`TelemetryDestinationConfiguration`](crate::types::TelemetryDestinationConfiguration).
@@ -74,6 +80,7 @@ pub struct TelemetryDestinationConfigurationBuilder {
     pub(crate) elb_load_balancer_logging_parameters: ::std::option::Option<crate::types::ElbLoadBalancerLoggingParameters>,
     pub(crate) waf_logging_parameters: ::std::option::Option<crate::types::WafLoggingParameters>,
     pub(crate) log_delivery_parameters: ::std::option::Option<crate::types::LogDeliveryParameters>,
+    pub(crate) msk_monitoring_parameters: ::std::option::Option<crate::types::MskMonitoringParameters>,
 }
 impl TelemetryDestinationConfigurationBuilder {
     /// <p>The type of destination for the telemetry data (e.g., "Amazon CloudWatch Logs", "S3").</p>
@@ -188,6 +195,20 @@ impl TelemetryDestinationConfigurationBuilder {
     pub fn get_log_delivery_parameters(&self) -> &::std::option::Option<crate::types::LogDeliveryParameters> {
         &self.log_delivery_parameters
     }
+    /// <p>Configuration parameters specific to MSK monitoring when MSK is the resource type.</p>
+    pub fn msk_monitoring_parameters(mut self, input: crate::types::MskMonitoringParameters) -> Self {
+        self.msk_monitoring_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration parameters specific to MSK monitoring when MSK is the resource type.</p>
+    pub fn set_msk_monitoring_parameters(mut self, input: ::std::option::Option<crate::types::MskMonitoringParameters>) -> Self {
+        self.msk_monitoring_parameters = input;
+        self
+    }
+    /// <p>Configuration parameters specific to MSK monitoring when MSK is the resource type.</p>
+    pub fn get_msk_monitoring_parameters(&self) -> &::std::option::Option<crate::types::MskMonitoringParameters> {
+        &self.msk_monitoring_parameters
+    }
     /// Consumes the builder and constructs a [`TelemetryDestinationConfiguration`](crate::types::TelemetryDestinationConfiguration).
     pub fn build(self) -> crate::types::TelemetryDestinationConfiguration {
         crate::types::TelemetryDestinationConfiguration {
@@ -199,6 +220,7 @@ impl TelemetryDestinationConfigurationBuilder {
             elb_load_balancer_logging_parameters: self.elb_load_balancer_logging_parameters,
             waf_logging_parameters: self.waf_logging_parameters,
             log_delivery_parameters: self.log_delivery_parameters,
+            msk_monitoring_parameters: self.msk_monitoring_parameters,
         }
     }
 }

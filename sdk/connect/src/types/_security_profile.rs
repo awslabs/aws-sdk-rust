@@ -16,17 +16,17 @@ pub struct SecurityProfile {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Connect Customer.</p>
     pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The timestamp when this resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
-    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
     pub granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
@@ -56,11 +56,11 @@ impl SecurityProfile {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn allowed_access_control_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.allowed_access_control_tags.as_ref()
     }
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Connect Customer.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_restricted_resources.is_none()`.
     pub fn tag_restricted_resources(&self) -> &[::std::string::String] {
@@ -74,13 +74,13 @@ impl SecurityProfile {
     pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
         self.last_modified_region.as_deref()
     }
-    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: <code>User</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hierarchy_restricted_resources.is_none()`.
     pub fn hierarchy_restricted_resources(&self) -> &[::std::string::String] {
         self.hierarchy_restricted_resources.as_deref().unwrap_or_default()
     }
-    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn allowed_access_control_hierarchy_group_id(&self) -> ::std::option::Option<&str> {
         self.allowed_access_control_hierarchy_group_id.as_deref()
     }
@@ -209,7 +209,7 @@ impl SecurityProfileBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
     ///
-    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn allowed_access_control_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -220,7 +220,7 @@ impl SecurityProfileBuilder {
         self.allowed_access_control_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn set_allowed_access_control_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -228,7 +228,7 @@ impl SecurityProfileBuilder {
         self.allowed_access_control_tags = input;
         self
     }
-    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn get_allowed_access_control_tags(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -238,19 +238,19 @@ impl SecurityProfileBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
     ///
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Connect Customer.</p>
     pub fn tag_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_restricted_resources.unwrap_or_default();
         v.push(input.into());
         self.tag_restricted_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Connect Customer.</p>
     pub fn set_tag_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_restricted_resources = input;
         self
     }
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Connect Customer.</p>
     pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_restricted_resources
     }
@@ -286,33 +286,33 @@ impl SecurityProfileBuilder {
     ///
     /// To override the contents of this collection use [`set_hierarchy_restricted_resources`](Self::set_hierarchy_restricted_resources).
     ///
-    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub fn hierarchy_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hierarchy_restricted_resources.unwrap_or_default();
         v.push(input.into());
         self.hierarchy_restricted_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub fn set_hierarchy_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hierarchy_restricted_resources = input;
         self
     }
-    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub fn get_hierarchy_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.hierarchy_restricted_resources
     }
-    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn allowed_access_control_hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_access_control_hierarchy_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn set_allowed_access_control_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_access_control_hierarchy_group_id = input;
         self
     }
-    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.</p>
     pub fn get_allowed_access_control_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_access_control_hierarchy_group_id
     }

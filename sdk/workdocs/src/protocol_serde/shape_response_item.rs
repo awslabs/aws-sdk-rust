@@ -2,10 +2,16 @@
 pub(crate) fn de_response_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResponseItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,19 +36,29 @@ where
                             );
                         }
                         "DocumentMetadata" => {
-                            builder =
-                                builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens, _value)?);
+                            builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "FolderMetadata" => {
-                            builder = builder.set_folder_metadata(crate::protocol_serde::shape_folder_metadata::de_folder_metadata(tokens, _value)?);
+                            builder = builder.set_folder_metadata(crate::protocol_serde::shape_folder_metadata::de_folder_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "CommentMetadata" => {
-                            builder =
-                                builder.set_comment_metadata(crate::protocol_serde::shape_comment_metadata::de_comment_metadata(tokens, _value)?);
+                            builder = builder.set_comment_metadata(crate::protocol_serde::shape_comment_metadata::de_comment_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "DocumentVersionMetadata" => {
                             builder = builder.set_document_version_metadata(
-                                crate::protocol_serde::shape_document_version_metadata::de_document_version_metadata(tokens, _value)?,
+                                crate::protocol_serde::shape_document_version_metadata::de_document_version_metadata(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

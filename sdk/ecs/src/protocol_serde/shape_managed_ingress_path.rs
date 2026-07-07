@@ -2,10 +2,16 @@
 pub(crate) fn de_managed_ingress_path<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedIngressPath>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,29 +37,42 @@ where
                         }
                         "loadBalancer" => {
                             builder = builder.set_load_balancer(crate::protocol_serde::shape_managed_load_balancer::de_managed_load_balancer(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "loadBalancerSecurityGroups" => {
                             builder = builder.set_load_balancer_security_groups(
-                                crate::protocol_serde::shape_managed_security_groups::de_managed_security_groups(tokens, _value)?,
+                                crate::protocol_serde::shape_managed_security_groups::de_managed_security_groups(tokens, _value, depth + 1)?,
                             );
                         }
                         "certificate" => {
-                            builder =
-                                builder.set_certificate(crate::protocol_serde::shape_managed_certificate::de_managed_certificate(tokens, _value)?);
+                            builder = builder.set_certificate(crate::protocol_serde::shape_managed_certificate::de_managed_certificate(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "listener" => {
-                            builder = builder.set_listener(crate::protocol_serde::shape_managed_listener::de_managed_listener(tokens, _value)?);
+                            builder = builder.set_listener(crate::protocol_serde::shape_managed_listener::de_managed_listener(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "rule" => {
                             builder = builder.set_rule(crate::protocol_serde::shape_managed_listener_rule::de_managed_listener_rule(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "targetGroups" => {
                             builder = builder.set_target_groups(crate::protocol_serde::shape_managed_target_groups::de_managed_target_groups(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -138,6 +138,8 @@ pub(crate) fn de_list_hosted_zone_associations(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -145,7 +147,7 @@ pub(crate) fn de_list_hosted_zone_associations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "hostedZoneAssociations" => {
                     builder = builder.set_hosted_zone_associations(
-                        crate::protocol_serde::shape_hosted_zone_associations::de_hosted_zone_associations(tokens, _value)?,
+                        crate::protocol_serde::shape_hosted_zone_associations::de_hosted_zone_associations(tokens, _value, depth + 1)?,
                     );
                 }
                 "nextToken" => {

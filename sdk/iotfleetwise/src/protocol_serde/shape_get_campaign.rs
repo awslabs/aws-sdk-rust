@@ -124,6 +124,8 @@ pub(crate) fn de_get_campaign(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -220,15 +222,25 @@ pub(crate) fn de_get_campaign(
                 }
                 "signalsToCollect" => {
                     builder = builder.set_signals_to_collect(crate::protocol_serde::shape_signal_information_list::de_signal_information_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "collectionScheme" => {
-                    builder = builder.set_collection_scheme(crate::protocol_serde::shape_collection_scheme::de_collection_scheme(tokens, _value)?);
+                    builder = builder.set_collection_scheme(crate::protocol_serde::shape_collection_scheme::de_collection_scheme(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "dataExtraDimensions" => {
                     builder = builder.set_data_extra_dimensions(
-                        crate::protocol_serde::shape_data_extra_dimension_node_path_list::de_data_extra_dimension_node_path_list(tokens, _value)?,
+                        crate::protocol_serde::shape_data_extra_dimension_node_path_list::de_data_extra_dimension_node_path_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "creationTime" => {
@@ -245,15 +257,19 @@ pub(crate) fn de_get_campaign(
                 }
                 "dataDestinationConfigs" => {
                     builder = builder.set_data_destination_configs(
-                        crate::protocol_serde::shape_data_destination_configs::de_data_destination_configs(tokens, _value)?,
+                        crate::protocol_serde::shape_data_destination_configs::de_data_destination_configs(tokens, _value, depth + 1)?,
                     );
                 }
                 "dataPartitions" => {
-                    builder = builder.set_data_partitions(crate::protocol_serde::shape_data_partitions::de_data_partitions(tokens, _value)?);
+                    builder = builder.set_data_partitions(crate::protocol_serde::shape_data_partitions::de_data_partitions(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "signalsToFetch" => {
                     builder = builder.set_signals_to_fetch(
-                        crate::protocol_serde::shape_signal_fetch_information_list::de_signal_fetch_information_list(tokens, _value)?,
+                        crate::protocol_serde::shape_signal_fetch_information_list::de_signal_fetch_information_list(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -22,11 +22,19 @@ pub fn ser_priority_configuration_override(
 
 pub(crate) fn de_priority_configuration_override(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::PriorityConfigurationOverride, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::PriorityConfigurationOverrideBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::PriorityConfigurationOverrideBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "PlacementFallbackStrategy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -34,7 +42,7 @@ pub(crate) fn de_priority_configuration_override(
                     .set_placement_fallback_strategy(Some(decoder.string().map(|s| crate::types::PlacementFallbackStrategy::from(s.as_ref()))?)))
             })?,
             "LocationOrder" => builder.set_location_order(Some(
-                crate::protocol_serde::shape_location_order_override_list::de_location_order_override_list(decoder)?,
+                crate::protocol_serde::shape_location_order_override_list::de_location_order_override_list(decoder, depth + 1)?,
             )),
             _ => {
                 decoder.skip()?;
@@ -54,13 +62,13 @@ pub(crate) fn de_priority_configuration_override(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_peering_attachment(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TransitGatewayPeeringAttachment, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayPeeringAttachment::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_transit_gateway_peering_attachment(
             s if s.matches("requesterTgwInfo") /* RequesterTgwInfo com.amazonaws.ec2#TransitGatewayPeeringAttachment$RequesterTgwInfo */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_peering_tgw_info::de_peering_tgw_info(&mut tag)
+                        crate::protocol_serde::shape_peering_tgw_info::de_peering_tgw_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -46,7 +50,7 @@ pub fn de_transit_gateway_peering_attachment(
             s if s.matches("accepterTgwInfo") /* AccepterTgwInfo com.amazonaws.ec2#TransitGatewayPeeringAttachment$AccepterTgwInfo */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_peering_tgw_info::de_peering_tgw_info(&mut tag)
+                        crate::protocol_serde::shape_peering_tgw_info::de_peering_tgw_info(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -56,7 +60,7 @@ pub fn de_transit_gateway_peering_attachment(
             s if s.matches("options") /* Options com.amazonaws.ec2#TransitGatewayPeeringAttachment$Options */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_transit_gateway_peering_attachment_options::de_transit_gateway_peering_attachment_options(&mut tag)
+                        crate::protocol_serde::shape_transit_gateway_peering_attachment_options::de_transit_gateway_peering_attachment_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -66,7 +70,7 @@ pub fn de_transit_gateway_peering_attachment(
             s if s.matches("status") /* Status com.amazonaws.ec2#TransitGatewayPeeringAttachment$Status */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_peering_attachment_status::de_peering_attachment_status(&mut tag)
+                        crate::protocol_serde::shape_peering_attachment_status::de_peering_attachment_status(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -104,7 +108,7 @@ pub fn de_transit_gateway_peering_attachment(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#TransitGatewayPeeringAttachment$Tags */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -3,4 +3,10 @@ pub use crate::types::_create_o_auth2_token_request_body::CreateOAuth2TokenReque
 
 pub use crate::types::_create_o_auth2_token_response_body::CreateOAuth2TokenResponseBodyBuilder;
 
+pub use crate::types::_signin_resource_based_policy::SigninResourceBasedPolicyBuilder;
+
 pub use crate::types::_access_token::AccessTokenBuilder;
+
+pub use crate::types::_permission_statement_summary::PermissionStatementSummaryBuilder;
+
+pub use crate::types::_policy_statement::PolicyStatementBuilder;

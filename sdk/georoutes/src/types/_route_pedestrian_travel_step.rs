@@ -122,7 +122,7 @@ impl ::std::fmt::Debug for RoutePedestrianTravelStep {
         formatter.field("roundabout_pass_step_details", &self.roundabout_pass_step_details);
         formatter.field("signpost", &self.signpost);
         formatter.field("turn_step_details", &self.turn_step_details);
-        formatter.field("r#type", &self.r#type);
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -426,7 +426,7 @@ impl ::std::fmt::Debug for RoutePedestrianTravelStepBuilder {
         formatter.field("roundabout_pass_step_details", &self.roundabout_pass_step_details);
         formatter.field("signpost", &self.signpost);
         formatter.field("turn_step_details", &self.turn_step_details);
-        formatter.field("r#type", &self.r#type);
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

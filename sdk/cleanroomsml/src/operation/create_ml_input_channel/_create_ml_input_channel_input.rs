@@ -36,6 +36,8 @@ pub struct CreateMlInputChannelInput {
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.</p>
+    pub payer_configuration: ::std::option::Option<crate::types::PayerConfiguration>,
 }
 impl CreateMlInputChannelInput {
     /// <p>The membership ID of the member that is creating the ML input channel.</p>
@@ -89,6 +91,10 @@ impl CreateMlInputChannelInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.</p>
+    pub fn payer_configuration(&self) -> ::std::option::Option<&crate::types::PayerConfiguration> {
+        self.payer_configuration.as_ref()
+    }
 }
 impl CreateMlInputChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateMlInputChannelInput`](crate::operation::create_ml_input_channel::CreateMlInputChannelInput).
@@ -109,6 +115,7 @@ pub struct CreateMlInputChannelInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) payer_configuration: ::std::option::Option<crate::types::PayerConfiguration>,
 }
 impl CreateMlInputChannelInputBuilder {
     /// <p>The membership ID of the member that is creating the ML input channel.</p>
@@ -290,6 +297,20 @@ impl CreateMlInputChannelInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.</p>
+    pub fn payer_configuration(mut self, input: crate::types::PayerConfiguration) -> Self {
+        self.payer_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.</p>
+    pub fn set_payer_configuration(mut self, input: ::std::option::Option<crate::types::PayerConfiguration>) -> Self {
+        self.payer_configuration = input;
+        self
+    }
+    /// <p>The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.</p>
+    pub fn get_payer_configuration(&self) -> &::std::option::Option<crate::types::PayerConfiguration> {
+        &self.payer_configuration
+    }
     /// Consumes the builder and constructs a [`CreateMlInputChannelInput`](crate::operation::create_ml_input_channel::CreateMlInputChannelInput).
     pub fn build(
         self,
@@ -304,6 +325,7 @@ impl CreateMlInputChannelInputBuilder {
             description: self.description,
             kms_key_arn: self.kms_key_arn,
             tags: self.tags,
+            payer_configuration: self.payer_configuration,
         })
     }
 }

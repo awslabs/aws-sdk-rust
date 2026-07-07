@@ -11,6 +11,10 @@ pub struct UpdateWorkspaceConfigurationInput {
     pub limits_per_label_set: ::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>>,
     /// <p>Specifies how many days that metrics will be retained in the workspace.</p>
     pub retention_period_in_days: ::std::option::Option<i32>,
+    /// <p>Specifies the time window in seconds for accepting out of order samples. Out of order samples older than this window are rejected.</p>
+    pub out_of_order_time_window_in_seconds: ::std::option::Option<i32>,
+    /// <p>Specifies the duration in seconds to offset rule evaluation queries into the past. This allows ingested samples to be available before rule evaluation.</p>
+    pub rule_query_offset_in_seconds: ::std::option::Option<i32>,
 }
 impl UpdateWorkspaceConfigurationInput {
     /// <p>The ID of the workspace that you want to update. To find the IDs of your workspaces, use the <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListWorkspaces.htm">ListWorkspaces</a> operation.</p>
@@ -31,6 +35,14 @@ impl UpdateWorkspaceConfigurationInput {
     pub fn retention_period_in_days(&self) -> ::std::option::Option<i32> {
         self.retention_period_in_days
     }
+    /// <p>Specifies the time window in seconds for accepting out of order samples. Out of order samples older than this window are rejected.</p>
+    pub fn out_of_order_time_window_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.out_of_order_time_window_in_seconds
+    }
+    /// <p>Specifies the duration in seconds to offset rule evaluation queries into the past. This allows ingested samples to be available before rule evaluation.</p>
+    pub fn rule_query_offset_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.rule_query_offset_in_seconds
+    }
 }
 impl UpdateWorkspaceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceConfigurationInput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput).
@@ -47,6 +59,8 @@ pub struct UpdateWorkspaceConfigurationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) limits_per_label_set: ::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>>,
     pub(crate) retention_period_in_days: ::std::option::Option<i32>,
+    pub(crate) out_of_order_time_window_in_seconds: ::std::option::Option<i32>,
+    pub(crate) rule_query_offset_in_seconds: ::std::option::Option<i32>,
 }
 impl UpdateWorkspaceConfigurationInputBuilder {
     /// <p>The ID of the workspace that you want to update. To find the IDs of your workspaces, use the <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListWorkspaces.htm">ListWorkspaces</a> operation.</p>
@@ -112,6 +126,34 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     pub fn get_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         &self.retention_period_in_days
     }
+    /// <p>Specifies the time window in seconds for accepting out of order samples. Out of order samples older than this window are rejected.</p>
+    pub fn out_of_order_time_window_in_seconds(mut self, input: i32) -> Self {
+        self.out_of_order_time_window_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the time window in seconds for accepting out of order samples. Out of order samples older than this window are rejected.</p>
+    pub fn set_out_of_order_time_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.out_of_order_time_window_in_seconds = input;
+        self
+    }
+    /// <p>Specifies the time window in seconds for accepting out of order samples. Out of order samples older than this window are rejected.</p>
+    pub fn get_out_of_order_time_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.out_of_order_time_window_in_seconds
+    }
+    /// <p>Specifies the duration in seconds to offset rule evaluation queries into the past. This allows ingested samples to be available before rule evaluation.</p>
+    pub fn rule_query_offset_in_seconds(mut self, input: i32) -> Self {
+        self.rule_query_offset_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the duration in seconds to offset rule evaluation queries into the past. This allows ingested samples to be available before rule evaluation.</p>
+    pub fn set_rule_query_offset_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.rule_query_offset_in_seconds = input;
+        self
+    }
+    /// <p>Specifies the duration in seconds to offset rule evaluation queries into the past. This allows ingested samples to be available before rule evaluation.</p>
+    pub fn get_rule_query_offset_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.rule_query_offset_in_seconds
+    }
     /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationInput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput).
     pub fn build(
         self,
@@ -124,6 +166,8 @@ impl UpdateWorkspaceConfigurationInputBuilder {
             client_token: self.client_token,
             limits_per_label_set: self.limits_per_label_set,
             retention_period_in_days: self.retention_period_in_days,
+            out_of_order_time_window_in_seconds: self.out_of_order_time_window_in_seconds,
+            rule_query_offset_in_seconds: self.rule_query_offset_in_seconds,
         })
     }
 }

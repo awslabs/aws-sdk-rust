@@ -1228,6 +1228,30 @@ impl From<crate::operation::create_inference_recommendations_job::CreateInferenc
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_job::CreateJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_job::CreateJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_job::CreateJobError> for Error {
+    fn from(err: crate::operation::create_job::CreateJobError) -> Self {
+        match err {
+            crate::operation::create_job::CreateJobError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_job::CreateJobError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
+            crate::operation::create_job::CreateJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::create_job::CreateJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_labeling_job::CreateLabelingJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2956,6 +2980,29 @@ impl From<crate::operation::delete_inference_experiment::DeleteInferenceExperime
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_job::DeleteJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_job::DeleteJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_job::DeleteJobError> for Error {
+    fn from(err: crate::operation::delete_job::DeleteJobError) -> Self {
+        match err {
+            crate::operation::delete_job::DeleteJobError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::delete_job::DeleteJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_job::DeleteJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mlflow_app::DeleteMlflowAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4609,6 +4656,53 @@ impl From<crate::operation::describe_inference_recommendations_job::DescribeInfe
             crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job::DescribeJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job::DescribeJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_job::DescribeJobError> for Error {
+    fn from(err: crate::operation::describe_job::DescribeJobError) -> Self {
+        match err {
+            crate::operation::describe_job::DescribeJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_job::DescribeJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job_schema_version::DescribeJobSchemaVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job_schema_version::DescribeJobSchemaVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_job_schema_version::DescribeJobSchemaVersionError> for Error {
+    fn from(err: crate::operation::describe_job_schema_version::DescribeJobSchemaVersionError) -> Self {
+        match err {
+            crate::operation::describe_job_schema_version::DescribeJobSchemaVersionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_job_schema_version::DescribeJobSchemaVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6813,6 +6907,51 @@ impl From<crate::operation::list_inference_recommendations_job_steps::ListInfere
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_jobs::ListJobsError> for Error {
+    fn from(err: crate::operation::list_jobs::ListJobsError) -> Self {
+        match err {
+            crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_job_schema_versions::ListJobSchemaVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_job_schema_versions::ListJobSchemaVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_job_schema_versions::ListJobSchemaVersionsError> for Error {
+    fn from(err: crate::operation::list_job_schema_versions::ListJobSchemaVersionsError) -> Self {
+        match err {
+            crate::operation::list_job_schema_versions::ListJobSchemaVersionsError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::list_job_schema_versions::ListJobSchemaVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_labeling_jobs::ListLabelingJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8614,6 +8753,28 @@ impl From<crate::operation::stop_inference_recommendations_job::StopInferenceRec
                 Error::ResourceNotFound(inner)
             }
             crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_job::StopJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_job::StopJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_job::StopJobError> for Error {
+    fn from(err: crate::operation::stop_job::StopJobError) -> Self {
+        match err {
+            crate::operation::stop_job::StopJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::stop_job::StopJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

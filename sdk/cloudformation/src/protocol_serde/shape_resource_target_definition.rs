@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_target_definition(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceTargetDefinition, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceTargetDefinition::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -118,7 +122,7 @@ pub fn de_resource_target_definition(
             s if s.matches("Drift") /* Drift com.amazonaws.cloudformation#ResourceTargetDefinition$Drift */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_live_resource_drift::de_live_resource_drift(&mut tag)
+                        crate::protocol_serde::shape_live_resource_drift::de_live_resource_drift(&mut tag, depth + 1)
                         ?
                     )
                 ;

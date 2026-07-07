@@ -2,10 +2,16 @@
 pub(crate) fn de_organization_entity_aggregate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OrganizationEntityAggregate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,11 +36,19 @@ where
                             );
                         }
                         "statuses" => {
-                            builder = builder.set_statuses(crate::protocol_serde::shape_entity_statuses::de_entity_statuses(tokens, _value)?);
+                            builder = builder.set_statuses(crate::protocol_serde::shape_entity_statuses::de_entity_statuses(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "accounts" => {
                             builder = builder.set_accounts(
-                                crate::protocol_serde::shape_account_entity_aggregates_list::de_account_entity_aggregates_list(tokens, _value)?,
+                                crate::protocol_serde::shape_account_entity_aggregates_list::de_account_entity_aggregates_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

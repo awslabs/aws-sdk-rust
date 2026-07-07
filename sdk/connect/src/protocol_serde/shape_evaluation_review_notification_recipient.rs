@@ -21,10 +21,16 @@ pub fn ser_evaluation_review_notification_recipient(
 pub(crate) fn de_evaluation_review_notification_recipient<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EvaluationReviewNotificationRecipient>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -46,7 +52,7 @@ where
                         }
                         "Value" => {
                             builder = builder.set_value(
-                                    crate::protocol_serde::shape_evaluation_review_notification_recipient_value::de_evaluation_review_notification_recipient_value(tokens, _value)?
+                                    crate::protocol_serde::shape_evaluation_review_notification_recipient_value::de_evaluation_review_notification_recipient_value(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

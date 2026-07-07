@@ -23,6 +23,8 @@ pub use crate::types::_vpc_configuration::VpcConfiguration;
 
 pub use crate::types::_network_access_configuration::NetworkAccessConfiguration;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_saml_authentication::SamlAuthentication;
@@ -78,6 +80,8 @@ mod _aws_sso_authentication;
 mod _data_source_type;
 
 mod _idp_metadata;
+
+mod _ip_address_type;
 
 mod _license_type;
 

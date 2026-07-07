@@ -2,10 +2,16 @@
 pub(crate) fn de_route_pedestrian_leg_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RoutePedestrianLegDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -15,39 +21,68 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AfterTravelSteps" => {
+                            builder = builder.set_after_travel_steps(
+                                crate::protocol_serde::shape_route_pedestrian_after_travel_step_list::de_route_pedestrian_after_travel_step_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "Arrival" => {
                             builder = builder.set_arrival(crate::protocol_serde::shape_route_pedestrian_arrival::de_route_pedestrian_arrival(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Departure" => {
                             builder = builder.set_departure(crate::protocol_serde::shape_route_pedestrian_departure::de_route_pedestrian_departure(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Notices" => {
                             builder = builder.set_notices(
-                                crate::protocol_serde::shape_route_pedestrian_notice_list::de_route_pedestrian_notice_list(tokens, _value)?,
+                                crate::protocol_serde::shape_route_pedestrian_notice_list::de_route_pedestrian_notice_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "PassThroughWaypoints" => {
                             builder = builder.set_pass_through_waypoints(
-                                crate::protocol_serde::shape_route_pass_through_waypoint_list::de_route_pass_through_waypoint_list(tokens, _value)?,
+                                crate::protocol_serde::shape_route_pass_through_waypoint_list::de_route_pass_through_waypoint_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Spans" => {
                             builder = builder.set_spans(crate::protocol_serde::shape_route_pedestrian_span_list::de_route_pedestrian_span_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Summary" => {
                             builder = builder.set_summary(crate::protocol_serde::shape_route_pedestrian_summary::de_route_pedestrian_summary(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "TravelSteps" => {
                             builder = builder.set_travel_steps(
-                                crate::protocol_serde::shape_route_pedestrian_travel_step_list::de_route_pedestrian_travel_step_list(tokens, _value)?,
+                                crate::protocol_serde::shape_route_pedestrian_travel_step_list::de_route_pedestrian_travel_step_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

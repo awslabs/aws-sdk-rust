@@ -39,10 +39,16 @@ pub fn ser_smpte2110_receiver_group_sdp_settings(
 pub(crate) fn de_smpte2110_receiver_group_sdp_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Smpte2110ReceiverGroupSdpSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,16 +60,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ancillarySdps" => {
                             builder = builder.set_ancillary_sdps(
-                                crate::protocol_serde::shape_list_of_input_sdp_location::de_list_of_input_sdp_location(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_input_sdp_location::de_list_of_input_sdp_location(tokens, _value, depth + 1)?,
                             );
                         }
                         "audioSdps" => {
                             builder = builder.set_audio_sdps(crate::protocol_serde::shape_list_of_input_sdp_location::de_list_of_input_sdp_location(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "videoSdp" => {
-                            builder = builder.set_video_sdp(crate::protocol_serde::shape_input_sdp_location::de_input_sdp_location(tokens, _value)?);
+                            builder = builder.set_video_sdp(crate::protocol_serde::shape_input_sdp_location::de_input_sdp_location(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

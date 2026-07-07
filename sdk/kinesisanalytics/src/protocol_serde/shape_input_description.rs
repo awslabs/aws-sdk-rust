@@ -2,10 +2,16 @@
 pub(crate) fn de_input_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InputDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,37 +36,52 @@ where
                             );
                         }
                         "InAppStreamNames" => {
-                            builder = builder
-                                .set_in_app_stream_names(crate::protocol_serde::shape_in_app_stream_names::de_in_app_stream_names(tokens, _value)?);
+                            builder = builder.set_in_app_stream_names(crate::protocol_serde::shape_in_app_stream_names::de_in_app_stream_names(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InputProcessingConfigurationDescription" => {
                             builder = builder.set_input_processing_configuration_description(
-                                    crate::protocol_serde::shape_input_processing_configuration_description::de_input_processing_configuration_description(tokens, _value)?
+                                    crate::protocol_serde::shape_input_processing_configuration_description::de_input_processing_configuration_description(tokens, _value, depth + 1)?
                                 );
                         }
                         "KinesisStreamsInputDescription" => {
                             builder = builder.set_kinesis_streams_input_description(
-                                crate::protocol_serde::shape_kinesis_streams_input_description::de_kinesis_streams_input_description(tokens, _value)?,
+                                crate::protocol_serde::shape_kinesis_streams_input_description::de_kinesis_streams_input_description(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "KinesisFirehoseInputDescription" => {
                             builder = builder.set_kinesis_firehose_input_description(
                                 crate::protocol_serde::shape_kinesis_firehose_input_description::de_kinesis_firehose_input_description(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "InputSchema" => {
-                            builder = builder.set_input_schema(crate::protocol_serde::shape_source_schema::de_source_schema(tokens, _value)?);
+                            builder =
+                                builder.set_input_schema(crate::protocol_serde::shape_source_schema::de_source_schema(tokens, _value, depth + 1)?);
                         }
                         "InputParallelism" => {
-                            builder =
-                                builder.set_input_parallelism(crate::protocol_serde::shape_input_parallelism::de_input_parallelism(tokens, _value)?);
+                            builder = builder.set_input_parallelism(crate::protocol_serde::shape_input_parallelism::de_input_parallelism(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InputStartingPositionConfiguration" => {
                             builder = builder.set_input_starting_position_configuration(
                                 crate::protocol_serde::shape_input_starting_position_configuration::de_input_starting_position_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

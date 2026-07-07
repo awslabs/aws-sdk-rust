@@ -98,6 +98,8 @@ pub(crate) fn de_describe_notification_rule(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -131,7 +133,11 @@ pub(crate) fn de_describe_notification_rule(
                     );
                 }
                 "EventTypes" => {
-                    builder = builder.set_event_types(crate::protocol_serde::shape_event_type_batch::de_event_type_batch(tokens, _value)?);
+                    builder = builder.set_event_types(crate::protocol_serde::shape_event_type_batch::de_event_type_batch(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "LastModifiedTimestamp" => {
                     builder = builder.set_last_modified_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -161,10 +167,10 @@ pub(crate) fn de_describe_notification_rule(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "Targets" => {
-                    builder = builder.set_targets(crate::protocol_serde::shape_targets_batch::de_targets_batch(tokens, _value)?);
+                    builder = builder.set_targets(crate::protocol_serde::shape_targets_batch::de_targets_batch(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

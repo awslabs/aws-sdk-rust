@@ -5,7 +5,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredefinedMetricSpecification {
-    /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
+    /// <p>The metric type. The following are notes about specific metric types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - This metric type applies only to Spot Fleets and ECS services.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageCPUUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageCPUUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageMemoryUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageMemoryUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// </ul>
     pub predefined_metric_type: crate::types::MetricType,
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot Fleet or ECS service.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -31,7 +39,15 @@ pub struct PredefinedMetricSpecification {
     pub resource_label: ::std::option::Option<::std::string::String>,
 }
 impl PredefinedMetricSpecification {
-    /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
+    /// <p>The metric type. The following are notes about specific metric types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - This metric type applies only to Spot Fleets and ECS services.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageCPUUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageCPUUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageMemoryUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageMemoryUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// </ul>
     pub fn predefined_metric_type(&self) -> &crate::types::MetricType {
         &self.predefined_metric_type
     }
@@ -75,18 +91,42 @@ pub struct PredefinedMetricSpecificationBuilder {
     pub(crate) resource_label: ::std::option::Option<::std::string::String>,
 }
 impl PredefinedMetricSpecificationBuilder {
-    /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
+    /// <p>The metric type. The following are notes about specific metric types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - This metric type applies only to Spot Fleets and ECS services.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageCPUUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageCPUUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageMemoryUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageMemoryUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn predefined_metric_type(mut self, input: crate::types::MetricType) -> Self {
         self.predefined_metric_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
+    /// <p>The metric type. The following are notes about specific metric types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - This metric type applies only to Spot Fleets and ECS services.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageCPUUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageCPUUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageMemoryUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageMemoryUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// </ul>
     pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.predefined_metric_type = input;
         self
     }
-    /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
+    /// <p>The metric type. The following are notes about specific metric types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - This metric type applies only to Spot Fleets and ECS services.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageCPUUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageCPUUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// <li>
+    /// <p><code>ECSServiceAverageMemoryUtilizationHighResolution</code> - The high-resolution version of <code>ECSServiceAverageMemoryUtilization</code> that uses 20-second CloudWatch metrics. Use this metric for target tracking scaling policies that evaluate metrics every 20 seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling policy with this metric type.</p></li>
+    /// </ul>
     pub fn get_predefined_metric_type(&self) -> &::std::option::Option<crate::types::MetricType> {
         &self.predefined_metric_type
     }

@@ -37,5 +37,7 @@ pub fn de_origin_access_control(inp: &[u8]) -> std::result::Result<crate::types:
             "invalid root, expected OriginAccessControl got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_origin_access_control::de_origin_access_control(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_origin_access_control::de_origin_access_control(&mut decoder, depth + 1)
 }

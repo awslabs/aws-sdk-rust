@@ -78,6 +78,8 @@ pub fn de_describe_type(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeTypeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTypeResponse got {start_el:?}"
@@ -244,7 +246,7 @@ pub fn de_describe_type(
             s if s.matches("LoggingConfig") /* LoggingConfig com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$LoggingConfig */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_logging_config::de_logging_config(&mut tag)
+                        crate::protocol_serde::shape_logging_config::de_logging_config(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -254,7 +256,7 @@ pub fn de_describe_type(
             s if s.matches("RequiredActivatedTypes") /* RequiredActivatedTypes com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$RequiredActivatedTypes */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_required_activated_types::de_required_activated_types(&mut tag)
+                        crate::protocol_serde::shape_required_activated_types::de_required_activated_types(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,10 +2,16 @@
 pub(crate) fn de_browser_action_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BrowserActionResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,42 +37,42 @@ where
                     }
                     variant = match key.as_ref() {
                         "mouseClick" => Some(crate::types::BrowserActionResult::MouseClick(
-                            crate::protocol_serde::shape_mouse_click_result::de_mouse_click_result(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_mouse_click_result::de_mouse_click_result(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mouseClick' cannot be null")
                             })?,
                         )),
                         "mouseMove" => Some(crate::types::BrowserActionResult::MouseMove(
-                            crate::protocol_serde::shape_mouse_move_result::de_mouse_move_result(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_mouse_move_result::de_mouse_move_result(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mouseMove' cannot be null")
                             })?,
                         )),
                         "mouseDrag" => Some(crate::types::BrowserActionResult::MouseDrag(
-                            crate::protocol_serde::shape_mouse_drag_result::de_mouse_drag_result(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_mouse_drag_result::de_mouse_drag_result(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mouseDrag' cannot be null")
                             })?,
                         )),
                         "mouseScroll" => Some(crate::types::BrowserActionResult::MouseScroll(
-                            crate::protocol_serde::shape_mouse_scroll_result::de_mouse_scroll_result(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mouseScroll' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_mouse_scroll_result::de_mouse_scroll_result(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mouseScroll' cannot be null"),
+                            )?,
                         )),
                         "keyType" => Some(crate::types::BrowserActionResult::KeyType(
-                            crate::protocol_serde::shape_key_type_result::de_key_type_result(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_key_type_result::de_key_type_result(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'keyType' cannot be null")
                             })?,
                         )),
                         "keyPress" => Some(crate::types::BrowserActionResult::KeyPress(
-                            crate::protocol_serde::shape_key_press_result::de_key_press_result(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_key_press_result::de_key_press_result(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'keyPress' cannot be null")
                             })?,
                         )),
                         "keyShortcut" => Some(crate::types::BrowserActionResult::KeyShortcut(
-                            crate::protocol_serde::shape_key_shortcut_result::de_key_shortcut_result(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'keyShortcut' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_key_shortcut_result::de_key_shortcut_result(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'keyShortcut' cannot be null"),
+                            )?,
                         )),
                         "screenshot" => Some(crate::types::BrowserActionResult::Screenshot(
-                            crate::protocol_serde::shape_screenshot_result::de_screenshot_result(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_screenshot_result::de_screenshot_result(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'screenshot' cannot be null")
                             })?,
                         )),

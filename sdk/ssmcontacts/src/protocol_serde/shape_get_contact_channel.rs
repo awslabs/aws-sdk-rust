@@ -144,6 +144,8 @@ pub(crate) fn de_get_contact_channel(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -179,7 +181,9 @@ pub(crate) fn de_get_contact_channel(
                 }
                 "DeliveryAddress" => {
                     builder = builder.set_delivery_address(crate::protocol_serde::shape_contact_channel_address::de_contact_channel_address(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ActivationStatus" => {

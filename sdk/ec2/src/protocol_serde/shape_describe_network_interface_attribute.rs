@@ -49,6 +49,8 @@ pub fn de_describe_network_interface_attribute(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeNetworkInterfaceAttributeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeNetworkInterfaceAttributeResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_describe_network_interface_attribute(
             s if s.matches("attachment") /* Attachment com.amazonaws.ec2.synthetic#DescribeNetworkInterfaceAttributeOutput$Attachment */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_network_interface_attachment::de_network_interface_attachment(&mut tag)
+                        crate::protocol_serde::shape_network_interface_attachment::de_network_interface_attachment(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +71,7 @@ pub fn de_describe_network_interface_attribute(
             s if s.matches("description") /* Description com.amazonaws.ec2.synthetic#DescribeNetworkInterfaceAttributeOutput$Description */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -79,7 +81,7 @@ pub fn de_describe_network_interface_attribute(
             s if s.matches("groupSet") /* Groups com.amazonaws.ec2.synthetic#DescribeNetworkInterfaceAttributeOutput$Groups */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
+                        crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -102,7 +104,7 @@ pub fn de_describe_network_interface_attribute(
             s if s.matches("sourceDestCheck") /* SourceDestCheck com.amazonaws.ec2.synthetic#DescribeNetworkInterfaceAttributeOutput$SourceDestCheck */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag)
+                        crate::protocol_serde::shape_attribute_boolean_value::de_attribute_boolean_value(&mut tag, depth + 1)
                         ?
                     )
                 ;

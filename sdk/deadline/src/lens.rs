@@ -279,6 +279,16 @@ pub(crate) fn reflens_list_tasks_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_volumes_output_output_next_token(
+    input: &crate::operation::list_volumes::ListVolumesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workers_output_output_next_token(
     input: &crate::operation::list_workers::ListWorkersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -482,6 +492,13 @@ pub(crate) fn lens_list_tasks_output_output_tasks(
     input: crate::operation::list_tasks::ListTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TaskSummary>> {
     let input = input.tasks;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_volumes_output_output_volumes(
+    input: crate::operation::list_volumes::ListVolumesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::VolumeSummary>> {
+    let input = input.volumes;
     ::std::option::Option::Some(input)
 }
 

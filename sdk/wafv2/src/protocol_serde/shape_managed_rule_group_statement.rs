@@ -60,10 +60,16 @@ pub fn ser_managed_rule_group_statement(
 pub(crate) fn de_managed_rule_group_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedRuleGroupStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -95,20 +101,25 @@ where
                             );
                         }
                         "ExcludedRules" => {
-                            builder = builder.set_excluded_rules(crate::protocol_serde::shape_excluded_rules::de_excluded_rules(tokens, _value)?);
+                            builder = builder.set_excluded_rules(crate::protocol_serde::shape_excluded_rules::de_excluded_rules(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ScopeDownStatement" => {
-                            builder =
-                                builder.set_scope_down_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value)?.map(Box::new));
+                            builder = builder.set_scope_down_statement(
+                                crate::protocol_serde::shape_statement::de_statement(tokens, _value, depth + 1)?.map(Box::new),
+                            );
                         }
                         "ManagedRuleGroupConfigs" => {
                             builder = builder.set_managed_rule_group_configs(
-                                crate::protocol_serde::shape_managed_rule_group_configs::de_managed_rule_group_configs(tokens, _value)?,
+                                crate::protocol_serde::shape_managed_rule_group_configs::de_managed_rule_group_configs(tokens, _value, depth + 1)?,
                             );
                         }
                         "RuleActionOverrides" => {
                             builder = builder.set_rule_action_overrides(
-                                crate::protocol_serde::shape_rule_action_overrides::de_rule_action_overrides(tokens, _value)?,
+                                crate::protocol_serde::shape_rule_action_overrides::de_rule_action_overrides(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -144,6 +144,32 @@ pub trait Waiters {
     fn wait_until_test_connection_succeeds(&self) -> crate::waiters::test_connection_succeeds::TestConnectionSucceedsFluentBuilder;
     /// Wait until testing endpoint is deleted.
     fn wait_until_endpoint_deleted(&self) -> crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder;
+    /// Wait until DMS extension pack is associated.
+    fn wait_until_extension_pack_associated(&self) -> crate::waiters::extension_pack_associated::ExtensionPackAssociatedFluentBuilder;
+    /// Wait until DMS metadata model is assessed.
+    fn wait_until_metadata_model_assessed(&self) -> crate::waiters::metadata_model_assessed::MetadataModelAssessedFluentBuilder;
+    /// Wait until DMS metadata model conversion is cancelled.
+    fn wait_until_metadata_model_conversion_cancelled(
+        &self,
+    ) -> crate::waiters::metadata_model_conversion_cancelled::MetadataModelConversionCancelledFluentBuilder;
+    /// Wait until DMS metadata model is converted.
+    fn wait_until_metadata_model_converted(&self) -> crate::waiters::metadata_model_converted::MetadataModelConvertedFluentBuilder;
+    /// Wait until DMS metadata model is created.
+    fn wait_until_metadata_model_created(&self) -> crate::waiters::metadata_model_created::MetadataModelCreatedFluentBuilder;
+    /// Wait until DMS metadata model creation is cancelled.
+    fn wait_until_metadata_model_creation_cancelled(
+        &self,
+    ) -> crate::waiters::metadata_model_creation_cancelled::MetadataModelCreationCancelledFluentBuilder;
+    /// Wait until DMS metadata model is exported as script.
+    fn wait_until_metadata_model_exported_as_script(
+        &self,
+    ) -> crate::waiters::metadata_model_exported_as_script::MetadataModelExportedAsScriptFluentBuilder;
+    /// Wait until DMS metadata model is exported to target.
+    fn wait_until_metadata_model_exported_to_target(
+        &self,
+    ) -> crate::waiters::metadata_model_exported_to_target::MetadataModelExportedToTargetFluentBuilder;
+    /// Wait until DMS metadata model is imported.
+    fn wait_until_metadata_model_imported(&self) -> crate::waiters::metadata_model_imported::MetadataModelImportedFluentBuilder;
     /// Wait until DMS replication instance is available.
     fn wait_until_replication_instance_available(&self) -> crate::waiters::replication_instance_available::ReplicationInstanceAvailableFluentBuilder;
     /// Wait until DMS replication instance is deleted.
@@ -163,6 +189,41 @@ impl Waiters for Client {
     }
     fn wait_until_endpoint_deleted(&self) -> crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder {
         crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_extension_pack_associated(&self) -> crate::waiters::extension_pack_associated::ExtensionPackAssociatedFluentBuilder {
+        crate::waiters::extension_pack_associated::ExtensionPackAssociatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_metadata_model_assessed(&self) -> crate::waiters::metadata_model_assessed::MetadataModelAssessedFluentBuilder {
+        crate::waiters::metadata_model_assessed::MetadataModelAssessedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_metadata_model_conversion_cancelled(
+        &self,
+    ) -> crate::waiters::metadata_model_conversion_cancelled::MetadataModelConversionCancelledFluentBuilder {
+        crate::waiters::metadata_model_conversion_cancelled::MetadataModelConversionCancelledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_metadata_model_converted(&self) -> crate::waiters::metadata_model_converted::MetadataModelConvertedFluentBuilder {
+        crate::waiters::metadata_model_converted::MetadataModelConvertedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_metadata_model_created(&self) -> crate::waiters::metadata_model_created::MetadataModelCreatedFluentBuilder {
+        crate::waiters::metadata_model_created::MetadataModelCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_metadata_model_creation_cancelled(
+        &self,
+    ) -> crate::waiters::metadata_model_creation_cancelled::MetadataModelCreationCancelledFluentBuilder {
+        crate::waiters::metadata_model_creation_cancelled::MetadataModelCreationCancelledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_metadata_model_exported_as_script(
+        &self,
+    ) -> crate::waiters::metadata_model_exported_as_script::MetadataModelExportedAsScriptFluentBuilder {
+        crate::waiters::metadata_model_exported_as_script::MetadataModelExportedAsScriptFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_metadata_model_exported_to_target(
+        &self,
+    ) -> crate::waiters::metadata_model_exported_to_target::MetadataModelExportedToTargetFluentBuilder {
+        crate::waiters::metadata_model_exported_to_target::MetadataModelExportedToTargetFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_metadata_model_imported(&self) -> crate::waiters::metadata_model_imported::MetadataModelImportedFluentBuilder {
+        crate::waiters::metadata_model_imported::MetadataModelImportedFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_replication_instance_available(&self) -> crate::waiters::replication_instance_available::ReplicationInstanceAvailableFluentBuilder {
         crate::waiters::replication_instance_available::ReplicationInstanceAvailableFluentBuilder::new(self.handle.clone())

@@ -123,6 +123,8 @@ pub(crate) fn de_test_invoke_method(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -137,7 +139,9 @@ pub(crate) fn de_test_invoke_method(
                 }
                 "headers" => {
                     builder = builder.set_headers(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "latency" => {
@@ -156,7 +160,9 @@ pub(crate) fn de_test_invoke_method(
                 }
                 "multiValueHeaders" => {
                     builder = builder.set_multi_value_headers(crate::protocol_serde::shape_map_of_string_to_list::de_map_of_string_to_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {

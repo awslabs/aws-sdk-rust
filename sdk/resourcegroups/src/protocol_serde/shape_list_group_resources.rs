@@ -168,6 +168,8 @@ pub(crate) fn de_list_group_resources(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -181,16 +183,22 @@ pub(crate) fn de_list_group_resources(
                     );
                 }
                 "QueryErrors" => {
-                    builder = builder.set_query_errors(crate::protocol_serde::shape_query_error_list::de_query_error_list(tokens, _value)?);
+                    builder = builder.set_query_errors(crate::protocol_serde::shape_query_error_list::de_query_error_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "ResourceIdentifiers" => {
                     builder = builder.set_resource_identifiers(crate::protocol_serde::shape_resource_identifier_list::de_resource_identifier_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "Resources" => {
                     builder = builder.set_resources(
-                        crate::protocol_serde::shape_list_group_resources_item_list::de_list_group_resources_item_list(tokens, _value)?,
+                        crate::protocol_serde::shape_list_group_resources_item_list::de_list_group_resources_item_list(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

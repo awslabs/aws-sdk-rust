@@ -15,6 +15,7 @@
 ///     StatusReasonCode::InternalError => { /* ... */ },
 ///     StatusReasonCode::MaximumNumberOfConfigRulesExceeded => { /* ... */ },
 ///     StatusReasonCode::NoAvailableConfigurationRecorder => { /* ... */ },
+///     StatusReasonCode::NoAvailableMulticloudConnector => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum StatusReasonCode {
     MaximumNumberOfConfigRulesExceeded,
     #[allow(missing_docs)] // documentation missing in model
     NoAvailableConfigurationRecorder,
+    #[allow(missing_docs)] // documentation missing in model
+    NoAvailableMulticloudConnector,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for StatusReasonCode {
             "INTERNAL_ERROR" => StatusReasonCode::InternalError,
             "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED" => StatusReasonCode::MaximumNumberOfConfigRulesExceeded,
             "NO_AVAILABLE_CONFIGURATION_RECORDER" => StatusReasonCode::NoAvailableConfigurationRecorder,
+            "NO_AVAILABLE_MULTICLOUD_CONNECTOR" => StatusReasonCode::NoAvailableMulticloudConnector,
             other => StatusReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,6 +81,7 @@ impl StatusReasonCode {
             StatusReasonCode::InternalError => "INTERNAL_ERROR",
             StatusReasonCode::MaximumNumberOfConfigRulesExceeded => "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED",
             StatusReasonCode::NoAvailableConfigurationRecorder => "NO_AVAILABLE_CONFIGURATION_RECORDER",
+            StatusReasonCode::NoAvailableMulticloudConnector => "NO_AVAILABLE_MULTICLOUD_CONNECTOR",
             StatusReasonCode::Unknown(value) => value.as_str(),
         }
     }
@@ -86,6 +91,7 @@ impl StatusReasonCode {
             "INTERNAL_ERROR",
             "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED",
             "NO_AVAILABLE_CONFIGURATION_RECORDER",
+            "NO_AVAILABLE_MULTICLOUD_CONNECTOR",
         ]
     }
 }
@@ -112,6 +118,7 @@ impl ::std::fmt::Display for StatusReasonCode {
             StatusReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
             StatusReasonCode::MaximumNumberOfConfigRulesExceeded => write!(f, "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED"),
             StatusReasonCode::NoAvailableConfigurationRecorder => write!(f, "NO_AVAILABLE_CONFIGURATION_RECORDER"),
+            StatusReasonCode::NoAvailableMulticloudConnector => write!(f, "NO_AVAILABLE_MULTICLOUD_CONNECTOR"),
             StatusReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }

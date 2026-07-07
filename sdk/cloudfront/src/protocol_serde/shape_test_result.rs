@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_test_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TestResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TestResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_test_result(
             s if s.matches("FunctionSummary") /* FunctionSummary com.amazonaws.cloudfront#TestResult$FunctionSummary */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_function_summary::de_function_summary(&mut tag)
+                        crate::protocol_serde::shape_function_summary::de_function_summary(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_test_result(
             s if s.matches("FunctionExecutionLogs") /* FunctionExecutionLogs com.amazonaws.cloudfront#TestResult$FunctionExecutionLogs */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_function_execution_log_list::de_function_execution_log_list(&mut tag)
+                        crate::protocol_serde::shape_function_execution_log_list::de_function_execution_log_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

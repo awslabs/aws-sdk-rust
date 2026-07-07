@@ -120,10 +120,16 @@ pub fn ser_policy_details(
 pub(crate) fn de_policy_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PolicyDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -142,28 +148,35 @@ where
                         }
                         "ResourceTypes" => {
                             builder = builder.set_resource_types(
-                                crate::protocol_serde::shape_resource_type_values_list::de_resource_type_values_list(tokens, _value)?,
+                                crate::protocol_serde::shape_resource_type_values_list::de_resource_type_values_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "ResourceLocations" => {
                             builder = builder.set_resource_locations(crate::protocol_serde::shape_resource_location_list::de_resource_location_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "TargetTags" => {
-                            builder = builder.set_target_tags(crate::protocol_serde::shape_target_tag_list::de_target_tag_list(tokens, _value)?);
+                            builder = builder.set_target_tags(crate::protocol_serde::shape_target_tag_list::de_target_tag_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Schedules" => {
-                            builder = builder.set_schedules(crate::protocol_serde::shape_schedule_list::de_schedule_list(tokens, _value)?);
+                            builder = builder.set_schedules(crate::protocol_serde::shape_schedule_list::de_schedule_list(tokens, _value, depth + 1)?);
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens, _value)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens, _value, depth + 1)?);
                         }
                         "EventSource" => {
-                            builder = builder.set_event_source(crate::protocol_serde::shape_event_source::de_event_source(tokens, _value)?);
+                            builder =
+                                builder.set_event_source(crate::protocol_serde::shape_event_source::de_event_source(tokens, _value, depth + 1)?);
                         }
                         "Actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_action_list::de_action_list(tokens, _value)?);
+                            builder = builder.set_actions(crate::protocol_serde::shape_action_list::de_action_list(tokens, _value, depth + 1)?);
                         }
                         "PolicyLanguage" => {
                             builder = builder.set_policy_language(
@@ -198,14 +211,18 @@ where
                         }
                         "CrossRegionCopyTargets" => {
                             builder = builder.set_cross_region_copy_targets(
-                                crate::protocol_serde::shape_cross_region_copy_target_list::de_cross_region_copy_target_list(tokens, _value)?,
+                                crate::protocol_serde::shape_cross_region_copy_target_list::de_cross_region_copy_target_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ExtendDeletion" => {
                             builder = builder.set_extend_deletion(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Exclusions" => {
-                            builder = builder.set_exclusions(crate::protocol_serde::shape_exclusions::de_exclusions(tokens, _value)?);
+                            builder = builder.set_exclusions(crate::protocol_serde::shape_exclusions::de_exclusions(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

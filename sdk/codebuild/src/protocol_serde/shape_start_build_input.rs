@@ -174,5 +174,8 @@ pub fn ser_start_build_input_input(
             ::aws_smithy_types::Number::NegInt((*var_53).into()),
         );
     }
+    if let Some(var_54) = &input.host_kernel_override {
+        object.key("hostKernelOverride").string(var_54.as_str());
+    }
     Ok(())
 }

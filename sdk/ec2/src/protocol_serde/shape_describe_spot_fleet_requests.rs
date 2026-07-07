@@ -51,6 +51,8 @@ pub fn de_describe_spot_fleet_requests(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSpotFleetRequestsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSpotFleetRequestsResponse got {start_el:?}"
@@ -74,7 +76,7 @@ pub fn de_describe_spot_fleet_requests(
             s if s.matches("spotFleetRequestConfigSet") /* SpotFleetRequestConfigs com.amazonaws.ec2.synthetic#DescribeSpotFleetRequestsOutput$SpotFleetRequestConfigs */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_spot_fleet_request_config_set::de_spot_fleet_request_config_set(&mut tag)
+                        crate::protocol_serde::shape_spot_fleet_request_config_set::de_spot_fleet_request_config_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

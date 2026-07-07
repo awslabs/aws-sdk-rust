@@ -2,10 +2,16 @@
 pub(crate) fn de_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,41 +58,55 @@ where
                         }
                         "dynamodbConfig" => {
                             builder = builder.set_dynamodb_config(
-                                crate::protocol_serde::shape_dynamodb_data_source_config::de_dynamodb_data_source_config(tokens, _value)?,
+                                crate::protocol_serde::shape_dynamodb_data_source_config::de_dynamodb_data_source_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "lambdaConfig" => {
                             builder = builder.set_lambda_config(
-                                crate::protocol_serde::shape_lambda_data_source_config::de_lambda_data_source_config(tokens, _value)?,
+                                crate::protocol_serde::shape_lambda_data_source_config::de_lambda_data_source_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "elasticsearchConfig" => {
                             builder = builder.set_elasticsearch_config(
-                                crate::protocol_serde::shape_elasticsearch_data_source_config::de_elasticsearch_data_source_config(tokens, _value)?,
+                                crate::protocol_serde::shape_elasticsearch_data_source_config::de_elasticsearch_data_source_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "openSearchServiceConfig" => {
                             builder = builder.set_open_search_service_config(
                                 crate::protocol_serde::shape_open_search_service_data_source_config::de_open_search_service_data_source_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "httpConfig" => {
                             builder = builder.set_http_config(crate::protocol_serde::shape_http_data_source_config::de_http_data_source_config(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "relationalDatabaseConfig" => {
                             builder = builder.set_relational_database_config(
                                 crate::protocol_serde::shape_relational_database_data_source_config::de_relational_database_data_source_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "eventBridgeConfig" => {
                             builder = builder.set_event_bridge_config(
-                                crate::protocol_serde::shape_event_bridge_data_source_config::de_event_bridge_data_source_config(tokens, _value)?,
+                                crate::protocol_serde::shape_event_bridge_data_source_config::de_event_bridge_data_source_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "metricsConfig" => {

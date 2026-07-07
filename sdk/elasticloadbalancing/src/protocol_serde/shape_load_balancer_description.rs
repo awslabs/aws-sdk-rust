@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_load_balancer_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LoadBalancerDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LoadBalancerDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_load_balancer_description(
             s if s.matches("ListenerDescriptions") /* ListenerDescriptions com.amazonaws.elasticloadbalancing#LoadBalancerDescription$ListenerDescriptions */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_listener_descriptions::de_listener_descriptions(&mut tag)
+                        crate::protocol_serde::shape_listener_descriptions::de_listener_descriptions(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_load_balancer_description(
             s if s.matches("Policies") /* Policies com.amazonaws.elasticloadbalancing#LoadBalancerDescription$Policies */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_policies::de_policies(&mut tag)
+                        crate::protocol_serde::shape_policies::de_policies(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_load_balancer_description(
             s if s.matches("BackendServerDescriptions") /* BackendServerDescriptions com.amazonaws.elasticloadbalancing#LoadBalancerDescription$BackendServerDescriptions */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_backend_server_descriptions::de_backend_server_descriptions(&mut tag)
+                        crate::protocol_serde::shape_backend_server_descriptions::de_backend_server_descriptions(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -92,7 +96,7 @@ pub fn de_load_balancer_description(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.elasticloadbalancing#LoadBalancerDescription$AvailabilityZones */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag)
+                        crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -102,7 +106,7 @@ pub fn de_load_balancer_description(
             s if s.matches("Subnets") /* Subnets com.amazonaws.elasticloadbalancing#LoadBalancerDescription$Subnets */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_subnets::de_subnets(&mut tag)
+                        crate::protocol_serde::shape_subnets::de_subnets(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -125,7 +129,7 @@ pub fn de_load_balancer_description(
             s if s.matches("Instances") /* Instances com.amazonaws.elasticloadbalancing#LoadBalancerDescription$Instances */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_instances::de_instances(&mut tag)
+                        crate::protocol_serde::shape_instances::de_instances(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -135,7 +139,7 @@ pub fn de_load_balancer_description(
             s if s.matches("HealthCheck") /* HealthCheck com.amazonaws.elasticloadbalancing#LoadBalancerDescription$HealthCheck */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_health_check::de_health_check(&mut tag)
+                        crate::protocol_serde::shape_health_check::de_health_check(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -145,7 +149,7 @@ pub fn de_load_balancer_description(
             s if s.matches("SourceSecurityGroup") /* SourceSecurityGroup com.amazonaws.elasticloadbalancing#LoadBalancerDescription$SourceSecurityGroup */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_source_security_group::de_source_security_group(&mut tag)
+                        crate::protocol_serde::shape_source_security_group::de_source_security_group(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -155,7 +159,7 @@ pub fn de_load_balancer_description(
             s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.elasticloadbalancing#LoadBalancerDescription$SecurityGroups */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_security_groups::de_security_groups(&mut tag)
+                        crate::protocol_serde::shape_security_groups::de_security_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;

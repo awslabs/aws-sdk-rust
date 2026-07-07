@@ -7,8 +7,6 @@ pub struct GetPolicyEngineOutput {
     pub policy_engine_id: ::std::string::String,
     /// <p>The customer-assigned name of the policy engine. This is the human-readable identifier that was specified when the policy engine was created.</p>
     pub name: ::std::string::String,
-    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the policy engine was originally created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the policy engine was last modified. This tracks the most recent changes to the policy engine configuration.</p>
@@ -17,10 +15,12 @@ pub struct GetPolicyEngineOutput {
     pub policy_engine_arn: ::std::string::String,
     /// <p>The current status of the policy engine.</p>
     pub status: crate::types::PolicyEngineStatus,
-    /// <p>Additional information about the policy engine status. This provides details about any failures or the current state of the policy engine.</p>
-    pub status_reasons: ::std::vec::Vec<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Additional information about the policy engine status. This provides details about any failures or the current state of the policy engine.</p>
+    pub status_reasons: ::std::vec::Vec<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPolicyEngineOutput {
@@ -33,10 +33,6 @@ impl GetPolicyEngineOutput {
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
-    }
-    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
     }
     /// <p>The timestamp when the policy engine was originally created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -55,14 +51,18 @@ impl GetPolicyEngineOutput {
     pub fn status(&self) -> &crate::types::PolicyEngineStatus {
         &self.status
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
     /// <p>Additional information about the policy engine status. This provides details about any failures or the current state of the policy engine.</p>
     pub fn status_reasons(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.status_reasons.deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
-        self.encryption_key_arn.as_deref()
     }
 }
 impl ::std::fmt::Debug for GetPolicyEngineOutput {
@@ -70,13 +70,13 @@ impl ::std::fmt::Debug for GetPolicyEngineOutput {
         let mut formatter = f.debug_struct("GetPolicyEngineOutput");
         formatter.field("policy_engine_id", &self.policy_engine_id);
         formatter.field("name", &self.name);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("policy_engine_arn", &self.policy_engine_arn);
         formatter.field("status", &self.status);
-        formatter.field("status_reasons", &self.status_reasons);
         formatter.field("encryption_key_arn", &self.encryption_key_arn);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("status_reasons", &self.status_reasons);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -99,13 +99,13 @@ impl GetPolicyEngineOutput {
 pub struct GetPolicyEngineOutputBuilder {
     pub(crate) policy_engine_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) policy_engine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PolicyEngineStatus>,
-    pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetPolicyEngineOutputBuilder {
@@ -138,20 +138,6 @@ impl GetPolicyEngineOutputBuilder {
     /// <p>The customer-assigned name of the policy engine. This is the human-readable identifier that was specified when the policy engine was created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
-    }
-    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The timestamp when the policy engine was originally created.</p>
     /// This field is required.
@@ -213,6 +199,34 @@ impl GetPolicyEngineOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PolicyEngineStatus> {
         &self.status
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encryption_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
+    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The human-readable description of the policy engine's purpose and scope. This helps administrators understand the policy engine's role in governance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `status_reasons`.
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
@@ -232,20 +246,6 @@ impl GetPolicyEngineOutputBuilder {
     /// <p>Additional information about the policy engine status. This provides details about any failures or the current state of the policy engine.</p>
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.status_reasons
-    }
-    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
-    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.encryption_key_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
-    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
-    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.encryption_key_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -281,7 +281,6 @@ impl GetPolicyEngineOutputBuilder {
                     "name was not specified but it is required when building GetPolicyEngineOutput",
                 )
             })?,
-            description: self.description,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -306,13 +305,14 @@ impl GetPolicyEngineOutputBuilder {
                     "status was not specified but it is required when building GetPolicyEngineOutput",
                 )
             })?,
+            encryption_key_arn: self.encryption_key_arn,
+            description: self.description,
             status_reasons: self.status_reasons.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_reasons",
                     "status_reasons was not specified but it is required when building GetPolicyEngineOutput",
                 )
             })?,
-            encryption_key_arn: self.encryption_key_arn,
             _request_id: self._request_id,
         })
     }
@@ -322,13 +322,13 @@ impl ::std::fmt::Debug for GetPolicyEngineOutputBuilder {
         let mut formatter = f.debug_struct("GetPolicyEngineOutputBuilder");
         formatter.field("policy_engine_id", &self.policy_engine_id);
         formatter.field("name", &self.name);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("policy_engine_arn", &self.policy_engine_arn);
         formatter.field("status", &self.status);
-        formatter.field("status_reasons", &self.status_reasons);
         formatter.field("encryption_key_arn", &self.encryption_key_arn);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("status_reasons", &self.status_reasons);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

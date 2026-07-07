@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_reserved_db_instances_offering(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReservedDbInstancesOffering, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedDbInstancesOffering::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -135,7 +139,7 @@ pub fn de_reserved_db_instances_offering(
             s if s.matches("RecurringCharges") /* RecurringCharges com.amazonaws.rds#ReservedDBInstancesOffering$RecurringCharges */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_recurring_charge_list::de_recurring_charge_list(&mut tag)
+                        crate::protocol_serde::shape_recurring_charge_list::de_recurring_charge_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

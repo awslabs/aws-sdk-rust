@@ -2,10 +2,16 @@
 pub(crate) fn de_budget_performance_history<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BudgetPerformanceHistory>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,10 +36,11 @@ where
                             );
                         }
                         "CostFilters" => {
-                            builder = builder.set_cost_filters(crate::protocol_serde::shape_cost_filters::de_cost_filters(tokens, _value)?);
+                            builder =
+                                builder.set_cost_filters(crate::protocol_serde::shape_cost_filters::de_cost_filters(tokens, _value, depth + 1)?);
                         }
                         "CostTypes" => {
-                            builder = builder.set_cost_types(crate::protocol_serde::shape_cost_types::de_cost_types(tokens, _value)?);
+                            builder = builder.set_cost_types(crate::protocol_serde::shape_cost_types::de_cost_types(tokens, _value, depth + 1)?);
                         }
                         "TimeUnit" => {
                             builder = builder.set_time_unit(
@@ -51,14 +58,19 @@ where
                         }
                         "BudgetedAndActualAmountsList" => {
                             builder = builder.set_budgeted_and_actual_amounts_list(
-                                crate::protocol_serde::shape_budgeted_and_actual_amounts_list::de_budgeted_and_actual_amounts_list(tokens, _value)?,
+                                crate::protocol_serde::shape_budgeted_and_actual_amounts_list::de_budgeted_and_actual_amounts_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "FilterExpression" => {
-                            builder = builder.set_filter_expression(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
+                            builder =
+                                builder.set_filter_expression(crate::protocol_serde::shape_expression::de_expression(tokens, _value, depth + 1)?);
                         }
                         "Metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens, _value)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

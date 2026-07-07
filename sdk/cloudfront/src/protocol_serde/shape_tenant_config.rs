@@ -21,7 +21,11 @@ pub fn ser_tenant_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_tenant_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TenantConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TenantConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -29,7 +33,7 @@ pub fn de_tenant_config(
             s if s.matches("ParameterDefinitions") /* ParameterDefinitions com.amazonaws.cloudfront#TenantConfig$ParameterDefinitions */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_parameter_definitions::de_parameter_definitions(&mut tag)
+                        crate::protocol_serde::shape_parameter_definitions::de_parameter_definitions(&mut tag, depth + 1)
                         ?
                     )
                 ;

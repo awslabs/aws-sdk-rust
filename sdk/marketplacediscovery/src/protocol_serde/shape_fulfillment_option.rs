@@ -2,10 +2,16 @@
 pub(crate) fn de_fulfillment_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FulfillmentOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,73 +38,73 @@ where
                     variant = match key.as_ref() {
                             "amazonMachineImageFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::AmazonMachineImageFulfillmentOption(
-                                    crate::protocol_serde::shape_amazon_machine_image_fulfillment_option::de_amazon_machine_image_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_amazon_machine_image_fulfillment_option::de_amazon_machine_image_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'amazonMachineImageFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "apiFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::ApiFulfillmentOption(
-                                    crate::protocol_serde::shape_api_fulfillment_option::de_api_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_api_fulfillment_option::de_api_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'apiFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "cloudFormationFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::CloudFormationFulfillmentOption(
-                                    crate::protocol_serde::shape_cloud_formation_fulfillment_option::de_cloud_formation_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_cloud_formation_fulfillment_option::de_cloud_formation_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cloudFormationFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "containerFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::ContainerFulfillmentOption(
-                                    crate::protocol_serde::shape_container_fulfillment_option::de_container_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_container_fulfillment_option::de_container_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'containerFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "helmFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::HelmFulfillmentOption(
-                                    crate::protocol_serde::shape_helm_fulfillment_option::de_helm_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_helm_fulfillment_option::de_helm_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'helmFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "eksAddOnFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::EksAddOnFulfillmentOption(
-                                    crate::protocol_serde::shape_eks_add_on_fulfillment_option::de_eks_add_on_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_eks_add_on_fulfillment_option::de_eks_add_on_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eksAddOnFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "ec2ImageBuilderComponentFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::Ec2ImageBuilderComponentFulfillmentOption(
-                                    crate::protocol_serde::shape_ec2_image_builder_component_fulfillment_option::de_ec2_image_builder_component_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_ec2_image_builder_component_fulfillment_option::de_ec2_image_builder_component_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ec2ImageBuilderComponentFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "dataExchangeFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::DataExchangeFulfillmentOption(
-                                    crate::protocol_serde::shape_data_exchange_fulfillment_option::de_data_exchange_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_data_exchange_fulfillment_option::de_data_exchange_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dataExchangeFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "professionalServicesFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::ProfessionalServicesFulfillmentOption(
-                                    crate::protocol_serde::shape_professional_services_fulfillment_option::de_professional_services_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_professional_services_fulfillment_option::de_professional_services_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'professionalServicesFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "saasFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::SaasFulfillmentOption(
-                                    crate::protocol_serde::shape_saas_fulfillment_option::de_saas_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_saas_fulfillment_option::de_saas_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'saasFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "sageMakerAlgorithmFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::SageMakerAlgorithmFulfillmentOption(
-                                    crate::protocol_serde::shape_sage_maker_algorithm_fulfillment_option::de_sage_maker_algorithm_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_sage_maker_algorithm_fulfillment_option::de_sage_maker_algorithm_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sageMakerAlgorithmFulfillmentOption' cannot be null"))?
                                 ))
                             }
                             "sageMakerModelFulfillmentOption" => {
                                 Some(crate::types::FulfillmentOption::SageMakerModelFulfillmentOption(
-                                    crate::protocol_serde::shape_sage_maker_model_fulfillment_option::de_sage_maker_model_fulfillment_option(tokens, _value)?
+                                    crate::protocol_serde::shape_sage_maker_model_fulfillment_option::de_sage_maker_model_fulfillment_option(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sageMakerModelFulfillmentOption' cannot be null"))?
                                 ))
                             }

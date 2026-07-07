@@ -111,10 +111,16 @@ pub fn ser_condition(
 pub(crate) fn de_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Condition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -125,10 +131,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eq" => {
-                            builder = builder.set_eq(crate::protocol_serde::shape_eq::de_eq(tokens, _value)?);
+                            builder = builder.set_eq(crate::protocol_serde::shape_eq::de_eq(tokens, _value, depth + 1)?);
                         }
                         "neq" => {
-                            builder = builder.set_neq(crate::protocol_serde::shape_neq::de_neq(tokens, _value)?);
+                            builder = builder.set_neq(crate::protocol_serde::shape_neq::de_neq(tokens, _value, depth + 1)?);
                         }
                         "gt" => {
                             builder = builder.set_gt(
@@ -159,10 +165,10 @@ where
                             );
                         }
                         "equals" => {
-                            builder = builder.set_equals(crate::protocol_serde::shape_equals::de_equals(tokens, _value)?);
+                            builder = builder.set_equals(crate::protocol_serde::shape_equals::de_equals(tokens, _value, depth + 1)?);
                         }
                         "notEquals" => {
-                            builder = builder.set_not_equals(crate::protocol_serde::shape_not_equals::de_not_equals(tokens, _value)?);
+                            builder = builder.set_not_equals(crate::protocol_serde::shape_not_equals::de_not_equals(tokens, _value, depth + 1)?);
                         }
                         "greaterThan" => {
                             builder = builder.set_greater_than(
@@ -193,10 +199,10 @@ where
                             );
                         }
                         "matches" => {
-                            builder = builder.set_matches(crate::protocol_serde::shape_matches::de_matches(tokens, _value)?);
+                            builder = builder.set_matches(crate::protocol_serde::shape_matches::de_matches(tokens, _value, depth + 1)?);
                         }
                         "notMatches" => {
-                            builder = builder.set_not_matches(crate::protocol_serde::shape_not_matches::de_not_matches(tokens, _value)?);
+                            builder = builder.set_not_matches(crate::protocol_serde::shape_not_matches::de_not_matches(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

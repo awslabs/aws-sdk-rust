@@ -14,6 +14,7 @@
 /// match parsingstrategy {
 ///     ParsingStrategy::BedrockDataAutomation => { /* ... */ },
 ///     ParsingStrategy::BedrockFoundationModel => { /* ... */ },
+///     ParsingStrategy::SmartParsing => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ParsingStrategy {
     BedrockDataAutomation,
     #[allow(missing_docs)] // documentation missing in model
     BedrockFoundationModel,
+    #[allow(missing_docs)] // documentation missing in model
+    SmartParsing,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ParsingStrategy {
         match s {
             "BEDROCK_DATA_AUTOMATION" => ParsingStrategy::BedrockDataAutomation,
             "BEDROCK_FOUNDATION_MODEL" => ParsingStrategy::BedrockFoundationModel,
+            "SMART_PARSING" => ParsingStrategy::SmartParsing,
             other => ParsingStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ParsingStrategy {
         match self {
             ParsingStrategy::BedrockDataAutomation => "BEDROCK_DATA_AUTOMATION",
             ParsingStrategy::BedrockFoundationModel => "BEDROCK_FOUNDATION_MODEL",
+            ParsingStrategy::SmartParsing => "SMART_PARSING",
             ParsingStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BEDROCK_DATA_AUTOMATION", "BEDROCK_FOUNDATION_MODEL"]
+        &["BEDROCK_DATA_AUTOMATION", "BEDROCK_FOUNDATION_MODEL", "SMART_PARSING"]
     }
 }
 impl ::std::convert::AsRef<str> for ParsingStrategy {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ParsingStrategy {
         match self {
             ParsingStrategy::BedrockDataAutomation => write!(f, "BEDROCK_DATA_AUTOMATION"),
             ParsingStrategy::BedrockFoundationModel => write!(f, "BEDROCK_FOUNDATION_MODEL"),
+            ParsingStrategy::SmartParsing => write!(f, "SMART_PARSING"),
             ParsingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }

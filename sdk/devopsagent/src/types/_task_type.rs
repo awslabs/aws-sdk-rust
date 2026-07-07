@@ -14,6 +14,8 @@
 /// match tasktype {
 ///     TaskType::Evaluation => { /* ... */ },
 ///     TaskType::Investigation => { /* ... */ },
+///     TaskType::ReleaseReadinessReview => { /* ... */ },
+///     TaskType::ReleaseTesting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -36,16 +38,20 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Types of tasks that can be created in the backlog
+/// <p>Types of tasks that can be created in the backlog</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TaskType {
-    /// Task for evaluating options or solutions (not in use)
+    /// <p>Task for evaluating options or solutions (not in use)</p>
     Evaluation,
-    /// Task for investigating issues or requirements
+    /// <p>Task for investigating issues or requirements</p>
     Investigation,
+    /// <p>Task for reviewing changes for production readiness</p>
+    ReleaseReadinessReview,
+    /// <p>Task for automated release testing</p>
+    ReleaseTesting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +61,8 @@ impl ::std::convert::From<&str> for TaskType {
         match s {
             "EVALUATION" => TaskType::Evaluation,
             "INVESTIGATION" => TaskType::Investigation,
+            "RELEASE_READINESS_REVIEW" => TaskType::ReleaseReadinessReview,
+            "RELEASE_TESTING" => TaskType::ReleaseTesting,
             other => TaskType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +80,14 @@ impl TaskType {
         match self {
             TaskType::Evaluation => "EVALUATION",
             TaskType::Investigation => "INVESTIGATION",
+            TaskType::ReleaseReadinessReview => "RELEASE_READINESS_REVIEW",
+            TaskType::ReleaseTesting => "RELEASE_TESTING",
             TaskType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EVALUATION", "INVESTIGATION"]
+        &["EVALUATION", "INVESTIGATION", "RELEASE_READINESS_REVIEW", "RELEASE_TESTING"]
     }
 }
 impl ::std::convert::AsRef<str> for TaskType {
@@ -102,6 +112,8 @@ impl ::std::fmt::Display for TaskType {
         match self {
             TaskType::Evaluation => write!(f, "EVALUATION"),
             TaskType::Investigation => write!(f, "INVESTIGATION"),
+            TaskType::ReleaseReadinessReview => write!(f, "RELEASE_READINESS_REVIEW"),
+            TaskType::ReleaseTesting => write!(f, "RELEASE_TESTING"),
             TaskType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -42,10 +42,16 @@ pub fn ser_saml_configuration(
 pub(crate) fn de_saml_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SamlConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -56,19 +62,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "idpMetadata" => {
-                            builder = builder.set_idp_metadata(crate::protocol_serde::shape_idp_metadata::de_idp_metadata(tokens, _value)?);
+                            builder =
+                                builder.set_idp_metadata(crate::protocol_serde::shape_idp_metadata::de_idp_metadata(tokens, _value, depth + 1)?);
                         }
                         "assertionAttributes" => {
                             builder = builder.set_assertion_attributes(crate::protocol_serde::shape_assertion_attributes::de_assertion_attributes(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "roleValues" => {
-                            builder = builder.set_role_values(crate::protocol_serde::shape_role_values::de_role_values(tokens, _value)?);
+                            builder = builder.set_role_values(crate::protocol_serde::shape_role_values::de_role_values(tokens, _value, depth + 1)?);
                         }
                         "allowedOrganizations" => {
                             builder = builder.set_allowed_organizations(
-                                crate::protocol_serde::shape_allowed_organizations::de_allowed_organizations(tokens, _value)?,
+                                crate::protocol_serde::shape_allowed_organizations::de_allowed_organizations(tokens, _value, depth + 1)?,
                             );
                         }
                         "loginValidityDuration" => {

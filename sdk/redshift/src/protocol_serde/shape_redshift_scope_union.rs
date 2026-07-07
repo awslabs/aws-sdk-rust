@@ -19,13 +19,17 @@ pub fn ser_redshift_scope_union(
 
 pub fn de_redshift_scope_union(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RedshiftScopeUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     let mut base: Option<crate::types::RedshiftScopeUnion> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Connect") /* Connect com.amazonaws.redshift#RedshiftScopeUnion$Connect */ =>  {
                 let tmp =
-                    crate::protocol_serde::shape_connect::de_connect(&mut tag)
+                    crate::protocol_serde::shape_connect::de_connect(&mut tag, depth + 1)
                     ?
                 ;
                 base = Some(crate::types::RedshiftScopeUnion::Connect(tmp));

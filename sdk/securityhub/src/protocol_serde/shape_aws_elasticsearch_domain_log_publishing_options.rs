@@ -27,10 +27,16 @@ pub fn ser_aws_elasticsearch_domain_log_publishing_options(
 pub(crate) fn de_aws_elasticsearch_domain_log_publishing_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsElasticsearchDomainLogPublishingOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,17 +48,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IndexSlowLogs" => {
                             builder = builder.set_index_slow_logs(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_log_publishing_options_log_config::de_aws_elasticsearch_domain_log_publishing_options_log_config(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_log_publishing_options_log_config::de_aws_elasticsearch_domain_log_publishing_options_log_config(tokens, _value, depth + 1)?
                                 );
                         }
                         "SearchSlowLogs" => {
                             builder = builder.set_search_slow_logs(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_log_publishing_options_log_config::de_aws_elasticsearch_domain_log_publishing_options_log_config(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_log_publishing_options_log_config::de_aws_elasticsearch_domain_log_publishing_options_log_config(tokens, _value, depth + 1)?
                                 );
                         }
                         "AuditLogs" => {
                             builder = builder.set_audit_logs(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_log_publishing_options_log_config::de_aws_elasticsearch_domain_log_publishing_options_log_config(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_log_publishing_options_log_config::de_aws_elasticsearch_domain_log_publishing_options_log_config(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

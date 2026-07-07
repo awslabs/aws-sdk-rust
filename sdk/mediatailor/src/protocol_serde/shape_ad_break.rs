@@ -48,10 +48,16 @@ pub fn ser_ad_break(
 pub(crate) fn de_ad_break<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AdBreak>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -60,40 +66,45 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "MessageType" => {
-                            builder = builder.set_message_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::MessageType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MessageType" => {
+                                builder = builder.set_message_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::MessageType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "OffsetMillis" => {
+                                builder = builder.set_offset_millis(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "Slate" => {
+                                builder = builder.set_slate(crate::protocol_serde::shape_slate_source::de_slate_source(tokens, _value, depth + 1)?);
+                            }
+                            "SpliceInsertMessage" => {
+                                builder = builder.set_splice_insert_message(
+                                    crate::protocol_serde::shape_splice_insert_message::de_splice_insert_message(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "TimeSignalMessage" => {
+                                builder = builder.set_time_signal_message(crate::protocol_serde::shape_time_signal_message::de_time_signal_message(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "AdBreakMetadata" => {
+                                builder = builder.set_ad_break_metadata(
+                                    crate::protocol_serde::shape_ad_break_metadata_list::de_ad_break_metadata_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "OffsetMillis" => {
-                            builder = builder.set_offset_millis(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "Slate" => {
-                            builder = builder.set_slate(crate::protocol_serde::shape_slate_source::de_slate_source(tokens, _value)?);
-                        }
-                        "SpliceInsertMessage" => {
-                            builder = builder.set_splice_insert_message(
-                                crate::protocol_serde::shape_splice_insert_message::de_splice_insert_message(tokens, _value)?,
-                            );
-                        }
-                        "TimeSignalMessage" => {
-                            builder = builder
-                                .set_time_signal_message(crate::protocol_serde::shape_time_signal_message::de_time_signal_message(tokens, _value)?);
-                        }
-                        "AdBreakMetadata" => {
-                            builder = builder.set_ad_break_metadata(crate::protocol_serde::shape_ad_break_metadata_list::de_ad_break_metadata_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

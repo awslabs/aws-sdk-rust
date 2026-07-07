@@ -33,10 +33,16 @@ pub fn ser_layer_custom_action_operation(
 pub(crate) fn de_layer_custom_action_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LayerCustomActionOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,25 +54,33 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FilterOperation" => {
                             builder = builder.set_filter_operation(
-                                crate::protocol_serde::shape_custom_action_filter_operation::de_custom_action_filter_operation(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_action_filter_operation::de_custom_action_filter_operation(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "NavigationOperation" => {
                             builder = builder.set_navigation_operation(
                                 crate::protocol_serde::shape_custom_action_navigation_operation::de_custom_action_navigation_operation(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "URLOperation" => {
                             builder = builder.set_url_operation(
-                                crate::protocol_serde::shape_custom_action_url_operation::de_custom_action_url_operation(tokens, _value)?,
+                                crate::protocol_serde::shape_custom_action_url_operation::de_custom_action_url_operation(tokens, _value, depth + 1)?,
                             );
                         }
                         "SetParametersOperation" => {
                             builder = builder.set_set_parameters_operation(
                                 crate::protocol_serde::shape_custom_action_set_parameters_operation::de_custom_action_set_parameters_operation(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

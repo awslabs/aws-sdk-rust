@@ -116,6 +116,8 @@ pub struct UpdateServiceInput {
     /// <p>An object representing the VPC Lattice configuration for the service being updated.</p>
     /// <p>This parameter triggers a new service deployment.</p>
     pub vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub monitoring: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl UpdateServiceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -289,6 +291,10 @@ impl UpdateServiceInput {
     pub fn vpc_lattice_configurations(&self) -> &[crate::types::VpcLatticeConfiguration] {
         self.vpc_lattice_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring.as_ref()
+    }
 }
 impl UpdateServiceInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
@@ -323,6 +329,7 @@ pub struct UpdateServiceInputBuilder {
     pub(crate) service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
     pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
     pub(crate) vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
+    pub(crate) monitoring: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl UpdateServiceInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -886,6 +893,20 @@ impl UpdateServiceInputBuilder {
     pub fn get_vpc_lattice_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>> {
         &self.vpc_lattice_configurations
     }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn monitoring(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring = input;
+        self
+    }
+    /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring
+    }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(
         self,
@@ -913,6 +934,7 @@ impl UpdateServiceInputBuilder {
             service_connect_configuration: self.service_connect_configuration,
             volume_configurations: self.volume_configurations,
             vpc_lattice_configurations: self.vpc_lattice_configurations,
+            monitoring: self.monitoring,
         })
     }
 }

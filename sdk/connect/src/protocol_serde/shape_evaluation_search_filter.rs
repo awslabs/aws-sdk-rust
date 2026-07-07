@@ -9,5 +9,11 @@ pub fn ser_evaluation_search_filter(
         crate::protocol_serde::shape_control_plane_attribute_filter::ser_control_plane_attribute_filter(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.contact_evaluation_attribute_filter {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ContactEvaluationAttributeFilter").start_object();
+        crate::protocol_serde::shape_contact_evaluation_attribute_filter::ser_contact_evaluation_attribute_filter(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

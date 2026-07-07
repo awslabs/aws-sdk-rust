@@ -12,6 +12,7 @@
 /// ```text
 /// # let associatedresourcetype = unimplemented!();
 /// match associatedresourcetype {
+///     AssociatedResourceType::AgentcoreGateway => { /* ... */ },
 ///     AssociatedResourceType::ApiGateway => { /* ... */ },
 ///     AssociatedResourceType::AppRunnerService => { /* ... */ },
 ///     AssociatedResourceType::Cloudfront => { /* ... */ },
@@ -46,6 +47,8 @@
 )]
 pub enum AssociatedResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AgentcoreGateway,
+    #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
     #[allow(missing_docs)] // documentation missing in model
     AppRunnerService,
@@ -62,6 +65,7 @@ pub enum AssociatedResourceType {
 impl ::std::convert::From<&str> for AssociatedResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AGENTCORE_GATEWAY" => AssociatedResourceType::AgentcoreGateway,
             "API_GATEWAY" => AssociatedResourceType::ApiGateway,
             "APP_RUNNER_SERVICE" => AssociatedResourceType::AppRunnerService,
             "CLOUDFRONT" => AssociatedResourceType::Cloudfront,
@@ -82,6 +86,7 @@ impl AssociatedResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AssociatedResourceType::AgentcoreGateway => "AGENTCORE_GATEWAY",
             AssociatedResourceType::ApiGateway => "API_GATEWAY",
             AssociatedResourceType::AppRunnerService => "APP_RUNNER_SERVICE",
             AssociatedResourceType::Cloudfront => "CLOUDFRONT",
@@ -93,6 +98,7 @@ impl AssociatedResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AGENTCORE_GATEWAY",
             "API_GATEWAY",
             "APP_RUNNER_SERVICE",
             "CLOUDFRONT",
@@ -121,6 +127,7 @@ impl AssociatedResourceType {
 impl ::std::fmt::Display for AssociatedResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AssociatedResourceType::AgentcoreGateway => write!(f, "AGENTCORE_GATEWAY"),
             AssociatedResourceType::ApiGateway => write!(f, "API_GATEWAY"),
             AssociatedResourceType::AppRunnerService => write!(f, "APP_RUNNER_SERVICE"),
             AssociatedResourceType::Cloudfront => write!(f, "CLOUDFRONT"),

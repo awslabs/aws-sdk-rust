@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_redshift_idc_application(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::RedshiftIdcApplication, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::RedshiftIdcApplication::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -114,7 +118,7 @@ pub fn de_redshift_idc_application(
             s if s.matches("AuthorizedTokenIssuerList") /* AuthorizedTokenIssuerList com.amazonaws.redshift#RedshiftIdcApplication$AuthorizedTokenIssuerList */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_authorized_token_issuer_list::de_authorized_token_issuer_list(&mut tag)
+                        crate::protocol_serde::shape_authorized_token_issuer_list::de_authorized_token_issuer_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -124,7 +128,7 @@ pub fn de_redshift_idc_application(
             s if s.matches("ServiceIntegrations") /* ServiceIntegrations com.amazonaws.redshift#RedshiftIdcApplication$ServiceIntegrations */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_service_integration_list::de_service_integration_list(&mut tag)
+                        crate::protocol_serde::shape_service_integration_list::de_service_integration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -148,7 +152,7 @@ pub fn de_redshift_idc_application(
             s if s.matches("Tags") /* Tags com.amazonaws.redshift#RedshiftIdcApplication$Tags */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -158,7 +162,7 @@ pub fn de_redshift_idc_application(
             s if s.matches("SsoTagKeys") /* SsoTagKeys com.amazonaws.redshift#RedshiftIdcApplication$SsoTagKeys */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_tag_key_list::de_tag_key_list(&mut tag)
+                        crate::protocol_serde::shape_tag_key_list::de_tag_key_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

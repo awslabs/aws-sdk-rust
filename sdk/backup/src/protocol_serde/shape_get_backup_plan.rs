@@ -113,6 +113,8 @@ pub(crate) fn de_get_backup_plan(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -120,11 +122,11 @@ pub(crate) fn de_get_backup_plan(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdvancedBackupSettings" => {
                     builder = builder.set_advanced_backup_settings(
-                        crate::protocol_serde::shape_advanced_backup_settings::de_advanced_backup_settings(tokens, _value)?,
+                        crate::protocol_serde::shape_advanced_backup_settings::de_advanced_backup_settings(tokens, _value, depth + 1)?,
                     );
                 }
                 "BackupPlan" => {
-                    builder = builder.set_backup_plan(crate::protocol_serde::shape_backup_plan::de_backup_plan(tokens, _value)?);
+                    builder = builder.set_backup_plan(crate::protocol_serde::shape_backup_plan::de_backup_plan(tokens, _value, depth + 1)?);
                 }
                 "BackupPlanArn" => {
                     builder = builder.set_backup_plan_arn(
@@ -167,7 +169,9 @@ pub(crate) fn de_get_backup_plan(
                 }
                 "ScheduledRunsPreview" => {
                     builder = builder.set_scheduled_runs_preview(crate::protocol_serde::shape_scheduled_runs_preview::de_scheduled_runs_preview(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "VersionId" => {

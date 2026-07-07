@@ -2,10 +2,16 @@
 pub(crate) fn de_terminology_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TerminologyProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,11 +51,15 @@ where
                         }
                         "TargetLanguageCodes" => {
                             builder = builder.set_target_language_codes(
-                                crate::protocol_serde::shape_language_code_string_list::de_language_code_string_list(tokens, _value)?,
+                                crate::protocol_serde::shape_language_code_string_list::de_language_code_string_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "EncryptionKey" => {
-                            builder = builder.set_encryption_key(crate::protocol_serde::shape_encryption_key::de_encryption_key(tokens, _value)?);
+                            builder = builder.set_encryption_key(crate::protocol_serde::shape_encryption_key::de_encryption_key(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SizeBytes" => {
                             builder = builder.set_size_bytes(

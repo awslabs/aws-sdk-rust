@@ -53,6 +53,8 @@ pub fn de_describe_aws_network_performance_metric_subscriptions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeAwsNetworkPerformanceMetricSubscriptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeAwsNetworkPerformanceMetricSubscriptionsResponse got {start_el:?}"
@@ -76,7 +78,7 @@ pub fn de_describe_aws_network_performance_metric_subscriptions(
             s if s.matches("subscriptionSet") /* Subscriptions com.amazonaws.ec2.synthetic#DescribeAwsNetworkPerformanceMetricSubscriptionsOutput$Subscriptions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_subscription_list::de_subscription_list(&mut tag)
+                        crate::protocol_serde::shape_subscription_list::de_subscription_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

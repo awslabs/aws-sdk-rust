@@ -10,6 +10,8 @@ pub struct CentralizationRuleSource {
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>Log specific configuration for centralization source log groups.</p>
     pub source_logs_configuration: ::std::option::Option<crate::types::SourceLogsConfiguration>,
+    /// <p>Metric specific configuration for centralization source metrics.</p>
+    pub source_metrics_configuration: ::std::option::Option<crate::types::SourceMetricsConfiguration>,
 }
 impl CentralizationRuleSource {
     /// <p>The list of source regions from which telemetry data should be centralized.</p>
@@ -24,6 +26,10 @@ impl CentralizationRuleSource {
     /// <p>Log specific configuration for centralization source log groups.</p>
     pub fn source_logs_configuration(&self) -> ::std::option::Option<&crate::types::SourceLogsConfiguration> {
         self.source_logs_configuration.as_ref()
+    }
+    /// <p>Metric specific configuration for centralization source metrics.</p>
+    pub fn source_metrics_configuration(&self) -> ::std::option::Option<&crate::types::SourceMetricsConfiguration> {
+        self.source_metrics_configuration.as_ref()
     }
 }
 impl CentralizationRuleSource {
@@ -40,6 +46,7 @@ pub struct CentralizationRuleSourceBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) source_logs_configuration: ::std::option::Option<crate::types::SourceLogsConfiguration>,
+    pub(crate) source_metrics_configuration: ::std::option::Option<crate::types::SourceMetricsConfiguration>,
 }
 impl CentralizationRuleSourceBuilder {
     /// Appends an item to `regions`.
@@ -90,6 +97,20 @@ impl CentralizationRuleSourceBuilder {
     pub fn get_source_logs_configuration(&self) -> &::std::option::Option<crate::types::SourceLogsConfiguration> {
         &self.source_logs_configuration
     }
+    /// <p>Metric specific configuration for centralization source metrics.</p>
+    pub fn source_metrics_configuration(mut self, input: crate::types::SourceMetricsConfiguration) -> Self {
+        self.source_metrics_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Metric specific configuration for centralization source metrics.</p>
+    pub fn set_source_metrics_configuration(mut self, input: ::std::option::Option<crate::types::SourceMetricsConfiguration>) -> Self {
+        self.source_metrics_configuration = input;
+        self
+    }
+    /// <p>Metric specific configuration for centralization source metrics.</p>
+    pub fn get_source_metrics_configuration(&self) -> &::std::option::Option<crate::types::SourceMetricsConfiguration> {
+        &self.source_metrics_configuration
+    }
     /// Consumes the builder and constructs a [`CentralizationRuleSource`](crate::types::CentralizationRuleSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`regions`](crate::types::builders::CentralizationRuleSourceBuilder::regions)
@@ -103,6 +124,7 @@ impl CentralizationRuleSourceBuilder {
             })?,
             scope: self.scope,
             source_logs_configuration: self.source_logs_configuration,
+            source_metrics_configuration: self.source_metrics_configuration,
         })
     }
 }

@@ -110,36 +110,36 @@ impl ResetConnectorMetadataCacheFluentBuilder {
         self
     }
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
-    /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
+    /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Connect Customer, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
-    /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
+    /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Connect Customer, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
-    /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
+    /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Connect Customer, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_profile_name()
     }
     /// <p>The type of connector to reset cached metadata for.</p>
-    /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
+    /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Connect Customer, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.inner = self.inner.connector_type(input);
         self
     }
     /// <p>The type of connector to reset cached metadata for.</p>
-    /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
+    /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Connect Customer, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
     /// <p>The type of connector to reset cached metadata for.</p>
-    /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
+    /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Connect Customer, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
         self.inner.get_connector_type()
     }

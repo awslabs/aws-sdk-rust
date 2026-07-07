@@ -2,10 +2,16 @@
 pub(crate) fn de_nfs_file_share_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::NfsFileShareInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,7 +23,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NFSFileShareDefaults" => {
                             builder = builder.set_nfs_file_share_defaults(
-                                crate::protocol_serde::shape_nfs_file_share_defaults::de_nfs_file_share_defaults(tokens, _value)?,
+                                crate::protocol_serde::shape_nfs_file_share_defaults::de_nfs_file_share_defaults(tokens, _value, depth + 1)?,
                             );
                         }
                         "FileShareARN" => {
@@ -102,7 +108,9 @@ where
                         }
                         "ClientList" => {
                             builder = builder.set_client_list(crate::protocol_serde::shape_file_share_client_list::de_file_share_client_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Squash" => {
@@ -122,7 +130,7 @@ where
                             builder = builder.set_requester_pays(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "FileShareName" => {
                             builder = builder.set_file_share_name(
@@ -132,8 +140,11 @@ where
                             );
                         }
                         "CacheAttributes" => {
-                            builder =
-                                builder.set_cache_attributes(crate::protocol_serde::shape_cache_attributes::de_cache_attributes(tokens, _value)?);
+                            builder = builder.set_cache_attributes(crate::protocol_serde::shape_cache_attributes::de_cache_attributes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "NotificationPolicy" => {
                             builder = builder.set_notification_policy(

@@ -23,3 +23,60 @@ pub fn ser_iceberg_sort_order(
     }
     Ok(())
 }
+
+pub(crate) fn de_iceberg_sort_order<'a, I>(
+    tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
+    depth: u32,
+) -> ::std::result::Result<Option<crate::types::IcebergSortOrder>, ::aws_smithy_json::deserialize::error::DeserializeError>
+where
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
+{
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
+    match tokens.next().transpose()? {
+        Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::types::builders::IcebergSortOrderBuilder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "OrderId" => {
+                            builder = builder.set_order_id(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "Fields" => {
+                            builder = builder.set_fields(
+                                crate::protocol_serde::shape_iceberg_sort_order_field_list::de_iceberg_sort_order_field_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
+                    other => {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {other:?}"
+                        )))
+                    }
+                }
+            }
+            Ok(Some(crate::serde_util::iceberg_sort_order_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
+        }
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
+    }
+}

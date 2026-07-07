@@ -53,6 +53,8 @@ pub fn de_export_verified_access_instance_client_configuration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ExportVerifiedAccessInstanceClientConfigurationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ExportVerifiedAccessInstanceClientConfigurationResponse got {start_el:?}"
@@ -102,7 +104,7 @@ pub fn de_export_verified_access_instance_client_configuration(
             s if s.matches("deviceTrustProviderSet") /* DeviceTrustProviders com.amazonaws.ec2.synthetic#ExportVerifiedAccessInstanceClientConfigurationOutput$DeviceTrustProviders */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_device_trust_provider_type_list::de_device_trust_provider_type_list(&mut tag)
+                        crate::protocol_serde::shape_device_trust_provider_type_list::de_device_trust_provider_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -112,7 +114,7 @@ pub fn de_export_verified_access_instance_client_configuration(
             s if s.matches("userTrustProvider") /* UserTrustProvider com.amazonaws.ec2.synthetic#ExportVerifiedAccessInstanceClientConfigurationOutput$UserTrustProvider */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_instance_user_trust_provider_client_configuration::de_verified_access_instance_user_trust_provider_client_configuration(&mut tag)
+                        crate::protocol_serde::shape_verified_access_instance_user_trust_provider_client_configuration::de_verified_access_instance_user_trust_provider_client_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -122,7 +124,7 @@ pub fn de_export_verified_access_instance_client_configuration(
             s if s.matches("openVpnConfigurationSet") /* OpenVpnConfigurations com.amazonaws.ec2.synthetic#ExportVerifiedAccessInstanceClientConfigurationOutput$OpenVpnConfigurations */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_verified_access_instance_open_vpn_client_configuration_list::de_verified_access_instance_open_vpn_client_configuration_list(&mut tag)
+                        crate::protocol_serde::shape_verified_access_instance_open_vpn_client_configuration_list::de_verified_access_instance_open_vpn_client_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

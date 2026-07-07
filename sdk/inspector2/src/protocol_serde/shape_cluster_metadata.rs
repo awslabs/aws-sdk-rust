@@ -2,10 +2,16 @@
 pub(crate) fn de_cluster_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ClusterMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,14 +37,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "awsEcsMetadataDetails" => Some(crate::types::ClusterMetadata::AwsEcsMetadataDetails(
-                            crate::protocol_serde::shape_aws_ecs_metadata_details::de_aws_ecs_metadata_details(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsEcsMetadataDetails' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_aws_ecs_metadata_details::de_aws_ecs_metadata_details(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'awsEcsMetadataDetails' cannot be null",
+                                    )
+                                })?,
                         )),
                         "awsEksMetadataDetails" => Some(crate::types::ClusterMetadata::AwsEksMetadataDetails(
-                            crate::protocol_serde::shape_aws_eks_metadata_details::de_aws_eks_metadata_details(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsEksMetadataDetails' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_aws_eks_metadata_details::de_aws_eks_metadata_details(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'awsEksMetadataDetails' cannot be null",
+                                    )
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

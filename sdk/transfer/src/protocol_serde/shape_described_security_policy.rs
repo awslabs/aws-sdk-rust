@@ -2,10 +2,16 @@
 pub(crate) fn de_described_security_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribedSecurityPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,56 +20,66 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Fips" => {
-                            builder = builder.set_fips(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Fips" => {
+                                builder = builder.set_fips(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "SecurityPolicyName" => {
+                                builder = builder.set_security_policy_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SshCiphers" => {
+                                builder = builder.set_ssh_ciphers(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SshKexs" => {
+                                builder = builder.set_ssh_kexs(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SshMacs" => {
+                                builder = builder.set_ssh_macs(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "TlsCiphers" => {
+                                builder = builder.set_tls_ciphers(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "SshHostKeyAlgorithms" => {
+                                builder = builder.set_ssh_host_key_algorithms(
+                                    crate::protocol_serde::shape_security_policy_options::de_security_policy_options(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Type" => {
+                                builder = builder.set_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::SecurityPolicyResourceType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "Protocols" => {
+                                builder = builder.set_protocols(
+                                    crate::protocol_serde::shape_security_policy_protocols::de_security_policy_protocols(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "SecurityPolicyName" => {
-                            builder = builder.set_security_policy_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "SshCiphers" => {
-                            builder = builder.set_ssh_ciphers(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(
-                                tokens, _value,
-                            )?);
-                        }
-                        "SshKexs" => {
-                            builder = builder.set_ssh_kexs(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(
-                                tokens, _value,
-                            )?);
-                        }
-                        "SshMacs" => {
-                            builder = builder.set_ssh_macs(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(
-                                tokens, _value,
-                            )?);
-                        }
-                        "TlsCiphers" => {
-                            builder = builder.set_tls_ciphers(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(
-                                tokens, _value,
-                            )?);
-                        }
-                        "SshHostKeyAlgorithms" => {
-                            builder = builder.set_ssh_host_key_algorithms(
-                                crate::protocol_serde::shape_security_policy_options::de_security_policy_options(tokens, _value)?,
-                            );
-                        }
-                        "Type" => {
-                            builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::SecurityPolicyResourceType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "Protocols" => {
-                            builder = builder.set_protocols(crate::protocol_serde::shape_security_policy_protocols::de_security_policy_protocols(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

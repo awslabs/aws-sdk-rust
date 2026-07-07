@@ -3,10 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>Lambda couldn't create the alias because your Amazon Web Services account has exceeded the maximum number of aliases allowed per Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
+    AliasLimitExceededException(crate::types::error::AliasLimitExceededException),
     /// <p>The callback ID token has either expired or the callback associated with the token has already been closed.</p>
     CallbackTimeoutException(crate::types::error::CallbackTimeoutException),
     /// <p>The maximum number of capacity providers for your account has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a></p>
     CapacityProviderLimitExceededException(crate::types::error::CapacityProviderLimitExceededException),
+    /// <p>The Lambda function couldn't be invoked because its code artifact user has been deleted. Wait for Lambda to provision a new code artifact user, or update the function's code package to recreate it.</p>
+    CodeArtifactUserDeletedException(crate::types::error::CodeArtifactUserDeletedException),
+    /// <p>The Lambda function couldn't be invoked because provisioning of its code artifact user failed. Update the function's code package or check the Lambda function's <code>State</code> and <code>StateReasonCode</code> for additional context.</p>
+    CodeArtifactUserFailedException(crate::types::error::CodeArtifactUserFailedException),
+    /// <p>The Lambda function couldn't be invoked because its code artifact user is still being provisioned. Wait for the function's <code>State</code> to become <code>Active</code> and try the request again.</p>
+    CodeArtifactUserPendingException(crate::types::error::CodeArtifactUserPendingException),
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::types::error::CodeSigningConfigNotFoundException),
     /// <p>Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
@@ -31,6 +39,8 @@ pub enum Error {
     EfsMountTimeoutException(crate::types::error::EfsMountTimeoutException),
     /// <p>Lambda couldn't create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     EniLimitReachedException(crate::types::error::EniLimitReachedException),
+    /// <p>Lambda couldn't invoke the Lambda function because the elastic network interface (ENI) configured for its VPC connection isn't ready yet. Wait a few moments and try the request again. For more information about VPC configuration, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
+    EniNotReadyException(crate::types::error::EniNotReadyException),
     /// <p>The maximum number of function versions that can be associated with a single capacity provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     FunctionVersionsPerCapacityProviderLimitExceededException(crate::types::error::FunctionVersionsPerCapacityProviderLimitExceededException),
     /// <p>The code signature failed the integrity check. If the integrity check fails, then Lambda blocks deployment, even if the code signing policy is set to WARN.</p>
@@ -55,6 +65,8 @@ pub enum Error {
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
+    /// <p>The Lambda function doesn't support the invocation mode requested. For example, calling <code>Invoke</code> with <code>InvocationType=RequestResponse</code> on a function configured for asynchronous-only invocation, or vice versa. For more information about invocation types, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-options.html">Invoking Lambda functions</a>.</p>
+    ModeNotSupportedException(crate::types::error::ModeNotSupportedException),
     /// <p>The function has no published versions available.</p>
     NoPublishedVersionException(crate::types::error::NoPublishedVersionException),
     /// <p>The permissions policy for the resource is too large. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
@@ -69,6 +81,8 @@ pub enum Error {
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The specified configuration does not exist.</p>
     ProvisionedConcurrencyConfigNotFoundException(crate::types::error::ProvisionedConcurrencyConfigNotFoundException),
+    /// <p>The resource-based policy you tried to add to the Lambda function would grant public access to it, and your account's <code>BlockPublicAccess</code> setting prevents public access. For more information about blocking public access to Lambda functions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#access-control-block-public-access">Block public access to Lambda resources</a>.</p>
+    PublicPolicyException(crate::types::error::PublicPolicyException),
     /// <p>Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services resources and stopped your function's invocation.</p>
     RecursiveInvocationException(crate::types::error::RecursiveInvocationException),
     /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input quota. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
@@ -91,10 +105,14 @@ pub enum Error {
     SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
+    /// <p>The request would exceed a service quota. For more information about Lambda service quotas, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>. To request a quota increase, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">Requesting a quota increase</a> in the <i>Service Quotas User Guide</i>.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
     SnapStartException(crate::types::error::SnapStartException),
     /// <p>Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes <code>Active</code>.</p>
     SnapStartNotReadyException(crate::types::error::SnapStartNotReadyException),
+    /// <p>Lambda couldn't regenerate the SnapStart snapshot for the function. SnapStart-enabled functions periodically regenerate snapshots when their underlying runtime or dependencies change; this regeneration failed. Wait for Lambda to retry, or update the function's configuration to trigger a new snapshot. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda SnapStart</a>.</p>
+    SnapStartRegenerationFailureException(crate::types::error::SnapStartRegenerationFailureException),
     /// <p>Lambda couldn't restore the snapshot within the timeout limit.</p>
     SnapStartTimeoutException(crate::types::error::SnapStartTimeoutException),
     /// <p>Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
@@ -115,8 +133,12 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AliasLimitExceededException(inner) => inner.fmt(f),
             Error::CallbackTimeoutException(inner) => inner.fmt(f),
             Error::CapacityProviderLimitExceededException(inner) => inner.fmt(f),
+            Error::CodeArtifactUserDeletedException(inner) => inner.fmt(f),
+            Error::CodeArtifactUserFailedException(inner) => inner.fmt(f),
+            Error::CodeArtifactUserPendingException(inner) => inner.fmt(f),
             Error::CodeSigningConfigNotFoundException(inner) => inner.fmt(f),
             Error::CodeStorageExceededException(inner) => inner.fmt(f),
             Error::CodeVerificationFailedException(inner) => inner.fmt(f),
@@ -129,6 +151,7 @@ impl ::std::fmt::Display for Error {
             Error::EfsMountFailureException(inner) => inner.fmt(f),
             Error::EfsMountTimeoutException(inner) => inner.fmt(f),
             Error::EniLimitReachedException(inner) => inner.fmt(f),
+            Error::EniNotReadyException(inner) => inner.fmt(f),
             Error::FunctionVersionsPerCapacityProviderLimitExceededException(inner) => inner.fmt(f),
             Error::InvalidCodeSignatureException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
@@ -141,10 +164,12 @@ impl ::std::fmt::Display for Error {
             Error::KmsDisabledException(inner) => inner.fmt(f),
             Error::KmsInvalidStateException(inner) => inner.fmt(f),
             Error::KmsNotFoundException(inner) => inner.fmt(f),
+            Error::ModeNotSupportedException(inner) => inner.fmt(f),
             Error::NoPublishedVersionException(inner) => inner.fmt(f),
             Error::PolicyLengthExceededException(inner) => inner.fmt(f),
             Error::PreconditionFailedException(inner) => inner.fmt(f),
             Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.fmt(f),
+            Error::PublicPolicyException(inner) => inner.fmt(f),
             Error::RecursiveInvocationException(inner) => inner.fmt(f),
             Error::RequestTooLargeException(inner) => inner.fmt(f),
             Error::ResourceConflictException(inner) => inner.fmt(f),
@@ -156,8 +181,10 @@ impl ::std::fmt::Display for Error {
             Error::S3FilesMountTimeoutException(inner) => inner.fmt(f),
             Error::SerializedRequestEntityTooLargeException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::SnapStartException(inner) => inner.fmt(f),
             Error::SnapStartNotReadyException(inner) => inner.fmt(f),
+            Error::SnapStartRegenerationFailureException(inner) => inner.fmt(f),
             Error::SnapStartTimeoutException(inner) => inner.fmt(f),
             Error::SubnetIpAddressLimitReachedException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
@@ -183,8 +210,12 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AliasLimitExceededException(inner) => inner.meta(),
             Self::CallbackTimeoutException(inner) => inner.meta(),
             Self::CapacityProviderLimitExceededException(inner) => inner.meta(),
+            Self::CodeArtifactUserDeletedException(inner) => inner.meta(),
+            Self::CodeArtifactUserFailedException(inner) => inner.meta(),
+            Self::CodeArtifactUserPendingException(inner) => inner.meta(),
             Self::CodeSigningConfigNotFoundException(inner) => inner.meta(),
             Self::CodeStorageExceededException(inner) => inner.meta(),
             Self::CodeVerificationFailedException(inner) => inner.meta(),
@@ -197,6 +228,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::EfsMountFailureException(inner) => inner.meta(),
             Self::EfsMountTimeoutException(inner) => inner.meta(),
             Self::EniLimitReachedException(inner) => inner.meta(),
+            Self::EniNotReadyException(inner) => inner.meta(),
             Self::FunctionVersionsPerCapacityProviderLimitExceededException(inner) => inner.meta(),
             Self::InvalidCodeSignatureException(inner) => inner.meta(),
             Self::InvalidParameterValueException(inner) => inner.meta(),
@@ -209,10 +241,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::KmsDisabledException(inner) => inner.meta(),
             Self::KmsInvalidStateException(inner) => inner.meta(),
             Self::KmsNotFoundException(inner) => inner.meta(),
+            Self::ModeNotSupportedException(inner) => inner.meta(),
             Self::NoPublishedVersionException(inner) => inner.meta(),
             Self::PolicyLengthExceededException(inner) => inner.meta(),
             Self::PreconditionFailedException(inner) => inner.meta(),
             Self::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.meta(),
+            Self::PublicPolicyException(inner) => inner.meta(),
             Self::RecursiveInvocationException(inner) => inner.meta(),
             Self::RequestTooLargeException(inner) => inner.meta(),
             Self::ResourceConflictException(inner) => inner.meta(),
@@ -224,8 +258,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::S3FilesMountTimeoutException(inner) => inner.meta(),
             Self::SerializedRequestEntityTooLargeException(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::SnapStartException(inner) => inner.meta(),
             Self::SnapStartNotReadyException(inner) => inner.meta(),
+            Self::SnapStartRegenerationFailureException(inner) => inner.meta(),
             Self::SnapStartTimeoutException(inner) => inner.meta(),
             Self::SubnetIpAddressLimitReachedException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
@@ -299,6 +335,7 @@ impl From<crate::operation::add_permission::AddPermissionError> for Error {
             }
             crate::operation::add_permission::AddPermissionError::PolicyLengthExceededException(inner) => Error::PolicyLengthExceededException(inner),
             crate::operation::add_permission::AddPermissionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::add_permission::AddPermissionError::PublicPolicyException(inner) => Error::PublicPolicyException(inner),
             crate::operation::add_permission::AddPermissionError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::add_permission::AddPermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::add_permission::AddPermissionError::ServiceException(inner) => Error::ServiceException(inner),
@@ -330,6 +367,18 @@ impl From<crate::operation::checkpoint_durable_execution::CheckpointDurableExecu
             crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
+            crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::KmsDisabledException(inner) => {
+                Error::KmsDisabledException(inner)
+            }
+            crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::KmsNotFoundException(inner) => {
+                Error::KmsNotFoundException(inner)
+            }
             crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -357,6 +406,7 @@ where
 impl From<crate::operation::create_alias::CreateAliasError> for Error {
     fn from(err: crate::operation::create_alias::CreateAliasError) -> Self {
         match err {
+            crate::operation::create_alias::CreateAliasError::AliasLimitExceededException(inner) => Error::AliasLimitExceededException(inner),
             crate::operation::create_alias::CreateAliasError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::create_alias::CreateAliasError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::create_alias::CreateAliasError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -564,6 +614,7 @@ impl From<crate::operation::delete_alias::DeleteAliasError> for Error {
         match err {
             crate::operation::delete_alias::DeleteAliasError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_alias::DeleteAliasError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_alias::DeleteAliasError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_alias::DeleteAliasError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_alias::DeleteAliasError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_alias::DeleteAliasError::Unhandled(inner) => Error::Unhandled(inner),
@@ -862,6 +913,9 @@ where
 impl From<crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError> for Error {
     fn from(err: crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError) -> Self {
         match err {
+            crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError::ResourceConflictException(inner) => {
                 Error::ResourceConflictException(inner)
             }
@@ -893,6 +947,12 @@ where
 impl From<crate::operation::delete_layer_version::DeleteLayerVersionError> for Error {
     fn from(err: crate::operation::delete_layer_version::DeleteLayerVersionError) -> Self {
         match err {
+            crate::operation::delete_layer_version::DeleteLayerVersionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_layer_version::DeleteLayerVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_layer_version::DeleteLayerVersionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_layer_version::DeleteLayerVersionError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
@@ -1081,6 +1141,14 @@ impl From<crate::operation::get_durable_execution::GetDurableExecutionError> for
             crate::operation::get_durable_execution::GetDurableExecutionError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
+            crate::operation::get_durable_execution::GetDurableExecutionError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::get_durable_execution::GetDurableExecutionError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
+            crate::operation::get_durable_execution::GetDurableExecutionError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::get_durable_execution::GetDurableExecutionError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
             crate::operation::get_durable_execution::GetDurableExecutionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1114,6 +1182,18 @@ impl From<crate::operation::get_durable_execution_history::GetDurableExecutionHi
         match err {
             crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::KmsDisabledException(inner) => {
+                Error::KmsDisabledException(inner)
+            }
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::KmsNotFoundException(inner) => {
+                Error::KmsNotFoundException(inner)
             }
             crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1150,6 +1230,18 @@ impl From<crate::operation::get_durable_execution_state::GetDurableExecutionStat
         match err {
             crate::operation::get_durable_execution_state::GetDurableExecutionStateError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_durable_execution_state::GetDurableExecutionStateError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::get_durable_execution_state::GetDurableExecutionStateError::KmsDisabledException(inner) => {
+                Error::KmsDisabledException(inner)
+            }
+            crate::operation::get_durable_execution_state::GetDurableExecutionStateError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::get_durable_execution_state::GetDurableExecutionStateError::KmsNotFoundException(inner) => {
+                Error::KmsNotFoundException(inner)
             }
             crate::operation::get_durable_execution_state::GetDurableExecutionStateError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_durable_execution_state::GetDurableExecutionStateError::TooManyRequestsException(inner) => {
@@ -1241,6 +1333,9 @@ where
 impl From<crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError> for Error {
     fn from(err: crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError) -> Self {
         match err {
+            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::CodeSigningConfigNotFoundException(inner) => {
+                Error::CodeSigningConfigNotFoundException(inner)
+            }
             crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
@@ -1675,6 +1770,9 @@ where
 impl From<crate::operation::invoke::InvokeError> for Error {
     fn from(err: crate::operation::invoke::InvokeError) -> Self {
         match err {
+            crate::operation::invoke::InvokeError::CodeArtifactUserDeletedException(inner) => Error::CodeArtifactUserDeletedException(inner),
+            crate::operation::invoke::InvokeError::CodeArtifactUserFailedException(inner) => Error::CodeArtifactUserFailedException(inner),
+            crate::operation::invoke::InvokeError::CodeArtifactUserPendingException(inner) => Error::CodeArtifactUserPendingException(inner),
             crate::operation::invoke::InvokeError::DurableExecutionAlreadyStartedException(inner) => {
                 Error::DurableExecutionAlreadyStartedException(inner)
             }
@@ -1686,6 +1784,7 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             crate::operation::invoke::InvokeError::EfsMountFailureException(inner) => Error::EfsMountFailureException(inner),
             crate::operation::invoke::InvokeError::EfsMountTimeoutException(inner) => Error::EfsMountTimeoutException(inner),
             crate::operation::invoke::InvokeError::EniLimitReachedException(inner) => Error::EniLimitReachedException(inner),
+            crate::operation::invoke::InvokeError::EniNotReadyException(inner) => Error::EniNotReadyException(inner),
             crate::operation::invoke::InvokeError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::invoke::InvokeError::InvalidRequestContentException(inner) => Error::InvalidRequestContentException(inner),
             crate::operation::invoke::InvokeError::InvalidRuntimeException(inner) => Error::InvalidRuntimeException(inner),
@@ -1696,6 +1795,7 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             crate::operation::invoke::InvokeError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
             crate::operation::invoke::InvokeError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::invoke::InvokeError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
+            crate::operation::invoke::InvokeError::ModeNotSupportedException(inner) => Error::ModeNotSupportedException(inner),
             crate::operation::invoke::InvokeError::NoPublishedVersionException(inner) => Error::NoPublishedVersionException(inner),
             crate::operation::invoke::InvokeError::RecursiveInvocationException(inner) => Error::RecursiveInvocationException(inner),
             crate::operation::invoke::InvokeError::RequestTooLargeException(inner) => Error::RequestTooLargeException(inner),
@@ -1709,8 +1809,12 @@ impl From<crate::operation::invoke::InvokeError> for Error {
                 Error::SerializedRequestEntityTooLargeException(inner)
             }
             crate::operation::invoke::InvokeError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::invoke::InvokeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::invoke::InvokeError::SnapStartException(inner) => Error::SnapStartException(inner),
             crate::operation::invoke::InvokeError::SnapStartNotReadyException(inner) => Error::SnapStartNotReadyException(inner),
+            crate::operation::invoke::InvokeError::SnapStartRegenerationFailureException(inner) => {
+                Error::SnapStartRegenerationFailureException(inner)
+            }
             crate::operation::invoke::InvokeError::SnapStartTimeoutException(inner) => Error::SnapStartTimeoutException(inner),
             crate::operation::invoke::InvokeError::SubnetIpAddressLimitReachedException(inner) => Error::SubnetIpAddressLimitReachedException(inner),
             crate::operation::invoke::InvokeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -1736,11 +1840,41 @@ where
 impl From<crate::operation::invoke_async::InvokeAsyncError> for Error {
     fn from(err: crate::operation::invoke_async::InvokeAsyncError) -> Self {
         match err {
+            crate::operation::invoke_async::InvokeAsyncError::Ec2AccessDeniedException(inner) => Error::Ec2AccessDeniedException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::Ec2ThrottledException(inner) => Error::Ec2ThrottledException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::Ec2UnexpectedException(inner) => Error::Ec2UnexpectedException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::EfsioException(inner) => Error::EfsioException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::EfsMountConnectivityException(inner) => Error::EfsMountConnectivityException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::EfsMountFailureException(inner) => Error::EfsMountFailureException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::EfsMountTimeoutException(inner) => Error::EfsMountTimeoutException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::EniLimitReachedException(inner) => Error::EniLimitReachedException(inner),
             crate::operation::invoke_async::InvokeAsyncError::InvalidRequestContentException(inner) => Error::InvalidRequestContentException(inner),
             crate::operation::invoke_async::InvokeAsyncError::InvalidRuntimeException(inner) => Error::InvalidRuntimeException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::InvalidSecurityGroupIdException(inner) => Error::InvalidSecurityGroupIdException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::InvalidSubnetIdException(inner) => Error::InvalidSubnetIdException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::ModeNotSupportedException(inner) => Error::ModeNotSupportedException(inner),
             crate::operation::invoke_async::InvokeAsyncError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::invoke_async::InvokeAsyncError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::S3FilesMountConnectivityException(inner) => {
+                Error::S3FilesMountConnectivityException(inner)
+            }
+            crate::operation::invoke_async::InvokeAsyncError::S3FilesMountFailureException(inner) => Error::S3FilesMountFailureException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::S3FilesMountTimeoutException(inner) => Error::S3FilesMountTimeoutException(inner),
             crate::operation::invoke_async::InvokeAsyncError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::SnapStartException(inner) => Error::SnapStartException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::SnapStartNotReadyException(inner) => Error::SnapStartNotReadyException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::SnapStartRegenerationFailureException(inner) => {
+                Error::SnapStartRegenerationFailureException(inner)
+            }
+            crate::operation::invoke_async::InvokeAsyncError::SnapStartTimeoutException(inner) => Error::SnapStartTimeoutException(inner),
+            crate::operation::invoke_async::InvokeAsyncError::SubnetIpAddressLimitReachedException(inner) => {
+                Error::SubnetIpAddressLimitReachedException(inner)
+            }
             crate::operation::invoke_async::InvokeAsyncError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1848,11 +1982,17 @@ impl From<crate::operation::invoke_with_response_stream::InvokeWithResponseStrea
                 Error::SerializedRequestEntityTooLargeException(inner)
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SnapStartException(inner) => {
                 Error::SnapStartException(inner)
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SnapStartNotReadyException(inner) => {
                 Error::SnapStartNotReadyException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SnapStartRegenerationFailureException(inner) => {
+                Error::SnapStartRegenerationFailureException(inner)
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SnapStartTimeoutException(inner) => {
                 Error::SnapStartTimeoutException(inner)
@@ -2792,6 +2932,7 @@ impl From<crate::operation::remove_permission::RemovePermissionError> for Error 
             crate::operation::remove_permission::RemovePermissionError::PreconditionFailedException(inner) => {
                 Error::PreconditionFailedException(inner)
             }
+            crate::operation::remove_permission::RemovePermissionError::PublicPolicyException(inner) => Error::PublicPolicyException(inner),
             crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::remove_permission::RemovePermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::remove_permission::RemovePermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -2833,6 +2974,21 @@ impl From<crate::operation::send_durable_execution_callback_failure::SendDurable
             crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::KmsDisabledException(inner) => {
+                Error::KmsDisabledException(inner)
+            }
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::KmsNotFoundException(inner) => {
+                Error::KmsNotFoundException(inner)
+            }
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -2875,6 +3031,7 @@ impl From<crate::operation::send_durable_execution_callback_heartbeat::SendDurab
         match err {
             crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::CallbackTimeoutException(inner) => Error::CallbackTimeoutException(inner),
             crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2915,6 +3072,21 @@ impl From<crate::operation::send_durable_execution_callback_success::SendDurable
             crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::KmsDisabledException(inner) => {
+                Error::KmsDisabledException(inner)
+            }
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::KmsNotFoundException(inner) => {
+                Error::KmsNotFoundException(inner)
+            }
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -2947,6 +3119,14 @@ impl From<crate::operation::stop_durable_execution::StopDurableExecutionError> f
             crate::operation::stop_durable_execution::StopDurableExecutionError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
+            crate::operation::stop_durable_execution::StopDurableExecutionError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::stop_durable_execution::StopDurableExecutionError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
+            crate::operation::stop_durable_execution::StopDurableExecutionError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::stop_durable_execution::StopDurableExecutionError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
             crate::operation::stop_durable_execution::StopDurableExecutionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -3366,8 +3546,12 @@ impl From<crate::types::error::InvokeWithResponseStreamResponseEventError> for E
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AliasLimitExceededException(inner) => inner.source(),
             Error::CallbackTimeoutException(inner) => inner.source(),
             Error::CapacityProviderLimitExceededException(inner) => inner.source(),
+            Error::CodeArtifactUserDeletedException(inner) => inner.source(),
+            Error::CodeArtifactUserFailedException(inner) => inner.source(),
+            Error::CodeArtifactUserPendingException(inner) => inner.source(),
             Error::CodeSigningConfigNotFoundException(inner) => inner.source(),
             Error::CodeStorageExceededException(inner) => inner.source(),
             Error::CodeVerificationFailedException(inner) => inner.source(),
@@ -3380,6 +3564,7 @@ impl ::std::error::Error for Error {
             Error::EfsMountFailureException(inner) => inner.source(),
             Error::EfsMountTimeoutException(inner) => inner.source(),
             Error::EniLimitReachedException(inner) => inner.source(),
+            Error::EniNotReadyException(inner) => inner.source(),
             Error::FunctionVersionsPerCapacityProviderLimitExceededException(inner) => inner.source(),
             Error::InvalidCodeSignatureException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
@@ -3392,10 +3577,12 @@ impl ::std::error::Error for Error {
             Error::KmsDisabledException(inner) => inner.source(),
             Error::KmsInvalidStateException(inner) => inner.source(),
             Error::KmsNotFoundException(inner) => inner.source(),
+            Error::ModeNotSupportedException(inner) => inner.source(),
             Error::NoPublishedVersionException(inner) => inner.source(),
             Error::PolicyLengthExceededException(inner) => inner.source(),
             Error::PreconditionFailedException(inner) => inner.source(),
             Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.source(),
+            Error::PublicPolicyException(inner) => inner.source(),
             Error::RecursiveInvocationException(inner) => inner.source(),
             Error::RequestTooLargeException(inner) => inner.source(),
             Error::ResourceConflictException(inner) => inner.source(),
@@ -3407,8 +3594,10 @@ impl ::std::error::Error for Error {
             Error::S3FilesMountTimeoutException(inner) => inner.source(),
             Error::SerializedRequestEntityTooLargeException(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::SnapStartException(inner) => inner.source(),
             Error::SnapStartNotReadyException(inner) => inner.source(),
+            Error::SnapStartRegenerationFailureException(inner) => inner.source(),
             Error::SnapStartTimeoutException(inner) => inner.source(),
             Error::SubnetIpAddressLimitReachedException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
@@ -3420,8 +3609,12 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AliasLimitExceededException(e) => e.request_id(),
             Self::CallbackTimeoutException(e) => e.request_id(),
             Self::CapacityProviderLimitExceededException(e) => e.request_id(),
+            Self::CodeArtifactUserDeletedException(e) => e.request_id(),
+            Self::CodeArtifactUserFailedException(e) => e.request_id(),
+            Self::CodeArtifactUserPendingException(e) => e.request_id(),
             Self::CodeSigningConfigNotFoundException(e) => e.request_id(),
             Self::CodeStorageExceededException(e) => e.request_id(),
             Self::CodeVerificationFailedException(e) => e.request_id(),
@@ -3434,6 +3627,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::EfsMountFailureException(e) => e.request_id(),
             Self::EfsMountTimeoutException(e) => e.request_id(),
             Self::EniLimitReachedException(e) => e.request_id(),
+            Self::EniNotReadyException(e) => e.request_id(),
             Self::FunctionVersionsPerCapacityProviderLimitExceededException(e) => e.request_id(),
             Self::InvalidCodeSignatureException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
@@ -3446,10 +3640,12 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::KmsDisabledException(e) => e.request_id(),
             Self::KmsInvalidStateException(e) => e.request_id(),
             Self::KmsNotFoundException(e) => e.request_id(),
+            Self::ModeNotSupportedException(e) => e.request_id(),
             Self::NoPublishedVersionException(e) => e.request_id(),
             Self::PolicyLengthExceededException(e) => e.request_id(),
             Self::PreconditionFailedException(e) => e.request_id(),
             Self::ProvisionedConcurrencyConfigNotFoundException(e) => e.request_id(),
+            Self::PublicPolicyException(e) => e.request_id(),
             Self::RecursiveInvocationException(e) => e.request_id(),
             Self::RequestTooLargeException(e) => e.request_id(),
             Self::ResourceConflictException(e) => e.request_id(),
@@ -3461,8 +3657,10 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::S3FilesMountTimeoutException(e) => e.request_id(),
             Self::SerializedRequestEntityTooLargeException(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::SnapStartException(e) => e.request_id(),
             Self::SnapStartNotReadyException(e) => e.request_id(),
+            Self::SnapStartRegenerationFailureException(e) => e.request_id(),
             Self::SnapStartTimeoutException(e) => e.request_id(),
             Self::SubnetIpAddressLimitReachedException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),

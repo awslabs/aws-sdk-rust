@@ -13,6 +13,8 @@ pub struct UpdatePolicyInput {
     pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
     /// <p>The validation mode for the policy update. Determines how Cedar analyzer validation results are handled during policy updates. FAIL_ON_ANY_FINDINGS runs the Cedar analyzer and fails the update if validation issues are detected, ensuring the policy conforms to the Cedar schema and tool context. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows updates despite validation warnings. Use FAIL_ON_ANY_FINDINGS to ensure policy correctness during updates, especially when modifying policy logic or conditions.</p>
     pub validation_mode: ::std::option::Option<crate::types::PolicyValidationMode>,
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. If you omit this field, the policy's existing enforcement mode is unchanged.</p>
+    pub enforcement_mode: ::std::option::Option<crate::types::EnforcementMode>,
 }
 impl UpdatePolicyInput {
     /// <p>The identifier of the policy engine that manages the policy to be updated. This ensures the policy is updated within the correct policy engine context.</p>
@@ -35,6 +37,10 @@ impl UpdatePolicyInput {
     pub fn validation_mode(&self) -> ::std::option::Option<&crate::types::PolicyValidationMode> {
         self.validation_mode.as_ref()
     }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. If you omit this field, the policy's existing enforcement mode is unchanged.</p>
+    pub fn enforcement_mode(&self) -> ::std::option::Option<&crate::types::EnforcementMode> {
+        self.enforcement_mode.as_ref()
+    }
 }
 impl UpdatePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
@@ -52,6 +58,7 @@ pub struct UpdatePolicyInputBuilder {
     pub(crate) description: ::std::option::Option<crate::types::UpdatedDescription>,
     pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::PolicyValidationMode>,
+    pub(crate) enforcement_mode: ::std::option::Option<crate::types::EnforcementMode>,
 }
 impl UpdatePolicyInputBuilder {
     /// <p>The identifier of the policy engine that manages the policy to be updated. This ensures the policy is updated within the correct policy engine context.</p>
@@ -126,6 +133,20 @@ impl UpdatePolicyInputBuilder {
     pub fn get_validation_mode(&self) -> &::std::option::Option<crate::types::PolicyValidationMode> {
         &self.validation_mode
     }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. If you omit this field, the policy's existing enforcement mode is unchanged.</p>
+    pub fn enforcement_mode(mut self, input: crate::types::EnforcementMode) -> Self {
+        self.enforcement_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. If you omit this field, the policy's existing enforcement mode is unchanged.</p>
+    pub fn set_enforcement_mode(mut self, input: ::std::option::Option<crate::types::EnforcementMode>) -> Self {
+        self.enforcement_mode = input;
+        self
+    }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. If you omit this field, the policy's existing enforcement mode is unchanged.</p>
+    pub fn get_enforcement_mode(&self) -> &::std::option::Option<crate::types::EnforcementMode> {
+        &self.enforcement_mode
+    }
     /// Consumes the builder and constructs a [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
     pub fn build(
         self,
@@ -136,6 +157,7 @@ impl UpdatePolicyInputBuilder {
             description: self.description,
             definition: self.definition,
             validation_mode: self.validation_mode,
+            enforcement_mode: self.enforcement_mode,
         })
     }
 }

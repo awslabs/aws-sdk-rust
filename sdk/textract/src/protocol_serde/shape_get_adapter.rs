@@ -160,6 +160,8 @@ pub(crate) fn de_get_adapter(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -193,7 +195,7 @@ pub(crate) fn de_get_adapter(
                     );
                 }
                 "FeatureTypes" => {
-                    builder = builder.set_feature_types(crate::protocol_serde::shape_feature_types::de_feature_types(tokens, _value)?);
+                    builder = builder.set_feature_types(crate::protocol_serde::shape_feature_types::de_feature_types(tokens, _value, depth + 1)?);
                 }
                 "AutoUpdate" => {
                     builder = builder.set_auto_update(
@@ -203,7 +205,7 @@ pub(crate) fn de_get_adapter(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

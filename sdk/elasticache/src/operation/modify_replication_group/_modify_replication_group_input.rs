@@ -117,6 +117,8 @@ pub struct ModifyReplicationGroupInput {
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Valkey or Redis OSS clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Valkey or Redis OSS clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
+    /// <p>Specifies the durability setting for the replication group. Use this parameter to change the durability mode of an existing replication group, for example from <code>sync</code> to <code>async</code> or vice versa. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub durability: ::std::option::Option<crate::types::Durability>,
 }
 impl ModifyReplicationGroupInput {
     /// <p>The identifier of the replication group to modify.</p>
@@ -302,6 +304,10 @@ impl ModifyReplicationGroupInput {
     pub fn cluster_mode(&self) -> ::std::option::Option<&crate::types::ClusterMode> {
         self.cluster_mode.as_ref()
     }
+    /// <p>Specifies the durability setting for the replication group. Use this parameter to change the durability mode of an existing replication group, for example from <code>sync</code> to <code>async</code> or vice versa. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn durability(&self) -> ::std::option::Option<&crate::types::Durability> {
+        self.durability.as_ref()
+    }
 }
 impl ModifyReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupInput`](crate::operation::modify_replication_group::ModifyReplicationGroupInput).
@@ -344,6 +350,7 @@ pub struct ModifyReplicationGroupInputBuilder {
     pub(crate) transit_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     pub(crate) cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
+    pub(crate) durability: ::std::option::Option<crate::types::Durability>,
 }
 impl ModifyReplicationGroupInputBuilder {
     /// <p>The identifier of the replication group to modify.</p>
@@ -959,6 +966,20 @@ impl ModifyReplicationGroupInputBuilder {
     pub fn get_cluster_mode(&self) -> &::std::option::Option<crate::types::ClusterMode> {
         &self.cluster_mode
     }
+    /// <p>Specifies the durability setting for the replication group. Use this parameter to change the durability mode of an existing replication group, for example from <code>sync</code> to <code>async</code> or vice versa. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn durability(mut self, input: crate::types::Durability) -> Self {
+        self.durability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the durability setting for the replication group. Use this parameter to change the durability mode of an existing replication group, for example from <code>sync</code> to <code>async</code> or vice versa. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn set_durability(mut self, input: ::std::option::Option<crate::types::Durability>) -> Self {
+        self.durability = input;
+        self
+    }
+    /// <p>Specifies the durability setting for the replication group. Use this parameter to change the durability mode of an existing replication group, for example from <code>sync</code> to <code>async</code> or vice versa. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
+    pub fn get_durability(&self) -> &::std::option::Option<crate::types::Durability> {
+        &self.durability
+    }
     /// Consumes the builder and constructs a [`ModifyReplicationGroupInput`](crate::operation::modify_replication_group::ModifyReplicationGroupInput).
     pub fn build(
         self,
@@ -997,6 +1018,7 @@ impl ModifyReplicationGroupInputBuilder {
             transit_encryption_enabled: self.transit_encryption_enabled,
             transit_encryption_mode: self.transit_encryption_mode,
             cluster_mode: self.cluster_mode,
+            durability: self.durability,
         })
     }
 }

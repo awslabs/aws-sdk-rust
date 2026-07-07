@@ -57,6 +57,8 @@ pub use crate::types::error::_invalid_subnet::InvalidSubnet;
 
 pub use crate::types::error::_invalid_vpc_network_state_fault::InvalidVpcNetworkStateFault;
 
+pub use crate::types::error::_network_type_not_supported_fault::NetworkTypeNotSupportedFault;
+
 pub use crate::types::error::_storage_quota_exceeded_fault::StorageQuotaExceededFault;
 
 pub use crate::types::error::_db_cluster_endpoint_already_exists_fault::DbClusterEndpointAlreadyExistsFault;
@@ -236,6 +238,8 @@ mod _invalid_subnet;
 mod _invalid_vpc_network_state_fault;
 
 mod _kms_key_not_accessible_fault;
+
+mod _network_type_not_supported_fault;
 
 mod _option_group_not_found_fault;
 

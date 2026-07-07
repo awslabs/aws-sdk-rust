@@ -3,23 +3,35 @@ pub fn ser_deployment_lifecycle_hook(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentLifecycleHook,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.hook_target_arn {
-        object.key("hookTargetArn").string(var_1.as_str());
+    if let Some(var_1) = &input.target_type {
+        object.key("targetType").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("roleArn").string(var_2.as_str());
+    if let Some(var_2) = &input.hook_target_arn {
+        object.key("hookTargetArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.lifecycle_stages {
-        let mut array_4 = object.key("lifecycleStages").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.role_arn {
+        object.key("roleArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.lifecycle_stages {
+        let mut array_5 = object.key("lifecycleStages").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.hook_details {
-        object.key("hookDetails").document(var_6);
+    if let Some(var_7) = &input.hook_details {
+        object.key("hookDetails").document(var_7);
+    }
+    if let Some(var_8) = &input.timeout_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("timeoutConfiguration").start_object();
+        crate::protocol_serde::shape_deployment_lifecycle_hook_timeout_configuration::ser_deployment_lifecycle_hook_timeout_configuration(
+            &mut object_9,
+            var_8,
+        )?;
+        object_9.finish();
     }
     Ok(())
 }
@@ -27,10 +39,16 @@ pub fn ser_deployment_lifecycle_hook(
 pub(crate) fn de_deployment_lifecycle_hook<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DeploymentLifecycleHook>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -40,6 +58,16 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "targetType" => {
+                            builder = builder.set_target_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::DeploymentLifecycleHookTargetType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
                         "hookTargetArn" => {
                             builder = builder.set_hook_target_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -57,12 +85,19 @@ where
                         "lifecycleStages" => {
                             builder = builder.set_lifecycle_stages(
                                 crate::protocol_serde::shape_deployment_lifecycle_hook_stage_list::de_deployment_lifecycle_hook_stage_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "hookDetails" => {
                             builder = builder.set_hook_details(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                        }
+                        "timeoutConfiguration" => {
+                            builder = builder.set_timeout_configuration(
+                                    crate::protocol_serde::shape_deployment_lifecycle_hook_timeout_configuration::de_deployment_lifecycle_hook_timeout_configuration(tokens, _value, depth + 1)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

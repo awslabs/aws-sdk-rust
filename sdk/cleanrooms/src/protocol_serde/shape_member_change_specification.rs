@@ -15,8 +15,20 @@ pub fn ser_member_change_specification(
         }
         array_1.finish();
     }
-    if let Some(var_3) = &input.display_name {
-        object.key("displayName").string(var_3.as_str());
+    if let Some(var_3) = &input.ml_member_abilities {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("mlMemberAbilities").start_object();
+        crate::protocol_serde::shape_ml_member_abilities::ser_ml_member_abilities(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.payment_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("paymentConfiguration").start_object();
+        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.display_name {
+        object.key("displayName").string(var_7.as_str());
     }
     Ok(())
 }
@@ -24,10 +36,16 @@ pub fn ser_member_change_specification(
 pub(crate) fn de_member_change_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MemberChangeSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,8 +63,23 @@ where
                             );
                         }
                         "memberAbilities" => {
-                            builder =
-                                builder.set_member_abilities(crate::protocol_serde::shape_member_abilities::de_member_abilities(tokens, _value)?);
+                            builder = builder.set_member_abilities(crate::protocol_serde::shape_member_abilities::de_member_abilities(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "mlMemberAbilities" => {
+                            builder = builder.set_ml_member_abilities(crate::protocol_serde::shape_ml_member_abilities::de_ml_member_abilities(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "paymentConfiguration" => {
+                            builder = builder.set_payment_configuration(
+                                crate::protocol_serde::shape_payment_configuration::de_payment_configuration(tokens, _value, depth + 1)?,
+                            );
                         }
                         "displayName" => {
                             builder = builder.set_display_name(

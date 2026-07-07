@@ -9,6 +9,8 @@ pub use crate::types::_error_object::ErrorObjectBuilder;
 
 pub use crate::types::_trace_header::TraceHeaderBuilder;
 
+pub use crate::types::_durable_config::DurableConfigBuilder;
+
 pub use crate::types::_destination_config::DestinationConfigBuilder;
 
 pub use crate::types::_capacity_provider_vpc_config::CapacityProviderVpcConfigBuilder;
@@ -18,6 +20,8 @@ pub use crate::types::_capacity_provider_permissions_config::CapacityProviderPer
 pub use crate::types::_instance_requirements::InstanceRequirementsBuilder;
 
 pub use crate::types::_capacity_provider_scaling_config::CapacityProviderScalingConfigBuilder;
+
+pub use crate::types::_propagate_tags::PropagateTagsBuilder;
 
 pub use crate::types::_capacity_provider::CapacityProviderBuilder;
 
@@ -29,19 +33,19 @@ pub use crate::types::_code_signing_config::CodeSigningConfigBuilder;
 
 pub use crate::types::_filter_criteria::FilterCriteriaBuilder;
 
+pub use crate::types::_event_source_mapping_metrics_config::EventSourceMappingMetricsConfigBuilder;
+
+pub use crate::types::_event_source_mapping_logging_config::EventSourceMappingLoggingConfigBuilder;
+
+pub use crate::types::_scaling_config::ScalingConfigBuilder;
+
 pub use crate::types::_self_managed_event_source::SelfManagedEventSourceBuilder;
 
 pub use crate::types::_amazon_managed_kafka_event_source_config::AmazonManagedKafkaEventSourceConfigBuilder;
 
 pub use crate::types::_self_managed_kafka_event_source_config::SelfManagedKafkaEventSourceConfigBuilder;
 
-pub use crate::types::_scaling_config::ScalingConfigBuilder;
-
 pub use crate::types::_document_db_event_source_config::DocumentDbEventSourceConfigBuilder;
-
-pub use crate::types::_event_source_mapping_metrics_config::EventSourceMappingMetricsConfigBuilder;
-
-pub use crate::types::_event_source_mapping_logging_config::EventSourceMappingLoggingConfigBuilder;
 
 pub use crate::types::_provisioned_poller_config::ProvisionedPollerConfigBuilder;
 
@@ -65,11 +69,9 @@ pub use crate::types::_snap_start::SnapStartBuilder;
 
 pub use crate::types::_logging_config::LoggingConfigBuilder;
 
-pub use crate::types::_capacity_provider_config::CapacityProviderConfigBuilder;
-
-pub use crate::types::_durable_config::DurableConfigBuilder;
-
 pub use crate::types::_tenancy_config::TenancyConfigBuilder;
+
+pub use crate::types::_capacity_provider_config::CapacityProviderConfigBuilder;
 
 pub use crate::types::_vpc_config_response::VpcConfigResponseBuilder;
 
@@ -135,13 +137,17 @@ pub use crate::types::_image_config_error::ImageConfigErrorBuilder;
 
 pub use crate::types::_runtime_version_error::RuntimeVersionErrorBuilder;
 
-pub use crate::types::_function_url_config::FunctionUrlConfigBuilder;
-
 pub use crate::types::_provisioned_concurrency_config_list_item::ProvisionedConcurrencyConfigListItemBuilder;
+
+pub use crate::types::_resolved_s3_object::ResolvedS3ObjectBuilder;
+
+pub use crate::types::_function_code_location_error::FunctionCodeLocationErrorBuilder;
 
 pub use crate::types::_invoke_response_stream_update::InvokeResponseStreamUpdateBuilder;
 
 pub use crate::types::_invoke_with_response_stream_complete_event::InvokeWithResponseStreamCompleteEventBuilder;
+
+pub use crate::types::_function_url_config::FunctionUrlConfigBuilder;
 
 pub use crate::types::_alias_configuration::AliasConfigurationBuilder;
 

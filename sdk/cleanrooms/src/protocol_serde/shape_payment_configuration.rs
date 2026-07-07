@@ -27,10 +27,16 @@ pub fn ser_payment_configuration(
 pub(crate) fn de_payment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PaymentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -42,16 +48,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "queryCompute" => {
                             builder = builder.set_query_compute(
-                                crate::protocol_serde::shape_query_compute_payment_config::de_query_compute_payment_config(tokens, _value)?,
+                                crate::protocol_serde::shape_query_compute_payment_config::de_query_compute_payment_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "machineLearning" => {
-                            builder =
-                                builder.set_machine_learning(crate::protocol_serde::shape_ml_payment_config::de_ml_payment_config(tokens, _value)?);
+                            builder = builder.set_machine_learning(crate::protocol_serde::shape_ml_payment_config::de_ml_payment_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "jobCompute" => {
                             builder = builder.set_job_compute(
-                                crate::protocol_serde::shape_job_compute_payment_config::de_job_compute_payment_config(tokens, _value)?,
+                                crate::protocol_serde::shape_job_compute_payment_config::de_job_compute_payment_config(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

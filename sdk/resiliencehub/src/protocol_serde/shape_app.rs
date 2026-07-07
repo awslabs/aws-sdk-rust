@@ -2,10 +2,16 @@
 pub(crate) fn de_app<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::App>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -83,7 +89,7 @@ where
                                 )?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "assessmentSchedule" => {
                             builder = builder.set_assessment_schedule(
@@ -93,12 +99,15 @@ where
                             );
                         }
                         "permissionModel" => {
-                            builder =
-                                builder.set_permission_model(crate::protocol_serde::shape_permission_model::de_permission_model(tokens, _value)?);
+                            builder = builder.set_permission_model(crate::protocol_serde::shape_permission_model::de_permission_model(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "eventSubscriptions" => {
                             builder = builder.set_event_subscriptions(
-                                crate::protocol_serde::shape_event_subscription_list::de_event_subscription_list(tokens, _value)?,
+                                crate::protocol_serde::shape_event_subscription_list::de_event_subscription_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "driftStatus" => {

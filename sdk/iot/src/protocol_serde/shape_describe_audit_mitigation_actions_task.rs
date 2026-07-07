@@ -123,6 +123,8 @@ pub(crate) fn de_describe_audit_mitigation_actions_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -130,12 +132,14 @@ pub(crate) fn de_describe_audit_mitigation_actions_task(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionsDefinition" => {
                     builder = builder.set_actions_definition(crate::protocol_serde::shape_mitigation_action_list::de_mitigation_action_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "auditCheckToActionsMapping" => {
                     builder = builder.set_audit_check_to_actions_mapping(
-                        crate::protocol_serde::shape_audit_check_to_actions_mapping::de_audit_check_to_actions_mapping(tokens, _value)?,
+                        crate::protocol_serde::shape_audit_check_to_actions_mapping::de_audit_check_to_actions_mapping(tokens, _value, depth + 1)?,
                     );
                 }
                 "endTime" => {
@@ -152,13 +156,19 @@ pub(crate) fn de_describe_audit_mitigation_actions_task(
                 }
                 "target" => {
                     builder = builder.set_target(
-                        crate::protocol_serde::shape_audit_mitigation_actions_task_target::de_audit_mitigation_actions_task_target(tokens, _value)?,
+                        crate::protocol_serde::shape_audit_mitigation_actions_task_target::de_audit_mitigation_actions_task_target(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "taskStatistics" => {
                     builder = builder.set_task_statistics(
                         crate::protocol_serde::shape_audit_mitigation_actions_task_statistics::de_audit_mitigation_actions_task_statistics(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

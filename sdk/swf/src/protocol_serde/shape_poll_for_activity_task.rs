@@ -110,6 +110,8 @@ pub(crate) fn de_poll_for_activity_task(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -137,10 +139,14 @@ pub(crate) fn de_poll_for_activity_task(
                     );
                 }
                 "workflowExecution" => {
-                    builder = builder.set_workflow_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(tokens, _value)?);
+                    builder = builder.set_workflow_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "activityType" => {
-                    builder = builder.set_activity_type(crate::protocol_serde::shape_activity_type::de_activity_type(tokens, _value)?);
+                    builder = builder.set_activity_type(crate::protocol_serde::shape_activity_type::de_activity_type(tokens, _value, depth + 1)?);
                 }
                 "input" => {
                     builder = builder.set_input(

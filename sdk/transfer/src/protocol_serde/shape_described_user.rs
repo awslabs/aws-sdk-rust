@@ -2,10 +2,16 @@
 pub(crate) fn de_described_user<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DescribedUser>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +37,7 @@ where
                         }
                         "HomeDirectoryMappings" => {
                             builder = builder.set_home_directory_mappings(
-                                crate::protocol_serde::shape_home_directory_mappings::de_home_directory_mappings(tokens, _value)?,
+                                crate::protocol_serde::shape_home_directory_mappings::de_home_directory_mappings(tokens, _value, depth + 1)?,
                             );
                         }
                         "HomeDirectoryType" => {
@@ -49,7 +55,8 @@ where
                             );
                         }
                         "PosixProfile" => {
-                            builder = builder.set_posix_profile(crate::protocol_serde::shape_posix_profile::de_posix_profile(tokens, _value)?);
+                            builder =
+                                builder.set_posix_profile(crate::protocol_serde::shape_posix_profile::de_posix_profile(tokens, _value, depth + 1)?);
                         }
                         "Role" => {
                             builder = builder.set_role(
@@ -59,10 +66,14 @@ where
                             );
                         }
                         "SshPublicKeys" => {
-                            builder = builder.set_ssh_public_keys(crate::protocol_serde::shape_ssh_public_keys::de_ssh_public_keys(tokens, _value)?);
+                            builder = builder.set_ssh_public_keys(crate::protocol_serde::shape_ssh_public_keys::de_ssh_public_keys(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "UserName" => {
                             builder = builder.set_user_name(

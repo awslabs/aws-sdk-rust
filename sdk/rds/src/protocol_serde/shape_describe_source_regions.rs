@@ -49,6 +49,8 @@ pub fn de_describe_source_regions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeSourceRegionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeSourceRegionsResponse got {start_el:?}"
@@ -79,7 +81,7 @@ pub fn de_describe_source_regions(
             s if s.matches("SourceRegions") /* SourceRegions com.amazonaws.rds.synthetic#DescribeSourceRegionsOutput$SourceRegions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_source_region_list::de_source_region_list(&mut tag)
+                        crate::protocol_serde::shape_source_region_list::de_source_region_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

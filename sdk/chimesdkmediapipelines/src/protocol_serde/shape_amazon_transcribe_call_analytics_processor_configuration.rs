@@ -59,6 +59,7 @@ pub fn ser_amazon_transcribe_call_analytics_processor_configuration(
 pub(crate) fn de_amazon_transcribe_call_analytics_processor_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -66,6 +67,11 @@ pub(crate) fn de_amazon_transcribe_call_analytics_processor_configuration<'a, I>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -147,12 +153,16 @@ where
                         }
                         "PostCallAnalyticsSettings" => {
                             builder = builder.set_post_call_analytics_settings(
-                                crate::protocol_serde::shape_post_call_analytics_settings::de_post_call_analytics_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_post_call_analytics_settings::de_post_call_analytics_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CallAnalyticsStreamCategories" => {
                             builder = builder.set_call_analytics_stream_categories(
-                                crate::protocol_serde::shape_category_name_list::de_category_name_list(tokens, _value)?,
+                                crate::protocol_serde::shape_category_name_list::de_category_name_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

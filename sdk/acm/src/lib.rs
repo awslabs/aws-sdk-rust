@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-acm = "1.102.0"
+//! aws-sdk-acm = "1.107.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -203,6 +203,10 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
+
 mod observability_feature;
 
 pub(crate) mod protocol_serde;
@@ -215,14 +219,14 @@ mod endpoint_lib;
 
 mod lens;
 
+mod serde_util;
+
 /// Supporting types for waiters.
 ///
 /// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
 pub mod waiters;
 
 mod json_errors;
-
-mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

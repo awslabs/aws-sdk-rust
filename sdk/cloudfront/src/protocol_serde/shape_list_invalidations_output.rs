@@ -20,5 +20,7 @@ pub fn de_invalidation_list(inp: &[u8]) -> std::result::Result<crate::types::Inv
             "invalid root, expected InvalidationList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_invalidation_list::de_invalidation_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_invalidation_list::de_invalidation_list(&mut decoder, depth + 1)
 }

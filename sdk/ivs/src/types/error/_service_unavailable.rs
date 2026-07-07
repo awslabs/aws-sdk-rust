@@ -20,7 +20,7 @@ pub struct ServiceUnavailable {
     pub x_frame_options: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub x_amzn_error_type: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The service is temporarily unavailable.</p>
     pub exception_message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
@@ -59,7 +59,7 @@ impl ServiceUnavailable {
     pub fn x_amzn_error_type(&self) -> ::std::option::Option<&str> {
         self.x_amzn_error_type.as_deref()
     }
-    /// <p></p>
+    /// <p>The service is temporarily unavailable.</p>
     pub fn exception_message(&self) -> ::std::option::Option<&str> {
         self.exception_message.as_deref()
     }
@@ -229,17 +229,17 @@ impl ServiceUnavailableBuilder {
     pub fn get_x_amzn_error_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.x_amzn_error_type
     }
-    /// <p></p>
+    /// <p>The service is temporarily unavailable.</p>
     pub fn exception_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exception_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The service is temporarily unavailable.</p>
     pub fn set_exception_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exception_message = input;
         self
     }
-    /// <p></p>
+    /// <p>The service is temporarily unavailable.</p>
     pub fn get_exception_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.exception_message
     }

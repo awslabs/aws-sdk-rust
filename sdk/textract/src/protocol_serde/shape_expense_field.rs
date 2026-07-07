@@ -2,10 +2,16 @@
 pub(crate) fn de_expense_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ExpenseField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,15 +22,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Type" => {
-                            builder = builder.set_type(crate::protocol_serde::shape_expense_type::de_expense_type(tokens, _value)?);
+                            builder = builder.set_type(crate::protocol_serde::shape_expense_type::de_expense_type(tokens, _value, depth + 1)?);
                         }
                         "LabelDetection" => {
-                            builder =
-                                builder.set_label_detection(crate::protocol_serde::shape_expense_detection::de_expense_detection(tokens, _value)?);
+                            builder = builder.set_label_detection(crate::protocol_serde::shape_expense_detection::de_expense_detection(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ValueDetection" => {
-                            builder =
-                                builder.set_value_detection(crate::protocol_serde::shape_expense_detection::de_expense_detection(tokens, _value)?);
+                            builder = builder.set_value_detection(crate::protocol_serde::shape_expense_detection::de_expense_detection(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "PageNumber" => {
                             builder = builder.set_page_number(
@@ -34,11 +46,15 @@ where
                             );
                         }
                         "Currency" => {
-                            builder = builder.set_currency(crate::protocol_serde::shape_expense_currency::de_expense_currency(tokens, _value)?);
+                            builder = builder.set_currency(crate::protocol_serde::shape_expense_currency::de_expense_currency(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "GroupProperties" => {
                             builder = builder.set_group_properties(
-                                crate::protocol_serde::shape_expense_group_property_list::de_expense_group_property_list(tokens, _value)?,
+                                crate::protocol_serde::shape_expense_group_property_list::de_expense_group_property_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

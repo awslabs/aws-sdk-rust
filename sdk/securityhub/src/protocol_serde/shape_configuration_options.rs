@@ -2,10 +2,16 @@
 pub(crate) fn de_configuration_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConfigurationOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,48 +37,60 @@ where
                     }
                     variant = match key.as_ref() {
                         "Integer" => Some(crate::types::ConfigurationOptions::Integer(
-                            crate::protocol_serde::shape_integer_configuration_options::de_integer_configuration_options(tokens, _value)?
+                            crate::protocol_serde::shape_integer_configuration_options::de_integer_configuration_options(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Integer' cannot be null")
                                 })?,
                         )),
                         "IntegerList" => Some(crate::types::ConfigurationOptions::IntegerList(
-                            crate::protocol_serde::shape_integer_list_configuration_options::de_integer_list_configuration_options(tokens, _value)?
-                                .ok_or_else(|| {
+                            crate::protocol_serde::shape_integer_list_configuration_options::de_integer_list_configuration_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IntegerList' cannot be null")
                             })?,
                         )),
                         "Double" => Some(crate::types::ConfigurationOptions::Double(
-                            crate::protocol_serde::shape_double_configuration_options::de_double_configuration_options(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Double' cannot be null"),
-                            )?,
-                        )),
-                        "String" => Some(crate::types::ConfigurationOptions::String(
-                            crate::protocol_serde::shape_string_configuration_options::de_string_configuration_options(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'String' cannot be null"),
-                            )?,
-                        )),
-                        "StringList" => Some(crate::types::ConfigurationOptions::StringList(
-                            crate::protocol_serde::shape_string_list_configuration_options::de_string_list_configuration_options(tokens, _value)?
+                            crate::protocol_serde::shape_double_configuration_options::de_double_configuration_options(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringList' cannot be null")
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Double' cannot be null")
                                 })?,
                         )),
+                        "String" => Some(crate::types::ConfigurationOptions::String(
+                            crate::protocol_serde::shape_string_configuration_options::de_string_configuration_options(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'String' cannot be null")
+                                })?,
+                        )),
+                        "StringList" => Some(crate::types::ConfigurationOptions::StringList(
+                            crate::protocol_serde::shape_string_list_configuration_options::de_string_list_configuration_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringList' cannot be null")
+                            })?,
+                        )),
                         "Boolean" => Some(crate::types::ConfigurationOptions::Boolean(
-                            crate::protocol_serde::shape_boolean_configuration_options::de_boolean_configuration_options(tokens, _value)?
+                            crate::protocol_serde::shape_boolean_configuration_options::de_boolean_configuration_options(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Boolean' cannot be null")
                                 })?,
                         )),
                         "Enum" => Some(crate::types::ConfigurationOptions::Enum(
-                            crate::protocol_serde::shape_enum_configuration_options::de_enum_configuration_options(tokens, _value)?
+                            crate::protocol_serde::shape_enum_configuration_options::de_enum_configuration_options(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Enum' cannot be null"))?,
                         )),
                         "EnumList" => Some(crate::types::ConfigurationOptions::EnumList(
-                            crate::protocol_serde::shape_enum_list_configuration_options::de_enum_list_configuration_options(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EnumList' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_enum_list_configuration_options::de_enum_list_configuration_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EnumList' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

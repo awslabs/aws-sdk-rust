@@ -42,6 +42,8 @@ pub fn de_describe_ipv6_pools(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeIpv6PoolsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeIpv6PoolsResponse got {start_el:?}"
@@ -52,7 +54,7 @@ pub fn de_describe_ipv6_pools(
             s if s.matches("ipv6PoolSet") /* Ipv6Pools com.amazonaws.ec2.synthetic#DescribeIpv6PoolsOutput$Ipv6Pools */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_ipv6_pool_set::de_ipv6_pool_set(&mut tag)
+                        crate::protocol_serde::shape_ipv6_pool_set::de_ipv6_pool_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

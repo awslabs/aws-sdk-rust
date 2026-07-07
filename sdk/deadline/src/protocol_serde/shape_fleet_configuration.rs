@@ -28,10 +28,16 @@ pub fn ser_fleet_configuration(
 pub(crate) fn de_fleet_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FleetConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -58,7 +64,9 @@ where
                     variant = match key.as_ref() {
                         "customerManaged" => Some(crate::types::FleetConfiguration::CustomerManaged(
                             crate::protocol_serde::shape_customer_managed_fleet_configuration::de_customer_managed_fleet_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customerManaged' cannot be null")
@@ -66,7 +74,9 @@ where
                         )),
                         "serviceManagedEc2" => Some(crate::types::FleetConfiguration::ServiceManagedEc2(
                             crate::protocol_serde::shape_service_managed_ec2_fleet_configuration::de_service_managed_ec2_fleet_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'serviceManagedEc2' cannot be null")

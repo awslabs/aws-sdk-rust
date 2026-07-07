@@ -2,10 +2,16 @@
 pub(crate) fn de_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Finding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,6 +44,20 @@ where
                         }
                         "pentestJobId" => {
                             builder = builder.set_pentest_job_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "codeReviewId" => {
+                            builder = builder.set_code_review_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "codeReviewJobId" => {
+                            builder = builder.set_code_review_job_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -106,6 +126,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "validationStatus" => {
+                            builder = builder.set_validation_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ValidationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "attackScript" => {
                             builder = builder.set_attack_script(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -115,11 +142,39 @@ where
                         }
                         "codeRemediationTask" => {
                             builder = builder.set_code_remediation_task(
-                                crate::protocol_serde::shape_code_remediation_task::de_code_remediation_task(tokens, _value)?,
+                                crate::protocol_serde::shape_code_remediation_task::de_code_remediation_task(tokens, _value, depth + 1)?,
                             );
                         }
                         "lastUpdatedBy" => {
                             builder = builder.set_last_updated_by(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "customerNote" => {
+                            builder = builder.set_customer_note(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "codeLocations" => {
+                            builder = builder.set_code_locations(crate::protocol_serde::shape_code_location_list::de_code_location_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "verificationScript" => {
+                            builder = builder.set_verification_script(crate::protocol_serde::shape_verification_script::de_verification_script(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "alignmentRationale" => {
+                            builder = builder.set_alignment_rationale(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

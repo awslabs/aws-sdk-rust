@@ -54,10 +54,16 @@ pub fn ser_bucket_cors_rule(
 pub(crate) fn de_bucket_cors_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BucketCorsRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -76,22 +82,22 @@ where
                         }
                         "allowedMethods" => {
                             builder = builder.set_allowed_methods(
-                                crate::protocol_serde::shape_bucket_cors_allowed_methods::de_bucket_cors_allowed_methods(tokens, _value)?,
+                                crate::protocol_serde::shape_bucket_cors_allowed_methods::de_bucket_cors_allowed_methods(tokens, _value, depth + 1)?,
                             );
                         }
                         "allowedOrigins" => {
                             builder = builder.set_allowed_origins(
-                                crate::protocol_serde::shape_bucket_cors_allowed_origins::de_bucket_cors_allowed_origins(tokens, _value)?,
+                                crate::protocol_serde::shape_bucket_cors_allowed_origins::de_bucket_cors_allowed_origins(tokens, _value, depth + 1)?,
                             );
                         }
                         "allowedHeaders" => {
                             builder = builder.set_allowed_headers(
-                                crate::protocol_serde::shape_bucket_cors_allowed_headers::de_bucket_cors_allowed_headers(tokens, _value)?,
+                                crate::protocol_serde::shape_bucket_cors_allowed_headers::de_bucket_cors_allowed_headers(tokens, _value, depth + 1)?,
                             );
                         }
                         "exposeHeaders" => {
                             builder = builder.set_expose_headers(
-                                crate::protocol_serde::shape_bucket_cors_expose_headers::de_bucket_cors_expose_headers(tokens, _value)?,
+                                crate::protocol_serde::shape_bucket_cors_expose_headers::de_bucket_cors_expose_headers(tokens, _value, depth + 1)?,
                             );
                         }
                         "maxAgeSeconds" => {

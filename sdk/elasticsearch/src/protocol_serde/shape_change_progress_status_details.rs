@@ -2,10 +2,16 @@
 pub(crate) fn de_change_progress_status_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ChangeProgressStatusDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,10 +42,15 @@ where
                             );
                         }
                         "PendingProperties" => {
-                            builder = builder.set_pending_properties(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_pending_properties(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "CompletedProperties" => {
-                            builder = builder.set_completed_properties(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_completed_properties(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "TotalNumberOfStages" => {
                             builder = builder.set_total_number_of_stages(
@@ -50,7 +61,7 @@ where
                         }
                         "ChangeProgressStages" => {
                             builder = builder.set_change_progress_stages(
-                                crate::protocol_serde::shape_change_progress_stage_list::de_change_progress_stage_list(tokens, _value)?,
+                                crate::protocol_serde::shape_change_progress_stage_list::de_change_progress_stage_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "ConfigChangeStatus" => {

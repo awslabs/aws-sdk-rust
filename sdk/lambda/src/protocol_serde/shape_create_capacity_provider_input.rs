@@ -27,21 +27,27 @@ pub fn ser_create_capacity_provider_input_input(
         crate::protocol_serde::shape_capacity_provider_permissions_config::ser_capacity_provider_permissions_config(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_9) = &input.propagate_tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Tags").start_object();
-        for (key_11, value_12) in var_9 {
-            {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
-            }
-        }
+        let mut object_10 = object.key("PropagateTags").start_object();
+        crate::protocol_serde::shape_propagate_tags::ser_propagate_tags(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_13) = &input.vpc_config {
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_capacity_provider_vpc_config::ser_capacity_provider_vpc_config(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_12 = object.key("Tags").start_object();
+        for (key_13, value_14) in var_11 {
+            {
+                object_12.key(key_13.as_str()).string(value_14.as_str());
+            }
+        }
+        object_12.finish();
+    }
+    if let Some(var_15) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_capacity_provider_vpc_config::ser_capacity_provider_vpc_config(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

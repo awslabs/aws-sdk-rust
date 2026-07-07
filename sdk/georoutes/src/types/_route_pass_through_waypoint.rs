@@ -6,7 +6,7 @@
 pub struct RoutePassThroughWaypoint {
     /// <p>Offset in the leg geometry corresponding to the start of this step.</p>
     pub geometry_offset: ::std::option::Option<i32>,
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the pass-through waypoint.</p>
     pub place: ::std::option::Option<crate::types::RoutePassThroughPlace>,
 }
 impl RoutePassThroughWaypoint {
@@ -14,7 +14,7 @@ impl RoutePassThroughWaypoint {
     pub fn geometry_offset(&self) -> ::std::option::Option<i32> {
         self.geometry_offset
     }
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the pass-through waypoint.</p>
     pub fn place(&self) -> ::std::option::Option<&crate::types::RoutePassThroughPlace> {
         self.place.as_ref()
     }
@@ -48,18 +48,18 @@ impl RoutePassThroughWaypointBuilder {
     pub fn get_geometry_offset(&self) -> &::std::option::Option<i32> {
         &self.geometry_offset
     }
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the pass-through waypoint.</p>
     /// This field is required.
     pub fn place(mut self, input: crate::types::RoutePassThroughPlace) -> Self {
         self.place = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the pass-through waypoint.</p>
     pub fn set_place(mut self, input: ::std::option::Option<crate::types::RoutePassThroughPlace>) -> Self {
         self.place = input;
         self
     }
-    /// <p>The place details.</p>
+    /// <p>Place details corresponding to the pass-through waypoint.</p>
     pub fn get_place(&self) -> &::std::option::Option<crate::types::RoutePassThroughPlace> {
         &self.place
     }

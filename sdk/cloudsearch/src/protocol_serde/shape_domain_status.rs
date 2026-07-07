@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_domain_status(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DomainStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DomainStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -79,7 +83,7 @@ pub fn de_domain_status(
             s if s.matches("DocService") /* DocService com.amazonaws.cloudsearch#DomainStatus$DocService */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_service_endpoint::de_service_endpoint(&mut tag)
+                        crate::protocol_serde::shape_service_endpoint::de_service_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -89,7 +93,7 @@ pub fn de_domain_status(
             s if s.matches("SearchService") /* SearchService com.amazonaws.cloudsearch#DomainStatus$SearchService */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_service_endpoint::de_service_endpoint(&mut tag)
+                        crate::protocol_serde::shape_service_endpoint::de_service_endpoint(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -172,7 +176,7 @@ pub fn de_domain_status(
             s if s.matches("Limits") /* Limits com.amazonaws.cloudsearch#DomainStatus$Limits */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_limits::de_limits(&mut tag)
+                        crate::protocol_serde::shape_limits::de_limits(&mut tag, depth + 1)
                         ?
                     )
                 ;

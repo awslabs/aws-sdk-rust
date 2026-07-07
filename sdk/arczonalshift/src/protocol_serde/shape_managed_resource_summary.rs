@@ -2,10 +2,16 @@
 pub(crate) fn de_managed_resource_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedResourceSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,54 +20,65 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "arn" => {
-                            builder = builder.set_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "arn" => {
+                                builder = builder.set_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "availabilityZones" => {
+                                builder = builder.set_availability_zones(crate::protocol_serde::shape_availability_zones::de_availability_zones(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "appliedWeights" => {
+                                builder = builder.set_applied_weights(crate::protocol_serde::shape_applied_weights::de_applied_weights(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "zonalShifts" => {
+                                builder = builder.set_zonal_shifts(
+                                    crate::protocol_serde::shape_zonal_shifts_in_resource::de_zonal_shifts_in_resource(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "autoshifts" => {
+                                builder = builder.set_autoshifts(crate::protocol_serde::shape_autoshifts_in_resource::de_autoshifts_in_resource(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "zonalAutoshiftStatus" => {
+                                builder = builder.set_zonal_autoshift_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ZonalAutoshiftStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "practiceRunStatus" => {
+                                builder = builder.set_practice_run_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ZonalAutoshiftStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "availabilityZones" => {
-                            builder = builder
-                                .set_availability_zones(crate::protocol_serde::shape_availability_zones::de_availability_zones(tokens, _value)?);
-                        }
-                        "appliedWeights" => {
-                            builder = builder.set_applied_weights(crate::protocol_serde::shape_applied_weights::de_applied_weights(tokens, _value)?);
-                        }
-                        "zonalShifts" => {
-                            builder = builder.set_zonal_shifts(crate::protocol_serde::shape_zonal_shifts_in_resource::de_zonal_shifts_in_resource(
-                                tokens, _value,
-                            )?);
-                        }
-                        "autoshifts" => {
-                            builder = builder.set_autoshifts(crate::protocol_serde::shape_autoshifts_in_resource::de_autoshifts_in_resource(
-                                tokens, _value,
-                            )?);
-                        }
-                        "zonalAutoshiftStatus" => {
-                            builder = builder.set_zonal_autoshift_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ZonalAutoshiftStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "practiceRunStatus" => {
-                            builder = builder.set_practice_run_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ZonalAutoshiftStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

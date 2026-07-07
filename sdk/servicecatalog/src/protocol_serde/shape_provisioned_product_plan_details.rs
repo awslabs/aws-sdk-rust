@@ -2,10 +2,16 @@
 pub(crate) fn de_provisioned_product_plan_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ProvisionedProductPlanDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -91,16 +97,23 @@ where
                             )?);
                         }
                         "NotificationArns" => {
-                            builder =
-                                builder.set_notification_arns(crate::protocol_serde::shape_notification_arns::de_notification_arns(tokens, _value)?);
+                            builder = builder.set_notification_arns(crate::protocol_serde::shape_notification_arns::de_notification_arns(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ProvisioningParameters" => {
                             builder = builder.set_provisioning_parameters(
-                                crate::protocol_serde::shape_update_provisioning_parameters::de_update_provisioning_parameters(tokens, _value)?,
+                                crate::protocol_serde::shape_update_provisioning_parameters::de_update_provisioning_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "StatusMessage" => {
                             builder = builder.set_status_message(

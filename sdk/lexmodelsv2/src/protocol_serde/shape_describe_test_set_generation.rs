@@ -143,6 +143,8 @@ pub(crate) fn de_describe_test_set_generation(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,11 +164,15 @@ pub(crate) fn de_describe_test_set_generation(
                     );
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "generationDataSource" => {
                     builder = builder.set_generation_data_source(
-                        crate::protocol_serde::shape_test_set_generation_data_source::de_test_set_generation_data_source(tokens, _value)?,
+                        crate::protocol_serde::shape_test_set_generation_data_source::de_test_set_generation_data_source(tokens, _value, depth + 1)?,
                     );
                 }
                 "lastUpdatedDateTime" => {
@@ -184,7 +190,9 @@ pub(crate) fn de_describe_test_set_generation(
                 }
                 "storageLocation" => {
                     builder = builder.set_storage_location(crate::protocol_serde::shape_test_set_storage_location::de_test_set_storage_location(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "testSetGenerationId" => {

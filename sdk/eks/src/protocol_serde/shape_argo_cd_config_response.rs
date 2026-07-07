@@ -2,10 +2,16 @@
 pub(crate) fn de_argo_cd_config_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ArgoCdConfigResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,18 +30,24 @@ where
                         }
                         "awsIdc" => {
                             builder = builder.set_aws_idc(
-                                crate::protocol_serde::shape_argo_cd_aws_idc_config_response::de_argo_cd_aws_idc_config_response(tokens, _value)?,
+                                crate::protocol_serde::shape_argo_cd_aws_idc_config_response::de_argo_cd_aws_idc_config_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "rbacRoleMappings" => {
                             builder = builder.set_rbac_role_mappings(
-                                crate::protocol_serde::shape_argo_cd_role_mapping_list::de_argo_cd_role_mapping_list(tokens, _value)?,
+                                crate::protocol_serde::shape_argo_cd_role_mapping_list::de_argo_cd_role_mapping_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "networkAccess" => {
                             builder = builder.set_network_access(
                                 crate::protocol_serde::shape_argo_cd_network_access_config_response::de_argo_cd_network_access_config_response(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

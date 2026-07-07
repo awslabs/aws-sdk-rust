@@ -365,6 +365,8 @@ pub use crate::types::_ecs_service_projected_utilization_metric::EcsServiceProje
 
 pub use crate::types::_container_recommendation::ContainerRecommendation;
 
+pub use crate::types::_idle_dimension::IdleDimension;
+
 pub use crate::types::_lambda_function_memory_projected_metric::LambdaFunctionMemoryProjectedMetric;
 
 pub use crate::types::_lambda_estimated_monthly_savings::LambdaEstimatedMonthlySavings;
@@ -536,6 +538,8 @@ mod _gpu;
 mod _gpu_info;
 
 mod _idle;
+
+mod _idle_dimension;
 
 mod _idle_estimated_monthly_savings;
 

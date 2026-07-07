@@ -165,6 +165,8 @@ pub(crate) fn de_create_container_service_registry_login(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -172,7 +174,11 @@ pub(crate) fn de_create_container_service_registry_login(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "registryLogin" => {
                     builder = builder.set_registry_login(
-                        crate::protocol_serde::shape_container_service_registry_login::de_container_service_registry_login(tokens, _value)?,
+                        crate::protocol_serde::shape_container_service_registry_login::de_container_service_registry_login(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

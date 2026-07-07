@@ -77,6 +77,8 @@ pub fn de_describe_global_clusters(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeGlobalClustersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeGlobalClustersResponse got {start_el:?}"
@@ -107,7 +109,7 @@ pub fn de_describe_global_clusters(
             s if s.matches("GlobalClusters") /* GlobalClusters com.amazonaws.docdb.synthetic#DescribeGlobalClustersOutput$GlobalClusters */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_global_cluster_list::de_global_cluster_list(&mut tag)
+                        crate::protocol_serde::shape_global_cluster_list::de_global_cluster_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

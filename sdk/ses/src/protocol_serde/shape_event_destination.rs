@@ -46,7 +46,11 @@ pub fn ser_event_destination(
 #[allow(clippy::needless_question_mark)]
 pub fn de_event_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EventDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -82,7 +86,7 @@ pub fn de_event_destination(
             s if s.matches("MatchingEventTypes") /* MatchingEventTypes com.amazonaws.ses#EventDestination$MatchingEventTypes */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_event_types::de_event_types(&mut tag)
+                        crate::protocol_serde::shape_event_types::de_event_types(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -92,7 +96,7 @@ pub fn de_event_destination(
             s if s.matches("KinesisFirehoseDestination") /* KinesisFirehoseDestination com.amazonaws.ses#EventDestination$KinesisFirehoseDestination */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_kinesis_firehose_destination::de_kinesis_firehose_destination(&mut tag)
+                        crate::protocol_serde::shape_kinesis_firehose_destination::de_kinesis_firehose_destination(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -102,7 +106,7 @@ pub fn de_event_destination(
             s if s.matches("CloudWatchDestination") /* CloudWatchDestination com.amazonaws.ses#EventDestination$CloudWatchDestination */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_cloud_watch_destination::de_cloud_watch_destination(&mut tag)
+                        crate::protocol_serde::shape_cloud_watch_destination::de_cloud_watch_destination(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -112,7 +116,7 @@ pub fn de_event_destination(
             s if s.matches("SNSDestination") /* SNSDestination com.amazonaws.ses#EventDestination$SNSDestination */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_sns_destination::de_sns_destination(&mut tag)
+                        crate::protocol_serde::shape_sns_destination::de_sns_destination(&mut tag, depth + 1)
                         ?
                     )
                 ;

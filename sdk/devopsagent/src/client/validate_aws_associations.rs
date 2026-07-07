@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ValidateAwsAssociations`](crate::operation::validate_aws_associations::builders::ValidateAwsAssociationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::validate_aws_associations::builders::ValidateAwsAssociationsFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::validate_aws_associations::builders::ValidateAwsAssociationsFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier of the AgentSpace<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::validate_aws_associations::builders::ValidateAwsAssociationsFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::validate_aws_associations::builders::ValidateAwsAssociationsFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
     /// - On success, responds with [`ValidateAwsAssociationsOutput`](crate::operation::validate_aws_associations::ValidateAwsAssociationsOutput)
     /// - On failure, responds with [`SdkError<ValidateAwsAssociationsError>`](crate::operation::validate_aws_associations::ValidateAwsAssociationsError)
     pub fn validate_aws_associations(&self) -> crate::operation::validate_aws_associations::builders::ValidateAwsAssociationsFluentBuilder {

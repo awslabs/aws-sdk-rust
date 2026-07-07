@@ -2,6 +2,7 @@
 pub(crate) fn de_external_workflow_execution_signaled_event_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<
     Option<crate::types::ExternalWorkflowExecutionSignaledEventAttributes>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -9,6 +10,11 @@ pub(crate) fn de_external_workflow_execution_signaled_event_attributes<'a, I>(
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,8 +25,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "workflowExecution" => {
-                            builder = builder
-                                .set_workflow_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(tokens, _value)?);
+                            builder = builder.set_workflow_execution(crate::protocol_serde::shape_workflow_execution::de_workflow_execution(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "initiatedEventId" => {
                             builder = builder.set_initiated_event_id(

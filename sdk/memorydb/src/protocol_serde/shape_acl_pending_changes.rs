@@ -2,10 +2,16 @@
 pub(crate) fn de_acl_pending_changes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AclPendingChanges>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,11 +22,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UserNamesToRemove" => {
-                            builder =
-                                builder.set_user_names_to_remove(crate::protocol_serde::shape_user_name_list::de_user_name_list(tokens, _value)?);
+                            builder = builder.set_user_names_to_remove(crate::protocol_serde::shape_user_name_list::de_user_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "UserNamesToAdd" => {
-                            builder = builder.set_user_names_to_add(crate::protocol_serde::shape_user_name_list::de_user_name_list(tokens, _value)?);
+                            builder = builder.set_user_names_to_add(crate::protocol_serde::shape_user_name_list::de_user_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

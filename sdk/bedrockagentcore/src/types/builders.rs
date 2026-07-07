@@ -11,6 +11,18 @@ pub use crate::types::_browser_session_stream::BrowserSessionStreamBuilder;
 
 pub use crate::types::_proxy_configuration::ProxyConfigurationBuilder;
 
+pub use crate::types::_gateway_filter::GatewayFilterBuilder;
+
+pub use crate::types::_ab_test_results::AbTestResultsBuilder;
+
+pub use crate::types::_evaluation_job_results::EvaluationJobResultsBuilder;
+
+pub use crate::types::_failure_analysis_result_content::FailureAnalysisResultContentBuilder;
+
+pub use crate::types::_user_intent_clustering_result_content::UserIntentClusteringResultContentBuilder;
+
+pub use crate::types::_execution_summary_clustering_result_content::ExecutionSummaryClusteringResultContentBuilder;
+
 pub use crate::types::_branch::BranchBuilder;
 
 pub use crate::types::_event::EventBuilder;
@@ -27,7 +39,23 @@ pub use crate::types::_search_criteria::SearchCriteriaBuilder;
 
 pub use crate::types::_extraction_job::ExtractionJobBuilder;
 
+pub use crate::types::_payment_instrument::PaymentInstrumentBuilder;
+
+pub use crate::types::_token_balance::TokenBalanceBuilder;
+
+pub use crate::types::_session_limits::SessionLimitsBuilder;
+
+pub use crate::types::_payment_session::PaymentSessionBuilder;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
+
+pub use crate::types::_coinbase_cdp_token_request_input::CoinbaseCdpTokenRequestInputBuilder;
+
+pub use crate::types::_stripe_privy_token_request_input::StripePrivyTokenRequestInputBuilder;
+
+pub use crate::types::_coinbase_cdp_token_response_output::CoinbaseCdpTokenResponseOutputBuilder;
+
+pub use crate::types::_stripe_privy_token_response_output::StripePrivyTokenResponseOutputBuilder;
 
 pub use crate::types::_code_interpreter_result::CodeInterpreterResultBuilder;
 
@@ -38,6 +66,8 @@ pub use crate::types::_harness_bedrock_model_config::HarnessBedrockModelConfigBu
 pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfigBuilder;
 
 pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfigBuilder;
+
+pub use crate::types::_harness_lite_llm_model_config::HarnessLiteLlmModelConfigBuilder;
 
 pub use crate::types::_harness_tool::HarnessToolBuilder;
 
@@ -105,9 +135,35 @@ pub use crate::types::_automation_stream_update::AutomationStreamUpdateBuilder;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummaryBuilder;
 
+pub use crate::types::_variant::VariantBuilder;
+
 pub use crate::types::_evaluation_reference_input::EvaluationReferenceInputBuilder;
 
 pub use crate::types::_evaluation_result_content::EvaluationResultContentBuilder;
+
+pub use crate::types::_evaluator::EvaluatorBuilder;
+
+pub use crate::types::_insight::InsightBuilder;
+
+pub use crate::types::_cloud_watch_logs_source::CloudWatchLogsSourceBuilder;
+
+pub use crate::types::_online_evaluation_config_source::OnlineEvaluationConfigSourceBuilder;
+
+pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfigBuilder;
+
+pub use crate::types::_system_prompt_recommendation_config::SystemPromptRecommendationConfigBuilder;
+
+pub use crate::types::_tool_description_recommendation_config::ToolDescriptionRecommendationConfigBuilder;
+
+pub use crate::types::_system_prompt_recommendation_result::SystemPromptRecommendationResultBuilder;
+
+pub use crate::types::_tool_description_recommendation_result::ToolDescriptionRecommendationResultBuilder;
+
+pub use crate::types::_ab_test_summary::AbTestSummaryBuilder;
+
+pub use crate::types::_batch_evaluation_summary::BatchEvaluationSummaryBuilder;
+
+pub use crate::types::_recommendation_summary::RecommendationSummaryBuilder;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInputBuilder;
 
@@ -123,15 +179,37 @@ pub use crate::types::_branch_filter::BranchFilterBuilder;
 
 pub use crate::types::_extraction_job_metadata::ExtractionJobMetadataBuilder;
 
+pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpressionBuilder;
+
 pub use crate::types::_memory_record_summary::MemoryRecordSummaryBuilder;
 
 pub use crate::types::_session_summary::SessionSummaryBuilder;
+
+pub use crate::types::_payment_instrument_summary::PaymentInstrumentSummaryBuilder;
+
+pub use crate::types::_embedded_crypto_wallet::EmbeddedCryptoWalletBuilder;
+
+pub use crate::types::_payment_session_summary::PaymentSessionSummaryBuilder;
+
+pub use crate::types::_amount::AmountBuilder;
+
+pub use crate::types::_available_limits::AvailableLimitsBuilder;
+
+pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInputBuilder;
+
+pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutputBuilder;
 
 pub use crate::types::_registry_record_summary::RegistryRecordSummaryBuilder;
 
 pub use crate::types::_input_content_block::InputContentBlockBuilder;
 
 pub use crate::types::_tool_result_structured_content::ToolResultStructuredContentBuilder;
+
+pub use crate::types::_harness_skill_s3_source::HarnessSkillS3SourceBuilder;
+
+pub use crate::types::_harness_skill_git_source::HarnessSkillGitSourceBuilder;
+
+pub use crate::types::_harness_skill_aws_skills_source::HarnessSkillAwsSkillsSourceBuilder;
 
 pub use crate::types::_harness_token_usage::HarnessTokenUsageBuilder;
 
@@ -143,15 +221,37 @@ pub use crate::types::_content_delta_event::ContentDeltaEventBuilder;
 
 pub use crate::types::_content_stop_event::ContentStopEventBuilder;
 
+pub use crate::types::_variant_configuration::VariantConfigurationBuilder;
+
+pub use crate::types::_per_variant_online_evaluation_config::PerVariantOnlineEvaluationConfigBuilder;
+
 pub use crate::types::_evaluation_expected_trajectory::EvaluationExpectedTrajectoryBuilder;
 
 pub use crate::types::_token_usage::TokenUsageBuilder;
 
+pub use crate::types::_evaluator_metric::EvaluatorMetricBuilder;
+
+pub use crate::types::_cloud_watch_filter_config::CloudWatchFilterConfigBuilder;
+
+pub use crate::types::_session_filter_config::SessionFilterConfigBuilder;
+
+pub use crate::types::_evaluator_summary::EvaluatorSummaryBuilder;
+
+pub use crate::types::_failure_category_cluster::FailureCategoryClusterBuilder;
+
+pub use crate::types::_user_intent_cluster::UserIntentClusterBuilder;
+
+pub use crate::types::_execution_summary_cluster::ExecutionSummaryClusterBuilder;
+
+pub use crate::types::_recommendation_evaluation_config::RecommendationEvaluationConfigBuilder;
+
+pub use crate::types::_recommendation_result_configuration_bundle::RecommendationResultConfigurationBundleBuilder;
+
+pub use crate::types::_session_metadata_shape::SessionMetadataShapeBuilder;
+
 pub use crate::types::_conversational::ConversationalBuilder;
 
 pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpressionBuilder;
-
-pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpressionBuilder;
 
 pub use crate::types::_descriptors::DescriptorsBuilder;
 
@@ -167,6 +267,8 @@ pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConf
 
 pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfigBuilder;
 
+pub use crate::types::_harness_skill_git_auth::HarnessSkillGitAuthBuilder;
+
 pub use crate::types::_harness_tool_use_block_start::HarnessToolUseBlockStartBuilder;
 
 pub use crate::types::_harness_tool_result_block_start::HarnessToolResultBlockStartBuilder;
@@ -179,7 +281,27 @@ pub use crate::types::_external_proxy::ExternalProxyBuilder;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
 
+pub use crate::types::_configuration_bundle_ref::ConfigurationBundleRefBuilder;
+
+pub use crate::types::_target_ref::TargetRefBuilder;
+
 pub use crate::types::_span_context::SpanContextBuilder;
+
+pub use crate::types::_control_stats::ControlStatsBuilder;
+
+pub use crate::types::_evaluator_statistics::EvaluatorStatisticsBuilder;
+
+pub use crate::types::_system_prompt_configuration_bundle::SystemPromptConfigurationBundleBuilder;
+
+pub use crate::types::_cloud_watch_logs_trace_config::CloudWatchLogsTraceConfigBuilder;
+
+pub use crate::types::_batch_evaluation_trace_config::BatchEvaluationTraceConfigBuilder;
+
+pub use crate::types::_tool_description_text_input::ToolDescriptionTextInputBuilder;
+
+pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionConfigurationBundleBuilder;
+
+pub use crate::types::_tool_description_output::ToolDescriptionOutputBuilder;
 
 pub use crate::types::_mcp_descriptor::McpDescriptorBuilder;
 
@@ -195,7 +317,27 @@ pub use crate::types::_harness_tool_use_block::HarnessToolUseBlockBuilder;
 
 pub use crate::types::_harness_tool_result_block::HarnessToolResultBlockBuilder;
 
+pub use crate::types::_variant_result::VariantResultBuilder;
+
+pub use crate::types::_failure_sub_category_cluster::FailureSubCategoryClusterBuilder;
+
+pub use crate::types::_user_intent_affected_session::UserIntentAffectedSessionBuilder;
+
+pub use crate::types::_execution_summary_affected_session::ExecutionSummaryAffectedSessionBuilder;
+
+pub use crate::types::_cloud_watch_logs_rule::CloudWatchLogsRuleBuilder;
+
+pub use crate::types::_recommendation_evaluator_reference::RecommendationEvaluatorReferenceBuilder;
+
+pub use crate::types::_inline_ground_truth::InlineGroundTruthBuilder;
+
 pub use crate::types::_message_metadata::MessageMetadataBuilder;
+
+pub use crate::types::_linked_account_email::LinkedAccountEmailBuilder;
+
+pub use crate::types::_linked_account_sms::LinkedAccountSmsBuilder;
+
+pub use crate::types::_linked_account_developer_jwt::LinkedAccountDeveloperJwtBuilder;
 
 pub use crate::types::_server_definition::ServerDefinitionBuilder;
 
@@ -214,3 +356,23 @@ pub use crate::types::_unit::UnitBuilder;
 pub use crate::types::_o_auth_credential_provider::OAuthCredentialProviderBuilder;
 
 pub use crate::types::_basic_auth::BasicAuthBuilder;
+
+pub use crate::types::_confidence_interval::ConfidenceIntervalBuilder;
+
+pub use crate::types::_tool_description_input::ToolDescriptionInputBuilder;
+
+pub use crate::types::_configuration_bundle_tool_entry::ConfigurationBundleToolEntryBuilder;
+
+pub use crate::types::_o_auth2_authentication::OAuth2AuthenticationBuilder;
+
+pub use crate::types::_root_cause_cluster::RootCauseClusterBuilder;
+
+pub use crate::types::_cloud_watch_logs_filter::CloudWatchLogsFilterBuilder;
+
+pub use crate::types::_ground_truth_turn::GroundTruthTurnBuilder;
+
+pub use crate::types::_affected_session::AffectedSessionBuilder;
+
+pub use crate::types::_failure_span_detail::FailureSpanDetailBuilder;
+
+pub use crate::types::_insights_failure_signal::InsightsFailureSignalBuilder;

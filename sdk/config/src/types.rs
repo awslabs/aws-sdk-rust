@@ -31,6 +31,8 @@ pub use crate::types::_compliance_summary::ComplianceSummary;
 
 pub use crate::types::_conformance_pack_evaluation_filters::ConformancePackEvaluationFilters;
 
+pub use crate::types::_connector::Connector;
+
 pub use crate::types::_status_detail_filters::StatusDetailFilters;
 
 pub use crate::types::_organization_resource_detailed_status_filters::OrganizationResourceDetailedStatusFilters;
@@ -71,6 +73,8 @@ pub use crate::types::_configuration_aggregator::ConfigurationAggregator;
 
 pub use crate::types::_template_ssm_document_details::TemplateSsmDocumentDetails;
 
+pub use crate::types::_connector_configuration::ConnectorConfiguration;
+
 pub use crate::types::_delivery_channel::DeliveryChannel;
 
 pub use crate::types::_external_evaluation::ExternalEvaluation;
@@ -82,6 +86,8 @@ pub use crate::types::_organization_custom_rule_metadata::OrganizationCustomRule
 pub use crate::types::_organization_custom_policy_rule_metadata::OrganizationCustomPolicyRuleMetadata;
 
 pub use crate::types::_retention_configuration::RetentionConfiguration;
+
+pub use crate::types::_scope_configuration::ScopeConfiguration;
 
 pub use crate::types::_query_info::QueryInfo;
 
@@ -110,6 +116,8 @@ pub use crate::types::_compliance_by_config_rule::ComplianceByConfigRule;
 pub use crate::types::_compliance_by_resource::ComplianceByResource;
 
 pub use crate::types::_config_rule_evaluation_status::ConfigRuleEvaluationStatus;
+
+pub use crate::types::_rule_evaluation_visibility::RuleEvaluationVisibility;
 
 pub use crate::types::_aggregated_source_status_type::AggregatedSourceStatusType;
 
@@ -183,6 +191,10 @@ pub use crate::types::_configuration_recorder_summary::ConfigurationRecorderSumm
 
 pub use crate::types::_conformance_pack_compliance_score::ConformancePackComplianceScore;
 
+pub use crate::types::_connector_filter::ConnectorFilter;
+
+pub use crate::types::_connector_summary::ConnectorSummary;
+
 pub use crate::types::_resource_identifier::ResourceIdentifier;
 
 pub use crate::types::_time_window::TimeWindow;
@@ -208,6 +220,8 @@ pub use crate::types::_aggregator_filter_resource_type::AggregatorFilterResource
 pub use crate::types::_aggregator_filter_service_principal::AggregatorFilterServicePrincipal;
 
 pub use crate::types::_conformance_pack_input_parameter::ConformancePackInputParameter;
+
+pub use crate::types::_azure_connector_configuration::AzureConnectorConfiguration;
 
 pub use crate::types::_config_snapshot_delivery_properties::ConfigSnapshotDeliveryProperties;
 
@@ -254,6 +268,10 @@ pub use crate::types::_aggregate_conformance_pack_compliance_count::AggregateCon
 pub use crate::types::_relationship::Relationship;
 
 pub use crate::types::_configuration_recorder_filter_name::ConfigurationRecorderFilterName;
+
+pub use crate::types::_provider::Provider;
+
+pub use crate::types::_connector_filter_name::ConnectorFilterName;
 
 pub use crate::types::_owner::Owner;
 
@@ -337,6 +355,8 @@ mod _aggregator_filter_type;
 
 mod _aggregator_filters;
 
+mod _azure_connector_configuration;
+
 mod _base_configuration_item;
 
 mod _chronological_order;
@@ -412,6 +432,16 @@ mod _conformance_pack_rule_compliance;
 mod _conformance_pack_state;
 
 mod _conformance_pack_status_detail;
+
+mod _connector;
+
+mod _connector_configuration;
+
+mod _connector_filter;
+
+mod _connector_filter_name;
+
+mod _connector_summary;
 
 mod _custom_policy_details;
 
@@ -501,6 +531,8 @@ mod _owner;
 
 mod _pending_aggregation_request;
 
+mod _provider;
+
 mod _query_info;
 
 mod _recorder_status;
@@ -569,7 +601,11 @@ mod _resource_value_type;
 
 mod _retention_configuration;
 
+mod _rule_evaluation_visibility;
+
 mod _scope;
+
+mod _scope_configuration;
 
 mod _sort_by;
 

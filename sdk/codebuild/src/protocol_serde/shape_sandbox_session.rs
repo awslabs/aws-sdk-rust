@@ -2,10 +2,16 @@
 pub(crate) fn de_sandbox_session<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SandboxSession>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,7 +56,9 @@ where
                         }
                         "phases" => {
                             builder = builder.set_phases(crate::protocol_serde::shape_sandbox_session_phases::de_sandbox_session_phases(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "resolvedSourceVersion" => {
@@ -61,11 +69,14 @@ where
                             );
                         }
                         "logs" => {
-                            builder = builder.set_logs(crate::protocol_serde::shape_logs_location::de_logs_location(tokens, _value)?);
+                            builder = builder.set_logs(crate::protocol_serde::shape_logs_location::de_logs_location(tokens, _value, depth + 1)?);
                         }
                         "networkInterface" => {
-                            builder =
-                                builder.set_network_interface(crate::protocol_serde::shape_network_interface::de_network_interface(tokens, _value)?);
+                            builder = builder.set_network_interface(crate::protocol_serde::shape_network_interface::de_network_interface(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

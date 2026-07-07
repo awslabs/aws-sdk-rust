@@ -164,6 +164,25 @@ impl CreateInferenceComponentFluentBuilder {
     pub fn get_specification(&self) -> &::std::option::Option<crate::types::InferenceComponentSpecification> {
         self.inner.get_specification()
     }
+    ///
+    /// Appends an item to `Specifications`.
+    ///
+    /// To override the contents of this collection use [`set_specifications`](Self::set_specifications).
+    ///
+    /// <p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to deploy a different model or resource configuration for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>
+    pub fn specifications(mut self, input: crate::types::InferenceComponentSpecification) -> Self {
+        self.inner = self.inner.specifications(input);
+        self
+    }
+    /// <p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to deploy a different model or resource configuration for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>
+    pub fn set_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecification>>) -> Self {
+        self.inner = self.inner.set_specifications(input);
+        self
+    }
+    /// <p>A list of specification objects for the inference component, one per instance type. Use this parameter when you want to deploy a different model or resource configuration for the inference component on each instance type. You can use either this parameter or the singular <code>Specification</code> parameter, but not both.</p>
+    pub fn get_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSpecification>> {
+        self.inner.get_specifications()
+    }
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub fn runtime_config(mut self, input: crate::types::InferenceComponentRuntimeConfig) -> Self {
         self.inner = self.inner.runtime_config(input);

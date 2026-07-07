@@ -128,6 +128,8 @@ pub(crate) fn de_remove_regions_from_replication(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -142,7 +144,7 @@ pub(crate) fn de_remove_regions_from_replication(
                 }
                 "ReplicationStatus" => {
                     builder = builder.set_replication_status(
-                        crate::protocol_serde::shape_replication_status_list_type::de_replication_status_list_type(tokens, _value)?,
+                        crate::protocol_serde::shape_replication_status_list_type::de_replication_status_list_type(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

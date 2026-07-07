@@ -41,6 +41,7 @@ impl super::Client {
     ///   - [`detect_sentiment(Option<bool>)`](crate::operation::put_bot::PutBotOutput::detect_sentiment): <p><code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code> field is <code>false</code> in the response.</p>
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::put_bot::PutBotOutput::tags): <p>A list of tags associated with the bot.</p>
     /// - On failure, responds with [`SdkError<PutBotError>`](crate::operation::put_bot::PutBotError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn put_bot(&self) -> crate::operation::put_bot::builders::PutBotFluentBuilder {
         crate::operation::put_bot::builders::PutBotFluentBuilder::new(self.handle.clone())
     }

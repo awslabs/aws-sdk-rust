@@ -51,6 +51,8 @@ pub fn de_get_identity_notification_attributes(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetIdentityNotificationAttributesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetIdentityNotificationAttributesResponse got {start_el:?}"
@@ -68,7 +70,7 @@ pub fn de_get_identity_notification_attributes(
             s if s.matches("NotificationAttributes") /* NotificationAttributes com.amazonaws.ses.synthetic#GetIdentityNotificationAttributesOutput$NotificationAttributes */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_notification_attributes::de_notification_attributes(&mut tag)
+                        crate::protocol_serde::shape_notification_attributes::de_notification_attributes(&mut tag, depth + 1)
                         ?
                     )
                 ;

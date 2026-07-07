@@ -11,6 +11,8 @@ pub use crate::types::_alarm_configuration::AlarmConfiguration;
 
 pub use crate::types::_association_description::AssociationDescription;
 
+pub use crate::types::_cloud_connector_configuration::CloudConnectorConfiguration;
+
 pub use crate::types::_document_type::DocumentType;
 
 pub use crate::types::_document_format::DocumentFormat;
@@ -136,6 +138,8 @@ pub use crate::types::_association_overview::AssociationOverview;
 pub use crate::types::_create_association_batch_request_entry::CreateAssociationBatchRequestEntry;
 
 pub use crate::types::_failed_create_association::FailedCreateAssociation;
+
+pub use crate::types::_azure_configuration::AzureConfiguration;
 
 pub use crate::types::_document_requires::DocumentRequires;
 
@@ -297,6 +301,10 @@ pub use crate::types::_association::Association;
 
 pub use crate::types::_association_version_info::AssociationVersionInfo;
 
+pub use crate::types::_cloud_connector_filter::CloudConnectorFilter;
+
+pub use crate::types::_cloud_connector_summary::CloudConnectorSummary;
+
 pub use crate::types::_command_filter::CommandFilter;
 
 pub use crate::types::_command_invocation::CommandInvocation;
@@ -353,9 +361,13 @@ pub use crate::types::_association_status_name::AssociationStatusName;
 
 pub use crate::types::_document_review_action::DocumentReviewAction;
 
+pub use crate::types::_validation_finding::ValidationFinding;
+
 pub use crate::types::_alarm::Alarm;
 
 pub use crate::types::_fault::Fault;
+
+pub use crate::types::_configuration_targets::ConfigurationTargets;
 
 pub use crate::types::_attachments_source_key::AttachmentsSourceKey;
 
@@ -447,6 +459,8 @@ pub use crate::types::_ops_filter_operator_type::OpsFilterOperatorType;
 
 pub use crate::types::_association_filter_key::AssociationFilterKey;
 
+pub use crate::types::_cloud_connector_filter_key::CloudConnectorFilterKey;
+
 pub use crate::types::_command_filter_key::CommandFilterKey;
 
 pub use crate::types::_compliance_query_operator_type::ComplianceQueryOperatorType;
@@ -495,6 +509,12 @@ pub use crate::types::_notification_event::NotificationEvent;
 
 pub use crate::types::_document_review_comment_source::DocumentReviewCommentSource;
 
+pub use crate::types::_validation_finding_type::ValidationFindingType;
+
+pub use crate::types::_validation_finding_code::ValidationFindingCode;
+
+pub use crate::types::_validation_finding_scope::ValidationFindingScope;
+
 pub use crate::types::_document_parameter_type::DocumentParameterType;
 
 pub use crate::types::_patch_filter_key::PatchFilterKey;
@@ -526,6 +546,10 @@ pub use crate::types::_severity_summary::SeveritySummary;
 pub use crate::types::_instance_info::InstanceInfo;
 
 pub use crate::types::_document_review_comment_type::DocumentReviewCommentType;
+
+pub use crate::types::_validation_finding_scope_type::ValidationFindingScopeType;
+
+pub use crate::types::_azure_subscription::AzureSubscription;
 
 pub use crate::types::_inventory_attribute_data_type::InventoryAttributeDataType;
 
@@ -609,9 +633,21 @@ mod _automation_subtype;
 
 mod _automation_type;
 
+mod _azure_configuration;
+
+mod _azure_subscription;
+
 mod _baseline_override;
 
 mod _calendar_state;
+
+mod _cloud_connector_configuration;
+
+mod _cloud_connector_filter;
+
+mod _cloud_connector_filter_key;
+
+mod _cloud_connector_summary;
 
 mod _cloud_watch_output_config;
 
@@ -650,6 +686,8 @@ mod _compliance_summary_item;
 mod _compliance_upload_type;
 
 mod _compliant_summary;
+
+mod _configuration_targets;
 
 mod _connection_status;
 
@@ -1066,6 +1104,16 @@ mod _target;
 mod _target_location;
 
 mod _target_preview;
+
+mod _validation_finding;
+
+mod _validation_finding_code;
+
+mod _validation_finding_scope;
+
+mod _validation_finding_scope_type;
+
+mod _validation_finding_type;
 
 /// Builders
 pub mod builders;

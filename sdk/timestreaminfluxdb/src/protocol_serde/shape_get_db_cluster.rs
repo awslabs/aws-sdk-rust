@@ -128,6 +128,8 @@ pub(crate) fn de_get_db_cluster(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -236,12 +238,14 @@ pub(crate) fn de_get_db_cluster(
                 }
                 "logDeliveryConfiguration" => {
                     builder = builder.set_log_delivery_configuration(
-                        crate::protocol_serde::shape_log_delivery_configuration::de_log_delivery_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_log_delivery_configuration::de_log_delivery_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "maintenanceSchedule" => {
                     builder = builder.set_maintenance_schedule(crate::protocol_serde::shape_maintenance_schedule::de_maintenance_schedule(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "lastMaintenanceTime" => {
@@ -264,11 +268,15 @@ pub(crate) fn de_get_db_cluster(
                     );
                 }
                 "vpcSubnetIds" => {
-                    builder = builder.set_vpc_subnet_ids(crate::protocol_serde::shape_vpc_subnet_id_list::de_vpc_subnet_id_list(tokens, _value)?);
+                    builder = builder.set_vpc_subnet_ids(crate::protocol_serde::shape_vpc_subnet_id_list::de_vpc_subnet_id_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "vpcSecurityGroupIds" => {
                     builder = builder.set_vpc_security_group_ids(
-                        crate::protocol_serde::shape_vpc_security_group_id_list::de_vpc_security_group_id_list(tokens, _value)?,
+                        crate::protocol_serde::shape_vpc_security_group_id_list::de_vpc_security_group_id_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "failoverMode" => {
@@ -280,7 +288,9 @@ pub(crate) fn de_get_db_cluster(
                 }
                 "clusterConfiguration" => {
                     builder = builder.set_cluster_configuration(crate::protocol_serde::shape_cluster_configuration::de_cluster_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

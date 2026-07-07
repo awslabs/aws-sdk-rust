@@ -108,6 +108,8 @@ pub fn de_cancel_resize(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CancelResizeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CancelResizeResponse got {start_el:?}"
@@ -179,7 +181,7 @@ pub fn de_cancel_resize(
             s if s.matches("ImportTablesCompleted") /* ImportTablesCompleted com.amazonaws.redshift.synthetic#CancelResizeOutput$ImportTablesCompleted */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_import_tables_completed::de_import_tables_completed(&mut tag)
+                        crate::protocol_serde::shape_import_tables_completed::de_import_tables_completed(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -189,7 +191,7 @@ pub fn de_cancel_resize(
             s if s.matches("ImportTablesInProgress") /* ImportTablesInProgress com.amazonaws.redshift.synthetic#CancelResizeOutput$ImportTablesInProgress */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_import_tables_in_progress::de_import_tables_in_progress(&mut tag)
+                        crate::protocol_serde::shape_import_tables_in_progress::de_import_tables_in_progress(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -199,7 +201,7 @@ pub fn de_cancel_resize(
             s if s.matches("ImportTablesNotStarted") /* ImportTablesNotStarted com.amazonaws.redshift.synthetic#CancelResizeOutput$ImportTablesNotStarted */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_import_tables_not_started::de_import_tables_not_started(&mut tag)
+                        crate::protocol_serde::shape_import_tables_not_started::de_import_tables_not_started(&mut tag, depth + 1)
                         ?
                     )
                 ;

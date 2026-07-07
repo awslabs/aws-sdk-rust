@@ -125,6 +125,8 @@ pub(crate) fn de_get_chat_controls_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -132,17 +134,25 @@ pub(crate) fn de_get_chat_controls_configuration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "blockedPhrases" => {
                     builder = builder.set_blocked_phrases(
-                        crate::protocol_serde::shape_blocked_phrases_configuration::de_blocked_phrases_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_blocked_phrases_configuration::de_blocked_phrases_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "creatorModeConfiguration" => {
                     builder = builder.set_creator_mode_configuration(
-                        crate::protocol_serde::shape_applied_creator_mode_configuration::de_applied_creator_mode_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_applied_creator_mode_configuration::de_applied_creator_mode_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "hallucinationReductionConfiguration" => {
                     builder = builder.set_hallucination_reduction_configuration(
-                        crate::protocol_serde::shape_hallucination_reduction_configuration::de_hallucination_reduction_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_hallucination_reduction_configuration::de_hallucination_reduction_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "nextToken" => {
@@ -154,7 +164,11 @@ pub(crate) fn de_get_chat_controls_configuration(
                 }
                 "orchestrationConfiguration" => {
                     builder = builder.set_orchestration_configuration(
-                        crate::protocol_serde::shape_applied_orchestration_configuration::de_applied_orchestration_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_applied_orchestration_configuration::de_applied_orchestration_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "responseScope" => {
@@ -166,7 +180,9 @@ pub(crate) fn de_get_chat_controls_configuration(
                 }
                 "topicConfigurations" => {
                     builder = builder.set_topic_configurations(crate::protocol_serde::shape_topic_configurations::de_topic_configurations(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

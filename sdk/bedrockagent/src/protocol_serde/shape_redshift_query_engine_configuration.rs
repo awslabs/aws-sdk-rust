@@ -24,10 +24,16 @@ pub fn ser_redshift_query_engine_configuration(
 pub(crate) fn de_redshift_query_engine_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RedshiftQueryEngineConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -46,13 +52,19 @@ where
                         }
                         "serverlessConfiguration" => {
                             builder = builder.set_serverless_configuration(
-                                crate::protocol_serde::shape_redshift_serverless_configuration::de_redshift_serverless_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_redshift_serverless_configuration::de_redshift_serverless_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "provisionedConfiguration" => {
                             builder = builder.set_provisioned_configuration(
                                 crate::protocol_serde::shape_redshift_provisioned_configuration::de_redshift_provisioned_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

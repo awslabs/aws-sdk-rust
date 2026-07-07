@@ -134,17 +134,23 @@ pub(crate) fn de_describe_anomaly_detectors(
     crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "AnomalyDetectors" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_anomaly_detectors(Some(crate::protocol_serde::shape_anomaly_detectors::de_anomaly_detectors(decoder)?)))
+                Ok(
+                    builder.set_anomaly_detectors(Some(crate::protocol_serde::shape_anomaly_detectors::de_anomaly_detectors(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             "NextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
@@ -158,6 +164,8 @@ pub(crate) fn de_describe_anomaly_detectors(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -167,13 +175,13 @@ pub(crate) fn de_describe_anomaly_detectors(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

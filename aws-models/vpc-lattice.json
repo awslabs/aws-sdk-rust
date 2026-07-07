@@ -956,6 +956,12 @@
                         "smithy.api#documentation": "<p>The number of IPv4 addresses in each ENI for the resource gateway.</p>"
                     }
                 },
+                "resourceConfigDnsResolution": {
+                    "target": "com.amazonaws.vpclattice#ResourceConfigDnsResolution",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.</p> <ul> <li> <p> <code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p> </li> <li> <p> <code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p> </li> </ul>"
+                    }
+                },
                 "tags": {
                     "target": "com.amazonaws.vpclattice#TagMap",
                     "traits": {
@@ -1022,6 +1028,12 @@
                     "target": "com.amazonaws.vpclattice#Ipv4AddressesPerEni",
                     "traits": {
                         "smithy.api#documentation": "<p>The number of IPv4 addresses in each ENI for the resource gateway.</p>"
+                    }
+                },
+                "resourceConfigDnsResolution": {
+                    "target": "com.amazonaws.vpclattice#ResourceConfigDnsResolution",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>"
                     }
                 }
             },
@@ -1740,6 +1752,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li> <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li> </ul>"
                     }
+                },
+                "idleTimeoutSeconds": {
+                    "target": "com.amazonaws.vpclattice#IdleTimeoutSeconds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>"
+                    }
                 }
             }
         },
@@ -1786,6 +1804,12 @@
                     "target": "com.amazonaws.vpclattice#AuthType",
                     "traits": {
                         "smithy.api#documentation": "<p>The type of IAM policy.</p>"
+                    }
+                },
+                "idleTimeoutSeconds": {
+                    "target": "com.amazonaws.vpclattice#IdleTimeoutSeconds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>"
                     }
                 },
                 "dnsEntry": {
@@ -3922,6 +3946,18 @@
                         "smithy.api#documentation": "<p>The IDs of the VPC subnets for resource gateway.</p>"
                     }
                 },
+                "serviceManaged": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether the resource gateway is managed by an Amazon Web Services service.</p>"
+                    }
+                },
+                "managedBy": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services service that manages the resource gateway.</p>"
+                    }
+                },
                 "securityGroupIds": {
                     "target": "com.amazonaws.vpclattice#SecurityGroupList",
                     "traits": {
@@ -3938,6 +3974,12 @@
                     "target": "com.amazonaws.vpclattice#Ipv4AddressesPerEni",
                     "traits": {
                         "smithy.api#documentation": "<p>The number of IPv4 addresses in each ENI for the resource gateway.</p>"
+                    }
+                },
+                "resourceConfigDnsResolution": {
+                    "target": "com.amazonaws.vpclattice#ResourceConfigDnsResolution",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>"
                     }
                 },
                 "createdAt": {
@@ -4816,6 +4858,12 @@
                         "smithy.api#documentation": "<p>The type of IAM policy.</p>"
                     }
                 },
+                "idleTimeoutSeconds": {
+                    "target": "com.amazonaws.vpclattice#IdleTimeoutSeconds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>"
+                    }
+                },
                 "failureCode": {
                     "target": "com.amazonaws.vpclattice#FailureCode",
                     "traits": {
@@ -5232,6 +5280,15 @@
                 "smithy.api#range": {
                     "min": 100,
                     "max": 599
+                }
+            }
+        },
+        "com.amazonaws.vpclattice#IdleTimeoutSeconds": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 60,
+                    "max": 600
                 }
             }
         },
@@ -6997,6 +7054,194 @@
                 },
                 "smithy.api#documentation": "<p>Amazon VPC Lattice is a fully managed application networking service that you use to connect, secure, and monitor all of your services across multiple accounts and virtual private clouds (VPCs). Amazon VPC Lattice interconnects your microservices and legacy services within a logical boundary, so that you can discover and manage them more efficiently. For more information, see the <a href=\"https://docs.aws.amazon.com/vpc-lattice/latest/ug/\">Amazon VPC Lattice User Guide</a> </p>",
                 "smithy.api#title": "Amazon VPC Lattice",
+                "smithy.rules#endpointBdd": {
+                    "version": "1.1",
+                    "parameters": {
+                        "Region": {
+                            "builtIn": "AWS::Region",
+                            "required": false,
+                            "documentation": "The AWS region used to dispatch the request.",
+                            "type": "string"
+                        },
+                        "UseDualStack": {
+                            "builtIn": "AWS::UseDualStack",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+                            "type": "boolean"
+                        },
+                        "UseFIPS": {
+                            "builtIn": "AWS::UseFIPS",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+                            "type": "boolean"
+                        },
+                        "Endpoint": {
+                            "builtIn": "SDK::Endpoint",
+                            "required": false,
+                            "documentation": "Override the endpoint used to send this request",
+                            "type": "string"
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "aws.partition",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ],
+                            "assign": "PartitionResult"
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseFIPS"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseDualStack"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsDualStack"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsFIPS"
+                                    ]
+                                },
+                                true
+                            ]
+                        }
+                    ],
+                    "results": [
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": {
+                                    "ref": "Endpoint"
+                                },
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://vpc-lattice-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://vpc-lattice-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS is enabled but this partition does not support FIPS",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://vpc-lattice.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "DualStack is enabled but this partition does not support DualStack",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://vpc-lattice.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
+                        }
+                    ],
+                    "root": 2,
+                    "nodeCount": 13,
+                    "nodes": "/////wAAAAH/////AAAAAAAAAAwAAAADAAAAAQAAAAQF9eELAAAAAgAAAAUF9eELAAAAAwAAAAgAAAAGAAAABAAAAAcF9eEKAAAABQX14QgF9eEJAAAABAAAAAoAAAAJAAAABgX14QYF9eEHAAAABQAAAAsF9eEFAAAABgX14QQF9eEFAAAAAwX14QEAAAANAAAABAX14QIF9eED"
+                },
                 "smithy.rules#endpointRuleSet": {
                     "version": "1.0",
                     "parameters": {
@@ -8001,6 +8246,23 @@
                 "smithy.api#pattern": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc)|(resourceconfiguration/rcfg))-[0-9a-z]{17}$"
             }
         },
+        "com.amazonaws.vpclattice#ResourceConfigDnsResolution": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "name": "IN_VPC",
+                        "value": "IN_VPC",
+                        "documentation": "Enable private DNS resolution within VPC for resources behind this resource gateway"
+                    },
+                    {
+                        "name": "PUBLIC",
+                        "value": "PUBLIC",
+                        "documentation": "Use public DNS resolution for resources behind this resource gateway"
+                    }
+                ]
+            }
+        },
         "com.amazonaws.vpclattice#ResourceConfiguration": {
             "type": "resource",
             "identifiers": {
@@ -8247,30 +8509,36 @@
             }
         },
         "com.amazonaws.vpclattice#ResourceConfigurationType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "name": "GROUP",
-                        "value": "GROUP",
-                        "documentation": "Resource Configuration of type GROUP"
-                    },
-                    {
-                        "name": "CHILD",
-                        "value": "CHILD",
-                        "documentation": "Resource Configuration of type CHILD"
-                    },
-                    {
-                        "name": "SINGLE",
-                        "value": "SINGLE",
-                        "documentation": "Resource Configuration of type SINGLE"
-                    },
-                    {
-                        "name": "ARN",
-                        "value": "ARN",
-                        "documentation": "Resource Configuration of type ARN"
+            "type": "enum",
+            "members": {
+                "GROUP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#documentation": "Resource Configuration of type GROUP",
+                        "smithy.api#enumValue": "GROUP"
                     }
-                ]
+                },
+                "CHILD": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#documentation": "Resource Configuration of type CHILD",
+                        "smithy.api#enumValue": "CHILD"
+                    }
+                },
+                "SINGLE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#documentation": "Resource Configuration of type SINGLE",
+                        "smithy.api#enumValue": "SINGLE"
+                    }
+                },
+                "ARN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#documentation": "Resource Configuration of type ARN",
+                        "smithy.api#enumValue": "ARN"
+                    }
+                }
             }
         },
         "com.amazonaws.vpclattice#ResourceEndpointAssociation": {
@@ -8573,6 +8841,12 @@
                     "target": "com.amazonaws.vpclattice#Ipv4AddressesPerEni",
                     "traits": {
                         "smithy.api#documentation": "<p>The number of IPv4 addresses in each ENI for the resource gateway.</p>"
+                    }
+                },
+                "resourceConfigDnsResolution": {
+                    "target": "com.amazonaws.vpclattice#ResourceConfigDnsResolution",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>"
                     }
                 },
                 "createdAt": {
@@ -10655,7 +10929,7 @@
                 "status": {
                     "target": "com.amazonaws.vpclattice#TargetStatus",
                     "traits": {
-                        "smithy.api#documentation": "<p>The status of the target.</p> <ul> <li> <p> <code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p> </li> <li> <p> <code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p> </li> <li> <p> <code>HEALTHY</code>: The target is healthy.</p> </li> <li> <p> <code>UNHEALTHY</code>: The target is unhealthy.</p> </li> <li> <p> <code>INITIAL</code>: Initial health checks on the target are being performed.</p> </li> <li> <p> <code>UNUSED</code>: Target group is not used in a service.</p> </li> </ul>"
+                        "smithy.api#documentation": "<p>The status of the target.</p> <ul> <li> <p> <code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 1 minute.</p> </li> <li> <p> <code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p> </li> <li> <p> <code>HEALTHY</code>: The target is healthy.</p> </li> <li> <p> <code>UNHEALTHY</code>: The target is unhealthy.</p> </li> <li> <p> <code>INITIAL</code>: Initial health checks on the target are being performed.</p> </li> <li> <p> <code>UNUSED</code>: Target group is not used in a service.</p> </li> </ul>"
                     }
                 },
                 "reasonCode": {
@@ -11671,6 +11945,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li> <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li> </ul>"
                     }
+                },
+                "idleTimeoutSeconds": {
+                    "target": "com.amazonaws.vpclattice#IdleTimeoutSeconds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>"
+                    }
                 }
             }
         },
@@ -11711,6 +11991,12 @@
                     "target": "com.amazonaws.vpclattice#AuthType",
                     "traits": {
                         "smithy.api#documentation": "<p>The type of IAM policy.</p>"
+                    }
+                },
+                "idleTimeoutSeconds": {
+                    "target": "com.amazonaws.vpclattice#IdleTimeoutSeconds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>"
                     }
                 }
             }

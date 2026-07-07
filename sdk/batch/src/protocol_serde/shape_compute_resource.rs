@@ -115,10 +115,16 @@ pub fn ser_compute_resource(
 pub(crate) fn de_compute_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComputeResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -164,7 +170,8 @@ where
                             );
                         }
                         "instanceTypes" => {
-                            builder = builder.set_instance_types(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_instance_types(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "imageId" => {
                             builder = builder.set_image_id(
@@ -174,10 +181,11 @@ where
                             );
                         }
                         "subnets" => {
-                            builder = builder.set_subnets(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_subnets(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "securityGroupIds" => {
-                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder =
+                                builder.set_security_group_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                         }
                         "ec2KeyPair" => {
                             builder = builder.set_ec2_key_pair(
@@ -194,7 +202,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                         }
                         "placementGroup" => {
                             builder = builder.set_placement_group(
@@ -219,17 +227,25 @@ where
                         }
                         "launchTemplate" => {
                             builder = builder.set_launch_template(
-                                crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(tokens, _value)?,
+                                crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ec2Configuration" => {
                             builder = builder.set_ec2_configuration(crate::protocol_serde::shape_ec2_configuration_list::de_ec2_configuration_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "scalingPolicy" => {
                             builder = builder.set_scaling_policy(crate::protocol_serde::shape_compute_scaling_policy::de_compute_scaling_policy(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -221,11 +221,19 @@ pub(crate) mod shape_add_layer_version_permission_input;
 
 pub(crate) mod shape_add_permission_input;
 
+pub(crate) mod shape_alias_limit_exceeded_exception;
+
 pub(crate) mod shape_callback_timeout_exception;
 
 pub(crate) mod shape_capacity_provider_limit_exceeded_exception;
 
 pub(crate) mod shape_checkpoint_durable_execution_input;
+
+pub(crate) mod shape_code_artifact_user_deleted_exception;
+
+pub(crate) mod shape_code_artifact_user_failed_exception;
+
+pub(crate) mod shape_code_artifact_user_pending_exception;
 
 pub(crate) mod shape_code_signing_config_not_found_exception;
 
@@ -263,6 +271,8 @@ pub(crate) mod shape_efsio_exception;
 
 pub(crate) mod shape_eni_limit_reached_exception;
 
+pub(crate) mod shape_eni_not_ready_exception;
+
 pub(crate) mod shape_function_versions_per_capacity_provider_limit_exceeded_exception;
 
 pub(crate) mod shape_invalid_code_signature_exception;
@@ -291,6 +301,8 @@ pub(crate) mod shape_kms_invalid_state_exception;
 
 pub(crate) mod shape_kms_not_found_exception;
 
+pub(crate) mod shape_mode_not_supported_exception;
+
 pub(crate) mod shape_no_published_version_exception;
 
 pub(crate) mod shape_policy_length_exceeded_exception;
@@ -298,6 +310,8 @@ pub(crate) mod shape_policy_length_exceeded_exception;
 pub(crate) mod shape_precondition_failed_exception;
 
 pub(crate) mod shape_provisioned_concurrency_config_not_found_exception;
+
+pub(crate) mod shape_public_policy_exception;
 
 pub(crate) mod shape_publish_layer_version_input;
 
@@ -339,9 +353,13 @@ pub(crate) mod shape_serialized_request_entity_too_large_exception;
 
 pub(crate) mod shape_service_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_snap_start_exception;
 
 pub(crate) mod shape_snap_start_not_ready_exception;
+
+pub(crate) mod shape_snap_start_regeneration_failure_exception;
 
 pub(crate) mod shape_snap_start_timeout_exception;
 
@@ -493,6 +511,8 @@ pub(crate) mod shape_operation_update;
 
 pub(crate) mod shape_operations;
 
+pub(crate) mod shape_propagate_tags;
+
 pub(crate) mod shape_provisioned_concurrency_config_list;
 
 pub(crate) mod shape_provisioned_poller_config;
@@ -565,6 +585,8 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_filter_list;
 
+pub(crate) mod shape_function_code_location_error;
+
 pub(crate) mod shape_function_event_invoke_config;
 
 pub(crate) mod shape_function_url_config;
@@ -594,6 +616,8 @@ pub(crate) mod shape_on_success;
 pub(crate) mod shape_operation;
 
 pub(crate) mod shape_provisioned_concurrency_config_list_item;
+
+pub(crate) mod shape_resolved_s3_object;
 
 pub(crate) mod shape_runtime_version_error;
 

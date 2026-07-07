@@ -2,10 +2,16 @@
 pub(crate) fn de_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Settings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -27,11 +33,15 @@ where
                         }
                         "defaultAssessmentReportsDestination" => {
                             builder = builder.set_default_assessment_reports_destination(
-                                crate::protocol_serde::shape_assessment_reports_destination::de_assessment_reports_destination(tokens, _value)?,
+                                crate::protocol_serde::shape_assessment_reports_destination::de_assessment_reports_destination(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "defaultProcessOwners" => {
-                            builder = builder.set_default_process_owners(crate::protocol_serde::shape_roles::de_roles(tokens, _value)?);
+                            builder = builder.set_default_process_owners(crate::protocol_serde::shape_roles::de_roles(tokens, _value, depth + 1)?);
                         }
                         "kmsKey" => {
                             builder = builder.set_kms_key(
@@ -42,17 +52,17 @@ where
                         }
                         "evidenceFinderEnablement" => {
                             builder = builder.set_evidence_finder_enablement(
-                                crate::protocol_serde::shape_evidence_finder_enablement::de_evidence_finder_enablement(tokens, _value)?,
+                                crate::protocol_serde::shape_evidence_finder_enablement::de_evidence_finder_enablement(tokens, _value, depth + 1)?,
                             );
                         }
                         "deregistrationPolicy" => {
                             builder = builder.set_deregistration_policy(
-                                crate::protocol_serde::shape_deregistration_policy::de_deregistration_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_deregistration_policy::de_deregistration_policy(tokens, _value, depth + 1)?,
                             );
                         }
                         "defaultExportDestination" => {
                             builder = builder.set_default_export_destination(
-                                crate::protocol_serde::shape_default_export_destination::de_default_export_destination(tokens, _value)?,
+                                crate::protocol_serde::shape_default_export_destination::de_default_export_destination(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

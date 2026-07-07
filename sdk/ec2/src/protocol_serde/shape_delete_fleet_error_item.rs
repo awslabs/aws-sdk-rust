@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_delete_fleet_error_item(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DeleteFleetErrorItem, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DeleteFleetErrorItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_delete_fleet_error_item(
             s if s.matches("error") /* Error com.amazonaws.ec2#DeleteFleetErrorItem$Error */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_delete_fleet_error::de_delete_fleet_error(&mut tag)
+                        crate::protocol_serde::shape_delete_fleet_error::de_delete_fleet_error(&mut tag, depth + 1)
                         ?
                     )
                 ;

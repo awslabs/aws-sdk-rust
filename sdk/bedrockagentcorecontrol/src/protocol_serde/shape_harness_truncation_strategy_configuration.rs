@@ -28,10 +28,16 @@ pub fn ser_harness_truncation_strategy_configuration(
 pub(crate) fn de_harness_truncation_strategy_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HarnessTruncationStrategyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -58,17 +64,23 @@ where
                     variant = match key.as_ref() {
                         "slidingWindow" => Some(crate::types::HarnessTruncationStrategyConfiguration::SlidingWindow(
                             crate::protocol_serde::shape_harness_sliding_window_configuration::de_harness_sliding_window_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'slidingWindow' cannot be null")
                             })?,
                         )),
                         "summarization" => Some(crate::types::HarnessTruncationStrategyConfiguration::Summarization(
-                            crate::protocol_serde::shape_harness_summarization_configuration::de_harness_summarization_configuration(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'summarization' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_harness_summarization_configuration::de_harness_summarization_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'summarization' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

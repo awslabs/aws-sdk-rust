@@ -37,13 +37,43 @@ pub struct GameSessionPlacement {
     pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub game_session_name: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub game_session_id: ::std::option::Option<::std::string::String>,
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub game_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Region where the game session created by this placement request is running. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub game_session_region: ::std::option::Option<::std::string::String>,
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets).</p>
     pub player_latencies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>,
     /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -133,11 +163,41 @@ impl GameSessionPlacement {
     pub fn game_session_name(&self) -> ::std::option::Option<&str> {
         self.game_session_name.as_deref()
     }
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn game_session_arn(&self) -> ::std::option::Option<&str> {
         self.game_session_arn.as_deref()
     }
@@ -145,7 +205,7 @@ impl GameSessionPlacement {
     pub fn game_session_region(&self) -> ::std::option::Option<&str> {
         self.game_session_region.as_deref()
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latencies.is_none()`.
     pub fn player_latencies(&self) -> &[crate::types::PlayerLatency] {
@@ -421,31 +481,121 @@ impl GameSessionPlacementBuilder {
     pub fn get_game_session_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_name
     }
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_id
     }
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn game_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn set_game_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_arn = input;
         self
     }
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: For Home Region game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </home_region></code>. For Remote Location game session - <code>arn:aws:gamelift:<home_region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <location>
+    /// /
+    /// <id string></id>
+    /// </location>
+    /// </fleet>
+    /// </home_region></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn get_game_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_arn
     }
@@ -467,19 +617,19 @@ impl GameSessionPlacementBuilder {
     ///
     /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
     ///
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets).</p>
     pub fn player_latencies(mut self, input: crate::types::PlayerLatency) -> Self {
         let mut v = self.player_latencies.unwrap_or_default();
         v.push(input);
         self.player_latencies = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets).</p>
     pub fn set_player_latencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>) -> Self {
         self.player_latencies = input;
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets).</p>
     pub fn get_player_latencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>> {
         &self.player_latencies
     }

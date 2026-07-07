@@ -33,10 +33,16 @@ pub fn ser_descriptors(
 pub(crate) fn de_descriptors<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Descriptors>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -47,17 +53,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "mcp" => {
-                            builder = builder.set_mcp(crate::protocol_serde::shape_mcp_descriptor::de_mcp_descriptor(tokens, _value)?);
+                            builder = builder.set_mcp(crate::protocol_serde::shape_mcp_descriptor::de_mcp_descriptor(tokens, _value, depth + 1)?);
                         }
                         "a2a" => {
-                            builder = builder.set_a2_a(crate::protocol_serde::shape_a2a_descriptor::de_a2a_descriptor(tokens, _value)?);
+                            builder = builder.set_a2_a(crate::protocol_serde::shape_a2a_descriptor::de_a2a_descriptor(tokens, _value, depth + 1)?);
                         }
                         "custom" => {
-                            builder = builder.set_custom(crate::protocol_serde::shape_custom_descriptor::de_custom_descriptor(tokens, _value)?);
+                            builder = builder.set_custom(crate::protocol_serde::shape_custom_descriptor::de_custom_descriptor(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "agentSkills" => {
                             builder = builder.set_agent_skills(crate::protocol_serde::shape_agent_skills_descriptor::de_agent_skills_descriptor(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

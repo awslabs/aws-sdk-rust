@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_import_instance_task_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ImportInstanceTaskDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ImportInstanceTaskDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -50,7 +54,7 @@ pub fn de_import_instance_task_details(
             s if s.matches("volumes") /* Volumes com.amazonaws.ec2#ImportInstanceTaskDetails$Volumes */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_import_instance_volume_detail_set::de_import_instance_volume_detail_set(&mut tag)
+                        crate::protocol_serde::shape_import_instance_volume_detail_set::de_import_instance_volume_detail_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

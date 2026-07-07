@@ -116,6 +116,8 @@ pub(crate) fn de_get_geofence(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -135,10 +137,14 @@ pub(crate) fn de_get_geofence(
                     );
                 }
                 "GeofenceProperties" => {
-                    builder = builder.set_geofence_properties(crate::protocol_serde::shape_property_map::de_property_map(tokens, _value)?);
+                    builder = builder.set_geofence_properties(crate::protocol_serde::shape_property_map::de_property_map(tokens, _value, depth + 1)?);
                 }
                 "Geometry" => {
-                    builder = builder.set_geometry(crate::protocol_serde::shape_geofence_geometry::de_geofence_geometry(tokens, _value)?);
+                    builder = builder.set_geometry(crate::protocol_serde::shape_geofence_geometry::de_geofence_geometry(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Status" => {
                     builder = builder.set_status(

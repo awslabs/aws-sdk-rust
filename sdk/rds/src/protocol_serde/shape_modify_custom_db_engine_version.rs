@@ -94,6 +94,8 @@ pub fn de_modify_custom_db_engine_version(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyCustomDBEngineVersionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyCustomDBEngineVersionResponse got {start_el:?}"
@@ -176,7 +178,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("DatabaseInstallationFiles") /* DatabaseInstallationFiles com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DatabaseInstallationFiles */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -251,7 +253,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DefaultCharacterSet */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_character_set::de_character_set(&mut tag)
+                        crate::protocol_serde::shape_character_set::de_character_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -274,7 +276,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("Image") /* Image com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$Image */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_custom_db_engine_version_ami::de_custom_db_engine_version_ami(&mut tag)
+                        crate::protocol_serde::shape_custom_db_engine_version_ami::de_custom_db_engine_version_ami(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -324,7 +326,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedCharacterSets */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
+                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -334,7 +336,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("SupportedNcharCharacterSets") /* SupportedNcharCharacterSets com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedNcharCharacterSets */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
+                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -344,7 +346,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$ValidUpgradeTarget */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag)
+                        crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -354,7 +356,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedTimezones */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_supported_timezones_list::de_supported_timezones_list(&mut tag)
+                        crate::protocol_serde::shape_supported_timezones_list::de_supported_timezones_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -364,7 +366,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$ExportableLogTypes */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -404,7 +406,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedEngineModes */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag)
+                        crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -414,7 +416,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedFeatureNames */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_feature_name_list::de_feature_name_list(&mut tag)
+                        crate::protocol_serde::shape_feature_name_list::de_feature_name_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -467,7 +469,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$TagList */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -522,7 +524,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("SupportedCACertificateIdentifiers") /* SupportedCACertificateIdentifiers com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedCACertificateIdentifiers */ =>  {
                 let var_34 =
                     Some(
-                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag)
+                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -562,7 +564,7 @@ pub fn de_modify_custom_db_engine_version(
             s if s.matches("ServerlessV2FeaturesSupport") /* ServerlessV2FeaturesSupport com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$ServerlessV2FeaturesSupport */ =>  {
                 let var_37 =
                     Some(
-                        crate::protocol_serde::shape_serverless_v2_features_support::de_serverless_v2_features_support(&mut tag)
+                        crate::protocol_serde::shape_serverless_v2_features_support::de_serverless_v2_features_support(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -116,6 +116,8 @@ pub fn de_rotate_encryption_key(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("RotateEncryptionKeyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RotateEncryptionKeyResponse got {start_el:?}"
@@ -133,7 +135,7 @@ pub fn de_rotate_encryption_key(
             s if s.matches("Cluster") /* Cluster com.amazonaws.redshift.synthetic#RotateEncryptionKeyOutput$Cluster */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag)
+                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -439,6 +439,8 @@ pub(crate) mod shape_associated_transcript_filter;
 
 pub(crate) mod shape_associated_transcript_list;
 
+pub(crate) mod shape_audio_filler_settings;
+
 pub(crate) mod shape_bot_alias_history_events_list;
 
 pub(crate) mod shape_bot_alias_locale_settings;

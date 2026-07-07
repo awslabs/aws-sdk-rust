@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_multicast_domain_associations(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TransitGatewayMulticastDomainAssociations, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayMulticastDomainAssociations::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -76,7 +80,7 @@ pub fn de_transit_gateway_multicast_domain_associations(
             s if s.matches("subnets") /* Subnets com.amazonaws.ec2#TransitGatewayMulticastDomainAssociations$Subnets */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_subnet_association_list::de_subnet_association_list(&mut tag)
+                        crate::protocol_serde::shape_subnet_association_list::de_subnet_association_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

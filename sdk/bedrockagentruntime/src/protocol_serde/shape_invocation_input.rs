@@ -2,10 +2,16 @@
 pub(crate) fn de_invocation_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InvocationInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,23 +37,33 @@ where
                         }
                         "actionGroupInvocationInput" => {
                             builder = builder.set_action_group_invocation_input(
-                                crate::protocol_serde::shape_action_group_invocation_input::de_action_group_invocation_input(tokens, _value)?,
+                                crate::protocol_serde::shape_action_group_invocation_input::de_action_group_invocation_input(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "knowledgeBaseLookupInput" => {
                             builder = builder.set_knowledge_base_lookup_input(
-                                crate::protocol_serde::shape_knowledge_base_lookup_input::de_knowledge_base_lookup_input(tokens, _value)?,
+                                crate::protocol_serde::shape_knowledge_base_lookup_input::de_knowledge_base_lookup_input(tokens, _value, depth + 1)?,
                             );
                         }
                         "codeInterpreterInvocationInput" => {
                             builder = builder.set_code_interpreter_invocation_input(
-                                crate::protocol_serde::shape_code_interpreter_invocation_input::de_code_interpreter_invocation_input(tokens, _value)?,
+                                crate::protocol_serde::shape_code_interpreter_invocation_input::de_code_interpreter_invocation_input(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "agentCollaboratorInvocationInput" => {
                             builder = builder.set_agent_collaborator_invocation_input(
                                 crate::protocol_serde::shape_agent_collaborator_invocation_input::de_agent_collaborator_invocation_input(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

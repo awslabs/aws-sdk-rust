@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateWhatsAppBusinessAccount` operation.
 pub mod associate_whats_app_business_account;
 
+/// Types for the `CreateWhatsAppFlow` operation.
+pub mod create_whats_app_flow;
+
 /// Types for the `CreateWhatsAppMessageTemplate` operation.
 pub mod create_whats_app_message_template;
 
@@ -13,11 +16,17 @@ pub mod create_whats_app_message_template_from_library;
 /// Types for the `CreateWhatsAppMessageTemplateMedia` operation.
 pub mod create_whats_app_message_template_media;
 
+/// Types for the `DeleteWhatsAppFlow` operation.
+pub mod delete_whats_app_flow;
+
 /// Types for the `DeleteWhatsAppMessageMedia` operation.
 pub mod delete_whats_app_message_media;
 
 /// Types for the `DeleteWhatsAppMessageTemplate` operation.
 pub mod delete_whats_app_message_template;
+
+/// Types for the `DeprecateWhatsAppFlow` operation.
+pub mod deprecate_whats_app_flow;
 
 /// Types for the `DisassociateWhatsAppBusinessAccount` operation.
 pub mod disassociate_whats_app_business_account;
@@ -27,6 +36,12 @@ pub mod get_linked_whats_app_business_account;
 
 /// Types for the `GetLinkedWhatsAppBusinessAccountPhoneNumber` operation.
 pub mod get_linked_whats_app_business_account_phone_number;
+
+/// Types for the `GetWhatsAppFlow` operation.
+pub mod get_whats_app_flow;
+
+/// Types for the `GetWhatsAppFlowPreview` operation.
+pub mod get_whats_app_flow_preview;
 
 /// Types for the `GetWhatsAppMessageMedia` operation.
 pub mod get_whats_app_message_media;
@@ -40,6 +55,12 @@ pub mod list_linked_whats_app_business_accounts;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListWhatsAppFlowAssets` operation.
+pub mod list_whats_app_flow_assets;
+
+/// Types for the `ListWhatsAppFlows` operation.
+pub mod list_whats_app_flows;
+
 /// Types for the `ListWhatsAppMessageTemplates` operation.
 pub mod list_whats_app_message_templates;
 
@@ -48,6 +69,9 @@ pub mod list_whats_app_template_library;
 
 /// Types for the `PostWhatsAppMessageMedia` operation.
 pub mod post_whats_app_message_media;
+
+/// Types for the `PublishWhatsAppFlow` operation.
+pub mod publish_whats_app_flow;
 
 /// Types for the `PutWhatsAppBusinessAccountEventDestinations` operation.
 pub mod put_whats_app_business_account_event_destinations;
@@ -60,6 +84,12 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateWhatsAppFlow` operation.
+pub mod update_whats_app_flow;
+
+/// Types for the `UpdateWhatsAppFlowAssets` operation.
+pub mod update_whats_app_flow_assets;
 
 /// Types for the `UpdateWhatsAppMessageTemplate` operation.
 pub mod update_whats_app_message_template;

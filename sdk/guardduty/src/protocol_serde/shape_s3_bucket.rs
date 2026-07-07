@@ -2,10 +2,16 @@
 pub(crate) fn de_s3_bucket<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::S3Bucket>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -65,16 +71,20 @@ where
                         }
                         "accountPublicAccess" => {
                             builder = builder.set_account_public_access(
-                                crate::protocol_serde::shape_public_access_configuration::de_public_access_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_public_access_configuration::de_public_access_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "bucketPublicAccess" => {
                             builder = builder.set_bucket_public_access(
-                                crate::protocol_serde::shape_public_access_configuration::de_public_access_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_public_access_configuration::de_public_access_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "s3ObjectUids" => {
-                            builder = builder.set_s3_object_uids(crate::protocol_serde::shape_s3_object_uids::de_s3_object_uids(tokens, _value)?);
+                            builder = builder.set_s3_object_uids(crate::protocol_serde::shape_s3_object_uids::de_s3_object_uids(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

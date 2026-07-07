@@ -9,16 +9,28 @@ pub fn ser_document_info(
     if let Some(var_2) = &input.artifact_id {
         object.key("artifactId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.integrated_document {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("integratedDocument").start_object();
+        crate::protocol_serde::shape_integrated_document::ser_integrated_document(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_document_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DocumentInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -41,6 +53,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "integratedDocument" => {
+                            builder = builder.set_integrated_document(crate::protocol_serde::shape_integrated_document::de_integrated_document(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

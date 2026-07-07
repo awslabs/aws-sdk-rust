@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Defines the visibility level of provider resources. PRIVATE indicates restricted access (e.g: private GitHub repositories), while PUBLIC indicates open access (e.g: public GitHub repositories)
+/// <p>Defines the visibility level of provider resources. PRIVATE indicates restricted access, while PUBLIC indicates open access.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccessType {
-    /// Resource is private and has restricted access
+    /// <p>Resource is private and has restricted access.</p>
     Private,
-    /// Resource is public and openly accessible
+    /// <p>Resource is public and openly accessible.</p>
     Public,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

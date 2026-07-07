@@ -201,5 +201,8 @@ pub fn ser_run_job_flow_input_input(
         crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_62, var_61)?;
         object_62.finish();
     }
+    if let Some(var_63) = &input.session_enabled {
+        object.key("SessionEnabled").boolean(*var_63);
+    }
     Ok(())
 }

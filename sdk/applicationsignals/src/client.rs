@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateServiceLevelObjective`](crate::operation::create_service_level_objective) operation has
-/// a [`Client::create_service_level_objective`], function which returns a builder for that operation.
+/// For example, the [`CreateInstrumentationConfiguration`](crate::operation::create_instrumentation_configuration) operation has
+/// a [`Client::create_instrumentation_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_service_level_objective()
-///     .name("example")
+/// let result = client.create_instrumentation_configuration()
+///     .instrumentation_type("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,9 +136,13 @@ impl Client {
     }
 }
 
+mod batch_delete_instrumentation_configurations;
+
 mod batch_get_service_level_objective_budget_report;
 
 mod batch_update_exclusion_windows;
+
+mod create_instrumentation_configuration;
 
 mod create_service_level_objective;
 
@@ -153,7 +157,7 @@ mod create_service_level_objective;
 /// # let client: aws_sdk_applicationsignals::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_get_service_level_objective_budget_report()
+/// let result = client.batch_delete_instrumentation_configurations()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -171,7 +175,13 @@ pub mod customize;
 
 mod delete_grouping_configuration;
 
+mod delete_instrumentation_configuration;
+
 mod delete_service_level_objective;
+
+mod get_instrumentation_configuration;
+
+mod get_instrumentation_configuration_status;
 
 mod get_service;
 
@@ -182,6 +192,8 @@ mod list_audit_findings;
 mod list_entity_events;
 
 mod list_grouping_attribute_definitions;
+
+mod list_instrumentation_configurations;
 
 mod list_service_dependencies;
 
@@ -200,6 +212,8 @@ mod list_services;
 mod list_tags_for_resource;
 
 mod put_grouping_configuration;
+
+mod report_instrumentation_configuration_status;
 
 mod start_discovery;
 

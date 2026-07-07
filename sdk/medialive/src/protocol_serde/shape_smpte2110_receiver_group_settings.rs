@@ -21,10 +21,16 @@ pub fn ser_smpte2110_receiver_group_settings(
 pub(crate) fn de_smpte2110_receiver_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Smpte2110ReceiverGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,7 +42,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "smpte2110ReceiverGroups" => {
                             builder = builder.set_smpte2110_receiver_groups(
-                                crate::protocol_serde::shape_list_of_smpte2110_receiver_group::de_list_of_smpte2110_receiver_group(tokens, _value)?,
+                                crate::protocol_serde::shape_list_of_smpte2110_receiver_group::de_list_of_smpte2110_receiver_group(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -39,6 +39,8 @@ pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_user::User;
 
+pub use crate::types::_resource_share_error::ResourceShareError;
+
 pub use crate::types::_action_required::ActionRequired;
 
 pub use crate::types::_broker_instance::BrokerInstance;
@@ -53,6 +55,8 @@ pub use crate::types::_broker_engine_type::BrokerEngineType;
 
 pub use crate::types::_broker_instance_option::BrokerInstanceOption;
 
+pub use crate::types::_shared_resource::SharedResource;
+
 pub use crate::types::_change_type::ChangeType;
 
 pub use crate::types::_broker_summary::BrokerSummary;
@@ -61,11 +65,19 @@ pub use crate::types::_configuration::Configuration;
 
 pub use crate::types::_sanitization_warning::SanitizationWarning;
 
+pub use crate::types::_shared_resource_error::SharedResourceError;
+
+pub use crate::types::_shared_resource_status::SharedResourceStatus;
+
+pub use crate::types::_shared_resource_type::SharedResourceType;
+
 pub use crate::types::_sanitization_warning_reason::SanitizationWarningReason;
 
 pub use crate::types::_engine_version::EngineVersion;
 
 pub use crate::types::_availability_zone::AvailabilityZone;
+
+pub use crate::types::_shared_resource_error_code::SharedResourceErrorCode;
 
 mod _action_required;
 
@@ -123,9 +135,21 @@ mod _pending_logs;
 
 mod _promote_mode;
 
+mod _resource_share_error;
+
 mod _sanitization_warning;
 
 mod _sanitization_warning_reason;
+
+mod _shared_resource;
+
+mod _shared_resource_error;
+
+mod _shared_resource_error_code;
+
+mod _shared_resource_status;
+
+mod _shared_resource_type;
 
 mod _user;
 

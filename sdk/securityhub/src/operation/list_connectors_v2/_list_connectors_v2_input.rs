@@ -11,6 +11,8 @@ pub struct ListConnectorsV2Input {
     pub provider_name: ::std::option::Option<crate::types::ConnectorProviderName>,
     /// <p>The status for the connectorV2.</p>
     pub connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
+    /// <p>The enablement status to filter connectors by.</p>
+    pub enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
 }
 impl ListConnectorsV2Input {
     /// <p>The pagination token per the Amazon Web Services Pagination standard</p>
@@ -29,6 +31,10 @@ impl ListConnectorsV2Input {
     pub fn connector_status(&self) -> ::std::option::Option<&crate::types::ConnectorStatus> {
         self.connector_status.as_ref()
     }
+    /// <p>The enablement status to filter connectors by.</p>
+    pub fn enablement_status(&self) -> ::std::option::Option<&crate::types::EnablementStatus> {
+        self.enablement_status.as_ref()
+    }
 }
 impl ListConnectorsV2Input {
     /// Creates a new builder-style object to manufacture [`ListConnectorsV2Input`](crate::operation::list_connectors_v2::ListConnectorsV2Input).
@@ -45,6 +51,7 @@ pub struct ListConnectorsV2InputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) provider_name: ::std::option::Option<crate::types::ConnectorProviderName>,
     pub(crate) connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
+    pub(crate) enablement_status: ::std::option::Option<crate::types::EnablementStatus>,
 }
 impl ListConnectorsV2InputBuilder {
     /// <p>The pagination token per the Amazon Web Services Pagination standard</p>
@@ -103,6 +110,20 @@ impl ListConnectorsV2InputBuilder {
     pub fn get_connector_status(&self) -> &::std::option::Option<crate::types::ConnectorStatus> {
         &self.connector_status
     }
+    /// <p>The enablement status to filter connectors by.</p>
+    pub fn enablement_status(mut self, input: crate::types::EnablementStatus) -> Self {
+        self.enablement_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enablement status to filter connectors by.</p>
+    pub fn set_enablement_status(mut self, input: ::std::option::Option<crate::types::EnablementStatus>) -> Self {
+        self.enablement_status = input;
+        self
+    }
+    /// <p>The enablement status to filter connectors by.</p>
+    pub fn get_enablement_status(&self) -> &::std::option::Option<crate::types::EnablementStatus> {
+        &self.enablement_status
+    }
     /// Consumes the builder and constructs a [`ListConnectorsV2Input`](crate::operation::list_connectors_v2::ListConnectorsV2Input).
     pub fn build(
         self,
@@ -112,6 +133,7 @@ impl ListConnectorsV2InputBuilder {
             max_results: self.max_results,
             provider_name: self.provider_name,
             connector_status: self.connector_status,
+            enablement_status: self.enablement_status,
         })
     }
 }

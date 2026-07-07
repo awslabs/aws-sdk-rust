@@ -143,6 +143,8 @@ pub fn de_create_cidr_collection(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("CreateCidrCollectionResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected CreateCidrCollectionResponse but got {start_el:?}. This is likely a bug in the SDK."
@@ -153,7 +155,7 @@ pub fn de_create_cidr_collection(
             s if s.matches("Collection") /* Collection com.amazonaws.route53.synthetic#CreateCidrCollectionOutput$Collection */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_cidr_collection::de_cidr_collection(&mut tag)
+                        crate::protocol_serde::shape_cidr_collection::de_cidr_collection(&mut tag, depth + 1)
                         ?
                     )
                 ;

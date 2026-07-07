@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_warm_pool_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::WarmPoolConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::WarmPoolConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -68,7 +72,7 @@ pub fn de_warm_pool_configuration(
             s if s.matches("InstanceReusePolicy") /* InstanceReusePolicy com.amazonaws.autoscaling#WarmPoolConfiguration$InstanceReusePolicy */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_instance_reuse_policy::de_instance_reuse_policy(&mut tag)
+                        crate::protocol_serde::shape_instance_reuse_policy::de_instance_reuse_policy(&mut tag, depth + 1)
                         ?
                     )
                 ;

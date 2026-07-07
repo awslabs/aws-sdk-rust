@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc_endpoint_connection(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VpcEndpointConnection, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VpcEndpointConnection::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -77,7 +81,7 @@ pub fn de_vpc_endpoint_connection(
             s if s.matches("dnsEntrySet") /* DnsEntries com.amazonaws.ec2#VpcEndpointConnection$DnsEntries */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_dns_entry_set::de_dns_entry_set(&mut tag)
+                        crate::protocol_serde::shape_dns_entry_set::de_dns_entry_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -87,7 +91,7 @@ pub fn de_vpc_endpoint_connection(
             s if s.matches("networkLoadBalancerArnSet") /* NetworkLoadBalancerArns com.amazonaws.ec2#VpcEndpointConnection$NetworkLoadBalancerArns */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -97,7 +101,7 @@ pub fn de_vpc_endpoint_connection(
             s if s.matches("gatewayLoadBalancerArnSet") /* GatewayLoadBalancerArns com.amazonaws.ec2#VpcEndpointConnection$GatewayLoadBalancerArns */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -134,7 +138,7 @@ pub fn de_vpc_endpoint_connection(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VpcEndpointConnection$Tags */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -152,6 +156,16 @@ pub fn de_vpc_endpoint_connection(
                     )
                 ;
                 builder = builder.set_vpc_endpoint_region(var_12);
+            }
+            ,
+            s if s.matches("payerResponsibilitySet") /* PayerResponsibilities com.amazonaws.ec2#VpcEndpointConnection$PayerResponsibilities */ =>  {
+                let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_payer_responsibility_set::de_payer_responsibility_set(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_payer_responsibilities(var_13);
             }
             ,
             _ => {}

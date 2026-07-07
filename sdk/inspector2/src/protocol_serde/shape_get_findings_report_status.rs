@@ -150,13 +150,15 @@ pub(crate) fn de_get_findings_report_status(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "destination" => {
-                    builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens, _value)?);
+                    builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens, _value, depth + 1)?);
                 }
                 "errorCode" => {
                     builder = builder.set_error_code(
@@ -173,7 +175,11 @@ pub(crate) fn de_get_findings_report_status(
                     );
                 }
                 "filterCriteria" => {
-                    builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens, _value)?);
+                    builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "reportId" => {
                     builder = builder.set_report_id(

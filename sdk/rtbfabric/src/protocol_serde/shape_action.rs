@@ -24,10 +24,16 @@ pub fn ser_action(
 pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -53,11 +59,11 @@ where
                     }
                     variant = match key.as_ref() {
                         "noBid" => Some(crate::types::Action::NoBid(
-                            crate::protocol_serde::shape_no_bid_action::de_no_bid_action(tokens, _value)?
+                            crate::protocol_serde::shape_no_bid_action::de_no_bid_action(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noBid' cannot be null"))?,
                         )),
                         "headerTag" => Some(crate::types::Action::HeaderTag(
-                            crate::protocol_serde::shape_header_tag_action::de_header_tag_action(tokens, _value)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_header_tag_action::de_header_tag_action(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'headerTag' cannot be null")
                             })?,
                         )),

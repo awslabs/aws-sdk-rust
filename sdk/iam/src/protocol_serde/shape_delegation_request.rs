@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_delegation_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DelegationRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DelegationRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_delegation_request(
             s if s.matches("Permissions") /* Permissions com.amazonaws.iam#DelegationRequest$Permissions */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_delegation_permission::de_delegation_permission(&mut tag)
+                        crate::protocol_serde::shape_delegation_permission::de_delegation_permission(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_delegation_request(
             s if s.matches("RolePermissionRestrictionArns") /* RolePermissionRestrictionArns com.amazonaws.iam#DelegationRequest$RolePermissionRestrictionArns */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_role_permission_restriction_arn_list_type::de_role_permission_restriction_arn_list_type(&mut tag)
+                        crate::protocol_serde::shape_role_permission_restriction_arn_list_type::de_role_permission_restriction_arn_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

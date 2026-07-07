@@ -2,10 +2,16 @@
 pub(crate) fn de_sip_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SipRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,7 +54,11 @@ where
                         }
                         "TargetApplications" => {
                             builder = builder.set_target_applications(
-                                crate::protocol_serde::shape_sip_rule_target_application_list::de_sip_rule_target_application_list(tokens, _value)?,
+                                crate::protocol_serde::shape_sip_rule_target_application_list::de_sip_rule_target_application_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "CreatedTimestamp" => {

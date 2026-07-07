@@ -2,10 +2,16 @@
 pub(crate) fn de_aws_opportunity_insights<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsOpportunityInsights>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -32,9 +38,25 @@ where
                         "AwsProductsSpendInsightsBySource" => {
                             builder = builder.set_aws_products_spend_insights_by_source(
                                 crate::protocol_serde::shape_aws_products_spend_insights_by_source::de_aws_products_spend_insights_by_source(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
+                        }
+                        "OpportunityQuality" => {
+                            builder = builder.set_opportunity_quality(crate::protocol_serde::shape_opportunity_quality::de_opportunity_quality(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "Recommendations" => {
+                            builder = builder.set_recommendations(crate::protocol_serde::shape_recommendation_list::de_recommendation_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

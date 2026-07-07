@@ -87,10 +87,16 @@ pub fn ser_aws_s3_bucket_details(
 pub(crate) fn de_aws_s3_bucket_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsS3BucketDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -131,17 +137,17 @@ where
                             }
                             "ServerSideEncryptionConfiguration" => {
                                 builder = builder.set_server_side_encryption_configuration(
-                                    crate::protocol_serde::shape_aws_s3_bucket_server_side_encryption_configuration::de_aws_s3_bucket_server_side_encryption_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_server_side_encryption_configuration::de_aws_s3_bucket_server_side_encryption_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "BucketLifecycleConfiguration" => {
                                 builder = builder.set_bucket_lifecycle_configuration(
-                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_details::de_aws_s3_bucket_bucket_lifecycle_configuration_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_details::de_aws_s3_bucket_bucket_lifecycle_configuration_details(tokens, _value, depth + 1)?
                                 );
                             }
                             "PublicAccessBlockConfiguration" => {
                                 builder = builder.set_public_access_block_configuration(
-                                    crate::protocol_serde::shape_aws_s3_account_public_access_block_details::de_aws_s3_account_public_access_block_details(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_account_public_access_block_details::de_aws_s3_account_public_access_block_details(tokens, _value, depth + 1)?
                                 );
                             }
                             "AccessControlList" => {
@@ -154,31 +160,37 @@ where
                             "BucketLoggingConfiguration" => {
                                 builder = builder.set_bucket_logging_configuration(
                                     crate::protocol_serde::shape_aws_s3_bucket_logging_configuration::de_aws_s3_bucket_logging_configuration(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "BucketWebsiteConfiguration" => {
                                 builder = builder.set_bucket_website_configuration(
                                     crate::protocol_serde::shape_aws_s3_bucket_website_configuration::de_aws_s3_bucket_website_configuration(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "BucketNotificationConfiguration" => {
                                 builder = builder.set_bucket_notification_configuration(
-                                    crate::protocol_serde::shape_aws_s3_bucket_notification_configuration::de_aws_s3_bucket_notification_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_notification_configuration::de_aws_s3_bucket_notification_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "BucketVersioningConfiguration" => {
                                 builder = builder.set_bucket_versioning_configuration(
-                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_versioning_configuration::de_aws_s3_bucket_bucket_versioning_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_versioning_configuration::de_aws_s3_bucket_bucket_versioning_configuration(tokens, _value, depth + 1)?
                                 );
                             }
                             "ObjectLockConfiguration" => {
                                 builder = builder.set_object_lock_configuration(
                                     crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration::de_aws_s3_bucket_object_lock_configuration(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }

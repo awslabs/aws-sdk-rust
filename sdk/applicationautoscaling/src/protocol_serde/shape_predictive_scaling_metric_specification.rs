@@ -60,10 +60,16 @@ pub fn ser_predictive_scaling_metric_specification(
 pub(crate) fn de_predictive_scaling_metric_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PredictiveScalingMetricSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -80,32 +86,32 @@ where
                         }
                         "PredefinedMetricPairSpecification" => {
                             builder = builder.set_predefined_metric_pair_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_predefined_metric_pair_specification::de_predictive_scaling_predefined_metric_pair_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_predictive_scaling_predefined_metric_pair_specification::de_predictive_scaling_predefined_metric_pair_specification(tokens, _value, depth + 1)?
                                 );
                         }
                         "PredefinedScalingMetricSpecification" => {
                             builder = builder.set_predefined_scaling_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_predefined_scaling_metric_specification::de_predictive_scaling_predefined_scaling_metric_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_predictive_scaling_predefined_scaling_metric_specification::de_predictive_scaling_predefined_scaling_metric_specification(tokens, _value, depth + 1)?
                                 );
                         }
                         "PredefinedLoadMetricSpecification" => {
                             builder = builder.set_predefined_load_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_predefined_load_metric_specification::de_predictive_scaling_predefined_load_metric_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_predictive_scaling_predefined_load_metric_specification::de_predictive_scaling_predefined_load_metric_specification(tokens, _value, depth + 1)?
                                 );
                         }
                         "CustomizedScalingMetricSpecification" => {
                             builder = builder.set_customized_scaling_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value, depth + 1)?
                                 );
                         }
                         "CustomizedLoadMetricSpecification" => {
                             builder = builder.set_customized_load_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value, depth + 1)?
                                 );
                         }
                         "CustomizedCapacityMetricSpecification" => {
                             builder = builder.set_customized_capacity_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value)?
+                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -17,6 +17,8 @@
 ///     DatastoreStatus::Creating => { /* ... */ },
 ///     DatastoreStatus::Deleted => { /* ... */ },
 ///     DatastoreStatus::Deleting => { /* ... */ },
+///     DatastoreStatus::UpdateFailed => { /* ... */ },
+///     DatastoreStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +57,10 @@ pub enum DatastoreStatus {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +73,8 @@ impl ::std::convert::From<&str> for DatastoreStatus {
             "CREATING" => DatastoreStatus::Creating,
             "DELETED" => DatastoreStatus::Deleted,
             "DELETING" => DatastoreStatus::Deleting,
+            "UPDATE_FAILED" => DatastoreStatus::UpdateFailed,
+            "UPDATING" => DatastoreStatus::Updating,
             other => DatastoreStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,12 +95,14 @@ impl DatastoreStatus {
             DatastoreStatus::Creating => "CREATING",
             DatastoreStatus::Deleted => "DELETED",
             DatastoreStatus::Deleting => "DELETING",
+            DatastoreStatus::UpdateFailed => "UPDATE_FAILED",
+            DatastoreStatus::Updating => "UPDATING",
             DatastoreStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETED", "DELETING"]
+        &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETED", "DELETING", "UPDATE_FAILED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for DatastoreStatus {
@@ -120,6 +130,8 @@ impl ::std::fmt::Display for DatastoreStatus {
             DatastoreStatus::Creating => write!(f, "CREATING"),
             DatastoreStatus::Deleted => write!(f, "DELETED"),
             DatastoreStatus::Deleting => write!(f, "DELETING"),
+            DatastoreStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            DatastoreStatus::Updating => write!(f, "UPDATING"),
             DatastoreStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -182,23 +182,77 @@ impl CalculateRouteMatrixFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
     ///
-    /// <p>List of destinations for the route.</p><note>
+    /// <p>List of destinations for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
     /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
+    /// <p>The maximum number of destinations depends on the routing boundary configuration:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code> set: maximum 500 destinations</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code> set to <code>true</code>: maximum 100 destinations</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: maximum 350 destinations</p></li>
+    /// </ul>
+    /// <p>The total matrix size (origins × destinations) must not exceed:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code>: 160,000</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code>: 100</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: 122,500</p></li>
+    /// </ul>
     pub fn destinations(mut self, input: crate::types::RouteMatrixDestination) -> Self {
         self.inner = self.inner.destinations(input);
         self
     }
-    /// <p>List of destinations for the route.</p><note>
+    /// <p>List of destinations for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
     /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
+    /// <p>The maximum number of destinations depends on the routing boundary configuration:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code> set: maximum 500 destinations</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code> set to <code>true</code>: maximum 100 destinations</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: maximum 350 destinations</p></li>
+    /// </ul>
+    /// <p>The total matrix size (origins × destinations) must not exceed:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code>: 160,000</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code>: 100</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: 122,500</p></li>
+    /// </ul>
     pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixDestination>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
-    /// <p>List of destinations for the route.</p><note>
+    /// <p>List of destinations for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
     /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
+    /// <p>The maximum number of destinations depends on the routing boundary configuration:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code> set: maximum 500 destinations</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code> set to <code>true</code>: maximum 100 destinations</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: maximum 350 destinations</p></li>
+    /// </ul>
+    /// <p>The total matrix size (origins × destinations) must not exceed:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code>: 160,000</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code>: 100</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: 122,500</p></li>
+    /// </ul>
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixDestination>> {
         self.inner.get_destinations()
     }
@@ -252,29 +306,83 @@ impl CalculateRouteMatrixFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_origins`](Self::set_origins).
     ///
-    /// <p>The position for the origin in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
+    /// <p>List of origins for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
     /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
+    /// <p>The maximum number of origins depends on the routing boundary configuration:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code> set: maximum 500 origins</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code> set to <code>true</code>: maximum 15 origins</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: maximum 350 origins</p></li>
+    /// </ul>
+    /// <p>The total matrix size (origins × destinations) must not exceed:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code>: 160,000</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code>: 100</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: 122,500</p></li>
+    /// </ul>
     pub fn origins(mut self, input: crate::types::RouteMatrixOrigin) -> Self {
         self.inner = self.inner.origins(input);
         self
     }
-    /// <p>The position for the origin in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
+    /// <p>List of origins for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
     /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
+    /// <p>The maximum number of origins depends on the routing boundary configuration:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code> set: maximum 500 origins</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code> set to <code>true</code>: maximum 15 origins</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: maximum 350 origins</p></li>
+    /// </ul>
+    /// <p>The total matrix size (origins × destinations) must not exceed:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code>: 160,000</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code>: 100</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: 122,500</p></li>
+    /// </ul>
     pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixOrigin>>) -> Self {
         self.inner = self.inner.set_origins(input);
         self
     }
-    /// <p>The position for the origin in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
+    /// <p>List of origins for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
     /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
+    /// <p>The maximum number of origins depends on the routing boundary configuration:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code> set: maximum 500 origins</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code> set to <code>true</code>: maximum 15 origins</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: maximum 350 origins</p></li>
+    /// </ul>
+    /// <p>The total matrix size (origins × destinations) must not exceed:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Geometry</code>: 160,000</p></li>
+    /// <li>
+    /// <p>With <code>RoutingBoundary.Unbounded</code>: 100</p></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>: 122,500</p></li>
+    /// </ul>
     pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixOrigin>> {
         self.inner.get_origins()
     }
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Unbounded</code> set to <code>true</code>.</p>
     /// <p>Default value: <code>Unbounded set to true</code></p><note>
-    /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
+    /// <p>When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     /// </note>
     pub fn routing_boundary(mut self, input: crate::types::RouteMatrixBoundary) -> Self {
         self.inner = self.inner.routing_boundary(input);
@@ -282,7 +390,7 @@ impl CalculateRouteMatrixFluentBuilder {
     }
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Unbounded</code> set to <code>true</code>.</p>
     /// <p>Default value: <code>Unbounded set to true</code></p><note>
-    /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
+    /// <p>When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     /// </note>
     pub fn set_routing_boundary(mut self, input: ::std::option::Option<crate::types::RouteMatrixBoundary>) -> Self {
         self.inner = self.inner.set_routing_boundary(input);
@@ -290,7 +398,7 @@ impl CalculateRouteMatrixFluentBuilder {
     }
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Unbounded</code> set to <code>true</code>.</p>
     /// <p>Default value: <code>Unbounded set to true</code></p><note>
-    /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
+    /// <p>When <code>AutoCircle</code> is set in the request, the response routing boundary will return <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
     /// </note>
     pub fn get_routing_boundary(&self) -> &::std::option::Option<crate::types::RouteMatrixBoundary> {
         self.inner.get_routing_boundary()

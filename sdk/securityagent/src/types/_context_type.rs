@@ -38,19 +38,19 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Category of execution context
+/// <p>Category of execution context.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ContextType {
-    /// Client-side error encountered during execution
+    /// <p>Client-side error encountered during execution.</p>
     ClientError,
-    /// Error encountered during execution
+    /// <p>Error encountered during execution.</p>
     Error,
-    /// Informational message during execution
+    /// <p>Informational message during execution.</p>
     Info,
-    /// Warning encountered during execution
+    /// <p>Warning encountered during execution.</p>
     Warning,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

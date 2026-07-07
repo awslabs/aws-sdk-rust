@@ -194,6 +194,8 @@ pub(crate) fn de_describe_private_connection(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -204,6 +206,20 @@ pub(crate) fn de_describe_private_connection(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "dnsResolution" => {
+                    builder = builder.set_dns_resolution(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ResourceConfigDnsResolution::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "failureMessage" => {
+                    builder = builder.set_failure_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "hostAddress" => {
                     builder = builder.set_host_address(
@@ -241,7 +257,7 @@ pub(crate) fn de_describe_private_connection(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "type" => {
                     builder = builder.set_type(

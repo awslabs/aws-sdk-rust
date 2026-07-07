@@ -27,10 +27,16 @@ pub fn ser_audio_track_selection(
 pub(crate) fn de_audio_track_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AudioTrackSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -41,11 +47,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tracks" => {
-                            builder = builder.set_tracks(crate::protocol_serde::shape_list_of_audio_track::de_list_of_audio_track(tokens, _value)?);
+                            builder = builder.set_tracks(crate::protocol_serde::shape_list_of_audio_track::de_list_of_audio_track(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dolbyEDecode" => {
                             builder = builder.set_dolby_e_decode(crate::protocol_serde::shape_audio_dolby_e_decode::de_audio_dolby_e_decode(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

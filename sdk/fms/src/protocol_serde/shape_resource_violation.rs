@@ -2,10 +2,16 @@
 pub(crate) fn de_resource_violation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResourceViolation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -19,141 +25,159 @@ where
                             "AwsVPCSecurityGroupViolation" => {
                                 builder = builder.set_aws_vpc_security_group_violation(
                                     crate::protocol_serde::shape_aws_vpc_security_group_violation::de_aws_vpc_security_group_violation(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "AwsEc2NetworkInterfaceViolation" => {
                                 builder = builder.set_aws_ec2_network_interface_violation(
                                     crate::protocol_serde::shape_aws_ec2_network_interface_violation::de_aws_ec2_network_interface_violation(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "AwsEc2InstanceViolation" => {
                                 builder = builder.set_aws_ec2_instance_violation(
-                                    crate::protocol_serde::shape_aws_ec2_instance_violation::de_aws_ec2_instance_violation(tokens, _value)?,
+                                    crate::protocol_serde::shape_aws_ec2_instance_violation::de_aws_ec2_instance_violation(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "NetworkFirewallMissingFirewallViolation" => {
                                 builder = builder.set_network_firewall_missing_firewall_violation(
-                                    crate::protocol_serde::shape_network_firewall_missing_firewall_violation::de_network_firewall_missing_firewall_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_missing_firewall_violation::de_network_firewall_missing_firewall_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallMissingSubnetViolation" => {
                                 builder = builder.set_network_firewall_missing_subnet_violation(
-                                    crate::protocol_serde::shape_network_firewall_missing_subnet_violation::de_network_firewall_missing_subnet_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_missing_subnet_violation::de_network_firewall_missing_subnet_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallMissingExpectedRTViolation" => {
                                 builder = builder.set_network_firewall_missing_expected_rt_violation(
-                                    crate::protocol_serde::shape_network_firewall_missing_expected_rt_violation::de_network_firewall_missing_expected_rt_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_missing_expected_rt_violation::de_network_firewall_missing_expected_rt_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallPolicyModifiedViolation" => {
                                 builder = builder.set_network_firewall_policy_modified_violation(
-                                    crate::protocol_serde::shape_network_firewall_policy_modified_violation::de_network_firewall_policy_modified_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_policy_modified_violation::de_network_firewall_policy_modified_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallInternetTrafficNotInspectedViolation" => {
                                 builder = builder.set_network_firewall_internet_traffic_not_inspected_violation(
-                                    crate::protocol_serde::shape_network_firewall_internet_traffic_not_inspected_violation::de_network_firewall_internet_traffic_not_inspected_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_internet_traffic_not_inspected_violation::de_network_firewall_internet_traffic_not_inspected_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallInvalidRouteConfigurationViolation" => {
                                 builder = builder.set_network_firewall_invalid_route_configuration_violation(
-                                    crate::protocol_serde::shape_network_firewall_invalid_route_configuration_violation::de_network_firewall_invalid_route_configuration_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_invalid_route_configuration_violation::de_network_firewall_invalid_route_configuration_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallBlackHoleRouteDetectedViolation" => {
                                 builder = builder.set_network_firewall_black_hole_route_detected_violation(
-                                    crate::protocol_serde::shape_network_firewall_black_hole_route_detected_violation::de_network_firewall_black_hole_route_detected_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_black_hole_route_detected_violation::de_network_firewall_black_hole_route_detected_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallUnexpectedFirewallRoutesViolation" => {
                                 builder = builder.set_network_firewall_unexpected_firewall_routes_violation(
-                                    crate::protocol_serde::shape_network_firewall_unexpected_firewall_routes_violation::de_network_firewall_unexpected_firewall_routes_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_unexpected_firewall_routes_violation::de_network_firewall_unexpected_firewall_routes_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallUnexpectedGatewayRoutesViolation" => {
                                 builder = builder.set_network_firewall_unexpected_gateway_routes_violation(
-                                    crate::protocol_serde::shape_network_firewall_unexpected_gateway_routes_violation::de_network_firewall_unexpected_gateway_routes_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_unexpected_gateway_routes_violation::de_network_firewall_unexpected_gateway_routes_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "NetworkFirewallMissingExpectedRoutesViolation" => {
                                 builder = builder.set_network_firewall_missing_expected_routes_violation(
-                                    crate::protocol_serde::shape_network_firewall_missing_expected_routes_violation::de_network_firewall_missing_expected_routes_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_network_firewall_missing_expected_routes_violation::de_network_firewall_missing_expected_routes_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "DnsRuleGroupPriorityConflictViolation" => {
                                 builder = builder.set_dns_rule_group_priority_conflict_violation(
-                                    crate::protocol_serde::shape_dns_rule_group_priority_conflict_violation::de_dns_rule_group_priority_conflict_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_dns_rule_group_priority_conflict_violation::de_dns_rule_group_priority_conflict_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "DnsDuplicateRuleGroupViolation" => {
                                 builder = builder.set_dns_duplicate_rule_group_violation(
                                     crate::protocol_serde::shape_dns_duplicate_rule_group_violation::de_dns_duplicate_rule_group_violation(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "DnsRuleGroupLimitExceededViolation" => {
                                 builder = builder.set_dns_rule_group_limit_exceeded_violation(
                                     crate::protocol_serde::shape_dns_rule_group_limit_exceeded_violation::de_dns_rule_group_limit_exceeded_violation(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "FirewallSubnetIsOutOfScopeViolation" => {
                                 builder = builder.set_firewall_subnet_is_out_of_scope_violation(
-                                    crate::protocol_serde::shape_firewall_subnet_is_out_of_scope_violation::de_firewall_subnet_is_out_of_scope_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_firewall_subnet_is_out_of_scope_violation::de_firewall_subnet_is_out_of_scope_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "RouteHasOutOfScopeEndpointViolation" => {
                                 builder = builder.set_route_has_out_of_scope_endpoint_violation(
-                                    crate::protocol_serde::shape_route_has_out_of_scope_endpoint_violation::de_route_has_out_of_scope_endpoint_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_route_has_out_of_scope_endpoint_violation::de_route_has_out_of_scope_endpoint_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "ThirdPartyFirewallMissingFirewallViolation" => {
                                 builder = builder.set_third_party_firewall_missing_firewall_violation(
-                                    crate::protocol_serde::shape_third_party_firewall_missing_firewall_violation::de_third_party_firewall_missing_firewall_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_third_party_firewall_missing_firewall_violation::de_third_party_firewall_missing_firewall_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "ThirdPartyFirewallMissingSubnetViolation" => {
                                 builder = builder.set_third_party_firewall_missing_subnet_violation(
-                                    crate::protocol_serde::shape_third_party_firewall_missing_subnet_violation::de_third_party_firewall_missing_subnet_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_third_party_firewall_missing_subnet_violation::de_third_party_firewall_missing_subnet_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "ThirdPartyFirewallMissingExpectedRouteTableViolation" => {
                                 builder = builder.set_third_party_firewall_missing_expected_route_table_violation(
-                                    crate::protocol_serde::shape_third_party_firewall_missing_expected_route_table_violation::de_third_party_firewall_missing_expected_route_table_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_third_party_firewall_missing_expected_route_table_violation::de_third_party_firewall_missing_expected_route_table_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "FirewallSubnetMissingVPCEndpointViolation" => {
                                 builder = builder.set_firewall_subnet_missing_vpc_endpoint_violation(
-                                    crate::protocol_serde::shape_firewall_subnet_missing_vpc_endpoint_violation::de_firewall_subnet_missing_vpc_endpoint_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_firewall_subnet_missing_vpc_endpoint_violation::de_firewall_subnet_missing_vpc_endpoint_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "InvalidNetworkAclEntriesViolation" => {
                                 builder = builder.set_invalid_network_acl_entries_violation(
                                     crate::protocol_serde::shape_invalid_network_acl_entries_violation::de_invalid_network_acl_entries_violation(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }
                             "PossibleRemediationActions" => {
                                 builder = builder.set_possible_remediation_actions(
-                                    crate::protocol_serde::shape_possible_remediation_actions::de_possible_remediation_actions(tokens, _value)?,
+                                    crate::protocol_serde::shape_possible_remediation_actions::de_possible_remediation_actions(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "WebACLHasIncompatibleConfigurationViolation" => {
                                 builder = builder.set_web_acl_has_incompatible_configuration_violation(
-                                    crate::protocol_serde::shape_web_acl_has_incompatible_configuration_violation::de_web_acl_has_incompatible_configuration_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_web_acl_has_incompatible_configuration_violation::de_web_acl_has_incompatible_configuration_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             "WebACLHasOutOfScopeResourcesViolation" => {
                                 builder = builder.set_web_acl_has_out_of_scope_resources_violation(
-                                    crate::protocol_serde::shape_web_acl_has_out_of_scope_resources_violation::de_web_acl_has_out_of_scope_resources_violation(tokens, _value)?
+                                    crate::protocol_serde::shape_web_acl_has_out_of_scope_resources_violation::de_web_acl_has_out_of_scope_resources_violation(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

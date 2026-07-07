@@ -149,6 +149,16 @@ pub(crate) fn reflens_list_messages_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_models_output_output_next_token(
+    input: &crate::operation::list_models::ListModelsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_quick_responses_output_output_next_token(
     input: &crate::operation::list_quick_responses::ListQuickResponsesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -321,6 +331,13 @@ pub(crate) fn lens_list_messages_output_output_messages(
     input: crate::operation::list_messages::ListMessagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MessageOutput>> {
     let input = input.messages;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_models_output_output_model_summaries(
+    input: crate::operation::list_models::ListModelsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>> {
+    let input = input.model_summaries;
     ::std::option::Option::Some(input)
 }
 

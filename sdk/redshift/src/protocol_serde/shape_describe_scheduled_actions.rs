@@ -94,6 +94,8 @@ pub fn de_describe_scheduled_actions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeScheduledActionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeScheduledActionsResponse got {start_el:?}"
@@ -124,7 +126,7 @@ pub fn de_describe_scheduled_actions(
             s if s.matches("ScheduledActions") /* ScheduledActions com.amazonaws.redshift.synthetic#DescribeScheduledActionsOutput$ScheduledActions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_scheduled_action_list::de_scheduled_action_list(&mut tag)
+                        crate::protocol_serde::shape_scheduled_action_list::de_scheduled_action_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -173,6 +173,8 @@ pub mod customize;
 
 mod get_async_invoke;
 
+mod invoke_guardrail_checks;
+
 mod invoke_model;
 
 mod invoke_model_with_bidirectional_stream;

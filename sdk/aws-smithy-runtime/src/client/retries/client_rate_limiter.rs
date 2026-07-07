@@ -51,7 +51,7 @@ pub(crate) struct Inner {
     fill_rate: f64,
     /// The maximum capacity allowed in the token bucket.
     max_capacity: f64,
-    /// The current capacity of the token bucket. The minimum this can be is 1.0
+    /// The current capacity of the token bucket. The minimum this can be is 0.0.
     current_capacity: f64,
     /// The last time the token bucket was refilled.
     last_timestamp: Option<f64>,
@@ -117,7 +117,7 @@ impl ClientRateLimiter {
 
         it.refill(seconds_since_unix_epoch);
 
-        let res = if amount > it.current_capacity {
+        if amount > it.current_capacity {
             let sleep_time = (amount - it.current_capacity) / it.fill_rate;
             debug!(
                 amount,
@@ -126,14 +126,12 @@ impl ClientRateLimiter {
                 sleep_time,
                 "client rate limiter delayed a request"
             );
-
+            // Capacity unchanged; caller sleeps and re-acquires.
             Err(Duration::from_secs_f64(sleep_time))
         } else {
+            it.current_capacity -= amount;
             Ok(())
-        };
-
-        it.current_capacity -= amount;
-        res
+        }
     }
 
     pub(crate) fn update_rate_limiter(
@@ -729,6 +727,86 @@ mod tests {
         }
     }
 
+    // Regression test for the multi-thread negative capacity bug.
+    // See: https://github.com/smithy-lang/smithy-rs/blob/main/rust-runtime/aws-smithy-runtime/src/client/retries/client_rate_limiter.rs#L135
+    // Failing test showing the bug: https://github.com/smithy-lang/smithy-rs/commit/786b6d07e17d39ae0a6c040a49664169149c2fdf
+    //
+    // Previously, capacity was deducted unconditionally (even on Err),
+    // allowing it to go to -0.95 in this scenario. Now capacity is only
+    // deducted when a token is actually granted (Ok), so it stays at 0.05.
+    #[tokio::test]
+    async fn test_capacity_never_goes_negative() {
+        let rate_limiter = ClientRateLimiter::builder()
+            .time_of_last_throttle(0.0)
+            .previous_time_bucket(0.0)
+            .build();
+
+        rate_limiter.update_rate_limiter(0.0, true);
+
+        // fill_rate = 0.5, 0.1s elapsed => refill adds 0.05 tokens.
+        // Cost of InitialRequest is 1.0, so capacity (0.05) is insufficient.
+        let result =
+            rate_limiter.acquire_permission_to_send_a_request(0.1, RequestReason::InitialRequest);
+
+        assert!(result.is_err(), "should require waiting for capacity");
+
+        let inner = rate_limiter.inner.lock().unwrap();
+        assert_relative_eq!(inner.current_capacity, 0.05, epsilon = 0.01);
+        assert_relative_eq!(result.unwrap_err().as_secs_f64(), 1.9, epsilon = 0.01);
+    }
+
+    #[tokio::test]
+    async fn test_concurrent_acquires_no_cascading_delays() {
+        let rate_limiter = ClientRateLimiter::builder()
+            .time_of_last_throttle(0.0)
+            .previous_time_bucket(0.0)
+            .build();
+
+        rate_limiter.update_rate_limiter(0.0, true);
+
+        let mut delays = Vec::with_capacity(10);
+        for _ in 0..10 {
+            let result = rate_limiter
+                .acquire_permission_to_send_a_request(0.1, RequestReason::InitialRequest);
+            assert!(result.is_err());
+            delays.push(result.unwrap_err());
+        }
+
+        // All delays must be identical — no cascading
+        let first = delays[0];
+        for delay in &delays {
+            assert_eq!(*delay, first, "all tasks should get the same delay");
+        }
+
+        let inner = rate_limiter.inner.lock().unwrap();
+        assert!(
+            inner.current_capacity >= 0.0,
+            "capacity must never be negative"
+        );
+    }
+
+    #[tokio::test]
+    async fn test_acquire_succeeds_after_sufficient_refill() {
+        let rate_limiter = ClientRateLimiter::builder()
+            .time_of_last_throttle(0.0)
+            .previous_time_bucket(0.0)
+            .build();
+
+        rate_limiter.update_rate_limiter(0.0, true);
+
+        let result =
+            rate_limiter.acquire_permission_to_send_a_request(0.1, RequestReason::InitialRequest);
+        assert!(result.is_err());
+
+        // At 2.1s: refill adds 1.0 token, capped at max_capacity (1.0).
+        let result =
+            rate_limiter.acquire_permission_to_send_a_request(2.1, RequestReason::InitialRequest);
+        assert!(result.is_ok(), "should succeed after sufficient refill");
+
+        let inner = rate_limiter.inner.lock().unwrap();
+        assert_relative_eq!(inner.current_capacity, 0.0, epsilon = 0.01);
+    }
+
     // This test is only testing that we don't fail basic math and panic. It does include an
     // element of randomness, but no duration between >= 0.0s and <= 1.0s will ever cause a panic.
     //
@@ -767,6 +845,67 @@ mod tests {
             inner.last_timestamp.unwrap(),
             sleep_impl.total_duration().as_secs_f64(),
             max_relative = 0.0001
+        );
+    }
+
+    #[tokio::test]
+    async fn test_multi_task_recovery_after_throttle_blip() {
+        // Simulates the transient throttle blip scenario: 50 tasks share a
+        // rate limiter, all get throttled, then throttle lifts. Verifies
+        // that tasks recover and can acquire tokens again.
+        let crl = ClientRateLimiter::builder()
+            .time_of_last_throttle(0.0)
+            .previous_time_bucket(0.0)
+            .build();
+
+        let num_tasks = 50;
+        let mut time = 0.0;
+
+        // All tasks get throttled
+        for _ in 0..num_tasks {
+            time += 0.001;
+            crl.update_rate_limiter(time, true);
+        }
+
+        assert_relative_eq!(crl.inner.lock().unwrap().fill_rate, 0.5, epsilon = 0.01);
+
+        // Simulate recovery over 20 seconds (200 rounds * 100ms).
+        // Tasks that acquire successfully get a success response,
+        // which increases the fill rate.
+        let mut total_acquired = 0;
+        let rounds = 200;
+        for _ in 0..rounds {
+            time += 0.1;
+            let mut acquired_this_round = 0;
+
+            for task in 0..num_tasks {
+                let task_time = time + (task as f64) * 0.0001;
+                if crl
+                    .acquire_permission_to_send_a_request(task_time, RequestReason::InitialRequest)
+                    .is_ok()
+                {
+                    acquired_this_round += 1;
+                }
+            }
+
+            for _ in 0..acquired_this_round {
+                time += 0.001;
+                crl.update_rate_limiter(time, false);
+            }
+
+            total_acquired += acquired_this_round;
+        }
+
+        assert!(
+            total_acquired > 100,
+            "expected recovery after throttle blip, but only acquired {total_acquired} tokens in {rounds} rounds"
+        );
+
+        let inner = crl.inner.lock().unwrap();
+        assert!(
+            inner.current_capacity >= 0.0,
+            "capacity must never be negative, got: {}",
+            inner.current_capacity
         );
     }
 }

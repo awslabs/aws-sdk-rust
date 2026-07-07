@@ -125,10 +125,11 @@ pub(crate) fn de_list_rx_norm_inference_jobs(
     crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -138,6 +139,7 @@ pub(crate) fn de_list_rx_norm_inference_jobs(
                 Ok(builder.set_comprehend_medical_async_job_properties_list(Some(
                     crate::protocol_serde::shape_comprehend_medical_async_job_properties_list::de_comprehend_medical_async_job_properties_list(
                         decoder,
+                        depth + 1,
                     )?,
                 )))
             })?,
@@ -153,6 +155,8 @@ pub(crate) fn de_list_rx_norm_inference_jobs(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -162,13 +166,13 @@ pub(crate) fn de_list_rx_norm_inference_jobs(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

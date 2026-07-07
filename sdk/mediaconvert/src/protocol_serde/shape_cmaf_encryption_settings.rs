@@ -3,8 +3,11 @@ pub fn ser_cmaf_encryption_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CmafEncryptionSettings,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.clear_lead {
-        object.key("clearLead").string(var_1.as_str());
+    if let Some(var_1) = &input.clear_lead_segments {
+        object.key("clearLeadSegments").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
     }
     if let Some(var_2) = &input.constant_initialization_vector {
         object.key("constantInitializationVector").string(var_2.as_str());
@@ -36,10 +39,16 @@ pub fn ser_cmaf_encryption_settings(
 pub(crate) fn de_cmaf_encryption_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CmafEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -49,10 +58,10 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "clearLead" => {
-                            builder = builder.set_clear_lead(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::HlsClearLead::from(u.as_ref())))
+                        "clearLeadSegments" => {
+                            builder = builder.set_clear_lead_segments(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
@@ -82,12 +91,15 @@ where
                         }
                         "spekeKeyProvider" => {
                             builder = builder.set_speke_key_provider(
-                                crate::protocol_serde::shape_speke_key_provider_cmaf::de_speke_key_provider_cmaf(tokens, _value)?,
+                                crate::protocol_serde::shape_speke_key_provider_cmaf::de_speke_key_provider_cmaf(tokens, _value, depth + 1)?,
                             );
                         }
                         "staticKeyProvider" => {
-                            builder = builder
-                                .set_static_key_provider(crate::protocol_serde::shape_static_key_provider::de_static_key_provider(tokens, _value)?);
+                            builder = builder.set_static_key_provider(crate::protocol_serde::shape_static_key_provider::de_static_key_provider(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "type" => {
                             builder = builder.set_type(

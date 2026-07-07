@@ -134,6 +134,8 @@ pub(crate) fn de_update_variant_store(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -167,7 +169,7 @@ pub(crate) fn de_update_variant_store(
                     );
                 }
                 "reference" => {
-                    builder = builder.set_reference(crate::protocol_serde::shape_reference_item::de_reference_item(tokens, _value)?);
+                    builder = builder.set_reference(crate::protocol_serde::shape_reference_item::de_reference_item(tokens, _value, depth + 1)?);
                 }
                 "status" => {
                     builder = builder.set_status(

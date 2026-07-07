@@ -2,10 +2,16 @@
 pub(crate) fn de_event_rule_structure<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EventRuleStructure>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -57,15 +63,18 @@ where
                             );
                         }
                         "regions" => {
-                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);
+                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value, depth + 1)?);
                         }
                         "managedRules" => {
-                            builder =
-                                builder.set_managed_rules(crate::protocol_serde::shape_managed_rule_arns::de_managed_rule_arns(tokens, _value)?);
+                            builder = builder.set_managed_rules(crate::protocol_serde::shape_managed_rule_arns::de_managed_rule_arns(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "statusSummaryByRegion" => {
                             builder = builder.set_status_summary_by_region(
-                                crate::protocol_serde::shape_status_summary_by_region::de_status_summary_by_region(tokens, _value)?,
+                                crate::protocol_serde::shape_status_summary_by_region::de_status_summary_by_region(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

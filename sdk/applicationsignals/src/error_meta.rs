@@ -67,6 +67,46 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_delete_instrumentation_configurations::BatchDeleteInstrumentationConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_delete_instrumentation_configurations::BatchDeleteInstrumentationConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_instrumentation_configurations::BatchDeleteInstrumentationConfigurationsError> for Error {
+    fn from(err: crate::operation::batch_delete_instrumentation_configurations::BatchDeleteInstrumentationConfigurationsError) -> Self {
+        match err {
+            crate::operation::batch_delete_instrumentation_configurations::BatchDeleteInstrumentationConfigurationsError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::batch_delete_instrumentation_configurations::BatchDeleteInstrumentationConfigurationsError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::batch_delete_instrumentation_configurations::BatchDeleteInstrumentationConfigurationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_get_service_level_objective_budget_report::BatchGetServiceLevelObjectiveBudgetReportError,
             R,
         >,
@@ -132,6 +172,52 @@ impl From<crate::operation::batch_update_exclusion_windows::BatchUpdateExclusion
                 Error::ValidationException(inner)
             }
             crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError> for Error {
+    fn from(err: crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError) -> Self {
+        match err {
+            crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_instrumentation_configuration::CreateInstrumentationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -212,6 +298,49 @@ impl From<crate::operation::delete_grouping_configuration::DeleteGroupingConfigu
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_instrumentation_configuration::DeleteInstrumentationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_instrumentation_configuration::DeleteInstrumentationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_instrumentation_configuration::DeleteInstrumentationConfigurationError> for Error {
+    fn from(err: crate::operation::delete_instrumentation_configuration::DeleteInstrumentationConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_instrumentation_configuration::DeleteInstrumentationConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_instrumentation_configuration::DeleteInstrumentationConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_instrumentation_configuration::DeleteInstrumentationConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_instrumentation_configuration::DeleteInstrumentationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_service_level_objective::DeleteServiceLevelObjectiveError, R>>
     for Error
 where
@@ -245,6 +374,90 @@ impl From<crate::operation::delete_service_level_objective::DeleteServiceLevelOb
                 Error::ValidationException(inner)
             }
             crate::operation::delete_service_level_objective::DeleteServiceLevelObjectiveError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_instrumentation_configuration::GetInstrumentationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_instrumentation_configuration::GetInstrumentationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_instrumentation_configuration::GetInstrumentationConfigurationError> for Error {
+    fn from(err: crate::operation::get_instrumentation_configuration::GetInstrumentationConfigurationError) -> Self {
+        match err {
+            crate::operation::get_instrumentation_configuration::GetInstrumentationConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_instrumentation_configuration::GetInstrumentationConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_instrumentation_configuration::GetInstrumentationConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_instrumentation_configuration::GetInstrumentationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_instrumentation_configuration_status::GetInstrumentationConfigurationStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_instrumentation_configuration_status::GetInstrumentationConfigurationStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_instrumentation_configuration_status::GetInstrumentationConfigurationStatusError> for Error {
+    fn from(err: crate::operation::get_instrumentation_configuration_status::GetInstrumentationConfigurationStatusError) -> Self {
+        match err {
+            crate::operation::get_instrumentation_configuration_status::GetInstrumentationConfigurationStatusError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_instrumentation_configuration_status::GetInstrumentationConfigurationStatusError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_instrumentation_configuration_status::GetInstrumentationConfigurationStatusError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_instrumentation_configuration_status::GetInstrumentationConfigurationStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -388,6 +601,49 @@ impl From<crate::operation::list_grouping_attribute_definitions::ListGroupingAtt
                 Error::ValidationException(inner)
             }
             crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_instrumentation_configurations::ListInstrumentationConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_instrumentation_configurations::ListInstrumentationConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_instrumentation_configurations::ListInstrumentationConfigurationsError> for Error {
+    fn from(err: crate::operation::list_instrumentation_configurations::ListInstrumentationConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_instrumentation_configurations::ListInstrumentationConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_instrumentation_configurations::ListInstrumentationConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_instrumentation_configurations::ListInstrumentationConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_instrumentation_configurations::ListInstrumentationConfigurationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -637,6 +893,46 @@ impl From<crate::operation::put_grouping_configuration::PutGroupingConfiguration
                 Error::ValidationException(inner)
             }
             crate::operation::put_grouping_configuration::PutGroupingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::report_instrumentation_configuration_status::ReportInstrumentationConfigurationStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::report_instrumentation_configuration_status::ReportInstrumentationConfigurationStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::report_instrumentation_configuration_status::ReportInstrumentationConfigurationStatusError> for Error {
+    fn from(err: crate::operation::report_instrumentation_configuration_status::ReportInstrumentationConfigurationStatusError) -> Self {
+        match err {
+            crate::operation::report_instrumentation_configuration_status::ReportInstrumentationConfigurationStatusError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::report_instrumentation_configuration_status::ReportInstrumentationConfigurationStatusError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::report_instrumentation_configuration_status::ReportInstrumentationConfigurationStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

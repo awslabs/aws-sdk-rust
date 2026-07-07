@@ -22,10 +22,16 @@ pub fn ser_scheduling_min_priority_override(
 pub(crate) fn de_scheduling_min_priority_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SchedulingMinPriorityOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -52,7 +58,7 @@ where
                     variant = match key.as_ref() {
                             "alwaysScheduleLast" => {
                                 Some(crate::types::SchedulingMinPriorityOverride::AlwaysScheduleLast(
-                                    crate::protocol_serde::shape_scheduling_min_priority_override_always_schedule_last::de_scheduling_min_priority_override_always_schedule_last(tokens, _value)?
+                                    crate::protocol_serde::shape_scheduling_min_priority_override_always_schedule_last::de_scheduling_min_priority_override_always_schedule_last(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'alwaysScheduleLast' cannot be null"))?
                                 ))
                             }

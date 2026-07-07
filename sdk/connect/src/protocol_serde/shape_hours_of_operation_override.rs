@@ -2,10 +2,16 @@
 pub(crate) fn de_hours_of_operation_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HoursOfOperationOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,7 +59,9 @@ where
                         "Config" => {
                             builder = builder.set_config(
                                 crate::protocol_serde::shape_hours_of_operation_override_config_list::de_hours_of_operation_override_config_list(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -72,8 +80,11 @@ where
                             );
                         }
                         "RecurrenceConfig" => {
-                            builder =
-                                builder.set_recurrence_config(crate::protocol_serde::shape_recurrence_config::de_recurrence_config(tokens, _value)?);
+                            builder = builder.set_recurrence_config(crate::protocol_serde::shape_recurrence_config::de_recurrence_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OverrideType" => {
                             builder = builder.set_override_type(

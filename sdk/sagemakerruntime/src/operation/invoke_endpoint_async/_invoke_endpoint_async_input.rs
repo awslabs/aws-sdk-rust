@@ -25,6 +25,10 @@ pub struct InvokeEndpointAsyncInput {
     pub request_ttl_seconds: ::std::option::Option<i32>,
     /// <p>Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.</p>
     pub invocation_timeout_seconds: ::std::option::Option<i32>,
+    /// <p>Provides inline input data for the inference request, in the format specified in the <code>ContentType</code> request header. Use this parameter to send the request payload directly in the API call instead of uploading it to Amazon S3 and referencing it with <code>InputLocation</code>. The inline payload can be up to 128,000 bytes.</p>
+    /// <p><code>Body</code> and <code>InputLocation</code> are mutually exclusive. Provide exactly one of them.</p>
+    /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    pub body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl InvokeEndpointAsyncInput {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -69,6 +73,12 @@ impl InvokeEndpointAsyncInput {
     pub fn invocation_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.invocation_timeout_seconds
     }
+    /// <p>Provides inline input data for the inference request, in the format specified in the <code>ContentType</code> request header. Use this parameter to send the request payload directly in the API call instead of uploading it to Amazon S3 and referencing it with <code>InputLocation</code>. The inline payload can be up to 128,000 bytes.</p>
+    /// <p><code>Body</code> and <code>InputLocation</code> are mutually exclusive. Provide exactly one of them.</p>
+    /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+        self.body.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeEndpointAsyncInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +93,7 @@ impl ::std::fmt::Debug for InvokeEndpointAsyncInput {
         formatter.field("filename", &self.filename);
         formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
         formatter.field("invocation_timeout_seconds", &self.invocation_timeout_seconds);
+        formatter.field("body", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -107,6 +118,7 @@ pub struct InvokeEndpointAsyncInputBuilder {
     pub(crate) filename: ::std::option::Option<::std::string::String>,
     pub(crate) request_ttl_seconds: ::std::option::Option<i32>,
     pub(crate) invocation_timeout_seconds: ::std::option::Option<i32>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl InvokeEndpointAsyncInputBuilder {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -187,7 +199,6 @@ impl InvokeEndpointAsyncInputBuilder {
         &self.inference_id
     }
     /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
-    /// This field is required.
     pub fn input_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_location = ::std::option::Option::Some(input.into());
         self
@@ -257,6 +268,26 @@ impl InvokeEndpointAsyncInputBuilder {
     pub fn get_invocation_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.invocation_timeout_seconds
     }
+    /// <p>Provides inline input data for the inference request, in the format specified in the <code>ContentType</code> request header. Use this parameter to send the request payload directly in the API call instead of uploading it to Amazon S3 and referencing it with <code>InputLocation</code>. The inline payload can be up to 128,000 bytes.</p>
+    /// <p><code>Body</code> and <code>InputLocation</code> are mutually exclusive. Provide exactly one of them.</p>
+    /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.body = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides inline input data for the inference request, in the format specified in the <code>ContentType</code> request header. Use this parameter to send the request payload directly in the API call instead of uploading it to Amazon S3 and referencing it with <code>InputLocation</code>. The inline payload can be up to 128,000 bytes.</p>
+    /// <p><code>Body</code> and <code>InputLocation</code> are mutually exclusive. Provide exactly one of them.</p>
+    /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.body = input;
+        self
+    }
+    /// <p>Provides inline input data for the inference request, in the format specified in the <code>ContentType</code> request header. Use this parameter to send the request payload directly in the API call instead of uploading it to Amazon S3 and referencing it with <code>InputLocation</code>. The inline payload can be up to 128,000 bytes.</p>
+    /// <p><code>Body</code> and <code>InputLocation</code> are mutually exclusive. Provide exactly one of them.</p>
+    /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.body
+    }
     /// Consumes the builder and constructs a [`InvokeEndpointAsyncInput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput).
     pub fn build(
         self,
@@ -273,6 +304,7 @@ impl InvokeEndpointAsyncInputBuilder {
             filename: self.filename,
             request_ttl_seconds: self.request_ttl_seconds,
             invocation_timeout_seconds: self.invocation_timeout_seconds,
+            body: self.body,
         })
     }
 }
@@ -289,6 +321,7 @@ impl ::std::fmt::Debug for InvokeEndpointAsyncInputBuilder {
         formatter.field("filename", &self.filename);
         formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
         formatter.field("invocation_timeout_seconds", &self.invocation_timeout_seconds);
+        formatter.field("body", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

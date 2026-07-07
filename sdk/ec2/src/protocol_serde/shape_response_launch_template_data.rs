@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_response_launch_template_data(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResponseLaunchTemplateData, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseLaunchTemplateData::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -38,7 +42,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("iamInstanceProfile") /* IamInstanceProfile com.amazonaws.ec2#ResponseLaunchTemplateData$IamInstanceProfile */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_iam_instance_profile_specification::de_launch_template_iam_instance_profile_specification(&mut tag)
+                        crate::protocol_serde::shape_launch_template_iam_instance_profile_specification::de_launch_template_iam_instance_profile_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -48,7 +52,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("blockDeviceMappingSet") /* BlockDeviceMappings com.amazonaws.ec2#ResponseLaunchTemplateData$BlockDeviceMappings */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_block_device_mapping_list::de_launch_template_block_device_mapping_list(&mut tag)
+                        crate::protocol_serde::shape_launch_template_block_device_mapping_list::de_launch_template_block_device_mapping_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -58,7 +62,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("networkInterfaceSet") /* NetworkInterfaces com.amazonaws.ec2#ResponseLaunchTemplateData$NetworkInterfaces */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_instance_network_interface_specification_list::de_launch_template_instance_network_interface_specification_list(&mut tag)
+                        crate::protocol_serde::shape_launch_template_instance_network_interface_specification_list::de_launch_template_instance_network_interface_specification_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -108,7 +112,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("monitoring") /* Monitoring com.amazonaws.ec2#ResponseLaunchTemplateData$Monitoring */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_launch_templates_monitoring::de_launch_templates_monitoring(&mut tag)
+                        crate::protocol_serde::shape_launch_templates_monitoring::de_launch_templates_monitoring(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -118,7 +122,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("placement") /* Placement com.amazonaws.ec2#ResponseLaunchTemplateData$Placement */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_placement::de_launch_template_placement(&mut tag)
+                        crate::protocol_serde::shape_launch_template_placement::de_launch_template_placement(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -183,7 +187,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("tagSpecificationSet") /* TagSpecifications com.amazonaws.ec2#ResponseLaunchTemplateData$TagSpecifications */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_tag_specification_list::de_launch_template_tag_specification_list(&mut tag)
+                        crate::protocol_serde::shape_launch_template_tag_specification_list::de_launch_template_tag_specification_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -193,7 +197,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("elasticGpuSpecificationSet") /* ElasticGpuSpecifications com.amazonaws.ec2#ResponseLaunchTemplateData$ElasticGpuSpecifications */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_elastic_gpu_specification_response_list::de_elastic_gpu_specification_response_list(&mut tag)
+                        crate::protocol_serde::shape_elastic_gpu_specification_response_list::de_elastic_gpu_specification_response_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -203,7 +207,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("elasticInferenceAcceleratorSet") /* ElasticInferenceAccelerators com.amazonaws.ec2#ResponseLaunchTemplateData$ElasticInferenceAccelerators */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_elastic_inference_accelerator_response_list::de_launch_template_elastic_inference_accelerator_response_list(&mut tag)
+                        crate::protocol_serde::shape_launch_template_elastic_inference_accelerator_response_list::de_launch_template_elastic_inference_accelerator_response_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -213,7 +217,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("securityGroupIdSet") /* SecurityGroupIds com.amazonaws.ec2#ResponseLaunchTemplateData$SecurityGroupIds */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -223,7 +227,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("securityGroupSet") /* SecurityGroups com.amazonaws.ec2#ResponseLaunchTemplateData$SecurityGroups */ =>  {
                 let var_19 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -233,7 +237,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("instanceMarketOptions") /* InstanceMarketOptions com.amazonaws.ec2#ResponseLaunchTemplateData$InstanceMarketOptions */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_instance_market_options::de_launch_template_instance_market_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_instance_market_options::de_launch_template_instance_market_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -243,7 +247,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("creditSpecification") /* CreditSpecification com.amazonaws.ec2#ResponseLaunchTemplateData$CreditSpecification */ =>  {
                 let var_21 =
                     Some(
-                        crate::protocol_serde::shape_credit_specification::de_credit_specification(&mut tag)
+                        crate::protocol_serde::shape_credit_specification::de_credit_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -253,7 +257,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("cpuOptions") /* CpuOptions com.amazonaws.ec2#ResponseLaunchTemplateData$CpuOptions */ =>  {
                 let var_22 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_cpu_options::de_launch_template_cpu_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_cpu_options::de_launch_template_cpu_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -263,7 +267,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("capacityReservationSpecification") /* CapacityReservationSpecification com.amazonaws.ec2#ResponseLaunchTemplateData$CapacityReservationSpecification */ =>  {
                 let var_23 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_capacity_reservation_specification_response::de_launch_template_capacity_reservation_specification_response(&mut tag)
+                        crate::protocol_serde::shape_launch_template_capacity_reservation_specification_response::de_launch_template_capacity_reservation_specification_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -273,7 +277,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("licenseSet") /* LicenseSpecifications com.amazonaws.ec2#ResponseLaunchTemplateData$LicenseSpecifications */ =>  {
                 let var_24 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_license_list::de_launch_template_license_list(&mut tag)
+                        crate::protocol_serde::shape_launch_template_license_list::de_launch_template_license_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -283,7 +287,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("hibernationOptions") /* HibernationOptions com.amazonaws.ec2#ResponseLaunchTemplateData$HibernationOptions */ =>  {
                 let var_25 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_hibernation_options::de_launch_template_hibernation_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_hibernation_options::de_launch_template_hibernation_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -293,7 +297,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("metadataOptions") /* MetadataOptions com.amazonaws.ec2#ResponseLaunchTemplateData$MetadataOptions */ =>  {
                 let var_26 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_instance_metadata_options::de_launch_template_instance_metadata_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_instance_metadata_options::de_launch_template_instance_metadata_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -303,7 +307,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("enclaveOptions") /* EnclaveOptions com.amazonaws.ec2#ResponseLaunchTemplateData$EnclaveOptions */ =>  {
                 let var_27 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_enclave_options::de_launch_template_enclave_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_enclave_options::de_launch_template_enclave_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -313,7 +317,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("instanceRequirements") /* InstanceRequirements com.amazonaws.ec2#ResponseLaunchTemplateData$InstanceRequirements */ =>  {
                 let var_28 =
                     Some(
-                        crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag)
+                        crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -323,7 +327,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("privateDnsNameOptions") /* PrivateDnsNameOptions com.amazonaws.ec2#ResponseLaunchTemplateData$PrivateDnsNameOptions */ =>  {
                 let var_29 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_private_dns_name_options::de_launch_template_private_dns_name_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_private_dns_name_options::de_launch_template_private_dns_name_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -333,7 +337,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("maintenanceOptions") /* MaintenanceOptions com.amazonaws.ec2#ResponseLaunchTemplateData$MaintenanceOptions */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_instance_maintenance_options::de_launch_template_instance_maintenance_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_instance_maintenance_options::de_launch_template_instance_maintenance_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -358,7 +362,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("operator") /* Operator com.amazonaws.ec2#ResponseLaunchTemplateData$Operator */ =>  {
                 let var_32 =
                     Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -368,7 +372,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("networkPerformanceOptions") /* NetworkPerformanceOptions com.amazonaws.ec2#ResponseLaunchTemplateData$NetworkPerformanceOptions */ =>  {
                 let var_33 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_network_performance_options::de_launch_template_network_performance_options(&mut tag)
+                        crate::protocol_serde::shape_launch_template_network_performance_options::de_launch_template_network_performance_options(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -378,7 +382,7 @@ pub fn de_response_launch_template_data(
             s if s.matches("secondaryInterfaceSet") /* SecondaryInterfaces com.amazonaws.ec2#ResponseLaunchTemplateData$SecondaryInterfaces */ =>  {
                 let var_34 =
                     Some(
-                        crate::protocol_serde::shape_launch_template_instance_secondary_interface_specification_list::de_launch_template_instance_secondary_interface_specification_list(&mut tag)
+                        crate::protocol_serde::shape_launch_template_instance_secondary_interface_specification_list::de_launch_template_instance_secondary_interface_specification_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

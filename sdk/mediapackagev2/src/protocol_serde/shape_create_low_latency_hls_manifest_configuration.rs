@@ -42,5 +42,8 @@ pub fn ser_create_low_latency_hls_manifest_configuration(
     if let Some(var_10) = &input.url_encode_child_manifest {
         object.key("UrlEncodeChildManifest").boolean(*var_10);
     }
+    if let Some(var_11) = &input.uri_path_type {
+        object.key("UriPathType").string(var_11.as_str());
+    }
     Ok(())
 }

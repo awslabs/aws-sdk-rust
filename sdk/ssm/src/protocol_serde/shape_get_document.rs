@@ -99,6 +99,8 @@ pub(crate) fn de_get_document(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -175,12 +177,16 @@ pub(crate) fn de_get_document(
                 }
                 "Requires" => {
                     builder = builder.set_requires(crate::protocol_serde::shape_document_requires_list::de_document_requires_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "AttachmentsContent" => {
                     builder = builder.set_attachments_content(crate::protocol_serde::shape_attachment_content_list::de_attachment_content_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "ReviewStatus" => {

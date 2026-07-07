@@ -2,10 +2,16 @@
 pub(crate) fn de_ecs_task_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EcsTaskSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -56,7 +62,11 @@ where
                             );
                         }
                         "targetGroup" => {
-                            builder = builder.set_target_group(crate::protocol_serde::shape_target_group_info::de_target_group_info(tokens, _value)?);
+                            builder = builder.set_target_group(crate::protocol_serde::shape_target_group_info::de_target_group_info(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "taskSetLabel" => {
                             builder = builder.set_task_set_label(

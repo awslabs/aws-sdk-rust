@@ -25,6 +25,16 @@ pub struct UpdateEventSourceMappingOutput {
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     /// <p>If filter criteria is encrypted, this field shows up as <code>null</code> in the response of ListEventSourceMapping API calls. You can view this field in plaintext in the response of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions for the correct KMS key.</p>
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub logging_config: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>,
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
@@ -61,20 +71,10 @@ pub struct UpdateEventSourceMappingOutput {
     pub amazon_managed_kafka_event_source_config: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
     pub self_managed_kafka_event_source_config: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
-    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
-    pub scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
-    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
-    pub kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
-    pub filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
     /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
     pub event_source_mapping_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
-    pub metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
-    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
-    pub logging_config: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>,
     /// <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned mode</a>.</p>
     pub provisioned_poller_config: ::std::option::Option<crate::types::ProvisionedPollerConfig>,
     _request_id: Option<String>,
@@ -116,6 +116,26 @@ impl UpdateEventSourceMappingOutput {
     /// <p>If filter criteria is encrypted, this field shows up as <code>null</code> in the response of ListEventSourceMapping API calls. You can view this field in plaintext in the response of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions for the correct KMS key.</p>
     pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::FilterCriteria> {
         self.filter_criteria.as_ref()
+    }
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub fn filter_criteria_error(&self) -> ::std::option::Option<&crate::types::FilterCriteriaError> {
+        self.filter_criteria_error.as_ref()
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingMetricsConfig> {
+        self.metrics_config.as_ref()
+    }
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub fn logging_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingLoggingConfig> {
+        self.logging_config.as_ref()
+    }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(&self) -> ::std::option::Option<&crate::types::ScalingConfig> {
+        self.scaling_config.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn function_arn(&self) -> ::std::option::Option<&str> {
@@ -195,33 +215,13 @@ impl UpdateEventSourceMappingOutput {
     pub fn self_managed_kafka_event_source_config(&self) -> ::std::option::Option<&crate::types::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
-    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
-    pub fn scaling_config(&self) -> ::std::option::Option<&crate::types::ScalingConfig> {
-        self.scaling_config.as_ref()
-    }
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub fn document_db_event_source_config(&self) -> ::std::option::Option<&crate::types::DocumentDbEventSourceConfig> {
         self.document_db_event_source_config.as_ref()
     }
-    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
-        self.kms_key_arn.as_deref()
-    }
-    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
-    pub fn filter_criteria_error(&self) -> ::std::option::Option<&crate::types::FilterCriteriaError> {
-        self.filter_criteria_error.as_ref()
-    }
     /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
     pub fn event_source_mapping_arn(&self) -> ::std::option::Option<&str> {
         self.event_source_mapping_arn.as_deref()
-    }
-    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
-    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingMetricsConfig> {
-        self.metrics_config.as_ref()
-    }
-    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
-    pub fn logging_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingLoggingConfig> {
-        self.logging_config.as_ref()
     }
     /// <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned mode</a>.</p>
     pub fn provisioned_poller_config(&self) -> ::std::option::Option<&crate::types::ProvisionedPollerConfig> {
@@ -252,6 +252,11 @@ pub struct UpdateEventSourceMappingOutputBuilder {
     pub(crate) parallelization_factor: ::std::option::Option<i32>,
     pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
+    pub(crate) filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
+    pub(crate) logging_config: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>,
+    pub(crate) scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_processing_result: ::std::option::Option<::std::string::String>,
@@ -269,13 +274,8 @@ pub struct UpdateEventSourceMappingOutputBuilder {
     pub(crate) function_response_types: ::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>>,
     pub(crate) amazon_managed_kafka_event_source_config: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
     pub(crate) self_managed_kafka_event_source_config: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
-    pub(crate) scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     pub(crate) document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
-    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
     pub(crate) event_source_mapping_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
-    pub(crate) logging_config: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>,
     pub(crate) provisioned_poller_config: ::std::option::Option<crate::types::ProvisionedPollerConfig>,
     _request_id: Option<String>,
 }
@@ -406,6 +406,76 @@ impl UpdateEventSourceMappingOutputBuilder {
     /// <p>If filter criteria is encrypted, this field shows up as <code>null</code> in the response of ListEventSourceMapping API calls. You can view this field in plaintext in the response of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions for the correct KMS key.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
         &self.filter_criteria
+    }
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub fn filter_criteria_error(mut self, input: crate::types::FilterCriteriaError) -> Self {
+        self.filter_criteria_error = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub fn set_filter_criteria_error(mut self, input: ::std::option::Option<crate::types::FilterCriteriaError>) -> Self {
+        self.filter_criteria_error = input;
+        self
+    }
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub fn get_filter_criteria_error(&self) -> &::std::option::Option<crate::types::FilterCriteriaError> {
+        &self.filter_criteria_error
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(mut self, input: crate::types::EventSourceMappingMetricsConfig) -> Self {
+        self.metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>) -> Self {
+        self.metrics_config = input;
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
+        &self.metrics_config
+    }
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub fn logging_config(mut self, input: crate::types::EventSourceMappingLoggingConfig) -> Self {
+        self.logging_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>) -> Self {
+        self.logging_config = input;
+        self
+    }
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingLoggingConfig> {
+        &self.logging_config
+    }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(mut self, input: crate::types::ScalingConfig) -> Self {
+        self.scaling_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn set_scaling_config(mut self, input: ::std::option::Option<crate::types::ScalingConfig>) -> Self {
+        self.scaling_config = input;
+        self
+    }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn get_scaling_config(&self) -> &::std::option::Option<crate::types::ScalingConfig> {
+        &self.scaling_config
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -684,20 +754,6 @@ impl UpdateEventSourceMappingOutputBuilder {
     pub fn get_self_managed_kafka_event_source_config(&self) -> &::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig> {
         &self.self_managed_kafka_event_source_config
     }
-    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
-    pub fn scaling_config(mut self, input: crate::types::ScalingConfig) -> Self {
-        self.scaling_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
-    pub fn set_scaling_config(mut self, input: ::std::option::Option<crate::types::ScalingConfig>) -> Self {
-        self.scaling_config = input;
-        self
-    }
-    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
-    pub fn get_scaling_config(&self) -> &::std::option::Option<crate::types::ScalingConfig> {
-        &self.scaling_config
-    }
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub fn document_db_event_source_config(mut self, input: crate::types::DocumentDbEventSourceConfig) -> Self {
         self.document_db_event_source_config = ::std::option::Option::Some(input);
@@ -712,34 +768,6 @@ impl UpdateEventSourceMappingOutputBuilder {
     pub fn get_document_db_event_source_config(&self) -> &::std::option::Option<crate::types::DocumentDbEventSourceConfig> {
         &self.document_db_event_source_config
     }
-    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
-    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.kms_key_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
-    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
-    }
-    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
-    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.kms_key_arn
-    }
-    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
-    pub fn filter_criteria_error(mut self, input: crate::types::FilterCriteriaError) -> Self {
-        self.filter_criteria_error = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
-    pub fn set_filter_criteria_error(mut self, input: ::std::option::Option<crate::types::FilterCriteriaError>) -> Self {
-        self.filter_criteria_error = input;
-        self
-    }
-    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
-    pub fn get_filter_criteria_error(&self) -> &::std::option::Option<crate::types::FilterCriteriaError> {
-        &self.filter_criteria_error
-    }
     /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
     pub fn event_source_mapping_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_mapping_arn = ::std::option::Option::Some(input.into());
@@ -753,34 +781,6 @@ impl UpdateEventSourceMappingOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
     pub fn get_event_source_mapping_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_source_mapping_arn
-    }
-    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
-    pub fn metrics_config(mut self, input: crate::types::EventSourceMappingMetricsConfig) -> Self {
-        self.metrics_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
-    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>) -> Self {
-        self.metrics_config = input;
-        self
-    }
-    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
-    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
-        &self.metrics_config
-    }
-    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
-    pub fn logging_config(mut self, input: crate::types::EventSourceMappingLoggingConfig) -> Self {
-        self.logging_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
-    pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>) -> Self {
-        self.logging_config = input;
-        self
-    }
-    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
-    pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingLoggingConfig> {
-        &self.logging_config
     }
     /// <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned mode</a>.</p>
     pub fn provisioned_poller_config(mut self, input: crate::types::ProvisionedPollerConfig) -> Self {
@@ -816,6 +816,11 @@ impl UpdateEventSourceMappingOutputBuilder {
             parallelization_factor: self.parallelization_factor,
             event_source_arn: self.event_source_arn,
             filter_criteria: self.filter_criteria,
+            filter_criteria_error: self.filter_criteria_error,
+            kms_key_arn: self.kms_key_arn,
+            metrics_config: self.metrics_config,
+            logging_config: self.logging_config,
+            scaling_config: self.scaling_config,
             function_arn: self.function_arn,
             last_modified: self.last_modified,
             last_processing_result: self.last_processing_result,
@@ -833,13 +838,8 @@ impl UpdateEventSourceMappingOutputBuilder {
             function_response_types: self.function_response_types,
             amazon_managed_kafka_event_source_config: self.amazon_managed_kafka_event_source_config,
             self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
-            scaling_config: self.scaling_config,
             document_db_event_source_config: self.document_db_event_source_config,
-            kms_key_arn: self.kms_key_arn,
-            filter_criteria_error: self.filter_criteria_error,
             event_source_mapping_arn: self.event_source_mapping_arn,
-            metrics_config: self.metrics_config,
-            logging_config: self.logging_config,
             provisioned_poller_config: self.provisioned_poller_config,
             _request_id: self._request_id,
         }

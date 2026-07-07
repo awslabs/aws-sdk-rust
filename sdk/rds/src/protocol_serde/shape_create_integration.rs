@@ -149,6 +149,8 @@ pub fn de_create_integration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateIntegrationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateIntegrationResponse got {start_el:?}"
@@ -231,7 +233,7 @@ pub fn de_create_integration(
             s if s.matches("AdditionalEncryptionContext") /* AdditionalEncryptionContext com.amazonaws.rds.synthetic#CreateIntegrationOutput$AdditionalEncryptionContext */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_encryption_context_map::de_encryption_context_map(&mut tag)
+                        crate::protocol_serde::shape_encryption_context_map::de_encryption_context_map(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -255,7 +257,7 @@ pub fn de_create_integration(
             s if s.matches("Tags") /* Tags com.amazonaws.rds.synthetic#CreateIntegrationOutput$Tags */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -305,7 +307,7 @@ pub fn de_create_integration(
             s if s.matches("Errors") /* Errors com.amazonaws.rds.synthetic#CreateIntegrationOutput$Errors */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_integration_error_list::de_integration_error_list(&mut tag)
+                        crate::protocol_serde::shape_integration_error_list::de_integration_error_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

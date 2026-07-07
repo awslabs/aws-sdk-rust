@@ -37,5 +37,7 @@ pub fn de_field_level_encryption(inp: &[u8]) -> std::result::Result<crate::types
             "invalid root, expected FieldLevelEncryption got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_field_level_encryption::de_field_level_encryption(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_field_level_encryption::de_field_level_encryption(&mut decoder, depth + 1)
 }

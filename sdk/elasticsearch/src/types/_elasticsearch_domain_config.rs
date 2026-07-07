@@ -38,6 +38,8 @@ pub struct ElasticsearchDomainConfig {
     pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
     /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
     pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>,
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptionsStatus>,
 }
 impl ElasticsearchDomainConfig {
     /// <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
@@ -110,6 +112,10 @@ impl ElasticsearchDomainConfig {
     pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptionsStatus> {
         self.deployment_strategy_options.as_ref()
     }
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub fn automated_snapshot_pause_options(&self) -> ::std::option::Option<&crate::types::AutomatedSnapshotPauseOptionsStatus> {
+        self.automated_snapshot_pause_options.as_ref()
+    }
 }
 impl ElasticsearchDomainConfig {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDomainConfig`](crate::types::ElasticsearchDomainConfig).
@@ -139,6 +145,7 @@ pub struct ElasticsearchDomainConfigBuilder {
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
     pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>,
+    pub(crate) automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptionsStatus>,
 }
 impl ElasticsearchDomainConfigBuilder {
     /// <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
@@ -385,6 +392,20 @@ impl ElasticsearchDomainConfigBuilder {
     pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptionsStatus> {
         &self.deployment_strategy_options
     }
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub fn automated_snapshot_pause_options(mut self, input: crate::types::AutomatedSnapshotPauseOptionsStatus) -> Self {
+        self.automated_snapshot_pause_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub fn set_automated_snapshot_pause_options(mut self, input: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptionsStatus>) -> Self {
+        self.automated_snapshot_pause_options = input;
+        self
+    }
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub fn get_automated_snapshot_pause_options(&self) -> &::std::option::Option<crate::types::AutomatedSnapshotPauseOptionsStatus> {
+        &self.automated_snapshot_pause_options
+    }
     /// Consumes the builder and constructs a [`ElasticsearchDomainConfig`](crate::types::ElasticsearchDomainConfig).
     pub fn build(self) -> crate::types::ElasticsearchDomainConfig {
         crate::types::ElasticsearchDomainConfig {
@@ -405,6 +426,7 @@ impl ElasticsearchDomainConfigBuilder {
             change_progress_details: self.change_progress_details,
             modifying_properties: self.modifying_properties,
             deployment_strategy_options: self.deployment_strategy_options,
+            automated_snapshot_pause_options: self.automated_snapshot_pause_options,
         }
     }
 }

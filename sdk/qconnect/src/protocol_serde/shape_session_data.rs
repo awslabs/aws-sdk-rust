@@ -2,10 +2,16 @@
 pub(crate) fn de_session_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SessionData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,19 +50,23 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "integrationConfiguration" => {
                             builder = builder.set_integration_configuration(
-                                crate::protocol_serde::shape_session_integration_configuration::de_session_integration_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_session_integration_configuration::de_session_integration_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "tagFilter" => {
-                            builder = builder.set_tag_filter(crate::protocol_serde::shape_tag_filter::de_tag_filter(tokens, _value)?);
+                            builder = builder.set_tag_filter(crate::protocol_serde::shape_tag_filter::de_tag_filter(tokens, _value, depth + 1)?);
                         }
                         "aiAgentConfiguration" => {
                             builder = builder.set_ai_agent_configuration(
-                                crate::protocol_serde::shape_ai_agent_configuration_map::de_ai_agent_configuration_map(tokens, _value)?,
+                                crate::protocol_serde::shape_ai_agent_configuration_map::de_ai_agent_configuration_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "origin" => {
@@ -68,7 +78,11 @@ where
                         }
                         "orchestratorConfigurationList" => {
                             builder = builder.set_orchestrator_configuration_list(
-                                crate::protocol_serde::shape_orchestrator_configuration_list::de_orchestrator_configuration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_orchestrator_configuration_list::de_orchestrator_configuration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

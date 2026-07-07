@@ -127,6 +127,8 @@ pub struct StartBuildInput {
     pub fleet_override: ::std::option::Option<crate::types::ProjectFleet>,
     /// <p>The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the <code>RetryBuild</code> API to automatically retry your build for up to 2 additional times.</p>
     pub auto_retry_limit_override: ::std::option::Option<i32>,
+    /// <p>The host operating system kernel for this build that overrides the one specified in the build project.</p>
+    pub host_kernel_override: ::std::option::Option<crate::types::HostKernel>,
 }
 impl StartBuildInput {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
@@ -327,6 +329,10 @@ impl StartBuildInput {
     pub fn auto_retry_limit_override(&self) -> ::std::option::Option<i32> {
         self.auto_retry_limit_override
     }
+    /// <p>The host operating system kernel for this build that overrides the one specified in the build project.</p>
+    pub fn host_kernel_override(&self) -> ::std::option::Option<&crate::types::HostKernel> {
+        self.host_kernel_override.as_ref()
+    }
 }
 impl StartBuildInput {
     /// Creates a new builder-style object to manufacture [`StartBuildInput`](crate::operation::start_build::StartBuildInput).
@@ -372,6 +378,7 @@ pub struct StartBuildInputBuilder {
     pub(crate) debug_session_enabled: ::std::option::Option<bool>,
     pub(crate) fleet_override: ::std::option::Option<crate::types::ProjectFleet>,
     pub(crate) auto_retry_limit_override: ::std::option::Option<i32>,
+    pub(crate) host_kernel_override: ::std::option::Option<crate::types::HostKernel>,
 }
 impl StartBuildInputBuilder {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
@@ -1038,6 +1045,20 @@ impl StartBuildInputBuilder {
     pub fn get_auto_retry_limit_override(&self) -> &::std::option::Option<i32> {
         &self.auto_retry_limit_override
     }
+    /// <p>The host operating system kernel for this build that overrides the one specified in the build project.</p>
+    pub fn host_kernel_override(mut self, input: crate::types::HostKernel) -> Self {
+        self.host_kernel_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The host operating system kernel for this build that overrides the one specified in the build project.</p>
+    pub fn set_host_kernel_override(mut self, input: ::std::option::Option<crate::types::HostKernel>) -> Self {
+        self.host_kernel_override = input;
+        self
+    }
+    /// <p>The host operating system kernel for this build that overrides the one specified in the build project.</p>
+    pub fn get_host_kernel_override(&self) -> &::std::option::Option<crate::types::HostKernel> {
+        &self.host_kernel_override
+    }
     /// Consumes the builder and constructs a [`StartBuildInput`](crate::operation::start_build::StartBuildInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_build::StartBuildInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_build::StartBuildInput {
@@ -1074,6 +1095,7 @@ impl StartBuildInputBuilder {
             debug_session_enabled: self.debug_session_enabled,
             fleet_override: self.fleet_override,
             auto_retry_limit_override: self.auto_retry_limit_override,
+            host_kernel_override: self.host_kernel_override,
         })
     }
 }

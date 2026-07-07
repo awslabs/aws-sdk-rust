@@ -20,6 +20,27 @@ pub fn de_get_function_code_signing_config_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CodeSigningConfigNotFoundException" => {
+            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::CodeSigningConfigNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CodeSigningConfigNotFoundExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_code_signing_config_not_found_exception::de_code_signing_config_not_found_exception_json_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidParameterValueException" => {
             crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
@@ -132,6 +153,8 @@ pub(crate) fn de_get_function_code_signing_config(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {

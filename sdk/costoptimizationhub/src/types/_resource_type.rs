@@ -14,6 +14,8 @@
 /// match resourcetype {
 ///     ResourceType::AuroraDbClusterStorage => { /* ... */ },
 ///     ResourceType::ComputeSavingsPlans => { /* ... */ },
+///     ResourceType::DocumentDbCluster => { /* ... */ },
+///     ResourceType::DynamoDbTable => { /* ... */ },
 ///     ResourceType::DynamoDbReservedCapacity => { /* ... */ },
 ///     ResourceType::EbsVolume => { /* ... */ },
 ///     ResourceType::Ec2AutoScalingGroup => { /* ... */ },
@@ -21,8 +23,10 @@
 ///     ResourceType::Ec2InstanceSavingsPlans => { /* ... */ },
 ///     ResourceType::Ec2ReservedInstances => { /* ... */ },
 ///     ResourceType::EcsService => { /* ... */ },
+///     ResourceType::ElastiCacheCluster => { /* ... */ },
 ///     ResourceType::ElastiCacheReservedInstances => { /* ... */ },
 ///     ResourceType::LambdaFunction => { /* ... */ },
+///     ResourceType::MemoryDbCluster => { /* ... */ },
 ///     ResourceType::MemoryDbReservedInstances => { /* ... */ },
 ///     ResourceType::NatGateway => { /* ... */ },
 ///     ResourceType::OpenSearchReservedInstances => { /* ... */ },
@@ -30,7 +34,9 @@
 ///     ResourceType::RdsDbInstanceStorage => { /* ... */ },
 ///     ResourceType::RdsReservedInstances => { /* ... */ },
 ///     ResourceType::RedshiftReservedInstances => { /* ... */ },
+///     ResourceType::SageMakerEndpoint => { /* ... */ },
 ///     ResourceType::SageMakerSavingsPlans => { /* ... */ },
+///     ResourceType::WorkSpaces => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -64,6 +70,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ComputeSavingsPlans,
     #[allow(missing_docs)] // documentation missing in model
+    DocumentDbCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    DynamoDbTable,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbReservedCapacity,
     #[allow(missing_docs)] // documentation missing in model
     EbsVolume,
@@ -78,9 +88,13 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EcsService,
     #[allow(missing_docs)] // documentation missing in model
+    ElastiCacheCluster,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCacheReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    MemoryDbCluster,
     #[allow(missing_docs)] // documentation missing in model
     MemoryDbReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
@@ -96,7 +110,11 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RedshiftReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerSavingsPlans,
+    #[allow(missing_docs)] // documentation missing in model
+    WorkSpaces,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -106,6 +124,8 @@ impl ::std::convert::From<&str> for ResourceType {
         match s {
             "AuroraDbClusterStorage" => ResourceType::AuroraDbClusterStorage,
             "ComputeSavingsPlans" => ResourceType::ComputeSavingsPlans,
+            "DocumentDBCluster" => ResourceType::DocumentDbCluster,
+            "DynamoDBTable" => ResourceType::DynamoDbTable,
             "DynamoDbReservedCapacity" => ResourceType::DynamoDbReservedCapacity,
             "EbsVolume" => ResourceType::EbsVolume,
             "Ec2AutoScalingGroup" => ResourceType::Ec2AutoScalingGroup,
@@ -113,8 +133,10 @@ impl ::std::convert::From<&str> for ResourceType {
             "Ec2InstanceSavingsPlans" => ResourceType::Ec2InstanceSavingsPlans,
             "Ec2ReservedInstances" => ResourceType::Ec2ReservedInstances,
             "EcsService" => ResourceType::EcsService,
+            "ElastiCacheCluster" => ResourceType::ElastiCacheCluster,
             "ElastiCacheReservedInstances" => ResourceType::ElastiCacheReservedInstances,
             "LambdaFunction" => ResourceType::LambdaFunction,
+            "MemoryDBCluster" => ResourceType::MemoryDbCluster,
             "MemoryDbReservedInstances" => ResourceType::MemoryDbReservedInstances,
             "NatGateway" => ResourceType::NatGateway,
             "OpenSearchReservedInstances" => ResourceType::OpenSearchReservedInstances,
@@ -122,7 +144,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "RdsDbInstanceStorage" => ResourceType::RdsDbInstanceStorage,
             "RdsReservedInstances" => ResourceType::RdsReservedInstances,
             "RedshiftReservedInstances" => ResourceType::RedshiftReservedInstances,
+            "SageMakerEndpoint" => ResourceType::SageMakerEndpoint,
             "SageMakerSavingsPlans" => ResourceType::SageMakerSavingsPlans,
+            "WorkSpaces" => ResourceType::WorkSpaces,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -140,6 +164,8 @@ impl ResourceType {
         match self {
             ResourceType::AuroraDbClusterStorage => "AuroraDbClusterStorage",
             ResourceType::ComputeSavingsPlans => "ComputeSavingsPlans",
+            ResourceType::DocumentDbCluster => "DocumentDBCluster",
+            ResourceType::DynamoDbTable => "DynamoDBTable",
             ResourceType::DynamoDbReservedCapacity => "DynamoDbReservedCapacity",
             ResourceType::EbsVolume => "EbsVolume",
             ResourceType::Ec2AutoScalingGroup => "Ec2AutoScalingGroup",
@@ -147,8 +173,10 @@ impl ResourceType {
             ResourceType::Ec2InstanceSavingsPlans => "Ec2InstanceSavingsPlans",
             ResourceType::Ec2ReservedInstances => "Ec2ReservedInstances",
             ResourceType::EcsService => "EcsService",
+            ResourceType::ElastiCacheCluster => "ElastiCacheCluster",
             ResourceType::ElastiCacheReservedInstances => "ElastiCacheReservedInstances",
             ResourceType::LambdaFunction => "LambdaFunction",
+            ResourceType::MemoryDbCluster => "MemoryDBCluster",
             ResourceType::MemoryDbReservedInstances => "MemoryDbReservedInstances",
             ResourceType::NatGateway => "NatGateway",
             ResourceType::OpenSearchReservedInstances => "OpenSearchReservedInstances",
@@ -156,7 +184,9 @@ impl ResourceType {
             ResourceType::RdsDbInstanceStorage => "RdsDbInstanceStorage",
             ResourceType::RdsReservedInstances => "RdsReservedInstances",
             ResourceType::RedshiftReservedInstances => "RedshiftReservedInstances",
+            ResourceType::SageMakerEndpoint => "SageMakerEndpoint",
             ResourceType::SageMakerSavingsPlans => "SageMakerSavingsPlans",
+            ResourceType::WorkSpaces => "WorkSpaces",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -165,6 +195,8 @@ impl ResourceType {
         &[
             "AuroraDbClusterStorage",
             "ComputeSavingsPlans",
+            "DocumentDBCluster",
+            "DynamoDBTable",
             "DynamoDbReservedCapacity",
             "EbsVolume",
             "Ec2AutoScalingGroup",
@@ -172,8 +204,10 @@ impl ResourceType {
             "Ec2InstanceSavingsPlans",
             "Ec2ReservedInstances",
             "EcsService",
+            "ElastiCacheCluster",
             "ElastiCacheReservedInstances",
             "LambdaFunction",
+            "MemoryDBCluster",
             "MemoryDbReservedInstances",
             "NatGateway",
             "OpenSearchReservedInstances",
@@ -181,7 +215,9 @@ impl ResourceType {
             "RdsDbInstanceStorage",
             "RdsReservedInstances",
             "RedshiftReservedInstances",
+            "SageMakerEndpoint",
             "SageMakerSavingsPlans",
+            "WorkSpaces",
         ]
     }
 }
@@ -207,6 +243,8 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::AuroraDbClusterStorage => write!(f, "AuroraDbClusterStorage"),
             ResourceType::ComputeSavingsPlans => write!(f, "ComputeSavingsPlans"),
+            ResourceType::DocumentDbCluster => write!(f, "DocumentDBCluster"),
+            ResourceType::DynamoDbTable => write!(f, "DynamoDBTable"),
             ResourceType::DynamoDbReservedCapacity => write!(f, "DynamoDbReservedCapacity"),
             ResourceType::EbsVolume => write!(f, "EbsVolume"),
             ResourceType::Ec2AutoScalingGroup => write!(f, "Ec2AutoScalingGroup"),
@@ -214,8 +252,10 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Ec2InstanceSavingsPlans => write!(f, "Ec2InstanceSavingsPlans"),
             ResourceType::Ec2ReservedInstances => write!(f, "Ec2ReservedInstances"),
             ResourceType::EcsService => write!(f, "EcsService"),
+            ResourceType::ElastiCacheCluster => write!(f, "ElastiCacheCluster"),
             ResourceType::ElastiCacheReservedInstances => write!(f, "ElastiCacheReservedInstances"),
             ResourceType::LambdaFunction => write!(f, "LambdaFunction"),
+            ResourceType::MemoryDbCluster => write!(f, "MemoryDBCluster"),
             ResourceType::MemoryDbReservedInstances => write!(f, "MemoryDbReservedInstances"),
             ResourceType::NatGateway => write!(f, "NatGateway"),
             ResourceType::OpenSearchReservedInstances => write!(f, "OpenSearchReservedInstances"),
@@ -223,7 +263,9 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::RdsDbInstanceStorage => write!(f, "RdsDbInstanceStorage"),
             ResourceType::RdsReservedInstances => write!(f, "RdsReservedInstances"),
             ResourceType::RedshiftReservedInstances => write!(f, "RedshiftReservedInstances"),
+            ResourceType::SageMakerEndpoint => write!(f, "SageMakerEndpoint"),
             ResourceType::SageMakerSavingsPlans => write!(f, "SageMakerSavingsPlans"),
+            ResourceType::WorkSpaces => write!(f, "WorkSpaces"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

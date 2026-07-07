@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_iam_instance_profile_association(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IamInstanceProfileAssociation, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IamInstanceProfileAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_iam_instance_profile_association(
             s if s.matches("iamInstanceProfile") /* IamInstanceProfile com.amazonaws.ec2#IamInstanceProfileAssociation$IamInstanceProfile */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_iam_instance_profile::de_iam_instance_profile(&mut tag)
+                        crate::protocol_serde::shape_iam_instance_profile::de_iam_instance_profile(&mut tag, depth + 1)
                         ?
                     )
                 ;

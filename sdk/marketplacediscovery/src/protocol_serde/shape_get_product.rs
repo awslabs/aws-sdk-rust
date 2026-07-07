@@ -131,6 +131,8 @@ pub(crate) fn de_get_product(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,7 +146,7 @@ pub(crate) fn de_get_product(
                     );
                 }
                 "categories" => {
-                    builder = builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value)?);
+                    builder = builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value, depth + 1)?);
                 }
                 "deployedOnAws" => {
                     builder = builder.set_deployed_on_aws(
@@ -155,11 +157,11 @@ pub(crate) fn de_get_product(
                 }
                 "fulfillmentOptionSummaries" => {
                     builder = builder.set_fulfillment_option_summaries(
-                        crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(tokens, _value)?,
+                        crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "highlights" => {
-                    builder = builder.set_highlights(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value)?);
+                    builder = builder.set_highlights(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                 }
                 "logoThumbnailUrl" => {
                     builder = builder.set_logo_thumbnail_url(
@@ -176,7 +178,11 @@ pub(crate) fn de_get_product(
                     );
                 }
                 "manufacturer" => {
-                    builder = builder.set_manufacturer(crate::protocol_serde::shape_seller_information::de_seller_information(tokens, _value)?);
+                    builder = builder.set_manufacturer(crate::protocol_serde::shape_seller_information::de_seller_information(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "productId" => {
                     builder = builder.set_product_id(
@@ -194,15 +200,19 @@ pub(crate) fn de_get_product(
                 }
                 "promotionalMedia" => {
                     builder = builder.set_promotional_media(crate::protocol_serde::shape_promotional_media_list::de_promotional_media_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value, depth + 1)?);
                 }
                 "sellerEngagements" => {
                     builder = builder.set_seller_engagements(crate::protocol_serde::shape_seller_engagement_list::de_seller_engagement_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "shortDescription" => {

@@ -222,6 +222,8 @@ mod create_user_pool_client;
 
 mod create_user_pool_domain;
 
+mod create_user_pool_replica;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -271,6 +273,8 @@ mod delete_user_pool_client_secret;
 
 mod delete_user_pool_domain;
 
+mod delete_user_pool_replica;
+
 mod delete_web_authn_credential;
 
 mod describe_identity_provider;
@@ -307,6 +311,8 @@ mod get_identity_provider_by_identifier;
 
 mod get_log_delivery_configuration;
 
+mod get_provisioned_limit;
+
 mod get_signing_certificate;
 
 mod get_tokens_from_refresh_token;
@@ -342,6 +348,8 @@ mod list_user_import_jobs;
 mod list_user_pool_client_secrets;
 
 mod list_user_pool_clients;
+
+mod list_user_pool_replicas;
 
 mod list_user_pools;
 
@@ -391,6 +399,8 @@ mod update_identity_provider;
 
 mod update_managed_login_branding;
 
+mod update_provisioned_limit;
+
 mod update_resource_server;
 
 mod update_terms;
@@ -402,6 +412,8 @@ mod update_user_pool;
 mod update_user_pool_client;
 
 mod update_user_pool_domain;
+
+mod update_user_pool_replica;
 
 mod verify_software_token;
 

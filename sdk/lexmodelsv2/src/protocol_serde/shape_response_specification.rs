@@ -2,10 +2,16 @@
 pub(crate) fn de_response_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ResponseSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,8 +22,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "messageGroups" => {
-                            builder =
-                                builder.set_message_groups(crate::protocol_serde::shape_message_groups_list::de_message_groups_list(tokens, _value)?);
+                            builder = builder.set_message_groups(crate::protocol_serde::shape_message_groups_list::de_message_groups_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "allowInterrupt" => {
                             builder = builder.set_allow_interrupt(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

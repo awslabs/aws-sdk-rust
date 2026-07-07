@@ -51,6 +51,8 @@ pub fn de_associate_subnet_cidr_block(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AssociateSubnetCidrBlockResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AssociateSubnetCidrBlockResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_associate_subnet_cidr_block(
             s if s.matches("ipv6CidrBlockAssociation") /* Ipv6CidrBlockAssociation com.amazonaws.ec2.synthetic#AssociateSubnetCidrBlockOutput$Ipv6CidrBlockAssociation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_subnet_ipv6_cidr_block_association::de_subnet_ipv6_cidr_block_association(&mut tag)
+                        crate::protocol_serde::shape_subnet_ipv6_cidr_block_association::de_subnet_ipv6_cidr_block_association(&mut tag, depth + 1)
                         ?
                     )
                 ;

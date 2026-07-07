@@ -2,10 +2,16 @@
 pub(crate) fn de_scan_detections<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ScanDetections>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,22 +22,29 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "scannedItemCount" => {
-                            builder = builder
-                                .set_scanned_item_count(crate::protocol_serde::shape_scanned_item_count::de_scanned_item_count(tokens, _value)?);
+                            builder = builder.set_scanned_item_count(crate::protocol_serde::shape_scanned_item_count::de_scanned_item_count(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "threatsDetectedItemCount" => {
                             builder = builder.set_threats_detected_item_count(
-                                crate::protocol_serde::shape_threats_detected_item_count::de_threats_detected_item_count(tokens, _value)?,
+                                crate::protocol_serde::shape_threats_detected_item_count::de_threats_detected_item_count(tokens, _value, depth + 1)?,
                             );
                         }
                         "highestSeverityThreatDetails" => {
                             builder = builder.set_highest_severity_threat_details(
-                                crate::protocol_serde::shape_highest_severity_threat_details::de_highest_severity_threat_details(tokens, _value)?,
+                                crate::protocol_serde::shape_highest_severity_threat_details::de_highest_severity_threat_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "threatDetectedByName" => {
                             builder = builder.set_threat_detected_by_name(
-                                crate::protocol_serde::shape_threat_detected_by_name::de_threat_detected_by_name(tokens, _value)?,
+                                crate::protocol_serde::shape_threat_detected_by_name::de_threat_detected_by_name(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -53,6 +53,8 @@ pub fn de_describe_capacity_block_extension_offerings(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeCapacityBlockExtensionOfferingsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeCapacityBlockExtensionOfferingsResponse got {start_el:?}"
@@ -63,7 +65,7 @@ pub fn de_describe_capacity_block_extension_offerings(
             s if s.matches("capacityBlockExtensionOfferingSet") /* CapacityBlockExtensionOfferings com.amazonaws.ec2.synthetic#DescribeCapacityBlockExtensionOfferingsOutput$CapacityBlockExtensionOfferings */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_capacity_block_extension_offering_set::de_capacity_block_extension_offering_set(&mut tag)
+                        crate::protocol_serde::shape_capacity_block_extension_offering_set::de_capacity_block_extension_offering_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

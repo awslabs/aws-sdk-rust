@@ -7,11 +7,11 @@ pub struct GetSessionEndpointOutput {
     pub application_id: ::std::string::String,
     /// <p>The output contains the ID of the session.</p>
     pub session_id: ::std::string::String,
-    /// The endpoint URL for connecting to the session.
+    /// <p>The endpoint URL for connecting to the session.</p>
     pub endpoint: ::std::string::String,
-    /// Authentication token for accessing the session endpoint.
+    /// <p>The authentication token for connecting to the session endpoint. Call <code>GetSessionEndpoint</code> again to obtain a new token before it expires.</p>
     pub auth_token: ::std::string::String,
-    /// The expiration time of the authentication token.
+    /// <p>The expiration time of the authentication token.</p>
     pub auth_token_expires_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
@@ -26,17 +26,17 @@ impl GetSessionEndpointOutput {
         use std::ops::Deref;
         self.session_id.deref()
     }
-    /// The endpoint URL for connecting to the session.
+    /// <p>The endpoint URL for connecting to the session.</p>
     pub fn endpoint(&self) -> &str {
         use std::ops::Deref;
         self.endpoint.deref()
     }
-    /// Authentication token for accessing the session endpoint.
+    /// <p>The authentication token for connecting to the session endpoint. Call <code>GetSessionEndpoint</code> again to obtain a new token before it expires.</p>
     pub fn auth_token(&self) -> &str {
         use std::ops::Deref;
         self.auth_token.deref()
     }
-    /// The expiration time of the authentication token.
+    /// <p>The expiration time of the authentication token.</p>
     pub fn auth_token_expires_at(&self) -> &::aws_smithy_types::DateTime {
         &self.auth_token_expires_at
     }
@@ -107,48 +107,48 @@ impl GetSessionEndpointOutputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// The endpoint URL for connecting to the session.
+    /// <p>The endpoint URL for connecting to the session.</p>
     /// This field is required.
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// The endpoint URL for connecting to the session.
+    /// <p>The endpoint URL for connecting to the session.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
-    /// The endpoint URL for connecting to the session.
+    /// <p>The endpoint URL for connecting to the session.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
-    /// Authentication token for accessing the session endpoint.
+    /// <p>The authentication token for connecting to the session endpoint. Call <code>GetSessionEndpoint</code> again to obtain a new token before it expires.</p>
     /// This field is required.
     pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Authentication token for accessing the session endpoint.
+    /// <p>The authentication token for connecting to the session endpoint. Call <code>GetSessionEndpoint</code> again to obtain a new token before it expires.</p>
     pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_token = input;
         self
     }
-    /// Authentication token for accessing the session endpoint.
+    /// <p>The authentication token for connecting to the session endpoint. Call <code>GetSessionEndpoint</code> again to obtain a new token before it expires.</p>
     pub fn get_auth_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_token
     }
-    /// The expiration time of the authentication token.
+    /// <p>The expiration time of the authentication token.</p>
     /// This field is required.
     pub fn auth_token_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.auth_token_expires_at = ::std::option::Option::Some(input);
         self
     }
-    /// The expiration time of the authentication token.
+    /// <p>The expiration time of the authentication token.</p>
     pub fn set_auth_token_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.auth_token_expires_at = input;
         self
     }
-    /// The expiration time of the authentication token.
+    /// <p>The expiration time of the authentication token.</p>
     pub fn get_auth_token_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.auth_token_expires_at
     }

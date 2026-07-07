@@ -134,6 +134,8 @@ pub(crate) fn de_get_register_account_status(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -155,12 +157,16 @@ pub(crate) fn de_get_register_account_status(
                 }
                 "timestreamRegistrationResponse" => {
                     builder = builder.set_timestream_registration_response(
-                        crate::protocol_serde::shape_timestream_registration_response::de_timestream_registration_response(tokens, _value)?,
+                        crate::protocol_serde::shape_timestream_registration_response::de_timestream_registration_response(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "iamRegistrationResponse" => {
                     builder = builder.set_iam_registration_response(
-                        crate::protocol_serde::shape_iam_registration_response::de_iam_registration_response(tokens, _value)?,
+                        crate::protocol_serde::shape_iam_registration_response::de_iam_registration_response(tokens, _value, depth + 1)?,
                     );
                 }
                 "creationTime" => {

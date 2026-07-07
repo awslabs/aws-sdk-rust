@@ -631,4 +631,35 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
         self.inner.get_deployment_mode()
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.inner = self.inner.deployment_config(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.inner = self.inner.set_deployment_config(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        self.inner.get_deployment_config()
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn disable_validation(mut self, input: bool) -> Self {
+        self.inner = self.inner.disable_validation(input);
+        self
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_disable_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_disable_validation(input);
+        self
+    }
+    /// <p>Set to <code>true</code> to disable pre-deployment validations in changeset or stack operations.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_disable_validation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_validation()
+    }
 }

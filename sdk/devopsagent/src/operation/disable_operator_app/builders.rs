@@ -22,7 +22,7 @@ impl crate::operation::disable_operator_app::builders::DisableOperatorAppInputBu
 }
 /// Fluent builder constructing a request to `DisableOperatorApp`.
 ///
-/// Disable the Operator App for the specified AgentSpace
+/// <p>Disable the Operator App for the specified AgentSpace</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableOperatorAppFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DisableOperatorAppFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The authentication flow configured for the operator App. e.g. idc
+    /// <p>The authentication flow configured for the operator App. e.g. idc</p>
     pub fn auth_flow(mut self, input: crate::types::AuthFlow) -> Self {
         self.inner = self.inner.auth_flow(input);
         self
     }
-    /// The authentication flow configured for the operator App. e.g. idc
+    /// <p>The authentication flow configured for the operator App. e.g. idc</p>
     pub fn set_auth_flow(mut self, input: ::std::option::Option<crate::types::AuthFlow>) -> Self {
         self.inner = self.inner.set_auth_flow(input);
         self
     }
-    /// The authentication flow configured for the operator App. e.g. idc
+    /// <p>The authentication flow configured for the operator App. e.g. idc</p>
     pub fn get_auth_flow(&self) -> &::std::option::Option<crate::types::AuthFlow> {
         self.inner.get_auth_flow()
     }

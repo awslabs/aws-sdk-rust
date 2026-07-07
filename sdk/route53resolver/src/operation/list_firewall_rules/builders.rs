@@ -24,6 +24,7 @@ impl crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuil
 ///
 /// <p>Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for a VPC.</p>
 /// <p>A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>.</p>
+/// <p>For rules that require asynchronous provisioning, the response includes <code>Status</code> (see <code>FirewallRuleStatus</code>) and, on failure, <code>StatusMessage</code> with the reason.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

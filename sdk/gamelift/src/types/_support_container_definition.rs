@@ -3,7 +3,7 @@
 /// <p>Describes a support container in a container group. A support container might be in a game server container group or a per-instance container group. Support containers don't run game server processes.</p>
 /// <p>You can update a support container definition and deploy the updates to an existing fleet. When creating or updating a game server container group definition, use the property <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>.</p>
 /// <p><b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a></p>
-/// <p><b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a></p>
+/// <p><b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportContainerDefinition {
@@ -31,6 +31,8 @@ pub struct SupportContainerDefinition {
     /// <p>The number of vCPU units that are reserved for the container. If no resources are reserved, the container shares the total vCPU limit for the container group.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition TotalVcpuLimit</a></p>
     pub vcpu: ::std::option::Option<f64>,
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
 }
 impl SupportContainerDefinition {
     /// <p>The container definition identifier. Container names are unique within a container group definition.</p>
@@ -85,6 +87,10 @@ impl SupportContainerDefinition {
     pub fn vcpu(&self) -> ::std::option::Option<f64> {
         self.vcpu
     }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn linux_capabilities(&self) -> ::std::option::Option<&crate::types::LinuxCapabilities> {
+        self.linux_capabilities.as_ref()
+    }
 }
 impl SupportContainerDefinition {
     /// Creates a new builder-style object to manufacture [`SupportContainerDefinition`](crate::types::SupportContainerDefinition).
@@ -108,6 +114,7 @@ pub struct SupportContainerDefinitionBuilder {
     pub(crate) port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     pub(crate) resolved_image_digest: ::std::option::Option<::std::string::String>,
     pub(crate) vcpu: ::std::option::Option<f64>,
+    pub(crate) linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
 }
 impl SupportContainerDefinitionBuilder {
     /// <p>The container definition identifier. Container names are unique within a container group definition.</p>
@@ -288,6 +295,20 @@ impl SupportContainerDefinitionBuilder {
     pub fn get_vcpu(&self) -> &::std::option::Option<f64> {
         &self.vcpu
     }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn linux_capabilities(mut self, input: crate::types::LinuxCapabilities) -> Self {
+        self.linux_capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn set_linux_capabilities(mut self, input: ::std::option::Option<crate::types::LinuxCapabilities>) -> Self {
+        self.linux_capabilities = input;
+        self
+    }
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
+    pub fn get_linux_capabilities(&self) -> &::std::option::Option<crate::types::LinuxCapabilities> {
+        &self.linux_capabilities
+    }
     /// Consumes the builder and constructs a [`SupportContainerDefinition`](crate::types::SupportContainerDefinition).
     pub fn build(self) -> crate::types::SupportContainerDefinition {
         crate::types::SupportContainerDefinition {
@@ -302,6 +323,7 @@ impl SupportContainerDefinitionBuilder {
             port_configuration: self.port_configuration,
             resolved_image_digest: self.resolved_image_digest,
             vcpu: self.vcpu,
+            linux_capabilities: self.linux_capabilities,
         }
     }
 }

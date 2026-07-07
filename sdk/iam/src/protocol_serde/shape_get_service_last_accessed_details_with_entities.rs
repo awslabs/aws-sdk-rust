@@ -102,6 +102,8 @@ pub fn de_get_service_last_accessed_details_with_entities(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetServiceLastAccessedDetailsWithEntitiesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetServiceLastAccessedDetailsWithEntitiesResponse got {start_el:?}"
@@ -161,7 +163,7 @@ pub fn de_get_service_last_accessed_details_with_entities(
             s if s.matches("EntityDetailsList") /* EntityDetailsList com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsWithEntitiesOutput$EntityDetailsList */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_entity_details_list_type::de_entity_details_list_type(&mut tag)
+                        crate::protocol_serde::shape_entity_details_list_type::de_entity_details_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -199,7 +201,7 @@ pub fn de_get_service_last_accessed_details_with_entities(
             s if s.matches("Error") /* Error com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsWithEntitiesOutput$Error */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_error_details::de_error_details(&mut tag)
+                        crate::protocol_serde::shape_error_details::de_error_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

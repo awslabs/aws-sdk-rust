@@ -2,10 +2,16 @@
 pub(crate) fn de_additional_info_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AdditionalInfoResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,107 +23,131 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "malaysiaAdditionalInfo" => {
                             builder = builder.set_malaysia_additional_info(
-                                crate::protocol_serde::shape_malaysia_additional_info::de_malaysia_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_malaysia_additional_info::de_malaysia_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "israelAdditionalInfo" => {
                             builder = builder.set_israel_additional_info(
-                                crate::protocol_serde::shape_israel_additional_info::de_israel_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_israel_additional_info::de_israel_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "estoniaAdditionalInfo" => {
                             builder = builder.set_estonia_additional_info(
-                                crate::protocol_serde::shape_estonia_additional_info::de_estonia_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_estonia_additional_info::de_estonia_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "canadaAdditionalInfo" => {
                             builder = builder.set_canada_additional_info(
-                                crate::protocol_serde::shape_canada_additional_info::de_canada_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_canada_additional_info::de_canada_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "brazilAdditionalInfo" => {
                             builder = builder.set_brazil_additional_info(
-                                crate::protocol_serde::shape_brazil_additional_info::de_brazil_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_brazil_additional_info::de_brazil_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "spainAdditionalInfo" => {
                             builder = builder.set_spain_additional_info(
-                                crate::protocol_serde::shape_spain_additional_info::de_spain_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_spain_additional_info::de_spain_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "kenyaAdditionalInfo" => {
                             builder = builder.set_kenya_additional_info(
-                                crate::protocol_serde::shape_kenya_additional_info::de_kenya_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_kenya_additional_info::de_kenya_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "southKoreaAdditionalInfo" => {
                             builder = builder.set_south_korea_additional_info(
-                                crate::protocol_serde::shape_south_korea_additional_info::de_south_korea_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_south_korea_additional_info::de_south_korea_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "turkeyAdditionalInfo" => {
                             builder = builder.set_turkey_additional_info(
-                                crate::protocol_serde::shape_turkey_additional_info::de_turkey_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_turkey_additional_info::de_turkey_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "georgiaAdditionalInfo" => {
                             builder = builder.set_georgia_additional_info(
-                                crate::protocol_serde::shape_georgia_additional_info::de_georgia_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_georgia_additional_info::de_georgia_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "italyAdditionalInfo" => {
                             builder = builder.set_italy_additional_info(
-                                crate::protocol_serde::shape_italy_additional_info::de_italy_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_italy_additional_info::de_italy_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "romaniaAdditionalInfo" => {
                             builder = builder.set_romania_additional_info(
-                                crate::protocol_serde::shape_romania_additional_info::de_romania_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_romania_additional_info::de_romania_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "ukraineAdditionalInfo" => {
                             builder = builder.set_ukraine_additional_info(
-                                crate::protocol_serde::shape_ukraine_additional_info::de_ukraine_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_ukraine_additional_info::de_ukraine_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "polandAdditionalInfo" => {
                             builder = builder.set_poland_additional_info(
-                                crate::protocol_serde::shape_poland_additional_info::de_poland_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_poland_additional_info::de_poland_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "saudiArabiaAdditionalInfo" => {
                             builder = builder.set_saudi_arabia_additional_info(
-                                crate::protocol_serde::shape_saudi_arabia_additional_info::de_saudi_arabia_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_saudi_arabia_additional_info::de_saudi_arabia_additional_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "indiaAdditionalInfo" => {
                             builder = builder.set_india_additional_info(
-                                crate::protocol_serde::shape_india_additional_info::de_india_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_india_additional_info::de_india_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "indonesiaAdditionalInfo" => {
                             builder = builder.set_indonesia_additional_info(
-                                crate::protocol_serde::shape_indonesia_additional_info::de_indonesia_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_indonesia_additional_info::de_indonesia_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "vietnamAdditionalInfo" => {
                             builder = builder.set_vietnam_additional_info(
-                                crate::protocol_serde::shape_vietnam_additional_info::de_vietnam_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_vietnam_additional_info::de_vietnam_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "egyptAdditionalInfo" => {
                             builder = builder.set_egypt_additional_info(
-                                crate::protocol_serde::shape_egypt_additional_info::de_egypt_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_egypt_additional_info::de_egypt_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "greeceAdditionalInfo" => {
                             builder = builder.set_greece_additional_info(
-                                crate::protocol_serde::shape_greece_additional_info::de_greece_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_greece_additional_info::de_greece_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         "uzbekistanAdditionalInfo" => {
                             builder = builder.set_uzbekistan_additional_info(
-                                crate::protocol_serde::shape_uzbekistan_additional_info::de_uzbekistan_additional_info(tokens, _value)?,
+                                crate::protocol_serde::shape_uzbekistan_additional_info::de_uzbekistan_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "philippinesAdditionalInfo" => {
+                            builder = builder.set_philippines_additional_info(
+                                crate::protocol_serde::shape_philippines_additional_info::de_philippines_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "belgiumAdditionalInfo" => {
+                            builder = builder.set_belgium_additional_info(
+                                crate::protocol_serde::shape_belgium_additional_info::de_belgium_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "chileAdditionalInfo" => {
+                            builder = builder.set_chile_additional_info(
+                                crate::protocol_serde::shape_chile_additional_info::de_chile_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "franceAdditionalInfo" => {
+                            builder = builder.set_france_additional_info(
+                                crate::protocol_serde::shape_france_additional_info::de_france_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -126,6 +126,8 @@ pub(crate) fn de_get_rotation(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -147,7 +149,9 @@ pub(crate) fn de_get_rotation(
                 }
                 "ContactIds" => {
                     builder = builder.set_contact_ids(crate::protocol_serde::shape_rotation_contacts_arn_list::de_rotation_contacts_arn_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "StartTime" => {
@@ -164,7 +168,11 @@ pub(crate) fn de_get_rotation(
                     );
                 }
                 "Recurrence" => {
-                    builder = builder.set_recurrence(crate::protocol_serde::shape_recurrence_settings::de_recurrence_settings(tokens, _value)?);
+                    builder = builder.set_recurrence(crate::protocol_serde::shape_recurrence_settings::de_recurrence_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

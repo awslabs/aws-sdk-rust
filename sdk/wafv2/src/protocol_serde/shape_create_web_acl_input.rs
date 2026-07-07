@@ -106,5 +106,11 @@ pub fn ser_create_web_acl_input_input(
         crate::protocol_serde::shape_application_config::ser_application_config(&mut object_35, var_34)?;
         object_35.finish();
     }
+    if let Some(var_36) = &input.monetization_config {
+        #[allow(unused_mut)]
+        let mut object_37 = object.key("MonetizationConfig").start_object();
+        crate::protocol_serde::shape_monetization_config::ser_monetization_config(&mut object_37, var_36)?;
+        object_37.finish();
+    }
     Ok(())
 }

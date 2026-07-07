@@ -47,6 +47,7 @@ impl crate::operation::put_intent::builders::PutIntentInputBuilder {
 /// <p>If you specify an existing intent name to update the intent, Amazon Lex replaces the values in the <code>$LATEST</code> version of the intent with the values in the request. Amazon Lex removes fields that you don't provide in the request. If you don't specify the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code> version of the intent is set to <code>NOT_BUILT</code>.</p>
 /// <p>For more information, see <code>how-it-works</code>.</p>
 /// <p>This operation requires permissions for the <code>lex:PutIntent</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutIntentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -633,6 +633,8 @@ pub(crate) mod shape_vpc_output_settings_description;
 
 pub(crate) mod shape_audio_description;
 
+pub(crate) mod shape_audio_feed_input;
+
 pub(crate) mod shape_automatic_input_failover_settings;
 
 pub(crate) mod shape_avail_blanking;
@@ -708,6 +710,8 @@ pub(crate) mod shape_interface_mapping_update_request;
 pub(crate) mod shape_ip_pool;
 
 pub(crate) mod shape_list_of_audio_description;
+
+pub(crate) mod shape_list_of_audio_feed_input;
 
 pub(crate) mod shape_list_of_caption_description;
 
@@ -849,6 +853,8 @@ pub(crate) mod shape_list_of_srt_output_destination_settings;
 
 pub(crate) mod shape_list_of_thumbnail;
 
+pub(crate) mod shape_media_connect_router_output_connections;
+
 pub(crate) mod shape_motion_graphics_settings;
 
 pub(crate) mod shape_multicast_source;
@@ -976,6 +982,8 @@ pub(crate) mod shape_list_of_failover_condition;
 pub(crate) mod shape_list_of_output;
 
 pub(crate) mod shape_media_connect_router_group_settings;
+
+pub(crate) mod shape_media_connect_router_output_connection;
 
 pub(crate) mod shape_media_package_group_settings;
 
@@ -1151,6 +1159,8 @@ pub(crate) mod shape_scte27_source_settings;
 
 pub(crate) mod shape_scte35_descriptor;
 
+pub(crate) mod shape_smart_subtitle_source_settings;
+
 pub(crate) mod shape_srt_output_settings;
 
 pub(crate) mod shape_teletext_source_settings;
@@ -1170,6 +1180,8 @@ pub(crate) mod shape_archive_container_settings;
 pub(crate) mod shape_archive_s3_settings;
 
 pub(crate) mod shape_audio_dolby_e_decode;
+
+pub(crate) mod shape_audio_pid;
 
 pub(crate) mod shape_audio_track;
 
@@ -1237,6 +1249,8 @@ pub(crate) mod shape_udp_container_settings;
 
 pub(crate) mod shape_audio_only_hls_settings;
 
+pub(crate) mod shape_audio_pre_mixer_settings;
+
 pub(crate) mod shape_fmp4_hls_settings;
 
 pub(crate) mod shape_frame_capture_hls_settings;
@@ -1260,6 +1274,8 @@ pub(crate) mod shape_dvb_nit_settings;
 pub(crate) mod shape_dvb_sdt_settings;
 
 pub(crate) mod shape_dvb_tdt_settings;
+
+pub(crate) mod shape_list_of_audio_pid;
 
 pub(crate) mod shape_list_of_audio_track;
 

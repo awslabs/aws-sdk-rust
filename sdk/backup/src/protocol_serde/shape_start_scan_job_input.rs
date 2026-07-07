@@ -6,26 +6,31 @@ pub fn ser_start_scan_job_input_input(
     if let Some(var_1) = &input.backup_vault_name {
         object.key("BackupVaultName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_2.as_str());
+    if let Some(var_2) = &input.continuous_scan_end_time {
+        object
+            .key("ContinuousScanEndTime")
+            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_3) = &input.idempotency_token {
-        object.key("IdempotencyToken").string(var_3.as_str());
+    if let Some(var_3) = &input.iam_role_arn {
+        object.key("IamRoleArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.malware_scanner {
-        object.key("MalwareScanner").string(var_4.as_str());
+    if let Some(var_4) = &input.idempotency_token {
+        object.key("IdempotencyToken").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.recovery_point_arn {
-        object.key("RecoveryPointArn").string(var_5.as_str());
+    if let Some(var_5) = &input.malware_scanner {
+        object.key("MalwareScanner").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.scan_base_recovery_point_arn {
-        object.key("ScanBaseRecoveryPointArn").string(var_6.as_str());
+    if let Some(var_6) = &input.recovery_point_arn {
+        object.key("RecoveryPointArn").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.scan_mode {
-        object.key("ScanMode").string(var_7.as_str());
+    if let Some(var_7) = &input.scan_base_recovery_point_arn {
+        object.key("ScanBaseRecoveryPointArn").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.scanner_role_arn {
-        object.key("ScannerRoleArn").string(var_8.as_str());
+    if let Some(var_8) = &input.scan_mode {
+        object.key("ScanMode").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.scanner_role_arn {
+        object.key("ScannerRoleArn").string(var_9.as_str());
     }
     Ok(())
 }

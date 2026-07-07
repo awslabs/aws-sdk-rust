@@ -18,6 +18,8 @@ pub struct IngestionJobStatistics {
     pub number_of_documents_deleted: i64,
     /// <p>The number of source documents that failed to be ingested.</p>
     pub number_of_documents_failed: i64,
+    /// <p>The number of source documents that were skipped during ingestion.</p>
+    pub number_of_documents_skipped: i64,
 }
 impl IngestionJobStatistics {
     /// <p>The total number of source documents that were scanned. Includes new, updated, and unchanged documents.</p>
@@ -48,6 +50,10 @@ impl IngestionJobStatistics {
     pub fn number_of_documents_failed(&self) -> i64 {
         self.number_of_documents_failed
     }
+    /// <p>The number of source documents that were skipped during ingestion.</p>
+    pub fn number_of_documents_skipped(&self) -> i64 {
+        self.number_of_documents_skipped
+    }
 }
 impl IngestionJobStatistics {
     /// Creates a new builder-style object to manufacture [`IngestionJobStatistics`](crate::types::IngestionJobStatistics).
@@ -67,6 +73,7 @@ pub struct IngestionJobStatisticsBuilder {
     pub(crate) number_of_metadata_documents_modified: ::std::option::Option<i64>,
     pub(crate) number_of_documents_deleted: ::std::option::Option<i64>,
     pub(crate) number_of_documents_failed: ::std::option::Option<i64>,
+    pub(crate) number_of_documents_skipped: ::std::option::Option<i64>,
 }
 impl IngestionJobStatisticsBuilder {
     /// <p>The total number of source documents that were scanned. Includes new, updated, and unchanged documents.</p>
@@ -167,6 +174,20 @@ impl IngestionJobStatisticsBuilder {
     pub fn get_number_of_documents_failed(&self) -> &::std::option::Option<i64> {
         &self.number_of_documents_failed
     }
+    /// <p>The number of source documents that were skipped during ingestion.</p>
+    pub fn number_of_documents_skipped(mut self, input: i64) -> Self {
+        self.number_of_documents_skipped = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of source documents that were skipped during ingestion.</p>
+    pub fn set_number_of_documents_skipped(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.number_of_documents_skipped = input;
+        self
+    }
+    /// <p>The number of source documents that were skipped during ingestion.</p>
+    pub fn get_number_of_documents_skipped(&self) -> &::std::option::Option<i64> {
+        &self.number_of_documents_skipped
+    }
     /// Consumes the builder and constructs a [`IngestionJobStatistics`](crate::types::IngestionJobStatistics).
     pub fn build(self) -> crate::types::IngestionJobStatistics {
         crate::types::IngestionJobStatistics {
@@ -177,6 +198,7 @@ impl IngestionJobStatisticsBuilder {
             number_of_metadata_documents_modified: self.number_of_metadata_documents_modified.unwrap_or_default(),
             number_of_documents_deleted: self.number_of_documents_deleted.unwrap_or_default(),
             number_of_documents_failed: self.number_of_documents_failed.unwrap_or_default(),
+            number_of_documents_skipped: self.number_of_documents_skipped.unwrap_or_default(),
         }
     }
 }

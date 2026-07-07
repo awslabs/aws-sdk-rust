@@ -74,6 +74,8 @@ pub(crate) fn de_get_account(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -94,7 +96,7 @@ pub(crate) fn de_get_account(
                     builder = builder.set_production_access_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "SendQuota" => {
-                    builder = builder.set_send_quota(crate::protocol_serde::shape_send_quota::de_send_quota(tokens, _value)?);
+                    builder = builder.set_send_quota(crate::protocol_serde::shape_send_quota::de_send_quota(tokens, _value, depth + 1)?);
                 }
                 "SendingEnabled" => {
                     builder = builder.set_sending_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

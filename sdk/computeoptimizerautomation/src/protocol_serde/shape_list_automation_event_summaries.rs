@@ -174,10 +174,11 @@ pub(crate) fn de_list_automation_event_summaries(
     crate::operation::list_automation_event_summaries::builders::ListAutomationEventSummariesOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_automation_event_summaries::builders::ListAutomationEventSummariesOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::list_automation_event_summaries::builders::ListAutomationEventSummariesOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
@@ -185,7 +186,7 @@ pub(crate) fn de_list_automation_event_summaries(
         builder = match decoder.str()?.as_ref() {
             "automationEventSummaries" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_automation_event_summaries(Some(
-                    crate::protocol_serde::shape_automation_event_summary_list::de_automation_event_summary_list(decoder)?,
+                    crate::protocol_serde::shape_automation_event_summary_list::de_automation_event_summary_list(decoder, depth + 1)?,
                 )))
             })?,
             "nextToken" => {
@@ -200,6 +201,8 @@ pub(crate) fn de_list_automation_event_summaries(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -209,13 +212,13 @@ pub(crate) fn de_list_automation_event_summaries(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

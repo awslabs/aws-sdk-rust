@@ -24,10 +24,16 @@ pub fn ser_admin_create_user_config_type(
 pub(crate) fn de_admin_create_user_config_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AdminCreateUserConfigType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,7 +56,7 @@ where
                         }
                         "InviteMessageTemplate" => {
                             builder = builder.set_invite_message_template(
-                                crate::protocol_serde::shape_message_template_type::de_message_template_type(tokens, _value)?,
+                                crate::protocol_serde::shape_message_template_type::de_message_template_type(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

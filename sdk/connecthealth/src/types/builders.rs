@@ -33,6 +33,8 @@ pub use crate::types::_domain_summary::DomainSummaryBuilder;
 
 pub use crate::types::_medical_scribe_audio_event::MedicalScribeAudioEventBuilder;
 
+pub use crate::types::_medical_scribe_binary_audio_event::MedicalScribeBinaryAudioEventBuilder;
+
 pub use crate::types::_medical_scribe_session_control_event::MedicalScribeSessionControlEventBuilder;
 
 pub use crate::types::_medical_scribe_configuration_event::MedicalScribeConfigurationEventBuilder;

@@ -23,7 +23,11 @@ pub fn ser_target_groups_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_groups_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TargetGroupsConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetGroupsConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -31,7 +35,7 @@ pub fn de_target_groups_config(
             s if s.matches("targetGroups") /* TargetGroups com.amazonaws.ec2#TargetGroupsConfig$TargetGroups */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_target_groups::de_target_groups(&mut tag)
+                        crate::protocol_serde::shape_target_groups::de_target_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;

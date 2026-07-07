@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_acl(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::NetworkAcl, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkAcl::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_network_acl(
             s if s.matches("associationSet") /* Associations com.amazonaws.ec2#NetworkAcl$Associations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_network_acl_association_list::de_network_acl_association_list(&mut tag)
+                        crate::protocol_serde::shape_network_acl_association_list::de_network_acl_association_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_network_acl(
             s if s.matches("entrySet") /* Entries com.amazonaws.ec2#NetworkAcl$Entries */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_network_acl_entry_list::de_network_acl_entry_list(&mut tag)
+                        crate::protocol_serde::shape_network_acl_entry_list::de_network_acl_entry_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -58,7 +62,7 @@ pub fn de_network_acl(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#NetworkAcl$Tags */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

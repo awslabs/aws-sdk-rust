@@ -2,10 +2,16 @@
 pub(crate) fn de_workspace_configuration_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkspaceConfigurationDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,16 +23,34 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "status" => {
                             builder = builder.set_status(
-                                crate::protocol_serde::shape_workspace_configuration_status::de_workspace_configuration_status(tokens, _value)?,
+                                crate::protocol_serde::shape_workspace_configuration_status::de_workspace_configuration_status(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "limitsPerLabelSet" => {
                             builder = builder.set_limits_per_label_set(
-                                crate::protocol_serde::shape_limits_per_label_set_list::de_limits_per_label_set_list(tokens, _value)?,
+                                crate::protocol_serde::shape_limits_per_label_set_list::de_limits_per_label_set_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "retentionPeriodInDays" => {
                             builder = builder.set_retention_period_in_days(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "outOfOrderTimeWindowInSeconds" => {
+                            builder = builder.set_out_of_order_time_window_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ruleQueryOffsetInSeconds" => {
+                            builder = builder.set_rule_query_offset_in_seconds(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

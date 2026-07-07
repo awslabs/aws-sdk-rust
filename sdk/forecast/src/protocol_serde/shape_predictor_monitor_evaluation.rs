@@ -2,10 +2,16 @@
 pub(crate) fn de_predictor_monitor_evaluation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PredictorMonitorEvaluation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -55,14 +61,25 @@ where
                             )?);
                         }
                         "PredictorEvent" => {
-                            builder = builder.set_predictor_event(crate::protocol_serde::shape_predictor_event::de_predictor_event(tokens, _value)?);
+                            builder = builder.set_predictor_event(crate::protocol_serde::shape_predictor_event::de_predictor_event(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MonitorDataSource" => {
-                            builder = builder
-                                .set_monitor_data_source(crate::protocol_serde::shape_monitor_data_source::de_monitor_data_source(tokens, _value)?);
+                            builder = builder.set_monitor_data_source(crate::protocol_serde::shape_monitor_data_source::de_monitor_data_source(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MetricResults" => {
-                            builder = builder.set_metric_results(crate::protocol_serde::shape_metric_results::de_metric_results(tokens, _value)?);
+                            builder = builder.set_metric_results(crate::protocol_serde::shape_metric_results::de_metric_results(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "NumItemsEvaluated" => {
                             builder = builder.set_num_items_evaluated(

@@ -53,6 +53,8 @@ pub fn de_accept_reserved_instances_exchange_quote(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AcceptReservedInstancesExchangeQuoteResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AcceptReservedInstancesExchangeQuoteResponse got {start_el:?}"

@@ -72,6 +72,8 @@ pub fn de_describe_listener_certificates(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeListenerCertificatesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeListenerCertificatesResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_describe_listener_certificates(
             s if s.matches("Certificates") /* Certificates com.amazonaws.elasticloadbalancingv2.synthetic#DescribeListenerCertificatesOutput$Certificates */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_certificate_list::de_certificate_list(&mut tag)
+                        crate::protocol_serde::shape_certificate_list::de_certificate_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

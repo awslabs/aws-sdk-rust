@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_resource_detail(
             s if s.matches("ResourceIdentifier") /* ResourceIdentifier com.amazonaws.cloudformation#ResourceDetail$ResourceIdentifier */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_resource_identifier_properties::de_resource_identifier_properties(&mut tag)
+                        crate::protocol_serde::shape_resource_identifier_properties::de_resource_identifier_properties(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -73,7 +77,7 @@ pub fn de_resource_detail(
             s if s.matches("Warnings") /* Warnings com.amazonaws.cloudformation#ResourceDetail$Warnings */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_warning_details::de_warning_details(&mut tag)
+                        crate::protocol_serde::shape_warning_details::de_warning_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -24,10 +24,16 @@ pub fn ser_media_concurrency(
 pub(crate) fn de_media_concurrency<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MediaConcurrency>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,7 +59,7 @@ where
                         }
                         "CrossChannelBehavior" => {
                             builder = builder.set_cross_channel_behavior(
-                                crate::protocol_serde::shape_cross_channel_behavior::de_cross_channel_behavior(tokens, _value)?,
+                                crate::protocol_serde::shape_cross_channel_behavior::de_cross_channel_behavior(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_directory_buckets_output_output_continuation_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_object_annotations_output_output_next_continuation_token(
+    input: &crate::operation::list_object_annotations::ListObjectAnnotationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_continuation_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_objects_v2_output_output_next_continuation_token(
     input: &crate::operation::list_objects_v2::ListObjectsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -50,6 +60,13 @@ pub(crate) fn lens_list_directory_buckets_output_output_buckets(
     input: crate::operation::list_directory_buckets::ListDirectoryBucketsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
     let input = input.buckets?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_object_annotations_output_output_annotations(
+    input: crate::operation::list_object_annotations::ListObjectAnnotationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AnnotationEntry>> {
+    let input = input.annotations?;
     ::std::option::Option::Some(input)
 }
 

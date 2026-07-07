@@ -2,10 +2,16 @@
 pub(crate) fn de_lake_formation_data_permission_asset<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LakeFormationDataPermissionAsset>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,7 +24,9 @@ where
                         "LakeFormationDataPermissionDetails" => {
                             builder = builder.set_lake_formation_data_permission_details(
                                 crate::protocol_serde::shape_lake_formation_data_permission_details::de_lake_formation_data_permission_details(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -31,7 +39,9 @@ where
                         }
                         "Permissions" => {
                             builder = builder.set_permissions(crate::protocol_serde::shape_list_of_lf_permissions::de_list_of_lf_permissions(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "RoleArn" => {

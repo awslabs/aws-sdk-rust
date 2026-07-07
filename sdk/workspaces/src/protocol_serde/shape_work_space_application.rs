@@ -2,10 +2,16 @@
 pub(crate) fn de_work_space_application<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WorkSpaceApplication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -64,12 +70,15 @@ where
                             );
                         }
                         "SupportedComputeTypeNames" => {
-                            builder =
-                                builder.set_supported_compute_type_names(crate::protocol_serde::shape_compute_list::de_compute_list(tokens, _value)?);
+                            builder = builder.set_supported_compute_type_names(crate::protocol_serde::shape_compute_list::de_compute_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "SupportedOperatingSystemNames" => {
                             builder = builder.set_supported_operating_system_names(
-                                crate::protocol_serde::shape_operating_system_name_list::de_operating_system_name_list(tokens, _value)?,
+                                crate::protocol_serde::shape_operating_system_name_list::de_operating_system_name_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

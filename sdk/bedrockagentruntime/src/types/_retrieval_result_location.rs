@@ -31,6 +31,10 @@ pub struct RetrievalResultLocation {
     pub kendra_document_location: ::std::option::Option<crate::types::RetrievalResultKendraDocumentLocation>,
     /// <p>Specifies information about the SQL query used to retrieve the result.</p>
     pub sql_location: ::std::option::Option<crate::types::RetrievalResultSqlLocation>,
+    /// <p>The Microsoft OneDrive data source location.</p>
+    pub one_drive_location: ::std::option::Option<crate::types::RetrievalResultOneDriveLocation>,
+    /// <p>The Google Drive data source location.</p>
+    pub google_drive_location: ::std::option::Option<crate::types::RetrievalResultGoogleDriveLocation>,
 }
 impl RetrievalResultLocation {
     /// <p>The type of data source location.</p>
@@ -69,6 +73,14 @@ impl RetrievalResultLocation {
     pub fn sql_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultSqlLocation> {
         self.sql_location.as_ref()
     }
+    /// <p>The Microsoft OneDrive data source location.</p>
+    pub fn one_drive_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultOneDriveLocation> {
+        self.one_drive_location.as_ref()
+    }
+    /// <p>The Google Drive data source location.</p>
+    pub fn google_drive_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultGoogleDriveLocation> {
+        self.google_drive_location.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RetrievalResultLocation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -82,6 +94,8 @@ impl ::std::fmt::Debug for RetrievalResultLocation {
         formatter.field("custom_document_location", &"*** Sensitive Data Redacted ***");
         formatter.field("kendra_document_location", &"*** Sensitive Data Redacted ***");
         formatter.field("sql_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("one_drive_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("google_drive_location", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -105,6 +119,8 @@ pub struct RetrievalResultLocationBuilder {
     pub(crate) custom_document_location: ::std::option::Option<crate::types::RetrievalResultCustomDocumentLocation>,
     pub(crate) kendra_document_location: ::std::option::Option<crate::types::RetrievalResultKendraDocumentLocation>,
     pub(crate) sql_location: ::std::option::Option<crate::types::RetrievalResultSqlLocation>,
+    pub(crate) one_drive_location: ::std::option::Option<crate::types::RetrievalResultOneDriveLocation>,
+    pub(crate) google_drive_location: ::std::option::Option<crate::types::RetrievalResultGoogleDriveLocation>,
 }
 impl RetrievalResultLocationBuilder {
     /// <p>The type of data source location.</p>
@@ -234,6 +250,34 @@ impl RetrievalResultLocationBuilder {
     pub fn get_sql_location(&self) -> &::std::option::Option<crate::types::RetrievalResultSqlLocation> {
         &self.sql_location
     }
+    /// <p>The Microsoft OneDrive data source location.</p>
+    pub fn one_drive_location(mut self, input: crate::types::RetrievalResultOneDriveLocation) -> Self {
+        self.one_drive_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Microsoft OneDrive data source location.</p>
+    pub fn set_one_drive_location(mut self, input: ::std::option::Option<crate::types::RetrievalResultOneDriveLocation>) -> Self {
+        self.one_drive_location = input;
+        self
+    }
+    /// <p>The Microsoft OneDrive data source location.</p>
+    pub fn get_one_drive_location(&self) -> &::std::option::Option<crate::types::RetrievalResultOneDriveLocation> {
+        &self.one_drive_location
+    }
+    /// <p>The Google Drive data source location.</p>
+    pub fn google_drive_location(mut self, input: crate::types::RetrievalResultGoogleDriveLocation) -> Self {
+        self.google_drive_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Google Drive data source location.</p>
+    pub fn set_google_drive_location(mut self, input: ::std::option::Option<crate::types::RetrievalResultGoogleDriveLocation>) -> Self {
+        self.google_drive_location = input;
+        self
+    }
+    /// <p>The Google Drive data source location.</p>
+    pub fn get_google_drive_location(&self) -> &::std::option::Option<crate::types::RetrievalResultGoogleDriveLocation> {
+        &self.google_drive_location
+    }
     /// Consumes the builder and constructs a [`RetrievalResultLocation`](crate::types::RetrievalResultLocation).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::RetrievalResultLocationBuilder::type)
@@ -253,6 +297,8 @@ impl RetrievalResultLocationBuilder {
             custom_document_location: self.custom_document_location,
             kendra_document_location: self.kendra_document_location,
             sql_location: self.sql_location,
+            one_drive_location: self.one_drive_location,
+            google_drive_location: self.google_drive_location,
         })
     }
 }
@@ -268,6 +314,8 @@ impl ::std::fmt::Debug for RetrievalResultLocationBuilder {
         formatter.field("custom_document_location", &"*** Sensitive Data Redacted ***");
         formatter.field("kendra_document_location", &"*** Sensitive Data Redacted ***");
         formatter.field("sql_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("one_drive_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("google_drive_location", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -741,4 +741,18 @@ impl RunJobFlowFluentBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         self.inner.get_monitoring_configuration()
     }
+    /// <p>Indicates whether Spark Connect sessions are enabled on the cluster. When set to <code>true</code>, you can start Spark Connect sessions using the <code>StartSession</code> operation.</p>
+    pub fn session_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.session_enabled(input);
+        self
+    }
+    /// <p>Indicates whether Spark Connect sessions are enabled on the cluster. When set to <code>true</code>, you can start Spark Connect sessions using the <code>StartSession</code> operation.</p>
+    pub fn set_session_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_session_enabled(input);
+        self
+    }
+    /// <p>Indicates whether Spark Connect sessions are enabled on the cluster. When set to <code>true</code>, you can start Spark Connect sessions using the <code>StartSession</code> operation.</p>
+    pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_session_enabled()
+    }
 }

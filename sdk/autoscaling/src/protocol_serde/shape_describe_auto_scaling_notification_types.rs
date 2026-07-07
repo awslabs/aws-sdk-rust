@@ -80,6 +80,8 @@ pub fn de_describe_auto_scaling_notification_types(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeAutoScalingNotificationTypesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeAutoScalingNotificationTypesResponse got {start_el:?}"
@@ -97,7 +99,7 @@ pub fn de_describe_auto_scaling_notification_types(
             s if s.matches("AutoScalingNotificationTypes") /* AutoScalingNotificationTypes com.amazonaws.autoscaling.synthetic#DescribeAutoScalingNotificationTypesOutput$AutoScalingNotificationTypes */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_auto_scaling_notification_types::de_auto_scaling_notification_types(&mut tag)
+                        crate::protocol_serde::shape_auto_scaling_notification_types::de_auto_scaling_notification_types(&mut tag, depth + 1)
                         ?
                     )
                 ;

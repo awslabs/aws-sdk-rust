@@ -92,13 +92,15 @@ pub(crate) fn de_list_portfolio_access(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AccountIds" => {
-                    builder = builder.set_account_ids(crate::protocol_serde::shape_account_ids::de_account_ids(tokens, _value)?);
+                    builder = builder.set_account_ids(crate::protocol_serde::shape_account_ids::de_account_ids(tokens, _value, depth + 1)?);
                 }
                 "NextPageToken" => {
                     builder = builder.set_next_page_token(

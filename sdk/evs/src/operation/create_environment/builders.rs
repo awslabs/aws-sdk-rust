@@ -22,10 +22,11 @@ impl crate::operation::create_environment::builders::CreateEnvironmentInputBuild
 }
 /// Fluent builder constructing a request to `CreateEnvironment`.
 ///
-/// <p>Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX Manager, and vCenter Server.</p>
-/// <p>During environment creation, Amazon EVS performs validations on DNS settings, provisions VLAN subnets and hosts, and deploys the supplied version of VCF.</p>
-/// <p>It can take several hours to create an environment. After the deployment completes, you can configure VCF in the vSphere user interface according to your needs.</p><important>
-/// <p>When creating a new environment, the default ESX version for the selected VCF version will be used, you cannot choose a specific ESX version in <code>CreateEnvironment</code> action. When a host has been added with a specific ESX version, it can only be upgraded using vCenter Lifecycle Manager.</p>
+/// <p>Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX Manager, and vCenter Server.</p><note>
+/// <p>When you specify <code>SELF_DEPLOYED</code> for <code>vcfVersion</code>, Amazon EVS provisions only the VLAN subnets; no hosts are added and no VCF installation is performed. After the environment is created, you can add hosts with <code>CreateEnvironmentHost</code> and install VCF yourself. The <code>licenseInfo</code>, <code>hosts</code>, <code>vcfHostnames</code>, <code>siteId</code>, and <code>connectivityInfo</code> parameters are not supported in this mode.</p>
+/// </note>
+/// <p>When you specify any other VCF version, Amazon EVS installs and configures VCF for you. For more information, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/getting-started-self-deployed.html">Self-deployed mode</a> in the <i>Amazon EVS User Guide</i>.</p><important>
+/// <p>When Amazon EVS installs VCF, the default ESX version for the selected VCF version will be used. After a host is added with a specific ESX version, it can only be upgraded using vCenter Lifecycle Manager.</p>
 /// </important> <note>
 /// <p>You cannot use the <code>dedicatedHostId</code> and <code>placementGroupId</code> parameters together in the same <code>CreateEnvironment</code> action. This results in a <code>ValidationException</code> response.</p>
 /// </note>
@@ -257,75 +258,65 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
-    /// <p>The subnet that is used to establish connectivity between the Amazon EVS control plane and VPC. Amazon EVS uses this subnet to validate mandatory DNS records for your VCF appliances and hosts and create the environment.</p>
+    /// <p>The subnet that is used to establish connectivity between the Amazon EVS control plane and VPC. The Amazon EVS control plane uses this subnet to interface with your environment. This includes validating DNS records and enabling Amazon EVS Connectors.</p>
     pub fn service_access_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_access_subnet_id(input.into());
         self
     }
-    /// <p>The subnet that is used to establish connectivity between the Amazon EVS control plane and VPC. Amazon EVS uses this subnet to validate mandatory DNS records for your VCF appliances and hosts and create the environment.</p>
+    /// <p>The subnet that is used to establish connectivity between the Amazon EVS control plane and VPC. The Amazon EVS control plane uses this subnet to interface with your environment. This includes validating DNS records and enabling Amazon EVS Connectors.</p>
     pub fn set_service_access_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_access_subnet_id(input);
         self
     }
-    /// <p>The subnet that is used to establish connectivity between the Amazon EVS control plane and VPC. Amazon EVS uses this subnet to validate mandatory DNS records for your VCF appliances and hosts and create the environment.</p>
+    /// <p>The subnet that is used to establish connectivity between the Amazon EVS control plane and VPC. The Amazon EVS control plane uses this subnet to interface with your environment. This includes validating DNS records and enabling Amazon EVS Connectors.</p>
     pub fn get_service_access_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_access_subnet_id()
     }
     /// <p>The VCF version to use for the environment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF_DEPLOYED</code>: You install VCF yourself. The <code>licenseInfo</code>, <code>hosts</code>, <code>vcfHostnames</code>, <code>siteId</code>, and <code>connectivityInfo</code> parameters are not supported.</p></li>
+    /// <li>
+    /// <p>Any other valid value: Amazon EVS installs and configures VCF for you in the version you specify.</p></li>
+    /// </ul>
     pub fn vcf_version(mut self, input: crate::types::VcfVersion) -> Self {
         self.inner = self.inner.vcf_version(input);
         self
     }
     /// <p>The VCF version to use for the environment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF_DEPLOYED</code>: You install VCF yourself. The <code>licenseInfo</code>, <code>hosts</code>, <code>vcfHostnames</code>, <code>siteId</code>, and <code>connectivityInfo</code> parameters are not supported.</p></li>
+    /// <li>
+    /// <p>Any other valid value: Amazon EVS installs and configures VCF for you in the version you specify.</p></li>
+    /// </ul>
     pub fn set_vcf_version(mut self, input: ::std::option::Option<crate::types::VcfVersion>) -> Self {
         self.inner = self.inner.set_vcf_version(input);
         self
     }
     /// <p>The VCF version to use for the environment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF_DEPLOYED</code>: You install VCF yourself. The <code>licenseInfo</code>, <code>hosts</code>, <code>vcfHostnames</code>, <code>siteId</code>, and <code>connectivityInfo</code> parameters are not supported.</p></li>
+    /// <li>
+    /// <p>Any other valid value: Amazon EVS installs and configures VCF for you in the version you specify.</p></li>
+    /// </ul>
     pub fn get_vcf_version(&self) -> &::std::option::Option<crate::types::VcfVersion> {
         self.inner.get_vcf_version()
     }
-    /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
+    /// <p>Confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     pub fn terms_accepted(mut self, input: bool) -> Self {
         self.inner = self.inner.terms_accepted(input);
         self
     }
-    /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
+    /// <p>Confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     pub fn set_terms_accepted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_terms_accepted(input);
         self
     }
-    /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
+    /// <p>Confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     pub fn get_terms_accepted(&self) -> &::std::option::Option<bool> {
         self.inner.get_terms_accepted()
-    }
-    ///
-    /// Appends an item to `licenseInfo`.
-    ///
-    /// To override the contents of this collection use [`set_license_info`](Self::set_license_info).
-    ///
-    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must meet minimum core requirements, and the vSAN license key must meet minimum capacity requirements for your selected instance type.</p>
-    /// <p>For information about minimum license requirements, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/vcf-license-mgmt.html">the VCF subscriptions section</a> in the <i>Amazon EVS User Guide</i>.</p>
-    /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
-    /// <p>VCF license information can be retrieved from the Broadcom portal.</p>
-    pub fn license_info(mut self, input: crate::types::LicenseInfo) -> Self {
-        self.inner = self.inner.license_info(input);
-        self
-    }
-    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must meet minimum core requirements, and the vSAN license key must meet minimum capacity requirements for your selected instance type.</p>
-    /// <p>For information about minimum license requirements, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/vcf-license-mgmt.html">the VCF subscriptions section</a> in the <i>Amazon EVS User Guide</i>.</p>
-    /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
-    /// <p>VCF license information can be retrieved from the Broadcom portal.</p>
-    pub fn set_license_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>>) -> Self {
-        self.inner = self.inner.set_license_info(input);
-        self
-    }
-    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must meet minimum core requirements, and the vSAN license key must meet minimum capacity requirements for your selected instance type.</p>
-    /// <p>For information about minimum license requirements, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/vcf-license-mgmt.html">the VCF subscriptions section</a> in the <i>Amazon EVS User Guide</i>.</p>
-    /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
-    /// <p>VCF license information can be retrieved from the Broadcom portal.</p>
-    pub fn get_license_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>> {
-        self.inner.get_license_info()
     }
     /// <p>The initial VLAN subnets for the Amazon EVS environment.</p><note>
     /// <p>For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.</p>
@@ -347,67 +338,122 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_initial_vlans(&self) -> &::std::option::Option<crate::types::InitialVlans> {
         self.inner.get_initial_vlans()
     }
+    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
+    pub fn connectivity_info(mut self, input: crate::types::ConnectivityInfo) -> Self {
+        self.inner = self.inner.connectivity_info(input);
+        self
+    }
+    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
+    pub fn set_connectivity_info(mut self, input: ::std::option::Option<crate::types::ConnectivityInfo>) -> Self {
+        self.inner = self.inner.set_connectivity_info(input);
+        self
+    }
+    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
+    pub fn get_connectivity_info(&self) -> &::std::option::Option<crate::types::ConnectivityInfo> {
+        self.inner.get_connectivity_info()
+    }
+    ///
+    /// Appends an item to `licenseInfo`.
+    ///
+    /// To override the contents of this collection use [`set_license_info`](Self::set_license_info).
+    ///
+    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must meet minimum core requirements, and the vSAN license key must meet minimum capacity requirements for your selected instance type.</p>
+    /// <p>For information about minimum license requirements, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/vcf-license-mgmt.html">the VCF subscriptions section</a> in the <i>Amazon EVS User Guide</i>.</p>
+    /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
+    /// <p>VCF license information can be retrieved from the Broadcom portal.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
+    pub fn license_info(mut self, input: crate::types::LicenseInfo) -> Self {
+        self.inner = self.inner.license_info(input);
+        self
+    }
+    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must meet minimum core requirements, and the vSAN license key must meet minimum capacity requirements for your selected instance type.</p>
+    /// <p>For information about minimum license requirements, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/vcf-license-mgmt.html">the VCF subscriptions section</a> in the <i>Amazon EVS User Guide</i>.</p>
+    /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
+    /// <p>VCF license information can be retrieved from the Broadcom portal.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
+    pub fn set_license_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>>) -> Self {
+        self.inner = self.inner.set_license_info(input);
+        self
+    }
+    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must meet minimum core requirements, and the vSAN license key must meet minimum capacity requirements for your selected instance type.</p>
+    /// <p>For information about minimum license requirements, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/vcf-license-mgmt.html">the VCF subscriptions section</a> in the <i>Amazon EVS User Guide</i>.</p>
+    /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
+    /// <p>VCF license information can be retrieved from the Broadcom portal.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
+    pub fn get_license_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>> {
+        self.inner.get_license_info()
+    }
     ///
     /// Appends an item to `hosts`.
     ///
     /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
     ///
-    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
-    /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
+    /// <p>The ESX hosts to add to the environment. For each host, provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, provide a partition or cluster placement group, or use Amazon EC2 Dedicated Hosts.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>. In that case, you can add hosts using <code>CreateEnvironmentHost</code> after the environment is created.</p>
+    /// </note>
     pub fn hosts(mut self, input: crate::types::HostInfoForCreate) -> Self {
         self.inner = self.inner.hosts(input);
         self
     }
-    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
-    /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
+    /// <p>The ESX hosts to add to the environment. For each host, provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, provide a partition or cluster placement group, or use Amazon EC2 Dedicated Hosts.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>. In that case, you can add hosts using <code>CreateEnvironmentHost</code> after the environment is created.</p>
+    /// </note>
     pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>>) -> Self {
         self.inner = self.inner.set_hosts(input);
         self
     }
-    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
-    /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
+    /// <p>The ESX hosts to add to the environment. For each host, provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, provide a partition or cluster placement group, or use Amazon EC2 Dedicated Hosts.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>. In that case, you can add hosts using <code>CreateEnvironmentHost</code> after the environment is created.</p>
+    /// </note>
     pub fn get_hosts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>> {
         self.inner.get_hosts()
     }
-    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
-    pub fn connectivity_info(mut self, input: crate::types::ConnectivityInfo) -> Self {
-        self.inner = self.inner.connectivity_info(input);
-        self
-    }
-    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
-    pub fn set_connectivity_info(mut self, input: ::std::option::Option<crate::types::ConnectivityInfo>) -> Self {
-        self.inner = self.inner.set_connectivity_info(input);
-        self
-    }
-    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
-    pub fn get_connectivity_info(&self) -> &::std::option::Option<crate::types::ConnectivityInfo> {
-        self.inner.get_connectivity_info()
-    }
-    /// <p>The DNS hostnames for the virtual machines that host the VCF management appliances. Amazon EVS requires that you provide DNS hostnames for the following appliances: vCenter, NSX Manager, SDDC Manager, and Cloud Builder.</p>
+    /// <p>The DNS hostnames for the virtual machines that host the VCF management appliances. Provide hostnames for vCenter, NSX Manager, SDDC Manager, and Cloud Builder.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
     pub fn vcf_hostnames(mut self, input: crate::types::VcfHostnames) -> Self {
         self.inner = self.inner.vcf_hostnames(input);
         self
     }
-    /// <p>The DNS hostnames for the virtual machines that host the VCF management appliances. Amazon EVS requires that you provide DNS hostnames for the following appliances: vCenter, NSX Manager, SDDC Manager, and Cloud Builder.</p>
+    /// <p>The DNS hostnames for the virtual machines that host the VCF management appliances. Provide hostnames for vCenter, NSX Manager, SDDC Manager, and Cloud Builder.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
     pub fn set_vcf_hostnames(mut self, input: ::std::option::Option<crate::types::VcfHostnames>) -> Self {
         self.inner = self.inner.set_vcf_hostnames(input);
         self
     }
-    /// <p>The DNS hostnames for the virtual machines that host the VCF management appliances. Amazon EVS requires that you provide DNS hostnames for the following appliances: vCenter, NSX Manager, SDDC Manager, and Cloud Builder.</p>
+    /// <p>The DNS hostnames for the virtual machines that host the VCF management appliances. Provide hostnames for vCenter, NSX Manager, SDDC Manager, and Cloud Builder.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
     pub fn get_vcf_hostnames(&self) -> &::std::option::Option<crate::types::VcfHostnames> {
         self.inner.get_vcf_hostnames()
     }
-    /// <p>The Broadcom Site ID that is allocated to you as part of your electronic software delivery. This ID allows customer access to the Broadcom portal, and is provided to you by Broadcom at the close of your software contract or contract renewal. Amazon EVS uses the Broadcom Site ID that you provide to meet Broadcom VCF license usage reporting requirements for Amazon EVS.</p>
+    /// <p>The Broadcom Site ID that is allocated to you as part of your electronic software delivery. This ID allows customer access to the Broadcom portal, and is provided to you by Broadcom at the close of your software contract or contract renewal. Amazon EVS uses the Broadcom Site ID that you provide to meet Broadcom VCF license usage reporting requirements for Amazon EVS.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
         self
     }
-    /// <p>The Broadcom Site ID that is allocated to you as part of your electronic software delivery. This ID allows customer access to the Broadcom portal, and is provided to you by Broadcom at the close of your software contract or contract renewal. Amazon EVS uses the Broadcom Site ID that you provide to meet Broadcom VCF license usage reporting requirements for Amazon EVS.</p>
+    /// <p>The Broadcom Site ID that is allocated to you as part of your electronic software delivery. This ID allows customer access to the Broadcom portal, and is provided to you by Broadcom at the close of your software contract or contract renewal. Amazon EVS uses the Broadcom Site ID that you provide to meet Broadcom VCF license usage reporting requirements for Amazon EVS.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
     }
-    /// <p>The Broadcom Site ID that is allocated to you as part of your electronic software delivery. This ID allows customer access to the Broadcom portal, and is provided to you by Broadcom at the close of your software contract or contract renewal. Amazon EVS uses the Broadcom Site ID that you provide to meet Broadcom VCF license usage reporting requirements for Amazon EVS.</p>
+    /// <p>The Broadcom Site ID that is allocated to you as part of your electronic software delivery. This ID allows customer access to the Broadcom portal, and is provided to you by Broadcom at the close of your software contract or contract renewal. Amazon EVS uses the Broadcom Site ID that you provide to meet Broadcom VCF license usage reporting requirements for Amazon EVS.</p><note>
+    /// <p>Not supported when <code>vcfVersion</code> is <code>SELF_DEPLOYED</code>.</p>
+    /// </note>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_site_id()
     }

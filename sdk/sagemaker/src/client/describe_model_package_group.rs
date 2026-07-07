@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput::creation_time): <p>The time that the model group was created.</p>
     ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`model_package_group_status(Option<ModelPackageGroupStatus>)`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput::model_package_group_status): <p>The status of the model group.</p>
+    ///   - [`managed_configuration(Option<ManagedConfiguration>)`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput::managed_configuration): <p>The managed configuration of the model package group.</p>
     /// - On failure, responds with [`SdkError<DescribeModelPackageGroupError>`](crate::operation::describe_model_package_group::DescribeModelPackageGroupError)
     pub fn describe_model_package_group(&self) -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder {
         crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder::new(self.handle.clone())

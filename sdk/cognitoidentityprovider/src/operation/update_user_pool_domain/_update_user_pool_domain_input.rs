@@ -13,6 +13,8 @@ pub struct UpdateUserPoolDomainInput {
     /// <p>The configuration for a custom domain that hosts managed login for your application. In an <code>UpdateUserPoolDomain</code> request, this parameter specifies an SSL certificate for the managed login hosted webserver. The certificate must be an ACM ARN in <code>us-east-1</code>.</p>
     /// <p>When you create a custom domain, the passkey RP ID defaults to the custom domain. If you had a prefix domain active, this will cause passkey integration for your prefix domain to stop working due to a mismatch in RP ID. To keep the prefix domain passkey integration working, you can explicitly set RP ID to the prefix domain.</p>
     pub custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
+    /// <p>The routing configuration for the user pool domain. Specifies failover settings for multi-region deployments.</p>
+    pub routing: ::std::option::Option<crate::types::RoutingType>,
 }
 impl UpdateUserPoolDomainInput {
     /// <p>The name of the domain that you want to update. For custom domains, this is the fully-qualified domain name, for example <code>auth.example.com</code>. For prefix domains, this is the prefix alone, such as <code>myprefix</code>.</p>
@@ -32,6 +34,10 @@ impl UpdateUserPoolDomainInput {
     pub fn custom_domain_config(&self) -> ::std::option::Option<&crate::types::CustomDomainConfigType> {
         self.custom_domain_config.as_ref()
     }
+    /// <p>The routing configuration for the user pool domain. Specifies failover settings for multi-region deployments.</p>
+    pub fn routing(&self) -> ::std::option::Option<&crate::types::RoutingType> {
+        self.routing.as_ref()
+    }
 }
 impl UpdateUserPoolDomainInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolDomainInput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput).
@@ -48,6 +54,7 @@ pub struct UpdateUserPoolDomainInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) managed_login_version: ::std::option::Option<i32>,
     pub(crate) custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
+    pub(crate) routing: ::std::option::Option<crate::types::RoutingType>,
 }
 impl UpdateUserPoolDomainInputBuilder {
     /// <p>The name of the domain that you want to update. For custom domains, this is the fully-qualified domain name, for example <code>auth.example.com</code>. For prefix domains, this is the prefix alone, such as <code>myprefix</code>.</p>
@@ -111,6 +118,20 @@ impl UpdateUserPoolDomainInputBuilder {
     pub fn get_custom_domain_config(&self) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
         &self.custom_domain_config
     }
+    /// <p>The routing configuration for the user pool domain. Specifies failover settings for multi-region deployments.</p>
+    pub fn routing(mut self, input: crate::types::RoutingType) -> Self {
+        self.routing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The routing configuration for the user pool domain. Specifies failover settings for multi-region deployments.</p>
+    pub fn set_routing(mut self, input: ::std::option::Option<crate::types::RoutingType>) -> Self {
+        self.routing = input;
+        self
+    }
+    /// <p>The routing configuration for the user pool domain. Specifies failover settings for multi-region deployments.</p>
+    pub fn get_routing(&self) -> &::std::option::Option<crate::types::RoutingType> {
+        &self.routing
+    }
     /// Consumes the builder and constructs a [`UpdateUserPoolDomainInput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput).
     pub fn build(
         self,
@@ -121,6 +142,7 @@ impl UpdateUserPoolDomainInputBuilder {
             user_pool_id: self.user_pool_id,
             managed_login_version: self.managed_login_version,
             custom_domain_config: self.custom_domain_config,
+            routing: self.routing,
         })
     }
 }

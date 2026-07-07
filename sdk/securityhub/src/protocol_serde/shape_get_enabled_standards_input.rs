@@ -12,14 +12,23 @@ pub fn ser_get_enabled_standards_input_input(
     if let Some(var_2) = &input.next_token {
         object.key("NextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.standards_subscription_arns {
-        let mut array_4 = object.key("StandardsSubscriptionArns").start_array();
+    if let Some(var_3) = &input.providers {
+        let mut array_4 = object.key("Providers").start_array();
         for item_5 in var_3 {
             {
                 array_4.value().string(item_5.as_str());
             }
         }
         array_4.finish();
+    }
+    if let Some(var_6) = &input.standards_subscription_arns {
+        let mut array_7 = object.key("StandardsSubscriptionArns").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
     }
     Ok(())
 }

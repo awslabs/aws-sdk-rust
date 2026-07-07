@@ -25,5 +25,7 @@ pub fn de_server_side_encryption_configuration(
             "invalid root, expected ServerSideEncryptionConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_server_side_encryption_configuration::de_server_side_encryption_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_server_side_encryption_configuration::de_server_side_encryption_configuration(&mut decoder, depth + 1)
 }

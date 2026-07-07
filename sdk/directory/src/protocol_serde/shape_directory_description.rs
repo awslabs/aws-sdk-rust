@@ -2,10 +2,16 @@
 pub(crate) fn de_directory_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DirectoryDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -72,10 +78,15 @@ where
                             );
                         }
                         "DnsIpAddrs" => {
-                            builder = builder.set_dns_ip_addrs(crate::protocol_serde::shape_dns_ip_addrs::de_dns_ip_addrs(tokens, _value)?);
+                            builder =
+                                builder.set_dns_ip_addrs(crate::protocol_serde::shape_dns_ip_addrs::de_dns_ip_addrs(tokens, _value, depth + 1)?);
                         }
                         "DnsIpv6Addrs" => {
-                            builder = builder.set_dns_ipv6_addrs(crate::protocol_serde::shape_dns_ipv6_addrs::de_dns_ipv6_addrs(tokens, _value)?);
+                            builder = builder.set_dns_ipv6_addrs(crate::protocol_serde::shape_dns_ipv6_addrs::de_dns_ipv6_addrs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Stage" => {
                             builder = builder.set_stage(
@@ -127,19 +138,27 @@ where
                         "VpcSettings" => {
                             builder = builder.set_vpc_settings(
                                 crate::protocol_serde::shape_directory_vpc_settings_description::de_directory_vpc_settings_description(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ConnectSettings" => {
                             builder = builder.set_connect_settings(
                                 crate::protocol_serde::shape_directory_connect_settings_description::de_directory_connect_settings_description(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "RadiusSettings" => {
-                            builder = builder.set_radius_settings(crate::protocol_serde::shape_radius_settings::de_radius_settings(tokens, _value)?);
+                            builder = builder.set_radius_settings(crate::protocol_serde::shape_radius_settings::de_radius_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "RadiusStatus" => {
                             builder = builder.set_radius_status(
@@ -167,11 +186,12 @@ where
                         }
                         "OwnerDirectoryDescription" => {
                             builder = builder.set_owner_directory_description(
-                                crate::protocol_serde::shape_owner_directory_description::de_owner_directory_description(tokens, _value)?,
+                                crate::protocol_serde::shape_owner_directory_description::de_owner_directory_description(tokens, _value, depth + 1)?,
                             );
                         }
                         "RegionsInfo" => {
-                            builder = builder.set_regions_info(crate::protocol_serde::shape_regions_info::de_regions_info(tokens, _value)?);
+                            builder =
+                                builder.set_regions_info(crate::protocol_serde::shape_regions_info::de_regions_info(tokens, _value, depth + 1)?);
                         }
                         "OsVersion" => {
                             builder = builder.set_os_version(
@@ -182,7 +202,7 @@ where
                         }
                         "HybridSettings" => {
                             builder = builder.set_hybrid_settings(
-                                crate::protocol_serde::shape_hybrid_settings_description::de_hybrid_settings_description(tokens, _value)?,
+                                crate::protocol_serde::shape_hybrid_settings_description::de_hybrid_settings_description(tokens, _value, depth + 1)?,
                             );
                         }
                         "NetworkType" => {

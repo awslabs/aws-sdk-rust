@@ -13,6 +13,8 @@ pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 
+pub use crate::types::error::_invalid_state_exception::InvalidStateException;
+
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
@@ -26,8 +28,6 @@ pub use crate::types::error::_bad_request_exception::BadRequestException;
 pub use crate::types::error::_not_found_exception::NotFoundException;
 
 pub use crate::types::error::_resource_propagation_delay_exception::ResourcePropagationDelayException;
-
-pub use crate::types::error::_invalid_state_exception::InvalidStateException;
 
 mod _access_denied_exception;
 

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cluster_subnet_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ClusterSubnetGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ClusterSubnetGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_cluster_subnet_group(
             s if s.matches("Subnets") /* Subnets com.amazonaws.redshift#ClusterSubnetGroup$Subnets */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_subnet_list::de_subnet_list(&mut tag)
+                        crate::protocol_serde::shape_subnet_list::de_subnet_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -72,7 +76,7 @@ pub fn de_cluster_subnet_group(
             s if s.matches("Tags") /* Tags com.amazonaws.redshift#ClusterSubnetGroup$Tags */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -82,7 +86,7 @@ pub fn de_cluster_subnet_group(
             s if s.matches("SupportedClusterIpAddressTypes") /* SupportedClusterIpAddressTypes com.amazonaws.redshift#ClusterSubnetGroup$SupportedClusterIpAddressTypes */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

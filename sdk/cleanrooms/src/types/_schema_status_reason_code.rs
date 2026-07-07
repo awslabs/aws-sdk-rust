@@ -21,6 +21,12 @@
 ///     SchemaStatusReasonCode::CollaborationAnalysisRuleNotConfigured => { /* ... */ },
 ///     SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => { /* ... */ },
 ///     SchemaStatusReasonCode::IdMappingTableNotPopulated => { /* ... */ },
+///     SchemaStatusReasonCode::IntermediateTableAnalysisRuleMissing => { /* ... */ },
+///     SchemaStatusReasonCode::IntermediateTableBaseTableRemoved => { /* ... */ },
+///     SchemaStatusReasonCode::IntermediateTableDisallowedByDataProvider => { /* ... */ },
+///     SchemaStatusReasonCode::IntermediateTableInheritedConstraintsViolated => { /* ... */ },
+///     SchemaStatusReasonCode::IntermediateTableNotPopulated => { /* ... */ },
+///     SchemaStatusReasonCode::IntermediateTableRetentionPeriodExpired => { /* ... */ },
 ///     SchemaStatusReasonCode::ResultReceiversNotAllowed => { /* ... */ },
 ///     SchemaStatusReasonCode::ResultReceiversNotConfigured => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -70,6 +76,18 @@ pub enum SchemaStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     IdMappingTableNotPopulated,
     #[allow(missing_docs)] // documentation missing in model
+    IntermediateTableAnalysisRuleMissing,
+    #[allow(missing_docs)] // documentation missing in model
+    IntermediateTableBaseTableRemoved,
+    #[allow(missing_docs)] // documentation missing in model
+    IntermediateTableDisallowedByDataProvider,
+    #[allow(missing_docs)] // documentation missing in model
+    IntermediateTableInheritedConstraintsViolated,
+    #[allow(missing_docs)] // documentation missing in model
+    IntermediateTableNotPopulated,
+    #[allow(missing_docs)] // documentation missing in model
+    IntermediateTableRetentionPeriodExpired,
+    #[allow(missing_docs)] // documentation missing in model
     ResultReceiversNotAllowed,
     #[allow(missing_docs)] // documentation missing in model
     ResultReceiversNotConfigured,
@@ -89,6 +107,12 @@ impl ::std::convert::From<&str> for SchemaStatusReasonCode {
             "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED" => SchemaStatusReasonCode::CollaborationAnalysisRuleNotConfigured,
             "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED" => SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured,
             "ID_MAPPING_TABLE_NOT_POPULATED" => SchemaStatusReasonCode::IdMappingTableNotPopulated,
+            "INTERMEDIATE_TABLE_ANALYSIS_RULE_MISSING" => SchemaStatusReasonCode::IntermediateTableAnalysisRuleMissing,
+            "INTERMEDIATE_TABLE_BASE_TABLE_REMOVED" => SchemaStatusReasonCode::IntermediateTableBaseTableRemoved,
+            "INTERMEDIATE_TABLE_DISALLOWED_BY_DATA_PROVIDER" => SchemaStatusReasonCode::IntermediateTableDisallowedByDataProvider,
+            "INTERMEDIATE_TABLE_INHERITED_CONSTRAINTS_VIOLATED" => SchemaStatusReasonCode::IntermediateTableInheritedConstraintsViolated,
+            "INTERMEDIATE_TABLE_NOT_POPULATED" => SchemaStatusReasonCode::IntermediateTableNotPopulated,
+            "INTERMEDIATE_TABLE_RETENTION_PERIOD_EXPIRED" => SchemaStatusReasonCode::IntermediateTableRetentionPeriodExpired,
             "RESULT_RECEIVERS_NOT_ALLOWED" => SchemaStatusReasonCode::ResultReceiversNotAllowed,
             "RESULT_RECEIVERS_NOT_CONFIGURED" => SchemaStatusReasonCode::ResultReceiversNotConfigured,
             other => SchemaStatusReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -115,6 +139,12 @@ impl SchemaStatusReasonCode {
             SchemaStatusReasonCode::CollaborationAnalysisRuleNotConfigured => "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED",
             SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED",
             SchemaStatusReasonCode::IdMappingTableNotPopulated => "ID_MAPPING_TABLE_NOT_POPULATED",
+            SchemaStatusReasonCode::IntermediateTableAnalysisRuleMissing => "INTERMEDIATE_TABLE_ANALYSIS_RULE_MISSING",
+            SchemaStatusReasonCode::IntermediateTableBaseTableRemoved => "INTERMEDIATE_TABLE_BASE_TABLE_REMOVED",
+            SchemaStatusReasonCode::IntermediateTableDisallowedByDataProvider => "INTERMEDIATE_TABLE_DISALLOWED_BY_DATA_PROVIDER",
+            SchemaStatusReasonCode::IntermediateTableInheritedConstraintsViolated => "INTERMEDIATE_TABLE_INHERITED_CONSTRAINTS_VIOLATED",
+            SchemaStatusReasonCode::IntermediateTableNotPopulated => "INTERMEDIATE_TABLE_NOT_POPULATED",
+            SchemaStatusReasonCode::IntermediateTableRetentionPeriodExpired => "INTERMEDIATE_TABLE_RETENTION_PERIOD_EXPIRED",
             SchemaStatusReasonCode::ResultReceiversNotAllowed => "RESULT_RECEIVERS_NOT_ALLOWED",
             SchemaStatusReasonCode::ResultReceiversNotConfigured => "RESULT_RECEIVERS_NOT_CONFIGURED",
             SchemaStatusReasonCode::Unknown(value) => value.as_str(),
@@ -132,6 +162,12 @@ impl SchemaStatusReasonCode {
             "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED",
             "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED",
             "ID_MAPPING_TABLE_NOT_POPULATED",
+            "INTERMEDIATE_TABLE_ANALYSIS_RULE_MISSING",
+            "INTERMEDIATE_TABLE_BASE_TABLE_REMOVED",
+            "INTERMEDIATE_TABLE_DISALLOWED_BY_DATA_PROVIDER",
+            "INTERMEDIATE_TABLE_INHERITED_CONSTRAINTS_VIOLATED",
+            "INTERMEDIATE_TABLE_NOT_POPULATED",
+            "INTERMEDIATE_TABLE_RETENTION_PERIOD_EXPIRED",
             "RESULT_RECEIVERS_NOT_ALLOWED",
             "RESULT_RECEIVERS_NOT_CONFIGURED",
         ]
@@ -166,6 +202,12 @@ impl ::std::fmt::Display for SchemaStatusReasonCode {
             SchemaStatusReasonCode::CollaborationAnalysisRuleNotConfigured => write!(f, "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED"),
             SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => write!(f, "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED"),
             SchemaStatusReasonCode::IdMappingTableNotPopulated => write!(f, "ID_MAPPING_TABLE_NOT_POPULATED"),
+            SchemaStatusReasonCode::IntermediateTableAnalysisRuleMissing => write!(f, "INTERMEDIATE_TABLE_ANALYSIS_RULE_MISSING"),
+            SchemaStatusReasonCode::IntermediateTableBaseTableRemoved => write!(f, "INTERMEDIATE_TABLE_BASE_TABLE_REMOVED"),
+            SchemaStatusReasonCode::IntermediateTableDisallowedByDataProvider => write!(f, "INTERMEDIATE_TABLE_DISALLOWED_BY_DATA_PROVIDER"),
+            SchemaStatusReasonCode::IntermediateTableInheritedConstraintsViolated => write!(f, "INTERMEDIATE_TABLE_INHERITED_CONSTRAINTS_VIOLATED"),
+            SchemaStatusReasonCode::IntermediateTableNotPopulated => write!(f, "INTERMEDIATE_TABLE_NOT_POPULATED"),
+            SchemaStatusReasonCode::IntermediateTableRetentionPeriodExpired => write!(f, "INTERMEDIATE_TABLE_RETENTION_PERIOD_EXPIRED"),
             SchemaStatusReasonCode::ResultReceiversNotAllowed => write!(f, "RESULT_RECEIVERS_NOT_ALLOWED"),
             SchemaStatusReasonCode::ResultReceiversNotConfigured => write!(f, "RESULT_RECEIVERS_NOT_CONFIGURED"),
             SchemaStatusReasonCode::Unknown(value) => write!(f, "{value}"),

@@ -11,6 +11,8 @@ pub struct UpdateRecommenderInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new configuration settings to apply to the recommender, including updated parameters and settings that define its behavior.</p>
     pub recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
+    /// <p>The name of a specific recommender version to activate as part of this update (for example, to roll back to a previously trained version).</p>
+    pub recommender_version_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRecommenderInput {
     /// <p>The unique name of the domain.</p>
@@ -29,6 +31,10 @@ impl UpdateRecommenderInput {
     pub fn recommender_config(&self) -> ::std::option::Option<&crate::types::RecommenderConfig> {
         self.recommender_config.as_ref()
     }
+    /// <p>The name of a specific recommender version to activate as part of this update (for example, to roll back to a previously trained version).</p>
+    pub fn recommender_version_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_version_name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateRecommenderInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -37,6 +43,7 @@ impl ::std::fmt::Debug for UpdateRecommenderInput {
         formatter.field("recommender_name", &self.recommender_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("recommender_config", &self.recommender_config);
+        formatter.field("recommender_version_name", &self.recommender_version_name);
         formatter.finish()
     }
 }
@@ -55,6 +62,7 @@ pub struct UpdateRecommenderInputBuilder {
     pub(crate) recommender_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
+    pub(crate) recommender_version_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRecommenderInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -115,6 +123,20 @@ impl UpdateRecommenderInputBuilder {
     pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
         &self.recommender_config
     }
+    /// <p>The name of a specific recommender version to activate as part of this update (for example, to roll back to a previously trained version).</p>
+    pub fn recommender_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of a specific recommender version to activate as part of this update (for example, to roll back to a previously trained version).</p>
+    pub fn set_recommender_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_version_name = input;
+        self
+    }
+    /// <p>The name of a specific recommender version to activate as part of this update (for example, to roll back to a previously trained version).</p>
+    pub fn get_recommender_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_version_name
+    }
     /// Consumes the builder and constructs a [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
     pub fn build(
         self,
@@ -124,6 +146,7 @@ impl UpdateRecommenderInputBuilder {
             recommender_name: self.recommender_name,
             description: self.description,
             recommender_config: self.recommender_config,
+            recommender_version_name: self.recommender_version_name,
         })
     }
 }
@@ -134,6 +157,7 @@ impl ::std::fmt::Debug for UpdateRecommenderInputBuilder {
         formatter.field("recommender_name", &self.recommender_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("recommender_config", &self.recommender_config);
+        formatter.field("recommender_version_name", &self.recommender_version_name);
         formatter.finish()
     }
 }

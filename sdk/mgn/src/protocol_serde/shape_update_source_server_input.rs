@@ -12,8 +12,17 @@ pub fn ser_update_source_server_input_input(
         crate::protocol_serde::shape_source_server_connector_action::ser_source_server_connector_action(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.source_server_id {
-        object.key("sourceServerID").string(var_4.as_str());
+    if let Some(var_4) = &input.fqdn_for_action_framework {
+        object.key("fqdnForActionFramework").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.platform {
+        object.key("platform").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.source_server_id {
+        object.key("sourceServerID").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.user_provided_id {
+        object.key("userProvidedID").string(var_7.as_str());
     }
     Ok(())
 }

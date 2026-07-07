@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`harness_id(impl Into<String>)`](crate::operation::get_harness::builders::GetHarnessFluentBuilder::harness_id) / [`set_harness_id(Option<String>)`](crate::operation::get_harness::builders::GetHarnessFluentBuilder::set_harness_id):<br>required: **true**<br><p>The ID of the harness to retrieve.</p><br>
+    ///   - [`harness_version(impl Into<String>)`](crate::operation::get_harness::builders::GetHarnessFluentBuilder::harness_version) / [`set_harness_version(Option<String>)`](crate::operation::get_harness::builders::GetHarnessFluentBuilder::set_harness_version):<br>required: **false**<br><p>Specific version of the harness to retrieve. If omitted, returns the current Harness configuration, including its status.</p><br>
     /// - On success, responds with [`GetHarnessOutput`](crate::operation::get_harness::GetHarnessOutput) with field(s):
     ///   - [`harness(Option<Harness>)`](crate::operation::get_harness::GetHarnessOutput::harness): <p>The harness resource.</p>
     /// - On failure, responds with [`SdkError<GetHarnessError>`](crate::operation::get_harness::GetHarnessError)

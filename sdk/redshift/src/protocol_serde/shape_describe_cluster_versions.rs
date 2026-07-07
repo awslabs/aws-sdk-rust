@@ -51,6 +51,8 @@ pub fn de_describe_cluster_versions(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeClusterVersionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeClusterVersionsResponse got {start_el:?}"
@@ -81,7 +83,7 @@ pub fn de_describe_cluster_versions(
             s if s.matches("ClusterVersions") /* ClusterVersions com.amazonaws.redshift.synthetic#DescribeClusterVersionsOutput$ClusterVersions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_cluster_version_list::de_cluster_version_list(&mut tag)
+                        crate::protocol_serde::shape_cluster_version_list::de_cluster_version_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

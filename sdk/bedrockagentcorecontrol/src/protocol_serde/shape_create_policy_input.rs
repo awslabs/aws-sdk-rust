@@ -15,11 +15,14 @@ pub fn ser_create_policy_input_input(
     if let Some(var_4) = &input.description {
         object.key("description").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_5) = &input.enforcement_mode {
+        object.key("enforcementMode").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.validation_mode {
-        object.key("validationMode").string(var_6.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.validation_mode {
+        object.key("validationMode").string(var_7.as_str());
     }
     Ok(())
 }

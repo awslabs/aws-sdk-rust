@@ -51,6 +51,8 @@ pub fn de_create_local_gateway_virtual_interface(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateLocalGatewayVirtualInterfaceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateLocalGatewayVirtualInterfaceResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_create_local_gateway_virtual_interface(
             s if s.matches("localGatewayVirtualInterface") /* LocalGatewayVirtualInterface com.amazonaws.ec2.synthetic#CreateLocalGatewayVirtualInterfaceOutput$LocalGatewayVirtualInterface */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_local_gateway_virtual_interface::de_local_gateway_virtual_interface(&mut tag)
+                        crate::protocol_serde::shape_local_gateway_virtual_interface::de_local_gateway_virtual_interface(&mut tag, depth + 1)
                         ?
                     )
                 ;

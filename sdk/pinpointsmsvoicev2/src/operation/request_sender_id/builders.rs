@@ -108,17 +108,17 @@ impl RequestSenderIdFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The sender ID string to request.</p>
+    /// <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The sender ID must contain at least one letter and cannot start or end with a hyphen.</p>
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender_id(input.into());
         self
     }
-    /// <p>The sender ID string to request.</p>
+    /// <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The sender ID must contain at least one letter and cannot start or end with a hyphen.</p>
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sender_id(input);
         self
     }
-    /// <p>The sender ID string to request.</p>
+    /// <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The sender ID must contain at least one letter and cannot start or end with a hyphen.</p>
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sender_id()
     }

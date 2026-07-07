@@ -213,6 +213,37 @@ impl From<crate::operation::disassociate_source_views::DisassociateSourceViewsEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_billing_preferences::GetBillingPreferencesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_billing_preferences::GetBillingPreferencesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_billing_preferences::GetBillingPreferencesError> for Error {
+    fn from(err: crate::operation::get_billing_preferences::GetBillingPreferencesError) -> Self {
+        match err {
+            crate::operation::get_billing_preferences::GetBillingPreferencesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_billing_preferences::GetBillingPreferencesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_billing_preferences::GetBillingPreferencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_billing_preferences::GetBillingPreferencesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_billing_preferences::GetBillingPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_billing_view::GetBillingViewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -236,6 +267,67 @@ impl From<crate::operation::get_billing_view::GetBillingViewError> for Error {
             crate::operation::get_billing_view::GetBillingViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_billing_view::GetBillingViewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_billing_view::GetBillingViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError> for Error {
+    fn from(err: crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError) -> Self {
+        match err {
+            crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_credits::GetCreditsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_credits::GetCreditsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_credits::GetCreditsError> for Error {
+    fn from(err: crate::operation::get_credits::GetCreditsError) -> Self {
+        match err {
+            crate::operation::get_credits::GetCreditsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_credits::GetCreditsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_credits::GetCreditsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_credits::GetCreditsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_credits::GetCreditsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -369,6 +461,31 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::redeem_credits::RedeemCreditsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::redeem_credits::RedeemCreditsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::redeem_credits::RedeemCreditsError> for Error {
+    fn from(err: crate::operation::redeem_credits::RedeemCreditsError) -> Self {
+        match err {
+            crate::operation::redeem_credits::RedeemCreditsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::redeem_credits::RedeemCreditsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::redeem_credits::RedeemCreditsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::redeem_credits::RedeemCreditsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::redeem_credits::RedeemCreditsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -418,6 +535,42 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_billing_preferences::UpdateBillingPreferencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_billing_preferences::UpdateBillingPreferencesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_billing_preferences::UpdateBillingPreferencesError> for Error {
+    fn from(err: crate::operation::update_billing_preferences::UpdateBillingPreferencesError) -> Self {
+        match err {
+            crate::operation::update_billing_preferences::UpdateBillingPreferencesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_billing_preferences::UpdateBillingPreferencesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_billing_preferences::UpdateBillingPreferencesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_billing_preferences::UpdateBillingPreferencesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_billing_preferences::UpdateBillingPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -45,10 +45,16 @@ pub fn ser_expression(
 pub(crate) fn de_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Expression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -59,18 +65,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AttributeCondition" => {
-                            builder = builder
-                                .set_attribute_condition(crate::protocol_serde::shape_attribute_condition::de_attribute_condition(tokens, _value)?);
+                            builder = builder.set_attribute_condition(crate::protocol_serde::shape_attribute_condition::de_attribute_condition(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "AndExpression" => {
-                            builder = builder.set_and_expression(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value)?);
+                            builder =
+                                builder.set_and_expression(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value, depth + 1)?);
                         }
                         "OrExpression" => {
-                            builder = builder.set_or_expression(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value)?);
+                            builder = builder.set_or_expression(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value, depth + 1)?);
                         }
                         "NotAttributeCondition" => {
                             builder = builder.set_not_attribute_condition(crate::protocol_serde::shape_attribute_condition::de_attribute_condition(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

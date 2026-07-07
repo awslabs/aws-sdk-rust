@@ -6,6 +6,8 @@ pub struct StartScanJobInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     /// <p>Pattern: <code>^\[a-zA-Z0-9\-\_\]{2,50}$</code></p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
+    /// <p>The point in time the scan job will scan up to for a continuous backup.</p>
+    pub continuous_scan_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartScanJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
@@ -33,6 +35,10 @@ impl StartScanJobInput {
     /// <p>Pattern: <code>^\[a-zA-Z0-9\-\_\]{2,50}$</code></p>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
+    }
+    /// <p>The point in time the scan job will scan up to for a continuous backup.</p>
+    pub fn continuous_scan_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.continuous_scan_end_time.as_ref()
     }
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
@@ -82,6 +88,7 @@ impl StartScanJobInput {
 #[non_exhaustive]
 pub struct StartScanJobInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
+    pub(crate) continuous_scan_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
     pub(crate) malware_scanner: ::std::option::Option<crate::types::MalwareScanner>,
@@ -108,6 +115,20 @@ impl StartScanJobInputBuilder {
     /// <p>Pattern: <code>^\[a-zA-Z0-9\-\_\]{2,50}$</code></p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
+    }
+    /// <p>The point in time the scan job will scan up to for a continuous backup.</p>
+    pub fn continuous_scan_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.continuous_scan_end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The point in time the scan job will scan up to for a continuous backup.</p>
+    pub fn set_continuous_scan_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.continuous_scan_end_time = input;
+        self
+    }
+    /// <p>The point in time the scan job will scan up to for a continuous backup.</p>
+    pub fn get_continuous_scan_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.continuous_scan_end_time
     }
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     /// This field is required.
@@ -239,6 +260,7 @@ impl StartScanJobInputBuilder {
     ) -> ::std::result::Result<crate::operation::start_scan_job::StartScanJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_scan_job::StartScanJobInput {
             backup_vault_name: self.backup_vault_name,
+            continuous_scan_end_time: self.continuous_scan_end_time,
             iam_role_arn: self.iam_role_arn,
             idempotency_token: self.idempotency_token,
             malware_scanner: self.malware_scanner,

@@ -111,6 +111,8 @@ pub(crate) fn de_get_domain_name(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -194,7 +196,9 @@ pub(crate) fn de_get_domain_name(
                 }
                 "endpointConfiguration" => {
                     builder = builder.set_endpoint_configuration(crate::protocol_serde::shape_endpoint_configuration::de_endpoint_configuration(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "managementPolicy" => {
@@ -206,7 +210,7 @@ pub(crate) fn de_get_domain_name(
                 }
                 "mutualTlsAuthentication" => {
                     builder = builder.set_mutual_tls_authentication(
-                        crate::protocol_serde::shape_mutual_tls_authentication::de_mutual_tls_authentication(tokens, _value)?,
+                        crate::protocol_serde::shape_mutual_tls_authentication::de_mutual_tls_authentication(tokens, _value, depth + 1)?,
                     );
                 }
                 "ownershipVerificationCertificateArn" => {
@@ -267,7 +271,9 @@ pub(crate) fn de_get_domain_name(
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

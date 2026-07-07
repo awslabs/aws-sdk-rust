@@ -69,6 +69,8 @@ pub use crate::types::_checksum::ChecksumBuilder;
 
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
 
+pub use crate::types::_storage_configuration::StorageConfigurationBuilder;
+
 pub use crate::types::_describe_source_servers_request_filters::DescribeSourceServersRequestFiltersBuilder;
 
 pub use crate::types::_source_server_connector_action::SourceServerConnectorActionBuilder;
@@ -147,6 +149,8 @@ pub use crate::types::_start_network_migration_mapping_update_segment::StartNetw
 
 pub use crate::types::_replication_configuration_template::ReplicationConfigurationTemplateBuilder;
 
+pub use crate::types::_fsx_ontap_configuration::FsxOntapConfigurationBuilder;
+
 pub use crate::types::_source_server::SourceServerBuilder;
 
 pub use crate::types::_data_replication_initiation::DataReplicationInitiationBuilder;
@@ -190,6 +194,8 @@ pub use crate::types::_source_s3_configuration::SourceS3ConfigurationBuilder;
 pub use crate::types::_network_migration_analysis_result_source::NetworkMigrationAnalysisResultSourceBuilder;
 
 pub use crate::types::_network_migration_analysis_result_target::NetworkMigrationAnalysisResultTargetBuilder;
+
+pub use crate::types::_last_known_check::LastKnownCheckBuilder;
 
 pub use crate::types::_data_replication_info_replicated_disk::DataReplicationInfoReplicatedDiskBuilder;
 

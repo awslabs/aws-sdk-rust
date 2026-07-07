@@ -138,6 +138,8 @@ pub(crate) fn de_list_deploy_action_execution_targets(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -145,7 +147,11 @@ pub(crate) fn de_list_deploy_action_execution_targets(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "targets" => {
                     builder = builder.set_targets(
-                        crate::protocol_serde::shape_deploy_action_execution_target_list::de_deploy_action_execution_target_list(tokens, _value)?,
+                        crate::protocol_serde::shape_deploy_action_execution_target_list::de_deploy_action_execution_target_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "nextToken" => {

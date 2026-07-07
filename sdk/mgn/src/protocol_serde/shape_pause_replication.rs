@@ -135,6 +135,8 @@ pub(crate) fn de_pause_replication(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -156,12 +158,14 @@ pub(crate) fn de_pause_replication(
                 }
                 "connectorAction" => {
                     builder = builder.set_connector_action(
-                        crate::protocol_serde::shape_source_server_connector_action::de_source_server_connector_action(tokens, _value)?,
+                        crate::protocol_serde::shape_source_server_connector_action::de_source_server_connector_action(tokens, _value, depth + 1)?,
                     );
                 }
                 "dataReplicationInfo" => {
                     builder = builder.set_data_replication_info(crate::protocol_serde::shape_data_replication_info::de_data_replication_info(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "fqdnForActionFramework" => {
@@ -175,10 +179,14 @@ pub(crate) fn de_pause_replication(
                     builder = builder.set_is_archived(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "launchedInstance" => {
-                    builder = builder.set_launched_instance(crate::protocol_serde::shape_launched_instance::de_launched_instance(tokens, _value)?);
+                    builder = builder.set_launched_instance(crate::protocol_serde::shape_launched_instance::de_launched_instance(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "lifeCycle" => {
-                    builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens, _value)?);
+                    builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens, _value, depth + 1)?);
                 }
                 "replicationType" => {
                     builder = builder.set_replication_type(
@@ -188,7 +196,11 @@ pub(crate) fn de_pause_replication(
                     );
                 }
                 "sourceProperties" => {
-                    builder = builder.set_source_properties(crate::protocol_serde::shape_source_properties::de_source_properties(tokens, _value)?);
+                    builder = builder.set_source_properties(crate::protocol_serde::shape_source_properties::de_source_properties(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "sourceServerID" => {
                     builder = builder.set_source_server_id(
@@ -198,7 +210,7 @@ pub(crate) fn de_pause_replication(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
                 }
                 "userProvidedID" => {
                     builder = builder.set_user_provided_id(

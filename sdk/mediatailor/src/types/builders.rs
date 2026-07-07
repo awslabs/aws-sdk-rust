@@ -9,6 +9,12 @@ pub use crate::types::_time_shift_configuration::TimeShiftConfigurationBuilder;
 
 pub use crate::types::_log_configuration_for_channel::LogConfigurationForChannelBuilder;
 
+pub use crate::types::_http_request_configuration::HttpRequestConfigurationBuilder;
+
+pub use crate::types::_custom_output_configuration::CustomOutputConfigurationBuilder;
+
+pub use crate::types::_sequential_executor_configuration::SequentialExecutorConfigurationBuilder;
+
 pub use crate::types::_avail_suppression::AvailSuppressionBuilder;
 
 pub use crate::types::_bumper::BumperBuilder;
@@ -59,6 +65,8 @@ pub use crate::types::_response_output_item::ResponseOutputItemBuilder;
 
 pub use crate::types::_schedule_entry::ScheduleEntryBuilder;
 
+pub use crate::types::_function::FunctionBuilder;
+
 pub use crate::types::_live_source::LiveSourceBuilder;
 
 pub use crate::types::_http_package_configuration::HttpPackageConfigurationBuilder;
@@ -100,6 +108,8 @@ pub use crate::types::_update_program_transition::UpdateProgramTransitionBuilder
 pub use crate::types::_dash_playlist_settings::DashPlaylistSettingsBuilder;
 
 pub use crate::types::_hls_playlist_settings::HlsPlaylistSettingsBuilder;
+
+pub use crate::types::_function_ref::FunctionRefBuilder;
 
 pub use crate::types::_avail_matching_criteria::AvailMatchingCriteriaBuilder;
 

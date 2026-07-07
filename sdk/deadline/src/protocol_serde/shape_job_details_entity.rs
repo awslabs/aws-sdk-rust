@@ -2,10 +2,16 @@
 pub(crate) fn de_job_details_entity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobDetailsEntity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,11 +30,15 @@ where
                         }
                         "jobAttachmentSettings" => {
                             builder = builder.set_job_attachment_settings(
-                                crate::protocol_serde::shape_job_attachment_settings::de_job_attachment_settings(tokens, _value)?,
+                                crate::protocol_serde::shape_job_attachment_settings::de_job_attachment_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         "jobRunAsUser" => {
-                            builder = builder.set_job_run_as_user(crate::protocol_serde::shape_job_run_as_user::de_job_run_as_user(tokens, _value)?);
+                            builder = builder.set_job_run_as_user(crate::protocol_serde::shape_job_run_as_user::de_job_run_as_user(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "logGroupName" => {
                             builder = builder.set_log_group_name(
@@ -45,7 +55,8 @@ where
                             );
                         }
                         "parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_job_parameters::de_job_parameters(tokens, _value)?);
+                            builder =
+                                builder.set_parameters(crate::protocol_serde::shape_job_parameters::de_job_parameters(tokens, _value, depth + 1)?);
                         }
                         "schemaVersion" => {
                             builder = builder.set_schema_version(
@@ -55,8 +66,11 @@ where
                             );
                         }
                         "pathMappingRules" => {
-                            builder = builder
-                                .set_path_mapping_rules(crate::protocol_serde::shape_path_mapping_rules::de_path_mapping_rules(tokens, _value)?);
+                            builder = builder.set_path_mapping_rules(crate::protocol_serde::shape_path_mapping_rules::de_path_mapping_rules(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

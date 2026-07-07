@@ -21,10 +21,16 @@ pub fn ser_blueprint_optimization_sample(
 pub(crate) fn de_blueprint_optimization_sample<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BlueprintOptimizationSample>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,10 +41,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "assetS3Object" => {
-                            builder = builder.set_asset_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value)?);
+                            builder = builder.set_asset_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value, depth + 1)?);
                         }
                         "groundTruthS3Object" => {
-                            builder = builder.set_ground_truth_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value)?);
+                            builder =
+                                builder.set_ground_truth_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

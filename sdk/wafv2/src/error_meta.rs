@@ -1150,6 +1150,123 @@ impl From<crate::operation::get_regex_pattern_set::GetRegexPatternSetError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_revenue_statistics::GetRevenueStatisticsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_revenue_statistics::GetRevenueStatisticsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_revenue_statistics::GetRevenueStatisticsError> for Error {
+    fn from(err: crate::operation::get_revenue_statistics::GetRevenueStatisticsError) -> Self {
+        match err {
+            crate::operation::get_revenue_statistics::GetRevenueStatisticsError::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::operation::get_revenue_statistics::GetRevenueStatisticsError::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::operation::get_revenue_statistics::GetRevenueStatisticsError::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::operation::get_revenue_statistics::GetRevenueStatisticsError::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::operation::get_revenue_statistics::GetRevenueStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError> for Error {
+    fn from(err: crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError) -> Self {
+        match err {
+            crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::operation::get_revenue_statistics_summary::GetRevenueStatisticsSummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError> for Error {
+    fn from(err: crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError) -> Self {
+        match err {
+            crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::operation::get_revenue_statistics_time_series::GetRevenueStatisticsTimeSeriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule_group::GetRuleGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1629,6 +1746,41 @@ impl From<crate::operation::list_rule_groups::ListRuleGroupsError> for Error {
                 Error::WafInvalidParameterException(inner)
             }
             crate::operation::list_rule_groups::ListRuleGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_settlement_records::ListSettlementRecordsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_settlement_records::ListSettlementRecordsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_settlement_records::ListSettlementRecordsError> for Error {
+    fn from(err: crate::operation::list_settlement_records::ListSettlementRecordsError) -> Self {
+        match err {
+            crate::operation::list_settlement_records::ListSettlementRecordsError::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::operation::list_settlement_records::ListSettlementRecordsError::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::operation::list_settlement_records::ListSettlementRecordsError::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::operation::list_settlement_records::ListSettlementRecordsError::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::operation::list_settlement_records::ListSettlementRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -13,6 +13,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request would cause the resource to exceed an allowed service quota. Resolve the issue before you try again.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>The terminal connection to the stream session is not yet available. Wait before retrying the request.</p>
+    StreamSessionAccessNotReadyException(crate::types::error::StreamSessionAccessNotReadyException),
     /// <p>The request was denied due to request throttling. Retry the request after the suggested wait time.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>One or more parameter values in the request fail to satisfy the specified constraints. Correct the invalid parameter values before retrying the request.</p>
@@ -34,6 +36,7 @@ impl ::std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::StreamSessionAccessNotReadyException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -62,6 +65,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::StreamSessionAccessNotReadyException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -203,6 +207,56 @@ impl From<crate::operation::create_stream_group::CreateStreamGroupError> for Err
             crate::operation::create_stream_group::CreateStreamGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_stream_group::CreateStreamGroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_stream_group::CreateStreamGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError> for Error {
+    fn from(err: crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError) -> Self {
+        match err {
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError::StreamSessionAccessNotReadyException(inner) => {
+                Error::StreamSessionAccessNotReadyException(inner)
+            }
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_stream_session_admin_shell::CreateStreamSessionAdminShellError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -840,6 +894,7 @@ impl ::std::error::Error for Error {
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::StreamSessionAccessNotReadyException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -854,6 +909,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::StreamSessionAccessNotReadyException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

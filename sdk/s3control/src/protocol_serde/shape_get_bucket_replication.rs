@@ -67,6 +67,8 @@ pub fn de_get_bucket_replication(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("GetBucketReplicationResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected GetBucketReplicationResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -77,7 +79,7 @@ pub fn de_get_bucket_replication(
             s if s.matches("ReplicationConfiguration") /* ReplicationConfiguration com.amazonaws.s3control.synthetic#GetBucketReplicationOutput$ReplicationConfiguration */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_replication_configuration::de_replication_configuration(&mut tag)
+                        crate::protocol_serde::shape_replication_configuration::de_replication_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;

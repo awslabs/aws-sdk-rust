@@ -35,9 +35,9 @@ pub use crate::types::_environment_state::EnvironmentState;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
-pub use crate::types::_license_info::LicenseInfo;
-
 pub use crate::types::_initial_vlan_info::InitialVlanInfo;
+
+pub use crate::types::_license_info::LicenseInfo;
 
 pub use crate::types::_check_result::CheckResult;
 

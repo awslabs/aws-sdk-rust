@@ -2,10 +2,16 @@
 pub(crate) fn de_assessment_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AssessmentSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,32 +23,45 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "listServerStrategySummary" => {
                             builder = builder.set_list_server_strategy_summary(
-                                crate::protocol_serde::shape_list_strategy_summary::de_list_strategy_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_list_strategy_summary::de_list_strategy_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "listApplicationComponentStrategySummary" => {
                             builder = builder.set_list_application_component_strategy_summary(
-                                crate::protocol_serde::shape_list_strategy_summary::de_list_strategy_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_list_strategy_summary::de_list_strategy_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "listAntipatternSeveritySummary" => {
                             builder = builder.set_list_antipattern_severity_summary(
-                                crate::protocol_serde::shape_list_antipattern_severity_summary::de_list_antipattern_severity_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_list_antipattern_severity_summary::de_list_antipattern_severity_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "listApplicationComponentSummary" => {
                             builder = builder.set_list_application_component_summary(
                                 crate::protocol_serde::shape_list_application_component_summary::de_list_application_component_summary(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "listServerSummary" => {
-                            builder = builder
-                                .set_list_server_summary(crate::protocol_serde::shape_list_server_summary::de_list_server_summary(tokens, _value)?);
+                            builder = builder.set_list_server_summary(crate::protocol_serde::shape_list_server_summary::de_list_server_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "antipatternReportS3Object" => {
-                            builder = builder.set_antipattern_report_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value)?);
+                            builder = builder.set_antipattern_report_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "antipatternReportStatus" => {
                             builder = builder.set_antipattern_report_status(
@@ -67,13 +86,15 @@ where
                         "listApplicationComponentStatusSummary" => {
                             builder = builder.set_list_application_component_status_summary(
                                 crate::protocol_serde::shape_list_application_component_status_summary::de_list_application_component_status_summary(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "listServerStatusSummary" => {
                             builder = builder.set_list_server_status_summary(
-                                crate::protocol_serde::shape_list_server_status_summary::de_list_server_status_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_list_server_status_summary::de_list_server_status_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

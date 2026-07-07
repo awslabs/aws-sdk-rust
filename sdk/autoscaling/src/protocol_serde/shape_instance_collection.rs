@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_collection(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceCollection, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceCollection::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_instance_collection(
             s if s.matches("InstanceIds") /* InstanceIds com.amazonaws.autoscaling#InstanceCollection$InstanceIds */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_instance_ids::de_instance_ids(&mut tag)
+                        crate::protocol_serde::shape_instance_ids::de_instance_ids(&mut tag, depth + 1)
                         ?
                     )
                 ;

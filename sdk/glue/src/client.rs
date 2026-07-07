@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`BatchCreatePartition`](crate::operation::batch_create_partition) operation has
-/// a [`Client::batch_create_partition`], function which returns a builder for that operation.
+/// For example, the [`AssociateGlossaryTerms`](crate::operation::associate_glossary_terms) operation has
+/// a [`Client::associate_glossary_terms`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.batch_create_partition()
-///     .catalog_id("example")
+/// let result = client.associate_glossary_terms()
+///     .asset_identifier("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod associate_glossary_terms;
+
 mod batch_create_partition;
 
 mod batch_delete_connection;
@@ -155,6 +157,8 @@ mod batch_get_custom_entity_types;
 mod batch_get_data_quality_result;
 
 mod batch_get_dev_endpoints;
+
+mod batch_get_iterable_forms;
 
 mod batch_get_jobs;
 
@@ -201,6 +205,10 @@ mod create_data_quality_ruleset;
 mod create_database;
 
 mod create_dev_endpoint;
+
+mod create_glossary;
+
+mod create_glossary_term;
 
 mod create_glue_identity_center_configuration;
 
@@ -251,7 +259,7 @@ mod create_workflow;
 /// # let client: aws_sdk_glue::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_create_partition()
+/// let result = client.associate_glossary_terms()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -266,6 +274,12 @@ mod create_workflow;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_asset;
+
+mod delete_asset_type;
+
+mod delete_attachment;
 
 mod delete_blueprint;
 
@@ -292,6 +306,12 @@ mod delete_data_quality_ruleset;
 mod delete_database;
 
 mod delete_dev_endpoint;
+
+mod delete_form_type;
+
+mod delete_glossary;
+
+mod delete_glossary_term;
 
 mod delete_glue_identity_center_configuration;
 
@@ -343,6 +363,12 @@ mod describe_inbound_integrations;
 
 mod describe_integrations;
 
+mod disassociate_glossary_terms;
+
+mod get_asset;
+
+mod get_asset_type;
+
 mod get_blueprint;
 
 mod get_blueprint_run;
@@ -381,6 +407,8 @@ mod get_crawlers;
 
 mod get_custom_entity_type;
 
+mod get_dashboard_url;
+
 mod get_data_catalog_encryption_settings;
 
 mod get_data_quality_model;
@@ -406,6 +434,12 @@ mod get_dev_endpoint;
 mod get_dev_endpoints;
 
 mod get_entity_records;
+
+mod get_form_type;
+
+mod get_glossary;
+
+mod get_glossary_term;
 
 mod get_glue_identity_center_configuration;
 
@@ -463,6 +497,8 @@ mod get_security_configurations;
 
 mod get_session;
 
+mod get_session_endpoint;
+
 mod get_statement;
 
 mod get_table;
@@ -503,6 +539,8 @@ mod get_workflow_runs;
 
 mod import_catalog_to_glue;
 
+mod list_asset_types;
+
 mod list_blueprints;
 
 mod list_column_statistics_task_runs;
@@ -531,7 +569,15 @@ mod list_dev_endpoints;
 
 mod list_entities;
 
+mod list_form_types;
+
+mod list_glossaries;
+
+mod list_glossary_terms;
+
 mod list_integration_resource_properties;
+
+mod list_iterable_forms;
 
 mod list_jobs;
 
@@ -559,9 +605,17 @@ mod list_workflows;
 
 mod modify_integration;
 
+mod put_asset;
+
+mod put_asset_type;
+
+mod put_attachment;
+
 mod put_data_catalog_encryption_settings;
 
 mod put_data_quality_profile_annotation;
+
+mod put_form_type;
 
 mod put_resource_policy;
 
@@ -582,6 +636,8 @@ mod reset_job_bookmark;
 mod resume_workflow_run;
 
 mod run_statement;
+
+mod search_assets;
 
 mod search_tables;
 
@@ -637,6 +693,8 @@ mod test_connection;
 
 mod untag_resource;
 
+mod update_asset;
+
 mod update_blueprint;
 
 mod update_catalog;
@@ -660,6 +718,10 @@ mod update_data_quality_ruleset;
 mod update_database;
 
 mod update_dev_endpoint;
+
+mod update_glossary;
+
+mod update_glossary_term;
 
 mod update_glue_identity_center_configuration;
 

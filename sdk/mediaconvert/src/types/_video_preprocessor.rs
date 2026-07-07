@@ -10,6 +10,8 @@ pub struct VideoPreprocessor {
     pub deinterlacer: ::std::option::Option<crate::types::Deinterlacer>,
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
     pub dolby_vision: ::std::option::Option<crate::types::DolbyVision>,
+    /// Enable integer-second duration normalization. When enabled, the output duration is adjusted to land on an exact integer-second boundary. The adjustment method (trim, compress, or pad) is chosen automatically based on how far the input duration is from the nearest integer second.
+    pub duration_control: ::std::option::Option<crate::types::DurationControl>,
     /// Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
     pub hdr10_plus: ::std::option::Option<crate::types::Hdr10Plus>,
     /// Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
@@ -33,6 +35,10 @@ impl VideoPreprocessor {
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
     pub fn dolby_vision(&self) -> ::std::option::Option<&crate::types::DolbyVision> {
         self.dolby_vision.as_ref()
+    }
+    /// Enable integer-second duration normalization. When enabled, the output duration is adjusted to land on an exact integer-second boundary. The adjustment method (trim, compress, or pad) is chosen automatically based on how far the input duration is from the nearest integer second.
+    pub fn duration_control(&self) -> ::std::option::Option<&crate::types::DurationControl> {
+        self.duration_control.as_ref()
     }
     /// Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
     pub fn hdr10_plus(&self) -> ::std::option::Option<&crate::types::Hdr10Plus> {
@@ -69,6 +75,7 @@ pub struct VideoPreprocessorBuilder {
     pub(crate) color_corrector: ::std::option::Option<crate::types::ColorCorrector>,
     pub(crate) deinterlacer: ::std::option::Option<crate::types::Deinterlacer>,
     pub(crate) dolby_vision: ::std::option::Option<crate::types::DolbyVision>,
+    pub(crate) duration_control: ::std::option::Option<crate::types::DurationControl>,
     pub(crate) hdr10_plus: ::std::option::Option<crate::types::Hdr10Plus>,
     pub(crate) image_inserter: ::std::option::Option<crate::types::ImageInserter>,
     pub(crate) noise_reducer: ::std::option::Option<crate::types::NoiseReducer>,
@@ -117,6 +124,20 @@ impl VideoPreprocessorBuilder {
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
     pub fn get_dolby_vision(&self) -> &::std::option::Option<crate::types::DolbyVision> {
         &self.dolby_vision
+    }
+    /// Enable integer-second duration normalization. When enabled, the output duration is adjusted to land on an exact integer-second boundary. The adjustment method (trim, compress, or pad) is chosen automatically based on how far the input duration is from the nearest integer second.
+    pub fn duration_control(mut self, input: crate::types::DurationControl) -> Self {
+        self.duration_control = ::std::option::Option::Some(input);
+        self
+    }
+    /// Enable integer-second duration normalization. When enabled, the output duration is adjusted to land on an exact integer-second boundary. The adjustment method (trim, compress, or pad) is chosen automatically based on how far the input duration is from the nearest integer second.
+    pub fn set_duration_control(mut self, input: ::std::option::Option<crate::types::DurationControl>) -> Self {
+        self.duration_control = input;
+        self
+    }
+    /// Enable integer-second duration normalization. When enabled, the output duration is adjusted to land on an exact integer-second boundary. The adjustment method (trim, compress, or pad) is chosen automatically based on how far the input duration is from the nearest integer second.
+    pub fn get_duration_control(&self) -> &::std::option::Option<crate::types::DurationControl> {
+        &self.duration_control
     }
     /// Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
     pub fn hdr10_plus(mut self, input: crate::types::Hdr10Plus) -> Self {
@@ -194,6 +215,7 @@ impl VideoPreprocessorBuilder {
             color_corrector: self.color_corrector,
             deinterlacer: self.deinterlacer,
             dolby_vision: self.dolby_vision,
+            duration_control: self.duration_control,
             hdr10_plus: self.hdr10_plus,
             image_inserter: self.image_inserter,
             noise_reducer: self.noise_reducer,

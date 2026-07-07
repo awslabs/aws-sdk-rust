@@ -2,10 +2,16 @@
 pub(crate) fn de_indicator_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::IndicatorDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,47 +20,57 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "TTPsObservedDetail" => {
-                            builder = builder.set_ttps_observed_detail(crate::protocol_serde::shape_ttps_observed_detail::de_ttps_observed_detail(
-                                tokens, _value,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "TTPsObservedDetail" => {
+                                builder = builder.set_ttps_observed_detail(
+                                    crate::protocol_serde::shape_ttps_observed_detail::de_ttps_observed_detail(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ImpossibleTravelDetail" => {
+                                builder = builder.set_impossible_travel_detail(
+                                    crate::protocol_serde::shape_impossible_travel_detail::de_impossible_travel_detail(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "FlaggedIpAddressDetail" => {
+                                builder = builder.set_flagged_ip_address_detail(
+                                    crate::protocol_serde::shape_flagged_ip_address_detail::de_flagged_ip_address_detail(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "NewGeolocationDetail" => {
+                                builder = builder.set_new_geolocation_detail(
+                                    crate::protocol_serde::shape_new_geolocation_detail::de_new_geolocation_detail(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "NewAsoDetail" => {
+                                builder = builder.set_new_aso_detail(crate::protocol_serde::shape_new_aso_detail::de_new_aso_detail(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "NewUserAgentDetail" => {
+                                builder = builder.set_new_user_agent_detail(
+                                    crate::protocol_serde::shape_new_user_agent_detail::de_new_user_agent_detail(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "RelatedFindingDetail" => {
+                                builder = builder.set_related_finding_detail(
+                                    crate::protocol_serde::shape_related_finding_detail::de_related_finding_detail(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "RelatedFindingGroupDetail" => {
+                                builder = builder.set_related_finding_group_detail(
+                                    crate::protocol_serde::shape_related_finding_group_detail::de_related_finding_group_detail(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "ImpossibleTravelDetail" => {
-                            builder = builder.set_impossible_travel_detail(
-                                crate::protocol_serde::shape_impossible_travel_detail::de_impossible_travel_detail(tokens, _value)?,
-                            );
-                        }
-                        "FlaggedIpAddressDetail" => {
-                            builder = builder.set_flagged_ip_address_detail(
-                                crate::protocol_serde::shape_flagged_ip_address_detail::de_flagged_ip_address_detail(tokens, _value)?,
-                            );
-                        }
-                        "NewGeolocationDetail" => {
-                            builder = builder.set_new_geolocation_detail(
-                                crate::protocol_serde::shape_new_geolocation_detail::de_new_geolocation_detail(tokens, _value)?,
-                            );
-                        }
-                        "NewAsoDetail" => {
-                            builder = builder.set_new_aso_detail(crate::protocol_serde::shape_new_aso_detail::de_new_aso_detail(tokens, _value)?);
-                        }
-                        "NewUserAgentDetail" => {
-                            builder = builder.set_new_user_agent_detail(
-                                crate::protocol_serde::shape_new_user_agent_detail::de_new_user_agent_detail(tokens, _value)?,
-                            );
-                        }
-                        "RelatedFindingDetail" => {
-                            builder = builder.set_related_finding_detail(
-                                crate::protocol_serde::shape_related_finding_detail::de_related_finding_detail(tokens, _value)?,
-                            );
-                        }
-                        "RelatedFindingGroupDetail" => {
-                            builder = builder.set_related_finding_group_detail(
-                                crate::protocol_serde::shape_related_finding_group_detail::de_related_finding_group_detail(tokens, _value)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

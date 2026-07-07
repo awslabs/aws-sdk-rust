@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_subnet_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DbSubnetGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DbSubnetGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -62,7 +66,7 @@ pub fn de_db_subnet_group(
             s if s.matches("Subnets") /* Subnets com.amazonaws.docdb#DBSubnetGroup$Subnets */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_subnet_list::de_subnet_list(&mut tag)
+                        crate::protocol_serde::shape_subnet_list::de_subnet_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -85,7 +89,7 @@ pub fn de_db_subnet_group(
             s if s.matches("SupportedNetworkTypes") /* SupportedNetworkTypes com.amazonaws.docdb#DBSubnetGroup$SupportedNetworkTypes */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_network_type_list::de_network_type_list(&mut tag)
+                        crate::protocol_serde::shape_network_type_list::de_network_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

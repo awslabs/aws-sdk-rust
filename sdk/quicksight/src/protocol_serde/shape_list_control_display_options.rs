@@ -33,10 +33,16 @@ pub fn ser_list_control_display_options(
 pub(crate) fn de_list_control_display_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ListControlDisplayOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,21 +54,28 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SearchOptions" => {
                             builder = builder.set_search_options(
-                                crate::protocol_serde::shape_list_control_search_options::de_list_control_search_options(tokens, _value)?,
+                                crate::protocol_serde::shape_list_control_search_options::de_list_control_search_options(tokens, _value, depth + 1)?,
                             );
                         }
                         "SelectAllOptions" => {
                             builder = builder.set_select_all_options(
-                                crate::protocol_serde::shape_list_control_select_all_options::de_list_control_select_all_options(tokens, _value)?,
+                                crate::protocol_serde::shape_list_control_select_all_options::de_list_control_select_all_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "TitleOptions" => {
-                            builder = builder.set_title_options(crate::protocol_serde::shape_label_options::de_label_options(tokens, _value)?);
+                            builder =
+                                builder.set_title_options(crate::protocol_serde::shape_label_options::de_label_options(tokens, _value, depth + 1)?);
                         }
                         "InfoIconLabelOptions" => {
                             builder = builder.set_info_icon_label_options(
                                 crate::protocol_serde::shape_sheet_control_info_icon_label_options::de_sheet_control_info_icon_label_options(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

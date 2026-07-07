@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_enable_fast_snapshot_restore_state_error_item(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EnableFastSnapshotRestoreStateErrorItem, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EnableFastSnapshotRestoreStateErrorItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +40,7 @@ pub fn de_enable_fast_snapshot_restore_state_error_item(
             s if s.matches("error") /* Error com.amazonaws.ec2#EnableFastSnapshotRestoreStateErrorItem$Error */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_enable_fast_snapshot_restore_state_error::de_enable_fast_snapshot_restore_state_error(&mut tag)
+                        crate::protocol_serde::shape_enable_fast_snapshot_restore_state_error::de_enable_fast_snapshot_restore_state_error(&mut tag, depth + 1)
                         ?
                     )
                 ;

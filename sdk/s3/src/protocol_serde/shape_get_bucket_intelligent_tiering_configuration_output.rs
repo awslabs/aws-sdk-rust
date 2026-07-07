@@ -25,5 +25,7 @@ pub fn de_intelligent_tiering_configuration(
             "invalid root, expected IntelligentTieringConfiguration got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_intelligent_tiering_configuration::de_intelligent_tiering_configuration(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_intelligent_tiering_configuration::de_intelligent_tiering_configuration(&mut decoder, depth + 1)
 }

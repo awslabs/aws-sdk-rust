@@ -2,10 +2,16 @@
 pub(crate) fn de_device<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Device>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -72,10 +78,10 @@ where
                             );
                         }
                         "cpu" => {
-                            builder = builder.set_cpu(crate::protocol_serde::shape_cpu::de_cpu(tokens, _value)?);
+                            builder = builder.set_cpu(crate::protocol_serde::shape_cpu::de_cpu(tokens, _value, depth + 1)?);
                         }
                         "resolution" => {
-                            builder = builder.set_resolution(crate::protocol_serde::shape_resolution::de_resolution(tokens, _value)?);
+                            builder = builder.set_resolution(crate::protocol_serde::shape_resolution::de_resolution(tokens, _value, depth + 1)?);
                         }
                         "heapSize" => {
                             builder = builder.set_heap_size(
@@ -133,7 +139,11 @@ where
                             );
                         }
                         "instances" => {
-                            builder = builder.set_instances(crate::protocol_serde::shape_device_instances::de_device_instances(tokens, _value)?);
+                            builder = builder.set_instances(crate::protocol_serde::shape_device_instances::de_device_instances(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "availability" => {
                             builder = builder.set_availability(

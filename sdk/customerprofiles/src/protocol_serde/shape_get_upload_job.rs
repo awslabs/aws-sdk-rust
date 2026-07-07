@@ -121,6 +121,8 @@ pub(crate) fn de_get_upload_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -153,7 +155,7 @@ pub(crate) fn de_get_upload_job(
                     );
                 }
                 "Fields" => {
-                    builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
+                    builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                 }
                 "JobId" => {
                     builder = builder.set_job_id(
@@ -163,7 +165,11 @@ pub(crate) fn de_get_upload_job(
                     );
                 }
                 "ResultsSummary" => {
-                    builder = builder.set_results_summary(crate::protocol_serde::shape_results_summary::de_results_summary(tokens, _value)?);
+                    builder = builder.set_results_summary(crate::protocol_serde::shape_results_summary::de_results_summary(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Status" => {
                     builder = builder.set_status(

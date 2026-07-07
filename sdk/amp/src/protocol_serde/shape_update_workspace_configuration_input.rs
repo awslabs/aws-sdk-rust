@@ -18,10 +18,22 @@ pub fn ser_update_workspace_configuration_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.retention_period_in_days {
-        object.key("retentionPeriodInDays").number(
+    if let Some(var_6) = &input.out_of_order_time_window_in_seconds {
+        object.key("outOfOrderTimeWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
+    if let Some(var_7) = &input.retention_period_in_days {
+        object.key("retentionPeriodInDays").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
+    if let Some(var_8) = &input.rule_query_offset_in_seconds {
+        object.key("ruleQueryOffsetInSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     Ok(())

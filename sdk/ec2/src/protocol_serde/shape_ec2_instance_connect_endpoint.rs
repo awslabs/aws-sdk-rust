@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ec2_instance_connect_endpoint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::Ec2InstanceConnectEndpoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::Ec2InstanceConnectEndpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -102,7 +106,7 @@ pub fn de_ec2_instance_connect_endpoint(
             s if s.matches("networkInterfaceIdSet") /* NetworkInterfaceIds com.amazonaws.ec2#Ec2InstanceConnectEndpoint$NetworkInterfaceIds */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_network_interface_id_set::de_network_interface_id_set(&mut tag)
+                        crate::protocol_serde::shape_network_interface_id_set::de_network_interface_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -180,7 +184,7 @@ pub fn de_ec2_instance_connect_endpoint(
             s if s.matches("securityGroupIdSet") /* SecurityGroupIds com.amazonaws.ec2#Ec2InstanceConnectEndpoint$SecurityGroupIds */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_security_group_id_set::de_security_group_id_set(&mut tag)
+                        crate::protocol_serde::shape_security_group_id_set::de_security_group_id_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -190,7 +194,7 @@ pub fn de_ec2_instance_connect_endpoint(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Ec2InstanceConnectEndpoint$Tags */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -214,7 +218,7 @@ pub fn de_ec2_instance_connect_endpoint(
             s if s.matches("publicDnsNames") /* PublicDnsNames com.amazonaws.ec2#Ec2InstanceConnectEndpoint$PublicDnsNames */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_instance_connect_endpoint_public_dns_names::de_instance_connect_endpoint_public_dns_names(&mut tag)
+                        crate::protocol_serde::shape_instance_connect_endpoint_public_dns_names::de_instance_connect_endpoint_public_dns_names(&mut tag, depth + 1)
                         ?
                     )
                 ;

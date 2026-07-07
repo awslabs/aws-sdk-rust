@@ -20,7 +20,11 @@ pub fn ser_server_side_encryption_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_server_side_encryption_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ServerSideEncryptionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ServerSideEncryptionConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -31,7 +35,7 @@ pub fn de_server_side_encryption_configuration(
                         Result::<::std::vec::Vec::<crate::types::ServerSideEncryptionRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_3 = builder.rules.take().unwrap_or_default();
                             list_3.push(
-                                crate::protocol_serde::shape_server_side_encryption_rule::de_server_side_encryption_rule(&mut tag)
+                                crate::protocol_serde::shape_server_side_encryption_rule::de_server_side_encryption_rule(&mut tag, depth + 1)
                                 ?
                             );
                             list_3

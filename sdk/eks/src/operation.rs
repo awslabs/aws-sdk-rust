@@ -10,6 +10,9 @@ pub mod associate_encryption_config;
 /// Types for the `AssociateIdentityProviderConfig` operation.
 pub mod associate_identity_provider_config;
 
+/// Types for the `CancelUpdate` operation.
+pub mod cancel_update;
+
 /// Types for the `CreateAccessEntry` operation.
 pub mod create_access_entry;
 

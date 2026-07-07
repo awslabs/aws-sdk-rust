@@ -2,10 +2,16 @@
 pub(crate) fn de_post_processing_model_invocation_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PostProcessingModelInvocationOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,18 +30,23 @@ where
                         }
                         "parsedResponse" => {
                             builder = builder.set_parsed_response(
-                                crate::protocol_serde::shape_post_processing_parsed_response::de_post_processing_parsed_response(tokens, _value)?,
+                                crate::protocol_serde::shape_post_processing_parsed_response::de_post_processing_parsed_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "rawResponse" => {
-                            builder = builder.set_raw_response(crate::protocol_serde::shape_raw_response::de_raw_response(tokens, _value)?);
+                            builder =
+                                builder.set_raw_response(crate::protocol_serde::shape_raw_response::de_raw_response(tokens, _value, depth + 1)?);
                         }
                         "metadata" => {
-                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens, _value)?);
+                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens, _value, depth + 1)?);
                         }
                         "reasoningContent" => {
                             builder = builder.set_reasoning_content(
-                                crate::protocol_serde::shape_reasoning_content_block::de_reasoning_content_block(tokens, _value)?,
+                                crate::protocol_serde::shape_reasoning_content_block::de_reasoning_content_block(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

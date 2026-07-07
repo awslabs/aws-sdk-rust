@@ -33,10 +33,16 @@ pub fn ser_motion_image_inserter(
 pub(crate) fn de_motion_image_inserter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MotionImageInserter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,7 +54,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "framerate" => {
                             builder = builder.set_framerate(
-                                crate::protocol_serde::shape_motion_image_insertion_framerate::de_motion_image_insertion_framerate(tokens, _value)?,
+                                crate::protocol_serde::shape_motion_image_insertion_framerate::de_motion_image_insertion_framerate(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "input" => {
@@ -67,7 +77,11 @@ where
                         }
                         "offset" => {
                             builder = builder.set_offset(
-                                crate::protocol_serde::shape_motion_image_insertion_offset::de_motion_image_insertion_offset(tokens, _value)?,
+                                crate::protocol_serde::shape_motion_image_insertion_offset::de_motion_image_insertion_offset(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "playback" => {

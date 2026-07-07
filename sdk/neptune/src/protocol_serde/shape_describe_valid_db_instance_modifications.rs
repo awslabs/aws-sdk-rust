@@ -100,6 +100,8 @@ pub fn de_describe_valid_db_instance_modifications(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeValidDBInstanceModificationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeValidDBInstanceModificationsResponse got {start_el:?}"
@@ -117,7 +119,7 @@ pub fn de_describe_valid_db_instance_modifications(
             s if s.matches("ValidDBInstanceModificationsMessage") /* ValidDBInstanceModificationsMessage com.amazonaws.neptune.synthetic#DescribeValidDBInstanceModificationsOutput$ValidDBInstanceModificationsMessage */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_valid_db_instance_modifications_message::de_valid_db_instance_modifications_message(&mut tag)
+                        crate::protocol_serde::shape_valid_db_instance_modifications_message::de_valid_db_instance_modifications_message(&mut tag, depth + 1)
                         ?
                     )
                 ;

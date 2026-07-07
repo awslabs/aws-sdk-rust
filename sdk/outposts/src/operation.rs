@@ -13,6 +13,9 @@ pub mod create_order;
 /// Types for the `CreateOutpost` operation.
 pub mod create_outpost;
 
+/// Types for the `CreateQuote` operation.
+pub mod create_quote;
+
 /// Types for the `CreateRenewal` operation.
 pub mod create_renewal;
 
@@ -21,6 +24,9 @@ pub mod create_site;
 
 /// Types for the `DeleteOutpost` operation.
 pub mod delete_outpost;
+
+/// Types for the `DeleteQuote` operation.
+pub mod delete_quote;
 
 /// Types for the `DeleteSite` operation.
 pub mod delete_site;
@@ -49,6 +55,9 @@ pub mod get_outpost_instance_types;
 /// Types for the `GetOutpostSupportedInstanceTypes` operation.
 pub mod get_outpost_supported_instance_types;
 
+/// Types for the `GetQuote` operation.
+pub mod get_quote;
+
 /// Types for the `GetRenewalPricing` operation.
 pub mod get_renewal_pricing;
 
@@ -73,11 +82,17 @@ pub mod list_capacity_tasks;
 /// Types for the `ListCatalogItems` operation.
 pub mod list_catalog_items;
 
+/// Types for the `ListOrderableInstanceTypes` operation.
+pub mod list_orderable_instance_types;
+
 /// Types for the `ListOrders` operation.
 pub mod list_orders;
 
 /// Types for the `ListOutposts` operation.
 pub mod list_outposts;
+
+/// Types for the `ListQuotes` operation.
+pub mod list_quotes;
 
 /// Types for the `ListSites` operation.
 pub mod list_sites;
@@ -102,6 +117,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateOutpost` operation.
 pub mod update_outpost;
+
+/// Types for the `UpdateQuote` operation.
+pub mod update_quote;
 
 /// Types for the `UpdateSite` operation.
 pub mod update_site;

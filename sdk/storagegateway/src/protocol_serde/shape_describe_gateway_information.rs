@@ -97,6 +97,8 @@ pub(crate) fn de_describe_gateway_information(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -139,7 +141,7 @@ pub(crate) fn de_describe_gateway_information(
                 }
                 "GatewayNetworkInterfaces" => {
                     builder = builder.set_gateway_network_interfaces(
-                        crate::protocol_serde::shape_gateway_network_interfaces::de_gateway_network_interfaces(tokens, _value)?,
+                        crate::protocol_serde::shape_gateway_network_interfaces::de_gateway_network_interfaces(tokens, _value, depth + 1)?,
                     );
                 }
                 "GatewayType" => {
@@ -178,7 +180,7 @@ pub(crate) fn de_describe_gateway_information(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 "VPCEndpoint" => {
                     builder = builder.set_vpc_endpoint(
@@ -231,7 +233,7 @@ pub(crate) fn de_describe_gateway_information(
                 }
                 "SupportedGatewayCapacities" => {
                     builder = builder.set_supported_gateway_capacities(
-                        crate::protocol_serde::shape_supported_gateway_capacities::de_supported_gateway_capacities(tokens, _value)?,
+                        crate::protocol_serde::shape_supported_gateway_capacities::de_supported_gateway_capacities(tokens, _value, depth + 1)?,
                     );
                 }
                 "HostEnvironmentId" => {

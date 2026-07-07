@@ -13,8 +13,10 @@
 /// # let routetravelmode = unimplemented!();
 /// match routetravelmode {
 ///     RouteTravelMode::Car => { /* ... */ },
+///     RouteTravelMode::Intermodal => { /* ... */ },
 ///     RouteTravelMode::Pedestrian => { /* ... */ },
 ///     RouteTravelMode::Scooter => { /* ... */ },
+///     RouteTravelMode::Transit => { /* ... */ },
 ///     RouteTravelMode::Truck => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,9 +49,13 @@ pub enum RouteTravelMode {
     #[allow(missing_docs)] // documentation missing in model
     Car,
     #[allow(missing_docs)] // documentation missing in model
+    Intermodal,
+    #[allow(missing_docs)] // documentation missing in model
     Pedestrian,
     #[allow(missing_docs)] // documentation missing in model
     Scooter,
+    #[allow(missing_docs)] // documentation missing in model
+    Transit,
     #[allow(missing_docs)] // documentation missing in model
     Truck,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -60,8 +66,10 @@ impl ::std::convert::From<&str> for RouteTravelMode {
     fn from(s: &str) -> Self {
         match s {
             "Car" => RouteTravelMode::Car,
+            "Intermodal" => RouteTravelMode::Intermodal,
             "Pedestrian" => RouteTravelMode::Pedestrian,
             "Scooter" => RouteTravelMode::Scooter,
+            "Transit" => RouteTravelMode::Transit,
             "Truck" => RouteTravelMode::Truck,
             other => RouteTravelMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -79,15 +87,17 @@ impl RouteTravelMode {
     pub fn as_str(&self) -> &str {
         match self {
             RouteTravelMode::Car => "Car",
+            RouteTravelMode::Intermodal => "Intermodal",
             RouteTravelMode::Pedestrian => "Pedestrian",
             RouteTravelMode::Scooter => "Scooter",
+            RouteTravelMode::Transit => "Transit",
             RouteTravelMode::Truck => "Truck",
             RouteTravelMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Car", "Pedestrian", "Scooter", "Truck"]
+        &["Car", "Intermodal", "Pedestrian", "Scooter", "Transit", "Truck"]
     }
 }
 impl ::std::convert::AsRef<str> for RouteTravelMode {
@@ -111,8 +121,10 @@ impl ::std::fmt::Display for RouteTravelMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RouteTravelMode::Car => write!(f, "Car"),
+            RouteTravelMode::Intermodal => write!(f, "Intermodal"),
             RouteTravelMode::Pedestrian => write!(f, "Pedestrian"),
             RouteTravelMode::Scooter => write!(f, "Scooter"),
+            RouteTravelMode::Transit => write!(f, "Transit"),
             RouteTravelMode::Truck => write!(f, "Truck"),
             RouteTravelMode::Unknown(value) => write!(f, "{value}"),
         }

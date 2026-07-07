@@ -7,7 +7,7 @@ use crate::provider_config::ProviderConfig;
 use crate::retry::error::{RetryConfigError, RetryConfigErrorKind};
 use aws_runtime::env_config::{EnvConfigError, EnvConfigValue};
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_smithy_types::retry::{RetryConfig, RetryMode};
+use aws_smithy_types::retry::{RetryConfig, RetryMode, RetrySpec};
 use std::str::FromStr;
 
 /// Default RetryConfig Provider chain
@@ -53,6 +53,7 @@ pub fn default_provider() -> Builder {
 mod env {
     pub(super) const MAX_ATTEMPTS: &str = "AWS_MAX_ATTEMPTS";
     pub(super) const RETRY_MODE: &str = "AWS_RETRY_MODE";
+    pub(super) const NEW_RETRIES_2026: &str = "AWS_NEW_RETRIES_2026";
 }
 
 mod profile_keys {
@@ -127,6 +128,17 @@ impl Builder {
 
         if let Some(retry_mode) = retry_mode? {
             retry_config = retry_config.with_retry_mode(retry_mode);
+        }
+
+        // Enable Retry Behavior 2.1 when AWS_NEW_RETRIES_2026=true
+        let new_retries =
+            EnvConfigValue::new()
+                .env(env::NEW_RETRIES_2026)
+                .validate(&env, profiles, |s| Ok::<_, RetryConfigError>(s.to_owned()));
+        if let Some(val) = new_retries? {
+            if val.eq_ignore_ascii_case("true") {
+                retry_config = retry_config.with_retry_spec(RetrySpec::v2_1());
+            }
         }
 
         Ok(retry_config)
@@ -337,5 +349,29 @@ max_attempts = potato
                 kind: RetryConfigErrorKind::MaxAttemptsMustNotBeZero { .. }
             }
         ));
+    }
+
+    #[tokio::test]
+    async fn new_retries_env_var_enables_retry_spec_v2_1() {
+        use aws_smithy_types::retry::RetrySpec;
+        let config = test_provider(&[(env::NEW_RETRIES_2026, "true")])
+            .await
+            .unwrap();
+        assert_eq!(config.retry_spec(), Some(&RetrySpec::v2_1()));
+    }
+
+    #[tokio::test]
+    async fn new_retries_env_var_case_insensitive() {
+        use aws_smithy_types::retry::RetrySpec;
+        let config = test_provider(&[(env::NEW_RETRIES_2026, "True")])
+            .await
+            .unwrap();
+        assert_eq!(config.retry_spec(), Some(&RetrySpec::v2_1()));
+    }
+
+    #[tokio::test]
+    async fn new_retries_env_var_not_set_means_no_retry_spec() {
+        let config = test_provider(&[]).await.unwrap();
+        assert_eq!(config.retry_spec(), None);
     }
 }

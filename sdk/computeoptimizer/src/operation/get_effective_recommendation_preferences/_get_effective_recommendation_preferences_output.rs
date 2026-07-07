@@ -14,7 +14,7 @@ pub struct GetEffectiveRecommendationPreferencesOutput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
     /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
-    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations, GetEC2InstanceRecommendations, GetEBSVolumeRecommendations, GetECSServiceRecommendations, or GetRDSDatabaseRecommendations actions.</p>
     pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
     /// <p>The resource’s CPU and memory utilization preferences, such as threshold and headroom, that were used to generate rightsizing recommendations. It considers all applicable preferences that you set at the resource, account, and organization level.</p>
     /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
@@ -40,7 +40,7 @@ impl GetEffectiveRecommendationPreferencesOutput {
         self.external_metrics_preference.as_ref()
     }
     /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
-    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations, GetEC2InstanceRecommendations, GetEBSVolumeRecommendations, GetECSServiceRecommendations, or GetRDSDatabaseRecommendations actions.</p>
     pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
         self.look_back_period.as_ref()
     }
@@ -130,19 +130,19 @@ impl GetEffectiveRecommendationPreferencesOutputBuilder {
         &self.external_metrics_preference
     }
     /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
-    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations, GetEC2InstanceRecommendations, GetEBSVolumeRecommendations, GetECSServiceRecommendations, or GetRDSDatabaseRecommendations actions.</p>
     pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
         self.look_back_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
-    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations, GetEC2InstanceRecommendations, GetEBSVolumeRecommendations, GetECSServiceRecommendations, or GetRDSDatabaseRecommendations actions.</p>
     pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
         self.look_back_period = input;
         self
     }
     /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
-    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+    /// <p>To validate that the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the GetAutoScalingGroupRecommendations, GetEC2InstanceRecommendations, GetEBSVolumeRecommendations, GetECSServiceRecommendations, or GetRDSDatabaseRecommendations actions.</p>
     pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
         &self.look_back_period
     }

@@ -2,10 +2,16 @@
 pub(crate) fn de_data_product_result_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataProductResultItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,7 +57,11 @@ where
                             );
                         }
                         "glossaryTerms" => {
-                            builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens, _value)?);
+                            builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -82,7 +92,9 @@ where
                         "additionalAttributes" => {
                             builder = builder.set_additional_attributes(
                                 crate::protocol_serde::shape_data_product_item_additional_attributes::de_data_product_item_additional_attributes(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

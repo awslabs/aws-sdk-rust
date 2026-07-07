@@ -127,6 +127,8 @@ pub(crate) fn de_get_model_import_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -193,7 +195,11 @@ pub(crate) fn de_get_model_import_job(
                     )?);
                 }
                 "modelDataSource" => {
-                    builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens, _value)?);
+                    builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "roleArn" => {
                     builder = builder.set_role_arn(
@@ -210,7 +216,7 @@ pub(crate) fn de_get_model_import_job(
                     );
                 }
                 "vpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

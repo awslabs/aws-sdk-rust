@@ -137,6 +137,8 @@ pub(crate) fn de_search_routing_profiles(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -158,7 +160,9 @@ pub(crate) fn de_search_routing_profiles(
                 }
                 "RoutingProfiles" => {
                     builder = builder.set_routing_profiles(crate::protocol_serde::shape_routing_profile_list::de_routing_profile_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

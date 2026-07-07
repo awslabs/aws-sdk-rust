@@ -11,6 +11,8 @@ pub struct CreatePolicyInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The validation mode for the policy creation. Determines how Cedar analyzer validation results are handled during policy creation. FAIL_ON_ANY_FINDINGS (default) runs the Cedar analyzer to validate the policy against the Cedar schema and tool context, failing creation if the analyzer detects any validation issues to ensure strict conformance. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows policy creation even if validation issues are detected, useful for testing or when the policy schema is evolving. Use FAIL_ON_ANY_FINDINGS for production policies to ensure correctness, and IGNORE_ALL_FINDINGS only when you understand and accept the analyzer findings.</p>
     pub validation_mode: ::std::option::Option<crate::types::PolicyValidationMode>,
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. Defaults to <code>ACTIVE</code>.</p>
+    pub enforcement_mode: ::std::option::Option<crate::types::EnforcementMode>,
     /// <p>The identifier of the policy engine which contains this policy. Policy engines group related policies and provide the execution context for policy evaluation.</p>
     pub policy_engine_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure the idempotency of the request. The AWS SDK automatically generates this token, so you don't need to provide it in most cases. If you retry a request with the same client token, the service returns the same response without creating a duplicate policy.</p>
@@ -33,6 +35,10 @@ impl CreatePolicyInput {
     pub fn validation_mode(&self) -> ::std::option::Option<&crate::types::PolicyValidationMode> {
         self.validation_mode.as_ref()
     }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. Defaults to <code>ACTIVE</code>.</p>
+    pub fn enforcement_mode(&self) -> ::std::option::Option<&crate::types::EnforcementMode> {
+        self.enforcement_mode.as_ref()
+    }
     /// <p>The identifier of the policy engine which contains this policy. Policy engines group related policies and provide the execution context for policy evaluation.</p>
     pub fn policy_engine_id(&self) -> ::std::option::Option<&str> {
         self.policy_engine_id.as_deref()
@@ -49,6 +55,7 @@ impl ::std::fmt::Debug for CreatePolicyInput {
         formatter.field("definition", &self.definition);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("validation_mode", &self.validation_mode);
+        formatter.field("enforcement_mode", &self.enforcement_mode);
         formatter.field("policy_engine_id", &self.policy_engine_id);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -69,6 +76,7 @@ pub struct CreatePolicyInputBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::PolicyValidationMode>,
+    pub(crate) enforcement_mode: ::std::option::Option<crate::types::EnforcementMode>,
     pub(crate) policy_engine_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -131,6 +139,20 @@ impl CreatePolicyInputBuilder {
     pub fn get_validation_mode(&self) -> &::std::option::Option<crate::types::PolicyValidationMode> {
         &self.validation_mode
     }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. Defaults to <code>ACTIVE</code>.</p>
+    pub fn enforcement_mode(mut self, input: crate::types::EnforcementMode) -> Self {
+        self.enforcement_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. Defaults to <code>ACTIVE</code>.</p>
+    pub fn set_enforcement_mode(mut self, input: ::std::option::Option<crate::types::EnforcementMode>) -> Self {
+        self.enforcement_mode = input;
+        self
+    }
+    /// <p>The enforcement mode for the policy. Run this policy in <code>LOG_ONLY</code> mode to collect data on how it affects your application. Once you are satisfied with the data gathered, switch the policy to <code>ACTIVE</code>. Defaults to <code>ACTIVE</code>.</p>
+    pub fn get_enforcement_mode(&self) -> &::std::option::Option<crate::types::EnforcementMode> {
+        &self.enforcement_mode
+    }
     /// <p>The identifier of the policy engine which contains this policy. Policy engines group related policies and provide the execution context for policy evaluation.</p>
     /// This field is required.
     pub fn policy_engine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +191,7 @@ impl CreatePolicyInputBuilder {
             definition: self.definition,
             description: self.description,
             validation_mode: self.validation_mode,
+            enforcement_mode: self.enforcement_mode,
             policy_engine_id: self.policy_engine_id,
             client_token: self.client_token,
         })
@@ -181,6 +204,7 @@ impl ::std::fmt::Debug for CreatePolicyInputBuilder {
         formatter.field("definition", &self.definition);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("validation_mode", &self.validation_mode);
+        formatter.field("enforcement_mode", &self.enforcement_mode);
         formatter.field("policy_engine_id", &self.policy_engine_id);
         formatter.field("client_token", &self.client_token);
         formatter.finish()

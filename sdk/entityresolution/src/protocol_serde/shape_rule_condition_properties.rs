@@ -2,10 +2,16 @@
 pub(crate) fn de_rule_condition_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RuleConditionProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,7 +22,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "rules" => {
-                            builder = builder.set_rules(crate::protocol_serde::shape_rule_condition_list::de_rule_condition_list(tokens, _value)?);
+                            builder = builder.set_rules(crate::protocol_serde::shape_rule_condition_list::de_rule_condition_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "matchingConfig" => {
+                            builder = builder.set_matching_config(crate::protocol_serde::shape_matching_config::de_matching_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -54,6 +71,12 @@ pub fn ser_rule_condition_properties(
             }
         }
         array_1.finish();
+    }
+    if let Some(var_4) = &input.matching_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("matchingConfig").start_object();
+        crate::protocol_serde::shape_matching_config::ser_matching_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

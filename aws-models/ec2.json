@@ -1037,6 +1037,184 @@
                 "smithy.api#pattern": "^[0-9]{12}$"
             }
         },
+        "com.amazonaws.ec2#AccountVpcEncryptionControl": {
+            "type": "structure",
+            "members": {
+                "State": {
+                    "target": "com.amazonaws.ec2#AccountVpcEncryptionControlState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "State",
+                        "smithy.api#documentation": "<p>The current state of the account-level VPC Encryption Control configuration.</p>",
+                        "smithy.api#xmlName": "state"
+                    }
+                },
+                "Mode": {
+                    "target": "com.amazonaws.ec2#AccountVpcEncryptionControlMode",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "Mode",
+                        "smithy.api#documentation": "<p>The encryption mode for the account-level VPC Encryption Control configuration.</p>",
+                        "smithy.api#xmlName": "mode"
+                    }
+                },
+                "Exclusions": {
+                    "target": "com.amazonaws.ec2#AccountVpcEncryptionControlExclusions",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "Exclusions",
+                        "smithy.api#documentation": "<p>Information about the traffic exclusions for the account-level VPC Encryption Control configuration.</p>",
+                        "smithy.api#xmlName": "exclusions"
+                    }
+                },
+                "ManagedBy": {
+                    "target": "com.amazonaws.ec2#ManagedBy",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ManagedBy",
+                        "smithy.api#documentation": "<p>The entity that manages the account-level VPC Encryption Control configuration.</p>",
+                        "smithy.api#xmlName": "managedBy"
+                    }
+                },
+                "LastUpdateTimestamp": {
+                    "target": "com.amazonaws.ec2#MillisecondDateTime",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "LastUpdateTimestamp",
+                        "smithy.api#documentation": "<p>The date and time when the account-level VPC Encryption Control configuration was last updated.</p>",
+                        "smithy.api#xmlName": "lastUpdateTimestamp"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes the account-level VPC Encryption Control configuration, including its mode, state, and exclusions.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html\">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>"
+            }
+        },
+        "com.amazonaws.ec2#AccountVpcEncryptionControlExclusions": {
+            "type": "structure",
+            "members": {
+                "InternetGateway": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "InternetGateway",
+                        "smithy.api#documentation": "<p>The exclusion configuration for internet gateway resource.</p>",
+                        "smithy.api#xmlName": "internetGateway"
+                    }
+                },
+                "EgressOnlyInternetGateway": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "EgressOnlyInternetGateway",
+                        "smithy.api#documentation": "<p>The exclusion configuration for egress-only internet gateway resource.</p>",
+                        "smithy.api#xmlName": "egressOnlyInternetGateway"
+                    }
+                },
+                "NatGateway": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "NatGateway",
+                        "smithy.api#documentation": "<p>The exclusion configuration for NAT gateway resource.</p>",
+                        "smithy.api#xmlName": "natGateway"
+                    }
+                },
+                "VirtualPrivateGateway": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "VirtualPrivateGateway",
+                        "smithy.api#documentation": "<p>The exclusion configuration for virtual private gateway resource.</p>",
+                        "smithy.api#xmlName": "virtualPrivateGateway"
+                    }
+                },
+                "VpcPeering": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "VpcPeering",
+                        "smithy.api#documentation": "<p>The exclusion configuration for VPC peering connection resource.</p>",
+                        "smithy.api#xmlName": "vpcPeering"
+                    }
+                },
+                "Lambda": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "Lambda",
+                        "smithy.api#documentation": "<p>The exclusion configuration for Lambda service.</p>",
+                        "smithy.api#xmlName": "lambda"
+                    }
+                },
+                "VpcLattice": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "VpcLattice",
+                        "smithy.api#documentation": "<p>The exclusion configuration for VPC Lattice service.</p>",
+                        "smithy.api#xmlName": "vpcLattice"
+                    }
+                },
+                "ElasticFileSystem": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ElasticFileSystem",
+                        "smithy.api#documentation": "<p>The exclusion configuration for Elastic File System service.</p>",
+                        "smithy.api#xmlName": "elasticFileSystem"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes the exclusion configurations for the various resource types in the account-level VPC Encryption Control configuration.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html\">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>"
+            }
+        },
+        "com.amazonaws.ec2#AccountVpcEncryptionControlMode": {
+            "type": "enum",
+            "members": {
+                "unmanaged": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "unmanaged"
+                    }
+                },
+                "attempt_monitor": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "attempt-monitor"
+                    }
+                },
+                "attempt_enforce": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "attempt-enforce"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.ec2#AccountVpcEncryptionControlState": {
+            "type": "enum",
+            "members": {
+                "default_state": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "default-state"
+                    }
+                },
+                "transitions_in_progress": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "transitions-in-progress"
+                    }
+                },
+                "transitions_partially_successful": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "transitions-partially-successful"
+                    }
+                },
+                "transitions_successful": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "transitions-successful"
+                    }
+                },
+                "transitions_failed": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "transitions-failed"
+                    }
+                }
+            }
+        },
         "com.amazonaws.ec2#ActiveInstance": {
             "type": "structure",
             "members": {
@@ -2027,6 +2205,12 @@
                         "smithy.api#documentation": "<p>The ID of the Availability Zone.</p>"
                     }
                 },
+                "CpuOptions": {
+                    "target": "com.amazonaws.ec2#HostCpuOptionsRequest",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The CPU configuration options to apply to the Dedicated Host.</p>"
+                    }
+                },
                 "AutoPlacement": {
                     "target": "com.amazonaws.ec2#AutoPlacement",
                     "traits": {
@@ -2162,6 +2346,13 @@
                         "smithy.api#documentation": "<p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>",
                         "smithy.api#xmlName": "DisallowedCidr"
                     }
+                },
+                "TagSpecifications": {
+                    "target": "com.amazonaws.ec2#TagSpecificationList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n         <p>If you specify tags, the request is authorized against the allocation resource in addition to the pool resource.</p>",
+                        "smithy.api#xmlName": "TagSpecification"
+                    }
                 }
             },
             "traits": {
@@ -2243,6 +2434,12 @@
                     "traits": {
                         "smithy.api#enumValue": "pending"
                     }
+                },
+                "configuring": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "configuring"
+                    }
                 }
             }
         },
@@ -2294,6 +2491,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "future"
+                    }
+                },
+                "cancelling": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "cancelling"
                     }
                 }
             }
@@ -2574,6 +2777,9 @@
                     "target": "com.amazonaws.ec2#AttachClassicLinkVpc"
                 },
                 {
+                    "target": "com.amazonaws.ec2#AttachImageWatermark"
+                },
+                {
                     "target": "com.amazonaws.ec2#AttachInternetGateway"
                 },
                 {
@@ -2656,6 +2862,9 @@
                 },
                 {
                     "target": "com.amazonaws.ec2#CreateCapacityReservationBySplitting"
+                },
+                {
+                    "target": "com.amazonaws.ec2#CreateCapacityReservationCancellationQuote"
                 },
                 {
                     "target": "com.amazonaws.ec2#CreateCapacityReservationFleet"
@@ -3267,6 +3476,9 @@
                     "target": "com.amazonaws.ec2#DescribeAccountAttributes"
                 },
                 {
+                    "target": "com.amazonaws.ec2#DescribeAccountVpcEncryptionControl"
+                },
+                {
                     "target": "com.amazonaws.ec2#DescribeAddresses"
                 },
                 {
@@ -3310,6 +3522,9 @@
                 },
                 {
                     "target": "com.amazonaws.ec2#DescribeCapacityReservationBillingRequests"
+                },
+                {
+                    "target": "com.amazonaws.ec2#DescribeCapacityReservationCancellationQuotes"
                 },
                 {
                     "target": "com.amazonaws.ec2#DescribeCapacityReservationFleets"
@@ -3481,6 +3696,9 @@
                 },
                 {
                     "target": "com.amazonaws.ec2#DescribeIpamPolicies"
+                },
+                {
+                    "target": "com.amazonaws.ec2#DescribeIpamPoolAllocations"
                 },
                 {
                     "target": "com.amazonaws.ec2#DescribeIpamPools"
@@ -3820,6 +4038,9 @@
                 },
                 {
                     "target": "com.amazonaws.ec2#DetachClassicLinkVpc"
+                },
+                {
+                    "target": "com.amazonaws.ec2#DetachImageWatermark"
                 },
                 {
                     "target": "com.amazonaws.ec2#DetachInternetGateway"
@@ -4278,6 +4499,9 @@
                     "target": "com.amazonaws.ec2#LockSnapshot"
                 },
                 {
+                    "target": "com.amazonaws.ec2#ModifyAccountVpcEncryptionControl"
+                },
+                {
                     "target": "com.amazonaws.ec2#ModifyAddressAttribute"
                 },
                 {
@@ -4360,6 +4584,9 @@
                 },
                 {
                     "target": "com.amazonaws.ec2#ModifyIpamPool"
+                },
+                {
+                    "target": "com.amazonaws.ec2#ModifyIpamPoolAllocation"
                 },
                 {
                     "target": "com.amazonaws.ec2#ModifyIpamPrefixListResolver"
@@ -4483,6 +4710,9 @@
                 },
                 {
                     "target": "com.amazonaws.ec2#ModifyVpcEndpointConnectionNotification"
+                },
+                {
+                    "target": "com.amazonaws.ec2#ModifyVpcEndpointPayerResponsibility"
                 },
                 {
                     "target": "com.amazonaws.ec2#ModifyVpcEndpointServiceConfiguration"
@@ -4764,10 +4994,222 @@
                     "name": "ec2"
                 },
                 "aws.protocols#ec2Query": {},
-                "smithy.api#documentation": "<fullname>Amazon Elastic Compute Cloud</fullname>\n         <p>You can access the features of Amazon Elastic Compute Cloud (Amazon EC2) programmatically. For more information,\n        see the <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide\">Amazon EC2 Developer Guide</a>.</p>",
+                "smithy.api#documentation": "<fullname>Amazon Elastic Compute Cloud</fullname>\n         <p>This is the <i>Amazon EC2 API Reference</i>. It provides descriptions, API request\n            parameters, and the XML response for each of the Amazon EC2 Query API actions. Note that the\n            Amazon EC2 API includes actions for Amazon EC2 plus additional services, such as Amazon EBS and Amazon VPC.</p>\n         <p class=\"title\">\n            <b>Learn more</b>\n         </p>\n         <ul>\n            <li>\n               <p>To learn about using the Query API, see \n                <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-low-level-api.html\">Using the API for Amazon EC2</a>.</p>\n            </li>\n            <li>\n               <p>To learn about the permissions required to call an Amazon EC2 API action, see \n                <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html\">Actions, resources, and condition keys for Amazon EC2</a>.</p>\n            </li>\n            <li>\n               <p>To get the list of API actions by service and resource, see \n                <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/OperationList-query.html\">Actions by service</a>.</p>\n            </li>\n            <li>\n               <p>To get the alphabetical list of API actions, see \n                .</p>\n            </li>\n            <li>\n               <p>To get descriptions of the API error codes, see \n                <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/errors-overview.html\">Error codes for the Amazon EC2 API</a>.</p>\n            </li>\n         </ul>\n         <p>Alternatively, use one of the following methods to access the Amazon EC2 API, instead of using\n            the Query API directly:</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/cli/latest/reference/ec2/\">Amazon Web Services CLI Command Reference - ec2 commands</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/AWS_EC2.html\">CloudFormation - Amazon EC2 resource type reference</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/powershell/v5/reference/items/EC2_cmdlets.html\">Amazon Web Services Tools for PowerShell Cmdlet Reference - Amazon EC2 cmdlets</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://builder.aws.com/build/tools\">Amazon Web Services SDKs</a>\n               </p>\n            </li>\n         </ul>",
                 "smithy.api#title": "Amazon Elastic Compute Cloud",
                 "smithy.api#xmlNamespace": {
                     "uri": "http://ec2.amazonaws.com/doc/2016-11-15"
+                },
+                "smithy.rules#endpointBdd": {
+                    "version": "1.1",
+                    "parameters": {
+                        "Region": {
+                            "builtIn": "AWS::Region",
+                            "required": false,
+                            "documentation": "The AWS region used to dispatch the request.",
+                            "type": "string"
+                        },
+                        "UseDualStack": {
+                            "builtIn": "AWS::UseDualStack",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+                            "type": "boolean"
+                        },
+                        "UseFIPS": {
+                            "builtIn": "AWS::UseFIPS",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+                            "type": "boolean"
+                        },
+                        "Endpoint": {
+                            "builtIn": "SDK::Endpoint",
+                            "required": false,
+                            "documentation": "Override the endpoint used to send this request",
+                            "type": "string"
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "isSet",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ]
+                        },
+                        {
+                            "fn": "aws.partition",
+                            "argv": [
+                                {
+                                    "ref": "Region"
+                                }
+                            ],
+                            "assign": "PartitionResult"
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseFIPS"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "ref": "UseDualStack"
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsDualStack"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "booleanEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "supportsFIPS"
+                                    ]
+                                },
+                                true
+                            ]
+                        },
+                        {
+                            "fn": "stringEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "name"
+                                    ]
+                                },
+                                "aws-us-gov"
+                            ]
+                        }
+                    ],
+                    "results": [
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": {
+                                    "ref": "Endpoint"
+                                },
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://ec2-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://ec2.{Region}.amazonaws.com",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://ec2-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "FIPS is enabled but this partition does not support FIPS",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://ec2.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "DualStack is enabled but this partition does not support DualStack",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://ec2.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
+                        }
+                    ],
+                    "root": 2,
+                    "nodeCount": 14,
+                    "nodes": "/////wAAAAH/////AAAAAAAAAA0AAAADAAAAAQAAAAQF9eEMAAAAAgAAAAUF9eEMAAAAAwAAAAgAAAAGAAAABAAAAAcF9eELAAAABQX14QkF9eEKAAAABAAAAAsAAAAJAAAABgAAAAoF9eEIAAAABwX14QYF9eEHAAAABQAAAAwF9eEFAAAABgX14QQF9eEFAAAAAwX14QEAAAAOAAAABAX14QIF9eED"
                 },
                 "smithy.rules#endpointRuleSet": {
                     "version": "1.0",
@@ -5809,6 +6251,23 @@
                 }
             }
         },
+        "com.amazonaws.ec2#AmdSevSnp": {
+            "type": "enum",
+            "members": {
+                "enabled": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "enabled"
+                    }
+                },
+                "disabled": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "disabled"
+                    }
+                }
+            }
+        },
         "com.amazonaws.ec2#AmdSevSnpSpecification": {
             "type": "enum",
             "members": {
@@ -6255,6 +6714,17 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "disable"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.ec2#ApplyCancellationCharges": {
+            "type": "enum",
+            "members": {
+                "COMMITMENT_WIND_DOWN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "commitment-wind-down"
                     }
                 }
             }
@@ -8602,6 +9072,64 @@
                         "aws.protocols#ec2QueryName": "Return",
                         "smithy.api#documentation": "<p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>",
                         "smithy.api#xmlName": "return"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.ec2#AttachImageWatermark": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#AttachImageWatermarkRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#AttachImageWatermarkResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Attaches a watermark to a non-public AMI. The watermark is a structured identifier that\n      automatically propagates to all derivative images created through\n        <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html\">CreateImage</a>, and\n        <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html\">CopyImage</a>.</p>\n         <p>Only the AMI owner can attach watermarks. Watermarks cannot be added to public\n      AMIs.</p>"
+            }
+        },
+        "com.amazonaws.ec2#AttachImageWatermarkRequest": {
+            "type": "structure",
+            "members": {
+                "ImageId": {
+                    "target": "com.amazonaws.ec2#ImageId",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ID of the AMI.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "WatermarkName": {
+                    "target": "com.amazonaws.ec2#ImageWatermarkNameRequest",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The name for the watermark. Combined with the caller's account ID to form the\n        <code>WatermarkKey</code> (<code>accountId:watermarkName</code>).</p>\n         <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces\n      ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or\n      underscores(_)</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Checks whether you have the required permissions for the action, without actually making the request, \n\t\t\tand provides an error response. If you have the required permissions, the error response is \n\t\t\t<code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#AttachImageWatermarkResult": {
+            "type": "structure",
+            "members": {
+                "WatermarkKey": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "WatermarkKey",
+                        "smithy.api#documentation": "<p>The watermark identifier, in <code>accountId:watermarkName</code> format (for example,\n        <code>123456789012:approvedAmi</code>).</p>",
+                        "smithy.api#xmlName": "watermarkKey"
                     }
                 }
             },
@@ -11112,7 +11640,7 @@
                 "target": "com.amazonaws.ec2#CancelCapacityReservationResult"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Cancels the specified Capacity Reservation, releases the reserved capacity, and\n\t\t\tchanges the Capacity Reservation's state to <code>cancelled</code>.</p>\n         <p>You can cancel a Capacity Reservation that is in the following states:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>assessing</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>active</code> and there is no commitment duration or the commitment\n\t\t\t\t\tduration has elapsed. You can't cancel a future-dated Capacity Reservation\n\t\t\t\t\tduring the commitment duration.</p>\n            </li>\n         </ul>\n         <note>\n            <p>You can't modify or cancel a Capacity Block. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html\">Capacity Blocks for ML</a>.</p>\n         </note>\n         <p>If a future-dated Capacity Reservation enters the <code>delayed</code> state, the\n\t\t\tcommitment duration is waived, and you can cancel it as soon as it enters the\n\t\t\t\t<code>active</code> state.</p>\n         <p>Instances running in the reserved capacity continue running until you stop them.\n\t\t\tStopped instances that target the Capacity Reservation can no longer launch. Modify\n\t\t\tthese instances to either target a different Capacity Reservation, launch On-Demand\n\t\t\tInstance capacity, or run in any open Capacity Reservation that has matching attributes\n\t\t\tand sufficient capacity.</p>"
+                "smithy.api#documentation": "<p>Cancels the specified Capacity Reservation, releases the reserved capacity, and\n\t\t\tchanges the Capacity Reservation's state to <code>cancelled</code>.</p>\n         <p>You can cancel a Capacity Reservation that is in the following states:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>assessing</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>scheduled</code> — requires a cancellation quote. Use\n\t\t\t\t\t<code>CreateCapacityReservationCancellationQuote</code> to generate a quote,\n\t\t\t\t\tthen pass the quote ID with <code>ApplyCancellationCharges</code> set to\n\t\t\t\t\t<code>commitment-wind-down</code>. The cancellation charge depends on how\n\t\t\t\t\tclose the reservation is to its start date.</p>\n            </li>\n            <li>\n               <p>\n                  <code>active</code> and there is no commitment duration or the commitment\n\t\t\t\t\tduration has elapsed.</p>\n            </li>\n            <li>\n               <p>\n                  <code>active</code> during the commitment duration — requires a\n\t\t\t\t\tcancellation quote. Use\n\t\t\t\t\t<code>CreateCapacityReservationCancellationQuote</code> to generate a quote,\n\t\t\t\t\tthen pass the quote ID with <code>ApplyCancellationCharges</code> set to\n\t\t\t\t\t<code>commitment-wind-down</code>. The Capacity Reservation transitions to\n\t\t\t\t\t<code>cancelling</code> while charges are applied.</p>\n            </li>\n            <li>\n               <p>\n                  <code>delayed</code> — the commitment duration is waived, so no\n\t\t\t\t\tcancellation charge applies.</p>\n            </li>\n         </ul>\n         <note>\n            <p>You can't modify or cancel a Capacity Block. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html\">Capacity Blocks for ML</a>.</p>\n         </note>\n         <p>Instances running in the reserved capacity continue running until you stop them.\n\t\t\tStopped instances that target the Capacity Reservation can no longer launch. Modify\n\t\t\tthese instances to either target a different Capacity Reservation, launch On-Demand\n\t\t\tInstance capacity, or run in any open Capacity Reservation that has matching attributes\n\t\t\tand sufficient capacity.</p>"
             }
         },
         "com.amazonaws.ec2#CancelCapacityReservationFleetError": {
@@ -11219,6 +11747,18 @@
                     "target": "com.amazonaws.ec2#Boolean",
                     "traits": {
                         "smithy.api#documentation": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                },
+                "ApplyCancellationCharges": {
+                    "target": "com.amazonaws.ec2#ApplyCancellationCharges",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the cancellation charge type to apply when cancelling a future-dated Capacity\n\t\t\tReservation during its commitment duration. Possible values include\n\t\t\t<code>commitment-wind-down</code>, which continues billing for the remaining commitment\n\t\t\tduration without delivering capacity.</p>"
+                    }
+                },
+                "QuoteId": {
+                    "target": "com.amazonaws.ec2#CapacityReservationCancellationQuoteId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the cancellation quote to use for the cancellation. You can generate a\n\t\t\tcancellation quote by using the <code>CreateCapacityReservationCancellationQuote</code>\n\t\t\taction. The cancellation quote must be in an <code>active</code> state.</p>"
                     }
                 }
             },
@@ -11855,6 +12395,63 @@
             "traits": {
                 "smithy.api#documentation": "<p>Contains the output of CancelSpotInstanceRequests.</p>",
                 "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.ec2#CancellationTerms": {
+            "type": "structure",
+            "members": {
+                "CancellationType": {
+                    "target": "com.amazonaws.ec2#ApplyCancellationCharges",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CancellationType",
+                        "smithy.api#documentation": "<p>The type of cancellation charge. Possible values include\n\t\t\t<code>commitment-wind-down</code>.</p>",
+                        "smithy.api#xmlName": "cancellationType"
+                    }
+                },
+                "ReservationState": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ReservationState",
+                        "smithy.api#documentation": "<p>The state that the Capacity Reservation will transition to after\n\t\t\tcancellation.</p>",
+                        "smithy.api#xmlName": "reservationState"
+                    }
+                },
+                "CommittedInstanceCount": {
+                    "target": "com.amazonaws.ec2#BoxedInteger",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CommittedInstanceCount",
+                        "smithy.api#documentation": "<p>The number of instances under commitment after cancellation.</p>",
+                        "smithy.api#xmlName": "committedInstanceCount"
+                    }
+                },
+                "ChargeCommitmentDurationHours": {
+                    "target": "com.amazonaws.ec2#BoxedLong",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ChargeCommitmentDurationHours",
+                        "smithy.api#documentation": "<p>The number of hours for which cancellation charges will apply.</p>",
+                        "smithy.api#xmlName": "chargeCommitmentDurationHours"
+                    }
+                },
+                "ChargeEndDate": {
+                    "target": "com.amazonaws.ec2#MillisecondDateTime",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ChargeEndDate",
+                        "smithy.api#documentation": "<p>The date and time at which cancellation charges will stop.</p>",
+                        "smithy.api#xmlName": "chargeEndDate"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes the cancellation terms for cancelling a future-dated Capacity Reservation\n\t\t\tduring its commitment duration.</p>"
+            }
+        },
+        "com.amazonaws.ec2#CancellationTermsSet": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#CancellationTerms",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
             }
         },
         "com.amazonaws.ec2#CancelledSpotInstanceRequest": {
@@ -13190,7 +13787,7 @@
                     "target": "com.amazonaws.ec2#CapacityReservationState",
                     "traits": {
                         "aws.protocols#ec2QueryName": "State",
-                        "smithy.api#documentation": "<p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of\n\t\t\tthe following states:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>active</code> - The capacity is available for use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>expired</code> - The Capacity Reservation expired automatically at the date and time \n\t\tspecified in your reservation request. The reserved capacity is no longer available for your use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no \n\t\tlonger available for your use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>pending</code> - The Capacity Reservation request was successful but the capacity \n\t\tprovisioning is still pending.</p>\n            </li>\n            <li>\n               <p>\n                  <code>failed</code> - The Capacity Reservation request has failed. A request can fail due to \n\t\trequest parameters that are not valid, capacity constraints, or instance limit constraints. You \n\t\tcan view a failed request for 60 minutes.</p>\n            </li>\n            <li>\n               <p>\n                  <code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The \n\t\tfuture-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled \n\t\tfor delivery on the requested start date.</p>\n            </li>\n            <li>\n               <p>\n                  <code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront \n\t    payment has not been processed yet.</p>\n            </li>\n            <li>\n               <p>\n                  <code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront \n\t    payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p>\n            </li>\n            <li>\n               <p>\n                  <code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) \n\t\tAmazon EC2 is assessing your request for a future-dated Capacity Reservation.</p>\n            </li>\n            <li>\n               <p>\n                  <code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 \n\t\tencountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is \n\t\tunable to deliver the requested capacity by the requested start date and time.</p>\n            </li>\n            <li>\n               <p>\n                  <code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 \n\t\tcan't support the future-dated Capacity Reservation request due to capacity constraints. You can view \n\t\tunsupported requests for 30 days. The Capacity Reservation will not be delivered.</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of\n\t\t\tthe following states:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>active</code> - The capacity is available for use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>expired</code> - The Capacity Reservation expired automatically at the date and time \n\t\tspecified in your reservation request. The reserved capacity is no longer available for your use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no \n\t\tlonger available for your use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>pending</code> - The Capacity Reservation request was successful but the capacity \n\t\tprovisioning is still pending.</p>\n            </li>\n            <li>\n               <p>\n                  <code>failed</code> - The Capacity Reservation request has failed. A request can fail due to \n\t\trequest parameters that are not valid, capacity constraints, or instance limit constraints. You \n\t\tcan view a failed request for 60 minutes.</p>\n            </li>\n            <li>\n               <p>\n                  <code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The \n\t\tfuture-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled \n\t\tfor delivery on the requested start date.</p>\n            </li>\n            <li>\n               <p>\n                  <code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront \n\t    payment has not been processed yet.</p>\n            </li>\n            <li>\n               <p>\n                  <code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront \n\t    payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p>\n            </li>\n            <li>\n               <p>\n                  <code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) \n\t\tAmazon EC2 is assessing your request for a future-dated Capacity Reservation.</p>\n            </li>\n            <li>\n               <p>\n                  <code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 \n\t\tencountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is \n\t\tunable to deliver the requested capacity by the requested start date and time.</p>\n            </li>\n            <li>\n               <p>\n                  <code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2\n\t\tcan't support the future-dated Capacity Reservation request due to capacity constraints. You can view\n\t\tunsupported requests for 30 days. The Capacity Reservation will not be delivered.</p>\n            </li>\n            <li>\n               <p>\n                  <code>cancelling</code> - (<i>Future-dated Capacity Reservations</i>) The\n\t\tCapacity Reservation is being cancelled. Capacity has been released but charges continue for\n\t\tthe commitment wind-down period. The reservation transitions to <code>cancelled</code> when\n\t\tthe wind-down completes.</p>\n            </li>\n         </ul>",
                         "smithy.api#xmlName": "state"
                     }
                 },
@@ -13457,6 +14054,122 @@
                 }
             }
         },
+        "com.amazonaws.ec2#CapacityReservationCancellationQuote": {
+            "type": "structure",
+            "members": {
+                "CapacityReservationCancellationQuoteId": {
+                    "target": "com.amazonaws.ec2#CapacityReservationCancellationQuoteId",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CapacityReservationCancellationQuoteId",
+                        "smithy.api#documentation": "<p>The ID of the cancellation quote.</p>",
+                        "smithy.api#xmlName": "capacityReservationCancellationQuoteId"
+                    }
+                },
+                "CapacityReservationId": {
+                    "target": "com.amazonaws.ec2#CapacityReservationId",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CapacityReservationId",
+                        "smithy.api#documentation": "<p>The ID of the Capacity Reservation associated with the cancellation quote.</p>",
+                        "smithy.api#xmlName": "capacityReservationId"
+                    }
+                },
+                "CreateTime": {
+                    "target": "com.amazonaws.ec2#MillisecondDateTime",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CreateTime",
+                        "smithy.api#documentation": "<p>The date and time at which the cancellation quote was created.</p>",
+                        "smithy.api#xmlName": "createTime"
+                    }
+                },
+                "ExpirationTime": {
+                    "target": "com.amazonaws.ec2#MillisecondDateTime",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ExpirationTime",
+                        "smithy.api#documentation": "<p>The date and time at which the cancellation quote expires.</p>",
+                        "smithy.api#xmlName": "expirationTime"
+                    }
+                },
+                "QuoteState": {
+                    "target": "com.amazonaws.ec2#CapacityReservationCancellationQuoteState",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "QuoteState",
+                        "smithy.api#documentation": "<p>The state of the cancellation quote. Possible values include\n\t\t\t<code>pending</code>, <code>active</code>, and <code>expired</code>.</p>",
+                        "smithy.api#xmlName": "quoteState"
+                    }
+                },
+                "CurrentConfiguration": {
+                    "target": "com.amazonaws.ec2#CapacityReservationConfiguration",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CurrentConfiguration",
+                        "smithy.api#documentation": "<p>The current configuration of the Capacity Reservation.</p>",
+                        "smithy.api#xmlName": "currentConfiguration"
+                    }
+                },
+                "CancellationTerms": {
+                    "target": "com.amazonaws.ec2#CancellationTermsSet",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CancellationTermSet",
+                        "smithy.api#documentation": "<p>The cancellation terms associated with the quote, including the fee type and\n\t\t\tcharge details.</p>",
+                        "smithy.api#xmlName": "cancellationTermSet"
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.ec2#TagList",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "TagSet",
+                        "smithy.api#documentation": "<p>The tags assigned to the cancellation quote.</p>",
+                        "smithy.api#xmlName": "tagSet"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes a Capacity Reservation cancellation quote, which provides the cancellation\n\t\t\tterms for cancelling a future-dated Capacity Reservation during its commitment\n\t\t\tduration.</p>"
+            }
+        },
+        "com.amazonaws.ec2#CapacityReservationCancellationQuoteId": {
+            "type": "string"
+        },
+        "com.amazonaws.ec2#CapacityReservationCancellationQuoteIdSet": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#CapacityReservationCancellationQuoteId",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            }
+        },
+        "com.amazonaws.ec2#CapacityReservationCancellationQuoteResponseSet": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#CapacityReservationCancellationQuote",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            }
+        },
+        "com.amazonaws.ec2#CapacityReservationCancellationQuoteState": {
+            "type": "enum",
+            "members": {
+                "pending": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "pending"
+                    }
+                },
+                "active": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "active"
+                    }
+                },
+                "expired": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "expired"
+                    }
+                }
+            }
+        },
         "com.amazonaws.ec2#CapacityReservationCommitmentDuration": {
             "type": "long",
             "traits": {
@@ -13488,6 +14201,30 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Information about your commitment for a future-dated Capacity Reservation.</p>"
+            }
+        },
+        "com.amazonaws.ec2#CapacityReservationConfiguration": {
+            "type": "structure",
+            "members": {
+                "InstanceCount": {
+                    "target": "com.amazonaws.ec2#Integer",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "InstanceCount",
+                        "smithy.api#documentation": "<p>The number of instances in the Capacity Reservation.</p>",
+                        "smithy.api#xmlName": "instanceCount"
+                    }
+                },
+                "ReservationState": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ReservationState",
+                        "smithy.api#documentation": "<p>The current state of the Capacity Reservation.</p>",
+                        "smithy.api#xmlName": "reservationState"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes the configuration of a Capacity Reservation.</p>"
             }
         },
         "com.amazonaws.ec2#CapacityReservationDeliveryPreference": {
@@ -14103,6 +14840,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "unsupported"
+                    }
+                },
+                "cancelling": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "cancelling"
                     }
                 },
                 "unavailable": {
@@ -16298,7 +17041,7 @@
                     "target": "com.amazonaws.ec2#Integer",
                     "traits": {
                         "aws.protocols#ec2QueryName": "TcpEstablishedTimeout",
-                        "smithy.api#documentation": "<p>Timeout (in seconds) for idle TCP\n\t\t\t\t\t\tconnections in an established state. Min: 60 seconds. Max: 432000 seconds (5\n\t\t\t\t\t\tdays). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>",
+                        "smithy.api#documentation": "<p>Timeout (in seconds) for idle TCP\n\t\t\t\t\t\tconnections in an established state. Min: 60 seconds. Max: 432000 seconds (5\n\t\t\t\t\t\tdays). Default: 350 seconds for Nitro v6 instance types (excluding\n\t\t\t\t\t\tP6e-GB200); 432000 seconds for all other instance types (including\n\t\t\t\t\t\tP6e-GB200). Recommended: Less than 432000 seconds.</p>",
                         "smithy.api#xmlName": "tcpEstablishedTimeout"
                     }
                 },
@@ -16330,7 +17073,7 @@
                     "target": "com.amazonaws.ec2#Integer",
                     "traits": {
                         "aws.protocols#ec2QueryName": "TcpEstablishedTimeout",
-                        "smithy.api#documentation": "<p>Timeout (in seconds) for idle TCP\n\t\t\t\t\t\tconnections in an established state. Min: 60 seconds. Max: 432000 seconds (5\n\t\t\t\t\t\tdays). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>",
+                        "smithy.api#documentation": "<p>Timeout (in seconds) for idle TCP\n\t\t\t\t\t\tconnections in an established state. Min: 60 seconds. Max: 432000 seconds (5\n\t\t\t\t\t\tdays). Default: 350 seconds for Nitro v6 instance types (excluding\n\t\t\t\t\t\tP6e-GB200); 432000 seconds for all other instance types (including\n\t\t\t\t\t\tP6e-GB200). Recommended: Less than 432000 seconds.</p>",
                         "smithy.api#xmlName": "tcpEstablishedTimeout"
                     }
                 },
@@ -16361,7 +17104,7 @@
                 "TcpEstablishedTimeout": {
                     "target": "com.amazonaws.ec2#Integer",
                     "traits": {
-                        "smithy.api#documentation": "<p>Timeout (in seconds) for idle TCP\n\t\t\t\t\t\tconnections in an established state. Min: 60 seconds. Max: 432000 seconds (5\n\t\t\t\t\t\tdays). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>"
+                        "smithy.api#documentation": "<p>Timeout (in seconds) for idle TCP\n\t\t\t\t\t\tconnections in an established state. Min: 60 seconds. Max: 432000 seconds (5\n\t\t\t\t\t\tdays). Default: 350 seconds for Nitro v6 instance types (excluding\n\t\t\t\t\t\tP6e-GB200); 432000 seconds for all other instance types (including\n\t\t\t\t\t\tP6e-GB200). Recommended: Less than 432000 seconds.</p>"
                     }
                 },
                 "UdpStreamTimeout": {
@@ -16388,7 +17131,7 @@
                     "target": "com.amazonaws.ec2#Integer",
                     "traits": {
                         "aws.protocols#ec2QueryName": "TcpEstablishedTimeout",
-                        "smithy.api#documentation": "<p>Timeout (in seconds) for idle TCP\n\t\t\t\t\t\tconnections in an established state. Min: 60 seconds. Max: 432000 seconds (5\n\t\t\t\t\t\tdays). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>",
+                        "smithy.api#documentation": "<p>Timeout (in seconds) for idle TCP\n\t\t\t\t\t\tconnections in an established state. Min: 60 seconds. Max: 432000 seconds (5\n\t\t\t\t\t\tdays). Default: 350 seconds for Nitro v6 instance types (excluding\n\t\t\t\t\t\tP6e-GB200); 432000 seconds for all other instance types (including\n\t\t\t\t\t\tP6e-GB200). Recommended: Less than 432000 seconds.</p>",
                         "smithy.api#xmlName": "tcpEstablishedTimeout"
                     }
                 },
@@ -16661,18 +17404,27 @@
                 ]
             }
         },
+        "com.amazonaws.ec2#CopyImageClientToken": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 128
+                }
+            }
+        },
         "com.amazonaws.ec2#CopyImageRequest": {
             "type": "structure",
             "members": {
                 "ClientToken": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#CopyImageClientToken",
                     "traits": {
                         "smithy.api#documentation": "<p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For\n      more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency in\n          Amazon EC2 API requests</a> in the <i>Amazon EC2 API\n      Reference</i>.</p>",
                         "smithy.api#idempotencyToken": {}
                     }
                 },
                 "Description": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#ImageDescriptionRequest",
                     "traits": {
                         "smithy.api#documentation": "<p>A description for the new AMI.</p>"
                     }
@@ -16694,7 +17446,7 @@
                     }
                 },
                 "Name": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#ImageNameRequest",
                     "traits": {
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>The name of the new AMI.</p>",
@@ -17387,6 +18139,70 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.ec2#CreateCapacityReservationCancellationQuote": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#CreateCapacityReservationCancellationQuoteRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#CreateCapacityReservationCancellationQuoteResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Generates a cancellation quote for a future-dated Capacity Reservation that is\n\t\t\twithin its commitment duration. The quote includes the cancellation terms and a quote ID\n\t\t\tthat you can pass to the <code>CancelCapacityReservation</code> action. Cancellation\n\t\t\tquotes are valid for 24 hours.</p>"
+            }
+        },
+        "com.amazonaws.ec2#CreateCapacityReservationCancellationQuoteRequest": {
+            "type": "structure",
+            "members": {
+                "CapacityReservationId": {
+                    "target": "com.amazonaws.ec2#CapacityReservationId",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ID of the Capacity Reservation.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ClientToken": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensure Idempotency</a>.</p>",
+                        "smithy.api#idempotencyToken": {}
+                    }
+                },
+                "TagSpecifications": {
+                    "target": "com.amazonaws.ec2#TagSpecificationList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The tags to apply to the cancellation quote.</p>",
+                        "smithy.api#xmlName": "TagSpecification"
+                    }
+                },
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#CreateCapacityReservationCancellationQuoteResult": {
+            "type": "structure",
+            "members": {
+                "CapacityReservationCancellationQuote": {
+                    "target": "com.amazonaws.ec2#CapacityReservationCancellationQuote",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CapacityReservationCancellationQuote",
+                        "smithy.api#documentation": "<p>Information about the Capacity Reservation cancellation quote.</p>",
+                        "smithy.api#xmlName": "capacityReservationCancellationQuote"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.ec2#CreateCapacityReservationFleet": {
             "type": "operation",
             "input": {
@@ -17418,9 +18234,7 @@
                 "InstanceTypeSpecifications": {
                     "target": "com.amazonaws.ec2#ReservationFleetInstanceSpecificationList",
                     "traits": {
-                        "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>Information about the instance types for which to reserve the capacity.</p>",
-                        "smithy.api#required": {},
                         "smithy.api#xmlName": "InstanceTypeSpecification"
                     }
                 },
@@ -18980,6 +19794,13 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The destination options.</p>"
                     }
+                },
+                "TagFieldSpecifications": {
+                    "target": "com.amazonaws.ec2#TagFieldSpecificationListRequest",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>",
+                        "smithy.api#xmlName": "TagFieldSpecification"
+                    }
                 }
             },
             "traits": {
@@ -19154,7 +19975,7 @@
                     }
                 },
                 "Name": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#ImageNameRequest",
                     "traits": {
                         "aws.protocols#ec2QueryName": "Name",
                         "smithy.api#clientOptional": {},
@@ -19164,7 +19985,7 @@
                     }
                 },
                 "Description": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#ImageDescriptionRequest",
                     "traits": {
                         "aws.protocols#ec2QueryName": "Description",
                         "smithy.api#documentation": "<p>A description for the new image.</p>",
@@ -19220,6 +20041,15 @@
                 "smithy.api#documentation": "<p>Creates a report that shows how your image is used across other Amazon Web Services accounts. The report\n      provides visibility into which accounts are using the specified image, and how many resources\n      (EC2 instances or launch templates) are referencing it.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html\">View your AMI usage</a> in the\n      <i>Amazon EC2 User Guide</i>.</p>"
             }
         },
+        "com.amazonaws.ec2#CreateImageUsageReportClientToken": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 128
+                }
+            }
+        },
         "com.amazonaws.ec2#CreateImageUsageReportRequest": {
             "type": "structure",
             "members": {
@@ -19254,7 +20084,7 @@
                     }
                 },
                 "ClientToken": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#CreateImageUsageReportClientToken",
                     "traits": {
                         "smithy.api#documentation": "<p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>",
                         "smithy.api#idempotencyToken": {}
@@ -20508,7 +21338,7 @@
                     }
                 },
                 "LaunchTemplateName": {
-                    "target": "com.amazonaws.ec2#LaunchTemplateName",
+                    "target": "com.amazonaws.ec2#String",
                     "traits": {
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>A name for the launch template.</p>",
@@ -22155,7 +22985,7 @@
                 "target": "com.amazonaws.ec2#CreatePlacementGroupResult"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Creates a placement group in which to launch instances. The strategy of the placement\n            group determines how the instances are organized within the group. </p>\n         <p>A <code>cluster</code> placement group is a logical grouping of instances within a\n            single Availability Zone that benefit from low network latency, high network throughput.\n            A <code>spread</code> placement group places instances on distinct hardware. A\n                <code>partition</code> placement group places groups of instances in different\n            partitions, where instances in one partition do not share the same hardware with\n            instances in another partition.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement groups</a> in the\n                <i>Amazon EC2 User Guide</i>.</p>",
+                "smithy.api#documentation": "<p>Creates a placement group in which to launch instances. The strategy of the placement\n            group determines how the instances are organized within the group. </p>\n         <p>A <code>cluster</code> placement group is a logical grouping of instances within a\n            single Availability Zone that benefit from low network latency, high network throughput.\n            A <code>spread</code> placement group places instances on distinct hardware. A\n                <code>partition</code> placement group places groups of instances in different\n            partitions, where instances in one partition do not share the same hardware with\n            instances in another partition. A <code>precision-time</code> placement group places\n            instances on supported hardware with direct access to high-precision time sources in\n            Amazon Web Services infrastructure.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement groups</a> in the\n                <i>Amazon EC2 User Guide</i>.</p>",
                 "smithy.api#examples": [
                     {
                         "title": "To create a placement group",
@@ -22201,6 +23031,12 @@
                     "target": "com.amazonaws.ec2#OperatorRequest",
                     "traits": {
                         "smithy.api#documentation": "<p>Reserved for internal use.</p>"
+                    }
+                },
+                "ParentGroupId": {
+                    "target": "com.amazonaws.ec2#PlacementGroupId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of a parent placement group. Valid only when <b>Strategy</b>\n            is set to <code>cluster</code>.</p>"
                     }
                 },
                 "DryRun": {
@@ -22501,7 +23337,7 @@
                     }
                 },
                 "Name": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#ImageNameRequest",
                     "traits": {
                         "smithy.api#documentation": "<p>The name for the restored AMI. The name must be unique for AMIs in the Region for this\n      account. If you do not provide a name, the new AMI gets the same name as the original\n      AMI.</p>"
                     }
@@ -30549,7 +31385,7 @@
                 "target": "smithy.api#Unit"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Deletes the specified placement group. You must terminate all instances in the\n            placement group before you can delete the placement group. For more information, see\n                <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>",
+                "smithy.api#documentation": "<p>Deletes the specified placement group. You must terminate all instances in the\n            placement group before you can delete the placement group. You cannot delete a\n            placement group that is a parent of a cluster placement group. Delete the cluster\n            placement groups first. For more information, see\n                <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>",
                 "smithy.api#examples": [
                     {
                         "title": "To delete a placement group",
@@ -33952,6 +34788,48 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.ec2#DescribeAccountVpcEncryptionControl": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#DescribeAccountVpcEncryptionControlRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#DescribeAccountVpcEncryptionControlResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes the account-level VPC Encryption Control configuration for your account. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html\">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>"
+            }
+        },
+        "com.amazonaws.ec2#DescribeAccountVpcEncryptionControlRequest": {
+            "type": "structure",
+            "members": {
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#DescribeAccountVpcEncryptionControlResult": {
+            "type": "structure",
+            "members": {
+                "AccountVpcEncryptionControl": {
+                    "target": "com.amazonaws.ec2#AccountVpcEncryptionControl",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "AccountVpcEncryptionControl",
+                        "smithy.api#documentation": "<p>Information about the account-level VPC Encryption Control configuration.</p>",
+                        "smithy.api#xmlName": "accountVpcEncryptionControl"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.ec2#DescribeAddressTransfers": {
             "type": "operation",
             "input": {
@@ -35268,6 +36146,91 @@
                         "aws.protocols#ec2QueryName": "CapacityReservationBillingRequestSet",
                         "smithy.api#documentation": "<p>Information about the request.</p>",
                         "smithy.api#xmlName": "capacityReservationBillingRequestSet"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.ec2#DescribeCapacityReservationCancellationQuotes": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#DescribeCapacityReservationCancellationQuotesRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#DescribeCapacityReservationCancellationQuotesResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes one or more Capacity Reservation cancellation quotes. The results describe\n\t\t\tonly the quotes that you have previously generated by using the\n\t\t\t<code>CreateCapacityReservationCancellationQuote</code> action.</p>"
+            }
+        },
+        "com.amazonaws.ec2#DescribeCapacityReservationCancellationQuotesRequest": {
+            "type": "structure",
+            "members": {
+                "CapacityReservationCancellationQuoteIds": {
+                    "target": "com.amazonaws.ec2#CapacityReservationCancellationQuoteIdSet",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The IDs of the cancellation quotes to describe.</p>",
+                        "smithy.api#xmlName": "CapacityReservationCancellationQuoteId"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.ec2#DescribeCapacityReservationCancellationQuotesRequestMaxResults",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, \n    see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination\">Pagination</a>.</p>"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The token to use to retrieve the next page of results.</p>"
+                    }
+                },
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                },
+                "Filters": {
+                    "target": "com.amazonaws.ec2#FilterList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>One or more filters. Filter names and values are case-sensitive.</p>",
+                        "smithy.api#xmlName": "Filter"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#DescribeCapacityReservationCancellationQuotesRequestMaxResults": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        "com.amazonaws.ec2#DescribeCapacityReservationCancellationQuotesResult": {
+            "type": "structure",
+            "members": {
+                "CapacityReservationCancellationQuotes": {
+                    "target": "com.amazonaws.ec2#CapacityReservationCancellationQuoteResponseSet",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CapacityReservationCancellationQuoteSet",
+                        "smithy.api#documentation": "<p>Information about the Capacity Reservation cancellation quotes.</p>",
+                        "smithy.api#xmlName": "capacityReservationCancellationQuoteSet"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "NextToken",
+                        "smithy.api#documentation": "<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>",
+                        "smithy.api#xmlName": "nextToken"
                     }
                 }
             },
@@ -39102,7 +40065,7 @@
                 "Filters": {
                     "target": "com.amazonaws.ec2#FilterList",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>architecture</code> - The image architecture (<code>i386</code> |\n            <code>x86_64</code> | <code>arm64</code> | <code>x86_64_mac</code> |\n            <code>arm64_mac</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates\n          whether the Amazon EBS volume is deleted on instance termination.</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.device-name</code> - The device name specified in the block\n          device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS\n          volume.</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.volume-size</code> - The volume size of the Amazon EBS volume, in\n          GiB.</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.volume-type</code> - The volume type of the Amazon EBS volume\n            (<code>io1</code> | <code>io2</code> | <code>gp2</code> | <code>gp3</code> | <code>sc1\n          </code>| <code>st1</code> | <code>standard</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the Amazon EBS\n          volume is encrypted.</p>\n            </li>\n            <li>\n               <p>\n                  <code>creation-date</code> - The time when the image was created, in the ISO 8601\n          format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example,\n            <code>2021-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for\n          example, <code>2021-09-29T*</code>, which matches an entire day.</p>\n            </li>\n            <li>\n               <p>\n                  <code>description</code> - The description of the image (provided during image\n          creation).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ena-support</code> - A Boolean that indicates whether enhanced networking with\n          ENA is enabled.</p>\n            </li>\n            <li>\n               <p>\n                  <code>free-tier-eligible</code> - A Boolean that indicates whether this image can be\n          used under the Amazon Web Services Free Tier  (<code>true</code> | <code>false</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |\n          <code>xen</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-allowed</code> - A Boolean that indicates whether the image meets the\n          criteria specified for Allowed AMIs.</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-id</code> - The ID of the image.</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> |\n            <code>ramdisk</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>is-public</code> - A Boolean that indicates whether the image is public.</p>\n            </li>\n            <li>\n               <p>\n                  <code>kernel-id</code> - The kernel ID.</p>\n            </li>\n            <li>\n               <p>\n                  <code>manifest-location</code> - The location of the image manifest.</p>\n            </li>\n            <li>\n               <p>\n                  <code>name</code> - The name of the AMI (provided during image creation).</p>\n            </li>\n            <li>\n               <p>\n                  <code>owner-alias</code> - The owner alias (<code>amazon</code> |\n            <code>aws-backup-vault</code> | <code>aws-marketplace</code>). The valid aliases are\n          defined in an Amazon-maintained list. This is not the Amazon Web Services account alias\n          that can be set using the IAM console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.</p>\n            </li>\n            <li>\n               <p>\n                  <code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend\n          that you use the <b>Owner</b> request parameter instead of this\n          filter.</p>\n            </li>\n            <li>\n               <p>\n                  <code>platform</code> - The platform. The only supported value is\n          <code>windows</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>product-code</code> - The product code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>product-code.type</code> - The type of the product code\n          (<code>marketplace</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ramdisk-id</code> - The RAM disk ID.</p>\n            </li>\n            <li>\n               <p>\n                  <code>root-device-name</code> - The device name of the root device volume (for example,\n            <code>/dev/sda1</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |\n            <code>instance-store</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>source-image-id</code> - The ID of the source AMI from which the AMI was\n          created.</p>\n            </li>\n            <li>\n               <p>\n                  <code>source-image-region</code> - The Region of the source AMI.</p>\n            </li>\n            <li>\n               <p>\n                  <code>source-instance-id</code> - The ID of the instance that the AMI was created from\n          if the AMI was created using CreateImage. This filter is applicable only if the AMI was\n          created using <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html\">CreateImage</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>state</code> - The state of the image (<code>available</code> | <code>pending</code>\n          | <code>failed</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>state-reason-code</code> - The reason code for the state change.</p>\n            </li>\n            <li>\n               <p>\n                  <code>state-reason-message</code> - The message for the state change.</p>\n            </li>\n            <li>\n               <p>\n                  <code>sriov-net-support</code> - A value of <code>simple</code> indicates that\n          enhanced networking with the Intel 82599 VF interface is enabled.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag:<key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> |\n            <code>hvm</code>).</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>architecture</code> - The image architecture (<code>i386</code> |\n            <code>x86_64</code> | <code>arm64</code> | <code>x86_64_mac</code> |\n            <code>arm64_mac</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates\n          whether the Amazon EBS volume is deleted on instance termination.</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.device-name</code> - The device name specified in the block\n          device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS\n          volume.</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.volume-size</code> - The volume size of the Amazon EBS volume, in\n          GiB.</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.volume-type</code> - The volume type of the Amazon EBS volume\n            (<code>io1</code> | <code>io2</code> | <code>gp2</code> | <code>gp3</code> | <code>sc1\n          </code>| <code>st1</code> | <code>standard</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the Amazon EBS\n          volume is encrypted.</p>\n            </li>\n            <li>\n               <p>\n                  <code>creation-date</code> - The time when the image was created, in the ISO 8601\n          format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example,\n            <code>2021-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for\n          example, <code>2021-09-29T*</code>, which matches an entire day.</p>\n            </li>\n            <li>\n               <p>\n                  <code>description</code> - The description of the image (provided during image\n          creation).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ena-support</code> - A Boolean that indicates whether enhanced networking with\n          ENA is enabled.</p>\n            </li>\n            <li>\n               <p>\n                  <code>free-tier-eligible</code> - A Boolean that indicates whether this image can be\n          used under the Amazon Web Services Free Tier  (<code>true</code> | <code>false</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |\n          <code>xen</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-allowed</code> - A Boolean that indicates whether the image meets the\n          criteria specified for Allowed AMIs.</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-id</code> - The ID of the image.</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-watermark.source-image-creation-time</code> - The creation date of the\n          source AMI, in the ISO 8601 format in the UTC time zone\n            (<code>\n                     <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i>\n                  </code>).\n          You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which\n          matches an entire day.</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-watermark.source-image-id</code> - The ID of the AMI to which the\n          watermark was originally attached.</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-watermark.source-image-region</code> - The Region where the watermark\n          was originally attached.</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-watermark.watermark-creation-time</code> - The date and time the\n          watermark was attached to the AMI, in the ISO 8601 format in the UTC time zone\n            (<code>\n                     <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i>\n                  </code>).\n          You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which\n          matches an entire day.</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-watermark.watermark-key</code> - The watermark identifier, in\n            <code>accountId:watermarkName</code> format (for example,\n            <code>123456789012:approvedAmi</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> |\n            <code>ramdisk</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>is-public</code> - A Boolean that indicates whether the image is public.</p>\n            </li>\n            <li>\n               <p>\n                  <code>kernel-id</code> - The kernel ID.</p>\n            </li>\n            <li>\n               <p>\n                  <code>manifest-location</code> - The location of the image manifest.</p>\n            </li>\n            <li>\n               <p>\n                  <code>name</code> - The name of the AMI (provided during image creation).</p>\n            </li>\n            <li>\n               <p>\n                  <code>owner-alias</code> - The owner alias (<code>amazon</code> |\n            <code>aws-backup-vault</code> | <code>aws-marketplace</code>). The valid aliases are\n          defined in an Amazon-maintained list. This is not the Amazon Web Services account alias\n          that can be set using the IAM console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.</p>\n            </li>\n            <li>\n               <p>\n                  <code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend\n          that you use the <b>Owner</b> request parameter instead of this\n          filter.</p>\n            </li>\n            <li>\n               <p>\n                  <code>platform</code> - The platform. The only supported value is\n          <code>windows</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>product-code</code> - The product code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>product-code.type</code> - The type of the product code\n          (<code>marketplace</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>public-ssm-parameter-name</code> - The name of a public Systems Manager\n          parameter associated with the AMI. The parameter must be in a trusted Amazon Web Services namespace\n          under <code>aws/service/</code>. Returns all AMIs that have ever been associated with\n          the parameter, including previous versions.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ramdisk-id</code> - The RAM disk ID.</p>\n            </li>\n            <li>\n               <p>\n                  <code>root-device-name</code> - The device name of the root device volume (for example,\n            <code>/dev/sda1</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |\n            <code>instance-store</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>source-image-id</code> - The ID of the source AMI from which the AMI was\n          created.</p>\n            </li>\n            <li>\n               <p>\n                  <code>source-image-region</code> - The Region of the source AMI.</p>\n            </li>\n            <li>\n               <p>\n                  <code>source-instance-id</code> - The ID of the instance that the AMI was created from\n          if the AMI was created using CreateImage. This filter is applicable only if the AMI was\n          created using <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html\">CreateImage</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>state</code> - The state of the image (<code>available</code> | <code>pending</code>\n          | <code>failed</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>state-reason-code</code> - The reason code for the state change.</p>\n            </li>\n            <li>\n               <p>\n                  <code>state-reason-message</code> - The message for the state change.</p>\n            </li>\n            <li>\n               <p>\n                  <code>sriov-net-support</code> - A value of <code>simple</code> indicates that\n          enhanced networking with the Intel 82599 VF interface is enabled.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag:<key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> |\n            <code>hvm</code>).</p>\n            </li>\n         </ul>",
                         "smithy.api#xmlName": "Filter"
                     }
                 }
@@ -40363,7 +41326,7 @@
                 "target": "com.amazonaws.ec2#DescribeInstanceTypesResult"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Describes the specified instance types. By default, all instance types for the current\n   Region are described. Alternatively, you can filter the results.</p>",
+                "smithy.api#documentation": "<p>Describes the specified instance types. By default, all instance types for the current\n   Region are described. Alternatively, you can filter the results. To include instance types\n   that are not supported in the current Region, set <code>IncludeUnsupportedInRegion</code>\n   to <code>true</code>.</p>",
                 "smithy.api#paginated": {
                     "inputToken": "NextToken",
                     "outputToken": "NextToken",
@@ -40405,6 +41368,12 @@
                     "target": "com.amazonaws.ec2#NextToken",
                     "traits": {
                         "smithy.api#documentation": "<p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>"
+                    }
+                },
+                "IncludeUnsupportedInRegion": {
+                    "target": "com.amazonaws.ec2#IncludeUnsupportedInRegion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If <code>true</code>, the response includes instance types that are not supported\n   in the current Region, in addition to the supported types. Default: <code>false</code>.</p>"
                     }
                 }
             },
@@ -41109,6 +42078,97 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.ec2#DescribeIpamPoolAllocations": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#DescribeIpamPoolAllocationsRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#DescribeIpamPoolAllocationsResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes IPAM pool allocations. You can describe all allocations owned by you across all pools, or you can describe specific allocations by ID.</p>\n         <p>If you specify <code>IpamPoolAllocationIds</code>, the results include only the specified allocations. If you do not specify <code>IpamPoolAllocationIds</code>, the results include all allocations owned by you. You can use <code>Filters</code> to narrow the results.</p>\n         <note>\n            <p>This action returns only allocations directly owned by you. To view all allocations in a pool you own or that has been shared with you, including allocations owned by other accounts, use <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html\">GetIpamPoolAllocations</a>.</p>\n         </note>",
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "IpamPoolAllocations",
+                    "pageSize": "MaxResults"
+                }
+            }
+        },
+        "com.amazonaws.ec2#DescribeIpamPoolAllocationsMaxResults": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1000,
+                    "max": 100000
+                }
+            }
+        },
+        "com.amazonaws.ec2#DescribeIpamPoolAllocationsRequest": {
+            "type": "structure",
+            "members": {
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A check for whether you have the required permissions for the action without actually making the request \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                },
+                "IpamPoolAllocationIds": {
+                    "target": "com.amazonaws.ec2#ValueStringList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The IDs of the IPAM pool allocations you want to describe.</p>",
+                        "smithy.api#xmlName": "IpamPoolAllocationId"
+                    }
+                },
+                "Filters": {
+                    "target": "com.amazonaws.ec2#FilterList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>One or more filters for the request. For more information about filtering, see <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html\">Filtering CLI output</a>.</p>",
+                        "smithy.api#xmlName": "Filter"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.ec2#DescribeIpamPoolAllocationsMaxResults",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination\">Pagination</a>.</p>"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.ec2#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The token for the next page of results.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#DescribeIpamPoolAllocationsResult": {
+            "type": "structure",
+            "members": {
+                "IpamPoolAllocations": {
+                    "target": "com.amazonaws.ec2#IpamPoolAllocationSet",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "IpamPoolAllocationSet",
+                        "smithy.api#documentation": "<p>Information about the IPAM pool allocations.</p>",
+                        "smithy.api#xmlName": "ipamPoolAllocationSet"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.ec2#NextToken",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "NextToken",
+                        "smithy.api#documentation": "<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>",
+                        "smithy.api#xmlName": "nextToken"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.ec2#DescribeIpamPools": {
             "type": "operation",
             "input": {
@@ -41146,7 +42206,7 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ec2#IpamMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return in the request.</p>"
+                        "smithy.api#documentation": "<p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination\">Pagination</a>.</p>"
                     }
                 },
                 "NextToken": {
@@ -41562,7 +42622,7 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ec2#IpamMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return in the request.</p>"
+                        "smithy.api#documentation": "<p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination\">Pagination</a>.</p>"
                     }
                 },
                 "NextToken": {
@@ -41644,7 +42704,7 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ec2#IpamMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return in the request.</p>"
+                        "smithy.api#documentation": "<p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination\">Pagination</a>.</p>"
                     }
                 },
                 "NextToken": {
@@ -44409,7 +45469,7 @@
                 "Filters": {
                     "target": "com.amazonaws.ec2#FilterList",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>group-name</code> - The name of the placement group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement\n                    group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>spread-level</code> - The spread level for the placement group\n                        (<code>host</code> | <code>rack</code>). </p>\n            </li>\n            <li>\n               <p>\n                  <code>state</code> - The state of the placement group (<code>pending</code> |\n                        <code>available</code> | <code>deleting</code> |\n                    <code>deleted</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>strategy</code> - The strategy of the placement group\n                        (<code>cluster</code> | <code>spread</code> |\n                    <code>partition</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag:<key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>group-name</code> - The name of the placement group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement\n                    group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>spread-level</code> - The spread level for the placement group\n                        (<code>host</code> | <code>rack</code>). </p>\n            </li>\n            <li>\n               <p>\n                  <code>state</code> - The state of the placement group (<code>pending</code> |\n                        <code>available</code> | <code>deleting</code> |\n                    <code>deleted</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>strategy</code> - The strategy of the placement group\n                        (<code>cluster</code> | <code>spread</code> |\n                    <code>partition</code> | <code>precision-time</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag:<key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p>\n            </li>\n         </ul>",
                         "smithy.api#xmlName": "Filter"
                     }
                 }
@@ -50982,6 +52042,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The maximum number of results (up to a limit of 500) to be returned in a paginated\n      request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination\">Pagination</a>.</p>"
                     }
+                },
+                "IncludeManagedResources": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>"
+                    }
                 }
             },
             "traits": {
@@ -52823,6 +53889,64 @@
             }
         },
         "com.amazonaws.ec2#DetachClassicLinkVpcResult": {
+            "type": "structure",
+            "members": {
+                "Return": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "Return",
+                        "smithy.api#documentation": "<p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>",
+                        "smithy.api#xmlName": "return"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.ec2#DetachImageWatermark": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#DetachImageWatermarkRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#DetachImageWatermarkResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Removes a watermark from the specified AMI. This is an idempotent operation. It succeeds\n      even if the watermark does not exist on the image.</p>\n         <p>Removing a watermark from an image does not affect derivative images that already carry\n      the watermark.</p>\n         <p>Only the AMI owner can detach watermarks.</p>"
+            }
+        },
+        "com.amazonaws.ec2#DetachImageWatermarkRequest": {
+            "type": "structure",
+            "members": {
+                "ImageId": {
+                    "target": "com.amazonaws.ec2#ImageId",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ID of the AMI.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "WatermarkKey": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The watermark key to remove, in <code>accountId:watermarkName</code> format (for example,\n        <code>123456789012:approvedAmi</code>).</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Checks whether you have the required permissions for the action, without actually making the request, \n\t\t\tand provides an error response. If you have the required permissions, the error response is \n\t\t\t<code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#DetachImageWatermarkResult": {
             "type": "structure",
             "members": {
                 "Return": {
@@ -62545,6 +63669,14 @@
                         "smithy.api#documentation": "<p>The destination options.</p>",
                         "smithy.api#xmlName": "destinationOptions"
                     }
+                },
+                "TagFieldSpecifications": {
+                    "target": "com.amazonaws.ec2#TagFieldSpecificationListResponse",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "TagFieldSpecificationSet",
+                        "smithy.api#documentation": "<p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>",
+                        "smithy.api#xmlName": "tagFieldSpecificationSet"
+                    }
                 }
             },
             "traits": {
@@ -63882,7 +65014,7 @@
                     "target": "com.amazonaws.ec2#CapacityReservationState",
                     "traits": {
                         "aws.protocols#ec2QueryName": "State",
-                        "smithy.api#documentation": "<p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of\n\t\t\tthe following states:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>active</code> - The capacity is available for use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>expired</code> - The Capacity Reservation expired automatically at the date and time \n\t\tspecified in your reservation request. The reserved capacity is no longer available for your use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no \n\t\tlonger available for your use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>pending</code> - The Capacity Reservation request was successful but the capacity \n\t\tprovisioning is still pending.</p>\n            </li>\n            <li>\n               <p>\n                  <code>failed</code> - The Capacity Reservation request has failed. A request can fail due to \n\t\trequest parameters that are not valid, capacity constraints, or instance limit constraints. You \n\t\tcan view a failed request for 60 minutes.</p>\n            </li>\n            <li>\n               <p>\n                  <code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The \n\t\tfuture-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled \n\t\tfor delivery on the requested start date.</p>\n            </li>\n            <li>\n               <p>\n                  <code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront \n\t    payment has not been processed yet.</p>\n            </li>\n            <li>\n               <p>\n                  <code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront \n\t    payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p>\n            </li>\n            <li>\n               <p>\n                  <code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) \n\t\tAmazon EC2 is assessing your request for a future-dated Capacity Reservation.</p>\n            </li>\n            <li>\n               <p>\n                  <code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 \n\t\tencountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is \n\t\tunable to deliver the requested capacity by the requested start date and time.</p>\n            </li>\n            <li>\n               <p>\n                  <code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 \n\t\tcan't support the future-dated Capacity Reservation request due to capacity constraints. You can view \n\t\tunsupported requests for 30 days. The Capacity Reservation will not be delivered.</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of\n\t\t\tthe following states:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>active</code> - The capacity is available for use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>expired</code> - The Capacity Reservation expired automatically at the date and time \n\t\tspecified in your reservation request. The reserved capacity is no longer available for your use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no \n\t\tlonger available for your use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>pending</code> - The Capacity Reservation request was successful but the capacity \n\t\tprovisioning is still pending.</p>\n            </li>\n            <li>\n               <p>\n                  <code>failed</code> - The Capacity Reservation request has failed. A request can fail due to \n\t\trequest parameters that are not valid, capacity constraints, or instance limit constraints. You \n\t\tcan view a failed request for 60 minutes.</p>\n            </li>\n            <li>\n               <p>\n                  <code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The \n\t\tfuture-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled \n\t\tfor delivery on the requested start date.</p>\n            </li>\n            <li>\n               <p>\n                  <code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront \n\t    payment has not been processed yet.</p>\n            </li>\n            <li>\n               <p>\n                  <code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront \n\t    payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p>\n            </li>\n            <li>\n               <p>\n                  <code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) \n\t\tAmazon EC2 is assessing your request for a future-dated Capacity Reservation.</p>\n            </li>\n            <li>\n               <p>\n                  <code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 \n\t\tencountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is \n\t\tunable to deliver the requested capacity by the requested start date and time.</p>\n            </li>\n            <li>\n               <p>\n                  <code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2\n\t\tcan't support the future-dated Capacity Reservation request due to capacity constraints. You can view\n\t\tunsupported requests for 30 days. The Capacity Reservation will not be delivered.</p>\n            </li>\n            <li>\n               <p>\n                  <code>cancelling</code> - (<i>Future-dated Capacity Reservations</i>) The\n\t\tCapacity Reservation is being cancelled. Capacity has been released but charges continue for\n\t\tthe commitment wind-down period. The reservation transitions to <code>cancelled</code> when\n\t\tthe wind-down completes.</p>\n            </li>\n         </ul>",
                         "smithy.api#xmlName": "state"
                     }
                 },
@@ -65788,7 +66920,7 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ec2#IpamMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return in the request.</p>"
+                        "smithy.api#documentation": "<p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination\">Pagination</a>.</p>"
                     }
                 },
                 "NextToken": {
@@ -66120,7 +67252,7 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ec2#IpamMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return in the request.</p>"
+                        "smithy.api#documentation": "<p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination\">Pagination</a>.</p>"
                     }
                 },
                 "NextToken": {
@@ -69251,10 +70383,48 @@
                         "smithy.api#documentation": "<p>The ID of the Outpost hardware asset on which the Dedicated Host is allocated.</p>",
                         "smithy.api#xmlName": "assetId"
                     }
+                },
+                "CpuOptions": {
+                    "target": "com.amazonaws.ec2#HostCpuOptions",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "CpuOptions",
+                        "smithy.api#documentation": "<p>The CPU options for the Dedicated Host, including AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>",
+                        "smithy.api#xmlName": "cpuOptions"
+                    }
                 }
             },
             "traits": {
                 "smithy.api#documentation": "<p>Describes the properties of the Dedicated Host.</p>"
+            }
+        },
+        "com.amazonaws.ec2#HostCpuOptions": {
+            "type": "structure",
+            "members": {
+                "AmdSevSnp": {
+                    "target": "com.amazonaws.ec2#AmdSevSnp",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "AmdSevSnp",
+                        "smithy.api#documentation": "<p>Specifies whether AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) is enabled or disabled for the Dedicated Host. If you don't specify a value, AMD SEV-SNP is <code>disabled</code>.</p>",
+                        "smithy.api#xmlName": "amdSevSnp"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains the CPU options for a Dedicated Host, including AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>"
+            }
+        },
+        "com.amazonaws.ec2#HostCpuOptionsRequest": {
+            "type": "structure",
+            "members": {
+                "AmdSevSnp": {
+                    "target": "com.amazonaws.ec2#AmdSevSnp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) is enabled or disabled for the Dedicated Host. If you don't specify a value, AMD SEV-SNP is <code>disabled</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains the CPU configuration options for a Dedicated Host allocation request. Options include AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP) settings.</p>"
             }
         },
         "com.amazonaws.ec2#HostInstance": {
@@ -70173,6 +71343,22 @@
                         "smithy.api#xmlName": "freeTierEligible"
                     }
                 },
+                "PublicSsmParameterName": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "PublicSsmParameterName",
+                        "smithy.api#documentation": "<p>The name of the public Systems Manager parameter that resolves to this AMI, under the\n      <code>aws/service/</code> namespace.</p>",
+                        "smithy.api#xmlName": "publicSsmParameterName"
+                    }
+                },
+                "ImageWatermarks": {
+                    "target": "com.amazonaws.ec2#ImageWatermarkList",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ImageWatermarkSet",
+                        "smithy.api#documentation": "<p>The watermarks attached to the AMI.</p>",
+                        "smithy.api#xmlName": "imageWatermarkSet"
+                    }
+                },
                 "ImageId": {
                     "target": "com.amazonaws.ec2#String",
                     "traits": {
@@ -70598,6 +71784,14 @@
                         "smithy.api#documentation": "<p>The maximum age for allowed images.</p>",
                         "smithy.api#xmlName": "creationDateCondition"
                     }
+                },
+                "ImageWatermarks": {
+                    "target": "com.amazonaws.ec2#ImageWatermarkFilterResponseList",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ImageWatermarkSet",
+                        "smithy.api#documentation": "<p>The watermark criteria that an AMI must match to be allowed. An AMI is allowed if it\n      carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark satisfies a\n      filter when all specified fields in the ImageWatermarkFilter match the corresponding values on\n      the watermark of the AMI.</p>\n         <p>Maximum: 50 values</p>",
+                        "smithy.api#xmlName": "imageWatermarkSet"
+                    }
                 }
             },
             "traits": {
@@ -70631,7 +71825,7 @@
                     }
                 },
                 "ImageNames": {
-                    "target": "com.amazonaws.ec2#ImageNameRequestList",
+                    "target": "com.amazonaws.ec2#ImageNameCriteriaRequestList",
                     "traits": {
                         "smithy.api#documentation": "<p>The names of allowed images. Names can include wildcards (<code>?</code> and\n        <code>*</code>).</p>\n         <p>Length: 1–128 characters. With <code>?</code>, the minimum is 3 characters.</p>\n         <p>Valid characters:</p>\n         <ul>\n            <li>\n               <p>Letters: <code>A–Z, a–z</code>\n               </p>\n            </li>\n            <li>\n               <p>Numbers: <code>0–9</code>\n               </p>\n            </li>\n            <li>\n               <p>Special characters: <code>( ) [ ] . / - ' @ _ * ?</code>\n               </p>\n            </li>\n            <li>\n               <p>Spaces</p>\n            </li>\n         </ul>\n         <p>Maximum: 50 values</p>",
                         "smithy.api#xmlName": "ImageName"
@@ -70648,10 +71842,17 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The maximum age for allowed images.</p>"
                     }
+                },
+                "ImageWatermarks": {
+                    "target": "com.amazonaws.ec2#ImageWatermarkFilterRequestList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The watermark criteria that an AMI must match to be allowed. An AMI is allowed if it\n      carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark satisfies a\n      filter when all specified fields in the ImageWatermarkFilter match the corresponding values on\n      the watermark of the AMI.</p>\n         <p>Maximum: 50 values</p>",
+                        "smithy.api#xmlName": "ImageWatermark"
+                    }
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The criteria that are evaluated to determine which AMIs are discoverable and usable in\n      your account for the specified Amazon Web Services Region.</p>\n         <p>The <code>ImageCriteria</code> can include up to:</p>\n         <ul>\n            <li>\n               <p>10 <code>ImageCriterion</code>\n               </p>\n            </li>\n         </ul>\n         <p>Each <code>ImageCriterion</code> can include up to:</p>\n         <ul>\n            <li>\n               <p>200 values for <code>ImageProviders</code>\n               </p>\n            </li>\n            <li>\n               <p>50 values for <code>ImageNames</code>\n               </p>\n            </li>\n            <li>\n               <p>50 values for <code>MarketplaceProductCodes</code>\n               </p>\n            </li>\n         </ul>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html#how-allowed-amis-works\">How Allowed AMIs\n        works</a> in the <i>Amazon EC2 User Guide</i>.</p>"
+                "smithy.api#documentation": "<p>The criteria that are evaluated to determine which AMIs are discoverable and usable in\n      your account for the specified Amazon Web Services Region.</p>\n         <p>The <code>ImageCriteria</code> can include up to:</p>\n         <ul>\n            <li>\n               <p>10 <code>ImageCriterion</code>\n               </p>\n            </li>\n         </ul>\n         <p>Each <code>ImageCriterion</code> can include up to:</p>\n         <ul>\n            <li>\n               <p>200 values for <code>ImageProviders</code>\n               </p>\n            </li>\n            <li>\n               <p>50 values for <code>ImageNames</code>\n               </p>\n            </li>\n            <li>\n               <p>50 values for <code>MarketplaceProductCodes</code>\n               </p>\n            </li>\n            <li>\n               <p>50 values for <code>ImageWatermarks</code>\n               </p>\n            </li>\n         </ul>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html#how-allowed-amis-works\">How Allowed AMIs\n        works</a> in the <i>Amazon EC2 User Guide</i>.</p>"
             }
         },
         "com.amazonaws.ec2#ImageCriterionRequestList": {
@@ -70660,6 +71861,15 @@
                 "target": "com.amazonaws.ec2#ImageCriterionRequest",
                 "traits": {
                     "smithy.api#xmlName": "ImageCriterion"
+                }
+            }
+        },
+        "com.amazonaws.ec2#ImageDescriptionRequest": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 255
                 }
             }
         },
@@ -70820,6 +72030,14 @@
                         "smithy.api#documentation": "<p>Indicates whether the AMI has public launch permissions. A value of <code>true</code>\n      means this AMI has public launch permissions, while <code>false</code> means it has only\n      implicit (AMI owner) or explicit (shared with your account) launch permissions.</p>",
                         "smithy.api#xmlName": "isPublic"
                     }
+                },
+                "ImageWatermarks": {
+                    "target": "com.amazonaws.ec2#ImageWatermarkList",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ImageWatermarkSet",
+                        "smithy.api#documentation": "<p>The watermarks attached to the AMI.</p>",
+                        "smithy.api#xmlName": "imageWatermarkSet"
+                    }
                 }
             },
             "traits": {
@@ -70828,6 +72046,24 @@
         },
         "com.amazonaws.ec2#ImageName": {
             "type": "string"
+        },
+        "com.amazonaws.ec2#ImageNameCriteriaRequest": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 128
+                }
+            }
+        },
+        "com.amazonaws.ec2#ImageNameCriteriaRequestList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#ImageNameCriteriaRequest",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            }
         },
         "com.amazonaws.ec2#ImageNameList": {
             "type": "list",
@@ -70839,14 +72075,11 @@
             }
         },
         "com.amazonaws.ec2#ImageNameRequest": {
-            "type": "string"
-        },
-        "com.amazonaws.ec2#ImageNameRequestList": {
-            "type": "list",
-            "member": {
-                "target": "com.amazonaws.ec2#ImageNameRequest",
-                "traits": {
-                    "smithy.api#xmlName": "item"
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 3,
+                    "max": 128
                 }
             }
         },
@@ -71097,6 +72330,15 @@
                     "traits": {
                         "smithy.api#enumValue": "ramdisk"
                     }
+                }
+            }
+        },
+        "com.amazonaws.ec2#ImageUefiDataRequest": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 64000
                 }
             }
         },
@@ -71423,6 +72665,162 @@
             "type": "list",
             "member": {
                 "target": "com.amazonaws.ec2#ImageUsageResourceTypeRequest"
+            }
+        },
+        "com.amazonaws.ec2#ImageWatermark": {
+            "type": "structure",
+            "members": {
+                "WatermarkKey": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "WatermarkKey",
+                        "smithy.api#documentation": "<p>The watermark identifier, in <code>accountId:watermarkName</code> format (for example,\n        <code>123456789012:approvedAmi</code>). The <code>accountId</code> portion is the Amazon Web Services account\n      ID of the watermark creator. The <code>watermarkName</code> portion is customer-provided.</p>",
+                        "smithy.api#xmlName": "watermarkKey"
+                    }
+                },
+                "SourceImageRegion": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "SourceImageRegion",
+                        "smithy.api#documentation": "<p>The Region where the watermark was originally attached.</p>",
+                        "smithy.api#xmlName": "sourceImageRegion"
+                    }
+                },
+                "SourceImageId": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "SourceImageId",
+                        "smithy.api#documentation": "<p>The ID of the AMI to which the watermark was originally attached.</p>",
+                        "smithy.api#xmlName": "sourceImageId"
+                    }
+                },
+                "SourceImageCreationTime": {
+                    "target": "com.amazonaws.ec2#MillisecondDateTime",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "SourceImageCreationTime",
+                        "smithy.api#documentation": "<p>The creation date of the source AMI, in the\n      following format:\n        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i>.</p>",
+                        "smithy.api#xmlName": "sourceImageCreationTime"
+                    }
+                },
+                "WatermarkCreationTime": {
+                    "target": "com.amazonaws.ec2#MillisecondDateTime",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "WatermarkCreationTime",
+                        "smithy.api#documentation": "<p>The date and time the watermark was attached to the AMI, in the following format:\n        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i>.</p>",
+                        "smithy.api#xmlName": "watermarkCreationTime"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes a watermark attached to an AMI.</p>"
+            }
+        },
+        "com.amazonaws.ec2#ImageWatermarkFilterRequest": {
+            "type": "structure",
+            "members": {
+                "WatermarkKey": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The <code>accountId:name</code> of the watermark. Supports wildcards (<code>*</code>,\n      <code>?</code>).</p>"
+                    }
+                },
+                "SourceImageRegion": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Region where the watermark was originally created. Supports wildcards (<code>*</code>,\n      <code>?</code>).</p>"
+                    }
+                },
+                "MaximumDaysSinceSourceImageCreated": {
+                    "target": "com.amazonaws.ec2#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of days that have elapsed since the source image was\n      created.</p>\n         <p>Constraints: Minimum value of 0. Maximum value of 2147483647.</p>"
+                    }
+                },
+                "MaximumDaysSinceWatermarkCreated": {
+                    "target": "com.amazonaws.ec2#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of days that have elapsed since the watermark was attached to the\n      image.</p>\n         <p>Constraints: Minimum value of 0. Maximum value of 2147483647.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The watermark filter criteria for an allowed image. Each entry can specify one or more\n      fields. All specified fields must match the same watermark on the image.</p>"
+            }
+        },
+        "com.amazonaws.ec2#ImageWatermarkFilterRequestList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#ImageWatermarkFilterRequest",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            }
+        },
+        "com.amazonaws.ec2#ImageWatermarkFilterResponse": {
+            "type": "structure",
+            "members": {
+                "WatermarkKey": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "WatermarkKey",
+                        "smithy.api#documentation": "<p>The <code>accountId:name</code> of the watermark. Supports wildcards (<code>*</code>,\n      <code>?</code>).</p>",
+                        "smithy.api#xmlName": "watermarkKey"
+                    }
+                },
+                "SourceImageRegion": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "SourceImageRegion",
+                        "smithy.api#documentation": "<p>The Region where the watermark was originally created. Supports wildcards (<code>*</code>,\n      <code>?</code>).</p>",
+                        "smithy.api#xmlName": "sourceImageRegion"
+                    }
+                },
+                "MaximumDaysSinceSourceImageCreated": {
+                    "target": "com.amazonaws.ec2#Integer",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "MaximumDaysSinceSourceImageCreated",
+                        "smithy.api#documentation": "<p>The maximum number of days that have elapsed since the source image was\n      created.</p>\n         <p>Constraints: Minimum value of 0. Maximum value of 2147483647.</p>",
+                        "smithy.api#xmlName": "maximumDaysSinceSourceImageCreated"
+                    }
+                },
+                "MaximumDaysSinceWatermarkCreated": {
+                    "target": "com.amazonaws.ec2#Integer",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "MaximumDaysSinceWatermarkCreated",
+                        "smithy.api#documentation": "<p>The maximum number of days that have elapsed since the watermark was attached to the\n      image.</p>\n         <p>Constraints: Minimum value of 0. Maximum value of 2147483647.</p>",
+                        "smithy.api#xmlName": "maximumDaysSinceWatermarkCreated"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The watermark filter criteria for an allowed image. Each entry can specify one or more\n      fields. All specified fields must match the same watermark on the image.</p>"
+            }
+        },
+        "com.amazonaws.ec2#ImageWatermarkFilterResponseList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#ImageWatermarkFilterResponse",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            }
+        },
+        "com.amazonaws.ec2#ImageWatermarkList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#ImageWatermark",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            }
+        },
+        "com.amazonaws.ec2#ImageWatermarkNameRequest": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 3,
+                    "max": 128
+                }
             }
         },
         "com.amazonaws.ec2#ImdsSupportValues": {
@@ -72675,6 +74073,9 @@
             "traits": {
                 "smithy.api#documentation": "<p>Describes an import volume task.</p>"
             }
+        },
+        "com.amazonaws.ec2#IncludeUnsupportedInRegion": {
+            "type": "boolean"
         },
         "com.amazonaws.ec2#InferenceAcceleratorInfo": {
             "type": "structure",
@@ -84400,6 +85801,14 @@
                         "smithy.api#documentation": "<p>Indicates whether reboot migration during a user-initiated reboot is supported for\n   instances that have a scheduled <code>system-reboot</code> event. For more information,\n   see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration\">Enable or disable reboot migration</a> in the\n   <i>Amazon EC2 User Guide</i>.</p>",
                         "smithy.api#xmlName": "rebootMigrationSupport"
                     }
+                },
+                "SupportedInRegion": {
+                    "target": "com.amazonaws.ec2#SupportedInRegion",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "SupportedInRegion",
+                        "smithy.api#documentation": "<p>Indicates whether the instance type is supported in the current Region.</p>",
+                        "smithy.api#xmlName": "supportedInRegion"
+                    }
                 }
             },
             "traits": {
@@ -86720,6 +88129,14 @@
                         "aws.protocols#ec2QueryName": "ResourceOwner",
                         "smithy.api#documentation": "<p>The owner of the resource.</p>",
                         "smithy.api#xmlName": "resourceOwner"
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.ec2#TagList",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "TagSet",
+                        "smithy.api#documentation": "<p>The tags for the IPAM pool allocation.</p>",
+                        "smithy.api#xmlName": "tagSet"
                     }
                 }
             },
@@ -95097,6 +96514,102 @@
         "com.amazonaws.ec2#MillisecondDateTime": {
             "type": "timestamp"
         },
+        "com.amazonaws.ec2#ModifyAccountVpcEncryptionControl": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#ModifyAccountVpcEncryptionControlRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#ModifyAccountVpcEncryptionControlResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Modifies the account-level VPC Encryption Control configuration. This sets the encryption control mode and resource exclusions that apply to the VPCs in your account. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html\">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>"
+            }
+        },
+        "com.amazonaws.ec2#ModifyAccountVpcEncryptionControlRequest": {
+            "type": "structure",
+            "members": {
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                },
+                "Mode": {
+                    "target": "com.amazonaws.ec2#AccountVpcEncryptionControlMode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The encryption mode for the account encryption control configuration.</p>"
+                    }
+                },
+                "InternetGateway": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionStateInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether to exclude internet gateway resource from account-level encryption enforcement.</p>"
+                    }
+                },
+                "EgressOnlyInternetGateway": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionStateInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether to exclude egress-only internet gateway resource from account-level encryption enforcement.</p>"
+                    }
+                },
+                "NatGateway": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionStateInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether to exclude NAT gateway resource from account-level encryption enforcement.</p>"
+                    }
+                },
+                "VirtualPrivateGateway": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionStateInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether to exclude virtual private gateway resource from account-level encryption enforcement.</p>"
+                    }
+                },
+                "VpcPeering": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionStateInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether to exclude VPC peering connection resource from account-level encryption enforcement.</p>"
+                    }
+                },
+                "Lambda": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionStateInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether to exclude Lambda service from account-level encryption enforcement.</p>"
+                    }
+                },
+                "VpcLattice": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionStateInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether to exclude VPC Lattice service from account-level encryption enforcement.</p>"
+                    }
+                },
+                "ElasticFileSystem": {
+                    "target": "com.amazonaws.ec2#VpcEncryptionControlExclusionStateInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether to exclude Elastic File System service from account-level encryption enforcement.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#ModifyAccountVpcEncryptionControlResult": {
+            "type": "structure",
+            "members": {
+                "AccountVpcEncryptionControl": {
+                    "target": "com.amazonaws.ec2#AccountVpcEncryptionControl",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "AccountVpcEncryptionControl",
+                        "smithy.api#documentation": "<p>Information about the account-level VPC Encryption Control configuration.</p>",
+                        "smithy.api#xmlName": "accountVpcEncryptionControl"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.ec2#ModifyAddressAttribute": {
             "type": "operation",
             "input": {
@@ -96164,6 +97677,12 @@
                         "smithy.api#documentation": "<p>Enable or disable source/destination checks, which ensure that the instance is either\n            the source or the destination of any traffic that it receives. If the value is\n                <code>true</code>, source/destination checks are enabled; otherwise, they are\n            disabled. The default value is <code>true</code>. You must disable source/destination\n            checks if the instance runs services such as network address translation, routing, or\n            firewalls.</p>"
                     }
                 },
+                "EnclaveOptions": {
+                    "target": "com.amazonaws.ec2#EnclaveOptionsRequest",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more\n            information, see the <a href=\"https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html\">Amazon Web Services Nitro Enclaves User\n                Guide</a>.</p>"
+                    }
+                },
                 "DisableApiStop": {
                     "target": "com.amazonaws.ec2#AttributeBooleanValue",
                     "traits": {
@@ -97216,6 +98735,62 @@
                 "smithy.api#documentation": "<p>Modify the configurations of an IPAM pool.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/ipam/mod-pool-ipam.html\">Modify a pool</a> in the <i>Amazon VPC IPAM User Guide</i>.\n      </p>"
             }
         },
+        "com.amazonaws.ec2#ModifyIpamPoolAllocation": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#ModifyIpamPoolAllocationRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#ModifyIpamPoolAllocationResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Modifies the description of an IPAM pool allocation. For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/ipam/modify-alloc-ipam.html\">Modify an IPAM pool allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>"
+            }
+        },
+        "com.amazonaws.ec2#ModifyIpamPoolAllocationRequest": {
+            "type": "structure",
+            "members": {
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A check for whether you have the required permissions for the action without actually making the request \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                },
+                "IpamPoolAllocationId": {
+                    "target": "com.amazonaws.ec2#IpamPoolAllocationId",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ID of the IPAM pool allocation you want to modify.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Description": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The new description for the IPAM pool allocation. If you submit a <code>null</code> value, the description is removed from the allocation.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#ModifyIpamPoolAllocationResult": {
+            "type": "structure",
+            "members": {
+                "IpamPoolAllocation": {
+                    "target": "com.amazonaws.ec2#IpamPoolAllocation",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "IpamPoolAllocation",
+                        "smithy.api#documentation": "<p>The modified IPAM pool allocation.</p>",
+                        "smithy.api#xmlName": "ipamPoolAllocation"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.ec2#ModifyIpamPoolRequest": {
             "type": "structure",
             "members": {
@@ -98026,7 +99601,9 @@
                 "DefaultVisibility": {
                     "target": "com.amazonaws.ec2#ManagedResourceDefaultVisibility",
                     "traits": {
-                        "smithy.api#documentation": "<p>The default visibility setting for managed resources. Valid values:\n            <code>hidden</code> | <code>visible</code>.</p>"
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The default visibility setting for managed resources. Valid values:\n            <code>hidden</code> | <code>visible</code>.</p>",
+                        "smithy.api#required": {}
                     }
                 }
             },
@@ -99280,7 +100857,7 @@
                 "AmazonSideAsn": {
                     "target": "com.amazonaws.ec2#Long",
                     "traits": {
-                        "smithy.api#documentation": "<p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. \n            The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>\n         <p>The modify ASN operation is not allowed on a transit gateway if it has the following attachments:</p>\n         <ul>\n            <li>\n               <p>Dynamic VPN</p>\n            </li>\n            <li>\n               <p>Static VPN</p>\n            </li>\n            <li>\n               <p>Direct Connect Gateway</p>\n            </li>\n            <li>\n               <p>Connect</p>\n            </li>\n         </ul>\n         <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on\n            the transit gateway.</p>"
+                        "smithy.api#documentation": "<p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. \n            The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>\n         <p>The modify ASN operation is not allowed on a transit gateway if it has the following attachments:</p>\n         <ul>\n            <li>\n               <p>Dynamic VPN</p>\n            </li>\n            <li>\n               <p>Static VPN</p>\n            </li>\n            <li>\n               <p>Direct Connect Gateway</p>\n            </li>\n            <li>\n               <p>Connect</p>\n            </li>\n            <li>\n               <p>VPN Concentrator</p>\n            </li>\n            <li>\n               <p>Client VPN</p>\n            </li>\n         </ul>\n         <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on\n            the transit gateway.</p>"
                     }
                 },
                 "EncryptionSupport": {
@@ -100832,6 +102409,86 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.ec2#ModifyVpcEndpointPayerResponsibility": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ec2#ModifyVpcEndpointPayerResponsibilityRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ec2#ModifyVpcEndpointPayerResponsibilityResult"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Modifies the billing account for VPC endpoint usage/charges.</p>"
+            }
+        },
+        "com.amazonaws.ec2#ModifyVpcEndpointPayerResponsibilityRequest": {
+            "type": "structure",
+            "members": {
+                "DryRun": {
+                    "target": "com.amazonaws.ec2#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>"
+                    }
+                },
+                "ServiceId": {
+                    "target": "com.amazonaws.ec2#VpcEndpointServiceId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the VPC endpoint service.</p>"
+                    }
+                },
+                "VpcEndpointId": {
+                    "target": "com.amazonaws.ec2#VpcEndpointId",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The ID of the VPC endpoint.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "PayerResponsibility": {
+                    "target": "com.amazonaws.ec2#PayerResponsibilityType",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Web Services account to which the usage of VPC endpoint is charged.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Scope": {
+                    "target": "com.amazonaws.ec2#PayerResponsibilityScope",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The scope of usage/charges for which the billing account is being modified.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ec2#ModifyVpcEndpointPayerResponsibilityResult": {
+            "type": "structure",
+            "members": {
+                "VpcEndpointId": {
+                    "target": "com.amazonaws.ec2#String",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "VpcEndpointId",
+                        "smithy.api#documentation": "<p>The ID of the VPC endpoint.</p>",
+                        "smithy.api#xmlName": "vpcEndpointId"
+                    }
+                },
+                "PayerResponsibilities": {
+                    "target": "com.amazonaws.ec2#PayerResponsibilitySet",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "PayerResponsibilitySet",
+                        "smithy.api#documentation": "<p>The payer responsibility settings for the VPC endpoint.</p>",
+                        "smithy.api#xmlName": "payerResponsibilitySet"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.ec2#ModifyVpcEndpointRequest": {
             "type": "structure",
             "members": {
@@ -101386,6 +103043,12 @@
                     "target": "com.amazonaws.ec2#String",
                     "traits": {
                         "smithy.api#documentation": "<p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>\n         <p>Default: <code>::/0</code>\n         </p>"
+                    }
+                },
+                "TunnelBandwidth": {
+                    "target": "com.amazonaws.ec2#VpnTunnelBandwidth",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>"
                     }
                 },
                 "DryRun": {
@@ -105883,6 +107546,67 @@
                 }
             }
         },
+        "com.amazonaws.ec2#PayerResponsibilityEntry": {
+            "type": "structure",
+            "members": {
+                "Scope": {
+                    "target": "com.amazonaws.ec2#PayerResponsibilityScope",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "Scope",
+                        "smithy.api#documentation": "<p>The scope of usage/charges.</p>",
+                        "smithy.api#xmlName": "scope"
+                    }
+                },
+                "PayerResponsibilityType": {
+                    "target": "com.amazonaws.ec2#PayerResponsibilityType",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "PayerResponsibilityType",
+                        "smithy.api#documentation": "<p>The Amazon Web Services account to which the usage is charged.</p>",
+                        "smithy.api#xmlName": "payerResponsibilityType"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes a payer responsibility setting for a VPC endpoint.</p>"
+            }
+        },
+        "com.amazonaws.ec2#PayerResponsibilityScope": {
+            "type": "enum",
+            "members": {
+                "VpcEndpointCharges": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "vpc-endpoint-charges"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.ec2#PayerResponsibilitySet": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#PayerResponsibilityEntry",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            }
+        },
+        "com.amazonaws.ec2#PayerResponsibilityType": {
+            "type": "enum",
+            "members": {
+                "VpcEndpointAccount": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "vpc-endpoint-account"
+                    }
+                },
+                "VpcEndpointServiceAccount": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "vpc-endpoint-service-account"
+                    }
+                }
+            }
+        },
         "com.amazonaws.ec2#PaymentOption": {
             "type": "enum",
             "members": {
@@ -106646,6 +108370,14 @@
                         "smithy.api#documentation": "<p>The service provider that manages the Placement Group.</p>",
                         "smithy.api#xmlName": "operator"
                     }
+                },
+                "ParentGroupId": {
+                    "target": "com.amazonaws.ec2#PlacementGroupId",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ParentGroupId",
+                        "smithy.api#documentation": "<p>The ID of the parent placement group.</p>",
+                        "smithy.api#xmlName": "parentGroupId"
+                    }
                 }
             },
             "traits": {
@@ -106803,6 +108535,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "partition"
+                    }
+                },
+                "precision_time": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "precision-time"
                     }
                 }
             }
@@ -109260,7 +110998,7 @@
                     }
                 },
                 "UefiData": {
-                    "target": "com.amazonaws.ec2#StringType",
+                    "target": "com.amazonaws.ec2#ImageUefiDataRequest",
                     "traits": {
                         "smithy.api#documentation": "<p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data,\n      use the <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData\">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the\n        <a href=\"https://github.com/awslabs/python-uefivars\">python-uefivars tool</a> on\n      GitHub. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html\">UEFI Secure Boot for Amazon EC2\n        instances</a> in the <i>Amazon EC2 User Guide</i>.</p>"
                     }
@@ -109287,7 +111025,7 @@
                     }
                 },
                 "Name": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#ImageNameRequest",
                     "traits": {
                         "aws.protocols#ec2QueryName": "Name",
                         "smithy.api#clientOptional": {},
@@ -109297,7 +111035,7 @@
                     }
                 },
                 "Description": {
-                    "target": "com.amazonaws.ec2#String",
+                    "target": "com.amazonaws.ec2#ImageDescriptionRequest",
                     "traits": {
                         "aws.protocols#ec2QueryName": "Description",
                         "smithy.api#documentation": "<p>A description for your AMI.</p>",
@@ -110351,7 +112089,7 @@
                 "target": "com.amazonaws.ec2#ReplaceImageCriteriaInAllowedImagesSettingsResult"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Sets or replaces the criteria for Allowed AMIs.</p>\n         <note>\n            <p>The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless of\n        the criteria you set, the AMIs created by your account will always be discoverable and\n        usable by users in your account.</p>\n         </note>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html\">Control the discovery and use of AMIs in\n      Amazon EC2 with Allowed AMIs</a> in\n      <i>Amazon EC2 User Guide</i>.</p>"
+                "smithy.api#documentation": "<p>Sets or replaces the criteria for Allowed AMIs.</p>\n         <p>The <code>ImageCriteria</code> can include up to:</p>\n         <ul>\n            <li>\n               <p>10 <code>ImageCriterion</code>\n               </p>\n            </li>\n         </ul>\n         <note>\n            <p>The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless of\n        the criteria you set, the AMIs created by your account will always be discoverable and\n        usable by users in your account.</p>\n         </note>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html\">Control the discovery and use of AMIs in\n      Amazon EC2 with Allowed AMIs</a> in\n      <i>Amazon EC2 User Guide</i>.</p>"
             }
         },
         "com.amazonaws.ec2#ReplaceImageCriteriaInAllowedImagesSettingsRequest": {
@@ -114333,6 +116071,18 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "vpn-concentrator"
+                    }
+                },
+                "ipam_pool_allocation": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ipam-pool-allocation"
+                    }
+                },
+                "capacity_reservation_cancellation_quote": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "capacity-reservation-cancellation-quote"
                     }
                 }
             }
@@ -124011,15 +125761,6 @@
                 }
             }
         },
-        "com.amazonaws.ec2#StringType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#length": {
-                    "min": 0,
-                    "max": 64000
-                }
-            }
-        },
         "com.amazonaws.ec2#Subnet": {
             "type": "structure",
             "members": {
@@ -124764,6 +126505,9 @@
                 }
             }
         },
+        "com.amazonaws.ec2#SupportedInRegion": {
+            "type": "boolean"
+        },
         "com.amazonaws.ec2#SupportedIpAddressTypes": {
             "type": "list",
             "member": {
@@ -124885,6 +126629,105 @@
                 }
             }
         },
+        "com.amazonaws.ec2#TagFieldSpecificationListRequest": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#TagFieldSpecificationRequest",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 3
+                }
+            }
+        },
+        "com.amazonaws.ec2#TagFieldSpecificationListResponse": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#TagFieldSpecificationResponse",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 3
+                }
+            }
+        },
+        "com.amazonaws.ec2#TagFieldSpecificationRequest": {
+            "type": "structure",
+            "members": {
+                "ResourceType": {
+                    "target": "com.amazonaws.ec2#TaggableResourceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The resource type for the tag keys associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>"
+                    }
+                },
+                "TagKeys": {
+                    "target": "com.amazonaws.ec2#TagKeyList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The tag keys on your tagged resources to be displayed by the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>",
+                        "smithy.api#xmlName": "TagKey"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A single resource's tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>"
+            }
+        },
+        "com.amazonaws.ec2#TagFieldSpecificationResponse": {
+            "type": "structure",
+            "members": {
+                "ResourceType": {
+                    "target": "com.amazonaws.ec2#TaggableResourceType",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ResourceType",
+                        "smithy.api#documentation": "<p>The resource type for the tag keys associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>",
+                        "smithy.api#xmlName": "resourceType"
+                    }
+                },
+                "TagKeys": {
+                    "target": "com.amazonaws.ec2#TagKeyList",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "TagKeySet",
+                        "smithy.api#documentation": "<p>The tag keys on your tagged resources to be displayed by the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>",
+                        "smithy.api#xmlName": "tagKeySet"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A single resource's tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>"
+            }
+        },
+        "com.amazonaws.ec2#TagKey": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 128
+                }
+            }
+        },
+        "com.amazonaws.ec2#TagKeyList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ec2#TagKey",
+                "traits": {
+                    "smithy.api#xmlName": "item"
+                }
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 2
+                }
+            }
+        },
         "com.amazonaws.ec2#TagList": {
             "type": "list",
             "member": {
@@ -124928,6 +126771,29 @@
         },
         "com.amazonaws.ec2#TaggableResourceId": {
             "type": "string"
+        },
+        "com.amazonaws.ec2#TaggableResourceType": {
+            "type": "enum",
+            "members": {
+                "network_interface": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "network-interface"
+                    }
+                },
+                "instance": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "instance"
+                    }
+                },
+                "auto_scaling_group": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "auto-scaling-group"
+                    }
+                }
+            }
         },
         "com.amazonaws.ec2#TargetCapacitySpecification": {
             "type": "structure",
@@ -133538,6 +135404,7 @@
                     "target": "com.amazonaws.ec2#OperatorResponse",
                     "traits": {
                         "aws.protocols#ec2QueryName": "Operator",
+                        "smithy.api#documentation": "<p>The service provider that manages the resource.</p>",
                         "smithy.api#xmlName": "operator"
                     }
                 }
@@ -135376,6 +137243,14 @@
                         "smithy.api#documentation": "<p>The Region where the service is hosted.</p>",
                         "smithy.api#xmlName": "serviceRegion"
                     }
+                },
+                "PayerResponsibilities": {
+                    "target": "com.amazonaws.ec2#PayerResponsibilitySet",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "PayerResponsibilitySet",
+                        "smithy.api#documentation": "<p>The payer responsibility settings for the endpoint.</p>",
+                        "smithy.api#xmlName": "payerResponsibilitySet"
+                    }
                 }
             },
             "traits": {
@@ -135592,6 +137467,14 @@
                         "aws.protocols#ec2QueryName": "VpcEndpointRegion",
                         "smithy.api#documentation": "<p>The Region of the endpoint.</p>",
                         "smithy.api#xmlName": "vpcEndpointRegion"
+                    }
+                },
+                "PayerResponsibilities": {
+                    "target": "com.amazonaws.ec2#PayerResponsibilitySet",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "PayerResponsibilitySet",
+                        "smithy.api#documentation": "<p>The payer responsibility settings for the endpoint.</p>",
+                        "smithy.api#xmlName": "payerResponsibilitySet"
                     }
                 }
             },

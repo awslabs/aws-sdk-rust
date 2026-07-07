@@ -211,4 +211,18 @@ impl CreateCapacityProviderFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The tag propagation configuration for the capacity provider. Specifies tags to apply to managed resources at launch.</p>
+    pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
+        self.inner = self.inner.propagate_tags(input);
+        self
+    }
+    /// <p>The tag propagation configuration for the capacity provider. Specifies tags to apply to managed resources at launch.</p>
+    pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
+        self.inner = self.inner.set_propagate_tags(input);
+        self
+    }
+    /// <p>The tag propagation configuration for the capacity provider. Specifies tags to apply to managed resources at launch.</p>
+    pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
+        self.inner.get_propagate_tags()
+    }
 }

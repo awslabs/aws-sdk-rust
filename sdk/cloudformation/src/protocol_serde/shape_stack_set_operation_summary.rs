@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_operation_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackSetOperationSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSetOperationSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -92,7 +96,7 @@ pub fn de_stack_set_operation_summary(
             s if s.matches("StatusDetails") /* StatusDetails com.amazonaws.cloudformation#StackSetOperationSummary$StatusDetails */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_operation_status_details::de_stack_set_operation_status_details(&mut tag)
+                        crate::protocol_serde::shape_stack_set_operation_status_details::de_stack_set_operation_status_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -102,7 +106,7 @@ pub fn de_stack_set_operation_summary(
             s if s.matches("OperationPreferences") /* OperationPreferences com.amazonaws.cloudformation#StackSetOperationSummary$OperationPreferences */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_operation_preferences::de_stack_set_operation_preferences(&mut tag)
+                        crate::protocol_serde::shape_stack_set_operation_preferences::de_stack_set_operation_preferences(&mut tag, depth + 1)
                         ?
                     )
                 ;

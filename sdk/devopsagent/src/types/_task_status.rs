@@ -20,6 +20,7 @@
 ///     TaskStatus::PendingCustomerApproval => { /* ... */ },
 ///     TaskStatus::PendingStart => { /* ... */ },
 ///     TaskStatus::PendingTriage => { /* ... */ },
+///     TaskStatus::Skipped => { /* ... */ },
 ///     TaskStatus::TimedOut => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -43,29 +44,31 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Possible states of a task throughout its lifecycle
+/// <p>Possible states of a task throughout its lifecycle</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TaskStatus {
-    /// Task has been canceled
+    /// <p>Task has been canceled</p>
     Canceled,
-    /// Task has been completed successfully
+    /// <p>Task has been completed successfully</p>
     Completed,
-    /// Task has failed
+    /// <p>Task has failed</p>
     Failed,
-    /// Task is currently being worked on
+    /// <p>Task is currently being worked on</p>
     InProgress,
-    /// Task has been linked to another task
+    /// <p>Task has been linked to another task</p>
     Linked,
-    /// Task is completed but awaiting customer approval (not in use)
+    /// <p>Task is completed but awaiting customer approval (not in use)</p>
     PendingCustomerApproval,
-    /// Task is created but not yet started
+    /// <p>Task is created but not yet started</p>
     PendingStart,
-    /// Task is awaiting triage analysis
+    /// <p>Task is awaiting triage analysis</p>
     PendingTriage,
-    /// Task has exceeded its time limit
+    /// <p>Task has been skipped by triage</p>
+    Skipped,
+    /// <p>Task has exceeded its time limit</p>
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for TaskStatus {
             "PENDING_CUSTOMER_APPROVAL" => TaskStatus::PendingCustomerApproval,
             "PENDING_START" => TaskStatus::PendingStart,
             "PENDING_TRIAGE" => TaskStatus::PendingTriage,
+            "SKIPPED" => TaskStatus::Skipped,
             "TIMED_OUT" => TaskStatus::TimedOut,
             other => TaskStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -106,6 +110,7 @@ impl TaskStatus {
             TaskStatus::PendingCustomerApproval => "PENDING_CUSTOMER_APPROVAL",
             TaskStatus::PendingStart => "PENDING_START",
             TaskStatus::PendingTriage => "PENDING_TRIAGE",
+            TaskStatus::Skipped => "SKIPPED",
             TaskStatus::TimedOut => "TIMED_OUT",
             TaskStatus::Unknown(value) => value.as_str(),
         }
@@ -121,6 +126,7 @@ impl TaskStatus {
             "PENDING_CUSTOMER_APPROVAL",
             "PENDING_START",
             "PENDING_TRIAGE",
+            "SKIPPED",
             "TIMED_OUT",
         ]
     }
@@ -153,6 +159,7 @@ impl ::std::fmt::Display for TaskStatus {
             TaskStatus::PendingCustomerApproval => write!(f, "PENDING_CUSTOMER_APPROVAL"),
             TaskStatus::PendingStart => write!(f, "PENDING_START"),
             TaskStatus::PendingTriage => write!(f, "PENDING_TRIAGE"),
+            TaskStatus::Skipped => write!(f, "SKIPPED"),
             TaskStatus::TimedOut => write!(f, "TIMED_OUT"),
             TaskStatus::Unknown(value) => write!(f, "{value}"),
         }

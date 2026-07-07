@@ -5,6 +5,8 @@ pub(crate) fn de_request_limit_exceeded_json_err(
 ) -> ::std::result::Result<crate::types::error::builders::RequestLimitExceededBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -19,7 +21,9 @@ pub(crate) fn de_request_limit_exceeded_json_err(
                 }
                 "ThrottlingReasons" => {
                     builder = builder.set_throttling_reasons(crate::protocol_serde::shape_throttling_reason_list::de_throttling_reason_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

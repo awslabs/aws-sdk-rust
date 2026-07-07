@@ -2,10 +2,16 @@
 pub(crate) fn de_job_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JobSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,13 +23,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "bucketCriteria" => {
                             builder = builder.set_bucket_criteria(
-                                crate::protocol_serde::shape_s3_bucket_criteria_for_job::de_s3_bucket_criteria_for_job(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_bucket_criteria_for_job::de_s3_bucket_criteria_for_job(tokens, _value, depth + 1)?,
                             );
                         }
                         "bucketDefinitions" => {
                             builder = builder.set_bucket_definitions(
                                 crate::protocol_serde::shape_list_of_s3_bucket_definition_for_job::de_list_of_s3_bucket_definition_for_job(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -56,7 +64,7 @@ where
                         }
                         "lastRunErrorStatus" => {
                             builder = builder.set_last_run_error_status(
-                                crate::protocol_serde::shape_last_run_error_status::de_last_run_error_status(tokens, _value)?,
+                                crate::protocol_serde::shape_last_run_error_status::de_last_run_error_status(tokens, _value, depth + 1)?,
                             );
                         }
                         "name" => {
@@ -67,8 +75,11 @@ where
                             );
                         }
                         "userPausedDetails" => {
-                            builder = builder
-                                .set_user_paused_details(crate::protocol_serde::shape_user_paused_details::de_user_paused_details(tokens, _value)?);
+                            builder = builder.set_user_paused_details(crate::protocol_serde::shape_user_paused_details::de_user_paused_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

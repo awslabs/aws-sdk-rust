@@ -161,6 +161,8 @@ pub(crate) fn de_associate_app_block_builder_app_block(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -169,7 +171,9 @@ pub(crate) fn de_associate_app_block_builder_app_block(
                 "AppBlockBuilderAppBlockAssociation" => {
                     builder = builder.set_app_block_builder_app_block_association(
                         crate::protocol_serde::shape_app_block_builder_app_block_association::de_app_block_builder_app_block_association(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

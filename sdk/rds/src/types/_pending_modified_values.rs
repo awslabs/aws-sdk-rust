@@ -19,7 +19,7 @@ pub struct PendingModifiedValues {
     /// <p>The database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> | <code>bring-your-own-media</code></p>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Provisioned IOPS value for the DB instance.</p>
     pub iops: ::std::option::Option<i32>,
@@ -83,7 +83,7 @@ impl PendingModifiedValues {
         self.engine_version.as_deref()
     }
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> | <code>bring-your-own-media</code></p>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
@@ -317,19 +317,19 @@ impl PendingModifiedValuesBuilder {
         &self.engine_version
     }
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> | <code>bring-your-own-media</code></p>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> | <code>bring-your-own-media</code></p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
     /// <p>The license model for the DB instance.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> | <code>bring-your-own-media</code></p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
     }

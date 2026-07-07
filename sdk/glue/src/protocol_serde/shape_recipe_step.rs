@@ -27,10 +27,16 @@ pub fn ser_recipe_step(
 pub(crate) fn de_recipe_step<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RecipeStep>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -41,11 +47,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_recipe_action::de_recipe_action(tokens, _value)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_recipe_action::de_recipe_action(tokens, _value, depth + 1)?);
                         }
                         "ConditionExpressions" => {
                             builder = builder.set_condition_expressions(
-                                crate::protocol_serde::shape_condition_expression_list::de_condition_expression_list(tokens, _value)?,
+                                crate::protocol_serde::shape_condition_expression_list::de_condition_expression_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

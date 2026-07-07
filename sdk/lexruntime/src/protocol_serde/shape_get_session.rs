@@ -109,6 +109,8 @@ pub(crate) fn de_get_session(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -116,18 +118,23 @@ pub(crate) fn de_get_session(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "activeContexts" => {
                     builder = builder.set_active_contexts(crate::protocol_serde::shape_active_contexts_list::de_active_contexts_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "dialogAction" => {
-                    builder = builder.set_dialog_action(crate::protocol_serde::shape_dialog_action::de_dialog_action(tokens, _value)?);
+                    builder = builder.set_dialog_action(crate::protocol_serde::shape_dialog_action::de_dialog_action(tokens, _value, depth + 1)?);
                 }
                 "recentIntentSummaryView" => {
-                    builder = builder
-                        .set_recent_intent_summary_view(crate::protocol_serde::shape_intent_summary_list::de_intent_summary_list(tokens, _value)?);
+                    builder = builder.set_recent_intent_summary_view(crate::protocol_serde::shape_intent_summary_list::de_intent_summary_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "sessionAttributes" => {
-                    builder = builder.set_session_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
+                    builder = builder.set_session_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value, depth + 1)?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(

@@ -43,7 +43,11 @@ pub fn ser_reserved_instances_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_reserved_instances_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReservedInstancesConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedInstancesConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -138,6 +138,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb10.2</code></p></li>
@@ -244,6 +246,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb10.2</code></p></li>
@@ -349,6 +353,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
+    /// <li>
+    /// <p><code>db2-ce</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>

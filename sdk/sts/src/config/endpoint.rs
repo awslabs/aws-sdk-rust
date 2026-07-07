@@ -225,16 +225,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1039,16 +1033,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1071,16 +1059,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1103,16 +1085,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1135,16 +1111,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1167,16 +1137,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1199,16 +1163,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1231,16 +1189,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1263,16 +1215,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1295,16 +1241,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1327,16 +1267,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1359,16 +1293,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1391,16 +1319,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1423,16 +1345,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1455,16 +1371,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1487,16 +1397,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1519,16 +1423,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1551,16 +1449,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://sts.us-east-3.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "sts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-3".to_string().into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 2)
+                        .put("signingName", "sts".to_string())
+                        .put("signingRegion", "us-east-3".to_string())
                 )
                 .build()
         );
@@ -1640,36 +1532,517 @@ where
     }
 }
 
-/// The default endpoint resolver
-#[derive(Debug, Default)]
+#[derive(Debug)]
+/// The default endpoint resolver.
 pub struct DefaultResolver {
-    partition_resolver: crate::endpoint_lib::partition::PartitionResolver,
+    partition_resolver: &'static crate::endpoint_lib::partition::PartitionResolver,
+    endpoint_cache: ::arc_swap::ArcSwap<::std::option::Option<(Params, ::aws_smithy_types::endpoint::Endpoint)>>,
+}
+
+impl Default for DefaultResolver {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DefaultResolver {
-    /// Create a new endpoint resolver with default settings
+    /// Create a new DefaultResolver
     pub fn new() -> Self {
         Self {
-            partition_resolver: crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER.clone(),
+            partition_resolver: &crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER,
+            endpoint_cache: ::arc_swap::ArcSwap::from_pointee(None),
         }
     }
 
-    fn resolve_endpoint(
-        &self,
-        params: &crate::config::endpoint::Params,
+    #[allow(
+        unused_variables,
+        unused_parens,
+        clippy::double_parens,
+        clippy::useless_conversion,
+        clippy::bool_comparison,
+        clippy::comparison_to_empty,
+        clippy::needless_borrow,
+        clippy::useless_asref,
+        clippy::redundant_closure_call,
+        clippy::clone_on_copy
+    )]
+    fn resolve_endpoint<'a>(
+        &'a self,
+        params: &'a crate::config::endpoint::Params,
     ) -> ::std::result::Result<::aws_smithy_types::endpoint::Endpoint, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        Ok(
-            crate::config::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
-                .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))?,
-        )
+        let mut _diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
+        #[allow(unused_mut)]
+        let mut context = ConditionContext::default();
+
+        // Param bindings
+        let region = &params.region;
+        let use_dual_stack = &params.use_dual_stack;
+        let use_fips = &params.use_fips;
+        let endpoint = &params.endpoint;
+        let use_global_endpoint = &params.use_global_endpoint;
+
+        let mut current_ref: i32 = 2;
+        loop {
+            match current_ref {
+                ref_val if ref_val >= 100_000_000 => {
+                    return match (ref_val - 100_000_000) as usize {
+                        0 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        1 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://sts.amazonaws.com".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 2)
+                                        .put("signingName", "sts")
+                                        .put("signingRegion", "us-east-1"),
+                                )
+                                .build(),
+                        ),
+                        2 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://sts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 2)
+                                            .put("signingName", "sts")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        3 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        4 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: Dualstack and custom endpoint are not supported".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        5 => {
+                            let endpoint = params.endpoint.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url(endpoint.to_owned()).build())
+                        }
+                        6 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://sts-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        7 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "FIPS and DualStack are enabled, but this partition does not support one or both".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        8 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://sts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".amazonaws.com");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        9 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://sts-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        10 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "FIPS is enabled but this partition does not support FIPS".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        11 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://sts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        12 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "DualStack is enabled but this partition does not support DualStack".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        13 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://sts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        14 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: Missing Region".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                    };
+                }
+                1 | -1 => {
+                    return ::std::result::Result::Err(
+                        Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("No endpoint rule matched"))
+                            as ::aws_smithy_runtime_api::box_error::BoxError,
+                    )
+                }
+                ref_val => {
+                    let is_complement = ref_val < 0;
+                    let node = &NODES[(ref_val.unsigned_abs() as usize) - 1];
+                    let condition_result = match node.condition_index {
+                        0 => endpoint.is_some(),
+                        1 => region.is_some(),
+                        2 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &mut context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *partition_result = partition_resolver
+                                    .resolve_partition(if let Some(param) = region { param } else { return false }, _diagnostic_collector)
+                                    .map(|inner| inner.into());
+                                partition_result.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        3 => (use_fips) == (&true),
+                        4 => (use_dual_stack) == (&true),
+                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("aws-global".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        6 => (use_global_endpoint) == (&true),
+                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("eu-central-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_dual_stack()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        9 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_fips()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        10 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("ap-south-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("eu-north-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        12 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("eu-west-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("eu-west-2".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("eu-west-3".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        15 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("sa-east-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        16 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("us-east-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        17 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("us-east-2".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        18 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("us-west-2".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        19 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("us-west-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        20 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("ca-central-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        21 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("ap-southeast-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        22 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("ap-northeast-1".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        23 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("ap-southeast-2".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        24 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-us-gov")
+                        })(&mut _diagnostic_collector),
+                        _ => unreachable!("Invalid condition index"),
+                    };
+                    current_ref = if is_complement ^ condition_result { node.high_ref } else { node.low_ref };
+                }
+            }
+        }
     }
 }
 
 impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
-    fn resolve_endpoint(&self, params: &crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'_> {
-        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(self.resolve_endpoint(params))
+    fn resolve_endpoint<'a>(&'a self, params: &'a crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'a> {
+        // Check single-entry cache (lock-free read via ArcSwap)
+        let cached = self.endpoint_cache.load();
+        if let Some((cached_params, cached_endpoint)) = cached.as_ref() {
+            if cached_params == params {
+                return ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(::std::result::Result::Ok(cached_endpoint.clone()));
+            }
+        }
+        drop(cached);
+        let result = self.resolve_endpoint(params);
+        if let ::std::result::Result::Ok(ref endpoint) = result {
+            self.endpoint_cache.store(::std::sync::Arc::new(Some((params.clone(), endpoint.clone()))));
+        }
+        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
+}
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 31] = [
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: -1,
+        high_ref: 1,
+        low_ref: -1,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 0,
+        high_ref: 30,
+        low_ref: 3,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 1,
+        high_ref: 4,
+        low_ref: 100000014,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 5,
+        low_ref: 100000014,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 25,
+        low_ref: 6,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 24,
+        low_ref: 7,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 100000001,
+        low_ref: 8,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 9,
+        low_ref: 100000013,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 100000001,
+        low_ref: 10,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 100000001,
+        low_ref: 11,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 100000001,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 100000001,
+        low_ref: 13,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 100000001,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 100000001,
+        low_ref: 15,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 100000001,
+        low_ref: 16,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000001,
+        low_ref: 17,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 17,
+        high_ref: 100000001,
+        low_ref: 18,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 18,
+        high_ref: 100000001,
+        low_ref: 19,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 19,
+        high_ref: 100000001,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000001,
+        low_ref: 21,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 100000001,
+        low_ref: 22,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 100000001,
+        low_ref: 23,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 100000001,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000011,
+        low_ref: 100000012,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 28,
+        low_ref: 26,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 27,
+        low_ref: 100000010,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 100000008,
+        low_ref: 100000009,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 29,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 100000006,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 100000003,
+        low_ref: 31,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 100000004,
+        low_ref: 100000005,
+    },
+];
+// These are all optional since they are set by conditions and will
+// all be unset when we start evaluation
+#[derive(Default)]
+#[allow(unused_lifetimes)]
+pub(crate) struct ConditionContext<'a> {
+    pub(crate) partition_result: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    // Sometimes none of the members reference the lifetime, this makes it still valid
+    phantom: std::marker::PhantomData<&'a ()>,
 }
 
 #[non_exhaustive]
@@ -1883,5 +2256,3 @@ impl std::fmt::Display for InvalidParams {
 }
 
 impl std::error::Error for InvalidParams {}
-
-mod internals;

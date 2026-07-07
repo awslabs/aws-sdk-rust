@@ -129,6 +129,8 @@ pub fn de_list_distribution_tenants_by_customization(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListDistributionTenantsByCustomizationResult") {
         return Err(
                                 ::aws_smithy_xml::decode::XmlDecodeError::custom(
@@ -141,7 +143,7 @@ pub fn de_list_distribution_tenants_by_customization(
             s if s.matches("DistributionTenantList") /* DistributionTenantList com.amazonaws.cloudfront.synthetic#ListDistributionTenantsByCustomizationOutput$DistributionTenantList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_distribution_tenant_list::de_distribution_tenant_list(&mut tag)
+                        crate::protocol_serde::shape_distribution_tenant_list::de_distribution_tenant_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

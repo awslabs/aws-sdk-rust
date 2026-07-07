@@ -49,6 +49,8 @@ pub fn de_create_network_interface(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateNetworkInterfaceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateNetworkInterfaceResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_create_network_interface(
             s if s.matches("networkInterface") /* NetworkInterface com.amazonaws.ec2.synthetic#CreateNetworkInterfaceOutput$NetworkInterface */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_network_interface::de_network_interface(&mut tag)
+                        crate::protocol_serde::shape_network_interface::de_network_interface(&mut tag, depth + 1)
                         ?
                     )
                 ;

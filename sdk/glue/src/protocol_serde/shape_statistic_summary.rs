@@ -2,10 +2,16 @@
 pub(crate) fn de_statistic_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StatisticSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,7 +36,11 @@ where
                             );
                         }
                         "RunIdentifier" => {
-                            builder = builder.set_run_identifier(crate::protocol_serde::shape_run_identifier::de_run_identifier(tokens, _value)?);
+                            builder = builder.set_run_identifier(crate::protocol_serde::shape_run_identifier::de_run_identifier(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "StatisticName" => {
                             builder = builder.set_statistic_name(
@@ -52,17 +62,20 @@ where
                             );
                         }
                         "ColumnsReferenced" => {
-                            builder =
-                                builder.set_columns_referenced(crate::protocol_serde::shape_column_name_list::de_column_name_list(tokens, _value)?);
+                            builder = builder.set_columns_referenced(crate::protocol_serde::shape_column_name_list::de_column_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ReferencedDatasets" => {
                             builder = builder.set_referenced_datasets(
-                                crate::protocol_serde::shape_reference_datasets_list::de_reference_datasets_list(tokens, _value)?,
+                                crate::protocol_serde::shape_reference_datasets_list::de_reference_datasets_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "StatisticProperties" => {
                             builder = builder.set_statistic_properties(
-                                crate::protocol_serde::shape_statistic_properties_map::de_statistic_properties_map(tokens, _value)?,
+                                crate::protocol_serde::shape_statistic_properties_map::de_statistic_properties_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "RecordedOn" => {
@@ -73,7 +86,11 @@ where
                         }
                         "InclusionAnnotation" => {
                             builder = builder.set_inclusion_annotation(
-                                crate::protocol_serde::shape_timestamped_inclusion_annotation::de_timestamped_inclusion_annotation(tokens, _value)?,
+                                crate::protocol_serde::shape_timestamped_inclusion_annotation::de_timestamped_inclusion_annotation(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -181,6 +181,8 @@ mod list_available_resource_dimensions;
 
 mod list_available_resource_metrics;
 
+mod list_performance_analysis_report_recommendations;
+
 mod list_performance_analysis_reports;
 
 mod list_tags_for_resource;

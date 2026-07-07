@@ -49,6 +49,8 @@ pub fn de_estimate_template_cost(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("EstimateTemplateCostResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected EstimateTemplateCostResponse got {start_el:?}"

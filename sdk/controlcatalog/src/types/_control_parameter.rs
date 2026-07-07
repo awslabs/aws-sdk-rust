@@ -24,12 +24,18 @@
 pub struct ControlParameter {
     /// <p>The parameter name. This name is the parameter <code>key</code> when you call <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html"> <code>EnableControl</code> </a> or <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledControl.html"> <code>UpdateEnabledControl</code> </a>.</p>
     pub name: ::std::string::String,
+    /// <p>Indicates whether the parameter is required or optional when you enable the control.</p>
+    pub requirement: ::std::option::Option<crate::types::ControlParameterRequirement>,
 }
 impl ControlParameter {
     /// <p>The parameter name. This name is the parameter <code>key</code> when you call <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html"> <code>EnableControl</code> </a> or <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledControl.html"> <code>UpdateEnabledControl</code> </a>.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
+    }
+    /// <p>Indicates whether the parameter is required or optional when you enable the control.</p>
+    pub fn requirement(&self) -> ::std::option::Option<&crate::types::ControlParameterRequirement> {
+        self.requirement.as_ref()
     }
 }
 impl ControlParameter {
@@ -44,6 +50,7 @@ impl ControlParameter {
 #[non_exhaustive]
 pub struct ControlParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) requirement: ::std::option::Option<crate::types::ControlParameterRequirement>,
 }
 impl ControlParameterBuilder {
     /// <p>The parameter name. This name is the parameter <code>key</code> when you call <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html"> <code>EnableControl</code> </a> or <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledControl.html"> <code>UpdateEnabledControl</code> </a>.</p>
@@ -61,6 +68,20 @@ impl ControlParameterBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>Indicates whether the parameter is required or optional when you enable the control.</p>
+    pub fn requirement(mut self, input: crate::types::ControlParameterRequirement) -> Self {
+        self.requirement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the parameter is required or optional when you enable the control.</p>
+    pub fn set_requirement(mut self, input: ::std::option::Option<crate::types::ControlParameterRequirement>) -> Self {
+        self.requirement = input;
+        self
+    }
+    /// <p>Indicates whether the parameter is required or optional when you enable the control.</p>
+    pub fn get_requirement(&self) -> &::std::option::Option<crate::types::ControlParameterRequirement> {
+        &self.requirement
+    }
     /// Consumes the builder and constructs a [`ControlParameter`](crate::types::ControlParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ControlParameterBuilder::name)
@@ -72,6 +93,7 @@ impl ControlParameterBuilder {
                     "name was not specified but it is required when building ControlParameter",
                 )
             })?,
+            requirement: self.requirement,
         })
     }
 }

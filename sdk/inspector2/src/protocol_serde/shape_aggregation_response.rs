@@ -2,10 +2,16 @@
 pub(crate) fn de_aggregation_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AggregationResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,18 +37,22 @@ where
                     }
                     variant = match key.as_ref() {
                         "accountAggregation" => Some(crate::types::AggregationResponse::AccountAggregation(
-                            crate::protocol_serde::shape_account_aggregation_response::de_account_aggregation_response(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'accountAggregation' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_account_aggregation_response::de_account_aggregation_response(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'accountAggregation' cannot be null")
+                                })?,
                         )),
                         "amiAggregation" => Some(crate::types::AggregationResponse::AmiAggregation(
-                            crate::protocol_serde::shape_ami_aggregation_response::de_ami_aggregation_response(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'amiAggregation' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_ami_aggregation_response::de_ami_aggregation_response(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'amiAggregation' cannot be null")
+                                })?,
                         )),
                         "awsEcrContainerAggregation" => Some(crate::types::AggregationResponse::AwsEcrContainerAggregation(
                             crate::protocol_serde::shape_aws_ecr_container_aggregation_response::de_aws_ecr_container_aggregation_response(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -51,58 +61,72 @@ where
                             })?,
                         )),
                         "ec2InstanceAggregation" => Some(crate::types::AggregationResponse::Ec2InstanceAggregation(
-                            crate::protocol_serde::shape_ec2_instance_aggregation_response::de_ec2_instance_aggregation_response(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'ec2InstanceAggregation' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_ec2_instance_aggregation_response::de_ec2_instance_aggregation_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ec2InstanceAggregation' cannot be null")
+                            })?,
                         )),
                         "findingTypeAggregation" => Some(crate::types::AggregationResponse::FindingTypeAggregation(
-                            crate::protocol_serde::shape_finding_type_aggregation_response::de_finding_type_aggregation_response(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'findingTypeAggregation' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_finding_type_aggregation_response::de_finding_type_aggregation_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'findingTypeAggregation' cannot be null")
+                            })?,
                         )),
                         "imageLayerAggregation" => Some(crate::types::AggregationResponse::ImageLayerAggregation(
-                            crate::protocol_serde::shape_image_layer_aggregation_response::de_image_layer_aggregation_response(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'imageLayerAggregation' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_image_layer_aggregation_response::de_image_layer_aggregation_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'imageLayerAggregation' cannot be null")
+                            })?,
                         )),
                         "packageAggregation" => Some(crate::types::AggregationResponse::PackageAggregation(
-                            crate::protocol_serde::shape_package_aggregation_response::de_package_aggregation_response(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'packageAggregation' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_package_aggregation_response::de_package_aggregation_response(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'packageAggregation' cannot be null")
+                                })?,
                         )),
                         "repositoryAggregation" => Some(crate::types::AggregationResponse::RepositoryAggregation(
-                            crate::protocol_serde::shape_repository_aggregation_response::de_repository_aggregation_response(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'repositoryAggregation' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_repository_aggregation_response::de_repository_aggregation_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'repositoryAggregation' cannot be null")
+                            })?,
                         )),
                         "titleAggregation" => Some(crate::types::AggregationResponse::TitleAggregation(
-                            crate::protocol_serde::shape_title_aggregation_response::de_title_aggregation_response(tokens, _value)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'titleAggregation' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_title_aggregation_response::de_title_aggregation_response(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'titleAggregation' cannot be null")
+                                })?,
                         )),
                         "lambdaLayerAggregation" => Some(crate::types::AggregationResponse::LambdaLayerAggregation(
-                            crate::protocol_serde::shape_lambda_layer_aggregation_response::de_lambda_layer_aggregation_response(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'lambdaLayerAggregation' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_lambda_layer_aggregation_response::de_lambda_layer_aggregation_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lambdaLayerAggregation' cannot be null")
+                            })?,
                         )),
                         "lambdaFunctionAggregation" => Some(crate::types::AggregationResponse::LambdaFunctionAggregation(
                             crate::protocol_serde::shape_lambda_function_aggregation_response::de_lambda_function_aggregation_response(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -112,11 +136,47 @@ where
                         )),
                         "codeRepositoryAggregation" => Some(crate::types::AggregationResponse::CodeRepositoryAggregation(
                             crate::protocol_serde::shape_code_repository_aggregation_response::de_code_repository_aggregation_response(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                     "value for 'codeRepositoryAggregation' cannot be null",
+                                )
+                            })?,
+                        )),
+                        "vmInstanceAggregation" => Some(crate::types::AggregationResponse::VmInstanceAggregation(
+                            crate::protocol_serde::shape_vm_instance_aggregation_response::de_vm_instance_aggregation_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vmInstanceAggregation' cannot be null")
+                            })?,
+                        )),
+                        "containerImageAggregation" => Some(crate::types::AggregationResponse::ContainerImageAggregation(
+                            crate::protocol_serde::shape_container_image_aggregation_response::de_container_image_aggregation_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'containerImageAggregation' cannot be null",
+                                )
+                            })?,
+                        )),
+                        "serverlessFunctionAggregation" => Some(crate::types::AggregationResponse::ServerlessFunctionAggregation(
+                            crate::protocol_serde::shape_serverless_function_aggregation_response::de_serverless_function_aggregation_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'serverlessFunctionAggregation' cannot be null",
                                 )
                             })?,
                         )),

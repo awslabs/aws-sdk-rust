@@ -18,10 +18,16 @@ pub fn ser_state_template_association(
 pub(crate) fn de_state_template_association<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StateTemplateAssociation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -40,7 +46,11 @@ where
                         }
                         "stateTemplateUpdateStrategy" => {
                             builder = builder.set_state_template_update_strategy(
-                                crate::protocol_serde::shape_state_template_update_strategy::de_state_template_update_strategy(tokens, _value)?,
+                                crate::protocol_serde::shape_state_template_update_strategy::de_state_template_update_strategy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -220,4 +220,21 @@ impl UpdateRouterInputFluentBuilder {
     pub fn get_maintenance_configuration(&self) -> &::std::option::Option<crate::types::MaintenanceConfiguration> {
         self.inner.get_maintenance_configuration()
     }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn content_quality_analysis_configuration(mut self, input: crate::types::RouterContentQualityAnalysisConfiguration) -> Self {
+        self.inner = self.inner.content_quality_analysis_configuration(input);
+        self
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn set_content_quality_analysis_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_content_quality_analysis_configuration(input);
+        self
+    }
+    /// <p>The content quality analysis configuration for the router input.</p>
+    pub fn get_content_quality_analysis_configuration(&self) -> &::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration> {
+        self.inner.get_content_quality_analysis_configuration()
+    }
 }

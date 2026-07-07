@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_quotas(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceQuotas, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceQuotas::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_resource_quotas(
             s if s.matches("ApplicationQuota") /* ApplicationQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$ApplicationQuota */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag)
+                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_resource_quotas(
             s if s.matches("ApplicationVersionQuota") /* ApplicationVersionQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$ApplicationVersionQuota */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag)
+                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -30,7 +34,7 @@ pub fn de_resource_quotas(
             s if s.matches("EnvironmentQuota") /* EnvironmentQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$EnvironmentQuota */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag)
+                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -40,7 +44,7 @@ pub fn de_resource_quotas(
             s if s.matches("ConfigurationTemplateQuota") /* ConfigurationTemplateQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$ConfigurationTemplateQuota */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag)
+                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -50,7 +54,7 @@ pub fn de_resource_quotas(
             s if s.matches("CustomPlatformQuota") /* CustomPlatformQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$CustomPlatformQuota */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag)
+                        crate::protocol_serde::shape_resource_quota::de_resource_quota(&mut tag, depth + 1)
                         ?
                     )
                 ;

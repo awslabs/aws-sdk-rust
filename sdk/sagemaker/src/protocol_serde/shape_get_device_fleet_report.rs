@@ -54,6 +54,8 @@ pub(crate) fn de_get_device_fleet_report(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -74,7 +76,11 @@ pub(crate) fn de_get_device_fleet_report(
                     );
                 }
                 "OutputConfig" => {
-                    builder = builder.set_output_config(crate::protocol_serde::shape_edge_output_config::de_edge_output_config(tokens, _value)?);
+                    builder = builder.set_output_config(crate::protocol_serde::shape_edge_output_config::de_edge_output_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -90,13 +96,17 @@ pub(crate) fn de_get_device_fleet_report(
                     )?);
                 }
                 "DeviceStats" => {
-                    builder = builder.set_device_stats(crate::protocol_serde::shape_device_stats::de_device_stats(tokens, _value)?);
+                    builder = builder.set_device_stats(crate::protocol_serde::shape_device_stats::de_device_stats(tokens, _value, depth + 1)?);
                 }
                 "AgentVersions" => {
-                    builder = builder.set_agent_versions(crate::protocol_serde::shape_agent_versions::de_agent_versions(tokens, _value)?);
+                    builder = builder.set_agent_versions(crate::protocol_serde::shape_agent_versions::de_agent_versions(tokens, _value, depth + 1)?);
                 }
                 "ModelStats" => {
-                    builder = builder.set_model_stats(crate::protocol_serde::shape_edge_model_stats::de_edge_model_stats(tokens, _value)?);
+                    builder = builder.set_model_stats(crate::protocol_serde::shape_edge_model_stats::de_edge_model_stats(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

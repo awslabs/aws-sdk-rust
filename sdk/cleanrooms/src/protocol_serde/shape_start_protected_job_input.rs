@@ -9,20 +9,23 @@ pub fn ser_start_protected_job_input_input(
         crate::protocol_serde::shape_protected_job_compute_configuration::ser_protected_job_compute_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.job_parameters {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("jobParameters").start_object();
-        crate::protocol_serde::shape_protected_job_parameters::ser_protected_job_parameters(&mut object_4, var_3)?;
-        object_4.finish();
+    if let Some(var_3) = &input.job_compute_payer_account_id {
+        object.key("jobComputePayerAccountId").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.result_configuration {
+    if let Some(var_4) = &input.job_parameters {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("resultConfiguration").start_object();
-        crate::protocol_serde::shape_protected_job_result_configuration_input::ser_protected_job_result_configuration_input(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("jobParameters").start_object();
+        crate::protocol_serde::shape_protected_job_parameters::ser_protected_job_parameters(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.r#type {
-        object.key("type").string(var_7.as_str());
+    if let Some(var_6) = &input.result_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("resultConfiguration").start_object();
+        crate::protocol_serde::shape_protected_job_result_configuration_input::ser_protected_job_result_configuration_input(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.r#type {
+        object.key("type").string(var_8.as_str());
     }
     Ok(())
 }

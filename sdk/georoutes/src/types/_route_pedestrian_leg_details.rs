@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutePedestrianLegDetails {
+    /// <p>Steps of a leg that must be performed after the travel portion of the leg.</p>
+    pub after_travel_steps: ::std::vec::Vec<crate::types::RoutePedestrianAfterTravelStep>,
     /// <p>Details corresponding to the arrival for the leg.</p>
     pub arrival: ::std::option::Option<crate::types::RoutePedestrianArrival>,
     /// <p>Details corresponding to the departure for the leg.</p>
@@ -20,6 +22,11 @@ pub struct RoutePedestrianLegDetails {
     pub travel_steps: ::std::vec::Vec<crate::types::RoutePedestrianTravelStep>,
 }
 impl RoutePedestrianLegDetails {
+    /// <p>Steps of a leg that must be performed after the travel portion of the leg.</p>
+    pub fn after_travel_steps(&self) -> &[crate::types::RoutePedestrianAfterTravelStep] {
+        use std::ops::Deref;
+        self.after_travel_steps.deref()
+    }
     /// <p>Details corresponding to the arrival for the leg.</p>
     pub fn arrival(&self) -> ::std::option::Option<&crate::types::RoutePedestrianArrival> {
         self.arrival.as_ref()
@@ -64,6 +71,7 @@ impl RoutePedestrianLegDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct RoutePedestrianLegDetailsBuilder {
+    pub(crate) after_travel_steps: ::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianAfterTravelStep>>,
     pub(crate) arrival: ::std::option::Option<crate::types::RoutePedestrianArrival>,
     pub(crate) departure: ::std::option::Option<crate::types::RoutePedestrianDeparture>,
     pub(crate) notices: ::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianNotice>>,
@@ -73,6 +81,26 @@ pub struct RoutePedestrianLegDetailsBuilder {
     pub(crate) travel_steps: ::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianTravelStep>>,
 }
 impl RoutePedestrianLegDetailsBuilder {
+    /// Appends an item to `after_travel_steps`.
+    ///
+    /// To override the contents of this collection use [`set_after_travel_steps`](Self::set_after_travel_steps).
+    ///
+    /// <p>Steps of a leg that must be performed after the travel portion of the leg.</p>
+    pub fn after_travel_steps(mut self, input: crate::types::RoutePedestrianAfterTravelStep) -> Self {
+        let mut v = self.after_travel_steps.unwrap_or_default();
+        v.push(input);
+        self.after_travel_steps = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Steps of a leg that must be performed after the travel portion of the leg.</p>
+    pub fn set_after_travel_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianAfterTravelStep>>) -> Self {
+        self.after_travel_steps = input;
+        self
+    }
+    /// <p>Steps of a leg that must be performed after the travel portion of the leg.</p>
+    pub fn get_after_travel_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianAfterTravelStep>> {
+        &self.after_travel_steps
+    }
     /// <p>Details corresponding to the arrival for the leg.</p>
     /// This field is required.
     pub fn arrival(mut self, input: crate::types::RoutePedestrianArrival) -> Self {
@@ -205,6 +233,7 @@ impl RoutePedestrianLegDetailsBuilder {
     /// - [`travel_steps`](crate::types::builders::RoutePedestrianLegDetailsBuilder::travel_steps)
     pub fn build(self) -> ::std::result::Result<crate::types::RoutePedestrianLegDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RoutePedestrianLegDetails {
+            after_travel_steps: self.after_travel_steps.unwrap_or_default(),
             arrival: self.arrival,
             departure: self.departure,
             notices: self.notices.ok_or_else(|| {

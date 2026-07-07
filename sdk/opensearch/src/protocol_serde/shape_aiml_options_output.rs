@@ -2,10 +2,16 @@
 pub(crate) fn de_aiml_options_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AimlOptionsOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,16 +23,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NaturalLanguageQueryGenerationOptions" => {
                             builder = builder.set_natural_language_query_generation_options(
-                                    crate::protocol_serde::shape_natural_language_query_generation_options_output::de_natural_language_query_generation_options_output(tokens, _value)?
+                                    crate::protocol_serde::shape_natural_language_query_generation_options_output::de_natural_language_query_generation_options_output(tokens, _value, depth + 1)?
                                 );
                         }
                         "S3VectorsEngine" => {
-                            builder =
-                                builder.set_s3_vectors_engine(crate::protocol_serde::shape_s3_vectors_engine::de_s3_vectors_engine(tokens, _value)?);
+                            builder = builder.set_s3_vectors_engine(crate::protocol_serde::shape_s3_vectors_engine::de_s3_vectors_engine(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ServerlessVectorAcceleration" => {
                             builder = builder.set_serverless_vector_acceleration(
-                                crate::protocol_serde::shape_serverless_vector_acceleration::de_serverless_vector_acceleration(tokens, _value)?,
+                                crate::protocol_serde::shape_serverless_vector_acceleration::de_serverless_vector_acceleration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_server_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ServerDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,8 +36,11 @@ where
                             );
                         }
                         "recommendationSet" => {
-                            builder = builder
-                                .set_recommendation_set(crate::protocol_serde::shape_recommendation_set::de_recommendation_set(tokens, _value)?);
+                            builder = builder.set_recommendation_set(crate::protocol_serde::shape_recommendation_set::de_recommendation_set(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dataCollectionStatus" => {
                             builder = builder.set_data_collection_status(
@@ -49,19 +58,27 @@ where
                         }
                         "listAntipatternSeveritySummary" => {
                             builder = builder.set_list_antipattern_severity_summary(
-                                crate::protocol_serde::shape_list_antipattern_severity_summary::de_list_antipattern_severity_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_list_antipattern_severity_summary::de_list_antipattern_severity_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "systemInfo" => {
-                            builder = builder.set_system_info(crate::protocol_serde::shape_system_info::de_system_info(tokens, _value)?);
+                            builder = builder.set_system_info(crate::protocol_serde::shape_system_info::de_system_info(tokens, _value, depth + 1)?);
                         }
                         "applicationComponentStrategySummary" => {
                             builder = builder.set_application_component_strategy_summary(
-                                crate::protocol_serde::shape_list_strategy_summary::de_list_strategy_summary(tokens, _value)?,
+                                crate::protocol_serde::shape_list_strategy_summary::de_list_strategy_summary(tokens, _value, depth + 1)?,
                             );
                         }
                         "antipatternReportS3Object" => {
-                            builder = builder.set_antipattern_report_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value)?);
+                            builder = builder.set_antipattern_report_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "antipatternReportStatus" => {
                             builder = builder.set_antipattern_report_status(
@@ -91,7 +108,8 @@ where
                             )?);
                         }
                         "serverError" => {
-                            builder = builder.set_server_error(crate::protocol_serde::shape_server_error::de_server_error(tokens, _value)?);
+                            builder =
+                                builder.set_server_error(crate::protocol_serde::shape_server_error::de_server_error(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

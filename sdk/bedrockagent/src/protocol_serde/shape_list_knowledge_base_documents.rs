@@ -159,6 +159,8 @@ pub(crate) fn de_list_knowledge_base_documents(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -166,7 +168,7 @@ pub(crate) fn de_list_knowledge_base_documents(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "documentDetails" => {
                     builder = builder.set_document_details(
-                        crate::protocol_serde::shape_knowledge_base_document_details::de_knowledge_base_document_details(tokens, _value)?,
+                        crate::protocol_serde::shape_knowledge_base_document_details::de_knowledge_base_document_details(tokens, _value, depth + 1)?,
                     );
                 }
                 "nextToken" => {

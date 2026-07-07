@@ -2,10 +2,16 @@
 pub(crate) fn de_impacted_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ImpactedLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -95,13 +101,25 @@ where
                             );
                         }
                         "CausedBy" => {
-                            builder = builder.set_caused_by(crate::protocol_serde::shape_network_impairment::de_network_impairment(tokens, _value)?);
+                            builder = builder.set_caused_by(crate::protocol_serde::shape_network_impairment::de_network_impairment(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "InternetHealth" => {
-                            builder = builder.set_internet_health(crate::protocol_serde::shape_internet_health::de_internet_health(tokens, _value)?);
+                            builder = builder.set_internet_health(crate::protocol_serde::shape_internet_health::de_internet_health(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Ipv4Prefixes" => {
-                            builder = builder.set_ipv4_prefixes(crate::protocol_serde::shape_ipv4_prefix_list::de_ipv4_prefix_list(tokens, _value)?);
+                            builder = builder.set_ipv4_prefixes(crate::protocol_serde::shape_ipv4_prefix_list::de_ipv4_prefix_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

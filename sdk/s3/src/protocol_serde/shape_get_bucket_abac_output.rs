@@ -20,5 +20,7 @@ pub fn de_abac_status(inp: &[u8]) -> std::result::Result<crate::types::AbacStatu
             "invalid root, expected AbacStatus got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_abac_status::de_abac_status(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_abac_status::de_abac_status(&mut decoder, depth + 1)
 }

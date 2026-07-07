@@ -39,10 +39,16 @@ pub fn ser_metric_v2(
 pub(crate) fn de_metric_v2<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MetricV2>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,7 +67,9 @@ where
                         }
                         "Threshold" => {
                             builder = builder.set_threshold(crate::protocol_serde::shape_threshold_collections::de_threshold_collections(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "MetricId" => {
@@ -73,7 +81,9 @@ where
                         }
                         "MetricFilters" => {
                             builder = builder.set_metric_filters(crate::protocol_serde::shape_metric_filters_v2_list::de_metric_filters_v2_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

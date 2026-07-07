@@ -42,6 +42,8 @@ pub fn de_verify_domain_dkim(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("VerifyDomainDkimResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected VerifyDomainDkimResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_verify_domain_dkim(
             s if s.matches("DkimTokens") /* DkimTokens com.amazonaws.ses.synthetic#VerifyDomainDkimOutput$DkimTokens */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_verification_token_list::de_verification_token_list(&mut tag)
+                        crate::protocol_serde::shape_verification_token_list::de_verification_token_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

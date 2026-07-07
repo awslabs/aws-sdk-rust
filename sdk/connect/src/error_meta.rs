@@ -57,7 +57,7 @@ pub enum Error {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Displayed when rate-related API limits are exceeded.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>No user with the specified credentials was found in the Amazon Connect instance.</p>
+    /// <p>No user with the specified credentials was found in the Connect Customer instance.</p>
     UserNotFoundException(crate::types::error::UserNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -1514,6 +1514,66 @@ impl From<crate::operation::create_agent_status::CreateAgentStatusError> for Err
             }
             crate::operation::create_agent_status::CreateAgentStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_agent_status::CreateAgentStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_attached_file::CreateAttachedFileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_attached_file::CreateAttachedFileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_attached_file::CreateAttachedFileError> for Error {
+    fn from(err: crate::operation::create_attached_file::CreateAttachedFileError) -> Self {
+        match err {
+            crate::operation::create_attached_file::CreateAttachedFileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_attached_file::CreateAttachedFileError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_attached_file::CreateAttachedFileError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_attached_file::CreateAttachedFileError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::create_attached_file::CreateAttachedFileError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_attached_file::CreateAttachedFileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_attached_file::CreateAttachedFileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_auth_code::CreateAuthCodeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_auth_code::CreateAuthCodeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_auth_code::CreateAuthCodeError> for Error {
+    fn from(err: crate::operation::create_auth_code::CreateAuthCodeError) -> Self {
+        match err {
+            crate::operation::create_auth_code::CreateAuthCodeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_auth_code::CreateAuthCodeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_auth_code::CreateAuthCodeError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_auth_code::CreateAuthCodeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_auth_code::CreateAuthCodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_auth_code::CreateAuthCodeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_auth_code::CreateAuthCodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3847,6 +3907,33 @@ impl From<crate::operation::delete_security_profile::DeleteSecurityProfileError>
             }
             crate::operation::delete_security_profile::DeleteSecurityProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_security_profile::DeleteSecurityProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_session::DeleteSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_session::DeleteSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_session::DeleteSessionError> for Error {
+    fn from(err: crate::operation::delete_session::DeleteSessionError) -> Self {
+        match err {
+            crate::operation::delete_session::DeleteSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_session::DeleteSessionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_session::DeleteSessionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_session::DeleteSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_session::DeleteSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_session::DeleteSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_session::DeleteSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6476,6 +6563,46 @@ impl From<crate::operation::get_effective_hours_of_operations::GetEffectiveHours
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError> for Error {
+    fn from(err: crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError) -> Self {
+        match err {
+            crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_federation_token::GetFederationTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6506,6 +6633,7 @@ impl From<crate::operation::get_federation_token::GetFederationTokenError> for E
             crate::operation::get_federation_token::GetFederationTokenError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_federation_token::GetFederationTokenError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_federation_token::GetFederationTokenError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
             crate::operation::get_federation_token::GetFederationTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -10418,6 +10546,49 @@ impl From<crate::operation::send_outbound_email::SendOutboundEmailError> for Err
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError> for Error {
+    fn from(err: crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError) -> Self {
+        match err {
+            crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::send_outbound_web_notification::SendOutboundWebNotificationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_attached_file_upload::StartAttachedFileUploadError, R>>
     for Error
 where
@@ -10483,6 +10654,58 @@ impl From<crate::operation::start_chat_contact::StartChatContactError> for Error
             crate::operation::start_chat_contact::StartChatContactError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::start_chat_contact::StartChatContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::start_chat_contact::StartChatContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError> for Error {
+    fn from(err: crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError) -> Self {
+        match err {
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError::IdempotencyException(
+                inner,
+            ) => Error::IdempotencyException(inner),
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_contact_conversational_analytics_job::StartContactConversationalAnalyticsJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -10679,6 +10902,53 @@ impl From<crate::operation::start_email_contact::StartEmailContactError> for Err
             }
             crate::operation::start_email_contact::StartEmailContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_email_contact::StartEmailContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError> for Error {
+    fn from(err: crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError) -> Self {
+        match err {
+            crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_evaluation_form_validation::StartEvaluationFormValidationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

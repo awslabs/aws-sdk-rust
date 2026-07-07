@@ -2,10 +2,16 @@
 pub(crate) fn de_detect_mitigation_actions_task_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DetectMitigationActionsTaskSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,70 +20,76 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "taskId" => {
-                            builder = builder.set_task_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "taskId" => {
+                                builder = builder.set_task_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "taskStatus" => {
+                                builder = builder.set_task_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::DetectMitigationActionsTaskStatus::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
+                                );
+                            }
+                            "taskStartTime" => {
+                                builder = builder.set_task_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "taskEndTime" => {
+                                builder = builder.set_task_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "target" => {
+                                builder = builder.set_target(
+                                    crate::protocol_serde::shape_detect_mitigation_actions_task_target::de_detect_mitigation_actions_task_target(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "violationEventOccurrenceRange" => {
+                                builder = builder.set_violation_event_occurrence_range(
+                                    crate::protocol_serde::shape_violation_event_occurrence_range::de_violation_event_occurrence_range(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "onlyActiveViolationsIncluded" => {
+                                builder = builder
+                                    .set_only_active_violations_included(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "suppressedAlertsIncluded" => {
+                                builder = builder
+                                    .set_suppressed_alerts_included(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "actionsDefinition" => {
+                                builder = builder.set_actions_definition(
+                                    crate::protocol_serde::shape_mitigation_action_list::de_mitigation_action_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "taskStatistics" => {
+                                builder = builder.set_task_statistics(
+                                    crate::protocol_serde::shape_detect_mitigation_actions_task_statistics::de_detect_mitigation_actions_task_statistics(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "taskStatus" => {
-                            builder = builder.set_task_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::DetectMitigationActionsTaskStatus::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                            );
-                        }
-                        "taskStartTime" => {
-                            builder = builder.set_task_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "taskEndTime" => {
-                            builder = builder.set_task_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "target" => {
-                            builder = builder.set_target(
-                                crate::protocol_serde::shape_detect_mitigation_actions_task_target::de_detect_mitigation_actions_task_target(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "violationEventOccurrenceRange" => {
-                            builder = builder.set_violation_event_occurrence_range(
-                                crate::protocol_serde::shape_violation_event_occurrence_range::de_violation_event_occurrence_range(tokens, _value)?,
-                            );
-                        }
-                        "onlyActiveViolationsIncluded" => {
-                            builder = builder
-                                .set_only_active_violations_included(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "suppressedAlertsIncluded" => {
-                            builder =
-                                builder.set_suppressed_alerts_included(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "actionsDefinition" => {
-                            builder = builder.set_actions_definition(crate::protocol_serde::shape_mitigation_action_list::de_mitigation_action_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "taskStatistics" => {
-                            builder = builder.set_task_statistics(
-                                crate::protocol_serde::shape_detect_mitigation_actions_task_statistics::de_detect_mitigation_actions_task_statistics(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

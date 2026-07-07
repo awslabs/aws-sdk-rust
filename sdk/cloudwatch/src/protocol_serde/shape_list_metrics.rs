@@ -85,20 +85,26 @@ pub(crate) fn de_list_metrics(
     value: &[u8],
     mut builder: crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_metrics::builders::ListMetricsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::list_metrics::builders::ListMetricsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Metrics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_metrics(Some(crate::protocol_serde::shape_metrics::de_metrics(decoder)?)))
+                Ok(builder.set_metrics(Some(crate::protocol_serde::shape_metrics::de_metrics(decoder, depth + 1)?)))
             })?,
             "NextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
             }
             "OwningAccounts" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_owning_accounts(Some(crate::protocol_serde::shape_owning_accounts::de_owning_accounts(decoder)?)))
+                Ok(
+                    builder.set_owning_accounts(Some(crate::protocol_serde::shape_owning_accounts::de_owning_accounts(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
             })?,
             _ => {
                 decoder.skip()?;
@@ -109,6 +115,8 @@ pub(crate) fn de_list_metrics(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -118,13 +126,13 @@ pub(crate) fn de_list_metrics(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

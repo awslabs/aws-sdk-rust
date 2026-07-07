@@ -23,6 +23,14 @@ pub use crate::types::_list_flow_association_resource_type::ListFlowAssociationR
 
 pub use crate::types::_agent_status_state::AgentStatusState;
 
+pub use crate::types::_file_use_case_type::FileUseCaseType;
+
+pub use crate::types::_file_status_type::FileStatusType;
+
+pub use crate::types::_auth_scope::AuthScope;
+
+pub use crate::types::_auth_code_entity_type::AuthCodeEntityType;
+
 pub use crate::types::_channel::Channel;
 
 pub use crate::types::_contact_initiation_method::ContactInitiationMethod;
@@ -197,10 +205,6 @@ pub use crate::types::_vocabulary::Vocabulary;
 
 pub use crate::types::_workspace::Workspace;
 
-pub use crate::types::_file_status_type::FileStatusType;
-
-pub use crate::types::_file_use_case_type::FileUseCaseType;
-
 pub use crate::types::_created_by_info::CreatedByInfo;
 
 pub use crate::types::_download_url_metadata::DownloadUrlMetadata;
@@ -208,6 +212,8 @@ pub use crate::types::_download_url_metadata::DownloadUrlMetadata;
 pub use crate::types::_filters::Filters;
 
 pub use crate::types::_user_data_filters::UserDataFilters;
+
+pub use crate::types::_evaluation_form_validation_status::EvaluationFormValidationStatus;
 
 pub use crate::types::_credentials::Credentials;
 
@@ -349,6 +355,12 @@ pub use crate::types::_traffic_type::TrafficType;
 
 pub use crate::types::_source_campaign::SourceCampaign;
 
+pub use crate::types::_web_notification_source::WebNotificationSource;
+
+pub use crate::types::_widget_destination::WidgetDestination;
+
+pub use crate::types::_web_notification_content::WebNotificationContent;
+
 pub use crate::types::_upload_url_metadata::UploadUrlMetadata;
 
 pub use crate::types::_participant_details::ParticipantDetails;
@@ -358,6 +370,8 @@ pub use crate::types::_participant_configuration::ParticipantConfiguration;
 pub use crate::types::_chat_message::ChatMessage;
 
 pub use crate::types::_persistent_chat::PersistentChat;
+
+pub use crate::types::_analytics_configuration::AnalyticsConfiguration;
 
 pub use crate::types::_auto_evaluation_configuration::AutoEvaluationConfiguration;
 
@@ -637,6 +651,8 @@ pub use crate::types::_effective_hours_of_operations::EffectiveHoursOfOperations
 
 pub use crate::types::_effective_override_hours::EffectiveOverrideHours;
 
+pub use crate::types::_evaluation_form_validation_finding::EvaluationFormValidationFinding;
+
 pub use crate::types::_historical_metric::HistoricalMetric;
 
 pub use crate::types::_historical_metric_result::HistoricalMetricResult;
@@ -777,6 +793,8 @@ pub use crate::types::_date_time_condition::DateTimeCondition;
 
 pub use crate::types::_decimal_condition::DecimalCondition;
 
+pub use crate::types::_contact_evaluation_attribute_filter::ContactEvaluationAttributeFilter;
+
 pub use crate::types::_evaluation_search_summary::EvaluationSearchSummary;
 
 pub use crate::types::_control_plane_tag_filter::ControlPlaneTagFilter;
@@ -798,6 +816,8 @@ pub use crate::types::_search_contacts_additional_time_range::SearchContactsAddi
 pub use crate::types::_searchable_contact_attributes::SearchableContactAttributes;
 
 pub use crate::types::_searchable_segment_attributes::SearchableSegmentAttributes;
+
+pub use crate::types::_ai_agents_criteria::AiAgentsCriteria;
 
 pub use crate::types::_sortable_field_name::SortableFieldName;
 
@@ -841,9 +861,25 @@ pub use crate::types::_outbound_message_source_type::OutboundMessageSourceType;
 
 pub use crate::types::_outbound_raw_message::OutboundRawMessage;
 
+pub use crate::types::_notification_type::NotificationType;
+
+pub use crate::types::_content_attributes::ContentAttributes;
+
 pub use crate::types::_response_mode::ResponseMode;
 
 pub use crate::types::_disconnect_on_customer_exit_participant_type::DisconnectOnCustomerExitParticipantType;
+
+pub use crate::types::_analytics_mode::AnalyticsMode;
+
+pub use crate::types::_language_configuration::LanguageConfiguration;
+
+pub use crate::types::_redaction_configuration::RedactionConfiguration;
+
+pub use crate::types::_sentiment_configuration::SentimentConfiguration;
+
+pub use crate::types::_summary_configuration::SummaryConfiguration;
+
+pub use crate::types::_rules_configuration::RulesConfiguration;
 
 pub use crate::types::_voice_recording_track::VoiceRecordingTrack;
 
@@ -888,6 +924,8 @@ pub use crate::types::_reference_status::ReferenceStatus;
 pub use crate::types::_evaluation_form_section::EvaluationFormSection;
 
 pub use crate::types::_evaluation_form_question::EvaluationFormQuestion;
+
+pub use crate::types::_evaluation_form_score_threshold::EvaluationFormScoreThreshold;
 
 pub use crate::types::_evaluation_review_notification_recipient::EvaluationReviewNotificationRecipient;
 
@@ -1009,6 +1047,8 @@ pub use crate::types::_hierarchy_path_reference::HierarchyPathReference;
 
 pub use crate::types::_agent_status_reference::AgentStatusReference;
 
+pub use crate::types::_evaluation_form_validation_finding_severity::EvaluationFormValidationFindingSeverity;
+
 pub use crate::types::_historical_metric_name::HistoricalMetricName;
 
 pub use crate::types::_threshold::Threshold;
@@ -1071,6 +1111,10 @@ pub use crate::types::_date_time_comparison_type::DateTimeComparisonType;
 
 pub use crate::types::_decimal_comparison_type::DecimalComparisonType;
 
+pub use crate::types::_contact_evaluation_attribute_and_condition::ContactEvaluationAttributeAndCondition;
+
+pub use crate::types::_contact_evaluation_attribute_condition::ContactEvaluationAttributeCondition;
+
 pub use crate::types::_evaluation_search_metadata::EvaluationSearchMetadata;
 
 pub use crate::types::_contact_flow_attribute_and_condition::ContactFlowAttributeAndCondition;
@@ -1095,6 +1139,14 @@ pub use crate::types::_hierarchy_group_match_type::HierarchyGroupMatchType;
 
 pub use crate::types::_user_identity_info_lite::UserIdentityInfoLite;
 
+pub use crate::types::_recommender_config::RecommenderConfig;
+
+pub use crate::types::_behavior::Behavior;
+
+pub use crate::types::_policy::Policy;
+
+pub use crate::types::_mask_mode::MaskMode;
+
 pub use crate::types::_agent_first::AgentFirst;
 
 pub use crate::types::_media_placement::MediaPlacement;
@@ -1116,6 +1168,10 @@ pub use crate::types::_evaluation_form_question_type::EvaluationFormQuestionType
 pub use crate::types::_evaluation_form_question_type_properties::EvaluationFormQuestionTypeProperties;
 
 pub use crate::types::_evaluation_form_item_enablement_configuration::EvaluationFormItemEnablementConfiguration;
+
+pub use crate::types::_evaluation_form_question_scoring_configuration::EvaluationFormQuestionScoringConfiguration;
+
+pub use crate::types::_performance_category_name::PerformanceCategoryName;
 
 pub use crate::types::_evaluation_review_notification_recipient_type::EvaluationReviewNotificationRecipientType;
 
@@ -1189,6 +1245,8 @@ pub use crate::types::_operational_hour::OperationalHour;
 
 pub use crate::types::_override_hour::OverrideHour;
 
+pub use crate::types::_evaluation_form_validation_finding_item::EvaluationFormValidationFindingItem;
+
 pub use crate::types::_comparison::Comparison;
 
 pub use crate::types::_historical_metric_data::HistoricalMetricData;
@@ -1213,6 +1271,12 @@ pub use crate::types::_real_time_contact_analysis_post_contact_summary_failure_c
 
 pub use crate::types::_action_summary::ActionSummary;
 
+pub use crate::types::_contact_evaluation_attribute_key::ContactEvaluationAttributeKey;
+
+pub use crate::types::_contact_evaluation_attribute_value::ContactEvaluationAttributeValue;
+
+pub use crate::types::_contact_evaluation_attribute_comparison_type::ContactEvaluationAttributeComparisonType;
+
 pub use crate::types::_searchable_routing_criteria_step::SearchableRoutingCriteriaStep;
 
 pub use crate::types::_search_contacts_additional_time_range_criteria::SearchContactsAdditionalTimeRangeCriteria;
@@ -1221,9 +1285,15 @@ pub use crate::types::_searchable_contact_attributes_criteria::SearchableContact
 
 pub use crate::types::_searchable_segment_attributes_criteria::SearchableSegmentAttributesCriteria;
 
+pub use crate::types::_ai_agent_search_criteria::AiAgentSearchCriteria;
+
 pub use crate::types::_contact_search_summary_segment_attribute_value::ContactSearchSummarySegmentAttributeValue;
 
+pub use crate::types::_contact_search_summary_ai_agent_info::ContactSearchSummaryAiAgentInfo;
+
 pub use crate::types::_condition::Condition;
+
+pub use crate::types::_summary_mode::SummaryMode;
 
 pub use crate::types::_email_header_type::EmailHeaderType;
 
@@ -1248,6 +1318,8 @@ pub use crate::types::_evaluation_form_multi_select_question_properties::Evaluat
 pub use crate::types::_evaluation_form_item_enablement_condition::EvaluationFormItemEnablementCondition;
 
 pub use crate::types::_evaluation_form_item_enablement_action::EvaluationFormItemEnablementAction;
+
+pub use crate::types::_question_points_configuration::QuestionPointsConfiguration;
 
 pub use crate::types::_field_value::FieldValue;
 
@@ -1365,6 +1437,8 @@ pub use crate::types::_agents_criteria::AgentsCriteria;
 
 pub use crate::types::_automatic_fail_configuration::AutomaticFailConfiguration;
 
+pub use crate::types::_question_option_points_configuration::QuestionOptionPointsConfiguration;
+
 pub use crate::types::_numeric_question_property_automation_label::NumericQuestionPropertyAutomationLabel;
 
 pub use crate::types::_evaluation_form_question_automation_answer_source_type::EvaluationFormQuestionAutomationAnswerSourceType;
@@ -1451,6 +1525,10 @@ mod _agents_criteria;
 
 mod _ai_agent_info;
 
+mod _ai_agent_search_criteria;
+
+mod _ai_agents_criteria;
+
 mod _ai_use_case;
 
 mod _alias_configuration;
@@ -1461,9 +1539,13 @@ mod _allowed_extension;
 
 mod _allowed_user_action;
 
+mod _analytics_configuration;
+
 mod _analytics_data_association_result;
 
 mod _analytics_data_sets_result;
+
+mod _analytics_mode;
 
 mod _answer_machine_detection_config;
 
@@ -1509,6 +1591,10 @@ mod _audio_features;
 
 mod _audio_quality_metrics_info;
 
+mod _auth_code_entity_type;
+
+mod _auth_scope;
+
 mod _authentication_profile;
 
 mod _authentication_profile_summary;
@@ -1540,6 +1626,8 @@ mod _batch_describe_data_table_value_success_result;
 mod _batch_update_data_table_value_failure_result;
 
 mod _batch_update_data_table_value_success_result;
+
+mod _behavior;
 
 mod _behavior_type;
 
@@ -1592,6 +1680,18 @@ mod _contact_data_request;
 mod _contact_details;
 
 mod _contact_evaluation;
+
+mod _contact_evaluation_attribute_and_condition;
+
+mod _contact_evaluation_attribute_comparison_type;
+
+mod _contact_evaluation_attribute_condition;
+
+mod _contact_evaluation_attribute_filter;
+
+mod _contact_evaluation_attribute_key;
+
+mod _contact_evaluation_attribute_value;
 
 mod _contact_filter;
 
@@ -1657,11 +1757,15 @@ mod _contact_search_summary;
 
 mod _contact_search_summary_agent_info;
 
+mod _contact_search_summary_ai_agent_info;
+
 mod _contact_search_summary_queue_info;
 
 mod _contact_search_summary_segment_attribute_value;
 
 mod _contact_state;
+
+mod _content_attributes;
 
 mod _control_plane_attribute_filter;
 
@@ -1877,9 +1981,13 @@ mod _evaluation_form_question_automation_answer_source;
 
 mod _evaluation_form_question_automation_answer_source_type;
 
+mod _evaluation_form_question_scoring_configuration;
+
 mod _evaluation_form_question_type;
 
 mod _evaluation_form_question_type_properties;
+
+mod _evaluation_form_score_threshold;
 
 mod _evaluation_form_scoring_mode;
 
@@ -1912,6 +2020,14 @@ mod _evaluation_form_target_configuration;
 mod _evaluation_form_text_question_automation;
 
 mod _evaluation_form_text_question_properties;
+
+mod _evaluation_form_validation_finding;
+
+mod _evaluation_form_validation_finding_item;
+
+mod _evaluation_form_validation_finding_severity;
+
+mod _evaluation_form_validation_status;
 
 mod _evaluation_form_version_status;
 
@@ -2129,6 +2245,8 @@ mod _kinesis_stream_config;
 
 mod _kinesis_video_stream_config;
 
+mod _language_configuration;
+
 mod _lex_bot;
 
 mod _lex_bot_config;
@@ -2144,6 +2262,8 @@ mod _list_flow_association_resource_type;
 mod _list_phone_numbers_summary;
 
 mod _locale_code;
+
+mod _mask_mode;
 
 mod _match_criteria;
 
@@ -2208,6 +2328,8 @@ mod _notification_search_summary;
 mod _notification_source;
 
 mod _notification_status;
+
+mod _notification_type;
 
 mod _number_comparison_type;
 
@@ -2287,6 +2409,8 @@ mod _participant_token_credentials;
 
 mod _participant_type;
 
+mod _performance_category_name;
+
 mod _persistent_chat;
 
 mod _persistent_connection_config;
@@ -2306,6 +2430,8 @@ mod _phone_number_type;
 mod _phone_number_workflow_status;
 
 mod _phone_type;
+
+mod _policy;
 
 mod _post_accept_timeout_config;
 
@@ -2346,6 +2472,10 @@ mod _property_validation_exception_property;
 mod _property_validation_exception_reason;
 
 mod _quality_metrics;
+
+mod _question_option_points_configuration;
+
+mod _question_points_configuration;
 
 mod _question_rule_category_automation_condition;
 
@@ -2433,6 +2563,8 @@ mod _real_time_contact_analysis_transcript_item_with_content;
 
 mod _realtime_contact_analysis_segment;
 
+mod _recommender_config;
+
 mod _record_primary_value;
 
 mod _recording_info;
@@ -2444,6 +2576,8 @@ mod _recurrence_config;
 mod _recurrence_frequency;
 
 mod _recurrence_pattern;
+
+mod _redaction_configuration;
 
 mod _reference;
 
@@ -2507,6 +2641,8 @@ mod _rule_summary;
 
 mod _rule_trigger_event_source;
 
+mod _rules_configuration;
+
 mod _s3_config;
 
 mod _screen_share_capability;
@@ -2561,6 +2697,8 @@ mod _segment_attribute_value;
 
 mod _send_notification_action_definition;
 
+mod _sentiment_configuration;
+
 mod _service_quota_exceeded_exception_reason;
 
 mod _sign_in_config;
@@ -2606,6 +2744,10 @@ mod _submit_auto_evaluation_action_definition;
 mod _successful_batch_association_summary;
 
 mod _successful_request;
+
+mod _summary_configuration;
+
+mod _summary_mode;
 
 mod _tag_condition;
 
@@ -2774,6 +2916,12 @@ mod _voice_enhancement_mode;
 mod _voice_recording_configuration;
 
 mod _voice_recording_track;
+
+mod _web_notification_content;
+
+mod _web_notification_source;
+
+mod _widget_destination;
 
 mod _wisdom_info;
 

@@ -25,6 +25,9 @@ pub mod delete_configuration_recorder;
 /// Types for the `DeleteConformancePack` operation.
 pub mod delete_conformance_pack;
 
+/// Types for the `DeleteConnector` operation.
+pub mod delete_connector;
+
 /// Types for the `DeleteDeliveryChannel` operation.
 pub mod delete_delivery_channel;
 
@@ -172,6 +175,9 @@ pub mod get_conformance_pack_compliance_details;
 /// Types for the `GetConformancePackComplianceSummary` operation.
 pub mod get_conformance_pack_compliance_summary;
 
+/// Types for the `GetConnector` operation.
+pub mod get_connector;
+
 /// Types for the `GetCustomRulePolicy` operation.
 pub mod get_custom_rule_policy;
 
@@ -205,6 +211,9 @@ pub mod list_configuration_recorders;
 /// Types for the `ListConformancePackComplianceScores` operation.
 pub mod list_conformance_pack_compliance_scores;
 
+/// Types for the `ListConnectors` operation.
+pub mod list_connectors;
+
 /// Types for the `ListDiscoveredResources` operation.
 pub mod list_discovered_resources;
 
@@ -231,6 +240,9 @@ pub mod put_configuration_recorder;
 
 /// Types for the `PutConformancePack` operation.
 pub mod put_conformance_pack;
+
+/// Types for the `PutConnector` operation.
+pub mod put_connector;
 
 /// Types for the `PutDeliveryChannel` operation.
 pub mod put_delivery_channel;
@@ -264,6 +276,9 @@ pub mod put_service_linked_configuration_recorder;
 
 /// Types for the `PutStoredQuery` operation.
 pub mod put_stored_query;
+
+/// Types for the `PutThirdPartyServiceLinkedConfigurationRecorder` operation.
+pub mod put_third_party_service_linked_configuration_recorder;
 
 /// Types for the `SelectAggregateResourceConfig` operation.
 pub mod select_aggregate_resource_config;

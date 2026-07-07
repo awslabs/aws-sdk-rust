@@ -33,10 +33,16 @@ pub fn ser_instance_rule_statement(
 pub(crate) fn de_instance_rule_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InstanceRuleStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -47,21 +53,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AndRuleStatement" => {
-                            builder = builder
-                                .set_and_rule_statement(crate::protocol_serde::shape_and_rule_statement::de_and_rule_statement(tokens, _value)?);
+                            builder = builder.set_and_rule_statement(crate::protocol_serde::shape_and_rule_statement::de_and_rule_statement(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OrRuleStatement" => {
-                            builder =
-                                builder.set_or_rule_statement(crate::protocol_serde::shape_or_rule_statement::de_or_rule_statement(tokens, _value)?);
+                            builder = builder.set_or_rule_statement(crate::protocol_serde::shape_or_rule_statement::de_or_rule_statement(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "MatchingRuleStatement" => {
                             builder = builder.set_matching_rule_statement(
-                                crate::protocol_serde::shape_matching_rule_statement::de_matching_rule_statement(tokens, _value)?,
+                                crate::protocol_serde::shape_matching_rule_statement::de_matching_rule_statement(tokens, _value, depth + 1)?,
                             );
                         }
                         "ScriptRuleStatement" => {
                             builder = builder.set_script_rule_statement(
-                                crate::protocol_serde::shape_script_rule_statement::de_script_rule_statement(tokens, _value)?,
+                                crate::protocol_serde::shape_script_rule_statement::de_script_rule_statement(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

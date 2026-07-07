@@ -19,6 +19,8 @@ pub struct UpdateScheduledQueryInput {
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The updated time offset in seconds that defines the lookback period for the query.</p>
     pub start_time_offset: ::std::option::Option<i64>,
+    /// <p>The updated time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub end_time_offset: ::std::option::Option<i64>,
     /// <p>The updated configuration for where to deliver query results.</p>
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>The updated start time for the scheduled query in Unix epoch format.</p>
@@ -65,6 +67,10 @@ impl UpdateScheduledQueryInput {
     pub fn start_time_offset(&self) -> ::std::option::Option<i64> {
         self.start_time_offset
     }
+    /// <p>The updated time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn end_time_offset(&self) -> ::std::option::Option<i64> {
+        self.end_time_offset
+    }
     /// <p>The updated configuration for where to deliver query results.</p>
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
@@ -105,6 +111,7 @@ pub struct UpdateScheduledQueryInputBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_offset: ::std::option::Option<i64>,
+    pub(crate) end_time_offset: ::std::option::Option<i64>,
     pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) schedule_start_time: ::std::option::Option<i64>,
     pub(crate) schedule_end_time: ::std::option::Option<i64>,
@@ -234,6 +241,20 @@ impl UpdateScheduledQueryInputBuilder {
     pub fn get_start_time_offset(&self) -> &::std::option::Option<i64> {
         &self.start_time_offset
     }
+    /// <p>The updated time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn end_time_offset(mut self, input: i64) -> Self {
+        self.end_time_offset = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn set_end_time_offset(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.end_time_offset = input;
+        self
+    }
+    /// <p>The updated time offset in seconds that defines the end of the lookback period for the query.</p>
+    pub fn get_end_time_offset(&self) -> &::std::option::Option<i64> {
+        &self.end_time_offset
+    }
     /// <p>The updated configuration for where to deliver query results.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
@@ -319,6 +340,7 @@ impl UpdateScheduledQueryInputBuilder {
             schedule_expression: self.schedule_expression,
             timezone: self.timezone,
             start_time_offset: self.start_time_offset,
+            end_time_offset: self.end_time_offset,
             destination_configuration: self.destination_configuration,
             schedule_start_time: self.schedule_start_time,
             schedule_end_time: self.schedule_end_time,

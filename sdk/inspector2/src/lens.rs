@@ -69,6 +69,26 @@ pub(crate) fn reflens_list_cis_scans_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_connector_scan_configurations_output_output_next_token(
+    input: &crate::operation::list_connector_scan_configurations::ListConnectorScanConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_connectors_output_output_next_token(
+    input: &crate::operation::list_connectors::ListConnectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_coverage_output_output_next_token(
     input: &crate::operation::list_coverage::ListCoverageOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -205,6 +225,20 @@ pub(crate) fn lens_list_cis_scans_output_output_scans(
     input: crate::operation::list_cis_scans::ListCisScansOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CisScan>> {
     let input = input.scans?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_connector_scan_configurations_output_output_scan_configurations(
+    input: crate::operation::list_connector_scan_configurations::ListConnectorScanConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectorScanConfigurationItem>> {
+    let input = input.scan_configurations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_connectors_output_output_items(
+    input: crate::operation::list_connectors::ListConnectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

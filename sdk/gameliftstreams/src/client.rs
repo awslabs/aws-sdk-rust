@@ -193,6 +193,8 @@ mod create_application;
 
 mod create_stream_group;
 
+mod create_stream_session_admin_shell;
+
 mod create_stream_session_connection;
 
 /// Operation customization and supporting types.

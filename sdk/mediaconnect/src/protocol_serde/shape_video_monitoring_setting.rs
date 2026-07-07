@@ -21,10 +21,16 @@ pub fn ser_video_monitoring_setting(
 pub(crate) fn de_video_monitoring_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::VideoMonitoringSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -35,10 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "blackFrames" => {
-                            builder = builder.set_black_frames(crate::protocol_serde::shape_black_frames::de_black_frames(tokens, _value)?);
+                            builder =
+                                builder.set_black_frames(crate::protocol_serde::shape_black_frames::de_black_frames(tokens, _value, depth + 1)?);
                         }
                         "frozenFrames" => {
-                            builder = builder.set_frozen_frames(crate::protocol_serde::shape_frozen_frames::de_frozen_frames(tokens, _value)?);
+                            builder =
+                                builder.set_frozen_frames(crate::protocol_serde::shape_frozen_frames::de_frozen_frames(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

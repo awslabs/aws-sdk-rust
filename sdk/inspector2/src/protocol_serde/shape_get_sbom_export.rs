@@ -136,6 +136,8 @@ pub(crate) fn de_get_sbom_export(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -157,7 +159,9 @@ pub(crate) fn de_get_sbom_export(
                 }
                 "filterCriteria" => {
                     builder = builder.set_filter_criteria(crate::protocol_serde::shape_resource_filter_criteria::de_resource_filter_criteria(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "format" => {
@@ -175,7 +179,7 @@ pub(crate) fn de_get_sbom_export(
                     );
                 }
                 "s3Destination" => {
-                    builder = builder.set_s3_destination(crate::protocol_serde::shape_destination::de_destination(tokens, _value)?);
+                    builder = builder.set_s3_destination(crate::protocol_serde::shape_destination::de_destination(tokens, _value, depth + 1)?);
                 }
                 "status" => {
                     builder = builder.set_status(

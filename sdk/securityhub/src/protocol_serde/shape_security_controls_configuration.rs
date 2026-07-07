@@ -2,10 +2,16 @@
 pub(crate) fn de_security_controls_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SecurityControlsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -18,18 +24,20 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "EnabledSecurityControlIdentifiers" => {
                                 builder = builder.set_enabled_security_control_identifiers(
-                                    crate::protocol_serde::shape_enabled_security_control_identifier_list::de_enabled_security_control_identifier_list(tokens, _value)?
+                                    crate::protocol_serde::shape_enabled_security_control_identifier_list::de_enabled_security_control_identifier_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "DisabledSecurityControlIdentifiers" => {
                                 builder = builder.set_disabled_security_control_identifiers(
-                                    crate::protocol_serde::shape_disabled_security_control_identifier_list::de_disabled_security_control_identifier_list(tokens, _value)?
+                                    crate::protocol_serde::shape_disabled_security_control_identifier_list::de_disabled_security_control_identifier_list(tokens, _value, depth + 1)?
                                 );
                             }
                             "SecurityControlCustomParameters" => {
                                 builder = builder.set_security_control_custom_parameters(
                                     crate::protocol_serde::shape_security_control_custom_parameters_list::de_security_control_custom_parameters_list(
-                                        tokens, _value,
+                                        tokens,
+                                        _value,
+                                        depth + 1,
                                     )?,
                                 );
                             }

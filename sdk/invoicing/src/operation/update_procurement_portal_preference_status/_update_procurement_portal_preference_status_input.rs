@@ -13,6 +13,8 @@ pub struct UpdateProcurementPortalPreferenceStatusInput {
     pub purchase_order_retrieval_preference_status: ::std::option::Option<crate::types::ProcurementPortalPreferenceStatus>,
     /// <p>The reason for the purchase order retrieval preference status update, providing context for the change.</p>
     pub purchase_order_retrieval_preference_status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProcurementPortalPreferenceStatusInput {
     /// <p>The Amazon Resource Name (ARN) of the procurement portal preference to update.</p>
@@ -35,6 +37,10 @@ impl UpdateProcurementPortalPreferenceStatusInput {
     pub fn purchase_order_retrieval_preference_status_reason(&self) -> ::std::option::Option<&str> {
         self.purchase_order_retrieval_preference_status_reason.as_deref()
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl UpdateProcurementPortalPreferenceStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateProcurementPortalPreferenceStatusInput`](crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusInput).
@@ -52,6 +58,7 @@ pub struct UpdateProcurementPortalPreferenceStatusInputBuilder {
     pub(crate) einvoice_delivery_preference_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) purchase_order_retrieval_preference_status: ::std::option::Option<crate::types::ProcurementPortalPreferenceStatus>,
     pub(crate) purchase_order_retrieval_preference_status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProcurementPortalPreferenceStatusInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the procurement portal preference to update.</p>
@@ -128,6 +135,20 @@ impl UpdateProcurementPortalPreferenceStatusInputBuilder {
     pub fn get_purchase_order_retrieval_preference_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.purchase_order_retrieval_preference_status_reason
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`UpdateProcurementPortalPreferenceStatusInput`](crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusInput).
     pub fn build(
         self,
@@ -142,6 +163,7 @@ impl UpdateProcurementPortalPreferenceStatusInputBuilder {
                 einvoice_delivery_preference_status_reason: self.einvoice_delivery_preference_status_reason,
                 purchase_order_retrieval_preference_status: self.purchase_order_retrieval_preference_status,
                 purchase_order_retrieval_preference_status_reason: self.purchase_order_retrieval_preference_status_reason,
+                client_token: self.client_token,
             },
         )
     }

@@ -23,5 +23,7 @@ pub fn de_distribution_list(inp: &[u8]) -> std::result::Result<crate::types::Dis
             "invalid root, expected DistributionIdOwnerList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_distribution_id_owner_list::de_distribution_id_owner_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_distribution_id_owner_list::de_distribution_id_owner_list(&mut decoder, depth + 1)
 }

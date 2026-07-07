@@ -48,10 +48,16 @@ pub fn ser_plugin_visual_field_well(
 pub(crate) fn de_plugin_visual_field_well<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PluginVisualFieldWell>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -70,15 +76,23 @@ where
                         }
                         "Dimensions" => {
                             builder = builder.set_dimensions(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Measures" => {
-                            builder = builder.set_measures(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
+                            builder = builder.set_measures(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Unaggregated" => {
                             builder = builder.set_unaggregated(crate::protocol_serde::shape_unaggregated_field_list::de_unaggregated_field_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

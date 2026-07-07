@@ -86,6 +86,8 @@ pub(crate) fn de_get_pipeline_state(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -106,7 +108,11 @@ pub(crate) fn de_get_pipeline_state(
                     );
                 }
                 "stageStates" => {
-                    builder = builder.set_stage_states(crate::protocol_serde::shape_stage_state_list::de_stage_state_list(tokens, _value)?);
+                    builder = builder.set_stage_states(crate::protocol_serde::shape_stage_state_list::de_stage_state_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "created" => {
                     builder = builder.set_created(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

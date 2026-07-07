@@ -13,6 +13,8 @@ pub use crate::types::_gateway_type::GatewayType;
 
 pub use crate::types::_responder_gateway_status::ResponderGatewayStatus;
 
+pub use crate::types::_certificate_association_status::CertificateAssociationStatus;
+
 pub use crate::types::_link_attributes::LinkAttributes;
 
 pub use crate::types::_link_log_settings::LinkLogSettings;
@@ -23,15 +25,25 @@ pub use crate::types::_link_direction::LinkDirection;
 
 pub use crate::types::_connectivity_type::ConnectivityType;
 
+pub use crate::types::_rule_condition::RuleCondition;
+
+pub use crate::types::_rule_status::RuleStatus;
+
 pub use crate::types::_auto_scaling_groups_configuration::AutoScalingGroupsConfiguration;
 
 pub use crate::types::_eks_endpoints_configuration::EksEndpointsConfiguration;
+
+pub use crate::types::_certificate_association_summary::CertificateAssociationSummary;
 
 pub use crate::types::_list_links_response_structure::ListLinksResponseStructure;
 
 pub use crate::types::_link_application_log_configuration::LinkApplicationLogConfiguration;
 
 pub use crate::types::_module_configuration::ModuleConfiguration;
+
+pub use crate::types::_link_routing_rule_summary::LinkRoutingRuleSummary;
+
+pub use crate::types::_query_string_key_value_pair::QueryStringKeyValuePair;
 
 pub use crate::types::_health_check_config::HealthCheckConfig;
 
@@ -67,6 +79,10 @@ mod _action;
 
 mod _auto_scaling_groups_configuration;
 
+mod _certificate_association_status;
+
+mod _certificate_association_summary;
+
 mod _connectivity_type;
 
 mod _eks_endpoints_configuration;
@@ -93,6 +109,8 @@ mod _link_direction;
 
 mod _link_log_settings;
 
+mod _link_routing_rule_summary;
+
 mod _link_status;
 
 mod _list_links_response_structure;
@@ -113,6 +131,8 @@ mod _open_rtb_attribute_module_parameters;
 
 mod _protocol;
 
+mod _query_string_key_value_pair;
+
 mod _rate_limiter_module_parameters;
 
 mod _requester_gateway_status;
@@ -124,6 +144,10 @@ mod _responder_error_masking_for_http_code;
 mod _responder_error_masking_logging_type;
 
 mod _responder_gateway_status;
+
+mod _rule_condition;
+
+mod _rule_status;
 
 mod _trust_store_configuration;
 

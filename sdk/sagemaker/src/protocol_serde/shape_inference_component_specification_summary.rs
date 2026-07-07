@@ -2,10 +2,16 @@
 pub(crate) fn de_inference_component_specification_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InferenceComponentSpecificationSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -15,6 +21,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "InstanceType" => {
+                            builder = builder.set_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProductionVariantInstanceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "ModelName" => {
                             builder = builder.set_model_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -24,19 +37,21 @@ where
                         }
                         "Container" => {
                             builder = builder.set_container(
-                                    crate::protocol_serde::shape_inference_component_container_specification_summary::de_inference_component_container_specification_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_inference_component_container_specification_summary::de_inference_component_container_specification_summary(tokens, _value, depth + 1)?
                                 );
                         }
                         "StartupParameters" => {
                             builder = builder.set_startup_parameters(
                                 crate::protocol_serde::shape_inference_component_startup_parameters::de_inference_component_startup_parameters(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ComputeResourceRequirements" => {
                             builder = builder.set_compute_resource_requirements(
-                                    crate::protocol_serde::shape_inference_component_compute_resource_requirements::de_inference_component_compute_resource_requirements(tokens, _value)?
+                                    crate::protocol_serde::shape_inference_component_compute_resource_requirements::de_inference_component_compute_resource_requirements(tokens, _value, depth + 1)?
                                 );
                         }
                         "BaseInferenceComponentName" => {
@@ -48,13 +63,15 @@ where
                         }
                         "DataCacheConfig" => {
                             builder = builder.set_data_cache_config(
-                                    crate::protocol_serde::shape_inference_component_data_cache_config_summary::de_inference_component_data_cache_config_summary(tokens, _value)?
+                                    crate::protocol_serde::shape_inference_component_data_cache_config_summary::de_inference_component_data_cache_config_summary(tokens, _value, depth + 1)?
                                 );
                         }
                         "SchedulingConfig" => {
                             builder = builder.set_scheduling_config(
                                 crate::protocol_serde::shape_inference_component_scheduling_config::de_inference_component_scheduling_config(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

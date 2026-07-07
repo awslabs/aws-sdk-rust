@@ -30,10 +30,16 @@ pub fn ser_waf_logging_parameters(
 pub(crate) fn de_waf_logging_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::WafLoggingParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,10 +50,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RedactedFields" => {
-                            builder = builder.set_redacted_fields(crate::protocol_serde::shape_redacted_fields::de_redacted_fields(tokens, _value)?);
+                            builder = builder.set_redacted_fields(crate::protocol_serde::shape_redacted_fields::de_redacted_fields(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LoggingFilter" => {
-                            builder = builder.set_logging_filter(crate::protocol_serde::shape_logging_filter::de_logging_filter(tokens, _value)?);
+                            builder = builder.set_logging_filter(crate::protocol_serde::shape_logging_filter::de_logging_filter(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "LogType" => {
                             builder = builder.set_log_type(

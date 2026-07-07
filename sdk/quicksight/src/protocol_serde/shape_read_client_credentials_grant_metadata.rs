@@ -2,10 +2,16 @@
 pub(crate) fn de_read_client_credentials_grant_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ReadClientCredentialsGrantMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,11 @@ where
                         }
                         "ReadClientCredentialsDetails" => {
                             builder = builder.set_read_client_credentials_details(
-                                crate::protocol_serde::shape_read_client_credentials_details::de_read_client_credentials_details(tokens, _value)?,
+                                crate::protocol_serde::shape_read_client_credentials_details::de_read_client_credentials_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "ClientCredentialsSource" => {

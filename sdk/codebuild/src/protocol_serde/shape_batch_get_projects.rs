@@ -71,16 +71,19 @@ pub(crate) fn de_batch_get_projects(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "projects" => {
-                    builder = builder.set_projects(crate::protocol_serde::shape_projects::de_projects(tokens, _value)?);
+                    builder = builder.set_projects(crate::protocol_serde::shape_projects::de_projects(tokens, _value, depth + 1)?);
                 }
                 "projectsNotFound" => {
-                    builder = builder.set_projects_not_found(crate::protocol_serde::shape_project_names::de_project_names(tokens, _value)?);
+                    builder =
+                        builder.set_projects_not_found(crate::protocol_serde::shape_project_names::de_project_names(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

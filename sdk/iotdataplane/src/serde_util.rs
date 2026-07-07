@@ -7,3 +7,15 @@ pub(crate) fn delete_thing_shadow_output_output_correct_errors(
     }
     builder
 }
+
+pub(crate) fn subscription_summary_correct_errors(
+    mut builder: crate::types::builders::SubscriptionSummaryBuilder,
+) -> crate::types::builders::SubscriptionSummaryBuilder {
+    if builder.topic_filter.is_none() {
+        builder.topic_filter = Some(Default::default())
+    }
+    if builder.qos.is_none() {
+        builder.qos = Some(Default::default())
+    }
+    builder
+}

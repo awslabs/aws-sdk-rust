@@ -53,6 +53,8 @@ pub fn de_modify_vpc_endpoint_connection_notification(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyVpcEndpointConnectionNotificationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyVpcEndpointConnectionNotificationResponse got {start_el:?}"

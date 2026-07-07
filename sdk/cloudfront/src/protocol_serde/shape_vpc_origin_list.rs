@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc_origin_list(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::VpcOriginList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::VpcOriginList::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -81,7 +85,7 @@ pub fn de_vpc_origin_list(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#VpcOriginList$Items */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_vpc_origin_summary_list::de_vpc_origin_summary_list(&mut tag)
+                        crate::protocol_serde::shape_vpc_origin_summary_list::de_vpc_origin_summary_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

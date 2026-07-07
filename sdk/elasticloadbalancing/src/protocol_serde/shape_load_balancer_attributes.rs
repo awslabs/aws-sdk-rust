@@ -41,7 +41,11 @@ pub fn ser_load_balancer_attributes(
 #[allow(clippy::needless_question_mark)]
 pub fn de_load_balancer_attributes(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::LoadBalancerAttributes, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::LoadBalancerAttributes::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -49,7 +53,7 @@ pub fn de_load_balancer_attributes(
             s if s.matches("CrossZoneLoadBalancing") /* CrossZoneLoadBalancing com.amazonaws.elasticloadbalancing#LoadBalancerAttributes$CrossZoneLoadBalancing */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_cross_zone_load_balancing::de_cross_zone_load_balancing(&mut tag)
+                        crate::protocol_serde::shape_cross_zone_load_balancing::de_cross_zone_load_balancing(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -59,7 +63,7 @@ pub fn de_load_balancer_attributes(
             s if s.matches("AccessLog") /* AccessLog com.amazonaws.elasticloadbalancing#LoadBalancerAttributes$AccessLog */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_access_log::de_access_log(&mut tag)
+                        crate::protocol_serde::shape_access_log::de_access_log(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -69,7 +73,7 @@ pub fn de_load_balancer_attributes(
             s if s.matches("ConnectionDraining") /* ConnectionDraining com.amazonaws.elasticloadbalancing#LoadBalancerAttributes$ConnectionDraining */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_connection_draining::de_connection_draining(&mut tag)
+                        crate::protocol_serde::shape_connection_draining::de_connection_draining(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -79,7 +83,7 @@ pub fn de_load_balancer_attributes(
             s if s.matches("ConnectionSettings") /* ConnectionSettings com.amazonaws.elasticloadbalancing#LoadBalancerAttributes$ConnectionSettings */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_connection_settings::de_connection_settings(&mut tag)
+                        crate::protocol_serde::shape_connection_settings::de_connection_settings(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -89,7 +93,7 @@ pub fn de_load_balancer_attributes(
             s if s.matches("AdditionalAttributes") /* AdditionalAttributes com.amazonaws.elasticloadbalancing#LoadBalancerAttributes$AdditionalAttributes */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_additional_attributes::de_additional_attributes(&mut tag)
+                        crate::protocol_serde::shape_additional_attributes::de_additional_attributes(&mut tag, depth + 1)
                         ?
                     )
                 ;

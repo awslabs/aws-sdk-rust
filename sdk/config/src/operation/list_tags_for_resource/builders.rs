@@ -132,6 +132,8 @@ impl ListTagsForResourceFluentBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -155,6 +157,8 @@ impl ListTagsForResourceFluentBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
@@ -178,6 +182,8 @@ impl ListTagsForResourceFluentBuilder {
     /// <p><code>AggregationAuthorization</code></p></li>
     /// <li>
     /// <p><code>StoredQuery</code></p></li>
+    /// <li>
+    /// <p><code>Connector</code></p></li>
     /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()

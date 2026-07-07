@@ -2,10 +2,16 @@
 pub(crate) fn de_stage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Stage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -62,12 +68,16 @@ where
                         }
                         "methodSettings" => {
                             builder = builder.set_method_settings(crate::protocol_serde::shape_map_of_method_settings::de_map_of_method_settings(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "variables" => {
                             builder = builder.set_variables(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "documentationVersion" => {
@@ -78,11 +88,18 @@ where
                             );
                         }
                         "accessLogSettings" => {
-                            builder = builder
-                                .set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(tokens, _value)?);
+                            builder = builder.set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "canarySettings" => {
-                            builder = builder.set_canary_settings(crate::protocol_serde::shape_canary_settings::de_canary_settings(tokens, _value)?);
+                            builder = builder.set_canary_settings(crate::protocol_serde::shape_canary_settings::de_canary_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "tracingEnabled" => {
                             builder = builder.set_tracing_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -96,7 +113,9 @@ where
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "createdDate" => {

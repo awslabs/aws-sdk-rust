@@ -37,6 +37,8 @@ pub(crate) mod shape_create_association;
 
 pub(crate) mod shape_create_association_batch;
 
+pub(crate) mod shape_create_cloud_connector;
+
 pub(crate) mod shape_create_document;
 
 pub(crate) mod shape_create_maintenance_window;
@@ -52,6 +54,8 @@ pub(crate) mod shape_create_resource_data_sync;
 pub(crate) mod shape_delete_activation;
 
 pub(crate) mod shape_delete_association;
+
+pub(crate) mod shape_delete_cloud_connector;
 
 pub(crate) mod shape_delete_document;
 
@@ -155,6 +159,8 @@ pub(crate) mod shape_get_automation_execution;
 
 pub(crate) mod shape_get_calendar_state;
 
+pub(crate) mod shape_get_cloud_connector;
+
 pub(crate) mod shape_get_command_invocation;
 
 pub(crate) mod shape_get_connection_status;
@@ -208,6 +214,8 @@ pub(crate) mod shape_label_parameter_version;
 pub(crate) mod shape_list_association_versions;
 
 pub(crate) mod shape_list_associations;
+
+pub(crate) mod shape_list_cloud_connectors;
 
 pub(crate) mod shape_list_command_invocations;
 
@@ -291,6 +299,8 @@ pub(crate) mod shape_update_association;
 
 pub(crate) mod shape_update_association_status;
 
+pub(crate) mod shape_update_cloud_connector;
+
 pub(crate) mod shape_update_document;
 
 pub(crate) mod shape_update_document_default_version;
@@ -314,6 +324,8 @@ pub(crate) mod shape_update_patch_baseline;
 pub(crate) mod shape_update_resource_data_sync;
 
 pub(crate) mod shape_update_service_setting;
+
+pub(crate) mod shape_validate_cloud_connector;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -361,11 +373,15 @@ pub(crate) mod shape_cancel_maintenance_window_execution_input;
 
 pub(crate) mod shape_compliance_type_count_limit_exceeded_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_activation_input;
 
 pub(crate) mod shape_create_association_batch_input;
 
 pub(crate) mod shape_create_association_input;
+
+pub(crate) mod shape_create_cloud_connector_input;
 
 pub(crate) mod shape_create_document_input;
 
@@ -384,6 +400,8 @@ pub(crate) mod shape_custom_schema_count_limit_exceeded_exception;
 pub(crate) mod shape_delete_activation_input;
 
 pub(crate) mod shape_delete_association_input;
+
+pub(crate) mod shape_delete_cloud_connector_input;
 
 pub(crate) mod shape_delete_document_input;
 
@@ -504,6 +522,8 @@ pub(crate) mod shape_get_access_token_input;
 pub(crate) mod shape_get_automation_execution_input;
 
 pub(crate) mod shape_get_calendar_state_input;
+
+pub(crate) mod shape_get_cloud_connector_input;
 
 pub(crate) mod shape_get_command_invocation_input;
 
@@ -674,6 +694,8 @@ pub(crate) mod shape_label_parameter_version_input;
 pub(crate) mod shape_list_association_versions_input;
 
 pub(crate) mod shape_list_associations_input;
+
+pub(crate) mod shape_list_cloud_connectors_input;
 
 pub(crate) mod shape_list_command_invocations_input;
 
@@ -867,6 +889,8 @@ pub(crate) mod shape_update_association_input;
 
 pub(crate) mod shape_update_association_status_input;
 
+pub(crate) mod shape_update_cloud_connector_input;
+
 pub(crate) mod shape_update_document_default_version_input;
 
 pub(crate) mod shape_update_document_input;
@@ -890,6 +914,8 @@ pub(crate) mod shape_update_patch_baseline_input;
 pub(crate) mod shape_update_resource_data_sync_input;
 
 pub(crate) mod shape_update_service_setting_input;
+
+pub(crate) mod shape_validate_cloud_connector_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -934,6 +960,12 @@ pub(crate) mod shape_automation_execution_filter;
 pub(crate) mod shape_automation_execution_metadata_list;
 
 pub(crate) mod shape_baseline_override;
+
+pub(crate) mod shape_cloud_connector_configuration;
+
+pub(crate) mod shape_cloud_connector_filter;
+
+pub(crate) mod shape_cloud_connector_summary_list;
 
 pub(crate) mod shape_cloud_watch_output_config;
 
@@ -1185,6 +1217,8 @@ pub(crate) mod shape_target_location;
 
 pub(crate) mod shape_targets;
 
+pub(crate) mod shape_validation_finding_list;
+
 pub(crate) mod shape_account_sharing_info;
 
 pub(crate) mod shape_activation;
@@ -1217,11 +1251,15 @@ pub(crate) mod shape_automation_execution_preview;
 
 pub(crate) mod shape_automation_parameter_map;
 
+pub(crate) mod shape_azure_configuration;
+
 pub(crate) mod shape_calendar_name_or_arn_list;
 
 pub(crate) mod shape_category_enum_list;
 
 pub(crate) mod shape_category_list;
+
+pub(crate) mod shape_cloud_connector_summary;
 
 pub(crate) mod shape_command_invocation;
 
@@ -1365,6 +1403,8 @@ pub(crate) mod shape_target_locations;
 
 pub(crate) mod shape_target_maps;
 
+pub(crate) mod shape_validation_finding;
+
 pub(crate) mod shape_association_status_aggregated_count;
 
 pub(crate) mod shape_attachment_information;
@@ -1376,6 +1416,8 @@ pub(crate) mod shape_command_plugin_list;
 pub(crate) mod shape_compliance_item_details;
 
 pub(crate) mod shape_compliant_summary;
+
+pub(crate) mod shape_configuration_targets;
 
 pub(crate) mod shape_document_parameter;
 
@@ -1449,7 +1491,13 @@ pub(crate) mod shape_target_values;
 
 pub(crate) mod shape_valid_next_step_list;
 
+pub(crate) mod shape_validation_finding_scope;
+
 pub(crate) mod shape_accounts;
+
+pub(crate) mod shape_azure_subscription;
+
+pub(crate) mod shape_azure_subscription_list;
 
 pub(crate) mod shape_command_plugin;
 

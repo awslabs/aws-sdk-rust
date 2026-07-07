@@ -75,6 +75,7 @@ pub struct FleetAttributes {
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift Servers checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    /// <p>The purpose of this policy is to prevent a single player from consuming a large share of available hosting resources. For example, setting <code>NewGameSessionsPerCreator</code> to <code>4</code> and <code>PolicyPeriodInMinutes</code> to <code>10</code> limits each player to creating 4 game sessions every 10 minutes. Setting these values too high (for example, 200 game sessions every 1000 minutes) still allows a single player to rapidly consume resources. We recommend keeping these values small.</p>
     pub resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time. This attribute is used with fleets where <code>ComputeType</code> is <code>EC2</code>.</p>
     pub metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -199,6 +200,7 @@ impl FleetAttributes {
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift Servers checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    /// <p>The purpose of this policy is to prevent a single player from consuming a large share of available hosting resources. For example, setting <code>NewGameSessionsPerCreator</code> to <code>4</code> and <code>PolicyPeriodInMinutes</code> to <code>10</code> limits each player to creating 4 game sessions every 10 minutes. Setting these values too high (for example, 200 game sessions every 1000 minutes) still allows a single player to rapidly consume resources. We recommend keeping these values small.</p>
     pub fn resource_creation_limit_policy(&self) -> ::std::option::Option<&crate::types::ResourceCreationLimitPolicy> {
         self.resource_creation_limit_policy.as_ref()
     }
@@ -623,18 +625,21 @@ impl FleetAttributesBuilder {
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift Servers checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    /// <p>The purpose of this policy is to prevent a single player from consuming a large share of available hosting resources. For example, setting <code>NewGameSessionsPerCreator</code> to <code>4</code> and <code>PolicyPeriodInMinutes</code> to <code>10</code> limits each player to creating 4 game sessions every 10 minutes. Setting these values too high (for example, 200 game sessions every 1000 minutes) still allows a single player to rapidly consume resources. We recommend keeping these values small.</p>
     pub fn resource_creation_limit_policy(mut self, input: crate::types::ResourceCreationLimitPolicy) -> Self {
         self.resource_creation_limit_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift Servers checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    /// <p>The purpose of this policy is to prevent a single player from consuming a large share of available hosting resources. For example, setting <code>NewGameSessionsPerCreator</code> to <code>4</code> and <code>PolicyPeriodInMinutes</code> to <code>10</code> limits each player to creating 4 game sessions every 10 minutes. Setting these values too high (for example, 200 game sessions every 1000 minutes) still allows a single player to rapidly consume resources. We recommend keeping these values small.</p>
     pub fn set_resource_creation_limit_policy(mut self, input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>) -> Self {
         self.resource_creation_limit_policy = input;
         self
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift Servers checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    /// <p>The purpose of this policy is to prevent a single player from consuming a large share of available hosting resources. For example, setting <code>NewGameSessionsPerCreator</code> to <code>4</code> and <code>PolicyPeriodInMinutes</code> to <code>10</code> limits each player to creating 4 game sessions every 10 minutes. Setting these values too high (for example, 200 game sessions every 1000 minutes) still allows a single player to rapidly consume resources. We recommend keeping these values small.</p>
     pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         &self.resource_creation_limit_policy
     }

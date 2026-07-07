@@ -110,6 +110,8 @@ pub fn de_modify_snapshot_schedule(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifySnapshotScheduleResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifySnapshotScheduleResponse got {start_el:?}"
@@ -127,7 +129,7 @@ pub fn de_modify_snapshot_schedule(
             s if s.matches("ScheduleDefinitions") /* ScheduleDefinitions com.amazonaws.redshift.synthetic#ModifySnapshotScheduleOutput$ScheduleDefinitions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_schedule_definition_list::de_schedule_definition_list(&mut tag)
+                        crate::protocol_serde::shape_schedule_definition_list::de_schedule_definition_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -163,7 +165,7 @@ pub fn de_modify_snapshot_schedule(
             s if s.matches("Tags") /* Tags com.amazonaws.redshift.synthetic#ModifySnapshotScheduleOutput$Tags */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -173,7 +175,7 @@ pub fn de_modify_snapshot_schedule(
             s if s.matches("NextInvocations") /* NextInvocations com.amazonaws.redshift.synthetic#ModifySnapshotScheduleOutput$NextInvocations */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_scheduled_snapshot_time_list::de_scheduled_snapshot_time_list(&mut tag)
+                        crate::protocol_serde::shape_scheduled_snapshot_time_list::de_scheduled_snapshot_time_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -198,7 +200,7 @@ pub fn de_modify_snapshot_schedule(
             s if s.matches("AssociatedClusters") /* AssociatedClusters com.amazonaws.redshift.synthetic#ModifySnapshotScheduleOutput$AssociatedClusters */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_associated_cluster_list::de_associated_cluster_list(&mut tag)
+                        crate::protocol_serde::shape_associated_cluster_list::de_associated_cluster_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -39,7 +39,11 @@ pub fn ser_cache_policy_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CachePolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CachePolicyConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -118,7 +122,7 @@ pub fn de_cache_policy_config(
             s if s.matches("ParametersInCacheKeyAndForwardedToOrigin") /* ParametersInCacheKeyAndForwardedToOrigin com.amazonaws.cloudfront#CachePolicyConfig$ParametersInCacheKeyAndForwardedToOrigin */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_parameters_in_cache_key_and_forwarded_to_origin::de_parameters_in_cache_key_and_forwarded_to_origin(&mut tag)
+                        crate::protocol_serde::shape_parameters_in_cache_key_and_forwarded_to_origin::de_parameters_in_cache_key_and_forwarded_to_origin(&mut tag, depth + 1)
                         ?
                     )
                 ;

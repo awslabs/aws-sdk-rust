@@ -2,10 +2,16 @@
 pub(crate) fn de_finding_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::FindingDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -31,44 +37,59 @@ where
                     }
                     variant = match key.as_ref() {
                         "internalAccessDetails" => Some(crate::types::FindingDetails::InternalAccessDetails(
-                            crate::protocol_serde::shape_internal_access_details::de_internal_access_details(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'internalAccessDetails' cannot be null")
-                            })?,
-                        )),
-                        "externalAccessDetails" => Some(crate::types::FindingDetails::ExternalAccessDetails(
-                            crate::protocol_serde::shape_external_access_details::de_external_access_details(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'externalAccessDetails' cannot be null")
-                            })?,
-                        )),
-                        "unusedPermissionDetails" => Some(crate::types::FindingDetails::UnusedPermissionDetails(
-                            crate::protocol_serde::shape_unused_permission_details::de_unused_permission_details(tokens, _value)?.ok_or_else(
+                            crate::protocol_serde::shape_internal_access_details::de_internal_access_details(tokens, _value, depth + 1)?.ok_or_else(
                                 || {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'unusedPermissionDetails' cannot be null",
+                                        "value for 'internalAccessDetails' cannot be null",
                                     )
                                 },
                             )?,
                         )),
-                        "unusedIamUserAccessKeyDetails" => Some(crate::types::FindingDetails::UnusedIamUserAccessKeyDetails(
-                            crate::protocol_serde::shape_unused_iam_user_access_key_details::de_unused_iam_user_access_key_details(tokens, _value)?
+                        "externalAccessDetails" => Some(crate::types::FindingDetails::ExternalAccessDetails(
+                            crate::protocol_serde::shape_external_access_details::de_external_access_details(tokens, _value, depth + 1)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'externalAccessDetails' cannot be null",
+                                    )
+                                },
+                            )?,
+                        )),
+                        "unusedPermissionDetails" => Some(crate::types::FindingDetails::UnusedPermissionDetails(
+                            crate::protocol_serde::shape_unused_permission_details::de_unused_permission_details(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'unusedPermissionDetails' cannot be null",
+                                    )
+                                })?,
+                        )),
+                        "unusedIamUserAccessKeyDetails" => Some(crate::types::FindingDetails::UnusedIamUserAccessKeyDetails(
+                            crate::protocol_serde::shape_unused_iam_user_access_key_details::de_unused_iam_user_access_key_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                     "value for 'unusedIamUserAccessKeyDetails' cannot be null",
                                 )
                             })?,
                         )),
                         "unusedIamRoleDetails" => Some(crate::types::FindingDetails::UnusedIamRoleDetails(
-                            crate::protocol_serde::shape_unused_iam_role_details::de_unused_iam_role_details(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'unusedIamRoleDetails' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_unused_iam_role_details::de_unused_iam_role_details(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'unusedIamRoleDetails' cannot be null"),
+                            )?,
                         )),
                         "unusedIamUserPasswordDetails" => Some(crate::types::FindingDetails::UnusedIamUserPasswordDetails(
-                            crate::protocol_serde::shape_unused_iam_user_password_details::de_unused_iam_user_password_details(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'unusedIamUserPasswordDetails' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_unused_iam_user_password_details::de_unused_iam_user_password_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'unusedIamUserPasswordDetails' cannot be null",
+                                )
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

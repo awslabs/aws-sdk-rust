@@ -72,6 +72,8 @@ pub fn de_get_context_keys_for_custom_policy(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetContextKeysForCustomPolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetContextKeysForCustomPolicyResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_get_context_keys_for_custom_policy(
             s if s.matches("ContextKeyNames") /* ContextKeyNames com.amazonaws.iam.synthetic#GetContextKeysForCustomPolicyOutput$ContextKeyNames */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_context_key_names_result_list_type::de_context_key_names_result_list_type(&mut tag)
+                        crate::protocol_serde::shape_context_key_names_result_list_type::de_context_key_names_result_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

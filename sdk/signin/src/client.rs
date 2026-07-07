@@ -10,6 +10,24 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Sign-In Service. Each operation on AWS Sign-In Service is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DeleteConsoleAuthorizationConfiguration`](crate::operation::delete_console_authorization_configuration) operation has
+/// a [`Client::delete_console_authorization_configuration`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `send()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.delete_console_authorization_configuration()
+///     .target_id("example")
+///     .send()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -100,3 +118,17 @@ mod create_o_auth2_token;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_console_authorization_configuration;
+
+mod delete_resource_permission_statement;
+
+mod get_console_authorization_configuration;
+
+mod get_resource_policy;
+
+mod list_resource_permission_statements;
+
+mod put_console_authorization_configuration;
+
+mod put_resource_permission_statement;

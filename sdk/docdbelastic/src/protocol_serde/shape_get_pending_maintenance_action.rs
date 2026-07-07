@@ -146,6 +146,8 @@ pub(crate) fn de_get_pending_maintenance_action(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -153,7 +155,11 @@ pub(crate) fn de_get_pending_maintenance_action(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "resourcePendingMaintenanceAction" => {
                     builder = builder.set_resource_pending_maintenance_action(
-                        crate::protocol_serde::shape_resource_pending_maintenance_action::de_resource_pending_maintenance_action(tokens, _value)?,
+                        crate::protocol_serde::shape_resource_pending_maintenance_action::de_resource_pending_maintenance_action(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

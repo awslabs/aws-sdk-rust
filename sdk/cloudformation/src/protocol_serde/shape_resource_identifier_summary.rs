@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_identifier_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ResourceIdentifierSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceIdentifierSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_resource_identifier_summary(
             s if s.matches("LogicalResourceIds") /* LogicalResourceIds com.amazonaws.cloudformation#ResourceIdentifierSummary$LogicalResourceIds */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_logical_resource_ids::de_logical_resource_ids(&mut tag)
+                        crate::protocol_serde::shape_logical_resource_ids::de_logical_resource_ids(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -33,7 +37,7 @@ pub fn de_resource_identifier_summary(
             s if s.matches("ResourceIdentifiers") /* ResourceIdentifiers com.amazonaws.cloudformation#ResourceIdentifierSummary$ResourceIdentifiers */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_resource_identifiers::de_resource_identifiers(&mut tag)
+                        crate::protocol_serde::shape_resource_identifiers::de_resource_identifiers(&mut tag, depth + 1)
                         ?
                     )
                 ;

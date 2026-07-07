@@ -25,5 +25,7 @@ pub fn de_managed_certificate_details(
             "invalid root, expected ManagedCertificateDetails got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_managed_certificate_details::de_managed_certificate_details(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_managed_certificate_details::de_managed_certificate_details(&mut decoder, depth + 1)
 }

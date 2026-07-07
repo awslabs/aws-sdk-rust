@@ -38,6 +38,8 @@ pub struct FlowLog {
     pub max_aggregation_interval: ::std::option::Option<i32>,
     /// <p>The destination options.</p>
     pub destination_options: ::std::option::Option<crate::types::DestinationOptionsResponse>,
+    /// <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>
+    pub tag_field_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagFieldSpecificationResponse>>,
 }
 impl FlowLog {
     /// <p>The date and time the flow log was created.</p>
@@ -108,6 +110,12 @@ impl FlowLog {
     pub fn destination_options(&self) -> ::std::option::Option<&crate::types::DestinationOptionsResponse> {
         self.destination_options.as_ref()
     }
+    /// <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_field_specifications.is_none()`.
+    pub fn tag_field_specifications(&self) -> &[crate::types::TagFieldSpecificationResponse] {
+        self.tag_field_specifications.as_deref().unwrap_or_default()
+    }
 }
 impl FlowLog {
     /// Creates a new builder-style object to manufacture [`FlowLog`](crate::types::FlowLog).
@@ -136,6 +144,7 @@ pub struct FlowLogBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) max_aggregation_interval: ::std::option::Option<i32>,
     pub(crate) destination_options: ::std::option::Option<crate::types::DestinationOptionsResponse>,
+    pub(crate) tag_field_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagFieldSpecificationResponse>>,
 }
 impl FlowLogBuilder {
     /// <p>The date and time the flow log was created.</p>
@@ -374,6 +383,29 @@ impl FlowLogBuilder {
     pub fn get_destination_options(&self) -> &::std::option::Option<crate::types::DestinationOptionsResponse> {
         &self.destination_options
     }
+    /// Appends an item to `tag_field_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_field_specifications`](Self::set_tag_field_specifications).
+    ///
+    /// <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>
+    pub fn tag_field_specifications(mut self, input: crate::types::TagFieldSpecificationResponse) -> Self {
+        let mut v = self.tag_field_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_field_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>
+    pub fn set_tag_field_specifications(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFieldSpecificationResponse>>,
+    ) -> Self {
+        self.tag_field_specifications = input;
+        self
+    }
+    /// <p>The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields in your custom log format.</p>
+    pub fn get_tag_field_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFieldSpecificationResponse>> {
+        &self.tag_field_specifications
+    }
     /// Consumes the builder and constructs a [`FlowLog`](crate::types::FlowLog).
     pub fn build(self) -> crate::types::FlowLog {
         crate::types::FlowLog {
@@ -393,6 +425,7 @@ impl FlowLogBuilder {
             tags: self.tags,
             max_aggregation_interval: self.max_aggregation_interval,
             destination_options: self.destination_options,
+            tag_field_specifications: self.tag_field_specifications,
         }
     }
 }

@@ -208,6 +208,8 @@ pub(crate) fn de_get_public_key(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -246,17 +248,21 @@ pub(crate) fn de_get_public_key(
                 }
                 "EncryptionAlgorithms" => {
                     builder = builder.set_encryption_algorithms(
-                        crate::protocol_serde::shape_encryption_algorithm_spec_list::de_encryption_algorithm_spec_list(tokens, _value)?,
+                        crate::protocol_serde::shape_encryption_algorithm_spec_list::de_encryption_algorithm_spec_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "SigningAlgorithms" => {
                     builder = builder.set_signing_algorithms(
-                        crate::protocol_serde::shape_signing_algorithm_spec_list::de_signing_algorithm_spec_list(tokens, _value)?,
+                        crate::protocol_serde::shape_signing_algorithm_spec_list::de_signing_algorithm_spec_list(tokens, _value, depth + 1)?,
                     );
                 }
                 "KeyAgreementAlgorithms" => {
                     builder = builder.set_key_agreement_algorithms(
-                        crate::protocol_serde::shape_key_agreement_algorithm_spec_list::de_key_agreement_algorithm_spec_list(tokens, _value)?,
+                        crate::protocol_serde::shape_key_agreement_algorithm_spec_list::de_key_agreement_algorithm_spec_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

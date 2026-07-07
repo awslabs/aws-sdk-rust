@@ -6,7 +6,9 @@
 pub struct UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the compute environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub terminate_jobs_on_update: ::std::option::Option<bool>,
-    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
+    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30. The maximum value is 7200.</p><note>
+    /// <p>Increasing <code>jobExecutionTimeoutMinutes</code> during infrastructure updates delays the replacement of instances with new instances that include updates such as security patches, but provides more time for jobs to execute. Consider the security implications of this tradeoff when setting timeout values.</p>
+    /// </note>
     pub job_execution_timeout_minutes: ::std::option::Option<i64>,
 }
 impl UpdatePolicy {
@@ -14,7 +16,9 @@ impl UpdatePolicy {
     pub fn terminate_jobs_on_update(&self) -> ::std::option::Option<bool> {
         self.terminate_jobs_on_update
     }
-    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
+    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30. The maximum value is 7200.</p><note>
+    /// <p>Increasing <code>jobExecutionTimeoutMinutes</code> during infrastructure updates delays the replacement of instances with new instances that include updates such as security patches, but provides more time for jobs to execute. Consider the security implications of this tradeoff when setting timeout values.</p>
+    /// </note>
     pub fn job_execution_timeout_minutes(&self) -> ::std::option::Option<i64> {
         self.job_execution_timeout_minutes
     }
@@ -48,17 +52,23 @@ impl UpdatePolicyBuilder {
     pub fn get_terminate_jobs_on_update(&self) -> &::std::option::Option<bool> {
         &self.terminate_jobs_on_update
     }
-    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
+    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30. The maximum value is 7200.</p><note>
+    /// <p>Increasing <code>jobExecutionTimeoutMinutes</code> during infrastructure updates delays the replacement of instances with new instances that include updates such as security patches, but provides more time for jobs to execute. Consider the security implications of this tradeoff when setting timeout values.</p>
+    /// </note>
     pub fn job_execution_timeout_minutes(mut self, input: i64) -> Self {
         self.job_execution_timeout_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
+    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30. The maximum value is 7200.</p><note>
+    /// <p>Increasing <code>jobExecutionTimeoutMinutes</code> during infrastructure updates delays the replacement of instances with new instances that include updates such as security patches, but provides more time for jobs to execute. Consider the security implications of this tradeoff when setting timeout values.</p>
+    /// </note>
     pub fn set_job_execution_timeout_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.job_execution_timeout_minutes = input;
         self
     }
-    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
+    /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30. The maximum value is 7200.</p><note>
+    /// <p>Increasing <code>jobExecutionTimeoutMinutes</code> during infrastructure updates delays the replacement of instances with new instances that include updates such as security patches, but provides more time for jobs to execute. Consider the security implications of this tradeoff when setting timeout values.</p>
+    /// </note>
     pub fn get_job_execution_timeout_minutes(&self) -> &::std::option::Option<i64> {
         &self.job_execution_timeout_minutes
     }

@@ -52,6 +52,8 @@ pub fn de_create_local_gateway_route_table_vpc_association(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateLocalGatewayRouteTableVpcAssociationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateLocalGatewayRouteTableVpcAssociationResponse got {start_el:?}"
@@ -62,7 +64,7 @@ pub fn de_create_local_gateway_route_table_vpc_association(
             s if s.matches("localGatewayRouteTableVpcAssociation") /* LocalGatewayRouteTableVpcAssociation com.amazonaws.ec2.synthetic#CreateLocalGatewayRouteTableVpcAssociationOutput$LocalGatewayRouteTableVpcAssociation */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_local_gateway_route_table_vpc_association::de_local_gateway_route_table_vpc_association(&mut tag)
+                        crate::protocol_serde::shape_local_gateway_route_table_vpc_association::de_local_gateway_route_table_vpc_association(&mut tag, depth + 1)
                         ?
                     )
                 ;

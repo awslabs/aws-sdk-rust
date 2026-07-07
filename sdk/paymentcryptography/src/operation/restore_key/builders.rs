@@ -24,7 +24,7 @@ impl crate::operation::restore_key::builders::RestoreKeyInputBuilder {
 ///
 /// <p>Cancels a scheduled key deletion during the waiting period. Use this operation to restore a <code>Key</code> that is scheduled for deletion.</p>
 /// <p>During the waiting period, the <code>KeyState</code> is <code>DELETE_PENDING</code> and <code>deletePendingTimestamp</code> contains the date and time after which the <code>Key</code> will be deleted. After <code>Key</code> is restored, the <code>KeyState</code> is <code>CREATE_COMPLETE</code>, and the value for <code>deletePendingTimestamp</code> is removed.</p>
-/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Cross-account use:</b> This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based policies</a>.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>

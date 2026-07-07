@@ -14,14 +14,20 @@
 /// match recommendationsourcetype {
 ///     RecommendationSourceType::AuroraDbClusterStorage => { /* ... */ },
 ///     RecommendationSourceType::AutoScalingGroup => { /* ... */ },
+///     RecommendationSourceType::DocumentDbCluster => { /* ... */ },
+///     RecommendationSourceType::DynamoDbTable => { /* ... */ },
 ///     RecommendationSourceType::EbsVolume => { /* ... */ },
 ///     RecommendationSourceType::Ec2Instance => { /* ... */ },
 ///     RecommendationSourceType::EcsService => { /* ... */ },
+///     RecommendationSourceType::ElastiCacheCluster => { /* ... */ },
 ///     RecommendationSourceType::LambdaFunction => { /* ... */ },
 ///     RecommendationSourceType::License => { /* ... */ },
+///     RecommendationSourceType::MemoryDbCluster => { /* ... */ },
 ///     RecommendationSourceType::NatGateway => { /* ... */ },
 ///     RecommendationSourceType::RdsDbInstance => { /* ... */ },
 ///     RecommendationSourceType::RdsDbInstanceStorage => { /* ... */ },
+///     RecommendationSourceType::SageMakerEndpoint => { /* ... */ },
+///     RecommendationSourceType::Workspaces => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,21 +61,33 @@ pub enum RecommendationSourceType {
     #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroup,
     #[allow(missing_docs)] // documentation missing in model
+    DocumentDbCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    DynamoDbTable,
+    #[allow(missing_docs)] // documentation missing in model
     EbsVolume,
     #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
     EcsService,
     #[allow(missing_docs)] // documentation missing in model
+    ElastiCacheCluster,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
     License,
+    #[allow(missing_docs)] // documentation missing in model
+    MemoryDbCluster,
     #[allow(missing_docs)] // documentation missing in model
     NatGateway,
     #[allow(missing_docs)] // documentation missing in model
     RdsDbInstance,
     #[allow(missing_docs)] // documentation missing in model
     RdsDbInstanceStorage,
+    #[allow(missing_docs)] // documentation missing in model
+    SageMakerEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
+    Workspaces,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -79,14 +97,20 @@ impl ::std::convert::From<&str> for RecommendationSourceType {
         match s {
             "AuroraDBClusterStorage" => RecommendationSourceType::AuroraDbClusterStorage,
             "AutoScalingGroup" => RecommendationSourceType::AutoScalingGroup,
+            "DocumentDBCluster" => RecommendationSourceType::DocumentDbCluster,
+            "DynamoDBTable" => RecommendationSourceType::DynamoDbTable,
             "EbsVolume" => RecommendationSourceType::EbsVolume,
             "Ec2Instance" => RecommendationSourceType::Ec2Instance,
             "EcsService" => RecommendationSourceType::EcsService,
+            "ElastiCacheCluster" => RecommendationSourceType::ElastiCacheCluster,
             "LambdaFunction" => RecommendationSourceType::LambdaFunction,
             "License" => RecommendationSourceType::License,
+            "MemoryDBCluster" => RecommendationSourceType::MemoryDbCluster,
             "NatGateway" => RecommendationSourceType::NatGateway,
             "RdsDBInstance" => RecommendationSourceType::RdsDbInstance,
             "RdsDBInstanceStorage" => RecommendationSourceType::RdsDbInstanceStorage,
+            "SageMakerEndpoint" => RecommendationSourceType::SageMakerEndpoint,
+            "WorkSpaces" => RecommendationSourceType::Workspaces,
             other => RecommendationSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -104,14 +128,20 @@ impl RecommendationSourceType {
         match self {
             RecommendationSourceType::AuroraDbClusterStorage => "AuroraDBClusterStorage",
             RecommendationSourceType::AutoScalingGroup => "AutoScalingGroup",
+            RecommendationSourceType::DocumentDbCluster => "DocumentDBCluster",
+            RecommendationSourceType::DynamoDbTable => "DynamoDBTable",
             RecommendationSourceType::EbsVolume => "EbsVolume",
             RecommendationSourceType::Ec2Instance => "Ec2Instance",
             RecommendationSourceType::EcsService => "EcsService",
+            RecommendationSourceType::ElastiCacheCluster => "ElastiCacheCluster",
             RecommendationSourceType::LambdaFunction => "LambdaFunction",
             RecommendationSourceType::License => "License",
+            RecommendationSourceType::MemoryDbCluster => "MemoryDBCluster",
             RecommendationSourceType::NatGateway => "NatGateway",
             RecommendationSourceType::RdsDbInstance => "RdsDBInstance",
             RecommendationSourceType::RdsDbInstanceStorage => "RdsDBInstanceStorage",
+            RecommendationSourceType::SageMakerEndpoint => "SageMakerEndpoint",
+            RecommendationSourceType::Workspaces => "WorkSpaces",
             RecommendationSourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -120,14 +150,20 @@ impl RecommendationSourceType {
         &[
             "AuroraDBClusterStorage",
             "AutoScalingGroup",
+            "DocumentDBCluster",
+            "DynamoDBTable",
             "EbsVolume",
             "Ec2Instance",
             "EcsService",
+            "ElastiCacheCluster",
             "LambdaFunction",
             "License",
+            "MemoryDBCluster",
             "NatGateway",
             "RdsDBInstance",
             "RdsDBInstanceStorage",
+            "SageMakerEndpoint",
+            "WorkSpaces",
         ]
     }
 }
@@ -153,14 +189,20 @@ impl ::std::fmt::Display for RecommendationSourceType {
         match self {
             RecommendationSourceType::AuroraDbClusterStorage => write!(f, "AuroraDBClusterStorage"),
             RecommendationSourceType::AutoScalingGroup => write!(f, "AutoScalingGroup"),
+            RecommendationSourceType::DocumentDbCluster => write!(f, "DocumentDBCluster"),
+            RecommendationSourceType::DynamoDbTable => write!(f, "DynamoDBTable"),
             RecommendationSourceType::EbsVolume => write!(f, "EbsVolume"),
             RecommendationSourceType::Ec2Instance => write!(f, "Ec2Instance"),
             RecommendationSourceType::EcsService => write!(f, "EcsService"),
+            RecommendationSourceType::ElastiCacheCluster => write!(f, "ElastiCacheCluster"),
             RecommendationSourceType::LambdaFunction => write!(f, "LambdaFunction"),
             RecommendationSourceType::License => write!(f, "License"),
+            RecommendationSourceType::MemoryDbCluster => write!(f, "MemoryDBCluster"),
             RecommendationSourceType::NatGateway => write!(f, "NatGateway"),
             RecommendationSourceType::RdsDbInstance => write!(f, "RdsDBInstance"),
             RecommendationSourceType::RdsDbInstanceStorage => write!(f, "RdsDBInstanceStorage"),
+            RecommendationSourceType::SageMakerEndpoint => write!(f, "SageMakerEndpoint"),
+            RecommendationSourceType::Workspaces => write!(f, "WorkSpaces"),
             RecommendationSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

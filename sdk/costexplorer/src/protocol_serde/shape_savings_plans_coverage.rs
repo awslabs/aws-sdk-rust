@@ -2,10 +2,16 @@
 pub(crate) fn de_savings_plans_coverage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SavingsPlansCoverage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -16,15 +22,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens, _value)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens, _value, depth + 1)?);
                         }
                         "Coverage" => {
                             builder = builder.set_coverage(crate::protocol_serde::shape_savings_plans_coverage_data::de_savings_plans_coverage_data(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "TimePeriod" => {
-                            builder = builder.set_time_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens, _value)?);
+                            builder =
+                                builder.set_time_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

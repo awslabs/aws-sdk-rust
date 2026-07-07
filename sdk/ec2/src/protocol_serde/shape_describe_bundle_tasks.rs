@@ -47,6 +47,8 @@ pub fn de_describe_bundle_tasks(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeBundleTasksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeBundleTasksResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_describe_bundle_tasks(
             s if s.matches("bundleInstanceTasksSet") /* BundleTasks com.amazonaws.ec2.synthetic#DescribeBundleTasksOutput$BundleTasks */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_bundle_task_list::de_bundle_task_list(&mut tag)
+                        crate::protocol_serde::shape_bundle_task_list::de_bundle_task_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

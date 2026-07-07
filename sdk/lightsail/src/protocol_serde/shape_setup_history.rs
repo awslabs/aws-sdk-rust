@@ -2,10 +2,16 @@
 pub(crate) fn de_setup_history<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::SetupHistory>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,16 +29,22 @@ where
                             );
                         }
                         "request" => {
-                            builder = builder.set_request(crate::protocol_serde::shape_setup_request::de_setup_request(tokens, _value)?);
+                            builder = builder.set_request(crate::protocol_serde::shape_setup_request::de_setup_request(tokens, _value, depth + 1)?);
                         }
                         "resource" => {
                             builder = builder.set_resource(crate::protocol_serde::shape_setup_history_resource::de_setup_history_resource(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "executionDetails" => {
                             builder = builder.set_execution_details(
-                                crate::protocol_serde::shape_setup_execution_details_list::de_setup_execution_details_list(tokens, _value)?,
+                                crate::protocol_serde::shape_setup_execution_details_list::de_setup_execution_details_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "status" => {

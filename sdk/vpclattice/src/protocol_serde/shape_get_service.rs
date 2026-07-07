@@ -124,6 +124,8 @@ pub(crate) fn de_get_service(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -164,7 +166,7 @@ pub(crate) fn de_get_service(
                     );
                 }
                 "dnsEntry" => {
-                    builder = builder.set_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens, _value)?);
+                    builder = builder.set_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens, _value, depth + 1)?);
                 }
                 "failureCode" => {
                     builder = builder.set_failure_code(
@@ -184,6 +186,13 @@ pub(crate) fn de_get_service(
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "idleTimeoutSeconds" => {
+                    builder = builder.set_idle_timeout_seconds(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
                             .transpose()?,
                     );
                 }

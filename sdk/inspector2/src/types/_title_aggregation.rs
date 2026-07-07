@@ -10,12 +10,12 @@ pub struct TitleAggregation {
     pub vulnerability_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The resource type to aggregate on.</p>
     pub resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
+    /// <p>The type of finding to aggregate on.</p>
+    pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     /// <p>The order to sort results by.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
     pub sort_by: ::std::option::Option<crate::types::TitleSortBy>,
-    /// <p>The type of finding to aggregate on.</p>
-    pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
 }
 impl TitleAggregation {
     /// <p>The finding titles to aggregate on.</p>
@@ -34,6 +34,10 @@ impl TitleAggregation {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::AggregationResourceType> {
         self.resource_type.as_ref()
     }
+    /// <p>The type of finding to aggregate on.</p>
+    pub fn finding_type(&self) -> ::std::option::Option<&crate::types::AggregationFindingType> {
+        self.finding_type.as_ref()
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
@@ -41,10 +45,6 @@ impl TitleAggregation {
     /// <p>The value to sort results by.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::TitleSortBy> {
         self.sort_by.as_ref()
-    }
-    /// <p>The type of finding to aggregate on.</p>
-    pub fn finding_type(&self) -> ::std::option::Option<&crate::types::AggregationFindingType> {
-        self.finding_type.as_ref()
     }
 }
 impl TitleAggregation {
@@ -61,9 +61,9 @@ pub struct TitleAggregationBuilder {
     pub(crate) titles: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) vulnerability_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
+    pub(crate) finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::TitleSortBy>,
-    pub(crate) finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
 }
 impl TitleAggregationBuilder {
     /// Appends an item to `titles`.
@@ -120,6 +120,20 @@ impl TitleAggregationBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::AggregationResourceType> {
         &self.resource_type
     }
+    /// <p>The type of finding to aggregate on.</p>
+    pub fn finding_type(mut self, input: crate::types::AggregationFindingType) -> Self {
+        self.finding_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of finding to aggregate on.</p>
+    pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::AggregationFindingType>) -> Self {
+        self.finding_type = input;
+        self
+    }
+    /// <p>The type of finding to aggregate on.</p>
+    pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::AggregationFindingType> {
+        &self.finding_type
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -148,29 +162,15 @@ impl TitleAggregationBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::TitleSortBy> {
         &self.sort_by
     }
-    /// <p>The type of finding to aggregate on.</p>
-    pub fn finding_type(mut self, input: crate::types::AggregationFindingType) -> Self {
-        self.finding_type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The type of finding to aggregate on.</p>
-    pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::AggregationFindingType>) -> Self {
-        self.finding_type = input;
-        self
-    }
-    /// <p>The type of finding to aggregate on.</p>
-    pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::AggregationFindingType> {
-        &self.finding_type
-    }
     /// Consumes the builder and constructs a [`TitleAggregation`](crate::types::TitleAggregation).
     pub fn build(self) -> crate::types::TitleAggregation {
         crate::types::TitleAggregation {
             titles: self.titles,
             vulnerability_ids: self.vulnerability_ids,
             resource_type: self.resource_type,
+            finding_type: self.finding_type,
             sort_order: self.sort_order,
             sort_by: self.sort_by,
-            finding_type: self.finding_type,
         }
     }
 }

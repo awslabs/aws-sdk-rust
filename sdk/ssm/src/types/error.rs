@@ -49,6 +49,10 @@ pub use crate::types::error::_invalid_target_maps::InvalidTargetMaps;
 
 pub use crate::types::error::_unsupported_platform_type::UnsupportedPlatformType;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 pub use crate::types::error::_document_already_exists::DocumentAlreadyExists;
 
 pub use crate::types::error::_document_limit_exceeded::DocumentLimitExceeded;
@@ -89,6 +93,8 @@ pub use crate::types::error::_invalid_activation_id::InvalidActivationId;
 
 pub use crate::types::error::_association_does_not_exist::AssociationDoesNotExist;
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
 pub use crate::types::error::_associated_instances::AssociatedInstances;
 
 pub use crate::types::error::_invalid_document_operation::InvalidDocumentOperation;
@@ -110,8 +116,6 @@ pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 pub use crate::types::error::_resource_data_sync_not_found_exception::ResourceDataSyncNotFoundException;
 
 pub use crate::types::error::_malformed_resource_policy_document_exception::MalformedResourcePolicyDocumentException;
-
-pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
 pub use crate::types::error::_resource_policy_conflict_exception::ResourcePolicyConflictException;
 
@@ -243,8 +247,6 @@ pub use crate::types::error::_invalid_output_folder::InvalidOutputFolder;
 
 pub use crate::types::error::_invalid_role::InvalidRole;
 
-pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
-
 pub use crate::types::error::_invalid_association::InvalidAssociation;
 
 pub use crate::types::error::_automation_definition_not_found_exception::AutomationDefinitionNotFoundException;
@@ -306,6 +308,8 @@ mod _automation_execution_not_found_exception;
 mod _automation_step_not_found_exception;
 
 mod _compliance_type_count_limit_exceeded_exception;
+
+mod _conflict_exception;
 
 mod _custom_schema_count_limit_exceeded_exception;
 

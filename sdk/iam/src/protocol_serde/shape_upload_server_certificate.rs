@@ -171,6 +171,8 @@ pub fn de_upload_server_certificate(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("UploadServerCertificateResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected UploadServerCertificateResponse got {start_el:?}"
@@ -188,7 +190,7 @@ pub fn de_upload_server_certificate(
             s if s.matches("ServerCertificateMetadata") /* ServerCertificateMetadata com.amazonaws.iam.synthetic#UploadServerCertificateOutput$ServerCertificateMetadata */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_server_certificate_metadata::de_server_certificate_metadata(&mut tag)
+                        crate::protocol_serde::shape_server_certificate_metadata::de_server_certificate_metadata(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -198,7 +200,7 @@ pub fn de_upload_server_certificate(
             s if s.matches("Tags") /* Tags com.amazonaws.iam.synthetic#UploadServerCertificateOutput$Tags */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag)
+                        crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -189,17 +189,17 @@ impl CreateDBClusterFluentBuilder {
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_tags_to_snapshot()
     }
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    /// <p>Not supported by Neptune.</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    /// <p>Not supported by Neptune.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    /// <p>Not supported by Neptune.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
@@ -707,5 +707,40 @@ impl CreateDBClusterFluentBuilder {
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.network_type(input.into());
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_network_type(input);
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>IPV4</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) The DB cluster uses only IPv4 addresses for communication.</p></li>
+    /// <li>
+    /// <p><b> <code>DUAL</code> </b> &nbsp; – &nbsp; The DB cluster uses both IPv4 and IPv6 addresses for communication. The DB subnet group associated with the cluster must support IPv6.</p></li>
+    /// </ul>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_type()
     }
 }

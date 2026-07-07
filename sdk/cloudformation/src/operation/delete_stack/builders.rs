@@ -214,4 +214,18 @@ impl DeleteStackFluentBuilder {
     pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
         self.inner.get_deletion_mode()
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.inner = self.inner.deployment_config(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.inner = self.inner.set_deployment_config(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        self.inner.get_deployment_config()
+    }
 }

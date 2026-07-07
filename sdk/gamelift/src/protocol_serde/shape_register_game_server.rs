@@ -136,17 +136,18 @@ pub(crate) fn de_register_game_server(
     crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder,
     ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<
         crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
             "GameServer" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_game_server(Some(crate::protocol_serde::shape_game_server::de_game_server(decoder)?)))
+                Ok(builder.set_game_server(Some(crate::protocol_serde::shape_game_server::de_game_server(decoder, depth + 1)?)))
             })?,
             _ => {
                 decoder.skip()?;
@@ -157,6 +158,8 @@ pub(crate) fn de_register_game_server(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -166,13 +169,13 @@ pub(crate) fn de_register_game_server(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

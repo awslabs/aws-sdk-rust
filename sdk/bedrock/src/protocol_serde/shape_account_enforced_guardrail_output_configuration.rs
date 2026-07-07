@@ -2,10 +2,16 @@
 pub(crate) fn de_account_enforced_guardrail_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AccountEnforcedGuardrailOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,7 +51,7 @@ where
                         }
                         "selectiveContentGuarding" => {
                             builder = builder.set_selective_content_guarding(
-                                crate::protocol_serde::shape_selective_content_guarding::de_selective_content_guarding(tokens, _value)?,
+                                crate::protocol_serde::shape_selective_content_guarding::de_selective_content_guarding(tokens, _value, depth + 1)?,
                             );
                         }
                         "guardrailVersion" => {
@@ -89,8 +95,11 @@ where
                             );
                         }
                         "modelEnforcement" => {
-                            builder =
-                                builder.set_model_enforcement(crate::protocol_serde::shape_model_enforcement::de_model_enforcement(tokens, _value)?);
+                            builder = builder.set_model_enforcement(crate::protocol_serde::shape_model_enforcement::de_model_enforcement(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

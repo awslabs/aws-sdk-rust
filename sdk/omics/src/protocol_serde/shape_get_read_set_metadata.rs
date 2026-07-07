@@ -138,6 +138,8 @@ pub(crate) fn de_get_read_set_metadata(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -178,7 +180,7 @@ pub(crate) fn de_get_read_set_metadata(
                     );
                 }
                 "etag" => {
-                    builder = builder.set_etag(crate::protocol_serde::shape_e_tag::de_e_tag(tokens, _value)?);
+                    builder = builder.set_etag(crate::protocol_serde::shape_e_tag::de_e_tag(tokens, _value, depth + 1)?);
                 }
                 "fileType" => {
                     builder = builder.set_file_type(
@@ -188,7 +190,7 @@ pub(crate) fn de_get_read_set_metadata(
                     );
                 }
                 "files" => {
-                    builder = builder.set_files(crate::protocol_serde::shape_read_set_files::de_read_set_files(tokens, _value)?);
+                    builder = builder.set_files(crate::protocol_serde::shape_read_set_files::de_read_set_files(tokens, _value, depth + 1)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -220,7 +222,9 @@ pub(crate) fn de_get_read_set_metadata(
                 }
                 "sequenceInformation" => {
                     builder = builder.set_sequence_information(crate::protocol_serde::shape_sequence_information::de_sequence_information(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "sequenceStoreId" => {

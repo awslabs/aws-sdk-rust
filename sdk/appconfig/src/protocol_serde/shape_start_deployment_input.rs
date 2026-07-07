@@ -28,15 +28,21 @@ pub fn ser_start_deployment_input_input(
     if let Some(var_9) = &input.kms_key_identifier {
         object.key("KmsKeyIdentifier").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_10) = &input.latest_deployment_number {
+        object.key("LatestDeploymentNumber").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("Tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("Tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
     Ok(())
 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_elasticsearch_domain_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ElasticsearchDomainConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,99 +20,141 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ElasticsearchVersion" => {
-                            builder = builder.set_elasticsearch_version(
-                                crate::protocol_serde::shape_elasticsearch_version_status::de_elasticsearch_version_status(tokens, _value)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ElasticsearchVersion" => {
+                                builder = builder.set_elasticsearch_version(
+                                    crate::protocol_serde::shape_elasticsearch_version_status::de_elasticsearch_version_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ElasticsearchClusterConfig" => {
+                                builder = builder.set_elasticsearch_cluster_config(
+                                    crate::protocol_serde::shape_elasticsearch_cluster_config_status::de_elasticsearch_cluster_config_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "EBSOptions" => {
+                                builder = builder.set_ebs_options(crate::protocol_serde::shape_ebs_options_status::de_ebs_options_status(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "AccessPolicies" => {
+                                builder = builder.set_access_policies(
+                                    crate::protocol_serde::shape_access_policies_status::de_access_policies_status(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "SnapshotOptions" => {
+                                builder = builder.set_snapshot_options(
+                                    crate::protocol_serde::shape_snapshot_options_status::de_snapshot_options_status(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "VPCOptions" => {
+                                builder = builder.set_vpc_options(crate::protocol_serde::shape_vpc_derived_info_status::de_vpc_derived_info_status(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "CognitoOptions" => {
+                                builder = builder.set_cognito_options(
+                                    crate::protocol_serde::shape_cognito_options_status::de_cognito_options_status(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "EncryptionAtRestOptions" => {
+                                builder = builder.set_encryption_at_rest_options(
+                                    crate::protocol_serde::shape_encryption_at_rest_options_status::de_encryption_at_rest_options_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "NodeToNodeEncryptionOptions" => {
+                                builder = builder.set_node_to_node_encryption_options(
+                                    crate::protocol_serde::shape_node_to_node_encryption_options_status::de_node_to_node_encryption_options_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "AdvancedOptions" => {
+                                builder = builder.set_advanced_options(
+                                    crate::protocol_serde::shape_advanced_options_status::de_advanced_options_status(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "LogPublishingOptions" => {
+                                builder = builder.set_log_publishing_options(
+                                    crate::protocol_serde::shape_log_publishing_options_status::de_log_publishing_options_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "DomainEndpointOptions" => {
+                                builder = builder.set_domain_endpoint_options(
+                                    crate::protocol_serde::shape_domain_endpoint_options_status::de_domain_endpoint_options_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "AdvancedSecurityOptions" => {
+                                builder = builder.set_advanced_security_options(
+                                    crate::protocol_serde::shape_advanced_security_options_status::de_advanced_security_options_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "AutoTuneOptions" => {
+                                builder = builder.set_auto_tune_options(
+                                    crate::protocol_serde::shape_auto_tune_options_status::de_auto_tune_options_status(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ChangeProgressDetails" => {
+                                builder = builder.set_change_progress_details(
+                                    crate::protocol_serde::shape_change_progress_details::de_change_progress_details(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ModifyingProperties" => {
+                                builder = builder.set_modifying_properties(
+                                    crate::protocol_serde::shape_modifying_properties_list::de_modifying_properties_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "DeploymentStrategyOptions" => {
+                                builder = builder.set_deployment_strategy_options(
+                                    crate::protocol_serde::shape_deployment_strategy_options_status::de_deployment_strategy_options_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "AutomatedSnapshotPauseOptions" => {
+                                builder = builder.set_automated_snapshot_pause_options(
+                                    crate::protocol_serde::shape_automated_snapshot_pause_options_status::de_automated_snapshot_pause_options_status(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "ElasticsearchClusterConfig" => {
-                            builder = builder.set_elasticsearch_cluster_config(
-                                crate::protocol_serde::shape_elasticsearch_cluster_config_status::de_elasticsearch_cluster_config_status(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "EBSOptions" => {
-                            builder =
-                                builder.set_ebs_options(crate::protocol_serde::shape_ebs_options_status::de_ebs_options_status(tokens, _value)?);
-                        }
-                        "AccessPolicies" => {
-                            builder = builder.set_access_policies(crate::protocol_serde::shape_access_policies_status::de_access_policies_status(
-                                tokens, _value,
-                            )?);
-                        }
-                        "SnapshotOptions" => {
-                            builder = builder.set_snapshot_options(crate::protocol_serde::shape_snapshot_options_status::de_snapshot_options_status(
-                                tokens, _value,
-                            )?);
-                        }
-                        "VPCOptions" => {
-                            builder = builder.set_vpc_options(crate::protocol_serde::shape_vpc_derived_info_status::de_vpc_derived_info_status(
-                                tokens, _value,
-                            )?);
-                        }
-                        "CognitoOptions" => {
-                            builder = builder.set_cognito_options(crate::protocol_serde::shape_cognito_options_status::de_cognito_options_status(
-                                tokens, _value,
-                            )?);
-                        }
-                        "EncryptionAtRestOptions" => {
-                            builder = builder.set_encryption_at_rest_options(
-                                crate::protocol_serde::shape_encryption_at_rest_options_status::de_encryption_at_rest_options_status(tokens, _value)?,
-                            );
-                        }
-                        "NodeToNodeEncryptionOptions" => {
-                            builder = builder.set_node_to_node_encryption_options(
-                                crate::protocol_serde::shape_node_to_node_encryption_options_status::de_node_to_node_encryption_options_status(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        "AdvancedOptions" => {
-                            builder = builder.set_advanced_options(crate::protocol_serde::shape_advanced_options_status::de_advanced_options_status(
-                                tokens, _value,
-                            )?);
-                        }
-                        "LogPublishingOptions" => {
-                            builder = builder.set_log_publishing_options(
-                                crate::protocol_serde::shape_log_publishing_options_status::de_log_publishing_options_status(tokens, _value)?,
-                            );
-                        }
-                        "DomainEndpointOptions" => {
-                            builder = builder.set_domain_endpoint_options(
-                                crate::protocol_serde::shape_domain_endpoint_options_status::de_domain_endpoint_options_status(tokens, _value)?,
-                            );
-                        }
-                        "AdvancedSecurityOptions" => {
-                            builder = builder.set_advanced_security_options(
-                                crate::protocol_serde::shape_advanced_security_options_status::de_advanced_security_options_status(tokens, _value)?,
-                            );
-                        }
-                        "AutoTuneOptions" => {
-                            builder = builder.set_auto_tune_options(
-                                crate::protocol_serde::shape_auto_tune_options_status::de_auto_tune_options_status(tokens, _value)?,
-                            );
-                        }
-                        "ChangeProgressDetails" => {
-                            builder = builder.set_change_progress_details(
-                                crate::protocol_serde::shape_change_progress_details::de_change_progress_details(tokens, _value)?,
-                            );
-                        }
-                        "ModifyingProperties" => {
-                            builder = builder.set_modifying_properties(
-                                crate::protocol_serde::shape_modifying_properties_list::de_modifying_properties_list(tokens, _value)?,
-                            );
-                        }
-                        "DeploymentStrategyOptions" => {
-                            builder = builder.set_deployment_strategy_options(
-                                crate::protocol_serde::shape_deployment_strategy_options_status::de_deployment_strategy_options_status(
-                                    tokens, _value,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

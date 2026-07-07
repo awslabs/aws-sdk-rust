@@ -28,6 +28,8 @@ pub struct VpcEndpointConnection {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Region of the endpoint.</p>
     pub vpc_endpoint_region: ::std::option::Option<::std::string::String>,
+    /// <p>The payer responsibility settings for the endpoint.</p>
+    pub payer_responsibilities: ::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>>,
 }
 impl VpcEndpointConnection {
     /// <p>The ID of the service to which the endpoint is connected.</p>
@@ -86,6 +88,12 @@ impl VpcEndpointConnection {
     pub fn vpc_endpoint_region(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_region.as_deref()
     }
+    /// <p>The payer responsibility settings for the endpoint.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.payer_responsibilities.is_none()`.
+    pub fn payer_responsibilities(&self) -> &[crate::types::PayerResponsibilityEntry] {
+        self.payer_responsibilities.as_deref().unwrap_or_default()
+    }
 }
 impl VpcEndpointConnection {
     /// Creates a new builder-style object to manufacture [`VpcEndpointConnection`](crate::types::VpcEndpointConnection).
@@ -110,6 +118,7 @@ pub struct VpcEndpointConnectionBuilder {
     pub(crate) vpc_endpoint_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) vpc_endpoint_region: ::std::option::Option<::std::string::String>,
+    pub(crate) payer_responsibilities: ::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>>,
 }
 impl VpcEndpointConnectionBuilder {
     /// <p>The ID of the service to which the endpoint is connected.</p>
@@ -304,6 +313,26 @@ impl VpcEndpointConnectionBuilder {
     pub fn get_vpc_endpoint_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_region
     }
+    /// Appends an item to `payer_responsibilities`.
+    ///
+    /// To override the contents of this collection use [`set_payer_responsibilities`](Self::set_payer_responsibilities).
+    ///
+    /// <p>The payer responsibility settings for the endpoint.</p>
+    pub fn payer_responsibilities(mut self, input: crate::types::PayerResponsibilityEntry) -> Self {
+        let mut v = self.payer_responsibilities.unwrap_or_default();
+        v.push(input);
+        self.payer_responsibilities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The payer responsibility settings for the endpoint.</p>
+    pub fn set_payer_responsibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>>) -> Self {
+        self.payer_responsibilities = input;
+        self
+    }
+    /// <p>The payer responsibility settings for the endpoint.</p>
+    pub fn get_payer_responsibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>> {
+        &self.payer_responsibilities
+    }
     /// Consumes the builder and constructs a [`VpcEndpointConnection`](crate::types::VpcEndpointConnection).
     pub fn build(self) -> crate::types::VpcEndpointConnection {
         crate::types::VpcEndpointConnection {
@@ -319,6 +348,7 @@ impl VpcEndpointConnectionBuilder {
             vpc_endpoint_connection_id: self.vpc_endpoint_connection_id,
             tags: self.tags,
             vpc_endpoint_region: self.vpc_endpoint_region,
+            payer_responsibilities: self.payer_responsibilities,
         }
     }
 }

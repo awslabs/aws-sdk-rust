@@ -77,6 +77,8 @@ pub(crate) fn de_describe_labeling_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -90,7 +92,7 @@ pub(crate) fn de_describe_labeling_job(
                     );
                 }
                 "LabelCounters" => {
-                    builder = builder.set_label_counters(crate::protocol_serde::shape_label_counters::de_label_counters(tokens, _value)?);
+                    builder = builder.set_label_counters(crate::protocol_serde::shape_label_counters::de_label_counters(tokens, _value, depth + 1)?);
                 }
                 "FailureReason" => {
                     builder = builder.set_failure_reason(
@@ -141,12 +143,16 @@ pub(crate) fn de_describe_labeling_job(
                 }
                 "InputConfig" => {
                     builder = builder.set_input_config(crate::protocol_serde::shape_labeling_job_input_config::de_labeling_job_input_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "OutputConfig" => {
                     builder = builder.set_output_config(crate::protocol_serde::shape_labeling_job_output_config::de_labeling_job_output_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "RoleArn" => {
@@ -165,23 +171,34 @@ pub(crate) fn de_describe_labeling_job(
                 }
                 "StoppingConditions" => {
                     builder = builder.set_stopping_conditions(
-                        crate::protocol_serde::shape_labeling_job_stopping_conditions::de_labeling_job_stopping_conditions(tokens, _value)?,
+                        crate::protocol_serde::shape_labeling_job_stopping_conditions::de_labeling_job_stopping_conditions(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "LabelingJobAlgorithmsConfig" => {
                     builder = builder.set_labeling_job_algorithms_config(
-                        crate::protocol_serde::shape_labeling_job_algorithms_config::de_labeling_job_algorithms_config(tokens, _value)?,
+                        crate::protocol_serde::shape_labeling_job_algorithms_config::de_labeling_job_algorithms_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "HumanTaskConfig" => {
-                    builder = builder.set_human_task_config(crate::protocol_serde::shape_human_task_config::de_human_task_config(tokens, _value)?);
+                    builder = builder.set_human_task_config(crate::protocol_serde::shape_human_task_config::de_human_task_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                 }
                 "LabelingJobOutput" => {
-                    builder =
-                        builder.set_labeling_job_output(crate::protocol_serde::shape_labeling_job_output::de_labeling_job_output(tokens, _value)?);
+                    builder = builder.set_labeling_job_output(crate::protocol_serde::shape_labeling_job_output::de_labeling_job_output(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

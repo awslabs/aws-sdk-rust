@@ -118,13 +118,15 @@ pub(crate) fn de_get_answer(
 ) -> ::std::result::Result<crate::operation::get_answer::builders::GetAnswerOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Answer" => {
-                    builder = builder.set_answer(crate::protocol_serde::shape_answer::de_answer(tokens, _value)?);
+                    builder = builder.set_answer(crate::protocol_serde::shape_answer::de_answer(tokens, _value, depth + 1)?);
                 }
                 "LensAlias" => {
                     builder = builder.set_lens_alias(

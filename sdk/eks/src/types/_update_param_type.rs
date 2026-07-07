@@ -17,6 +17,7 @@
 ///     UpdateParamType::ClusterLogging => { /* ... */ },
 ///     UpdateParamType::ComputeConfig => { /* ... */ },
 ///     UpdateParamType::ConfigurationValues => { /* ... */ },
+///     UpdateParamType::ControlPlaneEgressMode => { /* ... */ },
 ///     UpdateParamType::DeletionProtection => { /* ... */ },
 ///     UpdateParamType::DesiredSize => { /* ... */ },
 ///     UpdateParamType::EncryptionConfig => { /* ... */ },
@@ -32,6 +33,7 @@
 ///     UpdateParamType::MaxUnavailable => { /* ... */ },
 ///     UpdateParamType::MaxUnavailablePercentage => { /* ... */ },
 ///     UpdateParamType::MinSize => { /* ... */ },
+///     UpdateParamType::NetworkAccess => { /* ... */ },
 ///     UpdateParamType::NodeRepairConfig => { /* ... */ },
 ///     UpdateParamType::NodeRepairEnabled => { /* ... */ },
 ///     UpdateParamType::PlatformVersion => { /* ... */ },
@@ -41,6 +43,9 @@
 ///     UpdateParamType::ReleaseVersion => { /* ... */ },
 ///     UpdateParamType::RemoteNetworkConfig => { /* ... */ },
 ///     UpdateParamType::ResolveConflicts => { /* ... */ },
+///     UpdateParamType::RoleArn => { /* ... */ },
+///     UpdateParamType::RoleMappingsToAddOrUpdate => { /* ... */ },
+///     UpdateParamType::RoleMappingsToRemove => { /* ... */ },
 ///     UpdateParamType::SecurityGroups => { /* ... */ },
 ///     UpdateParamType::ServiceAccountRoleArn => { /* ... */ },
 ///     UpdateParamType::StorageConfig => { /* ... */ },
@@ -50,6 +55,7 @@
 ///     UpdateParamType::UpdateStrategy => { /* ... */ },
 ///     UpdateParamType::UpdatedTier => { /* ... */ },
 ///     UpdateParamType::UpgradePolicy => { /* ... */ },
+///     UpdateParamType::VendedLogs => { /* ... */ },
 ///     UpdateParamType::Version => { /* ... */ },
 ///     UpdateParamType::WarmPoolEnabled => { /* ... */ },
 ///     UpdateParamType::WarmPoolMaxGroupPreparedCapacity => { /* ... */ },
@@ -96,6 +102,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationValues,
     #[allow(missing_docs)] // documentation missing in model
+    ControlPlaneEgressMode,
+    #[allow(missing_docs)] // documentation missing in model
     DeletionProtection,
     #[allow(missing_docs)] // documentation missing in model
     DesiredSize,
@@ -126,6 +134,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     MinSize,
     #[allow(missing_docs)] // documentation missing in model
+    NetworkAccess,
+    #[allow(missing_docs)] // documentation missing in model
     NodeRepairConfig,
     #[allow(missing_docs)] // documentation missing in model
     NodeRepairEnabled,
@@ -144,6 +154,12 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     ResolveConflicts,
     #[allow(missing_docs)] // documentation missing in model
+    RoleArn,
+    #[allow(missing_docs)] // documentation missing in model
+    RoleMappingsToAddOrUpdate,
+    #[allow(missing_docs)] // documentation missing in model
+    RoleMappingsToRemove,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroups,
     #[allow(missing_docs)] // documentation missing in model
     ServiceAccountRoleArn,
@@ -161,6 +177,8 @@ pub enum UpdateParamType {
     UpdatedTier,
     #[allow(missing_docs)] // documentation missing in model
     UpgradePolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    VendedLogs,
     #[allow(missing_docs)] // documentation missing in model
     Version,
     #[allow(missing_docs)] // documentation missing in model
@@ -187,6 +205,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "ClusterLogging" => UpdateParamType::ClusterLogging,
             "ComputeConfig" => UpdateParamType::ComputeConfig,
             "ConfigurationValues" => UpdateParamType::ConfigurationValues,
+            "ControlPlaneEgressMode" => UpdateParamType::ControlPlaneEgressMode,
             "DeletionProtection" => UpdateParamType::DeletionProtection,
             "DesiredSize" => UpdateParamType::DesiredSize,
             "EncryptionConfig" => UpdateParamType::EncryptionConfig,
@@ -202,6 +221,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "MaxUnavailable" => UpdateParamType::MaxUnavailable,
             "MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
             "MinSize" => UpdateParamType::MinSize,
+            "NetworkAccess" => UpdateParamType::NetworkAccess,
             "NodeRepairConfig" => UpdateParamType::NodeRepairConfig,
             "NodeRepairEnabled" => UpdateParamType::NodeRepairEnabled,
             "PlatformVersion" => UpdateParamType::PlatformVersion,
@@ -211,6 +231,9 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "ReleaseVersion" => UpdateParamType::ReleaseVersion,
             "RemoteNetworkConfig" => UpdateParamType::RemoteNetworkConfig,
             "ResolveConflicts" => UpdateParamType::ResolveConflicts,
+            "RoleArn" => UpdateParamType::RoleArn,
+            "RoleMappingsToAddOrUpdate" => UpdateParamType::RoleMappingsToAddOrUpdate,
+            "RoleMappingsToRemove" => UpdateParamType::RoleMappingsToRemove,
             "SecurityGroups" => UpdateParamType::SecurityGroups,
             "ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
             "StorageConfig" => UpdateParamType::StorageConfig,
@@ -220,6 +243,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "UpdateStrategy" => UpdateParamType::UpdateStrategy,
             "UpdatedTier" => UpdateParamType::UpdatedTier,
             "UpgradePolicy" => UpdateParamType::UpgradePolicy,
+            "VendedLogs" => UpdateParamType::VendedLogs,
             "Version" => UpdateParamType::Version,
             "WarmPoolEnabled" => UpdateParamType::WarmPoolEnabled,
             "WarmPoolMaxGroupPreparedCapacity" => UpdateParamType::WarmPoolMaxGroupPreparedCapacity,
@@ -247,6 +271,7 @@ impl UpdateParamType {
             UpdateParamType::ClusterLogging => "ClusterLogging",
             UpdateParamType::ComputeConfig => "ComputeConfig",
             UpdateParamType::ConfigurationValues => "ConfigurationValues",
+            UpdateParamType::ControlPlaneEgressMode => "ControlPlaneEgressMode",
             UpdateParamType::DeletionProtection => "DeletionProtection",
             UpdateParamType::DesiredSize => "DesiredSize",
             UpdateParamType::EncryptionConfig => "EncryptionConfig",
@@ -262,6 +287,7 @@ impl UpdateParamType {
             UpdateParamType::MaxUnavailable => "MaxUnavailable",
             UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
             UpdateParamType::MinSize => "MinSize",
+            UpdateParamType::NetworkAccess => "NetworkAccess",
             UpdateParamType::NodeRepairConfig => "NodeRepairConfig",
             UpdateParamType::NodeRepairEnabled => "NodeRepairEnabled",
             UpdateParamType::PlatformVersion => "PlatformVersion",
@@ -271,6 +297,9 @@ impl UpdateParamType {
             UpdateParamType::ReleaseVersion => "ReleaseVersion",
             UpdateParamType::RemoteNetworkConfig => "RemoteNetworkConfig",
             UpdateParamType::ResolveConflicts => "ResolveConflicts",
+            UpdateParamType::RoleArn => "RoleArn",
+            UpdateParamType::RoleMappingsToAddOrUpdate => "RoleMappingsToAddOrUpdate",
+            UpdateParamType::RoleMappingsToRemove => "RoleMappingsToRemove",
             UpdateParamType::SecurityGroups => "SecurityGroups",
             UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
             UpdateParamType::StorageConfig => "StorageConfig",
@@ -280,6 +309,7 @@ impl UpdateParamType {
             UpdateParamType::UpdateStrategy => "UpdateStrategy",
             UpdateParamType::UpdatedTier => "UpdatedTier",
             UpdateParamType::UpgradePolicy => "UpgradePolicy",
+            UpdateParamType::VendedLogs => "VendedLogs",
             UpdateParamType::Version => "Version",
             UpdateParamType::WarmPoolEnabled => "WarmPoolEnabled",
             UpdateParamType::WarmPoolMaxGroupPreparedCapacity => "WarmPoolMaxGroupPreparedCapacity",
@@ -298,6 +328,7 @@ impl UpdateParamType {
             "ClusterLogging",
             "ComputeConfig",
             "ConfigurationValues",
+            "ControlPlaneEgressMode",
             "DeletionProtection",
             "DesiredSize",
             "EncryptionConfig",
@@ -313,6 +344,7 @@ impl UpdateParamType {
             "MaxUnavailable",
             "MaxUnavailablePercentage",
             "MinSize",
+            "NetworkAccess",
             "NodeRepairConfig",
             "NodeRepairEnabled",
             "PlatformVersion",
@@ -322,6 +354,9 @@ impl UpdateParamType {
             "ReleaseVersion",
             "RemoteNetworkConfig",
             "ResolveConflicts",
+            "RoleArn",
+            "RoleMappingsToAddOrUpdate",
+            "RoleMappingsToRemove",
             "SecurityGroups",
             "ServiceAccountRoleArn",
             "StorageConfig",
@@ -331,6 +366,7 @@ impl UpdateParamType {
             "UpdateStrategy",
             "UpdatedTier",
             "UpgradePolicy",
+            "VendedLogs",
             "Version",
             "WarmPoolEnabled",
             "WarmPoolMaxGroupPreparedCapacity",
@@ -366,6 +402,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::ClusterLogging => write!(f, "ClusterLogging"),
             UpdateParamType::ComputeConfig => write!(f, "ComputeConfig"),
             UpdateParamType::ConfigurationValues => write!(f, "ConfigurationValues"),
+            UpdateParamType::ControlPlaneEgressMode => write!(f, "ControlPlaneEgressMode"),
             UpdateParamType::DeletionProtection => write!(f, "DeletionProtection"),
             UpdateParamType::DesiredSize => write!(f, "DesiredSize"),
             UpdateParamType::EncryptionConfig => write!(f, "EncryptionConfig"),
@@ -381,6 +418,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::MaxUnavailable => write!(f, "MaxUnavailable"),
             UpdateParamType::MaxUnavailablePercentage => write!(f, "MaxUnavailablePercentage"),
             UpdateParamType::MinSize => write!(f, "MinSize"),
+            UpdateParamType::NetworkAccess => write!(f, "NetworkAccess"),
             UpdateParamType::NodeRepairConfig => write!(f, "NodeRepairConfig"),
             UpdateParamType::NodeRepairEnabled => write!(f, "NodeRepairEnabled"),
             UpdateParamType::PlatformVersion => write!(f, "PlatformVersion"),
@@ -390,6 +428,9 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::ReleaseVersion => write!(f, "ReleaseVersion"),
             UpdateParamType::RemoteNetworkConfig => write!(f, "RemoteNetworkConfig"),
             UpdateParamType::ResolveConflicts => write!(f, "ResolveConflicts"),
+            UpdateParamType::RoleArn => write!(f, "RoleArn"),
+            UpdateParamType::RoleMappingsToAddOrUpdate => write!(f, "RoleMappingsToAddOrUpdate"),
+            UpdateParamType::RoleMappingsToRemove => write!(f, "RoleMappingsToRemove"),
             UpdateParamType::SecurityGroups => write!(f, "SecurityGroups"),
             UpdateParamType::ServiceAccountRoleArn => write!(f, "ServiceAccountRoleArn"),
             UpdateParamType::StorageConfig => write!(f, "StorageConfig"),
@@ -399,6 +440,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::UpdateStrategy => write!(f, "UpdateStrategy"),
             UpdateParamType::UpdatedTier => write!(f, "UpdatedTier"),
             UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),
+            UpdateParamType::VendedLogs => write!(f, "VendedLogs"),
             UpdateParamType::Version => write!(f, "Version"),
             UpdateParamType::WarmPoolEnabled => write!(f, "WarmPoolEnabled"),
             UpdateParamType::WarmPoolMaxGroupPreparedCapacity => write!(f, "WarmPoolMaxGroupPreparedCapacity"),

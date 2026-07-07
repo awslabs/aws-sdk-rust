@@ -9,16 +9,28 @@ pub fn ser_kafka_cluster_client_authentication(
         crate::protocol_serde::shape_kafka_cluster_sasl_scram_authentication::ser_kafka_cluster_sasl_scram_authentication(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.mtls {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("mTLS").start_object();
+        crate::protocol_serde::shape_kafka_cluster_mtls_authentication::ser_kafka_cluster_mtls_authentication(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
 pub(crate) fn de_kafka_cluster_client_authentication<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::KafkaClusterClientAuthentication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -31,7 +43,18 @@ where
                         "saslScram" => {
                             builder = builder.set_sasl_scram(
                                 crate::protocol_serde::shape_kafka_cluster_sasl_scram_authentication::de_kafka_cluster_sasl_scram_authentication(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "mTLS" => {
+                            builder = builder.set_mtls(
+                                crate::protocol_serde::shape_kafka_cluster_mtls_authentication::de_kafka_cluster_mtls_authentication(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -44,9 +67,7 @@ where
                     }
                 }
             }
-            Ok(Some(
-                crate::serde_util::kafka_cluster_client_authentication_correct_errors(builder).build(),
-            ))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

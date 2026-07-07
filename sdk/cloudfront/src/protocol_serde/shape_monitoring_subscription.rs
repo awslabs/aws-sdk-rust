@@ -16,7 +16,11 @@ pub fn ser_monitoring_subscription(
 #[allow(clippy::needless_question_mark)]
 pub fn de_monitoring_subscription(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::MonitoringSubscription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::MonitoringSubscription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -24,7 +28,7 @@ pub fn de_monitoring_subscription(
             s if s.matches("RealtimeMetricsSubscriptionConfig") /* RealtimeMetricsSubscriptionConfig com.amazonaws.cloudfront#MonitoringSubscription$RealtimeMetricsSubscriptionConfig */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_realtime_metrics_subscription_config::de_realtime_metrics_subscription_config(&mut tag)
+                        crate::protocol_serde::shape_realtime_metrics_subscription_config::de_realtime_metrics_subscription_config(&mut tag, depth + 1)
                         ?
                     )
                 ;

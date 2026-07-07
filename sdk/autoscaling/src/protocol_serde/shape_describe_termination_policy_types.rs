@@ -72,6 +72,8 @@ pub fn de_describe_termination_policy_types(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeTerminationPolicyTypesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTerminationPolicyTypesResponse got {start_el:?}"
@@ -89,7 +91,7 @@ pub fn de_describe_termination_policy_types(
             s if s.matches("TerminationPolicyTypes") /* TerminationPolicyTypes com.amazonaws.autoscaling.synthetic#DescribeTerminationPolicyTypesOutput$TerminationPolicyTypes */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_termination_policies::de_termination_policies(&mut tag)
+                        crate::protocol_serde::shape_termination_policies::de_termination_policies(&mut tag, depth + 1)
                         ?
                     )
                 ;

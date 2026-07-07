@@ -39,10 +39,16 @@ pub fn ser_override_configuration(
 pub(crate) fn de_override_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OverrideConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -54,27 +60,47 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "document" => {
                             builder = builder.set_document(
-                                crate::protocol_serde::shape_document_override_configuration::de_document_override_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_document_override_configuration::de_document_override_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "image" => {
                             builder = builder.set_image(
-                                crate::protocol_serde::shape_image_override_configuration::de_image_override_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_image_override_configuration::de_image_override_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "video" => {
                             builder = builder.set_video(
-                                crate::protocol_serde::shape_video_override_configuration::de_video_override_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_video_override_configuration::de_video_override_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "audio" => {
                             builder = builder.set_audio(
-                                crate::protocol_serde::shape_audio_override_configuration::de_audio_override_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_audio_override_configuration::de_audio_override_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "modalityRouting" => {
                             builder = builder.set_modality_routing(
-                                crate::protocol_serde::shape_modality_routing_configuration::de_modality_routing_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_modality_routing_configuration::de_modality_routing_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

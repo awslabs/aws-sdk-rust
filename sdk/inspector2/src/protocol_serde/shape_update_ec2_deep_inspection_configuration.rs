@@ -149,6 +149,8 @@ pub(crate) fn de_update_ec2_deep_inspection_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -162,10 +164,10 @@ pub(crate) fn de_update_ec2_deep_inspection_configuration(
                     );
                 }
                 "orgPackagePaths" => {
-                    builder = builder.set_org_package_paths(crate::protocol_serde::shape_path_list::de_path_list(tokens, _value)?);
+                    builder = builder.set_org_package_paths(crate::protocol_serde::shape_path_list::de_path_list(tokens, _value, depth + 1)?);
                 }
                 "packagePaths" => {
-                    builder = builder.set_package_paths(crate::protocol_serde::shape_path_list::de_path_list(tokens, _value)?);
+                    builder = builder.set_package_paths(crate::protocol_serde::shape_path_list::de_path_list(tokens, _value, depth + 1)?);
                 }
                 "status" => {
                     builder = builder.set_status(

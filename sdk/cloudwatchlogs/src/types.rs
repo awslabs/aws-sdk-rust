@@ -49,7 +49,11 @@ pub use crate::types::_get_log_object_response_stream::GetLogObjectResponseStrea
 
 pub use crate::types::_query_statistics::QueryStatistics;
 
+pub use crate::types::_schedule_type::ScheduleType;
+
 pub use crate::types::_execution_status::ExecutionStatus;
+
+pub use crate::types::_storage_tier::StorageTier;
 
 pub use crate::types::_list_aggregate_log_group_summaries_group_by::ListAggregateLogGroupSummariesGroupBy;
 
@@ -119,6 +123,10 @@ pub use crate::types::_filtered_log_event::FilteredLogEvent;
 
 pub use crate::types::_searched_log_stream::SearchedLogStream;
 
+pub use crate::types::_delivery_source_status::DeliverySourceStatus;
+
+pub use crate::types::_delivery_source_status_reason::DeliverySourceStatusReason;
+
 pub use crate::types::_open_search_integration_details::OpenSearchIntegrationDetails;
 
 pub use crate::types::_output_log_event::OutputLogEvent;
@@ -143,11 +151,15 @@ pub use crate::types::_integration_summary::IntegrationSummary;
 
 pub use crate::types::_anomaly_detector::AnomalyDetector;
 
+pub use crate::types::_tag_filter::TagFilter;
+
 pub use crate::types::_log_group_summary::LogGroupSummary;
 
 pub use crate::types::_scheduled_query_summary::ScheduledQuerySummary;
 
 pub use crate::types::_s3_table_integration_source::S3TableIntegrationSource;
+
+pub use crate::types::_syslog_configuration::SyslogConfiguration;
 
 pub use crate::types::_index_source::IndexSource;
 
@@ -174,6 +186,8 @@ pub use crate::types::_transformed_log_record::TransformedLogRecord;
 pub use crate::types::_suppression_unit::SuppressionUnit;
 
 pub use crate::types::_configuration_template_delivery_config_values::ConfigurationTemplateDeliveryConfigValues;
+
+pub use crate::types::_s3_tables_integration::S3TablesIntegration;
 
 pub use crate::types::_export_task_status::ExportTaskStatus;
 
@@ -253,11 +267,15 @@ pub use crate::types::_state::State;
 
 pub use crate::types::_s3_table_integration_source_status::S3TableIntegrationSourceStatus;
 
+pub use crate::types::_syslog_source_type::SyslogSourceType;
+
 pub use crate::types::_standard_unit::StandardUnit;
 
 pub use crate::types::_live_tail_session_metadata::LiveTailSessionMetadata;
 
 pub use crate::types::_record_field::RecordField;
+
+pub use crate::types::_delivery_source_configuration_schema::DeliverySourceConfigurationSchema;
 
 pub use crate::types::_inherited_property::InheritedProperty;
 
@@ -278,6 +296,8 @@ pub use crate::types::_log_event::LogEvent;
 pub use crate::types::_pattern_token::PatternToken;
 
 pub use crate::types::_live_tail_session_log_event::LiveTailSessionLogEvent;
+
+pub use crate::types::_delivery_source_configuration_schema_value_type::DeliverySourceConfigurationSchemaValueType;
 
 pub use crate::types::_open_search_resource_status_type::OpenSearchResourceStatusType;
 
@@ -346,6 +366,14 @@ mod _delivery_destination_configuration;
 mod _delivery_destination_type;
 
 mod _delivery_source;
+
+mod _delivery_source_configuration_schema;
+
+mod _delivery_source_configuration_schema_value_type;
+
+mod _delivery_source_status;
+
+mod _delivery_source_status_reason;
 
 mod _destination;
 
@@ -553,6 +581,10 @@ mod _s3_table_integration_source;
 
 mod _s3_table_integration_source_status;
 
+mod _s3_tables_integration;
+
+mod _schedule_type;
+
 mod _scheduled_query_destination;
 
 mod _scheduled_query_destination_type;
@@ -575,6 +607,8 @@ mod _start_live_tail_response_stream;
 
 mod _state;
 
+mod _storage_tier;
+
 mod _subscription_filter;
 
 mod _substitute_string;
@@ -588,6 +622,12 @@ mod _suppression_state;
 mod _suppression_type;
 
 mod _suppression_unit;
+
+mod _syslog_configuration;
+
+mod _syslog_source_type;
+
+mod _tag_filter;
 
 mod _transformed_log_record;
 

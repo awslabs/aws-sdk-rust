@@ -2,10 +2,16 @@
 pub(crate) fn de_influx_dbv3_enterprise_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InfluxDBv3EnterpriseParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -91,8 +97,11 @@ where
                             );
                         }
                         "dataFusionRuntimeThreadKeepAlive" => {
-                            builder = builder
-                                .set_data_fusion_runtime_thread_keep_alive(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_data_fusion_runtime_thread_keep_alive(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "dataFusionRuntimeThreadPriority" => {
                             builder = builder.set_data_fusion_runtime_thread_priority(
@@ -129,7 +138,7 @@ where
                         }
                         "forceSnapshotMemThreshold" => {
                             builder = builder.set_force_snapshot_mem_threshold(
-                                crate::protocol_serde::shape_percent_or_absolute_long::de_percent_or_absolute_long(tokens, _value)?,
+                                crate::protocol_serde::shape_percent_or_absolute_long::de_percent_or_absolute_long(tokens, _value, depth + 1)?,
                             );
                         }
                         "walSnapshotSize" => {
@@ -154,7 +163,8 @@ where
                             );
                         }
                         "preemptiveCacheAge" => {
-                            builder = builder.set_preemptive_cache_age(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_preemptive_cache_age(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "parquetMemCachePrunePercentage" => {
                             builder = builder.set_parquet_mem_cache_prune_percentage(
@@ -162,35 +172,48 @@ where
                             );
                         }
                         "parquetMemCachePruneInterval" => {
-                            builder =
-                                builder.set_parquet_mem_cache_prune_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_parquet_mem_cache_prune_interval(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "disableParquetMemCache" => {
                             builder =
                                 builder.set_disable_parquet_mem_cache(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "parquetMemCacheQueryPathDuration" => {
-                            builder = builder
-                                .set_parquet_mem_cache_query_path_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_parquet_mem_cache_query_path_duration(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "lastCacheEvictionInterval" => {
-                            builder = builder.set_last_cache_eviction_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_last_cache_eviction_interval(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "distinctCacheEvictionInterval" => {
-                            builder =
-                                builder.set_distinct_cache_eviction_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_distinct_cache_eviction_interval(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "gen1Duration" => {
-                            builder = builder.set_gen1_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_gen1_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "execMemPoolBytes" => {
                             builder = builder.set_exec_mem_pool_bytes(
-                                crate::protocol_serde::shape_percent_or_absolute_long::de_percent_or_absolute_long(tokens, _value)?,
+                                crate::protocol_serde::shape_percent_or_absolute_long::de_percent_or_absolute_long(tokens, _value, depth + 1)?,
                             );
                         }
                         "parquetMemCacheSize" => {
                             builder = builder.set_parquet_mem_cache_size(
-                                crate::protocol_serde::shape_percent_or_absolute_long::de_percent_or_absolute_long(tokens, _value)?,
+                                crate::protocol_serde::shape_percent_or_absolute_long::de_percent_or_absolute_long(tokens, _value, depth + 1)?,
                             );
                         }
                         "walReplayFailOnError" => {
@@ -219,16 +242,22 @@ where
                             );
                         }
                         "gen1LookbackDuration" => {
-                            builder = builder.set_gen1_lookback_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_gen1_lookback_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "retentionCheckInterval" => {
-                            builder = builder.set_retention_check_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_retention_check_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "deleteGracePeriod" => {
-                            builder = builder.set_delete_grace_period(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_delete_grace_period(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "hardDeleteDefaultDuration" => {
-                            builder = builder.set_hard_delete_default_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_hard_delete_default_duration(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ingestQueryInstances" => {
                             builder = builder.set_ingest_query_instances(
@@ -262,7 +291,8 @@ where
                             );
                         }
                         "compactionGen2Duration" => {
-                            builder = builder.set_compaction_gen2_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_compaction_gen2_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "compactionMultipliers" => {
                             builder = builder.set_compaction_multipliers(
@@ -272,10 +302,12 @@ where
                             );
                         }
                         "compactionCleanupWait" => {
-                            builder = builder.set_compaction_cleanup_wait(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_compaction_cleanup_wait(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "compactionCheckInterval" => {
-                            builder = builder.set_compaction_check_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_compaction_check_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "lastValueCacheDisableFromHistory" => {
                             builder = builder.set_last_value_cache_disable_from_history(::aws_smithy_json::deserialize::token::expect_bool_or_null(
@@ -288,10 +320,12 @@ where
                             );
                         }
                         "replicationInterval" => {
-                            builder = builder.set_replication_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_replication_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "catalogSyncInterval" => {
-                            builder = builder.set_catalog_sync_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_catalog_sync_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

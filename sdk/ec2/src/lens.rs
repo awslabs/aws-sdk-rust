@@ -489,6 +489,16 @@ pub(crate) fn reflens_describe_internet_gateways_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_ipam_pool_allocations_output_output_next_token(
+    input: &crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_ipam_pools_output_output_next_token(
     input: &crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2019,6 +2029,13 @@ pub(crate) fn lens_describe_internet_gateways_output_output_internet_gateways(
     input: crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>> {
     let input = input.internet_gateways?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_ipam_pool_allocations_output_output_ipam_pool_allocations(
+    input: crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>> {
+    let input = input.ipam_pool_allocations?;
     ::std::option::Option::Some(input)
 }
 

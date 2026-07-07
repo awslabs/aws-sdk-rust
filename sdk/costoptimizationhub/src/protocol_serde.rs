@@ -101,7 +101,11 @@ pub(crate) mod shape_aurora_db_cluster_storage;
 
 pub(crate) mod shape_compute_savings_plans;
 
+pub(crate) mod shape_document_db_cluster;
+
 pub(crate) mod shape_dynamo_db_reserved_capacity;
+
+pub(crate) mod shape_dynamo_db_table;
 
 pub(crate) mod shape_ebs_volume;
 
@@ -117,9 +121,13 @@ pub(crate) mod shape_ecs_service;
 
 pub(crate) mod shape_efficiency_metrics_by_group;
 
+pub(crate) mod shape_elasti_cache_cluster;
+
 pub(crate) mod shape_elasti_cache_reserved_instances;
 
 pub(crate) mod shape_lambda_function;
+
+pub(crate) mod shape_memory_db_cluster;
 
 pub(crate) mod shape_memory_db_reserved_instances;
 
@@ -139,11 +147,15 @@ pub(crate) mod shape_recommendation_summary;
 
 pub(crate) mod shape_redshift_reserved_instances;
 
+pub(crate) mod shape_sage_maker_endpoint;
+
 pub(crate) mod shape_sage_maker_savings_plans;
 
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_validation_exception_detail;
+
+pub(crate) mod shape_work_spaces;
 
 pub(crate) mod shape_aurora_db_cluster_storage_configuration;
 

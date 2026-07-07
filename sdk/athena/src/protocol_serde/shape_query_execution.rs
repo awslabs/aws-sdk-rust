@@ -2,10 +2,16 @@
 pub(crate) fn de_query_execution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::QueryExecution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,33 +45,41 @@ where
                         "ManagedQueryResultsConfiguration" => {
                             builder = builder.set_managed_query_results_configuration(
                                 crate::protocol_serde::shape_managed_query_results_configuration::de_managed_query_results_configuration(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "ResultConfiguration" => {
                             builder = builder.set_result_configuration(crate::protocol_serde::shape_result_configuration::de_result_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ResultReuseConfiguration" => {
                             builder = builder.set_result_reuse_configuration(
-                                crate::protocol_serde::shape_result_reuse_configuration::de_result_reuse_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_result_reuse_configuration::de_result_reuse_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "QueryExecutionContext" => {
                             builder = builder.set_query_execution_context(
-                                crate::protocol_serde::shape_query_execution_context::de_query_execution_context(tokens, _value)?,
+                                crate::protocol_serde::shape_query_execution_context::de_query_execution_context(tokens, _value, depth + 1)?,
                             );
                         }
                         "Status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_query_execution_status::de_query_execution_status(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "Statistics" => {
                             builder = builder.set_statistics(crate::protocol_serde::shape_query_execution_statistics::de_query_execution_statistics(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "WorkGroup" => {
@@ -76,11 +90,17 @@ where
                             );
                         }
                         "EngineVersion" => {
-                            builder = builder.set_engine_version(crate::protocol_serde::shape_engine_version::de_engine_version(tokens, _value)?);
+                            builder = builder.set_engine_version(crate::protocol_serde::shape_engine_version::de_engine_version(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ExecutionParameters" => {
                             builder = builder.set_execution_parameters(crate::protocol_serde::shape_execution_parameters::de_execution_parameters(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "SubstatementType" => {
@@ -92,7 +112,7 @@ where
                         }
                         "QueryResultsS3AccessGrantsConfiguration" => {
                             builder = builder.set_query_results_s3_access_grants_configuration(
-                                    crate::protocol_serde::shape_query_results_s3_access_grants_configuration::de_query_results_s3_access_grants_configuration(tokens, _value)?
+                                    crate::protocol_serde::shape_query_results_s3_access_grants_configuration::de_query_results_s3_access_grants_configuration(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

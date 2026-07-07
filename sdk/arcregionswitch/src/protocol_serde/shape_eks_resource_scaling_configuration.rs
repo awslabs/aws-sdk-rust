@@ -57,32 +57,41 @@ pub fn ser_eks_resource_scaling_configuration(
 
 pub(crate) fn de_eks_resource_scaling_configuration(
     decoder: &mut ::aws_smithy_cbor::Decoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EksResourceScalingConfiguration, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    if depth >= 128u32 {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+            decoder.position(),
+        ));
+    }
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::types::builders::EksResourceScalingConfigurationBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::types::builders::EksResourceScalingConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "timeoutMinutes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_timeout_minutes(Some(decoder.integer()?)))
             })?,
             "kubernetesResourceType" => builder.set_kubernetes_resource_type(Some(
-                crate::protocol_serde::shape_kubernetes_resource_type::de_kubernetes_resource_type(decoder)?,
+                crate::protocol_serde::shape_kubernetes_resource_type::de_kubernetes_resource_type(decoder, depth + 1)?,
             )),
             "scalingResources" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_scaling_resources(Some(crate::protocol_serde::shape_kubernetes_scaling_apps::de_kubernetes_scaling_apps(
                         decoder,
+                        depth + 1,
                     )?)),
                 )
             })?,
             "eksClusters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_eks_clusters(Some(crate::protocol_serde::shape_eks_clusters::de_eks_clusters(decoder)?)))
+                Ok(builder.set_eks_clusters(Some(crate::protocol_serde::shape_eks_clusters::de_eks_clusters(decoder, depth + 1)?)))
             })?,
             "ungraceful" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_ungraceful(Some(
-                    crate::protocol_serde::shape_eks_resource_scaling_ungraceful::de_eks_resource_scaling_ungraceful(decoder)?,
+                    crate::protocol_serde::shape_eks_resource_scaling_ungraceful::de_eks_resource_scaling_ungraceful(decoder, depth + 1)?,
                 )))
             })?,
             "targetPercent" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -111,13 +120,13 @@ pub(crate) fn de_eks_resource_scaling_configuration(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

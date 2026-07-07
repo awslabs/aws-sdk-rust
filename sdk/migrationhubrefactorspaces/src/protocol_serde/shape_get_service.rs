@@ -119,6 +119,8 @@ pub(crate) fn de_get_service(
 {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -173,11 +175,13 @@ pub(crate) fn de_get_service(
                     );
                 }
                 "Error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_response::de_error_response(tokens, _value)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_response::de_error_response(tokens, _value, depth + 1)?);
                 }
                 "LambdaEndpoint" => {
                     builder = builder.set_lambda_endpoint(crate::protocol_serde::shape_lambda_endpoint_config::de_lambda_endpoint_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "LastUpdatedTime" => {
@@ -215,10 +219,14 @@ pub(crate) fn de_get_service(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "UrlEndpoint" => {
-                    builder = builder.set_url_endpoint(crate::protocol_serde::shape_url_endpoint_config::de_url_endpoint_config(tokens, _value)?);
+                    builder = builder.set_url_endpoint(crate::protocol_serde::shape_url_endpoint_config::de_url_endpoint_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "VpcId" => {
                     builder = builder.set_vpc_id(

@@ -30,6 +30,12 @@ pub struct DaemonTaskDefinition {
     pub delete_requested_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The principal that registered the daemon task definition.</p>
     pub registered_by: ::std::option::Option<::std::string::String>,
+    /// <p>The PID namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use <code>pidMode: "shared"</code>.</p>
+    pub pid_mode: ::std::option::Option<crate::types::DaemonPidMode>,
+    /// <p>The IPC namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use <code>ipcMode: "shared"</code>.</p>
+    pub ipc_mode: ::std::option::Option<crate::types::DaemonIpcMode>,
 }
 impl DaemonTaskDefinition {
     /// <p>The full Amazon Resource Name (ARN) of the daemon task definition.</p>
@@ -88,6 +94,16 @@ impl DaemonTaskDefinition {
     pub fn registered_by(&self) -> ::std::option::Option<&str> {
         self.registered_by.as_deref()
     }
+    /// <p>The PID namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use <code>pidMode: "shared"</code>.</p>
+    pub fn pid_mode(&self) -> ::std::option::Option<&crate::types::DaemonPidMode> {
+        self.pid_mode.as_ref()
+    }
+    /// <p>The IPC namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use <code>ipcMode: "shared"</code>.</p>
+    pub fn ipc_mode(&self) -> ::std::option::Option<&crate::types::DaemonIpcMode> {
+        self.ipc_mode.as_ref()
+    }
 }
 impl DaemonTaskDefinition {
     /// Creates a new builder-style object to manufacture [`DaemonTaskDefinition`](crate::types::DaemonTaskDefinition).
@@ -113,6 +129,8 @@ pub struct DaemonTaskDefinitionBuilder {
     pub(crate) registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_requested_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registered_by: ::std::option::Option<::std::string::String>,
+    pub(crate) pid_mode: ::std::option::Option<crate::types::DaemonPidMode>,
+    pub(crate) ipc_mode: ::std::option::Option<crate::types::DaemonIpcMode>,
 }
 impl DaemonTaskDefinitionBuilder {
     /// <p>The full Amazon Resource Name (ARN) of the daemon task definition.</p>
@@ -309,6 +327,40 @@ impl DaemonTaskDefinitionBuilder {
     pub fn get_registered_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.registered_by
     }
+    /// <p>The PID namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use <code>pidMode: "shared"</code>.</p>
+    pub fn pid_mode(mut self, input: crate::types::DaemonPidMode) -> Self {
+        self.pid_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The PID namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use <code>pidMode: "shared"</code>.</p>
+    pub fn set_pid_mode(mut self, input: ::std::option::Option<crate::types::DaemonPidMode>) -> Self {
+        self.pid_mode = input;
+        self
+    }
+    /// <p>The PID namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use <code>pidMode: "host"</code> or other daemons that use <code>pidMode: "shared"</code>.</p>
+    pub fn get_pid_mode(&self) -> &::std::option::Option<crate::types::DaemonPidMode> {
+        &self.pid_mode
+    }
+    /// <p>The IPC namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use <code>ipcMode: "shared"</code>.</p>
+    pub fn ipc_mode(mut self, input: crate::types::DaemonIpcMode) -> Self {
+        self.ipc_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IPC namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use <code>ipcMode: "shared"</code>.</p>
+    pub fn set_ipc_mode(mut self, input: ::std::option::Option<crate::types::DaemonIpcMode>) -> Self {
+        self.ipc_mode = input;
+        self
+    }
+    /// <p>The IPC namespace mode for the daemon. The valid values are <code>none</code> and <code>shared</code>. The default is <code>none</code>.</p>
+    /// <p>If <code>none</code> is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If <code>shared</code> is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use <code>ipcMode: "host"</code> or other daemons that use <code>ipcMode: "shared"</code>.</p>
+    pub fn get_ipc_mode(&self) -> &::std::option::Option<crate::types::DaemonIpcMode> {
+        &self.ipc_mode
+    }
     /// Consumes the builder and constructs a [`DaemonTaskDefinition`](crate::types::DaemonTaskDefinition).
     pub fn build(self) -> crate::types::DaemonTaskDefinition {
         crate::types::DaemonTaskDefinition {
@@ -325,6 +377,8 @@ impl DaemonTaskDefinitionBuilder {
             registered_at: self.registered_at,
             delete_requested_at: self.delete_requested_at,
             registered_by: self.registered_by,
+            pid_mode: self.pid_mode,
+            ipc_mode: self.ipc_mode,
         }
     }
 }

@@ -44,6 +44,10 @@ pub fn ser_game_server_container_definition_input(
     if let Some(var_10) = &input.server_sdk_version {
         encoder.str("ServerSdkVersion").str(var_10.as_str());
     }
+    if let Some(var_11) = &input.linux_capabilities {
+        encoder.str("LinuxCapabilities");
+        crate::protocol_serde::shape_linux_capabilities::ser_linux_capabilities(encoder, var_11)?;
+    }
     encoder.end();
     Ok(())
 }

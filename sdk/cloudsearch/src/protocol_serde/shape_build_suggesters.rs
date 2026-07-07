@@ -108,6 +108,8 @@ pub fn de_build_suggesters(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("BuildSuggestersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected BuildSuggestersResponse got {start_el:?}"
@@ -125,7 +127,7 @@ pub fn de_build_suggesters(
             s if s.matches("FieldNames") /* FieldNames com.amazonaws.cloudsearch.synthetic#BuildSuggestersOutput$FieldNames */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_field_name_list::de_field_name_list(&mut tag)
+                        crate::protocol_serde::shape_field_name_list::de_field_name_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

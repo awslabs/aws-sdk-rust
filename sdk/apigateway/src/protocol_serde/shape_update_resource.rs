@@ -138,6 +138,8 @@ pub(crate) fn de_update_resource(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -172,7 +174,7 @@ pub(crate) fn de_update_resource(
                     );
                 }
                 "resourceMethods" => {
-                    builder = builder.set_resource_methods(crate::protocol_serde::shape_map_of_method::de_map_of_method(tokens, _value)?);
+                    builder = builder.set_resource_methods(crate::protocol_serde::shape_map_of_method::de_map_of_method(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

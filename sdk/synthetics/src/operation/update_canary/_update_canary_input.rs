@@ -66,6 +66,10 @@ pub struct UpdateCanaryInput {
     /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
     /// </note>
     pub browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub add_replica_locations: ::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>>,
+    /// <p>A list of locations (Amazon Web Services Regions) to remove as replicas for the canary. You must specify at least one location to remove. All replicas can be removed in a single API call and you cannot remove the primary location.</p>
+    pub remove_replica_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCanaryInput {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -167,6 +171,18 @@ impl UpdateCanaryInput {
     pub fn browser_configs(&self) -> &[crate::types::BrowserConfig] {
         self.browser_configs.as_deref().unwrap_or_default()
     }
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_replica_locations.is_none()`.
+    pub fn add_replica_locations(&self) -> &[crate::types::AddReplicaLocationInput] {
+        self.add_replica_locations.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to remove as replicas for the canary. You must specify at least one location to remove. All replicas can be removed in a single API call and you cannot remove the primary location.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_replica_locations.is_none()`.
+    pub fn remove_replica_locations(&self) -> &[::std::string::String] {
+        self.remove_replica_locations.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateCanaryInput {
     /// Creates a new builder-style object to manufacture [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
@@ -195,6 +211,8 @@ pub struct UpdateCanaryInputBuilder {
     pub(crate) dry_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>>,
     pub(crate) browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
+    pub(crate) add_replica_locations: ::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>>,
+    pub(crate) remove_replica_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCanaryInputBuilder {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -527,6 +545,46 @@ impl UpdateCanaryInputBuilder {
     pub fn get_browser_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>> {
         &self.browser_configs
     }
+    /// Appends an item to `add_replica_locations`.
+    ///
+    /// To override the contents of this collection use [`set_add_replica_locations`](Self::set_add_replica_locations).
+    ///
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn add_replica_locations(mut self, input: crate::types::AddReplicaLocationInput) -> Self {
+        let mut v = self.add_replica_locations.unwrap_or_default();
+        v.push(input);
+        self.add_replica_locations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn set_add_replica_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>>) -> Self {
+        self.add_replica_locations = input;
+        self
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to add as replicas for the canary. Each location specifies a Region and optional VPC configuration for the replica. You can add up to 50 replica locations.</p>
+    pub fn get_add_replica_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddReplicaLocationInput>> {
+        &self.add_replica_locations
+    }
+    /// Appends an item to `remove_replica_locations`.
+    ///
+    /// To override the contents of this collection use [`set_remove_replica_locations`](Self::set_remove_replica_locations).
+    ///
+    /// <p>A list of locations (Amazon Web Services Regions) to remove as replicas for the canary. You must specify at least one location to remove. All replicas can be removed in a single API call and you cannot remove the primary location.</p>
+    pub fn remove_replica_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.remove_replica_locations.unwrap_or_default();
+        v.push(input.into());
+        self.remove_replica_locations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to remove as replicas for the canary. You must specify at least one location to remove. All replicas can be removed in a single API call and you cannot remove the primary location.</p>
+    pub fn set_remove_replica_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.remove_replica_locations = input;
+        self
+    }
+    /// <p>A list of locations (Amazon Web Services Regions) to remove as replicas for the canary. You must specify at least one location to remove. All replicas can be removed in a single API call and you cannot remove the primary location.</p>
+    pub fn get_remove_replica_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_replica_locations
+    }
     /// Consumes the builder and constructs a [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
     pub fn build(
         self,
@@ -548,6 +606,8 @@ impl UpdateCanaryInputBuilder {
             dry_run_id: self.dry_run_id,
             visual_references: self.visual_references,
             browser_configs: self.browser_configs,
+            add_replica_locations: self.add_replica_locations,
+            remove_replica_locations: self.remove_replica_locations,
         })
     }
 }

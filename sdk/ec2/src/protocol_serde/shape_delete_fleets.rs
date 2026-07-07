@@ -40,6 +40,8 @@ pub fn de_delete_fleets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeleteFleetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteFleetsResponse got {start_el:?}"
@@ -50,7 +52,7 @@ pub fn de_delete_fleets(
             s if s.matches("successfulFleetDeletionSet") /* SuccessfulFleetDeletions com.amazonaws.ec2.synthetic#DeleteFleetsOutput$SuccessfulFleetDeletions */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_delete_fleet_success_set::de_delete_fleet_success_set(&mut tag)
+                        crate::protocol_serde::shape_delete_fleet_success_set::de_delete_fleet_success_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -60,7 +62,7 @@ pub fn de_delete_fleets(
             s if s.matches("unsuccessfulFleetDeletionSet") /* UnsuccessfulFleetDeletions com.amazonaws.ec2.synthetic#DeleteFleetsOutput$UnsuccessfulFleetDeletions */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_delete_fleet_error_set::de_delete_fleet_error_set(&mut tag)
+                        crate::protocol_serde::shape_delete_fleet_error_set::de_delete_fleet_error_set(&mut tag, depth + 1)
                         ?
                     )
                 ;

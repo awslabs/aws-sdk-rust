@@ -110,6 +110,8 @@ pub(crate) fn de_describe_asset_property(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -144,11 +146,13 @@ pub(crate) fn de_describe_asset_property(
                     );
                 }
                 "assetProperty" => {
-                    builder = builder.set_asset_property(crate::protocol_serde::shape_property::de_property(tokens, _value)?);
+                    builder = builder.set_asset_property(crate::protocol_serde::shape_property::de_property(tokens, _value, depth + 1)?);
                 }
                 "compositeModel" => {
                     builder = builder.set_composite_model(crate::protocol_serde::shape_composite_model_property::de_composite_model_property(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

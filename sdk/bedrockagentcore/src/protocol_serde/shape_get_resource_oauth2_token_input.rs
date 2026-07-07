@@ -3,45 +3,63 @@ pub fn ser_get_resource_oauth2_token_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_resource_oauth2_token::GetResourceOauth2TokenInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.custom_parameters {
+    if let Some(var_1) = &input.audiences {
+        let mut array_2 = object.key("audiences").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().string(item_3.as_str());
+            }
+        }
+        array_2.finish();
+    }
+    if let Some(var_4) = &input.custom_parameters {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("customParameters").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_5 = object.key("customParameters").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_2.finish();
+        object_5.finish();
     }
-    if let Some(var_5) = &input.custom_state {
-        object.key("customState").string(var_5.as_str());
+    if let Some(var_8) = &input.custom_state {
+        object.key("customState").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.force_authentication {
-        object.key("forceAuthentication").boolean(*var_6);
+    if let Some(var_9) = &input.force_authentication {
+        object.key("forceAuthentication").boolean(*var_9);
     }
-    if let Some(var_7) = &input.oauth2_flow {
-        object.key("oauth2Flow").string(var_7.as_str());
+    if let Some(var_10) = &input.oauth2_flow {
+        object.key("oauth2Flow").string(var_10.as_str());
     }
-    if let Some(var_8) = &input.resource_credential_provider_name {
-        object.key("resourceCredentialProviderName").string(var_8.as_str());
+    if let Some(var_11) = &input.resource_credential_provider_name {
+        object.key("resourceCredentialProviderName").string(var_11.as_str());
     }
-    if let Some(var_9) = &input.resource_oauth2_return_url {
-        object.key("resourceOauth2ReturnUrl").string(var_9.as_str());
+    if let Some(var_12) = &input.resource_oauth2_return_url {
+        object.key("resourceOauth2ReturnUrl").string(var_12.as_str());
     }
-    if let Some(var_10) = &input.scopes {
-        let mut array_11 = object.key("scopes").start_array();
-        for item_12 in var_10 {
+    if let Some(var_13) = &input.resources {
+        let mut array_14 = object.key("resources").start_array();
+        for item_15 in var_13 {
             {
-                array_11.value().string(item_12.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_11.finish();
+        array_14.finish();
     }
-    if let Some(var_13) = &input.session_uri {
-        object.key("sessionUri").string(var_13.as_str());
+    if let Some(var_16) = &input.scopes {
+        let mut array_17 = object.key("scopes").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
     }
-    if let Some(var_14) = &input.workload_identity_token {
-        object.key("workloadIdentityToken").string(var_14.as_str());
+    if let Some(var_19) = &input.session_uri {
+        object.key("sessionUri").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.workload_identity_token {
+        object.key("workloadIdentityToken").string(var_20.as_str());
     }
     Ok(())
 }

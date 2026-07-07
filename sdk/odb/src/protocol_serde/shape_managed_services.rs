@@ -2,10 +2,16 @@
 pub(crate) fn de_managed_services<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ManagedServices>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,34 +36,41 @@ where
                             );
                         }
                         "managedServicesIpv4Cidrs" => {
-                            builder =
-                                builder.set_managed_services_ipv4_cidrs(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                            builder = builder.set_managed_services_ipv4_cidrs(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "serviceNetworkEndpoint" => {
                             builder = builder.set_service_network_endpoint(
-                                crate::protocol_serde::shape_service_network_endpoint::de_service_network_endpoint(tokens, _value)?,
+                                crate::protocol_serde::shape_service_network_endpoint::de_service_network_endpoint(tokens, _value, depth + 1)?,
                             );
                         }
                         "managedS3BackupAccess" => {
                             builder = builder.set_managed_s3_backup_access(
-                                crate::protocol_serde::shape_managed_s3_backup_access::de_managed_s3_backup_access(tokens, _value)?,
+                                crate::protocol_serde::shape_managed_s3_backup_access::de_managed_s3_backup_access(tokens, _value, depth + 1)?,
                             );
                         }
                         "zeroEtlAccess" => {
-                            builder = builder.set_zero_etl_access(crate::protocol_serde::shape_zero_etl_access::de_zero_etl_access(tokens, _value)?);
+                            builder = builder.set_zero_etl_access(crate::protocol_serde::shape_zero_etl_access::de_zero_etl_access(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "s3Access" => {
-                            builder = builder.set_s3_access(crate::protocol_serde::shape_s3_access::de_s3_access(tokens, _value)?);
+                            builder = builder.set_s3_access(crate::protocol_serde::shape_s3_access::de_s3_access(tokens, _value, depth + 1)?);
                         }
                         "stsAccess" => {
-                            builder = builder.set_sts_access(crate::protocol_serde::shape_sts_access::de_sts_access(tokens, _value)?);
+                            builder = builder.set_sts_access(crate::protocol_serde::shape_sts_access::de_sts_access(tokens, _value, depth + 1)?);
                         }
                         "kmsAccess" => {
-                            builder = builder.set_kms_access(crate::protocol_serde::shape_kms_access::de_kms_access(tokens, _value)?);
+                            builder = builder.set_kms_access(crate::protocol_serde::shape_kms_access::de_kms_access(tokens, _value, depth + 1)?);
                         }
                         "crossRegionS3RestoreSourcesAccess" => {
                             builder = builder.set_cross_region_s3_restore_sources_access(
-                                    crate::protocol_serde::shape_cross_region_s3_restore_sources_access_list::de_cross_region_s3_restore_sources_access_list(tokens, _value)?
+                                    crate::protocol_serde::shape_cross_region_s3_restore_sources_access_list::de_cross_region_s3_restore_sources_access_list(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

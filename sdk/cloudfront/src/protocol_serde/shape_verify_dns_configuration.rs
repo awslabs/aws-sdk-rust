@@ -121,6 +121,8 @@ pub fn de_verify_dns_configuration(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("VerifyDnsConfigurationResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected VerifyDnsConfigurationResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -131,7 +133,7 @@ pub fn de_verify_dns_configuration(
             s if s.matches("DnsConfigurationList") /* DnsConfigurationList com.amazonaws.cloudfront.synthetic#VerifyDnsConfigurationOutput$DnsConfigurationList */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_dns_configuration_list::de_dns_configuration_list(&mut tag)
+                        crate::protocol_serde::shape_dns_configuration_list::de_dns_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -49,6 +49,8 @@ pub fn de_deprovision_ipam_byoasn(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DeprovisionIpamByoasnResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeprovisionIpamByoasnResponse got {start_el:?}"
@@ -59,7 +61,7 @@ pub fn de_deprovision_ipam_byoasn(
             s if s.matches("byoasn") /* Byoasn com.amazonaws.ec2.synthetic#DeprovisionIpamByoasnOutput$Byoasn */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_byoasn::de_byoasn(&mut tag)
+                        crate::protocol_serde::shape_byoasn::de_byoasn(&mut tag, depth + 1)
                         ?
                     )
                 ;

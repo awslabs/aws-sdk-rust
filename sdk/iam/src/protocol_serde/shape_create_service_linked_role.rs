@@ -121,6 +121,8 @@ pub fn de_create_service_linked_role(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("CreateServiceLinkedRoleResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateServiceLinkedRoleResponse got {start_el:?}"
@@ -138,7 +140,7 @@ pub fn de_create_service_linked_role(
             s if s.matches("Role") /* Role com.amazonaws.iam.synthetic#CreateServiceLinkedRoleOutput$Role */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_role::de_role(&mut tag)
+                        crate::protocol_serde::shape_role::de_role(&mut tag, depth + 1)
                         ?
                     )
                 ;

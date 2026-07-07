@@ -22,7 +22,11 @@ pub fn ser_target_grant(
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_grant(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TargetGrant, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetGrant::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -30,7 +34,7 @@ pub fn de_target_grant(
             s if s.matches("Grantee") /* Grantee com.amazonaws.s3#TargetGrant$Grantee */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag)
+                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag, depth + 1)
                         ?
                     )
                 ;

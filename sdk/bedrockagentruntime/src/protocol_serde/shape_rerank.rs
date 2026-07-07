@@ -192,6 +192,8 @@ pub(crate) fn de_rerank(
 ) -> ::std::result::Result<crate::operation::rerank::builders::RerankOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -205,7 +207,11 @@ pub(crate) fn de_rerank(
                     );
                 }
                 "results" => {
-                    builder = builder.set_results(crate::protocol_serde::shape_rerank_results_list::de_rerank_results_list(tokens, _value)?);
+                    builder = builder.set_results(crate::protocol_serde::shape_rerank_results_list::de_rerank_results_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

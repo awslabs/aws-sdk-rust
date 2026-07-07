@@ -25,7 +25,11 @@ pub fn ser_staging_distribution_dns_names(
 #[allow(clippy::needless_question_mark)]
 pub fn de_staging_distribution_dns_names(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StagingDistributionDnsNames, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StagingDistributionDnsNames::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_staging_distribution_dns_names(
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#StagingDistributionDnsNames$Items */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_staging_distribution_dns_name_list::de_staging_distribution_dns_name_list(&mut tag)
+                        crate::protocol_serde::shape_staging_distribution_dns_name_list::de_staging_distribution_dns_name_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

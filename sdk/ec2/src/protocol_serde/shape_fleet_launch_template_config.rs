@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_fleet_launch_template_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::FleetLaunchTemplateConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::FleetLaunchTemplateConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_fleet_launch_template_config(
             s if s.matches("launchTemplateSpecification") /* LaunchTemplateSpecification com.amazonaws.ec2#FleetLaunchTemplateConfig$LaunchTemplateSpecification */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_fleet_launch_template_specification::de_fleet_launch_template_specification(&mut tag)
+                        crate::protocol_serde::shape_fleet_launch_template_specification::de_fleet_launch_template_specification(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_fleet_launch_template_config(
             s if s.matches("overrides") /* Overrides com.amazonaws.ec2#FleetLaunchTemplateConfig$Overrides */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_fleet_launch_template_overrides_list::de_fleet_launch_template_overrides_list(&mut tag)
+                        crate::protocol_serde::shape_fleet_launch_template_overrides_list::de_fleet_launch_template_overrides_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

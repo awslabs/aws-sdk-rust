@@ -19,6 +19,16 @@ pub struct RouteLeg {
     pub r#type: crate::types::RouteLegType,
     /// <p>Details related to the vehicle leg.</p>
     pub vehicle_leg_details: ::std::option::Option<crate::types::RouteVehicleLegDetails>,
+    /// <p>Details related to the rental leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub rental_leg_details: ::std::option::Option<crate::types::RouteRentalLegDetails>,
+    /// <p>Details related to the taxi leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub taxi_leg_details: ::std::option::Option<crate::types::RouteTaxiLegDetails>,
+    /// <p>Details related to the transit leg.</p>
+    pub transit_leg_details: ::std::option::Option<crate::types::RouteTransitLegDetails>,
 }
 impl RouteLeg {
     /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific to ferry travel. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
@@ -50,6 +60,22 @@ impl RouteLeg {
     pub fn vehicle_leg_details(&self) -> ::std::option::Option<&crate::types::RouteVehicleLegDetails> {
         self.vehicle_leg_details.as_ref()
     }
+    /// <p>Details related to the rental leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn rental_leg_details(&self) -> ::std::option::Option<&crate::types::RouteRentalLegDetails> {
+        self.rental_leg_details.as_ref()
+    }
+    /// <p>Details related to the taxi leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn taxi_leg_details(&self) -> ::std::option::Option<&crate::types::RouteTaxiLegDetails> {
+        self.taxi_leg_details.as_ref()
+    }
+    /// <p>Details related to the transit leg.</p>
+    pub fn transit_leg_details(&self) -> ::std::option::Option<&crate::types::RouteTransitLegDetails> {
+        self.transit_leg_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RouteLeg {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -61,6 +87,9 @@ impl ::std::fmt::Debug for RouteLeg {
         formatter.field("travel_mode", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("vehicle_leg_details", &self.vehicle_leg_details);
+        formatter.field("rental_leg_details", &self.rental_leg_details);
+        formatter.field("taxi_leg_details", &self.taxi_leg_details);
+        formatter.field("transit_leg_details", &self.transit_leg_details);
         formatter.finish()
     }
 }
@@ -82,6 +111,9 @@ pub struct RouteLegBuilder {
     pub(crate) travel_mode: ::std::option::Option<crate::types::RouteLegTravelMode>,
     pub(crate) r#type: ::std::option::Option<crate::types::RouteLegType>,
     pub(crate) vehicle_leg_details: ::std::option::Option<crate::types::RouteVehicleLegDetails>,
+    pub(crate) rental_leg_details: ::std::option::Option<crate::types::RouteRentalLegDetails>,
+    pub(crate) taxi_leg_details: ::std::option::Option<crate::types::RouteTaxiLegDetails>,
+    pub(crate) transit_leg_details: ::std::option::Option<crate::types::RouteTransitLegDetails>,
 }
 impl RouteLegBuilder {
     /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific to ferry travel. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
@@ -188,6 +220,60 @@ impl RouteLegBuilder {
     pub fn get_vehicle_leg_details(&self) -> &::std::option::Option<crate::types::RouteVehicleLegDetails> {
         &self.vehicle_leg_details
     }
+    /// <p>Details related to the rental leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn rental_leg_details(mut self, input: crate::types::RouteRentalLegDetails) -> Self {
+        self.rental_leg_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details related to the rental leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn set_rental_leg_details(mut self, input: ::std::option::Option<crate::types::RouteRentalLegDetails>) -> Self {
+        self.rental_leg_details = input;
+        self
+    }
+    /// <p>Details related to the rental leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn get_rental_leg_details(&self) -> &::std::option::Option<crate::types::RouteRentalLegDetails> {
+        &self.rental_leg_details
+    }
+    /// <p>Details related to the taxi leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn taxi_leg_details(mut self, input: crate::types::RouteTaxiLegDetails) -> Self {
+        self.taxi_leg_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details related to the taxi leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn set_taxi_leg_details(mut self, input: ::std::option::Option<crate::types::RouteTaxiLegDetails>) -> Self {
+        self.taxi_leg_details = input;
+        self
+    }
+    /// <p>Details related to the taxi leg.</p><note>
+    /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// </note>
+    pub fn get_taxi_leg_details(&self) -> &::std::option::Option<crate::types::RouteTaxiLegDetails> {
+        &self.taxi_leg_details
+    }
+    /// <p>Details related to the transit leg.</p>
+    pub fn transit_leg_details(mut self, input: crate::types::RouteTransitLegDetails) -> Self {
+        self.transit_leg_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details related to the transit leg.</p>
+    pub fn set_transit_leg_details(mut self, input: ::std::option::Option<crate::types::RouteTransitLegDetails>) -> Self {
+        self.transit_leg_details = input;
+        self
+    }
+    /// <p>Details related to the transit leg.</p>
+    pub fn get_transit_leg_details(&self) -> &::std::option::Option<crate::types::RouteTransitLegDetails> {
+        &self.transit_leg_details
+    }
     /// Consumes the builder and constructs a [`RouteLeg`](crate::types::RouteLeg).
     /// This method will fail if any of the following fields are not set:
     /// - [`travel_mode`](crate::types::builders::RouteLegBuilder::travel_mode)
@@ -211,6 +297,9 @@ impl RouteLegBuilder {
                 )
             })?,
             vehicle_leg_details: self.vehicle_leg_details,
+            rental_leg_details: self.rental_leg_details,
+            taxi_leg_details: self.taxi_leg_details,
+            transit_leg_details: self.transit_leg_details,
         })
     }
 }
@@ -224,6 +313,9 @@ impl ::std::fmt::Debug for RouteLegBuilder {
         formatter.field("travel_mode", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("vehicle_leg_details", &self.vehicle_leg_details);
+        formatter.field("rental_leg_details", &self.rental_leg_details);
+        formatter.field("taxi_leg_details", &self.taxi_leg_details);
+        formatter.field("transit_leg_details", &self.transit_leg_details);
         formatter.finish()
     }
 }

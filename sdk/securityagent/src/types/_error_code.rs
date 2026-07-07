@@ -37,17 +37,17 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Error code for pentest job failure
+/// <p>Error code for pentest job failure.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ErrorCode {
-    /// Failure caused by a client-side error
+    /// <p>Failure caused by a client-side error.</p>
     ClientError,
-    /// Failure caused by an internal error
+    /// <p>Failure caused by an internal error.</p>
     InternalError,
-    /// Pentest job was stopped by the user
+    /// <p>Pentest job was stopped by the user.</p>
     StoppedByUser,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

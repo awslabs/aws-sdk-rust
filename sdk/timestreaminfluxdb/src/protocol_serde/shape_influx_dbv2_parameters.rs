@@ -2,10 +2,16 @@
 pub(crate) fn de_influx_dbv2_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InfluxDBv2Parameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -53,16 +59,17 @@ where
                             builder = builder.set_metrics_disabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "httpIdleTimeout" => {
-                            builder = builder.set_http_idle_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_http_idle_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "httpReadHeaderTimeout" => {
-                            builder = builder.set_http_read_header_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder =
+                                builder.set_http_read_header_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "httpReadTimeout" => {
-                            builder = builder.set_http_read_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_http_read_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "httpWriteTimeout" => {
-                            builder = builder.set_http_write_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_http_write_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
                         "influxqlMaxSelectBuckets" => {
                             builder = builder.set_influxql_max_select_buckets(
@@ -134,12 +141,18 @@ where
                             );
                         }
                         "storageCacheSnapshotWriteColdDuration" => {
-                            builder = builder
-                                .set_storage_cache_snapshot_write_cold_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_storage_cache_snapshot_write_cold_duration(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "storageCompactFullWriteColdDuration" => {
-                            builder = builder
-                                .set_storage_compact_full_write_cold_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_storage_compact_full_write_cold_duration(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "storageCompactThroughputBurst" => {
                             builder = builder.set_storage_compact_throughput_burst(
@@ -167,8 +180,11 @@ where
                                 .set_storage_no_validate_field_size(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "storageRetentionCheckInterval" => {
-                            builder =
-                                builder.set_storage_retention_check_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_storage_retention_check_interval(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "storageSeriesFileMaxConcurrentSnapshotCompactions" => {
                             builder = builder.set_storage_series_file_max_concurrent_snapshot_compactions(
@@ -192,7 +208,11 @@ where
                             );
                         }
                         "storageWalMaxWriteDelay" => {
-                            builder = builder.set_storage_wal_max_write_delay(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
+                            builder = builder.set_storage_wal_max_write_delay(crate::protocol_serde::shape_duration::de_duration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "uiDisabled" => {
                             builder = builder.set_ui_disabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

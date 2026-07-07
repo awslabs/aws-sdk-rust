@@ -120,6 +120,8 @@ pub fn de_apply_security_groups_to_load_balancer(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ApplySecurityGroupsToLoadBalancerResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ApplySecurityGroupsToLoadBalancerResponse got {start_el:?}"
@@ -137,7 +139,7 @@ pub fn de_apply_security_groups_to_load_balancer(
             s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.elasticloadbalancing.synthetic#ApplySecurityGroupsToLoadBalancerOutput$SecurityGroups */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_security_groups::de_security_groups(&mut tag)
+                        crate::protocol_serde::shape_security_groups::de_security_groups(&mut tag, depth + 1)
                         ?
                     )
                 ;

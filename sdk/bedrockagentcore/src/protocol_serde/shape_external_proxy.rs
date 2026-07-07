@@ -33,10 +33,16 @@ pub fn ser_external_proxy(
 pub(crate) fn de_external_proxy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ExternalProxy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -61,10 +67,18 @@ where
                             );
                         }
                         "domainPatterns" => {
-                            builder = builder.set_domain_patterns(crate::protocol_serde::shape_domain_patterns::de_domain_patterns(tokens, _value)?);
+                            builder = builder.set_domain_patterns(crate::protocol_serde::shape_domain_patterns::de_domain_patterns(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "credentials" => {
-                            builder = builder.set_credentials(crate::protocol_serde::shape_proxy_credentials::de_proxy_credentials(tokens, _value)?);
+                            builder = builder.set_credentials(crate::protocol_serde::shape_proxy_credentials::de_proxy_credentials(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

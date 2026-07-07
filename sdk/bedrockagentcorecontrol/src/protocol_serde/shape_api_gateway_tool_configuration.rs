@@ -2,10 +2,16 @@
 pub(crate) fn de_api_gateway_tool_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ApiGatewayToolConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,12 +23,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "toolOverrides" => {
                             builder = builder.set_tool_overrides(
-                                crate::protocol_serde::shape_api_gateway_tool_overrides::de_api_gateway_tool_overrides(tokens, _value)?,
+                                crate::protocol_serde::shape_api_gateway_tool_overrides::de_api_gateway_tool_overrides(tokens, _value, depth + 1)?,
                             );
                         }
                         "toolFilters" => {
                             builder = builder.set_tool_filters(crate::protocol_serde::shape_api_gateway_tool_filters::de_api_gateway_tool_filters(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

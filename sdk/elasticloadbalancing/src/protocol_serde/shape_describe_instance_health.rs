@@ -94,6 +94,8 @@ pub fn de_describe_instance_health(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeInstanceHealthResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeInstanceHealthResponse got {start_el:?}"
@@ -111,7 +113,7 @@ pub fn de_describe_instance_health(
             s if s.matches("InstanceStates") /* InstanceStates com.amazonaws.elasticloadbalancing.synthetic#DescribeInstanceHealthOutput$InstanceStates */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_instance_states::de_instance_states(&mut tag)
+                        crate::protocol_serde::shape_instance_states::de_instance_states(&mut tag, depth + 1)
                         ?
                     )
                 ;

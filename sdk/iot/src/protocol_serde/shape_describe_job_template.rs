@@ -112,13 +112,15 @@ pub(crate) fn de_describe_job_template(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "abortConfig" => {
-                    builder = builder.set_abort_config(crate::protocol_serde::shape_abort_config::de_abort_config(tokens, _value)?);
+                    builder = builder.set_abort_config(crate::protocol_serde::shape_abort_config::de_abort_config(tokens, _value, depth + 1)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -135,7 +137,7 @@ pub(crate) fn de_describe_job_template(
                 }
                 "destinationPackageVersions" => {
                     builder = builder.set_destination_package_versions(
-                        crate::protocol_serde::shape_destination_package_versions::de_destination_package_versions(tokens, _value)?,
+                        crate::protocol_serde::shape_destination_package_versions::de_destination_package_versions(tokens, _value, depth + 1)?,
                     );
                 }
                 "document" => {
@@ -154,12 +156,12 @@ pub(crate) fn de_describe_job_template(
                 }
                 "jobExecutionsRetryConfig" => {
                     builder = builder.set_job_executions_retry_config(
-                        crate::protocol_serde::shape_job_executions_retry_config::de_job_executions_retry_config(tokens, _value)?,
+                        crate::protocol_serde::shape_job_executions_retry_config::de_job_executions_retry_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "jobExecutionsRolloutConfig" => {
                     builder = builder.set_job_executions_rollout_config(
-                        crate::protocol_serde::shape_job_executions_rollout_config::de_job_executions_rollout_config(tokens, _value)?,
+                        crate::protocol_serde::shape_job_executions_rollout_config::de_job_executions_rollout_config(tokens, _value, depth + 1)?,
                     );
                 }
                 "jobTemplateArn" => {
@@ -177,16 +179,21 @@ pub(crate) fn de_describe_job_template(
                     );
                 }
                 "maintenanceWindows" => {
-                    builder =
-                        builder.set_maintenance_windows(crate::protocol_serde::shape_maintenance_windows::de_maintenance_windows(tokens, _value)?);
+                    builder = builder.set_maintenance_windows(crate::protocol_serde::shape_maintenance_windows::de_maintenance_windows(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "presignedUrlConfig" => {
                     builder = builder.set_presigned_url_config(crate::protocol_serde::shape_presigned_url_config::de_presigned_url_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "timeoutConfig" => {
-                    builder = builder.set_timeout_config(crate::protocol_serde::shape_timeout_config::de_timeout_config(tokens, _value)?);
+                    builder = builder.set_timeout_config(crate::protocol_serde::shape_timeout_config::de_timeout_config(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

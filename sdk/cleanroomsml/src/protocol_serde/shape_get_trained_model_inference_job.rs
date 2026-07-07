@@ -113,6 +113,8 @@ pub(crate) fn de_get_trained_model_inference_job(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -128,7 +130,9 @@ pub(crate) fn de_get_trained_model_inference_job(
                 "containerExecutionParameters" => {
                     builder = builder.set_container_execution_parameters(
                         crate::protocol_serde::shape_inference_container_execution_parameters::de_inference_container_execution_parameters(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }
@@ -140,7 +144,9 @@ pub(crate) fn de_get_trained_model_inference_job(
                 }
                 "dataSource" => {
                     builder = builder.set_data_source(crate::protocol_serde::shape_model_inference_data_source::de_model_inference_data_source(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "description" => {
@@ -152,7 +158,9 @@ pub(crate) fn de_get_trained_model_inference_job(
                 }
                 "environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_inference_environment_map::de_inference_environment_map(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "inferenceContainerImageDigest" => {
@@ -204,6 +212,13 @@ pub(crate) fn de_get_trained_model_inference_job(
                             .transpose()?,
                     );
                 }
+                "mlModelInferencePayerAccountId" => {
+                    builder = builder.set_ml_model_inference_payer_account_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -213,12 +228,14 @@ pub(crate) fn de_get_trained_model_inference_job(
                 }
                 "outputConfiguration" => {
                     builder = builder.set_output_configuration(
-                        crate::protocol_serde::shape_inference_output_configuration::de_inference_output_configuration(tokens, _value)?,
+                        crate::protocol_serde::shape_inference_output_configuration::de_inference_output_configuration(tokens, _value, depth + 1)?,
                     );
                 }
                 "resourceConfig" => {
                     builder = builder.set_resource_config(crate::protocol_serde::shape_inference_resource_config::de_inference_resource_config(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "status" => {
@@ -229,10 +246,10 @@ pub(crate) fn de_get_trained_model_inference_job(
                     );
                 }
                 "statusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value, depth + 1)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }
                 "trainedModelArn" => {
                     builder = builder.set_trained_model_arn(

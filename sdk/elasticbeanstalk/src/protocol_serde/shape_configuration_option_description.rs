@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_configuration_option_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ConfigurationOptionDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ConfigurationOptionDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -91,7 +95,7 @@ pub fn de_configuration_option_description(
             s if s.matches("ValueOptions") /* ValueOptions com.amazonaws.elasticbeanstalk#ConfigurationOptionDescription$ValueOptions */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_configuration_option_possible_values::de_configuration_option_possible_values(&mut tag)
+                        crate::protocol_serde::shape_configuration_option_possible_values::de_configuration_option_possible_values(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -146,7 +150,7 @@ pub fn de_configuration_option_description(
             s if s.matches("Regex") /* Regex com.amazonaws.elasticbeanstalk#ConfigurationOptionDescription$Regex */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_option_restriction_regex::de_option_restriction_regex(&mut tag)
+                        crate::protocol_serde::shape_option_restriction_regex::de_option_restriction_regex(&mut tag, depth + 1)
                         ?
                     )
                 ;

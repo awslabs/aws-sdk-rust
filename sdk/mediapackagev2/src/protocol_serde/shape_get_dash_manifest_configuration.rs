@@ -2,10 +2,16 @@
 pub(crate) fn de_get_dash_manifest_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GetDashManifestConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -38,7 +44,9 @@ where
                         }
                         "FilterConfiguration" => {
                             builder = builder.set_filter_configuration(crate::protocol_serde::shape_filter_configuration::de_filter_configuration(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "MinUpdatePeriodSeconds" => {
@@ -71,11 +79,13 @@ where
                         }
                         "PeriodTriggers" => {
                             builder = builder.set_period_triggers(crate::protocol_serde::shape_dash_period_triggers::de_dash_period_triggers(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "ScteDash" => {
-                            builder = builder.set_scte_dash(crate::protocol_serde::shape_scte_dash::de_scte_dash(tokens, _value)?);
+                            builder = builder.set_scte_dash(crate::protocol_serde::shape_scte_dash::de_scte_dash(tokens, _value, depth + 1)?);
                         }
                         "DrmSignaling" => {
                             builder = builder.set_drm_signaling(
@@ -85,21 +95,30 @@ where
                             );
                         }
                         "UtcTiming" => {
-                            builder = builder.set_utc_timing(crate::protocol_serde::shape_dash_utc_timing::de_dash_utc_timing(tokens, _value)?);
+                            builder = builder.set_utc_timing(crate::protocol_serde::shape_dash_utc_timing::de_dash_utc_timing(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Profiles" => {
-                            builder = builder.set_profiles(crate::protocol_serde::shape_dash_profiles::de_dash_profiles(tokens, _value)?);
+                            builder = builder.set_profiles(crate::protocol_serde::shape_dash_profiles::de_dash_profiles(tokens, _value, depth + 1)?);
                         }
                         "BaseUrls" => {
-                            builder = builder.set_base_urls(crate::protocol_serde::shape_dash_base_urls::de_dash_base_urls(tokens, _value)?);
+                            builder =
+                                builder.set_base_urls(crate::protocol_serde::shape_dash_base_urls::de_dash_base_urls(tokens, _value, depth + 1)?);
                         }
                         "ProgramInformation" => {
                             builder = builder.set_program_information(
-                                crate::protocol_serde::shape_dash_program_information::de_dash_program_information(tokens, _value)?,
+                                crate::protocol_serde::shape_dash_program_information::de_dash_program_information(tokens, _value, depth + 1)?,
                             );
                         }
                         "DvbSettings" => {
-                            builder = builder.set_dvb_settings(crate::protocol_serde::shape_dash_dvb_settings::de_dash_dvb_settings(tokens, _value)?);
+                            builder = builder.set_dvb_settings(crate::protocol_serde::shape_dash_dvb_settings::de_dash_dvb_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "Compactness" => {
                             builder = builder.set_compactness(
@@ -108,10 +127,29 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AudioTimelinePattern" => {
+                            builder = builder.set_audio_timeline_pattern(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashAudioTimelinePattern::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "SubtitleConfiguration" => {
                             builder = builder.set_subtitle_configuration(
-                                crate::protocol_serde::shape_dash_subtitle_configuration::de_dash_subtitle_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_dash_subtitle_configuration::de_dash_subtitle_configuration(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "UriPathType" => {
+                            builder = builder.set_uri_path_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UriPathType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AvailabilityStartTimeConfiguration" => {
+                            builder = builder.set_availability_start_time_configuration(
+                                    crate::protocol_serde::shape_dash_availability_start_time_configuration::de_dash_availability_start_time_configuration(tokens, _value, depth + 1)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

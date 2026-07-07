@@ -27,10 +27,16 @@ pub fn ser_broker_logs(
 pub(crate) fn de_broker_logs<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BrokerLogs>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -41,14 +47,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cloudWatchLogs" => {
-                            builder =
-                                builder.set_cloud_watch_logs(crate::protocol_serde::shape_cloud_watch_logs::de_cloud_watch_logs(tokens, _value)?);
+                            builder = builder.set_cloud_watch_logs(crate::protocol_serde::shape_cloud_watch_logs::de_cloud_watch_logs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "firehose" => {
-                            builder = builder.set_firehose(crate::protocol_serde::shape_firehose::de_firehose(tokens, _value)?);
+                            builder = builder.set_firehose(crate::protocol_serde::shape_firehose::de_firehose(tokens, _value, depth + 1)?);
                         }
                         "s3" => {
-                            builder = builder.set_s3(crate::protocol_serde::shape_s3::de_s3(tokens, _value)?);
+                            builder = builder.set_s3(crate::protocol_serde::shape_s3::de_s3(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

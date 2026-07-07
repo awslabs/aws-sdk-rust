@@ -122,22 +122,32 @@ pub(crate) fn de_check_document_access(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "documentAcl" => {
-                    builder = builder.set_document_acl(crate::protocol_serde::shape_document_acl::de_document_acl(tokens, _value)?);
+                    builder = builder.set_document_acl(crate::protocol_serde::shape_document_acl::de_document_acl(tokens, _value, depth + 1)?);
                 }
                 "hasAccess" => {
                     builder = builder.set_has_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "userAliases" => {
-                    builder = builder.set_user_aliases(crate::protocol_serde::shape_associated_users::de_associated_users(tokens, _value)?);
+                    builder = builder.set_user_aliases(crate::protocol_serde::shape_associated_users::de_associated_users(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "userGroups" => {
-                    builder = builder.set_user_groups(crate::protocol_serde::shape_associated_groups::de_associated_groups(tokens, _value)?);
+                    builder = builder.set_user_groups(crate::protocol_serde::shape_associated_groups::de_associated_groups(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

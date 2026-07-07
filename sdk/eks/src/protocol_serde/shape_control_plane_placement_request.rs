@@ -6,5 +6,8 @@ pub fn ser_control_plane_placement_request(
     if let Some(var_1) = &input.group_name {
         object.key("groupName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.spread_level {
+        object.key("spreadLevel").string(var_2.as_str());
+    }
     Ok(())
 }

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_evaluation_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::EvaluationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::EvaluationResult::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -50,7 +54,7 @@ pub fn de_evaluation_result(
             s if s.matches("MatchedStatements") /* MatchedStatements com.amazonaws.iam#EvaluationResult$MatchedStatements */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_statement_list_type::de_statement_list_type(&mut tag)
+                        crate::protocol_serde::shape_statement_list_type::de_statement_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -60,7 +64,7 @@ pub fn de_evaluation_result(
             s if s.matches("MissingContextValues") /* MissingContextValues com.amazonaws.iam#EvaluationResult$MissingContextValues */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_context_key_names_result_list_type::de_context_key_names_result_list_type(&mut tag)
+                        crate::protocol_serde::shape_context_key_names_result_list_type::de_context_key_names_result_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -70,7 +74,7 @@ pub fn de_evaluation_result(
             s if s.matches("OrganizationsDecisionDetail") /* OrganizationsDecisionDetail com.amazonaws.iam#EvaluationResult$OrganizationsDecisionDetail */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_organizations_decision_detail::de_organizations_decision_detail(&mut tag)
+                        crate::protocol_serde::shape_organizations_decision_detail::de_organizations_decision_detail(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -80,7 +84,7 @@ pub fn de_evaluation_result(
             s if s.matches("PermissionsBoundaryDecisionDetail") /* PermissionsBoundaryDecisionDetail com.amazonaws.iam#EvaluationResult$PermissionsBoundaryDecisionDetail */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_permissions_boundary_decision_detail::de_permissions_boundary_decision_detail(&mut tag)
+                        crate::protocol_serde::shape_permissions_boundary_decision_detail::de_permissions_boundary_decision_detail(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -90,7 +94,7 @@ pub fn de_evaluation_result(
             s if s.matches("EvalDecisionDetails") /* EvalDecisionDetails com.amazonaws.iam#EvaluationResult$EvalDecisionDetails */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_eval_decision_details_type::de_eval_decision_details_type(&mut tag)
+                        crate::protocol_serde::shape_eval_decision_details_type::de_eval_decision_details_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -100,7 +104,7 @@ pub fn de_evaluation_result(
             s if s.matches("ResourceSpecificResults") /* ResourceSpecificResults com.amazonaws.iam#EvaluationResult$ResourceSpecificResults */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_resource_specific_result_list_type::de_resource_specific_result_list_type(&mut tag)
+                        crate::protocol_serde::shape_resource_specific_result_list_type::de_resource_specific_result_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

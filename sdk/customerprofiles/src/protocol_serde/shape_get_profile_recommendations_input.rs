@@ -22,44 +22,50 @@ pub fn ser_get_profile_recommendations_input_input(
         }
         object_5.finish();
     }
-    if let Some(var_8) = &input.max_results {
+    if let Some(var_8) = &input.diversity_config {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("DiversityConfig").start_object();
+        crate::protocol_serde::shape_recommendation_diversity_config::ser_recommendation_diversity_config(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.metadata_config {
+    if let Some(var_11) = &input.metadata_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("MetadataConfig").start_object();
-        crate::protocol_serde::shape_metadata_config::ser_metadata_config(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_12 = object.key("MetadataConfig").start_object();
+        crate::protocol_serde::shape_metadata_config::ser_metadata_config(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_11) = &input.recommender_filters {
-        let mut array_12 = object.key("RecommenderFilters").start_array();
-        for item_13 in var_11 {
+    if let Some(var_13) = &input.recommender_filters {
+        let mut array_14 = object.key("RecommenderFilters").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_recommender_filter::ser_recommender_filter(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_recommender_filter::ser_recommender_filter(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.recommender_name {
-        object.key("RecommenderName").string(var_15.as_str());
+    if let Some(var_17) = &input.recommender_name {
+        object.key("RecommenderName").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.recommender_promotional_filters {
-        let mut array_17 = object.key("RecommenderPromotionalFilters").start_array();
-        for item_18 in var_16 {
+    if let Some(var_18) = &input.recommender_promotional_filters {
+        let mut array_19 = object.key("RecommenderPromotionalFilters").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_recommender_promotional_filter::ser_recommender_promotional_filter(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_recommender_promotional_filter::ser_recommender_promotional_filter(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_17.finish();
+        array_19.finish();
     }
     Ok(())
 }

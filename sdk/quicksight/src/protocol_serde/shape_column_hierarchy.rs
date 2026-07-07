@@ -27,10 +27,16 @@ pub fn ser_column_hierarchy(
 pub(crate) fn de_column_hierarchy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ColumnHierarchy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -39,22 +45,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ExplicitHierarchy" => {
-                            builder = builder
-                                .set_explicit_hierarchy(crate::protocol_serde::shape_explicit_hierarchy::de_explicit_hierarchy(tokens, _value)?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ExplicitHierarchy" => {
+                                builder = builder.set_explicit_hierarchy(crate::protocol_serde::shape_explicit_hierarchy::de_explicit_hierarchy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "DateTimeHierarchy" => {
+                                builder = builder.set_date_time_hierarchy(crate::protocol_serde::shape_date_time_hierarchy::de_date_time_hierarchy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "PredefinedHierarchy" => {
+                                builder = builder.set_predefined_hierarchy(
+                                    crate::protocol_serde::shape_predefined_hierarchy::de_predefined_hierarchy(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "DateTimeHierarchy" => {
-                            builder = builder
-                                .set_date_time_hierarchy(crate::protocol_serde::shape_date_time_hierarchy::de_date_time_hierarchy(tokens, _value)?);
-                        }
-                        "PredefinedHierarchy" => {
-                            builder = builder.set_predefined_hierarchy(crate::protocol_serde::shape_predefined_hierarchy::de_predefined_hierarchy(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

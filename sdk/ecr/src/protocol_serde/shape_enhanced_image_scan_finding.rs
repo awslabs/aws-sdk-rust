@@ -2,10 +2,16 @@
 pub(crate) fn de_enhanced_image_scan_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::EnhancedImageScanFinding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,21 +56,26 @@ where
                         }
                         "packageVulnerabilityDetails" => {
                             builder = builder.set_package_vulnerability_details(
-                                crate::protocol_serde::shape_package_vulnerability_details::de_package_vulnerability_details(tokens, _value)?,
+                                crate::protocol_serde::shape_package_vulnerability_details::de_package_vulnerability_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "remediation" => {
-                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value)?);
+                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value, depth + 1)?);
                         }
                         "resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value, depth + 1)?);
                         }
                         "score" => {
                             builder = builder
                                 .set_score(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                         }
                         "scoreDetails" => {
-                            builder = builder.set_score_details(crate::protocol_serde::shape_score_details::de_score_details(tokens, _value)?);
+                            builder =
+                                builder.set_score_details(crate::protocol_serde::shape_score_details::de_score_details(tokens, _value, depth + 1)?);
                         }
                         "severity" => {
                             builder = builder.set_severity(

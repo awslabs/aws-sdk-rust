@@ -167,6 +167,8 @@ pub(crate) fn de_get_protect_configuration_country_rule_set(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -196,7 +198,9 @@ pub(crate) fn de_get_protect_configuration_country_rule_set(
                 "CountryRuleSet" => {
                     builder = builder.set_country_rule_set(
                         crate::protocol_serde::shape_protect_configuration_country_rule_set::de_protect_configuration_country_rule_set(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

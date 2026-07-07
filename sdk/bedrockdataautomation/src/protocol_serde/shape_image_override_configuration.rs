@@ -21,10 +21,16 @@ pub fn ser_image_override_configuration(
 pub(crate) fn de_image_override_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ImageOverrideConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -36,12 +42,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "modalityProcessing" => {
                             builder = builder.set_modality_processing(
-                                crate::protocol_serde::shape_modality_processing_configuration::de_modality_processing_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_modality_processing_configuration::de_modality_processing_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "sensitiveDataConfiguration" => {
                             builder = builder.set_sensitive_data_configuration(
-                                crate::protocol_serde::shape_sensitive_data_configuration::de_sensitive_data_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_sensitive_data_configuration::de_sensitive_data_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

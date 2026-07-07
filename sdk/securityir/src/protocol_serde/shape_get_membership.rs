@@ -188,6 +188,8 @@ pub(crate) fn de_get_membership(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -209,12 +211,18 @@ pub(crate) fn de_get_membership(
                 }
                 "incidentResponseTeam" => {
                     builder = builder.set_incident_response_team(crate::protocol_serde::shape_incident_response_team::de_incident_response_team(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "membershipAccountsConfigurations" => {
                     builder = builder.set_membership_accounts_configurations(
-                        crate::protocol_serde::shape_membership_accounts_configurations::de_membership_accounts_configurations(tokens, _value)?,
+                        crate::protocol_serde::shape_membership_accounts_configurations::de_membership_accounts_configurations(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "membershipActivationTimestamp" => {
@@ -265,7 +273,11 @@ pub(crate) fn de_get_membership(
                     );
                 }
                 "optInFeatures" => {
-                    builder = builder.set_opt_in_features(crate::protocol_serde::shape_opt_in_features::de_opt_in_features(tokens, _value)?);
+                    builder = builder.set_opt_in_features(crate::protocol_serde::shape_opt_in_features::de_opt_in_features(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "region" => {
                     builder = builder.set_region(

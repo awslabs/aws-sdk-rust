@@ -89,6 +89,8 @@ pub fn de_get_service_last_accessed_details(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetServiceLastAccessedDetailsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetServiceLastAccessedDetailsResponse got {start_el:?}"
@@ -148,7 +150,7 @@ pub fn de_get_service_last_accessed_details(
             s if s.matches("ServicesLastAccessed") /* ServicesLastAccessed com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsOutput$ServicesLastAccessed */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_services_last_accessed::de_services_last_accessed(&mut tag)
+                        crate::protocol_serde::shape_services_last_accessed::de_services_last_accessed(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -200,7 +202,7 @@ pub fn de_get_service_last_accessed_details(
             s if s.matches("Error") /* Error com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsOutput$Error */ =>  {
                 let var_8 =
                     Some(
-                        crate::protocol_serde::shape_error_details::de_error_details(&mut tag)
+                        crate::protocol_serde::shape_error_details::de_error_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

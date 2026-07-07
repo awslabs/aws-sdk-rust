@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_client_vpn_route(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ClientVpnRoute, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ClientVpnRoute::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +79,7 @@ pub fn de_client_vpn_route(
             s if s.matches("status") /* Status com.amazonaws.ec2#ClientVpnRoute$Status */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_client_vpn_route_status::de_client_vpn_route_status(&mut tag)
+                        crate::protocol_serde::shape_client_vpn_route_status::de_client_vpn_route_status(&mut tag, depth + 1)
                         ?
                     )
                 ;

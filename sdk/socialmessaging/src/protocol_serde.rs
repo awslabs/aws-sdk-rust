@@ -25,21 +25,31 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_whats_app_business_account;
 
+pub(crate) mod shape_create_whats_app_flow;
+
 pub(crate) mod shape_create_whats_app_message_template;
 
 pub(crate) mod shape_create_whats_app_message_template_from_library;
 
 pub(crate) mod shape_create_whats_app_message_template_media;
 
+pub(crate) mod shape_delete_whats_app_flow;
+
 pub(crate) mod shape_delete_whats_app_message_media;
 
 pub(crate) mod shape_delete_whats_app_message_template;
+
+pub(crate) mod shape_deprecate_whats_app_flow;
 
 pub(crate) mod shape_disassociate_whats_app_business_account;
 
 pub(crate) mod shape_get_linked_whats_app_business_account;
 
 pub(crate) mod shape_get_linked_whats_app_business_account_phone_number;
+
+pub(crate) mod shape_get_whats_app_flow;
+
+pub(crate) mod shape_get_whats_app_flow_preview;
 
 pub(crate) mod shape_get_whats_app_message_media;
 
@@ -49,11 +59,17 @@ pub(crate) mod shape_list_linked_whats_app_business_accounts;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_whats_app_flow_assets;
+
+pub(crate) mod shape_list_whats_app_flows;
+
 pub(crate) mod shape_list_whats_app_message_templates;
 
 pub(crate) mod shape_list_whats_app_template_library;
 
 pub(crate) mod shape_post_whats_app_message_media;
+
+pub(crate) mod shape_publish_whats_app_flow;
 
 pub(crate) mod shape_put_whats_app_business_account_event_destinations;
 
@@ -62,6 +78,10 @@ pub(crate) mod shape_send_whats_app_message;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_whats_app_flow;
+
+pub(crate) mod shape_update_whats_app_flow_assets;
 
 pub(crate) mod shape_update_whats_app_message_template;
 
@@ -79,6 +99,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_whats_app_business_account_input;
 
+pub(crate) mod shape_create_whats_app_flow_input;
+
 pub(crate) mod shape_create_whats_app_message_template_from_library_input;
 
 pub(crate) mod shape_create_whats_app_message_template_input;
@@ -86,6 +108,8 @@ pub(crate) mod shape_create_whats_app_message_template_input;
 pub(crate) mod shape_create_whats_app_message_template_media_input;
 
 pub(crate) mod shape_dependency_exception;
+
+pub(crate) mod shape_deprecate_whats_app_flow_input;
 
 pub(crate) mod shape_get_whats_app_message_media_input;
 
@@ -99,6 +123,8 @@ pub(crate) mod shape_list_whats_app_template_library_input;
 
 pub(crate) mod shape_post_whats_app_message_media_input;
 
+pub(crate) mod shape_publish_whats_app_flow_input;
+
 pub(crate) mod shape_put_whats_app_business_account_event_destinations_input;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -111,6 +137,10 @@ pub(crate) mod shape_throttled_request_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_whats_app_flow_assets_input;
+
+pub(crate) mod shape_update_whats_app_flow_input;
+
 pub(crate) mod shape_update_whats_app_message_template_input;
 
 pub(crate) mod shape_validation_exception;
@@ -118,6 +148,20 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_linked_whats_app_business_account;
 
 pub(crate) mod shape_linked_whats_app_business_account_summary_list;
+
+pub(crate) mod shape_meta_flow_application_info;
+
+pub(crate) mod shape_meta_flow_asset_list;
+
+pub(crate) mod shape_meta_flow_category_list;
+
+pub(crate) mod shape_meta_flow_health_status;
+
+pub(crate) mod shape_meta_flow_preview_info;
+
+pub(crate) mod shape_meta_flow_summary_list;
+
+pub(crate) mod shape_meta_flow_whats_app_business_account_info;
 
 pub(crate) mod shape_meta_library_template;
 
@@ -132,6 +176,8 @@ pub(crate) mod shape_tag;
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_template_summary_list;
+
+pub(crate) mod shape_validation_error_list;
 
 pub(crate) mod shape_whats_app_business_account_event_destination;
 
@@ -151,6 +197,12 @@ pub(crate) mod shape_linked_account_with_incomplete_setup;
 
 pub(crate) mod shape_linked_whats_app_business_account_summary;
 
+pub(crate) mod shape_meta_flow_asset;
+
+pub(crate) mod shape_meta_flow_health_entity_list;
+
+pub(crate) mod shape_meta_flow_summary;
+
 pub(crate) mod shape_meta_library_template_definition;
 
 pub(crate) mod shape_template_summary;
@@ -164,6 +216,8 @@ pub(crate) mod shape_whats_app_business_account_event_destinations;
 pub(crate) mod shape_whats_app_phone_number_summary_list;
 
 pub(crate) mod shape_linked_whats_app_business_account_id_meta_data;
+
+pub(crate) mod shape_meta_flow_health_entity;
 
 pub(crate) mod shape_meta_industries;
 

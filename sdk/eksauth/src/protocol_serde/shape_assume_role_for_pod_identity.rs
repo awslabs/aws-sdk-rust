@@ -206,13 +206,19 @@ pub(crate) fn de_assume_role_for_pod_identity(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "assumedRoleUser" => {
-                    builder = builder.set_assumed_role_user(crate::protocol_serde::shape_assumed_role_user::de_assumed_role_user(tokens, _value)?);
+                    builder = builder.set_assumed_role_user(crate::protocol_serde::shape_assumed_role_user::de_assumed_role_user(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "audience" => {
                     builder = builder.set_audience(
@@ -222,15 +228,15 @@ pub(crate) fn de_assume_role_for_pod_identity(
                     );
                 }
                 "credentials" => {
-                    builder = builder.set_credentials(crate::protocol_serde::shape_credentials::de_credentials(tokens, _value)?);
+                    builder = builder.set_credentials(crate::protocol_serde::shape_credentials::de_credentials(tokens, _value, depth + 1)?);
                 }
                 "podIdentityAssociation" => {
                     builder = builder.set_pod_identity_association(
-                        crate::protocol_serde::shape_pod_identity_association::de_pod_identity_association(tokens, _value)?,
+                        crate::protocol_serde::shape_pod_identity_association::de_pod_identity_association(tokens, _value, depth + 1)?,
                     );
                 }
                 "subject" => {
-                    builder = builder.set_subject(crate::protocol_serde::shape_subject::de_subject(tokens, _value)?);
+                    builder = builder.set_subject(crate::protocol_serde::shape_subject::de_subject(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -185,17 +185,17 @@ impl UpdateDomainFluentBuilder {
     pub fn get_matching(&self) -> &::std::option::Option<crate::types::MatchingRequest> {
         self.inner.get_matching()
     }
-    /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Connect Customer Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub fn rule_based_matching(mut self, input: crate::types::RuleBasedMatchingRequest) -> Self {
         self.inner = self.inner.rule_based_matching(input);
         self
     }
-    /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Connect Customer Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub fn set_rule_based_matching(mut self, input: ::std::option::Option<crate::types::RuleBasedMatchingRequest>) -> Self {
         self.inner = self.inner.set_rule_based_matching(input);
         self
     }
-    /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Connect Customer Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub fn get_rule_based_matching(&self) -> &::std::option::Option<crate::types::RuleBasedMatchingRequest> {
         self.inner.get_rule_based_matching()
     }

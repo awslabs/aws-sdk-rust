@@ -23,7 +23,7 @@ impl crate::operation::complete_attachment_upload::builders::CompleteAttachmentU
 /// Fluent builder constructing a request to `CompleteAttachmentUpload`.
 ///
 /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. A conflict exception is thrown when an attachment with that identifier is already being uploaded.</p>
-/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a>.</p><note>
+/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect Customer Chat security best practices</a>.</p><note>
 /// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>

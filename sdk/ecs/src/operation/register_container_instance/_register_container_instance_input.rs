@@ -17,7 +17,7 @@ pub struct RegisterContainerInstanceInput {
     pub container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The container instance attributes that this container instance supports.</p>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    /// <p>The devices that are available on the container instance. The supported device types are GPUs and Neuron devices.</p>
     pub platform_devices: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>,
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -72,7 +72,7 @@ impl RegisterContainerInstanceInput {
     pub fn attributes(&self) -> &[crate::types::Attribute] {
         self.attributes.as_deref().unwrap_or_default()
     }
-    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    /// <p>The devices that are available on the container instance. The supported device types are GPUs and Neuron devices.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_devices.is_none()`.
     pub fn platform_devices(&self) -> &[crate::types::PlatformDevice] {
@@ -238,19 +238,19 @@ impl RegisterContainerInstanceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_platform_devices`](Self::set_platform_devices).
     ///
-    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    /// <p>The devices that are available on the container instance. The supported device types are GPUs and Neuron devices.</p>
     pub fn platform_devices(mut self, input: crate::types::PlatformDevice) -> Self {
         let mut v = self.platform_devices.unwrap_or_default();
         v.push(input);
         self.platform_devices = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    /// <p>The devices that are available on the container instance. The supported device types are GPUs and Neuron devices.</p>
     pub fn set_platform_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>) -> Self {
         self.platform_devices = input;
         self
     }
-    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    /// <p>The devices that are available on the container instance. The supported device types are GPUs and Neuron devices.</p>
     pub fn get_platform_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>> {
         &self.platform_devices
     }

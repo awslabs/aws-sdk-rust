@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_key_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::S3KeyFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::S3KeyFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -13,7 +17,7 @@ pub fn de_s3_key_filter(
                         Result::<::std::vec::Vec::<crate::types::FilterRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.filter_rules.take().unwrap_or_default();
                             list_2.push(
-                                crate::protocol_serde::shape_filter_rule::de_filter_rule(&mut tag)
+                                crate::protocol_serde::shape_filter_rule::de_filter_rule(&mut tag, depth + 1)
                                 ?
                             );
                             list_2

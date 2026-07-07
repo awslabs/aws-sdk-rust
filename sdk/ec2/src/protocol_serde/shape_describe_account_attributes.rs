@@ -51,6 +51,8 @@ pub fn de_describe_account_attributes(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeAccountAttributesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeAccountAttributesResponse got {start_el:?}"
@@ -61,7 +63,7 @@ pub fn de_describe_account_attributes(
             s if s.matches("accountAttributeSet") /* AccountAttributes com.amazonaws.ec2.synthetic#DescribeAccountAttributesOutput$AccountAttributes */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_account_attribute_list::de_account_attribute_list(&mut tag)
+                        crate::protocol_serde::shape_account_attribute_list::de_account_attribute_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

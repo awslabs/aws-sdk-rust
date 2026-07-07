@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_issue_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::IssueDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::IssueDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_issue_details(
             s if s.matches("PerformanceIssueDetails") /* PerformanceIssueDetails com.amazonaws.rds#IssueDetails$PerformanceIssueDetails */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_performance_issue_details::de_performance_issue_details(&mut tag)
+                        crate::protocol_serde::shape_performance_issue_details::de_performance_issue_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

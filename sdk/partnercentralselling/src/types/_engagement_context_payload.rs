@@ -8,6 +8,8 @@ pub enum EngagementContextPayload {
     CustomerProject(crate::types::CustomerProjectsContext),
     /// <p>Contains detailed information about a lead when the context type is "Lead". This field is present only when the Type in EngagementContextDetails is set to "Lead".</p>
     Lead(crate::types::LeadContext),
+    /// <p>Contains prospecting result data with enriched insights. The system generates these insights when a partner runs an autonomous prospecting job on leads. This field appears only when the context type is "ProspectingResult".</p>
+    ProspectingResult(crate::types::ProspectingResult),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl EngagementContextPayload {
     /// Returns true if this is a [`Lead`](crate::types::EngagementContextPayload::Lead).
     pub fn is_lead(&self) -> bool {
         self.as_lead().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ProspectingResult`](crate::types::EngagementContextPayload::ProspectingResult), extracting the inner [`ProspectingResult`](crate::types::ProspectingResult).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_prospecting_result(&self) -> ::std::result::Result<&crate::types::ProspectingResult, &Self> {
+        if let EngagementContextPayload::ProspectingResult(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ProspectingResult`](crate::types::EngagementContextPayload::ProspectingResult).
+    pub fn is_prospecting_result(&self) -> bool {
+        self.as_prospecting_result().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

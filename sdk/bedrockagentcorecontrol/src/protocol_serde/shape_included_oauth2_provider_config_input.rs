@@ -9,14 +9,23 @@ pub fn ser_included_oauth2_provider_config_input(
     {
         object.key("clientSecret").string(input.client_secret.as_str());
     }
-    if let Some(var_1) = &input.issuer {
-        object.key("issuer").string(var_1.as_str());
+    if let Some(var_1) = &input.client_secret_config {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("clientSecretConfig").start_object();
+        crate::protocol_serde::shape_secret_reference::ser_secret_reference(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.authorization_endpoint {
-        object.key("authorizationEndpoint").string(var_2.as_str());
+    if let Some(var_3) = &input.client_secret_source {
+        object.key("clientSecretSource").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.token_endpoint {
-        object.key("tokenEndpoint").string(var_3.as_str());
+    if let Some(var_4) = &input.issuer {
+        object.key("issuer").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.authorization_endpoint {
+        object.key("authorizationEndpoint").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.token_endpoint {
+        object.key("tokenEndpoint").string(var_6.as_str());
     }
     Ok(())
 }

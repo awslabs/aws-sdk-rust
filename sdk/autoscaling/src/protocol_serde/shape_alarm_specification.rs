@@ -21,7 +21,11 @@ pub fn ser_alarm_specification(
 #[allow(clippy::needless_question_mark)]
 pub fn de_alarm_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AlarmSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AlarmSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -29,7 +33,7 @@ pub fn de_alarm_specification(
             s if s.matches("Alarms") /* Alarms com.amazonaws.autoscaling#AlarmSpecification$Alarms */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_alarm_list::de_alarm_list(&mut tag)
+                        crate::protocol_serde::shape_alarm_list::de_alarm_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

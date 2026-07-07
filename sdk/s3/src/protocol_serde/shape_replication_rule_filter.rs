@@ -24,7 +24,11 @@ pub fn ser_replication_rule_filter(
 #[allow(clippy::needless_question_mark)]
 pub fn de_replication_rule_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReplicationRuleFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReplicationRuleFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -45,7 +49,7 @@ pub fn de_replication_rule_filter(
             s if s.matches("Tag") /* Tag com.amazonaws.s3#ReplicationRuleFilter$Tag */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_tag::de_tag(&mut tag)
+                        crate::protocol_serde::shape_tag::de_tag(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -55,7 +59,7 @@ pub fn de_replication_rule_filter(
             s if s.matches("And") /* And com.amazonaws.s3#ReplicationRuleFilter$And */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_replication_rule_and_operator::de_replication_rule_and_operator(&mut tag)
+                        crate::protocol_serde::shape_replication_rule_and_operator::de_replication_rule_and_operator(&mut tag, depth + 1)
                         ?
                     )
                 ;

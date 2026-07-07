@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_refresh(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::InstanceRefresh, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceRefresh::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -121,7 +125,7 @@ pub fn de_instance_refresh(
             s if s.matches("ProgressDetails") /* ProgressDetails com.amazonaws.autoscaling#InstanceRefresh$ProgressDetails */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_instance_refresh_progress_details::de_instance_refresh_progress_details(&mut tag)
+                        crate::protocol_serde::shape_instance_refresh_progress_details::de_instance_refresh_progress_details(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -131,7 +135,7 @@ pub fn de_instance_refresh(
             s if s.matches("Preferences") /* Preferences com.amazonaws.autoscaling#InstanceRefresh$Preferences */ =>  {
                 let var_10 =
                     Some(
-                        crate::protocol_serde::shape_refresh_preferences::de_refresh_preferences(&mut tag)
+                        crate::protocol_serde::shape_refresh_preferences::de_refresh_preferences(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -141,7 +145,7 @@ pub fn de_instance_refresh(
             s if s.matches("DesiredConfiguration") /* DesiredConfiguration com.amazonaws.autoscaling#InstanceRefresh$DesiredConfiguration */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_desired_configuration::de_desired_configuration(&mut tag)
+                        crate::protocol_serde::shape_desired_configuration::de_desired_configuration(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -151,7 +155,7 @@ pub fn de_instance_refresh(
             s if s.matches("RollbackDetails") /* RollbackDetails com.amazonaws.autoscaling#InstanceRefresh$RollbackDetails */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_rollback_details::de_rollback_details(&mut tag)
+                        crate::protocol_serde::shape_rollback_details::de_rollback_details(&mut tag, depth + 1)
                         ?
                     )
                 ;

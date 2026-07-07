@@ -413,6 +413,8 @@ pub use crate::types::_deinterlacer::Deinterlacer;
 
 pub use crate::types::_dolby_vision::DolbyVision;
 
+pub use crate::types::_duration_control::DurationControl;
+
 pub use crate::types::_hdr10_plus::Hdr10Plus;
 
 pub use crate::types::_noise_reducer::NoiseReducer;
@@ -596,6 +598,8 @@ pub use crate::types::_h264_dynamic_sub_gop::H264DynamicSubGop;
 pub use crate::types::_h264_end_of_stream_markers::H264EndOfStreamMarkers;
 
 pub use crate::types::_h264_entropy_encoding::H264EntropyEncoding;
+
+pub use crate::types::_h264_explicit_weighted_prediction::H264ExplicitWeightedPrediction;
 
 pub use crate::types::_h264_field_encoding::H264FieldEncoding;
 
@@ -1239,8 +1243,6 @@ pub use crate::types::_cmaf_additional_manifest::CmafAdditionalManifest;
 
 pub use crate::types::_s3_destination_settings::S3DestinationSettings;
 
-pub use crate::types::_hls_clear_lead::HlsClearLead;
-
 pub use crate::types::_cmaf_encryption_type::CmafEncryptionType;
 
 pub use crate::types::_cmaf_initialization_vector_in_manifest::CmafInitializationVectorInManifest;
@@ -1253,6 +1255,8 @@ pub use crate::types::_cmaf_key_provider_type::CmafKeyProviderType;
 
 pub use crate::types::_cmaf_interval_cadence::CmafIntervalCadence;
 
+pub use crate::types::_cmaf_image_based_trick_play_variant::CmafImageBasedTrickPlayVariant;
+
 pub use crate::types::_dash_additional_manifest::DashAdditionalManifest;
 
 pub use crate::types::_dash_iso_playback_device_compatibility::DashIsoPlaybackDeviceCompatibility;
@@ -1260,6 +1264,8 @@ pub use crate::types::_dash_iso_playback_device_compatibility::DashIsoPlaybackDe
 pub use crate::types::_speke_key_provider::SpekeKeyProvider;
 
 pub use crate::types::_dash_iso_interval_cadence::DashIsoIntervalCadence;
+
+pub use crate::types::_dash_iso_image_based_trick_play_variant::DashIsoImageBasedTrickPlayVariant;
 
 pub use crate::types::_hls_ad_markers::HlsAdMarkers;
 
@@ -1277,6 +1283,8 @@ pub use crate::types::_hls_key_provider_type::HlsKeyProviderType;
 
 pub use crate::types::_hls_interval_cadence::HlsIntervalCadence;
 
+pub use crate::types::_hls_image_based_trick_play_variant::HlsImageBasedTrickPlayVariant;
+
 pub use crate::types::_ms_smooth_additional_manifest::MsSmoothAdditionalManifest;
 
 pub use crate::types::_caption_description::CaptionDescription;
@@ -1292,6 +1300,8 @@ pub use crate::types::_frame_rate::FrameRate;
 pub use crate::types::_codec_metadata::CodecMetadata;
 
 pub use crate::types::_color_primaries::ColorPrimaries;
+
+pub use crate::types::_hdr_metadata::HdrMetadata;
 
 pub use crate::types::_matrix_coefficients::MatrixCoefficients;
 
@@ -1340,6 +1350,10 @@ pub use crate::types::_hls_audio_track_type::HlsAudioTrackType;
 pub use crate::types::_hls_descriptive_video_service_flag::HlsDescriptiveVideoServiceFlag;
 
 pub use crate::types::_hls_i_frame_only_manifest::HlsIFrameOnlyManifest;
+
+pub use crate::types::_content_light_level::ContentLightLevel;
+
+pub use crate::types::_mastering_display_color_volume::MasteringDisplayColorVolume;
 
 pub use crate::types::_allowed_rendition_size::AllowedRenditionSize;
 
@@ -1585,6 +1599,8 @@ mod _cmaf_image_based_trick_play;
 
 mod _cmaf_image_based_trick_play_settings;
 
+mod _cmaf_image_based_trick_play_variant;
+
 mod _cmaf_initialization_vector_in_manifest;
 
 mod _cmaf_interval_cadence;
@@ -1667,6 +1683,8 @@ mod _container_settings;
 
 mod _container_type;
 
+mod _content_light_level;
+
 mod _copy_protection_action;
 
 mod _dash_additional_manifest;
@@ -1682,6 +1700,8 @@ mod _dash_iso_hbbtv_compliance;
 mod _dash_iso_image_based_trick_play;
 
 mod _dash_iso_image_based_trick_play_settings;
+
+mod _dash_iso_image_based_trick_play_variant;
 
 mod _dash_iso_interval_cadence;
 
@@ -1732,6 +1752,8 @@ mod _dolby_vision_mapping;
 mod _dolby_vision_profile;
 
 mod _drop_frame_timecode;
+
+mod _duration_control;
 
 mod _dvb_nit_settings;
 
@@ -1897,6 +1919,8 @@ mod _h264_end_of_stream_markers;
 
 mod _h264_entropy_encoding;
 
+mod _h264_explicit_weighted_prediction;
+
 mod _h264_field_encoding;
 
 mod _h264_flicker_adaptive_quantization;
@@ -2013,6 +2037,8 @@ mod _hdr10_metadata;
 
 mod _hdr10_plus;
 
+mod _hdr_metadata;
+
 mod _hdr_to_sdr_tone_mapper;
 
 mod _hls_ad_markers;
@@ -2030,8 +2056,6 @@ mod _hls_caption_language_mapping;
 mod _hls_caption_language_setting;
 
 mod _hls_caption_segment_length_control;
-
-mod _hls_clear_lead;
 
 mod _hls_client_cache;
 
@@ -2052,6 +2076,8 @@ mod _hls_i_frame_only_manifest;
 mod _hls_image_based_trick_play;
 
 mod _hls_image_based_trick_play_settings;
+
+mod _hls_image_based_trick_play_variant;
 
 mod _hls_initialization_vector_in_manifest;
 
@@ -2204,6 +2230,8 @@ mod _m3u8_pcr_control;
 mod _m3u8_scte35_source;
 
 mod _m3u8_settings;
+
+mod _mastering_display_color_volume;
 
 mod _matrix_coefficients;
 

@@ -25,7 +25,11 @@ pub fn ser_job_manifest_spec(
 #[allow(clippy::needless_question_mark)]
 pub fn de_job_manifest_spec(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::JobManifestSpec, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::JobManifestSpec::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -47,7 +51,7 @@ pub fn de_job_manifest_spec(
             s if s.matches("Fields") /* Fields com.amazonaws.s3control#JobManifestSpec$Fields */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_job_manifest_field_list::de_job_manifest_field_list(&mut tag)
+                        crate::protocol_serde::shape_job_manifest_field_list::de_job_manifest_field_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

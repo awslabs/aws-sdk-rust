@@ -2,10 +2,16 @@
 pub(crate) fn de_image_pipeline<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ImagePipeline>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -77,11 +83,11 @@ where
                         }
                         "imageTestsConfiguration" => {
                             builder = builder.set_image_tests_configuration(
-                                crate::protocol_serde::shape_image_tests_configuration::de_image_tests_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_image_tests_configuration::de_image_tests_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "schedule" => {
-                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
+                            builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value, depth + 1)?);
                         }
                         "status" => {
                             builder = builder.set_status(
@@ -126,15 +132,19 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "imageScanningConfiguration" => {
                             builder = builder.set_image_scanning_configuration(
-                                crate::protocol_serde::shape_image_scanning_configuration::de_image_scanning_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_image_scanning_configuration::de_image_scanning_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "imageTags" => {
-                            builder = builder.set_image_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_image_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "executionRole" => {
                             builder = builder.set_execution_role(
@@ -145,12 +155,16 @@ where
                         }
                         "workflows" => {
                             builder = builder.set_workflows(
-                                crate::protocol_serde::shape_workflow_configuration_list::de_workflow_configuration_list(tokens, _value)?,
+                                crate::protocol_serde::shape_workflow_configuration_list::de_workflow_configuration_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "loggingConfiguration" => {
                             builder = builder.set_logging_configuration(
-                                crate::protocol_serde::shape_pipeline_logging_configuration::de_pipeline_logging_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_pipeline_logging_configuration::de_pipeline_logging_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "consecutiveFailures" => {

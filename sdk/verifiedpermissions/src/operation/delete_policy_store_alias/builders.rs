@@ -24,7 +24,10 @@ impl crate::operation::delete_policy_store_alias::builders::DeletePolicyStoreAli
 ///
 /// <p>Deletes the specified policy store alias.</p>
 /// <p>This operation is idempotent. If you specify a policy store alias that does not exist, the request response will still return a successful HTTP 200 status code.</p>
-/// <p>When a policy store alias is deleted, it enters the <code>PendingDeletion</code> state. When a policy store alias is in the <code>PendingDeletion</code> state, new policy store aliases cannot be created with the same name. If the policy store alias is used in an API that has a <code>policyStoreId</code> field, the operation will fail with a <code>ResourceNotFound</code> exception.</p>
+/// <p>By default, when a policy store alias is deleted, it enters the <code>PendingDeletion</code> state. When a policy store alias is in the <code>PendingDeletion</code> state, new policy store aliases cannot be created with the same name. If the policy store alias is used in an API that has a <code>policyStoreId</code> field, the operation will fail with a <code>ResourceNotFound</code> exception.</p>
+/// <p>To immediately delete a policy store alias and bypass the <code>PendingDeletion</code> state, set the <code>deletionMode</code> parameter to <code>HardDelete</code>.</p><important>
+/// <p>Verified Permissions is eventually consistent. If you hard delete a policy store alias and then immediately recreate it to be associated with a different policy store, requests that reference this alias may continue to be evaluated against the previously associated policy store for a short period of time.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePolicyStoreAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -129,5 +132,37 @@ impl DeletePolicyStoreAliasFluentBuilder {
     /// </note>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias_name()
+    }
+    /// <p>Specifies the deletion mode for the policy store alias. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SoftDelete</b> – The policy store alias enters the <code>PendingDeletion</code> state. This is the default behavior when no <code>deletionMode</code> is specified.</p></li>
+    /// <li>
+    /// <p><b>HardDelete</b> – The policy store alias is immediately deleted, bypassing the <code>PendingDeletion</code> state.</p></li>
+    /// </ul>
+    pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
+        self.inner = self.inner.deletion_mode(input);
+        self
+    }
+    /// <p>Specifies the deletion mode for the policy store alias. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SoftDelete</b> – The policy store alias enters the <code>PendingDeletion</code> state. This is the default behavior when no <code>deletionMode</code> is specified.</p></li>
+    /// <li>
+    /// <p><b>HardDelete</b> – The policy store alias is immediately deleted, bypassing the <code>PendingDeletion</code> state.</p></li>
+    /// </ul>
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
+        self.inner = self.inner.set_deletion_mode(input);
+        self
+    }
+    /// <p>Specifies the deletion mode for the policy store alias. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SoftDelete</b> – The policy store alias enters the <code>PendingDeletion</code> state. This is the default behavior when no <code>deletionMode</code> is specified.</p></li>
+    /// <li>
+    /// <p><b>HardDelete</b> – The policy store alias is immediately deleted, bypassing the <code>PendingDeletion</code> state.</p></li>
+    /// </ul>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        self.inner.get_deletion_mode()
     }
 }

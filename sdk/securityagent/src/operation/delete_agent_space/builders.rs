@@ -22,7 +22,7 @@ impl crate::operation::delete_agent_space::builders::DeleteAgentSpaceInputBuilde
 }
 /// Fluent builder constructing a request to `DeleteAgentSpace`.
 ///
-/// Deletes an agent space record
+/// <p>Deletes an agent space and all of its associated resources, including pentests, findings, and artifacts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAgentSpaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteAgentSpaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the agent space to delete
+    /// <p>The unique identifier of the agent space to delete.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier of the agent space to delete
+    /// <p>The unique identifier of the agent space to delete.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier of the agent space to delete
+    /// <p>The unique identifier of the agent space to delete.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_reserved_node_configuration_option(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReservedNodeConfigurationOption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedNodeConfigurationOption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_reserved_node_configuration_option(
             s if s.matches("SourceReservedNode") /* SourceReservedNode com.amazonaws.redshift#ReservedNodeConfigurationOption$SourceReservedNode */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_reserved_node::de_reserved_node(&mut tag)
+                        crate::protocol_serde::shape_reserved_node::de_reserved_node(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -35,7 +39,7 @@ pub fn de_reserved_node_configuration_option(
             s if s.matches("TargetReservedNodeOffering") /* TargetReservedNodeOffering com.amazonaws.redshift#ReservedNodeConfigurationOption$TargetReservedNodeOffering */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_reserved_node_offering::de_reserved_node_offering(&mut tag)
+                        crate::protocol_serde::shape_reserved_node_offering::de_reserved_node_offering(&mut tag, depth + 1)
                         ?
                     )
                 ;

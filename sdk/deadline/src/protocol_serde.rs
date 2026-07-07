@@ -111,6 +111,8 @@ pub(crate) mod shape_delete_queue_limit_association;
 
 pub(crate) mod shape_delete_storage_profile;
 
+pub(crate) mod shape_delete_volume;
+
 pub(crate) mod shape_delete_worker;
 
 pub(crate) mod shape_disassociate_member_from_farm;
@@ -158,6 +160,8 @@ pub(crate) mod shape_get_storage_profile;
 pub(crate) mod shape_get_storage_profile_for_queue;
 
 pub(crate) mod shape_get_task;
+
+pub(crate) mod shape_get_volume;
 
 pub(crate) mod shape_get_worker;
 
@@ -216,6 +220,8 @@ pub(crate) mod shape_list_storage_profiles_for_queue;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_tasks;
+
+pub(crate) mod shape_list_volumes;
 
 pub(crate) mod shape_list_workers;
 
@@ -587,6 +593,8 @@ pub(crate) mod shape_usage_tracking_resource;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_volume_summaries;
+
 pub(crate) mod shape_worker_capabilities;
 
 pub(crate) mod shape_worker_search_summaries;
@@ -751,6 +759,8 @@ pub(crate) mod shape_user_jobs_first;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_volume_summary;
+
 pub(crate) mod shape_weighted_balanced_scheduling_configuration;
 
 pub(crate) mod shape_windows_user;
@@ -794,6 +804,8 @@ pub(crate) mod shape_job_details_entity;
 pub(crate) mod shape_job_details_error;
 
 pub(crate) mod shape_parameter_filter_expression;
+
+pub(crate) mod shape_persistent_volume_configuration;
 
 pub(crate) mod shape_scheduling_max_priority_override;
 

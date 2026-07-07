@@ -2,10 +2,16 @@
 pub(crate) fn de_bucket_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BucketMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -88,7 +94,7 @@ where
                             );
                         }
                         "jobDetails" => {
-                            builder = builder.set_job_details(crate::protocol_serde::shape_job_details::de_job_details(tokens, _value)?);
+                            builder = builder.set_job_details(crate::protocol_serde::shape_job_details::de_job_details(tokens, _value, depth + 1)?);
                         }
                         "lastAutomatedDiscoveryTime" => {
                             builder = builder.set_last_automated_discovery_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -111,12 +117,18 @@ where
                         }
                         "objectCountByEncryptionType" => {
                             builder = builder.set_object_count_by_encryption_type(
-                                crate::protocol_serde::shape_object_count_by_encryption_type::de_object_count_by_encryption_type(tokens, _value)?,
+                                crate::protocol_serde::shape_object_count_by_encryption_type::de_object_count_by_encryption_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "publicAccess" => {
                             builder = builder.set_public_access(crate::protocol_serde::shape_bucket_public_access::de_bucket_public_access(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "region" => {
@@ -127,8 +139,11 @@ where
                             );
                         }
                         "replicationDetails" => {
-                            builder = builder
-                                .set_replication_details(crate::protocol_serde::shape_replication_details::de_replication_details(tokens, _value)?);
+                            builder = builder.set_replication_details(crate::protocol_serde::shape_replication_details::de_replication_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "sensitivityScore" => {
                             builder = builder.set_sensitivity_score(
@@ -139,7 +154,11 @@ where
                         }
                         "serverSideEncryption" => {
                             builder = builder.set_server_side_encryption(
-                                crate::protocol_serde::shape_bucket_server_side_encryption::de_bucket_server_side_encryption(tokens, _value)?,
+                                crate::protocol_serde::shape_bucket_server_side_encryption::de_bucket_server_side_encryption(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "sharedAccess" => {
@@ -165,17 +184,19 @@ where
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_list_of_key_value_pair::de_list_of_key_value_pair(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "unclassifiableObjectCount" => {
                             builder = builder.set_unclassifiable_object_count(
-                                crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value)?,
+                                crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value, depth + 1)?,
                             );
                         }
                         "unclassifiableObjectSizeInBytes" => {
                             builder = builder.set_unclassifiable_object_size_in_bytes(
-                                crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value)?,
+                                crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value, depth + 1)?,
                             );
                         }
                         "versioning" => {

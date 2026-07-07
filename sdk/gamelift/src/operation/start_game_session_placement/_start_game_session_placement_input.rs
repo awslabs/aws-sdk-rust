@@ -20,7 +20,7 @@ pub struct StartGameSessionPlacementInput {
     pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub game_session_name: ::std::option::Option<::std::string::String>,
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets). This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
     pub player_latencies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>,
     /// <p>Set of information on each player to create a player session for.</p>
     pub desired_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::DesiredPlayerSession>>,
@@ -59,7 +59,7 @@ impl StartGameSessionPlacementInput {
     pub fn game_session_name(&self) -> ::std::option::Option<&str> {
         self.game_session_name.as_deref()
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets). This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latencies.is_none()`.
     pub fn player_latencies(&self) -> &[crate::types::PlayerLatency] {
@@ -206,19 +206,19 @@ impl StartGameSessionPlacementInputBuilder {
     ///
     /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
     ///
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets). This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
     pub fn player_latencies(mut self, input: crate::types::PlayerLatency) -> Self {
         let mut v = self.player_latencies.unwrap_or_default();
         v.push(input);
         self.player_latencies = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets). This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
     pub fn set_player_latencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>) -> Self {
         self.player_latencies = input;
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to a fleet location (Amazon Web Services Regions or custom locations for Amazon GameLift Servers Anywhere fleets). This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
     pub fn get_player_latencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>> {
         &self.player_latencies
     }

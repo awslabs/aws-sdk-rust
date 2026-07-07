@@ -18,5 +18,8 @@ pub fn ser_add_tags_input_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.cluster_id {
+        object.key("ClusterId").string(var_6.as_str());
+    }
     Ok(())
 }

@@ -608,6 +608,55 @@ impl From<crate::operation::get_opportunity::GetOpportunityError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError> for Error {
+    fn from(err: crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError) -> Self {
+        match err {
+            crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_prospecting_from_engagement_task::GetProspectingFromEngagementTaskError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_snapshot::GetResourceSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1021,6 +1070,52 @@ impl From<crate::operation::list_opportunity_from_engagement_tasks::ListOpportun
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError> for Error {
+    fn from(err: crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError) -> Self {
+        match err {
+            crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_prospecting_from_engagement_tasks::ListProspectingFromEngagementTasksError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsError, R>>
     for Error
 where
@@ -1375,6 +1470,58 @@ impl From<crate::operation::start_opportunity_from_engagement_task::StartOpportu
                 Error::ValidationException(inner)
             }
             crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError> for Error {
+    fn from(err: crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError) -> Self {
+        match err {
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_prospecting_from_engagement_task::StartProspectingFromEngagementTaskError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

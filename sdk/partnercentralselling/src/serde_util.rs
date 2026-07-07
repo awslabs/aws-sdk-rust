@@ -77,6 +77,27 @@ pub(crate) fn get_opportunity_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_prospecting_from_engagement_task_output_output_correct_errors(
+    mut builder: crate::operation::get_prospecting_from_engagement_task::builders::GetProspectingFromEngagementTaskOutputBuilder,
+) -> crate::operation::get_prospecting_from_engagement_task::builders::GetProspectingFromEngagementTaskOutputBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.task_arn.is_none() {
+        builder.task_arn = Some(Default::default())
+    }
+    if builder.task_name.is_none() {
+        builder.task_name = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.engagements.is_none() {
+        builder.engagements = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_resource_snapshot_output_output_correct_errors(
     mut builder: crate::operation::get_resource_snapshot::builders::GetResourceSnapshotOutputBuilder,
 ) -> crate::operation::get_resource_snapshot::builders::GetResourceSnapshotOutputBuilder {
@@ -140,6 +161,15 @@ pub(crate) fn list_opportunities_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_prospecting_from_engagement_tasks_output_output_correct_errors(
+    mut builder: crate::operation::list_prospecting_from_engagement_tasks::builders::ListProspectingFromEngagementTasksOutputBuilder,
+) -> crate::operation::list_prospecting_from_engagement_tasks::builders::ListProspectingFromEngagementTasksOutputBuilder {
+    if builder.task_summaries.is_none() {
+        builder.task_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_resource_snapshot_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_resource_snapshot_jobs::builders::ListResourceSnapshotJobsOutputBuilder,
 ) -> crate::operation::list_resource_snapshot_jobs::builders::ListResourceSnapshotJobsOutputBuilder {
@@ -181,6 +211,24 @@ pub(crate) fn put_selling_system_settings_output_output_correct_errors(
 ) -> crate::operation::put_selling_system_settings::builders::PutSellingSystemSettingsOutputBuilder {
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_prospecting_from_engagement_task_output_output_correct_errors(
+    mut builder: crate::operation::start_prospecting_from_engagement_task::builders::StartProspectingFromEngagementTaskOutputBuilder,
+) -> crate::operation::start_prospecting_from_engagement_task::builders::StartProspectingFromEngagementTaskOutputBuilder {
+    if builder.identifiers.is_none() {
+        builder.identifiers = Some(Default::default())
+    }
+    if builder.task_name.is_none() {
+        builder.task_name = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.task_status.is_none() {
+        builder.task_status = "no value was set".parse::<crate::types::ProspectingTaskStatus>().ok()
     }
     builder
 }
@@ -252,11 +300,35 @@ pub(crate) fn engagement_invitation_summary_correct_errors(
     builder
 }
 
+pub(crate) fn engagement_prospecting_result_correct_errors(
+    mut builder: crate::types::builders::EngagementProspectingResultBuilder,
+) -> crate::types::builders::EngagementProspectingResultBuilder {
+    if builder.engagement_identifier.is_none() {
+        builder.engagement_identifier = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ProspectingTaskStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn engagement_resource_association_summary_correct_errors(
     mut builder: crate::types::builders::EngagementResourceAssociationSummaryBuilder,
 ) -> crate::types::builders::EngagementResourceAssociationSummaryBuilder {
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn expected_contract_duration_correct_errors(
+    mut builder: crate::types::builders::ExpectedContractDurationBuilder,
+) -> crate::types::builders::ExpectedContractDurationBuilder {
+    if builder.term.is_none() {
+        builder.term = "no value was set".parse::<crate::types::ExpectedContractDurationTerm>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }
@@ -317,6 +389,33 @@ pub(crate) fn opportunity_summary_correct_errors(
 ) -> crate::types::builders::OpportunitySummaryBuilder {
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn prospecting_task_summary_correct_errors(
+    mut builder: crate::types::builders::ProspectingTaskSummaryBuilder,
+) -> crate::types::builders::ProspectingTaskSummaryBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.task_arn.is_none() {
+        builder.task_arn = Some(Default::default())
+    }
+    if builder.task_name.is_none() {
+        builder.task_name = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.total_engagement_count.is_none() {
+        builder.total_engagement_count = Some(Default::default())
+    }
+    if builder.completed_engagement_count.is_none() {
+        builder.completed_engagement_count = Some(Default::default())
+    }
+    if builder.failed_engagement_count.is_none() {
+        builder.failed_engagement_count = Some(Default::default())
     }
     builder
 }
@@ -484,6 +583,18 @@ pub(crate) fn project_details_correct_errors(
     }
     if builder.expected_customer_spend.is_none() {
         builder.expected_customer_spend = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recommendation_correct_errors(
+    mut builder: crate::types::builders::RecommendationBuilder,
+) -> crate::types::builders::RecommendationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    if builder.details.is_none() {
+        builder.details = Some(Default::default())
     }
     builder
 }

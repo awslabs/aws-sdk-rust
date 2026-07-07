@@ -2,10 +2,16 @@
 pub(crate) fn de_data_source_configurations_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::DataSourceConfigurationsResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -17,33 +23,55 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cloudTrail" => {
                             builder = builder.set_cloud_trail(
-                                crate::protocol_serde::shape_cloud_trail_configuration_result::de_cloud_trail_configuration_result(tokens, _value)?,
+                                crate::protocol_serde::shape_cloud_trail_configuration_result::de_cloud_trail_configuration_result(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "dnsLogs" => {
                             builder = builder.set_dns_logs(
-                                crate::protocol_serde::shape_dns_logs_configuration_result::de_dns_logs_configuration_result(tokens, _value)?,
+                                crate::protocol_serde::shape_dns_logs_configuration_result::de_dns_logs_configuration_result(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "flowLogs" => {
                             builder = builder.set_flow_logs(
-                                crate::protocol_serde::shape_flow_logs_configuration_result::de_flow_logs_configuration_result(tokens, _value)?,
+                                crate::protocol_serde::shape_flow_logs_configuration_result::de_flow_logs_configuration_result(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "s3Logs" => {
                             builder = builder.set_s3_logs(
-                                crate::protocol_serde::shape_s3_logs_configuration_result::de_s3_logs_configuration_result(tokens, _value)?,
+                                crate::protocol_serde::shape_s3_logs_configuration_result::de_s3_logs_configuration_result(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "kubernetes" => {
                             builder = builder.set_kubernetes(
-                                crate::protocol_serde::shape_kubernetes_configuration_result::de_kubernetes_configuration_result(tokens, _value)?,
+                                crate::protocol_serde::shape_kubernetes_configuration_result::de_kubernetes_configuration_result(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "malwareProtection" => {
                             builder = builder.set_malware_protection(
                                 crate::protocol_serde::shape_malware_protection_configuration_result::de_malware_protection_configuration_result(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }

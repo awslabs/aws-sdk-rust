@@ -4,8 +4,38 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddTagsToCertificate` operation.
 pub mod add_tags_to_certificate;
 
+/// Types for the `CreateAcmeDomainValidation` operation.
+pub mod create_acme_domain_validation;
+
+/// Types for the `CreateAcmeEndpoint` operation.
+pub mod create_acme_endpoint;
+
+/// Types for the `CreateAcmeExternalAccountBinding` operation.
+pub mod create_acme_external_account_binding;
+
+/// Types for the `DeleteAcmeDomainValidation` operation.
+pub mod delete_acme_domain_validation;
+
+/// Types for the `DeleteAcmeEndpoint` operation.
+pub mod delete_acme_endpoint;
+
+/// Types for the `DeleteAcmeExternalAccountBinding` operation.
+pub mod delete_acme_external_account_binding;
+
 /// Types for the `DeleteCertificate` operation.
 pub mod delete_certificate;
+
+/// Types for the `DescribeAcmeAccount` operation.
+pub mod describe_acme_account;
+
+/// Types for the `DescribeAcmeDomainValidation` operation.
+pub mod describe_acme_domain_validation;
+
+/// Types for the `DescribeAcmeEndpoint` operation.
+pub mod describe_acme_endpoint;
+
+/// Types for the `DescribeAcmeExternalAccountBinding` operation.
+pub mod describe_acme_external_account_binding;
 
 /// Types for the `DescribeCertificate` operation.
 pub mod describe_certificate;
@@ -16,17 +46,35 @@ pub mod export_certificate;
 /// Types for the `GetAccountConfiguration` operation.
 pub mod get_account_configuration;
 
+/// Types for the `GetAcmeExternalAccountBindingCredentials` operation.
+pub mod get_acme_external_account_binding_credentials;
+
 /// Types for the `GetCertificate` operation.
 pub mod get_certificate;
 
 /// Types for the `ImportCertificate` operation.
 pub mod import_certificate;
 
+/// Types for the `ListAcmeAccounts` operation.
+pub mod list_acme_accounts;
+
+/// Types for the `ListAcmeDomainValidations` operation.
+pub mod list_acme_domain_validations;
+
+/// Types for the `ListAcmeEndpoints` operation.
+pub mod list_acme_endpoints;
+
+/// Types for the `ListAcmeExternalAccountBindings` operation.
+pub mod list_acme_external_account_bindings;
+
 /// Types for the `ListCertificates` operation.
 pub mod list_certificates;
 
 /// Types for the `ListTagsForCertificate` operation.
 pub mod list_tags_for_certificate;
+
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
 
 /// Types for the `PutAccountConfiguration` operation.
 pub mod put_account_configuration;
@@ -43,11 +91,29 @@ pub mod request_certificate;
 /// Types for the `ResendValidationEmail` operation.
 pub mod resend_validation_email;
 
+/// Types for the `RevokeAcmeAccount` operation.
+pub mod revoke_acme_account;
+
+/// Types for the `RevokeAcmeExternalAccountBinding` operation.
+pub mod revoke_acme_external_account_binding;
+
 /// Types for the `RevokeCertificate` operation.
 pub mod revoke_certificate;
 
 /// Types for the `SearchCertificates` operation.
 pub mod search_certificates;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
+
+/// Types for the `UpdateAcmeDomainValidation` operation.
+pub mod update_acme_domain_validation;
+
+/// Types for the `UpdateAcmeEndpoint` operation.
+pub mod update_acme_endpoint;
 
 /// Types for the `UpdateCertificateOptions` operation.
 pub mod update_certificate_options;

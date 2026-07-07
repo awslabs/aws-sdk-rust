@@ -146,9 +146,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RunStat
 #[derive(Debug)]
 struct RunStatementResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RunStatementResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -272,10 +273,14 @@ pub enum RunStatementError {
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::types::error::InvalidInputException),
+    /// <p>The operation is not available in the region.</p>
+    OperationNotSupportedException(crate::types::error::OperationNotSupportedException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::types::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::types::error::ResourceNumberLimitExceededException),
+    /// <p>The session is currently busy processing another request and cannot accept new operations.</p>
+    SessionBusyException(crate::types::error::SessionBusyException),
     /// <p>A value could not be validated.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -316,8 +321,10 @@ impl RunStatementError {
             Self::IllegalSessionStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNumberLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SessionBusyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -342,6 +349,10 @@ impl RunStatementError {
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(self, Self::InvalidInputException(_))
     }
+    /// Returns `true` if the error kind is `RunStatementError::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(self, Self::OperationNotSupportedException(_))
+    }
     /// Returns `true` if the error kind is `RunStatementError::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(self, Self::OperationTimeoutException(_))
@@ -349,6 +360,10 @@ impl RunStatementError {
     /// Returns `true` if the error kind is `RunStatementError::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::ResourceNumberLimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `RunStatementError::SessionBusyException`.
+    pub fn is_session_busy_exception(&self) -> bool {
+        matches!(self, Self::SessionBusyException(_))
     }
     /// Returns `true` if the error kind is `RunStatementError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -363,8 +378,10 @@ impl ::std::error::Error for RunStatementError {
             Self::IllegalSessionStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNumberLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SessionBusyException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -378,8 +395,10 @@ impl ::std::fmt::Display for RunStatementError {
             Self::IllegalSessionStateException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
+            Self::OperationNotSupportedException(_inner) => _inner.fmt(f),
             Self::OperationTimeoutException(_inner) => _inner.fmt(f),
             Self::ResourceNumberLimitExceededException(_inner) => _inner.fmt(f),
+            Self::SessionBusyException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -407,8 +426,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RunStatementE
             Self::IllegalSessionStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNumberLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SessionBusyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

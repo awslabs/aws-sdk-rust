@@ -60,6 +60,8 @@ pub struct ElasticsearchDomainStatus {
     pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
     /// <p>The current status of the Elasticsearch domain's deployment strategy options.</p>
     pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    /// <p>The current status of the Elasticsearch domain's automated snapshot pause options.</p>
+    pub automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptions>,
 }
 impl ElasticsearchDomainStatus {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
@@ -181,6 +183,10 @@ impl ElasticsearchDomainStatus {
     pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
         self.deployment_strategy_options.as_ref()
     }
+    /// <p>The current status of the Elasticsearch domain's automated snapshot pause options.</p>
+    pub fn automated_snapshot_pause_options(&self) -> ::std::option::Option<&crate::types::AutomatedSnapshotPauseOptions> {
+        self.automated_snapshot_pause_options.as_ref()
+    }
 }
 impl ElasticsearchDomainStatus {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDomainStatus`](crate::types::ElasticsearchDomainStatus).
@@ -221,6 +227,7 @@ pub struct ElasticsearchDomainStatusBuilder {
     pub(crate) domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
     pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    pub(crate) automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptions>,
 }
 impl ElasticsearchDomainStatusBuilder {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
@@ -655,6 +662,20 @@ impl ElasticsearchDomainStatusBuilder {
     pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
         &self.deployment_strategy_options
     }
+    /// <p>The current status of the Elasticsearch domain's automated snapshot pause options.</p>
+    pub fn automated_snapshot_pause_options(mut self, input: crate::types::AutomatedSnapshotPauseOptions) -> Self {
+        self.automated_snapshot_pause_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the Elasticsearch domain's automated snapshot pause options.</p>
+    pub fn set_automated_snapshot_pause_options(mut self, input: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptions>) -> Self {
+        self.automated_snapshot_pause_options = input;
+        self
+    }
+    /// <p>The current status of the Elasticsearch domain's automated snapshot pause options.</p>
+    pub fn get_automated_snapshot_pause_options(&self) -> &::std::option::Option<crate::types::AutomatedSnapshotPauseOptions> {
+        &self.automated_snapshot_pause_options
+    }
     /// Consumes the builder and constructs a [`ElasticsearchDomainStatus`](crate::types::ElasticsearchDomainStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::ElasticsearchDomainStatusBuilder::domain_id)
@@ -705,6 +726,7 @@ impl ElasticsearchDomainStatusBuilder {
             domain_processing_status: self.domain_processing_status,
             modifying_properties: self.modifying_properties,
             deployment_strategy_options: self.deployment_strategy_options,
+            automated_snapshot_pause_options: self.automated_snapshot_pause_options,
         })
     }
 }

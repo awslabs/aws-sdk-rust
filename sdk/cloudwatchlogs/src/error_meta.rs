@@ -1135,6 +1135,51 @@ impl From<crate::operation::delete_subscription_filter::DeleteSubscriptionFilter
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError> for Error {
+    fn from(err: crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_syslog_configuration::DeleteSyslogConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_transformer::DeleteTransformerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2354,6 +2399,42 @@ impl From<crate::operation::get_scheduled_query_history::GetScheduledQueryHistor
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_storage_tier_policy::GetStorageTierPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_storage_tier_policy::GetStorageTierPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_storage_tier_policy::GetStorageTierPolicyError> for Error {
+    fn from(err: crate::operation::get_storage_tier_policy::GetStorageTierPolicyError) -> Self {
+        match err {
+            crate::operation::get_storage_tier_policy::GetStorageTierPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_storage_tier_policy::GetStorageTierPolicyError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_storage_tier_policy::GetStorageTierPolicyError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::get_storage_tier_policy::GetStorageTierPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_storage_tier_policy::GetStorageTierPolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_storage_tier_policy::GetStorageTierPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_transformer::GetTransformerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2637,6 +2718,48 @@ impl From<crate::operation::list_sources_for_s3_table_integration::ListSourcesFo
             crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_syslog_configurations::ListSyslogConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_syslog_configurations::ListSyslogConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_syslog_configurations::ListSyslogConfigurationsError> for Error {
+    fn from(err: crate::operation::list_syslog_configurations::ListSyslogConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_syslog_configurations::ListSyslogConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_syslog_configurations::ListSyslogConfigurationsError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::list_syslog_configurations::ListSyslogConfigurationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_syslog_configurations::ListSyslogConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_syslog_configurations::ListSyslogConfigurationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_syslog_configurations::ListSyslogConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_syslog_configurations::ListSyslogConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3224,6 +3347,42 @@ impl From<crate::operation::put_retention_policy::PutRetentionPolicyError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_storage_tier_policy::PutStorageTierPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_storage_tier_policy::PutStorageTierPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_storage_tier_policy::PutStorageTierPolicyError> for Error {
+    fn from(err: crate::operation::put_storage_tier_policy::PutStorageTierPolicyError) -> Self {
+        match err {
+            crate::operation::put_storage_tier_policy::PutStorageTierPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_storage_tier_policy::PutStorageTierPolicyError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_storage_tier_policy::PutStorageTierPolicyError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::put_storage_tier_policy::PutStorageTierPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_storage_tier_policy::PutStorageTierPolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::put_storage_tier_policy::PutStorageTierPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_subscription_filter::PutSubscriptionFilterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3262,6 +3421,48 @@ impl From<crate::operation::put_subscription_filter::PutSubscriptionFilterError>
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::put_subscription_filter::PutSubscriptionFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_syslog_configuration::PutSyslogConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_syslog_configuration::PutSyslogConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_syslog_configuration::PutSyslogConfigurationError> for Error {
+    fn from(err: crate::operation::put_syslog_configuration::PutSyslogConfigurationError) -> Self {
+        match err {
+            crate::operation::put_syslog_configuration::PutSyslogConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_syslog_configuration::PutSyslogConfigurationError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::put_syslog_configuration::PutSyslogConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_syslog_configuration::PutSyslogConfigurationError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::put_syslog_configuration::PutSyslogConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_syslog_configuration::PutSyslogConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::put_syslog_configuration::PutSyslogConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_syslog_configuration::PutSyslogConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3666,6 +3867,7 @@ impl From<crate::operation::update_scheduled_query::UpdateScheduledQueryError> f
     fn from(err: crate::operation::update_scheduled_query::UpdateScheduledQueryError) -> Self {
         match err {
             crate::operation::update_scheduled_query::UpdateScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_scheduled_query::UpdateScheduledQueryError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

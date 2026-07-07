@@ -93,10 +93,16 @@ pub fn ser_caption_destination_settings(
 pub(crate) fn de_caption_destination_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CaptionDestinationSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -105,78 +111,110 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "aribDestinationSettings" => {
-                                builder = builder.set_arib_destination_settings(
-                                    crate::protocol_serde::shape_arib_destination_settings::de_arib_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "burnInDestinationSettings" => {
-                                builder = builder.set_burn_in_destination_settings(
-                                    crate::protocol_serde::shape_burn_in_destination_settings::de_burn_in_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "dvbSubDestinationSettings" => {
-                                builder = builder.set_dvb_sub_destination_settings(
-                                    crate::protocol_serde::shape_dvb_sub_destination_settings::de_dvb_sub_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "ebuTtDDestinationSettings" => {
-                                builder = builder.set_ebu_tt_d_destination_settings(
-                                    crate::protocol_serde::shape_ebu_tt_d_destination_settings::de_ebu_tt_d_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "embeddedDestinationSettings" => {
-                                builder = builder.set_embedded_destination_settings(
-                                    crate::protocol_serde::shape_embedded_destination_settings::de_embedded_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "embeddedPlusScte20DestinationSettings" => {
-                                builder = builder.set_embedded_plus_scte20_destination_settings(
-                                    crate::protocol_serde::shape_embedded_plus_scte20_destination_settings::de_embedded_plus_scte20_destination_settings(tokens, _value)?
-                                );
-                            }
-                            "rtmpCaptionInfoDestinationSettings" => {
-                                builder = builder.set_rtmp_caption_info_destination_settings(
-                                    crate::protocol_serde::shape_rtmp_caption_info_destination_settings::de_rtmp_caption_info_destination_settings(
-                                        tokens, _value,
-                                    )?,
-                                );
-                            }
-                            "scte20PlusEmbeddedDestinationSettings" => {
-                                builder = builder.set_scte20_plus_embedded_destination_settings(
-                                    crate::protocol_serde::shape_scte20_plus_embedded_destination_settings::de_scte20_plus_embedded_destination_settings(tokens, _value)?
-                                );
-                            }
-                            "scte27DestinationSettings" => {
-                                builder = builder.set_scte27_destination_settings(
-                                    crate::protocol_serde::shape_scte27_destination_settings::de_scte27_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "smpteTtDestinationSettings" => {
-                                builder = builder.set_smpte_tt_destination_settings(
-                                    crate::protocol_serde::shape_smpte_tt_destination_settings::de_smpte_tt_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "teletextDestinationSettings" => {
-                                builder = builder.set_teletext_destination_settings(
-                                    crate::protocol_serde::shape_teletext_destination_settings::de_teletext_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "ttmlDestinationSettings" => {
-                                builder = builder.set_ttml_destination_settings(
-                                    crate::protocol_serde::shape_ttml_destination_settings::de_ttml_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            "webvttDestinationSettings" => {
-                                builder = builder.set_webvtt_destination_settings(
-                                    crate::protocol_serde::shape_webvtt_destination_settings::de_webvtt_destination_settings(tokens, _value)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "aribDestinationSettings" => {
+                            builder = builder.set_arib_destination_settings(
+                                crate::protocol_serde::shape_arib_destination_settings::de_arib_destination_settings(tokens, _value, depth + 1)?,
+                            );
                         }
-                    }
+                        "burnInDestinationSettings" => {
+                            builder = builder.set_burn_in_destination_settings(
+                                crate::protocol_serde::shape_burn_in_destination_settings::de_burn_in_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "dvbSubDestinationSettings" => {
+                            builder = builder.set_dvb_sub_destination_settings(
+                                crate::protocol_serde::shape_dvb_sub_destination_settings::de_dvb_sub_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "ebuTtDDestinationSettings" => {
+                            builder = builder.set_ebu_tt_d_destination_settings(
+                                crate::protocol_serde::shape_ebu_tt_d_destination_settings::de_ebu_tt_d_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "embeddedDestinationSettings" => {
+                            builder = builder.set_embedded_destination_settings(
+                                crate::protocol_serde::shape_embedded_destination_settings::de_embedded_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "embeddedPlusScte20DestinationSettings" => {
+                            builder = builder.set_embedded_plus_scte20_destination_settings(
+                                crate::protocol_serde::shape_embedded_plus_scte20_destination_settings::de_embedded_plus_scte20_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "rtmpCaptionInfoDestinationSettings" => {
+                            builder = builder.set_rtmp_caption_info_destination_settings(
+                                crate::protocol_serde::shape_rtmp_caption_info_destination_settings::de_rtmp_caption_info_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "scte20PlusEmbeddedDestinationSettings" => {
+                            builder = builder.set_scte20_plus_embedded_destination_settings(
+                                crate::protocol_serde::shape_scte20_plus_embedded_destination_settings::de_scte20_plus_embedded_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "scte27DestinationSettings" => {
+                            builder = builder.set_scte27_destination_settings(
+                                crate::protocol_serde::shape_scte27_destination_settings::de_scte27_destination_settings(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "smpteTtDestinationSettings" => {
+                            builder = builder.set_smpte_tt_destination_settings(
+                                crate::protocol_serde::shape_smpte_tt_destination_settings::de_smpte_tt_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "teletextDestinationSettings" => {
+                            builder = builder.set_teletext_destination_settings(
+                                crate::protocol_serde::shape_teletext_destination_settings::de_teletext_destination_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "ttmlDestinationSettings" => {
+                            builder = builder.set_ttml_destination_settings(
+                                crate::protocol_serde::shape_ttml_destination_settings::de_ttml_destination_settings(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "webvttDestinationSettings" => {
+                            builder = builder.set_webvtt_destination_settings(
+                                crate::protocol_serde::shape_webvtt_destination_settings::de_webvtt_destination_settings(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

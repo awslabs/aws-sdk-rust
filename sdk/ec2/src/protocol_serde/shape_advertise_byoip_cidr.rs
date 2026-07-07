@@ -47,6 +47,8 @@ pub fn de_advertise_byoip_cidr(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AdvertiseByoipCidrResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AdvertiseByoipCidrResponse got {start_el:?}"
@@ -57,7 +59,7 @@ pub fn de_advertise_byoip_cidr(
             s if s.matches("byoipCidr") /* ByoipCidr com.amazonaws.ec2.synthetic#AdvertiseByoipCidrOutput$ByoipCidr */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_byoip_cidr::de_byoip_cidr(&mut tag)
+                        crate::protocol_serde::shape_byoip_cidr::de_byoip_cidr(&mut tag, depth + 1)
                         ?
                     )
                 ;

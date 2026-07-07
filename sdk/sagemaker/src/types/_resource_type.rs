@@ -21,6 +21,7 @@
 ///     ResourceType::HyperParameterTuningJob => { /* ... */ },
 ///     ResourceType::Image => { /* ... */ },
 ///     ResourceType::ImageVersion => { /* ... */ },
+///     ResourceType::Job => { /* ... */ },
 ///     ResourceType::Model => { /* ... */ },
 ///     ResourceType::ModelCard => { /* ... */ },
 ///     ResourceType::ModelPackage => { /* ... */ },
@@ -77,6 +78,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ImageVersion,
     #[allow(missing_docs)] // documentation missing in model
+    Job,
+    #[allow(missing_docs)] // documentation missing in model
     Model,
     #[allow(missing_docs)] // documentation missing in model
     ModelCard,
@@ -110,6 +113,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "HyperParameterTuningJob" => ResourceType::HyperParameterTuningJob,
             "Image" => ResourceType::Image,
             "ImageVersion" => ResourceType::ImageVersion,
+            "Job" => ResourceType::Job,
             "Model" => ResourceType::Model,
             "ModelCard" => ResourceType::ModelCard,
             "ModelPackage" => ResourceType::ModelPackage,
@@ -143,6 +147,7 @@ impl ResourceType {
             ResourceType::HyperParameterTuningJob => "HyperParameterTuningJob",
             ResourceType::Image => "Image",
             ResourceType::ImageVersion => "ImageVersion",
+            ResourceType::Job => "Job",
             ResourceType::Model => "Model",
             ResourceType::ModelCard => "ModelCard",
             ResourceType::ModelPackage => "ModelPackage",
@@ -167,6 +172,7 @@ impl ResourceType {
             "HyperParameterTuningJob",
             "Image",
             "ImageVersion",
+            "Job",
             "Model",
             "ModelCard",
             "ModelPackage",
@@ -208,6 +214,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::HyperParameterTuningJob => write!(f, "HyperParameterTuningJob"),
             ResourceType::Image => write!(f, "Image"),
             ResourceType::ImageVersion => write!(f, "ImageVersion"),
+            ResourceType::Job => write!(f, "Job"),
             ResourceType::Model => write!(f, "Model"),
             ResourceType::ModelCard => write!(f, "ModelCard"),
             ResourceType::ModelPackage => write!(f, "ModelPackage"),

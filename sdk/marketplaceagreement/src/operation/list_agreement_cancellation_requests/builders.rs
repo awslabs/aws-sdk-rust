@@ -23,7 +23,7 @@ impl crate::operation::list_agreement_cancellation_requests::builders::ListAgree
 /// Fluent builder constructing a request to `ListAgreementCancellationRequests`.
 ///
 /// <p>Lists agreement cancellation requests available to you as a seller or buyer. Both sellers (proposers) and buyers (acceptors) can use this operation to find cancellation requests by specifying their party type and applying optional filters.</p><note>
-/// <p><code>PartyType</code> is a required parameter. A <code>ValidationException</code> is returned if <code>PartyType</code> is not provided. Pagination is supported through <code>maxResults</code> (1-50, default 20) and <code>nextToken</code> parameters.</p>
+/// <p><code>PartyType</code> is a required parameter. A <code>ValidationException</code> is returned if <code>PartyType</code> is not provided.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAgreementCancellationRequestsFluentBuilder {
@@ -144,17 +144,17 @@ impl ListAgreementCancellationRequestsFluentBuilder {
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agreement_id()
     }
-    /// <p>An optional parameter to filter cancellation requests by status. Valid values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>An optional parameter to filter cancellation requests by status.</p>
     pub fn status(mut self, input: crate::types::AgreementCancellationRequestStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>An optional parameter to filter cancellation requests by status. Valid values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>An optional parameter to filter cancellation requests by status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementCancellationRequestStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>An optional parameter to filter cancellation requests by status. Valid values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>An optional parameter to filter cancellation requests by status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementCancellationRequestStatus> {
         self.inner.get_status()
     }
@@ -200,17 +200,17 @@ impl ListAgreementCancellationRequestsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

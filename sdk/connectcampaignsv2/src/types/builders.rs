@@ -81,6 +81,8 @@ pub use crate::types::_q_connect_integration_summary::QConnectIntegrationSummary
 
 pub use crate::types::_lambda_integration_summary::LambdaIntegrationSummaryBuilder;
 
+pub use crate::types::_event_trigger_context::EventTriggerContextBuilder;
+
 pub use crate::types::_progressive_config::ProgressiveConfigBuilder;
 
 pub use crate::types::_predictive_config::PredictiveConfigBuilder;
@@ -101,8 +103,12 @@ pub use crate::types::_email_channel_subtype_parameters::EmailChannelSubtypePara
 
 pub use crate::types::_whats_app_channel_subtype_parameters::WhatsAppChannelSubtypeParametersBuilder;
 
+pub use crate::types::_channel_context::ChannelContextBuilder;
+
 pub use crate::types::_timeout_config::TimeoutConfigBuilder;
 
 pub use crate::types::_restricted_period::RestrictedPeriodBuilder;
+
+pub use crate::types::_web_notification_context::WebNotificationContextBuilder;
 
 pub use crate::types::_time_range::TimeRangeBuilder;

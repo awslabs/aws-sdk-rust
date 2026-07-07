@@ -146,56 +146,66 @@ pub(crate) fn de_describe_lake_formation_identity_center_configuration(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ApplicationArn" => {
-                    builder = builder.set_application_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ApplicationArn" => {
+                        builder = builder.set_application_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "CatalogId" => {
+                        builder = builder.set_catalog_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ExternalFiltering" => {
+                        builder = builder.set_external_filtering(
+                            crate::protocol_serde::shape_external_filtering_configuration::de_external_filtering_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
+                        );
+                    }
+                    "InstanceArn" => {
+                        builder = builder.set_instance_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ResourceShare" => {
+                        builder = builder.set_resource_share(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ServiceIntegrations" => {
+                        builder = builder.set_service_integrations(
+                            crate::protocol_serde::shape_service_integration_list::de_service_integration_list(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "ShareRecipients" => {
+                        builder = builder.set_share_recipients(crate::protocol_serde::shape_data_lake_principal_list::de_data_lake_principal_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "CatalogId" => {
-                    builder = builder.set_catalog_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ExternalFiltering" => {
-                    builder = builder.set_external_filtering(
-                        crate::protocol_serde::shape_external_filtering_configuration::de_external_filtering_configuration(tokens, _value)?,
-                    );
-                }
-                "InstanceArn" => {
-                    builder = builder.set_instance_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ResourceShare" => {
-                    builder = builder.set_resource_share(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ServiceIntegrations" => {
-                    builder = builder.set_service_integrations(crate::protocol_serde::shape_service_integration_list::de_service_integration_list(
-                        tokens, _value,
-                    )?);
-                }
-                "ShareRecipients" => {
-                    builder = builder.set_share_recipients(crate::protocol_serde::shape_data_lake_principal_list::de_data_lake_principal_list(
-                        tokens, _value,
-                    )?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

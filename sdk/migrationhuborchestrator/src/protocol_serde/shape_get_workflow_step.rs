@@ -102,6 +102,8 @@ pub(crate) fn de_get_workflow_step(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -140,7 +142,7 @@ pub(crate) fn de_get_workflow_step(
                     );
                 }
                 "next" => {
-                    builder = builder.set_next(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                    builder = builder.set_next(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                 }
                 "noOfSrvCompleted" => {
                     builder = builder.set_no_of_srv_completed(
@@ -158,7 +160,9 @@ pub(crate) fn de_get_workflow_step(
                 }
                 "outputs" => {
                     builder = builder.set_outputs(crate::protocol_serde::shape_workflow_step_output_list::de_workflow_step_output_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 "owner" => {
@@ -169,7 +173,7 @@ pub(crate) fn de_get_workflow_step(
                     );
                 }
                 "previous" => {
-                    builder = builder.set_previous(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                    builder = builder.set_previous(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                 }
                 "scriptOutputLocation" => {
                     builder = builder.set_script_output_location(
@@ -214,7 +218,7 @@ pub(crate) fn de_get_workflow_step(
                     );
                 }
                 "stepTarget" => {
-                    builder = builder.set_step_target(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
+                    builder = builder.set_step_target(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
                 }
                 "totalNoOfSrv" => {
                     builder = builder.set_total_no_of_srv(
@@ -233,7 +237,9 @@ pub(crate) fn de_get_workflow_step(
                 "workflowStepAutomationConfiguration" => {
                     builder = builder.set_workflow_step_automation_configuration(
                         crate::protocol_serde::shape_workflow_step_automation_configuration::de_workflow_step_automation_configuration(
-                            tokens, _value,
+                            tokens,
+                            _value,
+                            depth + 1,
                         )?,
                     );
                 }

@@ -2,10 +2,16 @@
 pub(crate) fn de_maintenance_window_run_command_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MaintenanceWindowRunCommandParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,7 +30,7 @@ where
                         }
                         "CloudWatchOutputConfig" => {
                             builder = builder.set_cloud_watch_output_config(
-                                crate::protocol_serde::shape_cloud_watch_output_config::de_cloud_watch_output_config(tokens, _value)?,
+                                crate::protocol_serde::shape_cloud_watch_output_config::de_cloud_watch_output_config(tokens, _value, depth + 1)?,
                             );
                         }
                         "DocumentHash" => {
@@ -49,8 +55,11 @@ where
                             );
                         }
                         "NotificationConfig" => {
-                            builder = builder
-                                .set_notification_config(crate::protocol_serde::shape_notification_config::de_notification_config(tokens, _value)?);
+                            builder = builder.set_notification_config(crate::protocol_serde::shape_notification_config::de_notification_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "OutputS3BucketName" => {
                             builder = builder.set_output_s3_bucket_name(
@@ -67,7 +76,7 @@ where
                             );
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens, _value)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens, _value, depth + 1)?);
                         }
                         "ServiceRoleArn" => {
                             builder = builder.set_service_role_arn(

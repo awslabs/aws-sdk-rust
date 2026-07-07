@@ -2,10 +2,16 @@
 pub(crate) fn de_assessment_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AssessmentTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,12 +51,12 @@ where
                         }
                         "rulesPackageArns" => {
                             builder = builder.set_rules_package_arns(
-                                    crate::protocol_serde::shape_assessment_template_rules_package_arn_list::de_assessment_template_rules_package_arn_list(tokens, _value)?
+                                    crate::protocol_serde::shape_assessment_template_rules_package_arn_list::de_assessment_template_rules_package_arn_list(tokens, _value, depth + 1)?
                                 );
                         }
                         "userAttributesForFindings" => {
                             builder = builder.set_user_attributes_for_findings(
-                                crate::protocol_serde::shape_user_attribute_list::de_user_attribute_list(tokens, _value)?,
+                                crate::protocol_serde::shape_user_attribute_list::de_user_attribute_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "lastAssessmentRunArn" => {

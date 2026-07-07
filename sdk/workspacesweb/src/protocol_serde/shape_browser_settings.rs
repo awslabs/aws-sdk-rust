@@ -2,10 +2,16 @@
 pub(crate) fn de_browser_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BrowserSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,8 @@ where
                             );
                         }
                         "associatedPortalArns" => {
-                            builder = builder.set_associated_portal_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
+                            builder =
+                                builder.set_associated_portal_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value, depth + 1)?);
                         }
                         "browserPolicy" => {
                             builder = builder.set_browser_policy(
@@ -41,12 +48,16 @@ where
                         }
                         "additionalEncryptionContext" => {
                             builder = builder.set_additional_encryption_context(
-                                crate::protocol_serde::shape_encryption_context_map::de_encryption_context_map(tokens, _value)?,
+                                crate::protocol_serde::shape_encryption_context_map::de_encryption_context_map(tokens, _value, depth + 1)?,
                             );
                         }
                         "webContentFilteringPolicy" => {
                             builder = builder.set_web_content_filtering_policy(
-                                crate::protocol_serde::shape_web_content_filtering_policy::de_web_content_filtering_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_web_content_filtering_policy::de_web_content_filtering_policy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

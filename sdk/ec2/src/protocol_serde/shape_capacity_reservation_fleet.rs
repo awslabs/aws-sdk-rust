@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_capacity_reservation_fleet(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::CapacityReservationFleet, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::CapacityReservationFleet::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -149,7 +153,7 @@ pub fn de_capacity_reservation_fleet(
             s if s.matches("instanceTypeSpecificationSet") /* InstanceTypeSpecifications com.amazonaws.ec2#CapacityReservationFleet$InstanceTypeSpecifications */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_fleet_capacity_reservation_set::de_fleet_capacity_reservation_set(&mut tag)
+                        crate::protocol_serde::shape_fleet_capacity_reservation_set::de_fleet_capacity_reservation_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -159,7 +163,7 @@ pub fn de_capacity_reservation_fleet(
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#CapacityReservationFleet$Tags */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

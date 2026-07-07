@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_tunnel_option(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TunnelOption, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TunnelOption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -165,7 +169,7 @@ pub fn de_tunnel_option(
             s if s.matches("phase1EncryptionAlgorithmSet") /* Phase1EncryptionAlgorithms com.amazonaws.ec2#TunnelOption$Phase1EncryptionAlgorithms */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_phase1_encryption_algorithms_list::de_phase1_encryption_algorithms_list(&mut tag)
+                        crate::protocol_serde::shape_phase1_encryption_algorithms_list::de_phase1_encryption_algorithms_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -175,7 +179,7 @@ pub fn de_tunnel_option(
             s if s.matches("phase2EncryptionAlgorithmSet") /* Phase2EncryptionAlgorithms com.amazonaws.ec2#TunnelOption$Phase2EncryptionAlgorithms */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_phase2_encryption_algorithms_list::de_phase2_encryption_algorithms_list(&mut tag)
+                        crate::protocol_serde::shape_phase2_encryption_algorithms_list::de_phase2_encryption_algorithms_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -185,7 +189,7 @@ pub fn de_tunnel_option(
             s if s.matches("phase1IntegrityAlgorithmSet") /* Phase1IntegrityAlgorithms com.amazonaws.ec2#TunnelOption$Phase1IntegrityAlgorithms */ =>  {
                 let var_14 =
                     Some(
-                        crate::protocol_serde::shape_phase1_integrity_algorithms_list::de_phase1_integrity_algorithms_list(&mut tag)
+                        crate::protocol_serde::shape_phase1_integrity_algorithms_list::de_phase1_integrity_algorithms_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -195,7 +199,7 @@ pub fn de_tunnel_option(
             s if s.matches("phase2IntegrityAlgorithmSet") /* Phase2IntegrityAlgorithms com.amazonaws.ec2#TunnelOption$Phase2IntegrityAlgorithms */ =>  {
                 let var_15 =
                     Some(
-                        crate::protocol_serde::shape_phase2_integrity_algorithms_list::de_phase2_integrity_algorithms_list(&mut tag)
+                        crate::protocol_serde::shape_phase2_integrity_algorithms_list::de_phase2_integrity_algorithms_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -205,7 +209,7 @@ pub fn de_tunnel_option(
             s if s.matches("phase1DHGroupNumberSet") /* Phase1DHGroupNumbers com.amazonaws.ec2#TunnelOption$Phase1DHGroupNumbers */ =>  {
                 let var_16 =
                     Some(
-                        crate::protocol_serde::shape_phase1_dh_group_numbers_list::de_phase1_dh_group_numbers_list(&mut tag)
+                        crate::protocol_serde::shape_phase1_dh_group_numbers_list::de_phase1_dh_group_numbers_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -215,7 +219,7 @@ pub fn de_tunnel_option(
             s if s.matches("phase2DHGroupNumberSet") /* Phase2DHGroupNumbers com.amazonaws.ec2#TunnelOption$Phase2DHGroupNumbers */ =>  {
                 let var_17 =
                     Some(
-                        crate::protocol_serde::shape_phase2_dh_group_numbers_list::de_phase2_dh_group_numbers_list(&mut tag)
+                        crate::protocol_serde::shape_phase2_dh_group_numbers_list::de_phase2_dh_group_numbers_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -225,7 +229,7 @@ pub fn de_tunnel_option(
             s if s.matches("ikeVersionSet") /* IkeVersions com.amazonaws.ec2#TunnelOption$IkeVersions */ =>  {
                 let var_18 =
                     Some(
-                        crate::protocol_serde::shape_ike_versions_list::de_ike_versions_list(&mut tag)
+                        crate::protocol_serde::shape_ike_versions_list::de_ike_versions_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -248,7 +252,7 @@ pub fn de_tunnel_option(
             s if s.matches("logOptions") /* LogOptions com.amazonaws.ec2#TunnelOption$LogOptions */ =>  {
                 let var_20 =
                     Some(
-                        crate::protocol_serde::shape_vpn_tunnel_log_options::de_vpn_tunnel_log_options(&mut tag)
+                        crate::protocol_serde::shape_vpn_tunnel_log_options::de_vpn_tunnel_log_options(&mut tag, depth + 1)
                         ?
                     )
                 ;

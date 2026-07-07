@@ -13,11 +13,13 @@
 /// # let nodeattributename = unimplemented!();
 /// match nodeattributename {
 ///     NodeAttributeName::AgentVersion => { /* ... */ },
+///     NodeAttributeName::AvailabilityZone => { /* ... */ },
 ///     NodeAttributeName::PlatformName => { /* ... */ },
 ///     NodeAttributeName::PlatformType => { /* ... */ },
 ///     NodeAttributeName::PlatformVersion => { /* ... */ },
 ///     NodeAttributeName::Region => { /* ... */ },
 ///     NodeAttributeName::ResourceType => { /* ... */ },
+///     NodeAttributeName::SourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +51,8 @@ pub enum NodeAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     AgentVersion,
     #[allow(missing_docs)] // documentation missing in model
+    AvailabilityZone,
+    #[allow(missing_docs)] // documentation missing in model
     PlatformName,
     #[allow(missing_docs)] // documentation missing in model
     PlatformType,
@@ -58,6 +62,8 @@ pub enum NodeAttributeName {
     Region,
     #[allow(missing_docs)] // documentation missing in model
     ResourceType,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -66,11 +72,13 @@ impl ::std::convert::From<&str> for NodeAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "AgentVersion" => NodeAttributeName::AgentVersion,
+            "AvailabilityZone" => NodeAttributeName::AvailabilityZone,
             "PlatformName" => NodeAttributeName::PlatformName,
             "PlatformType" => NodeAttributeName::PlatformType,
             "PlatformVersion" => NodeAttributeName::PlatformVersion,
             "Region" => NodeAttributeName::Region,
             "ResourceType" => NodeAttributeName::ResourceType,
+            "SourceType" => NodeAttributeName::SourceType,
             other => NodeAttributeName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,11 +95,13 @@ impl NodeAttributeName {
     pub fn as_str(&self) -> &str {
         match self {
             NodeAttributeName::AgentVersion => "AgentVersion",
+            NodeAttributeName::AvailabilityZone => "AvailabilityZone",
             NodeAttributeName::PlatformName => "PlatformName",
             NodeAttributeName::PlatformType => "PlatformType",
             NodeAttributeName::PlatformVersion => "PlatformVersion",
             NodeAttributeName::Region => "Region",
             NodeAttributeName::ResourceType => "ResourceType",
+            NodeAttributeName::SourceType => "SourceType",
             NodeAttributeName::Unknown(value) => value.as_str(),
         }
     }
@@ -99,11 +109,13 @@ impl NodeAttributeName {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AgentVersion",
+            "AvailabilityZone",
             "PlatformName",
             "PlatformType",
             "PlatformVersion",
             "Region",
             "ResourceType",
+            "SourceType",
         ]
     }
 }
@@ -128,11 +140,13 @@ impl ::std::fmt::Display for NodeAttributeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NodeAttributeName::AgentVersion => write!(f, "AgentVersion"),
+            NodeAttributeName::AvailabilityZone => write!(f, "AvailabilityZone"),
             NodeAttributeName::PlatformName => write!(f, "PlatformName"),
             NodeAttributeName::PlatformType => write!(f, "PlatformType"),
             NodeAttributeName::PlatformVersion => write!(f, "PlatformVersion"),
             NodeAttributeName::Region => write!(f, "Region"),
             NodeAttributeName::ResourceType => write!(f, "ResourceType"),
+            NodeAttributeName::SourceType => write!(f, "SourceType"),
             NodeAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }

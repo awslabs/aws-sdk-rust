@@ -20,10 +20,16 @@ pub fn ser_copy_action(
 pub(crate) fn de_copy_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::CopyAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -34,7 +40,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Lifecycle" => {
-                            builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value)?);
+                            builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value, depth + 1)?);
                         }
                         "DestinationBackupVaultArn" => {
                             builder = builder.set_destination_backup_vault_arn(

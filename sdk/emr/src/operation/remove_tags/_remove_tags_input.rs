@@ -8,6 +8,8 @@ pub struct RemoveTagsInput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag keys to remove from the resource.</p>
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being untagged is a session-scoped resource.</p>
+    pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveTagsInput {
     /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
@@ -19,6 +21,10 @@ impl RemoveTagsInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
     pub fn tag_keys(&self) -> &[::std::string::String] {
         self.tag_keys.as_deref().unwrap_or_default()
+    }
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being untagged is a session-scoped resource.</p>
+    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+        self.cluster_id.as_deref()
     }
 }
 impl RemoveTagsInput {
@@ -34,6 +40,7 @@ impl RemoveTagsInput {
 pub struct RemoveTagsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveTagsInputBuilder {
     /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
@@ -71,11 +78,26 @@ impl RemoveTagsInputBuilder {
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_keys
     }
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being untagged is a session-scoped resource.</p>
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being untagged is a session-scoped resource.</p>
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster_id = input;
+        self
+    }
+    /// <p>The ID of the cluster that scopes the tag operation. Required when the resource being untagged is a session-scoped resource.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_tags::RemoveTagsInput {
             resource_id: self.resource_id,
             tag_keys: self.tag_keys,
+            cluster_id: self.cluster_id,
         })
     }
 }

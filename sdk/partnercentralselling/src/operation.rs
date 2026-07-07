@@ -46,6 +46,9 @@ pub mod get_engagement_invitation;
 /// Types for the `GetOpportunity` operation.
 pub mod get_opportunity;
 
+/// Types for the `GetProspectingFromEngagementTask` operation.
+pub mod get_prospecting_from_engagement_task;
+
 /// Types for the `GetResourceSnapshot` operation.
 pub mod get_resource_snapshot;
 
@@ -79,6 +82,9 @@ pub mod list_opportunities;
 /// Types for the `ListOpportunityFromEngagementTasks` operation.
 pub mod list_opportunity_from_engagement_tasks;
 
+/// Types for the `ListProspectingFromEngagementTasks` operation.
+pub mod list_prospecting_from_engagement_tasks;
+
 /// Types for the `ListResourceSnapshotJobs` operation.
 pub mod list_resource_snapshot_jobs;
 
@@ -105,6 +111,9 @@ pub mod start_engagement_from_opportunity_task;
 
 /// Types for the `StartOpportunityFromEngagementTask` operation.
 pub mod start_opportunity_from_engagement_task;
+
+/// Types for the `StartProspectingFromEngagementTask` operation.
+pub mod start_prospecting_from_engagement_task;
 
 /// Types for the `StartResourceSnapshotJob` operation.
 pub mod start_resource_snapshot_job;

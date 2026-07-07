@@ -89,6 +89,8 @@ pub fn de_describe_notification_configurations(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeNotificationConfigurationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeNotificationConfigurationsResponse got {start_el:?}"
@@ -106,7 +108,7 @@ pub fn de_describe_notification_configurations(
             s if s.matches("NotificationConfigurations") /* NotificationConfigurations com.amazonaws.autoscaling.synthetic#DescribeNotificationConfigurationsOutput$NotificationConfigurations */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_notification_configurations::de_notification_configurations(&mut tag)
+                        crate::protocol_serde::shape_notification_configurations::de_notification_configurations(&mut tag, depth + 1)
                         ?
                     )
                 ;

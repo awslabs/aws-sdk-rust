@@ -14,6 +14,8 @@
 /// <p>50 values for <code>ImageNames</code></p></li>
 /// <li>
 /// <p>50 values for <code>MarketplaceProductCodes</code></p></li>
+/// <li>
+/// <p>50 values for <code>ImageWatermarks</code></p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html#how-allowed-amis-works">How Allowed AMIs works</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[non_exhaustive]
@@ -59,6 +61,9 @@ pub struct ImageCriterionRequest {
     pub deprecation_time_condition: ::std::option::Option<crate::types::DeprecationTimeConditionRequest>,
     /// <p>The maximum age for allowed images.</p>
     pub creation_date_condition: ::std::option::Option<crate::types::CreationDateConditionRequest>,
+    /// <p>The watermark criteria that an AMI must match to be allowed. An AMI is allowed if it carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark satisfies a filter when all specified fields in the ImageWatermarkFilter match the corresponding values on the watermark of the AMI.</p>
+    /// <p>Maximum: 50 values</p>
+    pub image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermarkFilterRequest>>,
 }
 impl ImageCriterionRequest {
     /// <p>The image providers whose images are allowed.</p>
@@ -117,6 +122,13 @@ impl ImageCriterionRequest {
     pub fn creation_date_condition(&self) -> ::std::option::Option<&crate::types::CreationDateConditionRequest> {
         self.creation_date_condition.as_ref()
     }
+    /// <p>The watermark criteria that an AMI must match to be allowed. An AMI is allowed if it carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark satisfies a filter when all specified fields in the ImageWatermarkFilter match the corresponding values on the watermark of the AMI.</p>
+    /// <p>Maximum: 50 values</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_watermarks.is_none()`.
+    pub fn image_watermarks(&self) -> &[crate::types::ImageWatermarkFilterRequest] {
+        self.image_watermarks.as_deref().unwrap_or_default()
+    }
 }
 impl ImageCriterionRequest {
     /// Creates a new builder-style object to manufacture [`ImageCriterionRequest`](crate::types::ImageCriterionRequest).
@@ -134,6 +146,7 @@ pub struct ImageCriterionRequestBuilder {
     pub(crate) image_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deprecation_time_condition: ::std::option::Option<crate::types::DeprecationTimeConditionRequest>,
     pub(crate) creation_date_condition: ::std::option::Option<crate::types::CreationDateConditionRequest>,
+    pub(crate) image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermarkFilterRequest>>,
 }
 impl ImageCriterionRequestBuilder {
     /// Appends an item to `image_providers`.
@@ -314,6 +327,29 @@ impl ImageCriterionRequestBuilder {
     pub fn get_creation_date_condition(&self) -> &::std::option::Option<crate::types::CreationDateConditionRequest> {
         &self.creation_date_condition
     }
+    /// Appends an item to `image_watermarks`.
+    ///
+    /// To override the contents of this collection use [`set_image_watermarks`](Self::set_image_watermarks).
+    ///
+    /// <p>The watermark criteria that an AMI must match to be allowed. An AMI is allowed if it carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark satisfies a filter when all specified fields in the ImageWatermarkFilter match the corresponding values on the watermark of the AMI.</p>
+    /// <p>Maximum: 50 values</p>
+    pub fn image_watermarks(mut self, input: crate::types::ImageWatermarkFilterRequest) -> Self {
+        let mut v = self.image_watermarks.unwrap_or_default();
+        v.push(input);
+        self.image_watermarks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The watermark criteria that an AMI must match to be allowed. An AMI is allowed if it carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark satisfies a filter when all specified fields in the ImageWatermarkFilter match the corresponding values on the watermark of the AMI.</p>
+    /// <p>Maximum: 50 values</p>
+    pub fn set_image_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermarkFilterRequest>>) -> Self {
+        self.image_watermarks = input;
+        self
+    }
+    /// <p>The watermark criteria that an AMI must match to be allowed. An AMI is allowed if it carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark satisfies a filter when all specified fields in the ImageWatermarkFilter match the corresponding values on the watermark of the AMI.</p>
+    /// <p>Maximum: 50 values</p>
+    pub fn get_image_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageWatermarkFilterRequest>> {
+        &self.image_watermarks
+    }
     /// Consumes the builder and constructs a [`ImageCriterionRequest`](crate::types::ImageCriterionRequest).
     pub fn build(self) -> crate::types::ImageCriterionRequest {
         crate::types::ImageCriterionRequest {
@@ -322,6 +358,7 @@ impl ImageCriterionRequestBuilder {
             image_names: self.image_names,
             deprecation_time_condition: self.deprecation_time_condition,
             creation_date_condition: self.creation_date_condition,
+            image_watermarks: self.image_watermarks,
         }
     }
 }

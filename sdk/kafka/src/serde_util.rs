@@ -167,18 +167,6 @@ pub(crate) fn encryption_at_rest_correct_errors(
     builder
 }
 
-pub(crate) fn kafka_cluster_client_authentication_correct_errors(
-    mut builder: crate::types::builders::KafkaClusterClientAuthenticationBuilder,
-) -> crate::types::builders::KafkaClusterClientAuthenticationBuilder {
-    if builder.sasl_scram.is_none() {
-        builder.sasl_scram = {
-            let builder = crate::types::builders::KafkaClusterSaslScramAuthenticationBuilder::default();
-            Some(crate::serde_util::kafka_cluster_sasl_scram_authentication_correct_errors(builder).build())
-        }
-    }
-    builder
-}
-
 pub(crate) fn kafka_cluster_client_vpc_config_correct_errors(
     mut builder: crate::types::builders::KafkaClusterClientVpcConfigBuilder,
 ) -> crate::types::builders::KafkaClusterClientVpcConfigBuilder {
@@ -271,6 +259,15 @@ pub(crate) fn firehose_correct_errors(mut builder: crate::types::builders::Fireh
 pub(crate) fn jmx_exporter_correct_errors(mut builder: crate::types::builders::JmxExporterBuilder) -> crate::types::builders::JmxExporterBuilder {
     if builder.enabled_in_broker.is_none() {
         builder.enabled_in_broker = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn kafka_cluster_mtls_authentication_correct_errors(
+    mut builder: crate::types::builders::KafkaClusterMtlsAuthenticationBuilder,
+) -> crate::types::builders::KafkaClusterMtlsAuthenticationBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
     }
     builder
 }

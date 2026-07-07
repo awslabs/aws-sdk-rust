@@ -181,4 +181,18 @@ impl UpdateUserPoolDomainFluentBuilder {
     pub fn get_custom_domain_config(&self) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
         self.inner.get_custom_domain_config()
     }
+    /// <p>The routing configuration for the user pool domain. Specifies failover settings for multi-region deployments.</p>
+    pub fn routing(mut self, input: crate::types::RoutingType) -> Self {
+        self.inner = self.inner.routing(input);
+        self
+    }
+    /// <p>The routing configuration for the user pool domain. Specifies failover settings for multi-region deployments.</p>
+    pub fn set_routing(mut self, input: ::std::option::Option<crate::types::RoutingType>) -> Self {
+        self.inner = self.inner.set_routing(input);
+        self
+    }
+    /// <p>The routing configuration for the user pool domain. Specifies failover settings for multi-region deployments.</p>
+    pub fn get_routing(&self) -> &::std::option::Option<crate::types::RoutingType> {
+        self.inner.get_routing()
+    }
 }

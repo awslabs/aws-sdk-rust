@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_change_set_hook_resource_target_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ChangeSetHookResourceTargetDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ChangeSetHookResourceTargetDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {

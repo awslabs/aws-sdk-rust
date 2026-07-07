@@ -8,7 +8,7 @@ pub struct FilterLogEventsOutput {
     /// <p><b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.</p>
     /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
     pub searched_log_streams: ::std::option::Option<::std::vec::Vec<crate::types::SearchedLogStream>>,
-    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    /// <p>The token for the next set of items in the sorting direction specified by the <code>startFromHead</code> parameter in the first request. The token expires after 24 hours.</p>
     /// <p>If the results don't include a <code>nextToken</code>, then pagination is finished.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -27,7 +27,7 @@ impl FilterLogEventsOutput {
     pub fn searched_log_streams(&self) -> &[crate::types::SearchedLogStream] {
         self.searched_log_streams.as_deref().unwrap_or_default()
     }
-    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    /// <p>The token for the next set of items in the sorting direction specified by the <code>startFromHead</code> parameter in the first request. The token expires after 24 hours.</p>
     /// <p>If the results don't include a <code>nextToken</code>, then pagination is finished.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -98,19 +98,19 @@ impl FilterLogEventsOutputBuilder {
     pub fn get_searched_log_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchedLogStream>> {
         &self.searched_log_streams
     }
-    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    /// <p>The token for the next set of items in the sorting direction specified by the <code>startFromHead</code> parameter in the first request. The token expires after 24 hours.</p>
     /// <p>If the results don't include a <code>nextToken</code>, then pagination is finished.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    /// <p>The token for the next set of items in the sorting direction specified by the <code>startFromHead</code> parameter in the first request. The token expires after 24 hours.</p>
     /// <p>If the results don't include a <code>nextToken</code>, then pagination is finished.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    /// <p>The token for the next set of items in the sorting direction specified by the <code>startFromHead</code> parameter in the first request. The token expires after 24 hours.</p>
     /// <p>If the results don't include a <code>nextToken</code>, then pagination is finished.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token

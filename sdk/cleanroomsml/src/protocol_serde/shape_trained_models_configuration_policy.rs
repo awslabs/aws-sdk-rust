@@ -33,10 +33,16 @@ pub fn ser_trained_models_configuration_policy(
 pub(crate) fn de_trained_models_configuration_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::TrainedModelsConfigurationPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -48,17 +54,29 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "containerLogs" => {
                             builder = builder.set_container_logs(
-                                crate::protocol_serde::shape_logs_configuration_policy_list::de_logs_configuration_policy_list(tokens, _value)?,
+                                crate::protocol_serde::shape_logs_configuration_policy_list::de_logs_configuration_policy_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "containerMetrics" => {
                             builder = builder.set_container_metrics(
-                                crate::protocol_serde::shape_metrics_configuration_policy::de_metrics_configuration_policy(tokens, _value)?,
+                                crate::protocol_serde::shape_metrics_configuration_policy::de_metrics_configuration_policy(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "maxArtifactSize" => {
                             builder = builder.set_max_artifact_size(
-                                crate::protocol_serde::shape_trained_model_artifact_max_size::de_trained_model_artifact_max_size(tokens, _value)?,
+                                crate::protocol_serde::shape_trained_model_artifact_max_size::de_trained_model_artifact_max_size(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

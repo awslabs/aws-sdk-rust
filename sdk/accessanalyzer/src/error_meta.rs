@@ -327,6 +327,52 @@ impl From<crate::operation::create_archive_rule::CreateArchiveRuleError> for Err
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError> for Error {
+    fn from(err: crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError) -> Self {
+        match err {
+            crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_service_linked_analyzer::CreateServiceLinkedAnalyzerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_analyzer::DeleteAnalyzerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -378,6 +424,52 @@ impl From<crate::operation::delete_archive_rule::DeleteArchiveRuleError> for Err
             crate::operation::delete_archive_rule::DeleteArchiveRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_archive_rule::DeleteArchiveRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_archive_rule::DeleteArchiveRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError> for Error {
+    fn from(err: crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError) -> Self {
+        match err {
+            crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_service_linked_analyzer::DeleteServiceLinkedAnalyzerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

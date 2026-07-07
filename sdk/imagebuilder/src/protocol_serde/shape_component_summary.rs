@@ -2,10 +2,16 @@
 pub(crate) fn de_component_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComponentSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,11 +50,18 @@ where
                             );
                         }
                         "supportedOsVersions" => {
-                            builder =
-                                builder.set_supported_os_versions(crate::protocol_serde::shape_os_version_list::de_os_version_list(tokens, _value)?);
+                            builder = builder.set_supported_os_versions(crate::protocol_serde::shape_os_version_list::de_os_version_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "state" => {
-                            builder = builder.set_state(crate::protocol_serde::shape_component_state::de_component_state(tokens, _value)?);
+                            builder = builder.set_state(crate::protocol_serde::shape_component_state::de_component_state(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "type" => {
                             builder = builder.set_type(
@@ -86,7 +99,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }
                         "publisher" => {
                             builder = builder.set_publisher(

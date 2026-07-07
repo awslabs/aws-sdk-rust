@@ -19,6 +19,8 @@
 ///     Runtime::Go1X => { /* ... */ },
 ///     Runtime::Java11 => { /* ... */ },
 ///     Runtime::Java17 => { /* ... */ },
+///     Runtime::Java21 => { /* ... */ },
+///     Runtime::Java25 => { /* ... */ },
 ///     Runtime::Java8 => { /* ... */ },
 ///     Runtime::Java8Al2 => { /* ... */ },
 ///     Runtime::Nodejs => { /* ... */ },
@@ -26,6 +28,7 @@
 ///     Runtime::Nodejs14X => { /* ... */ },
 ///     Runtime::Nodejs16X => { /* ... */ },
 ///     Runtime::Nodejs18X => { /* ... */ },
+///     Runtime::Nodejs22X => { /* ... */ },
 ///     Runtime::Nodejs24X => { /* ... */ },
 ///     Runtime::Python310 => { /* ... */ },
 ///     Runtime::Python311 => { /* ... */ },
@@ -78,6 +81,10 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Java17,
     #[allow(missing_docs)] // documentation missing in model
+    Java21,
+    #[allow(missing_docs)] // documentation missing in model
+    Java25,
+    #[allow(missing_docs)] // documentation missing in model
     Java8,
     #[allow(missing_docs)] // documentation missing in model
     Java8Al2,
@@ -91,6 +98,8 @@ pub enum Runtime {
     Nodejs16X,
     #[allow(missing_docs)] // documentation missing in model
     Nodejs18X,
+    #[allow(missing_docs)] // documentation missing in model
+    Nodejs22X,
     #[allow(missing_docs)] // documentation missing in model
     Nodejs24X,
     #[allow(missing_docs)] // documentation missing in model
@@ -123,6 +132,8 @@ impl ::std::convert::From<&str> for Runtime {
             "GO_1_X" => Runtime::Go1X,
             "JAVA_11" => Runtime::Java11,
             "JAVA_17" => Runtime::Java17,
+            "JAVA_21" => Runtime::Java21,
+            "JAVA_25" => Runtime::Java25,
             "JAVA_8" => Runtime::Java8,
             "JAVA_8_AL2" => Runtime::Java8Al2,
             "NODEJS" => Runtime::Nodejs,
@@ -130,6 +141,7 @@ impl ::std::convert::From<&str> for Runtime {
             "NODEJS_14_X" => Runtime::Nodejs14X,
             "NODEJS_16_X" => Runtime::Nodejs16X,
             "NODEJS_18_X" => Runtime::Nodejs18X,
+            "NODEJS_22_X" => Runtime::Nodejs22X,
             "NODEJS_24_X" => Runtime::Nodejs24X,
             "PYTHON_3_10" => Runtime::Python310,
             "PYTHON_3_11" => Runtime::Python311,
@@ -161,6 +173,8 @@ impl Runtime {
             Runtime::Go1X => "GO_1_X",
             Runtime::Java11 => "JAVA_11",
             Runtime::Java17 => "JAVA_17",
+            Runtime::Java21 => "JAVA_21",
+            Runtime::Java25 => "JAVA_25",
             Runtime::Java8 => "JAVA_8",
             Runtime::Java8Al2 => "JAVA_8_AL2",
             Runtime::Nodejs => "NODEJS",
@@ -168,6 +182,7 @@ impl Runtime {
             Runtime::Nodejs14X => "NODEJS_14_X",
             Runtime::Nodejs16X => "NODEJS_16_X",
             Runtime::Nodejs18X => "NODEJS_18_X",
+            Runtime::Nodejs22X => "NODEJS_22_X",
             Runtime::Nodejs24X => "NODEJS_24_X",
             Runtime::Python310 => "PYTHON_3_10",
             Runtime::Python311 => "PYTHON_3_11",
@@ -190,6 +205,8 @@ impl Runtime {
             "GO_1_X",
             "JAVA_11",
             "JAVA_17",
+            "JAVA_21",
+            "JAVA_25",
             "JAVA_8",
             "JAVA_8_AL2",
             "NODEJS",
@@ -197,6 +214,7 @@ impl Runtime {
             "NODEJS_14_X",
             "NODEJS_16_X",
             "NODEJS_18_X",
+            "NODEJS_22_X",
             "NODEJS_24_X",
             "PYTHON_3_10",
             "PYTHON_3_11",
@@ -236,6 +254,8 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Go1X => write!(f, "GO_1_X"),
             Runtime::Java11 => write!(f, "JAVA_11"),
             Runtime::Java17 => write!(f, "JAVA_17"),
+            Runtime::Java21 => write!(f, "JAVA_21"),
+            Runtime::Java25 => write!(f, "JAVA_25"),
             Runtime::Java8 => write!(f, "JAVA_8"),
             Runtime::Java8Al2 => write!(f, "JAVA_8_AL2"),
             Runtime::Nodejs => write!(f, "NODEJS"),
@@ -243,6 +263,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Nodejs14X => write!(f, "NODEJS_14_X"),
             Runtime::Nodejs16X => write!(f, "NODEJS_16_X"),
             Runtime::Nodejs18X => write!(f, "NODEJS_18_X"),
+            Runtime::Nodejs22X => write!(f, "NODEJS_22_X"),
             Runtime::Nodejs24X => write!(f, "NODEJS_24_X"),
             Runtime::Python310 => write!(f, "PYTHON_3_10"),
             Runtime::Python311 => write!(f, "PYTHON_3_11"),

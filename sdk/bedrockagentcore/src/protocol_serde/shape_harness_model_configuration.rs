@@ -22,6 +22,12 @@ pub fn ser_harness_model_configuration(
             crate::protocol_serde::shape_harness_gemini_model_config::ser_harness_gemini_model_config(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::HarnessModelConfiguration::LiteLlmModelConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_12.key("liteLlmModelConfig").start_object();
+            crate::protocol_serde::shape_harness_lite_llm_model_config::ser_harness_lite_llm_model_config(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::HarnessModelConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "HarnessModelConfiguration",

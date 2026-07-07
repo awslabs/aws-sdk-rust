@@ -21,6 +21,8 @@ pub struct DescribeDbEngineVersionsInput {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -44,6 +46,8 @@ pub struct DescribeDbEngineVersionsInput {
     /// <p><code>sqlserver-ex</code></p></li>
     /// <li>
     /// <p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>A specific database engine version to return details for.</p>
@@ -127,6 +131,8 @@ impl DescribeDbEngineVersionsInput {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -150,6 +156,8 @@ impl DescribeDbEngineVersionsInput {
     /// <p><code>sqlserver-ex</code></p></li>
     /// <li>
     /// <p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
     /// </ul>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
@@ -277,6 +285,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -300,6 +310,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <p><code>sqlserver-ex</code></p></li>
     /// <li>
     /// <p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
     /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -323,6 +335,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -346,6 +360,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <p><code>sqlserver-ex</code></p></li>
     /// <li>
     /// <p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
@@ -369,6 +385,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
+    /// <p><code>db2-ce</code></p></li>
+    /// <li>
     /// <p><code>db2-se</code></p></li>
     /// <li>
     /// <p><code>mariadb</code></p></li>
@@ -392,6 +410,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <p><code>sqlserver-ex</code></p></li>
     /// <li>
     /// <p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine

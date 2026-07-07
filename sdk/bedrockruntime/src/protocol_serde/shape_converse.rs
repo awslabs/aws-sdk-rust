@@ -191,43 +191,55 @@ pub(crate) fn de_converse(
 ) -> ::std::result::Result<crate::operation::converse::builders::ConverseOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "additionalModelResponseFields" => {
-                    builder = builder.set_additional_model_response_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "additionalModelResponseFields" => {
+                        builder = builder.set_additional_model_response_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                    }
+                    "metrics" => {
+                        builder = builder.set_metrics(crate::protocol_serde::shape_converse_metrics::de_converse_metrics(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "output" => {
+                        builder = builder.set_output(crate::protocol_serde::shape_converse_output::de_converse_output(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "performanceConfig" => {
+                        builder = builder.set_performance_config(
+                            crate::protocol_serde::shape_performance_configuration::de_performance_configuration(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "serviceTier" => {
+                        builder = builder.set_service_tier(crate::protocol_serde::shape_service_tier::de_service_tier(tokens, _value, depth + 1)?);
+                    }
+                    "stopReason" => {
+                        builder = builder.set_stop_reason(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::StopReason::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "trace" => {
+                        builder = builder.set_trace(crate::protocol_serde::shape_converse_trace::de_converse_trace(tokens, _value, depth + 1)?);
+                    }
+                    "usage" => {
+                        builder = builder.set_usage(crate::protocol_serde::shape_token_usage::de_token_usage(tokens, _value, depth + 1)?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "metrics" => {
-                    builder = builder.set_metrics(crate::protocol_serde::shape_converse_metrics::de_converse_metrics(tokens, _value)?);
-                }
-                "output" => {
-                    builder = builder.set_output(crate::protocol_serde::shape_converse_output::de_converse_output(tokens, _value)?);
-                }
-                "performanceConfig" => {
-                    builder = builder.set_performance_config(crate::protocol_serde::shape_performance_configuration::de_performance_configuration(
-                        tokens, _value,
-                    )?);
-                }
-                "serviceTier" => {
-                    builder = builder.set_service_tier(crate::protocol_serde::shape_service_tier::de_service_tier(tokens, _value)?);
-                }
-                "stopReason" => {
-                    builder = builder.set_stop_reason(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::StopReason::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "trace" => {
-                    builder = builder.set_trace(crate::protocol_serde::shape_converse_trace::de_converse_trace(tokens, _value)?);
-                }
-                "usage" => {
-                    builder = builder.set_usage(crate::protocol_serde::shape_token_usage::de_token_usage(tokens, _value)?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

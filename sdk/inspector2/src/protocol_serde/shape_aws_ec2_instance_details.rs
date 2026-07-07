@@ -2,10 +2,16 @@
 pub(crate) fn de_aws_ec2_instance_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AwsEc2InstanceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,12 +36,18 @@ where
                             );
                         }
                         "ipV4Addresses" => {
-                            builder =
-                                builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_address_list::de_ipv4_address_list(tokens, _value)?);
+                            builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_address_list::de_ipv4_address_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "ipV6Addresses" => {
-                            builder =
-                                builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(tokens, _value)?);
+                            builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "keyName" => {
                             builder = builder.set_key_name(

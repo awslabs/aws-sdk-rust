@@ -15,11 +15,14 @@ pub fn ser_function_code(
     if let Some(var_4) = &input.s3_object_version {
         object.key("S3ObjectVersion").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.image_uri {
-        object.key("ImageUri").string(var_5.as_str());
+    if let Some(var_5) = &input.s3_object_storage_mode {
+        object.key("S3ObjectStorageMode").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.source_kms_key_arn {
-        object.key("SourceKMSKeyArn").string(var_6.as_str());
+    if let Some(var_6) = &input.image_uri {
+        object.key("ImageUri").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.source_kms_key_arn {
+        object.key("SourceKMSKeyArn").string(var_7.as_str());
     }
     Ok(())
 }

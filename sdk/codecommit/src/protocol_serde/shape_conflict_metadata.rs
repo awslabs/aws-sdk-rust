@@ -2,10 +2,16 @@
 pub(crate) fn de_conflict_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ConflictMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,13 +29,14 @@ where
                             );
                         }
                         "fileSizes" => {
-                            builder = builder.set_file_sizes(crate::protocol_serde::shape_file_sizes::de_file_sizes(tokens, _value)?);
+                            builder = builder.set_file_sizes(crate::protocol_serde::shape_file_sizes::de_file_sizes(tokens, _value, depth + 1)?);
                         }
                         "fileModes" => {
-                            builder = builder.set_file_modes(crate::protocol_serde::shape_file_modes::de_file_modes(tokens, _value)?);
+                            builder = builder.set_file_modes(crate::protocol_serde::shape_file_modes::de_file_modes(tokens, _value, depth + 1)?);
                         }
                         "objectTypes" => {
-                            builder = builder.set_object_types(crate::protocol_serde::shape_object_types::de_object_types(tokens, _value)?);
+                            builder =
+                                builder.set_object_types(crate::protocol_serde::shape_object_types::de_object_types(tokens, _value, depth + 1)?);
                         }
                         "numberOfConflicts" => {
                             builder = builder.set_number_of_conflicts(
@@ -39,7 +46,11 @@ where
                             );
                         }
                         "isBinaryFile" => {
-                            builder = builder.set_is_binary_file(crate::protocol_serde::shape_is_binary_file::de_is_binary_file(tokens, _value)?);
+                            builder = builder.set_is_binary_file(crate::protocol_serde::shape_is_binary_file::de_is_binary_file(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "contentConflict" => {
                             builder = builder.set_content_conflict(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -51,8 +62,11 @@ where
                             builder = builder.set_object_type_conflict(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "mergeOperations" => {
-                            builder =
-                                builder.set_merge_operations(crate::protocol_serde::shape_merge_operations::de_merge_operations(tokens, _value)?);
+                            builder = builder.set_merge_operations(crate::protocol_serde::shape_merge_operations::de_merge_operations(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

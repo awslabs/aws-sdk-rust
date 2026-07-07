@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_deletion_task_failure_reason_type(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DeletionTaskFailureReasonType, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DeletionTaskFailureReasonType::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_deletion_task_failure_reason_type(
             s if s.matches("RoleUsageList") /* RoleUsageList com.amazonaws.iam#DeletionTaskFailureReasonType$RoleUsageList */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_role_usage_list_type::de_role_usage_list_type(&mut tag)
+                        crate::protocol_serde::shape_role_usage_list_type::de_role_usage_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;

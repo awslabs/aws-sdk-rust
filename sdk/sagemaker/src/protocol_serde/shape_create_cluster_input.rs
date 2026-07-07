@@ -33,50 +33,59 @@ pub fn ser_create_cluster_input_input(
         }
         array_7.finish();
     }
-    if let Some(var_10) = &input.vpc_config {
+    if let Some(var_10) = &input.restricted_instance_groups_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_11, var_10)?;
+        let mut object_11 = object.key("RestrictedInstanceGroupsConfig").start_object();
+        crate::protocol_serde::shape_cluster_restricted_instance_groups_config::ser_cluster_restricted_instance_groups_config(
+            &mut object_11,
+            var_10,
+        )?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.tags {
-        let mut array_13 = object.key("Tags").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("Tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
-    if let Some(var_16) = &input.orchestrator {
+    if let Some(var_18) = &input.orchestrator {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("Orchestrator").start_object();
-        crate::protocol_serde::shape_cluster_orchestrator::ser_cluster_orchestrator(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_19 = object.key("Orchestrator").start_object();
+        crate::protocol_serde::shape_cluster_orchestrator::ser_cluster_orchestrator(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_18) = &input.node_recovery {
-        object.key("NodeRecovery").string(var_18.as_str());
+    if let Some(var_20) = &input.node_recovery {
+        object.key("NodeRecovery").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.tiered_storage_config {
+    if let Some(var_21) = &input.tiered_storage_config {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("TieredStorageConfig").start_object();
-        crate::protocol_serde::shape_cluster_tiered_storage_config::ser_cluster_tiered_storage_config(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_22 = object.key("TieredStorageConfig").start_object();
+        crate::protocol_serde::shape_cluster_tiered_storage_config::ser_cluster_tiered_storage_config(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_21) = &input.node_provisioning_mode {
-        object.key("NodeProvisioningMode").string(var_21.as_str());
+    if let Some(var_23) = &input.node_provisioning_mode {
+        object.key("NodeProvisioningMode").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.cluster_role {
-        object.key("ClusterRole").string(var_22.as_str());
+    if let Some(var_24) = &input.cluster_role {
+        object.key("ClusterRole").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.auto_scaling {
+    if let Some(var_25) = &input.auto_scaling {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("AutoScaling").start_object();
-        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_26 = object.key("AutoScaling").start_object();
+        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_26, var_25)?;
+        object_26.finish();
     }
     Ok(())
 }

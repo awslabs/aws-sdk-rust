@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelInferencePaymentConfig {
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for model inference costs (<code>TRUE</code>) or has not configured the collaboration member to pay for model inference costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for model inference costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
-    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer. An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can query.</p>
+    /// <p>One or more members can be configured as payer candidates for model inference costs.</p>
+    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer.</p>
     pub is_responsible: bool,
 }
 impl ModelInferencePaymentConfig {
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for model inference costs (<code>TRUE</code>) or has not configured the collaboration member to pay for model inference costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for model inference costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
-    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer. An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can query.</p>
+    /// <p>One or more members can be configured as payer candidates for model inference costs.</p>
+    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer.</p>
     pub fn is_responsible(&self) -> bool {
         self.is_responsible
     }
@@ -32,23 +32,23 @@ pub struct ModelInferencePaymentConfigBuilder {
 }
 impl ModelInferencePaymentConfigBuilder {
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for model inference costs (<code>TRUE</code>) or has not configured the collaboration member to pay for model inference costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for model inference costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
-    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer. An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can query.</p>
+    /// <p>One or more members can be configured as payer candidates for model inference costs.</p>
+    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer.</p>
     /// This field is required.
     pub fn is_responsible(mut self, input: bool) -> Self {
         self.is_responsible = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for model inference costs (<code>TRUE</code>) or has not configured the collaboration member to pay for model inference costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for model inference costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
-    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer. An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can query.</p>
+    /// <p>One or more members can be configured as payer candidates for model inference costs.</p>
+    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer.</p>
     pub fn set_is_responsible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_responsible = input;
         self
     }
     /// <p>Indicates whether the collaboration creator has configured the collaboration member to pay for model inference costs (<code>TRUE</code>) or has not configured the collaboration member to pay for model inference costs (<code>FALSE</code>).</p>
-    /// <p>Exactly one member can be configured to pay for model inference costs. An error is returned if the collaboration creator sets a <code>TRUE</code> value for more than one member in the collaboration.</p>
-    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer. An error is returned if the collaboration creator sets a <code>FALSE</code> value for the member who can query.</p>
+    /// <p>One or more members can be configured as payer candidates for model inference costs.</p>
+    /// <p>If the collaboration creator hasn't specified anyone as the member paying for model inference costs, then the member who can query is the default payer.</p>
     pub fn get_is_responsible(&self) -> &::std::option::Option<bool> {
         &self.is_responsible
     }

@@ -2,10 +2,16 @@
 pub(crate) fn de_associated_access_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AssociatedAccessPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,7 +29,8 @@ where
                             );
                         }
                         "accessScope" => {
-                            builder = builder.set_access_scope(crate::protocol_serde::shape_access_scope::de_access_scope(tokens, _value)?);
+                            builder =
+                                builder.set_access_scope(crate::protocol_serde::shape_access_scope::de_access_scope(tokens, _value, depth + 1)?);
                         }
                         "associatedAt" => {
                             builder = builder.set_associated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -4,7 +4,9 @@ pub(crate) fn de_metadata_event_payload(
 ) -> ::std::result::Result<crate::types::MetadataEvent, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::protocol_serde::shape_metadata_event::de_metadata_event(tokens, _value)?
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    let result = crate::protocol_serde::shape_metadata_event::de_metadata_event(tokens, _value, depth + 1)?
         .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -17,10 +19,16 @@ pub(crate) fn de_metadata_event_payload(
 pub(crate) fn de_metadata_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MetadataEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -52,8 +60,11 @@ where
                             );
                         }
                         "sourceAttributions" => {
-                            builder = builder
-                                .set_source_attributions(crate::protocol_serde::shape_source_attributions::de_source_attributions(tokens, _value)?);
+                            builder = builder.set_source_attributions(crate::protocol_serde::shape_source_attributions::de_source_attributions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "finalTextMessage" => {
                             builder = builder.set_final_text_message(

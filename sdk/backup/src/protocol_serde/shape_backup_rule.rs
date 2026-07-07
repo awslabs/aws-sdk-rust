@@ -2,10 +2,16 @@
 pub(crate) fn de_backup_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::BackupRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -58,10 +64,10 @@ where
                             );
                         }
                         "Lifecycle" => {
-                            builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value)?);
+                            builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value, depth + 1)?);
                         }
                         "RecoveryPointTags" => {
-                            builder = builder.set_recovery_point_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_recovery_point_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "RuleId" => {
                             builder = builder.set_rule_id(
@@ -71,7 +77,8 @@ where
                             );
                         }
                         "CopyActions" => {
-                            builder = builder.set_copy_actions(crate::protocol_serde::shape_copy_actions::de_copy_actions(tokens, _value)?);
+                            builder =
+                                builder.set_copy_actions(crate::protocol_serde::shape_copy_actions::de_copy_actions(tokens, _value, depth + 1)?);
                         }
                         "EnableContinuousBackup" => {
                             builder =
@@ -85,10 +92,12 @@ where
                             );
                         }
                         "IndexActions" => {
-                            builder = builder.set_index_actions(crate::protocol_serde::shape_index_actions::de_index_actions(tokens, _value)?);
+                            builder =
+                                builder.set_index_actions(crate::protocol_serde::shape_index_actions::de_index_actions(tokens, _value, depth + 1)?);
                         }
                         "ScanActions" => {
-                            builder = builder.set_scan_actions(crate::protocol_serde::shape_scan_actions::de_scan_actions(tokens, _value)?);
+                            builder =
+                                builder.set_scan_actions(crate::protocol_serde::shape_scan_actions::de_scan_actions(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

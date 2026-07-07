@@ -24,10 +24,16 @@ pub fn ser_id_namespace_id_mapping_workflow_properties(
 pub(crate) fn de_id_namespace_id_mapping_workflow_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::IdNamespaceIdMappingWorkflowProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -46,12 +52,20 @@ where
                         }
                         "ruleBasedProperties" => {
                             builder = builder.set_rule_based_properties(
-                                crate::protocol_serde::shape_namespace_rule_based_properties::de_namespace_rule_based_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_namespace_rule_based_properties::de_namespace_rule_based_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "providerProperties" => {
                             builder = builder.set_provider_properties(
-                                crate::protocol_serde::shape_namespace_provider_properties::de_namespace_provider_properties(tokens, _value)?,
+                                crate::protocol_serde::shape_namespace_provider_properties::de_namespace_provider_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

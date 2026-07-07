@@ -165,13 +165,19 @@ pub(crate) fn de_list_collections(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CollectionIds" => {
-                    builder = builder.set_collection_ids(crate::protocol_serde::shape_collection_id_list::de_collection_id_list(tokens, _value)?);
+                    builder = builder.set_collection_ids(crate::protocol_serde::shape_collection_id_list::de_collection_id_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(
@@ -182,7 +188,9 @@ pub(crate) fn de_list_collections(
                 }
                 "FaceModelVersions" => {
                     builder = builder.set_face_model_versions(crate::protocol_serde::shape_face_model_version_list::de_face_model_version_list(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

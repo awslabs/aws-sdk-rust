@@ -3950,36 +3950,2132 @@ where
     }
 }
 
-/// The default endpoint resolver
-#[derive(Debug, Default)]
+#[derive(Debug)]
+/// The default endpoint resolver.
 pub struct DefaultResolver {
-    partition_resolver: crate::endpoint_lib::partition::PartitionResolver,
+    partition_resolver: &'static crate::endpoint_lib::partition::PartitionResolver,
+    endpoint_cache: ::arc_swap::ArcSwap<::std::option::Option<(Params, ::aws_smithy_types::endpoint::Endpoint)>>,
+}
+
+impl Default for DefaultResolver {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DefaultResolver {
-    /// Create a new endpoint resolver with default settings
+    /// Create a new DefaultResolver
     pub fn new() -> Self {
         Self {
-            partition_resolver: crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER.clone(),
+            partition_resolver: &crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER,
+            endpoint_cache: ::arc_swap::ArcSwap::from_pointee(None),
         }
     }
 
-    fn resolve_endpoint(
-        &self,
-        params: &crate::config::endpoint::Params,
+    #[allow(
+        unused_variables,
+        unused_parens,
+        clippy::double_parens,
+        clippy::useless_conversion,
+        clippy::bool_comparison,
+        clippy::comparison_to_empty,
+        clippy::needless_borrow,
+        clippy::useless_asref,
+        clippy::redundant_closure_call,
+        clippy::clone_on_copy
+    )]
+    fn resolve_endpoint<'a>(
+        &'a self,
+        params: &'a crate::config::endpoint::Params,
     ) -> ::std::result::Result<::aws_smithy_types::endpoint::Endpoint, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        Ok(
-            crate::config::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
-                .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))?,
-        )
+        let mut _diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
+        #[allow(unused_mut)]
+        let mut context = ConditionContext::default();
+
+        // Param bindings
+        let region = &params.region;
+        let use_dual_stack = &params.use_dual_stack;
+        let use_fips = &params.use_fips;
+        let endpoint = &params.endpoint;
+        let stream_id = &params.stream_id;
+        let stream_arn = &params.stream_arn;
+        let operation_type = &params.operation_type;
+        let consumer_arn = &params.consumer_arn;
+        let resource_arn = &params.resource_arn;
+
+        let mut current_ref: i32 = 2;
+        loop {
+            match current_ref {
+                ref_val if ref_val >= 100_000_000 => {
+                    return match (ref_val - 100_000_000) as usize {
+                        0 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        1 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let https_custom_endpoint_suffix_value = context
+                                .https_custom_endpoint_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&https_custom_endpoint_suffix_value.as_ref());
+                                        out.push_str("-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        2 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "DualStack is enabled, but this partition does not support DualStack.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        3 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "FIPS is enabled, but this partition does not support FIPS.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        4 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let https_custom_endpoint_suffix_value = context
+                                .https_custom_endpoint_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&https_custom_endpoint_suffix_value.as_ref());
+                                        out.push_str("-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        5 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "FIPS is enabled but this partition does not support FIPS".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        6 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let https_custom_endpoint_suffix_value = context
+                                .https_custom_endpoint_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&https_custom_endpoint_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        7 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "DualStack is enabled but this partition does not support DualStack".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        8 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let https_custom_endpoint_suffix_value = context
+                                .https_custom_endpoint_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&https_custom_endpoint_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        9 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let plain_custom_endpoint_suffix_value = context
+                                .plain_custom_endpoint_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&plain_custom_endpoint_suffix_value.as_ref());
+                                        out.push_str("-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        10 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let plain_custom_endpoint_suffix_value = context
+                                .plain_custom_endpoint_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&plain_custom_endpoint_suffix_value.as_ref());
+                                        out.push_str("-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        11 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let plain_custom_endpoint_suffix_value = context
+                                .plain_custom_endpoint_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&plain_custom_endpoint_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        12 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let plain_custom_endpoint_suffix_value = context
+                                .plain_custom_endpoint_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&plain_custom_endpoint_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        13 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        14 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        15 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        16 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_suffix_value = context
+                                .stream_id_suffix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            let stream_id_prefix_value = context
+                                .stream_id_prefix_value
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_prefix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&stream_id_suffix_value.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        17 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Operation Type is not set. Please contact service team for resolution.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        18 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_3.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        19 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_3.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        20 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_3.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        21 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_3.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        22 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Partition: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_3.partition());
+                                out.push_str(" from ARN doesn't match with partition name: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push('.');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        23 => {
+                            let arn_type_ssa_1 = context.arn_type_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: Kinesis ARNs don't support `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_type_ssa_1.as_ref());
+                                out.push_str("` arn types.");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        24 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: No ARN type specified".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        25 => {
+                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_3.service());
+                                out.push('.');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        26 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: Invalid region.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        27 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: Invalid account id.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        28 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: Failed to parse ARN.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        29 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_1 = context.arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_1.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        30 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_1 = context.arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_1.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        31 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_1 = context.arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_1.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        32 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_1 = context.arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_1.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        33 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_1 = context.arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Partition: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_1.partition());
+                                out.push_str(" from ARN doesn't match with partition name: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push('.');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        34 => {
+                            let arn_type_ssa_2 = context.arn_type_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: Kinesis ARNs don't support `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_type_ssa_2.as_ref());
+                                out.push_str("` arn types.");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        35 => {
+                            let arn_ssa_1 = context.arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_1.service());
+                                out.push('.');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        36 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_2 = context.arn_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_2.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        37 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_2 = context.arn_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_2.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        38 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_2 = context.arn_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_2.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        39 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_2 = context.arn_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_ssa_2.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        40 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_2 = context.arn_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Partition: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_2.partition());
+                                out.push_str(" from ARN doesn't match with partition name: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push('.');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        41 => {
+                            let arn_type_ssa_3 = context.arn_type_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: Kinesis ARNs don't support `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_type_ssa_3.as_ref());
+                                out.push_str("` arn types.");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        42 => {
+                            let arn_ssa_2 = context.arn_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_2.service());
+                                out.push('.');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        43 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        44 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: Dualstack and custom endpoint are not supported".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        45 => {
+                            let endpoint = params.endpoint.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url(endpoint.to_owned()).build())
+                        }
+                        46 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        47 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "FIPS and DualStack are enabled, but this partition does not support one or both".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        48 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".amazonaws.com");
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        49 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        50 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        51 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        52 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: Missing Region".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                    };
+                }
+                1 | -1 => {
+                    return ::std::result::Result::Err(
+                        Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("No endpoint rule matched"))
+                            as ::aws_smithy_runtime_api::box_error::BoxError,
+                    )
+                }
+                ref_val => {
+                    let is_complement = ref_val < 0;
+                    let node = &NODES[(ref_val.unsigned_abs() as usize) - 1];
+                    let condition_result = match node.condition_index {
+                        0 => region.is_some(),
+                        1 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &mut context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *partition_result = partition_resolver
+                                    .resolve_partition(if let Some(param) = region { param } else { return false }, _diagnostic_collector)
+                                    .map(|inner| inner.into());
+                                partition_result.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        2 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-iso-b")
+                        })(&mut _diagnostic_collector),
+                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-iso")
+                        })(&mut _diagnostic_collector),
+                        4 => stream_id.is_some(),
+                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let stream_id_suffix_value = &mut context.stream_id_suffix_value;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *stream_id_suffix_value = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = stream_id { param } else { return false },
+                                    21,
+                                    24,
+                                    false,
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                stream_id_suffix_value.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        6 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let stream_id_prefix_value = &mut context.stream_id_prefix_value;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *stream_id_prefix_value = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = stream_id { param } else { return false },
+                                    0,
+                                    20,
+                                    false,
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                stream_id_prefix_value.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = stream_id { param } else { return false },
+                                    20,
+                                    21,
+                                    false,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("-")
+                        })(&mut _diagnostic_collector),
+                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = stream_id { param } else { return false },
+                                    3,
+                                    4,
+                                    true,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("-")
+                        })(&mut _diagnostic_collector),
+                        9 => endpoint.is_some(),
+                        10 => stream_arn.is_some(),
+                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_3 = &mut context.arn_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_ssa_3 = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = stream_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                arn_ssa_3.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        12 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_3 = &context.arn_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_3 { inner.account_id() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_3 = &context.arn_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_3 { inner.region() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let https_custom_endpoint_suffix_value = &mut context.https_custom_endpoint_suffix_value;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *https_custom_endpoint_suffix_value = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    15,
+                                    20,
+                                    false,
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                https_custom_endpoint_suffix_value.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        15 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    20,
+                                    21,
+                                    false,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == (".")
+                        })(&mut _diagnostic_collector),
+                        16 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    15,
+                                    16,
+                                    false,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("-")
+                        })(&mut _diagnostic_collector),
+                        17 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let plain_custom_endpoint_suffix_value = &mut context.plain_custom_endpoint_suffix_value;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *plain_custom_endpoint_suffix_value = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    7,
+                                    12,
+                                    false,
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                plain_custom_endpoint_suffix_value.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        18 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_3 = &context.arn_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_ssa_3 { inner.service() } else { return false }) == ("kinesis")
+                        })(&mut _diagnostic_collector),
+                        19 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_3 = &context.arn_ssa_3;
+                            let arn_type_ssa_1 = &mut context.arn_type_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_type_ssa_1 = if let Some(inner) = arn_ssa_3 {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                arn_type_ssa_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        20 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_1 = &context.arn_type_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_1) == &mut Some(("".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        21 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_1 = &context.arn_type_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_1) == &mut Some(("stream".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        22 => consumer_arn.is_some(),
+                        23 => resource_arn.is_some(),
+                        24 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &mut context.arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_ssa_2 = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = resource_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                arn_ssa_2.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        25 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_2 { inner.account_id() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        26 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_2 { inner.region() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        27 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_ssa_2 { inner.service() } else { return false }) == ("kinesis")
+                        })(&mut _diagnostic_collector),
+                        28 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let arn_type_ssa_3 = &mut context.arn_type_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_type_ssa_3 = if let Some(inner) = arn_ssa_2 {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                arn_type_ssa_3.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        29 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_3) == &mut Some(("".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        30 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_3) == &mut Some(("stream".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        31 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = arn_ssa_2 { inner.partition() } else { return false })
+                        })(&mut _diagnostic_collector),
+                        32 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_1 = &mut context.arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_ssa_1 = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = consumer_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                arn_ssa_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        33 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_1 = &context.arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_1 { inner.account_id() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        34 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_1 = &context.arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_1 { inner.region() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        35 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_1 = &context.arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_ssa_1 { inner.service() } else { return false }) == ("kinesis")
+                        })(&mut _diagnostic_collector),
+                        36 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_1 = &context.arn_ssa_1;
+                            let arn_type_ssa_2 = &mut context.arn_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_type_ssa_2 = if let Some(inner) = arn_ssa_1 {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                arn_type_ssa_2.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        37 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_2 = &context.arn_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_2) == &mut Some(("".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        38 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_2 = &context.arn_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_2) == &mut Some(("stream".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        39 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_ssa_1 = &context.arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = arn_ssa_1 { inner.partition() } else { return false })
+                        })(&mut _diagnostic_collector),
+                        40 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_ssa_3 = &context.arn_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = arn_ssa_3 { inner.partition() } else { return false })
+                        })(&mut _diagnostic_collector),
+                        41 => operation_type.is_some(),
+                        42 => (use_fips) == (&true),
+                        43 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_fips()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        44 => (use_dual_stack) == (&true),
+                        45 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_dual_stack()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        46 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-us-gov")
+                        })(&mut _diagnostic_collector),
+                        47 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    7,
+                                    8,
+                                    false,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("-")
+                        })(&mut _diagnostic_collector),
+                        48 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    12,
+                                    13,
+                                    false,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == (".")
+                        })(&mut _diagnostic_collector),
+                        _ => unreachable!("Invalid condition index"),
+                    };
+                    current_ref = if is_complement ^ condition_result { node.high_ref } else { node.low_ref };
+                }
+            }
+        }
     }
 }
 
 impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
-    fn resolve_endpoint(&self, params: &crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'_> {
-        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(self.resolve_endpoint(params))
+    fn resolve_endpoint<'a>(&'a self, params: &'a crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'a> {
+        // Check single-entry cache (lock-free read via ArcSwap)
+        let cached = self.endpoint_cache.load();
+        if let Some((cached_params, cached_endpoint)) = cached.as_ref() {
+            if cached_params == params {
+                return ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(::std::result::Result::Ok(cached_endpoint.clone()));
+            }
+        }
+        drop(cached);
+        let result = self.resolve_endpoint(params);
+        if let ::std::result::Result::Ok(ref endpoint) = result {
+            self.endpoint_cache.store(::std::sync::Arc::new(Some((params.clone(), endpoint.clone()))));
+        }
+        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
+}
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 106] = [
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: -1,
+        high_ref: 1,
+        low_ref: -1,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 0,
+        high_ref: 3,
+        low_ref: 4,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 1,
+        high_ref: 5,
+        low_ref: 4,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 105,
+        low_ref: 100000052,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 96,
+        low_ref: 6,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 96,
+        low_ref: 7,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 8,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 9,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 10,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 11,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 61,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 105,
+        low_ref: 13,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 46,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 31,
+        low_ref: 15,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 16,
+        low_ref: 97,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 17,
+        low_ref: 100000028,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 18,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 19,
+        low_ref: 100000026,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 20,
+        low_ref: 100000042,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 21,
+        low_ref: 100000024,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 29,
+        high_ref: 100000024,
+        low_ref: 22,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 23,
+        low_ref: 100000041,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 24,
+        low_ref: 100000040,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 25,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 28,
+        low_ref: 26,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 27,
+        low_ref: 100000039,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000038,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 29,
+        low_ref: 93,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 30,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000036,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 32,
+        low_ref: 100000028,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 33,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 34,
+        low_ref: 100000026,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 35,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 36,
+        high_ref: 36,
+        low_ref: 100000024,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000024,
+        low_ref: 37,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 38,
+        high_ref: 38,
+        low_ref: 100000034,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 39,
+        low_ref: 100000033,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 40,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 43,
+        low_ref: 41,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 42,
+        low_ref: 100000032,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000031,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 44,
+        low_ref: 93,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 45,
+        low_ref: 100000030,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000029,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 47,
+        low_ref: 100000028,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 48,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 49,
+        low_ref: 100000026,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 18,
+        high_ref: 50,
+        low_ref: 100000025,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 19,
+        high_ref: 51,
+        low_ref: 100000024,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000024,
+        low_ref: 52,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 53,
+        low_ref: 100000023,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 54,
+        low_ref: 100000022,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 55,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 58,
+        low_ref: 56,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 57,
+        low_ref: 100000021,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000020,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 59,
+        low_ref: 93,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 60,
+        low_ref: 100000019,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000018,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 62,
+        low_ref: 66,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 63,
+        low_ref: 65,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 64,
+        low_ref: 65,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 88,
+        low_ref: 65,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 17,
+        high_ref: 73,
+        low_ref: 66,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 67,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 70,
+        low_ref: 68,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 69,
+        low_ref: 100000016,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000015,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 71,
+        low_ref: 93,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 72,
+        low_ref: 100000014,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000013,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 74,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 81,
+        low_ref: 75,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 78,
+        low_ref: 76,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 77,
+        low_ref: 100000016,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 100000012,
+        low_ref: 100000016,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 79,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 80,
+        low_ref: 100000015,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 100000011,
+        low_ref: 100000015,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 82,
+        low_ref: 93,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 85,
+        low_ref: 83,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 84,
+        low_ref: 100000014,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 100000010,
+        low_ref: 100000014,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 86,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 87,
+        low_ref: 100000013,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 100000009,
+        low_ref: 100000013,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 89,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 92,
+        low_ref: 90,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 91,
+        low_ref: 100000008,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000006,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 94,
+        low_ref: 93,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 100000003,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 95,
+        low_ref: 100000004,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000001,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 105,
+        low_ref: 97,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 100,
+        low_ref: 98,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 99,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000050,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 102,
+        low_ref: 101,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 100000047,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 104,
+        low_ref: 103,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 100000048,
+        low_ref: 100000049,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 100000046,
+        low_ref: 100000047,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 100000043,
+        low_ref: 106,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 100000044,
+        low_ref: 100000045,
+    },
+];
+// These are all optional since they are set by conditions and will
+// all be unset when we start evaluation
+#[derive(Default)]
+#[allow(unused_lifetimes)]
+pub(crate) struct ConditionContext<'a> {
+    pub(crate) partition_result: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    pub(crate) stream_id_suffix_value: Option<::std::string::String>,
+    pub(crate) stream_id_prefix_value: Option<::std::string::String>,
+    pub(crate) arn_ssa_3: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) https_custom_endpoint_suffix_value: Option<::std::string::String>,
+    pub(crate) plain_custom_endpoint_suffix_value: Option<::std::string::String>,
+    pub(crate) arn_type_ssa_1: ::std::option::Option<::std::string::String>,
+    pub(crate) arn_ssa_2: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) arn_type_ssa_3: ::std::option::Option<::std::string::String>,
+    pub(crate) arn_ssa_1: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) arn_type_ssa_2: ::std::option::Option<::std::string::String>,
+    // Sometimes none of the members reference the lifetime, this makes it still valid
+    phantom: std::marker::PhantomData<&'a ()>,
 }
 
 #[non_exhaustive]
@@ -4280,5 +6376,3 @@ impl std::fmt::Display for InvalidParams {
 }
 
 impl std::error::Error for InvalidParams {}
-
-mod internals;

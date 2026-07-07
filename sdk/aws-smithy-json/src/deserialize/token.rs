@@ -358,21 +358,36 @@ pub fn skip_to_end<'a>(
     skip_inner(1, tokens)
 }
 
+/// Maximum nesting depth allowed while skipping a JSON value.
+const MAX_SKIP_DEPTH: usize = 512;
+
 fn skip_inner<'a>(
-    depth: isize,
+    initial_depth: usize,
     tokens: &mut impl Iterator<Item = Result<Token<'a>, Error>>,
 ) -> Result<(), Error> {
+    let mut depth = initial_depth;
     loop {
         match tokens.next().transpose()? {
             Some(Token::StartObject { .. }) | Some(Token::StartArray { .. }) => {
-                skip_inner(depth + 1, tokens)?;
-                if depth == 0 {
-                    break;
+                depth = depth.checked_add(1).ok_or_else(|| {
+                    Error::custom("exceeded max recursion depth while skipping value")
+                })?;
+                if depth > MAX_SKIP_DEPTH {
+                    return Err(Error::custom(
+                        "exceeded max recursion depth while skipping value",
+                    ));
                 }
             }
             Some(Token::EndObject { .. }) | Some(Token::EndArray { .. }) => {
                 debug_assert!(depth > 0);
-                break;
+                // The token iterator validates matching braces, so reaching
+                // this branch with depth == 0 indicates a bug upstream rather
+                // than untrusted input. Saturate to avoid underflow in
+                // release builds.
+                depth = depth.saturating_sub(1);
+                if depth == 0 {
+                    break;
+                }
             }
             Some(Token::ValueNull { .. })
             | Some(Token::ValueBool { .. })
@@ -383,7 +398,7 @@ fn skip_inner<'a>(
                 }
             }
             Some(Token::ObjectKey { .. }) => {}
-            _ => return Err(Error::custom("expected value")),
+            None => return Err(Error::custom("expected value")),
         }
     }
     Ok(())
@@ -559,6 +574,87 @@ pub mod test {
             tokens.next(),
             Some(Ok(Token::ValueBool { value: true, .. }))
         ))
+    }
+
+    /// Regression test for unbounded recursion in `skip_inner`.
+    ///
+    /// The previous implementation recursed once per nested container. A payload
+    /// consisting of hundreds of thousands of `[` characters therefore recursed
+    /// deeply enough to overflow the default thread stack. With the iterative
+    /// implementation we instead return a bounded depth-limit error.
+    #[test]
+    fn skip_deeply_nested_returns_depth_error() {
+        // Far deeper than MAX_SKIP_DEPTH, and far deeper than a typical
+        // thread stack can tolerate with a recursive implementation
+        // (~8 bytes per recursion would blow 8 MiB at ~1M frames, and the
+        // real frame cost is much larger than that in debug builds).
+        let depth = 200_000;
+        let mut payload = Vec::with_capacity(depth * 2);
+        payload.extend(std::iter::repeat_n(b'[', depth));
+        payload.extend(std::iter::repeat_n(b']', depth));
+
+        let mut tokens = json_token_iter(&payload);
+        let err = skip_value(&mut tokens).expect_err("should hit the depth limit");
+        match err.kind {
+            ErrorKind::Custom { message, .. } => {
+                assert!(
+                    message.contains("exceeded max recursion depth"),
+                    "unexpected error message: {message}"
+                );
+            }
+            other => panic!("expected Custom depth-limit error, got {other:?}"),
+        }
+    }
+
+    /// The same scenario as [`skip_deeply_nested_returns_depth_error`], but run
+    /// on a thread with a very small stack. The previous recursive
+    /// implementation would stack-overflow here (aborting the process).
+    /// The iterative implementation uses O(1) stack so this completes with a
+    /// normal error return value.
+    #[test]
+    fn skip_deeply_nested_does_not_overflow_stack() {
+        // 256 KiB — too small for hundreds of thousands of recursive frames,
+        // plenty for the iterative implementation.
+        const SMALL_STACK: usize = 256 * 1024;
+
+        let handle = std::thread::Builder::new()
+            .stack_size(SMALL_STACK)
+            .spawn(|| {
+                let depth = 200_000;
+                let mut payload = Vec::with_capacity(depth * 2);
+                payload.extend(std::iter::repeat_n(b'[', depth));
+                payload.extend(std::iter::repeat_n(b']', depth));
+
+                let mut tokens = json_token_iter(&payload);
+                // We don't care about the exact result here (it will be a
+                // depth-limit error); we only care that the thread returns
+                // rather than aborting the process via stack overflow.
+                let _ = skip_value(&mut tokens);
+            })
+            .expect("failed to spawn small-stack thread");
+
+        handle
+            .join()
+            .expect("skip_value overflowed a 256KiB stack — recursion is unbounded");
+    }
+
+    /// Nesting below the depth limit should still succeed, demonstrating that
+    /// the iterative implementation preserves the happy path behaviour.
+    #[test]
+    fn skip_modestly_nested_still_works() {
+        // Below MAX_SKIP_DEPTH (256).
+        let depth = 100;
+        let mut payload = Vec::with_capacity(depth * 2 + 5);
+        payload.extend(std::iter::repeat_n(b'[', depth));
+        payload.extend(std::iter::repeat_n(b']', depth));
+        payload.extend_from_slice(b" true");
+
+        let mut tokens = json_token_iter(&payload);
+        skip_value(&mut tokens).expect("nesting below limit should parse");
+        assert!(matches!(
+            tokens.next(),
+            Some(Ok(Token::ValueBool { value: true, .. }))
+        ));
     }
 
     #[test]

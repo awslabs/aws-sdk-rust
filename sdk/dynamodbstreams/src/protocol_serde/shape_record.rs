@@ -2,10 +2,16 @@
 pub(crate) fn de_record<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Record>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -51,10 +57,10 @@ where
                             );
                         }
                         "dynamodb" => {
-                            builder = builder.set_dynamodb(crate::protocol_serde::shape_stream_record::de_stream_record(tokens, _value)?);
+                            builder = builder.set_dynamodb(crate::protocol_serde::shape_stream_record::de_stream_record(tokens, _value, depth + 1)?);
                         }
                         "userIdentity" => {
-                            builder = builder.set_user_identity(crate::protocol_serde::shape_identity::de_identity(tokens, _value)?);
+                            builder = builder.set_user_identity(crate::protocol_serde::shape_identity::de_identity(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

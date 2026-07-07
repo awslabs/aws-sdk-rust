@@ -30,10 +30,16 @@ pub fn ser_git_pull_request_filter(
 pub(crate) fn de_git_pull_request_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::GitPullRequestFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,17 +51,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "events" => {
                             builder = builder.set_events(
-                                crate::protocol_serde::shape_git_pull_request_event_type_list::de_git_pull_request_event_type_list(tokens, _value)?,
+                                crate::protocol_serde::shape_git_pull_request_event_type_list::de_git_pull_request_event_type_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "branches" => {
                             builder = builder.set_branches(crate::protocol_serde::shape_git_branch_filter_criteria::de_git_branch_filter_criteria(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "filePaths" => {
                             builder = builder.set_file_paths(
-                                crate::protocol_serde::shape_git_file_path_filter_criteria::de_git_file_path_filter_criteria(tokens, _value)?,
+                                crate::protocol_serde::shape_git_file_path_filter_criteria::de_git_file_path_filter_criteria(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

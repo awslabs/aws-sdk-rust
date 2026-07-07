@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArtifactInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact to retrieve.</p>
     pub artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl GetArtifactInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact to retrieve.</p>
     pub fn artifact_id(&self) -> ::std::option::Option<&str> {
         self.artifact_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetArtifactInputBuilder {
     pub(crate) artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl GetArtifactInputBuilder {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     /// This field is required.
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_space_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_space_id = input;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact to retrieve.</p>
     /// This field is required.
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact to retrieve.</p>
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_id = input;
         self
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact to retrieve.</p>
     pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.artifact_id
     }

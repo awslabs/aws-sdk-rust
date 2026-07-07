@@ -20,7 +20,11 @@ pub fn ser_origin_request_policy_cookies_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_origin_request_policy_cookies_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::OriginRequestPolicyCookiesConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginRequestPolicyCookiesConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -42,7 +46,7 @@ pub fn de_origin_request_policy_cookies_config(
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#OriginRequestPolicyCookiesConfig$Cookies */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_cookie_names::de_cookie_names(&mut tag)
+                        crate::protocol_serde::shape_cookie_names::de_cookie_names(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_kg_key_pair_ids(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::KgKeyPairIds, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::KgKeyPairIds::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -23,7 +27,7 @@ pub fn de_kg_key_pair_ids(
             s if s.matches("KeyPairIds") /* KeyPairIds com.amazonaws.cloudfront#KGKeyPairIds$KeyPairIds */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_key_pair_ids::de_key_pair_ids(&mut tag)
+                        crate::protocol_serde::shape_key_pair_ids::de_key_pair_ids(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -16,6 +16,9 @@ pub mod associate_subnets;
 /// Types for the `AttachRuleGroupsToProxyConfiguration` operation.
 pub mod attach_rule_groups_to_proxy_configuration;
 
+/// Types for the `CreateContainerAssociation` operation.
+pub mod create_container_association;
+
 /// Types for the `CreateFirewall` operation.
 pub mod create_firewall;
 
@@ -42,6 +45,9 @@ pub mod create_tls_inspection_configuration;
 
 /// Types for the `CreateVpcEndpointAssociation` operation.
 pub mod create_vpc_endpoint_association;
+
+/// Types for the `DeleteContainerAssociation` operation.
+pub mod delete_container_association;
 
 /// Types for the `DeleteFirewall` operation.
 pub mod delete_firewall;
@@ -75,6 +81,9 @@ pub mod delete_tls_inspection_configuration;
 
 /// Types for the `DeleteVpcEndpointAssociation` operation.
 pub mod delete_vpc_endpoint_association;
+
+/// Types for the `DescribeContainerAssociation` operation.
+pub mod describe_container_association;
 
 /// Types for the `DescribeFirewall` operation.
 pub mod describe_firewall;
@@ -136,6 +145,9 @@ pub mod get_analysis_report_results;
 /// Types for the `ListAnalysisReports` operation.
 pub mod list_analysis_reports;
 
+/// Types for the `ListContainerAssociations` operation.
+pub mod list_container_associations;
+
 /// Types for the `ListFirewallPolicies` operation.
 pub mod list_firewall_policies;
 
@@ -192,6 +204,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAvailabilityZoneChangeProtection` operation.
 pub mod update_availability_zone_change_protection;
+
+/// Types for the `UpdateContainerAssociation` operation.
+pub mod update_container_association;
 
 /// Types for the `UpdateFirewallAnalysisSettings` operation.
 pub mod update_firewall_analysis_settings;

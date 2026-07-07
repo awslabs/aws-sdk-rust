@@ -108,10 +108,16 @@ pub fn ser_lo_ra_wan_device_profile(
 pub(crate) fn de_lo_ra_wan_device_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::LoRaWanDeviceProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -206,7 +212,7 @@ where
                         }
                         "FactoryPresetFreqsList" => {
                             builder = builder.set_factory_preset_freqs_list(
-                                crate::protocol_serde::shape_factory_preset_freqs_list::de_factory_preset_freqs_list(tokens, _value)?,
+                                crate::protocol_serde::shape_factory_preset_freqs_list::de_factory_preset_freqs_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "MaxEirp" => {

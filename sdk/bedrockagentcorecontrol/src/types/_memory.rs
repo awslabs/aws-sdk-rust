@@ -28,8 +28,12 @@ pub struct Memory {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The list of memory strategies associated with this memory.</p>
     pub strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategy>>,
+    /// <p>The indexed metadata keys for this memory. Only indexed keys can be used in metadata filters.</p>
+    pub indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
+    /// ARN of the resource managing this memory (e.g. a harness). When set, strategy modifications and deletion are only allowed through the managing resource.
+    pub managed_by_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl Memory {
     /// <p>The Amazon Resource Name (ARN) of the memory.</p>
@@ -85,9 +89,19 @@ impl Memory {
     pub fn strategies(&self) -> &[crate::types::MemoryStrategy] {
         self.strategies.as_deref().unwrap_or_default()
     }
+    /// <p>The indexed metadata keys for this memory. Only indexed keys can be used in metadata filters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.indexed_keys.is_none()`.
+    pub fn indexed_keys(&self) -> &[crate::types::IndexedKey] {
+        self.indexed_keys.as_deref().unwrap_or_default()
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(&self) -> ::std::option::Option<&crate::types::StreamDeliveryResources> {
         self.stream_delivery_resources.as_ref()
+    }
+    /// ARN of the resource managing this memory (e.g. a harness). When set, strategy modifications and deletion are only allowed through the managing resource.
+    pub fn managed_by_resource_arn(&self) -> ::std::option::Option<&str> {
+        self.managed_by_resource_arn.as_deref()
     }
 }
 impl ::std::fmt::Debug for Memory {
@@ -105,7 +119,9 @@ impl ::std::fmt::Debug for Memory {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("strategies", &self.strategies);
+        formatter.field("indexed_keys", &self.indexed_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
+        formatter.field("managed_by_resource_arn", &self.managed_by_resource_arn);
         formatter.finish()
     }
 }
@@ -132,7 +148,9 @@ pub struct MemoryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategy>>,
+    pub(crate) indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
     pub(crate) stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
+    pub(crate) managed_by_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemoryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the memory.</p>
@@ -316,6 +334,26 @@ impl MemoryBuilder {
     pub fn get_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategy>> {
         &self.strategies
     }
+    /// Appends an item to `indexed_keys`.
+    ///
+    /// To override the contents of this collection use [`set_indexed_keys`](Self::set_indexed_keys).
+    ///
+    /// <p>The indexed metadata keys for this memory. Only indexed keys can be used in metadata filters.</p>
+    pub fn indexed_keys(mut self, input: crate::types::IndexedKey) -> Self {
+        let mut v = self.indexed_keys.unwrap_or_default();
+        v.push(input);
+        self.indexed_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The indexed metadata keys for this memory. Only indexed keys can be used in metadata filters.</p>
+    pub fn set_indexed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>) -> Self {
+        self.indexed_keys = input;
+        self
+    }
+    /// <p>The indexed metadata keys for this memory. Only indexed keys can be used in metadata filters.</p>
+    pub fn get_indexed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>> {
+        &self.indexed_keys
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
         self.stream_delivery_resources = ::std::option::Option::Some(input);
@@ -329,6 +367,20 @@ impl MemoryBuilder {
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn get_stream_delivery_resources(&self) -> &::std::option::Option<crate::types::StreamDeliveryResources> {
         &self.stream_delivery_resources
+    }
+    /// ARN of the resource managing this memory (e.g. a harness). When set, strategy modifications and deletion are only allowed through the managing resource.
+    pub fn managed_by_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_by_resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// ARN of the resource managing this memory (e.g. a harness). When set, strategy modifications and deletion are only allowed through the managing resource.
+    pub fn set_managed_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_by_resource_arn = input;
+        self
+    }
+    /// ARN of the resource managing this memory (e.g. a harness). When set, strategy modifications and deletion are only allowed through the managing resource.
+    pub fn get_managed_by_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by_resource_arn
     }
     /// Consumes the builder and constructs a [`Memory`](crate::types::Memory).
     /// This method will fail if any of the following fields are not set:
@@ -385,7 +437,9 @@ impl MemoryBuilder {
                 )
             })?,
             strategies: self.strategies,
+            indexed_keys: self.indexed_keys,
             stream_delivery_resources: self.stream_delivery_resources,
+            managed_by_resource_arn: self.managed_by_resource_arn,
         })
     }
 }
@@ -404,7 +458,9 @@ impl ::std::fmt::Debug for MemoryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("strategies", &self.strategies);
+        formatter.field("indexed_keys", &self.indexed_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
+        formatter.field("managed_by_resource_arn", &self.managed_by_resource_arn);
         formatter.finish()
     }
 }

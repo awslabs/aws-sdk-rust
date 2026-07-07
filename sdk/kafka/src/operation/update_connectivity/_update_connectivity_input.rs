@@ -10,6 +10,8 @@ pub struct UpdateConnectivityInput {
     pub connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
+    /// <p>Access control settings for zookeeper</p>
+    pub zookeeper_access: ::std::option::Option<crate::types::ZookeeperAccess>,
 }
 impl UpdateConnectivityInput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
@@ -23,6 +25,10 @@ impl UpdateConnectivityInput {
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn current_version(&self) -> ::std::option::Option<&str> {
         self.current_version.as_deref()
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn zookeeper_access(&self) -> ::std::option::Option<&crate::types::ZookeeperAccess> {
+        self.zookeeper_access.as_ref()
     }
 }
 impl UpdateConnectivityInput {
@@ -39,6 +45,7 @@ pub struct UpdateConnectivityInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
+    pub(crate) zookeeper_access: ::std::option::Option<crate::types::ZookeeperAccess>,
 }
 impl UpdateConnectivityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
@@ -57,7 +64,6 @@ impl UpdateConnectivityInputBuilder {
         &self.cluster_arn
     }
     /// <p>Information about the broker access configuration.</p>
-    /// This field is required.
     pub fn connectivity_info(mut self, input: crate::types::ConnectivityInfo) -> Self {
         self.connectivity_info = ::std::option::Option::Some(input);
         self
@@ -86,6 +92,20 @@ impl UpdateConnectivityInputBuilder {
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_version
     }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn zookeeper_access(mut self, input: crate::types::ZookeeperAccess) -> Self {
+        self.zookeeper_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn set_zookeeper_access(mut self, input: ::std::option::Option<crate::types::ZookeeperAccess>) -> Self {
+        self.zookeeper_access = input;
+        self
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn get_zookeeper_access(&self) -> &::std::option::Option<crate::types::ZookeeperAccess> {
+        &self.zookeeper_access
+    }
     /// Consumes the builder and constructs a [`UpdateConnectivityInput`](crate::operation::update_connectivity::UpdateConnectivityInput).
     pub fn build(
         self,
@@ -94,6 +114,7 @@ impl UpdateConnectivityInputBuilder {
             cluster_arn: self.cluster_arn,
             connectivity_info: self.connectivity_info,
             current_version: self.current_version,
+            zookeeper_access: self.zookeeper_access,
         })
     }
 }

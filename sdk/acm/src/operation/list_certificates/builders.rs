@@ -22,7 +22,9 @@ impl crate::operation::list_certificates::builders::ListCertificatesInputBuilder
 }
 /// Fluent builder constructing a request to `ListCertificates`.
 ///
-/// <p>Retrieves a list of certificate ARNs and domain names. You can request that only certificates that match a specific status be listed. You can also filter by specific attributes of the certificate. Default filtering returns only <code>RSA_2048</code> certificates. For more information, see <code>Filters</code>.</p>
+/// <p>Retrieves a list of certificate ARNs and domain names. You can request that only certificates that match a specific status be listed. You can also filter by specific attributes of the certificate. Default filtering returns only <code>RSA_2048</code> certificates. For more information, see <code>Filters</code>.</p><note>
+/// <p>By default, this action does not return certificates with a <code>CertificateKeyPairOrigin</code> of <code>ACME</code>. To include ACME certificates, specify <code>ACME</code> in the <code>CertificateKeyPairOrigins</code> filter.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCertificatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -132,6 +134,25 @@ impl ListCertificatesFluentBuilder {
     /// <p>Filter the certificate list by status value.</p>
     pub fn get_certificate_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
         self.inner.get_certificate_statuses()
+    }
+    ///
+    /// Appends an item to `CertificateKeyPairOrigins`.
+    ///
+    /// To override the contents of this collection use [`set_certificate_key_pair_origins`](Self::set_certificate_key_pair_origins).
+    ///
+    /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
+    pub fn certificate_key_pair_origins(mut self, input: crate::types::CertificateKeyPairOrigin) -> Self {
+        self.inner = self.inner.certificate_key_pair_origins(input);
+        self
+    }
+    /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
+    pub fn set_certificate_key_pair_origins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>>) -> Self {
+        self.inner = self.inner.set_certificate_key_pair_origins(input);
+        self
+    }
+    /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
+    pub fn get_certificate_key_pair_origins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>> {
+        self.inner.get_certificate_key_pair_origins()
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn includes(mut self, input: crate::types::Filters) -> Self {

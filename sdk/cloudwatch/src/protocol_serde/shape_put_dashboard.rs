@@ -98,16 +98,17 @@ pub(crate) fn de_put_dashboard(
     value: &[u8],
     mut builder: crate::operation::put_dashboard::builders::PutDashboardOutputBuilder,
 ) -> ::std::result::Result<crate::operation::put_dashboard::builders::PutDashboardOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
-    #[allow(clippy::match_single_binding)]
+    #[allow(clippy::match_single_binding, unused_variables)]
     fn pair(
         mut builder: crate::operation::put_dashboard::builders::PutDashboardOutputBuilder,
         decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
     ) -> ::std::result::Result<crate::operation::put_dashboard::builders::PutDashboardOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
     {
         builder = match decoder.str()?.as_ref() {
             "DashboardValidationMessages" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_dashboard_validation_messages(Some(
-                    crate::protocol_serde::shape_dashboard_validation_messages::de_dashboard_validation_messages(decoder)?,
+                    crate::protocol_serde::shape_dashboard_validation_messages::de_dashboard_validation_messages(decoder, depth + 1)?,
                 )))
             })?,
             _ => {
@@ -119,6 +120,8 @@ pub(crate) fn de_put_dashboard(
     }
 
     let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
 
     match decoder.map()? {
         None => loop {
@@ -128,13 +131,13 @@ pub(crate) fn de_put_dashboard(
                     break;
                 }
                 _ => {
-                    builder = pair(builder, decoder)?;
+                    builder = pair(builder, decoder, depth)?;
                 }
             };
         },
         Some(n) => {
             for _ in 0..n {
-                builder = pair(builder, decoder)?;
+                builder = pair(builder, decoder, depth)?;
             }
         }
     };

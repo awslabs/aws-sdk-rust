@@ -11,6 +11,18 @@ pub(crate) fn add_key_replication_regions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn associate_mpa_team_output_output_correct_errors(
+    mut builder: crate::operation::associate_mpa_team::builders::AssociateMpaTeamOutputBuilder,
+) -> crate::operation::associate_mpa_team::builders::AssociateMpaTeamOutputBuilder {
+    if builder.mpa_team_association.is_none() {
+        builder.mpa_team_association = {
+            let builder = crate::types::builders::MpaTeamAssociationBuilder::default();
+            crate::serde_util::mpa_team_association_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_alias_output_output_correct_errors(
     mut builder: crate::operation::create_alias::builders::CreateAliasOutputBuilder,
 ) -> crate::operation::create_alias::builders::CreateAliasOutputBuilder {
@@ -52,6 +64,18 @@ pub(crate) fn disable_default_key_replication_regions_output_output_correct_erro
 ) -> crate::operation::disable_default_key_replication_regions::builders::DisableDefaultKeyReplicationRegionsOutputBuilder {
     if builder.enabled_replication_regions.is_none() {
         builder.enabled_replication_regions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn disassociate_mpa_team_output_output_correct_errors(
+    mut builder: crate::operation::disassociate_mpa_team::builders::DisassociateMpaTeamOutputBuilder,
+) -> crate::operation::disassociate_mpa_team::builders::DisassociateMpaTeamOutputBuilder {
+    if builder.mpa_team_association.is_none() {
+        builder.mpa_team_association = {
+            let builder = crate::types::builders::MpaTeamAssociationBuilder::default();
+            crate::serde_util::mpa_team_association_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -102,6 +126,18 @@ pub(crate) fn get_key_output_output_correct_errors(
         builder.key = {
             let builder = crate::types::builders::KeyBuilder::default();
             crate::serde_util::key_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_mpa_team_association_output_output_correct_errors(
+    mut builder: crate::operation::get_mpa_team_association::builders::GetMpaTeamAssociationOutputBuilder,
+) -> crate::operation::get_mpa_team_association::builders::GetMpaTeamAssociationOutputBuilder {
+    if builder.mpa_team_association.is_none() {
+        builder.mpa_team_association = {
+            let builder = crate::types::builders::MpaTeamAssociationBuilder::default();
+            crate::serde_util::mpa_team_association_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -161,6 +197,18 @@ pub(crate) fn get_public_key_certificate_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder,
+) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn import_key_output_output_correct_errors(
     mut builder: crate::operation::import_key::builders::ImportKeyOutputBuilder,
 ) -> crate::operation::import_key::builders::ImportKeyOutputBuilder {
@@ -196,6 +244,18 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder,
+) -> crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
     }
     builder
 }
@@ -294,6 +354,21 @@ pub(crate) fn key_correct_errors(mut builder: crate::types::builders::KeyBuilder
     builder
 }
 
+pub(crate) fn mpa_team_association_correct_errors(
+    mut builder: crate::types::builders::MpaTeamAssociationBuilder,
+) -> crate::types::builders::MpaTeamAssociationBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::MpaOperation>().ok()
+    }
+    if builder.mpa_team_arn.is_none() {
+        builder.mpa_team_arn = Some(Default::default())
+    }
+    if builder.association_state.is_none() {
+        builder.association_state = "no value was set".parse::<crate::types::AssociationState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn alias_correct_errors(mut builder: crate::types::builders::AliasBuilder) -> crate::types::builders::AliasBuilder {
     if builder.alias_name.is_none() {
         builder.alias_name = Some(Default::default())
@@ -356,6 +431,19 @@ pub(crate) fn key_summary_correct_errors(mut builder: crate::types::builders::Ke
     }
     if builder.enabled.is_none() {
         builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn mpa_status_correct_errors(mut builder: crate::types::builders::MpaStatusBuilder) -> crate::types::builders::MpaStatusBuilder {
+    if builder.mpa_session_arn.is_none() {
+        builder.mpa_session_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SessionStatus>().ok()
+    }
+    if builder.initiation_date.is_none() {
+        builder.initiation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

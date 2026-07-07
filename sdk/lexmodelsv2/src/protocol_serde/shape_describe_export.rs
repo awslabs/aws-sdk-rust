@@ -113,6 +113,8 @@ pub(crate) fn de_describe_export(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -146,7 +148,11 @@ pub(crate) fn de_describe_export(
                     );
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "fileFormat" => {
                     builder = builder.set_file_format(
@@ -163,7 +169,7 @@ pub(crate) fn de_describe_export(
                 }
                 "resourceSpecification" => {
                     builder = builder.set_resource_specification(
-                        crate::protocol_serde::shape_export_resource_specification::de_export_resource_specification(tokens, _value)?,
+                        crate::protocol_serde::shape_export_resource_specification::de_export_resource_specification(tokens, _value, depth + 1)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

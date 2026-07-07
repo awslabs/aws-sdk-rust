@@ -2,10 +2,16 @@
 pub(crate) fn de_stage_state<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::StageState>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -14,56 +20,73 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "stageName" => {
-                            builder = builder.set_stage_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "stageName" => {
+                                builder = builder.set_stage_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "inboundExecution" => {
+                                builder = builder.set_inbound_execution(crate::protocol_serde::shape_stage_execution::de_stage_execution(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "inboundExecutions" => {
+                                builder = builder.set_inbound_executions(crate::protocol_serde::shape_stage_execution_list::de_stage_execution_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "inboundTransitionState" => {
+                                builder = builder.set_inbound_transition_state(crate::protocol_serde::shape_transition_state::de_transition_state(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "actionStates" => {
+                                builder = builder.set_action_states(crate::protocol_serde::shape_action_state_list::de_action_state_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "latestExecution" => {
+                                builder = builder.set_latest_execution(crate::protocol_serde::shape_stage_execution::de_stage_execution(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "beforeEntryConditionState" => {
+                                builder = builder.set_before_entry_condition_state(
+                                    crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "onSuccessConditionState" => {
+                                builder = builder.set_on_success_condition_state(
+                                    crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "onFailureConditionState" => {
+                                builder = builder.set_on_failure_condition_state(
+                                    crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "retryStageMetadata" => {
+                                builder = builder.set_retry_stage_metadata(
+                                    crate::protocol_serde::shape_retry_stage_metadata::de_retry_stage_metadata(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "inboundExecution" => {
-                            builder =
-                                builder.set_inbound_execution(crate::protocol_serde::shape_stage_execution::de_stage_execution(tokens, _value)?);
-                        }
-                        "inboundExecutions" => {
-                            builder = builder.set_inbound_executions(crate::protocol_serde::shape_stage_execution_list::de_stage_execution_list(
-                                tokens, _value,
-                            )?);
-                        }
-                        "inboundTransitionState" => {
-                            builder = builder
-                                .set_inbound_transition_state(crate::protocol_serde::shape_transition_state::de_transition_state(tokens, _value)?);
-                        }
-                        "actionStates" => {
-                            builder =
-                                builder.set_action_states(crate::protocol_serde::shape_action_state_list::de_action_state_list(tokens, _value)?);
-                        }
-                        "latestExecution" => {
-                            builder = builder.set_latest_execution(crate::protocol_serde::shape_stage_execution::de_stage_execution(tokens, _value)?);
-                        }
-                        "beforeEntryConditionState" => {
-                            builder = builder.set_before_entry_condition_state(
-                                crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens, _value)?,
-                            );
-                        }
-                        "onSuccessConditionState" => {
-                            builder = builder.set_on_success_condition_state(
-                                crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens, _value)?,
-                            );
-                        }
-                        "onFailureConditionState" => {
-                            builder = builder.set_on_failure_condition_state(
-                                crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens, _value)?,
-                            );
-                        }
-                        "retryStageMetadata" => {
-                            builder = builder.set_retry_stage_metadata(crate::protocol_serde::shape_retry_stage_metadata::de_retry_stage_metadata(
-                                tokens, _value,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

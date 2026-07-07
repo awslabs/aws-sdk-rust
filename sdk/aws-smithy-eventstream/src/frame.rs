@@ -8,15 +8,13 @@
 use crate::buf::count::CountBuf;
 use crate::buf::crc::{CrcBuf, CrcBufMut};
 use crate::error::{Error, ErrorKind};
-use aws_smithy_types::config_bag::{Storable, StoreReplace};
-use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
+pub use aws_smithy_types::event_stream::DeferredSignerSender;
+use aws_smithy_types::event_stream::{DeferredSignerReceiver, Header, HeaderValue, Message};
 use aws_smithy_types::str_bytes::StrBytes;
 use aws_smithy_types::DateTime;
 use bytes::{Buf, BufMut};
-use std::error::Error as StdError;
 use std::fmt;
 use std::mem::size_of;
-use std::sync::{mpsc, Mutex};
 
 const PRELUDE_LENGTH_BYTES: u32 = 3 * size_of::<u32>() as u32;
 const PRELUDE_LENGTH_BYTES_USIZE: usize = PRELUDE_LENGTH_BYTES as usize;
@@ -35,42 +33,7 @@ pub(crate) const TYPE_STRING: u8 = 7;
 pub(crate) const TYPE_TIMESTAMP: u8 = 8;
 pub(crate) const TYPE_UUID: u8 = 9;
 
-pub type SignMessageError = Box<dyn StdError + Send + Sync + 'static>;
-
-/// Signs an Event Stream message.
-pub trait SignMessage: fmt::Debug {
-    fn sign(&mut self, message: Message) -> Result<Message, SignMessageError>;
-
-    /// SigV4 requires an empty last signed message to be sent.
-    /// Other protocols do not require one.
-    /// Return `Some(_)` to send a signed last empty message, before completing the stream.
-    /// Return `None` to not send one and terminate the stream immediately.
-    fn sign_empty(&mut self) -> Option<Result<Message, SignMessageError>>;
-}
-
-/// A sender that gets placed in the request config to wire up an event stream signer after signing.
-#[derive(Debug)]
-#[non_exhaustive]
-pub struct DeferredSignerSender(Mutex<mpsc::Sender<Box<dyn SignMessage + Send + Sync>>>);
-
-impl DeferredSignerSender {
-    /// Creates a new `DeferredSignerSender`
-    fn new(tx: mpsc::Sender<Box<dyn SignMessage + Send + Sync>>) -> Self {
-        Self(Mutex::new(tx))
-    }
-
-    /// Sends a signer on the channel
-    pub fn send(
-        &self,
-        signer: Box<dyn SignMessage + Send + Sync>,
-    ) -> Result<(), mpsc::SendError<Box<dyn SignMessage + Send + Sync>>> {
-        self.0.lock().unwrap().send(signer)
-    }
-}
-
-impl Storable for DeferredSignerSender {
-    type Storer = StoreReplace<Self>;
-}
+pub use aws_smithy_types::event_stream::{SignMessage, SignMessageError};
 
 /// Deferred event stream signer to allow a signer to be wired up later.
 ///
@@ -89,19 +52,19 @@ impl Storable for DeferredSignerSender {
 /// for the remainder of the operation.
 #[derive(Debug)]
 pub struct DeferredSigner {
-    rx: Option<Mutex<mpsc::Receiver<Box<dyn SignMessage + Send + Sync>>>>,
+    rx: Option<DeferredSignerReceiver>,
     signer: Option<Box<dyn SignMessage + Send + Sync>>,
 }
 
 impl DeferredSigner {
     pub fn new() -> (Self, DeferredSignerSender) {
-        let (tx, rx) = mpsc::channel();
+        let (rx, sender) = DeferredSignerSender::new();
         (
             Self {
-                rx: Some(Mutex::new(rx)),
+                rx: Some(rx),
                 signer: None,
             },
-            DeferredSignerSender::new(tx),
+            sender,
         )
     }
 
@@ -114,17 +77,10 @@ impl DeferredSigner {
                 self.rx
                     .take()
                     .expect("only taken once")
-                    .lock()
-                    .unwrap()
-                    .try_recv()
-                    .ok()
-                    // TODO(enableNewSmithyRuntimeCleanup): When the middleware implementation is removed,
-                    // this should panic rather than default to the `NoOpSigner`. The reason it defaults
-                    // is because middleware-based generic clients don't have any default middleware,
-                    // so there is no way to send a `NoOpSigner` by default when there is no other
-                    // auth scheme. The orchestrator auth setup is a lot more robust and will make
-                    // this problem trivial.
-                    .unwrap_or_else(|| Box::new(NoOpSigner {}) as _),
+                    .recv::<Box<dyn SignMessage + Send + Sync>>()
+                    // Fall back to NoOpSigner when no signer is sent (e.g., server-side
+                    // event streams or tests that don't configure signing).
+                    .unwrap_or_else(|_| Box::new(NoOpSigner {}) as _),
             );
             self.acquire()
         }
@@ -780,7 +736,9 @@ mod deferred_signer_tests {
 
         let (mut signer, sender) = check_send_sync(DeferredSigner::new());
 
-        sender.send(Box::<TestSigner>::default()).expect("success");
+        sender
+            .send(Box::<TestSigner>::default() as Box<dyn SignMessage + Send + Sync>)
+            .expect("success");
 
         let message = signer.sign(Message::new(Bytes::new())).expect("success");
         assert_eq!(1, message.headers()[0].value().as_int32().unwrap());

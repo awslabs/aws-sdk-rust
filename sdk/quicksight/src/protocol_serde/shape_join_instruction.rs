@@ -33,10 +33,16 @@ pub fn ser_join_instruction(
 pub(crate) fn de_join_instruction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::JoinInstruction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -45,47 +51,49 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "LeftOperand" => {
-                            builder = builder.set_left_operand(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "LeftOperand" => {
+                                builder = builder.set_left_operand(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RightOperand" => {
+                                builder = builder.set_right_operand(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "LeftJoinKeyProperties" => {
+                                builder = builder.set_left_join_key_properties(
+                                    crate::protocol_serde::shape_join_key_properties::de_join_key_properties(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "RightJoinKeyProperties" => {
+                                builder = builder.set_right_join_key_properties(
+                                    crate::protocol_serde::shape_join_key_properties::de_join_key_properties(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "Type" => {
+                                builder = builder.set_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::JoinType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "OnClause" => {
+                                builder = builder.set_on_clause(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "RightOperand" => {
-                            builder = builder.set_right_operand(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "LeftJoinKeyProperties" => {
-                            builder = builder.set_left_join_key_properties(crate::protocol_serde::shape_join_key_properties::de_join_key_properties(
-                                tokens, _value,
-                            )?);
-                        }
-                        "RightJoinKeyProperties" => {
-                            builder = builder.set_right_join_key_properties(
-                                crate::protocol_serde::shape_join_key_properties::de_join_key_properties(tokens, _value)?,
-                            );
-                        }
-                        "Type" => {
-                            builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::JoinType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "OnClause" => {
-                            builder = builder.set_on_clause(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

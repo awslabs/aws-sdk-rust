@@ -20,5 +20,7 @@ pub fn de_test_result(inp: &[u8]) -> std::result::Result<crate::types::TestResul
             "invalid root, expected TestResult got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_test_result::de_test_result(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_test_result::de_test_result(&mut decoder, depth + 1)
 }

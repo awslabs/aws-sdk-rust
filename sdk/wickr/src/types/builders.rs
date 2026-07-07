@@ -47,6 +47,8 @@ pub use crate::types::_network::NetworkBuilder;
 
 pub use crate::types::_read_receipt_config::ReadReceiptConfigBuilder;
 
+pub use crate::types::_consent_popup_config::ConsentPopupConfigBuilder;
+
 pub use crate::types::_calling_settings::CallingSettingsBuilder;
 
 pub use crate::types::_password_requirements::PasswordRequirementsBuilder;

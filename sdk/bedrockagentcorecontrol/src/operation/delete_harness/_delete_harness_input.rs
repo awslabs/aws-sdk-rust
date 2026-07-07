@@ -7,6 +7,8 @@ pub struct DeleteHarnessInput {
     pub harness_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Whether to delete the managed memory on harness deletion. Default: true. If false, the memory is disassociated and becomes a regular customer-owned resource.</p>
+    pub delete_managed_memory: ::std::option::Option<bool>,
 }
 impl DeleteHarnessInput {
     /// <p>The ID of the harness to delete.</p>
@@ -16,6 +18,10 @@ impl DeleteHarnessInput {
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>Whether to delete the managed memory on harness deletion. Default: true. If false, the memory is disassociated and becomes a regular customer-owned resource.</p>
+    pub fn delete_managed_memory(&self) -> ::std::option::Option<bool> {
+        self.delete_managed_memory
     }
 }
 impl DeleteHarnessInput {
@@ -31,6 +37,7 @@ impl DeleteHarnessInput {
 pub struct DeleteHarnessInputBuilder {
     pub(crate) harness_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_managed_memory: ::std::option::Option<bool>,
 }
 impl DeleteHarnessInputBuilder {
     /// <p>The ID of the harness to delete.</p>
@@ -62,6 +69,20 @@ impl DeleteHarnessInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Whether to delete the managed memory on harness deletion. Default: true. If false, the memory is disassociated and becomes a regular customer-owned resource.</p>
+    pub fn delete_managed_memory(mut self, input: bool) -> Self {
+        self.delete_managed_memory = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to delete the managed memory on harness deletion. Default: true. If false, the memory is disassociated and becomes a regular customer-owned resource.</p>
+    pub fn set_delete_managed_memory(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_managed_memory = input;
+        self
+    }
+    /// <p>Whether to delete the managed memory on harness deletion. Default: true. If false, the memory is disassociated and becomes a regular customer-owned resource.</p>
+    pub fn get_delete_managed_memory(&self) -> &::std::option::Option<bool> {
+        &self.delete_managed_memory
+    }
     /// Consumes the builder and constructs a [`DeleteHarnessInput`](crate::operation::delete_harness::DeleteHarnessInput).
     pub fn build(
         self,
@@ -69,6 +90,7 @@ impl DeleteHarnessInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_harness::DeleteHarnessInput {
             harness_id: self.harness_id,
             client_token: self.client_token,
+            delete_managed_memory: self.delete_managed_memory,
         })
     }
 }

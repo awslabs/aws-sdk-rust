@@ -24,7 +24,11 @@ pub fn ser_replication_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_replication_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::ReplicationConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::ReplicationConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -48,7 +52,7 @@ pub fn de_replication_configuration(
                         Result::<::std::vec::Vec::<crate::types::ReplicationRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.rules.take().unwrap_or_default();
                             list_4.push(
-                                crate::protocol_serde::shape_replication_rule::de_replication_rule(&mut tag)
+                                crate::protocol_serde::shape_replication_rule::de_replication_rule(&mut tag, depth + 1)
                                 ?
                             );
                             list_4

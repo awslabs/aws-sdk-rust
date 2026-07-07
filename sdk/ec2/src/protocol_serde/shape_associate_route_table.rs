@@ -47,6 +47,8 @@ pub fn de_associate_route_table(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("AssociateRouteTableResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AssociateRouteTableResponse got {start_el:?}"
@@ -70,7 +72,7 @@ pub fn de_associate_route_table(
             s if s.matches("associationState") /* AssociationState com.amazonaws.ec2.synthetic#AssociateRouteTableOutput$AssociationState */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_route_table_association_state::de_route_table_association_state(&mut tag)
+                        crate::protocol_serde::shape_route_table_association_state::de_route_table_association_state(&mut tag, depth + 1)
                         ?
                     )
                 ;

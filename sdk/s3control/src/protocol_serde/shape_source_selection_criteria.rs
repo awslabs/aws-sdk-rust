@@ -20,7 +20,11 @@ pub fn ser_source_selection_criteria(
 #[allow(clippy::needless_question_mark)]
 pub fn de_source_selection_criteria(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::SourceSelectionCriteria, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::SourceSelectionCriteria::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -28,7 +32,7 @@ pub fn de_source_selection_criteria(
             s if s.matches("SseKmsEncryptedObjects") /* SseKmsEncryptedObjects com.amazonaws.s3control#SourceSelectionCriteria$SseKmsEncryptedObjects */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_sse_kms_encrypted_objects::de_sse_kms_encrypted_objects(&mut tag)
+                        crate::protocol_serde::shape_sse_kms_encrypted_objects::de_sse_kms_encrypted_objects(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -38,7 +42,7 @@ pub fn de_source_selection_criteria(
             s if s.matches("ReplicaModifications") /* ReplicaModifications com.amazonaws.s3control#SourceSelectionCriteria$ReplicaModifications */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_replica_modifications::de_replica_modifications(&mut tag)
+                        crate::protocol_serde::shape_replica_modifications::de_replica_modifications(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -64,6 +64,8 @@ pub fn de_get_hook_result(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("GetHookResultResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetHookResultResponse got {start_el:?}"
@@ -228,7 +230,7 @@ pub fn de_get_hook_result(
             s if s.matches("Target") /* Target com.amazonaws.cloudformation.synthetic#GetHookResultOutput$Target */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_hook_target::de_hook_target(&mut tag)
+                        crate::protocol_serde::shape_hook_target::de_hook_target(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -238,7 +240,7 @@ pub fn de_get_hook_result(
             s if s.matches("Annotations") /* Annotations com.amazonaws.cloudformation.synthetic#GetHookResultOutput$Annotations */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_annotation_list::de_annotation_list(&mut tag)
+                        crate::protocol_serde::shape_annotation_list::de_annotation_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

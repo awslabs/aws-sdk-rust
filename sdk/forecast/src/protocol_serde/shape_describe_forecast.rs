@@ -86,6 +86,8 @@ pub(crate) fn de_describe_forecast(
 > {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
+    #[allow(unused_variables)]
+    let depth = 0u32;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
@@ -106,7 +108,7 @@ pub(crate) fn de_describe_forecast(
                     );
                 }
                 "ForecastTypes" => {
-                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens, _value)?);
+                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens, _value, depth + 1)?);
                 }
                 "PredictorArn" => {
                     builder = builder.set_predictor_arn(
@@ -157,7 +159,9 @@ pub(crate) fn de_describe_forecast(
                 }
                 "TimeSeriesSelector" => {
                     builder = builder.set_time_series_selector(crate::protocol_serde::shape_time_series_selector::de_time_series_selector(
-                        tokens, _value,
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -2,10 +2,16 @@
 pub(crate) fn de_scan<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Scan>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -63,15 +69,25 @@ where
                             )?);
                         }
                         "triggerDetails" => {
-                            builder = builder.set_trigger_details(crate::protocol_serde::shape_trigger_details::de_trigger_details(tokens, _value)?);
+                            builder = builder.set_trigger_details(crate::protocol_serde::shape_trigger_details::de_trigger_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "resourceDetails" => {
-                            builder =
-                                builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens, _value)?);
+                            builder = builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "scanResultDetails" => {
-                            builder = builder
-                                .set_scan_result_details(crate::protocol_serde::shape_scan_result_details::de_scan_result_details(tokens, _value)?);
+                            builder = builder.set_scan_result_details(crate::protocol_serde::shape_scan_result_details::de_scan_result_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "accountId" => {
                             builder = builder.set_account_id(
@@ -95,7 +111,11 @@ where
                             );
                         }
                         "attachedVolumes" => {
-                            builder = builder.set_attached_volumes(crate::protocol_serde::shape_volume_details::de_volume_details(tokens, _value)?);
+                            builder = builder.set_attached_volumes(crate::protocol_serde::shape_volume_details::de_volume_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "scanType" => {
                             builder = builder.set_scan_type(

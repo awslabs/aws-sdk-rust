@@ -2,10 +2,16 @@
 pub(crate) fn de_sequence<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Sequence>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -30,23 +36,28 @@ where
                             );
                         }
                         "actors" => {
-                            builder = builder.set_actors(crate::protocol_serde::shape_actors::de_actors(tokens, _value)?);
+                            builder = builder.set_actors(crate::protocol_serde::shape_actors::de_actors(tokens, _value, depth + 1)?);
                         }
                         "resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_resources::de_resources(tokens, _value)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_resources::de_resources(tokens, _value, depth + 1)?);
                         }
                         "endpoints" => {
-                            builder = builder.set_endpoints(crate::protocol_serde::shape_network_endpoints::de_network_endpoints(tokens, _value)?);
+                            builder = builder.set_endpoints(crate::protocol_serde::shape_network_endpoints::de_network_endpoints(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "signals" => {
-                            builder = builder.set_signals(crate::protocol_serde::shape_signals::de_signals(tokens, _value)?);
+                            builder = builder.set_signals(crate::protocol_serde::shape_signals::de_signals(tokens, _value, depth + 1)?);
                         }
                         "sequenceIndicators" => {
-                            builder = builder.set_sequence_indicators(crate::protocol_serde::shape_indicators::de_indicators(tokens, _value)?);
+                            builder =
+                                builder.set_sequence_indicators(crate::protocol_serde::shape_indicators::de_indicators(tokens, _value, depth + 1)?);
                         }
                         "additionalSequenceTypes" => {
                             builder = builder.set_additional_sequence_types(
-                                crate::protocol_serde::shape_additional_sequence_types::de_additional_sequence_types(tokens, _value)?,
+                                crate::protocol_serde::shape_additional_sequence_types::de_additional_sequence_types(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

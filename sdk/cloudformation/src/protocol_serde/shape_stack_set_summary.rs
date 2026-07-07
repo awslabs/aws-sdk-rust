@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::StackSetSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSetSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -63,7 +67,7 @@ pub fn de_stack_set_summary(
             s if s.matches("AutoDeployment") /* AutoDeployment com.amazonaws.cloudformation#StackSetSummary$AutoDeployment */ =>  {
                 let var_5 =
                     Some(
-                        crate::protocol_serde::shape_auto_deployment::de_auto_deployment(&mut tag)
+                        crate::protocol_serde::shape_auto_deployment::de_auto_deployment(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -115,7 +119,7 @@ pub fn de_stack_set_summary(
             s if s.matches("ManagedExecution") /* ManagedExecution com.amazonaws.cloudformation#StackSetSummary$ManagedExecution */ =>  {
                 let var_9 =
                     Some(
-                        crate::protocol_serde::shape_managed_execution::de_managed_execution(&mut tag)
+                        crate::protocol_serde::shape_managed_execution::de_managed_execution(&mut tag, depth + 1)
                         ?
                     )
                 ;

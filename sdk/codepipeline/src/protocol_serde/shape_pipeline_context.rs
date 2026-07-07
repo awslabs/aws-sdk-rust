@@ -2,10 +2,16 @@
 pub(crate) fn de_pipeline_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::PipelineContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -23,10 +29,10 @@ where
                             );
                         }
                         "stage" => {
-                            builder = builder.set_stage(crate::protocol_serde::shape_stage_context::de_stage_context(tokens, _value)?);
+                            builder = builder.set_stage(crate::protocol_serde::shape_stage_context::de_stage_context(tokens, _value, depth + 1)?);
                         }
                         "action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_action_context::de_action_context(tokens, _value)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_action_context::de_action_context(tokens, _value, depth + 1)?);
                         }
                         "pipelineArn" => {
                             builder = builder.set_pipeline_arn(

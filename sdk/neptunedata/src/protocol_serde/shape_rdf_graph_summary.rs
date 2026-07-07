@@ -2,10 +2,16 @@
 pub(crate) fn de_rdf_graph_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::RdfGraphSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,16 +50,21 @@ where
                             );
                         }
                         "classes" => {
-                            builder = builder.set_classes(crate::protocol_serde::shape_classes::de_classes(tokens, _value)?);
+                            builder = builder.set_classes(crate::protocol_serde::shape_classes::de_classes(tokens, _value, depth + 1)?);
                         }
                         "predicates" => {
                             builder = builder.set_predicates(crate::protocol_serde::shape_long_valued_map_list::de_long_valued_map_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "subjectStructures" => {
-                            builder = builder
-                                .set_subject_structures(crate::protocol_serde::shape_subject_structures::de_subject_structures(tokens, _value)?);
+                            builder = builder.set_subject_structures(crate::protocol_serde::shape_subject_structures::de_subject_structures(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

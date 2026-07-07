@@ -155,9 +155,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Allocat
 #[derive(Debug)]
 struct AllocatePrivateVirtualInterfaceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AllocatePrivateVirtualInterfaceResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -281,6 +282,8 @@ pub enum AllocatePrivateVirtualInterfaceError {
     DirectConnectServerException(crate::types::error::DirectConnectServerException),
     /// <p>A tag key was specified more than once.</p>
     DuplicateTagKeysException(crate::types::error::DuplicateTagKeysException),
+    /// <p>The rate limiter limit has been exceeded for the connection. You cannot add more rate limiters to virtual interfaces on this connection.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -319,6 +322,7 @@ impl AllocatePrivateVirtualInterfaceError {
             Self::DirectConnectClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DirectConnectServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DuplicateTagKeysException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyTagsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -335,6 +339,10 @@ impl AllocatePrivateVirtualInterfaceError {
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(self, Self::DuplicateTagKeysException(_))
     }
+    /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceError::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(self, Self::TooManyTagsException(_))
@@ -346,6 +354,7 @@ impl ::std::error::Error for AllocatePrivateVirtualInterfaceError {
             Self::DirectConnectClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::DirectConnectServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::DuplicateTagKeysException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyTagsException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -357,6 +366,7 @@ impl ::std::fmt::Display for AllocatePrivateVirtualInterfaceError {
             Self::DirectConnectClientException(_inner) => _inner.fmt(f),
             Self::DirectConnectServerException(_inner) => _inner.fmt(f),
             Self::DuplicateTagKeysException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::TooManyTagsException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -382,6 +392,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AllocatePriva
             Self::DirectConnectClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DirectConnectServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DuplicateTagKeysException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyTagsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

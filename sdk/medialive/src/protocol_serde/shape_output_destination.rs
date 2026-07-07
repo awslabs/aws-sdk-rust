@@ -84,10 +84,16 @@ pub fn ser_output_destination(
 pub(crate) fn de_output_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::OutputDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -106,35 +112,42 @@ where
                         }
                         "mediaPackageSettings" => {
                             builder = builder.set_media_package_settings(
-                                    crate::protocol_serde::shape_list_of_media_package_output_destination_settings::de_list_of_media_package_output_destination_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_media_package_output_destination_settings::de_list_of_media_package_output_destination_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "multiplexSettings" => {
                             builder = builder.set_multiplex_settings(
-                                    crate::protocol_serde::shape_multiplex_program_channel_destination_settings::de_multiplex_program_channel_destination_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_multiplex_program_channel_destination_settings::de_multiplex_program_channel_destination_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         "settings" => {
                             builder = builder.set_settings(
                                 crate::protocol_serde::shape_list_of_output_destination_settings::de_list_of_output_destination_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "srtSettings" => {
                             builder = builder.set_srt_settings(
                                 crate::protocol_serde::shape_list_of_srt_output_destination_settings::de_list_of_srt_output_destination_settings(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
                         "logicalInterfaceNames" => {
-                            builder =
-                                builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                            builder = builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "mediaConnectRouterSettings" => {
                             builder = builder.set_media_connect_router_settings(
-                                    crate::protocol_serde::shape_list_of_media_connect_router_output_destination_settings::de_list_of_media_connect_router_output_destination_settings(tokens, _value)?
+                                    crate::protocol_serde::shape_list_of_media_connect_router_output_destination_settings::de_list_of_media_connect_router_output_destination_settings(tokens, _value, depth + 1)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,5 +20,7 @@ pub fn de_vpc_origin_list(inp: &[u8]) -> std::result::Result<crate::types::VpcOr
             "invalid root, expected VpcOriginList got {start_el:?}"
         )));
     }
-    crate::protocol_serde::shape_vpc_origin_list::de_vpc_origin_list(&mut decoder)
+    #[allow(unused_variables)]
+    let depth = 0u32;
+    crate::protocol_serde::shape_vpc_origin_list::de_vpc_origin_list(&mut decoder, depth + 1)
 }

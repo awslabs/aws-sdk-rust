@@ -146,6 +146,8 @@ mod create_detector;
 
 mod create_filter;
 
+mod create_investigation;
+
 mod create_ip_set;
 
 mod create_malware_protection_plan;
@@ -239,6 +241,8 @@ mod get_findings;
 
 mod get_findings_statistics;
 
+mod get_investigation;
+
 mod get_invitations_count;
 
 mod get_ip_set;
@@ -276,6 +280,8 @@ mod list_detectors;
 mod list_filters;
 
 mod list_findings;
+
+mod list_investigations;
 
 mod list_invitations;
 

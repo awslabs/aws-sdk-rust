@@ -7,6 +7,8 @@ pub struct TestTelemetryPipelineInput {
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     /// <p>The pipeline configuration to test with the provided sample records.</p>
     pub configuration: ::std::option::Option<crate::types::TelemetryPipelineConfiguration>,
+    /// <p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>
+    pub signal_type: ::std::option::Option<crate::types::SignalType>,
 }
 impl TestTelemetryPipelineInput {
     /// <p>The sample records to process through the pipeline configuration for testing purposes.</p>
@@ -18,6 +20,10 @@ impl TestTelemetryPipelineInput {
     /// <p>The pipeline configuration to test with the provided sample records.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::TelemetryPipelineConfiguration> {
         self.configuration.as_ref()
+    }
+    /// <p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>
+    pub fn signal_type(&self) -> ::std::option::Option<&crate::types::SignalType> {
+        self.signal_type.as_ref()
     }
 }
 impl TestTelemetryPipelineInput {
@@ -33,6 +39,7 @@ impl TestTelemetryPipelineInput {
 pub struct TestTelemetryPipelineInputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     pub(crate) configuration: ::std::option::Option<crate::types::TelemetryPipelineConfiguration>,
+    pub(crate) signal_type: ::std::option::Option<crate::types::SignalType>,
 }
 impl TestTelemetryPipelineInputBuilder {
     /// Appends an item to `records`.
@@ -70,6 +77,20 @@ impl TestTelemetryPipelineInputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::TelemetryPipelineConfiguration> {
         &self.configuration
     }
+    /// <p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>
+    pub fn signal_type(mut self, input: crate::types::SignalType) -> Self {
+        self.signal_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>
+    pub fn set_signal_type(mut self, input: ::std::option::Option<crate::types::SignalType>) -> Self {
+        self.signal_type = input;
+        self
+    }
+    /// <p>The type of telemetry signal to test. If not specified, defaults to log processing.</p>
+    pub fn get_signal_type(&self) -> &::std::option::Option<crate::types::SignalType> {
+        &self.signal_type
+    }
     /// Consumes the builder and constructs a [`TestTelemetryPipelineInput`](crate::operation::test_telemetry_pipeline::TestTelemetryPipelineInput).
     pub fn build(
         self,
@@ -78,6 +99,7 @@ impl TestTelemetryPipelineInputBuilder {
         ::std::result::Result::Ok(crate::operation::test_telemetry_pipeline::TestTelemetryPipelineInput {
             records: self.records,
             configuration: self.configuration,
+            signal_type: self.signal_type,
         })
     }
 }

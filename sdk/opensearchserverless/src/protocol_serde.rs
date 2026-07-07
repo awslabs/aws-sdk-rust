@@ -357,4 +357,8 @@ pub(crate) mod shape_vpc_endpoint_error_detail;
 
 pub(crate) mod shape_vpc_endpoint_summary;
 
+pub(crate) mod shape_current_capacity;
+
 pub(crate) mod shape_fips_endpoints;
+
+pub(crate) mod shape_capacity_details;

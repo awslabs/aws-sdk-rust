@@ -2,10 +2,16 @@
 pub(crate) fn de_matching_bucket<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::MatchingBucket>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -68,7 +74,7 @@ where
                             );
                         }
                         "jobDetails" => {
-                            builder = builder.set_job_details(crate::protocol_serde::shape_job_details::de_job_details(tokens, _value)?);
+                            builder = builder.set_job_details(crate::protocol_serde::shape_job_details::de_job_details(tokens, _value, depth + 1)?);
                         }
                         "lastAutomatedDiscoveryTime" => {
                             builder = builder.set_last_automated_discovery_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -85,7 +91,11 @@ where
                         }
                         "objectCountByEncryptionType" => {
                             builder = builder.set_object_count_by_encryption_type(
-                                crate::protocol_serde::shape_object_count_by_encryption_type::de_object_count_by_encryption_type(tokens, _value)?,
+                                crate::protocol_serde::shape_object_count_by_encryption_type::de_object_count_by_encryption_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "sensitivityScore" => {
@@ -111,12 +121,12 @@ where
                         }
                         "unclassifiableObjectCount" => {
                             builder = builder.set_unclassifiable_object_count(
-                                crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value)?,
+                                crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value, depth + 1)?,
                             );
                         }
                         "unclassifiableObjectSizeInBytes" => {
                             builder = builder.set_unclassifiable_object_size_in_bytes(
-                                crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value)?,
+                                crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

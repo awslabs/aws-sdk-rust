@@ -2,10 +2,16 @@
 pub(crate) fn de_component_response<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ComponentResponse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,7 +43,7 @@ where
                             );
                         }
                         "status" => {
-                            builder = builder.set_status(crate::protocol_serde::shape_status::de_status(tokens, _value)?);
+                            builder = builder.set_status(crate::protocol_serde::shape_status::de_status(tokens, _value, depth + 1)?);
                         }
                         "definedIn" => {
                             builder = builder.set_defined_in(
@@ -47,12 +53,18 @@ where
                             );
                         }
                         "properties" => {
-                            builder = builder.set_properties(crate::protocol_serde::shape_property_responses::de_property_responses(tokens, _value)?);
+                            builder = builder.set_properties(crate::protocol_serde::shape_property_responses::de_property_responses(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "propertyGroups" => {
                             builder = builder.set_property_groups(
                                 crate::protocol_serde::shape_component_property_group_responses::de_component_property_group_responses(
-                                    tokens, _value,
+                                    tokens,
+                                    _value,
+                                    depth + 1,
                                 )?,
                             );
                         }
@@ -69,7 +81,11 @@ where
                         }
                         "compositeComponents" => {
                             builder = builder.set_composite_components(
-                                crate::protocol_serde::shape_composite_component_response::de_composite_component_response(tokens, _value)?,
+                                crate::protocol_serde::shape_composite_component_response::de_composite_component_response(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "areAllCompositeComponentsReturned" => {

@@ -2,10 +2,16 @@
 pub(crate) fn de_insight_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::InsightSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -37,11 +43,14 @@ where
                             );
                         }
                         "RootCauseServiceId" => {
-                            builder = builder.set_root_cause_service_id(crate::protocol_serde::shape_service_id::de_service_id(tokens, _value)?);
+                            builder =
+                                builder.set_root_cause_service_id(crate::protocol_serde::shape_service_id::de_service_id(tokens, _value, depth + 1)?);
                         }
                         "Categories" => {
                             builder = builder.set_categories(crate::protocol_serde::shape_insight_category_list::de_insight_category_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "State" => {
@@ -72,17 +81,17 @@ where
                         }
                         "ClientRequestImpactStatistics" => {
                             builder = builder.set_client_request_impact_statistics(
-                                crate::protocol_serde::shape_request_impact_statistics::de_request_impact_statistics(tokens, _value)?,
+                                crate::protocol_serde::shape_request_impact_statistics::de_request_impact_statistics(tokens, _value, depth + 1)?,
                             );
                         }
                         "RootCauseServiceRequestImpactStatistics" => {
                             builder = builder.set_root_cause_service_request_impact_statistics(
-                                crate::protocol_serde::shape_request_impact_statistics::de_request_impact_statistics(tokens, _value)?,
+                                crate::protocol_serde::shape_request_impact_statistics::de_request_impact_statistics(tokens, _value, depth + 1)?,
                             );
                         }
                         "TopAnomalousServices" => {
                             builder = builder.set_top_anomalous_services(
-                                crate::protocol_serde::shape_anomalous_service_list::de_anomalous_service_list(tokens, _value)?,
+                                crate::protocol_serde::shape_anomalous_service_list::de_anomalous_service_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "LastUpdateTime" => {

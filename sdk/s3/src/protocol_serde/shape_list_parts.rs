@@ -118,6 +118,8 @@ pub fn de_list_parts(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !start_el.matches("ListPartsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "encountered invalid XML root: expected ListPartsResult but got {start_el:?}. This is likely a bug in the SDK."
@@ -128,7 +130,7 @@ pub fn de_list_parts(
             s if s.matches("Owner") /* Owner com.amazonaws.s3.synthetic#ListPartsOutput$Owner */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_owner::de_owner(&mut tag)
+                        crate::protocol_serde::shape_owner::de_owner(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -265,7 +267,7 @@ pub fn de_list_parts(
                         Result::<::std::vec::Vec::<crate::types::Part>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_22 = builder.parts.take().unwrap_or_default();
                             list_22.push(
-                                crate::protocol_serde::shape_part::de_part(&mut tag)
+                                crate::protocol_serde::shape_part::de_part(&mut tag, depth + 1)
                                 ?
                             );
                             list_22
@@ -279,7 +281,7 @@ pub fn de_list_parts(
             s if s.matches("Initiator") /* Initiator com.amazonaws.s3.synthetic#ListPartsOutput$Initiator */ =>  {
                 let var_23 =
                     Some(
-                        crate::protocol_serde::shape_initiator::de_initiator(&mut tag)
+                        crate::protocol_serde::shape_initiator::de_initiator(&mut tag, depth + 1)
                         ?
                     )
                 ;

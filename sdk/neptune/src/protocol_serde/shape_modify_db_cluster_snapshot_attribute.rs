@@ -118,6 +118,8 @@ pub fn de_modify_db_cluster_snapshot_attribute(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("ModifyDBClusterSnapshotAttributeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyDBClusterSnapshotAttributeResponse got {start_el:?}"
@@ -135,7 +137,7 @@ pub fn de_modify_db_cluster_snapshot_attribute(
             s if s.matches("DBClusterSnapshotAttributesResult") /* DBClusterSnapshotAttributesResult com.amazonaws.neptune.synthetic#ModifyDBClusterSnapshotAttributeOutput$DBClusterSnapshotAttributesResult */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_db_cluster_snapshot_attributes_result::de_db_cluster_snapshot_attributes_result(&mut tag)
+                        crate::protocol_serde::shape_db_cluster_snapshot_attributes_result::de_db_cluster_snapshot_attributes_result(&mut tag, depth + 1)
                         ?
                     )
                 ;

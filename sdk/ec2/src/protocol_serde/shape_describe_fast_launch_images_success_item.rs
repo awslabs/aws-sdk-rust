@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_describe_fast_launch_images_success_item(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::DescribeFastLaunchImagesSuccessItem, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::DescribeFastLaunchImagesSuccessItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -37,7 +41,7 @@ pub fn de_describe_fast_launch_images_success_item(
             s if s.matches("snapshotConfiguration") /* SnapshotConfiguration com.amazonaws.ec2#DescribeFastLaunchImagesSuccessItem$SnapshotConfiguration */ =>  {
                 let var_3 =
                     Some(
-                        crate::protocol_serde::shape_fast_launch_snapshot_configuration_response::de_fast_launch_snapshot_configuration_response(&mut tag)
+                        crate::protocol_serde::shape_fast_launch_snapshot_configuration_response::de_fast_launch_snapshot_configuration_response(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -47,7 +51,7 @@ pub fn de_describe_fast_launch_images_success_item(
             s if s.matches("launchTemplate") /* LaunchTemplate com.amazonaws.ec2#DescribeFastLaunchImagesSuccessItem$LaunchTemplate */ =>  {
                 let var_4 =
                     Some(
-                        crate::protocol_serde::shape_fast_launch_launch_template_specification_response::de_fast_launch_launch_template_specification_response(&mut tag)
+                        crate::protocol_serde::shape_fast_launch_launch_template_specification_response::de_fast_launch_launch_template_specification_response(&mut tag, depth + 1)
                         ?
                     )
                 ;

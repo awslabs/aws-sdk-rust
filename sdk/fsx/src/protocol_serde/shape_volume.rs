@@ -2,10 +2,16 @@
 pub(crate) fn de_volume<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Volume>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -44,7 +50,7 @@ where
                         }
                         "OntapConfiguration" => {
                             builder = builder.set_ontap_configuration(
-                                crate::protocol_serde::shape_ontap_volume_configuration::de_ontap_volume_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_ontap_volume_configuration::de_ontap_volume_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         "ResourceARN" => {
@@ -55,7 +61,7 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
                         "VolumeId" => {
                             builder = builder.set_volume_id(
@@ -73,17 +79,21 @@ where
                         }
                         "LifecycleTransitionReason" => {
                             builder = builder.set_lifecycle_transition_reason(
-                                crate::protocol_serde::shape_lifecycle_transition_reason::de_lifecycle_transition_reason(tokens, _value)?,
+                                crate::protocol_serde::shape_lifecycle_transition_reason::de_lifecycle_transition_reason(tokens, _value, depth + 1)?,
                             );
                         }
                         "AdministrativeActions" => {
                             builder = builder.set_administrative_actions(
-                                crate::protocol_serde::shape_administrative_actions::de_administrative_actions(tokens, _value)?,
+                                crate::protocol_serde::shape_administrative_actions::de_administrative_actions(tokens, _value, depth + 1)?,
                             );
                         }
                         "OpenZFSConfiguration" => {
                             builder = builder.set_open_zfs_configuration(
-                                crate::protocol_serde::shape_open_zfs_volume_configuration::de_open_zfs_volume_configuration(tokens, _value)?,
+                                crate::protocol_serde::shape_open_zfs_volume_configuration::de_open_zfs_volume_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

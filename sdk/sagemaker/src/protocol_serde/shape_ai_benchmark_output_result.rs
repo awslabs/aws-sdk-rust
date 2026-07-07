@@ -2,10 +2,16 @@
 pub(crate) fn de_ai_benchmark_output_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::AiBenchmarkOutputResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -24,8 +30,15 @@ where
                         }
                         "CloudWatchLogs" => {
                             builder = builder.set_cloud_watch_logs(
-                                crate::protocol_serde::shape_ai_cloud_watch_logs_list::de_ai_cloud_watch_logs_list(tokens, _value)?,
+                                crate::protocol_serde::shape_ai_cloud_watch_logs_list::de_ai_cloud_watch_logs_list(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "MlflowConfig" => {
+                            builder = builder.set_mlflow_config(crate::protocol_serde::shape_ai_mlflow_config::de_ai_mlflow_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

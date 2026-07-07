@@ -81,6 +81,8 @@ pub(crate) mod shape_controls;
 
 pub(crate) mod shape_domain_summary_list;
 
+pub(crate) mod shape_governed_providers;
+
 pub(crate) mod shape_governed_resources;
 
 pub(crate) mod shape_implementation_details;

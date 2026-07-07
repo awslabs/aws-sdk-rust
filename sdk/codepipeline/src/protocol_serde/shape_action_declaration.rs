@@ -103,10 +103,16 @@ pub fn ser_action_declaration(
 pub(crate) fn de_action_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ActionDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -124,7 +130,11 @@ where
                             );
                         }
                         "actionTypeId" => {
-                            builder = builder.set_action_type_id(crate::protocol_serde::shape_action_type_id::de_action_type_id(tokens, _value)?);
+                            builder = builder.set_action_type_id(crate::protocol_serde::shape_action_type_id::de_action_type_id(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "runOrder" => {
                             builder = builder.set_run_order(
@@ -135,24 +145,33 @@ where
                         }
                         "configuration" => {
                             builder = builder.set_configuration(crate::protocol_serde::shape_action_configuration_map::de_action_configuration_map(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "commands" => {
-                            builder = builder.set_commands(crate::protocol_serde::shape_command_list::de_command_list(tokens, _value)?);
+                            builder = builder.set_commands(crate::protocol_serde::shape_command_list::de_command_list(tokens, _value, depth + 1)?);
                         }
                         "outputArtifacts" => {
                             builder = builder.set_output_artifacts(crate::protocol_serde::shape_output_artifact_list::de_output_artifact_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "inputArtifacts" => {
-                            builder = builder
-                                .set_input_artifacts(crate::protocol_serde::shape_input_artifact_list::de_input_artifact_list(tokens, _value)?);
+                            builder = builder.set_input_artifacts(crate::protocol_serde::shape_input_artifact_list::de_input_artifact_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "outputVariables" => {
                             builder = builder.set_output_variables(crate::protocol_serde::shape_output_variable_list::de_output_variable_list(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?);
                         }
                         "roleArn" => {
@@ -185,7 +204,7 @@ where
                         }
                         "environmentVariables" => {
                             builder = builder.set_environment_variables(
-                                crate::protocol_serde::shape_environment_variable_list::de_environment_variable_list(tokens, _value)?,
+                                crate::protocol_serde::shape_environment_variable_list::de_environment_variable_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

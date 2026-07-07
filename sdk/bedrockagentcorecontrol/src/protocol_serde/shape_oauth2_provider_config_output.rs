@@ -2,10 +2,16 @@
 pub(crate) fn de_oauth2_provider_config_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::Oauth2ProviderConfigOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
@@ -32,7 +38,9 @@ where
                     variant = match key.as_ref() {
                         "customOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::CustomOauth2ProviderConfig(
                             crate::protocol_serde::shape_custom_oauth2_provider_config_output::de_custom_oauth2_provider_config_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -42,7 +50,9 @@ where
                         )),
                         "googleOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::GoogleOauth2ProviderConfig(
                             crate::protocol_serde::shape_google_oauth2_provider_config_output::de_google_oauth2_provider_config_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -52,7 +62,9 @@ where
                         )),
                         "githubOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::GithubOauth2ProviderConfig(
                             crate::protocol_serde::shape_github_oauth2_provider_config_output::de_github_oauth2_provider_config_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -61,16 +73,22 @@ where
                             })?,
                         )),
                         "slackOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::SlackOauth2ProviderConfig(
-                            crate::protocol_serde::shape_slack_oauth2_provider_config_output::de_slack_oauth2_provider_config_output(tokens, _value)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'slackOauth2ProviderConfig' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_slack_oauth2_provider_config_output::de_slack_oauth2_provider_config_output(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'slackOauth2ProviderConfig' cannot be null",
+                                )
+                            })?,
                         )),
                         "salesforceOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::SalesforceOauth2ProviderConfig(
                             crate::protocol_serde::shape_salesforce_oauth2_provider_config_output::de_salesforce_oauth2_provider_config_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -80,7 +98,9 @@ where
                         )),
                         "microsoftOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::MicrosoftOauth2ProviderConfig(
                             crate::protocol_serde::shape_microsoft_oauth2_provider_config_output::de_microsoft_oauth2_provider_config_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -90,7 +110,9 @@ where
                         )),
                         "atlassianOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::AtlassianOauth2ProviderConfig(
                             crate::protocol_serde::shape_atlassian_oauth2_provider_config_output::de_atlassian_oauth2_provider_config_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -100,7 +122,9 @@ where
                         )),
                         "linkedinOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::LinkedinOauth2ProviderConfig(
                             crate::protocol_serde::shape_linkedin_oauth2_provider_config_output::de_linkedin_oauth2_provider_config_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -110,7 +134,9 @@ where
                         )),
                         "includedOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::IncludedOauth2ProviderConfig(
                             crate::protocol_serde::shape_included_oauth2_provider_config_output::de_included_oauth2_provider_config_output(
-                                tokens, _value,
+                                tokens,
+                                _value,
+                                depth + 1,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(

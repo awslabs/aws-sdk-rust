@@ -197,6 +197,8 @@ pub use crate::types::_ecs_service_projected_utilization_metric::EcsServiceProje
 
 pub use crate::types::_container_recommendation::ContainerRecommendationBuilder;
 
+pub use crate::types::_idle_dimension::IdleDimensionBuilder;
+
 pub use crate::types::_lambda_function_memory_projected_metric::LambdaFunctionMemoryProjectedMetricBuilder;
 
 pub use crate::types::_lambda_estimated_monthly_savings::LambdaEstimatedMonthlySavingsBuilder;

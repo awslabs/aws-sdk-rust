@@ -2,10 +2,16 @@
 pub(crate) fn de_health_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::HealthEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -55,7 +61,7 @@ where
                         }
                         "ImpactedLocations" => {
                             builder = builder.set_impacted_locations(
-                                crate::protocol_serde::shape_impacted_locations_list::de_impacted_locations_list(tokens, _value)?,
+                                crate::protocol_serde::shape_impacted_locations_list::de_impacted_locations_list(tokens, _value, depth + 1)?,
                             );
                         }
                         "Status" => {

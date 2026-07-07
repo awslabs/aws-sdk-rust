@@ -12,6 +12,8 @@ pub struct RollbackStackInput {
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub retain_except_on_create: ::std::option::Option<bool>,
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
 }
 impl RollbackStackInput {
     /// <p>The name that's associated with the stack.</p>
@@ -31,6 +33,10 @@ impl RollbackStackInput {
     pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
         self.retain_except_on_create
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
 }
 impl RollbackStackInput {
     /// Creates a new builder-style object to manufacture [`RollbackStackInput`](crate::operation::rollback_stack::RollbackStackInput).
@@ -47,6 +53,7 @@ pub struct RollbackStackInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) retain_except_on_create: ::std::option::Option<bool>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
 }
 impl RollbackStackInputBuilder {
     /// <p>The name that's associated with the stack.</p>
@@ -109,6 +116,20 @@ impl RollbackStackInputBuilder {
     pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
         &self.retain_except_on_create
     }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
+        self.deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
+        self.deployment_config = input;
+        self
+    }
+    /// <p>The deployment configuration for this stack operation, including the deployment mode.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
+    }
     /// Consumes the builder and constructs a [`RollbackStackInput`](crate::operation::rollback_stack::RollbackStackInput).
     pub fn build(
         self,
@@ -118,6 +139,7 @@ impl RollbackStackInputBuilder {
             role_arn: self.role_arn,
             client_request_token: self.client_request_token,
             retain_except_on_create: self.retain_except_on_create,
+            deployment_config: self.deployment_config,
         })
     }
 }

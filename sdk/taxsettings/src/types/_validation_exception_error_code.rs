@@ -14,9 +14,11 @@
 /// match validationexceptionerrorcode {
 ///     ValidationExceptionErrorCode::ExpiredToken => { /* ... */ },
 ///     ValidationExceptionErrorCode::FieldValidationFailed => { /* ... */ },
+///     ValidationExceptionErrorCode::GstExistenceBlockSetPan => { /* ... */ },
 ///     ValidationExceptionErrorCode::InvalidToken => { /* ... */ },
 ///     ValidationExceptionErrorCode::MalformedToken => { /* ... */ },
 ///     ValidationExceptionErrorCode::MissingInput => { /* ... */ },
+///     ValidationExceptionErrorCode::NonIndiaCustomerCanNotSetPan => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -50,11 +52,15 @@ pub enum ValidationExceptionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
+    GstExistenceBlockSetPan,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidToken,
     #[allow(missing_docs)] // documentation missing in model
     MalformedToken,
     #[allow(missing_docs)] // documentation missing in model
     MissingInput,
+    #[allow(missing_docs)] // documentation missing in model
+    NonIndiaCustomerCanNotSetPan,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -64,9 +70,11 @@ impl ::std::convert::From<&str> for ValidationExceptionErrorCode {
         match s {
             "ExpiredToken" => ValidationExceptionErrorCode::ExpiredToken,
             "FieldValidationFailed" => ValidationExceptionErrorCode::FieldValidationFailed,
+            "GSTExistenceBlockSetPAN" => ValidationExceptionErrorCode::GstExistenceBlockSetPan,
             "InvalidToken" => ValidationExceptionErrorCode::InvalidToken,
             "MalformedToken" => ValidationExceptionErrorCode::MalformedToken,
             "MissingInput" => ValidationExceptionErrorCode::MissingInput,
+            "NonIndiaCustomerCanNotSetPAN" => ValidationExceptionErrorCode::NonIndiaCustomerCanNotSetPan,
             other => ValidationExceptionErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -84,15 +92,25 @@ impl ValidationExceptionErrorCode {
         match self {
             ValidationExceptionErrorCode::ExpiredToken => "ExpiredToken",
             ValidationExceptionErrorCode::FieldValidationFailed => "FieldValidationFailed",
+            ValidationExceptionErrorCode::GstExistenceBlockSetPan => "GSTExistenceBlockSetPAN",
             ValidationExceptionErrorCode::InvalidToken => "InvalidToken",
             ValidationExceptionErrorCode::MalformedToken => "MalformedToken",
             ValidationExceptionErrorCode::MissingInput => "MissingInput",
+            ValidationExceptionErrorCode::NonIndiaCustomerCanNotSetPan => "NonIndiaCustomerCanNotSetPAN",
             ValidationExceptionErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ExpiredToken", "FieldValidationFailed", "InvalidToken", "MalformedToken", "MissingInput"]
+        &[
+            "ExpiredToken",
+            "FieldValidationFailed",
+            "GSTExistenceBlockSetPAN",
+            "InvalidToken",
+            "MalformedToken",
+            "MissingInput",
+            "NonIndiaCustomerCanNotSetPAN",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ValidationExceptionErrorCode {
@@ -117,9 +135,11 @@ impl ::std::fmt::Display for ValidationExceptionErrorCode {
         match self {
             ValidationExceptionErrorCode::ExpiredToken => write!(f, "ExpiredToken"),
             ValidationExceptionErrorCode::FieldValidationFailed => write!(f, "FieldValidationFailed"),
+            ValidationExceptionErrorCode::GstExistenceBlockSetPan => write!(f, "GSTExistenceBlockSetPAN"),
             ValidationExceptionErrorCode::InvalidToken => write!(f, "InvalidToken"),
             ValidationExceptionErrorCode::MalformedToken => write!(f, "MalformedToken"),
             ValidationExceptionErrorCode::MissingInput => write!(f, "MissingInput"),
+            ValidationExceptionErrorCode::NonIndiaCustomerCanNotSetPan => write!(f, "NonIndiaCustomerCanNotSetPAN"),
             ValidationExceptionErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }

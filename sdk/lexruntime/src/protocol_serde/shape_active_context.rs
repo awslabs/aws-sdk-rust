@@ -28,10 +28,16 @@ pub fn ser_active_context(
 pub(crate) fn de_active_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
+    depth: u32,
 ) -> ::std::result::Result<Option<crate::types::ActiveContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "maximum nesting depth exceeded",
+        ));
+    }
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
@@ -50,12 +56,16 @@ where
                         }
                         "timeToLive" => {
                             builder = builder.set_time_to_live(
-                                crate::protocol_serde::shape_active_context_time_to_live::de_active_context_time_to_live(tokens, _value)?,
+                                crate::protocol_serde::shape_active_context_time_to_live::de_active_context_time_to_live(tokens, _value, depth + 1)?,
                             );
                         }
                         "parameters" => {
                             builder = builder.set_parameters(
-                                crate::protocol_serde::shape_active_context_parameters_map::de_active_context_parameters_map(tokens, _value)?,
+                                crate::protocol_serde::shape_active_context_parameters_map::de_active_context_parameters_map(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

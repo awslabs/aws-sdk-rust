@@ -2,7 +2,11 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_object_key_format(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::TargetObjectKeyFormat, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetObjectKeyFormat::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -10,7 +14,7 @@ pub fn de_target_object_key_format(
             s if s.matches("SimplePrefix") /* SimplePrefix com.amazonaws.s3#TargetObjectKeyFormat$SimplePrefix */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_simple_prefix::de_simple_prefix(&mut tag)
+                        crate::protocol_serde::shape_simple_prefix::de_simple_prefix(&mut tag, depth + 1)
                         ?
                     )
                 ;
@@ -20,7 +24,7 @@ pub fn de_target_object_key_format(
             s if s.matches("PartitionedPrefix") /* PartitionedPrefix com.amazonaws.s3#TargetObjectKeyFormat$PartitionedPrefix */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_partitioned_prefix::de_partitioned_prefix(&mut tag)
+                        crate::protocol_serde::shape_partitioned_prefix::de_partitioned_prefix(&mut tag, depth + 1)
                         ?
                     )
                 ;

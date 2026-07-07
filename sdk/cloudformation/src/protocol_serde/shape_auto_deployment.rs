@@ -31,7 +31,11 @@ pub fn ser_auto_deployment(
 #[allow(clippy::needless_question_mark)]
 pub fn de_auto_deployment(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
 ) -> ::std::result::Result<crate::types::AutoDeployment, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
     #[allow(unused_mut)]
     let mut builder = crate::types::AutoDeployment::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -69,7 +73,7 @@ pub fn de_auto_deployment(
             s if s.matches("DependsOn") /* DependsOn com.amazonaws.cloudformation#AutoDeployment$DependsOn */ =>  {
                 let var_12 =
                     Some(
-                        crate::protocol_serde::shape_stack_set_arn_list::de_stack_set_arn_list(&mut tag)
+                        crate::protocol_serde::shape_stack_set_arn_list::de_stack_set_arn_list(&mut tag, depth + 1)
                         ?
                     )
                 ;

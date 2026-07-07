@@ -99,6 +99,8 @@ pub fn de_describe_listeners(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
+    #[allow(unused_variables)]
+    let depth = 0u32;
     if !(start_el.matches("DescribeListenersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeListenersResponse got {start_el:?}"
@@ -116,7 +118,7 @@ pub fn de_describe_listeners(
             s if s.matches("Listeners") /* Listeners com.amazonaws.elasticloadbalancingv2.synthetic#DescribeListenersOutput$Listeners */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_listeners::de_listeners(&mut tag)
+                        crate::protocol_serde::shape_listeners::de_listeners(&mut tag, depth + 1)
                         ?
                     )
                 ;

@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIntegratedResourcesOutput {
-    /// List of integrated resources
+    /// <p>The list of integrated resource summaries.</p>
     pub integrated_resource_summaries: ::std::vec::Vec<crate::types::IntegratedResourceSummary>,
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIntegratedResourcesOutput {
-    /// List of integrated resources
+    /// <p>The list of integrated resource summaries.</p>
     pub fn integrated_resource_summaries(&self) -> &[crate::types::IntegratedResourceSummary] {
         use std::ops::Deref;
         self.integrated_resource_summaries.deref()
     }
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,14 +45,14 @@ impl ListIntegratedResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_integrated_resource_summaries`](Self::set_integrated_resource_summaries).
     ///
-    /// List of integrated resources
+    /// <p>The list of integrated resource summaries.</p>
     pub fn integrated_resource_summaries(mut self, input: crate::types::IntegratedResourceSummary) -> Self {
         let mut v = self.integrated_resource_summaries.unwrap_or_default();
         v.push(input);
         self.integrated_resource_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// List of integrated resources
+    /// <p>The list of integrated resource summaries.</p>
     pub fn set_integrated_resource_summaries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedResourceSummary>>,
@@ -60,21 +60,21 @@ impl ListIntegratedResourcesOutputBuilder {
         self.integrated_resource_summaries = input;
         self
     }
-    /// List of integrated resources
+    /// <p>The list of integrated resource summaries.</p>
     pub fn get_integrated_resource_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegratedResourceSummary>> {
         &self.integrated_resource_summaries
     }
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
